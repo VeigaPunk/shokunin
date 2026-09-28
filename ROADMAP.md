@@ -28,14 +28,20 @@ manifest first, then this table.
 3. **Promotion reviews** — `SHONEN.md` checklists per repo drive rank;
    lane reports carry the per-round checklist assessments that feed the
    independent review; exit: all `SHONEN.md` boxes independently verified
-   and the file deleted. Aggregator audit (`AGGREGATE.md` ledger, §9.6)
-   finds kengaku, kagi, and kake promotion-ready under non-author review;
-   kengaku's box 2 is strengthened by its authored round-5 full-battery
-   run (`kengaku-shokunin@782dd2d`). Round-5 additions: kagi and kotoba
-   self-checked every remaining box; per `PROTOCOL.md` all lane-side
-   `[x]` marks are author-asserted (`[~]`) until a non-author verifier
-   names itself. The independent review itself has not been scheduled —
-   integrator action.
+   and the file deleted. Aggregator refresh-3 (ledger §10, commit
+   `c3aea3b`), a non-author review, rules **kengaku, kagi, kake
+   promotion-ready pending box-3 (executable without oral context)**;
+   kasegi (no executed/handed-off task), kumitate (uncorrected
+   contradictions, read-only), and kotoba (falsified counts unrepaired at
+   audit time — round-5/6 repair commits landed since) not yet ready. Per
+   `PROTOCOL.md` all lane-side `[x]` marks count as author-asserted
+   (`[~]`) until a named non-author verifier; kotoba has re-attributed its
+   file to `[~]` itself, kagi's four bare `[x]`s count as `[~]` by rule.
+   Three `SHONEN.md` files are marked/prose variants that must regenerate
+   to the round-8 embedded template (kagi, kotoba, kengaku — kengaku's is
+   a stale 3-box file missing the oral-context box); the untouched mint
+   seeds (kasegi, kake, kumitate) are already canonical. The independent
+   review itself has not been scheduled — integrator action.
 
 ## Candidate domains (watchlist)
 
@@ -53,6 +59,9 @@ Promotion to the roster requires minting evidence per `PROTOCOL.md`.
   served provinces; no mint.
 - kama — local model serving & endpoint health (two independent
   endpoint-drift discoveries: kagi round-3 + kengaku round-4 reports).
-  Operator decision pending: `qwen-local` repoint 8080→34113 + `op signin`.
-  Configuration-fault discovery is not yet recurring demand; hold.
+  Aggregator refresh-3 rules it **meets the written mint bar** (two
+  documented demand instances; no province owns the surface). Integrator
+  decision pending: mint or record a rejection in the round notes.
+  Operator fix (`qwen-local` repoint 8080→34113 + `op signin`) is
+  independent of the mint decision and still pending.
 

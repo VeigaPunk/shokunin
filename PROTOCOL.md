@@ -43,12 +43,15 @@ verifier and its evidence.
   `<id>` that did not author the round's changes may write `[x]`. Any
   `[x]` in `SHONEN.md` carrying no named non-author verifier is author
   attestation and counts as `[~]` for the gate.
-  Minimum bar:
-  - `SKILL.md` contains at least one decision table, one error-pattern list,
-    and one checklist, each citing a resolvable source (repo path, command
-    output, or external document).
-  - `LOG.md` records at least one end-to-end domain task: trigger → action →
-    outcome → evidence pointer.
+  Minimum bar (rendered box-for-box by the `SHONEN.md` seed below; the two
+  change only in the same edit):
+  - `SKILL.md` contains at least one decision table, one error-pattern
+    list, and one checklist, each citing a resolvable source (repo path,
+    command output, or external document).
+  - `LOG.md` records at least one end-to-end domain task:
+    trigger → action → outcome → evidence pointer.
+  - An agent with no oral context can execute `SKILL.md`/`corpus/`
+    instructions: self-contained, pointers resolvable.
   - `PROVINCE.md` still matches reality: no absorbed cross-domain work.
   On promotion `SHONEN.md` is deleted, `MANIFEST.json` rank is updated, and the
   review is recorded in the promoter's lane report and the repo's `LOG.md`.
@@ -75,6 +78,17 @@ Round prompts are snapshots: where a prompt — or any earlier round's
 instructions — conflicts with the current `PROTOCOL.md` or `CORPUS.md`, the
 repo files win. A lane re-reads the protocol at the start of every steered
 round; a long-lived mission does not grandfather superseded rules.
+
+Round prompts embed the operative contract verbatim — the driver's template
+is part of the contract's delivery mechanism, not a convenience summary, and
+lossy paraphrase is exactly what the snapshot clause would void. Each lane
+prompt carries, as quoted protocol text: the report path and filename, the
+commit-before-report ordering, the `SHONEN` heading requirement, the
+commit-hash citation rule, and the lane's write scope. Text that exists only
+in this file reaches the lanes that re-read it and is skipped by the ones
+that don't — rounds 1–8 measured the gap: 33 child-lane reports, 30 missing
+a `SHONEN`-led heading (`grep -rLE '^#{1,6} *SHONEN' .ufo/reports/round-*/*.md`
+minus the ledger, 2026-09-28) while no driver prompt named it.
 
 Rounds are per-lane counters, not a fleet-global clock: the driver keeps
 `.ufo/state/<lane>.round` and lanes can sit on different round numbers at
@@ -103,7 +117,11 @@ indefinitely (covered by the stale-lane rule below). Minimum content:
   `SHONEN` heading with one line per box (`[x]` / `[ ]` / `[~]` + pointer).
   A report without this heading does not satisfy the contract even if the
   same facts appear elsewhere in it; `[~]` means asserted-by-author, not
-  skipped.
+  skipped. Consequence, not just a label: a report missing the `SHONEN`
+  heading is a conformance defect AND is disqualified as evidence in that
+  lane's promotion review — the assessment must be re-filed under the
+  heading in the next round's report (reports are filed once; the
+  assessment, not the report, is re-filed).
 
 A lane whose mission has terminated or been respawned without filing its
 round report is recorded `failed` by the integrator; a missing report never
@@ -123,17 +141,27 @@ report does not. After a completed round the integrator:
 
 1. Reads every lane report and verifies each cited child-repo commit exists
    and that no participating repo is left with uncommitted round work; checks
-   each report for the contract-required `SHONEN` heading. A report that
-   violates the report contract (missing heading, dead hash, report filed
-   before its commit) is recorded as a conformance defect in the round notes
-   — this does not change the lane's status unless the round's rules already
-   prescribe `failed`.
+   each report for the contract-required `SHONEN` heading; checks the round's
+   dispatched `.ufo/prompts/*.md` carried the five contract items verbatim
+   per the embed clause above. A report that violates the report contract
+   (missing heading, dead hash, report filed before its commit) or a prompt
+   missing embedded items is recorded as a conformance defect in the round
+   notes — this does not change the lane's status unless the round's rules
+   already prescribe `failed`.
 2. Lands warranted protocol improvements in this file (a highly valuable
    feature discovered by any domain generalizes to the protocol); routes
    cross-domain defects a lane report filed against a sibling's files to the
-   owning lane — the aggregator mirrors them into the owning repo's
-   `corpus/lessons/`, and an unresolved routed defect is re-flagged in the
-   round notes each completed round.
+   owning lane — the integrator's round notes carry one routing line per
+   defect (routing is integrator work and must exist in an artifact), the
+   aggregator mirrors each routed defect into the owning repo's
+   `corpus/lessons/` (aggregator-owned naming) and keeps an **open
+   routed-defects row** in its `AGGREGATE.md` ledger until the owning lane's
+   `corpus/lessons/` or `SKILL.md` correction lands; unresolved rows are
+   re-flagged in the ledger each audited round. On its first audited round
+   after any absence the aggregator sweeps intervening lane reports and
+   round notes and reconciles ledger rows before new audits. The ledger row
+   — not round notes alone — is the durable queue, since defects outlive
+   the round that routed them.
 3. Mints a new shonen only if evidence shows an unserved domain — minimum
    evidence: two documented demand instances or an explicit operator
    directive.
@@ -178,6 +206,28 @@ sweep, and a quote its location (frontmatter/body, file, line) — the
 to `corpus/`. A status command printing configured values is not evidence of
 capability: endpoint/ability claims need a probe against the real surface.
 
+Sharpened by the round-4 audit (111 re-executed citations):
+
+- **Claimed ≠ re-executed.** A command offered as evidence is a re-run
+  performed at write time with its observed output — never an output quoted
+  from memory or a prior session.
+- **Corrections sweep every mention.** Before a round's commit, grep every
+  file the lane touches (`corpus/README.md`, `SKILL.md`, `knowledge/`) for
+  the superseded claim — a corrected fact left standing in a sibling file is
+  still a defect.
+- **A falsified claim in an append-only file gets a named correction entry
+  in the lane's next round** — appended, never rewritten; it stays on the
+  routed-defect queue until it lands.
+- **Commits are cited by hash, never by subject or tag** — `git rev-parse
+  round-4` fails wherever the tag doesn't exist.
+- **Drift pins.** A corpus that cites host files by line/content may carry a
+  pin mechanism (e.g. `kagi-shokunin/corpus/drift-pins.sh`) — but a pin only
+  counts if its expected values are **persisted inside the repo** (a
+  recorded sha/mode/lines baseline, or a committed expected-output file the
+  script diffs against). A fingerprint *printer* with no stored baseline
+  cannot detect drift: round-8 audit found kagi's pins verifiable for only
+  2 of 13 files. Recommended where the surface drifts outside lane control.
+
 ## File contract per shokunin repo
 
 | File | Purpose |
@@ -185,9 +235,23 @@ capability: endpoint/ability claims need a probe against the real surface.
 | `SKILL.md` | The specialist's craft: triggers, decision tables, error patterns, checklists, cited sources. Its frontmatter `description` carries quoted trigger strings, an anti-trigger, and a sibling-arbitration note — capability-and-scope-only descriptions misroute |
 | `PROVINCE.md` | Domain boundary: what it owns, what it refuses, its work surfaces. Declared surfaces must resolve; when a lane finds a surface moved or absent it corrects `PROVINCE.md` to the real path and logs the correction |
 | `LOG.md` | Append-only iteration log: round entries, accepted changes, falsifiable next-iterations |
-| `SHONEN.md` | Promotion checklist to shokunin; generated at mint by copying the **Promotion gates** minimum bar verbatim and deleted on promotion. Gates evolve — when they change, the owning lane regenerates its `SHONEN.md` verbatim on its next steered round (the lane is the only allowed writer inside its repo); the file must never drift from the protocol or carry a stale box list |
+| `SHONEN.md` | Promotion checklist to shokunin; generated at mint by copying the canonical template (below) verbatim and deleted on promotion. Gates evolve — when they change, the owning lane regenerates `SHONEN.md` verbatim from the template on its next steered round (the lane is the only allowed writer inside its repo). Verification is mechanical: the seed block (indented lines below) must diff byte-identical modulo `<name>` = the repo's directory name, and marks are confined to the box character plus one indented evidence line per box — `[x] <verifier-id>` or `[~]` with a resolvable pointer; no other prose, added boxes, or removed boxes. Round-8 audit found three repos carrying prose/mark variants outside this form (kagi 4 bare `[x]`, kotoba per-box prose blocks, kengaku a stale 3-box file); the untouched mint seeds (kasegi, kake, kumitate) already conform |
 | `AGENTS.md` | Operating rules when working inside this repo |
 | `corpus/` | Proprietary knowledge corpus per `CORPUS.md`: `README.md` index, `knowledge/` sourced domain notes, `lessons/` per-round training lessons; reviewed by the aggregator lane every round |
+
+The canonical `SHONEN.md` seed (verbatim — `<name>` is the only substitution):
+
+    # <name> — Promotion checklist
+
+    Promotion to shokunin requires all of:
+
+    - [ ] SKILL.md contains real decision tables, error patterns, checklists, cited sources
+    - [ ] At least one end-to-end domain task executed and logged in LOG.md
+    - [ ] Instructions executable by an agent without oral context
+    - [ ] No cross-domain bleed (PROVINCE.md still accurate)
+
+Marks: `[~]` asserted by the lane itself (evidence pointer required),
+`[x]` only with a named non-author verifier per **Promotion gates**.
 
 ## Invariants
 
@@ -197,9 +261,9 @@ capability: endpoint/ability claims need a probe against the real surface.
   evidence or work that plausibly belongs to two provinces — is reported in
   the lane report; the integrator arbitrates by refining `PROVINCE.md`, and
   records the ruling in the round notes. A contested-scope report left
-  unruled by the next completed round is re-flagged in the lane report and
-  the round notes; silence is not a ruling and must never default scope to
-  whichever lane wrote first.
+  unruled by the next completed round is re-flagged in the lane report, the
+  round notes, and an open row in the aggregator ledger; silence is not a
+  ruling and must never default scope to whichever lane wrote first.
 - Rounds are evidence-driven: every `LOG.md` entry cites the work that
   motivated it.
 - `LOG.md` is append-only: entries are never rewritten or deleted; corrections
@@ -214,7 +278,18 @@ capability: endpoint/ability claims need a probe against the real surface.
   driver runtime and stay untracked.
 - A meta-domain shokunin (e.g. prompt & skill craft) documents *patterns*; it
   does not own the protocol files, other provinces' files, or promotions.
-- Local-first: repos live locally; publishing is operator-owned.
+- Local-first: repos live locally; **domain-facing actions are
+  operator-owned** (publishing, vault approval, claim submission). Repo
+  bookkeeping — committing and `git push`ing the round's commits — is
+  ordinary lane work, not publishing, when the driver instructs it.
+  Exception: operator-gated artifacts (staged payloads, publish candidates,
+  vault request material, evidence under embargo) are committed locally but
+  not pushed until the operator releases the gate — bookkeeping never
+  front-runs an operator decision. A lane's main-repo commit is
+  pathspec-limited to its own report file
+  (`git commit -- .ufo/reports/round-<N>/<id>.md`) — never `commit -a` /
+  `add -A`, which sweeps up sibling in-flight edits and integrator
+  working-tree changes.
 - `corpus/` inherits the evidence standard: every `knowledge/` entry cites a
   resolvable source; `corpus/lessons/` entries cite the round and its LOG.md
   entry or lane report.
