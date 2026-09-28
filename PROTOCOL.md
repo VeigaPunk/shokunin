@@ -55,8 +55,14 @@ Each round, the orchestrator dispatches up to one swarm lane per rostered
 shokunin (round robin). A shokunin with no dispatched lane participates in the
 round only as scope available to other lanes — never as an implicit no-op.
 
+Rounds are driven externally (a scheduler/steer names the round number); the
+steer advances the round, the lane owns the work content. Round numbers are
+monotonic; a lane must not claim a round other than the steered one.
+
 Every dispatched lane writes a report at
-`.ufo/reports/round-<N>/<lane>.md` in the main repo. Minimum content:
+`.ufo/reports/round-<N>/<id>.md` in the main repo, where `<id>` is the roster
+id (`protocol` and `aggregator` for the two main-repo lanes). A report under
+any other name does not satisfy the contract. Minimum content:
 
 - work performed and evidence pointers (paths, commands, diffs);
 - changes landed in the child repo, each tied to a `LOG.md` entry;
@@ -73,10 +79,19 @@ report does not. After a completed round the integrator:
 3. Mints a new shonen only if evidence shows an unserved domain — minimum
    evidence: two documented demand instances or an explicit operator
    directive.
-4. Appends one entry to `MANIFEST.json`'s `rounds` array:
-   `{round, date, lanes: [{id, status}], promotions: [{id, from, to}], mints: [id...], notes}`
-   where `status` is `ok | failed | not-dispatched`, and appends a round entry
-   to each participating shokunin's `LOG.md`.
+4. Appends one entry to `MANIFEST.json`'s `rounds` array and a round entry to
+   each participating shokunin's `LOG.md`. Round-entry shape:
+   `{round, date, type, lanes: {<id>: <status>}, promotions: [{id, from, to}], minted: [id...], notes}`
+   where `<status>` is `ok | failed | not-dispatched`, plus `in-flight` only
+   while the round is still open. `type`, `protocol_updates`, and other
+   annotation keys are optional. An entry may be written early and corrected
+   before the round closes, but no lane may be recorded `not-dispatched`
+   while a dispatch or prompt for it exists.
+
+The **aggregator** lane is a main-repo lane that reviews every child repo's
+`corpus/` each round (per `CORPUS.md`) and files gaps as lessons. It is the
+sole exception to lane write-scope: it may create or repair `corpus/` inside
+any child repo — nothing else.
 
 ## Evidence standard
 
@@ -93,7 +108,7 @@ domain's actual surfaces, logged as trigger → action → outcome → pointer.
 | File | Purpose |
 |---|---|
 | `SKILL.md` | The specialist's craft: triggers, decision tables, error patterns, checklists, cited sources |
-| `PROVINCE.md` | Domain boundary: what it owns, what it refuses, its work surfaces |
+| `PROVINCE.md` | Domain boundary: what it owns, what it refuses, its work surfaces. Declared surfaces must resolve; when a lane finds a surface moved or absent it corrects `PROVINCE.md` to the real path and logs the correction |
 | `LOG.md` | Append-only iteration log: round entries, accepted changes, falsifiable next-iterations |
 | `SHONEN.md` | Promotion checklist to shokunin; deleted on promotion |
 | `AGENTS.md` | Operating rules when working inside this repo |
@@ -117,4 +132,7 @@ domain's actual surfaces, logged as trigger → action → outcome → pointer.
 - A meta-domain shokunin (e.g. prompt & skill craft) documents *patterns*; it
   does not own the protocol files, other provinces' files, or promotions.
 - Local-first: repos live locally; publishing is operator-owned.
+- `corpus/` inherits the evidence standard: every `knowledge/` entry cites a
+  resolvable source; `corpus/lessons/` entries cite the round and its LOG.md
+  entry or lane report.
 

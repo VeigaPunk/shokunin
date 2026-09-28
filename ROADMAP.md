@@ -16,13 +16,14 @@ manifest first, then this table.
 
 ## Phase gates
 
-1. **Round-robin development** — one swarm lane per shokunin per round;
+1. **Round-robin development** — one swarm lane per shokunin per round,
+   plus an aggregator lane reviewing `corpus/` across all child repos;
    exit: a completed round per `PROTOCOL.md` (every dispatched lane reported
    or recorded failed).
 2. **Protocol aggregation** — after each completed round, land improvements
    into `PROTOCOL.md`; mint new shonen only on evidence (≥2 documented demand
    instances or explicit operator directive); exit: `MANIFEST.json` `rounds`
-   entry appended.
+   entry appended with every lane's terminal status.
 3. **Promotion reviews** — `SHONEN.md` checklists per repo drive rank;
    exit: all `SHONEN.md` boxes independently verified and the file deleted.
 
