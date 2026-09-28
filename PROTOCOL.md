@@ -81,14 +81,24 @@ round; a long-lived mission does not grandfather superseded rules.
 
 Round prompts embed the operative contract verbatim — the driver's template
 is part of the contract's delivery mechanism, not a convenience summary, and
-lossy paraphrase is exactly what the snapshot clause would void. Each lane
-prompt carries, as quoted protocol text: the report path and filename, the
-commit-before-report ordering, the `SHONEN` heading requirement, the
-commit-hash citation rule, and the lane's write scope. Text that exists only
-in this file reaches the lanes that re-read it and is skipped by the ones
-that don't — rounds 1–8 measured the gap: 33 child-lane reports, 30 missing
-a `SHONEN`-led heading (`grep -rLE '^#{1,6} *SHONEN' .ufo/reports/round-*/*.md`
-minus the ledger, 2026-09-28) while no driver prompt named it.
+lossy paraphrase is exactly what the snapshot clause would void. Each
+*child-lane* prompt carries, as quoted protocol text: the report path and
+filename, the commit-before-report ordering, the `SHONEN` heading
+requirement, the commit-hash citation rule, and the lane's write scope.
+The aggregator prompt instead embeds *its* operative set verbatim: report
+path, the ledger path and refresh duty, child-repo commit ownership
+(aggregator commits its own files, pathspec-limited), the corpus-only
+write scope, and the L2 minimum. The protocol prompt embeds its own
+duties: this file's re-read requirement, the integrator-of-record closure
+steps, and the L2 minimum. Text that exists only in this file reaches the
+lanes that re-read it and is skipped by the ones that don't — rounds 1–9
+measured the gap: 40 child-lane reports filed, 36 missing a `SHONEN`-led
+heading (`grep -rLE '^#{1,6} *SHONEN' .ufo/reports/round-*/*.md`, excluding
+protocol/aggregator/ledger, 2026-09-28) while 0/46 generated prompts
+named it; a prompt-fidelity defect named in round notes does not fix the
+template — the integrator's report must also carry the exact corrected
+`lane_prompt()` text required, since `scripts/` is edited by the
+operator-side maintainer, not a lane.
 
 Rounds are per-lane counters, not a fleet-global clock: the driver keeps
 `.ufo/state/<lane>.round` and lanes can sit on different round numbers at
@@ -99,8 +109,16 @@ collects whichever lanes ran their Nth round; the integrator closes round
 
 A lane report **lands last** — written only after the lane's child-repo work
 is committed, and it must cite the commit hash. Landed means committed:
-changes that exist only in a working tree do not count for the round, and a
-report naming a hash the repo does not contain fails verification.
+changes that exist only in a working tree do not count for the round. The
+cited hash is the lane repo's `HEAD` at the moment the report is written —
+a report naming a hash the repo does not contain fails verification, and a
+cited hash that is not an ancestor of `HEAD` at closure is a conformance
+defect (amending or rewriting a commit a report already cited orphans the
+record; `git merge-base --is-ancestor <hash> HEAD` is the check). Corrections
+land as new commits, never by amending a cited one — and append-only files
+(`LOG.md`) take an appended correction entry pointing at the superseded
+text, never an in-place rewrite (round-9: kengaku `85b22e3`→`f147a27`
+orphaned its own report; `LOG.md:9` round-5 entry rewritten in place).
 
 Every dispatched lane writes a report at
 `.ufo/reports/round-<N>/<id>.md` in the main repo, where `<id>` is the roster
@@ -129,10 +147,33 @@ holds a round open. A mission still open more than two driver ticks after
 its steer is a stale-lane review trigger — its working context predates
 landed protocol changes, and a lane whose work is done but unreported
 stalls the same way — and the integrator may record it `failed` so the
-driver respawns it on a fresh prompt. A respawned mission inherits its
-predecessor's working tree: uncommitted changes it finds are uncommitted
-round work under the landed-means-committed rule — the new lane resolves
-them (commit-under-its-entry or revert) before it files its own report.
+driver respawns it on a fresh prompt. The trigger needs an actuator: every
+dispatched lane's report must list any mission open longer than two driver
+ticks (age read from `.ufo/watchdog.log` steer/launch lines or the
+`.ufo/state/<lane>.mission` run-id timestamp); the integrator-of-record
+records `failed` from that listing without further review. A respawned
+mission inherits its predecessor's working tree: uncommitted
+*lane-authored* changes it finds are uncommitted round work under the
+landed-means-committed rule — the new lane resolves them
+(commit-under-its-entry or revert) before it files its own report.
+Uncommitted **aggregator-owned** files (`corpus/lessons/round-*-aggregator-*`)
+are not the lane's to commit: the lane records them in its report and
+leaves them for the aggregator to resolve (round-9: aggregator mirrors sat
+uncommitted in kake/kumitate/kagi; kasegi swept one into `c80c2a1`, an
+unlogged misattribution).
+
+**Integrator of record.** The integrator this protocol assigns work to is
+the round's `protocol` lane — a role, not a separate rostered lane; where a
+generated driver prompt conflicts (e.g. "never MANIFEST.json"), this file
+wins per the snapshot clause. Rounds 2–10 closed with zero closure
+artifacts (MANIFEST.json `rounds` stuck at `[0, 1, 1.5]`) because no lane
+was instantiated as integrator; the mapping lands here so the duties have
+an owner. Its main-repo writes expand by exactly two: appending
+`MANIFEST.json` `rounds` entries and the conformance/routing record inside
+its own report (the round notes). Everything else stays
+`PROTOCOL.md`/`ROADMAP.md`/its report; `scripts/` and `.ufo/` state and
+prompts remain operator-side integrator files — the protocol lane names
+required template corrections in its report but never edits the script.
 
 A round is **completed** when every dispatched lane has either reported or
 been recorded failed by the integrator — a failed lane counts; a missing
@@ -140,33 +181,41 @@ report does not. After a completed round the integrator:
 
 
 1. Reads every lane report and verifies each cited child-repo commit exists
-   and that no participating repo is left with uncommitted round work; checks
-   each report for the contract-required `SHONEN` heading; checks the round's
-   dispatched `.ufo/prompts/*.md` carried the five contract items verbatim
-   per the embed clause above. A report that violates the report contract
-   (missing heading, dead hash, report filed before its commit) or a prompt
-   missing embedded items is recorded as a conformance defect in the round
-   notes — this does not change the lane's status unless the round's rules
-   already prescribe `failed`.
+   *and is an ancestor of the lane repo's `HEAD`*; verifies no participating
+   repo is left with uncommitted round work (uncommitted aggregator-owned
+   files are reported, not lane debt); checks each report for the
+   contract-required `SHONEN` heading; checks the round's dispatched
+   `.ufo/prompts/*.md` carried the five contract items verbatim per the
+   embed clause above **and that any L2 route map quoted in the prompt
+   matches the current `MISSION.md` bucket** (round-9: generated prompts
+   still quote the pre-`c8f9f57` map — `m_composer`/`m_antigravity` are not
+   in the allowed three). A report that violates the report contract
+   (missing heading, dead or orphaned hash, report filed before its
+   commit) or a prompt missing embedded items is recorded as a conformance
+   defect in the round notes — this does not change the lane's status
+   unless the round's rules already prescribe `failed`.
 2. Lands warranted protocol improvements in this file (a highly valuable
    feature discovered by any domain generalizes to the protocol); routes
-   cross-domain defects a lane report filed against a sibling's files to the
-   owning lane — the integrator's round notes carry one routing line per
-   defect (routing is integrator work and must exist in an artifact), the
-   aggregator mirrors each routed defect into the owning repo's
-   `corpus/lessons/` (aggregator-owned naming) and keeps an **open
-   routed-defects row** in its `AGGREGATE.md` ledger until the owning lane's
-   `corpus/lessons/` or `SKILL.md` correction lands; unresolved rows are
-   re-flagged in the ledger each audited round. On its first audited round
-   after any absence the aggregator sweeps intervening lane reports and
-   round notes and reconciles ledger rows before new audits. The ledger row
-   — not round notes alone — is the durable queue, since defects outlive
-   the round that routed them.
+   cross-domain defects a lane report filed against a sibling's files to
+   the owning lane — and the integrator's report carries one routing line
+   per defect **including defects a lane owes its own repo** (self-defects
+   ride the same durable queue; routing is integrator work and must exist
+   in an artifact). The aggregator mirrors each routed defect into the
+   owning repo's `corpus/lessons/` (aggregator-owned naming) and keeps an
+   **open routed-defects row** in its `AGGREGATE.md` ledger until the
+   owning lane's `corpus/lessons/` or `SKILL.md` correction lands;
+   unresolved rows are re-flagged in the ledger each audited round. On its
+   first audited round after any absence the aggregator sweeps intervening
+   lane reports and round notes and reconciles ledger rows before new
+   audits. The ledger row — not round notes alone — is the durable queue,
+   since defects outlive the round that routed them; while the aggregator
+   is absent the integrator's report itself is the fallback record.
 3. Mints a new shonen only if evidence shows an unserved domain — minimum
    evidence: two documented demand instances or an explicit operator
    directive.
-4. Appends one entry to `MANIFEST.json`'s `rounds` array and a round entry to
-   each participating shokunin's `LOG.md`. Round-entry shape:
+4. Appends one entry to `MANIFEST.json`'s `rounds` array (integrator-of-record
+   scope; each lane's own `LOG.md` entry remains lane work, not integrator
+   work — lanes write inside their own repos). Round-entry shape:
    `{round, date, type, lanes: {<id>: <status>}, promotions: [{id, from, to}], minted: [id...], notes}`
    where `<status>` is `ok | failed | not-dispatched`, plus `in-flight` only
    while the round is still open. `type`, `protocol_updates`, and other
@@ -179,11 +228,21 @@ The **aggregator** lane is a main-repo lane that reviews every child repo's
 child repos, and files its own round report at
 `.ufo/reports/round-<N>/aggregator.md` covering per-repo corpus verdicts and
 cross-lane learnings. It is the sole exception to lane write-scope: it may
-create or repair `corpus/` inside any child repo — nothing else: no main-repo
-files outside its own report. Alongside the per-round report it maintains one
-rolling audit ledger (`AGGREGATE.md` under `.ufo/reports/`); the ledger is
-append-only in the same sense as `LOG.md` — refresh sections supersede
-earlier rows explicitly rather than rewriting them.
+create or repair `corpus/` inside any child repo — nothing else: no
+main-repo files outside its own report and ledger. Every file it creates
+inside a child repo is **committed by the aggregator itself at creation
+time**, pathspec-limited to its own files, under its own subject
+(`corpus: round-<N> aggregator …`) — never left uncommitted for a lane's
+round commit to sweep, and a lane never commits an aggregator-owned file.
+Alongside the per-round report it maintains one rolling audit ledger —
+canonically `.ufo/reports/AGGREGATE.md` (the `round-2/AGGREGATE.md`
+snapshot is relocated there by its next refresh; no other path counts).
+The ledger is append-only in the same sense as `LOG.md` — refresh sections
+supersede earlier rows explicitly rather than rewriting them. An
+aggregator round report is incomplete unless the ledger was refreshed or
+the report names why no row changed — and a round filed without the ledger
+duty keeps the routed-defect queue empty by construction (rounds 5–8
+routed zero defects to disk despite open routing lines).
 
 ## Evidence standard
 
@@ -205,6 +264,16 @@ sweep, and a quote its location (frontmatter/body, file, line) — the
 `CORPUS.md` rules apply to `LOG.md` entries and lane reports too, not only
 to `corpus/`. A status command printing configured values is not evidence of
 capability: endpoint/ability claims need a probe against the real surface.
+
+An evidence pointer must resolve at *closure* time, not only at write time:
+paths under `tmpfs` (`/tmp`, `/dev/shm`), session-scoped `local://`
+artifacts, and any pointer a fresh session cannot reach are not evidence —
+commit the artifact or cite a reproducible command (round-9: kake
+`/tmp/kimi_audit.py`, kumitate `local://kumitate-r6-*` maps, kengaku
+`/tmp/bench-r7/` workdir all unresolvable outside the producing session).
+A timestamp on evidence must be at or before the commit that ships it —
+future-dated evidence is a conformance defect (round-9: kake's `~21:15Z`
+label preceded the clock by ~46 min).
 
 Sharpened by the round-4 audit (111 re-executed citations):
 
@@ -269,10 +338,13 @@ Marks: `[~]` asserted by the lane itself (evidence pointer required),
 - `LOG.md` is append-only: entries are never rewritten or deleted; corrections
   land as new entries.
 - `MANIFEST.json` is canonical for rank and roster; `ROADMAP.md` mirrors it.
-  Only the integrator writes main-repo files — `MANIFEST.json`,
+  Only integrator roles write main-repo files — `MANIFEST.json`,
   `PROTOCOL.md`, `ROADMAP.md`, `CORPUS.md`, `scripts/`, `.ufo/` state and
-  prompts. Lanes write only inside their own child repo and their lane
-  report at `.ufo/reports/round-<N>/<id>.md`. `.ufo/reports/` and
+  prompts. The protocol lane holds the protocol/roadmap/report writes and,
+  as integrator-of-record, `MANIFEST.json` `rounds` appends; `MANIFEST.json`
+  edits *outside* `rounds` (roster, rank, minting) remain operator-side
+  integrator work. Lanes write only inside their own child repo and their
+  lane report at `.ufo/reports/round-<N>/<id>.md`. `.ufo/reports/` and
   `.ufo/waves/` are the round's written evidence and are committed with the
   round's integration commit; `.ufo/state/` and `.ufo/watchdog.log` are
   driver runtime and stay untracked.
@@ -290,6 +362,14 @@ Marks: `[~]` asserted by the lane itself (evidence pointer required),
   (`git commit -- .ufo/reports/round-<N>/<id>.md`) — never `commit -a` /
   `add -A`, which sweeps up sibling in-flight edits and integrator
   working-tree changes.
+- Lane authorship is auditable: each child repo is configured at mint so
+  round commits carry the lane identity (`<lane>-shokunin` /
+  `<lane>@shokunin.local` — kagi/kake/kumitate/kengaku already do; kotoba's
+  `3b029b8` committed under the operator's personal identity blurs the
+  author/non-author line the `[x]` verifier rule depends on). A lane
+  finding its repo unconfigured sets `git config user.name/email` once and
+  notes it in `LOG.md`; commits under the operator identity made by lane
+  rounds are a conformance defect.
 - `corpus/` inherits the evidence standard: every `knowledge/` entry cites a
   resolvable source; `corpus/lessons/` entries cite the round and its LOG.md
   entry or lane report.

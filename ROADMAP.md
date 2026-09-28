@@ -35,13 +35,28 @@ manifest first, then this table.
    contradictions, read-only), and kotoba (falsified counts unrepaired at
    audit time — round-5/6 repair commits landed since) not yet ready. Per
    `PROTOCOL.md` all lane-side `[x]` marks count as author-asserted
-   (`[~]`) until a named non-author verifier; kotoba has re-attributed its
-   file to `[~]` itself, kagi's four bare `[x]`s count as `[~]` by rule.
-   Three `SHONEN.md` files are marked/prose variants that must regenerate
-   to the round-8 embedded template (kagi, kotoba, kengaku — kengaku's is
-   a stale 3-box file missing the oral-context box); the untouched mint
-   seeds (kasegi, kake, kumitate) are already canonical. The independent
-   review itself has not been scheduled — integrator action.
+   (`[~]`) until a named non-author verifier. Round-9 state: **no report
+   filed since refresh-3 carries a conforming `SHONEN` heading** (36/40
+   child reports missing) — every assessment since is author-asserted and
+   disqualified as promotion evidence, so refresh-3 remains the only
+   review-grade verdict. Three `SHONEN.md` files still must regenerate to
+   the round-8 embedded template: kagi (4 bare `[x]`s), kengaku (stale
+   3-box, missing oral-context box), kotoba (`[~]` prose blocks — the
+   same file also carries two falsified self-counts: "22-row"
+   anti-pattern table is 20 data rows; "12-item dispatch-prompt" renders
+   9 checkboxes in SKILL.md). The untouched mint seeds (kasegi, kake,
+   kumitate) are canonical. The independent review itself has not been
+   scheduled — integrator action; kotoba/kengaku/kagi lane-side marks all
+   count `[~]`.
+   New round-9 debt: kasegi round-8/9/10 reports all lack `SHONEN`
+   headings and its corpus carries 6 newly-audited major count defects
+   (275→295 claim dirs still uncorrected, 19→20 report.json, 16→15
+   L0 briefs, status histogram 282≠280, receipt overclaim); kumitate's
+   defect-1 (`128` false attribution) is three rounds overdue; kengaku
+   closed its three round-8 defects but by history amendment — its report
+   cites an orphaned hash; kake's routed evidence-hygiene defects
+   (future-dated `~21:15Z`, disabled `webzites-keeper.timer` still claimed
+   running) are uncorrected.
 
 ## Candidate domains (watchlist)
 
@@ -64,4 +79,25 @@ Promotion to the roster requires minting evidence per `PROTOCOL.md`.
   decision pending: mint or record a rejection in the round notes.
   Operator fix (`qwen-local` repoint 8080→34113 + `op signin`) is
   independent of the mint decision and still pending.
+
+## Operator-side integrator debt (round 9)
+
+Items the protocol lane can name but not execute (`scripts/` and prompt
+template are operator-side integrator files):
+
+- `scripts/shokunin-watchdog.sh` `lane_prompt()` still generates prompts
+  with **zero** of the five embedded contract items and the **stale L2
+  route map** (`m_composer`/`m_antigravity` — outside the MISSION.md
+  bucket). Required template correction is specified in
+  `.ufo/reports/round-9/protocol.md` verbatim.
+- `.ufo/prompts/` files accumulate untracked; decide whether prompts are
+  committed evidence (recommended: yes — they are what the fidelity check
+  audits) or ignored.
+- Contested rulings still open: CDP-9222 lease (kagi r3+r7),
+  `fleets/registry.json` scope, aggregator commit `6565e89` touching
+  `.ufo/prompts/*` unadjudicated, `AGGREGATE.md` relocation to canonical
+  `.ufo/reports/AGGREGATE.md`.
+- kotoba `3b029b8` committed under the operator's personal git identity —
+  fix `user.name/email` in `kotoba-shokunin` (lane may self-fix per the
+  new lane-identity invariant).
 
