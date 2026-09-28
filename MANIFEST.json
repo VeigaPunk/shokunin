@@ -13,6 +13,6 @@
   "minting_rule": "a shonen is minted when a domain demand is proven; promotion to shokunin requires demonstrated end-to-end domain work; jin'i-ryu requires self-iteration capability",
   "rounds": [
     { "round": 0, "date": "2026-09-28", "type": "scaffold", "notes": "roster minted: 6 shonen seeded from operator's live work surfaces" },
-    { "round": 1, "date": "2026-09-28", "type": "work", "lanes": ["protocol", "kasegi", "kengaku", "kake", "kumitate", "kotoba"], "deferred": ["kagi"], "notes": "6 m_swe L1 missions in fleet window 'shokunin'; L2 routes: m_lunamax/m_zfl/m_kcode/m_composer/m_antigravity(connector)/m_flash(scout); kagi deferred by round-robin to round 2" }
+    { "round": 1, "date": "2026-09-28", "type": "work", "lanes": {"protocol": "ok", "kasegi": "ok", "kengaku": "ok", "kake": "ok", "kumitate": "ok", "kotoba": "ok", "aggregator": "in-flight", "kagi": "not-dispatched"}, "minted": [], "protocol_updates": ["promotion gates verifiable", "evidence standard", "round schema", "write-scope invariants", "dormancy rule", "corpus contract added"], "notes": "7 L1 missions live in fleet window 'shokunin' (6 m_swe + aggregator m_qwen); watchdog keeps fleet at 7 @450s; L2 routes m_kcode/m_composer/m_lunamax/m_zfl/m_antigravity(connector)/m_flash(scout); kagi deferred by round-robin to round 2" }
   ]
 }

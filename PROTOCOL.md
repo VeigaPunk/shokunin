@@ -97,6 +97,7 @@ domain's actual surfaces, logged as trigger → action → outcome → pointer.
 | `LOG.md` | Append-only iteration log: round entries, accepted changes, falsifiable next-iterations |
 | `SHONEN.md` | Promotion checklist to shokunin; deleted on promotion |
 | `AGENTS.md` | Operating rules when working inside this repo |
+| `corpus/` | Proprietary knowledge corpus per `CORPUS.md`: `README.md` index, `knowledge/` sourced domain notes, `lessons/` per-round training lessons; reviewed by the aggregator lane every round |
 
 ## Invariants
 
