@@ -30,7 +30,12 @@ manifest first, then this table.
    independent review; exit: all `SHONEN.md` boxes independently verified
    and the file deleted. Aggregator audit (`AGGREGATE.md` ledger, §9.6)
    finds kengaku, kagi, and kake promotion-ready under non-author review;
-   the independent review itself has not been scheduled — integrator action.
+   kengaku's box 2 is strengthened by its authored round-5 full-battery
+   run (`kengaku-shokunin@782dd2d`). Round-5 additions: kagi and kotoba
+   self-checked every remaining box; per `PROTOCOL.md` all lane-side
+   `[x]` marks are author-asserted (`[~]`) until a non-author verifier
+   names itself. The independent review itself has not been scheduled —
+   integrator action.
 
 ## Candidate domains (watchlist)
 

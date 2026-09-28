@@ -38,7 +38,11 @@ verifier and its evidence.
   not author the round's changes (a fresh lane or integrator review — never
   self-attestation; a subagent the lane dispatched is still the lane). Each
   checked box names its reviewer — `[x] <verifier>` — and cites its evidence
-  pointer; a lane's own check of its own work is `[~]` asserted, not `[x]`.
+  pointer. The same marks apply inside `SHONEN.md`: a lane's own assessment
+  of its own work is `[~]` asserted (with its evidence pointer), and only an
+  `<id>` that did not author the round's changes may write `[x]`. Any
+  `[x]` in `SHONEN.md` carrying no named non-author verifier is author
+  attestation and counts as `[~]` for the gate.
   Minimum bar:
   - `SKILL.md` contains at least one decision table, one error-pattern list,
     and one checklist, each citing a resolvable source (repo path, command
@@ -107,7 +111,10 @@ holds a round open. A mission still open more than two driver ticks after
 its steer is a stale-lane review trigger — its working context predates
 landed protocol changes, and a lane whose work is done but unreported
 stalls the same way — and the integrator may record it `failed` so the
-driver respawns it on a fresh prompt.
+driver respawns it on a fresh prompt. A respawned mission inherits its
+predecessor's working tree: uncommitted changes it finds are uncommitted
+round work under the landed-means-committed rule — the new lane resolves
+them (commit-under-its-entry or revert) before it files its own report.
 
 A round is **completed** when every dispatched lane has either reported or
 been recorded failed by the integrator — a failed lane counts; a missing
@@ -115,9 +122,18 @@ report does not. After a completed round the integrator:
 
 
 1. Reads every lane report and verifies each cited child-repo commit exists
-   and that no participating repo is left with uncommitted round work.
+   and that no participating repo is left with uncommitted round work; checks
+   each report for the contract-required `SHONEN` heading. A report that
+   violates the report contract (missing heading, dead hash, report filed
+   before its commit) is recorded as a conformance defect in the round notes
+   — this does not change the lane's status unless the round's rules already
+   prescribe `failed`.
 2. Lands warranted protocol improvements in this file (a highly valuable
-   feature discovered by any domain generalizes to the protocol).
+   feature discovered by any domain generalizes to the protocol); routes
+   cross-domain defects a lane report filed against a sibling's files to the
+   owning lane — the aggregator mirrors them into the owning repo's
+   `corpus/lessons/`, and an unresolved routed defect is re-flagged in the
+   round notes each completed round.
 3. Mints a new shonen only if evidence shows an unserved domain — minimum
    evidence: two documented demand instances or an explicit operator
    directive.
@@ -169,7 +185,7 @@ capability: endpoint/ability claims need a probe against the real surface.
 | `SKILL.md` | The specialist's craft: triggers, decision tables, error patterns, checklists, cited sources. Its frontmatter `description` carries quoted trigger strings, an anti-trigger, and a sibling-arbitration note — capability-and-scope-only descriptions misroute |
 | `PROVINCE.md` | Domain boundary: what it owns, what it refuses, its work surfaces. Declared surfaces must resolve; when a lane finds a surface moved or absent it corrects `PROVINCE.md` to the real path and logs the correction |
 | `LOG.md` | Append-only iteration log: round entries, accepted changes, falsifiable next-iterations |
-| `SHONEN.md` | Promotion checklist to shokunin; generated at mint by copying the **Promotion gates** minimum bar verbatim and deleted on promotion. Gates evolve — when they change, every live `SHONEN.md` is regenerated; the file must never drift from the protocol |
+| `SHONEN.md` | Promotion checklist to shokunin; generated at mint by copying the **Promotion gates** minimum bar verbatim and deleted on promotion. Gates evolve — when they change, the owning lane regenerates its `SHONEN.md` verbatim on its next steered round (the lane is the only allowed writer inside its repo); the file must never drift from the protocol or carry a stale box list |
 | `AGENTS.md` | Operating rules when working inside this repo |
 | `corpus/` | Proprietary knowledge corpus per `CORPUS.md`: `README.md` index, `knowledge/` sourced domain notes, `lessons/` per-round training lessons; reviewed by the aggregator lane every round |
 
