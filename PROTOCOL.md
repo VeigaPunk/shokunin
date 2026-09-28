@@ -57,7 +57,15 @@ round only as scope available to other lanes — never as an implicit no-op.
 
 Rounds are driven externally (a scheduler/steer names the round number); the
 steer advances the round, the lane owns the work content. Round numbers are
-monotonic; a lane must not claim a round other than the steered one.
+monotonic; a lane must not claim a round other than the steered one — in
+commits, `LOG.md` entries, corpus lessons, and reports alike. A round the
+driver skipped produces no entry rather than a mislabeled one; several
+entries for one steered round are allowed.
+
+A lane report **lands last** — written only after the lane's child-repo work
+is committed, and it must cite the commit hash. Landed means committed:
+changes that exist only in a working tree do not count for the round, and a
+report naming a hash the repo does not contain fails verification.
 
 Every dispatched lane writes a report at
 `.ufo/reports/round-<N>/<id>.md` in the main repo, where `<id>` is the roster
@@ -73,7 +81,8 @@ A round is **completed** when every dispatched lane has either reported or
 been recorded failed by the integrator — a failed lane counts; a missing
 report does not. After a completed round the integrator:
 
-1. Reads every lane report.
+1. Reads every lane report and verifies each cited child-repo commit exists
+   and that no participating repo is left with uncommitted round work.
 2. Lands warranted protocol improvements in this file (a highly valuable
    feature discovered by any domain generalizes to the protocol).
 3. Mints a new shonen only if evidence shows an unserved domain — minimum
@@ -89,9 +98,11 @@ report does not. After a completed round the integrator:
    while a dispatch or prompt for it exists.
 
 The **aggregator** lane is a main-repo lane that reviews every child repo's
-`corpus/` each round (per `CORPUS.md`) and files gaps as lessons. It is the
-sole exception to lane write-scope: it may create or repair `corpus/` inside
-any child repo — nothing else.
+`corpus/` each round (per `CORPUS.md`), files gaps as lessons inside the
+child repos, and files its own round report at
+`.ufo/reports/round-<N>/aggregator.md` covering per-repo corpus verdicts and
+cross-lane learnings. It is the sole exception to lane write-scope: it may
+create or repair `corpus/` inside any child repo — nothing else.
 
 ## Evidence standard
 
