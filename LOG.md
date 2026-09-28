@@ -58,3 +58,56 @@ superseded text (`PROTOCOL.md` §Invariants).
   Also owed: resolve this round's 7 `in-flight` rows plus the lane-rounds
   that terminated after `closed_at` 18:21:16 (kake r10 18:27:56, kagi r9
   18:27:57, kasegi r12 18:27:55).
+
+## Round 6 — aggregator lane — corpus-review axis-move: the ledger became the queue
+
+- **Trigger.** At round open this lane's lowest axis was **corpus review, 2/10**
+  (`SCORECARD.md` §Aggregator lane, before-column, measured 18:02 -03 at main HEAD
+  `0a30b44`): the canonical ledger did not exist (`test -f .ufo/reports/AGGREGATE.md`
+  → false), zero durable routed-defect rows were on disk (`grep -c routed
+  .ufo/reports/round-2/AGGREGATE.md` → 0), the last refresh (§10) was written at
+  aggregator round 4 while **41** lane reports had landed in rounds 5–12
+  (`ls .ufo/reports/round-{5,6,7,8,9,10,11,12}/*.md | wc -l`), and no repo held a
+  current-round aggregator lesson. `PROTOCOL.md` names the consequence: *"a round filed
+  without the ledger duty keeps the routed-defect queue empty by construction (rounds
+  5–8 routed zero defects to disk despite open routing lines)"*.
+- **Action.** One axis-move, on corpus review. Dispatched **11 read-only L2 subagents in
+  one batched call** (MISSION.md floor is 8): six per-repo `scout`s + `critic` +
+  `reviewer` + `sentinel` + `connector` + `planner`, route buckets per MISSION.md.
+  Relocated the ledger to its canonical path (`git mv .ufo/reports/round-2/AGGREGATE.md
+  .ufo/reports/AGGREGATE.md`); re-executed **100 citations** across the six corpora and
+  the live domain surfaces; wrote one aggregator-owned lesson per child repo and
+  committed each pathspec-limited under `aggregator-shokunin <aggregator@shokunin.local>`;
+  reconciled the protocol lane's round-10 fallback queue (`D-01…D-49`) row by row against
+  the tree and filed **34 new rows** (`D-50…D-83`); refreshed the promotion inputs, the
+  mint/dormancy calls and the fleet-2 axis census; opened this lane's sections in the root
+  `SCORECARD.md` and this `LOG.md` (both files were created by the protocol lane at round
+  10, which recorded that the aggregator's axes were unscored).
+- **Outcome.** Corpus review **2 → 8** (metrics C1–C8). Canonical ledger present; **79**
+  durable `D-` rows where there were 0; 41/41 reports in the sweep window reconciled;
+  **6/6** repos carry a committed round-6 aggregator lesson and a CORPUS.md rule-10
+  verdict — all six `not conformant`, **34 majors, 65 defects**; 12 queue rows closed,
+  landed or ruled this round. Credential material: **zero**, from 15 sweep classes plus a
+  pickaxe history sweep over all seven repos. Domain source repos stayed **read-only**
+  (operator rule): `bounties` HEAD `58acb6d8` with 903 dirty entries unchanged,
+  `ufo-fsd-alpha` HEAD `ee907f1cf` with 62 unchanged; no commit or push outside
+  `VeigaPunk/shokunin` and the six `VeigaPunk/<lane>-shokunin` remotes. Two self-defects
+  filed against this lane for the exposure window its own files created (D-50, D-83).
+- **Evidence.** `.ufo/reports/AGGREGATE.md` §11 (stamp + method, §11.1 verdicts and lesson
+  commits, §11.2 the queue, §11.3 superseded verdicts, §11.4 promotion inputs, §11.5
+  proposals P-f…P-m, §11.6 mint/dormancy, §11.7 self-defects, §11.8 census);
+  `SCORECARD.md` §Aggregator lane (C1–C8, Q1–Q6, M1–M3, each with its command and the
+  measured-against commits `0a30b44` → `78bd39b`); lessons kasegi `d341b48`, kengaku
+  `3175e69` + `1bd17ec`, kake `ab8c9e2`, kumitate `0ac2272` + `31f09cd`, kotoba `778310d`,
+  kagi `ad694a2`; report `.ufo/reports/round-6/aggregator.md`.
+- **Falsifiable next iteration (round 7).** mint/dormancy calls — the lowest axis after
+  this move (6/10). Land a standing, re-runnable assessment table in the ledger: one row
+  per rostered lane (last dispatched round, last reported round, last `LOG.md` round token,
+  last commit age, verdict) and one per watchlist candidate (demand instances with
+  pointers, owning-province test, bar verdict), every row carrying the command this lane
+  re-ran in the same refresh; the operator-gated kama half recorded as **blocked-external**
+  against its L0 pointer. Falsified if any row lacks a re-run command, or if the kama row
+  is re-flagged without naming the pending operator decision. Queued behind it (highest
+  cross-lane-quality value, needs a full round): the **box-3 execution walkthrough** — one
+  non-author agent per repo runs `SKILL.md`/`corpus/` with no oral context; target 6/6
+  repos with a named non-author box-3 verdict committed in the repo.

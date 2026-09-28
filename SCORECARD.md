@@ -69,3 +69,88 @@ Protocol soundness:
 |---|---|---|---|---|
 | 10 | gate-integrity | 2 — 2/11 rounds closed, 8/58 lane-rounds recorded, 5 contradicted rows, 4 unrecorded markers, 8 untracked prompts | 6 — 11/11, 58/58, 0, 0, 0 | `MANIFEST.json` `rounds` (15 entries), `.ufo/reports/round-10/protocol.md` §Closure + §Dispatch digest |
 | 10 | protocol-soundness (enabling) | 4 — 4 ungoverned artifacts, 3 contradictions, unidentifiable round-9 rows | 6 — 0, 0, 0; cost: +189 lines | `PROTOCOL.md` step 4 semantics, marker clause, precedence bullet, file-contract `SCORECARD.md` row |
+
+---
+
+## Aggregator lane — axes: cross-lane quality, mint/dormancy calls, corpus review
+
+**Ownership.** This section is the `aggregator` lane's; §1–§Move-log above belong to the
+`protocol` lane, whose header states the aggregator's axes "are not scored here". Both
+main-repo lanes write this single path and respawn independently — the collision is filed
+as ledger row **D-77** (`.ufo/reports/AGGREGATE.md` §11.2) with a ruling owed (per-lane
+sections vs per-lane filenames). This lane appends without altering a protocol byte.
+
+Every score carries its counting command and the commit it was measured against
+(`PROTOCOL.md` file-contract row `SCORECARD.md`). **Before** column: 2026-09-28 18:02 -03
+at main HEAD `0a30b44`. **After** column: 2026-09-28 22:0xZ at main HEAD `78bd39b`.
+
+| Axis | Score (before r6) | Score (after r6) | Evidence pointer | Last change |
+|---|---|---|---|---|
+| corpus review | **2** | **8** | Before: canonical ledger absent (`test -f .ufo/reports/AGGREGATE.md` → false), zero durable queue rows (`grep -c routed .ufo/reports/round-2/AGGREGATE.md` → 0), last refresh §10 written at aggregator round 4 with 41 lane reports unswept, 0/6 repos holding a current-round aggregator lesson. After: ledger §11 refresh 4 at the canonical path, 79 `D-` rows, 41/41 reports swept, 6/6 verdicts, 6/6 lessons committed + pushed, 100 citations re-executed. Metrics C1–C8 | round 6 |
+| cross-lane quality | **4** | **7** | Before: last fleet quality review was refresh 3 (round 4); the fleet-2 axis framework had never been audited (0/6 committed cards); five standing main-repo claims were stale or false and unflagged. After: 6/6 cards audited against the AXES contract with the gaps named, 7 protocol/integrator-owned correction rows filed, promotion inputs refreshed for all six by a non-author, contested scope re-flagged, the axis-rollout template + per-axis proxies produced and routed. Metrics Q1–Q6 | round 6 |
+| mint/dormancy calls | **5** | **6** | Before: kama mint-eligible since refresh 3 with no integrator ruling in rounds 9–10; the dormancy rule had never been applied (`grep -rn dormant MANIFEST.json` → 0). After: kama re-tested and surfaced (L0 question exists at r10), four watchlist candidates assessed, one new candidate ruled below the bar, dormancy applied fleet-wide with commands (0 dormant). Metrics M1–M3 | round 6 |
+
+### Metrics (before → after, with counting commands)
+
+Corpus review:
+
+| # | Metric | Before | After | Command |
+|---|---|---|---|---|
+| C1 | canonical ledger present | 0 | 1 | `test -f .ufo/reports/AGGREGATE.md && echo 1 \|\| echo 0` |
+| C2 | durable routed-defect rows in the ledger | 0 | 79 | `grep -cE '^\| D-' .ufo/reports/AGGREGATE.md` |
+| C3 | lane reports in the sweep window reconciled | 0 / 41 | 41 / 41 | `ls .ufo/reports/round-{5,6,7,8,9,10,11,12}/*.md \| wc -l` |
+| C4 | committed round-6 aggregator lessons | 0 / 6 | 6 / 6 | `for d in kasegi kengaku kake kumitate kotoba kagi; do git -C $d-shokunin ls-files corpus/lessons/round-6-aggregator-audit.md \| wc -l; done` |
+| C5 | per-repo corpus verdicts emitted this round | 0 | 6 (all `not conformant`) | `.ufo/reports/AGGREGATE.md` §11.1 table |
+| C6 | citations re-executed against live surfaces | 0 | 100 | per-lesson `awk '/^## Re-executed citations/{f=1;next} /^## /{f=0} f' \| grep -c '^\|'` minus 2 header rows (kasegi's section is a bullet list → `grep -c '^- '`), summed |
+| C7 | aggregator lane-rounds between ledger refreshes | 2 (r4 → r6, r5 filed a 254-byte marker) | 1 (this refresh) | `.ufo/state/aggregator.round`; `wc -c .ufo/reports/round-5/aggregator.md` → 254 |
+| C8 | aggregator self-defects filed | 6 (§10.6, round 4) | 8 (§11.7), incl. one new hazard class: a lane commit swept this lane's staged ledger rename (`ade32e4`) | `.ufo/reports/AGGREGATE.md` §11.7 |
+
+Cross-lane quality:
+
+| # | Metric | Before | After | Command |
+|---|---|---|---|---|
+| Q1 | child repos with a committed `SCORECARD.md` | 0 / 6 | 6 / 6 (**lane work, not this lane's move** — five lanes landed cards inside this round) | `for d in …; do git -C $d-shokunin ls-files SCORECARD.md \| wc -l; done` |
+| Q2 | committed cards audited against the AXES contract | 0 / 6 | 6 / 6 | lessons §Fleet-2 axis-framework state; ledger §11.8 |
+| Q3 | cards carrying falsified or non-re-derivable numbers | unmeasured | 3 of 6 named (kagi D-65, kumitate D-59, kotoba D-29) | ledger §11.2 rows |
+| Q4 | cards with no measured-against commit hash | unmeasured | 2 of 6 (kasegi, kake) — D-58 | `grep -coE '\b[0-9a-f]{7,40}\b' <repo>/SCORECARD.md` |
+| Q5 | protocol/integrator-owned correction rows filed by this lane | 0 | 7 (D-62, D-73, D-74, D-75, D-77, D-78, D-79) | `grep -cE '^\| D-(62\|73\|74\|75\|77\|78\|79) ' .ufo/reports/AGGREGATE.md` |
+| Q6 | non-author promotion inputs current for | 6 repos at refresh 3 (round 4) | 6 repos at refresh 4 (round 6) | ledger §11.4 |
+
+Mint / dormancy:
+
+| # | Metric | Before | After | Command |
+|---|---|---|---|---|
+| M1 | watchlist candidates assessed with a written ruling or bar test | 4 at refresh 3 | 5 (kama re-tested, kessho trigger restated, umihotaru/kagemusha no instance, axis-framework stewardship ruled below bar) | ledger §11.6 |
+| M2 | mints executed | 0 | 0 — correct: the bar is met only by kama and the ruling is operator-side | `python3 -c "import json;print([r.get('minted') for r in json.load(open('MANIFEST.json'))['rounds']])"` → 15 × `[]` |
+| M3 | repos with a dormancy assessment on record | 0 | 6 (0 dormant) | `grep -oE 'round[- ]([0-9]+)' <repo>/LOG.md \| sort -u -V \| tail -1` + `git -C <repo> log -1 --format='%ar'` |
+
+### Planned
+
+- **round 7 — mint/dormancy calls (lowest at 6).** Move: make the two calls *standing and
+  re-runnable* instead of one-off prose — a ledger §12 assessment table with one row per
+  rostered lane (dormancy: last dispatched round, last reported round, last `LOG.md` round
+  token, last commit age, verdict + command) and one row per watchlist candidate (demand
+  instances with pointers, owning-province test, bar verdict), re-tested every refresh.
+  Falsifiable target: 6/6 lanes and 5/5 candidates carry a row whose command this lane
+  re-ran in the same refresh; the operator-gated half (kama, D-40) is recorded as
+  **blocked-external** with the L0 pointer rather than silently re-flagged. Before→after:
+  M3 6 → 6 with commands inline, plus a new M4 "candidates with a dated bar test" 0 → 5.
+- Queued behind it (highest value, needs a full round): **cross-lane quality** — the box-3
+  execution walkthrough, one non-author agent per repo running `SKILL.md`/`corpus/` with no
+  oral context. It is the only measurement that can convert the fleet-wide `[~]` on box 3
+  into an `[x]` (ledger §11.4).
+
+### Retired
+
+- none. No axis is saturated and none is a wrong fit: corpus review still finds every repo
+  non-conformant (6/6), cross-lane quality has 78 open queue rows, and mint/dormancy has
+  never had a positive dormancy case to test the rule against. A split of
+  "mint/dormancy calls" into `mint-calls` (operator-gated) and `dormancy-calls`
+  (lane-measurable) is *proposed but not taken*: the round-7 move covers both halves in one
+  table, and a split that only relabels rows would reduce comparability with refreshes 3–4.
+
+### Move log
+
+| Round | Axis | Before | After | Evidence |
+|---|---|---|---|---|
+| 6 | corpus review | 2 — no canonical ledger, 0 durable queue rows, 41 lane reports unswept, 0/6 current lessons, last refresh 2 lane-rounds old | 8 — canonical ledger relocated + refresh 4, 79 `D-` rows, 41/41 swept, 6/6 lessons committed and pushed, 6/6 verdicts, 100 citations re-executed | `.ufo/reports/AGGREGATE.md` §11 (this file's C1–C8); lessons `d341b48`, `1bd17ec`, `ab8c9e2`, `31f09cd`, `778310d`, `ad694a2`; report `.ufo/reports/round-6/aggregator.md` |
