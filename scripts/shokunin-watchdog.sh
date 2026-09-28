@@ -55,17 +55,20 @@ while :; do
       ts=$(date +%s)
       first_round=$((n+1))
       bump "$lane" "$first_round"
-      "$UFO" launch --run-id "shokunin-r1-${lane}-r${ts}" \
+      out=$("$UFO" launch --run-id "shokunin-r${first_round}-${lane}-r${ts}" \
         --session-id "sess-${lane}-${ts}" \
         --title "r1:${lane}" --substrate omp --fleet shokunin \
         --cwd "${LANE_CWD[$lane]}" \
         -- omp --model "${LANE_MODEL[$lane]}" --config "$OV" \
-           "@${SK}/.ufo/prompts/${lane}-L1.md" >/dev/null 2>&1 || true
-      echo "$(date -Is) launch ${lane} round=${first_round}" >> "$SK/.ufo/watchdog.log"
+           "@${SK}/.ufo/prompts/${lane}-L1.md" 2>&1 || true)
+      mid=$(printf '%s' "$out" | grep -o '"missionId": "[^"]*"' | head -1 | cut -d'"' -f4)
+      [ -n "$mid" ] && echo "$mid" > "$SK/.ufo/state/$lane.mission"
+      echo "$(date -Is) launch ${lane} round=${first_round} mission=${mid:-none}" >> "$SK/.ufo/watchdog.log"
     elif [ "$n" -lt "$MAX_ROUNDS" ]; then
       next=$((n+1)); bump "$lane" "$next"
-      "$UFO" steer --mission "shokunin-r1-${lane}" --text "$(steer_for "$lane" "$next")" >/dev/null 2>&1 || true
-      echo "$(date -Is) steer ${lane} -> round ${next}" >> "$SK/.ufo/watchdog.log"
+      mid=$(cat "$SK/.ufo/state/$lane.mission" 2>/dev/null || echo "shokunin-r1-${lane}")
+      "$UFO" steer --mission "$mid" --text "$(steer_for "$lane" "$next")" >/dev/null 2>&1 || true
+      echo "$(date -Is) steer ${lane} -> round ${next} via ${mid}" >> "$SK/.ufo/watchdog.log"
     fi
   done
   echo "$(date -Is) tick=$tick" >> "$SK/.ufo/watchdog.log"
