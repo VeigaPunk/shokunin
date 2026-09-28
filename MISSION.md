@@ -46,6 +46,15 @@ batched `task` call. Route bucket (persisted globally + `/tmp/fleet-override.yml
 
 Commit inside the owning repo then `git push`. Reports: `.ufo/reports/round-<N>/<lane>.md` on the main repo, commit + push.
 
+## Push scope — hard rule
+
+Lanes push ONLY to `VeigaPunk/shokunin` (main repo) or their own
+`VeigaPunk/<lane>-shokunin` remote. Domain source trees (e.g.
+`~/Projects/origin-work/ufo-fsd-alpha`, `~/Projects/bounties`,
+`~/Projects/webzites`) are read-only surfaces: never commit there, never
+push to their remotes. Work that belongs upstream is documented in the lane
+report; the operator owns those pushes.
+
 ## L0 side channel
 
 The operator is reachable via `.ufo/l0-questions.md` in this repo: append a
