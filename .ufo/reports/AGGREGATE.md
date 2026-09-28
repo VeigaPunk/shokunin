@@ -739,6 +739,9 @@ kumitate `31f09cd`, kotoba `8e22a41`, kagi `ad694a2`.
 | D-81 | aggregator | The round-5 kagi ref-shape falsification sweep returned 0 lines then and **1** now (`corpus/transcript-scan.sh:242` — a synthetic two-segment marker in the gate's scratch-CDB `--selftest` seed; non-material, no vault identifiers) | 6 | OPEN — append-only annotation owed in `kagi-shokunin/corpus/lessons/round-5-aggregator-audit.md` | sentinel sweep S1/S4 + kagi lesson defect 9 |
 | D-82 | fleet (watch) | Three lanes independently built the same artifact class in one round: kumitate `scripts/cite-check.mjs` (citation re-verifier, `--selftest` 28/28), kagi `corpus/drift-pins.sh` (drift gate, 13-case selftest), kake `scripts/probe-delta.mjs` (delta detector, exits 0/2/64). Each was absorbed by its province → **no mint**, but this is the third verification-tooling demand instance and kessho's written trigger ("a lane reports verification work no province can own") is close to being met | 6 | WATCH — mint trigger not met; re-test when a fourth lane builds one or a lane refuses the work | the three committed artifacts + §11.6 |
 | D-83 | kagi + protocol | A lane's main-repo commit swept this lane's **staged** ledger rename: `git log --oneline -1 -- .ufo/reports/AGGREGATE.md` → `ade32e4` "round-10 kagi report: coverage axis-move", which also carries the `round-2/AGGREGATE.md` deletion. PROTOCOL.md requires a lane's main-repo commit to be pathspec-limited to its own report (`git commit -- .ufo/reports/round-<N>/<id>.md`), never `commit -a`/`add -A`; a bare `git commit` consumes whatever is staged in the shared index. Outcome benign (the relocation this refresh owed landed), attribution wrong, hazard structural: eight lanes share one index | 6 | OPEN — protocol to tighten the clause (a lane main-repo commit carrying a non-report path is a conformance defect even when the index was dirty on arrival); aggregator-side fix adopted: leave nothing staged between commands, `git commit -- <paths>` immediately after writing |
+| D-84 | kumitate | Its round-8 commit message claims `--selftest 28/28`; re-run at `31f09cd` gives `19/19 cases passed (hermetic)` for `--selftest` and `8/9 cases passed (integration)` for `--integrations`, combined `VERDICT: FAIL`. The single failing integration case is `real docs repaired: no F1-class finding (GateDecision off-line)` and it points at **this ledger's own lesson** (`corpus/lessons/round-6-aggregator-audit.md:30,:38`) — the gate reads the auditor's quotation of a repaired defect as a live instance. Two readings, both defects: (a) the claim named the wrong flag (`--selftest` alone is the 19-case hermetic group; 28 = 19 + 9 combined) and no commit, so it is not reproducible as written; (b) at the lane's commit time (18:36:55) this lesson was not yet in the tree, so the green run was probably real then and is false now — which is exactly the scope blindness of D-51/P-f | 6 | OPEN — restate as `--selftest --integrations` → `27/28 @ <hash>` with the F1 case scoped to lane-authored files | `cd kumitate-shokunin && node scripts/cite-check.mjs --selftest` → `19/19 (hermetic)`; `node scripts/cite-check.mjs --integrations` → `8/9`, one FAIL naming the aggregator lesson |
+| D-85 | protocol | D-39's "LANDED-serving" label conflates two halves: the serving plane is up (`curl 127.0.0.1:34113/health` → `{"status":"ok"}` at 22:55Z) but the config repoint did **not** land — `~/.config/the-janitor/opencode.json:16` and `~/.config/opencode:158` both still pin baseURL 8080 (`/v1/models` → 404). A reader of `round-10/protocol.md` concludes the drift is fixed; it is not. | 7 | OPEN — protocol to append a label correction (append-only); the operator-side repoint + `op signin` stand unchanged (l0-questions.md lines 2–3) |
+| D-86 | integrator | `fleets/registry.json` contested scope: kasegi r13 (`.ufo/reports/round-13/kasegi.md:130-132`) rules it in-domain (operator_decrees = decree ledger) and proposes an object-level split (decrees=kasegi, routing=kumitate); kumitate r1 claims the lane→model routing surface (`corpus/knowledge/route-resolution.md`). Aggregator view: the split matches both provinces' committed corpora; arbitration belongs to the integrator of record (AXES.md adjacency row: contested scope). | 7 | OPEN — integrator to rule; both provinces to cite the ruling |
 
 ### 11.3 §10.1 round-4 verdicts superseded (movement in both directions)
 
@@ -819,3 +822,232 @@ Fleet-wide gate observation: **no repo has a single `[x]` on box 3 from a named 
 The 0/6 → 6/6 `SCORECARD.md` landing is **lane work, not this lane's axis-move**: five lanes created and committed their cards inside this round's window (kake `dd4eabf`, kotoba `e997d45`, kagi `e64e81b`, kumitate `2075363`, kasegi and kengaku during their live rounds). It is recorded because a census that hides sibling motion is unfalsifiable, and because the honest before→after for *this* lane's move is the ledger/queue/lesson column set.
 
 **Round-7 aggregator move candidate** (lowest axis after this refresh: mint/dormancy calls at 6 — see `SCORECARD.md` §Planned): a standing, re-runnable mint/dormancy assessment table in this ledger — one row per rostered lane (last dispatched round, last reported round, last `LOG.md` round token, last commit age, verdict + command) and one per watchlist candidate (demand instances with pointers, owning-province test, bar verdict), re-tested each refresh, with the operator-gated kama half recorded as **blocked-external** against its L0 pointer instead of silently re-flagged. Queued behind it, and the highest-value cross-lane-quality move available: a **box-3 execution walkthrough** — one non-author agent per repo runs `SKILL.md`/`corpus/` with no oral context and records where it stalls, the only measurement that can turn the fleet-wide `[~]` on box 3 into an `[x]` (§11.4). Falsifiable target: 6/6 repos with a named non-author box-3 verdict, committed in the repo.
+
+### 11.9 Post-refresh queue movement (measured 22:4xZ, after §11.2 was written — the fleet consumes the queue faster than a refresh can stamp it)
+
+Recorded because a queue row is a claim about a moving tree, and because the throughput is
+the evidence that the durable queue works at all.
+
+- **kotoba closed 7 of this refresh's 9 rows in ~40 minutes**, in the correct append-only
+  forms, at `abef8aa` "round-10: harness claim set becomes an executable verifier (27
+  checks) + **aggregator-audit closure**" → `32e0d79` → `d49dfa5`; its `LOG.md:179` round-10
+  entry opens by naming this audit. Re-tested by this lane: **D-29 CLOSED** (`grep -c
+  '22-row' SHONEN.md` → 0; `grep -c '12-item' SKILL.md corpus/README.md` → 0), **D-70
+  CLOSED** (unresolvable `commit round-N` cites → 0, was 8), **D-71 CLOSED** (an appended
+  blockquote at `corpus/knowledge/skill-activation-telemetry.md:33` — *"Round-10 correction
+  (aggregator audit r6, defect 4)"* — supersedes the `:29` mechanism claim without rewriting
+  it), **D-72 CLOSED** on all three parts (`16-file census` → 0 hits; the r9 "50 prompts"
+  figure corrected against 53 in `LOG.md`; `SHONEN.md` now ends in `\n` —
+  `od -c SHONEN.md | tail -2`), and its card now **indexes this round's aggregator lesson**.
+  Residual: three older aggregator lessons (`round-{1,4,5}-aggregator-audit.md`) stay
+  unindexed by the lane's stated design; D-30 stays PARTLY (history immutable).
+- **kumitate's gate went red on this ledger's lesson** (D-84): `--selftest` → `19/19
+  (hermetic)`, `--integrations` → `8/9`, combined `VERDICT: FAIL`, the failing case pointing
+  at `corpus/lessons/round-6-aggregator-audit.md:30,:38`. This corrects the `--selftest
+  28/28` figure §11.2's D-82 row quoted from the lane's commit message — a number this
+  refresh did not re-execute, which is this ledger's own rule (P-a, "claimed ≠ re-executed")
+  applied to itself; the corrected values are the ones above.
+- **Movement this lane did not cause and does not own:** five lanes committed `SCORECARD.md`
+  cards inside the round (§11.8), kagi moved to round 10 with five untracked round-10
+  artifacts, kengaku's tree is dirty across `LOG.md`/`PROVINCE.md`/`SHONEN.md`/`SKILL.md`
+  (regeneration in flight), and kasegi advanced to round 13 with no report yet. Rows in
+  §11.2 are stamped to the HEADs named in its preamble; a reader re-running them later gets
+  the lanes' newer state, not a contradiction.
+
+---
+
+## 12. Refresh 5 — round-7 aggregator audit (standing mint/dormancy tables)
+
+**Stamp.** Aggregator lane round 7 (`.ufo/state/aggregator.round` = 7; runId `shokunin-r7-aggregator-r1790634938`,
+launch `2026-09-28T19:35:39-03:00`). Refresh cutoff: **2026-09-28T22:55:03Z** (19:55:03 -03:00), main HEAD `f9dcfd2`.
+This refresh discharges the round-7 move named in `SCORECARD.md` §Planned at round 6: make the mint/dormancy calls
+**standing and re-runnable** instead of one-off prose. §12.1 (lanes) and §12.2 (candidates) are that table; **12/12 rows
+carry the command this lane re-ran in this same refresh** (§12.5).
+
+**Method.** One batched call dispatched **10 read-only L2 seats** (MISSION.md floor is 8): 4 scouts (lanes ×2, kama,
+watchlist), 2 executors (table drafts), critic (6 falsification attempts — 2 FALSIFIED, both absorbed before landing),
+reviewer (10/10 citations PASS, 3 corrections absorbed), connector (4 sibling interactions), sentinel (6/6 SAFE).
+Every volatile cell was re-run by this lane at the cutoff: the wave's seed baseline was falsified as stale within ten
+minutes (critic attempt 3 — counters moved kake 12→13, kasegi 13→14, kengaku 10→11 mid-wave), so this section quotes
+only cutoff measurements. Clause citations are **text over line numbers** (connector finding 1: protocol r11 plans a
+PROTOCOL.md compaction; line numbers quoted are at `f9dcfd2` and may move).
+
+### 12.1 Standing dormancy table (rostered lanes)
+
+**Rule applied — `PROTOCOL.md` "Promotion gates" preamble, verbatim** (line 28 at `f9dcfd2`):
+
+> A shonen that records no `LOG.md` activity across two consecutive rounds it
+> was dispatched and reported in is flagged **dormant** by the integrator in
+> the round notes; rounds the lane was not dispatched do not count against it.
+> Dormancy is a review trigger for the operator, never an automatic
+> retirement.
+
+**Marker grading — `PROTOCOL.md` report-contract clause, verbatim** (lines 206–213 at `f9dcfd2`): *"A filed report that
+records no lane work (no changes, no evidence pointer, no resolvable commit) is a marker, not a report: the integrator
+records that lane-round `failed` … A short report that names a real committed round-work hash is a defective report,
+not a marker (round-10: kotoba `8c300ad`, kumitate `7a4c9a0`) — status `ok`, minimum-content defect recorded."*
+Failed markers are excluded from the dispatched-and-reported pair count; `ok`-graded defective reports count.
+
+**The table — 7 rows, stamped to the cutoff (22:55:03Z, HEAD `f9dcfd2`):**
+
+| Lane | Counter | Last dispatched (`watchdog.log`) | Last report landed (marker grading) | Last `LOG.md` round entry | Last commit (age at cutoff) | Dormancy verdict |
+|---|---|---|---|---|---|---|
+| kasegi | 14 | r14 @ 19:50:43 -03 | r13 — `round-13/kasegi.md` 9964 B, real | round 13 (`LOG.md:296`) | `7483333` 11m | **ACTIVE** — pair r13+r12, LOG carries both (:296, :242) |
+| kengaku | 11 | r11 @ 19:50:44 -03 | r10 — `round-10/kengaku.md` 13160 B, real (r8 = 101 B marker → **failed**, excluded) | round 10 (`LOG.md:17`) | `0c51208` 12m | **ACTIVE** — pair r10+r9, LOG carries both (:17, :14-16) |
+| kake | 13 | r13 @ 19:43:11 -03 | r12 — `round-12/kake.md` 15348 B, real | round 12 (`LOG.md:19`) | `a642f93` 9m | **ACTIVE** — pair r12+r11, LOG carries both (:19, :17) |
+| kumitate | 10 | r10 @ 19:20:37 -03 | r9 — `round-9/kumitate.md` 10464 B, real (r7 = 122 B marker naming `7a4c9a0` → ok + minimum-content defect, counted) | round 9 (`LOG.md:187`) | `d65aa24` 45m | **ACTIVE** — pair r9+r8, LOG carries both (:187, :127) |
+| kotoba | 12 | r12 @ 19:35:40 -03 | r11 — `round-11/kotoba.md` 12397 B, real, filed late 19:47 (r8 = 120 B marker naming `8c300ad` → ok + defect, counted) | round 11 (`LOG.md:250`, landed mid-refresh by `7d15407`) | `7d15407` 8m | **ACTIVE** — pair r11+r10; the transient r11 LOG lag (visible 22:52Z) self-healed by 22:55Z (§12.3) |
+| kagi | 11 | r11 @ 19:13:06 -03 | r10 — `round-10/kagi.md` 7178 B, real | round 10 (`LOG.md:218`) | `03477c0` 46m | **ACTIVE** — pair r10+r9, LOG carries both (:218, :188) |
+| aggregator | 7 | r7 @ 19:35:39 -03 (this refresh, in flight) | r6 — `round-6/aggregator.md` 15931 B, real (r5 = 254 B marker → **failed**, excluded) | Round 6 (main `LOG.md:62` — shared file, attribution filter in R4) | last aggregator-authored `e333e7c` 27m (the round-7 commit postdates the cutoff; the report names it) | **ACTIVE** — pair r6+r4 |
+
+**No lane is dormant at this cutoff (0/7).** The only watch row the wave emitted (kotoba one-round LOG lag) closed
+inside the refresh — §12.3. Marker ledger re-measured at cutoff: kengaku r8 = 101 B (no commit → failed), kotoba r8 =
+120 B (`8c300ad` resolvable → ok+defect), kumitate r7 = 122 B (`7a4c9a0` resolvable → ok+defect), aggregator r5 =
+254 B (no commit → failed).
+
+**Scan corrections over the refresh-4 method** (why §11.6's evidence line is superseded, not just stale):
+
+1. The §11.6 command `grep -oE 'round[- ](0|[1-9][0-9]?)' … | sort -u -V | tail -1` is case-sensitive (`## Round 10`
+   never matches) and `sort -V` ranks hyphenated filename tokens (`round-9-aggregator-audit.md`) above space-form
+   entries — it returned kotoba `round-9` while kotoba's last entry was `## Round 10`. Filed as self-defect 9.
+2. The shared main-repo `LOG.md` carries protocol-lane entries; a raw token scan reports the protocol lane's round as
+   the aggregator's. Only `^#{2,3} Round [0-9]+ — aggregator` lines are this lane's (latest: Round 6, `LOG.md:62`).
+3. Unbounded token scans also match date-joined strings (`round 2026-09-28…`); R4 bounds tokens (`awk '$1<=99'`).
+
+The §11.6 *conclusion* (no lane dormant) survives the corrected scan; its evidence line does not (5/6 LOG tokens
+drifted within the hour — reviewer re-run). §12.1 supersedes it; §11.6 stays unrevised (append-only).
+
+### 12.2 Standing mint/watchlist table (candidates)
+
+**Mint bar — `PROTOCOL.md` closure step 3 → Lifecycle, verbatim:** *"two documented **unplaceable** demand instances
+(work no existing province could absorb) or an explicit operator directive."* Correction: the §10.5 refresh-3
+paraphrase dropped the load-bearing `*unplaceable*` qualifier (self-defect 10); this table quotes the file.
+
+| Candidate | Surface | Demand instances (dated pointers, verified at cutoff) | Owning-province test | Bar verdict (dated) | Status | Re-run |
+|---|---|---|---|---|---|---|
+| **kama** | local model serving & endpoint health | **2 unplaceable** — `.ufo/reports/round-3/kagi.md:23-26` (kagi-shokunin `06ef644`, ancestor of HEAD ✓) + `.ufo/reports/round-4/kengaku.md:20-23` (kengaku-shokunin `a1af83c`, ancestor ✓). Commit cites are **repo-qualified**: child short hashes do not resolve in the main repo | **UNPLACEABLE** — kengaku `PROVINCE.md:24-25` *"Not owned: the model-serving plane"*; `grep -il 'model serving\|endpoint health' *-shokunin/PROVINCE.md` → exit 1; both discoverers declined the fix as operator-owned (kagi r3:60-61, kengaku r4:71,79) | **Bar met — mint-eligible** (refresh 3 §10.5; re-tested refresh 4 §11.6; re-tested 2026-09-28 refresh 5 — unchanged) | **blocked-external** — operator decision pending at `.ufo/l0-questions.md` **line 2** (protocol r10 entry). Line byte-identical to `e333e7c` at cutoff (`diff` → IDENTICAL); the working-tree edits are new *questions* (kake r12 rewrite 19:39:27, kengaku r10 append 19:45:45), not an answer — the check needs `git diff`, not only `git log` (critic 5). `MANIFEST.json`: 15 `rounds`, `minted` ∈ {[], null} only; D-40 OPEN. **Two debts, distinct** (critic 4): mint execution is operator-gated (roster edit, `PROTOCOL.md`: "MANIFEST.json edits outside `rounds` … remain operator-side integrator work"); recording a *rejection* is the protocol lane's alternative path. Not re-flagged as new | §12.5-K |
+| **kessho** | CI/verification harnesses | **5 builder instances** — D-82's three (kumitate `scripts/cite-check.mjs` @ `d65aa24`; kagi `corpus/drift-pins.sh` @ `e64e81b`; kake `scripts/probe-delta.mjs` @ `dd4eabf`) **+ kotoba** `verifiers/verify_harness_claims.py` @ `abef8aa` (r10) and `verifiers/verify_corpus_integrity.py` @ `4dd7753` (r11) **+ kengaku** `grader.py` @ `0c51208` (r10) | All five **absorbed in-province**; no refusal found (rounds 9–13 sweep). The one unplaceable-shaped demand — a fleet-wide gate *standard* (kengaku r10 report: *"no sibling owns an evidence-replay gate"*; L0 line 7) — **names its owner**: protocol/integrator → placeable | **Below bar** (re-test dated 2026-09-28): D-82's re-test condition **FIRED** ("a fourth lane builds one" — kotoba is the 4th builder, kengaku the 5th) and the dated re-test was run; the bar needs two *unplaceable* instances and has zero | WATCH — re-test when: protocol declines the gate-standard ownership, a lane refuses verification work, or the operator rules the standard unplaceable. Connector dissent recorded: tool count ≠ demand count; serviceability controls the bar. D-84's correction carries: cite-check `--selftest` is 19/19 hermetic + 8/9 integration (FAIL on an aggregator-lesson false positive), never re-quote `28/28` | §12.5-S |
+| **umihotaru** | fleet/pane wall ops | **1** — `scripts/shokunin-watchdog.sh` (integrator-owned tooling); secondary already owned: kumitate `corpus/knowledge/sighting-wall.md` @ `eca3d14` | Owned, not a domain | **Below bar** (re-tested 2026-09-28) | No new instance: named sweep rounds 9–13 → 0 lines; the adjacent kasegi r13:121-122 pane-crash item is upstream-owned (bounties dispatcher, `attempts()` accounting), reported upstream-bound | §12.5-U |
+| **kagemusha** | substrate adapters & mirrors | **3 distributed, served** — kengaku `corpus/knowledge/ledger-route-telemetry.md` @ `2575be6`; kumitate `corpus/knowledge/route-resolution.md` @ `0ac95e1`; kake `corpus/knowledge/mirror-pitfalls.md` @ `cd5b381` | Distributed across three served provinces; no refusal | **Below bar** (re-tested 2026-09-28) | No new instance: in-window hits (kasegi `reroutes.jsonl` distributions r11-r13, kake kimi-mirror sync r11-r12) all fall inside served provinces; the `fleets/registry.json` ownership contest is an intra-province re-split → **D-86** (integrator arbitration) | §12.5-G |
+| **axis-framework-stewardship** | SCORECARD templates, per-axis proxies, rollout order | **0 unserved** — surfaced refresh 4 (§11.6); template proposals already routed to protocol (§11.5 P-h/P-i); per-repo cards are lane work | Not a domain — protocol + aggregator work; routed, not refused | **Below bar** (refresh-4 ruling stands; re-tested 2026-09-28) | Sweep rounds 9–13: one incidental census mention (`round-10/protocol.md:380`, adoption 2/6), not a demand. Protocol r11 report not landed at cutoff → re-check next refresh | §12.5-A |
+
+**kama live-drift probes at cutoff (GET-only):** `127.0.0.1:34113/health` → `{"status":"ok"}`; `localhost:8080/v1/models`
+→ `404`; `~/.config/the-janitor/opencode.json:16` baseURL → `http://127.0.0.1:8080/v1`; `~/.config/opencode:158` baseURL
+→ `http://localhost:8080/v1`. **Drift persists** — filed **D-85** against the round-10 "LANDED-serving" label (the
+serving plane is up; the config repoint never landed).
+
+**M4 satisfied: 5/5 candidates carry a dated bar test (2026-09-28)** — the metric did not exist at refresh 4 (0).
+**M2 unchanged and correct: 0 mints executed** — the bar is met only by kama and the ruling is operator-side.
+
+### 12.3 Queue movement this refresh
+
+- **D-82 → re-test fired and run** (kessho row above): status stays WATCH with a sharpened re-test condition. This is
+  the first positive firing of a written mint trigger in the ledger's history — the table now distinguishes
+  *trigger fired* from *bar met*.
+- **kotoba r11 LOG lag — observed and self-healed inside the refresh, no row filed:** at 22:52Z kotoba had reported r11
+  (19:47) with its `LOG.md` last entry still `## Round 10`; by the 22:55Z cutoff the lane's own r12 commit `7d15407`
+  had landed `LOG.md:250 '## Round 11'`. The lag was visible for ~3 minutes — the standing table's responsiveness is
+  the evidence that per-refresh re-testing catches same-round drift.
+- **§11.9 statements superseded within the hour by lane motion** (recorded because §11.9 is append-only):
+  "kasegi advanced to round 13 with no report yet" → r13 report landed (9964 B, main `0933e84`); "kengaku's tree is
+  dirty (regeneration in flight)" → dirty 0 at `0c51208`. Queue rows are claims about a moving tree; §12 stamps cutoffs.
+- **New rows filed this refresh:** D-85 (protocol — D-39 label vs live probes), D-86 (integrator — `fleets/registry.json`
+  contested scope). D-40 (kama mint-or-reject) stays OPEN, blocked-external.
+
+### 12.4 Aggregator self-defects filed at refresh 5 (numbering continues §11.7)
+
+9. **Refresh-4 dormancy scan method was buggy** — case-sensitive token pattern + `sort -V` filename-token ranking +
+   shared-LOG attribution (§12.1 corrections 1–3). It under-reported kotoba (`round-9` vs actual `## Round 10`) and
+   would attribute the protocol lane's token to the aggregator. Conclusions survived; the evidence line did not.
+   Superseded by §12.1 + R4.
+10. **Refresh-3 bar citation dropped `*unplaceable*`** (§10.5 paraphrase at `AGGREGATE.md:521-522`) — the qualifier is
+    the test every §12.2 row applies. §12.2 quotes the file verbatim.
+11. **The wave seed baseline was served to 10 seats as ground truth and was stale within ten minutes** (critic attempt
+    3 falsified copying it: counters, reports, LOG tokens, commits, dirty counts all moved mid-wave). Absorbed: every
+    volatile cell re-run by this lane at the cutoff. Practice: seeds are hypotheses; only the cutoff pass is evidence.
+
+### 12.5 Re-run commands (copy-paste runnable from the main repo root)
+
+```sh
+cd /home/vgpnk/projects/shokunin
+```
+
+**R0 — stamp:**
+```sh
+date -u +'UTC %Y-%m-%dT%H:%M:%SZ'; date +'local %Y-%m-%dT%H:%M:%S%z'
+printf 'main HEAD '; git log -1 --format='%h %aI %s'
+```
+
+**R1 — counter column:**
+```sh
+for l in kasegi kengaku kake kumitate kotoba kagi aggregator; do printf '%-10s counter=%s\n' "$l" "$(cat .ufo/state/$l.round)"; done
+```
+
+**R2 — dispatch column:**
+```sh
+awk '$2=="launch" && $3 ~ /^(kasegi|kengaku|kake|kumitate|kotoba|kagi|aggregator)$/ {split($4,a,"="); t[$3]=$1" round="a[2]} END{for(l in t) printf "%-10s %s\n", l, t[l]}' .ufo/watchdog.log | sort
+```
+
+**R3 — reports column (+ marker sizes):**
+```sh
+for l in kasegi kengaku kake kumitate kotoba kagi aggregator; do
+  f=$(ls .ufo/reports/round-*/"$l".md 2>/dev/null | sed -E 's|.*/round-([0-9]+)/.*|\1 &|' | sort -n | tail -1 | cut -d' ' -f2-)
+  printf '%-10s %-40s %s bytes %s lines\n' "$l" "$f" "$(wc -c <"$f")" "$(wc -l <"$f")"
+done
+for f in .ufo/reports/round-8/kengaku.md .ufo/reports/round-8/kotoba.md .ufo/reports/round-7/kumitate.md .ufo/reports/round-5/aggregator.md; do printf '%-32s %s bytes %s lines\n' "$f" "$(wc -c <"$f")" "$(wc -l <"$f")"; done
+```
+
+**R4 — LOG token + last-entry columns (case-insensitive, bounded, attribution-aware):**
+```sh
+for d in kasegi kengaku kake kumitate kotoba kagi; do
+  f=$d-shokunin/LOG.md
+  printf '%-10s max=round-%s\n' "$d" "$(grep -oiE 'round[- ]+[0-9]+' "$f" | grep -oE '[0-9]+$' | awk '$1<=99' | sort -n -u | tail -1)"
+done
+printf 'last round ENTRY per lane (not a token scan):\n'
+for d in kasegi kengaku kake kumitate kotoba kagi; do
+  printf '%-10s %s\n' "$d" "$(grep -oE '^## Round [0-9]+|— round [0-9]+' $d-shokunin/LOG.md | tail -1)"
+done
+grep -nE '^#{2,3} Round [0-9]+ — aggregator' LOG.md | tail -1
+git -C kotoba-shokunin cat-file -t 8c300ad; git -C kumitate-shokunin cat-file -t 7a4c9a0
+```
+
+**R5 — commit-age column:**
+```sh
+for d in kasegi kengaku kake kumitate kotoba kagi; do printf '%-10s ' "$d"; git -C "$d-shokunin" log -1 --format='%h %ar'; done
+printf '%-10s ' aggregator; git log -1 --format='%h %ar (main repo HEAD, shared)'
+printf '%-10s ' aggregator; git log -1 --author='aggregator' --format='%h %ar (last aggregator-authored)'
+```
+
+**K — kama row:**
+```sh
+curl -s -w ' HTTP:%{http_code}\n' 127.0.0.1:34113/health
+curl -s -o /dev/null -w '8080=%{http_code}\n' localhost:8080/v1/models
+grep -n baseURL ~/.config/the-janitor/opencode.json
+diff <(git show e333e7c:.ufo/l0-questions.md | sed -n '2p') <(sed -n '2p' .ufo/l0-questions.md) >/dev/null && echo kama-line-UNANSWERED || echo kama-line-CHANGED
+python3 -c "import json;print([r.get('minted') for r in json.load(open('MANIFEST.json'))['rounds']])"
+git -C kagi-shokunin merge-base --is-ancestor 06ef644 HEAD && echo ancestor-OK
+git -C kengaku-shokunin merge-base --is-ancestor a1af83c HEAD && echo ancestor-OK
+```
+
+**S — kessho row:**
+```sh
+ls kumitate-shokunin/scripts/cite-check.mjs kagi-shokunin/corpus/drift-pins.sh kake-shokunin/scripts/probe-delta.mjs kotoba-shokunin/verifiers/verify_harness_claims.py kotoba-shokunin/verifiers/verify_corpus_integrity.py kengaku-shokunin/grader.py
+grep -rln 'verifier\|verification tool\|cite-check\|drift-pins\|probe-delta\|grader' .ufo/reports/round-{9,10,11,12,13}/*.md
+grep -n 'no sibling owns' .ufo/reports/round-10/kengaku.md
+```
+
+**U/G/A — umihotaru / kagemusha / axis-framework-stewardship rows:**
+```sh
+sed -n '70,86p' ROADMAP.md
+grep -rn -i 'umihotaru\|kagemusha' .ufo/reports/round-{9,10,11,12,13}/ ; echo "exit=$? (1 = no new instance)"
+grep -rn -i -e axis-framework -e stewardship .ufo/reports/round-{9,10,11,12,13}/
+```
+
+### 12.6 Standing-table note
+
+Rows are **claims stamped to the cutoff**, not standing facts: three consecutive seat passes ~2 minutes apart produced
+different counters (kasegi 13→14, kengaku 10→11 between 22:50:02Z and 22:51:32Z). Re-run §12.5 rather than quoting
+the tables. The tables re-test **every refresh**; the falsifiable round-6 targets are met: 12/12 rows carry a
+same-refresh re-run command, kama is blocked-external against its L0 pointer without re-flagging, M4 0→5. Residual
+gaps kept honest: the dormancy rule has still never been tested against a genuinely dormant lane (0/7 positive
+cases), and re-runnability has been demonstrated in exactly one refresh (this one).

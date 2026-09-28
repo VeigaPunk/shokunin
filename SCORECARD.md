@@ -134,21 +134,33 @@ Mint / dormancy:
 | M2 | mints executed | 0 | 0 — correct: the bar is met only by kama and the ruling is operator-side | `python3 -c "import json;print([r.get('minted') for r in json.load(open('MANIFEST.json'))['rounds']])"` → 15 × `[]` |
 | M3 | repos with a dormancy assessment on record | 0 | 6 (0 dormant) | `grep -oE 'round[- ]([0-9]+)' <repo>/LOG.md \| sort -u -V \| tail -1` + `git -C <repo> log -1 --format='%ar'` |
 
+### Round 7 (refresh 5) — mint/dormancy axis-move
+
+Measured against main HEAD `f9dcfd2` at the refresh cutoff **2026-09-28T22:55:03Z** (this section ships in the
+round-7 commit, so it cannot cite its own hash — the report does). Before-column values are the round-6 after-state.
+
+| Axis | Score (before r7) | Score (after r7) | Evidence pointer | Last change |
+|---|---|---|---|---|
+| mint/dormancy calls | **6** | **8** | Before: calls were one-off prose (ledger §11.6); 0 candidates carried a dated bar test; the dormancy evidence line used a scan falsified this round as buggy (case-sensitive tokens, `sort -V` filename ranking, shared-LOG attribution — self-defect 9); the kama call risked re-flagging each refresh instead of pointing at its pending decision. After: standing ledger §12 tables — 7 lane rows (marker-graded per the protocol r10 rule) + 5 candidate rows, **12/12 rows carry the command this lane re-ran in the same refresh**; M4 0→5; kama **blocked-external** against `.ufo/l0-questions.md` line 2 (byte-identical to `e333e7c` at cutoff → unanswered; not re-flagged); kessho's D-82 re-test condition **fired** and got a dated re-test (still below bar — 5 builders all absorbed in-province; the gate-standard demand names protocol/integrator as owner → placeable). Residual gaps (why not 9–10): the dormancy rule has never been tested against a genuinely dormant lane (0/7 positive cases); the kama ruling remains external; re-runnability is demonstrated in exactly one refresh. | round 7 |
+
+Metrics (before → after, with counting commands):
+
+| # | Metric | Before | After | Command |
+|---|---|---|---|---|
+| M3 | rows with a dormancy assessment on record | 6 (prose, buggy scan, stale within the hour) | 7 / 7 (6 lanes + aggregator self-row), marker-graded, commands inline | `AGGREGATE.md` §12.1 table; re-run blocks R1–R5 (§12.5) |
+| M4 | candidates with a dated bar test | 0 | 5 (kama, kessho, umihotaru, kagemusha, axis-framework-stewardship — all 2026-09-28) | `AGGREGATE.md` §12.2 bar-verdict column |
+| M5 | table rows whose re-run command this lane executed in the same refresh | 0 | 12 / 12 | §12.5 blocks R0–R5 + K/S/U/G/A, re-run at the 22:55:03Z cutoff pass |
+| M6 | written mint triggers fired and re-tested in-refresh | 0 | 1 (kessho/D-82: kotoba 4th builder `abef8aa`/`4dd7753`, kengaku 5th `0c51208`; re-tested, below bar) | §12.2 kessho row + §12.5-S |
+
 ### Planned
 
-- **round 7 — mint/dormancy calls (lowest at 6).** Move: make the two calls *standing and
-  re-runnable* instead of one-off prose — a ledger §12 assessment table with one row per
-  rostered lane (dormancy: last dispatched round, last reported round, last `LOG.md` round
-  token, last commit age, verdict + command) and one row per watchlist candidate (demand
-  instances with pointers, owning-province test, bar verdict), re-tested every refresh.
-  Falsifiable target: 6/6 lanes and 5/5 candidates carry a row whose command this lane
-  re-ran in the same refresh; the operator-gated half (kama, D-40) is recorded as
-  **blocked-external** with the L0 pointer rather than silently re-flagged. Before→after:
-  M3 6 → 6 with commands inline, plus a new M4 "candidates with a dated bar test" 0 → 5.
-- Queued behind it (highest value, needs a full round): **cross-lane quality** — the box-3
-  execution walkthrough, one non-author agent per repo running `SKILL.md`/`corpus/` with no
-  oral context. It is the only measurement that can convert the fleet-wide `[~]` on box 3
-  into an `[x]` (ledger §11.4).
+- **round 8 — cross-lane quality (queued at round 6 §Planned; the highest-value move available).** The box-3
+  execution walkthrough: one **non-author** agent per repo runs `SKILL.md`/`corpus/` with no oral context; target
+  6/6 repos with a named non-author box-3 verdict committed in the repo (ledger §11.4's fleet-wide `[~]` → `[x]`).
+  Falsified if any cold run is executed by the repo's author lane, or if a verdict stays uncommitted.
+- **Standing duty (every refresh):** re-test the ledger §12 tables — rows are cutoff-stamped claims, not facts;
+  re-check axis-framework-stewardship when the protocol r11 report lands; kama stays **blocked-external** until
+  `.ufo/l0-questions.md` line 2 is answered — never re-flag it as new.
 
 ### Retired
 
@@ -164,3 +176,4 @@ Mint / dormancy:
 | Round | Axis | Before | After | Evidence |
 |---|---|---|---|---|
 | 6 | corpus review | 2 — no canonical ledger, 0 durable queue rows, 41 lane reports unswept, 0/6 current lessons, last refresh 2 lane-rounds old | 8 — canonical ledger relocated + refresh 4, 79 `D-` rows, 41/41 swept, 6/6 lessons committed and pushed, 6/6 verdicts, 100 citations re-executed | `.ufo/reports/AGGREGATE.md` §11 (this file's C1–C8); lessons `d341b48`, `1bd17ec`, `ab8c9e2`, `31f09cd`, `778310d`, `ad694a2`; report `.ufo/reports/round-6/aggregator.md` |
+| 7 | mint/dormancy calls | 6 — one-off prose calls, 0 dated bar tests, buggy dormancy scan, kama re-flag risk each refresh | 8 — standing §12 tables: 7 lane rows + 5 candidate rows, 12/12 same-refresh re-runs, M4 0→5, kessho trigger fired + dated re-test, kama blocked-external (L0 line 2) | `.ufo/reports/AGGREGATE.md` §12; `.ufo/reports/round-7/aggregator.md` (wave digest: 10 L2 seats, one batched call) |

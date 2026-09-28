@@ -112,6 +112,47 @@ superseded text (`PROTOCOL.md` §Invariants).
   non-author agent per repo runs `SKILL.md`/`corpus/` with no oral context; target 6/6
   repos with a named non-author box-3 verdict committed in the repo.
 
+## Round 7 — aggregator lane — mint/dormancy axis-move: standing, re-runnable call tables
+
+- **Trigger.** At round open this lane's lowest axis was **mint/dormancy calls, 6/10** (`SCORECARD.md` §Aggregator,
+  after-r6 column): the calls were one-off prose in ledger §11.6, no watchlist candidate carried a dated bar test, the
+  dormancy evidence line used a scan this round falsified as buggy (case-sensitive round tokens, `sort -V` ranking
+  filename tokens above real `## Round N` entries, no attribution filter on the shared main `LOG.md`), and the
+  operator-gated kama call risked being re-flagged every refresh instead of pointing at its pending decision. Round-6
+  §Planned named this exact move and its falsifiable targets (6/6 lanes + 5/5 candidates with same-refresh re-ran
+  commands; kama blocked-external against its L0 pointer; M4 0→5).
+- **Action.** One axis-move. Dispatched **10 read-only L2 subagents in one batched call** (MISSION.md floor is 8):
+  4 scouts (lanes ×2, kama, watchlist), 2 executors (§12.1/§12.2 table drafts), critic (6 falsification attempts),
+  reviewer (10 citations), connector (4 sibling interactions), sentinel (6 exposure findings) — route buckets per
+  MISSION.md. Landed ledger **§12 (refresh 5)**: standing dormancy table (7 rows, marker-graded per the protocol r10
+  rule) + standing mint/watchlist table (5 rows, dated bar tests), per-row re-run blocks (§12.5), queue movement
+  (§12.3), self-defects 9–11 (§12.4). Filed **D-85** (protocol: the D-39 "LANDED-serving" label conflates the serving
+  plane — up on 34113 — with the config repoint, which never landed: both janitor and opencode configs still pin 8080)
+  and **D-86** (integrator: `fleets/registry.json` contested scope, kasegi r13 vs kumitate r1). Absorbed both critic
+  FALSIFIED findings before landing (marker-aware `last_report` cells; every volatile cell re-run at the cutoff
+  22:55:03Z — the wave seed baseline was stale within ten minutes). Committed the round-6 ledger tail (§11.9 + D-84,
+  +32 lines uncommitted since 19:34) in the same pathspec-limited commit per sentinel mitigation (D-83-class sweep
+  hazard in the shared index).
+- **Outcome.** Mint/dormancy **6 → 8** (metrics M3–M6). Falsifiable targets met: **12/12** table rows carry the
+  command this lane re-ran in the same refresh; **M4 0→5**; kama recorded **blocked-external** against
+  `.ufo/l0-questions.md` line 2 (byte-identical to `e333e7c` at cutoff → unanswered; the working-tree edits are new
+  questions from kake r12 / kengaku r10, not answers) — not re-flagged. **kessho: the first positive firing of a
+  written mint trigger in this ledger** — D-82's re-test condition fired (kotoba 4th verification-tooling builder
+  `abef8aa`/`4dd7753`, kengaku 5th `0c51208`), dated re-test run: still below bar (all five absorbed in-province; the
+  fleet-gate-standard demand names protocol/integrator as owner → placeable; connector dissent recorded). No lane
+  dormant (0/7); the one watch row (kotoba r11 LOG lag) self-healed inside the refresh via lane commit `7d15407`.
+  0 mints executed — correct: the bar is met only by kama and minting is operator-side (`MANIFEST.json` roster scope).
+- **Evidence.** `.ufo/reports/AGGREGATE.md` §12 (stamp + cutoff, §12.1 table + R0–R5 re-run blocks, §12.2 candidate
+  table + kama probes, §12.3 movement, §12.4 self-defects, §12.6 standing-note); `SCORECARD.md` §Aggregator round-7
+  subsection (M3–M6 with commands, measured against `f9dcfd2`); `.ufo/reports/round-7/aggregator.md` (wave digest +
+  this round's commit hash); wave scratch `/tmp/fleet-r7-agg/` (10 seat artifacts, volatile — digested in ledger and
+  report). Verification: critic 6 attempts (4 SURVIVED / 2 FALSIFIED-absorbed), reviewer 10/10 citations PASS,
+  sentinel 6/6 SAFE, executor fence-identity check 6/6 + 43/43 verbatim re-run lines.
+- **Falsifiable next iteration (round 8).** cross-lane quality — the **box-3 execution walkthrough**: one non-author
+  agent per repo runs `SKILL.md`/`corpus/` with no oral context; target 6/6 repos with a named non-author box-3
+  verdict committed in the repo. Falsified if any cold run is executed by the repo's author lane or if a verdict stays
+  uncommitted. Standing: §12 re-tests every refresh — its rows are cutoff-stamped claims, not facts.
+
 ## Round 11 — protocol lane — fleet-meta axis-move: protocol soundness (compaction) + closure execution
 
 - **Trigger.** `SCORECARD.md` §Planned (round 10): compact `PROTOCOL.md`
