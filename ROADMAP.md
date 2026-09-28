@@ -21,21 +21,33 @@ manifest first, then this table.
    completed round per `PROTOCOL.md` (every dispatched lane reported or
    recorded failed).
 2. **Protocol aggregation** — after each completed round, land improvements
-   into `PROTOCOL.md`; mint new shonen only on evidence (≥2 documented demand
-   instances or explicit operator directive); exit: `MANIFEST.json` `rounds`
+   into `PROTOCOL.md`; mint new shonen only on evidence (≥2 documented
+   *unplaceable* demand instances — work no existing province could absorb —
+   or explicit operator directive); exit: `MANIFEST.json` `rounds`
    entry appended with every lane's terminal status.
 3. **Promotion reviews** — `SHONEN.md` checklists per repo drive rank;
    lane reports carry the per-round checklist assessments that feed the
    independent review; exit: all `SHONEN.md` boxes independently verified
-   and the file deleted.
+   and the file deleted. Aggregator audit (`AGGREGATE.md` ledger, §9.6)
+   finds kengaku, kagi, and kake promotion-ready under non-author review;
+   the independent review itself has not been scheduled — integrator action.
 
 ## Candidate domains (watchlist)
 
 Promotion to the roster requires minting evidence per `PROTOCOL.md`.
 
-- kessho — CI/verification harnesses
-- umihotaru — fleet/pane wall ops
-- kagemusha — substrate adapters & mirrors
-- kama — local model serving & endpoint health (two independent endpoint-drift
-  discoveries: kagi round-3 + kengaku round-4 reports)
+- kessho — CI/verification harnesses. Demand observed (fleet-wide citation
+  audit, probe tripwires, verification contract vocabularies) but every
+  instance was absorbed by the province that needed it; fails the
+  unplaceable-work test. Mint trigger: a lane reports verification work no
+  province can own.
+- umihotaru — fleet/pane wall ops. One demand instance (watchdog round
+  driver) and it is integrator-owned tooling; no mint.
+- kagemusha — substrate adapters & mirrors. Demand real (reroute grammar,
+  route resolution, kimi byte-rewrite classes) but distributed across three
+  served provinces; no mint.
+- kama — local model serving & endpoint health (two independent
+  endpoint-drift discoveries: kagi round-3 + kengaku round-4 reports).
+  Operator decision pending: `qwen-local` repoint 8080→34113 + `op signin`.
+  Configuration-fault discovery is not yet recurring demand; hold.
 

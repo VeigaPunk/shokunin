@@ -23,9 +23,11 @@ mint → shonen (apprentice) → shokunin (artisan of a domain) → jin'i-ryu (s
   telemetry it proposes and lands its own improvements (falsifiable deltas in
   `LOG.md`), with the main repo aggregating only promotion/mint decisions.
 
-A shokunin with no `LOG.md` activity across two consecutive completed rounds is
-flagged **dormant** by the integrator in the round notes; dormancy is a review
-trigger for the operator, never an automatic retirement.
+A shonen that records no `LOG.md` activity across two consecutive rounds it
+was dispatched and reported in is flagged **dormant** by the integrator in
+the round notes; rounds the lane was not dispatched do not count against it.
+Dormancy is a review trigger for the operator, never an automatic
+retirement.
 
 ## Promotion gates
 
@@ -34,7 +36,10 @@ verifier and its evidence.
 
 - **shonen → shokunin.** Every `SHONEN.md` box checked by a reviewer who did
   not author the round's changes (a fresh lane or integrator review — never
-  self-attestation). Minimum bar:
+  self-attestation; a subagent the lane dispatched is still the lane). Each
+  checked box names its reviewer — `[x] <verifier>` — and cites its evidence
+  pointer; a lane's own check of its own work is `[~]` asserted, not `[x]`.
+  Minimum bar:
   - `SKILL.md` contains at least one decision table, one error-pattern list,
     and one checklist, each citing a resolvable source (repo path, command
     output, or external document).
@@ -82,20 +87,27 @@ report naming a hash the repo does not contain fails verification.
 Every dispatched lane writes a report at
 `.ufo/reports/round-<N>/<id>.md` in the main repo, where `<id>` is the roster
 id (`protocol` and `aggregator` for the two main-repo lanes). A report under
-any other name does not satisfy the contract. Minimum content:
+any other name does not satisfy the contract. For the current respawn driver
+the report file's existence is also the round-completion signal: a lane that
+finishes all other work but files no report keeps its round open
+indefinitely (covered by the stale-lane rule below). Minimum content:
 
 - work performed and evidence pointers (paths, commands, diffs);
 - changes landed in the child repo, each tied to a `LOG.md` entry;
 - cross-domain evidence encountered, with the domain it belongs to;
 - a `SHONEN.md` checklist assessment for that lane's shokunin, under a
   `SHONEN` heading with one line per box (`[x]` / `[ ]` / `[~]` + pointer).
+  A report without this heading does not satisfy the contract even if the
+  same facts appear elsewhere in it; `[~]` means asserted-by-author, not
+  skipped.
 
 A lane whose mission has terminated or been respawned without filing its
 round report is recorded `failed` by the integrator; a missing report never
-holds a round open. A mission still open two rounds after its steer is a
-stale-lane review trigger — its working context predates landed protocol
-changes — and the integrator may record it `failed` so the driver respawns
-it on a fresh prompt.
+holds a round open. A mission still open more than two driver ticks after
+its steer is a stale-lane review trigger — its working context predates
+landed protocol changes, and a lane whose work is done but unreported
+stalls the same way — and the integrator may record it `failed` so the
+driver respawns it on a fresh prompt.
 
 A round is **completed** when every dispatched lane has either reported or
 been recorded failed by the integrator — a failed lane counts; a missing
@@ -124,7 +136,10 @@ child repos, and files its own round report at
 `.ufo/reports/round-<N>/aggregator.md` covering per-repo corpus verdicts and
 cross-lane learnings. It is the sole exception to lane write-scope: it may
 create or repair `corpus/` inside any child repo — nothing else: no main-repo
-files outside its own report.
+files outside its own report. Alongside the per-round report it maintains one
+rolling audit ledger (`AGGREGATE.md` under `.ufo/reports/`); the ledger is
+append-only in the same sense as `LOG.md` — refresh sections supersede
+earlier rows explicitly rather than rewriting them.
 
 ## Evidence standard
 
@@ -135,15 +150,26 @@ in a lane report that no reader can reach does not exist.
 
 An **end-to-end domain task** is one real work item executed against the
 domain's actual surfaces, logged as trigger → action → outcome → pointer.
+Where the domain's terminal action is operator-owned (vault approval,
+publish click, claim submission), executed means *prepared + verified +
+handed off*: the handoff artifact — the staged payload, the probe verdict,
+the request reaching its gate — is the outcome pointer, and a documented
+negative result at that gate still counts.
+
+A numeric claim carries its counting command, an absence claim its search
+sweep, and a quote its location (frontmatter/body, file, line) — the
+`CORPUS.md` rules apply to `LOG.md` entries and lane reports too, not only
+to `corpus/`. A status command printing configured values is not evidence of
+capability: endpoint/ability claims need a probe against the real surface.
 
 ## File contract per shokunin repo
 
 | File | Purpose |
 |---|---|
-| `SKILL.md` | The specialist's craft: triggers, decision tables, error patterns, checklists, cited sources |
+| `SKILL.md` | The specialist's craft: triggers, decision tables, error patterns, checklists, cited sources. Its frontmatter `description` carries quoted trigger strings, an anti-trigger, and a sibling-arbitration note — capability-and-scope-only descriptions misroute |
 | `PROVINCE.md` | Domain boundary: what it owns, what it refuses, its work surfaces. Declared surfaces must resolve; when a lane finds a surface moved or absent it corrects `PROVINCE.md` to the real path and logs the correction |
 | `LOG.md` | Append-only iteration log: round entries, accepted changes, falsifiable next-iterations |
-| `SHONEN.md` | Promotion checklist to shokunin; deleted on promotion |
+| `SHONEN.md` | Promotion checklist to shokunin; generated at mint by copying the **Promotion gates** minimum bar verbatim and deleted on promotion. Gates evolve — when they change, every live `SHONEN.md` is regenerated; the file must never drift from the protocol |
 | `AGENTS.md` | Operating rules when working inside this repo |
 | `corpus/` | Proprietary knowledge corpus per `CORPUS.md`: `README.md` index, `knowledge/` sourced domain notes, `lessons/` per-round training lessons; reviewed by the aggregator lane every round |
 
@@ -154,7 +180,10 @@ domain's actual surfaces, logged as trigger → action → outcome → pointer.
 - One domain per shokunin; a domain belongs to one shokunin. Contested scope —
   evidence or work that plausibly belongs to two provinces — is reported in
   the lane report; the integrator arbitrates by refining `PROVINCE.md`, and
-  records the ruling in the round notes.
+  records the ruling in the round notes. A contested-scope report left
+  unruled by the next completed round is re-flagged in the lane report and
+  the round notes; silence is not a ruling and must never default scope to
+  whichever lane wrote first.
 - Rounds are evidence-driven: every `LOG.md` entry cites the work that
   motivated it.
 - `LOG.md` is append-only: entries are never rewritten or deleted; corrections
@@ -163,7 +192,10 @@ domain's actual surfaces, logged as trigger → action → outcome → pointer.
   Only the integrator writes main-repo files — `MANIFEST.json`,
   `PROTOCOL.md`, `ROADMAP.md`, `CORPUS.md`, `scripts/`, `.ufo/` state and
   prompts. Lanes write only inside their own child repo and their lane
-  report at `.ufo/reports/round-<N>/<id>.md`.
+  report at `.ufo/reports/round-<N>/<id>.md`. `.ufo/reports/` and
+  `.ufo/waves/` are the round's written evidence and are committed with the
+  round's integration commit; `.ufo/state/` and `.ufo/watchdog.log` are
+  driver runtime and stay untracked.
 - A meta-domain shokunin (e.g. prompt & skill craft) documents *patterns*; it
   does not own the protocol files, other provinces' files, or promotions.
 - Local-first: repos live locally; publishing is operator-owned.
