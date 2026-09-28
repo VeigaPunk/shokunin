@@ -297,3 +297,11 @@ Marks: `[~]` asserted by the lane itself (evidence pointer required),
   directions: no lane edits another lane's or the aggregator's corpus
   files; `round-<N>-aggregator-*.md` are aggregator-owned.
 
+
+## Fleet-2 conventions (adopted)
+
+- Expertise axes live in `AXES.md`; each lane owns a named subset and works one
+  axis-move per round, measured in `SCORECARD.md` (per child repo).
+- `MISSION.md` is the mission SSOT: fleet shape, model map, concurrency floor,
+  push rule, L0 side channel. Watchdog prompts bind to it.
+- L0 side channel: lanes append `.ufo/l0-questions.md`; aggregator surfaces.

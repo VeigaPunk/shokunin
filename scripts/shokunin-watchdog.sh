@@ -1,15 +1,8 @@
 #!/usr/bin/env bash
-# shokunin-watchdog v3 — respawn-per-round fleet driver.
-#
-# Structure (matches PROTOCOL.md round-robin + operator directive):
-#   - 8 lanes, each owned by exactly one live OMP TUI mission at a time.
-#   - A lane's round ends when its report lands at
-#     .ufo/reports/round-<N>/<lane>.md (or the pane dies = failed round).
-#   - On round end the watchdog COMPLETES the mission and LAUNCHES a fresh
-#     process with a generated round-N+1 prompt. Lanes self-iterate by
-#     respawning, not by steer-queued turns.
-#   - Round counters + missionIds persist in .ufo/state/<lane>.{round,mission}.
-#   - Cap: 1024 rounds per lane. Tick: 450s.
+# shokunin-watchdog v4 — respawn-per-round fleet driver, fleet-2 lane map.
+# SSOT: MISSION.md. A lane's round ends when .ufo/reports/round-<N>/<lane>.md
+# lands; watchdog completes the mission and launches a fresh process for
+# round N+1. Cap 1024/lane. Tick 450s.
 set -u
 SK=/home/vgpnk/projects/shokunin
 UFO=/home/vgpnk/Projects/origin-work/ufo-fsd-alpha/scripts/ufo-sighting
@@ -18,66 +11,61 @@ INTERVAL=450
 MAX_ROUNDS=1024
 mkdir -p "$SK/.ufo/state" "$SK/.ufo/prompts" "$SK/.ufo/reports"
 
+# fleet-2: lane -> cwd, L1 model, axes
+LANES="protocol aggregator kasegi kengaku kake kumitate kotoba kagi"
 declare -A LANE_CWD=(
   [protocol]="$SK"
+  [aggregator]="$SK"
   [kasegi]="$SK/kasegi-shokunin"
   [kengaku]="$SK/kengaku-shokunin"
   [kake]="$SK/kake-shokunin"
   [kumitate]="$SK/kumitate-shokunin"
   [kotoba]="$SK/kotoba-shokunin"
   [kagi]="$SK/kagi-shokunin"
-  [aggregator]="$SK"
 )
 declare -A LANE_MODEL=(
-  [protocol]=@m_swe [kasegi]=@m_swe [kengaku]=@m_swe
-  [kake]=@m_swe [kumitate]=@m_swe [kotoba]=@m_swe [kagi]=@m_swe
-  [aggregator]=@m_qwen
+  [protocol]=@m_qwen [aggregator]=@m_qwen [kasegi]=@m_qwen [kengaku]=@m_qwen
+  [kake]=@m_z53
+  [kumitate]=@m_flash [kotoba]=@m_flash [kagi]=@m_flash
+)
+declare -A LANE_AXES=(
+  [protocol]="fleet-meta: protocol soundness, gate integrity"
+  [aggregator]="cross-lane quality, mint/dormancy calls, corpus review"
+  [kasegi]="depth + coverage (bounty/security research)"
+  [kengaku]="novelty + calibration (LLM eval/research)"
+  [kake]="operability + freshness (web properties)"
+  [kumitate]="operability + coverage (orchestration/tooling)"
+  [kotoba]="depth + consistency (prompt/skill craft)"
+  [kagi]="freshness + calibration (secrets/vault ops)"
 )
 
 round_of() { cat "$SK/.ufo/state/$1.round" 2>/dev/null || echo 0; }
 mission_of() { cat "$SK/.ufo/state/$1.mission" 2>/dev/null; }
-report_of() { [ -f "$SK/.ufo/reports/round-$2/$1.md" ] || [ -f "$SK/.ufo/reports/round-$2/${1}-shokunin.md" ]; }
+report_of() { [ -f "$SK/.ufo/reports/round-$2/$1.md" ]; }
 
 lane_prompt() {
   local lane="$1" n="$2"
   mkdir -p "$SK/.ufo/reports/round-$n"
-  case "$lane" in
-    aggregator)
-      cat <<EOF
-You are the shokunin aggregator L1 (model m_qwen), round $n of up to $MAX_ROUNDS. Working dir: /home/vgpnk/projects/shokunin. Read MISSION.md first — it is the binding mission instruction (8-L2 batch minimum, route bucket, push rule).
-1. Read PROTOCOL.md, CORPUS.md, MANIFEST.json, and every child repo's latest LOG.md + corpus/ state.
-2. Review all reports under .ufo/reports/round-$n/ and round-$((n-1))/AGGREGATE.md if present.
-3. Ensure each shokunin child repo has corpus/{README,knowledge/,lessons/} per CORPUS.md; seed missing pieces only inside corpus/ (never sibling-owned files).
-4. Write .ufo/reports/round-$n/aggregator.md: per-lane quality review, cross-lane learnings worth generalizing into PROTOCOL.md, mint/no-mint assessment (mint only on >=2 documented demand instances or explicit operator directive).
-5. CONCURRENCY: dispatch at least 8 L2 task subagents this round — batch them in a single tool call (parallel lanes, not sequential). Split your review into per-repo scoped items (each child repo = one lane) plus cross-cutting seats (protocol-consistency reviewer, corpus-quality reviewer, evidence verifier, connector). L2 route map: executor/scribe/scout m_flash, planner/connector m_lunamax, reviewer/critic/sentinel/others m_zfl.
-6. Round end: git -C /home/vgpnk/projects/shokunin push after committing main-repo changes; push any child-repo corpus commits inside that child repo too. | godspeed
+  cat > "$SK/.ufo/prompts/${lane}-round-$n.md" <<EOF
+You are the ${lane} L1, round $n of up to $MAX_ROUNDS. Working dir: ${LANE_CWD[$lane]}.
+
+BINDING: Read MISSION.md + AXES.md at /home/vgpnk/projects/shokunin first — they are the mission SSOT. Your axes: ${LANE_AXES[$lane]}.
+
+Each round is ONE axis-move: pick the lowest-scoring axis in ${LANE_CWD[$lane]}/SCORECARD.md (create it per AXES.md if missing), land one verifiable improvement, measure it, record before→after in SCORECARD.md, log evidence in LOG.md. Saturated or wrong-fit axes may be retired/split — record the reason.
+
+L2 CONCURRENCY: dispatch at least 8 L2 task subagents in ONE batched task call this round — per-surface scouts, executors drafting sections into scratch, a critic falsifying claims, a connector for sibling overlap, a reviewer verifying citations. Route map: planner/connector @m_lunamax; executor/scribe/scout @m_flash; reviewer/critic/sentinel/revenger/labrat/mutation-tester/simplifier/distiller @m_zfl.
+
+Write .ufo/reports/round-$n/${lane}.md on the main repo.
+Round end: commit 'round-$n' inside the repo then push; also commit+push the main-repo report.
+L0 side channel: if you need an operator decision, append "<lane> | round-$n | <question>" to /home/vgpnk/projects/shokunin/.ufo/l0-questions.md. | godspeed
 EOF
-      ;;
-    protocol)
-      cat <<EOF
-You are the shokunin-protocol L1, round $n of up to $MAX_ROUNDS. Working dir: /home/vgpnk/projects/shokunin. Read MISSION.md first — it is the binding mission instruction (8-L2 batch minimum, route bucket, push rule).
-2. CONCURRENCY: dispatch at least 8 L2 task subagents in ONE batched task call — per-repo scouts reading each child repo's diff/log/corpus, a critic probing the protocol's current text, a connector synthesizing interactions, a reviewer checking landed edits. Route map: executor/scribe/scout m_flash, planner/connector m_lunamax, reviewer/critic/sentinel/others m_zfl.
-3. Land warranted protocol improvements in PROTOCOL.md / ROADMAP.md only (never MANIFEST.json, never child repos) and commit on the main repo.
-4. Write .ufo/reports/round-$n/protocol.md with findings + landed changes.
-5. Round end: git -C /home/vgpnk/projects/shokunin push after committing. | godspeed
-EOF
-      ;;
-    *)
-      cat <<EOF
-You are the ${lane}-shokunin L1, round $n of up to $MAX_ROUNDS. Working dir: /home/vgpnk/projects/shokunin/${lane}-shokunin. Read MISSION.md at /home/vgpnk/projects/shokunin/MISSION.md first — it is the binding mission instruction (8-L2 batch minimum, route bucket, push rule).
-Self-iterate your domain: pick the highest-value gap in your corpus/lessons, corpus/knowledge, or SKILL.md against your domain's real surfaces; land it inside ${lane}-shokunin/ only (SKILL.md, PROVINCE.md, corpus/, LOG.md), commit 'round-$n'.
-L2 subagents REQUIRED: dispatch at least 8 L2 task subagents in ONE batched task call this round — e.g. scouts surveying distinct real surfaces of your domain, executors drafting candidate SKILL.md sections into scratch files, a critic falsifying your current claims, a connector checking sibling repos for overlap, a reviewer verifying citations resolve. Keep writes inside ${lane}-shokunin/. Route map: executor/scribe/scout m_flash, planner/connector m_lunamax, reviewer/critic/sentinel/others m_zfl.
-Round end: commit 'round-$n' inside ${lane}-shokunin then git -C ${lane}-shokunin push; also commit+push your .ufo/reports/round-$n/${lane}.md on the main repo. | godspeed
-EOF
-      ;;
-  esac
 }
 
 launch_lane() {
   local lane="$1" n="$2" ts out rid
   ts=$(date +%s)
   rid="shokunin-r${n}-${lane}-r${ts}"
-  lane_prompt "$lane" "$n" > "$SK/.ufo/prompts/${lane}-round-$n.md"
+  lane_prompt "$lane" "$n"
   out=$("$UFO" launch \
     --run-id "$rid" \
     --session-id "sess-${lane}-${ts}" \
@@ -99,13 +87,12 @@ tick=0
 while :; do
   tick=$((tick+1))
   status=$("$UFO" status --lite 2>/dev/null || true)
-  for lane in "${!LANE_CWD[@]}"; do
+  for lane in $LANES; do
     n=$(round_of "$lane"); mid=$(mission_of "$lane")
     live=0; [ -n "$mid" ] && printf '%s' "$status" | grep -q "$mid" && live=1
     if [ "$n" -eq 0 ]; then
       launch_lane "$lane" 1
     elif [ "$live" -eq 0 ]; then
-      # mission gone before report: count failed, respawn same round
       if report_of "$lane" "$n"; then
         launch_lane "$lane" $((n+1))
       else
@@ -113,7 +100,6 @@ while :; do
         launch_lane "$lane" "$n"
       fi
     elif report_of "$lane" "$n" && [ "$n" -lt "$MAX_ROUNDS" ]; then
-      # round complete: retire mission, respawn for next round
       "$UFO" complete --mission "$mid" --note "round $n complete" >/dev/null 2>&1 || true
       echo "$(date -Is) complete ${lane} round=${n}; respawning" >> "$SK/.ufo/watchdog.log"
       launch_lane "$lane" $((n+1))
