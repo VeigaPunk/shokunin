@@ -176,10 +176,17 @@ dispatched lane's report must list any mission open longer than two driver
 ticks — age computed from the launch timestamp, not the tick counter, which
 resets when the driver restarts (round-10: `tick=13` at 17:32:48 then
 `tick=1` at 17:50:21, `.ufo/watchdog.log:117,126`) — and must say whether
-it is *progressing* (a commit authored by that lane after its launch) or
-*silent*; the integrator-of-record records `failed` from that listing for
-silent missions without further review and flags progressing ones in the
-round notes rather than killing live work. A respawned
+it is *progressing* or *silent*. Progressing means observable activity in the
+lane's write scope since its launch — a commit authored by the lane, or files
+modified under its repo (`find <repo> -newermt <launch-ts> -type f -not -path
+'*/.git/*'`); silent means neither. Commit sparsity is normal in this fleet
+(round-10: kumitate committed 39 min after launch, kake 34 min, this lane
+47 min), so the absence of a commit is not silence and must not trigger
+`failed`. The integrator-of-record records `failed` only for silent missions
+and flags progressing ones in the round notes — and recording `failed` is a
+ledger act, not a kill: the driver's respawn path is unreachable while its
+daemon is up (step 4), so nothing in this section terminates live work. A
+respawned
 mission inherits its predecessor's working tree: uncommitted
 *lane-authored* changes it finds are uncommitted round work under the
 landed-means-committed rule — the new lane resolves them
