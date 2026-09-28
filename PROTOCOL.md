@@ -62,6 +62,18 @@ commits, `LOG.md` entries, corpus lessons, and reports alike. A round the
 driver skipped produces no entry rather than a mislabeled one; several
 entries for one steered round are allowed.
 
+Round prompts are snapshots: where a prompt — or any earlier round's
+instructions — conflicts with the current `PROTOCOL.md` or `CORPUS.md`, the
+repo files win. A lane re-reads the protocol at the start of every steered
+round; a long-lived mission does not grandfather superseded rules.
+
+Rounds are per-lane counters, not a fleet-global clock: the driver keeps
+`.ufo/state/<lane>.round` and lanes can sit on different round numbers at
+the same wall-clock moment (a late-joining or respawning lane's `round-3`
+is not the same event as another lane's `round-3`). `reports/round-<N>/`
+collects whichever lanes ran their Nth round; the integrator closes round
+`<N>` per lane, not per fleet.
+
 A lane report **lands last** — written only after the lane's child-repo work
 is committed, and it must cite the commit hash. Landed means committed:
 changes that exist only in a working tree do not count for the round, and a
@@ -75,11 +87,20 @@ any other name does not satisfy the contract. Minimum content:
 - work performed and evidence pointers (paths, commands, diffs);
 - changes landed in the child repo, each tied to a `LOG.md` entry;
 - cross-domain evidence encountered, with the domain it belongs to;
-- a `SHONEN.md` checklist assessment for that lane's shokunin.
+- a `SHONEN.md` checklist assessment for that lane's shokunin, under a
+  `SHONEN` heading with one line per box (`[x]` / `[ ]` / `[~]` + pointer).
+
+A lane whose mission has terminated or been respawned without filing its
+round report is recorded `failed` by the integrator; a missing report never
+holds a round open. A mission still open two rounds after its steer is a
+stale-lane review trigger — its working context predates landed protocol
+changes — and the integrator may record it `failed` so the driver respawns
+it on a fresh prompt.
 
 A round is **completed** when every dispatched lane has either reported or
 been recorded failed by the integrator — a failed lane counts; a missing
 report does not. After a completed round the integrator:
+
 
 1. Reads every lane report and verifies each cited child-repo commit exists
    and that no participating repo is left with uncommitted round work.
@@ -102,7 +123,8 @@ The **aggregator** lane is a main-repo lane that reviews every child repo's
 child repos, and files its own round report at
 `.ufo/reports/round-<N>/aggregator.md` covering per-repo corpus verdicts and
 cross-lane learnings. It is the sole exception to lane write-scope: it may
-create or repair `corpus/` inside any child repo — nothing else.
+create or repair `corpus/` inside any child repo — nothing else: no main-repo
+files outside its own report.
 
 ## Evidence standard
 
@@ -138,12 +160,17 @@ domain's actual surfaces, logged as trigger → action → outcome → pointer.
 - `LOG.md` is append-only: entries are never rewritten or deleted; corrections
   land as new entries.
 - `MANIFEST.json` is canonical for rank and roster; `ROADMAP.md` mirrors it.
-  Only the integrator writes `MANIFEST.json`, `PROTOCOL.md`, and `ROADMAP.md`;
-  lanes write only inside their own child repo and their lane report.
+  Only the integrator writes main-repo files — `MANIFEST.json`,
+  `PROTOCOL.md`, `ROADMAP.md`, `CORPUS.md`, `scripts/`, `.ufo/` state and
+  prompts. Lanes write only inside their own child repo and their lane
+  report at `.ufo/reports/round-<N>/<id>.md`.
 - A meta-domain shokunin (e.g. prompt & skill craft) documents *patterns*; it
   does not own the protocol files, other provinces' files, or promotions.
 - Local-first: repos live locally; publishing is operator-owned.
 - `corpus/` inherits the evidence standard: every `knowledge/` entry cites a
   resolvable source; `corpus/lessons/` entries cite the round and its LOG.md
   entry or lane report.
+  Corpus corrections are new entries, never in-place rewrites — in both
+  directions: no lane edits another lane's or the aggregator's corpus
+  files; `round-<N>-aggregator-*.md` are aggregator-owned.
 

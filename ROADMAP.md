@@ -36,4 +36,6 @@ Promotion to the roster requires minting evidence per `PROTOCOL.md`.
 - kessho — CI/verification harnesses
 - umihotaru — fleet/pane wall ops
 - kagemusha — substrate adapters & mirrors
+- kama — local model serving & endpoint health (two independent endpoint-drift
+  discoveries: kagi round-3 + kengaku round-4 reports)
 
