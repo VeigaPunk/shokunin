@@ -23,17 +23,70 @@ mint → shonen (apprentice) → shokunin (artisan of a domain) → jin'i-ryu (s
   telemetry it proposes and lands its own improvements (falsifiable deltas in
   `LOG.md`), with the main repo aggregating only promotion/mint decisions.
 
+A shokunin with no `LOG.md` activity across two consecutive completed rounds is
+flagged **dormant** by the integrator in the round notes; dormancy is a review
+trigger for the operator, never an automatic retirement.
+
+## Promotion gates
+
+A promotion is a decision backed by artifacts, not a vibe. Every gate names its
+verifier and its evidence.
+
+- **shonen → shokunin.** Every `SHONEN.md` box checked by a reviewer who did
+  not author the round's changes (a fresh lane or integrator review — never
+  self-attestation). Minimum bar:
+  - `SKILL.md` contains at least one decision table, one error-pattern list,
+    and one checklist, each citing a resolvable source (repo path, command
+    output, or external document).
+  - `LOG.md` records at least one end-to-end domain task: trigger → action →
+    outcome → evidence pointer.
+  - `PROVINCE.md` still matches reality: no absorbed cross-domain work.
+  On promotion `SHONEN.md` is deleted, `MANIFEST.json` rank is updated, and the
+  review is recorded in the promoter's lane report and the repo's `LOG.md`.
+- **shokunin → jin'i-ryu.** At least one logged round in which the shokunin —
+  given the round's telemetry — proposed and landed a falsifiable improvement
+  to its own `SKILL.md`/`PROVINCE.md`. The delta and its falsification
+  condition are recorded in `LOG.md`; the main repo aggregates only the
+  promotion decision.
+
 ## Round-robin rounds
 
-Each round, the orchestrator dispatches one swarm lane per shokunin (round
-robin across the roster). After a full round the integrator:
+Each round, the orchestrator dispatches up to one swarm lane per rostered
+shokunin (round robin). A shokunin with no dispatched lane participates in the
+round only as scope available to other lanes — never as an implicit no-op.
+
+Every dispatched lane writes a report at
+`.ufo/reports/round-<N>/<lane>.md` in the main repo. Minimum content:
+
+- work performed and evidence pointers (paths, commands, diffs);
+- changes landed in the child repo, each tied to a `LOG.md` entry;
+- cross-domain evidence encountered, with the domain it belongs to;
+- a `SHONEN.md` checklist assessment for that lane's shokunin.
+
+A round is **completed** when every dispatched lane has either reported or
+been recorded failed by the integrator — a failed lane counts; a missing
+report does not. After a completed round the integrator:
 
 1. Reads every lane report.
 2. Lands warranted protocol improvements in this file (a highly valuable
    feature discovered by any domain generalizes to the protocol).
-3. Mints a new shonen only if evidence shows an unserved domain.
-4. Records the round in `MANIFEST.json` (`rounds` array) and each shokunin's
-   `LOG.md`.
+3. Mints a new shonen only if evidence shows an unserved domain — minimum
+   evidence: two documented demand instances or an explicit operator
+   directive.
+4. Appends one entry to `MANIFEST.json`'s `rounds` array:
+   `{round, date, lanes: [{id, status}], promotions: [{id, from, to}], mints: [id...], notes}`
+   where `status` is `ok | failed | not-dispatched`, and appends a round entry
+   to each participating shokunin's `LOG.md`.
+
+## Evidence standard
+
+Everywhere the protocol says *evidence*, it means a resolvable pointer: a repo
+path, a command and its output, a commit, or an external document — never a
+naked assertion. A `LOG.md` entry without a pointer is not evidence; a claim
+in a lane report that no reader can reach does not exist.
+
+An **end-to-end domain task** is one real work item executed against the
+domain's actual surfaces, logged as trigger → action → outcome → pointer.
 
 ## File contract per shokunin repo
 
@@ -41,7 +94,7 @@ robin across the roster). After a full round the integrator:
 |---|---|
 | `SKILL.md` | The specialist's craft: triggers, decision tables, error patterns, checklists, cited sources |
 | `PROVINCE.md` | Domain boundary: what it owns, what it refuses, its work surfaces |
-| `LOG.md` | Iteration log: round entries, accepted changes, falsifiable next-iterations |
+| `LOG.md` | Append-only iteration log: round entries, accepted changes, falsifiable next-iterations |
 | `SHONEN.md` | Promotion checklist to shokunin; deleted on promotion |
 | `AGENTS.md` | Operating rules when working inside this repo |
 
@@ -49,6 +102,18 @@ robin across the roster). After a full round the integrator:
 
 - Specialize, don't generalize: a shokunin's `SKILL.md` contains *cited,
   verifiable* knowledge of its domain — never generic agent advice.
-- One domain per shokunin; a domain belongs to one shokunin.
-- Rounds are evidence-driven: every `LOG.md` entry cites the work that motivated it.
+- One domain per shokunin; a domain belongs to one shokunin. Contested scope —
+  evidence or work that plausibly belongs to two provinces — is reported in
+  the lane report; the integrator arbitrates by refining `PROVINCE.md`, and
+  records the ruling in the round notes.
+- Rounds are evidence-driven: every `LOG.md` entry cites the work that
+  motivated it.
+- `LOG.md` is append-only: entries are never rewritten or deleted; corrections
+  land as new entries.
+- `MANIFEST.json` is canonical for rank and roster; `ROADMAP.md` mirrors it.
+  Only the integrator writes `MANIFEST.json`, `PROTOCOL.md`, and `ROADMAP.md`;
+  lanes write only inside their own child repo and their lane report.
+- A meta-domain shokunin (e.g. prompt & skill craft) documents *patterns*; it
+  does not own the protocol files, other provinces' files, or promotions.
 - Local-first: repos live locally; publishing is operator-owned.
+
