@@ -16,15 +16,18 @@ manifest first, then this table.
 
 ## Phase gates
 
-1. **Round-robin development** — lanes are dispatched by the external round
-   driver (typically up to one per shokunin, plus the aggregator); exit: a
-   completed round per `PROTOCOL.md` (every dispatched lane reported or
-   recorded failed).
-2. **Protocol aggregation** — after each completed round, land improvements
-   into `PROTOCOL.md`; mint new shonen only on evidence (≥2 documented
-   *unplaceable* demand instances — work no existing province could absorb —
-   or explicit operator directive); exit: `MANIFEST.json` `rounds`
-   entry appended with every lane's terminal status.
+1. **Round-robin development** — the external driver dispatches lane-rounds
+   (per-lane counters, not a fleet clock); a lane-round exits when its report
+   lands *and is committed by that lane*.
+2. **Protocol aggregation** — each protocol round, close every lane-round that
+   terminated since the last pass (partial entries are the norm under per-lane
+   counters), land improvements into `PROTOCOL.md`, and mint new shonen only on
+   evidence (≥2 documented *unplaceable* demand instances — work no existing
+   province could absorb — or explicit operator directive); exit: a
+   `MANIFEST.json` `rounds` entry per closed round plus `closure-correction`
+   entries resolving every `in-flight` row an earlier entry left behind.
+   Round 10 closed rounds 2–11 this way: 4 → 15 entries, 58/58 terminated
+   lane-rounds recorded, 0 rows contradicting evidence.
 3. **Promotion reviews** — `SHONEN.md` checklists per repo drive rank;
    lane reports carry the per-round checklist assessments that feed the
    independent review; exit: all `SHONEN.md` boxes independently verified
@@ -35,9 +38,11 @@ manifest first, then this table.
    contradictions, read-only), and kotoba (falsified counts unrepaired at
    audit time — round-5/6 repair commits landed since) not yet ready. Per
    `PROTOCOL.md` all lane-side `[x]` marks count as author-asserted
-   (`[~]`) until a named non-author verifier. Round-9 state: **no report
-   filed since refresh-3 carries a conforming `SHONEN` heading** (36/40
-   child reports missing) — every assessment since is author-asserted and
+   (`[~]`) until a named non-author verifier. Round-10 state: **no report
+   filed since refresh-3 carries a conforming `SHONEN` heading** (41 of 47
+   child-lane reports missing it — `grep -rLE '^#{1,6} *SHONEN'
+   .ufo/reports/round-*/*.md | grep -vE 'protocol|aggregator|AGGREGATE' | wc -l`)
+   — every assessment since is author-asserted and
    disqualified as promotion evidence, so refresh-3 remains the only
    review-grade verdict. Three `SHONEN.md` files still must regenerate to
    the round-8 embedded template: kagi (4 bare `[x]`s), kengaku (stale
@@ -80,24 +85,56 @@ Promotion to the roster requires minting evidence per `PROTOCOL.md`.
   Operator fix (`qwen-local` repoint 8080→34113 + `op signin`) is
   independent of the mint decision and still pending.
 
-## Operator-side integrator debt (round 9)
+## Operator-side integrator debt (round 10)
 
-Items the protocol lane can name but not execute (`scripts/` and prompt
-template are operator-side integrator files):
+Items the protocol lane can name but not execute (`scripts/`, `MISSION.md`,
+`AXES.md`, and `.ufo/state/` are operator-side integrator files):
 
-- `scripts/shokunin-watchdog.sh` `lane_prompt()` still generates prompts
-  with **zero** of the five embedded contract items and the **stale L2
-  route map** (`m_composer`/`m_antigravity` — outside the MISSION.md
-  bucket). Required template correction is specified in
-  `.ufo/reports/round-9/protocol.md` verbatim.
-- `.ufo/prompts/` files accumulate untracked; decide whether prompts are
-  committed evidence (recommended: yes — they are what the fidelity check
-  audits) or ignored.
-- Contested rulings still open: CDP-9222 lease (kagi r3+r7),
-  `fleets/registry.json` scope, aggregator commit `6565e89` touching
-  `.ufo/prompts/*` unadjudicated, `AGGREGATE.md` relocation to canonical
-  `.ufo/reports/AGGREGATE.md`.
-- kotoba `3b029b8` committed under the operator's personal git identity —
-  fix `user.name/email` in `kotoba-shokunin` (lane may self-fix per the
-  new lane-identity invariant).
+- `scripts/shokunin-watchdog.sh` `lane_prompt()` (fleet-2, `609ecb6`) fixed the
+  L2 route map but still emits **1 of the 5** child-lane contract items (the
+  report path): no `SHONEN` heading requirement, no commit-hash citation rule,
+  no write-scope statement, and its "Round end: commit … also commit+push the
+  main-repo report" line puts the report *before* the commit it must cite.
+  `grep -l SHONEN .ufo/prompts/*.md` → 1 file (`kasegi-L1.md`, a file-list
+  mention, not the rule); `grep -lE 'commit hash|rev-parse|merge-base'
+  .ufo/prompts/*.md` → 0. The protocol prompt names none of the closure steps
+  (`grep -c MANIFEST .ufo/prompts/protocol-round-10.md` → 0; rounds 4–9 mention
+  it only to forbid it). Required template text is specified verbatim in
+  `.ufo/reports/round-10/protocol.md` §Template correction (supersedes the
+  round-9 version, which lacked the protocol-lane and marker items).
+- `report_of()` treats the report path's existence as round completion, so a
+  101-byte marker advanced kengaku 8→9 with no work behind it
+  (`.ufo/reports/round-8/kengaku.md`; `kengaku-shokunin` HEAD stayed `f147a27`
+  "round-7"). Recommended: require a `## SHONEN` heading or a minimum size
+  before completing, or have lanes write `<lane>.md.pending` and rename on
+  commit. Related: `complete` does not remove a mission from
+  `ufo-sighting status --lite`, so the `live` test can never fail while the
+  daemon is up and the `lane-dead-no-report` retry path is unreachable (0
+  occurrences in 135 log lines) — a dead lane is only detectable via `omp down`.
+- `.ufo/state/` (16 files) and `.ufo/watchdog.log` are tracked since `609ecb6`
+  although `PROTOCOL.md` said they stay untracked, and the driver rewrites them
+  every tick, so the working tree is dirty by construction (17 modified paths at
+  round-10 commit time). Recommended: `git rm --cached` + `.gitignore`. No
+  evidence is lost — the integrator now commits a timestamped digest of the log
+  lines its statuses rest on (`.ufo/reports/round-10/protocol.md` §Dispatch
+  digest), and the tick counter resets on driver restart (17:32:48 `tick=13` →
+  17:50:21 `tick=1`), so ages must be computed from launch timestamps.
+- `.ufo/prompts/` **resolved round 10**: prompts are committed dispatch
+  evidence and the integrator-of-record commits each round's generated files
+  (58/58 tracked after round 9's batch; 11 more committed this round).
+- Main-repo commit identity: 0 of 60 reports were added by a lane-identity
+  commit (33 by the operator's personal identity, 26 by `shokunin
+  <shokunin@local>`); `6565e89` and `609ecb6` swept 21 reports each. Lanes now
+  commit with `git -c user.name=<lane>-shokunin …`; the sweep practice should
+  stop so attribution is auditable.
+- Contested rulings still open: CDP-9222 lease (kagi r3+r7, kake r9 — lease is
+  serialization, not an ACL; no province owns global arbitration),
+  `fleets/registry.json` (kasegi r8 routed route semantics to kumitate; kasegi
+  r11 resolved the decree ledger in-domain — split ruling owed), kotoba r5
+  `~/.omp/agent/agent.db` corruption (provisionally kumitate, unruled since
+  round 9), `AGGREGATE.md` relocation to canonical `.ufo/reports/AGGREGATE.md`
+  (still absent — the integrator's round notes are the queue of record until it
+  lands).
+- kotoba `3b029b8` committed under the operator's personal git identity — the
+  lane may self-fix per the lane-identity invariant (round-9: uncorrected).
 
