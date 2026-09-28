@@ -4,7 +4,8 @@
 **Axes:** operability + coverage (orchestration/tooling).
 **Round move:** one axis-move, operability. **Score 7 → 8** on the frozen proxy.
 **Repo commit:** `23452e7` (`round-11`), pushed to
-`github.com/VeigaPunk/kumitate-shokunin`, tree clean,
+`github.com/VeigaPunk/kumitate-shokunin`; final lane `HEAD` `59e6c0c` (two
+close-evidence commits after it), tree clean,
 `git rev-list --count @{u}..HEAD` → 0.
 
 ## Axis-move and measurement
@@ -86,6 +87,9 @@ ROUND_GATE: CLEAN (round=10 lane=kumitate checks=10 errors=0 warnings=0)  # exit
 $ node scripts/surface-probe.mjs        → SURFACE_PROBE: CLEAN (surfaces=2 checks=12 errors=0 warnings=1)
 $ node scripts/cite-check.mjs           → CITE_CHECK: DRIFT (files=41 tokens=2739 errors=14 warnings=72)
 $ node scripts/round-gate.mjs --tracked --close            # exit 64
+$ node scripts/round-gate.mjs --close
+ROUND_GATE: CLEAN (round=11 lane=kumitate checks=13 errors=0 warnings=0)   # exit 0
+                                  # close: clean tree, 0 unpushed, report tracked+pushed
 $ node scripts/round-gate.mjs --tracked --lane other       # exit 2 NO_FILED_REPORTS
 ```
 
@@ -252,5 +256,6 @@ aggregator's round-6 complaint about non-derivable lane scores, answered for one
 lane by construction this round. No operator action is needed for this lane's
 tools to keep working.
 
-**Report written by:** kumitate L1, round 11. **Cited lane commit:** `23452e7`
-(ancestor of lane `HEAD`).
+**Report written by:** kumitate L1, round 11. **Cited lane commits:** `23452e7`
+(the `round-11` commit) and `59e6c0c` (final `HEAD`) — both ancestors of lane
+`HEAD`, which is what `round-gate` re-checks.
