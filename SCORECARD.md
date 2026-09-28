@@ -8,14 +8,14 @@ review) are not scored here.
 
 Every score is a claim: it carries the command that produced it and the tree
 it was measured against. Baseline measured 2026-09-28 18:21 -03:00 at main
-HEAD `0a30b44`; after-measurement re-executed 18:35 on the round-10 working
-tree at HEAD `6a45ff2` (this file ships in the round-10 commit, so it cannot
-cite its own hash — the report does).
+HEAD `0a30b44`; round-10 after re-executed 18:35 at `6a45ff2`; round-11 after
+measured 20:05–20:20 at HEAD `3ea42cb`→`6bd4f38` (this file ships in the
+round-11 commit chain, so it cannot cite its own hash — the report does).
 
 | Axis | Score | Evidence pointer | Last change |
 |---|---|---|---|
-| gate-integrity | 6 (was 2) | Closure actuator landed and executed: 11/11 report-bearing rounds now carry a `MANIFEST.json` `rounds` entry (was 2/11), 58/58 terminated lane-rounds carry a correct terminal status (was 8/58), 0 rows contradict evidence under last-wins (was 5), 0 marker reports unrecorded (was 4). Metrics M1–M6 below. Still open: prompt fidelity 1/5 items and the driver's contentless-marker completion signal — both operator-side | round 10 |
-| protocol-soundness | 6 (was 4) | Round-entry semantics defined for a per-lane-counter driver, marker-vs-report boundary, SSOT precedence, main-repo lane write scope + commit identity, `SCORECARD.md` in the file contract, mint bar stated once, ledger fallback named. Metrics P1–P4 below. Cost paid: `PROTOCOL.md` grew 387 → 576 lines (`wc -l`), so the concision sub-metric worsened; compaction is the round-11 move | round 10 |
+| gate-integrity | 7 (was 6) | Closure machinery executed against the live fleet: in-flight debt 7→0 (every carried row resolved by appended `closure-correction`), 16/16 lane-rounds terminated between passes recorded with step-1 verification (hash ancestry, SHONEN heading, ordering, marker screen — 0 new markers), `rounds` 15→22 entries, last-wins 73 ok / 4 failed / 4 in-flight (all live missions at `closed_at`) / 23 not-dispatched; canonical ledger `.ufo/reports/AGGREGATE.md` committed by the aggregator (`e333e7c`, refresh 4, 79 rows) — the routing queue is durable again. Still open, operator-side: prompt fidelity 1/5 — now with a measured consequence, 4 lanes filing report-before-commit — and the `report_of()` content check. Metrics M1–M11 below | round 11 |
+| protocol-soundness | 8 (was 6) | Compaction landed: `PROTOCOL.md` 583→446 lines (`wc -l`) with the obligation census 93/93 green (verifier committed at `.ufo/waves/round-11/`), SHONEN seed byte-identical, 30 duplicate clusters collapsed to canonical homes, ~125 incident/measurement lines moved into a 32-row dated appendix digest, contradictions (a) driver-vs-ledger, (b) ledger queue-of-record, (c1–c3) resolved, in-flight still-live re-confirmation rule added, operator push-scope rule carried as a `MISSION.md` pointer. Disclosed cost: body rewrapped ~78→100 cols; bytes 38649→39264 (+615: appendix pointer column + 2 new clauses). Metrics P1–P7 below | round 11 |
 
 ## Metrics (before → after, with counting commands)
 
@@ -30,6 +30,10 @@ Gate integrity:
 | M5 | untracked dispatch-evidence prompt files | 8 / 58 | 0 / 58 | `git ls-files -o --exclude-standard .ufo/prompts \| wc -l` |
 | M6 | child-lane reports missing the `SHONEN` heading | 41 / 45 | 41 / 47 (unchanged — lane debt, routed) | `grep -rLE '^#{1,6} *SHONEN' .ufo/reports/round-*/*.md \| grep -vE 'protocol\|aggregator\|AGGREGATE' \| wc -l` |
 | M7 | child-lane contract items in the fleet-2 prompt template | 1 / 5 | 1 / 5 (operator-side, unchanged) | `scripts/shokunin-watchdog.sh` `lane_prompt()` heredoc; `grep -l SHONEN .ufo/prompts/*.md` → 1 file, a file-list mention |
+| M8 | unresolved `in-flight` rows carried across closure passes | 7 | 0 | last-wins tally over `MANIFEST.json` `rounds` (22 entries): the 4 remaining in-flight rows are live missions at `closed_at` 20:10 (protocol r11, kengaku r11, kumitate r11, kotoba r12) |
+| M9 | lane-rounds terminated between passes with a recorded terminal status | 16 terminated 18:27:54–20:05:46, unrecorded | 16 / 16 | `complete` lines in the round-11 report §Dispatch digest vs `rounds[15..21]` |
+| M10 | report files added under a lane identity | 1 of 62 tracked (round-10's "0 of 62" claim falsified on re-execution — kumitate `9a2e9fb` 18:37:14 predates it) | 5 of 71 self-landed (kumitate `9a2e9fb`, protocol `025b2e3`, kengaku `8ec7a56`, kagi `ade32e4`, kotoba `f9dcfd2`) + 3 durability sweeps under protocol identity (`3ea42cb`) | `for f in .ufo/reports/round-*/*.md; do git log --diff-filter=A --format='%an <%ae>' -1 -- "$f"; done \| sort \| uniq -c` |
+| M11 | child-lane reports missing the `SHONEN` heading (live count) | 45 / 52 at 18:57 | 50 / 60 at 20:05 (lane debt, routed; new reports WITH heading: kengaku r9/r10, kotoba r10/r11, aggregator r6) | same grep as M6 |
 
 Protocol soundness:
 
@@ -38,30 +42,34 @@ Protocol soundness:
 | P1 | mission-required artifacts ungoverned by `PROTOCOL.md` | 4 (`SCORECARD.md`, main-repo `LOG.md`, `.ufo/prompts` durability, axis-score evidence) | 0 | `grep -c SCORECARD PROTOCOL.md` 1 → 3; file-contract row added |
 | P2 | protocol-text vs repo-reality contradictions | 3 (`.ufo/state` "stay untracked" vs 16 tracked files; lane write scope vs the main-repo `SCORECARD.md`/`LOG.md` duty; fleet-completion precondition vs per-lane counters) | 0 | `git ls-files .ufo/state \| wc -l` → 16; `git ls-files .ufo/watchdog.log \| wc -l` → 1 |
 | P3 | `rounds[]` rows whose lane-round is unidentifiable | 8 of 8 in the round-9 entry (fleet-keyed statuses for lanes on other counters) | 0 (`lane_rounds` required on `not-dispatched`; `ok` falsifiable by the derivable report path) | `MANIFEST.json` round-9 entry vs `.ufo/reports/round-9/` (3 files) |
-| P4 | `PROTOCOL.md` length / inline round-incident references | 387 lines / 12 | 576 lines / ~30 | `wc -l PROTOCOL.md`; `grep -o 'round-[0-9][0-9.]*' PROTOCOL.md \| wc -l` |
+| P4 | `PROTOCOL.md` length / inline round-incident references | 583 lines / 30 (round-10 after; 387 / 12 at round 9) | 446 lines / 14 (appendix rows carry dated pointers as `rN`) | `wc -l PROTOCOL.md`; `grep -o 'round-[0-9][0-9.]*' PROTOCOL.md \| wc -l` |
 | P5 | SSOT precedence defined (`MISSION.md` vs `PROTOCOL.md`) | no | yes | Fleet-2 conventions, precedence bullet |
+| P6 | compaction obligation preservation | — | 93 / 93 census predicates + seed byte-diff empty + quoted anchor phrases findable single-line | `sh .ufo/waves/round-11/verify-census.sh PROTOCOL.md`; anchors per `.ufo/waves/round-11/protocol-reference-sweep.md` |
+| P7 | unresolved contradictions inside `PROTOCOL.md` | 5 — (a), (b), (c1), (c2), (c3) named by the round-11 dupes audit | 0 | `.ufo/waves/round-11/protocol-dupes.md` §Contradictions vs the compacted text: both halves of (a) named; single conditional ledger statement; normative/descriptive embed split; log citations by timestamp+text; measurements dated in the appendix |
 
 ## Planned
 
-- **round 11 (protocol-soundness, lowest after this move on the concision
-  sub-metric):** compact `PROTOCOL.md` 576 → ≤450 lines without dropping an
-  obligation — collapse the 17 duplicated rule pairs the round-10 simplifier
-  audit named, move dated incident prose into a single appendix that cites
-  `.ufo/reports/round-*/protocol.md`, and resolve the remaining
-  contradictions it listed (`round open indefinitely` vs `missing report
-  never holds a round open`; three ledger-path statements). Before→after:
-  `wc -l PROTOCOL.md`, obligation count preserved (each deleted clause mapped
-  to its surviving canonical home). Also owed: the round-11 closure pass must
-  resolve the 7 `in-flight` rows this round wrote plus the lane-rounds that
-  terminated after `closed_at` (kake r10, kagi r9, kasegi r12 — listed in the
-  round-10 report).
+- **round 12 (gate-integrity, lowest after this move):** (1) resolve the 4
+  `in-flight` rows written at `closed_at` 20:10 (protocol r11, kengaku r11,
+  kumitate r11, kotoba r12) plus lane-rounds terminating after it — including
+  the kagi r11 report-durability debt if the lane did not land it, and the
+  kake r13/r14 + kasegi r13/r14 band. (2) Rule the verdict-gate standard
+  question kengaku r10 filed (`.ufo/l0-questions.md` line 6): one exit-code
+  convention + in-repo pinned expected values across the three sibling gates
+  (kagi drift-pins/transcript-scan, kotoba verify_harness_claims, kengaku
+  grader) — land it in `PROTOCOL.md` or record a reasoned rejection; evidence
+  `kengaku-shokunin/corpus/evidence/round10-fleet/r10-connector.md`.
+  (3) Operator-side unchanged: template 5 items + marker-aware `report_of()`;
+  the report-before-commit pattern (4 lanes this round) is the measured
+  consequence to cite.
 
 ## Retired
 
-- none. Neither fleet-meta axis is saturated: gate integrity still has two
-  operator-side actuators outstanding (prompt template items, marker-aware
-  `report_of()`), and protocol soundness has an open compaction debt created
-  by this round's own additions.
+- none. Neither fleet-meta axis is saturated. Protocol-soundness's compaction
+  debt is cleared (round 11); what remains on both axes is operator-side
+  actuators (prompt-template items, marker-aware `report_of()`, state/log
+  untracking) and lane-side debt (SHONEN headings, lane-identity commits) —
+  this lane can route those, not land them.
 
 ## Move log
 
@@ -69,6 +77,8 @@ Protocol soundness:
 |---|---|---|---|---|
 | 10 | gate-integrity | 2 — 2/11 rounds closed, 8/58 lane-rounds recorded, 5 contradicted rows, 4 unrecorded markers, 8 untracked prompts | 6 — 11/11, 58/58, 0, 0, 0 | `MANIFEST.json` `rounds` (15 entries), `.ufo/reports/round-10/protocol.md` §Closure + §Dispatch digest |
 | 10 | protocol-soundness (enabling) | 4 — 4 ungoverned artifacts, 3 contradictions, unidentifiable round-9 rows | 6 — 0, 0, 0; cost: +189 lines | `PROTOCOL.md` step 4 semantics, marker clause, precedence bullet, file-contract `SCORECARD.md` row |
+| 11 | gate-integrity | 6 — 7 in-flight rows unresolved, 16 terminations unrecorded, canonical ledger absent | 7 — 0 carried debt, 16/16 recorded with step-1 verification, ledger committed by the aggregator | `MANIFEST.json` `rounds[15..21]`; round-11 report §Closure record + §Dispatch digest |
+| 11 | protocol-soundness | 6 — 583 lines, 30 inline incident refs, 5 contradictions, 30 dupe clusters | 8 — 446 lines, census 93/93, contradictions 0, clusters collapsed; cost disclosed: 100-col rewrap, +615 bytes | `PROTOCOL.md` at `6bd4f38`; `.ufo/waves/round-11/verify-census.sh` re-run |
 
 ---
 

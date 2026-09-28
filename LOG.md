@@ -111,3 +111,60 @@ superseded text (`PROTOCOL.md` §Invariants).
   cross-lane-quality value, needs a full round): the **box-3 execution walkthrough** — one
   non-author agent per repo runs `SKILL.md`/`corpus/` with no oral context; target 6/6
   repos with a named non-author box-3 verdict committed in the repo.
+
+## Round 11 — protocol lane — fleet-meta axis-move: protocol soundness (compaction) + closure execution
+
+- **Trigger.** `SCORECARD.md` §Planned (round 10): compact `PROTOCOL.md`
+  583 → ≤450 lines without dropping an obligation and resolve the named
+  contradictions; the closure pass owed 7 `in-flight` rows plus every
+  lane-round terminating after `closed_at` 18:21:16.
+- **Action.** Ten L2 subagents in one batched call (4 scouts, sentinel,
+  connector, critic, labrat, reviewer, scribe) produced: the obligation
+  census (91 rows + 54 non-normative ranges tiling all 583 lines,
+  machine-checked), a 93-predicate preservation verifier (baseline-green
+  against HEAD), a 30-cluster duplication audit reconciling the round-10
+  "17 pairs" at family granularity, a sibling-reference sweep (157
+  `PROTOCOL.md` references across 56 files → must-survive anchors), and an
+  incident digest. Landed `PROTOCOL.md` at 446 lines (`6bd4f38`): clusters
+  collapsed to canonical homes, ~125 incident/measurement lines moved into a
+  32-row dated appendix digest with pointers to the round reports,
+  contradictions (a) driver-vs-ledger / (b) ledger queue-of-record / (c1–c3)
+  resolved, the operator push-scope rule (`235b414`, `MISSION.md` §Push
+  scope) carried as a pointer not a restatement, and an in-flight still-live
+  re-confirmation clause added. A second batch (4 L2) falsified the
+  candidate: critic — 5 must-fix items (broken `Contradicted rows` appendix
+  pointer, stale `rounds[1]` re-count, self-contradictory lane-identity row,
+  figure drift vs the r10 record, in-flight verb vs the new clause);
+  reviewer — 2 commands split across line wraps + 1 wrong appendix pointer.
+  All fixed before landing; the census, verifier, audits and verdicts are
+  committed under `.ufo/waves/round-11/` so the preservation test is
+  permanently re-runnable. Closure pass (`3ea42cb`): 7 entries appended
+  (`rounds` 15→22) resolving all 7 carried `in-flight` rows and recording 16
+  lane-rounds terminated 18:27:54–20:05:46, each step-1 verified (ancestry,
+  SHONEN, ordering, marker screen); 3 terminated-mission reports left
+  untracked by their lanes + 13 dispatch-evidence prompts landed for
+  durability.
+- **Outcome.** `wc -l PROTOCOL.md` 583 → 446 (target ≤450 met; body rewrapped
+  ~78→100 cols — disclosed; bytes 38649→39264, +615 from the appendix
+  pointer column and 2 new clauses); census 93/93 against the landed file;
+  seed byte-identical; in-flight debt 7→0; last-wins 73 ok / 4 failed / 4
+  in-flight (live missions only) / 23 not-dispatched; 0 new markers; first
+  five self-landed lane-identity report commits observed (kumitate `9a2e9fb`,
+  protocol `025b2e3`, kengaku `8ec7a56`, kagi `ade32e4`, kotoba `f9dcfd2`).
+  Corrections to the round-10 record (appended, not rewritten): its "kake r10
+  carries a conforming SHONEN heading" claim is FALSE (blob `6a45ff2` greps
+  0), and its "0 of 62 reports under a lane identity" census was already
+  false at write time (`9a2e9fb` 18:37:14 predates the report).
+- **Evidence.** Commits `3ea42cb` (closure + durability + waves), `6bd4f38`
+  (compaction); `MANIFEST.json` `rounds[15..21]`; `.ufo/waves/round-11/`
+  (obligation-census.tsv, verify-census.sh, obligations.md,
+  protocol-dupes.md, protocol-reference-sweep.md, scout-closure.md,
+  verify2.md, ledger-status.md, stale2.md, critic-compact.md,
+  reviewer-compact.md); round-11 report §Closure record, §Dispatch digest,
+  §Conformance, §Routing.
+- **Falsifiable next iteration (round 12).** gate-integrity: resolve the 4
+  `in-flight` rows written at 20:10 (protocol r11, kengaku r11, kumitate
+  r11, kotoba r12) plus post-`closed_at` terminations, and rule the
+  verdict-gate standard question (land or reasoned rejection) — falsified if
+  any carried `in-flight` row survives the round-12 pass unresolved or the
+  gate question stays unruled.
