@@ -49,7 +49,7 @@ You are the shokunin aggregator L1 (model m_qwen), round $n of up to $MAX_ROUNDS
 2. Review all reports under .ufo/reports/round-$n/ and round-$((n-1))/AGGREGATE.md if present.
 3. Ensure each shokunin child repo has corpus/{README,knowledge/,lessons/} per CORPUS.md; seed missing pieces only inside corpus/ (never sibling-owned files).
 4. Write .ufo/reports/round-$n/aggregator.md: per-lane quality review, cross-lane learnings worth generalizing into PROTOCOL.md, mint/no-mint assessment (mint only on >=2 documented demand instances or explicit operator directive).
-5. L2 subagents: executor/scribe/scout m_flash, planner/connector m_lunamax, reviewer/critic/sentinel/others m_zfl.
+5. CONCURRENCY: dispatch at least 8 L2 task subagents this round — batch them in a single tool call (parallel lanes, not sequential). Split your review into per-repo scoped items (each child repo = one lane) plus cross-cutting seats (protocol-consistency reviewer, corpus-quality reviewer, evidence verifier, connector). L2 route map: executor/scribe/scout m_flash, planner/connector m_lunamax, reviewer/critic/sentinel/others m_zfl.
 6. Round end: git -C /home/vgpnk/projects/shokunin push after committing main-repo changes; push any child-repo corpus commits inside that child repo too. | godspeed
 EOF
       ;;
@@ -57,16 +57,17 @@ EOF
       cat <<EOF
 You are the shokunin-protocol L1, round $n of up to $MAX_ROUNDS. Working dir: /home/vgpnk/projects/shokunin.
 1. Inspect every child repo's new commits/LOG.md/corpus/ since your last round.
-2. Land warranted protocol improvements in PROTOCOL.md / ROADMAP.md only (never MANIFEST.json, never child repos) and commit on the main repo.
-3. Write .ufo/reports/round-$n/protocol.md with findings + landed changes.
-4. Round end: git -C /home/vgpnk/projects/shokunin push after committing. | godspeed
+2. CONCURRENCY: dispatch at least 8 L2 task subagents in ONE batched task call — per-repo scouts reading each child repo's diff/log/corpus, a critic probing the protocol's current text, a connector synthesizing interactions, a reviewer checking landed edits. Route map: executor/scribe/scout m_flash, planner/connector m_lunamax, reviewer/critic/sentinel/others m_zfl.
+3. Land warranted protocol improvements in PROTOCOL.md / ROADMAP.md only (never MANIFEST.json, never child repos) and commit on the main repo.
+4. Write .ufo/reports/round-$n/protocol.md with findings + landed changes.
+5. Round end: git -C /home/vgpnk/projects/shokunin push after committing. | godspeed
 EOF
       ;;
     *)
       cat <<EOF
 You are the ${lane}-shokunin L1, round $n of up to $MAX_ROUNDS. Working dir: /home/vgpnk/projects/shokunin/${lane}-shokunin.
 Self-iterate your domain: pick the highest-value gap in your corpus/lessons, corpus/knowledge, or SKILL.md against your domain's real surfaces; land it inside ${lane}-shokunin/ only (SKILL.md, PROVINCE.md, corpus/, LOG.md), commit 'round-$n'; then write .ufo/reports/round-$n/${lane}.md in the main repo.
-L2 subagents: executor/scribe/scout m_flash, planner/connector m_lunamax, reviewer/critic/sentinel/others m_zfl.
+L2 subagents REQUIRED: dispatch at least 8 L2 task subagents in ONE batched task call this round — e.g. scouts surveying distinct real surfaces of your domain, executors drafting candidate SKILL.md sections into scratch files, a critic falsifying your current claims, a connector checking sibling repos for overlap, a reviewer verifying citations resolve. Keep writes inside ${lane}-shokunin/. Route map: executor/scribe/scout m_flash, planner/connector m_lunamax, reviewer/critic/sentinel/others m_zfl.
 Round end: commit 'round-$n' inside ${lane}-shokunin then git -C ${lane}-shokunin push; also commit+push your .ufo/reports/round-$n/${lane}.md on the main repo. | godspeed
 EOF
       ;;
