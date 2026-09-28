@@ -9,4 +9,4 @@ Jobs, in order:
 4. Write .ufo/reports/round-1/AGGREGATE.md: per-lane quality review (what landed, gaps, hallucination check), cross-lane learnings worth generalizing into PROTOCOL.md, and a mint/no-mint assessment (does evidence justify a new shonen?).
 5. Commit your own work on the main repo only when touching main-repo files (git -C /home/vgpnk/projects/shokunin add AGGREGATE.md CORPUS.md corpus-seeds etc). Child-repo corpus/ commits land inside each child repo.
 
-L2 SUBAGENT ROUTING: when you dispatch task subagents (L2s), use the fleet-local model map — executor/scribe on m_kcode, reviewer on m_composer, planner on m_lunamax, critic on m_zfl, connector on m_antigravity, scout on m_flash, sentinel on m_grok, distiller/simplifier/revenger/labrat/mutation-tester on m_zfl. | godspeed
+L2 SUBAGENT ROUTING: when you dispatch task subagents (L2s), use the fleet-local model map — executor/scribe on m_flash, reviewer on m_composer, planner on m_lunamax, critic on m_zfl, connector on m_antigravity, scout on m_flash, sentinel on m_grok, distiller/simplifier/revenger/labrat/mutation-tester on m_zfl. | godspeed
