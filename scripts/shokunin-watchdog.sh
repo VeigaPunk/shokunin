@@ -100,10 +100,15 @@ while :; do
         echo "$(date -Is) lane-dead-no-report ${lane} round=${n}; retry same round" >> "$SK/.ufo/watchdog.log"
         launch_lane "$lane" "$n"
       fi
-    elif report_of "$lane" "$n" && [ "$n" -lt "$MAX_ROUNDS" ]; then
-      "$UFO" complete --mission "$mid" --note "round $n complete" >/dev/null 2>&1 || true
-      echo "$(date -Is) complete ${lane} round=${n}; respawning" >> "$SK/.ufo/watchdog.log"
-      launch_lane "$lane" $((n+1))
+    elif report_of "$lane" "$n"; then
+      if [ -f "$SK/.ufo/fleet-wrap" ]; then
+        "$UFO" complete --mission "$mid" --note "fleet wrap: round $n landed, not respawning" >/dev/null 2>&1 || true
+        echo "$(date -Is) wrap ${lane} round=${n} complete; NOT respawning (fleet-wrap)" >> "$SK/.ufo/watchdog.log"
+      elif [ "$n" -lt "$MAX_ROUNDS" ]; then
+        "$UFO" complete --mission "$mid" --note "round $n complete" >/dev/null 2>&1 || true
+        echo "$(date -Is) complete ${lane} round=${n}; respawning" >> "$SK/.ufo/watchdog.log"
+        launch_lane "$lane" $((n+1))
+      fi
     fi
   done
   echo "$(date -Is) tick=$tick" >> "$SK/.ufo/watchdog.log"
