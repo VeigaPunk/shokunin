@@ -1466,3 +1466,33 @@ visible when the lane *complies* with the report contract rather than reading it
 | Key | Owner | Claim | Evidence | Sev | Status |
 |---|---|---|---|---|---|
 | D-120 | protocol | The report contract requires *"a `SHONEN.md` checklist assessment for that lane's shokunin, under a `SHONEN` heading with one line per box"*, and makes a report without it a conformance defect **and** disqualified as promotion evidence — but the two **main-repo** lanes (`protocol`, `aggregator`) have no `SHONEN.md`: the file contract lists it as a child-repo artifact and `ls /home/vgpnk/projects/shokunin/SHONEN.md` → absent. So a main-repo lane cannot satisfy the clause as written, and the integrator's own conformance check (closure step 1, *"checks each report for the contract-required `SHONEN` heading"*) grades main-repo reports against a seed that does not exist. Neither main-repo lane's reports carried the heading through round 7 (`grep -rLE '^#{1,6} *SHONEN' .ufo/reports/round-*/{protocol,aggregator}.md` → every file), and protocol's own M6 metric excluded them from the count rather than ruling the question | `PROTOCOL.md` report-contract clause + closure step 1 (quoted text; no line numbers per P-p); `ls SHONEN.md` → absent; `.ufo/reports/round-10/protocol.md` M6 row | 3 | OPEN — protocol to rule: either name the artifact main-repo lanes assess against (`SCORECARD.md` + ledger are the candidates), or exempt the two lanes explicitly. This lane files the heading from round 8 onward against `SCORECARD.md`/ledger evidence and marks the interpretation provisional pending that ruling |
+
+**D-120 corrected and re-scoped before the round-8 report was committed — the row as first filed is partly false, and
+the error is this lane's (P-q applied to a row it had just written).**
+
+- **Falsified cell.** The row claimed *"neither main-repo lane's reports carried the heading through round 7"* and that
+  the grep returns *"every file"*. Re-executed over the 15 extant main-repo reports: `grep -rlE '^#{1,6} *SHONEN'` →
+  **8 files carry it**, `grep -rLE` → **7 miss it**. Carrying it: `round-{5,6,7,8,10,11}/protocol.md`,
+  `round-{4,6}/aggregator.md`. Missing it: `round-{1,3,4,9}/protocol.md`, `round-{3,5,7}/aggregator.md`.
+- **Falsified premise.** A ruling is *not* owed: the protocol lane already adopted and published the interpretation this
+  row asked for. `.ufo/reports/round-11/protocol.md` §SHONEN, verbatim: *"The main repo carries no `SHONEN.md`
+  (fleet-meta has no minted shonen; the protocol lane is a role). The four canonical boxes, assessed against this
+  lane's artifacts — all `[~]` author-asserted (I authored this round's changes; only a non-author verifier may write
+  `[x]`)."* The practice is settled and this lane used it itself at rounds 4 and 6.
+- **What survives, narrowed: D-120 → owner `aggregator`, sev 3, conformance debt.** This lane's **round-7** report
+  omitted the `SHONEN` heading its own round-4 and round-6 reports carried. Under the clause the consequence is
+  explicit — *"a report missing the `SHONEN` heading is a conformance defect AND disqualified as evidence in that
+  lane's promotion review — the assessment … must be re-filed under the heading in the next round's report"* — so the
+  round-7 assessment is re-filed in `.ufo/reports/round-8/aggregator.md` §SHONEN and the round-7 report is recorded as
+  a defective report, not as evidence of this lane's promotion state. **CLOSED by re-filing** at the round-8 report
+  commit; the open residue is a practice, not a ruling: file the heading every round.
+- **Recorded as self-defect 19** (§13.5's series): a row filed against a sibling for a gap the sibling had already
+  closed, and which this lane itself had reopened. The cost of that error is a wasted repair cycle for the routed lane
+  — the same cost §11.7 item 3 named when a round-5 charge against kotoba was withdrawn. Check the sibling's own
+  artifacts for an existing ruling **before** filing a row that asks for one.
+- **Symmetry worth keeping (it decides the round-8 SHONEN marks).** The clause that made this round's six cold-run
+  seats non-author *for the child repos* — the aggregator authored none of their `SKILL.md` files — is the same clause
+  that makes them **not** non-author *for this lane's own work*: *"a subagent the lane dispatched is still the lane."*
+  So the critic, reviewer, sentinel and distiller seats are this lane's own verification, and every box in this lane's
+  round-8 `SHONEN` assessment is `[~]` author-asserted. Only a verifier outside the aggregator lane (protocol's
+  closure pass, or a cross-lane seat) can write `[x]` here.
