@@ -8,10 +8,10 @@ by steer.
 
 | Lane | Repo/cwd | Model | Axes owned |
 |---|---|---|---|
-| protocol | `~/projects/shokunin` | `@m_qwen` | fleet-meta: protocol soundness, gate integrity |
-| aggregator | `~/projects/shokunin` | `@m_qwen` | cross-lane quality, mint/dormancy calls, corpus review |
-| kasegi | `kasegi-shokunin/` | `@m_qwen` | depth + coverage (bounty/security research) |
-| kengaku | `kengaku-shokunin/` | `@m_qwen` | novelty + calibration (LLM eval/research) |
+| protocol | `~/projects/shokunin` | `@m_daybreak` | fleet-meta: protocol soundness, gate integrity |
+| aggregator | `~/projects/shokunin` | `@m_daybreak` | cross-lane quality, mint/dormancy calls, corpus review |
+| kasegi | `kasegi-shokunin/` | `@m_daybreak` | depth + coverage (bounty/security research) |
+| kengaku | `kengaku-shokunin/` | `@m_daybreak` | novelty + calibration (LLM eval/research) |
 | kake | `kake-shokunin/` | `@m_z53` | operability + freshness (web properties) |
 | kumitate | `kumitate-shokunin/` | `@m_flash` | operability + coverage (orchestration/tooling) |
 | kotoba | `kotoba-shokunin/` | `@m_flash` | depth + consistency (prompt/skill craft) |

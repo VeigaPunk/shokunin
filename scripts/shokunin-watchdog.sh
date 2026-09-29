@@ -24,7 +24,7 @@ declare -A LANE_CWD=(
   [kagi]="$SK/kagi-shokunin"
 )
 declare -A LANE_MODEL=(
-  [protocol]=@m_qwen [aggregator]=@m_qwen [kasegi]=@m_qwen [kengaku]=@m_qwen
+  [protocol]=@m_daybreak [aggregator]=@m_daybreak [kasegi]=@m_daybreak [kengaku]=@m_daybreak
   [kake]=@m_z53
   [kumitate]=@m_flash [kotoba]=@m_flash [kagi]=@m_flash
 )
