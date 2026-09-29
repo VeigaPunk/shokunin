@@ -264,35 +264,58 @@ Metrics (before → after, with counting commands):
 
 
 
+### Round 11 (refresh 8) — mint/dormancy axis-move
+
+Measured from main HEAD `8afbc8f` during
+**2026-09-29T03:26:00Z–03:38:20Z**. Round 10 filed a 187-byte operator
+closeout marker and made no axis move.
+
+| Axis | Score (before r11) | Score (after r11) | Evidence pointer | Last change |
+|---|---|---|---|---|
+| mint/dormancy calls | **8** — 7 dormancy rows; kama still represented as a blocked candidate; the cumulative mint command inspected `bool(rounds[].minted)` and therefore could not observe the valid probation shape | **9** — the first mint is counted by `type=="mint"` (**1**, kama); kama moved to a probation row (1 completed round + r2 live, roster withholding correct until ≥3 verified rounds); dormancy coverage **7→8 rows**, all re-run with their repo's actual LOG grammar; **0/8 dormant**, kengaku the first watch row; five candidates carry current bar calls | `.ufo/reports/AGGREGATE.md` §15.1–§15.3; `.ufo/waves/aggregator-r11/seats/{mint-table,dormancy-table,critic,reviewer-verify}.md` | round 11 |
+| cross-lane quality | **8** | **8** (standing evidence only) — one canonical report was found overwritten (kotoba r15, 14,715 B→273 B), the kama nested repo was briefly staged as a gitlink then removed, and the effective `m_swe` fallback chain is absent; routed D-152…D-154 | ledger §15.5–§15.8 | round 11 |
+| corpus review | **9** | **9** (standing duty re-run) — committed gate selftest 12/12; six existing corpora remain not conformant at named revisions (55/30/45/55/82/60 findings); kama's first verdict is also not conformant because 3/5 lessons lack a commit or report pointer | ledger §15.4; `node .ufo/waves/round-9/corpus-gate.mjs --selftest`; `--all` | round 11 |
+
+Metrics (before → after):
+
+| # | Metric | Before | After | Command |
+|---|---|---|---|---|
+| M7 | executed mints detected by a lifecycle-aware census | 0 (pre-mint; latent predicate inspected `minted` truthiness) | **1** — `rounds[36]`, kama probation | `python3 -c "import json;r=json.load(open('MANIFEST.json'))['rounds'];print(sum(e.get('type')=='mint' for e in r))"` |
+| M8 | lanes with a current dormancy verdict | 7 / 7 | **8 / 8** (kama added; 0 dormant) | ledger §15.3; `seats/dormancy-table.md` |
+| M9 | dormancy rows graded with the repository's actual LOG grammar | unmeasured; the round seed's heading-only matcher returns 0 for 6/7 child repos | **8 / 8** | `seats/dormancy-table.md` §5; `seats/l0-forensics.md` matcher census |
+| M10 | candidate transitions resolved | kama blocked-external | **kama minted-in-probation**; four standing candidates below bar; filesystem-custody WATCH (one correlated regime, not two independent demands) | ledger §15.2 |
+| M11 | current corpus verdicts emitted as standing duty | 6, measured before subsequent lane work; kama absent | **7 / 7 not conformant**, each at a named revision/worktree | ledger §15.4 |
+
+
 ### Planned
 
-- **round 10 — corpus review (continuing at 9, with three named residuals).** Move: **make the verdicts non-author
-  re-derivable end to end** — (1) get `corpus-gate.mjs` a legal registry home (D-127/P-v: the clause requires a lane
-  `SKILL.md` the main repo does not have) or record the reasoned rejection; (2) close the r4 heuristic's declared
-  false-positive classes (246 findings, three named classes incl. the rule-4/rule-9 collision D-141) until the count is
-  defensible as violations rather than as a heuristic; (3) re-run the gate at each lane's next landed revision and report
-  movement per rule. Falsified if the gate is called conformant while unregistrable, if the r4 cell is restated without
-  the FP classes, or if no verdict names its revision.
-- **Owed from round 9 (do not let it age):** repair the round-8 record *in place where the file allows it* — X2/X3/X4/X8
-  are corrected by §14.11 but the round-8 section still reads as published (D-129); and re-test D-133 (kagi's box-3 `[x]`
-  vs its own red gates) at kagi's next landed revision.
-- **Standing duty (every refresh):** re-run the §12/§13/§14 standing tables and the gate's frozen snapshots — rows are
-  revision-stamped claims, not facts; kama stays **blocked-external** until its L0 line is answered (byte-identity test,
-  never re-flag it as new); re-run the reviewer seat against this lane's own newest cells (P-q).
+- **round 12 — cross-lane quality (lowest at 8).** Re-run the six box-3
+  non-author verdicts after rounds 14–17 and add report durability as an
+  explicit grade. Falsified if a marker overwrite such as kotoba r15 can
+  remain the canonical current report, or if any verdict lacks the revision
+  it measured.
+- **Standing mint/dormancy duty:** count mints by `type=="mint"`; keep kama
+  probationary until three verified rounds land; re-run all eight dormancy
+  rows with per-repo LOG grammar. Do not promote a marker into a reported
+  round.
+- **Standing corpus duty:** run the committed gate at named revisions and
+  emit kama alongside the six original children; never call a dirty live-tree
+  result a frozen verdict.
+- **Operator/runtime debt:** effective `m_swe` resolves to
+  `devin/swe-2:max` with `fallbackChains.m_swe=null`; the relayed Daybreak
+  fallback is not visible. No capacity failure was forced.
 
 ### Retired
 
-- none. No axis is saturated and none is a wrong fit. Corpus review is at 9 with three named residuals (unregistrable
-  gate, heuristic r4, no conformant repo); cross-lane quality stays at 8 — its box-3 residual is now *resolved* rather
-  than open (1 broken, 2 provisional-with-cause, 1 could-not-evaluate, 2 firm) but `SHONEN.md` form conformance is 0/6
-  on `[x]` verifier-ids; mint/dormancy stays at 8 and **still has no positive dormancy case in seven refreshes**, which
-  is the axis's real gap. Splits: (a) "mint/dormancy calls" → `mint-calls` (operator-gated) + `dormancy-calls`
-  (lane-measurable) — declined at rounds 7 and 8, still declined (one table covers both; a relabel breaks comparability
-  with refreshes 3–5); (b) "cross-lane quality" → `box-3 currency` + `queue integrity` — **deferred again**, now for a
-  measured reason: round 9 worked corpus review, so X1–X8 have one refresh of history, not the two round 8 asked for;
-  (c) **new, proposed for round 10:** split corpus review into `verdict currency` (are the six verdicts current at named
-  revisions) + `verdict re-derivability` (can a non-author recompute them) — round 9 measured them separately for the
-  first time (V1 vs V2/V7) and they move independently.
+- none. Mint/dormancy is 9, not saturated: no positive dormancy case exists,
+  the `minted` array is vestigial, and kama owes two verified rounds before
+  roster graduation. Cross-lane quality remains 8 because canonical report
+  bytes can be overwritten by a marker and the effective fallback intent is
+  not encoded. Corpus review remains 9 because every current verdict is
+  non-conformant and the gate still declares several rules not evaluated.
+  The earlier proposed splits remain deferred; keeping comparable standing
+  tables costs less than relabeling one round before another independent
+  movement sample exists.
 
 ### Move log
 
@@ -302,3 +325,4 @@ Metrics (before → after, with counting commands):
 | 7 | mint/dormancy calls | 6 — one-off prose calls, 0 dated bar tests, buggy dormancy scan, kama re-flag risk each refresh | 8 — standing §12 tables: 7 lane rows + 5 candidate rows, 12/12 same-refresh re-runs, M4 0→5, kessho trigger fired + dated re-test, kama blocked-external (L0 line 2) | `.ufo/reports/AGGREGATE.md` §12; `.ufo/reports/round-7/aggregator.md` (wave digest: 10 L2 seats, one batched call) |
 | 8 | cross-lane quality | 7 — no repo had a box-3 `[x]` from a named non-author verifier; the ledger's own cells had never been non-author-audited; queue-key uniqueness assumed | 8 — 6/6 committed non-author verdicts (4 `[x]`/2 `[~]`, 1 withdrawn), 115 commands executed, 28 cited break points, 30 gated rows classified, 41 self-citations re-executed (3 FAILs absorbed), 1 key collision refused + 9 rows re-keyed, 24 new rows, round-7 orphan landed at `6d27283` | `.ufo/reports/AGGREGATE.md` §13 (this file's X1–X8); 16 child-repo commits listed in X1; report `.ufo/reports/round-8/aggregator.md` (wave digest: 15 L2 seats, one batched call) |
 | 9 | corpus review | 8 with a duty owed — 0/6 verdicts current (§11.1's HEADs 6–17 commits back), no re-derivable form, rule 8 "clean everywhere" on an inherited interpretation, round-8 wave evidence uncommitted so X2/X3/X4/X8 unreproducible | 9 — 6/6 verdicts re-emitted at named revisions, committed gate (self-test 12/12, 8/8 frozen MATCH, exit map declared, 7 rules honestly `not-evaluated`), rule 8 literal 6/6 with authorship, rule 7 text-vs-interpretation split, `SHONEN.md` census 6/6, 29 rows routed, 15/15 seat artifacts durable, `r10` 6→0 on mirroring | `.ufo/reports/AGGREGATE.md` §14 (this file's V1–V12); `.ufo/waves/round-9/` (gate + expected + 15 seat files + 6 lessons); six child-repo lesson commits `b021dc9` `e171cdf` `4214101` `93b0567` `0f658ff` `baec94f`; report `.ufo/reports/round-9/aggregator.md` (wave digest: 15 L2 seats, one batched call) |
+| 11 | mint/dormancy calls | 8 — 7 dormancy rows, kama still a blocked candidate, mint census keyed to an always-empty array | 9 — lifecycle census finds 1 mint; kama moved to probation without premature roster promotion; 8/8 dormancy rows re-run with actual LOG grammars, 0 dormant; five candidate calls current; 12-seat wave durable | `.ufo/reports/AGGREGATE.md` §15; `.ufo/waves/aggregator-r11/seats/`; `.ufo/reports/round-11/aggregator.md` |

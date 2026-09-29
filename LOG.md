@@ -402,3 +402,51 @@ superseded text (`PROTOCOL.md` §Invariants).
   `r4` cell is restated without its FP classes, or if any verdict fails to name its revision. Owed and not to be aged:
   the round-8 X-cells are corrected in §14.11 but the round-8 section still reads as published (D-129), and D-133 must be
   re-tested at kagi's next landed revision.
+
+## Round 11 — aggregator lane — mint/dormancy axis-move: first mint counted, probation + 8-lane dormancy
+
+- **Trigger.** The three aggregator axes entered this round at 8/8/9
+  (cross-lane quality / mint-dormancy / corpus review). Mint/dormancy won the
+  tie on live evidence: `MANIFEST.json` now has the fleet's first
+  `type:"mint"` entry (kama), while the standing census still inspected
+  `rounds[].minted` truthiness and the table still treated kama as a blocked
+  candidate.
+- **Action.** One batched call dispatched 12 L2 seats: four scouts, executor,
+  critic, connector, reviewer, sentinel, distiller, revenger, and a
+  corpus-currency scout. The wave is durable at
+  `.ufo/waves/aggregator-r11/seats/` (12 files, 2,449 lines, 262,860 bytes).
+  The L1 re-ran the mint census, all eight dormancy rows, the corpus gate
+  selftest and live verdict pass, queue keys, L0 forensics, report history,
+  and the effective model config.
+- **Result.** Mint/dormancy **8→9**. The census now keys on
+  `type=="mint"`: **1** executed mint, kama. `rounds[36]` correctly records
+  probation; the six-id roster remains correct until three verified rounds
+  land. Kama has r1 complete and r2 live. Dormancy coverage moved **7→8**:
+  **0/8 dormant**, with kengaku and kotoba one missing LOG entry short of the
+  literal two-round trigger. The current-wave heading-only LOG matcher was
+  rejected after returning zero for six of seven child repos; per-repo
+  date-bullet/heading grammars reproduced every verdict.
+- **Standing duties.** Corpus gate selftest **12/12 PASS**. Six original
+  corpora remain not conformant at named revisions (55/30/45/55/82/60
+  findings); kama's first verdict is not conformant because 3/5 lessons lack
+  a commit or report pointer. L0 forensics classified 19 content lines:
+  15 open, 3 superseded, 1 answered-by-event, 0 operator-answer markers.
+- **Cross-lane findings.** `17c1fad` overwrote kotoba's real round-15 report
+  (14,715 B at `4419fb9`) with a 273 B marker; the same commit staged
+  `kama-shokunin/` as an embedded gitlink, reverted 13 seconds later by
+  `8afbc8f`, while `.gitignore` still omits it. The closure ledger's latest
+  `closed_at` is 22:23 -03; 17 distinct later `complete` lane-rounds include
+  kama r1. Routed as D-151…D-155 in ledger §15.
+- **Operator relay.** Effective config shows
+  `modelRoles.m_swe=devin/swe-2:max` and
+  `retry.fallbackChains.m_swe=null`; the requested final Daybreak fallback is
+  not visible. No genuine m_swe capacity failure occurred, no failover is
+  claimed, and no frozen route was changed.
+- **Evidence.** `.ufo/reports/AGGREGATE.md` §15; `SCORECARD.md` §Round 11;
+  `.ufo/waves/aggregator-r11/seats/`; dispatch prompt
+  `.ufo/prompts/aggregator-round-11.md`; report
+  `.ufo/reports/round-11/aggregator.md`.
+- **Falsifiable next iteration (round 12).** Cross-lane quality: re-run the
+  six box-3 verdicts after rounds 14–17 and add canonical report durability
+  to the grade. Falsified if an overwritten marker remains a current report
+  or any verdict lacks the revision it measured.

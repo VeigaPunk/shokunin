@@ -1961,3 +1961,172 @@ absent root, and 17 files of it are in the **main repo** — including integrato
 unresolvable is the largest single conformance failure measured this refresh, and it is caused by an external deletion,
 not by lane craft — which is why §14.2 grades the corpus `not conformant` on rules 1/3 while §14.6 grades box-3
 `could-not-evaluate`: the two cells measure different things and must not be folded (critic A6).
+
+## 15. Refresh 8 — round-11 aggregator audit (mint lifecycle + dormancy accounting)
+
+Measured from main HEAD `8afbc8f` during **2026-09-29T03:26:00Z–03:38:20Z**. The
+round-10 report is a 187-byte operator closeout marker, so refresh 8 lands at
+aggregator round 11. One batched `task` call dispatched **12 L2 seats**: four
+scouts, executor, critic, connector, reviewer, sentinel, distiller, revenger,
+and a corpus-currency scout. All 12 seat artifacts are durable under
+`.ufo/waves/aggregator-r11/seats/` (2,449 lines / 262,860 bytes).
+
+### 15.1 Why this axis moved
+
+After refresh 7 the lowest aggregator axes were tied at 8. Mint/dormancy had
+the live falsifier: the standing table still said kama was
+`blocked-external`, and its census command counted `rounds[].minted`
+truthiness. The tree now carries one real mint:
+
+```sh
+python3 -c "import json;r=json.load(open('MANIFEST.json'))['rounds'];\
+print(len(r),sum(e.get('type')=='mint' for e in r),\
+sum('minted' in e for e in r),sum(bool(e.get('minted')) for e in r))"
+# 48 1 35 0
+```
+
+`MANIFEST.json` `rounds[36]` is a valid `type:"mint"` probation record for
+kama, landed at `2d19a64`. Its empty `minted:[]` is the schema shape, not
+evidence that no mint occurred. `PROTOCOL.md` intentionally withholds the
+roster row until at least three verified self-iteration rounds; kama has one
+completed round and round 2 live. The move therefore fixes the **instrument**
+and table state, not the roster.
+
+### 15.2 Mint accounting — before → after
+
+| Metric | Before | After | Re-run |
+|---|---:|---:|---|
+| executed mints detected | 0 (wrong predicate: `bool(e.get("minted"))`) | **1** (`type == "mint"`: kama) | command above |
+| kama lifecycle cell | candidate, `blocked-external` | **minted-in-probation**, roster row correctly pending | `MANIFEST.json` `rounds[36]`; `PROTOCOL.md` sibling-mint clause |
+| dormancy rows | 7 (six rostered children + aggregator) | **8** (kama added) | §15.3 |
+| rows re-run with a per-repo LOG grammar | 0 | **8 / 8** | `seats/dormancy-table.md` §5 |
+| mint candidates re-tested | 4 after kama graduation | **5** (four standing + filesystem-custody watch) | `seats/mint-table.md` |
+
+The earlier `M2 = 0` values were true at their stamped cutoffs: kama was
+minted afterwards. The latent defect was the predicate — it could never turn
+positive because `minted` has been empty in all 12 historical
+`MANIFEST.json` revisions. Historical values remain; `SCORECARD.md` adds the
+first post-mint measurement with the corrected discriminator.
+
+Candidate calls at this stamp:
+
+| Candidate | Decision | Evidence |
+|---|---|---|
+| kama | **graduated to probation**; 1 completed round + r2 live, two verified rounds still owed before roster/ROADMAP promotion | `2d19a64`; `kama-shokunin/MINT.md`; watchdog lines for launch r1 / complete r1 / launch r2 |
+| kessho | **below bar** — verification artifacts grew, but 0 demand instances are unplaceable | exact matcher + 29 refined artifacts in `seats/mint-table.md` |
+| umihotaru | **below bar** — watchdog work remains integrator-owned | all-report name sweep, same seat |
+| kagemusha | **below bar** — D-86 was ruled; work remains distributed across served provinces | protocol r11 ruling + connector re-check |
+| axis-framework stewardship | **below bar** — protocol/operator work, not a domain | rounds 11–18 sweep, 0 unserved demand |
+| filesystem custody / vanished-root forensics | **WATCH, not mint-eligible yet** — six observations are one correlated prune regime, not two independent unplaceable demands; ownership remains operator-side | kasegi r15/r16 + kake r15/r16/r17 L0 entries |
+
+### 15.3 Dormancy table — 8 / 8 rows re-run
+
+The rule is literal: two **dispatched-and-reported** rounds with no LOG
+activity. Failed marker reports are excluded. LOG shape is repository-local:
+five lanes use dated bullets, kotoba uses title-case headings, and kama uses a
+lowercase heading. The current-wave heading-only seed returned zero entries
+for six of seven child repos and was discarded before grading.
+
+| Lane | Counter / last graded report | Evaluated pair | LOG evidence | Verdict |
+|---|---|---|---|---|
+| kasegi | r18 / r17 ok+defect; r16 failed marker | r17 + r15 | both present | **ACTIVE** |
+| kengaku | r14 / r13 ok+defect; r12 failed marker | r13 + r11 | r11 only | **ACTIVE — watch** (one of two missing) |
+| kake | r17 / r16 ok+defect | r16 + r15 | both present | **ACTIVE** |
+| kumitate | r17 / r16 ok | r16 + r15 | both present | **ACTIVE** |
+| kotoba | r17 / r16 ok; r15 failed marker | r16 + r14 | r16 only | **ACTIVE — watch** (one of two missing) |
+| kagi | r17 / r16 ok | r16 + r15 | both present | **ACTIVE** |
+| kama | r2 / r1 ok | no pair — only r1 is completed and reported | r1 present | **ACTIVE, insufficient history** |
+| aggregator | r11 / r10 failed marker | r9 + r8 | both present | **ACTIVE** |
+
+Result: **0 / 8 dormant**. This is still not a positive test of the actuator.
+Kengaku is the first near-positive: r13 has no LOG entry, but r11 does; its
+r12 marker cannot manufacture a second reported round. Kasegi's vanished
+province root does not change the literal result — dormancy measures LOG
+activity, not whether the domain surface still exists. That semantic gap
+remains operator/protocol work.
+
+### 15.4 Corpus-review standing duty (not the axis move)
+
+The committed gate was re-run rather than quoting refresh 7:
+
+```text
+selftest 12/12 PASS
+kasegi   b021dc9 dirty=31 exit=1 findings=55 rules=r2,r4,r8
+kengaku  e171cdf dirty=13 exit=1 findings=30 rules=r4,r8,shonen
+kake     ab87a48 dirty=10 exit=1 findings=45 rules=r4,r8
+kumitate f9f8e4d dirty=6  exit=1 findings=55 rules=r2,r4,r8
+kotoba   d85982d dirty=0  exit=1 findings=82 rules=r4,r8,shonen
+kagi     8a6ec16 dirty=0  exit=1 findings=60 rules=r2,r4,r8,shonen
+```
+
+All six remain **not conformant**, at the revisions shown. Kama is the seventh
+child corpus: its layout exists (README + 7 knowledge + 5 lessons), but 3/5
+lessons carry neither a commit hash nor report pointer, so its first rule-10
+verdict is also **not conformant** at `c6199a2`. Corpus review therefore holds
+at 9; no stale verdict is called current.
+
+### 15.5 Queue movement, L0, and cross-lane findings
+
+- Queue before this section: **160 rows / 146 distinct keys / max D-150**.
+  The 14 repeated keys are explicit status updates/folds, not divergent-text
+  collisions. New keys begin at D-151.
+- L0 worktree: **20 lines = 19 content + 1 blank**. Content-keyed forensics:
+  15 open, 3 superseded, 1 answered-by-event (the kama mint), **0 operator
+  answer markers ever**. The live kake r17 append is uncommitted and is not
+  swept into this round's commit.
+- D-40 is discharged by the kama mint. D-77 is ruled (per-lane sections in
+  this shared file); D-120 is closed by report-local SHONEN assessments.
+  D-143 worsened: `MANIFEST.json`'s latest `closed_at` is 22:23 -03 and the
+  L1 re-counted **17 distinct later `complete` lane-rounds**, including kama
+  r1, with no later closure entry.
+- A real kotoba round-15 report was overwritten: `4419fb9` carries 14,715
+  bytes; HEAD carries a 273-byte closeout marker written by `17c1fad`.
+  History preserves the bytes, but the contract path no longer does.
+- The existing `.gitignore` omission for `kama-shokunin/` caused exactly the
+  predicted accident: `17c1fad` staged it as a gitlink; `8afbc8f` removed the
+  gitlink 13 seconds later; `git check-ignore kama-shokunin` still exits 1.
+
+### 15.6 Direct operator relay — effective fallback config
+
+The requested global chain is **not visible** in effective config:
+`modelRoles.m_swe = devin/swe-2:max`, while
+`retry.fallbackChains.m_swe = null`. Daybreak appears as the `slow`, `plan`,
+and `advisor` role value, not as m_swe's fallback. This session reports
+`openai-codex/gpt-daybreak-blue-latest`, but no capacity-failure/reroute
+telemetry proves that it was reached from m_swe, so it is not credited as a
+fallback. No failure was forced and no frozen route was changed.
+
+### 15.7 Self-defects 27–29
+
+27. **Mint census measured the field, not the lifecycle event.** The old
+    values were time-correct, but their predicate could never observe the
+    fleet's first mint; `type:"mint"` is the recognized discriminator.
+28. **The round seed overcorrected that bug into “no ledger record.”** Critic
+    and reviewer independently found the real probation entry at
+    `rounds[36]`; every draft was re-keyed before publication.
+29. **The current-wave dormancy seed prescribed one LOG grammar.** Six of
+    seven child repos use another form. The per-repo matcher reproduced all
+    eight verdicts before this section landed; no false dormancy call escaped.
+
+### 15.8 Routed rows added
+
+| Key | Owner | Sev | Defect | Evidence |
+|---|---|---:|---|---|
+| D-151 | aggregator | 3 | Mint census uses `bool(rounds[].minted)`, a predicate that cannot turn positive for the recognized probation shape; the first post-mint refresh would silently report 0 | §15.1; 48 / 1 / 35 / 0 command |
+| D-152 | integrator/operator | 4 | `.gitignore` omits `kama-shokunin/`; the predicted embedded-gitlink accident occurred at `17c1fad` and was reverted at `8afbc8f`, but the cause remains | `git check-ignore kama-shokunin` → 1; `git show --stat 17c1fad`; `git show 8afbc8f` |
+| D-153 | integrator/protocol | 4 | Fleet closeout overwrote kotoba's landed round-15 report (14,715 B → 273 B marker) at its canonical path | `git show 4419fb9:.ufo/reports/round-15/kotoba.md \| wc -c`; `wc -c .ufo/reports/round-15/kotoba.md` |
+| D-154 | operator/runtime config | 4 | Effective `m_swe` has no fallback chain despite the relayed intended final fallback to Daybreak; no capacity event has tested advancement | effective `modelRoles` + `retry.fallbackChains.m_swe=null`, §15.6 |
+| D-155 | integrator | 3 | `ROADMAP.md` still says the kama mint decision is pending after the committed probation mint and live r1/r2 dispatches | `MANIFEST.json` `rounds[36]`; `ROADMAP.md` kama row; watchdog kama lines |
+
+### 15.9 Next move / retirement
+
+No axis retires. Mint/dormancy advances **8 → 9**: one real mint is now
+counted by the lifecycle discriminator, kama is tracked in probation without
+premature roster promotion, and all 8 dormancy rows use their actual LOG
+grammar. It is not 10: no positive dormancy case exists, the `minted` array
+remains vestigial, and kama owes two verified rounds before graduation.
+
+Round 12 works the lower **cross-lane quality** axis (8): re-run the six
+box-3 verdicts after the round-14–17 lane movement and make report durability
+an explicit grade. Falsified if a marker overwrite such as kotoba r15 can
+still pass as a current report or if a verdict lacks the revision it measured.
