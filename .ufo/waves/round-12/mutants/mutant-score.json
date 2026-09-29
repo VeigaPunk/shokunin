@@ -1,0 +1,116 @@
+{
+ "base_sha256": "9b89166cb174ed1180f68c3e328bc0e70567a9626259477b22ada21b4cf9f06e",
+ "base_entries": 36,
+ "control": {
+  "exit": 0,
+  "debt": 0,
+  "contra": 0,
+  "kinds": []
+ },
+ "score": "7/7",
+ "mutants": [
+  {
+   "id": "m1",
+   "verdict": "not-applicable (legacy unadjudicable entry)",
+   "new_kinds": [],
+   "observed": {
+    "exit": 0,
+    "debt": 0,
+    "contra": 0,
+    "kinds": []
+   }
+  },
+  {
+   "id": "m2",
+   "verdict": "killed",
+   "new_kinds": [
+    "not-dispatched-without-lane_rounds"
+   ],
+   "observed": {
+    "exit": 1,
+    "debt": 1,
+    "contra": 1,
+    "kinds": [
+     "not-dispatched-without-lane_rounds"
+    ]
+   }
+  },
+  {
+   "id": "m3",
+   "verdict": "killed",
+   "new_kinds": [
+    "no-row",
+    "status-outside-vocabulary"
+   ],
+   "observed": {
+    "exit": 1,
+    "debt": 2,
+    "contra": 1,
+    "kinds": [
+     "no-row",
+     "status-outside-vocabulary"
+    ]
+   }
+  },
+  {
+   "id": "m4",
+   "verdict": "killed",
+   "new_kinds": [
+    "lane_rounds-behind-counter"
+   ],
+   "observed": {
+    "exit": 1,
+    "debt": 1,
+    "contra": 0,
+    "kinds": [
+     "lane_rounds-behind-counter"
+    ]
+   }
+  },
+  {
+   "id": "m5",
+   "verdict": "killed",
+   "new_kinds": [
+    "ok-without-report"
+   ],
+   "observed": {
+    "exit": 1,
+    "debt": 1,
+    "contra": 1,
+    "kinds": [
+     "ok-without-report"
+    ]
+   }
+  },
+  {
+   "id": "m6",
+   "verdict": "killed",
+   "new_kinds": [
+    "closure-correction-missing-supersedes"
+   ],
+   "observed": {
+    "exit": 1,
+    "debt": 1,
+    "contra": 1,
+    "kinds": [
+     "closure-correction-missing-supersedes"
+    ]
+   }
+  },
+  {
+   "id": "m7",
+   "verdict": "killed",
+   "new_kinds": [
+    "ok-without-report"
+   ],
+   "observed": {
+    "exit": 1,
+    "debt": 1,
+    "contra": 1,
+    "kinds": [
+     "ok-without-report"
+    ]
+   }
+  }
+ ]
+}
