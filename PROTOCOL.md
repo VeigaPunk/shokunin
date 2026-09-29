@@ -98,7 +98,13 @@ that adds `.ufo/reports/round-<N>/<id>.md` carries the lane identity, because th
 the mission the instant the file reaches disk and any later fleet-level commit can sweep it
 (§Appendix, "Lands last"). A swept report is still landed — history is never rewritten to fix
 attribution — but the integrator records the attribution defect in the round notes, and a lane whose
-report is still uncommitted when its mission completes has not satisfied this clause.
+report is still uncommitted when its mission completes has not satisfied this clause. An orphaned
+report is resolved in order: the lane's own respawn inherits and lands it; the integrator sweeps it
+for durability only if that successor mission also terminates without landing it, and records the
+attribution defect — a sweep is the last resort because it freezes the on-disk bytes, unfilled
+placeholders and all, into a permanent object (§Appendix, "Orphaned report"). A filed report is a
+record: a correction lands in the correcting round's own report or as an appended erratum naming
+the superseded text, never as a silent in-place rewrite.
 
 Every dispatched lane writes a report at `.ufo/reports/round-<N>/<id>.md` in the main repo, where
 `<id>` is the roster id (`protocol` and `aggregator` for the two main-repo lanes). A report under
@@ -129,7 +135,10 @@ must list any mission open longer than two driver ticks — age computed from th
 not the tick counter, which resets when the driver restarts — and must say whether it is
 *progressing* or *silent*. Progressing means observable activity in the lane's write scope since its launch —
 a commit authored by the lane, or files modified under its repo
-(`find <repo> -newermt <launch-ts> -type f -not -path '*/.git/*'`); silent means neither. Commit sparsity is
+(`find <repo> -newermt <launch-ts> -type f -not -path '*/.git/*'`); silent means neither. A commit
+authored by *another* lane is not the subject lane's activity — the aggregator writes into every
+child repo — so where the only newer files are a sibling's, the row says so and grades the lane on
+its own signals. Commit sparsity is
 normal in this
 fleet (§Appendix, "Stale-lane actuator"), so the absence of a commit is not silence and must not
 trigger `failed`. The integrator-of-record records `failed` only for silent missions and flags
@@ -157,15 +166,20 @@ contract violations inside a real report stay status-neutral defects.
 **Integrator of record.** The integrator this protocol assigns work to is the round's `protocol`
 lane — a role, not a separate rostered lane; where a generated driver prompt conflicts (e.g. "never
 MANIFEST.json"), this file wins per the snapshot clause. Its main-repo writes are
-`PROTOCOL.md`/`ROADMAP.md`/`SCORECARD.md`/`LOG.md`/its own report, and expand by exactly three:
+`PROTOCOL.md`/`ROADMAP.md`/`SCORECARD.md`/`LOG.md`/its own report, and expand by exactly five:
 appending `MANIFEST.json` `rounds` entries, the conformance/routing record inside its own report
-(the round notes), and committing already-generated `.ufo/prompts/*.md` so dispatch evidence is
-durable — it never edits a prompt or the script, and `scripts/` plus `.ufo/state/` remain
-operator-side (§Invariants); required template corrections are named in its report. The integrator's
+(the round notes), committing already-generated `.ufo/prompts/*.md` so dispatch evidence is
+durable, committing `.ufo/l0-questions.md` so the operator queue is durable, and committing the
+round's closure-gate artifacts under `.ufo/waves/round-<N>/` — it never edits a prompt or the
+script, and `scripts/` plus `.ufo/state/` remain operator-side (§Invariants); required template
+corrections are named in its report. The integrator's
 closure artifact is its own round report: a protocol-lane report carrying no closure record — the
 statuses it wrote, or a statement of why none was writable — is an incomplete report whatever else
 it contains. That is the only guaranteed delivery channel: generated protocol prompts name none of steps 1–4
 (§Appendix, "No closure channel"), so the duty reaches the lane solely through this file's re-read.
+The closure record is a gate, not prose: steps 1 and 4 run through a committed checker whose frozen
+re-run reproduces every status the entry carries (§Gate standard, "Two evidences"), so a closure
+record no reader can re-execute is an opinion.
 
 A round is **completed** when every dispatched lane has either reported or been recorded failed by
 the integrator — a failed lane counts; a missing report does not. Under the respawn driver lanes
@@ -225,7 +239,9 @@ closing, the integrator:
      open mission: `ufo-sighting status --lite` still lists a mission after the driver `complete`d
      it (§Appendix, "Liveness probes"), so the driver's `live` test can never fail while its daemon
      is up and its `lane-dead-no-report` retry path is unreachable. `in-flight` is therefore decided
-     from the absence of both a `complete <lane> round=N` line and a report — never from a status
+     from the absence of both a `complete <lane> round=N` line and a *landed* report — an
+     uncommitted file at the report path does not end `in-flight`, however it fires the driver's
+     existence signal (§Appendix, "Unlanded report") — and never from a status
      probe. `.ufo/watchdog.log` is mutable and the driver appends to it concurrently, so its line
      numbers drift: the round notes carry a committed digest (timestamp + text) of every
      dispatch/complete line a status rests on, and that digest — not the live log — is the pointer
@@ -244,7 +260,11 @@ closing, the integrator:
    - **A row names the lane-round it describes.** `lanes` values stay status strings; the optional
      `lane_rounds: {<id>: <n>}` map records a lane's own counter where it differs from the entry's
      `round` and is required on every `not-dispatched` row — the counter the lane actually held is
-     what makes such a row falsifiable. An `ok` row needs no pointer:
+     what makes such a row falsifiable. The row describes lane-round `(<id>, round)`: `lane_rounds`
+     annotates it and never re-keys it, so last-wins is computed over `(id, entry.round)`; reading
+     the map as the key erases in-flight debt and manufactures rows out of the pre-fleet-2
+     fleet-keyed entries, which carry no `lane_rounds` and are `unadjudicable` as lane-rounds
+     (§Appendix, "Row identity"). An `ok` row needs no pointer:
      `.ufo/reports/round-<n>/<id>.md` is derivable, and its absence falsifies the row. `failed`,
      `in-flight`, and `not-dispatched` rows carry their pointer in `notes`.
    - **Retroactive closure is typed, and is not a pass.** Entries for lane-rounds that terminated
@@ -315,6 +335,41 @@ Sharpened by the round-4 audit (§Appendix, "Evidence standard"):
   sha/mode/lines baseline, or a committed expected-output file the script diffs against). A
   fingerprint *printer* with no stored baseline cannot detect drift. Recommended where the surface
   drifts outside lane control.
+
+## Gate standard
+
+A **gate** is a committed, re-runnable verdict script a lane owns: it reads surfaces, compares them
+against expected values persisted in its own repo, and returns a verdict. A tool that cannot fail is
+a **probe**, and is registered as one.
+
+- **Verdict.** `0` = `clean` and `1` = `failed` fleet-wide; every other code a gate exits (`2`, `3`,
+  `64`, …) is declared in its registry entry and mapped onto `clean | failed | could-not-evaluate`,
+  and an undeclared nonzero code reads as `could-not-evaluate`. Nothing else is pinned: a gate's own
+  vocabulary — WARN vs HIT, a missing baseline, finding kinds — stays lane-owned, and this section
+  governs the outer interface only, so no working gate breaks on adoption.
+- **Self-test.** Every gate exposes a self-invocation mode over isolated fixtures (temp trees, no
+  network, no live-tree write) asserting both the exit code and a stable expected finding-id, with
+  the expected values committed in the owning repo and independent of the recomputation. The flag
+  spelling is the lane's (`--selftest`, `--self-test`, `run_selftest()`) and the registry records it;
+  a helper-only or model-only self-check does not satisfy this clause.
+- **Two evidences.** Self-test green is capability, not a measurement (§Evidence standard). A gate
+  whose verdict depends on a mutable fleet artifact also ships a run over a committed input snapshot
+  with its committed expected verdict, so a later hand-edit of that artifact contradicts the frozen
+  run. A verdict names the revision it was measured against: a gate grades the tree it runs on, so a
+  run over a moving worktree is not comparable to one over the cited commit.
+- **Registry.** The schema is this section's; the rows live in each lane's `SKILL.md`: name,
+  `gate|probe`, entry command, verdict map (code → class), self-test command and spelling,
+  pinned-value path, write scope, owner. The aggregator ledger stays the routed-defect queue, not a
+  second inventory; a fleet index is pointers to lane rows, never copied expected values.
+- **Scope.** Read-only over surfaces it does not own, and it never acts on an external surface —
+  publishing, vault approval, claim submission and driver mutation stay operator-owned (§Invariants,
+  local-first). A verdict is lane-local evidence: it never defines the host runtime's stop conditions
+  (`loop_stop`/`mission_goal`) and never stands in for the native judge.
+- **Closure consequence.** A red gate is a conformance defect recorded in the round notes and routed
+  to its owner — status-neutral unless the round's rules already prescribe `failed` (closure step 1).
+  The integrator verifies a gate's *committed evidence* (self-test tally, frozen-run verdict, the
+  measured revision); it does not execute a sibling's gate, whose dependencies and write scope are
+  the lane's.
 
 ## File contract per shokunin repo
 
@@ -409,7 +464,13 @@ non-author verifier per **Promotion gates**.
   `MISSION.md`'s unconditional "commit then push" against this file's operator-gated hold, for
   instance — `PROTOCOL.md` wins and the conflict is named in the round notes; neither file is edited
   by a lane.
-- L0 side channel: lanes append `.ufo/l0-questions.md`; aggregator surfaces.
+- L0 side channel: lanes append `.ufo/l0-questions.md`; the aggregator surfaces it. The file is
+  append-only in the same sense as `LOG.md` — a lane restating or correcting its own question
+  appends a new line naming the superseded one and never rewrites a filed line, and the operator's
+  in-place answers are never a lane write. Cite a question by lane + round + its opening words,
+  never by line number: the queue grows, so every line number moves. Its durability owner is the
+  integrator, which commits it with the round's integration commit — a lane's appended question is
+  non-durable until committed and no lane owns the path (§Appendix, "L0 durability").
 
 ## Appendix — incident digest (why these rules exist)
 
@@ -444,3 +505,10 @@ aggregate in r10 §Closure/§Conformance (the integrator role did not exist befo
 | Tracked runtime | 10 | `.ufo/state` (16 files) + `watchdog.log` tracked since `609ecb6` although the clause said "stay untracked" | r10 §Conformance 6 |
 | Lane identity | 9 | kotoba `3b029b8` authored under the operator's personal identity blurs the `[x]` non-author line | r10 D-30 |
 | Protocol self-defect | 10 | `PROTOCOL.md` grew 387→583 lines with ~29 inline incident references and 17 duplicated rule pairs → round-11 compaction | r10 D-48 |
+| Gate standard | 10, 12 | 14 committed verdict scripts across the six child lanes, 13 already declaring a `0/1` map; reserved codes diverge (kotoba `3` no-baseline in two scripts — and inconsistently, its `--json` path returns `0` where its text path returns `3`; kumitate `64` usage in three) and `kake-shokunin/scripts/probe-delta.mjs` self-declares "a report, not a gate"; self-test depth splits four ways (exit+expected-id: kagi drift-pins, kengaku `run_selftest()`, kumitate; exit-only: transcript-scan; model-only: kotoba `--self-test`; fixture/model: verify_corpus_independent) | l0 kengaku r10; r12 |
+| Gate standard | 12 | three gates red at the round-12 reading, none attributable to a closed lane-round: kengaku's grades the tree it runs against (worktree `CHECKS n=280 mismatches=1` FAIL vs the same gate over its cited commit `06cdc98` at `n=149 mismatches=0` PASS), kagi `TRANSCRIPT_SCAN: HITS=2` and kotoba `25/27` (`omp.db.rows` 18 vs 17) read host surfaces outside lane control; all five hermetic self-tests pass run as a non-owner from the main repo in ≈8.4 s — kumitate `57/57`, so the `49/49` in the l0 question is stale | r12 |
+| Row identity | 12 | keying `rounds[]` by `lane_rounds` instead of by `entry.round` yields 66 ok / 3 failed / 13 not-dispatched / 1 in-flight over 83 rows, erasing 3 of the 4 carried `in-flight` rows and manufacturing a phantom `(aggregator, 9)` out of pre-fleet-2 `rounds[3]`; entry-keyed last-wins reproduces the round-11 record exactly (73 / 4 / 23 / 4 over 104 rows) | r12 |
+| Orphaned report | 12 | aggregator r7's report was uncommitted when its mission completed (20:13:17) and its r8 respawn self-landed it 19 min 17 s later (`6d27283`, lane identity); kotoba r12's stayed untracked carrying the literal placeholder `LANE_HASH` at line 224 where its round-work hash `633859f` belongs, so an integrator durability sweep would have frozen an unfilled placeholder into a permanent object | r12 |
+| L0 durability | 12 | `.ufo/l0-questions.md` had no committer: the kengaku-r10 and kumitate-r10 questions sat uncommitted across two rounds until a lane sweep carried them (`46e9ec3`, kumitate r11, operator identity, +5/-1 outside its own report path), and a kake r14 in-place rewrite of its own filed line went unrecorded | r12 |
+| Stale-lane actuator | 12 | the progressing test's "files modified under its repo" half attributes a sibling's work to the lane: kotoba r13 graded progressing on three `aggregator-shokunin` commits (`683d147`/`7163c81`/`ed5c261`) with no kotoba-authored commit since its launch | r12 |
+| Unlanded report | 12 | kagi r12 wrote 13620 B to its contract path at 21:02 while its mission was still live: untracked, `SHONEN`=0, its only cited hashes (`4391b3b`/`7c3377c`/`e0a04d8`) are `aggregator-shokunin` box-3 commits, its own r12 work uncommitted, no `complete` line, counter still 12 — a draft at the contract path that the driver's existence signal will nonetheless complete on | r12 |
