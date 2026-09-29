@@ -152,24 +152,55 @@ Metrics (before → after, with counting commands):
 | M5 | table rows whose re-run command this lane executed in the same refresh | 0 | 12 / 12 | §12.5 blocks R0–R5 + K/S/U/G/A, re-run at the 22:55:03Z cutoff pass |
 | M6 | written mint triggers fired and re-tested in-refresh | 0 | 1 (kessho/D-82: kotoba 4th builder `abef8aa`/`4dd7753`, kengaku 5th `0c51208`; re-tested, below bar) | §12.2 kessho row + §12.5-S |
 
+### Round 8 (refresh 6) — cross-lane-quality axis-move
+
+Measured against main HEAD `46e9ec3` at the refresh cutoff **2026-09-28T23:46:28Z** (this section ships in the
+round-8 commit, so it cannot cite its own hash — the report does). Before-column values are the round-6/7 after-state.
+
+| Axis | Score (before r8) | Score (after r8) | Evidence pointer | Last change |
+|---|---|---|---|---|
+| cross-lane quality | **7** | **8** | Before: §11.4's fleet-wide gate stood — *"no repo has a single `[x]` on box 3 from a named non-author verifier"*; every box-3 claim rested on a lane-dispatched subagent, which PROTOCOL.md counts as the lane; this ledger's own cells had never been re-executed by a non-author; queue-key uniqueness was assumed. After: **6/6 repos carry a committed non-author box-3 verdict** (4 `[x]` / 2 `[~]`, one `[ ]` withdrawn as live-tree contamination and re-graded), **115 commands executed** with exit codes, 28 break points cited to quoted `SKILL.md` text, 30 gated rows classified under the protocol's three-outcome rule, **41 non-author re-executions of this ledger's own citations** (30 PASS / 8 STALE / 3 FAIL — all three FAILs absorbed as self-defects 13–15), one key collision **refused** and nine protocol rows re-keyed (D-87, D-111…D-119), 2 duplicate groups folded, 3 standing contradictions named, 24 new rows filed. Metrics X1–X8, ledger §13.1–§13.2. **Not 9:** 3 of 6 verdicts are provisional (decisive text worktree-only), no `SHONEN.md` box-3 line yet names a resolvable non-author verifier (the verdicts live in aggregator-owned lessons; `SHONEN.md` is outside this lane's write scope), and 87 `PROTOCOL.md:<line>` citations are broken fleet-wide by the r11 compaction (D-89) | round 8 |
+| corpus review | **8** | **8** (standing duty done; one duty **owed**) | The window since the refresh-5 cutoff was swept exhaustively (90 tracked report files enumerated by introducing commit, 12 in window, 8 filed reports → **0 markers**, 2 files not at a contract path) and 16 aggregator-identity commits landed in the six child corpora. **Owed and named, not skipped:** the CORPUS.md rule-10 per-repo conformance verdicts were **not** re-emitted this refresh — §11.1's six `not conformant` verdicts stand, and an unrefreshed verdict is a stale claim (§13.7) | round 8 |
+| mint/dormancy calls | **8** | **8** (re-tested, two discharges, no new capability) | 12/12 standing rows re-run in-refresh (7 dormancy + 5 mint); kessho's builder trigger **fired again** (5 lanes/6 artifacts → 6 lanes/9 artifacts) and stays below bar (0 unplaceable); D-86 **ruled** (protocol r11 §Rulings 1); axis-framework-stewardship's "re-check when protocol r11 lands" **discharged**; kama unchanged **blocked-external** (L0 line 2 byte-identical to `e333e7c` → unanswered, not re-flagged); mints executed 0 over 22 `rounds` entries. New scan correction: commit-age cells must filter aggregator seat commits (§13.3) — this round's own 16 child-repo commits would otherwise be attributed to the lanes | round 8 |
+
+Metrics (before → after, with counting commands):
+
+| # | Metric | Before | After | Command |
+|---|---|---|---|---|
+| X1 | repos with a **committed non-author box-3 verdict** | 0 / 6 | **6 / 6** (kasegi `9dbe69f`+`2b0d869`, kengaku `d8f2898`+`06cdc98`, kake `69c1856`+`4c9a985`, kumitate `e79fefa`+`0f24ca7`+`942afe4`, kotoba `683d147`+`7163c81`+`ed5c261`, kagi `e0a04d8`+`7c3377c`+`4391b3b`) | ledger §13.6-B (`git -C <repo> log --format=%h -- corpus/lessons/round-8-aggregator-box3-coldrun.md`) |
+| X2 | cold-run commands executed with exit codes | 0 | **115** (105 ok / 10 fail) across six repos | per-lesson command tables; §13.1 totals row |
+| X3 | break points cited to a quoted `SKILL.md` line | 0 | **28** (5 kasegi, 5 kengaku, 4 kake, 4 kumitate, 3 kotoba, 7 kagi), incl. the new `context-leak` class | per-lesson break-point tables |
+| X4 | gated rows classified `gated-with-artifact` / `gated-without-artifact`, each carrying its would-be command + gate cite | metric did not exist (first stated form was **unfalsifiable** — critic attempt 5; repaired before landing) | **30** rows: 12 with-artifact (counted as executed) / 18 without | §13.1 gated column; PROTOCOL.md evidence-standard clause quoted in §13.1 ruling 2 |
+| X5 | §12 standing-table rows re-run in-refresh | 12 / 12 (r7) | **12 / 12** (r8) | §13.6-R and §13.6-K/S/U/G/A, executed at the 23:46:28Z cutoff |
+| X6 | round-7 artifacts written-but-uncommitted → landed | 0 / 4 | **4 / 4** — ledger §11.9+§12, `SCORECARD.md` §Round 7, `LOG.md` §Round 7, `round-7/aggregator.md`, landed **unedited** at `6d27283` and pushed | `git show --stat 6d27283`; `git log --diff-filter=A -1 --format='%h %aI' -- .ufo/reports/round-7/aggregator.md` |
+| X7 | queue-key integrity: collisions refused / duplicate groups folded / standing contradictions named | unmeasured (assumed unique) | **1 / 2 / 3** — D-87 refused (protocol r11 reused `D-50`…`D-58`), D-39⊇D-85 and D-51⊇D-84 folded, 3 contradictions named | `grep -oE '^\| D-[0-9]+' .ufo/reports/AGGREGATE.md \| sort -t- -k2 -n \| tail -1` → `D-86` before this refresh; 84 distinct keys (distiller) |
+| X8 | non-author re-executions of this ledger's own citations | 0 | **41** → 30 PASS / 8 STALE / **3 FAIL**, all three FAILs filed as self-defects 13–15 and corrected in §13 | reviewer seat transcript; §13.6-Q re-checks |
+
+
 ### Planned
 
-- **round 8 — cross-lane quality (queued at round 6 §Planned; the highest-value move available).** The box-3
-  execution walkthrough: one **non-author** agent per repo runs `SKILL.md`/`corpus/` with no oral context; target
-  6/6 repos with a named non-author box-3 verdict committed in the repo (ledger §11.4's fleet-wide `[~]` → `[x]`).
-  Falsified if any cold run is executed by the repo's author lane, or if a verdict stays uncommitted.
-- **Standing duty (every refresh):** re-test the ledger §12 tables — rows are cutoff-stamped claims, not facts;
-  re-check axis-framework-stewardship when the protocol r11 report lands; kama stays **blocked-external** until
-  `.ufo/l0-questions.md` line 2 is answered — never re-flag it as new.
+- **round 9 — cross-lane quality (continuing; the axis is at 8 with three named residuals).** Move: **firm up or
+  downgrade the three provisional box-3 verdicts** (kasegi, kake, kagi) by re-running each decisive claim against the
+  lane's *landed* commit — the form that worked for kumitate at `59e6c0c` (§13.1 ruling 4) — and **route the
+  `SHONEN.md` box-3 mark updates** (D-102, D-107, D-108), verifying at least one lane lands a resolvable non-author
+  verifier id in its own card. Falsified if a provisional verdict is restated without a re-run at the lane's new HEAD,
+  or if the round ends with 0 lanes citing a round-8 verdict.
+- **Owed from round 8 (do not let it age):** re-emit the CORPUS.md rule-10 per-repo conformance verdicts (§11.1's six
+  `not conformant` are now two refreshes old), and re-test the D-111…D-119 mirror rows against protocol's next report.
+- **Standing duty (every refresh):** re-test the §12/§13 standing tables — rows are cutoff-stamped claims, not facts;
+  kama stays **blocked-external** until `.ufo/l0-questions.md` line 2 is answered — never re-flag it as new; re-run
+  §13.6-Q against this lane's own rows (P-q).
 
 ### Retired
 
-- none. No axis is saturated and none is a wrong fit: corpus review still finds every repo
-  non-conformant (6/6), cross-lane quality has 78 open queue rows, and mint/dormancy has
-  never had a positive dormancy case to test the rule against. A split of
-  "mint/dormancy calls" into `mint-calls` (operator-gated) and `dormancy-calls`
-  (lane-measurable) is *proposed but not taken*: the round-7 move covers both halves in one
-  table, and a split that only relabels rows would reduce comparability with refreshes 3–4.
+- none. No axis is saturated and none is a wrong fit: cross-lane quality has three named residuals at 8 (provisional
+  verdicts, no `SHONEN.md` non-author marks, 87 broken `PROTOCOL.md` line cites), corpus review **owes** a verdict
+  re-emission, and mint/dormancy has still never had a positive dormancy case to test the rule against. Two splits are
+  *proposed but not taken*: (a) "mint/dormancy calls" into `mint-calls` (operator-gated) + `dormancy-calls`
+  (lane-measurable) — declined at round 7 and still declined, since one table covers both halves and a relabel would
+  break comparability with refreshes 3–5; (b) "cross-lane quality" into `box-3 currency` (provisional → firm) +
+  `queue integrity` (keys, collisions, contradictions) — deferred to round 10, when X1–X8 will have two refreshes of
+  history to compare; splitting on one round of data would make the round-8 numbers unreadable against the new axes.
 
 ### Move log
 
@@ -177,3 +208,4 @@ Metrics (before → after, with counting commands):
 |---|---|---|---|---|
 | 6 | corpus review | 2 — no canonical ledger, 0 durable queue rows, 41 lane reports unswept, 0/6 current lessons, last refresh 2 lane-rounds old | 8 — canonical ledger relocated + refresh 4, 79 `D-` rows, 41/41 swept, 6/6 lessons committed and pushed, 6/6 verdicts, 100 citations re-executed | `.ufo/reports/AGGREGATE.md` §11 (this file's C1–C8); lessons `d341b48`, `1bd17ec`, `ab8c9e2`, `31f09cd`, `778310d`, `ad694a2`; report `.ufo/reports/round-6/aggregator.md` |
 | 7 | mint/dormancy calls | 6 — one-off prose calls, 0 dated bar tests, buggy dormancy scan, kama re-flag risk each refresh | 8 — standing §12 tables: 7 lane rows + 5 candidate rows, 12/12 same-refresh re-runs, M4 0→5, kessho trigger fired + dated re-test, kama blocked-external (L0 line 2) | `.ufo/reports/AGGREGATE.md` §12; `.ufo/reports/round-7/aggregator.md` (wave digest: 10 L2 seats, one batched call) |
+| 8 | cross-lane quality | 7 — no repo had a box-3 `[x]` from a named non-author verifier; the ledger's own cells had never been non-author-audited; queue-key uniqueness assumed | 8 — 6/6 committed non-author verdicts (4 `[x]`/2 `[~]`, 1 withdrawn), 115 commands executed, 28 cited break points, 30 gated rows classified, 41 self-citations re-executed (3 FAILs absorbed), 1 key collision refused + 9 rows re-keyed, 24 new rows, round-7 orphan landed at `6d27283` | `.ufo/reports/AGGREGATE.md` §13 (this file's X1–X8); 16 child-repo commits listed in X1; report `.ufo/reports/round-8/aggregator.md` (wave digest: 15 L2 seats, one batched call) |

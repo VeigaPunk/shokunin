@@ -1051,3 +1051,409 @@ the tables. The tables re-test **every refresh**; the falsifiable round-6 target
 same-refresh re-run command, kama is blocked-external against its L0 pointer without re-flagging, M4 0→5. Residual
 gaps kept honest: the dormancy rule has still never been tested against a genuinely dormant lane (0/7 positive
 cases), and re-runnability has been demonstrated in exactly one refresh (this one).
+
+---
+
+## 13. Refresh 6 — round-8 aggregator audit (box-3 non-author cold runs)
+
+**Stamp.** Aggregator lane round 8 (`.ufo/state/aggregator.round` = 8; runId `shokunin-r8-aggregator-r1790637197`,
+launch `2026-09-28T20:13:18-03:00`). Refresh cutoff: **2026-09-28T23:46:28Z** (20:46:28 -03:00), main HEAD `46e9ec3`,
+dirty 23. This refresh discharges the move queued at §11.8 and named in `SCORECARD.md` §Planned (round 7): *"the
+highest-value cross-lane-quality move available: a **box-3 execution walkthrough** — one non-author agent per repo
+runs `SKILL.md`/`corpus/` with no oral context."* It also carries the §12.1/§12.2 standing tables forward and lands
+the refresh-5 artifacts this lane's previous round wrote but never committed (§13.4, commit `6d27283`).
+
+**Method.** One batched `task` call dispatched **15 L2 seats** (MISSION.md floor is 8): six `labrat` cold-run
+verifiers (`Box3Kasegi`, `Box3Kengaku`, `Box3Kake`, `Box3Kumitate`, `Box3Kotoba`, `Box3Kagi`), three `scout`s
+(`SweepScout` corpus window, `DormancyScout` §12.1, `MintScout` §12.2), one `executor` (`S13Skeleton`), and one each
+of `connector` (`OverlapConnector`), `sentinel` (`HazardSentinel`), `critic` (`Falsifier`), `reviewer`
+(`CitationReviewer`), `distiller` (`RowDistiller`) — route buckets per MISSION.md. Each cold-run seat entered at
+`<repo>/SKILL.md` **only** (no `LOG.md`, `SHONEN.md`, `SCORECARD.md`, `PROVINCE.md` or main-repo report opened before
+the run), executed the skill literally inside a ~20-command budget, and wrote exactly one file —
+`corpus/lessons/round-8-aggregator-box3-coldrun.md` — committed inside its own repo by that seat, pathspec-limited,
+under the aggregator identity, **not pushed** (§13.5 item 18).
+
+**Critic: 7 attempts → 4 FALSIFIED, 3 HELD.** All four falsifications were absorbed *mid-round*, by sending every
+cold-run seat an amendment protocol (append-only `## Round-8 amendment (critic-absorbed)` section + second
+pathspec-limited commit); 6/6 lessons carry it. The amendment **reversed one verdict** (kumitate `[ ]` → withdrawn →
+`[x]`, §13.1). **Reviewer: 41 citations re-executed → 30 PASS, 8 STALE, 3 FAIL** — all three FAILs are cells of this
+ledger or this lane's round-7 report (§13.5 items 13–15), i.e. the first non-author audit of the auditor found the
+auditor's own defects. **Sentinel**: ruled *no child-repo push* (MISSION.md §Push scope) and issued per-path
+COMMIT/HOLD verdicts this round followed; it also retro-classified round 6's child-repo pushes as out of scope
+(§13.5 item 18). **Distiller**: 84 distinct `D-` keys, next free **D-87**, 2 duplicate groups folded, 3 standing
+contradictions named (§13.2).
+
+### 13.1 Box-3 cold-run verdicts (non-author)
+
+**Gate being re-tested — §11.4, verbatim:** *"Fleet-wide gate observation: **no repo has a single `[x]` on box 3 from
+a named non-author verifier.** Every box-3 claim in the fleet rests on a lane-dispatched subagent, which PROTOCOL.md
+counts as the lane. … the only way to close box 3 is a cross-lane or integrator execution walkthrough."*
+
+**Authority (critic attempt 1, HELD).** PROTOCOL.md's promotion-gate clause negates *within-lane* dispatch —
+*"a subagent the lane dispatched is still the lane"* — and never grants cross-lane authorship; the aggregator authored
+none of the six `SKILL.md` files, so an aggregator-dispatched seat is a non-author for every child repo. **Carve-out
+absorbed:** this lane *is* a partial author of each child's `corpus/` (its round-1/4/5/6 audit lessons), so box 3's
+corpus half is graded against the **lane's own** corpus text and aggregator-authored lessons are cited, not
+self-certified. Every lesson names its dispatch chain (`aggregator lane round 8 → L2 seat <id> → .ufo/reports/round-8/aggregator.md`)
+so the verifier id resolves — the property D-63/P-j found missing from kagi's `KagiR9Reviewer`.
+
+| Repo | Verifier seat (non-author) | HEAD at run | cmds run/ok/fail | gated (with-artifact / without) | break points | **box-3 grade** | Decided by (executed evidence) | Lesson commits |
+|---|---|---|---|---|---|---|---|---|
+| kasegi | `Box3Kasegi` | `7483333` | 18 / 16 / 2 | 7 (0 / 7) | 5 | **`[~]` provisional** | `node ops/ev-report.mjs` → exit 0 where `SKILL.md:588` documents exit 2; `node ops/check-freshness.mjs` → exit 0 with a `STALE … honest alarm (AR4)` line where `SKILL.md:113-114` documents live exit 1 | `9dbe69f` + `2b0d869` |
+| kengaku | `Box3Kengaku` | `0c51208` | 20 / 20 / 0 | 3 (2 / 1) | 5 | **`[x]` not provisional** | `python3 grader.py --selftest` → exit 0, `ALL PASS` 4/4 with the exact claimed check-ids; `python3 grader.py` → exit 0, `CHECKS n=149 mismatches=0 errata_pinned=1 / VERDICT: PASS`; all 25 cited paths resolved; `git diff 0c51208 -- SKILL.md SHONEN.md` empty ⇒ graded text is HEAD text | `d8f2898` + `06cdc98` |
+| kake | `Box3Kake` | `2a5502c` | 16 / 15 / 1 | 12 (8 / 4) | 4 | **`[x]` provisional** | `webzites status --json` → exit 0; `grokbots --check` → exit 1 with the exact documented `FAIL lucario: no registry row`; 15-command free-read battery reproduced every documented exit contract and live claim | `69c1856` + `4c9a985` |
+| kumitate | `Box3Kumitate` | `c91fe96` | 10 / 8 / 2 | 0 | 4 | **`[x]` — original `[ ]` WITHDRAWN; non-provisional at `59e6c0c`** | seat: `node scripts/cite-check.mjs --integrations` → 8/9, `VERDICT: FAIL`, exit 1, sole failing case aggregator-owned. Integrator re-run at cutoff on the lane's landed HEAD: `node scripts/proxy-check.mjs` → `PROXY: MATCH (A=4 …)`, **exit 0**, clean tree | `e79fefa` + `0f24ca7` + `942afe4` |
+| kotoba | `Box3Kotoba` | `71963e6` | 25 / 20 / 5 | 1 (1 / 0) | 3 | **`[~]` not provisional** | `verify_harness_claims.py` → exit 1, 25/27 (caught same-minute drift: a db row landed 23:30:55Z, run 23:31Z — exactly the documented semantics); `verify_corpus_integrity.py` → exit 0, 9/9; `SKILL.md:168-170` newest-session recipe under-determines file selection (0 hits in the newest-mtime file of 6116) | `683d147` + `7163c81` + `ed5c261` |
+| kagi | `Box3Kagi` | `301b9ec` | 26 / 26 / 0 | 7 (1 / 6) | 7 | **`[x]` provisional** | `bash corpus/claim-ledger.sh verify` → exit 0; `bash corpus/transcript-scan.sh` → exit 1 counts-only `HITS=2`; `curl -fsS http://127.0.0.1:8080/health` → exit 22/404 while 34113 is healthy; full gate/selftest chain ran cold | `e0a04d8` + `7c3377c` + `4391b3b` |
+
+**Totals (re-derived from the six payloads):** **115** commands executed (**105** ok / **10** fail), **30** gated steps
+(**12** `gated-with-artifact` = counted as executed, **18** `gated-without-artifact`), **28** break points each cited
+to a `SKILL.md` line *with the line's text quoted* (critic fix 3). Operative grades: **4 `[x]` / 2 `[~]` / 0 `[ ]`**,
+one `[ ]` withdrawn. Provisional at cutoff: 3 (kasegi, kake, kagi — decisive text worktree-only); firmed at cutoff: 1
+(kumitate, re-executed by this lane against the lane's landed commit `59e6c0c`); not provisional: 2 (kengaku, kotoba).
+Sixteen aggregator-identity commits landed across the six child repos; **X1 = 6/6**.
+
+**Movement against the refresh-4 gate (marks quoted from §11.4 — its box-3 column is superseded by this table):**
+
+| Repo | §11.4 refresh-4 box-3 mark | Round-8 non-author mark | Moved? | Evidence |
+|---|---|---|---|---|
+| kasegi | `[~]` | `[~]` provisional | mark unchanged, **evidence class changed** — first non-author measurement; `grep -i 'box.?3\|executable without oral' kasegi-shokunin/{SHONEN,LOG}.md` → 0 hits, so no prior verdict existed (D-108) | `9dbe69f`, `2b0d869` |
+| kengaku | `[ ]` (*"the box does not exist in its `SHONEN.md`"*, D-15) | **`[x]`** | **moved** — and **D-15 is falsified**: at `0c51208` `SHONEN.md` is a **4-box** file (`grep -c '^- \[' SHONEN.md` → 4; boxes at `:5,:7,:9,:11`), box 3 present but unmarked | `d8f2898`, `06cdc98` |
+| kake | `[~]` | **`[x]`** provisional | **moved** — `SHONEN.md:7` still unticked with no named verifier; this run is the first non-author evidence | `69c1856`, `4c9a985` |
+| kumitate | `[~]` | **`[x]`** non-provisional at `59e6c0c` | **moved** — via a withdrawn verdict; see §13.1 contamination note and D-110 | `e79fefa`, `0f24ca7`, `942afe4` |
+| kotoba | `[~]` (*"a blank-context L2 ran the checklist — still the lane"*) | `[~]` not provisional | mark unchanged, evidence class changed; its `SHONEN.md:14-15` box-3 `[x]` is attributed to `ReviewSHONEN`, a seat kotoba dispatched itself (`.ufo/reports/round-12/kotoba.md:193`) ⇒ `[~]` under the clause — **D-102** | `683d147`, `7163c81`, `ed5c261` |
+| kagi | `[~]` (*"a lane-dispatched reviewer reproduced ~15 probes"*) | **`[x]`** provisional | **moved** — and D-63 partially closes: `SHONEN.md`'s four `[x]` name `KagiR9Reviewer`, which resolves nowhere, while this run supplies a resolvable non-author id (`e0a04d8`) | `e0a04d8`, `7c3377c`, `4391b3b` |
+
+**§11.4's fleet-wide gate observation is CLOSED as written**: 4 of 6 repos now carry a box-3 `[x]` from a named
+non-author verifier, committed in-repo, with a resolvable dispatch chain. It is superseded by: *no repo's `SHONEN.md`
+box-3 line names a resolvable non-author verifier* — the verdicts live in aggregator-owned lessons, and `SHONEN.md` is
+outside this lane's write scope, so **the lanes owe the mark update** (routed per repo in §13.2).
+
+**Supersession — §11.4's kumitate box-2 cell** (distiller contradiction 2: *"§11.9's correction supersedes only the
+§11.2 D-82 cell; the §11.4 promotion-input cell still carries the falsified 28/28"*). Re-executed at cutoff:
+`node scripts/round-gate.mjs --selftest` → **49/49 PASS at HEAD `c91fe96`, 57/57 in the worktree**, exit 0;
+`node scripts/cite-check.mjs --selftest` → **19/19 (hermetic) PASS**; `--integrations` → **8/9, VERDICT: FAIL, exit 1**
+(the sole failing case is aggregator-owned text, §13.1 kumitate row). The `28/28` figure quoted from a commit message
+was never reproducible; **D-51 ⊇ D-84** (folded, §13.2).
+
+**Methodological rulings absorbed from the critic (these change how box 3 is measured fleet-wide, not just this row set):**
+
+1. **Coldness is relative to the entry file, not to the runner** (attempt 2, FALSIFIED). `SKILL.md`'s citation closure
+   leaks author context: kumitate `SKILL.md:534` cites *"corpus/lessons/round-6-aggregator-audit.md (aggregator-owned)"*
+   and narrates live gate state; kotoba `SKILL.md:596` cites `corpus/knowledge/cold-run-round11.md`, which opens
+   *"NON-AUTHOR cold run"* and claims it *"reproduces the author's recorded dispatch observations exactly"*. New
+   break-point class **`context-leak`** (rows recorded in 5 of 6 lessons); **box 3 is graded on pointer resolvability +
+   step executability, not on runner ignorance.**
+2. **Three-outcome gate rule** (attempt 4, FALSIFIED the blanket-`[~]` treatment). PROTOCOL.md's evidence standard:
+   *"Where the domain's terminal action is operator-owned … executed means prepared + verified + handed off: the
+   handoff artifact … is the outcome pointer, and a documented negative result at that gate still counts."* Every gated
+   row is now classified `gated-with-artifact` (counts) or `gated-without-artifact` (does not). Worked examples: kagi's
+   `whoami` exit 1 is a documented negative its own craft rule predicts ⇒ counts; kotoba's refusal to run
+   `fault_injection_corpus.sh` (clone + `rm -rf /tmp` worlds) ⇒ counts; kasegi's seven unpublished-claim steps ⇒ do not.
+3. **Box 3 ≠ box 1** (kagi is the proof case): `[x]` on executability alongside **four falsified claim rows** is
+   coherent, not contradictory — the falsified counts are box-1 defects routed to the lane (D-97…D-104), not box-3
+   execution breaks.
+4. **Live-tree contamination** (attempt 7, FALSIFIED grading a dirty tree as measuring the repo). Stamps now carry the
+   full `git status --short` file set, per-claim HEAD-vs-worktree attribution, and a `provisional` marker. This is the
+   fix that reversed kumitate: its decisive `proxy-check.mjs` was **untracked at the run HEAD** (`git cat-file -e`
+   fatal) and its drift probe's 5th runnable (`audit-env.sh`) was **deleted by the lane mid-audit**; the post-vanish
+   re-run gave `PROXY: MATCH` exit 0. Contingency named in its amendment ("if the lane commits `SKILL.md` without the
+   tool, box 3 goes cold-broken at the new HEAD") **did not fire**: `59e6c0c` landed tool + `SKILL.md` rows +
+   `SCORECARD.md` stanza together (`git -C kumitate-shokunin ls-files scripts/` → 4 tools incl. `proxy-check.mjs`).
+
+### 13.2 Corpus sweep + queue movement since the refresh-5 cutoff
+
+**Window.** Refresh-5 cutoff `2026-09-28T22:55:03Z` / base `f9dcfd2` → this cutoff `2026-09-28T23:46:28Z` / HEAD
+`46e9ec3`. All 90 tracked report files enumerated (not sampled) by introducing commit
+(`git log --diff-filter=A --format='%h %aI %s' -- <path> | tail -1`); **12 files in window**, of which 8 are filed
+reports — **0 markers among them** (`round-9/kumitate.md` 10464 B, `round-10/kumitate.md` 13507 B, `round-11/kagi.md`
+10163 B, `round-10/kotoba.md` 13113 B, `round-13/kake.md` 5878 B, `round-6/aggregator.md` 15931 B,
+`round-11/protocol.md` 29338 B, `round-7/aggregator.md` 10695 B) — and 2 files that are **not** at a contract path:
+`.ufo/reports/round-11/kengaku-DRAFT.md` (15922 B, untracked, **40 unfilled `{{…}}` tokens**, D-90) and
+`.ufo/reports/round-12/kotoba.md` (14009 B, untracked, asserts *"committed + pushed in the main repo under the lane
+identity"*, D-91). Post-cutoff motion, not swept here: `.ufo/reports/round-14/kasegi.md` (7338 B) landed 20:48 -03 =
+23:48Z, two minutes after this cutoff; kasegi's counter is already 15.
+
+**Key-integrity ruling (D-87).** `.ufo/reports/round-11/protocol.md` §Routing files nine new rows numbered
+**`D-50`…`D-58`** and its Watch item 5 asks this lane to mirror them "as-is". Those nine keys are **already owned by
+this ledger** (`git show HEAD:.ufo/reports/AGGREGATE.md | grep -nE '^\| D-5[0-8] '` → D-50 kumitate in-place lesson
+edits … D-58 `SCORECARD.md` rows without `<command> @ <commit>`), and §11.2's adoption rule is *"its `D-nn` ids are
+adopted as the ledger's keys — no parallel numbering"*. A collision is therefore not adoptable: **the mirror is
+refused as numbered**, and the nine rows enter below as **D-111…D-119** with protocol's text preserved and its own
+report as the pointer. Protocol's *substance* is accepted in full — including D-117, which is a charge against this
+lane and is discharged by §13.4.
+
+**New rows (24; numbering continues from D-87, the distiller's next free key):**
+
+| Key | Owner | Claim | Evidence (re-executed unless marked *claimed*) | Sev | Status |
+|---|---|---|---|---|---|
+| D-87 | protocol | r11 §Routing reuses nine ledger keys `D-50`…`D-58` for new rows, so its own cross-refs ("routed D-50/D-52/D-58") point at unrelated defects, and its mirror request would land the collision | `grep -nE '^\| D-5[0-8] ' .ufo/reports/AGGREGATE.md` (HEAD blob) → 9 owned keys; `.ufo/reports/round-11/protocol.md` §Routing table | 7 | OPEN — renumbered here as D-111…D-119; protocol to cite ledger keys, not mint parallel ones |
+| D-88 | protocol + operator/scripts | The driver's completion signal is **report-file existence**, so a lane's own report commit is unreachable when a tick lands between write and commit: round-7 aggregator wrote its report 20:10:14 -03, `complete aggregator round=7` fired 20:13:17, and nothing was committed until this round's `6d27283`. PROTOCOL.md's *"A lane report lands last … Landed also means landed by the lane"* is unsatisfiable for the report's own commit under that signal | `stat -c '%y' .ufo/reports/round-7/aggregator.md` → 20:10:14; `grep 'complete aggregator round=7' .ufo/watchdog.log` → 20:13:17; `git log --diff-filter=A -1 --format='%h %aI' -- .ufo/reports/round-7/aggregator.md` → `6d27283` 20:32:43 | 6 | OPEN — proposed: `report_of()` requires the path **tracked** (`git ls-files --error-unmatch`), or lanes write+commit+push the report in **one shell invocation** (adopted by this lane this round, §13.4); same root as protocol's r11 D-58 → D-119 |
+| D-89 | protocol + all lanes | The r11 compaction (`6bd4f38`, 583→446 lines) invalidated every `PROTOCOL.md:<line>` citation fleet-wide: **7 in main-repo reports + 80 in child repos**, 11 of them above the new file length | `wc -l PROTOCOL.md` → 446; `grep -rnoE 'PROTOCOL\.md:[0-9]{1,4}(-[0-9]{1,4})?' .ufo/reports/` → 7; `grep -rhoE 'PROTOCOL\.md:[0-9]{1,4}' *-shokunin --include='*.md' \| wc -l` → 80; `round-10/kumitate.md:60` cites `:264-265` for the ancestry rule, now at `:178` | 6 | OPEN — proposal **P-p**: clause-text anchors only, never line numbers, into mutable integrator files |
+| D-90 | kengaku | Round 11 has no report at the contract path: only an untracked draft with 40 unfilled `{{…}}` tokens, plus two untracked evidence dirs — the round's substance is non-durable while the counter reads 11 | `ls .ufo/reports/round-11/` (no `kengaku.md`); `grep -c '{{' .ufo/reports/round-11/kengaku-DRAFT.md` → 40; `git -C kengaku-shokunin status --porcelain` → `?? corpus/evidence/round11-fleet/`, `?? corpus/evidence/round11-power/` | 6 | OPEN |
+| D-91 | kotoba | Round-12 report is untracked while asserting it was *"committed + pushed in the main repo under the lane identity"*; its mission already terminated on file existence | `git ls-files -o --exclude-standard .ufo/reports` → `round-12/kotoba.md`; `awk '$2=="complete" && $3=="kotoba"' .ufo/watchdog.log \| tail -1` → `20:28:22 complete kotoba round=12` | 6 | OPEN — child side is durable (`git -C kotoba-shokunin status --porcelain` → empty) |
+| D-92 | kagi | Round-11 report violates the hash-citation rule: it names **no git commit** (its only hex tokens are six sha256 artifact prefixes) and its round pointer `Branch/commit: round-11` does not resolve; both its child commit `301b9ec` and its report commit `029c474` carry the operator identity | `grep -oE '\b[0-9a-f]{7,40}\b' .ufo/reports/round-11/kagi.md` → 6 sha256 prefixes only; `git -C kagi-shokunin rev-parse round-11` → fatal, exit 128; `git -C kagi-shokunin log -1 --format='%an <%ae>' 301b9ec` → operator | 6 | OPEN — a resolvability-only grader would mis-file this 10163 B real report as a marker candidate |
+| D-93 | kake | The filed round-13 report is being corrected by an **in-place worktree rewrite** self-labelled "r14 erratum", where PROTOCOL.md requires *"Corrections land as new commits … never an in-place rewrite"* | `git diff -- .ufo/reports/round-13/kake.md` → −2/+4 lines rewriting the timer-sweep timestamps | 4 | OPEN (its live r14 mission may still land it) |
+| D-94 | kake + integrator | `.ufo/l0-questions.md` is off-ledger: a filed question was rewritten in place rather than superseded by an appended entry, and the file's whole post-cutoff delta sat uncommitted (now committed at `46e9ec3`, so the pre-rewrite text survives only as HEAD's blob) | `git diff f9dcfd2 HEAD -- .ufo/l0-questions.md` → empty at sweep time; `git show HEAD:.ufo/l0-questions.md \| wc -l` → 6 vs worktree 8 (now 9, committed) | 5 | OPEN — proposal: L0 entries append-only like `LOG.md`, answers as new dated lines |
+| D-95 | kasegi | `corpus/knowledge/mission-ledger.md:32-34` states the row schema requires `transition` and counts "718 lines", but **8 of 718** rows lack the field; routed by kotoba r12, unrepaired, no ledger row existed | `python3` over `~/Projects/bounties/ledger/missions.jsonl` → `rows 718 lacking transition 8`; `sed -n '32,34p' kasegi-shokunin/corpus/knowledge/mission-ledger.md`; *claimed* source `.ufo/reports/round-12/kotoba.md` §Cross-domain | 5 | OPEN |
+| D-96 | integrator + operator | Six `*-shokunin/SKILL.md` sit inside **no discovery root** (0/6 in the union of four roots) — a fleet-wide surface no province owns; with it, `~/.config/opencode/agents/ufo.md:7` `cascade_note` ~30 days past its own expiry and `~/.agents/AGENTS.md:55/:57` stale procedures | *claimed*: `.ufo/reports/round-12/kotoba.md` §Cross-domain; `grep -n -i 'discovery root' .ufo/reports/AGGREGATE.md` → 0 hits before this row | 3 | OPEN — needs a routed owner or an explicit operator disposition |
+| D-97 | kasegi | Two documented exit contracts falsified by a cold run: `ops/ev-report.mjs` exits **0** for both no-arg and missing-program-file where `SKILL.md:588` documents exit 2; `ops/check-freshness.mjs` exits **0** while printing `2 live-mode source(s) stale — honest alarm (AR4)` where `SKILL.md:113-114` documents live exit 1 | lesson `round-8-aggregator-box3-coldrun.md` commands 9–10 at `9dbe69f`/`2b0d869` | 4 | OPEN — a gate that cannot fail is not a gate |
+| D-98 | kengaku | The serving-stack pin is **pid-based** (`pid 1299`) while the same paragraph rules that hermetic gates must pin committed bytes and never `/proc`; a restart orphans the only serving-stack anchor | `SKILL.md:371-378` (quoted text in the lesson); pin verified alive today (flags `EXACT_MATCH`, 2 slots × `n_ctx 16384`) | 5 | OPEN |
+| D-99 | kengaku | Ledger event counts on a live-appended source carry no per-number "as of" stamp, so a cold operator cannot tell `verified 2026-09-28` from `verified at round N`: total 7,218→7,226, `mission_parked` 1,188→1,189, `operator_decree` 58→64 inside one round | lesson step 3 re-executed; five sibling counts still exact (`dispatcher_tick` 3,680 / `mission_dispatched` 1,167 / `attempt_reset` 68 / `mission_done` 26 / `mission_failed` 21) | 4 | OPEN |
+| D-100 | kake | The lucario GHP canonical (`veigapunk.github.io/lucario/`) has **no `fleet.config.json` row** — the `lucario` row's url is the kimi slot — so `SKILL.md:26`'s "live 200, verified 09-28" is unprobeable by the lane's own verb set and rests on manual assertion; the cold verifier had to hand-roll a GET outside the skill's verbs | lesson commands 8/10 + `webzites status --json` universe 18 | 4 | OPEN |
+| D-101 | kumitate | Worktree `SKILL.md:525-527` + a `SCORECARD.md` proxy stanza cited `scripts/proxy-check.mjs`, which did **not exist at HEAD** (untracked, `git cat-file -e` fatal): had the lane committed the docs without the tool, box 3 would have gone cold-broken at the new HEAD | amendment §6; **CLOSED at cutoff** — `59e6c0c` landed tool + docs + stanza together, `git -C kumitate-shokunin ls-files scripts/` → 4 tools, `node scripts/proxy-check.mjs` → `PROXY: MATCH` exit 0 | 4 | **CLOSED** `59e6c0c` (integrator re-execution `942afe4`) |
+| D-102 | kotoba | `SHONEN.md:14-15` box-3 `[x]` is attributed to `ReviewSHONEN`, which `.ufo/reports/round-12/kotoba.md:193` lists among kotoba's own dispatched seats ⇒ `[~]` under *"a subagent the lane dispatched is still the lane"*; the lane's own verifier note concedes *"every check in this file is lane-run"* | critic attempt 3; `kotoba-shokunin/SHONEN.md:12-24` | 4 | OPEN — `SHONEN.md` is outside aggregator write scope; the round-8 non-author verdict is committed and citable instead |
+| D-103 | kotoba | `verifiers/fault_injection_corpus.sh` is listed among runnable verifiers with no mutation warning; it clones and `rm -rf`'s `/tmp` worlds (`script:27-28`), discoverable only by opening it — a cold operator following the `.py`-heavy verifier set would run it | `SKILL.md:618-620`; lesson Gated table (the seat refused it; classified `gated-with-artifact`) | 4 | OPEN — same class as D-105, proposal **P-n** |
+| D-104 | kagi | `corpus/transcript-scan.sh` baseline is documented `exit 0 TRANSCRIPT_SCAN: CLEAN`; the cold run gave **exit 1, `HITS=2`** (two pre-existing `xai-` cells + 2 WARN), and dispositioning pre-existing hits from a fresh leak needs classification context the skill does not give | lesson command at `e0a04d8`; credential tripwire stayed 0 | 4 | OPEN |
+| D-105 | kagi (+ fleet pattern) | `SKILL.md:39` presents `the-janitor cdp-bridge ensure` as ordinary flow, but the verb **unconditionally clobbers a shared surface outside every repo** — `~/.local/share/the-musketeer/chrome-profile/NativeMessagingHosts/com.1password.1password.json` — with no existence/diff guard and no gate mark. An auditor cold run rewrote it at 20:33:23 -03 this round | `~/.local/bin/the-janitor:251-271` (`cat >"$NMH_JSON" <<EOF` + `chmod 600`); post-run `stat` → mode 600, 325 B, mtime `2026-09-28 20:33:23 -03`; not a git repo, prior bytes unrecoverable; net effect content-identical (fixed heredoc, only `$BROWSER_SUPPORT` interpolated) and non-secret | 3 | OPEN — proposal **P-n**: decision tables mark mutating verbs (`MUTATES: <target>, <reversible?>`); a verifier's read-only discipline is unenforceable by instruction alone |
+| D-106 | **aggregator** | This lane's own `kotoba-shokunin/corpus/lessons/round-6-aggregator-audit.md:30` prints an `awk` that cannot produce the four-number result it is cited for — a self-falsifying evidence command in an auditor artifact; kotoba r12 repaired its identical copy and routed this one | `git show HEAD:SKILL.md \| awk '/^## /{h=$0} /^- \[ \]/{c[h]++} END{print c[h]}' \| od -c` → `\n` (one empty value); re-derivable per-section form appended with cutoff output (14/9/9/8, first slot grown 13→14) | 4 | **CLOSED** `2839f60` (kotoba-shokunin) — proposal **P-q** |
+| D-107 | kumitate | `SHONEN.md` carries no box-3 self-verdict line (8-line unchecked checklist); the first recorded grading of any kind is this round's non-author run | `e79fefa`/`0f24ca7`/`942afe4`; lesson §Post-run comparison | 1 | OPEN |
+| D-108 | kasegi | No box-3 verdict line exists anywhere in `SHONEN.md` or `LOG.md`, so §11.4's `[~]` had no in-repo referent | `grep -iE 'box.?3\|executable without oral' kasegi-shokunin/{SHONEN,LOG}.md` → 0 hits | 1 | OPEN |
+| D-109 | kumitate | `SKILL.md:552-553` prose does not say `--integrations` belongs to `scripts/cite-check.mjs`, not `round-gate.mjs`; a cold reader misattributed it and got exit 64 (`unknown argument`) — the misattribution is itself the evidence | lesson amendment §4 (attribution correction); `node scripts/round-gate.mjs --integrations` → exit 64 | 3 | OPEN |
+| D-110 | fleet + protocol | A **withdrawn verdict is not machine-readably superseded**: `grep -m1 -E '\*\*\[[x~ ]\]\*\*'` on kumitate's lesson still returns the withdrawn `[ ]`, so any tooling or reader taking the first match grades the repo `[ ]` | repaired in-repo by an appended `## Operative verdict` block, last section by design (`942afe4`); proposal **P-o**: withdrawn verdicts carry a tail-anchored operative block and audits resolve grades tail-anchored, never `-m1` | 5 | **CLOSED for kumitate** (`942afe4`); OPEN as a fleet convention |
+| D-111 | kake | *protocol r11 §Routing, re-keyed from its colliding `D-50`*: report-before-commit ×3 (r11 −8 s, r12 −3m56s, r13 child `2a5502c` after the report); no hash citations r10–r13; `SHONEN`=0 r10–r13; `/tmp` evidence pointers r10–r12; child commit under operator identity | `.ufo/reports/round-11/protocol.md` §Conformance 2/6 + §Routing; `rounds[18..21]` notes | 5 | OPEN (mirrored as numbered by the ledger, not by protocol) |
+| D-112 | kagi | *re-keyed from protocol's `D-51`*: `ade32e4` pathspec violation (swept the ledger rename + an L0 line); report-before-commit (r10 −30 s); no hash citations r10/r11; `SHONEN`=0 r9–r11; child `301b9ec` operator identity | same report §Conformance 4/2/6; corroborated by D-92 | 5 | OPEN |
+| D-113 | kasegi | *re-keyed from protocol's `D-52`*: dead hash `d7dbd9a` + non-ancestor `3d28a716` cited in the round-13 report; report-before-commit (r13 −15 s); own commits subject-only r12/r13; `SHONEN`=0 r11–r13; child `7483333` operator identity | same report §Conformance 5/2/6 | 5 | OPEN |
+| D-114 | kengaku | *re-keyed from protocol's `D-53`*: dead hash `e66e614` in the round-10 report (unresolvable in main + all six children); the r10 report was operator-swept (`7ef548e`) although r9 self-landed — identity habit regressed | same report §Conformance 5; `rounds[18]` notes | 4 | OPEN |
+| D-115 | kumitate | *re-keyed from protocol's `D-54`*: `SHONEN`=0 r8/r9; `/tmp` pointers r8/r9; `surface-probe.mjs` claimed 1438 L vs measured 1435 (r9); own commit `2075363` uncited (r8); child `c91fe96` operator identity (r10); reports operator-swept r9/r10 | same report, `rounds[16,17,18]` notes | 4 | OPEN |
+| D-116 | kotoba | *re-keyed from protocol's `D-55`*: `/tmp` evidence pointers r10/r11 (self-flagged in-report — the honest form, still a defect until committed or reproducible); otherwise the conforming lane of that round | same report, `rounds[19]` notes | 2 | OPEN |
+| D-117 | **aggregator** | *re-keyed from protocol's `D-56`*: r6 report untracked at mission completion (swept by `3ea42cb`); r7 report on disk 20:10 while the mission was live (complete 20:13:17) with LOG/SCORECARD r7 sections + ledger refresh 5 uncommitted at 20:20 — *"its respawn (r8) owes them under the inheritance rule"* | same report §Conformance 8/12 | 6 | **CLOSED** `6d27283` (§13.4) — this round discharged it; root cause stays OPEN as D-88 |
+| D-118 | protocol (self) | *re-keyed from protocol's `D-57`*: round-10 report's kake-`SHONEN` parenthetical false + the "0 of 62" census false at write time; a round-11 entry-note phrasing superseded 3 minutes after `closed_at` — all corrected by appended record, none rewritten | same report §Conformance 1/3 | 2 | CLOSED by its own appended record |
+| D-119 | operator/scripts | *re-keyed from protocol's `D-58`*: the template's ordering line ("Write … report" before "Round end: commit") is now causally linked to four lanes' report-before-commit inversions; five child-lane contract items still absent (M7 1/5); `report_of()` still existence-only | same report §Conformance 2/10 + r10 §Template correction; this ledger's D-88 is the same root measured from the aggregator side | 6 | OPEN — operator-side; L0 line 3 |
+
+**Closures and movement on existing rows (each re-tested at this cutoff):**
+
+| Row | Status at refresh 6 | Evidence |
+|---|---|---|
+| D-48 (protocol: compact `PROTOCOL.md`) | **LANDED** | `6bd4f38`: `wc -l PROTOCOL.md` → 446 (was 583 at `f9dcfd2`); obligation census 93/93 (`.ufo/waves/round-11/verify-census.sh`, committed `3ea42cb`). Side effect filed as D-89 |
+| D-15 (kengaku 3-box `SHONEN.md`) | **CORRECTED — falsified** | at `0c51208` the file is 4-box: `grep -c '^- \[' kengaku-shokunin/SHONEN.md` → 4; boxes at `:5,:7,:9,:11`, box 3 present but unmarked. §11.4's kengaku row is superseded |
+| D-39 ⊇ D-85 (endpoint repoint label) | **FOLDED** (canonical D-39; D-85 is its correction rider — distiller duplicate group 1). Drift re-confirmed at cutoff | `curl -s 127.0.0.1:34113/health` → `{"status":"ok"} HTTP:200`; `localhost:8080/v1/models` → `404`; `~/.config/the-janitor/opencode.json:16` → `http://127.0.0.1:8080/v1`; `~/.config/opencode/opencode.json:158` → `http://localhost:8080/v1`. **Pointer correction:** §12.2 cited `~/.config/opencode:158`, which is a directory; the carrier is `opencode.json:158` |
+| D-51 ⊇ D-84 (gate reads an auditor's lesson as a live defect) | **FOLDED** (distiller duplicate group 2) and **reproduces exactly at HEAD** | `node scripts/cite-check.mjs --integrations` → 8/9, `VERDICT: FAIL`, exit 1, sole failing case `corpus/lessons/round-6-aggregator-audit.md:30,:38` — aggregator-owned text, so it cannot grade the lane down (P-f stands) |
+| D-59 (kumitate's card prints kagi `PASS (11 cases)` vs the ledger's re-executed 13) | **STANDING CONTRADICTION, unrepaired** | distiller contradiction 3: `AGGREGATE.md` D-59 vs D-10's proof cell; no later refresh superseded either |
+| D-61 (kengaku r8/r9 unlanded) | **CLOSED** (log half) | `grep -n 'round 8\|round 9' kengaku-shokunin/LOG.md` → `:13`, `:14-16`; the 101 B r8 marker stays graded `failed` historically |
+| D-75(a) (`MANIFEST.json` `rounds` stuck) | **MOVED — now measurable-false as written** | `python3 -c "import json;print(len(json.load(open('MANIFEST.json'))['rounds']))"` → **22** (protocol r11 appended 7 at `3ea42cb`) |
+| D-77 (`SCORECARD.md` collision) | **RULED** | `.ufo/reports/round-11/protocol.md` §Contested-scope rulings 4: per-lane sections in the single canonical path, each lane committing only its own section's hunks; `55e23de` is the reference method. This round complied — its `SCORECARD.md`/`LOG.md` edits touch only the aggregator section |
+| D-78 (axis vocabulary `novelty`/`consistency`) | **RULED-partially** | same §Rulings 3: scores are calibration defects until the vocabulary exists; operator action owed (`AXES.md` is operator-side). L0 line 6 stands |
+| D-79 (untracked dispatch prompts) | **RE-ACCUMULATING** | `git ls-files -o --exclude-standard .ufo/prompts \| wc -l` → 4 at write time (`kasegi-round-15`, `kotoba-round-13`, `kumitate-round-12`, `protocol-round-12`); 2 at the cutoff pass. This lane's own `aggregator-round-{7,8}.md` were swept by protocol's durability commit `3ea42cb` — attribution defect, not this lane's to fix |
+| D-82 / kessho trigger | **WATCH — fired again** | see §13.3 mint table: 5 lanes / 6 artifacts → **6 lanes / 9 artifacts** |
+| D-86 (`fleets/registry.json` contested scope) | **RULED** | `.ufo/reports/round-11/protocol.md` §Rulings 1: object-level split, decree ledger → kasegi, routing + `registry-check` → kumitate; both lanes owe a `PROVINCE.md` record (D-76) |
+| D-16, D-58, D-68 | **OPEN** | D-16: `ls kengaku-shokunin/corpus/lessons/` still has no `round-6.md`. D-58: hex-token counts moved up in 5 of 6 cards (kasegi 0, kengaku 7→16, kake 0→4, kumitate 4→8, kotoba 3→4, kagi 2→5) — caveat: the metric counts tokens anywhere in the card, not rows carrying `<command> @ <commit>`. D-68: re-verified `11 of 77` rows violate `total - ok == len(violated)+len(errors)` (ledger said 11/76 — denominator drift only) **plus a wording hazard**: `violated`/`errors` are lists, so the row's literal formula is a concatenation trap; restate with `len()` |
+| D-40 (kama mint-or-reject) | **OPEN, blocked-external** | §13.3; `.ufo/l0-questions.md` line 2 byte-identical to `e333e7c` ⇒ unanswered; not re-flagged as new |
+
+**L0 channel at cutoff.** `.ufo/l0-questions.md` = **9 lines, now committed** (`46e9ec3`), all awaiting operator action —
+surfaced in full in `.ufo/reports/round-8/aggregator.md` §L0. No answer lines observed in any entry.
+
+### 13.3 Standing tables re-tested (dormancy §12.1, mint §12.2)
+
+**Dormancy rule — PROTOCOL.md "Promotion gates" preamble, verbatim:** *"A shonen that records no `LOG.md` activity
+across two consecutive rounds it was dispatched and reported in is flagged **dormant** by the integrator in the round
+notes; rounds the lane was not dispatched do not count against it. Dormancy is a review trigger for the operator,
+never an automatic retirement."* Marker grading per the report-contract clause (*"A filed report that records no lane
+work … is a marker, not a report … A short report that names a real committed round-work hash is a *defective* report,
+not a marker"*): failed markers are excluded from the dispatched-and-reported pair, `ok`-graded defective reports
+count. `dormant_count` is **derived**: for each lane the last two rounds both dispatched *and* reported were listed,
+their consecutiveness confirmed against the launch sequence, and each round's `LOG.md` entry re-checked by entry scan.
+
+**Scan correction over §12.1 (new this refresh, and caused by this lane):** the commit-age cell must **filter
+aggregator seat commits** — `git -C <repo> log -1 --perl-regexp --author='^(?!aggregator-shokunin)' --format='%h %ar'`.
+This round put 16 aggregator-identity commits into the six child repos, so an unfiltered `git log -1` reports *this
+lane's* activity as the lane's: kotoba's unfiltered cell would have understated its commit age ~25× (raw HEAD `ed5c261`
+vs lane commit `71963e6` 18m). §13.6-R carries the filtered form.
+
+| Lane | Counter | Last dispatched | Last report landed (marker grading) | Last `LOG.md` round entry | Last **lane-authored** commit (age at cutoff) | Verdict | Δ vs §12.1 |
+|---|---|---|---|---|---|---|---|
+| kasegi | 15 (14 at the cutoff pass) | r14 @ 19:50:43 -03 | r13 — 9964 B, `ok`; minor defect: does not name its own round commit `7483333`. Post-cutoff: `round-14/kasegi.md` 7338 B landed 23:48Z | round 13 (`LOG.md:296`); pair r12 (`:242`) | `7483333` 62m (raw HEAD is this lane's `2b0d869` — filtered) | **ACTIVE** | report unchanged at cutoff; commit age moved; r14 landed post-cutoff |
+| kengaku | 11 | r11 @ 19:50:44 -03 | r10 — 13160 B, `ok` (cites `0c51208`, pushed); r8 = 101 B **failed marker**, excluded. **r11 has no report** — untracked DRAFT, 40 `{{…}}` (D-90) | round 10 (`LOG.md:17`); pair r9 (`:14-16`) | `0c51208` 64m (raw HEAD `06cdc98` — filtered) | **ACTIVE** — but two rounds dispatched without a landed report if r11 stays a draft | r11 still unreported; DRAFT tokens counted |
+| kake | 14 | r14 @ 20:05:46 -03 | r13 — 5878 B, `ok` + minimum-content defect (cites `a642f93` but not its own round commit `2a5502c`); r13 also carries an in-place worktree erratum (D-93) | round 13 (`LOG.md:21`); pair r12 (`:19`) | `2a5502c` 41m (raw HEAD `4c9a985` — filtered) | **ACTIVE** | report r12→r13 (new since refresh 5) |
+| kumitate | 11 | r11 @ 20:05:47 -03 | r11 — `.ufo/reports/round-11/kumitate.md` 16341 B, landed **20:45:10 -03 at `46e9ec3`** (i.e. inside this refresh, 5 minutes before the cutoff); r10 13507 B `ok` (cites `c91fe96`); r7 = 122 B marker naming `7a4c9a0` → `ok` + defect, counted | round 11 (lane `LOG.md` entry lands with `59e6c0c`); pair round 10 (`:263`) | `59e6c0c` (lane commit landed 23:46Z; previous `c91fe96` 39m) | **ACTIVE** | report r10→r11; **first lane to land tool+docs+stanza together**, which lifted kumitate's provisional box-3 verdict |
+| kotoba | 13 | r13 @ 20:28:23 -03 | r12 — 14009 B, `ok` (cites `4dd7753`, `7d15407`, `d49dfa5`, `e997d45`) but **untracked** (D-91); r8 = 120 B marker naming `8c300ad` → `ok` + defect, counted | `## Round 12` (`LOG.md:308`); pair `## Round 11` (`:250`) | `71963e6` 18m (raw HEAD `2839f60` — filtered; 4 aggregator seat commits landed here in ~20 min) | **ACTIVE** | report r11→r12; **§12.1/§12.3's "self-healed by 22:55Z" cell is FALSIFIED** — the Round-11 entry landed in `633859f` at 23:27:55Z, 33 min *after* that cutoff (`git -C kotoba-shokunin show 7d15407:LOG.md \| wc -l` → 248, last `## Round` = Round 10) |
+| kagi | 12 | r12 @ 20:13:20 -03 | r11 — 10163 B, `ok` in substance but with a **new citation defect: zero resolvable git objects** (D-92) | round 11 (`LOG.md:262`); pair round 10 (`:218`) | `301b9ec` 38m | **ACTIVE** | report r10→r11; D-92 filed |
+| aggregator | 8 | r8 @ 20:13:18 -03 (this refresh) | r7 — 10695 B, `ok`; **untracked at its own mission completion, landed by this round at `6d27283`** (§13.4); r5 = 254 B **failed marker**, excluded | `## Round 7` (main `LOG.md:115`, filter `^#{2,3} Round [0-9]+ — aggregator`); pair `## Round 6` (`:62`) | `6d27283` (last aggregator-authored at the cutoff pass; this round's commits follow it) | **ACTIVE** | r7 artifacts moved uncommitted → committed **and pushed** |
+
+**Dormant count: 0 / 7** — derived, not asserted. §12.6's residual gap stands: the dormancy rule has still never been
+tested against a genuinely dormant lane (no positive case in six refreshes). Nearest watch row this refresh: kengaku,
+whose r11 exists only as a 40-token draft — if r12 also fails to land a report, the pair becomes two consecutive
+dispatched rounds with no durable report, which the rule grades through the marker clause rather than through
+`LOG.md` silence (its `LOG.md` carries round 10).
+
+**Mint bar — PROTOCOL.md Lifecycle, verbatim:** *"**Shonen** — minted when a domain demand is proven: two documented
+**unplaceable** demand instances (work no existing province could absorb) or an explicit operator directive — the mint
+bar, stated once here; closure step 3 applies it."*
+
+| Candidate | Demand instances at cutoff | Owning-province test | Bar verdict (dated 2026-09-28) | Status | Δ vs §12.2 |
+|---|---|---|---|---|---|
+| **kama** | 2 unplaceable, both re-verified: `.ufo/reports/round-3/kagi.md:23-26` (kagi-shokunin `06ef644`, `merge-base --is-ancestor` → OK) + `.ufo/reports/round-4/kengaku.md:20-23` (kengaku-shokunin `a1af83c` → OK) | UNPLACEABLE re-executed: `grep -il 'model serving\|endpoint health' *-shokunin/PROVINCE.md` → exit 1 | **Bar met — mint-eligible** (unchanged since refresh 3) | **blocked-external** — `.ufo/l0-questions.md` line 2 verified still the kama question in worktree, HEAD and `e333e7c`, then `diff` → identical ⇒ UNANSWERED; not re-flagged | none. Drift persists (D-39/D-85): 34113 healthy, 8080 → 404, both configs still pin 8080 |
+| **kessho** | **6 lanes / 9 artifacts** (was 5/6): the six re-confirmed + kumitate `scripts/round-gate.mjs` @ `c91fe96` 22:59:34Z, kagi `corpus/claim-ledger.sh` @ `301b9ec` 23:08:39Z, kotoba `verifiers/verify_corpus_independent.py` + `fault_injection_corpus.sh` @ `633859f`/`71963e6` 23:27:55Z — all ancestor-verified, all in-province | All absorbed; **0 unplaceable**. `grep -rn -i 'refus' .ufo/reports/round-{11,12,13}/*.md` → 3 hits, all about refused *commands*, none a lane refusing verification work. The one unplaceable-shaped demand (fleet gate standard, kengaku r10 *"no sibling owns an evidence-replay gate"*, L0 line 7) now has a **ruled** owner: protocol r11 §Rulings 2 deferred it *with a date* (`SCORECARD.md` §Planned round-12 item 2) ⇒ placeable | **Below bar** — builder-count trigger **FIRED again** (a 6th builder); the bar needs two *unplaceable* instances and has zero | WATCH — all three sharpened sub-conditions explicitly resolved this pass: protocol decline **not** fired (deferral ≠ decline), lane refusal **not** fired, operator has not ruled the standard unplaceable | demand 5/6 → 6/9; owner "names its owner" → **ruled with a date** |
+| **umihotaru** | 1 (`scripts/shokunin-watchdog.sh`, integrator-owned tooling); secondary owned: kumitate `corpus/knowledge/sighting-wall.md` @ `eca3d14` | Owned, not a domain | **Below bar** (unchanged) | No new instance: `grep -rn -i 'umihotaru\|kagemusha' .ufo/reports/round-{9..13}/` → exit 1; `.ufo/reports/round-14/` was empty at the sweep pass | none |
+| **kagemusha** | 3 distributed, served (kengaku `ledger-route-telemetry.md` @ `2575be6`; kumitate `route-resolution.md` @ `0ac95e1`; kake `mirror-pitfalls.md` @ `cd5b381`) | Distributed across three served provinces; no refusal. The `fleets/registry.json` contest is an intra-province re-split and is now **arbitrated** | **Below bar** (unchanged) | **D-86 RULED** (protocol r11 §Rulings 1); `PROVINCE.md` records owed by both lanes (D-76) | status moved from "contested" to "ruled" |
+| **axis-framework-stewardship** | 0 unserved; template proposals routed to protocol (§11.5 P-h/P-i) | Not a domain — protocol + operator work; routed, not refused | **Below bar** (refresh-4 ruling stands) | **Refresh-5's "re-check when protocol r11 lands" is DISCHARGED**: `.ufo/reports/round-11/protocol.md` exists (29338 B, 20:27:09 -03, landed `392b3c7`); `grep -n -i -e axis-framework -e stewardship` on it → exit 1 (0 mentions) ⇒ no new demand, nothing refused. It also **ruled** the `SCORECARD.md` collision half (D-77) and keeps template work operator-side | re-check discharged; candidate unchanged |
+
+**Mints executed: 0** — `python3 -c "import json;r=json.load(open('MANIFEST.json'))['rounds'];print(sum(1 for x in r if x.get('minted')))"` → 0 over **22** entries (was 15 at refresh 5). **M4: 5/5** candidates carry a bar test
+re-run in this refresh. **M2 stands and is correct**: the bar is met only by kama and the ruling is operator-side.
+
+### 13.4 Round-7 durability defect + landing, and the ordering rule it falsifies
+
+At round open this lane's previous round existed **only as working-tree bytes** in a repo seven sibling lanes commit
+into: ledger §11.9 + §12 (+232 lines), `SCORECARD.md` §Round 7 (+26/−13), `LOG.md` §Round 7 (+41), and
+`.ufo/reports/round-7/aggregator.md` (10695 B, untracked). Timeline, all re-executed: report mtime **20:10:14 -03**;
+`complete aggregator round=7; respawning` **20:13:17**; `launch aggregator round=8` **20:13:18**; no aggregator commit
+between `e333e7c` (round 6, 19:28:15) and this round. The round-7 report's own §Compliance promised *"single
+pathspec-limited commit (`AGGREGATE.md`, `SCORECARD.md`, `LOG.md`, this report) … then push"* — a plan the driver's
+existence-only completion signal made unreachable.
+
+**Landed by round 8: `6d27283`** (aggregator identity, pathspec-limited to exactly those four paths, pushed;
+`origin/master` = `6d27283` at 23:33Z). Content was landed **unedited** — provenance: *filed round 7 at cutoff
+`f9dcfd2`, landed round 8 unedited* — so refresh 5 stays append-only and no byte was rewritten to suit this round.
+Reviewer verification: the working copy is byte-identical to the committed blob (`git show 6d27283:.ufo/reports/round-7/aggregator.md | diff - <file>` → empty), all 9 unique hashes in it resolve in their attributed repos, and it
+cites no self-hash.
+
+Two sibling acts worth recording because they are the reason the bytes survived: the protocol lane's `55e23de`
+committed **only its own** `SCORECARD.md`/`LOG.md` hunks with the subject *"staged hunk-surgical: the aggregator's
+uncommitted round-7 sections in both files remain its own to land"* — the D-77 ruling applied correctly by the other
+party to the collision — and protocol's r11 report independently filed the same defect against this lane (its `D-56`,
+mirrored here as **D-117**, now CLOSED).
+
+**Rule this falsifies (D-88, P-r).** PROTOCOL.md requires *"A lane report **lands last** … Landed also means landed
+by the lane: the commit that adds `.ufo/reports/round-<N>/<id>.md` carries the lane identity, because the driver
+completes the mission the instant the file reaches disk."* Under an existence-only `report_of()`, those two halves
+contradict: the report cannot be committed before it exists, and existing ends the mission. The only ordering that
+satisfies both is **write + commit + push the report inside one shell invocation**, so no tick can land between. This
+lane adopted that form for round 8 and proposes it as the fleet rule until `report_of()` checks `git ls-files
+--error-unmatch` (operator-side; L0 line 3, D-119).
+
+### 13.5 Aggregator self-defects filed at refresh 6 (numbering continues §12.4)
+
+12. **Round-7 artifacts written, never committed** — §13.4. Root cause is shared: driver-side (existence-only
+    completion, D-88/D-119) and lane-side (the report was written before the commit, and the lane's turn ended).
+    Evidence: `stat -c '%y' .ufo/reports/round-7/aggregator.md` → 20:10:14 vs `complete aggregator round=7` 20:13:17;
+    `git log --author=aggregator-shokunin -1` at round open → `e333e7c` (round 6). Landed `6d27283`. Practice adopted:
+    commit-before-report for everything but the report, then report write + commit + push in one invocation.
+13. **§12.1/§12.3's kotoba "self-healed inside the refresh" claim is false** — reviewer FAIL 2. The Round-11 `LOG.md`
+    entry landed in `633859f` at **23:27:55Z**, 33 minutes *after* the 22:55:03Z cutoff it was claimed to precede;
+    `git -C kotoba-shokunin show 7d15407:LOG.md | wc -l` → 248 with last `## Round` = Round 10. A working-tree
+    observation was published as a cutoff measurement. Corrected in §13.3 (kotoba Δ column); §12 stays unrevised
+    (append-only).
+14. **§12.5 published an unrunnable command block while labelling it "copy-paste runnable"** — reviewer FAIL 1,
+    re-executed by this lane: R4's token scan `grep -oiE 'round[- ]+[0-9]+' | grep -oE '[0-9]+$'` returns **empty for
+    all six lanes** on this host, because `grep` here is `pi-uu-grep 0.2.0` and emits zero-length matches for the
+    anchored `-oE '[0-9]+$'` (`printf 'abc 123\n' | grep -oE '[0-9]+$' | od -c` → `\n`). The unanchored variant works
+    but admits noise (kumitate `max=42` from a `--round 42` string). §13.6-R ships only the **entry-scan** form
+    (`grep -oE '^## Round [0-9]+|— round [0-9]+'`), which is host-independent. A re-run block that cannot be re-run is
+    worse than none: it makes the row unfalsifiable while looking falsifiable.
+15. **Refresh-5 mixed windows and imprecise pointers** — reviewer FAIL 3 + a path defect: the round-7 report claimed
+    *"7 entries in `.ufo/l0-questions.md` at cutoff"* while the cutoff blob had **6** lines (`git show
+    f9dcfd2:.ufo/l0-questions.md | wc -l`); the 7th was a post-cutoff working-tree read. And §12.2 cites
+    `~/.config/opencode:158` — a directory; the carrier is `~/.config/opencode/opencode.json:158`. Both corrected here.
+16. **The cold-run ritual's read-only rule was unenforceable against a hidden side effect.** A seat following
+    `kagi-shokunin/SKILL.md:39` ran `the-janitor cdp-bridge ensure`, which unconditionally rewrote a shared manifest
+    outside every repo (D-105). No instruction to a verifier can substitute for a mutation census of the skill's own
+    verb set. Net effect was benign (fixed heredoc, non-secret, content-identical, mtime-only) — verified by reading
+    `~/.local/bin/the-janitor:251-271` — but the class is not: the same verb shape on a vault or publish path would
+    have been an irreversible external effect caused by an audit. Repair: proposal **P-n** + a pre-flight step in any
+    future walk (`--help`/source-read every verb before executing it).
+17. **This lane published a commit ritual it had not executed once.** `git commit -- <path>` on an **untracked** file
+    aborts with `pathspec … did not match any file(s) known to git`; two seats hit it before the corrected form
+    (`git add -- <path> && git commit -- <path>`, one invocation, nothing staged between commands) was broadcast to all
+    six. A ritual is a claim like any other: run it before dispatching it.
+18. **Round 6 pushed into six child-repo remotes, which this lane has no push scope for.** MISSION.md §Push scope:
+    *"Lanes push ONLY to `VeigaPunk/shokunin` (main repo) or their own `VeigaPunk/<lane>-shokunin` remote."* The six
+    child remotes are other lanes' own. Sentinel ruling adopted: **round-8 lessons are committed locally and not
+    pushed**; each owning lane's own push carries them (all six repos hold unpushed commits at cutoff: kasegi 2,
+    kengaku 2, kake 2, kumitate 1, kotoba 7, kagi 3). The round-6 lesson commits are all remote-contained
+    (`git -C <repo> branch -r --contains <h>` → `origin/master` ×6) and remain HEAD ancestors, so nothing needs
+    reverting — the breach is recorded, not repaired by history.
+
+### 13.6 Re-run commands (host-verified at the round-8 cutoff; `grep` here is pi-uu-grep 0.2.0)
+
+```sh
+cd /home/vgpnk/projects/shokunin
+```
+
+**B — box-3 verdict set (grades resolve tail-anchored, never `grep -m1`; D-110):**
+```sh
+for d in kasegi kengaku kake kumitate kotoba kagi; do
+  f=$d-shokunin/corpus/lessons/round-8-aggregator-box3-coldrun.md
+  printf '%-9s %s | %s B %s ln | amendment=%s | ' "$d" \
+    "$(git -C $d-shokunin log --format='%h' -- ${f#$d-shokunin/} | tr '\n' ' ')" "$(wc -c <"$f")" "$(wc -l <"$f")" \
+    "$(grep -c '^## Round-8 amendment' "$f")"
+  grep -oE '\*\*\[[x~ ]\]\*\*' "$f" | tail -1   # operative grade = LAST match
+done
+```
+
+**B2 — provisional markers and the kumitate re-execution that lifted one:**
+```sh
+for d in kasegi kengaku kake kumitate kotoba kagi; do printf '%-9s ' "$d"; grep -oiE 'not provisional|provisional until[^.;,]*|remains provisional' $d-shokunin/corpus/lessons/round-8-aggregator-box3-coldrun.md | tail -1; echo; done
+git -C kumitate-shokunin ls-files scripts/ && (cd kumitate-shokunin && node scripts/proxy-check.mjs; echo "exit=$?")
+```
+
+**W — sweep window + queue keys:**
+```sh
+for f in .ufo/reports/round-*/*.md; do printf '%s %s\n' "$(git log --diff-filter=A --format='%h %aI' -- "$f" | tail -1)" "$f"; done | sort | awk '$2>"2026-09-28T22:55"'
+git ls-files -o --exclude-standard .ufo/reports .ufo/prompts
+grep -oE '^\| D-[0-9]+' .ufo/reports/AGGREGATE.md | sort -t- -k2 -n | tail -1   # highest key; next free = +1
+```
+
+**R — dormancy re-test (entry-scan form only; the §12.5-R4 token scan is host-broken, §13.5 item 14):**
+```sh
+date -u +'cutoff %FT%TZ'; git log -1 --format='main HEAD %h %aI'
+for l in kasegi kengaku kake kumitate kotoba kagi protocol aggregator; do printf '%-11s counter=%s\n' "$l" "$(cat .ufo/state/$l.round)"; done
+awk '$2=="launch"{split($4,a,"="); t[$3]=$1" r"a[2]} END{for(l in t) printf "%-11s %s\n", l, t[l]}' .ufo/watchdog.log | sort
+for d in kasegi kengaku kake kumitate kotoba kagi; do printf '%-9s %-14s lane-commit %s\n' "$d" \
+  "$(grep -oE '^## Round [0-9]+|— round [0-9]+' $d-shokunin/LOG.md | tail -1)" \
+  "$(git -C $d-shokunin log -1 --perl-regexp --author='^(?!aggregator-shokunin)' --format='%h %ar')"; done
+grep -nE '^#{2,3} Round [0-9]+ — aggregator' LOG.md | tail -2
+for f in .ufo/reports/round-8/kengaku.md .ufo/reports/round-8/kotoba.md .ufo/reports/round-7/kumitate.md .ufo/reports/round-5/aggregator.md; do printf '%-40s %s B\n' "$f" "$(wc -c <"$f")"; done   # marker ledger
+```
+
+**K/S/U/G/A — mint rows:** §12.5's blocks, with two corrections: the second 8080 pointer is
+`~/.config/opencode/opencode.json:158` (not `~/.config/opencode:158`), and the kessho artifact list gains
+`kumitate-shokunin/scripts/round-gate.mjs`, `kagi-shokunin/corpus/claim-ledger.sh`,
+`kotoba-shokunin/verifiers/verify_corpus_independent.py`, `kotoba-shokunin/verifiers/fault_injection_corpus.sh`.
+```sh
+curl -s -m4 -w ' HTTP:%{http_code}\n' 127.0.0.1:34113/health; curl -s -m4 -o /dev/null -w '8080=%{http_code}\n' localhost:8080/v1/models
+grep -n baseURL ~/.config/the-janitor/opencode.json ~/.config/opencode/opencode.json
+sed -n '2p' .ufo/l0-questions.md | cut -c1-60; diff <(git show e333e7c:.ufo/l0-questions.md | sed -n '2p') <(sed -n '2p' .ufo/l0-questions.md) >/dev/null && echo kama-line-UNANSWERED || echo kama-line-CHANGED
+python3 -c "import json;r=json.load(open('MANIFEST.json'))['rounds'];print(len(r),'rounds;',sum(1 for x in r if x.get('minted')),'minted')"
+ls kumitate-shokunin/scripts/{cite-check,round-gate}.mjs kagi-shokunin/corpus/{drift-pins.sh,claim-ledger.sh} kake-shokunin/scripts/probe-delta.mjs kotoba-shokunin/verifiers/*.py kengaku-shokunin/grader.py
+grep -rn -i 'umihotaru\|kagemusha' .ufo/reports/round-*/ ; echo "exit=$? (1 = no new instance)"
+grep -rn -i -e axis-framework -e stewardship .ufo/reports/round-1[1-9]/ ; echo "exit=$? (1 = discharged)"
+```
+
+**Q — this ledger's own claims (P-q: an audit row's command must reproduce its own cell):**
+```sh
+grep -c 'PROTOCOL\.md:[0-9]' .ufo/reports/AGGREGATE.md            # line-number cites into a mutable file (P-p) → target 0
+(cd kotoba-shokunin && git show HEAD:SKILL.md | awk '/^## /{if(h!="")printf "%s=%d\n",h,n; h=$0;n=0} /^- \[ \]/{n++} END{if(h!="")printf "%s=%d\n",h,n}' | grep -v '=0$')
+```
+
+### 13.7 Standing-table note + residual gaps
+
+Rows are **claims stamped to the cutoff** (`2026-09-28T23:46:28Z`, main HEAD `46e9ec3`), not standing facts. Measured
+proof this refresh: main HEAD moved three times inside the wave (`392b3c7` → `6d27283` → `46e9ec3`), kumitate's lane
+commit landed 1 second before a cutoff cell was read, and kasegi's report for round 14 landed two minutes after the
+cutoff. Re-run §13.6 rather than quoting the tables.
+
+Residual gaps kept honest:
+
+- **3 of 6 box-3 verdicts are provisional** (kasegi, kake, kagi) because decisive text was worktree-only; they firm up
+  or break at each lane's next commit, and only a re-run can tell which. Round 9's move candidate is exactly that
+  re-test.
+- **No `SHONEN.md` box-3 line names a resolvable non-author verifier yet.** The verdicts live in aggregator-owned
+  lessons; `SHONEN.md` is outside this lane's write scope, so the marks are the lanes' to update (routed as D-102,
+  D-107, D-108 + per-repo rows).
+- **Corpus-conformance verdicts (CORPUS.md rule 10) were not re-emitted this refresh.** The round-8 move is the
+  promotion-box walkthrough; §11.1's six `not conformant` verdicts stand, and this refresh's per-repo findings are
+  routed as `D-` rows rather than restated as verdicts. Named here because an unrefreshed verdict is a stale claim, not
+  a neutral one.
+- **The dormancy rule still has no positive test case** (0/7 dormant in six refreshes), so its correctness is
+  unproven in the one direction that matters.
+- **Queue integrity is now a measured property, not an assumption**: 84 distinct keys, one collision refused (D-87),
+  two duplicate groups folded (D-39⊇D-85, D-51⊇D-84), three standing contradictions named (§13.2). 46 rows remain open
+  across 12 owners (distiller tally: kasegi 12, protocol 10, kumitate 9, kake 8, kengaku 8, operator 7, kagi 6,
+  fleet 4, external 3, aggregator 2, integrator 1, kotoba 1 — counted before this refresh's 24 new rows).
+
+**Proposals routed to protocol/CORPUS (integrator lands; this lane cannot):** **P-n** decision tables mark mutating
+verbs (D-105, D-103); **P-o** withdrawn verdicts carry a tail-anchored operative block, and audits resolve grades
+tail-anchored (D-110); **P-p** no line-number citations into mutable integrator files (D-89); **P-q** an audit row's
+evidence command must reproduce its own observed cell — mechanically checkable, and it applies to auditor artifacts
+too (D-106); **P-r** while `report_of()` is existence-only, the report must be written, committed and pushed in one
+shell invocation (D-88).

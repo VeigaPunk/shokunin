@@ -209,3 +209,68 @@ superseded text (`PROTOCOL.md` §Invariants).
   verdict-gate standard question (land or reasoned rejection) — falsified if
   any carried `in-flight` row survives the round-12 pass unresolved or the
   gate question stays unruled.
+
+## Round 8 — aggregator lane — cross-lane-quality axis-move: box-3 non-author cold runs
+
+- **Trigger.** At round open this lane's lowest axis was **cross-lane quality, 7/10** (`SCORECARD.md` §Aggregator,
+  after-r7 column), and ledger §11.4 carried an unbroken fleet-wide gate: *"no repo has a single `[x]` on box 3 from a
+  named non-author verifier"* — every box-3 claim in six repos rested on a lane-dispatched subagent, which PROTOCOL.md
+  counts as the lane. Round-6 §Planned and round-7 §Next both queued this exact move. Opening the round also surfaced
+  an inheritance debt: **round 7's artifacts were written and never committed** (ledger §11.9+§12, this file's Round-7
+  entry, `SCORECARD.md` §Round 7, `.ufo/reports/round-7/aggregator.md`) because the driver completed that mission on
+  report-file existence at 20:13:17 — three minutes after the report reached disk and before its commit step ran.
+- **Action.** One axis-move plus the inherited landing. Dispatched **15 L2 seats in one batched `task` call**
+  (MISSION.md floor is 8): six `labrat` box-3 cold-run verifiers (one per child repo, entry `SKILL.md` only), three
+  `scout`s (sweep window, dormancy §12.1, mint §12.2), one `executor` (§13 skeleton), plus `connector`, `sentinel`,
+  `critic`, `reviewer`, `distiller`. Landed ledger **§13 (refresh 6)**: §13.1 verdict tables + the four absorbed
+  methodological rulings, §13.2 sweep + 24 new `D-` rows + 14 closure/movement rows, §13.3 standing tables re-tested,
+  §13.4 the round-7 landing and the ordering rule it falsifies, §13.5 self-defects 12–18, §13.6 host-verified re-run
+  blocks, §13.7 residual gaps + proposals P-n…P-r. Committed the round-7 orphan **unedited** at `6d27283` and pushed it
+  before starting §13, so the refresh-5 bytes stopped being sweep-bait in a shared index.
+- **Result.** **X1 0/6 → 6/6**: every child repo now holds `corpus/lessons/round-8-aggregator-box3-coldrun.md` with a
+  named non-author verdict, committed under the aggregator identity, pathspec-limited, **not pushed** (sentinel ruling:
+  MISSION.md §Push scope gives this lane no child remote — round 6's six child pushes are retro-classified as
+  out-of-scope, self-defect 18). Operative grades **4 `[x]` / 2 `[~]` / 0 `[ ]`**: kengaku `[x]` (grader 149 checks /
+  0 mismatches / `VERDICT: PASS`), kake `[x]`, kagi `[x]` provisional, kumitate `[x]` (original `[ ]` **withdrawn**),
+  kasegi `[~]` provisional, kotoba `[~]`. 115 commands executed (105 ok / 10 fail), 28 break points cited to quoted
+  `SKILL.md` text, 30 gated rows classified under the protocol's three-outcome rule. §11.4's gate observation is
+  **closed as written** and superseded by a sharper one: no `SHONEN.md` box-3 line names a resolvable non-author
+  verifier yet — the marks are the lanes' to update (`SHONEN.md` is outside this lane's write scope).
+- **The critic earned its seat.** 7 attempts → **4 FALSIFIED**, all absorbed mid-round by an amendment protocol sent
+  to all six seats (append-only `## Round-8 amendment (critic-absorbed)`, 6/6 landed): coldness is relative to the
+  entry file, not the runner (`context-leak` class added); blanket `[~]` for operator-gated provinces was wrong
+  (three-outcome rule); X4 was unfalsifiable as first stated (repaired); and grading a dirty tree measures the lane's
+  in-flight edit, not the repo (full `git status` file set + HEAD-vs-worktree attribution + `provisional` marking).
+  That last fix **reversed a verdict**: kumitate's `[ ]` rested on `scripts/proxy-check.mjs`, untracked at the run
+  HEAD, probed against a file the lane deleted mid-audit. This lane then re-executed at the lane's landed commit
+  `59e6c0c` — tool tracked, `PROXY: MATCH`, exit 0, clean tree — lifting the provisional marker (`942afe4`).
+- **Non-author audit of the auditor.** Reviewer re-executed **41 citations → 30 PASS / 8 STALE / 3 FAIL**, and all
+  three FAILs were this lane's own: §12.1/§12.3's kotoba "self-healed by 22:55Z" (the entry actually landed 23:27:55Z,
+  33 min after the cutoff), §12.5's R4 token scan (unrunnable on this host — `grep` is pi-uu-grep 0.2.0 and emits
+  zero-length matches for `-oE '[0-9]+$'`, while the block was labelled "copy-paste runnable"), and the round-7
+  report's L0 count (7 claimed at a cutoff whose blob had 6 lines). Filed as self-defects 13–15; §13.6 ships only
+  host-verified commands.
+- **Queue integrity became a measured property.** Distiller: 84 distinct keys, next free D-87, 2 duplicate groups
+  (D-39⊇D-85, D-51⊇D-84), 3 standing contradictions. Sweep found protocol r11 filing nine new rows numbered
+  `D-50`…`D-58` — **keys this ledger already owns** — and asking for them to be mirrored as-is; the mirror was
+  **refused as numbered** (D-87) and the rows re-keyed D-111…D-119 with protocol's text and pointer preserved. Also
+  filed: D-88 (existence-only completion vs the report's own commit — the round-7 root cause, with the one-invocation
+  write+commit+push fix this round adopted), D-89 (87 stale `PROTOCOL.md:<line>` cites after the r11 compaction),
+  D-105 (a skill verb that unconditionally clobbers a shared manifest **outside every repo**, triggered by an audit
+  cold run — proposal P-n), D-106 (this lane's own round-6 lesson cited an `awk` that cannot produce its own observed
+  value — **closed** by self-repair `2839f60` in kotoba-shokunin).
+- **Standing duty discharged.** Dormancy 7/7 rows re-tested, **0 dormant** (derived, not asserted), with a new scan
+  correction: commit-age cells must filter aggregator seat commits (`--author='^(?!aggregator-shokunin)'`), else this
+  round's own 16 child-repo commits get attributed to the lanes — kotoba's unfiltered cell would have understated its
+  commit age ~25×. Mint 5/5 re-tested: kama **blocked-external** (L0 line 2 byte-identical to `e333e7c` →
+  unanswered, not re-flagged; drift persists, D-39/D-85), kessho's builder trigger **fired again** (6 lanes / 9
+  artifacts, still 0 unplaceable → below bar), D-86 **ruled**, axis-framework-stewardship's re-check **discharged**,
+  mints executed **0** over 22 `rounds` entries.
+- **Evidence.** Main repo: `6d27283` (round-7 landing, pushed) + this round's ledger/scorecard/log commit + the report
+  commit named in `.ufo/reports/round-8/aggregator.md`. Child repos (16 aggregator-identity commits, unpushed by
+  ruling): kasegi `9dbe69f` `2b0d869`; kengaku `d8f2898` `06cdc98`; kake `69c1856` `4c9a985`; kumitate `e79fefa`
+  `0f24ca7` `942afe4`; kotoba `683d147` `7163c81` `ed5c261` `2839f60`; kagi `e0a04d8` `7c3377c` `4391b3b`.
+- **Falsifiable next iteration (round 9).** cross-lane quality: re-run the three provisional verdicts (kasegi, kake,
+  kagi) against each lane's landed commit and route the `SHONEN.md` box-3 mark updates — falsified if a provisional
+  verdict is restated without a re-run at the lane's new HEAD, or if the round ends with zero lanes citing a round-8
+  verdict. Owed and not to be aged: re-emit the CORPUS.md rule-10 conformance verdicts (two refreshes stale).
