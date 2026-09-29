@@ -14,7 +14,7 @@
 
 ## C2 — registry-row sweep
 
-**Command run:** on each C0 revision, enumerate tracked `SKILL.md` and use a line-oriented scan for a table row whose kind cell is exactly `gate` or `probe`; repeat on the working tree. Scope includes all six child lanes and main. The scanner prints paths/row counts only; it does not infer registry status from prose mentioning a script.
+**Command run:** at each C0 revision, `git -C <repo> grep -n -E '^\|[^|]+\|[[:space:]]*(gate|probe)[[:space:]]*\|' <revision> -- SKILL.md`; repeat the same row scan over the working-tree `SKILL.md`. Scope includes all six child lanes and main. The scanner prints paths/row counts only; it does not infer registry status from prose mentioning a script.
 
 **Observed:** no matching registry row in any of the six child `SKILL.md` files, at landed HEAD or worktree; main has no lane `SKILL.md` in which an aggregator row could live. The four audited tool owners therefore have no row: kagi, kotoba, kengaku, kumitate. Additional routed gaps: kake's `probe-delta` is explicitly a report/probe, not a gate (`kake-shokunin@a209441: scripts/probe-delta.mjs:26`), but has no `probe` row; kasegi's Skill advertises an external claim-check path (`kasegi-shokunin@b7180b0: SKILL.md:681-684`), but has no row and its external source tree is absent (C5). The aggregator corpus-gate draft is also unregistered: its own source says the current inline registry has no aggregator Skill home (`.ufo/waves/round-9/corpus-gate.mjs:10-13`).
 
@@ -81,13 +81,31 @@ print(f"occurrences={hits} lines={lines} files={len(files)} scanned={len(tracked
 PY
 ```
 For the home-skill scope, the matching read-only sweep was `Path.home()/".agents".rglob("SKILL.md")`, reading each match and applying the same pattern; it returned 0/0/0 over 4 files.
+```sh
+AGENTS_ROOT="$HOME/.agents" python3 - <<'PY'
+import os, re
+from pathlib import Path
+root = Path(os.environ["AGENTS_ROOT"])
+pat = re.compile(r"(?:~/Projects/bounties|\$HOME/Projects/bounties|/home/[A-Za-z0-9_.-]+/Projects/bounties)", re.I)
+files = list(root.rglob("SKILL.md"))
+hits = 0
+matched_lines = []
+for p in files:
+    for n, line in enumerate(p.read_text(errors="replace").splitlines(), 1):
+        count = len(pat.findall(line))
+        if count:
+            hits += count
+            matched_lines.append((p, n))
+print(f"occurrences={hits} lines={len(matched_lines)} files={len({p for p, _ in matched_lines})} scanned={len(files)}")
+PY
+```
 The counts are literal citation occurrences, not a count of unique bounty projects. Kasegi's 86 occurrences break down to 38 in `SKILL.md`, 1 in `PROVINCE.md`, and 47 in `corpus/**` (scope command above). This is the missing Kasegi claim-package / registry blast radius; it points into the absent root in C5. Kagi's zero is a real corpus sweep result: this ref does not touch its vault/op inventory. Kengaku's 26 matches include two `PROVINCE.md` route/telemetry references (`PROVINCE.md:15,75`), but both are references to absent bounty telemetry storage, not its primary evidence root. Kotoba and kumitate hits are historical corpus references; no other lane `PROVINCE.md` was hit.
 
 **C5 — root existence check and PROVINCE interpretation.** Command: `test -e` on both `~/Projects/bounties` and `~/projects/bounties`, then on Kengaku's `~/Projects/webzites/repos/llm-wiki` and parent `~/Projects/webzites`. Observed, respectively: `MISSING`, `MISSING`, `EXISTS`, `EXISTS`. Thus there is one unresolved primary domain root (Kasegi), not a second PROVINCE root. Kengaku's root exists; only its separately cited bounty telemetry surface is absent. This sweep does not claim that a similarly named folder elsewhere contains the missing repository.
 
 ## C6 — CORPUS rule 8 literal sweep and safe classification
 
-`main@383ea1a:CORPUS.md:43-46` says vault ref paths (`op://…`) stay out of every corpus, including examples. A literal scan of committed `corpus/**` at the C0 revisions counted occurrences and printed only file:line locations; every `op://` occurrence is therefore a literal rule-8 failure even when its prose intent is benign.
+`main@383ea1a:CORPUS.md:43-46` says vault ref paths (`op://…`) stay out of every corpus, including examples. The count command was a Python wrapper over `git -C <repo> grep -n -F -I 'op://' <revision> -- corpus/`; it counted literal occurrences and printed only file:line locations, never matched text. Every `op://` occurrence is therefore a literal rule-8 failure even when its prose intent is benign.
 
 | Lane | Literal occurrences / lines / files | Safe source-context classification |
 |---|---:|---|
