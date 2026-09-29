@@ -220,31 +220,71 @@ Metrics (before → after, with counting commands):
 | X7 | queue-key integrity: collisions refused / duplicate groups folded / standing contradictions named | unmeasured (assumed unique) | **1 / 2 / 3** — D-87 refused (protocol r11 reused `D-50`…`D-58`), D-39⊇D-85 and D-51⊇D-84 folded, 3 contradictions named | `grep -oE '^\| D-[0-9]+' .ufo/reports/AGGREGATE.md \| sort -t- -k2 -n \| tail -1` → `D-86` before this refresh; 84 distinct keys (distiller) |
 | X8 | non-author re-executions of this ledger's own citations | 0 | **41** → 30 PASS / 8 STALE / **3 FAIL**, all three FAILs filed as self-defects 13–15 and corrected in §13 | reviewer seat transcript; §13.6-Q re-checks |
 
+### Round 9 (refresh 7) — corpus-review axis-move
+
+Measured at three stamps because the fleet committed throughout the wave: **21:2x -03** (main `91d0178`),
+**2026-09-29T00:47:17Z** (`62fdfbe`), **00:53:24Z** (`383ea1a`), gate re-runs **01:19:59Z–01:21:29Z**. Per-repo
+revisions are named in every cell (ledger §14.1, proposal **P-s**) — this section ships in the round-9 commit, so it
+cannot cite its own hash; the report does. **Axis switch recorded (critic A1, self-defect 26):** §Planned below queued
+round 9 as *cross-lane quality*; the round worked **corpus review** instead, because all three axes were tied at 8 and
+corpus review carried the only *unpaid* obligation (`CORPUS.md` rule 10 — §13.7: *"an unrefreshed verdict is a stale
+claim, not a neutral one"*). The queued cross-lane residual was not dropped: the three provisional box-3 re-runs are
+**inputs** to the verdicts and were executed (§14.6).
+
+| Axis | Score (before r9) | Score (after r9) | Evidence pointer | Last change |
+|---|---|---|---|---|
+| corpus review | **8** (with a duty **owed**) | **9** | Before: 0/6 verdicts current — §11.1's audited HEADs are ancestors 6–17 commits back (verified by `cat-file -e` + `rev-list --count` + `merge-base --is-ancestor`); no re-derivable form for any verdict; rule 8 graded "clean everywhere" on an inherited interpretation while the literal hits sit mostly in **this lane's own** mirrored lessons; round 8's wave evidence never committed (`.ufo/waves/round-8/` absent), so X2/X3/X4/X8 are prose aggregates. After: **6/6 verdicts re-emitted at named revisions, all `not conformant`** (§14.2), a committed gate with **12/12 self-test** and **8/8 frozen snapshots MATCH** re-run by the L1 (§14.8), rule 8 re-graded literally with unit+revision+authorship (§14.4), rule 7 split into text vs interpretation (§14.5), `SHONEN.md` canonical form censused 6/6 (§14.7), 29 rows routed (§14.16), **15/15 seat artifacts durable**, and the gate's teeth proven live: its 6 `r10` findings **cleared to 0** when the six lessons were mirrored (§14.17). Not 10: 6 of 10 rules stay `not-evaluated` by construction, 0 repos conformant, the registry clause is unsatisfiable for a main-repo lane (**D-127**), and kasegi's corpus is un-placeable while `~/Projects/bounties` is gone | round 9 |
+| cross-lane quality | **8** | **8** (residuals discharged in part; two falsified as stated) | The three provisional box-3 verdicts were re-run at the lanes' landed revisions: kagi **breaks** (three of its own gates red at `4391b3b` *and* `4b8c018`), kasegi **could-not-evaluate** (`ops/` untracked at every landed revision + its input tree gone), kake **stays provisional** with a named cause; kengaku and kumitate **firm**, kotoba `[~]` stands (§14.6). Round 8's residual *"no `SHONEN.md` box-3 line names a resolvable non-author verifier"* is **partly falsified**: kengaku's does (1/6) — but **0/6 `[x]` marks carry the `<verifier-id>`** the canonical form requires (§14.7). 5 lanes consumed a round-8 artifact, so round 8's own falsifier did not trigger (§14.10) | round 9 |
+| mint/dormancy calls | **8** | **8** (12/12 re-run; two of this lane's own published cells corrected) | All 12 standing rows re-executed and **all 12 moved** within the hour (§14.9). Dormancy **0/7**, still no positive test case in seven refreshes. kama: bar met, **blocked-external**, its L0 line byte-identical to the `e333e7c` blob (md5 `643e7114dd5f9286cdf27a4a654bc800`) ⇒ unanswered, **not re-flagged**; endpoint drift persists (34113 → 200, 8080 → 404, both configs still pin 8080). kessho below bar (0 unplaceable) and §13.3's cell *"6 lanes / 9 artifacts"* proved **unreproducible** — re-derived 5 lanes / 15 tracked harnesses with an explicit rule. Mints executed **0** over **36** `rounds` entries | round 9 |
+
+Metrics (before → after, with counting commands):
+
+| # | Metric | Before | After | Command |
+|---|---|---|---|---|
+| V1 | repos whose rule-10 verdict is measured at a named landed revision | **0 / 6** (§11.1's HEADs are 6–17 commits back) | **6 / 6** — kasegi `b7180b0`, kengaku `f09ff1f`, kake `a209441`, kumitate `e0e5de1`, kotoba `63ceba7`, kagi `4391b3b` (each also re-checked at the newer HEAD it drifted to) | ledger §14.2; `l1-baseline.md` §3 V1 (`cat-file -e`, `rev-list --count <h>..HEAD`, `merge-base --is-ancestor`) |
+| V2 | committed re-runnable corpus-conformance gate | **0** | **1** — `.ufo/waves/round-9/corpus-gate.mjs` (sha256 `68939d0c…cfb8`) + `corpus-gate.expected.json` (`c358e79a…f9ba`): exit map `0=clean 1=failed 2=could-not-evaluate 3=failed(frozen drift)`, 6 checks implemented, **7 declared `not-evaluated` with reasons**, self-test **12/12** asserting exit code **and** ordered finding-ids, **8/8 frozen snapshots MATCH** | `git ls-files \| grep -c corpus-gate` → 0 before; `node … --registry`, `--selftest`, `--all`, `--snapshot <repo> <commit>` |
+| V3 | round-8 provisional box-3 verdicts resolved by a re-run at the lane's landed revision | **0 / 3** | **3 / 3** — 1 broken (kagi), 2 still provisional with a named blocking cause (kasegi, kake); plus 3 non-provisional re-confirmed (kengaku firm at `n=280` checks / 0 mismatches, kumitate firm `PROXY: MATCH`, kotoba `[~]` stands) | ledger §14.6; R4 block (§14.14) for kagi's five gates |
+| V4 | `SHONEN.md` files measured against the canonical form | **0 / 6** | **6 / 6** — 3 clean (trivially: nothing marked), 3 deviate (kengaku 1, kotoba 9, kagi 2); **0 of 6 `[x]` marks carry a `<verifier-id>`** | `l1-baseline.md` §2 checker; gate `shonen` findings (14) |
+| V5 | rule-8 grades resting on the literal text at a named revision, with declared unit + authorship | **0 / 6** (round 6: "clean everywhere", inherited interpretation) | **6 / 6 FAIL-literal / PASS-intent** — occurrences 2/1/2/1/3/77 at named revisions; **5 of 6 repos' hits are in aggregator-authored lessons** | `l1-baseline.md` §1 python3 scanner (`git ls-tree` + `git show <rev>:<path>`, occurrences vs lines vs files) |
+| V6 | wave seat artifacts committed (durable evidence) | **0 / 15** (round 8: `.ufo/waves/round-8/` absent) | **15 / 15** + `CONTEXT.md` + `l1-baseline.md` + gate + expected values | `git ls-files .ufo/waves/round-9 \| wc -l` |
+| V7 | gate findings that clear when the obligation they test is discharged (proof of teeth) | metric did not exist | **`r10` 6 → 0** across the six repos after the round-9 lessons were mirrored; all six `# summary` lines drop `r10` from their rule sets | `node .ufo/waves/round-9/corpus-gate.mjs --all \| grep '^# summary'` before (§14.2: 292 findings incl. 6 r10) and after (§14.17: 0 r10) |
+| V8 | standing-table rows re-run in-refresh, and this lane's own published cells found unreproducible | 12 / 12 (r8), 0 cells audited | **12 / 12** re-run, all 12 moved; **2 published cells falsified** (§13.3 kessho, §13.6-B "last bold mark" resolver) + 4 round-8 metrics unreproducible | ledger §14.9, §14.11; `seats/standing-tables.md`, `seats/reviewer-citations.md` |
+| V9 | queue integrity | 84 distinct keys, next free `D-87` (r8) | **118 distinct keys, 116 definition rows, max `D-120`, next free `D-121`, 0 divergent-text collisions, 2 folds still hold, 3 contradictions persist; 29 new rows `D-121…D-149`** | §14.14 R6 python3 one-liner; `seats/distiller-queue.md` |
+| V10 | L0 lines classified by git forensics (not by line number) | 11 lines, unclassified since r8 | **11 / 11** — 0 operator answers ever (one in-place edit is kake's own refinement), 1 **answered by protocol ruling** (kengaku r10 ← §Gate standard `dddb4ec`), 1 superseded (kasegi r12 ← r15), 9 open operator-only; **1 new line appended** (the `CORPUS.md` amendment set) | `seats/l0-forensics.md`; `git log --diff-filter=A -p --follow -- .ufo/l0-questions.md` |
+| V11 | non-author re-executions of this lane's own published record | 41 (r8, transcript never committed → unreproducible) | **15 cells → 5 PASS / 4 STALE / 6 FAIL**, every FAIL absorbed as a correction table (§14.11) + self-defect, and the seat file **committed** this time | `seats/reviewer-citations.md` |
+| V12 | aggregator self-defects filed (cumulative) | 19 (through r8) | **26** — 7 new (20 rule-8 self-exoneration, 21 wave not committed, 22 wrong published resolver, 23 unreproducible standing cell, 24 17-vs-16 commit headline, 25 138 unqualified cross-repo citations, 26 axis switch without amending §Planned) | ledger §14.12 |
+
+
 
 ### Planned
 
-- **round 9 — cross-lane quality (continuing; the axis is at 8 with three named residuals).** Move: **firm up or
-  downgrade the three provisional box-3 verdicts** (kasegi, kake, kagi) by re-running each decisive claim against the
-  lane's *landed* commit — the form that worked for kumitate at `59e6c0c` (§13.1 ruling 4) — and **route the
-  `SHONEN.md` box-3 mark updates** (D-102, D-107, D-108), verifying at least one lane lands a resolvable non-author
-  verifier id in its own card. Falsified if a provisional verdict is restated without a re-run at the lane's new HEAD,
-  or if the round ends with 0 lanes citing a round-8 verdict.
-- **Owed from round 8 (do not let it age):** re-emit the CORPUS.md rule-10 per-repo conformance verdicts (§11.1's six
-  `not conformant` are now two refreshes old), and re-test the D-111…D-119 mirror rows against protocol's next report.
-- **Standing duty (every refresh):** re-test the §12/§13 standing tables — rows are cutoff-stamped claims, not facts;
-  kama stays **blocked-external** until `.ufo/l0-questions.md` line 2 is answered — never re-flag it as new; re-run
-  §13.6-Q against this lane's own rows (P-q).
+- **round 10 — corpus review (continuing at 9, with three named residuals).** Move: **make the verdicts non-author
+  re-derivable end to end** — (1) get `corpus-gate.mjs` a legal registry home (D-127/P-v: the clause requires a lane
+  `SKILL.md` the main repo does not have) or record the reasoned rejection; (2) close the r4 heuristic's declared
+  false-positive classes (246 findings, three named classes incl. the rule-4/rule-9 collision D-141) until the count is
+  defensible as violations rather than as a heuristic; (3) re-run the gate at each lane's next landed revision and report
+  movement per rule. Falsified if the gate is called conformant while unregistrable, if the r4 cell is restated without
+  the FP classes, or if no verdict names its revision.
+- **Owed from round 9 (do not let it age):** repair the round-8 record *in place where the file allows it* — X2/X3/X4/X8
+  are corrected by §14.11 but the round-8 section still reads as published (D-129); and re-test D-133 (kagi's box-3 `[x]`
+  vs its own red gates) at kagi's next landed revision.
+- **Standing duty (every refresh):** re-run the §12/§13/§14 standing tables and the gate's frozen snapshots — rows are
+  revision-stamped claims, not facts; kama stays **blocked-external** until its L0 line is answered (byte-identity test,
+  never re-flag it as new); re-run the reviewer seat against this lane's own newest cells (P-q).
 
 ### Retired
 
-- none. No axis is saturated and none is a wrong fit: cross-lane quality has three named residuals at 8 (provisional
-  verdicts, no `SHONEN.md` non-author marks, 87 broken `PROTOCOL.md` line cites), corpus review **owes** a verdict
-  re-emission, and mint/dormancy has still never had a positive dormancy case to test the rule against. Two splits are
-  *proposed but not taken*: (a) "mint/dormancy calls" into `mint-calls` (operator-gated) + `dormancy-calls`
-  (lane-measurable) — declined at round 7 and still declined, since one table covers both halves and a relabel would
-  break comparability with refreshes 3–5; (b) "cross-lane quality" into `box-3 currency` (provisional → firm) +
-  `queue integrity` (keys, collisions, contradictions) — deferred to round 10, when X1–X8 will have two refreshes of
-  history to compare; splitting on one round of data would make the round-8 numbers unreadable against the new axes.
+- none. No axis is saturated and none is a wrong fit. Corpus review is at 9 with three named residuals (unregistrable
+  gate, heuristic r4, no conformant repo); cross-lane quality stays at 8 — its box-3 residual is now *resolved* rather
+  than open (1 broken, 2 provisional-with-cause, 1 could-not-evaluate, 2 firm) but `SHONEN.md` form conformance is 0/6
+  on `[x]` verifier-ids; mint/dormancy stays at 8 and **still has no positive dormancy case in seven refreshes**, which
+  is the axis's real gap. Splits: (a) "mint/dormancy calls" → `mint-calls` (operator-gated) + `dormancy-calls`
+  (lane-measurable) — declined at rounds 7 and 8, still declined (one table covers both; a relabel breaks comparability
+  with refreshes 3–5); (b) "cross-lane quality" → `box-3 currency` + `queue integrity` — **deferred again**, now for a
+  measured reason: round 9 worked corpus review, so X1–X8 have one refresh of history, not the two round 8 asked for;
+  (c) **new, proposed for round 10:** split corpus review into `verdict currency` (are the six verdicts current at named
+  revisions) + `verdict re-derivability` (can a non-author recompute them) — round 9 measured them separately for the
+  first time (V1 vs V2/V7) and they move independently.
 
 ### Move log
 
@@ -253,3 +293,4 @@ Metrics (before → after, with counting commands):
 | 6 | corpus review | 2 — no canonical ledger, 0 durable queue rows, 41 lane reports unswept, 0/6 current lessons, last refresh 2 lane-rounds old | 8 — canonical ledger relocated + refresh 4, 79 `D-` rows, 41/41 swept, 6/6 lessons committed and pushed, 6/6 verdicts, 100 citations re-executed | `.ufo/reports/AGGREGATE.md` §11 (this file's C1–C8); lessons `d341b48`, `1bd17ec`, `ab8c9e2`, `31f09cd`, `778310d`, `ad694a2`; report `.ufo/reports/round-6/aggregator.md` |
 | 7 | mint/dormancy calls | 6 — one-off prose calls, 0 dated bar tests, buggy dormancy scan, kama re-flag risk each refresh | 8 — standing §12 tables: 7 lane rows + 5 candidate rows, 12/12 same-refresh re-runs, M4 0→5, kessho trigger fired + dated re-test, kama blocked-external (L0 line 2) | `.ufo/reports/AGGREGATE.md` §12; `.ufo/reports/round-7/aggregator.md` (wave digest: 10 L2 seats, one batched call) |
 | 8 | cross-lane quality | 7 — no repo had a box-3 `[x]` from a named non-author verifier; the ledger's own cells had never been non-author-audited; queue-key uniqueness assumed | 8 — 6/6 committed non-author verdicts (4 `[x]`/2 `[~]`, 1 withdrawn), 115 commands executed, 28 cited break points, 30 gated rows classified, 41 self-citations re-executed (3 FAILs absorbed), 1 key collision refused + 9 rows re-keyed, 24 new rows, round-7 orphan landed at `6d27283` | `.ufo/reports/AGGREGATE.md` §13 (this file's X1–X8); 16 child-repo commits listed in X1; report `.ufo/reports/round-8/aggregator.md` (wave digest: 15 L2 seats, one batched call) |
+| 9 | corpus review | 8 with a duty owed — 0/6 verdicts current (§11.1's HEADs 6–17 commits back), no re-derivable form, rule 8 "clean everywhere" on an inherited interpretation, round-8 wave evidence uncommitted so X2/X3/X4/X8 unreproducible | 9 — 6/6 verdicts re-emitted at named revisions, committed gate (self-test 12/12, 8/8 frozen MATCH, exit map declared, 7 rules honestly `not-evaluated`), rule 8 literal 6/6 with authorship, rule 7 text-vs-interpretation split, `SHONEN.md` census 6/6, 29 rows routed, 15/15 seat artifacts durable, `r10` 6→0 on mirroring | `.ufo/reports/AGGREGATE.md` §14 (this file's V1–V12); `.ufo/waves/round-9/` (gate + expected + 15 seat files + 6 lessons); six child-repo lesson commits `b021dc9` `e171cdf` `4214101` `93b0567` `0f658ff` `baec94f`; report `.ufo/reports/round-9/aggregator.md` (wave digest: 15 L2 seats, one batched call) |

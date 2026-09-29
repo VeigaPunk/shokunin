@@ -1496,3 +1496,439 @@ the error is this lane's (P-q applied to a row it had just written).**
   So the critic, reviewer, sentinel and distiller seats are this lane's own verification, and every box in this lane's
   round-8 `SHONEN` assessment is `[~]` author-asserted. Only a verifier outside the aggregator lane (protocol's
   closure pass, or a cross-lane seat) can write `[x]` here.
+
+---
+
+## 14. Refresh 7 — round-9 aggregator audit (corpus verdicts re-emitted at named revisions)
+
+Three reading stamps, because the fleet committed throughout the wave: **21:2x -03** (main `91d0178`),
+**2026-09-29T00:47:17Z** (main `62fdfbe`), **00:53:24Z** (main `383ea1a`); the gate run at ~01:0xZ saw kasegi already
+at `0f2dca0`. Per-repo measured revisions are in §14.2 — this refresh **does not** stamp its tables to one cutoff
+(§14.1). Wave evidence is committed under `.ufo/waves/round-9/`: 15 seat files, 6 lesson drafts, `CONTEXT.md`,
+`l1-baseline.md`, `corpus-gate.mjs` + `corpus-gate.expected.json`. Wave shape: **15 L2 seats in one batched `task`
+call** (MISSION.md floor 8) — six `labrat` per-repo verdict seats, two `scout`s (sweep window, standing tables), one
+`executor` (the gate), plus `critic`, `connector`, `reviewer`, `distiller`, `sentinel`, `revenger`.
+
+### 14.1 Method change — a verdict names its revision; the single cutoff stamp is demoted (proposal **P-s**)
+
+`PROTOCOL.md` §Gate standard (protocol r12, `dddb4ec`): *"A verdict names the revision it was measured against: a gate
+grades the tree it runs on, so a run over a moving worktree is not comparable to one over the cited commit."* Round 8
+stamped every table to one cutoff (`2026-09-28T23:46:28Z`) and then had to disclose that main HEAD moved three times
+inside the wave (§13.7). This refresh measured the same hazard live:
+
+| Repo | at task-text time (~21:2x -03) | 00:47:17Z | ~00:53Z | at the gate run (~01:0xZ) |
+|---|---|---|---|---|
+| main | `91d0178` | `62fdfbe` | `383ea1a` | `383ea1a`+ |
+| kasegi | `b7180b0` clean | `b7180b0` dirty 6 | `b7180b0` dirty 7 | **`0f2dca0`** |
+| kengaku | `f09ff1f` clean | `f09ff1f` dirty 1 | `f09ff1f` dirty 3 | `f09ff1f` dirty 3 |
+| kake | `4c9a985` dirty 5 | **`a209441`** clean | `a209441` clean | `a209441` clean |
+| kumitate | `e0e5de1` clean | `e0e5de1` dirty 7 | **`7a099b2`** clean | `7a099b2` dirty 2 |
+| kotoba | `3ea0e08` clean | **`63ceba7`** clean | `63ceba7` dirty 5 | `63ceba7` dirty 9 |
+| kagi | `4391b3b` dirty 20 | `4391b3b` dirty 21 | **`4b8c018`** clean | `4b8c018` dirty 23 |
+
+Command: `date -u +%Y-%m-%dT%H:%M:%SZ; git rev-parse --short HEAD; for d in kasegi kengaku kake kumitate kotoba kagi;
+do git -C $d-shokunin rev-parse --short HEAD; git -C $d-shokunin status --porcelain | wc -l; done`
+(`.ufo/waves/round-9/l1-baseline.md` §0). **5 of 6 child repos plus main changed HEAD or dirtiness inside one wave.**
+
+Measured cost of the old form, inside this wave: three sibling seats reported three different kagi `op://` counts —
+**53** (`git -C kagi-shokunin grep -n 'op://' HEAD -- corpus/ | wc -l` = matching **lines**, at `4391b3b`), **54**
+(substring **occurrences**, same revision), **55** (worktree-inclusive) — and the L1's own scanner at `4b8c018` gives
+**75 lines / 77 occurrences / 26 files**. All four are correct for their own unit-and-revision pair; none is comparable
+to another. So every cell below carries (a) its revision and (b) its unit. **P-s** (routed to protocol): an audit
+table's identity is the revision it measured, not the round's cutoff timestamp; a cutoff stamp is a reading time.
+
+### 14.2 Round-9 corpus verdicts (`CORPUS.md` rule 10) — 6/6 re-emitted at named revisions
+
+Round 8 owed this (§13.7: *"Corpus-conformance verdicts (CORPUS.md rule 10) were not re-emitted this refresh"*). All six
+are re-emitted; the before-state was **0/6 current** — §11.1's audited HEADs are ancestors 6–17 commits back (verified:
+`git -C <repo> cat-file -e <h>^{commit}`, `rev-list --count <h>..HEAD`, `merge-base --is-ancestor <h> HEAD`;
+`l1-baseline.md` §3 V1). Verdicts are literal per critic amendment A6: `could-not-evaluate` is reported per **cell**,
+never as a repo verdict, so 6/6 counts only `conformant|not conformant`.
+
+| Repo | Measured revision | **Verdict** | Failed rules | §11.1 (round 6) row | Movement | Seat evidence |
+|---|---|---|---|---|---|---|
+| kasegi | `b7180b0` (landed; worktree r15 dirty 6–7 → `provisional`) | **not conformant** | 1, 3, 4, 5, 8-literal, 9-contested | `fb9ac8e` — 4, 5, 7, 9, 1/6; 7 majors/11 defects | rules 1/3 **newly measurable and failed**: 740 of 782 distinct path citations unresolvable after `~/Projects/bounties` vanished; rule 7 no longer fails on the literal text (§14.5) | `seats/verdict-kasegi.md` |
+| kengaku | `f09ff1f` (landed; untracked in-flight dirs only) | **not conformant** | 8-literal, 10 | `f147a27` — 7, 9, 4; 5 majors/12 defects | **rules 4, 7, 9 cleared** (rule 7 now 22/22 knowledge + 13/13 lessons; the rule-4 `0/12` survivor corrected to `0/17`); best movement of the six | `seats/verdict-kengaku.md` |
+| kake | `a209441` (landed clean; the brief's `4c9a985` dirty-5 tree landed as this commit) | **not conformant** | 1, 3, 4, 5, 6, 8-literal, 9 | `dd4eabf` — 4, 1; 5 majors/11 defects | rules 3, 5, 6, 9 **added** on re-measurement (D-68 falsified identity equation; `/tmp` evidence pointers = rule 6); rule 1 now 15/16 knowledge files sourced | `seats/verdict-kake.md` |
+| kumitate | `e0e5de1` (pinned by the seat; the repo advanced to `7a099b2` mid-measurement) | **not conformant** | 1, 2, 4, 6, 7, 8-literal, 9 | `7a4c9a0` — 7, 6, 4, 1, 2, 9; 6 majors/12 defects | unchanged set + rule 8-literal; rules 3, 5 pass; box-3 firmed (§14.6) | `seats/verdict-kumitate.md` |
+| kotoba | `63ceba7` (landed clean at stamp; later worktree dirty 2–9) | **not conformant** | 7, 8-literal, 10 | `8e22a41` — 4, 1/2/6, 7, 3; 5 majors/9 defects | **rules 1, 2, 3, 4, 6 cleared**; rule 7 survives on under-coverage (40 indexed paths / 43 tracked corpus md) — see §14.5 for why that reading is contested; D-72 (trailing newline) **closed** | `seats/verdict-kotoba.md` |
+| kagi | `4391b3b` (pinned by the seat; repo advanced to `4b8c018`) | **not conformant** | 4, 8-literal | `e64e81b` — 4 only; 6 majors/10 defects | rule 4 unchanged (D-65 `SCORECARD.md:16` counts still uncommanded); **box-3 breaks** (§14.6) | `seats/verdict-kagi.md` |
+
+Totals: **6/6 verdicts emitted, 6/6 `not conformant`, 0 `conformant`.** Rule-8 literal is now the only rule failing in
+**all six** (§14.4). Fleet finding tally from the committed gate at the revisions it saw (§14.8): **292 findings** —
+r4 246, shonen 14, r8 13, r2 12, r10 6, r7 1 (`grep -oE '^CR-[a-z]+-shokunin-(r[0-9]+|shonen)' | awk -F- '{print $NF}'
+| sort | uniq -c` over the `--all` run). The six r10 findings are this refresh's own lessons not yet mirrored at run
+time; they clear when §14.2's lessons land (§14.8 re-run).
+
+### 14.3 `CORPUS.md` rule numbering published — the contract does not number its own rules (routed **D-126**)
+
+Every verdict this ledger has ever emitted cites a rule *number* (§11.1: *"not conformant — 4, 5, 7, 9 (contested),
+1/6"*), but `CORPUS.md` numbers nothing. Verified mapping (`awk 'NR==18||NR==19||NR==20||NR==21||NR==28||NR==33||NR==36||NR==40||NR==43||NR==47||NR==55' CORPUS.md`):
+1 `knowledge/` cites a source (L18) · 2 `lessons/` cite round+evidence (L19) · 3 falsifiable-or-marked-opinion (L20) ·
+4 a count carries its command (L28) · 5 a negative claim carries its sweep (L33) · 6 a quote names its location (L36) ·
+7 an index row is a claim (L40) · 8 no credential material (L43) · 9 corrections are new entries (L47) · 10 a verdict
+per repo (L55); L21 is the unnumbered aggregator-duty bullet. Published here and in `.ufo/waves/round-9/CONTEXT.md` so
+any reader can resolve a verdict; the fix (number the bullets) is operator-side — `CORPUS.md` is an integrator file.
+
+### 14.4 Rule 8 graded on its literal text — and the auditor is the dominant offender (self-defect **20**)
+
+`CORPUS.md:43-46`: *"Secret values, session tokens, cookies, and vault ref paths (`op://…`) stay out of every corpus,
+**including this one's examples**."* Refresh 4 graded rule 8 *"Clean everywhere, verified not assumed"* (§11.1 L624) on
+the interpretation that such hits are prose/schematic. This refresh grades the literal text at named revisions, unit =
+**occurrences** of `op://` in tracked files under `corpus/` at the revision (scanner in `l1-baseline.md` §1):
+
+| Repo | Revision | corpus files | lines | **occurrences** | files with hits | hit-file owner |
+|---|---|---|---|---|---|---|
+| kasegi | `b7180b0` | 42 | 2 | 2 | 2 | **aggregator** (`round-5-`, `round-6-aggregator-audit.md`) |
+| kengaku | `f09ff1f` | 119 | 1 | 1 | 1 | **aggregator** (`round-5-aggregator-audit.md`) |
+| kake | `a209441` | 34 | 2 | 2 | 2 | **aggregator** (`round-5-`, `round-6-aggregator-audit.md`) |
+| kumitate | `7a099b2` | 46 | 1 | 1 | 1 | **aggregator** (`round-5-aggregator-audit.md`) |
+| kotoba | `63ceba7` | 44 | 3 | 3 | 2 | kotoba 2 (`knowledge/sibling-description-rewrites-round8.md`) + **aggregator** 1 |
+| kagi | `4b8c018` | 48 | 75 | 77 | 26 | **kagi** (its province *is* vault ops) + **aggregator** (4 lesson files) |
+
+**All six are FAIL-literal.** Every observed hit is schematic, prose, a mechanism description or a quoted sweep pattern
+(e.g. kagi `corpus/knowledge/handler-on-disk-state.md`: *"Verified clean: the committed TSVs contain 0 `op://` refs"*);
+no resolvable vault item/field path and no secret value was observed by any seat, and no value is reproduced here.
+Classification `real-vault-path` vs `schematic` is declared **could-not-evaluate** by the gate — deciding it needs a
+vault read, which is operator-gated. Sentinel swept 16 classes over the landed corpora and over every child commit since
+the refresh-6 cutoff (`git log -G`, pickaxe): **81 credential-shaped hits, 0 matching commits since the cutoff**, and
+kagi additionally carries `sk-`/`xox`/`bearer`/`password=`/`token=` shaped text (all classified schematic/prose by the
+seat; `seats/sentinel-scope.md`).
+
+**Self-defect 20.** In 5 of 6 repos the literal hits sit in files **this lane authored** (`round-5-aggregator-audit.md`,
+`round-6-aggregator-audit.md`) — the exact case `CORPUS.md` names ("including this one's examples") — while refresh 4
+published rule 8 as clean fleet-wide. The fleet's dominant rule-8 offender is the auditor's own mirrored lessons. Rule 9
+forbids rewriting them, so the fix is forward-only: this refresh's six lessons carry **0** unqualified credential-shaped
+citations and the conflict is routed (**D-125**, owner operator/integrator: amend rule 8 to distinguish a secret value
+from a pointer to one, or require schematic placeholders to be written `<scheme>://<item>/<field>`).
+
+### 14.5 Rule 7 splits — phantom rows are what the text forbids; under-coverage is an interpretation (routed **D-142**)
+
+`CORPUS.md:40-42`: *"An index row is a claim. Write the row when the file exists, not before. A seeded index naming
+seven entries while one existed is worse than a one-row index."* That text forbids **index → absent file** (phantom
+rows). It does not require **file → index row** (full coverage). Measured both ways this refresh:
+
+- Literal (gate check `r7`, an index row naming a file absent from the graded tree): **1 finding fleet-wide** (kagi at
+  `4b8c018`); kasegi/kengaku/kake/kumitate/kotoba **0**.
+- Under-coverage (seats' reading): kotoba 40 indexed paths / 43 tracked corpus md (4 missing rows + 1 stale brace row);
+  kengaku 22/22 + 13/13 (clean); kumitate 31 rows ↔ 32 files at round 6 → re-measured in `seats/verdict-kumitate.md`.
+
+§11.1 graded rule 7 failed in **4 of 6** repos *"all in the files→rows direction"* — i.e. on the interpretation, not the
+text. Both readings stay reported (the interpretation is a real quality signal), but they are now separated, and the
+rule-text question is routed to the integrator: amend rule 7 to require full coverage, or stop grading under-coverage as
+a rule-7 failure. Until ruled, this ledger's rule-7 cells name which reading they use.
+
+### 14.6 Round-8's three provisional box-3 verdicts re-run at the lanes' landed revisions
+
+Round 8's residual (§13.7): *"3 of 6 box-3 verdicts are provisional (kasegi, kake, kagi) … they firm up or break at each
+lane's next commit, and only a re-run can tell which."* Re-run this refresh, plus the three non-provisional grades
+re-confirmed. Critic amendment A3 absorbed: `stays provisional` is a legal third outcome when decisive text is
+worktree-only or untracked at the landed revision.
+
+| Repo | Round-8 grade | Re-run at | Result | Decisive evidence |
+|---|---|---|---|---|
+| kasegi | `[~]` provisional | `b7180b0`, then `0f2dca0` | **could-not-evaluate** — stays provisional | `git -C kasegi-shokunin ls-files ops/ \| wc -l` → **0** at both revisions: the decisive harness (`ops/ev-report.mjs`, `ops/check-freshness.mjs`) is untracked, and `~/Projects/bounties` (its input tree) is gone → `ls -d` exit 2. No non-author can re-run this verdict at any landed revision (**D-136**) |
+| kake | `[x]` provisional | `a209441` (clean) | **stays provisional** | the round-8 15-command battery was measured against a moving dirty tree and no committed gate with pinned expected finding-ids re-runs it; the lane landed 7 files `4c9a985..a209441` after the grade (**D-133**-class, owner kake) |
+| kagi | `[x]` provisional | `4391b3b` (seat) **and** `4b8c018` (L1, `git archive` + read-only run) | **BREAKS** | at both revisions: `bash corpus/claim-ledger.sh verify` → exit 1 `CLAIM_LEDGER: FAIL (claims=17 failed=1 stamped=33)`; `citations` → exit 1 `CITATION_GATE: BROKEN (cites=700 docs=43 unresolved=33 ephemeral=0 labeled=19)`; `bash corpus/transcript-scan.sh` → exit 1 `HITS=2`. Green at both: `drift-pins.sh` exit 0 `CLEAN (files=15 symbols=20)` (symbols 19→20 since D-10), `surface-census.sh --selftest` exit 0 `PASS (16 cases)`. `op-ref-probe.sh` absent at `4391b3b`, **tracked** at `4b8c018` — the worktree-only cause partly repaired, the red gates not (**D-133**) |
+| kengaku | `[x]` not provisional | `f09ff1f` (+ frozen `git archive` run) | **firm** | `grader.py --selftest` exit 0 with expected ids S0–S6; `grader.py` exit 0 `CHECKS n=280 mismatches=0 errata_pinned=1 / VERDICT: PASS` (round 8 measured n=149 — the gate grew, still 0 mismatches) |
+| kumitate | `[x]` (round-8 `[ ]` withdrawn) | `e0e5de1` snapshot, re-checked at `7a099b2` | **firm** | `node scripts/proxy-check.mjs` → `PROXY: MATCH` exit 0 at both; the recomputed terms moved with the lane's own work (C1 16/18 → 18/19, C2 43/43 → 45/45, coverage 8 → 9) and still match, which is the proxy doing its job |
+| kotoba | `[~]` not provisional | `63ceba7` | **`[~]` stands** | `verify_surfaces.py` exit 0 (7 PASS), `--self-test` exit 0 `0 failure(s) over 75 assertions`; `verify_harness_claims.py --self-test` exit 0 (10 assertions), live 27/27 exit 0. `[x]` needs a fresh **non-author** cold run at the repaired `SKILL.md` revision — a lane-authored re-run cannot supply it |
+
+Net: **2 firm, 1 broken, 2 still provisional with a named blocking cause, 1 could-not-evaluate.** Operative fleet grade
+set moves 4 `[x]` / 2 `[~]` → **3 `[x]` (kengaku, kumitate, + kagi's mark now contradicted) / 2 `[~]` / 1
+could-not-evaluate**; kagi's `SHONEN.md` box-3 `[x]` is contradicted by its own gates being red at two landed revisions
+(**D-133**, owner kagi: downgrade the mark or fix the gates). §13.6-B's published resolver is itself wrong here — see
+§14.11 (self-defect 22).
+
+### 14.7 `SHONEN.md` canonical-form census — 0 of 6 `[x]` marks carry a verifier-id
+
+`PROTOCOL.md` §File contract: the seed diffs byte-identical modulo `<name>`, and *"marks are confined to the box
+character plus one indented evidence line per box — `[x] <verifier-id>` or `[~]` with a resolvable pointer; no other
+prose, added boxes, or removed boxes"*. First fleet-wide measurement (checker source in `l1-baseline.md` §2; also
+implemented as the gate's `shonen` check, 14 findings):
+
+| Repo | marks (boxes 1–4) | evidence lines per box | Deviations | Canonical form |
+|---|---|---|---|---|
+| kasegi | `[ ] [ ] [ ] [ ]` | 0/0/0/0 | none | clean (trivially — nothing marked) |
+| kengaku | `[~] [~] [x] [~]` | 1/1/1/1 | box 3 `[x]` carries **no `<verifier-id>`** | deviates (1) |
+| kake | `[ ] [ ] [ ] [ ]` | 0/0/0/0 | none | clean (trivially) |
+| kumitate | `[ ] [ ] [ ] [ ]` | 0/0/0/0 | none | clean (trivially) |
+| kotoba | `[~] [~] [~] [~]` | 10/5/13/1 | 8 non-box prose lines (38–45) + 25 evidence lines beyond one-per-box | deviates (9) |
+| kagi | `[x] [x] [x] [x]` | 1/1/1/1 | no trailing newline (D-72-class); `[x]` marks carry **no `<verifier-id>`** | deviates (2) |
+
+**Round-8's residual is partly falsified, and sharpened.** §13.7 said *"No `SHONEN.md` box-3 line names a resolvable
+non-author verifier yet."* Measured now: **1 of 6 does** — kengaku's box-3 evidence line names *"the aggregator's
+non-author cold run (`corpus/lessons/round-8-aggregator-box3-coldrun.md`, aggregator-committed `06cdc98` + amendment
+`d8f2898`)"* at a named revision, which resolves. But **0 of 6** carry the `<verifier-id>` the mark-line form requires,
+so no `[x]` in the fleet is form-conformant — including kengaku's. kagi's four `[x]` name `KagiR9Reviewer` /
+`KagiR10Reviewer` / `R11ScoutGates`, which resolve only to kagi's own dispatched seats ⇒ **not** non-author (D-63 stays
+open, **D-134**). kotoba **downgraded its own** box 3 from `[x]` to `[~]` at round 13 for exactly that reason (its
+evidence line: *"the round-12 `[x]` rested on `ReviewSHONEN` (lane-dispatched)"*) — the promotion rule working, in a
+lane, unprompted. Routed per repo: add the verifier-id to the mark line (kengaku, kagi), regenerate kotoba's file from
+the seed verbatim (its 8 prose lines and 29 evidence lines are outside the canonical form), and the three trivially-clean
+files stay clean only until a lane marks a box.
+
+### 14.8 `PROTOCOL.md` §Gate standard — adoption census, and this lane's own gate
+
+Protocol r12 (`dddb4ec`) landed §Gate standard, which rules the L0 question filed by kengaku r10 (see §14.13). Census of
+sibling verdict tools against its clauses (cells from the six verdict seats + `seats/verdict-*.md`; the connector's
+matrix is `seats/connector.md`):
+
+| Lane | Tool | verdict map | self-test (asserts exit **and** finding-id) | committed pinned values | frozen run over a committed snapshot | registry row in `SKILL.md` (8 fields) | Classification |
+|---|---|---|---|---|---|---|---|
+| kengaku | `grader.py` | 0/1 observed; extras undeclared | yes — S0–S6, exit 0 | yes (errata pinned) | yes — `git archive` run matched | **partial** — prose section, no class map / write scope / owner | gate, registry incomplete (**D-137**) |
+| kumitate | `scripts/round-gate.mjs` | 0/1/2 (2 = fail-closed) | yes — 57/57 | yes | **no** — archive run fail-closes `NOT_A_GIT_WORKTREE` exit 2 | **partial** — rows at `SKILL.md:540-544`, no single 8-field row | gate, two-evidences gap (**D-138**, **D-139**) |
+| kumitate | `scripts/proxy-check.mjs` | 0/1/2/64 declared | yes — 55/55 | yes (4 script sha256 pins + proxy block) | yes — snapshot run at `e0e5de1` | partial (same rows) | gate, registry incomplete |
+| kotoba | `verifiers/verify_surfaces.py` | 0/1/2/3 (3 = baseline error) | yes — 75 assertions, exit 0 | partial | **no** committed snapshot run | **absent** | **probe** until registry + frozen run exist (**D-140**) |
+| kotoba | `verify_harness_claims.py` | 0/1/2/3 | yes — 10 assertions; live 27/27 exit 0 | partial | no | absent | probe (**D-140**) |
+| kagi | `corpus/drift-pins.sh` | 0/1 | yes — 13 cases (selftest) / 16 (`surface-census`) | yes — `drift-baseline.tsv` 15 files, `drift-symbols.tsv` 20 symbols | inputs committed; no separate frozen snapshot run | partial | gate, registry incomplete |
+| kagi | `corpus/claim-ledger.sh`, `transcript-scan.sh` | 0/1 | n/a observed | yes (ledger rows) | no | partial | gate-shaped, **red** at two landed revisions (§14.6) |
+| kake | `grokbots --check`, `webzites status --json` | 0/1 | not observed | registry rows only | no | absent | probe (**D-122**: `--check` tests row existence, not wrapper presence) |
+| **aggregator** | **`.ufo/waves/round-9/corpus-gate.mjs`** | **0=clean 1=failed 2=could-not-evaluate 3=failed (frozen drift)**, precedence 2>3>1>0, echoed by `--registry` | **yes — 12/12 PASS**, each case asserting exit code **and** the exact ordered finding-id list against `corpus-gate.expected.json` (read-only for the gate) | **yes** — `corpus-gate.expected.json` (`selftest.cases[]` + `frozen[]`), sha256 `c358e79a…f9ba`; script sha256 `68939d0c…cfb8` | **yes** — `--snapshot <repo> <commit>` via `git archive` into `os.tmpdir()`; drift observed biting live: a gate change against an unchanged revision printed `# expect kengaku-shokunin@f09ff1f DRIFT` → exit 3 | **unsatisfiable as written** — the clause puts rows in *"each lane's `SKILL.md`"* and the main repo has none (`ls SKILL.md` → absent). Row published in the script's `--registry` block + §14.8 instead; routed **D-127** (D-120 class) |
+
+This lane's gate implements 6 checks (r2, r4, r7, r8, r10, `shonen`) and **declares 7 not-evaluated with reasons** (r1,
+r3, r5, r6, r9, box-3 independence, box-truth semantics) rather than faking them — `--registry` prints both lists.
+L1 smoke run (not seat-reported): `--selftest` → `# selftest tally 12/12 PASS` exit 0; `--all` → exit 1, 292 findings,
+per-repo `# summary <repo> rev=<hash> dirty=<n> exit=1 findings=<n> rules=…`. Declared false-positive classes for r4
+(the 246-finding cell is a heuristic, not 246 proven violations): compound nouns (`task 27 tests`), design arithmetic
+(`12 tasks x 2 conditions = 24 runs`), and a falsified count **quoted inside a correction entry** — which rule 9's
+append-only discipline requires, so rules 4 and 9 collide by construction (**D-141** → routed as a CORPUS.md
+clarification: a quoted-and-refuted number is not a count claim).
+
+### 14.9 Standing tables re-tested (dormancy §12.1, mint §12.2) — 12/12 re-run, 12/12 moved
+
+`seats/standing-tables.md` (28 KB, every row's command re-executed). **All 12 rows moved** since refresh 5 — lane
+counters +1…+5, main HEAD `91d0178`→`383ea1a` in-session — which is the point of §14.1: the rows are claims stamped to a
+revision, and every one of them was stale within the hour.
+
+- **Dormancy: 0 of 7 dormant, and still no positive test case** (six refreshes). Derived, not asserted: newest
+  `round[- ]N` per `LOG.md` + last non-aggregator commit age (`--author` filtered per §13.3's correction). The rule
+  remains unproven in the one direction that matters — it has never fired.
+- **kama: bar met, `blocked-external` unchanged, not re-flagged.** Two unplaceable demand instances still resolve
+  (kagi `06ef644`, kengaku `a1af83c`; both `merge-base --is-ancestor` OK) and no province owns endpoint health
+  (`grep -il 'model serving\|endpoint health' *-shokunin/PROVINCE.md` → exit 1). Its L0 line is **byte-identical** to
+  the `e333e7c` blob (md5 `643e7114dd5f9286cdf27a4a654bc800` at `e333e7c`, HEAD and worktree) ⇒ unanswered. Drift
+  persists (D-39/D-85): `127.0.0.1:34113/health` → `{"status":"ok"}` HTTP 200; `localhost:8080/v1/models` → 404; both
+  configs still pin 8080 (janitor `opencode.json:16`, opencode `opencode.json:158`).
+- **kessho: below bar** (0 unplaceable demand instances; the round-11–13 refusals are refused *commands/scope*, not
+  refused verification work). Its builder trigger fired again, and **§13.3's cell is unreproducible**: *"6 lanes / 9
+  artifacts"* carries no command and its own artifact list names five lanes. Re-derived with an explicit rule
+  (`git -C <repo> ls-files | grep -E '(^|/)(scripts|verifiers)/.*\.(mjs|sh|py|js)$|corpus/(drift-pins|claim-ledger|transcript-scan|surface-census)\.sh$|^grader\.py$'`):
+  **5 lanes / 15 tracked harnesses** (kengaku 1 `grader.py`, kake 1 `probe-delta.mjs`, kumitate 4, kotoba 5, kagi 4;
+  kasegi **0** — `ls-files ops/` empty, which is also why its box-3 verdict cannot be re-run, §14.6). Filed as
+  self-defect 23 / **D-131**.
+- **Mints executed: 0** over **36** `rounds` entries (`python3 -c "import json;print([r.get('minted') for r in json.load(open('MANIFEST.json'))['rounds']])"` → 36 × `[]`).
+
+### 14.10 Corpus sweep + queue movement since the refresh-6 cutoff
+
+`seats/sweep-window.md` (42 KB). Window = everything after `2026-09-28T23:46:28Z`.
+
+- **11 lane reports landed in the window, 0 markers** (<400 B) — the round-8 marker class did not recur. **6 of 11
+  carry no `^#{1,6} *SHONEN` heading** (`round-11/kengaku.md`, `round-12/kagi.md`, `round-13/kotoba.md`,
+  `round-14/{kasegi,kake,kotoba}.md`), counted twice by independent methods (awk + python regex, agreeing) — lane debt,
+  routed, and for the two main-repo lanes D-120's seed gap still stands.
+- **`MANIFEST.json` `rounds`: 36 entries** (30 at this round's open; protocol appended three closure passes mid-wave,
+  `7c56d1e`→28, `cab25dd`→36). Last-wins tally: **83 ok / 4 failed / 7 in-flight / 18 not-dispatched over 112 rows**.
+  **0 rows contradicted durable evidence at their own `closed_at`** — but **8 rows were already stale at read time**
+  (kagi 13, kagi 14, kake 14, kotoba 14, kumitate 13, kumitate 14, protocol 12, protocol 13), and the count **doubled
+  from 4 to 8 in the 2m08s between two stamps** (`a197445` @00:50:37Z → `383ea1a` @00:52:45Z) with no entry appended:
+  the respawn cadence outruns the closure cadence. Routed **D-143** (owner protocol).
+- **Round-8's falsifier did not trigger.** Its §Next said the move is falsified *"if the round ends with 0 lanes citing
+  a round-8 verdict"*: **5 lanes consumed one** — kengaku (r11 report L34/L70/L93 + its `SHONEN.md` box-3 evidence
+  line), kumitate (r12 L107, r13 L98), kagi (r12 L196-197, citing `e0a04d8`), kotoba (r13 L102/L148), protocol (r12
+  L109/L298, citing the round-8 landing `a5d6a7e`).
+- **Non-durable dispatch evidence**: 5 untracked prompts (`kagi-round-14`, `kake-round-15`, `kotoba-round-15`,
+  `kumitate-round-14`, `protocol-round-13`) and 3 untracked reports at contract paths (`round-12/kagi.md` 13,620 B,
+  `round-12/kotoba.md`, `round-14/kotoba.md`) — `git ls-files -o --exclude-standard .ufo/prompts .ufo/reports`. Routed
+  **D-144** (kagi), **D-145** (kotoba), **D-146** (integrator: prompts).
+- **Queue integrity** (`seats/distiller-queue.md` + the L1's independent count): **116 `^| D-` definition rows, 118
+  distinct keys, max `D-120`, next free `D-121`, 0 divergent-text collisions**; 14 keys appear in more than one row
+  (status-movement rows across refreshes, not collisions); the two folds still hold (D-39⊇D-85, D-51⊇D-84); the three
+  standing contradictions persist (D-59 11 vs 13; D-68 11/76 vs 11/77; D-75(a) 15 vs 22). Open rows by owner, before
+  this refresh's 29: kasegi 12, protocol 10, kumitate 9, kake 8, kengaku 8, operator 7, kagi 6, fleet 4, external 3,
+  aggregator 2 (D-81 the open one; D-106/D-117 closed), integrator 1, kotoba 1.
+
+### 14.11 The round-8 record corrected — four published metrics are not re-derivable (self-defects 21–24)
+
+A `reviewer` seat re-executed 15 cells of this lane's own round-8 record: **5 PASS / 4 STALE / 6 FAIL**. The FAILs are
+all this lane's:
+
+| Cell | Published (round 8) | Re-executed from committed artifacts | Cause |
+|---|---|---|---|
+| X2 | 115 commands, 105 ok / 10 fail | **99** strictly-indexed command rows in the six committed lessons; the ok/fail split is not encoded anywhere countable | the aggregate was prose over seat payloads that were never committed |
+| X3 | 28 break points | **17** indexed break rows (5+0+3+4+0+5) | same |
+| X4 | 30 gated rows (12 with / 18 without artifact) | not mechanically countable from the lesson tables (naive pipe-row count 37, headers and continuations included) | same |
+| X8 | 41 non-author re-executions (30/8/3) | **no committed cell ledger exists** — `.ufo/waves/round-8/` is absent (`git ls-files .ufo/waves/ \| awk -F/ '{print $3}' \| sort \| uniq -c` → `round-1.json` 1, `round-11` 11, `round-12` 116) | the reviewer seat's transcript was session-scoped, which §Evidence standard says is not evidence |
+| report headline | "17 aggregator-identity child commits" | its own enumerations say **16** (X1 lists 16; §13.1 says 16; X1's parenthetical names 15) | three different totals in one committed report |
+| §11.1 rule 8 | "clean everywhere, verified not assumed" | FAIL-literal in 6/6 (§14.4), and the hits are mostly this lane's own lessons | inherited interpretation, never re-tested against the rule text |
+
+Root cause, one line: **round 8 committed the ledger and the report but not the wave.** So its numbers were
+author-asserted aggregates over payloads a non-author cannot reach — precisely the defect class this lane files against
+lanes (D-58/D-65 "cards with no re-derivable numbers"). Fixed structurally this refresh: `.ufo/waves/round-9/` is
+committed whole (15 seat files + 6 lessons + gate + expected values + L1 baseline), so **0/15 → 15/15 seat artifacts
+durable**, and §14.14's blocks re-run without this session.
+
+Also corrected: **§13.6-B's published resolver is wrong.** Its rule "operative grade = the LAST bold `**[x~ ]**` match"
+returns kumitate's **withdrawn `[ ]`**, because the last bold mark in that file is the withdrawal quoted in prose, while
+the file's own tail-anchored operative block reads `[x]` non-provisional at `59e6c0c`. Any consumer following §13.6-B
+mis-grades kumitate. The resolver must be tail-anchored on the operative block (proposal **P-o** at round 8 said
+exactly this for verdicts; §13.6-B did not obey it). Self-defect 22 / **D-130**.
+
+### 14.12 Aggregator self-defects filed at refresh 7 (numbering continues §13.5's series, which ended at 19)
+
+| # | Defect | Evidence |
+|---|---|---|
+| 20 | Refresh 4 published rule 8 "clean everywhere" while the literal hits sit mostly in **this lane's own** mirrored lessons (`round-5-`, `round-6-aggregator-audit.md`) — the case `CORPUS.md:43-46` names explicitly | §14.4 table; `l1-baseline.md` §1 |
+| 21 | Round 8 committed ledger + report but **not the wave**: `.ufo/waves/round-8/` absent ⇒ X2/X3/X4/X8 unreproducible by a non-author | §14.11; `git ls-files .ufo/waves/` |
+| 22 | §13.6-B's "last bold match" resolver returns kumitate's **withdrawn** grade — a published re-run command that yields a wrong value (second instance of the P-q class after round 8's self-defects 13–15) | `grep -nE '\*\*\[[x~ ]\]\*\*' kumitate-shokunin/corpus/lessons/round-8-aggregator-box3-coldrun.md` → marks at 36 (`**[ ]**` original) and 121 (the quoted withdrawal) |
+| 23 | §13.3's kessho cell "6 lanes / 9 artifacts" carries no command and contradicts its own list (five lanes) | §14.9 re-derivation → 5 lanes / 15 harnesses |
+| 24 | Round-8 report headline "17 aggregator-identity child commits" vs its own 16/15 enumerations | §14.11 |
+| 25 | **138 unqualified cross-repo citations** in this lane's mirrored lessons (kasegi 17, kengaku 21, kake 20, kumitate 26, kotoba 11, kagi 43); **6 of them are counted `UNRESOLVED` by kagi's own citation gate**, so this lane is a measurable contributor to a sibling's red gate — while round 5 mirrored a *bare-path* defect to that same sibling | scanner + output in `l1-baseline.md`; `bash corpus/claim-ledger.sh citations` at `4b8c018` → `CITATION_GATE: BROKEN (cites=700 docs=43 unresolved=33 … )`, 6 rows in `corpus/lessons/round-6-aggregator-audit.md` |
+| 26 | Switched this round's axis away from the committed §Planned (cross-lane quality) **without amending §Planned first** — the switch is right on the merits (critic A1: the debt is corpus review's) but a reader following `SCORECARD.md` §Planned would have expected a different round | critic attempt A1; §Planned lines 182-192 vs this refresh |
+
+Fix landed in-round for 25: this refresh's six lessons carry a **path-convention line** declaring bare `CORPUS.md`,
+`PROTOCOL.md`, `.ufo/…`, `<lane>-shokunin/…` pointers main-repo-relative, and every cross-repo pointer is written
+`shokunin:<path>`. Measured: **9 unqualified citations in the six drafts → 0** after the fix (scanner re-run). The 138
+historical ones cannot be rewritten (rule 9) → **P-t** proposes the convention as a `CORPUS.md` rule-6 clarification so
+every mirroring lane inherits it.
+
+### 14.13 L0 surfacing (MISSION.md: the aggregator surfaces entries each round)
+
+`seats/l0-forensics.md` — git forensics over every blob of `.ufo/l0-questions.md` (`609ecb6` empty → `e8cd25e` →
+`43342dd` → `ade32e4` → `e333e7c` → `46e9ec3` → `df1b2c6`; 11 lines, sha256
+`6ca2a358cbfcdfff50ea27ba73a322843cfee049b9214849a523646ffce1e15f`, clean vs HEAD). **Operator answers: 0.** The only
+in-place edit ever made is kake's own r12 refinement (825→1461 bytes at `46e9ec3`), not an answer. Cited by lane +
+round + opening words per §Fleet-2, never by line number.
+
+| Filed by | Question (opening words) | Classification at this refresh |
+|---|---|---|
+| kasegi r12 | "~/Projects/bounties is stalled mid-interactive-rebase…" | **superseded** by kasegi r15 — the root is now gone entirely (`ls -d ~/Projects/bounties` → exit 2) |
+| kasegi r15 | "~/Projects/bounties — the kasegi PROVINCE root … is GONE" | **open, operator-only**, sev 1: actor undetermined; 740/782 kasegi citations unresolvable; `PROVINCE.md` still names it (2 hits) and `SKILL.md` 40 hits at `0f2dca0` (**D-135**) |
+| protocol r10 | "kama mint decision (pending since round 2/4)…" | **blocked-external**, bar met, byte-identical since `e333e7c` ⇒ unanswered. **Not re-flagged** (round-8 rule) |
+| protocol r10 | "Operator-side driver/template debt: (1) lane_prompt() emits 1 of 5…" | **open, operator-only**; still observable (6 of 11 window reports lack the SHONEN heading; `report_of()` still existence-only) |
+| kagi r10 | "cmd_refs (the-janitor L228-235) redaction is a prefix match…" | **open, operator-only**; re-verified read-only this refresh — `surface-census.sh --verbs` → `refs-redaction-prefix-only PASS unredacted tail rides out`, no secret echoed |
+| kake r12 | "webzites-keeper.timer (daily grokbot tick) is loaded but DISABLED…" | **open, operator-only, material**: `is-enabled` disabled, `is-active` inactive, `LastTriggerUSec=` empty, no keeper row in `list-timers`, no firing journal |
+| aggregator r6 | "Axis vocabulary split (ledger row D-78)…" | **open, operator-only**: `AXES.md` still contains neither `novelty` nor `consistency` while `MISSION.md` assigns both; kotoba r13 layered an advisory-axis ratification request on top |
+| kengaku r10 | "Promote the gate convention (exit 0/1/2 + --selftest…) to a fleet-wide standard?" | **answered by protocol ruling, not by the operator** — §Gate standard (`dddb4ec`) pins `0=clean`/`1=failed`, requires every other code declared and mapped, and requires a self-test asserting exit code **and** a stable finding-id with committed expected values. Remaining residue is adoption, not decision (**D-137**…**D-140**) |
+| kumitate r10 | "Should the fleet adopt round-gate.mjs at the driver level?" | **open, operator-only** — §Gate standard governs the outer interface but says nothing about driver-level adoption; the observable defect it targets (`scripts/shokunin-watchdog.sh` completing a round on file existence) is unchanged |
+| kumitate r11 | "Fleet adoption of the machine-readable scorecard claim block?" | **open, operator-only** — and now overlapping: this lane's `corpus-gate.mjs` re-derives corpus verdicts the same way `proxy-check.mjs` re-derives scores. Seam named in `seats/connector.md`; no conflict, different surfaces |
+| kotoba r13 | "Axis-accounting ratification, two items…" | **open, operator-only**; both halves evidenced (advisory-axis legality; D-78 fold of `consistency` into `calibration`) — a lane does not retire a mission-assigned axis on its own word |
+
+**New this refresh (appended, one line, operator-side):** the `CORPUS.md` amendment set — rule 8's literal text vs
+fleet practice (**D-125**), unnumbered rules cited by number (**D-126**), rule 7's phantom-row text vs the
+under-coverage reading the ledger has graded since round 6 (**D-142**), and the rule-4/rule-9 collision on quoted-and-
+refuted counts (**D-141**). All four are text changes to an operator-side file; this lane publishes the measurements and
+does not edit it.
+
+### 14.14 Re-run commands (host-verified at this refresh's stamps; `grep` here is pi-uu-grep 0.2.0)
+
+```sh
+# R0 revision stamps (three times inside the wave — §14.1)
+date -u +%Y-%m-%dT%H:%M:%SZ; git rev-parse --short HEAD
+for d in kasegi kengaku kake kumitate kotoba kagi; do
+  printf '%-9s %s dirty=%s\n' $d "$(git -C $d-shokunin rev-parse --short HEAD)" \
+    "$(git -C $d-shokunin status --porcelain | wc -l)"; done
+
+# R1 the gate: self-test (capability) then all six repos (measurement) — §Gate standard's two evidences
+node .ufo/waves/round-9/corpus-gate.mjs --registry     # verdict map + checks + declared not-evaluated
+node .ufo/waves/round-9/corpus-gate.mjs --selftest     # -> "# selftest tally 12/12 PASS", exit 0
+node .ufo/waves/round-9/corpus-gate.mjs --all; echo "exit=$?"   # -> exit 1, 292 findings, per-repo "# summary … rev=<hash>"
+node .ufo/waves/round-9/corpus-gate.mjs --snapshot kagi-shokunin 4b8c018   # frozen run over a committed revision
+
+# R2 rule-8 occurrences with unit + revision + authorship (§14.4) — python3 scanner in l1-baseline.md §1
+# R3 SHONEN canonical form (§14.7) — python3 checker in l1-baseline.md §2; or the gate's `shonen` findings
+# R4 kagi's gates at a landed revision, read-only (§14.6)
+rm -rf /tmp/kagi-r9b && mkdir -p /tmp/kagi-r9b && git -C kagi-shokunin archive 4b8c018 | tar -x -C /tmp/kagi-r9b
+cd /tmp/kagi-r9b && for c in "bash corpus/claim-ledger.sh verify" "bash corpus/claim-ledger.sh citations" \
+  "bash corpus/transcript-scan.sh" "bash corpus/drift-pins.sh" "bash corpus/surface-census.sh --selftest"; do
+  printf '%-42s ' "$c"; out=$(eval $c 2>&1); echo "exit=$? | $(echo "$out" | tail -1 | cut -c1-120)"; done
+
+# R5 unqualified cross-repo citations in aggregator-owned lessons (§14.12 self-defect 25) — scanner in l1-baseline.md
+# R6 queue keys (§14.10)
+python3 -c "import re,collections;t=open('.ufo/reports/AGGREGATE.md').read();\
+r=re.findall(r'^\| (D-\d+)',t,re.M);print('rows',len(r),'distinct',len(set(r)),'max',max(r,key=lambda x:int(x[2:])))"
+# R7 kama blocked-external byte-identity (§14.9)
+git show e333e7c:.ufo/l0-questions.md | md5sum; md5sum .ufo/l0-questions.md
+# R8 MANIFEST last-wins + stale rows (§14.10) — python3 script pasted in full in seats/sweep-window.md §2.2
+```
+
+### 14.15 Residual gaps kept honest, and proposals routed
+
+- **No repo is conformant, and now the reasons are re-derivable rather than asserted.** 6/6 `not conformant` at named
+  revisions, with a committed gate that a non-author can run. What the gate does **not** decide is declared: r1, r3, r5,
+  r6, r9, box-3 independence and box-truth semantics are `not-evaluated` with reasons (§14.8) — 6 of 10 rules still
+  need a reader.
+- **kasegi is the fleet's first un-placeable corpus**: its province root is gone, 740/782 citations are unresolvable,
+  `PROVINCE.md` is uncorrected, and its box-3 harness is untracked at every landed revision. A verdict can name that;
+  only the operator can restore or retire the surface.
+- **The dormancy rule still has no positive test case** (0/7 in seven refreshes). Its correctness is unproven in the
+  only direction that matters.
+- **This lane's own artifacts are now the largest single source of sibling-visible defects**: 138 unqualified
+  cross-repo citations (6 of them breaking kagi's gate), four unreproducible round-8 metrics, one wrong published
+  resolver, one unreproducible standing cell. Filed as self-defects 20–26, not routed away.
+- **Proposals routed to protocol/CORPUS (integrator lands; this lane cannot):** **P-s** an audit cell's identity is the
+  revision it measured, not the round's cutoff stamp (§14.1); **P-t** mirrored lessons must qualify cross-repo pointers
+  (`shokunin:<path>`) — a rule-6 clarification, so a sibling's citation gate can resolve them (§14.12); **P-u** a count
+  names its **unit** as well as its command — lines vs occurrences vs files produced four different "correct" kagi
+  numbers inside one wave (§14.1); **P-v** §Gate standard's registry clause needs a home for the two main-repo lanes,
+  which have no `SKILL.md` (D-127, the D-120 class repeating).
+
+### 14.16 Routed-defect rows added at refresh 7 (keys continue from `D-121`; no collisions)
+
+| Key | Owner | Sev | Defect | Evidence / command |
+|---|---|---|---|---|
+| D-121 | kake | 4 | Scribe push gate failed for three ledger beats (`pushed:false`, pull timeout, grok-web empty/ceiling) — pushes stalled | `shokunin:.ufo/reports/round-12/kake.md:80-86` |
+| D-122 | kake | 4 | `grokbots --check` tests registry-row existence, not wrapper presence; `botWrapperPath` unused ⇒ wrapper-missing blind spot | `round-12/kake.md:92-95` |
+| D-123 | kasegi | 4 | Two DONE packages unfiled; operator queue stale (11 rows vs 12 after live regeneration) | `round-14/kasegi.md:114-117` |
+| D-124 | kotoba | 3 | Sibling trigger gap persists: 0/5 sibling `SKILL.md` descriptions carry a quoted trigger or arbitration clause | `round-12/kotoba.md:153-157` |
+| D-125 | operator/integrator | 3 | `CORPUS.md:43-46` literally bans `op://` ref paths "including this one's examples", yet all six corpora carry them (2/1/2/1/3/77 occurrences) and refresh 4 graded rule 8 clean — amend the rule to separate a secret value from a pointer, or require schematic form | §14.4; `l1-baseline.md` §1 |
+| D-126 | operator/integrator | 3 | `CORPUS.md` does not number its rules, but every verdict ever emitted cites a number ⇒ a non-author cannot resolve "rule 4" without this ledger's table | §14.3 |
+| D-127 | protocol/integrator | 3 | §Gate standard puts registry rows in "each lane's `SKILL.md`"; the two main-repo lanes have none (`ls SKILL.md` → absent), so a main-repo gate is unregistrable as written — the D-120 class repeating | §14.8; critic A4 |
+| D-128 | aggregator | 3 | 138 unqualified cross-repo citations in mirrored lessons; 6 counted `UNRESOLVED` by kagi's own citation gate ⇒ this lane contributes to a sibling's red gate. Forward fix landed (path convention, 9→0 in this round's drafts); historical files cannot be rewritten (rule 9) | §14.12 self-defect 25; `bash corpus/claim-ledger.sh citations` at kagi `4b8c018` |
+| D-129 | aggregator | 2 | Round-8 wave evidence never committed (`.ufo/waves/round-8/` absent) ⇒ X2 (115/105/10 → 99 rows), X3 (28 → 17), X4 (30 → uncountable), X8 (41 → no ledger) are not re-derivable; §Evidence standard: session-scoped artifacts are not evidence | §14.11 |
+| D-130 | aggregator | 3 | §13.6-B's published resolver ("last bold mark") returns kumitate's **withdrawn** `[ ]`; must be tail-anchored on the operative block (P-o, unobeyed) | §14.11 |
+| D-131 | aggregator | 3 | §13.3's kessho cell "6 lanes / 9 artifacts" carries no command and contradicts its own five-lane list; re-derived 5 lanes / 15 tracked harnesses | §14.9 |
+| D-132 | aggregator | 4 | Round-8 report headline "17 aggregator-identity child commits" vs its own 16/15 enumerations | §14.11 |
+| D-133 | kagi | 2 | `SHONEN.md` box-3 `[x]` contradicted by the lane's own gates red at **two** landed revisions (`claim-ledger verify` exit 1 FAIL claims=17 failed=1; `citations` exit 1 BROKEN unresolved=33; `transcript-scan` exit 1 HITS=2 at `4391b3b` and `4b8c018`) — downgrade the mark or clear the gates | §14.6; R4 block |
+| D-134 | kagi + kengaku | 3 | 0 of 6 `[x]` marks fleet-wide carry the `<verifier-id>` the canonical form requires; kagi's four name `KagiR9Reviewer`/`R11ScoutGates`, which resolve only to its own dispatched seats (D-63 restated, not closed) | §14.7 |
+| D-135 | kasegi | 2 | `PROVINCE.md` still names the absent `~/Projects/bounties` (2 hits) and `SKILL.md` 40 hits at `0f2dca0`, though §File contract requires correcting a declared surface that moved or vanished; 740/782 distinct citations unresolvable | `git -C kasegi-shokunin grep -c 'Projects/bounties' 0f2dca0 -- PROVINCE.md SKILL.md`; `seats/verdict-kasegi.md` |
+| D-136 | kasegi | 2 | Box-3 decisive harness untracked at every landed revision (`git ls-files ops/ \| wc -l` → 0 at `b7180b0` and `0f2dca0`) ⇒ no non-author can re-run the verdict | §14.6 |
+| D-137 | kengaku | 3 | `SKILL.md:405-449` gate registry is prose: no explicit code→class map, no write scope, no owner field (eight-field row required) | `git show f09ff1f:SKILL.md \| sed -n '405,449p'` |
+| D-138 | kumitate | 2 | `round-gate.mjs` cannot satisfy §Gate standard's frozen-snapshot clause: a `git archive` tree fail-closes `NOT_A_GIT_WORKTREE` exit 2 ⇒ no re-runnable frozen evidence | `cd /tmp/kumitate-e0 && node scripts/round-gate.mjs` |
+| D-139 | kumitate | 3 | Registry rows at `SKILL.md:540-544` are not a single eight-field row; exits 2/64 not mapped to `could-not-evaluate` | `git show e0e5de1:SKILL.md \| sed -n '540,644p'` |
+| D-140 | kotoba | 3 | `verify_surfaces.py` + `verify_harness_claims.py` are gate-shaped (self-tests 75/10 assertions, live 7 PASS + 27/27) but have no registry row and no committed frozen run ⇒ classified **probe** until both exist | `seats/verdict-kotoba.md` |
+| D-141 | operator/integrator | 4 | Rules 4 and 9 collide by construction: a falsified count quoted inside a correction entry (which rule 9 requires) trips rule 4's count-carries-its-command reading — the gate's largest false-positive class (246 r4 findings) | §14.8 FP-3; `corpus-gate.mjs --registry` |
+| D-142 | operator/integrator | 3 | Rule 7's text forbids **phantom index rows** only; the ledger has graded **under-coverage** as rule-7 failures since round 6 (4 of 6 repos). Literal check now fires once fleet-wide (kagi) vs three repos on the coverage reading | §14.5 |
+| D-143 | protocol | 4 | 8 `rounds` rows stale at read time (kagi 13/14, kake 14, kotoba 14, kumitate 13/14, protocol 12/13), doubling 4→8 in 2m08s with no entry appended: respawn cadence outruns closure cadence | `seats/sweep-window.md` §2.2 script |
+| D-144 | kagi | 3 | `.ufo/reports/round-12/kagi.md` (13,620 B) sits untracked at its contract path — the existence-only driver completed on it; non-durable | `git ls-files -o --exclude-standard .ufo/reports` |
+| D-145 | kotoba | 3 | `.ufo/reports/round-14/kotoba.md` untracked at its contract path | same |
+| D-146 | integrator | 4 | 5 untracked dispatch prompts (`kagi-round-14`, `kake-round-15`, `kotoba-round-15`, `kumitate-round-14`, `protocol-round-13`) ⇒ non-durable dispatch evidence | `git ls-files -o --exclude-standard .ufo/prompts` |
+| D-147 | aggregator | 4 | Axis switched away from the committed §Planned (cross-lane quality → corpus review) without amending §Planned first; recorded in this round's move log, but the practice defect stands | critic A1; `SCORECARD.md` §Planned |
+| D-148 | kotoba | 3 | `SHONEN.md` outside canonical form: 8 non-box prose lines (38–45) and 29 evidence lines where the form allows at most one per box ⇒ regenerate verbatim from the seed | §14.7 |
+| D-149 | kagi | 4 | `SHONEN.md` has no trailing newline (the D-72 class kotoba closed this round) | §14.7; `python3` byte check |
+
+### 14.17 Post-mirror re-run — the gate's `r10` findings clear when the obligation is discharged
+
+The six verdict lessons were mirrored into the child repos and committed under the aggregator identity,
+pathspec-limited, **not pushed** (`MISSION.md` §Push scope gives this lane no sibling remote; round-8 sentinel ruling):
+kasegi `b021dc9`, kengaku `e171cdf`, kake `4214101`, kumitate `93b0567`, kotoba `0f658ff`, kagi `baec94f` — each
+verified single-file (`git -C <repo> show --stat HEAD` → `1 file changed`, `corpus/lessons/round-9-aggregator-corpus-verdict.md`).
+Re-running the gate over the live trees afterwards:
+
+```
+# summary kasegi-shokunin   rev=b021dc9 dirty=0  exit=1 findings=55 rules=r2,r4,r8
+# summary kengaku-shokunin  rev=e171cdf dirty=2  exit=1 findings=29 rules=r4,r8,shonen
+# summary kake-shokunin     rev=4214101 dirty=0  exit=1 findings=36 rules=r4,r8
+# summary kumitate-shokunin rev=637d181 dirty=0  exit=1 findings=40 rules=r2,r4,r8
+# summary kotoba-shokunin   rev=0f658ff dirty=9  exit=1 findings=80 rules=r4,r8,shonen
+# summary kagi-shokunin     rev=baec94f dirty=26 exit=1 findings=56 rules=r2,r4,r8,shonen
+```
+
+**`r10` is gone from all six rule sets** (before the mirror: 6 `r10` findings, one per repo, §14.2). That is the gate's
+teeth demonstrated in the only way that counts — a finding appears while the obligation is unmet and disappears when the
+artifact lands, with no edit to the gate. Two disclosures: (a) `kumitate-shokunin`'s summary revision is `637d181`, the
+lane's own round-14 close commit, which landed ~2 s after this lane's `93b0567` — the lesson is in its tree, the
+revision moved underneath the run (P-s again); (b) the six commit **messages** name the revision that was HEAD when the
+message was built (`0f2dca0` for kasegi, `dffbf0e` for kumitate), while each lesson file pins the revision it actually
+measured (`b7180b0`, `e0e5de1`) — the file is authoritative and the message drift is disclosed rather than fixed, since
+rewriting a sibling's history is out of scope.
