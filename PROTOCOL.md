@@ -20,6 +20,21 @@ mint → shonen (apprentice) → shokunin (artisan of a domain) → jin'i-ryu (s
   oral hand-holding.
 - **Jin'i-ryu** — promoted per the gate below when it can iterate on itself, with the main repo
   aggregating only promotion/mint decisions.
+- **Sibling mint (lane-initiated)** — any lane may mint a sibling when it finds a domain demand no
+  existing province owns. Steps, in order: (a) the minting lane scans `MANIFEST.json` + every
+  `PROVINCE.md` and records the roster map it decided against — that scan record is part of the
+  mint evidence; (b) it creates the sibling's own repo dir `{id}-shokunin/` on this host and its
+  GitHub remote `VeigaPunk/{id}-shokunin`, seeds the canonical files (SKILL.md, PROVINCE.md,
+  SHONEN.md from the canonical template, AGENTS.md, LOG.md) plus a `MINT.md` stating the
+  reasoning, cause, demand instances with evidence pointers, the rejected roster fit, and the
+  claimed domain boundary; (c) the sibling is wired into the driver (`LANE_CWD`/`LANE_MODEL`/
+  `LANE_AXES` — operator-side integrator work, surfaced in `.ufo/l0-questions.md` if the lane
+  lacks the route map) and self-iterates through at least three verified rounds building
+  `corpus/` + `PROVINCE.md`; (d) only after those rounds land does the operator add the
+  `MANIFEST.json` roster row and `ROADMAP.md` table row — probation state is recorded in
+  `rounds[].notes` meanwhile, not as a roster row. The minting lane never writes outside its own
+  repo + the new sibling's seed files; it never edits `MANIFEST.json` roster or a sibling's
+  post-seed content.
 
 A shonen that records no `LOG.md` activity across two consecutive rounds it was dispatched and
 reported in is flagged **dormant** by the integrator in the round notes; rounds the lane was not
