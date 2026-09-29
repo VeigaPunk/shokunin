@@ -102,9 +102,13 @@ report is still uncommitted when its mission completes has not satisfied this cl
 report is resolved in order: the lane's own respawn inherits and lands it; the integrator sweeps it
 for durability only if that successor mission also terminates without landing it, and records the
 attribution defect — a sweep is the last resort because it freezes the on-disk bytes, unfilled
-placeholders and all, into a permanent object (§Appendix, "Orphaned report"). A filed report is a
-record: a correction lands in the correcting round's own report or as an appended erratum naming
-the superseded text, never as a silent in-place rewrite.
+placeholders and all, into a permanent object, and the order never reaches aggregator-owned
+`corpus/` files (§Appendix, "Orphaned report"). A terminated lane-round whose report exists on disk
+but is unlanded is recorded on its termination evidence with the durability debt named, and the next
+pass re-grades it `failed` for want of a landed report if the successor never lands it. A filed
+report is a record: a correction to it lands in the correcting round's own report, or as an erratum
+appended after the filed bytes in a new commit and naming the text it supersedes — never a rewrite
+of the filed bytes, labelled or silent.
 
 Every dispatched lane writes a report at `.ufo/reports/round-<N>/<id>.md` in the main repo, where
 `<id>` is the roster id (`protocol` and `aggregator` for the two main-repo lanes). A report under
@@ -137,8 +141,8 @@ not the tick counter, which resets when the driver restarts — and must say whe
 a commit authored by the lane, or files modified under its repo
 (`find <repo> -newermt <launch-ts> -type f -not -path '*/.git/*'`); silent means neither. A commit
 authored by *another* lane is not the subject lane's activity — the aggregator writes into every
-child repo — so where the only newer files are a sibling's, the row says so and grades the lane on
-its own signals. Commit sparsity is
+child repo — so sibling-authored activity alone is a third grade, `progressing-weak`: named as such
+in the row, never called progressing, and never silent or `failed` on its own. Commit sparsity is
 normal in this
 fleet (§Appendix, "Stale-lane actuator"), so the absence of a commit is not silence and must not
 trigger `failed`. The integrator-of-record records `failed` only for silent missions and flags
@@ -369,10 +373,15 @@ a **probe**, and is registered as one.
   local-first). A verdict is lane-local evidence: it never defines the host runtime's stop conditions
   (`loop_stop`/`mission_goal`) and never stands in for the native judge.
 - **Closure consequence.** A red gate is a conformance defect recorded in the round notes and routed
-  to its owner — status-neutral unless the round's rules already prescribe `failed` (closure step 1).
-  The integrator verifies a gate's *committed evidence* (self-test tally, frozen-run verdict, the
-  measured revision); it does not execute a sibling's gate, whose dependencies and write scope are
-  the lane's.
+  to its owner — status-neutral unless the round's rules already prescribe `failed`; gate redness is
+  never the marker predicate, since step 1 grades marker-versus-real-report first and only a marker
+  invokes `failed`. The integrator verifies a gate's *committed evidence* (self-test tally,
+  frozen-run verdict, the revision measured); it does not execute a sibling's gate, whose
+  dependencies and write scope are the lane's.
+- **Delivery.** This section reaches a lane through the re-read duty, not the driver's prompt
+  template (one of five child-lane items): the integrator names the exact `lane_prompt()` addition
+  in its round report, and closure grades no gate conformant until its registry row exists in the
+  lane's own `SKILL.md`.
 
 ## File contract per shokunin repo
 
@@ -508,10 +517,10 @@ aggregate in r10 §Closure/§Conformance (the integrator role did not exist befo
 | Tracked runtime | 10 | `.ufo/state` (16 files) + `watchdog.log` tracked since `609ecb6` although the clause said "stay untracked" | r10 §Conformance 6 |
 | Lane identity | 9 | kotoba `3b029b8` authored under the operator's personal identity blurs the `[x]` non-author line | r10 D-30 |
 | Protocol self-defect | 10 | `PROTOCOL.md` grew 387→583 lines with ~29 inline incident references and 17 duplicated rule pairs → round-11 compaction | r10 D-48 |
-| Gate standard | 10, 12 | 14 committed verdict scripts across the six child lanes, 13 already declaring a `0/1` map; reserved codes diverge (kotoba `3` no-baseline in two scripts — and inconsistently, its `--json` path returns `0` where its text path returns `3`; kumitate `64` usage in three) and `kake-shokunin/scripts/probe-delta.mjs` self-declares "a report, not a gate"; self-test depth splits four ways (exit+expected-id: kagi drift-pins, kengaku `run_selftest()`, kumitate; exit-only: transcript-scan; model-only: kotoba `--self-test`; fixture/model: verify_corpus_independent) | l0 kengaku r10; r12 |
-| Gate standard | 12 | three gates red at the round-12 reading, none attributable to a closed lane-round: kengaku's grades the tree it runs against (worktree `CHECKS n=280 mismatches=1` FAIL vs the same gate over its cited commit `06cdc98` at `n=149 mismatches=0` PASS), kagi `TRANSCRIPT_SCAN: HITS=2` and kotoba `25/27` (`omp.db.rows` 18 vs 17) read host surfaces outside lane control; all five hermetic self-tests pass run as a non-owner from the main repo in ≈8.4 s — kumitate `57/57`, so the `49/49` in the l0 question is stale | r12 |
+| Gate standard | 10, 12 | 15 tracked verdict scripts across five child lanes (kasegi carries none), 13–14 of them already declaring a `0/1` map — the exact count is classifier-sensitive; reserved codes diverge (kotoba `3` no-baseline in two scripts — and inconsistently, its `--json` path returns `0` where its text path returns `3`; kumitate `64` usage in three) and `kake-shokunin/scripts/probe-delta.mjs` self-declares "a report, not a gate"; self-test depth splits four ways (exit+expected-id: kagi drift-pins, kengaku `run_selftest()`, kumitate; exit-only: transcript-scan; model-only: kotoba `--self-test`; fixture/model: verify_corpus_independent) | l0 kengaku r10; r12 |
+| Gate standard | 12 | three gates red at the round-12 21:00 reading, none attributable to a closed lane-round: kengaku's grades the tree it runs against (worktree `CHECKS n=280 mismatches=1` FAIL at 21:00 vs the same gate over its cited commit `06cdc98` at `n=149 mismatches=0` PASS — and the worktree flipped to PASS once the lane landed its r11 evidence at 21:15, which is exactly why a verdict must name its revision), kagi `TRANSCRIPT_SCAN: HITS=2` and kotoba `25/27` (`omp.db.rows` 18 vs 17) read host surfaces outside lane control; all five hermetic self-tests pass run as a non-owner from the main repo in ≈8.4 s — kumitate `57/57`, so the `49/49` in the l0 question is stale | r12 |
 | Row identity | 12 | keying `rounds[]` by `lane_rounds` instead of by `entry.round` yields 66 ok / 3 failed / 13 not-dispatched / 1 in-flight over 83 rows, erasing 3 of the 4 carried `in-flight` rows and manufacturing a phantom `(aggregator, 9)` out of pre-fleet-2 `rounds[3]`; entry-keyed last-wins reproduces the round-11 record exactly (73 / 4 / 23 / 4 over 104 rows) | r12 |
-| Orphaned report | 12 | aggregator r7's report was uncommitted when its mission completed (20:13:17) and its r8 respawn self-landed it 19 min 17 s later (`6d27283`, lane identity); kotoba r12's stayed untracked carrying the literal placeholder `LANE_HASH` at line 224 where its round-work hash `633859f` belongs, so an integrator durability sweep would have frozen an unfilled placeholder into a permanent object | r12 |
-| L0 durability | 12 | `.ufo/l0-questions.md` had no committer: the kengaku-r10 and kumitate-r10 questions sat uncommitted across two rounds until a lane sweep carried them (`46e9ec3`, kumitate r11, operator identity, +5/-1 outside its own report path), and a kake r14 in-place rewrite of its own filed line went unrecorded | r12 |
+| Orphaned report | 12 | aggregator r7's report was uncommitted when its mission completed (20:13:17) and its r8 respawn self-landed it 19 min 26 s later (`6d27283`, lane identity); kotoba r12's stayed untracked carrying the literal placeholder `LANE_HASH` at line 224 where its round-work hash `633859f` belongs, so an integrator durability sweep would have frozen an unfilled placeholder into a permanent object | r12 |
+| L0 durability | 12 | `.ufo/l0-questions.md` had no committer: the kengaku-r10 and kumitate-r10 questions sat uncommitted across two rounds until a lane sweep carried them (`46e9ec3`, kumitate r11, operator identity, +4/-1 outside its own report path), and a kake r14 in-place rewrite of its own filed line went unrecorded | r12 |
 | Stale-lane actuator | 12 | the progressing test's "files modified under its repo" half attributes a sibling's work to the lane: kotoba r13 graded progressing on three `aggregator-shokunin` commits (`683d147`/`7163c81`/`ed5c261`) with no kotoba-authored commit since its launch | r12 |
 | Unlanded report | 12 | kagi r12 wrote 13620 B to its contract path at 21:02 while its mission was still live: untracked, `SHONEN`=0, its only cited hashes (`4391b3b`/`7c3377c`/`e0a04d8`) are `aggregator-shokunin` box-3 commits, its own r12 work uncommitted, no `complete` line, counter still 12 — a draft at the contract path that the driver's existence signal will nonetheless complete on | r12 |
