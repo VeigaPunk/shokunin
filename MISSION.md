@@ -39,8 +39,7 @@ batched `task` call. Route bucket (persisted globally + `/tmp/fleet-override.yml
 | Role class | Model |
 |---|---|
 | planner, connector | `@m_lunamax` |
-| executor, scribe, scout | `@m_flash` |
-| reviewer, critic, sentinel, revenger, labrat, mutation-tester, simplifier, distiller | `@m_zfl` |
+| executor, scribe, scout, reviewer, critic, sentinel, revenger, labrat, mutation-tester, simplifier, distiller | `@m_flash` |
 
 ## Round end
 
