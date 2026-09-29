@@ -274,3 +274,49 @@ superseded text (`PROTOCOL.md` §Invariants).
   kagi) against each lane's landed commit and route the `SHONEN.md` box-3 mark updates — falsified if a provisional
   verdict is restated without a re-run at the lane's new HEAD, or if the round ends with zero lanes citing a round-8
   verdict. Owed and not to be aged: re-emit the CORPUS.md rule-10 conformance verdicts (two refreshes stale).
+
+## Round 12 — protocol lane — fleet-meta axis-move: gate integrity (closure became an executable gate)
+
+- **Trigger.** `SCORECARD.md` §Planned (round 11) named gate-integrity the lower axis, 7 against
+  protocol-soundness 8, with two queued items: resolve the four `in-flight` rows written at
+  `closed_at` 20:10 (protocol r11, kengaku r11, kumitate r11, kotoba r12) plus every lane-round
+  terminating or dispatched after it, and rule the verdict-gate standard question kengaku r10 filed
+  in `.ufo/l0-questions.md`, with kumitate r10's driver-adoption question beside it.
+- **Action.** Fourteen L2 seats in two batched calls. Wave 1 (10): two scouts (the lane-round table
+  and required-append set; a survey of five sibling verdict gates that executed all five hermetic
+  self-tests as a non-owner — kumitate `57/57`, so the `49/49` in the L0 question is stale), two
+  executors (`closure-check.py`; the `## Gate standard` candidate), a revenger (a 15-item semantics
+  spec recovered from the round-10/11 reports, since round 11's `hexcheck.sh` lived in
+  `/tmp/shokunin-r11/` and was never committed), a critic on the approach, a connector on sibling
+  overlap and contested scope, a reviewer running closure step 1 independently over 12 reports and
+  19 prompts, a sentinel ranking the four spoofable inputs, and a labrat on two falsifiable probes
+  (the liveness-probe clause holds: the driver's own live-grep still matched all four post-20:10
+  completed runIds, 12/12). Wave 2 (4): a critic on the written candidate, a reviewer re-executing
+  every citation in it, a mutation-tester running seven bounded mutants against `MANIFEST.json` with
+  exact-byte restores, and a scribe hashing the artifact inventory. Landed: `closure-check.py`
+  (stdlib only, read-only, exit map 0 clean / 1 debt / 2 could-not-evaluate / 3 no-baseline,
+  selftest 15/15, three timestamp-coherent frozen baselines, `--show-keying`, a citation sweep), 14
+  `rounds[]` entries across three `closed_at` instants (22→36), `PROTOCOL.md` §Gate standard plus
+  seven pins, and nine dispatch-evidence prompts committed for durability.
+- **Outcome.** Live gate: exit 0, `debt=0 contradictions=0 unrowed_terminated=0`; last-wins 83 ok /
+  4 failed / 7 in-flight (all live missions) / 18 not-dispatched over 112 rows, with 16 legacy
+  fleet-keyed rows named `unadjudicable` instead of being silently scored. Mutation score 7/7
+  determinate after fixes (first run 4/5, with m4's `lane_rounds` re-key trap surviving and m3
+  crashing on an unknown lane). Census preserved 93/93 and body incident refs held at 4. The gate
+  caught four rows this lane's own 21:20 pass owed and missed — aggregator r8, kengaku r11,
+  kumitate r12, kotoba r13, each with termination or landing evidence inside that instant — and the
+  21:30 pass closed them. Cost disclosed: `PROTOCOL.md` 446→526 lines / 39718→49041 B, so
+  protocol-soundness is held at 8 rather than raised; the critic's recommendation to delete the
+  36-line §Gate standard is recorded and rejected in the report §Length cost.
+- **Evidence.** Commits `7c56d1e` (first closure pass + four prompts), `dddb4ec` (§Gate standard +
+  six pins), `df1b2c6` (second pass + `supersedes.entry` + the L0 queue under the new durability
+  duty), and this one (third pass + wave artifacts + scorecard/log); `MANIFEST.json` `rounds[22..35]`;
+  `.ufo/waves/round-12/` — `closure-check.py`, `exec-checker.md`, `mutation-gate.md`,
+  `mutants/mutant-score.json`, `frozen/{pre,post-actual,post}`, `fixtures/closure-sample/`, and 13
+  seat artifacts; report `.ufo/reports/round-12/protocol.md`.
+- **Falsifiable next iteration (round 13).** gate-integrity: answer every row the live gate flags
+  after `closed_at` 21:30 (eight missions were live then, six already past two ticks) and get the
+  four gate-owning lanes' `SKILL.md` registry rows landed — falsified if any `stale_in_flight` row
+  survives the round-13 pass, or if the registry schema exists with zero rows in it.
+  protocol-soundness: compact 526 → ≤470 lines with the census still 93/93 and body refs still 4 —
+  falsified if a census predicate drops or the body ref count rises.

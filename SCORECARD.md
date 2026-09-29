@@ -9,13 +9,18 @@ review) are not scored here.
 Every score is a claim: it carries the command that produced it and the tree
 it was measured against. Baseline measured 2026-09-28 18:21 -03:00 at main
 HEAD `0a30b44`; round-10 after re-executed 18:35 at `6a45ff2`; round-11 after
-measured 20:05–20:20 at HEAD `3ea42cb`→`6bd4f38` (this file ships in the
-round-11 commit chain, so it cannot cite its own hash — the report does).
+measured 20:05–20:20 at HEAD `3ea42cb`→`6bd4f38`; round-12 after measured
+20:55–21:45 at HEAD `50b2179`→`df1b2c6` plus this commit (this file ships in
+the round-12 chain, so it cannot cite its own hash — the report does). Closure
+measurements are pinned to three `closed_at` instants — 2026-09-28T20:55:00,
+21:20:00 and 21:30:00 -03:00 — because the fleet terminates lane-rounds
+continuously and a live count is not a measurement; the frozen baselines under
+`.ufo/waves/round-12/frozen/` are what re-derive them.
 
 | Axis | Score | Evidence pointer | Last change |
 |---|---|---|---|
-| gate-integrity | 7 (was 6) | Closure machinery executed against the live fleet: in-flight debt 7→0 (every carried row resolved by appended `closure-correction`), 16/16 lane-rounds terminated between passes recorded with step-1 verification (hash ancestry, SHONEN heading, ordering, marker screen — 0 new markers), `rounds` 15→22 entries, last-wins 73 ok / 4 failed / 4 in-flight (all live missions at `closed_at`) / 23 not-dispatched; canonical ledger `.ufo/reports/AGGREGATE.md` committed by the aggregator (`e333e7c`, refresh 4, 79 rows) — the routing queue is durable again. Still open, operator-side: prompt fidelity 1/5 — now with a measured consequence, 4 lanes filing report-before-commit — and the `report_of()` content check. Metrics M1–M11 below | round 11 |
-| protocol-soundness | 8 (was 6) | Compaction landed: `PROTOCOL.md` 583→446 lines (`wc -l`) with the obligation census 93/93 green (verifier committed at `.ufo/waves/round-11/`), SHONEN seed byte-identical, 30 duplicate clusters collapsed to canonical homes, ~125 incident/measurement lines moved into a 32-row dated appendix digest, contradictions (a) driver-vs-ledger, (b) ledger queue-of-record, (c1–c3) resolved, in-flight still-live re-confirmation rule added, operator push-scope rule carried as a `MISSION.md` pointer. Disclosed cost: body rewrapped ~78→100 cols; bytes 38649→39264 (+615: appendix pointer column + 2 new clauses). Metrics P1–P7 below | round 11 |
+| gate-integrity | 8 (was 7) | Closure stopped being prose. `closure-check.py` is committed: stdlib-only, read-only, exit map `0 clean / 1 debt / 2 could-not-evaluate / 3 no-baseline`, selftest **15/15** over 15 fixture cases, three timestamp-coherent frozen baselines (`pre` exit 1, `post-actual` exit 1, `post` exit 0 — all baseline-match), and a mutation score of **7/7 determinate** including a `keying_violation` class that kills the `lane_rounds` re-key trap. Live verdict after three passes: **exit 0, debt 0, contradictions 0**, `rounds` 22→36, last-wins 83 ok / 4 failed / 7 in-flight (all live missions) / 18 not-dispatched over 112 rows with 16 legacy rows named `unadjudicable`. The citation sweep classified 453 tokens over 77 reports (86 dead, 1 placeholder) and the gate caught **four rows this lane's own 21:20 pass owed and missed** — the measurement that decides the score. §Gate standard landed, ruling both round-10 L0 questions; 5/5 open L0 questions answered. Still open: registry rows routed not landed; the driver template still carries 1/5 items and no gate text. Metrics M12–M21 below | round 12 |
+| protocol-soundness | 8 (held) | Seven holes closed against live round-12 evidence — `lane_rounds` never re-keys a row (naive keying erases 3 of 4 in-flight rows and manufactures a phantom), the orphaned-report resolution order with its re-grade condition, the filed-report correction form, `progressing-weak` as a third actuator grade, the L0 side channel made append-only with a durability owner, `in-flight` decided by a *landed* report, and `supersedes.entry` for ambiguous triples — census preserved at 93/93, body incident refs held at 4. **Score held, not raised:** the file grew 446→526 lines / 39718→49041 B, regressing the P4 length metric; the critic judged the move non-Pareto on this axis and recommended deleting the 36-line §Gate standard, which is recorded and rejected in the round-12 report, and a round-13 compaction to ≤470 lines is queued as the compensating move. Metrics P8–P10 below | round 12 |
 
 ## Metrics (before → after, with counting commands)
 
@@ -47,21 +52,58 @@ Protocol soundness:
 | P6 | compaction obligation preservation | — | 93 / 93 census predicates + seed byte-diff empty + quoted anchor phrases findable single-line | `sh .ufo/waves/round-11/verify-census.sh PROTOCOL.md`; anchors per `.ufo/waves/round-11/protocol-reference-sweep.md` |
 | P7 | unresolved contradictions inside `PROTOCOL.md` | 5 — (a), (b), (c1), (c2), (c3) named by the round-11 dupes audit | 0 | `.ufo/waves/round-11/protocol-dupes.md` §Contradictions vs the compacted text: both halves of (a) named; single conditional ledger statement; normative/descriptive embed split; log citations by timestamp+text; measurements dated in the appendix |
 
+Round 12 (gate-integrity — closure became an executable gate; three passes at `closed_at` 20:55:00, 21:20:00, 21:30:00; main HEAD `50b2179`→this commit):
+
+| # | Metric | Before | After | Command |
+|---|---|---|---|---|
+| M12 | carried `in-flight` rows left unanswered | 4 (protocol r11, kengaku r11, kumitate r11, kotoba r12 at `closed_at` 20:10) | 0 — all four answered: three resolved `ok` on `complete` lines at the 20:55 pass, kengaku r11 re-confirmed there (its only report-path file was then a non-conforming `kengaku-DRAFT.md`) and resolved `ok` at 21:30 once `e0170cd` landed it | `closure-check.py --frozen pre` (exit 1) vs live (exit 0) |
+| M13 | lane-rounds with termination or post-closure dispatch evidence and no row | 7 at the 20:55 snapshot (frozen `pre`: `debt=5 unrowed_terminated=2 pending_round=7`) plus 4 more by 21:20 (frozen `post-actual`) | 0 — 14 entries appended across three passes, `rounds` 22→36, live `debt=0 contradictions=0 unrowed_terminated=0` | `python3 .ufo/waves/round-12/closure-check.py` |
+| M14 | committed executable closure checks | 0 | 1 — `closure-check.py` (stdlib only, read-only, exit map 0 clean / 1 debt / 2 could-not-evaluate / 3 no-baseline), selftest **15/15**, three frozen baselines (`pre` exit 1 match, `post-actual` exit 1 match, `post` exit 0 match), `--json` stable keys, `--show-keying` | `closure-check.py --selftest`; `--frozen pre\|post-actual\|post` |
+| M15 | ledger rows whose lane-round identity was ambiguous | all 61 `lane_rounds` entries (34 ≠ `entry.round`); naive keying gives 66/3/13/1 over 83 rows — erasing 3 of the 4 carried `in-flight` rows and manufacturing a phantom `(aggregator, 9)` from pre-fleet-2 `rounds[3]` | 0 — row identity pinned in `PROTOCOL.md` and enforced by a `keying_violation` class; authoritative entry-keyed last-wins is 83 ok / 4 failed / 7 in-flight / 18 not-dispatched over 112 rows (75/4/7/18 over the 104 adjudicated), 16 rows `unadjudicable` (entries #1, #3) | `closure-check.py --show-keying` |
+| M16 | gate mutants detected | unmeasured — no gate existed | **7/7 determinate** on base sha256 `9b89166c` (36 entries): m2/m3/m5/m6/m7 killed by contradictions, m4 killed by `keying_violation`, m1 not-applicable with the `unadjudicable` rows named; the first run scored 4/5 and m3 crashed with `KeyError` — both fixed | `.ufo/waves/round-12/mutation-gate.md`, `mutants/mutant-score.json` |
+| M17 | sibling verdict gates surveyed with self-tests executed by the integrator | 0 | 5/5 hermetic self-tests run as a non-owner from the main repo in ≈8.4 s: kagi drift-pins 13/13, transcript-scan `SELFTEST OK`, kotoba 10 assertions, kengaku 7/7, kumitate **57/57** (the `49/49` in the L0 question is stale — `23452e7` added `--tracked`) | `.ufo/waves/round-12/scout-gates.md`; `exec-gate-standard.md` §Enforcement |
+| M18 | L0 questions answered | 5 open (kengaku r10, kumitate r10, kumitate r11, kasegi r15, kotoba r13) | 5/5 — two landed as `PROTOCOL.md` §Gate standard, three ruled in the round-12 report with the operator-side actuator named exactly | `.ufo/reports/round-12/protocol.md` §L0 |
+| M19 | untracked dispatch-evidence prompts | 4 at the first commit instant, 5 more generated mid-round | 0 — nine committed (`7c56d1e` + this commit): kasegi-round-15, kotoba-round-13, kumitate-round-12, protocol-round-12, aggregator-round-9, kagi-round-13, kengaku-round-12, kotoba-round-14, kumitate-round-13 | `git ls-files -o --exclude-standard .ufo/prompts \| wc -l` |
+| M20 | citation classes swept over the report corpus | 0 — round 11 checked hashes by hand for the rows it touched | 453 tokens over 77 reports / 105 lane-rounds / 9 repos: commit=338, pin=24, runId-or-date=21, **dead=86**, orphan=5, placeholder=1 (`round-12/kotoba.md:224` `LANE_HASH`), incl. `round-14/kasegi.md:54` `4028846` and `round-12/kotoba.md:81` `391a54f4` dead | `closure-check.py` §Report citations |
+| M21 | integrator errors caught by the committed gate before shipping | unmeasurable — closure was prose, so a missed row shipped silently | 4 — aggregator r8, kengaku r11, kumitate r12, kotoba r13 all had termination or landing evidence inside the 21:20:00 `closed_at` that the 21:20 pass did not write; the gate named each with its launch pointer and suggested status, and the 21:30 pass closed them (`rounds[30][32][33][34]`) | `closure-check.py --frozen post-actual` (exit 1, `debt=4`, baseline match) |
+
+Round 12 (protocol-soundness — held at 8; the cost is the point):
+
+| # | Metric | Before | After | Command |
+|---|---|---|---|---|
+| P8 | `PROTOCOL.md` length / *body* inline round-incident refs | 446 lines, 39718 B, 4 body refs (appendix from line 420) | 526 lines, 49041 B, 4 body refs (appendix from line 487, 18 refs) — all seven new incidents went to the appendix as dated rows, so the body budget held while the file grew 80 lines | `wc -l -c PROTOCOL.md`; `awk 'NR<487' PROTOCOL.md \| grep -o 'round-[0-9][0-9.]*' \| wc -l` |
+| P9 | protocol holes closed against live round-12 evidence | 7 named during the round: row identity, orphaned-report order + re-grade condition, filed-report correction form, stale-lane sibling attribution (`progressing-weak`), L0 append-only + durability owner, `in-flight` vs an unlanded report, `supersedes.entry` for ambiguous triples | 0 of the 7 open; each carries an appendix row and a dated incident | `git diff 6bd4f38..HEAD -- PROTOCOL.md` |
+| P10 | obligation census after the amendments | 93/93 | 93/93 — no obligation lost; the census is the round-11 verifier re-run unchanged | `sh .ufo/waves/round-11/verify-census.sh PROTOCOL.md` |
+
 ## Planned
 
-- **round 12 (gate-integrity, lowest after this move):** (1) resolve the 4
-  `in-flight` rows written at `closed_at` 20:10 (protocol r11, kengaku r11,
-  kumitate r11, kotoba r12) plus lane-rounds terminating after it — including
-  the kagi r11 report-durability debt if the lane did not land it, and the
-  kake r13/r14 + kasegi r13/r14 band. (2) Rule the verdict-gate standard
-  question kengaku r10 filed (`.ufo/l0-questions.md` line 6): one exit-code
-  convention + in-repo pinned expected values across the three sibling gates
-  (kagi drift-pins/transcript-scan, kotoba verify_harness_claims, kengaku
-  grader) — land it in `PROTOCOL.md` or record a reasoned rejection; evidence
-  `kengaku-shokunin/corpus/evidence/round10-fleet/r10-connector.md`.
-  (3) Operator-side unchanged: template 5 items + marker-aware `report_of()`;
-  the report-before-commit pattern (4 lanes this round) is the measured
-  consequence to cite.
+- **round 13 (gate-integrity, still the lower of the two):** (1) answer the
+  rows the live gate flags after this round's last `closed_at` — eight
+  missions were live at 21:30 (protocol r12, kasegi r15, kake r14, kagi r13,
+  aggregator r9, kotoba r14, kengaku r12, kumitate r13), six of them already
+  stale past two ticks — and commit any prompt generated after this commit.
+  Falsified if any `stale_in_flight` row survives the round-13 pass.
+  (2) Land the gate registry rows: kagi, kotoba, kengaku and kumitate each
+  add a `SKILL.md` row per §Gate standard (schema is the protocol's, rows are
+  the lanes'); routed, and closure grades no gate conformant until the row
+  exists. (3) Kotoba's `--self-test` is model-only and its no-baseline code is
+  internally inconsistent (`--json` returns 0 where text returns 3) — the two
+  named non-conformances under the new clause; routed, not fixed here.
+  (4) Re-run the mutation battery after any checker change and keep the score
+  at 7/7.
+- **round 13 (protocol-soundness, compensating move):** compact 526 → ≤470
+  lines without losing an obligation — the census must stay 93/93 *and* cover
+  the seven new pins, body incident refs held at 4. Falsified if the census
+  drops a predicate or the body ref count rises. The critic's stronger
+  recommendation (delete the 36-line §Gate standard) is recorded and rejected
+  in the round-12 report §Length cost.
+- **Operator-side, unchanged and named exactly:** `scripts/shokunin-watchdog.sh:44`
+  `report_of()` completes a lane-round on file existence — this round observed
+  the same signal firing on an unlanded 13620 B draft (kagi r12) and on a
+  15922 B draft full of `{{N}}` placeholders (kengaku r11); `lane_prompt()`
+  carries 1 of 5 child-lane contract items and none of §Gate standard, so the
+  exact required addition is in the round-12 report §Operator-side; `.ufo/state`
+  (16 files) + `.ufo/watchdog.log` still tracked, so every round starts dirty.
 
 ## Retired
 
@@ -79,6 +121,8 @@ Protocol soundness:
 | 10 | protocol-soundness (enabling) | 4 — 4 ungoverned artifacts, 3 contradictions, unidentifiable round-9 rows | 6 — 0, 0, 0; cost: +189 lines | `PROTOCOL.md` step 4 semantics, marker clause, precedence bullet, file-contract `SCORECARD.md` row |
 | 11 | gate-integrity | 6 — 7 in-flight rows unresolved, 16 terminations unrecorded, canonical ledger absent | 7 — 0 carried debt, 16/16 recorded with step-1 verification, ledger committed by the aggregator | `MANIFEST.json` `rounds[15..21]`; round-11 report §Closure record + §Dispatch digest |
 | 11 | protocol-soundness | 6 — 583 lines, 30 inline incident refs, 5 contradictions, 30 dupe clusters | 8 — 446 lines, census 93/93, contradictions 0, clusters collapsed; cost disclosed: 100-col rewrap, +615 bytes | `PROTOCOL.md` at `6bd4f38`; `.ufo/waves/round-11/verify-census.sh` re-run |
+| 12 | gate-integrity | 7 — 4 carried `in-flight` rows, 7 lane-rounds terminated or dispatched with no row, 0 committed closure checks (rounds 10–11 ran inline `python3 -c` in report prose; round 11's `hexcheck.sh` lived in `/tmp` and was never committed), 5 sibling gate conventions unruled, 5 L0 questions open | 8 — 0 carried debt, 14 entries appended (`rounds` 22→36) across three `closed_at` instants, `closure-check.py` committed (selftest 15/15, three frozen baselines, exit map 0/1/2/3) and **live exit 0 / debt 0**, mutation score 7/7 determinate, `## Gate standard` landed ruling both round-10 L0 questions, 5/5 L0 questions answered; the gate caught four rows this lane's own 21:20 pass owed and missed | `MANIFEST.json` `rounds[22..35]`; `.ufo/waves/round-12/` (`closure-check.py`, `mutation-gate.md`, `mutants/`, `frozen/`, 13 seat artifacts); commits `7c56d1e`, `dddb4ec`, `df1b2c6` + this one |
+| 12 | protocol-soundness (held, not raised) | 8 — 446 lines, 0 holes named against it | 8 — 526 lines, 7 holes closed against live evidence, census 93/93 preserved, body incident refs held at 4; the +80-line / +9323-byte length regression is booked as a disclosed cost against a queued round-13 compaction to ≤470 | `git diff 6bd4f38..HEAD -- PROTOCOL.md`; `sh .ufo/waves/round-11/verify-census.sh PROTOCOL.md` |
 
 ---
 
