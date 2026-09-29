@@ -110,7 +110,13 @@ gate's 137).
    `UNRESOLVED`; prose token after a ``` fence → no finding at all; after a `~~~`
    fence → `UNRESOLVED`; fence content → untokenized for both markers (by
    design). A sibling lane measured the scale in one draft: 13 of 229 inline
-   citations tokenized with ``` fences, 230 of 230 with `~~~`.
+   citations tokenized with ``` fences, 230 of 230 with `~~~`. Wave-2 reproduced
+   it twice and found it **stronger**: the misalignment does not self-heal, a
+   ```-opened fence can be *closed* by a `~~~` line (single open-state — a
+   CommonMark deviation), and a bogus post-fence citation is unflagged, so dead
+   citations can be smuggled past the gate. Severity medium; proposed fix (mask
+   fence byte-ranges before the span/prose/ref scans) queued with the mutation
+   survivors.
 6. **Round 15 was never committed** — its process ended first, and its report
    claimed a `round-15` commit that did not exist. Recovery: the two artifacts not
    yet interleaved with round-16's edits (the `R11` census note and the round-15
@@ -155,10 +161,34 @@ Independent work that could falsify, and partly did:
   (no fixture asserts `SRC_NOT_A_DIR` precedence; no fixture asserts an unresolved
   heading earns no layer credit) are named gaps, queued in `## Limits`.
 - **Review/arms** (`ReviewLayerTerms`, `LabratLayerArms`): wave-2, dispatched
-  against the landed tools — independent replay of all six terms from the tree,
-  doctored-copy falsification, the round-14 replay, and 9 doctored stanza/axes/src
-  arms. Anything the round cites as verified is either in the logs above or in
-  these two transcripts (`history://ReviewLayerTerms`, `history://LabratLayerArms`).
+  against the landed tools.
+  - *Independent re-derivation*: all six terms re-derived from the origin tree and
+    the claims gate **before** reading the tool's code — agreement on every term;
+    the in-process import prints nothing (main guard holds).
+  - *Doctored copies* (4 sub-arms): deleting one script-layer member section moves
+    `S_sections` 74 → 73 and fires `S_SECTIONS_DRIFT` **alone** (the integer stays
+    6 — the gate is precise about the term, coarse about the score); promoting
+    R9's out-of-family file moves `R_sections` 60 → 61 with the gate's own warning
+    set shrinking 3 → 2; appending an out-of-family section to R4's note moves
+    **no** term (the numerator provably cannot be inflated); restoring the round-15
+    pins yields exactly the two `PIN_DRIFT`.
+  - *Nine doctored stanza/axes/src arms*: each new kind fires alone
+    (`S_MEMBERS_DRIFT`, `R_SECTIONS_DRIFT` with `delta=-3`, `COVERAGE_RUNTIME_DRIFT`,
+    `AXES_DRIFT` naming the axis), `--src` at a file or an absent path fails closed;
+    two boundaries corrected the round's own brief and are recorded — a colon-form
+    stanza key dies as `STANZA_MALFORMED` (not `STANZA_KEY_UNKNOWN`, which the dash
+    form reports), and an *existing empty* `--src` degrades to `DRIFT`, never to a
+    false `MATCH`.
+  - *Round-14 replay* (`git archive 637d181`): the current claims gate reads
+    `CLAIMS: MATCH (rows=19 yes=18 notes=26 sections=90 adv=16)`, so the successors
+    would have read **script 6, runtime 1** where the retired aggregate read **9**.
+    The split's first hard evidence that the honesty term finds what the parent
+    hid; the proxy itself refuses that tree (`STANZA_MALFORMED`, exit 2).
+  - *Mutation*: 7 of 9 mutants killed (see above); the two survivors are queued.
+
+Anything this report cites as verified is either in the logs above or in these
+transcripts (`history://ReviewLayerTerms`, `history://LabratLayerArms`,
+`history://MutateLayerTerms`).
 
 Integration by L1 (the round's own tool work, not L2): re-pin `pin.proxy-check`
 and `pin.claims-check` from live `sha256sum` after the last tool edit; re-anchor
@@ -171,6 +201,9 @@ committed+pushed in the main repo):
 ```
 $ node scripts/round-gate.mjs --close
 ROUND_GATE: CLEAN (round=16 lane=kumitate checks=13 errors=0 warnings=0)   # exit 0
+$ node scripts/round-gate.mjs --tracked
+ROUND_GATE: CLEAN (mode=tracked checked=14 errors=0 warnings=0)   # exit 0, after the
+                                                                 # round-15 report was filed
 $ node scripts/proxy-check.mjs
 PROXY: MATCH (A=5 C=10 operability=8; C1=19/19 C2=52/52 coverage=10;
   S=74/114 coverage:script-layer=6; R=60/98 coverage:runtime-layer=6; pins=5 match)   # exit 0
