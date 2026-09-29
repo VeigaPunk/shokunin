@@ -7,7 +7,7 @@ lands this as the `## 15.` section of `shokunin:.ufo/reports/AGGREGATE.md`, appe
 record · §14.12 self-defects · §14.13 L0 surfacing · §14.14 re-run commands · §14.15 residuals + proposals · §14.16
 routed rows · §14.17 post-mirror re-run · §14.18 addendum.
 **Round-10 facts the section must serve:** `shokunin:.ufo/waves/round-10/CONTEXT.md` (host facts, seat write scope,
-gate usage, exit map, declared not-evaluated checks); parts A/B/C and the three falsifiers: `shokunin:SCORECARD.md`
+gate usage, exit map, declared not-evaluated checks); parts A/B/C and the falsifiers: `shokunin:SCORECARD.md`
 §Planned (round 10 entry).
 
 ## Conventions for this file
@@ -25,15 +25,25 @@ gate usage, exit map, declared not-evaluated checks); parts A/B/C and the three 
 - **Angle-bracket tokens** inside command columns are usage metavariables, written the way
   `shokunin:.ufo/waves/round-10/CONTEXT.md` writes them (`--snapshot <repo-dir> <commit>`). They are not placeholders:
   the L1 substitutes the value its own command produced.
-- **Proof that zero remain:** run `grep -c 'L1-FILL' <this file>` before filling and after; the two counts are the
-  zero-remain evidence the round-10 report quotes in its `## Next` section.
+- **Roster scope.** Where a row axis says "per child repo", it means the roster scope stated in §15.22: the repos
+  rostered at the round-10 cutoff (`shokunin:.ufo/waves/round-10/CONTEXT.md`) plus any lane minted while the wave ran.
+  A table grading a different set says so in its own Cells line. Never write "all repos" without naming the roster.
+- **Attribution.** A file under this lane's wave directory is this lane's evidence even when another author committed
+  it; record the committing author per wave file (§15.22), and cite the two commands that decide any published claim
+  about who wrote what.
+- **Proof that none remain:** run `grep -c 'L1-FILL' <this file>` before filling and after; the before and after counts
+  are the zero-remain evidence the round-10 report quotes in its `## Next` section.
 
 ## L1-FILL index — every id used in this file
 
 | id | surface | what the L1 measures | command to run |
 |---|---|---|---|
 | L-STAMP-MAIN | §15 stamp, §15.1 | main-repo HEAD, and the clock time of each reading | `date -u +%Y-%m-%dT%H:%M:%SZ; git rev-parse --short HEAD` |
-| L-STAMP-CHILD | §15.1 | live HEAD and dirty-file count per child repo, per reading | `for d in kasegi kengaku kake kumitate kotoba kagi; do printf '%s %s dirty=%s\n' $d "$(git -C $d-shokunin rev-parse --short HEAD)" "$(git -C $d-shokunin status --porcelain \| wc -l)"; done` |
+| L-STAMP-CHILD | §15.1, §15.22 | live HEAD and dirty-file count per repo in the stated roster scope, per reading — the loop names the cutoff roster plus `kama`, the lane minted mid-wave | `for d in kasegi kengaku kake kumitate kotoba kagi kama; do printf '%s %s dirty=%s\n' $d "$(git -C $d-shokunin rev-parse --short HEAD)" "$(git -C $d-shokunin status --porcelain \| wc -l)"; done` |
+| L-ROSTER-SCOPE | §15.1, §15.22 | the roster each table grades: the roster as declared in `MANIFEST.json` at read time, versus the cutoff roster this audit's baseline used | `python3 -c "import json;print(json.load(open('MANIFEST.json')).get('roster'))"; git log --format='%h %aI %an %s' -2 -- MANIFEST.json` |
+| L-KAMA-MINT | §15.22 | a lane minted mid-wave: its mint commit and author, its HEAD and dirty count, its tracked-file count, its gate run (exit, findings, provisional flag), and whether its corpus is tracked at that HEAD (re-derivability) | `git log --format='%h %aI %an %s' -1 -- kama-shokunin; git -C kama-shokunin rev-parse --short HEAD; git -C kama-shokunin status --porcelain \| wc -l; git ls-files kama-shokunin \| wc -l; node .ufo/waves/round-9/corpus-gate.mjs --repo kama-shokunin --round 10; echo exit=$?; git -C kama-shokunin ls-files corpus/ \| wc -l` |
+| L-WAVE-OWNERSHIP | §15.22 | per file under this lane's wave directory: the commit and author that added it — the check for a sibling having committed this lane's in-flight evidence | `git log --diff-filter=A --format='%h %aI %an' -1 -- .ufo/waves/round-10/CONTEXT.md; git log --diff-filter=A --format='%h %an' --name-only -- .ufo/waves/round-10/` |
+| L-SIBLING-CLAIM | §15.22 | whether a sibling's published claim that a previous wave was uncommitted is true, decided by the two commands below | `git log --diff-filter=A --format='%h %aI %an' -1 -- .ufo/waves/round-9/corpus-gate.mjs; git ls-tree -r <cutoff-rev> --name-only .ufo/waves/round-9 \| wc -l` |
 | L-ANCESTRY | §15.1, §15.5 | whether each before-revision is a commit and an ancestor of HEAD, and its distance from HEAD | `git -C <repo-dir>-shokunin cat-file -e <rev>^{commit}; git -C <repo-dir>-shokunin merge-base --is-ancestor <rev> HEAD; echo exit=$?; git -C <repo-dir>-shokunin rev-list --count <rev>..HEAD` |
 | L-GATE-SHA | §15.1 | sha256 of the gate script and of its expected-values file | `sha256sum .ufo/waves/round-9/corpus-gate.mjs .ufo/waves/round-9/corpus-gate.expected.json` |
 | L-GATE-SELFTEST | §15.1, §15.7 | self-test tally and exit code (capability evidence) | `node .ufo/waves/round-9/corpus-gate.mjs --selftest; echo exit=$?` |
@@ -86,6 +96,7 @@ gate usage, exit map, declared not-evaluated checks); parts A/B/C and the three 
 | L-ROUTED-KEYS | §15.19 | routed rows added: key, owner, severity, defect, evidence — plus the collision check | the key script committed in `shokunin:.ufo/waves/round-9/seats/distiller-queue.md`-class seat + `shokunin:.ufo/waves/round-10/seats/distiller-queue.md` |
 | L-PROPOSALS | §15.18 | proposals routed: id, target file, clause, status | derived from the proposals this round produced |
 | L-ADDENDUM | §15.21 | rows filed while composing the report, after the main commit | `ls -l .ufo/waves/round-10/seats/; stat -c '%y %n' .ufo/waves/round-10/seats/*` |
+| L-SCOPE-CHANGE | §15.22 | facts that changed the round's scope while the wave ran: the roster, the wave-file authorship, the sibling claim re-tested, and the read-time state of the untracked paths | `python3 -c "import json;print(len(json.load(open('MANIFEST.json'))['rounds']))"; git status --porcelain \| grep -c '^??'` |
 
 ---
 
@@ -100,15 +111,19 @@ Purpose: §14.1 demoted the single cutoff stamp to a *reading time* and made the
 This refresh inherits that rule unchanged; the child repos move while the fleet runs, so a cell that does not name its
 revision is not comparable to the one it is compared against.
 
-Restate the round's three parts and their falsifiers in this lane's own words (from
+Restate the round's parts (A/B/C) and their falsifiers in this lane's own words (from
 `shokunin:.ufo/waves/round-10/CONTEXT.md`): **A** a legal registry home for `corpus-gate.mjs` or a reasoned rejection;
 **B** the `r4` heuristic's declared false-positive classes closed until the count is defensible as violations;
 **C** the gate re-run at each lane's next landed revision, movement reported per rule. The falsifiers are named in the
 same place and must be answered as yes/no in §15.18.
 
+**Roster scope.** State here which repo set this section's tables grade, and say it once: the roster at the round-10
+cutoff, plus any lane minted while the wave ran (§15.22). The declared roster at read time and the cutoff roster are
+both measured (L1-FILL(L-ROSTER-SCOPE)); a table whose scope differs says so in its own Cells line.
+
 **Reading stamps.** One row per reading. The table exists because §14.1's rule makes the reading time part of the cell.
 
-| Reading | Time (UTC) | Main-repo HEAD | Per-child HEAD and dirty count | What was read at this stamp |
+| Reading | Time (UTC) | Main-repo HEAD | Per-repo HEAD and dirty count | What was read at this stamp |
 |---|---|---|---|---|
 
 **Cells:** rows = one per reading the L1 actually made (prose row axis, no id); `Time` and `Main-repo HEAD` =
@@ -138,7 +153,7 @@ L1-FILL(L-ANCESTRY); the before revisions are also L1-FILL(L-C-REV-BEFORE).
 Purpose: `PROTOCOL.md` §Gate standard places registry rows in each lane's `SKILL.md`; the main repo has none, so the
 clause as written leaves a main-repo gate unregistrable. This subsection either lands the row at a home the clause (or
 a ruling) allows, or records the rejection with its reason. **Falsifier:** the gate may not be called conformant while
-unregistrable — the call in `L-A-CALL` must say which of the two it is.
+unregistrable — the call in `L-A-CALL` must say which it is.
 
 | Check | Finding | Authority (file:line) | Home decided | Row landed? |
 |---|---|---|---|---|
@@ -158,7 +173,7 @@ so in the heading line above.
 
 ### 15.3 Part B — the `r4` heuristic's declared false-positive classes, closed
 
-Purpose: refresh 7 declared three false-positive classes (one of them the rule-4/rule-9 collision `D-141`, `CORPUS.md`
+Purpose: refresh 7 declared false-positive classes for the `r4` heuristic (including the rule-4/rule-9 collision `D-141`; `CORPUS.md`
 rule 4 requiring a command for every count while rule 9 requires a falsified count to be quoted inside a correction
 entry). This subsection measures the classes, states each one's disposition, and reports the residue that survives as
 violations. **Falsifier:** the `r4` cell may not be restated without its classes — the class table is mandatory, not
@@ -178,14 +193,14 @@ argument` = L1-FILL(L-B-R4-DISPOSITION); the collision row's sub-count is also L
 | Cell | Before | After | Defensible as violations | Command |
 |---|---|---|---|---|
 
-**Cells:** rows = the `r4` total and its collision sub-count (two rows, never folded); `Before` = L1-FILL(L-B-R4-TOTAL);
+**Cells:** rows = the `r4` total and its collision sub-count, never folded into one row; `Before` = L1-FILL(L-B-R4-TOTAL);
 `After` and `Defensible as violations` = L1-FILL(L-B-R4-KEPT); `Command` = the gate invocation actually used, quoted.
 
 ### 15.4 Part C — per-rule movement at each lane's next landed revision
 
-Purpose: pass 1 of the rule-10 duty is currency (does a verdict name a landed revision); pass 2 is movement (does any
-rule move between revisions). Both are reported per rule, not per repo, because a repo-level verdict hides a rule that
-cleared behind one that appeared. **Falsifier:** a verdict that does not name its revision.
+Purpose: the currency half of the rule-10 duty is whether a verdict names a landed revision; the movement half is
+whether any rule moves between revisions. Both are reported per rule, not per repo, because a repo-level verdict hides
+a rule that cleared behind one that appeared. **Falsifier:** a verdict that does not name its revision.
 
 **Revisions.**
 
@@ -200,8 +215,8 @@ cleared behind one that appeared. **Falsifier:** a verdict that does not name it
 | Repo | Rule | Before | After | Movement | Seat evidence |
 |---|---|---|---|---|---|
 
-**Cells:** rows = one per (repo × rule) pair present in either run — state the pairing rule the L1 used (union of the
-two rule sets) so a rule that appears or disappears is not silently dropped; `Before`, `After`, `Movement` =
+**Cells:** rows = one per (repo × rule) pair present in either run — state the pairing rule the L1 used (union of
+both runs' rule sets) so a rule that appears or disappears is not silently dropped; `Before`, `After`, `Movement` =
 L1-FILL(L-C-PERRULE) and L1-FILL(L-C-MOVEMENT); `Seat evidence` = the round-10 seat file path under
 `.ufo/waves/round-10/seats/`.
 
@@ -222,16 +237,17 @@ Carry forward the critic amendment §14.2 absorbed: `could-not-evaluate` is a **
 | Repo | Measured revision | Verdict | Failed rules | Movement versus refresh 7 | Seat evidence |
 |---|---|---|---|---|---|
 
-**Cells:** one row per child repo; all five measurement columns = L1-FILL(L-VERDICT); `Seat evidence` = the round-10
+**Cells:** one row per repo in the stated roster scope (a lane minted mid-wave is its own row, §15.22); all measurement
+columns = L1-FILL(L-VERDICT); `Seat evidence` = the round-10
 per-repo verdict seat path. Beneath the table, one prose line: the tally (`L1-FILL(L-VERDICT-TALLY)`) and which rule
 fails fleet-wide (refresh 7's answer was rule 8-literal; re-measure it rather than inherit it).
 
 ### 15.6 Standing rule/protocol analysis carried forward from refresh 7
 
-Purpose: four §14 subsections were analyses, not standing tables, and each is still live. Re-run them at this
+Purpose: the §14 rule/protocol analyses are still live. Re-run them at this
 refresh's revisions; if one did not move, say so with its command rather than dropping it.
 
-**Rule 8 on its literal text.** Refresh 7 graded all six corpora FAIL-literal and found the literal hits mostly in this
+**Rule 8 on its literal text.** Refresh 7 graded every child corpus FAIL-literal and found the literal hits mostly in this
 lane's own mirrored lessons (`CORPUS.md` says "including this one's examples"). Re-measure; if the fix is forward-only,
 the count moves only where a lesson landed.
 
@@ -276,8 +292,10 @@ Each pinned revision gets its own run and its own verdict; the snapshot set is t
 |---|---|---|---|---|
 
 **Cells:** one row per pinned (repo × revision) pair; `Exit`, `Frozen verdict`, `Live-head relationship` =
-L1-FILL(L-GATE-SNAPSHOT). The self-test tally belongs to this subsection too: L1-FILL(L-GATE-SELFTEST) — capability
-(exit code and ordered finding-ids) and measurement are two evidences, never one.
+L1-FILL(L-GATE-SNAPSHOT). A repo whose corpus is untracked at the graded revision has **no** re-runnable snapshot: write
+`could-not-evaluate` and the reason (which repo, and why) rather than a verdict — the same discipline §15.22 applies to
+a freshly minted lane. The self-test tally belongs to this subsection too: L1-FILL(L-GATE-SELFTEST) — capability
+(exit code and ordered finding-ids) and the measurement run are distinct evidences, never one.
 
 ### 15.8 Standing tables re-run — rows are claims stamped to a revision
 
@@ -291,7 +309,9 @@ than paraphrased.
 | Lane | Counter | Last dispatched | Last report landed (marker grading) | Last `LOG.md` round entry | Last commit age | Dormancy verdict |
 |---|---|---|---|---|---|---|
 
-**Cells:** one row per rostered lane (including this lane); all measurement columns = L1-FILL(L-STANDING-DORMANCY).
+**Cells:** one row per lane in the stated roster scope (including this lane and any lane minted mid-wave — a new lane's
+dormancy row is normally "not yet dispatched twice", which is a result, not an omission); all measurement columns =
+L1-FILL(L-STANDING-DORMANCY).
 State the marker-grading rule applied (a report with no lane work is a marker with a failed grade; a short report
 naming a real commit is `ok` with a minimum-content defect).
 
@@ -343,7 +363,10 @@ Purpose: the sweep proves the window was enumerated, not sampled. Every absence 
 |---|---|---|---|
 
 **Cells:** rows = reports landed in the window, markers, reports missing the `SHONEN` heading, untracked prompts,
-untracked reports at contract paths, `MANIFEST.json` `rounds` entries, stale rows, queue key counts, collisions/folds;
+untracked reports at contract paths, untracked driver-state paths (`.ufo/state/**`, and the dispatch prompt of any lane
+minted mid-wave), the main-repo untracked-path count, the declared **roster** and the `MANIFEST.json` `rounds` entries
+(both are read at a named time, because a mid-wave mint appends to each), stale rows, queue key counts, collisions and
+folds;
 the counts = L1-FILL(L-SWEEP-REPORTS), L1-FILL(L-SWEEP-MANIFEST), L1-FILL(L-SWEEP-QUEUE) as the row requires;
 `Command` = the invocation quoted.
 
@@ -416,7 +439,9 @@ aggregator identity, verified single-file, and swept for unqualified cross-repo 
 | Repo | Lesson file | Commit | Files changed | Unqualified citations before → after |
 |---|---|---|---|---|
 
-**Cells:** one row per child repo; `Commit`, `Files changed` = L1-FILL(L-MIRROR-COMMITS); `Unqualified citations
+**Cells:** one row per repo in the stated roster scope that received a lesson (a lane minted mid-wave may legitimately
+receive none before its first dispatched round — say so rather than omitting the row); `Commit`, `Files changed` =
+L1-FILL(L-MIRROR-COMMITS); `Unqualified citations
 before → after` = L1-FILL(L-MIRROR-CITES); the durability check for the wave as a whole = L1-FILL(L-DURABLE). The
 push-scope ruling goes in prose here: this lane has no sibling remote.
 
@@ -455,7 +480,9 @@ a reader checks first.
 **Cells:** one row per routed defect; `Key` continues the ledger's series without collision (checked via
 L1-FILL(L-ROUTED-KEYS)); `Severity` uses the ledger's own scale; `Defect` is one sentence stating the failure, not the
 symptom; `Evidence / command` = file:line or a quoted invocation. State the key census check in one line above the
-table (rows, distinct, max, next free) so a reader can see the collision test ran.
+table (rows, distinct, max, next free) so a reader can see the collision test ran. A **cross-lane attribution incident**
+— a sibling having committed this lane's in-flight wave files (§15.22), with the offending commit and the affected file
+list — is routed here rather than absorbed as this lane's own defect, unless the bytes committed were this lane's.
 
 ### 15.20 Post-mirror re-run — did the gate's own findings clear?
 
@@ -477,3 +504,37 @@ blast radius the late evidence measures.
 
 Write it last; if nothing landed late, write the sentence that says so (`L1-FILL(L-ADDENDUM)` for the seat-directory
 state at composition).
+
+### 15.22 Mid-round scope-change log — facts that moved the round's ground
+
+Purpose: this wave ran long enough for the ground to move under it. Each entry states the fact, the command that
+measured it, the read time, and which earlier table of this section it invalidates or rescopes. The entries below were
+already observed before §15.1–§15.21 were written, so this log is not an addendum: it is part of the section.
+
+| Change | Measured fact | Command | Read time | Tables rescoped |
+|---|---|---|---|---|
+
+**Cells:** rows = the scope changes actually observed (see the list below — replace with the L1's own); `Measured
+fact` = L1-ROSTER-SCOPE, L1-KAMA-MINT, L1-WAVE-OWNERSHIP, L1-SIBLING-CLAIM and L1-SCOPE-CHANGE as the row requires;
+`Read time` = the same stamp form as §15.1.
+
+The changes to check, in the order they reached this lane:
+
+- **The roster grew.** A lane was minted main-repo-side (`MANIFEST.json` `roster`, a `kama-shokunin/` directory with its
+  own remote) while refresh 8 was running, so every "per child repo" table is scoped to the roster at its own read time,
+  and the minted lane's verdict is its own row — with its gate exit, its finding breakdown, and one explicit line on
+  whether its corpus is **tracked** at the revision graded (a verdict that cannot be re-derived from a commit is
+  `provisional`, not conformant). L1-FILL(L-KAMA-MINT).
+- **The new lane's directory is a nested repo in the main tree.** Test whether the main repo's ignore list covers it
+  and what the main-repo file count for it is, because an untracked nested repo is invisible to every main-repo sweep in
+  §15.11 and to a `git clean`-class hazard analysis. L1-FILL(L-SCOPE-CHANGE).
+- **A sibling committed files of this lane's in-flight wave directory.** The wave directory is this lane's evidence; the
+  author who *added* each file is a recorded fact, and a sibling's commit of this lane's files is a routed incident with
+  a blast radius (which files, which commit, whether the content is this lane's own bytes). L1-FILL(L-WAVE-OWNERSHIP).
+- **A sibling's published claim about a previous wave is testable.** Where a sibling's commit message asserts that a
+  prior wave was never committed, decide it with the two commands rather than accepting or repeating the claim: the
+  introducing commit of a file in that wave, and the tree listing of that wave at the cutoff revision.
+  L1-FILL(L-SIBLING-CLAIM).
+
+Add rows for any further change the wave produced (an axis switch, a superseded §Planned entry, a sibling gate that
+moved), and route the incidents that are not this lane's to fix through §15.19.

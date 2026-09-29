@@ -124,3 +124,25 @@ Finding-count delta (`round 10 - round 9`), by measured tree/revision: kasegi `+
 - D-133's published box-3 `[x]` claim still breaks at kagi revision `2486643`: `CLAIM_LEDGER: FAIL ... failed=3` and `TRANSCRIPT_SCAN: HITS=2`, both with exit 1.
 - The round-10 teeth are firing for all six measured live child trees: each lacks `corpus/lessons/round-10-aggregator-*.md`, adding exactly one finding per repo relative to round 9.
 - No frozen snapshot drift occurred; all eight frozen expectations matched. The throwaway mutated-gate probe correctly produced DRIFT and exit 3.
+
+## Mid-round scope change
+
+The six-repo tables and deltas above are explicitly scoped to the six repos rostered at the
+measurement cutoff. During the wave, `kama-shokunin/` was minted by `2d19a64` and reached
+`9cee9fc`. The L1 command `node .ufo/waves/round-9/corpus-gate.mjs --repo kama-shokunin --round 10`
+returned exit 1 with 12 findings (`r2 2, r4 7, r7 1, r8 1, r10 1`), `dirty=9 provisional=1`.
+Because `corpus/knowledge/` and `corpus/lessons/` are untracked at `9cee9fc`, no committed
+snapshot can re-derive that verdict. Its `r7-1` is the literal phantom index row
+`README.md:18` naming absent `lessons/round-1.md`.
+
+The main-tree scope also changed: `git ls-files kama-shokunin | wc -l` returned 0, and
+`MANIFEST.json` rounds became 48. These facts do not alter the frozen eight-key probe set or
+the six-rostered-repo deltas reported above.
+
+For attribution context, the command
+`git log --diff-filter=A --format='%h %an' -1 -- .ufo/waves/round-10/CONTEXT.md` returned
+`fcefcf5 protocol-shokunin`. The separate command
+`git log --diff-filter=A --format='%h %aI %an' -1 -- .ufo/waves/round-9/corpus-gate.mjs`
+returned `6415a9b 2026-09-28T22:29:46-03:00 aggregator-shokunin`; therefore the claim that
+the round-9 gate was uncommitted is false. `git ls-tree -r a2cac72 --name-only
+.ufo/waves/round-9 | wc -l` returned 25.

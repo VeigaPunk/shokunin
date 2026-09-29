@@ -1,0 +1,66 @@
+{
+  "checker_sha256": "5e53d62c90c06b231027f8e5b34e930148be1f2544f81d9b8f58979dbb1ff921",
+  "mutants": [
+    {
+      "mutant": "m1",
+      "edit": "jq ... rounds[3].lanes.aggregator = ok",
+      "command": "python3 closure-check.r13.py --repo SYNTH --no-citations",
+      "observed": "closure-check: debt debt=6 contradictions=0 unrowed_terminated=0 pending_round=6",
+      "exit": 1,
+      "verdict": "killed"
+    },
+    {
+      "mutant": "m2",
+      "edit": "jq ... del rounds[27].lane_rounds.protocol",
+      "command": "python3 closure-check.r13.py --repo SYNTH --no-citations",
+      "observed": "closure-check: debt debt=7 contradictions=1 unrowed_terminated=0 pending_round=6",
+      "exit": 1,
+      "verdict": "killed"
+    },
+    {
+      "mutant": "m3",
+      "edit": "jq ... rounds[27].lanes.kasegi = protocol",
+      "command": "python3 closure-check.r13.py --repo SYNTH --no-citations",
+      "observed": "closure-check: debt debt=8 contradictions=1 unrowed_terminated=1 pending_round=6",
+      "exit": 1,
+      "verdict": "killed"
+    },
+    {
+      "mutant": "m4",
+      "edit": "jq ... rounds[24].lane_rounds.kengaku = 9",
+      "command": "python3 closure-check.r13.py --repo SYNTH --no-citations",
+      "observed": "closure-check: debt debt=7 contradictions=0 unrowed_terminated=0 pending_round=6",
+      "exit": 1,
+      "verdict": "killed"
+    },
+    {
+      "mutant": "m5",
+      "edit": "jq ... rounds[25].lanes.protocol = ok",
+      "command": "python3 closure-check.r13.py --repo SYNTH --no-citations",
+      "observed": "closure-check: debt debt=5 contradictions=0 unrowed_terminated=0 pending_round=6",
+      "exit": 1,
+      "verdict": "survived"
+    },
+    {
+      "mutant": "m6",
+      "edit": "jq ... del rounds[25].supersedes",
+      "command": "python3 closure-check.r13.py --repo SYNTH --no-citations",
+      "observed": "closure-check: debt debt=7 contradictions=1 unrowed_terminated=0 pending_round=6",
+      "exit": 1,
+      "verdict": "killed"
+    },
+    {
+      "mutant": "m7",
+      "edit": "jq ... append duplicate protocol r12 correction",
+      "command": "python3 closure-check.r13.py --repo SYNTH --no-citations",
+      "observed": "closure-check: debt debt=5 contradictions=1 unrowed_terminated=0 pending_round=6",
+      "exit": 1,
+      "verdict": "killed"
+    }
+  ],
+  "score": {
+    "killed": 6,
+    "total": 7,
+    "percentage": 85.714
+  }
+}

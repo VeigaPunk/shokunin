@@ -1,0 +1,26 @@
+# modal-census.tsv — committed expected values for verify-protocol.sh check `modals`
+#
+# One row per `## ` section of PROTOCOL.md at the round-13 baseline (526 lines,
+# md5 63de15a37a42ce57decb951a7e8aa2f0): <section-key><TAB><floor>.
+# The key is an ASCII prefix of the heading; the check opens a section at the first
+# line whose start matches the key and closes it at the next `## ` line.
+#
+# Token set and counting command (the exact one used to derive every floor below):
+#   grep -oE 'MUST|REQUIRED|NEVER|never|must|required|only|may not|must not'
+# GNU grep -oE resolves alternatives leftmost-longest, so the phrase `must not` is
+# counted as the single token `must not` (observed baseline breakdown: 16 `must`,
+# 2 `must not`, 47 `never`, 49 `only`, 6 `required` = 120). Floors are the counts
+# measured at the baseline, so any net loss of normative tokens in a section --
+# including a modal weakened to a non-token word -- trips the check.
+#
+# Derivation (verbatim output recorded in exec-verifier.md):
+#   for each key: awk section slice | grep -oE "$MODAL_RE" | wc -l
+## Lifecycle	2
+## Promotion gates	3
+## Round-robin rounds	57
+## Evidence standard	10
+## Gate standard	10
+## File contract per shokunin repo	8
+## Invariants	11
+## Fleet-2 conventions (adopted)	4
+## Appendix	15

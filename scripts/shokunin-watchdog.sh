@@ -4,7 +4,7 @@
 # lands; watchdog completes the mission and launches a fresh process for
 # round N+1. Cap 1024/lane. Tick 450s.
 set -u
-SK=/home/vgpnk/projects/shokunin
+SK=/home/vgpnk/Projects/shokunin
 UFO=/home/vgpnk/Projects/origin-work/ufo-fsd-alpha/scripts/ufo-sighting
 OV=/tmp/fleet-override.yml
 INTERVAL=450
@@ -24,9 +24,9 @@ declare -A LANE_CWD=(
   [kama]="$SK/kama-shokunin"
 )
 declare -A LANE_MODEL=(
-  [protocol]=@m_lunamax [aggregator]=@m_lunamax [kasegi]=@m_lunamax [kengaku]=@m_lunamax
-  [kake]=@m_z53
-  [kumitate]=@m_flash [kotoba]=@m_flash [kagi]=@m_flash [kama]=@m_flash
+  [protocol]=@m_swe [aggregator]=@m_swe [kasegi]=@m_swe [kengaku]=@m_swe
+  [kake]=@m_swe
+  [kumitate]=@m_swe [kotoba]=@m_swe [kagi]=@m_swe [kama]=@m_swe
 )
 declare -A LANE_AXES=(
   [protocol]="fleet-meta: protocol soundness, gate integrity"
@@ -50,15 +50,15 @@ lane_prompt() {
   cat > "$SK/.ufo/prompts/${lane}-round-$n.md" <<EOF
 You are the ${lane} L1, round $n of up to $MAX_ROUNDS. Working dir: ${LANE_CWD[$lane]}.
 
-BINDING: Read MISSION.md + AXES.md at /home/vgpnk/projects/shokunin first — they are the mission SSOT. Your axes: ${LANE_AXES[$lane]}.
+BINDING: Read MISSION.md + AXES.md at /home/vgpnk/Projects/shokunin first — they are the mission SSOT. Your axes: ${LANE_AXES[$lane]}.
 
 Each round is ONE axis-move: pick the lowest-scoring axis in ${LANE_CWD[$lane]}/SCORECARD.md (create it per AXES.md if missing), land one verifiable improvement, measure it, record before→after in SCORECARD.md, log evidence in LOG.md. Saturated or wrong-fit axes may be retired/split — record the reason.
 
-L2 CONCURRENCY: dispatch at least 8 L2 task subagents in ONE batched task call this round — per-surface scouts, executors drafting sections into scratch, a critic falsifying claims, a connector for sibling overlap, a reviewer verifying citations. Route map: planner/connector @m_lunamax; executor/scribe/scout @m_flash; reviewer/critic/sentinel/revenger/labrat/mutation-tester/simplifier/distiller @m_zfl (fallback: @m_swe).
+L2 CONCURRENCY: dispatch at least 8 L2 task subagents in ONE batched task call this round — per-surface scouts, executors drafting sections into scratch, a critic falsifying claims, a connector for sibling overlap, a reviewer verifying citations. Route map: planner/connector @m_lunamax; executor/scribe/scout @m_flash; reviewer/critic/sentinel/revenger/labrat/mutation-tester/simplifier/distiller @m_zfl (fallback: @m_flash).
 
 Write .ufo/reports/round-$n/${lane}.md on the main repo.
 Round end: commit 'round-$n' inside the repo then push; also commit+push the main-repo report. PUSH ONLY to VeigaPunk/shokunin and your own VeigaPunk/${lane}-shokunin remote — domain source trees (ufo-fsd-alpha, bounties, webzites, llm-wiki) are read-only; upstream work is documented in the report, not pushed.
-L0 side channel: if you need an operator decision, append "<lane> | round-$n | <question>" to /home/vgpnk/projects/shokunin/.ufo/l0-questions.md. | godspeed
+L0 side channel: if you need an operator decision, append "<lane> | round-$n | <question>" to /home/vgpnk/Projects/shokunin/.ufo/l0-questions.md. | godspeed
 EOF
 }
 

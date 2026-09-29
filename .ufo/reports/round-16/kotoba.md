@@ -24,10 +24,10 @@ round"): close `M35` and `M40`, then execute one more box.
 | red-before, R2 | same, on `delegated-noninstrument` | `rc=0` — the non-instrument target invisible |
 | red-before, R3 | patched verifier on a clone of `b25f37a` in a faithful host layout | `FAIL trigger.citation_resolves: evaluated 46 — line 86/95/385: '.ufo/prompts/' does not resolve`; all other checks PASS |
 | fail-closed on the live file | patched verifier before writing this round's knowledge doc | `FAIL trigger.citation_resolves: line 210: 'corpus/knowledge/checklist-execution-round16.md' does not resolve` |
-| self-test | `python3 verifiers/verify_skill_checklist.py --self-test` | `0 failure(s) over 1283 assertions`, rc 0 (772 at HEAD) |
+| self-test | `python3 verifiers/verify_skill_checklist.py --self-test` | `0 failure(s) over 1302 assertions`, rc 0 (772 at HEAD) |
 | live run | `python3 verifiers/verify_skill_checklist.py` | 9 × PASS, rc 0; `41 boxes mapped (8 executed, 0 delegated, 33 unexecuted)`; `line_budget evaluated 599 within budget 600`; `command_binary_resolves evaluated 19 — 15 segments`; `citation_resolves evaluated 42 — 42 resolve` |
 | other instruments | `verify_harness_claims.py` / `verify_surfaces.py --self-test` / `verify_corpus_integrity.py` / `verify_corpus_independent.py` / `fault_injection_corpus.sh --self-test` | all green after the corpus baseline re-record (§ below) |
-| fixture population | `ls verifiers/fixtures/checklist \| wc -l` | 47 → 67 |
+| fixture population | `ls verifiers/fixtures/checklist \| wc -l` | 47 → 68 |
 | `SKILL.md` size | `wc -l SKILL.md` | 599 → 599 (budget 600 preserved while the T10 box was rewritten and 3 citations named) |
 | verifier digest | `sha256sum verifiers/verify_skill_checklist.py` | `70f8b38e…` at the fixture-wiring state; re-measured at the commit |
 
@@ -51,8 +51,8 @@ round"): close `M35` and `M40`, then execute one more box.
    `(executed: `trigger.citation_resolves`)`; the corpus instrument's role
    scoped to `corpus/*.md` in the box and in § Sources; counts updated
    (9 checks, eight executed boxes).
-5. 21 fixtures (6 mine + 4 boundary from the executor lane + 11
-   adversary-driven), the self-test N/A-allowed rule with an explicit
+5. 22 fixtures (6 mine + 4 boundary from the executor lane + 12
+   adversary-driven, incl. the planner's rank-1 `source` operand), the self-test N/A-allowed rule with an explicit
    non-vacuity assertion, and docstring limits extended.
 
 ## L2 lanes (10 dispatched in one batch; findings and dispositions)
@@ -68,7 +68,7 @@ round"): close `M35` and `M40`, then execute one more box.
 | `R16Review` (reviewer) | the 3 `.ufo/prompts/` sites are real at HEAD; HEAD reproduces every round-15 quote verbatim | confirms red-before; the two open items it named are § below |
 | `R16Fixtures` (executor) | red-before for 9 cases (all exit 0 pre-patch); word-wise harvesting proven with a second-word fixture; the **two-root replay probe** as the hermeticity rule for fixtures using ancestor hops | 4 cases landed; the probe is cited as the fixture-design rule |
 | `R16Connector` | no sibling declares `delegated:`; kumitate executes checklist commands but does not resolve args/targets/citations; kasegi has citation-resolver + anchor prior art (`resolve.py`, `anchorcheck.py`); sibling R3 dead tokens kagi 2 / kake 1 / kasegi 1 / kengaku 1 / kumitate 5 | **routed** (not fixed) |
-| `R16Plan` (planner) | round-17 ranked moves (in-flight at close; see `SCORECARD.md` § planned) | feeds next round |
+| `R16Plan` (planner) | rank 1 (`source`/`.` operand) is **already closed** by `READ_ARG_BUILTINS` + fixture `command-source-operand`; rank 3 **refutes round 15's `M36` fixture** (closed `<<~` with `PYEOF` instead of `~PYEOF` — a delimiter mismatch, not the over-catch); ranks D6 / M36 / M23 / R3-governance / A9 feed round 17 | feeds next round |
 
 ## Band decision
 
