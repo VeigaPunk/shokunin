@@ -1906,6 +1906,7 @@ git show e333e7c:.ufo/l0-questions.md | md5sum; md5sum .ufo/l0-questions.md
 | D-147 | aggregator | 4 | Axis switched away from the committed §Planned (cross-lane quality → corpus review) without amending §Planned first; recorded in this round's move log, but the practice defect stands | critic A1; `SCORECARD.md` §Planned |
 | D-148 | kotoba | 3 | `SHONEN.md` outside canonical form: 8 non-box prose lines (38–45) and 29 evidence lines where the form allows at most one per box ⇒ regenerate verbatim from the seed | §14.7 |
 | D-149 | kagi | 4 | `SHONEN.md` has no trailing newline (the D-72 class kotoba closed this round) | §14.7; `python3` byte check |
+| D-150 | integrator/protocol + kengaku | 3 | The vanished `~/Projects/bounties` root is cited **outside kasegi too**: main repo 29 occurrences / 29 lines / **17 files** at `383ea1a` (scope `PROTOCOL.md`, `ROADMAP.md`, `.ufo/reports/**`), kengaku 26 / 23 / 13 at `f09ff1f` (incl. `PROVINCE.md:15,75` — absent bounty telemetry storage), kotoba 12 / 11 / 4 at `63ceba7`, kumitate 1 / 1 / 1 at `7a099b2`; kagi 0 and kake 0 (real sweeps, not omissions). Every one of those citations now points into an absent root; §File contract requires a lane that finds a declared surface moved or absent to correct it | `seats/connector.md` §C4 (reproducible `git grep -n -I -i -E` wrapper pasted there); §14.18 |
 
 ### 14.17 Post-mirror re-run — the gate's `r10` findings clear when the obligation is discharged
 
@@ -1932,3 +1933,31 @@ revision moved underneath the run (P-s again); (b) the six commit **messages** n
 message was built (`0f2dca0` for kasegi, `dffbf0e` for kumitate), while each lesson file pins the revision it actually
 measured (`b7180b0`, `e0e5de1`) — the file is authoritative and the message drift is disclosed rather than fixed, since
 rewriting a sibling's history is out of scope.
+
+### 14.18 Post-write addendum — the vanished province root reaches four other surfaces
+
+Appended after §14.1–§14.17 were committed at `6415a9b`, because the `connector` seat was still live at composition and
+its blast-radius sweep landed after §14.2 was written. Its evidence file is committed (`seats/connector.md`, 175 lines).
+
+kasegi r15's L0 line reports `~/Projects/bounties` — its `PROVINCE.md` root — gone from the filesystem (`ls -d` → exit
+2; the L1 re-verified). The connector swept every other surface read-only at pinned revisions (pattern covers `~/`,
+`$HOME/` and absolute-home spellings; scope = tracked `SKILL.md`, `PROVINCE.md`, `corpus/**` for children and
+`PROTOCOL.md`, `ROADMAP.md`, `.ufo/reports/**` for the main repo):
+
+| Scope at pinned revision | occurrences / lines / files / files scanned |
+|---|---:|
+| kasegi `b7180b0` | **86 / 84 / 29** / 44 — of which `SKILL.md` 38, `PROVINCE.md` 1, `corpus/**` 47 |
+| kengaku `f09ff1f` | **26 / 23 / 13** / 121 — incl. `PROVINCE.md:15,75` (absent bounty telemetry storage) |
+| main `383ea1a` | **29 / 29 / 17** / 90 — integrator-owned files and this ledger's own reports |
+| kotoba `63ceba7` | 12 / 11 / 4 / 46 — historical corpus references |
+| kumitate `7a099b2` | 1 / 1 / 1 / 48 |
+| kagi `4b8c018` | **0 / 0 / 0** / 50 — a real sweep result: the ref does not touch its vault/`op` inventory |
+| kake `a209441` | **0 / 0 / 0** / 36 |
+| readable `~/.agents/**/SKILL.md` | 0 / 0 / 0 / 4 |
+
+Two consequences this lane owns. (a) **The loss is fleet-level, not one lane's**: 4 surfaces besides kasegi cite the
+absent root, and 17 files of it are in the **main repo** — including integrator files this lane may not edit → routed
+**D-150**. (b) **kasegi's verdict in §14.2 is the visible tip**: 740 of 782 distinct extracted path citations
+unresolvable is the largest single conformance failure measured this refresh, and it is caused by an external deletion,
+not by lane craft — which is why §14.2 grades the corpus `not conformant` on rules 1/3 while §14.6 grades box-3
+`could-not-evaluate`: the two cells measure different things and must not be folded (critic A6).
