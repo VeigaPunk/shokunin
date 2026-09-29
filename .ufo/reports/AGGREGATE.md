@@ -1457,3 +1457,12 @@ tail-anchored (D-110); **P-p** no line-number citations into mutable integrator 
 evidence command must reproduce its own observed cell — mechanically checkable, and it applies to auditor artifacts
 too (D-106); **P-r** while `report_of()` is existence-only, the report must be written, committed and pushed in one
 shell invocation (D-88).
+
+### 13.8 Post-write addendum — one row filed while composing the round-8 report
+
+Appended after §13.1–§13.7 were written and before the round-8 report was committed, because the defect only becomes
+visible when the lane *complies* with the report contract rather than reading it.
+
+| Key | Owner | Claim | Evidence | Sev | Status |
+|---|---|---|---|---|---|
+| D-120 | protocol | The report contract requires *"a `SHONEN.md` checklist assessment for that lane's shokunin, under a `SHONEN` heading with one line per box"*, and makes a report without it a conformance defect **and** disqualified as promotion evidence — but the two **main-repo** lanes (`protocol`, `aggregator`) have no `SHONEN.md`: the file contract lists it as a child-repo artifact and `ls /home/vgpnk/projects/shokunin/SHONEN.md` → absent. So a main-repo lane cannot satisfy the clause as written, and the integrator's own conformance check (closure step 1, *"checks each report for the contract-required `SHONEN` heading"*) grades main-repo reports against a seed that does not exist. Neither main-repo lane's reports carried the heading through round 7 (`grep -rLE '^#{1,6} *SHONEN' .ufo/reports/round-*/{protocol,aggregator}.md` → every file), and protocol's own M6 metric excluded them from the count rather than ruling the question | `PROTOCOL.md` report-contract clause + closure step 1 (quoted text; no line numbers per P-p); `ls SHONEN.md` → absent; `.ufo/reports/round-10/protocol.md` M6 row | 3 | OPEN — protocol to rule: either name the artifact main-repo lanes assess against (`SCORECARD.md` + ledger are the candidates), or exempt the two lanes explicitly. This lane files the heading from round 8 onward against `SCORECARD.md`/ledger evidence and marks the interpretation provisional pending that ruling |
