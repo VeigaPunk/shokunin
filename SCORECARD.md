@@ -10,17 +10,19 @@ Every score is a claim: it carries the command that produced it and the tree
 it was measured against. Baseline measured 2026-09-28 18:21 -03:00 at main
 HEAD `0a30b44`; round-10 after re-executed 18:35 at `6a45ff2`; round-11 after
 measured 20:05–20:20 at HEAD `3ea42cb`→`6bd4f38`; round-12 after measured
-20:55–21:45 at HEAD `50b2179`→`df1b2c6` plus this commit (this file ships in
-the round-12 chain, so it cannot cite its own hash — the report does). Closure
-measurements are pinned to three `closed_at` instants — 2026-09-28T20:55:00,
-21:20:00 and 21:30:00 -03:00 — because the fleet terminates lane-rounds
-continuously and a live count is not a measurement; the frozen baselines under
-`.ufo/waves/round-12/frozen/` are what re-derive them.
+20:55–21:45 at HEAD `50b2179`→`df1b2c6`. Round-13 protocol soundness is
+re-derived by the two-file verifier over the current 470-line body and 48-line
+appendix. Round-15 gate-integrity is pinned to `closed_at`
+`2026-09-29T00:34:00-03:00` (pre, manifest at `ae19fca`, main HEAD
+`8afbc8f`) and `2026-09-29T01:27:10-03:00` (post, 74-entry live manifest,
+main HEAD `acbd3bc`). Both snapshots carry input digests under
+`.ufo/waves/round-15/frozen/`; later live-fleet changes are outside that
+measurement.
 
 | Axis | Score | Evidence pointer | Last change |
 |---|---|---|---|
-| gate-integrity | 8 (was 7) | Closure stopped being prose. `closure-check.py` is committed: stdlib-only, read-only, exit map `0 clean / 1 debt / 2 could-not-evaluate / 3 no-baseline`, selftest **15/15** over 15 fixture cases, three timestamp-coherent frozen baselines (`pre` exit 1, `post-actual` exit 1, `post` exit 0 — all baseline-match), and a mutation score of **7/7 determinate** including a `keying_violation` class that kills the `lane_rounds` re-key trap. Live verdict after three passes: **exit 0, debt 0, contradictions 0**, `rounds` 22→36, last-wins 83 ok / 4 failed / 7 in-flight (all live missions) / 18 not-dispatched over 112 rows with 16 legacy rows named `unadjudicable`. The citation sweep classified 453 tokens over 77 reports (86 dead, 1 placeholder) and the gate caught **four rows this lane's own 21:20 pass owed and missed** — the measurement that decides the score. §Gate standard landed, ruling both round-10 L0 questions; 5/5 open L0 questions answered. Still open: registry rows routed not landed; the driver template still carries 1/5 items and no gate text. Metrics M12–M21 below | round 12 |
-| protocol-soundness | 8 (held) | Seven holes closed against live round-12 evidence — `lane_rounds` never re-keys a row (naive keying erases 3 of 4 in-flight rows and manufactures a phantom), the orphaned-report resolution order with its re-grade condition, the filed-report correction form, `progressing-weak` as a third actuator grade, the L0 side channel made append-only with a durability owner, `in-flight` decided by a *landed* report, and `supersedes.entry` for ambiguous triples — census preserved at 93/93, body incident refs held at 4. **Score held, not raised:** the file grew 446→526 lines / 39718→49269 B, regressing the P4 length metric; the critic judged the move non-Pareto on this axis and recommended deleting the 36-line §Gate standard, which is recorded and rejected in the round-12 report, and a round-13 compaction to ≤470 lines is queued as the compensating move. Metrics P8–P10 below | round 12 |
+| gate-integrity | 9 (was 8) | Round 15 closes three silent evidence classes left by the prior gate: a log-only lane whose counter disappears, fleet-wrap termination, and non-closure ledger entries. The lane universe is now roster ∪ base ∪ counters ∪ log ∪ prompt names; unreadable lanes and unknown entry types are explicit could-not-evaluate findings. Frozen **closure** debt moved **17→0** across two input-digest-pinned snapshots; `MANIFEST.json` moved 48→74 entries by appending 26 entries / 34 lane rows. Final controls: checker **27/27**, snapshot generator **37/37**, targeted mutants **7/7 killed**, gate sha256 `0ac440f7…9a778c` unchanged across mutation. Not 10: frozen prompt indexes do not encode git trackedness, a lane named by no readable source is unobservable, non-round untracked prompt names remain silently excluded from prompt debt, and non-closure payloads are only type-reported. | round 15 |
+| protocol-soundness | 8 (held) | Round-13 compaction remains current: `PROTOCOL.md` 470 lines plus `PROTOCOL-APPENDIX.md` 48 lines; the two-file verifier is clean on 8 checks, obligation census 169/169, 61 anchors present, modal floors 118/105 body + 20/15 appendix, 39/32 appendix rows, and 0 unresolved cross-references. Held this round because the move changed the executable gate, not the contract; §Gate standard's registry home for a main-repo lane remains unresolved. | round 13 |
 
 ## Metrics (before → after, with counting commands)
 
@@ -75,43 +77,43 @@ Round 12 (protocol-soundness — held at 8; the cost is the point):
 | P9 | protocol holes closed against live round-12 evidence | 7 named during the round: row identity, orphaned-report order + re-grade condition, filed-report correction form, stale-lane sibling attribution (`progressing-weak`), L0 append-only + durability owner, `in-flight` vs an unlanded report, `supersedes.entry` for ambiguous triples | 0 of the 7 open; each carries an appendix row and a dated incident | `git diff 6bd4f38..HEAD -- PROTOCOL.md` |
 | P10 | obligation census after the amendments | 93/93 | 93/93 — no obligation lost; the census is the round-11 verifier re-run unchanged | `sh .ufo/waves/round-11/verify-census.sh PROTOCOL.md` |
 
+Round 15 (gate-integrity — dynamic evidence closure plus a reproducible two-instant pass):
+
+| # | Metric | Before | After | Command |
+|---|---|---|---|---|
+| M22 | evidence sources contributing lane ids | roster + base ids + counters; deleting an off-roster lane's counter made its log-only terminated round disappear | roster + base + counters + dispatch/complete/wrap log lines + parseable prompt names; the same case is `unrowed_terminated` debt | `closure-check.py --repo fixtures/closure-sample/counter-deleted-dispatch-only --no-citations` |
+| M23 | bounded closure debt | 17 at `closed_at` `00:34:00` — 7 `stale_in_flight`, 10 `unrowed_terminated` | 0 at `closed_at` `01:27:10` | `closure-check.py --frozen round-15/r15-pre-003400` (exit 1) vs `--frozen round-15/r15-post-012710` (exit 0) |
+| M24 | closure entries / lane rows appended | 0 / 0 in this pass; manifest 48 entries | 26 / 34; manifest 74 entries; statuses 16 ok / 6 failed / 12 in-flight | `python3 -c` over `MANIFEST.json` `rounds[48:]` |
+| M25 | checker regression controls | r13 successor 19/19 fixtures | 27/27 checks — 25 fixture repos + 2 prompt-key unit checks | `python3 .ufo/waves/round-15/closure-check.py --selftest` |
+| M26 | snapshot-generator controls | r13 generator recorded 20/20; its tracked source names 23 checks | 37/37; dynamic lane grammar, lane-less debt, wrap-only exclusion, output-root guards | `python3 .ufo/waves/round-15/freeze-snapshot.py --selftest`; sha256 `35a78dba…139c8` |
+| M27 | final targeted mutation campaign | unmeasured against the final gate | 7/7 killed, 0 survivors; sha256 before=after `0ac440f7…9a778c` | `.ufo/waves/round-15/mutation-gate.md` §FINAL |
+| M28 | round-15 digest-pinned frozen verdicts | 0 | 2 — pre exit 1/closure debt 17 and post exit 0/debt 0; six frozen files hashed per `expected.json`; prompt-name presence is pinned but git trackedness is not in the frozen schema | `.ufo/waves/round-15/frozen/*/expected.json`; replay both names |
+| M29 | previously silent targeted classes | 3 — log-only lane after counter deletion, `wrap … complete`, recognized non-closure entry | 0 silent in the targeted corpus; each has a dedicated fixture and killing mutant | `counter-deleted-dispatch-only`, `wrap-terminated-unreported`, `mint-nonclosure-entry` |
+
 ## Planned
 
-- **round 13 (gate-integrity, still the lower of the two):** (1) answer the
-  rows the live gate flags after this round's last `closed_at` — eight
-  missions were live at 21:30 (protocol r12, kasegi r15, kake r14, kagi r13,
-  aggregator r9, kotoba r14, kengaku r12, kumitate r13), six of them already
-  stale past two ticks — and commit any prompt generated after this commit.
-  Falsified if any `stale_in_flight` row survives the round-13 pass.
-  (2) Land the gate registry rows: kagi, kotoba, kengaku and kumitate each
-  add a `SKILL.md` row per §Gate standard (schema is the protocol's, rows are
-  the lanes'); routed, and closure grades no gate conformant until the row
-  exists. (3) Kotoba's `--self-test` is model-only and its no-baseline code is
-  internally inconsistent (`--json` returns 0 where text returns 3) — the two
-  named non-conformances under the new clause; routed, not fixed here.
-  (4) Re-run the mutation battery after any checker change and keep the score
-  at 7/7.
-- **round 13 (protocol-soundness, compensating move):** compact 526 → ≤470
-  lines without losing an obligation — the census must stay 93/93 *and* cover
-  the seven new pins, body incident refs held at 4. Falsified if the census
-  drops a predicate or the body ref count rises. The critic's stronger
-  recommendation (delete the 36-line §Gate standard) is recorded and rejected
-  in the round-12 report §Length cost.
-- **Operator-side, unchanged and named exactly:** `scripts/shokunin-watchdog.sh:44`
-  `report_of()` completes a lane-round on file existence — this round observed
-  the same signal firing on an unlanded 13620 B draft (kagi r12) and on a
-  15922 B draft full of `{{N}}` placeholders (kengaku r11); `lane_prompt()`
-  carries 1 of 5 child-lane contract items and none of §Gate standard, so the
-  exact required addition is in the round-12 report §Operator-side; `.ufo/state`
-  (16 files) + `.ufo/watchdog.log` still tracked, so every round starts dirty.
+- **Round 16 (protocol-soundness, now the lower axis at 8):** resolve
+  §Gate standard's registry-home contradiction for the two main-repo lanes,
+  then register the closure gate at that declared home and re-run every
+  registry citation. Falsified if the gate is called conformant while its
+  schema still requires a nonexistent main-repo `SKILL.md`, or if a registry
+  verdict lacks a named revision.
+- **Gate-integrity residuals, queued rather than smuggled into this move:**
+  encode git trackedness in frozen prompt evidence; classify untracked prompt
+  names that fail the round filename grammar instead of silently excluding
+  them; decide whether recognized non-closure payloads need schema validation.
+  None changes the round-15 frozen closure verdict.
+- **Operator-side, unchanged:** `report_of()` still completes on file
+  existence, `.gitignore` still omits `kama-shokunin/`, and runtime
+  `.ufo/state/*` plus `.ufo/watchdog.log` keep the shared tree moving. They are
+  disclosed and excluded from this lane's commit pathspec.
 
 ## Retired
 
-- none. Neither fleet-meta axis is saturated. Protocol-soundness's compaction
-  debt is cleared (round 11); what remains on both axes is operator-side
-  actuators (prompt-template items, marker-aware `report_of()`, state/log
-  untracking) and lane-side debt (SHONEN headings, lane-identity commits) —
-  this lane can route those, not land them.
+- none. Neither fleet-meta axis is saturated. The round-12 length regression
+  was cleared by round 13's two-file compaction; the main-repo gate-registry
+  contradiction, prompt-name observability, operator-side completion and
+  runtime tracking, and lane-side SHONEN/identity debt remain measurable.
 
 ## Move log
 
@@ -123,6 +125,7 @@ Round 12 (protocol-soundness — held at 8; the cost is the point):
 | 11 | protocol-soundness | 6 — 583 lines, 30 inline incident refs, 5 contradictions, 30 dupe clusters | 8 — 446 lines, census 93/93, contradictions 0, clusters collapsed; cost disclosed: 100-col rewrap, +615 bytes | `PROTOCOL.md` at `6bd4f38`; `.ufo/waves/round-11/verify-census.sh` re-run |
 | 12 | gate-integrity | 7 — 4 carried `in-flight` rows, 7 lane-rounds terminated or dispatched with no row, 0 committed closure checks (rounds 10–11 ran inline `python3 -c` in report prose; round 11's `hexcheck.sh` lived in `/tmp` and was never committed), 5 sibling gate conventions unruled, 5 L0 questions open | 8 — 0 carried debt, 14 entries appended (`rounds` 22→36) across three `closed_at` instants, `closure-check.py` committed (selftest 15/15, three frozen baselines, exit map 0/1/2/3) and **live exit 0 / debt 0**, mutation score 7/7 determinate, `## Gate standard` landed ruling both round-10 L0 questions, 5/5 L0 questions answered; the gate caught four rows this lane's own 21:20 pass owed and missed | `MANIFEST.json` `rounds[22..35]`; `.ufo/waves/round-12/` (`closure-check.py`, `mutation-gate.md`, `mutants/`, `frozen/`, 13 seat artifacts); commits `7c56d1e`, `dddb4ec`, `df1b2c6` + this one |
 | 12 | protocol-soundness (held, not raised) | 8 — 446 lines, 0 holes named against it | 8 — 526 lines, 7 holes closed against live evidence, census 93/93 preserved, body incident refs held at 4; the +80-line / +9323-byte length regression is booked as a disclosed cost against a queued round-13 compaction to ≤470 | `git diff 6bd4f38..HEAD -- PROTOCOL.md`; `sh .ufo/waves/round-11/verify-census.sh PROTOCOL.md` |
+| 15 | gate-integrity | 8 — r13 admitted counter-backed kama but a log-only lane vanished when its counter was deleted; wrap-only termination and non-closure entries were silent; no round-15 digest-pinned closure replay; bounded debt 17 | 9 — lane universe closed over five sources, wrap/non-closure/CNE explicit, 26 entries / 34 rows close debt 17→0, checker 27/27, generator 37/37, final mutations 7/7, two digest-pinned baselines match | `.ufo/waves/round-15/`; `MANIFEST.json` `rounds[48..73]`; `.ufo/reports/round-15/protocol.md` |
 
 ---
 

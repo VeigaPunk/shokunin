@@ -450,3 +450,33 @@ superseded text (`PROTOCOL.md` §Invariants).
   six box-3 verdicts after rounds 14–17 and add canonical report durability
   to the grade. Falsified if an overwritten marker remains a current report
   or any verdict lacks the revision it measured.
+
+## Round 15 — protocol lane — fleet-meta axis-move: gate integrity
+
+- **Trigger.** Both owned axes entered at 8. Gate integrity won the tie: the
+  r13 successor still lost a log-only lane when its counter disappeared, did
+  not recognize fleet-wrap termination, and silently skipped non-closure
+  entries. The pinned pre-cutoff carried 17 closure findings.
+- **Action.** Four implementation/review seats and one batched ten-seat final
+  audit covered execution, snapshots, mutation, planning, scouting, criticism,
+  connection, review, security, simplification, and evidence distillation.
+  Commit `3687e5a` lands the 2060-line gate, 948-line snapshot generator,
+  25 fixture repos plus two parser unit checks, seven mutants, two frozen
+  snapshots, and `MANIFEST.json` rounds 48→74 (26 entries / 34 lane rows).
+- **Outcome.** Gate integrity **8→9**. The universe now closes over roster,
+  base ids, counters, log lines, and parseable prompt names; wrap termination,
+  non-closure records, and could-not-evaluate classes are explicit. Final
+  controls: checker 27/27, generator 37/37, mutations 7/7; gate sha256
+  `0ac440f7…9a778c`. Frozen closure debt moves 17→0 with matching input
+  digests at `00:34:00` and `01:27:10`.
+- **Boundary.** This is a cutoff-bounded result, not a live-clean claim. The
+  final smoke observed exit 1 / debt 10 from later terminations and generated
+  prompts; protocol r15's report also lands after the post cutoff and rides
+  the next correction. Frozen prompt indexes do not encode git trackedness.
+  Effective config still showed `retry.fallbackChains.m_swe=null`; no genuine
+  m_swe capacity failure or Daybreak advancement was observed.
+- **Evidence.** `3687e5a`; `.ufo/waves/round-15/`; `MANIFEST.json`
+  `rounds[48..73]`; `.ufo/reports/round-15/protocol.md`.
+- **Next.** Protocol soundness (8): resolve the main-repo gate-registry home
+  and register this gate at a revision. Falsified if a gate is called
+  conformant while its registry still requires a nonexistent main `SKILL.md`.
