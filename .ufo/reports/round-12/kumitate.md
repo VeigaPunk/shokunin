@@ -4,7 +4,8 @@
 **Axes:** operability + coverage (orchestration/tooling).
 **Round move:** one axis-move, **coverage**. **Score 7 → 8** on the frozen proxy.
 **Repo commit:** `64a27e7` (`round-12`), pushed to
-`github.com/VeigaPunk/kumitate-shokunin`; lane `HEAD` `64a27e7`, tree clean,
+`github.com/VeigaPunk/kumitate-shokunin`; final lane `HEAD` `e0e5de1` (one
+close-evidence commit after it), tree clean,
 `git rev-list --count @{u}..HEAD` → 0.
 
 ## Axis-move and measurement
@@ -149,8 +150,10 @@ dishonest registry `yes` flip → `C1_DRIFT` + `AXES_DRIFT`, axes integer →
 ## Cross-domain (reported, never absorbed)
 
 - **Origin tree** (read-only this round): HEAD moved `ee907f1cf` → `daa371583`,
-  37 dirty paths, **none** of this round's target files (verified by L1 before
-  the round and re-checked by the sentinel after). The origin's own
+  with 37 dirty paths at the round's start and 39 by the sentinel's T1 check —
+  the origin's own lane is actively writing; **none** of this round's target
+  files were among them (verified by L1 before the round, re-checked by the
+  sentinel after). The origin's own
   `conformance/vectors/native/judge-wave.json:1368` still describes
   `validate_vector`'s undeclared-before-omitted order as "the reverse" of the
   reordered code (`23e476e21`, 2026-09-24) — its `expect` block is correct; the
@@ -242,6 +245,6 @@ No new operator decision is required for this lane; round-10's question (adopt
 `kumitate-proxy-v1` claim block fleet-wide) remain open in
 `/home/vgpnk/projects/shokunin/.ufo/l0-questions.md` and are not re-filed.
 
-**Report written by:** kumitate L1, round 12. **Cited lane commit:** `64a27e7`
-(the `round-12` commit, also lane `HEAD`) — an ancestor of lane `HEAD`, which is
-what `round-gate` re-checks.
+**Report written by:** kumitate L1, round 12. **Cited lane commits:** `64a27e7`
+(the `round-12` commit) and `e0e5de1` (close evidence) — both ancestors of lane
+`HEAD`, which is what `round-gate` re-checks.
