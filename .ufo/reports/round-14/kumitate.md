@@ -121,6 +121,22 @@ coverage claims, and the suite's arm coverage was strengthened with three cases
 (unknown-row usage, symbol threshold, liveness boundary). Full list:
 `SCORECARD.md` `## Limits`.
 
+## Close
+
+`node scripts/round-gate.mjs --close` → `ROUND_GATE: CLEAN (round=14 lane=kumitate
+checks=13 errors=0 warnings=0)` exit 0 (lane HEAD `dffbf0e` + the close-evidence
+commit, pushed; this report committed+pushed as `5fa216c`). `--round 14` →
+`CHECKLIST: 10/10 pass` and `--tracked` → `CLEAN (checked=12)`.
+
+Mid-close correction, recorded rather than smoothed: the aggregator lane committed
+`corpus/lessons/round-9-aggregator-corpus-verdict.md` (`93b0567`, a third-party
+artifact it owns) into this checkout after the round commit and without a
+`corpus/README.md` row, so `C2_TOTAL` moved 47 → 48 and the stanza drifted
+(`C2_TOTAL_DRIFT declared=47 computed=48`). The repair follows the rounds 8/9/11
+precedent for this exact seam — a README row for the third-party note, `C2` 48/48,
+coverage unchanged at 9 — instead of rewriting the tool's claim; the sibling's
+commit rode this lane's push (`dffbf0e..93b0567`).
+
 ## Cross-domain (reported, not absorbed)
 
 Origin HEAD moved `4f34e7dab` → `f65ee4b3d` with 35 dirty paths at the round
