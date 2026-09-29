@@ -275,7 +275,10 @@ closing, the integrator:
      as a contemporaneous pass.
    - **`rounds` is append-only after closure.** Corrections are appended entries carrying `type:
      "closure-correction"` and `supersedes: {round, type, date}` naming the row they replace — never
-     in-place edits, never prepends, because index citations into the array must keep resolving
+     in-place edits, never prepends, because index citations into the array must keep resolving.
+     Where two corrections share round+type+date that triple names no unique row, so `supersedes`
+     MAY also carry `entry` — the array index, stable precisely because the array is append-only —
+     and a gate treats a correction that needs the disambiguator and omits it as ambiguous
      (§Appendix, "Append-only `rounds`"). Consumers read the array in order; `rounds[].round` is not
      unique and the last row for a lane wins.
 
