@@ -13,7 +13,9 @@ missing round-12 commits repaired in both repos.
 
 - operability 10 (unchanged; free-read surface saturated — see Retired note).
 - freshness 8 (unchanged, evidence refreshed): pattern HELD — today's 3
-  timer sweeps (06:00:36Z, 12:00:53Z, 18:01:09Z) + the off-cadence
+  timer sweeps (history `at` 06:00:46.703Z, 12:00:53.973Z, 18:01:09.822Z —
+  r14 erratum: this report first wrote 06:00:36Z, which is the journal
+  `Starting` line, not the history row) + the off-cadence
   manual re-probe (18:51:26Z, r3 vintage, **not** the timer) all carry
   the identical 12-ok/5-violated/1-error set; an independent 18-curl
   live replication at 22:50Z reproduced it with **0 verdict diffs**.
