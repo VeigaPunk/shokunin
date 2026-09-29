@@ -24,7 +24,7 @@ declare -A LANE_CWD=(
   [kama]="$SK/kama-shokunin"
 )
 declare -A LANE_MODEL=(
-  [protocol]=@m_daybreak [aggregator]=@m_daybreak [kasegi]=@m_daybreak [kengaku]=@m_daybreak
+  [protocol]=@m_lunamax [aggregator]=@m_lunamax [kasegi]=@m_lunamax [kengaku]=@m_lunamax
   [kake]=@m_z53
   [kumitate]=@m_flash [kotoba]=@m_flash [kagi]=@m_flash [kama]=@m_flash
 )
@@ -54,7 +54,7 @@ BINDING: Read MISSION.md + AXES.md at /home/vgpnk/projects/shokunin first — th
 
 Each round is ONE axis-move: pick the lowest-scoring axis in ${LANE_CWD[$lane]}/SCORECARD.md (create it per AXES.md if missing), land one verifiable improvement, measure it, record before→after in SCORECARD.md, log evidence in LOG.md. Saturated or wrong-fit axes may be retired/split — record the reason.
 
-L2 CONCURRENCY: dispatch at least 8 L2 task subagents in ONE batched task call this round — per-surface scouts, executors drafting sections into scratch, a critic falsifying claims, a connector for sibling overlap, a reviewer verifying citations. Route map: planner/connector @m_lunamax; executor/scribe/scout/reviewer/critic/sentinel/revenger/labrat/mutation-tester/simplifier/distiller @m_flash.
+L2 CONCURRENCY: dispatch at least 8 L2 task subagents in ONE batched task call this round — per-surface scouts, executors drafting sections into scratch, a critic falsifying claims, a connector for sibling overlap, a reviewer verifying citations. Route map: planner/connector @m_lunamax; executor/scribe/scout @m_flash; reviewer/critic/sentinel/revenger/labrat/mutation-tester/simplifier/distiller @m_zfl (fallback: @m_swe).
 
 Write .ufo/reports/round-$n/${lane}.md on the main repo.
 Round end: commit 'round-$n' inside the repo then push; also commit+push the main-repo report. PUSH ONLY to VeigaPunk/shokunin and your own VeigaPunk/${lane}-shokunin remote — domain source trees (ufo-fsd-alpha, bounties, webzites, llm-wiki) are read-only; upstream work is documented in the report, not pushed.

@@ -8,10 +8,10 @@ by steer.
 
 | Lane | Repo/cwd | Model | Axes owned |
 |---|---|---|---|
-| protocol | `~/projects/shokunin` | `@m_daybreak` | fleet-meta: protocol soundness, gate integrity |
-| aggregator | `~/projects/shokunin` | `@m_daybreak` | cross-lane quality, mint/dormancy calls, corpus review |
-| kasegi | `kasegi-shokunin/` | `@m_daybreak` | depth + coverage (bounty/security research) |
-| kengaku | `kengaku-shokunin/` | `@m_daybreak` | novelty + calibration (LLM eval/research) |
+| protocol | `~/projects/shokunin` | `@m_lunamax` | fleet-meta: protocol soundness, gate integrity |
+| aggregator | `~/projects/shokunin` | `@m_lunamax` | cross-lane quality, mint/dormancy calls, corpus review |
+| kasegi | `kasegi-shokunin/` | `@m_lunamax` | depth + coverage (bounty/security research) |
+| kengaku | `kengaku-shokunin/` | `@m_lunamax` | novelty + calibration (LLM eval/research) |
 | kake | `kake-shokunin/` | `@m_z53` | operability + freshness (web properties) |
 | kumitate | `kumitate-shokunin/` | `@m_flash` | operability + coverage (orchestration/tooling) |
 | kotoba | `kotoba-shokunin/` | `@m_flash` | depth + consistency (prompt/skill craft) |
@@ -39,7 +39,8 @@ batched `task` call. Route bucket (persisted globally + `/tmp/fleet-override.yml
 | Role class | Model |
 |---|---|
 | planner, connector | `@m_lunamax` |
-| executor, scribe, scout, reviewer, critic, sentinel, revenger, labrat, mutation-tester, simplifier, distiller | `@m_flash` |
+| executor, scribe, scout | `@m_flash` |
+| reviewer, critic, sentinel, revenger, labrat, mutation-tester, simplifier, distiller | `@m_zfl` (fallback `@m_swe`) |
 
 ## Round end
 
