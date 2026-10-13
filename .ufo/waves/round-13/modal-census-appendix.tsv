@@ -1,0 +1,16 @@
+# modal-census-appendix.tsv — committed expected values for the `modals` check in
+# `--appendix FILE` mode: the floor to apply to the appendix artifact.
+#
+# Same token set and counting command as modal-census.tsv:
+#   grep -oE 'MUST|REQUIRED|NEVER|never|must|required|only|may not|must not'
+# Floor derived from `PROTOCOL.md` at 526 lines / md5 63de15a37a42ce57decb951a7e8aa2f0:
+# the `## Appendix — incident digest (why these rules exist)` section carried 15 of the
+# file's 120 normative tokens, so the digest must carry those 15 after it moves.
+# The body floors in modal-census.tsv are unchanged and stay the body's expected values;
+# in appendix mode this file supplies the one floor applied to the artifact.
+#
+# Key semantics: the key is the ASCII prefix `## Appendix`; the check opens the section
+# at the first line starting with the key and closes it at the next `## ` line. An
+# artifact with no `## ` heading at all is counted whole (the artifact *is* the digest)
+# — the missing heading itself is reported by the `structure` check.
+## Appendix	15

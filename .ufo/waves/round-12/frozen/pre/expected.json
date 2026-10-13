@@ -1,0 +1,47 @@
+{
+ "exit": 1,
+ "verdict": "debt",
+ "pin": "the debt set as (lane, lane_round, class) triples; evidence strings are prose and are not compared",
+ "sources": {
+  "scout-closure.md": "\u00a7Required appends (measured 20:45-20:47; wc -l log 201) - 5 closure-corrections",
+  "reviewer.md": "\u00a7Status recommendations (measured 20:40) - ok / in-flight-re-confirm calls",
+  "derivation": "rows 1,3,4 below are demanded by both independent artifacts; row 2 (kumitate r11) is demanded by them too, but as `ok` on a landed report / `in-flight` re-confirm - this checker classes it stale_in_flight because the complete line 20:50:56 exists in the snapshot log; row 5 (kasegi r14) postdates both sibling clocks (complete 20:50:53) and is added by the checker alone"
+ },
+ "debt": [
+  {
+   "lane": "protocol",
+   "lane_round": 11,
+   "class": "stale_in_flight",
+   "source": "scout-closure \u00a7Required appends 3 + reviewer \u00a7Status recommendations: `ok` (complete 20:28:20, report 392b3c7 20:27:31)",
+   "evidence": "rounds[19] in-flight row, live at 20:10 (launch 18:50:31); terminated since closed_at"
+  },
+  {
+   "lane": "kumitate",
+   "lane_round": 11,
+   "class": "stale_in_flight",
+   "source": "scout-closure \u00a7Required appends 3 (`kumitate: ok`, landed report 46e9ec3 20:45:10) + reviewer (`in-flight` re-confirm, live at 20:40); checker: complete kumitate round=11 20:50:56",
+   "evidence": "rounds[19] in-flight row; terminated since closed_at"
+  },
+  {
+   "lane": "kotoba",
+   "lane_round": 12,
+   "class": "stale_in_flight",
+   "source": "scout-closure \u00a7Required appends 4 + reviewer: `ok` + durability defect (report 14009 B untracked, landed by the pass)",
+   "evidence": "rounds[20] in-flight row; complete kotoba round=12 20:28:22"
+  },
+  {
+   "lane": "aggregator",
+   "lane_round": 7,
+   "class": "unrowed_terminated",
+   "source": "scout-closure \u00a7Debt (b)/\u00a7Required appends 1 + reviewer: `ok via closure-correction` (rounds[10] not-dispatched falsified by launch 19:35:39, complete 20:13:17, report 6d27283)",
+   "evidence": "rounds[10] `not-dispatched` row superseded by a post-closure dispatch; no valid row"
+  },
+  {
+   "lane": "kasegi",
+   "lane_round": 14,
+   "class": "unrowed_terminated",
+   "source": "checker-only: after both sibling clocks - complete kasegi round=14 20:50:53, launch 19:50:43, no (kasegi,14) row in the 22 entries, counter 15",
+   "evidence": "dispatch with termination evidence and no row"
+  }
+ ]
+}

@@ -1,0 +1,94 @@
+id	section	obligation (one line)	grep -E predicate against compacted PROTOCOL.md
+L1	Lifecycle	Mint bar: two documented unplaceable demand instances or explicit operator directive	unplaceable
+L2	Lifecycle	Dormancy: 2 consecutive dispatched+reported rounds w/o LOG activity; review trigger, never auto-retirement	dormant
+L3	Lifecycle	jin'i-ryu bar: proposes and lands own falsifiable improvement	falsifiable
+L4	Promotion	[x] needs named non-author verifier; self=[~]; unverified [x] counts as [~]	non-author verifier
+L5	Promotion	gate text and SHONEN seed change only in the same edit; seed diff byte-identical	same edit|byte-identical
+L6	Promotion	On promotion: SHONEN.md deleted, MANIFEST rank updated, review recorded	rank is updated
+L7	Promotion	shokunin->jin'i-ryu: delta + falsification condition recorded in LOG.md	falsification
+R1	Rounds	up to one swarm lane per rostered shokunin; undispatched lane is never an implicit no-op	implicit no-op
+R2	Rounds	Round numbers monotonic; never claim a round other than the steered one	monotonic
+R3	Rounds	Driver-skipped round produces no entry rather than a mislabeled one	mislabeled
+R4	Rounds	Snapshot clause: prompts/earlier instructions lose to current PROTOCOL/CORPUS	snapshots
+R5	Rounds	Lane re-reads protocol at start of every steered round; no grandfathering	re-reads the protocol
+R6	Rounds	Child-lane prompts embed the five contract items verbatim	five contract items
+R7	Rounds	Aggregator prompt embeds its operative set; protocol prompt embeds re-read+closure steps	aggregator prompt instead embeds
+R8	Rounds	L2 minimum owned by MISSION.md, not this file	number this file does not own
+R9	Rounds	Per-lane counters; integrator closes per lane-round, not per fleet	per-lane counters
+R10	Rounds	Report lands last, cites child-repo HEAD; landed = committed	lands last
+R11	Rounds	Cited hash must be ancestor of HEAD; merge-base --is-ancestor is the check	is-ancestor
+R12	Rounds	Corrections land as new commits, never amending a cited one	by amending
+R13	Rounds	Append-only files take an appended correction entry, never in-place rewrite	appended correction entry
+R14	Rounds	Landed BY the lane: report commit carries the lane identity	landed \*by the lane\*
+R15	Rounds	Report path/filename exact; any other name does not satisfy the contract	any other name
+R16	Rounds	Minimum content: work+evidence, LOG-tied changes, cross-domain evidence	Minimum content
+R17	Rounds	SHONEN heading required; missing = defect AND disqualified as promotion evidence; assessment re-filed	disqualified as evidence
+R18	Rounds	Missing report: `failed` in ledger; driver stays open (driver-vs-ledger distinction)	holds a round open
+R19	Rounds	`failed` covers prompted-or-dispatched with no report, incl. orphan launch prompts	prompted or dispatched
+R20	Rounds	Stale-lane trigger: mission open > two driver ticks	two driver ticks
+R21	Rounds	Actuator: every report lists open missions and says progressing vs silent	progressing
+R22	Rounds	Progressing = observable activity (commit or files newer than launch, find -newermt)	newermt
+R23	Rounds	Commit sparsity is not silence; absence of commit must not trigger failed	is not silence
+R24	Rounds	`failed` recorded only for silent; recording is a ledger act, never a kill	ledger act
+R25	Rounds	Respawned mission inherits tree; lane-authored uncommitted work resolved before filing	inherits its predecessor
+R26	Rounds	Aggregator-owned uncommitted files: lane records, never commits	aggregator-owned
+R27	Rounds	File at report path is not automatically a report; marker -> failed + keep file + name counter	not automatically a report
+R28	Rounds	Report naming a real committed hash is defective, not marker: status ok + defect recorded	defective. report
+R29	Rounds	Marker naming nothing checkable is failed whatever the lane actually did	nothing checkable
+R30	Rounds	Integrator of record = the round's protocol lane; this file wins prompt conflicts	Integrator of record
+R31	Rounds	Integrator main-repo writes expand by exactly three; never edits prompt or script	expand by exactly
+R32	Rounds	Closure artifact = integrator's own report; no closure record = incomplete report	incomplete report
+R33	Rounds	Round completed when every dispatched lane reported or recorded failed (per lane-round)	reported or
+R34	Step1	Verify ancestry, uncommitted work, SHONEN heading, five items verbatim, route-map bucket	route map
+R35	Step2	Routing line per defect incl. self-defects; aggregator mirror + open ledger row; fallback	queue of record|self-defects
+R36	Step3	Mint only on Lifecycle bar; ROADMAP restatement drift is a round-notes defect	Mints a new shonen
+R37	Step4	Entry shape; statuses ok|failed|not-dispatched|in-flight	not-dispatched
+R38	Step4	Partial entries are the norm; closed_at required on any entry with not-dispatched	closed_at
+R39	Step4	Evidence classes: dispatch = log line (prompt corroborates only); prompt w/o line = failed	Dispatch evidence
+R40	Step4	Liveness probes are not evidence; in-flight decided from absence of complete+report	Liveness probes
+R41	Step4	Log is mutable: round notes carry committed digest; digest is the pointer, not live log	committed digest
+R42	Step4	in-flight is debt: next round appends closure-correction; last row wins; never folded into N+1	closure-correction
+R43	Step4	No not-dispatched against dispatch evidence; no in-flight unless live at closed_at	live at .closed_at
+R44	Step4	lane_rounds map required on not-dispatched; ok falsifiable via derivable report path	lane_rounds
+R45	Step4	Retroactive closure typed and never read as a contemporaneous pass	retroactive-closure
+R46	Step4	rounds append-only after closure; supersedes; never prepends; last row wins	supersedes
+R47	Aggregator	Corpus-only scope; commits own child-repo files at creation time, pathspec-limited	at creation
+R48	Aggregator	A lane never commits an aggregator-owned file	never commits an aggregator-owned
+R49	Aggregator	Canonical ledger path .ufo/reports/AGGREGATE.md; snapshot superseded not voided; no third path	no third path
+R50	Aggregator	Fallback queue-of-record while canonical ledger absent (CONDITIONAL: flipped to present 19:04)	queue of record
+R51	Aggregator	Report incomplete unless ledger refreshed or report names why no row changed	refreshed or
+E1	Evidence	Evidence = resolvable pointer, never naked assertion	resolvable pointer
+E2	Evidence	Operator-owned terminal action: prepared + verified + handed off	handed off
+E3	Evidence	Numeric claim carries counting command; absence carries sweep; quote carries location	counting command
+E4	Evidence	Status output is not capability; claims need probe against the real surface	real surface
+E5	Evidence	Pointer must resolve at closure time; tmpfs/local:// not evidence	resolve at .closure
+E6	Evidence	Evidence timestamp at or before shipping commit; future-dated = defect	future-dated
+E7	Evidence	Claimed != re-executed: commands re-run at write time with observed output	re-executed
+E8	Evidence	Corrections sweep every mention across touched files	sweep every
+E9	Evidence	Falsified claim in append-only file gets named correction entry next round	named correction entry
+E10	Evidence	Commits cited by hash, never by subject or tag	never by subject
+E11	Evidence	Drift pins count only with persisted baseline inside the repo	persisted inside the repo
+F1	FileContract	SKILL.md frontmatter: trigger strings + anti-trigger + sibling-arbitration	anti-trigger
+F2	FileContract	PROVINCE.md declared surfaces must resolve; correct to real path	Declared surfaces must resolve
+F3	FileContract	LOG.md append-only	append-only
+F4	FileContract	SHONEN.md generated from canonical seed verbatim; marks confined to box+evidence line	seed .verbatim
+F5	FileContract	corpus/ per CORPUS.md; aggregator-reviewed every round	CORPUS.md
+F6	FileContract	SCORECARD rows carry counting command + commit; main-repo lanes keep at root	re-derive
+I1	Invariants	Specialize, don't generalize; cited verifiable domain knowledge	Specialize
+I2	Invariants	One domain per shokunin; contested scope -> report -> arbitrate -> re-flag; silence not ruling	silence is not
+I3	Invariants	Rounds are evidence-driven	evidence-driven
+I4	Invariants	MANIFEST canonical for rank/roster; ROADMAP mirrors	canonical for rank
+I5	Invariants	Operator-side integrator files (MISSION/AXES/scripts) named, never lane-edited	operator-side integrator
+I6	Invariants	Reports/waves/prompts committed with round commit; untracked prompt = non-durable evidence	non-durable
+I7	Invariants	No lane commit includes .ufo/state or watchdog.log; pathspec-limited commits enforce	pathspec-limited commits
+I8	Invariants	Meta-domain shokunin does not own protocol files/promotions	not own the protocol files
+I9	Invariants	Domain-facing actions operator-owned; bookkeeping never front-runs an operator gate	front-runs
+I10	Invariants	Main-repo lane commit pathspec-limited to own report; never commit -a / add -A	add -A
+I11	Invariants	Child repos configured for lane identity; operator-identity commits = conformance defect	sets .git config user
+I12	Invariants	Main-repo commits via -c user.name/-c user.email (shared identity is operator's)	user.name=<lane>-shokunin
+I13	Invariants	Corpus inherits evidence standard; corrections new entries both directions	aggregator-owned
+V1	Fleet-2	Axis-move evidence: before/after with command + commit; un-derivable score = opinion	opinion, not a measurement
+V2	Fleet-2	Axis work does not displace the file contract	displace
+V3	Fleet-2	MISSION.md is mission SSOT (shape, model map, L2 floor, push rule, L0 channel)	mission SSOT
+V4	Fleet-2	Precedence: on process conflicts PROTOCOL.md wins; conflict named in round notes	wins and the
+V5	Fleet-2	L0 side channel .ufo/l0-questions.md; aggregator surfaces	l0-questions
