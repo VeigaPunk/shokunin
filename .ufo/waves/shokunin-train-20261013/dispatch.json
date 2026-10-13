@@ -1,0 +1,484 @@
+{
+  "schema": "ufo-swarm-wave-dispatch-v1",
+  "wave": "shokunin-train-20261013",
+  "policy": {
+    "source": "config",
+    "maxLanes": 100,
+    "minLanes": 16,
+    "waveMinLanes": 16,
+    "waveMaxLanes": 32,
+    "declaredMaxLanes": null,
+    "hardCeiling": 100,
+    "rampBatchSize": 5,
+    "rampIntervalMs": 700,
+    "globalRunnerCeiling": 1056
+  },
+  "counts": {
+    "spawn": 26,
+    "resume": 0,
+    "total": 26
+  },
+  "registry": {
+    "schema": "ufo-swarm-registry-v1",
+    "path": ".ufo/scopes/shokunin-train-20261013/swarm-registry.json",
+    "members": {
+      "AudioR62Scout": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": "audio/r62/scout",
+        "axes": [
+          "expansion",
+          "quality",
+          "discernment"
+        ],
+        "milestone": "audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      "AudioR62Author": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": "audio/r62/author",
+        "axes": [
+          "expansion",
+          "quality",
+          "discernment"
+        ],
+        "milestone": "audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      "AudioR62Critic": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": "audio/r62/critic",
+        "axes": [
+          "expansion",
+          "quality",
+          "discernment"
+        ],
+        "milestone": "audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      "AudioR62Reviewer": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "audio/r62/reviewer",
+        "axes": [
+          "expansion",
+          "quality",
+          "discernment"
+        ],
+        "milestone": "audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      "AudioR62Simplifier": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "simplifier",
+        "item": "audio/r62/simplifier",
+        "axes": [
+          "expansion",
+          "quality",
+          "discernment"
+        ],
+        "milestone": "audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      "AudioR62Scribe": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scribe",
+        "item": "audio/r62/scribe",
+        "axes": [
+          "expansion",
+          "quality",
+          "discernment"
+        ],
+        "milestone": "audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      "AudioR62Baseline": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": "audio/r62/baseline",
+        "axes": [
+          "expansion",
+          "quality",
+          "discernment"
+        ],
+        "milestone": "audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      "AudioR62Boundary": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "revenger",
+        "item": "audio/r62/boundary",
+        "axes": [
+          "expansion",
+          "quality",
+          "discernment"
+        ],
+        "milestone": "audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      "G2dR61Scout": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": "game-dev-2d/r61/scout",
+        "axes": [
+          "expansion",
+          "quality",
+          "discernment"
+        ],
+        "milestone": "audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      "G2dR61Author": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": "game-dev-2d/r61/author",
+        "axes": [
+          "expansion",
+          "quality",
+          "discernment"
+        ],
+        "milestone": "audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      "G2dR61Critic": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": "game-dev-2d/r61/critic",
+        "axes": [
+          "expansion",
+          "quality",
+          "discernment"
+        ],
+        "milestone": "audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      "G2dR61Reviewer": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "game-dev-2d/r61/reviewer",
+        "axes": [
+          "expansion",
+          "quality",
+          "discernment"
+        ],
+        "milestone": "audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      "G2dR61Simplifier": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "simplifier",
+        "item": "game-dev-2d/r61/simplifier",
+        "axes": [
+          "expansion",
+          "quality",
+          "discernment"
+        ],
+        "milestone": "audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      "G2dR61Scribe": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scribe",
+        "item": "game-dev-2d/r61/scribe",
+        "axes": [
+          "expansion",
+          "quality",
+          "discernment"
+        ],
+        "milestone": "audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      "G2dR61Baseline": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": "game-dev-2d/r61/baseline",
+        "axes": [
+          "expansion",
+          "quality",
+          "discernment"
+        ],
+        "milestone": "audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      "G2dR61Boundary": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "revenger",
+        "item": "game-dev-2d/r61/boundary",
+        "axes": [
+          "expansion",
+          "quality",
+          "discernment"
+        ],
+        "milestone": "audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      "G3dR70Scout": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": "game-dev-3d/r70/scout",
+        "axes": [
+          "expansion",
+          "quality",
+          "discernment"
+        ],
+        "milestone": "audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      "G3dR70Author": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "executor",
+        "item": "game-dev-3d/r70/author",
+        "axes": [
+          "expansion",
+          "quality",
+          "discernment"
+        ],
+        "milestone": "audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      "G3dR70Critic": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "critic",
+        "item": "game-dev-3d/r70/critic",
+        "axes": [
+          "expansion",
+          "quality",
+          "discernment"
+        ],
+        "milestone": "audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      "G3dR70Reviewer": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "reviewer",
+        "item": "game-dev-3d/r70/reviewer",
+        "axes": [
+          "expansion",
+          "quality",
+          "discernment"
+        ],
+        "milestone": "audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      "G3dR70Simplifier": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "simplifier",
+        "item": "game-dev-3d/r70/simplifier",
+        "axes": [
+          "expansion",
+          "quality",
+          "discernment"
+        ],
+        "milestone": "audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      "G3dR70Scribe": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scribe",
+        "item": "game-dev-3d/r70/scribe",
+        "axes": [
+          "expansion",
+          "quality",
+          "discernment"
+        ],
+        "milestone": "audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      "G3dR70Baseline": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "scout",
+        "item": "game-dev-3d/r70/baseline",
+        "axes": [
+          "expansion",
+          "quality",
+          "discernment"
+        ],
+        "milestone": "audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      "G3dR70Boundary": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "revenger",
+        "item": "game-dev-3d/r70/boundary",
+        "axes": [
+          "expansion",
+          "quality",
+          "discernment"
+        ],
+        "milestone": "audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      "XConnector": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "connector",
+        "item": "fleet/sibling-overlap",
+        "axes": [
+          "expansion",
+          "quality",
+          "discernment"
+        ],
+        "milestone": "audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      "XSentinel": {
+        "kind": "spawn",
+        "agentId": null,
+        "role": "sentinel",
+        "item": "fleet/invariants",
+        "axes": [
+          "expansion",
+          "quality",
+          "discernment"
+        ],
+        "milestone": "audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      }
+    }
+  },
+  "compaction": {
+    "applied": false,
+    "mechanism": null,
+    "reason": null,
+    "savedBytes": 0,
+    "payloadBytesBefore": 0,
+    "payloadBytesAfter": 0
+  },
+  "taskCall": {
+    "context": "Shokunin fleet training wave on this host (devin CLI). Three domain lanes each run ONE declared axis-move this round, concurrently:\n\n- audio — lane round 62 (axis: depth). Worktree cwd ~/Projects/prymeagnt/audio; the path prefix `.shokunin/audio/` resolves through a symlink into canonical lane repo ~/Projects/shokunin/audio-shokunin.\n- game-dev-2d — lane round 61 (axis: coverage). Worktree cwd ~/Projects/prymeagnt/game-dev-2d; `.shokunin/game-dev-2d/` → ~/Projects/shokunin/game-dev-2d-shokunin.\n- game-dev-3d — lane round 70 (axis: depth). Worktree cwd ~/Projects/prymeagnt/game-dev-3d; `.shokunin/game-dev-3d/` → ~/Projects/shokunin/game-dev-3d-shokunin.\n\nDiscipline binding on every lane:\n- You are a LEAF: no subagent dispatch, and never run git commit/push/merge/rebase/stash/checkout in any repo. The parent integrates and commits after the wave settles.\n- Write only your own report file and scratch inside your brief's write scope. Never touch another lane's files, another repo's tracked content, or shared state.\n- Evidence or it didn't happen: every claim carries the exact command and observed output (exit codes, receipt paths) or a resolvable repo path. Quote real numbers, never rounded-from-memory.\n- Start by reading your lane's LOG.md tail, SCORECARD.md, PROVINCE.md and the previous round's reports — cheap, do it in parallel.\n- If the round's declared claim proves false under measurement, report the actual observed outcome: a falsified claim is a useful round; never force it or soften the record.\n- Domain-facing actions (push to remotes, publishing, upstream source edits) are operator-owned — never perform them.",
+    "tasks": [
+      {
+        "name": "AudioR62Scout",
+        "agent": "scout",
+        "task": "/skill:godspeed\n\nLane: audio (audio-shokunin) — training round 62; the lane's one declared axis-move is depth: resolve the SoX decode-length UNKNOWN recorded at r61. r61 built a matched WAVE_FORMAT_EXTENSIBLE pair `pair_valid_17.wav`/`pair_valid_16.wav` (PCM subtype, 16-bit container, wValidBitsPerSample 17 vs 16, byte-identical payload, differing only at offset 38): ffprobe reclassifies valid17 to pcm_s24le/0.080 s while valid16 stays pcm_s16le/0.120 s, and SoX decoded valid17 to 3,839 f32 samples vs 5,760 for valid16 — cause unestablished. Establish the mechanism (header duration field vs valid-bits vs block-boundary vs reclassified sample width) with discriminating controls, or record a bounded UNKNOWN with the eliminated hypotheses\n\nWork from the lane worktree root ~/Projects/prymeagnt/audio. Paths below use the `.shokunin/audio/` prefix, which resolves into ~/Projects/shokunin/audio-shokunin.\n\nYour seat: scout (role scout).\n\nRecon only. Map exactly how `.shokunin/audio/corpus/fixtures/measure_audio.py` and `build_artifacts.py` produce and measure the r61 pair: find the SoX/ffprobe invocations used (read the source; find where `pair_valid_*.wav` live, likely under `corpus/live/round-61/` or a fixtures output dir), the 82-command ledger in `reports/round-61/r61-verifier.md`, and every knob SoX exposes that could change a decode-length result (input format flags, buffer sizes, rate/channels). Report the map with file:line pointers.\n\nWrite scope — ONLY: your report `.shokunin/audio/reports/round-62/r62-scout.md` plus scratch/receipts under `.shokunin/audio/corpus/live/r62-scout/` (pass `--runs .shokunin/audio/corpus/live/r62-scout/runs` to runners that accept it). Create the reports dir if missing. Nothing else.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: expansion, quality, discernment\nMilestone: audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      {
+        "name": "AudioR62Author",
+        "agent": "executor",
+        "task": "/skill:godspeed\n\nLane: audio (audio-shokunin) — training round 62; the lane's one declared axis-move is depth: resolve the SoX decode-length UNKNOWN recorded at r61. r61 built a matched WAVE_FORMAT_EXTENSIBLE pair `pair_valid_17.wav`/`pair_valid_16.wav` (PCM subtype, 16-bit container, wValidBitsPerSample 17 vs 16, byte-identical payload, differing only at offset 38): ffprobe reclassifies valid17 to pcm_s24le/0.080 s while valid16 stays pcm_s16le/0.120 s, and SoX decoded valid17 to 3,839 f32 samples vs 5,760 for valid16 — cause unestablished. Establish the mechanism (header duration field vs valid-bits vs block-boundary vs reclassified sample width) with discriminating controls, or record a bounded UNKNOWN with the eliminated hypotheses\n\nWork from the lane worktree root ~/Projects/prymeagnt/audio. Paths below use the `.shokunin/audio/` prefix, which resolves into ~/Projects/shokunin/audio-shokunin.\n\nYour seat: author (role executor).\n\nYou are the lane's ONLY tracked-file writer this round. First do causal scratch work (own scratch dir): SoX-decode the existing pair and fresh discriminating variants — e.g. same payload at other valid-bits values (15, 24, 32), the same file lengths with different declared durations, valid16 re-run under identical SoX flags, SoX with explicit input format/rate overrides, and a decode where you truncate/pad the data chunk — until the 3,839-vs-5,760 gap is causally attributed to exactly one factor (header duration field, valid-bits, reclassified 24-bit width, or block boundary). THEN, iff a mechanism is established, add minimal additive tracked changes in `.shokunin/audio/corpus/fixtures/` (builder + `--probe-*-r62` mode + receipts) that pin the mechanism as a permanent discriminating control — matching the additive-only convention of prior rounds; never alter `format_failures`, thresholds, the canonical 17, or prior probe modes. If no mechanism survives, land nothing tracked and report the bounded UNKNOWN plus eliminated hypotheses. Verify your own work: run the full prior ledger shape (82 commands) plus your new modes; report exact commands, exits, and receipt paths.\n\nWrite scope — ONLY: your report `.shokunin/audio/reports/round-62/r62-author.md` plus scratch/receipts under `.shokunin/audio/corpus/live/r62-author/` (pass `--runs .shokunin/audio/corpus/live/r62-author/runs` to runners that accept it). Create the reports dir if missing. Nothing else.\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: expansion, quality, discernment\nMilestone: audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      {
+        "name": "AudioR62Critic",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nLane: audio (audio-shokunin) — training round 62; the lane's one declared axis-move is depth: resolve the SoX decode-length UNKNOWN recorded at r61. r61 built a matched WAVE_FORMAT_EXTENSIBLE pair `pair_valid_17.wav`/`pair_valid_16.wav` (PCM subtype, 16-bit container, wValidBitsPerSample 17 vs 16, byte-identical payload, differing only at offset 38): ffprobe reclassifies valid17 to pcm_s24le/0.080 s while valid16 stays pcm_s16le/0.120 s, and SoX decoded valid17 to 3,839 f32 samples vs 5,760 for valid16 — cause unestablished. Establish the mechanism (header duration field vs valid-bits vs block-boundary vs reclassified sample width) with discriminating controls, or record a bounded UNKNOWN with the eliminated hypotheses\n\nWork from the lane worktree root ~/Projects/prymeagnt/audio. Paths below use the `.shokunin/audio/` prefix, which resolves into ~/Projects/shokunin/audio-shokunin.\n\nYour seat: critic (role critic).\n\nFalsify the round's claim-in-progress. Strong alternative hypothesis to test first: the SoX gap may track the HEADER-DECLARED duration (0.080 s × 48000 = 3840; observed 3839 is one frame short) or the reclassified 24-bit sample width (11520 payload bytes / 4 B = 2880, not 3839 — check what actually divides), NOT the valid-bits field itself. In scratch, construct your own variant files (e.g. valid-bits 24/32, or a valid16 header with a data chunk whose byte count implies the 0.080 s duration) and try to make SoX produce 3,839 on a file WITHOUT valid-bits 17, or a non-3,839 count WITH it. Any such result falsifies a wrong attribution. Report verdicts per hypothesis with receipts.\n\nWrite scope — ONLY: your report `.shokunin/audio/reports/round-62/r62-critic.md` plus scratch/receipts under `.shokunin/audio/corpus/live/r62-critic/` (pass `--runs .shokunin/audio/corpus/live/r62-critic/runs` to runners that accept it). Create the reports dir if missing. Nothing else.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: expansion, quality, discernment\nMilestone: audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      {
+        "name": "AudioR62Reviewer",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nLane: audio (audio-shokunin) — training round 62; the lane's one declared axis-move is depth: resolve the SoX decode-length UNKNOWN recorded at r61. r61 built a matched WAVE_FORMAT_EXTENSIBLE pair `pair_valid_17.wav`/`pair_valid_16.wav` (PCM subtype, 16-bit container, wValidBitsPerSample 17 vs 16, byte-identical payload, differing only at offset 38): ffprobe reclassifies valid17 to pcm_s24le/0.080 s while valid16 stays pcm_s16le/0.120 s, and SoX decoded valid17 to 3,839 f32 samples vs 5,760 for valid16 — cause unestablished. Establish the mechanism (header duration field vs valid-bits vs block-boundary vs reclassified sample width) with discriminating controls, or record a bounded UNKNOWN with the eliminated hypotheses\n\nWork from the lane worktree root ~/Projects/prymeagnt/audio. Paths below use the `.shokunin/audio/` prefix, which resolves into ~/Projects/shokunin/audio-shokunin.\n\nYour seat: reviewer (role reviewer).\n\nNon-author audit of round 61 (the lane's last round). Re-execute the pivotal r61 commands fresh (the 82-command table lives in `.shokunin/audio/reports/round-61/r61-verifier.md` — replay all 82 serially once each if feasible, else the full probe-flag set); verify exit-code shape 43 exit0 / 39 exit1 and spot-compare at least the normal, valid17, and valid16 receipts byte-for-byte against the cited r61 receipts; verify every commit hash the r61 reports cite resolves in ~/Projects/shokunin/audio-shokunin and is an ancestor of HEAD. Record agree/disagree per checked claim.\n\nWrite scope — ONLY: your report `.shokunin/audio/reports/round-62/r62-reviewer.md` plus scratch/receipts under `.shokunin/audio/corpus/live/r62-reviewer/` (pass `--runs .shokunin/audio/corpus/live/r62-reviewer/runs` to runners that accept it). Create the reports dir if missing. Nothing else.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: expansion, quality, discernment\nMilestone: audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      {
+        "name": "AudioR62Simplifier",
+        "agent": "simplifier",
+        "task": "/skill:godspeed\n\nLane: audio (audio-shokunin) — training round 62; the lane's one declared axis-move is depth: resolve the SoX decode-length UNKNOWN recorded at r61. r61 built a matched WAVE_FORMAT_EXTENSIBLE pair `pair_valid_17.wav`/`pair_valid_16.wav` (PCM subtype, 16-bit container, wValidBitsPerSample 17 vs 16, byte-identical payload, differing only at offset 38): ffprobe reclassifies valid17 to pcm_s24le/0.080 s while valid16 stays pcm_s16le/0.120 s, and SoX decoded valid17 to 3,839 f32 samples vs 5,760 for valid16 — cause unestablished. Establish the mechanism (header duration field vs valid-bits vs block-boundary vs reclassified sample width) with discriminating controls, or record a bounded UNKNOWN with the eliminated hypotheses\n\nWork from the lane worktree root ~/Projects/prymeagnt/audio. Paths below use the `.shokunin/audio/` prefix, which resolves into ~/Projects/shokunin/audio-shokunin.\n\nYour seat: simplifier (role simplifier).\n\nMinimal-design critique, report-only (no tracked edits). Review the author's landed diff when it appears (poll `.shokunin/audio/corpus/fixtures/` after some minutes; if not yet landed, critique the r61 additions instead): is the smallest discriminating fixture pair used, is the probe-mode wiring minimal, is there a cheaper mechanism-pinning control. Name anything deletable without losing the falsification.\n\nWrite scope — ONLY: your report `.shokunin/audio/reports/round-62/r62-simplifier.md` plus scratch/receipts under `.shokunin/audio/corpus/live/r62-simplifier/` (pass `--runs .shokunin/audio/corpus/live/r62-simplifier/runs` to runners that accept it). Create the reports dir if missing. Nothing else.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: expansion, quality, discernment\nMilestone: audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      {
+        "name": "AudioR62Scribe",
+        "agent": "scribe",
+        "task": "/skill:godspeed\n\nLane: audio (audio-shokunin) — training round 62; the lane's one declared axis-move is depth: resolve the SoX decode-length UNKNOWN recorded at r61. r61 built a matched WAVE_FORMAT_EXTENSIBLE pair `pair_valid_17.wav`/`pair_valid_16.wav` (PCM subtype, 16-bit container, wValidBitsPerSample 17 vs 16, byte-identical payload, differing only at offset 38): ffprobe reclassifies valid17 to pcm_s24le/0.080 s while valid16 stays pcm_s16le/0.120 s, and SoX decoded valid17 to 3,839 f32 samples vs 5,760 for valid16 — cause unestablished. Establish the mechanism (header duration field vs valid-bits vs block-boundary vs reclassified sample width) with discriminating controls, or record a bounded UNKNOWN with the eliminated hypotheses\n\nWork from the lane worktree root ~/Projects/prymeagnt/audio. Paths below use the `.shokunin/audio/` prefix, which resolves into ~/Projects/shokunin/audio-shokunin.\n\nYour seat: scribe (role scribe).\n\nDocumentation draft, report-only. Draft the corpus knowledge entry `.shokunin/audio/corpus/knowledge/2026-10-13-sox-validbits-decodelen.md` CONTENT inside your report (the parent decides what lands): source/verified-at/recheck header fields per CORPUS.md, the established mechanism with receipts, eliminated hypotheses, and the updated checklist lines. Also draft the LOG.md round-62 entry text.\n\nWrite scope — ONLY: your report `.shokunin/audio/reports/round-62/r62-scribe.md` plus scratch/receipts under `.shokunin/audio/corpus/live/r62-scribe/` (pass `--runs .shokunin/audio/corpus/live/r62-scribe/runs` to runners that accept it). Create the reports dir if missing. Nothing else.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: expansion, quality, discernment\nMilestone: audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      {
+        "name": "AudioR62Baseline",
+        "agent": "scout",
+        "task": "/skill:godspeed\n\nLane: audio (audio-shokunin) — training round 62; the lane's one declared axis-move is depth: resolve the SoX decode-length UNKNOWN recorded at r61. r61 built a matched WAVE_FORMAT_EXTENSIBLE pair `pair_valid_17.wav`/`pair_valid_16.wav` (PCM subtype, 16-bit container, wValidBitsPerSample 17 vs 16, byte-identical payload, differing only at offset 38): ffprobe reclassifies valid17 to pcm_s24le/0.080 s while valid16 stays pcm_s16le/0.120 s, and SoX decoded valid17 to 3,839 f32 samples vs 5,760 for valid16 — cause unestablished. Establish the mechanism (header duration field vs valid-bits vs block-boundary vs reclassified sample width) with discriminating controls, or record a bounded UNKNOWN with the eliminated hypotheses\n\nWork from the lane worktree root ~/Projects/prymeagnt/audio. Paths below use the `.shokunin/audio/` prefix, which resolves into ~/Projects/shokunin/audio-shokunin.\n\nYour seat: baseline (role scout).\n\nFrozen before-state replay. Snapshot the committed tree: `git -C ~/Projects/shokunin/audio-shokunin archive HEAD | tar -x -C <your scratch>/tree` and run the lane's complete command battery there (reconstruct the full probe-flag list from measure_audio.py + the r61-verifier 82-command table). If the frozen copy cannot run standalone, say so and instead replay in-place at HEAD, flagging that concurrent author edits may contaminate. Report the exact before-state receipt summary (counts by exit code, key receipt SHAs).\n\nWrite scope — ONLY: your report `.shokunin/audio/reports/round-62/r62-baseline.md` plus scratch/receipts under `.shokunin/audio/corpus/live/r62-baseline/` (pass `--runs .shokunin/audio/corpus/live/r62-baseline/runs` to runners that accept it). Create the reports dir if missing. Nothing else.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: expansion, quality, discernment\nMilestone: audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      {
+        "name": "AudioR62Boundary",
+        "agent": "revenger",
+        "task": "/skill:godspeed\n\nLane: audio (audio-shokunin) — training round 62; the lane's one declared axis-move is depth: resolve the SoX decode-length UNKNOWN recorded at r61. r61 built a matched WAVE_FORMAT_EXTENSIBLE pair `pair_valid_17.wav`/`pair_valid_16.wav` (PCM subtype, 16-bit container, wValidBitsPerSample 17 vs 16, byte-identical payload, differing only at offset 38): ffprobe reclassifies valid17 to pcm_s24le/0.080 s while valid16 stays pcm_s16le/0.120 s, and SoX decoded valid17 to 3,839 f32 samples vs 5,760 for valid16 — cause unestablished. Establish the mechanism (header duration field vs valid-bits vs block-boundary vs reclassified sample width) with discriminating controls, or record a bounded UNKNOWN with the eliminated hypotheses\n\nWork from the lane worktree root ~/Projects/prymeagnt/audio. Paths below use the `.shokunin/audio/` prefix, which resolves into ~/Projects/shokunin/audio-shokunin.\n\nYour seat: boundary (role revenger).\n\nReverse-engineer the host's SoX WAV-extensible reader behavior to explain 3,839. Sources: `sox --version` (SoX_ng 14.8.0.1), sox man pages / `--help` output, installed source if any (pacman -Ql sox, /usr/include, /usr/share), strings on the binary for format handling, and controlled scratch experiments (vary ONE header field at a time: cbSize, valid bits, declared data size, fmt size 18 vs 40). You seek the exact arithmetic that yields 3,839 from this file. Report mechanism evidence with commands and outputs; scratch only.\n\nWrite scope — ONLY: your report `.shokunin/audio/reports/round-62/r62-boundary.md` plus scratch/receipts under `.shokunin/audio/corpus/live/r62-boundary/` (pass `--runs .shokunin/audio/corpus/live/r62-boundary/runs` to runners that accept it). Create the reports dir if missing. Nothing else.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: expansion, quality, discernment\nMilestone: audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      {
+        "name": "G2dR61Scout",
+        "agent": "scout",
+        "task": "/skill:godspeed\n\nLane: game-dev-2d (game-dev-2d-shokunin) — training round 61; the lane's one declared axis-move is coverage: land the tracked spontaneous-crash classification row identified at r60. r60 scratch probes showed a fixture calling OS.crash() exits -6 (SIGABRT) carrying its own `ERROR:` marker yet classifies False (crash unrecognized), self-OS.kill(-9) classifies False, and an expected-exit -9 arm matches True unmodified — the identified zero-runner-change path is a crash-ERROR-marker allowlist for expected -6. Add the tracked CASES/negative row(s) so a spontaneous SIGABRT crash with its ERROR marker classifies True while prior classification behavior (harness SIGTERM -15, timeout, expected-mismatch rejection) is untouched\n\nWork from the lane worktree root ~/Projects/prymeagnt/game-dev-2d. Paths below use the `.shokunin/game-dev-2d/` prefix, which resolves into ~/Projects/shokunin/game-dev-2d-shokunin.\n\nYour seat: scout (role scout).\n\nRecon only. Map `.shokunin/game-dev-2d/corpus/fixtures/run_battery.py` CASES structure: how a row declares script/flags/expected_exit/signature/verdict matching, where `crash_exit_probe.gd` lives and what arms it has, and the r60 scratch probe outputs under `corpus/live/` / `reports/round-60/` that established the OS.crash→-6-with-ERROR-marker finding. Report file:line pointers and the exact insertion point a tracked row needs.\n\nWrite scope — ONLY: your report `.shokunin/game-dev-2d/reports/round-61/r61-scout.md` plus scratch/receipts under `.shokunin/game-dev-2d/corpus/live/r61-scout/` (pass `--runs .shokunin/game-dev-2d/corpus/live/r61-scout/runs` to runners that accept it). Create the reports dir if missing. Nothing else.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: expansion, quality, discernment\nMilestone: audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      {
+        "name": "G2dR61Author",
+        "agent": "executor",
+        "task": "/skill:godspeed\n\nLane: game-dev-2d (game-dev-2d-shokunin) — training round 61; the lane's one declared axis-move is coverage: land the tracked spontaneous-crash classification row identified at r60. r60 scratch probes showed a fixture calling OS.crash() exits -6 (SIGABRT) carrying its own `ERROR:` marker yet classifies False (crash unrecognized), self-OS.kill(-9) classifies False, and an expected-exit -9 arm matches True unmodified — the identified zero-runner-change path is a crash-ERROR-marker allowlist for expected -6. Add the tracked CASES/negative row(s) so a spontaneous SIGABRT crash with its ERROR marker classifies True while prior classification behavior (harness SIGTERM -15, timeout, expected-mismatch rejection) is untouched\n\nWork from the lane worktree root ~/Projects/prymeagnt/game-dev-2d. Paths below use the `.shokunin/game-dev-2d/` prefix, which resolves into ~/Projects/shokunin/game-dev-2d-shokunin.\n\nYour seat: author (role executor).\n\nYou are the lane's ONLY tracked-file writer this round. Land the tracked spontaneous-crash classification: add the minimal additive CASES/meta rows exercising the crash fixture's OS.crash arm expecting exit -6 (SIGABRT) WITH its own `ERROR:` marker via the r60-identified crash-ERROR allowlist, plus a discriminating negative arm proving an expected-exit mismatch or a missing ERROR marker still rejects. Zero-runner-change means the allowlist is expressed through existing row/meta fields — if a runner change proves necessary, keep it minimal and additive and say why the zero-change path failed. Verify: full seven-flag battery `python3 .shokunin/game-dev-2d/corpus/fixtures/run_battery.py --godot godot --runs <your runs> --probe-failing --probe-unrelated-error --probe-export-launch --probe-godot-error --probe-stream-attribution --probe-crash-exit --probe-timeout` must show all prior 89 rows stable plus the new row(s) passing. Report exact commands, exits, verdict paths.\n\nWrite scope — ONLY: your report `.shokunin/game-dev-2d/reports/round-61/r61-author.md` plus scratch/receipts under `.shokunin/game-dev-2d/corpus/live/r61-author/` (pass `--runs .shokunin/game-dev-2d/corpus/live/r61-author/runs` to runners that accept it). Create the reports dir if missing. Nothing else.\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: expansion, quality, discernment\nMilestone: audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      {
+        "name": "G2dR61Critic",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nLane: game-dev-2d (game-dev-2d-shokunin) — training round 61; the lane's one declared axis-move is coverage: land the tracked spontaneous-crash classification row identified at r60. r60 scratch probes showed a fixture calling OS.crash() exits -6 (SIGABRT) carrying its own `ERROR:` marker yet classifies False (crash unrecognized), self-OS.kill(-9) classifies False, and an expected-exit -9 arm matches True unmodified — the identified zero-runner-change path is a crash-ERROR-marker allowlist for expected -6. Add the tracked CASES/negative row(s) so a spontaneous SIGABRT crash with its ERROR marker classifies True while prior classification behavior (harness SIGTERM -15, timeout, expected-mismatch rejection) is untouched\n\nWork from the lane worktree root ~/Projects/prymeagnt/game-dev-2d. Paths below use the `.shokunin/game-dev-2d/` prefix, which resolves into ~/Projects/shokunin/game-dev-2d-shokunin.\n\nYour seat: critic (role critic).\n\nFalsify the new crash classification. Attack axes: (a) can a NON-crash exit path produce exit -6 or the `ERROR:` marker (signal-origin indistinguishability — a deliberately raised SIGABRT vs a real abort)? (b) does the new row's marker allowlist accidentally bless an unrelated ERROR line? (c) sabotage mutants in scratch: fixture that crashes WITHOUT the marker, or exits -6 via a different route. Everything in your own scratch; report what rejects vs what slips through.\n\nWrite scope — ONLY: your report `.shokunin/game-dev-2d/reports/round-61/r61-critic.md` plus scratch/receipts under `.shokunin/game-dev-2d/corpus/live/r61-critic/` (pass `--runs .shokunin/game-dev-2d/corpus/live/r61-critic/runs` to runners that accept it). Create the reports dir if missing. Nothing else.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: expansion, quality, discernment\nMilestone: audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      {
+        "name": "G2dR61Reviewer",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nLane: game-dev-2d (game-dev-2d-shokunin) — training round 61; the lane's one declared axis-move is coverage: land the tracked spontaneous-crash classification row identified at r60. r60 scratch probes showed a fixture calling OS.crash() exits -6 (SIGABRT) carrying its own `ERROR:` marker yet classifies False (crash unrecognized), self-OS.kill(-9) classifies False, and an expected-exit -9 arm matches True unmodified — the identified zero-runner-change path is a crash-ERROR-marker allowlist for expected -6. Add the tracked CASES/negative row(s) so a spontaneous SIGABRT crash with its ERROR marker classifies True while prior classification behavior (harness SIGTERM -15, timeout, expected-mismatch rejection) is untouched\n\nWork from the lane worktree root ~/Projects/prymeagnt/game-dev-2d. Paths below use the `.shokunin/game-dev-2d/` prefix, which resolves into ~/Projects/shokunin/game-dev-2d-shokunin.\n\nYour seat: reviewer (role reviewer).\n\nNon-author audit of round 60. Re-run r60's pivotal scratch probes fresh (OS.crash→-6+ERROR classified False; self-OS.kill(-9)→False; expected-9→True) using the r60 reports' exact recipes in `reports/round-60/`; replay the seven-flag battery once into your own runs dir and confirm 89/89 on the committed state; verify cited hashes (8aca02e et al.) resolve and are ancestors of HEAD. Record agree/disagree per claim.\n\nWrite scope — ONLY: your report `.shokunin/game-dev-2d/reports/round-61/r61-reviewer.md` plus scratch/receipts under `.shokunin/game-dev-2d/corpus/live/r61-reviewer/` (pass `--runs .shokunin/game-dev-2d/corpus/live/r61-reviewer/runs` to runners that accept it). Create the reports dir if missing. Nothing else.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: expansion, quality, discernment\nMilestone: audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      {
+        "name": "G2dR61Simplifier",
+        "agent": "simplifier",
+        "task": "/skill:godspeed\n\nLane: game-dev-2d (game-dev-2d-shokunin) — training round 61; the lane's one declared axis-move is coverage: land the tracked spontaneous-crash classification row identified at r60. r60 scratch probes showed a fixture calling OS.crash() exits -6 (SIGABRT) carrying its own `ERROR:` marker yet classifies False (crash unrecognized), self-OS.kill(-9) classifies False, and an expected-exit -9 arm matches True unmodified — the identified zero-runner-change path is a crash-ERROR-marker allowlist for expected -6. Add the tracked CASES/negative row(s) so a spontaneous SIGABRT crash with its ERROR marker classifies True while prior classification behavior (harness SIGTERM -15, timeout, expected-mismatch rejection) is untouched\n\nWork from the lane worktree root ~/Projects/prymeagnt/game-dev-2d. Paths below use the `.shokunin/game-dev-2d/` prefix, which resolves into ~/Projects/shokunin/game-dev-2d-shokunin.\n\nYour seat: simplifier (role simplifier).\n\nMinimal-design critique, report-only. When the author's CASES diff exists (poll `git -C ~/Projects/shokunin/game-dev-2d-shokunin diff`), judge whether the tracked row is the minimal expression of the crash class — could an expected-signature field already carry it without a new allowlist concept; name anything deletable.\n\nWrite scope — ONLY: your report `.shokunin/game-dev-2d/reports/round-61/r61-simplifier.md` plus scratch/receipts under `.shokunin/game-dev-2d/corpus/live/r61-simplifier/` (pass `--runs .shokunin/game-dev-2d/corpus/live/r61-simplifier/runs` to runners that accept it). Create the reports dir if missing. Nothing else.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: expansion, quality, discernment\nMilestone: audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      {
+        "name": "G2dR61Scribe",
+        "agent": "scribe",
+        "task": "/skill:godspeed\n\nLane: game-dev-2d (game-dev-2d-shokunin) — training round 61; the lane's one declared axis-move is coverage: land the tracked spontaneous-crash classification row identified at r60. r60 scratch probes showed a fixture calling OS.crash() exits -6 (SIGABRT) carrying its own `ERROR:` marker yet classifies False (crash unrecognized), self-OS.kill(-9) classifies False, and an expected-exit -9 arm matches True unmodified — the identified zero-runner-change path is a crash-ERROR-marker allowlist for expected -6. Add the tracked CASES/negative row(s) so a spontaneous SIGABRT crash with its ERROR marker classifies True while prior classification behavior (harness SIGTERM -15, timeout, expected-mismatch rejection) is untouched\n\nWork from the lane worktree root ~/Projects/prymeagnt/game-dev-2d. Paths below use the `.shokunin/game-dev-2d/` prefix, which resolves into ~/Projects/shokunin/game-dev-2d-shokunin.\n\nYour seat: scribe (role scribe).\n\nDocumentation draft, report-only. Draft the knowledge entry content (per corpus conventions: source/verified-at/recheck) for crash-classification semantics — signal-vs-harness-kill provenance, the -6+ERROR allowlist, retained UNKNOWNs (signal-origin indistinguishability) — plus the LOG.md round-61 entry draft, inside your report.\n\nWrite scope — ONLY: your report `.shokunin/game-dev-2d/reports/round-61/r61-scribe.md` plus scratch/receipts under `.shokunin/game-dev-2d/corpus/live/r61-scribe/` (pass `--runs .shokunin/game-dev-2d/corpus/live/r61-scribe/runs` to runners that accept it). Create the reports dir if missing. Nothing else.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: expansion, quality, discernment\nMilestone: audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      {
+        "name": "G2dR61Baseline",
+        "agent": "scout",
+        "task": "/skill:godspeed\n\nLane: game-dev-2d (game-dev-2d-shokunin) — training round 61; the lane's one declared axis-move is coverage: land the tracked spontaneous-crash classification row identified at r60. r60 scratch probes showed a fixture calling OS.crash() exits -6 (SIGABRT) carrying its own `ERROR:` marker yet classifies False (crash unrecognized), self-OS.kill(-9) classifies False, and an expected-exit -9 arm matches True unmodified — the identified zero-runner-change path is a crash-ERROR-marker allowlist for expected -6. Add the tracked CASES/negative row(s) so a spontaneous SIGABRT crash with its ERROR marker classifies True while prior classification behavior (harness SIGTERM -15, timeout, expected-mismatch rejection) is untouched\n\nWork from the lane worktree root ~/Projects/prymeagnt/game-dev-2d. Paths below use the `.shokunin/game-dev-2d/` prefix, which resolves into ~/Projects/shokunin/game-dev-2d-shokunin.\n\nYour seat: baseline (role scout).\n\nFrozen before-state replay. `git -C ~/Projects/shokunin/game-dev-2d-shokunin archive HEAD | tar -x -C <scratch>/tree`; run the seven-flag battery against that frozen tree (Godot 4.7.2 at /usr/bin/godot; `--runs` into your scratch). If frozen-run is structurally impossible, replay in-place at HEAD and flag contamination risk. Report the 89/89 before-state receipt summary verbatim.\n\nWrite scope — ONLY: your report `.shokunin/game-dev-2d/reports/round-61/r61-baseline.md` plus scratch/receipts under `.shokunin/game-dev-2d/corpus/live/r61-baseline/` (pass `--runs .shokunin/game-dev-2d/corpus/live/r61-baseline/runs` to runners that accept it). Create the reports dir if missing. Nothing else.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: expansion, quality, discernment\nMilestone: audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      {
+        "name": "G2dR61Boundary",
+        "agent": "revenger",
+        "task": "/skill:godspeed\n\nLane: game-dev-2d (game-dev-2d-shokunin) — training round 61; the lane's one declared axis-move is coverage: land the tracked spontaneous-crash classification row identified at r60. r60 scratch probes showed a fixture calling OS.crash() exits -6 (SIGABRT) carrying its own `ERROR:` marker yet classifies False (crash unrecognized), self-OS.kill(-9) classifies False, and an expected-exit -9 arm matches True unmodified — the identified zero-runner-change path is a crash-ERROR-marker allowlist for expected -6. Add the tracked CASES/negative row(s) so a spontaneous SIGABRT crash with its ERROR marker classifies True while prior classification behavior (harness SIGTERM -15, timeout, expected-mismatch rejection) is untouched\n\nWork from the lane worktree root ~/Projects/prymeagnt/game-dev-2d. Paths below use the `.shokunin/game-dev-2d/` prefix, which resolves into ~/Projects/shokunin/game-dev-2d-shokunin.\n\nYour seat: boundary (role revenger).\n\nProbe the OTHER unprobed diagnostic shapes named in SCORECARD planned — scratch only, report-only: process-tree timeout (a Godot child spawning a descendant that outlives it — does the harness reap/kill the tree or wait?) and startup-margin robustness (slow-start fixture approaching the timeout bound). No tracked edits. Report observed behavior with receipts and recommend next-round candidate rows.\n\nWrite scope — ONLY: your report `.shokunin/game-dev-2d/reports/round-61/r61-boundary.md` plus scratch/receipts under `.shokunin/game-dev-2d/corpus/live/r61-boundary/` (pass `--runs .shokunin/game-dev-2d/corpus/live/r61-boundary/runs` to runners that accept it). Create the reports dir if missing. Nothing else.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: expansion, quality, discernment\nMilestone: audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      {
+        "name": "G3dR70Scout",
+        "agent": "scout",
+        "task": "/skill:godspeed\n\nLane: game-dev-3d (game-dev-3d-shokunin) — training round 70; the lane's one declared axis-move is depth: resolve the r69 UNKNOWN: is NavigationAgent3D.distance_to_target Euclidean or path-sum? r69 measured 2.828427 (=sqrt(8)) on a convex 4x4 nav polygon where both candidates coincide. Add a `navagent3d_detour.gd` fixture whose navmesh geometry forces a non-straight path between agent and target, so the measured distance discriminates: ~Euclidean implies Euclidean, ~computed path length implies path-sum; keep a straight-line control arm\n\nWork from the lane worktree root ~/Projects/prymeagnt/game-dev-3d. Paths below use the `.shokunin/game-dev-3d/` prefix, which resolves into ~/Projects/shokunin/game-dev-3d-shokunin.\n\nYour seat: scout (role scout).\n\nRecon only. Map how `corpus/fixtures/navagent3d_*.gd` fixtures author their navmesh and drive NavigationAgent3D (read `navagent3d_distance.gd`, `navagent3d_next.gd`, `navigation3d_path.gd`, `navagent3d_follow.gd`), and identify the minimal way to force a non-straight path (notch in the single polygon, a second polygon island, an obstacle cut via navigation polygon carving, or navigation layers). Report the chosen mechanism with file:line pointers and the expected Euclidean-vs-path-sum values for a concrete geometry.\n\nWrite scope — ONLY: your report `.shokunin/game-dev-3d/reports/round-70/r70-scout.md` plus scratch/receipts under `.shokunin/game-dev-3d/corpus/live/r70-scout/` (pass `--runs .shokunin/game-dev-3d/corpus/live/r70-scout/runs` to runners that accept it). Create the reports dir if missing. Nothing else.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: expansion, quality, discernment\nMilestone: audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      {
+        "name": "G3dR70Author",
+        "agent": "executor",
+        "task": "/skill:godspeed\n\nLane: game-dev-3d (game-dev-3d-shokunin) — training round 70; the lane's one declared axis-move is depth: resolve the r69 UNKNOWN: is NavigationAgent3D.distance_to_target Euclidean or path-sum? r69 measured 2.828427 (=sqrt(8)) on a convex 4x4 nav polygon where both candidates coincide. Add a `navagent3d_detour.gd` fixture whose navmesh geometry forces a non-straight path between agent and target, so the measured distance discriminates: ~Euclidean implies Euclidean, ~computed path length implies path-sum; keep a straight-line control arm\n\nWork from the lane worktree root ~/Projects/prymeagnt/game-dev-3d. Paths below use the `.shokunin/game-dev-3d/` prefix, which resolves into ~/Projects/shokunin/game-dev-3d-shokunin.\n\nYour seat: author (role executor).\n\nYou are the lane's ONLY tracked-file writer this round. Add `corpus/fixtures/navagent3d_detour.gd` plus minimal additive CASES rows in run_battery.py: agent and target placed so the navmesh path must detour around an obstacle/notch while Euclidean distance stays small and hand-computable. Assert which candidate the engine returns: distance≈Euclidean → Euclidean; distance≈path length → path-sum; else record bounded UNKNOWN. Include a `--straight` (or paired-case) control on convex ground reproducing 2.828427. Verify: full Godot battery + 4 probes (`--probe-tree-timeout --probe-crash-exit --probe-stream-attribution --probe-failing`) green with prior 85 rows stable, and all six Node suites unchanged. Report exact commands/exits/receipts.\n\nWrite scope — ONLY: your report `.shokunin/game-dev-3d/reports/round-70/r70-author.md` plus scratch/receipts under `.shokunin/game-dev-3d/corpus/live/r70-author/` (pass `--runs .shokunin/game-dev-3d/corpus/live/r70-author/runs` to runners that accept it). Create the reports dir if missing. Nothing else.\n\nLane bounds: leaf member — no subagent dispatch except your single labrat.\nJudged on: expansion, quality, discernment\nMilestone: audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      {
+        "name": "G3dR70Critic",
+        "agent": "critic",
+        "task": "/skill:godspeed\n\nLane: game-dev-3d (game-dev-3d-shokunin) — training round 70; the lane's one declared axis-move is depth: resolve the r69 UNKNOWN: is NavigationAgent3D.distance_to_target Euclidean or path-sum? r69 measured 2.828427 (=sqrt(8)) on a convex 4x4 nav polygon where both candidates coincide. Add a `navagent3d_detour.gd` fixture whose navmesh geometry forces a non-straight path between agent and target, so the measured distance discriminates: ~Euclidean implies Euclidean, ~computed path length implies path-sum; keep a straight-line control arm\n\nWork from the lane worktree root ~/Projects/prymeagnt/game-dev-3d. Paths below use the `.shokunin/game-dev-3d/` prefix, which resolves into ~/Projects/shokunin/game-dev-3d-shokunin.\n\nYour seat: critic (role critic).\n\nFalsify the detour discrimination in scratch: is the detour real (get_next_path_position/get_final_position show the waypoint is off the straight line)? Could the measured distance be to a different point (final position vs target)? Construct degenerate cases — obstacle fully blocking, partial-block edge, target on the obstacle edge — and report whether the fixture's claim survives each.\n\nWrite scope — ONLY: your report `.shokunin/game-dev-3d/reports/round-70/r70-critic.md` plus scratch/receipts under `.shokunin/game-dev-3d/corpus/live/r70-critic/` (pass `--runs .shokunin/game-dev-3d/corpus/live/r70-critic/runs` to runners that accept it). Create the reports dir if missing. Nothing else.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: expansion, quality, discernment\nMilestone: audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      {
+        "name": "G3dR70Reviewer",
+        "agent": "reviewer",
+        "task": "/skill:godspeed\n\nLane: game-dev-3d (game-dev-3d-shokunin) — training round 70; the lane's one declared axis-move is depth: resolve the r69 UNKNOWN: is NavigationAgent3D.distance_to_target Euclidean or path-sum? r69 measured 2.828427 (=sqrt(8)) on a convex 4x4 nav polygon where both candidates coincide. Add a `navagent3d_detour.gd` fixture whose navmesh geometry forces a non-straight path between agent and target, so the measured distance discriminates: ~Euclidean implies Euclidean, ~computed path length implies path-sum; keep a straight-line control arm\n\nWork from the lane worktree root ~/Projects/prymeagnt/game-dev-3d. Paths below use the `.shokunin/game-dev-3d/` prefix, which resolves into ~/Projects/shokunin/game-dev-3d-shokunin.\n\nYour seat: reviewer (role reviewer).\n\nNon-author audit of round 69. Replay `navagent3d_distance.gd` arms fresh (default 1.0 reach → distance 2.828427, reached/finished false, reachable true; `--wide-reach` 3.0 → reached/finished true exit 2, identical distance), confirm 85/85 battery on committed state if feasible, verify work hash `1e6199b` and cited fixture sha `b820e469…` resolve/are ancestors. Record agree/disagree per claim.\n\nWrite scope — ONLY: your report `.shokunin/game-dev-3d/reports/round-70/r70-reviewer.md` plus scratch/receipts under `.shokunin/game-dev-3d/corpus/live/r70-reviewer/` (pass `--runs .shokunin/game-dev-3d/corpus/live/r70-reviewer/runs` to runners that accept it). Create the reports dir if missing. Nothing else.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: expansion, quality, discernment\nMilestone: audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      {
+        "name": "G3dR70Simplifier",
+        "agent": "simplifier",
+        "task": "/skill:godspeed\n\nLane: game-dev-3d (game-dev-3d-shokunin) — training round 70; the lane's one declared axis-move is depth: resolve the r69 UNKNOWN: is NavigationAgent3D.distance_to_target Euclidean or path-sum? r69 measured 2.828427 (=sqrt(8)) on a convex 4x4 nav polygon where both candidates coincide. Add a `navagent3d_detour.gd` fixture whose navmesh geometry forces a non-straight path between agent and target, so the measured distance discriminates: ~Euclidean implies Euclidean, ~computed path length implies path-sum; keep a straight-line control arm\n\nWork from the lane worktree root ~/Projects/prymeagnt/game-dev-3d. Paths below use the `.shokunin/game-dev-3d/` prefix, which resolves into ~/Projects/shokunin/game-dev-3d-shokunin.\n\nYour seat: simplifier (role simplifier).\n\nMinimal-design critique, report-only. Judge the author's detour fixture when it lands (poll the lane repo diff): simplest geometry that forces a detour, no redundant arms, mutation coverage adequate.\n\nWrite scope — ONLY: your report `.shokunin/game-dev-3d/reports/round-70/r70-simplifier.md` plus scratch/receipts under `.shokunin/game-dev-3d/corpus/live/r70-simplifier/` (pass `--runs .shokunin/game-dev-3d/corpus/live/r70-simplifier/runs` to runners that accept it). Create the reports dir if missing. Nothing else.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: expansion, quality, discernment\nMilestone: audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      {
+        "name": "G3dR70Scribe",
+        "agent": "scribe",
+        "task": "/skill:godspeed\n\nLane: game-dev-3d (game-dev-3d-shokunin) — training round 70; the lane's one declared axis-move is depth: resolve the r69 UNKNOWN: is NavigationAgent3D.distance_to_target Euclidean or path-sum? r69 measured 2.828427 (=sqrt(8)) on a convex 4x4 nav polygon where both candidates coincide. Add a `navagent3d_detour.gd` fixture whose navmesh geometry forces a non-straight path between agent and target, so the measured distance discriminates: ~Euclidean implies Euclidean, ~computed path length implies path-sum; keep a straight-line control arm\n\nWork from the lane worktree root ~/Projects/prymeagnt/game-dev-3d. Paths below use the `.shokunin/game-dev-3d/` prefix, which resolves into ~/Projects/shokunin/game-dev-3d-shokunin.\n\nYour seat: scribe (role scribe).\n\nDocumentation draft, report-only. Draft the knowledge entry for NavigationAgent3D distance semantics (Euclidean vs path-sum verdict with receipts; retained UNKNOWNs e.g. multi-polygon ramps) plus the LOG.md round-70 entry draft, inside your report.\n\nWrite scope — ONLY: your report `.shokunin/game-dev-3d/reports/round-70/r70-scribe.md` plus scratch/receipts under `.shokunin/game-dev-3d/corpus/live/r70-scribe/` (pass `--runs .shokunin/game-dev-3d/corpus/live/r70-scribe/runs` to runners that accept it). Create the reports dir if missing. Nothing else.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: expansion, quality, discernment\nMilestone: audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      {
+        "name": "G3dR70Baseline",
+        "agent": "scout",
+        "task": "/skill:godspeed\n\nLane: game-dev-3d (game-dev-3d-shokunin) — training round 70; the lane's one declared axis-move is depth: resolve the r69 UNKNOWN: is NavigationAgent3D.distance_to_target Euclidean or path-sum? r69 measured 2.828427 (=sqrt(8)) on a convex 4x4 nav polygon where both candidates coincide. Add a `navagent3d_detour.gd` fixture whose navmesh geometry forces a non-straight path between agent and target, so the measured distance discriminates: ~Euclidean implies Euclidean, ~computed path length implies path-sum; keep a straight-line control arm\n\nWork from the lane worktree root ~/Projects/prymeagnt/game-dev-3d. Paths below use the `.shokunin/game-dev-3d/` prefix, which resolves into ~/Projects/shokunin/game-dev-3d-shokunin.\n\nYour seat: baseline (role scout).\n\nFrozen before-state replay. `git -C ~/Projects/shokunin/game-dev-3d-shokunin archive HEAD | tar -x -C <scratch>/tree`; run the Godot battery (85/85 + 4 probes, `--godot /usr/bin/godot`, `--runs` into your scratch) and all six Node suites (`node corpus/fixtures/three/run_*.mjs` — run_cases, run_layer_cases, run_order_cases, run_camera_cases, run_ortho_cases, run_ray_cases) from the frozen tree. Report before-state totals verbatim.\n\nWrite scope — ONLY: your report `.shokunin/game-dev-3d/reports/round-70/r70-baseline.md` plus scratch/receipts under `.shokunin/game-dev-3d/corpus/live/r70-baseline/` (pass `--runs .shokunin/game-dev-3d/corpus/live/r70-baseline/runs` to runners that accept it). Create the reports dir if missing. Nothing else.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: expansion, quality, discernment\nMilestone: audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      {
+        "name": "G3dR70Boundary",
+        "agent": "revenger",
+        "task": "/skill:godspeed\n\nLane: game-dev-3d (game-dev-3d-shokunin) — training round 70; the lane's one declared axis-move is depth: resolve the r69 UNKNOWN: is NavigationAgent3D.distance_to_target Euclidean or path-sum? r69 measured 2.828427 (=sqrt(8)) on a convex 4x4 nav polygon where both candidates coincide. Add a `navagent3d_detour.gd` fixture whose navmesh geometry forces a non-straight path between agent and target, so the measured distance discriminates: ~Euclidean implies Euclidean, ~computed path length implies path-sum; keep a straight-line control arm\n\nWork from the lane worktree root ~/Projects/prymeagnt/game-dev-3d. Paths below use the `.shokunin/game-dev-3d/` prefix, which resolves into ~/Projects/shokunin/game-dev-3d-shokunin.\n\nYour seat: boundary (role revenger).\n\nScratch-only recon for the NEXT depth surface: in the detour geometry (copy the author's fixture approach into your scratch or write your own), probe `get_final_position()` and `get_next_path_position()` — do they return the detour waypoint chain or the raw target, and does `is_target_reachable` differ under partial blocking? Report observations with receipts; no tracked edits.\n\nWrite scope — ONLY: your report `.shokunin/game-dev-3d/reports/round-70/r70-boundary.md` plus scratch/receipts under `.shokunin/game-dev-3d/corpus/live/r70-boundary/` (pass `--runs .shokunin/game-dev-3d/corpus/live/r70-boundary/runs` to runners that accept it). Create the reports dir if missing. Nothing else.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: expansion, quality, discernment\nMilestone: audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      {
+        "name": "XConnector",
+        "agent": "connector",
+        "task": "/skill:godspeed\n\nCross-lane sibling-overlap scan for this wave's three lanes: audio (WAV fixture/measurement pipeline), game-dev-2d (Godot headless 2D battery incl. audio_bus_route.gd / audio_playback.gd — overlaps audio's domain surface), game-dev-3d (Godot headless 3D battery; run_battery.py is a sibling-diverged copy of 2d's). Read the three PROVINCE.md files plus relevant fixtures. Report: (a) contested scope — ground two provinces both claim, especially engine-audio between audio and game-dev-2d; (b) shared-harness drift — has run_battery.py diverged in ways worth a lesson; (c) nothing written to any lane repo. Write your report to /home/vgpnk/Projects/shokunin/.ufo/waves/shokunin-train-20261013/x-connector.md (create dir if needed); that is your ONLY write.\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: expansion, quality, discernment\nMilestone: audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      },
+      {
+        "name": "XSentinel",
+        "agent": "sentinel",
+        "task": "/skill:godspeed\n\nInvariant sweep across the three lane repos and the fleet root, read-only on repos: (1) record the pre-wave `git status --short` census + HEAD of audio-shokunin, game-dev-2d-shokunin, game-dev-3d-shokunin and ~/Projects/shokunin — this is the contamination baseline the parent integrates against; (2) verify `.shokunin/<lane>` symlink targets resolve to the canonical repos; (3) grep each repo's corpus for credential-shaped material (tokens, keys, `op://` refs — CORPUS.md bars them) — report findings only, never print secret values; (4) verify each lane repo's git identity config and that no remote push happened during the wave (fetch-only checks like `git log origin..HEAD` if remotes resolve, else note unreachable). Write your report to /home/vgpnk/Projects/shokunin/.ufo/waves/shokunin-train-20261013/x-sentinel.md (your ONLY write).\n\nLane bounds: leaf member — no subagent dispatch.\nJudged on: expansion, quality, discernment\nMilestone: audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)"
+      }
+    ]
+  },
+  "resumeSends": [],
+  "note": "Issue exactly one batched task call with taskCall ({context, tasks}); never split a wave into multiple task calls (one-swarm-per-wave). Then one hub send per resumeSends entry: hub send --to <entry.resume> --message <entry.message> (entry.name is bookkeeping, not a hub field)."
+}
