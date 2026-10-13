@@ -44,7 +44,12 @@ mint → shonen (apprentice) → shokunin (artisan) → jin'i-ryu (self-iteratin
   its own `shokunin-<domain>` repo, and (after probation) a roster row here.
 - **Shokunin** — promoted when it performs domain work end-to-end: every
   `SHONEN.md` box checked by a **non-author** reviewer — never
-  self-attestation. On promotion `SHONEN.md` is deleted.
+  self-attestation — **and** it has logged **≥10,000 verified
+  craft-hours** (`HOURS.md`). Craft-hours are *collective* in-domain
+  lane-minutes: an N-lane wave working T minutes logs N×T, so swarms
+  compress calendar time without diluting substance. Hours are necessary,
+  never sufficient — the quality gate still binds. On promotion
+  `SHONEN.md` is deleted.
 - **Jin'i-ryu** — promoted when it can iterate on itself.
 
 ### Six expertise axes (`AXES.md`)
