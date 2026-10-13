@@ -515,13 +515,3 @@ superseded text (`PROTOCOL.md` §Invariants).
   from their last commits (kasegi r18, kengaku r14, kake/kumitate/kotoba/kagi
   r17, kama r2). Prime lanes also declared for completeness.
 - Evidence: `gh repo list`, lane clones, conf diff.
-
-## 2026-10-13 — canon: the 10,000 craft-hour bar
-
-- `PROTOCOL.md` §Craft-hours (upstream kimi-shokunin `main`): shonen→shokunin
-  now requires ≥10,000 verified craft-hours AND the SHONEN gate — hours
-  necessary, never sufficient. Craft-time is collective: N lanes × T
-  in-domain minutes logs N×T. `HOURS.md` append-only ledger per lane;
-  SHONEN seed gains box 5 (template byte-synced upstream).
-- MANIFEST roster gains `craft_hours` mirror (all 0 — ledgers open today).
-- Evidence: upstream commit; PROTOCOL.md §Craft-hours.
