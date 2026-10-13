@@ -506,3 +506,12 @@ superseded text (`PROTOCOL.md` §Invariants).
 - Remote convention noted: `<id>-shokunin` (2026-09, private) vs
   `shokunin-<domain>` (2026-10, public); canonical name is always
   `<id>-shokunin`.
+
+## 2026-10-13 — canon lanes reactivated locally
+
+- All seven 2026-09-era lanes cloned to `~/Projects/shokunin/<id>-shokunin/`
+  and declared in `shokunin.conf` LANES (owned axes per each lane's
+  SCORECARD). They are current lanes, not archive: next rounds continue
+  from their last commits (kasegi r18, kengaku r14, kake/kumitate/kotoba/kagi
+  r17, kama r2). Prime lanes also declared for completeness.
+- Evidence: `gh repo list`, lane clones, conf diff.
