@@ -515,3 +515,13 @@ superseded text (`PROTOCOL.md` §Invariants).
   from their last commits (kasegi r18, kengaku r14, kake/kumitate/kotoba/kagi
   r17, kama r2). Prime lanes also declared for completeness.
 - Evidence: `gh repo list`, lane clones, conf diff.
+
+## 2026-10-13 — consolidation + canon lanes public
+
+- prymeagnt `.shokunin/<lane>` replaced by symlinks → canonical repos at
+  `~/Projects/shokunin/<lane>-shokunin/` (committed + pushed per lane
+  remote). Verify paths keep resolving through the link.
+- Seven 2026-09 canon lanes made public per operator decision.
+- Craft-hours mechanism fully reverted everywhere (upstream, fleet,
+  all 13 lanes) — history retains add+revert.
+- Evidence: worktree commits; `gh repo view`; lane remotes.
