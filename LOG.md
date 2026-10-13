@@ -493,3 +493,16 @@ superseded text (`PROTOCOL.md` §Invariants).
 - Protocol docs re-vendored from live upstream `kimi-shokunin`
   (`812f1da`, 2026-10-13).
 - Evidence: merge commit; `gh repo view VeigaPunk/shokunin-*`.
+
+## 2026-10-13 — canon roster restored
+
+- ROADMAP roster restored to the canonical `Shokunin | Domain | Rank`
+  shape — the 2026-09 lanes are first-class canon, not an archived tier;
+  the six 2026-10 lanes join under the same `<id>-shokunin` naming.
+- kama-shokunin roster row landed — mint was sanctioned in
+  `.ufo/l0-questions.md` (round-10 aggregator ruling, two unplaceable
+  demand instances); remote `VeigaPunk/kama-shokunin` exists since
+  2026-09-29. Evidence: merge ancestry + remote.
+- Remote convention noted: `<id>-shokunin` (2026-09, private) vs
+  `shokunin-<domain>` (2026-10, public); canonical name is always
+  `<id>-shokunin`.

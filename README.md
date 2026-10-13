@@ -83,27 +83,27 @@ registry of every mint.
 
 ## Roster
 
-`MANIFEST.json` is canonical; `ROADMAP.md` mirrors it. Local dirs follow
-`$SHOKUNIN_ROOT/<id>-shokunin/`; remotes follow `shokunin-<domain>`.
+`MANIFEST.json` is canonical; `ROADMAP.md` mirrors it. Every minted
+shokunin registers a row here and gets its own `shokunin-*` expert repo.
+Canonical names are `<id>-shokunin`; 2026-09 remotes keep that shape
+(private), 2026-10 remotes use `shokunin-<domain>` (public).
 
-### Active fleet
-
-| Repo | Domain | Status |
+| Shokunin | Domain | Rank |
 |---|---|---|
-| [shokunin-reverse-engineering](https://github.com/VeigaPunk/shokunin-reverse-engineering) (kaidoku) | Shipped-artifact RE with REA — ELF/PE, Electron/ASAR, APK, firmware, managed, runtime | shonen — promotion pending |
-| [shokunin-binary-forensics](https://github.com/VeigaPunk/shokunin-binary-forensics) (revenger) | RE with evidence-ledger discipline — byte-oracle fixtures, forged-claim rejection | shonen, 60+ rounds |
-| [shokunin-game-audio](https://github.com/VeigaPunk/shokunin-game-audio) (audio) | Game SFX + soundtrack, headless-verified | shonen, 61 rounds |
-| [shokunin-godot-2d](https://github.com/VeigaPunk/shokunin-godot-2d) (game-dev-2d) | 2D production via executable Godot headless fixtures | shonen, 60 rounds |
-| [shokunin-3d-engines](https://github.com/VeigaPunk/shokunin-3d-engines) (game-dev-3d) | 3D production via headless fixtures — Godot, three.js | shonen, 69 rounds |
-| [shokunin-world-bible](https://github.com/VeigaPunk/shokunin-world-bible) (lore) | Fictional-world records + mechanical consistency | shonen, 85 rounds |
+| [kasegi-shokunin](https://github.com/VeigaPunk/kasegi-shokunin) | bounty & security research | shonen |
+| [kengaku-shokunin](https://github.com/VeigaPunk/kengaku-shokunin) | LLM/model research & evaluation | shonen |
+| [kake-shokunin](https://github.com/VeigaPunk/kake-shokunin) | web properties & publishing | shonen |
+| [kumitate-shokunin](https://github.com/VeigaPunk/kumitate-shokunin) | orchestration & tooling | shonen |
+| [kotoba-shokunin](https://github.com/VeigaPunk/kotoba-shokunin) | prompt & skill craft | shonen |
+| [kagi-shokunin](https://github.com/VeigaPunk/kagi-shokunin) | secrets & vault ops | shonen |
+| [kama-shokunin](https://github.com/VeigaPunk/kama-shokunin) | local model serving & endpoint health | shonen |
+| [kaidoku-shokunin](https://github.com/VeigaPunk/shokunin-reverse-engineering) | shipped-artifact reverse engineering (REA) | shonen |
+| [revenger-shokunin](https://github.com/VeigaPunk/shokunin-binary-forensics) | binary forensics, evidence-ledger verification | shonen |
+| [audio-shokunin](https://github.com/VeigaPunk/shokunin-game-audio) | game audio production | shonen |
+| [game-dev-2d-shokunin](https://github.com/VeigaPunk/shokunin-godot-2d) | 2D game production, executable fixtures | shonen |
+| [game-dev-3d-shokunin](https://github.com/VeigaPunk/shokunin-3d-engines) | 3D game production, headless fixtures | shonen |
+| [lore-shokunin](https://github.com/VeigaPunk/shokunin-world-bible) | fictional-world records & consistency | shonen |
 
-### Previous era — 2026-09 (archived remotes)
-
-kasegi (bounty/security) · kengaku (LLM/model research) ·
-kake (web properties) · kumitate (orchestration tooling) ·
-kotoba (prompt/skill craft) · kagi (secrets/vault ops) ·
-kama (minted post-r17) — history preserved in this repo's merged ancestry
-and each archived `*-shokunin` remote.
 
 ## Files
 

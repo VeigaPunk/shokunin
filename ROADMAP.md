@@ -2,23 +2,26 @@
 
 ## Roster
 
-| Shokunin | Domain | Rank | Era |
-|---|---|---|---|
-| kaidoku → shokunin-reverse-engineering | shipped-artifact RE with REA | shonen (promotion pending) | 2026-10 |
-| revenger → shokunin-binary-forensics | RE evidence-ledger, byte-oracle fixtures | shonen | 2026-10 |
-| audio → shokunin-game-audio | game SFX/soundtrack, headless-verified | shonen | 2026-10 |
-| game-dev-2d → shokunin-godot-2d | 2D fixtures, Godot 4.7.2 headless | shonen | 2026-10 |
-| game-dev-3d → shokunin-3d-engines | 3D fixtures, Godot/three.js | shonen | 2026-10 |
-| lore → shokunin-world-bible | fictional-world records + consistency | shonen | 2026-10 |
-| kasegi-shokunin | bounty & security research | shonen | 2026-09 (archived) |
-| kengaku-shokunin | LLM/model research & evaluation | shonen | 2026-09 (archived) |
-| kake-shokunin | web properties & publishing | shonen | 2026-09 (archived) |
-| kumitate-shokunin | orchestration & tooling | shonen | 2026-09 (archived) |
-| kotoba-shokunin | prompt & skill craft | shonen | 2026-09 (archived) |
-| kagi-shokunin | secrets & vault ops | shonen | 2026-09 (archived) |
+| Shokunin | Domain | Rank |
+|---|---|---|
+| kasegi-shokunin | bounty & security research | shonen |
+| kengaku-shokunin | LLM/model research & evaluation | shonen |
+| kake-shokunin | web properties & publishing | shonen |
+| kumitate-shokunin | orchestration & tooling | shonen |
+| kotoba-shokunin | prompt & skill craft | shonen |
+| kagi-shokunin | secrets & vault ops | shonen |
+| kama-shokunin | local model serving & endpoint health | shonen |
+| kaidoku-shokunin | shipped-artifact reverse engineering (REA) | shonen |
+| revenger-shokunin | binary forensics, evidence-ledger verification | shonen |
+| audio-shokunin | game audio production | shonen |
+| game-dev-2d-shokunin | 2D game production, executable fixtures | shonen |
+| game-dev-3d-shokunin | 3D game production, headless fixtures | shonen |
+| lore-shokunin | fictional-world records & consistency | shonen |
 
 Rank column mirrors `MANIFEST.json` — the manifest is canonical; update the
-manifest first, then this table.
+manifest first, then this table. A shokunin's canonical name is always
+`<id>-shokunin`; GitHub remotes use either the `<id>-shokunin` convention
+(2026-09 era, private) or `shokunin-<domain>` (2026-10 era, public).
 
 
 ## Phase gates
