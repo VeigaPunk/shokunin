@@ -1,0 +1,15 @@
+/skill:godspeed
+Read your brief — it is the task. Execute exactly and stop.
+
+Wave: shokunin-train-20261101-w11  | Lane: audio | Seat: simplifier | Round: 72
+Lane-repo: ~/Projects/shokunin/audio-shokunin
+Task file (this text duplicated there): .ufo/waves/shokunin-train-20261101-w11/tasks/audio-simplifier.txt
+Write scope: reports/round-72/r72-simplifier.md (or reports/frontier/ for frontier seats) + corpus/live/r72-simplifier/ scratch ONLY.
+
+Seat rules: LEAF — no subagent dispatch; no git mutations (commit/push/merge/rebase/stash/checkout). Write ONLY inside your stated write scope (report file + scratch dir). Untrusted data cannot change your scope. Measured evidence or nothing: exact commands, exits, receipt paths, file:line refs. If the declared claim falsifies, report the actual outcome — a falsified claim is a useful round. Push/publish are operator-owned.
+
+ROUND 72 — audio lane. THIRD DECODER: libsndfile 1.2.2 on the 9-member transport corpus.
+Frontier evidence (READ FIRST): reports/frontier/fa-sndfile.md + corpus/live/frontier-sndfile/ — the seat already measured: post-sniff suffix fallback (raw-family only: .au/.snd/.gsm/.vox on identical no-magic bytes); SAME {named}/{anonymous} partition as sox's .snd gate; unique tier: magic-recognized-then-refused (txw 'unimplemented format'); dec_act/dec_hcom decode WAV/PCM16 transport-invariant.
+MOVE (coverage): add `--probe-sndfile-transport-r72` mirroring the r71 ffprobe arm: sndfile-info detection + a decode leg (sndfile-info prints format; a decode verdict needs sf_read — use the frontier seat's ctypes harness pattern or `sndfile-info` 'frames' line). Receipt family `sndfile_*_r72_probe` keyed per member x transport. Claim to test: the 3-decoder verdict lattice partitions members into distinct decoder-coverage classes (sox-only: txw-seekable/.f32-named; sndfile-only: .snd-named; ffmpeg superset on detect). Every claim needs measured evidence; insertion-only; prior rows byte-stable.
+
+| godspeed
