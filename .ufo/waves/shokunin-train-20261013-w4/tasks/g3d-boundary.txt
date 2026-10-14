@@ -1,0 +1,24 @@
+/skill:godspeed
+Read your brief file first — it is the task. Execute it exactly and stop.
+
+Brief: /home/vgpnk/Projects/shokunin/.ufo/waves/shokunin-train-20261013-w4/tasks/g3d-boundary.txt
+Lane: game-dev-3d
+Worktree/repo root: ~/Projects/prymeagnt/game-dev-3d
+Round: r73
+Declared axis-move (verbatim): formalize off-mesh navigation-link traversal gating as tracked CASES arms on the existing detour fixture: the r72 boundary seat measured that NavigationLink3D nodes are authorable headlessly and that companion path arrays (path_types/path_links/path_owners from path_metadata_flags) carry LINK-typed waypoints; the declared claims to pin: (a) enabling path_metadata_flags on the agent surfaces LINK-type points in the companion arrays where the plain path array is opaque; (b) traversal gates — navigation_layers bitmask mismatch on the link, bidirectional=false approached from the exit side, and enabled=false each drop the link from the computed path (each gate independently falsifiable); (c) the r72-boundary anomaly that link enter_cost appears inert in path cost while travel_cost is live — re-test explicitly as a pinned arm pair; (d) the pop-through hazard: with pdd large, the agent pops the link's near endpoint and next_target points across the void to the far endpoint. Keep all prior behavior — 112 existing CASES rows, four probes, Node suites 31/31 — byte-stable.
+
+Seat: boundary
+Report path (write ONLY this file + scratch inside your brief's write scope): reports/round-73/r73-boundary.md
+Scratch: corpus/live/r73-boundary/
+
+Seat rules (non-negotiable):
+- You are a LEAF: no subagent dispatch, and never run git commit/push/merge/rebase/stash/checkout in any repo.
+- Write only your own report file and scratch inside your brief's write scope.
+- Never touch another lane's files, another repo's tracked content, or shared state.
+- If the round's declared claim proves false under measurement, report the actual observed outcome: a falsified claim is a useful round; never force it or soften the record.
+- Every claim needs evidence: exact commands, observed exits, receipt paths, or file:line refs resolvable on this host.
+- Domain actions that would reach users/maintainers (push, publish) are operator-owned: do not attempt them.
+
+Probe edges once the author's arms land (scratch-only recon): (1) link traversal mid-flight — agent pdd-pops to a link endpoint: what do next_target/distance_to_target report DURING traversal (interpolated? far endpoint? zero-length)? — tests whether the r72 Euclidean model survives the link hop. (2) multiple links chained / link inside the detour wall geometry. (3) companion arrays on a path with NO links — flags set but no LINK points: are arrays empty or typed differently? (4) enter_cost extreme values (1e6, 0, negative) — does any value perturb path choice or is it structurally ignored in 4.7.2. (5) target_position set mid-link-traversal (re-anchoring during a hop). Scratch corpus/live/r73-boundary/; next-round proposals. IMPORTANT: use absolute --runs paths.
+
+| godspeed

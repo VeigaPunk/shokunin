@@ -1,0 +1,24 @@
+/skill:godspeed
+Read your brief file first — it is the task. Execute it exactly and stop.
+
+Brief: /home/vgpnk/Projects/shokunin/.ufo/waves/shokunin-train-20261013-w4/tasks/g3d-critic.txt
+Lane: game-dev-3d
+Worktree/repo root: ~/Projects/prymeagnt/game-dev-3d
+Round: r73
+Declared axis-move (verbatim): formalize off-mesh navigation-link traversal gating as tracked CASES arms on the existing detour fixture: the r72 boundary seat measured that NavigationLink3D nodes are authorable headlessly and that companion path arrays (path_types/path_links/path_owners from path_metadata_flags) carry LINK-typed waypoints; the declared claims to pin: (a) enabling path_metadata_flags on the agent surfaces LINK-type points in the companion arrays where the plain path array is opaque; (b) traversal gates — navigation_layers bitmask mismatch on the link, bidirectional=false approached from the exit side, and enabled=false each drop the link from the computed path (each gate independently falsifiable); (c) the r72-boundary anomaly that link enter_cost appears inert in path cost while travel_cost is live — re-test explicitly as a pinned arm pair; (d) the pop-through hazard: with pdd large, the agent pops the link's near endpoint and next_target points across the void to the far endpoint. Keep all prior behavior — 112 existing CASES rows, four probes, Node suites 31/31 — byte-stable.
+
+Seat: critic
+Report path (write ONLY this file + scratch inside your brief's write scope): reports/round-73/r73-critic.md
+Scratch: corpus/live/r73-critic/
+
+Seat rules (non-negotiable):
+- You are a LEAF: no subagent dispatch, and never run git commit/push/merge/rebase/stash/checkout in any repo.
+- Write only your own report file and scratch inside your brief's write scope.
+- Never touch another lane's files, another repo's tracked content, or shared state.
+- If the round's declared claim proves false under measurement, report the actual observed outcome: a falsified claim is a useful round; never force it or soften the record.
+- Every claim needs evidence: exact commands, observed exits, receipt paths, or file:line refs resolvable on this host.
+- Domain actions that would reach users/maintainers (push, publish) are operator-owned: do not attempt them.
+
+Attack the link-gating claims once the author's arms land (poll; else build the prototype from the r72-boundary notes under your own scratch). Sharpest attacks: (1) gate attribution — a layers-mismatch arm where the link drops could also be explained by geometry; construct the control that isolates the bitmask (same geometry, layers toggled only). (2) enter_cost 'inert' anomaly — is it truly inert, or just below the detour-vs-direct cost gap? Sweep enter_cost across the decision boundary — find the value where it flips the path choice, or prove it never does. (3) companion-array typing — LINK-type point vs ordinary point: is path_types actually populated in 4.7.2, or always zero? If flags are needed, which exact flag bits? (4) pop-through — does the r72 strict-< pop rule apply to link endpoints identically, or does link traversal reset/latch the index differently (e.g. teleport vs traverse)? (5) bidirectional approached mid-link. Scratch corpus/live/r73-critic/.
+
+| godspeed
