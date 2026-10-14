@@ -1,0 +1,25 @@
+/skill:godspeed
+Read your brief file first — it is the task. Execute it exactly and stop.
+
+Brief: /home/vgpnk/Projects/shokunin/.ufo/waves/shokunin-train-20261014-w6/tasks/g3d-critic.txt
+Lane: game-dev-3d
+Worktree/repo root: ~/Projects/prymeagnt/game-dev-3d
+Round: r75
+Declared axis-move (verbatim): pin server-side map/link MUTATION under a committed path — the zombie-waypoint question (XConnector wave-5 recommended arm): once a path materializes and latches, does mutating the map (disable/enable the off-mesh link, change navigation_layers on the link or agent, delete/recreate the region, region_set_transform) invalidate the stored path lazily, leave a traversable dead-gate waypoint, or update on the next forcing call? Declared falsifiable claim: the stored path is invalidated by map mutation (the r74 lazy-update model predicts invalidation is forcing-call-gated, and critic fw_mapedit/fw_layermask measured EMPTY path + final=(0,0,0) on map edits — land these as tracked CASES arms). Additive --arm= presets only; 145 prior CASES rows + 4 probes + Node 31/31 stable.
+
+Seat: critic
+Report path (write ONLY this file + scratch inside your brief's write scope): reports/round-75/r75-critic.md
+Scratch: corpus/live/r75-critic/
+
+Seat rules (non-negotiable):
+- You are a LEAF: no subagent dispatch, and never run git commit/push/merge/rebase/stash/checkout in any repo.
+- Write only your own report file and scratch inside your brief's write scope.
+- Never touch another lane's files, another repo's tracked content, or shared state.
+- If the round's declared claim proves false under measurement, report the actual observed outcome: a falsified claim is a useful round; never force it or soften the record.
+- Every claim needs evidence: exact commands, observed exits, receipt paths, or file:line refs resolvable on this host.
+- Domain actions that would reach users/maintainers (push, publish) are operator-owned: do not attempt them.
+- Baseline seats: freeze via `git archive HEAD` (tracked files only — NEVER recursively embed prior r*-baseline/frozen/tree dirs or node_modules; the archive command lists tracked files, so it already excludes untracked scratch — do NOT extract then re-archive a populated tree).
+
+Attack once author lands (poll; else build own mutation scratch fixture on the r74 steps machinery): (1) zombie traversal — a path committed with the link ENABLED, then link DISABLED mid-void: does the agent still pop across? measure precisely; (2) mutation inside the finished-latch — does a latched agent's stored path survive map mutation (the latch froze the update — does mutation bypass the freeze?); (3) invalidation completeness — EMPTY-path + final=(0,0,0) vs partial invalidation (idx preserved? flags?); (4) double-mutation races — enable+disable between two forcing calls = no observable change?; (5) does mutation invalidate ALL agents' paths or only the mutated link's dependents (shared map, second agent? if fixture is single-agent, document). Scratch corpus/live/r75-critic/.
+
+| godspeed
