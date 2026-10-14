@@ -1,37 +1,65 @@
 {
-  "wave": "shokunin-train-20261013-w5",
-  "dispatched": "2026-10-14T02:30Z",
-  "lanes": {
-    "audio-r66-scout": "65bdf509",
-    "audio-r66-author": "52a958ee",
-    "audio-r66-critic": "3a26417e",
-    "audio-r66-reviewer": "d75619e4",
-    "audio-r66-simplifier": "bcc1da34",
-    "audio-r66-scribe": "cab46042",
-    "audio-r66-baseline": "1916f7ab",
-    "audio-r66-boundary": "bf5160c2",
-    "g2d-r65-scout": "44474a6e",
-    "g2d-r65-author": "8482cc63",
-    "g2d-r65-critic": "a5ea93f6",
-    "g2d-r65-reviewer": "407cb47e",
-    "g2d-r65-simplifier": "2bb292a4",
-    "g2d-r65-scribe": "e0a3402f",
-    "g2d-r65-baseline": "3b8e88dd",
-    "g2d-r65-boundary": "484366c9",
-    "g3d-r74-scout": "b795f612",
-    "g3d-r74-author": "7e84e137",
-    "g3d-r74-critic": "ac5b01aa",
-    "g3d-r74-reviewer": "9872e662",
-    "g3d-r74-simplifier": "9a4c249e",
-    "g3d-r74-scribe": "627ddecc",
-    "g3d-r74-baseline": "1d721611",
-    "g3d-r74-boundary": "87db99aa",
-    "xconnector": "2ca3adc7",
-    "xsentinel": "2a703d1a"
-  },
-  "moves": {
-    "audio-r66-coverage": "preemptor-map completion: wve row + decodable-preemptor controls + len gates 24|25/131|132",
-    "g2d-r65-depth": "forged-REJECTION dual \u2014 post-death un-allowlisted ERROR: flips genuine PASS to FAIL",
-    "g3d-r74-depth": "moving-agent semantics \u2014 frozen path, pop-follows-position, latch, re-anchor"
-  }
+ "wave": "shokunin-train-20261013-w5",
+ "dispatched": "2026-10-14T02:30Z",
+ "lanes": {
+  "audio-r66-scout": "65bdf509",
+  "audio-r66-author": "52a958ee",
+  "audio-r66-critic": "3a26417e",
+  "audio-r66-reviewer": "d75619e4",
+  "audio-r66-simplifier": "bcc1da34",
+  "audio-r66-scribe": "cab46042",
+  "audio-r66-baseline": "1916f7ab",
+  "audio-r66-boundary": "bf5160c2",
+  "g2d-r65-scout": "44474a6e",
+  "g2d-r65-author": "8482cc63",
+  "g2d-r65-critic": "a5ea93f6",
+  "g2d-r65-reviewer": "407cb47e",
+  "g2d-r65-simplifier": "2bb292a4",
+  "g2d-r65-scribe": "e0a3402f",
+  "g2d-r65-baseline": "3b8e88dd",
+  "g2d-r65-boundary": "484366c9",
+  "g3d-r74-scout": "b795f612",
+  "g3d-r74-author": "7e84e137",
+  "g3d-r74-critic": "ac5b01aa",
+  "g3d-r74-reviewer": "9872e662",
+  "g3d-r74-simplifier": "9a4c249e",
+  "g3d-r74-scribe": "627ddecc",
+  "g3d-r74-baseline": "1d721611",
+  "g3d-r74-boundary": "87db99aa",
+  "xconnector": "2ca3adc7",
+  "xsentinel": "2a703d1a"
+ },
+ "moves": {
+  "audio-r66-coverage": "preemptor-map completion: wve row + decodable-preemptor controls + len gates 24|25/131|132",
+  "g2d-r65-depth": "forged-REJECTION dual \u2014 post-death un-allowlisted ERROR: flips genuine PASS to FAIL",
+  "g3d-r74-depth": "moving-agent semantics \u2014 frozen path, pop-follows-position, latch, re-anchor"
+ },
+ "closed": true,
+ "closed_at": "2026-10-14T04:58:50Z",
+ "verdicts": {
+  "audio-r66": "ADMIT",
+  "g2d-r65": "ADMIT",
+  "g3d-r74": "ADMIT"
+ },
+ "lane_commits": {
+  "audio-shokunin": [
+   "014b532",
+   "0df212f"
+  ],
+  "game-dev-2d-shokunin": [
+   "414eb8e",
+   "44b6d2b",
+   "b8a5a04"
+  ],
+  "game-dev-3d-shokunin": [
+   "fc9915e",
+   "35a911c"
+  ]
+ },
+ "verifier_verdicts": {
+  "audio-r66": "AGREE 5/5",
+  "g2d-r65": "AGREE 6/6",
+  "g3d-r74": "AGREE 6/6"
+ },
+ "respawn_note": "14 seats lost to session churn mid-wave; respawned with same briefs (agents ffe9c2b1..c51e187a). Verifiers: audio e4d18c27, g2d fba10017, g3d 39d99072."
 }
