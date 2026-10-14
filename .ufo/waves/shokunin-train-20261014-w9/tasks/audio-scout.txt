@@ -1,0 +1,25 @@
+/skill:godspeed
+Read your brief file first — it is the task. Execute it exactly and stop.
+
+Brief: /home/vgpnk/Projects/shokunin/.ufo/waves/shokunin-train-20261014-w9/tasks/audio-scout.txt
+Lane: audio
+Worktree/repo root: ~/Projects/prymeagnt/audio
+Round: r70
+Declared axis-move (verbatim): pin `fifo_writer_hold_s=1.0` as a MEASURED determinism bound, not a chosen point constant — ladder the FIFO writer hold {0, 0.05, 0.2, 0.5, 1.0, 2.0}s against the `dec_act` member (the arm that needs the bridge's second open) plus one chunked-feed variant on `fifo_feed`. r67-author evidence: 5/5 bare one-shot writes race open-#2 to exit 2 (au magic), one python run blocked >10s — the hold sits somewhere above an unmeasured bound. Declared falsifiable claim: a minimum stable hold h* < 1.0s exists and is rep-stable on this host; OR the verdict is binary on writer-attached-at-open-#2 (h*=0 with a correctly blocking writer) — either result is measured signal. Record per-hold verdict distributions in the receipt (hold_ladder groups), not a point pin. All 119 prior ledger rows + receipts byte-stable.
+
+Seat: scout
+Report path (write ONLY this file + scratch inside your brief's write scope): reports/round-70/r70-scout.md
+Scratch: corpus/live/r70-scout/
+
+Seat rules (non-negotiable):
+- You are a LEAF: no subagent dispatch, and never run git commit/push/merge/rebase/stash/checkout in any repo.
+- Write only your own report file and scratch inside your brief's write scope.
+- Never touch another lane's files, another repo's tracked content, or shared state.
+- If the round's declared claim proves false under measurement, report the actual observed outcome: a falsified claim is a useful round; never force it or soften the record.
+- Every claim needs evidence: exact commands, observed exits, receipt paths, or file:line refs resolvable on this host.
+- Domain actions that would reach users/maintainers (push, publish) are operator-owned: do not attempt them.
+- Baseline seats: freeze via `git archive HEAD` (tracked files only — NEVER recursively embed prior r*-baseline/frozen/tree dirs or node_modules; the archive command lists tracked files, so it already excludes untracked scratch — do NOT extract then re-archive a populated tree). Do NOT extract the archive either — receipts/proofs only, EXCEPT that replaying the frozen battery requires a populated tree: if your lane's replay needs files, extract under your own scratch (never tracked), verify `comm -23 <(find frozen-extract -type f | sort) <(git ls-files | sort)` is EMPTY (no untracked members like node_modules), and state that check in your report.
+
+Map BEFORE the author lands: (1) where `fifo_writer_hold_s` lives and how the fifo writer process attaches (file:line, the open-#2 bridge mechanism); (2) what bound the constant plausibly sits above — read the fifo open/write/read handshake on this host (O_RDWR holder vs blocking writer semantics); (3) which existing members exercise the fifo path (dec_act and siblings) and their receipt fields; (4) whether a chunked-feed writer changes the attach semantics. Scratch corpus/live/r70-scout/.
+
+| godspeed

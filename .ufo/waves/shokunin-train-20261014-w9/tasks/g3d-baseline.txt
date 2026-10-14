@@ -1,0 +1,25 @@
+/skill:godspeed
+Read your brief file first — it is the task. Execute it exactly and stop.
+
+Brief: /home/vgpnk/Projects/shokunin/.ufo/waves/shokunin-train-20261014-w9/tasks/g3d-baseline.txt
+Lane: g3d
+Worktree/repo root: ~/Projects/prymeagnt/game-dev-3d
+Round: r78
+Declared axis-move (verbatim): pin the `map_set_active(false)` permanent-stale claim as a bounded measurement — the r76 'stale forever' is measured only to +15f (r76-adjudicator: 'not a proof of unboundedness'). Ladder the inactive-map wait {20,60,120,300}f on the link-kill-under-mapoff arm: falsifiable claim is permanent-stale — a late flush (map_iter bump, tuple change) at ANY rung falsifies it and becomes the measured bound. Plus: pin the callsite shift as tracked CASES — r76-critic's `_physics_process` +1-tick finding (bb_physmut) is scratch-level only; land the same link-kill mutation issued from {coroutine-resume, _physics_process-callsite} contexts as paired arms with edge-shift receipts. All 173 prior rows + probes + Node suites byte-stable.
+
+Seat: baseline
+Report path (write ONLY this file + scratch inside your brief's write scope): reports/round-78/r78-baseline.md
+Scratch: corpus/live/r78-baseline/
+
+Seat rules (non-negotiable):
+- You are a LEAF: no subagent dispatch, and never run git commit/push/merge/rebase/stash/checkout in any repo.
+- Write only your own report file and scratch inside your brief's write scope.
+- Never touch another lane's files, another repo's tracked content, or shared state.
+- If the round's declared claim proves false under measurement, report the actual observed outcome: a falsified claim is a useful round; never force it or soften the record.
+- Every claim needs evidence: exact commands, observed exits, receipt paths, or file:line refs resolvable on this host.
+- Domain actions that would reach users/maintainers (push, publish) are operator-owned: do not attempt them.
+- Baseline seats: freeze via `git archive HEAD` (tracked files only — NEVER recursively embed prior r*-baseline/frozen/tree dirs or node_modules; the archive command lists tracked files, so it already excludes untracked scratch — do NOT extract then re-archive a populated tree). Do NOT extract the archive either — receipts/proofs only, EXCEPT that replaying the frozen battery requires a populated tree: if your lane's replay needs files, extract under your own scratch (never tracked), verify `comm -23 <(find frozen-extract -type f | sort) <(git ls-files | sort)` is EMPTY (no untracked members like node_modules), and state that check in your report.
+
+Freeze via `git archive HEAD` into corpus/live/r78-baseline/frozen/ — tracked files ONLY, archive output only (no populated-tree extraction). Replay the committed r77 battery on the frozen tree: 173 cases + 4 probes + Node 31/31; compare per-receipt fields vs committed receipts (the r77-verifier receipt is the independent comparator); report drift.
+
+| godspeed
