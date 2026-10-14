@@ -1,0 +1,2 @@
+# r74 SCOUT (g2d) — pre-measure the declared surface
+Read SHARED.md + the r74 author brief. Measure FIRST in corpus/live/r74-scout/: viability gates (paplay/aplay/ffplay presence + their daemon/device requirements | love.physics callback interiors | PhysicsServer3D backend inventory incl. Jolt), the discriminating cells, edge members. Report blockages exactly. Report -> reports/round-74/r74-scout.md.
