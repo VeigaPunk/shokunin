@@ -525,3 +525,29 @@ superseded text (`PROTOCOL.md` §Invariants).
 - Craft-hours mechanism fully reverted everywhere (upstream, fleet,
   all 13 lanes) — history retains add+revert.
 - Evidence: worktree commits; `gh repo view`; lane remotes.
+
+## 2026-10-14 — round 11 (final training-round re-run): aggregator cross-lane quality 8 → 9
+
+- Landed the round-11 report's declared next axis-move (cross-lane quality):
+  committed `cross-lane-gate-v1` (`.ufo/waves/aggregator-r11/cross-lane-gate.mjs`,
+  selftest **6/6**) grades report durability over the fleet's 46 presented
+  reports (rounds 11–18): **117 findings** — 5 `marker-overwrite`
+  (kengaku r12 274 B, protocol r13 275 B, protocol r14 340 B, kotoba r15
+  273 B = the D-153 case, kasegi r16 273 B), 2 `verdict-without-revision`
+  (kengaku r13, kagi r15), 110 `cited-commit-missing` (host-state class:
+  several resolve in `~/Projects/ufo-fsd-alpha`; the rest cite revisions of
+  repos gone from the host — `bounties`, `webzites`, `llm-wiki` absent);
+  exit 1 (failed, expected). Gate, expected values and raw logs committed
+  under `.ufo/waves/aggregator-r11/`.
+- Re-ran the six box-3 corpus verdicts at the lanes' current revisions
+  (kagi `fecee87` 63, kasegi `d1e6e8f` 55, kengaku `d84e48d` 30,
+  kake `b0feb30` 45, kumitate `175de6b` 102, kotoba `02302c5` 82;
+  still 0/6 conformant); `corpus-gate.mjs --selftest` 12/12 PASS.
+- Falsifiers: both clauses of the round-11 report's falsifier are now explicit
+  grades — the kotoba r15 marker (273 B now vs 14,715 B at `4419fb9`) fails
+  as a current report, and verdicts without a measured revision fail.
+- Evidence: `.ufo/waves/aggregator-r11/seats/cross-lane-quality.md`,
+  `seats/cross-lane-gate.log`, `seats/corpus-verdicts.log`,
+  `cross-lane-gate.expected.json`; `SCORECARD.md` §Round 11 (final re-run).
+- Not pushed: no domain/child-repo bytes changed; the `kama-shokunin/`
+  gitlink and live `.ufo/state/*` stay untouched and uncommitted.

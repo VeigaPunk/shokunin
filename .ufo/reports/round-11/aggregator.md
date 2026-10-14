@@ -217,3 +217,84 @@ Round 12: **cross-lane quality** (8, now the lowest). Re-run the six box-3
 verdicts after rounds 14–17 and add canonical report durability to the grade.
 Falsified if an overwritten marker remains a current report or any verdict
 lacks the revision it measured.
+
+## Final training-round re-run — cross-lane quality 8 → 9 (measured 2026-10-14)
+
+This section ships in the round-11 re-run commit and cannot cite its own hash.
+The `## Next` above is the round-11 record as written; this section supersedes it
+with the move landed. **Axis-move: cross-lane quality 8 → 9.**
+
+**Report durability — the explicit grade (new).** `node
+.ufo/waves/aggregator-r11/cross-lane-gate.mjs --all` ⇒ exit **1** (failed,
+expected); `--selftest` ⇒ **6/6 PASS** (fixtures under `os.tmpdir()`). Scanned 46
+presented reports over rounds 11–18 across every readable repo on the host (main
+repo + 17 child `*-shokunin` repos + readable `~/Projects/*` repos; raw log
+`seats/cross-lane-gate.log`). Findings, **117**:
+
+| Kind | Count | Class |
+|---|---:|---|
+| `marker-overwrite` | 5 | a report path holding a closeout marker (kotoba r15 = **D-153**, 273 B vs 14,715 B at `4419fb9`; kengaku r12 274 B; protocol r13 275 B; protocol r14 340 B; kasegi r16 273 B) |
+| `verdict-without-revision` | 2 | a verdict with no cited revision (kengaku r13, kagi r15) |
+| `cited-commit-missing` | 110 | a cited commit that resolves in no readable repo (host-state class: several resolve in `~/Projects/ufo-fsd-alpha`; the rest cite revisions of repos gone from the host — `bounties`, `webzites`, `llm-wiki` absent) |
+
+Per-round verdicts: 11 failed 6/8, 12 failed 6/7, 13 failed 6/7, 14 failed 4/7,
+15 failed 4/6, 16 failed 3/5, 17 failed 2/5, 18 clean 0/1.
+
+**Six box-3 corpus verdicts re-run (after rounds 14–17).** `corpus-gate.mjs
+--selftest` ⇒ **12/12 PASS**; `--all` at the current revisions ⇒ exit 1 (the
+expected verdict; raw log `seats/corpus-verdicts.log`): kagi `fecee87` 63, kasegi
+`d1e6e8f` 55, kengaku `d84e48d` 30, kake `b0feb30` 45, kumitate `175de6b` 102,
+kotoba `02302c5` 82 — all six still **not conformant**, dirty 0 everywhere.
+
+**Falsifier check.** Clause 1 held: no command graded a report path as a report
+before this move; every live marker (kotoba r15 included) now fails with a finding.
+Clause 2 held: two verdicts carry no revision and fail.
+
+**Ceilings.** The grade is pointer-level (a marker's content cannot be reconstructed
+by it); cited-revision relevance to its verdict is not machine-checkable; the kotoba
+r15 repair is routed (D-153 owner: integrator/protocol); this re-run executed as
+one seat — the ≥8-L2 batched wave was recorded at round 11 (12 seats) and is not
+re-dispatched from a seat.
+
+## Final training-round re-run — cross-lane quality 8 → 9
+
+Measured 2026-10-14 at the current main HEAD. This section ships in the
+round-11 re-run commit and cannot cite its own hash. The `## Next` above is the
+round-11 record as written; this section supersedes it with the move landed.
+
+**Axis-move landed: cross-lane quality 8 → 9.** The two falsifier clauses above
+are both now explicit grades, produced by a committed, re-runnable gate.
+
+**Report durability — the explicit grade (new).**
+`node .ufo/waves/aggregator-r11/cross-lane-gate.mjs --all` ⇒ exit **1**
+(failed, expected); selftest **6/6 PASS**. It grades **46 presented lane
+reports across rounds 11–18** over every readable repo on the host (main repo +
+17 child `*-shokunin` repos + readable `~/Projects/*` repos), **117 findings**:
+
+| Kind | Count | Class |
+|---|---:|---|
+| `marker-overwrite` | **5** | the round-11 "report overwrite → 273 B marker" defect class, falsifier clause 1 |
+| `verdict-without-revision` | **2** | verdict with no cited revision, falsifier clause 2 |
+| `cited-commit-missing` | **110** | cited commit resolves in no readable repo (several resolve in `~/Projects/ufo-fsd-alpha`; the rest cite revisions of repos gone from the host) |
+
+Marker-overwrite reports: kengaku r12 (274 B), protocol r13 (275 B),
+protocol r14 (340 B), **kotoba r15 (273 B — the D-153 case; 14,715 B at
+`4419fb9`)**, kasegi r16 (273 B). Verdict-without-revision: kengaku r13,
+kagi r15. Raw logs: `seats/cross-lane-gate.log`, `seats/corpus-verdicts.log`;
+seat: `seats/cross-lane-quality.md`.
+
+**Six box-3 corpus verdicts, re-run.** `corpus-gate.mjs --selftest` ⇒ 12/12 PASS;
+`--all` ⇒ exit 1 with kagi 63, kasegi 55, kengaku 30, kake 45, kumitate 102,
+kotoba 82 — still **0/6 conformant**, so `corpus review` stays 9.
+
+**Falsifier check.** Clause 1 held: before, a 273 B marker at a canonical path
+passed as a report (no command graded report durability); after, all five markers
+fail. Clause 2 held: two verdicts carry no revision and fail. The kotoba r15 marker
+is confirmed live and unchanged (`wc -c` ⇒ 273; `git show 4419fb9:…` ⇒ 14,715).
+
+**Ceilings.** The grade is pointer-level (a marker's content cannot be reconstructed
+by it); cited-revision relevance to its verdict is not machine-checkable; the kotoba
+r15 repair is routed (D-153 owner: integrator/protocol); and this re-run executed
+as one seat — the ≥8-L2 batched wave was recorded at round 11
+(`.ufo/waves/aggregator-r11/seats/`, 12 seats) and is not re-dispatched from a
+seat.

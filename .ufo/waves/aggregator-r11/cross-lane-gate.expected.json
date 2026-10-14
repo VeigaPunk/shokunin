@@ -1,0 +1,58 @@
+{
+  "gate": "cross-lane-gate-v1",
+  "owner": "aggregator lane (/home/vgpnk/Projects/shokunin), round 11 (final training-round re-run)",
+  "entry": "node .ufo/waves/aggregator-r11/cross-lane-gate.mjs --all",
+  "selftest": {
+    "command": "node .ufo/waves/aggregator-r11/cross-lane-gate.mjs --selftest",
+    "cases": ["canonical", "marker", "missing-commit", "no-revision", "unreadable", "empty-round"],
+    "expect_exit": [0, 1, 1, 1, 2, 0],
+    "tally": "6/6 PASS"
+  },
+  "live": {
+    "measured": "2026-10-14",
+    "rounds": [11, 12, 13, 14, 15, 16, 17, 18],
+    "reports": 46,
+    "failed_rounds": 7,
+    "exit": 1,
+    "findings": {
+      "marker-overwrite": 5,
+      "verdict-without-revision": 2,
+      "cited-commit-missing": 110,
+      "total": 117
+    },
+    "marker-overwrite-reports": [
+      ".ufo/reports/round-12/kengaku.md (274 B)",
+      ".ufo/reports/round-13/protocol.md (275 B)",
+      ".ufo/reports/round-14/protocol.md (340 B)",
+      ".ufo/reports/round-15/kotoba.md (273 B; ledger D-153, 14715 B at 4419fb9)",
+      ".ufo/reports/round-16/kasegi.md (273 B)"
+    ],
+    "verdict-without-revision-reports": [
+      ".ufo/reports/round-13/kengaku.md",
+      ".ufo/reports/round-15/kagi.md"
+    ],
+    "per_round": [
+      { "round": 11, "reports": 8, "failed": 6 },
+      { "round": 12, "reports": 7, "failed": 6 },
+      { "round": 13, "reports": 7, "failed": 6 },
+      { "round": 14, "reports": 7, "failed": 4 },
+      { "round": 15, "reports": 6, "failed": 4 },
+      { "round": 16, "reports": 5, "failed": 3 },
+      { "round": 17, "reports": 5, "failed": 2 },
+      { "round": 18, "reports": 1, "failed": 0 }
+    ]
+  },
+  "corpus_gate_rerun": {
+    "command": "node .ufo/waves/round-9/corpus-gate.mjs --all",
+    "selftest": "12/12 PASS",
+    "exit": 1,
+    "verdicts": [
+      { "repo": "kagi-shokunin", "rev": "fecee87", "findings": 63 },
+      { "repo": "kasegi-shokunin", "rev": "d1e6e8f", "findings": 55 },
+      { "repo": "kengaku-shokunin", "rev": "d84e48d", "findings": 30 },
+      { "repo": "kake-shokunin", "rev": "b0feb30", "findings": 45 },
+      { "repo": "kumitate-shokunin", "rev": "175de6b", "findings": 102 },
+      { "repo": "kotoba-shokunin", "rev": "02302c5", "findings": 82 }
+    ]
+  }
+}

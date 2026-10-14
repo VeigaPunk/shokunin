@@ -290,9 +290,23 @@ Metrics (before → after):
 | M11 | current corpus verdicts emitted as standing duty | 6, measured before subsequent lane work; kama absent | **7 / 7 not conformant**, each at a named revision/worktree | ledger §15.4 |
 
 
+### Round 11 (final training-round re-run) — cross-lane-quality axis-move
+
+Measured 2026-10-14 at the current main HEAD (this section ships in the
+round-11 re-run commit and cannot cite its own hash). Before-column values are
+§Round 9's after-state. This re-run lands the `### Planned` round-12 target below
+as the final training round's lowest axis; the card's round number and the fleet
+training-round number differ, the move does not.
+
+| Axis | Score (before) | Score (after) | Evidence pointer | Last change |
+|---|---|---|---|---|
+| cross-lane quality | **8** | **9** | Before: canonical report bytes could be overwritten by a closeout marker with no verdict from any command. After: committed `cross-lane-gate-v1` (`node .ufo/waves/aggregator-r11/cross-lane-gate.mjs --all`; selftest **6/6**) grades **46 presented reports across rounds 11–18** over every readable repo on the host (main repo + 17 child `*-shokunin` repos + readable `~/Projects/*` repos): **5 `marker-overwrite`** (kengaku r12 274 B, protocol r13 275 B, protocol r14 340 B, kotoba r15 **273 B** — the D-153 case, 14,715 B at `4419fb9` — kasegi r16 273 B), **2 `verdict-without-revision`** (kengaku r13, kagi r15), **110 `cited-commit-missing`** (host-state class: several resolve in `~/Projects/ufo-fsd-alpha`; the rest cite revisions of repos gone from the host — `bounties`, `webzites`, `llm-wiki` absent). Exit **1** (failed, expected). The six box-3 corpus verdicts were re-run at the lanes' current revisions (kagi 63, kasegi 55, kengaku 30, kake 45, kumitate 102, kotoba 82; still 0/6 conformant). Raw logs: `seats/cross-lane-gate.log`, `seats/corpus-verdicts.log`; seat: `seats/cross-lane-quality.md`. Not 10: the grade is pointer-level (a marker's content cannot be reconstructed by it), cited-revision relevance to its verdict is not machine-checkable, the kotoba r15 repair is routed (D-153 owner: integrator/protocol), and this re-run executed as one seat — the ≥8-L2 batched wave was recorded at round 11 and is not re-dispatched from a seat. | round 11 (final re-run) |
+| corpus review | 9 | 9 (standing duty re-run) | The committed gate and its selftest were re-executed at the current revisions and all six verdicts re-emitted **not conformant** (five hold their round-11 counts; kumitate 55 → 102). Raw log: `seats/corpus-verdicts.log`. Duty stays re-runnable, not raised: 0/6 conformant. | round 11 (final re-run) |
+| mint/dormancy calls | 9 | 9 (held) | The lifecycle census and the 8 dormancy rows are unchanged this re-run; no new mint and no positive dormancy case. | round 11 |
+
 ### Planned
 
-- **round 12 — cross-lane quality (lowest at 8).** Re-run the six box-3
+- **round 12 — cross-lane quality (lowest at 8).** *(Landed at the final training-round re-run — see §Round 11 (final re-run).)* Re-run the six box-3
   non-author verdicts after rounds 14–17 and add report durability as an
   explicit grade. Falsified if a marker overwrite such as kotoba r15 can
   remain the canonical current report, or if any verdict lacks the revision
@@ -314,7 +328,9 @@ Metrics (before → after):
   the `minted` array is vestigial, and kama owes two verified rounds before
   roster graduation. Cross-lane quality remains 8 because canonical report
   bytes can be overwritten by a marker and the effective fallback intent is
-  not encoded. Corpus review remains 9 because every current verdict is
+  not encoded. **Correction at round 11 (final re-run):** this sentence is
+  superseded — the durability grade now fails that overwrite class and the axis
+  moved 8 → 9 (§Round 11). Corpus review remains 9 because every current verdict is
   non-conformant and the gate still declares several rules not evaluated.
   The earlier proposed splits remain deferred; keeping comparable standing
   tables costs less than relabeling one round before another independent
@@ -329,3 +345,4 @@ Metrics (before → after):
 | 8 | cross-lane quality | 7 — no repo had a box-3 `[x]` from a named non-author verifier; the ledger's own cells had never been non-author-audited; queue-key uniqueness assumed | 8 — 6/6 committed non-author verdicts (4 `[x]`/2 `[~]`, 1 withdrawn), 115 commands executed, 28 cited break points, 30 gated rows classified, 41 self-citations re-executed (3 FAILs absorbed), 1 key collision refused + 9 rows re-keyed, 24 new rows, round-7 orphan landed at `6d27283` | `.ufo/reports/AGGREGATE.md` §13 (this file's X1–X8); 16 child-repo commits listed in X1; report `.ufo/reports/round-8/aggregator.md` (wave digest: 15 L2 seats, one batched call) |
 | 9 | corpus review | 8 with a duty owed — 0/6 verdicts current (§11.1's HEADs 6–17 commits back), no re-derivable form, rule 8 "clean everywhere" on an inherited interpretation, round-8 wave evidence uncommitted so X2/X3/X4/X8 unreproducible | 9 — 6/6 verdicts re-emitted at named revisions, committed gate (self-test 12/12, 8/8 frozen MATCH, exit map declared, 7 rules honestly `not-evaluated`), rule 8 literal 6/6 with authorship, rule 7 text-vs-interpretation split, `SHONEN.md` census 6/6, 29 rows routed, 15/15 seat artifacts durable, `r10` 6→0 on mirroring | `.ufo/reports/AGGREGATE.md` §14 (this file's V1–V12); `.ufo/waves/round-9/` (gate + expected + 15 seat files + 6 lessons); six child-repo lesson commits `b021dc9` `e171cdf` `4214101` `93b0567` `0f658ff` `baec94f`; report `.ufo/reports/round-9/aggregator.md` (wave digest: 15 L2 seats, one batched call) |
 | 11 | mint/dormancy calls | 8 — 7 dormancy rows, kama still a blocked candidate, mint census keyed to an always-empty array | 9 — lifecycle census finds 1 mint; kama moved to probation without premature roster promotion; 8/8 dormancy rows re-run with actual LOG grammars, 0 dormant; five candidate calls current; 12-seat wave durable | `.ufo/reports/AGGREGATE.md` §15; `.ufo/waves/aggregator-r11/seats/`; `.ufo/reports/round-11/aggregator.md` |
+| 11 (final re-run) | cross-lane quality | 8 — canonical report bytes could be overwritten by a closeout marker with no verdict from any command; six box-3 non-author verdicts stale at predecessors | 9 — committed `cross-lane-gate-v1` (selftest 6/6) grades 46 presented reports (rounds 11–18) over every readable repo: 5 marker-overwrite (kotoba r15 = D-153, 273 B vs 14,715 B at `4419fb9`; kengaku r12 274 B; protocol r13 275 B; protocol r14 340 B; kasegi r16 273 B), 2 verdict-without-revision (kengaku r13, kagi r15), 110 cited-commit-missing (host-state class); six box-3 verdicts re-emitted at current revisions (0/6 conformant); exit 1 | `.ufo/waves/aggregator-r11/cross-lane-gate.mjs` + `.expected.json` + `seats/cross-lane-quality.md` + `seats/cross-lane-gate.log` + `seats/corpus-verdicts.log`; `SCORECARD.md` §Round 11 |
