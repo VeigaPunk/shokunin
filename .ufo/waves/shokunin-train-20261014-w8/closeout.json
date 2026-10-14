@@ -1,0 +1,42 @@
+{
+ "wave": "shokunin-train-20261014-w8",
+ "settled": "2026-10-14",
+ "lanes": {
+  "audio": {
+   "round": "r69",
+   "verdict": "ADMIT",
+   "work": "30bb86d",
+   "report_last": "fe4c1d1",
+   "verifier": "AGREE 6/6",
+   "seats": "8/8",
+   "note": "extension-suffix sweep: identical no-match bytes -> >=5 verdict classes (wav/bin/txw/f32/snd); .snd = first tracked detection-fork member (sndr on named transports, None anonymous, content-gated {0,1,7}); census: 5/130 CHECK rows ever hit, wma provably dead; ledger 119 rows"
+  },
+  "game-dev-2d": {
+   "round": "r68",
+   "verdict": "ADMIT",
+   "work": "f754546+e8d4fb7",
+   "report_last": "4d8a525",
+   "verifier": "AGREE 5/5",
+   "seats": "8/8",
+   "note": "midlineforge fabrication window = write-position bound [0,200.02-200.16ms gap); nominal edge ~198.3 = gap - spawn overhead; lo edge downward-unbounded; divergent_clause 9-row map + sha256(decoded-text) same-input gate; discriminations 24"
+  },
+  "game-dev-3d": {
+   "round": "r77",
+   "verdict": "ADMIT",
+   "work": "35dfbe2+565318c+5e02b25+a5ae849",
+   "report_last": "71818b7",
+   "verifier": "AGREE 6/6",
+   "seats": "8/8",
+   "note": "apply-order load-bearing only via doomed-RID voiding (6-perm census -> 3 outcome classes, pairwise); map_force_update: getter same-turn + mark-vs-phase serve race (link jittered {1,2}, region deterministic 3f->2f, single-read-per-rung sees NO collapse); verdict-groups re-derive edges"
+  }
+ },
+ "events": [
+  "g3d r77 mut_force_link pinned the jittered w1 cell -> flaked inside the official battery ~15-20%; corrected to pin w0+w3 only. Nondeterministic edges now carry measured distributions",
+  "scribe resolved the force-jitter to a mechanism: mark-vs-phase race - prior forcing read marks stamped-dirty map, next scheduled sync publishes early; read-history perturbs the measured edge",
+  "critic falsified fixture comment 'SERVE edge does not collapse' for region (deterministic 3f->2f, 9/9); three comment-hygiene commits landed per-class truth",
+  "simplifier flags applied post-verifier on both lanes (g2d: dead exit tautology + dup payload key; g3d: dead link_layers branch + st2 dead store 3rd-flag + 4th stale comment site) - all byte-identical-proven, batteries re-run green",
+  "xsentinel findings handled: F4 non-tree snapshot ignore gap closed (audio 939fe47, g2d 5d66b4d); F7 fleet *-scratch ignore added; F5 stray dir already gone; F1 g3d baseline form-violation noted (replay still valid - blanket-ignored), F2 identity drift + F3 mass trajectory carried",
+  "xconnector transfers recorded for wave 9: shared laddered-bound receipt idiom; three lanes' timing constants all laddered this wave or next",
+  "all 26 seats landed; zero rate-limit kills this wave"
+ ]
+}
