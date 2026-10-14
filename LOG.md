@@ -551,3 +551,37 @@ superseded text (`PROTOCOL.md` §Invariants).
   `cross-lane-gate.expected.json`; `SCORECARD.md` §Round 11 (final re-run).
 - Not pushed: no domain/child-repo bytes changed; the `kama-shokunin/`
   gitlink and live `.ufo/state/*` stay untouched and uncommitted.
+
+## 2026-10-14 — operator program preflight: roster loading repaired; UFO dispatch blocked
+
+- The requested 12-hour program opened the UFO Sighting wall but dispatched no
+  L1/L2 mission. This is an operator-side preflight record, not a craft round,
+  mint, promotion, native judgment, or saturation claim.
+- Repaired `shokunin.conf`'s premature closing quote after revenger; all
+  pre-existing declarations are now inside `LANES`. Before:
+  `bash -n shokunin.conf` exited 2 at tameshi's row. After: syntax exit 0;
+  actually sourcing the configuration returned the 17 existing child lanes
+  plus protocol and aggregator, in their existing order, without duplicates.
+  No watchdog was started and no lane was added.
+  Receipt: `.ufo/scopes/shokunin-12h-20261014/evidence/config-load.json`.
+- `@m_sol` is declared as Sol 6.1, but the requested composer-content /
+  grok-scrutiny split is absent from the live global seat table. The saved
+  32-scope Phase 1 plan validates structurally; its actual route preflight is
+  unprobed and resolves 20 members to `m_mid`, 12 to `m_fast`. It was not
+  rendered with `run`, registered, or dispatched. Global routing was not
+  changed. Evidence:
+  `.ufo/scopes/shokunin-12h-20261014/phase1-repair/plan.json`.
+- Native Phase 0 is blocked: contract check exit 1, actual canonical
+  self-iteration smoke exit 2, `allContractsReady: false`. Recorded: 18 missing
+  generated targets, six dependency omissions, sighting-surface digest drift,
+  and 74 routing-equivalence mismatches. The successful routing-health command
+  has zero ledger rows and proves no provider health. Full outputs and parsed
+  evidence: `.ufo/scopes/shokunin-12h-20261014/evidence/`.
+- The fallback wave also remains blocked by the requested route split.
+  Source-substrate repair belongs to its owner; no origin source, global
+  configuration, secret value, session payload, or child-lane file was
+  modified. No pushes or external fetches were performed.
+- WWKD map, phase dependencies, stop rules and the explicit blocked state:
+  `.ufo/scopes/shokunin-12h-20261014/l0-wwkd-plan.md`,
+  `data-walk.md`, and `preflight.json`. Child-lane axes are not reassessed:
+  there was no dispatched round or before/after lane measurement.
