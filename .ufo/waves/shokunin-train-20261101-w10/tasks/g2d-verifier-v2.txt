@@ -1,0 +1,27 @@
+/skill:godspeed
+Read your brief file first — it is the task. Execute it exactly and stop.
+
+Brief: /home/vgpnk/Projects/shokunin/.ufo/waves/shokunin-train-20261101-w10/tasks/g2d-verifier-v2.txt
+Lane: g2d
+Repo: ~/Projects/shokunin/game-dev-2d-shokunin
+Round: r70
+Report path: reports/round-70/r70-verifier.md
+Scratch: corpus/live/r70-verifier/
+
+Seat rules (non-negotiable):
+- You are a LEAF: no subagent dispatch, and never run git commit/push/merge/rebase/stash/checkout in any repo.
+- Write only your own report file and scratch inside your brief's write scope.
+- If the landed work is defective, report the defect with reproduction — never soften it.
+- Every claim needs evidence: exact commands, observed exits, receipt paths, or file:line refs.
+- This is a POST-LANDING seat: the author diff is already committed at the pinned commit below. Verify/criticize the LANDED state.
+
+Pinned commit: HEAD (operator-authored LOVE first-contact: corpus/fixtures/love_probe/{conf.lua,main.lua} + corpus/fixtures/love_battery.py, 15 bound-pinned cases).
+
+Verify on the committed tree:
+1. `python3 corpus/fixtures/love_battery.py` — expect 15/15 PASS; record receipt.
+2. `python3 corpus/fixtures/run_battery.py` (Godot, default) — fully green, prior rows untouched.
+3. Pin honesty: run love_battery 3x; do the bound pins hold or flake? Record distribution.
+4. updates_without_pump pinned =123 — deterministic by structure or off-by-one-fragile? Check main.lua tick accounting.
+Report PASS/FAIL per item.
+
+| godspeed

@@ -1,0 +1,27 @@
+/skill:godspeed
+Read your brief file first — it is the task. Execute it exactly and stop.
+
+Brief: /home/vgpnk/Projects/shokunin/.ufo/waves/shokunin-train-20261101-w10/tasks/g3d-critic-v2.txt
+Lane: g3d
+Repo: ~/Projects/shokunin/game-dev-3d-shokunin
+Round: r79
+Report path: reports/round-79/r79-critic.md
+Scratch: corpus/live/r79-critic/
+
+Seat rules (non-negotiable):
+- You are a LEAF: no subagent dispatch, and never run git commit/push/merge/rebase/stash/checkout in any repo.
+- Write only your own report file and scratch inside your brief's write scope.
+- If the landed work is defective, report the defect with reproduction — never soften it.
+- Every claim needs evidence: exact commands, observed exits, receipt paths, or file:line refs.
+- This is a POST-LANDING seat: the author diff is already committed at the pinned commit below. Verify/criticize the LANDED state.
+
+Pinned commits 08d1b10 + 9a2e7b1 (operator-authored bpy fixture + 37-case battery; claim recorded half-confirmed/narrowed: write-through vs evaluation-gated, no drain, held-handle=map_off analogue).
+
+Adversarial audit:
+1. 'No implicit drain' — draincheck only did back-to-back reads (~µs). Does a real wall-time gap (sleep 0.5) between write and held-handle read show an eval event? Construct the cell — if a timer-based drain exists the claim overreaches.
+2. 'Shared graph' via `dgf == dg0`: is `==` object identity on bpy Depsgraph or value equality? Verify at pointer/id level.
+3. non_signal rows: pinning a measured quirk as a CASES expectation — if evaluated visible_get flips under other scene states the battery pins a quirk as law. Is non_signal=True marking enough, or should these be outside CASES?
+4. Byte-stability: any nondeterminism (dict order, hash seed, version strings) in the receipt?
+Report findings by severity with reproduction.
+
+| godspeed
