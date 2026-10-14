@@ -585,3 +585,20 @@ superseded text (`PROTOCOL.md` §Invariants).
   `.ufo/scopes/shokunin-12h-20261014/l0-wwkd-plan.md`,
   `data-walk.md`, and `preflight.json`. Child-lane axes are not reassessed:
   there was no dispatched round or before/after lane measurement.
+
+## 2026-10-14 — blocked operator program: report and ledger durability
+
+- Preflight work landed in `14e836c` under protocol lane identity. The
+  operator-readable disposition is
+  `.ufo/reports/shokunin-12h-20261014-preflight.md`; its report-last commit
+  appends a `type: ops` MANIFEST note with that path, not child-lane statuses,
+  fictitious training rounds, or mint credit.
+- All five execution phases remain undispatched. The report names the
+  global routing and UFO source owners' prerequisite actions. The native
+  failure is recorded without substituting a swarm or synthetic verdict.
+  Mori/chousa repos were not created; neither mint is claimed.
+- Ledger preservation is checked against
+  `.ufo/scopes/shokunin-12h-20261014/evidence/manifest-before.json`;
+  delivery receipt:
+  `.ufo/scopes/shokunin-12h-20261014/evidence/ledger-integrity.json`.
+  No completion command is issued: no program wall mission exists.
