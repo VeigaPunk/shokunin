@@ -1,0 +1,25 @@
+/skill:godspeed
+Read your brief file first — it is the task. Execute it exactly and stop.
+
+Brief: /home/vgpnk/Projects/shokunin/.ufo/waves/shokunin-train-20261014-w8/tasks/g3d-scribe.txt
+Lane: g3d
+Worktree/repo root: ~/Projects/prymeagnt/game-dev-3d
+Round: r77
+Declared axis-move (verbatim): pin mutation APPLY-ORDER as a measured axis — `_apply_mutation`'s fixed order (delete→recreate→transform→link→agent) is load-bearing or inert? Hand-ordered same-tick setter sequences vs the fixture's fixed order (e.g. region_transform-then-delete vs delete-then-recreate; link_disable+endpoint_move in both orders): does apply-order change the post-sync served state? Declared falsifiable claim: at least one order-pair produces observable distinct served state (a composed same-tick mutation is the 'seam' analog — emergent state neither setter alone produces); if all order-pairs converge, order is provably inert under this build. Additionally land a `map_force_update` CASES arm (does it collapse only the object-getter edge, or the serve edge too?) and a wait-ladder verdict-groups receipt (post-mutation tuple partitioned by identical signature → window bound derived as partition boundary). All 163 prior rows byte-stable.
+
+Seat: scribe
+Report path (write ONLY this file + scratch inside your brief's write scope): reports/round-77/r77-scribe.md
+Scratch: corpus/live/r77-scribe/
+
+Seat rules (non-negotiable):
+- You are a LEAF: no subagent dispatch, and never run git commit/push/merge/rebase/stash/checkout in any repo.
+- Write only your own report file and scratch inside your brief's write scope.
+- Never touch another lane's files, another repo's tracked content, or shared state.
+- If the round's declared claim proves false under measurement, report the actual observed outcome: a falsified claim is a useful round; never force it or soften the record.
+- Every claim needs evidence: exact commands, observed exits, receipt paths, or file:line refs resolvable on this host.
+- Domain actions that would reach users/maintainers (push, publish) are operator-owned: do not attempt them.
+- Baseline seats: freeze via `git archive HEAD` (tracked files only — NEVER recursively embed prior r*-baseline/frozen/tree dirs or node_modules; the archive command lists tracked files, so it already excludes untracked scratch — do NOT extract then re-archive a populated tree). Do NOT extract the archive either — receipts/proofs only.
+
+Independent measurement + knowledge drafting for r77: re-run the author's landed order arms yourself on your OWN geometry (own scratch corpus/live/r77-scribe/ — prior rounds used a distinct hop geometry to avoid overfit); verify or falsify the apply-order axis and map_force_update reach independently; then draft the lesson (corpus/lessons/r77-*.md shape, fenced inside your report) + a LOG.md round-entry draft. Verify/extend any partial scratch rather than restarting.
+
+| godspeed

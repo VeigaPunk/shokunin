@@ -1,0 +1,25 @@
+/skill:godspeed
+Read your brief file first — it is the task. Execute it exactly and stop.
+
+Brief: /home/vgpnk/Projects/shokunin/.ufo/waves/shokunin-train-20261014-w8/tasks/audio-baseline.txt
+Lane: audio
+Worktree/repo root: ~/Projects/prymeagnt/audio
+Round: r69
+Declared axis-move (verbatim): sweep the EXTENSION-SUFFIX sub-axis of the r68 post-table named-axis fork — the same no-match bytes under different names should route to different handlers (.wav→wav-reader verdict, .bin→no-handler, .txw→txw-reader pipe-refusal, .f32→f32 decode, .snd→ext-gated CHECK row — i.e. detection itself forks). Declared falsifiable claim: the named arm splits into ≥3 distinct verdict groups by extension alone on identical bytes, and the .snd member is the first tracked member where DETECTION (not just decode) forks on transport name. Additionally land a dead-CHECK-row census: which of the ~97 CHECK rows have EVER been first-match across all committed receipts (coverage bookkeeping). Land additive members + probe modes on measure_audio.py; all 114 prior ledger rows + receipts byte-stable.
+
+Seat: baseline
+Report path (write ONLY this file + scratch inside your brief's write scope): reports/round-69/r69-baseline.md
+Scratch: corpus/live/r69-baseline/
+
+Seat rules (non-negotiable):
+- You are a LEAF: no subagent dispatch, and never run git commit/push/merge/rebase/stash/checkout in any repo.
+- Write only your own report file and scratch inside your brief's write scope.
+- Never touch another lane's files, another repo's tracked content, or shared state.
+- If the round's declared claim proves false under measurement, report the actual observed outcome: a falsified claim is a useful round; never force it or soften the record.
+- Every claim needs evidence: exact commands, observed exits, receipt paths, or file:line refs resolvable on this host.
+- Domain actions that would reach users/maintainers (push, publish) are operator-owned: do not attempt them.
+- Baseline seats: freeze via `git archive HEAD` (tracked files only — NEVER recursively embed prior r*-baseline/frozen/tree dirs or node_modules; the archive command lists tracked files, so it already excludes untracked scratch — do NOT extract then re-archive a populated tree). Do NOT extract the archive either — receipts/proofs only.
+
+Freeze via `git archive HEAD` into corpus/live/r69-baseline/frozen/ — tracked files ONLY, archive output only (no populated-tree extraction). Replay the committed r68 ledger on the frozen tree: 114 commands, expect 49 exit0/65 exit1; compare per-receipt sha256 vs committed receipts; report drift (must be zero or explained by the known path-embedding convention).
+
+| godspeed
