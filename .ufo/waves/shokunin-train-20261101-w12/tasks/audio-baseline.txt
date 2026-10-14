@@ -1,0 +1,16 @@
+/skill:godspeed
+Read your brief — it is the task. Execute exactly and stop.
+
+Wave: shokunin-train-20261101-w12  | Lane: audio | Seat: baseline | Round: 73
+Lane-repo: ~/Projects/shokunin/audio-shokunin
+Write scope: reports/round-73/r73-baseline.md + corpus/live/r73-baseline/ ONLY.
+
+Seat rules: LEAF — no subagent dispatch; no git mutations. Write ONLY inside your stated write scope (report + scratch dir). Measured evidence only: commands, exits, receipt paths, file:line refs. Falsified claims are useful rounds — report the actual outcome.
+
+ROUND 73 — audio lane. CONSUMER CLASS expansion: pw-cat (PipeWire realtime) + mpv (lavf) on the member corpus.
+Frontier evidence: reports/frontier/fb-pipewire.md + corpus/live/frontier-pipewire/.
+MOVE (coverage): `--probe-consumers-r73` — pw-cat playback arm (fifo realtime: playback-paced consumption, writer-attach semantics, daemon-required gate) + mpv arm (content sniff via libavformat; INVERTED seekability fork: non-seekable helps — file->refresh-seek-EPERM->rc2, fifo->decodes). Claim: consumer verdicts partition by mandatory-seek vs stream-consume polarity — opposite of the decoder axis. Viability-conditional: pw-cat needs the pipewire daemon (live on this host; record the exact blockage if down).
+
+BASELINE: git-archive freeze + replay current battery from frozen tree; prior rows byte-stable.
+
+| godspeed
