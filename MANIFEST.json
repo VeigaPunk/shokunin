@@ -1627,6 +1627,45 @@
       },
       "notes": "8-seat wave-2 + named non-author verifier (90/90 + probes + Node 31/31, AGREE 10 claim families). Depth ADMIT: distance_to_target postprocessing-INVARIANT (3.605551 Euclidean under corridorfunnel/edgecentered/none; pathlen 4.13->4.71/4.55 proves flag took effect); declared claim's final-changes clause measured false, pinned as invariance witness. Boundary mapped pdd Euclidean waypoint-pop + two-mode is_navigation_finished for next rounds. Sol: depth+coverage improved locally; calibration unchanged. Report: .ufo/reports/round-71/game-dev-3d.md.",
       "commit": "game-dev-3d-shokunin@6888875"
+    },
+    {
+      "round": 64,
+      "date": "2026-10-14",
+      "type": "train",
+      "lane": "audio",
+      "verdicts": {
+        "expansion": "improved",
+        "quality": "improved",
+        "discernment": "improved"
+      },
+      "notes": "8-seat wave-3 + named non-author verifier (92-cmd replay 44/48, 86/86+6/6 receipts byte-identical). Coverage ADMIT: valid-bits->codec step map established exactly — w=(V+7)>>3 -> {u8,s16le,s24le,s32le,NONE,s64le}, seven boundaries, envelope-gated (0xFFFE+cbSize>=22+PCM-GUID; critic falsification absorbed into claim scope); tracked pair_valid_{8,9,24,25,56,57}.wav; residue re-explained as alignment x width. Sol: coverage+depth improved locally, calibration unchanged. Report: .ufo/reports/round-64/audio.md.",
+      "commit": "audio-shokunin@4c12342"
+    },
+    {
+      "round": 63,
+      "date": "2026-10-14",
+      "type": "train",
+      "lane": "game-dev-2d",
+      "verdicts": {
+        "expansion": "improved",
+        "quality": "improved",
+        "discernment": "improved"
+      },
+      "notes": "8-seat wave-3 + named non-author verifier (96/96, fabricated-ppid forgery caught). Depth ADMIT: merged-stream signature-spoof boundary tracked — release arm = PASS-shaped forgery on post-death descendant write, hold arm rejects via error axis only; 10 discriminations incl. kernel-corroborated write_ppid + withheld-banner anchor (critic slips closed at integration); forgery depth-agnostic (boundary). Documented-accepting boundary, no policy change. Sol: depth+coverage improved locally, calibration unchanged. Report: .ufo/reports/round-63/game-dev-2d.md.",
+      "commit": "game-dev-2d-shokunin@de78edb"
+    },
+    {
+      "round": 72,
+      "date": "2026-10-14",
+      "type": "train",
+      "lane": "game-dev-3d",
+      "verdicts": {
+        "expansion": "improved",
+        "quality": "improved",
+        "discernment": "improved"
+      },
+      "notes": "8-seat wave-3 + named non-author verifier (112/112 + 4 probes + Node 31/31, 16/16 spot-checks verbatim). Depth ADMIT: pdd waypoint-pop = strict sequential Euclidean keyed on live position (saturate size-1); finished = reached(strict,through-wall,latched) OR (unreachable AND idx==size-1 AND euclid->final<pdd); reachable selector inclusive; sawtooth non-monotone; critic idx-conjunct counterexample absorbed (artifact already correct). Boundary: distance_to_target is live call-time arithmetic; links authorable headlessly. Sol: depth+coverage improved locally, calibration unchanged. Report: .ufo/reports/round-72/game-dev-3d.md.",
+      "commit": "game-dev-3d-shokunin@05405ae"
     }
   ]
 }
