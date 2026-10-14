@@ -1,0 +1,14 @@
+/skill:godspeed
+Read your brief file first — it is the task. Execute it exactly and stop.
+
+Brief: /home/vgpnk/Projects/shokunin/.ufo/waves/shokunin-train-20261101-w10/tasks/g2d-frontier-b.txt
+Lane-repo: ~/Projects/shokunin/game-dev-2d-shokunin
+Report: reports/frontier/fb-lovephysics.md
+Scratch: corpus/live/frontier-lovephysics/
+
+Seat rules: LEAF — no subagents, no git mutations. SCRATCH + your report file only. This is a FRONTIER seat: measure the assigned surface honestly; if the runtime can't run here record the exact blockage. Findings are evidence for wave-11 dispatch — include exact commands/exits/paths so the author doesn't re-derive them.
+
+FRONTIER pre-measurement for wave-11 candidate "LOVE physics": love.physics (box2d) world:step timing.
+(a) love.physics.newWorld + newBody headless viability (needs love.modules.physics — check conf requirements); (b) determinism: same world+step on N runs — are body transforms byte-identical? (c) contact callback timing: when do beginContact events fire relative to world:step (pre/post/in-step)? — the 2D analogue of g3d's sync-edge lattice; (d) fixed-dt accumulator drift. Report measured lattice + viability.
+
+| godspeed
