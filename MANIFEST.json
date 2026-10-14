@@ -1666,6 +1666,45 @@
       },
       "notes": "8-seat wave-3 + named non-author verifier (112/112 + 4 probes + Node 31/31, 16/16 spot-checks verbatim). Depth ADMIT: pdd waypoint-pop = strict sequential Euclidean keyed on live position (saturate size-1); finished = reached(strict,through-wall,latched) OR (unreachable AND idx==size-1 AND euclid->final<pdd); reachable selector inclusive; sawtooth non-monotone; critic idx-conjunct counterexample absorbed (artifact already correct). Boundary: distance_to_target is live call-time arithmetic; links authorable headlessly. Sol: depth+coverage improved locally, calibration unchanged. Report: .ufo/reports/round-72/game-dev-3d.md.",
       "commit": "game-dev-3d-shokunin@05405ae"
+    },
+    {
+      "round": 65,
+      "date": "2026-10-14",
+      "type": "train",
+      "lane": "audio",
+      "verdicts": {
+        "expansion": "improved",
+        "quality": "improved",
+        "discernment": "improved"
+      },
+      "notes": "8-seat wave-4 + named non-author verifier (committed-state AGREE all five claims). Coverage ADMIT: preemptor-collision autodetect ordering measured — wve < gsrt < hcom < act < wav first-match-wins; tracked pair_preempt_{act,gsrt,hcom,both}.wav (sole signature-span diffs); ledger 92->96 (44/52), prior receipts byte-identical. Critic falsifications absorbed: detection!=accept (hcom decodes 9 samples), premature EOF non-attributing, fd-seekability conjunct (gsrt decodes on pipes where ffmpeg dies). Sol: coverage+depth improved locally, calibration unchanged. Report: .ufo/reports/round-65/audio.md.",
+      "commit": "audio-shokunin@1b0d276"
+    },
+    {
+      "round": 64,
+      "date": "2026-10-14",
+      "type": "train",
+      "lane": "game-dev-2d",
+      "verdicts": {
+        "expansion": "improved",
+        "quality": "improved",
+        "discernment": "improved"
+      },
+      "notes": "8-seat wave-4 + named non-author verifier (claims 2/3/4a/4b AGREE; 1+5 DISAGREE-as-worded caught uncommitted runner diff — fixed by landing verified blob 66a18a00). Depth ADMIT: while-live signature gate discriminates forged post-death writes — poll()-gated read rejects forged markers (release+hold) while genuine accepted; 97/97, 12 discriminations, prior 96 rows stable. Primitive load-bearing (kill(0) false-accepts through zombies); live-window forge defeats gate by construction (bounded_claim). Sol: depth+coverage improved locally, calibration unchanged. Report: .ufo/reports/round-64/game-dev-2d.md.",
+      "commit": "game-dev-2d-shokunin@a32920b+5265da6"
+    },
+    {
+      "round": 73,
+      "date": "2026-10-14",
+      "type": "train",
+      "lane": "game-dev-3d",
+      "verdicts": {
+        "expansion": "improved",
+        "quality": "improved",
+        "discernment": "improved"
+      },
+      "notes": "8-seat wave-4 + named non-author verifier (127/127 + 4 probes + Node 31/31, 112x12 0-mismatch, 15/15 verbatim replay). Depth ADMIT: off-mesh link traversal gate system measured — companion LINK metadata (opt-OUT, default 7), three independent drop gates (layers/bidirectional/disabled incl. link-only-mask third mode), enter_cost structurally inert to 1e6 vs travel_cost live, symmetric pop-through across void. 15 tracked arms. Sol: depth+coverage improved locally, calibration unchanged. Report: .ufo/reports/round-73/game-dev-3d.md.",
+      "commit": "game-dev-3d-shokunin@b41fb33"
     }
   ]
 }
