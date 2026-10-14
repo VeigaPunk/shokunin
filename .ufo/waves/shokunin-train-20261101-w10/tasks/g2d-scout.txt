@@ -1,0 +1,25 @@
+/skill:godspeed
+Read your brief file first — it is the task. Execute it exactly and stop.
+
+Brief: /home/vgpnk/Projects/shokunin/.ufo/waves/shokunin-train-20261101-w10/tasks/g2d-scout.txt
+Lane: g2d
+Worktree/repo root: ~/Projects/shokunin/game-dev-2d-shokunin
+Round: r70
+Declared axis-move (verbatim): first-contact a NEW 2D runtime: LOVE 11.5 headless on this host — declare the falsifiable claim 'LOVE with `t.window=false` conf.lua runs a deterministic fixed-dt love.update loop headless, and its child-process stdout capture (io.popen / os.execute) exhibits a measurable write-visibility window analogous to Godot midlineforge's gap-relative fabrication bound ([0, ~198ms) at gap 200) — i.e., the fabrication-window phenomenon is ENGINE-GENERAL, not Godot-specific'. Either result is signal: if LOVE headless can't run (no display server — likely needs `t.window=false` + possibly dummy video), record the honest blockage and pivot to measuring love.timer/love.step semantics via `love --version`-level CLI; if it runs, port a MINIMAL descendant-pipe probe to Lua: child writes, parent reads, measure the window. New fixture tree corpus/fixtures/love_probe/ + a love arm in run_battery.py or a sibling love_battery.py.
+
+Seat: scout
+Report path (write ONLY this file + scratch inside your brief's write scope): reports/round-70/r70-scout.md
+Scratch: corpus/live/r70-scout/
+
+Seat rules (non-negotiable):
+- You are a LEAF: no subagent dispatch, and never run git commit/push/merge/rebase/stash/checkout in any repo.
+- Write only your own report file and scratch inside your brief's write scope.
+- Never touch another lane's files, another repo's tracked content, or shared state.
+- If the round's declared claim proves false under measurement, report the actual observed outcome: a falsified claim is a useful round; never force it or soften the record.
+- Every claim needs evidence: exact commands, observed exits, receipt paths, or file:line refs resolvable on this host.
+- Domain actions that would reach users/maintainers (push, publish) are operator-owned: do not attempt them.
+- Baseline seats: freeze via `git archive HEAD` (tracked files only — NEVER recursively embed prior r*-baseline/frozen/tree dirs or node_modules). Do NOT extract the archive except to replay under your own scratch; verify `comm -23 <(find frozen-extract -type f | sort) <(git ls-files | sort)` is EMPTY, and state that check in your report.
+- First-contact rule (new this wave): if your assigned runtime cannot run on this host, record the exact failure (command + stderr + exit) and report the blockage as the measured outcome — never fabricate viability.
+
+Viability-first scout: (a) does `love --version`/`love .` headless run on this host? try `t.window=false` conf, `SDL_VIDEODRIVER=dummy`, `love --headless`-style flags — record exact commands+exits; (b) map LOVE's process/stdout surface: io.popen vs os.execute semantics under 11.5, love.event pumping requirements; (c) where a love fixture slots in corpus/fixtures/ + how run_battery.py could call it. Report a viability verdict + recommended minimal fixture shape.
+| godspeed
