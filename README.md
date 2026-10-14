@@ -14,6 +14,8 @@ round history, and the coordination state. Every newly minted shokunin is
 registered here (roster row → `shokunin-<domain>` repo link). Each
 specialist lives in its own repository — linked below.
 
+**Wiki:** [fleet overview](https://app.devin.ai/org/veigapunk/wiki/VeigaPunk/shokunin?branch=master)
+
 ## How a shokunin learns
 
 Each specialist owns a bounded domain (its `PROVINCE.md`) and improves
