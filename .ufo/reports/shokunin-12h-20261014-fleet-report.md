@@ -98,8 +98,7 @@ exit 0; `--selftest` `VERDICT: PASS`. Registry cells corrected to live membershi
 `0ecba26`, `edfb9c5`, `5d250b4`, `c64b380`. The K-block boundary clause (census,
 not exclusive ownership — webbridge→tabi, REA keys→kaidoku, skill craft→kotoba,
 secret hygiene→kagi) landed per the fleet audit. Six cross-domain defects routed
-to `ufo-fsd-alpha`, not absorbed. **Carried debt:** `claims-check` exits 1 on
-R11's 13 dead anchors after the file shrink (unblock: re-anchor). Two
+to `ufo-fsd-alpha`, not absorbed. **Carried debt:** resolved in-round — R11's six phantom sections were removed and eight anchors re-pointed, so `claims-check` now reads **`CLAIMS: MATCH`** exit 0 alongside `PROXY: MATCH`. Remaining debt is advisory only (`--strict` promotes two `SECTION_FILE_NOT_MEMBER` warnings and the `MEMBER_COUNT_SUSPECT` rows). Two
 self-inflicted defects were caught and fixed in-round: my own summary table
 matched the registry-row regex (inflating `C1_total`), and I edited the stanza
 while the wave was still writing notes — both recorded.
