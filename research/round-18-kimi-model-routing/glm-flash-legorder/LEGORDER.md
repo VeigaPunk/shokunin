@@ -426,6 +426,18 @@ file; the only key material this mission moved is the existing literals inside
 `shim.py`, which stayed in that file and were verified digest-identical across
 the edit.
 
+Proven on the committed tree, not just the working copy:
+
+```
+$ git grep -lE "<hex32>\.<alnum16>|sk-<16+>|Bearer <16+>" HEAD -- <this dir>
+0 hits in committed tree
+
+$ # literal-level check against the live shim's own literals:
+$ # the two secrets (49 and 45 chars) occur 0 times in the committed tree; the only
+$ # >=21-char quoted literals shared with shim.py are the env-var names
+$ # GLM_SHIM_MAX_CONCURRENT, GLM_SHIM_QUEUE_TIMEOUT, GLM_SHIM_MARKER_BYTES.
+```
+
 ---
 
 ## 9. Open items
