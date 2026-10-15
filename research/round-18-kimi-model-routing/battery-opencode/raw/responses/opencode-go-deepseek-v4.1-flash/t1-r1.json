@@ -1,0 +1,138 @@
+{
+  "pool_id": "opencode-go/deepseek-v4.1-flash",
+  "provider": "opencode-go",
+  "model_id": "deepseek-v4.1-flash",
+  "model_sent": "deepseek-v4.1-flash",
+  "protocol": "openai",
+  "bucket": "UNLABELLED",
+  "in_live_pool": false,
+  "base_url": "https://opencode.ai/inference/go/v1",
+  "reasoning_key": "reasoning_content",
+  "user_agent_class": "browser-chrome-141-linux",
+  "user_agent_sent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+  "probe_id": "t1",
+  "probe_kind": "tool",
+  "rep": 1,
+  "measured": true,
+  "prompt": "What is the weather in Paris right now? Use the get_weather tool.",
+  "max_tokens": 192,
+  "tools_sent": true,
+  "tool_choice": "auto",
+  "request_body": {
+    "model": "deepseek-v4.1-flash",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "What is the weather in Paris right now? Use the get_weather tool."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    },
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "get_weather",
+          "description": "Get the current weather for a city.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "city": {
+                "type": "string",
+                "description": "City name"
+              }
+            },
+            "required": [
+              "city"
+            ]
+          }
+        }
+      }
+    ],
+    "tool_choice": "auto"
+  },
+  "url": "https://opencode.ai/inference/go/v1/chat/completions",
+  "timeout_s": 120,
+  "auth_headers_sent": [
+    "Authorization",
+    "x-opencode-session"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 3907,
+  "response_headers": {
+    "Date": "Thu, 15 Oct 2026 12:47:06 GMT",
+    "Content-Type": "text/event-stream",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "Cache-Control": "no-cache",
+    "Cf-Placement": "remote-IAD",
+    "x-opencode-endpoint-id": "novita-deepseek",
+    "x-opencode-log-id": "da8c0257-96ca-4b02-a3b1-2ca99e5806b7",
+    "x-opencode-upstream-model-id": "deepseek/deepseek-v4.1-flash",
+    "x-zen-model": "deepseek-v4.1-flash",
+    "Server": "cloudflare",
+    "CF-RAY": "a4aeee1dec38744a-MIA"
+  },
+  "content_type": "text/event-stream",
+  "content": "I'll look that up for you.",
+  "content_truncated": false,
+  "reasoning_chars": 81,
+  "reasoning_text": "The user wants the weather in Paris. I should call get_weather with city \"Paris\".",
+  "refusal_text": "",
+  "tool_calls": [
+    {
+      "id": "call_00_7ho6mw03l0dc6vzrf98ifcdt",
+      "name": "get_weather",
+      "arguments": "{\"city\": \"Paris\"}"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 313,
+    "completion_tokens": 65,
+    "total_tokens": 378,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 256,
+      "cache_creation_input_tokens": 0,
+      "cache_write_tokens": 0
+    },
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 19,
+      "rejected_prediction_tokens": 0
+    }
+  },
+  "finish_reason": "tool_calls",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 24,
+  "sse_line_count": 50,
+  "raw_preview": "data: {\"id\":\"a7d5d7d480b3681efcdd364aac49db26\",\"object\":\"chat.completion.chunk\",\"created\":1792068426,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\"}}]}\ndata: {\"id\":\"a7d5d7d480b3681efcdd364aac49db26\",\"object\":\"chat.completion.chunk\",\"created\":1792068426,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"The\"}}]}\ndata: {\"id\":\"a7d5d7d480b3681efcdd364aac49db26\",\"object\":\"chat.completion.chunk\",\"created\":1792068426,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" user wants\"}}]}\ndata: {\"id\":\"a7d5d7d480b3681efcdd364aac49db26\",\"object\":\"chat.completion.chunk\",\"created\":1792068426,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" the weather in Paris\"}}]}\ndata: {\"id\":\"a7d5d7d480b3681efcdd364aac49db26\",\"object\":\"chat.completion.chunk\",\"created\":1792068426,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\". I should call get_\"}}]}\ndata: {\"id\":\"a7d5d7d480b3681efcdd364aac49db26\",\"object\":\"chat.completion.chunk\",\"created\":1792068426,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"weather with\"}}]}\ndata: {\"id\":\"a7d5d7d480b3681efcdd364aac49db26\",\"object\":\"chat.completion.chunk\",\"created\":1792068426,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" city \\\"Paris\"}}]}\ndata: {\"id\":\"a7d5d7d480b3681efcdd364aac49db26\",\"object\":\"chat.completion.chunk\",\"created\":1792068426,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"\\\".\"}}]}\ndata: {\"id\":\"a7d5d7d480b3681efcdd364aac49db26\",\"object\":\"chat.completion.chunk\",\"created\":1792068426,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"content\":\"I\"}}]}\ndata: {\"id\":\"a7d5d7d480b3681efcdd364aac49db26\",\"object\":\"chat.completion.chunk\",\"created\":1792068426,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"content\":\"'ll look that\"}}]}\ndata: {\"id\":\"a7d5d7d480b3681efcdd364aac49db26\",\"object\":\"chat.completion.chunk\",\"created\":1792068426,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"content\":\" up for you\"}}]}\ndata: {\"id\":\"a7d5d7d480b3681efcdd364aac49db26\",\"object\":\"chat.completion.chunk\",\"created\":1792068426,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"content\":\".\"}}]}\ndata: {\"id\":\"a7d5d7d480b3681efcdd364aac49db26\",\"object\":\"chat.completion.chunk\",\"created\":1792068426,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"tool_calls\":[{\"index\":0,\"id\":\"call_00_7ho6mw03l0dc6vzrf98ifcdt\",\"type\":\"function\",\"function\":{\"name\":\"get_weather\"}}]}}]}\ndata: {\"id\":\"a7d5d7d480b3681efcdd364aac49db26\",\"object\":\"chat.completion.chunk\",\"created\":1792068426,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"tool_calls\":[{\"index\":0,\"function\":{\"arguments\":\"{\"}}]}}]}\ndata: {\"id\":\"a7d5d7d480b3681efcdd364aac49db26\",\"object\":\"chat.completion.chunk\",\"created\":1792068426,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"tool_calls\":[{\"index\":0,\"function\":{\"arguments\":\"\\\"\"}}]}}]}\ndata: {\"id\":\"a7d5d7d480b3681efcdd364aac49db26\",\"object\":\"chat.completion.chunk\",\"created\":1792068426,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"tool_calls\":[{\"index\":0,\"function\":{\"arguments\":\"city\"}}]}}]}\ndata: {\"id\":\"a7d5d7d480b3681efcdd364aac49db26\",\"object\":\"chat.completion.chunk\",\"created\":1792068426,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"tool_calls\":[{\"index\":0,\"function\":{\"arguments\":\"\\\"\"}}]}}]}\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "well-formed tool call",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T12:47:06Z",
+  "ttft_content_ms": 3681,
+  "ttft_reasoning_ms": 3532,
+  "first_decoded_ms": 3681,
+  "decode_span_ms": 222,
+  "tps": 288.52,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": null,
+  "completion_tokens": 65,
+  "prompt_tokens": 313,
+  "reasoning_tokens": 19,
+  "content_delta_count": 4,
+  "reasoning_delta_count": 7
+}
