@@ -3,8 +3,8 @@
 **Role:** executor (leaf) · **Wave:** shokunin12h-20261014-p5-chousa-r1 · **Lane:** chousa-shokunin  
 **Axes:** coverage · depth · calibration  
 **Scope:** design only. Parent / round-2 land the tree and harness; this report is data, not a verdict.  
-**Hard bounds:** no external network; bind `127.0.0.1` only; secrets/session shape-only (none present); no bounty/kengaku content.  
-**Peers (do not collide):** `LoopbackFixturePlan` owns exercise narrative + claim-capture format overview; `ClaimCapture` owns the table schema prose; `GateFixtureDesign` / `ResearchGateDesign` own gate selftest records. This seat owns **files, ports, disagreement matrix, and per-source capture procedure**.
+**Hard bounds:** no external network; bind `127.0.0.1` only; secrets/session shape-only; **no real tokens** (synthetic auth literals only, prefix `fx-`); no Cookie/Authorization on capture; no CDP attach / burner-profile copy; strip response headers before any quoted span; no bounty/kengaku content.
+**Peers (do not collide):** `LoopbackFixturePlan` owns exercise narrative + claim-capture format overview; `ClaimCapture` owns the table schema prose; `GateFixtureDesign` / `ResearchGateDesign` own gate selftest records; `SecrecyAudit` secrecy pins adopted in §2.3/§6. This seat owns **files, ports, disagreement matrix, and per-source capture procedure**.
 
 ---
 
@@ -74,7 +74,11 @@ harness stop:
 | Listen address | `--bind 127.0.0.1` only |
 | Client URL host | harness rejects any capture URL not matching `^http://127\.0\.0\.1:(18761\|18762\|18763)/` |
 | No outbound | harness never calls non-loopback; selftest may wrap with `env -u http_proxy -u HTTPS_PROXY` |
-| No credentials | fixture bodies contain **zero** token-shaped strings (`sk-`, `op://`, `Bearer `, PEM); only the word `TOKEN_SHAPE_FORBIDDEN` in a comment file the server does **not** publish |
+| No real tokens | fixture files/bodies carry **zero** live credentials. Deny shapes under `$SITE`: `sk-`, `ghp_`, `github_pat_`, `op://`, bare `Bearer ` + blob, PEM / `BEGIN … PRIVATE KEY`, browser session cookies. Deny-ERE list lives in unpublished `harness/TOKEN_SHAPE_FORBIDDEN.txt` (not served) |
+| Synthetic auth only | any auth-*shaped* test literal **MUST** use prefix `fx-` only (e.g. `fx-cookie-dead`, `fx-authz-dead`). Default site ships **no** auth literals |
+| No request auth headers | capture curl **without** `-H Cookie:`, `-H Authorization:`, `-b`, `--oauth*`, netrc. Selftest greps harness scripts for those flags |
+| Strip headers before quote | capture keeps **body only**. `quote_span` is sliced from the body after discarding any HTTP header block. Headers never enter `claims.tsv` |
+| No CDP / burner profile | never attach CDP `9222`; never read Chrome user-data / cookies.sqlite / burner profile. Bodies are hand-authored under `$SITE`, not scraped (`research/README.md:6` is citation-only) |
 | Injection text is data | S3 may contain instruction-shaped lines; harness treats body as bytes (see §7) |
 
 ---
