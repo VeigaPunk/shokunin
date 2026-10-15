@@ -632,3 +632,10 @@ superseded text (`PROTOCOL.md` §Invariants).
   `<id>-shokunin` directory; the operator reconciles the six fields. Found by the
   mori `LaneSilence` audit, which also established that the silence baseline is each
   lane's own report mtime, not the shared round-directory mtime.
+
+- Wave-registry invocation fixed and recorded: `UFO_PROJECT_ROOT=<fleet-root>` plus a
+  relative `--registry` is the only form that writes into the fleet root (an
+  absolute path is refused `invalid_registry_path`; omitting the env var writes into
+  the read-only substrate). All six registries re-recorded at 32/32 assignments.
+- Phase 5: chousa probation round 1 dispatched (`Shokunin12hP5ChousaR1`, 32 lanes,
+  local-only survey of the research artifacts — no external fetches).

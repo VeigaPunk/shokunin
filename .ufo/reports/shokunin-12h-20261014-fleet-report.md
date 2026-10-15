@@ -200,8 +200,14 @@ Repair: the six stray directories were moved out of the substrate into
 directory, and the registries were verified to carry their assignments (32/32 for
 the four dispatched waves; 0 for the two undispatched ones, which is correct). The
 substrate's five pre-existing dirty paths were not touched by this mission and were
-not altered by the repair. Correct invocation for any future wave: set
-`UFO_PROJECT_ROOT` to the fleet root (or run with the fleet root as `cwd`).
+not altered by the repair. **Correct invocation, verified:** the planner resolves `--registry` as a
+*relative* path against `UFO_PROJECT_ROOT`, so a wave must be recorded as
+`UFO_PROJECT_ROOT=<fleet-root> node <ufo-checkout>/scripts/ufo-swarm-wave.mjs record
+--registry .ufo/scopes/<Wave>/swarm-registry.json …` with the fleet root as `cwd`.
+An absolute `--registry` is refused (`invalid_registry_path`), and omitting
+`UFO_PROJECT_ROOT` writes into the substrate. All six registries were re-recorded
+this way and now carry **32/32** assignments in the fleet root, with the substrate
+verified clean.
 
 ## Honest stop
 
