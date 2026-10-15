@@ -22,17 +22,25 @@ User name in a PAM line below is session-adjacency evidence, not a credential. N
 
 ## Visibility (the contract probe is not enough)
 
-Contract probe `journalctl --user -b` sees user-manager `Failed with result` lines. It does not see kernel victim lines or coredump signal lines.
+Contract probe `journalctl --user -b` sees user-manager `Failed with result` lines and coredump records. It does not see kernel victim lines. A MESSAGE grep for `terminated abnormally with signal` is 0 on `--user` even though the coredump records are there: the signal is a field, not that phrase.
+
+Remeasured 2026-10-14T21:43:03-03:00 after KillEventsJournal's recount at 21:42:01. Counts below are journal entries, not cat-lines. Boot id is the same 32 hex with or without hyphens: `d7f0bc8d938e4249b4a1f250cbfacf58` / `d7f0bc8d-938e-4249-b4a1-f250cbfacf58`.
 
 | signature family | `--user -b` boot 0 | system `-b` boot 0 |
 |---|---|---|
-| `Out of memory: Killed process` | 0 | 1 |
-| `segfault at` | 0 | 588 |
-| `terminated abnormally with signal 11/SEGV` | 0 | 657 |
+| `Out of memory: Killed process` (MESSAGE) | 0 | 1 |
+| `segfault at` (MESSAGE) | 0 | 588 |
+| helper MESSAGE `terminated abnormally with signal 11/SEGV` (`CODE_FUNC=coredump_kernel_helper`, no `MESSAGE_ID`) | 0 | 657 |
+| `MESSAGE_ID=fc2e22bc6ee647b6b90729ab34a250b1` entries | 1051 (11/SIGSEGV 656, 6/SIGABRT 365, 5/SIGTRAP 25, 7/SIGBUS 5) | not separately entry-counted in this pass |
+| `COREDUMP_SIGNAL=11` entries | 656 | 657 |
 | `SIGTERM` or `signal 15` | 0 | 0 |
 | `Failed with result` | 2 (`oom-kill`, `core-dump`) | 3 (those two plus `signal` from pid 1) |
 
-A census that only runs the contract probe will report the Hyprland-terminal scope as `oom-kill` and will miss the kernel victim line that says which pid died. It will miss the fleet crash mass entirely.
+The one-entry gap (system 657 vs user 656 on `COREDUMP_SIGNAL=11`) is observed. Which pid is system-only is unknown. ABRT/TRAP/BUS field counts on `--user` match the system helper histogram exactly.
+
+A `--user -b` census that greps MESSAGE for `segfault at` or `terminated abnormally` misses the crash mass and misses the kernel victim line. The same probe with `COREDUMP_SIGNAL=11` sees the crash mass (656). The only oom signature on `--user` is still `Failed with result 'oom-kill'.`
+
+Do not print coredump payload fields. The record carries `COREDUMP_ENVIRON`, `COREDUMP_CMDLINE`, `COREDUMP_PROC_STATUS`, `COREDUMP_PROC_MAPS`, `COREDUMP_OPEN_FDS`. Key names observed; values not read. Census `--output-fields` is `COREDUMP_SIGNAL,COREDUMP_SIGNAL_NAME,COREDUMP_COMM,COREDUMP_PID,COREDUMP_UNIT,COREDUMP_USER_UNIT,COREDUMP_CGROUP,MESSAGE_ID`.
 
 ## Taxonomy
 
@@ -56,8 +64,9 @@ Primary class is what a counter increments. A line can also be a unit-failure an
 | `MORI-SIGTERM-STATUS15-UNOBSERVED` | `sigterm` | `code=killed, status=15/TERM` not present | `journalctl -g 'status=15/TERM'` user 0, system 0, all retained boots, measured 2026-10-14T21:31:27-03:00 | The systemd exit form is unobserved. The class is still observed, via the self-report wordings above. Boot 0 has none of those either. |
 | `MORI-SEGFAULT-KERNEL` | `segfault` | `love[3809675]: segfault at 55e953319 ip 00007fe0ff31f1b1 sp 00007ffe927bf020 error 4 in liblove-11.5.so[11f1b1,7fe0ff216000+299000] likely on CPU 12 (core 12, socket 0)` | 2026-10-14T15:25:09.186659-03:00, boot 0, system, kernel, priority 6, no `MESSAGE_ID` | CPU fault. Boot 0: 588 lines, all joined on pid to a `signal 11/SEGV` coredump (588/588). Dominant comm is `love`. A love segfault is a lane-runner crash, not host death and not OOM. |
 | `MORI-SEGFAULT-GPF` | `segfault` only when joined to `11/SEGV` | `traps: love[3847294] general protection fault ip:7ff84911f1ae sp:7fffbf424ca0 error:0 in liblove-11.5.so[11f1ae,7ff849016000+299000]` | 2026-10-14T15:27:43.182658-03:00, boot 0, system, kernel | The kernel line has no signal number. Observation: all 38 boot-0 GPF lines share a pid with `terminated abnormally with signal 11/SEGV`. A matcher on `segfault at` alone misses these 38. Do not file the GPF text as segfault without that join. |
-| `MORI-SEGV-COREDUMP` | `segfault` | `Process 1129600 (love) of user 1000 terminated abnormally with signal 11/SEGV, processing...` | boot 0, `systemd-coredump`, `CODE_FUNC=coredump_kernel_helper`, no `MESSAGE_ID` on the sampled entry. Timestamped companion of the same shape: `Process 1203790 (pipewire-pulse) of user 1000 terminated abnormally with signal 11/SEGV, processing...` at 2026-10-14T18:54:21.261453-03:00 | Event line for a SIGSEGV death. Boot 0: 657. Of those, 588 join to `segfault at`, 38 join to GPF, 31 have neither (23 `love`, 7 `blender`, 1 `bash`). The bash exemplar's coredump stack is in `kill` / `kill_builtin` (pid 244048, 2026-10-13T14:45:31.224916-03:00): observation that signal 11 is not always a CPU fault. The other 30 unmatched kernel companions are unknown, not absent-by-proof. |
-| `MORI-SEGV-DUMPED-CORE` | `segfault` (same event, do not add) | `Process 1203790 (pipewire-pulse) of user 1000 dumped core.` | 2026-10-14T18:54:21.348195-03:00, boot 0, systemd-coredump pid 761917 | Second line for the same pid. Adding `processing...` and `dumped core` double-counts. |
+| `MORI-SEGV-HELPER` | `segfault` (system count only) | `Process 1129600 (love) of user 1000 terminated abnormally with signal 11/SEGV, processing...` | boot 0, `systemd-coredump`, `CODE_FUNC=coredump_kernel_helper`, no `MESSAGE_ID`. Timestamped companion: `Process 1203790 (pipewire-pulse) of user 1000 terminated abnormally with signal 11/SEGV, processing...` at 2026-10-14T18:54:21.261453-03:00 | System-journal event line. Boot 0: 657. User MESSAGE grep of this phrase: 0. Of the 657, 588 join to `segfault at`, 38 join to GPF, 31 have neither (23 `love`, 7 `blender`, 1 `bash`). The bash exemplar's stack is in `kill` / `kill_builtin` (pid 244048, 2026-10-13T14:45:31.224916-03:00): signal 11 is not always a CPU fault. The other 30 unmatched kernel companions are unknown. |
+| `MORI-SEGV-USER-FIELD` | `segfault` (user-journal count) | no MESSAGE phrase. Field `COREDUMP_SIGNAL=11` (`COREDUMP_SIGNAL_NAME=SIGSEGV`) on `MESSAGE_ID=fc2e22bc6ee647b6b90729ab34a250b1` | `--user -b` 656 entries, system 657, measured 2026-10-14T21:43:03-03:00 | This is the contract-probe match. `COREDUMP_COMM`, `COREDUMP_UNIT`, `COREDUMP_USER_UNIT`, `COREDUMP_CGROUP` are the join. Do not also count the helper line. Do not output `COREDUMP_ENVIRON` or `COREDUMP_CMDLINE`. |
+| `MORI-SEGV-DUMPED-CORE` | `segfault` (same event, do not add) | `Process 1203790 (pipewire-pulse) of user 1000 dumped core.` | 2026-10-14T18:54:21.348195-03:00, boot 0, systemd-coredump pid 761917 | MESSAGE text of the `fc2e22bc` record, when present. `--user -b -g 'dumped core'` returned 1044 entries at 21:43:03 against 1051 field entries. MESSAGE grep undercounts. Field match is the count. |
 | `MORI-UNIT-DUMPED-11` | `segfault` and `unit-failure` (count the coredump line) | `pipewire-pulse.service: Main process exited, code=dumped, status=11/SEGV` | 2026-10-14T18:54:21.350354-03:00, boot 0, systemd pid 1203171 (user manager) | `MESSAGE_ID=98e322203f7a4ed290d09fe03c09fe15`. Only present when the dead pid is a unit main process. 657 SIGSEGV deaths, 2 `code=dumped` lines in all retained journals. The fleet crash mass is not a unit-failure. |
 | `MORI-UNIT-CORE-DUMP` | `unit-failure` (and `segfault` if joined to status 11) | `pipewire-pulse.service: Failed with result 'core-dump'.` | 2026-10-14T18:54:21.350449-03:00, boot 0, user journal and system journal | `MESSAGE_ID=d9b373ed55a64feb8242e02dbe79a49c`. 95ms after the kernel `pipewire-pulse[1203790]: segfault at 0 ... in libpipewire-0.3.so.0.1608.0`. A user session service died mid-boot (consumed 5h 43min). That is a service crash, not host OOM. Second exemplar, different reading: `app-com.onepassword.OnePassword@autostart.service: Failed with result 'core-dump'.` at 2026-10-13T10:57:28.011711-03:00, boot `-1`, same second as the reboot. Shutdown-adjacent; do not call it a mid-run fleet fault without a kernel line. |
 | `MORI-UNIT-SIGNAL` | `unit-failure` | `user@1000.service: Failed with result 'signal'.` | 2026-10-14T13:10:59.381949-03:00, boot 0, systemd pid 1 | Same `MESSAGE_ID` as every other `Failed with result`. The result token `signal` is not a cause. Read the preceding `unit_log_process_exit` line (`status=9/KILL`). See withheld row. |
