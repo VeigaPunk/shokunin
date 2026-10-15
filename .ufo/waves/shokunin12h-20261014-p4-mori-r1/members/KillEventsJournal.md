@@ -78,8 +78,10 @@ Checked and **0** on this user boot (case-sensitive MESSAGE grep unless noted):
 | `systemd-oomd` | 0 |
 | `MESSAGE_ID=d989611b15e44c9dbf31e3c81256e4ed` (catalog: systemd-oomd killed one or more processes) | 0 |
 | `SYSLOG_IDENTIFIER=systemd-oomd` | 0 |
+| `oom_kill_process` / `oom_kill_process.cold` | 0 |
+| `unit_check_oom` | 0 |
 
-The user-journal line does not name a pid, a signal, or a cgroup. Mechanism (kernel OOM vs systemd-oomd vs other) is **unknown from this probe**. System journal was not read here; do not treat that as zero kernel lines.
+The user-journal line does not name a pid, a signal, or a cgroup. Mechanism (kernel OOM vs systemd-oomd vs other) is **unknown from this probe**. System journal was not read here; do not treat that as zero kernel lines. Recheck at `2026-10-14T21:42:01-03:00`: `Killed process`, `Out of memory`, `oom_kill_process.cold`, and `unit_check_oom` are still 0 on `--user -b`. Those strings are not in the oom-kill count. A sibling report of one system-journal `Out of memory: Killed process` was not re-measured here.
 
 `fleet_relevant`: **unknown**. Observation: `USER_UNIT` is a Hyprland xdg-terminal scope; the name does not contain `tmux`, `ufo`, `watchdog`, or a fleet path. The killed pid is not in the line. This seat does not claim the unit is or is not a fleet process.
 
@@ -108,7 +110,7 @@ The hyphenated token is not a systemd format string. `libsystemd-shared-261.2-1.
 | `COREDUMP_SIGNAL=1` (SIGHUP) | 0 | 0 |
 | `COREDUMP_SIGNAL=13` (SIGPIPE) | 0 | 0 |
 
-`KILL_SIGNAL_EVENT` predicate (SIGKILL/SIGTERM, or the phrase `killed by signal`) is false this user boot. Not unavailable.
+`KILL_SIGNAL_EVENT` predicate (SIGKILL/SIGTERM, or the phrase `killed by signal`) is false this user boot. Not unavailable. Recheck at `2026-10-14T21:42:01-03:00`: `status=9/KILL` and `status=15/TERM` still 0 on `--user -b`. A system-journal `status=9/KILL` for `user@1000` at session close, if it exists, is outside this surface and is not added.
 
 `-g` with no matches exits **1** with empty stderr. An unrecognized option also exits **1**, with stderr `journalctl: unrecognized option '--not-a-real-flag'`. A field match with zero hits was observed to exit **0** (`UNIT_RESULT=signal`). A gate must not treat rc 1 alone as `JOURNAL_UNAVAILABLE`.
 
@@ -281,6 +283,8 @@ Greps that look right and miss this boot's user journal:
 | `killed-by-signal` or `status=9/KILL` | 0 | correct this boot; will miss a future SIGKILL that exists only as `COREDUMP_SIGNAL=9` or `code=killed` unless those are also queried |
 | `unit-failure` or `entered the 'failed' state` | 0 | 2 lines whose MESSAGE is `Failed with result` |
 | `-o cat \| grep \| wc -l` | inflated | multiline coredump MESSAGE |
+| `oom_kill_process.cold` or `unit_check_oom` | 0 on `--user` (recheck 21:42:01) | do not add them to oom-kill; they are not the unit-result line |
+| assuming `--user -b` has no coredumps | false | 1051 `MESSAGE_ID=fc2e22bc6ee647b6b90729ab34a250b1` entries, 656 `COREDUMP_SIGNAL=11` (recheck 21:42:01). Kernel `segfault at` lines are the other surface |
 
 Prefer `journalctl -g` / field matches and `-o json` entry counts. Count `COREDUMP_SIGNAL=11` for segfault. Count `Failed with result` for unit-failure lines, then subtract lines whose `UNIT_RESULT` is already `oom-kill` or `core-dump` before emitting `UNIT_FAIL_EVENT`.
 
