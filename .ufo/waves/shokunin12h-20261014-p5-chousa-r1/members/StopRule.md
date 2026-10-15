@@ -92,7 +92,7 @@ Counts, so a later note cannot say "the tabs covered the prompts": A delivers a 
 
 ## Search log and the README count
 
-Observation. Stored search events: A one (`A:42`), B one (`B:42`), C two (`C:42`, `C:55`). Visible query strings: A 0, B 0, C 4 (`C:44`, `C:46`, `C:57`, `C:59`). C also stores two collapse markers whose visible text is the digits 10 wrapped in U+2068 / U+2069 then " more" (`C:48`, `C:61`). A literal ASCII sweep for `10 more` misses them. A stop-gate that greps the ASCII form will not see the unreproducible sweep.
+Observation. Stored search events: A one (`A:42`), B one (`B:42`), C two (`C:42`, `C:55`). Visible query strings: A 0, B 0, C 4 (`C:44`, `C:46`, `C:57`, `C:59`). C also stores two collapse markers whose visible text is the digits 10 wrapped in U+2068 / U+2069 then " more" (`C:48`, `C:61`). Sweep: ASCII `10 more` over `C-rank-taxonomy.md` returned no matches, so a stop-gate that greps that form will not see the unreproducible sweep.
 
 `research/README.md:8` says 9/8/10 web searches. Those digits are not in the exports as a search count. Visible events (1, 1, 2) are a count of **recorded search-event lines**, not of searches performed. "10 more" is a **query-list** collapse, a different unit from "web searches."
 
@@ -102,7 +102,7 @@ Unknown, kept unknown: whether 9/8/10 was true of the live tabs. The exports nei
 
 Observation. Source tokens in the bodies are hostnames, a dictionary name, and `+N` counts: `A:68-69` (`+3`), `A:83-84` (`+2`), `B:72-73` (`+6`), `C:82-83` (`+5`), `C:121-122` (`+4`). Hidden-chip sum printed by the UI: 3+2+6+5+4 = 20. Those 20 are counts, not titles. They were not read here. They cannot be marked `[lost-tree]` either: a lost-tree anchor still records the path (`kasegi-shokunin/corpus/knowledge/citation-bases.md:50-54`). A `+6` records nothing. It cannot enter a resolving numerator, and it also cannot enter the lost-recorded numerator. It is an uncaptured hop.
 
-`kagi-shokunin/corpus/claim-ledger.sh:31-46` checks path-shaped and session-URI tokens (`corpus/…`, lane shorthands, `local://`, and the labelled-dead exception). A hostname and `+3` are outside that class. `kasegi-shokunin/corpus/instruments/anchorcheck.py:17-19` refuses to count a deliberately non-openable anchor as validated; `anchorcheck.py:53-56` separates range-valid from semantic support. Neither gate, run on these exports, would see the chips as citations.
+`kagi-shokunin/corpus/claim-ledger.sh:31-46` checks path-shaped and session-URI tokens (`corpus/…`, lane shorthands, `local://`, and the labelled-dead exception). A hostname and `+3` are outside that class. `kasegi-shokunin/corpus/instruments/anchorcheck.py:17-19` refuses to count a deliberately non-openable anchor as validated; `anchorcheck.py:53-56` separates range-valid from semantic support. **Inference from those classifiers, not a gate run:** neither documented checked class includes a hostname or a `+N` chip, so a pass from either gate would not have inspected these sources.
 
 S9 is therefore a category error. A clean (or vacuously inapplicable) sibling path-gate does not close a research window whose sources are chips. **Inference:** wiring research-gate stop to claim-ledger CLEAN would launder unverified hosts into a pass. That is a duplicate authority, and it is the wrong one.
 
@@ -122,7 +122,7 @@ Three identities are in play. Only the README sentence records an operator obser
 - `C:109`: "no authoritative attestation" for the proposed translation, plus "Romanization without kanji cannot establish a literal meaning." The query list is incomplete (`C:48`, `C:61`). `C:118` distinguishes 人為 as a different word; that is a dictionary distinction inside the answer, not a logged null for each kanji candidate.
 - `C:124` treats 自律流 as a possible modern coinage "not an established school name or a verified translation of jin'i-ryū." That is a proposal about a different romanization, not a proof about jin'i-ryū.
 
-The index replaces an unlogged negative and an explicit uncertainty with a closed NOT. Stopping because the README has already corrected the scheme saturates a claim the artifacts left open. `chousa-shokunin/SKILL.md:44` and `chousa-shokunin/corpus/QUALITY.md:3` already require the sweep, and observation kept separate from inference. The README sentence is an inference written as a correction.
+The index replaces an unlogged negative and an explicit uncertainty with a closed NOT. Stopping because the README has already corrected the scheme saturates a claim the artifacts left open. `chousa-shokunin/SKILL.md:44` requires the sweep; `chousa-shokunin/SKILL.md:45` and `chousa-shokunin/corpus/QUALITY.md:5` require observation, inference, and unknown kept separate. The README sentence is an inference written as a correction.
 
 `research/README.md:13-14` lists four "usable axes," including improvement and transmission. Those axes are the model's design instruction at `A:54`. Improvement has no evidence section. Transmission is named at `A:47`, `A:52`, `A:54` and never given sources. Admitting the axes as harvest results admits a recommendation. `B:59` says the export was going to separate published findings from proposed engineering rules, then the file ends at `B:79` before that separation is applied to the unanswered asks.
 
