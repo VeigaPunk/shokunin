@@ -390,7 +390,7 @@ Three things it deliberately does **not** do:
 
 Command and result (`HYGIENE.md` carries the full log):
 
-```
+````
 $ bash scripts/hygiene_check.sh
 # Secrets hygiene -- R18 definitions audit
 
@@ -431,7 +431,7 @@ RESULT: PASS -- no credential value or credential-shaped string in any artifact
 Exit status: 0 (0 = clean). Probe captures record credential header
 names with a `<redacted:len=N>` marker instead of values
 (see scripts/common.py `redact_headers`).
-```
+````
 
 The scan tests every configured credential value — every provider `api_key` and
 the opencode session header — against every file in this tree, and separately for

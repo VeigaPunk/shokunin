@@ -518,11 +518,11 @@ def main():
     A("")
     A("Command and result (`HYGIENE.md` carries the full log):")
     A("")
-    A("```")
+    A("````")
     A("$ bash scripts/hygiene_check.sh")
     if hygiene_text:
         A(hygiene_text.strip())
-    A("```")
+    A("````")
     A("")
     A("The scan tests every configured credential value — every provider `api_key` and")
     A("the opencode session header — against every file in this tree, and separately for")
