@@ -1,0 +1,569 @@
+{
+  "suite": "effort",
+  "config_json_digest_16": "61f22a2bbe52d616",
+  "generated_by": "scripts/probe_live.py",
+  "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+  "note": "headers redacted (<redacted:len=N>); no credential value is stored",
+  "results": [
+    {
+      "suite": "effort",
+      "lane": "opencode-go",
+      "alias": "opencode-go/claude-haiku-5-5",
+      "provider": "opencode-go",
+      "protocol": "anthropic",
+      "url": "https://opencode.ai/inference/go/v1/messages",
+      "model_id": "claude-haiku-5-5",
+      "value": "max",
+      "tag": null,
+      "max_tokens": 16,
+      "png_side": null,
+      "status": 200,
+      "ms": 1752,
+      "error": null,
+      "request_headers": {
+        "Authorization": "<redacted:len=58>",
+        "x-api-key": "<redacted:len=51>",
+        "anthropic-version": "2023-06-01",
+        "x-opencode-session": "<redacted:len=36>"
+      },
+      "request_body": {
+        "model": "claude-haiku-5-5",
+        "max_tokens": 16,
+        "system": "You are a test harness.",
+        "messages": [
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "text",
+                "text": "Reply with the single word: pong"
+              }
+            ]
+          }
+        ],
+        "stream": false,
+        "output_config": {
+          "effort": "max"
+        }
+      },
+      "response": {
+        "id": "msg_011Cg3ytxYzL9Zv2LTRuvZmg",
+        "type": "message",
+        "role": "assistant",
+        "stop_reason": "max_tokens",
+        "stop_sequence": null,
+        "stop_details": null,
+        "model": "claude-haiku-5-5",
+        "content": [
+          {
+            "type": "thinking",
+            "thinking": "",
+            "signature": "CAQSkAUKEAgSGAI4AUIIdGhpbmtpbmcSDH5r2cUZDJvHWUd63BoMN5VTR+y74T+9p0krIjAspBjzsUbyCOZEQ/cHFTSTS8TRaPRvXWyeCxeZklr9ZuTel2ygCeZQUNkiaKSHF8IqrQTWE8GAbmy1q+9lgpGSqK7J3PZbjHki0isdD4qgHJXec8LMe/V4YwUQ+loZuEqGvCiroBbWFzbzo5R6li6d3IjXqvjZpMYjl+U5MRr0nHBAu6Ij+CnBMjTAdwNRuwklyQovAa2mA68O2yARwSZaMBBWR0pfKVFeYU26w/3XyWIl1nIrotGIBQKN42h8czpSFf/12oFKk8ZJhe1tEnsjj8zQGFobD5XH/UdPsB+XWfnLotdHHpnGq4JliUYEPzYjSQJqodeRyiP5T2luTEMAu0PRZW44+33BVYsgLgPya7JlGAdyVKw/XUxqTAXJn8ZQQfaDV5cEJbxSIlDSyMvn+bef5iNv37Xb9UG12l/lsLcYZwIWtc/9JkdEp2mkyq25GE4mTeUCQSEx1jPxWCY4UkSdoIpS1JFxqi/5S3YhZNSbkW6g8M9TTwaqYoZb1FhNE6/2t8nMeJ2f9whgc3s6NkWigd2LSH9soa/I3E8/IUDzRnDH70ndDKRvh7ihNkrFJ25fdOmxTORSVa70HKRw1MGiB19omR5FrSIozzMZ/M1XMzoThTQI9ffIzjiyVWV/Tsjv6cYQ+RrNe1GzXGXRiW7BunoxO4MlGUH3k2EdCP7LARjmN1Bs+y9WQke4tmxMmGZdSokF0S8t+18ZPOi+sgjbh0f3usIKGOwP7qlEfjotrD4okYw0ja4Cj7lnbgT/i6KytkiUNAvgjUNOxy7i0BcPF8MeoH9Cj2zFNDD2SxgB"
+          }
+        ],
+        "usage": {
+          "input_tokens": 26,
+          "output_tokens": 16,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens_details": {
+            "thinking_tokens": 16
+          },
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          }
+        }
+      },
+      "derived": {
+        "status": 200,
+        "content_block_types": [
+          "thinking"
+        ],
+        "tool_call_wellformed": false,
+        "message_keys": [
+          "content",
+          "id",
+          "model",
+          "role",
+          "stop_details",
+          "stop_reason",
+          "stop_sequence",
+          "type",
+          "usage"
+        ],
+        "usage": {
+          "input_tokens": 26,
+          "output_tokens": 16,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0,
+          "output_tokens_details": {
+            "thinking_tokens": 16
+          },
+          "cache_creation": {
+            "ephemeral_1h_input_tokens": 0,
+            "ephemeral_5m_input_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "suite": "effort",
+      "lane": "opencode-go",
+      "alias": "opencode-go/qwen3.8-max",
+      "provider": "opencode-go",
+      "protocol": "anthropic",
+      "url": "https://opencode.ai/inference/go/v1/messages",
+      "model_id": "qwen3.8-max",
+      "value": "xhigh",
+      "tag": null,
+      "max_tokens": 16,
+      "png_side": null,
+      "status": 200,
+      "ms": 3295,
+      "error": null,
+      "request_headers": {
+        "Authorization": "<redacted:len=58>",
+        "x-api-key": "<redacted:len=51>",
+        "anthropic-version": "2023-06-01",
+        "x-opencode-session": "<redacted:len=36>"
+      },
+      "request_body": {
+        "model": "qwen3.8-max",
+        "max_tokens": 16,
+        "system": "You are a test harness.",
+        "messages": [
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "text",
+                "text": "Reply with the single word: pong"
+              }
+            ]
+          }
+        ],
+        "stream": false,
+        "output_config": {
+          "effort": "xhigh"
+        }
+      },
+      "response": {
+        "id": "msg_db98dd76-71ac-44ec-a3b6-db8a7314691b",
+        "type": "message",
+        "role": "assistant",
+        "stop_reason": "max_tokens",
+        "model": "qwen3.8-max",
+        "content": [
+          {
+            "type": "thinking",
+            "thinking": "We need answer user's request: \"Reply with the single word: pong\".",
+            "signature": ""
+          }
+        ],
+        "usage": {
+          "input_tokens": 66,
+          "output_tokens": 16,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      "derived": {
+        "status": 200,
+        "content_block_types": [
+          "thinking"
+        ],
+        "tool_call_wellformed": false,
+        "message_keys": [
+          "content",
+          "id",
+          "model",
+          "role",
+          "stop_reason",
+          "type",
+          "usage"
+        ],
+        "usage": {
+          "input_tokens": 66,
+          "output_tokens": 16,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      }
+    },
+    {
+      "suite": "effort",
+      "lane": "opencode-go",
+      "alias": "opencode-go/qwen3.8-max",
+      "provider": "opencode-go",
+      "protocol": "anthropic",
+      "url": "https://opencode.ai/inference/go/v1/messages",
+      "model_id": "qwen3.8-max",
+      "value": "invalid-control",
+      "tag": null,
+      "max_tokens": 16,
+      "png_side": null,
+      "status": 400,
+      "ms": 619,
+      "error": null,
+      "request_headers": {
+        "Authorization": "<redacted:len=58>",
+        "x-api-key": "<redacted:len=51>",
+        "anthropic-version": "2023-06-01",
+        "x-opencode-session": "<redacted:len=36>"
+      },
+      "request_body": {
+        "model": "qwen3.8-max",
+        "max_tokens": 16,
+        "system": "You are a test harness.",
+        "messages": [
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "text",
+                "text": "Reply with the single word: pong"
+              }
+            ]
+          }
+        ],
+        "stream": false,
+        "output_config": {
+          "effort": "invalid-control"
+        }
+      },
+      "response": {
+        "model": "qwen3.8-max"
+      },
+      "derived": {
+        "status": 400,
+        "content_block_types": [],
+        "tool_call_wellformed": false,
+        "message_keys": [
+          "model"
+        ],
+        "usage": null
+      }
+    },
+    {
+      "suite": "effort",
+      "lane": "opencode-go",
+      "alias": "opencode-go/kimi-k3",
+      "provider": "opencode-go",
+      "protocol": "openai",
+      "url": "https://opencode.ai/inference/go/v1/chat/completions",
+      "model_id": "kimi-k3",
+      "value": "max",
+      "tag": null,
+      "max_tokens": 16,
+      "png_side": null,
+      "status": 200,
+      "ms": 1095,
+      "error": null,
+      "request_headers": {
+        "Authorization": "<redacted:len=58>",
+        "x-opencode-session": "<redacted:len=36>"
+      },
+      "request_body": {
+        "model": "kimi-k3",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Reply with the single word: pong"
+          }
+        ],
+        "max_tokens": 16,
+        "stream": false,
+        "reasoning_effort": "max"
+      },
+      "response": {
+        "id": "7362c850-8510-449f-9849-f03c3b9016d0",
+        "object": "chat.completion",
+        "created": 1792065437,
+        "model": "kimi-k3",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "length",
+            "logprobs": null,
+            "message": {
+              "role": "assistant",
+              "content": null,
+              "refusal": null,
+              "reasoning": "The user is asking me to reply with a single word: \"pong\".",
+              "reasoning_details": [
+                {
+                  "type": "reasoning.text",
+                  "text": "The user is asking me to reply with a single word: \"pong\".",
+                  "format": "unknown",
+                  "index": 0
+                }
+              ]
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 95,
+          "completion_tokens": 16,
+          "total_tokens": 111,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 16
+          }
+        }
+      },
+      "derived": {
+        "status": 200,
+        "message_keys": [
+          "content",
+          "reasoning",
+          "reasoning_details",
+          "refusal",
+          "role"
+        ],
+        "tool_call_wellformed": false,
+        "finish_reason": "length",
+        "top_keys": [
+          "choices",
+          "created",
+          "id",
+          "model",
+          "object",
+          "usage"
+        ],
+        "has_reasoning_content": false,
+        "usage": {
+          "prompt_tokens": 95,
+          "completion_tokens": 16,
+          "total_tokens": 111,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens_details": {
+            "audio_tokens": 0,
+            "reasoning_tokens": 16
+          }
+        }
+      }
+    },
+    {
+      "suite": "effort",
+      "lane": "opencode-go",
+      "alias": "opencode-go/grok-4.7",
+      "provider": "opencode-go",
+      "protocol": "openai_responses",
+      "url": "https://opencode.ai/inference/go/v1/responses",
+      "model_id": "grok-4.7",
+      "value": "xhigh",
+      "tag": null,
+      "max_tokens": 16,
+      "png_side": null,
+      "status": 200,
+      "ms": 2354,
+      "error": null,
+      "request_headers": {
+        "Authorization": "<redacted:len=58>",
+        "x-opencode-session": "<redacted:len=36>"
+      },
+      "request_body": {
+        "model": "grok-4.7",
+        "input": [
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "input_text",
+                "text": "Reply with the single word: pong"
+              }
+            ]
+          }
+        ],
+        "store": false,
+        "stream": true,
+        "reasoning": {
+          "effort": "xhigh"
+        }
+      },
+      "response": "event: response.created\ndata: {\"type\":\"response.created\",\"sequence_number\":0,\"response\":{\"id\":\"3b1bc683-ae21-90c3-8ada-f73d3b2cb75d\",\"object\":\"response\",\"created_at\":1792065439,\"completed_at\":null,\"status\":\"in_progress\",\"parallel_tool_calls\":true,\"temperature\":0.699999988079071,\"top_p\":0.949999988079071,\"max_output_tokens\":null,\"previous_response_id\":null,\"background\":false,\"truncation\":\"disabled\",\"top_logprobs\":0,\"max_tool_calls\":null,\"model\":\"grok-4.7\",\"error\":null,\"incomplete_details\":null,\"output\":[],\"usage\":null,\"instructions\":null,\"tool_choice\":\"auto\",\"tools\":[],\"reasoning\":{\"effort\":\"xhigh\",\"summary\":\"detailed\"},\"text\":{\"format\":{\"type\":\"text\"}}}}\n\nevent: response.in_progress\ndata: {\"type\":\"response.in_progress\",\"sequence_number\":1,\"response\":{\"id\":\"3b1bc683-ae21-90c3-8ada-f73d3b2cb75d\",\"object\":\"response\",\"created_at\":1792065439,\"completed_at\":null,\"status\":\"in_progress\",\"parallel_tool_calls\":true,\"temperature\":0.699999988079071,\"top_p\":0.949999988079071,\"max_output_tokens\":null,\"previous_response_id\":null,\"background\":false,\"truncation\":\"disabled\",\"top_logprobs\":0,\"max_tool_calls\":null,\"model\":\"grok-4.7\",\"error\":null,\"incomplete_details\":null,\"output\":[],\"usage\":null,\"instructions\":null,\"tool_choice\":\"auto\",\"tools\":[],\"reasoning\":{\"effort\":\"xhigh\",\"summary\":\"detailed\"},\"text\":{\"format\":{\"type\":\"text\"}}}}\n\nevent: response.output_item.added\ndata: {\"type\":\"response.output_item.added\",\"sequence_number\":2,\"output_index\":0,\"item\":{\"id\":\"rs_3b1bc683-ae21-90c3-8ada-f73d3b2cb75d\",\"type\":\"reasoning\",\"status\":\"in_progress\",\"summary\":[]}}\n\nevent: response.reasoning_summary_part.added\ndata: {\"type\":\"response.reasoning_summary_part.added\",\"sequence_number\":3,\"output_index\":0,\"summary_index\":0,\"item_id\":\"rs_3b1bc683-ae21-90c3-8ada-f73d3b2cb75d\",\"part\":{\"type\":\"summary_text\",\"text\":\"\"}}\n\nevent: response.reasoning_summary_text.delta\ndata: {\"type\":\"response.reasoning_summary_text.delta\",\"sequence_number\":4,\"output_index\":0,\"summary_index\":0,\"item_id\":\"rs_3b1bc683-ae21-90c3-8ada-f73d3b2cb75d\",\"delta\":\"The user wants a single\"}\n\nevent: response.reasoning_summary_text.delta\ndata: {\"type\":\"response.reasoning_summary_text.delta\",\"sequence_number\":5,\"output_index\":0,\"summary_index\":0,\"item_id\":\"rs_3b1bc683-ae21-90c3-8ada-f73d3b2cb75d\",\"delta\":\" word reply: pong.\"}\n\nevent: response.reasoning_summary_text.done\ndata: {\"type\":\"response.reasoning_summary_text.done\",\"sequence_number\":6,\"output_index\":0,\"summary_index\":0,\"item_id\":\"rs_3b1bc683-ae21-90c3-8ada-f73d3b2cb75d\",\"text\":\"The user wants a single word reply: pong.\"}\n\nevent: response.reasoning_summary_part.done\ndata: {\"type\":\"response.reasoning_summary_part.done\",\"sequence_number\":7,\"output_index\":0,\"summary_index\":0,\"item_id\":\"rs_3b1bc683-ae21-90c3-8ada-f73d3b2cb75d\",\"part\":{\"type\":\"summary_text\",\"text\":\"The user wants a single word reply: pong.\"}}\n\nevent: response.output_item.done\ndata: {\"type\":\"response.output_item.done\",\"sequence_number\":8,\"output_index\":0,\"item\":{\"id\":\"rs_3b1bc683-ae21-90c3-8ada-f73d3b2cb75d\",\"type\":\"reasoning\",\"status\":\"completed\",\"encrypted_content\":\"sn2gZ7lsKpB2KqwJlELP8Y0I+VPETzYj5bnt2V0BeFRp0E58EDpNS6GRCqT/OmqkfBloD68iEBUXFtvclUigXrHGAbbWAJMv+wuU8ZBSRtf0pPbe+G/L0+2nrvgOTjs+8pb925gF6l7beYCkpVX/Ym3pLiNru+MY3sov8/amz6OExgDu+dudpkXOGwJ6kYGttUPVp5H2TIEwBMDYR5Hc/zaiiSoWvFLVA5HXRcyzhrwwT8zuZGZXBXQHCSwOS1RWt78YNtG4CGjmkG9nGloyQraVXCMn0pDmd9ngVwFRe3F1CcESI0AeeTb0kpnen57ktHEySajKaOUXS2n/1M88aHM1jmYFmOB0Y2Lmyws1okUmoaaXANOUKZFBAoemBRfM9dQ92/kPOmJh2SRF2SmAvtmX+qOvjDGrP5UJ8VVM/Kw\",\"summary\":[{\"type\":\"summary_text\",\"text\":\"The user wants a single word reply: pong.\"}]}}\n\nevent: response.output_item.added\ndata: {\"type\":\"response.output_item.added\",\"sequence_number\":9,\"output_index\":1,\"item\":{\"id\":\"msg_3b1bc683-ae21-90c3-8ada-f73d3b2cb75d\",\"type\":\"message\",\"status\":\"in_progress\",\"role\":\"assistant\",\"content\":[]}}\n\nevent: response.content_part.added\ndata: {\"type\":\"response.content_part.added\",\"sequence_number\":10,\"output_index\":1,\"content_index\":0,\"item_id\":\"msg_3b1bc683-ae21-90c3-8ad",
+      "derived": {
+        "status": 200,
+        "body_text_preview": "event: response.created\ndata: {\"type\":\"response.created\",\"sequence_number\":0,\"response\":{\"id\":\"3b1bc683-ae21-90c3-8ada-f73d3b2cb75d\",\"object\":\"response\",\"created_at\":1792065439,\"completed_at\":null,\"status\":\"in_progress\",\"parallel_tool_calls\":true,\"temperature\":0.699999988079071,\"top_p\":0.94999998807"
+      }
+    },
+    {
+      "suite": "effort",
+      "lane": "opencode-go",
+      "alias": "opencode-go/gpt-6-luna",
+      "provider": "opencode-go",
+      "protocol": "openai_responses",
+      "url": "https://opencode.ai/inference/go/v1/responses",
+      "model_id": "gpt-6-luna",
+      "value": "invalid-control",
+      "tag": null,
+      "max_tokens": 16,
+      "png_side": null,
+      "status": 400,
+      "ms": 688,
+      "error": null,
+      "request_headers": {
+        "Authorization": "<redacted:len=58>",
+        "x-opencode-session": "<redacted:len=36>"
+      },
+      "request_body": {
+        "model": "gpt-6-luna",
+        "input": [
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "input_text",
+                "text": "Reply with the single word: pong"
+              }
+            ]
+          }
+        ],
+        "store": false,
+        "stream": true,
+        "reasoning": {
+          "effort": "invalid-control"
+        }
+      },
+      "response": {
+        "model": "gpt-6-luna",
+        "error": {
+          "message": "Invalid value: 'invalid-control'. Supported values are: 'none', 'minimal', 'low', 'medium', 'high', 'xhigh', and 'max'.",
+          "type": "invalid_request_error",
+          "param": "reasoning.effort",
+          "code": "invalid_value"
+        }
+      },
+      "derived": {
+        "status": 400,
+        "output_item_types": [],
+        "message_keys": [
+          "error",
+          "model"
+        ],
+        "tool_call_wellformed": false,
+        "usage": null
+      }
+    },
+    {
+      "suite": "effort",
+      "lane": "cursor",
+      "alias": "cursor/composer-2.5-fast",
+      "provider": "cursor",
+      "protocol": "openai",
+      "url": "http://127.0.0.1:8788/v1/chat/completions",
+      "model_id": "composer-2.5-fast",
+      "value": "invalid-control",
+      "tag": null,
+      "max_tokens": 16,
+      "png_side": null,
+      "status": 200,
+      "ms": 7750,
+      "error": null,
+      "request_headers": {
+        "Authorization": "<redacted:len=19>"
+      },
+      "request_body": {
+        "model": "composer-2.5-fast",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Reply with the single word: pong"
+          }
+        ],
+        "max_tokens": 16,
+        "stream": false,
+        "reasoning_effort": "invalid-control"
+      },
+      "response": {
+        "id": "chatcmpl-3948c30923d24fefa682",
+        "object": "chat.completion",
+        "created": 1792065450,
+        "model": "composer-2.5-fast",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "pong"
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0
+        }
+      },
+      "derived": {
+        "status": 200,
+        "message_keys": [
+          "content",
+          "role"
+        ],
+        "tool_call_wellformed": false,
+        "finish_reason": "stop",
+        "top_keys": [
+          "choices",
+          "created",
+          "id",
+          "model",
+          "object",
+          "usage"
+        ],
+        "has_reasoning_content": false,
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0
+        }
+      }
+    },
+    {
+      "suite": "effort",
+      "lane": "devin",
+      "alias": "devin/swe-2",
+      "provider": "devin",
+      "protocol": "openai",
+      "url": "http://127.0.0.1:8787/v1/chat/completions",
+      "model_id": "swe-2",
+      "value": "invalid-control",
+      "tag": null,
+      "max_tokens": 16,
+      "png_side": null,
+      "status": null,
+      "ms": 90026,
+      "error": "TimeoutError: timed out",
+      "request_headers": {
+        "Authorization": "<redacted:len=18>"
+      },
+      "request_body": {
+        "model": "swe-2",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Reply with the single word: pong"
+          }
+        ],
+        "max_tokens": 16,
+        "stream": false,
+        "reasoning_effort": "invalid-control"
+      },
+      "response": null,
+      "derived": {
+        "status": null
+      }
+    }
+  ]
+}
