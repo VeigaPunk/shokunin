@@ -22,7 +22,7 @@ User name in a PAM line below is session-adjacency evidence, not a credential. N
 
 ## Visibility (the contract probe is not enough)
 
-Contract probe `journalctl --user -b` sees user-manager `Failed with result` lines and coredump records. It does not see kernel victim lines. A MESSAGE grep for `terminated abnormally with signal` is 0 on `--user` even though the coredump records are there: the signal is a field, not that phrase.
+Contract probe `journalctl --user -b` sees user-manager `Failed with result` lines and coredump records. It does not see kernel victim lines. MESSAGE grep `terminated abnormally with signal` is 0 on `--user` (rechecked 2026-10-14T21:44:43-03:00). The shorter phrase `terminated abnormally` is not 0: 7 entries, all `terminated abnormally without generating a coredump`, `COREDUMP_SIGNAL=5`, comm `MainThread`. Those 7 are not signal 11.
 
 Remeasured 2026-10-14T21:43:03-03:00 after KillEventsJournal's recount at 21:42:01. Counts below are journal entries, not cat-lines. Boot id is the same 32 hex with or without hyphens: `d7f0bc8d938e4249b4a1f250cbfacf58` / `d7f0bc8d-938e-4249-b4a1-f250cbfacf58`.
 
@@ -38,7 +38,7 @@ Remeasured 2026-10-14T21:43:03-03:00 after KillEventsJournal's recount at 21:42:
 
 The one-entry gap (system 657 vs user 656 on `COREDUMP_SIGNAL=11`) is observed. Which pid is system-only is unknown. ABRT/TRAP/BUS field counts on `--user` match the system helper histogram exactly.
 
-A `--user -b` census that greps MESSAGE for `segfault at` or `terminated abnormally` misses the crash mass and misses the kernel victim line. The same probe with `COREDUMP_SIGNAL=11` sees the crash mass (656). The only oom signature on `--user` is still `Failed with result 'oom-kill'.`
+A `--user -b` MESSAGE grep for `segfault at` or `terminated abnormally with signal` misses the crash mass and misses the kernel victim line. The shorter grep `terminated abnormally` returns 7, all SIGTRAP with no coredump, and still misses the 656 SIGSEGV. The probe with `COREDUMP_SIGNAL=11` sees the crash mass. The only oom signature on `--user` is still `Failed with result 'oom-kill'.`
 
 Do not print coredump payload fields. The record carries `COREDUMP_ENVIRON`, `COREDUMP_CMDLINE`, `COREDUMP_PROC_STATUS`, `COREDUMP_PROC_MAPS`, `COREDUMP_OPEN_FDS`. Key names observed; values not read. Census `--output-fields` is `COREDUMP_SIGNAL,COREDUMP_SIGNAL_NAME,COREDUMP_COMM,COREDUMP_PID,COREDUMP_UNIT,COREDUMP_USER_UNIT,COREDUMP_CGROUP,MESSAGE_ID`.
 
@@ -116,6 +116,7 @@ Filing these into `segfault` or `oom_kill` is the misclassification.
 |---|---|---|---|
 | `MORI-ABRT-COREDUMP` | `Process 71222 (MainThread) of user 1000 terminated abnormally with signal 6/ABRT, processing...` | 2026-10-13T12:43:31.986776-03:00, boot 0 | Boot 0: 365. Comm: godot 318, MainThread 25, love 16, waybar 6. No kernel `segfault at` join (365/365 unmatched). Not OOM. Not segfault. |
 | `MORI-TRAP-INT3` | `traps: Typora[102768] trap int3 ip:55cd4a871195 sp:7fff38bf1a20 error:0 in Typora[70ea195,55cd45e08000+9aa1000]` | 2026-10-13T13:47:02.148653-03:00, boot 0 | 25/25 join to `signal 5/TRAP`. Companion: `Process 102768 (Typora) of user 1000 terminated abnormally with signal 5/TRAP, processing...` at .149334. Not segfault. |
+| `MORI-TRAP-NOCORE` | `Process 149109 (MainThread) of user 1000 terminated abnormally without generating a coredump.` | 2026-10-13T13:55:35.050269-03:00, boot 0, `--user`, systemd-coredump pid 149118. Same shape for pids 154780, 189795, 196055, 253012, 253029, 256319 | 7 entries, rechecked 2026-10-14T21:44:56-03:00. Same `MESSAGE_ID=fc2e22bc6ee647b6b90729ab34a250b1` as dumped-core records, `COREDUMP_SIGNAL=5`. A `dumped core` grep misses them. Not segfault. Not the 656-vs-657 SIGSEGV gap. |
 | `MORI-BUS-COREDUMP` | `Process 1282371 (chrome_crashpad) of user 1000 terminated abnormally with signal 7/BUS, processing...` | 2026-10-13T22:48:02.949171-03:00, boot 0 | Boot 0: 5 (chrome_crashpad 2, grok-bot 3). No kernel fault line in the `segfault`/`gpf`/`int3` set. Not segfault. |
 | `MORI-HYPRLAND-SEGV-AFTER-SESSION` | `Hyprland[1203102]: segfault at 0 ip 00007f0949128fe1 sp 00007ffcb9a67fb0 error 4 in libaquamarine.so.0.15.0[bbfe1,7f0949098000+e3000] likely on CPU 4 (core 4, socket 0)` | 2026-10-14T13:11:07.408647-03:00, boot 0 | 8s after the user-manager `status=9/KILL`, during the new session (`Stopping... "start-hyprland"` at 13:11:07.370). Observation of order: it did not precede the SIGKILL. Do not cite it as the cause of the session drop. |
 
