@@ -1,0 +1,59 @@
+{
+  "provider": "openai-codex",
+  "declared_protocols": [
+    "openai_responses"
+  ],
+  "model_entries": 3,
+  "probes": [
+    {
+      "provider": "openai-codex",
+      "protocol": "openai_responses",
+      "model_id": "gpt-6.1-sol",
+      "purpose": "provider-default-protocol",
+      "method": "POST",
+      "url": "http://127.0.0.1:8789/backend-api/codex/responses",
+      "timeout_s": 60,
+      "auth_headers_sent": [
+        "Authorization"
+      ],
+      "request_body": {
+        "model": "gpt-6.1-sol",
+        "max_output_tokens": 8,
+        "temperature": 0,
+        "input": "ping"
+      },
+      "latency_ms": 381,
+      "status": 400,
+      "response_headers": {
+        "Server": "BaseHTTP/0.6 Python/3.14.7, cloudflare",
+        "Date": "Thu, 15 Oct 2026 11:29:44 GMT, Thu, 15 Oct 2026 11:29:44 GMT",
+        "Content-Type": "application/json",
+        "Content-Length": "33",
+        "x-oai-request-id": "dbc36f83-e9a9-4ecc-b841-52b34a0aae75",
+        "x-openai-proxy-wasm": "<len=4>",
+        "X-Content-Type-Options": "<len=7>",
+        "cf-cache-status": "<len=7>",
+        "Cross-Origin-Opener-Policy": "<len=24>",
+        "Strict-Transport-Security": "<len=44>",
+        "Nel": "<len=63>",
+        "Report-To": "<len=255>",
+        "Set-Cookie": "<redacted:len=859>",
+        "Referrer-Policy": "<len=31>",
+        "CF-RAY": "a4ae7cdb4ba0e2a8-GIG",
+        "Connection": "<len=5>"
+      },
+      "body": {
+        "detail": "Input must be a list"
+      },
+      "shape": {
+        "parsed_json": true,
+        "reasoning_content_present": false,
+        "usage_fields": [],
+        "finish_reason": null,
+        "content_preview": null,
+        "error_type": null,
+        "error_message": null
+      }
+    }
+  ]
+}

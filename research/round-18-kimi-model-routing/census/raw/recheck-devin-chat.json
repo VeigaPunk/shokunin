@@ -1,0 +1,40 @@
+{
+  "probes": [
+    {
+      "provider": "devin",
+      "protocol": "openai",
+      "model_id": "swe-2",
+      "purpose": "cold-start-retry",
+      "method": "POST",
+      "url": "http://127.0.0.1:8787/v1/chat/completions",
+      "timeout_s": 300,
+      "auth_headers_sent": [
+        "Authorization"
+      ],
+      "request_body": {
+        "model": "swe-2",
+        "max_tokens": 8,
+        "temperature": 0,
+        "messages": [
+          {
+            "role": "user",
+            "content": "ping"
+          }
+        ]
+      },
+      "latency_ms": 300082,
+      "status": "timeout",
+      "error": "no response within 300s",
+      "body": null,
+      "shape": {
+        "parsed_json": false,
+        "reasoning_content_present": false,
+        "usage_fields": [],
+        "finish_reason": null,
+        "content_preview": null,
+        "error_type": null,
+        "error_message": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,277 @@
+{
+  "config_path": "/home/vgpnk/.kimi-code/config.toml",
+  "config_sha256_16": "61f22a2bbe52d616",
+  "provider_port_map": {
+    "8787": [
+      "devin"
+    ],
+    "8788": [
+      "cursor"
+    ],
+    "8789": [
+      "openai-codex"
+    ],
+    "8790": [
+      "xai-oauth"
+    ],
+    "8791": [
+      "ds-flash-cascade"
+    ],
+    "8793": [
+      "glm-flash-cascade"
+    ]
+  },
+  "units": {
+    "codex-shim.service": {
+      "unit": "codex-shim.service",
+      "is-active": "active",
+      "is-enabled": "enabled",
+      "show": "ActiveState=active\nSubState=running\nMainPID=482287\nExecStart={ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 /home/vgpnk/.local/share/oauth-shim/shim.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }\nEnvironment=SHIM_PORT=8789 SHIM_UPSTREAM=chatgpt.com SHIM_TOKEN_CMD=<redacted> SHIM_MODELS=gpt-6.1-sol,gpt-6-luna SHIM_MAX_CONCURRENT=128",
+      "main_pid": 482287,
+      "shim_port": 8789,
+      "port_source": "MainPID -> ss -ltnp",
+      "listener_present": true,
+      "config_providers_on_port": [
+        "openai-codex"
+      ]
+    },
+    "cursor-shim.service": {
+      "unit": "cursor-shim.service",
+      "is-active": "active",
+      "is-enabled": "enabled",
+      "show": "ActiveState=active\nSubState=running\nMainPID=480654\nExecStart={ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 /home/vgpnk/.local/share/cursor-shim/shim.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }\nEnvironment=PYTHONUNBUFFERED=1",
+      "main_pid": 480654,
+      "shim_port": 8788,
+      "port_source": "MainPID -> ss -ltnp",
+      "listener_present": true,
+      "config_providers_on_port": [
+        "cursor"
+      ]
+    },
+    "devin-shim.service": {
+      "unit": "devin-shim.service",
+      "is-active": "active",
+      "is-enabled": "enabled",
+      "show": "ActiveState=active\nSubState=running\nMainPID=480653\nExecStart={ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 /home/vgpnk/.local/share/devin-shim/shim.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }\nEnvironment=PYTHONUNBUFFERED=1",
+      "main_pid": 480653,
+      "shim_port": 8787,
+      "port_source": "MainPID -> ss -ltnp",
+      "listener_present": true,
+      "config_providers_on_port": [
+        "devin"
+      ]
+    },
+    "ds-flash-shim.service": {
+      "unit": "ds-flash-shim.service",
+      "is-active": "active",
+      "is-enabled": "enabled",
+      "show": "ActiveState=active\nSubState=running\nMainPID=535566\nExecStart={ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 /home/vgpnk/.local/share/ds-flash-shim/shim.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }\nEnvironment=PYTHONUNBUFFERED=1",
+      "main_pid": 535566,
+      "shim_port": 8791,
+      "port_source": "MainPID -> ss -ltnp",
+      "listener_present": true,
+      "config_providers_on_port": [
+        "ds-flash-cascade"
+      ]
+    },
+    "glm-flash-shim.service": {
+      "unit": "glm-flash-shim.service",
+      "is-active": "active",
+      "is-enabled": "enabled",
+      "show": "ActiveState=active\nSubState=running\nMainPID=539203\nExecStart={ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 /home/vgpnk/.local/share/glm-flash-shim/shim.py ; ignore_errors=no ; start_time=[Thu 2026-10-15 08:23:57 -03] ; stop_time=[n/a] ; pid=539203 ; code=(null) ; status=0/0 }\nEnvironment=PYTHONUNBUFFERED=1",
+      "main_pid": 539203,
+      "shim_port": 8793,
+      "port_source": "MainPID -> ss -ltnp",
+      "listener_present": true,
+      "config_providers_on_port": [
+        "glm-flash-cascade"
+      ]
+    },
+    "xai-shim.service": {
+      "unit": "xai-shim.service",
+      "is-active": "active",
+      "is-enabled": "enabled",
+      "show": "ActiveState=active\nSubState=running\nMainPID=482288\nExecStart={ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 /home/vgpnk/.local/share/oauth-shim/shim.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }\nEnvironment=SHIM_PORT=8790 SHIM_UPSTREAM=api.x.ai SHIM_TOKEN_CMD=<redacted> SHIM_FIX_EFFORT=1 SHIM_MAX_CONCURRENT=128",
+      "main_pid": 482288,
+      "shim_port": 8790,
+      "port_source": "MainPID -> ss -ltnp",
+      "listener_present": true,
+      "config_providers_on_port": [
+        "xai-oauth"
+      ]
+    }
+  },
+  "listener_rows_8780_8800": [
+    "LISTEN 0      512        127.0.0.1:8793       0.0.0.0:*    users:((\"python3\",pid=539203,fd=3))",
+    "LISTEN 0      5          127.0.0.1:8789       0.0.0.0:*    users:((\"python3\",pid=482287,fd=3))",
+    "LISTEN 0      5          127.0.0.1:8788       0.0.0.0:*    users:((\"python3\",pid=480654,fd=3))",
+    "LISTEN 0      512        127.0.0.1:8791       0.0.0.0:*    users:((\"python3\",pid=535566,fd=3))",
+    "LISTEN 0      5          127.0.0.1:8790       0.0.0.0:*    users:((\"python3\",pid=482288,fd=3))",
+    "LISTEN 0      5          127.0.0.1:8787       0.0.0.0:*    users:((\"python3\",pid=480653,fd=3))"
+  ],
+  "commands": [
+    {
+      "cmd": "systemctl --user list-units --type=service --all --no-legend --plain",
+      "rc": 0,
+      "stderr": "",
+      "shim_lines": [
+        "codex-shim.service                                               loaded    active   running OAuth token-injecting proxy for OpenAI Codex backend",
+        "cursor-shim.service                                              loaded    active   running cursor-agent ACP to OpenAI-compatible shim",
+        "devin-shim.service                                               loaded    active   running Devin OpenAI shim (devin acp -> OpenAI-compatible localhost endpoint)",
+        "ds-flash-shim.service                                            loaded    active   running ds-flash-shim - OpenAI-compatible 3-leg cascade shim (opencode-go -> hyper -> devin)",
+        "glm-flash-shim.service                                           loaded    active   running glm-flash-shim - OpenAI-compatible 3-leg cascade shim (devin -> zai -> hyper)",
+        "xai-shim.service                                                 loaded    active   running OAuth token-injecting proxy for xAI API"
+      ]
+    },
+    {
+      "cmd": "ss -ltnp",
+      "rc": 0,
+      "stdout": "State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess\nLISTEN 0      4096         0.0.0.0:5355       0.0.0.0:*   \nLISTEN 0      4096       127.0.0.1:631        0.0.0.0:*   \nLISTEN 0      4096      172.17.0.1:53         0.0.0.0:*   \nLISTEN 0      4096       127.0.0.1:39929      0.0.0.0:*   \nLISTEN 0      4096      127.0.0.54:53         0.0.0.0:*   \nLISTEN 0      2048       127.0.0.1:38535      0.0.0.0:*    users:((\"hermes\",pid=3470363,fd=4))\nLISTEN 0      512        127.0.0.1:8793       0.0.0.0:*    users:((\"python3\",pid=539203,fd=3))\nLISTEN 0      5          127.0.0.1:8789       0.0.0.0:*    users:((\"python3\",pid=482287,fd=3))\nLISTEN 0      5          127.0.0.1:8788       0.0.0.0:*    users:((\"python3\",pid=480654,fd=3))\nLISTEN 0      512        127.0.0.1:8791       0.0.0.0:*    users:((\"python3\",pid=535566,fd=3))\nLISTEN 0      5          127.0.0.1:8790       0.0.0.0:*    users:((\"python3\",pid=482288,fd=3))\nLISTEN 0      5          127.0.0.1:8787       0.0.0.0:*    users:((\"python3\",pid=480653,fd=3))\nLISTEN 0      4096       127.0.0.1:10086      0.0.0.0:*    users:((\"kimi-webbridge\",pid=3736881,fd=6))\nLISTEN 0      4096   127.0.0.53%lo:53         0.0.0.0:*   \nLISTEN 0      4096            [::]:5355          [::]:*   \nLISTEN 0      4096           [::1]:631           [::]:*",
+      "stderr": ""
+    },
+    {
+      "cmd": "systemctl --user is-active codex-shim.service",
+      "rc": 0,
+      "stdout": "active",
+      "stderr": ""
+    },
+    {
+      "cmd": "systemctl --user is-enabled codex-shim.service",
+      "rc": 0,
+      "stdout": "enabled",
+      "stderr": ""
+    },
+    {
+      "cmd": "systemctl --user show codex-shim.service -p ActiveState -p SubState -p MainPID -p ExecStart -p Environment",
+      "rc": 0,
+      "stdout": "ActiveState=active\nSubState=running\nMainPID=482287\nExecStart={ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 /home/vgpnk/.local/share/oauth-shim/shim.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }\nEnvironment=SHIM_PORT=8789 SHIM_UPSTREAM=chatgpt.com SHIM_TOKEN_CMD=<redacted> SHIM_MODELS=gpt-6.1-sol,gpt-6-luna SHIM_MAX_CONCURRENT=128",
+      "stderr": ""
+    },
+    {
+      "cmd": "systemctl --user cat codex-shim.service",
+      "rc": 0,
+      "stdout": "# /home/vgpnk/.config/systemd/user/codex-shim.service\n[Unit]\nDescription=OAuth token-injecting proxy for OpenAI Codex backend\nAfter=network-online.target\n\n[Service]\nType=simple\nEnvironment=SHIM_PORT=8789\nEnvironment=SHIM_UPSTREAM=chatgpt.com\nEnvironment=SHIM_TOKEN_CMD=<redacted>\nEnvironment=SHIM_MODELS=gpt-6.1-sol,gpt-6-luna\nEnvironment=SHIM_MAX_CONCURRENT=128\nExecStart=/usr/bin/python3 /home/vgpnk/.local/share/oauth-shim/shim.py\nRestart=on-failure\nRestartSec=2\n\n[Install]\nWantedBy=default.target",
+      "stderr": ""
+    },
+    {
+      "cmd": "systemctl --user is-active cursor-shim.service",
+      "rc": 0,
+      "stdout": "active",
+      "stderr": ""
+    },
+    {
+      "cmd": "systemctl --user is-enabled cursor-shim.service",
+      "rc": 0,
+      "stdout": "enabled",
+      "stderr": ""
+    },
+    {
+      "cmd": "systemctl --user show cursor-shim.service -p ActiveState -p SubState -p MainPID -p ExecStart -p Environment",
+      "rc": 0,
+      "stdout": "ActiveState=active\nSubState=running\nMainPID=480654\nExecStart={ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 /home/vgpnk/.local/share/cursor-shim/shim.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }\nEnvironment=PYTHONUNBUFFERED=1",
+      "stderr": ""
+    },
+    {
+      "cmd": "systemctl --user cat cursor-shim.service",
+      "rc": 0,
+      "stdout": "# /home/vgpnk/.config/systemd/user/cursor-shim.service\n[Unit]\nDescription=cursor-agent ACP to OpenAI-compatible shim\nAfter=default.target\n\n[Service]\nExecStart=/usr/bin/python3 %h/.local/share/cursor-shim/shim.py\nRestart=on-failure\nRestartSec=3\nEnvironment=PYTHONUNBUFFERED=1\n\n[Install]\nWantedBy=default.target",
+      "stderr": ""
+    },
+    {
+      "cmd": "systemctl --user is-active devin-shim.service",
+      "rc": 0,
+      "stdout": "active",
+      "stderr": ""
+    },
+    {
+      "cmd": "systemctl --user is-enabled devin-shim.service",
+      "rc": 0,
+      "stdout": "enabled",
+      "stderr": ""
+    },
+    {
+      "cmd": "systemctl --user show devin-shim.service -p ActiveState -p SubState -p MainPID -p ExecStart -p Environment",
+      "rc": 0,
+      "stdout": "ActiveState=active\nSubState=running\nMainPID=480653\nExecStart={ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 /home/vgpnk/.local/share/devin-shim/shim.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }\nEnvironment=PYTHONUNBUFFERED=1",
+      "stderr": ""
+    },
+    {
+      "cmd": "systemctl --user cat devin-shim.service",
+      "rc": 0,
+      "stdout": "# /home/vgpnk/.config/systemd/user/devin-shim.service\n[Unit]\nDescription=Devin OpenAI shim (devin acp -> OpenAI-compatible localhost endpoint)\n\n[Service]\nExecStart=/usr/bin/python3 /home/vgpnk/.local/share/devin-shim/shim.py\nRestart=on-failure\nRestartSec=2\nEnvironment=PYTHONUNBUFFERED=1\n\n[Install]\nWantedBy=default.target",
+      "stderr": ""
+    },
+    {
+      "cmd": "systemctl --user is-active ds-flash-shim.service",
+      "rc": 0,
+      "stdout": "active",
+      "stderr": ""
+    },
+    {
+      "cmd": "systemctl --user is-enabled ds-flash-shim.service",
+      "rc": 0,
+      "stdout": "enabled",
+      "stderr": ""
+    },
+    {
+      "cmd": "systemctl --user show ds-flash-shim.service -p ActiveState -p SubState -p MainPID -p ExecStart -p Environment",
+      "rc": 0,
+      "stdout": "ActiveState=active\nSubState=running\nMainPID=535566\nExecStart={ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 /home/vgpnk/.local/share/ds-flash-shim/shim.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }\nEnvironment=PYTHONUNBUFFERED=1",
+      "stderr": ""
+    },
+    {
+      "cmd": "systemctl --user cat ds-flash-shim.service",
+      "rc": 0,
+      "stdout": "# /home/vgpnk/.config/systemd/user/ds-flash-shim.service\n[Unit]\nDescription=ds-flash-shim - OpenAI-compatible 3-leg cascade shim (opencode-go -> hyper -> devin)\nAfter=network-online.target devin-shim.service\nWants=network-online.target\n\n[Service]\nExecStart=/usr/bin/python3 %h/.local/share/ds-flash-shim/shim.py\nRestart=on-failure\nRestartSec=2\nEnvironment=PYTHONUNBUFFERED=1\n# Leg endpoints/keys are overridable here without editing shim.py, e.g.:\n#Environment=DS_LEG1_KEY=<redacted>\n#Environment=DS_LEG2_KEY=<redacted>\n#Environment=DS_SHIM_TIMEOUT=15\n\n[Install]\nWantedBy=default.target",
+      "stderr": ""
+    },
+    {
+      "cmd": "systemctl --user is-active glm-flash-shim.service",
+      "rc": 0,
+      "stdout": "active",
+      "stderr": ""
+    },
+    {
+      "cmd": "systemctl --user is-enabled glm-flash-shim.service",
+      "rc": 0,
+      "stdout": "enabled",
+      "stderr": ""
+    },
+    {
+      "cmd": "systemctl --user show glm-flash-shim.service -p ActiveState -p SubState -p MainPID -p ExecStart -p Environment",
+      "rc": 0,
+      "stdout": "ActiveState=active\nSubState=running\nMainPID=539203\nExecStart={ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 /home/vgpnk/.local/share/glm-flash-shim/shim.py ; ignore_errors=no ; start_time=[Thu 2026-10-15 08:23:57 -03] ; stop_time=[n/a] ; pid=539203 ; code=(null) ; status=0/0 }\nEnvironment=PYTHONUNBUFFERED=1",
+      "stderr": ""
+    },
+    {
+      "cmd": "systemctl --user cat glm-flash-shim.service",
+      "rc": 0,
+      "stdout": "# /home/vgpnk/.config/systemd/user/glm-flash-shim.service\n[Unit]\nDescription=glm-flash-shim - OpenAI-compatible 3-leg cascade shim (devin -> zai -> hyper)\nAfter=network-online.target devin-shim.service\nWants=network-online.target\n\n[Service]\nExecStart=/usr/bin/python3 %h/.local/share/glm-flash-shim/shim.py\nRestart=on-failure\nRestartSec=2\nEnvironment=PYTHONUNBUFFERED=1\n# Leg endpoints/keys are overridable here without editing shim.py, e.g.:\n#Environment=GLM_LEG2_KEY=<redacted>\n#Environment=GLM_LEG3_KEY=<redacted>\n#Environment=GLM_SHIM_TIMEOUT=15\n\n[Install]\nWantedBy=default.target",
+      "stderr": ""
+    },
+    {
+      "cmd": "systemctl --user is-active xai-shim.service",
+      "rc": 0,
+      "stdout": "active",
+      "stderr": ""
+    },
+    {
+      "cmd": "systemctl --user is-enabled xai-shim.service",
+      "rc": 0,
+      "stdout": "enabled",
+      "stderr": ""
+    },
+    {
+      "cmd": "systemctl --user show xai-shim.service -p ActiveState -p SubState -p MainPID -p ExecStart -p Environment",
+      "rc": 0,
+      "stdout": "ActiveState=active\nSubState=running\nMainPID=482288\nExecStart={ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 /home/vgpnk/.local/share/oauth-shim/shim.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }\nEnvironment=SHIM_PORT=8790 SHIM_UPSTREAM=api.x.ai SHIM_TOKEN_CMD=<redacted> SHIM_FIX_EFFORT=1 SHIM_MAX_CONCURRENT=128",
+      "stderr": ""
+    },
+    {
+      "cmd": "systemctl --user cat xai-shim.service",
+      "rc": 0,
+      "stdout": "# /home/vgpnk/.config/systemd/user/xai-shim.service\n[Unit]\nDescription=OAuth token-injecting proxy for xAI API\nAfter=network-online.target\n\n[Service]\nType=simple\nEnvironment=SHIM_PORT=8790\nEnvironment=SHIM_UPSTREAM=api.x.ai\nEnvironment=SHIM_TOKEN_CMD=<redacted>\nEnvironment=SHIM_FIX_EFFORT=1\nEnvironment=SHIM_MAX_CONCURRENT=128\nExecStart=/usr/bin/python3 /home/vgpnk/.local/share/oauth-shim/shim.py\nRestart=on-failure\nRestartSec=2\n\n[Install]\nWantedBy=default.target",
+      "stderr": ""
+    }
+  ]
+}

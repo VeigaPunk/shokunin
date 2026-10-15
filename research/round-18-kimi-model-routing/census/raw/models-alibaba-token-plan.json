@@ -1,0 +1,198 @@
+{
+  "provider": "alibaba-token-plan",
+  "protocol": "openai",
+  "configured_model_ids": [
+    "MiniMax-M2.5",
+    "deepseek-v3.2",
+    "deepseek-v4-flash",
+    "deepseek-v4-flash-0731",
+    "deepseek-v4-pro",
+    "deepseek-v4-pro-0813",
+    "deepseek-v4.1-flash",
+    "glm-5",
+    "glm-5.1",
+    "glm-5.2",
+    "glm-5.3",
+    "kimi-k2.5",
+    "kimi-k2.6",
+    "qwen3.6-flash",
+    "qwen3.6-plus",
+    "qwen3.7-max",
+    "qwen3.7-plus",
+    "qwen3.8-flash",
+    "qwen3.8-max"
+  ],
+  "configured_model_id_count": 19,
+  "resolved_model_ids": [
+    "deepseek-v4-flash-0731",
+    "deepseek-v4-pro",
+    "deepseek-v4.1-flash",
+    "glm-5.2",
+    "glm-5.3",
+    "qwen3.6-flash",
+    "qwen3.7-max",
+    "qwen3.7-plus",
+    "qwen3.8-flash",
+    "qwen3.8-max"
+  ],
+  "unresolved_model_ids": [
+    "MiniMax-M2.5",
+    "deepseek-v3.2",
+    "deepseek-v4-flash",
+    "deepseek-v4-pro-0813",
+    "glm-5",
+    "glm-5.1",
+    "kimi-k2.5",
+    "kimi-k2.6",
+    "qwen3.6-plus"
+  ],
+  "probes": [
+    {
+      "provider": "alibaba-token-plan",
+      "kind": "provider-base-url",
+      "method": "GET",
+      "url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1/models",
+      "auth_headers_sent": [
+        "Authorization"
+      ],
+      "latency_ms": 1231,
+      "status": 200,
+      "response_headers": {
+        "server": "istio-envoy",
+        "date": "Thu, 15 Oct 2026 11:37:19 GMT",
+        "content-type": "application/json;charset=UTF-8",
+        "vary": "<len=15>",
+        "content-encoding": "<len=4>",
+        "x-envoy-upstream-service-time": "13",
+        "x-request-id": "415e4d82-95e4-4814-a507-a85ecf2b9bc2",
+        "req-cost-time": "<len=2>",
+        "req-arrive-time": "<len=13>",
+        "resp-start-time": "<len=13>",
+        "transfer-encoding": "<len=7>"
+      },
+      "body": {
+        "first_id": "model-id-0",
+        "data": [
+          {
+            "created": 1779367398,
+            "owned_by": "system",
+            "id": "qwen3.7-max",
+            "object": "model"
+          },
+          {
+            "created": 1780806507,
+            "owned_by": "system",
+            "id": "qwen3.7-plus",
+            "object": "model"
+          },
+          {
+            "created": 1779173747,
+            "owned_by": "system",
+            "id": "qwen3.6-flash",
+            "object": "model"
+          },
+          {
+            "created": 1781605418,
+            "owned_by": "system",
+            "id": "glm-5.2",
+            "object": "model"
+          },
+          {
+            "created": 1779173747,
+            "owned_by": "system",
+            "id": "deepseek-v4-pro",
+            "object": "model"
+          },
+          {
+            "created": 1779173747,
+            "owned_by": "system",
+            "id": "wan2.7-image",
+            "object": "model"
+          },
+          {
+            "created": 1779173747,
+            "owned_by": "system",
+            "id": "wan2.7-image-pro",
+            "object": "model"
+          },
+          {
+            "created": 1785248243,
+            "owned_by": "system",
+            "id": "qwen-audio-3.0-tts-plus",
+            "object": "model"
+          },
+          {
+            "created": 1785513696,
+            "owned_by": "system",
+            "id": "deepseek-v4-flash-0731",
+            "object": "model"
+          },
+          {
+            "created": 1785722409,
+            "owned_by": "system",
+            "id": "qwen3.8-max",
+            "object": "model"
+          },
+          {
+            "created": 1785928192,
+            "owned_by": "system",
+            "id": "qwen-audio-3.0-realtime-plus",
+            "object": "model"
+          },
+          {
+            "created": 1787731683,
+            "owned_by": "system",
+            "id": "qwen3.8-flash",
+            "object": "model"
+          },
+          {
+            "created": 1789351565,
+            "owned_by": "system",
+            "id": "deepseek-v4.1-flash",
+            "object": "model"
+          },
+          {
+            "created": 1789541875,
+            "owned_by": "system",
+            "id": "glm-5.3",
+            "object": "model"
+          },
+          {
+            "created": 1789973043,
+            "owned_by": "system",
+            "id": "auto",
+            "object": "model"
+          },
+          {
+            "created": 1791856789,
+            "owned_by": "system",
+            "id": "wan3.0-video",
+            "object": "model"
+          }
+        ],
+        "last_id": "model-id-15",
+        "has_more": false,
+        "object": "list"
+      },
+      "served_ids": [
+        "qwen3.7-max",
+        "qwen3.7-plus",
+        "qwen3.6-flash",
+        "glm-5.2",
+        "deepseek-v4-pro",
+        "wan2.7-image",
+        "wan2.7-image-pro",
+        "qwen-audio-3.0-tts-plus",
+        "deepseek-v4-flash-0731",
+        "qwen3.8-max",
+        "qwen-audio-3.0-realtime-plus",
+        "qwen3.8-flash",
+        "deepseek-v4.1-flash",
+        "glm-5.3",
+        "auto",
+        "wan3.0-video"
+      ],
+      "served_id_count": 16
+    }
+  ]
+}

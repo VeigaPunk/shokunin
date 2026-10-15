@@ -1,0 +1,90 @@
+{
+  "provider": "zai-coding-plan",
+  "declared_protocols": [
+    "openai"
+  ],
+  "model_entries": 8,
+  "probes": [
+    {
+      "provider": "zai-coding-plan",
+      "protocol": "openai",
+      "model_id": "glm-5.3-flash",
+      "purpose": "provider-default-protocol",
+      "method": "POST",
+      "url": "https://api.z.ai/api/coding/paas/v4/chat/completions",
+      "timeout_s": 60,
+      "auth_headers_sent": [
+        "Authorization"
+      ],
+      "request_body": {
+        "model": "glm-5.3-flash",
+        "max_tokens": 8,
+        "temperature": 0,
+        "messages": [
+          {
+            "role": "user",
+            "content": "ping"
+          }
+        ]
+      },
+      "latency_ms": 2159,
+      "status": 200,
+      "response_headers": {
+        "Date": "Thu, 15 Oct 2026 11:29:31 GMT",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Content-Length": "473",
+        "Connection": "<len=10>",
+        "Alt-Svc": "<len=18>",
+        "Set-Cookie": "<redacted:len=98>",
+        "ga-traceid": "<len=32>",
+        "Vary": "<len=148>",
+        "X-LOG-ID": "<len=30>",
+        "X-Request-ID": "5a5f3309-72c6-4173-99f3-880dc1aaa50a"
+      },
+      "body": {
+        "choices": [
+          {
+            "finish_reason": "length",
+            "index": 0,
+            "message": {
+              "content": "",
+              "reasoning_content": "Let me analyze this \"ping\" message",
+              "role": "assistant"
+            }
+          }
+        ],
+        "created": 1792063771,
+        "id": "20261015192930f9ec05245c724089",
+        "model": "glm-5.3-flash",
+        "object": "chat.completion",
+        "request_id": "20261015192930f9ec05245c724089",
+        "usage": {
+          "completion_tokens": 8,
+          "completion_tokens_details": {
+            "reasoning_tokens": 6
+          },
+          "prompt_tokens": 13,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "total_tokens": 21
+        }
+      },
+      "shape": {
+        "parsed_json": true,
+        "reasoning_content_present": true,
+        "usage_fields": [
+          "completion_tokens",
+          "completion_tokens_details",
+          "prompt_tokens",
+          "prompt_tokens_details",
+          "total_tokens"
+        ],
+        "finish_reason": "length",
+        "content_preview": null,
+        "error_type": null,
+        "error_message": null
+      }
+    }
+  ]
+}

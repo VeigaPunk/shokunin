@@ -1,0 +1,95 @@
+{
+  "provider": "openai-codex",
+  "protocol": "openai_responses",
+  "configured_model_ids": [
+    "gpt-6-luna",
+    "gpt-6.1-sol"
+  ],
+  "configured_model_id_count": 2,
+  "resolved_model_ids": [
+    "gpt-6-luna",
+    "gpt-6.1-sol"
+  ],
+  "unresolved_model_ids": [],
+  "probes": [
+    {
+      "provider": "openai-codex",
+      "kind": "provider-base-url",
+      "method": "GET",
+      "url": "http://127.0.0.1:8789/backend-api/codex/models",
+      "auth_headers_sent": [
+        "Authorization"
+      ],
+      "latency_ms": 145,
+      "status": 400,
+      "response_headers": {
+        "Server": "BaseHTTP/0.6 Python/3.14.7, cloudflare",
+        "Date": "Thu, 15 Oct 2026 11:37:23 GMT, Thu, 15 Oct 2026 11:37:24 GMT",
+        "Content-Type": "application/json",
+        "Content-Length": "209",
+        "x-oai-request-id": "req_f135b78b996848bebd6ca3a61856770c",
+        "x-openai-proxy-wasm": "<len=4>",
+        "X-Content-Type-Options": "<len=7>",
+        "cf-cache-status": "<len=7>",
+        "Cross-Origin-Opener-Policy": "<len=24>",
+        "Strict-Transport-Security": "<len=44>",
+        "Nel": "<len=63>",
+        "Report-To": "<len=251>",
+        "Set-Cookie": "<redacted:len=859>",
+        "Referrer-Policy": "<len=31>",
+        "CF-RAY": "a4ae88145806e10b-GIG",
+        "Connection": "<len=5>"
+      },
+      "body": {
+        "error": {
+          "message": "[{'type': 'missing', 'loc': ('query', 'client_version'), 'msg': 'Field required', 'input': None}]",
+          "type": "invalid_request_error",
+          "param": null,
+          "code": null
+        }
+      },
+      "served_ids": [],
+      "served_id_count": 0
+    },
+    {
+      "provider": "openai-codex",
+      "kind": "shim-static-route",
+      "method": "GET",
+      "url": "http://127.0.0.1:8789/v1/models",
+      "auth_headers_sent": [
+        "Authorization"
+      ],
+      "note": "shim SHIM_MODELS static list; provider base_url points at /backend-api/codex",
+      "latency_ms": 1,
+      "status": 200,
+      "response_headers": {
+        "Server": "BaseHTTP/0.6 Python/3.14.7",
+        "Date": "Thu, 15 Oct 2026 11:37:23 GMT",
+        "Content-Type": "application/json",
+        "Content-Length": "179"
+      },
+      "body": {
+        "object": "list",
+        "data": [
+          {
+            "id": "gpt-6.1-sol",
+            "object": "model",
+            "created": 0,
+            "owned_by": "shim"
+          },
+          {
+            "id": "gpt-6-luna",
+            "object": "model",
+            "created": 0,
+            "owned_by": "shim"
+          }
+        ]
+      },
+      "served_ids": [
+        "gpt-6.1-sol",
+        "gpt-6-luna"
+      ],
+      "served_id_count": 2
+    }
+  ]
+}

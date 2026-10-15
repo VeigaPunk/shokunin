@@ -1,0 +1,93 @@
+{
+  "provider": "alibaba-token-plan",
+  "declared_protocols": [
+    "openai"
+  ],
+  "model_entries": 20,
+  "probes": [
+    {
+      "provider": "alibaba-token-plan",
+      "protocol": "openai",
+      "model_id": "qwen3.7-max",
+      "purpose": "provider-default-protocol",
+      "method": "POST",
+      "url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1/chat/completions",
+      "timeout_s": 60,
+      "auth_headers_sent": [
+        "Authorization"
+      ],
+      "request_body": {
+        "model": "qwen3.7-max",
+        "max_tokens": 8,
+        "temperature": 0,
+        "messages": [
+          {
+            "role": "user",
+            "content": "ping"
+          }
+        ]
+      },
+      "latency_ms": 6769,
+      "status": 200,
+      "response_headers": {
+        "content-type": "application/json; charset=utf-8",
+        "grpc-encoding": "<len=8>",
+        "grpc-accept-encoding": "<len=4>",
+        "x-envoy-upstream-service-time": "5763",
+        "date": "Thu, 15 Oct 2026 11:29:27 GMT",
+        "server": "istio-envoy",
+        "x-request-id": "938810ca-af56-42ba-bab3-6979f7171113",
+        "req-cost-time": "<len=4>",
+        "req-arrive-time": "<len=13>",
+        "resp-start-time": "<len=13>",
+        "content-encoding": "<len=4>",
+        "vary": "<len=15>",
+        "transfer-encoding": "<len=7>"
+      },
+      "body": {
+        "id": "chatcmpl-938810ca-af56-42ba-bab3-6979f7171113",
+        "object": "chat.completion",
+        "created": 1792063761,
+        "model": "qwen3.7-max",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "reasoning_content": "Thinking Process:\n\n1.  **Analyze the Input:** The user sent the word \"ping\".\n2.  **Identify the Intent:** This is a common network utility command used to test reachability, but in a chat context, it's often used as a \"hello\", a test to see if the AI is responsive, or a playful reference to the `ping`/`pong` protocol.\n3.  **Determine the appropriate response:**\n    *   *Literal/Technical:* Explain what ping is (probably not what they want unless they ask).\n    *   *Conversational/Playful:* Respond with \"pong\". This is the standard cultural response in tech/gaming/chat contexts.\n    *   *Helpful:* Ask how I can help.\n4.  **Select the best response:** \"Pong\" is the most immediate and culturally relevant response to \"ping\". It acknowledges the test/playfulness.\n5.  **Draft the response:** \"pong\" (or \"Pong!\").\n6.  **Refine:** Keep it simple.\n\n*Self-Correction during thought process:*\n*   Option A: \"I am here. How can I help?\" (A bit robotic).\n*   Option B: \"Pong!\" (Classic, friendly).\n*   Option C: \"The `ping` command is used to...\" (Too pedantic).\n\n*Decision:* Go with \"Pong!\" or a variation that invites further interaction.\n\n*Final Output Generation:* \"Pong!\" or \"Pong. How can I help you?\"\n\nLet's stick to the classic: \"Pong!\"",
+              "content": "Pong! \ud83c\udfd3\n\nHow can I help you today?"
+            },
+            "finish_reason": "stop",
+            "logprobs": null
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 11,
+          "total_tokens": 372,
+          "completion_tokens": 361,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 344
+          }
+        }
+      },
+      "shape": {
+        "parsed_json": true,
+        "reasoning_content_present": true,
+        "usage_fields": [
+          "completion_tokens",
+          "completion_tokens_details",
+          "prompt_tokens",
+          "prompt_tokens_details",
+          "total_tokens"
+        ],
+        "finish_reason": "stop",
+        "content_preview": "Pong! \ud83c\udfd3\n\nHow can I help you today?",
+        "error_type": null,
+        "error_message": null
+      }
+    }
+  ]
+}
