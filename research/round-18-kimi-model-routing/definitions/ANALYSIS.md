@@ -462,10 +462,19 @@ python3 scripts/probe_client_semantics.py  # -> raw/client-semantics.json (no qu
 python3 scripts/probe_live.py all          # -> raw/probes-{effort,tool,image}.json
 python3 scripts/probe_live.py pass2        # -> raw/probes-*-pass2.json (UA + budget fixes)
 python3 scripts/probe_live.py pass3        # -> raw/probes-tool-pass3.json (client shape)
+python3 scripts/merge_probe_findings.py    # folds DEF-9/DEF-10 into audit-table.json
 python3 scripts/build_corrections.py       # -> config-corrections.toml
 python3 scripts/build_analysis.py          # -> ANALYSIS.md
 bash    scripts/hygiene_check.sh           # -> HYGIENE.md, exit 0 expected
 ```
+
+Order matters in one place: `merge_probe_findings.py` must run after
+`audit_definitions.py` (which rewrites `audit-table.json` and drops the
+probe-derived DEF-9/DEF-10 rows) and before `build_corrections.py`.
+Re-running the four generators after a probe run reproduces the committed
+`audit-table.*`, `config-corrections.toml` and `ANALYSIS.md` byte for byte; only
+the probe scripts themselves spend quota, so they are the only steps that need
+re-running to refresh evidence.
 
 Each probe script prints the config's json-canonical digest before probing, so a
 config edit between runs is visible rather than silent.
