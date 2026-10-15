@@ -1,0 +1,27 @@
+# M10 candidate config -- measurement only, never spliced by this mission.
+#
+# The M3 battery runner resolves its pool from a config file, so this file gives
+# it exactly one model: the candidate STRONG entry. The only provider it declares
+# is the local devin shim (api_key "devin-local" is the shim's own placeholder --
+# the shim accepts any credential and holds the real Devin session token itself).
+#
+# No live-config value is copied in here beyond that placeholder, so this file
+# carries no credential material.
+
+[providers.devin]
+type = "openai"
+base_url = "http://127.0.0.1:8787/v1"
+api_key = "devin-local"
+
+[models."devin/opus-5.5-high"]
+provider = "devin"
+model = "claude-opus-5-5-high"
+max_context_size = 1048576
+capabilities = [ "thinking", "tool_use" ]
+display_name = "Devin Claude Opus 5.5 High"
+
+[secondary_model]
+default_model = "devin/opus-5.5-high"
+
+[secondary_model.models]
+"devin/opus-5.5-high" = "STRONG candidate (M10 measurement): devin lane, HIGH effort pinned by served id suffix."

@@ -1,0 +1,113 @@
+{
+  "pool_id": "devin/opus-5.5-high",
+  "provider": "devin",
+  "model_id": "claude-opus-5-5-high",
+  "model_sent": "claude-opus-5-5-high",
+  "protocol": "openai",
+  "bucket": "UNLABELLED",
+  "base_url": "http://127.0.0.1:8787/v1",
+  "probe_id": "t1",
+  "probe_kind": "tool",
+  "rep": 1,
+  "measured": true,
+  "prompt": "What is the weather in Paris right now? Use the get_weather tool.",
+  "max_tokens": 192,
+  "tools_sent": true,
+  "tool_choice": "auto",
+  "request_body": {
+    "model": "claude-opus-5-5-high",
+    "stream": true,
+    "max_tokens": 192,
+    "messages": [
+      {
+        "role": "user",
+        "content": "What is the weather in Paris right now? Use the get_weather tool."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    },
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "get_weather",
+          "description": "Get the current weather for a city.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "city": {
+                "type": "string",
+                "description": "City name"
+              }
+            },
+            "required": [
+              "city"
+            ]
+          }
+        }
+      }
+    ],
+    "tool_choice": "auto"
+  },
+  "url": "http://127.0.0.1:8787/v1/chat/completions",
+  "timeout_s": 400,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 1431,
+  "response_headers": {
+    "Server": "devin-openai-shim/2 ",
+    "Date": "Thu, 15 Oct 2026 14:33:45 GMT",
+    "Content-Type": "text/event-stream",
+    "Cache-Control": "no-cache",
+    "Connection": "close"
+  },
+  "content_type": "text/event-stream",
+  "content": "",
+  "content_truncated": false,
+  "reasoning_chars": 0,
+  "reasoning_text": "",
+  "refusal_text": "",
+  "tool_calls": [
+    {
+      "id": "toolu_01FPrSGescDfoMtgPbhBM8Z9",
+      "name": "get_weather",
+      "arguments": "{\"city\": \"Paris\"}"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 395,
+    "completion_tokens": 50,
+    "total_tokens": 445
+  },
+  "finish_reason": "tool_calls",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 3,
+  "sse_line_count": 8,
+  "raw_preview": "data: {\"id\": \"chatcmpl-1e4e852af72d4a0991ac5272\", \"object\": \"chat.completion.chunk\", \"created\": 1792074825, \"model\": \"claude-opus-5-5-high\", \"choices\": [{\"index\": 0, \"delta\": {\"role\": \"assistant\", \"content\": \"\"}, \"finish_reason\": null}]}\ndata: {\"id\": \"chatcmpl-1e4e852af72d4a0991ac5272\", \"object\": \"chat.completion.chunk\", \"created\": 1792074825, \"model\": \"claude-opus-5-5-high\", \"choices\": [{\"index\": 0, \"delta\": {\"tool_calls\": [{\"index\": 0, \"id\": \"toolu_01FPrSGescDfoMtgPbhBM8Z9\", \"type\": \"function\", \"function\": {\"name\": \"get_weather\", \"arguments\": \"{\\\"city\\\": \\\"Paris\\\"}\"}}]}, \"finish_reason\": null}]}\ndata: {\"id\": \"chatcmpl-1e4e852af72d4a0991ac5272\", \"object\": \"chat.completion.chunk\", \"created\": 1792074825, \"model\": \"claude-opus-5-5-high\", \"choices\": [{\"index\": 0, \"delta\": {}, \"finish_reason\": \"tool_calls\"}], \"usage\": {\"prompt_tokens\": 395, \"completion_tokens\": 50, \"total_tokens\": 445}}\ndata: [DONE]\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "well-formed tool call",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T14:33:45Z",
+  "ttft_content_ms": null,
+  "ttft_reasoning_ms": null,
+  "first_decoded_ms": 1431,
+  "decode_span_ms": null,
+  "tps": null,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": "not derivable: no incremental deltas or fewer than 2 tokens",
+  "completion_tokens": 50,
+  "prompt_tokens": 395,
+  "reasoning_tokens": null,
+  "content_delta_count": 0,
+  "reasoning_delta_count": 0
+}

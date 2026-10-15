@@ -1,0 +1,61 @@
+{
+  "probe": "shape-temp0-streamopts",
+  "model_sent": "claude-opus-5-5-high",
+  "url": "http://127.0.0.1:8787/v1/chat/completions",
+  "base_url": "http://127.0.0.1:8787/v1",
+  "stream": true,
+  "timeout_s": 480,
+  "request_body": {
+    "model": "claude-opus-5-5-high",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Reply with the single word: pong"
+      }
+    ],
+    "max_tokens": 16,
+    "stream": true,
+    "temperature": 0,
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 400,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 409,
+  "response_headers": {
+    "Server": "devin-openai-shim/2 ",
+    "Date": "Thu, 15 Oct 2026 14:32:12 GMT",
+    "Content-Type": "application/json",
+    "Content-Length": "153"
+  },
+  "content": "",
+  "content_chars": 0,
+  "reasoning_chars": 0,
+  "tool_calls": [],
+  "finish_reason": null,
+  "usage": null,
+  "streaming_supported": false,
+  "sse_event_count": 0,
+  "raw_preview": "{\"error\": {\"message\": \"an internal error occurred (trace ID: 688666f273abc0ed5f50684256e62d13)\", \"type\": \"devin_shim_error\", \"code\": \"invalid_argument\"}}\n",
+  "request_level_class": "format_break",
+  "request_level_detail": "HTTP 400 request shape rejected",
+  "started_at_utc": "2026-10-15T14:32:12Z",
+  "ttft_content_ms": null,
+  "ttft_reasoning_ms": null,
+  "first_decoded_ms": null,
+  "decode_span_ms": null,
+  "tps": null,
+  "completion_tokens": null,
+  "prompt_tokens": null,
+  "reasoning_tokens": null,
+  "content_delta_count": 0,
+  "shape_fields": [
+    "stream_options",
+    "temperature"
+  ]
+}
