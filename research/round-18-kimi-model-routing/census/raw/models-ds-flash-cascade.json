@@ -1,0 +1,44 @@
+{
+  "provider": "ds-flash-cascade",
+  "protocol": "openai",
+  "configured_model_ids": [
+    "deepseek-v4.1-flash"
+  ],
+  "configured_model_id_count": 1,
+  "resolved_model_ids": [
+    "deepseek-v4.1-flash"
+  ],
+  "unresolved_model_ids": [],
+  "probes": [
+    {
+      "provider": "ds-flash-cascade",
+      "kind": "provider-base-url",
+      "method": "GET",
+      "url": "http://127.0.0.1:8791/v1/models",
+      "auth_headers_sent": [
+        "Authorization"
+      ],
+      "latency_ms": 1,
+      "status": 200,
+      "response_headers": {
+        "Content-Type": "application/json",
+        "Content-Length": "121"
+      },
+      "body": {
+        "object": "list",
+        "data": [
+          {
+            "id": "deepseek-v4.1-flash",
+            "object": "model",
+            "created": 0,
+            "owned_by": "ds-flash-shim"
+          }
+        ]
+      },
+      "served_ids": [
+        "deepseek-v4.1-flash"
+      ],
+      "served_id_count": 1
+    }
+  ]
+}

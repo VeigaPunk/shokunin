@@ -1,0 +1,136 @@
+{
+  "provider": "zai-coding-plan",
+  "protocol": "openai",
+  "configured_model_ids": [
+    "glm-4.7",
+    "glm-5-turbo",
+    "glm-5.2",
+    "glm-5.2-highspeed",
+    "glm-5.3",
+    "glm-5.3-flash",
+    "glm-5.3-highspeed"
+  ],
+  "configured_model_id_count": 7,
+  "resolved_model_ids": [
+    "glm-4.7",
+    "glm-5-turbo",
+    "glm-5.2",
+    "glm-5.3",
+    "glm-5.3-flash"
+  ],
+  "unresolved_model_ids": [
+    "glm-5.2-highspeed",
+    "glm-5.3-highspeed"
+  ],
+  "probes": [
+    {
+      "provider": "zai-coding-plan",
+      "kind": "provider-base-url",
+      "method": "GET",
+      "url": "https://api.z.ai/api/coding/paas/v4/models",
+      "auth_headers_sent": [
+        "Authorization"
+      ],
+      "latency_ms": 1034,
+      "status": 200,
+      "response_headers": {
+        "Date": "Thu, 15 Oct 2026 11:37:22 GMT",
+        "Content-Type": "application/json;charset=UTF-8",
+        "Transfer-Encoding": "<len=7>",
+        "Connection": "<len=10>",
+        "Alt-Svc": "<len=18>",
+        "Set-Cookie": "<redacted:len=98>",
+        "ga-traceid": "<len=32>",
+        "Vary": "<len=157>",
+        "X-LOG-ID": "<len=30>",
+        "Strict-Transport-Security": "<len=35>",
+        "Content-Encoding": "<len=4>"
+      },
+      "body": {
+        "object": "list",
+        "data": [
+          {
+            "id": "glm-4.5",
+            "object": "model",
+            "created": 1753632000,
+            "owned_by": "z-ai"
+          },
+          {
+            "id": "glm-4.5-air",
+            "object": "model",
+            "created": 1753632000,
+            "owned_by": "z-ai"
+          },
+          {
+            "id": "glm-4.6",
+            "object": "model",
+            "created": 1759276800,
+            "owned_by": "z-ai"
+          },
+          {
+            "id": "glm-4.7",
+            "object": "model",
+            "created": 1766332800,
+            "owned_by": "z-ai"
+          },
+          {
+            "id": "glm-5",
+            "object": "model",
+            "created": 1770739200,
+            "owned_by": "z-ai"
+          },
+          {
+            "id": "glm-5-turbo",
+            "object": "model",
+            "created": 1773504000,
+            "owned_by": "z-ai"
+          },
+          {
+            "id": "glm-5.1",
+            "object": "model",
+            "created": 1774620000,
+            "owned_by": "z-ai"
+          },
+          {
+            "id": "glm-5.2",
+            "object": "model",
+            "created": 1781625600,
+            "owned_by": "z-ai"
+          },
+          {
+            "id": "glm-5.3",
+            "object": "model",
+            "created": 1786636800,
+            "owned_by": "z-ai"
+          },
+          {
+            "id": "glm-5.3-flash",
+            "object": "model",
+            "created": 1786636800,
+            "owned_by": "z-ai"
+          },
+          {
+            "id": "glm-5.3-flashx",
+            "object": "model",
+            "created": 1786636800,
+            "owned_by": "z-ai"
+          }
+        ]
+      },
+      "served_ids": [
+        "glm-4.5",
+        "glm-4.5-air",
+        "glm-4.6",
+        "glm-4.7",
+        "glm-5",
+        "glm-5-turbo",
+        "glm-5.1",
+        "glm-5.2",
+        "glm-5.3",
+        "glm-5.3-flash",
+        "glm-5.3-flashx"
+      ],
+      "served_id_count": 11
+    }
+  ]
+}

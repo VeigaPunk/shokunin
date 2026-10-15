@@ -1,0 +1,81 @@
+{
+  "probes": [
+    {
+      "provider": "ds-flash-cascade",
+      "protocol": "openai",
+      "model_id": "deepseek-v4.1-flash",
+      "method": "POST",
+      "url": "http://127.0.0.1:8791/v1/chat/completions",
+      "timeout_s": 120,
+      "prompt": "Count from 1 to 30, space separated, numbers only. No other text.",
+      "max_tokens": 64,
+      "auth_headers_sent": [
+        "Authorization"
+      ],
+      "request_body": {
+        "model": "deepseek-v4.1-flash",
+        "stream": true,
+        "max_tokens": 64,
+        "temperature": 0,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Count from 1 to 30, space separated, numbers only. No other text."
+          }
+        ],
+        "stream_options": {
+          "include_usage": true
+        }
+      },
+      "status": 200,
+      "response_headers": {
+        "Date": "Thu, 15 Oct 2026 11:33:43 GMT",
+        "Content-Type": "text/event-stream",
+        "Cache-Control": "<len=8>",
+        "Cf-Placement": "<len=10>",
+        "x-opencode-endpoint-id": "<len=15>",
+        "x-opencode-log-id": "<len=36>",
+        "x-opencode-upstream-model-id": "<len=28>",
+        "x-zen-model": "<len=19>",
+        "Server": "cloudflare",
+        "CF-RAY": "a4ae82ac9eaaf991-MIA",
+        "Connection": "<len=5>"
+      },
+      "content_type": "text/event-stream",
+      "sse_line_count": 40,
+      "raw_preview": "data: {\"id\":\"4989b80a955b09b3fef26fb0acd678f2\",\"object\":\"chat.completion.chunk\",\"created\":1792064023,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\"}}]}\n\ndata: {\"id\":\"4989b80a955b09b3fef26fb0acd678f2\",\"object\":\"chat.completion.chunk\",\"created\":1792064023,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"We\"}}]}\n\ndata: {\"id\":\"4989b80a955b09b3fef26fb0acd678f2\",\"object\":\"chat.completion.chunk\",\"created\":1792064023,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" need answer only\"}}]}\n\ndata: {\"id\":\"4989b80a955b09b3fef26fb0acd678f2\",\"object\":\"chat.completion.chunk\",\"created\":1792064023,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" numbers \"}}]}\n\ndata: {\"id\":\"4989b80a955b09b3fef26fb0acd678f2\",\"object\":\"chat.completion.chunk\",\"created\":1792064023,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"1 to\"}}]}\n\ndata: {\"id\":\"4989b80a955b09b3fef26fb0acd678f2\",\"object\":\"chat.completion.chunk\",\"created\":1792064023,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" 30 space separated.\"}}]}\n\ndata: {\"id\":\"4989b80a955b09b3fef26fb0acd678f2\",\"object\":\"chat.completion.chunk\",\"created\":1",
+      "streaming_supported": true,
+      "content_chars": 48,
+      "reasoning_chars": 100,
+      "content_delta_count": 7,
+      "reasoning_delta_count": 10,
+      "content_sample": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 ",
+      "ttft_content_ms": 2467,
+      "ttft_reasoning_ms": 2467,
+      "total_ms": 2468,
+      "usage": {
+        "prompt_tokens": 48,
+        "completion_tokens": 64,
+        "total_tokens": 112,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "cache_creation_input_tokens": 0,
+          "cache_write_tokens": 0
+        },
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 26,
+          "rejected_prediction_tokens": 0
+        }
+      },
+      "usage_completion_tokens": 64,
+      "usage_prompt_tokens": 48,
+      "decode_span_ms": 0,
+      "tps_basis": "server_usage_completion_tokens",
+      "tps": null,
+      "tps_note": "not derivable: stream was not incrementally flushed (decode span 0 ms < 50 ms)"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "probes": [
+    {
+      "provider": "hyper",
+      "protocol": "openai",
+      "model_id": "glm-5.3-flash",
+      "method": "POST",
+      "url": "https://hyper.charm.land/v1/chat/completions",
+      "timeout_s": 120,
+      "prompt": "Count from 1 to 30, space separated, numbers only. No other text.",
+      "max_tokens": 64,
+      "auth_headers_sent": [
+        "Authorization"
+      ],
+      "request_body": {
+        "model": "glm-5.3-flash",
+        "stream": true,
+        "max_tokens": 64,
+        "temperature": 0,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Count from 1 to 30, space separated, numbers only. No other text."
+          }
+        ],
+        "stream_options": {
+          "include_usage": true
+        }
+      },
+      "status": 200,
+      "response_headers": {
+        "cache-control": "<len=8>",
+        "content-encoding": "<len=4>",
+        "content-type": "text/event-stream",
+        "vary": "<len=15>",
+        "x-ratelimit-limit-day": "10000",
+        "x-ratelimit-limit-hour": "1000",
+        "x-ratelimit-remaining-day": "9416",
+        "x-ratelimit-remaining-hour": "821",
+        "date": "Thu, 15 Oct 2026 11:33:18 GMT",
+        "server": "Google Frontend",
+        "x-cloud-trace-context": "<len=53>",
+        "traceparent": "00-eea7ebb69dd76181263b1d8e5c1cb48d-a5431e9331f1f929-00",
+        "Transfer-Encoding": "<len=7>"
+      },
+      "content_type": "text/event-stream",
+      "sse_line_count": 42,
+      "raw_preview": "data: {\"id\":\"chatcmpl-9651890df9b0083428ea86e8\",\"object\":\"chat.completion.chunk\",\"created\":1792063998,\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\"},\"finish_reason\":null}]}\n\ndata: {\"id\":\"chatcmpl-9651890df9b0083428ea86e8\",\"object\":\"chat.completion.chunk\",\"created\":1792063998,\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"1\"},\"finish_reason\":null}]}\n\ndata: {\"id\":\"chatcmpl-9651890df9b0083428ea86e8\",\"object\":\"chat.completion.chunk\",\"created\":1792063998,\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" 2 3\"},\"finish_reason\":null}]}\n\ndata: {\"id\":\"chatcmpl-9651890df9b0083428ea86e8\",\"object\":\"chat.completion.chunk\",\"created\":1792063998,\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" 4 5\"},\"finish_reason\":null}]}\n\ndata: {\"id\":\"chatcmpl-9651890df9b0083428ea86e8\",\"object\":\"chat.completion.chunk\",\"created\":1792063998,\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" 6 7\"},\"finish_reason\":null}]}\n\ndata: {\"id\":\"chatcmpl-9651890df9b0083428ea86e8\",\"object\":\"chat.completion.chunk\",\"created\":1792063998,\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" 8 9\"},\"finish_reason\":null}]}\n\ndata: {\"id\":\"chatcmpl-9651890df9b0083428ea86e8\",\"object\":\"chat.completion.chunk\",\"created\":1792063998,\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" 10 11\"},\"finish_reason\":null}]}\n\ndata: {\"id\":\"chatcmpl-9651890df9b008342",
+      "streaming_supported": true,
+      "content_chars": 4,
+      "reasoning_chars": 80,
+      "content_delta_count": 1,
+      "reasoning_delta_count": 16,
+      "content_sample": "1 2 ",
+      "ttft_content_ms": 533,
+      "ttft_reasoning_ms": 418,
+      "total_ms": 566,
+      "usage": {
+        "prompt_tokens": 31,
+        "completion_tokens": 64,
+        "total_tokens": 95,
+        "completion_tokens_details": {
+          "reasoning_tokens": 59
+        },
+        "cost": {
+          "usd": 0.0001,
+          "hypercredits": 0.002
+        }
+      },
+      "usage_completion_tokens": 64,
+      "usage_prompt_tokens": 31,
+      "decode_span_ms": 0,
+      "tps_basis": "server_usage_completion_tokens",
+      "tps": null,
+      "tps_note": "not derivable: stream was not incrementally flushed (decode span 0 ms < 50 ms)"
+    }
+  ]
+}

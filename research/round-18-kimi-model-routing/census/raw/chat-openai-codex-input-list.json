@@ -1,0 +1,405 @@
+{
+  "accepted_variant": "stream-true-minimal",
+  "probes": [
+    {
+      "provider": "openai-codex",
+      "protocol": "openai_responses",
+      "model_id": "gpt-6.1-sol",
+      "purpose": "input-shape-follow-up",
+      "variant": "bare-string-input",
+      "method": "POST",
+      "url": "http://127.0.0.1:8789/backend-api/codex/responses",
+      "timeout_s": 180,
+      "auth_headers_sent": [
+        "Authorization"
+      ],
+      "request_body": {
+        "model": "gpt-6.1-sol",
+        "max_output_tokens": 8,
+        "temperature": 0,
+        "input": "ping"
+      },
+      "latency_ms": 252,
+      "status": 400,
+      "response_headers": {
+        "Server": "BaseHTTP/0.6 Python/3.14.7, cloudflare",
+        "Date": "Thu, 15 Oct 2026 11:33:02 GMT, Thu, 15 Oct 2026 11:33:02 GMT",
+        "Content-Type": "application/json",
+        "Content-Length": "33",
+        "x-oai-request-id": "f83ad34e-d295-4465-8cea-a88d5e31c119",
+        "x-openai-proxy-wasm": "<len=4>",
+        "X-Content-Type-Options": "<len=7>",
+        "cf-cache-status": "<len=7>",
+        "Cross-Origin-Opener-Policy": "<len=24>",
+        "Strict-Transport-Security": "<len=44>",
+        "Nel": "<len=63>",
+        "Report-To": "<len=245>",
+        "Set-Cookie": "<redacted:len=859>",
+        "Referrer-Policy": "<len=31>",
+        "CF-RAY": "a4ae81b37a4599ea-GIG",
+        "Connection": "<len=5>"
+      },
+      "body": {
+        "detail": "Input must be a list"
+      },
+      "shape": {
+        "parsed_json": true,
+        "reasoning_content_present": false,
+        "usage_fields": [],
+        "finish_reason": null,
+        "content_preview": null,
+        "error_type": null,
+        "error_message": null
+      }
+    },
+    {
+      "provider": "openai-codex",
+      "protocol": "openai_responses",
+      "model_id": "gpt-6.1-sol",
+      "purpose": "input-shape-follow-up",
+      "variant": "list-input",
+      "method": "POST",
+      "url": "http://127.0.0.1:8789/backend-api/codex/responses",
+      "timeout_s": 180,
+      "auth_headers_sent": [
+        "Authorization"
+      ],
+      "request_body": {
+        "model": "gpt-6.1-sol",
+        "max_output_tokens": 8,
+        "temperature": 0,
+        "input": [
+          {
+            "type": "message",
+            "role": "user",
+            "content": [
+              {
+                "type": "input_text",
+                "text": "ping"
+              }
+            ]
+          }
+        ]
+      },
+      "latency_ms": 373,
+      "status": 400,
+      "response_headers": {
+        "Server": "BaseHTTP/0.6 Python/3.14.7, cloudflare",
+        "Date": "Thu, 15 Oct 2026 11:33:03 GMT, Thu, 15 Oct 2026 11:33:03 GMT",
+        "Content-Type": "application/json",
+        "Content-Length": "39",
+        "x-oai-request-id": "fae7cbaf-7216-4fc4-9bfe-52fa30381011",
+        "x-openai-proxy-wasm": "<len=4>",
+        "X-Content-Type-Options": "<len=7>",
+        "cf-cache-status": "<len=7>",
+        "Cross-Origin-Opener-Policy": "<len=24>",
+        "Strict-Transport-Security": "<len=44>",
+        "Nel": "<len=63>",
+        "Report-To": "<len=249>",
+        "Set-Cookie": "<redacted:len=859>",
+        "Referrer-Policy": "<len=31>",
+        "CF-RAY": "a4ae81b4f8dff25d-GIG",
+        "Connection": "<len=5>"
+      },
+      "body": {
+        "detail": "Store must be set to false"
+      },
+      "shape": {
+        "parsed_json": true,
+        "reasoning_content_present": false,
+        "usage_fields": [],
+        "finish_reason": null,
+        "content_preview": null,
+        "error_type": null,
+        "error_message": null
+      }
+    },
+    {
+      "provider": "openai-codex",
+      "protocol": "openai_responses",
+      "model_id": "gpt-6.1-sol",
+      "purpose": "input-shape-follow-up",
+      "variant": "list-input-store-false",
+      "method": "POST",
+      "url": "http://127.0.0.1:8789/backend-api/codex/responses",
+      "timeout_s": 180,
+      "auth_headers_sent": [
+        "Authorization"
+      ],
+      "request_body": {
+        "model": "gpt-6.1-sol",
+        "max_output_tokens": 8,
+        "temperature": 0,
+        "input": [
+          {
+            "type": "message",
+            "role": "user",
+            "content": [
+              {
+                "type": "input_text",
+                "text": "ping"
+              }
+            ]
+          }
+        ],
+        "store": false
+      },
+      "latency_ms": 233,
+      "status": 400,
+      "response_headers": {
+        "Server": "BaseHTTP/0.6 Python/3.14.7, cloudflare",
+        "Date": "Thu, 15 Oct 2026 11:33:03 GMT, Thu, 15 Oct 2026 11:33:03 GMT",
+        "Content-Type": "application/json",
+        "Content-Length": "39",
+        "x-oai-request-id": "0e20a4d6-a191-4825-b2bc-bcc683bf5d4d",
+        "x-openai-proxy-wasm": "<len=4>",
+        "X-Content-Type-Options": "<len=7>",
+        "cf-cache-status": "<len=7>",
+        "Cross-Origin-Opener-Policy": "<len=24>",
+        "Strict-Transport-Security": "<len=44>",
+        "Nel": "<len=63>",
+        "Report-To": "<len=245>",
+        "Set-Cookie": "<redacted:len=858>",
+        "Referrer-Policy": "<len=31>",
+        "CF-RAY": "a4ae81b7587be117-GIG",
+        "Connection": "<len=5>"
+      },
+      "body": {
+        "detail": "Stream must be set to true"
+      },
+      "shape": {
+        "parsed_json": true,
+        "reasoning_content_present": false,
+        "usage_fields": [],
+        "finish_reason": null,
+        "content_preview": null,
+        "error_type": null,
+        "error_message": null
+      }
+    },
+    {
+      "provider": "openai-codex",
+      "protocol": "openai_responses",
+      "model_id": "gpt-6.1-sol",
+      "purpose": "input-shape-follow-up",
+      "variant": "list-input-store-false-stream-true",
+      "method": "POST",
+      "url": "http://127.0.0.1:8789/backend-api/codex/responses",
+      "timeout_s": 180,
+      "auth_headers_sent": [
+        "Authorization"
+      ],
+      "request_body": {
+        "model": "gpt-6.1-sol",
+        "max_output_tokens": 8,
+        "temperature": 0,
+        "input": [
+          {
+            "type": "message",
+            "role": "user",
+            "content": [
+              {
+                "type": "input_text",
+                "text": "ping"
+              }
+            ]
+          }
+        ],
+        "store": false,
+        "stream": true,
+        "instructions": "Reply with one word."
+      },
+      "latency_ms": 253,
+      "status": 400,
+      "response_headers": {
+        "Server": "BaseHTTP/0.6 Python/3.14.7, cloudflare",
+        "Date": "Thu, 15 Oct 2026 11:33:03 GMT, Thu, 15 Oct 2026 11:33:03 GMT",
+        "Content-Type": "application/json",
+        "Content-Length": "47",
+        "x-oai-request-id": "9450e511-2df9-454e-b48d-63ea34aaa991",
+        "x-openai-proxy-wasm": "<len=4>",
+        "X-Content-Type-Options": "<len=7>",
+        "cf-cache-status": "<len=7>",
+        "Cross-Origin-Opener-Policy": "<len=24>",
+        "Strict-Transport-Security": "<len=44>",
+        "Nel": "<len=63>",
+        "Report-To": "<len=245>",
+        "Set-Cookie": "<redacted:len=859>",
+        "Referrer-Policy": "<len=31>",
+        "CF-RAY": "a4ae81b8cd1bdf45-GIG",
+        "Connection": "<len=5>"
+      },
+      "body": {
+        "detail": "Unsupported parameter: temperature"
+      },
+      "shape": {
+        "parsed_json": true,
+        "reasoning_content_present": false,
+        "usage_fields": [],
+        "finish_reason": null,
+        "content_preview": null,
+        "error_type": null,
+        "error_message": null
+      }
+    },
+    {
+      "provider": "openai-codex",
+      "protocol": "openai_responses",
+      "model_id": "gpt-6.1-sol",
+      "purpose": "input-shape-follow-up",
+      "variant": "stream-true-no-temperature",
+      "method": "POST",
+      "url": "http://127.0.0.1:8789/backend-api/codex/responses",
+      "timeout_s": 180,
+      "auth_headers_sent": [
+        "Authorization"
+      ],
+      "request_body": {
+        "model": "gpt-6.1-sol",
+        "max_output_tokens": 8,
+        "input": [
+          {
+            "type": "message",
+            "role": "user",
+            "content": [
+              {
+                "type": "input_text",
+                "text": "ping"
+              }
+            ]
+          }
+        ],
+        "store": false,
+        "stream": true
+      },
+      "latency_ms": 529,
+      "status": 400,
+      "response_headers": {
+        "Server": "BaseHTTP/0.6 Python/3.14.7, cloudflare",
+        "Date": "Thu, 15 Oct 2026 11:33:04 GMT, Thu, 15 Oct 2026 11:33:04 GMT",
+        "Content-Length": "248",
+        "x-codex-active-limit": "premium",
+        "x-codex-plan-type": "pro",
+        "x-codex-primary-used-percent": "1",
+        "x-codex-secondary-used-percent": "0",
+        "x-codex-primary-window-minutes": "10080",
+        "x-codex-primary-over-secondary-limit-percent": "0",
+        "x-codex-secondary-window-minutes": "0",
+        "x-codex-primary-reset-after-seconds": "585646",
+        "x-codex-secondary-reset-after-seconds": "0",
+        "x-codex-primary-reset-at": "1792649629",
+        "x-codex-secondary-reset-at": "",
+        "x-codex-credits-has-credits": "True",
+        "x-codex-credits-balance": "62500.0000000000",
+        "x-codex-credits-unlimited": "False",
+        "x-models-etag": "W/\"a5b23a75ab9baa8209d3e49abda1d2e9\"",
+        "x-codex-turn-state": "<len=780>",
+        "x-oai-request-id": "367231b2-86f3-4d1e-abc0-8e98a5a12e7d",
+        "x-openai-proxy-wasm": "<len=4>",
+        "X-Content-Type-Options": "<len=7>",
+        "cf-cache-status": "<len=7>",
+        "Cross-Origin-Opener-Policy": "<len=24>",
+        "Strict-Transport-Security": "<len=44>",
+        "Nel": "<len=63>",
+        "Report-To": "<len=253>",
+        "Set-Cookie": "<redacted:len=859>",
+        "Referrer-Policy": "<len=31>",
+        "CF-RAY": "a4ae81ba59c014b1-GIG",
+        "Connection": "<len=5>"
+      },
+      "body": {
+        "error": {
+          "message": "Invalid 'max_output_tokens': integer below minimum value. Expected a value >= 16, but got 8 instead.",
+          "type": "invalid_request_error",
+          "param": "max_output_tokens",
+          "code": "integer_below_min_value"
+        }
+      },
+      "shape": {
+        "parsed_json": true,
+        "reasoning_content_present": false,
+        "usage_fields": [],
+        "finish_reason": null,
+        "content_preview": null,
+        "error_type": "invalid_request_error",
+        "error_message": "Invalid 'max_output_tokens': integer below minimum value. Expected a value >= 16, but got 8 instead."
+      }
+    },
+    {
+      "provider": "openai-codex",
+      "protocol": "openai_responses",
+      "model_id": "gpt-6.1-sol",
+      "purpose": "input-shape-follow-up",
+      "variant": "stream-true-minimal",
+      "method": "POST",
+      "url": "http://127.0.0.1:8789/backend-api/codex/responses",
+      "timeout_s": 180,
+      "auth_headers_sent": [
+        "Authorization"
+      ],
+      "request_body": {
+        "model": "gpt-6.1-sol",
+        "input": [
+          {
+            "type": "message",
+            "role": "user",
+            "content": [
+              {
+                "type": "input_text",
+                "text": "ping"
+              }
+            ]
+          }
+        ],
+        "store": false,
+        "stream": true
+      },
+      "latency_ms": 2115,
+      "status": 200,
+      "response_headers": {
+        "Server": "BaseHTTP/0.6 Python/3.14.7, cloudflare",
+        "Date": "Thu, 15 Oct 2026 11:33:04 GMT, Thu, 15 Oct 2026 11:33:04 GMT",
+        "x-codex-active-limit": "premium",
+        "x-codex-plan-type": "pro",
+        "x-codex-primary-used-percent": "1",
+        "x-codex-secondary-used-percent": "0",
+        "x-codex-primary-window-minutes": "10080",
+        "x-codex-primary-over-secondary-limit-percent": "0",
+        "x-codex-secondary-window-minutes": "0",
+        "x-codex-primary-reset-after-seconds": "585645",
+        "x-codex-secondary-reset-after-seconds": "0",
+        "x-codex-primary-reset-at": "1792649629",
+        "x-codex-secondary-reset-at": "",
+        "x-codex-credits-has-credits": "True",
+        "x-codex-credits-balance": "62500.0000000000",
+        "x-codex-credits-unlimited": "False",
+        "x-models-etag": "W/\"a5b23a75ab9baa8209d3e49abda1d2e9\"",
+        "x-codex-turn-state": "<len=780>",
+        "x-codex-safety-buffering-enabled": "true",
+        "x-codex-safety-buffering-faster-model": "gpt-6-luna",
+        "x-oai-request-id": "1e9c74e5-54df-95a7-bd1b-afb5ff1af8c5",
+        "x-openai-proxy-wasm": "<len=4>",
+        "X-Content-Type-Options": "<len=7>",
+        "cf-cache-status": "<len=7>",
+        "Cross-Origin-Opener-Policy": "<len=24>",
+        "Strict-Transport-Security": "<len=44>",
+        "Nel": "<len=63>",
+        "Report-To": "<len=251>",
+        "Set-Cookie": "<redacted:len=858>",
+        "Referrer-Policy": "<len=31>",
+        "CF-RAY": "a4ae81bdad9b78c2-GIG",
+        "Connection": "<len=5>"
+      },
+      "body": "event: response.created\ndata: {\"type\":\"response.created\",\"sequence_number\":0,\"safety_buffering\":false,\"response\":{\"id\":\"resp_0a10c128f4c14acd016ad0b9f09b048191b168f508200e6e53\",\"object\":\"response\",\"created_at\":1792063984,\"completed_at\":null,\"status\":\"in_progress\",\"background\":false,\"frequency_penalty\":0.0,\"presence_penalty\":0.0,\"moderation\":null,\"model\":\"gpt-6.1-sol\",\"access_programs\":{\"cyber\":\"standard\"},\"previous_response_id\":null,\"instructions\":null,\"output\":[],\"error\":null,\"incomplete_details\":null,\"tools\":[],\"tool_choice\":\"auto\",\"parallel_tool_calls\":true,\"prompt_cache_key\":\"fdc29bda-a8e1-4270-8472-12c319240def\",\"prompt_cache_retention\":\"24h\",\"text\":{\"format\":{\"type\":\"text\"},\"verbosity\":\"medium\"},\"top_p\":0.98,\"top_logprobs\":0,\"temperature\":1.0,\"reasoning\":{\"context\":\"all_turns\",\"effort\":\"medium\",\"summary\":null,\"mode\":\"standard\"},\"user\":null,\"usage\":null,\"tool_usage\":{\"image_gen\":{\"input_tokens\":0,\"output_tokens\":0,\"total_tokens\":0,\"input_tokens_details\":{\"text_tokens\":0,\"image_tokens\":0},\"output_tokens_details\":{\"image_tokens\":0,\"text_tokens\":0}},\"web_search\":{\"num_requests\":0}},\"safety_identifier\":\"user-nkEENAXKpBEO8fzseUfNoxLC\",\"store\":false,\"metadata\":{},\"max_output_tokens\":null,\"max_tool_calls\":null,\"service_tier\":\"auto\",\"truncation\":\"disabled\"}}\n\nevent: response.in_progress\ndata: {\"type\":\"response.in_progress\",\"sequence_number\":1,\"safety_buffering\":false,\"response\":{\"id\":\"resp_0a10c128f4c14acd016ad0b9f09b048191b168f508200e6e53\",\"object\":\"response\",\"created_at\":1792063984,\"completed_at\":null,\"status\":\"in_progress\",\"background\":false,\"frequency_penalty\":0.0,\"presence_penalty\":0.0,\"moderation\":null,\"model\":\"gpt-6.1-sol\",\"access_programs\":{\"cyber\":\"standard\"},\"previous_response_id\":null,\"instructions\":null,\"output\":[],\"error\":null,\"incomplete_details\":null,\"tools\":[],\"tool_choice\":\"auto\",\"parallel_tool_calls\":true,\"prompt_cache_key\":\"fdc29bda-a8e1-4270-8472-12c319240def\",\"prompt_cache_retention\":\"24h\",\"text\":{\"format\":{\"type\":\"text\"},\"verbosity\":\"medium\"},\"top_p\":0.98,\"top_logprobs\":0,\"temperature\":1.0,\"reasoning\":{\"context\":\"all_turns\",\"effort\":\"medium\",\"summary\":null,\"mode\":\"standard\"},\"user\":null,\"usage\":null,\"tool_usage\":{\"image_gen\":{\"input_tokens\":0,\"output_tokens\":0,\"total_tokens\":0,\"input_tokens_details\":{\"text_tokens\":0,\"image_tokens\":0},\"output_tokens_details\":{\"image_tokens\":0,\"text_tokens\":0}},\"web_search\":{\"num_requests\":0}},\"safety_identifier\":\"user-nkEENAXKpBEO8fzseUfNoxLC\",\"store\":false,\"metadata\":{},\"max_output_tokens\":null,\"max_tool_calls\":null,\"service_tier\":\"auto\",\"truncation\":\"disabled\"}}\n\nevent: response.output_item.added\ndata: {\"type\":\"response.output_item.added\",\"sequence_number\":2,\"output_index\":0,\"item\":{\"type\":\"message\",\"id\":\"msg_0a10c128f4c14acd016ad0b9f20cc88191a54d306840c265c4\",\"role\":\"assistant\",\"status\":\"in_progress\",\"content\":[],\"phase\":\"final_answer\"}}\n\nevent: response.content_part.added\ndata: {\"type\":\"response.content_part.added\",\"sequence_number\":3,\"item_id\":\"msg_0a10c128f4c14acd016ad0b9f20cc88191a54d306840c265c4\",\"output_index\":0,\"content_index\":0,\"part\":{\"type\":\"output_text\",\"text\":\"\",\"annotations\":[],\"logprobs\":[]}}\n\nevent: response.output_text.delta\ndata: {\"type\":\"response.output_text.delta\",\"sequence_number\":4,\"item_id\":\"msg_0a10c128f4c14acd016ad0b9f20cc88191a54d306840c265c4\",\"output_index\":0,\"content_index\":0,\"delta\":\"pong\",\"logprobs\":[],\"safety_buffering\":false,\"obfuscation\":\"dAUdCAtZX8S3\"}\n\nevent: response.output_text.done\ndata: {\"type\":\"response.output_text.done\",\"sequence_number\":5,\"item_id\":\"msg_0a10c128f4c14acd016ad0b9f20cc88191a54d306840c265c4\",\"output_index\":0,\"content_index\":0,\"text\":\"pong\",\"logprobs\":[]}\n\nevent: response.content_part.done\ndata: {\"type\":\"response.content_part.done\",\"sequence_number\":6,\"item_id\":\"msg_0a10c128f4c14acd016ad0b9f20cc88191a54d306840c265c4\",\"output_index\":0,\"content_index\":0,\"part\":{\"type\":\"output_text\",\"text\":\"pong\",\"annotations\":[],\"logprobs\":[]}}\n\nevent: response.output_item.done\ndata: {\"type\":\"response.output_item.done\",\"sequence_number\":7,",
+      "shape": {
+        "parsed_json": false,
+        "reasoning_content_present": false,
+        "usage_fields": [],
+        "finish_reason": null,
+        "content_preview": "event: response.created\ndata: {\"type\":\"response.created\",\"sequence_number\":0,\"safety_buffering\":false,\"response\":{\"id\":\"resp_0a10c128f4c14acd016ad0b9f09b048191b168f508200e6e53\",\"object\":\"response\",\"cr",
+        "error_type": null,
+        "error_message": null
+      }
+    }
+  ]
+}

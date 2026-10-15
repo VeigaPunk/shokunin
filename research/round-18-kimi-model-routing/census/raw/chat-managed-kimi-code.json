@@ -1,0 +1,60 @@
+{
+  "provider": "managed:kimi-code",
+  "declared_protocols": [
+    "kimi"
+  ],
+  "model_entries": 4,
+  "probes": [
+    {
+      "provider": "managed:kimi-code",
+      "protocol": "kimi",
+      "model_id": "kimi-for-coding",
+      "purpose": "provider-default-protocol",
+      "method": "POST",
+      "url": "https://api.kimi.ai/coding/v1/chat/completions",
+      "timeout_s": 60,
+      "auth_headers_sent": [],
+      "request_body": {
+        "model": "kimi-for-coding",
+        "max_tokens": 8,
+        "temperature": 0,
+        "messages": [
+          {
+            "role": "user",
+            "content": "ping"
+          }
+        ]
+      },
+      "latency_ms": 576,
+      "status": 401,
+      "response_headers": {
+        "Date": "Thu, 15 Oct 2026 11:29:21 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "84",
+        "Connection": "<len=10>",
+        "Server": "cloudflare",
+        "x-internal-adhoc-canary": "<len=10>",
+        "x-trace-id": "ef818d81ccd95a14188a76e4cff87ea5",
+        "strict-transport-security": "<len=35>",
+        "cf-cache-status": "<len=7>",
+        "set-cookie": "<redacted:len=303>",
+        "CF-RAY": "a4ae7c471ed33709-GIG"
+      },
+      "body": {
+        "error": {
+          "message": "Invalid Authentication",
+          "type": "invalid_authentication_error"
+        }
+      },
+      "shape": {
+        "parsed_json": true,
+        "reasoning_content_present": false,
+        "usage_fields": [],
+        "finish_reason": null,
+        "content_preview": null,
+        "error_type": "invalid_authentication_error",
+        "error_message": "Invalid Authentication"
+      }
+    }
+  ]
+}

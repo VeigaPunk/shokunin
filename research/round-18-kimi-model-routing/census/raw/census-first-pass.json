@@ -1,0 +1,32 @@
+{
+  "kind": "observation-record",
+  "source": "the first pass of scripts/run_census.sh, before the config was rewritten",
+  "recorded_by": "r18-census (mission M1)",
+  "observed_at": "2026-10-15T08:15:00-03:00",
+  "note": "Hand-written record of what the first census pass measured, kept so the 'config changed mid-census' claim in ANALYSIS.md is citable rather than remembered. Not a probe capture: no request was issued to produce this file.",
+  "first_pass": {
+    "providers": 11,
+    "model_entries": 139,
+    "shim_units": 4,
+    "shim_units_named": ["codex-shim", "xai-shim", "devin-shim", "cursor-shim"],
+    "default_model": "kimi-code/kimi-for-coding"
+  },
+  "superseded_at": "2026-10-15T08:26:02-03:00",
+  "superseded_by_config_sha256_16": "e3c223e054a626b8",
+  "second_pass": {
+    "providers": 13,
+    "model_entries": 143,
+    "shim_units": 6,
+    "shim_units_named": ["codex-shim", "xai-shim", "devin-shim", "cursor-shim", "ds-flash-shim", "glm-flash-shim"],
+    "added_providers": ["ds-flash-cascade", "glm-flash-cascade"],
+    "added_model_entries": [
+      "cursor/composer-2.5",
+      "cursor/cursor-grok-4.5-low-fast",
+      "cascade/deepseek-v4.1-flash",
+      "cascade/glm-5.3-flash"
+    ],
+    "default_model": "kimi-code/kimi-for-coding",
+    "secondary_model_default": "cascade/deepseek-v4.1-flash"
+  },
+  "effect": "Every census number in ANALYSIS.md was re-measured on the second pass; the first pass's captures were overwritten by the re-run."
+}

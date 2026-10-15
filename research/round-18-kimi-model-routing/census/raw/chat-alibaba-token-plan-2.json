@@ -1,0 +1,65 @@
+{
+  "provider": "alibaba-token-plan-2",
+  "declared_protocols": [
+    "openai"
+  ],
+  "model_entries": 19,
+  "probes": [
+    {
+      "provider": "alibaba-token-plan-2",
+      "protocol": "openai",
+      "model_id": "qwen3.7-max",
+      "purpose": "provider-default-protocol",
+      "method": "POST",
+      "url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1/chat/completions",
+      "timeout_s": 60,
+      "auth_headers_sent": [
+        "Authorization"
+      ],
+      "request_body": {
+        "model": "qwen3.7-max",
+        "max_tokens": 8,
+        "temperature": 0,
+        "messages": [
+          {
+            "role": "user",
+            "content": "ping"
+          }
+        ]
+      },
+      "latency_ms": 1032,
+      "status": 429,
+      "response_headers": {
+        "retry-after": "707432",
+        "content-type": "text/plain",
+        "date": "Thu, 15 Oct 2026 11:29:28 GMT",
+        "server": "istio-envoy",
+        "x-request-id": "d5c694ad-a700-4d0c-bdc4-51c25c476cc9",
+        "req-cost-time": "<len=1>",
+        "req-arrive-time": "<len=13>",
+        "resp-start-time": "<len=13>",
+        "x-envoy-upstream-service-time": "7",
+        "content-encoding": "<len=4>",
+        "vary": "<len=15>",
+        "transfer-encoding": "<len=7>"
+      },
+      "body": {
+        "error": {
+          "message": "Your token-plan 1-month quota has been exhausted. The quota will reset at 10-23 16:00:00 UTC.",
+          "id": "d5c694ad-a700-4d0c-bdc4-51c25c476cc9",
+          "type": "insufficient_quota",
+          "code": "insufficient_quota"
+        }
+      },
+      "shape": {
+        "parsed_json": true,
+        "reasoning_content_present": false,
+        "usage_fields": [],
+        "finish_reason": null,
+        "content_preview": null,
+        "error_type": "insufficient_quota",
+        "error_message": "Your token-plan 1-month quota has been exhausted. The quota will reset at 10-23 16:00:00 UTC."
+      }
+    }
+  ]
+}

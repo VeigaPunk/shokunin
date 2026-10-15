@@ -1,0 +1,96 @@
+{
+  "provider": "hyper",
+  "declared_protocols": [
+    "openai"
+  ],
+  "model_entries": 21,
+  "probes": [
+    {
+      "provider": "hyper",
+      "protocol": "openai",
+      "model_id": "qwen3.7-max",
+      "purpose": "provider-default-protocol",
+      "method": "POST",
+      "url": "https://hyper.charm.land/v1/chat/completions",
+      "timeout_s": 60,
+      "auth_headers_sent": [
+        "Authorization"
+      ],
+      "request_body": {
+        "model": "qwen3.7-max",
+        "max_tokens": 8,
+        "temperature": 0,
+        "messages": [
+          {
+            "role": "user",
+            "content": "ping"
+          }
+        ]
+      },
+      "latency_ms": 6938,
+      "status": 200,
+      "response_headers": {
+        "content-encoding": "<len=4>",
+        "content-type": "application/json",
+        "vary": "<len=15>",
+        "x-ratelimit-limit-day": "10000",
+        "x-ratelimit-limit-hour": "1000",
+        "x-ratelimit-remaining-day": "9434",
+        "x-ratelimit-remaining-hour": "839",
+        "date": "Thu, 15 Oct 2026 11:29:38 GMT",
+        "server": "Google Frontend",
+        "traceparent": "00-a1e729a11096e25dccec0cf1f31bd1a4-2e375e296821ec7d-00",
+        "x-cloud-trace-context": "<len=52>",
+        "Transfer-Encoding": "<len=7>"
+      },
+      "body": {
+        "id": "chatcmpl-77e022443d68fc9570219362",
+        "object": "chat.completion",
+        "created": 1792063778,
+        "model": "qwen3.7-max",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "Pong! \ud83c\udfd3 \n\nHow can I help you today?",
+              "reasoning_content": "Thinking Process:\n\n1.  **Analyze the Input:** The user sent the word \"ping\".\n2.  **Identify the Intent:** This is a common network utility command used to test reachability, but in a chat context, it's often used as a \"hello\", a test to see if the AI is responsive, or a playful reference to the networking command (where the expected response is \"pong\").\n3.  **Determine the Best Response:**\n    *   *Option 1 (Literal/Technical):* Explain what the `ping` command is. (Too pedantic for a simple chat).\n    *   *Option 2 (Playful/Standard Chat):* Respond with \"pong\". (Universally understood, friendly, matches the brevity of the prompt).\n    *   *Option 3 (Helpful AI):* \"Pong! How can I help you today?\" (Combines the playful response with an offer to assist).\n4.  **Draft the Response:** \"Pong! \ud83c\udfd3 How can I help you today?\" or just \"Pong!\"\n5.  **Refine:** \"Pong! How can I help you today?\" is polite, acknowledges the \"ping\", and opens the floor for the user's actual query. Let's add the ping-pong emoji for a touch of personality.\n\n*Self-Correction during drafting:* Keep it simple. \"Pong! \ud83c\udfd3 How can I help you today?\" is perfect. Let's provide a slightly more tech-savvy alternative just in case they are actually testing latency/jailbreaks, but standard \"pong\" is best.\n\nLet's go with: \"Pong! \ud83c\udfd3 How can I help you today?\" or \"Pong! \ud83e\udd16 How can I assist you?\"\nLet's stick to the classic: \"Pong! How can I help you today?\""
+            },
+            "finish_reason": "length"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 11,
+          "completion_tokens": 415,
+          "total_tokens": 426,
+          "completion_tokens_details": {
+            "reasoning_tokens": 398
+          },
+          "cost": {
+            "usd": 0.00314,
+            "hypercredits": 0.0628
+          },
+          "remaining": {
+            "hypercredits": 231.76623379999998
+          }
+        }
+      },
+      "shape": {
+        "parsed_json": true,
+        "reasoning_content_present": true,
+        "usage_fields": [
+          "completion_tokens",
+          "completion_tokens_details",
+          "cost",
+          "prompt_tokens",
+          "remaining",
+          "total_tokens"
+        ],
+        "finish_reason": "length",
+        "content_preview": "Pong! \ud83c\udfd3 \n\nHow can I help you today?",
+        "error_type": null,
+        "error_message": null
+      }
+    }
+  ]
+}
