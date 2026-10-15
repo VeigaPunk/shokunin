@@ -697,3 +697,25 @@ across the 21 lanes at launch: **4 such advances total** — kumitate 1 (report 
 filed round-1 report, so the advance is correct). The other 18 lanes do real work
 from their next tick. Recorded because a larger pre-existing backlog would inflate
 round counts without work, which I8 forbids.
+
+## 2026-10-15 — Devin lanes removed; fleet attached to the Sighting wall
+
+**Devin-owned lanes excluded.** `audio`, `game-dev-2d` and `game-dev-3d` are being
+worked on Devin, so they were removed from `shokunin.conf` `LANES` (and from the
+full-roster backup): the driver no longer launches them, their lane processes were
+killed, and no process touches those repos now — verified 0. Their repos hold
+Devin's in-flight work (465 / 77 / 3 dirty paths) which this program did **not**
+touch. The fleet is now **18 lanes**.
+
+**Wall attached and showing the lanes.** The wall session `ufo_sighting` (client
+attached at `/dev/pts/5`) now carries a `shokunin` window with three panes,
+registered as missions `shk-fleet-lanes`, `shk-fleet-driver`, `shk-fleet-health`:
+
+| pane | shows | source |
+|---|---|---|
+| `shokunin · lanes` | per-lane round, running/idle, last output line | `.ufo/lane-watch.sh` (read-only) |
+| `shokunin · driver log` | `launch` / `complete` / `tick=` stream | `tail -f .ufo/watchdog.log` |
+| `shokunin · mori census` | fleet-health census, refreshed every 60s | `mori-shokunin/tools/mori-census.sh` |
+
+Layout set to an even vertical stack (83x26 / 83x14 / 83x19) so the 18-row lane
+table reads without wrapping.
