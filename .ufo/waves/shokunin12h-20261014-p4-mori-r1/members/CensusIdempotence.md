@@ -1,47 +1,49 @@
 # CensusIdempotence — double-run proof of `tools/mori-census.sh`
 
-**Seat:** CensusIdempotence (mutation-tester, leaf)  
-**Wave:** shokunin12h-20261014-p4-mori-r1  
-**Advisory:** data, not a judge verdict. Parent integrates.  
-**Subject:** landed gate `mori-shokunin/tools/mori-census.sh`  
-**sha256:** `7432255ff56dc69f0f2814e631961a0482e51d52f392f547de5dac42df387d3f`  
-**size / mtime:** 31588 bytes, `2026-10-14 21:35:14.739 -0300` (unchanged across every run below)  
-**Measured:** `2026-10-14T21:35:56-03:00` … `2026-10-14T21:38:11-03:00`  
-**Host:** bash `5.3.15(1)-release`, `strace` present, kernel `7.2.3-arch1-3`  
-**Write scope of this seat:** this file only. The gate was not edited. `/tmp` proof trees are harness scratch, not host fleet state.
+**Seat:** CensusIdempotence (mutation-tester, leaf). Advisory data, not a judge verdict. Parent integrates.
+**Wave:** shokunin12h-20261014-p4-mori-r1
+**Subject:** landed gate `mori-shokunin/tools/mori-census.sh`
+**sha256:** `81e716de978a9540f9d310309d83660bb196650aa1ab809ae6fd6ee3cc4bfba9`
+**size / inode / mtime:** 36844 bytes, inode `11550470`, `2026-10-14 21:44:46.158413662 -0300`
+**Measured:** `2026-10-14T21:46:07-03:00` … `2026-10-14T21:47:38-03:00`
+**Host:** bash `5.3.15(1)-release`, `strace` present
+**Write scope of this seat:** this file only. The gate was not edited. `/tmp` trees are harness scratch, not fleet state.
+
+The gate file moved several times while this seat was measuring (observed blobs `7432255f…`, `8e655187…`, `580a0e31…`, then this one). The numbers below are for `81e716de…` only. That hash matched the live file at the start of the fixture proof, at the end of it, and again at `2026-10-14T21:47:38-03:00`. An earlier draft of this note cited `7432255f…`; that draft is withdrawn.
 
 ## Axes
 
 | Axis | What was tested |
 |---|---|
-| coverage | both modes the design actually has: `--selftest` (14 cases) and one frozen fixture census (`MORI_*` overrides, `MORI_NOW_EPOCH` pinned) |
-| operability | one proof command, re-runnable, no oral context |
-| calibration | idempotent on a frozen fixture; **not** byte-idempotent live, because `memory.current` moves. Selftest claims it deletes its temp dir; it does not. |
+| coverage | one frozen fixture, twice; `--selftest` twice; one bounded live pair (`MORI_ROSTER_LANES=kama`, clock pinned); one scratch mutation of the read-only claim |
+| operability | proof command below, no oral context, no fleet write |
+| calibration | same-fixture stdout is idempotent; live stdout is not, and the only mover on this pair is `current=`. Selftest's own hash check does not see a write outside the fixture, and its cleanup trap does not run. |
 
-## Verdict of the probe
+## Probe result
 
 | Claim | Result |
 |---|---|
-| Same fixture, two census runs, stdout identical | **holds** (`diff` empty, both exit 0, `MORI_CENSUS: CLEAN`) |
-| Same fixture bytes before and after both runs | **holds** (20-file sha256 manifest identical, including a third strace run) |
-| `--selftest` twice, stdout identical | **holds** (both exit 0, `PASS (14 cases, 14 passed, 0 failed)`) |
-| No host path opened for write during fixture census | **holds** (strace: only `/dev/null` ×22, `/dev/tty` ×5; zero non-`/dev` mutations) |
-| No host path opened for write during `--selftest` | **holds** for absolute paths outside `/tmp` and `/dev` (0). Writes are the fixture builder under `/tmp/mori-census-selftest.*` |
-| No host path opened for write during bounded live census | **holds** (`MORI_ROSTER_LANES=kama`, strace: 6198 read `openat`, 68 mutation events, **0** absolute writes outside `/dev` `/proc` `/tmp`) |
-| Selftest removes its temp dir | **fails** — see defect D1 |
-| Live stdout byte-identical across two runs | **fails** — see defect D2 (payload only; verdict and finding ids stable) |
+| Same fixture, two census runs, stdout identical | **holds** (both exit 0, `diff` empty) |
+| Same fixture bytes before and after those runs and a third strace run | **holds** (21-file manifest identical) |
+| No successful host write during the fixture census | **holds** (strace: 0 forbidden paths) |
+| `--selftest` twice, harness stdout identical | **holds** (both exit 0, 14/14 PASS) |
+| No successful host write during `--selftest` | **holds** for absolute paths outside the temp dir (0). Writes are the fixture builder. The temp dir is not removed (D1). |
+| No successful host write during bounded live census | **holds** (strace: 0 forbidden paths) |
+| Live stdout byte-identical under a pinned clock | **fails** — only `current=` moved (+344064). Verdict line and finding rows did not. |
+| Selftest removes its temp dir | **fails** — D1 |
+| Stdout-diff alone catches a silent write | **fails** — mutant M1 survived stdout-diff and was killed by the write check |
 
 ## Proof command
 
-Run from anywhere. Writes only under `/tmp` (the fixture, two stdout files, `strace` log). Does not write the fleet tree.
+Run from anywhere. Writes only under `/tmp` (fixture, proof dir, strace log). Does not write the fleet tree. Success is empty `diff`s and `forbidden 0`, not a golden stdout hash: the receipt embeds the fixture path, so a new `mktemp` changes the hash without breaking the pair.
 
 ```bash
 GATE=/home/vgpnk/Projects/shokunin/mori-shokunin/tools/mori-census.sh
 PROOF=$(mktemp -d /tmp/mori-idem-proof.XXXXXX)
 FX=$(mktemp -d /tmp/mori-idem-fx.XXXXXX)
 
-mkdir -p "$FX/ufo/state" "$FX/ufo/waves/wave-settled" "$FX/stub" \
-  "$FX/cgroup" "$FX/lanes/kagi-shokunin" "$FX/root" "$FX/bin"
+mkdir -p -- "$FX/ufo/state" "$FX/ufo/waves/wave-settled" "$FX/stub" \
+  "$FX/cgroup" "$FX/root/kagi-shokunin" "$FX/bin"
 printf '2026-10-14T12:00:00Z tick=1\n' > "$FX/ufo/watchdog.log"
 printf '1\n' > "$FX/ufo/state/kagi.round"
 printf 'mission-x\n' > "$FX/ufo/state/kagi.mission"
@@ -49,92 +51,98 @@ printf '{}\n' > "$FX/ufo/waves/wave-settled/swarm-registry.json"
 printf '{}\n' > "$FX/ufo/waves/wave-settled/dispatch.json"
 printf '{"schema":"ufo-swarm-results-v1","members":[]}\n' > "$FX/ufo/waves/wave-settled/results.json"
 printf 'low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n' > "$FX/cgroup/memory.events"
+printf 'low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n' > "$FX/cgroup/memory.events.local"
 printf '123456\n' > "$FX/cgroup/memory.current"
-printf 'MemAvailable: 20000000 kB\n' > "$FX/meminfo"
+printf 'x\n' > "$FX/root/kagi-shokunin/LOG.md"
 printf '1234 bash scripts/shokunin-watchdog.sh\n' > "$FX/stub/pgrep"
 printf 'Filesystem 1024-blocks Used Available Capacity Mounted on\n/dev/fx 1000000 10000 990000 2%% /fx\n' > "$FX/stub/df"
-: > "$FX/stub/journal"
+: > "$FX/stub/journalctl"
 printf 'sess: 1 windows\n' > "$FX/stub/tmux"
-printf '1700000000\n' > "$FX/stub/git"
-printf 'x\n' > "$FX/lanes/kagi-shokunin/LOG.md"
-touch -d @1700000000 "$FX/ufo/watchdog.log" "$FX/lanes/kagi-shokunin/LOG.md" \
+touch -d @1700000000 -- "$FX/ufo/watchdog.log" "$FX/root/kagi-shokunin/LOG.md" \
   "$FX/ufo/waves/wave-settled/"*
-for c in pgrep df journalctl tmux git; do
+for c in pgrep df journalctl tmux; do
   printf '#!/bin/sh\ncat "$MORI_FIXTURE/stub/%s"\n' "$c" > "$FX/bin/$c"
-  chmod +x "$FX/bin/$c"
+  chmod 700 "$FX/bin/$c"
 done
 
 fx_manifest() { find "$1" -type f -exec sha256sum {} + | LC_ALL=C sort; }
-fx_manifest "$FX" > "$PROOF/before.txt"
-
 runfx() {
-  env -i PATH="$FX/bin:/usr/bin:/bin" HOME=/tmp MORI_FIXTURE="$FX" \
-    MORI_SHOKUNIN_ROOT="$FX/root" MORI_UFO_DIR="$FX/ufo" \
-    MORI_WATCHDOG_LOG="$FX/ufo/watchdog.log" MORI_STATE_DIR="$FX/ufo/state" \
+  env -i PATH="$FX/bin:/usr/bin:/bin" HOME=/tmp LC_ALL=C \
+    MORI_FIXTURE="$FX" \
+    MORI_SHOKUNIN_ROOT="$FX/root" \
+    MORI_UFO_DIR="$FX/ufo" \
+    MORI_WATCHDOG_LOG="$FX/ufo/watchdog.log" \
+    MORI_STATE_DIR="$FX/ufo/state" \
     MORI_WAVES_DIR="$FX/ufo/waves" \
     MORI_CGROUP_EVENTS="$FX/cgroup/memory.events" \
+    MORI_CGROUP_LOCAL_EVENTS="$FX/cgroup/memory.events.local" \
+    MORI_CGROUP_SERVICE_EVENTS="$FX/cgroup/memory.events.local" \
     MORI_CGROUP_CURRENT="$FX/cgroup/memory.current" \
-    MORI_MEMINFO="$FX/meminfo" \
     MORI_DF_BIN="$FX/bin/df" MORI_PGREP_BIN="$FX/bin/pgrep" \
     MORI_JOURNALCTL_BIN="$FX/bin/journalctl" MORI_TMUX_BIN="$FX/bin/tmux" \
-    MORI_GIT_BIN="$FX/bin/git" MORI_DISK_TARGETS="$FX/root" \
-    MORI_ROSTER_LANES=kagi MORI_NOW_EPOCH=1700000000 \
-    MORI_WATCHDOG_STALE_S=900 MORI_WAVE_UNSETTLED_S=7200 \
-    MORI_DISK_WARN_PCT=85 MORI_DISK_CRIT_PCT=95 MORI_LANE_SILENCE_S=7200 \
-    bash "$GATE"
+    MORI_DISK_TARGETS="$FX/root" MORI_ROSTER_LANES=kagi \
+    MORI_NOW_EPOCH=1700000000 \
+    bash --noprofile --norc "$GATE"
 }
 
+fx_manifest "$FX" > "$PROOF/before.txt"
 runfx > "$PROOF/run1.out" 2>"$PROOF/run1.err"; echo $? > "$PROOF/run1.rc"
 runfx > "$PROOF/run2.out" 2>"$PROOF/run2.err"; echo $? > "$PROOF/run2.rc"
 fx_manifest "$FX" > "$PROOF/after.txt"
-
-diff -u "$PROOF/run1.out" "$PROOF/run2.out"   # empty
+diff -u "$PROOF/run1.out" "$PROOF/run2.out"    # empty
 diff -u "$PROOF/before.txt" "$PROOF/after.txt" # empty
-cmp "$PROOF/run1.rc" "$PROOF/run2.rc"         # both contain 0
 
 strace -f -e trace=openat,creat,mkdir,mkdirat,unlink,unlinkat,rename,renameat \
   -o "$PROOF/strace.txt" \
-  env -i PATH="$FX/bin:/usr/bin:/bin" HOME=/tmp MORI_FIXTURE="$FX" \
-    MORI_SHOKUNIN_ROOT="$FX/root" MORI_UFO_DIR="$FX/ufo" \
+  env -i PATH="$FX/bin:/usr/bin:/bin" HOME=/tmp LC_ALL=C \
+    MORI_FIXTURE="$FX" MORI_SHOKUNIN_ROOT="$FX/root" MORI_UFO_DIR="$FX/ufo" \
     MORI_WATCHDOG_LOG="$FX/ufo/watchdog.log" MORI_STATE_DIR="$FX/ufo/state" \
     MORI_WAVES_DIR="$FX/ufo/waves" \
     MORI_CGROUP_EVENTS="$FX/cgroup/memory.events" \
+    MORI_CGROUP_LOCAL_EVENTS="$FX/cgroup/memory.events.local" \
+    MORI_CGROUP_SERVICE_EVENTS="$FX/cgroup/memory.events.local" \
     MORI_CGROUP_CURRENT="$FX/cgroup/memory.current" \
-    MORI_MEMINFO="$FX/meminfo" \
     MORI_DF_BIN="$FX/bin/df" MORI_PGREP_BIN="$FX/bin/pgrep" \
     MORI_JOURNALCTL_BIN="$FX/bin/journalctl" MORI_TMUX_BIN="$FX/bin/tmux" \
-    MORI_GIT_BIN="$FX/bin/git" MORI_DISK_TARGETS="$FX/root" \
-    MORI_ROSTER_LANES=kagi MORI_NOW_EPOCH=1700000000 \
-    bash "$GATE" >/dev/null
-# host-write check: absolute mutation paths other than /dev and /proc
-python3 - "$PROOF/strace.txt" << 'PY'
+    MORI_DISK_TARGETS="$FX/root" MORI_ROSTER_LANES=kagi MORI_NOW_EPOCH=1700000000 \
+    bash --noprofile --norc "$GATE" >/dev/null
+python3 - "$PROOF/strace.txt" "$FX" << 'PY'
 import sys
-bad=[]
-for line in open(sys.argv[1], errors="replace"):
-    if '"' not in line: continue
-    mut = ("openat(" in line and any(k in line for k in ("O_WRONLY","O_RDWR","O_CREAT","O_APPEND","O_TRUNC"))) or any(k in line for k in ("mkdir(","unlink","rename"))
-    if not mut: continue
-    path=line.split('"',2)[1]
-    if path.startswith("/dev/") or path.startswith("/proc/"): continue
-    bad.append(path)
-print("nondev_mutations", len(bad))
+trace, allowed = sys.argv[1], sys.argv[2]
+bad = 0
+for line in open(trace, errors="replace"):
+    mut = ("openat(" in line and any(k in line for k in ("O_WRONLY","O_RDWR","O_CREAT","O_APPEND","O_TRUNC"))) or any(k in line for k in ("mkdir(","mkdirat(","unlink(","unlinkat(","rename(","renameat(","creat("))
+    if not mut or '"' not in line or " = -1 " in line:
+        continue
+    path = line.split('"', 2)[1]
+    if path.startswith("/dev/") or path.startswith("/proc/") or path == allowed or path.startswith(allowed.rstrip("/") + "/"):
+        continue
+    if not path.startswith("/"):
+        continue
+    bad += 1
+    print("BAD", path)
+print("forbidden", bad)
 sys.exit(1 if bad else 0)
 PY
 ```
 
-**Observed on this run** (`FX=/tmp/mori-idem-fx-landed.sORgQg`):
+`MORI_CGROUP_LOCAL_EVENTS` and `MORI_CGROUP_SERVICE_EVENTS` have to be set. If they are not, the gate falls through to `/sys/fs/cgroup/user.slice/user-$(id -u).slice/user@$(id -u).service/memory.events` (`tools/mori-census.sh:381`) and the run is no longer a frozen fixture.
+
+## Observed on this run
+
+`FX=/tmp/mori-idem-fx.Cd6qRG`. Gate sha256 before and after: `81e716de978a9540f9d310309d83660bb196650aa1ab809ae6fd6ee3cc4bfba9`.
 
 | Check | Observed |
 |---|---|
 | `run1.rc` / `run2.rc` | `0` / `0` |
-| stdout sha256 run1 | `c391937ff43805b5d3cca06bf5957555e97796b3bc5dd1145aca81ea4355d9ba` |
-| stdout sha256 run2 | same |
-| `diff` stdout | empty |
-| fixture manifest sha256 before | `60aed7bf6dd19db85d9396f74ed75dfc4424e1035704eb0755521fa28b4666f5` (20 files) |
-| fixture manifest sha256 after two runs **and** after strace | same |
-| strace mutations not under `/dev` | `0` (`/dev/null` 22, `/dev/tty` 5) |
+| stdout sha256, both runs | `f1bee63e559f01cef1c03b46ec3d33a7c7c8eab23e915910c3a5ea35c355246c` |
+| stdout `diff` | empty |
 | stderr | 0 bytes both runs |
-| gate sha256 after | still `7432255f…df387d3f` |
+| fixture manifest sha256 before, after two runs, and after strace | `d6081403e20709ad7f7105005e9ea66c18297c9fc822b56e20f91b39ea31fe15` (21 files) |
+| strace successful writes outside the fixture | `0` |
+| strace successful `/dev` opens | 30 (`/dev/null`, `/dev/tty`) |
+| strace failed mutation syscalls | 5, all `openat /dev/tty` `ENXIO` (no tty under `strace`) |
+| `.ufo/watchdog.log` inode/size/mtime across the proof | unchanged (`9822068`, 19396, `2026-10-13 16:44:48.524 -0300`) |
 
 Verdict line both times:
 
@@ -142,33 +150,43 @@ Verdict line both times:
 MORI_CENSUS: CLEAN (findings=0 drift=0 unavailable=0 surfaces=7)
 ```
 
-`measured_at` inside the surface lines is `ts=2023-11-14T22:13:20Z` because `MORI_NOW_EPOCH=1700000000`. Without that pin the two stdouts would differ by the clock even when every finding is identical.
+`ts=` is `2023-11-14T22:13:20Z` because `MORI_NOW_EPOCH=1700000000`. Without that pin the two stdouts differ by the clock even when every finding is identical.
+
+Surface row that the pin does **not** freeze:
+
+```text
+SURFACE cgroup: ok (... current=refused:outside-sysfs-cgroup; ts=2023-11-14T22:13:20Z)
+```
+
+`tools/mori-census.sh:403-409` refuses `MORI_CGROUP_CURRENT` unless the path is under `/sys/fs/cgroup/`, and does not read the file. The fixture file `memory.current` containing `123456` was not printed. Both runs print the same refusal, so the pair is still idempotent. A fixture of this shape cannot prove that a numeric `current=` is stable. That measurement is the live pair below.
+
+Journal stub must be named `stub/journalctl` (the dispatcher `cat`s `$MORI_FIXTURE/stub/$name`). A file named `stub/journal` makes `cat` exit 1; the gate treats rc 1 as an empty journal and still prints CLEAN. This run used the matching name and recorded `rc=0`.
 
 ## `--selftest` double run (same gate)
 
 ```bash
-bash "$GATE" --selftest > /tmp/mori-st1.out
-bash "$GATE" --selftest > /tmp/mori-st2.out
+bash --noprofile --norc "$GATE" --selftest > /tmp/mori-st1.out
+bash --noprofile --norc "$GATE" --selftest > /tmp/mori-st2.out
 diff -u /tmp/mori-st1.out /tmp/mori-st2.out   # empty
 ```
 
-Observed `2026-10-14T21:35:56-03:00`: both exit `0`, stdout sha256 both `33225c2ecce32431c8a96d07863aa6cc203e3bd4280eb69225769bb05e009118`, last line:
+Observed `2026-10-14T21:46:07-03:00`: both exit `0`, harness stdout sha256 both `33225c2ecce32431c8a96d07863aa6cc203e3bd4280eb69225769bb05e009118`, last line:
 
 ```text
 MORI_CENSUS_SELFTEST: PASS (14 cases, 14 passed, 0 failed)
 ```
 
-Cases (all `PASS`): `clean: all quiet`, `WATCHDOG_ABSENT`, `WATCHDOG_STALE`, `WAVE_UNSETTLED_AGE`, `unsettled young wave does not fire`, `OOM_KILL_JOURNAL`, `CGROUP_OOM_KILL`, `DISK_CRITICAL`, `disk under warn`, `LANE_SILENT`, `CGROUP_UNAVAILABLE is not DRIFT`, `empty journal`, `cli: unknown arg exit 2`, `cli: --help exit 0`.
+That hash is the PASS/FAIL harness text, not the inner census receipts. It matched an earlier blob's harness text too; it is not evidence that inner receipts are stable across gate edits.
 
-Per-case fixture digest is enforced inside the gate (`fx_hash` / `fx_no_mutation` at `tools/mori-census.sh:549-554` and the call at `:672`). That check passed for all 14; it does **not** cover the temp dir leaking after exit (D1).
+Cases, all `PASS`: `clean: all quiet`, `WATCHDOG_ABSENT`, `WATCHDOG_STALE`, `WAVE_UNSETTLED_AGE`, `unsettled young wave does not fire`, `OOM_KILL_JOURNAL`, `CGROUP_OOM_KILL`, `DISK_CRITICAL`, `disk under warn`, `LANE_SILENT`, `CGROUP_UNAVAILABLE is not DRIFT`, `empty journal`, `cli: unknown arg exit 2`, `cli: --help exit 0`.
 
-A `strace -f -e trace=openat,creat,mkdir,mkdirat,unlink,unlinkat,rename,renameat` of `--selftest` (`/tmp/mori-census-selftest.fV6kzl`): **0** absolute mutation paths outside `/tmp` and `/dev`. Relative `mkdir("fx")` / `mkdir("ufo")` lines are components of that same temp tree (mkdir follows cwd). One `unlinkat(AT_FDCWD, "", 0) = ENOENT` is the broken cleanup in D1, not a host unlink.
+`fx_no_mutation` (`:624`, called at `:726`) hashes the case fixture and passed for all 14. It does not see a write outside that fixture, and it does not see the temp dir surviving (D1).
 
-Host metadata across the two selftest runs (inode, mtime, size): `.ufo/watchdog.log`, `.ufo/state`, `mori-shokunin/tools/mori-census.sh` unchanged. The `diff` of the snapshot files differs only in the `TAG before` / `TAG after` label line.
+`strace` of one `--selftest` (`/tmp/mori-census-selftest.pNiAXU`): **0** successful absolute writes outside that directory and `/dev`. 125 successful relative `mkdir`/`openat` names (`bin`, `fx`, `cgroup`, `state`, …) are `mkdir -p` component walks: the trace shows `mkdir("/tmp")` `EEXIST`, then `mkdir("mori-census-selftest.pNiAXU")` `EEXIST`, then `mkdir("bin")` `= 0`. `/tmp/bin` does not exist. The leaked tree contains `bin/` and `fx/`. Failed syscalls (560) are not writes; they include `mkdir("/tmp")` `EEXIST` and the empty `rm` in D1.
 
-## D1 — selftest temp dir survives (killed)
+## D1 — selftest temp dir survives
 
-**Site:** `mori-shokunin/tools/mori-census.sh:511-513`
+**Site:** `mori-shokunin/tools/mori-census.sh:585-587`
 
 ```bash
 run_selftest() {
@@ -177,62 +195,73 @@ run_selftest() {
   trap 'rm -rf -- "${work:-}"' EXIT INT TERM
 ```
 
-`work` is `local` to `run_selftest`. The EXIT trap runs after the function returns, when `work` is already out of scope, so the expansion is empty.
+`work` is `local`. The EXIT trap runs after the function returns, when `work` is already out of scope, so the expansion is empty.
 
 **Detector:** `bash -x "$GATE" --selftest`. Trace tail:
 
 ```text
-+ work=/tmp/mori-census-selftest.TgGK1m
++ work=/tmp/mori-census-selftest.AdtWiD
 + trap 'rm -rf -- "${work:-}"' EXIT INT TERM
-...
-+ return
 + rm -rf -- ''
 ```
 
-Directory count under `/tmp/mori-census-selftest.*`: 10 before that trace, 11 after. `fuser` showed no holder. The suite still printed `PASS` and exited 0 — the leak is outside the case asserts.
+`/tmp/mori-census-selftest.AdtWiD` was still present after the trace (`bin/`, `fx/`). The suite still printed `PASS` and exited 0. Header lines 19-20 say `--selftest` writes only under that temp dir and the trap is what bounds it. The writes stay under `/tmp` (not the fleet), but each invocation leaves the tree. This seat did not patch the gate and did not delete the leftovers.
 
-**Minimal repro** (same bash 5.3.15), not the gate:
+## M1 — silent write outside the fixture (scratch copy only)
 
-```text
-inside work=/tmp/mori-trap-repro.A7wvsh
-TRAP work=EMPTY
+**Mutant:** copy of the proved blob, one line inserted after the banner at `:559`:
+
+```bash
+printf '%s\n' "$TS_UTC" >> '/tmp/mori-idem-census/r2/canary'
 ```
 
-and the directory remained.
+| Bytes | sha256 |
+|---|---|
+| pristine / restored scratch | `81e716de978a9540f9d310309d83660bb196650aa1ab809ae6fd6ee3cc4bfba9` |
+| mutant | `db175b0a6df3080e1d2c020f8ac69d342e5a24bdfba62dfa5d0dc50a1f14bb8d` |
 
-Header comment at `:19-20` says `--selftest` writes only under `/tmp/mori-census-selftest.XXXXXX` and the trap is what was supposed to bound that. The writes stay under `/tmp` (not the fleet), but each invocation **leaves** the tree. That is a write the design said it would undo. Not a remediation: this seat did not patch the gate and did not delete the leftovers.
+**Expected detector:** the proof command's write check (successful absolute mutation outside the fixture). Stdout-diff was not expected to kill this mutant.
 
-**Fix the parent should land (not applied here):** set the trap variable in the global scope, or `rm -rf -- "$work"` before `run_selftest` returns, and add a selftest assert that the directory is gone after a nested run. A case that only hashes the fixture will not catch this.
+**Output:**
 
-## D2 — live stdout is not byte-idempotent (survived as a finding-id compare; killed as byte-diff)
+| Detector | Result |
+|---|---|
+| two mutant runs, stdout `diff` | empty, both exit 0 — **survived** |
+| mutant stdout vs pristine stdout | empty — **survived** |
+| fixture manifest before vs after | empty — **survived** |
+| canary after the two runs | present, 42 bytes, sha256 `ce8319bab0bd40b145d3a62b1f29f36a47a4a9596239ea10181589d7d2052848` (pinned timestamp written twice) |
+| strace write check | `forbidden 1`, path `/tmp/mori-idem-census/r2/canary` — **killed** |
 
-Two live runs with `MORI_ROSTER_LANES=kama` (so silence does not `find` the whole fleet), both exit 1:
+**Verdict:** killed by the read-only detector. Survived by stdout-diff and by `fx_no_mutation`. That is a coverage gap of a diff-only or fixture-hash-only check, not a license to change the contract. The lane file was not the mutant.
+
+**Restoration:** scratch copy `cmp` equal to the proved blob; repeat of the fixture pair matched pristine stdout; canary absent; fixture manifest unchanged. Live gate inode, size, and mtime unchanged across the mutation (the mutant never was the live file).
+
+## Bounded live pair (same blob, not a fixture)
+
+Clock pinned `MORI_NOW_EPOCH=1792025194` (`ts=2026-10-15T00:46:34Z`), `MORI_ROSTER_LANES=kama`, so silence does not `find` every lane repo. Both exit 1, stderr empty. Verdict line identical:
 
 ```text
-MORI_CENSUS: DRIFT (findings=10 drift=9 unavailable=0 surfaces=7)
+MORI_CENSUS: DRIFT (findings=10 drift=7 unavailable=0 surfaces=7)
 ```
 
-After stripping `ts=` and `age_s=`, the only diff is `memory.current`:
+This exit 1 is the gate's DRIFT code, not a probe failure. It is not this seat's census of the fleet.
+
+The only stdout difference:
 
 ```text
-- current=25924329472
-+ current=25932652544
+- current=25050161152
++ current=25050505216
 ```
 
-on both the `SURFACE cgroup` line and `FINDING CGROUP_OOM_KILL`. Finding id set did not change. `oom_kill=1` was stable across the pair.
+Delta **+344064** bytes, on the `SURFACE cgroup` line only. Finding rows matched, including `script_sha256=81e716de978a9540f9d310309d83660bb196650aa1ab809ae6fd6ee3cc4bfba9` on each. Ids in emission order: `WATCHDOG_STALE`, `WATCHDOG_ABSENT`, `WAVE_UNSETTLED_AGE` ×4 (`shokunin-train-20261013`, `-w2`, `-w3`, `-w4`), `OOM_KILL_JOURNAL`, `SEGFAULT_JOURNAL`, `UNIT_FAILURE_OUT_OF_SCOPE`, `CGROUP_OOM_KILL_CUMULATIVE`. `CGROUP_OOM_KILL` did not fire; the surface stayed `ok` with parent `oom_kill=1` and the cumulative finding at info. So on this blob a raw stdout diff moves on `current=` even when the finding set does not, and the moving field is not inside a finding row.
 
-So: compare-by-id is idempotent on this sample; compare-by-raw-stdout is not, because the gate prints the live counter. Frozen `MORI_NOW_EPOCH` does not freeze `memory.current`. A later diff of receipts must drop or bin `current=` (FindingIds already calls pid/free-bytes/timestamps volatile). This is not a license to change the contract; it is the coverage gap if someone diffs stdout bytes.
-
-Strace of that bounded live run: **0** host write paths. The earlier unbounded live strace (default roster, `find` over every lane repo) was killed by the harness at ~30s after 228070 read-only `openat`s and **0** host writes; it had printed only the banner line. Silence's `find "$repo" -type f` (`:436`) is a read walk, not a write, and it is large enough that an unbounded `strace -f` is the wrong proof tool.
+Strace of a third run with the same pin and roster: **0** successful writes outside `/dev` and `/proc`. The two failed mutation syscalls were `openat /dev/tty` `ENXIO` and `mkdir("/tmp/tmux-1000")` `EEXIST` (real `tmux ls` probing its socket directory; the directory already existed, and this run did not create it).
 
 ## What was not claimed
 
-- No judge score. No CLEAN/DRIFT verdict for the fleet beyond the two bounded live lines quoted above (those are probe output, not this seat's census).
-- No edit to `mori-census.sh`. D1 is a killed mutant of the cleanup trap; the bytes stay as landed.
-- FixtureDesign's 33-case table is a sibling contract. The landed gate's suite is 14 cases. This proof runs the landed suite plus one quiet fixture shaped like `fx_quiet`, not the 33-case table.
+- No judge score. The live `DRIFT` line is probe output.
+- No edit to `mori-census.sh`. D1 is observed landed behavior. M1 lived only in `/tmp`.
+- FixtureDesign's 33-case table is a sibling contract. This proof ran the landed 14-case suite plus one quiet fixture, not that table.
 - `/dev/null` and `/dev/tty` opens are process stdio, not fleet paths.
-- This report does not delete the leaked `/tmp/mori-census-selftest.*` trees. Deleting them would hide D1.
-
-## Restoration
-
-Gate bytes before and after: sha256 `7432255ff56dc69f0f2814e631961a0482e51d52f392f547de5dac42df387d3f`, inode `11549680`, size `31588`. Nothing to restore; the subject was never mutated. Proof scratch lives under `/tmp/mori-idem-census/` and `/tmp/mori-idem-fx-landed.sORgQg` and is disposable.
+- This report does not delete leaked `/tmp/mori-census-selftest.*` trees. Deleting them would hide D1.
+- A later compare of live receipts on this blob must drop or ignore `current=`. Pinning `MORI_NOW_EPOCH` froze `ts=` and `age_s=` on this pair; it did not freeze `memory.current`.
