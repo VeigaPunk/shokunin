@@ -211,3 +211,28 @@ rounds 2, chousa round 2) exceeded what this session could integrate with the ca
 the protocol requires. Every claim above is tied to a measured command; nothing
 unrun is reported as passed, and no promotion, roster row, or native verdict is
 claimed.
+
+## Roster debt (operator-owned — recorded, not edited)
+
+`LaneSilence` measured the roster against disk: **6 of 13 `MANIFEST.json` roster rows
+name a `repo` path that does not exist** —
+
+| id | roster `repo` | actual checkout |
+|---|---|---|
+| audio | `shokunin-game-audio` | `audio-shokunin` |
+| game-dev-2d | `shokunin-godot-2d` | `game-dev-2d-shokunin` |
+| game-dev-3d | `shokunin-3d-engines` | `game-dev-3d-shokunin` |
+| lore | `shokunin-world-bible` | `lore-shokunin` |
+| revenger | `shokunin-binary-forensics` | `revenger-shokunin` |
+| kaidoku | `shokunin-reverse-engineering` | `kaidoku-shokunin` |
+
+The roster carries the 2026-10 public remote-style name while the local checkouts use
+the canonical `<id>-shokunin` (the fleet LOG already notes "canonical name is always
+`<id>-shokunin`"). Roster rows are operator-owned, so this was **not** edited; a
+consumer must resolve the live `<id>-shokunin` checkout, as the silence grading did.
+Unblock: the operator reconciles the six `repo` fields.
+
+Two silence-methodology findings are also recorded: the grade baseline must be each
+lane's **own report file mtime** (using the shared `round-N/` directory mtime
+false-silences whichever lane wrote it last — measured against kaidoku), and commit
+sparsity is never silence.

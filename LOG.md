@@ -625,3 +625,10 @@ superseded text (`PROTOCOL.md` §Invariants).
   Six stray `.ufo/scopes/Shokunin12h*` dirs were moved into the fleet root and the
   substrate was left clean; assignments verified intact. Recorded in the fleet
   report. Future waves must set `UFO_PROJECT_ROOT` to the fleet root.
+
+- Roster debt recorded (operator-owned, not edited): 6 of 13 `MANIFEST.json` roster
+  rows name a `repo` path absent on disk (`shokunin-<domain>` public-remote style vs
+  the canonical `<id>-shokunin` checkout). Consumers must resolve the live
+  `<id>-shokunin` directory; the operator reconciles the six fields. Found by the
+  mori `LaneSilence` audit, which also established that the silence baseline is each
+  lane's own report mtime, not the shared round-directory mtime.
