@@ -10,6 +10,12 @@
 # the M1 census (M1), or the client binary's own strings (B).
 #
 # Findings: 121 defects / 94 notes / 46 verify-later over 143 model entries
+#
+# DRIFT NOTICE (computed when this file was generated):
+#   these blocks were generated from revision 61f22a2bbe52d616, but the live file now
+#   hashes to 2c61f6bbe6c77dc7. 10 field(s) differ: capabilities x10.
+#   A block carries WHOLE fields, so applying a stale block reverts the
+#   newer edit. Re-check each block against the current file before splicing.
 
 # ============================================================================
 # A. Field-level corrections, one merged block per model
@@ -481,6 +487,14 @@ display_name = "Step 5 Preview Free"
 #       acceptance of xhigh/max is evidence; a lane that returns 200 for the
 #       control ignores the field entirely, so its 'acceptance' proves nothing.
 #
+#       alibaba-token-plan validates    invalid-control returned 400, so accepted values (max, xhigh) are genuinely supported
+#       cursor           ignores      invalid-control returned 200, so the field is not validated; accepted values (max) are not evidence of support
+#       devin            inconclusive invalid-control returned None (TimeoutError: timed out)
+#       hyper            ignores      invalid-control returned 200, so the field is not validated; accepted values (high, low, max, medium, minimal, xhigh) are not evidence of support
+#       openai-codex     validates    invalid-control returned 400, so accepted values (max) are genuinely supported
+#       opencode-go      validates    invalid-control returned 400, so accepted values (max, xhigh) are genuinely supported
+#       xai-oauth        ignores      invalid-control returned 200, so the field is not validated; accepted values (max, xhigh) are not evidence of support
+#       zai-coding-plan  ignores      invalid-control returned 200, so the field is not validated; accepted values (max) are not evidence of support
 #
 #    Recommended splice (drops the global pin; per-model defaults take over):
 #
@@ -510,8 +524,9 @@ display_name = "Step 5 Preview Free"
 # E. Effort defaults worth making explicit
 #
 #    Without a global pin the client picks support_efforts[floor(n/2)] when a
-#    model declares no default_effort (C, verified on 11 lists). For lists where
-#    that pick is below what the lane demonstrably accepts (P), pin it instead:
+#    model declares no default_effort (C, verified on 11 lists). These pins cover
+#    the lists where that pick IS the top declared value, so the block only makes
+#    the client's own choice explicit and is never a behaviour change:
 
 # alibaba-token-plan-2/deepseek-v4-flash: declared ['high', 'max'] -> client sends 'max'
 [models."alibaba-token-plan-2/deepseek-v4-flash"]
@@ -858,7 +873,9 @@ display_name = "Grok 4.5"
 #      model=qwen3.8-flash: ctx=[1000000] out=[128000, 131072]
 #      model=qwen3.8-max: ctx=[1000000] out=[65536, 131072]
 # 4. Lanes that ignore reasoning_effort (P: invalid-control returned 200):
-#      
+#      hyper, xai-oauth, zai-coding-plan
+#    (from pass 1; ANALYSIS section 4.1 is the authoritative per-lane table and
+#     adds cursor from pass 2)
 #    For these, accept/reject of a value is not evidence of support; only the
 #    reasoning_content the lane returns shows whether thinking actually ran.
 # 5. devin: 502 'Reached free model rate limit ... reset in 1 hour' during this

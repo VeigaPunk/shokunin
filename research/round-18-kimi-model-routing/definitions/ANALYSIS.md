@@ -19,7 +19,32 @@ what the shipped client actually transmits for each of those declarations.
 to the digest the M1 census was measured against, so every census finding (D1–D9)
 still applies to this config and is used as evidence below without re-probing it.
 The file-bytes digest of the same file is `e3c223e054a626b8`; the two differ because M1 digests
-the parsed structure, not the bytes. No config edit happened between the two missions.
+the parsed structure, not the bytes. Between the M1 census and this audit the
+config did not change at all.
+
+**Drift notice (computed at generation time).** The live file has since moved on:
+it now hashes to `2c61f6bbe6c77dc7`, while every table and correction in this tree describes
+`61f22a2bbe52d616`. The difference is confined to 10 field(s):
+
+- `capabilities`: 10 entries
+
+- `devin/swe-2` capabilities: `['thinking']` -> `['thinking', 'tool_use']`
+- `devin/swe-2-medium` capabilities: `['thinking']` -> `['thinking', 'tool_use']`
+- `devin/swe-2-high` capabilities: `['thinking']` -> `['thinking', 'tool_use']`
+- `devin/swe-2-max` capabilities: `['thinking']` -> `['thinking', 'tool_use']`
+- `devin/deepseek-v4-1-flash-high` capabilities: `['thinking']` -> `['thinking', 'tool_use']`
+- `devin/deepseek-v4-1-flash-max` capabilities: `['thinking']` -> `['thinking', 'tool_use']`
+- `devin/glm-5-3-flash-low` capabilities: `['thinking']` -> `['thinking', 'tool_use']`
+- `devin/glm-5-3-flash-high` capabilities: `['thinking']` -> `['thinking', 'tool_use']`
+- `devin/glm-5-3-flash-max` capabilities: `['thinking']` -> `['thinking', 'tool_use']`
+- `cascade/glm-5.3-flash` capabilities: `['thinking']` -> `['thinking', 'tool_use']`
+
+Consequence: **splice a block only after re-checking it against the current
+file** — a corrected block carries whole fields, so applying a stale block would
+revert the newer edit. No *defect* in this audit sits on a drifted field: the
+change is to `capabilities`, which section 3, rule 5 shows barely reaches the
+wire (the client sends tools regardless). It does resolve 10 of the 14 DEF-6a
+notes, which recorded exactly that absence of `tool_use`.
 
 ---
 
@@ -35,17 +60,32 @@ Three evidence channels, in increasing order of cost:
    | --- | --- |
    | `max_input_size` | 0 |
    | `off_effort` | 0 |
-   | `protocol` | 5 |
-   | `max_output_size` | 6 |
-   | `reasoning_key` | 12 |
-   | `max_context_size` | 16 |
+   | `max_output_size` | 9 |
+   | `reasoning_key` | 13 |
+   | `max_context_size` | 18 |
    | `display_name` | 19 |
-   | `support_efforts` | 22 |
-   | `default_effort` | 25 |
+   | `default_effort` | 27 |
+   | `support_efforts` | 27 |
    | `overrides` | 238 |
    | `capabilities` | 390 |
+   | `protocol` | 4559 |
 
-   The two zeros are the audit's first hard result: **`off_effort` and
+   Every row is produced by one command, run once per field:
+
+   ```
+   grep -a -o '<field>' /home/vgpnk/.kimi-code/bin/kimi | wc -l
+   ```
+
+   Binary counted: sha256 `8ee7405d82958f0a`, 191892672 bytes, mtime 2026-10-14T19:58:50-0300.
+   The count is the number of times the byte string occurs anywhere in the
+   binary, so a nonzero row means *this name exists in the client* — not "this
+   many declarations"; occurrences inside longer identifiers are included.
+   A previous revision of this table mixed `grep -c -o` (which counts matching
+   lines, not matches) with `grep -o | wc -l`, and its `protocol` row matched
+   neither method; the table is now computed with the single command above.
+
+   The two zeros are the audit's first hard result, and they hold under every
+   counting method: **`off_effort` and
    `max_input_size` are not fields this client knows.** `kimi doctor config`
    reports nothing about them because it does not validate model-level keys at
    all — a config with a deliberately misspelled model key (`zzz_unknown_key`),
@@ -58,7 +98,7 @@ Three evidence channels, in increasing order of cost:
    This is what turns "declared" into "transmitted".
 
 3. **Live probes** (`scripts/probe_live.py`) — one request per cell against the
-   real lanes. Budget: 72 requests in total across three passes, every one of them
+   real lanes. Budget: 72 requests in total across four passes, every one of them
    minimal (`max_tokens` 16, 256 for the tool suite after pass 1 showed thinking
    models spend the whole 16-token budget on reasoning before emitting a call).
    No loops, no repeats except one deliberate reproducibility row.
@@ -319,11 +359,16 @@ verify-later), the affected alias, the config value, a one-line `detail` and an
 
 The classes that need a decision:
 
-**A. Two declared field names do not exist in this client** (19 findings, defect).
-`off_effort` (10 entries) and `max_input_size` (9 entries) have zero occurrences in
-the binary, and the mock capture shows `off_effort` has no effect on what is sent.
-The effort value is chosen from `default_effort`/`support_efforts` only. These are
-declarations that read as limits and enforce nothing.
+**A. Two declared field names do not exist in this client** (29 findings over 19
+field declarations, defect). `off_effort` (10 entries) and `max_input_size` (9)
+have zero occurrences in the binary, and the mock capture shows `off_effort` has
+no effect on what is sent. The effort value is chosen from
+`default_effort`/`support_efforts` only. These are declarations that read as
+limits and enforce nothing. *(Counting basis: `off_effort` is filed twice on
+purpose — once as DEF-1 for the field name and once as DEF-3c for the effort
+semantics, 10 entries each — which is why the class column says 29 while the
+distinct declarations number 19. Every other class in the table counts findings,
+not entries.)*
 
 **B. Size caps that are arithmetic, not measurement** (24 findings, defect).
 `hyper/kimi-k2-thinking = 26214`, `hyper/minimax-m2.7 = 6553`,
@@ -346,7 +391,7 @@ true against this digest: `managed:kimi-code` answers 401 on every path (empty
 OAuth store), keys 2 and 3 of the token-plan are quota-exhausted (429),
 `glm-5` is unentitled on all three token-plan lanes (403) and
 `zai-coding-plan/glm-5.3-highspeed` is not in its plan (429). That is
-**42 of 143 entries routing to lanes that cannot serve them**.
+**42 of 143 entries routing to lanes that cannot serve them** (4 on managed:kimi-code + 19 on alibaba-token-plan-2 + 19 on alibaba-token-plan-3).
 
 **E. Cross-provider divergence for the same served id** (19 findings, defect).
 `glm-5.3-flash` is declared with `max_output_size` 131072 on zai/opencode-go but
@@ -365,9 +410,11 @@ setting. `video_in`/`audio_in` are unprobed claims.
 probe-derived, so they live in `audit-table.json` as DEF-9/DEF-10). Two entries
 declare `reasoning_content` while the lane returns `reasoning` +
 `reasoning_details` and never the declared key — `opencode-go/kimi-k3` and
-`opencode-go/mimo-v2.5`. Nine entries declare no key at all while the lane
-returned `reasoning_content`: the eight probed `hyper` models, plus
-`xai-oauth/grok-4.5` and the two cascade entries. A reasoning pane cannot render
+`opencode-go/mimo-v2.5`. **Evidence is one response per model**, so DEF-9 is the
+thinner of the two: it is a mismatch between the declared name and every sample
+taken, not a claim about how often the lane behaves that way, and it is listed in
+verify-later. Nine entries declare no key at all while the lane returned
+`reasoning_content`: the 6 probed `hyper` models, `cascade/deepseek-v4.1-flash`, `cascade/glm-5.3-flash` and `xai-oauth/grok-4.5`. A reasoning pane cannot render
 either way until the declaration matches the lane. The `reasoning` field the
 opencode-go models return is a plain string holding the same text as
 `reasoning_details[0].text`, so `reasoning` is the recommended replacement;
@@ -410,7 +457,7 @@ never printed, passed as arguments, or written to disk; only counts leave it.
 
 ```
 scan root:        /home/vgpnk/Projects/shokunin/.tower/worktrees/wt-2/research/round-18-kimi-model-routing/definitions
-files scanned:    24
+files scanned:    25
 distinct configured credential values tested: 12
 
 exact  provider alibaba-token-plan api_key          hits=0 
@@ -453,7 +500,10 @@ is never modified.
 - **`max_context_size`.** The client never transmits a context limit, so no cheap
   probe can falsify these declarations; only a deliberately over-long prompt per
   lane would, and that is a quota-heavy test.
-- **`video_in` / `audio_in`.** Declared on 41 entries, probed on none.
+- **`video_in` / `audio_in`.** Declared on 41 entries, probed on none. (The class
+  table reports 46 findings for this class because an entry declaring both
+  capabilities yields two findings; the two counts are the same claim on
+  different bases.)
 - **Devin.** Rate-limited during the audit window; its direct chat path and its
   leg-1 behaviour should be re-checked after the reset.
 - **The `[secondary_model.models]` routing table** is only audited where it points
@@ -464,27 +514,33 @@ is never modified.
 ## 9. Reproducing this
 
 ```
-python3 scripts/audit_definitions.py        # -> audit-table.json, audit-table.md
 python3 scripts/probe_client_semantics.py  # -> raw/client-semantics.json (no quota)
 python3 scripts/probe_live.py all          # -> raw/probes-{effort,tool,image}.json
 python3 scripts/probe_live.py pass2        # -> raw/probes-*-pass2.json (UA + budget fixes)
 python3 scripts/probe_live.py pass3        # -> raw/probes-tool-pass3.json (client shape)
 python3 scripts/probe_live.py pass4        # -> raw/probes-effort-pass4.json (off_effort value)
+python3 scripts/audit_definitions.py       # NEW audit of the live config -> audit-table.*
+python3 scripts/refresh_binary_hits.py     # re-measures the binary table in place
 python3 scripts/merge_probe_findings.py    # folds DEF-9/DEF-10 into audit-table.json
 python3 scripts/build_corrections.py       # -> config-corrections.toml
 bash    scripts/hygiene_check.sh           # -> HYGIENE.md, exit 0 expected
 python3 scripts/build_analysis.py          # -> ANALYSIS.md (embeds HYGIENE.md)
 ```
 
-Order matters in two places: `merge_probe_findings.py` must run after
+Order matters in three places. `merge_probe_findings.py` must run after
 `audit_definitions.py` (which rewrites `audit-table.json` and drops the
-probe-derived DEF-9/DEF-10 rows) and before `build_corrections.py`; and
+probe-derived DEF-9/DEF-10 rows) and before `build_corrections.py`;
 `hygiene_check.sh` must run before `build_analysis.py`, because ANALYSIS.md
-embeds the hygiene log verbatim.
-Re-running the four generators after a probe run reproduces the committed
-`audit-table.*`, `config-corrections.toml` and `ANALYSIS.md` byte for byte; only
-the probe scripts themselves spend quota, so they are the only steps that need
+embeds the hygiene log verbatim; and **`audit_definitions.py` starts a NEW
+audit** — it re-reads the live config, so running it rebases every row onto
+whatever the file says at that moment. This tree is pinned to the revision in
+the table above, so reproducing it from the committed evidence means running
+`refresh_binary_hits.py` (which re-measures only the binary table) rather than
+`audit_definitions.py`. Re-running the remaining generators reproduces the
+committed `audit-table.*`, `config-corrections.toml` and `ANALYSIS.md` byte for
+byte; only the probe scripts spend quota, so they are the only steps that need
 re-running to refresh evidence.
 
-Each probe script prints the config's json-canonical digest before probing, so a
-config edit between runs is visible rather than silent.
+Each probe script prints the config's json-canonical digest before probing, and
+both `build_corrections.py` and `build_analysis.py` compare that digest against
+the live file, so a config edit between runs is reported rather than absorbed.

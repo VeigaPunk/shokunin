@@ -12,17 +12,17 @@
     "global_thinking_effort": "max"
   },
   "binary_field_hits": {
-    "max_context_size": 16,
-    "max_output_size": 6,
-    "support_efforts": 22,
-    "default_effort": 25,
-    "reasoning_key": 12,
+    "max_context_size": 18,
+    "max_output_size": 9,
+    "max_input_size": 0,
+    "support_efforts": 27,
+    "default_effort": 27,
+    "off_effort": 0,
+    "reasoning_key": 13,
     "capabilities": 390,
     "display_name": 19,
-    "protocol": 5,
-    "overrides": 238,
-    "off_effort": 0,
-    "max_input_size": 0
+    "protocol": 4559,
+    "overrides": 238
   },
   "effort_values_declared": [
     "high",
@@ -8024,5 +8024,12 @@
       "key": "reasoning_content",
       "because": "lane returns reasoning_content"
     }
+  },
+  "binary_count_method": "grep -a -o '<field>' /home/vgpnk/.kimi-code/bin/kimi | wc -l",
+  "binary_identity": {
+    "path": "/home/vgpnk/.kimi-code/bin/kimi",
+    "sha256": "8ee7405d82958f0a50a3aab0773aba9e01057978bad93ba379eaf89e5b6111af",
+    "size": 191892672,
+    "mtime": "2026-10-14T19:58:50-0300"
   }
 }

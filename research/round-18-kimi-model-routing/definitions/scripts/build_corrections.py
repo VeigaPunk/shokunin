@@ -15,7 +15,7 @@ Usage: python3 scripts/build_corrections.py   (writes ../config-corrections.toml
 import json
 import os
 import sys
-from collections import defaultdict
+from collections import Counter, defaultdict
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import common  # noqa: E402
@@ -44,7 +44,7 @@ def load(name):
 def probe_index():
     """(alias, value) -> probe row, across every pass."""
     idx = {}
-    for f in ("probes-effort.json", "probes-effort-pass2.json"):
+    for f in ("raw/probes-effort.json", "raw/probes-effort-pass2.json"):
         d = load(f)
         if not d:
             continue
@@ -108,6 +108,17 @@ def main():
     add("# Findings: %d defects / %d notes / %d verify-later over %d model entries"
         % (audit["triage_counts"].get("defect", 0), audit["triage_counts"].get("note", 0),
            audit["triage_counts"].get("verify-later", 0), len(entries)))
+    drift = common.config_drift(audit)
+    if drift["changed"]:
+        add("#")
+        add("# DRIFT NOTICE (computed when this file was generated):")
+        add("#   these blocks were generated from revision %s, but the live file now" % drift["audited_digest"])
+        add("#   hashes to %s. %d field(s) differ: %s."
+            % (drift["live_digest"], len(drift["changed_fields"]),
+               ", ".join("%s x%d" % (f, n) for f, n in sorted(
+                   Counter(f for _, f, _, _ in drift["changed_fields"]).items()))))
+        add("#   A block carries WHOLE fields, so applying a stale block reverts the")
+        add("#   newer edit. Re-check each block against the current file before splicing.")
     add("")
 
     # ------------------------------------------------- section A+B (merged)
@@ -175,8 +186,8 @@ def main():
     add("#       acceptance of xhigh/max is evidence; a lane that returns 200 for the")
     add("#       control ignores the field entirely, so its 'acceptance' proves nothing.")
     add("#")
-    for lane, verdict, why in lane_effort_verdicts(load("probes-effort.json"),
-                                                   load("probes-effort-pass2.json")):
+    for lane, verdict, why in lane_effort_verdicts(load("raw/probes-effort.json"),
+                                                   load("raw/probes-effort-pass2.json")):
         add("#       %-16s %-12s %s" % (lane, verdict, why))
     add("#")
     add("#    Recommended splice (drops the global pin; per-model defaults take over):")
@@ -208,8 +219,9 @@ def main():
     add("# E. Effort defaults worth making explicit")
     add("#")
     add("#    Without a global pin the client picks support_efforts[floor(n/2)] when a")
-    add("#    model declares no default_effort (C, verified on 11 lists). For lists where")
-    add("#    that pick is below what the lane demonstrably accepts (P), pin it instead:")
+    add("#    model declares no default_effort (C, verified on 11 lists). These pins cover")
+    add("#    the lists where that pick IS the top declared value, so the block only makes")
+    add("#    the client's own choice explicit and is never a behaviour change:")
     add("")
     for alias in sorted(entries):
         e = entries[alias]
@@ -219,7 +231,13 @@ def main():
         if alias in drop_map or alias in staged:
             continue          # section A / A2 already emits this entry
         mid = sup[len(sup) // 2]
-        picked = (mid == "max" or activate(alias, probes))
+        # Explicit, probe-independent rule, unchanged from the reviewed revision: pin
+        # only where the client's fallback is already the literal top value "max". The
+        # earlier code ORed this with a probe lookup that silently saw no probes
+        # (load() resolved under the wrong directory); the rule is now stated outright
+        # rather than depending on that lookup. Widening it (e.g. to `max(sup)`, which
+        # would pin [high, xhigh]) adds stylistic blocks, so it is left as reviewed.
+        picked = (mid == "max")
         if not picked:
             continue
         add("# %s: declared %s -> client sends %r" % (alias, sup, mid))
@@ -284,9 +302,11 @@ def main():
         v = d["value"]
         add("#      %s: ctx=%s out=%s" % (d["field"], v.get("max_context_size"), v.get("max_output_size")))
     add("# 4. Lanes that ignore reasoning_effort (P: invalid-control returned 200):")
-    ignored = sorted({r["lane"] for r in probe_rows(load("probes-effort.json"))
+    ignored = sorted({r["lane"] for r in probe_rows(load("raw/probes-effort.json"))
                       if r.get("value") == "invalid-control" and r.get("status") == 200})
     add("#      %s" % ", ".join(ignored))
+    add("#    (from pass 1; ANALYSIS section 4.1 is the authoritative per-lane table and")
+    add("#     adds cursor from pass 2)")
     add("#    For these, accept/reject of a value is not evidence of support; only the")
     add("#    reasoning_content the lane returns shows whether thinking actually ran.")
     add("# 5. devin: 502 'Reached free model rate limit ... reset in 1 hour' during this")
@@ -315,8 +335,13 @@ def probe_rows(d):
 
 
 def lane_effort_verdicts(*captures):
-    """Per lane: does the invalid control get rejected (validates) or accepted (ignores)?"""
-    rows = [r for d in captures if d for r in d["results"]]
+    """Per lane: does the invalid control get rejected (validates) or accepted (ignores)?
+
+    Same rule as ANALYSIS section 4.1: pass 1's opencode-go rows were WAF-blocked
+    (403, a User-Agent artefact) and are excluded, so the two tables cannot
+    disagree about a lane.
+    """
+    rows = [r for d in captures if d for r in d["results"] if r.get("status") != 403]
     lanes = {}
     for r in rows:
         lanes.setdefault(r["lane"], []).append(r)
@@ -345,14 +370,6 @@ def lane_effort_verdicts(*captures):
                 why = "invalid-control returned %s (%s)" % (st, control[0].get("error") or "no error field")
         out.append((lane, verdict, why))
     return out
-
-
-def activate(alias, probes):
-    """True when a probe on this alias returned a definitive effort accept."""
-    for (a, v), row in probes.items():
-        if a == alias and v and v != "invalid-control" and row.get("status") == 200:
-            return True
-    return False
 
 
 if __name__ == "__main__":

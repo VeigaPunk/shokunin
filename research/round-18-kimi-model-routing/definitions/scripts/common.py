@@ -146,3 +146,45 @@ def entries_by_lane(cfg):
         pc = cfg.get("providers", {}).get(pid, {})
         out.append((alias, pid, pc, mc))
     return out
+
+
+def config_drift(audit, path=CONFIG_PATH):
+    """Compare the audited entries against the config as it stands now.
+
+    The audit is pinned to the revision it was measured against; if the live file
+    has moved on, splicing a stale block could revert someone else's edit, so the
+    difference is reported rather than silently absorbed.
+    """
+    cfg = load_config(path)
+    live_digest = config_digest(cfg)
+    audited = audit.get("config_json_digest_16")
+    drift = {"audited_digest": audited, "live_digest": live_digest,
+             "changed": live_digest != audited, "changed_fields": []}
+    if not drift["changed"]:
+        return drift
+    live_models = cfg.get("models", {})
+    live_providers = cfg.get("providers", {})
+    for e in audit["entries"]:
+        alias = e["alias"]
+        mc = live_models.get(alias)
+        if mc is None:
+            drift["changed_fields"].append((alias, "(entry)", "present", "absent"))
+            continue
+        pc = live_providers.get(mc.get("provider"), {})
+        pairs = [
+            ("capabilities", e.get("capabilities") or [], list(mc.get("capabilities") or [])),
+            ("max_context_size", e.get("max_context_size"), mc.get("max_context_size")),
+            ("max_input_size", e.get("max_input_size"), mc.get("max_input_size")),
+            ("max_output_size", e.get("max_output_size"), mc.get("max_output_size")),
+            ("support_efforts", e.get("support_efforts") or [], list(mc.get("support_efforts") or [])),
+            ("default_effort", e.get("default_effort"), mc.get("default_effort")),
+            ("off_effort", e.get("off_effort"), mc.get("off_effort")),
+            ("reasoning_key", e.get("reasoning_key"), mc.get("reasoning_key")),
+            ("model", e.get("model"), mc.get("model")),
+            ("protocol", e.get("protocol"), effective_protocol(pc, mc)),
+            ("base_url", e.get("base_url"), effective_base_url(pc, mc)),
+        ]
+        for field, old, new in pairs:
+            if old != new:
+                drift["changed_fields"].append((alias, field, old, new))
+    return drift

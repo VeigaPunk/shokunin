@@ -28,6 +28,19 @@ def load_opt(name):
         return json.load(fh)
 
 
+def def10_summary(defects):
+    """'the 6 probed `hyper` models, plus xai-oauth/grok-4.5 and the two cascade entries'."""
+    hyper = sum(1 for d in defects if d["id"] == "DEF-10" and d["alias"].startswith("hyper/"))
+    others = [d["alias"] for d in defects
+              if d["id"] == "DEF-10" and not d["alias"].startswith("hyper/")]
+    parts = []
+    if hyper:
+        parts.append("the %d probed `hyper` models" % hyper)
+    for a in others:
+        parts.append("`%s`" % a)
+    return ", ".join(parts[:-1]) + " and " + parts[-1] if len(parts) > 1 else parts[0]
+
+
 def corrections_block_count():
     """Model blocks in config-corrections.toml, counting only top-level tables."""
     path = os.path.join(common.DEFS_DIR, "config-corrections.toml")
@@ -162,6 +175,11 @@ def main():
     defects = audit["defects"]
     counts = audit["counts"]
     triage = audit["triage_counts"]
+    drift = common.config_drift(audit)
+    def6a_total = sum(1 for d in audit["defects"] if d["id"] == "DEF-6a")
+    resolved_notes = sum(1 for d in audit["defects"] if d["id"] == "DEF-6a"
+                         and any(a == d["alias"] and f == "capabilities"
+                                 for a, f, _, _ in drift["changed_fields"]))
     by_class = Counter(d["class"] for d in defects)
     by_triage = defaultdict(list)
     for d in defects:
@@ -192,7 +210,32 @@ def main():
     A("still applies to this config and is used as evidence below without re-probing it.")
     A("The file-bytes digest of the same file is `%s`; the two differ because M1 digests"
       % audit["config_file_sha256"][:16])
-    A("the parsed structure, not the bytes. No config edit happened between the two missions.")
+    A("the parsed structure, not the bytes. Between the M1 census and this audit the")
+    A("config did not change at all.")
+    if drift["changed"]:
+        A("")
+        A("**Drift notice (computed at generation time).** The live file has since moved on:")
+        A("it now hashes to `%s`, while every table and correction in this tree describes"
+          % drift["live_digest"])
+        A("`%s`. The difference is confined to %d field(s):"
+          % (drift["audited_digest"], len(drift["changed_fields"])))
+        A("")
+        per_field = Counter(f for _, f, _, _ in drift["changed_fields"])
+        for field, n in sorted(per_field.items()):
+            A("- `%s`: %d entries" % (field, n))
+        A("")
+        for alias, field, old, new in drift["changed_fields"][:12]:
+            A("- `%s` %s: `%s` -> `%s`" % (alias, field, old, new))
+        if len(drift["changed_fields"]) > 12:
+            A("- … and %d more" % (len(drift["changed_fields"]) - 12))
+        A("")
+        A("Consequence: **splice a block only after re-checking it against the current")
+        A("file** — a corrected block carries whole fields, so applying a stale block would")
+        A("revert the newer edit. No *defect* in this audit sits on a drifted field: the")
+        A("change is to `capabilities`, which section 3, rule 5 shows barely reaches the")
+        A("wire (the client sends tools regardless). It does resolve %d of the %d DEF-6a"
+          % (resolved_notes, def6a_total))
+        A("notes, which recorded exactly that absence of `tool_use`.")
     A("")
     A("---")
     A("")
@@ -211,7 +254,25 @@ def main():
     for k, v in sorted(audit["binary_field_hits"].items(), key=lambda kv: (kv[1], kv[0])):
         A("   | `%s` | %d |" % (k, v))
     A("")
-    A("   The two zeros are the audit's first hard result: **`off_effort` and")
+    A("   Every row is produced by one command, run once per field:")
+    A("")
+    A("   ```")
+    A("   %s" % audit.get("binary_count_method", "grep -a -o '<field>' ~/.kimi-code/bin/kimi | wc -l"))
+    A("   ```")
+    A("")
+    if audit.get("binary_identity"):
+        bi = audit["binary_identity"]
+        A("   Binary counted: sha256 `%s`, %s bytes, mtime %s."
+          % ((bi.get("sha256") or "?")[:16], bi.get("size"), bi.get("mtime")))
+    A("   The count is the number of times the byte string occurs anywhere in the")
+    A("   binary, so a nonzero row means *this name exists in the client* — not \"this")
+    A("   many declarations\"; occurrences inside longer identifiers are included.")
+    A("   A previous revision of this table mixed `grep -c -o` (which counts matching")
+    A("   lines, not matches) with `grep -o | wc -l`, and its `protocol` row matched")
+    A("   neither method; the table is now computed with the single command above.")
+    A("")
+    A("   The two zeros are the audit's first hard result, and they hold under every")
+    A("   counting method: **`off_effort` and")
     A("   `max_input_size` are not fields this client knows.** `kimi doctor config`")
     A("   reports nothing about them because it does not validate model-level keys at")
     A("   all — a config with a deliberately misspelled model key (`zzz_unknown_key`),")
@@ -224,7 +285,7 @@ def main():
     A("   This is what turns \"declared\" into \"transmitted\".")
     A("")
     A("3. **Live probes** (`scripts/probe_live.py`) — one request per cell against the")
-    A("   real lanes. Budget: %d requests in total across three passes, every one of them"
+    A("   real lanes. Budget: %d requests in total across four passes, every one of them"
       % len(rows))
     A("   minimal (`max_tokens` 16, 256 for the tool suite after pass 1 showed thinking")
     A("   models spend the whole 16-token budget on reasoning before emitting a call).")
@@ -441,11 +502,16 @@ def main():
     A("")
     A("The classes that need a decision:")
     A("")
-    A("**A. Two declared field names do not exist in this client** (19 findings, defect).")
-    A("`off_effort` (10 entries) and `max_input_size` (9 entries) have zero occurrences in")
-    A("the binary, and the mock capture shows `off_effort` has no effect on what is sent.")
-    A("The effort value is chosen from `default_effort`/`support_efforts` only. These are")
-    A("declarations that read as limits and enforce nothing.")
+    A("**A. Two declared field names do not exist in this client** (29 findings over 19")
+    A("field declarations, defect). `off_effort` (10 entries) and `max_input_size` (9)")
+    A("have zero occurrences in the binary, and the mock capture shows `off_effort` has")
+    A("no effect on what is sent. The effort value is chosen from")
+    A("`default_effort`/`support_efforts` only. These are declarations that read as")
+    A("limits and enforce nothing. *(Counting basis: `off_effort` is filed twice on")
+    A("purpose — once as DEF-1 for the field name and once as DEF-3c for the effort")
+    A("semantics, 10 entries each — which is why the class column says 29 while the")
+    A("distinct declarations number 19. Every other class in the table counts findings,")
+    A("not entries.)*")
     A("")
     A("**B. Size caps that are arithmetic, not measurement** (%d findings, defect)."
       % sum(1 for d in defects if d["id"].startswith("DEF-2")))
@@ -469,9 +535,12 @@ def main():
     A("OAuth store), keys 2 and 3 of the token-plan are quota-exhausted (429),")
     A("`glm-5` is unentitled on all three token-plan lanes (403) and")
     A("`zai-coding-plan/glm-5.3-highspeed` is not in its plan (429). That is")
-    A("**%d of %d entries routing to lanes that cannot serve them**."
+    A("**%d of %d entries routing to lanes that cannot serve them** (%s)."
       % (sum(1 for e in entries if e["provider"] in
-             ("managed:kimi-code", "alibaba-token-plan-2", "alibaba-token-plan-3")), len(entries)))
+             ("managed:kimi-code", "alibaba-token-plan-2", "alibaba-token-plan-3")), len(entries),
+         " + ".join("%d on %s" % (sum(1 for e in entries if e["provider"] == p), p)
+                    for p in ("managed:kimi-code", "alibaba-token-plan-2",
+                              "alibaba-token-plan-3"))))
     A("")
     A("**E. Cross-provider divergence for the same served id** (19 findings, defect).")
     A("`glm-5.3-flash` is declared with `max_output_size` 131072 on zai/opencode-go but")
@@ -490,9 +559,12 @@ def main():
     A("probe-derived, so they live in `audit-table.json` as DEF-9/DEF-10). Two entries")
     A("declare `reasoning_content` while the lane returns `reasoning` +")
     A("`reasoning_details` and never the declared key — `opencode-go/kimi-k3` and")
-    A("`opencode-go/mimo-v2.5`. Nine entries declare no key at all while the lane")
-    A("returned `reasoning_content`: the eight probed `hyper` models, plus")
-    A("`xai-oauth/grok-4.5` and the two cascade entries. A reasoning pane cannot render")
+    A("`opencode-go/mimo-v2.5`. **Evidence is one response per model**, so DEF-9 is the")
+    A("thinner of the two: it is a mismatch between the declared name and every sample")
+    A("taken, not a claim about how often the lane behaves that way, and it is listed in")
+    A("verify-later. Nine entries declare no key at all while the lane returned")
+    A("`reasoning_content`: %s. A reasoning pane cannot render"
+      % def10_summary(defects))
     A("either way until the declaration matches the lane. The `reasoning` field the")
     A("opencode-go models return is a plain string holding the same text as")
     A("`reasoning_details[0].text`, so `reasoning` is the recommended replacement;")
@@ -545,8 +617,11 @@ def main():
     A("- **`max_context_size`.** The client never transmits a context limit, so no cheap")
     A("  probe can falsify these declarations; only a deliberately over-long prompt per")
     A("  lane would, and that is a quota-heavy test.")
-    A("- **`video_in` / `audio_in`.** Declared on %d entries, probed on none."
+    A("- **`video_in` / `audio_in`.** Declared on %d entries, probed on none. (The class"
       % sum(1 for e in entries if {"video_in", "audio_in"} & set(e["capabilities"])))
+    A("  table reports 46 findings for this class because an entry declaring both")
+    A("  capabilities yields two findings; the two counts are the same claim on")
+    A("  different bases.)")
     A("- **Devin.** Rate-limited during the audit window; its direct chat path and its")
     A("  leg-1 behaviour should be re-checked after the reset.")
     A("- **The `[secondary_model.models]` routing table** is only audited where it points")
@@ -558,30 +633,36 @@ def main():
     A("## 9. Reproducing this")
     A("")
     A("```")
-    A("python3 scripts/audit_definitions.py        # -> audit-table.json, audit-table.md")
     A("python3 scripts/probe_client_semantics.py  # -> raw/client-semantics.json (no quota)")
     A("python3 scripts/probe_live.py all          # -> raw/probes-{effort,tool,image}.json")
     A("python3 scripts/probe_live.py pass2        # -> raw/probes-*-pass2.json (UA + budget fixes)")
     A("python3 scripts/probe_live.py pass3        # -> raw/probes-tool-pass3.json (client shape)")
     A("python3 scripts/probe_live.py pass4        # -> raw/probes-effort-pass4.json (off_effort value)")
+    A("python3 scripts/audit_definitions.py       # NEW audit of the live config -> audit-table.*")
+    A("python3 scripts/refresh_binary_hits.py     # re-measures the binary table in place")
     A("python3 scripts/merge_probe_findings.py    # folds DEF-9/DEF-10 into audit-table.json")
     A("python3 scripts/build_corrections.py       # -> config-corrections.toml")
     A("bash    scripts/hygiene_check.sh           # -> HYGIENE.md, exit 0 expected")
     A("python3 scripts/build_analysis.py          # -> ANALYSIS.md (embeds HYGIENE.md)")
     A("```")
     A("")
-    A("Order matters in two places: `merge_probe_findings.py` must run after")
+    A("Order matters in three places. `merge_probe_findings.py` must run after")
     A("`audit_definitions.py` (which rewrites `audit-table.json` and drops the")
-    A("probe-derived DEF-9/DEF-10 rows) and before `build_corrections.py`; and")
+    A("probe-derived DEF-9/DEF-10 rows) and before `build_corrections.py`;")
     A("`hygiene_check.sh` must run before `build_analysis.py`, because ANALYSIS.md")
-    A("embeds the hygiene log verbatim.")
-    A("Re-running the four generators after a probe run reproduces the committed")
-    A("`audit-table.*`, `config-corrections.toml` and `ANALYSIS.md` byte for byte; only")
-    A("the probe scripts themselves spend quota, so they are the only steps that need")
+    A("embeds the hygiene log verbatim; and **`audit_definitions.py` starts a NEW")
+    A("audit** — it re-reads the live config, so running it rebases every row onto")
+    A("whatever the file says at that moment. This tree is pinned to the revision in")
+    A("the table above, so reproducing it from the committed evidence means running")
+    A("`refresh_binary_hits.py` (which re-measures only the binary table) rather than")
+    A("`audit_definitions.py`. Re-running the remaining generators reproduces the")
+    A("committed `audit-table.*`, `config-corrections.toml` and `ANALYSIS.md` byte for")
+    A("byte; only the probe scripts spend quota, so they are the only steps that need")
     A("re-running to refresh evidence.")
     A("")
-    A("Each probe script prints the config's json-canonical digest before probing, so a")
-    A("config edit between runs is visible rather than silent.")
+    A("Each probe script prints the config's json-canonical digest before probing, and")
+    A("both `build_corrections.py` and `build_analysis.py` compare that digest against")
+    A("the live file, so a config edit between runs is reported rather than absorbed.")
 
     with open(os.path.join(common.DEFS_DIR, "ANALYSIS.md"), "w") as fh:
         fh.write("\n".join(L) + "\n")

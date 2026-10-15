@@ -11,26 +11,54 @@ evidence are attached by scripts/build_analysis.py from raw/probes-*.json.
 import json
 import os
 import sys
+import time
 from collections import Counter, defaultdict
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import common  # noqa: E402
 
-# Field names the client binary actually contains (see ANALYSIS.md, section 2).
-# Counted with: grep -a -o "<field>" ~/.kimi-code/bin/kimi | wc -l
-BINARY_FIELD_HITS = {
-    "max_context_size": 16,
-    "max_output_size": 6,
-    "support_efforts": 22,
-    "default_effort": 25,
-    "reasoning_key": 12,
-    "capabilities": 390,
-    "display_name": 19,
-    "protocol": 5,
-    "overrides": 238,
-    "off_effort": 0,
-    "max_input_size": 0,
-}
+# Field names to count in the client binary, and the ONE method used for every
+# row. An earlier revision of this table mixed `grep -c -o` (which counts
+# matching *lines*, not matches) with `grep -o | wc -l`, and one row (`protocol`)
+# was never measured at all; the table now computes every row with the command
+# below, which is the one stated in ANALYSIS.md section 1.
+BINARY_PATH = os.path.expanduser("~/.kimi-code/bin/kimi")
+BINARY_FIELDS = ["max_context_size", "max_output_size", "max_input_size",
+                 "support_efforts", "default_effort", "off_effort", "reasoning_key",
+                 "capabilities", "display_name", "protocol", "overrides"]
+BINARY_COUNT_METHOD = "grep -a -o '<field>' %s | wc -l" % BINARY_PATH
+
+
+def binary_field_hits(path=BINARY_PATH):
+    """Occurrence count per field name, all rows by one method (BINARY_COUNT_METHOD).
+
+    The count is the number of times the byte string occurs anywhere in the
+    binary, so a nonzero row means "this name exists in the client", not "this
+    many declarations" -- occurrences inside longer identifiers are included.
+    The load-bearing reading is zero vs nonzero.
+    """
+    import subprocess
+    out = {}
+    for field in BINARY_FIELDS:
+        try:
+            proc = subprocess.run(["grep", "-a", "-o", field, path],
+                                  stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
+            out[field] = proc.stdout.count(b"\n")
+        except OSError:
+            out[field] = None
+    return out
+
+
+def binary_identity(path=BINARY_PATH):
+    import hashlib
+    try:
+        with open(path, "rb") as fh:
+            digest = hashlib.sha256(fh.read()).hexdigest()
+        stat = os.stat(path)
+        return {"path": path, "sha256": digest, "size": stat.st_size,
+                "mtime": time.strftime("%Y-%m-%dT%H:%M:%S%z", time.localtime(stat.st_mtime))}
+    except OSError:
+        return {"path": path, "sha256": None, "size": None, "mtime": None}
 
 MODEL_FIELDS = ["provider", "model", "protocol", "base_url", "max_context_size",
                 "max_input_size", "max_output_size", "capabilities",
@@ -295,6 +323,7 @@ def main():
     entries = [flatten(a, mc.get("provider"), cfg["providers"].get(mc.get("provider"), {}), mc)
                for a, mc in raw.items()]
     defects = detect_defects(entries, cfg)
+    hits = binary_field_hits()
 
     payload = {
         "config_path": common.CONFIG_PATH,
@@ -309,7 +338,9 @@ def main():
             "entries_without_max_output_size": sum(1 for e in entries if e["max_output_size"] is None),
             "global_thinking_effort": (cfg.get("thinking") or {}).get("effort"),
         },
-        "binary_field_hits": BINARY_FIELD_HITS,
+        "binary_field_hits": hits,
+        "binary_count_method": BINARY_COUNT_METHOD,
+        "binary_identity": binary_identity(),
         "effort_values_declared": sorted({v for e in entries for v in e["support_efforts"]}),
         "off_effort_values": sorted({e["off_effort"] for e in entries if e["off_effort"]}),
         "default_effort_values": sorted({x for e in entries
