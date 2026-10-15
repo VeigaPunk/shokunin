@@ -18,6 +18,10 @@ import json
 import os
 import sys
 
+# The battery's modules live in another mission's tree; importing them must not
+# leave a __pycache__ there.
+sys.dont_write_bytecode = True
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROUND_DIR = os.path.dirname(os.path.dirname(HERE))
 BATTERY_SCRIPTS = os.path.join(ROUND_DIR, "battery", "scripts")

@@ -9,6 +9,11 @@
 # Everything lands under devin-opus/raw/. The live config is only ever read.
 set -uo pipefail
 
+# The probe scripts import the M3 battery's modules from its directory; without
+# this, Python drops __pycache__ into another mission's tree. Nothing here needs
+# bytecode caches.
+export PYTHONDONTWRITEBYTECODE=1
+
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SCOPE="$(dirname "$HERE")"
 ROUND="$(dirname "$SCOPE")"
