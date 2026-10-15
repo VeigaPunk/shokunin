@@ -1,0 +1,81 @@
+--- /home/vgpnk/.local/share/ds-flash-shim/shim.py.20261015-112620.bak
++++ /home/vgpnk/.local/share/ds-flash-shim/shim.py
+@@ -5,12 +5,13 @@
+ forwards every chat request through an ordered 3-leg provider cascade,
+ advancing to the next leg only when the current leg FAILS.
+ 
+-Default legs (all overridable via env - see "LEG CONFIG" below):
+-  1. opencode-go  POST https://opencode.ai/inference/go/v1/chat/completions
++Default legs (all overridable via env - see "LEG CONFIG" below).
++Order set by operator directive 2026-10-15: token-plan first, charm hyper
++second, opencode-go third; the devin leg was removed from this cascade:
++  1. alibaba-token-plan  POST https://token-plan.ap-southeast-1.maas.aliyuncs.com/
++                  compatible-mode/v1/chat/completions
+   2. hyper        POST https://hyper.charm.land/v1/chat/completions
+-  3. devin        POST http://127.0.0.1:8787/v1/chat/completions  (local
+-                  devin-shim; the body's `model` field is rewritten to the
+-                  devin slug before forwarding)
++  3. opencode-go  POST https://opencode.ai/inference/go/v1/chat/completions
+ 
+ FAILURE = advance to the next leg, on:
+   * connection error / timeout (DS_SHIM_TIMEOUT, default 15s)
+@@ -26,11 +27,12 @@
+ to the caller as-is.
+ 
+ LEG CONFIG (env vars, defaults are the module constants below):
+-  DS_LEG1_NAME/URL/KEY/SESSION/MODEL   leg 1 (opencode-go)
++  DS_LEG1_NAME/URL/KEY/MODEL           leg 1 (alibaba-token-plan)
+   DS_LEG2_NAME/URL/KEY/MODEL           leg 2 (hyper)
+-  DS_LEG3_NAME/URL/KEY/MODEL           leg 3 (devin)
++  DS_LEG3_NAME/URL/KEY/SESSION/MODEL   leg 3 (opencode-go)
+ A leg's MODEL env var, when non-empty, replaces the request body's `model`
+-field for that leg (used by devin); empty means "pass the body through as-is".
++field for that leg; empty means "pass the body through as-is" (all three
++default legs pass the body through unchanged).
+ Change a key by setting the matching env var (e.g. in the systemd unit's
+ Environment= lines) - no code edit required.
+ """
+@@ -102,16 +104,14 @@
+     return [
+         _leg(
+             1,
+-            os.environ.get("DS_LEG1_NAME", "opencode-go"),
++            os.environ.get("DS_LEG1_NAME", "alibaba-token-plan"),
+             os.environ.get("DS_LEG1_URL",
+-                           "https://opencode.ai/inference/go/v1/chat/completions"),
++                           "https://token-plan.ap-southeast-1.maas.aliyuncs.com/"
++                           "compatible-mode/v1/chat/completions"),
+             {
+                 "Authorization": "Bearer " + os.environ.get(
+                     "DS_LEG1_KEY",
+-                    "oc_s...<masked:51 chars>"),
+-                "x-opencode-session": os.environ.get(
+-                    "DS_LEG1_SESSION",
+-                    "48bc...<masked:36 chars>"),
++                    "sk-s...<masked:113 chars>"),
+             },
+             os.environ.get("DS_LEG1_MODEL", ""),  # empty = body as-is
+         ),
+@@ -129,14 +129,18 @@
+         ),
+         _leg(
+             3,
+-            os.environ.get("DS_LEG3_NAME", "devin"),
++            os.environ.get("DS_LEG3_NAME", "opencode-go"),
+             os.environ.get("DS_LEG3_URL",
+-                           "http://127.0.0.1:8787/v1/chat/completions"),
++                           "https://opencode.ai/inference/go/v1/chat/completions"),
+             {
+                 "Authorization": "Bearer " + os.environ.get(
+-                    "DS_LEG3_KEY", "dummy"),
++                    "DS_LEG3_KEY",
++                    "oc_s...<masked:51 chars>"),
++                "x-opencode-session": os.environ.get(
++                    "DS_LEG3_SESSION",
++                    "48bc...<masked:36 chars>"),
+             },
+-            os.environ.get("DS_LEG3_MODEL", "deepseek-v4-1-flash-high"),
++            os.environ.get("DS_LEG3_MODEL", ""),  # empty = body as-is
+         ),
+     ]
+ 
