@@ -653,47 +653,51 @@ STUB
   }
 
   # Build a quiet baseline fixture under $1
+  # Layout: $d is MORI_SHOKUNIN_ROOT (fleet root). Lane repos live at
+  # $d/<lane>-shokunin so silence grading resolves the same as live.
   fx_quiet() {
-    local d=$1 uid=1000
-    mkdir -p "$d/ufo/state" "$d/ufo/waves" "$d/stub" \
-      "$d/cgroup" "$d/lanes/kagi-shokunin" "$d/root"
-    # fresh watchdog log
-    printf '2026-10-14T12:00:00Z tick=1\n' > "$d/ufo/watchdog.log"
-    # pin mtime to NOW via later touch in check
-    printf '1\n' > "$d/ufo/state/kagi.round"
-    printf 'mission-x\n' > "$d/ufo/state/kagi.mission"
-    # one settled wave
-    mkdir -p "$d/ufo/waves/wave-settled"
-    printf '{"wave":"wave-settled"}\n' > "$d/ufo/waves/wave-settled/swarm-registry.json"
-    printf '{"wave":"wave-settled"}\n' > "$d/ufo/waves/wave-settled/dispatch.json"
-    printf '{"schema":"ufo-swarm-results-v1","members":[]}\n' > "$d/ufo/waves/wave-settled/results.json"
-    # cgroup quiet
+    local d=$1
+    mkdir -p "$d/.ufo/state" "$d/.ufo/waves" "$d/stub" \
+      "$d/cgroup" "$d/kagi-shokunin/.git" "$d/diskroot"
+    printf '2026-10-14T12:00:00Z tick=1\n' > "$d/.ufo/watchdog.log"
+    printf '1\n' > "$d/.ufo/state/kagi.round"
+    printf 'mission-x\n' > "$d/.ufo/state/kagi.mission"
+    mkdir -p "$d/.ufo/waves/wave-settled"
+    printf '{"wave":"wave-settled"}\n' > "$d/.ufo/waves/wave-settled/swarm-registry.json"
+    printf '{"wave":"wave-settled"}\n' > "$d/.ufo/waves/wave-settled/dispatch.json"
+    printf '{"schema":"ufo-swarm-results-v1","members":[]}\n' > "$d/.ufo/waves/wave-settled/results.json"
     printf 'low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n' > "$d/cgroup/memory.events"
     printf '123456\n' > "$d/cgroup/memory.current"
     printf 'MemAvailable: 20000000 kB\n' > "$d/meminfo"
-    # stubs
     printf '1234 bash /path/scripts/shokunin-watchdog.sh\n' > "$d/stub/pgrep"
     printf 0 > "$d/stub/pgrep.rc"
     : > "$d/stub/journal"; printf 0 > "$d/stub/journal.rc"
     printf 'Filesystem 1024-blocks Used Available Capacity Mounted on\n/dev/fx 1000000 10000 990000 2%% /fx\n' > "$d/stub/df"
     printf 0 > "$d/stub/df.rc"
     printf 'fx_session: 1 windows\n' > "$d/stub/tmux"; printf 0 > "$d/stub/tmux.rc"
-    # git head recent
     printf '%s\n' "1700000000" > "$d/stub/git"; printf 0 > "$d/stub/git.rc"
-    # lane file recent — touch in check with NOW
-    printf 'x\n' > "$d/lanes/kagi-shokunin/LOG.md"
+    printf 'x\n' > "$d/kagi-shokunin/LOG.md"
   }
 
   EXTRA_ENV=()
+  FRESHEN_WD=1
+  FRESHEN_WAVES=1
+  FRESHEN_LANE=1
   check() { # LABEL WANT_RC WANT_VERDICT [WANT_RE...]
     local label=$1 wrc=$2 wverdict=$3
     shift 3
     local out rc before re miss='' env_now
     env_now=${PIN_NOW:-1700000000}
-    # freshen quiet paths to env_now
-    if [ -f "$FX/ufo/watchdog.log" ]; then touch -d "@$env_now" "$FX/ufo/watchdog.log" 2>/dev/null || touch "$FX/ufo/watchdog.log"; fi
-    if [ -f "$FX/lanes/kagi-shokunin/LOG.md" ]; then touch -d "@$env_now" "$FX/lanes/kagi-shokunin/LOG.md" 2>/dev/null || true; fi
-    if [ -d "$FX/ufo/waves" ]; then find "$FX/ufo/waves" -type f -exec touch -d "@$env_now" {} + 2>/dev/null || true; fi
+    # Optional freshen — drift cases that pin old mtimes set FRESHEN_*=0
+    if [ "${FRESHEN_WD}" = 1 ] && [ -f "$FX/.ufo/watchdog.log" ]; then
+      touch -d "@$env_now" "$FX/.ufo/watchdog.log" 2>/dev/null || touch "$FX/.ufo/watchdog.log"
+    fi
+    if [ "${FRESHEN_LANE}" = 1 ] && [ -f "$FX/kagi-shokunin/LOG.md" ]; then
+      touch -d "@$env_now" "$FX/kagi-shokunin/LOG.md" 2>/dev/null || true
+    fi
+    if [ "${FRESHEN_WAVES}" = 1 ] && [ -d "$FX/.ufo/waves" ]; then
+      find "$FX/.ufo/waves" -type f -exec touch -d "@$env_now" {} + 2>/dev/null || true
+    fi
 
     before=$(fx_hash "$FX")
     set +e
@@ -701,11 +705,11 @@ STUB
       PATH="$bin:/usr/bin:/bin" \
       HOME="$work/home" \
       MORI_FIXTURE="$FX" \
-      MORI_SHOKUNIN_ROOT="$FX/root" \
-      MORI_UFO_DIR="$FX/ufo" \
-      MORI_WATCHDOG_LOG="$FX/ufo/watchdog.log" \
-      MORI_STATE_DIR="$FX/ufo/state" \
-      MORI_WAVES_DIR="$FX/ufo/waves" \
+      MORI_SHOKUNIN_ROOT="$FX" \
+      MORI_UFO_DIR="$FX/.ufo" \
+      MORI_WATCHDOG_LOG="$FX/.ufo/watchdog.log" \
+      MORI_STATE_DIR="$FX/.ufo/state" \
+      MORI_WAVES_DIR="$FX/.ufo/waves" \
       MORI_CGROUP_EVENTS="$FX/cgroup/memory.events" \
       MORI_CGROUP_CURRENT="$FX/cgroup/memory.current" \
       MORI_MEMINFO="$FX/meminfo" \
@@ -714,7 +718,7 @@ STUB
       MORI_JOURNALCTL_BIN="$bin/journalctl" \
       MORI_TMUX_BIN="$bin/tmux" \
       MORI_GIT_BIN="$bin/git" \
-      MORI_DISK_TARGETS="$FX/root" \
+      MORI_DISK_TARGETS="$FX/diskroot" \
       MORI_ROSTER_LANES="kagi" \
       MORI_NOW_EPOCH="$env_now" \
       MORI_WATCHDOG_STALE_S=900 \
@@ -743,6 +747,9 @@ STUB
     fi
     fx_no_mutation "$FX" "$before"
     EXTRA_ENV=()
+    FRESHEN_WD=1
+    FRESHEN_WAVES=1
+    FRESHEN_LANE=1
   }
 
   check_cli() {
@@ -769,87 +776,80 @@ STUB
   PIN_NOW=1700000000
 
   FX="$work/fx/clean"; mkdir -p "$FX"; fx_quiet "$FX"
-  # df target must exist
-  mkdir -p "$FX/root"
   check 'clean: all quiet' 0 CLEAN \
     '^SURFACE watchdog: ok' \
     '^MORI_CENSUS: CLEAN '
 
-  FX="$work/fx/wd-absent"; mkdir -p "$FX"; fx_quiet "$FX"; mkdir -p "$FX/root"
+  FX="$work/fx/wd-absent"; mkdir -p "$FX"; fx_quiet "$FX"
   : > "$FX/stub/pgrep"; printf 1 > "$FX/stub/pgrep.rc"
   check 'drift: WATCHDOG_ABSENT' 1 DRIFT \
     'FINDING WATCHDOG_ABSENT' \
     '^MORI_CENSUS: DRIFT '
 
-  FX="$work/fx/wd-stale"; mkdir -p "$FX"; fx_quiet "$FX"; mkdir -p "$FX/root"
-  # age log far in the past relative to PIN_NOW
-  printf 'old\n' > "$FX/ufo/watchdog.log"
-  touch -d '@1600000000' "$FX/ufo/watchdog.log" 2>/dev/null || true
-  # prevent check() from freshening this case's log: use empty touch guard via separate path
-  # override: re-stale after check's freshen by using PIN and EXTRA — simpler: set STALE threshold 0 via env
-  EXTRA_ENV=(MORI_WATCHDOG_STALE_S=0)
+  FX="$work/fx/wd-stale"; mkdir -p "$FX"; fx_quiet "$FX"
+  printf 'old\n' > "$FX/.ufo/watchdog.log"
+  touch -d '@1600000000' "$FX/.ufo/watchdog.log" 2>/dev/null || true
+  FRESHEN_WD=0
   check 'drift: WATCHDOG_STALE' 1 DRIFT \
     'FINDING WATCHDOG_STALE' \
     '^MORI_CENSUS: DRIFT '
 
-  FX="$work/fx/wave-aged"; mkdir -p "$FX"; fx_quiet "$FX"; mkdir -p "$FX/root"
-  mkdir -p "$FX/ufo/waves/wave-hang"
-  printf '{}\n' > "$FX/ufo/waves/wave-hang/swarm-registry.json"
-  printf '{}\n' > "$FX/ufo/waves/wave-hang/dispatch.json"
-  # no results; force age by threshold 0
-  EXTRA_ENV=(MORI_WAVE_UNSETTLED_S=0)
+  FX="$work/fx/wave-aged"; mkdir -p "$FX"; fx_quiet "$FX"
+  mkdir -p "$FX/.ufo/waves/wave-hang"
+  printf '{}\n' > "$FX/.ufo/waves/wave-hang/swarm-registry.json"
+  printf '{}\n' > "$FX/.ufo/waves/wave-hang/dispatch.json"
+  touch -d '@1600000000' "$FX/.ufo/waves/wave-hang/swarm-registry.json" \
+    "$FX/.ufo/waves/wave-hang/dispatch.json" 2>/dev/null || true
+  FRESHEN_WAVES=0
   check 'drift: WAVE_UNSETTLED_AGE' 1 DRIFT \
     'FINDING WAVE_UNSETTLED_AGE' \
     'wave=wave-hang'
 
-  FX="$work/fx/wave-fresh-unsettled"; mkdir -p "$FX"; fx_quiet "$FX"; mkdir -p "$FX/root"
-  mkdir -p "$FX/ufo/waves/wave-live"
-  printf '{}\n' > "$FX/ufo/waves/wave-live/run.json"
-  # unsettled but age under threshold (default 7200, mtime=PIN_NOW) → must NOT fire
+  FX="$work/fx/wave-fresh-unsettled"; mkdir -p "$FX"; fx_quiet "$FX"
+  mkdir -p "$FX/.ufo/waves/wave-live"
+  printf '{}\n' > "$FX/.ufo/waves/wave-live/run.json"
   check 'clean: unsettled young wave does not fire' 0 CLEAN \
     '^SURFACE waves: ok'
 
-  FX="$work/fx/oom-journal"; mkdir -p "$FX"; fx_quiet "$FX"; mkdir -p "$FX/root"
+  FX="$work/fx/oom-journal"; mkdir -p "$FX"; fx_quiet "$FX"
   printf 'kernel: Out of memory: Killed process 4242\n' > "$FX/stub/journal"
   check 'drift: OOM_KILL_JOURNAL' 1 DRIFT \
     'FINDING OOM_KILL_JOURNAL' \
     '^MORI_CENSUS: DRIFT '
 
-  FX="$work/fx/cgroup-oom"; mkdir -p "$FX"; fx_quiet "$FX"; mkdir -p "$FX/root"
+  FX="$work/fx/cgroup-oom"; mkdir -p "$FX"; fx_quiet "$FX"
   printf 'low 0\nhigh 0\nmax 0\noom 1\noom_kill 1\noom_group_kill 0\n' > "$FX/cgroup/memory.events"
   check 'drift: CGROUP_OOM_KILL' 1 DRIFT \
     'FINDING CGROUP_OOM_KILL'
 
-  FX="$work/fx/disk-crit"; mkdir -p "$FX"; fx_quiet "$FX"; mkdir -p "$FX/root"
+  FX="$work/fx/disk-crit"; mkdir -p "$FX"; fx_quiet "$FX"
   printf 'Filesystem 1024-blocks Used Available Capacity Mounted on\n/dev/fx 1000000 960000 40000 96%% /fx\n' > "$FX/stub/df"
   check 'drift: DISK_CRITICAL' 1 DRIFT \
     'FINDING DISK_CRITICAL'
 
-  FX="$work/fx/disk-ok"; mkdir -p "$FX"; fx_quiet "$FX"; mkdir -p "$FX/root"
+  FX="$work/fx/disk-ok"; mkdir -p "$FX"; fx_quiet "$FX"
   printf 'Filesystem 1024-blocks Used Available Capacity Mounted on\n/dev/fx 1000000 10000 990000 2%% /fx\n' > "$FX/stub/df"
   check 'clean: disk under warn' 0 CLEAN \
     '^SURFACE disk: ok'
 
-  FX="$work/fx/lane-silent"; mkdir -p "$FX"; fx_quiet "$FX"; mkdir -p "$FX/root"
-  # old lane file + old git head
+  FX="$work/fx/lane-silent"; mkdir -p "$FX"; fx_quiet "$FX"
   printf '0\n' > "$FX/stub/git"
-  printf 'old\n' > "$FX/lanes/kagi-shokunin/LOG.md"
-  touch -d '@1600000000' "$FX/lanes/kagi-shokunin/LOG.md" 2>/dev/null || true
+  printf 'old\n' > "$FX/kagi-shokunin/LOG.md"
+  touch -d '@1600000000' "$FX/kagi-shokunin/LOG.md" 2>/dev/null || true
+  FRESHEN_LANE=0
   EXTRA_ENV=(MORI_LANE_SILENCE_S=60)
-  # also need check not to freshen LOG — override by putting PIN_NOW and silence window such that 1600000000 is outside
-  PIN_NOW=1700000000
   check 'drift: LANE_SILENT' 1 DRIFT \
     'FINDING LANE_SILENT' \
     'lane=kagi'
 
-  FX="$work/fx/cgroup-unavail"; mkdir -p "$FX"; fx_quiet "$FX"; mkdir -p "$FX/root"
+  FX="$work/fx/cgroup-unavail"; mkdir -p "$FX"; fx_quiet "$FX"
   rm -f "$FX/cgroup/memory.events"
   check 'clean: CGROUP_UNAVAILABLE is not DRIFT' 0 CLEAN \
     'FINDING CGROUP_UNAVAILABLE' \
     '^SURFACE cgroup: unavailable' \
     '^MORI_CENSUS: CLEAN '
 
-  FX="$work/fx/journal-empty-ok"; mkdir -p "$FX"; fx_quiet "$FX"; mkdir -p "$FX/root"
+  FX="$work/fx/journal-empty-ok"; mkdir -p "$FX"; fx_quiet "$FX"
   : > "$FX/stub/journal"
   check 'clean: empty journal' 0 CLEAN \
     '^SURFACE journal: ok'

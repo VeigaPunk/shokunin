@@ -134,8 +134,15 @@ boot**, **`WATCHDOG_ABSENT` with `WATCHDOG_STALE age_s=103830`** (~29 h), and fi
 fixture cases red — the harness freshened the very paths the staleness cases
 needed old, and the silence fixture placed the lane repo where the probe does not
 look; all three fixture defects were repaired before landing (live logic
-untouched). Report `.ufo/reports/round-1/mori.md`; carried debt: per-surface notes,
-`progressing-weak` authorship proof, unproven thresholds.
+untouched). Report `.ufo/reports/round-1/mori.md`. Two corrections the independent seats
+forced, both recorded in the lane rather than smoothed over: the `journal` probe
+reads the **user** journal only (0 segfault lines) while the **system** journal
+holds **626** with **1228 core dumps** — a named coverage gap with its own unblock,
+and an operator-facing observation this round had not surfaced; and
+`WATCHDOG_ABSENT`/`WATCHDOG_STALE` are correct observations whose cause is a
+deliberate halt on **2026-09-28** (`NOT respawning (fleet-wrap)`), not an
+undetected crash. Carried debt: per-surface notes, `progressing-weak` authorship
+proof, unproven thresholds, the system-journal probe.
 
 ## Phase 5 — chousa-shokunin (minted; round 1 specified, not dispatched)
 
