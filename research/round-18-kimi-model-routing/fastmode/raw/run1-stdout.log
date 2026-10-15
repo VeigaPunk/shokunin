@@ -1,0 +1,22 @@
+config json-canonical digest/16: 61f22a2bbe52d616
+config file sha256: e3c223e054a626b847e69f73020ac9b4fdec1ccc2c8f00dcbf414dcda8acfe78
+url: http://127.0.0.1:8789/backend-api/codex/responses   model: gpt-6.1-sol
+
+Phase A -- acceptance (max_output_tokens=16, prompt 'ping')
+omit             status=200     3113ms serviced=True  tier_echo=default   
+default          status=200     2400ms serviced=True  tier_echo=default   
+flex             status=400      278ms serviced=False tier_echo=None      Unsupported service_tier: flex
+priority         status=200     1174ms serviced=True  tier_echo=default   
+fast             status=400      218ms serviced=False tier_echo=None      Unsupported service_tier: fast
+auto             status=400      230ms serviced=False tier_echo=None      Unsupported service_tier: auto
+invalid-control  status=400      212ms serviced=False tier_echo=None      Unsupported service_tier: r18-invalid-tier
+
+Phase B -- measurement (M3 perf probe, max_output_tokens=256, n=2)
+omit             rep=1 status=200   ttft=3969 ms tps=28.98    span=8800 ms ctok=256  burst=False output_ok=False
+omit             rep=2 status=200   ttft=1545 ms tps=62.09    span=4107 ms ctok=256  burst=False output_ok=False
+default          rep=1 status=200   ttft=1721 ms tps=66.49    span=3835 ms ctok=256  burst=False output_ok=False
+default          rep=2 status=200   ttft=1630 ms tps=66.7     span=3823 ms ctok=256  burst=False output_ok=False
+priority         rep=1 status=200   ttft=1825 ms tps=82.58    span=3088 ms ctok=256  burst=False output_ok=False
+priority         rep=2 status=200   ttft=1050 ms tps=74.98    span=3401 ms ctok=256  burst=False output_ok=False
+
+wrote /home/vgpnk/Projects/shokunin/.tower/worktrees/wt-5/research/round-18-kimi-model-routing/fastmode/raw/fastmode-probe.json (7 phase-A records, 6 phase-B records, abort=None)
