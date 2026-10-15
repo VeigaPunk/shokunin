@@ -175,7 +175,7 @@ Same walk, applied to every citation-shaped token preserved. Not a second exampl
 | Lines | Token | Attached claim | Class |
 |---|---|---|---|
 | `A:42` | `Searched the web`, no queries | the absence claim at `A:47` | sweep not recorded |
-| `A:67-69` | three dictionary names, then `コトバンク` / `+3` | lexical table `A:60-65` | aggregator label plus collapsed remainder; no page |
+| `A:67-69` | three dictionary names, then `コトバンク` / `+3` | `A:67` "lexical distinctions" only (`A:61-63`, `A:65`). Does not donate `A:64` | aggregator label plus collapsed remainder; no page |
 | `A:71-72` | `コトバンク`, no `+N` | "another dictionary definition explicitly includes…" | aggregator name; the "explicitly" claims a span that is not in the export |
 | `A:80-84` | three examples (Adachi 7/5 years, Ishii nine years, Echigo Yoita five years), then `adachi-hanga.com` / `+2` | three numeric claims, one host, two omitted identities | same collapse as `B:71-73`; cannot tell which source holds 7 and 5 |
 | `A:88` | none | Takenaka Carpentry Tools Museum / Ogawa / Nishioka | **absent hop**, not a broken one. No token was opened. Truncation at `A:90` may have cut a widget; that is unknown, not a recovered citation |
@@ -254,3 +254,7 @@ Not a request to fetch. None of these rows can name a URL from the preserved byt
 - **High.** The example hop is unlocatable in the preserved bytes. The two gates return clean on those bytes for the reason their matchers state. `README:12`'s closed negative is not the sentence at `A:47` or `A:64`. `citation-bases.md:105` does not land on the line-anchor rule, at authorship or now, and the comma-anchor token is not classified `GONE`.
 - **Medium.** `+N` as a hidden-source count is a UI inference. Not used to pass or fail the hop.
 - **Not claimed.** That any web source is wrong, that the live UI lacked URLs, or that a judge should score this round. This file is data for the parent. It does not land corpus notes, `tools/research-gate.sh`, or a verdict.
+
+## Erratum
+
+Census row `A:67-69` first attached `コトバンク` / `+3` to the whole table `A:60-65`. That over-joined. `A:67` says the lexical distinctions come from the three dictionaries. The absence cell at `A:64` ("could not substantiate") is not one of those distinctions and does not inherit the chip. The missing locator for `A:47` and `A:64` is the empty search at `A:42-43` (no query retained). Status unchanged: unresolved, not contradicted.

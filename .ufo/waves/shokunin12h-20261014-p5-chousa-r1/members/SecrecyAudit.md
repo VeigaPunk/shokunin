@@ -26,7 +26,7 @@ Shape only. These paths were `lstat`'d or listener-counted. Bytes were not read.
 | Id | Severity | Now | Why |
 |---|---|---|---|
 | S1 | **high design / not live** | profile ABSENT, port down | Approval table still queues a burner-profile and CDP read |
-| S2 | **medium residual** | lane script still absent; design script re-read | `SECRET_SHAPED` and `SESSION_READ` are in the design; remaining miss is unlabeled JWT (`eyJ`) and a pointer echo of 80 characters |
+| S2 | **low, design-closed / not landed** | lane script still absent | Re-read: `jwt_eyj` class exists; findings print `ptr_class=` / `path_class=` only. Residual is that the script is not in the lane, and `RecordShape.md:147` still says open |
 | S3 | **medium** | design only, no fixture bytes | Loopback and fixture-site contracts now forbid real tokens; residual holes are proxy env, overridable curl, whole-tree serve, `account.json` name, and a selftest grep that misses classes |
 | S4 | **medium if copied** | tool exists, not wired | `anchorcheck.py` prints cited line text; the skill hop rule is wider than its regex |
 | S5 | **low, contained** | bytes read | Export chrome is session inventory; no credential value in the admitted survey files |
@@ -50,27 +50,23 @@ No fixture tree exists, so no fixture currently carries a real token. The defect
 
 ### S2 — CLEAN record that contains a token
 
-**Path.** `chousa-shokunin/SKILL.md:50-53` still defines the lane gate as question, rank, hops, claims, and `chousa-shokunin/tools/research-gate.sh` is still absent. Under that sentence alone, a token in a well-formed record is CLEAN.
+**Path.** `chousa-shokunin/SKILL.md:50-53` still defines the lane gate as question, rank, hops, and claims. `chousa-shokunin/tools/research-gate.sh` is still absent. Under that sentence alone, a token in a well-formed record is CLEAN.
 
-**Re-read of `ResearchGateDesign.md` after the secrecy edit (this is the design parent would land, not a running gate).** The earlier `SECRET_RE` keyword-only scanner is gone. Current contract:
+**Re-read of `ResearchGateDesign.md` (design only, not a running gate).** The two residuals from the previous read are closed in that file:
 
-- `:39-40` and `:171`: on hit print `path:line class=` only. Never the span, never a hash of secret bytes.
-- `scan_secrets` (`:419-439`) emits `SECRET_SHAPED` with `path=$file:$lineno class=$class` only. Classes present: `op://`, `Bearer` plus 8 non-space characters, `sk-` plus 10, `ghp_` plus 20, `github_pat_`, `AKIA`, OpenSSH and PEM private-key banners, `server.token=`, `api_key=`, `password=`.
-- Selftest `fail-secret-shaped` (`:710-712`, `:1057`, `:1168`) fails the case if the planted synthetic `sk-` literal appears in gate output. The plant is a fixture marker in that member report, not a live credential. This audit does not repeat the tail.
-- `SESSION_READ` fires in `check_pointer` before any open (`:393-395`). Denylist (`:356-363`, `:142`): `op.env`, `*.env`, `server.token`, `credentials/`, `oauth/`, chrome-profile, `Cookies`, `Login Data`, `/.omp/`, `/.config/`, `/.local/state/`. Session URL (`:347-349`): port `9222` or a path ending `/json` or `/json/list`.
-- Absolute paths outside `CHOUSA_ROOT` are not opened (`ptr_resolves_meta` `:380-383` returns failure). Denylist paths are not stat'd for success. README CDP 9222 is labeled provenance, not a hop (`:40`, `:144`, `:1170`).
+- `jwt_eyj` matches `eyJhbG…` and a dotted `eyJ` form (`:434-435`). Contract text `:148`. Selftest `fail-secret-jwt` (`:129`, `:726`, `:1099`) requires `class=jwt_eyj` and fails if the planted body appears in output. The plant at `:1097` is synthetic. This audit does not copy it.
+- `SESSION_READ` emits `path_class=denylist_or_session_url` and does not interpolate the path (`:401`). `POINTER_UNRESOLVED` emits `ptr_class=path` and does not print pointer bytes (`:422-423`). URL findings emit `ptr_class=url` (`:411`). Contract `:146`.
+- Denylist and 9222-not-a-hop rules from the previous read still hold (`:142`, `:150`, `:347-363`).
 
-**What is still wrong in that file:**
+**What remains:**
 
-- No `eyJ` / JWT class. A raw JWT with no `Bearer ` prefix is CLEAN. `transcript-scan.sh:93` treats `eyJhbG` as HIT-tier. Add that class.
-- `POINTER_UNRESOLVED` prints 80 characters of the pointer (`:415`). A URL whose query carries a token, and which is not classified as a session URL, can land those 80 characters in the finding line. Print `ptr_class=url` or a path shape, not the pointer bytes.
-- `password=` and `api_key=` still match English-shaped assignments. Acceptable if the finding stays class-only. Do not add the English words `token` and `authorization` back; `B:79` is a context-window count.
-- `FindingIds.md` is cited at `ResearchGateDesign.md:1194` and was not on disk at the check in this turn. The ids live in the gate design regardless.
-- Do not implement `RecordShape.md:147` ("path:line that opens"). The design script does not open denied paths. Parent must keep that.
+- The script is not in the lane. Parent landing it is the enforcement. This seat did not run it.
+- `RecordShape.md:147` still says a resolved hop's `local_evidence` is a `path:line` that opens. Do not implement that verb. The design script does not open denied paths.
+- `password=` and `api_key=` still match (`scan_secrets`, same block as `:434`). Acceptable only because the finding stays class-only. Do not add the English words `token` or `authorization`.
 
-**Impact.** A JWT-only record passes the design script. A query-token in an unresolved pointer can be copied into the finding line even though the secret scan itself does not echo. The lane still has no executable gate.
+**Impact.** A JWT-only record is no longer CLEAN under this design. A query token in an unresolved pointer is no longer copied into the finding line. Neither fact is executable until the script is landed.
 
-**Smallest remediation.** Add an `eyJ` class with a minimum length, same no-echo rule. Stop interpolating the pointer into `POINTER_UNRESOLVED`. Land the script only after those two edits. Keep `SESSION_READ` before any `-f`.
+**Smallest remediation.** Land the script as specified in that re-read. Do not restore pointer interpolation. Do not implement `RecordShape.md:147`.
 
 ### S3 — loopback fixture carries a real token, or the client adds one
 
@@ -134,7 +130,7 @@ Covered under S3 and S4. Separate only so the parent does not "prove the precede
 | Port 9222 not listening | `ss -ltnH`, count of local `:9222`, no connect | 0 |
 | Named session stores absent | `lstat` only | see §0 |
 
-The class scan does not cover files written after it. `ResearchGateDesign.md` landed later. Its selftest at `:880` plants a synthetic `api_key=` assignment whose tail is a refusal label, not a live credential. This report does not repeat that tail. `FixtureSiteDesign.md:77-81` was rewritten after the scan; the new lines are class names and prohibitions, re-read above, not values.
+The class scan does not cover files written after it. `ResearchGateDesign.md` selftest records plant synthetic `sk-` and `eyJ` markers (see `:1097` for the JWT plant). Those are fixture labels, not live credentials. This audit does not copy them. The gate design requires that output omit them (`:726`). `FixtureSiteDesign.md:77-81` was rewritten after the scan; those lines are class names and prohibitions, re-read above, not values.
 A later file landing after the scan is **unknown** to that row. This report's own text names the classes and must not be counted as a leak.
 
 ## 4. Enforcement points
@@ -169,7 +165,7 @@ A later file landing after the scan is **unknown** to that row. This report's ow
 | Point | State at this write | Gap |
 |---|---|---|
 | `LoopbackFixturePlan.md:6`, `:26`, `:123-126`, `:132-153`, cases `:347-350` | advisory text; one secrecy section; synthetic `fx-` sketch at `:457` | not code; scan output unspecified; whole-tree serve at `:399` |
-| `ResearchGateDesign.md:39-40`, `:142`, `:347-363`, `:393-395`, `:419-439` | design script (not in the lane): `SECRET_SHAPED` is class-only; `SESSION_READ` before open; 9222 and `/json` are not hops; selftest forbids echoing the plant (`:710-712`) | no `eyJ` class; `:415` prints 80 characters of an unresolved pointer |
+| `ResearchGateDesign.md:146-148`, `:401`, `:422-423`, `:434-435`, `:726` | design script (not in the lane): `jwt_eyj` present; `SECRET_SHAPED` and `SESSION_READ` and `POINTER_UNRESOLVED` print class only; selftest fails if the plant is echoed | not executed; `RecordShape.md:147` still says open |
 | `FixtureSiteDesign.md:77-81`, selftest `:433-437` | fence table matches the loopback rule; planted-prefix case exists | proxy unset incomplete (`:76`); `CHOUSA_CURL` still overridable (`:319`) and the flag grep does not see the env; token grep misses `Bearer ` / `eyJ`; `:462` still defers cookies; `account.json` name (`:111`) |
 | `RecordShape.md:152` `SECRECY_SHAPE` | schema invariant | no class list, no no-echo rule, hop still "opens" (`:147`) |
 | `FindingIds` `SECRET_SHAPED` / `SESSION_READ` | peer message only | `members/FindingIds.md` was **not** on disk when this report was written. Do not treat the message as a landed id |
@@ -208,7 +204,7 @@ Finding id, if FindingIds lands the spelling: `SESSION_READ`. Print the class an
 ## 7. What parent should land (smallest set)
 
 1. Refuse or rewrite ApprovalTable M-01 and M-02. No agent opens the profile or port 9222.
-2. Land `tools/research-gate.sh` from the re-read design (`ResearchGateDesign.md:419-439`, `:393-395`), plus an `eyJ` class, and without printing pointer bytes at `:415`. Do not implement `RecordShape.md:147` "opens".
+2. Land `tools/research-gate.sh` from the re-read design (`ResearchGateDesign.md:401`, `:423`, `:434-435`). Do not restore pointer-byte interpolation. Do not implement `RecordShape.md:147` "opens".
 3. Keep LoopbackFixturePlan `:132-153` and FixtureSiteDesign `:77-81`. Delete the deferral at FixtureSiteDesign `:462`. Pin curl argv (ignore or refuse a `CHOUSA_CURL` that adds `-b` or `Authorization`) and unset all proxy variables, not only `:76`. Change LoopbackFixturePlan `:399` to a docroot serve. Rename `account.json`. Widen `:433` to the HIT-tier list; do not fail `:437` on a prohibition comment.
 4. Survey read allowlist = the four research files + the three named precedent files (source / docs mode) + the chousa lane. README:6 is not a hop. Do not run `claim-ledger.sh verify` as survey evidence.
 5. Do not copy export `:9-26` or `:28` into corpus notes.

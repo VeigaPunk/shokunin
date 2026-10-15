@@ -126,12 +126,16 @@ Work root: `/tmp/chousa-research-gate-selftest.XXXXXX` only.
 | fail-pointer-ephemeral | 1 | `FINDING POINTER_EPHEMERAL` |
 | fail-external-without-approval | 1 | `FINDING EXTERNAL_WITHOUT_APPROVAL` |
 | fail-secret-shaped | 1 | `FINDING SECRET_SHAPED` + obs has `class=` and **must not** contain planted value |
-| fail-session-read | 1 | `FINDING SESSION_READ` |
+| fail-secret-jwt | 1 | **extended (non-blocking):** `FINDING SECRET_SHAPED` + `class=jwt_eyj`; planted JWT body **must not** appear in output |
+| fail-session-read | 1 | `FINDING SESSION_READ` (obs has path_class=, never path bytes) |
 | fail-schema | 1 | `FINDING RECORD_SCHEMA_INVALID` |
 | setup-no-record | 2 | setup |
 | setup-missing-file | 2 | setup |
 
-Floor **N=17**. Secret plant = synthetic only (`sk-fxdemo_not_real_0000`); never live token.
+**Base floor N=17** — GateFixtureDesign §3.0 pin (PASS×2 + FAIL defect arms + setup×2 without JWT).  
+**Embedded selftest N=18** — base + SecrecyAudit `fail-secret-jwt` extension (non-blocking). Secret plants synthetic only; finding obs never reprints pointer/query bytes.
+
+
 
 ---
 
@@ -140,6 +144,10 @@ Floor **N=17**. Secret plant = synthetic only (`sk-fxdemo_not_real_0000`); never
 **Allow (metadata `test -f` only; never print file body in findings):** record path; paths under `CHOUSA_ROOT`; when root is fleet, also lane `chousa-shokunin/**`, the four `research/` survey files, and named precedents (`claim-ledger.sh`, `anchorcheck.py`, `citation-bases.md`) for existence checks.
 
 **Deny → `SESSION_READ` (do not open):** `op.env`, `*.env`, `server.token`, `credentials/`, `~/.omp/**`, chrome-profile/Cookies, URLs with port 9222 or `/json`.
+
+**No pointer-byte echo:** `POINTER_UNRESOLVED` / `SESSION_READ` / URL findings print `ptr_class=` / `path_class=` only — never the pointer string (query tokens must not enter the log).
+
+**SECRET_SHAPED classes:** `op_uri`, `bearer`, `jwt_eyj` (`eyJ` / `eyJhbG`, kagi HIT-tier), `sk_prefix`, `ghp_prefix`, `github_pat`, `aws_akia`, `ssh_key`, `pem_key`, `server_token_assign`, `api_key_assign`, `password_assign`. Obs = `path=<record>:<line> class=<name>` only.
 
 **README:6 CDP 9222** = provenance prose, not a hop. No connect.
 
@@ -716,6 +724,12 @@ run_selftest() {
         printf 'FAIL-case %-28s secret span echoed\n' "$name"
         failures=$((failures + 1)); return
       fi
+      if [[ $name == fail-secret-jwt ]]; then
+        if [[ $out == *'eyJhbGciOiJmeC1ub3QtYS1qd3Q'* || $out != *'class=jwt_eyj'* ]]; then
+          printf 'FAIL-case %-28s jwt span echoed or class missing\n' "$name"
+          failures=$((failures + 1)); return
+        fi
+      fi
       printf 'ok-case  %-2d %-28s exit=%d\n' "$cases" "$name" "$rc"
     else
       printf 'FAIL-case %-28s exit=%d want=%d token=%s\n' "$name" "$rc" "$want_rc" "$want"
@@ -1061,6 +1075,31 @@ planted: sk-fxdemo_not_real_0000
 EOF
   tcase fail-secret-shaped 1 'FINDING SECRET_SHAPED'
 
+  write_rec fail-secret-jwt <<'EOF'
+# research-record v1
+## Question
+Q?
+## Sources
+| id | tier | pointer |
+|---|---|---|
+| S1 | primary | lib/primary.md:1 |
+## Chain
+| hop | from | to | status | notes |
+|---|---|---|---|---|
+| 1 | C1 | S1 | resolved | x |
+## Claims
+| id | kind | text | pointer | status |
+|---|---|---|---|---|
+| C1 | observation | x | S1 | verified |
+## Rejections
+| id | ref | reason |
+|---|---|---|
+| R1 | n/a | none-recorded |
+## Notes
+planted jwt: eyJhbGciOiJmeC1ub3QtYS1qd3Q.eyJzdWIiOiJmeCJ9.fxsig
+EOF
+  tcase fail-secret-jwt 1 'class=jwt_eyj'
+
   write_rec fail-session-read <<'EOF'
 # research-record v1
 ## Question
@@ -1169,11 +1208,12 @@ esac
 ## 8. Parent land checklist
 
 1. `mkdir -p chousa-shokunin/tools` and land §6; `chmod +x`
-2. `bash tools/research-gate.sh --selftest` → PASS (17)
-3. `fail-secret-shaped` must show `class=` and must **not** echo `sk-fxdemo_not_real_0000`
+2. `bash tools/research-gate.sh --selftest` → PASS (18) (GateFixtureDesign base pin remains 17; JWT case is extended)
+3. `fail-secret-shaped` / `fail-secret-jwt` must show `class=` and must **not** echo planted secret bytes; `POINTER_UNRESOLVED` must not print pointer strings
 4. Raw export A/B/C → DRIFT, not CLEAN
 5. Never open CDP 9222 / credential paths when reading README provenance
-6. Pin N + ids on SCORECARD
+6. **Do not implement** RecordShape.md hop “opens” / cited-line content echo (SecrecyAudit): pointer resolve stays metadata `test -f` on allowlist only
+7. Pin N + ids on SCORECARD (cite GateFixtureDesign N=17 + optional extension)
 
 ---
 
