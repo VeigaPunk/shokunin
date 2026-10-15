@@ -639,3 +639,10 @@ superseded text (`PROTOCOL.md` §Invariants).
   the read-only substrate). All six registries re-recorded at 32/32 assignments.
 - Phase 5: chousa probation round 1 dispatched (`Shokunin12hP5ChousaR1`, 32 lanes,
   local-only survey of the research artifacts — no external fetches).
+
+- Phase 5 chousa round 1 left **in-flight** at session close: 5/32 member
+  reports delivered on disk, integration (QUALITY.md, corpus map, research-gate.sh)
+  not performed. Recorded as in-flight debt in `MANIFEST.json`, never as a closed
+  round. The 12-hour program's remaining blockers are listed in the fleet report:
+  Phase 3 (kengaku) undispatched, mori round 2 undispatched, chousa round 1
+  integration, chousa round 2.

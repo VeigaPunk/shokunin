@@ -159,9 +159,17 @@ MANIFEST `type: "mint"` entry appended, **no roster row**. `MINT.md` carries the
 operator directive, two demand instances (`research/deep-research-2026-09-28/`
 with no owning lane; kasegi is bounty-scoped only) and the roster scan. Boundary:
 refuses external live-target research without operator approval, bounty scope
-(kasegi) and model-quality claims (kengaku). Round 1 (research-craft survey) is
-specified and validated at `.ufo/waves/shokunin12h-20261014-p5-chousa-r1/spec.json`
-(32 members) but **not dispatched**.
+(kasegi) and model-quality claims (kengaku). Round 1 (research-craft survey) was **dispatched** (`Shokunin12hP5ChousaR1`,
+32 lanes, local-only — no external fetches) and its registry carries 32/32
+assignments. **5 of 32 reports were delivered** before this session
+reached its integration boundary; the rest land on disk in the fleet root. The
+delivered set already establishes the round's central finding — the three artifacts
+are chat-export transcripts whose embedded web citations are **unverified at rest**,
+so quote-fidelity is not world-truth — plus a claim-capture schema with revision
+pins and 32 admission criteria for `QUALITY.md` (each admitted with a `path:line` or
+marked `proposal`). **Integration is the unblocked next step:** land
+`corpus/QUALITY.md`, the corpus map, and `tools/research-gate.sh` from the delivered
+designs, then run its `--selftest`.
 
 Neither mint has earned probation credit: protocol requires ≥3 verified rounds
 before a roster row, and only mori's round 1 was dispatched.
