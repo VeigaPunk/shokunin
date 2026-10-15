@@ -145,7 +145,7 @@ def main() -> int:
     start, end = find_region(lines)
     print(f"live region: lines {start + 1}-{end} ({end - start} lines)")
     removed = [l for l in lines[start:end] if l.strip().startswith('"')]
-    added = new_section.count(" = ")
+    added = sum(1 for line in new_section.splitlines() if line.strip().startswith('"'))
     print(f"pool entries removed: {len(removed)} -> added: {added}")
     print()
     diff = difflib.unified_diff(

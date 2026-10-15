@@ -48,3 +48,5 @@ Scope notes:
 - The live `~/.kimi-code/config.toml` was opened read-only throughout this mission and
   was never written by it; its pinned hashes are in the routing table header and in
   `APPLY.md`.
+- Re-run after the operator lane-policy revision (2026-10-15, post-review): identical
+  output — 7 files scanned, 12 configured credential values tested, 0 hits, exit 0.

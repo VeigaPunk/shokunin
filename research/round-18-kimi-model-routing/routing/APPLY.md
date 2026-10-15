@@ -71,14 +71,14 @@ cd research/round-18-kimi-model-routing/routing
 python3 splice_secondary.py --apply
 ```
 
-What it does: reads the 14-entry `[secondary_model]` payload from
+What it does: reads the 13-entry `[secondary_model]` payload from
 `kimi-secondary-models-round18.toml` (everything above its `# SPLICE-END`
 sentinel), replaces live lines 1483–1504, re-parses the result with `tomllib`,
 checks the new pool equals the table, writes the backup, then replaces the file
 atomically with mode 0600. It prints the new file sha256 and the rollback command.
 
 Verified on a synthetic config copy (17-entry pool + `[[hooks]]` tail):
-apply → pool 14, `[models.*]` and `[[hooks]]` byte-identical, backup holds the
+apply → pool 13, `[models.*]` and `[[hooks]]` byte-identical, backup holds the
 17-entry pool, no temp files left. The live config was not touched.
 
 Manual alternative (same effect): replace lines 1483–1504 with the payload block
@@ -89,10 +89,16 @@ Manual alternative (same effect): replace lines 1483–1504 with the payload blo
 | change | ids | evidence |
 | --- | --- | --- |
 | kept, role text rewritten with measured numbers | 11 (4 FAST, 1 FAST-fallback, 3 MIDDLE, 1 batch, 2 STRONG) | M3 `battery/ANALYSIS.md` §2/§3 |
-| demoted (kept, slower role) | `cascade/glm-5.3-flash` (FAST → fallback-only), `alibaba-token-plan/qwen3.8-flash` (MIDDLE → batch) | M3 §8 RE-BUCKET / SLOW-OUTLIER |
+| demoted (kept, slower role) | `cascade/glm-5.3-flash` (FAST → fallback-only; policy zai-primary → devin-secondary), `alibaba-token-plan/qwen3.8-flash` (MIDDLE → batch) | M3 §8 RE-BUCKET / SLOW-OUTLIER; operator lane policy 2026-10-15 |
 | quarantined until reset | 4 token-plan keys 2/3 entries | M1 census D2 (10-23 / 10-28 16:00Z), M3 §3 0/9 |
 | dropped | `cursor/composer-2.5`, `cursor/cursor-grok-4.5-low-fast` | M3 §8 RE-BUCKET+SLOW-OUTLIER+NO-TOOL-FORMAT(+WRONG-ANSWER), M2 §4.2 |
-| added, verify-first | `xai-oauth/grok-4.7`, `opencode-go/glm-5.3-flash`, `opencode-go/deepseek-v4.1-flash` | census §6 smoke / M6 §2 — census-level evidence only, no battery run |
+| added, verify-first | `xai-oauth/grok-4.7`, `opencode-go/deepseek-v4.1-flash` | census §6 smoke / M6 §2 — census-level evidence only, no battery run |
+
+**Operator lane policy (directive 2026-10-15):** opencode-go is used for
+`deepseek-v4.1-flash` only — its GLM lane is not admitted here, and
+`opencode-go/deepseek-v4.1-flash` is the only opencode-go entry in the table. For
+`glm-5.3-flash`, zai-coding-plan is the primary leg and devin the secondary/fallback
+leg; the `cascade/glm-5.3-flash` role string now says so.
 
 Dropping the two cursor ids removes two configured lanes. Nothing else in the
 config references them (checked: the only references are the `[models.*]` entries
@@ -247,6 +253,18 @@ The client reads the config at process start, so "reload" means a fresh session.
    | 403 `error code: 1010` | scripted user agent blocked (opencode-go) | use a browser-class UA in probes (M2 §1) |
    | request hangs past ~300 s | devin cold start | warm the shim (M1 D7); not a config defect |
    | `temperature` / `max_output_tokens` 400 on codex | D6 shape | omit `temperature`, `max_output_tokens >= 16`, `store:false`, `stream:true` |
+
+6. **Operator check — `cascade/glm-5.3-flash` leg order vs the declared policy.**
+   Policy says zai-coding-plan is the primary leg for glm-5.3-flash and devin the
+   secondary/fallback leg (operator directive 2026-10-15). M2's tool probe was
+   answered by the **devin** leg in pass 1 and by the **zai** leg in pass 2
+   (`definitions/ANALYSIS.md` §4.2), so the live `glm-flash-shim` may currently be
+   devin-first. After the splice, issue one plain completion through the
+   `glm-flash-cascade` lane on a fresh session and read which leg served it (shim
+   log, or the serving model id in the response). This runbook does not inspect or
+   edit the shim — that is out of scope — but if the order is devin-first it
+   contradicts the declared policy, and it would also explain the ~11.8k
+   prompt-token billing measured on that lane (M1 D9, M3 §2).
 
 ## Step 5 — rollback
 

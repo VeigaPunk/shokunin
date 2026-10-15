@@ -25,8 +25,10 @@ lanes are quarantined, demoted or dropped with the evidence attached. Eleven of 
 17 pooled ids keep their slot with rewritten role text; two are demoted
 (`cascade/glm-5.3-flash` out of FAST, `alibaba-token-plan/qwen3.8-flash` to batch);
 two cursor lanes are dropped; four token-plan key-2/3 entries are quarantined until
-their 429 resets; three catalog ids enter as verify-first with census evidence and
-explicitly no bucket promotion. The definitions work from M2 is staged as a
+their 429 resets; two catalog ids enter as verify-first with census evidence and
+explicitly no bucket promotion. The operator's lane policy (2026-10-15) is applied:
+opencode-go serves deepseek-v4.1-flash only, and glm-5.3-flash is zai-primary with
+devin as its secondary/fallback leg. The definitions work from M2 is staged as a
 reviewed splice checklist rather than applied blindly, because one of the four
 pool-relevant blocks would revert a newer operator edit.
 
@@ -165,14 +167,22 @@ routing table.**
 
 ## 5. The new routing policy
 
-`routing/kimi-secondary-models-round18.toml` — 14 live entries replacing 17. Every
+`routing/kimi-secondary-models-round18.toml` — 13 live entries replacing 17. Every
 role string quotes its measured numbers and its evidence pointer; the full ledger,
 ladders and limits are comment blocks in that file.
 
+**Operator lane policy (directive 2026-10-15, recorded verbatim in M4's mission
+notes):** *"the opencode-go should be used for deepseek v4.1 flash only, i have a zai
+subscription and devin is the secondary provider for the glm 5.3 flash."* Applied:
+opencode-go is admitted for `deepseek-v4.1-flash` only (its GLM lane is not in the
+table at all), and the glm-5.3-flash cascade is described as zai-primary →
+devin-secondary.
+
 - **FAST ladder** (latency-first, measured): hyper 2081 ms → token-plan key 1
   2251 ms → zai `glm-5.3-flash-low` 2796 ms → `cascade/deepseek-v4.1-flash`
-  (chain opencode-go→hyper→devin) → `cascade/glm-5.3-flash` (chain devin→zai→hyper,
-  last resort). Keys 2/3 excluded until reset; opencode-go entries verify-first only.
+  (chain opencode-go→hyper→devin) → `cascade/glm-5.3-flash` (declared policy
+  zai→devin, leg order unverified — operator check). Keys 2/3 excluded until reset;
+  opencode-go appears on the ladder for deepseek-v4.1-flash only.
 - **MIDDLE ladder**: `zai-coding-plan/glm-5-turbo` → `xai-oauth/grok-4.5` →
   `hyper/qwen3.8-flash` → `alibaba-token-plan/qwen3.8-flash` (batch only) →
   `opencode-go/deepseek-v4.1-flash` (verify-first overflow).
@@ -181,16 +191,18 @@ ladders and limits are comment blocks in that file.
   share one shim and one upstream model id.
 - **Demotions**: `cascade/glm-5.3-flash` loses its FAST claim (4952 ms, slower than the
   MIDDLE median; no tool call on the tool probe; ~11.8k prompt tokens per call on the
-  devin leg); `alibaba-token-plan/qwen3.8-flash` becomes a batch lane (13282 ms first
-  token, but 9/9 at 235.56 tok/s).
+  answering leg); it is now described by policy as zai-primary → devin-secondary, and
+  the report carries an operator check on the live shim's actual leg order (§6 item 5).
+  `alibaba-token-plan/qwen3.8-flash` becomes a batch lane (13282 ms first token, but
+  9/9 at 235.56 tok/s).
 - **Drops**: both cursor lanes — the two slowest measured lanes, burst-flushed, and
   unable to emit a tool call (`cursor/composer-2.5` also answered one probe wrong).
 - **Quarantine**: the four token-plan key-2/3 entries, with the reset times and the
   re-entry rule (a passing chat probe, not a `/models` 200).
 - **Verify-first adds** (census evidence only, never a measured claim):
-  `xai-oauth/grok-4.7` (census 1166 ms / 493.74 tok/s), `opencode-go/glm-5.3-flash`
-  (census 1198 ms / 269.3 tok/s), `opencode-go/deepseek-v4.1-flash` (M6-measured, no
-  FAST slot).
+  `xai-oauth/grok-4.7` (census 1166 ms / 493.74 tok/s) and
+  `opencode-go/deepseek-v4.1-flash` (M6-measured, no FAST slot; the only admitted
+  opencode-go entry per the lane policy).
 - **`default_model` unchanged** (`cascade/deepseek-v4.1-flash`): the only entry with a
   cross-provider chain, measured inside the FAST band; the latency-first alternative
   (`hyper/deepseek-v4.1-flash`) is recorded in APPLY.md §2.
@@ -248,6 +260,12 @@ every measured number in the table applies to a live entry.
     spelling the client actually renders for the DEF-9 entries (M2 §8, §F).
 12. **Stray listener `127.0.0.1:8799`** in the shim port block, owned by no discovered
     unit and referenced by no provider — recorded as an observation (M1 §2).
+13. **Cascade glm-flash-shim leg order vs the zai-primary policy — operator check.**
+    Policy (2026-10-15): zai-coding-plan is glm-5.3-flash's primary leg, devin its
+    secondary/fallback leg. M2's tool probe was answered by the **devin** leg in pass 1
+    and by the **zai** leg in pass 2 (`definitions/ANALYSIS.md` §4.2), so the live shim
+    may currently be devin-first. Not asserted either way and not fixed here — shim
+    edits are out of scope; APPLY.md Step 4 item 6 is the check.
 
 ## 7. Secrets hygiene
 
@@ -261,16 +279,21 @@ config was opened read-only and never written.
 
 ## 8. Verification performed on this mission's own artifacts
 
-- `kimi-secondary-models-round18.toml` parses with `tomllib`; 14 entries, no duplicate
+- `kimi-secondary-models-round18.toml` parses with `tomllib`; 13 entries, no duplicate
   ids, every id resolves to a live `[models.*]` entry; all 17 pinned pool ids are
-  accounted for (14 live + 6 in the quarantine/drop evidence, with 3 adds).
-- `routing/splice_secondary.py`: dry run against the live config prints the exact
-  1483–1504 region diff and writes nothing; the pinned-hash guard was exercised (it
-  refused a synthetic config and refused on the real config when a guard was
-  re-enabled); an end-to-end `--apply` against a synthetic 17-entry config copy
-  produced pool 14, `[models.*]` and `[[hooks]]` byte-identical, a timestamped backup
-  holding the 17-entry pool, and no leftover temp files.
-- `routing/hygiene_check.py`: exit 0, 0 hits (section 7).
+  accounted for (13 live + 6 in the quarantine/drop evidence) alongside 2 verify-first
+  adds, and the evidence ledger carries all 19 ids. No occurrence of the lane-policy
+  excluded GLM entry remains in any artifact.
+- `routing/splice_secondary.py`: dry run prints the exact 1483–1504 region diff and
+  writes nothing; the pinned-hash guard was exercised (it refused a synthetic config
+  and refused on the real config when a guard was re-enabled); an end-to-end `--apply`
+  against a synthetic 17-entry config copy produced pool 13, `[models.*]` and
+  `[[hooks]]` byte-identical, a timestamped backup holding the 17-entry pool, and no
+  leftover temp files. After the lane-policy revision the dry run was repeated against
+  a `/tmp` copy of the live config (same pinned bytes): the guards passed and the diff
+  is sane.
+- `routing/hygiene_check.py`: exit 0, 0 hits (section 7), re-run after the revision
+  with identical output.
 - Every routing claim in the table quotes an M1/M2/M3/M5/M6 section pointer; the
   per-entry ledger in the TOML carries the decision, the measured numbers, the declared
   caps, the effort note and the evidence pointer.
@@ -286,3 +309,30 @@ config was opened read-only and never written.
 - The table is a recommendation with a reviewed splice path; the pool is an operator
   artifact and the live config still holds the old strings until the operator runs
   `routing/APPLY.md`.
+
+## 10. Revision — operator lane policy (2026-10-15, post-review, pre-merge)
+
+The operator issued a lane-policy directive before merge, recorded verbatim in M4's
+mission notes: *"the opencode-go should be used for deepseek v4.1 flash only, i have a
+zai subscription and devin is the secondary provider for the glm 5.3 flash."*
+
+Changes made, all inside the original scope, no evidence overturned:
+
+- The opencode-go GLM verify-first add is withdrawn entirely — the string does not
+  appear in any artifact of this mission. `opencode-go/deepseek-v4.1-flash` remains as
+  verify-first (M6 numbers unchanged) and is the only admitted opencode-go entry; the
+  FAST-bucket ladder now names opencode-go for that model only.
+- `cascade/glm-5.3-flash` keeps its demote decision and every measured number (4952 ms,
+  no tool call on the tool probe, ~11.8k prompt tokens on the answering leg), but its
+  role and ledger row now state the declared lane policy: zai-coding-plan primary,
+  devin secondary/fallback. A one-line operator check is attached because M2's tool
+  probe was answered by the devin leg in pass 1 and the zai leg in pass 2 — the live
+  shim may be devin-first, which would contradict the policy; the shim was neither
+  inspected nor edited (out of scope).
+- Counts recomputed: 13 live entries in the table (11 kept + 2 adds), 6 excluded ids
+  (4 quarantined + 2 dropped), 19 ids in the evidence ledger.
+- APPLY.md carries the shim leg-order check as reload item 6; the routing table holds
+  the policy in the ledger header and the fallback-ladder block. Hygiene re-run clean;
+  the splice dry run against a `/tmp` copy of the pinned live config still prints a
+  sane diff after the revision.
+

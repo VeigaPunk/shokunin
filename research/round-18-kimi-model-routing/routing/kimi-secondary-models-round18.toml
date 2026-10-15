@@ -70,7 +70,7 @@ default_model = "cascade/deepseek-v4.1-flash"
 "cascade/deepseek-v4.1-flash" = "FAST rank 4 and default (CASCADE lane: opencode-go first, hyper fallback, devin third). 3179 ms, burst-flushed so no client-side TPS exists [M3 s2], 8/9. Its value is the cross-provider fallback chain, not raw speed [M3 s8]; legs 1-2 are tool-capable, the devin leg is not [M2 s4.2]."
 
 # --- FAST ladder, last resort: kept for chain value, stripped of its FAST claim ---
-"cascade/glm-5.3-flash" = "NOT a FAST lane (demoted): devin first, zai then hyper. 4952 ms -- slower than the MIDDLE median 4172 ms [M3 s8 RE-BUCKET], no tool_calls on the tool probe [M3 s6 t1], and the devin leg bills ~11775 prompt tokens per call [M3 s2, M1 D9]. Fallback-only: use when both deepseek cascades and token-plan key 1 are exhausted."
+"cascade/glm-5.3-flash" = "NOT a FAST lane (demoted). Lane policy (operator directive 2026-10-15): zai-coding-plan is the primary leg, devin the secondary/fallback leg. Measured as configured: 4952 ms -- slower than the MIDDLE median 4172 ms [M3 s8 RE-BUCKET], no tool_calls on the tool probe [M3 s6 t1], and the answering leg billed ~11775 prompt tokens for the identical prompt [M3 s2], which is the devin leg's overhead [M1 D9, M2 s4.2]. Fallback-only: use when both deepseek cascades and token-plan key 1 are exhausted. Operator check: the live glm-flash-shim's leg order may currently be devin-first, which would contradict the declared zai-primary policy -- M2's tool probe was answered by the devin leg in pass 1 and by the zai leg in pass 2 [M2 s4.2]; the shim was not inspected or edited by this mission."
 
 # --- MIDDLE ---
 "zai-coding-plan/glm-5-turbo" = "MIDDLE rank 1 (zai lane): 2957 ms, TPS 157.07, 8/9 [M3 s3]. Everyday implementation and refactors at a 200k declared context; truncation-prone on thin budgets [M3 s6 c5]."
@@ -83,9 +83,11 @@ default_model = "cascade/deepseek-v4.1-flash"
 "openai-codex/gpt-6.1-sol-high" = "STRONG rank 2, pinned to HIGH effort: 2878 ms, TPS 70.82, 9/9 [M3 s2]. Same shim, same upstream model id as rank 1 -- a second effort pin, not an independent provider fallback [M3 SELECTION s3]."
 
 # --- VERIFY-FIRST adds from the wider [models.*] catalog (census evidence only; not M3-measured) ---
+# Lane policy (operator directive 2026-10-15): opencode-go is reserved exclusively for
+# deepseek-v4.1-flash. Its GLM lane is therefore NOT added; glm-5.3-flash's primary leg
+# is zai-coding-plan with devin as the secondary/fallback leg.
 "xai-oauth/grok-4.7" = "STRONG candidate, VERIFY-FIRST: census smoke 1166 ms / 493.74 tok/s incremental -- the best census-level TTFT/TPS pair in the file [M1 s6] -- but never battery-tested, and it bills ~1260 prompt tokens per call [M1 D9]. Run the M3 probe set before promoting; added to give STRONG a non-codex option."
-"opencode-go/glm-5.3-flash" = "FAST candidate, VERIFY-FIRST: census smoke 1198 ms / TPS 269.3 incremental with 30 prompt tokens [M1 s6]; never battery-tested. Note: opencode-go answers a scripted user agent with 403 error code 1010 -- browser-class UA required for probes [M2 s1]."
-"opencode-go/deepseek-v4.1-flash" = "MIDDLE-latency overflow, VERIFY-FIRST: measured by M6 at 4157 ms / 327.29 tok/s / 8/9 [M6 s2], which fails the pre-registered FAST rule (TTFT <= 2800 ms), so it takes no direct FAST slot [M6 s6]. It is already the first leg of the default cascade; add only when its MIDDLE-latency expectation is acceptable."
+"opencode-go/deepseek-v4.1-flash" = "MIDDLE-latency overflow, VERIFY-FIRST (opencode-go's only admitted role: deepseek-v4.1-flash exclusively, operator lane policy 2026-10-15): measured by M6 at 4157 ms / 327.29 tok/s / 8/9 [M6 s2], which fails the pre-registered FAST rule (TTFT <= 2800 ms), so it takes no direct FAST slot [M6 s6]. It is already the first leg of the default cascade; add only when its MIDDLE-latency expectation is acceptable. Probes need a browser-class UA on this lane [M2 s1]."
 
 # SPLICE-END -- everything below this line is evidence and operator notes, not config.
 
@@ -95,11 +97,18 @@ default_model = "cascade/deepseek-v4.1-flash"
 #
 # id | bucket | decision | measured (M3 unless stated) | caps (declared) | effort | evidence pointer
 #
+# LANE POLICY (operator directive 2026-10-15): opencode-go is used for
+#   deepseek-v4.1-flash ONLY. zai-coding-plan is the primary leg for glm-5.3-flash,
+#   and devin is its secondary/fallback leg. Applied below: the opencode-go GLM lane
+#   is not admitted at all, and the glm-5.3-flash cascade is described as
+#   zai-primary -> devin-secondary, with an operator check recorded on whether the
+#   live shim actually honours that order.
+#
 # hyper/deepseek-v4.1-flash        | FAST         | keep       | 2081 ms / 375.91 / 8-9 | ctx 1048576, out 262144 | low,high,xhigh -> global max | M3 s2+s3, M1 no defect
 # alibaba-token-plan/deepseek-v4.1-flash | FAST   | keep       | 2251 ms first-decoded / 226.72 / 8-9 | ctx 1000000, out 384000 | low,high,max -> max | M3 s2 dagger, M3 s8 TRUNCATION-PRONE+NO-CONTENT-TTFT
 # zai-coding-plan/glm-5.3-flash-low | FAST        | keep (restr.) | 2796 ms first-decoded / 138.21 / 7-9 | ctx 1000000, out 131072 | pin low (inert) | M3 s8 TRUNCATION-PRONE+NO-CONTENT-TTFT, M2 s3 rule 2, M2 s4.1
 # cascade/deepseek-v4.1-flash      | FAST         | keep (default) | 3179 ms / burst (no TPS) / 8-9 | ctx 1048576, no out cap (client sends none, M2 s3 rule 4) | none | M3 s2, M3 s8, M6 s6 (leg 1 measured 4157 ms)
-# cascade/glm-5.3-flash            | FAST -> FALLBACK | demote | 4952 ms / burst / 8-9 | ctx 1048576, no out cap | none | M3 s8 RE-BUCKET+NO-TOOL-FORMAT, M3 s6 t1, M1 D9, M2 s4.2
+# cascade/glm-5.3-flash            | FAST -> FALLBACK | demote | 4952 ms / burst / 8-9 | ctx 1048576, no out cap | none | policy zai-primary -> devin-secondary (operator directive 2026-10-15); M3 s8 RE-BUCKET+NO-TOOL-FORMAT, M3 s6 t1, M1 D9, M2 s4.2 (leg order unverified -- operator check)
 # zai-coding-plan/glm-5-turbo      | MIDDLE       | keep       | 2957 ms / 157.07 / 8-9 | ctx 200000, out 131072 | none (client picks middle, M2 DEF-3d) | M3 s3
 # xai-oauth/grok-4.5               | MIDDLE       | keep       | 3476 ms / 66.71 / 9-9 | ctx 500000, no out cap | default_effort high (ignored lane, M2 s4.1) | M3 s3, M2 DEF-10 (reasoning_key missing)
 # hyper/qwen3.8-flash              | MIDDLE       | keep       | 4868 ms / 178.96 / 9-9 | ctx 1000000, out 128000 | minimal..high -> max (clamped? lane ignores, M2 s4.1) | M3 s3, M2 DEF-1/DEF-10 (off_effort inert; reasoning_key missing)
@@ -113,8 +122,7 @@ default_model = "cascade/deepseek-v4.1-flash"
 # cursor/composer-2.5              | VERY-FAST    | drop       | 7198 ms / burst / 7-9 (c5 wrong answer) | ctx 200000, no out cap | none (lane ignores, M2 s4.1) | M3 s8 RE-BUCKET+SLOW-OUTLIER+NO-TOOL-FORMAT+WRONG-ANSWER, M3 s6 c5, M2 s4.2
 # cursor/cursor-grok-4.5-low-fast  | VERY-FAST    | drop       | 8275 ms / burst / 8-9 | ctx 500000, no out cap | none | M3 s8 RE-BUCKET+SLOW-OUTLIER+NO-TOOL-FORMAT, M3 s6 t1
 # xai-oauth/grok-4.7               | STRONG (cand.) | verify-first | not battery-tested; census 1166 ms / 493.74 incremental | ctx 500000, no out cap | default high (ignored lane) | M1 s6, M1 s5 (quota 53M tok / 8300 req), M1 D9
-# opencode-go/glm-5.3-flash        | FAST (cand.) | verify-first | not battery-tested; census 1198 ms / 269.3 incremental | ctx 1000000, out 131072 | low,high,max | M1 s6, M2 s1 (UA 403)
-# opencode-go/deepseek-v4.1-flash  | MIDDLE (cand.) | verify-first | not battery-tested; M6 4157 ms / 327.29 / 8-9 | ctx 1000000, out 384000 | low,high,max | M6 s2+s6 (no FAST slot), M1 D4
+# opencode-go/deepseek-v4.1-flash  | MIDDLE (cand.) | verify-first | not battery-tested; M6 4157 ms / 327.29 / 8-9 | ctx 1000000, out 384000 | low,high,max | M6 s2+s6 (no FAST slot), M1 D4; opencode-go admitted for deepseek-v4.1-flash ONLY (operator lane policy 2026-10-15)
 #
 # ============================================================================
 # QUARANTINE -- dropped until the named reset, then re-verify before restoring
@@ -152,14 +160,21 @@ default_model = "cascade/deepseek-v4.1-flash"
 # CROSS-PROVIDER FALLBACK ORDER (per bucket, as configured today)
 # ============================================================================
 #
+# LANE POLICY (operator directive 2026-10-15, recorded verbatim in the mission
+# notes): "the opencode-go should be used for deepseek v4.1 flash only, i have a
+# zai subscription and devin is the secondary provider for the glm 5.3 flash".
+# Consequence: opencode-go's GLM lane is not admitted anywhere below; the
+# glm-5.3-flash cascade is zai-primary with devin as its secondary/fallback leg.
+#
 # FAST (latency-first ladder):
 #   1 hyper/deepseek-v4.1-flash            2081 ms / 375.91
 #   2 alibaba-token-plan/deepseek-v4.1-flash (key 1)  2251 ms / 226.72
 #   3 zai-coding-plan/glm-5.3-flash-low    2796 ms / 138.21
 #   4 cascade/deepseek-v4.1-flash          chain opencode-go -> hyper -> devin
-#   5 cascade/glm-5.3-flash                chain devin -> zai -> hyper (last resort)
+#   5 cascade/glm-5.3-flash                chain zai -> devin (declared policy; leg
+#                                          order currently unverified, see operator check)
 #   token-plan keys 2 and 3: excluded until 10-23 / 10-28 16:00Z resets (M1 D2).
-#   opencode-go (direct glm-5.3-flash, direct deepseek-v4.1-flash): verify-first only.
+#   opencode-go: deepseek-v4.1-flash ONLY (operator lane policy) -- verify-first, no FAST slot.
 #   zai-coding-plan second lane and hyper fast lane beyond the two above: not in
 #   the pool; hyper/glm-5.3-flash measured burst-only in the census (no TPS,
 #   M1 s6) so it cannot rank until a battery run.
@@ -169,7 +184,8 @@ default_model = "cascade/deepseek-v4.1-flash"
 #   2 xai-oauth/grok-4.5                    3476 ms / 66.71 (9-9)
 #   3 hyper/qwen3.8-flash                   4868 ms / 178.96 (9-9)
 #   4 alibaba-token-plan/qwen3.8-flash      13282 ms -- batch only
-#   5 opencode-go/deepseek-v4.1-flash       verify-first overflow (M6: MIDDLE latency)
+#   5 opencode-go/deepseek-v4.1-flash       verify-first overflow (M6: MIDDLE latency;
+#                                          opencode-go admitted for this model only)
 #   token-plan keys 2 and 3: excluded until reset.
 #
 # STRONG (quality-first):
