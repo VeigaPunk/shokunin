@@ -1,0 +1,547 @@
+{
+  "probe": "billing-call-25tools",
+  "model_sent": "claude-opus-5-5-high",
+  "url": "http://127.0.0.1:8787/v1/chat/completions",
+  "base_url": "http://127.0.0.1:8787/v1",
+  "stream": true,
+  "timeout_s": 480,
+  "request_body": {
+    "model": "claude-opus-5-5-high",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Call the tool m10_tool_07 with arg 'x'."
+      }
+    ],
+    "max_tokens": 64,
+    "stream": true,
+    "stream_options": {
+      "include_usage": true
+    },
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "m10_tool_01",
+          "description": "Probe tool number 1.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "arg": {
+                "type": "string",
+                "description": "An argument."
+              }
+            },
+            "required": [
+              "arg"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "m10_tool_02",
+          "description": "Probe tool number 2.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "arg": {
+                "type": "string",
+                "description": "An argument."
+              }
+            },
+            "required": [
+              "arg"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "m10_tool_03",
+          "description": "Probe tool number 3.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "arg": {
+                "type": "string",
+                "description": "An argument."
+              }
+            },
+            "required": [
+              "arg"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "m10_tool_04",
+          "description": "Probe tool number 4.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "arg": {
+                "type": "string",
+                "description": "An argument."
+              }
+            },
+            "required": [
+              "arg"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "m10_tool_05",
+          "description": "Probe tool number 5.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "arg": {
+                "type": "string",
+                "description": "An argument."
+              }
+            },
+            "required": [
+              "arg"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "m10_tool_06",
+          "description": "Probe tool number 6.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "arg": {
+                "type": "string",
+                "description": "An argument."
+              }
+            },
+            "required": [
+              "arg"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "m10_tool_07",
+          "description": "Probe tool number 7.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "arg": {
+                "type": "string",
+                "description": "An argument."
+              }
+            },
+            "required": [
+              "arg"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "m10_tool_08",
+          "description": "Probe tool number 8.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "arg": {
+                "type": "string",
+                "description": "An argument."
+              }
+            },
+            "required": [
+              "arg"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "m10_tool_09",
+          "description": "Probe tool number 9.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "arg": {
+                "type": "string",
+                "description": "An argument."
+              }
+            },
+            "required": [
+              "arg"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "m10_tool_10",
+          "description": "Probe tool number 10.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "arg": {
+                "type": "string",
+                "description": "An argument."
+              }
+            },
+            "required": [
+              "arg"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "m10_tool_11",
+          "description": "Probe tool number 11.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "arg": {
+                "type": "string",
+                "description": "An argument."
+              }
+            },
+            "required": [
+              "arg"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "m10_tool_12",
+          "description": "Probe tool number 12.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "arg": {
+                "type": "string",
+                "description": "An argument."
+              }
+            },
+            "required": [
+              "arg"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "m10_tool_13",
+          "description": "Probe tool number 13.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "arg": {
+                "type": "string",
+                "description": "An argument."
+              }
+            },
+            "required": [
+              "arg"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "m10_tool_14",
+          "description": "Probe tool number 14.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "arg": {
+                "type": "string",
+                "description": "An argument."
+              }
+            },
+            "required": [
+              "arg"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "m10_tool_15",
+          "description": "Probe tool number 15.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "arg": {
+                "type": "string",
+                "description": "An argument."
+              }
+            },
+            "required": [
+              "arg"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "m10_tool_16",
+          "description": "Probe tool number 16.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "arg": {
+                "type": "string",
+                "description": "An argument."
+              }
+            },
+            "required": [
+              "arg"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "m10_tool_17",
+          "description": "Probe tool number 17.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "arg": {
+                "type": "string",
+                "description": "An argument."
+              }
+            },
+            "required": [
+              "arg"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "m10_tool_18",
+          "description": "Probe tool number 18.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "arg": {
+                "type": "string",
+                "description": "An argument."
+              }
+            },
+            "required": [
+              "arg"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "m10_tool_19",
+          "description": "Probe tool number 19.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "arg": {
+                "type": "string",
+                "description": "An argument."
+              }
+            },
+            "required": [
+              "arg"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "m10_tool_20",
+          "description": "Probe tool number 20.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "arg": {
+                "type": "string",
+                "description": "An argument."
+              }
+            },
+            "required": [
+              "arg"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "m10_tool_21",
+          "description": "Probe tool number 21.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "arg": {
+                "type": "string",
+                "description": "An argument."
+              }
+            },
+            "required": [
+              "arg"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "m10_tool_22",
+          "description": "Probe tool number 22.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "arg": {
+                "type": "string",
+                "description": "An argument."
+              }
+            },
+            "required": [
+              "arg"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "m10_tool_23",
+          "description": "Probe tool number 23.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "arg": {
+                "type": "string",
+                "description": "An argument."
+              }
+            },
+            "required": [
+              "arg"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "m10_tool_24",
+          "description": "Probe tool number 24.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "arg": {
+                "type": "string",
+                "description": "An argument."
+              }
+            },
+            "required": [
+              "arg"
+            ]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "m10_tool_25",
+          "description": "Probe tool number 25.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "arg": {
+                "type": "string",
+                "description": "An argument."
+              }
+            },
+            "required": [
+              "arg"
+            ]
+          }
+        }
+      }
+    ],
+    "tool_choice": "required"
+  },
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 2159,
+  "response_headers": {
+    "Server": "devin-openai-shim/2 ",
+    "Date": "Thu, 15 Oct 2026 14:35:30 GMT",
+    "Content-Type": "text/event-stream",
+    "Cache-Control": "no-cache",
+    "Connection": "close"
+  },
+  "content": "",
+  "content_chars": 0,
+  "reasoning_chars": 0,
+  "tool_calls": [
+    {
+      "id": "toolu_01QRwmn7rgrpQVojTsqzAssG",
+      "name": "m10_tool_07",
+      "arguments": "{\"arg\": \"x\"}"
+    }
+  ],
+  "finish_reason": "tool_calls",
+  "usage": {
+    "prompt_tokens": 4,
+    "completion_tokens": 52,
+    "total_tokens": 56
+  },
+  "streaming_supported": true,
+  "sse_event_count": 3,
+  "raw_preview": "data: {\"id\": \"chatcmpl-e0844e1132fe4a7a8b5ce1ed\", \"object\": \"chat.completion.chunk\", \"created\": 1792074930, \"model\": \"claude-opus-5-5-high\", \"choices\": [{\"index\": 0, \"delta\": {\"role\": \"assistant\", \"content\": \"\"}, \"finish_reason\": null}]}\ndata: {\"id\": \"chatcmpl-e0844e1132fe4a7a8b5ce1ed\", \"object\": \"chat.completion.chunk\", \"created\": 1792074930, \"model\": \"claude-opus-5-5-high\", \"choices\": [{\"index\": 0, \"delta\": {\"tool_calls\": [{\"index\": 0, \"id\": \"toolu_01QRwmn7rgrpQVojTsqzAssG\", \"type\": \"function\", \"function\": {\"name\": \"m10_tool_07\", \"arguments\": \"{\\\"arg\\\": \\\"x\\\"}\"}}]}, \"finish_reason\": null}]}\ndata: {\"id\": \"chatcmpl-e0844e1132fe4a7a8b5ce1ed\", \"object\": \"chat.completion.chunk\", \"created\": 1792074930, \"model\": \"claude-opus-5-5-high\", \"choices\": [{\"index\": 0, \"delta\": {}, \"finish_reason\": \"tool_calls\"}], \"usage\": {\"prompt_tokens\": 4, \"completion_tokens\": 52, \"total_tokens\": 56}}\ndata: [DONE]\n",
+  "request_level_class": null,
+  "request_level_detail": null,
+  "started_at_utc": "2026-10-15T14:35:30Z",
+  "ttft_content_ms": null,
+  "ttft_reasoning_ms": null,
+  "first_decoded_ms": 2159,
+  "decode_span_ms": null,
+  "tps": null,
+  "completion_tokens": 52,
+  "prompt_tokens": 4,
+  "reasoning_tokens": null,
+  "content_delta_count": 0,
+  "tools_sent": 25,
+  "expected_shape": "tool call"
+}

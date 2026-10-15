@@ -1,0 +1,85 @@
+{
+  "pool_id": "devin/opus-5.5-high",
+  "provider": "devin",
+  "model_id": "claude-opus-5-5-high",
+  "model_sent": "claude-opus-5-5-high",
+  "protocol": "openai",
+  "bucket": "UNLABELLED",
+  "base_url": "http://127.0.0.1:8787/v1",
+  "probe_id": "c5",
+  "probe_kind": "contract",
+  "rep": 1,
+  "measured": true,
+  "prompt": "Write one short sentence about the color blue. Do not use the letter e (lower case or upper case) anywhere in your answer.",
+  "max_tokens": 192,
+  "tools_sent": false,
+  "tool_choice": null,
+  "request_body": {
+    "model": "claude-opus-5-5-high",
+    "stream": true,
+    "max_tokens": 192,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Write one short sentence about the color blue. Do not use the letter e (lower case or upper case) anywhere in your answer."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "url": "http://127.0.0.1:8787/v1/chat/completions",
+  "timeout_s": 400,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 13424,
+  "response_headers": {
+    "Server": "devin-openai-shim/2 ",
+    "Date": "Thu, 15 Oct 2026 14:33:22 GMT",
+    "Content-Type": "text/event-stream",
+    "Cache-Control": "no-cache",
+    "Connection": "close"
+  },
+  "content_type": "text/event-stream",
+  "content": "Navy and cobalt tints of a calm sky bring us comfort.",
+  "content_truncated": false,
+  "reasoning_chars": 371,
+  "reasoning_text": "I need a sentence describing blue without using the letter 'e' anywhere, which is tricky since words like \"blue\" and \"hue\" contain it. I'm testing phrases like \"cobalt\" and \"azure\" but those also sneak in an 'e', so I keep searching for e-free alternatives.\n\nFinally \"Navy and cobalt tints of a calm sky bring us comfort\" checks out letter by letter with no 'e' at all.\n\n",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": {
+    "prompt_tokens": 4,
+    "completion_tokens": 266,
+    "total_tokens": 270
+  },
+  "finish_reason": "stop",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 34,
+  "sse_line_count": 70,
+  "raw_preview": "data: {\"id\": \"chatcmpl-b1a7739dec1645cd99d4f536\", \"object\": \"chat.completion.chunk\", \"created\": 1792074802, \"model\": \"claude-opus-5-5-high\", \"choices\": [{\"index\": 0, \"delta\": {\"role\": \"assistant\", \"content\": \"\"}, \"finish_reason\": null}]}\ndata: {\"id\": \"chatcmpl-b1a7739dec1645cd99d4f536\", \"object\": \"chat.completion.chunk\", \"created\": 1792074802, \"model\": \"claude-opus-5-5-high\", \"choices\": [{\"index\": 0, \"delta\": {\"reasoning_content\": \"I need\"}, \"finish_reason\": null}]}\ndata: {\"id\": \"chatcmpl-b1a7739dec1645cd99d4f536\", \"object\": \"chat.completion.chunk\", \"created\": 1792074802, \"model\": \"claude-opus-5-5-high\", \"choices\": [{\"index\": 0, \"delta\": {\"reasoning_content\": \" a sentence describ\"}, \"finish_reason\": null}]}\ndata: {\"id\": \"chatcmpl-b1a7739dec1645cd99d4f536\", \"object\": \"chat.completion.chunk\", \"created\": 1792074802, \"model\": \"claude-opus-5-5-high\", \"choices\": [{\"index\": 0, \"delta\": {\"reasoning_content\": \"ing blue without using the letter\"}, \"finish_reason\": null}]}\ndata: {\"id\": \"chatcmpl-b1a7739dec1645cd99d4f536\", \"object\": \"chat.completion.chunk\", \"created\": 1792074802, \"model\": \"claude-opus-5-5-high\", \"choices\": [{\"index\": 0, \"delta\": {\"reasoning_content\": \" \"}, \"finish_reason\": null}]}\ndata: {\"id\": \"chatcmpl-b1a7739dec1645cd99d4f536\", \"object\": \"chat.completion.chunk\", \"created\": 1792074802, \"model\": \"claude-opus-5-5-high\", \"choices\": [{\"index\": 0, \"delta\": {\"reasoning_content\": \"'e' an\"}, \"finish_reason\": null}]}\ndata: {\"id\": \"chatcmpl-b1a7739dec1645cd99d4f536\", \"object\": \"chat.completion.chunk\", \"created\": 1792074802, \"model\": \"claude-opus-5-5-high\", \"choices\": [{\"index\": 0, \"delta\": {\"reasoning_content\": \"ywhere, which\"}, \"finish_reason\": null}]}\ndata: {\"id\": \"chatcmpl-b1a7739dec1645cd99d4f536\", \"object\": \"chat.completion.chunk\", \"created\": 1792074802, \"model\": \"claude-opus-5-5-high\", \"choices\": [{\"index\": 0, \"delta\": {\"reasoning_content\": \" is tricky since words like \\\"\"}, \"finish_reason\": null}]}\ndata: {\"id\": \"chatcmpl-b1a7739dec1645cd99d4f536\", \"object\": \"chat.completion.chunk\", \"created\": 1792074802, \"model\": \"claude-opus-5-5-high\", \"choices\": [{\"index\": 0, \"delta\": {\"reasoning_content\": \"blue\\\" and \\\"hue\\\"\"}, \"finish_reason\": null}]}\ndata: {\"id\": \"chatcmpl-b1a7739dec1645cd99d4f536\", \"object\": \"chat.completion.chunk\", \"created\": 1792074802, \"model\": \"claude-opus-5-5-high\", \"choices\": [{\"index\": 0, \"delta\": {\"reasoning_content\": \" cont\"}, \"finish_reason\": null}]}\ndata: {\"id\": \"chatcmpl-b1a7739dec1645cd99d4f536\", \"object\": \"chat.completion.chunk\", \"created\": 1792074802, \"model\": \"claude-opus-5-5-high\", \"choices\": [{\"index\": 0, \"delta\": {\"reasoning_content\": \"ain it. I'm test\"}, \"finish_reason\": null}]}\ndata: {\"id\": \"chatcmpl-b1a7739dec1645cd99d4f536\", \"object\": \"chat.completion.chunk\", \"created\": 1792074802, \"model\": \"claude-opus-5-5-high\", \"choices\": [{\"index\": 0, \"delta\": {\"reasoning_content\": \"ing ph\"}, \"finish_reason\": null}]}\ndata: {\"id\": \"chatcmpl-b1a7739dec1645cd99d4f536\", \"object\": \"chat.completion.chunk\", \"created\": 1792074802, \"model\": \"claude-opus-5-5-high\", \"choices\": [{\"index\": 0, \"delta\": {\"reasoning_content\": \"rases like \\\"c\"}, \"finish_reason\": null}]}\ndata: {\"id\": \"chatcmpl-b1a7739dec1645cd99d4f536\", \"object\": \"chat.completion.chunk\", \"created\": 1792074802, \"model\": \"claude-opus-5-5-high\", \"choices\": [{\"index\": 0, \"delta\": {\"reasoning_content\": \"obalt\\\"\"}, \"finish_reason\": null}]}\ndata: {\"id\": \"chatcmpl-b1a7739dec1645cd99d4f536\", \"object\": \"chat.completion.chunk\", \"created\": 1792074802, \"model\": \"claude-opus-5-5-high\", \"choices\": [{\"index\": 0, \"delta\": {\"reasoning_content\": \" and\"}, \"finish_reason\": null}]}\ndata: {\"id\": \"chatcmpl-b1a7739dec1645cd99d4f536\", \"object\": \"chat.completion.chunk\", \"created\": 1792074802, \"model\": \"claude-opus-5-5-high\", \"choices\": [{\"index\": 0, \"delta\": {\"reasoning_content\": \" \\\"azure\\\" but those also s\"}, \"finish_reason\": null}]}\ndata: {\"id\": \"chatcmpl-b1a7739dec1645cd99d4f536\", \"object\": \"chat.completion.chunk\", \"created\": 1792074802, \"model\": \"claude-opus-5-5-high\", \"choices\": [{\"index\": 0, \"delta\": {\"reasoning_content\": \"neak in an 'e',\"}, \"finish_reason\": null}]}\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "constraint held",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T14:33:28Z",
+  "ttft_content_ms": 13424,
+  "ttft_reasoning_ms": 13289,
+  "first_decoded_ms": 13424,
+  "decode_span_ms": 0,
+  "tps": null,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": "not derivable: stream was not incrementally flushed (decode span 0 ms < 50 ms)",
+  "completion_tokens": 266,
+  "prompt_tokens": 4,
+  "reasoning_tokens": null,
+  "content_delta_count": 3,
+  "reasoning_delta_count": 29
+}
