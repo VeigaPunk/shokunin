@@ -1,0 +1,17 @@
+{
+  "lane": "kama",
+  "label": "after-tools_kama-probe.sh-consumers",
+  "round": 4,
+  "measured_revision": "ea72c3eae4ecc68dab2b0a08153c9c1d2e16df21",
+  "started_at": "2026-10-15T00:13:54.594562+00:00",
+  "finished_at": "2026-10-15T00:13:54.647959+00:00",
+  "argv": [
+    "bash",
+    "tools/kama-probe.sh",
+    "consumers"
+  ],
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "id                    | consumer                              | declared                                   | resolved_from_file                         | file_match | resolver_kind | endpoint                                   | port  | verdict | served_model\nomp-llama-cpp-default | ~/.local/bin/omp                      | http://127.0.0.1:8080                      | LLAMA_CPP_BASE_URL                         | inherited  | raw           | http://127.0.0.1:8080                      | 8080  | DEAD    | -\nufo-fsd-thetick       | $UFO_SRC/config/the-tick.machine.json | http://127.0.0.1:34113/v1/chat/completions | http://127.0.0.1:34113/v1/chat/completions | yes        | url           | http://127.0.0.1:34113/v1/chat/completions | 34113 | DEAD    | -\nufo-fsd-local-helper  | $UFO_SRC/scripts/local-helper.mjs     | http://127.0.0.1:34113                     | http://127.0.0.1:34113                     | yes        | url           | http://127.0.0.1:34113                     | 34113 | DEAD    | -\nconsumer_rows_evaluated=3 exit=0\n",
+  "stderr": ""
+}

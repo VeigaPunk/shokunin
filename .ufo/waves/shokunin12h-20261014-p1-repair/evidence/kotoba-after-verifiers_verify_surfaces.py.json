@@ -1,0 +1,16 @@
+{
+  "lane": "kotoba",
+  "label": "after-verifiers_verify_surfaces.py",
+  "round": 19,
+  "measured_revision": "02302c521b933c55fc4be79193e61537e3380751",
+  "started_at": "2026-10-15T00:14:07.677185+00:00",
+  "finished_at": "2026-10-15T00:14:12.149551+00:00",
+  "argv": [
+    "python3",
+    "verifiers/verify_surfaces.py"
+  ],
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "PASS surfaces.literal_present: 38 loader-kind entries verified against the dumps\nPASS surfaces.no_uncovered_class: all 8 extracted loader class(es) declared\nPASS surfaces.opencode_extract: opencode extraction 5/5 declared class(es) from 6/6 rules (OC-1, OC-2, OC-3, OC-4, OC-5, OC-6)\nPASS surfaces.table_parity: inventory id set == baseline id set (38 ids)\nPASS surfaces.literal_parity: 38 inventory row literal(s) match the baseline per id\nPASS surfaces.kind_parity: 38 inventory row kind(s) match the baseline per id\nPASS surfaces.excluded_reason: 9 excluded entries, all reasoned and listed in the inventory\n",
+  "stderr": ""
+}

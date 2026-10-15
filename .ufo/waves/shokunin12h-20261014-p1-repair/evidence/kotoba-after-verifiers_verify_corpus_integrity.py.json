@@ -1,0 +1,16 @@
+{
+  "lane": "kotoba",
+  "label": "after-verifiers_verify_corpus_integrity.py",
+  "round": 19,
+  "measured_revision": "02302c521b933c55fc4be79193e61537e3380751",
+  "started_at": "2026-10-15T00:14:07.613792+00:00",
+  "finished_at": "2026-10-15T00:14:07.675991+00:00",
+  "argv": [
+    "python3",
+    "verifiers/verify_corpus_integrity.py"
+  ],
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "corpus.index    tracked=47 unindexed=0 stale=0 missing=0  (60 FILE-column patterns over 47 md files)\ncorpus.pointers report_dead=0/32 commit_total=27 unresolvable=0 nonhash=0 (shapes [relative=0, absolute=31, tilde=1, bare=0], quoted-excluded=2, pointer-excluded=8; sites in --json)\n           report_pointers_excluded: corpus/knowledge/cold-run-round11.md:100: .ufo/reports/round-1/<lane>.md\n           report_pointers_excluded: corpus/knowledge/cold-run-round11.md:142: .ufo/reports/round-1/<lane>.md\n           report_pointers_excluded: corpus/knowledge/cold-run-round11.md:148: <repo>/.ufo/reports/round-11/kotoba.md\n           report_pointers_excluded: corpus/knowledge/cold-run-round11.md:280: .ufo/reports/round-1/<lane>.md\n           report_pointers_excluded: corpus/knowledge/cold-run-round11.md:66: .ufo/reports/round-1/<lane>.md\n           report_pointers_excluded: corpus/knowledge/corpus-integrity-round11.md:116: .ufo/reports/round-1/<lane>.md\n           report_pointers_excluded: corpus/knowledge/corpus-integrity-round11.md:218: .ufo/reports/round-1/<lane>.md\n           report_pointers_excluded: corpus/knowledge/dispatch-prompt-audit-round7.md:42: .ufo/reports/round-1/<lane>.md\n           commit_quoted: corpus/knowledge/claim-census-round12.md:95: 4dd7753 (quoted meta-finding)\n           commit_quoted: corpus/lessons/round-6-aggregator-audit.md:45: round-N (quoted meta-finding)\n9/9 checks pass\n",
+  "stderr": ""
+}

@@ -1,0 +1,357 @@
+{
+  "kagi": [
+    {
+      "argv": [
+        "bash",
+        "corpus/claim-ledger.sh",
+        "citations"
+      ],
+      "exit": 0,
+      "tail": [
+        "LABELED corpus/lessons/round-5-aggregator-mirror-bare-path-and-unclosed-prereq.md:21 .ufo/reports/round-2/AGGREGATE.md (unresolved, labelled on its line)",
+        "CITATION_GATE: CLEAN (cites=912 docs=53 unresolved=0 ephemeral=0 labeled=13)"
+      ],
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "bash",
+        "corpus/claim-ledger.sh",
+        "docs"
+      ],
+      "exit": 0,
+      "tail": [
+        "DOC_AUDIT_RATIO: row_linked=18/21 floor=11 by_hand=3 duplicate_reasons=0",
+        "DOC_AUDIT: CLEAN (entries=21 row_linked=18 by_hand=3 undeclared=0 missing_ids=0 unpinned=0 duplicate_reasons=0)"
+      ],
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "bash",
+        "corpus/claim-ledger.sh",
+        "--selftest"
+      ],
+      "exit": 0,
+      "tail": [
+        "ok-case  97 defer-substrate-line               exit=0",
+        "SELFTEST: PASS (97 cases)"
+      ],
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "bash",
+        "corpus/drift-pins.sh",
+        "--selftest"
+      ],
+      "exit": 0,
+      "tail": [
+        "DRIFT_SELFTEST: PASS (13 cases)"
+      ],
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "bash",
+        "corpus/surface-census.sh",
+        "--selftest"
+      ],
+      "exit": 0,
+      "tail": [
+        "skip-case 16 verbs-break-injection              substrate-absent (handler not on PATH)",
+        "SELFTEST: PASS (16 cases)"
+      ],
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "bash",
+        "corpus/scope-gate.sh",
+        "--selftest"
+      ],
+      "exit": 0,
+      "tail": [
+        "SCOPE_SELFTEST: PASS (61 cases)"
+      ],
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "bash",
+        "corpus/op-ref-probe.sh",
+        "--selftest"
+      ],
+      "exit": 0,
+      "tail": [
+        "OP_REF_SELFTEST: PASS (29 cases)"
+      ],
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "bash",
+        "corpus/transcript-scan.sh",
+        "--selftest"
+      ],
+      "exit": 0,
+      "tail": [
+        "TRANSCRIPT_SCAN: HITS=1 (cells=888 patterns=32+5 warns=0 schema-absent=0) db=/tmp/tmp.W4s8ow6M9u/wal.db",
+        "SELFTEST OK (seeded hit + wal-resident hit detected; clean db passed)"
+      ],
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "bash",
+        "corpus/checklist-run.sh",
+        "--selftest"
+      ],
+      "exit": 0,
+      "tail": [
+        "CHECKLIST_SELFTEST: PASS (34 cases)"
+      ],
+      "stderr": ""
+    }
+  ],
+  "kake": [
+    {
+      "argv": [
+        "node",
+        "scripts/freshness-sweep.mjs",
+        "--selftest"
+      ],
+      "exit": 1,
+      "tail": [
+        "        got:    0 outside (regions B19,B1083,E1133,B1292,E1294)",
+        "selftest: 12/13 passed"
+      ],
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "node",
+        "scripts/freshness-sweep.mjs",
+        "--offline"
+      ],
+      "exit": 0,
+      "tail": [
+        "skipped(offline): \u00a7armed (all remote checks) \u00b7 \u00a7history (probe-history source absent \u2014 pin-declared) \u2014 complete=false, never counted as pass",
+        "VERDICT: OK (exit 0, partial: offline)"
+      ],
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "node",
+        "scripts/freshness-sweep.mjs",
+        "--json",
+        "--offline"
+      ],
+      "exit": 0,
+      "tail": [
+        "  ]",
+        "}"
+      ],
+      "stderr": ""
+    }
+  ],
+  "kama": [
+    {
+      "argv": [
+        "bash",
+        "tools/kama-probe.sh",
+        "consumers"
+      ],
+      "exit": 0,
+      "tail": [
+        "ufo-fsd-local-helper  | $UFO_SRC/scripts/local-helper.mjs     | http://127.0.0.1:34113                     | http://127.0.0.1:34113                     | yes        | url           | http://127.0.0.1:34113                     | 34113 | DEAD    | -",
+        "consumer_rows_evaluated=3 exit=0"
+      ],
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "bash",
+        "tools/kama-probe.sh",
+        "check"
+      ],
+      "exit": 2,
+      "tail": [
+        "ufo-fsd-local-helper  | $UFO_SRC/scripts/local-helper.mjs     | http://127.0.0.1:34113                     | DEAD    | connection-refused | -            | file=yes via url @34113; rc=7 Failed to connect to 127.0.0.1:34113 after 0 ms: Could not connect to server; GET /v1/models -> 000",
+        "registry_rows_evaluated=3 model_ok=0 drift=3 exit=2"
+      ],
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "bash",
+        "tools/kama-probe.sh",
+        "listeners"
+      ],
+      "exit": 0,
+      "tail": [
+        "39929 | loopback | -               | FOREIGN_SERVICE | non-2xx-non-model-http | -            | GET /v1/models -> 404 text/plain; charset=utf-8 (non-2xx HTTP from a non-model service); 404|text/plain; charset=utf-8 @ /",
+        "probed=5 model_endpoints=0 foreign_service=3 unauthorized_service=0 dead=2 not_http=0"
+      ],
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "bash",
+        "tools/test-snapshot.sh"
+      ],
+      "exit": 0,
+      "tail": [
+        "PASS symlinked history dir refused",
+        "RESULT pass=24 fail=0"
+      ],
+      "stderr": ""
+    }
+  ],
+  "kasegi": [
+    {
+      "argv": [
+        "python3",
+        "corpus/instruments/anchorcheck.py",
+        "SKILL.md"
+      ],
+      "exit": 0,
+      "tail": [
+        "LOST-RECORDED md:971 [lost-base] bounty-map/schema.json:35-51 (not checked)",
+        "LOST-RECORDED md:989 [lost-base] check-freshness.mjs:61 (not checked)"
+      ],
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "corpus/instruments/density.py",
+        "SKILL.md",
+        "--label",
+        "r20-recensus"
+      ],
+      "exit": 0,
+      "tail": [
+        "",
+        "Total path-citation instances: 645 across 18 blocks."
+      ],
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "corpus/instruments/resolve.py",
+        "."
+      ],
+      "exit": 0,
+      "tail": [
+        "wrote /home/vgpnk/Projects/shokunin/kasegi-shokunin/corpus/instruments/citation-survival.tsv",
+        "wrote /home/vgpnk/Projects/shokunin/kasegi-shokunin/corpus/instruments/citation-survival.md"
+      ],
+      "stderr": ""
+    }
+  ],
+  "kengaku": [
+    {
+      "argv": [
+        "python3",
+        "grader.py"
+      ],
+      "exit": 0,
+      "tail": [
+        "CHECKS n=733 mismatches=0 errata_pinned=1",
+        "VERDICT: PASS \u2014 stored evidence fully re-derives offline"
+      ],
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "grader.py",
+        "--selftest"
+      ],
+      "exit": 0,
+      "tail": [
+        "[selftest] PASS S7 r12 stats anchors (Page L / grade_seq / Brier-BSS / Newton): all known-value assertions hold",
+        "[selftest] ALL PASS"
+      ],
+      "stderr": ""
+    }
+  ],
+  "kotoba": [
+    {
+      "argv": [
+        "python3",
+        "verifiers/verify_corpus_integrity.py"
+      ],
+      "exit": 0,
+      "tail": [
+        "           commit_quoted: corpus/lessons/round-6-aggregator-audit.md:45: round-N (quoted meta-finding)",
+        "9/9 checks pass"
+      ],
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "verifiers/verify_surfaces.py"
+      ],
+      "exit": 0,
+      "tail": [
+        "PASS surfaces.kind_parity: 38 inventory row kind(s) match the baseline per id",
+        "PASS surfaces.excluded_reason: 9 excluded entries, all reasoned and listed in the inventory"
+      ],
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "verifiers/verify_skill_checklist.py"
+      ],
+      "exit": 1,
+      "tail": [
+        "PASS trigger.citation_resolves: evaluated 42 \u2014 42 repo-rooted citation token(s) resolve from the repo root",
+        "PASS governance.citation_resolves: evaluated 128 \u2014 128 governance citation token(s) resolve across 2 files; 6 quoted meta-finding(s), 3 schematic token(s) excluded"
+      ],
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "verifiers/verify_corpus_independent.py"
+      ],
+      "exit": 0,
+      "tail": [
+        "  ! corpus/lessons/round-6-aggregator-audit.md:45: round-N",
+        "exit 0"
+      ],
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "bash",
+        "verifiers/fault_injection_corpus.sh",
+        "--self-test"
+      ],
+      "exit": 0,
+      "tail": [
+        "self-test T3 must-not-fire assertion accepts clean world: PASS",
+        "self-test: OK"
+      ],
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "verifiers/verify_harness_claims.py",
+        "--self-test"
+      ],
+      "exit": 0,
+      "tail": [
+        "self-test: 0 failure(s) over 10 assertions"
+      ],
+      "stderr": ""
+    }
+  ]
+}
