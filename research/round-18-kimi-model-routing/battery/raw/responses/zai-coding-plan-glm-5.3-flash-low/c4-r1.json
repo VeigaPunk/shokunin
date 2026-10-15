@@ -1,0 +1,97 @@
+{
+  "pool_id": "zai-coding-plan/glm-5.3-flash-low",
+  "provider": "zai-coding-plan",
+  "model_id": "glm-5.3-flash",
+  "model_sent": "glm-5.3-flash",
+  "protocol": "openai",
+  "bucket": "FAST",
+  "base_url": "https://api.z.ai/api/coding/paas/v4",
+  "probe_id": "c4",
+  "probe_kind": "contract",
+  "rep": 1,
+  "measured": true,
+  "prompt": "How many times does the letter r appear in the word strawberry? Answer with one digit and nothing else.",
+  "max_tokens": 192,
+  "tools_sent": false,
+  "tool_choice": null,
+  "request_body": {
+    "model": "glm-5.3-flash",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "How many times does the letter r appear in the word strawberry? Answer with one digit and nothing else."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "url": "https://api.z.ai/api/coding/paas/v4/chat/completions",
+  "timeout_s": 120,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 2459,
+  "response_headers": {
+    "Date": "Thu, 15 Oct 2026 11:59:32 GMT",
+    "Content-Type": "text/event-stream;charset=UTF-8",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "Alt-Svc": "h3=\":443\"; ma=3600",
+    "Set-Cookie": "<redacted:len=17>",
+    "ga-traceid": "d3cf8f32c942415b450b3a756fad5d7f",
+    "Vary": "Origin",
+    "X-LOG-ID": "202610151959307c5c465b6d714e52",
+    "X-Request-ID": "8445972c-c652-41a9-9deb-d73ae5851091"
+  },
+  "content_type": "text/event-stream;charset=UTF-8",
+  "content": "3",
+  "content_truncated": false,
+  "reasoning_chars": 138,
+  "reasoning_text": "The word is \"strawberry\". Let me count the r's: s-t-r-a-w-b-e-r-r-y.\n\nr appears at position 3, position 8, and position 9. That's 3 times.",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": {
+    "prompt_tokens": 33,
+    "completion_tokens": 51,
+    "total_tokens": 84,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 48
+    }
+  },
+  "finish_reason": "stop",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 50,
+  "sse_line_count": 102,
+  "raw_preview": "data: {\"id\":\"202610151959307c5c465b6d714e52\",\"created\":1792065570,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"The\"}}]}\ndata: {\"id\":\"202610151959307c5c465b6d714e52\",\"created\":1792065570,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" word\"}}]}\ndata: {\"id\":\"202610151959307c5c465b6d714e52\",\"created\":1792065570,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" is\"}}]}\ndata: {\"id\":\"202610151959307c5c465b6d714e52\",\"created\":1792065570,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" \\\"\"}}]}\ndata: {\"id\":\"202610151959307c5c465b6d714e52\",\"created\":1792065570,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"str\"}}]}\ndata: {\"id\":\"202610151959307c5c465b6d714e52\",\"created\":1792065570,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"aw\"}}]}\ndata: {\"id\":\"202610151959307c5c465b6d714e52\",\"created\":1792065570,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"berry\"}}]}\ndata: {\"id\":\"202610151959307c5c465b6d714e52\",\"created\":1792065570,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"\\\".\"}}]}\ndata: {\"id\":\"202610151959307c5c465b6d714e52\",\"created\":1792065570,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" Let\"}}]}\ndata: {\"id\":\"202610151959307c5c465b6d714e52\",\"created\":1792065570,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" me\"}}]}\ndata: {\"id\":\"202610151959307c5c465b6d714e52\",\"created\":1792065570,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" count\"}}]}\ndata: {\"id\":\"202610151959307c5c465b6d714e52\",\"created\":1792065570,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" the\"}}]}\ndata: {\"id\":\"202610151959307c5c465b6d714e52\",\"created\":1792065570,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" r\"}}]}\ndata: {\"id\":\"202610151959307c5c465b6d714e52\",\"created\":1792065570,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"'s\"}}]}\ndata: {\"id\":\"202610151959307c5c465b6d714e52\",\"created\":1792065570,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\":\"}}]}\ndata: {\"id\":\"202610151959307c5c465b6d714e52\",\"created\":1792065570,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" s\"}}]}\ndata: {\"id\":\"202610151959307c5c465b6d714e52\",\"created\":1792065570,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"-t\"}}]}\ndata: {\"id\":\"202610151959307c5c465b6d714e52\",\"created\":1792065570,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"-r\"}}]}\ndata: {\"id\":\"202610151959307c5c465b6d714e52\",\"created\":1792065570,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"-a\"}}]}\ndata: {\"id\":\"202610151959307c5c465b6d714e52\",\"created\":1792065570,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"-w\"}}]}\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "exact match",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T11:59:32Z",
+  "ttft_content_ms": 2459,
+  "ttft_reasoning_ms": 2459,
+  "first_decoded_ms": 2459,
+  "decode_span_ms": null,
+  "tps": null,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": "not derivable: no incremental deltas or fewer than 2 tokens",
+  "completion_tokens": 51,
+  "prompt_tokens": 33,
+  "reasoning_tokens": 48,
+  "content_delta_count": 1,
+  "reasoning_delta_count": 48
+}

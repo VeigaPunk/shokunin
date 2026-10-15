@@ -1,0 +1,89 @@
+{
+  "pool_id": "openai-codex/gpt-6.1-sol",
+  "provider": "openai-codex",
+  "model_id": "gpt-6.1-sol",
+  "model_sent": "gpt-6.1-sol-good",
+  "protocol": "openai_responses",
+  "bucket": "STRONG",
+  "base_url": "http://127.0.0.1:8799",
+  "probe_id": "c3",
+  "probe_kind": "contract",
+  "rep": 1,
+  "measured": true,
+  "prompt": "Write exactly three lines, nothing before or after. Line 1: ALPHA. Line 2: BETA. Line 3: GAMMA.",
+  "max_tokens": 192,
+  "tools_sent": false,
+  "tool_choice": null,
+  "request_body": {
+    "model": "gpt-6.1-sol-good",
+    "stream": true,
+    "max_output_tokens": 192,
+    "input": [
+      {
+        "type": "message",
+        "role": "user",
+        "content": [
+          {
+            "type": "input_text",
+            "text": "Write exactly three lines, nothing before or after. Line 1: ALPHA. Line 2: BETA. Line 3: GAMMA."
+          }
+        ]
+      }
+    ],
+    "store": false
+  },
+  "url": "http://127.0.0.1:8799/responses",
+  "timeout_s": 8,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 7,
+  "response_headers": {
+    "Server": "BaseHTTP/0.6 Python/3.14.7",
+    "Date": "Thu, 15 Oct 2026 11:56:59 GMT",
+    "Content-Type": "text/event-stream",
+    "Cache-Control": "no-cache",
+    "Transfer-Encoding": "chunked"
+  },
+  "content_type": "text/event-stream",
+  "content": "ALPHA\nBETA\nGAMMA",
+  "content_truncated": false,
+  "reasoning_chars": 0,
+  "reasoning_text": "",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": {
+    "input_tokens": 24,
+    "output_tokens": 4,
+    "total_tokens": 28
+  },
+  "finish_reason": null,
+  "response_status": "completed",
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 3,
+  "sse_line_count": 6,
+  "raw_preview": "data: {\"type\": \"response.created\", \"response\": {\"id\": \"resp_mock\"}}\ndata: {\"type\": \"response.output_text.delta\", \"delta\": \"ALPHA\\nBETA\\nGAMMA\"}\ndata: {\"type\": \"response.completed\", \"response\": {\"id\": \"resp_mock\", \"status\": \"completed\", \"output\": [{\"type\": \"message\", \"role\": \"assistant\", \"content\": [{\"type\": \"output_text\", \"text\": \"ALPHA\\nBETA\\nGAMMA\"}]}], \"usage\": {\"input_tokens\": 24, \"output_tokens\": 4, \"total_tokens\": 28}}}\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "line match",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T11:56:59Z",
+  "ttft_content_ms": 0,
+  "ttft_reasoning_ms": null,
+  "first_decoded_ms": 0,
+  "decode_span_ms": null,
+  "tps": null,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": "not derivable: no incremental deltas or fewer than 2 tokens",
+  "completion_tokens": 4,
+  "prompt_tokens": 24,
+  "reasoning_tokens": null,
+  "content_delta_count": 1,
+  "reasoning_delta_count": 0
+}

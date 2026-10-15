@@ -1,0 +1,143 @@
+{
+  "pool_id": "xai-oauth/grok-4.5",
+  "provider": "xai-oauth",
+  "model_id": "grok-4.5",
+  "model_sent": "grok-4.5",
+  "protocol": "openai",
+  "bucket": "MIDDLE",
+  "base_url": "http://127.0.0.1:8790/v1",
+  "probe_id": "t1",
+  "probe_kind": "tool",
+  "rep": 1,
+  "measured": true,
+  "prompt": "What is the weather in Paris right now? Use the get_weather tool.",
+  "max_tokens": 192,
+  "tools_sent": true,
+  "tool_choice": "auto",
+  "request_body": {
+    "model": "grok-4.5",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "What is the weather in Paris right now? Use the get_weather tool."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    },
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "get_weather",
+          "description": "Get the current weather for a city.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "city": {
+                "type": "string",
+                "description": "City name"
+              }
+            },
+            "required": [
+              "city"
+            ]
+          }
+        }
+      }
+    ],
+    "tool_choice": "auto"
+  },
+  "url": "http://127.0.0.1:8790/v1/chat/completions",
+  "timeout_s": 300,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 1284,
+  "response_headers": {
+    "Server": "cloudflare",
+    "Date": "Thu, 15 Oct 2026 12:02:41 GMT",
+    "Content-Type": "text/event-stream",
+    "Cache-Control": "no-cache",
+    "x-zero-data-retention": "false",
+    "x-ratelimit-limit-tokens": "<redacted:len=8>",
+    "x-ratelimit-remaining-tokens": "<redacted:len=8>",
+    "x-ratelimit-limit-requests": "8300",
+    "x-ratelimit-remaining-requests": "8294",
+    "Strict-Transport-Security": "max-age=31536000",
+    "set-cookie": "<redacted:len=18>",
+    "cf-cache-status": "DYNAMIC",
+    "x-request-id": "0193c887-63ba-9269-b6fb-9c44e5f06cfa",
+    "x-data-retention": "general",
+    "traceparent": "00-2696265d11ac4b506fce595fc4aa01f0-a9731fcc0007f760-01",
+    "vary": "origin, access-control-request-method, access-control-request-headers",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "*",
+    "CF-RAY": "a4aead1a4c5414b1-GIG",
+    "Connection": "close"
+  },
+  "content_type": "text/event-stream",
+  "content": "",
+  "content_truncated": false,
+  "reasoning_chars": 0,
+  "reasoning_text": "",
+  "refusal_text": "",
+  "tool_calls": [
+    {
+      "id": "call-1161a892-d310-47fd-a9bf-895895570cfd-0",
+      "name": "get_weather",
+      "arguments": "{\"city\":\"Paris\"}"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 595,
+    "completion_tokens": 11,
+    "total_tokens": 629,
+    "prompt_tokens_details": {
+      "text_tokens": 595,
+      "audio_tokens": 0,
+      "image_tokens": 0,
+      "cached_tokens": 512
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 23,
+      "audio_tokens": 0,
+      "accepted_prediction_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "num_sources_used": 0,
+    "cost_in_usd_ticks": 1780240
+  },
+  "finish_reason": "tool_calls",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 3,
+  "sse_line_count": 8,
+  "raw_preview": "data: {\"id\":\"0193c887-63ba-9269-b6fb-9c44e5f06cfa\",\"object\":\"chat.completion.chunk\",\"created\":1792065760,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"tool_calls\":[{\"id\":\"call-1161a892-d310-47fd-a9bf-895895570cfd-0\",\"function\":{\"name\":\"get_weather\",\"arguments\":\"{\\\"city\\\":\\\"Paris\\\"}\"},\"index\":0,\"type\":\"function\"}]}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"0193c887-63ba-9269-b6fb-9c44e5f06cfa\",\"object\":\"chat.completion.chunk\",\"created\":1792065760,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{},\"finish_reason\":\"tool_calls\"}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"0193c887-63ba-9269-b6fb-9c44e5f06cfa\",\"object\":\"chat.completion.chunk\",\"created\":1792065760,\"model\":\"grok-4.5\",\"choices\":[],\"usage\":{\"prompt_tokens\":595,\"completion_tokens\":11,\"total_tokens\":629,\"prompt_tokens_details\":{\"text_tokens\":595,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":512},\"completion_tokens_details\":{\"reasoning_tokens\":23,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":1780240},\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: [DONE]\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "well-formed tool call",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T12:02:41Z",
+  "ttft_content_ms": null,
+  "ttft_reasoning_ms": null,
+  "first_decoded_ms": 1276,
+  "decode_span_ms": null,
+  "tps": null,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": "not derivable: no incremental deltas or fewer than 2 tokens",
+  "completion_tokens": 11,
+  "prompt_tokens": 595,
+  "reasoning_tokens": 23,
+  "content_delta_count": 0,
+  "reasoning_delta_count": 0
+}

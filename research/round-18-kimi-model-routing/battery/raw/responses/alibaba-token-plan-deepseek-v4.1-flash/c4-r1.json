@@ -1,0 +1,101 @@
+{
+  "pool_id": "alibaba-token-plan/deepseek-v4.1-flash",
+  "provider": "alibaba-token-plan",
+  "model_id": "deepseek-v4.1-flash",
+  "model_sent": "deepseek-v4.1-flash",
+  "protocol": "openai",
+  "bucket": "FAST",
+  "base_url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1",
+  "probe_id": "c4",
+  "probe_kind": "contract",
+  "rep": 1,
+  "measured": true,
+  "prompt": "How many times does the letter r appear in the word strawberry? Answer with one digit and nothing else.",
+  "max_tokens": 192,
+  "tools_sent": false,
+  "tool_choice": null,
+  "request_body": {
+    "model": "deepseek-v4.1-flash",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "How many times does the letter r appear in the word strawberry? Answer with one digit and nothing else."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1/chat/completions",
+  "timeout_s": 120,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 1693,
+  "response_headers": {
+    "content-type": "text/event-stream; charset=utf-8",
+    "grpc-encoding": "identity",
+    "grpc-accept-encoding": "gzip",
+    "x-envoy-upstream-service-time": "230",
+    "cache-control": "no-cache",
+    "date": "Thu, 15 Oct 2026 12:00:52 GMT",
+    "server": "istio-envoy",
+    "x-request-id": "2e6ae2c9-800e-4d4e-8d12-a7feca9d106f",
+    "req-cost-time": "230",
+    "req-arrive-time": "1792065652521",
+    "resp-start-time": "1792065652752",
+    "transfer-encoding": "chunked"
+  },
+  "content_type": null,
+  "content": "3",
+  "content_truncated": false,
+  "reasoning_chars": 334,
+  "reasoning_text": "We need answer only digit nothing else. Need count r in strawberry. \"strawberry\" letters s t r a w b e r r y? Let's spell: strawberry = s t r a w b e r r y. Contains r at position 3, and two r near end? Actually \"strawberry\": straw + berry. straw has r one. berry has rr two. Total 3. Answer with one digit and nothing else. final: 3.",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": {
+    "prompt_tokens": 51,
+    "total_tokens": 151,
+    "completion_tokens": 100,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "text_tokens": 51
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 98,
+      "text_tokens": 1
+    }
+  },
+  "finish_reason": "stop",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 32,
+  "sse_line_count": 66,
+  "raw_preview": "data: {\"model\":\"deepseek-v4.1-flash\",\"id\":\"chatcmpl-2e6ae2c9-800e-4d4e-8d12-a7feca9d106f\",\"created\":1792065652,\"object\":\"chat.completion.chunk\",\"usage\":null,\"choices\":[{\"logprobs\":null,\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\"\",\"role\":\"assistant\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-2e6ae2c9-800e-4d4e-8d12-a7feca9d106f\",\"object\":\"chat.completion.chunk\",\"created\":1792065652,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"We\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-2e6ae2c9-800e-4d4e-8d12-a7feca9d106f\",\"object\":\"chat.completion.chunk\",\"created\":1792065652,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" need answer only digit\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-2e6ae2c9-800e-4d4e-8d12-a7feca9d106f\",\"object\":\"chat.completion.chunk\",\"created\":1792065652,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" nothing\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-2e6ae2c9-800e-4d4e-8d12-a7feca9d106f\",\"object\":\"chat.completion.chunk\",\"created\":1792065652,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" else. Need count r\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-2e6ae2c9-800e-4d4e-8d12-a7feca9d106f\",\"object\":\"chat.completion.chunk\",\"created\":1792065652,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" in strawberry. \\\"\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-2e6ae2c9-800e-4d4e-8d12-a7feca9d106f\",\"object\":\"chat.completion.chunk\",\"created\":1792065652,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"strawberry\\\" letters s\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-2e6ae2c9-800e-4d4e-8d12-a7feca9d106f\",\"object\":\"chat.completion.chunk\",\"created\":1792065652,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" t r a w b e\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-2e6ae2c9-800e-4d4e-8d12-a7feca9d106f\",\"object\":\"chat.completion.chunk\",\"created\":1792065652,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" r r y? Let's\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-2e6ae2c9-800e-4d4e-8d12-a7feca9d106f\",\"object\":\"chat.completion.chunk\",\"created\":1792065652,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" spell: strawberry\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-2e6ae2c9-800e-4d4e-8d12-a7feca9d106f\",\"object\":\"chat.completion.chunk\",\"created\":1792065652,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" =\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-2e6ae2c9-800e-4d4e-8d12-a7feca9d106f\",\"object\":\"chat.completion.chunk\",\"created\":1792065652,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" s t r a w b\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-2e6ae2c9-800e-4d4e-8d12-a7feca9d106f\",\"object\":\"chat.completion.chunk\",\"created\":1792065652,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" e r r y. Contains\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-2e6ae2c9-800e-4d4e-8d12-a7feca9d106f\",\"object\":\"chat.completion.chunk\",\"created\":1792065652,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" r at position\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-2e6ae2c9-800e-4d4e-8d12-a7feca9d106f\",\"object\":\"chat.completion.chunk\",\"created\":1792065652,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" 3, and\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "exact match",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T12:00:53Z",
+  "ttft_content_ms": 1691,
+  "ttft_reasoning_ms": 1263,
+  "first_decoded_ms": 1691,
+  "decode_span_ms": null,
+  "tps": null,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": "not derivable: no incremental deltas or fewer than 2 tokens",
+  "completion_tokens": 100,
+  "prompt_tokens": 51,
+  "reasoning_tokens": 98,
+  "content_delta_count": 1,
+  "reasoning_delta_count": 28
+}

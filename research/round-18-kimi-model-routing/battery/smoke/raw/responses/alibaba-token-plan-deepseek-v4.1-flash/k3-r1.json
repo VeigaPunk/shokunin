@@ -1,0 +1,86 @@
+{
+  "pool_id": "alibaba-token-plan/deepseek-v4.1-flash",
+  "provider": "alibaba-token-plan",
+  "model_id": "deepseek-v4.1-flash",
+  "model_sent": "deepseek-v4.1-flash-fences",
+  "protocol": "openai",
+  "bucket": "FAST",
+  "base_url": "http://127.0.0.1:8799",
+  "probe_id": "k3",
+  "probe_kind": "code",
+  "rep": 1,
+  "measured": true,
+  "prompt": "What does this Python expression evaluate to?\n\nsorted({3, 1, 2} | {5})\n\nAnswer with only the list, with no spaces.",
+  "max_tokens": 192,
+  "tools_sent": false,
+  "tool_choice": null,
+  "request_body": {
+    "model": "deepseek-v4.1-flash-fences",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "What does this Python expression evaluate to?\n\nsorted({3, 1, 2} | {5})\n\nAnswer with only the list, with no spaces."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "url": "http://127.0.0.1:8799/chat/completions",
+  "timeout_s": 8,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 6,
+  "response_headers": {
+    "Server": "BaseHTTP/0.6 Python/3.14.7",
+    "Date": "Thu, 15 Oct 2026 11:56:59 GMT",
+    "Content-Type": "text/event-stream",
+    "Cache-Control": "no-cache",
+    "Transfer-Encoding": "chunked"
+  },
+  "content_type": "text/event-stream",
+  "content": "```\n[1,2,3,5]\n```",
+  "content_truncated": false,
+  "reasoning_chars": 0,
+  "reasoning_text": "",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": {
+    "prompt_tokens": 48,
+    "completion_tokens": 4,
+    "total_tokens": 52
+  },
+  "finish_reason": "stop",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 3,
+  "sse_line_count": 8,
+  "raw_preview": "data: {\"choices\": [{\"delta\": {\"content\": \"```\\n[1,2,3,5]\\n```\"}, \"index\": 0}]}\ndata: {\"choices\": [{\"index\": 0, \"delta\": {}, \"finish_reason\": \"stop\"}]}\ndata: {\"choices\": [], \"usage\": {\"prompt_tokens\": 48, \"completion_tokens\": 4, \"total_tokens\": 52}}\ndata: [DONE]\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "exact match",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T11:56:59Z",
+  "ttft_content_ms": 0,
+  "ttft_reasoning_ms": null,
+  "first_decoded_ms": 0,
+  "decode_span_ms": null,
+  "tps": null,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": "not derivable: no incremental deltas or fewer than 2 tokens",
+  "completion_tokens": 4,
+  "prompt_tokens": 48,
+  "reasoning_tokens": null,
+  "content_delta_count": 1,
+  "reasoning_delta_count": 0
+}

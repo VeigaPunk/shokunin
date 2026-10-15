@@ -1,0 +1,101 @@
+{
+  "pool_id": "alibaba-token-plan/deepseek-v4.1-flash",
+  "provider": "alibaba-token-plan",
+  "model_id": "deepseek-v4.1-flash",
+  "model_sent": "deepseek-v4.1-flash",
+  "protocol": "openai",
+  "bucket": "FAST",
+  "base_url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1",
+  "probe_id": "k1",
+  "probe_kind": "code",
+  "rep": 1,
+  "measured": true,
+  "prompt": "Write a Python function named rev that takes a single string argument and returns that string reversed. Output only the function definition as plain Python code. No markdown fences, no explanation, no test calls, no example usage.",
+  "max_tokens": 192,
+  "tools_sent": false,
+  "tool_choice": null,
+  "request_body": {
+    "model": "deepseek-v4.1-flash",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Write a Python function named rev that takes a single string argument and returns that string reversed. Output only the function definition as plain Python code. No markdown fences, no explanation, no test calls, no example usage."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1/chat/completions",
+  "timeout_s": 120,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 1645,
+  "response_headers": {
+    "content-type": "text/event-stream; charset=utf-8",
+    "grpc-encoding": "identity",
+    "grpc-accept-encoding": "gzip",
+    "x-envoy-upstream-service-time": "237",
+    "cache-control": "no-cache",
+    "date": "Thu, 15 Oct 2026 12:00:56 GMT",
+    "server": "istio-envoy",
+    "x-request-id": "43cb562c-fecd-4864-8cf0-190ac5f9d628",
+    "req-cost-time": "237",
+    "req-arrive-time": "1792065656534",
+    "resp-start-time": "1792065656772",
+    "transfer-encoding": "chunked"
+  },
+  "content_type": null,
+  "content": "def rev(s):\n    return s[::-1]",
+  "content_truncated": false,
+  "reasoning_chars": 237,
+  "reasoning_text": "We need answer only function definition plain Python code. Need comply. No markdown. Function named rev takes single string argument returns reversed. Simple: def rev(s): return s[::-1]. Need output only. Ensure no markdown fences. final",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": {
+    "prompt_tokens": 74,
+    "total_tokens": 135,
+    "completion_tokens": 61,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "text_tokens": 74
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 50,
+      "text_tokens": 11
+    }
+  },
+  "finish_reason": "stop",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 21,
+  "sse_line_count": 44,
+  "raw_preview": "data: {\"model\":\"deepseek-v4.1-flash\",\"id\":\"chatcmpl-43cb562c-fecd-4864-8cf0-190ac5f9d628\",\"created\":1792065656,\"object\":\"chat.completion.chunk\",\"usage\":null,\"choices\":[{\"logprobs\":null,\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\"\",\"role\":\"assistant\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-43cb562c-fecd-4864-8cf0-190ac5f9d628\",\"object\":\"chat.completion.chunk\",\"created\":1792065656,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"We\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-43cb562c-fecd-4864-8cf0-190ac5f9d628\",\"object\":\"chat.completion.chunk\",\"created\":1792065656,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" need answer only function\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-43cb562c-fecd-4864-8cf0-190ac5f9d628\",\"object\":\"chat.completion.chunk\",\"created\":1792065656,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" definition plain\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-43cb562c-fecd-4864-8cf0-190ac5f9d628\",\"object\":\"chat.completion.chunk\",\"created\":1792065656,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" Python code\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-43cb562c-fecd-4864-8cf0-190ac5f9d628\",\"object\":\"chat.completion.chunk\",\"created\":1792065656,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\". Need comply\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-43cb562c-fecd-4864-8cf0-190ac5f9d628\",\"object\":\"chat.completion.chunk\",\"created\":1792065656,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\". No mark\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-43cb562c-fecd-4864-8cf0-190ac5f9d628\",\"object\":\"chat.completion.chunk\",\"created\":1792065656,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"down. Function named\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-43cb562c-fecd-4864-8cf0-190ac5f9d628\",\"object\":\"chat.completion.chunk\",\"created\":1792065656,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" rev takes\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-43cb562c-fecd-4864-8cf0-190ac5f9d628\",\"object\":\"chat.completion.chunk\",\"created\":1792065656,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" single string argument\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-43cb562c-fecd-4864-8cf0-190ac5f9d628\",\"object\":\"chat.completion.chunk\",\"created\":1792065656,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" returns reversed.\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-43cb562c-fecd-4864-8cf0-190ac5f9d628\",\"object\":\"chat.completion.chunk\",\"created\":1792065656,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" Simple: def\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-43cb562c-fecd-4864-8cf0-190ac5f9d628\",\"object\":\"chat.completion.chunk\",\"created\":1792065657,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" rev(s): return s[::-\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-43cb562c-fecd-4864-8cf0-190ac5f9d628\",\"object\":\"chat.completion.chunk\",\"created\":1792065657,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"1]. Need output\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-43cb562c-fecd-4864-8cf0-190ac5f9d628\",\"object\":\"chat.completion.chunk\",\"created\":1792065657,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" only. Ensure no markdown\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "3 cases pass",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T12:00:57Z",
+  "ttft_content_ms": 1644,
+  "ttft_reasoning_ms": 1292,
+  "first_decoded_ms": 1644,
+  "decode_span_ms": 0,
+  "tps": null,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": "not derivable: stream was not incrementally flushed (decode span 0 ms < 50 ms)",
+  "completion_tokens": 61,
+  "prompt_tokens": 74,
+  "reasoning_tokens": 50,
+  "content_delta_count": 2,
+  "reasoning_delta_count": 16
+}

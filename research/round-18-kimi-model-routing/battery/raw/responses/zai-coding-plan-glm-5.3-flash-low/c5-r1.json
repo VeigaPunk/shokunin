@@ -1,0 +1,97 @@
+{
+  "pool_id": "zai-coding-plan/glm-5.3-flash-low",
+  "provider": "zai-coding-plan",
+  "model_id": "glm-5.3-flash",
+  "model_sent": "glm-5.3-flash",
+  "protocol": "openai",
+  "bucket": "FAST",
+  "base_url": "https://api.z.ai/api/coding/paas/v4",
+  "probe_id": "c5",
+  "probe_kind": "contract",
+  "rep": 1,
+  "measured": true,
+  "prompt": "Write one short sentence about the color blue. Do not use the letter e (lower case or upper case) anywhere in your answer.",
+  "max_tokens": 192,
+  "tools_sent": false,
+  "tool_choice": null,
+  "request_body": {
+    "model": "glm-5.3-flash",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Write one short sentence about the color blue. Do not use the letter e (lower case or upper case) anywhere in your answer."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "url": "https://api.z.ai/api/coding/paas/v4/chat/completions",
+  "timeout_s": 120,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 4621,
+  "response_headers": {
+    "Date": "Thu, 15 Oct 2026 11:59:35 GMT",
+    "Content-Type": "text/event-stream;charset=UTF-8",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "Alt-Svc": "h3=\":443\"; ma=3600",
+    "Set-Cookie": "<redacted:len=17>",
+    "ga-traceid": "075d9f9b254443ea22494dd0f767c1f1",
+    "Vary": "Origin",
+    "X-LOG-ID": "2026101519593352c1cede15554db3",
+    "X-Request-ID": "c3ed5237-1385-43fc-aaeb-433cb04d31e7"
+  },
+  "content_type": "text/event-stream;charset=UTF-8",
+  "content": "",
+  "content_truncated": false,
+  "reasoning_chars": 644,
+  "reasoning_text": "The user wants one short sentence about the color blue, without using the letter \"e\" (lowercase or uppercase) anywhere in the answer.\n\nLet me think about words related to blue that don't contain \"e\":\n- Blue contains \"e\"! So I can't use the word \"blue\" itself... wait, \"blue\" = b-l-u-e. Yes, it has an \"e\". Hmm, that's tricky.\n- Wait, the constraint is not to use the letter \"e\" anywhere in my answer. So I can't write \"blue\" at all!\n\nHmm, but I need to write about the color blue. Can I refer to it indirectly? Words like:\n- Sky (s-k-y) - no \"e\"\n- Ocean (o-c-e-a-n) - has \"e\"\n- Sea - has \"e\"\n- Azure - has \"e\"\n- Sapphire - has \"e\"\n- Cobalt - no",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": {
+    "prompt_tokens": 39,
+    "completion_tokens": 192,
+    "total_tokens": 231,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 189
+    }
+  },
+  "finish_reason": "length",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 190,
+  "sse_line_count": 382,
+  "raw_preview": "data: {\"id\":\"2026101519593352c1cede15554db3\",\"created\":1792065573,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"The\"}}]}\ndata: {\"id\":\"2026101519593352c1cede15554db3\",\"created\":1792065573,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" user\"}}]}\ndata: {\"id\":\"2026101519593352c1cede15554db3\",\"created\":1792065573,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" wants\"}}]}\ndata: {\"id\":\"2026101519593352c1cede15554db3\",\"created\":1792065573,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" one\"}}]}\ndata: {\"id\":\"2026101519593352c1cede15554db3\",\"created\":1792065573,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" short\"}}]}\ndata: {\"id\":\"2026101519593352c1cede15554db3\",\"created\":1792065573,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" sentence\"}}]}\ndata: {\"id\":\"2026101519593352c1cede15554db3\",\"created\":1792065573,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" about\"}}]}\ndata: {\"id\":\"2026101519593352c1cede15554db3\",\"created\":1792065573,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" the\"}}]}\ndata: {\"id\":\"2026101519593352c1cede15554db3\",\"created\":1792065573,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" color\"}}]}\ndata: {\"id\":\"2026101519593352c1cede15554db3\",\"created\":1792065573,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" blue\"}}]}\ndata: {\"id\":\"2026101519593352c1cede15554db3\",\"created\":1792065573,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\",\"}}]}\ndata: {\"id\":\"2026101519593352c1cede15554db3\",\"created\":1792065573,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" without\"}}]}\ndata: {\"id\":\"2026101519593352c1cede15554db3\",\"created\":1792065573,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" using\"}}]}\ndata: {\"id\":\"2026101519593352c1cede15554db3\",\"created\":1792065573,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" the\"}}]}\ndata: {\"id\":\"2026101519593352c1cede15554db3\",\"created\":1792065573,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" letter\"}}]}\ndata: {\"id\":\"2026101519593352c1cede15554db3\",\"created\":1792065573,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" \\\"\"}}]}\ndata: {\"id\":\"2026101519593352c1cede15554db3\",\"created\":1792065573,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"e\"}}]}\ndata: {\"id\":\"2026101519593352c1cede15554db3\",\"created\":1792065573,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"\\\"\"}}]}\ndata: {\"id\":\"2026101519593352c1cede15554db3\",\"created\":1792065573,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" (\"}}]}\ndata: {\"id\":\"2026101519593352c1cede15554db3\",\"created\":1792065573,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"lower\"}}]}\n",
+  "grade": {
+    "pass": false,
+    "failure_class": "truncation",
+    "detail": "no content (finish_reason=length, reasoning_chars=644)",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T11:59:37Z",
+  "ttft_content_ms": null,
+  "ttft_reasoning_ms": 2769,
+  "first_decoded_ms": 2769,
+  "decode_span_ms": 1853,
+  "tps": 103.09,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": null,
+  "completion_tokens": 192,
+  "prompt_tokens": 39,
+  "reasoning_tokens": 189,
+  "content_delta_count": 0,
+  "reasoning_delta_count": 189
+}

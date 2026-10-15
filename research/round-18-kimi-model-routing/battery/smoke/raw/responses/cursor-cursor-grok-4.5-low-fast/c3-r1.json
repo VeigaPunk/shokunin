@@ -1,0 +1,22 @@
+{
+  "pool_id": "cursor/cursor-grok-4.5-low-fast",
+  "provider": "cursor",
+  "model_id": "cursor-grok-4.5-low-fast",
+  "protocol": "openai",
+  "bucket": "VERY-FAST",
+  "probe_id": "c3",
+  "probe_kind": "contract",
+  "rep": 1,
+  "measured": true,
+  "prompt": "Write exactly three lines, nothing before or after. Line 1: ALPHA. Line 2: BETA. Line 3: GAMMA.",
+  "max_tokens": 192,
+  "status": null,
+  "grade": {
+    "pass": false,
+    "failure_class": "skipped_after_fatal",
+    "detail": "two consecutive transport failures, last at perf (socket timeout after 8s)"
+  },
+  "skipped": true,
+  "skip_reason": "two consecutive transport failures, last at perf (socket timeout after 8s)",
+  "started_at_utc": "2026-10-15T11:57:14Z"
+}

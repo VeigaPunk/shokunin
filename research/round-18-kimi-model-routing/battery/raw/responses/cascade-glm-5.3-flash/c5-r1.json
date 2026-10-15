@@ -1,0 +1,86 @@
+{
+  "pool_id": "cascade/glm-5.3-flash",
+  "provider": "glm-flash-cascade",
+  "model_id": "glm-5.3-flash",
+  "model_sent": "glm-5.3-flash",
+  "protocol": "openai",
+  "bucket": "FAST",
+  "base_url": "http://127.0.0.1:8793/v1",
+  "probe_id": "c5",
+  "probe_kind": "contract",
+  "rep": 1,
+  "measured": true,
+  "prompt": "Write one short sentence about the color blue. Do not use the letter e (lower case or upper case) anywhere in your answer.",
+  "max_tokens": 192,
+  "tools_sent": false,
+  "tool_choice": null,
+  "request_body": {
+    "model": "glm-5.3-flash",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Write one short sentence about the color blue. Do not use the letter e (lower case or upper case) anywhere in your answer."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "url": "http://127.0.0.1:8793/v1/chat/completions",
+  "timeout_s": 400,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 5417,
+  "response_headers": {
+    "Server": "BaseHTTP/0.6 Python/3.14.7",
+    "Date": "Thu, 15 Oct 2026 11:59:49 GMT",
+    "Content-Type": "text/event-stream",
+    "Cache-Control": "no-cache",
+    "Connection": "close"
+  },
+  "content_type": "text/event-stream",
+  "content": "Cobalt is a calm, cool color that fills a sunny sky.",
+  "content_truncated": false,
+  "reasoning_chars": 0,
+  "reasoning_text": "",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": {
+    "prompt_tokens": 11743,
+    "completion_tokens": 493,
+    "total_tokens": 12236
+  },
+  "finish_reason": "stop",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 3,
+  "sse_line_count": 8,
+  "raw_preview": "data: {\"id\": \"chatcmpl-82d3ceb9670e4aa0bfe251ec\", \"object\": \"chat.completion.chunk\", \"created\": 1792065589, \"model\": \"glm-5-3-flash-max\", \"choices\": [{\"index\": 0, \"delta\": {\"role\": \"assistant\"}}]}\ndata: {\"id\": \"chatcmpl-82d3ceb9670e4aa0bfe251ec\", \"object\": \"chat.completion.chunk\", \"created\": 1792065589, \"model\": \"glm-5-3-flash-max\", \"choices\": [{\"index\": 0, \"delta\": {\"content\": \"Cobalt is a calm, cool color that fills a sunny sky.\"}}]}\ndata: {\"id\": \"chatcmpl-82d3ceb9670e4aa0bfe251ec\", \"object\": \"chat.completion.chunk\", \"created\": 1792065589, \"model\": \"glm-5-3-flash-max\", \"choices\": [{\"index\": 0, \"delta\": {}, \"finish_reason\": \"stop\"}], \"usage\": {\"prompt_tokens\": 11743, \"completion_tokens\": 493, \"total_tokens\": 12236}}\ndata: [DONE]\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "constraint held",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T11:59:49Z",
+  "ttft_content_ms": 5417,
+  "ttft_reasoning_ms": null,
+  "first_decoded_ms": 5417,
+  "decode_span_ms": null,
+  "tps": null,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": "not derivable: no incremental deltas or fewer than 2 tokens",
+  "completion_tokens": 493,
+  "prompt_tokens": 11743,
+  "reasoning_tokens": null,
+  "content_delta_count": 1,
+  "reasoning_delta_count": 0
+}

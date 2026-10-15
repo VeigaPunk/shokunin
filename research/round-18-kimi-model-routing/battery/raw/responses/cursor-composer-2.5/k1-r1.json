@@ -1,0 +1,81 @@
+{
+  "pool_id": "cursor/composer-2.5",
+  "provider": "cursor",
+  "model_id": "composer-2.5",
+  "model_sent": "composer-2.5",
+  "protocol": "openai",
+  "bucket": "VERY-FAST",
+  "base_url": "http://127.0.0.1:8788/v1",
+  "probe_id": "k1",
+  "probe_kind": "code",
+  "rep": 1,
+  "measured": true,
+  "prompt": "Write a Python function named rev that takes a single string argument and returns that string reversed. Output only the function definition as plain Python code. No markdown fences, no explanation, no test calls, no example usage.",
+  "max_tokens": 192,
+  "tools_sent": false,
+  "tool_choice": null,
+  "request_body": {
+    "model": "composer-2.5",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Write a Python function named rev that takes a single string argument and returns that string reversed. Output only the function definition as plain Python code. No markdown fences, no explanation, no test calls, no example usage."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "url": "http://127.0.0.1:8788/v1/chat/completions",
+  "timeout_s": 300,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 6916,
+  "response_headers": {
+    "Server": "BaseHTTP/0.6 Python/3.14.7",
+    "Date": "Thu, 15 Oct 2026 12:00:12 GMT",
+    "Content-Type": "text/event-stream",
+    "Content-Length": "620"
+  },
+  "content_type": "text/event-stream",
+  "content": "def rev(s):\n    return s[::-1]",
+  "content_truncated": false,
+  "reasoning_chars": 0,
+  "reasoning_text": "",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": null,
+  "finish_reason": "stop",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 3,
+  "sse_line_count": 8,
+  "raw_preview": "data: {\"id\": \"chatcmpl-42e8105085074663933b\", \"object\": \"chat.completion.chunk\", \"created\": 1792065612, \"model\": \"composer-2.5\", \"choices\": [{\"index\": 0, \"delta\": {\"role\": \"assistant\"}, \"finish_reason\": null}]}\ndata: {\"id\": \"chatcmpl-x\", \"object\": \"chat.completion.chunk\", \"created\": 1792065612, \"model\": \"composer-2.5\", \"choices\": [{\"index\": 0, \"delta\": {\"content\": \"def rev(s):\\n    return s[::-1]\"}, \"finish_reason\": null}]}\ndata: {\"id\": \"chatcmpl-x\", \"object\": \"chat.completion.chunk\", \"created\": 1792065612, \"model\": \"composer-2.5\", \"choices\": [{\"index\": 0, \"delta\": {}, \"finish_reason\": \"stop\"}]}\ndata: [DONE]\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "3 cases pass",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T12:00:12Z",
+  "ttft_content_ms": 6916,
+  "ttft_reasoning_ms": null,
+  "first_decoded_ms": 6916,
+  "decode_span_ms": null,
+  "tps": null,
+  "tps_basis": null,
+  "tps_note": "not derivable: no incremental deltas or fewer than 2 tokens",
+  "completion_tokens": null,
+  "prompt_tokens": null,
+  "reasoning_tokens": null,
+  "content_delta_count": 1,
+  "reasoning_delta_count": 0
+}

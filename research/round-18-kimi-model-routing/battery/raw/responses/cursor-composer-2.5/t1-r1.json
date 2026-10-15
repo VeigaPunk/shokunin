@@ -1,0 +1,103 @@
+{
+  "pool_id": "cursor/composer-2.5",
+  "provider": "cursor",
+  "model_id": "composer-2.5",
+  "model_sent": "composer-2.5",
+  "protocol": "openai",
+  "bucket": "VERY-FAST",
+  "base_url": "http://127.0.0.1:8788/v1",
+  "probe_id": "t1",
+  "probe_kind": "tool",
+  "rep": 1,
+  "measured": true,
+  "prompt": "What is the weather in Paris right now? Use the get_weather tool.",
+  "max_tokens": 192,
+  "tools_sent": true,
+  "tool_choice": "auto",
+  "request_body": {
+    "model": "composer-2.5",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "What is the weather in Paris right now? Use the get_weather tool."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    },
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "get_weather",
+          "description": "Get the current weather for a city.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "city": {
+                "type": "string",
+                "description": "City name"
+              }
+            },
+            "required": [
+              "city"
+            ]
+          }
+        }
+      }
+    ],
+    "tool_choice": "auto"
+  },
+  "url": "http://127.0.0.1:8788/v1/chat/completions",
+  "timeout_s": 300,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 13652,
+  "response_headers": {
+    "Server": "BaseHTTP/0.6 Python/3.14.7",
+    "Date": "Thu, 15 Oct 2026 12:00:40 GMT",
+    "Content-Type": "text/event-stream",
+    "Content-Length": "1467"
+  },
+  "content_type": "text/event-stream",
+  "content": "I don't have a `get_weather` tool in this session, so I'll look up Paris weather another way.\nI don't have a **`get_weather`** tool in this session. The tools available here are things like file search, shell commands, web fetch, and code editing \u2014 but no weather-specific tool is registered.\n\nI also tried to look it up another way (web search and a weather API), but those requests were blocked in this environment.\n\n**What you can do:**\n\n1. **If you expected a weather MCP server** \u2014 make sure it's configured and connected in Cursor (Settings \u2192 MCP). Once `get_weather` is available, ask again and I can call it directly.\n\n2. **Quick check yourself** \u2014 [wttr.in/Paris](https://wttr.in/Paris) or any weather app/site for Paris will show current conditions.\n\nIf you add or enable the weather tool, send another message and I'll use it for Paris.",
+  "content_truncated": false,
+  "reasoning_chars": 0,
+  "reasoning_text": "",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": null,
+  "finish_reason": "stop",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 3,
+  "sse_line_count": 8,
+  "raw_preview": "data: {\"id\": \"chatcmpl-187c2bd25db946e6b1fa\", \"object\": \"chat.completion.chunk\", \"created\": 1792065640, \"model\": \"composer-2.5\", \"choices\": [{\"index\": 0, \"delta\": {\"role\": \"assistant\"}, \"finish_reason\": null}]}\ndata: {\"id\": \"chatcmpl-x\", \"object\": \"chat.completion.chunk\", \"created\": 1792065640, \"model\": \"composer-2.5\", \"choices\": [{\"index\": 0, \"delta\": {\"content\": \"I don't have a `get_weather` tool in this session, so I'll look up Paris weather another way.\\nI don't have a **`get_weather`** tool in this session. The tools available here are things like file search, shell commands, web fetch, and code editing \\u2014 but no weather-specific tool is registered.\\n\\nI also tried to look it up another way (web search and a weather API), but those requests were blocked in this environment.\\n\\n**What you can do:**\\n\\n1. **If you expected a weather MCP server** \\u2014 make sure it's configured and connected in Cursor (Settings \\u2192 MCP). Once `get_weather` is available, ask again and I can call it directly.\\n\\n2. **Quick check yourself** \\u2014 [wttr.in/Paris](https://wttr.in/Paris) or any weather app/site for Paris will show current conditions.\\n\\nIf you add or enable the weather tool, send another message and I'll use it for Paris.\"}, \"finish_reason\": null}]}\ndata: {\"id\": \"chatcmpl-x\", \"object\": \"chat.completion.chunk\", \"created\": 1792065640, \"model\": \"composer-2.5\", \"choices\": [{\"index\": 0, \"delta\": {}, \"finish_reason\": \"stop\"}]}\ndata: [DONE]\n",
+  "grade": {
+    "pass": false,
+    "failure_class": "format_break",
+    "detail": "no tool_calls block emitted",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T12:00:40Z",
+  "ttft_content_ms": 13651,
+  "ttft_reasoning_ms": null,
+  "first_decoded_ms": 13651,
+  "decode_span_ms": null,
+  "tps": null,
+  "tps_basis": null,
+  "tps_note": "not derivable: no incremental deltas or fewer than 2 tokens",
+  "completion_tokens": null,
+  "prompt_tokens": null,
+  "reasoning_tokens": null,
+  "content_delta_count": 1,
+  "reasoning_delta_count": 0
+}

@@ -1,0 +1,101 @@
+{
+  "pool_id": "alibaba-token-plan/qwen3.8-flash",
+  "provider": "alibaba-token-plan",
+  "model_id": "qwen3.8-flash",
+  "model_sent": "qwen3.8-flash",
+  "protocol": "openai",
+  "bucket": "MIDDLE",
+  "base_url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1",
+  "probe_id": "c3",
+  "probe_kind": "contract",
+  "rep": 1,
+  "measured": true,
+  "prompt": "Write exactly three lines, nothing before or after. Line 1: ALPHA. Line 2: BETA. Line 3: GAMMA.",
+  "max_tokens": 192,
+  "tools_sent": false,
+  "tool_choice": null,
+  "request_body": {
+    "model": "qwen3.8-flash",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Write exactly three lines, nothing before or after. Line 1: ALPHA. Line 2: BETA. Line 3: GAMMA."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1/chat/completions",
+  "timeout_s": 120,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 3870,
+  "response_headers": {
+    "content-type": "text/event-stream; charset=utf-8",
+    "grpc-encoding": "identity",
+    "grpc-accept-encoding": "gzip",
+    "x-envoy-upstream-service-time": "1749",
+    "cache-control": "no-cache",
+    "date": "Thu, 15 Oct 2026 12:01:26 GMT",
+    "server": "istio-envoy",
+    "x-request-id": "ed1010ce-7960-46cf-b369-42999b18d6f3",
+    "req-cost-time": "1749",
+    "req-arrive-time": "1792065684666",
+    "resp-start-time": "1792065686415",
+    "transfer-encoding": "chunked"
+  },
+  "content_type": null,
+  "content": "ALPHA\nBETA\nGAMMA",
+  "content_truncated": false,
+  "reasoning_chars": 215,
+  "reasoning_text": "We need answer user's request: exactly three lines, nothing before or after. Line1 ALPHA, Line2 BETA, Line3 GAMMA. Final must be exactly those three lines. Ensure no extra whitespace? final can contain three lines.\n",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": {
+    "prompt_tokens": 91,
+    "total_tokens": 152,
+    "completion_tokens": 61,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "text_tokens": 91
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 49,
+      "text_tokens": 61
+    }
+  },
+  "finish_reason": "stop",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 22,
+  "sse_line_count": 46,
+  "raw_preview": "data: {\"model\":\"qwen3.8-flash\",\"id\":\"chatcmpl-ed1010ce-7960-46cf-b369-42999b18d6f3\",\"created\":1792065686,\"object\":\"chat.completion.chunk\",\"usage\":null,\"choices\":[{\"logprobs\":null,\"index\":0,\"delta\":{\"reasoning_content\":\"\",\"content\":\"\",\"role\":\"assistant\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-ed1010ce-7960-46cf-b369-42999b18d6f3\",\"object\":\"chat.completion.chunk\",\"created\":1792065686,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\"We\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-ed1010ce-7960-46cf-b369-42999b18d6f3\",\"object\":\"chat.completion.chunk\",\"created\":1792065686,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" need answer\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-ed1010ce-7960-46cf-b369-42999b18d6f3\",\"object\":\"chat.completion.chunk\",\"created\":1792065686,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" user's request:\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-ed1010ce-7960-46cf-b369-42999b18d6f3\",\"object\":\"chat.completion.chunk\",\"created\":1792065686,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" exactly three lines,\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-ed1010ce-7960-46cf-b369-42999b18d6f3\",\"object\":\"chat.completion.chunk\",\"created\":1792065686,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" nothing before or after\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-ed1010ce-7960-46cf-b369-42999b18d6f3\",\"object\":\"chat.completion.chunk\",\"created\":1792065686,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\". Line1 ALPHA\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-ed1010ce-7960-46cf-b369-42999b18d6f3\",\"object\":\"chat.completion.chunk\",\"created\":1792065686,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\", Line2\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-ed1010ce-7960-46cf-b369-42999b18d6f3\",\"object\":\"chat.completion.chunk\",\"created\":1792065686,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" BETA, Line\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-ed1010ce-7960-46cf-b369-42999b18d6f3\",\"object\":\"chat.completion.chunk\",\"created\":1792065686,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\"3 GAMMA.\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-ed1010ce-7960-46cf-b369-42999b18d6f3\",\"object\":\"chat.completion.chunk\",\"created\":1792065686,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" Final\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-ed1010ce-7960-46cf-b369-42999b18d6f3\",\"object\":\"chat.completion.chunk\",\"created\":1792065686,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" must be exactly those\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-ed1010ce-7960-46cf-b369-42999b18d6f3\",\"object\":\"chat.completion.chunk\",\"created\":1792065687,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" three lines. Ensure\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-ed1010ce-7960-46cf-b369-42999b18d6f3\",\"object\":\"chat.completion.chunk\",\"created\":1792065687,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" no\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-ed1010ce-7960-46cf-b369-42999b18d6f3\",\"object\":\"chat.completion.chunk\",\"created\":1792065687,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" extra whitespace? final\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "line match",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T12:01:27Z",
+  "ttft_content_ms": 3693,
+  "ttft_reasoning_ms": 2759,
+  "first_decoded_ms": 3693,
+  "decode_span_ms": 161,
+  "tps": 373.72,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": null,
+  "completion_tokens": 61,
+  "prompt_tokens": 91,
+  "reasoning_tokens": 49,
+  "content_delta_count": 3,
+  "reasoning_delta_count": 16
+}
