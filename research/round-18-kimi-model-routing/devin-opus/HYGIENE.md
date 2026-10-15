@@ -30,10 +30,11 @@ $ echo $?
 ```
 
 Run from `research/round-18-kimi-model-routing/devin-opus`. The scan covers
-`raw/` (36 requests were sent; 34 captures remain because the two pre-adapter
-attempts were overwritten by their corrected re-runs — their failure is preserved
-in `raw/run.log` and section 2 of `ANALYSIS.md`), `scripts/` (6 files, this
-checker included) and the three documents.
+`raw/` (36 requests were sent; **31 per-request captures** remain — the pre-adapter
+attempts' records were overwritten by their corrected re-runs: 2 real captures and
+10 skipped-probe rows from the first battery attempt, plus 3 captures from the
+first tool attempt. Their failure is preserved in `raw/run.log` and section 2 of
+`ANALYSIS.md`), `scripts/` (6 files, this checker included) and the three documents.
 
 ## What the scan checks
 

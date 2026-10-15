@@ -39,9 +39,10 @@ Splice-ready blocks for the operator to apply to `~/.kimi-code/config.toml` and 
 parses Block A, inserts Block B into M4's payload above its sentinel, and re-parses
 the result: pool 13 → 14 entries, pool id consistent across both blocks. Output:
 `raw/splice-verify.json`. The same pool id → served id resolution was exercised
-end-to-end by the measurement itself — `scripts/candidate-config.toml` carries
-exactly this `[models]` entry and the battery ran through it
-(`raw/telemetry.csv`, `raw/run-manifest.json`).
+end-to-end by the measurement itself — `scripts/candidate-config.toml` carries the
+same `[models]` entry minus `reasoning_key` (a response-parsing hint that never
+reaches the wire, so it is immaterial to the battery measurement), and the battery
+ran through that entry (`raw/telemetry.csv`, `raw/run-manifest.json`).
 
 ---
 
@@ -67,7 +68,7 @@ Field-by-field justification (all measured, M10 rounding):
 | `provider` | `devin` | the shim at `http://127.0.0.1:8787/v1` is the only path that serves this id |
 | `model` | `claude-opus-5-5-high` | the **exact** served id; `claude-opus-5.5`, `claude-opus-5-5` and `opus-5.5-high` all returned 403 `permission_denied` (`raw/id-*.json`) |
 | `max_context_size` | `1048576` | the backend's own catalog line: "claude-opus-5-5-high … [1M context, $4 / 1M Input … $20 / 1M Output]" (`raw/devin-models-opus.txt:30`); declared only — never transmitted (M2 s8) |
-| `capabilities` | `thinking`, `tool_use` | `reasoning_content` observed on 5 probes, well-formed `tool_calls` on 3 (M10 s5). **Not** `image_in` — never probed. **Not** `always_thinking` — c1 streamed no reasoning at all |
+| `capabilities` | `thinking`, `tool_use` | `reasoning_content` observed on 5 probes, well-formed `tool_calls` on 4 (M10 s5). **Not** `image_in` — never probed. **Not** `always_thinking` — c1 streamed no reasoning at all |
 | `reasoning_key` | `reasoning_content` | the shim emits `reasoning_content` deltas; without this the client drops them (the M2 DEF-10 class) |
 | `max_output_size` | *(omitted)* | not measured for this lane; M2's correction policy removes guessed caps rather than inventing them — with the field absent the openai path sends no cap and the server decides (M2 s3 rule 4) |
 | `support_efforts` / `default_effort` | *(omitted)* | would be inert: the shim has no `reasoning_effort` plumbing, and an invalid effort value returned 200 (`raw/effort-summary.json`). Effort on this lane is the **id suffix**, exactly as in the existing `devin/swe-2-high` / `devin/glm-5-3-flash-high` pins |
@@ -87,13 +88,13 @@ payload under `# --- STRONG ---`, directly after the two `openai-codex` lines an
 before the `# --- VERIFY-FIRST adds …` comment:
 
 ```toml
-"devin/opus-5.5-high" = "STRONG rank 3 (devin lane), HIGH effort pinned by served id suffix: measured TTFT 3079 ms, TPS 161.74 tok/s, 9/9 probes [M10 s3] -- throughput well above both codex STRONG lanes (2.3x), TTFT between the STRONG median 2545 ms and the MIDDLE median 4172 ms. 1M declared context. Tool-capable: well-formed get_weather call under tool_choice auto and required [M10 s5], so unlike the deepseek leg M2 measured, tool subtasks survive on this lane. Effort is the id itself: only claude-opus-5-5-high resolves (dot-form and bare id return 403) and the shim drops reasoning_effort entirely, so support_efforts on the entry would be inert [M10 s5]. Bills 4 prompt tokens per text call -- M1 D9's ~12k overhead did NOT reproduce for this model [M10 s4]. Cold start: first call answered in 1339 ms, but another client had used the shim 2.3 min earlier, so M1 D7's 180-300 s block is neither reproduced nor excluded -- expect a possible one-off stall on a genuinely idle lane [M10 s4]. Lane constraint: temperature 0 is rejected with 400 invalid_argument (the CLI never sends a temperature field, so live traffic is unaffected) [M10 s4]."
+"devin/opus-5.5-high" = "STRONG rank 3 (devin lane), HIGH effort pinned by served id suffix: measured TTFT 3079 ms, TPS 161.74 tok/s, 9/9 probes [M10 s3] -- throughput well above both codex STRONG lanes (2.3x), TTFT between the STRONG median 2545 ms and the MIDDLE median 4172 ms. Billed lane, unlike the free swe-2 pins: backend catalog prices it $4 / 1M input and $20 / 1M output over a 1M context ($8 / $40 for the -fast twins) [M10 s4]. Tool-capable: well-formed get_weather call under tool_choice auto and required [M10 s5], so unlike the deepseek leg M2 measured, tool subtasks survive on this lane. Effort is the id itself: only claude-opus-5-5-high resolves (dot-form and bare id return 403) and the shim drops reasoning_effort entirely, so support_efforts on the entry would be inert [M10 s5]. Bills 4 prompt tokens per text call -- M1 D9's ~12k overhead did NOT reproduce for this model [M10 s4]. Cold start: first call answered in 1339 ms, but another client had used the shim 2.3 min earlier, so M1 D7's 180-300 s block is neither reproduced nor excluded -- expect a possible one-off stall on a genuinely idle lane [M10 s4]. Lane constraint: temperature 0 is rejected with 400 invalid_argument (the CLI never sends a temperature field, so live traffic is unaffected) [M10 s4]."
 ```
 
 Companion ledger line for the file's EVIDENCE LEDGER block:
 
 ```toml
-# devin/opus-5.5-high             | STRONG       | add        | 3079 ms / 161.74 / 9-9 | ctx 1048576, no out cap | pinned high (id suffix; effort field inert) | M10 s3+s4+s5; cold start unreproduced but unexcluded (first call 1339 ms, lane not provably idle); discovery raw/devin-models-opus.txt
+# devin/opus-5.5-high             | STRONG       | add        | 3079 ms / 161.74 / 9-9 | ctx 1048576 (1M), no out cap, billed $4/1M in - $20/1M out | pinned high (id suffix; effort field inert) | M10 s3+s4+s5; cold start unreproduced but unexcluded (first call 1339 ms, lane not provably idle); discovery raw/devin-models-opus.txt
 ```
 
 And for the BUCKET SEMANTICS / STRONG cross-provider order section, the STRONG

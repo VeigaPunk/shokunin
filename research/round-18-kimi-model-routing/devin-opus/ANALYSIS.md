@@ -36,6 +36,16 @@ The authority is the CLI's own catalog:
 | live config | 9 `[models."devin/*"]` blocks, **0** opus matches | `raw/run.log` |
 | live probe of the candidate id | **200** — `claude-opus-5-5-high` answers through the shim | `raw/smoke-cold.json` |
 
+The family count is **54**, from the catalog's own header line
+(`Available models (54 families)`) and from a strict family-header match,
+`grep -cE '^[A-Za-z].*\([a-z0-9.-]+\)$' raw/devin-models-list.txt` → 54. A loose
+"name then parentheses anywhere on the line" pattern reports 56 because it also
+matches two lines that are not families: the header itself (line 1) and the closing
+usage note `Pass a family slug, alias, or model UID to --model (e.g. --model opus)`
+(line 959). `raw/run.log`'s `families: 56` line is that loose pattern's output from
+the M10 runner — an artefact of the count, not the count; the pattern is corrected
+in `scripts/run_all.sh` for future runs and the capture is left as it was taken.
+
 Mission's decision point — "if no opus-5.5 exists on the backend, STOP" — therefore
 resolves the other way: it exists, and the id spelling is **`claude-opus-5-5-high`**.
 The family label's dot form is not servable:
@@ -83,8 +93,11 @@ Two consequences, both material:
 
 The adapter's deviation is recorded inside `raw/run-manifest.json` under `adapter`
 so the capture set is self-describing. The first battery attempt (without the
-adapter) is preserved in `raw/run.log` as 12 × `format_break` — the failure is
-evidence, not a discarded run.
+adapter) is preserved in `raw/run.log`: **2 × `format_break`** (the warm-up and
+perf-r1 — the only two requests actually sent, both HTTP 400) followed by
+**10 × `skipped_after_fatal`** for the probes the one-attempt rule then withheld.
+The failure is evidence, not a discarded run; the shim journal confirms exactly two
+POSTs for that attempt (11:31:11).
 
 ## 3. Measurement
 
@@ -140,19 +153,22 @@ that to the devin leg as such. Here:
 
 | call shape | calls | prompt tokens billed |
 | --- | --- | --- |
-| text answer, no tools | 13 | **4** every time |
+| no tools sent (smoke, battery warm-up/perf/c1-c5/k1-k3, id, shape and effort probes, `tool-none`) | 20 | **4** every time |
 | 1 tool schema, `get_weather`, weather prompt | 3 | 395, 395, 395 |
 | 1 tool schema, "say hello" prompt | 1 | 381 |
-| 25 small tool schemas | 2 | 4 |
+| 25 small tool schemas | 2 | 4, 4 |
+
+Every accepted call in the run is accounted for: 20 + 3 + 1 + 2 = 26 HTTP 200s
+(plus 2 × 400 and 3 × 403, which carry no usage).
 
 So the tax belongs to the model M1 measured (`deepseek-v4-1-flash-high`), not to
 the lane, and on opus a text call bills 4 tokens. The 381–395 cells are a genuine
-open question: a **per-tool cost model is disproved** by the 25-schema cell (the
-model enumerated all 25 tool names in its answer — it had them — and billed 4).
-`raw/billing-summary.json`, `raw/toolcost-summary.json`, `raw/billing-*.json`. The
-mechanism is left unnamed rather than guessed; the number that matters for cost is
-that live text traffic bills 4, and the live client's own tool-carrying calls were
-not replicated.
+open question: a **per-tool cost model is disproved** by the 25-schema cells (the
+model enumerated all 25 tool names in its answer — it had them — and billed 4 both
+times). `raw/billing-summary.json`, `raw/toolcost-summary.json`, `raw/billing-*.json`.
+The mechanism is left unnamed rather than guessed; the number that matters for cost
+is that live text traffic bills 4, and the live client's own tool-carrying calls
+were not replicated.
 
 **Price.** The backend catalog prices this id at $4 / 1M input and $20 / 1M output
 (1M context), versus the swe-2 family's "Free" line — this is a *billed* devin
@@ -162,8 +178,10 @@ lane, unlike the swe-2 pins already in the config. `raw/devin-models-opus.txt:30
 
 **Tools: capable.** `tool_choice` `auto` and `required` both returned a
 well-formed call — `get_weather`, arguments `{"city": "Paris"}`, `finish_reason:
-tool_calls` — three times total (battery t1 plus `raw/tool-required.json`,
-`raw/tool-auto.json`); the no-tools control returned text. M2's "the devin leg is
+tool_calls` — on three calls (battery t1 plus `raw/tool-required.json`,
+`raw/tool-auto.json`), and a fourth well-formed call came back from a 25-schema
+probe (`m10_tool_07`, `raw/billing-call-25tools.json`); the no-tools control
+returned text. M2's "the devin leg is
 chat-only" finding does **not** carry to this entry: that verdict came from an
 earlier window on a different model (`glm-5-3-flash-max` prose on the cascade
 lane; direct devin probe unmeasurable). The role string therefore claims tool
@@ -203,17 +221,20 @@ pin), and the list of things the entry explicitly does not claim.
 - n=2 for TTFT/TPS; correctness is one draw per probe (M3 s9). Signals, not scores.
 - **36 chat requests**, one lane, one window, no retry loops. Accounting, from the
   shim journal (`journalctl --user -u devin-shim`, local 11:30:40–11:35:30): my 36
-  requests are 29 × 200, 6 × 400 (the two temperature-0 attempts: 2 battery-shape
-  + 1 shape-isolation pair + 3 tool probes) and 3 × 403 (the id-spelling probes).
-  Two further 200s at 11:37:01/11:37:04 belong to another client of the same shim.
-  **No foreign call falls inside the measurement window** (11:32:50–11:33:45 local):
-  the shim is shared, but the timings are uncontended.
+  requests are 27 × 200, 6 × 400 and 3 × 403 (the id-spelling probes). The 400s are
+  the two temperature-0 attempts — 2 from the first battery attempt, 2 from the
+  shape isolation (`shape-temp0`, `shape-temp0-streamopts`) and 2 from the first
+  tool attempt (`tool-required`, `tool-auto`; that attempt's `tool-none` control
+  returned 200 and is counted with the 200s). Two further 200s at
+  11:37:01/11:37:04 belong to another client of the same shim, which is why the
+  journal's 38-POST total is two more than mine; no foreign call falls inside the
+  measurement window (11:32:50–11:33:45 local), so the timings are uncontended.
 - The live client's 25–30-schema tool array was not replicated; the tool verdict
   rests on a single-schema probe plus one 25-schema probe whose *call* was correct.
 - Cold-start behaviour on a genuinely idle lane is untested: another client had
   used the shim 2.3 minutes before M10's first call.
 - The prompt-token mechanism on tool-carrying calls is unexplained (s4); the
-  text-call figure (4 tokens) is the one that holds across 13 calls.
+  no-tools figure (4 tokens) is the one that holds across all 20 such calls.
 - No image probe; no long-context probe; `max_context_size` is the backend's
   declared value, never transmitted.
 

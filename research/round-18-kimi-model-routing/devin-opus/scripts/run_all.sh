@@ -57,7 +57,10 @@ stage_discovery() {
     log "devin models list via $bin"
     timeout 120 "$bin" models list >"$RAW/devin-models-list.txt" 2>&1
     echo "exit: $?" >>"$LOG"
-    echo "families: $(grep -c '^[A-Za-z].*(.*)$' "$RAW/devin-models-list.txt" || true)" >>"$LOG"
+    # A family header is "Name (slug)" with nothing after it. The loose
+    # 'name then parens anywhere' form overcounts by 2: it also matches the file's
+    # own header line and its closing usage note (see ANALYSIS.md s1).
+    echo "families: $(grep -cE '^[A-Za-z].*\([a-z0-9.-]+\)$' "$RAW/devin-models-list.txt" || true)" >>"$LOG"
     grep -n -i -A 2 'opus' "$RAW/devin-models-list.txt" >"$RAW/devin-models-opus.txt" 2>&1 || true
   else
     log "devin CLI not found; skipping catalog capture"
