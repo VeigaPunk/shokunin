@@ -93,6 +93,7 @@ def main():
         "config_sha256_16": common.config_digest(cfg),
         "config_mtime": subprocess.run(["stat", "-c", "%y", path],
                                        capture_output=True, text=True).stdout.strip(),
+        "config_mode": oct(os.stat(path).st_mode & 0o777)[2:].zfill(4),
         "redaction": (
             "api_key values, Authorization header values and custom-header values are "
             "NOT present in this file; only presence/length/sha256 digest are recorded"

@@ -134,3 +134,12 @@ The allow-list is consulted *before* the "name contains a sensitive word" rule,
 because otherwise `x-ratelimit-limit-tokens` would be hidden merely for
 containing the word "token". `x-codex-turn-state` is an opaque per-turn blob and
 is excluded from the allow-list, so it is stored as a length marker only.
+
+## Companion check
+
+`scripts/hygiene_check.sh` guards *secrets*. Its sibling
+`scripts/verify_numbers.py` guards *provenance*: it extracts every number from
+`ANALYSIS.md` and fails if one appears in neither `manifest.json` nor a `raw/`
+capture. Review round 1 found two stale figures in the defect prose that this
+check now catches by construction, and it is the reason a cited file mode had to
+be captured as an artifact rather than read off a terminal once.

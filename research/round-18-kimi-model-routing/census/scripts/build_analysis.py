@@ -11,6 +11,7 @@ the capture it came from.
 """
 import json
 import os
+import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -158,6 +159,101 @@ def usage_rows():
 
 # ------------------------------------------------------------------ document
 
+def _mode_of(shims, unit):
+    """Recorded permission bits for a shim unit file, as inline code."""
+    entry = (shims.get("units") or {}).get(unit) or {}
+    mode = entry.get("unit_file_mode")
+    return "`%s`" % mode if mode else "not captured"
+
+
+def defect_facts():
+    """Values quoted inside the defect prose, read from the captures.
+
+    The defect list is prose, which is where stale figures hide: a re-run updates
+    the captures but not a sentence. Everything a defect asserts numerically is
+    pulled from here at generation time, so the prose cannot outlive its evidence.
+    Missing values render as "not captured" rather than silently keeping an old one.
+    """
+    facts = {}
+
+    # D2: `retry-after` and the reset timestamp the provider reports, for both
+    # exhausted token-plan lanes and for the fast-model recheck that confirmed the
+    # exhaustion is lane-wide.
+    sources = [
+        ("chat-alibaba-token-plan-2.json", "key2"),
+        ("chat-alibaba-token-plan-3.json", "key3"),
+        ("recheck-quota-lanes.json", "recheck_key2"),
+        ("recheck-quota-lanes.json", "recheck_key3"),
+    ]
+    for fname, slot in sources:
+        want = {"key2": "alibaba-token-plan-2", "key3": "alibaba-token-plan-3",
+                "recheck_key2": "alibaba-token-plan-2",
+                "recheck_key3": "alibaba-token-plan-3"}[slot]
+        data = load(fname, {}) or {}
+        for p in data.get("probes", []):
+            if p.get("provider") != want:
+                continue
+            for k, v in (p.get("response_headers") or {}).items():
+                if k.lower() == "retry-after":
+                    facts["retry_after_" + slot] = v
+            msg = (p.get("shape") or {}).get("error_message") or ""
+            m = re.search(r"reset at ([0-9]{2}-[0-9]{2} [0-9:]+ UTC)", msg)
+            if m:
+                facts["reset_" + slot] = m.group(1)
+            if "retry_after_" + slot in facts:
+                break
+
+    # D7: the devin streaming probe's own TTFT and completion-token count.
+    devin = load("stream-devin.json", {}) or {}
+    for p in devin.get("probes", []):
+        if p.get("status") == 200:
+            facts["devin_ttft_ms"] = p.get("ttft_content_ms")
+            facts["devin_completion_tokens"] = p.get("usage_completion_tokens")
+            break
+    return facts
+
+
+def _d2_detail(f):
+    def g(key):
+        return f.get(key, "not captured")
+    return (
+        "Chat on key 2 returns 429 `insufficient_quota` — \"Your token-plan 1-month quota "
+        "has been exhausted. The quota will reset at %s\" — with `retry-after: %s`. Key 3 "
+        "returns the same with a %s reset and `retry-after: %s`. Re-probing the *fast* "
+        "model each lane is routed to (`deepseek-v4.1-flash`) reproduces the 429 with "
+        "`retry-after: %s` and `%s`, so this is not flagship-model-specific. `GET /models` "
+        "still answers 200 on both keys, which means an endpoint listing is not evidence "
+        "of usable quota. The current config still lists "
+        "`alibaba-token-plan-2/deepseek-v4.1-flash` and its key-3 twin in "
+        "`[secondary_model.models]`, so subagent dispatch keeps landing on two dead lanes. "
+        "Evidence: `raw/chat-alibaba-token-plan-2.json`, "
+        "`raw/chat-alibaba-token-plan-3.json`, `raw/recheck-quota-lanes.json`."
+        % (g("reset_key2"), g("retry_after_key2"), g("reset_key3"), g("retry_after_key3"),
+           g("retry_after_recheck_key2"), g("retry_after_recheck_key3")))
+
+
+def _d2_fix(f):
+    return ("Remove or quarantine keys 2 and 3 from the secondary-model routing table "
+            "until their reset times (%s and %s), or make the cascade lanes absorb them."
+            % (f.get("reset_key2", "not captured"), f.get("reset_key3", "not captured")))
+
+
+def _d7_detail(f):
+    def g(key):
+        return f.get(key, "not captured")
+    return (
+        "On the first pass a minimal chat completion did not return within 180 s, nor "
+        "within a 300 s retry (`raw/recheck-devin-chat.json`). A later streaming probe "
+        "against the same shim returned 200 with TTFT %s ms and %s completion tokens "
+        "(`raw/stream-devin.json`), so the lane does work — the failure was a cold "
+        "`devin acp` start, not a dead path. `GET {base_url}/models` answers 200 and all "
+        "9 configured ids resolve. The practical consequence is that the first request "
+        "after the shim has been idle can block for minutes with no bound. Evidence: "
+        "`raw/chat-devin.json`, `raw/recheck-devin-chat.json`, `raw/stream-devin.json`, "
+        "`raw/shims.json`."
+        % (g("devin_ttft_ms"), g("devin_completion_tokens")))
+
+
 DEFECTS = [
     ("managed:kimi-code returns 401 on every endpoint; its OAuth token store is empty",
      "Both `GET {base_url}/models` and a minimal chat completion return HTTP 401 "
@@ -165,25 +261,18 @@ DEFECTS = [
      "`storage = \"file\"` with `key = \"oauth/kimi-code-env-0e4f99c69cc27850\"`, and that "
      "file exists but is 0 bytes, so no bearer token can be minted from it. Every one of "
      "the 4 configured models is therefore unreachable, including `default_model = "
-     "kimi-code/kimi-for-coding`. Evidence: `raw/models-managed-kimi-code.json`, "
-     "`raw/chat-managed-kimi-code.json`.",
+     "kimi-code/kimi-for-coding`. **Scope of this claim:** the lane is unreachable to any "
+     "client relying on the on-disk credential store — which is what this probe, and any "
+     "client started fresh from the config, does. A live session already holding a valid "
+     "in-memory token is not covered by this probe, so a working interactive `kimi` "
+     "session is not evidence against this finding. Evidence: "
+     "`raw/models-managed-kimi-code.json`, `raw/chat-managed-kimi-code.json`.",
      "Re-authenticate the kimi-code provider so the token store is populated, or point "
      "`default_model` at a lane that answers."),
 
     ("token-plan keys 2 and 3 are quota-exhausted for the whole lane",
-     "Chat on key 2 returns 429 `insufficient_quota` — \"Your token-plan 1-month quota "
-     "has been exhausted. The quota will reset at 10-23 16:00:00 UTC\" — with "
-     "`retry-after: 707927`. Key 3 returns the same with a 10-28 reset and "
-     "`retry-after: 1139926`. Re-probing the *fast* model each lane is routed to "
-     "(`deepseek-v4.1-flash`) reproduces the 429, so this is not flagship-model-specific. "
-     "`GET /models` still answers 200 on both keys, which means an endpoint listing is "
-     "not evidence of usable quota. The current config still lists "
-     "`alibaba-token-plan-2/deepseek-v4.1-flash` and its key-3 twin in "
-     "`[secondary_model.models]`, so subagent dispatch keeps landing on two dead lanes. "
-     "Evidence: `raw/chat-alibaba-token-plan-2.json`, "
-     "`raw/chat-alibaba-token-plan-3.json`, `raw/recheck-quota-lanes.json`.",
-     "Remove or quarantine keys 2 and 3 from the secondary-model routing table until "
-     "their reset dates (10-23 and 10-28), or make the cascade lanes absorb them."),
+     _d2_detail,
+     _d2_fix),
 
     ("Configured ids that the endpoint refuses: alibaba `glm-5`, zai `glm-5.3-highspeed`",
      "These ids are absent from their lane's `/models` listing, and a direct chat "
@@ -226,14 +315,7 @@ DEFECTS = [
      "must omit `temperature` and set `store: false`."),
 
     ("The devin chat path has an unbounded cold-start latency",
-     "On the first pass a minimal chat completion did not return within 180 s, nor "
-     "within a 300 s retry (`raw/recheck-devin-chat.json`). A later streaming probe "
-     "against the same shim returned 200 with TTFT 3984 ms and 61 completion tokens, so "
-     "the lane does work — the failure was a cold `devin acp` start, not a dead path. "
-     "`GET {base_url}/models` answers 200 and all 9 configured ids resolve. The "
-     "practical consequence is that the first request after the shim has been idle can "
-     "block for minutes with no bound. Evidence: `raw/chat-devin.json`, "
-     "`raw/recheck-devin-chat.json`, `raw/stream-devin.json`, `raw/shims.json`.",
+     _d7_detail,
      "Warm the shim on service start (or add a healthcheck that issues one throwaway "
      "turn), so the first real request does not pay the cold start."),
 
@@ -266,7 +348,9 @@ def render(manifest, models_by_provider):
         "probed live on the date recorded in `manifest.json`. Raw captures live in "
         "`raw/`; `manifest.json` is the redacted inventory. Every number below is read "
         "out of one of those files by `scripts/build_analysis.py`, so re-running the "
-        "probes and the generator reproduces this document.")
+        "probes and the generator reproduces this document — and "
+        "`scripts/verify_numbers.py` enforces that claim mechanically, failing if any "
+        "figure in this document appears in no capture.")
     add("")
     add("## 1. Inventory")
     add("")
@@ -314,6 +398,14 @@ def render(manifest, models_by_provider):
             "mid-run config edit shows up instead of silently invalidating the numbers."
             % (manifest.get("config_sha256_16"), manifest.get("config_mtime")))
     add("")
+    add("**How that digest is built** (it is easy to check the wrong way): it is "
+        "`sha256(json.dumps(parsed_toml, sort_keys=True))[:16]` — the sha256 of the "
+        "*parsed* TOML re-serialised with sorted keys, computed by "
+        "`scripts/common.py:config_digest()`. It is **not** the sha256 of the file's bytes, "
+        "so `sha256sum ~/.kimi-code/config.toml` will print a different value and that is "
+        "expected. `scripts/run_census.sh` prints both, labelled `file_sha256_16` and "
+        "`parsed_sha256_16`, so a reader can compare against whichever they have.")
+    add("")
     add("Because the config is live, treat the digest above as the census's identity: if "
         "`~/.kimi-code/config.toml` no longer hashes to it, re-run `scripts/run_census.sh` "
         "rather than trusting these tables.")
@@ -337,19 +429,36 @@ def render(manifest, models_by_provider):
         "(`raw/shims.json`, from `systemctl --user is-active|is-enabled` and `ss -ltnp`)."
         % len(shims["units"]))
     add("")
+    mapped = {int(p) for p in (shims.get("provider_port_map") or {})}
+    listening = set()
+    for row in shims.get("listener_rows_8780_8800", []):
+        m = re.search(r"127\.0\.0\.1:(\d+)", row)
+        if m:
+            listening.add(int(m.group(1)))
+    orphan = sorted(listening - mapped)
+    if orphan:
+        add("One further listener exists in the 8780-8800 range that no discovered shim "
+            "unit owns and no config provider points at: %s. It is recorded because a "
+            "stray listener on the shim port block is worth a glance, but nothing in the "
+            "config references it, so it is an observation rather than a defect. Evidence: "
+            "`raw/shims.json:listener_rows_8780_8800`."
+            % ", ".join("`127.0.0.1:%d`" % p for p in orphan))
+        add("")
     add("**Credential exposure found while capturing this table.** Two of the cascade "
         "shim unit files carry live API keys in commented-out `Environment=` lines — "
         "`glm-flash-shim.service` holds the zai-coding-plan key verbatim and "
-        "`ds-flash-shim.service` holds the opencode-go key. Both files are mode `0644`, "
-        "so the values sit outside the config's `0600` store; `~/.config` is a git "
-        "repository, though both units are currently untracked and the repo has no "
-        "remote, so they are not published. This is not a census artifact — the keys are "
-        "in `~/.config/systemd/user/`, outside this mission's scope — and it was filed as "
-        "a `vuln` TowerFinding rather than fixed here. `scripts/hygiene_check.sh` is what "
-        "surfaced it: the first run exited non-zero on `raw/shims.json` because the shim "
-        "probe had captured `systemctl --user cat` output verbatim. `probe_shims.py` now "
-        "redacts at capture time, so no census artifact contains those values. See "
-        "`HYGIENE.md`.")
+        "`ds-flash-shim.service` holds the opencode-go key. Their recorded modes are %s "
+        "and %s, against the config's own `%s`, so the values sit outside the credential "
+        "store's permissions; `~/.config` is a git repository, though both units are "
+        "currently untracked and the repo has no remote, so they are not published. This "
+        "is not a census artifact — the keys are in `~/.config/systemd/user/`, outside "
+        "this mission's scope — and it was filed as a `vuln` TowerFinding rather than "
+        "fixed here. `scripts/hygiene_check.sh` is what surfaced it: the first run exited "
+        "non-zero on `raw/shims.json` because the shim probe had captured "
+        "`systemctl --user cat` output verbatim. `probe_shims.py` now redacts at capture "
+        "time, so no census artifact contains those values. See `HYGIENE.md`."
+        % (_mode_of(shims, "glm-flash-shim.service"), _mode_of(shims, "ds-flash-shim.service"),
+           manifest.get("config_mode", "not captured")))
     add("")
 
     add("## 3. Census table")
@@ -397,7 +506,12 @@ def render(manifest, models_by_provider):
 
     add("## 4. Defects")
     add("")
+    facts = defect_facts()
     for i, (title, detail, fix) in enumerate(DEFECTS, start=1):
+        if callable(detail):
+            detail = detail(facts)
+        if callable(fix):
+            fix = fix(facts)
         add("### D%d. %s" % (i, title))
         add("")
         add(detail)
@@ -635,6 +749,7 @@ def render(manifest, models_by_provider):
     add("python3 scripts/probe_stream.py            # -> raw/stream-*.json  (TTFT/TPS)")
     add("python3 scripts/probe_usage.py             # -> raw/usage-*.json")
     add("python3 scripts/build_analysis.py          # -> ANALYSIS.md")
+    add("python3 scripts/verify_numbers.py          # every ANALYSIS.md figure traces to a capture")
     add("bash    scripts/hygiene_check.sh           # -> HYGIENE.md (0 hits expected)")
     add("```")
     add("")

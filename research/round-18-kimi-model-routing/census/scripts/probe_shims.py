@@ -102,6 +102,18 @@ def main():
         cat = run(["systemctl", "--user", "cat", unit])
         record["commands"].append(cat)
 
+        # Record the unit file's own path and permission bits: the census claims
+        # the cascade units hold credentials in a 0644 file, so the mode has to be
+        # a landed artifact rather than something read off a terminal once.
+        m_path = re.match(r"#\s*(\S+)", cat["stdout"] or "")
+        if m_path:
+            unit_file = m_path.group(1)
+            entry["unit_file"] = unit_file
+            try:
+                entry["unit_file_mode"] = oct(os.stat(unit_file).st_mode & 0o777)[2:].zfill(4)
+            except OSError as exc:
+                entry["unit_file_mode"] = "unreadable: %s" % type(exc).__name__
+
         # Port resolution, most authoritative first: the port the unit's own
         # MainPID is listening on, then an explicit SHIM_PORT env, then nothing.
         # Several shim units hardcode their port inside shim.py and export no
