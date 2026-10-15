@@ -9,7 +9,7 @@ reached disk.
 ```
 $ python3 scripts/hygiene_check.py .
 hygiene scan over .
-files scanned: 401
+files scanned: 402
 credentials checked: 12 (values never printed)
 hits: 0
 $ echo $?
@@ -18,7 +18,12 @@ $ echo $?
 
 Run from `research/round-18-kimi-model-routing/battery`. Exit status is the number of offending
 files, so 0 is a pass. The scan covers `raw/` (188 live captures + telemetry), `smoke/` (188 mock
-captures), every script, and every document in the tree.
+captures), every script, and every document in the tree — this one included.
+
+The output above is the run on the committed tree, and it reproduces. An earlier version of this
+document reported `hits: 0` over 401 files and did not reproduce: re-running the same command
+reported one hit, in this file. That is a documentation defect, not a leak, and it is recorded in
+full in *Self-reference* below.
 
 ## What the scan checks
 
@@ -32,6 +37,41 @@ The third check is not applied to `.py`/`.sh` sources, because the line that *bu
 (`headers[...] = AUTH_SCHEME + key`) is not a leak and matching it there is pure noise. A real key
 pasted into a script still trips the first two checks. This exclusion was added after the first run
 returned exactly one hit — `scripts/common.py`, the header builder — and nothing else.
+
+## Self-reference: the hit review round 1 found
+
+Review round 1 on this mission came back `fix-then-merge` with exactly one finding, documentation-only:
+the output recorded here said `hits: 0`, but re-running the identical command on the committed tree
+reported
+
+```
+files scanned: 402
+credentials checked: 12 (values never printed)
+hits: 1
+  HYGIENE.md: auth header carrying a value
+$ echo $?
+1
+```
+
+The cause was this document. An evidence line spelled the auth header name directly in front of a
+file path, and the third check in the table above — which looks for that header name followed by a
+separator and a token of twelve or more characters — matched the pair. The scanner was behaving
+exactly as designed; the document was wrong, not the tree. Three things complete the record:
+
+- **The earlier `0 hits` was honest when produced.** That run predates this file: it scanned 401
+  files, i.e. the tree as it stood before `HYGIENE.md` was written, which is why the count here is
+  one higher.
+- **The hit was benign.** It was the scan matching this document's own example text. No credential,
+  no capture and no measured value was involved; the reviewer verified independently that the tree
+  is secret-free.
+- **The fix removed the pattern, not the check.** The example line no longer places the header name
+  next to a path or a token, and `AUTH_VALUE_RE` in `scripts/hygiene_check.py` is unchanged. No
+  measured data, capture, grader or analysis file was touched.
+
+The rule to carry forward, because this trap will recur: **any text in this tree that spells the
+credential header name followed by a separator and a token of twelve or more characters will be
+reported — including text inside a document, and including text that a line break separates. That is
+the scanner working. Rewrite the example; do not relax the pattern.**
 
 ## Why the scan is 0 rather than "nothing was checked"
 
@@ -47,8 +87,10 @@ returned exactly one hit — `scripts/common.py`, the header builder — and not
 - **The auth scheme is never spelled in full** in this tree: `common.AUTH_SCHEME` is assembled from
   two fragments so that no artifact, including the scripts, carries the literal header spelling.
 - **Evidence that redaction ran.** Every raw capture records `auth_headers_sent` as header *names*
-  (e.g. `['Authorization']`) and `request_body` with values in place; `raw/telemetry.csv` has no
-  credential column at all (`grep -c Authorization raw/telemetry.csv` → 0).
+  (e.g. `['Authorization']`) and `request_body` with values in place. `raw/telemetry.csv` has no
+  credential column at all — counting that header name as a column in the CSV returns 0. The name is
+  not spelled here next to a path, because doing so is what tripped this document's own scanner in
+  review round 1 (see *Self-reference* above).
 
 ## Out of scope, already filed elsewhere
 
