@@ -391,7 +391,8 @@ check_pointer() {
     return 1
   fi
   if is_session_url "$ptr" || is_denylist_path "$ptr"; then
-    emit_finding SESSION_READ crit secrecy "ctx=$ctx path=$(ptr_file_part "$ptr") denied (not opened)"
+    # never print pointer/path bytes (query tokens); class only
+    emit_finding SESSION_READ crit secrecy "ctx=$ctx path_class=denylist_or_session_url denied (not opened)"
     return 1
   fi
   if is_ephemeral_ptr "$ptr"; then
@@ -401,18 +402,19 @@ check_pointer() {
   fi
   if is_url_ptr "$ptr"; then
     if [[ $APPROVAL_GRANTED -eq 1 && $WINDOW_EXTERNAL -eq 1 ]]; then return 0; fi
-    emit_finding EXTERNAL_WITHOUT_APPROVAL crit approval "ctx=$ctx url pointer without approved external window"
+    emit_finding EXTERNAL_WITHOUT_APPROVAL crit approval "ctx=$ctx ptr_class=url without approved external window"
     return 1
   fi
   # declared source id (S1, …) is a valid pointer once Sources pass filled SRC_TIER
   if [[ $ptr =~ ^S[A-Za-z0-9_-]+$ ]]; then
     if [[ -n ${SRC_TIER[$ptr]+x} ]]; then return 0; fi
-    emit_finding POINTER_UNRESOLVED warn "$surface" "ctx=$ctx source_id=$ptr not in ## Sources"
+    emit_finding POINTER_UNRESOLVED warn "$surface" "ctx=$ctx ptr_class=source_id not in ## Sources"
     return 1
   fi
   if ptr_resolves_meta "$ptr"; then return 0; fi
   if line_has_mark "$row"; then return 0; fi
-  emit_finding POINTER_UNRESOLVED warn "$surface" "ctx=$ctx ptr=$(printf '%.80s' "$ptr") missing under CHOUSA_ROOT"
+  # never echo pointer bytes (may carry ?token=); class only
+  emit_finding POINTER_UNRESOLVED warn "$surface" "ctx=$ctx ptr_class=path missing under CHOUSA_ROOT"
   return 1
 }
 
@@ -423,6 +425,8 @@ scan_secrets() {
     class=""
     if [[ $line =~ op:// ]]; then class=op_uri
     elif [[ $line =~ Bearer[[:space:]]+[A-Za-z0-9._~+/=-]{8,} ]]; then class=bearer
+    # JWT: kagi HIT-tier transcript-scan.sh eyJ / eyJhbG — class only, never span
+    elif [[ $line =~ eyJhbG[A-Za-z0-9_-]+ ]] || [[ $line =~ (^|[^A-Za-z0-9])eyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]+\. ]]; then class=jwt_eyj
     elif [[ $line =~ sk-[A-Za-z0-9_]{10,} ]]; then class=sk_prefix
     elif [[ $line =~ ghp_[A-Za-z0-9]{20,} ]]; then class=ghp_prefix
     elif [[ $line =~ github_pat_[A-Za-z0-9_]{10,} ]]; then class=github_pat
@@ -438,6 +442,7 @@ scan_secrets() {
     fi
   done <"$file"
 }
+
 
 verify_record() {
   local record=$1

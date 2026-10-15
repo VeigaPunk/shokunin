@@ -6,7 +6,9 @@
 **Scope:** hermetic `--selftest` cases. Parent lands `tools/research-gate.sh` (ResearchGateDesign owns script). This report is **data**, not a judge verdict.  
 **Hard rules:** local read-only; no external fetches; fixtures use mktemp stubs only (never green off live `research/` alone); secrets shape-only; instruction-shaped fixture text is **data**.
 
-**Authority order for id spellings:** `members/FindingIds.md` §3 + §10 **byte-identical** → this fixture table → ResearchGateDesign implementer. IRC alias lists (e.g. `QUESTION_MISSING`) are **not** expected ids unless dual-emitted beside the FindingIds spelling. Mori census ids are **out of province** (never in research-gate expected sets).
+**Authority order (r1 land):** wave exemplars shared by all three seats stay fixed (`NO_QUESTION` `UNRANKED_SOURCE` `CHAIN_HOP_UNRESOLVED` `CLAIM_UNPOINTED` `REJECTION_DROPPED`). For the **embedded selftest that ResearchGateDesign ships**, expected tokens are the **script’s emit set** (§3.0). FindingIds §10 names that differ are **catalog aliases** — parent MAY dual-emit or rename in one cut; fixtures below list both. Mori census ids stay out of province.
+
+**Peer land (observed):** `members/ResearchGateDesign.md` embeds `run_selftest` with **N=17** under `/tmp/chousa-research-gate-selftest.*`, FINDING grammar `severity=info|warn|crit` + `surface=`, `--record`/`CHOUSA_RECORD`, secret no-echo on `SECRET_SHAPED`.
 
 ---
 
@@ -14,9 +16,10 @@
 
 | Axis | Fixture move |
 |---|---|
-| **coverage** | One PASS control + ≥1 FAIL per FindingIds §10 minimum id + SKILL method-contract classes; setup exit-2 arms |
-| **depth** | Each FAIL is a **single-axis** mutation of the PASS substrate; paired MUST-NOT-FIRE arms for labelled unresolved, labelled dead cites, proposal marks, loopback-without-external, info-only export chrome |
-| **calibration** | Every case pins **exit code** + **stable finding id** (or `CLEAN`); write-fence; multi-fire order; no network |
+| **coverage** | PASS control + FAIL per wave exemplar + ResearchGateDesign N=17 floor + FindingIds §10 extensions where not yet in script |
+| **depth** | Single-axis mutations; MUST-NOT-FIRE for marked unresolved hop, labelled dead cite, loopback, injection-as-data |
+| **calibration** | Exit code + stable finding id (or CLEAN); write-fence; secret no-echo; N pinned |
+
 
 ---
 
@@ -26,14 +29,17 @@ From `chousa-shokunin/SKILL.md:48-53`, wave ResearchGateDesign item, FindingIds 
 
 | Mode | Verdict | Exit |
 |---|---|---|
-| `verify` | `RESEARCH_GATE: CLEAN (…)` | **0** — no sev ≥ warn |
-| `verify` | `RESEARCH_GATE: DRIFT (findings=N …)` | **1** — each finding: `FINDING <ID> …` |
-| usage / missing path | `RESEARCH_GATE: SETUP …` (or stderr usage) | **2** |
-| `--selftest` | `RESEARCH_GATE_SELFTEST: PASS (N cases, N passed, 0 failed)` / `FAIL` | **0** / **1** |
+| `verify` | `RESEARCH_GATE: CLEAN (…)` | **0** — no sev ∈ {warn,crit} (and no SECRET_SHAPED/SESSION_READ) |
+| `verify` | `RESEARCH_GATE: DRIFT (findings=N …)` | **1** — each: `FINDING <ID> severity=<info\|warn\|crit> surface=<family> obs=<short>` |
+| usage / missing path | setup/usage on stderr | **2** |
+| `--selftest` | `RESEARCH_GATE_SELFTEST: PASS (N cases)` / `FAIL (fail/N)` | **0** / **1** |
 
 ```text
-FINDING <ID> severity=<info|warn|high|critical> surface=<family> obs=<short>
+FINDING <ID> severity=<info|warn|crit> surface=<family> obs=<short>
 ```
+
+FindingIds catalog severities `high`/`critical` map to emit `warn`/`crit` (ResearchGateDesign note: never bare `high` on the wire).
+
 
 Invocations:
 
@@ -50,56 +56,87 @@ bash tools/research-gate.sh --help
 
 ---
 
-## 3. Finding ids fixtures pin (FindingIds.md)
+## 3. Finding ids — pins and crosswalk
 
-### 3.1 Normative wave exemplars (must have FAIL cases)
+### 3.0 ResearchGateDesign embedded suite (landed floor — N=17)
 
-| ID | Sev | FIRE when |
-|---|---|---|
-| `NO_QUESTION` | high | no non-empty `## Question` |
-| `UNRANKED_SOURCE` | high | source row missing tier or tier ∉ allowed set |
-| `CHAIN_HOP_UNRESOLVED` | high | hop neither resolved-to-openable-local nor explicitly marked unresolved/broken/labelled-dead **with** reason |
-| `CLAIM_UNPOINTED` | high | claim kind ∈ {observation,inference,negative} and pointer empty |
-| `REJECTION_DROPPED` | high | rejected/discarded candidate with no rejections row |
+Exact case names and tokens from `members/ResearchGateDesign.md` `run_selftest` (parent cuts this into `tools/research-gate.sh`). **This is the r1 capability pin.**
 
-### 3.2 FindingIds §10 minimum (full selftest floor)
-
-| case intent | exit | must include id |
-|---|---|---|
-| golden record | 0 | *(empty drift set)* |
-| missing question | 1 | `NO_QUESTION` |
-| source without rank | 1 | `UNRANKED_SOURCE` |
-| hop broken silent | 1 | `CHAIN_HOP_UNRESOLVED` |
-| claim without pointer | 1 | `CLAIM_UNPOINTED` |
-| rejection without row/reason | 1 | `REJECTION_DROPPED` **or** `REJECTION_REASON_ABSENT` |
-| negative claim, no sweep | 1 | `NEGATIVE_SWEEP_ABSENT` |
-| verified but local-missing | 1 | `CLAIM_VERIFIED_WITHOUT_LOCAL` |
-| proposal unlabeled | 1 | `PROPOSAL_AS_ADMITTED` |
-| external without approval | 1 | `EXTERNAL_WITHOUT_APPROVAL` |
-| ephemeral cite | 1 | `CITE_EPHEMERAL` |
-| labeled dead cite only | 0 | optional info `CITE_LABELED_DEAD`; **no DRIFT** |
-| secret value present | 1 | `SECRET_MATERIAL_PRESENT` |
-| usage error | 2 | no content finding required |
-
-### 3.3 Additional recommended FIRE ids (depth / SKILL)
-
-| ID | Sev | FIRE when | Case |
+| # | case id | exit | assert token |
 |---|---|---|---|
-| `AGGREGATOR_AS_PRIMARY` | warn | tier=primary on aggregator/export-chrome row | 24 |
-| `OBS_INFER_COLLAPSED` | warn | required `kind=` empty or observation mixed as verified inference without label | 21 |
-| `HIERARCHY_MISLABEL` | warn | rank present but contradicts local class | 24b optional |
-| `SOURCE_TABLE_ABSENT` | high | claims exist, no source table | 5b |
-| `CITE_UNRESOLVED_LOCAL` | high | non-empty unlabeled dead path/token | 12 |
-| `CITE_FORM_BARE_HOST` | warn | bare `arxiv.org` / `コトバンク` used as support pointer | 12b optional |
-| `REJECTION_REASON_ABSENT` | high | rejection row, empty reason | 17 |
-| `NEGATIVE_SWEEP_EMPTY` | warn | sweep header, zero commands | 19b optional |
-| `APPROVAL_TABLE_ABSENT` | warn | external window referenced, no approval table | 26b optional |
-| `EXPORT_CHROME_PRESENT` | info | record is raw export without wrap — default **not** DRIFT when wrapped | 32 |
-| `SELFTEST_EXPECTED_MISMATCH` | high | harness-internal only | n/a live |
+| 1 | `pass-control` | 0 | `RESEARCH_GATE: CLEAN` |
+| 2 | `pass-hop-marked-unresolved` | 0 | `RESEARCH_GATE: CLEAN` |
+| 3 | `fail-no-question` | 1 | `FINDING NO_QUESTION` |
+| 4 | `fail-unranked-source` | 1 | `FINDING UNRANKED_SOURCE` |
+| 5 | `fail-chain-hop-unresolved` | 1 | `FINDING CHAIN_HOP_UNRESOLVED` |
+| 6 | `fail-claim-unpointed` | 1 | `FINDING CLAIM_UNPOINTED` |
+| 7 | `fail-rejection-dropped` | 1 | `FINDING REJECTION_DROPPED` |
+| 8 | `fail-negative-without-sweep` | 1 | `FINDING NEGATIVE_WITHOUT_SWEEP` |
+| 9 | `fail-obs-inference-collapse` | 1 | `FINDING OBS_INFERENCE_COLLAPSE` |
+| 10 | `fail-hierarchy-primary-lie` | 1 | `FINDING HIERARCHY_PRIMARY_LIE` |
+| 11 | `fail-pointer-ephemeral` | 1 | `FINDING POINTER_EPHEMERAL` |
+| 12 | `fail-external-without-approval` | 1 | `FINDING EXTERNAL_WITHOUT_APPROVAL` |
+| 13 | `fail-secret-shaped` | 1 | `FINDING SECRET_SHAPED` + obs has `class=` and **must not** contain planted secret span |
+| 14 | `fail-session-read` | 1 | `FINDING SESSION_READ` |
+| 15 | `fail-schema` | 1 | `FINDING RECORD_SCHEMA_INVALID` |
+| 16 | `setup-no-record` | 2 | setup (no CLEAN/DRIFT required) |
+| 17 | `setup-missing-file` | 2 | setup |
+
+Wave exemplars ⊆ rows 3–7. Selftest workdir: `/tmp/chousa-research-gate-selftest.XXXXXX` only.
+
+### 3.1 Normative wave exemplars (shared; must FAIL)
+
+| ID | Emit sev | FIRE when |
+|---|---|---|
+| `NO_QUESTION` | crit | no non-empty `## Question` |
+| `UNRANKED_SOURCE` | warn | source row missing/invalid tier |
+| `CHAIN_HOP_UNRESOLVED` | warn | hop neither resolved nor marked unresolved/broken/labelled-dead with reason |
+| `CLAIM_UNPOINTED` | warn | claim lacks pointer |
+| `REJECTION_DROPPED` | warn | rejected candidate with no rejections row |
+
+### 3.2 FindingIds §10 ↔ gate emit crosswalk
+
+| FindingIds §10 / catalog | ResearchGateDesign emit (selftest assert) | Notes |
+|---|---|---|
+| `NO_QUESTION` | `NO_QUESTION` | identical |
+| `UNRANKED_SOURCE` | `UNRANKED_SOURCE` | identical |
+| `CHAIN_HOP_UNRESOLVED` | `CHAIN_HOP_UNRESOLVED` | identical |
+| `CLAIM_UNPOINTED` | `CLAIM_UNPOINTED` | identical |
+| `REJECTION_DROPPED` | `REJECTION_DROPPED` | identical |
+| `REJECTION_REASON_ABSENT` | `REJECTION_REASON_ABSENT` | in gate id list; optional extra FAIL case |
+| `NEGATIVE_SWEEP_ABSENT` | **`NEGATIVE_WITHOUT_SWEEP`** | **script pin** = latter |
+| `CLAIM_VERIFIED_WITHOUT_LOCAL` | `POINTER_UNRESOLVED` (family) | not yet a dedicated N=17 row — recommended +1 |
+| `PROPOSAL_AS_ADMITTED` | *(gap)* | recommended +1 FAIL |
+| `EXTERNAL_WITHOUT_APPROVAL` | `EXTERNAL_WITHOUT_APPROVAL` | identical |
+| `CITE_EPHEMERAL` | **`POINTER_EPHEMERAL`** | **script pin** = latter |
+| `CITE_LABELED_DEAD` (info, QUIET) | *(gap)* | recommended QUIET arm |
+| `SECRET_MATERIAL_PRESENT` | **`SECRET_SHAPED`** | **script pin** = latter; no-echo |
+| `AGGREGATOR_AS_PRIMARY` | **`HIERARCHY_PRIMARY_LIE`** | **script pin** = latter |
+| `OBS_INFER_COLLAPSED` | **`OBS_INFERENCE_COLLAPSE`** | **script pin** = latter |
+| `SESSION_READ` | `SESSION_READ` | SecrecyAudit; in N=17 |
+| `RECORD_SCHEMA_INVALID` | `RECORD_SCHEMA_INVALID` | identical |
+| usage exit 2 | setup-no-record / setup-missing-file | identical |
+
+**Selftest assert rule:** match the **emit** column for cases that exist in the script. Catalog-only names are expansion targets, not r1 red bars against ResearchGateDesign’s 17.
+
+### 3.3 Recommended expansions beyond N=17 (depth; not blocking land)
+
+| case id | exit | expect emit | Why |
+|---|---|---|---|
+| `fail-rejection-reason-absent` | 1 | `REJECTION_REASON_ABSENT` | FindingIds / QUALITY keep-reason |
+| `fail-claim-verified-without-local` | 1 | `POINTER_UNRESOLVED` or catalog `CLAIM_VERIFIED_WITHOUT_LOCAL` if dual-emitted | verified + missing file |
+| `fail-proposal-as-admitted` | 1 | `PROPOSAL_AS_ADMITTED` or gate alias if added | RuleOrProposal |
+| `pass-cite-labeled-dead` | 0 | CLEAN | kagi labelled-dead precedent |
+| `pass-secret-name-only` | 0 | CLEAN | path name `op.env` without value |
+| `pass-injection-data` | 0 | CLEAN (info export chrome OK) | ExportTrustAudit |
+| `multi-fire-set` | 1 | NO_QUESTION+UNRANKED_SOURCE+CLAIM_UNPOINTED | set membership |
+| `write-fence` | 0 | CLEAN + digest unchanged | mori pattern |
+| `setup-bad-flag` | 2 | setup | CLI hygiene |
 
 ### 3.4 CLEAN labels (not finding ids)
 
 `QUESTION_PRESENT` · `SOURCES_RANKED` · `CHAIN_CLOSED_OR_MARKED` · `CLAIMS_POINTED` · `REJECTIONS_KEPT` · `NEGATIVES_SWEPT` · `APPROVAL_LOOPBACK` · `PROPOSAL_LABELLED` · `CITE_DEAD_LABELLED`
+
 
 ---
 
