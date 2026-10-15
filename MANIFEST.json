@@ -2337,6 +2337,21 @@
       "promotions": [],
       "minted": [],
       "notes": "Operator 12-hour program, phase 1: six OMP-era lanes re-censused at their steered rounds (kagi 19, kake 19, kama 4, kasegi 20, kengaku 16, kotoba 19). Two 32-member waves: repair (Shokunin12hP1Repair20261014, 32/32 completed) then independent acceptance audit (Shokunin12hP1Audit20261014, 32/32). Lane work commits: kagi bad9088, kake de5d762, kama 0505b71, kasegi de625f9, kengaku 25819e2, kotoba b492cb2 (each under its lane identity, plus an audit-erratum commit). Repairs landed: kake freshness-sweep canonical-suspend vs explicit-bad semantics + hermetic selftest fixture; kotoba permission-comparator at_least->equal + coverage-map index row + tracked_files pin refresh; kama endpoint-identity line ref; kagi describe-dont-pin claim narrowed + round-18 hash attribution corrected; kasegi census regenerated. Named debt: 61 live dead-path citations (kengaku), 46 (kama), 22 (kasegi); substrate absence (kagi); PQ-2/PQ-14 (kake); kotoba 601-line budget overrun. One process defect: a nested labrat spawned by KengakuGateRepair against the leaf contract, its evidence ruled inadmissible, acknowledged and recorded; a project-local leaf-only executor card landed. No native judge input; swarm output is advisory evidence only. No roster rows added. Report: .ufo/reports/shokunin-12h-20261014-preflight.md (phase 1 section) \u2014 superseded by the final fleet report."
+    },
+    {
+      "round": 0,
+      "date": "2026-10-14",
+      "type": "ops",
+      "closed_at": "2026-10-15T00:31:14.026546+00:00",
+      "program": "shokunin12h20261014",
+      "status": "partial-honest-stop",
+      "report": ".ufo/reports/shokunin-12h-20261014-fleet-report.md",
+      "minted": [
+        "mori",
+        "chousa"
+      ],
+      "promotions": [],
+      "notes": "Final fleet report appended. Phase 1 landed (six-lane re-census + independent audit, 32/32 and 31/32). Phase 2 landed (kumitate round 32: script axis 6->10 terminal, runtime 6->8, PROXY MATCH). Phase 3 specified but not dispatched. Phase 4 mori minted, round 1 dispatched and still running at report time. Phase 5 chousa minted, round 1 specified but not dispatched. No roster rows; no promotions; no native judge verdict. Global routing unchanged (session-only alias selection, connector on Antigravity with ZAI fallback per operator). See the report for per-lane commits, verdicts, the 165-hit dead-path population and every unblock action."
     }
   ]
 }

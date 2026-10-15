@@ -602,3 +602,19 @@ superseded text (`PROTOCOL.md` §Invariants).
   delivery receipt:
   `.ufo/scopes/shokunin-12h-20261014/evidence/ledger-integrity.json`.
   No completion command is issued: no program wall mission exists.
+
+## 2026-10-14 — 12-hour program: phases 1-2 landed, mints scaffolded, honest stop
+
+- Phase 1 (six-lane re-census) landed with an independent audit; Phase 2
+  (kumitate round 32) landed with `PROXY: MATCH` and both layer axes moved
+  (script 6→10 terminal, runtime 6→8). Phases 3 and 5 are specified and
+  validated but undispatched; mori round 1 was dispatched and is still running.
+- `mori` and `chousa` minted as shonen (seed commits `27acf40`, `02a615a`),
+  wired into `shokunin.conf` (21 entries, syntax clean), MANIFEST `type: mint`
+  entries appended, NO roster rows. Probation ≥3 verified rounds still owed.
+- Global routing untouched: the requested composer/grok split and the later
+  connector-on-Antigravity-with-ZAI-fallback instruction were applied as
+  session-only alias selection and never saved.
+- Full report: `.ufo/reports/shokunin-12h-20261014-fleet-report.md` (appended to
+  `MANIFEST.json` `rounds[]` as a `type: ops` entry). Every claim in it is tied
+  to a measured command; no promotion, roster row or native verdict is claimed.
