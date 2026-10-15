@@ -618,3 +618,10 @@ superseded text (`PROTOCOL.md` §Invariants).
 - Full report: `.ufo/reports/shokunin-12h-20261014-fleet-report.md` (appended to
   `MANIFEST.json` `rounds[]` as a `type: ops` entry). Every claim in it is tied
   to a measured command; no promotion, roster row or native verdict is claimed.
+
+- Conformance defect (found by the mori `WaveSettlement` audit, repaired):
+  wave registries were persisted into the **read-only substrate** because the
+  planner was invoked with the UFO checkout as cwd, so its `ROOT` resolved there.
+  Six stray `.ufo/scopes/Shokunin12h*` dirs were moved into the fleet root and the
+  substrate was left clean; assignments verified intact. Recorded in the fleet
+  report. Future waves must set `UFO_PROJECT_ROOT` to the fleet root.

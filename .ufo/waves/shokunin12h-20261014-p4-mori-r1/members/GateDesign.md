@@ -346,7 +346,7 @@ probe_waves() {
     [ -f "$d/swarm-registry.json" ] && has_reg=1
     [ -f "$d/dispatch.json" ] && has_disp=1
     [ -f "$d/run.json" ] && has_run=1
-    [ -f "$d/results.json" ] || [ -f "$d/closeout.json" ] || [ -f "$d/mission-result.json" ] && has_settle=1
+    if [ -f "$d/results.json" ] || [ -f "$d/closeout.json" ] || [ -f "$d/mission-result.json" ]; then has_settle=1; fi
 
     newest=$(find "$d" -type f -printf '%T@\n' 2>/dev/null | sort -n | tail -1 | cut -d. -f1)
     age=0

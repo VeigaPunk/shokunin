@@ -177,6 +177,25 @@ no wave was split across task calls. Two waves (kumitate and mori) overlapped
 because the budget forced it — recorded as a deliberate deviation from strict
 wave sequencing, with the harness queueing beyond the 32-lane concurrency window.
 
+## Conformance defect found and repaired (recorded, not hidden)
+
+`WaveSettlement` audited my own wave bookkeeping and found it wrong: every wave's
+`registry.path` pointed at `.ufo/scopes/<WaveName>/swarm-registry.json` **relative
+to the fleet root**, but no such file existed there. Root cause: I invoked the
+planner as `node scripts/ufo-swarm-wave.mjs run --spec <fleet-root>/...` with
+`cwd=/home/vgpnk/Projects/ufo-fsd-alpha`, so the planner's `ROOT`
+(`UFO_PROJECT_ROOT || <script-dir>/..`) resolved to the **substrate** and `run`
+persisted each registry under **`ufo-fsd-alpha/.ufo/scopes/`** — a write into a
+tree this mission declared read-only.
+
+Repair: the six stray directories were moved out of the substrate into
+`<fleet-root>/.ufo/scopes/`, the substrate was left with no `Shokunin12h*`
+directory, and the registries were verified to carry their assignments (32/32 for
+the four dispatched waves; 0 for the two undispatched ones, which is correct). The
+substrate's five pre-existing dirty paths were not touched by this mission and were
+not altered by the repair. Correct invocation for any future wave: set
+`UFO_PROJECT_ROOT` to the fleet root (or run with the fleet root as `cwd`).
+
 ## Honest stop
 
 This is **not** saturation and not budget exhaustion of the 12-hour window: it is
