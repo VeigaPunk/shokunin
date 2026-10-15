@@ -1,0 +1,22 @@
+{
+  "pool_id": "alibaba-token-plan-2/qwen3.8-flash",
+  "provider": "alibaba-token-plan-2",
+  "model_id": "qwen3.8-flash",
+  "protocol": "openai",
+  "bucket": "MIDDLE",
+  "probe_id": "c5",
+  "probe_kind": "contract",
+  "rep": 1,
+  "measured": true,
+  "prompt": "Write one short sentence about the color blue. Do not use the letter e (lower case or upper case) anywhere in your answer.",
+  "max_tokens": 192,
+  "status": null,
+  "grade": {
+    "pass": false,
+    "failure_class": "skipped_after_fatal",
+    "detail": "lane refused at perf with class auth (HTTP 429 quota exhausted); no retry"
+  },
+  "skipped": true,
+  "skip_reason": "lane refused at perf with class auth (HTTP 429 quota exhausted); no retry",
+  "started_at_utc": "2026-10-15T11:56:58Z"
+}

@@ -1,0 +1,88 @@
+{
+  "pool_id": "alibaba-token-plan-2/qwen3.8-flash",
+  "provider": "alibaba-token-plan-2",
+  "model_id": "qwen3.8-flash",
+  "model_sent": "qwen3.8-flash",
+  "protocol": "openai",
+  "bucket": "MIDDLE",
+  "base_url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1",
+  "probe_id": "perf",
+  "probe_kind": "perf",
+  "rep": 1,
+  "measured": true,
+  "prompt": "You are answering a latency measurement probe. Follow it exactly. Task: output the integers from 1 to 150 inclusive, in ascending order, separated by single spaces, on one single line. Output digits and spaces only. Do not add any explanation, preamble, punctuation, or trailing text.",
+  "max_tokens": 256,
+  "tools_sent": false,
+  "tool_choice": null,
+  "request_body": {
+    "model": "qwen3.8-flash",
+    "stream": true,
+    "max_tokens": 256,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are answering a latency measurement probe. Follow it exactly. Task: output the integers from 1 to 150 inclusive, in ascending order, separated by single spaces, on one single line. Output digits and spaces only. Do not add any explanation, preamble, punctuation, or trailing text."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1/chat/completions",
+  "timeout_s": 120,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 429,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 1010,
+  "response_headers": {
+    "retry-after": "705555",
+    "content-type": "text/plain",
+    "date": "Thu, 15 Oct 2026 12:00:45 GMT",
+    "server": "istio-envoy",
+    "x-request-id": "06e50700-ba9e-42a8-b582-df67f8d86c75",
+    "req-cost-time": "10",
+    "req-arrive-time": "1792065645591",
+    "resp-start-time": "1792065645601",
+    "x-envoy-upstream-service-time": "10",
+    "vary": "Accept-Encoding",
+    "transfer-encoding": "chunked"
+  },
+  "content_type": null,
+  "content": "",
+  "content_truncated": false,
+  "reasoning_chars": 0,
+  "reasoning_text": "",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": null,
+  "finish_reason": null,
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": false,
+  "sse_event_count": 0,
+  "sse_line_count": 1,
+  "raw_preview": "{\"error\":{\"message\":\"Your token-plan 1-month quota has been exhausted. The quota will reset at 10-23 16:00:00 UTC.\",\"id\":\"06e50700-ba9e-42a8-b582-df67f8d86c75\",\"type\":\"insufficient_quota\",\"code\":\"insufficient_quota\"}}\n",
+  "grade": {
+    "pass": null,
+    "failure_class": "auth",
+    "detail": "HTTP 429 quota exhausted",
+    "request_level": true
+  },
+  "started_at_utc": "2026-10-15T12:00:45Z",
+  "ttft_content_ms": null,
+  "ttft_reasoning_ms": null,
+  "first_decoded_ms": null,
+  "decode_span_ms": null,
+  "tps": null,
+  "tps_basis": null,
+  "tps_note": "not derivable: no incremental deltas or fewer than 2 tokens",
+  "completion_tokens": null,
+  "prompt_tokens": null,
+  "reasoning_tokens": null,
+  "content_delta_count": 0,
+  "reasoning_delta_count": 0
+}

@@ -1,0 +1,115 @@
+{
+  "pool_id": "xai-oauth/grok-4.5",
+  "provider": "xai-oauth",
+  "model_id": "grok-4.5",
+  "model_sent": "grok-4.5",
+  "protocol": "openai",
+  "bucket": "MIDDLE",
+  "base_url": "http://127.0.0.1:8790/v1",
+  "probe_id": "c4",
+  "probe_kind": "contract",
+  "rep": 1,
+  "measured": true,
+  "prompt": "How many times does the letter r appear in the word strawberry? Answer with one digit and nothing else.",
+  "max_tokens": 192,
+  "tools_sent": false,
+  "tool_choice": null,
+  "request_body": {
+    "model": "grok-4.5",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "How many times does the letter r appear in the word strawberry? Answer with one digit and nothing else."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "url": "http://127.0.0.1:8790/v1/chat/completions",
+  "timeout_s": 300,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 3800,
+  "response_headers": {
+    "Server": "cloudflare",
+    "Date": "Thu, 15 Oct 2026 12:01:52 GMT",
+    "Content-Type": "text/event-stream",
+    "Cache-Control": "no-cache",
+    "x-zero-data-retention": "false",
+    "x-ratelimit-limit-tokens": "<redacted:len=8>",
+    "x-ratelimit-remaining-tokens": "<redacted:len=8>",
+    "x-ratelimit-limit-requests": "8300",
+    "x-ratelimit-remaining-requests": "8300",
+    "Strict-Transport-Security": "max-age=31536000",
+    "set-cookie": "<redacted:len=18>",
+    "cf-cache-status": "DYNAMIC",
+    "x-request-id": "740ee9ec-6faa-94b4-9733-3f8ca06562f6",
+    "x-data-retention": "general",
+    "traceparent": "00-44a08192387f2cbfd923952bbe4cf2aa-73b275ad0007f8db-01",
+    "vary": "origin, access-control-request-method, access-control-request-headers",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "*",
+    "CF-RAY": "a4aeabedab8d3214-GIG",
+    "Connection": "close"
+  },
+  "content_type": "text/event-stream",
+  "content": "3",
+  "content_truncated": false,
+  "reasoning_chars": 36,
+  "reasoning_text": "Counting the letter r in strawberry.",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": {
+    "prompt_tokens": 515,
+    "completion_tokens": 1,
+    "total_tokens": 654,
+    "prompt_tokens_details": {
+      "text_tokens": 515,
+      "audio_tokens": 0,
+      "image_tokens": 0,
+      "cached_tokens": 384
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 138,
+      "audio_tokens": 0,
+      "accepted_prediction_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "num_sources_used": 0,
+    "cost_in_usd_ticks": 4118080
+  },
+  "finish_reason": "stop",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 5,
+  "sse_line_count": 12,
+  "raw_preview": "data: {\"id\":\"740ee9ec-6faa-94b4-9733-3f8ca06562f6\",\"object\":\"chat.completion.chunk\",\"created\":1792065712,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"Counting the letter \",\"role\":\"assistant\"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"740ee9ec-6faa-94b4-9733-3f8ca06562f6\",\"object\":\"chat.completion.chunk\",\"created\":1792065712,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"r in strawberry.\"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"740ee9ec-6faa-94b4-9733-3f8ca06562f6\",\"object\":\"chat.completion.chunk\",\"created\":1792065712,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"3\"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"740ee9ec-6faa-94b4-9733-3f8ca06562f6\",\"object\":\"chat.completion.chunk\",\"created\":1792065712,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{},\"finish_reason\":\"stop\"}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"740ee9ec-6faa-94b4-9733-3f8ca06562f6\",\"object\":\"chat.completion.chunk\",\"created\":1792065712,\"model\":\"grok-4.5\",\"choices\":[],\"usage\":{\"prompt_tokens\":515,\"completion_tokens\":1,\"total_tokens\":654,\"prompt_tokens_details\":{\"text_tokens\":515,\"audio_tokens\":0,\"image_tokens\":0,\"cached_tokens\":384},\"completion_tokens_details\":{\"reasoning_tokens\":138,\"audio_tokens\":0,\"accepted_prediction_tokens\":0,\"rejected_prediction_tokens\":0},\"num_sources_used\":0,\"cost_in_usd_ticks\":4118080},\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: [DONE]\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "exact match",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T12:01:55Z",
+  "ttft_content_ms": 3797,
+  "ttft_reasoning_ms": 1822,
+  "first_decoded_ms": 3797,
+  "decode_span_ms": null,
+  "tps": null,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": "not derivable: no incremental deltas or fewer than 2 tokens",
+  "completion_tokens": 1,
+  "prompt_tokens": 515,
+  "reasoning_tokens": 138,
+  "content_delta_count": 1,
+  "reasoning_delta_count": 2
+}

@@ -1,0 +1,100 @@
+{
+  "pool_id": "hyper/qwen3.8-flash",
+  "provider": "hyper",
+  "model_id": "qwen3.8-flash",
+  "model_sent": "qwen3.8-flash",
+  "protocol": "openai",
+  "bucket": "MIDDLE",
+  "base_url": "https://hyper.charm.land/v1",
+  "probe_id": "c5",
+  "probe_kind": "contract",
+  "rep": 1,
+  "measured": true,
+  "prompt": "Write one short sentence about the color blue. Do not use the letter e (lower case or upper case) anywhere in your answer.",
+  "max_tokens": 192,
+  "tools_sent": false,
+  "tool_choice": null,
+  "request_body": {
+    "model": "qwen3.8-flash",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Write one short sentence about the color blue. Do not use the letter e (lower case or upper case) anywhere in your answer."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "url": "https://hyper.charm.land/v1/chat/completions",
+  "timeout_s": 120,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 16354,
+  "response_headers": {
+    "cache-control": "no-cache",
+    "content-type": "text/event-stream",
+    "vary": "Accept-Encoding",
+    "x-ratelimit-limit-day": "10000",
+    "x-ratelimit-limit-hour": "1000",
+    "x-ratelimit-remaining-day": "9278",
+    "x-ratelimit-remaining-hour": "683",
+    "date": "Thu, 15 Oct 2026 12:01:17 GMT",
+    "server": "Google Frontend",
+    "traceparent": "00-45e3619c9977ceb772887da2cac9c77b-0567df2538ae9581-00",
+    "x-cloud-trace-context": "45e3619c9977ceb772887da2cac9c77b/389525243748586881",
+    "Transfer-Encoding": "chunked"
+  },
+  "content_type": null,
+  "content": "Sky's tint is a cool, vast color.",
+  "content_truncated": false,
+  "reasoning_chars": 2437,
+  "reasoning_text": "The user wants a short sentence about the color blue, but I cannot use the letter 'e' (lower or upper case) anywhere in my answer.\n\nLet me think about this carefully.\n\n\"Blue\" contains no 'e' - good.\n\"Sky\" contains no 'e' - good.\n\"Ocean\" - wait, no 'e' there. o-c-e-a-n. Yes it does! 'e' is in ocean. Can't use it.\n\"Sea\" - has 'e'. Can't use.\n\"Water\" - has 'e'. Can't use.\n\nLet me try: \"Blue is a calm color.\"\n- \"Blue\" - no e \u2713\n- \"is\" - no e \u2713\n- \"a\" - no e \u2713\n- \"calm\" - no e \u2713\n- \"color\" - no e \u2713\n\nWait, let me check each letter: B-l-u-e... \"Blue\" has an 'e'! B-l-u-e. Yes! I cannot use the word \"blue\" because it contains 'e'.\n\nHmm, this is tricky. The topic is \"the color blue\" but I can't spell \"blue\" because it has an 'e'.\n\nLet me think of alternatives:\n- \"Azure\" - a-z-u-r-e - has 'e'. No.\n- \"Cyan\" - c-y-a-n - no 'e'! \u2713\n- \"Indigo\" - i-n-d-i-g-o - no 'e'! \u2713\n- \"Cobalt\" - c-o-b-a-l-t - no 'e'! \u2713\n\nWait, but the topic is \"the color blue.\" Can I describe it without using the word \"blue\"?\n\n\"Sky is a calm, cool, vast color.\"\n- \"Sky\" - s-k-y \u2713\n- \"is\" - i-s \u2713\n- \"a\" - a \u2713\n- \"calm\" - c-a-l-m \u2713\n- \"cool\" - c-o-o-l \u2713\n- \"vast\" - v-a-s-t \u2713\n- \"color\" - c-o-l-o-r \u2713\n\nNo 'e' anywhere! But does this describe \"the color blue\"? It's about sky color which is blue. Let me check if it's about blue specifically.\n\nActually, let me try: \"A sky's tint is a cool, vast color.\"\n- \"A\" \u2713\n- \"sky's\" - s-k-y-'-s \u2713\n- \"tint\" - t-i-n-t \u2713\n- \"is\" \u2713\n- \"a\" \u2713\n- \"cool\" \u2713\n- \"vast\" \u2713\n- \"color\" \u2713\n\nNo 'e'! Good.\n\nOr simpler: \"The sky's tint is a cool color.\"\n- \"The\" - T-h-e - HAS 'e'! Can't use.\n\n\"Sky's tint is a cool, vast color.\"\n- s-k-y-'-s \u2713\n- t-i-n-t \u2713\n- i-s \u2713\n- a \u2713\n- c-o-o-l \u2713\n- v-a-s-t \u2713\n- c-o-l-o-r \u2713\n\nNo 'e'! And it's about the color blue (sky's tint = blue).\n\nLet me try another: \"A cool, vast tint fills up a sky.\"\n- A \u2713\n- cool \u2713\n- vast \u2713\n- tint \u2713\n- fills \u2713\n- up \u2713\n- a \u2713\n- sky \u2713\n\nNo 'e'! Good.\n\nI'll go with: \"Sky's tint is a cool, vast color.\"\n\nWait, let me double-check \"color\" - c-o-l-o-r. No 'e'. \u2713\n\nActually, let me reconsider. The prompt says \"Write one short sentence about the color blue.\" So it should be about blue. Let me make sure my sentence clearly refers to blue.\n\n\"Sky's tint is a cool, vast color.\" - This refers to the color of the sky, which is blue. I think this works.\n\nLet me verify once more letter by letter:\nS-k-y-'-s (no e) \u2713\nt-i-n-t (no e) \u2713\ni-s (no e) \u2713\na (no e) \u2713\nc-o-o-l (no e) \u2713\nv-a-s-t (no e) \u2713\nc-o-l-o-r (no e) \u2713\n\nAll good!",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": {
+    "prompt_tokens": 50,
+    "completion_tokens": 944,
+    "total_tokens": 994,
+    "completion_tokens_details": {
+      "reasoning_tokens": 931
+    },
+    "cost": {
+      "usd": 0.00045118,
+      "hypercredits": 0.0090236
+    }
+  },
+  "finish_reason": "stop",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 278,
+  "sse_line_count": 558,
+  "raw_preview": "data: {\"id\":\"chatcmpl-558d1a45cf197a8395834a4a\",\"object\":\"chat.completion.chunk\",\"created\":1792065677,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-558d1a45cf197a8395834a4a\",\"object\":\"chat.completion.chunk\",\"created\":1792065677,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"The\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-558d1a45cf197a8395834a4a\",\"object\":\"chat.completion.chunk\",\"created\":1792065677,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" user wants a\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-558d1a45cf197a8395834a4a\",\"object\":\"chat.completion.chunk\",\"created\":1792065677,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" short sentence about the\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-558d1a45cf197a8395834a4a\",\"object\":\"chat.completion.chunk\",\"created\":1792065677,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" color blue, but\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-558d1a45cf197a8395834a4a\",\"object\":\"chat.completion.chunk\",\"created\":1792065677,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" I cannot use the\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-558d1a45cf197a8395834a4a\",\"object\":\"chat.completion.chunk\",\"created\":1792065677,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" letter 'e'\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-558d1a45cf197a8395834a4a\",\"object\":\"chat.completion.chunk\",\"created\":1792065677,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" (lower or upper\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-558d1a45cf197a8395834a4a\",\"object\":\"chat.completion.chunk\",\"created\":1792065677,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" case) anywhere\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-558d1a45cf197a8395834a4a\",\"object\":\"chat.completion.chunk\",\"created\":1792065677,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" in my answer.\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-558d1a45cf197a8395834a4a\",\"object\":\"chat.completion.chunk\",\"created\":1792065677,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"\\n\\n\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-558d1a45cf197a8395834a4a\",\"object\":\"chat.completion.chunk\",\"created\":1792065677,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"Let me think about\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-558d1a45cf197a8395834a4a\",\"object\":\"chat.completion.chunk\",\"created\":1792065677,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" this carefully.\\n\\n\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-558d1a45cf197a8395834a4a\",\"object\":\"chat.completion.chunk\",\"created\":1792065677,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"\\\"Blue\\\" contains\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-558d1a45cf197a8395834a4a\",\"object\":\"chat.completion.chunk\",\"created\":1792065677,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" no 'e'\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-558d1a45cf197a8395834a4a\",\"object\":\"chat.completion.chunk\",\"created\":1792065677,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" -\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-558d1a45cf197a8395834a4a\",\"object\":\"chat.completion.chunk\",\"created\":1792065677,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" good.\\n\\\"\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-558d1a45cf197a8395834a4a\",\"object\":\"chat.completion.chunk\",\"created\":1792065677,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"Sky\\\" contains no\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-558d1a45cf197a8395834a4a\",\"object\":\"chat.completion.chunk\",\"created\":1792065677,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" '\"},\"finish_reason\":null}]}\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "constraint held",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T12:01:32Z",
+  "ttft_content_ms": 16179,
+  "ttft_reasoning_ms": 1048,
+  "first_decoded_ms": 16179,
+  "decode_span_ms": 137,
+  "tps": 6899.58,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": null,
+  "completion_tokens": 944,
+  "prompt_tokens": 50,
+  "reasoning_tokens": 931,
+  "content_delta_count": 3,
+  "reasoning_delta_count": 272
+}

@@ -1,0 +1,100 @@
+{
+  "pool_id": "hyper/qwen3.8-flash",
+  "provider": "hyper",
+  "model_id": "qwen3.8-flash",
+  "model_sent": "qwen3.8-flash",
+  "protocol": "openai",
+  "bucket": "MIDDLE",
+  "base_url": "https://hyper.charm.land/v1",
+  "probe_id": "c3",
+  "probe_kind": "contract",
+  "rep": 1,
+  "measured": true,
+  "prompt": "Write exactly three lines, nothing before or after. Line 1: ALPHA. Line 2: BETA. Line 3: GAMMA.",
+  "max_tokens": 192,
+  "tools_sent": false,
+  "tool_choice": null,
+  "request_body": {
+    "model": "qwen3.8-flash",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Write exactly three lines, nothing before or after. Line 1: ALPHA. Line 2: BETA. Line 3: GAMMA."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "url": "https://hyper.charm.land/v1/chat/completions",
+  "timeout_s": 120,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 1815,
+  "response_headers": {
+    "cache-control": "no-cache",
+    "content-type": "text/event-stream",
+    "vary": "Accept-Encoding",
+    "x-ratelimit-limit-day": "10000",
+    "x-ratelimit-limit-hour": "1000",
+    "x-ratelimit-remaining-day": "9280",
+    "x-ratelimit-remaining-hour": "685",
+    "date": "Thu, 15 Oct 2026 12:01:12 GMT",
+    "server": "Google Frontend",
+    "x-cloud-trace-context": "cf6d567ce65284053da3c40b940bc0c8/8072175567366000481",
+    "traceparent": "00-cf6d567ce65284053da3c40b940bc0c8-700620e909700f61-00",
+    "Transfer-Encoding": "chunked"
+  },
+  "content_type": null,
+  "content": "ALPHA\nBETA\nGAMMA",
+  "content_truncated": false,
+  "reasoning_chars": 143,
+  "reasoning_text": "The user wants exactly three lines with specific content:\nLine 1: ALPHA\nLine 2: BETA\nLine 3: GAMMA\n\nNo text before or after these three lines.\n",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": {
+    "prompt_tokens": 53,
+    "completion_tokens": 52,
+    "total_tokens": 105,
+    "completion_tokens_details": {
+      "reasoning_tokens": 40
+    },
+    "cost": {
+      "usd": 0.0001,
+      "hypercredits": 0.002
+    }
+  },
+  "finish_reason": "stop",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 19,
+  "sse_line_count": 40,
+  "raw_preview": "data: {\"id\":\"chatcmpl-184b8bd006104741fbdb1f66\",\"object\":\"chat.completion.chunk\",\"created\":1792065672,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-184b8bd006104741fbdb1f66\",\"object\":\"chat.completion.chunk\",\"created\":1792065672,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"The\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-184b8bd006104741fbdb1f66\",\"object\":\"chat.completion.chunk\",\"created\":1792065672,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" user wants exactly\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-184b8bd006104741fbdb1f66\",\"object\":\"chat.completion.chunk\",\"created\":1792065672,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" three lines with\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-184b8bd006104741fbdb1f66\",\"object\":\"chat.completion.chunk\",\"created\":1792065672,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" specific\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-184b8bd006104741fbdb1f66\",\"object\":\"chat.completion.chunk\",\"created\":1792065672,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" content:\\nLine\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-184b8bd006104741fbdb1f66\",\"object\":\"chat.completion.chunk\",\"created\":1792065672,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" 1: ALPHA\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-184b8bd006104741fbdb1f66\",\"object\":\"chat.completion.chunk\",\"created\":1792065672,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"\\nLine 2\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-184b8bd006104741fbdb1f66\",\"object\":\"chat.completion.chunk\",\"created\":1792065672,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\": BETA\\n\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-184b8bd006104741fbdb1f66\",\"object\":\"chat.completion.chunk\",\"created\":1792065672,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"Line 3\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-184b8bd006104741fbdb1f66\",\"object\":\"chat.completion.chunk\",\"created\":1792065672,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\": GAMMA\\n\\n\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-184b8bd006104741fbdb1f66\",\"object\":\"chat.completion.chunk\",\"created\":1792065672,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"No text before or\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-184b8bd006104741fbdb1f66\",\"object\":\"chat.completion.chunk\",\"created\":1792065672,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" after these\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-184b8bd006104741fbdb1f66\",\"object\":\"chat.completion.chunk\",\"created\":1792065672,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" three lines.\\n\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-184b8bd006104741fbdb1f66\",\"object\":\"chat.completion.chunk\",\"created\":1792065672,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"ALPHA\\n\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-184b8bd006104741fbdb1f66\",\"object\":\"chat.completion.chunk\",\"created\":1792065672,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"BETA\\nG\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-184b8bd006104741fbdb1f66\",\"object\":\"chat.completion.chunk\",\"created\":1792065672,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"AMMA\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-184b8bd006104741fbdb1f66\",\"object\":\"chat.completion.chunk\",\"created\":1792065672,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{},\"finish_reason\":\"stop\"}]}\ndata: {\"id\":\"chatcmpl-184b8bd006104741fbdb1f66\",\"object\":\"chat.completion.chunk\",\"created\":1792065672,\"model\":\"qwen3.8-flash\",\"choices\":[],\"usage\":{\"prompt_tokens\":53,\"completion_tokens\":52,\"total_tokens\":105,\"completion_tokens_details\":{\"reasoning_tokens\":40},\"cost\":{\"usd\":0.0001,\"hypercredits\":0.002}}}\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "line match",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T12:01:12Z",
+  "ttft_content_ms": 1726,
+  "ttft_reasoning_ms": 1157,
+  "first_decoded_ms": 1726,
+  "decode_span_ms": 53,
+  "tps": 967.09,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": null,
+  "completion_tokens": 52,
+  "prompt_tokens": 53,
+  "reasoning_tokens": 40,
+  "content_delta_count": 3,
+  "reasoning_delta_count": 13
+}

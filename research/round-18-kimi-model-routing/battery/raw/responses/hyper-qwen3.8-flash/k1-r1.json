@@ -1,0 +1,100 @@
+{
+  "pool_id": "hyper/qwen3.8-flash",
+  "provider": "hyper",
+  "model_id": "qwen3.8-flash",
+  "model_sent": "qwen3.8-flash",
+  "protocol": "openai",
+  "bucket": "MIDDLE",
+  "base_url": "https://hyper.charm.land/v1",
+  "probe_id": "k1",
+  "probe_kind": "code",
+  "rep": 1,
+  "measured": true,
+  "prompt": "Write a Python function named rev that takes a single string argument and returns that string reversed. Output only the function definition as plain Python code. No markdown fences, no explanation, no test calls, no example usage.",
+  "max_tokens": 192,
+  "tools_sent": false,
+  "tool_choice": null,
+  "request_body": {
+    "model": "qwen3.8-flash",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Write a Python function named rev that takes a single string argument and returns that string reversed. Output only the function definition as plain Python code. No markdown fences, no explanation, no test calls, no example usage."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "url": "https://hyper.charm.land/v1/chat/completions",
+  "timeout_s": 120,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 1954,
+  "response_headers": {
+    "cache-control": "no-cache",
+    "content-type": "text/event-stream",
+    "vary": "Accept-Encoding",
+    "x-ratelimit-limit-day": "10000",
+    "x-ratelimit-limit-hour": "1000",
+    "x-ratelimit-remaining-day": "9277",
+    "x-ratelimit-remaining-hour": "682",
+    "date": "Thu, 15 Oct 2026 12:01:33 GMT",
+    "server": "Google Frontend",
+    "x-cloud-trace-context": "6476363f2c46ba915ab27e4331a6579f/17431048998184520402",
+    "traceparent": "00-6476363f2c46ba915ab27e4331a6579f-f1e786b5cf378ad2-00",
+    "Transfer-Encoding": "chunked"
+  },
+  "content_type": null,
+  "content": "def rev(s):\n    return s[::-1]",
+  "content_truncated": false,
+  "reasoning_chars": 229,
+  "reasoning_text": "The user wants a simple Python function named `rev` that takes a string and returns it reversed. They want only the function definition, no markdown fences, no explanation, no test calls, no example usage. Plain Python code only.",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": {
+    "prompt_tokens": 66,
+    "completion_tokens": 61,
+    "total_tokens": 127,
+    "completion_tokens_details": {
+      "reasoning_tokens": 47
+    },
+    "cost": {
+      "usd": 0.0001,
+      "hypercredits": 0.002
+    }
+  },
+  "finish_reason": "stop",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 22,
+  "sse_line_count": 46,
+  "raw_preview": "data: {\"id\":\"chatcmpl-a1f1f6ecc387eb3f02dfe36c\",\"object\":\"chat.completion.chunk\",\"created\":1792065693,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-a1f1f6ecc387eb3f02dfe36c\",\"object\":\"chat.completion.chunk\",\"created\":1792065693,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"The\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-a1f1f6ecc387eb3f02dfe36c\",\"object\":\"chat.completion.chunk\",\"created\":1792065693,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" user wants a\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-a1f1f6ecc387eb3f02dfe36c\",\"object\":\"chat.completion.chunk\",\"created\":1792065693,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" simple\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-a1f1f6ecc387eb3f02dfe36c\",\"object\":\"chat.completion.chunk\",\"created\":1792065693,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" Python function named `\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-a1f1f6ecc387eb3f02dfe36c\",\"object\":\"chat.completion.chunk\",\"created\":1792065693,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"rev` that takes\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-a1f1f6ecc387eb3f02dfe36c\",\"object\":\"chat.completion.chunk\",\"created\":1792065693,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" a string and returns\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-a1f1f6ecc387eb3f02dfe36c\",\"object\":\"chat.completion.chunk\",\"created\":1792065693,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" it reversed. They\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-a1f1f6ecc387eb3f02dfe36c\",\"object\":\"chat.completion.chunk\",\"created\":1792065693,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" want only the\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-a1f1f6ecc387eb3f02dfe36c\",\"object\":\"chat.completion.chunk\",\"created\":1792065693,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" function definition, no\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-a1f1f6ecc387eb3f02dfe36c\",\"object\":\"chat.completion.chunk\",\"created\":1792065693,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" markdown fences, no\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-a1f1f6ecc387eb3f02dfe36c\",\"object\":\"chat.completion.chunk\",\"created\":1792065693,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" explanation\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-a1f1f6ecc387eb3f02dfe36c\",\"object\":\"chat.completion.chunk\",\"created\":1792065693,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\", no test calls\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-a1f1f6ecc387eb3f02dfe36c\",\"object\":\"chat.completion.chunk\",\"created\":1792065693,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\", no example\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-a1f1f6ecc387eb3f02dfe36c\",\"object\":\"chat.completion.chunk\",\"created\":1792065693,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" usage. Plain Python\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-a1f1f6ecc387eb3f02dfe36c\",\"object\":\"chat.completion.chunk\",\"created\":1792065693,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" code only.\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-a1f1f6ecc387eb3f02dfe36c\",\"object\":\"chat.completion.chunk\",\"created\":1792065693,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"def\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-a1f1f6ecc387eb3f02dfe36c\",\"object\":\"chat.completion.chunk\",\"created\":1792065693,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\" rev(s):\\n\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-a1f1f6ecc387eb3f02dfe36c\",\"object\":\"chat.completion.chunk\",\"created\":1792065693,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"    return\"},\"finish_reason\":null}]}\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "3 cases pass",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T12:01:34Z",
+  "ttft_content_ms": 1728,
+  "ttft_reasoning_ms": 1012,
+  "first_decoded_ms": 1728,
+  "decode_span_ms": 149,
+  "tps": 402.97,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": null,
+  "completion_tokens": 61,
+  "prompt_tokens": 66,
+  "reasoning_tokens": 47,
+  "content_delta_count": 4,
+  "reasoning_delta_count": 15
+}

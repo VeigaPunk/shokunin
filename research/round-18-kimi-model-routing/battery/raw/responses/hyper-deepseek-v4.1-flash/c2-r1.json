@@ -1,0 +1,100 @@
+{
+  "pool_id": "hyper/deepseek-v4.1-flash",
+  "provider": "hyper",
+  "model_id": "deepseek-v4.1-flash",
+  "model_sent": "deepseek-v4.1-flash",
+  "protocol": "openai",
+  "bucket": "FAST",
+  "base_url": "https://hyper.charm.land/v1",
+  "probe_id": "c2",
+  "probe_kind": "contract",
+  "rep": 1,
+  "measured": true,
+  "prompt": "Output only a JSON object with exactly two keys: <redacted> set to the integer 1, and \"b\" set to the string \"two\". No markdown fences, no explanation, no other keys.",
+  "max_tokens": 192,
+  "tools_sent": false,
+  "tool_choice": null,
+  "request_body": {
+    "model": "deepseek-v4.1-flash",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Output only a JSON object with exactly two keys: <redacted> set to the integer 1, and \"b\" set to the string \"two\". No markdown fences, no explanation, no other keys."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "url": "https://hyper.charm.land/v1/chat/completions",
+  "timeout_s": 120,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 968,
+  "response_headers": {
+    "cache-control": "no-cache",
+    "content-type": "text/event-stream",
+    "vary": "Accept-Encoding",
+    "x-ratelimit-limit-day": "10000",
+    "x-ratelimit-limit-hour": "1000",
+    "x-ratelimit-remaining-day": "9292",
+    "x-ratelimit-remaining-hour": "697",
+    "date": "Thu, 15 Oct 2026 12:00:00 GMT",
+    "server": "Google Frontend",
+    "traceparent": "00-362845d3c9fc8c9882ea18f15c0fabb0-d280f405712777ee-00",
+    "x-cloud-trace-context": "362845d3c9fc8c9882ea18f15c0fabb0/15168391849194256366",
+    "Transfer-Encoding": "chunked"
+  },
+  "content_type": null,
+  "content": "{\"a\":1,\"b\":\"two\"}",
+  "content_truncated": false,
+  "reasoning_chars": 108,
+  "reasoning_text": "We need answer only JSON object exactly two keys a integer 1 b string \"two\". No markdown. Ensure valid JSON.",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": {
+    "prompt_tokens": 73,
+    "completion_tokens": 37,
+    "total_tokens": 110,
+    "completion_tokens_details": {
+      "reasoning_tokens": 26
+    },
+    "cost": {
+      "usd": 0.0001,
+      "hypercredits": 0.002
+    }
+  },
+  "finish_reason": "stop",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 38,
+  "sse_line_count": 78,
+  "raw_preview": "data: {\"id\":\"chatcmpl-5865fdd0c068c27bc5a1e2a5\",\"object\":\"chat.completion.chunk\",\"created\":1792065600,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-5865fdd0c068c27bc5a1e2a5\",\"object\":\"chat.completion.chunk\",\"created\":1792065600,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"We\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-5865fdd0c068c27bc5a1e2a5\",\"object\":\"chat.completion.chunk\",\"created\":1792065600,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" need\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-5865fdd0c068c27bc5a1e2a5\",\"object\":\"chat.completion.chunk\",\"created\":1792065600,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" answer\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-5865fdd0c068c27bc5a1e2a5\",\"object\":\"chat.completion.chunk\",\"created\":1792065600,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" only\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-5865fdd0c068c27bc5a1e2a5\",\"object\":\"chat.completion.chunk\",\"created\":1792065600,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" JSON\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-5865fdd0c068c27bc5a1e2a5\",\"object\":\"chat.completion.chunk\",\"created\":1792065600,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" object\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-5865fdd0c068c27bc5a1e2a5\",\"object\":\"chat.completion.chunk\",\"created\":1792065600,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" exactly\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-5865fdd0c068c27bc5a1e2a5\",\"object\":\"chat.completion.chunk\",\"created\":1792065600,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" two\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-5865fdd0c068c27bc5a1e2a5\",\"object\":\"chat.completion.chunk\",\"created\":1792065600,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" keys\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-5865fdd0c068c27bc5a1e2a5\",\"object\":\"chat.completion.chunk\",\"created\":1792065600,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" a\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-5865fdd0c068c27bc5a1e2a5\",\"object\":\"chat.completion.chunk\",\"created\":1792065600,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" integer\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-5865fdd0c068c27bc5a1e2a5\",\"object\":\"chat.completion.chunk\",\"created\":1792065600,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" \"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-5865fdd0c068c27bc5a1e2a5\",\"object\":\"chat.completion.chunk\",\"created\":1792065600,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"1\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-5865fdd0c068c27bc5a1e2a5\",\"object\":\"chat.completion.chunk\",\"created\":1792065600,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" b\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-5865fdd0c068c27bc5a1e2a5\",\"object\":\"chat.completion.chunk\",\"created\":1792065600,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" string\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-5865fdd0c068c27bc5a1e2a5\",\"object\":\"chat.completion.chunk\",\"created\":1792065600,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" \\\"\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-5865fdd0c068c27bc5a1e2a5\",\"object\":\"chat.completion.chunk\",\"created\":1792065600,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"two\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-5865fdd0c068c27bc5a1e2a5\",\"object\":\"chat.completion.chunk\",\"created\":1792065600,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"\\\".\"},\"finish_reason\":null}]}\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "json match",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T12:00:00Z",
+  "ttft_content_ms": 890,
+  "ttft_reasoning_ms": 735,
+  "first_decoded_ms": 890,
+  "decode_span_ms": 42,
+  "tps": null,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": "not derivable: stream was not incrementally flushed (decode span 42 ms < 50 ms)",
+  "completion_tokens": 37,
+  "prompt_tokens": 73,
+  "reasoning_tokens": 26,
+  "content_delta_count": 9,
+  "reasoning_delta_count": 26
+}

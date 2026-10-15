@@ -1,0 +1,104 @@
+{
+  "pool_id": "cascade/deepseek-v4.1-flash",
+  "provider": "ds-flash-cascade",
+  "model_id": "deepseek-v4.1-flash",
+  "model_sent": "deepseek-v4.1-flash",
+  "protocol": "openai",
+  "bucket": "FAST",
+  "base_url": "http://127.0.0.1:8791/v1",
+  "probe_id": "c3",
+  "probe_kind": "contract",
+  "rep": 1,
+  "measured": true,
+  "prompt": "Write exactly three lines, nothing before or after. Line 1: ALPHA. Line 2: BETA. Line 3: GAMMA.",
+  "max_tokens": 192,
+  "tools_sent": false,
+  "tool_choice": null,
+  "request_body": {
+    "model": "deepseek-v4.1-flash",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Write exactly three lines, nothing before or after. Line 1: ALPHA. Line 2: BETA. Line 3: GAMMA."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "url": "http://127.0.0.1:8791/v1/chat/completions",
+  "timeout_s": 300,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 2313,
+  "response_headers": {
+    "Date": "Thu, 15 Oct 2026 12:00:31 GMT",
+    "Content-Type": "text/event-stream",
+    "Cache-Control": "no-cache",
+    "Cf-Placement": "remote-IAD",
+    "x-opencode-endpoint-id": "novita-deepseek",
+    "x-opencode-log-id": "d5ecae38-2780-4034-bb72-f833b29b3ac7",
+    "x-opencode-upstream-model-id": "deepseek/deepseek-v4.1-flash",
+    "x-zen-model": "deepseek-v4.1-flash",
+    "Server": "cloudflare",
+    "CF-RAY": "a4aea9eab91ae686-MIA",
+    "Connection": "close"
+  },
+  "content_type": "text/event-stream",
+  "content": "ALPHA\nBETA\nGAMMA",
+  "content_truncated": false,
+  "reasoning_chars": 158,
+  "reasoning_text": "We need answer exactly three lines nothing before/after. Need comply. Must ensure no extra whitespace? Just ALPHA newline BETA newline GAMMA. Need final only.",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": {
+    "prompt_tokens": 63,
+    "completion_tokens": 50,
+    "total_tokens": 113,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_write_tokens": 0
+    },
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 39,
+      "rejected_prediction_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 22,
+  "sse_line_count": 46,
+  "raw_preview": "data: {\"id\":\"c20fc7e893c2216c6eee2c51923d57db\",\"object\":\"chat.completion.chunk\",\"created\":1792065631,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\"}}]}\ndata: {\"id\":\"c20fc7e893c2216c6eee2c51923d57db\",\"object\":\"chat.completion.chunk\",\"created\":1792065631,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"We\"}}]}\ndata: {\"id\":\"c20fc7e893c2216c6eee2c51923d57db\",\"object\":\"chat.completion.chunk\",\"created\":1792065631,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" need answer exactly\"}}]}\ndata: {\"id\":\"c20fc7e893c2216c6eee2c51923d57db\",\"object\":\"chat.completion.chunk\",\"created\":1792065631,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" three lines nothing\"}}]}\ndata: {\"id\":\"c20fc7e893c2216c6eee2c51923d57db\",\"object\":\"chat.completion.chunk\",\"created\":1792065631,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" before/\"}}]}\ndata: {\"id\":\"c20fc7e893c2216c6eee2c51923d57db\",\"object\":\"chat.completion.chunk\",\"created\":1792065631,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"after. Need comply\"}}]}\ndata: {\"id\":\"c20fc7e893c2216c6eee2c51923d57db\",\"object\":\"chat.completion.chunk\",\"created\":1792065631,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\". Must\"}}]}\ndata: {\"id\":\"c20fc7e893c2216c6eee2c51923d57db\",\"object\":\"chat.completion.chunk\",\"created\":1792065631,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" ensure\"}}]}\ndata: {\"id\":\"c20fc7e893c2216c6eee2c51923d57db\",\"object\":\"chat.completion.chunk\",\"created\":1792065631,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" no extra whites\"}}]}\ndata: {\"id\":\"c20fc7e893c2216c6eee2c51923d57db\",\"object\":\"chat.completion.chunk\",\"created\":1792065631,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"pace? Just\"}}]}\ndata: {\"id\":\"c20fc7e893c2216c6eee2c51923d57db\",\"object\":\"chat.completion.chunk\",\"created\":1792065631,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" AL\"}}]}\ndata: {\"id\":\"c20fc7e893c2216c6eee2c51923d57db\",\"object\":\"chat.completion.chunk\",\"created\":1792065631,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"PHA new\"}}]}\ndata: {\"id\":\"c20fc7e893c2216c6eee2c51923d57db\",\"object\":\"chat.completion.chunk\",\"created\":1792065631,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"line BETA newline\"}}]}\ndata: {\"id\":\"c20fc7e893c2216c6eee2c51923d57db\",\"object\":\"chat.completion.chunk\",\"created\":1792065631,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" GAMMA. Need final\"}}]}\ndata: {\"id\":\"c20fc7e893c2216c6eee2c51923d57db\",\"object\":\"chat.completion.chunk\",\"created\":1792065631,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" only\"}}]}\ndata: {\"id\":\"c20fc7e893c2216c6eee2c51923d57db\",\"object\":\"chat.completion.chunk\",\"created\":1792065631,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\".\"}}]}\ndata: {\"id\":\"c20fc7e893c2216c6eee2c51923d57db\",\"object\":\"chat.completion.chunk\",\"created\":1792065631,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"content\":\"AL\"}}]}\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "line match",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T12:00:31Z",
+  "ttft_content_ms": 2313,
+  "ttft_reasoning_ms": 2313,
+  "first_decoded_ms": 2313,
+  "decode_span_ms": 0,
+  "tps": null,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": "not derivable: stream was not incrementally flushed (decode span 0 ms < 50 ms)",
+  "completion_tokens": 50,
+  "prompt_tokens": 63,
+  "reasoning_tokens": 39,
+  "content_delta_count": 5,
+  "reasoning_delta_count": 15
+}

@@ -1,0 +1,1096 @@
+{
+  "scored_at_utc": null,
+  "config_sha256": "e3c223e054a626b847e69f73020ac9b4fdec1ccc2c8f00dcbf414dcda8acfe78",
+  "per_model": [
+    {
+      "model": "cascade/glm-5.3-flash",
+      "bucket": "FAST",
+      "ttft_pred": 6000,
+      "ttft_obs": 4951.5,
+      "ttft_obs_basis": "content",
+      "ttft_error": 1048.5,
+      "ttft_in_range": true,
+      "tps_pred": null,
+      "tps_obs": null,
+      "tps_error": null,
+      "tps_derivable_pred": false,
+      "tps_derivable_obs": false,
+      "pass_pred": 6,
+      "pass_obs": 8,
+      "pass_error": -2,
+      "pass_range_hit": true,
+      "failure_pred": [
+        "transport",
+        "format_break"
+      ],
+      "failure_obs": "format_break",
+      "failure_hit": true,
+      "observed": {
+        "bucket": "FAST",
+        "ttft_median": 4951.5,
+        "ttft_reps": [
+          4955,
+          4948
+        ],
+        "ttft_reasoning_median": null,
+        "ttft_first_median": 4951.5,
+        "ttft_used": 4951.5,
+        "ttft_basis": "content",
+        "tps_median": null,
+        "tps_reps": [],
+        "pass_count": 8,
+        "graded": 9,
+        "measured_graded": 9,
+        "dominant_class": "format_break",
+        "classes": {
+          "format_break": 1,
+          "ok": 8
+        },
+        "prompt_tokens": 11775,
+        "incremental": false,
+        "burst": true,
+        "stream_modes": [
+          "burst",
+          "burst"
+        ],
+        "statuses": [
+          200
+        ]
+      }
+    },
+    {
+      "model": "zai-coding-plan/glm-5.3-flash-low",
+      "bucket": "FAST",
+      "ttft_pred": 3200,
+      "ttft_obs": 2796.0,
+      "ttft_obs_basis": "first_decoded(reasoning-first)",
+      "ttft_error": 404.0,
+      "ttft_in_range": true,
+      "tps_pred": null,
+      "tps_obs": 138.21,
+      "tps_error": null,
+      "tps_derivable_pred": false,
+      "tps_derivable_obs": true,
+      "pass_pred": 9,
+      "pass_obs": 7,
+      "pass_error": 2,
+      "pass_range_hit": true,
+      "failure_pred": [
+        "truncation"
+      ],
+      "failure_obs": "truncation",
+      "failure_hit": true,
+      "observed": {
+        "bucket": "FAST",
+        "ttft_median": null,
+        "ttft_reps": [],
+        "ttft_reasoning_median": 2796.0,
+        "ttft_first_median": 2796.0,
+        "ttft_used": 2796.0,
+        "ttft_basis": "first_decoded(reasoning-first)",
+        "tps_median": 138.21,
+        "tps_reps": [
+          148.52,
+          127.9
+        ],
+        "pass_count": 7,
+        "graded": 9,
+        "measured_graded": 9,
+        "dominant_class": "truncation",
+        "classes": {
+          "ok": 7,
+          "truncation": 2
+        },
+        "prompt_tokens": 71,
+        "incremental": true,
+        "burst": false,
+        "stream_modes": [
+          "incremental",
+          "incremental"
+        ],
+        "statuses": [
+          200
+        ]
+      }
+    },
+    {
+      "model": "cursor/composer-2.5",
+      "bucket": "VERY-FAST",
+      "ttft_pred": 6000,
+      "ttft_obs": 7197.5,
+      "ttft_obs_basis": "content",
+      "ttft_error": -1197.5,
+      "ttft_in_range": true,
+      "tps_pred": null,
+      "tps_obs": null,
+      "tps_error": null,
+      "tps_derivable_pred": false,
+      "tps_derivable_obs": false,
+      "pass_pred": 8,
+      "pass_obs": 7,
+      "pass_error": 1,
+      "pass_range_hit": true,
+      "failure_pred": [
+        "format_break"
+      ],
+      "failure_obs": "wrong_answer",
+      "failure_hit": false,
+      "observed": {
+        "bucket": "VERY-FAST",
+        "ttft_median": 7197.5,
+        "ttft_reps": [
+          7254,
+          7141
+        ],
+        "ttft_reasoning_median": null,
+        "ttft_first_median": 7197.5,
+        "ttft_used": 7197.5,
+        "ttft_basis": "content",
+        "tps_median": null,
+        "tps_reps": [],
+        "pass_count": 7,
+        "graded": 9,
+        "measured_graded": 9,
+        "dominant_class": "wrong_answer",
+        "classes": {
+          "format_break": 1,
+          "ok": 7,
+          "wrong_answer": 1
+        },
+        "prompt_tokens": 0,
+        "incremental": false,
+        "burst": true,
+        "stream_modes": [
+          "burst",
+          "burst"
+        ],
+        "statuses": [
+          200
+        ]
+      }
+    },
+    {
+      "model": "cursor/cursor-grok-4.5-low-fast",
+      "bucket": "VERY-FAST",
+      "ttft_pred": 4500,
+      "ttft_obs": 8275.0,
+      "ttft_obs_basis": "content",
+      "ttft_error": -3775.0,
+      "ttft_in_range": true,
+      "tps_pred": null,
+      "tps_obs": null,
+      "tps_error": null,
+      "tps_derivable_pred": false,
+      "tps_derivable_obs": false,
+      "pass_pred": 8,
+      "pass_obs": 8,
+      "pass_error": 0,
+      "pass_range_hit": true,
+      "failure_pred": [
+        "format_break"
+      ],
+      "failure_obs": "format_break",
+      "failure_hit": true,
+      "observed": {
+        "bucket": "VERY-FAST",
+        "ttft_median": 8275.0,
+        "ttft_reps": [
+          8739,
+          7811
+        ],
+        "ttft_reasoning_median": null,
+        "ttft_first_median": 8275.0,
+        "ttft_used": 8275.0,
+        "ttft_basis": "content",
+        "tps_median": null,
+        "tps_reps": [],
+        "pass_count": 8,
+        "graded": 9,
+        "measured_graded": 9,
+        "dominant_class": "format_break",
+        "classes": {
+          "format_break": 1,
+          "ok": 8
+        },
+        "prompt_tokens": 0,
+        "incremental": false,
+        "burst": true,
+        "stream_modes": [
+          "burst",
+          "burst"
+        ],
+        "statuses": [
+          200
+        ]
+      }
+    },
+    {
+      "model": "hyper/deepseek-v4.1-flash",
+      "bucket": "FAST",
+      "ttft_pred": 900,
+      "ttft_obs": 2081.0,
+      "ttft_obs_basis": "content",
+      "ttft_error": -1181.0,
+      "ttft_in_range": true,
+      "tps_pred": null,
+      "tps_obs": 375.91,
+      "tps_error": null,
+      "tps_derivable_pred": false,
+      "tps_derivable_obs": true,
+      "pass_pred": 8,
+      "pass_obs": 8,
+      "pass_error": 0,
+      "pass_range_hit": true,
+      "failure_pred": [
+        "truncation"
+      ],
+      "failure_obs": "truncation",
+      "failure_hit": true,
+      "observed": {
+        "bucket": "FAST",
+        "ttft_median": 2081.0,
+        "ttft_reps": [
+          1807,
+          2355
+        ],
+        "ttft_reasoning_median": 1452.0,
+        "ttft_first_median": 2081.0,
+        "ttft_used": 2081.0,
+        "ttft_basis": "content",
+        "tps_median": 375.91,
+        "tps_reps": [
+          366.05,
+          385.77
+        ],
+        "pass_count": 8,
+        "graded": 9,
+        "measured_graded": 9,
+        "dominant_class": "truncation",
+        "classes": {
+          "ok": 8,
+          "truncation": 1
+        },
+        "prompt_tokens": 89,
+        "incremental": true,
+        "burst": false,
+        "stream_modes": [
+          "incremental",
+          "incremental"
+        ],
+        "statuses": [
+          200
+        ]
+      }
+    },
+    {
+      "model": "cascade/deepseek-v4.1-flash",
+      "bucket": "FAST",
+      "ttft_pred": 2500,
+      "ttft_obs": 3179,
+      "ttft_obs_basis": "content",
+      "ttft_error": -679,
+      "ttft_in_range": true,
+      "tps_pred": null,
+      "tps_obs": null,
+      "tps_error": null,
+      "tps_derivable_pred": false,
+      "tps_derivable_obs": false,
+      "pass_pred": 9,
+      "pass_obs": 8,
+      "pass_error": 1,
+      "pass_range_hit": true,
+      "failure_pred": [
+        "none"
+      ],
+      "failure_obs": "truncation",
+      "failure_hit": false,
+      "observed": {
+        "bucket": "FAST",
+        "ttft_median": 3179,
+        "ttft_reps": [
+          3179
+        ],
+        "ttft_reasoning_median": 5210.0,
+        "ttft_first_median": 5210.0,
+        "ttft_used": 3179,
+        "ttft_basis": "content",
+        "tps_median": null,
+        "tps_reps": [],
+        "pass_count": 8,
+        "graded": 9,
+        "measured_graded": 9,
+        "dominant_class": "truncation",
+        "classes": {
+          "ok": 8,
+          "truncation": 1
+        },
+        "prompt_tokens": 89,
+        "incremental": false,
+        "burst": true,
+        "stream_modes": [
+          "burst",
+          "burst"
+        ],
+        "statuses": [
+          200
+        ]
+      }
+    },
+    {
+      "model": "alibaba-token-plan/deepseek-v4.1-flash",
+      "bucket": "FAST",
+      "ttft_pred": 2600,
+      "ttft_obs": 2251.0,
+      "ttft_obs_basis": "first_decoded(reasoning-first)",
+      "ttft_error": 349.0,
+      "ttft_in_range": true,
+      "tps_pred": 180,
+      "tps_obs": 226.72,
+      "tps_error": -46.72,
+      "tps_derivable_pred": true,
+      "tps_derivable_obs": true,
+      "pass_pred": 9,
+      "pass_obs": 8,
+      "pass_error": 1,
+      "pass_range_hit": true,
+      "failure_pred": [
+        "none"
+      ],
+      "failure_obs": "truncation",
+      "failure_hit": false,
+      "observed": {
+        "bucket": "FAST",
+        "ttft_median": null,
+        "ttft_reps": [],
+        "ttft_reasoning_median": 2251.0,
+        "ttft_first_median": 2251.0,
+        "ttft_used": 2251.0,
+        "ttft_basis": "first_decoded(reasoning-first)",
+        "tps_median": 226.72,
+        "tps_reps": [
+          215.17,
+          238.28
+        ],
+        "pass_count": 8,
+        "graded": 9,
+        "measured_graded": 9,
+        "dominant_class": "truncation",
+        "classes": {
+          "ok": 8,
+          "truncation": 1
+        },
+        "prompt_tokens": 89,
+        "incremental": true,
+        "burst": false,
+        "stream_modes": [
+          "incremental",
+          "incremental"
+        ],
+        "statuses": [
+          200
+        ]
+      }
+    },
+    {
+      "model": "alibaba-token-plan-2/deepseek-v4.1-flash",
+      "bucket": "FAST",
+      "ttft_pred": null,
+      "ttft_obs": null,
+      "ttft_obs_basis": "none",
+      "ttft_error": null,
+      "ttft_in_range": null,
+      "tps_pred": null,
+      "tps_obs": null,
+      "tps_error": null,
+      "tps_derivable_pred": false,
+      "tps_derivable_obs": false,
+      "pass_pred": 0,
+      "pass_obs": 0,
+      "pass_error": 0,
+      "pass_range_hit": true,
+      "failure_pred": [
+        "auth"
+      ],
+      "failure_obs": "auth",
+      "failure_hit": true,
+      "observed": {
+        "bucket": "FAST",
+        "ttft_median": null,
+        "ttft_reps": [],
+        "ttft_reasoning_median": null,
+        "ttft_first_median": null,
+        "ttft_used": null,
+        "ttft_basis": "none",
+        "tps_median": null,
+        "tps_reps": [],
+        "pass_count": 0,
+        "graded": 9,
+        "measured_graded": 0,
+        "dominant_class": "auth",
+        "classes": {
+          "skipped_after_fatal": 9
+        },
+        "prompt_tokens": 0,
+        "incremental": false,
+        "burst": false,
+        "stream_modes": [],
+        "statuses": [
+          429
+        ]
+      }
+    },
+    {
+      "model": "alibaba-token-plan-3/deepseek-v4.1-flash",
+      "bucket": "FAST",
+      "ttft_pred": null,
+      "ttft_obs": null,
+      "ttft_obs_basis": "none",
+      "ttft_error": null,
+      "ttft_in_range": null,
+      "tps_pred": null,
+      "tps_obs": null,
+      "tps_error": null,
+      "tps_derivable_pred": false,
+      "tps_derivable_obs": false,
+      "pass_pred": 0,
+      "pass_obs": 0,
+      "pass_error": 0,
+      "pass_range_hit": true,
+      "failure_pred": [
+        "auth"
+      ],
+      "failure_obs": "auth",
+      "failure_hit": true,
+      "observed": {
+        "bucket": "FAST",
+        "ttft_median": null,
+        "ttft_reps": [],
+        "ttft_reasoning_median": null,
+        "ttft_first_median": null,
+        "ttft_used": null,
+        "ttft_basis": "none",
+        "tps_median": null,
+        "tps_reps": [],
+        "pass_count": 0,
+        "graded": 9,
+        "measured_graded": 0,
+        "dominant_class": "auth",
+        "classes": {
+          "skipped_after_fatal": 9
+        },
+        "prompt_tokens": 0,
+        "incremental": false,
+        "burst": false,
+        "stream_modes": [],
+        "statuses": [
+          429
+        ]
+      }
+    },
+    {
+      "model": "alibaba-token-plan/qwen3.8-flash",
+      "bucket": "MIDDLE",
+      "ttft_pred": 3500,
+      "ttft_obs": 13281.5,
+      "ttft_obs_basis": "content",
+      "ttft_error": -9781.5,
+      "ttft_in_range": false,
+      "tps_pred": 55,
+      "tps_obs": 235.56,
+      "tps_error": -180.56,
+      "tps_derivable_pred": true,
+      "tps_derivable_obs": true,
+      "pass_pred": 8,
+      "pass_obs": 9,
+      "pass_error": -1,
+      "pass_range_hit": true,
+      "failure_pred": [
+        "truncation"
+      ],
+      "failure_obs": "none",
+      "failure_hit": false,
+      "observed": {
+        "bucket": "MIDDLE",
+        "ttft_median": 13281.5,
+        "ttft_reps": [
+          11550,
+          15013
+        ],
+        "ttft_reasoning_median": 1600.5,
+        "ttft_first_median": 13281.5,
+        "ttft_used": 13281.5,
+        "ttft_basis": "content",
+        "tps_median": 235.56,
+        "tps_reps": [
+          266.51,
+          204.61
+        ],
+        "pass_count": 9,
+        "graded": 9,
+        "measured_graded": 9,
+        "dominant_class": "none",
+        "classes": {
+          "ok": 9
+        },
+        "prompt_tokens": 122,
+        "incremental": true,
+        "burst": false,
+        "stream_modes": [
+          "incremental",
+          "incremental"
+        ],
+        "statuses": [
+          200
+        ]
+      }
+    },
+    {
+      "model": "alibaba-token-plan-2/qwen3.8-flash",
+      "bucket": "MIDDLE",
+      "ttft_pred": null,
+      "ttft_obs": null,
+      "ttft_obs_basis": "none",
+      "ttft_error": null,
+      "ttft_in_range": null,
+      "tps_pred": null,
+      "tps_obs": null,
+      "tps_error": null,
+      "tps_derivable_pred": false,
+      "tps_derivable_obs": false,
+      "pass_pred": 0,
+      "pass_obs": 0,
+      "pass_error": 0,
+      "pass_range_hit": true,
+      "failure_pred": [
+        "auth"
+      ],
+      "failure_obs": "auth",
+      "failure_hit": true,
+      "observed": {
+        "bucket": "MIDDLE",
+        "ttft_median": null,
+        "ttft_reps": [],
+        "ttft_reasoning_median": null,
+        "ttft_first_median": null,
+        "ttft_used": null,
+        "ttft_basis": "none",
+        "tps_median": null,
+        "tps_reps": [],
+        "pass_count": 0,
+        "graded": 9,
+        "measured_graded": 0,
+        "dominant_class": "auth",
+        "classes": {
+          "skipped_after_fatal": 9
+        },
+        "prompt_tokens": 0,
+        "incremental": false,
+        "burst": false,
+        "stream_modes": [],
+        "statuses": [
+          429
+        ]
+      }
+    },
+    {
+      "model": "alibaba-token-plan-3/qwen3.8-flash",
+      "bucket": "MIDDLE",
+      "ttft_pred": null,
+      "ttft_obs": null,
+      "ttft_obs_basis": "none",
+      "ttft_error": null,
+      "ttft_in_range": null,
+      "tps_pred": null,
+      "tps_obs": null,
+      "tps_error": null,
+      "tps_derivable_pred": false,
+      "tps_derivable_obs": false,
+      "pass_pred": 0,
+      "pass_obs": 0,
+      "pass_error": 0,
+      "pass_range_hit": true,
+      "failure_pred": [
+        "auth"
+      ],
+      "failure_obs": "auth",
+      "failure_hit": true,
+      "observed": {
+        "bucket": "MIDDLE",
+        "ttft_median": null,
+        "ttft_reps": [],
+        "ttft_reasoning_median": null,
+        "ttft_first_median": null,
+        "ttft_used": null,
+        "ttft_basis": "none",
+        "tps_median": null,
+        "tps_reps": [],
+        "pass_count": 0,
+        "graded": 9,
+        "measured_graded": 0,
+        "dominant_class": "auth",
+        "classes": {
+          "skipped_after_fatal": 9
+        },
+        "prompt_tokens": 0,
+        "incremental": false,
+        "burst": false,
+        "stream_modes": [],
+        "statuses": [
+          429
+        ]
+      }
+    },
+    {
+      "model": "zai-coding-plan/glm-5-turbo",
+      "bucket": "MIDDLE",
+      "ttft_pred": 2800,
+      "ttft_obs": 2957.0,
+      "ttft_obs_basis": "content",
+      "ttft_error": -157.0,
+      "ttft_in_range": true,
+      "tps_pred": null,
+      "tps_obs": 157.07,
+      "tps_error": null,
+      "tps_derivable_pred": false,
+      "tps_derivable_obs": true,
+      "pass_pred": 9,
+      "pass_obs": 8,
+      "pass_error": 1,
+      "pass_range_hit": true,
+      "failure_pred": [
+        "none"
+      ],
+      "failure_obs": "truncation",
+      "failure_hit": false,
+      "observed": {
+        "bucket": "MIDDLE",
+        "ttft_median": 2957.0,
+        "ttft_reps": [
+          3086,
+          2828
+        ],
+        "ttft_reasoning_median": 2957.0,
+        "ttft_first_median": 2957.0,
+        "ttft_used": 2957.0,
+        "ttft_basis": "content",
+        "tps_median": 157.07,
+        "tps_reps": [
+          161.25,
+          152.9
+        ],
+        "pass_count": 8,
+        "graded": 9,
+        "measured_graded": 9,
+        "dominant_class": "truncation",
+        "classes": {
+          "ok": 8,
+          "truncation": 1
+        },
+        "prompt_tokens": 71,
+        "incremental": true,
+        "burst": false,
+        "stream_modes": [
+          "incremental",
+          "incremental"
+        ],
+        "statuses": [
+          200
+        ]
+      }
+    },
+    {
+      "model": "hyper/qwen3.8-flash",
+      "bucket": "MIDDLE",
+      "ttft_pred": 1500,
+      "ttft_obs": 4867.5,
+      "ttft_obs_basis": "content",
+      "ttft_error": -3367.5,
+      "ttft_in_range": false,
+      "tps_pred": 120,
+      "tps_obs": 178.96,
+      "tps_error": -58.96,
+      "tps_derivable_pred": true,
+      "tps_derivable_obs": true,
+      "pass_pred": 8,
+      "pass_obs": 9,
+      "pass_error": -1,
+      "pass_range_hit": true,
+      "failure_pred": [
+        "truncation"
+      ],
+      "failure_obs": "none",
+      "failure_hit": false,
+      "observed": {
+        "bucket": "MIDDLE",
+        "ttft_median": 4867.5,
+        "ttft_reps": [
+          2027,
+          7708
+        ],
+        "ttft_reasoning_median": 1069.5,
+        "ttft_first_median": 4867.5,
+        "ttft_used": 4867.5,
+        "ttft_basis": "content",
+        "tps_median": 178.96,
+        "tps_reps": [
+          97.93,
+          259.98
+        ],
+        "pass_count": 9,
+        "graded": 9,
+        "measured_graded": 9,
+        "dominant_class": "none",
+        "classes": {
+          "ok": 9
+        },
+        "prompt_tokens": 84,
+        "incremental": true,
+        "burst": false,
+        "stream_modes": [
+          "incremental",
+          "incremental"
+        ],
+        "statuses": [
+          200
+        ]
+      }
+    },
+    {
+      "model": "xai-oauth/grok-4.5",
+      "bucket": "MIDDLE",
+      "ttft_pred": 1400,
+      "ttft_obs": 3475.5,
+      "ttft_obs_basis": "content",
+      "ttft_error": -2075.5,
+      "ttft_in_range": true,
+      "tps_pred": 300,
+      "tps_obs": 66.71,
+      "tps_error": 233.29,
+      "tps_derivable_pred": true,
+      "tps_derivable_obs": true,
+      "pass_pred": 9,
+      "pass_obs": 9,
+      "pass_error": 0,
+      "pass_range_hit": true,
+      "failure_pred": [
+        "none"
+      ],
+      "failure_obs": "none",
+      "failure_hit": true,
+      "observed": {
+        "bucket": "MIDDLE",
+        "ttft_median": 3475.5,
+        "ttft_reps": [
+          3116,
+          3835
+        ],
+        "ttft_reasoning_median": 2125.0,
+        "ttft_first_median": 3475.5,
+        "ttft_used": 3475.5,
+        "ttft_basis": "content",
+        "tps_median": 66.71,
+        "tps_reps": [
+          71.13,
+          62.29
+        ],
+        "pass_count": 9,
+        "graded": 9,
+        "measured_graded": 9,
+        "dominant_class": "none",
+        "classes": {
+          "ok": 9
+        },
+        "prompt_tokens": 553,
+        "incremental": true,
+        "burst": false,
+        "stream_modes": [
+          "incremental",
+          "incremental"
+        ],
+        "statuses": [
+          200
+        ]
+      }
+    },
+    {
+      "model": "openai-codex/gpt-6.1-sol",
+      "bucket": "STRONG",
+      "ttft_pred": 1600,
+      "ttft_obs": 2212.0,
+      "ttft_obs_basis": "content",
+      "ttft_error": -612.0,
+      "ttft_in_range": true,
+      "tps_pred": 65,
+      "tps_obs": 64.46,
+      "tps_error": 0.54,
+      "tps_derivable_pred": true,
+      "tps_derivable_obs": true,
+      "pass_pred": 9,
+      "pass_obs": 9,
+      "pass_error": 0,
+      "pass_range_hit": true,
+      "failure_pred": [
+        "none"
+      ],
+      "failure_obs": "none",
+      "failure_hit": true,
+      "observed": {
+        "bucket": "STRONG",
+        "ttft_median": 2212.0,
+        "ttft_reps": [
+          2371,
+          2053
+        ],
+        "ttft_reasoning_median": null,
+        "ttft_first_median": 2212.0,
+        "ttft_used": 2212.0,
+        "ttft_basis": "content",
+        "tps_median": 64.46,
+        "tps_reps": [
+          65.51,
+          63.41
+        ],
+        "pass_count": 9,
+        "graded": 9,
+        "measured_graded": 9,
+        "dominant_class": "none",
+        "classes": {
+          "ok": 9
+        },
+        "prompt_tokens": 66,
+        "incremental": true,
+        "burst": false,
+        "stream_modes": [
+          "incremental",
+          "incremental"
+        ],
+        "statuses": [
+          200
+        ]
+      }
+    },
+    {
+      "model": "openai-codex/gpt-6.1-sol-high",
+      "bucket": "STRONG",
+      "ttft_pred": 2500,
+      "ttft_obs": 2878.5,
+      "ttft_obs_basis": "content",
+      "ttft_error": -378.5,
+      "ttft_in_range": true,
+      "tps_pred": 55,
+      "tps_obs": 70.82,
+      "tps_error": -15.82,
+      "tps_derivable_pred": true,
+      "tps_derivable_obs": true,
+      "pass_pred": 9,
+      "pass_obs": 9,
+      "pass_error": 0,
+      "pass_range_hit": true,
+      "failure_pred": [
+        "none"
+      ],
+      "failure_obs": "none",
+      "failure_hit": true,
+      "observed": {
+        "bucket": "STRONG",
+        "ttft_median": 2878.5,
+        "ttft_reps": [
+          1662,
+          4095
+        ],
+        "ttft_reasoning_median": null,
+        "ttft_first_median": 2878.5,
+        "ttft_used": 2878.5,
+        "ttft_basis": "content",
+        "tps_median": 70.82,
+        "tps_reps": [
+          63.34,
+          78.3
+        ],
+        "pass_count": 9,
+        "graded": 9,
+        "measured_graded": 9,
+        "dominant_class": "none",
+        "classes": {
+          "ok": 9
+        },
+        "prompt_tokens": 66,
+        "incremental": true,
+        "burst": false,
+        "stream_modes": [
+          "incremental",
+          "incremental"
+        ],
+        "statuses": [
+          200
+        ]
+      }
+    }
+  ],
+  "ordering": [
+    {
+      "id": "O1",
+      "verdict": "hit",
+      "evidence": "cascade/deepseek-v4.1-flash=3179 ms, cursor/composer-2.5=7197.5 ms"
+    },
+    {
+      "id": "O2",
+      "verdict": "hit",
+      "evidence": "fastest FAST by TTFT: hyper/deepseek-v4.1-flash"
+    },
+    {
+      "id": "O3",
+      "verdict": "miss",
+      "evidence": "slowest FAST by TTFT: cursor/cursor-grok-4.5-low-fast"
+    },
+    {
+      "id": "O4",
+      "verdict": "miss",
+      "evidence": "fastest MIDDLE by TTFT: zai-coding-plan/glm-5-turbo"
+    },
+    {
+      "id": "O5",
+      "verdict": "hit",
+      "evidence": "slowest MIDDLE by TTFT: alibaba-token-plan/qwen3.8-flash"
+    },
+    {
+      "id": "O6",
+      "verdict": "hit",
+      "evidence": "openai-codex/gpt-6.1-sol=2212.0 ms, openai-codex/gpt-6.1-sol-high=2878.5 ms"
+    },
+    {
+      "id": "O7",
+      "verdict": "hit",
+      "evidence": "fastest FAST hyper/deepseek-v4.1-flash=2081.0 ms vs fastest MIDDLE/STRONG openai-codex/gpt-6.1-sol"
+    },
+    {
+      "id": "O8",
+      "verdict": "miss",
+      "evidence": "zai-coding-plan/glm-5-turbo=2957.0 ms vs openai-codex/gpt-6.1-sol=2212.0 ms"
+    },
+    {
+      "id": "O9",
+      "verdict": "miss",
+      "evidence": "FAST median 3179 ms vs MIDDLE median 4171.5 ms"
+    },
+    {
+      "id": "O10",
+      "verdict": "miss",
+      "evidence": "cascade/glm-5.3-flash=4951.5 ms vs slowest MIDDLE/STRONG alibaba-token-plan/qwen3.8-flash=13281.5 ms"
+    },
+    {
+      "id": "O11",
+      "verdict": "miss",
+      "evidence": "highest derivable TPS: hyper/deepseek-v4.1-flash (375.91)"
+    },
+    {
+      "id": "O12",
+      "verdict": "miss",
+      "evidence": "alibaba-token-plan/deepseek-v4.1-flash=226.72 vs alibaba-token-plan/qwen3.8-flash=235.56 tok/s"
+    },
+    {
+      "id": "O13",
+      "verdict": "hit",
+      "evidence": "every lane kept one streaming mode"
+    },
+    {
+      "id": "O14",
+      "verdict": "hit",
+      "evidence": "spread 10% (64.46 vs 70.82 tok/s)"
+    }
+  ],
+  "global": [
+    {
+      "id": "G1",
+      "verdict": "hit",
+      "expect": false,
+      "observed": false,
+      "evidence": "13 of 17 models answered something (silent: ['alibaba-token-plan-2/deepseek-v4.1-flash', 'alibaba-token-plan-2/qwen3.8-flash', 'alibaba-token-plan-3/deepseek-v4.1-flash', 'alibaba-token-plan-3/qwen3.8-flash'])"
+    },
+    {
+      "id": "G2",
+      "verdict": "hit",
+      "expect": false,
+      "observed": false,
+      "evidence": "bucket TTFT medians: {'FAST': 3179, 'MIDDLE': 4171.5, 'STRONG': 2545.2} -> fastest STRONG"
+    },
+    {
+      "id": "G3",
+      "verdict": "hit",
+      "expect": true,
+      "observed": true,
+      "evidence": "lanes whose stats are burst-only: 4 ['cascade/deepseek-v4.1-flash', 'cascade/glm-5.3-flash', 'cursor/composer-2.5', 'cursor/cursor-grok-4.5-low-fast']"
+    },
+    {
+      "id": "G4",
+      "verdict": "hit",
+      "expect": true,
+      "observed": true,
+      "evidence": "codex models answering 200: True"
+    },
+    {
+      "id": "G5",
+      "verdict": "hit",
+      "expect": true,
+      "observed": true,
+      "evidence": "cascade/glm-5.3-flash max prompt_tokens 11775"
+    },
+    {
+      "id": "G6",
+      "verdict": "miss",
+      "expect": true,
+      "observed": false,
+      "evidence": "lanes rejecting the tool probe with HTTP >=400: []"
+    }
+  ],
+  "totals": {
+    "models_scored": 17,
+    "ttft_point_errors_ms": [
+      1048.5,
+      404.0,
+      -1197.5,
+      -3775.0,
+      -1181.0,
+      -679,
+      349.0,
+      -9781.5,
+      -157.0,
+      -3367.5,
+      -2075.5,
+      -612.0,
+      -378.5
+    ],
+    "tps_point_errors": [
+      -46.72,
+      -180.56,
+      -58.96,
+      233.29,
+      0.54,
+      -15.82
+    ],
+    "pass_point_errors": [
+      -2,
+      2,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      -1,
+      0,
+      0,
+      1,
+      -1,
+      0,
+      0,
+      0
+    ],
+    "ordering_hits": 7,
+    "ordering_misses": 7,
+    "ordering_unprovable": 0,
+    "global_hits": 5,
+    "global_misses": 1
+  }
+}

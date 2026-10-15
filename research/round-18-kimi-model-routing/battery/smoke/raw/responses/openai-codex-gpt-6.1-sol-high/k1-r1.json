@@ -1,0 +1,22 @@
+{
+  "pool_id": "openai-codex/gpt-6.1-sol-high",
+  "provider": "openai-codex",
+  "model_id": "gpt-6.1-sol",
+  "protocol": "openai_responses",
+  "bucket": "STRONG",
+  "probe_id": "k1",
+  "probe_kind": "code",
+  "rep": 1,
+  "measured": true,
+  "prompt": "Write a Python function named rev that takes a single string argument and returns that string reversed. Output only the function definition as plain Python code. No markdown fences, no explanation, no test calls, no example usage.",
+  "max_tokens": 192,
+  "status": null,
+  "grade": {
+    "pass": false,
+    "failure_class": "skipped_after_fatal",
+    "detail": "lane refused at perf with class auth (HTTP 401); no retry"
+  },
+  "skipped": true,
+  "skip_reason": "lane refused at perf with class auth (HTTP 401); no retry",
+  "started_at_utc": "2026-10-15T11:56:59Z"
+}

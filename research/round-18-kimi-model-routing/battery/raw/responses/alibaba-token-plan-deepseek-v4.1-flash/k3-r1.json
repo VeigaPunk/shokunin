@@ -1,0 +1,101 @@
+{
+  "pool_id": "alibaba-token-plan/deepseek-v4.1-flash",
+  "provider": "alibaba-token-plan",
+  "model_id": "deepseek-v4.1-flash",
+  "model_sent": "deepseek-v4.1-flash",
+  "protocol": "openai",
+  "bucket": "FAST",
+  "base_url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1",
+  "probe_id": "k3",
+  "probe_kind": "code",
+  "rep": 1,
+  "measured": true,
+  "prompt": "What does this Python expression evaluate to?\n\nsorted({3, 1, 2} | {5})\n\nAnswer with only the list, with no spaces.",
+  "max_tokens": 192,
+  "tools_sent": false,
+  "tool_choice": null,
+  "request_body": {
+    "model": "deepseek-v4.1-flash",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "What does this Python expression evaluate to?\n\nsorted({3, 1, 2} | {5})\n\nAnswer with only the list, with no spaces."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1/chat/completions",
+  "timeout_s": 120,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 1578,
+  "response_headers": {
+    "content-type": "text/event-stream; charset=utf-8",
+    "grpc-encoding": "identity",
+    "grpc-accept-encoding": "gzip",
+    "x-envoy-upstream-service-time": "237",
+    "cache-control": "no-cache",
+    "date": "Thu, 15 Oct 2026 12:00:59 GMT",
+    "server": "istio-envoy",
+    "x-request-id": "7aa457e3-f763-46fa-8e27-006d2c45777a",
+    "req-cost-time": "237",
+    "req-arrive-time": "1792065659744",
+    "resp-start-time": "1792065659982",
+    "transfer-encoding": "chunked"
+  },
+  "content_type": null,
+  "content": "[1,2,3,5]",
+  "content_truncated": false,
+  "reasoning_chars": 134,
+  "reasoning_text": "We need answer only list no spaces. Need evaluate sorted({3,1,2} | {5}) = sorted({1,2,3,5}) = [1,2,3,5]. Need no spaces. Final only. \n",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": {
+    "prompt_tokens": 62,
+    "total_tokens": 123,
+    "completion_tokens": 61,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "text_tokens": 62
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 51,
+      "text_tokens": 9
+    }
+  },
+  "finish_reason": "stop",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 18,
+  "sse_line_count": 38,
+  "raw_preview": "data: {\"model\":\"deepseek-v4.1-flash\",\"id\":\"chatcmpl-7aa457e3-f763-46fa-8e27-006d2c45777a\",\"created\":1792065659,\"object\":\"chat.completion.chunk\",\"usage\":null,\"choices\":[{\"logprobs\":null,\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\"\",\"role\":\"assistant\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-7aa457e3-f763-46fa-8e27-006d2c45777a\",\"object\":\"chat.completion.chunk\",\"created\":1792065659,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"We\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-7aa457e3-f763-46fa-8e27-006d2c45777a\",\"object\":\"chat.completion.chunk\",\"created\":1792065660,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" need answer only\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-7aa457e3-f763-46fa-8e27-006d2c45777a\",\"object\":\"chat.completion.chunk\",\"created\":1792065660,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" list\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-7aa457e3-f763-46fa-8e27-006d2c45777a\",\"object\":\"chat.completion.chunk\",\"created\":1792065660,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" no spaces. Need evaluate sorted\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-7aa457e3-f763-46fa-8e27-006d2c45777a\",\"object\":\"chat.completion.chunk\",\"created\":1792065660,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"({3,1,2\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-7aa457e3-f763-46fa-8e27-006d2c45777a\",\"object\":\"chat.completion.chunk\",\"created\":1792065660,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"} | {5})\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-7aa457e3-f763-46fa-8e27-006d2c45777a\",\"object\":\"chat.completion.chunk\",\"created\":1792065660,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" = sorted\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-7aa457e3-f763-46fa-8e27-006d2c45777a\",\"object\":\"chat.completion.chunk\",\"created\":1792065660,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"({\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-7aa457e3-f763-46fa-8e27-006d2c45777a\",\"object\":\"chat.completion.chunk\",\"created\":1792065660,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"1,2,3\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-7aa457e3-f763-46fa-8e27-006d2c45777a\",\"object\":\"chat.completion.chunk\",\"created\":1792065660,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\",5}) = [1\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-7aa457e3-f763-46fa-8e27-006d2c45777a\",\"object\":\"chat.completion.chunk\",\"created\":1792065660,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\",2,3,5\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-7aa457e3-f763-46fa-8e27-006d2c45777a\",\"object\":\"chat.completion.chunk\",\"created\":1792065660,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"]. Need no spaces. Final\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-7aa457e3-f763-46fa-8e27-006d2c45777a\",\"object\":\"chat.completion.chunk\",\"created\":1792065660,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" only. \\n\",\"content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-7aa457e3-f763-46fa-8e27-006d2c45777a\",\"object\":\"chat.completion.chunk\",\"created\":1792065660,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"[1,2,\",\"reasoning_content\":\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "exact match",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T12:01:00Z",
+  "ttft_content_ms": 1578,
+  "ttft_reasoning_ms": 1245,
+  "first_decoded_ms": 1578,
+  "decode_span_ms": 0,
+  "tps": null,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": "not derivable: stream was not incrementally flushed (decode span 0 ms < 50 ms)",
+  "completion_tokens": 61,
+  "prompt_tokens": 62,
+  "reasoning_tokens": 51,
+  "content_delta_count": 2,
+  "reasoning_delta_count": 13
+}

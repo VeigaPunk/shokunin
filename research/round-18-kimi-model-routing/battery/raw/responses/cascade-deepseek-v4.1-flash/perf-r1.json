@@ -1,0 +1,104 @@
+{
+  "pool_id": "cascade/deepseek-v4.1-flash",
+  "provider": "ds-flash-cascade",
+  "model_id": "deepseek-v4.1-flash",
+  "model_sent": "deepseek-v4.1-flash",
+  "protocol": "openai",
+  "bucket": "FAST",
+  "base_url": "http://127.0.0.1:8791/v1",
+  "probe_id": "perf",
+  "probe_kind": "perf",
+  "rep": 1,
+  "measured": true,
+  "prompt": "You are answering a latency measurement probe. Follow it exactly. Task: output the integers from 1 to 150 inclusive, in ascending order, separated by single spaces, on one single line. Output digits and spaces only. Do not add any explanation, preamble, punctuation, or trailing text.",
+  "max_tokens": 256,
+  "tools_sent": false,
+  "tool_choice": null,
+  "request_body": {
+    "model": "deepseek-v4.1-flash",
+    "stream": true,
+    "max_tokens": 256,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "You are answering a latency measurement probe. Follow it exactly. Task: output the integers from 1 to 150 inclusive, in ascending order, separated by single spaces, on one single line. Output digits and spaces only. Do not add any explanation, preamble, punctuation, or trailing text."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "url": "http://127.0.0.1:8791/v1/chat/completions",
+  "timeout_s": 300,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 3180,
+  "response_headers": {
+    "Date": "Thu, 15 Oct 2026 12:00:16 GMT",
+    "Content-Type": "text/event-stream",
+    "Cache-Control": "no-cache",
+    "Cf-Placement": "remote-IAD",
+    "x-opencode-endpoint-id": "novita-deepseek",
+    "x-opencode-log-id": "d6749547-59b7-491b-a08c-b0f7d9921e9c",
+    "x-opencode-upstream-model-id": "deepseek/deepseek-v4.1-flash",
+    "x-zen-model": "deepseek-v4.1-flash",
+    "Server": "cloudflare",
+    "CF-RAY": "a4aea98d1eaba4e8-MIA",
+    "Connection": "close"
+  },
+  "content_type": "text/event-stream",
+  "content": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95",
+  "content_truncated": false,
+  "reasoning_chars": 283,
+  "reasoning_text": "We need answer only integers 1 to 150 inclusive separated by single spaces one line. Need comply. Must ensure no trailing spaces? likely okay but can avoid. Need output digits spaces only. Let's craft exact sequence. 1 2 ... 150. Need one line. Ensure no punctuation. Let's produce. ",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": {
+    "prompt_tokens": 89,
+    "completion_tokens": 256,
+    "total_tokens": 345,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_write_tokens": 0
+    },
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 67,
+      "rejected_prediction_tokens": 0
+    }
+  },
+  "finish_reason": "length",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 61,
+  "sse_line_count": 124,
+  "raw_preview": "data: {\"id\":\"13924ca8674029673c95f6e03a09feda\",\"object\":\"chat.completion.chunk\",\"created\":1792065615,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\"}}]}\ndata: {\"id\":\"13924ca8674029673c95f6e03a09feda\",\"object\":\"chat.completion.chunk\",\"created\":1792065615,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"We\"}}]}\ndata: {\"id\":\"13924ca8674029673c95f6e03a09feda\",\"object\":\"chat.completion.chunk\",\"created\":1792065615,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" need answer only\"}}]}\ndata: {\"id\":\"13924ca8674029673c95f6e03a09feda\",\"object\":\"chat.completion.chunk\",\"created\":1792065615,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" integers\"}}]}\ndata: {\"id\":\"13924ca8674029673c95f6e03a09feda\",\"object\":\"chat.completion.chunk\",\"created\":1792065615,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" 1 to\"}}]}\ndata: {\"id\":\"13924ca8674029673c95f6e03a09feda\",\"object\":\"chat.completion.chunk\",\"created\":1792065615,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" 150 inclusive\"}}]}\ndata: {\"id\":\"13924ca8674029673c95f6e03a09feda\",\"object\":\"chat.completion.chunk\",\"created\":1792065615,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" separated\"}}]}\ndata: {\"id\":\"13924ca8674029673c95f6e03a09feda\",\"object\":\"chat.completion.chunk\",\"created\":1792065615,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" by single spaces one\"}}]}\ndata: {\"id\":\"13924ca8674029673c95f6e03a09feda\",\"object\":\"chat.completion.chunk\",\"created\":1792065615,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" line. Need comply.\"}}]}\ndata: {\"id\":\"13924ca8674029673c95f6e03a09feda\",\"object\":\"chat.completion.chunk\",\"created\":1792065615,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" Must ensure no trailing\"}}]}\ndata: {\"id\":\"13924ca8674029673c95f6e03a09feda\",\"object\":\"chat.completion.chunk\",\"created\":1792065615,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" spaces? likely\"}}]}\ndata: {\"id\":\"13924ca8674029673c95f6e03a09feda\",\"object\":\"chat.completion.chunk\",\"created\":1792065615,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" okay\"}}]}\ndata: {\"id\":\"13924ca8674029673c95f6e03a09feda\",\"object\":\"chat.completion.chunk\",\"created\":1792065615,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" but can\"}}]}\ndata: {\"id\":\"13924ca8674029673c95f6e03a09feda\",\"object\":\"chat.completion.chunk\",\"created\":1792065615,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" avoid\"}}]}\ndata: {\"id\":\"13924ca8674029673c95f6e03a09feda\",\"object\":\"chat.completion.chunk\",\"created\":1792065615,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\". Need output digits\"}}]}\ndata: {\"id\":\"13924ca8674029673c95f6e03a09feda\",\"object\":\"chat.completion.chunk\",\"created\":1792065615,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" spaces only. Let\"}}]}\ndata: {\"id\":\"13924ca8674029673c95f6e03a09feda\",\"object\":\"chat.completion.chunk\",\"created\":1792065615,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"'s craft\"}}]}\n",
+  "grade": {
+    "pass": null,
+    "failure_class": null,
+    "detail": "not graded",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T12:00:17Z",
+  "ttft_content_ms": 3179,
+  "ttft_reasoning_ms": 3179,
+  "first_decoded_ms": 3179,
+  "decode_span_ms": 0,
+  "tps": null,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": "not derivable: stream was not incrementally flushed (decode span 0 ms < 50 ms)",
+  "completion_tokens": 256,
+  "prompt_tokens": 89,
+  "reasoning_tokens": 67,
+  "content_delta_count": 34,
+  "reasoning_delta_count": 25
+}

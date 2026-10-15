@@ -1,0 +1,100 @@
+{
+  "pool_id": "hyper/qwen3.8-flash",
+  "provider": "hyper",
+  "model_id": "qwen3.8-flash",
+  "model_sent": "qwen3.8-flash",
+  "protocol": "openai",
+  "bucket": "MIDDLE",
+  "base_url": "https://hyper.charm.land/v1",
+  "probe_id": "c1",
+  "probe_kind": "contract",
+  "rep": 1,
+  "measured": true,
+  "prompt": "Reply with exactly the word PONG and nothing else. No punctuation, no explanation, no markdown.",
+  "max_tokens": 192,
+  "tools_sent": false,
+  "tool_choice": null,
+  "request_body": {
+    "model": "qwen3.8-flash",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Reply with exactly the word PONG and nothing else. No punctuation, no explanation, no markdown."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "url": "https://hyper.charm.land/v1/chat/completions",
+  "timeout_s": 120,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 5066,
+  "response_headers": {
+    "cache-control": "no-cache",
+    "content-type": "text/event-stream",
+    "vary": "Accept-Encoding",
+    "x-ratelimit-limit-day": "10000",
+    "x-ratelimit-limit-hour": "1000",
+    "x-ratelimit-remaining-day": "9282",
+    "x-ratelimit-remaining-hour": "687",
+    "date": "Thu, 15 Oct 2026 12:01:08 GMT",
+    "server": "Google Frontend",
+    "traceparent": "00-819a588654ac953bb4f756c9d0e050e9-9bf007aa3f4fb669-00",
+    "x-cloud-trace-context": "819a588654ac953bb4f756c9d0e050e9/11236489498077410921",
+    "Transfer-Encoding": "chunked"
+  },
+  "content_type": null,
+  "content": "PONG",
+  "content_truncated": false,
+  "reasoning_chars": 116,
+  "reasoning_text": "The user wants me to reply with exactly the word PONG and nothing else. No punctuation, no explanation, no markdown.",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": {
+    "prompt_tokens": 43,
+    "completion_tokens": 30,
+    "total_tokens": 73,
+    "completion_tokens_details": {
+      "reasoning_tokens": 25
+    },
+    "cost": {
+      "usd": 0.0001,
+      "hypercredits": 0.002
+    }
+  },
+  "finish_reason": "stop",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 12,
+  "sse_line_count": 26,
+  "raw_preview": "data: {\"id\":\"chatcmpl-60b0ce0704d577468cdc98b2\",\"object\":\"chat.completion.chunk\",\"created\":1792065668,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-60b0ce0704d577468cdc98b2\",\"object\":\"chat.completion.chunk\",\"created\":1792065668,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"The\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-60b0ce0704d577468cdc98b2\",\"object\":\"chat.completion.chunk\",\"created\":1792065668,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" user wants me to\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-60b0ce0704d577468cdc98b2\",\"object\":\"chat.completion.chunk\",\"created\":1792065668,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" reply with exactly the\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-60b0ce0704d577468cdc98b2\",\"object\":\"chat.completion.chunk\",\"created\":1792065668,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" word P\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-60b0ce0704d577468cdc98b2\",\"object\":\"chat.completion.chunk\",\"created\":1792065668,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"ONG and nothing else\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-60b0ce0704d577468cdc98b2\",\"object\":\"chat.completion.chunk\",\"created\":1792065668,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\". No punctuation,\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-60b0ce0704d577468cdc98b2\",\"object\":\"chat.completion.chunk\",\"created\":1792065668,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" no explanation, no\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-60b0ce0704d577468cdc98b2\",\"object\":\"chat.completion.chunk\",\"created\":1792065668,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" markdown.\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-60b0ce0704d577468cdc98b2\",\"object\":\"chat.completion.chunk\",\"created\":1792065668,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"PONG\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-60b0ce0704d577468cdc98b2\",\"object\":\"chat.completion.chunk\",\"created\":1792065668,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{},\"finish_reason\":\"stop\"}]}\ndata: {\"id\":\"chatcmpl-60b0ce0704d577468cdc98b2\",\"object\":\"chat.completion.chunk\",\"created\":1792065668,\"model\":\"qwen3.8-flash\",\"choices\":[],\"usage\":{\"prompt_tokens\":43,\"completion_tokens\":30,\"total_tokens\":73,\"completion_tokens_details\":{\"reasoning_tokens\":25},\"cost\":{\"usd\":0.0001,\"hypercredits\":0.002}}}\ndata: [DONE]\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "exact match",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T12:01:09Z",
+  "ttft_content_ms": 4996,
+  "ttft_reasoning_ms": 4651,
+  "first_decoded_ms": 4996,
+  "decode_span_ms": null,
+  "tps": null,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": "not derivable: no incremental deltas or fewer than 2 tokens",
+  "completion_tokens": 30,
+  "prompt_tokens": 43,
+  "reasoning_tokens": 25,
+  "content_delta_count": 1,
+  "reasoning_delta_count": 8
+}
