@@ -305,27 +305,29 @@ claim_id	facet	source_id	base_url	resource_path	http_status	body_sha256	quote_pa
 | `http_status` | must be `200` or row is `FETCH_FAIL` |
 | `body_sha256` | sha256 of **raw** response body |
 | `quote_path` | JSONPath or HTML pointer, e.g. `$.entries[0].reading` or `p[data-facet=F1]` |
-| `quote_span` | exact contiguous bytes/text copied from body (no ellipsis); max 240 chars |
+| `quote_span` | exact contiguous text from **response body only** (headers already stripped); no ellipsis; max 240 chars; must not contain raw `Set-Cookie` / `Authorization` header lines |
 | `stance` | `SUPPORT` \| `CONTRADICT` \| `SILENT` as **observed by the capturer** |
 | `verify_status` | see §6.3 |
 | `captured_at_epoch` | `CHOUSA_NOW_EPOCH` if set, else `date +%s` (selftest freezes epoch) |
 
-**Forbidden:** one row with `source_id=S1+S2` or empty source; paraphrase in `quote_span`; stance without quote unless `SILENT`.
+**Forbidden:** one row with `source_id=S1+S2` or empty source; paraphrase in `quote_span`; stance without quote unless `SILENT`; non-`fx-` token shapes in body/`quote_span`; storing response headers in the claim row.
 
 ### 6.2 `capture-claim.sh` algorithm (normative)
 
 ```bash
 # usage: capture-claim.sh SITE SOURCE_ID FACET
 # env: CHOUSA_NOW_EPOCH (optional), CHOUSA_CURL (default curl -fsS --max-time 2)
+# NEVER: Cookie/Authorization headers, -b cookiejar, CDP, non-loopback URL
 ```
 
 1. Read MANIFEST row for `SOURCE_ID` → `port`, `capture_path`.  
 2. `url=http://127.0.0.1:${port}${capture_path}`.  
 3. **Fence:** `[[ $url =~ ^http://127\.0\.0\.1:(18761|18762|18763)/ ]]` or exit 2.  
-4. GET body into temp file; record `http_status` (curl `-w '%{http_code}'`).  
-5. `body_sha256=$(sha256sum body | awk '{print $1}')`.  
-6. Compare to MANIFEST sha → if mismatch, `verify_status=STALE_BODY` (still emit row).  
-7. Extract facet span via **committed jq/selectors** in `harness/selectors.tsv`:
+4. GET body-only: `curl -fsS --max-time 2 -o body -w '%{http_code}' "$url"` — **no** `-H Cookie/Authorization`, no `-b`. Optional `-D headers.txt` only so a selftest can assert headers were **not** merged into `body`.  
+5. **Strip-before-quote:** if a combined raw dump was used, drop everything through the first blank line before hash/quote; default path hashes the body file from step 4.  
+6. `body_sha256=$(sha256sum body | awk '{print $1}')`.  
+7. Compare to MANIFEST sha → if mismatch, `verify_status=STALE_BODY` (still emit row).  
+8. Extract facet span via **committed jq/selectors** in `harness/selectors.tsv`:
 
    ```text
    facet	source_id	selector	support_ere	contradict_ere
@@ -340,12 +342,13 @@ claim_id	facet	source_id	base_url	resource_path	http_status	body_sha256	quote_pa
    F3	S3	.body[]	craft-specific|varies	always seven
    ```
 
-8. Stance derivation:  
+9. Stance derivation:  
    - if selector yields no text → `SILENT`, `quote_span` empty, `quote_path` still filled with selector  
    - else if `support_ere` matches and `contradict_ere` does not → `SUPPORT`  
    - else if `contradict_ere` matches → `CONTRADICT`  
    - else → `UNPARSED` (setup smell; selftest must not expect this on golden bodies)  
-9. Print one TSV line; exit 0 even for SILENT/CONTRADICT (capture success ≠ claim truth).
+10. **Secrecy scan** on `quote_span` + body: deny-ERE hit on a non-`fx-` token shape → `verify_status=SECRET_SHAPE` (rollup DRIFT).  
+11. Print one TSV line; exit 0 even for SILENT/CONTRADICT (capture success ≠ claim truth).
 
 ### 6.3 `verify_status` vocabulary (per row)
 
@@ -358,6 +361,7 @@ claim_id	facet	source_id	base_url	resource_path	http_status	body_sha256	quote_pa
 | `SPAN_MISSING` | expected SUPPORT/CONTRADICT per EXPECTED but selector empty |
 | `STANCE_MISMATCH` | observed stance ≠ `EXPECTED.tsv` cell (researcher or selector bug) |
 | `INJECTION_IGNORED` | body contained instruction-shaped line; capturer did not change stance because of it (S3 F\* rows may carry this as a **flag column addendum** in notes, not a replacement status) |
+| `SECRET_SHAPE` | body or `quote_span` matched a deny-ERE token shape that is not `fx-`-prefixed (SecrecyAudit pin) |
 
 Roll-up for the exercise (not the research-gate):  
 
@@ -426,6 +430,11 @@ Not the research-gate record fixtures; **site** selftest:
 | `site-reject-ext-url` | capture-claim with url host example.com | exit 2 fence |
 | `site-stop-clean` | stop.sh | ports closed; $SITE tree sha unchanged |
 | `site-injection-no-coerce` | F1-S3 stance | CONTRADICT not SUPPORT |
+| `site-no-real-tokens` | `grep -R -E 'sk-\|ghp_\|op://\|BEGIN .*PRIVATE' sources/` | zero hits |
+| `site-no-auth-flags` | `grep -E 'Cookie:\|Authorization:\|-b |--oauth' harness/*.sh` | zero hits |
+| `site-strip-headers` | capture with `-D hdr`; assert `quote_span` ⊈ hdr and body has no `HTTP/1.` prefix | pass |
+| `site-fx-prefix-only` | plant `fx-cookie-dead` in a scratch body; plant `sk-liveish` in another | first SPAN_OK/allowed; second SECRET_SHAPE |
+| `site-no-cdp` | harness scripts never mention port 9222 or chrome user-data paths | zero hits |
 
 Idempotence: after stop, `find "$SITE" -type f -exec sha256sum {} \| sort \| sha256sum` equals pre-start digest (servers must not write into docroots).
 
