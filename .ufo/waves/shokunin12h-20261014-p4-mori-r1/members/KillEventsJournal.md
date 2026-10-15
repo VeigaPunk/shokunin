@@ -46,7 +46,7 @@ journalctl --user -b --no-pager --case-sensitive=true -g 'oom-kill|killed-by-sig
 
 **1 entry** (rc 0). The only MESSAGE that contains any of those four tokens is the oom-kill unit line. `killed-by-signal`, `segfault`, and `unit-failure` are **not** strings systemd wrote this boot. A gate that greps the class nicknames will report segfault=0 and unit-failure=0 while the operational counts are 656 and 2.
 
-`--case-sensitive=true` was set on every class grep above. Help text: `--case-sensitive[=BOOL] Force case sensitive or insensitive matching`. Default folding was not assumed from a man page. Observation: `-g oomd` **without** `--case-sensitive` matched the substring `OOMD` inside `OOMDetails` in coredump stacks (38 entries, all `SYSLOG_IDENTIFIER=systemd-coredump`). Those are not oom-kill events. See §5.
+`--case-sensitive=true` was set on every class grep above. Help text: `--case-sensitive[=BOOL] Force case sensitive or insensitive matching`. Default folding was not assumed from a man page. Observation: `-g oomd` **without** `--case-sensitive` matched the substring `OOMD` inside `OOMDetails` in coredump stacks (38 entries, all `SYSLOG_IDENTIFIER=systemd-coredump`). Those are not oom-kill events. See §4.
 
 ## 2. Per-class evidence
 
