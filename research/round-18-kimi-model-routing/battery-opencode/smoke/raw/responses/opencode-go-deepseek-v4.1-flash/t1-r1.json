@@ -1,0 +1,119 @@
+{
+  "pool_id": "opencode-go/deepseek-v4.1-flash",
+  "provider": "opencode-go",
+  "model_id": "deepseek-v4.1-flash",
+  "model_sent": "deepseek-v4.1-flash-good",
+  "protocol": "openai",
+  "bucket": "UNLABELLED",
+  "in_live_pool": false,
+  "base_url": "http://127.0.0.1:8797/v1",
+  "reasoning_key": "reasoning_content",
+  "user_agent_class": "browser-chrome-141-linux",
+  "user_agent_sent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+  "probe_id": "t1",
+  "probe_kind": "tool",
+  "rep": 1,
+  "measured": true,
+  "prompt": "What is the weather in Paris right now? Use the get_weather tool.",
+  "max_tokens": 192,
+  "tools_sent": true,
+  "tool_choice": "auto",
+  "request_body": {
+    "model": "deepseek-v4.1-flash-good",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "What is the weather in Paris right now? Use the get_weather tool."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    },
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "get_weather",
+          "description": "Get the current weather for a city.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "city": {
+                "type": "string",
+                "description": "City name"
+              }
+            },
+            "required": [
+              "city"
+            ]
+          }
+        }
+      }
+    ],
+    "tool_choice": "auto"
+  },
+  "url": "http://127.0.0.1:8797/v1/chat/completions",
+  "timeout_s": 120,
+  "auth_headers_sent": [
+    "Authorization",
+    "x-opencode-session"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 13,
+  "response_headers": {
+    "Server": "BaseHTTP/0.6 Python/3.14.7",
+    "Date": "Thu, 15 Oct 2026 12:45:36 GMT",
+    "Content-Type": "text/event-stream",
+    "Cache-Control": "no-cache",
+    "Transfer-Encoding": "chunked"
+  },
+  "content_type": "text/event-stream",
+  "content": "The weather tool would be used here.",
+  "content_truncated": false,
+  "reasoning_chars": 0,
+  "reasoning_text": "",
+  "refusal_text": "",
+  "tool_calls": [
+    {
+      "id": "call_mock_1",
+      "name": "get_weather",
+      "arguments": "{\"city\": \"Paris\"}"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 48,
+    "completion_tokens": 9,
+    "total_tokens": 57
+  },
+  "finish_reason": "tool_calls",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 5,
+  "sse_line_count": 12,
+  "raw_preview": "data: {\"choices\": [{\"delta\": {\"content\": \"The weather tool would b\"}, \"index\": 0}]}\ndata: {\"choices\": [{\"delta\": {\"content\": \"e used here.\"}, \"index\": 0}]}\ndata: {\"choices\": [{\"index\": 0, \"delta\": {\"tool_calls\": [{\"index\": 0, \"id\": \"call_mock_1\", \"function\": {\"name\": \"get_weather\", \"arguments\": \"{\\\"city\\\": \\\"Paris\\\"}\"}}]}}]}\ndata: {\"choices\": [{\"index\": 0, \"delta\": {}, \"finish_reason\": \"tool_calls\"}]}\ndata: {\"choices\": [], \"usage\": {\"prompt_tokens\": 48, \"completion_tokens\": 9, \"total_tokens\": 57}}\ndata: [DONE]\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "well-formed tool call",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T12:45:36Z",
+  "ttft_content_ms": 0,
+  "ttft_reasoning_ms": null,
+  "first_decoded_ms": 0,
+  "decode_span_ms": 12,
+  "tps": null,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": "not derivable: stream was not incrementally flushed (decode span 12 ms < 50 ms)",
+  "completion_tokens": 9,
+  "prompt_tokens": 48,
+  "reasoning_tokens": null,
+  "content_delta_count": 2,
+  "reasoning_delta_count": 0
+}

@@ -1,0 +1,226 @@
+{
+  "lane": "opencode-go/deepseek-v4.1-flash",
+  "predicted": {
+    "bucket": "UNLABELLED (not in the live [secondary_model.models] table)",
+    "basis": "same model id measured on two sibling lanes at 2081 ms and 2251 ms; the only opencode-go-leg observation is the 2467 ms census smoke through the cascade shim; the cascade lane bounds the direct lane from above at 3179 ms",
+    "ttft_ms": 2500,
+    "ttft_range_ms": [
+      1700,
+      3800
+    ],
+    "ttft_reps_ms": [
+      2400,
+      2600
+    ],
+    "ttft_basis": "content token",
+    "content_ttft_expected": true,
+    "tps": 240,
+    "tps_range": [
+      110,
+      430
+    ],
+    "tps_derivable": true,
+    "stream_shape": "incremental",
+    "pass_count": 8,
+    "pass_range": [
+      7,
+      9
+    ],
+    "failing_probe": "c5",
+    "failure_modes": [
+      "truncation (reasoning consumes the fixed 192-token correctness budget before content; c5, as on both siblings)",
+      "transport (gateway queueing/timeout on a Cloudflare-fronted public router)",
+      "auth (only if the M2 UA block reappears despite the browser UA class; predicted not to)",
+      "format_break (tool probe rejected; lowest likelihood)"
+    ],
+    "notes": "always_thinking at this budget; both siblings failed exactly c5 by truncation; predicted to answer 8/9"
+  },
+  "observed": {
+    "statuses": [
+      "200"
+    ],
+    "perf_rows": 2,
+    "perf_elapsed_ms": [
+      4642,
+      5523
+    ],
+    "ttft_content_reps": [
+      null,
+      4958
+    ],
+    "ttft_basis_reps": [
+      3356,
+      4958
+    ],
+    "ttft_basis_labels": [
+      "first-decoded (no content token)",
+      "content"
+    ],
+    "ttft_med": 4157.0,
+    "tps_reps": [
+      202.75,
+      451.83
+    ],
+    "tps_med": 327.29,
+    "prompt_tokens": 89,
+    "pass_count": 8,
+    "probes_run": 9,
+    "failed_probes": [
+      "c5"
+    ],
+    "failure_details": [
+      {
+        "probe": "c5",
+        "class": "truncation",
+        "detail": "no content (finish_reason=length, reasoning_chars=710)"
+      }
+    ],
+    "classes": [
+      "truncation"
+    ],
+    "dominant_class": "truncation",
+    "shape": "incremental",
+    "usages_present": true,
+    "budget_consumed_by_reasoning": true,
+    "model_fields": [
+      "deepseek-v4.1-flash"
+    ],
+    "tool_ok": true,
+    "tool_rows": [
+      {
+        "model": "opencode-go/deepseek-v4.1-flash",
+        "bucket": "UNLABELLED",
+        "provider": "opencode-go",
+        "protocol": "openai",
+        "probe": "t1-r1",
+        "rep": "1",
+        "measured": "True",
+        "status": "200",
+        "failure_class": "ok",
+        "passed": "True",
+        "elapsed_ms": "3907",
+        "ttft_content_ms": "3681",
+        "ttft_reasoning_ms": "3532",
+        "first_decoded_ms": "3681",
+        "decode_span_ms": "222",
+        "tps": "288.52",
+        "completion_tokens": "65",
+        "prompt_tokens": "313",
+        "reasoning_tokens": "19",
+        "finish_reason": "tool_calls",
+        "content_delta_count": "4",
+        "streaming_supported": "True",
+        "content_chars": "26",
+        "error": ""
+      }
+    ],
+    "rep_rows": [
+      "| 1 | 200 | first-decoded | 3356 | 1258 | 202.75 | 256 | 256 | 0 | length |",
+      "| 2 | 200 | content | 4958 | 564 | 451.83 | 256 | 51 | 303 | length |"
+    ]
+  },
+  "ttft_point_error_ms": -1657.0,
+  "ttft_range_hit": false,
+  "ttft_range_gap_ms": 357.0,
+  "tps_point_error": -87.29,
+  "tps_range_hit": true,
+  "pass_point_error": 0,
+  "pass_range_hit": true,
+  "failing_probe_hit": true,
+  "failure_class_hit": true,
+  "claims": [
+    {
+      "id": "OC1",
+      "claim": "TTFT med < cascade/deepseek-v4.1-flash measured 3179 ms",
+      "predicted": true,
+      "observed": false,
+      "verdict": "MISS"
+    },
+    {
+      "id": "OC2",
+      "claim": "TTFT med within +/-25% of the sibling median 2166 ms (1625-2708 ms)",
+      "predicted": true,
+      "observed": false,
+      "verdict": "MISS"
+    },
+    {
+      "id": "OC3",
+      "claim": "TTFT med > hyper/deepseek-v4.1-flash 2081 ms",
+      "predicted": true,
+      "observed": true,
+      "verdict": "HIT"
+    },
+    {
+      "id": "OC4",
+      "claim": "TPS med < hyper/deepseek-v4.1-flash 375.91 tok/s",
+      "predicted": true,
+      "observed": true,
+      "verdict": "HIT"
+    },
+    {
+      "id": "OC5",
+      "claim": "TPS med > alibaba-token-plan/deepseek-v4.1-flash 226.72 tok/s",
+      "predicted": true,
+      "observed": true,
+      "verdict": "HIT"
+    },
+    {
+      "id": "OC6",
+      "claim": "pass count equals both siblings' 8/9",
+      "predicted": true,
+      "observed": true,
+      "verdict": "HIT"
+    },
+    {
+      "id": "OC7",
+      "claim": "stream shape incremental, TPS derivable",
+      "predicted": true,
+      "observed": true,
+      "verdict": "HIT"
+    },
+    {
+      "id": "OG1",
+      "claim": "every request returns 200; none returns 403/1010",
+      "predicted": true,
+      "observed": true,
+      "verdict": "HIT"
+    },
+    {
+      "id": "OG2",
+      "claim": "server usage block present with readable completion_tokens",
+      "predicted": true,
+      "observed": true,
+      "verdict": "HIT"
+    },
+    {
+      "id": "OG3",
+      "claim": "perf probe bills >= 80 prompt tokens on the ~50-token prompt",
+      "predicted": true,
+      "observed": true,
+      "verdict": "HIT"
+    },
+    {
+      "id": "OG4",
+      "claim": "at least one probe spends its whole output budget on reasoning",
+      "predicted": true,
+      "observed": true,
+      "verdict": "HIT"
+    },
+    {
+      "id": "OG5",
+      "claim": "the response model field echoes deepseek-v4.1-flash",
+      "predicted": true,
+      "observed": true,
+      "verdict": "HIT"
+    },
+    {
+      "id": "OG6",
+      "claim": "tool probe returns a well-formed get_weather call",
+      "predicted": true,
+      "observed": true,
+      "verdict": "HIT"
+    }
+  ],
+  "hits": 11,
+  "total": 13
+}

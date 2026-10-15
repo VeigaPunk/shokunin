@@ -1,0 +1,110 @@
+{
+  "pool_id": "opencode-go/deepseek-v4.1-flash",
+  "provider": "opencode-go",
+  "model_id": "deepseek-v4.1-flash",
+  "model_sent": "deepseek-v4.1-flash",
+  "protocol": "openai",
+  "bucket": "UNLABELLED",
+  "in_live_pool": false,
+  "base_url": "https://opencode.ai/inference/go/v1",
+  "reasoning_key": "reasoning_content",
+  "user_agent_class": "browser-chrome-141-linux",
+  "user_agent_sent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+  "probe_id": "c2",
+  "probe_kind": "contract",
+  "rep": 1,
+  "measured": true,
+  "prompt": "Output only a JSON object with exactly two keys: <redacted> set to the integer 1, and \"b\" set to the string \"two\". No markdown fences, no explanation, no other keys.",
+  "max_tokens": 192,
+  "tools_sent": false,
+  "tool_choice": null,
+  "request_body": {
+    "model": "deepseek-v4.1-flash",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Output only a JSON object with exactly two keys: <redacted> set to the integer 1, and \"b\" set to the string \"two\". No markdown fences, no explanation, no other keys."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "url": "https://opencode.ai/inference/go/v1/chat/completions",
+  "timeout_s": 120,
+  "auth_headers_sent": [
+    "Authorization",
+    "x-opencode-session"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 3667,
+  "response_headers": {
+    "Date": "Thu, 15 Oct 2026 12:46:37 GMT",
+    "Content-Type": "text/event-stream",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "Cache-Control": "no-cache",
+    "Cf-Placement": "remote-IAD",
+    "x-opencode-endpoint-id": "novita-deepseek",
+    "x-opencode-log-id": "9c7fd4b5-2885-4ddc-a6fe-773e55a56705",
+    "x-opencode-upstream-model-id": "deepseek/deepseek-v4.1-flash",
+    "x-zen-model": "deepseek-v4.1-flash",
+    "Server": "cloudflare",
+    "CF-RAY": "a4aeed67e9e964ac-MIA"
+  },
+  "content_type": "text/event-stream",
+  "content": "{\"a\":1,\"b\":\"two\"}",
+  "content_truncated": false,
+  "reasoning_chars": 100,
+  "reasoning_text": "We need answer only JSON object exact keys a=1, b=\"two\". Need no markdown. Ensure valid JSON. Final.",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": {
+    "prompt_tokens": 73,
+    "completion_tokens": 37,
+    "total_tokens": 110,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_write_tokens": 0
+    },
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 27,
+      "rejected_prediction_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 17,
+  "sse_line_count": 36,
+  "raw_preview": "data: {\"id\":\"b8aeb538127a821c933b2a628c58b6f3\",\"object\":\"chat.completion.chunk\",\"created\":1792068397,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\"}}]}\ndata: {\"id\":\"b8aeb538127a821c933b2a628c58b6f3\",\"object\":\"chat.completion.chunk\",\"created\":1792068397,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"We\"}}]}\ndata: {\"id\":\"b8aeb538127a821c933b2a628c58b6f3\",\"object\":\"chat.completion.chunk\",\"created\":1792068397,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" need answer only\"}}]}\ndata: {\"id\":\"b8aeb538127a821c933b2a628c58b6f3\",\"object\":\"chat.completion.chunk\",\"created\":1792068397,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" JSON object\"}}]}\ndata: {\"id\":\"b8aeb538127a821c933b2a628c58b6f3\",\"object\":\"chat.completion.chunk\",\"created\":1792068397,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" exact keys a\"}}]}\ndata: {\"id\":\"b8aeb538127a821c933b2a628c58b6f3\",\"object\":\"chat.completion.chunk\",\"created\":1792068397,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"=\"}}]}\ndata: {\"id\":\"b8aeb538127a821c933b2a628c58b6f3\",\"object\":\"chat.completion.chunk\",\"created\":1792068397,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"1, b=\\\"two\"}}]}\ndata: {\"id\":\"b8aeb538127a821c933b2a628c58b6f3\",\"object\":\"chat.completion.chunk\",\"created\":1792068397,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"\\\". Need\"}}]}\ndata: {\"id\":\"b8aeb538127a821c933b2a628c58b6f3\",\"object\":\"chat.completion.chunk\",\"created\":1792068397,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" no markdown. Ensure\"}}]}\ndata: {\"id\":\"b8aeb538127a821c933b2a628c58b6f3\",\"object\":\"chat.completion.chunk\",\"created\":1792068397,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" valid JSON. Final\"}}]}\ndata: {\"id\":\"b8aeb538127a821c933b2a628c58b6f3\",\"object\":\"chat.completion.chunk\",\"created\":1792068397,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\".\"}}]}\ndata: {\"id\":\"b8aeb538127a821c933b2a628c58b6f3\",\"object\":\"chat.completion.chunk\",\"created\":1792068397,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"content\":\"{\\\"\"}}]}\ndata: {\"id\":\"b8aeb538127a821c933b2a628c58b6f3\",\"object\":\"chat.completion.chunk\",\"created\":1792068397,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"content\":\"a\"}}]}\ndata: {\"id\":\"b8aeb538127a821c933b2a628c58b6f3\",\"object\":\"chat.completion.chunk\",\"created\":1792068397,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"content\":\"\\\":\"}}]}\ndata: {\"id\":\"b8aeb538127a821c933b2a628c58b6f3\",\"object\":\"chat.completion.chunk\",\"created\":1792068397,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"content\":\"1\"}}]}\ndata: {\"id\":\"b8aeb538127a821c933b2a628c58b6f3\",\"object\":\"chat.completion.chunk\",\"created\":1792068397,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":\"stop\",\"delta\":{\"role\":\"assistant\",\"content\":\",\\\"b\\\":\\\"two\\\"}\"}}],\"usage\":{\"prompt_tokens\":73,\"completion_tokens\":37,\"total_tokens\":110,\"prompt_tokens_details\":{\"audio_tokens\":0,\"cached_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_write_tokens\":0},\"completion_tokens_details\":{\"accepted_prediction_tokens\":0,\"audio_tokens\":0,\"reasoning_tokens\":27,\"rejected_prediction_tokens\":0}}}\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "json match",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T12:46:37Z",
+  "ttft_content_ms": 3610,
+  "ttft_reasoning_ms": 3444,
+  "first_decoded_ms": 3610,
+  "decode_span_ms": 39,
+  "tps": null,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": "not derivable: stream was not incrementally flushed (decode span 39 ms < 50 ms)",
+  "completion_tokens": 37,
+  "prompt_tokens": 73,
+  "reasoning_tokens": 27,
+  "content_delta_count": 5,
+  "reasoning_delta_count": 10
+}
