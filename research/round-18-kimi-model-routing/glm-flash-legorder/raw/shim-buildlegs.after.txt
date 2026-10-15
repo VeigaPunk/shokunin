@@ -1,0 +1,52 @@
+]
+
+
+def _leg(idx, name, url, headers, model):
+    return {"index": idx, "name": name, "url": url, "headers": headers,
+            "model": model}
+
+
+def _build_legs():
+    return [
+        _leg(
+            1,
+            os.environ.get("GLM_LEG1_NAME", "zai"),
+            os.environ.get("GLM_LEG1_URL",
+                           "https://api.z.ai/api/coding/paas/v4/chat/completions"),
+            {
+                "Authorization": "Bearer " + os.environ.get(
+                    "GLM_LEG1_KEY",
+                    "<REDACTED-ZAI-KEY>"),
+            },
+            os.environ.get("GLM_LEG1_MODEL", ""),  # empty = body as-is
+        ),
+        _leg(
+            2,
+            os.environ.get("GLM_LEG2_NAME", "devin"),
+            os.environ.get("GLM_LEG2_URL",
+                           "http://127.0.0.1:8787/v1/chat/completions"),
+            {
+                "Authorization": "Bearer " + os.environ.get(
+                    "GLM_LEG2_KEY", "dummy"),
+            },
+            os.environ.get("GLM_LEG2_MODEL", "glm-5-3-flash-max"),
+        ),
+        _leg(
+            3,
+            os.environ.get("GLM_LEG3_NAME", "hyper"),
+            os.environ.get("GLM_LEG3_URL",
+                           "https://hyper.charm.land/v1/chat/completions"),
+            {
+                "Authorization": "Bearer " + os.environ.get(
+                    "GLM_LEG3_KEY",
+                    "<REDACTED-HYPER-KEY>"),
+            },
+            os.environ.get("GLM_LEG3_MODEL", ""),  # empty = body as-is
+        ),
+    ]
+
+
+LEGS = _build_legs()
+SEM = threading.Semaphore(MAX_CONCURRENT)
+LOG_LOCK = threading.Lock()
+

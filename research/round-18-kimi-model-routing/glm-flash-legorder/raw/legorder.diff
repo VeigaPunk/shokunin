@@ -1,0 +1,68 @@
+--- /home/vgpnk/.local/share/glm-flash-shim/shim.py.pre-replace	2026-10-15 11:27:18.513087661 -0300
++++ /home/vgpnk/.local/share/glm-flash-shim/shim.py	2026-10-15 11:27:18.492778009 -0300
+@@ -6,12 +6,15 @@
+ ordered 3-leg provider cascade, advancing to the next leg only when the
+ current leg FAILS.
+ 
++Leg order follows the operator's lane policy for glm-5.3-flash: zai is the
++primary leg, devin the secondary/fallback leg.
++
+ Default legs (all overridable via env - see "LEG CONFIG" below):
+-  1. devin        POST http://127.0.0.1:8787/v1/chat/completions  (local
++  1. zai          POST https://api.z.ai/api/coding/paas/v4/chat/completions
++                  (body forwarded as-is; model glm-5.3-flash is correct here)
++  2. devin        POST http://127.0.0.1:8787/v1/chat/completions  (local
+                   devin-shim; the body's `model` field is rewritten to the
+                   devin slug "glm-5-3-flash-max" before forwarding)
+-  2. zai          POST https://api.z.ai/api/coding/paas/v4/chat/completions
+-                  (body forwarded as-is; model glm-5.3-flash is correct here)
+   3. hyper        POST https://hyper.charm.land/v1/chat/completions
+                   (body forwarded as-is)
+ 
+@@ -29,8 +32,8 @@
+ to the caller as-is.
+ 
+ LEG CONFIG (env vars, defaults are the module constants below):
+-  GLM_LEG1_NAME/URL/KEY/MODEL          leg 1 (devin)
+-  GLM_LEG2_NAME/URL/KEY/MODEL          leg 2 (zai)
++  GLM_LEG1_NAME/URL/KEY/MODEL          leg 1 (zai)
++  GLM_LEG2_NAME/URL/KEY/MODEL          leg 2 (devin)
+   GLM_LEG3_NAME/URL/KEY/MODEL          leg 3 (hyper)
+ A leg's MODEL env var, when non-empty, replaces the request body's `model`
+ field for that leg (used by devin); empty means "pass the body through as-is".
+@@ -105,26 +108,26 @@
+     return [
+         _leg(
+             1,
+-            os.environ.get("GLM_LEG1_NAME", "devin"),
++            os.environ.get("GLM_LEG1_NAME", "zai"),
+             os.environ.get("GLM_LEG1_URL",
+-                           "http://127.0.0.1:8787/v1/chat/completions"),
++                           "https://api.z.ai/api/coding/paas/v4/chat/completions"),
+             {
+                 "Authorization": "Bearer " + os.environ.get(
+-                    "GLM_LEG1_KEY", "dummy"),
++                    "GLM_LEG1_KEY",
++                    "<REDACTED-ZAI-KEY>"),
+             },
+-            os.environ.get("GLM_LEG1_MODEL", "glm-5-3-flash-max"),
++            os.environ.get("GLM_LEG1_MODEL", ""),  # empty = body as-is
+         ),
+         _leg(
+             2,
+-            os.environ.get("GLM_LEG2_NAME", "zai"),
++            os.environ.get("GLM_LEG2_NAME", "devin"),
+             os.environ.get("GLM_LEG2_URL",
+-                           "https://api.z.ai/api/coding/paas/v4/chat/completions"),
++                           "http://127.0.0.1:8787/v1/chat/completions"),
+             {
+                 "Authorization": "Bearer " + os.environ.get(
+-                    "GLM_LEG2_KEY",
+-                    "<REDACTED-ZAI-KEY>"),
++                    "GLM_LEG2_KEY", "dummy"),
+             },
+-            os.environ.get("GLM_LEG2_MODEL", ""),  # empty = body as-is
++            os.environ.get("GLM_LEG2_MODEL", "glm-5-3-flash-max"),
+         ),
+         _leg(
+             3,
