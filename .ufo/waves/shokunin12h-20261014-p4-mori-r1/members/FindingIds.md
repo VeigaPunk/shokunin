@@ -14,14 +14,14 @@ observations that calibrated this vocabulary; they are not a census verdict.
    same id across runs. Volatile fields (pid number, exact free bytes, wall clock)
    attach as **payload**, never reshape the id.
 3. **One finding row = one (id, subject-key).** Subject keys are named per family
-   (wave dirname, lane name, mount path, cgroup path, journal cursor/hash).
+   (wave dirname, lane name, mount path, cgroup path, journal cursor/hash, path:line for shape-only secret hits).
 4. **Missing surface ≠ unhealthy.** Absence emits a `*_UNAVAILABLE` id (or the
    generic `SURFACE_UNAVAILABLE`) at severity `info`. It never upgrades to
    `warn`/`high`/`critical` solely because the probe could not see the surface.
 5. **Observation / inference / unknown stay separate.** Predicates below are
    observations. Inferences (e.g. "daemon died hours ago") stay in prose payload
    under `reading:`, never as a second id.
-6. **No remediation verbs in ids.** Ids name the detected state, not the action.
+6. **No remediation verbs in ids.** Ids name the detected state, not the action. Credential/oauth/`server.token`/session material is **SHAPE ONLY**: findings may carry `path:line` and class, **never** the matched span or file body.
 7. **Compare contract.** A later run reports `added` / `cleared` / `persisted` /
    `changed-payload` per id+subject. Gate DRIFT means any non-empty set of
    findings whose severity ≥ `warn` under the active profile (see §8), or any
@@ -51,7 +51,7 @@ reporter. Payload may carry measured magnitudes; it does not renumber severity.
 | Cgroup memory | `memory.events`, `memory.current`/`memory.max` | cgroupfs read | `CGROUP_`, `MEM_` |
 | Disk runway | fleet root + scratch/tmp roots | `df`/`statvfs` | `DISK_` |
 | Lane silence | rostered lane grade silent / progressing / progressing-weak | HEAD time, file mtime, report dir | `LANE_` |
-| Meta / census hygiene | probe refusal, schema holes, idempotence | gate internals | `PROBE_`, `SURFACE_`, `CENSUS_` |
+| Meta / census hygiene | probe refusal, secret shape, session-path hops, schema holes | gate internals + path classing | `PROBE_`, `SURFACE_`, `CENSUS_`, `SECRET_`, `SESSION_` |
 
 ## 3. Finding-id catalog
 
@@ -187,9 +187,13 @@ DRIFTs by default. `LANE_PROGRESSING_WEAK` is informational compare-fodder.
 | id | sev | surface | subject | Produces when |
 |---|---|---|---|---|
 | `SURFACE_UNAVAILABLE` | `info` | any | `surface=<name>` | Generic fallback when a family-specific `*_UNAVAILABLE` does not apply |
-| `PROBE_REFUSED` | `info` | policy | `probe=<name>;reason=` | Probe would write, restart, kill, dispatch, pacman/systemd-mutate, external-fetch, or content-read credential material |
+| `PROBE_REFUSED` | `info` | policy | `probe=<name>;reason=` | Probe would write, restart, kill, dispatch, pacman/systemd-mutate, or external-fetch. Credential/session path hops use `SESSION_READ` instead (do not double-fire). |
+| `SECRET_SHAPED` | `warn` | path classing (no content read of secret body) | `path=<path>;line=<n>;class=<token-class>` | A census path/list/journal *name* or line **shape** matches a credential-class pattern (e.g. path under `credentials/`, `oauth/`, `op.env`, basename `server.token`, or a redacted journal field class). Payload **MUST** print `path:line` and `class` only — **NEVER** the matched span, secret bytes, or token value. File body is not opened for content. |
+| `SESSION_READ` | `warn` | hop policy | `probe=<name>;path=<path>;class=session|credential` | A planned probe hop **would** open a credential or session path (`credentials/`, `oauth/`, `server.token`, session store, cookie/token file). Finding fires on the hop intent; **the file is not opened**. Prefer this over generic `PROBE_REFUSED` for secret paths. |
 | `CENSUS_PAYLOAD_VOLATILE` | `info` | gate | `field=<name>` | Field excluded from compare normalization (pid, free bytes raw, timestamps) — documentation id for selftest, rarely emitted live |
 | `CENSUS_SELFTEST_DRIFT` | `high` | fixtures | `case=<name>` | `--selftest` expected id set ≠ actual (gate-internal) |
+
+**Secret payload contract (normative):** `SECRET_SHAPED` payload fields allowed: `path`, `line`, `class`, `probe`, `measured_at`. Forbidden in payload and logs: matched substring, file slice, env value, token, cookie, authorization header. `SESSION_READ` payload: `probe`, `path`, `class`, `measured_at` only — no open, no stat-of-contents beyond path existence classing if already known without read.
 
 ## 4. Clean (non-finding) states — named for selftest NO-FIRE cases
 
@@ -213,7 +217,7 @@ These are **not** finding ids. FixtureDesign / GateDesign assert they produce
 | `WATCHDOG_*`, `STATE_*`, `WAVE_*`, `LANE_*` | operator / kumitate (dispatch mechanism) |
 | `JOURNAL_*`, `OOM_*`, `KILL_*`, `SEGFAULT_*`, `UNIT_FAIL_*`, `CGROUP_*`, `MEM_*` | operator / tsukuroi (OS planes) — mori only reports fleet-relevant evidence |
 | `DISK_*` | operator |
-| `PROBE_REFUSED`, `SURFACE_*`, `CENSUS_*` | mori gate maintainers |
+| `PROBE_REFUSED`, `SURFACE_*`, `CENSUS_*`, `SECRET_SHAPED`, `SESSION_READ` | mori gate maintainers (shape/refusal); kagi owns credential *custody*, not these detections |
 
 mori **never** appears as remediation owner.
 
@@ -256,7 +260,7 @@ Gate banner:
 | profile | effect |
 |---|---|
 | `default` | DRIFT on sev ≥ `warn` |
-| `strict` | DRIFT on sev ≥ `info` (except pure `*_UNAVAILABLE` / `PROBE_REFUSED`) |
+| `strict` | DRIFT on sev ≥ `info` (except pure `*_UNAVAILABLE` / `PROBE_REFUSED`; `SECRET_SHAPED` and `SESSION_READ` still weigh at `warn`) |
 | `liveness-only` | only `WATCHDOG_*` + `STATE_*` + `LANE_SILENT` weigh |
 | `boot-zero-cgroup` | absolute cgroup counters (first-run) |
 | `delta-cgroup` | only counter increases vs last receipt |
@@ -267,7 +271,7 @@ Do **not** invent findings for:
 
 - pacman/systemd unit enablement state (tsukuroi)
 - endpoint/model health (kama)
-- credential validity (kagi) — shape-only if ever touched
+- credential *validity* or vault unlock (kagi) — mori only emits `SECRET_SHAPED` / `SESSION_READ` shape+hop detections, never validates secrets
 - dispatch start/stop success (kumitate)
 - "should restart X" recommendations phrased as ids
 

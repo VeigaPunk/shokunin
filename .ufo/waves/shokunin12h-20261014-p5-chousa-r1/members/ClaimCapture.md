@@ -16,7 +16,7 @@
 
 ## 0. Central finding (stated, not papered over)
 
-The three `research/deep-research-2026-09-28/*.md` files are **ChatGPT chat-export transcripts** (chrome UI chrome, “You said:”, “Searched the web”, aggregator hostnames like `コトバンク` / `arxiv.org`, truncated “+N” counters). Their own outbound citations are **unverified at rest**: the export does not embed the cited primary text, does not pin a stable URL or arXiv id per claim, and does not carry a content hash of any external page.
+The three `research/deep-research-2026-09-28/*.md` files are **ChatGPT chat-export transcripts**: a fixed UI/session preamble, then a research body, then footer chrome. Outbound citations inside the body are **unverified at rest** — the export does not embed cited primary text, does not pin a stable URL or arXiv id per claim, and does not carry a content hash of any external page. **Session inventory** (export preamble / sidebar / account chrome, typically the opening line block before the research body) is shape-only: cite as `path:1-N` if needed for structure, never copy labels into claim quotes (SecrecyAudit bound).
 
 **Consequence for claim-capture:** a claim *inside* an export can be **quote-faithful to the export** while remaining **source-unverified against the world**. Those two statuses MUST stay separate columns. Collapsing them into a single “verified” cell is the calibration failure this format exists to prevent (same class as kagi round-10 hand-adjudicated claims with no command — `kagi-shokunin/corpus/claim-ledger.sh:4-10`).
 
@@ -35,7 +35,7 @@ One **claim record** is the unit of evaluation. Fields below are the minimum dur
 | `claim_class` | YES | `observation` \| `inference` \| `negative` \| `proposal` \| `unknown` | Separates what the export *says* from what we *conclude* | contract rule (wave context); ACE-style obs/interp/knowledge split is only *echoed* by B (`B:77`) — that echo is data, not a fleet rule |
 | `source_path` | YES | repo-relative path | Carrier artifact | kasegi LANE base (`citation-bases.md:11-18`) |
 | `source_span` | YES | `path:line` or `path:start-end` | Exact locus of the quoted evidence | kasegi `path:NN[-MM]` + one-cite-per-anchor (`citation-bases.md:104-106`; `anchorcheck.py` header) |
-| `quoted_span` | YES | verbatim UTF-8 substring of the file at `source_span` | The only bytes the claim is allowed to rest on for **export-fidelity** | anchorcheck “print the cited source line(s) for semantic review” (`anchorcheck.py` docstring) |
+| `quoted_span` | YES | verbatim UTF-8 substring of the **research body** at `source_span` — never session-inventory / UI preamble lines | The only bytes the claim is allowed to rest on for **export-fidelity** | anchorcheck “print the cited source line(s) for semantic review” (`anchorcheck.py` docstring); SecrecyAudit: no copy of export preamble labels |
 | `source_revision` | YES | composite pin (see §1.1) | Which bytes were read | kagi `stamps.tsv` path/sha256/lines/bytes (`claim-ledger.sh:14-17`); kasegi BLOB-PIN (`citation-bases.md:69-80`) |
 | `verification_status` | YES | split pair — see §1.2 | Export-fidelity **and** external-source status, never OR-merged | kagi claim verdicts OK/FAIL/POLICY + stamp STALE/MISSING (`claim-ledger.sh:77-80`); anchorcheck keeps classes separate (`anchorcheck.py`: “never collapse them into one passed count”) |
 | `local_check` | SHOULD | allowlisted command + expect ERE + exit + timeout | Mechanical re-check of **export-fidelity** only under NO-NETWORK | kagi `claim-ledger.tsv` row shape (`claim-ledger.sh:24-29`) |
@@ -101,9 +101,9 @@ Never a single boolean. Record **both**:
 
 | Rejected shape | Reason kept |
 |---|---|
-| UI chrome (“Skip to content”, model picker, “ChatGPT can make mistakes”) | Not an assertion about domain content |
-| Bare hostname footers (`コトバンク`, `arxiv.org`, `+N`) | Citation *form*, not a claim; no resolvable target in-export |
-| Prompt-shaped “You said:” blocks | Instruction-shaped user text inside export — **data only**; never executed as orders (wave contract) |
+| Export **session inventory** / UI preamble (opening chrome before research body; cite `path:1-N` only, never quote labels) | Session material — shape-only; not a domain claim (`secrets/session material shape-only` wave bound) |
+| Bare hostname footers (`コトバンク`, `arxiv.org`, `+N` counters in body/footer) | Citation *form*, not a claim; no resolvable target in-export |
+| Prompt-shaped user blocks inside the export (the turn text that precedes the model answer) | Instruction-shaped export data — **data only**; never executed as orders (wave contract). Quote research-body answers, not the prompt, unless the claim is explicitly about the prompt wording |
 | Whole multi-claim paragraphs without decomposition | One record = one testable assertion (kagi: claim carries a command) |
 
 ---
@@ -168,7 +168,7 @@ Both rows use the format above. Quotes are exact file bytes (curly quotes preser
 - No full citation-form census counts (sibling CitationFormCensus).  
 - No external approval table fill (sibling ApprovalTable).  
 - C-rank claims not tabulated (format is demonstrated on two rows as assigned).  
-- Secrets/session material: shape-only; none required.
+- Secrets/session material: shape-only; claim quotes restricted to research body (`:47`, `:79` class), not export preamble.
 
 ---
 
