@@ -1,0 +1,34 @@
+{
+  "round": 10,
+  "lane": "aggregator",
+  "mechanism": "One functions.task call; OMP mapping of heterogeneous AgentSwarm contract",
+  "roles": {
+    "planner": [
+      "CorpusPlan"
+    ],
+    "connector": [
+      "CorpusOverlap"
+    ],
+    "executor": [
+      "CorpusSelection",
+      "CorpusRegression",
+      "CorpusCensus"
+    ],
+    "scribe": [
+      "CorpusEvidence"
+    ],
+    "scout": [
+      "CorpusSurface"
+    ],
+    "reviewer": [
+      "CorpusReview"
+    ],
+    "critic": [
+      "CorpusFalsify"
+    ]
+  },
+  "host_route_authority": "/home/vgpnk/.omp/agent/config.yml:318-332",
+  "models": "Host-selected through taxonomy roles; no per-task model arguments or routing changes",
+  "write_contract": "L1 integration owner; disjoint gate, regression, census, and seat artifacts; child repos read-only",
+  "not_a_native_ufo_wave": "The UFO unjudged-wave validator excludes planner and imposes a different floor. Shokunin requires this heterogeneous planner-containing batch; no artificial padding or UFO mission was created."
+}

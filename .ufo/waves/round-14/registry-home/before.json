@@ -1,0 +1,10 @@
+{
+  "round": 14,
+  "axis": "protocol-soundness",
+  "measured_commit": "e163d15bb1b080ae567ada3b86441455e9808f9b",
+  "command": "python3 -c 'from pathlib import Path; s=Path(\"SCORECARD.md\").read_text().split(\"## Aggregator lane\",1)[0]; print(\"protocol_registered_closure_gates=\"+str(sum(line.startswith(\"| closure-check | gate |\") for line in s.splitlines()))); print(\"root_SKILL_exists=\"+str(Path(\"SKILL.md\").is_file()))'",
+  "stdout": "protocol_registered_closure_gates=0\nroot_SKILL_exists=False\n",
+  "exit": 0,
+  "motivating_sources": ["SCORECARD.md:24-25", "SCORECARD.md:93-105", "PROTOCOL.md:382-402"],
+  "decision": "Keep child SKILL.md rows; declare main-repo lane-owned SCORECARD.md registry sections and register the protocol closure gate there."
+}
