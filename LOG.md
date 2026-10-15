@@ -646,3 +646,43 @@ superseded text (`PROTOCOL.md` §Invariants).
   round. The 12-hour program's remaining blockers are listed in the fleet report:
   Phase 3 (kengaku) undispatched, mori round 2 undispatched, chousa round 1
   integration, chousa round 2.
+
+## 2026-10-15 — fleet driver started: 21 lanes, 100+ round target
+
+The operator asked to continue the program at >=100 rounds per lane with no budget.
+That scale is what the respawn-per-round driver exists for, so the fleet is now
+running under `kimi-shokunin/scripts/shokunin-watchdog.sh` (tick 450s, ROUND_CAP
+1024) instead of hand-dispatched waves.
+
+**Launch.** `SHOKUNIN_ROOT=/home/vgpnk/Projects/shokunin bash <canonical>/scripts/shokunin-watchdog.sh`.
+All **21** rostered lanes launched on the first tick with prompts rendered from
+`templates/round-prompt.md` (staged into the fleet root — the driver requires it
+there and it was absent). No `launch-fail` on the real tick; 21 `omp -p` lane
+processes observed; memory 20G/30G used, load 1.13.
+
+**Three config defects found and fixed to get there:**
+
+1. **`SUBSTRATE_CMD` dropped.** My first narrowing rewrote the conf from `LANES="`
+   onward and deleted the launcher line, so every lane logged
+   `launch-fail … :: SUBSTRATE_CMD unset`. The full roster is preserved at
+   `shokunin.conf.full-roster-20261015`; the conf is now the full roster with the
+   launcher intact.
+2. **Axes strings break the prompt renderer.** `render_prompt` substitutes axes
+   through `sed -e "s/{{AXES}}/$axes/g"`, so a `/` breaks the delimiter and an
+   `&` expands to the match. kengaku's `LLM/model … & evaluation` produced
+   `launch-fail kengaku round=13 :: prompt render failed`. Every lane's axes string
+   is now `/`- and `&`-free (sanitized in both the conf and the backup).
+3. **`templates/round-prompt.md` was absent** from the fleet root; staged from the
+   canonical checkout.
+
+**Counter conflation, recorded.** The driver's per-lane counters are the
+authoritative round numbers (kagi 16, kake 16, kama 1, kasegi 17, kengaku 13,
+kotoba 16, kumitate 17, protocol 14, aggregator 10). The "steered round 19/20/…"
+labels used in this program's Phase-1 `MANIFEST.json` entries were **this
+session's own numbering**, not the driver's counters. Both are recorded; the
+ledger entries name the rounds they used.
+
+**Also observed at launch:** lanes whose current-round report is a marker are
+correctly re-launched by the driver (`lane-round-failed … marker/contentless report;
+NOT advancing`) — kengaku r13 (274 B), kasegi r17, kama r1, kotoba r16 all re-ran
+rather than advancing on a stub.
