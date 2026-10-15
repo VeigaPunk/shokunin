@@ -58,7 +58,7 @@ Three evidence channels, in increasing order of cost:
    This is what turns "declared" into "transmitted".
 
 3. **Live probes** (`scripts/probe_live.py`) — one request per cell against the
-   real lanes. Budget: 70 requests in total across three passes, every one of them
+   real lanes. Budget: 72 requests in total across three passes, every one of them
    minimal (`max_tokens` 16, 256 for the tool suite after pass 1 showed thinking
    models spend the whole 16-token budget on reasoning before emitting a call).
    No loops, no repeats except one deliberate reproducibility row.
@@ -178,9 +178,9 @@ anything":
 | `alibaba-token-plan` | max, xhigh | invalid-control returned 400 | validates the value |
 | `cursor` | max | invalid-control returned 200 | ignores the field |
 | `devin` | - | invalid-control timed out (TimeoutError: timed out) | unmeasurable |
-| `hyper` | high, low, max, medium, minimal, xhigh | invalid-control returned 200 | ignores the field |
+| `hyper` | high, low, max, medium, minimal, none, xhigh | invalid-control returned 200 | ignores the field |
 | `openai-codex` | max | invalid-control returned 400 | validates the value |
-| `opencode-go` | max, xhigh | invalid-control returned 400 | validates the value |
+| `opencode-go` | max, none, xhigh | invalid-control returned 400 | validates the value |
 | `xai-oauth` | max, xhigh | invalid-control returned 200 | ignores the field |
 | `zai-coding-plan` | max | invalid-control returned 200 | ignores the field |
 
@@ -192,6 +192,12 @@ values is consistent with that. `devin` could not be measured: the lane answered
 `502 {"error": {"message": "session/prompt: Reached free model rate limit.
 Please switch to a different model. Your limit will reset in 1 hour 7 minutes
 (at 13:01 UTC)."}}` for a direct chat instead of a completion.
+
+The `off_effort` value was sent directly as well (pass 4, one request per lane):
+both probed lanes answered 200 for `none` — `hyper`, which ignores the field, and
+`opencode-go`, which rejects values it does not know (control 400). So `none` is a
+value those backends understand; the config simply declares it in a field the
+client never reads, which is why it cannot take effect through the client.
 
 ### 4.2 Tool calling (the census's open gap)
 
@@ -263,7 +269,7 @@ vs. the key the lane actually returned:
 | `cursor/composer-2.5-fast` | `-` | 0/3 | content,role |
 | `hyper/glm-5.2` | `-` | 1/1 | content,reasoning_content,role |
 | `hyper/glm-5.3` | `-` | 1/1 | content,reasoning_content,role |
-| `hyper/qwen3.7-max` | `-` | 4/5 | content,reasoning_content,role |
+| `hyper/qwen3.7-max` | `-` | 4/6 | content,reasoning_content,role |
 | `hyper/qwen3.8-27b` | `-` | 1/1 | content,reasoning_content,role |
 | `hyper/qwen3.8-flash` | `-` | 2/2 | content,reasoning_content,role,tool_calls |
 | `hyper/qwen3.8-max` | `-` | 1/1 | content,reasoning_content,role,tool_calls |
@@ -272,6 +278,7 @@ vs. the key the lane actually returned:
 | `opencode-go/deepseek-v4-flash-vision-exp` | `reasoning_content` | 1/1 | content,reasoning_content,role |
 | `opencode-go/glm-5.3-flash` | `reasoning_content` | 0/1 | content,name,reasoning_content,role,tool_calls |
 | `opencode-go/gpt-6-luna` | `-` | 0/1 | error,model |
+| `opencode-go/hy3` | `-` | 0/1 | content,reasoning,refusal,role |
 | `opencode-go/kimi-k3` | `reasoning_content` | 0/1 | content,reasoning,reasoning_details,refusal,role |
 | `opencode-go/mimo-v2.5` | `reasoning_content` | 0/1 | content,reasoning,reasoning_details,refusal,role |
 | `opencode-go/qwen3.8-flash` | `-` | 0/2 | content,id,model,role,stop_reason,type,usage |
@@ -462,6 +469,7 @@ python3 scripts/probe_client_semantics.py  # -> raw/client-semantics.json (no qu
 python3 scripts/probe_live.py all          # -> raw/probes-{effort,tool,image}.json
 python3 scripts/probe_live.py pass2        # -> raw/probes-*-pass2.json (UA + budget fixes)
 python3 scripts/probe_live.py pass3        # -> raw/probes-tool-pass3.json (client shape)
+python3 scripts/probe_live.py pass4        # -> raw/probes-effort-pass4.json (off_effort value)
 python3 scripts/merge_probe_findings.py    # folds DEF-9/DEF-10 into audit-table.json
 python3 scripts/build_corrections.py       # -> config-corrections.toml
 python3 scripts/build_analysis.py          # -> ANALYSIS.md

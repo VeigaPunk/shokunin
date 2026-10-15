@@ -9,7 +9,7 @@ never printed, passed as arguments, or written to disk; only counts leave it.
 
 ```
 scan root:        /home/vgpnk/Projects/shokunin/.tower/worktrees/wt-2/research/round-18-kimi-model-routing/definitions
-files scanned:    23
+files scanned:    24
 distinct configured credential values tested: 12
 
 exact  provider alibaba-token-plan api_key          hits=0 

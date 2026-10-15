@@ -24,6 +24,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import common  # noqa: E402
 
 PROBE_FILES = ("raw/probes-effort.json", "raw/probes-effort-pass2.json",
+               "raw/probes-effort-pass4.json",
                "raw/probes-tool.json", "raw/probes-tool-pass2.json",
                "raw/probes-tool-pass3.json", "raw/probes-image.json",
                "raw/probes-image-pass2.json")

@@ -137,6 +137,15 @@ EFFORT2_PLAN = [r for r in EFFORT_PLAN if r[0] == "opencode-go"] + [
     ("devin", "devin/swe-2", "invalid-control"),
 ]
 
+# pass 4: the off_effort value sent as a request value. The client never transmits
+# it (it is not a field the client knows), so this asks the *lane* what it makes of
+# the value the config claims -- once on a lane that validates values, once on a
+# lane that ignores them.
+EFFORT4_PLAN = [
+    ("hyper", "hyper/qwen3.7-max", "none"),
+    ("opencode-go", "opencode-go/hy3", "none"),
+]
+
 # lane, alias  (pass 1: max_tokens 16)
 TOOL_PLAN = [
     ("alibaba-token-plan", "alibaba-token-plan/deepseek-v4.1-flash"),
@@ -431,6 +440,10 @@ def main():
         print("\n== tool suite (pass 3, client shape without tool_choice) ==", flush=True)
         run_suite("tool", TOOL3_PLAN, "tool", cfg, max_tokens=256,
                   out_name="probes-tool-pass3.json")
+    if which == "pass4":
+        print("\n== effort suite (pass 4, the off_effort value) ==", flush=True)
+        run_suite("effort", EFFORT4_PLAN, "effort", cfg,
+                  out_name="probes-effort-pass4.json")
     if which == "pass2":
         print("\n== effort suite (pass 2) ==", flush=True)
         run_suite("effort", EFFORT2_PLAN, "effort", cfg, out_name="probes-effort-pass2.json")

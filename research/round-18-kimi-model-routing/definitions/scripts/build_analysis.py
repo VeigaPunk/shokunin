@@ -41,6 +41,7 @@ def corrections_block_count():
 def probe_rows():
     rows = []
     for f in ("raw/probes-effort.json", "raw/probes-effort-pass2.json",
+              "raw/probes-effort-pass4.json",
               "raw/probes-tool.json", "raw/probes-tool-pass2.json",
               "raw/probes-tool-pass3.json", "raw/probes-image.json",
               "raw/probes-image-pass2.json"):
@@ -359,6 +360,12 @@ def main():
     A("Please switch to a different model. Your limit will reset in 1 hour 7 minutes")
     A("(at 13:01 UTC).\"}}` for a direct chat instead of a completion.")
     A("")
+    A("The `off_effort` value was sent directly as well (pass 4, one request per lane):")
+    A("both probed lanes answered 200 for `none` — `hyper`, which ignores the field, and")
+    A("`opencode-go`, which rejects values it does not know (control 400). So `none` is a")
+    A("value those backends understand; the config simply declares it in a field the")
+    A("client never reads, which is why it cannot take effect through the client.")
+    A("")
     A("### 4.2 Tool calling (the census's open gap)")
     A("")
     A("One request carrying a single function schema (`r18_echo`), the client's own shape.")
@@ -556,6 +563,7 @@ def main():
     A("python3 scripts/probe_live.py all          # -> raw/probes-{effort,tool,image}.json")
     A("python3 scripts/probe_live.py pass2        # -> raw/probes-*-pass2.json (UA + budget fixes)")
     A("python3 scripts/probe_live.py pass3        # -> raw/probes-tool-pass3.json (client shape)")
+    A("python3 scripts/probe_live.py pass4        # -> raw/probes-effort-pass4.json (off_effort value)")
     A("python3 scripts/merge_probe_findings.py    # folds DEF-9/DEF-10 into audit-table.json")
     A("python3 scripts/build_corrections.py       # -> config-corrections.toml")
     A("python3 scripts/build_analysis.py          # -> ANALYSIS.md")
