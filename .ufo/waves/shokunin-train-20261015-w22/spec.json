@@ -1,0 +1,40 @@
+{
+  "wave": "shokunin-train-20261015-w22",
+  "minted": "2026-10-15T16:50Z",
+  "orchestrator": "denim-salamander (devin acp) — continuing cyan-movie mission: train audio/g2d/g3d to r100",
+  "goal": "wave-A on three lanes: audio r81 (gst<->pipewire lattice), g2d r87 (input event/action lattice + bimodal envelopes), g3d r92 (RemoteTransform3D frame-boundary + AnimationPlayer x body + SceneTree timing edges) + forward scouts",
+  "reconciliation_this_session": [
+    "audio 15c6a35: late r77 wave-B reports + round-1 calibration audit (proposed-SHONEN.patch preserved, tracked SHONEN restored pending operator ratification of namespace re-baseline) + scouts r82-r90",
+    "g2d fad0b1e: late r78 wave-B reports + fleet-round-1 audit (proposed-SCORECARD.patch preserved, tracked SCORECARD restored) + scouts r82/r84/r87/r88",
+    "g3d c218823: late r90 critic+boundary + round-1 advisory + scouts r96-r98",
+    "fleet 0d1e3bf: MANIFEST normalization + w17 surge spec"
+  ],
+  "frontier_at_mint": {"audio": "r80 committed, scouted r81-r90", "game-dev-2d": "r86 committed, scouted r82/r84/r87/r88", "game-dev-3d": "r91 committed, scouted r92-r98"},
+  "seats": [
+    {"seat": "audio-r81-author", "profile": "subagent_general", "route": "swe-2"},
+    {"seat": "audio-r81-baseline", "profile": "ufo-executor-ds", "route": "flash"},
+    {"seat": "audio-r81-boundary", "profile": "ufo-labrat", "route": "swe-2"},
+    {"seat": "g2d-r87-author", "profile": "ufo-executor-swe", "route": "swe-2"},
+    {"seat": "g2d-r87-baseline", "profile": "ufo-executor-ds", "route": "flash"},
+    {"seat": "g2d-r87-boundary", "profile": "ufo-labrat", "route": "swe-2"},
+    {"seat": "g3d-r92-author", "profile": "subagent_general", "route": "swe-2"},
+    {"seat": "g3d-r92-baseline", "profile": "ufo-executor-ds", "route": "flash"},
+    {"seat": "g3d-r92-boundary", "profile": "ufo-labrat", "route": "swe-2"},
+    {"seat": "audio-r91-scout", "profile": "ufo-executor-ds", "route": "flash"},
+    {"seat": "g2d-r89-scout", "profile": "ufo-executor-ds", "route": "flash"},
+    {"seat": "g3d-r99-scout", "profile": "ufo-executor-ds", "route": "flash"}
+  ],
+  "constraints": [
+    "authors own tracked-file writes in their lane; no other seat writes tracked files",
+    "authors do NOT commit — orchestrator integrates and commits",
+    "baselines replay the frozen HEAD tree; scouts/boundaries write only corpus/live/<seat> + reports/round-N/<seat>.md",
+    "audio seats: seat-owned PipeWire object names only (gst_r81_*/<lane>_r<N>_*), verify module index before any unload, NEVER pactl set-default-sink / set-default-source (shared host)",
+    "godot seats: timeout-bounded runs only (timeout 15 shell + harness bound), --headless",
+    "bimodal cells arm as envelopes/mode-distributions, never single-value pins (g2d r90/r87 lesson)"
+  ],
+  "wave_B_pending": "critic/reviewer/simplifier/verifier/scribe + adjudicator per lane after each author lands",
+  "open_operator_items": [
+    "fleet round-1 re-baseline namespace ratification (audio SHONEN + g2d SCORECARD proposals preserved as patches; tracked ledgers restored to committed numbering)",
+    "SCORECARD verdict backfill: audio r77-80, g2d r79-86, g3d r85-91 — verdicts live in adjudicator reports; rows fold in with upcoming report-last commits"
+  ]
+}
