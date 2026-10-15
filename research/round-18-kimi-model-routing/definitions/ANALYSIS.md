@@ -410,7 +410,7 @@ never printed, passed as arguments, or written to disk; only counts leave it.
 
 ```
 scan root:        /home/vgpnk/Projects/shokunin/.tower/worktrees/wt-2/research/round-18-kimi-model-routing/definitions
-files scanned:    23
+files scanned:    24
 distinct configured credential values tested: 12
 
 exact  provider alibaba-token-plan api_key          hits=0 
@@ -472,13 +472,15 @@ python3 scripts/probe_live.py pass3        # -> raw/probes-tool-pass3.json (clie
 python3 scripts/probe_live.py pass4        # -> raw/probes-effort-pass4.json (off_effort value)
 python3 scripts/merge_probe_findings.py    # folds DEF-9/DEF-10 into audit-table.json
 python3 scripts/build_corrections.py       # -> config-corrections.toml
-python3 scripts/build_analysis.py          # -> ANALYSIS.md
 bash    scripts/hygiene_check.sh           # -> HYGIENE.md, exit 0 expected
+python3 scripts/build_analysis.py          # -> ANALYSIS.md (embeds HYGIENE.md)
 ```
 
-Order matters in one place: `merge_probe_findings.py` must run after
+Order matters in two places: `merge_probe_findings.py` must run after
 `audit_definitions.py` (which rewrites `audit-table.json` and drops the
-probe-derived DEF-9/DEF-10 rows) and before `build_corrections.py`.
+probe-derived DEF-9/DEF-10 rows) and before `build_corrections.py`; and
+`hygiene_check.sh` must run before `build_analysis.py`, because ANALYSIS.md
+embeds the hygiene log verbatim.
 Re-running the four generators after a probe run reproduces the committed
 `audit-table.*`, `config-corrections.toml` and `ANALYSIS.md` byte for byte; only
 the probe scripts themselves spend quota, so they are the only steps that need
