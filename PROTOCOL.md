@@ -379,7 +379,10 @@ a **probe**, and is registered as one.
   `expected.json` MUST pin the digest of every snapshot input file, and the gate verifies those
   digests before comparing verdicts: an edited snapshot is `snapshot_tampered` (could-not-evaluate),
   not a compared verdict, and a baseline without digests is reported `unpinned (legacy)`.
-- **Registry.** The schema is this section's; the rows live in each lane's `SKILL.md`: name,
+- **Registry.** The schema is this section's; a child lane's *registry home* is its own `SKILL.md`.
+  For main-repo lanes (`protocol`, `aggregator`), it is the explicitly lane-owned registry section
+  in root `SCORECARD.md`: protocol above `## Aggregator lane`, aggregator inside its own section;
+  no root `SKILL.md` is required (§Appendix, "Registry home"). Row fields: name,
   `gate|probe`, entry command, verdict map (code → class), self-test command and spelling,
   pinned-value path, write scope, owner. The aggregator ledger stays the routed-defect queue, not a
   second inventory; a fleet index is pointers to lane rows, never copied expected values. Frozen
@@ -398,8 +401,8 @@ a **probe**, and is registered as one.
   dependencies and write scope are the lane's.
 - **Delivery.** This section reaches a lane through the re-read duty, not the driver's prompt
   template (one of five child-lane items): the integrator names the exact `lane_prompt()` addition
-  in its round report, and closure grades no gate conformant until its registry row exists in the
-  lane's own `SKILL.md`.
+  in its round report, and closure grades no gate conformant until its registry row exists at the
+  lane's *registry home* defined under **Registry** above.
   The closure gate verifies the history pin (§Round-robin step 4) as committed evidence; a pin
   failure is a conformance defect routed under Closure consequence.
 

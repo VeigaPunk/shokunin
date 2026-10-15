@@ -719,3 +719,70 @@ registered as missions `shk-fleet-lanes`, `shk-fleet-driver`, `shk-fleet-health`
 
 Layout set to an even vertical stack (83x26 / 83x14 / 83x19) so the 18-row lane
 table reads without wrapping.
+
+## 2026-10-15 — round 10 aggregator relaunch: corpus-selection motivation
+
+- Steered round is **10**, notwithstanding later-numbered historical entries.
+  Existing report-marker bytes and all historical records remain untouched;
+  this run appends its own dated evidence rather than relabeling history.
+- Latest aggregator scores are tied at **9** (`SCORECARD.md:301-305`).
+  Selected **corpus review**: the inherited actual gate measurement at
+  `b598ce0e1d4fa8851d3e238ee6afde42bd57f787` represents **6 / 19**
+  local direct child lanes and omits **13**. This L1 re-counted its metadata:
+  command and observed output are in
+  `.ufo/waves/aggregator-r10-resume/before.json`; original input is
+  `.ufo/waves/aggregator-r10/before.json`.
+- One native OMP batched craft dispatch launched nine named seats, including
+  planner, connector, three executors, scribe, scout, reviewer and critic;
+  receipt `.ufo/waves/aggregator-r10-resume/dispatch.json`.
+  Taxonomy roles use the unchanged host table; this is not a generic UFO
+  proposal wave, whose taxonomy excludes the required planner.
+- Bounded move: replace the implicit fixed corpus list with local physical
+  child discovery, retaining explicit selection and grading semantics.
+  Numeric corpus score remains 9 unless stronger evidence warrants otherwise;
+  full semantic conformance and an atomic live-tree snapshot are not claimed.
+- The concurrent operator custody update above is respected: audio,
+  game-dev-2d and game-dev-3d remain read-only, even though default local
+  discovery must represent them. Their metadata verdicts belong in the fleet
+  ledger; corpus lessons for the other children remain in aggregator scope.
+
+## 2026-10-15 — round 14 protocol relaunch: registry-home cutover
+
+- **Motivation / selected axis.** Protocol-soundness was the lower protocol
+  axis (8 versus gate-integrity 9). `SCORECARD.md` queued the impossible
+  main-repo registry home: both Registry and Delivery required a root
+  `SKILL.md` that does not exist. Fresh baseline command/output/revision:
+  `.ufo/waves/round-14/registry-home-rerun/before.json`, measured at
+  `99efc52b3a6f3648f7d8e097d78460901ad3c91c`.
+- **One move.** Define the registry home once in `PROTOCOL.md` Registry:
+  child lanes retain their own `SKILL.md`; protocol and aggregator use their
+  own explicitly lane-owned root `SCORECARD.md` registry sections. Delivery
+  uses that definition. Append the `Registry home` incident to the required
+  `PROTOCOL-APPENDIX.md`; register only the existing protocol closure gate.
+  No new executable, copied expected values or root skill is introduced.
+- **Batch / ownership.** One native task call dispatched the nine required
+  role seats through the unchanged host table; receipt:
+  `.ufo/waves/round-14/registry-home-rerun/dispatch.json`. All workers are
+  author-lane workers, not promotion verifiers. The inherited
+  `registry-home/` evidence is preserved and not counted as this dispatch.
+- **Clean cutover.** Remove the obsolete G16/G26 source-wording predicates
+  and universal-SKILL/old-Delivery anchors from the round-13 preservation
+  inputs; do not re-pin wording tests. Historical gate implementation,
+  fixture/frozen expectations, history pin and ledger remain unchanged.
+  Parent integration rationale:
+  `.ufo/waves/round-14/registry-home-rerun/integration.md`.
+- **Evidence ceiling / routing.** The inherited live closure invocation
+  crashed on historical `MANIFEST.json rounds[138].round:null`, with empty
+  stdout and no emitted verdict; it was not rerun. No closure statuses are
+  writable from that failure. Owner: protocol, next bounded gate-integrity
+  repair. Existing selftests compare aggregate counts, not stable finding
+  identities; full gate conformance is not asserted. Sources:
+  `.ufo/waves/round-14/registry-home/live-closure.json` and
+  `registry-home-rerun/critic.md` under the same round-14 wave directory.
+- **Verification ordering.** This entry ships with the implementation.
+  The following verification entry records actual CLI runs and after-count
+  against that committed revision; no unrun result is claimed here. The
+  filed report marker remains untouched until work is committed, then gets
+  an appended erratum. Sibling LOG/SCORECARD bytes and runtime stay outside
+  this lane's commit; see the integration record for shared-file isolation.
+

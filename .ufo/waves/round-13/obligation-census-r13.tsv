@@ -107,7 +107,6 @@ G12	Gate standard	A helper-only or model-only self-check does not satisfy the se
 G13	Gate standard	Self-test green is capability, not a measurement	Self-test green is capability, not a measurement
 G14	Gate standard	A gate over a mutable fleet artifact also ships a run over a committed input snapshot with its committed expected verdict	also ships a run over a committed input snapshot
 G15	Gate standard	A verdict names the revision it was measured against	A verdict names the revision it was measured against
-G16	Gate standard	Registry rows live in each lane's SKILL.md, with the fields name, gate|probe, entry command, verdict map, self-test command and spelling, pinned-value path, write scope, owner	the rows live in each lane's .SKILL.md.: name,
 G17	Gate standard	The aggregator ledger stays the routed-defect queue, not a second inventory; a fleet index is pointers to lane rows, never copied expected values	fleet index is pointers to lane rows, never copied expected values
 G18	Gate standard	Scope: read-only over surfaces it does not own, and it never acts on an external surface	Read-only over surfaces it does not own, and it never acts on an external surface
 G19	Gate standard	A verdict is lane-local evidence and never stands in for the native judge	never stands in for the native judge
@@ -117,7 +116,6 @@ G22	Gate standard	Gate redness is never the marker predicate	never the marker pr
 G23	Gate standard	The integrator verifies a gate's committed evidence	The integrator verifies a gate's .committed evidence.
 G24	Gate standard	The integrator does not execute a sibling's gate	it does not execute a sibling's gate
 G25	Gate standard	Delivery is the re-read duty, not the driver's prompt template; the integrator names the exact lane_prompt() addition	the integrator names the exact .lane_prompt\(\)
-G26	Gate standard	Closure grades no gate conformant until its registry row exists in the lane's own SKILL.md	grades no gate conformant until its registry row exists
 G27	Gate standard	Nothing else is pinned: a gate's own vocabulary is the only thing left lane-owned; no gate breaks on adoption	Nothing else is pinned
 G28	Gate standard	A gate reads surfaces and compares them against expected values	it reads surfaces, compares them
 G29	Gate standard	Self-test runs over isolated fixtures (temp trees)	over isolated fixtures .temp trees

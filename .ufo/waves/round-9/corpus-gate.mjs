@@ -3,9 +3,14 @@
 //
 // WHAT THIS IS
 //   A committed, re-runnable verdict script that recomputes the mechanically-checkable
-//   CORPUS.md rules for one child repo (or the whole fleet of six) and prints, for each
+//   CORPUS.md rules for one child repo (or the whole discovered fleet) and prints, for each
 //   repo, the rule-10 conformance verdict the aggregator ledger cites.  It exists so a
 //   non-author can re-derive the aggregator's rule-10 verdicts without re-running prose.
+//   Round-10 change: default --all lane selection moved from the hardcoded six-name list
+//   to physical discovery (see the discovery row in the registry block).  Grading rules,
+//   finding ids, explicit modes, the pinned expected JSON and exit precedence 2 > 3 > 1 > 0
+//   are unchanged, so the gate id stays corpus-gate-v1 — ledger rows and expected.json
+//   _provenance cite that id, and this seat does not own those records.
 //
 // Registry block (PROTOCOL.md §Gate standard: "the rows live in each lane's SKILL.md" —
 // the aggregator lane HAS NO SKILL.md; that gap is a routed defect, D-120 class.  Until
@@ -20,12 +25,15 @@
 //                     throwaway trees inside os.tmpdir() (--selftest fixtures,
 //                     --snapshot extraction), both removed before exit.
 //   entry command     node .ufo/waves/round-9/corpus-gate.mjs --all
+//                     node .ufo/waves/round-9/corpus-gate.mjs --all --repos <dir,dir,...>
 //                     node .ufo/waves/round-9/corpus-gate.mjs --repo <child-repo-dir>
 //                     node .ufo/waves/round-9/corpus-gate.mjs --snapshot <child-repo-dir> <commit>
 //                     node .ufo/waves/round-9/corpus-gate.mjs --selftest
+//                     (--all with no --repos selects DISCOVERED lanes — see discovery row)
 //   verdict map       0 = clean
 //                     1 = failed            (one or more CORPUS.md rule findings)
-//                     2 = could-not-evaluate (no corpus/ dir, unreadable corpus, git failure)
+//                     2 = could-not-evaluate (no corpus/ dir, unreadable corpus, git failure,
+//                     discovered lane without its own git root, empty/failed default discovery)
 //                     3 = failed            (frozen expectation drift -- the committed
 //                                            expected verdict no longer reproduces)
 //                     precedence across repos / across a snapshot: 2 > 3 > 1 > 0
@@ -35,6 +43,21 @@
 //                     (selftest.cases[] + frozen[] = committed input snapshots with their
 //                      committed expected verdicts)
 //   round selector    --round <N>   (default 9) ; the round whose aggregator lesson r10 requires
+//   discovery         --all without --repos: every physical direct child directory of
+//                     MAIN_ROOT matching /^[a-z0-9][a-z0-9-]*-shokunin$/ — nonrecursive,
+//                     symlinks and regular files excluded, names sorted, re-discovered on
+//                     every invocation (no hardcoded lane list remains; a lane directory
+//                     added to the fleet root is graded next run with no edit here).  The
+//                     scan is PHYSICAL: it does not read shokunin.conf, so the selected
+//                     set is the local corpus set, never equated to the configured fleet.
+//                     Empty or unreadable discovery = visible `# coverage` diagnostic and
+//                     exit 2, with no fabricated child row.  A discovered lane without its
+//                     own git top level is a visible per-lane exit 2: parent fleet git
+//                     metadata is never inherited into a child verdict, while a legitimate
+//                     .git worktree gitfile passes.  Explicit --repos keeps prior behavior
+//                     (caller order, legacy empty list = zero lanes, missing dir = visible
+//                     per-lane exit 2) and bypasses discovery and the own-git guard;
+//                     --repo and --snapshot are unchanged from round 9.
 //
 // CHECKS IMPLEMENTED (each finding-id is CR-<repo>-<rule>-<n>, n a 1-based ordinal over a
 // deterministic (rule, key) sort, so the same input always yields the same ids)
@@ -126,6 +149,7 @@ const REGISTRY = {
   owner: 'aggregator lane (/home/vgpnk/projects/shokunin), round 9',
   entry: {
     all: 'node .ufo/waves/round-9/corpus-gate.mjs --all',
+    repos: 'node .ufo/waves/round-9/corpus-gate.mjs --all --repos <dir,dir,...>  (explicit lane list: caller order preserved, legacy empty list = zero lanes; bypasses discovery)',
     one: 'node .ufo/waves/round-9/corpus-gate.mjs --repo <child-repo-dir>',
     snapshot: 'node .ufo/waves/round-9/corpus-gate.mjs --snapshot <child-repo-dir> <commit>',
     selftest: 'node .ufo/waves/round-9/corpus-gate.mjs --selftest',
@@ -141,6 +165,7 @@ const REGISTRY = {
   pinned_values: 'corpus-gate.expected.json (selftest.cases[] + frozen[])',
   write_scope: 'read-only; writes only inside os.tmpdir() (selftest fixtures, snapshot extraction), removed before exit',
   round_flag: '--round <N> (default 9)',
+  default_discovery: '--all without --repos: physical direct child dirs of MAIN_ROOT matching /^[a-z0-9][a-z0-9-]*-shokunin$/, sorted, nonrecursive, symlinks/files excluded, re-discovered every invocation; empty/unreadable discovery = coverage diagnostic + exit 2 with no fabricated row; discovered lanes must own their git top level (fleet git inheritance rejected; .git worktree gitfile legitimate); explicit --repos preserves order/empty-list semantics and bypasses discovery and the guard',
   checks: [
     { rule: 'r2', corpush: 'CORPUS.md:19', what: 'a lessons/ entry cites its round and its evidence (commit hash, .ufo/reports/ path, or LOG.md)' },
     { rule: 'r4', corpush: 'CORPUS.md:28', what: 'a count claim (<n> <count-noun>) on a line with no backticked command' },
@@ -162,14 +187,13 @@ const REGISTRY = {
   r8_classification: 'could-not-evaluate',
 };
 
-const DEFAULT_REPOS = [
-  'kasegi-shokunin',
-  'kengaku-shokunin',
-  'kake-shokunin',
-  'kumitate-shokunin',
-  'kotoba-shokunin',
-  'kagi-shokunin',
-];
+// Lane selection is DISCOVERED (see the discovery row in the registry block).  The old
+// six-name DEFAULT_REPOS list froze the round-9 fleet and omitted every qualifying lane
+// added since — the inherited baseline measurement (6 of 19 represented, 13 omitted,
+// gate exit 1) is the historical record of that defect and stays as authored.  `--all`
+// without `--repos` matches direct child directories of the script-derived MAIN_ROOT
+// against this pattern; no second hardcoded lane list exists anywhere in this gate.
+const LANE_DIR_RE = /^[a-z0-9][a-z0-9-]*-shokunin$/;
 
 const TEXT_EXT = new Set(['.md', '.sh', '.tsv', '.json', '.jsonl', '.py', '.log', '.txt', '.yml', '.yaml', '.csv', '.sha256', '.mjs']);
 const INDEX_EXT_RE = /\.(md|sh|tsv|json|jsonl|py|log|txt|yml|yaml|csv|sha256)$/;
@@ -204,6 +228,26 @@ function walk(dir, base, acc) {
     else if (e.isFile()) acc.push(path.relative(base, p).split(path.sep).join('/'));
   }
   return acc;
+}
+
+// Default lane discovery for --all without --repos (round-10 contract: nonrecursive,
+// symlinks and regular files excluded, deterministic name sort, re-discovered every
+// invocation).  With readdir withFileTypes a symlink reports isSymbolicLink() and is NOT
+// isDirectory(), so the filter keeps physical directories only.  ok:false means the root
+// itself could not be read; the caller turns either outcome into an exit-2 coverage
+// diagnostic rather than grading an empty fleet silently.
+function discoverLanes(root) {
+  let ents;
+  try {
+    ents = fs.readdirSync(root, { withFileTypes: true });
+  } catch (e) {
+    return { ok: false, err: String((e && e.message) || e), names: [] };
+  }
+  const names = ents
+    .filter((e) => e.isDirectory() && !e.isSymbolicLink() && LANE_DIR_RE.test(e.name))
+    .map((e) => e.name)
+    .sort((a, b) => (a < b ? -1 : a > b ? 1 : 0));
+  return { ok: true, err: null, names };
 }
 
 function pad6(n) {
@@ -505,9 +549,33 @@ function linesForResult(res, meta) {
   return out;
 }
 
+// Own-git-root guard for default-discovered lanes only.  `git -C <dir>` walks UP the tree,
+// so a lane without its own repository would be stamped with an ancestor's HEAD — the
+// fleet repo's git metadata inherited into a child verdict.  Rejecting that keeps the
+// defect visible as a per-lane exit 2.  A legitimate linked worktree passes: its `.git`
+// gitfile still makes the lane itself the git top level.  Explicit --repo/--repos/
+// --snapshot keep round-9 behavior untouched.
+function ownGitRoot(repoDir) {
+  const top = git(repoDir, ['rev-parse', '--show-toplevel']);
+  if (top.code !== 0) return { ok: false, err: `git rev-parse --show-toplevel failed: ${top.err.trim() || `exit ${top.code}`}` };
+  const printed = top.out.trim();
+  if (!printed) return { ok: false, err: 'git rev-parse --show-toplevel printed nothing' };
+  const real = (p) => { try { return fs.realpathSync(p); } catch (e) { return path.resolve(p); } };
+  const lane = real(repoDir);
+  const toplevel = real(printed);
+  if (toplevel !== lane) return { ok: false, err: `git top level is ${toplevel}, not the lane itself (${lane}) — parent fleet git metadata is not inherited` };
+  return { ok: true, toplevel };
+}
+
 function runLive(repoDir, opts) {
   const abs = path.resolve(repoDir);
   const label = opts.label || path.basename(abs);
+  if (opts.requireOwnGit) {
+    const own = ownGitRoot(abs);
+    if (!own.ok) {
+      return { res: { label, exit: EXIT.CNE, findings: [], notes: [`own git root absent — ${own.err}`], stats: { files: 0, rules: {} } }, meta: { revision: 'no-own-git', dirty: -1, mode: 'live' } };
+    }
+  }
   const stamp = revisionStamp(abs);
   if (!stamp.ok) {
     return { res: { label, exit: EXIT.CNE, findings: [], notes: [`git rev-parse failed: ${stamp.err}`], stats: { files: 0, rules: {} } }, meta: { revision: 'unknown', dirty: -1, mode: 'live' } };
@@ -787,6 +855,8 @@ function printRegistry() {
   const out = [];
   out.push(`# registry name=${REGISTRY.name} kind=${REGISTRY.kind} version=${REGISTRY.version}`);
   out.push(`# registry entry-all="${REGISTRY.entry.all}"`);
+  out.push(`# registry entry-repos="${REGISTRY.entry.repos}"`);
+  out.push(`# registry default-discovery ${REGISTRY.default_discovery}`);
   out.push(`# registry verdict-map ${Object.keys(REGISTRY.verdict_map).map((k) => k + '=' + REGISTRY.verdict_map[k]).join(' ')}`);
   out.push(`# registry verdict-precedence ${REGISTRY.verdict_precedence}`);
   out.push(`# registry selftest-flag ${REGISTRY.selftest_flag} pinned=${REGISTRY.pinned_values}`);
@@ -806,7 +876,7 @@ function combineExit(codes) {
 function main() {
   const o = parseArgs(process.argv.slice(2));
   if (o.help || o.bad) {
-    process.stdout.write('usage: corpus-gate.mjs [--selftest | --repo <dir> | --all | --snapshot <dir> <commit>] [--round N] [--json] [--registry]\n');
+    process.stdout.write('usage: corpus-gate.mjs [--selftest | --repo <dir> | --all [--repos <dir,dir,...>] | --snapshot <dir> <commit>] [--round N] [--json] [--registry]  (--all with no --repos discovers lanes)\n');
     process.exit(o.bad ? EXIT.CNE : EXIT.CLEAN);
   }
   if (o.mode === null) {
@@ -849,14 +919,32 @@ function main() {
     }
     results.push(r);
   } else if (o.mode === 'all') {
-    const repos = o.repos || DEFAULT_REPOS;
-    for (const name of repos) {
+    let names;
+    let discovered = false;
+    if (o.repos) {
+      // Explicit lane list — prior behavior preserved: caller order kept, legacy empty
+      // list (`--repos ''`) means zero lanes and NO discovery, missing directories still
+      // produce a visible per-lane exit-2 row, and the own-git guard does not apply.
+      names = o.repos;
+    } else {
+      const disc = discoverLanes(MAIN_ROOT);
+      if (!disc.ok || disc.names.length === 0) {
+        const why = disc.ok ? `matched 0 qualifying direct child directories under ${MAIN_ROOT}` : `could not read ${MAIN_ROOT}: ${disc.err}`;
+        process.stdout.write(`# coverage could-not-evaluate: default discovery ${why} (pattern ${LANE_DIR_RE.source}) — no lane evaluated, no child row fabricated\n`);
+        process.stdout.write(`# process-exit ${EXIT.CNE} (${EXIT_CLASS[EXIT.CNE]})\n`);
+        process.exit(EXIT.CNE);
+      }
+      names = disc.names;
+      discovered = true;
+      process.stdout.write(`# coverage OK: default discovery selected ${names.length} physical lane dir(s) under ${MAIN_ROOT}: ${names.join(', ')}\n`);
+    }
+    for (const name of names) {
       const dir = path.isAbsolute(name) ? name : path.join(MAIN_ROOT, name);
       if (!fs.existsSync(dir)) {
         results.push({ res: { label: path.basename(name), exit: EXIT.CNE, findings: [], notes: [`repo directory ${dir} absent — could not evaluate`], stats: { files: 0, rules: {} } }, meta: { revision: 'absent', dirty: -1, mode: 'live' } });
         continue;
       }
-      results.push(runLive(dir, { round: o.round, label: path.basename(dir) }));
+      results.push(runLive(dir, { round: o.round, label: path.basename(dir), requireOwnGit: discovered }));
     }
   }
 

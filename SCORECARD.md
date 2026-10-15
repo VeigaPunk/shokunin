@@ -127,6 +127,56 @@ Round 15 (gate-integrity — dynamic evidence closure plus a reproducible two-in
 | 12 | protocol-soundness (held, not raised) | 8 — 446 lines, 0 holes named against it | 8 — 526 lines, 7 holes closed against live evidence, census 93/93 preserved, body incident refs held at 4; the +80-line / +9323-byte length regression is booked as a disclosed cost against a queued round-13 compaction to ≤470 | `git diff 6bd4f38..HEAD -- PROTOCOL.md`; `sh .ufo/waves/round-11/verify-census.sh PROTOCOL.md` |
 | 15 | gate-integrity | 8 — r13 admitted counter-backed kama but a log-only lane vanished when its counter was deleted; wrap-only termination and non-closure entries were silent; no round-15 digest-pinned closure replay; bounded debt 17 | 9 — lane universe closed over five sources, wrap/non-closure/CNE explicit, 26 entries / 34 rows close debt 17→0, checker 27/27, generator 37/37, final mutations 7/7, two digest-pinned baselines match | `.ufo/waves/round-15/`; `MANIFEST.json` `rounds[48..73]`; `.ufo/reports/round-15/protocol.md` |
 
+## Gate registry — protocol lane registry home
+
+Declared home of main-repo `protocol`-lane gate rows per the landed `PROTOCOL.md`
+§Gate standard **Registry** bullet (lines 382-385): for a main-repo lane the registry home
+is its explicitly lane-owned registry section in root `SCORECARD.md` — protocol above
+`## Aggregator lane`; no root `SKILL.md` is required and none is invented (§Appendix,
+"Registry home"; design record `.ufo/waves/round-14/registry-home-rerun/contract.md`).
+Row fields are that clause's eight: name, `gate|probe`, entry command, verdict map
+(code → class), self-test command and spelling, pinned-value path, write scope, owner.
+**This row is registration only — not blanket conformance, not a live clean verdict.**
+Every pointer, flag and code below was source-verified in `.ufo/waves/round-15/closure-check.py`
+(sha256 `0ac440f7…9a778c`, pinned in `.ufo/waves/round-14/registry-home-rerun/before.json`)
+without executing the gate; pinned expected values stay in the referenced committed files
+and are not copied into this registry.
+
+| name | gate/probe | entry command (fleet root) | verdict map (code → class) | self-test command and spelling | pinned-value path | write scope | owner |
+|---|---|---|---|---|---|---|---|
+| closure-check | gate | `python3 .ufo/waves/round-15/closure-check.py --repo . --json --no-citations` (live mode from fleet root `/home/vgpnk/Projects/shokunin`; the invocation the inherited record captured; flags real at `closure-check.py:1984-2000`) | `0` → clean · `1` → failed (source "debt/contradiction": `stale_in_flight`, `unrowed_terminated`, `prompt_orphan`, `prompt_untracked`, `keying_violation`, `contradiction`, `history_pin_{unavailable,invalid,mismatch,unanchored,orphan,unverifiable}`) · `2` → could-not-evaluate (missing input, parse error, bad usage, `snapshot_tampered`, `unknown_lane`, `unknown_entry_type`) · `3` → could-not-evaluate (source label `no-baseline`: pinned expected-value baseline absent under `--selftest` / `--frozen`) — map at `closure-check.py:66-71` | `python3 .ufo/waves/round-15/closure-check.py --selftest` — spelling `--selftest` (argparse flag, `closure-check.py:1989`), runs only the committed fixtures, never the live tree; recorded tally 27/27 quoted from M25 — not re-run by this registration | frozen: `.ufo/waves/round-15/frozen/r15-pre-003400/expected.json` and `.ufo/waves/round-15/frozen/r15-post-012710/expected.json` · fixtures: `.ufo/waves/round-15/fixtures/closure-sample/<case>/expected.json` (25 cases) · history-pin pointer: `.ufo/history-pin.json` (live mode only; `--pin PATH` overrides; frozen snapshots are pinned by their `expected.json` input digests instead) | stdout/stderr only — source opens no file for writing (no write-mode `open`, `mkdir`, `shutil`, `tempfile`, `.write(`); the only subprocess fed stdin is read-only `git cat-file --batch-check`; read-only over the main repo, no external surface, no driver/runtime mutation | `protocol` lane (main repo) |
+
+- **Qualified frozen replays** (bare names fail closed on duplicates; `--frozen NAME`
+  resolves under any `.ufo/waves/*/frozen` root):
+  `python3 .ufo/waves/round-15/closure-check.py --frozen round-15/r15-pre-003400` and
+  `python3 .ufo/waves/round-15/closure-check.py --frozen round-15/r15-post-012710`. Each
+  `expected.json` pins the digest of every snapshot input file; an edited snapshot yields
+  `snapshot_tampered` (exit 2), not a compared verdict. The pinned verdict values live only
+  in those committed files.
+- **Self-test spelling and assertion ceiling:** `do_selftest` (`closure-check.py:1850-1920`)
+  asserts exit code plus the committed `expected.json` count fields per fixture, plus two
+  prompt-key unit checks (27 total: 25 fixture repos each carrying `MANIFEST.json` +
+  `expected.json`). It compares counts, not per-finding ids; id-level comparison exists only
+  on the frozen path (`_compare_baseline`, `closure-check.py:1828-1840`, diffing exit plus
+  `(lane, lane_round, class)` debt triples). This row records the lane's flag spelling and
+  this ceiling; it does not claim §Self-test full conformance.
+- **No live verdict rides on this row (registration ceiling):** the only recorded live run
+  of this gate is the inherited, read-only
+  `.ufo/waves/round-14/registry-home/live-closure.json` — command
+  `python3 .ufo/waves/round-15/closure-check.py --repo . --json --no-citations`,
+  `measured_commit e163d15bb1b080ae567ada3b86441455e9808f9b`, returncode 1 delivered as a
+  Python traceback (`TypeError` comparing `None` and `int` while sorting ledger rows;
+  `stdout` empty), classified "unhandled-exception; no closure verdict emitted; no ledger
+  statuses derived". Per the round-14 contract it is cited, not re-run to confirm; the gate
+  is unchanged by this registration and the defect remains parent-routed. Closure grades no
+  live state of this gate from this row.
+- **Baseline count:** rows starting `| closure-check | gate |` above `## Aggregator lane`
+  were 0 before this section (`protocol_registered_closure_gates=0` at commit `99efc52b`,
+  `.ufo/waves/round-14/registry-home-rerun/before.json`); this section adds exactly one.
+  Everything above — score rows, Metrics tables, Planned, Retired, Move log — and the whole
+  aggregator section below the `---` are byte-untouched; the insert sits entirely on the
+  protocol side of the `## Aggregator lane` split.
+
 ---
 
 ## Aggregator lane — axes: cross-lane quality, mint/dormancy calls, corpus review
@@ -346,3 +396,26 @@ training-round number differ, the move does not.
 | 9 | corpus review | 8 with a duty owed — 0/6 verdicts current (§11.1's HEADs 6–17 commits back), no re-derivable form, rule 8 "clean everywhere" on an inherited interpretation, round-8 wave evidence uncommitted so X2/X3/X4/X8 unreproducible | 9 — 6/6 verdicts re-emitted at named revisions, committed gate (self-test 12/12, 8/8 frozen MATCH, exit map declared, 7 rules honestly `not-evaluated`), rule 8 literal 6/6 with authorship, rule 7 text-vs-interpretation split, `SHONEN.md` census 6/6, 29 rows routed, 15/15 seat artifacts durable, `r10` 6→0 on mirroring | `.ufo/reports/AGGREGATE.md` §14 (this file's V1–V12); `.ufo/waves/round-9/` (gate + expected + 15 seat files + 6 lessons); six child-repo lesson commits `b021dc9` `e171cdf` `4214101` `93b0567` `0f658ff` `baec94f`; report `.ufo/reports/round-9/aggregator.md` (wave digest: 15 L2 seats, one batched call) |
 | 11 | mint/dormancy calls | 8 — 7 dormancy rows, kama still a blocked candidate, mint census keyed to an always-empty array | 9 — lifecycle census finds 1 mint; kama moved to probation without premature roster promotion; 8/8 dormancy rows re-run with actual LOG grammars, 0 dormant; five candidate calls current; 12-seat wave durable | `.ufo/reports/AGGREGATE.md` §15; `.ufo/waves/aggregator-r11/seats/`; `.ufo/reports/round-11/aggregator.md` |
 | 11 (final re-run) | cross-lane quality | 8 — canonical report bytes could be overwritten by a closeout marker with no verdict from any command; six box-3 non-author verdicts stale at predecessors | 9 — committed `cross-lane-gate-v1` (selftest 6/6) grades 46 presented reports (rounds 11–18) over every readable repo: 5 marker-overwrite (kotoba r15 = D-153, 273 B vs 14,715 B at `4419fb9`; kengaku r12 274 B; protocol r13 275 B; protocol r14 340 B; kasegi r16 273 B), 2 verdict-without-revision (kengaku r13, kagi r15), 110 cited-commit-missing (host-state class); six box-3 verdicts re-emitted at current revisions (0/6 conformant); exit 1 | `.ufo/waves/aggregator-r11/cross-lane-gate.mjs` + `.expected.json` + `seats/cross-lane-quality.md` + `seats/cross-lane-gate.log` + `seats/corpus-verdicts.log`; `SCORECARD.md` §Round 11 |
+
+### Round 10 (2026-10-15 relaunch) — selected move
+
+The explicit steer reuses round 10; later historical sections remain intact.
+Latest scores are corpus review **9**, cross-lane quality **9**, and
+mint/dormancy calls **9** (§Round 11 final re-run). On this tie, select
+**corpus review**: the inherited actual baseline at fleet commit
+`b598ce0e1d4fa8851d3e238ee6afde42bd57f787` covers **6 / 19** physical local
+child lanes, omitting **13**. The current L1 re-counted that metadata before
+implementation; exact command/output:
+`.ufo/waves/aggregator-r10-resume/before.json`.
+
+**Planned (this move):** replace only the default fixed list with sorted,
+nonrecursive physical-child discovery. Falsified by any missing, duplicate or
+extra member, by silent missing-corpus/Git or empty-discovery success, or by
+changed explicit-selection/grading semantics. All physical children remain
+members; the three Devin-owned repos stay read-only per `LOG.md:701-708`.
+Physical children and configured fleet declarations are different populations.
+
+**Retired:** none. Numeric corpus review remains 9; selection coverage can
+improve without proving full semantic conformance or saturation. Cross-lane
+quality and mint/dormancy are guardrails, not additional axis-moves.
+
