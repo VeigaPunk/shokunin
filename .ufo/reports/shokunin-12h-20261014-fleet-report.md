@@ -126,10 +126,18 @@ and report only; refuses dispatch (kumitate) and OS-package state (tsukuroi).
 **Probation round 1 LANDED** (`Shokunin12hP4MoriR1`, 32 members; commit `7ca17b1`).
 `tools/mori-census.sh` is live: `--selftest` → `MORI_CENSUS_SELFTEST: PASS
 (14 cases, 14 passed, 0 failed)` exit 0; live → `MORI_CENSUS: DRIFT (findings=10
-drift=9 unavailable=0 surfaces=7)` exit 1. It found exactly the class the mint was
-justified by: **`OOM_KILL_JOURNAL count=1` + `CGROUP_OOM_KILL oom_kill=1` on this
-boot**, **`WATCHDOG_ABSENT` with `WATCHDOG_STALE age_s=103830`** (~29 h), and five
-**`WAVE_UNSETTLED_AGE`** (oldest ≈26.5 h). The designed gate shipped with 3 of 14
+drift=9 unavailable=0 surfaces=7)` exit 1. **Two of its first-run findings were mischaracterized and are corrected here.**
+The `OOM` findings were firing on a **cumulative parent-slice counter**, not a
+fleet event: the kill was a desktop terminal `python3` on **2026-10-13 23:44:30**
+and the fleet-bearing `user@1000.service` scope reads `oom_kill 0`; the probe now
+fires `crit` only on the session-service counter. `UNIT_FAILURE_JOURNAL` was
+likewise scraping desktop units (`pipewire-pulse` core-dump), now scoped to fleet
+units with the rest reported out-of-scope. What survives as real: **`WATCHDOG_ABSENT`
+with `WATCHDOG_STALE age_s=103830`** (~29 h, cause a deliberate 2026-09-28 halt)
+and **`WAVE_UNSETTLED_AGE`** — though the age clock itself is provisional, since
+`w5`–`w11` close out with `closeout.md`/`closed: true` rather than a results file.
+Both corrections came from independent seats, and the gate's own fixture suite
+re-verifies at 14/14 after them. The designed gate shipped with 3 of 14
 fixture cases red — the harness freshened the very paths the staleness cases
 needed old, and the silence fixture placed the lane repo where the probe does not
 look; all three fixture defects were repaired before landing (live logic

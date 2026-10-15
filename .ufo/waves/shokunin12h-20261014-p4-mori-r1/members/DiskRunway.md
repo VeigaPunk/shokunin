@@ -83,14 +83,14 @@ Filesystem       Type   Size  Used Avail Use% Mounted on
 tmpfs            tmpfs   16G  9.1G  6.1G  60% /tmp
 ```
 
-Exact byte companions (derived from the `-B1` columns, 1024-based; labeled derived so they are not a second probe):
+1024-based conversions of the `-B1` columns (derived; `1024**3 = 1073741824`). These are not the `-h` display strings. GNU `-h` printed `930G` / `835G` / `16G` for values whose exact conversions are `929.495` / `834.884` / `15.126` GiB. Compare later runs on the byte columns, not on `-h`.
 
-| path | size | used (size − not used; df Used column) | available | available/size |
+| path | size | df Used | available | available/size |
 |---|---:|---:|---:|---:|
-| fleet root fs | 929.512 GiB | 92.116 GiB (`98909257728`) | 834.996 GiB | 89.821% |
-| `/tmp` | 15.125 GiB | 9.067 GiB (`9735397376`) | 6.059 GiB | 40.059% |
+| fleet root fs | 929.495 GiB | 92.116 GiB (`98909257728`) | 834.884 GiB | 89.821% |
+| `/tmp` | 15.126 GiB | 9.067 GiB (`9735397376`) | 6.059 GiB | 40.059% |
 
-Capacity check against the same columns (derived, matches the printed percent): fleet `98909257728 / (98909257728 + 896449593344) = 9.937%` → `10%`. `/tmp` `9735397376 / 16241553408 = 59.942%` → `60%`.
+Capacity check against the same columns (derived, matches the printed integer): fleet `98909257728 / (98909257728 + 896449593344) = 9.937%` → `10%`. `/tmp` `9735397376 / 16241553408 = 59.941%` → `60%`.
 
 ### Filesystem identity (not the df source string alone)
 
@@ -132,7 +132,7 @@ FixtureDesign's disk-missing id is `DISK_UNAVAILABLE`. This report uses FindingI
 
 | id | subject | why it did not fire under FindingIds proposal constants |
 |---|---|---|
-| `DISK_LOW` | `mount=/home` (fleet root fs) | Capacity 10% < `DISK_WARN_PCT` 85; available 834.996 GiB > `DISK_WARN_AVAIL_BYTES` 5 GiB |
+| `DISK_LOW` | `mount=/home` (fleet root fs) | Capacity 10% < `DISK_WARN_PCT` 85; available 834.884 GiB (`896449593344` bytes) > `DISK_WARN_AVAIL_BYTES` 5 GiB |
 | `DISK_CRITICAL` | `mount=/home` | Capacity 10% < 95; available > 1 GiB |
 | `DISK_LOW` | `mount=/tmp` | Capacity 60% < `DISK_TMP_WARN_PCT` 80 and < 85; available 6.059 GiB > 5 GiB |
 | `DISK_CRITICAL` | `mount=/tmp` | Capacity 60% < 95; available > 1 GiB |

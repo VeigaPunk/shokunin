@@ -143,3 +143,87 @@ S4's pasted verdict line `CLAIMS: MATCH (... sections=6 adv=0)` cannot be emitte
 **Smallest safe correction (parent):** S4 declared count **5**. Do not backtick `scripts/ufo-sighting` in a path-like form. Remove the member section whose heading is the shim path, and record the removal as outside the frozen universe, with the other nine top-level non-mjs files. Those ten belong to no scored family. That is the definition, not an orphan inside the 91.
 
 
+## Counterexample 2 — lane lists are disjoint; the cells are not
+
+`familyPatterns()` keeps every backtick with a slash, a star, or a known extension, anywhere in the members cell (`claims-check.mjs:256-258`). Applied to the live cells and the 91+92 walk:
+
+| Row | Lane list | Gate admission | Over-admitting token |
+|---|---:|---:|---|
+| S8 | 63 | **91** | `*.mjs` |
+| R1 | 8 | **23** | `native*.rs` |
+| R11 | 41 | **92** | `crates/ufo-core-runtime/src/*.rs`, `crates/ufo-cli/src/*.rs` |
+| S1-S7, R2-R10 | as table | same as lane list | none on this tree |
+
+Gate multi-family hits: **84**. Every S1-S7 file (28) is also S8. Every runtime file is R11, and every `native*.rs` file (23) is also R1 — including R5's 4, R8's 4, R9's `native_tests.rs`, and R3's `native_profile.rs` (that file is in three families). Strict patterns (those four tokens removed) have **0** multi-hits and **95** orphans (54 S8 top-level mjs + 41 R11). The subtraction prose is not a pattern the gate can read.
+
+`R1MemberRecensus.md` says the members cell has no backticked `native*.rs` glob and that no cell edit is required. That is false. `SCORECARD.md:127` backtick tokens, extracted from the live line, include `native*.rs` and `knowledge/runtime-remainder-census.md`. The round-17 Limits sentence that the shorthand is now non-pattern prose is stale: the explanation of the removal re-backticked the glob.
+
+A lone `.rs` token in the R11 cell is also a pattern. It matches zero live files (basename equality, not a suffix). It is not the overlap source. The two directory globs are.
+
+Today the notes do not section those cross-family files, so `S_sections` / `R_sections` are not yet double-counting. `SECTION_FILE_NOT_MEMBER` cannot fire for a foreign mjs inside the S8 note, a foreign `native*.rs` inside the R1 note, or any runtime file inside the R11 note. A later section, or a parent cell rewrite that keeps the backticks, counts the foreign file in the numerator.
+
+**Smallest safe correction (parent), when rewriting the three cells:** replace each over-admitting backtick with tokens whose live match set equals the lane list.
+
+- S8: drop the `*.mjs` backtick. Keep `charter-scribe/` and `lean-cargo/` (9 nested files, disjoint). Backtick the 54 top-level basenames. Dropping the glob without the basenames makes those 54 sections `SECTION_FILE_NOT_MEMBER` and drops them out of `S_sections`.
+- R1: drop the backticks around `native*.rs` and around `knowledge/runtime-remainder-census.md`. The eight basenames already match. Do not trust the R1 report's "no cell edit" line.
+- R11: drop the lone `.rs` token and both `crates/.../src/*.rs` globs. Backtick the 41 paths (or basenames: no runtime/CLI basename collision). Boundary prose `88 - 51 = 37` and CLI `4` is right; the backticks around the globs undo it.
+
+Globs that are exact on this tree and need no split: `probe-*.mjs` (with `fake-omp.mjs`; `atomic-write.mjs` matches nothing live), `loop_driver*.rs`, `execution_profile*`, `cost_ledger*`, `lane_overlay*`, `lease*`, `live*`, `distill*`, `l3_swarm*`, `local_ship*`, `bounded_fs*`. `bounded_fs*` does not match `bounded_fixture.rs`.
+
+## Heading hazard (not a current double-count)
+
+Duplicate basename inside the script layer: `base.mjs` only.
+
+- `scripts/collect-omp-native-handoff-lib/base.mjs` (S2)
+- `scripts/ufo-sighting-lib/base.mjs` (S4)
+
+A heading that is only `base.mjs` is `SECTION_FILE_AMBIGUOUS`. Both seats used full paths. Parent must keep the full path in those two headings. A basename backtick `base.mjs` in either cell would admit both files.
+
+## Derived member list
+
+Layer contribution, not the gate's widened admission:
+
+- S1: `scripts/fleet-dispatcher.mjs`
+- S2: `scripts/run-omp-native-trial.mjs`, `scripts/collect-omp-native-handoff.mjs`, and `scripts/collect-omp-native-handoff-lib/{base,events,evidence,policy,screening}.mjs`
+- S3: `scripts/ufo-swarm-collect.mjs`, `scripts/ufo-swarm-wave.mjs`
+- S4: `scripts/ufo-sighting.mjs`, `scripts/ufo-sighting-lib/{argv,base,observe,surface}.mjs`
+- S5: `scripts/omp-global-config.mjs`, `scripts/ufo-mission-result.mjs`
+- S6: `scripts/ufo-stale-watchdog.mjs`, `scripts/ufo-l0-monitor.mjs`, `scripts/ufo-l0-watch.mjs`, `scripts/the-tick-ping.mjs`, `scripts/ufo-ground-handler.mjs`
+- S7: `scripts/fake-omp.mjs`, `scripts/probe-redact.mjs`, `scripts/probe-token-plan-kimi.mjs`, `scripts/probe-token-plan-models.mjs`, `scripts/probe-token-plan-shared.mjs`, `scripts/probe-ufo-route-health.mjs`
+- S8: the 63 paths in `S8MemberRecensus.md` lines 96-158. `comm -3` against this walk was empty. Not re-copied here.
+- R1-R10: the published lists (51 paths). Union with R11 matched the 92-file walk with an empty `comm -3`.
+- R11: the 41 paths in `R11MemberRecensus.md` lines 117-162. `comm -3` empty.
+
+Not members, do not subtract from the 91/92, do not add:
+
+- Deleted outside the universe: `crates/ufo-cli/build.rs`, `crates/ufo-core-runtime/tests/godspeed_inject_full_prefix.rs`, `crates/ufo-core-runtime/tests/vector_anchors.rs`
+- Added outside the universe: `scripts/nc5-origin-sync.sh`, `scripts/nc5-seat-watch.sh`, `scripts/ufo-night-watchdog-lib.sh`, `scripts/probe-token-plan-models.verdict.json`
+- Historical exclusions still outside: `scripts/dev-verify.sh`, `scripts/gates.sh`, `scripts/self-iter.sh`, `scripts/smoke.sh`, `scripts/ufo-night-watchdog.sh`, plus `scripts/ufo-sighting`
+
+## Sections added / removed by this seat
+
+None. Read-only.
+
+## Unresolved blockers
+
+None for the enumeration. HEAD is still the pin; the layer name-set has not moved.
+
+Residual, parent-owned, not a halt: family seats are editing notes while this report is written. The comparison above is to their published lists and to the tree, not to a note that may still be changing. If a note gains a section for a file another family owns, counterexample 2 says the current cells will count it.
+
+## Cross-domain findings (owner)
+
+| Finding | Owner |
+|---|---|
+| S4 declared 6 and the path-backtick advice. Sum of seat counts would be 92 against `S_members` 91. One in-family shim section can floor 63/91 from 6 to 7. | Parent registry + sighting-wall section removal. Not S8. |
+| `SCORECARD.md:127` still backticked `native*.rs`. R1 report says it does not. Limits text that says the shorthand is non-pattern prose is stale. | Parent R1 cell. R1 seat's "no cell edit" line is not safe to follow. |
+| S8 `*.mjs` and R11 directory globs admit the other families. Lane lists themselves do not double-count. | Parent cell rewrite for S8 and R11. |
+| `base.mjs` basename collision. Full-path headings already used. | Parent, if it rewrites those two headings to basenames. |
+| R11 reports dead anchors on retained files. A dead anchor is CLAIMS drift but the section still counts in `R_sections` if `inFamily`. Membership is unaffected. | Parent note integrate / R11. Not this boundary. |
+| S2 and S5 share `failure-telemetry.md`. S2 reported `SECTION_FILE_NOT_MEMBER` for S5's section. That warning does not add an `S_sections` credit (`inFamily` false). | Parent, optional: drop `failure-telemetry` from the S2 note cell. Not a double-counted member. |
+| `scripts/fleet-dispatcher.test.mjs` bytes differ from HEAD. Set identity does not. | Whoever anchors that S8 section should read the worktree or `git show HEAD:`. |
+
+## Impacted axes
+
+- `coverage:script-layer` — the 6-to-7 step is one section wide (`64/91`). Crediting `scripts/ufo-sighting` is a false numerator, not a measured member.
+- `coverage:runtime-layer` — lane union matches 92/92. No current double-count. The R1/R11 cells can create one if a foreign section is added or the widening backticks are kept while notes are rewritten.
+
