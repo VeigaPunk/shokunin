@@ -686,3 +686,14 @@ ledger entries name the rounds they used.
 correctly re-launched by the driver (`lane-round-failed … marker/contentless report;
 NOT advancing`) — kengaku r13 (274 B), kasegi r17, kama r1, kotoba r16 all re-ran
 rather than advancing on a stub.
+
+### Driver completion semantics — measured, with the one artifact named
+
+The driver's completion signal is the report **path** plus content (a `SHONEN`
+heading and >=400 bytes), with **no freshness check**. A lane whose counter points
+at a pre-existing valid report therefore advances without doing new work. Measured
+across the 21 lanes at launch: **4 such advances total** — kumitate 1 (report dated
+10-13), kama 2 (10-13), mori 1 (10-14, and that report is genuinely this program's
+filed round-1 report, so the advance is correct). The other 18 lanes do real work
+from their next tick. Recorded because a larger pre-existing backlog would inflate
+round counts without work, which I8 forbids.
