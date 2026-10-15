@@ -72,6 +72,7 @@ KIMI_CENSUS: CLEAN (members=49 checked=49 chain=12 info=4)
 EXIT:0
 ```
 
+Run 1's proxy stdout was the full JSON object (`verdict` `DRIFT`, `exitCode` 1, `errors` 6, `warnings` 0, `durationMs` 32). The block below is not that raw stdout. It is the K comparison plus every finding's `kind`, `term`, `declared`, `computed`, and `delta`, copied from that object.
 ```text
 $ node scripts/proxy-check.mjs --json
 verdict=DRIFT exitCode=1 errors=6 warnings=0 durationMs=32
@@ -153,18 +154,91 @@ $ node scripts/proxy-check.mjs --json
   "kimiRoot": "/home/vgpnk/.kimi-code",
   "strict": false,
   "terms": {
+    "A": 6,
+    "C": 11,
+    "C1": 19,
+    "C1_total": 19,
+    "C2": 74,
+    "C2_total": 74,
+    "operability": 8,
+    "coverage": 10,
+    "S_members": 91,
+    "S_sections": 91,
+    "R_members": 92,
+    "R_sections": 74,
+    "coverage_script": 10,
+    "coverage_runtime": 8,
     "C1k": 5,
     "C1k_total": 5,
     "K_members": 49,
     "K_sections": 49,
     "coverage_kimi": 10,
-    "pins.pin.kimi-census.match": true,
-    "declared.C1k": "5",
-    "declared.C1k_total": "5",
-    "declared.K_members": "49",
-    "declared.K_sections": "49",
-    "declared.coverage_kimi": "10",
-    "declared.pin.kimi-census": "83016d45049b009a6c9868dc392ff6ebcecb357c9abfe423f476459f2724f426"
+    "pins": {
+      "pin.cite-check": {
+        "file": "scripts/cite-check.mjs",
+        "declared": "40573448330f52fb7d45c59cb0b91d236b6e277a250d850a0e2585adc7c10c9f",
+        "computed": "40573448330f52fb7d45c59cb0b91d236b6e277a250d850a0e2585adc7c10c9f",
+        "match": true
+      },
+      "pin.surface-probe": {
+        "file": "scripts/surface-probe.mjs",
+        "declared": "148cbf85ce4c7682a4ca4a663b730d28f4c41698100f7a0313f424c7b0ecb52e",
+        "computed": "148cbf85ce4c7682a4ca4a663b730d28f4c41698100f7a0313f424c7b0ecb52e",
+        "match": true
+      },
+      "pin.round-gate": {
+        "file": "scripts/round-gate.mjs",
+        "declared": "f890e277af83a78f2dd265e442c8c5912dc3975a36b18ae1be927022a834d3e9",
+        "computed": "f890e277af83a78f2dd265e442c8c5912dc3975a36b18ae1be927022a834d3e9",
+        "match": true
+      },
+      "pin.proxy-check": {
+        "file": "scripts/proxy-check.mjs",
+        "declared": "a052ddb97a0b6f84be5993891273905bcb19f2dfef25aa523924c0d3cc5dcdba",
+        "computed": "a052ddb97a0b6f84be5993891273905bcb19f2dfef25aa523924c0d3cc5dcdba",
+        "match": true
+      },
+      "pin.claims-check": {
+        "file": "scripts/claims-check.mjs",
+        "declared": "e9a21b441f1216bf41d1cca037b36021c581ec7892df3bf973295f9321b0f61b",
+        "computed": "e9a21b441f1216bf41d1cca037b36021c581ec7892df3bf973295f9321b0f61b",
+        "match": true
+      },
+      "pin.kimi-census": {
+        "file": "scripts/kimi-census.mjs",
+        "declared": "83016d45049b009a6c9868dc392ff6ebcecb357c9abfe423f476459f2724f426",
+        "computed": "83016d45049b009a6c9868dc392ff6ebcecb357c9abfe423f476459f2724f426",
+        "match": true
+      }
+    },
+    "pinsMatched": 6,
+    "pinsTotal": 6,
+    "declared": {
+      "A": "6",
+      "C": "11",
+      "C1": "19",
+      "C1_total": "19",
+      "C2": "74",
+      "C2_total": "74",
+      "S_members": "91",
+      "S_sections": "91",
+      "R_members": "92",
+      "R_sections": "74",
+      "coverage_script": "10",
+      "coverage_runtime": "8",
+      "C1k": "5",
+      "C1k_total": "5",
+      "K_members": "49",
+      "K_sections": "49",
+      "coverage_kimi": "10",
+      "pin.cite-check": "40573448330f52fb7d45c59cb0b91d236b6e277a250d850a0e2585adc7c10c9f",
+      "pin.surface-probe": "148cbf85ce4c7682a4ca4a663b730d28f4c41698100f7a0313f424c7b0ecb52e",
+      "pin.round-gate": "f890e277af83a78f2dd265e442c8c5912dc3975a36b18ae1be927022a834d3e9",
+      "pin.proxy-check": "a052ddb97a0b6f84be5993891273905bcb19f2dfef25aa523924c0d3cc5dcdba",
+      "pin.claims-check": "e9a21b441f1216bf41d1cca037b36021c581ec7892df3bf973295f9321b0f61b",
+      "pin.kimi-census": "83016d45049b009a6c9868dc392ff6ebcecb357c9abfe423f476459f2724f426"
+    },
+    "stanzaLine": 276
   },
   "findings": [],
   "errors": 0,
@@ -175,7 +249,7 @@ PROXY_EXIT:0
 HEAD_AFTER=edfb9c5301f36b48f84f32d041c33265d985025d
 ```
 
-The live JSON also carried the layer terms the parent had just landed (`S_members=91`, `S_sections=91`, `R_members=92`, `R_sections=74`, `coverage_script=10`, `coverage_runtime=8`) and `findings: []`. Those layer integers are recorded so they are not mistaken for K movement. `coverage_script` 6→10 and `coverage_runtime` 7→8 across the round; `coverage_kimi` stayed 10.
+Layer integers in that same object (`S_sections=91`, `R_sections=74`, `coverage_script=10`, `coverage_runtime=8`) are the parent's landing, not K movement. Across the round `coverage_script` went 6→10 and `coverage_runtime` went 7→8; `coverage_kimi` stayed 10.
 
 ### Stanza key diff and formula
 
