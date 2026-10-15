@@ -1,0 +1,141 @@
+{
+  "base": "http://127.0.0.1:8791",
+  "chat": {
+    "body": {
+      "choices": [
+        {
+          "finish_reason": "length",
+          "index": 0,
+          "logprobs": null,
+          "message": {
+            "content": "",
+            "reasoning_content": "The user just said \"ping\". This",
+            "role": "assistant"
+          }
+        }
+      ],
+      "created": 1792074394,
+      "id": "chatcmpl-5c3966ff-e638-414c-b47d-a122766451fc",
+      "model": "deepseek-v4.1-flash",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 8,
+        "completion_tokens_details": {
+          "reasoning_tokens": 8,
+          "text_tokens": 0
+        },
+        "prompt_tokens": 31,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "text_tokens": 31
+        },
+        "total_tokens": 39
+      }
+    },
+    "headers": {
+      "content-type": "application/json; charset=utf-8",
+      "date": "Thu, 15 Oct 2026 14:26:34 GMT",
+      "grpc-accept-encoding": "gzip",
+      "grpc-encoding": "identity",
+      "req-arrive-time": "1792074394269",
+      "req-cost-time": "304",
+      "resp-start-time": "1792074394574",
+      "server": "istio-envoy",
+      "vary": "Accept-Encoding",
+      "x-envoy-upstream-service-time": "304",
+      "x-request-id": "5c3966ff-e638-414c-b47d-a122766451fc"
+    },
+    "identity": {
+      "ambiguous": false,
+      "leg_by_signature": "alibaba-token-plan",
+      "signature_matches": {
+        "alibaba-token-plan": [
+          "x-envoy-upstream-service-time",
+          "req-arrive-time",
+          "resp-start-time"
+        ],
+        "hyper": [],
+        "opencode-go": []
+      }
+    },
+    "latency_ms": 1360,
+    "status": 200
+  },
+  "health": {
+    "body": {
+      "legs": [
+        "alibaba-token-plan",
+        "hyper",
+        "opencode-go"
+      ],
+      "ok": true,
+      "port": 8791,
+      "service": "ds-flash-shim"
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "latency_ms": 4,
+    "status": 200
+  },
+  "health_legs": [
+    "alibaba-token-plan",
+    "hyper",
+    "opencode-go"
+  ],
+  "model": "deepseek-v4.1-flash",
+  "models": {
+    "body": {
+      "data": [
+        {
+          "created": 0,
+          "id": "deepseek-v4.1-flash",
+          "object": "model",
+          "owned_by": "ds-flash-shim"
+        }
+      ],
+      "object": "list"
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "latency_ms": 0,
+    "status": 200
+  },
+  "started": "2026-10-15T11:26:33-0300",
+  "stream": {
+    "bytes": 1490,
+    "content_started": true,
+    "events": 6,
+    "first_byte_ms": 1478,
+    "headers": {
+      "cache-control": "no-cache",
+      "content-type": "text/event-stream; charset=utf-8",
+      "date": "Thu, 15 Oct 2026 14:26:35 GMT",
+      "grpc-accept-encoding": "gzip",
+      "grpc-encoding": "identity",
+      "req-arrive-time": "1792074395593",
+      "req-cost-time": "373",
+      "resp-start-time": "1792074395966",
+      "server": "istio-envoy",
+      "x-envoy-upstream-service-time": "372",
+      "x-request-id": "e701aff0-8953-456a-9dd4-70b41469f52c"
+    },
+    "identity": {
+      "ambiguous": false,
+      "leg_by_signature": "alibaba-token-plan",
+      "signature_matches": {
+        "alibaba-token-plan": [
+          "x-envoy-upstream-service-time",
+          "req-arrive-time",
+          "resp-start-time"
+        ],
+        "hyper": [],
+        "opencode-go": []
+      }
+    },
+    "status": 200,
+    "total_ms": 1478,
+    "ttft_ms": 1478
+  }
+}
