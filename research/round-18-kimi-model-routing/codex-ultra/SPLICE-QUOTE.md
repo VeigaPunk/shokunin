@@ -34,6 +34,14 @@ pin lands at **2927 ms / 74.98 tok/s** next to the M3 high-pin row's
 and the field demonstrably tiers backend behaviour (reasoning tokens billed:
 0 at `high`, 25–26 at `xhigh`, 37–43 at `max`).
 
+One caveat on that comparison: the M3 high-pin row was measured **without a
+reasoning field on the wire** (the M3 probe path never sends one — the backend
+default, echoed as `medium` in this run's no-effort control, ANALYSIS s5), so
+read +49 ms / +5.9% as `max` vs the lane's no-field default, not as a
+same-conditions high-vs-max delta. The same-window M8 rows are the tighter
+comparison and favour `max` more strongly still (`high` 64.64 → `max` 74.98
+TPS), so the recommendation is unaffected.
+
 ---
 
 ## Block A — new `[models]` entry for `~/.kimi-code/config.toml`
@@ -82,7 +90,19 @@ block. Ranks 1–2 are unchanged; the variant is rank 3.
 "openai-codex/gpt-6.1-sol-max" = "STRONG rank 3, pinned to MAX effort -- the top tier the backend accepts; the catalog/CLI-declared ultra is rejected on the wire (400 invalid_value, param reasoning.effort) [M8 s4]. Measured n=2 on the M3 prompt at 256 tokens: 2927 ms, TPS 74.98, every rep a correct prefix of 1..150 [M8 s5]; reasoning tokens billed 37-43 (0 at high). Same shim, same upstream model id as ranks 1-2 -- a third effort pin, not an independent provider fallback [M3 SELECTION s3]. Correctness not re-run by M8; with the live global [thinking] effort=max the wire value today coincides, so treat the pin as intent + immunity to global changes [M8 s7]."
 ```
 
+**Note on the rank-2 ↔ rank-3 comparison.** The rank-2 line is kept verbatim
+from M3, and M3's probe path measures **without a reasoning field on the wire**
+— the backend's default behaviour, which this run's no-effort control echoes as
+`medium` (ANALYSIS s5). The rank-3 numbers (2927 ms / 74.98) are measured at an
+explicit `reasoning.effort: "max"`. Same-window M8 rows at the identical shape:
+`high` 1786 ms / 64.64, `xhigh` 2574 ms / 67.81, `max` 2927 ms / 74.98 — `max`
+posts the best TPS and a higher TTFT median at n=2 [M8 s5]; the n=2 spread is
+wide (max TTFT reps 2480 / 3374), so treat this as a signal, not a benchmark.
+
 ### Optional ancillary updates (same file, keep in sync)
+
+These two optional blocks also quote the M3 rank-2 row (2878 ms / 70.82); the
+same no-reasoning-field caveat applies (ANALYSIS s5).
 
 EVIDENCE LEDGER (append one row after the `openai-codex/gpt-6.1-sol-high` line,
 currently line 117):
