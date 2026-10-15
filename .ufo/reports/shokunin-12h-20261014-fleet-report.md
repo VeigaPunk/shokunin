@@ -124,12 +124,18 @@ unsupervised fleet waves, no owner of fleet health) and the 17-lane roster scan
 (`.ufo/scopes/shokunin-12h-20261014/mint-roster-scan.json`). Boundary: detection
 and report only; refuses dispatch (kumitate) and OS-package state (tsukuroi).
 
-**Probation round 1** (`Shokunin12hP4MoriR1`, 32 members) is **dispatched and
-still running** at report time — 1 of 32 reports delivered. Deliverables in flight:
-the observability census (watchdog liveness, wave settlement, kill/OOM classes,
-cgroup memory, disk runway, lane silence), the `tools/mori-census.sh` gate design,
-fixture set, finding-id vocabulary, corpus map and a live census receipt. No
-round-1 verdict is claimed.
+**Probation round 1 LANDED** (`Shokunin12hP4MoriR1`, 32 members; commit `7ca17b1`).
+`tools/mori-census.sh` is live: `--selftest` → `MORI_CENSUS_SELFTEST: PASS
+(14 cases, 14 passed, 0 failed)` exit 0; live → `MORI_CENSUS: DRIFT (findings=10
+drift=9 unavailable=0 surfaces=7)` exit 1. It found exactly the class the mint was
+justified by: **`OOM_KILL_JOURNAL count=1` + `CGROUP_OOM_KILL oom_kill=1` on this
+boot**, **`WATCHDOG_ABSENT` with `WATCHDOG_STALE age_s=103830`** (~29 h), and five
+**`WAVE_UNSETTLED_AGE`** (oldest ≈26.5 h). The designed gate shipped with 3 of 14
+fixture cases red — the harness freshened the very paths the staleness cases
+needed old, and the silence fixture placed the lane repo where the probe does not
+look; all three fixture defects were repaired before landing (live logic
+untouched). Report `.ufo/reports/round-1/mori.md`; carried debt: per-surface notes,
+`progressing-weak` authorship proof, unproven thresholds.
 
 ## Phase 5 — chousa-shokunin (minted; round 1 specified, not dispatched)
 

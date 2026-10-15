@@ -2352,6 +2352,21 @@
       ],
       "promotions": [],
       "notes": "Final fleet report appended. Phase 1 landed (six-lane re-census + independent audit, 32/32 and 31/32). Phase 2 landed (kumitate round 32: script axis 6->10 terminal, runtime 6->8, PROXY MATCH). Phase 3 specified but not dispatched. Phase 4 mori minted, round 1 dispatched and still running at report time. Phase 5 chousa minted, round 1 specified but not dispatched. No roster rows; no promotions; no native judge verdict. Global routing unchanged (session-only alias selection, connector on Antigravity with ZAI fallback per operator). See the report for per-lane commits, verdicts, the 165-hit dead-path population and every unblock action."
+    },
+    {
+      "round": 1,
+      "date": "2026-10-15",
+      "type": "closure",
+      "closed_at": "2026-10-15T00:35:46.470266+00:00",
+      "lanes": {
+        "mori": "ok"
+      },
+      "lane_rounds": {
+        "mori": 1
+      },
+      "promotions": [],
+      "minted": [],
+      "notes": "mori probation round 1 closed ok: the observability census gate landed at mori-shokunin commit 7ca17b1 (selftest PASS 14/14; live MORI_CENSUS: DRIFT findings=10), plus kumitate round 32 closed at 85b2b70 (PROXY: MATCH; coverage:script-layer 6->10 terminal, coverage:runtime-layer 6->8; independent StanzaAudit reproduced every term and PinAudit found no pin drift). Three mori fixture defects were repaired during landing. Report: .ufo/reports/round-1/mori.md. No roster row; probation continues (protocol wants >=3 verified rounds)."
     }
   ]
 }
