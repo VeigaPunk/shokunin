@@ -82,19 +82,20 @@ Primary class is what a counter increments. A line can also be a unit-failure an
 
 Use `--case-sensitive=true`. Default `-g` with an all-lowercase pattern matched `OOMDetails` inside coredump stacks: boot 0, `oomd`, `OOMD`, and `OOMDetails` each returned 3037 cat-lines. Those stacks are V8 `ReportOOMFailure` / `FatalProcessOutOfMemory` / `OOMDetails`, paired with `signal 6/ABRT`, not with the kernel kill line.
 
-Count an event once, from the line in the "count as" column.
+Count an event once. On `--user`, count `COREDUMP_SIGNAL`, not the helper phrase (that phrase is absent there). On the system journal, the helper line and `COREDUMP_SIGNAL` are the same death; do not add them. Do not request `COREDUMP_ENVIRON` or `COREDUMP_CMDLINE`.
 
 ```
 journalctl -b --case-sensitive=true -g '^Out of memory: Killed process ' -o short-iso-precise --no-pager
 journalctl -b --case-sensitive=true -g '^oom-kill:constraint=' -o short-iso-precise --no-pager
 journalctl -b --case-sensitive=true -g 'invoked oom-killer:' -o short-iso-precise --no-pager
 journalctl -b --case-sensitive=true -g 'The kernel OOM killer killed some processes in this unit\.' -o short-iso-precise --no-pager
-journalctl --user -b --case-sensitive=true -g "Failed with result 'oom-kill'\\." -o short-iso-precise --no-pager
+journalctl --user -b --case-sensitive=true -g "Failed with result 'oom-kill'." -o short-iso-precise --no-pager
 journalctl -b --case-sensitive=true -g 'code=killed, status=9/KILL' -o short-iso-precise --no-pager
 journalctl -b --case-sensitive=true -g 'SIGTERM|signal 15' -o short-iso-precise --no-pager
 journalctl -b --case-sensitive=true -g 'segfault at ' -o short-iso-precise --no-pager
 journalctl -b --case-sensitive=true -g 'terminated abnormally with signal 11/SEGV, processing' -o short-iso-precise --no-pager
-journalctl -b --case-sensitive=true -g "Failed with result '(oom-kill|signal|core-dump|exit-code)'\\." -o short-iso-precise --no-pager
+journalctl --user -b COREDUMP_SIGNAL=11 -o json --output-fields=COREDUMP_SIGNAL,COREDUMP_SIGNAL_NAME,COREDUMP_COMM,COREDUMP_PID,COREDUMP_UNIT,COREDUMP_USER_UNIT,COREDUMP_CGROUP,MESSAGE_ID --no-pager
+journalctl -b --case-sensitive=true -g "Failed with result '(oom-kill|signal|core-dump|exit-code)'." -o short-iso-precise --no-pager
 ```
 
 `Failed with result` shares one `MESSAGE_ID` (`d9b373ed55a64feb8242e02dbe79a49c`). The result token is the discriminator. `unit_log_process_exit` shares `98e322203f7a4ed290d09fe03c09fe15` across `status=9/KILL` and `code=dumped, status=11/SEGV`. Do not key a class on `MESSAGE_ID` alone.
@@ -159,9 +160,9 @@ Unobserved stays `unobserved` until a line of that form is quoted with its comma
 
 One death, five lines, in order, for the only service-scoped segfault this boot (pipewire-pulse pid 1203790, 2026-10-14T18:54:21):
 
-1. kernel `segfault at 0` — `MORI-SEGFAULT-KERNEL`
-2. coredump `signal 11/SEGV, processing...` — count this
-3. coredump `dumped core` — do not add
+1. kernel `segfault at 0` — `MORI-SEGFAULT-KERNEL` (system journal only)
+2. coredump helper `signal 11/SEGV, processing...` — system count; absent from `--user` MESSAGE
+3. `MESSAGE_ID=fc2e22bc6ee647b6b90729ab34a250b1` with `COREDUMP_SIGNAL=11` — user-journal count of the same death; do not add to the helper line
 4. `Main process exited, code=dumped, status=11/SEGV` — unit annotation
 5. `Failed with result 'core-dump'.` — unit-failure token
 

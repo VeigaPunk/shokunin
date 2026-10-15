@@ -209,7 +209,7 @@ The two lines were logged by different systemd pids (`1573`, then `1203171`). Th
 
 ## 4. Adjacent entries — not filed into the four classes
 
-All `systemd-coredump` entries: **1051**. Phrase split: `dumped core` **1044** + `terminated abnormally` **7** = 1051. The 7 are all `COREDUMP_SIGNAL=5`.
+All `systemd-coredump` entries: **1051**. Phrase split: `dumped core` **1044** + `terminated abnormally` **7** = 1051. The 7 are all `COREDUMP_SIGNAL=5`. Recheck `2026-10-14T21:44:13-03:00`: `--case-sensitive=true -g 'terminated abnormally'` on `--user -b` is still **7**, not 0. All seven are `MESSAGE_ID=fc2e22bc6ee647b6b90729ab34a250b1`, comm `MainThread`, signal 5, first line `Process <pid> (MainThread) of user 1000 terminated abnormally without generating a coredump.` Pids: 149109, 154780, 189795, 196055, 253012, 253029, 256319. None are signal 11. They are not the user/system SIGSEGV delta. A sibling system-journal `COREDUMP_SIGNAL=11` count of 657 was not re-measured here and is not added to the user class count of 656.
 
 | COREDUMP_SIGNAL | name | n | first | last | why not a class |
 |---|---|---:|---|---|---|

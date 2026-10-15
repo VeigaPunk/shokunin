@@ -121,7 +121,7 @@ Device unallocated: 890638434304
 Data,single: Size:100940120064, Used:95135752192 (94.25%)
 ```
 
-94.25% of the **allocated data chunk** is not Capacity. Unallocated space is 829.472 GiB. The chunk allocator takes from that pool; `df` Capacity stays 10%. A probe that thresholds `btrfs filesystem df` Data used/size, or copies "94%" into `used_pct`, fires `DISK_LOW` against every proposed soft default and sits 0.75 points under 95, while the fleet root has 835 GiB-class free space (Available 896442683392 bytes = 834.888 GiB). GateDesign's `df -P` parser does **not** make this mistake. The correction is to keep it that way and to stop anyone "improving" the probe onto the chunk percent.
+94.25% of the **allocated data chunk** is not Capacity. Unallocated space is 829.472 GiB. The chunk allocator takes from that pool; `df` Capacity stays 10%. A probe that thresholds `btrfs filesystem df` Data used/size, or copies "94%" into `used_pct`, fires `DISK_LOW` against every proposed soft default and sits 0.75 points under 95, while the fleet root has 835 GiB-class free space (Available 896442683392 bytes = 834.840 GiB). GateDesign's `df -P` parser does **not** make this mistake. The correction is to keep it that way and to stop anyone "improving" the probe onto the chunk percent.
 
 `/usr/bin/df -Pi` at 2026-10-15T00:42:17Z: tmpfs inodes `1048576` used `351046` free `697530` IUse% **34%**. btrfs inodes `0 0 0 -`. Inode percent on the fleet device is **unavailable**, not healthy and not zero. No note proposes an inode percent. None is added here. 34% inode use on tmpfs is not the binding constraint next to 61% blocks.
 
