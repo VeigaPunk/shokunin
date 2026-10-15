@@ -16,7 +16,7 @@ cd "$(dirname "$0")/.." || exit 2
 python3 - <<'PY' | tee /tmp/r18-defs-hygiene.txt
 import json, os, re, sys, tomllib
 
-DEFS = os.path.dirname(os.path.abspath("."))
+DEFS = os.path.abspath(".")          # this tree (scripts/.. resolved by the shell)
 CP = os.path.expanduser("~/.kimi-code/config.toml")
 # prefixes assembled from fragments so this script does not itself contain a
 # credential-shaped literal and the scan stays exact
@@ -47,8 +47,10 @@ for svc, sc in cfg.get("services", {}).items():
 
 files = []
 for root, dirs, names in os.walk(DEFS):
-    dirs[:] = [d for d in dirs if d != ".git"]
+    dirs[:] = [d for d in dirs if d not in (".git", "__pycache__")]
     for n in names:
+        if n.endswith(".pyc"):
+            continue
         p = os.path.join(root, n)
         if os.path.getsize(p) < 4_000_000:
             files.append(p)
