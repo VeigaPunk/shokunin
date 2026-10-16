@@ -815,3 +815,12 @@ Effective immediately: swarm seats go to the zai flash bucket
 (`cascade/glm-5.3-flash`); the deepseek-v4.1-flash buckets are parked
 (remain permitted but unused) until the operator switches again. No active
 training run at this record; the directive binds the next dispatch.
+
+## Operator directive 2026-10-16 (routing, third amendment)
+
+The operator: "stop with the zai subagent fleet, go back to the deepseek."
+Effective immediately: swarm seats return to the deepseek flash bucket
+(`cascade/deepseek-v4.1-flash`); the zai bucket is parked (permitted, unused)
+until the next operator switch. This amends the second amendment; the
+capstone rule (10th round of a run on `openai-codex/gpt-6.1-sol` max, 32
+seats) is unaffected.
