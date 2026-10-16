@@ -807,3 +807,11 @@ switch between them by command per round/run (most recent switch: zai for the
 kengaku r19 wave). Default until the operator says otherwise: zai bucket.
 Also recorded: the kengaku 10-round run was stopped by the operator after
 round 19; the instruction to chain another 10-round training is withdrawn.
+
+## Operator directive 2026-10-16 (routing, second amendment)
+
+The operator: "use more zai flash now; instead of the deepseek buckets."
+Effective immediately: swarm seats go to the zai flash bucket
+(`cascade/glm-5.3-flash`); the deepseek-v4.1-flash buckets are parked
+(remain permitted but unused) until the operator switches again. No active
+training run at this record; the directive binds the next dispatch.
