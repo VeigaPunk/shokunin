@@ -105,6 +105,12 @@ Canonical names are `<id>-shokunin`; 2026-09 remotes keep that shape
 | [game-dev-2d-shokunin](https://github.com/VeigaPunk/shokunin-godot-2d) | 2D game production, executable fixtures | shonen |
 | [game-dev-3d-shokunin](https://github.com/VeigaPunk/shokunin-3d-engines) | 3D game production, headless fixtures | shonen |
 | [lore-shokunin](https://github.com/VeigaPunk/shokunin-world-bible) | fictional-world records & consistency | shonen |
+| [mori-shokunin](https://github.com/VeigaPunk/mori-shokunin) | fleet & host observability (森) — census gate, silence oracle, drift pin | shonen |
+| [chousa-shokunin](https://github.com/VeigaPunk/chousa-shokunin) | deep-research method (調査) — research gate: claims/chains/sweeps/integrity verification | shonen |
+
+(2026-10-16: mori + chousa repos created and pushed after their 10-round
+in-session craft runs — rounds 2–11 admitted on both lanes, ledgers in
+`MANIFEST.json`.)
 
 
 ## Files
