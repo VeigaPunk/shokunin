@@ -797,3 +797,13 @@ pattern is kept for the next run of rounds: the 10th (final) round of the
 next run dispatches on `openai-codex/gpt-6.1-sol` (max effort) with 32 seats,
 as the last round. Both in-session round goals (mori r2-11, chousa r2-11)
 completed under the previous routing; this directive governs what follows.
+
+## Operator directive 2026-10-16 (routing amendment)
+
+Amendment to the earlier same-day routing directive: the deepseek-v4.1-flash
+swarm lanes are RE-ALLOWED — both cascade/deepseek-v4.1-flash and
+cascade/glm-5.3-flash (zai) are permitted flash seats, and the operator will
+switch between them by command per round/run (most recent switch: zai for the
+kengaku r19 wave). Default until the operator says otherwise: zai bucket.
+Also recorded: the kengaku 10-round run was stopped by the operator after
+round 19; the instruction to chain another 10-round training is withdrawn.
