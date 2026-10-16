@@ -2697,6 +2697,51 @@
       "promotions": [],
       "minted": [],
       "notes": "kengaku round 19 admitted WITH CORRECTION: standing pre-registered probe battery (9 probes frozen 07:55:58Z e1a86777; 5 executed, 15 receipts; in-round scored close mean Brier 0.1836/11) + reusable template. Corrections: BR-1 freeze TOCTOU breached-and-repaired; DEFECT-0 excluded. OPERATOR STOPPED the 10-round run after r19 (rounds 20-28 do not run). Pushed to VeigaPunk/kengaku-shokunin (05cb955..f330e2b). Report: kengaku-shokunin/.ufo/rounds/round-19/kengaku.md."
+    },
+    {
+      "round": 23,
+      "date": "2026-10-16",
+      "type": "closure",
+      "closed_at": "2026-10-16T10:05:00Z",
+      "lanes": {
+        "kengaku": "closed"
+      },
+      "lane_rounds": {
+        "kengaku": 20
+      },
+      "promotions": [],
+      "minted": [],
+      "notes": "kengaku round 20 admitted: battery grid closed 9/9 (P2/P3/P8/P9 executed vs frozen predictions; 9 requests 0 retries; combined mean Brier 0.0998/46; 3c FALSIFIED on route-state drift). Template guard + lesson. r21 registered: N1 blind cascade-leg attribution w/ shim-journal GT. Report: kengaku-shokunin/.ufo/rounds/round-20/kengaku.md. No push (end of run)."
+    },
+    {
+      "round": 24,
+      "date": "2026-10-16",
+      "type": "closure",
+      "closed_at": "2026-10-16T11:20:00Z",
+      "lanes": {
+        "kengaku": "closed"
+      },
+      "lane_rounds": {
+        "kengaku": 21
+      },
+      "promotions": [],
+      "minted": [],
+      "notes": "kengaku round 21 admitted: blind cascade-leg attribution instrument — frozen feature table (9f0244bb, freeze-before-trials, journal GT post-trials), 100% accuracy both shims (ds 20/20, glm 22/22 with zai/devin 429-fallback diversity), 11/11 ablations; novelty scoped as instrument+GT-protocol (crowded fingerprinting prior art cited). Scorer seat failed, covered by two independent scorings (named). r20 evidence backfill 96b8962 (git-add pathspec error repaired). r22 = untested legs coverage + battery-fold. Report: kengaku-shokunin/.ufo/rounds/round-21/kengaku.md."
+    },
+    {
+      "round": 25,
+      "date": "2026-10-16",
+      "type": "closure",
+      "closed_at": "2026-10-16T13:25:00Z",
+      "lanes": {
+        "kengaku": "closed"
+      },
+      "lane_rounds": {
+        "kengaku": 22
+      },
+      "promotions": [],
+      "minted": [],
+      "notes": "kengaku round 22 admitted WITH CORRECTION: instrument v2 leg-forcing; hyper COVERED (run-2 10/10 = 1.000); opencode-go named gap (echo-bait starves vs reasoning models; T03 proved reachable); v2 table three-pin freeze; battery P10 fold. 4 provider-loss seats, scoring covered by authoritative blocks. OPERATOR SWITCHED routing back to deepseek flash after this wave. r23 = opencode forcing via stream-path header leg-selection. Report: kengaku-shokunin/.ufo/rounds/round-22/kengaku.md."
     }
   ]
 }
