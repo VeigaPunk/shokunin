@@ -786,3 +786,14 @@ table reads without wrapping.
   an appended erratum. Sibling LOG/SCORECARD bytes and runtime stay outside
   this lane's commit; see the integration record for shared-file isolation.
 
+
+## Operator directive 2026-10-16 (fleet routing)
+
+Standing model-route directive from the operator, effective immediately and
+for future swarm rounds in this fleet: (1) stop using deepseek-v4.1-flash as
+the default swarm seat — the default flash lane for all future AgentSwarm
+dispatches is the zai bucket: `cascade/glm-5.3-flash`; (2) the capstone
+pattern is kept for the next run of rounds: the 10th (final) round of the
+next run dispatches on `openai-codex/gpt-6.1-sol` (max effort) with 32 seats,
+as the last round. Both in-session round goals (mori r2-11, chousa r2-11)
+completed under the previous routing; this directive governs what follows.
