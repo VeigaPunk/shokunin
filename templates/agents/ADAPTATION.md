@@ -48,6 +48,11 @@ dispatch surface (`Agent`/`AgentSwarm` `subagent_type`).
   no-judge/no-ship seat boundaries, "delegate nothing" leaf rules, and the
   non-author-verifier note on reviewer (a dispatched sub-agent is still the
   lane — it never counts as independent verification).
+- **Added 2026-10-16:** every card body carries the Godspeed posture line
+  (name the axes, iterate cheap in parallel, keep moves that improve any axis
+  and harm none, never stall in clarifying loops) so a seat is self-contained
+  even when dispatched outside a round context; the round contract
+  additionally requires the verbatim directive lead on every L2 prompt.
 
 ## Tool enforcement per card
 

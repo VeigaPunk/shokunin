@@ -52,7 +52,9 @@ You are the ${lane} L1, round $n of up to $MAX_ROUNDS. Working dir: ${LANE_CWD[$
 
 BINDING: Read MISSION.md + AXES.md at /home/vgpnk/Projects/shokunin first — they are the mission SSOT. Your axes: ${LANE_AXES[$lane]}.
 
-Each round is ONE axis-move: pick the lowest-scoring axis in ${LANE_CWD[$lane]}/SCORECARD.md (create it per AXES.md if missing), land one verifiable improvement, measure it, record before→after in SCORECARD.md, log evidence in LOG.md. Saturated or wrong-fit axes may be retired/split — record the reason.
+Each round declares 1–3 claims (each an axis-move on a distinct axis with its own falsifiable before→after; at least one on the lane's lowest non-retired axis; a claim may be a capability acquisition or an exploratory taste-bound claim per AXES.md — exploratory claims verify only as unprovable-but-better with a named non-author reviewer on record): land every claimed improvement, measure each, record before→after per claim in SCORECARD.md, log evidence in LOG.md. Admission requires every claim verified and no axis harmed. Saturated or wrong-fit axes may be retired/split — record the reason.
+
+L2 prompts: lead every L2 lane prompt with /skill:godspeed + the verbatim directive bytes from ~/.agents/skills/godspeed/directive.md — resumes and nudges never re-carry it.
 
 L2 CONCURRENCY: dispatch at least 8 L2 task subagents in ONE batched task call this round — per-surface scouts, executors drafting sections into scratch, a critic falsifying claims, a connector for sibling overlap, a reviewer verifying citations. Route map: planner/connector @m_lunamax; executor/scribe/scout @m_flash; reviewer/critic/sentinel/revenger/labrat/mutation-tester/simplifier/distiller @m_zfl (fallback: @m_flash).
 

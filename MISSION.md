@@ -38,9 +38,14 @@ mission and launches a fresh process for round N+1. Cap: 1024/lane. Tick: 450s.
 ## The axes framework
 
 `AXES.md` defines the six expertise axes (depth, coverage, operability,
-freshness, calibration, adjacency). A lane's round is **one axis-move**: pick
-the lowest-scoring axis in `SCORECARD.md`, land one verifiable improvement,
-measure it, record before→after in `SCORECARD.md`, log evidence in `LOG.md`.
+freshness, calibration, adjacency). A lane's round declares **1–3 claims**,
+each an axis-move on a distinct axis with its own falsifiable before→after (at
+least one on the lane's lowest non-retired axis; a claim may be a capability
+acquisition or an exploratory taste-bound claim per `AXES.md` — exploratory
+claims verify only as `unprovable-but-better` with a named non-author reviewer
+on record): land the improvements, measure each, record before→after per claim
+in `SCORECARD.md`, log evidence in `LOG.md`. A round admits only when every
+claim verifies and no axis is harmed.
 Axes may be retired on saturation or split into sub-axes — recorded in
 `SCORECARD.md` with the reason. Axis assignments in `shokunin.conf` are initial;
 lanes may add/remove axes on evidence (falsifiable claim per move).

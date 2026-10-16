@@ -6,18 +6,37 @@ Read MISSION.md + AXES.md at {{FLEET_ROOT}} first — they are the mission singl
 truth. Your lane axes: {{AXES}}. Where this prompt conflicts with MISSION.md + AXES.md,
 the mission files win.
 
-## 2. One axis-move this round
+## 2. Claims this round — 1 to 3, each falsifiable
 
-This round is ONE axis-move, not a batch:
+This round is **1–3 declared claims**, not a batch of unrelated work:
 
 1. Open your lane repo's SCORECARD.md (create it per AXES.md if missing).
-2. Pick the **lowest-scoring axis** in it. On a tie, pick the one whose next claim is most
-   falsifiable.
-3. Land **one verifiable improvement** against that axis.
-4. Measure it: run a counting command you can paste into the report, before and after.
-5. Record the new score, the evidence pointer, the counting command, and the commit it was
-   measured against in SCORECARD.md; append the motivating evidence to LOG.md.
-6. Saturated or wrong-fit axes may be retired or split — record the reason in SCORECARD.md.
+2. Declare 1–3 claims. Each claim is one axis-move against a distinct axis, with
+   its own falsifiable before→after. At least one claim works the **lowest-scoring
+   non-retired axis** — unless the stagnation nudge waives it (AXES.md §Capabilities).
+3. Land every claimed improvement. Claims must be **causally separable**: each
+   verifiable without the others having landed. Two claims on one axis = one claim.
+4. Measure each: run a counting command you can paste into the report, before and
+   after.
+5. Record per claim in SCORECARD.md: the score delta, evidence pointer, counting
+   command, and measured commit; append the motivating evidence to LOG.md.
+6. A claim may be a **capability acquisition** (AXES.md §Capabilities): the new
+   capability runs, its output verifies, and its row enters the SCORECARD
+   capabilities table in the same round.
+7. Saturated or wrong-fit axes may be retired or split — record the reason in
+   SCORECARD.md.
+8. At most one claim may be **exploratory** — taste-bound (elegance, technique
+   quality, a novel resolution path): name what it improves and why the prior
+   state lacked it; no counting command. It verifies only as
+   `unprovable-but-better` with a named non-author reviewer on record (reasons
+   included); otherwise it lands `unprovable` and the round reports that
+   honestly. Its axis score need not change — the SCORECARD row carries the
+   verdict and reviewer pointer instead of a number.
+
+**Admission:** every claim verifies — measured, or exploratory with a named
+non-author `unprovable-but-better` judgment — and **no axis is harmed**; a
+trade anywhere is not an improvement. Report all verdicts and let the operator
+rule.
 
 ## 3. L2 floor — one batched swarm
 
@@ -34,13 +53,18 @@ demands. Route every role through the **host route table** — the fleet operato
 role→model assignments for this substrate. Never hardcode model aliases in the lane repo;
 the route table, not this prompt, decides which model serves which role.
 
+**Godspeed lead:** every L2 lane prompt leads with `/skill:godspeed` followed by the
+verbatim directive bytes from `~/.agents/skills/godspeed/directive.md` — do not
+paraphrase. Resumes and nudges never re-carry it.
+
 ## 4. Report contract
 
 Write the round report at `{{FLEET_ROOT}}/.ufo/reports/round-{{ROUND}}/{{LANE}}.md` on the
 fleet repo. Required sections, in order:
 
-- **Work performed** — one bullet per work item, each carrying an evidence pointer
-  (path:line, command output, or commit hash).
+- **Work performed** — opens by naming the round's declared claims (1–3) and their
+  target axes or capability; then one bullet per work item, each carrying an
+  evidence pointer (path:line, command output, or commit hash).
 - **Landed changes** — every change tied to a LOG.md entry and to the commit hash that
   carries it.
 - **Before → after measurements** — one per claim, each with the counting command and the

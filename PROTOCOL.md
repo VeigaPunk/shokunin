@@ -93,7 +93,8 @@ start of every steered round; a long-lived mission does not grandfather supersed
 Round prompts embed the operative contract verbatim — the full round contract, not a convenience
 summary. Each *child-lane* prompt carries, as quoted protocol text, the round-level contract:
 (i) the mission/axes binding — `MISSION.md` and `AXES.md` govern the round and the lane works
-exactly one axis-move; (ii) the L2 minimum — at least 8 L2 lanes in one batched AgentSwarm call
+1–3 declared claims, each an axis-move with its own falsifiable before→after on a distinct
+axis, at least one on the lane's lowest non-retired axis (§Appendix, "Multi-claim rounds"); (ii) the L2 minimum — at least 8 L2 lanes in one batched AgentSwarm call
 (the Kimi host surface), a number this file does not own: `MISSION.md` §L2 concurrency is its
 source; (iii) commit-then-push ordering; (iv) push scope; and (v) the L0 side channel — plus the
 five child-lane items: the report path and filename, the commit-before-report ordering, the
@@ -483,8 +484,12 @@ non-author verifier per **Promotion gates**.
 
 ## Fleet-2 conventions (adopted)
 
-- Expertise axes live in `AXES.md`; each lane owns a named subset and works one axis-move per round,
-  measured in `SCORECARD.md`. An axis-move inherits the evidence standard: before and after numbers
+- Expertise axes live in `AXES.md`; each lane owns a named subset and works 1–3 declared
+  claims per round (each an axis-move on a distinct axis with its own falsifiable
+  before→after; at least one on the lane's lowest non-retired axis; a claim may be a
+  capability acquisition or an exploratory taste-bound claim per `AXES.md` §Capabilities),
+  measured in `SCORECARD.md`. An exploratory claim verifies only as `unprovable-but-better`
+  with a named non-author reviewer on record (§Appendix, "Exploratory claims"). An axis-move inherits the evidence standard: before and after numbers
   each carry the counting command and the commit they were measured against, and a score no reader
   can re-derive is an opinion, not a measurement. A `SCORECARD.md` axis name not defined in
   `AXES.md` (`novelty`, `consistency`) is worked only if its row carries its mapping to one of the

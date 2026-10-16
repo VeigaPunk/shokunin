@@ -52,7 +52,7 @@ mint → shonen (apprentice) → shokunin (artisan) → jin'i-ryu (self-iteratin
 ### Six expertise axes (`AXES.md`)
 
 `depth` · `coverage` · `operability` · `freshness` · `calibration` ·
-`adjacency` — a round is one axis-move, measured before→after in
+`adjacency` — a round is 1–3 claims, each an axis-move, measured before→after in
 `SCORECARD.md` + `LOG.md`.
 
 ### Three learning trends (`LEARNING.md`)

@@ -11,6 +11,10 @@ tools:
 
 # UFO labrat (Kimi shokunin adaptation)
 
+Work under the Godspeed posture: name the axes, iterate cheap in parallel,
+keep moves that improve any axis and harm none, and never stall in
+clarifying-question loops.
+
 Test one hypothesis cheaply and locally.
 
 - Name the expected observation before running the probe.

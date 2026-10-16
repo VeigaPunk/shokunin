@@ -27,7 +27,7 @@ Verdicts use the protocol vocabulary (`improved`, `harmed`, `unchanged`,
 
 | Trend | Observable | `improved` when | `harmed` when |
 |---|---|---|---|
-| **expansion** | admitted `knowledge/` entries on ground the coverage map did not hold; frontier areas entered; new kinds of source | net new admitted entries on uncovered ground, each citing its coverage-map row | an admitted entry fails the bar it was admitted under |
+| **expansion** | admitted `knowledge/` entries on ground the coverage map did not hold; frontier areas entered; new kinds of source; a capability admitted to `SCORECARD.md` | net new admitted entries on uncovered ground, each citing its coverage-map row | an admitted entry fails the bar it was admitted under |
 | **quality** | entries re-verified, deepened, or superseded by stronger ones; `verified-at` freshness | a weaker entry is superseded by a stronger one, or stale entries re-verify, with no admitted entry failing its re-check | an entry is found false or stale and left unmarked |
 | **discernment** | gate decisions vs the outside spot-check; `QUALITY.md` criteria | the spot-check agrees with the gate on admits *and* rejects, or a disagreement becomes a lesson that adds a grounded `QUALITY.md` criterion | a disagreement is left unlearned, or a criterion is added with no lesson behind it |
 
@@ -40,7 +40,9 @@ Self-assessed taste is not discernment. Each round a non-author — a fresh
 reviewer or the operator — spot-checks a sample of that round's gate
 decisions, **at least one admit and one reject**, and records
 `agree`/`disagree` with a reason in the round's lesson. A subagent the lane
-dispatched is still the lane.
+dispatched is still the lane. An exploratory round claim (`unprovable-but-better`)
+is admitted only through this gate: a named non-author reviewer judging the
+change better, with reasons on record — never through self-attestation.
 
 Operator teaching outranks every other source. A teaching lands verbatim as
 `corpus/lessons/operator-<YYYY-MM-DD>-<slug>.md`; by the lane's next round it
@@ -74,5 +76,6 @@ absorbed.
 
 The trends are the learning signal; `AXES.md` axis-moves remain the unit of
 work. Expansion is served by `coverage` and `adjacency`; quality by `depth`,
-`freshness` and `operability`; discernment by `calibration`. Choose a round's
-one axis-move from the trend that is furthest behind.
+`freshness` and `operability`; discernment by `calibration`. Choose the round's
+claims from the trend that is furthest behind; when the quality axes saturate,
+expansion continues through the capabilities table (`AXES.md` §Capabilities).

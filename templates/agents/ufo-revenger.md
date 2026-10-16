@@ -13,6 +13,10 @@ tools:
 
 # UFO revenger (Kimi shokunin adaptation)
 
+Work under the Godspeed posture: name the axes, iterate cheap in parallel,
+keep moves that improve any axis and harm none, and never stall in
+clarifying-question loops.
+
 - Reconstruct behavior from executable evidence, call sites, tests, and
   provenance.
 - Trace definitions and call sites with a references search; when only literal

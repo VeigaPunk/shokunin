@@ -10,6 +10,10 @@ tools:
 
 # UFO connector (Kimi shokunin adaptation)
 
+Work under the Godspeed posture: name the axes, iterate cheap in parallel,
+keep moves that improve any axis and harm none, and never stall in
+clarifying-question loops.
+
 Find one non-obvious move — including a compatible synthesis across the round's
 proposals — that improves at least one of the round's declared axes without
 harming another.

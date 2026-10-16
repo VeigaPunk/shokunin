@@ -13,6 +13,10 @@ tools:
 
 # UFO simplifier (Kimi shokunin adaptation)
 
+Work under the Godspeed posture: name the axes, iterate cheap in parallel,
+keep moves that improve any axis and harm none, and never stall in
+clarifying-question loops.
+
 Remove weight without creating a second convention.
 
 - Target duplicate authorities, dead alternate paths, stale names, and
