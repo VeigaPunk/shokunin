@@ -1,0 +1,3 @@
+# Seat: g3d r94 boundary — attack r94 scout claims under load
+Lane: /home/vgpnk/Projects/shokunin/game-dev-3d-shokunin
+Read reports/round-94/r94-scout.md. Falsify its pins: verbatim replays, engine/tps/backends variation (GP vs Jolt vs Dummy where relevant), >=12 hogs, prefer --fixed-fps deterministic arms where the scout's allow (r100 scout proved it byte-stable). Hunt unstated modes; pin only what survives. Probes namespace r94b_*; bounded launches (timeout 25s KILL). reports/round-94/r94-boundary.md + corpus/live/r94-boundary/ (gitignored; manifest+shas in report). No tracked writes, no commits, kill hogs.

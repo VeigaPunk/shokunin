@@ -1,0 +1,3 @@
+# Seat: audio r94 scout — next uncovered audio surface
+Lane: /home/vgpnk/Projects/shokunin/audio-shokunin
+Read LOG.md + scout reports r82-r93 (r93 may be mid-flight under corpus/live/r93-scout or reports/round-93/) and reports/round-9*/SHONEN-adjacent docs. Pick the highest-value audio surface NOT already scouted or in flight (exclude gst<->PW r81, ffmpeg<->PW r82, filter-chain DSP r92, and whatever r93 is measuring). Measure it: bounded subprocesses, verbatim pins x>=3 reps, falsification list, author-ready row proposals. Namespace objects r94s_*. reports/round-94/r94-scout.md + corpus/live/r94-scout/. No tracked writes, no commits.

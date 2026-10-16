@@ -1,0 +1,3 @@
+# Seat: audio r95 scout — adjacent runtime / prior-art surface
+Lane: /home/vgpnk/Projects/shokunin/audio-shokunin
+Read LOG.md + scout reports r82-r94 (r94 may be in flight). Take an ADJACENT RUNTIME surface: JACK<->PipeWire interop (jack_lsp/jackd presence, buffers, latency, xruns) if available, else ALSA-direct hw negotiation, else the next uncovered surface the scouts name. Prior-art comparisons welcome (pulse-legacy vs native pipewire protocol differences). Namespace objects r95s_*; disclose contention; never touch foreign objects. reports/round-95/r95-scout.md + corpus/live/r95-scout/. No tracked writes, no commits.
