@@ -15,3 +15,8 @@ Required fixes (union of both gate reports):
 - sinks_gone vacuous in 2/5 entries — make the leg measure something or name it (F7).
 
 Contract: work on lane HEAD; do NOT commit (orchestrator commits). File report at reports/round-95/r95-foldfix.md with before/after runs: the family must go green on committed-bytes archive tree on the responsive daemon, with legs+census populated on the green receipt. Bounded probes only (timeout-wrap every pw-*/pactl call); if the daemon re-wedges, name it coverage_blocked, never fake green.
+
+Verifier additions (post-dispatch, r95-verifier.md):
+- d_metadata stale-after-remove equality is a host-timing race (13/13 historical rc0/value1 vs 4/4 verifier runs rc-1/'') — arm the pair or mark volatile.
+- b_pw2jack +/-1% energy band false-reds on late link landing (cb_in_nonzero 25 vs 51, ratio 0.9103 identical bytes) — widen arm to link-established precondition or mark volatile.
+- Runner stdout prints failures {} rc0 on a blocked-only run — fix the summary to count blocked cells (r94 risk #1 reproduced on this family).
