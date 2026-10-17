@@ -586,3 +586,11 @@ follow-up wave itself (CB1's verified refresh + E1's corrections; measured READM
   fallback chain; the regimen's stop rule was not triggered (a fallback lane served).
 - L0 carries the kotodama contract-authorship question (round-88 line) and the R8 owner-
   escalation path. No push, no registry write, no sibling-repo write.
+
+## Append-only r93 erratum — r89 admission withdrawn (2026-10-17)
+
+This supersedes the filed r89 `ADMITTED`, calibration `improved`, and "no unresolved trade" conclusions, not their historical bytes. Evidence: lore record `9c2eea3b58a090f8820c7a723d2f6a22b46ae52b`; LOG.md and SCORECARD.md r93 corrections; `.ufo/waves/round-93/deepseek/F25.md`, `F25-replay.py` and `F28-log-proposal.md` in the lane repo; current fleet report `.ufo/reports/round-93/lore.md`.
+
+The r89 checker at `e97613c` contained a real calibration regression: null-holder chain breaks lost definiteness, and tick inversions were identity-qualified by a vacuous `0 raw / 0 indexed` clause. The durable replay uses the same mutated fixture under committed checkers `51b286b`, `e97613c`, and `ca7f9ef`, at ticks 3 and 0. All six runs intentionally exit 1; finding strength is definite before r89, wrongly qualified at r89, and restored at r90. Work `1b09f3f` and r89 closure `e97613c` have identical checker bytes, so the harm remained in the admitted revision.
+
+L1 re-adjudication: r89 calibration **harmed**; r89 **not admitted** under the no-harm rule. Other gains are not averaged against harm. The r90 fix `ca7f9ef` is a forward repair, not retroactive proof of a clean r89. The report-bearing attempt stays closed in the ledger; `lanes.lore: ok` means a substantive report exists, not successful admission. The integrator records this as an appended typed closure correction, preserving the old ledger prefix.

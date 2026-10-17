@@ -316,3 +316,16 @@ evidence line references are the follow-up artifacts'.
 - **Capabilities** gains its third row (checker-regression discrimination) per JDEP4's runnable evidence and the L1 ruling recorded in SCORECARD.md.
 - **Wave accounting:** work 33 seats (luna max) + follow-up 32 seats (alibaba-token-plan deepseek flash, operator-directed); 2 follow-up seats (JCAL4/JCOV5) interrupted without output, material covered by siblings. Two follow-up retries (JCAL5/JDEP4) and the fleet report itself were completed on resume.
 - **Lore closure commit (this round's record):** SCORECARD/LOG round-91 sections, capabilities row 3, the boundary-doc restoration (already committed), and all follow-up artifacts. No push, no registry write, no sibling-repo write; L0 unchanged (K1).
+
+## SHONEN
+
+### Append-only r93 erratum — omitted r91 assessment (2026-10-17)
+
+The original filed r91 report omitted the required SHONEN heading. This is a later correction, not a claim that the assessment was filed contemporaneously. Evidence: lane record `9c2eea3b58a090f8820c7a723d2f6a22b46ae52b`, LOG.md's r93 historical corrections, DeepSeek F25/F29, and `.ufo/reports/round-93/lore.md`. The historical canonical `SHONEN.md` at r91 closure `396c568` had the following states; the r93 regeneration is separate and does not rewrite them.
+
+- [ ] Real decision tables/error patterns/checklists/cited sources in SKILL.md — no SKILL.md was landed at r91. Corpus content did not itself establish this file-level gate.
+- [~] End-to-end task executed/logged — LOG.md r91 entry and the durable differential fixtures/watch were lane assertions with runnable evidence; no outside non-author verifier.
+- [ ] Instructions executable without oral context — this was the canonical file's operative glyph, despite SCORECARD's unlanded `[~]` assertion. The mismatch is explicitly corrected at r93, not retrospectively promoted.
+- [~] No cross-domain bleed — unchanged PROVINCE.md and r91 lane-local work were asserted by the lane; no outside non-author verification.
+
+No `[x]`, promotion, or retroactive no-harm proof follows. The original omission remains a recorded report-contract defect; the substantive report is not a contentless marker. This appended heading and re-file satisfy the present report-shape requirement without changing the original bytes.
