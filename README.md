@@ -11,10 +11,19 @@ resourcefulness, in capabilities, and in potential.
 
 This repo is the **fleet root**: the canonical protocol, the roster, the
 round history, and the coordination state. Every newly minted shokunin is
-registered here (roster row → `shokunin-<domain>` repo link). Each
-specialist lives in its own repository — linked below.
+registered here (a row in `MANIFEST.json`, then its own repository). Each
+specialist lives in that repository — linked below.
 
 **Wiki:** [fleet overview](https://app.devin.ai/org/veigapunk/wiki/VeigaPunk/shokunin?branch=master)
+
+## Start here
+
+1. This page, for the shape of the fleet.
+2. [`PROTOCOL.md`](PROTOCOL.md) for the round contract, and [`MISSION.md`](MISSION.md) for the binding mission the driver relays.
+3. [`MANIFEST.json`](MANIFEST.json) for the roster and the round ledger. [`ROADMAP.md`](ROADMAP.md) is the human mirror; the manifest is canonical.
+4. The lane whose province matches the work. Inside that repo, open `PROVINCE.md`, then `SKILL.md` when the lane has one, then `corpus/`.
+
+`shokunin.conf` declares the lanes the driver will dispatch. `scripts/shokunin-watchdog.sh` is the respawn-per-round driver.
 
 ## How a shokunin learns
 
@@ -43,11 +52,13 @@ mint → shonen (apprentice) → shokunin (artisan) → jin'i-ryu (self-iteratin
 - **Shonen** — minted on proven *unplaceable* demand (two documented
   instances no existing province could absorb) or operator directive.
   Seed: `SKILL.md` + `PROVINCE.md` + `SHONEN.md` + `LOG.md` + `MINT.md`,
-  its own `shokunin-<domain>` repo, and (after probation) a roster row here.
+  its own repository, and (after probation) a roster row here.
 - **Shokunin** — promoted when it performs domain work end-to-end: every
   `SHONEN.md` box checked by a **non-author** reviewer — never
   self-attestation. On promotion `SHONEN.md` is deleted.
 - **Jin'i-ryu** — promoted when it can iterate on itself.
+
+Every lane in the roster table below is still **shonen**.
 
 ### Six expertise axes (`AXES.md`)
 
@@ -81,44 +92,59 @@ record.
 Bounded candidate → work commit → **non-author verifier** → adjudicator
 verdict → `LOG.md` + `SCORECARD.md` + report. Any lane may **mint a
 sibling** when it finds unplaceable demand; the roster below is the
-registry of every mint.
+registry of every mint that has a `MANIFEST.json` row.
 
 ## Roster
 
-`MANIFEST.json` is canonical; `ROADMAP.md` mirrors it. Every minted
-shokunin registers a row here and gets its own `shokunin-*` expert repo.
-Canonical names are `<id>-shokunin`; 2026-09 remotes keep that shape
-(private), 2026-10 remotes use `shokunin-<domain>` (public).
+Taken from `MANIFEST.json` on 2026-10-17: **13** objects in `roster`, **176**
+records in `rounds`. Ranks below are the `rank` field on each row.
 
-| Shokunin | Domain | Rank |
-|---|---|---|
-| [kasegi-shokunin](https://github.com/VeigaPunk/kasegi-shokunin) | bounty & security research | shonen |
-| [kengaku-shokunin](https://github.com/VeigaPunk/kengaku-shokunin) | LLM/model research & evaluation | shonen |
-| [kake-shokunin](https://github.com/VeigaPunk/kake-shokunin) | web properties & publishing | shonen |
-| [kumitate-shokunin](https://github.com/VeigaPunk/kumitate-shokunin) | orchestration & tooling | shonen |
-| [kotoba-shokunin](https://github.com/VeigaPunk/kotoba-shokunin) | prompt & skill craft | shonen |
-| [kagi-shokunin](https://github.com/VeigaPunk/kagi-shokunin) | secrets & vault ops | shonen |
-| [kama-shokunin](https://github.com/VeigaPunk/kama-shokunin) | local model serving & endpoint health | shonen |
-| [kaidoku-shokunin](https://github.com/VeigaPunk/shokunin-reverse-engineering) | shipped-artifact reverse engineering (REA) | shonen |
-| [revenger-shokunin](https://github.com/VeigaPunk/shokunin-binary-forensics) | binary forensics, evidence-ledger verification | shonen |
-| [audio-shokunin](https://github.com/VeigaPunk/shokunin-game-audio) | game audio production | shonen |
-| [game-dev-2d-shokunin](https://github.com/VeigaPunk/shokunin-godot-2d) | 2D game production, executable fixtures | shonen |
-| [game-dev-3d-shokunin](https://github.com/VeigaPunk/shokunin-3d-engines) | 3D game production, headless fixtures | shonen |
-| [lore-shokunin](https://github.com/VeigaPunk/shokunin-world-bible) | fictional-world records & consistency | shonen |
-| [mori-shokunin](https://github.com/VeigaPunk/mori-shokunin) | fleet & host observability (森) — census gate, silence oracle, drift pin | shonen |
-| [chousa-shokunin](https://github.com/VeigaPunk/chousa-shokunin) | deep-research method (調査) — research gate: claims/chains/sweeps/integrity verification | shonen |
+Canonical names are `<id>-shokunin`. 2026-09 remotes keep that shape;
+2026-10 remotes use `shokunin-<domain>`.
 
-(2026-10-16: mori + chousa repos created and pushed after their 10-round
-in-session craft runs — rounds 2–11 admitted on both lanes, ledgers in
-`MANIFEST.json`.)
+| Id | Repository | Domain | Rank |
+|---|---|---|---|
+| kasegi | [kasegi-shokunin](https://github.com/VeigaPunk/kasegi-shokunin) | bounty & security research | shonen |
+| kengaku | [kengaku-shokunin](https://github.com/VeigaPunk/kengaku-shokunin) | LLM/model research & evaluation | shonen |
+| kake | [kake-shokunin](https://github.com/VeigaPunk/kake-shokunin) | web properties & publishing | shonen |
+| kumitate | [kumitate-shokunin](https://github.com/VeigaPunk/kumitate-shokunin) | orchestration & tooling (OMP, scripts, Rust runtime) | shonen |
+| kotoba | [kotoba-shokunin](https://github.com/VeigaPunk/kotoba-shokunin) | prompt & skill craft | shonen |
+| kagi | [kagi-shokunin](https://github.com/VeigaPunk/kagi-shokunin) | secrets & vault ops | shonen |
+| kama | [kama-shokunin](https://github.com/VeigaPunk/kama-shokunin) | local model serving & endpoint health | shonen |
+| audio | [shokunin-game-audio](https://github.com/VeigaPunk/shokunin-game-audio) | game audio production — SFX + soundtrack, headless-verified | shonen |
+| game-dev-2d | [shokunin-godot-2d](https://github.com/VeigaPunk/shokunin-godot-2d) | 2D game production via executable headless fixtures (Godot 4.7.2) | shonen |
+| game-dev-3d | [shokunin-3d-engines](https://github.com/VeigaPunk/shokunin-3d-engines) | 3D game production via headless fixtures across Godot/three.js/Unity/Unreal | shonen |
+| lore | [shokunin-world-bible](https://github.com/VeigaPunk/shokunin-world-bible) | fictional-world records + consistency verification | shonen |
+| revenger | [shokunin-binary-forensics](https://github.com/VeigaPunk/shokunin-binary-forensics) | reverse engineering of shipped artifacts, evidence-ledger discipline | shonen |
+| kaidoku | [shokunin-reverse-engineering](https://github.com/VeigaPunk/shokunin-reverse-engineering) | reverse engineering of shipped artifacts with REA on this host | shonen |
 
+## Sibling repositories
+
+These repositories describe themselves as shokunin lanes. They are **not**
+objects in `MANIFEST.json`'s `roster` array (that array ends at `kaidoku`).
+Each one's `PROVINCE.md` is its boundary. A roster row is a manifest edit.
+
+| Repository | Domain, from that repo's `PROVINCE.md` |
+|---|---|
+| [chousa-shokunin](https://github.com/VeigaPunk/chousa-shokunin) | deep-research method (調査) |
+| [mori-shokunin](https://github.com/VeigaPunk/mori-shokunin) | fleet & host observability (森) |
+| [mado-shokunin](https://github.com/VeigaPunk/mado-shokunin) | desktop & compositor craft |
+| [tabi-shokunin](https://github.com/VeigaPunk/tabi-shokunin) | browser & web-interaction craft (旅) |
+| [tameshi-shokunin](https://github.com/VeigaPunk/tameshi-shokunin) | verification-fixture craft |
+| [tsukuroi-shokunin](https://github.com/VeigaPunk/tsukuroi-shokunin) | host operability & system repair (繕) |
+| [kotodama-shokunin](https://github.com/VeigaPunk/kotodama-shokunin) | linguistic-cultural worldbuilding (言霊) |
+
+The portable Kimi Code CLI adaptation — protocol, mint kit, and a
+substrate-neutral watchdog — is [kimi-shokunin](https://github.com/VeigaPunk/kimi-shokunin).
 
 ## Files
 
-`PROTOCOL.md` `AXES.md` `LEARNING.md` `CORPUS.md` `MISSION.md`
-`PROTOCOL-APPENDIX.md` — canonical protocol, vendored from
-[kimi-shokunin](https://github.com/VeigaPunk/kimi-shokunin) (upstream).
-`MANIFEST.json` — machine roster + round history (79 rounds, both eras).
-`ROADMAP.md` — human mirror. `shokunin.conf` + `scripts/` — the round
-driver. `.ufo/` — fleet state (`waves/`, `reports/`, `prompts/`,
-`l0-questions.md`).
+| Path | What it is |
+|---|---|
+| `PROTOCOL.md`, `PROTOCOL-APPENDIX.md`, `AXES.md`, `LEARNING.md`, `CORPUS.md`, `MISSION.md` | The fleet contract. Vendored from [kimi-shokunin](https://github.com/VeigaPunk/kimi-shokunin). |
+| `MANIFEST.json` | Machine roster and round ledger. |
+| `ROADMAP.md` | Human mirror of the roster and the phase gates. |
+| `SCORECARD.md`, `LOG.md` | Axis verdicts and the append-only audit trail for the fleet-root lanes. |
+| `shokunin.conf`, `scripts/` | Lane table and the round driver. |
+| `templates/` | Round-prompt and agent role templates. |
+| `.ufo/` | Fleet state: `waves/`, `reports/`, `prompts/`, `l0-questions.md`. |

@@ -843,3 +843,10 @@ Rollout, committed as conformance changes (no axis claims advanced, no scores mo
 - `templates/round-prompt.md`: the stagnation-nudge pointer now cites `AXES.md`
   §The stagnation nudge (it named §Capabilities, where the nudge does not live).
 - skill mirror (`~/Projects/myskills/shokunin/SKILL.md`): same pointer fix.
+
+## 2026-10-17 — repository README
+
+- **Trigger.** The root `README.md` was the fleet front door, and it had drifted from `MANIFEST.json`. `git show HEAD:README.md` said `MANIFEST.json` held "79 rounds, both eras" and that mori and chousa had ledgers in `MANIFEST.json`.
+- **Evidence.** `python3` `json.load` of `MANIFEST.json` on 2026-10-17: `len(roster)==13`, ids `kasegi` through `kaidoku`, `len(rounds)==176`. No roster object is named mori, chousa, mado, tabi, tameshi, tsukuroi, or kotodama. Those repositories exist as sibling checkouts and state their domains in their own `PROVINCE.md`.
+- **Action.** Rewrote `README.md` from that ledger and from `PROTOCOL.md` / `MISSION.md` / `AXES.md` as already summarized on the page. The Devin wiki line is unchanged, byte for byte: `**Wiki:** [fleet overview](https://app.devin.ai/org/veigapunk/wiki/VeigaPunk/shokunin?branch=master)`.
+- **Outcome.** The roster table matches the `roster` array. Sibling repositories are listed as outside that array. No axis claim; no score moved.
