@@ -13,7 +13,7 @@ This round is **1–3 declared claims**, not a batch of unrelated work:
 1. Open your lane repo's SCORECARD.md (create it per AXES.md if missing).
 2. Declare 1–3 claims. Each claim is one axis-move against a distinct axis, with
    its own falsifiable before→after. At least one claim works the **lowest-scoring
-   non-retired axis** — unless the stagnation nudge waives it (AXES.md §Capabilities).
+   non-retired axis** — unless the stagnation nudge waives it (AXES.md §The stagnation nudge).
 3. Land every claimed improvement. Claims must be **causally separable**: each
    verifiable without the others having landed. Two claims on one axis = one claim.
 4. Measure each: run a counting command you can paste into the report, before and

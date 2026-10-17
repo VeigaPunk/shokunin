@@ -115,6 +115,23 @@ Round 15 (gate-integrity — dynamic evidence closure plus a reproducible two-in
   contradiction, prompt-name observability, operator-side completion and
   runtime tracking, and lane-side SHONEN/identity debt remain measurable.
 
+## Capabilities
+
+Repertoire table per `AXES.md` §Capabilities. Rows enter only through a round
+that demonstrates the capability running; none entered through the
+2026-10-16 conformance rollout itself.
+
+| Capability | What it can now do | Evidence pointer | First-working round |
+|---|---|---|---|
+| — none yet — | | | |
+
+## Saturation
+
+Saturation line + stagnation window N per `AXES.md` §The stagnation nudge:
+**to be declared by the protocol lane on its next round.** This conformance
+rollout adds the section only; neither the line nor the window is asserted
+here (declaring values without a round claim would be pre-claiming).
+
 ## Move log
 
 | Round | Axis | Before | After | Evidence |

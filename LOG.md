@@ -824,3 +824,22 @@ Effective immediately: swarm seats return to the deepseek flash bucket
 until the next operator switch. This amends the second amendment; the
 capstone rule (10th round of a run on `openai-codex/gpt-6.1-sol` max, 32
 seats) is unaffected.
+
+## 2026-10-16 — operator amendment rollout: SCORECARD contract fields absorbed fleet-wide
+
+Follow-up to the 15:55 operator amendment (commit `84bade0`, itself committed and
+pushed): review found the amendment updated every dispatch surface (round prompt,
+watchdog `lane_prompt`, 13 seat cards, README, MISSION/PROTOCOL/AXES/APPENDIX/
+LEARNING) but no SCORECARD.md implemented the new contract — the commit message's
+"SCORECARD.md gains a capabilities repertoire table + stagnation nudge" was text-only.
+Rollout, committed as conformance changes (no axis claims advanced, no scores moved):
+- fleet-root `SCORECARD.md`: added `## Capabilities` (empty repertoire table; rows
+  enter only via demonstrated rounds) and `## Saturation` (line + stagnation window N
+  left for the protocol lane to declare on its next round — declaring values here would
+  be pre-claiming). `## Planned` / `## Retired` already existed and are unchanged.
+- every lane repo's `SCORECARD.md`: same additive scaffold for whichever of the five
+  contract fields (`AXES.md` §SCORECARD.md contract) were missing; lane LOG.md entries
+  record per-lane what existed and what was added.
+- `templates/round-prompt.md`: the stagnation-nudge pointer now cites `AXES.md`
+  §The stagnation nudge (it named §Capabilities, where the nudge does not live).
+- skill mirror (`~/Projects/myskills/shokunin/SKILL.md`): same pointer fix.
