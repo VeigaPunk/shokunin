@@ -843,3 +843,19 @@ Rollout, committed as conformance changes (no axis claims advanced, no scores mo
 - `templates/round-prompt.md`: the stagnation-nudge pointer now cites `AXES.md`
   §The stagnation nudge (it named §Capabilities, where the nudge does not live).
 - skill mirror (`~/Projects/myskills/shokunin/SKILL.md`): same pointer fix.
+
+## 2026-10-17 — root README, wiki link preserved
+
+Motivating evidence: the existing root README was the fleet front door and
+already carried the Devin wiki link. That line is unchanged, byte for
+byte: `**Wiki:** [fleet overview](https://app.devin.ai/org/veigapunk/wiki/VeigaPunk/shokunin?branch=master)`.
+GitHub code search for `app.devin.ai` under `org:VeigaPunk` returns this
+README and `ufo-fsd-alpha` only; no other shokunin specialist README in
+this checkout contains a Devin wiki URL, so none was added or rewritten.
+
+The page now separates the `MANIFEST.json` `roster` array (thirteen
+entries, kasegi through kaidoku, read from that file) from repositories
+that exist and still carry `SHONEN.md` but are not roster rows: mori,
+chousa, mado, tabi, tameshi, tsukuroi, kotodama. The 2026-10-16 mori and
+chousa note from the previous README is kept. `MANIFEST.json` itself was
+not edited.
