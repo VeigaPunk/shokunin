@@ -3,6 +3,14 @@
 Operator runbook for mission M4 (`r18-routing`). Everything here is a step for a
 human or an operator session to run against `~/.kimi-code/config.toml`.
 
+**Partly superseded (2026-10-16):** the live pool was operator-edited after this
+runbook was written — pool is 9 entries, `default_model` is
+`opencode-go/deepseek-v4.1-flash`, both CASCADE lanes are disabled (commented),
+and the pool pin is now `c3a7feff8307e8f4…` (see the routing table's OPERATOR
+OVERRIDES block; its payload mirrors live). The preflight expectations below
+(pool 17, canonical `2c61f6bb`) describe the 2026-10-15 state; the hash guard
+will refuse to apply until re-pinned, which is the intended behavior.
+
 **This mission did not write the live config.** At M4 run time the live file was:
 
 | | |

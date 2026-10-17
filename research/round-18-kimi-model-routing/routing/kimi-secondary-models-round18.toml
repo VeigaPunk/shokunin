@@ -38,6 +38,33 @@
 #   M5  research/round-18-kimi-model-routing/fastmode/ANALYSIS.md     (codex service_tier: accepted, not confirmed, NO-GO)
 #   M6  research/round-18-kimi-model-routing/battery-opencode/ANALYSIS.md (opencode-go/deepseek-v4.1-flash, no direct FAST slot)
 #
+# OPERATOR OVERRIDES (2026-10-16, post-M4) -- the spliceable payload below is
+# re-pinned to the LIVE config, which the operator edited by hand after M4.
+#   live config           /home/vgpnk/.kimi-code/config.toml
+#   file sha256           d87f22e6bb4bd1e62f1383c778e6b7d1ee9a433dad1cf82734b906aadf24c525
+#   pool table sha256     c3a7feff8307e8f419b8c8434529c3530954dc496668a6a133aafd6ea7067b28
+#   pool size             9 entries; [models.*] entries 144; default_model
+#                         opencode-go/deepseek-v4.1-flash
+#   Changes vs the 2026-10-15 table:
+#     - default_model cascade/deepseek-v4.1-flash -> opencode-go/deepseek-v4.1-flash,
+#       promoted to FAST rank 1 (operator decision over the M6 no-FAST-slot verdict)
+#     - zai-coding-plan/glm-5.3-flash-low effort pin low -> max (alias name kept
+#       for stable references; note zai ignores reasoning_effort on the wire, M2 s4.1)
+#     - openai-codex/gpt-6-luna-max added: max-effort variant of gpt-6-luna.
+#     - Fast servicing ENABLED 2026-10-16 for ALL THREE codex pool entries:
+#       SHIM_SERVICE_TIER=priority injected at the oauth-shim
+#       (~/.local/share/oauth-shim/shim.py) per codex-shim.service, scoped to
+#       wire-models gpt-6-luna and gpt-6.1-sol (MIDDLE + both STRONG entries).
+#       Backend accepts (200, acceptance verified per wire model); applied-tier
+#       echo unconfirmed -- M5's conditional-go re-test still stands.
+#     - cascade/glm-5.3-flash and cascade/deepseek-v4.1-flash DISABLED (commented
+#       out in the payload below; operator: revisit the CASCADE lanes later)
+#     - dropped from the pool: alibaba-token-plan{,-2,-3}/qwen3.8-flash,
+#       zai-coding-plan/glm-5-turbo, hyper/qwen3.8-flash, xai-oauth/grok-4.5
+#       (cursor/* were already dropped 2026-10-15)
+#   M3/M4 measurements for the surviving ids still stand; the evidence ledger
+#   below remains the record for the dropped/demoted ids.
+#
 # DECISION LEGEND (per pooled id, recorded in the EVIDENCE LEDGER below)
 #   keep            bucket assignment survives its own measurement
 #   demote          stays in the pool, moved to a slower/restricted role
@@ -59,35 +86,33 @@
 #   M1 section 6) and are ranked by TTFT only.
 
 [secondary_model]
-default_model = "cascade/deepseek-v4.1-flash"
+default_model = "opencode-go/deepseek-v4.1-flash"
 
 [secondary_model.models]
 
-# --- FAST: the four lanes whose measured TTFT/TPS survive their label ---
-"hyper/deepseek-v4.1-flash" = "FAST rank 1 (hyper lane): measured TTFT 2081 ms, TPS 375.91 tok/s, 8/9 probes [M3 s2]. Latency-first generalist for exploration, codebase search and quick reviews; truncates on thin output budgets, so give it room [M3 s6 c5]."
-"alibaba-token-plan/deepseek-v4.1-flash" = "FAST rank 2 (token-plan key 1): 2251 ms to first decoded token -- it spends the whole budget on reasoning before any content token [M3 s2 dagger] -- TPS 226.72, 8/9. Cheap generalist when hyper quota is tight; expect reasoning-first output on small caps."
-"zai-coding-plan/glm-5.3-flash-low" = "FAST rank 3 (zai lane): 2796 ms first-decoded, TPS 138.21, 7/9 -- the joint-lowest pass count measured in the pool (tied with the dropped cursor/composer-2.5) [M3 s3]. Use for short read-only checks; the LOW effort pin does not reach the wire today (global [thinking] effort=max wins, M2 s3 rule 2) and zai ignores reasoning_effort (M2 s4.1)."
-"cascade/deepseek-v4.1-flash" = "FAST rank 4 and default (CASCADE lane: opencode-go first, hyper fallback, devin third). 3179 ms, burst-flushed so no client-side TPS exists [M3 s2], 8/9. Its value is the cross-provider fallback chain, not raw speed [M3 s8]; legs 1-2 are tool-capable, the devin leg is not [M2 s4.2]."
-
-# --- FAST ladder, last resort: kept for chain value, stripped of its FAST claim ---
-"cascade/glm-5.3-flash" = "NOT a FAST lane (demoted). Lane policy (operator directive 2026-10-15): zai-coding-plan is the primary leg, devin the secondary/fallback leg. Measured as configured: 4952 ms -- slower than the MIDDLE median 4172 ms [M3 s8 RE-BUCKET], no tool_calls on the tool probe [M3 s6 t1], and the answering leg billed ~11775 prompt tokens for the identical prompt [M3 s2], which is the devin leg's overhead [M1 D9, M2 s4.2]. Fallback-only: use when both deepseek cascades and token-plan key 1 are exhausted. Operator check: the live glm-flash-shim's leg order may currently be devin-first, which would contradict the declared zai-primary policy -- M2's tool probe was answered by the devin leg in pass 1 and by the zai leg in pass 2 [M2 s4.2]; the shim was not inspected or edited by this mission."
+# --- FAST (operator order 2026-10-16; M3-measured lanes keep their numbers in the ledger below) ---
+"opencode-go/deepseek-v4.1-flash" = "FAST bucket rank 1, opencode-go lane (operator directive 2026-10-16). Cheap generalist; also the first leg of the CASCADE lane and the pool default. M6 measured 4157 ms TTFT / 327 tok/s — above the old FAST bar — promoted by operator decision over the M6 no-FAST-slot verdict."
+# DISABLED 2026-10-16 (operator: revisit the CASCADE lanes later) —
+# "cascade/glm-5.3-flash" = "FAST bucket, CASCADE lane: devin first (primary), zai fallback, hyper third. All legs are now tool-capable (devin speaks its native RPC through devin-shim v2), so this lane handles both text and tool subtasks."
+"zai-coding-plan/glm-5.3-flash-low" = "FAST bucket pinned to MAX thinking effort (effort pin flipped from low 2026-10-16; the -low alias name is kept for stable references), zai lane. Zai lane at full effort for trivial exploration and mechanical checks."
+"hyper/deepseek-v4.1-flash" = "FAST bucket, hyper lane. Cheap generalist for latency-sensitive subtasks on the alternative provider."
+# DISABLED 2026-10-16 (operator: revisit the CASCADE lanes later) —
+# "cascade/deepseek-v4.1-flash" = "FAST bucket, CASCADE lane (default): opencode-go first, hyper fallback, devin third on quota exhaustion. Legs 1-2 are tool-capable; leg 3 (devin) is chat-only — a tool task that cascades all the way degrades."
+"alibaba-token-plan/deepseek-v4.1-flash" = "FAST bucket, token-plan key 1. Cheap generalist for exploration, review, summaries."
+"alibaba-token-plan-2/deepseek-v4.1-flash" = "FAST bucket, token-plan key 2 — separate key/quota lane."
+"alibaba-token-plan-3/deepseek-v4.1-flash" = "FAST bucket, token-plan key 3 — separate key/quota lane."
 
 # --- MIDDLE ---
-"zai-coding-plan/glm-5-turbo" = "MIDDLE rank 1 (zai lane): 2957 ms, TPS 157.07, 8/9 [M3 s3]. Everyday implementation and refactors at a 200k declared context; truncation-prone on thin budgets [M3 s6 c5]."
-"xai-oauth/grok-4.5" = "MIDDLE rank 2 (xai lane): 3476 ms, TPS 66.71, 9/9 -- the pool's most consistent correctness, 500k declared context, image_in [M3 s3]. Bills ~1260 prompt tokens per call [M1 D9]; add reasoning_key per the M2 block (live entry declares none but the lane returns reasoning_content, M2 s4.4 DEF-10)."
-"hyper/qwen3.8-flash" = "MIDDLE rank 3 (hyper lane): 4868 ms, TPS 178.96, 9/9 [M3 s3]. Implementation on the alternative provider with 128000 declared output cap; reasoning_key missing on the live entry (M2 DEF-10)."
-"alibaba-token-plan/qwen3.8-flash" = "MIDDLE, batch only (demoted): 13282 ms first token, 4.2x the pool median [M3 s8 SLOW-OUTLIER], but 9/9 with the second-highest derivable TPS (235.56) [M3 s3]. Use where long output matters and first-token latency does not."
+"openai-codex/gpt-6-luna-max" = "MIDDLE bucket, codex lane. GPT-6 Luna at max thinking effort. Fast servicing enabled: service_tier=priority (codex 'Fast' tier) injected at the oauth-shim, scoped to wire-model gpt-6-luna (2026-10-16); accepted by the backend but applied-tier echo unconfirmed [M5 fastmode]. General implementation, refactors, and code-change subtasks."
 
 # --- STRONG ---
-"openai-codex/gpt-6.1-sol" = "STRONG rank 1 (codex lane): 2212 ms, TPS 64.46, 9/9 -- the fastest measured bucket member in the pool, measured not assumed [M3 s4]. Needs the M1 D6 request shape (store false, stream true, list input, no temperature, max_output_tokens >= 16) [M1 D6]; no effort pin on the entry, client picks high (M2 DEF-3d)."
-"openai-codex/gpt-6.1-sol-high" = "STRONG rank 2, pinned to HIGH effort: 2878 ms, TPS 70.82, 9/9 [M3 s2]. Same shim, same upstream model id as rank 1 -- a second effort pin, not an independent provider fallback [M3 SELECTION s3]."
+"openai-codex/gpt-6.1-sol" = "STRONG bucket, codex lane (ChatGPT plan). Flagship coding model, 500k context, efforts low→max. Fast servicing enabled: service_tier=priority (codex 'Fast' tier) injected at the oauth-shim, scoped to wire-model gpt-6.1-sol (2026-10-16); accepted by the backend but applied-tier echo unconfirmed [M5 fastmode]."
+"openai-codex/gpt-6.1-sol-high" = "STRONG bucket pinned to HIGH effort (cheaper than max), codex lane. Everyday hard subtasks: implementation, deep debugging, reviews. Fast servicing enabled: service_tier=priority injected at the oauth-shim, scoped to wire-model gpt-6.1-sol (2026-10-16); applied-tier echo unconfirmed [M5 fastmode]."
 
-# --- VERIFY-FIRST adds from the wider [models.*] catalog (census evidence only; not M3-measured) ---
-# Lane policy (operator directive 2026-10-15): opencode-go is reserved exclusively for
-# deepseek-v4.1-flash. Its GLM lane is therefore NOT added; glm-5.3-flash's primary leg
-# is zai-coding-plan with devin as the secondary/fallback leg.
-"xai-oauth/grok-4.7" = "STRONG candidate, VERIFY-FIRST: census smoke 1166 ms / 493.74 tok/s incremental -- the best census-level TTFT/TPS pair in the file [M1 s6] -- but never battery-tested, and it bills ~1260 prompt tokens per call [M1 D9]. Run the M3 probe set before promoting; added to give STRONG a non-codex option."
-"opencode-go/deepseek-v4.1-flash" = "MIDDLE-latency overflow, VERIFY-FIRST (opencode-go's only admitted role: deepseek-v4.1-flash exclusively, operator lane policy 2026-10-15): measured by M6 at 4157 ms / 327.29 tok/s / 8/9 [M6 s2], which fails the pre-registered FAST rule (TTFT <= 2800 ms), so it takes no direct FAST slot [M6 s6]. It is already the first leg of the default cascade; add only when its MIDDLE-latency expectation is acceptable. Probes need a browser-class UA on this lane [M2 s1]."
+# Dropped from the pool 2026-10-16 (evidence in the ledger below):
+# alibaba-token-plan{,-2,-3}/qwen3.8-flash, zai-coding-plan/glm-5-turbo,
+# hyper/qwen3.8-flash, xai-oauth/grok-4.5. cursor/* were dropped 2026-10-15 (M4).
+# xai-oauth/grok-4.7 was a VERIFY-FIRST add that never entered the live pool.
 
 # SPLICE-END -- everything below this line is evidence and operator notes, not config.
 
