@@ -843,3 +843,8 @@ Rollout, committed as conformance changes (no axis claims advanced, no scores mo
 - `templates/round-prompt.md`: the stagnation-nudge pointer now cites `AXES.md`
   §The stagnation nudge (it named §Capabilities, where the nudge does not live).
 - skill mirror (`~/Projects/myskills/shokunin/SKILL.md`): same pointer fix.
+## 2026-10-17 — root README rewritten as the fleet front door
+
+- **Trigger.** Operator request to make repository READMEs accurate front doors, and to leave Devin wiki links untouched.
+- **Action.** Rewrote `README.md`. The line `**Wiki:** [fleet overview](https://app.devin.ai/org/veigapunk/wiki/VeigaPunk/shokunin?branch=master)` is unchanged. The registered table follows `MANIFEST.json` `roster` (kasegi through kaidoku, all `rank: shonen`). The second table follows mint notes that say `roster row withheld` (tameshi, mado, tsukuroi, tabi, mori, chousa). The previous README listed mori and chousa inside the registered table; those mint notes withhold the row. A search of this file's `MANIFEST.json` finds no `kotodama` string, so kotodama-shokunin is named as a sibling repository and not as a roster row. `scripts/shokunin-watchdog.sh` lines 7–8 pin `SK` and `UFO` to absolute operator-host paths; the README says so.
+- **Non-claims.** Protocol files, `MANIFEST.json`, and `SCORECARD.md` are unchanged. No round is admitted.

@@ -40,13 +40,16 @@ round over round:
 mint → shonen (apprentice) → shokunin (artisan) → jin'i-ryu (self-iterating)
 ```
 
+`PROTOCOL.md` is the contract. In short:
+
 - **Shonen** — minted on proven *unplaceable* demand (two documented
   instances no existing province could absorb) or operator directive.
   Seed: `SKILL.md` + `PROVINCE.md` + `SHONEN.md` + `LOG.md` + `MINT.md`,
-  its own `shokunin-<domain>` repo, and (after probation) a roster row here.
+  its own repo, and — after probation — a roster row here.
 - **Shokunin** — promoted when it performs domain work end-to-end: every
-  `SHONEN.md` box checked by a **non-author** reviewer — never
-  self-attestation. On promotion `SHONEN.md` is deleted.
+  `SHONEN.md` box checked by a **non-author** reviewer. On promotion
+  `SHONEN.md` is deleted. Every lane linked below still carries
+  `SHONEN.md`, so every one of them is still an apprentice.
 - **Jin'i-ryu** — promoted when it can iterate on itself.
 
 ### Six expertise axes (`AXES.md`)
@@ -85,40 +88,61 @@ registry of every mint.
 
 ## Roster
 
-`MANIFEST.json` is canonical; `ROADMAP.md` mirrors it. Every minted
-shokunin registers a row here and gets its own `shokunin-*` expert repo.
-Canonical names are `<id>-shokunin`; 2026-09 remotes keep that shape
-(private), 2026-10 remotes use `shokunin-<domain>` (public).
+`MANIFEST.json` → `roster` is the registered list. `ROADMAP.md` is a human
+mirror and lags this file. Canonical names are `<id>-shokunin`. 2026-09
+remotes keep that shape; 2026-10 remotes use `shokunin-<domain>`.
 
-| Shokunin | Domain | Rank |
+| Shokunin | Domain | Rank | Repository |
+|---|---|---|---|
+| kasegi-shokunin | bounty & security research | shonen | [kasegi-shokunin](https://github.com/VeigaPunk/kasegi-shokunin) |
+| kengaku-shokunin | LLM/model research & evaluation | shonen | [kengaku-shokunin](https://github.com/VeigaPunk/kengaku-shokunin) |
+| kake-shokunin | web properties & publishing | shonen | [kake-shokunin](https://github.com/VeigaPunk/kake-shokunin) |
+| kumitate-shokunin | orchestration & tooling | shonen | [kumitate-shokunin](https://github.com/VeigaPunk/kumitate-shokunin) |
+| kotoba-shokunin | prompt & skill craft | shonen | [kotoba-shokunin](https://github.com/VeigaPunk/kotoba-shokunin) |
+| kagi-shokunin | secrets & vault ops | shonen | [kagi-shokunin](https://github.com/VeigaPunk/kagi-shokunin) |
+| kama-shokunin | local model serving & endpoint health | shonen | [kama-shokunin](https://github.com/VeigaPunk/kama-shokunin) |
+| kaidoku-shokunin | shipped-artifact reverse engineering (REA) | shonen | [shokunin-reverse-engineering](https://github.com/VeigaPunk/shokunin-reverse-engineering) |
+| revenger-shokunin | binary forensics, evidence-ledger verification | shonen | [shokunin-binary-forensics](https://github.com/VeigaPunk/shokunin-binary-forensics) |
+| audio-shokunin | game audio production | shonen | [shokunin-game-audio](https://github.com/VeigaPunk/shokunin-game-audio) |
+| game-dev-2d-shokunin | 2D game production, executable fixtures | shonen | [shokunin-godot-2d](https://github.com/VeigaPunk/shokunin-godot-2d) |
+| game-dev-3d-shokunin | 3D game production, headless fixtures | shonen | [shokunin-3d-engines](https://github.com/VeigaPunk/shokunin-3d-engines) |
+| lore-shokunin | fictional-world records & consistency | shonen | [shokunin-world-bible](https://github.com/VeigaPunk/shokunin-world-bible) |
+
+### Minted, roster row withheld
+
+These lanes have `type: mint` entries in `MANIFEST.json`. Each note says
+probation is at least three verified rounds and **the roster row is
+withheld**. They are real repositories. They are not rows in `roster`.
+
+| Shokunin | Domain (from the mint note) | Repository |
 |---|---|---|
-| [kasegi-shokunin](https://github.com/VeigaPunk/kasegi-shokunin) | bounty & security research | shonen |
-| [kengaku-shokunin](https://github.com/VeigaPunk/kengaku-shokunin) | LLM/model research & evaluation | shonen |
-| [kake-shokunin](https://github.com/VeigaPunk/kake-shokunin) | web properties & publishing | shonen |
-| [kumitate-shokunin](https://github.com/VeigaPunk/kumitate-shokunin) | orchestration & tooling | shonen |
-| [kotoba-shokunin](https://github.com/VeigaPunk/kotoba-shokunin) | prompt & skill craft | shonen |
-| [kagi-shokunin](https://github.com/VeigaPunk/kagi-shokunin) | secrets & vault ops | shonen |
-| [kama-shokunin](https://github.com/VeigaPunk/kama-shokunin) | local model serving & endpoint health | shonen |
-| [kaidoku-shokunin](https://github.com/VeigaPunk/shokunin-reverse-engineering) | shipped-artifact reverse engineering (REA) | shonen |
-| [revenger-shokunin](https://github.com/VeigaPunk/shokunin-binary-forensics) | binary forensics, evidence-ledger verification | shonen |
-| [audio-shokunin](https://github.com/VeigaPunk/shokunin-game-audio) | game audio production | shonen |
-| [game-dev-2d-shokunin](https://github.com/VeigaPunk/shokunin-godot-2d) | 2D game production, executable fixtures | shonen |
-| [game-dev-3d-shokunin](https://github.com/VeigaPunk/shokunin-3d-engines) | 3D game production, headless fixtures | shonen |
-| [lore-shokunin](https://github.com/VeigaPunk/shokunin-world-bible) | fictional-world records & consistency | shonen |
-| [mori-shokunin](https://github.com/VeigaPunk/mori-shokunin) | fleet & host observability (森) — census gate, silence oracle, drift pin | shonen |
-| [chousa-shokunin](https://github.com/VeigaPunk/chousa-shokunin) | deep-research method (調査) — research gate: claims/chains/sweeps/integrity verification | shonen |
+| tameshi-shokunin | verification-fixture craft | [tameshi-shokunin](https://github.com/VeigaPunk/tameshi-shokunin) |
+| mado-shokunin | desktop & compositor craft (Hyprland/waybar/walker) | [mado-shokunin](https://github.com/VeigaPunk/mado-shokunin) |
+| tsukuroi-shokunin | host operability & system repair | [tsukuroi-shokunin](https://github.com/VeigaPunk/tsukuroi-shokunin) |
+| tabi-shokunin | browser & web-interaction craft | [tabi-shokunin](https://github.com/VeigaPunk/tabi-shokunin) |
+| mori-shokunin | fleet & host observability (森) — detection and report, never remediation | [mori-shokunin](https://github.com/VeigaPunk/mori-shokunin) |
+| chousa-shokunin | deep-research method (調査) | [chousa-shokunin](https://github.com/VeigaPunk/chousa-shokunin) |
 
-(2026-10-16: mori + chousa repos created and pushed after their 10-round
-in-session craft runs — rounds 2–11 admitted on both lanes, ledgers in
-`MANIFEST.json`.)
+[kotodama-shokunin](https://github.com/VeigaPunk/kotodama-shokunin) is a
+sibling repository for linguistic-cultural worldbuilding (言霊). A search
+of this checkout's `MANIFEST.json` finds no `kotodama` row, so it is not
+registered here.
 
+The portable Kimi Code CLI adaptation — protocol, mint kit, and a
+substrate-neutral driver — is
+[kimi-shokunin](https://github.com/VeigaPunk/kimi-shokunin).
 
 ## Files
 
-`PROTOCOL.md` `AXES.md` `LEARNING.md` `CORPUS.md` `MISSION.md`
-`PROTOCOL-APPENDIX.md` — canonical protocol, vendored from
-[kimi-shokunin](https://github.com/VeigaPunk/kimi-shokunin) (upstream).
-`MANIFEST.json` — machine roster + round history (79 rounds, both eras).
-`ROADMAP.md` — human mirror. `shokunin.conf` + `scripts/` — the round
-driver. `.ufo/` — fleet state (`waves/`, `reports/`, `prompts/`,
-`l0-questions.md`).
+| Path | Role |
+|---|---|
+| `PROTOCOL.md`, `PROTOCOL-APPENDIX.md`, `MISSION.md`, `AXES.md`, `LEARNING.md`, `CORPUS.md` | The fleet contract, vendored from [kimi-shokunin](https://github.com/VeigaPunk/kimi-shokunin) |
+| `MANIFEST.json` | Machine roster plus the append-only round ledger |
+| `ROADMAP.md` | Human mirror of the roster; update the manifest first |
+| `SCORECARD.md`, `LOG.md` | Fleet-meta axis claims and the audit trail |
+| `shokunin.conf`, `scripts/shokunin-watchdog.sh` | Round driver. The script's opening pins `SK` and `UFO` to absolute paths on the operator host, so it is the historical driver for that machine |
+| `.ufo/` | Fleet state: `waves/`, `reports/`, `prompts/`, `l0-questions.md` |
+| `research/` | Fleet research records, including the deep-research archives chousa verifies |
+
+The root also holds operator scratch (conf snapshots, forge logs, timing
+dumps). Those files are not the protocol.
