@@ -107,6 +107,7 @@ Canonical names are `<id>-shokunin`; 2026-09 remotes keep that shape
 | [lore-shokunin](https://github.com/VeigaPunk/shokunin-world-bible) | fictional-world records & consistency | shonen |
 | [mori-shokunin](https://github.com/VeigaPunk/mori-shokunin) | fleet & host observability (森) — census gate, silence oracle, drift pin | shonen |
 | [chousa-shokunin](https://github.com/VeigaPunk/chousa-shokunin) | deep-research method (調査) — research gate: claims/chains/sweeps/integrity verification | shonen |
+| [kotodama-shokunin](https://github.com/VeigaPunk/kotodama-shokunin) | linguistic-cultural worldbuilding (言霊) — languages, myths, symbols, eras & costumes coupled; hands off to the lore world bible | shonen |
 
 (2026-10-16: mori + chousa repos created and pushed after their 10-round
 in-session craft runs — rounds 2–11 admitted on both lanes, ledgers in
