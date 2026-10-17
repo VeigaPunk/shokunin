@@ -3369,6 +3369,30 @@
     "adjacency": "unchanged"
    },
    "notes": "Regimen loop 1 build 3: claims C/F/O verify, acceptance exits 0; work commit 94ca098b8ab03be52ec80f6925538e5e2c0ed327. 10 sourced entries (179->189). Availability: opencode-go keys -3/-4/-5 unprovisioned (402), key 1 retried after reset. Conformance defect: worker rewrote filed round-8/9 receipt bytes; integrator reverted + documented. Key rotation now keys 1/2."
+  },
+  {
+   "round": 11,
+   "date": "2026-10-17",
+   "type": "closure",
+   "closed_at": "2026-10-17T19:34:37-03:00",
+   "lanes": {
+    "kotodama": "ok"
+   },
+   "lane_rounds": {
+    "kotodama": 11
+   },
+   "promotions": [],
+   "minted": [],
+   "admitted": false,
+   "verdicts": {
+    "depth": "improved",
+    "coverage": "unchanged",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "calibration": "improved",
+    "adjacency": "unchanged"
+   },
+   "notes": "Regimen loop 1 build 4: REJECTED — claim F failed as declared (drift stability 0.778 < 0.95; all 45 drifts dispositioned, dominant cause is the round's own legitimate changes). Claims D/O verify: typed pipeline wired (hold set exact, 10/10 PHON artifacts eliminated), handoff e2e exercise (16/16, 20/20). Work commit a3f6fcef2d92a1099581140c81d4264e9a4e2aa3; 54/64 workers (10 late scribe seats failed). Freshness axis-move claims paused; L0 threshold-calibration question appended."
   }
  ]
 }
