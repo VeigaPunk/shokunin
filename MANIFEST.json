@@ -3441,6 +3441,22 @@
     "adjacency": "improved"
    },
    "notes": "Regimen loop 1 verify round: claims C/O/A verify, acceptance exits 0; work commit 44070b4a6038f54e78d8d5be551e549fe202b0ee. 25/64 workers (route capacity); integrator completed coverage (61 commands). Filed r8/r9 validation.json restored byte-exact after ledger-command clobber; root cause routed to r14. Handoff packet rejected on semantics (uncertainty dimension + bilateral acknowledgment) -> r13/r14. Round-11 rejection reproduced with ratio correction. Freshness axis-moves paused pending operator."
+  },
+  {
+   "round": 13,
+   "date": "2026-10-17",
+   "type": "closure",
+   "closed_at": "2026-10-17T20:55:04-03:00",
+   "lanes": {
+    "kotodama": "not-dispatched"
+   },
+   "lane_rounds": {
+    "kotodama": 13
+   },
+   "promotions": [],
+   "minted": [],
+   "admitted": false,
+   "notes": "Operator-skipped: expand (Grok) rounds cancelled by operator directive 2026-10-17 (two interrupted attempts, zero worker output, no files landed; tree clean at 3dedab2). Round-13 claims deferred: handoff-v2 + civ-map -> GLM rounds 15-16; D4 -> loop-2 build. No dispatch evidence beyond the interrupted launch attempts; no report owed for a skipped round."
   }
  ]
 }
