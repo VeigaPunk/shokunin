@@ -85,33 +85,51 @@ registry of every mint.
 
 ## Roster
 
-`MANIFEST.json` is canonical; `ROADMAP.md` mirrors it. Every minted
-shokunin registers a row here and gets its own `shokunin-*` expert repo.
-Canonical names are `<id>-shokunin`; 2026-09 remotes keep that shape
+`MANIFEST.json` is canonical for the rows it carries; `ROADMAP.md` mirrors
+it. Every minted shokunin registers a row here and gets its own expert
+repo. Canonical names are `<id>-shokunin`; 2026-09 remotes keep that shape
 (private), 2026-10 remotes use `shokunin-<domain>` (public).
 
-| Shokunin | Domain | Rank |
-|---|---|---|
-| [kasegi-shokunin](https://github.com/VeigaPunk/kasegi-shokunin) | bounty & security research | shonen |
-| [kengaku-shokunin](https://github.com/VeigaPunk/kengaku-shokunin) | LLM/model research & evaluation | shonen |
-| [kake-shokunin](https://github.com/VeigaPunk/kake-shokunin) | web properties & publishing | shonen |
-| [kumitate-shokunin](https://github.com/VeigaPunk/kumitate-shokunin) | orchestration & tooling | shonen |
-| [kotoba-shokunin](https://github.com/VeigaPunk/kotoba-shokunin) | prompt & skill craft | shonen |
-| [kagi-shokunin](https://github.com/VeigaPunk/kagi-shokunin) | secrets & vault ops | shonen |
-| [kama-shokunin](https://github.com/VeigaPunk/kama-shokunin) | local model serving & endpoint health | shonen |
-| [kaidoku-shokunin](https://github.com/VeigaPunk/shokunin-reverse-engineering) | shipped-artifact reverse engineering (REA) | shonen |
-| [revenger-shokunin](https://github.com/VeigaPunk/shokunin-binary-forensics) | binary forensics, evidence-ledger verification | shonen |
-| [audio-shokunin](https://github.com/VeigaPunk/shokunin-game-audio) | game audio production | shonen |
-| [game-dev-2d-shokunin](https://github.com/VeigaPunk/shokunin-godot-2d) | 2D game production, executable fixtures | shonen |
-| [game-dev-3d-shokunin](https://github.com/VeigaPunk/shokunin-3d-engines) | 3D game production, headless fixtures | shonen |
-| [lore-shokunin](https://github.com/VeigaPunk/shokunin-world-bible) | fictional-world records & consistency | shonen |
-| [mori-shokunin](https://github.com/VeigaPunk/mori-shokunin) | fleet & host observability (森) — census gate, silence oracle, drift pin | shonen |
-| [chousa-shokunin](https://github.com/VeigaPunk/chousa-shokunin) | deep-research method (調査) — research gate: claims/chains/sweeps/integrity verification | shonen |
+Lanes minted after the last `MANIFEST.json` roster close are listed from
+their own `MINT.md` / `PROVINCE.md` until the integrator absorbs them.
 
-(2026-10-16: mori + chousa repos created and pushed after their 10-round
-in-session craft runs — rounds 2–11 admitted on both lanes, ledgers in
-`MANIFEST.json`.)
+| Shokunin | Domain | Rank | Minted |
+|---|---|---|---|
+| [kasegi-shokunin](https://github.com/VeigaPunk/kasegi-shokunin) | bounty & security research | shonen | 2026-09-28 |
+| [kengaku-shokunin](https://github.com/VeigaPunk/kengaku-shokunin) | LLM/model research & evaluation | shonen | 2026-09-28 |
+| [kake-shokunin](https://github.com/VeigaPunk/kake-shokunin) | web properties & publishing | shonen | 2026-09-28 |
+| [kumitate-shokunin](https://github.com/VeigaPunk/kumitate-shokunin) | orchestration & tooling | shonen | 2026-09-28 |
+| [kotoba-shokunin](https://github.com/VeigaPunk/kotoba-shokunin) | prompt & skill craft | shonen | 2026-09-28 |
+| [kagi-shokunin](https://github.com/VeigaPunk/kagi-shokunin) | secrets & vault ops | shonen | 2026-09-28 |
+| [kama-shokunin](https://github.com/VeigaPunk/kama-shokunin) | local model serving & endpoint health | shonen | 2026-09-29 |
+| [kaidoku-shokunin](https://github.com/VeigaPunk/shokunin-reverse-engineering) | shipped-artifact reverse engineering (REA) | shonen | 2026-10-13 |
+| [revenger-shokunin](https://github.com/VeigaPunk/shokunin-binary-forensics) | binary forensics, evidence-ledger verification | shonen | 2026-10-11 |
+| [audio-shokunin](https://github.com/VeigaPunk/shokunin-game-audio) | game audio production | shonen | 2026-10-11 |
+| [game-dev-2d-shokunin](https://github.com/VeigaPunk/shokunin-godot-2d) | 2D game production, executable fixtures | shonen | 2026-10-11 |
+| [game-dev-3d-shokunin](https://github.com/VeigaPunk/shokunin-3d-engines) | 3D game production, headless fixtures | shonen | 2026-10-11 |
+| [lore-shokunin](https://github.com/VeigaPunk/shokunin-world-bible) | fictional-world records & consistency | shonen | 2026-10-11 |
+| [mori-shokunin](https://github.com/VeigaPunk/mori-shokunin) | fleet & host observability (森) | shonen | 2026-10-14 |
+| [chousa-shokunin](https://github.com/VeigaPunk/chousa-shokunin) | deep-research method (調査) | shonen | 2026-10-14 |
+| [mado-shokunin](https://github.com/VeigaPunk/mado-shokunin) | desktop & compositor craft | shonen | 2026-10-14 |
+| [tabi-shokunin](https://github.com/VeigaPunk/tabi-shokunin) | browser & web-interaction craft (旅) | shonen | 2026-10-14 |
+| [tameshi-shokunin](https://github.com/VeigaPunk/tameshi-shokunin) | verification-fixture craft | shonen | 2026-10-14 |
+| [tsukuroi-shokunin](https://github.com/VeigaPunk/tsukuroi-shokunin) | host operability & system repair (繕) | shonen | 2026-10-14 |
+| [kotodama-shokunin](https://github.com/VeigaPunk/kotodama-shokunin) | linguistic-cultural worldbuilding (言霊) | shonen | 2026-10-17 |
 
+Portable substrate (not a domain lane):
+[kimi-shokunin](https://github.com/VeigaPunk/kimi-shokunin) — the Kimi Code CLI
+plugin that vendors this protocol, the mint kit, and the round driver.
+
+## Start here
+
+| If you want to… | Open |
+|---|---|
+| Run or judge a craft round | `PROTOCOL.md` → `AXES.md` → `LEARNING.md` |
+| Understand why a rule exists | `PROTOCOL-APPENDIX.md` |
+| See the fleet shape and push scope | `MISSION.md` |
+| Check who is minted and what ran | `MANIFEST.json` (machine) · `ROADMAP.md` (human) |
+| Drive rounds across lanes | `shokunin.conf` + `scripts/` |
+| Inspect live coordination | `.ufo/` (`waves/`, `reports/`, `prompts/`) |
 
 ## Files
 
