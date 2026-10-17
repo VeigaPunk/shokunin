@@ -843,3 +843,25 @@ Rollout, committed as conformance changes (no axis claims advanced, no scores mo
 - `templates/round-prompt.md`: the stagnation-nudge pointer now cites `AXES.md`
   §The stagnation nudge (it named §Capabilities, where the nudge does not live).
 - skill mirror (`~/Projects/myskills/shokunin/SKILL.md`): same pointer fix.
+
+## 2026-10-17 — README: front-door rewrite; Devin wiki line untouched
+
+Operator request: make the fleet README a useful front door without
+messing with Devin wiki links. Evidence:
+
+- Pre-change `README.md:17` was
+  `**Wiki:** [fleet overview](https://app.devin.ai/org/veigapunk/wiki/VeigaPunk/shokunin?branch=master)`.
+  Post-change the same line is byte-identical at the same role (still
+  the only `app.devin.ai` URL in this file). GitHub code search
+  `org:VeigaPunk app.devin.ai wiki` returned this file and
+  `ufo-fsd-alpha` only — no other shokunin remote carried a Devin wiki
+  link to preserve or alter.
+- Roster table still mirrors `MANIFEST.json` for the first thirteen
+  rows; later working remotes that exist as sibling checkouts (mori,
+  chousa, kotodama, mado, tabi, tameshi, tsukuroi) are listed with an
+  explicit note that they are not all `MANIFEST.json` `roster` rows.
+- Start-here map and file list restates paths from `ls` of this repo
+  (`PROTOCOL.md`, `AXES.md`, `LEARNING.md`, `CORPUS.md`, `MISSION.md`,
+  `MANIFEST.json`, `ROADMAP.md`, `shokunin.conf`, `scripts/`, `.ufo/`).
+
+Not a craft round. No axis claim. `MANIFEST.json` bytes unchanged.
