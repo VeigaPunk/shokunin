@@ -843,3 +843,16 @@ Rollout, committed as conformance changes (no axis claims advanced, no scores mo
 - `templates/round-prompt.md`: the stagnation-nudge pointer now cites `AXES.md`
   §The stagnation nudge (it named §Capabilities, where the nudge does not live).
 - skill mirror (`~/Projects/myskills/shokunin/SKILL.md`): same pointer fix.
+
+## 2026-10-17 — README: start-here map + probation table (not a craft round)
+
+**Evidence.** Root `README.md` already stated the fleet contract and roster
+but gave no "if you want X, open Y" path, and omitted the minted-but-
+roster-withheld lanes that `MANIFEST.json` already records (`mado`,
+`tabi`, `tameshi`, `tsukuroi` — `rounds[].notes` say "roster row
+withheld"). Expanded the README with a start-here table pointing at
+existing protocol files, a probation table citing those manifest notes,
+and a pointer to `kotodama-shokunin` as a sibling *not* in those notes.
+The Devin wiki line is unchanged:
+`**Wiki:** [fleet overview](https://app.devin.ai/org/veigapunk/wiki/VeigaPunk/shokunin?branch=master)`.
+No axis claim.

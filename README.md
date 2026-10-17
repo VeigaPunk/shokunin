@@ -16,6 +16,22 @@ specialist lives in its own repository — linked below.
 
 **Wiki:** [fleet overview](https://app.devin.ai/org/veigapunk/wiki/VeigaPunk/shokunin?branch=master)
 
+## Start here
+
+| If you want to… | Open |
+|---|---|
+| Understand the contract | [`PROTOCOL.md`](PROTOCOL.md) then [`PROTOCOL-APPENDIX.md`](PROTOCOL-APPENDIX.md) |
+| See the six axes a round may move | [`AXES.md`](AXES.md) |
+| See how a lane learns (curate → gate → distill → expand) | [`LEARNING.md`](LEARNING.md) |
+| See the corpus rules (append-only, sourced, falsifiable) | [`CORPUS.md`](CORPUS.md) |
+| See who is dispatched and on which axes | [`MISSION.md`](MISSION.md) + [`shokunin.conf`](shokunin.conf) |
+| See the machine roster and every closed round | [`MANIFEST.json`](MANIFEST.json) (canonical) · [`ROADMAP.md`](ROADMAP.md) (human mirror) |
+| Run the portable Kimi plugin | [kimi-shokunin](https://github.com/VeigaPunk/kimi-shokunin) |
+
+A new specialist is not a prompt. It is a **repository** with a province,
+a skill, a corpus, and a promotion checklist. The fleet root is the
+registry and the rulebook; the craft lives in the lane repos.
+
 ## How a shokunin learns
 
 Each specialist owns a bounded domain (its `PROVINCE.md`) and improves
@@ -83,6 +99,11 @@ verdict → `LOG.md` + `SCORECARD.md` + report. Any lane may **mint a
 sibling** when it finds unplaceable demand; the roster below is the
 registry of every mint.
 
+A round admits only when at least one axis improved and **none were
+harmed**. A trade is reported, never averaged into an accept. Evidence
+is the currency. Lane identity (`<id>-shokunin <<id>@shokunin.local>`)
+rides in every specialist commit.
+
 ## Roster
 
 `MANIFEST.json` is canonical; `ROADMAP.md` mirrors it. Every minted
@@ -112,6 +133,24 @@ Canonical names are `<id>-shokunin`; 2026-09 remotes keep that shape
 in-session craft runs — rounds 2–11 admitted on both lanes, ledgers in
 `MANIFEST.json`.)
 
+### Minted, probation (roster row withheld)
+
+These lanes exist as repos and have `MINT.md` + `rounds[].notes` in
+`MANIFEST.json`. Protocol withholds the roster row until ≥3 verified
+rounds land (`PROTOCOL.md` sibling-mint step). Do not treat a GitHub
+remote as a promotion.
+
+| Lane | Domain | Remote |
+|---|---|---|
+| mado-shokunin | desktop & compositor craft (Hyprland / waybar / walker) | [mado-shokunin](https://github.com/VeigaPunk/mado-shokunin) |
+| tabi-shokunin | browser & web-interaction craft (旅) | [tabi-shokunin](https://github.com/VeigaPunk/tabi-shokunin) |
+| tameshi-shokunin | verification-fixture craft | [tameshi-shokunin](https://github.com/VeigaPunk/tameshi-shokunin) |
+| tsukuroi-shokunin | host operability & system repair (繕) | [tsukuroi-shokunin](https://github.com/VeigaPunk/tsukuroi-shokunin) |
+
+[kotodama-shokunin](https://github.com/VeigaPunk/kotodama-shokunin) is a
+sibling lane (言霊 — linguistic-cultural systems that *feed* lore and
+never own canon). It is not in the `MANIFEST.json` roster-withheld
+notes above; do not invent a roster row for it.
 
 ## Files
 
