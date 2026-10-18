@@ -48,3 +48,28 @@ vault via CLI (fallback: `sha256sum` under the vault path), keep
 write to the vault from souji (read-only probe), and record the CLI entry
 point + a `--selftest`-style fixture run in the SCORECARD capabilities
 table. Vault writes stay operator-owned.
+
+## Round-4 findings (2026-10-18) — for the operator's later CLI work
+
+The r4 recon swarm (63 seats) established, with bounded live probes:
+
+- **No invocable CLI entry point exists on this host.** `obsidian-cli-inspector`
+  (pacman 1.0.3-1) is a third-party stats tool — its `hash` column is
+  `size:mtime`, not a content digest. The official CLI is not a separate
+  binary: it is the app acting as a second-instance **socket client** to
+  `$XDG_RUNTIME_DIR/.obsidian-cli.sock` (JSON line `{argv,tty,cwd}`), with
+  73 handlers (`search`, `daily`, `sync`, `workspaces`, …) decoded from the
+  asar.
+- **Registration is structurally refused under this packaging**: the
+  installer copies `<execDir>/obsidian-cli` to `~/.local/bin/obsidian` only
+  when `basename(argv0)` contains "obsidian" — the pacman wrapper's argv0
+  is `electron`, so the check never passes, and `/usr/lib/obsidian` ships
+  no `obsidian-cli` file to copy.
+- **Live socket probe returned 0 bytes** in 4 bounded attempts (8–92s
+  windows) while a harness-spawned app instance held the socket — the reply
+  path never produced output. Verdict: CLI = socket-client model, unusable
+  headless today.
+- **Usable today**: the lane shipped `tools/souji-vault-verify.sh` — pure
+  ledger+sha256 verification, vault read-only, no Obsidian process needed.
+  When the operator lands a working CLI invocation later, only the
+  `--cli` probe path needs a real entry point.
