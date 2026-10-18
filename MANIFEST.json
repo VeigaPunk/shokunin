@@ -62,7 +62,7 @@
   {
    "id": "audio",
    "name": "audio-shokunin",
-   "domain": "game audio production \u2014 SFX + soundtrack, headless-verified",
+   "domain": "game audio production — SFX + soundtrack, headless-verified",
    "rank": "shonen",
    "repo": "shokunin-game-audio",
    "minted": "2026-10-11"
@@ -173,7 +173,7 @@
     "lane git author identity <lane>-shokunin required",
     "self-defects ride the routed-defect queue"
    ],
-   "notes": "first closure recorded by integrator-of-record (protocol lane round 9); rounds 2-8 went unrecorded pre-instantiation \u2014 lane status detail lives in .ufo/reports/round-2..8/*.md (ledger at round-2/AGGREGATE.md); in-flight lanes: kengaku r8, kake r9, kotoba r8, kagi r8, aggregator r5 (~1h); conformance: 36/40 child reports lack SHONEN heading; kengaku r7 report cites orphaned hash 85b22e3; kumitate defect-1 still open; routed-defect ledger unmaintained"
+   "notes": "first closure recorded by integrator-of-record (protocol lane round 9); rounds 2-8 went unrecorded pre-instantiation — lane status detail lives in .ufo/reports/round-2..8/*.md (ledger at round-2/AGGREGATE.md); in-flight lanes: kengaku r8, kake r9, kotoba r8, kagi r8, aggregator r5 (~1h); conformance: 36/40 child reports lack SHONEN heading; kengaku r7 report cites orphaned hash 85b22e3; kumitate defect-1 still open; routed-defect ledger unmaintained"
   },
   {
    "round": 1,
@@ -194,7 +194,7 @@
     "kagi": 1
    },
    "minted": [],
-   "notes": "Resolves the two rows of the round-1 entry that dispatch evidence contradicts. aggregator: dispatched 15:50:56 ('steer aggregator -> round 1'), steered onward to round 3 at 15:52:38, no .ufo/reports/round-1/aggregator.md -> failed, not in-flight. kagi: 'not-dispatched / deferred by round-robin' contradicts 'launch kagi round=1' 15:50:56; re-steered to round 2 at 15:52:38 with no round-1 report -> failed. kagi's corpus repeats the not-dispatched claim in 5 files (LOG.md:4, corpus/README.md:6, corpus/lessons/round-1.md:3, round-1-aggregator-seed.md:10-11, round-4-aggregator-audit.md:35) \u2014 routed to kagi for an appended correction. kengaku and kake filed off-contract filenames (round-1/kengaku-shokunin.md, round-1/web-properties-publishing.md): statuses stand ok, filenames are conformance defects. Line-number-free evidence digest: .ufo/reports/round-10/protocol.md."
+   "notes": "Resolves the two rows of the round-1 entry that dispatch evidence contradicts. aggregator: dispatched 15:50:56 ('steer aggregator -> round 1'), steered onward to round 3 at 15:52:38, no .ufo/reports/round-1/aggregator.md -> failed, not in-flight. kagi: 'not-dispatched / deferred by round-robin' contradicts 'launch kagi round=1' 15:50:56; re-steered to round 2 at 15:52:38 with no round-1 report -> failed. kagi's corpus repeats the not-dispatched claim in 5 files (LOG.md:4, corpus/README.md:6, corpus/lessons/round-1.md:3, round-1-aggregator-seed.md:10-11, round-4-aggregator-audit.md:35) — routed to kagi for an appended correction. kengaku and kake filed off-contract filenames (round-1/kengaku-shokunin.md, round-1/web-properties-publishing.md): statuses stand ok, filenames are conformance defects. Line-number-free evidence digest: .ufo/reports/round-10/protocol.md."
   },
   {
    "round": 2,
@@ -221,7 +221,7 @@
     "kotoba": 1
    },
    "minted": [],
-   "notes": "Steer-era driver skipped round 2 for 7 of 8 lanes ('steer <lane> -> round 3' at 15:52:38); only kagi was steered to round 2 and reported: round-2/kagi.md cites 9b3e49f (exists, ancestor of kagi HEAD), 'complete kagi round=2' 16:02:12. No round-2 prompt file ever existed for any lane (git log --all --diff-filter=D -- '.ufo/prompts/*round-2*' -> 0). round-2/AGGREGATE.md is the ledger snapshot, not a lane report. RETROACTIVE: statuses are presence-of-evidence only, integrator step-1 verification did not run at the time (no integrator existed), pre-fleet-2 regime so no axis-move duty \u2014 not a pass record."
+   "notes": "Steer-era driver skipped round 2 for 7 of 8 lanes ('steer <lane> -> round 3' at 15:52:38); only kagi was steered to round 2 and reported: round-2/kagi.md cites 9b3e49f (exists, ancestor of kagi HEAD), 'complete kagi round=2' 16:02:12. No round-2 prompt file ever existed for any lane (git log --all --diff-filter=D -- '.ufo/prompts/*round-2*' -> 0). round-2/AGGREGATE.md is the ledger snapshot, not a lane report. RETROACTIVE: statuses are presence-of-evidence only, integrator step-1 verification did not run at the time (no integrator existed), pre-fleet-2 regime so no axis-move duty — not a pass record."
   },
   {
    "round": 3,
@@ -275,7 +275,7 @@
     "kagi": "ok"
    },
    "minted": [],
-   "notes": "All 8 lanes dispatched and all 8 files present, but round-5/aggregator.md is a 3-line completion marker (254 B, added by main-repo 0a30b44 'fleet-1 closeout markers') citing no commit and describing no work -> failed under the marker rule; its aggregator mirror commits (kake 1395393, kasegi a50bbda, kumitate 294cbf1) exist unattributed by any report. round-5/kasegi.md cites no hash ('round-5' by subject) \u2014 conformance defect, status unchanged. RETROACTIVE: presence-of-evidence only; step-1 verification did not run; pre-fleet-2; not a pass record."
+   "notes": "All 8 lanes dispatched and all 8 files present, but round-5/aggregator.md is a 3-line completion marker (254 B, added by main-repo 0a30b44 'fleet-1 closeout markers') citing no commit and describing no work -> failed under the marker rule; its aggregator mirror commits (kake 1395393, kasegi a50bbda, kumitate 294cbf1) exist unattributed by any report. round-5/kasegi.md cites no hash ('round-5' by subject) — conformance defect, status unchanged. RETROACTIVE: presence-of-evidence only; step-1 verification did not run; pre-fleet-2; not a pass record."
   },
   {
    "round": 6,
@@ -317,7 +317,7 @@
     "aggregator": 6
    },
    "minted": [],
-   "notes": "Seven lanes dispatched and reported (complete lines 16:40:02-17:57:53). round-7/kumitate.md is a 3-line marker (122 B, 0a30b44) but names real round-7 work 7a4c9a0 (= kumitate HEAD, 'round-7 corpus entries') -> ok with a minimum-content defect, not failed. round-7/protocol.md cites no own commit hash (window-start 4c86031; its work landed as 097c75e) \u2014 defect. aggregator was never dispatched for round 7 (counter 6). RETROACTIVE: presence-of-evidence only; step-1 verification did not run; pre-fleet-2; not a pass record."
+   "notes": "Seven lanes dispatched and reported (complete lines 16:40:02-17:57:53). round-7/kumitate.md is a 3-line marker (122 B, 0a30b44) but names real round-7 work 7a4c9a0 (= kumitate HEAD, 'round-7 corpus entries') -> ok with a minimum-content defect, not failed. round-7/protocol.md cites no own commit hash (window-start 4c86031; its work landed as 097c75e) — defect. aggregator was never dispatched for round 7 (counter 6). RETROACTIVE: presence-of-evidence only; step-1 verification did not run; pre-fleet-2; not a pass record."
   },
   {
    "round": 8,
@@ -914,7 +914,7 @@
    "date": "2026-09-28",
    "type": "mint",
    "minted": [],
-   "notes": "sibling-mint allowance landed in PROTOCOL.md Lifecycle; kama-shokunin minted in probation (local model serving & endpoint health \u2014 aggregator mint-eligible r4/r6/r7, demand instances: kagi r3 + kengaku r4 endpoint-drift 8080->34113). Roster row withheld until >=3 verified self-iteration rounds per the new clause; lane wired into watchdog (m_flash, axes operability+freshness)."
+   "notes": "sibling-mint allowance landed in PROTOCOL.md Lifecycle; kama-shokunin minted in probation (local model serving & endpoint health — aggregator mint-eligible r4/r6/r7, demand instances: kagi r3 + kengaku r4 endpoint-drift 8080->34113). Roster row withheld until >=3 verified self-iteration rounds per the new clause; lane wired into watchdog (m_flash, axes operability+freshness)."
   },
   {
    "round": 12,
@@ -930,7 +930,7 @@
    "lanes": {
     "protocol": "ok"
    },
-   "notes": "supersedes #25 (round-12 closure-correction whose protocol row read in-flight at closed_at 2026-09-28T20:55:00-03:00). Log lines this status rests on: `2026-09-28T20:28:21-03:00 launch protocol round=12 runId=shokunin-r12-protocol-r1790638100`; `2026-09-28T21:51:57-03:00 complete protocol round=12; respawning`. Status ok: PROTOCOL \u00a7Round-robin \"**Completion evidence** is a `.ufo/reports/round-N/<lane>.md` that satisfies the report contract\" and \"**Termination evidence** is a `complete <lane> round=N` line or the lane's counter passing `N`\"; the failed rule \"`failed` covers every lane-round that was prompted or dispatched and has no report by closure\" cannot reach a lane-round with a filed report. Evidence: `.ufo/reports/round-12/protocol.md` 39404 B, tracked, added by 62fdfbed93d7a48837554b6a4db3669f057d63f5 (protocol-shokunin <protocol@shokunin.local>, 2026-09-28T21:46:25-03:00) = ancestor of main HEAD 3d20676; file mtime 21:45:57 precedes that commit (lands-last holds); SHONEN heading present (grep -cE '^#{1,6} *SHONEN' -> 1); 28 hex tokens: 25 resolve as commits (main 16, kengaku-shokunin 2, kumitate-shokunin 3, kotoba-shokunin 4) and every one is an ancestor of that repo's HEAD; the 3 unresolvable tokens are not commit citations (391a54f4 'dead blob', 4028846 'dead pointer', 9b89166c mutation base sha256). Defects: none material."
+   "notes": "supersedes #25 (round-12 closure-correction whose protocol row read in-flight at closed_at 2026-09-28T20:55:00-03:00). Log lines this status rests on: `2026-09-28T20:28:21-03:00 launch protocol round=12 runId=shokunin-r12-protocol-r1790638100`; `2026-09-28T21:51:57-03:00 complete protocol round=12; respawning`. Status ok: PROTOCOL §Round-robin \"**Completion evidence** is a `.ufo/reports/round-N/<lane>.md` that satisfies the report contract\" and \"**Termination evidence** is a `complete <lane> round=N` line or the lane's counter passing `N`\"; the failed rule \"`failed` covers every lane-round that was prompted or dispatched and has no report by closure\" cannot reach a lane-round with a filed report. Evidence: `.ufo/reports/round-12/protocol.md` 39404 B, tracked, added by 62fdfbed93d7a48837554b6a4db3669f057d63f5 (protocol-shokunin <protocol@shokunin.local>, 2026-09-28T21:46:25-03:00) = ancestor of main HEAD 3d20676; file mtime 21:45:57 precedes that commit (lands-last holds); SHONEN heading present (grep -cE '^#{1,6} *SHONEN' -> 1); 28 hex tokens: 25 resolve as commits (main 16, kengaku-shokunin 2, kumitate-shokunin 3, kotoba-shokunin 4) and every one is an ancestor of that repo's HEAD; the 3 unresolvable tokens are not commit citations (391a54f4 'dead blob', 4028846 'dead pointer', 9b89166c mutation base sha256). Defects: none material."
   },
   {
    "round": 12,
@@ -962,7 +962,7 @@
    "lanes": {
     "kake": "ok"
    },
-   "notes": "supersedes #27 (round-14 closure whose kake row read in-flight). Log lines this status rests on: `2026-09-28T20:05:46-03:00 launch kake round=14 runId=shokunin-r14-kake-r1790636745`; `2026-09-28T21:44:24-03:00 complete kake round=14; respawning`. Status ok by the \u00a7Round-robin completion-evidence rule (same derivation as the round-12 correction to #25). Evidence: `.ufo/reports/round-14/kake.md` 10417 B, tracked, added by 1dc7f6b81f86606e19d9c6c72f0a336bce4c291f (2026-09-28T21:42:48-03:00) = ancestor of main HEAD. Defects, all status-neutral per step 1 (\"this does not change the lane's status unless the round's rules already prescribe `failed`\"): (1) no SHONEN heading (grep -cE '^#{1,6} *SHONEN' -> 0) - a conformance defect and disqualified as evidence in the lane's promotion review; (2) its own round-14 kake-shokunin commit a2094411fe9051ebf3c10929ed33c1b6c032ea39 (2026-09-28T21:42:41-03:00) is uncited - the report's only commit token is 2a5502c (kake-shokunin, ancestor), which is the round-13 commit; (3) the report file mtime 21:42:18 precedes that own commit by 23 s, so the round's child work was not committed when the report was filed (\"written only after the lane's child-repo work is committed\"). The add commit's identity (Joao Pedro Veiga <jpveigao10@gmail.com>) equals kake-shokunin's own configured identity, so no attribution defect is determinable."
+   "notes": "supersedes #27 (round-14 closure whose kake row read in-flight). Log lines this status rests on: `2026-09-28T20:05:46-03:00 launch kake round=14 runId=shokunin-r14-kake-r1790636745`; `2026-09-28T21:44:24-03:00 complete kake round=14; respawning`. Status ok by the §Round-robin completion-evidence rule (same derivation as the round-12 correction to #25). Evidence: `.ufo/reports/round-14/kake.md` 10417 B, tracked, added by 1dc7f6b81f86606e19d9c6c72f0a336bce4c291f (2026-09-28T21:42:48-03:00) = ancestor of main HEAD. Defects, all status-neutral per step 1 (\"this does not change the lane's status unless the round's rules already prescribe `failed`\"): (1) no SHONEN heading (grep -cE '^#{1,6} *SHONEN' -> 0) - a conformance defect and disqualified as evidence in the lane's promotion review; (2) its own round-14 kake-shokunin commit a2094411fe9051ebf3c10929ed33c1b6c032ea39 (2026-09-28T21:42:41-03:00) is uncited - the report's only commit token is 2a5502c (kake-shokunin, ancestor), which is the round-13 commit; (3) the report file mtime 21:42:18 precedes that own commit by 23 s, so the round's child work was not committed when the report was filed (\"written only after the lane's child-repo work is committed\"). The add commit's identity (Joao Pedro Veiga <jpveigao10@gmail.com>) equals kake-shokunin's own configured identity, so no attribution defect is determinable."
   },
   {
    "round": 14,
@@ -978,7 +978,7 @@
    "lanes": {
     "kotoba": "ok"
    },
-   "notes": "supersedes #35 (round-14 closure-correction whose kotoba row read in-flight). Log lines this status rests on: `2026-09-28T21:14:16-03:00 launch kotoba round=14 runId=shokunin-r14-kotoba-r1790640851`; `2026-09-28T21:36:52-03:00 complete kotoba round=14; respawning`. Status ok on its termination evidence: PROTOCOL \u00a7Round-robin \"A terminated lane-round whose report exists on disk but is unlanded is recorded on its termination evidence with the durability debt named, and the next pass re-grades it `failed` for want of a landed report if the successor never lands it.\" Evidence: `.ufo/reports/round-14/kotoba.md` 9463 B, mtime 2026-09-28T21:36:23-03:00, UNTRACKED (`git ls-files --error-unmatch` exit 1; `git ls-files -o --exclude-standard .ufo/reports` lists it; `git log --diff-filter=A -1 -- .ufo/reports/round-14/kotoba.md` prints nothing = never added) -> durability + attribution defect (\"a lane whose report is still uncommitted when its mission completes has not satisfied this clause\"). It is a real report, not a marker: it names a resolvable committed hash (29c17be, kotoba-shokunin, ancestor of kotoba HEAD 0f658ff). Orphaned-report order applied, successor-first: the lane's own respawn `2026-09-28T21:36:53-03:00 launch kotoba round=15 runId=shokunin-r15-kotoba-r1790642212` is live at closed_at and inherits and lands it; the integrator sweeps for durability \"only if that successor mission also terminates without landing it\" - precondition unmet, so NO sweep this pass. Defect: SHONEN=0 (no heading) - conformance defect + disqualified as promotion evidence. Grade that follows: ok now; `failed` at the next pass if kotoba r15 never lands it."
+   "notes": "supersedes #35 (round-14 closure-correction whose kotoba row read in-flight). Log lines this status rests on: `2026-09-28T21:14:16-03:00 launch kotoba round=14 runId=shokunin-r14-kotoba-r1790640851`; `2026-09-28T21:36:52-03:00 complete kotoba round=14; respawning`. Status ok on its termination evidence: PROTOCOL §Round-robin \"A terminated lane-round whose report exists on disk but is unlanded is recorded on its termination evidence with the durability debt named, and the next pass re-grades it `failed` for want of a landed report if the successor never lands it.\" Evidence: `.ufo/reports/round-14/kotoba.md` 9463 B, mtime 2026-09-28T21:36:23-03:00, UNTRACKED (`git ls-files --error-unmatch` exit 1; `git ls-files -o --exclude-standard .ufo/reports` lists it; `git log --diff-filter=A -1 -- .ufo/reports/round-14/kotoba.md` prints nothing = never added) -> durability + attribution defect (\"a lane whose report is still uncommitted when its mission completes has not satisfied this clause\"). It is a real report, not a marker: it names a resolvable committed hash (29c17be, kotoba-shokunin, ancestor of kotoba HEAD 0f658ff). Orphaned-report order applied, successor-first: the lane's own respawn `2026-09-28T21:36:53-03:00 launch kotoba round=15 runId=shokunin-r15-kotoba-r1790642212` is live at closed_at and inherits and lands it; the integrator sweeps for durability \"only if that successor mission also terminates without landing it\" - precondition unmet, so NO sweep this pass. Defect: SHONEN=0 (no heading) - conformance defect + disqualified as promotion evidence. Grade that follows: ok now; `failed` at the next pass if kotoba r15 never lands it."
   },
   {
    "round": 14,
@@ -994,7 +994,7 @@
    "lanes": {
     "kumitate": "ok"
    },
-   "notes": "supersedes #27 (round-14 closure whose kumitate row read not-dispatched with lane_rounds 12; the dispatch of 21:52:06 postdates that row's closed_at 20:55:00, so the old row was true as written and is superseded, not contradicted). Log lines this status rests on: `2026-09-28T21:52:06-03:00 launch kumitate round=14 runId=shokunin-r14-kumitate-r1790643122`; `2026-09-28T22:22:15-03:00 complete kumitate round=14; respawning`. Status ok: \u00a7Round-robin \"`in-flight` is therefore decided from the absence of both a `complete <lane> round=N` line and a *landed* report\" - a complete line is present and `.ufo/reports/round-14/kumitate.md` 9116 B is landed (tracked; added by 5fa216c, 2026-09-28T22:19:00-03:00 = ancestor of main HEAD; appended by 3d20676 2026-09-28T22:20:09-03:00, +16 lines, a conforming erratum: \"as an erratum appended after the filed bytes in a new commit\"). SHONEN heading present (## SHONEN, count 1). Cited 93b0567 + dffbf0e (kumitate-shokunin) and 5fa216c (main repo) - all resolve and all are ancestors of their repo's HEAD; the two remaining hex tokens are digests, not citations. Defects: none material; the add commit's identity equals kumitate-shokunin's own configured identity, so no attribution defect is determinable."
+   "notes": "supersedes #27 (round-14 closure whose kumitate row read not-dispatched with lane_rounds 12; the dispatch of 21:52:06 postdates that row's closed_at 20:55:00, so the old row was true as written and is superseded, not contradicted). Log lines this status rests on: `2026-09-28T21:52:06-03:00 launch kumitate round=14 runId=shokunin-r14-kumitate-r1790643122`; `2026-09-28T22:22:15-03:00 complete kumitate round=14; respawning`. Status ok: §Round-robin \"`in-flight` is therefore decided from the absence of both a `complete <lane> round=N` line and a *landed* report\" - a complete line is present and `.ufo/reports/round-14/kumitate.md` 9116 B is landed (tracked; added by 5fa216c, 2026-09-28T22:19:00-03:00 = ancestor of main HEAD; appended by 3d20676 2026-09-28T22:20:09-03:00, +16 lines, a conforming erratum: \"as an erratum appended after the filed bytes in a new commit\"). SHONEN heading present (## SHONEN, count 1). Cited 93b0567 + dffbf0e (kumitate-shokunin) and 5fa216c (main repo) - all resolve and all are ancestors of their repo's HEAD; the two remaining hex tokens are digests, not citations. Defects: none material; the add commit's identity equals kumitate-shokunin's own configured identity, so no attribution defect is determinable."
   },
   {
    "round": 14,
@@ -1010,7 +1010,7 @@
    "lanes": {
     "kagi": "ok"
    },
-   "notes": "supersedes #27 (round-14 closure whose kagi row read not-dispatched with lane_rounds 12; dispatch 21:52:12 postdates its closed_at, so the row was true as written). Log lines this status rests on: `2026-09-28T21:52:12-03:00 launch kagi round=14 runId=shokunin-r14-kagi-r1790643128`; `2026-09-28T22:22:18-03:00 complete kagi round=14; respawning`. Status ok on its termination evidence: PROTOCOL \u00a7Round-robin \"A terminated lane-round whose report exists on disk but is unlanded is recorded on its termination evidence with the durability debt named, and the next pass re-grades it `failed` for want of a landed report if the successor never lands it.\" Evidence: `.ufo/reports/round-14/kagi.md` 15271 B, mtime 2026-09-28T22:21:02-03:00, UNTRACKED (`git ls-files --error-unmatch` exit 1; listed by `git ls-files -o --exclude-standard .ufo/reports`; `git log --diff-filter=A -1 -- .ufo/reports/round-14/kagi.md` prints nothing) -> durability + attribution defect; the driver's report_of() existence signal fired but \"an uncommitted file at the report path does not end `in-flight`\" until the complete line at 22:22:18 landed. Orphan order, successor-first: the lane's own respawn `2026-09-28T22:22:19-03:00 launch kagi round=15 runId=shokunin-r15-kagi-r1790644938` inherits and lands it; the integrator sweeps \"only if that successor mission also terminates without landing it\" - precondition unmet, NO sweep this pass. Defects: SHONEN=0 (no heading; conformance defect + disqualified as promotion evidence); the only commit token it cites is 4b8c018 (kagi-shokunin round-13 commit, ancestor of kagi HEAD baec94f) and no kagi-authored round-14 commit exists (`git -C kagi-shokunin log --since=2026-09-28T21:52:12-03:00` -> only the aggregator's baec94f, 22:19:06), so filed as-is it names no round-14 work hash. Grade that follows: ok now; `failed` at the next pass if kagi r15 never lands it."
+   "notes": "supersedes #27 (round-14 closure whose kagi row read not-dispatched with lane_rounds 12; dispatch 21:52:12 postdates its closed_at, so the row was true as written). Log lines this status rests on: `2026-09-28T21:52:12-03:00 launch kagi round=14 runId=shokunin-r14-kagi-r1790643128`; `2026-09-28T22:22:18-03:00 complete kagi round=14; respawning`. Status ok on its termination evidence: PROTOCOL §Round-robin \"A terminated lane-round whose report exists on disk but is unlanded is recorded on its termination evidence with the durability debt named, and the next pass re-grades it `failed` for want of a landed report if the successor never lands it.\" Evidence: `.ufo/reports/round-14/kagi.md` 15271 B, mtime 2026-09-28T22:21:02-03:00, UNTRACKED (`git ls-files --error-unmatch` exit 1; listed by `git ls-files -o --exclude-standard .ufo/reports`; `git log --diff-filter=A -1 -- .ufo/reports/round-14/kagi.md` prints nothing) -> durability + attribution defect; the driver's report_of() existence signal fired but \"an uncommitted file at the report path does not end `in-flight`\" until the complete line at 22:22:18 landed. Orphan order, successor-first: the lane's own respawn `2026-09-28T22:22:19-03:00 launch kagi round=15 runId=shokunin-r15-kagi-r1790644938` inherits and lands it; the integrator sweeps \"only if that successor mission also terminates without landing it\" - precondition unmet, NO sweep this pass. Defects: SHONEN=0 (no heading; conformance defect + disqualified as promotion evidence); the only commit token it cites is 4b8c018 (kagi-shokunin round-13 commit, ancestor of kagi HEAD baec94f) and no kagi-authored round-14 commit exists (`git -C kagi-shokunin log --since=2026-09-28T21:52:12-03:00` -> only the aggregator's baec94f, 22:19:06), so filed as-is it names no round-14 work hash. Grade that follows: ok now; `failed` at the next pass if kagi r15 never lands it."
   },
   {
    "round": 9,
@@ -1026,7 +1026,7 @@
    "lanes": {
     "aggregator": "in-flight"
    },
-   "notes": "re-confirmation of the carried in-flight row (#31). Log line this status rests on: `2026-09-28T21:14:10-03:00 launch aggregator round=9 runId=shokunin-r9-aggregator-r1790640845`; still live at closed_at: `grep -c 'complete aggregator round=9' .ufo/watchdog.log` -> 0; `.ufo/state/aggregator.round` -> 9; no report (`ls .ufo/reports/round-9/aggregator.md` -> No such file or directory; the round-9 contract-path sweep shows kagi/kake/kasegi/kengaku/kotoba/kumitate/protocol only). Rule: \"no lane may be recorded `in-flight` unless its mission was live at `closed_at`\" + \"`in-flight` is therefore decided from the absence of both a `complete <lane> round=N` line and a *landed* report\". Activity = progressing, lane-authored: six aggregator commits in the child repos after the launch (kagi baec94f, kake 4214101, kasegi b021dc9, kengaku e171cdf, kotoba 0f658ff, kumitate 93b0567; all aggregator-shokunin, 22:19:05-22:19:06) plus its own ledger `.ufo/reports/AGGREGATE.md` dirty with 410 uncommitted insertions (\u00a714 'Refresh 7 - round-9 aggregator audit'). Uncommitted aggregator-owned files are reported, not lane debt (\"uncommitted aggregator-owned files are reported, not lane debt\")."
+   "notes": "re-confirmation of the carried in-flight row (#31). Log line this status rests on: `2026-09-28T21:14:10-03:00 launch aggregator round=9 runId=shokunin-r9-aggregator-r1790640845`; still live at closed_at: `grep -c 'complete aggregator round=9' .ufo/watchdog.log` -> 0; `.ufo/state/aggregator.round` -> 9; no report (`ls .ufo/reports/round-9/aggregator.md` -> No such file or directory; the round-9 contract-path sweep shows kagi/kake/kasegi/kengaku/kotoba/kumitate/protocol only). Rule: \"no lane may be recorded `in-flight` unless its mission was live at `closed_at`\" + \"`in-flight` is therefore decided from the absence of both a `complete <lane> round=N` line and a *landed* report\". Activity = progressing, lane-authored: six aggregator commits in the child repos after the launch (kagi baec94f, kake 4214101, kasegi b021dc9, kengaku e171cdf, kotoba 0f658ff, kumitate 93b0567; all aggregator-shokunin, 22:19:05-22:19:06) plus its own ledger `.ufo/reports/AGGREGATE.md` dirty with 410 uncommitted insertions (§14 'Refresh 7 - round-9 aggregator audit'). Uncommitted aggregator-owned files are reported, not lane debt (\"uncommitted aggregator-owned files are reported, not lane debt\")."
   },
   {
    "round": 13,
@@ -1080,7 +1080,7 @@
    "lanes": {
     "kumitate": "ok"
    },
-   "notes": "supersedes #34 (round-13 closure-correction whose kumitate row read in-flight). Log lines this status rests on: `2026-09-28T21:21:51-03:00 launch kumitate round=13 runId=shokunin-r13-kumitate-r1790641309`; `2026-09-28T21:52:02-03:00 complete kumitate round=13; respawning`. Status ok by the \u00a7Round-robin completion-evidence rule. Evidence: `.ufo/reports/round-13/kumitate.md` 16347 B, tracked, added by a197445d0b06f463a188d22a28218cd10c302f15 (2026-09-28T21:49:18-03:00) = ancestor of main HEAD; SHONEN heading present (## SHONEN, count 1). Defects, status-neutral per step 1: (1) the report cites no commit hash at all - its four hex tokens are the read-only origin tree's HEADs (daa371583, 4f34e7dab) and proxy digests (8a6b5c9d, a11ead17), while line 7 `**Repo commit:** round-13 (lane)` and the tail `**Cited lane commits:** the round-13 commit (below)` name a branch, not a hash - against \"it must cite that commit's hash\" and \"The cited hash is the lane repo's `HEAD` when the report is written\"; (2) report-before-commit: file mtime 21:49:01.548 precedes its own kumitate-shokunin commits ed991d072665ad0b0f84a6072c323c8f723ab57c (21:49:07) and 7a099b2b7df98a23f8f443763bec05ee8593403c (21:49:54) - \"written only after the lane's child-repo work is committed\"."
+   "notes": "supersedes #34 (round-13 closure-correction whose kumitate row read in-flight). Log lines this status rests on: `2026-09-28T21:21:51-03:00 launch kumitate round=13 runId=shokunin-r13-kumitate-r1790641309`; `2026-09-28T21:52:02-03:00 complete kumitate round=13; respawning`. Status ok by the §Round-robin completion-evidence rule. Evidence: `.ufo/reports/round-13/kumitate.md` 16347 B, tracked, added by a197445d0b06f463a188d22a28218cd10c302f15 (2026-09-28T21:49:18-03:00) = ancestor of main HEAD; SHONEN heading present (## SHONEN, count 1). Defects, status-neutral per step 1: (1) the report cites no commit hash at all - its four hex tokens are the read-only origin tree's HEADs (daa371583, 4f34e7dab) and proxy digests (8a6b5c9d, a11ead17), while line 7 `**Repo commit:** round-13 (lane)` and the tail `**Cited lane commits:** the round-13 commit (below)` name a branch, not a hash - against \"it must cite that commit's hash\" and \"The cited hash is the lane repo's `HEAD` when the report is written\"; (2) report-before-commit: file mtime 21:49:01.548 precedes its own kumitate-shokunin commits ed991d072665ad0b0f84a6072c323c8f723ab57c (21:49:07) and 7a099b2b7df98a23f8f443763bec05ee8593403c (21:49:54) - \"written only after the lane's child-repo work is committed\"."
   },
   {
    "round": 13,
@@ -1096,7 +1096,7 @@
    "lanes": {
     "kagi": "ok"
    },
-   "notes": "supersedes #29 (round-13 closure-correction whose kagi row read in-flight). Log lines this status rests on: `2026-09-28T21:06:34-03:00 launch kagi round=13 runId=shokunin-r13-kagi-r1790640365`; `2026-09-28T21:52:08-03:00 complete kagi round=13; respawning`. Status ok by the \u00a7Round-robin completion-evidence rule. Evidence: `.ufo/reports/round-13/kagi.md` 9441 B, tracked, added by 383ea1ac252ee4b1a9ed6700eb6aa981a3992d8b (2026-09-28T21:51:23-03:00) = ancestor of main HEAD; cited 4b8c0183bd57ec5d0033fd07f650e116d7e9f600 (its own round-13 kagi-shokunin commit, 21:50:42, ancestor of kagi HEAD) and 4391b3b (ancestor); report mtime 21:51:17.703 follows 4b8c018, so lands-last holds. Defect, status-neutral per step 1: SHONEN=0 (no heading; grep -cE '^#{1,6} *SHONEN' -> 0) - conformance defect + disqualified as evidence in the lane's promotion review. No false accusation recorded: the literal `deadbeef` at line 102 is the fixture path `deadbeef/0/0`, not a hash citation (checked in context)."
+   "notes": "supersedes #29 (round-13 closure-correction whose kagi row read in-flight). Log lines this status rests on: `2026-09-28T21:06:34-03:00 launch kagi round=13 runId=shokunin-r13-kagi-r1790640365`; `2026-09-28T21:52:08-03:00 complete kagi round=13; respawning`. Status ok by the §Round-robin completion-evidence rule. Evidence: `.ufo/reports/round-13/kagi.md` 9441 B, tracked, added by 383ea1ac252ee4b1a9ed6700eb6aa981a3992d8b (2026-09-28T21:51:23-03:00) = ancestor of main HEAD; cited 4b8c0183bd57ec5d0033fd07f650e116d7e9f600 (its own round-13 kagi-shokunin commit, 21:50:42, ancestor of kagi HEAD) and 4391b3b (ancestor); report mtime 21:51:17.703 follows 4b8c018, so lands-last holds. Defect, status-neutral per step 1: SHONEN=0 (no heading; grep -cE '^#{1,6} *SHONEN' -> 0) - conformance defect + disqualified as evidence in the lane's promotion review. No false accusation recorded: the literal `deadbeef` at line 102 is the fixture path `deadbeef/0/0`, not a hash citation (checked in context)."
   },
   {
    "round": 15,
@@ -1112,7 +1112,7 @@
    "lanes": {
     "kake": "ok"
    },
-   "notes": "supersedes #45 (round-15 closure whose kake row read in-flight; that row was true at its closed_at 2026-09-28T22:23:00-03:00 - the mission terminated 36 min later - so it is resolved here, never edited in place). Log lines this status rests on: `2026-09-28T21:44:25-03:00 launch kake round=15 runId=shokunin-r15-kake-r1790642664`; `2026-09-28T22:59:12-03:00 complete kake round=15; respawning`. Status ok by the \u00a7Round-robin completion-evidence rule. Evidence: `.ufo/reports/round-15/kake.md` 7486 B, tracked (`git ls-files --error-unmatch` -> rc 0), added by 3069841eb1e81a5eb63d1ce38daf4aceb3d7317c (Joao Pedro Veiga <jpveigao10@gmail.com>, 2026-09-28T22:52:19-03:00, subject `round-15: kake report \u2014 freshness 8->9, path-sweep caught same-window FS drift as kasegi bounties vanish (5 danglers annotated); + l0 corroboration line`) = ancestor of main HEAD (`git merge-base --is-ancestor 3069841 HEAD` -> rc 0); `grep -cE '^#{1,6}[[:space:]]*SHONEN'` -> 0; counter `.ufo/state/kake.round` -> 17. Defects, status-neutral per step 1: (1) SHONEN heading absent; (2) the report cites no resolvable commit - all 9 of its hex tokens (4427b7f8 6a0c24b5 6ab49127 93ddca9a 9c28d29 b6f65899 e6bd071 f3d2ecd fb365e38) resolve as commits in no local odb (main + 6 child repos + kama-shokunin + the origin-work read-only tree; the gate flags each dead, e.g. `.ufo/reports/round-15/kake.md:48 fb365e38 (cat-file resolves fb365e38 in no local odb (main + 6 child repos + external read-only trees))`), so step-1 hash ancestry is unverifiable for this lane-round; (3) attribution defect: the report landed under the operator identity, not `kake-shokunin` (\u00a7Lane identity)."
+   "notes": "supersedes #45 (round-15 closure whose kake row read in-flight; that row was true at its closed_at 2026-09-28T22:23:00-03:00 - the mission terminated 36 min later - so it is resolved here, never edited in place). Log lines this status rests on: `2026-09-28T21:44:25-03:00 launch kake round=15 runId=shokunin-r15-kake-r1790642664`; `2026-09-28T22:59:12-03:00 complete kake round=15; respawning`. Status ok by the §Round-robin completion-evidence rule. Evidence: `.ufo/reports/round-15/kake.md` 7486 B, tracked (`git ls-files --error-unmatch` -> rc 0), added by 3069841eb1e81a5eb63d1ce38daf4aceb3d7317c (Joao Pedro Veiga <jpveigao10@gmail.com>, 2026-09-28T22:52:19-03:00, subject `round-15: kake report — freshness 8->9, path-sweep caught same-window FS drift as kasegi bounties vanish (5 danglers annotated); + l0 corroboration line`) = ancestor of main HEAD (`git merge-base --is-ancestor 3069841 HEAD` -> rc 0); `grep -cE '^#{1,6}[[:space:]]*SHONEN'` -> 0; counter `.ufo/state/kake.round` -> 17. Defects, status-neutral per step 1: (1) SHONEN heading absent; (2) the report cites no resolvable commit - all 9 of its hex tokens (4427b7f8 6a0c24b5 6ab49127 93ddca9a 9c28d29 b6f65899 e6bd071 f3d2ecd fb365e38) resolve as commits in no local odb (main + 6 child repos + kama-shokunin + the origin-work read-only tree; the gate flags each dead, e.g. `.ufo/reports/round-15/kake.md:48 fb365e38 (cat-file resolves fb365e38 in no local odb (main + 6 child repos + external read-only trees))`), so step-1 hash ancestry is unverifiable for this lane-round; (3) attribution defect: the report landed under the operator identity, not `kake-shokunin` (§Lane identity)."
   },
   {
    "round": 15,
@@ -1307,7 +1307,7 @@
    "lanes": {
     "aggregator": "ok"
    },
-   "notes": "supersedes #43 (round-9 closure-correction that re-confirmed the aggregator r9 in-flight row; true at its closed_at 2026-09-28T22:23:00-03:00 - the launch was 21:14:10 - and the mission terminated 14 min later, so the terminal status is written here). Log lines this status rests on: `2026-09-28T21:14:10-03:00 launch aggregator round=9 runId=shokunin-r9-aggregator-r1790640845`; `2026-09-28T22:37:20-03:00 complete aggregator round=9; respawning`. Status ok. Evidence: `.ufo/reports/round-9/aggregator.md` 18604 B, tracked, added by cc6d9d434cc664ac3ea0a20ea26bd7a31ff6b0e6 (aggregator-shokunin <aggregator@shokunin.local>, 2026-09-28T22:34:10-03:00, subject `round-9: aggregator lane report + ledger \u00a714.18 addendum (bounties blast radius: 4 surfaces beyond kasegi cite the absent root - main 29 occ/17 files, kengaku 26/13 incl PROVINCE.md:15,75, kotoba 12/4, kumitate 1/1; kagi 0 and kake 0 are real sweeps) + D-150`) = ancestor of main HEAD - a clean lane-identity landing, the only row in this draft with no attribution defect. `grep -cE '^#{1,6}[[:space:]]*SHONEN'` -> 1 (contract heading present). Step-1 citation sweep: 31 hex tokens, 27 resolve as commits (11 in the main odb and 16 in the child repos - kasegi 0f2dca0/b021dc9/b7180b0, kotoba 0f658ff/63ceba7, kake 4214101/4c9a985/a209441, kagi 4391b3b/4b8c018/baec94f, kumitate 7a099b2/93b0567/e0e5de1), all of them ancestors of their repo's HEAD; 4 tokens do not resolve - the runId number 1790640845, the md5 pin 643e7114dd5f9286cdf27a4a654bc800, and 68939d0c / 6ca2a358 which the gate flags dead (`cat-file resolves 68939d0c in no local odb (main + 6 child repos + external read-only trees)` at line 55; same at line 128 for 6ca2a358). Defect, status-neutral per step 1: 2 dead hash citations. Ledger duty satisfied on its face: the subject names the \u00a714.18 ledger addendum."
+   "notes": "supersedes #43 (round-9 closure-correction that re-confirmed the aggregator r9 in-flight row; true at its closed_at 2026-09-28T22:23:00-03:00 - the launch was 21:14:10 - and the mission terminated 14 min later, so the terminal status is written here). Log lines this status rests on: `2026-09-28T21:14:10-03:00 launch aggregator round=9 runId=shokunin-r9-aggregator-r1790640845`; `2026-09-28T22:37:20-03:00 complete aggregator round=9; respawning`. Status ok. Evidence: `.ufo/reports/round-9/aggregator.md` 18604 B, tracked, added by cc6d9d434cc664ac3ea0a20ea26bd7a31ff6b0e6 (aggregator-shokunin <aggregator@shokunin.local>, 2026-09-28T22:34:10-03:00, subject `round-9: aggregator lane report + ledger §14.18 addendum (bounties blast radius: 4 surfaces beyond kasegi cite the absent root - main 29 occ/17 files, kengaku 26/13 incl PROVINCE.md:15,75, kotoba 12/4, kumitate 1/1; kagi 0 and kake 0 are real sweeps) + D-150`) = ancestor of main HEAD - a clean lane-identity landing, the only row in this draft with no attribution defect. `grep -cE '^#{1,6}[[:space:]]*SHONEN'` -> 1 (contract heading present). Step-1 citation sweep: 31 hex tokens, 27 resolve as commits (11 in the main odb and 16 in the child repos - kasegi 0f2dca0/b021dc9/b7180b0, kotoba 0f658ff/63ceba7, kake 4214101/4c9a985/a209441, kagi 4391b3b/4b8c018/baec94f, kumitate 7a099b2/93b0567/e0e5de1), all of them ancestors of their repo's HEAD; 4 tokens do not resolve - the runId number 1790640845, the md5 pin 643e7114dd5f9286cdf27a4a654bc800, and 68939d0c / 6ca2a358 which the gate flags dead (`cat-file resolves 68939d0c in no local odb (main + 6 child repos + external read-only trees)` at line 55; same at line 128 for 6ca2a358). Defect, status-neutral per step 1: 2 dead hash citations. Ledger duty satisfied on its face: the subject names the §14.18 ledger addendum."
   },
   {
    "round": 1,
@@ -1317,7 +1317,7 @@
    "lanes": {
     "kama": "ok"
    },
-   "notes": "First entry naming kama (lane minted in probation; see the roster context at the end of this note). Log lines this status rests on: `2026-09-28T22:44:08-03:00 launch kama round=1 runId=shokunin-r1-kama-r1790646247`; `2026-09-29T00:19:33-03:00 complete kama round=1; respawning`; interim wrap lines `2026-09-28T23:39:57-03:00 wrap kama round=1 complete; NOT respawning (fleet-wrap)` (and 23:47:29, 23:55:00) show the round was already being closed at the fleet wrap before the relaunch respawned it. Status ok by the gate's completion-evidence predicate. Evidence: `.ufo/reports/round-1/kama.md` 10144 B, tracked, added by 74768ab7cb18f110733df70686c9c45a7ddec01b (Joao Pedro Veiga <jpveigao10@gmail.com>, 2026-09-28T23:15:55-03:00, subject `round-1: kama lane report \u2014 operability move (runnable endpoint-identity gate), drift proven live`) = ancestor of main HEAD; `grep -cE '^#{1,6}[[:space:]]*SHONEN' .ufo/reports/round-1/kama.md` -> 0 (SHONEN count 0). Step-1 commit citation verifies: the report's `Commit: c6199a2` resolves in kama-shokunin as commit c6199a2542440db77d69918599e5a378ee116337 (`git -C kama-shokunin log -1` -> subject `round-1: operability axis - runnable endpoint-identity gate for local model serving`, author kama-shokunin) and `git -C kama-shokunin merge-base --is-ancestor c6199a2 HEAD` -> rc 0 (it is HEAD; remote `origin https://github.com/VeigaPunk/kama-shokunin.git`). Of the report's 8 hex tokens, 3 resolve as commits - c6199a2 in kama-shokunin (its own round-work commit) plus 0522e67a and 5725fa7d3 in the read-only origin-work/ufo-fsd-alpha tree - all ancestors; the other 5 (101125103, 1788033391, 531a8627a5cbd9852b21d3b7c1480a92, 87eb156b7cc36e98f3cbfb37c00f5351, 932ea3dc365e066e740731cf6a939506) are md5 digests and a runId number, correctly not commits. Defects, status-neutral per step 1: (1) the SHONEN heading is absent though the body summarizes the checklist ('4 boxes checked with evidence, promotion not claimed'); (2) attribution defect: the report landed under the operator identity, not kama-shokunin. Counter `.ufo/state/kama.round` -> 2, and `.ufo/state/kama.mission` -> shokunin-r2-kama-r1790651973. ROSTER CONTEXT (evidence-backed): kama is NOT in `MANIFEST.json` `roster` (roster ids -> kasegi, kengaku, kake, kumitate, kotoba, kagi) and has no ROADMAP.md table row - per Lifecycle (d) the operator adds the roster + ROADMAP rows only after >=3 verified self-iteration rounds, so probation is recorded in `rounds[].notes` meanwhile. The mint's own record is rounds[36] (round 11.5, type `mint`, notes verbatim: `sibling-mint allowance landed in PROTOCOL.md Lifecycle; kama-shokunin minted in probation (local model serving & endpoint health - aggregator mint-eligible r4/r6/r7, demand instances: kagi r3 + kengaku r4 endpoint-drift 8080->34113). Roster row withheld until >=3 verified self-iteration rounds per the new clause; lane wired into watchdog (m_flash, axes operability+freshness).`). Driver evidence that the lane is live regardless of the roster: `scripts/shokunin-watchdog.sh:14` LANES includes kama, `:24` `[kama]=\"$SK/kama-shokunin\"`. roster/ROADMAP.md rows pending (operator-side per Lifecycle). GATE CONSEQUENCE: the committed gates' LANES constants omit kama, so their `_roster()` (LANES UNION roster ids) will report this row as `unknown-lane` until kama joins LANES or the roster - a gate/roster defect to route, not a defect of this row."
+   "notes": "First entry naming kama (lane minted in probation; see the roster context at the end of this note). Log lines this status rests on: `2026-09-28T22:44:08-03:00 launch kama round=1 runId=shokunin-r1-kama-r1790646247`; `2026-09-29T00:19:33-03:00 complete kama round=1; respawning`; interim wrap lines `2026-09-28T23:39:57-03:00 wrap kama round=1 complete; NOT respawning (fleet-wrap)` (and 23:47:29, 23:55:00) show the round was already being closed at the fleet wrap before the relaunch respawned it. Status ok by the gate's completion-evidence predicate. Evidence: `.ufo/reports/round-1/kama.md` 10144 B, tracked, added by 74768ab7cb18f110733df70686c9c45a7ddec01b (Joao Pedro Veiga <jpveigao10@gmail.com>, 2026-09-28T23:15:55-03:00, subject `round-1: kama lane report — operability move (runnable endpoint-identity gate), drift proven live`) = ancestor of main HEAD; `grep -cE '^#{1,6}[[:space:]]*SHONEN' .ufo/reports/round-1/kama.md` -> 0 (SHONEN count 0). Step-1 commit citation verifies: the report's `Commit: c6199a2` resolves in kama-shokunin as commit c6199a2542440db77d69918599e5a378ee116337 (`git -C kama-shokunin log -1` -> subject `round-1: operability axis - runnable endpoint-identity gate for local model serving`, author kama-shokunin) and `git -C kama-shokunin merge-base --is-ancestor c6199a2 HEAD` -> rc 0 (it is HEAD; remote `origin https://github.com/VeigaPunk/kama-shokunin.git`). Of the report's 8 hex tokens, 3 resolve as commits - c6199a2 in kama-shokunin (its own round-work commit) plus 0522e67a and 5725fa7d3 in the read-only origin-work/ufo-fsd-alpha tree - all ancestors; the other 5 (101125103, 1788033391, 531a8627a5cbd9852b21d3b7c1480a92, 87eb156b7cc36e98f3cbfb37c00f5351, 932ea3dc365e066e740731cf6a939506) are md5 digests and a runId number, correctly not commits. Defects, status-neutral per step 1: (1) the SHONEN heading is absent though the body summarizes the checklist ('4 boxes checked with evidence, promotion not claimed'); (2) attribution defect: the report landed under the operator identity, not kama-shokunin. Counter `.ufo/state/kama.round` -> 2, and `.ufo/state/kama.mission` -> shokunin-r2-kama-r1790651973. ROSTER CONTEXT (evidence-backed): kama is NOT in `MANIFEST.json` `roster` (roster ids -> kasegi, kengaku, kake, kumitate, kotoba, kagi) and has no ROADMAP.md table row - per Lifecycle (d) the operator adds the roster + ROADMAP rows only after >=3 verified self-iteration rounds, so probation is recorded in `rounds[].notes` meanwhile. The mint's own record is rounds[36] (round 11.5, type `mint`, notes verbatim: `sibling-mint allowance landed in PROTOCOL.md Lifecycle; kama-shokunin minted in probation (local model serving & endpoint health - aggregator mint-eligible r4/r6/r7, demand instances: kagi r3 + kengaku r4 endpoint-drift 8080->34113). Roster row withheld until >=3 verified self-iteration rounds per the new clause; lane wired into watchdog (m_flash, axes operability+freshness).`). Driver evidence that the lane is live regardless of the roster: `scripts/shokunin-watchdog.sh:14` LANES includes kama, `:24` `[kama]=\"$SK/kama-shokunin\"`. roster/ROADMAP.md rows pending (operator-side per Lifecycle). GATE CONSEQUENCE: the committed gates' LANES constants omit kama, so their `_roster()` (LANES UNION roster ids) will report this row as `unknown-lane` until kama joins LANES or the roster - a gate/roster defect to route, not a defect of this row."
   },
   {
    "round": 2,
@@ -1341,7 +1341,7 @@
     "kotoba": "ok",
     "kagi": "ok"
    },
-   "notes": "First round-16 entry; written because five round-16 lane-rounds terminated and none had a ledger row (the gate classified them `unrowed_terminated`, three of them `no-row`). Per-row evidence. kasegi r16 -> failed: `2026-09-28T22:14:45-03:00 launch kasegi round=16 runId=shokunin-r16-kasegi-r1790644483`; `2026-09-28T23:15:00-03:00 complete kasegi round=16; respawning`; `.ufo/reports/round-16/kasegi.md` 273 B, hex tokens 0, SHONEN 0, body first line `# kasegi round-16 closeout (marker)` => marker, `failed` per P:150-155; introducing commit 17c1fadfddc5ecbfa5ef362ef44d111792fa3e94 (fleet relaunch) = swept, attribution defect; counter `.ufo/state/kasegi.round` -> 18. kake r16 -> ok: `2026-09-28T22:59:14-03:00 launch kake round=16 runId=shokunin-r16-kake-r1790647152`; `2026-09-29T00:19:31-03:00 complete kake round=16; respawning`; `.ufo/reports/round-16/kake.md` 12005 B, tracked, added by c3b0c0e8b6cb2838dcf94cc43da0915669c0e9ab (Joao Pedro Veiga <jpveigao10@gmail.com>, 2026-09-28T23:44:26-03:00, subject `round-16: kake lane report (freshness 9->10 \u2014 standing-claim sweep + drift-detection instrument; caught plazir15-ghp live/source drift, PQ-14)`) = ancestor of main HEAD; SHONEN 0; audit defect: all 17 hex tokens (0de5eb9 101125103 15a5c47f 3059bf0 3eb1722c 4669cb2 6ab49126 6ab49127 8e162356 93ddca9a 9c28d29 bd02d10 c814526 d93d6a0c e6bd071 f3d2ecd fb365e38) resolve as commits in no local odb, so no lane round-work hash is verifiable; attribution defect (operator identity). kumitate r16 -> ok: `2026-09-28T22:51:41-03:00 launch kumitate round=16 runId=shokunin-r16-kumitate-r1790646699`; `2026-09-29T00:19:31-03:00 complete kumitate round=16; respawning`; `.ufo/reports/round-16/kumitate.md` 15354 B, tracked, added by 58466793983f57600b57ac07dd39ecc73bf5e092 (Joao Pedro Veiga, 2026-09-28T23:27:21-03:00, subject `round-16 kumitate report: coverage successors 6 and 6 (pre-registered terms machine-derived; proxy carries the layer split + V, origin read priced)`) = ancestor of main HEAD; SHONEN 1; step-1: 637d181 and db61be0 resolve as commits and are ancestors of kumitate-shokunin HEAD, 5725fa7d3 and 93798be12 resolve in the read-only origin-work/ufo-fsd-alpha tree; attribution defect (operator identity). kotoba r16 -> ok: `2026-09-28T23:14:20-03:00 launch kotoba round=16 runId=shokunin-r16-kotoba-r1790648057`; `2026-09-29T00:19:32-03:00 complete kotoba round=16; respawning`; `.ufo/reports/round-16/kotoba.md` 9700 B, tracked, added by 208db49cefad90e0a27eaf320330b2fbd3a1309c (Joao Pedro Veiga, 2026-09-28T23:38:21-03:00, subject `round-16 kotoba: operability 8.0 -> 8.5 (M35/M40 closed, trigger.citation_resolves executes trigger.11, 3 citation bases named; 10 L2 lanes, 6 defects fixed in-round, 4 ceilings named)`) = ancestor of main HEAD; SHONEN 0; step-1: b25f37a resolves as a commit and is an ancestor of kotoba-shokunin HEAD, 2ee8abae and 70f8b38e are dead (gate: `cat-file resolves 2ee8abae in no local odb ...` line 23); attribution defect (operator identity). kagi r16 -> ok: `2026-09-28T22:59:16-03:00 launch kagi round=16 runId=shokunin-r16-kagi-r1790647154`; `2026-09-29T00:19:33-03:00 complete kagi round=16; respawning`; `.ufo/reports/round-16/kagi.md` 15021 B, tracked, added by 17c1fadfddc5ecbfa5ef362ef44d111792fa3e94 (fleet relaunch) - swept, attribution defect; SHONEN 0; step-1: 587fda0 resolves as a commit and is an ancestor of kagi-shokunin HEAD. Counter check: all five counters stood at 16 when the round ran and have advanced to 17 by the relaunch's round-17 dispatches (`.ufo/state/kasegi.round` -> 18, kake 17, kumitate 17, kotoba 17, kagi 17), which is the termination corroboration for each row. No round-16 lane-round went undispatched that should be listed here: no protocol, aggregator or kengaku round-16 dispatch line exists."
+   "notes": "First round-16 entry; written because five round-16 lane-rounds terminated and none had a ledger row (the gate classified them `unrowed_terminated`, three of them `no-row`). Per-row evidence. kasegi r16 -> failed: `2026-09-28T22:14:45-03:00 launch kasegi round=16 runId=shokunin-r16-kasegi-r1790644483`; `2026-09-28T23:15:00-03:00 complete kasegi round=16; respawning`; `.ufo/reports/round-16/kasegi.md` 273 B, hex tokens 0, SHONEN 0, body first line `# kasegi round-16 closeout (marker)` => marker, `failed` per P:150-155; introducing commit 17c1fadfddc5ecbfa5ef362ef44d111792fa3e94 (fleet relaunch) = swept, attribution defect; counter `.ufo/state/kasegi.round` -> 18. kake r16 -> ok: `2026-09-28T22:59:14-03:00 launch kake round=16 runId=shokunin-r16-kake-r1790647152`; `2026-09-29T00:19:31-03:00 complete kake round=16; respawning`; `.ufo/reports/round-16/kake.md` 12005 B, tracked, added by c3b0c0e8b6cb2838dcf94cc43da0915669c0e9ab (Joao Pedro Veiga <jpveigao10@gmail.com>, 2026-09-28T23:44:26-03:00, subject `round-16: kake lane report (freshness 9->10 — standing-claim sweep + drift-detection instrument; caught plazir15-ghp live/source drift, PQ-14)`) = ancestor of main HEAD; SHONEN 0; audit defect: all 17 hex tokens (0de5eb9 101125103 15a5c47f 3059bf0 3eb1722c 4669cb2 6ab49126 6ab49127 8e162356 93ddca9a 9c28d29 bd02d10 c814526 d93d6a0c e6bd071 f3d2ecd fb365e38) resolve as commits in no local odb, so no lane round-work hash is verifiable; attribution defect (operator identity). kumitate r16 -> ok: `2026-09-28T22:51:41-03:00 launch kumitate round=16 runId=shokunin-r16-kumitate-r1790646699`; `2026-09-29T00:19:31-03:00 complete kumitate round=16; respawning`; `.ufo/reports/round-16/kumitate.md` 15354 B, tracked, added by 58466793983f57600b57ac07dd39ecc73bf5e092 (Joao Pedro Veiga, 2026-09-28T23:27:21-03:00, subject `round-16 kumitate report: coverage successors 6 and 6 (pre-registered terms machine-derived; proxy carries the layer split + V, origin read priced)`) = ancestor of main HEAD; SHONEN 1; step-1: 637d181 and db61be0 resolve as commits and are ancestors of kumitate-shokunin HEAD, 5725fa7d3 and 93798be12 resolve in the read-only origin-work/ufo-fsd-alpha tree; attribution defect (operator identity). kotoba r16 -> ok: `2026-09-28T23:14:20-03:00 launch kotoba round=16 runId=shokunin-r16-kotoba-r1790648057`; `2026-09-29T00:19:32-03:00 complete kotoba round=16; respawning`; `.ufo/reports/round-16/kotoba.md` 9700 B, tracked, added by 208db49cefad90e0a27eaf320330b2fbd3a1309c (Joao Pedro Veiga, 2026-09-28T23:38:21-03:00, subject `round-16 kotoba: operability 8.0 -> 8.5 (M35/M40 closed, trigger.citation_resolves executes trigger.11, 3 citation bases named; 10 L2 lanes, 6 defects fixed in-round, 4 ceilings named)`) = ancestor of main HEAD; SHONEN 0; step-1: b25f37a resolves as a commit and is an ancestor of kotoba-shokunin HEAD, 2ee8abae and 70f8b38e are dead (gate: `cat-file resolves 2ee8abae in no local odb ...` line 23); attribution defect (operator identity). kagi r16 -> ok: `2026-09-28T22:59:16-03:00 launch kagi round=16 runId=shokunin-r16-kagi-r1790647154`; `2026-09-29T00:19:33-03:00 complete kagi round=16; respawning`; `.ufo/reports/round-16/kagi.md` 15021 B, tracked, added by 17c1fadfddc5ecbfa5ef362ef44d111792fa3e94 (fleet relaunch) - swept, attribution defect; SHONEN 0; step-1: 587fda0 resolves as a commit and is an ancestor of kagi-shokunin HEAD. Counter check: all five counters stood at 16 when the round ran and have advanced to 17 by the relaunch's round-17 dispatches (`.ufo/state/kasegi.round` -> 18, kake 17, kumitate 17, kotoba 17, kagi 17), which is the termination corroboration for each row. No round-16 lane-round went undispatched that should be listed here: no protocol, aggregator or kengaku round-16 dispatch line exists."
   },
   {
    "round": 17,
@@ -1496,7 +1496,7 @@
    "minted": [
     "kaidoku"
    ],
-   "notes": "kaidoku-shokunin minted as shonen by operator directive; rationale and domain boundary in kaidoku-shokunin/MINT.md. probation: \u22653 verified rounds before roster row (PROTOCOL.md \u00a7Lifecycle). No roster row."
+   "notes": "kaidoku-shokunin minted as shonen by operator directive; rationale and domain boundary in kaidoku-shokunin/MINT.md. probation: ≥3 verified rounds before roster row (PROTOCOL.md §Lifecycle). No roster row."
   },
   {
    "round": 1,
@@ -1508,7 +1508,7 @@
     "quality": "improved",
     "discernment": "improved (audit queued in round 2)"
    },
-   "notes": "16-lane Devin swarm wave, parent-integrated. 14 knowledge entries, 9 admission criteria + 5 weak signals, PROVINCE/SKILL filled, e2e REA run on /usr/bin/jq. Report: .ufo/reports/round-1/kaidoku.md. Roster unchanged \u2014 probation continues (>=3 verified rounds).",
+   "notes": "16-lane Devin swarm wave, parent-integrated. 14 knowledge entries, 9 admission criteria + 5 weak signals, PROVINCE/SKILL filled, e2e REA run on /usr/bin/jq. Report: .ufo/reports/round-1/kaidoku.md. Roster unchanged — probation continues (>=3 verified rounds).",
    "commit": "kaidoku-shokunin@a43d442"
   },
   {
@@ -1534,7 +1534,7 @@
     "quality": "improved",
     "discernment": "verified (r2 audit: all verdicts upheld, 4 errata applied)"
    },
-   "notes": "16-lane wave: 4 audit + 12 expansion. 12 new held surfaces (runtime-obs CDP, EVM, PE-ARM64, synth carriers, node addons, APK inventory, AppImage, MCP session, verb families, typora). jq-shadow provenance resolved. SKILL.md complete \u2014 all SHONEN gates closed, eligible for roster. Report: .ufo/reports/round-3/kaidoku.md.",
+   "notes": "16-lane wave: 4 audit + 12 expansion. 12 new held surfaces (runtime-obs CDP, EVM, PE-ARM64, synth carriers, node addons, APK inventory, AppImage, MCP session, verb families, typora). jq-shadow provenance resolved. SKILL.md complete — all SHONEN gates closed, eligible for roster. Report: .ufo/reports/round-3/kaidoku.md.",
    "commit": "kaidoku-shokunin@8f89dbd"
   },
   {
@@ -1560,7 +1560,7 @@
     "quality": "improved",
     "discernment": "improved"
    },
-   "notes": "8-seat wave + named non-author verifier (84/84 commands replayed, receipts byte-identical). Depth ADMIT: r61's SoX 3,839-frame UNKNOWN resolved \u2014 act-autodetect byte-256 collision routes to ffmpeg bridge; valid17\u2192pcm_s24le, 8192+3328 packets drop mod-3 tails. Landed second impossible-header family pair_valid_{24,32}.wav; ledger 82\u219284, prior preserved verbatim. Sol: depth/coverage/calibration improved locally. Report: .ufo/reports/round-62/audio.md.",
+   "notes": "8-seat wave + named non-author verifier (84/84 commands replayed, receipts byte-identical). Depth ADMIT: r61's SoX 3,839-frame UNKNOWN resolved — act-autodetect byte-256 collision routes to ffmpeg bridge; valid17→pcm_s24le, 8192+3328 packets drop mod-3 tails. Landed second impossible-header family pair_valid_{24,32}.wav; ledger 82→84, prior preserved verbatim. Sol: depth/coverage/calibration improved locally. Report: .ufo/reports/round-62/audio.md.",
    "commit": "audio-shokunin@cbe763e"
   },
   {
@@ -1573,7 +1573,7 @@
     "quality": "improved",
     "discernment": "improved"
    },
-   "notes": "8-seat wave + named non-author verifier (independent 92/92, forgery checks all reject). Coverage ADMIT: tracked spontaneous-crash classification \u2014 OS.crash -6+ERROR-marker allowlist row, self-kill -9 row, meta row with 4 rejection discriminations + marker-presence clause (critic-driven integration correction). 89 prior rows field-identical. Sol: coverage improved locally; depth/calibration unchanged. Report: .ufo/reports/round-61/game-dev-2d.md.",
+   "notes": "8-seat wave + named non-author verifier (independent 92/92, forgery checks all reject). Coverage ADMIT: tracked spontaneous-crash classification — OS.crash -6+ERROR-marker allowlist row, self-kill -9 row, meta row with 4 rejection discriminations + marker-presence clause (critic-driven integration correction). 89 prior rows field-identical. Sol: coverage improved locally; depth/calibration unchanged. Report: .ufo/reports/round-61/game-dev-2d.md.",
    "commit": "game-dev-2d-shokunin@b95d180"
   },
   {
@@ -1586,7 +1586,7 @@
     "quality": "improved",
     "discernment": "improved"
    },
-   "notes": "8-seat wave + named non-author verifier (88/88 + 4 probes + Node 31/31, AGREE all claims). Depth ADMIT: distance_to_target resolved Euclidean to raw target_position \u2014 L-corridor detour 3.605551=sqrt(13) vs routed 4.130649; four independent geometries converge; reach-gate euclid(final,target)<=tdd boundary mapped. Battery 85\u219288, prior rows byte-identical. Sol: depth/coverage improved locally; calibration unchanged. Report: .ufo/reports/round-70/game-dev-3d.md.",
+   "notes": "8-seat wave + named non-author verifier (88/88 + 4 probes + Node 31/31, AGREE all claims). Depth ADMIT: distance_to_target resolved Euclidean to raw target_position — L-corridor detour 3.605551=sqrt(13) vs routed 4.130649; four independent geometries converge; reach-gate euclid(final,target)<=tdd boundary mapped. Battery 85→88, prior rows byte-identical. Sol: depth/coverage improved locally; calibration unchanged. Report: .ufo/reports/round-70/game-dev-3d.md.",
    "commit": "game-dev-3d-shokunin@2a0e46f"
   },
   {
@@ -1599,7 +1599,7 @@
     "quality": "improved",
     "discernment": "improved"
    },
-   "notes": "8-seat wave-2 + named non-author verifier (86/86 commands, receipts byte-identical). Depth ADMIT: SoX act autodetect predicate pinned exactly \u2014 len>=257 AND file[0:4]=='RIFF' AND file[256]==0x84 AND no earlier CHECK (preemptors gsrt@16, hcom@65+128); no-fallback ordering proven (act IS ffmpeg pseudo-handler; premature EOF = au reader on empty pipe). Tracked pair_route_{84,00}.wav + route probes; ledger 84->86. Sol: all three axes improved locally. Report: .ufo/reports/round-63/audio.md.",
+   "notes": "8-seat wave-2 + named non-author verifier (86/86 commands, receipts byte-identical). Depth ADMIT: SoX act autodetect predicate pinned exactly — len>=257 AND file[0:4]=='RIFF' AND file[256]==0x84 AND no earlier CHECK (preemptors gsrt@16, hcom@65+128); no-fallback ordering proven (act IS ffmpeg pseudo-handler; premature EOF = au reader on empty pipe). Tracked pair_route_{84,00}.wav + route probes; ledger 84->86. Sol: all three axes improved locally. Report: .ufo/reports/round-63/audio.md.",
    "commit": "audio-shokunin@1a97b0e"
   },
   {
@@ -1612,7 +1612,7 @@
     "quality": "improved",
     "discernment": "improved"
    },
-   "notes": "8-seat wave-2 + named non-author verifier (94/94 fresh replay, 92 prior rows 0-mismatch). Coverage ADMIT: pipe-EOF descendant-timeout surface tracked \u2014 communicate(timeout) is completion+pipe-drain not liveness (return=min(bound,max(child_exit,last_fd_EOF))); hold arm reparenting-gated post-exit write (critic forgery class closed), detach CASES control; meta 7 discriminations; runner internals byte-identical. Sol: coverage+depth improved locally; calibration unchanged. Report: .ufo/reports/round-62/game-dev-2d.md.",
+   "notes": "8-seat wave-2 + named non-author verifier (94/94 fresh replay, 92 prior rows 0-mismatch). Coverage ADMIT: pipe-EOF descendant-timeout surface tracked — communicate(timeout) is completion+pipe-drain not liveness (return=min(bound,max(child_exit,last_fd_EOF))); hold arm reparenting-gated post-exit write (critic forgery class closed), detach CASES control; meta 7 discriminations; runner internals byte-identical. Sol: coverage+depth improved locally; calibration unchanged. Report: .ufo/reports/round-62/game-dev-2d.md.",
    "commit": "game-dev-2d-shokunin@81a100c"
   },
   {
@@ -1638,7 +1638,7 @@
     "quality": "improved",
     "discernment": "improved"
    },
-   "notes": "8-seat wave-3 + named non-author verifier (92-cmd replay 44/48, 86/86+6/6 receipts byte-identical). Coverage ADMIT: valid-bits->codec step map established exactly \u2014 w=(V+7)>>3 -> {u8,s16le,s24le,s32le,NONE,s64le}, seven boundaries, envelope-gated (0xFFFE+cbSize>=22+PCM-GUID; critic falsification absorbed into claim scope); tracked pair_valid_{8,9,24,25,56,57}.wav; residue re-explained as alignment x width. Sol: coverage+depth improved locally, calibration unchanged. Report: .ufo/reports/round-64/audio.md.",
+   "notes": "8-seat wave-3 + named non-author verifier (92-cmd replay 44/48, 86/86+6/6 receipts byte-identical). Coverage ADMIT: valid-bits->codec step map established exactly — w=(V+7)>>3 -> {u8,s16le,s24le,s32le,NONE,s64le}, seven boundaries, envelope-gated (0xFFFE+cbSize>=22+PCM-GUID; critic falsification absorbed into claim scope); tracked pair_valid_{8,9,24,25,56,57}.wav; residue re-explained as alignment x width. Sol: coverage+depth improved locally, calibration unchanged. Report: .ufo/reports/round-64/audio.md.",
    "commit": "audio-shokunin@4c12342"
   },
   {
@@ -1651,7 +1651,7 @@
     "quality": "improved",
     "discernment": "improved"
    },
-   "notes": "8-seat wave-3 + named non-author verifier (96/96, fabricated-ppid forgery caught). Depth ADMIT: merged-stream signature-spoof boundary tracked \u2014 release arm = PASS-shaped forgery on post-death descendant write, hold arm rejects via error axis only; 10 discriminations incl. kernel-corroborated write_ppid + withheld-banner anchor (critic slips closed at integration); forgery depth-agnostic (boundary). Documented-accepting boundary, no policy change. Sol: depth+coverage improved locally, calibration unchanged. Report: .ufo/reports/round-63/game-dev-2d.md.",
+   "notes": "8-seat wave-3 + named non-author verifier (96/96, fabricated-ppid forgery caught). Depth ADMIT: merged-stream signature-spoof boundary tracked — release arm = PASS-shaped forgery on post-death descendant write, hold arm rejects via error axis only; 10 discriminations incl. kernel-corroborated write_ppid + withheld-banner anchor (critic slips closed at integration); forgery depth-agnostic (boundary). Documented-accepting boundary, no policy change. Sol: depth+coverage improved locally, calibration unchanged. Report: .ufo/reports/round-63/game-dev-2d.md.",
    "commit": "game-dev-2d-shokunin@de78edb"
   },
   {
@@ -1677,7 +1677,7 @@
     "quality": "improved",
     "discernment": "improved"
    },
-   "notes": "8-seat wave-4 + named non-author verifier (committed-state AGREE all five claims). Coverage ADMIT: preemptor-collision autodetect ordering measured \u2014 wve < gsrt < hcom < act < wav first-match-wins; tracked pair_preempt_{act,gsrt,hcom,both}.wav (sole signature-span diffs); ledger 92->96 (44/52), prior receipts byte-identical. Critic falsifications absorbed: detection!=accept (hcom decodes 9 samples), premature EOF non-attributing, fd-seekability conjunct (gsrt decodes on pipes where ffmpeg dies). Sol: coverage+depth improved locally, calibration unchanged. Report: .ufo/reports/round-65/audio.md.",
+   "notes": "8-seat wave-4 + named non-author verifier (committed-state AGREE all five claims). Coverage ADMIT: preemptor-collision autodetect ordering measured — wve < gsrt < hcom < act < wav first-match-wins; tracked pair_preempt_{act,gsrt,hcom,both}.wav (sole signature-span diffs); ledger 92->96 (44/52), prior receipts byte-identical. Critic falsifications absorbed: detection!=accept (hcom decodes 9 samples), premature EOF non-attributing, fd-seekability conjunct (gsrt decodes on pipes where ffmpeg dies). Sol: coverage+depth improved locally, calibration unchanged. Report: .ufo/reports/round-65/audio.md.",
    "commit": "audio-shokunin@1b0d276"
   },
   {
@@ -1690,7 +1690,7 @@
     "quality": "improved",
     "discernment": "improved"
    },
-   "notes": "8-seat wave-4 + named non-author verifier (claims 2/3/4a/4b AGREE; 1+5 DISAGREE-as-worded caught uncommitted runner diff \u2014 fixed by landing verified blob 66a18a00). Depth ADMIT: while-live signature gate discriminates forged post-death writes \u2014 poll()-gated read rejects forged markers (release+hold) while genuine accepted; 97/97, 12 discriminations, prior 96 rows stable. Primitive load-bearing (kill(0) false-accepts through zombies); live-window forge defeats gate by construction (bounded_claim). Sol: depth+coverage improved locally, calibration unchanged. Report: .ufo/reports/round-64/game-dev-2d.md.",
+   "notes": "8-seat wave-4 + named non-author verifier (claims 2/3/4a/4b AGREE; 1+5 DISAGREE-as-worded caught uncommitted runner diff — fixed by landing verified blob 66a18a00). Depth ADMIT: while-live signature gate discriminates forged post-death writes — poll()-gated read rejects forged markers (release+hold) while genuine accepted; 97/97, 12 discriminations, prior 96 rows stable. Primitive load-bearing (kill(0) false-accepts through zombies); live-window forge defeats gate by construction (bounded_claim). Sol: depth+coverage improved locally, calibration unchanged. Report: .ufo/reports/round-64/game-dev-2d.md.",
    "commit": "game-dev-2d-shokunin@a32920b+5265da6"
   },
   {
@@ -1703,7 +1703,7 @@
     "quality": "improved",
     "discernment": "improved"
    },
-   "notes": "8-seat wave-4 + named non-author verifier (127/127 + 4 probes + Node 31/31, 112x12 0-mismatch, 15/15 verbatim replay). Depth ADMIT: off-mesh link traversal gate system measured \u2014 companion LINK metadata (opt-OUT, default 7), three independent drop gates (layers/bidirectional/disabled incl. link-only-mask third mode), enter_cost structurally inert to 1e6 vs travel_cost live, symmetric pop-through across void. 15 tracked arms. Sol: depth+coverage improved locally, calibration unchanged. Report: .ufo/reports/round-73/game-dev-3d.md.",
+   "notes": "8-seat wave-4 + named non-author verifier (127/127 + 4 probes + Node 31/31, 112x12 0-mismatch, 15/15 verbatim replay). Depth ADMIT: off-mesh link traversal gate system measured — companion LINK metadata (opt-OUT, default 7), three independent drop gates (layers/bidirectional/disabled incl. link-only-mask third mode), enter_cost structurally inert to 1e6 vs travel_cost live, symmetric pop-through across void. 15 tracked arms. Sol: depth+coverage improved locally, calibration unchanged. Report: .ufo/reports/round-73/game-dev-3d.md.",
    "commit": "game-dev-3d-shokunin@b41fb33"
   },
   {
@@ -1713,7 +1713,7 @@
    "minted": [
     "tameshi"
    ],
-   "notes": "verification-fixture craft \u2014 demand: six independent gate reinventions across the fleet (kumitate/kagi/kaidoku/game-lanes); roster scan in tameshi-shokunin/MINT.md. Probation >=3 verified rounds; roster row withheld."
+   "notes": "verification-fixture craft — demand: six independent gate reinventions across the fleet (kumitate/kagi/kaidoku/game-lanes); roster scan in tameshi-shokunin/MINT.md. Probation >=3 verified rounds; roster row withheld."
   },
   {
    "round": 0,
@@ -1722,7 +1722,7 @@
    "minted": [
     "mado"
    ],
-   "notes": "desktop & compositor craft (Hyprland/waybar/walker) \u2014 demand: omarchy user skill + omarchy-usage-tray project; roster scan in mado-shokunin/MINT.md. Probation >=3 verified rounds; roster row withheld."
+   "notes": "desktop & compositor craft (Hyprland/waybar/walker) — demand: omarchy user skill + omarchy-usage-tray project; roster scan in mado-shokunin/MINT.md. Probation >=3 verified rounds; roster row withheld."
   },
   {
    "round": 0,
@@ -1731,7 +1731,7 @@
    "minted": [
     "tsukuroi"
    ],
-   "notes": "host operability & system repair \u2014 demand: nvidia GSP RE absorbed by kaidoku (r4u-01) + 2026-10-12 substrate restructure untriaged; roster scan in tsukuroi-shokunin/MINT.md. Probation >=3 verified rounds; roster row withheld."
+   "notes": "host operability & system repair — demand: nvidia GSP RE absorbed by kaidoku (r4u-01) + 2026-10-12 substrate restructure untriaged; roster scan in tsukuroi-shokunin/MINT.md. Probation >=3 verified rounds; roster row withheld."
   },
   {
    "round": 0,
@@ -1740,7 +1740,7 @@
    "minted": [
     "tabi"
    ],
-   "notes": "browser & web-interaction craft \u2014 demand: kimi-webbridge plugin + kaidoku r10/r11 CDP brushes; roster scan in tabi-shokunin/MINT.md. Probation >=3 verified rounds; roster row withheld."
+   "notes": "browser & web-interaction craft — demand: kimi-webbridge plugin + kaidoku r10/r11 CDP brushes; roster scan in tabi-shokunin/MINT.md. Probation >=3 verified rounds; roster row withheld."
   },
   {
    "round": 2,
@@ -1752,7 +1752,7 @@
     "operability": "improved",
     "calibration": "improved"
    },
-   "notes": "training r1 (lane round 2): first measured kill-rate \u2014 kimi-census 43-case suite vs 10 mutants, 8/10 killed, survivor class 'reported-but-unasserted surfaces'; mutation-bar bands distilled to SKILL; errata applied. Audits re-killed 3 mutants exactly as claimed."
+   "notes": "training r1 (lane round 2): first measured kill-rate — kimi-census 43-case suite vs 10 mutants, 8/10 killed, survivor class 'reported-but-unasserted surfaces'; mutation-bar bands distilled to SKILL; errata applied. Audits re-killed 3 mutants exactly as claimed."
   },
   {
    "round": 2,
@@ -1764,7 +1764,7 @@
     "operability": "improved",
     "calibration": "improved"
    },
-   "notes": "training r1 (lane round 2): live-verification layer \u2014 65 hyprctl claim->live pairs, 0 mismatch; 192/192 keybind reconciliation + dispatcher/rule semantics; errata applied. Read-only held."
+   "notes": "training r1 (lane round 2): live-verification layer — 65 hyprctl claim->live pairs, 0 mismatch; 192/192 keybind reconciliation + dispatcher/rule semantics; errata applied. Read-only held."
   },
   {
    "round": 2,
@@ -1801,7 +1801,7 @@
     "freshness": "improved",
     "calibration": "improved"
    },
-   "notes": "training r2 (lane round 3, probation-COMPLETE): 2nd kill-rate \u2014 kagi surface-census bash gate 8/10 killed (generality holds, narrower kill width, bash-only survivor class); tools/mutate-and-run.sh shipped (selftest verified); no-oral-context executor test passed. SHONEN 4/4."
+   "notes": "training r2 (lane round 3, probation-COMPLETE): 2nd kill-rate — kagi surface-census bash gate 8/10 killed (generality holds, narrower kill width, bash-only survivor class); tools/mutate-and-run.sh shipped (selftest verified); no-oral-context executor test passed. SHONEN 4/4."
   },
   {
    "round": 3,
@@ -1814,7 +1814,7 @@
     "freshness": "improved",
     "calibration": "improved"
    },
-   "notes": "training r2 (lane round 3): waybar/walker semantics (13 tables/89 rows); e2e config-health report; SKILL sufficiency upgrade + executor test. SHONEN 2/4 \u2014 2 boxes await named non-author verifiers (probation continues)."
+   "notes": "training r2 (lane round 3): waybar/walker semantics (13 tables/89 rows); e2e config-health report; SKILL sufficiency upgrade + executor test. SHONEN 2/4 — 2 boxes await named non-author verifiers (probation continues)."
   },
   {
    "round": 3,
@@ -1866,7 +1866,7 @@
     "freshness": "improved",
     "calibration": "improved"
    },
-   "notes": "training r3 (lane round 4): idle/lock plane; SHONEN box 3 CLOSED (VER-M3 reproduces); box 4 stays [~] (VER-M4: \u00a78 re-run owed). Probation continues. 32-lane wave (4 lanes rerouted alibaba->hyper after provider filter failure)."
+   "notes": "training r3 (lane round 4): idle/lock plane; SHONEN box 3 CLOSED (VER-M3 reproduces); box 4 stays [~] (VER-M4: §8 re-run owed). Probation continues. 32-lane wave (4 lanes rerouted alibaba->hyper after provider filter failure)."
   },
   {
    "round": 4,
@@ -1906,7 +1906,7 @@
     "calibration": "improved",
     "adjacency": "improved"
    },
-   "notes": "training r4 (lane r5): 3rd case 6/10 killed \u2014 matrix AMENDED per evidence; hardening-gap: tsukuroi's r5 hardening closed 1/4 of the survivors tameshi found; fleet-suite census."
+   "notes": "training r4 (lane r5): 3rd case 6/10 killed — matrix AMENDED per evidence; hardening-gap: tsukuroi's r5 hardening closed 1/4 of the survivors tameshi found; fleet-suite census."
   },
   {
    "round": 5,
@@ -1920,7 +1920,7 @@
     "calibration": "improved",
     "adjacency": "improved"
    },
-   "notes": "training r4 (lane r5): mado-verify.sh gate; walker-deep; SHONEN 4/4 \u2014 PROBATION COMPLETE (VER-M3+VER-M4B)."
+   "notes": "training r4 (lane r5): mado-verify.sh gate; walker-deep; SHONEN 4/4 — PROBATION COMPLETE (VER-M3+VER-M4B)."
   },
   {
    "round": 5,
@@ -1934,7 +1934,7 @@
     "calibration": "improved",
     "adjacency": "improved"
    },
-   "notes": "training r4 (lane r5): self-sweep 13/23 killed + 9 hardening cases; tameshi independent sweep: hardening incomplete (1/4) \u2014 gap recorded; timer-drift plane."
+   "notes": "training r4 (lane r5): self-sweep 13/23 killed + 9 hardening cases; tameshi independent sweep: hardening incomplete (1/4) — gap recorded; timer-drift plane."
   },
   {
    "round": 5,
@@ -1963,7 +1963,7 @@
     "adjacency": "improved",
     "coverage": "improved"
    },
-   "notes": "training r5 (lane r6): service round on mado's gate \u2014 co-extensive assertion/kill finding (in-surface 4/4, out-of-surface 0/6); own-tool meta-hardening + regression mode."
+   "notes": "training r5 (lane r6): service round on mado's gate — co-extensive assertion/kill finding (in-surface 4/4, out-of-surface 0/6); own-tool meta-hardening + regression mode."
   },
   {
    "round": 6,
@@ -2302,7 +2302,7 @@
    "minted": [
     "mori"
    ],
-   "notes": "fleet & host observability (\u68ee) \u2014 operator directive 2026-10-14 (12-hour program) + demand: the 2026-10-14 webbridge daemon OOM-death went undetected for hours; the parallel training fleet runs unsupervised waves; tsukuroi owns OS state but nobody owns fleet health. Roster scan (17 lanes, province sha256 per lane) in mori-shokunin/MINT.md + .ufo/scopes/shokunin-12h-20261014/mint-roster-scan.json: tsukuroi (OS planes) and kumitate (dispatch mechanism) refuse; complementary, not overlapping. Probation >=3 verified rounds; roster row withheld. Detection and report only, never remediation."
+   "notes": "fleet & host observability (森) — operator directive 2026-10-14 (12-hour program) + demand: the 2026-10-14 webbridge daemon OOM-death went undetected for hours; the parallel training fleet runs unsupervised waves; tsukuroi owns OS state but nobody owns fleet health. Roster scan (17 lanes, province sha256 per lane) in mori-shokunin/MINT.md + .ufo/scopes/shokunin-12h-20261014/mint-roster-scan.json: tsukuroi (OS planes) and kumitate (dispatch mechanism) refuse; complementary, not overlapping. Probation >=3 verified rounds; roster row withheld. Detection and report only, never remediation."
   },
   {
    "round": 0,
@@ -2311,7 +2311,7 @@
    "minted": [
     "chousa"
    ],
-   "notes": "deep-research method (\u8abf\u67fb) \u2014 operator directive 2026-10-14 + demand: ~/Projects/shokunin/research/deep-research-2026-09-28 pattern has no owning lane; kasegi does program-specific bounty research only, so the general source-research method is unowned. Roster scan in chousa-shokunin/MINT.md + .ufo/scopes/shokunin-12h-20261014/mint-roster-scan.json: kasegi (bounty-scoped), kengaku (model evaluation), kumitate (orchestration) refuse. Probation >=3 verified rounds; roster row withheld. Refuses external live-target research without operator approval."
+   "notes": "deep-research method (調査) — operator directive 2026-10-14 + demand: ~/Projects/shokunin/research/deep-research-2026-09-28 pattern has no owning lane; kasegi does program-specific bounty research only, so the general source-research method is unowned. Roster scan in chousa-shokunin/MINT.md + .ufo/scopes/shokunin-12h-20261014/mint-roster-scan.json: kasegi (bounty-scoped), kengaku (model evaluation), kumitate (orchestration) refuse. Probation >=3 verified rounds; roster row withheld. Refuses external live-target research without operator approval."
   },
   {
    "round": null,
@@ -2336,7 +2336,7 @@
    },
    "promotions": [],
    "minted": [],
-   "notes": "Operator 12-hour program, phase 1: six OMP-era lanes re-censused at their steered rounds (kagi 19, kake 19, kama 4, kasegi 20, kengaku 16, kotoba 19). Two 32-member waves: repair (Shokunin12hP1Repair20261014, 32/32 completed) then independent acceptance audit (Shokunin12hP1Audit20261014, 32/32). Lane work commits: kagi bad9088, kake de5d762, kama 0505b71, kasegi de625f9, kengaku 25819e2, kotoba b492cb2 (each under its lane identity, plus an audit-erratum commit). Repairs landed: kake freshness-sweep canonical-suspend vs explicit-bad semantics + hermetic selftest fixture; kotoba permission-comparator at_least->equal + coverage-map index row + tracked_files pin refresh; kama endpoint-identity line ref; kagi describe-dont-pin claim narrowed + round-18 hash attribution corrected; kasegi census regenerated. Named debt: 61 live dead-path citations (kengaku), 46 (kama), 22 (kasegi); substrate absence (kagi); PQ-2/PQ-14 (kake); kotoba 601-line budget overrun. One process defect: a nested labrat spawned by KengakuGateRepair against the leaf contract, its evidence ruled inadmissible, acknowledged and recorded; a project-local leaf-only executor card landed. No native judge input; swarm output is advisory evidence only. No roster rows added. Report: .ufo/reports/shokunin-12h-20261014-preflight.md (phase 1 section) \u2014 superseded by the final fleet report."
+   "notes": "Operator 12-hour program, phase 1: six OMP-era lanes re-censused at their steered rounds (kagi 19, kake 19, kama 4, kasegi 20, kengaku 16, kotoba 19). Two 32-member waves: repair (Shokunin12hP1Repair20261014, 32/32 completed) then independent acceptance audit (Shokunin12hP1Audit20261014, 32/32). Lane work commits: kagi bad9088, kake de5d762, kama 0505b71, kasegi de625f9, kengaku 25819e2, kotoba b492cb2 (each under its lane identity, plus an audit-erratum commit). Repairs landed: kake freshness-sweep canonical-suspend vs explicit-bad semantics + hermetic selftest fixture; kotoba permission-comparator at_least->equal + coverage-map index row + tracked_files pin refresh; kama endpoint-identity line ref; kagi describe-dont-pin claim narrowed + round-18 hash attribution corrected; kasegi census regenerated. Named debt: 61 live dead-path citations (kengaku), 46 (kama), 22 (kasegi); substrate absence (kagi); PQ-2/PQ-14 (kake); kotoba 601-line budget overrun. One process defect: a nested labrat spawned by KengakuGateRepair against the leaf contract, its evidence ruled inadmissible, acknowledged and recorded; a project-local leaf-only executor card landed. No native judge input; swarm output is advisory evidence only. No roster rows added. Report: .ufo/reports/shokunin-12h-20261014-preflight.md (phase 1 section) — superseded by the final fleet report."
   },
   {
    "round": 0,
@@ -2426,7 +2426,7 @@
    },
    "promotions": [],
    "minted": [],
-   "notes": "mori round 4 admitted WITH CORRECTION: verdict machine hardened \u2014 oracle matcher fixed (be0e28b8, 28/28 at pinned SHAs), fixture-signal channels closed (case-id sniffer 1-2/28; shape-invariance case catches path-shape sniffers), census :227 + per-round close-tracking fixed (af2d4e79, selftest 30). Correction: a run-ORDER sniffer still fakes 28/28 \u2014 channel named, round 5 = close it (case shuffle / run nonce). Report: mori-shokunin/.ufo/reports/round-4/mori-goalwave.md. No push."
+   "notes": "mori round 4 admitted WITH CORRECTION: verdict machine hardened — oracle matcher fixed (be0e28b8, 28/28 at pinned SHAs), fixture-signal channels closed (case-id sniffer 1-2/28; shape-invariance case catches path-shape sniffers), census :227 + per-round close-tracking fixed (af2d4e79, selftest 30). Correction: a run-ORDER sniffer still fakes 28/28 — channel named, round 5 = close it (case shuffle / run nonce). Report: mori-shokunin/.ufo/reports/round-4/mori-goalwave.md. No push."
   },
   {
    "round": 5,
@@ -2441,7 +2441,7 @@
    },
    "promotions": [],
    "minted": [],
-   "notes": "mori round 5 admitted WITH CORRECTION: run-order channel closed \u2014 oracle 7143ccc2 with seeded shuffle + triple-channel run nonce; four attack classes fail (0-10/28), honest 28/28 across shuffles with byte-identical grade tuples. Residuals named: R1 stdout backchannel via /proc/<ppid>/fd/1 (fix: header after case loop), R2 content-keyed forgery (fix: nonce in fixture content) \u2014 round 6 claim. Report: mori-shokunin/.ufo/reports/round-5/mori-goalwave.md. No push."
+   "notes": "mori round 5 admitted WITH CORRECTION: run-order channel closed — oracle 7143ccc2 with seeded shuffle + triple-channel run nonce; four attack classes fail (0-10/28), honest 28/28 across shuffles with byte-identical grade tuples. Residuals named: R1 stdout backchannel via /proc/<ppid>/fd/1 (fix: header after case loop), R2 content-keyed forgery (fix: nonce in fixture content) — round 6 claim. Report: mori-shokunin/.ufo/reports/round-5/mori-goalwave.md. No push."
   },
   {
    "round": 6,
@@ -2471,7 +2471,7 @@
    },
    "promotions": [],
    "minted": [],
-   "notes": "mori round 7 admitted: coverage pivot \u2014 census r4 (c7c3569b) closes the four r2 surface gaps (tmux relevance rule, memory PSI/fill/avail local-labeled, disk since-boot rates with instantaneous deferred, state_rounds values with lag/ahead info findings); selftest 30->45; oracle additively rebased (448f7723), 28/28 held; honest residuals named for r8. Report: mori-shokunin/.ufo/reports/round-7/mori-goalwave.md. No push."
+   "notes": "mori round 7 admitted: coverage pivot — census r4 (c7c3569b) closes the four r2 surface gaps (tmux relevance rule, memory PSI/fill/avail local-labeled, disk since-boot rates with instantaneous deferred, state_rounds values with lag/ahead info findings); selftest 30->45; oracle additively rebased (448f7723), 28/28 held; honest residuals named for r8. Report: mori-shokunin/.ufo/reports/round-7/mori-goalwave.md. No push."
   },
   {
    "round": 8,
@@ -2486,7 +2486,7 @@
    },
    "promotions": [],
    "minted": [],
-   "notes": "mori round 8 admitted WITH CORRECTION: census r5 (390ab9cd) disposes the four r7 residuals \u2014 write-rate deferral on measured +213ms (rule-adjudicated), tmux freshness probe, *.round reason codes, memory residuals; selftest 56; oracle held 28/28 with NO rebase (additive-only proven). Correction: selftest harness SIGPIPE/grep race (census.sh:1783/1809) measured 1/8-25% flake \u2014 round 9 top debt. Report: mori-shokunin/.ufo/reports/round-8/mori-goalwave.md. No push."
+   "notes": "mori round 8 admitted WITH CORRECTION: census r5 (390ab9cd) disposes the four r7 residuals — write-rate deferral on measured +213ms (rule-adjudicated), tmux freshness probe, *.round reason codes, memory residuals; selftest 56; oracle held 28/28 with NO rebase (additive-only proven). Correction: selftest harness SIGPIPE/grep race (census.sh:1783/1809) measured 1/8-25% flake — round 9 top debt. Report: mori-shokunin/.ufo/reports/round-8/mori-goalwave.md. No push."
   },
   {
    "round": 9,
@@ -2501,7 +2501,7 @@
    },
    "promotions": [],
    "minted": [],
-   "notes": "mori round 9 admitted: selftest flake eliminated \u2014 census 1c49238a, capture-then-grep at 6 sites, race measured 15/8000 (rc=141 SIGPIPE) -> 0/60000; batteries 20/20 + 20/20 loaded + parent 10/10; oracle frozen, 28/28; production byte-identical. Round 10 = the long-carried drift pin (behavioral baseline + --drift mode). Report: mori-shokunin/.ufo/reports/round-9/mori-goalwave.md. No push."
+   "notes": "mori round 9 admitted: selftest flake eliminated — census 1c49238a, capture-then-grep at 6 sites, race measured 15/8000 (rc=141 SIGPIPE) -> 0/60000; batteries 20/20 + 20/20 loaded + parent 10/10; oracle frozen, 28/28; production byte-identical. Round 10 = the long-carried drift pin (behavioral baseline + --drift mode). Report: mori-shokunin/.ufo/reports/round-9/mori-goalwave.md. No push."
   },
   {
    "round": 10,
@@ -2516,7 +2516,7 @@
    },
    "promotions": [],
    "minted": [],
-   "notes": "mori round 10 admitted: the drift pin landed \u2014 census d7710981 with --pin/--drift and a declared volatile contract; lane baseline committed (corpus/evidence/baseline-r10-20261015T2231Z.json), parent drift re-run clean; selftest 66; oracle frozen 28/28; default output byte-identical. Round 11 (capstone, operator-directed): full-lane deep audit on openai-codex/gpt-6.1-sol, 32 seats. Report: mori-shokunin/.ufo/reports/round-10/mori-goalwave.md. No push."
+   "notes": "mori round 10 admitted: the drift pin landed — census d7710981 with --pin/--drift and a declared volatile contract; lane baseline committed (corpus/evidence/baseline-r10-20261015T2231Z.json), parent drift re-run clean; selftest 66; oracle frozen 28/28; default output byte-identical. Round 11 (capstone, operator-directed): full-lane deep audit on openai-codex/gpt-6.1-sol, 32 seats. Report: mori-shokunin/.ufo/reports/round-10/mori-goalwave.md. No push."
   },
   {
    "round": 11,
@@ -2546,7 +2546,7 @@
    },
    "promotions": [],
    "minted": [],
-   "notes": "chousa round 2 admitted: verify-claims mode (gate 03a33244, selftest 30) \u2014 verbatim span verification under the corpus boundary; 17-claim fixture 17/17 CLEAN (13 sup/2 contra/2 unsup); r1 observable intact 3/3; zero network. Receipt identity remains OPEN (operator surface). Report: chousa-shokunin/.ufo/round-2/chousa-goalwave.md. No push."
+   "notes": "chousa round 2 admitted: verify-claims mode (gate 03a33244, selftest 30) — verbatim span verification under the corpus boundary; 17-claim fixture 17/17 CLEAN (13 sup/2 contra/2 unsup); r1 observable intact 3/3; zero network. Receipt identity remains OPEN (operator surface). Report: chousa-shokunin/.ufo/round-2/chousa-goalwave.md. No push."
   },
   {
    "round": 13,
@@ -2561,7 +2561,7 @@
    },
    "promotions": [],
    "minted": [],
-   "notes": "chousa round 3 admitted: verify-chain mode (gate 67daf85e, selftest 40) \u2014 hop citations resolve to real corpus anchors (source ids + heading/quote/line anchors, line-aware); fixture 17/22 CLEAN (5 exempt), broken control DRIFT; verify-claims 17/17 held. Host /tmp quota exhaustion (stale wave scratch) freed by parent (727M) mid-acceptance. Round 4 = anchor token-boundary hardening. Report: chousa-shokunin/.ufo/round-3/chousa-goalwave.md. No push."
+   "notes": "chousa round 3 admitted: verify-chain mode (gate 67daf85e, selftest 40) — hop citations resolve to real corpus anchors (source ids + heading/quote/line anchors, line-aware); fixture 17/22 CLEAN (5 exempt), broken control DRIFT; verify-claims 17/17 held. Host /tmp quota exhaustion (stale wave scratch) freed by parent (727M) mid-acceptance. Round 4 = anchor token-boundary hardening. Report: chousa-shokunin/.ufo/round-3/chousa-goalwave.md. No push."
   },
   {
    "round": 14,
@@ -2576,7 +2576,7 @@
    },
    "promotions": [],
    "minted": [],
-   "notes": "chousa round 4 admitted: token-boundary hardening (gate 6b83705b, selftest 44) \u2014 one shared matcher for claims spans + chain anchors; fixtures held (17/17, 17/22), broken DRIFT, r1 3/3; truncation games fail. Round 5 = verify-sweeps (rejections + negative sweeps verdict-bearing). Report: chousa-shokunin/.ufo/round-4/chousa-goalwave.md. No push."
+   "notes": "chousa round 4 admitted: token-boundary hardening (gate 6b83705b, selftest 44) — one shared matcher for claims spans + chain anchors; fixtures held (17/17, 17/22), broken DRIFT, r1 3/3; truncation games fail. Round 5 = verify-sweeps (rejections + negative sweeps verdict-bearing). Report: chousa-shokunin/.ufo/round-4/chousa-goalwave.md. No push."
   },
   {
    "round": 15,
@@ -2591,7 +2591,7 @@
    },
    "promotions": [],
    "minted": [],
-   "notes": "chousa round 5 admitted: verify-sweeps mode (gate 55adb92d, selftest 54) \u2014 rejections need reason+flip-condition; local sweeps re-run for emptiness with planted hits named; fixture CLEAN, broken DRIFT. All four r1 structural axes now verdict-bearing. Round 6 = verify-all composition + per-record verification state. Report: chousa-shokunin/.ufo/round-5/chousa-goalwave.md. No push."
+   "notes": "chousa round 5 admitted: verify-sweeps mode (gate 55adb92d, selftest 54) — rejections need reason+flip-condition; local sweeps re-run for emptiness with planted hits named; fixture CLEAN, broken DRIFT. All four r1 structural axes now verdict-bearing. Round 6 = verify-all composition + per-record verification state. Report: chousa-shokunin/.ufo/round-5/chousa-goalwave.md. No push."
   },
   {
    "round": 16,
@@ -2606,7 +2606,7 @@
    },
    "promotions": [],
    "minted": [],
-   "notes": "chousa round 6 admitted: verify-all composition (gate 0c3d51ed, selftest 64) \u2014 sections as fresh solo invocations (tally-equal by construction), composed CLEAN|DRIFT, absent!=drift, append-only --json manifest (corpus/evidence/verify-all-manifest.jsonl). Round 7 = binding integrity (cross-section references resolve fail-closed). Report: chousa-shokunin/.ufo/round-6/chousa-goalwave.md. No push."
+   "notes": "chousa round 6 admitted: verify-all composition (gate 0c3d51ed, selftest 64) — sections as fresh solo invocations (tally-equal by construction), composed CLEAN|DRIFT, absent!=drift, append-only --json manifest (corpus/evidence/verify-all-manifest.jsonl). Round 7 = binding integrity (cross-section references resolve fail-closed). Report: chousa-shokunin/.ufo/round-6/chousa-goalwave.md. No push."
   },
   {
    "round": 17,
@@ -2621,7 +2621,7 @@
    },
    "promotions": [],
    "minted": [],
-   "notes": "chousa round 7 admitted: verify-integrity (gate 3ba718bf, selftest 74) \u2014 cross-section references resolve fail-closed (REF_UNRESOLVED), fifth verify-all section; broken control DRIFT naming S9+C9. Round 8 = gate behavioral baseline (--pin/--drift). Report: chousa-shokunin/.ufo/round-7/chousa-goalwave.md. No push."
+   "notes": "chousa round 7 admitted: verify-integrity (gate 3ba718bf, selftest 74) — cross-section references resolve fail-closed (REF_UNRESOLVED), fifth verify-all section; broken control DRIFT naming S9+C9. Round 8 = gate behavioral baseline (--pin/--drift). Report: chousa-shokunin/.ufo/round-7/chousa-goalwave.md. No push."
   },
   {
    "round": 18,
@@ -2681,7 +2681,7 @@
    },
    "promotions": [],
    "minted": [],
-   "notes": "chousa round 11 admitted WITH CORRECTION: capstone audit (audit-r11.md, 24.5KB) \u2014 round 2's chain re-executed 15/15 supported at frozen bytes; today's battery green; gate unchanged. Corrections: seat-count claims unverifiable without rosters; SHONEN 0/4 hold. chousa rounds 2-11 COMPLETE (10 admitted) \u2014 GOAL COMPLETE: 20/20 rounds across mori + chousa. Operator debts: receipt identity, named-non-author SHONEN verification, promotion, push (no remotes). Report: chousa-shokunin/.ufo/round-11/chousa-goalwave.md. No push."
+   "notes": "chousa round 11 admitted WITH CORRECTION: capstone audit (audit-r11.md, 24.5KB) — round 2's chain re-executed 15/15 supported at frozen bytes; today's battery green; gate unchanged. Corrections: seat-count claims unverifiable without rosters; SHONEN 0/4 hold. chousa rounds 2-11 COMPLETE (10 admitted) — GOAL COMPLETE: 20/20 rounds across mori + chousa. Operator debts: receipt identity, named-non-author SHONEN verification, promotion, push (no remotes). Report: chousa-shokunin/.ufo/round-11/chousa-goalwave.md. No push."
   },
   {
    "round": 22,
@@ -2726,7 +2726,7 @@
    },
    "promotions": [],
    "minted": [],
-   "notes": "kengaku round 21 admitted: blind cascade-leg attribution instrument \u2014 frozen feature table (9f0244bb, freeze-before-trials, journal GT post-trials), 100% accuracy both shims (ds 20/20, glm 22/22 with zai/devin 429-fallback diversity), 11/11 ablations; novelty scoped as instrument+GT-protocol (crowded fingerprinting prior art cited). Scorer seat failed, covered by two independent scorings (named). r20 evidence backfill 96b8962 (git-add pathspec error repaired). r22 = untested legs coverage + battery-fold. Report: kengaku-shokunin/.ufo/rounds/round-21/kengaku.md."
+   "notes": "kengaku round 21 admitted: blind cascade-leg attribution instrument — frozen feature table (9f0244bb, freeze-before-trials, journal GT post-trials), 100% accuracy both shims (ds 20/20, glm 22/22 with zai/devin 429-fallback diversity), 11/11 ablations; novelty scoped as instrument+GT-protocol (crowded fingerprinting prior art cited). Scorer seat failed, covered by two independent scorings (named). r20 evidence backfill 96b8962 (git-add pathspec error repaired). r22 = untested legs coverage + battery-fold. Report: kengaku-shokunin/.ufo/rounds/round-21/kengaku.md."
   },
   {
    "round": 25,
@@ -2779,7 +2779,7 @@
     "coverage": "unchanged",
     "calibration": "unchanged"
    },
-   "notes": "luna-round-3 of 10: depth \u2014 family-scoped evidence-id identity. Removed the false universal 'evidence ids are f(content, path, params)' from both current-surface summary sites, adjudicated from primary sources both directions: r4 lineage (r2-evidence-bundle-schema:244-250) verifies the revenger-verifier family IS path-sensitive (same bytes, different paths -> different ids; jadx per-run; apktool deterministic); r5-01:83-85 + r9-02:146-169 verify analyze/inspect/analyze_function content+params-keyed, with r9-02's sharper results (same id across two paths; subject-only rewrite bit-identical to honest renamed-path request; module attribution unauthenticated in subject). SKILL.md Known limits + README Known gaps rewritten family-scoped with 3 corpus citations each (anti-substitution + pinned-byte guidance retained per adversarial guard); corpus/QUALITY.md criterion 15 added superseding 14 per never-rewrite governance (#14 retained as superseded row). Work commit 638fb211; records 0772d54. Measured: active universal hits 3 -> 0 (adopting seat C8's observable; C8's re-scope-to-calibration dissent recorded, parent ruled depth); command A unchanged (72/72, 9/9, coverage 10.0, depth 10.0); r9-02 cited mentions 3; historical retentions (lessons round-4, README lessons row, schema r4 erratum) verified unchanged. 64 seats one batch, corpus-textual (no live probes by design). Seat defects recorded: R2 misnamed report file; C4's final census command unpersisted (parent re-implemented + disclosed). SHONEN 4x[~]. No push. Report: kaidoku-shokunin/.ufo/reports/luna-round-3/kaidoku.md.",
+   "notes": "luna-round-3 of 10: depth — family-scoped evidence-id identity. Removed the false universal 'evidence ids are f(content, path, params)' from both current-surface summary sites, adjudicated from primary sources both directions: r4 lineage (r2-evidence-bundle-schema:244-250) verifies the revenger-verifier family IS path-sensitive (same bytes, different paths -> different ids; jadx per-run; apktool deterministic); r5-01:83-85 + r9-02:146-169 verify analyze/inspect/analyze_function content+params-keyed, with r9-02's sharper results (same id across two paths; subject-only rewrite bit-identical to honest renamed-path request; module attribution unauthenticated in subject). SKILL.md Known limits + README Known gaps rewritten family-scoped with 3 corpus citations each (anti-substitution + pinned-byte guidance retained per adversarial guard); corpus/QUALITY.md criterion 15 added superseding 14 per never-rewrite governance (#14 retained as superseded row). Work commit 638fb211; records 0772d54. Measured: active universal hits 3 -> 0 (adopting seat C8's observable; C8's re-scope-to-calibration dissent recorded, parent ruled depth); command A unchanged (72/72, 9/9, coverage 10.0, depth 10.0); r9-02 cited mentions 3; historical retentions (lessons round-4, README lessons row, schema r4 erratum) verified unchanged. 64 seats one batch, corpus-textual (no live probes by design). Seat defects recorded: R2 misnamed report file; C4's final census command unpersisted (parent re-implemented + disclosed). SHONEN 4x[~]. No push. Report: kaidoku-shokunin/.ufo/reports/luna-round-3/kaidoku.md.",
    "commit": "kaidoku-shokunin@638fb211+0772d54"
   },
   {
@@ -2788,12 +2788,12 @@
    "type": "train",
    "lane": "kaidoku",
    "verdicts": {
-    "freshness": "improved (fleet axis, unowned proxy \u2014 owned coverage/depth/calibration unchanged, measured)",
+    "freshness": "improved (fleet axis, unowned proxy — owned coverage/depth/calibration unchanged, measured)",
     "coverage": "unchanged",
     "depth": "unchanged",
     "calibration": "unchanged"
    },
-   "notes": "luna-round-4 of 10: freshness debt-drain \u2014 19 named drift findings from rounds 1-3 re-verified against knowledge files; 14 repaired in corpus/README.md (REA-service row clarification keeping verified 3/7, archives appimage/apk precision, Firmware row split + new Frontier prerequisites row, r5-01 timeout qualifier, r5-02 3/3-probed-of-286, r9-02 status scope, r12-01 per-leg fidelity, typora/libsignal/r4-15 Knowledge rows, lessons pointer SKILL.md:81-195, Known-gaps skill line as dated R4 record); 2 adjudicated NO-CHANGE (asar row \u2014 round-1 V01 finding refuted by V01a; crash row \u2014 D01 aggregate supported); work commit 6a71cd5 (amended pre-records: 8 wording tweaks each reviewed MORE faithful, to satisfy the wave's own census matchers). Measured: command A unchanged 72/72 + 9/9 + 10.0/10.0; token set 72/72; wave census 14/19 PASS + 5 ADJUDICATED-with-cause (F01 census encodes removing the verified 3/7; F02 encodes the refuted asar claim; F05 targets unflagged content \u2014 the real universal is the knowledge file's historical erratum = file debt; F16 replacement matcher encodes one wording, stale-pass verified; F18 z=1 structurally unsatisfiable with the rea-skill-contract token present). Wave 64 seats (58 + 6 backfill \u2014 SECOND parent short-count, repaired, root cause named). Recording ruling: freshness = fleet axis improvement, no owned proxy re-scored (B6's unscored-disposition shape recorded). SHONEN 4x[~]. No push. Report: kaidoku-shokunin/.ufo/reports/luna-round-4/kaidoku.md.",
+   "notes": "luna-round-4 of 10: freshness debt-drain — 19 named drift findings from rounds 1-3 re-verified against knowledge files; 14 repaired in corpus/README.md (REA-service row clarification keeping verified 3/7, archives appimage/apk precision, Firmware row split + new Frontier prerequisites row, r5-01 timeout qualifier, r5-02 3/3-probed-of-286, r9-02 status scope, r12-01 per-leg fidelity, typora/libsignal/r4-15 Knowledge rows, lessons pointer SKILL.md:81-195, Known-gaps skill line as dated R4 record); 2 adjudicated NO-CHANGE (asar row — round-1 V01 finding refuted by V01a; crash row — D01 aggregate supported); work commit 6a71cd5 (amended pre-records: 8 wording tweaks each reviewed MORE faithful, to satisfy the wave's own census matchers). Measured: command A unchanged 72/72 + 9/9 + 10.0/10.0; token set 72/72; wave census 14/19 PASS + 5 ADJUDICATED-with-cause (F01 census encodes removing the verified 3/7; F02 encodes the refuted asar claim; F05 targets unflagged content — the real universal is the knowledge file's historical erratum = file debt; F16 replacement matcher encodes one wording, stale-pass verified; F18 z=1 structurally unsatisfiable with the rea-skill-contract token present). Wave 64 seats (58 + 6 backfill — SECOND parent short-count, repaired, root cause named). Recording ruling: freshness = fleet axis improvement, no owned proxy re-scored (B6's unscored-disposition shape recorded). SHONEN 4x[~]. No push. Report: kaidoku-shokunin/.ufo/reports/luna-round-4/kaidoku.md.",
    "commit": "kaidoku-shokunin@6a71cd5+cfc84c2"
   },
   {
@@ -2802,12 +2802,12 @@
    "type": "train",
    "lane": "kaidoku",
    "verdicts": {
-    "freshness": "improved (fleet axis, unowned proxy \u2014 owned coverage/depth/calibration unchanged, measured)",
+    "freshness": "improved (fleet axis, unowned proxy — owned coverage/depth/calibration unchanged, measured)",
     "coverage": "unchanged",
     "depth": "unchanged",
     "calibration": "unchanged"
    },
-   "notes": "luna-round-5 of 10: freshness, FIRST 128-seat two-lane wave under operator contract 2026-10-16 (64 luna + 64 deepseek-v4.1-flash; two back-to-back batched dispatches). Seven debt items dispositioned: 5 append-only knowledge errata (r1-asar roles per r2/r3; r4u-01 .fwimage decimals 29,367,752/84,258,816 unanimous across 30 lane readings with slip reconstruction 'b'->'7'; r9-02 status taxonomy \u2014 inferred not evidenced in any recorded run, unreachability not established; r5-02 '~283' mislabels call count \u2014 exact form 281 calls + 2 jmp; r12-01 L197 adjudicated existing-erratum + pointer append) + PROVINCE request-byte pin (same-physical-line, r9-02:146-169 authority) + revenger scope note (map is live state, never re-bases sibling frozen receipts) + README :131 four-nit dispositions + :163 held-vs-frontier reconciliation. Work commit 7125dd4 (one pre-records amend: Runtime-obs opener rename to clear the census opener-detector). Measured: wave census 6/7 PASS + SIZES ADJUDICATED (raw comma token vs normalized text, structurally unsatisfiable; arithmetic = 30 readings + inline recheck); TOKENSET 72/72; MAP-ROWS byte-identical; command A unchanged. THIRD parent short-count (lane B 58/64, backfilled; counting self-check now mandatory). SHONEN 4x[~]. No push. Report: kaidoku-shokunin/.ufo/reports/luna-round-5/kaidoku.md.",
+   "notes": "luna-round-5 of 10: freshness, FIRST 128-seat two-lane wave under operator contract 2026-10-16 (64 luna + 64 deepseek-v4.1-flash; two back-to-back batched dispatches). Seven debt items dispositioned: 5 append-only knowledge errata (r1-asar roles per r2/r3; r4u-01 .fwimage decimals 29,367,752/84,258,816 unanimous across 30 lane readings with slip reconstruction 'b'->'7'; r9-02 status taxonomy — inferred not evidenced in any recorded run, unreachability not established; r5-02 '~283' mislabels call count — exact form 281 calls + 2 jmp; r12-01 L197 adjudicated existing-erratum + pointer append) + PROVINCE request-byte pin (same-physical-line, r9-02:146-169 authority) + revenger scope note (map is live state, never re-bases sibling frozen receipts) + README :131 four-nit dispositions + :163 held-vs-frontier reconciliation. Work commit 7125dd4 (one pre-records amend: Runtime-obs opener rename to clear the census opener-detector). Measured: wave census 6/7 PASS + SIZES ADJUDICATED (raw comma token vs normalized text, structurally unsatisfiable; arithmetic = 30 readings + inline recheck); TOKENSET 72/72; MAP-ROWS byte-identical; command A unchanged. THIRD parent short-count (lane B 58/64, backfilled; counting self-check now mandatory). SHONEN 4x[~]. No push. Report: kaidoku-shokunin/.ufo/reports/luna-round-5/kaidoku.md.",
    "commit": "kaidoku-shokunin@7125dd4+f0e8cde"
   },
   {
@@ -2816,12 +2816,12 @@
    "type": "train",
    "lane": "kaidoku",
    "verdicts": {
-    "operability": "improved (fleet axis, unowned proxy \u2014 owned coverage/depth/calibration unchanged, measured)",
+    "operability": "improved (fleet axis, unowned proxy — owned coverage/depth/calibration unchanged, measured)",
     "coverage": "unchanged",
     "depth": "unchanged",
     "calibration": "unchanged"
    },
-   "notes": "luna-round-6 of 10: operability \u2014 FIRST pre-registered live battery (predictions frozen parent-side pre-dispatch). 10 legs on live REA 6.5.0 (version exact, tools/list 207, inspect_go_binary/rust_binary/electron_fuses/sqlite_database/search_bytes/objdump RESULT-class on real host carriers, identify_flutter_build + wasm-route TYPED-REFUSAL-class). Two-lane execution: lane A receipts + lane B independent re-runs, 20 hashed receipts committed TRACKED at bc91424 (durability deviation disclosed \u2014 round-5 r12-01 had to attribute a numeral because /tmp receipts were gone). Scores: lane A 10/10 (AC1), lane B 10/10 (BC1 independent digest-verified recount), cross-lane class agreement 10/10 (byte-identical L1/L2/L7/L10), frozen census PASS twice byte-identical (AC3/BC4), zero config drift / zero availability-to-holding upgrades (BC3/AC4), command A + tokens unchanged (AC8). Defects recorded: FOURTH parent short-count (lane A 53/64) + interrupted re-dispatch double-count -> 127 distinct seats of 128 (BC6 wire audit); lane-A manifest L1-only (RV5); BB7/BB8 receipts overwritten by compare seats (custody, current bytes hash-match); L10 route detour (inspect_wasm_artifact refused, frozen harmony fallback never ran, class preserved); ~1.2GB /tmp litter left (shared /tmp). SHONEN 4x[~] (cross-lane replay seats still lane-dispatched; named non-author verifier bar stands). No push. Report: kaidoku-shokunin/.ufo/reports/luna-round-6/kaidoku.md.",
+   "notes": "luna-round-6 of 10: operability — FIRST pre-registered live battery (predictions frozen parent-side pre-dispatch). 10 legs on live REA 6.5.0 (version exact, tools/list 207, inspect_go_binary/rust_binary/electron_fuses/sqlite_database/search_bytes/objdump RESULT-class on real host carriers, identify_flutter_build + wasm-route TYPED-REFUSAL-class). Two-lane execution: lane A receipts + lane B independent re-runs, 20 hashed receipts committed TRACKED at bc91424 (durability deviation disclosed — round-5 r12-01 had to attribute a numeral because /tmp receipts were gone). Scores: lane A 10/10 (AC1), lane B 10/10 (BC1 independent digest-verified recount), cross-lane class agreement 10/10 (byte-identical L1/L2/L7/L10), frozen census PASS twice byte-identical (AC3/BC4), zero config drift / zero availability-to-holding upgrades (BC3/AC4), command A + tokens unchanged (AC8). Defects recorded: FOURTH parent short-count (lane A 53/64) + interrupted re-dispatch double-count -> 127 distinct seats of 128 (BC6 wire audit); lane-A manifest L1-only (RV5); BB7/BB8 receipts overwritten by compare seats (custody, current bytes hash-match); L10 route detour (inspect_wasm_artifact refused, frozen harmony fallback never ran, class preserved); ~1.2GB /tmp litter left (shared /tmp). SHONEN 4x[~] (cross-lane replay seats still lane-dispatched; named non-author verifier bar stands). No push. Report: kaidoku-shokunin/.ufo/reports/luna-round-6/kaidoku.md.",
    "commit": "kaidoku-shokunin@bc91424+411175e"
   },
   {
@@ -2834,7 +2834,7 @@
     "depth": "unchanged",
     "calibration": "unchanged"
    },
-   "notes": "luna-round-7 of 10: coverage \u2014 six 6.5.0-verb knowledge entries from luna-round-6's cross-lane receipts (inspect_go_binary/rust_binary/electron_fuses/sqlite_database/search_bytes/with_objdump), denominator 72 -> 78. Two-lane wave 128 seats (64 luna + 59+5 deepseek). Instrument catch: underscore verb stems break command A's map-token regex (72/9.23); hyphenated slugs land 78/78 (three independent simulations). Wave rulings folded in: metadata fields (source:/verified-at:/recheck:) on all six; entry 4 lane-B-only (lane A synthetic fixture excluded per QUALITY-12); entry 2 carriers distinct; entry 3 provider-exact fuse names + resource bounds kept; entry 5 limit=100 corrected to tool default. Work commits 1cfd2a3 + 3395b6d; records 6e2ee8f. Measured at 3395b6d: command A 78/78, 9/9, 10.0/10.0; prior-72 byte-identical. Seat misreads recorded (E4V/S1 'untracked receipts' \u2014 false; Q1-Q6 graded absence). SHONEN 4x[~]. No push. Report: kaidoku-shokunin/.ufo/reports/luna-round-7/kaidoku.md.",
+   "notes": "luna-round-7 of 10: coverage — six 6.5.0-verb knowledge entries from luna-round-6's cross-lane receipts (inspect_go_binary/rust_binary/electron_fuses/sqlite_database/search_bytes/with_objdump), denominator 72 -> 78. Two-lane wave 128 seats (64 luna + 59+5 deepseek). Instrument catch: underscore verb stems break command A's map-token regex (72/9.23); hyphenated slugs land 78/78 (three independent simulations). Wave rulings folded in: metadata fields (source:/verified-at:/recheck:) on all six; entry 4 lane-B-only (lane A synthetic fixture excluded per QUALITY-12); entry 2 carriers distinct; entry 3 provider-exact fuse names + resource bounds kept; entry 5 limit=100 corrected to tool default. Work commits 1cfd2a3 + 3395b6d; records 6e2ee8f. Measured at 3395b6d: command A 78/78, 9/9, 10.0/10.0; prior-72 byte-identical. Seat misreads recorded (E4V/S1 'untracked receipts' — false; Q1-Q6 graded absence). SHONEN 4x[~]. No push. Report: kaidoku-shokunin/.ufo/reports/luna-round-7/kaidoku.md.",
    "commit": "kaidoku-shokunin@1cfd2a3+3395b6d+6e2ee8f"
   },
   {
@@ -2843,12 +2843,12 @@
    "type": "train",
    "lane": "kaidoku",
    "verdicts": {
-    "operability": "improved (fleet axis, unowned proxy \u2014 owned coverage/depth/calibration unchanged, measured)",
+    "operability": "improved (fleet axis, unowned proxy — owned coverage/depth/calibration unchanged, measured)",
     "coverage": "unchanged (denominator 78 -> 79 recorded as side-effect)",
     "depth": "unchanged",
     "calibration": "unchanged"
    },
-   "notes": "luna-round-8 of 10: operability \u2014 REA 6.4.0 symmetry battery (mirror of round 6). Frozen pre-dispatch predictions; 10 legs: version exact 6.4.0; tools/list 170; six 6.5-only verbs each TYPED-REFUSAL (-32602) on real carriers; six exact absences; jq control RESULT (inspect_binary_layout; literal analyze absent in 6.4.0, fallback recorded). Scored 10/10 (CA6 census + PB0 independent re-verification + VB7 uniform -32602 taxonomy). Two-lane wave 128. Landed 18dc397d: consolidated l8-01-6p4-symmetry-battery entry (denominator 78->79, command A re-measured 79/79 + 9/9 + 10.0/10.0) + round-8 receipts committed TRACKED. Defects adjudicated (ZB2): leg-3 display-hash self-repaired in-wave; leg-10 append-only supersession (head-hash preserved, MANIFEST annotated); 11 stale early-snapshot verdicts superseded; zero config drift vs round-6 baseline (no round-8 pre-pair, carried debt); six-of-37 scope in entry limitations. SHONEN 4x[~]. No push. Report: kaidoku-shokunin/.ufo/reports/luna-round-8/kaidoku.md.",
+   "notes": "luna-round-8 of 10: operability — REA 6.4.0 symmetry battery (mirror of round 6). Frozen pre-dispatch predictions; 10 legs: version exact 6.4.0; tools/list 170; six 6.5-only verbs each TYPED-REFUSAL (-32602) on real carriers; six exact absences; jq control RESULT (inspect_binary_layout; literal analyze absent in 6.4.0, fallback recorded). Scored 10/10 (CA6 census + PB0 independent re-verification + VB7 uniform -32602 taxonomy). Two-lane wave 128. Landed 18dc397d: consolidated l8-01-6p4-symmetry-battery entry (denominator 78->79, command A re-measured 79/79 + 9/9 + 10.0/10.0) + round-8 receipts committed TRACKED. Defects adjudicated (ZB2): leg-3 display-hash self-repaired in-wave; leg-10 append-only supersession (head-hash preserved, MANIFEST annotated); 11 stale early-snapshot verdicts superseded; zero config drift vs round-6 baseline (no round-8 pre-pair, carried debt); six-of-37 scope in entry limitations. SHONEN 4x[~]. No push. Report: kaidoku-shokunin/.ufo/reports/luna-round-8/kaidoku.md.",
    "commit": "kaidoku-shokunin@18dc397d+a280e07"
   },
   {
@@ -2857,12 +2857,12 @@
    "type": "train",
    "lane": "kaidoku",
    "verdicts": {
-    "freshness": "improved (fleet axis, unowned proxy \u2014 owned coverage/depth/calibration unchanged, measured)",
+    "freshness": "improved (fleet axis, unowned proxy — owned coverage/depth/calibration unchanged, measured)",
     "coverage": "unchanged",
     "depth": "unchanged",
     "calibration": "unchanged"
    },
-   "notes": "luna-round-9 of 10: freshness \u2014 carried-spill queue, four items dispositioned. Landed 40162fc (append-only): r4-16 L197 cross-reference erratum (two-site summary marked historical, four-site account + attributed '7 values'); jq-shadow safety-verdict scope qualification (all four 'benign' loci named, scoped to byte-identity + provenance, PROVINCE.md:114-116 non-endorsement). Documented: census instrument limits (round-5 SIZES comma-token; round-4 F18 replacement-encoding; round-5 opener-detector) as ADJUDICATED-not-PASS with retest trigger; /tmp audit found NO current lane instruction/gate/recheck dependent on /tmp persistence (archival verify-recipe debt labeled; litter operator-owned, zero deletions). Measured at 40162fc: command A 79/79 + 9/9 + 10.0/10.0; both appends prefix-identical; PROVINCE byte-identical. Two-lane wave 128. Carried debt: r3-jq-provenance bleed (:60,:136); stale :107-109 pointers (SCORECARD.md:79 frozen table; lessons round-1:152-153). SHONEN 4x[~]. No push. Report: kaidoku-shokunin/.ufo/reports/luna-round-9/kaidoku.md.",
+   "notes": "luna-round-9 of 10: freshness — carried-spill queue, four items dispositioned. Landed 40162fc (append-only): r4-16 L197 cross-reference erratum (two-site summary marked historical, four-site account + attributed '7 values'); jq-shadow safety-verdict scope qualification (all four 'benign' loci named, scoped to byte-identity + provenance, PROVINCE.md:114-116 non-endorsement). Documented: census instrument limits (round-5 SIZES comma-token; round-4 F18 replacement-encoding; round-5 opener-detector) as ADJUDICATED-not-PASS with retest trigger; /tmp audit found NO current lane instruction/gate/recheck dependent on /tmp persistence (archival verify-recipe debt labeled; litter operator-owned, zero deletions). Measured at 40162fc: command A 79/79 + 9/9 + 10.0/10.0; both appends prefix-identical; PROVINCE byte-identical. Two-lane wave 128. Carried debt: r3-jq-provenance bleed (:60,:136); stale :107-109 pointers (SCORECARD.md:79 frozen table; lessons round-1:152-153). SHONEN 4x[~]. No push. Report: kaidoku-shokunin/.ufo/reports/luna-round-9/kaidoku.md.",
    "commit": "kaidoku-shokunin@40162fc+6e83a20"
   },
   {
@@ -2877,7 +2877,7 @@
     "freshness": "unchanged",
     "operability": "unchanged"
    },
-   "notes": "luna-round-10 of 10 (ARC COMPLETE): calibration \u2014 the closeout reconciled the arc's self-assessment against its own evidence. Two-lane audit wave: rounds 1-9 verified end-to-end (closure rows, reports, lane-identity commits 46/46, command-A replays, admissions), debt ledger reconciled, SHONEN finally assessed, arc censused. Self-found defect classes dispositioned: (1) four SCORECARD living-row rewrites in records commits (rounds 2/3/4/7, numstat-confirmed; disclosed, not retro-fixed); (2) ten prose-decorated MANIFEST verdict values (integrator-owned, report-noted); (3) five parent dispatch short-counts (round 7 named) + round 6 at 127/128 distinct seats, structural, carried visibly; (4) SHONEN 4x[~] arc-wide (fleet verifier bar); (5) outbound debt routed (Tameshi stale universal id-formula; tsukuroi ADJ-06). Declarations per operator amendment 84bade0 (applied mid-closeout by conformance commit c343939): two Capabilities rows (rounds 6/8 battery forms), saturation line 10.0 on finite proxies + stagnation window N=10. Arc final: 10 rounds, verdicts 10 improved / 30 unchanged / 0 harmed; knowledge 72->79; 43 tracked receipt artifacts; 19 lane commits; zero sibling writes; zero pushes. Measured: command A 79/79 + 9/9 + 10.0/10.0 at c343939 and 40162fc. Records REC. Report: kaidoku-shokunin/.ufo/reports/luna-round-10/kaidoku.md. GOAL COMPLETE.",
+   "notes": "luna-round-10 of 10 (ARC COMPLETE): calibration — the closeout reconciled the arc's self-assessment against its own evidence. Two-lane audit wave: rounds 1-9 verified end-to-end (closure rows, reports, lane-identity commits 46/46, command-A replays, admissions), debt ledger reconciled, SHONEN finally assessed, arc censused. Self-found defect classes dispositioned: (1) four SCORECARD living-row rewrites in records commits (rounds 2/3/4/7, numstat-confirmed; disclosed, not retro-fixed); (2) ten prose-decorated MANIFEST verdict values (integrator-owned, report-noted); (3) five parent dispatch short-counts (round 7 named) + round 6 at 127/128 distinct seats, structural, carried visibly; (4) SHONEN 4x[~] arc-wide (fleet verifier bar); (5) outbound debt routed (Tameshi stale universal id-formula; tsukuroi ADJ-06). Declarations per operator amendment 84bade0 (applied mid-closeout by conformance commit c343939): two Capabilities rows (rounds 6/8 battery forms), saturation line 10.0 on finite proxies + stagnation window N=10. Arc final: 10 rounds, verdicts 10 improved / 30 unchanged / 0 harmed; knowledge 72->79; 43 tracked receipt artifacts; 19 lane commits; zero sibling writes; zero pushes. Measured: command A 79/79 + 9/9 + 10.0/10.0 at c343939 and 40162fc. Records REC. Report: kaidoku-shokunin/.ufo/reports/luna-round-10/kaidoku.md. GOAL COMPLETE.",
    "commit": "kaidoku-shokunin@661ce3e"
   },
   {
@@ -2887,7 +2887,7 @@
    "minted": [
     "kotodama"
    ],
-   "notes": "linguistic-cultural worldbuilding (kotodama, word-spirit) \u2014 explicit operator directive 2026-10-17: connect languages, cultures, myths, symbolisms, eras to their linguistics and costumes, related to lore/world bible. Roster scan (19 lanes, province sha256 per lane) in .ufo/scopes/kotodama-mint-20261017/mint-roster-scan.json: lore records/verifies canon (complementary handoff recipient, not the generative craft); kotoba is prompt/skill craft; chousa is research method only; production/host lanes refuse narrative canon or have no scope. Mint corpus seeded by four operator-dispatched swarms (3x16 zai-5.3-flash + 1x16 gpt-6.1-sol-max). Probation >=3 verified rounds; roster row withheld."
+   "notes": "linguistic-cultural worldbuilding (kotodama, word-spirit) — explicit operator directive 2026-10-17: connect languages, cultures, myths, symbolisms, eras to their linguistics and costumes, related to lore/world bible. Roster scan (19 lanes, province sha256 per lane) in .ufo/scopes/kotodama-mint-20261017/mint-roster-scan.json: lore records/verifies canon (complementary handoff recipient, not the generative craft); kotoba is prompt/skill craft; chousa is research method only; production/host lanes refuse narrative canon or have no scope. Mint corpus seeded by four operator-dispatched swarms (3x16 zai-5.3-flash + 1x16 gpt-6.1-sol-max). Probation >=3 verified rounds; roster row withheld."
   },
   {
    "round": 87,
@@ -2952,7 +2952,7 @@
     "lore": 91
    },
    "minted": [],
-   "notes": "lore r91 ADMITTED (luna round 5 of 12): C1 calibration improved (bounded) work commits 6332115+c2ab3d0 (two durable DISCRIMINATING fixtures pinning the r90 gate repair \u2014 a silent revert now fails the census; C9 watch with hash pin + falsification trigger; 0 changed + 2 new of 166, five censuses); C2 coverage improved (bounded) (support command hardened: inventory assertion, distinct anchors, JSON/EDITORIAL split; all five r90 silent-failure vectors fail/warn; Spence WARN correct, r92 row-add); C3 depth improved (bounded) (R8/R9/R10 edge decisions; register absent; fourth doc-parity harm repaired by explicit deferral \u2014 boundary doc restored to certifiable base + SUPERSEDED-PENDING banner, r92 owns anchor-based re-derivation). Follow-up 32 seats on alibaba-token-plan/deepseek-v4.1-flash (operator-directed). Capabilities gains row 3 (checker-regression discrimination). Report .ufo/reports/round-91/lore.md. No push."
+   "notes": "lore r91 ADMITTED (luna round 5 of 12): C1 calibration improved (bounded) work commits 6332115+c2ab3d0 (two durable DISCRIMINATING fixtures pinning the r90 gate repair — a silent revert now fails the census; C9 watch with hash pin + falsification trigger; 0 changed + 2 new of 166, five censuses); C2 coverage improved (bounded) (support command hardened: inventory assertion, distinct anchors, JSON/EDITORIAL split; all five r90 silent-failure vectors fail/warn; Spence WARN correct, r92 row-add); C3 depth improved (bounded) (R8/R9/R10 edge decisions; register absent; fourth doc-parity harm repaired by explicit deferral — boundary doc restored to certifiable base + SUPERSEDED-PENDING banner, r92 owns anchor-based re-derivation). Follow-up 32 seats on alibaba-token-plan/deepseek-v4.1-flash (operator-directed). Capabilities gains row 3 (checker-regression discrimination). Report .ufo/reports/round-91/lore.md. No push."
   },
   {
    "round": 92,
@@ -2965,7 +2965,7 @@
     "lore": 92
    },
    "minted": [],
-   "notes": "lore r92 ADMITTED (luna round 6 of 12): C1 depth improved (bounded) work commit c4d4823 (anchor-based boundary-doc re-derivation \u2014 the r91 deferral; JDEP2 residual edges decided: R8 whole-element hold, R9 mandatory manual gate; follow-up certification FAILED gate (b) on an inherited stale citation tail \u2014 repaired in-closure and re-certified post-repair); C2 coverage improved (bounded) (Spence rows closed the unreferenced WARN \u2014 10 JSON + 2 editorial PASS; support command contract deviations closed: RESULT FAIL/ERROR + exit alignment); C3 calibration improved (bounded) (C9 watch re-check 1 DISCRIMINATION HELD; path-convention notes). Census 166 dirs, 0 changed. Follow-up 32 seats on alibaba-tp (quota exhausted mid-wave, reset 10-23) then opencode-go. Report .ufo/reports/round-92/lore.md. No push."
+   "notes": "lore r92 ADMITTED (luna round 6 of 12): C1 depth improved (bounded) work commit c4d4823 (anchor-based boundary-doc re-derivation — the r91 deferral; JDEP2 residual edges decided: R8 whole-element hold, R9 mandatory manual gate; follow-up certification FAILED gate (b) on an inherited stale citation tail — repaired in-closure and re-certified post-repair); C2 coverage improved (bounded) (Spence rows closed the unreferenced WARN — 10 JSON + 2 editorial PASS; support command contract deviations closed: RESULT FAIL/ERROR + exit alignment); C3 calibration improved (bounded) (C9 watch re-check 1 DISCRIMINATION HELD; path-convention notes). Census 166 dirs, 0 changed. Follow-up 32 seats on alibaba-tp (quota exhausted mid-wave, reset 10-23) then opencode-go. Report .ufo/reports/round-92/lore.md. No push."
   },
   {
    "round": 87,
@@ -3143,7 +3143,7 @@
     "freshness": "unchanged (no improvement; no harm)",
     "adjacency": "unchanged"
    },
-   "notes": "lore r94 admitted: C1 depth (r94-paired-crossing, explicit r88-m3 continuation, 4/0/2 -> 5/1/3, both-tick-9 dependency, crossing-scoped agreement relation) and C2 calibration (map_obligations raw-JSON<->map obligation gate, self-test 20/20, frozen r93 digests verified) both verify on the delivered revision; no axis harmed. WORK 32 seats openai-codex/gpt-6-luna-max (W20 failed-output gap, 31/32 usable); FOLLOW-UP 40 seats opencode-go/deepseek-v4.1-flash declared 65a9329, all completed, receipt filled from dispatch result. F27 adjudicator ADMIT conditional C-1..C-6; conditions landed ac69044 (SKILL.md registry row, README addenda, C9 r94 re-check DISCRIMINATION HELD + line-54 erratum, wave-spec reconciliation). Lane closure fb118c4; candidate abbc3e0; baseline 9c2eea3. Census 168 dirs (34 clean/134 negative/421 violation lines), 0 inherited changes; checker ff9fd2aa unchanged. Fifth registry gate map_obligations admitted with canonical-map scope. Freshness unchanged with carried stale records corrected append-only in LOG; F40 bookkeeping report defective (not credited). SHONEN four [~], no [x], no promotion, no push. Regimen change: operator 100-round plan \u2014 r95-r98 64-seat deepseek-v4.1-flash swarms, r99 128-seat xai-oauth/grok-4.7-fast xhigh, r100 32-seat openai-codex/gpt-6.1-sol max."
+   "notes": "lore r94 admitted: C1 depth (r94-paired-crossing, explicit r88-m3 continuation, 4/0/2 -> 5/1/3, both-tick-9 dependency, crossing-scoped agreement relation) and C2 calibration (map_obligations raw-JSON<->map obligation gate, self-test 20/20, frozen r93 digests verified) both verify on the delivered revision; no axis harmed. WORK 32 seats openai-codex/gpt-6-luna-max (W20 failed-output gap, 31/32 usable); FOLLOW-UP 40 seats opencode-go/deepseek-v4.1-flash declared 65a9329, all completed, receipt filled from dispatch result. F27 adjudicator ADMIT conditional C-1..C-6; conditions landed ac69044 (SKILL.md registry row, README addenda, C9 r94 re-check DISCRIMINATION HELD + line-54 erratum, wave-spec reconciliation). Lane closure fb118c4; candidate abbc3e0; baseline 9c2eea3. Census 168 dirs (34 clean/134 negative/421 violation lines), 0 inherited changes; checker ff9fd2aa unchanged. Fifth registry gate map_obligations admitted with canonical-map scope. Freshness unchanged with carried stale records corrected append-only in LOG; F40 bookkeeping report defective (not credited). SHONEN four [~], no [x], no promotion, no push. Regimen change: operator 100-round plan — r95-r98 64-seat deepseek-v4.1-flash swarms, r99 128-seat xai-oauth/grok-4.7-fast xhigh, r100 32-seat openai-codex/gpt-6.1-sol max."
   },
   {
    "round": 1,
@@ -3158,7 +3158,7 @@
    },
    "promotions": [],
    "minted": [],
-   "notes": "kotodama lane round 1 terminated in-session (operator-directed swarm, mint day) before any integrator pass; no fleet report landed at .ufo/reports/round-1/kotodama.md, so per PROTOCOL.md the lane-round records failed \u2014 this grades the landing contract, not work absence. Lane-side evidence exists: kotodama-shokunin/reports/round-1*/ validation artifacts and admitted claims in LOG.md/SCORECARD.md. Presence-of-evidence only; step-1 verification (hash ancestry, SHONEN heading, prompt fidelity) did not run at the time. Never read as a contemporaneous pass in promotion review."
+   "notes": "kotodama lane round 1 terminated in-session (operator-directed swarm, mint day) before any integrator pass; no fleet report landed at .ufo/reports/round-1/kotodama.md, so per PROTOCOL.md the lane-round records failed — this grades the landing contract, not work absence. Lane-side evidence exists: kotodama-shokunin/reports/round-1*/ validation artifacts and admitted claims in LOG.md/SCORECARD.md. Presence-of-evidence only; step-1 verification (hash ancestry, SHONEN heading, prompt fidelity) did not run at the time. Never read as a contemporaneous pass in promotion review."
   },
   {
    "round": 2,
@@ -3173,7 +3173,7 @@
    },
    "promotions": [],
    "minted": [],
-   "notes": "kotodama lane round 2 terminated in-session (operator-directed swarm, mint day) before any integrator pass; no fleet report landed at .ufo/reports/round-2/kotodama.md, so per PROTOCOL.md the lane-round records failed \u2014 this grades the landing contract, not work absence. Lane-side evidence exists: kotodama-shokunin/reports/round-2*/ validation artifacts and admitted claims in LOG.md/SCORECARD.md. Presence-of-evidence only; step-1 verification (hash ancestry, SHONEN heading, prompt fidelity) did not run at the time. Never read as a contemporaneous pass in promotion review."
+   "notes": "kotodama lane round 2 terminated in-session (operator-directed swarm, mint day) before any integrator pass; no fleet report landed at .ufo/reports/round-2/kotodama.md, so per PROTOCOL.md the lane-round records failed — this grades the landing contract, not work absence. Lane-side evidence exists: kotodama-shokunin/reports/round-2*/ validation artifacts and admitted claims in LOG.md/SCORECARD.md. Presence-of-evidence only; step-1 verification (hash ancestry, SHONEN heading, prompt fidelity) did not run at the time. Never read as a contemporaneous pass in promotion review."
   },
   {
    "round": 3,
@@ -3188,7 +3188,7 @@
    },
    "promotions": [],
    "minted": [],
-   "notes": "kotodama lane round 3 terminated in-session (operator-directed swarm, mint day) before any integrator pass; no fleet report landed at .ufo/reports/round-3/kotodama.md, so per PROTOCOL.md the lane-round records failed \u2014 this grades the landing contract, not work absence. Lane-side evidence exists: kotodama-shokunin/reports/round-3*/ validation artifacts and admitted claims in LOG.md/SCORECARD.md. Presence-of-evidence only; step-1 verification (hash ancestry, SHONEN heading, prompt fidelity) did not run at the time. Never read as a contemporaneous pass in promotion review."
+   "notes": "kotodama lane round 3 terminated in-session (operator-directed swarm, mint day) before any integrator pass; no fleet report landed at .ufo/reports/round-3/kotodama.md, so per PROTOCOL.md the lane-round records failed — this grades the landing contract, not work absence. Lane-side evidence exists: kotodama-shokunin/reports/round-3*/ validation artifacts and admitted claims in LOG.md/SCORECARD.md. Presence-of-evidence only; step-1 verification (hash ancestry, SHONEN heading, prompt fidelity) did not run at the time. Never read as a contemporaneous pass in promotion review."
   },
   {
    "round": 4,
@@ -3203,7 +3203,7 @@
    },
    "promotions": [],
    "minted": [],
-   "notes": "kotodama lane round 4 terminated in-session (operator-directed swarm, mint day) before any integrator pass; no fleet report landed at .ufo/reports/round-4/kotodama.md, so per PROTOCOL.md the lane-round records failed \u2014 this grades the landing contract, not work absence. Lane-side evidence exists: kotodama-shokunin/reports/round-4*/ validation artifacts and admitted claims in LOG.md/SCORECARD.md. Presence-of-evidence only; step-1 verification (hash ancestry, SHONEN heading, prompt fidelity) did not run at the time. Never read as a contemporaneous pass in promotion review."
+   "notes": "kotodama lane round 4 terminated in-session (operator-directed swarm, mint day) before any integrator pass; no fleet report landed at .ufo/reports/round-4/kotodama.md, so per PROTOCOL.md the lane-round records failed — this grades the landing contract, not work absence. Lane-side evidence exists: kotodama-shokunin/reports/round-4*/ validation artifacts and admitted claims in LOG.md/SCORECARD.md. Presence-of-evidence only; step-1 verification (hash ancestry, SHONEN heading, prompt fidelity) did not run at the time. Never read as a contemporaneous pass in promotion review."
   },
   {
    "round": 5,
@@ -3218,7 +3218,7 @@
    },
    "promotions": [],
    "minted": [],
-   "notes": "kotodama lane round 5 terminated in-session (operator-directed swarm, mint day) before any integrator pass; no fleet report landed at .ufo/reports/round-5/kotodama.md, so per PROTOCOL.md the lane-round records failed \u2014 this grades the landing contract, not work absence. Lane-side evidence exists: kotodama-shokunin/reports/round-5*/ validation artifacts and admitted claims in LOG.md/SCORECARD.md. Presence-of-evidence only; step-1 verification (hash ancestry, SHONEN heading, prompt fidelity) did not run at the time. Never read as a contemporaneous pass in promotion review."
+   "notes": "kotodama lane round 5 terminated in-session (operator-directed swarm, mint day) before any integrator pass; no fleet report landed at .ufo/reports/round-5/kotodama.md, so per PROTOCOL.md the lane-round records failed — this grades the landing contract, not work absence. Lane-side evidence exists: kotodama-shokunin/reports/round-5*/ validation artifacts and admitted claims in LOG.md/SCORECARD.md. Presence-of-evidence only; step-1 verification (hash ancestry, SHONEN heading, prompt fidelity) did not run at the time. Never read as a contemporaneous pass in promotion review."
   },
   {
    "round": 6,
@@ -3233,7 +3233,7 @@
    },
    "promotions": [],
    "minted": [],
-   "notes": "kotodama lane round 6 terminated in-session (operator-directed swarm, mint day) before any integrator pass; no fleet report landed at .ufo/reports/round-6/kotodama.md, so per PROTOCOL.md the lane-round records failed \u2014 this grades the landing contract, not work absence. Lane-side evidence exists: kotodama-shokunin/reports/round-6*/ validation artifacts and admitted claims in LOG.md/SCORECARD.md. Presence-of-evidence only; step-1 verification (hash ancestry, SHONEN heading, prompt fidelity) did not run at the time. Never read as a contemporaneous pass in promotion review."
+   "notes": "kotodama lane round 6 terminated in-session (operator-directed swarm, mint day) before any integrator pass; no fleet report landed at .ufo/reports/round-6/kotodama.md, so per PROTOCOL.md the lane-round records failed — this grades the landing contract, not work absence. Lane-side evidence exists: kotodama-shokunin/reports/round-6*/ validation artifacts and admitted claims in LOG.md/SCORECARD.md. Presence-of-evidence only; step-1 verification (hash ancestry, SHONEN heading, prompt fidelity) did not run at the time. Never read as a contemporaneous pass in promotion review."
   },
   {
    "round": 7,
@@ -3392,7 +3392,7 @@
     "calibration": "improved",
     "adjacency": "unchanged"
    },
-   "notes": "Regimen loop 1 build 4: REJECTED \u2014 claim F failed as declared (drift stability 0.778 < 0.95; all 45 drifts dispositioned, dominant cause is the round's own legitimate changes). Claims D/O verify: typed pipeline wired (hold set exact, 10/10 PHON artifacts eliminated), handoff e2e exercise (16/16, 20/20). Work commit a3f6fcef2d92a1099581140c81d4264e9a4e2aa3; 54/64 workers (10 late scribe seats failed). Freshness axis-move claims paused; L0 threshold-calibration question appended."
+   "notes": "Regimen loop 1 build 4: REJECTED — claim F failed as declared (drift stability 0.778 < 0.95; all 45 drifts dispositioned, dominant cause is the round's own legitimate changes). Claims D/O verify: typed pipeline wired (hold set exact, 10/10 PHON artifacts eliminated), handoff e2e exercise (16/16, 20/20). Work commit a3f6fcef2d92a1099581140c81d4264e9a4e2aa3; 54/64 workers (10 late scribe seats failed). Freshness axis-move claims paused; L0 threshold-calibration question appended."
   },
   {
    "round": 97,
@@ -3416,7 +3416,7 @@
     "freshness": "unchanged",
     "adjacency": "unchanged (not harmed)"
    },
-   "notes": "lore r97 admitted, operator regimen 3/6: single-wave 64-seat AgentSwarm on opencode-go/deepseek-v4.1-flash (6 producers + 58 verifiers; completed 64/64, three late landings from the endgame mutual-poll class, V56-characterized). C1 calibration: dual_pointer persisted as self-test case 25; strict loader fails closed on ANY dropped pinned case (r96 23/24 tolerance demonstrated as the closed pre-state); pin load-bearing. C2 coverage: dependency_freeze hardened \u2014 --freeze scope-guarded to corpus/fixtures/** (SCOPE-REFUSED), path binding (foreign-path copies exit 2 PATH-MISMATCH), DIGEST-MISMATCH names the file, 16-case self-test, r96 re-frozen through the guarded path (revision-only refresh; JSON-table payload \u2014 map digest not pinned, V12 FAIL recorded and discharged by erratum), chain 4/4. C3 depth: r97-crossing-acknowledgment, acknowledgment-without-reconciliation (5/1/5->5/1/6, 17/17 obligations, no constructible resolution/blame reading), r96 map two-line cosmetic repair with receipts unchanged; V46 FAIL recorded (r97 edge unfrozen, r98 candidate). Baseline f3e09f9; closure 9d25df9 + 9a3d648 (embedded scratch clone dropped) + dd4df1b. Census 171 dirs (37/134/421), zero inherited changes; checker ff9fd2aa unchanged; C9 re-check 6 DISCRIMINATION HELD. V35 ADMIT with 6 conditions, all discharged. BR-05 gitignored (*-self-test-*/). No [x], no promotion, no push. r98 is the final 64-seat deepseek-flash round; then r99 (128-seat xai-oauth/grok-4.7-fast xhigh) and r100 (32-seat openai-codex/gpt-6.1-sol max)."
+   "notes": "lore r97 admitted, operator regimen 3/6: single-wave 64-seat AgentSwarm on opencode-go/deepseek-v4.1-flash (6 producers + 58 verifiers; completed 64/64, three late landings from the endgame mutual-poll class, V56-characterized). C1 calibration: dual_pointer persisted as self-test case 25; strict loader fails closed on ANY dropped pinned case (r96 23/24 tolerance demonstrated as the closed pre-state); pin load-bearing. C2 coverage: dependency_freeze hardened — --freeze scope-guarded to corpus/fixtures/** (SCOPE-REFUSED), path binding (foreign-path copies exit 2 PATH-MISMATCH), DIGEST-MISMATCH names the file, 16-case self-test, r96 re-frozen through the guarded path (revision-only refresh; JSON-table payload — map digest not pinned, V12 FAIL recorded and discharged by erratum), chain 4/4. C3 depth: r97-crossing-acknowledgment, acknowledgment-without-reconciliation (5/1/5->5/1/6, 17/17 obligations, no constructible resolution/blame reading), r96 map two-line cosmetic repair with receipts unchanged; V46 FAIL recorded (r97 edge unfrozen, r98 candidate). Baseline f3e09f9; closure 9d25df9 + 9a3d648 (embedded scratch clone dropped) + dd4df1b. Census 171 dirs (37/134/421), zero inherited changes; checker ff9fd2aa unchanged; C9 re-check 6 DISCRIMINATION HELD. V35 ADMIT with 6 conditions, all discharged. BR-05 gitignored (*-self-test-*/). No [x], no promotion, no push. r98 is the final 64-seat deepseek-flash round; then r99 (128-seat xai-oauth/grok-4.7-fast xhigh) and r100 (32-seat openai-codex/gpt-6.1-sol max)."
   },
   {
    "round": 12,
@@ -3504,7 +3504,7 @@
     "freshness": "improved (bounded)",
     "adjacency": "unchanged (not harmed)"
    },
-   "notes": "lore r98 admitted, operator regimen 4/6, TWO-WAVE per operator directive: main 64-seat AgentSwarm on opencode-go/deepseek-v4.1-flash (6 endgame seats host-aborted, not deadlock per V57 wait-graph) + 6-seat completion wave on hyper/deepseek-v4.1-flash (r98 = the hyper-varied round). C1 calibration: SELF-TEST-MISMATCH exits 2 pinned as case 17 (r97 exit-1 demonstrated as before), path-less legacy pins migrated by --freeze, precedence text complete, self-test 17/17. C2 coverage: frozen chain extended to six fixtures via guarded --freeze, 6/6 clean; r97 V46 FAIL discharged (exact mutation bytes now REDUCTION-DETECTED exit 1). C3 depth: r98-clerk-filing institutional-no-finding class (6/1/7, 20/20 obligations, clerk asserts no finding), r95 map one-line repair with receipts unchanged; freshness improved (bounded) \u2014 first on record, via dated addenda correcting stale r95/r96 note pins. Baseline 9a3d648; closure 4265df5 + 111b9a3. Census 172 dirs (38/134/421), zero inherited changes; checker ff9fd2aa unchanged; C9 re-check 7 DISCRIMINATION HELD. Cleanup: orphaned pollers killed, parent stray removed (attributed), 243MB V37 mirror dropped. V31 ADMIT with 6 conditions, all discharged. No [x], no promotion, no push. Next: r99 128-seat xai-oauth/grok-4.7-fast xhigh; r100 32-seat openai-codex/gpt-6.1-sol max; r101-r102 16-32-seat zai glm-5.3-flash each (operator-added)."
+   "notes": "lore r98 admitted, operator regimen 4/6, TWO-WAVE per operator directive: main 64-seat AgentSwarm on opencode-go/deepseek-v4.1-flash (6 endgame seats host-aborted, not deadlock per V57 wait-graph) + 6-seat completion wave on hyper/deepseek-v4.1-flash (r98 = the hyper-varied round). C1 calibration: SELF-TEST-MISMATCH exits 2 pinned as case 17 (r97 exit-1 demonstrated as before), path-less legacy pins migrated by --freeze, precedence text complete, self-test 17/17. C2 coverage: frozen chain extended to six fixtures via guarded --freeze, 6/6 clean; r97 V46 FAIL discharged (exact mutation bytes now REDUCTION-DETECTED exit 1). C3 depth: r98-clerk-filing institutional-no-finding class (6/1/7, 20/20 obligations, clerk asserts no finding), r95 map one-line repair with receipts unchanged; freshness improved (bounded) — first on record, via dated addenda correcting stale r95/r96 note pins. Baseline 9a3d648; closure 4265df5 + 111b9a3. Census 172 dirs (38/134/421), zero inherited changes; checker ff9fd2aa unchanged; C9 re-check 7 DISCRIMINATION HELD. Cleanup: orphaned pollers killed, parent stray removed (attributed), 243MB V37 mirror dropped. V31 ADMIT with 6 conditions, all discharged. No [x], no promotion, no push. Next: r99 128-seat xai-oauth/grok-4.7-fast xhigh; r100 32-seat openai-codex/gpt-6.1-sol max; r101-r102 16-32-seat zai glm-5.3-flash each (operator-added)."
   },
   {
    "round": 99,
@@ -3528,7 +3528,7 @@
     "freshness": "improved (bounded)",
     "adjacency": "unchanged (not harmed)"
    },
-   "notes": "lore r99 admitted, operator regimen 5/6: 128-seat AgentSwarm on xai-oauth/grok-4.7-fast [xhigh] after provider-lane repair \u2014 the blocked attempt (missing ~/.hermes/auth.json) was resolved by restoring the pool from the operator's ~/.grok OAuth session and repointing the alias at the existing wire model grok-4.7 (the -fast variant does not exist for this team; recorded deviation). C1 calibration: dependency_freeze ten-file pins (schema v2), 18/18 self-test with markdown_tamper, non-anchor prose edits now named DIGEST-MISMATCH (semantic findings exit 1 first), chain 6/6 re-frozen. C2 depth: r99-window-lapse lapse beat (6/1/7->6/1/8, 21/21 obligations, unresolved throughout) + consolidated blind-spot decision table replayed row-by-row with matching digests. Eleven standing FAILs recorded, none re-rolled; nine conditions all discharged. Baseline 4265df5 + 337f0fa (blocked record); closure fe1ce46 + ae67105. Census 173 dirs (39/134/421); checker ff9fd2aa unchanged; C9 re-check 8 DISCRIMINATION HELD. SHONEN four [~], no [x], no promotion, no push. Next: r100 32-seat openai-codex/gpt-6.1-sol max; r101-r102 16-32-seat zai glm-5.3-flash each."
+   "notes": "lore r99 admitted, operator regimen 5/6: 128-seat AgentSwarm on xai-oauth/grok-4.7-fast [xhigh] after provider-lane repair — the blocked attempt (missing ~/.hermes/auth.json) was resolved by restoring the pool from the operator's ~/.grok OAuth session and repointing the alias at the existing wire model grok-4.7 (the -fast variant does not exist for this team; recorded deviation). C1 calibration: dependency_freeze ten-file pins (schema v2), 18/18 self-test with markdown_tamper, non-anchor prose edits now named DIGEST-MISMATCH (semantic findings exit 1 first), chain 6/6 re-frozen. C2 depth: r99-window-lapse lapse beat (6/1/7->6/1/8, 21/21 obligations, unresolved throughout) + consolidated blind-spot decision table replayed row-by-row with matching digests. Eleven standing FAILs recorded, none re-rolled; nine conditions all discharged. Baseline 4265df5 + 337f0fa (blocked record); closure fe1ce46 + ae67105. Census 173 dirs (39/134/421); checker ff9fd2aa unchanged; C9 re-check 8 DISCRIMINATION HELD. SHONEN four [~], no [x], no promotion, no push. Next: r100 32-seat openai-codex/gpt-6.1-sol max; r101-r102 16-32-seat zai glm-5.3-flash each."
   },
   {
    "round": 15,
@@ -3624,7 +3624,7 @@
     "freshness": "unchanged (not harmed)",
     "adjacency": "unchanged (not harmed)"
    },
-   "notes": "lore r101 admitted, operator closing-pair round 1/2 on zai-coding-plan/glm-5.3-flash-low. ROSTER ERRATUM (second of the push, same class as r100): declared 28, dispatched 30 (2 producers + 28 verifiers); 30/30 reports, receipt filled from the real dispatch (V27 row L1-added). C1 coverage: r100-docket-review pinned via unchanged guarded writer; eight fixtures 8/8 clean; additive-only delta disclosed. C2 depth: R10 register's first worked entry \u2014 demonstrated shared referent (byte-exact x7 snapshots), claims correctly derived COMPATIBLE, both preserved, no winner, register correctly uncreated; two citation locators repaired at closure (AC-1). C3 calibration: repointed_edge persisted 18->19 (REDUCTION+ADDITION one run, tick-verified, fail-closed); blind-spot row 2 closed via dated integrator addendum (AC-2). Baseline 6f86bf2 (+ ebec6bb); closure ceeef43 + 542021a + 60e88bf. Census 174 unchanged; checker ff9fd2aa unchanged; C9 re-check 10 DISCRIMINATION HELD. SHONEN four [~], no [x], no promotion, no push. ONE ROUND REMAINS: r102 (16-32 seats, zai glm-5.3-flash-low) closes the operator's loop at lane_round 102."
+   "notes": "lore r101 admitted, operator closing-pair round 1/2 on zai-coding-plan/glm-5.3-flash-low. ROSTER ERRATUM (second of the push, same class as r100): declared 28, dispatched 30 (2 producers + 28 verifiers); 30/30 reports, receipt filled from the real dispatch (V27 row L1-added). C1 coverage: r100-docket-review pinned via unchanged guarded writer; eight fixtures 8/8 clean; additive-only delta disclosed. C2 depth: R10 register's first worked entry — demonstrated shared referent (byte-exact x7 snapshots), claims correctly derived COMPATIBLE, both preserved, no winner, register correctly uncreated; two citation locators repaired at closure (AC-1). C3 calibration: repointed_edge persisted 18->19 (REDUCTION+ADDITION one run, tick-verified, fail-closed); blind-spot row 2 closed via dated integrator addendum (AC-2). Baseline 6f86bf2 (+ ebec6bb); closure ceeef43 + 542021a + 60e88bf. Census 174 unchanged; checker ff9fd2aa unchanged; C9 re-check 10 DISCRIMINATION HELD. SHONEN four [~], no [x], no promotion, no push. ONE ROUND REMAINS: r102 (16-32 seats, zai glm-5.3-flash-low) closes the operator's loop at lane_round 102."
   },
   {
    "round": 102,
@@ -3648,7 +3648,31 @@
     "freshness": "improved (bounded)",
     "adjacency": "unchanged (not harmed)"
    },
-   "notes": "lore r102 admitted \u2014 CAPSTONE, FINAL ROUND OF THE OPERATOR'S LOOP: 21-seat (declared 20, erratum recorded) AgentSwarm on zai-coding-plan/glm-5.3-flash-low. C1 depth: r102-push-synthesis (per-round deltas, all 24 cited commits exist, growth arc reproduced, honesty ledger + 13 non-achievements). C2 calibration: r102-debt-ledger.json \u2014 361 source entries r94-r101, zero dropped, dispositions 111 closed/108 addressed/45 carried, machine-verified. C3 freshness: final sweep, 25 surfaces dispositioned, C9 cadence closed (re-check 11). Seven wording/counting defects corrected by dated addendum (AC-4). Baseline 542021a (+ 8fa2e87); closure 48b0638 + 099b4bc. Final battery green (freeze 19/19, map 25/25, chain 8/8, boundary CERTIFIED, checker ff9fd2aa, census 174/40/134/421). THE LOOP CLOSES AT lane_rounds.lore == 102: r94 reconciliation + eight regimen rounds (4x64 deepseek-flash incl one hyper completion wave, 128 grok-4.7 xhigh after a persistent provider-lane repair, 34 sol-max, 2x GLM), 6 registry gates, 8-fixture frozen chain, R10 register's first worked entry, consolidated debt ledger. SHONEN four [~] throughout, no [x], no promotion, no push, scores unmeasured. Lane rests unless the operator directs r103+."
+   "notes": "lore r102 admitted — CAPSTONE, FINAL ROUND OF THE OPERATOR'S LOOP: 21-seat (declared 20, erratum recorded) AgentSwarm on zai-coding-plan/glm-5.3-flash-low. C1 depth: r102-push-synthesis (per-round deltas, all 24 cited commits exist, growth arc reproduced, honesty ledger + 13 non-achievements). C2 calibration: r102-debt-ledger.json — 361 source entries r94-r101, zero dropped, dispositions 111 closed/108 addressed/45 carried, machine-verified. C3 freshness: final sweep, 25 surfaces dispositioned, C9 cadence closed (re-check 11). Seven wording/counting defects corrected by dated addendum (AC-4). Baseline 542021a (+ 8fa2e87); closure 48b0638 + 099b4bc. Final battery green (freeze 19/19, map 25/25, chain 8/8, boundary CERTIFIED, checker ff9fd2aa, census 174/40/134/421). THE LOOP CLOSES AT lane_rounds.lore == 102: r94 reconciliation + eight regimen rounds (4x64 deepseek-flash incl one hyper completion wave, 128 grok-4.7 xhigh after a persistent provider-lane repair, 34 sol-max, 2x GLM), 6 registry gates, 8-fixture frozen chain, R10 register's first worked entry, consolidated debt ledger. SHONEN four [~] throughout, no [x], no promotion, no push, scores unmeasured. Lane rests unless the operator directs r103+."
+  },
+  {
+   "round": 17,
+   "date": "2026-10-18",
+   "type": "closure",
+   "closed_at": "2026-10-18T07:16:51-03:00",
+   "lanes": {
+    "kotodama": "ok"
+   },
+   "lane_rounds": {
+    "kotodama": 17
+   },
+   "promotions": [],
+   "minted": [],
+   "admitted": false,
+   "verdicts": {
+    "depth": "unchanged",
+    "coverage": "improved",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "calibration": "improved",
+    "adjacency": "unchanged"
+   },
+   "notes": "Regimen loop 2 build 1: REJECTED on claim D — the round-11 typed-pipeline-gate L1 leg is assemble-d2-bound and cannot consume D4 packets (boundary + re-pin recipe routed to r18). C/O verify: 7+5 civ stale fixes; assemble-culture-d4 durable (81/81) with integrator eras normalization. D4 tree complete; typed projection emits 74 labels / 15 holds. Work commit 3dd3754207032cb81f5fb3e202fe85cf79211339; 30/64 workers. Design fork recorded as calibration lesson."
   }
  ]
 }
