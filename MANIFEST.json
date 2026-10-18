@@ -4017,6 +4017,16 @@
     "adjacency": "unchanged"
    },
    "notes": "Regimen loop 3 build 4 (devin): D/O/C verify, acceptance exits 0; work commit 3b13a2f2821ed6f8ac1217842ab6830d592c7935. Register-law replay leg lands and surfaces 4 real D4L-LAW-DANGLING findings on the clean packet (design defect routed to r30); RL-4 fixed; final sweep green. LOOP 3 BUILDS COMPLETE. 24/64 workers. Remaining: r29 verify (luna), r30 integrate (sol), r31-32 GLM (zai)."
+  },
+  {
+   "round": 6,
+   "date": "2026-10-18",
+   "type": "closure",
+   "lanes": {
+    "souji": "failed"
+   },
+   "closed_at": "2026-10-18T18:15:00-03:00",
+   "notes": "souji r6 REJECTED as a round (claims not all verified): 15/17 judges NOT-MET mid-round on grok-4.7-fast (96/128 seats). Parent completed C1 (SKILL.md/AGENTS.md reconciled to installed tools) and O1 (tools/souji-census.sh = impl-33 sha 11bf9cdf installed; fleet census byte-stable except live deltas; kotodama .scratch 40.4G growing ~2.3MB/s) before filing; both verdict tools gained the unpushed-touching pushed-receipt gate (new false-SAFE class found by r6 audits; selftests green). K1 NOT-MET (live-tree classification defeated; parent snapshot + handoff delivered; kotodama NOT-SAFE hands-off). Dissent preserved in census/round-6/final-*.json; nothing re-rolled. '12 admitted' criterion now unattainable verbatim — flagged for completion audit. Work commit b5db5cf; report .ufo/reports/round-6/souji.md."
   }
  ]
 }
