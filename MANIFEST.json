@@ -4027,6 +4027,16 @@
    },
    "closed_at": "2026-10-18T18:15:00-03:00",
    "notes": "souji r6 REJECTED as a round (claims not all verified): 15/17 judges NOT-MET mid-round on grok-4.7-fast (96/128 seats). Parent completed C1 (SKILL.md/AGENTS.md reconciled to installed tools) and O1 (tools/souji-census.sh = impl-33 sha 11bf9cdf installed; fleet census byte-stable except live deltas; kotodama .scratch 40.4G growing ~2.3MB/s) before filing; both verdict tools gained the unpushed-touching pushed-receipt gate (new false-SAFE class found by r6 audits; selftests green). K1 NOT-MET (live-tree classification defeated; parent snapshot + handoff delivered; kotodama NOT-SAFE hands-off). Dissent preserved in census/round-6/final-*.json; nothing re-rolled. '12 admitted' criterion now unattainable verbatim — flagged for completion audit. Work commit b5db5cf; report .ufo/reports/round-6/souji.md."
+  },
+  {
+   "round": 7,
+   "date": "2026-10-18",
+   "type": "closure",
+   "lanes": {
+    "souji": "failed"
+   },
+   "closed_at": "2026-10-18T18:50:00-03:00",
+   "notes": "souji r7 REJECTED as a round (2/3): receipts denied every candidate on zai glm-5.3-flash (24/24 seats). C1 verified (6/6 blind-pair agreements; parent's column misread caught — lore worktrees=3 was unpushed=3); K1 verified (delta census, live deltas only). O1 NOT-MET: quarantine flow stays UNEXERCISED — no authorized target (96 approval rows await operator sign-off; lane remote github VeigaPunk/shokunin-repo-hygiene is 404/not created, so the lane's own pushed receipts are unverifiable). Nothing manufactured to pass. Work commit 1cf5fa8; report .ufo/reports/round-7/souji.md."
   }
  ]
 }
