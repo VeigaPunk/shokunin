@@ -3745,6 +3745,30 @@
     "adjacency": "unchanged"
    },
    "notes": "Regimen loop 2 build 4: D/O/C verify, acceptance exits 0; work commit 35b6797b42d48bec52e1e3ddba1f3afc9bb85046. Handoff v3 (D4; 27 claims, 102/102 links); projector alias wart closed per-family (D2 byte-identical); README reconciled. 20/64 workers. Loop 2 builds complete. Next: r21 verify (luna, 64w), r22 integrate (sol, 32w), r23-24 GLM (zai 16w)."
+  },
+  {
+   "round": 21,
+   "date": "2026-10-18",
+   "type": "closure",
+   "closed_at": "2026-10-18T11:38:09-03:00",
+   "lanes": {
+    "kotodama": "ok"
+   },
+   "lane_rounds": {
+    "kotodama": 21
+   },
+   "promotions": [],
+   "minted": [],
+   "admitted": true,
+   "verdicts": {
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "calibration": "improved",
+    "adjacency": "improved"
+   },
+   "notes": "Regimen loop 2 verify: C/O/A verify, acceptance exits 0; work commit 46a03257ee75dd8f685a105e47da3f45a0154172. Recount reproduces the r18 repair; 23-entry defect queue routed to r22; one filed D2->D4 fixture bleed routed. LOOP 2 COMPLETE (rounds 17-21). 20/64 workers. Next: r22 integrate (sol 32w), r23-24 GLM (zai 16w), then loop 3 = rounds 25-32."
   }
  ]
 }
