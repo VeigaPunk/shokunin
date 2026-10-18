@@ -3924,6 +3924,30 @@
    },
    "closed_at": "2026-10-18T16:35:00-03:00",
    "notes": "souji r5 admitted (verification round, gpt-6-luna-max, 64/64): independent audit of r1-r4 found 3 material defects, all corrected in-round with re-run evidence — (1) symlink false-SAFE class in both tools (dir_digest dropped -type l; now fail-closed), (2) local-master pushed fallback (now pushed-unverifiable; spec amended), (3) r1 logs_tier.txt false-SAFE (historical, no impact). gd2d pins re-locked. Selftests 24/24+35/35 green; 0 unresolved contradictions. Process findings in lessons/round-5.md. Work commit ce58c2b4; report .ufo/reports/round-5/souji.md."
+  },
+  {
+   "round": 26,
+   "date": "2026-10-18",
+   "type": "closure",
+   "closed_at": "2026-10-18T16:10:31-03:00",
+   "lanes": {
+    "kotodama": "ok"
+   },
+   "lane_rounds": {
+    "kotodama": 26
+   },
+   "promotions": [],
+   "minted": [],
+   "admitted": true,
+   "verdicts": {
+    "depth": "improved",
+    "coverage": "improved",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "calibration": "improved",
+    "adjacency": "unchanged"
+   },
+   "notes": "Regimen loop 3 build 2 (devin): D/O/C verify, acceptance exits 0; work commit 4f09c990d4c17f23b5e2cda0871f81db875635fc. The round-17 register forecast CLOSES: stamp register, 8 forms, axis-to-operation rule, argot replay clean. Pin chain r5. Open-question queue 100% dispositioned. 24/64 workers. Remaining: r27-28 builds (devin), r29 verify, r30 integrate, r31-32 GLM."
   }
  ]
 }
