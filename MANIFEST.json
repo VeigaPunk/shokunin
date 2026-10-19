@@ -5485,6 +5485,44 @@
    },
    "campaign": "kaika",
    "notes": "Pre-registered round 24 landed (6572827) + critic-requested append-only erratum (095b90c) + integrator spot-check lesson. First fleet SOURCES.md registry admitted as a capability. No push (standing rule)."
+  },
+  {
+   "round": 16,
+   "date": "2026-10-19",
+   "type": "closure",
+   "closed_at": "2026-10-19T22:20:12Z",
+   "lane": "protocol",
+   "lane_round": 16,
+   "lanes": {
+    "protocol": "ok"
+   },
+   "lane_rounds": {
+    "protocol": 16
+   },
+   "promotions": [],
+   "minted": [],
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "gate-integrity": "improved",
+    "protocol-soundness": "improved"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    ".ufo/gates/root-ledgers.py (root-ledger section-loss gate; selftest 9/9, mutants 9/9)"
+   ],
+   "report": ".ufo/reports/round-16/protocol.md",
+   "commit": "shokunin@200e26c (kaika/protocol: 7c5b34f work, 3be33b6 report, 200e26c post-review corrections)",
+   "verification": {
+    "reviewer": "W3ReviewProtocol (admit conditionally; B1–B3 fixed in 200e26c)",
+    "critic": "W3CriticProtocol (admit narrowly; gate does not catch arbitrary partial body overwrites)"
+   },
+   "campaign": "kaika",
+   "notes": "Root SCORECARD.md/LOG.md restored to the 12f2da5 fleet bytes after 31baf5c copied kotoba b7470d7 over them (published: origin/master=31baf5c); correction entry appended; PROTOCOL.md gains corpus/SOURCES.md in the file contract, a per-round frontier step, a Sources & frontier report section (conformance item, never pass/fail) and a root-ledger overwrite rule, each with an appendix row. Scores held (gate-integrity 9, protocol-soundness 8) — the verifiers agreed raising them would not be reproducible. Debts: gate has no trigger yet; SCORECARD G3 counting command carries the same awk escape bug; soundness caps 533 vs 470. No push (standing rule)."
   }
  ]
 }
