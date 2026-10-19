@@ -4724,6 +4724,58 @@
     "adjacency": "improved"
    },
    "notes": "REGIMEN-2 ROUND 8 OF 42 (loop 1 position 8, zai glm-flash 24/24). C: linguistics 21->25 (220). Ca: defect-queue-v2 38 rows with reviewer folds. A: consolidated r37-40 audit green. The r40 runner is the O12 relative-ROOT + runner_sha256 cure (N7)."
+  },
+  {
+   "type": "craft",
+   "lane": "chousa",
+   "round": 16,
+   "date": "2026-10-19",
+   "claims": [
+    "coverage/calibration: adversarial re-audit of loop-1 rounds 1-4 (lane rounds 12-15)"
+   ],
+   "verdict": "ADMIT",
+   "axes": {
+    "coverage": "unchanged",
+    "operability": "improved",
+    "depth": "improved",
+    "freshness": "unchanged",
+    "calibration": "improved",
+    "adjacency": "unchanged"
+   },
+   "wave": {
+    "provider": "openai-codex",
+    "model": "gpt-6-luna-max",
+    "seats": 64,
+    "completed": 64
+   },
+   "gate_sha": "2b64a1c849b63684a67fd4fe67aad6525e32ca67a826616f9eb8fe7d18323e52",
+   "report": ".ufo/reports/round-16/chousa.md",
+   "evidence": "corpus/knowledge/verification-r16.md",
+   "note": "corpus/knowledge/verification-r16.md"
+  },
+  {
+   "round": 41,
+   "date": "2026-10-19",
+   "type": "closure",
+   "closed_at": "2026-10-19T12:54:28-03:00",
+   "lanes": {
+    "kotodama": "ok"
+   },
+   "lane_rounds": {
+    "kotodama": 41
+   },
+   "promotions": [],
+   "minted": [],
+   "admitted": true,
+   "verdicts": {
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "calibration": "improved",
+    "adjacency": "unchanged"
+   },
+   "notes": "REGIMEN-2 ROUND 9 OF 42 (loop 1 position 9, luna-max 32/32 in 7 min). O: runner template + conformance checker; r34-r39 streak classified per-runner (r39's r38-findings duplication caught mechanically); r40 conformant. Ca: N3 pin ruling (one self-marking historical hit); N7 + root-regression re-classed fixed."
   }
  ]
 }
