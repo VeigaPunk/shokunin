@@ -205,6 +205,70 @@ EOF
     "$0" validate --today 2026-10-19 "$outside_dir"
   checkx "E12-row-outside-registry-exit-1" 1 \
     "$0" validate --today 2026-10-19 "$outside_dir"
+  # Exercise the shared row parser at every supported indentation width.
+  for indent_width in 0 1 2 3; do
+    indent=$(printf '%*s' "$indent_width" '')
+    valid_dir="$test_root/indent-valid-$indent_width-shokunin"
+    invalid_dir="$test_root/indent-invalid-$indent_width-shokunin"
+    outside_indent_dir="$test_root/indent-outside-$indent_width-shokunin"
+    mkdir -p "$valid_dir/corpus" "$invalid_dir/corpus" "$outside_indent_dir/corpus" || exit 3
+    valid_id="S92$indent_width"
+    invalid_id="S93$indent_width"
+    usedby_id="S95$indent_width"
+    outside_id="S94$indent_width"
+
+    printf '%s\n' \
+      "${indent}## Registry" \
+      '' \
+      '    ## Paths' \
+      '    | S999 | Code example — https://code.example/example | docs | Z | code | §1 | ignored code row | watch | 2026-10-01 | 90d | — |' \
+      '' \
+      "${indent}| id | source | kind | tier | scope | anchor | teaches | status | opened | recheck | used-by |" \
+      "${indent}|---|---|---|---|---|---|---|---|---|---|---|" \
+      "${indent}| $valid_id | Indented source — https://indent.example/shared | docs | B | width-$indent_width | §1 | valid indented row | queued | 2026-01-01 | 30d | — |" \
+      > "$valid_dir/corpus/SOURCES.md"
+    checkline "indented-valid-$indent_width-counted" \
+      "$(printf '%s\trows\t1' "indent-valid-$indent_width-shokunin")" \
+      "$0" census --root "$test_root" "$valid_dir"
+    checkx "indented-valid-$indent_width-clean" 0 \
+      "$0" validate --today 2026-10-19 "$valid_dir"
+    check "indented-overdue-$indent_width-row" "$valid_id" \
+      "$0" overdue --today 2026-10-19 "$valid_dir"
+    checkx "indented-overdue-$indent_width-exit-1" 1 \
+      "$0" overdue --today 2026-10-19 "$valid_dir"
+
+    printf '%s\n' \
+      "${indent}## Registry" \
+      "${indent}| id | source | kind | tier | scope | anchor | teaches | status | opened | recheck | used-by |" \
+      "${indent}|---|---|---|---|---|---|---|---|---|---|---|" \
+      "${indent}| $invalid_id | Invalid tier — https://invalid-$indent_width.example/source | docs | Z | invalid-$indent_width | §1 | invalid indented row | queued | 2026-10-01 | 90d | — |" \
+      "${indent}| $usedby_id | Missing used-by — https://usedby-$indent_width.example/source | docs | B | usedby-$indent_width | §1 | indented used-by row | mined | 2026-10-01 | 90d | corpus/knowledge/missing-$indent_width.md |" \
+      > "$invalid_dir/corpus/SOURCES.md"
+    checkline "indented-invalid-$indent_width-E06" \
+      "$(printf '%s\tE06\t%s tier=Z' "indent-invalid-$indent_width-shokunin" "$invalid_id")" \
+      "$0" validate --today 2026-10-19 "$invalid_dir"
+    checkline "indented-invalid-$indent_width-E11" \
+      "$(printf '%s\tE11\t%s missing used-by corpus/knowledge/missing-%s.md' "indent-invalid-$indent_width-shokunin" "$usedby_id" "$indent_width")" \
+      "$0" validate --today 2026-10-19 "$invalid_dir"
+    checkx "indented-invalid-$indent_width-exit-1" 1 \
+      "$0" validate --today 2026-10-19 "$invalid_dir"
+
+    printf '%s\n' \
+      "${indent}## Registry" \
+      "${indent}| id | source | kind | tier | scope | anchor | teaches | status | opened | recheck | used-by |" \
+      "${indent}|---|---|---|---|---|---|---|---|---|---|---|" \
+      "${indent}## Paths" \
+      "${indent}| $outside_id | Outside source — https://outside-$indent_width.example/source | docs | B | outside-$indent_width | §1 | outside Registry | queued | 2026-10-01 | 90d | — |" \
+      > "$outside_indent_dir/corpus/SOURCES.md"
+    checkline "indented-outside-$indent_width-E12" \
+      "$(printf '%s\tE12\t%s row outside Registry section' "indent-outside-$indent_width-shokunin" "$outside_id")" \
+      "$0" validate --today 2026-10-19 "$outside_indent_dir"
+    checkx "indented-outside-$indent_width-exit-1" 1 \
+      "$0" validate --today 2026-10-19 "$outside_indent_dir"
+  done
+  checkline "indented-shared-across-lanes" \
+    $'indent.example/shared\tshared\tindent-valid-0-shokunin,indent-valid-1-shokunin' \
+    "$0" shared "$test_root/indent-valid-0-shokunin" "$test_root/indent-valid-1-shokunin"
   scope_dir="$test_root/scope-shokunin"
   mkdir -p "$scope_dir/corpus" || exit 3
   cat > "$scope_dir/corpus/SOURCES.md" <<'EOF'
@@ -392,16 +456,20 @@ trim_cell() {
 
 usedby_findings() {
   local f=$1 dir=$2 lane=$3 line id status usedby path section in_registry=0
+  local heading_re='^ {0,3}##[[:space:]]' top_heading_re='^ {0,3}#[[:space:]]'
+  local table_re='^ {0,3}\|'
   local -a cells=() paths=()
   while IFS= read -r line; do
-    if [[ "$line" =~ ^##[[:space:]] ]]; then
+    if [[ "$line" =~ $heading_re ]]; then
+      line="${line#"${line%%[! ]*}"}"
       section=$(trim_cell "${line:2}")
       [ "$section" = Registry ] && in_registry=1 || in_registry=0
       continue
     fi
-    if [[ "$line" =~ ^#[[:space:]] ]]; then in_registry=0; continue; fi
+    if [[ "$line" =~ $top_heading_re ]]; then in_registry=0; continue; fi
     [ "$in_registry" = 1 ] || continue
-    [[ "$line" == '|'* ]] || continue
+    [[ "$line" =~ $table_re ]] || continue
+    line="${line#"${line%%[! ]*}"}"
     cells=()
     IFS='|' read -r -a cells <<< "$line"
     [ "${#cells[@]}" -ge 12 ] || continue
@@ -421,7 +489,7 @@ usedby_findings() {
   done < "$f"
 }
 
-# Runs one gawk program over a lane's pipe-prefixed table rows.
+# Runs one gawk program over Markdown table rows with 0-3 leading ASCII spaces.
 row_pass() {
   local f=$1 lane=$3
   if [ "${SOURCES_CENSUS_SELFTEST_BAD_GAWK:-0}" = 1 ]; then
@@ -456,12 +524,16 @@ row_pass() {
       return "" }
     BEGIN { INVALID_EPOCH=-1e15 }
     {
-      if ($0 ~ /^##[ \t]/) {
-        in_registry=(trim(substr($0,3))=="Registry")
+      line=$0
+      if (line ~ /^ {0,3}##[ \t]/) {
+        sub(/^ {0,3}/,"",line)
+        in_registry=(trim(substr(line,3))=="Registry")
         next
       }
-      if ($0 ~ /^#[ \t]/) { in_registry=0; next }
-      if ($0 !~ /^\|/) next
+      if (line ~ /^ {0,3}#[ \t]/) { in_registry=0; next }
+      if (line !~ /^ {0,3}\|/) next
+      sub(/^ {0,3}/,"",line)
+      $0=line
       if (!in_registry) {
         if (mode=="validate" && $0 ~ /^\|[ \t]*S[0-9]{3,}[ \t]*\|/) {
           id=trim($2)
