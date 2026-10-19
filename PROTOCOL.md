@@ -135,6 +135,14 @@ re-grades it `failed` for want of a landed report if the successor never lands i
 a record: a correction to it lands in the correcting round's own report, or as an erratum
 appended after the filed bytes in a new commit and naming the text it supersedes — never a rewrite
 of the filed bytes, labelled or silent.
+Every child-lane round also runs a **frontier step**: it curates `corpus/SOURCES.md` (opened rows
+only, per the contract), records the census before→after, mines at least one of its own mistakes
+into `corpus/lessons/round-<N>.md` under `## Mistakes` (class · evidence · captured-by · fix) or
+pastes the sweep that found none, and files at least one claim of the round as *sourced* — its
+evidence citing an `S###` row. The frontier step is part of the round, not a claim of its own and
+never a substitute for the round's 1–3 axis claims (§Appendix, "Frontier step"). Delivery: the
+operator-side round-prompt template (section 2b, "Frontier step — every round") and this file's
+re-read duty.
 Every dispatched lane writes its report at `.ufo/reports/round-<N>/<id>.md` in the main repo, where
 `<id>` is the roster id (`protocol` and `aggregator` for the two main-repo lanes). A report under
 any other name does not satisfy the contract. The report file's existence is also the respawn
@@ -145,6 +153,13 @@ closure. Minimum content:
 - work performed and evidence pointers (paths, commands, diffs);
 - changes landed in the child repo, each tied to a `LOG.md` entry;
 - cross-domain evidence encountered, with the domain it belongs to;
+- a **Sources & frontier** section recording the frontier step: `SOURCES.md` rows before→after
+  with the counting command, rows added by tier, rows touched old→new, frontier rows advanced; a
+  lane with no `corpus/` writes a line beginning `SOURCES: unchanged —` that names why (main-repo
+  lanes: `SOURCES: unchanged — main-repo lanes hold no corpus/`)
+  (§Appendix, "Sources & frontier"). It grades conformance only — its absence is a defect in the
+  round notes, never a `report_of()` or marker predicate: a report missing it is not `failed` for
+  that alone.
 - a `SHONEN.md` checklist assessment for that lane's shokunin, under a `SHONEN` heading with one
   line per box (`[x]` / `[ ]` / `[~]` + pointer). A report without this heading does not satisfy the
   contract even if the same facts appear elsewhere in it; `[~]` means asserted-by-author, not
@@ -417,6 +432,7 @@ a **probe**, and is registered as one.
 | `SHONEN.md` | Promotion checklist to shokunin; generated at mint by copying the canonical template (below) verbatim and deleted on promotion. Gates evolve — when they change, the owning lane regenerates `SHONEN.md` verbatim from the template on its next steered round (the lane is the only allowed writer inside its repo). Verification is mechanical: the seed block (indented lines below) must diff byte-identical modulo `<name>` = the repo's directory name, and marks are confined to the box character plus one indented evidence line per box — `[x] <verifier-id>` or `[~]` with a resolvable pointer; no other prose, added boxes, or removed boxes (§Appendix, "Canonical form") |
 | `AGENTS.md` | Operating rules when working inside this repo |
 | `corpus/` | Proprietary knowledge corpus per `CORPUS.md`: `README.md` index, `knowledge/` sourced domain notes, `lessons/` per-round training lessons; reviewed by the aggregator lane every round |
+| `corpus/SOURCES.md` | Where the shokunin learns: the curated source registry, contract v1, defined once in `CORPUS.md` §"SOURCES.md — where a shokunin learns" (operator-side; this row only points there — never restates columns or rules); census via the contract's commands / `scripts/sources-census.sh`; append-only per the contract; until that `CORPUS.md` section lands, the frozen contract `.ufo/waves/kaika/SOURCES-CONTRACT-v1.md` is the authority; main-repo lanes (`protocol`, `aggregator`) hold no `corpus/` (§Appendix, "Corpus sources") |
 | `SCORECARD.md` | Axis scores per `AXES.md`: owned axes → score 0–10 → evidence pointer → last-change round, plus `planned` and `retired`. Every score is a claim: it carries the counting command that produced it and the commit it was measured against, so a reader can re-derive it |
 | `PROTOCOL-APPENDIX.md` | Main repo, protocol-lane owned: the incident digest that motivates `PROTOCOL.md`'s rules, and a REQUIRED sibling input for appendix-pointer verification. Rows are append-only dated incidents; the body's `(§Appendix, "X")` pointers resolve to the row whose first column names `X` |
 
@@ -451,7 +467,11 @@ non-author verifier per **Promotion gates**.
   holds the `PROTOCOL.md`/`ROADMAP.md`/report writes plus, as integrator-of-record, `MANIFEST.json`
   `rounds` appends; edits *outside* `rounds` stay operator-side. Lanes write only inside their own
   child repo and their lane report at `.ufo/reports/round-<N>/<id>.md`; the two main-repo lanes
-  (`protocol`, `aggregator`) also keep `SCORECARD.md` and `LOG.md` at the main-repo root.
+  (`protocol`, `aggregator`) also keep `SCORECARD.md` and `LOG.md` at the main-repo root. Those
+  root ledgers are fleet files, not lane scratch: a commit replacing them with a lane's bytes or
+  dropping the fleet header, the protocol registry section, or `## Aggregator lane` is a
+  write-scope violation, and the registered `root-ledgers` gate
+  (`python3 .ufo/gates/root-ledgers.py`) is the check (§Appendix, "Root ledger identity").
   `.ufo/reports/`, `.ufo/waves/`, and the round's `.ufo/prompts/*.md` are committed with the round's
   integration commit — an untracked prompt is non-durable dispatch evidence. `.ufo/state/` and
   `.ufo/watchdog.log` are driver runtime that churns every tick, tracked since `609ecb6` (§Appendix, "Tracked runtime"); no lane commit

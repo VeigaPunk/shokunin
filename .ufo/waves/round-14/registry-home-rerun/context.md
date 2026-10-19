@@ -1,0 +1,16 @@
+# Goal
+Protocol L1 round 14: one axis-move, protocol-soundness 8 (lowest) versus gate-integrity 9 (held). Resolve the impossible main-repo gate registry home and register the existing protocol closure gate. Fleet root /home/vgpnk/Projects/shokunin. Fresh baseline: before.json, commit 99efc52b3a6f3648f7d8e097d78460901ad3c91c, registered closure rows 0, root SKILL.md absent. Read root MISSION.md and AXES.md first; they bind this round. No new gate implementation.
+
+# Contract
+Child registries remain in each child SKILL.md. Protocol and aggregator main-repo lanes use their own explicitly lane-owned root SCORECARD.md sections. Both Registry and Delivery clauses must agree. No fake root skill and no duplicate inventory in the aggregator ledger. Protocol registry subsection stays before ## Aggregator lane. Preserve the complete existing aggregator section byte-for-byte.
+Eight registry fields: name, gate|probe, entry command, verdict map, self-test command/spelling, pinned-value path, write scope, owner. Existing executable .ufo/waves/round-15/closure-check.py; use qualified frozen names round-15/r15-pre-003400 and round-15/r15-post-012710. Registry status is registration, NOT blanket conformance or a live clean verdict.
+Inherited evidence .ufo/waves/round-14/registry-home/ is read-only. It records a live gate crash (TypeError comparing None and int from historical round:null). Treat it as known failure; do NOT rerun to confirm it, change the gate, or alter historical ledger within this move. Parent records no writable closure statuses and routes the defect. Existing filed .ufo/reports/round-14/protocol.md marker must remain an exact byte prefix; parent appends an erratum only after work is committed.
+
+# Ownership
+Contract executor alone edits PROTOCOL.md and appends a motivating incident to PROTOCOL-APPENDIX.md. Registry executor alone inserts a new protocol registry subsection in SCORECARD.md, without editing existing score rows or aggregator bytes. Parent owns score/measurement updates, LOG.md, report, publication and verification. Other workers write only their own unique role artifact in this registry-home-rerun directory. Do not edit sibling/child repos, inherited artifacts, host routing, scripts, templates or runtime. Do not commit/push. No delegation.
+
+# Verification discipline
+Every worker skips build/lint/tests/selftests/formatters; parent runs the integrated commands once afterward. Static source inspection, path/digest counting and git object provenance are allowed. Do not claim execution or non-author promotion verification. Report exact sources, commands and observed output. Archived wording/source-text tests are not behavioral authority: flag overfit rather than re-pin it. Root SHONEN.md, SKILL.md and PROVINCE.md are absent; use canonical four-box report assessment without inventing a promotion file.
+
+# Routing and shape
+Single native functions.task batch, nine mission-required roles. Host task.agentModelOverrides is sole role-routing authority; no per-worker model arguments or routing mutation. This mixed-role batch is ordinary swarm host delegation, not a UFO validator wave: the mission requires planner, which that validator forbids; never pad the batch to meet an unrelated wave band. /skill:godspeed applies.
