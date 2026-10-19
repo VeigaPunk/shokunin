@@ -5566,6 +5566,49 @@
    "campaign": "kaika",
    "namespace": "fleet-2 relaunch round-1 continuation",
    "notes": "Fleet round-1 continuation (blocked at dispatch since 2026-10-15) landed: c7986cd + 121696b + post-review 01b358c + integrator spot-check. No push (standing rule)."
+  },
+  {
+   "round": 1,
+   "date": "2026-10-19",
+   "type": "closure",
+   "closed_at": "2026-10-19T22:35:51Z",
+   "lane": "revenger",
+   "lane_round": 1,
+   "lanes": {
+    "revenger": "ok"
+   },
+   "lane_rounds": {
+    "revenger": 1
+   },
+   "promotions": [],
+   "minted": [],
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "improved",
+    "freshness": "improved",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "sources-registry (corpus/SOURCES.md, 15 rows A=14 C=1; census ok)"
+   ],
+   "report": ".ufo/reports/round-1/revenger.md",
+   "commit": "revenger-shokunin@cf0241927",
+   "verification": {
+    "reviewer": "W3ReviewRevenger (do not admit as declared → fixed in 8df2fce)",
+    "critic": "W3CriticRevenger (reject on C2 capability conformance → fixed)"
+   },
+   "campaign": "kaika",
+   "namespace": "fleet-2 relaunch round-1 continuation",
+   "notes": "First revenger rounds[] row (rostered since 2026-10-11 with an empty ledger). Work a7acc20 + 35b2e8b + 19b3174, post-review 8df2fce, integrator spot-check. corpus/QUALITY.md and corpus/README.md created; SKILL.md still absent. No push (standing rule)."
   }
  ]
 }
