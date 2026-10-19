@@ -4549,6 +4549,55 @@
     "adjacency": "unchanged"
    },
    "notes": "REGIMEN-2 ROUND 7 OF 42 (loop 1 position 7, zai glm-flash 16/16). C: verification 20->24 (total 216), 4/4 pre-landing audits. Ca: isolation-replay protocol (bwrap) closes the 4 r37 could-not-reproduce rows; basename-couples policy documented."
+  },
+  {
+   "round": 3,
+   "date": "2026-10-19",
+   "type": "closure",
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 3
+   },
+   "promotions": [],
+   "minted": [],
+   "admitted": true,
+   "verdicts": {
+    "depth": "unchanged",
+    "coverage": "improved",
+    "operability": "improved",
+    "freshness": "improved",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "closed_at": "2026-10-19T10:58:58-03:00",
+   "notes": "arc3-loop1-round3 ADMITTED (work c418be0 + hygiene 5be4a26 + records, lane identity): C1 coverage 82->83 (optimizer+non-ERC20 EVM carriers; 7 fix sets pre-landing; r1 errata append); C2 operability custody hardening at 7cd19c3c (UNEVALUABLE class, selftest 22, guard extended); C3 freshness probe table 31->57 + R1 closure + C2<->C3 collision re-anchor. Provider substitution: token-plan monthly quota mid-wave -> operator-directed devin backfill (43 token-plan + 19 devin = 62/64 reports). Custody: config.toml pre-wave operator-side drift recorded (4/5 held)."
+  },
+  {
+   "round": 38,
+   "date": "2026-10-19",
+   "type": "closure",
+   "closed_at": "2026-10-19T14:08:23Z",
+   "lanes": {
+    "kotoba": "ok"
+   },
+   "lane_rounds": {
+    "kotoba": 38
+   },
+   "promotions": [],
+   "minted": [],
+   "admitted": false,
+   "verdicts": {
+    "depth": "unchanged (C1 closure machinery landed; recording clause fails as declared — R1-D1 scope-out laundering hole, R1-D2 init_count divergences mis-filed, doc/ledger divergence)",
+    "operability": "unchanged net (both C2 residuals closed; fix introduced a None-path crash + a malformed-field arm survives — harm recorded)",
+    "freshness": "improved (C3 verified: container-relative fences, cmark 0/36, battery 18 cmark-only shapes, floors in-step, pin re-issued)",
+    "consistency": "unchanged",
+    "coverage": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "notes": "kotoba r38, loop A position 2. Provider devin/deepseek-v4-1-flash-max (operator amendment 2: token-plan keys 1/2/3 all 429, probed dead — resets 11-11/10-23/10-28; devin authorized for the deepseek-flash waves; token-plan resumes on reset). 22/24 seats. C1: the r37 source-blind re-derivation's closure machinery fully landed — adjudication of the 5 open rows (both decided for the harness by the latent-failure test on raw substrate), 4 catalogue rows SCOPED_OUT with the blindness blocker named, freeze-before-compare receipt (load-bearing), blindness-by-construction scrub at residual 0 (V2, bounded), corpus doc, both instruments registered 86/83 EXACT, comparator exit 0 24/24 over the landed scope — but the claim FAILS AS DECLARED: R1-D1 (a genuine disagreement can self-declare SCOPED_OUT into exit 0, no discriminator required) and R1-D2 (init_count_monotone/max divergences mis-filed cosmetic) stand; depth holds 9 (R1: the 9.5 shape once D1-D3 close — r39's top claim). C2: both V4 residuals closed named-exit-2 but the fix introduced a None-path TypeError crash and a malformed-field arm survives — fails as declared (harm). C3 VERIFIED: container-relative fence landing, cmark oracle 0/36 (denominator honestly corrected 4/30), battery re-derived from cmark alone, 71 fixtures byte-identical, self-test 1597 in-step, routing pin re-issued with git-traceable chain; corpus-gate fence divergence (a proven silent false-PASS vector, zero live incidence) handed to r39. Integration landed r37 record errata (brace-set citations in r37's own SCORECARD rows reddened governance.citation_resolves from c8e233d; erratum appended to the filed r37 report; 5 curated evidence scripts repaired). Lane commits 321647c (work) + 1d027f2 (report), lane identity, lands-last verified, full battery green at the work commit (corpus 9/9 once the new doc is tracked — verified). Report kotoba-shokunin/.ufo/reports/round-38/kotoba.md. No push."
   }
  ]
 }
