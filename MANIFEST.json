@@ -5095,6 +5095,85 @@
         "adjacency": "unchanged"
       },
       "notes": "REJECTED — C1's expected-only record+map composition door survives; C2/C3 verified and landed. Provider openai-codex/gpt-6-luna-max (zai quota-exhausted -> luna-max per operator directive for the session). 24/24 seats. Lane commits 6fbbff5+6881ce3. Report .ufo/reports/round-43/kotoba.md. r44 top claim = the record+map composition door + R2's three residuals."
+    },
+    {
+      "type": "craft",
+      "lane": "chousa",
+      "round": 20,
+      "date": "2026-10-19",
+      "claims": [
+        "coverage/calibration: second verification wave re-audit of rounds 15-19",
+        "operability: absorbed prior-session tok_span_at rewrite + closure recheck"
+      ],
+      "verdict": "ADMIT",
+      "axes": {
+        "coverage": "improved",
+        "operability": "improved",
+        "depth": "improved",
+        "freshness": "unchanged",
+        "calibration": "improved-narrow",
+        "adjacency": "unchanged"
+      },
+      "wave": {
+        "provider": "openai-codex",
+        "model": "gpt-6-luna-max",
+        "seats": 64,
+        "completed": 64,
+        "note": "zai exhaustion directive"
+      },
+      "gate_sha": "49b36759bc47ffed8971834515f86921b45725038a3ccf20eb215f0fb64448e9",
+      "report": ".ufo/reports/round-20/chousa.md",
+      "evidence": "corpus/evidence/verify-r20-20261019T180000Z-*.log",
+      "note": "corpus/knowledge/html-comment-r20.md"
+    },
+    {
+      "round": 8,
+      "date": "2026-10-19",
+      "type": "closure",
+      "lanes": {
+        "kaidoku": "ok"
+      },
+      "lane_rounds": {
+        "kaidoku": 8
+      },
+      "promotions": [],
+      "minted": [],
+      "admitted": true,
+      "verdicts": {
+        "depth": "unchanged",
+        "coverage": "improved",
+        "operability": "improved",
+        "freshness": "improved",
+        "calibration": "unchanged",
+        "adjacency": "unchanged"
+      },
+      "closed_at": "2026-10-19T18:17:24Z",
+      "notes": "arc3-loop1-round8 ADMITTED (work 53fcf0c + probe fix 227443e + records 947091d, lane identity): 24 seats on luna-max (zai exhausted). The r7 partial RESOLVED: C1 operability ptr_check blind spot CLOSED (if-not-occ removed; new SCORECARD DATED row 1759-1813 fixes undeclared FAIL; live :4126 current-ok, dead re-key stale-FAIL; gate sha 80027570->e4fb740c). C2 freshness: PROVINCE :3546->:4126 same-commit + receipt landed; probe needle restored. C3 coverage: Vyper optimizer-forms CLOSED (86->87; -O none==--no-optimize resolved). Instruments 87/87 + 15/15 + census PASS + G21 + probe 0/0 + custody 28/28. No push (standing rule)."
+    },
+    {
+      "round": 44,
+      "date": "2026-10-19",
+      "type": "closure",
+      "closed_at": "2026-10-19T18:30:26Z",
+      "lanes": {
+        "kotoba": "ok"
+      },
+      "lane_rounds": {
+        "kotoba": 44
+      },
+      "promotions": [],
+      "minted": [],
+      "admitted": true,
+      "verdicts": {
+        "depth": "improved (C1 verified: record+map composition door closed — record channel cross-checked for scoped-out values + combined id-set vs derived set; real 24-row fixture fails closed; r37-r44 laundering arc closed)",
+        "operability": "improved (C2 verified: R2's three residuals closed class-named; self-test 213->245)",
+        "calibration": "improved (C3 verified: real OMP 18.11.1->18.12.2 rebuild reconciled; extractor extended I5/Gl/Mo + re-pinned; surfaces 7/7, pins 3/3; provenance bound named)",
+        "consistency": "unchanged",
+        "coverage": "unchanged",
+        "freshness": "unchanged",
+        "adjacency": "unchanged"
+      },
+      "notes": "ADMITTED — all three claims verified and landed; the record+map composition door (last named channel in the laundering class) closed. Provider openai-codex/gpt-6-luna-max (zai exhausted -> luna-max). 24/24 seats. Lane commits 7d8bf2f+032f47b. Report .ufo/reports/round-44/kotoba.md. Depth 9 held — the 9.5 shape now needs a held-out hunt finding no unlisted door (r45)."
     }
   ]
 }
