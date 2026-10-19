@@ -5981,6 +5981,48 @@
    },
    "promotions": [],
    "minted": []
+  },
+  {
+   "lanes": {
+    "kagi": "ok"
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "improved",
+    "calibration": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "harmed",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [
+    "sources-registry (corpus/SOURCES.md, 16 rows; lane census CLEAN, selftest 47)"
+   ],
+   "report": ".ufo/reports/round-21/kagi.md",
+   "verification": {
+    "reviewer": "W3ReviewKagi (reject as landed; partial admit C1 + C3 capability)",
+    "critic": "W3CriticKagi (reject as filed: C3 coverage creates an expansion/quality trade)"
+   },
+   "notes": "Work c41af82 + e1544c1 (self-correction after the lane's own reviewers). Landed work stays in the lane; the honest stop is on the round's admission, not the work. Executors died twice on provider limits; L1 did one seat itself. No push (standing rule).",
+   "closed_at": "2026-10-19T23:01:05Z",
+   "commit": "kagi-shokunin@1e9e67ff3",
+   "campaign": "kaika",
+   "date": "2026-10-19",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 21,
+   "round": 21,
+   "lane_rounds": {
+    "kagi": 21
+   },
+   "promotions": [],
+   "minted": []
   }
  ]
 }
