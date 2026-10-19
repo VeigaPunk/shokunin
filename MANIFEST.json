@@ -5174,6 +5174,145 @@
         "adjacency": "unchanged"
       },
       "notes": "ADMITTED — all three claims verified and landed; the record+map composition door (last named channel in the laundering class) closed. Provider openai-codex/gpt-6-luna-max (zai exhausted -> luna-max). 24/24 seats. Lane commits 7d8bf2f+032f47b. Report .ufo/reports/round-44/kotoba.md. Depth 9 held — the 9.5 shape now needs a held-out hunt finding no unlisted door (r45)."
+    },
+    {
+      "type": "craft",
+      "lane": "chousa",
+      "round": 21,
+      "date": "2026-10-19",
+      "claims": [
+        "coverage/operability: ptr_resolves_meta boundary gap",
+        "depth: pointer-boundary-r21.md"
+      ],
+      "verdict": "ADMIT",
+      "axes": {
+        "coverage": "improved",
+        "operability": "improved",
+        "depth": "improved",
+        "freshness": "unchanged",
+        "calibration": "improved-narrow",
+        "adjacency": "unchanged"
+      },
+      "wave": {
+        "provider": "opencode-go-6",
+        "model": "deepseek-v4.1-flash",
+        "seats": 32,
+        "completed": 32,
+        "note": "devin 502 fallback per operator directive"
+      },
+      "gate_sha": "bfc291ef526040607436bd4d505354200e4940b4d1e43213008950608f6274ef",
+      "report": ".ufo/reports/round-21/chousa.md",
+      "evidence": "corpus/evidence/ptr-r21-20261019T184000Z-*.log",
+      "note": "corpus/knowledge/pointer-boundary-r21.md"
+    },
+    {
+      "round": 9,
+      "date": "2026-10-19",
+      "type": "closure",
+      "lanes": {
+        "kaidoku": "ok"
+      },
+      "lane_rounds": {
+        "kaidoku": 9
+      },
+      "promotions": [],
+      "minted": [],
+      "admitted": true,
+      "verdicts": {
+        "depth": "unchanged",
+        "coverage": "improved",
+        "operability": "unchanged",
+        "freshness": "improved",
+        "calibration": "improved",
+        "adjacency": "unchanged"
+      },
+      "closed_at": "2026-10-19T18:43:10Z",
+      "notes": "arc3-loop1-round9 ADMITTED (work eb5a2c4 + records 5694506, lane identity): 48 seats on scheduled luna-max. C1 freshness: PROVINCE:50 dated+live pacman repair (1556->1350 qualified); scope re-key fixes second pre-existing undeclared FAIL (r8 section). C2 coverage: viaIR fallback-miss residual CLOSED (87->88; SUB-leg branch distinguishes revert vs storage-write path). C3 calibration: pin drift class characterized (sole match :4126, position-sensitive not content-sensitive). Instruments 88/88 + 15/15 + census PASS + G21 + ptr current-ok + probe 0/0 + custody 28/28. No push (standing rule)."
+    },
+    {
+      "type": "craft",
+      "lane": "chousa",
+      "round": 22,
+      "date": "2026-10-19",
+      "claims": [
+        "coverage/operability: .config/.omp/.local-state path-start denylist bypass",
+        "depth: denylist-r22.md"
+      ],
+      "verdict": "ADMIT",
+      "axes": {
+        "coverage": "improved",
+        "operability": "improved",
+        "depth": "improved",
+        "freshness": "unchanged",
+        "calibration": "improved-narrow",
+        "adjacency": "unchanged"
+      },
+      "wave": {
+        "provider": "openai-codex",
+        "model": "gpt-6-luna-max",
+        "seats": 32,
+        "completed": 32,
+        "note": "antigravity gemini failed → luna fallback"
+      },
+      "gate_sha": "dfb798b4e2c59f4925f12480a06c603a4eae55a706f6601c31590e5970bda22c",
+      "report": ".ufo/reports/round-22/chousa.md",
+      "evidence": "corpus/evidence/deny-r22-20261019T190000Z-*.log",
+      "note": "corpus/knowledge/denylist-r22.md"
+    },
+    {
+      "type": "craft",
+      "lane": "chousa",
+      "round": 23,
+      "date": "2026-10-19",
+      "claims": [
+        "coverage/operability: fenced-heading anchor false-positive",
+        "depth: fenced-anchor-r23.md"
+      ],
+      "verdict": "ADMIT",
+      "axes": {
+        "coverage": "improved",
+        "operability": "improved",
+        "depth": "improved",
+        "freshness": "unchanged",
+        "calibration": "improved-narrow",
+        "adjacency": "unchanged"
+      },
+      "wave": {
+        "provider": "none",
+        "model": "direct-integration",
+        "seats": 0,
+        "completed": 0,
+        "note": "claim's before→after already measured by r20 wave; no wave dispatched"
+      },
+      "gate_sha": "b5d0f93d38f3c52ee3a4bef38ec524a2bb64e280c9c518f331fa39d082849799",
+      "report": ".ufo/reports/round-23/chousa.md",
+      "evidence": "corpus/evidence/fanchor-r23-20261019T192000Z-*.log",
+      "note": "corpus/knowledge/fenced-anchor-r23.md"
+    },
+    {
+      "round": 45,
+      "date": "2026-10-19",
+      "type": "closure",
+      "closed_at": "2026-10-19T19:16:05Z",
+      "lanes": {
+        "kotoba": "ok"
+      },
+      "lane_rounds": {
+        "kotoba": 45
+      },
+      "promotions": [],
+      "minted": [],
+      "admitted": false,
+      "verdicts": {
+        "depth": "improved-bounded (held-out hunt: 14 of 25 r41 doors now reject exit 2 on 13b6d791; record+map verified closed; but the surviving doors are not bounded — raw-JSON dup members, scope-file cwd seam, live-JSON shadows; 11 still open; 9.5 not supported; depth holds 9)",
+        "operability": "improved (C2 verified: X2's residuals closed on 1101213a — expected/expected_value alias-conflict, lone non-string status; self-test 255)",
+        "calibration": "improved (C3 verified: census doc reconciled to post-r44 append-only; recheck runs)",
+        "consistency": "unchanged",
+        "coverage": "unchanged",
+        "freshness": "unchanged",
+        "adjacency": "unchanged"
+      },
+      "notes": "REJECTED — C1 improved but the surviving doors are not demonstrably bounded (the exhaustive-residual branch unverified); C2/C3 verified and landed. The held-out hunt is honest data: 14/25 closed, 11 open + more outside the census. Provider openai-codex/gpt-6-luna-max, 42 seats. Lane commits 50507ca+055d3b9. Report .ufo/reports/round-45/kotoba.md. r46 top claim = the scope-file cwd seam (strongest reachable door) + live-JSON shadows."
     }
   ]
 }
