@@ -5609,6 +5609,46 @@
    "campaign": "kaika",
    "namespace": "fleet-2 relaunch round-1 continuation",
    "notes": "First revenger rounds[] row (rostered since 2026-10-11 with an empty ledger). Work a7acc20 + 35b2e8b + 19b3174, post-review 8df2fce, integrator spot-check. corpus/QUALITY.md and corpus/README.md created; SKILL.md still absent. No push (standing rule)."
+  },
+  {
+   "round": 12,
+   "date": "2026-10-19",
+   "type": "closure",
+   "closed_at": "2026-10-19T22:37:14Z",
+   "lane": "souji",
+   "lane_round": 12,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 12
+   },
+   "promotions": [],
+   "minted": [],
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "improved",
+    "operability": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "sources-registry (corpus/SOURCES.md, 33 rows; census ok)",
+    "r12-maintenance-guard (git auto-maintenance worktree-prune guard, selftest 6/6)"
+   ],
+   "report": ".ufo/reports/round-12/souji.md",
+   "commit": "souji-shokunin@31984f473",
+   "verification": {
+    "reviewer": "W3ReviewSouji (hold → fixed in 2a363a0)",
+    "critic": "W3CriticSouji (reject on C2 validator → fixed)"
+   },
+   "campaign": "kaika",
+   "notes": "Round 12 under the current operator directive (the earlier 12-round goal was cancelled after r11). Work d7266c5 + de9187e, post-review 2a363a0, integrator spot-check. One L2's failed cd produced 4 stray fleet-root commits + strays — repaired by the integrator (reset --keep 31baf5c, quarantine). No push (standing rule)."
   }
  ]
 }
