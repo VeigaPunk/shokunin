@@ -5402,6 +5402,46 @@
    "close_commit": "78f77a6",
    "note": "C landed: cartography-and-mapmaking.md (239 lines, C02 head + C01 body, D1/D3/P2 fixes; <=250 tolerance; sweep rows 224 files 224). Ca landed: README dup-H1 removed (grep 2->1); r47 over-build class -> queue-successor-r48.json fixed-with-evidence; tools/check-readme-heading.py (selftest 8/8) closes the sweep heading blind-spot; rev-2.4 vector repaired. O dropped at declaration — freshness gate's first live use flagged the candidate stale. clean 64/64 on key-2.",
    "receipt": "kotodama-shokunin/reports/round-48/validation.json"
+  },
+  {
+   "round": 12,
+   "date": "2026-10-19",
+   "type": "closure",
+   "closed_at": "2026-10-19T22:07:11Z",
+   "lane": "kaidoku",
+   "lane_round": 12,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 12
+   },
+   "promotions": [],
+   "minted": [],
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "depth": "improved",
+    "operability": "improved",
+    "calibration": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "report": ".ufo/reports/round-12/kaidoku.md",
+   "commit": "kaidoku-shokunin@2a0d6c1",
+   "verification": {
+    "reviewer": "W3ReviewKaidoku (admit with conditions)",
+    "critic": "W3CriticKaidoku (reject as filed: C3 axis ownership, missing spot-check, C1 unsourced)",
+    "spot_check": "admit agree (C1 entry), reject agree (PL-4 substring rows, 17/24 kill)"
+   },
+   "campaign": "kaika",
+   "notes": "arc3-loop1-round12 ADMITTED by the orchestrator on per-axis verdicts: every measurement re-verified by a non-author reviewer (Command A 90→91, rule blocks 16→17, pointer rows 0→3; independent recheck reproduces the Go evidence IDs, reconcile 27/27). Critic objections recorded as debts, not failed verifications: C3 operability is outside the lane's owned axes (coverage/depth/calibration) with no recorded axis add; C1's source is not an S### row (contract v1 applies from r13); corpus/SOURCES.md absent (planned r13); lesson Gate lacked the spot-check (recorded in round-12-verifier-spotcheck.md). No push (standing rule)."
   }
  ]
 }
