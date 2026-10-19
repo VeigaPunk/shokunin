@@ -38,6 +38,39 @@ non-author `unprovable-but-better` judgment — and **no axis is harmed**; a
 trade anywhere is not an improvement. Report all verdicts and let the operator
 rule.
 
+## 2b. Frontier step — every child-lane round
+
+Every child-lane round curates where the lane learns and learns from its own mistakes. This
+step runs inside the 1–3 claim cap; it is not a fourth claim. Its contract is `corpus/SOURCES.md`
+contract v1 in `{{FLEET_ROOT}}/CORPUS.md` §SOURCES.md — follow it, never redefine it.
+
+1. **Curate `corpus/SOURCES.md`** (create it in the contract's shape if missing). A row is
+   written only after its source is opened this round; the lesson's `## Gate` records the
+   URL, access date, and a ≤25-word located quote for every new row. Rejections stay as
+   rows with reason and flip. Every `status` / `recheck` / `used-by` change is logged
+   old→new in the lesson.
+2. **Record the census before → after.** Run this command at round start and at round
+   end; paste both outputs and their exit codes. Exit 0 is required at round end.
+   Exit 2 is expected at round start only when `corpus/SOURCES.md` does not yet
+   exist. The frozen manual census commands remain in `{{FLEET_ROOT}}/CORPUS.md`
+   §SOURCES.md; that section is the specification.
+
+   ```sh
+   {{FLEET_ROOT}}/scripts/sources-census.sh validate --root {{FLEET_ROOT}} {{LANE}}
+   ```
+
+3. **Mine one mistake** — from this round or an earlier one (rejected, harmed or honest-stop
+   rounds, errata, spot-check disagreements) into `corpus/lessons/round-{{ROUND}}.md`
+   `## Mistakes`: class · evidence pointer · captured-by (the criterion or rule that should
+   have caught it, or `none`) · fix. A fix counts only once shown able to fail. Found none?
+   Paste the sweep — command and output — that found none.
+4. **At least one sourced claim** — one of the round's claims rests on a `SOURCES.md` row
+   opened this round: the knowledge entry or evidence it lands cites that `S###`.
+
+Main-repo lanes (`repo = .`) do not run this child-lane frontier step, so they need neither
+a mined mistake nor a sourced claim. Their report's Sources & frontier section uses
+exactly: `SOURCES: unchanged — main-repo lanes hold no corpus/`.
+
 ## 3. L2 floor — one batched swarm
 
 Dispatch **at least 8 L2 subagents in ONE batched AgentSwarm call** this round (Kimi
@@ -69,13 +102,15 @@ fleet repo. Required sections, in order:
   carries it.
 - **Before → after measurements** — one per claim, each with the counting command and the
   commit it was measured against.
+- **Sources & frontier** — `SOURCES.md` rows before→after with the counting command, rows added by tier, rows touched old→new, frontier rows advanced; a lane with no `corpus/` writes a line beginning `SOURCES: unchanged —` that names why (main-repo lanes: `SOURCES: unchanged — main-repo lanes hold no corpus/`) (§Appendix, "Sources & frontier"). It grades conformance only — its absence is a defect in the round notes, never a `report_of()` or marker predicate: a report missing it is not `failed` for that alone.
+  Here, `frontier rows advanced` means a `corpus/README.md` `## Frontier` row moved into core or measurably progressed, named by its row.
 - **SHONEN** — one line per box of your SHONEN.md checklist: `[x]` only with a named
   non-author verifier, `[~]` with a resolvable evidence pointer, `[ ]` if untouched.
 
-**Marker rule:** a contentless report (placeholder text, missing required sections, no
-evidence pointers) counts as the round **failed** — the driver relaunches the same round. A
-report that names real committed work but skips the required sections is `ok` plus a
-minimum-content conformance defect, logged as one.
+**Marker rule:** a contentless report (placeholder text, missing required sections other
+than **Sources & frontier**, or no evidence pointers) counts as the round **failed** —
+the driver relaunches the same round. A report that names real committed work but skips
+the required sections is `ok` plus a minimum-content conformance defect, logged as one.
 
 ## 5. Commit, push scope, L0 side channel
 
