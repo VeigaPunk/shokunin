@@ -1,8 +1,8 @@
 # Jujutsu (jj) adoption — kaika W2j findings and plan (2026-10-19)
 
 Operator question: "why don't you set jujutsu as the local git manager? … wouldn't that be an
-upgrade?" Answer from 32 probes (`kaika-w2j/*.md`): **yes, an upgrade — in colocated mode, with
-four preconditions, rolled out as a measured pilot, not flipped under live rounds.**
+upgrade?" Answer from 32 probes (`kaika-w2j/*.md`): **a useful upgrade for isolated
+repositories, not a drop-in replacement for this fleet's concurrent Git worktrees.**
 
 ## Evidence
 
@@ -21,13 +21,13 @@ four preconditions, rolled out as a measured pilot, not flipped under live round
 
 ## Why it is an upgrade here
 
-- **Mistakes become cheap to undo.** Today's two worst incidents — the root-ledger clobber at
-  `31baf5c` and four stray fleet-root commits from a failed `cd` — are each one `jj op restore`
-  in a jj-mutated repo.
-- **Conflicts stop blocking.** Parallel lane work and integration merges record conflicts in
-  commits instead of halting a rebase.
-- **Nothing uncommitted is lost.** The working copy is a commit; abandoned rounds (kama's unrun
-  round-10 plan, game-dev-3d's r107 shards) would have been recoverable state, not loose files.
+- **Recorded jj operations are recoverable.** `jj op restore` can restore a recorded prior
+  jj state. It cannot retroactively recover an unsnapshotted edit or turn the historical
+  Git-only ledger clobber into a recorded jj operation.
+- **Conflicts are first-class state.** Jj can record a conflicting rebase rather than
+  stopping with Git's rebase workflow; existing Git-only gates still need compatibility checks.
+- **Snapshots reduce loose working-copy risk.** Non-ignored files captured by a jj snapshot
+  become recoverable commit state; ignored, refused or never-snapshotted files do not.
 
 ## Preconditions (per repo, before its first jj command)
 
@@ -43,12 +43,13 @@ so commits a report has cited cannot be rewritten; git commit ids stay the evide
 
 ## Plan
 
-1. **Now (done in this campaign):** evidence only; no live repo touched.
-2. **Pilot — next round, two lanes** (`tameshi` `safe`, `mado` `safe-with-config`), after the
-   kaika worktrees are merged and retired: colocate with the preconditions, run one craft round
-   through jj (`jj commit -m … <paths>`, `jj bookmark set <branch> -r @-`, cite `commit_id`),
-   and measure: gates unchanged, identity correct on author and committer, no detached-HEAD
-   breakage, op-log recovery demonstrated.
+1. **Evidence:** scratch probes completed before live adoption; no live source history was rewritten.
+2. **Pilot initialized:** `mado` and `tameshi` were clean, their kaika branches merged and
+   linked worktrees retired before `jj git init --colocate`. Repo-scoped lane identities and
+   immutable bookmarked ancestry are configured. Empty working copies contain no source changes.
+   Mado's gate remains 269/269 and tameshi's 80/80 before/after; author and committer both match
+   the lane identity. Receipt: `jj-live-pilot.txt`. No live content commit or undo was attempted.
+   Future craft work must advance the intended bookmark explicitly and cite the stable commit ID.
 3. **Contract:** the protocol lane makes the contract VCS-neutral (git commit ids as evidence,
    ancestry checks, explicit-path commits) per `connect-protocol.md`; tower keeps git worktrees
    for concurrent writers until jj workspaces can run every lane gate (most gates call git).
