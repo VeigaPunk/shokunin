@@ -5442,6 +5442,49 @@
    },
    "campaign": "kaika",
    "notes": "arc3-loop1-round12 ADMITTED by the orchestrator on per-axis verdicts: every measurement re-verified by a non-author reviewer (Command A 90→91, rule blocks 16→17, pointer rows 0→3; independent recheck reproduces the Go evidence IDs, reconcile 27/27). Critic objections recorded as debts, not failed verifications: C3 operability is outside the lane's owned axes (coverage/depth/calibration) with no recorded axis add; C1's source is not an S### row (contract v1 applies from r13); corpus/SOURCES.md absent (planned r13); lesson Gate lacked the spot-check (recorded in round-12-verifier-spotcheck.md). No push (standing rule)."
+  },
+  {
+   "round": 24,
+   "date": "2026-10-19",
+   "type": "closure",
+   "closed_at": "2026-10-19T22:17:22Z",
+   "lane": "chousa",
+   "lane_round": 24,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 24
+   },
+   "promotions": [],
+   "minted": [],
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "source registry (corpus/SOURCES.md, contract v1; 18 rows A=14 B=1 C=3; census clean)"
+   ],
+   "report": ".ufo/reports/round-24/chousa.md",
+   "commit": "chousa-shokunin@d730ae4c3",
+   "verification": {
+    "reviewer": "W3ReviewChousa (admit; 7/7 spot-check agree)",
+    "critic": "W3CriticChousa (reject pending Claim-2 falsifier erratum — landed 095b90c)",
+    "spot_check": "4 admits + 3 rejects, 7/7 agree"
+   },
+   "campaign": "kaika",
+   "notes": "Pre-registered round 24 landed (6572827) + critic-requested append-only erratum (095b90c) + integrator spot-check lesson. First fleet SOURCES.md registry admitted as a capability. No push (standing rule)."
   }
  ]
 }
