@@ -190,3 +190,71 @@ Not a shonen: `protocol` is a main-repo integrator lane with no `SHONEN.md`; not
 - **Residuals.** Root `LOG.md` append-only is not gated (prefix digest next); the closure gate's
   last recorded live run crashed on `rounds[138].round: null` (round-14 record, not re-run);
   `.ufo/state/` and `.ufo/watchdog.log` remain tracked runtime (operator-side).
+
+## Post-review corrections
+
+Appended after the orchestrator's non-author review of round 16. The text above stands as
+filed; these entries supersede the parts they name. All commands were re-run at `7c5b34f`
+from the fleet-protocol worktree.
+
+- **B1 — G3 command was wrong as printed.** The G3 row's command (`\|` inside the awk regex)
+  prints **0**, not 2: awk reads `\|` as a literal pipe, so the alternation never matches.
+  Corrected command:
+  `git show 7c5b34f:SCORECARD.md | awk '/^## Aggregator lane/{exit} /^\| (closure-check|root-ledgers) \| gate \|/{n++} END{print n+0}'`
+  → `2`. Cross-check: `git show 7c5b34f:SCORECARD.md | grep -cE '^\| (closure-check|root-ledgers) \| gate \|'`
+  → `2`. The same command at `31baf5c` → `0`. `SCORECARD.md` G3 at `7c5b34f` has the same
+  escaped form, so a future round must fix it with a correction there.
+- **B2 — the carry-forward check could not fail.** `31baf5c`'s ledger blobs equal kotoba
+  `b7470d7`'s, so "every added line is in kotoba" holds by construction. `classify.sh` and the
+  reviewer's difflib re-run show attribution only. They are not evidence that nothing was lost.
+  The evidence for no loss is different:
+  - (a) The restored bytes equal `12f2da5` = `0b1ac3b` (blobs `37b5ffae…`/`faaf3bb8…`).
+  - (b) `git log --all 0b1ac3b.. -- SCORECARD.md LOG.md` lists only `31baf5c` and this round's
+    `7c5b34f`, so no other reachable commit on any ref edited the ledgers after the last fleet
+    version.
+  - (c) The fleet-root working tree held no uncommitted ledger edits (scout seat:
+    `git status --short -- SCORECARD.md LOG.md` empty).
+  - (d) There are no post-`0b1ac3b` protocol/aggregator `MANIFEST.json` rows that would imply
+    an unlogged entry (scout seat).
+
+  The residual is unreachable objects, and the next note shows it is not empty. "0 fleet
+  entries lost" holds for reachable history only.
+- **B3 — cross-domain evidence (adjacency), owed by the minimum-content contract:**
+  - **kotoba** (ledger owner): its round-36 `SCORECARD.md`/`LOG.md` bytes (`b7470d7`) were
+    copied into the fleet root. The kotoba repo is not harmed and the evidence is kotoba's
+    provenance record.
+  - **kotodama** (committer): `31baf5c` committed under its identity. It swept root ledgers and
+    `.ufo/l0-questions.md` (+2) outside its write scope, and its own rounds 33–42 reports landed
+    in the same commit. This is routed as a write-scope defect (L0 question 2).
+  - **aggregator**: `corpus/SOURCES.md` now sits inside the per-round corpus review
+    (`CORPUS.md`; connector seat). The aggregator may review and file lessons but may not repair
+    a lane's `SOURCES.md` in place. That is a duty this round created for that lane.
+  - **operator / harness**: the `cd` alias defect (`alias cd=__fnmcd`, function missing) caused
+    stray commits on fleet-root `master` and this lane's own stray `LOG.md` append (reverted).
+    The defect belongs to the host shell configuration, not to any lane.
+- **Notes.**
+  - The `root-ledgers` gate is **not wired to any trigger**: no driver call, hook, or CI runs it.
+    It catches a clobber only when someone runs it. Wiring it in is operator-side work
+    (`scripts/`).
+  - Protocol-soundness size grew **513 → 533** body lines against the round-13 verifier's
+    **470** cap (appendix 51 → 55 of 60). P10's "no regression" means the same three checks fail.
+    It does not mean the cap debt held: that debt grew by 20 lines.
+  - Trend: **quality** should read **restored**, not `improved`. The 12/12 round-14 pointers
+    and the refreshed soundness row bring back what existed rather than adding quality.
+  - **Seven dangling commits dated 2026-10-17** edit `LOG.md` + `README.md` and were never on
+    `master`:
+    - `0922425`
+    - `8a23eb0`
+    - `88658c2`
+    - `d62889a`
+    - `5870ee5`
+    - `88b10d4`
+    - `c8b4e56`
+
+    Command: `git fsck --no-reflogs --dangling`, filtered to commits dated 2026-10-17 touching
+    `LOG.md`. Their LOG entries exist in no reachable ledger and are not carried into this
+    restore. This is a pending decision for the integrator/operator; they are not rescued here.
+  - **`origin/master` already holds the clobber:** `git merge-base --is-ancestor 31baf5c
+    origin/master` → true (`origin/master` = `31baf5c`). The bad ledger bytes are published.
+    The restore reaches the remote only via an operator push of the merged fix; this lane
+    pushes nothing.
