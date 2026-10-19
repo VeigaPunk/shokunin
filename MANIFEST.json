@@ -4205,6 +4205,16 @@
    },
    "closed_at": "2026-10-18T23:40:00-03:00",
    "notes": "souji r10 REJECTED on O1 (operator: 'finish this round'): certifier unsafe=3, all one class (census --compare accepts empty prior). Delta vs r9: >=16 open classes -> 1; 121 conservative refusals over 15 corpora; 7-cluster merge installed (selftests 40/51/91); NOT certified. Hyper provider tested per operator: functional but ~829s/agent, unusable for batches; completed on devin/deepseek-v4-1-flash-max. Work commit e879ba0; report .ufo/reports/round-10/souji.md."
+  },
+  {
+   "round": 11,
+   "date": "2026-10-18",
+   "type": "closure",
+   "lanes": {
+    "souji": "failed"
+   },
+   "closed_at": "2026-10-18T23:59:00-03:00",
+   "notes": "souji r11 REJECTED as a round (operator: finish + push before reboot). Census --compare contract FIXED (cand-census-02 installed; selftest 36/36; all cert-16 shapes refuse) — last r9 defect class closed in tools. Certification NOT granted: certifier evidence-integrity defects (cert-16 relay overwrites; verdicts on non-installed bytes). Rubric scores UNRATED. Work commit 43d57548. NOTE: operator cancelled the 12-round goal after this round."
   }
  ]
 }
