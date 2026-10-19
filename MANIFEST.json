@@ -5523,6 +5523,49 @@
    },
    "campaign": "kaika",
    "notes": "Root SCORECARD.md/LOG.md restored to the 12f2da5 fleet bytes after 31baf5c copied kotoba b7470d7 over them (published: origin/master=31baf5c); correction entry appended; PROTOCOL.md gains corpus/SOURCES.md in the file contract, a per-round frontier step, a Sources & frontier report section (conformance item, never pass/fail) and a root-ledger overwrite rule, each with an appendix row. Scores held (gate-integrity 9, protocol-soundness 8) — the verifiers agreed raising them would not be reproducible. Debts: gate has no trigger yet; SCORECARD G3 counting command carries the same awk escape bug; soundness caps 533 vs 470. No push (standing rule)."
+  },
+  {
+   "round": 1,
+   "date": "2026-10-19",
+   "type": "closure",
+   "closed_at": "2026-10-19T22:35:21Z",
+   "lane": "tameshi",
+   "lane_round": 1,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 1
+   },
+   "promotions": [],
+   "minted": [],
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "sources-registry (corpus/SOURCES.md, 44 rows A=37 B=5 C=2; census ok)"
+   ],
+   "report": ".ufo/reports/round-1/tameshi.md",
+   "commit": "tameshi-shokunin@a21e91047",
+   "verification": {
+    "reviewer": "W3ReviewTameshi (admit with conditions — met in 01b358c)",
+    "critic": "W3CriticTameshi (K1 reject as measured → re-pinned without box-3 increment; K2 admit)"
+   },
+   "campaign": "kaika",
+   "namespace": "fleet-2 relaunch round-1 continuation",
+   "notes": "Fleet round-1 continuation (blocked at dispatch since 2026-10-15) landed: c7986cd + 121696b + post-review 01b358c + integrator spot-check. No push (standing rule)."
   }
  ]
 }
