@@ -4174,6 +4174,27 @@
     "adjacency": "unchanged"
    },
    "notes": "REGIMEN COMPLETE. Round 32 (final): C/O/D verify, acceptance exits 0; work commit cdd66d79ff4a0789eddc811989141cd3685af9b8. Completion criterion certified end-to-end: lane rounds 8-32 = 25 rounds (21 admitted, 3 rejected r11/r17/r22, 1 operator-skipped r13); rounds 1-7 retroactive. Operator decision materials at kotodama-shokunin/reports/round-32/final-dossier.md (promotion + freshness-threshold decisions pending the operator)."
+  },
+  {
+   "round": 103,
+   "date": "2026-10-18",
+   "type": "closure",
+   "lanes": {
+    "game-dev-2d": "ok"
+   },
+   "lane_rounds": {
+    "game-dev-2d": 103
+   },
+   "promotions": [],
+   "minted": [],
+   "admitted": true,
+   "verdicts": {
+    "depth": "improved",
+    "coverage": "improved",
+    "calibration": "improved"
+   },
+   "closed_at": "2026-10-19T00:59:00-03:00",
+   "notes": "r103 ADMIT-with-findings (work 752cdc32 + record a322bce5): +16 export_div CASES (552 total). Receipt-shape META gate landed (W10): 0 flags/554 rows x2; boundary measured (4/10 evasion flag, 6 accounted); iterate folds F4 (CASES pin lookup vs record race) F5 (probe artifacts) F6 (derived-evidence account). 3 simplifier gap folds (-10 lines); probe print law; s01 NUL decode fix. Receipts 570/0 x2. PROVIDER BATTLE: opencode-go-7 starved 2h, opencode-go-4 insufficient funds, opencode-go-2 completed 58/58 - all within the scheduled lane. 3D side-round still deferred (3D at r106, parallel session) - must land before 2D r105."
   }
  ]
 }
