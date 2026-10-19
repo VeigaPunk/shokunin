@@ -4116,6 +4116,16 @@
    },
    "closed_at": "2026-10-18T21:35:00-03:00",
    "notes": "souji r8 admitted 3/3 (zai glm-5.3-flash, 22/24; 2 failures = host /tmp disk quota corrupting fixtures — escalated). O1: tools/souji-quarantine.sh = impl-01 (sha256 5780ad75) — fail-closed quarantine flow, selftest 63/63, all outcomes exercised on fixtures, 96-row approval dry-run 96/96 PASS zero mutations, live mutations refused (exit 4). C1: pointer sweep 111 tokens, 1 dead (r7 correction), 1 drift. K1: gate-opening runbook landed. Work commit 6d749f17; report .ufo/reports/round-8/souji.md."
+  },
+  {
+   "round": 9,
+   "date": "2026-10-18",
+   "type": "closure",
+   "lanes": {
+    "souji": "failed"
+   },
+   "closed_at": "2026-10-18T23:20:00-03:00",
+   "notes": "souji r9 REJECTED (O1 NOT-MET, all 4 judges) on gpt-6.1-sol-max (23/24). Red-team found 23 defect classes (env hostility, auth forgery incl. ledger-revocation-after-capture, stale-sweep blind spots, nested-repo deletion, git-2.55 worktree skew, index-write violation, scorecard drift). S17 patches applied (selftests 40/51/91) but >=16 classes remain open on fresh replays: tools PATCHED-NOT-CERTIFIED, deletion authorization OFF. S18 candidates banked for r10 composition. rubric-final.md banked; scores LEGACY-UNMAPPED; dissent preserved. K1/C1 MET bounded. Work commit 455b1de2; report .ufo/reports/round-9/souji.md."
   }
  ]
 }
