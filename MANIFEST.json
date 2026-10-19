@@ -4825,6 +4825,57 @@
     "adjacency": "unchanged"
    },
    "notes": "REGIMEN-2 ROUND 10 OF 42 (loop 1 position 10, devin 32/32). REJECTED on C: C01/C04 lithic collision (C04 lands, C01 routed as spare); 26/223 not 27/224. O verified: N6 successor extractor durable, wrapped field whole, corrected census; r39 policy truncation corrected. Overwrite incident: 2 entries restored byte-exact from HEAD."
+  },
+  {
+   "type": "craft",
+   "lane": "chousa",
+   "round": 17,
+   "date": "2026-10-19",
+   "claims": [
+    "coverage/operability: scope-screen fenced-heading shadow fix",
+    "depth: fenced-heading-r17.md + call-site audit"
+   ],
+   "verdict": "ADMIT",
+   "axes": {
+    "coverage": "improved",
+    "operability": "improved",
+    "depth": "improved",
+    "freshness": "unchanged",
+    "calibration": "improved-narrow",
+    "adjacency": "unchanged"
+   },
+   "wave": {
+    "provider": "opencode-go",
+    "model": "deepseek-v4.1-flash",
+    "seats": 32,
+    "completed": 27,
+    "note": "xai-oauth 403 fallback; zai interrupted at 14/48"
+   },
+   "gate_sha": "c2915f24d73d656ca23b7f6228cbdd502c27a8c07670776fed84c70f278266f8",
+   "report": ".ufo/reports/round-17/chousa.md",
+   "evidence": "corpus/evidence/fence-r17-20261019T171200Z-*.log",
+   "note": "corpus/knowledge/fenced-heading-r17.md"
+  },
+  {
+   "round": 43,
+   "lane": "kotodama",
+   "loop": 1,
+   "position": 11,
+   "provider": "opencode-go",
+   "model": "deepseek-v4.1-flash",
+   "requested_workers": 32,
+   "filed": 16,
+   "verdict": "rejected-honest-stop",
+   "admitted": false,
+   "claims": {
+    "O": "failed-as-declared",
+    "C": "blocked-by-topic-collision",
+    "Ca": "improved"
+   },
+   "baseline_commit": "7ceff59",
+   "close_commit": "c9f4eaa",
+   "note": "O+C declared on stale premises (durable green resolver; owned lithic slot); honest stop. Ca successor dispositions filed w/ Ca02 amendments. Named deviation: scheduled zai glm-5.3-flash-low interrupted x3 -> opencode-go.",
+   "receipt": "kotodama-shokunin/reports/round-43/validation.json"
   }
  ]
 }
