@@ -1,0 +1,143 @@
+bash /home/vgpnk/Projects/shokunin/.tower/worktrees/kaika/fleet-sources-hardening/scripts/sources-census.sh census /tmp/kaika-census-final-3oaxz6a_/a-shokunin
+exit=0
+a-shokunin	rows	1
+a-shokunin	tier.B	1
+a-shokunin	status.queued	1
+FLEET	rows	1
+FLEET	tier.A	0
+FLEET	tier.B	1
+FLEET	tier.C	0
+FLEET	tier.invalid	0
+FLEET	status.queued	1
+FLEET	status.mined	0
+FLEET	status.rejected	0
+FLEET	status.invalid	0
+FLEET	missing	0
+
+
+bash /home/vgpnk/Projects/shokunin/.tower/worktrees/kaika/fleet-sources-hardening/scripts/sources-census.sh validate /tmp/kaika-census-final-3oaxz6a_/a-shokunin
+exit=0
+a-shokunin	ok	/tmp/kaika-census-final-3oaxz6a_/a-shokunin/corpus/SOURCES.md
+
+
+bash /home/vgpnk/Projects/shokunin/.tower/worktrees/kaika/fleet-sources-hardening/scripts/sources-census.sh validate /tmp/kaika-census-final-3oaxz6a_/bad-shokunin
+exit=1
+bad-shokunin	E06	S001 tier=Z
+
+
+bash /home/vgpnk/Projects/shokunin/.tower/worktrees/kaika/fleet-sources-hardening/scripts/sources-census.sh validate /tmp/kaika-census-final-3oaxz6a_/outside-shokunin
+exit=1
+outside-shokunin	E12	S001 row outside Registry section
+
+
+bash /home/vgpnk/Projects/shokunin/.tower/worktrees/kaika/fleet-sources-hardening/scripts/sources-census.sh overdue --today 2026-10-19 /tmp/kaika-census-final-3oaxz6a_/a-shokunin
+exit=1
+a-shokunin	cadence	S001 recheck=30d opened=2026-01-01
+a-shokunin	overdue	S001 261d recheck=30d opened=2026-01-01
+
+
+bash /home/vgpnk/Projects/shokunin/.tower/worktrees/kaika/fleet-sources-hardening/scripts/sources-census.sh shared /tmp/kaika-census-final-3oaxz6a_/a-shokunin /tmp/kaika-census-final-3oaxz6a_/b-shokunin
+exit=0
+probe.example/scope	shared	a-shokunin,b-shokunin
+
+
+bash /home/vgpnk/Projects/shokunin/.tower/worktrees/kaika/fleet-sources-hardening/scripts/sources-census.sh selftest
+exit=0
+killed	E01-malformed-row
+killed	E02-malformed-id
+killed	E03-duplicate-id
+killed	E04-duplicate-url
+killed	E05-bad-kind
+killed	E06-bad-tier
+killed	E07-bad-status
+killed	E08-future-opened
+killed	E09-bad-recheck
+killed	E10-community-at-A
+killed	E11-dangling-usedby
+killed	W01-tierC-mined
+killed	W02-thin-reject
+killed	W03-mined-unused
+killed	clean-lane-ok
+killed	validate-findings-exit-1
+killed	validate-clean-exit-0
+killed	validate-missing-line
+killed	validate-missing-exit-2
+killed	overdue-exit-1
+killed	overdue-finds-row
+killed	cadence-due-on-opened-plus-N
+killed	symbolic-on-release-reported
+killed	symbolic-annual-reported
+killed	invalid-recheck-not-overdue
+killed	overdue-clean-exit-0
+killed	shared-across-lanes
+killed	census-missing
+killed	census-missing-exit-1
+killed	unlisted-directory-warning
+killed	unlisted-validation-warning
+killed	unlisted-warning-not-failure
+killed	W-only-warning-reported
+killed	W-only-registry-exit-0
+killed	UTC-date-in-Sao-Paulo
+killed	UTC-date-in-Sao-Paulo-exit-0
+killed	explicit-lane-dir
+killed	FLEET-rows
+killed	FLEET-tier-A
+killed	FLEET-tier-B
+killed	FLEET-tier-C
+killed	FLEET-tier-invalid
+killed	FLEET-status-queued
+killed	FLEET-status-mined
+killed	FLEET-status-rejected
+killed	FLEET-status-invalid
+killed	FLEET-missing
+killed	E12-outside-registry-mutant
+killed	E12-row-outside-registry-exit-1
+killed	indented-valid-0-counted
+killed	indented-valid-0-clean
+killed	indented-overdue-0-row
+killed	indented-overdue-0-exit-1
+killed	indented-invalid-0-E06
+killed	indented-invalid-0-E11
+killed	indented-invalid-0-exit-1
+killed	indented-outside-0-E12
+killed	indented-outside-0-exit-1
+killed	indented-valid-1-counted
+killed	indented-valid-1-clean
+killed	indented-overdue-1-row
+killed	indented-overdue-1-exit-1
+killed	indented-invalid-1-E06
+killed	indented-invalid-1-E11
+killed	indented-invalid-1-exit-1
+killed	indented-outside-1-E12
+killed	indented-outside-1-exit-1
+killed	indented-valid-2-counted
+killed	indented-valid-2-clean
+killed	indented-overdue-2-row
+killed	indented-overdue-2-exit-1
+killed	indented-invalid-2-E06
+killed	indented-invalid-2-E11
+killed	indented-invalid-2-exit-1
+killed	indented-outside-2-E12
+killed	indented-outside-2-exit-1
+killed	indented-valid-3-counted
+killed	indented-valid-3-clean
+killed	indented-overdue-3-row
+killed	indented-overdue-3-exit-1
+killed	indented-invalid-3-E06
+killed	indented-invalid-3-E11
+killed	indented-invalid-3-exit-1
+killed	indented-outside-3-E12
+killed	indented-outside-3-exit-1
+killed	indented-shared-across-lanes
+killed	W04-scope-sensitive-mutant
+killed	W04-does-not-fail-validation
+killed	E04-rejected-pair-exemption-mutant
+killed	E04-rejected-pair-exemption-exit-0
+killed	out-not-truncated-before-target-resolution
+killed	H1-no-table-cell-execution
+killed	gawk-failure-is-error-not-ok
+selftest ok
+
+
+shellcheck /home/vgpnk/Projects/shokunin/.tower/worktrees/kaika/fleet-sources-hardening/scripts/sources-census.sh
+exit=0
