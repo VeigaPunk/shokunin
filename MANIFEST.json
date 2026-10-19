@@ -4215,6 +4215,27 @@
    },
    "closed_at": "2026-10-18T23:59:00-03:00",
    "notes": "souji r11 REJECTED as a round (operator: finish + push before reboot). Census --compare contract FIXED (cand-census-02 installed; selftest 36/36; all cert-16 shapes refuse) — last r9 defect class closed in tools. Certification NOT granted: certifier evidence-integrity defects (cert-16 relay overwrites; verdicts on non-installed bytes). Rubric scores UNRATED. Work commit 43d57548. NOTE: operator cancelled the 12-round goal after this round."
+  },
+  {
+   "round": 104,
+   "date": "2026-10-19",
+   "type": "closure",
+   "lanes": {
+    "game-dev-2d": "ok"
+   },
+   "lane_rounds": {
+    "game-dev-2d": 104
+   },
+   "promotions": [],
+   "minted": [],
+   "admitted": true,
+   "verdicts": {
+    "depth": "improved",
+    "coverage": "improved",
+    "calibration": "improved"
+   },
+   "closed_at": "2026-10-19T02:55:00-03:00",
+   "notes": "r104 ADMIT-with-findings (work 5f924226 + record e8990516): +33 net CASES (552->585; 23 res_uid + 12 companion adoptions green x2). P2 tab-PASS census (6/10 evasion shapes flag, 0 FP); 6/6 harmlessness proofs; in-battery evasion probe green x2; receipt-shape gate 0 flags x2. Seven res_uid rows retired pre-close (scratch-project uid-cache shared across rows; XDG insufficient; fixture+harness fixes routed r105). 48-seat devin swarm (p4 fallback; two operator-interrupted hyper attempts disclosed). Receipts runs 3+4; s02_deleted retired post-run (reboot-precluded re-run disclosed). 3D side-round still due BEFORE r105."
   }
  ]
 }
