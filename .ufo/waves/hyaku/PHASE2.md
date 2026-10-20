@@ -271,6 +271,11 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
    and the unrelated `w1/reports/IsolationHarness.md` edit was preserved. No raw lane Git/JJ
    write was used for recovery. Implementation JjScopeRecovery; review JjRecoverySafety;
    parent executed final checks and live recovery. No tools installed.
+7. **Kasegi r23 provider policy stop.** After its unchanged 64-seat build started, KasegiR23
+   ended on Codex `cyber_policy`, not a transient quota error. The lane block is policy-paused:
+   preserve retained work, do not route the request through another provider or change access
+   settings to bypass the refusal, and exclude it from quota-backoff wakeups. The subsequent
+   `proc://` snapshot showed no running KasegiR23 descendants; nothing was respawned or killed.
 
 
 ## Provider probes (2026-10-20 10:0x -03)
