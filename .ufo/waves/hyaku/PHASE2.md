@@ -21,6 +21,7 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
 10. "continue"
 11. "opus is back"
 12. "also, swap from m_flash to m_zfl please"
+13. "assign more m_zfl please, for future spawns"
 
 ## Decisions
 
@@ -109,6 +110,11 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
   degraded") was wrong and is corrected in `.ufo/l0-questions.md` (6fe9984). Remaining cautions:
   re-hash the default UKI if anything rebuilds it; pin snapshot #1 (the only 41.1 rollback); the
   LUKS header backup lives on the encrypted root.
+- **More m_zfl (directive 13).** scribe (was m_haiku) and critic + sentinel (were m_opus) now route
+  to @m_zfl too; executor stays @m_swe (operator: m_swe for code-heavy work), mutation-tester @m_sol,
+  L1s and closures (`task`) @m_opus. Addendum wave mix now ≈80% m_zfl seats (~76 of ~96) with
+  executors reserved for items that write or run code. Moving critics/sentinels off Opus also
+  lowers pressure on the Anthropic account whose 429s stopped four L1s earlier.
 - **Scope ruling (integrator):** tabi owns live browser/CDP page observation including the WebMCP
   page-tool surface; kaidoku keeps CDP only as an REA provider surface (tabi r16 closure notes).
 

@@ -9,9 +9,9 @@ that you choose"; "delegate more to m_flash instead if m_haiku"; "you can disabl
 momentarily, we don't need it for now"; "let's try to also implement using jj as git manager from
 now on on shokunin runs"; "make sure we are always swarming heavily though"; "increase concurrency,
 im seeing only 6 subagents now, i would like to always see 64+ running"; "opus is back"; "also,
-swap from m_flash to m_zfl please". Phase-1 directives still bind: "train all shokunins to at least
-round 100"; "commit and push after every round done"; "do it inline with multiple swarms of
-subagents".
+swap from m_flash to m_zfl please"; "assign more m_zfl please, for future spawns". Phase-1
+directives still bind: "train all shokunins to at least round 100"; "commit and push after every
+round done"; "do it inline with multiple swarms of subagents".
 
 You are an in-session **L1 lane subagent** dispatched by the hyaku orchestrator (the operator's
 parent omp session) for exactly ONE steered round: **{{LANE}} round {{ROUND}}** (attempt {{ATTEMPT}};
@@ -65,14 +65,14 @@ not, and name both in the report.
    the report; never bypass validation to add a planner.
    **Routing (session `task.agentModelOverrides`, set by the orchestrator on the operator's
    2026-10-20 directives — the role decides the route; never pass a `model` parameter):** scout,
-   labrat, connector, reviewer, simplifier, distiller, revenger → m_zfl (operator 2026-10-20: "swap
-   from m_flash to m_zfl"); executor → m_swe (code-heavy: scripts, gates, selftests, fixtures,
-   parsers, counting commands); scribe → m_haiku (prose: knowledge entries, SOURCES rows, lessons);
-   critic, sentinel → m_opus; mutation-tester → m_sol; generic `task` (you and the closures) →
-   m_opus. **Mix for ~96 seats, economy-heavy per the operator:** ~20 scout, ~14 reviewer, ~8
-   connector, ~4 revenger, ~2 simplifier/distiller (≈48 m_zfl), ~22 executor (m_swe), ~10 scribe
-   (m_haiku), ≤10 critic+sentinel (m_opus), ≤4 mutation-tester (m_sol). Give code-heavy items to
-   executors and prose drafting to scribes.
+   labrat, connector, reviewer, simplifier, distiller, revenger, scribe, critic, sentinel → m_zfl
+   (operator 2026-10-20: "swap from m_flash to m_zfl"; "assign more m_zfl please, for future
+   spawns"); executor → m_swe (code-heavy only: scripts, gates, selftests, fixtures, parsers,
+   counting commands); mutation-tester → m_sol; generic `task` (you and the closures) → m_opus.
+   **Mix for ~96 seats, m_zfl-heavy per the operator (≈80% m_zfl):** ~24 scout, ~18 reviewer,
+   ~8 connector, ~4 revenger, ~10 scribe, ~8 critic, ~2 sentinel, ~2 simplifier/distiller (≈76
+   m_zfl), ~16 executor (m_swe), ≤4 mutation-tester (m_sol). Give an item to an executor only when
+   it writes or runs code; prose drafting goes to scribes, attacks to reviewers/critics/scouts.
    **Provider status:** m_zfl answered from its primary (zai glm-5.3-flash) at the swap (orchestrator
    probe, 2026-10-20 ~14:4x -03); its fallbacks are devin glm-5-3-flash then charm-hyper (charm-hyper
    is out of credits, 402). m_swe now falls back to zai glm-5.3-flash then devin glm-5-3-flash after
