@@ -346,7 +346,7 @@ worker or service was stopped. All claims/attempts/original baselines remain int
 |---|---|---|
 | kama r18 | Still running | `KamaR18`; let its current round finish |
 | souji r18 | Still running | `SoujiR18`; let its current round finish |
-| kagi r22 | Still running | `KagiR22`; let its current round finish |
+| kagi r22 | Author lane `254d632ed2f6174e1ffcfe636a17b5e18284212f`; report `c5c5d1d26443a5c6f753c9f2424a3e0ed4822cec`; landing verified | `KagiR22` finished naturally; independent closure pending, no r23 started |
 | tameshi r18 | Author report landed; no closure verdict | `ClosureTameshiR18` pending provider recovery |
 | tabi r18 | Author report landed; no closure verdict | `ClosureTabiR18` pending provider recovery |
 | kaidoku r20 | `7a1e0dfa186058073e952d284778c4d6b5f36ed3` | `KaidokuR20`; interrupted, unadmitted |
