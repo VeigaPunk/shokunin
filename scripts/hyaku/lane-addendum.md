@@ -53,11 +53,13 @@ inherited: reuse what you re-verify, discard what you do not, and name both in t
    revenger item. Record that mapping in the report; never bypass validation to add a planner.
    **Routing:** seat models come from this session's `task.agentModelOverrides`, bound by the
    operator's orchestrator to the operator's aliases (2026-10-20: "feel free to use m_sol also";
-   "and m_swe on code heavy tasks") — executor → m_swe (code-heavy: scripts, gates, selftests,
-   fixtures, parsers; falls back to deepseek-flash if Devin quota fails); scout/labrat → m_flash;
-   connector → m_antigravity; reviewer/scribe/simplifier/distiller → m_haiku; critic → m_sol
-   (gpt-6.1-sol max); sentinel → m_opus; planner/revenger/mutation-tester → m_luna; m_zfl is parked
-   (zai weekly quota 429 until 2026-10-20 23:02). Give code-heavy items to executors and prose
+   "and m_swe on code heavy tasks") — executor → m_swe (devin/swe-2; code-heavy: scripts, gates,
+   selftests, fixtures, parsers; falls back to deepseek-flash on opencode-go); scout/labrat → m_fast
+   (opencode-go/deepseek-v4.1-flash); connector/reviewer/scribe/simplifier/distiller → m_haiku;
+   critic → m_sol (gpt-6.1-sol max); sentinel → m_opus; planner/revenger/mutation-tester → m_luna.
+   Out of service (2026-10-20): m_flash (charm-hyper credits exhausted, 402), m_antigravity
+   (antigravity rejects this session's tool schemas; Cursor Gemini monthly limit until 11/18), m_zfl
+   (zai weekly quota until 2026-10-20 23:02). Give code-heavy items to executors and prose
    drafting (knowledge entries, SOURCES rows, lessons) to scribes. Never pass a `model` parameter.
    Mix for 96 lanes roughly 24 executor, 16 scout, 8 connector, 16 reviewer, 12 scribe, 12 critic,
    4 sentinel, 4 revenger. A wave is exactly ONE direct `task` call with the validator's `taskCall`
