@@ -12,7 +12,7 @@ im seeing only 6 subagents now, i would like to always see 64+ running"; "opus i
 swap from m_flash to m_zfl please"; "assign more m_zfl please, for future spawns"; "executor should
 use m_flash"; "leave scribe as m_haiku"; "critic + sentinel (m_opus)"; "labrat and scout should be
 m_flash"; "the fallback for the m_zfl should be m_luna max" / "as the last in the cascade"; "make
-m_luna the last fallback for m_flash also".
+m_luna the last fallback for m_flash also"; "do not remove m_opus, but put m_swe as critic".
 Phase-1 directives still bind: "train all shokunins to at least round 100"; "commit and push after
 every round done"; "do it inline with multiple swarms of subagents".
 
@@ -72,14 +72,14 @@ not, and name both in the report.
    m_flash to m_zfl"; "assign more m_zfl please, for future spawns"); scout, labrat, executor →
    m_flash (operator: "labrat and scout should be m_flash"; "executor should use m_flash"; executors
    only for code-heavy items: scripts, gates, selftests, fixtures, parsers, counting commands);
-   critic, sentinel → m_opus (operator: "critic + sentinel (m_opus)"); scribe → m_haiku (operator:
-   "leave scribe as m_haiku"; prose: knowledge entries, SOURCES rows, lessons); mutation-tester →
-   m_sol; generic `task` (you and the closures) → m_opus.
+   critic → m_swe (operator 2026-10-20: "do not remove m_opus, but put m_swe as critic"); sentinel →
+   m_opus; mutation-tester → m_sol; scribe → m_haiku (operator: "leave scribe as m_haiku"; prose:
+   knowledge entries, SOURCES rows, lessons); generic `task` (you and the closures) → m_opus.
    **Mix for ~96 seats:** ~24 scout + ~16 executor (≈40 m_flash), ~18 reviewer, ~8 connector, ~4
-   revenger, ~2 simplifier/distiller (≈32 m_zfl), ~10 scribe (m_haiku), ≤10 critic+sentinel (m_opus
-   — they share the Anthropic account with every L1 and closure, which hit 429s today), ≤4
-   mutation-tester (m_sol). Give an item to an executor only when it writes or runs code; prose
-   drafting goes to scribes, attacks to reviewers/critics/scouts.
+   revenger, ~2 simplifier/distiller (≈32 m_zfl), ~10 scribe (m_haiku), ~8 critic (m_swe), ≤2
+   sentinel (m_opus — shares the Anthropic account with every L1 and closure), ≤4 mutation-tester
+   (m_sol). Give an item to an executor only when it writes or runs code; prose drafting goes to
+   scribes, attacks to reviewers/critics/scouts.
    **Provider status:** m_zfl answered from its primary (zai glm-5.3-flash) at the swap (orchestrator
    probe, 2026-10-20 ~13:4x -03); its cascade is devin glm-5-3-flash → charm-hyper glm-5.3-flash
    (out of credits, 402) → m_luna max (openai-codex gpt-6-luna:max, answered a probe at 14:24 -03)
@@ -89,10 +89,12 @@ not, and name both in the report.
    devin deepseek-flash → m_luna max (openai-codex gpt-6-luna:max) last. Record a seat's actual
    answering model when a claim depends on it. **zai rate limit (observed 14:00–15:25 -03):** with
    several lanes in waves at once, zai answers m_zfl seats with `429 Rate limit reached for requests
-   (type=1302)`; the session retried the same model and ~130 seats died with "Retry budget exhausted
-   after 10 retries" without walking the m_zfl cascade (tabi r17 lost 17, tsukuroi r17 43, souji
-   r17 28+). The orchestrator raised `retry.maxRetries` 10 → 40 (session-only, 15:2x -03) so seats
-   ride out bursts; expect slower m_zfl seats rather than dead ones, and report any that still die.
+   (type=1302)`; ~130 seats died retrying zai alone because subagents run under role
+   `subagent:<id>`, so alias-keyed cascades (m_zfl, m_flash, m_sol, …) were never consulted. Fixed
+   ~16:0x -03: each cascade is now also keyed by its primary model (`zai/glm-5.3-flash`,
+   `commandcode/deepseek/deepseek-v4.1-flash`, `openai-codex/gpt-6.1-sol`,
+   `anthropic/claude-opus-5-5`), and smoke seats proved it (zai 429 → gpt-6-luna; commandcode 429 →
+   opencode-go; Anthropic 429 → gpt-6.1-sol). `retry.maxRetries` is 40. Report any seat that dies.
    Opus coordinators received 429s with 13–14-minute retry-after values earlier today ("opus is
    back" since): respect any backoff and resume the same identity, never restart a duplicate
    writer. Historical availability is not current capacity proof. A dead seat stays dead in the

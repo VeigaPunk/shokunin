@@ -29,6 +29,8 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
 18. "the fallback for the m_zfl should be m_luna max" / "as the last in the cascade"
 19. "make m_luna the last fallback for m_flash also"
 20. "something definetely bugged up here" / "check what's up and keep back on track"
+21. "opus is back" / "now remove m_opus from the subagent delegation though, use m_sol instead"
+22. "do not remove m_opus, but put m_swe as critic"
 
 ## Decisions
 
@@ -160,6 +162,22 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
      (directives 12–17) each interrupted an L1's wait; routing is by role and needs no L1 action, so
      those broadcasts stop. Concurrency fell to ~27 jobs while lanes integrated; mori r17 joins to
      restore wave pressure.
+- **Fallback root cause and repair (~16:0x -03).** Subagents run under role `subagent:<id>`
+  (transcript `model_change` records), so the retry chain lookup (exact model → provider wildcard →
+  current role → `default`, omp://settings.md) never reached the alias-keyed chains `m_zfl`,
+  `m_flash`, `m_sol`; zai 429s retried zai alone until the budget ran out, and Opus 429s with
+  ~2.5 h retry-after killed L1s (TabiR18, SoujiR17-3, KaidokuR19). Repair (session-only): the same
+  cascades are now also keyed by each primary model — `zai/glm-5.3-flash` = m_zfl cascade,
+  `commandcode/deepseek/deepseek-v4.1-flash` = m_flash cascade, `openai-codex/gpt-6.1-sol` = m_sol
+  cascade, `anthropic/claude-opus-5-5` = default cascade. Role assignments and cascade order are
+  unchanged. Smoke seats (transcripts SmokeFlashCascade, SmokeZflCascade, SmokeOpusCascade):
+  commandcode 429 → opencode-go deepseek-flash answered; zai 429 (type=1302) → openai-codex
+  gpt-6-luna answered; Anthropic 429 → openai-codex gpt-6.1-sol answered.
+- **m_sol briefly replaced m_opus (directive 21), reverted by directive 22.** Current routing
+  (session-only): task (L1s, closures), planner, sentinel → @m_opus; main → @m_strong; critic →
+  @m_swe (exact-model fallback key `devin/swe-2` = m_swe cascade zai glm-5.3-flash → devin
+  glm-5-3-flash); mutation-tester → @m_sol; executor, scout, labrat → @m_flash; connector,
+  reviewer, simplifier, distiller, revenger → @m_zfl; scribe → @m_haiku.
 - **Scope ruling (integrator):** tabi owns live browser/CDP page observation including the WebMCP
   page-tool surface; kaidoku keeps CDP only as an REA provider surface (tabi r16 closure notes).
 
