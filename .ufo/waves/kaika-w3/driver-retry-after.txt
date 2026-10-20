@@ -1,5 +1,5 @@
-REGRESSION driver=/home/vgpnk/Projects/shokunin/.tower/worktrees/kaika/fleet-driver-retry/scripts/shokunin-watchdog.sh sha256=e56927e36cfdf0f886d48650729e5de364cb1e44a3ade58a2a3371c421071661
-CASE dead driver=/home/vgpnk/Projects/shokunin/.tower/worktrees/kaika/fleet-driver-retry/scripts/shokunin-watchdog.sh sha256=e56927e36cfdf0f886d48650729e5de364cb1e44a3ade58a2a3371c421071661
+REGRESSION driver=/home/vgpnk/Projects/shokunin/.tower/worktrees/kaika/fleet-driver-retry/scripts/shokunin-watchdog.sh sha256=04a3a2148efad2cd1be9bff2496cac520ab14597cab978eca241771226bb8d85
+CASE dead driver=/home/vgpnk/Projects/shokunin/.tower/worktrees/kaika/fleet-driver-retry/scripts/shokunin-watchdog.sh sha256=04a3a2148efad2cd1be9bff2496cac520ab14597cab978eca241771226bb8d85
 PASS  A-initial-attempt-started-live
 PASS  A-failed-attempt-stopped
 PASS  A-failed-attempt-process-group-dead
@@ -8,6 +8,8 @@ PASS  A-dead-gate-failure-retries
 PASS  A-retry-process-live-same-round
 PASS  A-retry-round-remains-N
 PASS  A-report-bytes-unchanged-by-retry
+PASS  A-uppercase-baseline-probe-changed-digest-encoding
+PASS  A-uppercase-equal-baseline-rejects-unchanged-report
 PASS  A-mtime-only-probe-really-changed-mtime
 PASS  A-registry-fix-alone-rejects-unchanged-report
 PASS  A-registry-fix-alone-keeps-retry-alive
@@ -22,9 +24,9 @@ PASS  A-fresh-report-appended-new-bytes
 PASS  A-round-N-plus-1-baseline-is-round-scoped
 PASS  A-round-N-plus-1-absent-report-baseline-is-empty-digest
 PASS  A-round-N-report-digest-is-not-reused-for-N-plus-1
-CASE-SUMMARY dead pass=22 fail=0
+CASE-SUMMARY dead pass=24 fail=0
 PASS  case-dead
-CASE live driver=/home/vgpnk/Projects/shokunin/.tower/worktrees/kaika/fleet-driver-retry/scripts/shokunin-watchdog.sh sha256=e56927e36cfdf0f886d48650729e5de364cb1e44a3ade58a2a3371c421071661
+CASE live driver=/home/vgpnk/Projects/shokunin/.tower/worktrees/kaika/fleet-driver-retry/scripts/shokunin-watchdog.sh sha256=04a3a2148efad2cd1be9bff2496cac520ab14597cab978eca241771226bb8d85
 PASS  B-attempt-started-live
 PASS  B-valid-live-attempt-report-observed
 PASS  B-live-gate-failure-does-not-error
@@ -47,6 +49,18 @@ PASS  content-heading-check-still-rejects-missing-marker
 PASS  content-heading-and-size-still-accept-valid-report
 CASE-SUMMARY live pass=20 fail=0
 PASS  case-live
-SUMMARY pass=2 fail=0
+CASE capture driver=/home/vgpnk/Projects/shokunin/.tower/worktrees/kaika/fleet-driver-retry/scripts/shokunin-watchdog.sh sha256=04a3a2148efad2cd1be9bff2496cac520ab14597cab978eca241771226bb8d85
+mv: cannot overwrite directory '/tmp/kaika-verify/DriverCompletionFix/capture/.ufo/state/beta.report-baseline' with non-directory '/tmp/kaika-verify/DriverCompletionFix/capture/.ufo/state/beta.report-baseline.tmp.3320916'
+PASS  C-directory-baseline-capture-fails-closed
+PASS  C-capture-failure-keeps-round-N
+PASS  C-capture-failure-does-not-retry-launch
+PASS  C-capture-failure-does-not-write-mission
+PASS  C-capture-failure-preserves-report-bytes
+PASS  C-capture-failure-keeps-report-in-place
+PASS  C-capture-failure-cleans-temporary-state
+PASS  C-directory-target-replacement-failure-is-logged
+CASE-SUMMARY capture pass=8 fail=0
+PASS  case-capture
+SUMMARY pass=3 fail=0
 
 POST-FIX_EXIT=0

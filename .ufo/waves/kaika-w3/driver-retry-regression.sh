@@ -86,7 +86,8 @@ wait_lane_dead() {
 }
 
 run_case() {
-  local which=$1 root=$CASE_ROOT mid oldmid newmid report prefix before_hash after_hash before_mtime after_mtime rc stale_rc round next_round next_digest size launches
+  local which=$1 root=$CASE_ROOT mid oldmid newmid report prefix before_hash after_hash before_mtime after_mtime rc stale_rc round next_round next_digest size launches baseline_file baseline_round baseline_digest upper_digest
+  local -a baseline_temps=()
 
   case $which in
     dead)
@@ -106,6 +107,17 @@ run_case() {
       check_eq 'A-retry-round-remains-N' 1 "$(round_of beta)"
       after_hash=$(file_digest "$report" 2>/dev/null || printf unreadable)
       check_eq 'A-report-bytes-unchanged-by-retry' "$before_hash" "$after_hash"
+      baseline_file="$UFO/state/beta.report-baseline"
+      baseline_round=1; baseline_digest=$before_hash
+      if [ -f "$baseline_file" ]; then
+        read -r baseline_round baseline_digest < "$baseline_file"
+      fi
+      upper_digest=${baseline_digest^^}
+      if [ "$upper_digest" != "$baseline_digest" ]; then record 'A-uppercase-baseline-probe-changed-digest-encoding' 0; else record 'A-uppercase-baseline-probe-changed-digest-encoding' 1; fi
+      printf '%s %s\n' "$baseline_round" "$upper_digest" > "$baseline_file"
+      report_of beta 1; rc=$?
+      if [ "$rc" -ne 0 ]; then record 'A-uppercase-equal-baseline-rejects-unchanged-report' 0; else record 'A-uppercase-equal-baseline-rejects-unchanged-report' 1; fi
+      printf '%s %s\n' "$baseline_round" "$baseline_digest" > "$baseline_file"
 
       before_mtime=$(stat -c %Y -- "$report")
       touch -m -d '@946684800' -- "$report"
@@ -211,6 +223,31 @@ run_case() {
       report_of probe 7; rc=$?
       if [ "$rc" -eq 0 ]; then record 'content-heading-and-size-still-accept-valid-report' 0; else record 'content-heading-and-size-still-accept-valid-report' 1; fi
       ;;
+    capture)
+      report="$UFO/reports/round-1/beta.md"
+      printf '1\n' > "$UFO/state/beta.round"
+      make_report "$report" 'baseline-capture-failure'
+      before_hash=$(file_digest "$report")
+      mkdir "$UFO/state/beta.report-baseline"
+      advance beta 1; rc=$?
+      if [ "$rc" -ne 0 ]; then record 'C-directory-baseline-capture-fails-closed' 0; else record 'C-directory-baseline-capture-fails-closed' 1; fi
+      check_eq 'C-capture-failure-keeps-round-N' 1 "$(round_of beta)"
+      launches=$(grep -cF 'launch beta round=1' "$UFO/watchdog.log" || true)
+      check_eq 'C-capture-failure-does-not-retry-launch' 0 "$launches"
+      check_eq 'C-capture-failure-does-not-write-mission' '' "$(mission_of beta)"
+      after_hash=$(file_digest "$report" 2>/dev/null || printf unreadable)
+      check_eq 'C-capture-failure-preserves-report-bytes' "$before_hash" "$after_hash"
+      if [ -f "$report" ]; then record 'C-capture-failure-keeps-report-in-place' 0; else record 'C-capture-failure-keeps-report-in-place' 1; fi
+      shopt -s nullglob
+      baseline_temps=( "$UFO/state/beta.report-baseline.tmp."* )
+      shopt -u nullglob
+      check_eq 'C-capture-failure-cleans-temporary-state' 0 "${#baseline_temps[@]}"
+      if grep -qF 'report-baseline-fail beta round=1 :: cannot replace state' "$UFO/watchdog.log"; then
+        record 'C-directory-target-replacement-failure-is-logged' 0
+      else
+        record 'C-directory-target-replacement-failure-is-logged' 1
+      fi
+      ;;
     *) printf 'unknown case: %s\n' "$which" >&2; return 2 ;;
   esac
   printf 'CASE-SUMMARY %s pass=%d fail=%d\n' "$which" "$PASS" "$FAIL"
@@ -238,7 +275,7 @@ rm -rf -- "$BASE"
 mkdir -p "$BASE"
 printf 'REGRESSION driver=%s sha256=%s\n' "$DRIVER" "$(sha256sum -- "$DRIVER" | cut -d' ' -f1)"
 PASS=0; FAIL=0
-for case_name in dead live; do
+for case_name in dead live capture; do
   output="$BASE/$case_name.out"
   bash "$SCRIPT_DIR/driver-retry-regression.sh" --case "$case_name" "$DRIVER" "$BASE/$case_name" > "$output" 2>&1
   rc=$?
