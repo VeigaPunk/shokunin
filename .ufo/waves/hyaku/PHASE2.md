@@ -25,6 +25,7 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
 14. "executor should use m_flash"
 15. "leave scribe as m_haiku"
 16. "critic + sentinel (m_opus)"
+17. "labrat and scout should be m_flash"
 
 ## Decisions
 
@@ -130,6 +131,11 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
   labrat, connector, reviewer, simplifier, distiller, revenger → @m_zfl; critic, sentinel → @m_opus;
   scribe → @m_haiku; executor → @m_flash; mutation-tester → @m_sol; task (L1s, closures) → @m_opus.
   Wave mix ≈58% m_zfl (~56 of ~96); critic+sentinel capped at ≤10 per wave to limit Anthropic 429s.
+- **Scout + labrat → m_flash (directive 17).** Seat routing now (session-only): scout, labrat,
+  executor → @m_flash; connector, reviewer, simplifier, distiller, revenger → @m_zfl; critic,
+  sentinel → @m_opus; scribe → @m_haiku; mutation-tester → @m_sol; task (L1s, closures) → @m_opus.
+  Wave mix ≈40 m_flash / ≈32 m_zfl of ~96. m_flash's primary (commandcode) is at its 5-hour plan
+  limit until 2026-10-20T19:47:54Z (16:47 -03); until then those seats answer through a fallback.
 - **Scope ruling (integrator):** tabi owns live browser/CDP page observation including the WebMCP
   page-tool surface; kaidoku keeps CDP only as an REA provider surface (tabi r16 closure notes).
 
