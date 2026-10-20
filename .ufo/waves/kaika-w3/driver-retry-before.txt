@@ -1,0 +1,55 @@
+REGRESSION driver=/home/vgpnk/Projects/shokunin/.tower/worktrees/kaika/fleet-driver-retry/scripts/shokunin-watchdog.sh sha256=5042448abf3d5924d8bdd8af63121650c72bedab78a193facda03c0ace845bf2
+CASE dead driver=/home/vgpnk/Projects/shokunin/.tower/worktrees/kaika/fleet-driver-retry/scripts/shokunin-watchdog.sh sha256=5042448abf3d5924d8bdd8af63121650c72bedab78a193facda03c0ace845bf2
+PASS  A-initial-attempt-started-live
+PASS  A-failed-attempt-stopped
+PASS  A-failed-attempt-process-group-dead
+PASS  A-valid-failed-attempt-report-observed
+PASS  A-dead-gate-failure-retries
+PASS  A-retry-process-live-same-round
+PASS  A-retry-round-remains-N
+PASS  A-report-bytes-unchanged-by-retry
+PASS  A-mtime-only-probe-really-changed-mtime
+FAIL  A-registry-fix-alone-rejects-unchanged-report
+FAIL  A-no-stale-completion-attempt
+FAIL  A-registry-fix-alone-keeps-retry-alive
+      expected=<1> actual=<2>
+FAIL  A-registry-fix-alone-keeps-round-N
+PASS  A-mtime-change-did-not-change-report-bytes
+FAIL  A-fresh-report-closes-round
+FAIL  A-fresh-report-advances-exactly-to-N-plus-1
+PASS  A-original-report-remains-in-place
+FAIL  A-fresh-report-appended-new-bytes
+/home/vgpnk/Projects/shokunin/.tower/worktrees/kaika/fleet-driver-retry/.ufo/waves/kaika-w3/driver-retry-regression.sh: line 143: /tmp/kaika-verify/DriverCompletionFix/dead/.ufo/state/beta.report-baseline: No such file or directory
+      expected=<2> actual=<>
+FAIL  A-round-N-plus-1-baseline-is-round-scoped
+      expected=<e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855> actual=<>
+FAIL  A-round-N-plus-1-absent-report-baseline-is-empty-digest
+FAIL  A-round-N-report-digest-is-not-reused-for-N-plus-1
+CASE-SUMMARY dead pass=11 fail=10
+FAIL  case-dead
+CASE live driver=/home/vgpnk/Projects/shokunin/.tower/worktrees/kaika/fleet-driver-retry/scripts/shokunin-watchdog.sh sha256=5042448abf3d5924d8bdd8af63121650c72bedab78a193facda03c0ace845bf2
+PASS  B-attempt-started-live
+PASS  B-valid-live-attempt-report-observed
+PASS  B-live-gate-failure-does-not-error
+PASS  B-gate-failure-keeps-existing-mission-id
+PASS  B-live-gate-failure-does-not-kill-process
+PASS  B-live-gate-failure-does-not-relaunch
+PASS  B-live-gate-failure-preserves-report-bytes
+PASS  B-mtime-only-probe-really-changed-mtime
+FAIL  B-registry-fix-alone-rejects-unchanged-report
+FAIL  B-no-stale-completion-attempt
+FAIL  B-registry-fix-alone-keeps-live-process
+      expected=<1> actual=<2>
+FAIL  B-registry-fix-alone-keeps-round-N
+PASS  B-registry-fix-alone-preserves-report-bytes
+FAIL  B-fresh-report-closes-round
+FAIL  B-fresh-report-advances-exactly-to-N-plus-1
+FAIL  B-only-tagged-live-attempt-group-is-dead-after-close
+PASS  content-size-floor-still-rejects-short-report
+PASS  content-heading-check-still-rejects-missing-marker
+PASS  content-heading-and-size-still-accept-valid-report
+CASE-SUMMARY live pass=12 fail=7
+FAIL  case-live
+SUMMARY pass=0 fail=2
+
+EXPECTED_PRE-FIX_EXIT=1
