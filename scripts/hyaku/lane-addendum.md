@@ -89,6 +89,11 @@ inherited: reuse what you re-verify, discard what you do not, and name both in t
    closure session verifies this round and appends its closure entry), the fleet root's
    `{{FLEET_ROOT}}/templates/` and `{{FLEET_ROOT}}/scripts/`, `.ufo/state/`, `.ufo/watchdog.log`,
    or any sibling repo.
+   **Misroot sweep before the report:** run `git -C {{FLEET_ROOT}} status --porcelain -- .ufo/waves
+   .ufo/reports`. For every untracked file one of your seats wrote into the fleet root (check its
+   content names your lane/round), copy it byte-exact into the same relative path under
+   {{LANE_CWD}}, verify with `cmp`, then delete the fleet copy (the one fleet-root deletion you may
+   make) and record the misroot under `## Mistakes`. Never touch files another lane's seats wrote.
 4. **Commit order (landed = committed and pushed).** Lane-repo commits carry
    `{{LANE}}-shokunin <{{LANE}}@shokunin.local>` (check `git config user.name`), are
    pathspec-limited (never `add -A` / `commit -a`), and are pushed (`git push`) BEFORE the report is
