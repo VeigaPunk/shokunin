@@ -6482,6 +6482,267 @@
    "verification_provenance_erratum": ".ufo/waves/kaika-w3/VERIFICATION-PROVENANCE.md",
    "readme_recovery": ".ufo/waves/kaika-w3/readme-recovery.md",
    "notes": "All21 child rounds are settled; explicit honest-stops are retained. Aggregate re-pins these exact heads, uses uniform round12 and final child-only census. No publication is claimed by this pre-push event."
+  },
+  {
+   "date": "2026-10-19",
+   "closed_at": "2026-10-20T01:31:36.990325+00:00",
+   "campaign": "kaika",
+   "type": "closure",
+   "round": 12,
+   "lane": "aggregator",
+   "lane_round": 12,
+   "lane_rounds": {
+    "aggregator": 12
+   },
+   "lanes": {
+    "aggregator": "ok"
+   },
+   "commit": "shokunin@ba007d870be995f773a9057ce114c9998abaafc6",
+   "admitted": true,
+   "verdict": "admitted-bounded-coverage",
+   "verdicts": {
+    "corpus review": "improved",
+    "cross-lane quality": "unchanged",
+    "mint/dormancy calls": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "promotions": [],
+   "minted": [],
+   "report": ".ufo/reports/round-12/aggregator.md",
+   "verification": {
+    "reviewer": "FinalAggregateReview (ADMIT bounded coverage; 4/4 path spot-check agree)",
+    "critic": "aggregator critic seat (selector dissent accepted; same-lane, not outside)",
+    "parent_smoke": "root-ledgers clean + selftest 9/9; child sources validate 21 ok, E0, W7; driver report/source conformance ok; canonical schema 214/320 with 106 legacy-invalid"
+   },
+   "notes": "Coverage 7 -> 21 revision-bound corpus verdicts, all not conformant; score held 9. Source index is navigation, not knowledge expansion. No child, roster, mint or promotion change."
+  },
+  {
+   "date": "2026-10-19",
+   "closed_at": "2026-10-20T01:31:36.990325+00:00",
+   "campaign": "kaika",
+   "type": "ops",
+   "round": 0,
+   "promotions": [],
+   "minted": [],
+   "operator_directive": "commit and push; repositories public; merge to main",
+   "publication": {
+    "pushed_before_this_commit": [
+     {
+      "id": "audio",
+      "repo": "VeigaPunk/shokunin-game-audio",
+      "branch": "main",
+      "old": "e2187f6a",
+      "new_head": "0462a5440f23f45707ba681e2a011940e3c923dd",
+      "returncode": 0
+     },
+     {
+      "id": "chousa",
+      "repo": "VeigaPunk/chousa-shokunin",
+      "branch": "master",
+      "old": "ab19cff",
+      "new_head": "d730ae4c33989ad9c8535764d4cae77b4db869f6",
+      "returncode": 0
+     },
+     {
+      "id": "game-dev-2d",
+      "repo": "VeigaPunk/shokunin-godot-2d",
+      "branch": "main",
+      "old": "5f87de7d",
+      "new_head": "bce53b83a21ea43ddc2bf050bfe78cb4f2b68550",
+      "returncode": 0
+     },
+     {
+      "id": "game-dev-3d",
+      "repo": "VeigaPunk/shokunin-3d-engines",
+      "branch": "main",
+      "old": "7c4e589",
+      "new_head": "3118be0b18dd7351b1faf6ce99d26a34370793ec",
+      "returncode": 0
+     },
+     {
+      "id": "kagi",
+      "repo": "VeigaPunk/kagi-shokunin",
+      "branch": "master",
+      "old": "c03e12c",
+      "new_head": "c2cab35bc92e57e39e5489bac3386db078345b3f",
+      "returncode": 0
+     },
+     {
+      "id": "kaidoku",
+      "repo": "VeigaPunk/shokunin-reverse-engineering",
+      "branch": "main",
+      "old": "de77d75",
+      "new_head": "767adafb97e2eef6980e2ad873d357e16721c467",
+      "returncode": 0
+     },
+     {
+      "id": "kake",
+      "repo": "VeigaPunk/kake-shokunin",
+      "branch": "master",
+      "old": "7c9f28f",
+      "new_head": "5009ecaa1cce10b895617a585ddd3f7c7c923a84",
+      "returncode": 0
+     },
+     {
+      "id": "kama",
+      "repo": "VeigaPunk/kama-shokunin",
+      "branch": "master",
+      "old": "893e3c5",
+      "new_head": "2f7303c242319c1dc96c6bcf7702ac18b3ca1aad",
+      "returncode": 0
+     },
+     {
+      "id": "kasegi",
+      "repo": "VeigaPunk/kasegi-shokunin",
+      "branch": "master",
+      "old": "3bd13fa",
+      "new_head": "922a4dde90b60b465e2b8b241d1fe363f1f27e98",
+      "returncode": 0
+     },
+     {
+      "id": "kengaku",
+      "repo": "VeigaPunk/kengaku-shokunin",
+      "branch": "master",
+      "old": "dc0e594",
+      "new_head": "6180e4fb92e90c0b172e9788e2c765d097f2e142",
+      "returncode": 0
+     },
+     {
+      "id": "kotoba",
+      "repo": "VeigaPunk/kotoba-shokunin",
+      "branch": "master",
+      "old": "78ee57e",
+      "new_head": "c61a973b2e02e1ded169703ddcb06466f4edd8bd",
+      "returncode": 0
+     },
+     {
+      "id": "kotodama",
+      "repo": "VeigaPunk/kotodama-shokunin",
+      "branch": "main",
+      "old": "c42d675",
+      "new_head": "4ad26836552462d28a946ca3b067cab0b5ce3532",
+      "returncode": 0
+     },
+     {
+      "id": "kumitate",
+      "repo": "VeigaPunk/kumitate-shokunin",
+      "branch": "master",
+      "old": "72d9ccd",
+      "new_head": "1770305fae20826b39905a8251ddeca6b4957ac4",
+      "returncode": 0
+     },
+     {
+      "id": "lore",
+      "repo": "VeigaPunk/shokunin-world-bible",
+      "branch": "main",
+      "old": "dbdd5fa",
+      "new_head": "01306d51252f837909af5252c398ee4e31259f9b",
+      "returncode": 0
+     },
+     {
+      "id": "mado",
+      "repo": "VeigaPunk/mado-shokunin",
+      "branch": "master",
+      "old": "8e0c9b2",
+      "new_head": "7dcb785b7b943d03703181b218d7860a7b43007b",
+      "returncode": 0
+     },
+     {
+      "id": "mori",
+      "repo": "VeigaPunk/mori-shokunin",
+      "branch": "master",
+      "old": "b2e1ca2",
+      "new_head": "6531ac6029e200a6392bb76673b6a17d3c895c96",
+      "returncode": 0
+     },
+     {
+      "id": "revenger",
+      "repo": "VeigaPunk/shokunin-binary-forensics",
+      "branch": "main",
+      "old": "8bbcb4e",
+      "new_head": "cf02419276e5dd8aafb6fe09d4e9aaa6bcb78c97",
+      "returncode": 0
+     },
+     {
+      "id": "souji",
+      "repo": "VeigaPunk/shokunin-repo-hygiene",
+      "branch": "master",
+      "old": "dcc8b9e",
+      "new_head": "31984f473ce4bdab61a99b16cca194b28108cb81",
+      "returncode": 0
+     },
+     {
+      "id": "tabi",
+      "repo": "VeigaPunk/tabi-shokunin",
+      "branch": "master",
+      "old": "25f6483",
+      "new_head": "f032f2dccc8a99632eea52edafa8220284b5c919",
+      "returncode": 0
+     },
+     {
+      "id": "tameshi",
+      "repo": "VeigaPunk/tameshi-shokunin",
+      "branch": "master",
+      "old": "3fb55ac",
+      "new_head": "18ad5d050ef4bcd830fe513825baed878f025024",
+      "returncode": 0
+     },
+     {
+      "id": "tsukuroi",
+      "repo": "VeigaPunk/tsukuroi-shokunin",
+      "branch": "master",
+      "old": "8148201",
+      "new_head": "b76b5c377eaee3e3d8d47fdddde977828d05dbd5",
+      "returncode": 0
+     },
+     {
+      "id": "canonical",
+      "repo": "VeigaPunk/kimi-shokunin",
+      "branch": "main",
+      "old": "b3ca98f",
+      "new_head": "e737d2ea97f6b0198503e077676c3f2ea07974a9",
+      "returncode": 0
+     },
+     {
+      "id": "retired-kimi-mirror",
+      "repo": "VeigaPunk/myskills",
+      "branch": "main",
+      "old": "fd9ed8c",
+      "new_head": "1c5e0a552b3a537d65f48c4158f2bfb178bf5fa3",
+      "returncode": 0
+     },
+     {
+      "id": "omp-binding",
+      "repo": "VeigaPunk/ompskills",
+      "branch": "main",
+      "old": "344e1cb",
+      "new_head": "b8c699c083bea16d8209ddafbe0c70bf8d95c2a4",
+      "returncode": 0
+     }
+    ],
+    "fleet_root": "published by pushing the commit carrying this entry to VeigaPunk/shokunin master",
+    "made_public": [
+     "VeigaPunk/kimi-shokunin",
+     "VeigaPunk/shokunin-repo-hygiene",
+     "VeigaPunk/ompskills"
+    ],
+    "public_verified": "25/25; default branch equals push target for all 25",
+    "remote_doc_merges": 14,
+    "force_push": false
+   },
+   "evidence": [
+    ".ufo/waves/kaika/PUBLICATION.md",
+    ".ufo/waves/kaika-w3/publish-inventory.md",
+    ".ufo/waves/kaika-w3/publish-lane-security.md",
+    ".ufo/waves/kaika-w3/publish-core-security.md",
+    ".ufo/waves/kaika-w3/public-history-triage.md",
+    ".ufo/waves/kaika-w3/remote-doc-integrations.json"
+   ]
   }
  ]
 }

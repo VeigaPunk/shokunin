@@ -102,3 +102,11 @@ All marks are report-local author assertions; no `[x]`, promotion, or independen
 - All final child `HEAD`s matched the parent-supplied full-OID manifest; `corpus/` status was clean for all 21 before and after census. The three unrelated untracked user paths above remain untouched.
 
 The source index does not claim semantic corpus conformance, and the report does not aggregate lane scores into a scalar.
+
+## Outside verification and closure (integrator, after report)
+
+Non-author reviewer **FinalAggregateReview** (parent-dispatched, not an aggregator L2 seat) checked this report at `1bcf59e` plus integrator corrections `05bfb56`/`ba007d8`: 21/21 exact child HEADs match the final pin file; census sums recompute to 576 rows (A/B/C 500/33/43; mined/queued/rejected 307/220/49); all 21 gate rows match `r12-gate-final.md`; LOG, SCORECARD and AGGREGATE are append-only from `54a20d39`; roster 13 versus physical 21 and canonical authority are stated correctly. Recommendation: **ADMIT bounded coverage** (`.ufo/waves/kaika-w3/aggregate-review.md`).
+
+Curated-path spot-check: agree with included audio Paths:29 (S011 kept as a rejected caution, not support) and kagi Paths:26 (six mined tier-A hops); agree with excluded game-dev-3d Paths:48 (not updated after S036 superseded S011) and mado U2 Paths:55 (ends at rejected S030 without a caution marker).
+
+Closure: corpus review improved on the declared coverage measure (7 → 21 revision-bound verdicts, 0/21 conformant); numeric score held at 9; cross-lane quality and mint/dormancy unchanged. Expansion and quality unchanged. Discernment improved on this bounded outside sample; the earlier "unchanged" line correctly reflected that no outside check existed when it was written. Residual: `sources-census-final.md` still calls the 93-check indentation receipt "96-check"; the LOG/AGGREGATE errata supersede it.
