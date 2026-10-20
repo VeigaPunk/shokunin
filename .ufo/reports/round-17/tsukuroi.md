@@ -97,3 +97,17 @@ All measured with the same evaluator from a fresh clone at `90037c2d67bc076db79e
 - **Tool installs:** none, by the L1 or reported by seats.
 - **Inherited state:** the worktree was clean at start; no earlier attempt of this round. No misroots: the fleet `git status` shows only driver `.ufo/state/*` and `watchdog.log`.
 - **Non-author files read, not edited:** `corpus/lessons/round-16-verifier-spotcheck.md`, `considerthese/2026-10-20.md`.
+
+## Addendum — late wave-2 results (after the report's first landing)
+
+- **Delivered and survived:**
+  - FxGodspeedW2: 81/81 and 72/72 tasks carry the exact directive bytes.
+  - FxBindSectCita: C3 binding for section-citations holds; all pre-round finding IDs are preserved.
+  - FxC2Rerun: 48/48 reproduced from a fresh clone.
+- **Delivered and failed — FxOwnS055:** S055's `teaches` overreached its capture, and the C1 gate accepted the emulation's own echo line as an image witness. Repaired and landed `ed2ddd40dbc02ba9ccb2f3fcb81659773e400229` (lane tip):
+  - S059 supersedes S055.
+  - The symlink witness now requires an `lrwx… new_root -> sysroot` mode line; gate selftest 62/62.
+  - The entry wording was corrected.
+  - The citation-scope erratum was appended.
+- **Re-measured at `ed2ddd4`:** C1 5, C2 48, recheck 0 flagged (all exit 0). The census exits 0 with 8 W04 warnings.
+- **Late dead seats (m_zfl 429):** FxFreshUpdaSafeV3, FxRevengerSwitchRoot, FxBindSourScopCorr, FxReadmeFrontier, FxRecheckRerun, FxRevengerSnapperCopy, FxSeparability. Separability and the README frontier supersession therefore have no outside attack this round. The remaining running seats are reported as undelivered.
