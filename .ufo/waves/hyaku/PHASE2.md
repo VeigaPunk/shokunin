@@ -24,6 +24,7 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
 13. "assign more m_zfl please, for future spawns"
 14. "executor should use m_flash"
 15. "leave scribe as m_haiku"
+16. "critic + sentinel (m_opus)"
 
 ## Decisions
 
@@ -125,6 +126,10 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
   now unused by any role.
 - **Scribe stays m_haiku (directive 15).** scribe reverted to @m_haiku; critic and sentinel stay on
   @m_zfl, executor @m_flash. Wave mix ≈70% m_zfl (~66 of ~96).
+- **Critic + sentinel back on m_opus (directive 16).** Final seat routing (session-only): scout,
+  labrat, connector, reviewer, simplifier, distiller, revenger → @m_zfl; critic, sentinel → @m_opus;
+  scribe → @m_haiku; executor → @m_flash; mutation-tester → @m_sol; task (L1s, closures) → @m_opus.
+  Wave mix ≈58% m_zfl (~56 of ~96); critic+sentinel capped at ≤10 per wave to limit Anthropic 429s.
 - **Scope ruling (integrator):** tabi owns live browser/CDP page observation including the WebMCP
   page-tool surface; kaidoku keeps CDP only as an REA provider surface (tabi r16 closure notes).
 
