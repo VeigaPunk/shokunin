@@ -49,9 +49,12 @@ never pass a model parameter; you write only the two artifacts in steps 4–5):
    jj lane helper (it commits under the protocol identity, moves the branch bookmark, pushes, and
    recovers from an operator push by fetch + rebase of the unpushed commit only):
    `{{FLEET_ROOT}}/scripts/hyaku/jj-lane.sh commit {{LANE_CWD}} --as protocol -m "round-{{ROUND}} verifier spot-check (integrator, hyaku): non-author admit/reject" -- corpus/lessons/round-{{ROUND}}-verifier-spotcheck.md`
-   — cite the hash it prints as `pushed <hash>`. Exit 3 = committed but not pushed: rerun
-   `jj-lane.sh push {{LANE_CWD}}`. Never `git add`/`git commit`/`git push` in a jj-colocated lane
-   (jj resets the git index on every mutation, so staged entries are destroyed).
+   — cite ONLY the final hash it reports as landed (`landed <hash>`; an older helper prints
+   `pushed <hash>`), never a `committed <hash>` line, and confirm it with
+   `git -C {{LANE_CWD}} ls-remote origin refs/heads/<branch>`. Exit 3 = committed but not pushed:
+   rerun `jj-lane.sh push {{LANE_CWD}}`. Never `git add`/`git commit`/`git push` and never a mutating
+   jj command in a jj-colocated lane (jj resets the git index on every mutation, so staged entries
+   are destroyed, and a stray jj commit would ride the next push).
 5. **Closure entry.** Write the JSON object to a temp file and run
    `{{FLEET_ROOT}}/scripts/hyaku/append-closure.py --entry <file>` (validates, appends under the
    fleet lock byte-exactly, commits MANIFEST.json as protocol-shokunin, pushes). Shape:

@@ -150,4 +150,4 @@ Detail: integrity reports exactly 2 DRIFTs — `corpus.index.tracked_files 60→
 
 - `/usr/bin/time` absent on host — used `date +%s%N` deltas instead.
 - Pre-existing lane bug (not mine to fix): `c61a973` landed `corpus/lessons/round-46-verifier-spotcheck.md` without a `corpus/README.md` index row, so `verify_corpus_integrity.py` is already red at live HEAD. The next real round must index it (and my `round-999` file exists only in the sandbox remote).
-- No installs needed; no tools updated. Sandbox left at `/fast/scratch/jj-wave/JjTrialKotoba/` (contains the pushed-history evidence: `lane`, `lane-plain`, `lane-autotrack`, `lane-pristine`, `operator`, `remote.git`).
+- No installs needed; no tools updated. Sandbox `/fast/scratch/jj-wave/JjTrialKotoba/` removed after this report was written (no cited failure needed preserving).

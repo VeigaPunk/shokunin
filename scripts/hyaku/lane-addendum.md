@@ -123,16 +123,24 @@ not, and name both in the report.
        {{FLEET_ROOT}}/scripts/hyaku/jj-lane.sh commit {{LANE_CWD}} --as {{LANE}} \
          -m "round-{{ROUND}}: <what>" -- <repo-relative path>...
 
-   Cite the hash it prints as `pushed <hash>`; exit 3 = committed but not pushed → rerun
-   `jj-lane.sh push {{LANE_CWD}}` (never force). A named directory commits like `git add <dir>`
-   (ignored content stays out); name big files (>1 MiB) explicitly. **Never** `git add`, `git
-   commit`, `git stash`, `git checkout`, `git reset` or `git push` in the lane: jj resets the git
-   index on every mutation, so staged entries are destroyed. Read-only git (log, show, diff, status,
-   ls-files, rev-parse, merge-base) stays fine, but git HEAD may be detached: read the lane tip with
+   Cite ONLY the final hash the helper reports as landed on the remote — `landed <hash>` (an older
+   helper prints `pushed <hash>`) — never a `committed <hash>` line: a push-recovery rebase rewrites
+   that commit, and the rewritten-away hash is not on the branch. Exit 3 = committed but not pushed
+   → rerun `jj-lane.sh push {{LANE_CWD}}` (never force). `nothing to commit` lands nothing. A named
+   directory commits like `git add <dir>` (ignored content stays out; new files over 1 MiB inside it
+   are skipped with a warning — name them as files). **Never** `git add`, `git commit`, `git stash`,
+   `git checkout`, `git switch`, `git reset`, `git pull` or `git push` in the lane, and never run a
+   mutating jj command yourself (`commit`, `new`, `describe`, `squash`, `rebase`, `abandon`,
+   `bookmark`, `undo`, `op restore`/`revert`, `git push`/`fetch`): the helper is the only writer, jj
+   resets the git index on every mutation, and a stray jj commit would be swept into your next push.
+   Read-only git (log, show, diff, status, ls-files, rev-parse, merge-base) stays fine, but git HEAD
+   is detached after the first helper commit: read the lane tip with
    `{{FLEET_ROOT}}/scripts/hyaku/jj-lane.sh state {{LANE_CWD}}` (`local=`, `ahead=`) or
-   `git rev-parse <branch>`, never `@{u}`. Any other jj call (yours only) carries
-   `--ignore-working-copy` unless it must snapshot; revert a tracked file with `jj restore -- <path>`.
-   A lane gate or selftest that runs git writes must run on a sandbox clone, never in the lane.
+   `git rev-parse <branch>`, never `@{u}`, `--abbrev-ref HEAD` or `branch --show-current`; record
+   measured/pinned revisions as the branch tip, never bare `HEAD`. Read-only jj only with
+   `--ignore-working-copy`. Revert a tracked file by rewriting it from the branch
+   (`git -C {{LANE_CWD}} show <branch>:<path> > {{LANE_CWD}}/<path>`). A lane gate or selftest that
+   runs git writes must run on a sandbox clone, never in the lane.
    Fleet-repo commits stay on git, only through the serialized helper, which pushes origin:
 
        {{FLEET_ROOT}}/scripts/hyaku/fleet-commit.sh --as {{LANE}} -m "round-{{ROUND}}: {{LANE}} report" \
