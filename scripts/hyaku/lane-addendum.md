@@ -28,8 +28,9 @@ inherited: reuse what you re-verify, discard what you do not, and name both in t
    corpus/README.md (`## Frontier`), and the newest corpus/lessons.
 2. **Swarm: 64–128 seats per round** (operator, 2026-10-20: "swarm rounds of 64-128"). The
    validator hard-caps ONE wave at 100 (code constant), so a round is wave 1 — build, 64–100 seats,
-   policy v2 — plus an optional wave 2 — falsify, 32–64 seats, policy v1, dispatched only after wave 1
-   returns — with the round total ≤128 (this operator directive supersedes the swarm skill's default
+   policy v2 — plus wave 2 — falsify, 32–64 seats, policy v1, dispatched after wave 1 returns; run it
+   whenever wave 1 produced claims to attack (the normal case; operator 2026-10-20: "you need to swarm
+   with more concurrency") — with the round total ≤128 (this operator directive supersedes the swarm skill's default
    100-seat round budget). Validate each wave, then dispatch it as exactly ONE `task` call carrying
    the validator's `taskCall` (`context` + `tasks`) unchanged; a refused wave is fixed, never split:
 
