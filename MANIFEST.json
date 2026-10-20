@@ -8519,6 +8519,49 @@
    "notes": "Dispatch digest: 2026-10-20T12:07:53-03:00 launch kaidoku round=18 pgid=4070059 driver=hyaku-inline attempt=1 / 2026-10-20T14:31:43-03:00 complete kaidoku round=18; hyaku-inline attempt=1. Report 4338083 by kaidoku-shokunin lands last (A pushed 14:21:05, report 14:23:14); erratum e9eec36 appended, filed bytes prefix-intact; all cited lane hashes ancestors of refs/heads/main; lane ahead=0, clean; prompt 149c5af renders template byte-exact (+ §6 addendum). Stale-lane 2h24m progressing (7 lane commits). Waves W1 89/89, W2 98 (94 reports; GateSUMSRUNLOG, GatePRODUCERREV, TruthREGISTRY dead, ShonenLines missing), 187 seats, no per-seat model. Installs: Go 1.24.6/1.25.0 official tarballs into ~/.local/opt, sha256 matches go.dev JSON. Routed (status-neutral): R18-MIDMAP-LISTSTEP (receipt-validate --require-mid-maps list branch accepts any step), R18-VALIDATOR-DIGEST (format-only check; retain remapped-copy digests), R18-STRICT-BASELINE (strict exit 1 at B unretained), R18-HEAD-ALIASES (citation-drift literal-only HEAD; 2 nested compare reads invisible to lint), R18-DEADSEAT-RECORD (SCORECARD:2462 1 dead vs erratum 3; causes not in committed wave records), R18-REGISTRY-PINNED (pins/go-buildinfo-probe no pinned path), R18-INSTALL-RECORD (install not in round lesson). Operator: template §3 lists 1x planner vs §6 L1 planner reassignment. SHONEN not fully non-author checkable (4 [~]; PROVINCE REA-pin stale).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 17,
+   "date": "2026-10-20",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 17,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 17
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "unchanged",
+    "coverage": "improved",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "webmcp-cdp-invocation"
+   ],
+   "report": ".ufo/reports/round-17/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-17-verifier-spotcheck.md@2bff864fdfee684ddbcd066cc8e735adaba2735c",
+    "rechecks": "Re-measured over committed bytes 5859243->1b0bc7b (measured 93bfead): C1 laneTip absent at B, threaded 2/18/1 call sites at M; residue 20/31/1->0/0/0; 4 credited + 4 label-only entries; binding selftest 76 PASS 0 FAIL (evidence-verified). C2 receipt 11/11 cases + 4/4 controls, cancel->Canceled, Chromium 154.0.8037.97, producer sha de62820d matches harness at M and T, receipt time precedes commits; note sources S041-S048,S054 tier A mined. C3 adjacency.tsv absent at B, 10 rows at M/T (4 contested-open/1 ruled/2 split/3 refused), ruled row = round-16 integrator ruling, contested rows on L0 :62/:65; checker selftest 57 evidence-verified. Harm: scalars unchanged, LOG/SOURCES/QUALITY/README append-only, no deletions, PROVINCE/SHONEN/check-freshness byte-unchanged, counted inputs unchanged M..T, binding clean 3/3 at f97e7f7; r16 manifest red at tip judged supersession (valid receipt at 1205d26 kept). Census validate exit 0; rows 40->57 A46/B4/C7. Spot-check: admits S041, S048 agree; rejects S053/S057, check-freshness code fix, scalar bumps agree. No lane script executed."
+   },
+   "commit": "tabi-shokunin@1b0bc7bbfec0305e0332a5e3b382d78f22248551",
+   "closed_at": "2026-10-20T18:36:01Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-20T12:32:05-03:00 launch tabi round=17 pgid=2167868 driver=hyaku-inline attempt=1; 2026-10-20T15:25:06-03:00 complete tabi round=17; hyaku-inline attempt=1. Step-1 pass: report af41737 by tabi-shokunin, lands after lane tip, SHONEN 4x[~], all cited hashes ancestors of refs/heads/master, state ahead=0 clean, prompt carries contract. Routed defects (status-neutral): (1) report :35 and lesson round-17.md:116 say 7 siblings, adjacency.tsv has 6; (2) w2/HarmAfter.md 20-gate harm set measured at 6c97851 not M; (3) check-adjacency selftest 57 evidenced only in w1/C3Checker.md:103, no corpus/evidence receipt; (4) SOURCES S057 anchor cell still says 'individual publisher' (falsified premise it corrects); (5) w2/ReRunHarness.md keeps abbreviated digests only. Open L0 .ufo/l0-questions.md:62,:65. check-freshness --witness HEAD hazard remains SKILL-text-only. SHONEN boxes 1-3 look checkable by a non-author; box 4 depends on open L0 rulings (promotion operator-owned). Lane-reported 18 dead wave-2 seats (17 zai 429, 1 provider refusal) noted.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
