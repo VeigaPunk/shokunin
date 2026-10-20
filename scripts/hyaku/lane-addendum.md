@@ -59,11 +59,12 @@ inherited: reuse what you re-verify, discard what you do not, and name both in t
    `reportDir` alone stays lane-relative (the validator requires a relative path and resolves it
    beneath `UFO_PROJECT_ROOT` = your lane). Never `agent://all` (it reaches every lane's seats) —
    message your seats by id.
-3. **Write scope:** {{LANE_CWD}} (your lane repo); your report
-   `{{FLEET_ROOT}}/.ufo/reports/round-{{ROUND}}/{{LANE}}.md`; appended lines in
+3. **Write scope:** {{LANE_CWD}} (your lane repo — including its own `scripts/`, `tools/`, gates);
+   your report `{{FLEET_ROOT}}/.ufo/reports/round-{{ROUND}}/{{LANE}}.md`; appended lines in
    `{{FLEET_ROOT}}/.ufo/l0-questions.md`. Never edit MANIFEST.json (a separate non-author hyaku
-   closure session verifies this round and appends its closure entry), templates/, scripts/,
-   `.ufo/state/`, `.ufo/watchdog.log`, or any sibling repo.
+   closure session verifies this round and appends its closure entry), the fleet root's
+   `{{FLEET_ROOT}}/templates/` and `{{FLEET_ROOT}}/scripts/`, `.ufo/state/`, `.ufo/watchdog.log`,
+   or any sibling repo.
 4. **Commit order (landed = committed and pushed).** Lane-repo commits carry
    `{{LANE}}-shokunin <{{LANE}}@shokunin.local>` (check `git config user.name`), are
    pathspec-limited (never `add -A` / `commit -a`), and are pushed (`git push`) BEFORE the report is
