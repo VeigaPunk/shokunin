@@ -8261,6 +8261,49 @@
    "notes": "Dispatch/complete digest: 2026-10-20T10:14:09-03:00 launch tameshi round=16 pgid=11738 driver=hyaku-inline attempt=1; 2026-10-20T11:49:02-03:00 complete tameshi round=16; hyaku-inline attempt=1. Real report a067c633 by tameshi-shokunin (11:48:34) after lane HEAD 017a2b0 (11:47:11); all cited hashes ancestors of refs/heads/master; ahead=0, porcelain clean; prompt = canonical template (105/105 static lines) + hyaku addendum; no step-1 conformance defects. C1 depth 6->7 verified. C2 calibration 6->8 not verified: sha-only cold-read credit missed that the round's own runner edit made the round-14 recipe (SKILL.md:1580-1584) state wrong outcomes at HEAD. Operability harmed: round-14 disposition gate (capability 'effective expectation reconciliation') was clean at HEAD before, now permanently could-not-evaluate at --root .; archived-root workaround grades a frozen commit; not re-pinned or listed as debt; ToolsNoHarm ran selftests only. Routed to tameshi r17: R16-OP1 restore clean-capable live-tree disposition verdict (appended supersession/re-pin or git-materialized historical runner) with red/green; R16-C2a correct/mark-historical SKILL.md:1580-1584 and re-read bucket; R16-C2b cold-read credit must invalidate on changed executed surfaces (red-before on round-14 bucket); R16-C2c box-3 text overclaims until fixed (append, no rewrite); R16-EV1 runner-sha256.txt stale (89722ddb vs landed 0673d2e5) - append correction; R16-MON1 no-harm monitor must run registered entry commands. SHONEN: all four boxes [~]; none non-author-checkable this round. No installs observed.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 17,
+   "date": "2026-10-20",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 17,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 17
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "retained REA Ghidra-session log capture"
+   ],
+   "report": ".ufo/reports/round-17/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-17-verifier-spotcheck.md@9011581d84527ba34c675f9cf912e54d2e72d470",
+    "rechecks": "Own Git-object census B=b563c799d97774aae4351276fe43cb897311e349 to A=de6c721be61bf6e8b4001021f09a9cdea38166dd (no lane tool/gate executed). C1 re-measured: r16 temporal sites 4 unqualified->0 with 4 line-exact R16-PROVENANCE corrections (round-17.md:96-99), filed bytes unchanged; SKILL registry 7 rows/2 unlabelled_variant -> 17/17 exercised_match (matches final-recheck receipt @8e7642c); QUALITY 18->20, rows 1-18 identical. C2 evidence-verified: predictions 2711674 committed 13:46:45Z before first step 13:47:05Z, blobs unchanged to A; 8+8 receipts exit/compare 0, routes re-derived 8/8 per pass from committed ghidra.log lines; aether string_count 29118->29117 (replicate falsified 1/8, honest), EOF pair at log:177 labelled INFERENCE; capability rows 6->7; verification.json 79 cmds, 78/78 numeric expectations matched, run 14:47:30-14:48:08Z after S push. No harm: 15123/15130 B blobs identical, LOG prefix-exact, SCORECARD +78/-0, SOURCES 23->32. Census validate kaidoku ok exit 0. Sample: 10/10 source/reject decisions agree (own reopen S024 :411, S028 sha a4c56ba5 dwarf=0); partial disagree on entry pin-map sentence. Prompt lines 1-140 = rendered template; all items present."
+   },
+   "commit": "kaidoku-shokunin@de6c721be61bf6e8b4001021f09a9cdea38166dd",
+   "closed_at": "2026-10-20T15:07:22Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-20T10:14:11-03:00 launch kaidoku round=17 pgid=11845 driver=hyaku-inline attempt=1 / 2026-10-20T11:51:47-03:00 complete kaidoku round=17; hyaku-inline attempt=1. Report 7807afe5 by kaidoku-shokunin, lands last; all cited hashes ancestors of refs/heads/main; lane ahead=0, clean. Waves W1 78/78, W2 69 (67 ok, 2 dead m_swe rate limit, not respawned), 147 seats, no per-seat model. Install: Go 1.27.3 official go.dev tarball (sha 65efbc80 matches go.dev/dl) into ~/.local/opt/go-1.27.3, off PATH, in scope and recorded (pacman bypass reason unstated, minor); rea-agents@6.7.0 npx cache, recorded. Routed to kaidoku next round (status-neutral): R17-PINMAP mid-run pin_checks keep verdicts not maps vs entry:30-32/SCORECARD:2374/QUALITY#19 wording; R17-VALIDATE16 only 8 of 'all 16' receipt validations retained; R17-PRODUCER-REV second pass produced by 95e34db tooling not S d0ab299; R17-SUMS-RUNLOG predictions/SHA256SUMS dropped carriers.tsv line, pass-1 run-log 7/8; R17-REGISTRY 4/10 new rows lack pinned path/write scope, citation-drift --strict registered probe; R17-S032-DIGEST dynamic GitHub page sha non-reproducible. Operator/protocol: templates/round-prompt.md lacks a distinct child-lane write-scope item (only hyaku addendum), contra PROTOCOL.md:103-104. SHONEN not fully checkable by non-author; all four [~] stand; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
