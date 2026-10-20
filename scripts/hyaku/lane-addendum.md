@@ -56,6 +56,9 @@ inherited: reuse what you re-verify, discard what you do not, and name both in t
    unchanged (`context` + `tasks`); direct call or `await tool.task(**taskCall)` from eval.
    Every seat is a leaf with a disjoint write set inside {{LANE_CWD}} or is read-only; seats
    never write the fleet repo, MANIFEST.json, or another lane. You integrate; seats advise.
+   **Depth (operator, 2026-10-20: `task.maxRecursionDepth` 2 → 3):** an executor seat may now
+   spawn one read-only `labrat` probe for a falsifiable hypothesis — the only card-permitted seat
+   spawn; every other role stays a leaf, and no seat runs its own swarm.
    **Seat paths are absolute:** seat tools also start at the fleet root, so a relative path such as
    `.ufo/waves/...` lands in the FLEET repo (observed hyaku r11/r12: kama and tsukuroi seats). The
    wave `context` and every item must name absolute paths under {{LANE_CWD}}; the spec
