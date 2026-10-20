@@ -43,18 +43,16 @@ not, and name both in the report.
          UFO_FLEET_ALLOW_EXTERNAL_TOOLS=1 UFO_PROJECT_ROOT={{LANE_CWD}} \
          node ~/Projects/ufo-fsd-alpha/scripts/ufo-swarm-wave.mjs run --spec <wave-spec.json>
 
-   **Wave 1 — build (64–100):** recon, source opening, entry drafting, tooling, plus first
-   falsifiers of the round's declared claims. **Wave 2 — falsify (64–100)**, dispatched after wave 1
-   returns: attack what wave 1 produced — re-run each counting command, re-open each new source row,
-   attack each claim, review each new entry or tool, mutation-test each new gate; every item names
-   what it attacks. Run wave 2 whenever wave 1's output yields ≥64 distinct attack items (the normal
-   case); with fewer, never pad — run the residual checks yourself or through one ordinary `task`
-   call of ≤8 reviewer/critic seats, and say so in the report. Round total ≤200 seats. Put specs and
-   the registry under `{{LANE_CWD}}/.ufo/waves/round-{{ROUND}}/` (spec
-   `reportDir: ".ufo/waves/round-{{ROUND}}/<wave>"`, lane-relative) and commit them as wave evidence.
-   Items are distinct, concrete work items serving this round's 1–3 claims plus the frontier step
-   and verification — never padding. Record each wave's seat count, role mix, dead seats, and the
-   round total in the report. The §3 L2 floor is met inside wave 1.
+   **Build wave (64–100):** distinct source-opening, domain-work, implementation and first
+   falsification items serving the round's declared claims. Keep the validator's 100-member
+   per-L1 round ceiling: do not add a second full spawn wave or manufacture work to fill seats.
+   After integration, resume the original reviewers/critics for bounded falsification using the
+   recorded registry and the validator's resume-only payload; preserve each member's identity,
+   role and scope. Never replace a dead seat. Put specs and registries under
+   `{{LANE_CWD}}/.ufo/waves/round-{{ROUND}}/`, with lane-relative `reportDir`, and commit them as
+   dispatch evidence. Record spawn/resume counts, role mix, dead seats, and verification outcomes.
+   Parallelize genuine items only; sequential integration and provider backoff are not reasons
+   to pad a wave or claim idle agents are running. The §3 L2 floor is met inside the build wave.
    **Planner seat (orchestrator ruling 2026-10-19):** the validator rejects `planner` — a
    frozen-topology seat, never a swarm role. You, the L1, hold the canonical §3 planner seat; a
    bounded planning data-walk may ride a scout, connector or revenger item. Record that mapping in
@@ -70,12 +68,11 @@ not, and name both in the report.
    mutation-tester (m_sol). Give code-heavy items to executors and prose drafting to scribes.
    **Provider status (orchestrator probes, 2026-10-20 10:0x -03):** m_flash answers in-session seats
    from its primary (commandcode deepseek-v4.1-flash); its charm-hyper fallback is out of credits
-   (402). m_haiku, m_swe (devin/swe-2), m_sol and m_opus answer from their primaries. m_swe has NO
-   fallback chain (a swe-2 failure kills the seat). m_opus's devin fallback has exhausted its weekly
-   quota and antigravity rejects this host's tool schemas, so keep m_opus seats ≤10 per wave (they
-   share the Anthropic quota with every L1, closure and the orchestrator); keep m_sol seats ≤4 per
-   wave (Codex `turn_rate_limit_exceeded` history). A seat that dies is a dead lane: report it with
-   its error, never respawn it under a new identity.
+   (402). m_haiku, m_swe, m_sol and m_opus answered from their primaries in those probes.
+   Later rounds hit m_swe rate limits; the session now has the operator-approved flash fallback.
+   Opus coordinators also received 429s with 13–14-minute retry-after values: respect that
+   backoff and resume the same identity, never restart a duplicate writer. Historical primary
+   availability is not current capacity proof. A dead seat stays dead in the evidence.
    **REA MCP:** the operator authorized disabling the OMP `rea` MCP entry for this phase —
    `~/.omp/agent/mcp.json` now carries `"enabled": false` (orchestrator edit 2026-10-20 10:12 -03;
    pre-edit copy `~/.omp/agent/mcp.json.pre-disable-20261020T1015`). That is operator-authorized
@@ -85,10 +82,11 @@ not, and name both in the report.
    (`async.maxJobs` 100, fixed at process start; three lanes run concurrently); the refusal
    ("Background job limit reached (100)") spawns nothing. Retry the same payload every ~3 min
    (`sleep 180`), up to 20 tries; never split or shrink below the band; if still refused, land the
-   round with verifiable work and report the refusals. Every seat is a leaf with a disjoint write set
-   inside {{LANE_CWD}} or is read-only; seats never write the fleet repo, MANIFEST.json, or another
-   lane, and never run `jj` or any git write (add/commit/stash/checkout/reset/rebase/push) in your
-   lane repo — say so in every wave `context`. You integrate; seats advise.
+   round with verifiable work and report the refusals. Every concurrent writer needs an actual
+   separate worktree, unique branch/path and observed base; bind its absolute paths there and
+   keep one integration owner. Read-only seats return findings without production edits. Never
+   run concurrent writers on one checkout. Seats never mutate the fleet repo, sibling lanes,
+   lane jj state or lane Git index; put those bounds in every wave context.
    **Depth (`task.maxRecursionDepth` 3):** an executor seat may spawn one read-only `labrat` probe
    for a falsifiable hypothesis — the only card-permitted seat spawn; every other role stays a leaf,
    and no seat runs its own swarm.
@@ -123,10 +121,10 @@ not, and name both in the report.
        {{FLEET_ROOT}}/scripts/hyaku/jj-lane.sh commit {{LANE_CWD}} --as {{LANE}} \
          -m "round-{{ROUND}}: <what>" -- <repo-relative path>...
 
-   Cite ONLY the final hash the helper reports as landed on the remote — `landed <hash>` (an older
-   helper prints `pushed <hash>`) — never a `committed <hash>` line: a push-recovery rebase rewrites
-   that commit, and the rewritten-away hash is not on the branch. Exit 3 = committed but not pushed
-   → rerun `jj-lane.sh push {{LANE_CWD}}` (never force). `nothing to commit` lands nothing. A named
+   Cite ONLY the helper's final `landed <hash>` line after successful remote verification.
+   `rewritten <old> -> <new>` is diagnostic, never a citable landed hash. Exit 3 retains a local
+   commit but proves no push: resolve the reported cause, then retry the helper push; never force.
+   `nothing to commit` lands nothing. Explicit files above 10 MiB require `--allow-large`. A named
    directory commits like `git add <dir>` (ignored content stays out; new files over 1 MiB inside it
    are skipped with a warning — name them as files). **Never** `git add`, `git commit`, `git stash`,
    `git checkout`, `git switch`, `git reset`, `git pull` or `git push` in the lane, and never run a
