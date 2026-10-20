@@ -8304,6 +8304,49 @@
    "notes": "Dispatch digest: 2026-10-20T10:14:11-03:00 launch kaidoku round=17 pgid=11845 driver=hyaku-inline attempt=1 / 2026-10-20T11:51:47-03:00 complete kaidoku round=17; hyaku-inline attempt=1. Report 7807afe5 by kaidoku-shokunin, lands last; all cited hashes ancestors of refs/heads/main; lane ahead=0, clean. Waves W1 78/78, W2 69 (67 ok, 2 dead m_swe rate limit, not respawned), 147 seats, no per-seat model. Install: Go 1.27.3 official go.dev tarball (sha 65efbc80 matches go.dev/dl) into ~/.local/opt/go-1.27.3, off PATH, in scope and recorded (pacman bypass reason unstated, minor); rea-agents@6.7.0 npx cache, recorded. Routed to kaidoku next round (status-neutral): R17-PINMAP mid-run pin_checks keep verdicts not maps vs entry:30-32/SCORECARD:2374/QUALITY#19 wording; R17-VALIDATE16 only 8 of 'all 16' receipt validations retained; R17-PRODUCER-REV second pass produced by 95e34db tooling not S d0ab299; R17-SUMS-RUNLOG predictions/SHA256SUMS dropped carriers.tsv line, pass-1 run-log 7/8; R17-REGISTRY 4/10 new rows lack pinned path/write scope, citation-drift --strict registered probe; R17-S032-DIGEST dynamic GitHub page sha non-reproducible. Operator/protocol: templates/round-prompt.md lacks a distinct child-lane write-scope item (only hyaku addendum), contra PROTOCOL.md:103-104. SHONEN not fully checkable by non-author; all four [~] stand; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 17,
+   "date": "2026-10-20",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 17,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 17
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "improved",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "post-hoc transcript tripwire (tools/mado-tripwire.py sha256 962919ce…, probe; selftests core 9/9, compound 16/16, hardening 33/33, w2-regressions 30/30; anchor MadoR15.LibinputEvents.jsonl:54 call_38165 sudo pacman -S exit 1; adversarial 4/26 pinned limits)"
+   ],
+   "report": ".ufo/reports/round-17/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-17-verifier-spotcheck.md@d9a5a18e17cd3a68b52148fcc01c4a30e340ba98",
+    "rechecks": "C1 re-measured: QUALITY grep 14/22 (27cd06f) -> 15/23 (0ab1ccc), append-only, criterion 23 cites lessons/round-17.md#mistakes M1; label-check-final EXPECT 7/7 evidence-verified. C2 re-measured by hand: surface/covers lines 2/6 -> 4/6 (P4, P6 added; P3/P5 open); all 13 credited tier-A rows (S056-S060, S063-S069, S071) re-opened: 13/13 sha256 match, quotes verbatim at cited lines, tags/refs match; 9 note claims agree with cited source lines. C3 evidence-verified (tool not executed): selftest receipts at tool 962919ce 9/9,16/16,33/33,30/30, adversarial 4/26; anchor transcript line 54 read directly (sha 78388d42 = session-index) and joined to pacman.log:2429; SKILL.md:562 probe row. Harm watch receipts 372/372 (mado-verify.sh fba82a66 unchanged), 52/52, U 7/7. Spot-check: 3 admits (S066, S064, S058) + 3 rejects (S061, S062, S070) all agree; census exit 0 (3 historical W04)."
+   },
+   "commit": "mado-shokunin@d9a5a18e17cd3a68b52148fcc01c4a30e340ba98",
+   "closed_at": "2026-10-20T15:28:20Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-10-20T10:51:22-03:00 launch mado round=17 pgid=2433501 driver=hyaku-inline attempt=1; 2026-10-20T12:18:08-03:00 complete mado round=17; hyaku-inline attempt=1. Step-1 conformance ok: report by lane identity (fb81be5/3f02dd0/16546d0) after its commits; SHONEN heading 4 lines; 14/14 cited hashes ancestors of refs/heads/master; jj-lane state ahead=0, porcelain clean; prompt = canonical template rendering + addendum at 4bb0943 verbatim. Round tip 0ab1ccc; spot-check landed d9a5a18. Seats 70+78 (148 transcripts), one dead seat MadoR17.TripwireCore (m_swe free-model rate limit). Routed to mado: R17-V1 scan receipts (tripwire-r13..r16, anchor, pacmanlog-join) lack tool sha/measured_commit and the claimed 0ab1ccc re-cut is unreceipted; R17-V2 report table cites f71ccbe tool sha 7a98720e vs tip 962919ce; R17-V3 rubric V cannot detect invented rows - commit raw fetch receipts; R17-V4 tripwire probe needs frozen digest-pinned replay before gate registration; R17-V5 commit measure.py mutant receipts (M3). Host evidence (operator-owned): pacman.log lines 2440-3152 show 13 runs 07:45-09:39 on 2026-10-20 incl. pacman -Syu at :2462 (mkinitcpio 41.1->42.2), no recorded actor; 0 runs after 10:00; R15-V1 operator-owned. SHONEN stays [~]; not fully checkable by a non-author this round (no end-to-end desktop task). Closure installs: none.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
