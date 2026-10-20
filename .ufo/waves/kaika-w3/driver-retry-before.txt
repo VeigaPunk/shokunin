@@ -1,5 +1,5 @@
-REGRESSION driver=/home/vgpnk/Projects/shokunin/.tower/worktrees/kaika/fleet-driver-retry/scripts/shokunin-watchdog.sh sha256=5042448abf3d5924d8bdd8af63121650c72bedab78a193facda03c0ace845bf2
-CASE dead driver=/home/vgpnk/Projects/shokunin/.tower/worktrees/kaika/fleet-driver-retry/scripts/shokunin-watchdog.sh sha256=5042448abf3d5924d8bdd8af63121650c72bedab78a193facda03c0ace845bf2
+REGRESSION driver=/tmp/kaika-verify/DriverCompletionFix-baseline/shokunin-watchdog-before.sh sha256=5042448abf3d5924d8bdd8af63121650c72bedab78a193facda03c0ace845bf2
+CASE dead driver=/tmp/kaika-verify/DriverCompletionFix-baseline/shokunin-watchdog-before.sh sha256=5042448abf3d5924d8bdd8af63121650c72bedab78a193facda03c0ace845bf2
 PASS  A-initial-attempt-started-live
 PASS  A-failed-attempt-stopped
 PASS  A-failed-attempt-process-group-dead
@@ -8,6 +8,8 @@ PASS  A-dead-gate-failure-retries
 PASS  A-retry-process-live-same-round
 PASS  A-retry-round-remains-N
 PASS  A-report-bytes-unchanged-by-retry
+PASS  A-uppercase-baseline-probe-changed-digest-encoding
+FAIL  A-uppercase-equal-baseline-rejects-unchanged-report
 PASS  A-mtime-only-probe-really-changed-mtime
 FAIL  A-registry-fix-alone-rejects-unchanged-report
 FAIL  A-no-stale-completion-attempt
@@ -19,15 +21,14 @@ FAIL  A-fresh-report-closes-round
 FAIL  A-fresh-report-advances-exactly-to-N-plus-1
 PASS  A-original-report-remains-in-place
 FAIL  A-fresh-report-appended-new-bytes
-/home/vgpnk/Projects/shokunin/.tower/worktrees/kaika/fleet-driver-retry/.ufo/waves/kaika-w3/driver-retry-regression.sh: line 143: /tmp/kaika-verify/DriverCompletionFix/dead/.ufo/state/beta.report-baseline: No such file or directory
-      expected=<2> actual=<>
+      expected=<2> actual=<1>
 FAIL  A-round-N-plus-1-baseline-is-round-scoped
-      expected=<e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855> actual=<>
+      expected=<e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855> actual=<c0393e9163fdc2809ea9047da711ff1dedd7b42fe535b5a93ff8305b9883a647>
 FAIL  A-round-N-plus-1-absent-report-baseline-is-empty-digest
 FAIL  A-round-N-report-digest-is-not-reused-for-N-plus-1
-CASE-SUMMARY dead pass=11 fail=10
+CASE-SUMMARY dead pass=12 fail=11
 FAIL  case-dead
-CASE live driver=/home/vgpnk/Projects/shokunin/.tower/worktrees/kaika/fleet-driver-retry/scripts/shokunin-watchdog.sh sha256=5042448abf3d5924d8bdd8af63121650c72bedab78a193facda03c0ace845bf2
+CASE live driver=/tmp/kaika-verify/DriverCompletionFix-baseline/shokunin-watchdog-before.sh sha256=5042448abf3d5924d8bdd8af63121650c72bedab78a193facda03c0ace845bf2
 PASS  B-attempt-started-live
 PASS  B-valid-live-attempt-report-observed
 PASS  B-live-gate-failure-does-not-error
@@ -50,6 +51,19 @@ PASS  content-heading-check-still-rejects-missing-marker
 PASS  content-heading-and-size-still-accept-valid-report
 CASE-SUMMARY live pass=12 fail=7
 FAIL  case-live
-SUMMARY pass=0 fail=2
+CASE capture driver=/tmp/kaika-verify/DriverCompletionFix-baseline/shokunin-watchdog-before.sh sha256=5042448abf3d5924d8bdd8af63121650c72bedab78a193facda03c0ace845bf2
+FAIL  C-directory-baseline-capture-fails-closed
+PASS  C-capture-failure-keeps-round-N
+      expected=<0> actual=<1>
+FAIL  C-capture-failure-does-not-retry-launch
+      expected=<> actual=<3320601>
+FAIL  C-capture-failure-does-not-write-mission
+PASS  C-capture-failure-preserves-report-bytes
+PASS  C-capture-failure-keeps-report-in-place
+PASS  C-capture-failure-cleans-temporary-state
+FAIL  C-directory-target-replacement-failure-is-logged
+CASE-SUMMARY capture pass=4 fail=4
+FAIL  case-capture
+SUMMARY pass=0 fail=3
 
-EXPECTED_PRE-FIX_EXIT=1
+BASELINE_COMMIT=8db21a9 EXPECTED_PRE-FIX_EXIT=1

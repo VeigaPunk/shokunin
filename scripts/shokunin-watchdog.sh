@@ -130,7 +130,7 @@ record_report_baseline() { # lane round; atomically save the current report dige
     log "report-baseline-fail $lane round=$n :: cannot write state"
     return 1
   fi
-  if ! mv -f -- "$tmp" "$state"; then
+  if ! mv -fT -- "$tmp" "$state"; then
     rm -f -- "$tmp"
     log "report-baseline-fail $lane round=$n :: cannot replace state"
     return 1
@@ -152,6 +152,7 @@ report_of() {
     IFS=' ' read -r baseline_round baseline_digest extra < "$baseline" || return 1
     case $baseline_round in ''|*[!0-9]*) return 1 ;; esac
     [[ "$baseline_digest" =~ ^[[:xdigit:]]{64}$ ]] || return 1
+    baseline_digest=${baseline_digest,,}
     [ -z "$extra" ] || return 1
     if [ "$baseline_round" = "$2" ]; then
       digest=$(report_digest "$f") || return 1
@@ -395,7 +396,7 @@ main() {
       if report_of "$lane" "$n"; then
         advance "$lane" "$n"
       elif [ -f "$UFO/reports/round-$n/$lane.md" ]; then
-        log "lane-round-failed $lane round=$n :: marker/contentless report; NOT advancing"
+        log "lane-report-not-accepted $lane round=$n :: unchanged baseline or failed freshness/content checks; NOT advancing"
         launch_lane "$lane" "$n"
       else
         log "lane-dead-no-report $lane round=$n; retry same round"
