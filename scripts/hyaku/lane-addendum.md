@@ -43,16 +43,21 @@ not, and name both in the report.
          UFO_FLEET_ALLOW_EXTERNAL_TOOLS=1 UFO_PROJECT_ROOT={{LANE_CWD}} \
          node ~/Projects/ufo-fsd-alpha/scripts/ufo-swarm-wave.mjs run --spec <wave-spec.json>
 
-   **Build wave (64–100):** distinct source-opening, domain-work, implementation and first
-   falsification items serving the round's declared claims. Keep the validator's 100-member
-   per-L1 round ceiling: do not add a second full spawn wave or manufacture work to fill seats.
-   After integration, resume the original reviewers/critics for bounded falsification using the
-   recorded registry and the validator's resume-only payload; preserve each member's identity,
-   role and scope. Never replace a dead seat. Put specs and registries under
-   `{{LANE_CWD}}/.ufo/waves/round-{{ROUND}}/`, with lane-relative `reportDir`, and commit them as
-   dispatch evidence. Record spawn/resume counts, role mix, dead seats, and verification outcomes.
-   Parallelize genuine items only; sequential integration and provider backoff are not reasons
-   to pad a wave or claim idle agents are running. The §3 L2 floor is met inside the build wave.
+   **Wave 1 — build (64–100):** recon, source opening, entry drafting, tooling, plus first
+   falsifiers of the round's declared claims. **Wave 2 — falsify (64–100)**, dispatched after wave 1
+   returns: fresh reviewer/critic/mutation-tester/scout seats attack what wave 1 produced — re-run
+   each counting command, re-open each new source row, attack each claim, review each new entry or
+   tool, mutation-test each new gate; every item names what it attacks. Run wave 2 whenever wave 1's
+   output yields ≥64 distinct attack items (the normal case); with fewer, never pad — run the
+   residual checks yourself or through one ordinary `task` call of ≤8 reviewer/critic seats, and say
+   so. Round total ≤200 seats: the operator's directives ("swarm rounds of 64-128", "64-100",
+   "make sure we are always swarming heavily", "always see 64+ running") supersede the swarm skill's
+   default 100-member round budget; the validator's 100-seat cap per wave still binds. Never replace
+   a dead seat. Put specs and registries under `{{LANE_CWD}}/.ufo/waves/round-{{ROUND}}/` (spec
+   `reportDir: ".ufo/waves/round-{{ROUND}}/<wave>"`, lane-relative) and commit them as wave evidence.
+   Items are distinct, concrete work items serving the round's 1–3 claims plus the frontier step
+   and verification — never padding. Record each wave's seat count, role mix, dead seats, and the
+   round total in the report. The §3 L2 floor is met inside wave 1.
    **Planner seat (orchestrator ruling 2026-10-19):** the validator rejects `planner` — a
    frozen-topology seat, never a swarm role. You, the L1, hold the canonical §3 planner seat; a
    bounded planning data-walk may ride a scout, connector or revenger item. Record that mapping in
