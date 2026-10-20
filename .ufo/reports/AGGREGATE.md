@@ -2130,3 +2130,158 @@ Round 12 works the lower **cross-lane quality** axis (8): re-run the six
 box-3 verdicts after the round-14–17 lane movement and make report durability
 an explicit grade. Falsified if a marker overwrite such as kotoba r15 can
 still pass as a current report or if a verdict lacks the revision it measured.
+
+## 16. Refresh 9 — aggregator round 12 (corpus-review coverage and source curation)
+
+**Measured:** 2026-10-20 at the refreshed full HEADs after the parent-confirmed
+documentation-only lane merges. The latest aggregator scores are corpus review
+**9**, cross-lane quality **9**, and mint/dormancy **9**; the R11 final re-run
+made them a tie, so this move selects the unpaid per-repository corpus-review
+duty. This supersedes §15.9's earlier pre-rerun plan naming cross-lane quality
+as the lower axis at 8. The historical plan remains unchanged in the ledger.
+
+### 16.1 One claim — current per-repo review coverage
+
+R11's final standing duty had seven current child-corpus verdicts. Round 12
+extends revision-bound gate coverage to all **21 physical local child
+repositories**, each named by a full commit OID below, and publishes a reusable
+pointer map to the lanes' own SOURCES study paths. This is a coverage/navigation
+claim, not semantic correctness or a conformance improvement. The full
+command-mode/limit record is `.ufo/waves/kaika-aggregate/r12-gate-final.md`;
+the detailed report is `.ufo/reports/round-12/aggregator.md`.
+
+All 21 gate outputs are `failed` / **not conformant**, exit 1. Each includes
+the literal r10 absence of a `round-12-aggregator` lesson, which is the
+aggregator's debt under the explicit no-child-write boundary, not a
+child-authored defect.
+
+| Lane | Exact HEAD | Verdict; failed rules; findings |
+|---|---|---|
+| audio-shokunin | `0462a5440f23f45707ba681e2a011940e3c923dd` | not conformant; r4,r8,r10; 6 |
+| chousa-shokunin | `d730ae4c33989ad9c8535764d4cae77b4db869f6` | not conformant; r4,r7,r10,shonen; 69 |
+| game-dev-2d-shokunin | `bce53b83a21ea43ddc2bf050bfe78cb4f2b68550` | not conformant; r4,r8,r10; 19 |
+| game-dev-3d-shokunin | `3118be0b18dd7351b1faf6ce99d26a34370793ec` | not conformant; r4,r8,r10,shonen; 42 |
+| kagi-shokunin | `c2cab35bc92e57e39e5489bac3386db078345b3f` | not conformant; r2,r4,r8,r10; 64 |
+| kaidoku-shokunin | `767adafb97e2eef6980e2ad873d357e16721c467` | not conformant; r2,r4,r8,r10,shonen; 92 |
+| kake-shokunin | `5009ecaa1cce10b895617a585ddd3f7c7c923a84` | not conformant; r4,r8,r10; 54 |
+| kama-shokunin | `2f7303c242319c1dc96c6bcf7702ac18b3ca1aad` | not conformant; r2,r4,r8,r10,shonen; 18 |
+| kasegi-shokunin | `922a4dde90b60b465e2b8b241d1fe363f1f27e98` | not conformant; r2,r4,r8,r10; 63 |
+| kengaku-shokunin | `6180e4fb92e90c0b172e9788e2c765d097f2e142` | not conformant; r4,r8,r10; 73 |
+| kotoba-shokunin | `c61a973b2e02e1ded169703ddcb06466f4edd8bd` | not conformant; r4,r8,r10; 85 |
+| kotodama-shokunin | `4ad26836552462d28a946ca3b067cab0b5ce3532` | not conformant; r2,r4,r8,r10,shonen; 208 |
+| kumitate-shokunin | `1770305fae20826b39905a8251ddeca6b4957ac4` | not conformant; r2,r4,r8,r10; 108 |
+| lore-shokunin | `01306d51252f837909af5252c398ee4e31259f9b` | not conformant; r4,r10; 17 |
+| mado-shokunin | `7dcb785b7b943d03703181b218d7860a7b43007b` | not conformant; r4,r8,r10; 82 |
+| mori-shokunin | `6531ac6029e200a6392bb76673b6a17d3c895c96` | not conformant; r4,r8,r10; 41 |
+| revenger-shokunin | `cf02419276e5dd8aafb6fe09d4e9aaa6bcb78c97` | not conformant; r4,r10; 3 |
+| souji-shokunin | `31984f473ce4bdab61a99b16cca194b28108cb81` | not conformant; r2,r4,r10,shonen; 18 |
+| tabi-shokunin | `f032f2dccc8a99632eea52edafa8220284b5c919` | not conformant; r4,r8,r10; 158 |
+| tameshi-shokunin | `18ad5d050ef4bcd830fe513825baed878f025024` | not conformant; r4,r8,r10; 83 |
+| tsukuroi-shokunin | `b76b5c377eaee3e3d8d47fdddde977828d05dbd5` | not conformant; r4,r10; 98 |
+
+Twenty lanes used the exact-SHA `--snapshot` command with `--round 12`.
+Audio's 1,391,738,880-byte archive exceeds the existing snapshot wrapper's
+1 GiB buffer; its exact archive was streamed and graded through the same
+gate's `--repo` interface using the original object store plus a temporary
+index/worktree. Original audio HEAD stayed unchanged; the temporary snapshot
+was clean and removed. Three original checkouts retain unrelated user dirt
+outside `corpus/`: game-dev-3d `reports/round-107/` (79 files), kama
+`.ufo/round-10/{SEAT-PROTOCOL.md,plan.json}`, and lore `.scratch/` (26 files).
+They were preserved and excluded from archived grading; no full-original-tree
+clean claim is made. The gate checks form only: r1/r3/r5/r6/r9, verifier
+independence, and SHONEN truth remain unevaluated. Audio's r7 under-coverage
+is informational and its r8 intent classifier returned `could-not-evaluate`;
+literal r8 hits still fail.
+
+### 16.2 SOURCES census and index
+
+The corrected `scripts/sources-census.sh` blob
+`3f314620b2395eeb70d8405410132027dfe608e4` ran `census`, `validate`,
+`shared`, and `overdue --today 2026-10-20` on exact full-tree archives for all
+21 refreshed heads. The four-mode outputs and per-repo snapshot pins are in
+`.ufo/waves/kaika-aggregate/sources-census-final.md`.
+
+| Result | Observed |
+|---|---|
+| Registry inventory | **576** rows; tiers A/B/C=500/33/43, invalid=0; statuses mined/queued/rejected=307/220/49, invalid=0; missing=0 |
+| Structural validation | 21 `ok`; E=0; W=7; exit 0 |
+| Shared normalized URLs | 2 groups; exit 0 |
+| Freshness queue | 557 cadence rows; overdue=0; exit 0 |
+
+Warnings remain explicit: audio W01 S007 and W04 S014/S015; lore W01 S027 and
+W04 S017/S032; mado W04 S030. They are not errors and are not evidence of
+semantic support. Shared URLs are gdUnit4 command docs (game-dev-2d/game-dev-3d)
+and Kubernetes pod probes (kama/mori). Symbolic cadences are reported, not
+judged fresh; `overdue=0` is not “all sources fresh.”
+
+`.ufo/reports/round-12/SOURCES.md` points to every lane's own `## Paths`,
+`## Search log`, and unopened `## Leads` by section range and source-blob
+identity, plus selected study paths. It deliberately does not repeat source
+facts or promote unopened leads to evidence. Lane examples include audio's
+Godot asset path (retains rejected S011 as a caution), game-dev-2d's tilemap
+path, tameshi's mutation-verdict path, kagi's credential custody path,
+kasegi's CVSS path, revenger's resource-name path, and kotoba's skill-authoring
+path. Excluded stale/rejection paths are game-dev-3d's superseded S011 hop,
+mado's unmarked rejected S030 hop, and lore's path whose related knowledge was
+rejected on re-grade.
+
+The index cites the four opened W1 artifacts — `art-learning.md`,
+`art-curation.md`, `art-mistakes.md`, and `art-apprenticeship.md` — only as
+bounded reading routes or capability/process references. It neither
+establishes a universal research method nor transfers W1 dossier-local S IDs
+into lane registries; question-framing and methodology remain chousa-owned.
+Rejection/flip examples retained without borrowing their claims include audio
+S011, game-dev-2d S015/S031, kagi S008, kasegi S026/S027, kotoba S011, mado
+S030, and lore S017/S032. Unopened leads, access-restricted W1 leads, path
+existence without ID citation, anchors/quotes, `teaches` truth, and the
+semantic validity/order of study paths remain evidence gaps.
+
+### 16.3 Axis/trend results, process mistakes, and remaining debt
+
+| Axis | Before | After |
+|---|---:|---:|
+| corpus review | 9 | **9 (held)** |
+| cross-lane quality | 9 | **9 (held)** |
+| mint/dormancy calls | 9 | **9 (held)** |
+
+No scalar aggregate is computed. Trend verdicts: expansion **unchanged** (no
+knowledge admission); quality **unchanged** (no semantic source/corpus
+revalidation or knowledge edit); discernment **unchanged** (the 32 seats were
+owned by this aggregator lane, not an independent non-author review).
+Capability/navigation from the source index is separate from knowledge
+expansion. No mint, dormant label, promotion, SHONEN promotion, or roster
+change is claimed.
+
+Process mistakes corrected and retained: (1) the first L2 gate prompt used
+children's latest LOG rounds as `--round`; the critic identified that the
+selector names the aggregator lesson round, so all final gate commands use
+12; (2) the prior census parser missed 1–3-space-indented Markdown rows; the
+parent integrated the correction and its 96-check receipt records 93 killed,
+0 survivors; (3) two basename-only README edits hit the original fleet
+checkout rather than the owned worktree; the parent preserved the draft,
+restored the original, and transferred the corrected wording into this
+worktree (`.ufo/waves/kaika-w3/readme-ownership.md`,
+`readme-recovery.md`); (4) the historical
+`.ufo/waves/aggregator-r10-resume/before.json` pointer was absent, so the R11
+seven-verdict record, not a reconstructed 6/19 claim, is the before-state.
+Accepted dissent: structural census is not semantic source verification, and
+the L2 seats are not independent non-author adjudicators for this lane.
+
+**Schema debt stays separate and append-only.** The D5 runtime receipt
+`local://kaika-d5-runtime.md` validates the selected new closure shapes and
+all 45 `supersedes.entry` records against its staged canonical commitment
+candidate. Its whole-ledger result is **206/312 schema-valid**; 106 historical
+records retain legacy `type`, closed-status, or missing-field vocabulary.
+The schema-provenance seat additionally records that at current fleet HEAD
+`54a20d39` the same amended candidate yields 208/314, while committed schema
+blob `5eae1063…` yields 163/314 because it rejects the 45 protocol-valid
+`supersedes.entry` records. This schema lag is distinct from the 106 legacy
+records. No canonical enum was widened, no legacy row was rewritten, and
+`MANIFEST.json` was not changed.
+
+All 32 read-only L2 notes are committed under
+`.ufo/waves/kaika-aggregate/seats/`; dispatch and task boundaries are in
+`.ufo/waves/kaika-aggregate/dispatch.md`. No child corpus, `PROTOCOL*`, roster,
+registry, or promotion state was edited by this round. The roster remains the
+13 operator-controlled `MANIFEST.json` entries; 21 physical local repositories
+are not silently treated as registered lanes.

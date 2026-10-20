@@ -9,10 +9,13 @@ and references, continuously upgrades its skills within its ever-expanding
 domain of expertise — ever increasing in quality, in taste, in
 resourcefulness, in capabilities, and in potential.
 
-This repo is the **fleet root**: the canonical protocol, the roster, the
-round history, and the coordination state. Every newly minted shokunin is
-registered here (roster row → `shokunin-<domain>` repo link). Each
-specialist lives in its own repository — linked below.
+This repo is the **fleet root**, a deployment of the
+[canonical shokunin protocol](https://github.com/VeigaPunk/kimi-shokunin).
+Its vendored protocol copies and local incident evidence are not a second
+protocol authority. `MANIFEST.json` is the operator-controlled roster and round
+history; `ROADMAP.md` mirrors that roster. A physical local lane repo does not
+become a roster member merely by existing or appearing in `shokunin.conf`.
+Existing repository links below distinguish rostered entries from other links.
 
 **Wiki:** [fleet overview](https://app.devin.ai/org/veigapunk/wiki/VeigaPunk/shokunin?branch=master)
 
@@ -31,6 +34,17 @@ round over round:
    tables, error patterns, executable checklists.
 4. **Expanding perspective** — work the frontier: adjacent surfaces,
    other tools and schools, counter-examples, failure cases.
+
+Every round also curates `corpus/SOURCES.md`: opened sources, scoped tiers,
+rejections with flip conditions, search logs, and ordered study paths. Source
+rows are not admitted knowledge; expansion is counted from newly admitted
+knowledge on uncovered frontier ground, not from added rows or tools. Lessons
+record the round's `## Mistakes` and quality-gate decisions; a non-author
+spot-checks at least one admission and one rejection. At the fleet root,
+`bash scripts/sources-census.sh census|validate|overdue|shared` gives the
+registry census, structural validation, freshness queue, and shared-source
+view. The CLI is read-only unless `--out` is supplied; clean structure or a
+freshness queue does not prove that a source supports a semantic claim.
 
 ## The mechanics
 
@@ -68,58 +82,65 @@ corpus catches its own mistakes.
 corpus/
   README.md     — index: coverage map, known gaps, frontier
   QUALITY.md    — the lane's own admission bar
-  knowledge/    — facts with source:, verified-at:, recheck:
-  lessons/      — per-round lessons with a ## Gate section
+  SOURCES.md    — opened source registry, scoped tiers, rejections, study paths
+  knowledge/    — admitted facts, sourced notes, decision records
+  lessons/      — training lessons, including the round's gate and mistakes
 ```
 
-Append-only: errata are appended blocks. Every claim is falsifiable or
-marked opinion. Sources and references accumulate — that is the craft
-record.
+Corrections are append-only. Every claim is falsifiable or marked opinion.
+Sources and references accumulate as the craft record; the sources registry
+does not replace the lane's quality gate or chousa's research method.
 
 ### A round
 
 Bounded candidate → work commit → **non-author verifier** → adjudicator
-verdict → `LOG.md` + `SCORECARD.md` + report. Any lane may **mint a
-sibling** when it finds unplaceable demand; the roster below is the
-registry of every mint.
+verdict → `LOG.md` + `SCORECARD.md` + report. Any lane may propose a sibling
+when it finds unplaceable demand; only the operator-controlled roster in
+`MANIFEST.json` establishes registered membership.
 
-## Roster
+## Roster records and existing repository links
 
-`MANIFEST.json` is canonical; `ROADMAP.md` mirrors it. Every minted
-shokunin registers a row here and gets its own `shokunin-*` expert repo.
-Canonical names are `<id>-shokunin`; 2026-09 remotes keep that shape
-(private), 2026-10 remotes use `shokunin-<domain>` (public).
+`MANIFEST.json` is the canonical **operator-controlled roster**; `ROADMAP.md`
+is its human mirror. It currently records 13 entries, while the local fleet
+contains 21 physical `*-shokunin` directories; the report's inventory command
+and result are recorded in `.ufo/reports/round-12/aggregator.md`. These are
+different populations: an unlisted local repo is not registered. Canonical
+repo names are `<id>-shokunin`; remotes use both historical naming patterns.
 
-| Shokunin | Domain | Rank |
+| Shokunin | Domain | Manifest status |
 |---|---|---|
-| [kasegi-shokunin](https://github.com/VeigaPunk/kasegi-shokunin) | bounty & security research | shonen |
-| [kengaku-shokunin](https://github.com/VeigaPunk/kengaku-shokunin) | LLM/model research & evaluation | shonen |
-| [kake-shokunin](https://github.com/VeigaPunk/kake-shokunin) | web properties & publishing | shonen |
-| [kumitate-shokunin](https://github.com/VeigaPunk/kumitate-shokunin) | orchestration & tooling | shonen |
-| [kotoba-shokunin](https://github.com/VeigaPunk/kotoba-shokunin) | prompt & skill craft | shonen |
-| [kagi-shokunin](https://github.com/VeigaPunk/kagi-shokunin) | secrets & vault ops | shonen |
-| [kama-shokunin](https://github.com/VeigaPunk/kama-shokunin) | local model serving & endpoint health | shonen |
-| [kaidoku-shokunin](https://github.com/VeigaPunk/shokunin-reverse-engineering) | shipped-artifact reverse engineering (REA) | shonen |
-| [revenger-shokunin](https://github.com/VeigaPunk/shokunin-binary-forensics) | binary forensics, evidence-ledger verification | shonen |
-| [audio-shokunin](https://github.com/VeigaPunk/shokunin-game-audio) | game audio production | shonen |
-| [game-dev-2d-shokunin](https://github.com/VeigaPunk/shokunin-godot-2d) | 2D game production, executable fixtures | shonen |
-| [game-dev-3d-shokunin](https://github.com/VeigaPunk/shokunin-3d-engines) | 3D game production, headless fixtures | shonen |
-| [lore-shokunin](https://github.com/VeigaPunk/shokunin-world-bible) | fictional-world records & consistency | shonen |
-| [mori-shokunin](https://github.com/VeigaPunk/mori-shokunin) | fleet & host observability (森) — census gate, silence oracle, drift pin | shonen |
-| [chousa-shokunin](https://github.com/VeigaPunk/chousa-shokunin) | deep-research method (調査) — research gate: claims/chains/sweeps/integrity verification | shonen |
-| [kotodama-shokunin](https://github.com/VeigaPunk/kotodama-shokunin) | linguistic-cultural worldbuilding (言霊) — languages, myths, symbols, eras & costumes coupled; hands off to the lore world bible | shonen |
+| [kasegi-shokunin](https://github.com/VeigaPunk/kasegi-shokunin) | bounty & security research | rostered — shonen |
+| [kengaku-shokunin](https://github.com/VeigaPunk/kengaku-shokunin) | LLM/model research & evaluation | rostered — shonen |
+| [kake-shokunin](https://github.com/VeigaPunk/kake-shokunin) | web properties & publishing | rostered — shonen |
+| [kumitate-shokunin](https://github.com/VeigaPunk/kumitate-shokunin) | orchestration & tooling | rostered — shonen |
+| [kotoba-shokunin](https://github.com/VeigaPunk/kotoba-shokunin) | prompt & skill craft | rostered — shonen |
+| [kagi-shokunin](https://github.com/VeigaPunk/kagi-shokunin) | secrets & vault ops | rostered — shonen |
+| [kama-shokunin](https://github.com/VeigaPunk/kama-shokunin) | local model serving & endpoint health | rostered — shonen |
+| [kaidoku-shokunin](https://github.com/VeigaPunk/shokunin-reverse-engineering) | shipped-artifact reverse engineering (REA) | rostered — shonen |
+| [revenger-shokunin](https://github.com/VeigaPunk/shokunin-binary-forensics) | binary forensics, evidence-ledger verification | rostered — shonen |
+| [audio-shokunin](https://github.com/VeigaPunk/shokunin-game-audio) | game audio production | rostered — shonen |
+| [game-dev-2d-shokunin](https://github.com/VeigaPunk/shokunin-godot-2d) | 2D game production, executable fixtures | rostered — shonen |
+| [game-dev-3d-shokunin](https://github.com/VeigaPunk/shokunin-3d-engines) | 3D game production, headless fixtures | rostered — shonen |
+| [lore-shokunin](https://github.com/VeigaPunk/shokunin-world-bible) | fictional-world records & consistency | rostered — shonen |
+| [mori-shokunin](https://github.com/VeigaPunk/mori-shokunin) | fleet & host observability (森) — census gate, silence oracle, drift pin | repository link only — not in MANIFEST |
+| [chousa-shokunin](https://github.com/VeigaPunk/chousa-shokunin) | deep-research method (調査) — research gate: claims/chains/sweeps/integrity verification | repository link only — not in MANIFEST |
+| [kotodama-shokunin](https://github.com/VeigaPunk/kotodama-shokunin) | linguistic-cultural worldbuilding (言霊) — languages, myths, symbols, eras & costumes coupled; hands off to the lore world bible | repository link only — not in MANIFEST |
 
-(2026-10-16: mori + chousa repos created and pushed after their 10-round
-in-session craft runs — rounds 2–11 admitted on both lanes, ledgers in
-`MANIFEST.json`.)
+(2026-10 inventory note: mori, chousa, and kotodama have repository links here
+but are not among the current 13 `MANIFEST.json` roster entries. The physical
+local-directory count is 21; see the Round 12 audit for the exact census and
+revision-bound lane verdicts.)
 
 
 ## Files
 
-`PROTOCOL.md` `AXES.md` `LEARNING.md` `CORPUS.md` `MISSION.md`
-`PROTOCOL-APPENDIX.md` — canonical protocol, vendored from
-[kimi-shokunin](https://github.com/VeigaPunk/kimi-shokunin) (upstream).
-`MANIFEST.json` — machine roster + round history (79 rounds, both eras).
-`ROADMAP.md` — human mirror. `shokunin.conf` + `scripts/` — the round
-driver. `.ufo/` — fleet state (`waves/`, `reports/`, `prompts/`,
-`l0-questions.md`).
+`PROTOCOL.md`, `PROTOCOL-APPENDIX.md`, `AXES.md`, `LEARNING.md`, and `CORPUS.md`
+carry the reusable contract and its incident rationale; protocol and appendix
+remain a required pair. Canonical synchronization revision:
+`kimi-shokunin@e737d2ea97f6b0198503e077676c3f2ea07974a9` (recorded in
+`MANIFEST.json`). `MISSION.md` and `shokunin.conf` bind this deployment; local
+configuration and historical annotations do not override canonical rules.
+`MANIFEST.json` — operator-controlled roster + append-only round history.
+`ROADMAP.md` — human roster mirror. `scripts/` — source-aware round driver and
+`sources-census.sh`. `.ufo/` — fleet evidence and state (`waves/`, `reports/`,
+`prompts/`, `l0-questions.md`).

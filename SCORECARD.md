@@ -471,3 +471,35 @@ Physical children and configured fleet declarations are different populations.
 improve without proving full semantic conformance or saturation. Cross-lane
 quality and mint/dormancy are guardrails, not additional axis-moves.
 
+
+### Round 12 (2026-10-20) — corpus-review coverage (held)
+
+The R11 final re-run leaves the three current axes tied at **9**. This refresh
+selects corpus review for its unpaid per-repository coverage duty. The older
+round-10 relaunch plan naming cross-lane quality while it was at 8 is preserved
+historically and superseded by the later R11 final-re-run state.
+
+| Axis | Before round 12 | After round 12 | Evidence |
+|---|---|---|---|
+| corpus review | **9** | **9 (held)** — exact-HEAD coverage increased from the seven current R11 verdicts to all 21 physical local lane repositories; all 21 remain not conformant under the existing gate | `.ufo/reports/round-12/aggregator.md`; `.ufo/waves/kaika-aggregate/r12-gate-final.md` |
+| cross-lane quality | **9** | **9 (held)** — no new durability or non-author quality claim | standing evidence; no R12 axis move |
+| mint/dormancy calls | **9** | **9 (held)** — no mint, dormancy, or promotion claim in this round | standing evidence; no R12 axis move |
+
+Metrics (coverage and inventory, not an aggregate score):
+
+| # | Metric | Before | After | Command / evidence |
+|---|---|---|---|---|
+| V13 | current per-repository gate verdicts at named full revisions | **7** in the R11 final re-run | **21 / 21** at refreshed full OIDs; **0 / 21 conformant** | `node .ufo/waves/round-9/corpus-gate.mjs --snapshot <repo> <full-OID> --round 12`; audio used streamed-archive `--repo` because its archive exceeds the wrapper's 1 GiB buffer |
+| V14 | fleet-wide SOURCES census at the refreshed 21 full heads | not measured at these refreshed pins | **576** rows, A/B/C=500/33/43, mined/queued/rejected=307/220/49; 0 invalid, 0 missing | `.ufo/waves/kaika-aggregate/sources-census-final.md`; corrected script blob `3f314620…` |
+| V15 | curated registry and study-path navigation | no current round-12 map | pointers to all **21** lane `## Paths`, `## Search log`, and unopened `## Leads`, plus selected lane/W1 paths; no external-source claim copied | `.ufo/reports/round-12/SOURCES.md` |
+
+The structural census found 21 `ok`, 0 E-code errors, 7 W-code warnings,
+2 shared URL groups, and 0 overdue among 557 cadence rows. The seven warnings
+remain visible in the linked index; neither clean structure nor `overdue=0`
+proves semantic source support or universal freshness. The 32-seat batch and
+all unique seat notes are recorded under `.ufo/waves/kaika-aggregate/`.
+
+Trend verdicts: **expansion unchanged** (no knowledge admission), **quality
+unchanged** (no semantic source/corpus revalidation or knowledge edit), and
+**discernment unchanged** (this lane's L2 seats are not independent non-author
+verification). No scalar score is computed.
