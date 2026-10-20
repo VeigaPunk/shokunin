@@ -152,33 +152,51 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
   Probe of the new last hop at 14:24 -03: openai-codex gpt-6-luna answered (`stop`).
 - **m_flash cascade (directive 19).** Session-only `retry.fallbackChains.m_flash` = charm-hyper
   deepseek-v4.1-flash → opencode-go deepseek-v4.1-flash → devin deepseek-v4-1-flash →
-  openai-codex gpt-6-luna:max (m_luna max, last). The chain is keyed by the m_flash role only, so
-  m_fast/plan (same primary model) keep their own chains.
+  openai-codex gpt-6-luna:max (m_luna max, last). Keyed first by the m_flash role; since 15:50 -03
+  the same cascade is also keyed by its primary model `commandcode/deepseek/deepseek-v4.1-flash`,
+  which outranks role chains, so m_fast/plan sessions failing on that model now walk it too.
 - **Diagnosis at directive 20 (15:2x -03).** Three faults:
   1. *zai rate limit kills m_zfl seats.* Seat transcripts in this session: 3,550 × `429 Rate limit
      reached for requests (type=1302)` from zai in 90 min and 127 transcripts ending in "Retry budget
      exhausted after 10 retries" — those seats retried zai only and never walked the m_zfl cascade
      (e.g. TameshiR17.RR7-2, RR1-2). Losses: tabi r17 17, tsukuroi r17 43 of 82 wave-2 seats, souji
-     r17 28+. Fix: `retry.maxRetries` 10 → 40 (session-only) so seats ride out bursts.
+     r17 28+. Mitigation: `retry.maxRetries` 10 → 40 (session-only) so seats ride out bursts
+     longer; more retries do not change which chain a seat walks (see the fallback entry below).
   2. *Revived L1 completions were not delivered to the orchestrator.* TabiR17 had exited on a 429,
-     was revived by message, and landed r17 at 14:51 (af41737), but its completion never surfaced in
-     the orchestrator's job waits, so its closure sat undispatched ~35 min. Fix: the orchestrator
-     now also polls `.ufo/reports/round-<N>/` and `proc://` for revived L1s.
+     was messaged, and landed r17 at 14:51 (af41737), but its completion never surfaced in the
+     orchestrator's job waits, so its closure sat undispatched ~35 min. Observed
+     (RuntimeRevivedCompletion-2): TabiR17's job had already settled failed at 13:06 and its session
+     kept working; the 13:22 message was answered `Delivered to TabiR17` (a warm turn in a live
+     session), no new run appeared, and `wait` never saw the 14:52 finish. TsukuroiR17 and
+     KaidokuR18 had parked; their messages were answered `Queued … (was parked; revived)`, each
+     showed as a fresh run in `proc://`, and `wait` delivered both. Later, TabiR18's revival
+     appeared in `wait`, but SoujiR17-3 (`was parked; revived`) and KaidokuR19 (`Delivered to`) did
+     not. Practice: after each wait, for any revived L1 missing from its list, check
+     `.ufo/reports/round-<N>/<lane>.md` and the child's `history://` tail.
   3. *Orchestrator routing broadcasts interrupted L1 waits.* Seven routing notes × seven L1s
      (directives 12–17) each interrupted an L1's wait; routing is by role and needs no L1 action, so
      those broadcasts stop. Concurrency fell to ~27 jobs while lanes integrated; mori r17 joins to
      restore wave pressure.
-- **Fallback root cause and repair (~16:0x -03).** Subagents run under role `subagent:<id>`
-  (transcript `model_change` records), so the retry chain lookup (exact model → provider wildcard →
-  current role → `default`, omp://settings.md) never reached the alias-keyed chains `m_zfl`,
-  `m_flash`, `m_sol`; zai 429s retried zai alone until the budget ran out, and Opus 429s with
-  ~2.5 h retry-after killed L1s (TabiR18, SoujiR17-3, KaidokuR19). Repair (session-only): the same
-  cascades are now also keyed by each primary model — `zai/glm-5.3-flash` = m_zfl cascade,
-  `commandcode/deepseek/deepseek-v4.1-flash` = m_flash cascade, `openai-codex/gpt-6.1-sol` = m_sol
-  cascade, `anthropic/claude-opus-5-5` = default cascade. Role assignments and cascade order are
-  unchanged. Smoke seats (transcripts SmokeFlashCascade, SmokeZflCascade, SmokeOpusCascade):
-  commandcode 429 → opencode-go deepseek-flash answered; zai 429 (type=1302) → openai-codex
-  gpt-6-luna answered; Anthropic 429 → openai-codex gpt-6.1-sol answered.
+- **Fallback ownership (corrected 16:4x -03 after RuntimeFallbackOwner-2).** Chain lookup is exact
+  model → provider wildcard → live role → `default` (omp://settings.md). A role-bound seat captures
+  its alias cascade at spawn (`session_init` modelRole + retryFallback) and walks it: an m_flash
+  scout went commandcode 429 → charm-hyper 402 → opencode-go at 13:35 -03
+  (SoujiR17-3.ScoutKeepOnlySouji). The earlier note here, that role `subagent:<id>` kept alias
+  cascades from ever being consulted, was wrong. Two questions stay open: why the zai seats retried
+  zai ten times (~72 s apart) without switching, and why Opus 429s with ~2.5 h retry-after killed
+  L1s (TabiR18, SoujiR17-3, KaidokuR19) without falling back. A provider retry-after or cooldown
+  steering the retry policy fits both but is unproven; no retry-decision records persist. A seat
+  keeps the chain it captured at spawn, also when revived: RR7-2 (spawned 13:49 with the two-hop
+  m_zfl chain) still used it after Luna was added at 14:25 and after revivals at 15:28 and 15:47.
+  Headless `omp -p --model @alias` runs on no role, so `default` owns its failures. Repair from
+  15:50 -03 (session-only; reaches new spawns only): each cascade is also keyed by its primary
+  model — `zai/glm-5.3-flash` = m_zfl cascade, `commandcode/deepseek/deepseek-v4.1-flash` = m_flash
+  cascade, `openai-codex/gpt-6.1-sol` = m_sol cascade, `anthropic/claude-opus-5-5` = default
+  cascade — so ownership no longer depends on role; role assignments and cascade order are
+  unchanged. Fresh smoke seats (SmokeFlashCascade, SmokeZflCascade, SmokeOpusCascade) failed over:
+  commandcode 429 → opencode-go deepseek-flash; zai 429 (type=1302) → openai-codex gpt-6-luna;
+  Anthropic 429 → openai-codex gpt-6.1-sol. That proves failover for new spawns, not which key won
+  (the alias chains hold the same hops) or what caused the earlier deaths.
 - **m_sol briefly replaced m_opus (directive 21), reverted by directive 22; directives 23–28.**
   Current routing (session-only): task (L1s, closures), planner → @m_opus; main → @m_strong;
   critic → @m_swe (exact-model fallback key `devin/swe-2` = m_swe cascade zai glm-5.3-flash →
@@ -209,7 +227,16 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
    change the update-safety gate guards. Operator-owned; tsukuroi r17 carries next-boot safety as a
    priority claim and an L0 question.
 4. **Installs by lanes.** kama r16: llama.cpp b11755 (`~/.local/opt`, `~/.local/bin/llama-server`,
-   L0 question). kaidoku r17 seat: Go 1.27.3 (`~/.local/opt/go-1.27.3`, not on PATH).
+   L0 question). kaidoku r17 seat: Go 1.27.3 (`~/.local/opt/go-1.27.3`, not on PATH). tameshi r17
+   seat: ruff 0.17.1 and vulture 2.16 (`uv tool`). mado r19 seat: pip 26.2.1 in the uv cache only
+   (`uv run --with pip`, nothing on PATH).
+5. **`~/.omp/agent/mcp.json` rewritten by an unidentified writer (13:35:56 -03).** The rea entry's
+   `"enabled": false` (orchestrator, 10:12 -03, operator-authorized) is gone and its pin moved
+   6.5.0 → 6.7.0; file size unchanged (429 B). Reported by KaidokuR19's LiveConfigPins seat; the
+   lane did not touch it. A session-transcript search for `rea-agents@6.7.0` found only lane
+   content about pins, no writer. In-session seats reach MCP tools through `xd://` devices (see
+   provider probes below), so the 207-tool commandcode overflow hits headless runs only. Left as
+   is for the operator.
 
 
 ## Provider probes (2026-10-20 10:0x -03)

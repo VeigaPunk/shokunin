@@ -96,21 +96,27 @@ not, and name both in the report.
    devin deepseek-flash → m_luna max (openai-codex gpt-6-luna:max) last. Record a seat's actual
    answering model when a claim depends on it. **zai rate limit (observed 14:00–15:25 -03):** with
    several lanes in waves at once, zai answers m_zfl seats with `429 Rate limit reached for requests
-   (type=1302)`; ~130 seats died retrying zai alone because subagents run under role
-   `subagent:<id>`, so alias-keyed cascades (m_zfl, m_flash, m_sol, …) were never consulted. Fixed
-   ~16:0x -03: each cascade is now also keyed by its primary model (`zai/glm-5.3-flash`,
+   (type=1302)`; ~130 seats died with "Retry budget exhausted after 10 retries" after retrying zai
+   alone (~72 s apart). Why they never switched is unresolved: role-bound seats do capture and walk
+   their alias cascade, and a provider retry-after or cooldown fits but is unproven. Since 15:50 -03
+   each cascade is also keyed by its primary model (`zai/glm-5.3-flash`,
    `commandcode/deepseek/deepseek-v4.1-flash`, `openai-codex/gpt-6.1-sol`,
-   `anthropic/claude-opus-5-5`), and smoke seats proved it (zai 429 → gpt-6-luna; commandcode 429 →
-   opencode-go; Anthropic 429 → gpt-6.1-sol). `retry.maxRetries` is 40. Report any seat that dies.
+   `anthropic/claude-opus-5-5`, `devin/swe-2`, `openai-codex/gpt-6-luna`, `cursor/grok-4.7-fast`),
+   and fresh smoke seats failed over (zai 429 → gpt-6-luna; commandcode 429 → opencode-go;
+   Anthropic 429 → gpt-6.1-sol). A seat keeps the chain it captured at spawn, also when resumed, so
+   only seats spawned after a routing change get it. `retry.maxRetries` is 40. Report any seat that
+   dies, with its last error text.
    Opus coordinators received 429s with 13–14-minute retry-after values earlier today ("opus is
    back" since): respect any backoff and resume the same identity, never restart a duplicate
    writer. Historical availability is not current capacity proof. A dead seat stays dead in the
    evidence.
-   **REA MCP:** the operator authorized disabling the OMP `rea` MCP entry for this phase —
-   `~/.omp/agent/mcp.json` now carries `"enabled": false` (orchestrator edit 2026-10-20 10:12 -03;
-   pre-edit copy `~/.omp/agent/mcp.json.pre-disable-20261020T1015`). That is operator-authorized
-   configuration, not unexplained drift, and it is never yours to edit or restore. Do REA work
-   through the CLI (`npx -y rea-agents@6.5.0 <command>`), never through `xd://mcp__rea_*` devices.
+   **REA MCP:** the operator authorized disabling the OMP `rea` MCP entry for this phase; the
+   orchestrator set `"enabled": false` in `~/.omp/agent/mcp.json` at 10:12 -03 (pre-edit copy
+   `~/.omp/agent/mcp.json.pre-disable-20261020T1015`). An unidentified writer rewrote that file at
+   13:35:56 -03: the rea pin is now `rea-agents@6.7.0` and `enabled: false` is gone (reported by
+   kaidoku r19; left for the operator to decide). The file is operator-owned either way: never edit
+   or restore it. Do REA work through the CLI (`npx -y rea-agents@6.5.0 <command>`), never through
+   `xd://mcp__rea_*` devices.
    **Job cap:** this session refuses a `task` call while ≥100 background jobs are running
    (`async.maxJobs` 100, fixed at process start; three lanes run concurrently); the refusal
    ("Background job limit reached (100)") spawns nothing. Retry the same payload every ~3 min
