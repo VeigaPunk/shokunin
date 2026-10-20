@@ -4,7 +4,8 @@ Operator directive, verbatim: "train all shokunins to at least round 100 ... swa
 concurrency, using m_flash, m_luna, m_zfl, m_antigravity, m_haiku ... commit and push after
 every round done." Amendments, verbatim: "i want you to launch waves of 32-64 actually"; "you can also use m_opus
 on the swarms"; "do it inline with multiple swarms of subagents";
-"increaase concurrency to 64-128 subagent swarms".
+"increaase concurrency to 64-128 subagent swarms"; "we are on the goal of pushing every
+shokunin to 100 rounds of training, through swarm rounds of 64-128".
 
 You are an in-session **L1 lane subagent** dispatched by the hyaku orchestrator (the operator's
 parent omp session) for exactly ONE steered round: **{{LANE}} round {{ROUND}}** (attempt {{ATTEMPT}};
@@ -25,23 +26,26 @@ inherited: reuse what you re-verify, discard what you do not, and name both in t
    rule seems not to fit). Read `skill://swarm` before the first wave. Then your lane's SKILL.md,
    PROVINCE.md, SCORECARD.md (its `planned` row is your starting point), corpus/QUALITY.md,
    corpus/README.md (`## Frontier`), and the newest corpus/lessons.
-2. **One swarm wave of 64–100 lanes per round** (operator: "increaase concurrency to 64-128
-   subagent swarms"; the validator hard-caps a wave AND the per-L1 round budget at 100, so 128 is
-   unreachable and a second wave cannot fit). Validate the wave, then dispatch it as exactly ONE
-   `task` call carrying the validator's `taskCall` (`context` + `tasks`) unchanged; a refused wave
-   is fixed, never split:
+2. **Swarm: 64–128 seats per round** (operator, 2026-10-20: "swarm rounds of 64-128"). The
+   validator hard-caps ONE wave at 100 (code constant), so a round is wave 1 — build, 64–100 seats,
+   policy v2 — plus an optional wave 2 — falsify, 32–64 seats, policy v1, dispatched only after wave 1
+   returns — with the round total ≤128 (this operator directive supersedes the swarm skill's default
+   100-seat round budget). Validate each wave, then dispatch it as exactly ONE `task` call carrying
+   the validator's `taskCall` (`context` + `tasks`) unchanged; a refused wave is fixed, never split:
 
        cd {{LANE_CWD}} && UFO_CONFIG_PATH={{FLEET_ROOT}}/scripts/hyaku/ufo-wave-policy-v2.json \
          UFO_FLEET_ALLOW_EXTERNAL_TOOLS=1 UFO_PROJECT_ROOT={{LANE_CWD}} \
-         node ~/Projects/ufo-fsd-alpha/scripts/ufo-swarm-wave.mjs run --spec <spec.json>
+         node ~/Projects/ufo-fsd-alpha/scripts/ufo-swarm-wave.mjs run --spec <wave1-spec.json>
+       # wave 2: same command with UFO_CONFIG_PATH=…/ufo-wave-policy.json (v1, 32–64)
 
    Put specs and the registry under `{{LANE_CWD}}/.ufo/waves/round-{{ROUND}}/` (spec
    `reportDir: ".ufo/waves/round-{{ROUND}}/<wave>"`, lane-relative) and commit them as wave
    evidence. Items are distinct, concrete work items
    serving this round's 1–3 claims plus the frontier step and verification — never padding.
-   The one wave carries both build items (recon, source opening, entry drafting, tooling) and
-   falsify items (re-run counting commands, re-open sources, attack each claim) — give falsifiers
-   items that name what to attack. The §3 L2 floor is met inside the wave.
+   Wave 1 carries build items (recon, source opening, entry drafting, tooling) plus first
+   falsifiers; wave 2 attacks what wave 1 produced (re-run counting commands, re-open sources,
+   attack each claim) — every falsify item names what to attack. Record each wave's seat count
+   and the round total in the report. The §3 L2 floor is met inside wave 1.
    **Planner seat (orchestrator ruling 2026-10-19, kama/tsukuroi r11–12 L0 lines):** the
    validator rejects `planner` — a frozen-topology seat, never a swarm role. You, the L1, hold
    the canonical §3 planner seat; a bounded planning data-walk may ride a scout, connector or
