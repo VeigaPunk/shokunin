@@ -114,7 +114,7 @@ Rounds landed this campaign (report committed + lane pushed; remote heads verifi
 | tabi | r12–r15 | r12–r14 admitted [325,334,341] | **r15** | 15 → 16 after closure | `36240c70e` |
 | mado | r13–r16 | r13, r14 admitted [328,335]; r15 rejected-harmed [342] | **r16** | 16 → 17 after closure | `4bfb2363a` |
 | mori | r13–r16 | r13 rejected-harmed [327]; r14, r15 admitted [339,345] | **r16** | 16 → 17 after closure | `9de05bdbc` |
-| souji | r13–r15 | r13 admitted [333]; r14 rejected-harmed [343] | **r15** (landing at wrap-up) | 15 → 16 after closure | see final note |
+| souji | r13–r15 | r13 admitted [333]; r14 rejected-harmed [343] | **r15** (author: both claims unprovable — acceptance unrun at wrap-up; r14 harm still open) | 15 → 16 after closure | `b410186ce` |
 | kaidoku | r14–r16 | r14–r16 admitted [332,340,347] | — | 17 | `b563c799d` |
 | kake | r21 | — | **r21** | 21 → 22 after closure | `c2d8da86d` |
 
@@ -138,3 +138,8 @@ tonight (pacman.log: only libinput was upgraded), so rebooting as-is is safe. Do
 before rebooting without tsukuroi's gate: pending are `mkinitcpio` 41.1→42.2 (the /sysroot move the
 host's `btrfs-overlayfs` and `plymouth` hooks do not expect), `systemd` 261→262, `plymouth`, `linux`
 7.2.11 and `glibc`.
+
+Late-found seat notes: three agent-to-L1 notes that seats wrote as plain files at the fleet root
+(`MoriR16.Lesson`, `SoujiR15`, `TameshiR15`, outside the `.ufo/` sweep pathspec) are archived
+byte-for-byte under `.ufo/waves/hyaku/misroots/` — evidence for the mori r16, souji r15 and tameshi
+r15 closures. Future misroot sweeps should check `git -C <fleet> status --porcelain` with no pathspec.
