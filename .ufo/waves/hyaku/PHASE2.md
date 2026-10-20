@@ -345,7 +345,7 @@ worker or service was stopped. All claims/attempts/original baselines remain int
 | Claim | Pushed checkpoint or snapshot state | Original owner / pending action |
 |---|---|---|
 | kama r18 | Still running | `KamaR18`; let its current round finish |
-| souji r18 | Still running | `SoujiR18`; let its current round finish |
+| souji r18 | Author lane `8be65236a4b61fffe9c0d05d30043650848c0a60`; report `856e4f6bd41ddad513bc2a77f936f82972d430c5`; landing verified | `SoujiR18` finished naturally; independent closure pending; inherited operator sweep untouched |
 | kagi r22 | Author lane `254d632ed2f6174e1ffcfe636a17b5e18284212f`; report `c5c5d1d26443a5c6f753c9f2424a3e0ed4822cec`; landing verified | `KagiR22` finished naturally; independent closure pending, no r23 started |
 | tameshi r18 | Author report landed; no closure verdict | `ClosureTameshiR18` pending provider recovery |
 | tabi r18 | Author report landed; no closure verdict | `ClosureTabiR18` pending provider recovery |
