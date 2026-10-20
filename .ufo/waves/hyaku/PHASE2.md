@@ -41,10 +41,18 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
 30. "ok, so, hyper has to be a secondary provider, after commandcode on deepseek v4.1 flash (m_flash) | aside from this, no subagent can inherit m_opus as the fallback; for m_zfl, mflash, m_fast, m_haiku, the last cascade fallback has to be m_luna"
 31. "ok let's wrap up and commit and push current progress. dont stop running runs, let them fginish; then we can keep up from where we left off in the same schema"
 32. "oh yeah, commit and push what we have developed"
+33. "ok, keep the same structure, heavy parallelization, same routings, pick more shokunins to push to round 100  and keeep going"
 
 ## Decisions
 
-- **Wrap control (directive 31).** Stop new round dispatches and coordinator resumptions.
+- **Resume control (directive 33, current).** The operator resumed the campaign without changing
+  directives 29–30 routing. Keep ten-round lane blocks, genuine 64–100-seat build/falsify waves,
+  jj helper-only lane landings, per-round push, and non-author closure before advancing.
+  Reconcile retained claims/reports rather than redispatching claimed rounds or replacing identities.
+  Initial next-block candidates from the eligible queue are kengaku r25–34, kumitate r35–44,
+  kotoba r47–56; readiness is checked before dispatch. Old-session retry-policy rebinding is
+  checked separately; the Kasegi policy hold is not lifted or treated as a quota retry.
+- **Historical wrap control (directive 31; pause superseded by directive 33).** Stop new round dispatches and coordinator resumptions.
   SoujiR18, KamaR18 and KagiR22 and their existing workers may finish their current rounds;
   no running agent, worker or service is cancelled. Do not start the next round or advance
   an unclosed claim. Landed author reports awaiting outside closure stay explicitly unadmitted.
