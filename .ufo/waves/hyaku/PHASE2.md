@@ -18,6 +18,9 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
 7. "let's try to also implement using jj as git manager from now on on shokunin runs"
 8. "make sure we are always swarming heavily though;"
 9. "increase concurrency, im seeing only 6 subagents now, i would like to always see 64+ running"
+10. "continue"
+11. "opus is back"
+12. "also, swap from m_flash to m_zfl please"
 
 ## Decisions
 
@@ -84,9 +87,28 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
   `JjTrial<Lane>.md` as routed defects (tooling that reads `HEAD`/`@{u}`/the index under jj).
 - **Concurrency.** Seven lanes in flight (tsukuroi r17 added for next-boot safety, below). The
   100-job cap refuses orchestrator dispatches while lane waves run; dispatches retry.
-- **Session-only routing addition:** `retry.fallbackChains.m_swe` = commandcode → opencode-go
-  deepseek-v4.1-flash, after m_swe rate limits killed executor seats (tabi r16 6, souji r16 2,
-  kaidoku r17 2, mado r17 1).
+- **Session-only routing additions:** `retry.fallbackChains.m_swe` = commandcode → opencode-go
+  deepseek-v4.1-flash after m_swe rate limits killed executor seats (tabi r16 6, souji r16 2,
+  kaidoku r17 2, mado r17 1); replaced at directive 12 by zai glm-5.3-flash → devin
+  glm-5-3-flash so no route uses the m_flash models.
+- **m_flash → m_zfl (directive 12, ~14:4x -03).** scout, labrat, connector, reviewer, simplifier,
+  distiller and revenger route to @m_zfl (session-only `task.agentModelOverrides`); headless probe
+  `scripts/hyaku/probe-alias.sh m_zfl` → `answered-by=zai/glm-5.3-flash primary-ok=True`. Seats
+  already running keep their model; new seats take m_zfl.
+- **Opus 429 recovery.** KaidokuR18, TabiR17, TsukuroiR17 and MadoR18 exited on Anthropic 429
+  (retry-after 11–14 min); all four were resumed under their original identities after the
+  operator reported "opus is back". SoujiR17 (refused earlier by the 100-job cap) dispatched then.
+- **Swarm shape.** An orchestrator edit (f4eac4e) briefly limited rounds to one 64–100 spawn wave
+  plus resumes; reverted in 8a9a4d8 to build + falsify waves of 64–100 each (round ≤200) per the
+  operator's heavy-swarm directives. Worktree isolation for concurrent writers and the
+  `landed <hash>` citation rule stay.
+- **Boot safety (tsukuroi r17, read-only, IRC to the orchestrator):** the current boot already ran
+  the mkinitcpio 42.2 UKI (efivars LoaderEntrySelected = Omarchy.linux; no boot input newer than
+  the 09:57:09 boot); 42.2 images ship `new_root -> sysroot`, so the btrfs-overlayfs/plymouth
+  `/new_root` hooks resolve (namespace emulation passed). Its first L0 line ("snapshot boots
+  degraded") was wrong and is corrected in `.ufo/l0-questions.md` (6fe9984). Remaining cautions:
+  re-hash the default UKI if anything rebuilds it; pin snapshot #1 (the only 41.1 rollback); the
+  LUKS header backup lives on the encrypted root.
 - **Scope ruling (integrator):** tabi owns live browser/CDP page observation including the WebMCP
   page-tool surface; kaidoku keeps CDP only as an REA provider surface (tabi r16 closure notes).
 
