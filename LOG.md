@@ -930,3 +930,12 @@ Rollout, committed as conformance changes (no axis claims advanced, no scores mo
 **Mistakes and dissent:** the initial seat prompt confused the child's latest LOG round with the gate's aggregator-lesson `--round`; the critic caught it and all final calls use `--round 12`. The original census parser missed 1–3-space-indented Markdown rows; the parent integrated the corrected parser and reports 93 killed / 0 survivors plus the 96-check receipt. Two basename-only README edits resolved against the original fleet checkout rather than this worktree; the parent preserved the draft, restored the original, and transferred the corrected copy into the owned worktree (`.ufo/waves/kaika-w3/readme-ownership.md`, `readme-recovery.md`). The referenced `aggregator-r10-resume/before.json` was absent; the baseline is the R11 seven-verdict record, not a fabricated rerun. Critic and source-adversarial dissent is retained: structural row/path checks do not prove source opening, ID citation, anchor support, or `teaches` truth.
 
 **Open evidence debt:** do not widen canonical enums to make legacy history pass. D5 runtime evidence validated the selected new closure shapes and all 45 `supersedes.entry` records, while the whole legacy ledger was 206/312 schema-valid; 106 historical rows retain legacy `type`, closed-status, or missing-field vocabulary. The current fleet HEAD's schema-provenance comparison is separately recorded in the round-12 report; the 45 protocol-valid entries are schema lag, not part of the 106 legacy rows. `MANIFEST.json`, schema enums, child corpora, and the 13-entry roster were not changed. The physical population remains 21 repositories, not 21 roster members.
+
+### Round 12 — pre-publication provenance correction (integrator)
+
+The governing canonical schema is `e737d2ea`, not the old `5eae1063` seat input.
+At fleet cutoff `54a20d39`, the actual validator finds 214/320 valid entries and
+106 distinct legacy-invalid rows; protocol-valid `supersedes.entry` is supported.
+The preceding schema-lag wording is superseded, not a current release defect.
+The indentation receipt has 93 checks; `canonical-final-checks.txt` has the final
+96. These corrections change no corpus verdict, source total, score or claim.

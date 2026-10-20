@@ -2285,3 +2285,15 @@ All 32 read-only L2 notes are committed under
 registry, or promotion state was edited by this round. The roster remains the
 13 operator-controlled `MANIFEST.json` entries; 21 physical local repositories
 are not silently treated as registered lanes.
+
+### Round-12 publication erratum — schema and receipt cutoffs
+
+The schema comparison above used an obsolete seat input and stale entry count.
+The governing canonical commit is `e737d2ea`; at fleet cutoff `54a20d39` the actual
+validator accepts 214/320 entries, leaving the same 106 legacy-invalid rows.
+`supersedes.entry` is supported; its 45 protocol-valid records are not release
+schema lag. See `.ufo/waves/kaika-w3/final-schema-check.json`.
+
+`census-indent-final-smoke.txt` records 93 checks. The final 96-check result,
+including child-only root exclusion, is in `canonical-final-checks.txt`.
+The 21 corpus verdicts, 576 source rows, and held scores are unchanged.

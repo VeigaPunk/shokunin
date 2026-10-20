@@ -489,7 +489,7 @@ Metrics (coverage and inventory, not an aggregate score):
 
 | # | Metric | Before | After | Command / evidence |
 |---|---|---|---|---|
-| V13 | current per-repository gate verdicts at named full revisions | **7** in the R11 final re-run | **21 / 21** at refreshed full OIDs; **0 / 21 conformant** | `node .ufo/waves/round-9/corpus-gate.mjs --snapshot <repo> <full-OID> --round 12`; audio used streamed-archive `--repo` because its archive exceeds the wrapper's 1 GiB buffer |
+| V13 | current per-repository gate verdicts at named full revisions | **7** in the R11 standing-duty record | **21 / 21** at refreshed full OIDs; **0 / 21 conformant** | `node .ufo/waves/round-9/corpus-gate.mjs --snapshot <repo> <full-OID> --round 12`; audio used streamed-archive `--repo` because its archive exceeds the wrapper's 1 GiB buffer |
 | V14 | fleet-wide SOURCES census at the refreshed 21 full heads | not measured at these refreshed pins | **576** rows, A/B/C=500/33/43, mined/queued/rejected=307/220/49; 0 invalid, 0 missing | `.ufo/waves/kaika-aggregate/sources-census-final.md`; corrected script blob `3f314620…` |
 | V15 | curated registry and study-path navigation | no current round-12 map | pointers to all **21** lane `## Paths`, `## Search log`, and unopened `## Leads`, plus selected lane/W1 paths; no external-source claim copied | `.ufo/reports/round-12/SOURCES.md` |
 
