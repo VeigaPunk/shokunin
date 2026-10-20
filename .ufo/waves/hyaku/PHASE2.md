@@ -37,6 +37,7 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
 26. "sentinel m_luna"
 27. "connector m_grok"
 28. "executor m_luna"
+29. "change the m_grok for the the m_flash"
 
 ## Decisions
 
@@ -197,16 +198,21 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
   commandcode 429 → opencode-go deepseek-flash; zai 429 (type=1302) → openai-codex gpt-6-luna;
   Anthropic 429 → openai-codex gpt-6.1-sol. That proves failover for new spawns, not which key won
   (the alias chains hold the same hops) or what caused the earlier deaths.
-- **m_sol briefly replaced m_opus (directive 21), reverted by directive 22; directives 23–28.**
+- **m_sol briefly replaced m_opus (directive 21), reverted by directive 22; directives 23–29.**
   Current routing (session-only): task (L1s, closures), planner → @m_opus; main → @m_strong;
   critic → @m_swe (exact-model fallback key `devin/swe-2` = m_swe cascade zai glm-5.3-flash →
   devin glm-5-3-flash); executor, sentinel → @m_luna (exact-model key `openai-codex/gpt-6-luna` =
-  m_luna cascade devin gpt-6-luna); connector → @m_grok (exact-model key `cursor/grok-4.7-fast` =
-  m_grok cascade cursor grok-4.7-500k-fast → xai-oauth grok-4.7 → devin grok-4-7);
-  mutation-tester → @m_sol; scout, labrat, simplifier → @m_flash; reviewer, revenger → @m_zfl;
-  scribe, distiller → @m_haiku. Probe ~16:3x -03 (`probe-alias.sh m_grok m_swe m_luna`): all
-  three primaries answered. Risk: Codex now carries m_luna, m_sol and the last hop of the
-  m_zfl/m_flash cascades.
+  m_luna cascade devin gpt-6-luna); connector, scout, labrat, simplifier → @m_flash;
+  mutation-tester → @m_sol; reviewer, revenger → @m_zfl; scribe, distiller → @m_haiku.
+  Risk: Codex now carries m_luna, m_sol and the last hop of the m_zfl/m_flash cascades.
+- **Connector → m_flash (directive 29, supersedes directive 27).** "change the m_grok for the the
+  m_flash": connector leaves @m_grok for @m_flash, joining scout, labrat and simplifier; no other
+  role mapping, alias or fallback list changed. Historical, no longer routed: directive 27's
+  connector → @m_grok with exact-model key `cursor/grok-4.7-fast` = m_grok cascade cursor
+  grok-4.7-500k-fast → xai-oauth grok-4.7 → devin grok-4-7, and the ~16:3x -03 probe
+  (`probe-alias.sh m_grok m_swe m_luna`) where all three primaries answered. The change is
+  session-only and reaches only seats spawned after it: running sessions and resumed seats keep
+  the chain they captured at spawn; nothing was saved globally.
 - **Captured coordinator-chain correction (18:2x–18:3x -03).** Fresh KaidokuR20 and
   ClosureTabiR18 snapshots contained the three-hop `m_opus` alias chain, without Sol, despite
   the four-hop exact-model chain above. Reported to OMP QA: this disagrees with the documented
@@ -222,7 +228,7 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
   jj helper's guarded recovery is verified; no live helper commits until that check completes.
 - **Routing precedence (ruling on kama r17 closure R8).** The closure found the addendum's
   role→model map contradicting the deployment `MISSION.md` buckets (connector heavy-reasoning,
-  critic/sentinel economy). For phase 2 the operator's explicit per-role directives (1–28 above)
+  critic/sentinel economy). For phase 2 the operator's explicit per-role directives (1–29 above)
   decide each seat's route; `MISSION.md` buckets stay the deployment default outside this phase.
   The addendum quotes each directive verbatim next to the role it binds. Not a lane defect.
 - **Scope ruling (integrator):** tabi owns live browser/CDP page observation including the WebMCP

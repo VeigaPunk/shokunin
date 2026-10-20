@@ -14,7 +14,7 @@ use m_flash"; "leave scribe as m_haiku"; "critic + sentinel (m_opus)"; "labrat a
 m_flash"; "the fallback for the m_zfl should be m_luna max" / "as the last in the cascade"; "make
 m_luna the last fallback for m_flash also"; "do not remove m_opus, but put m_swe as critic"; "planner
 m_opus"; "simplifier m_flash"; "distiller m_haiku"; "sentinel m_luna"; "connector m_grok";
-"executor m_luna".
+"change the m_grok for the the m_flash"; "executor m_luna".
 Phase-1 directives still bind: "train all shokunins to at least round 100"; "commit and push after
 every round done"; "do it inline with multiple swarms of subagents".
 
@@ -70,20 +70,21 @@ not, and name both in the report.
    the report; never bypass validation to add a planner.
    **Routing (session `task.agentModelOverrides`, set by the orchestrator on the operator's
    2026-10-20 directives — the role decides the route; never pass a `model` parameter):**
-   reviewer, revenger → m_zfl (operator 2026-10-20: "swap from m_flash to m_zfl"; "assign more
-   m_zfl please, for future spawns"); connector → m_grok (operator: "connector m_grok"; cursor
-   grok-4.7-fast, cascade cursor grok-4.7-500k-fast → xai grok-4.7 → devin grok-4-7; primary answered
-   a probe ~16:3x -03); scout, labrat, simplifier → m_flash (operator: "labrat and scout should be
-   m_flash"; "simplifier m_flash"); executor, sentinel → m_luna (operator: "executor m_luna";
-   "sentinel m_luna"; executors only for code-heavy items: scripts, gates, selftests, fixtures,
-   parsers, counting commands); critic → m_swe (operator: "do not remove m_opus, but put m_swe as
-   critic"); mutation-tester → m_sol; scribe, distiller → m_haiku (operator: "leave scribe as
-   m_haiku"; "distiller m_haiku"; prose: knowledge entries, SOURCES rows, lessons); planner (the
-   L1-held frozen seat) and generic `task` (you and the closures) → m_opus (operator: "planner
-   m_opus").
-   **Mix for ~96 seats:** ~24 scout + ~2 simplifier (≈26 m_flash), ~18 reviewer, ~4 revenger (≈22
-   m_zfl), ~16 executor + ≤2 sentinel (≈18 m_luna), ~8 connector (m_grok), ~10 scribe (m_haiku), ~8
-   critic (m_swe), ≤4 mutation-tester (m_sol). Codex now hosts m_luna, m_sol and the last hop of
+   connector, scout, labrat, simplifier → m_flash (operator: directive 27 "connector m_grok"
+   superseded by directive 29 "change the m_grok for the the m_flash"; "labrat and scout should be
+   m_flash"; "simplifier m_flash"); reviewer, revenger → m_zfl (operator 2026-10-20: "swap from
+   m_flash to m_zfl"; "assign more m_zfl please, for future spawns"); executor, sentinel → m_luna
+   (operator: "executor m_luna"; "sentinel m_luna"; executors only for code-heavy items: scripts,
+   gates, selftests, fixtures, parsers, counting commands); critic → m_swe (operator: "do not
+   remove m_opus, but put m_swe as critic"); mutation-tester → m_sol; scribe, distiller → m_haiku
+   (operator: "leave scribe as m_haiku"; "distiller m_haiku"; prose: knowledge entries, SOURCES
+   rows, lessons); planner (the L1-held frozen seat) and generic `task` (you and the closures) →
+   m_opus (operator: "planner m_opus"). Directive 29 reaches new spawns only: running sessions and
+   resumed seats keep the chain they captured at spawn, and every override here is session-only.
+   **Mix for ~96 seats:** ~24 scout + ~2 simplifier + ~8 connector (≈34 m_flash), ~18 reviewer, ~4
+   revenger (≈22 m_zfl), ~16 executor + ≤2 sentinel (≈18 m_luna), ~10 scribe (m_haiku), ~8 critic
+   (m_swe), ≤4 mutation-tester (m_sol); distiller stays m_haiku if used, planner and `task` (L1s,
+   closures) m_opus. Codex now hosts m_luna, m_sol and the last hop of
    the m_zfl/m_flash cascades: if executors start failing on Codex rate limits, say so in the report
    with the error text. Give an item to an executor only when it writes or runs code; prose
    drafting goes to scribes, attacks to reviewers/critics/scouts.
@@ -101,7 +102,8 @@ not, and name both in the report.
    their alias cascade, and a provider retry-after or cooldown fits but is unproven. Since 15:50 -03
    each cascade is also keyed by its primary model (`zai/glm-5.3-flash`,
    `commandcode/deepseek/deepseek-v4.1-flash`, `openai-codex/gpt-6.1-sol`,
-   `anthropic/claude-opus-5-5`, `devin/swe-2`, `openai-codex/gpt-6-luna`, `cursor/grok-4.7-fast`),
+   `anthropic/claude-opus-5-5`, `devin/swe-2`, `openai-codex/gpt-6-luna`, `cursor/grok-4.7-fast`;
+   the m_grok key stays configured, unused by any role since directive 29),
    and fresh smoke seats failed over (zai 429 → gpt-6-luna; commandcode 429 → opencode-go;
    Anthropic 429 → gpt-6.1-sol). A seat keeps the chain it captured at spawn, also when resumed, so
    only seats spawned after a routing change get it. `retry.maxRetries` is 40. Report any seat that
