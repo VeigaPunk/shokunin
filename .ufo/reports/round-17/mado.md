@@ -1,6 +1,6 @@
 # mado — round 17 report (hyaku phase 2, attempt 1)
 
-Lane HEAD (pushed): `9bbb8819ead6dbd0928732927280d5344cef150e` (results at `6046ab7`; `9bbb881` appends late wave-2 lesson residuals: tripwire does not classify uv/npx/pip/npm/cargo installers; reminder reached seats after dispatch). Baseline `27cd06f`
+Lane HEAD (pushed): `0ab1ccccaac5421f6e8ff2fe0cd2bcbd4e5bff4c` (results at `6046ab7`; `9bbb881` late lesson residuals — tripwire does not classify uv/npx/pip/npm/cargo installers, reminder reached seats after dispatch; `0ab1ccc` fixes a wave-2 regression where a quoted `#` hid later commands, regression suite 30/30, tool sha `962919ce…`, receipts re-cut with identical counts). Baseline `27cd06f`
 (admitted round-16 closure). Pre-registration `0175f13`. Admission is **not**
 asserted here; independent non-author closure and operator disposition remain
 required. This round does not readmit round 15.
@@ -65,6 +65,7 @@ receipt labels, P4/P6 sourced routes, transcript tripwire".
 | `f71ccbe` | wave-2 corrections: tripwire fixes + 26-case regression suite, S066 digest / S059 / S061 / S062 / S070 anchors, S071, note scope/anchors, label-check and measure hardening, both waves' reports |
 | `6046ab7` | results tables, capability row, harm watch, final receipts, LOG |
 | `9bbb881` | lesson: late wave-2 residuals (M3/M4/M5) |
+| `0ab1ccc` | tripwire quote-aware comment stripping (SimplifyTripwire P11), receipts re-cut |
 
 ## Before → after measurements
 
@@ -72,7 +73,7 @@ receipt labels, P4/P6 sourced routes, transcript tripwire".
 |---|---|---|---|
 | C1 | `git show REV:corpus/QUALITY.md \| grep -cE '^[0-9]+\. .*lessons/'` over `grep -cE '^[0-9]+\. '` (also `python3 .ufo/waves/round-17/measure.py REV`) | 14/22 = 6.3636 | 15/23 = 6.5217; semantic block counter 17/22 → 18/23 |
 | C2 | `python3 .ufo/waves/round-17/measure.py REV` (sha256 at `f71ccbe` in `evidence/measure-final.json` run) | 2/6 = 3.3333 (P1, P2) | 4/6 = 6.6667 (P1, P2, P4, P6) |
-| C3 | `python3 -I tools/mado-tripwire.py --selftest .ufo/waves/round-17/tripwire/<suite>`; `--scan …/MadoR15/MadoR15.LibinputEvents.jsonl` | absent (`git show 27cd06f:tools/mado-tripwire.py` fails) | present, sha256 `7a98720e…`; 9/9, 16/16, 33/33, 26/26 exit 0; anchor exit 1, line 54 `call_38165` `sudo` + `pacman:-S` (8 findings / 7 calls) |
+| C3 | `python3 -I tools/mado-tripwire.py --selftest .ufo/waves/round-17/tripwire/<suite>`; `--scan …/MadoR15/MadoR15.LibinputEvents.jsonl` | absent (`git show 27cd06f:tools/mado-tripwire.py` fails) | present, sha256 `7a98720e…`; 9/9, 16/16, 33/33, 30/30 exit 0; anchor exit 1, line 54 `call_38165` `sudo` + `pacman:-S` (8 findings / 7 calls) |
 
 Separability replayed by wave 2 (AttackSeparability): reverting each claim
 commit moves only its own counter. Harm watch at `f71ccbe`: legacy hermetic
