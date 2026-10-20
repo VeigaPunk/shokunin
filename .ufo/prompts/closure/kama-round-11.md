@@ -37,7 +37,7 @@ never pass a model parameter; you write only the two artifacts in steps 4–5):
    agree/disagree with a reason. Re-open ≥1 newly written `corpus/SOURCES.md` row and check its
    ≤25-word quote. Run `/home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin kama`.
 4. **Write `/home/vgpnk/Projects/shokunin/kama-shokunin/corpus/lessons/round-11-verifier-spotcheck.md`** (non-author;
-   headed `author: hyaku closure (non-author integrator, @m_opus)`): conformance results,
+   headed `author: hyaku closure (non-author integrator, @m_strong)`): conformance results,
    per-claim re-check with commands and observed output, per-axis verdicts, spot-check table
    (item · decision · re-opened source · agree/disagree · reason), trend verdicts with evidence,
    and routed defects the lane must fix next round. Commit only that path:
@@ -51,7 +51,7 @@ never pass a model parameter; you write only the two artifacts in steps 4–5):
    "admitted": true|false, "verdict": "admitted"|"rejected-honest-stop"|"rejected-harmed"|"failed-marker",
    "verdicts": {"<axis>": "<verdict>"}, "trends": {"expansion": …, "quality": …, "discernment": …},
    "capabilities_added": […], "report": ".ufo/reports/round-11/kama.md",
-   "verification": {"reviewer": "hyaku-closure (@m_opus session, non-author)",
+   "verification": {"reviewer": "hyaku-closure (@m_strong session, non-author)",
    "spotcheck": "kama-shokunin/corpus/lessons/round-11-verifier-spotcheck.md@<hash>", "rechecks": "<summary>"},
    "commit": "kama-shokunin@<lane HEAD>", "closed_at": "<ISO-8601 UTC>", "campaign": "hyaku",
    "notes": "<dispatch/complete digest; defects; routed items>", "promotions": [], "minted": []}`.
