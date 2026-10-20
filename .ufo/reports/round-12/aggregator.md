@@ -1,6 +1,6 @@
 # Aggregator round 12 — corpus-review coverage across 21 physical lanes
 
-**Stamp.** Aggregator round 12 on branch `kaika/aggregate`. The worktree includes the parent-authorized fast-forward to `54a20d39c533dcfd41473582e12ed380cf3d932b`; this report, its index, scorecard/log additions, and gate/census records will land in the aggregator commit and therefore cannot cite that commit's own hash. The 21 child-repository HEADs are the exact full OIDs in the table and final evidence files below. All reads used the original `/home/vgpnk/Projects/shokunin/<id>-shokunin` repositories or streamed `git archive` snapshots; no child repository was written.
+**Stamp.** Work commit `1bcf59eab527a9225152e7a912c7beb9301a11e9` on `kaika/aggregate`, based on parent cutoff `54a20d39c533dcfd41473582e12ed380cf3d932b`; later integrator commits correct publication metadata only. The 21 child HEADs are the exact full OIDs in the table and evidence below. Reads used the original child repositories or exact streamed Git archives; no child repository was written by this aggregator.
 
 ## Result
 
@@ -44,7 +44,11 @@ The gate's `--round` selector names the aggregator-lesson round checked by r10. 
 
 Three original checkouts carry unrelated user-owned untracked paths: game-dev-3d `reports/round-107/` (79 files), kama `.ufo/round-10/{SEAT-PROTOCOL.md,plan.json}`, and lore `.scratch/` (26 files). They were preserved and are not treated as corpus defects; archived gate inputs exclude them. No whole-original-tree clean claim is made for those three.
 
-## SOURCES census and curated path index
+## Sources & frontier — child census and curated path index
+
+SOURCES: unchanged — main-repo lanes hold no corpus/
+
+The new index below is cross-lane navigation, not a main-repo source registry or knowledge entry.
 
 The full final source-row/index table is `.ufo/reports/round-12/SOURCES.md`; the exact all-four-mode run against full snapshots is `.ufo/waves/kaika-aggregate/sources-census-final.md`.
 
