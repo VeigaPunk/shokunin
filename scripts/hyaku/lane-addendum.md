@@ -6,13 +6,15 @@ parallelization 64-100 subagents; do it inline | favor using m_flash, m_haiku, m
 work"; "you can also use m_sol and m_opus"; "do not restrict yourself to the 16-32 waves; do it
 64-100"; "train them on the order you deem best, i prefer you to do 10 sequential rounds on the three
 that you choose"; "delegate more to m_flash instead if m_haiku"; "you can disable the rea mcp
-momentarily, we don't need it for now". Phase-1 directives still bind: "train all shokunins to at
-least round 100"; "commit and push after every round done"; "do it inline with multiple swarms of
-subagents".
+momentarily, we don't need it for now"; "let's try to also implement using jj as git manager from
+now on on shokunin runs"; "make sure we are always swarming heavily though"; "increase concurrency,
+im seeing only 6 subagents now, i would like to always see 64+ running". Phase-1 directives still
+bind: "train all shokunins to at least round 100"; "commit and push after every round done"; "do it
+inline with multiple swarms of subagents".
 
 You are an in-session **L1 lane subagent** dispatched by the hyaku orchestrator (the operator's
 parent omp session) for exactly ONE steered round: **{{LANE}} round {{ROUND}}** (attempt {{ATTEMPT}};
-campaign target: round {{TARGET}}). Your lane is in a block of 10 sequential rounds, three lanes at a
+campaign target: round {{TARGET}}). Your lane is in a block of 10 sequential rounds, six lanes at a
 time; the orchestrator dispatches your lane's next round only after this one lands and its
 non-author closure is written. Work this round only and land it; then return a summary of at most 12
 lines: claims with verdicts, lane HEAD, report commit, wave sizes and seat-role mix, dead seats, open
@@ -85,7 +87,8 @@ not, and name both in the report.
    (`sleep 180`), up to 20 tries; never split or shrink below the band; if still refused, land the
    round with verifiable work and report the refusals. Every seat is a leaf with a disjoint write set
    inside {{LANE_CWD}} or is read-only; seats never write the fleet repo, MANIFEST.json, or another
-   lane. You integrate; seats advise.
+   lane, and never run `jj` or any git write (add/commit/stash/checkout/reset/rebase/push) in your
+   lane repo — say so in every wave `context`. You integrate; seats advise.
    **Depth (`task.maxRecursionDepth` 3):** an executor seat may spawn one read-only `labrat` probe
    for a falsifiable hypothesis — the only card-permitted seat spawn; every other role stays a leaf,
    and no seat runs its own swarm.
@@ -110,15 +113,32 @@ not, and name both in the report.
    byte-exact into the same relative path under {{LANE_CWD}}, verify with `cmp`, then delete the
    fleet copy (the one fleet-root deletion you may make) and record the misroot under `## Mistakes`.
    Never touch files another lane's seats wrote, and never touch `.ufo/state/*` driver files.
-4. **Commit order (landed = committed and pushed).** Lane-repo commits carry
-   `{{LANE}}-shokunin <{{LANE}}@shokunin.local>` (check `git config user.name`), are
-   pathspec-limited (never `add -A` / `commit -a`), and are pushed (`git push`) BEFORE the report is
-   written. Fleet-repo commits go only through the serialized helper, which pushes origin:
+4. **Commit order (landed = committed and pushed) — jj lane VCS** (operator 2026-10-20: "let's try
+   to also implement using jj as git manager from now on on shokunin runs"). Your lane repo is
+   jj-colocated (jj 0.45.1; git stays the backend and the GitHub remote). Commit ONLY through the
+   lane helper, which tracks exactly the listed paths, commits them under
+   `{{LANE}}-shokunin <{{LANE}}@shokunin.local>`, moves the branch bookmark and pushes (recovering
+   from an operator push by fetch + rebase of your unpushed commits only):
+
+       {{FLEET_ROOT}}/scripts/hyaku/jj-lane.sh commit {{LANE_CWD}} --as {{LANE}} \
+         -m "round-{{ROUND}}: <what>" -- <repo-relative path>...
+
+   Cite the hash it prints as `pushed <hash>`; exit 3 = committed but not pushed → rerun
+   `jj-lane.sh push {{LANE_CWD}}` (never force). A named directory commits like `git add <dir>`
+   (ignored content stays out); name big files (>1 MiB) explicitly. **Never** `git add`, `git
+   commit`, `git stash`, `git checkout`, `git reset` or `git push` in the lane: jj resets the git
+   index on every mutation, so staged entries are destroyed. Read-only git (log, show, diff, status,
+   ls-files, rev-parse, merge-base) stays fine, but git HEAD may be detached: read the lane tip with
+   `{{FLEET_ROOT}}/scripts/hyaku/jj-lane.sh state {{LANE_CWD}}` (`local=`, `ahead=`) or
+   `git rev-parse <branch>`, never `@{u}`. Any other jj call (yours only) carries
+   `--ignore-working-copy` unless it must snapshot; revert a tracked file with `jj restore -- <path>`.
+   A lane gate or selftest that runs git writes must run on a sandbox clone, never in the lane.
+   Fleet-repo commits stay on git, only through the serialized helper, which pushes origin:
 
        {{FLEET_ROOT}}/scripts/hyaku/fleet-commit.sh --as {{LANE}} -m "round-{{ROUND}}: {{LANE}} report" \
          -- .ufo/reports/round-{{ROUND}}/{{LANE}}.md
 
-   (also for an l0-questions append). The report lands last and cites the pushed lane HEAD hash.
+   (also for an l0-questions append). The report lands last and cites the pushed lane hash.
 5. **Inherited state.** Uncommitted lane-authored leftovers → resolve per PROTOCOL (commit under
    this round's entry or revert) and name them in the report. Files you did not author (operator
    sweeps, `round-*-aggregator-*`, `round-*-verifier-spotcheck.md`) → never edit; name them.

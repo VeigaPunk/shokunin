@@ -19,10 +19,14 @@ Duties (you may dispatch up to 8 read-only reviewer/critic `task` seats to paral
 never pass a model parameter; you write only the two artifacts in steps 4–5):
 1. **Step-1 conformance.** The report is committed in the fleet repo by the lane identity
    (`git log --format='%an %H' -- <report>`); it has the `SHONEN` heading with one line per box;
-   every cited lane commit exists and `git -C {{LANE_CWD}} merge-base --is-ancestor <hash> HEAD`
-   holds; the lane repo has no uncommitted round work and is pushed (`git status --porcelain`,
-   `git rev-list --count @{u}..HEAD`); the prompt carries the template contract. Marker report
-   (no checkable work/commit) → status `failed`. Defects are named in notes, status-neutral.
+   every cited lane commit exists and `git -C {{LANE_CWD}} merge-base --is-ancestor <hash> <branch>`
+   holds (the lane repo is jj-colocated, so git HEAD may be detached — test ancestry against the
+   branch ref, never `@{u}`); the lane repo has no uncommitted round work and is pushed
+   (`{{FLEET_ROOT}}/scripts/hyaku/jj-lane.sh state {{LANE_CWD}}` — pure git, read-only — must show
+   `ahead=0`; `git -C {{LANE_CWD}} status --porcelain` for leftovers); the prompt carries the
+   template contract. Marker report (no checkable work/commit) → status `failed`. Defects are named
+   in notes, status-neutral. Never run a jj command in the lane except through the helper (even
+   `jj log` snapshots state unless it carries `--ignore-working-copy`).
 2. **Claims.** For each declared claim (1–3): re-derive its before→after against `{{HEAD}}` with a
    plain measurement you run yourself (grep/wc/jq/git/census counts over committed bytes) and
    compare with the reported values; check no owned axis was harmed
@@ -41,9 +45,13 @@ never pass a model parameter; you write only the two artifacts in steps 4–5):
    headed `author: hyaku closure (non-author integrator, {{JUDGE_MODEL}})`): conformance results,
    per-claim re-check with commands and observed output, per-axis verdicts, spot-check table
    (item · decision · re-opened source · agree/disagree · reason), trend verdicts with evidence,
-   and routed defects the lane must fix next round. Commit only that path:
-   `git -C {{LANE_CWD}} -c user.name=protocol-shokunin -c user.email=protocol@shokunin.local commit -m "round-{{ROUND}} verifier spot-check (integrator, hyaku): non-author admit/reject" -- corpus/lessons/round-{{ROUND}}-verifier-spotcheck.md`
-   (after `git add` of that path), then `git -C {{LANE_CWD}} push`.
+   and routed defects the lane must fix next round. Commit and push only that path through the
+   jj lane helper (it commits under the protocol identity, moves the branch bookmark, pushes, and
+   recovers from an operator push by fetch + rebase of the unpushed commit only):
+   `{{FLEET_ROOT}}/scripts/hyaku/jj-lane.sh commit {{LANE_CWD}} --as protocol -m "round-{{ROUND}} verifier spot-check (integrator, hyaku): non-author admit/reject" -- corpus/lessons/round-{{ROUND}}-verifier-spotcheck.md`
+   — cite the hash it prints as `pushed <hash>`. Exit 3 = committed but not pushed: rerun
+   `jj-lane.sh push {{LANE_CWD}}`. Never `git add`/`git commit`/`git push` in a jj-colocated lane
+   (jj resets the git index on every mutation, so staged entries are destroyed).
 5. **Closure entry.** Write the JSON object to a temp file and run
    `{{FLEET_ROOT}}/scripts/hyaku/append-closure.py --entry <file>` (validates, appends under the
    fleet lock byte-exactly, commits MANIFEST.json as protocol-shokunin, pushes). Shape:
