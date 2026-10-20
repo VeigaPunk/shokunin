@@ -27,6 +27,7 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
 16. "critic + sentinel (m_opus)"
 17. "labrat and scout should be m_flash"
 18. "the fallback for the m_zfl should be m_luna max" / "as the last in the cascade"
+19. "make m_luna the last fallback for m_flash also"
 
 ## Decisions
 
@@ -140,6 +141,10 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
 - **m_zfl cascade (directive 18).** Session-only `retry.fallbackChains.m_zfl` = devin
   glm-5-3-flash-1m → charm-hyper glm-5.3-flash → openai-codex gpt-6-luna:max (m_luna max, last).
   Probe of the new last hop at 14:24 -03: openai-codex gpt-6-luna answered (`stop`).
+- **m_flash cascade (directive 19).** Session-only `retry.fallbackChains.m_flash` = charm-hyper
+  deepseek-v4.1-flash → opencode-go deepseek-v4.1-flash → devin deepseek-v4-1-flash →
+  openai-codex gpt-6-luna:max (m_luna max, last). The chain is keyed by the m_flash role only, so
+  m_fast/plan (same primary model) keep their own chains.
 - **Scope ruling (integrator):** tabi owns live browser/CDP page observation including the WebMCP
   page-tool surface; kaidoku keeps CDP only as an REA provider surface (tabi r16 closure notes).
 

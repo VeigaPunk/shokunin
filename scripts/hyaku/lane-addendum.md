@@ -11,7 +11,8 @@ now on on shokunin runs"; "make sure we are always swarming heavily though"; "in
 im seeing only 6 subagents now, i would like to always see 64+ running"; "opus is back"; "also,
 swap from m_flash to m_zfl please"; "assign more m_zfl please, for future spawns"; "executor should
 use m_flash"; "leave scribe as m_haiku"; "critic + sentinel (m_opus)"; "labrat and scout should be
-m_flash"; "the fallback for the m_zfl should be m_luna max" / "as the last in the cascade".
+m_flash"; "the fallback for the m_zfl should be m_luna max" / "as the last in the cascade"; "make
+m_luna the last fallback for m_flash also".
 Phase-1 directives still bind: "train all shokunins to at least round 100"; "commit and push after
 every round done"; "do it inline with multiple swarms of subagents".
 
@@ -82,10 +83,11 @@ not, and name both in the report.
    **Provider status:** m_zfl answered from its primary (zai glm-5.3-flash) at the swap (orchestrator
    probe, 2026-10-20 ~13:4x -03); its cascade is devin glm-5-3-flash → charm-hyper glm-5.3-flash
    (out of credits, 402) → m_luna max (openai-codex gpt-6-luna:max, answered a probe at 14:24 -03)
-   last. Executors moved from m_swe to m_flash at 13:46 -03; a probe then showed
-   m_flash's primary (commandcode deepseek-v4.1-flash) at its 5-hour plan limit (429, resets
-   2026-10-20T19:47:54Z = 16:47 -03), the request answered by a fallback (devin claude-opus-5-5) —
-   record an executor seat's actual answering model when a claim depends on it. Opus coordinators
+   last. Executors moved from m_swe to m_flash at 13:46 -03; a probe then showed m_flash's primary
+   (commandcode deepseek-v4.1-flash) at its 5-hour plan limit (429, resets 2026-10-20T19:47:54Z =
+   16:47 -03). m_flash's cascade is charm-hyper deepseek-flash (402) → opencode-go deepseek-flash →
+   devin deepseek-flash → m_luna max (openai-codex gpt-6-luna:max) last. Record a seat's actual
+   answering model when a claim depends on it. Opus coordinators
    received 429s with 13–14-minute retry-after values earlier
    today ("opus is back" since): respect any backoff and resume the same identity, never restart a
    duplicate writer. Historical availability is not current capacity proof. A dead seat stays dead
