@@ -339,12 +339,12 @@ Failed attempt: `inline.sh fail <lane> "<why>"` then re-dispatch (blocked after 
 
 ## Wrap checkpoint — developed work, not admission
 
-Snapshot at wrap; active owners may subsequently move their tips and land reports. No running run,
-worker or service was stopped. All claims/attempts/original baselines remain intact; no round advanced.
+Final model-run state: KagiR22 and SoujiR18 finished naturally; KamaR18's coordinator ended on
+Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attempts/baselines remain intact.
 
 | Claim | Pushed checkpoint or snapshot state | Original owner / pending action |
 |---|---|---|
-| kama r18 | Still running | `KamaR18`; let its current round finish |
+| kama r18 | `101f3991d3570bc9350fbf9c5561f4be1185699d`; code/corpus/evidence archived, no author report | `KamaR18`; interrupted by weekly quota, unadmitted; no restart or r19 |
 | souji r18 | Author lane `8be65236a4b61fffe9c0d05d30043650848c0a60`; report `856e4f6bd41ddad513bc2a77f936f82972d430c5`; landing verified | `SoujiR18` finished naturally; independent closure pending; inherited operator sweep untouched |
 | kagi r22 | Author lane `254d632ed2f6174e1ffcfe636a17b5e18284212f`; report `c5c5d1d26443a5c6f753c9f2424a3e0ed4822cec`; landing verified | `KagiR22` finished naturally; independent closure pending, no r23 started |
 | tameshi r18 | Author report landed; no closure verdict | `ClosureTameshiR18` pending provider recovery |
@@ -357,11 +357,11 @@ worker or service was stopped. All claims/attempts/original baselines remain int
 | mori r18 | No r18 work; r17 rejected at `rounds[372]` | `MoriR18`; quota-blocked before work |
 | chousa r25 | No r25 work | `ChousaR25`; quota-blocked before work |
 
-- These five checkpoint hashes came from helper `landed` receipts. They preserve developed code,
-  tools, corpus edits and evidence; they do not certify claims or replace missing author reports.
-- Nine generated patches/fixtures above directory auto-tracking limits were explicitly included;
-  their redacted static secret scan was clean. All five checkpointed inactive lanes verified
-  `ahead=0 behind=0 tracked=0 untracked=0`. This is durability evidence, not a claim/test verdict.
+- The six interrupted-round checkpoints preserve developed code, tools, corpus edits and evidence;
+  they do not certify claims or replace missing author reports. All came from helper `landed` receipts.
+- Nine large generated artifacts and all 96 retained Kama paths passed redacted static secret scans.
+  Files above directory tracking limits were explicitly included. All six checkpointed lanes verified
+  `ahead=0 behind=0 tracked=0 untracked=0`; durability is not a claim/test verdict.
 - Fleet runtime `.ufo/watchdog.log`/`.ufo/state/*`, operator sweeps and unrelated/ambiguous scratch
   were not swept into commits. Latest actual closure row is 372; a rendered closure prompt is not a verdict.
 - Resume only after operator continuation: reconcile `proc://`, named histories and
