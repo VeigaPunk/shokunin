@@ -6743,6 +6743,47 @@
     ".ufo/waves/kaika-w3/public-history-triage.md",
     ".ufo/waves/kaika-w3/remote-doc-integrations.json"
    ]
+  },
+  {
+   "round": 11,
+   "date": "2026-10-20",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 11,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 11
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "improved",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-11/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_strong session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-11-verifier-spotcheck.md@79fa257719e8688692ed1dc443589331ba22b7fe",
+    "rechecks": "Fresh reproduce.py on exact fe57cc8a01acba9b6d7ed20e11b4914dfb68d903 exited 0: nine legacy files, missing fields 27->0, prefix violations 0->0, crosswalk metadata 0->1, 19/19 selftests; missing-field/prefix controls exit 1 and tampered baseline exit 2 snapshot_tampered; 11 shipped input digests verified. Independent git-blob comparison confirms nine actual-before knowledge snapshots; auxiliary SOURCES snapshot has a marked fidelity defect but all registry rows match actual before (30 rows A27/C3 mined17/queued8/rejected5). Actual before lacks crosswalk. Current census validates exit 0 with intentional W04; 31 rows A28/C3 mined21/queued5/rejected5. Reopened pinned llama.cpp loading/router/sleep clauses and Ollama tags remote fields; outside admit and readiness/locality rejects agree; S031 quote located verbatim within 25 words. Report identity, commit ancestry, clean/pushed lane state, SHONEN heading and exact rendered template prefix checked. No runtime/config/service probe or new serving capability."
+   },
+   "commit": "kama-shokunin@79fa257719e8688692ed1dc443589331ba22b7fe",
+   "closed_at": "2026-10-20T04:07:50Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-10-19T23:10:53-03:00 launch kama round=11 pgid=12514 driver=hyaku slot=1 attempt=1; 2026-10-19T23:24:27-03:00 lane-dead-no-report kama round=11; retry same round (hyaku: headless attempt ended by operator directive to run in-session); 2026-10-20T00:41:08-03:00 launch kama round=11 pgid=288216 driver=hyaku-inline attempt=1; 2026-10-20T00:59:51-03:00 complete kama round=11; hyaku-inline attempt=1. Report committed by kama-shokunin in dff173077a887df99b458d6fa07f68a099d92e9d after lane work. Claims admitted documentation/historical-provenance only; no harmed axis. Fresh outside gate agreement moves discernment to improved at closure. Status-neutral routed defects -> kama next round: D1 frozen before SOURCES is tool-truncated, actual sha256 9dc40d25a595b3d42b39649e17094cfa4e7190cfbf340331252dd29dea22093a versus frozen 52665cf2d648112be2683c61485d42da1bf1dc859ea1df41d857672c60142fa1; add a new exact git-derived snapshot/expected manifest and append erratum, preserve old evidence. All 30 registry rows match and C1's nine knowledge snapshots match, so claim deltas unaffected. D2 append corrections to stale SOURCES every-row-round10 header and next-entry navigation. D3 SKILL admission pointer omits KQ14. D4 clarify remote-locality inference and registry-only supersession without violating immutable source-row cells. D5 add unmistakable archive status for undelivered round10 seat protocol. Main/operator retains disclosed cleanup of three fleet-root advisor artifacts; no cleanup claimed here. Reviewer stale line47 objection withdrawn: A36 already explicitly corrects it; inherited uncommitted S031 is not a git-history contradiction. Four SHONEN boxes remain author-asserted, not newly certified; no promotion/mint. No installs or updates.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
