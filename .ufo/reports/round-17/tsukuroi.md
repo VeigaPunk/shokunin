@@ -111,3 +111,10 @@ All measured with the same evaluator from a fresh clone at `90037c2d67bc076db79e
   - The citation-scope erratum was appended.
 - **Re-measured at `ed2ddd4`:** C1 5, C2 48, recheck 0 flagged (all exit 0). The census exits 0 with 8 W04 warnings.
 - **Late dead seats (m_zfl 429):** FxFreshUpdaSafeV3, FxRevengerSwitchRoot, FxBindSourScopCorr, FxReadmeFrontier, FxRecheckRerun, FxRevengerSnapperCopy, FxSeparability. Separability and the README frontier supersession therefore have no outside attack this round. The remaining running seats are reported as undelivered.
+
+## Addendum 2 — labelling and steer-scope repairs
+
+- **FxConnUnknowns** (failed): five [obs]/[inf] labelling breaches. Fixed in lane `3bce4d7e25e07b32ed1f5fe734a2689d442db5e0`. The linux-lts "never booted" claim now carries its sweep: installed 09:16:29, boot −1 started 08:57:58, boot 0 is 7.2.11.
+- **FxSteerScopeFix** (failed): the R17-STEER-SCOPE fix could not catch the actual L1 `pacman -Q`. Added `l1-capture/exec-log.txt` (a verbatim excerpt of executed commands) and `tools/check-recheck-commands.py --exec-log`. Run against this round's log it emits `EXEC-STEER-VIOLATION` (red, 1 violation at `exec-log.txt:5`); selftest 43/43. Limit: the log is an excerpt the L1 wrote, not a trace captured by the harness.
+- **Late measurements** at `3bce4d7` (`measure/late/`, landed in the following lane commit): C1 5, C2 48, recheck 0 flagged; census exit 0.
+- **Late dead seat (429):** FxFrozenMarker.
