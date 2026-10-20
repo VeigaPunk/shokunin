@@ -6401,6 +6401,47 @@
    },
    "promotions": [],
    "minted": []
+  },
+  {
+   "date": "2026-10-19",
+   "closed_at": "2026-10-20T00:44:32.283352+00:00",
+   "campaign": "kaika",
+   "type": "closure",
+   "round": 101,
+   "lane": "audio",
+   "lane_round": 101,
+   "lane_rounds": {
+    "audio": 101
+   },
+   "lanes": {
+    "audio": "ok"
+   },
+   "commit": "audio-shokunin@101996896",
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "improved",
+    "depth": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "sources-registry (15rows; warnings disclosed)",
+    "truepeak-probe (independent analytic control; 17finite artifact peaks; no canonical input writes)"
+   ],
+   "promotions": [],
+   "minted": [],
+   "report": ".ufo/reports/round-101/audio.md",
+   "verification": {
+    "reviewer": "W3ReviewAudio (initial343cd978; targetedfinal0d26ef01; measured02c13307/codeba46f371)",
+    "critic": "W3CriticAudio (priorrejection superseded afterQ22/S011fix)",
+    "parent_smoke": "10meaningful tests0; actualoptinCLI17finite/no failures/inputhash+mtimesunchanged; actualdefaultCLIrealbuilder17WAVs/cleanreceipt"
+   },
+   "notes": "C1historicalcalibration14verdicts18unadjudicatedrows; C2fournewnotes15sources22criteria; C3analyticonlycontrolgating fixedquantizedself-oracle defect. Workd00a8d2,receiptoriginal343; correctedcodeba46,correctedreceipt02c,docs3fdb,testdeletion0d26. Allnumericaxis scoresunmeasured; no promotion/rubric. ParentlessonlogsQ12pointermetadatachange andscope; original12tests remainhistorical, final10realtests. W01/W04nonfatalwarningsdisclosed. Postreviewreporterratumcontrols measuredcommit/Coregap/ARTnamespace wording."
   }
  ]
 }

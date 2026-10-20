@@ -1,0 +1,87 @@
+$ python3 corpus/fixtures/test_truepeak_r101.py
+exit=0
+..........
+----------------------------------------------------------------------
+Ran 10 tests in 4.457s
+
+OK
+
+
+$ python3 /tmp/kaika-audio-cli-final-jx56nxw0/corpus/fixtures/measure_audio.py --probe-truepeak-r101
+exit=0
+{"receipt": "/tmp/kaika-audio-cli-final-jx56nxw0/corpus/live/round-101-truepeak/20261020T004113721510Z/measurements.json", "failures": {}, "coverage_blocked": {}}
+
+
+$ python3 /tmp/kaika-audio-cli-state-__vokzot/corpus/fixtures/measure_audio.py --probe-truepeak-r101
+exit=0
+{"receipt": "/tmp/kaika-audio-cli-state-__vokzot/corpus/live/round-101-truepeak/20261020T004221695164Z/measurements.json", "failures": {}, "coverage_blocked": {}}
+
+
+$ bash /home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate /home/vgpnk/Projects/shokunin/.tower/worktrees/kaika/audio-shokunin
+exit=0
+audio-shokunin	W01	S007 tierC mined used-by=corpus/knowledge/2026-10-19-game-loudness-whole-mix-protocol.md, corpus/lessons/round-101.md
+audio-shokunin	W04	S014 duplicate url raw.githubusercontent.com/FFmpeg/FFmpeg/n9.0.1/libavfilter/af_loudnorm.c across scopes
+audio-shokunin	W04	S015 duplicate url www.itu.int/dms_pubrec/itu-r/rec/bs/R-REC-BS.1770-5-202311-I!!PDF-E.pdf across scopes
+audio-shokunin	ok	/home/vgpnk/Projects/shokunin/.tower/worktrees/kaika/audio-shokunin/corpus/SOURCES.md
+
+
+$ python3 /tmp/kaika-audio-default-final-xn112uzb/corpus/fixtures/measure_audio.py
+exit=0
+{"receipt": "/tmp/kaika-audio-default-final-xn112uzb/corpus/live/runs/20261020T004344029133Z-normal/measurements.json", "failures": {}, "coverage_blocked": {}}
+
+Parent probe correction: first opt-in CLI succeeded; harness looked for root failures instead of measurements.truepeak_r101.failures. Only its disposable state-capture step repeated; the10tests were not repeated.
+
+Final opt-in state:
+{
+  "artifact_names": [
+    "ambience",
+    "ambience_alt",
+    "ambience_third",
+    "impact",
+    "impact_alt",
+    "impact_third",
+    "movement",
+    "movement_alt",
+    "movement_third",
+    "stem",
+    "stem_layer",
+    "stem_layer_alt",
+    "stem_layer_third",
+    "stem_sections",
+    "ui",
+    "ui_alt",
+    "ui_third"
+  ],
+  "finite_true_peaks": 17,
+  "probe_failures": [],
+  "stdout_failures": {},
+  "input_bytes_and_mtimes_unchanged": true,
+  "builder_file_provided": false,
+  "receipt_mode": "probe-truepeak-r101"
+}
+
+Actual default-mode state:
+{
+  "built_artifacts": [
+    "ambience",
+    "ambience_alt",
+    "ambience_third",
+    "impact",
+    "impact_alt",
+    "impact_third",
+    "movement",
+    "movement_alt",
+    "movement_third",
+    "stem",
+    "stem_layer",
+    "stem_layer_alt",
+    "stem_layer_third",
+    "stem_sections",
+    "ui",
+    "ui_alt",
+    "ui_third"
+  ],
+  "failures": {},
+  "receipt_created": true,
+  "builder_mocked": false
+}
