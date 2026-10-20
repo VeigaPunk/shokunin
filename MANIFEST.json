@@ -8732,6 +8732,47 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log:493,505): 2026-10-20T12:43:24-03:00 launch souji round=17 pgid=2966646 driver=hyaku-inline attempt=1; 2026-10-20T16:14:05-03:00 complete souji round=17; hyaku-inline attempt=1. Step-1 ok: report 0e94537 by souji-shokunin after lane tip; 6 cited hashes ancestors of refs/heads/master; ahead=0; only uncommitted path is operator-owned census/operator-sweep-20261019/ (inherited; L0 souji|round-17); SHONEN 4x[~]; prompt fidelity 4 template-expansion diff lines + section 6. No harm vs 5fa6017; not no-harm vs pre-harm a31642d (inherited, L0 souji|round-16). Routed to souji: R1 souji-quarantine.sh:246-251 jj recipe hardcodes --as souji, refused by jj-lane.sh:516-517 for sibling lanes (fail-closed; contradicts SKILL owner-id rule); R2 LOG.md:916 and SKILL.md:165 r17-gate-replays row cite uncommitted census/round-17/gate-replays-ddb7347.json (committed record is gate-replays-4f48343.json); R3 SCORECARD operability '22 repos' is 21 (22 rows incl header); R4 QUALITY Q7 still prescribes raw commit for every lane commit; R5 5 dead wave-2 static reviews not redone, census TOCTOU FIFO swap and keep-ref lifetime open. Closure seats refused by job cap; all checks run by this integrator. SHONEN boxes look non-author checkable (promotion operator-owned). No tool installs.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 17,
+   "date": "2026-10-20",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 17,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 17
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-17/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-17-verifier-spotcheck.md@e75cf680b53484a61709ee1b2787d8dbc6419f74",
+    "rechecks": "Re-measured over committed bytes at 5e9ae6e: check.py pass conjunct gains served_model_ok and route_ok (cff9e62:340-347 vs 5e9ae6e:474-484), UnicodeDecodeError per-row handling; matrix set digest bf9068d8 recomputed at both revisions (9 files, 72 rows, git diff --quiet exit 0); probe 36b64978 identical at cff9e62/54a2926/5e9ae6e; SOURCES 41->47 (A 38->44, mined 31->37), no '-' lines; claim file sets disjoint. Evidence-verified (lane gates not executed): fault-controls frozen b853576e accepted 3 (F5,F6,F8) -> current ddc3f3cc accepted 0; mutant grid full 7/8 -> 10/10, pair 1/8 -> 1/10; controls frozen accepted_bad 6 + 1 inconclusive -> current 0, gate_flip_bad 0, 4 checks flipped; receipts v2 11/11 x3, gate VALID; check.py selftest 72/72+5/5; r16 measure PASS; snapshot 30/0; v1 receipts VALID. Re-opened S042 (server-context.cpp:5297/5289), S044 (py3.14 Popen.returncode), S047 (server-queue.cpp 132-136/279) and rejects README:489, /3/ docs=3.15.0, b11757 files byte-identical: all agree; S043 build-time admit disagreed (lane-superseded). Census validate exit 0."
+   },
+   "commit": "kama-shokunin@5e9ae6e93dce529a48229647e482f18a291463cd",
+   "closed_at": "2026-10-20T19:42:04Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: '2026-10-20T11:52:26-03:00 launch kama round=17 pgid=3049098 driver=hyaku-inline attempt=1'; '2026-10-20T16:35:17-03:00 complete kama round=17; hyaku-inline attempt=1'. Report 5434376 by kama-shokunin; cited hashes cff9e62/54a2926/5e9ae6e/b8e485c/ccc4bb3 ancestors of refs/heads/master; lane ahead=0, porcelain empty; prompt = template render + section 6 addendum. C2 trade ruling: 1/60 false failure under 32x load observed zero 503s; v1 graded nothing there, v2 fail-closed per KQ21; no axis harmed; exit classification routed. Spot-check landed e75cf680 (helper 'landed', ls-remote confirmed). Routed: R1 S047 lacks a Gate row (CORPUS SOURCES rule 1); R2 M8 has no QUALITY criterion; R3 corpus/README.md:238 still attributes exit statuses to S043 only; R4 zero-observation loading should be could-not-evaluate exit 2; R5 six v2 checks lack retained bad controls; R6 receipt-gate trust boundary debts (v1 self-declare, extra argv, transitions 503, ::1 ownership, BaseException path, K6, /3/ docs cite); R7 detector-of-detector survivors, refused:0 provenance, 7 dead falsify seats not respawned; R8 (orchestrator/protocol) prompt role->alias route map vs MISSION.md buckets (connector, critic/sentinel). ruff 0.17.1/vulture 2.16 uv installs belong to tameshi r17, not kama. SHONEN all [~], not yet non-author checkable.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
