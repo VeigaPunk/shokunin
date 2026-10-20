@@ -8435,6 +8435,49 @@
    "notes": "Driver: 2026-10-20T10:51:17-03:00 launch souji round=16 pgid=2432921 driver=hyaku-inline attempt=1; 2026-10-20T12:29:49-03:00 complete souji round=16; hyaku-inline attempt=1; lane-dead-no-report count 0. Conformance ok: report 85f2aa9 by souji-shokunin after c46eabf; all cited hashes ancestors of refs/heads/master; ahead=0; only operator-owned ?? census/operator-sweep-20261019/ (fingerprint f6a84466 unchanged); SHONEN heading 4x[~]; prompt = template substitutions + section 6. Admission covers r16 claims only: not a no-harm certification vs pre-harm a31642d; inherited r14 residual contractions stay open under L0 souji|round-16 (fleet 273d6a6). Routed R1,R4,R6,R7 resolved; R2 admission-blocking predicate (value-blind benign config, hooksPath=/dev/null, mixed fleet) resolved, broader residual under L0; R3 resolved with gaps; R5 audit not enforcement. Routed to souji r17: D1 false-clean on repo-local status.showUntrackedFiles=no (all revisions; include/config.worktree variant newly reachable vs cc21683) -> explicit --untracked-files=normal + paired case; D2 info/attributes hardlinked/non-regular whole-run trigger (entered b410186) -> per-repo degrade or L0; D3 LOG:902 '28' vs 29 and LOG:858 'pre-harm fails only refusal/safety' need named corrections; D4 seat-audit w2 3 majors are false positives (lstrip('./') at seat-audit.py:76-82, comma split :68-73), transcripts uncommitted/undigested in /var/tmp; D5 R3 carry format gaps (lesson:54 no hash, 2 truncated quotes, RevGateSpec.md:226 uncarried); D6 replay verdicts transcript/prose-only, selftest asserts id subset, regenerate.py literal verdict; D7 gate-landing.json lands at c46eabf not 6ff91f5. Operator: L0 ruling; operator-sweep disposition. SHONEN not certified checkable by non-author. Installs: none.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 18,
+   "date": "2026-10-20",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 18,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 18
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "improved",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "tripwire frozen replay (gate mado-tripwire-frozen, SKILL.md:566; tools/mado-tripwire.py sha256 c1ae45a7…; --frozen .ufo/waves/round-18/frozen frozen_match exit 0, tamper snapshot_tampered exit 2; frozen selftest 31/31 vs abfbf35 tool 17/31 passing (14 failed); expected.json 4f3534ae… pins 5/5 input digests; scope: classifier-output change detector over 5 pinned incident files, 8 findings, 3 known misses)"
+   ],
+   "report": ".ufo/reports/round-18/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-18-verifier-spotcheck.md@9c54c56a6a7528675027b7f628f97a1b8d1b8e8d",
+    "rechecks": "C1 re-measured: QUALITY grep 15/23 (d9a5a18) -> 18/26 (b7148a1), criteria 24-26 cite lessons/round-18.md M1-M3; d9a5a18 reds read directly (6 round-17 tripwire receipts carry 0 tool_sha256=; mado-verify.sh:3406 no pipefail; loose instrument f52f43f8 sha a280b3ab = mutants receipt, 6/6 bites evidence-verified). C2 re-measured by hand (surface P3/P5, 4 required headings, [UNK] in Unexercised, mined tier-A used-by joins) and by read-only measure.py de4c422b: 4/6 -> 6/6, u_routes 7 -> 7; SOURCES 71 -> 95; census exit 0 same 3 W04. C3 evidence-verified, not executed: tool sha per revision, before usage exit 2, match exit 0, tamper exit 2, selftest 31/31 vs 17/31, expected.json and 5 input digests re-hashed by closure. Harm: SCORECARD diff pure append; gate 389/389 (c9fb0cef = tip), scan suites 9/16/33/30, classifier 52/52. Spot-check: S076, S091, S092 admits re-opened (sha/quote match), GitHub tree HTML reject re-opened (digest 1a3ddca5 != 4d001dc8 across two fetches) — 4/4 agree."
+   },
+   "commit": "mado-shokunin@b7148a1eec4f9726b09a7679261ec6e8f5a74c58",
+   "closed_at": "2026-10-20T16:53:57Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-10-20T12:29:34-03:00 launch mado round=18 pgid=1899513 driver=hyaku-inline attempt=1; 2026-10-20T13:48:31-03:00 complete mado round=18; hyaku-inline attempt=1. Step-1 conformance ok: report bc5d280 by mado-shokunin at 13:48:10 after lane tip (13:47:14); SHONEN 4 lines (all [~]); 7/7 cited hashes ancestors of refs/heads/master; jj-lane state ahead=0, porcelain clean; prompt 20a06f7 = template rendering + addendum b8afbd0 (placeholders only). Seats 88+73+6=167; 14 wave-2 seats without reports (Anthropic 429), disclosed as M8. Spot-check landed 9c54c56. Routed to mado: R18-V1 S094 secondary anchor per-fetch HTML digests (fetch-verify exit 1, M7) -> superseding row; R18-V2 criterion-26 red-before lacks a producer-header receipt (gate-rc-redbefore.txt, w3 383/389) -> commit header-bound receipt; R18-V3 walker 2.17.0 pins in walker-deep-r9/walker-live-surface/waybar-walker-plane etc. lack in-file forward pointer (marked only in SKILL erratum + walker-route-r18) -> append pointers; R18-V4 S084 docs.rs latest alias unpinned; carried lane-listed frozen F1/F2, measure-mutants --out default, jj-audit F6/F9, three tripwire drafts. Host evidence (operator-owned): /var/log/pacman.log:3161-3169 pacman -U zcode-3.16.2-1 from ~/.cache/yay at 13:23:08 -03 during host pause, actor [UNK]; R15-V1 operator-owned. SHONEN boxes all author-asserted [~]; not non-author-checkable from this report.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
