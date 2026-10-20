@@ -8478,6 +8478,47 @@
    "notes": "Driver digest: 2026-10-20T12:29:34-03:00 launch mado round=18 pgid=1899513 driver=hyaku-inline attempt=1; 2026-10-20T13:48:31-03:00 complete mado round=18; hyaku-inline attempt=1. Step-1 conformance ok: report bc5d280 by mado-shokunin at 13:48:10 after lane tip (13:47:14); SHONEN 4 lines (all [~]); 7/7 cited hashes ancestors of refs/heads/master; jj-lane state ahead=0, porcelain clean; prompt 20a06f7 = template rendering + addendum b8afbd0 (placeholders only). Seats 88+73+6=167; 14 wave-2 seats without reports (Anthropic 429), disclosed as M8. Spot-check landed 9c54c56. Routed to mado: R18-V1 S094 secondary anchor per-fetch HTML digests (fetch-verify exit 1, M7) -> superseding row; R18-V2 criterion-26 red-before lacks a producer-header receipt (gate-rc-redbefore.txt, w3 383/389) -> commit header-bound receipt; R18-V3 walker 2.17.0 pins in walker-deep-r9/walker-live-surface/waybar-walker-plane etc. lack in-file forward pointer (marked only in SKILL erratum + walker-route-r18) -> append pointers; R18-V4 S084 docs.rs latest alias unpinned; carried lane-listed frozen F1/F2, measure-mutants --out default, jj-audit F6/F9, three tripwire drafts. Host evidence (operator-owned): /var/log/pacman.log:3161-3169 pacman -U zcode-3.16.2-1 from ~/.cache/yay at 13:23:08 -03 during host pause, actor [UNK]; R15-V1 operator-owned. SHONEN boxes all author-asserted [~]; not non-author-checkable from this report.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 18,
+   "date": "2026-10-20",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 18,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 18
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-18/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-18-verifier-spotcheck.md@8a8da7e19375aadc66c6bcbff0bbcbb596048fb0",
+    "rechecks": "Own+7 read-only closure seats, no lane tool executed. C1 re-derived per defect from blobs B=9011581/A=a245bb0: PINMAP correction appended prefix-exact, 22/22 r18 mid maps retained with matching map_sha256; VALIDATE16 8/8 stdout hashes match and validator_sha256 equals real 9011581 receipt-validate.py digest; PRODUCER-REV pass attribution correct by carrier-run.py blob history; SUMS 17/17 2711674 lines byte-exact, carriers.tsv hash matches; REGISTRY rows/paths resolve, citation-drift gate --strict; S033 head a214355 via ls-remote and .patch sha reproduce. Gate evidence verified: routed-defects open 6->0 (stdout hash-bound, rev 454dee6), QUALITY 20->21 rows 1-20 sha be170f23 identical. C2: independent grep 3 live HEAD pins at B (citation-drift:477, custody-pair:327, r17 verify.py:59) -> 0 at A; head-rev-lint receipt matches; jj-red-before 14/14 held. C3: eb6c266 pushed 13:23:57 before first run 13:24:07, no runs/ at freeze, predictions tree identical through A; 15/15 re-derived from raw ghidra.log; held-out Invalid index 22386945/15606016 own-verified equal frozen predictions and absent at B; Go 1.25 scoped to calibration. No-harm: 0 deletions, 15 scoped modifications, LOG/SCORECARD prefix-exact, no score decrease, coverage 96/96, SOURCES 32->36 with S001-S032 only used-by appends. Census validate exit 0 (W04 S033 expected). Spot-check 7/7 agree (S033-S036 admits; go1.25-notes, jj-latest, go1.25.0-safe rejects)."
+   },
+   "commit": "kaidoku-shokunin@a245bb00c581ae3423a10a055c77d4bc873918df",
+   "closed_at": "2026-10-20T18:28:33Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-20T12:07:53-03:00 launch kaidoku round=18 pgid=4070059 driver=hyaku-inline attempt=1 / 2026-10-20T14:31:43-03:00 complete kaidoku round=18; hyaku-inline attempt=1. Report 4338083 by kaidoku-shokunin lands last (A pushed 14:21:05, report 14:23:14); erratum e9eec36 appended, filed bytes prefix-intact; all cited lane hashes ancestors of refs/heads/main; lane ahead=0, clean; prompt 149c5af renders template byte-exact (+ §6 addendum). Stale-lane 2h24m progressing (7 lane commits). Waves W1 89/89, W2 98 (94 reports; GateSUMSRUNLOG, GatePRODUCERREV, TruthREGISTRY dead, ShonenLines missing), 187 seats, no per-seat model. Installs: Go 1.24.6/1.25.0 official tarballs into ~/.local/opt, sha256 matches go.dev JSON. Routed (status-neutral): R18-MIDMAP-LISTSTEP (receipt-validate --require-mid-maps list branch accepts any step), R18-VALIDATOR-DIGEST (format-only check; retain remapped-copy digests), R18-STRICT-BASELINE (strict exit 1 at B unretained), R18-HEAD-ALIASES (citation-drift literal-only HEAD; 2 nested compare reads invisible to lint), R18-DEADSEAT-RECORD (SCORECARD:2462 1 dead vs erratum 3; causes not in committed wave records), R18-REGISTRY-PINNED (pins/go-buildinfo-probe no pinned path), R18-INSTALL-RECORD (install not in round lesson). Operator: template §3 lists 1x planner vs §6 L1 planner reassignment. SHONEN not fully non-author checkable (4 [~]; PROVINCE REA-pin stale).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
