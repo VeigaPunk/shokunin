@@ -28,6 +28,8 @@
 #   .ufo/state/<lane>.mission holds the lane's process-group ID (the setsid
 #   leader). Liveness verifies SHOKUNIN_LANE in a group member's environ, so a
 #   recycled PID is never mistaken for the lane.
+#   .ufo/state/<lane>.report-baseline holds "round SHA256" for the report bytes
+#   captured immediately before launch or after a blocked source-gate check.
 set -u
 
 SHOKUNIN_ROOT=${SHOKUNIN_ROOT:-$(CDPATH='' cd -- "$(dirname -- "${BASH_SOURCE[0]:-$0}")/.." && pwd)}
@@ -102,13 +104,60 @@ round_of() { # lane
   esac
 }
 
+# Report lifecycle identity uses report bytes, never modification times.
+report_digest() { # report path; a missing report is the empty byte stream
+  local f="$1" out digest
+  if [ -f "$f" ]; then
+    out=$(sha256sum < "$f") || return 1
+  else
+    out=$(printf '' | sha256sum) || return 1
+  fi
+  digest=${out%% *}
+  [[ "$digest" =~ ^[[:xdigit:]]{64}$ ]] || return 1
+  printf '%s\n' "$digest"
+}
+
+record_report_baseline() { # lane round; atomically save the current report digest
+  local lane="$1" n="$2" f="$UFO/reports/round-$2/$1.md"
+  local state="$UFO/state/$1.report-baseline" digest tmp
+  digest=$(report_digest "$f") || {
+    log "report-baseline-fail $lane round=$n :: cannot hash report"
+    return 1
+  }
+  tmp="$state.tmp.$$"
+  if ! printf '%s %s\n' "$n" "$digest" > "$tmp"; then
+    rm -f -- "$tmp"
+    log "report-baseline-fail $lane round=$n :: cannot write state"
+    return 1
+  fi
+  if ! mv -f -- "$tmp" "$state"; then
+    rm -f -- "$tmp"
+    log "report-baseline-fail $lane round=$n :: cannot replace state"
+    return 1
+  fi
+}
+
 # report_of — content check, not existence (H5): a real report carries a SHONEN
-# heading or bold-list marker and >= MIN_REPORT_BYTES. Spell out ASCII case
-# variants under C locale, plus both macron bytes, for locale-independent matching.
+# heading or bold-list marker and >= MIN_REPORT_BYTES. A same-round launch/gate
+# baseline suppresses unchanged bytes by digest; mtime is never a completion signal.
+# Spell out ASCII case variants under C locale, plus both macron bytes, for locale-independent matching.
 report_of() {
   local f="$UFO/reports/round-$2/$1.md"
+  local baseline="$UFO/state/$1.report-baseline"
+  local baseline_round='' baseline_digest='' extra='' digest
   local shonen='[Ss][Hh]([Oo]|Ō|ō)[Nn][Ee][Nn]'
   [ -f "$f" ] || return 1
+  if [ -e "$baseline" ] || [ -L "$baseline" ]; then
+    [ -f "$baseline" ] || return 1
+    IFS=' ' read -r baseline_round baseline_digest extra < "$baseline" || return 1
+    case $baseline_round in ''|*[!0-9]*) return 1 ;; esac
+    [[ "$baseline_digest" =~ ^[[:xdigit:]]{64}$ ]] || return 1
+    [ -z "$extra" ] || return 1
+    if [ "$baseline_round" = "$2" ]; then
+      digest=$(report_digest "$f") || return 1
+      [ "$digest" != "$baseline_digest" ] || return 1
+    fi
+  fi
   LC_ALL=C grep -qE "^#+[[:space:]]*${shonen}([^[:alnum:]_]|$)|^[[:space:]]*-[[:space:]]+\\*\\*${shonen}\\*\\*([[:space:]]|$)" "$f" || return 1
   [ "$(wc -c < "$f")" -ge "$MIN_REPORT_BYTES" ]
 }
@@ -150,6 +199,10 @@ launch_lane() {
   render_prompt "$lane" "$n" || { log "launch-fail $lane round=$n :: prompt render failed"; return 1; }
   run_cmd=${SUBSTRATE_CMD//%C/${LANE_CWD[$lane]}}
   run_cmd=${run_cmd//%P/$prompt}
+  record_report_baseline "$lane" "$n" || {
+    log "launch-fail $lane round=$n :: report baseline unavailable; not spawning"
+    return 1
+  }
   # A lane must not keep the driver's singleton lock alive after a crash.
   # Close it in the child subshell before execing the isolated process group.
   (
@@ -307,6 +360,10 @@ advance() { # lane n [live process-group id]
       launch_lane "$lane" $((n+1))
     else
       log "advance-blocked $lane round=$n :: sources closure failed; retry same round"
+      if ! record_report_baseline "$lane" "$n"; then
+        log "advance-blocked $lane round=$n :: report baseline unavailable; NOT retrying"
+        return 1
+      fi
       [ -n "$mid" ] || launch_lane "$lane" "$n"
     fi
   else
