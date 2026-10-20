@@ -36,6 +36,7 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
 25. "distiller m_haiku"
 26. "sentinel m_luna"
 27. "connector m_grok"
+28. "executor m_luna"
 
 ## Decisions
 
@@ -178,15 +179,16 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
   unchanged. Smoke seats (transcripts SmokeFlashCascade, SmokeZflCascade, SmokeOpusCascade):
   commandcode 429 → opencode-go deepseek-flash answered; zai 429 (type=1302) → openai-codex
   gpt-6-luna answered; Anthropic 429 → openai-codex gpt-6.1-sol answered.
-- **m_sol briefly replaced m_opus (directive 21), reverted by directive 22; directives 23–27.**
+- **m_sol briefly replaced m_opus (directive 21), reverted by directive 22; directives 23–28.**
   Current routing (session-only): task (L1s, closures), planner → @m_opus; main → @m_strong;
   critic → @m_swe (exact-model fallback key `devin/swe-2` = m_swe cascade zai glm-5.3-flash →
-  devin glm-5-3-flash); sentinel → @m_luna (exact-model key `openai-codex/gpt-6-luna` = m_luna
-  cascade devin gpt-6-luna); connector → @m_grok (exact-model key `cursor/grok-4.7-fast` = m_grok
-  cascade cursor grok-4.7-500k-fast → xai-oauth grok-4.7 → devin grok-4-7); mutation-tester →
-  @m_sol; executor, scout, labrat, simplifier → @m_flash; reviewer, revenger → @m_zfl; scribe,
-  distiller → @m_haiku. Probe ~16:3x -03 (`probe-alias.sh m_grok m_swe m_luna`): all three
-  primaries answered.
+  devin glm-5-3-flash); executor, sentinel → @m_luna (exact-model key `openai-codex/gpt-6-luna` =
+  m_luna cascade devin gpt-6-luna); connector → @m_grok (exact-model key `cursor/grok-4.7-fast` =
+  m_grok cascade cursor grok-4.7-500k-fast → xai-oauth grok-4.7 → devin grok-4-7);
+  mutation-tester → @m_sol; scout, labrat, simplifier → @m_flash; reviewer, revenger → @m_zfl;
+  scribe, distiller → @m_haiku. Probe ~16:3x -03 (`probe-alias.sh m_grok m_swe m_luna`): all
+  three primaries answered. Risk: Codex now carries m_luna, m_sol and the last hop of the
+  m_zfl/m_flash cascades.
 - **Scope ruling (integrator):** tabi owns live browser/CDP page observation including the WebMCP
   page-tool surface; kaidoku keeps CDP only as an REA provider surface (tabi r16 closure notes).
 
