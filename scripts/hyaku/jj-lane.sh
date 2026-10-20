@@ -8,10 +8,11 @@
 #   0 ok / nothing to do · 1 failure ·
 #   3 committed but push failed (commit kept) · 64 usage.
 #
-#   jj-lane.sh init   <lane-dir> <lane-id>
-#   jj-lane.sh commit <lane-dir> --as <id> -m <message> [--allow-large] -- <path>...
-#   jj-lane.sh push   [--no-rebase] <lane-dir>
-#   jj-lane.sh state  <lane-dir>
+#   jj-lane.sh init    <lane-dir> <lane-id>
+#   jj-lane.sh commit  <lane-dir> --as <id> -m <message> [--allow-large] -- <path>...
+#   jj-lane.sh recover <lane-dir> --as <id> --revision <full-hash> -- <path>...
+#   jj-lane.sh push    [--no-rebase] <lane-dir>
+#   jj-lane.sh state   <lane-dir>
 #
 # Rules enforced here (lane contract):
 #   * commits are pathspec-limited — never everything;
@@ -23,8 +24,9 @@
 #   * pushes are fast-forward only: nothing is ever rewritten, the remote is
 #     never moved backwards or sideways, and a remote that stopped being a
 #     descendant of the last-seen remote tip stops the helper (exit 3);
-#   * push retries recover by fetch + rebase of ONLY the unpushed commits
-#     (<branch>@origin..<branch>) onto the moved <branch>@origin;
+#   * ordinary pushes recover by fetch + rebase of ONLY the unpushed commits
+#     (<branch>@origin..<branch>) onto the moved <branch>@origin; explicit
+#     recovery avoids snapshotting @ and refuses that rebase;
 #   * `.ufo`, `.ufo/state`, `.git` and `.jj` are never committable;
 #   * every snapshotting jj call carries --config 'snapshot.auto-track="none()"';
 #   * every read-only jj call carries --ignore-working-copy.
@@ -50,10 +52,11 @@ FLEET_ROOT_DERIVED=$(cd "$SELF_DIR/../.." 2>/dev/null && pwd -P || echo "")
 usage() {
   cat >&2 <<'EOF'
 usage:
-  jj-lane.sh init   <lane-dir> <lane-id>
-  jj-lane.sh commit <lane-dir> --as <id> -m <message> [--allow-large] -- <path>...
-  jj-lane.sh push   [--no-rebase] <lane-dir>
-  jj-lane.sh state  <lane-dir>
+  jj-lane.sh init    <lane-dir> <lane-id>
+  jj-lane.sh commit  <lane-dir> --as <id> -m <message> [--allow-large] -- <path>...
+  jj-lane.sh recover <lane-dir> --as <id> --revision <full-hash> -- <path>...
+  jj-lane.sh push    [--no-rebase] <lane-dir>
+  jj-lane.sh state   <lane-dir>
 exit: 0 ok/nothing-to-do · 1 failure · 3 committed but push failed · 64 usage
 output: `landed <hash>` is the only citable line; `rewritten <old> -> <new>`
         precedes it when push recovery rewrote this run's commit;
@@ -341,17 +344,25 @@ recover_remote_move() { # <branch> <id>
   return 0
 }
 
-# Push <branch> to origin with fetch+rebase recovery on lease rejections only.
+# Ordinary pushes fetch/rebase on lease rejection; explicit recovery avoids
+# snapshotting @ and refuses a stale-remote rebase.
 # Prints exactly one `landed <hash>` on success. Returns 0/1.
-do_push() { # <branch> <id> <own-hash-or-empty>
+do_push() { # <branch> <id> <own-hash-or-empty> [safe-recovery]
+  local safe_recovery=${4:-0}
   local b=$1 id=$2 own=${3:-}
+  local -a jj_push_args=()
+  [ "$safe_recovery" -eq 1 ] && jj_push_args+=(--ignore-working-copy)
   push_preflight "$b" || return 1
   for _ in 1 2 3; do
-    if "$JJ_BIN" --config "$AUTOTRACK_OFF" git push --remote origin --bookmark "$b" 2>"$LOCKBASE.err"; then
+    if "$JJ_BIN" "${jj_push_args[@]}" --config "$AUTOTRACK_OFF" git push --remote origin --bookmark "$b" 2>"$LOCKBASE.err"; then
       report_landed "$b" "$own" && return 0
       return 1
     fi
     if [ "$(classify_push_error "$LOCKBASE.err")" = lease ]; then
+      if [ "$safe_recovery" -eq 1 ]; then
+        err "remote moved; refusing to rebase during explicit recovery"
+        return 1
+      fi
       recover_remote_move "$b" "$id" || return 1
       push_preflight "$b" || return 1
       continue
@@ -490,10 +501,104 @@ $(diff <(printf '%s\n' "$status_before" | strip_untracked) <(printf '%s\n' "$sta
 
 # ---- commit ----------------------------------------------------------------
 
+# Reject repo internals/runtime state both when named and when a commit diff
+# reports them. This is intentionally shared by commit and explicit recovery.
+repo_path_allowed() { # <repo-relative-path>
+  local path=$1
+  case $path in
+    ''|.|..|../*|/*)
+      err "path escapes the lane root: $path"; return 1 ;;
+    .git|.git/*|.jj|.jj/*)
+      err "repo internals are never committable: $path"; return 1 ;;
+    .ufo|.ufo/state|.ufo/state/*|.ufo/watchdog.log)
+      err "driver runtime is never committed by a lane: $path"; return 1 ;;
+  esac
+  return 0
+}
+
+# The request array is caller-local (Bash dynamic scope) and every Git path is
+# read as a NUL-delimited field. --no-renames makes a rename D+A and a copy A;
+# a failed diff is an error, never an empty change set.
+validate_change_scope() { # <parent> <commit>
+  local parent=$1 hash=$2 changes_file status cpath rp matched rc=0 seen=0
+  changes_file=$(mktemp "$LOCKBASE.changes.XXXXXX") || {
+    err "cannot create temporary diff record"; return 1; }
+  if ! git diff-tree --no-commit-id --name-status -r -z --no-renames \
+      "$parent" "$hash" >"$changes_file" 2>"$LOCKBASE.err"; then
+    err "git diff-tree failed while checking $hash: $(head -3 "$LOCKBASE.err" | tr '\n' ' ')"
+    rm -f -- "$changes_file"
+    return 1
+  fi
+  while :; do
+    status=''
+    if IFS= read -r -d '' status; then
+      :
+    elif [ -z "$status" ]; then
+      break
+    fi
+    cpath=''
+    if ! IFS= read -r -d '' cpath; then
+      err "malformed NUL-delimited diff for $hash"
+      rc=1
+      break
+    fi
+    case $status in
+      A|M|D|T) ;;
+      *) err "unexpected Git tree status in diff for $hash"; rc=1; break ;;
+    esac
+    seen=1
+    repo_path_allowed "$cpath" || { rc=1; break; }
+    matched=0
+    for rp in "${req[@]}"; do
+      case $cpath in "$rp"|"$rp"/*) matched=1; break ;; esac
+    done
+    if [ "$matched" -eq 0 ]; then
+      err "commit changed a path outside the request: $cpath"
+      rc=1
+      break
+    fi
+    if [ "$status" = D ] && { [ -e "$cpath" ] || [ -L "$cpath" ]; }; then
+      err "commit would delete $cpath but it exists on disk (nested repo?) — refusing"
+      rc=1
+      break
+    fi
+  done <"$changes_file"
+  if [ "$rc" -eq 0 ] && [ "$seen" -eq 0 ]; then
+    err "candidate $hash has no changed paths"
+    rc=1
+  fi
+  rm -f -- "$changes_file"
+  return "$rc"
+}
+
+candidate_is_child_of() { # <commit> <expected-parent>
+  local hash=$1 parent=$2 parents
+  parents=$(git rev-list --parents -n 1 "$hash" 2>/dev/null) || {
+    err "cannot inspect candidate commit $hash"; return 1; }
+  [ "$parents" = "$hash $parent" ] || {
+    err "candidate is not a single-parent child of the current lane branch tip"; return 1; }
+}
+
+candidate_is_conflict_free() { # <commit>
+  local hash=$1 conflicts
+  conflicts=$(jj_ids "$hash & conflicts()" commit_id) || {
+    err "cannot inspect conflicts for candidate $hash"; return 1; }
+  [ -z "$conflicts" ] || {
+    err "candidate $hash has unresolved conflicts"; return 1; }
+}
+
+candidate_has_identity() { # <commit> <id>
+  local hash=$1 id=$2 identity
+  identity=$(git log -1 --format='%an|%ae|%cn|%ce' "$hash" 2>/dev/null) || {
+    err "cannot inspect identity for candidate $hash"; return 1; }
+  [ "$identity" = "$id-shokunin|$id@shokunin.local|$id-shokunin|$id@shokunin.local" ] || {
+    err "candidate identity does not match requested --as $id"; return 1; }
+}
+
 cmd_commit() {
   [ $# -ge 1 ] || usage
   local dir=$1 id='' msg='' branch lane_id phys q p hash tip own='' allow_large=0
-  local diffout base cparent line cpath body pre mid suf left
+  local diffout base left
   shift
   while [ $# -gt 0 ]; do
     case $1 in
@@ -524,14 +629,7 @@ cmd_commit() {
   local -a req=() files=() fs_req=() fs_files=() fs_dirs=()
   for p in "$@"; do
     q=$(realpath -m --relative-to=. -- "$p" 2>/dev/null) || { err "bad path: $p"; exit 1; }
-    case $q in
-      ''|.|..|../*|/*) err "path escapes the lane root: $p"; exit 1 ;;
-    esac
-    case $q in
-      .git|.git/*|.jj|.jj/*)                err "repo internals are never committable: $p"; exit 1 ;;
-      .ufo|.ufo/state|.ufo/state/*|.ufo/watchdog.log)
-        err "driver runtime is never committed by a lane: $p"; exit 1 ;;
-    esac
+    repo_path_allowed "$q" || exit 1
     if [ -d "$q" ]; then
       req+=("$q"); fs_dirs+=("root:\"$(fileset_escape "$q")\""); fs_req+=("root:\"$(fileset_escape "$q")\"")
     elif [ -e "$q" ] || [ -L "$q" ]; then
@@ -607,53 +705,11 @@ cmd_commit() {
   [ -n "$hash" ] || { err "cannot read committed hash"; exit 1; }
 
   # Sweep guards (the bookmark stays put on any violation):
-  # 1. The commit's parent must be the branch tip — a seat's own `jj commit`
-  #    would otherwise be swept in below it.
-  cparent=$(git rev-parse "$hash^" 2>/dev/null || true)
-  if [ "$cparent" != "$tip" ]; then
-    err "new commit's parent is not the $branch tip (a stray commit would be swept in); bookmark not moved"
-    exit 1
-  fi
-  # 2. Every changed path falls under the requested paths; .ufo/state never.
-  # 3. Phantom deletion: refuse a committed deletion of a file that still
-  #    exists on disk (a nested empty .git dir makes jj see deletions).
-  path_ok() { # <path> — every changed path must lie under a requested path
-    local cp=$1 rp2
-    case $cp in .ufo/state|.ufo/state/*)
-      err "commit would touch .ufo/state: $cp"; exit 1 ;;
-    esac
-    for rp2 in "${req[@]}"; do
-      case $cp in "$rp2"|"$rp2"/*) return 0 ;; esac
-    done
-    err "commit changed a path outside the request: $cp"; exit 1
-  }
-  while IFS= read -r line; do
-    [ -n "$line" ] || continue
-    case $line in
-      R\ *|C\ *)
-        # Rename/copy: `R {old => new}`, `R pre{old => new}suf`, or `R a => b`.
-        body=${line:2} pre='' mid='' suf=''
-        case $body in
-          *"{"*"=>"*"}"*)
-            pre=${body%%\{*}; mid=${body#*\{}; mid=${mid%%\}*}; suf=${body#*\}}
-            path_ok "$pre${mid%% => *}$suf"
-            path_ok "$pre${mid#* => }$suf" ;;
-          *" => "*)
-            path_ok "${body%% => *}"; path_ok "${body#* => }" ;;
-          *) err "cannot parse rename in diff summary: $line"; exit 1 ;;
-        esac
-        continue ;;
-    esac
-    cpath=${line:2}
-    path_ok "$cpath"
-    case $line in
-      D\ *)
-        if [ -e "$cpath" ] || [ -L "$cpath" ]; then
-          err "commit would delete $cpath but it exists on disk (nested repo?) — refusing"
-          exit 1
-        fi ;;
-    esac
-  done < <("$JJ_BIN" --ignore-working-copy diff --summary -r "$hash" 2>/dev/null)
+  # Validate the exact candidate before advancing the bookmark: direct parent,
+  # conflict-free status, and every NUL-delimited Git tree path are checked.
+  candidate_is_child_of "$hash" "$tip" || exit 1
+  candidate_is_conflict_free "$hash" || exit 1
+  validate_change_scope "$tip" "$hash" || exit 1
 
   "$JJ_BIN" --ignore-working-copy bookmark set "$branch" -r "$hash" >/dev/null 2>&1 \
     || { err "bookmark set failed"; exit 1; }
@@ -667,6 +723,79 @@ cmd_commit() {
   fi
 
   do_push "$branch" "$id" "$own" || exit 3
+  exit 0
+}
+
+
+# ---- explicit stranded-commit recovery ------------------------------------
+
+cmd_recover() {
+  [ $# -ge 1 ] || usage
+  local dir=$1 id='' revision='' branch lane_id phys p q hash tip known wc_parent
+  shift
+  while [ $# -gt 0 ]; do
+    case $1 in
+      --as)       id=${2:-}; shift 2 || usage ;;
+      --revision) revision=${2:-}; shift 2 || usage ;;
+      --)         shift; break ;;
+      *)          usage ;;
+    esac
+  done
+  [ -n "$id" ] && [ -n "$revision" ] && [ $# -gt 0 ] || usage
+  case $id in *[!a-z0-9-]*) err "bad --as id: $id"; exit 64 ;; esac
+  [[ $revision =~ ^[0-9a-f]{40}$ ]] || {
+    err "--revision must be a full 40-hex commit hash"; exit 64; }
+  phys=$(lane_realdir "$dir") || exit 1
+  [ -d "$phys/.jj" ] || { err "not jj-colocated: $phys"; exit 1; }
+  take_lock "$phys"
+  cd "$phys" || exit 1
+  branch=$(lane_branch_jj) || branch=$(lane_branch_git .) || {
+    err "no lane branch recorded (run: jj-lane.sh init)"; exit 1; }
+  lane_id=$(lane_id_jj) || { err "no lane identity recorded (run: jj-lane.sh init)"; exit 1; }
+  [ "$id" = "$lane_id" ] || [ "$id" = protocol ] || {
+    err "--as must be the lane id ($lane_id) or protocol: $id"; exit 1; }
+  "$JJ_BIN" --ignore-working-copy config list --repo 2>/dev/null \
+    | grep -q 'snapshot.auto-track = "none()"' || {
+    err "snapshot.auto-track is not \"none()\" in repo config (run: jj-lane.sh init)"; exit 1; }
+
+  local -a req=()
+  for p in "$@"; do
+    q=$(realpath -m --relative-to=. -- "$p" 2>/dev/null) || {
+      err "bad path: $p"; exit 1; }
+    repo_path_allowed "$q" || exit 1
+    req+=("$q")
+  done
+
+  tip=$(git rev-parse --verify "refs/heads/$branch" 2>/dev/null) || {
+    err "refs/heads/$branch missing"; exit 1; }
+  [[ $tip =~ ^[0-9a-f]{40}$ ]] || {
+    err "refs/heads/$branch is not a 40-hex hash"; exit 1; }
+  hash=$(git rev-parse --verify "$revision^{commit}" 2>/dev/null) || {
+    err "candidate is not an existing commit: $revision"; exit 1; }
+  [ "$hash" = "$revision" ] || { err "--revision is not the full commit hash"; exit 1; }
+  known=$(jj_ids "$hash" commit_id) || {
+    err "cannot inspect candidate through jj: $hash"; exit 1; }
+  [ "$known" = "$hash" ] || { err "candidate is not a single jj commit: $hash"; exit 1; }
+  wc_parent=$(jj_ids '@-' commit_id) || {
+    err "cannot inspect the working-copy parent"; exit 1; }
+  [ "$wc_parent" = "$hash" ] || {
+    err "candidate is not the direct parent of the current working copy"; exit 1; }
+
+  # All refusal checks precede the bookmark write. In particular, validate the
+  # identity, conflict state, exact parent, requested paths and current branch
+  # preflight before making this explicitly named candidate the branch tip.
+  candidate_has_identity "$hash" "$id" || exit 1
+  candidate_is_conflict_free "$hash" || exit 1
+  candidate_is_child_of "$hash" "$tip" || exit 1
+  validate_change_scope "$tip" "$hash" || exit 1
+  push_preflight "$branch" || exit 1
+
+  "$JJ_BIN" --ignore-working-copy bookmark set "$branch" -r "$hash" >/dev/null 2>&1 \
+    || { err "bookmark set failed"; exit 1; }
+  # Explicit recovery never rebases: a stale remote must not rewrite @ or its
+  # uncommitted working-copy files. The shared push helper still verifies via
+  # ls-remote before emitting the only citable landed line.
+  do_push "$branch" "$id" "$hash" 1 || exit 3
   exit 0
 }
 
@@ -703,9 +832,10 @@ cmd_push() {
 }
 
 case ${1:-} in
-  init)   shift; cmd_init "$@" ;;
-  commit) shift; cmd_commit "$@" ;;
-  push)   shift; cmd_push "$@" ;;
-  state)  shift; cmd_state "$@" ;;
-  *)      usage ;;
+  init)    shift; cmd_init "$@" ;;
+  commit)  shift; cmd_commit "$@" ;;
+  recover) shift; cmd_recover "$@" ;;
+  push)    shift; cmd_push "$@" ;;
+  state)   shift; cmd_state "$@" ;;
+  *)       usage ;;
 esac

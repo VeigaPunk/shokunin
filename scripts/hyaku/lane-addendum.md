@@ -161,8 +161,29 @@ not, and name both in the report.
          -m "round-{{ROUND}}: <what>" -- <repo-relative path>...
 
    Cite ONLY the helper's final `landed <hash>` line after successful remote verification.
-   `rewritten <old> -> <new>` is diagnostic, never a citable landed hash. Exit 3 retains a local
-   commit but proves no push: resolve the reported cause, then retry the helper push; never force.
+   `rewritten <old> -> <new>` is diagnostic, never a citable landed hash. For an ordinary
+   `commit`, exit 3 retains a local commit but proves no push: resolve the cause, then retry
+   the helper push; never force.
+   The post-commit scope/deletion guard reads NUL-delimited `git diff-tree
+   --name-status -z --no-renames` records, not human brace summaries: a rename
+   is checked as a deletion plus an addition, and an unchanged copy source is
+   not treated as a changed path.
+   If a specific helper-stranded candidate must be recovered, supply its
+   reviewed full hash and the original requested paths explicitly:
+
+       {{FLEET_ROOT}}/scripts/hyaku/jj-lane.sh recover {{LANE_CWD}} --as {{LANE}} \
+         --revision <full-commit-hash> -- <original repo-relative path>...
+
+   Recovery is never automatic: the candidate must be a single direct child of
+   the current lane branch tip, current `@` must be its direct child, both
+   author and committer must match the lane/protocol identity, it must be
+   conflict-free with a nonempty tree diff, and every changed path must pass
+   the same scope, runtime and phantom-deletion guards. Its local mutation
+   advances only the named branch bookmark; it does not snapshot or rewrite
+   the remainder of `@`, and refuses stale-remote rebasing.
+   Exit 3 means no landed-hash proof; never cite a candidate unless the helper
+   prints `landed <hash>` after remote verification. Do not retry ordinary `push`
+   while unrelated edits remain in `@`.
    `nothing to commit` lands nothing. Explicit files above 10 MiB require `--allow-large`. A named
    directory commits like `git add <dir>` (ignored content stays out; new files over 1 MiB inside it
    are skipped with a warning — name them as files). **Never** `git add`, `git commit`, `git stash`,

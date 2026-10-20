@@ -255,6 +255,22 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
    content about pins, no writer. In-session seats reach MCP tools through `xd://` devices (see
    provider probes below), so the 207-tool commandcode overflow hits headless runs only. Left as
    is for the operator.
+6. **Mado r20 copy-summary guard failure and helper-owned recovery.** A helper-created
+   commit was stranded after jj displayed `C .ufo/waves/round-20/{ => w2/IsoV3}/isolate.sh`:
+   the old parser fabricated a doubled slash and rejected an allowed path. Replaced rendered
+   summary parsing with NUL-delimited Git tree changes (`--no-renames`); copied destinations
+   and both rename endpoints are checked, unsupported/empty/error diffs refuse.
+   Added explicit `recover` with full hash, exact author/committer, direct branch parent,
+   current `@` relationship, conflict/scope guards, and a non-snapshotting fast-forward push.
+   First sandbox run was 44/57 (fixture failures retained); corrected fixtures yielded 57/57,
+   including old-fail incident-shaped move/copy and dirty-working-copy recovery checks.
+   Live recovery used the original nine-path allowlist, not current dirt:
+   `landed f8576f765179f651c307f2ea120db1476efcffe8`. Before/after `@` stayed
+   `33f6afbb17d5f8bb124768c211f04f0df9ce4128`, the remaining-diff SHA-256 stayed
+   `fcf3017e19efe959f1b785cf44bdf031fe3fa4b72eb4c68a09944ebc23fc771e`,
+   and the unrelated `w1/reports/IsolationHarness.md` edit was preserved. No raw lane Git/JJ
+   write was used for recovery. Implementation JjScopeRecovery; review JjRecoverySafety;
+   parent executed final checks and live recovery. No tools installed.
 
 
 ## Provider probes (2026-10-20 10:0x -03)

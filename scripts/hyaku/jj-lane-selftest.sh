@@ -4,28 +4,36 @@
 #   jj-lane-selftest.sh [lane-repo]
 #
 # Builds a bare remote + clones of a REAL lane repo ($1, default
-# kake-shokunin) under mktemp -d /fast/scratch/jj-hyaku.XXXXXX — the only
-# contact with the live repo is `git clone` reading it; nothing is pushed to
-# a real remote and no jj command runs inside a live lane. Prints one
-# PASS/FAIL line per case and `selftest <passed>/<total>`; exit 0 iff all pass.
+# kake-shokunin) under /tmp/jj-hyaku.XXXXXX — the only contact with the
+# source is `git clone` reading it; nothing is pushed to a real remote and no
+# jj command runs inside a live lane. Prints one PASS/FAIL line per case and
+# `selftest <passed>/<total>`; exit 0 iff all pass.
 #
-# Every `z*` case asserts the hardened contract; each is also executed against
-# the OLD helper (git show HEAD:scripts/hyaku/jj-lane.sh, saved under the
-# sandbox) and is required to FAIL there — the "old-helper: FAIL" lines are
-# the regression proof.
+# Every case runs against the working helper and the HEAD helper extracted into
+# the sandbox. Older behavior is diagnostic by default; only cases explicitly
+# marked as regressions require the HEAD helper to fail.
 set -u
 
 SRC=${1:-/home/vgpnk/Projects/shokunin/kake-shokunin}
 SELF_DIR=$(cd "$(dirname "$0")" && pwd -P)
 HELPER=${HELPER:-$SELF_DIR/jj-lane.sh}
 JJ=${JJ_BIN:-$(command -v jj 2>/dev/null || echo "$HOME/.local/bin/jj")}
-export JJ_BIN=$JJ
 
-mkdir -p /fast/scratch
-SB=$(mktemp -d /fast/scratch/jj-hyaku.XXXXXX) || { echo "sandbox failed" >&2; exit 1; }
+# Ignore inherited repository selectors/configuration; test Git/JJ state is
+# sandbox-only even when invoked from a live colocated lane or with GIT_DIR set.
+for name in ${!GIT_@}; do unset "$name"; done
+for name in ${!JJ_@}; do [ "$name" = JJ_BIN ] || unset "$name"; done
+export GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null
+export JJ_BIN="$JJ"
+
+SB=$(mktemp -d /tmp/jj-hyaku.XXXXXX) || { echo "sandbox failed" >&2; exit 1; }
+# Isolate jj's global configuration as well as every clone and bare remote.
+export HOME="$SB/home"
+export XDG_CONFIG_HOME="$HOME/.config"
+mkdir -p "$XDG_CONFIG_HOME"
 # jj keeps per-repo config in $HOME/.config/jj/repos/<config-id>/; init writes
-# there, so drop exactly the entries belonging to our sandbox clones (never a
-# live lane's) before removing the sandbox.
+# there, so drop exactly the entries belonging to our sandbox clones before
+# removing the sandbox.
 cleanup() {
   local c id
   for c in "$SB"/*/; do
@@ -89,12 +97,12 @@ op_commit() { # <file> <content>
 
 remote_tip() { git -C "$REMOTE" rev-parse "refs/heads/$BR" 2>/dev/null; }
 
-# Run one scenario function against BOTH helpers on fresh clones: PASS
-# requires the hardened outcome (body exit 0) on the new helper and a failing
-# outcome on the old helper. $D = clone dir, $H = helper for the body's run.
+# Run one scenario function against BOTH helpers on fresh clones. $D = clone
+# dir, $H = helper for the body's run. Set the third arg only for a regression
+# that must fail against the HEAD baseline.
 D=; H=
-try_both() { # <label> <function>
-  local label=$1 fn=$2 ok_new ok_old
+try_both() { # <label> <function> [expect-old-failure]
+  local label=$1 fn=$2 expect_old_fail=${3:-0} ok_new ok_old
   new_remote
   mkclone "${label}-new"; D="$SB/${label}-new"; H="$HELPER"
   ( $fn ) >/dev/null 2>"$SB/${label}.new.err"; ok_new=$?
@@ -104,10 +112,12 @@ try_both() { # <label> <function>
   local ok=0
   if [ $ok_new -ne 0 ]; then
     ok=1; sed "s/^/    new-helper: /" "$SB/${label}.new.err" | head -5 >&2
-  elif [ $ok_old -eq 0 ]; then
-    ok=1; echo "  (old-helper: also passed — not a regression case)" >&2
+  elif [ "$expect_old_fail" -eq 1 ] && [ "$ok_old" -eq 0 ]; then
+    ok=1; echo "  (old-helper: passed unexpectedly — expected regression)"
+  elif [ $ok_old -ne 0 ]; then
+    echo "  (old-helper: FAIL)"
   else
-    echo "  (old-helper: FAIL, as required)"
+    echo "  (old-helper: PASS; behavior already present at HEAD)"
   fi
   check "$label" "$ok"
 }
@@ -331,9 +341,9 @@ git -C "$REMOTE" ls-tree -r --name-only "$PH" -- wave | grep -q '__pycache__' &&
 check "o dir-commit-skips-ignored" "$ok"
 
 #############################################################################
-# z* — hardening cases. Each body runs on a fresh clone under the new helper
-# and under the old helper; PASS needs the hardened outcome (exit 0) on the
-# new one and a different outcome on the old one.
+# z* — hardening cases use fresh sandbox clones. Only the explicitly marked
+# regression cases require the HEAD helper to fail; other baseline results are
+# diagnostic, and every case checks the current helper's required behavior.
 
 case_z1() {
   "$H" init "$D" testlane >/dev/null 2>&1 || return 1
@@ -349,7 +359,7 @@ case_z1b() {
   "$H" init "$D" testlane >/dev/null 2>&1 || return 1
   echo x > "$D/X.md"; "$H" commit "$D" --as testlane -m c1 -- X.md >/dev/null 2>&1 || return 1
   local tip t; tip=$(git -C "$REMOTE" rev-parse "refs/heads/$BR")
-  t=$(cd "$D" && git commit-tree "$BR^{tree}" -p "$BR~1" -m sideways)
+  t=$(git -C "$D" -c user.name=operator -c user.email=op@sandbox.local commit-tree "$BR^{tree}" -p "$BR~1" -m sideways)
   git -C "$D" update-ref "refs/heads/$BR" "$t"
   "$H" push "$D" >/dev/null 2>&1 && return 1
   [ "$(git -C "$REMOTE" rev-parse "refs/heads/$BR")" = "$tip" ]
@@ -531,16 +541,9 @@ case_z15() {
   "$H" init "$wt" testlane >/dev/null 2>&1 && return 1
   "$H" commit "$wt" --as testlane -m x -- README.md >/dev/null 2>&1 && return 1
   "$H" state "$wt" >/dev/null 2>&1 && return 1
-  # The fleet root itself: `state` is read-only and safe on both helpers;
-  # `init` would mutate the live repo under the OLD helper, so new-helper only.
-  "$H" state /home/vgpnk/Projects/shokunin >/dev/null 2>&1 && return 1
-  if [ "$(readlink -f "$H")" != "$(readlink -f "$OLD")" ]; then
-    "$H" init /home/vgpnk/Projects/shokunin testlane >/dev/null 2>&1 && return 1
-    "$H" commit /home/vgpnk/Projects/shokunin --as testlane -m x -- README.md >/dev/null 2>&1 && return 1
-  fi
   return 0
 }
-try_both z15-fleet-and-worktree-refused case_z15
+try_both z15-worktree-refused case_z15
 
 case_z16() {
   export JJ_USER="Env Attacker" JJ_EMAIL=env@evil.test
@@ -567,6 +570,33 @@ jj_lane_commit() { # <file> <msg> — native jj commit inside $D, lane identity
       commit -m "$2" -- "$1" >/dev/null 2>&1 &&
     "$JJ" --ignore-working-copy bookmark set "$BR" -r @- >/dev/null 2>&1 )
 }
+
+jj_strand_commit() { # <file> <msg> [identity] — commit without moving the bookmark
+  local file=$1 msg=$2 who=${3:-testlane}
+  ( cd "$D" &&
+    "$JJ" --config 'snapshot.auto-track="none()"' \
+      --config "user.name=${who}-shokunin" --config "user.email=${who}@shokunin.local" \
+      file track --include-ignored -- "root-file:\"$file\"" >/dev/null 2>&1 &&
+    "$JJ" --config 'snapshot.auto-track="none()"' \
+      --config "user.name=${who}-shokunin" --config "user.email=${who}@shokunin.local" \
+      metaedit --update-author >/dev/null 2>&1 &&
+    "$JJ" --config 'snapshot.auto-track="none()"' \
+      --config "user.name=${who}-shokunin" --config "user.email=${who}@shokunin.local" \
+      commit -m "$msg" -- "$file" >/dev/null 2>&1 )
+}
+
+
+jj_stranded_hash() {
+  ( cd "$D" && "$JJ" --ignore-working-copy log --no-graph -r '@-' -T commit_id 2>/dev/null )
+}
+INCIDENT_SRC=.ufo/waves/round-20/isolate.sh
+INCIDENT_DST=.ufo/waves/round-20/w2/IsoV3/isolate.sh
+seed_incident_source() {
+  mkdir -p "$D/.ufo/waves/round-20" || return 1
+  printf 'incident source bytes\n' > "$D/$INCIDENT_SRC"
+  "$H" commit "$D" --as testlane -m incident-source -- "$INCIDENT_SRC" >/dev/null 2>&1
+}
+
 
 case_z17() {
   "$H" init "$D" testlane >/dev/null 2>&1 || return 1
@@ -700,6 +730,223 @@ case_z27() {
   "$H" state "$D" 2>&1 | grep -q "not a 40-hex"
 }
 try_both z27-state-needs-40hex case_z27
+
+
+# z28–z30 — machine-readable tree paths keep nested move/copy summaries out
+# of the scope guard; an unchanged copy source is not a changed path.
+case_z28() {
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  seed_incident_source || return 1
+  mkdir -p "$D/.ufo/waves/round-20/w2/IsoV3"
+  mv "$D/$INCIDENT_SRC" "$D/$INCIDENT_DST"
+  local out ph
+  out=$("$H" commit "$D" --as testlane -m move-in -- "$INCIDENT_SRC" "$INCIDENT_DST" 2>/dev/null)
+  ph=$(printf '%s\n' "$out" | sed -n 's/^landed //p' | head -1)
+  [ -n "$ph" ] || return 1
+  ! git -C "$REMOTE" cat-file -e "$BR:$INCIDENT_SRC" 2>/dev/null || return 1
+  git -C "$REMOTE" cat-file -e "$BR:$INCIDENT_DST"
+}
+try_both z28-incident-move-into-nested case_z28 1
+
+case_z29() {
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  mkdir -p "$D/.ufo/waves/round-20/w2/IsoV3"
+  printf 'outgoing isolate bytes\n' > "$D/$INCIDENT_DST"
+  "$H" commit "$D" --as testlane -m seed -- "$INCIDENT_DST" >/dev/null 2>&1 || return 1
+  mv "$D/$INCIDENT_DST" "$D/$INCIDENT_SRC"
+  local out ph
+  out=$("$H" commit "$D" --as testlane -m move-out -- "$INCIDENT_DST" "$INCIDENT_SRC" 2>/dev/null)
+  ph=$(printf '%s\n' "$out" | sed -n 's/^landed //p' | head -1)
+  [ -n "$ph" ] || return 1
+  ! git -C "$REMOTE" cat-file -e "$BR:$INCIDENT_DST" 2>/dev/null || return 1
+  git -C "$REMOTE" cat-file -e "$BR:$INCIDENT_SRC"
+}
+try_both z29-incident-move-out-of-nested case_z29 1
+
+case_z30() {
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  seed_incident_source || return 1
+  mkdir -p "$D/.ufo/waves/round-20/w2/IsoV3"
+  cp "$D/$INCIDENT_SRC" "$D/$INCIDENT_DST"
+  local before out ph
+  before=$(git -C "$D" show "$BR:$INCIDENT_SRC" | sha256sum)
+  out=$("$H" commit "$D" --as testlane -m copy -- "$INCIDENT_DST" 2>/dev/null)
+  ph=$(printf '%s\n' "$out" | sed -n 's/^landed //p' | head -1)
+  [ -n "$ph" ] || return 1
+  [ "$(git -C "$REMOTE" show "$BR:$INCIDENT_SRC" | sha256sum)" = "$before" ] || return 1
+  [ "$(git -C "$REMOTE" show "$BR:$INCIDENT_DST" | sha256sum)" = "$before" ]
+}
+try_both z30-incident-copy-destination-only case_z30
+reject_recovery() { # <candidate> <identity> <expected-error> <requested-path>...
+  local candidate=$1 id=$2 expected=$3 before after remote_before remote_after rc
+  local wc_before wc_after status_before status_after
+  shift 3
+  before=$(git -C "$D" rev-parse "refs/heads/$BR") || return 1
+  remote_before=$(remote_tip) || return 1
+  wc_before=$(cd "$D" && "$JJ" --ignore-working-copy log --no-graph -r @ -T commit_id 2>/dev/null) || return 1
+  status_before=$(git -C "$D" status --porcelain --untracked-files=all 2>/dev/null) || return 1
+  "$H" recover "$D" --as "$id" --revision "$candidate" -- "$@" >"$SB/recover.err" 2>&1
+  rc=$?
+  [ "$rc" -eq 1 ] || return 1
+  grep -Fq -- "$expected" "$SB/recover.err" || return 1
+  after=$(git -C "$D" rev-parse "refs/heads/$BR") || return 1
+  remote_after=$(remote_tip) || return 1
+  wc_after=$(cd "$D" && "$JJ" --ignore-working-copy log --no-graph -r @ -T commit_id 2>/dev/null) || return 1
+  status_after=$(git -C "$D" status --porcelain --untracked-files=all 2>/dev/null) || return 1
+  [ "$after" = "$before" ] && [ "$remote_after" = "$remote_before" ] \
+    && [ "$wc_after" = "$wc_before" ] && [ "$status_after" = "$status_before" ]
+}
+
+case_z31() {
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  seed_incident_source || return 1
+  mkdir -p "$D/.ufo/waves/round-20/w2/IsoV3"
+  mv "$D/$INCIDENT_SRC" "$D/$INCIDENT_DST"
+  ( cd "$D" &&
+    "$JJ" --config 'snapshot.auto-track="none()"' \
+      --config "user.name=$IDENT_NAME" --config "user.email=$IDENT_MAIL" \
+      file track --include-ignored -- "root-file:\"$INCIDENT_DST\"" >/dev/null 2>&1 &&
+    "$JJ" --config 'snapshot.auto-track="none()"' \
+      --config "user.name=$IDENT_NAME" --config "user.email=$IDENT_MAIL" \
+      metaedit --update-author >/dev/null 2>&1 &&
+    "$JJ" --config 'snapshot.auto-track="none()"' \
+      --config "user.name=$IDENT_NAME" --config "user.email=$IDENT_MAIL" \
+      commit -m rename-stranded >/dev/null 2>&1 ) || return 1
+  local candidate
+  candidate=$(jj_stranded_hash)
+  [ -n "$candidate" ] || return 1
+  reject_recovery "$candidate" testlane "commit changed a path outside the request" "$INCIDENT_DST"
+}
+try_both z31-rename-unrequested-source-refused case_z31
+
+case_z32() {
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  echo stranded > "$D/RECOVERED.md"
+  jj_strand_commit RECOVERED.md stranded || return 1
+  local branch_before candidate out ph wc_before wc_after
+  branch_before=$(git -C "$D" rev-parse "refs/heads/$BR") || return 1
+  candidate=$(jj_stranded_hash)
+  [ -n "$candidate" ] || return 1
+  [ "$(git -C "$D" rev-parse "$candidate^")" = "$branch_before" ] || return 1
+  printf 'report edit\n' >> "$D/README.md"
+  printf 'untracked report\n' > "$D/UNRELATED-REPORT.md"
+  cp "$D/README.md" "$SB/z32-readme.before"
+  cp "$D/UNRELATED-REPORT.md" "$SB/z32-report.before"
+  wc_before=$(cd "$D" && "$JJ" --ignore-working-copy log --no-graph -r @ -T commit_id 2>/dev/null)
+  out=$("$H" recover "$D" --as testlane --revision "$candidate" -- RECOVERED.md 2>/dev/null)
+  ph=$(printf '%s\n' "$out" | sed -n 's/^landed //p' | head -1)
+  [ "$ph" = "$candidate" ] || return 1
+  [ "$(git -C "$D" rev-parse "refs/heads/$BR")" = "$candidate" ] || return 1
+  [ "$(remote_tip)" = "$candidate" ] || return 1
+  git -C "$REMOTE" cat-file -e "$BR:RECOVERED.md" || return 1
+  cmp -s "$SB/z32-readme.before" "$D/README.md" || return 1
+  cmp -s "$SB/z32-report.before" "$D/UNRELATED-REPORT.md" || return 1
+  wc_after=$(cd "$D" && "$JJ" --ignore-working-copy log --no-graph -r @ -T commit_id 2>/dev/null)
+  [ "$wc_after" = "$wc_before" ] || return 1
+  [ "$(cd "$D" && "$JJ" --ignore-working-copy log --no-graph -r @- -T commit_id 2>/dev/null)" = "$candidate" ]
+}
+try_both z32-explicit-recovery-preserves-working-copy case_z32 1
+
+case_z33() {
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  echo first > "$D/FIRST.md"
+  jj_strand_commit FIRST.md first || return 1
+  echo second > "$D/SECOND.md"
+  jj_strand_commit SECOND.md second || return 1
+  local candidate
+  candidate=$(jj_stranded_hash)
+  [ -n "$candidate" ] || return 1
+  reject_recovery "$candidate" testlane "candidate is not a single-parent child" SECOND.md
+}
+try_both z33-wrong-parent-refused case_z33
+
+case_z34() {
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  echo wrong > "$D/WRONG-IDENTITY.md"
+  jj_strand_commit WRONG-IDENTITY.md wrong-identity other || return 1
+  local candidate
+  candidate=$(jj_stranded_hash)
+  [ -n "$candidate" ] || return 1
+  reject_recovery "$candidate" testlane "candidate identity does not match requested" WRONG-IDENTITY.md
+}
+try_both z34-wrong-identity-refused case_z34
+
+case_z35() {
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  echo first > "$D/FIRST-CANDIDATE.md"
+  jj_strand_commit FIRST-CANDIDATE.md first || return 1
+  local first tip
+  first=$(jj_stranded_hash)
+  tip=$(git -C "$D" rev-parse "refs/heads/$BR") || return 1
+  ( cd "$D" && "$JJ" --config 'snapshot.auto-track="none()"' new "$tip" >/dev/null 2>&1 ) || return 1
+  echo second > "$D/SECOND-CANDIDATE.md"
+  jj_strand_commit SECOND-CANDIDATE.md second || return 1
+  [ -n "$first" ] || return 1
+  reject_recovery "$first" testlane "candidate is not the direct parent of the current working copy" FIRST-CANDIDATE.md
+}
+try_both z35-not-current-candidate-refused case_z35
+
+case_z36() {
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  local base left right candidate
+  base=$(git -C "$D" rev-parse "refs/heads/$BR") || return 1
+  echo left > "$D/CONFLICT.md"
+  jj_strand_commit CONFLICT.md left || return 1
+  left=$(jj_stranded_hash)
+  ( cd "$D" && "$JJ" --config 'snapshot.auto-track="none()"' new "$base" >/dev/null 2>&1 ) || return 1
+  echo right > "$D/CONFLICT.md"
+  jj_strand_commit CONFLICT.md right || return 1
+  right=$(jj_stranded_hash)
+  [ -n "$left" ] && [ -n "$right" ] || return 1
+  ( cd "$D" && "$JJ" --ignore-working-copy bookmark set "$BR" -r "$left" >/dev/null 2>&1 &&
+    "$JJ" --config 'snapshot.auto-track="none()"' new "$left" "$right" >/dev/null 2>&1 &&
+    "$JJ" --config 'snapshot.auto-track="none()"' \
+      --config "user.name=$IDENT_NAME" --config "user.email=$IDENT_MAIL" \
+      metaedit --update-author >/dev/null 2>&1 &&
+    "$JJ" --config 'snapshot.auto-track="none()"' \
+      --config "user.name=$IDENT_NAME" --config "user.email=$IDENT_MAIL" \
+      commit -m conflicted-stranded >/dev/null 2>&1 ) || return 1
+  candidate=$(jj_stranded_hash)
+  [ -n "$candidate" ] || return 1
+  reject_recovery "$candidate" testlane "has unresolved conflicts" CONFLICT.md
+}
+try_both z36-conflicted-candidate-refused case_z36
+
+case_z37() {
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  echo actual > "$D/ACTUAL.md"
+  jj_strand_commit ACTUAL.md out-of-scope || return 1
+  local candidate
+  candidate=$(jj_stranded_hash)
+  [ -n "$candidate" ] || return 1
+  reject_recovery "$candidate" testlane "commit changed a path outside the request" README.md
+}
+try_both z37-out-of-scope-refused case_z37
+
+case_z38() {
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  mkdir -p "$D/.ufo/state"
+  echo private > "$D/.ufo/state/run.json"
+  jj_strand_commit .ufo/state/run.json state || return 1
+  local candidate
+  candidate=$(jj_stranded_hash)
+  [ -n "$candidate" ] || return 1
+  reject_recovery "$candidate" testlane "driver runtime is never committed by a lane" README.md
+}
+try_both z38-state-path-refused case_z38
+case_z39() {
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  local tip candidate
+  tip=$(git -C "$D" rev-parse "refs/heads/$BR") || return 1
+  ( cd "$D" && "$JJ" --config 'snapshot.auto-track="none()"' \
+      --config "user.name=$IDENT_NAME" --config "user.email=$IDENT_MAIL" \
+      new "$tip" >/dev/null 2>&1 ) || return 1
+  candidate=$(cd "$D" && "$JJ" --ignore-working-copy log --no-graph -r @ -T commit_id 2>/dev/null)
+  [ -n "$candidate" ] || return 1
+  ( cd "$D" && "$JJ" --config 'snapshot.auto-track="none()"' new "$candidate" >/dev/null 2>&1 ) || return 1
+  reject_recovery "$candidate" testlane "has no changed paths" README.md
+}
+try_both z39-empty-candidate-refused case_z39
 
 # p. `state` serves the driver for EVERY lane: a plain git clone never init'ed
 # (detached HEAD) and a lane colocated before lane.branch existed must still

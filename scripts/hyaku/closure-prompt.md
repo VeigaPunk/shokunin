@@ -52,8 +52,24 @@ never pass a model parameter; you write only the two artifacts in steps 4–5):
    — cite ONLY the final `landed <hash>` line after successful remote verification; a
    `rewritten <old> -> <new>` line is diagnostic, not evidence that either hash landed.
    Confirm with `git -C {{LANE_CWD}} ls-remote origin refs/heads/<branch>`.
-   Exit 3 retains a local commit but proves no push: resolve the reported cause before retrying
-   the helper push. Never `git add`/`git commit`/`git push` or a mutating jj command in the lane:
+   If the helper left one explicitly identified commit stranded after its scope
+   guard, do not retry `commit` or adopt a descendant automatically. Recover
+   only that reviewed full hash with the original requested paths:
+
+       {{FLEET_ROOT}}/scripts/hyaku/jj-lane.sh recover {{LANE_CWD}} --as protocol \
+         --revision <full-commit-hash> -- corpus/lessons/round-{{ROUND}}-verifier-spotcheck.md
+
+   The candidate must be a single direct child of the lane tip and current `@`
+   its direct child; author and committer must both match the protocol identity,
+   it must be conflict-free with a nonempty tree diff, and every NUL-delimited
+   Git tree path must pass the same scope/deletion guards. Recovery leaves
+   `@`'s other edits untouched and
+   refuses to rebase on a moved remote; only a verified `landed <hash>` is
+   citable. An exit 3 is not a push proof: do not retry ordinary `push` while
+   the working copy has unrelated edits.
+   For an ordinary `commit`, exit 3 retains a local commit but proves no push:
+   resolve the reported cause before retrying the helper push. Never
+   `git add`/`git commit`/`git push` or a mutating jj command in the lane:
    jj transactions can reset the index, and a stray commit could ride the next push.
 5. **Closure entry.** Write the JSON object to a temp file and run
    `{{FLEET_ROOT}}/scripts/hyaku/append-closure.py --entry <file>` (validates, appends under the
