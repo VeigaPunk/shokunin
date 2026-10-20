@@ -13,6 +13,6 @@ while read -r l _; do
 done < "$H/pool.txt"
 [ -e "$STATE/stop" ] && echo "!! stop file present"
 ls "$STATE"/pause-* >/dev/null 2>&1 && echo "!! paused: $(ls "$STATE"/pause-* | xargs -n1 basename | paste -sd' ')"
-echo "== rounds done this campaign: $(grep -c ' round-done ' "$STATE/events.log" 2>/dev/null || echo 0)"
+echo "== rounds done this campaign: $(grep -c " round-done " "$STATE/events.log" 2>/dev/null)"
 echo "== last events"
 tail -n "${1:-15}" "$STATE/events.log" 2>/dev/null
