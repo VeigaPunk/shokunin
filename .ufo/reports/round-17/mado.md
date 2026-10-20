@@ -1,6 +1,6 @@
 # mado — round 17 report (hyaku phase 2, attempt 1)
 
-Lane HEAD (pushed): `6046ab72b18dd0e68c3116cb2c0134ba6f687beb`. Baseline `27cd06f`
+Lane HEAD (pushed): `9bbb8819ead6dbd0928732927280d5344cef150e` (results at `6046ab7`; `9bbb881` appends late wave-2 lesson residuals: tripwire does not classify uv/npx/pip/npm/cargo installers; reminder reached seats after dispatch). Baseline `27cd06f`
 (admitted round-16 closure). Pre-registration `0175f13`. Admission is **not**
 asserted here; independent non-author closure and operator disposition remain
 required. This round does not readmit round 15.
@@ -64,6 +64,7 @@ receipt labels, P4/P6 sourced routes, transcript tripwire".
 | `988b858` | C3: tripwire tool, suites, real-transcript receipts, SKILL rows, lesson M2 |
 | `f71ccbe` | wave-2 corrections: tripwire fixes + 26-case regression suite, S066 digest / S059 / S061 / S062 / S070 anchors, S071, note scope/anchors, label-check and measure hardening, both waves' reports |
 | `6046ab7` | results tables, capability row, harm watch, final receipts, LOG |
+| `9bbb881` | lesson: late wave-2 residuals (M3/M4/M5) |
 
 ## Before → after measurements
 
