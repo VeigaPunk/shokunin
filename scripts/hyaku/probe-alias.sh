@@ -2,9 +2,11 @@
 # hyaku probe-alias — which provider/model actually answers an alias right now.
 # A failing primary silently walks a fallback chain, so "it replied" is not evidence
 # the alias works; this prints the answering hop and every errored hop before it.
+# --tools=read keeps MCP tools out of the request: a native MCP tool list (rea: 207 tools)
+# overflows commandcode's 32768-node JSON limit and fakes an m_flash failure (2026-10-20).
 #   probe-alias.sh m_zfl [m_flash ...]
 for a in "$@"; do
-  out=$(timeout 180 omp -p --no-session --no-tools --no-skills --no-rules --mode json \
+  out=$(timeout 180 omp -p --no-session --tools=read --no-skills --no-rules --mode json \
         --model "@$a" "Reply with exactly the word PONG." 2>/dev/null)
   printf '%s\n' "$out" | python3 -c '
 import json, sys
