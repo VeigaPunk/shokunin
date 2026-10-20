@@ -30,6 +30,10 @@ mechanics and never relaxes them. Repo files beat this prompt (PROTOCOL.md snaps
    Wave 1 typically builds (recon, source opening, entry drafting, tooling); wave 2 falsifies
    (re-run counting commands, re-open sources, attack each claim). The §3 L2 floor is met
    inside the wave.
+   **Planner seat (orchestrator ruling 2026-10-19, kama/tsukuroi r11–12 L0 lines):** the
+   validator rejects `planner` — a frozen-topology seat, never a swarm role. You, the L1, hold
+   the canonical §3 planner seat; a bounded planning data-walk may ride a scout, connector or
+   revenger item. Record that mapping in the report; never bypass validation to add a planner.
    **Routing:** this session loaded `scripts/hyaku/omp-overlay.yml`, which binds roles to the
    operator's aliases — executor/labrat → m_flash; scout/connector → m_antigravity;
    reviewer/scribe/simplifier/distiller → m_haiku; critic/sentinel → m_opus;
