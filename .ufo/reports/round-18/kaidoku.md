@@ -95,3 +95,7 @@ Axis verdicts: calibration improved (C1), operability improved (C2), depth impro
 - Carried (in `corpus/lessons/round-18.md`, Open): r12 items (S### row, custody disclosure, operability axis decision); PROVINCE REA-pin drift; citation-drift HEAD aliases; custody `repo-root`; jj-red-before env scrub and path guard; validator-digest format-only check; `revpin.py:6` wording (`@-`).
 - Operator/protocol: the wave-2 CustodyReview seat observed `~/.config/devin/mcp_config.json` and `~/.omp/agent/mcp.json` rewritten at 13:35:56 -03 (pins now `rea-agents@6.7.0`); not opened, not lane-caused.
 - Stale-lane: kaidoku round 18 mission open since 12:07:53 -03 (~2h14m at report time, beyond two 450 s ticks) — **progressing**: seven lane-authored commits `eb6c266`…`a245bb0`; respawn-per-round driver; no other mission of this lane is open.
+
+## Erratum (appended after filing)
+
+- Supersedes "Not returned at integration and not used: `TruthREGISTRY`" in Waves, seats, routing: `TruthREGISTRY` then died (`zai/glm-5.3-flash` 429 rate limit after 10 retries, exit 1). Dead seats in W2: 3 (GateSUMSRUNLOG, GatePRODUCERREV, TruthREGISTRY); `ShonenLines` had not returned when this erratum was written.
