@@ -23,6 +23,7 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
 12. "also, swap from m_flash to m_zfl please"
 13. "assign more m_zfl please, for future spawns"
 14. "executor should use m_flash"
+15. "leave scribe as m_haiku"
 
 ## Decisions
 
@@ -122,6 +123,8 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
   2026-10-20T19:47:54Z" (16:47 -03) and the request was answered by devin/claude-opus-5-5 through
   fallback, so until the reset executor seats run on a fallback model. The m_swe fallback chain is
   now unused by any role.
+- **Scribe stays m_haiku (directive 15).** scribe reverted to @m_haiku; critic and sentinel stay on
+  @m_zfl, executor @m_flash. Wave mix ≈70% m_zfl (~66 of ~96).
 - **Scope ruling (integrator):** tabi owns live browser/CDP page observation including the WebMCP
   page-tool surface; kaidoku keeps CDP only as an REA provider surface (tabi r16 closure notes).
 
