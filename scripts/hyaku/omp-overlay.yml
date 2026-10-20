@@ -1,0 +1,26 @@
+# hyaku (百) campaign overlay — loaded per lane/closure session via `omp --config`.
+# Operator directives 2026-10-19: swarm seats route only through the operator's own
+# aliases m_flash, m_luna, m_zfl, m_antigravity, m_haiku, plus m_opus ("you can also
+# use m_opus on the swarms"). Binding is role -> alias (no per-lane model param);
+# the operator's global config still owns every alias and its fallback chain.
+# m_zfl is parked: zai weekly quota returned 429 on 2026-10-19 ("reset at
+# 2026-10-20 23:02:49"); re-bind mutation-tester to it after that reset.
+task:
+  maxConcurrency: 64
+  maxRecursionDepth: 2
+  eager: always
+  agentModelOverrides:
+    executor: "@m_flash"
+    labrat: "@m_flash"
+    task: "@m_flash"
+    scout: "@m_antigravity"
+    connector: "@m_antigravity"
+    scribe: "@m_haiku"
+    reviewer: "@m_haiku"
+    distiller: "@m_haiku"
+    simplifier: "@m_haiku"
+    critic: "@m_opus"
+    sentinel: "@m_opus"
+    planner: "@m_luna"
+    revenger: "@m_luna"
+    mutation-tester: "@m_luna"

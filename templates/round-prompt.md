@@ -13,15 +13,16 @@ This round is **1–3 declared claims**, not a batch of unrelated work:
 1. Open your lane repo's SCORECARD.md (create it per AXES.md if missing).
 2. Declare 1–3 claims. Each claim is one axis-move against a distinct axis, with
    its own falsifiable before→after. At least one claim works the **lowest-scoring
-   non-retired axis** — unless the stagnation nudge waives it (AXES.md §The stagnation nudge).
+   non-retired axis** — unless the stagnation nudge waives it (AXES.md section
+   *The stagnation nudge*).
 3. Land every claimed improvement. Claims must be **causally separable**: each
    verifiable without the others having landed. Two claims on one axis = one claim.
 4. Measure each: run a counting command you can paste into the report, before and
    after.
 5. Record per claim in SCORECARD.md: the score delta, evidence pointer, counting
    command, and measured commit; append the motivating evidence to LOG.md.
-6. A claim may be a **capability acquisition** (AXES.md §Capabilities): the new
-   capability runs, its output verifies, and its row enters the SCORECARD
+6. A claim may be a **capability acquisition** (AXES.md section *Capabilities*): the
+   new capability runs, its output verifies, and its row enters the SCORECARD
    capabilities table in the same round.
 7. Saturated or wrong-fit axes may be retired or split — record the reason in
    SCORECARD.md.
@@ -42,7 +43,8 @@ rule.
 
 Every child-lane round curates where the lane learns and learns from its own mistakes. This
 step runs inside the 1–3 claim cap; it is not a fourth claim. Its contract is `corpus/SOURCES.md`
-contract v1 in `{{FLEET_ROOT}}/CORPUS.md` §SOURCES.md — follow it, never redefine it.
+contract v1 in `{{FLEET_ROOT}}/CORPUS.md` section *SOURCES.md — where a shokunin learns* —
+follow it, never redefine it.
 
 1. **Curate `corpus/SOURCES.md`** (create it in the contract's shape if missing). A row is
    written only after its source is opened this round; the lesson's `## Gate` records the
@@ -54,9 +56,10 @@ contract v1 in `{{FLEET_ROOT}}/CORPUS.md` §SOURCES.md — follow it, never rede
    conformance. Exit 2 is expected at round start only when `corpus/SOURCES.md` does not
    yet exist. If it is still missing at round end, the driver logs a warning and continues;
    that is a conformance defect, not a pass. Record it in the report and create or repair
-   the registry. Driver completion is not admission; independent non-author verification
-   remains required. The frozen manual census commands remain in `{{FLEET_ROOT}}/CORPUS.md`
-   §SOURCES.md; that section is the specification.
+   the registry. Driver completion is not admission; the independent non-author
+   verification duty remains required. The frozen manual census commands remain in
+   `{{FLEET_ROOT}}/CORPUS.md` section *SOURCES.md — where a shokunin learns*; that
+   section is the specification.
 
    ```sh
    {{FLEET_ROOT}}/scripts/sources-census.sh validate --root {{FLEET_ROOT}} {{LANE}}
@@ -85,12 +88,12 @@ split:
 - 1× reviewer, 1× critic (falsifies the claims the others assert)
 
 Add sentinel / revenger / labrat / mutation-tester / simplifier / distiller as the axis
-demands. Route every role through the **host route table** — the fleet operator's
-role→model assignments for this substrate. Never hardcode model aliases in the lane repo;
-the route table, not this prompt, decides which model serves which role.
+demands. Route every role through the **host route table** — the operator's role→model
+assignments for this substrate. Never hardcode model aliases in the lane repo; the route
+table, not this prompt, decides which model serves which role.
 
-**Godspeed lead:** every L2 lane prompt leads with `/skill:godspeed` followed by the
-verbatim directive bytes from `~/.agents/skills/godspeed/directive.md` — do not
+**Godspeed lead:** every L2 lane prompt leads with `/skill:godspeed`, followed by the
+verbatim directive bytes provided by the host's Godspeed skill binding — do not
 paraphrase. Resumes and nudges never re-carry it.
 
 ## 4. Report contract
@@ -105,15 +108,25 @@ fleet repo. Required sections, in order:
   carries it.
 - **Before → after measurements** — one per claim, each with the counting command and the
   commit it was measured against.
-- **Sources & frontier** — `SOURCES.md` rows before→after with the counting command, rows added by tier, rows touched old→new, frontier rows advanced; a lane with no `corpus/` writes a line beginning `SOURCES: unchanged —` that names why (main-repo lanes: `SOURCES: unchanged — main-repo lanes hold no corpus/`) (§Appendix, "Sources & frontier"). It grades conformance only — its absence is a defect in the round notes, never a `report_of()` or marker predicate: a report missing it is not `failed` for that alone.
-  Here, `frontier rows advanced` means a `corpus/README.md` `## Frontier` row moved into core or measurably progressed, named by its row.
+- **Sources & frontier** — `SOURCES.md` rows before→after with the counting command, rows
+  added by tier, rows touched old→new, frontier rows advanced; a lane with no `corpus/`
+  writes a line beginning `SOURCES: unchanged —` that names why (main-repo lanes:
+  `SOURCES: unchanged — main-repo lanes hold no corpus/`). This is a conformance item,
+  not a report marker predicate.
+- **Trend verdicts** — one verdict each for `expansion`, `quality`, and `discernment`
+  (`improved`, `harmed`, `unchanged`, `unprovable-but-better`), with evidence; no scalar.
 - **SHONEN** — one line per box of your SHONEN.md checklist: `[x]` only with a named
   non-author verifier, `[~]` with a resolvable evidence pointer, `[ ]` if untouched.
 
-**Marker rule:** a contentless report (placeholder text, missing required sections other
-than **Sources & frontier**, or no evidence pointers) counts as the round **failed** —
-the driver relaunches the same round. A report that names real committed work but skips
-the required sections is `ok` plus a minimum-content conformance defect, logged as one.
+**Marker rule:** a contentless report (placeholder text, missing required sections
+other than **Sources & frontier** and **Trend verdicts**, or no evidence pointers)
+counts as the round **failed** — the driver relaunches the same round. A report that
+names real committed work but skips those sections is `ok` plus a minimum-content
+conformance defect, logged as one; neither section is a marker predicate.
+
+The watchdog logs its Sources & frontier marker and applies its source-census gate; it
+does not check trend verdicts or the full claim-admission criteria. Driver completion
+is not admission; independent non-author verification remains required.
 
 ## 5. Commit, push scope, L0 side channel
 
@@ -125,5 +138,3 @@ the required sections is `ok` plus a minimum-content conformance defect, logged 
 - **L0 side channel:** if you need an operator decision, append
   `<lane> | round-<N> | <question>` to `{{FLEET_ROOT}}/.ufo/l0-questions.md`. Do not block
   the round on an answer; note the open question in the report and route around it.
-
- | godspeed
