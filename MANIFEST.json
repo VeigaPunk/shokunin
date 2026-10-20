@@ -8177,6 +8177,49 @@
    "notes": "Dispatch digest: 2026-10-20T04:58:57-03:00 launch tabi round=15 pgid=2461539 driver=hyaku-inline attempt=1; 2026-10-20T06:03:22-03:00 complete tabi round=15; hyaku-inline attempt=1. Status ok, C1/C2 admitted; no axis harmed (disclosed --derive overwrite refusal source-reviewed: protects frozen round-14 sidecar, not harm). Routed item from phase-1 handoff resolved: non-author erratum to round-14 verifier wording (round-14-verifier-spotcheck.md:129,:184) judged warranted and recorded as section 'Erratum to the round-14 verifier wording' in the round-15 spot-check; frozen spec aria-loopback.spec.mjs (sha 03cb4e17 = receipt specSha256) asserts nodeMajor>=minimumMajor at :269, invoked per case at :924, all 8 cases passed it; only launcher runtime.pinned and spec runtimePinStatus omit Node; exact equality never enforced; round-14 file unchanged. Routed tabi defects (status-neutral): record per-claim counter digest (C1 counter 27dfd98 sha 3ee59de0 differs from HEAD measure.mjs dd9c8675); measure at or diff to delivered HEAD (report measured b7cf044); cite the erratum in future Node wording. Frozen step1/step4 closure-checker certification still absent: protocol/operator debt, not a pass. SHONEN four [~]; not all boxes non-author-checkable from this bounded review. Tools installed: none.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 16,
+   "date": "2026-10-20",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 16,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 16
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "live-llamacpp-lifecycle"
+   ],
+   "report": ".ufo/reports/round-16/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-16-verifier-spotcheck.md@cff9e62f05aa7cfb9059444f62eb787100719713",
+    "rechecks": "Re-measured over committed bytes at ccc4bb3: stub matrix 9 files/72 rows/17 MODEL_LOADING; run-before 55/17 exit1 -> run-after 72/0 exit0, failing set == loading set; frozen probe 93ee4302 == 20e392e blob; acceptance.json 16/16 digests match, recorded before ccc4bb3; stale ledger 17->0 replicated; live receipt 10/10, tool/probe/server/model digests match committed and installed bytes, frozen-probe control 10/10, controls exit3/exit2, no llama-server running; S038 asset digest re-opened upstream; waves 81+79=160 role mixes match, one taskCall each, no model key; census 34->41 validate exit0; SCORECARD +88/-0. Evidence-verified only (not executed): measure.py, stale-statements.py, check.py selftest 72/72+4/4, test-snapshot 30/0, check-receipt VALID + 26-mutation selftest. Discernment sample: 2 admits + 3 rejects, all agree; S035-S037 re-opened at 704366d76, S040 quote 21 words."
+   },
+   "commit": "kama-shokunin@cff9e62f05aa7cfb9059444f62eb787100719713",
+   "closed_at": "2026-10-20T14:51:37Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-20T10:14:08-03:00 launch kama round=16 pgid=11634 driver=hyaku-inline attempt=1; 2026-10-20T11:16:57-03:00 complete kama round=16; hyaku-inline attempt=1. Round commits b8e485c, 726f737 (measured), ccc4bb3 (delivered) by kama, all ancestors of refs/heads/master; fleet report 9ec9c524 by kama; prompt 6c4f0c29 renders the canonical template verbatim plus hyaku addendum; jj-lane state ahead=0, porcelain empty. C1 calibration improved 7->7; C2 operability capability live-llamacpp-lifecycle improved 8->8. Install judgment: llama.cpp b11755 official release asset (sha256 753bfa73...e226) in ~/.local/opt + ~/.local/bin link is in scope under the 2026-10-19 tooling directive and honestly reported (version/channel/digest/reason/footprint, L0 filed); fixture is GET-only metadata on an unregistered own-child port; not undone (operator-owned). Status-neutral defects routed to kama: (1) wave provenance - build validation lacks policy version, falsify lacks validation.json/policy block, taskCall digest canonicalization differs (ensure_ascii), falsify ledger spawned:0 for 79; (2) falsify verdict_first_lines 36/41/2 vs committed 36/43/0, 5/79 reports lack VERDICT first line; (3) S041 anchor/teaches amended in place after first commit b8e485c (SOURCES rule 2); (4) 'every non-frontend path' overstates (OPTIONS bypasses gate, server-http.cpp:347-352), S036 cell quotes 318 only; (5) retained tarball ~/.local/opt/llama-b11755-bin-ubuntu-x64.tar.gz unnamed in L0 (b), PATH link shadows nothing (no /usr/bin/llama-server); (6) carried lesson debt (check.py mutants, weak live checks, M3/M7 open). Open L0: kama | round-16 fixture ratification (.ufo/l0-questions.md:58). SHONEN four [~] remain author assertions; not fully non-author-checkable; no promotion.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
