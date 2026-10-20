@@ -39,9 +39,18 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
 28. "executor m_luna"
 29. "change the m_grok for the the m_flash"
 30. "ok, so, hyper has to be a secondary provider, after commandcode on deepseek v4.1 flash (m_flash) | aside from this, no subagent can inherit m_opus as the fallback; for m_zfl, mflash, m_fast, m_haiku, the last cascade fallback has to be m_luna"
+31. "ok let's wrap up and commit and push current progress. dont stop running runs, let them fginish; then we can keep up from where we left off in the same schema"
 
 ## Decisions
 
+- **Wrap control (directive 31).** Stop new round dispatches and coordinator resumptions.
+  SoujiR18, KamaR18 and KagiR22 and their existing workers may finish their current rounds;
+  no running agent, worker or service is cancelled. Do not start the next round or advance
+  an unclosed claim. Landed author reports awaiting outside closure stay explicitly unadmitted.
+  The previously scheduled `bg_9096` backoff wake must not revive anything during this pause;
+  KasegiR23 remains separately policy-paused. Preserve claims, attempts and original identities.
+  Routing/fallback settings remain session-only: the desired policy above is recorded for resume,
+  but no global-save approval or host/MCP restoration is inferred from the wrap request.
 - **Order.** Batch 1 = kama (next r16), tameshi (r16), kaidoku (r17): the three lowest-round lanes
   with no closure debt, every phase-1 closure admitted, and provinces that need no host mutation
   while pacman is paused. Ten sequential rounds each: kama r16–r25, tameshi r16–r25, kaidoku
