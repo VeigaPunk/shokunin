@@ -52,13 +52,19 @@ inherited: reuse what you re-verify, discard what you do not, and name both in t
    the canonical §3 planner seat; a bounded planning data-walk may ride a scout, connector or
    revenger item. Record that mapping in the report; never bypass validation to add a planner.
    **Routing:** seat models come from this session's `task.agentModelOverrides`, bound by the
-   operator's orchestrator to the operator's aliases — executor/labrat → m_flash; scout/connector →
-   m_antigravity; reviewer/scribe/simplifier/distiller → m_haiku; critic/sentinel → m_opus;
-   planner/revenger/mutation-tester → m_luna; m_zfl is parked (zai weekly quota 429 until
-   2026-10-20 23:02). Never pass a `model` parameter. Spread seats across aliases through the role
-   mix — for 96 lanes roughly 28 executor, 16 scout, 8 connector, 16 reviewer, 8 scribe,
-   12 critic, 4 sentinel, 4 revenger. A wave is exactly ONE `task` call with the validator's `taskCall`
-   unchanged (`context` + `tasks`); direct call or `await tool.task(**taskCall)` from eval.
+   operator's orchestrator to the operator's aliases (2026-10-20: "feel free to use m_sol also";
+   "and m_swe on code heavy tasks") — executor → m_swe (code-heavy: scripts, gates, selftests,
+   fixtures, parsers; falls back to deepseek-flash if Devin quota fails); scout/labrat → m_flash;
+   connector → m_antigravity; reviewer/scribe/simplifier/distiller → m_haiku; critic → m_sol
+   (gpt-6.1-sol max); sentinel → m_opus; planner/revenger/mutation-tester → m_luna; m_zfl is parked
+   (zai weekly quota 429 until 2026-10-20 23:02). Give code-heavy items to executors and prose
+   drafting (knowledge entries, SOURCES rows, lessons) to scribes. Never pass a `model` parameter.
+   Mix for 96 lanes roughly 24 executor, 16 scout, 8 connector, 16 reviewer, 12 scribe, 12 critic,
+   4 sentinel, 4 revenger. A wave is exactly ONE direct `task` call with the validator's `taskCall`
+   unchanged (`context` + `tasks`). **Job cap:** this session refuses a `task` call while ≥100
+   background jobs are running (process limit, fixed at 100); the refusal ("Background job limit
+   reached (100)") spawns nothing. Retry the same payload every ~3 min (`sleep 180`), up to 10 tries;
+   never split or shrink below the band; if still refused, land the round with verifiable work.
    Every seat is a leaf with a disjoint write set inside {{LANE_CWD}} or is read-only; seats
    never write the fleet repo, MANIFEST.json, or another lane. You integrate; seats advise.
    **Depth (operator, 2026-10-20: `task.maxRecursionDepth` 2 → 3):** an executor seat may now
