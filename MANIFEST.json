@@ -7968,6 +7968,49 @@
    "notes": "Driver digest: '2026-10-20T05:51:51-03:00 launch kake round=21 pgid=3053950 driver=hyaku-inline attempt=1'; '2026-10-20T06:16:11-03:00 complete kake round=21; hyaku-inline attempt=1'. Report landed by kake-shokunin at fleet 3304dd9a; cited df6196b0/c2d8da86 are ancestors of lane HEAD; lane clean and pushed; prompt carries template contract (sections 1-6). No step-1 conformance defect. Routed to kake: (1) pre-existing paths gate freshness-sweep --section=paths still red (exit 1, 3 drift targets/4 locations, missSet 55) - restore-or-retire owed; (2) anchor-census.mjs exit 1 (78 diagnostics in author wave reports) is an evidence helper, keep out of gate claims; (3) reconstructed Gates round-4.md:50, round-9.md:185, round-16.md:171 keep read-time 'S019/CORPUS.md absent' statements superseded only by round-21 register. Operator: all 4 SHONEN boxes [~] author-asserted; box 2 cites local corpus repair, not a domain end-to-end task - not fully non-author checkable; promotion operator-owned. Spot-check commit rebased onto operator commit 1ba53c0 (considerthese) found on lane remote; no lane work touched.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 16,
+   "date": "2026-10-20",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 16,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 16
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved",
+    "calibration": "improved",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "finite declared-action classifier (tools/mado-action-plan.py --plan/--selftest/--frozen; selftest 52/52, frozen_match at 1e31681e76b5e7caadd1c749e18669a3632a1c3b)"
+   ],
+   "report": ".ufo/reports/round-16/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-16-verifier-spotcheck.md@27cd06f5067c3d3540ab9aa7cc734eb8eee162cc",
+    "rechecks": "C1 re-measured: git grep covers lines U1-U6 (32c4fda) -> U1-U7 (4bfb236), U7 note four exact headings, [UNK] in Unexercised rendering, S053/S054 mined A rows naming the note; lane counter read-only 6/8.5714 -> 7/10.0. C3 re-measured: QUALITY numbered 20->22, same-line lessons/ 12->14 (6.0000->6.3636); calibration lowest per selection-red/green receipts. C2 evidence-verified, gate not executed: red receipts 51/52 + frozen_error at 9dcf248 (sha 13d86fb0...), final 52/52 + frozen_match at 1e31681 (sha 226220ae... = bytes at 4bfb236), 12/12 committed-bindings digests equal HEAD bytes, SKILL.md:543-544 registry rows. No owned-axis harm: SCORECARD diff append-only; only deletions re-mark stale live Waybar claims historical; /var/log/pacman.log 0 lines in 05:35-06:09 window. Spot-check: admit U7 route (S053/S054 refetched, raw sha256 match) agree; rejects producer-output-as-rendered-text (custom.cpp:174-181) and tag-source-as-binary agree; S053 quote line 8, 13 words; census exit0 unchanged W04 x3."
+   },
+   "commit": "mado-shokunin@27cd06f5067c3d3540ab9aa7cc734eb8eee162cc",
+   "closed_at": "2026-10-20T13:18:35Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-20T05:35:42-03:00 launch mado round=16 pgid=3021226 driver=hyaku-inline attempt=1; 2026-10-20T06:06:30-03:00 complete mado round=16; hyaku-inline attempt=1. Report cd4c0eac41803183fb245569bfa47e8794d8c63b and prompt 67f4e00f0573ec7b639a8b5454e206ae4d698e64 authored by mado identity; SHONEN heading four [~]; cited 9dcf248/1e31681/4bfb236 exist and are ancestors; lane clean and pushed; prompt carries template contract plus hyaku addendum. R15 host harm (libinput partial upgrade) carried honestly as unresolved and operator-owned; round 16 does not readmit r15 and caused no package transaction in its window. Defects routed to mado: R16-V1 report/lesson l.131 cite evidence/frozen-tampered.json as snapshot_tampered but that receipt (9dcf248) shows frozen_error pair-unreachable; snapshot_tampered evidenced only by final selftest fixtures (status-neutral). R16-V2 process: M4 fleet misroot (copied byte-exact ac48edb4..., fleet copy removed) and M5 read-only pacman -Q waybar during source-only round, both disclosed. Cosmetic: report LOG pointers spell round16 vs LOG headings round 16/Round-16. R15-V1 stays on the existing L0 operator line. Operator commit f898e52 on lane remote fast-forwarded before spotcheck commit. SHONEN not judged promotion-ready (box 2 historical, no non-author box); promotion operator-owned. No tools installed by closure.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
