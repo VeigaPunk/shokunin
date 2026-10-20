@@ -15,6 +15,9 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
    you choose"
 5. "delegate more to m_flash instead if m_haiku"
 6. "you can disable the rea mcp momentarily, we don't need it for now"
+7. "let's try to also implement using jj as git manager from now on on shokunin runs"
+8. "make sure we are always swarming heavily though;"
+9. "increase concurrency, im seeing only 6 subagents now, i would like to always see 64+ running"
 
 ## Decisions
 
@@ -36,13 +39,32 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
   main → @m_strong. Global value before the change: every seat @m_flash except critic, planner,
   main → @m_strong.
 - **Other session settings** (session-only, operator-approved): `task.agentSoftRequestBudget`
-  {"task":1500}; `task.maxConcurrency` 300 (was 100). `async.maxJobs` stays 100 (default; read at
-  process start), so a `task` call is refused while ≥100 background jobs run — L1s retry every
-  ~3 min (addendum §6.2 "Job cap").
+  {"task":1500}; `task.maxConcurrency` 300 (was 100). `async.maxJobs` stays 100 in this process
+  (read at process start), so a `task` call is refused while ≥100 background jobs run — L1s retry
+  every ~3 min (addendum §6.2 "Job cap").
 - **rea MCP disabled** in `~/.omp/agent/mcp.json` (`"enabled": false`, 10:12 -03; pre-edit copy
   `~/.omp/agent/mcp.json.pre-disable-20261020T1015`). The running session keeps its connection
   until `/mcp reload`; kaidoku uses the `rea` CLI (`npx -y rea-agents@6.5.0`). Restore by setting
   `"enabled": true` (or copying the pre-edit file back) when the operator wants it.
+- **Concurrency (directive 9).** Six lanes now run concurrently: batch A (kama, tameshi, kaidoku)
+  plus batch B (tabi r16, souji r16, mado r17 — the next three in `inline.sh queue`), each still on
+  a block of 10 sequential rounds. Gaps between lane waves are filled with real orchestrator waves
+  (jj study wave `.ufo/waves/hyaku/jj-w1/`, 67 seats). `async.maxJobs` 1000 is saved globally
+  (operator-approved) but this process keeps its start-time cap of 100: every `task`/`agent`/async
+  bash call is refused while ≥100 background jobs run, so dispatches retry when capacity dips
+  (`scripts/hyaku/await-capacity.sh` proxies the running count from live subagent transcripts).
+  The cap lifts on the next omp start.
+- **jj lane VCS (directive 7).** `scripts/hyaku/jj-lane.sh` (init/commit/push/state) with a
+  sandboxed selftest (`jj-lane-selftest.sh`, 16/16 at commit 67a3123). `HYAKU_VCS=jj` in
+  `hyaku.env`: `inline.sh` colocates an idle lane at dispatch and at closure, records lane tips
+  from `refs/heads/<branch>` (colocated git HEAD detaches after jj mutations, so `@{u}` is unusable),
+  and pushes leftovers through the helper. Lane L1s (addendum §6.4) and closures (closure-prompt
+  step 4) commit only through the helper; git writes in a colocated lane are forbidden (jj resets
+  the git index on every mutation). The six rounds already in flight were dispatched under the git
+  addendum and finish on git; each lane switches at its closure. Fleet-root commits stay on git
+  (`fleet-commit.sh`) pending the jj-w1 fleet-root trial. Prior jj state: tameshi and mado already
+  carried `.jj/` from 2026-10-19 (immutable alias `::bookmarks()`); `.tower/jj-probe/` holds an
+  earlier probe.
 
 ## Provider probes (2026-10-20 10:0x -03)
 
