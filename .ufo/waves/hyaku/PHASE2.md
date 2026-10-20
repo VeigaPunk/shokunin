@@ -38,6 +38,7 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
 27. "connector m_grok"
 28. "executor m_luna"
 29. "change the m_grok for the the m_flash"
+30. "ok, so, hyper has to be a secondary provider, after commandcode on deepseek v4.1 flash (m_flash) | aside from this, no subagent can inherit m_opus as the fallback; for m_zfl, mflash, m_fast, m_haiku, the last cascade fallback has to be m_luna"
 
 ## Decisions
 
@@ -131,12 +132,13 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
   L1s and closures (`task`) @m_opus. Addendum wave mix now ≈80% m_zfl seats (~76 of ~96) with
   executors reserved for items that write or run code. Moving critics/sentinels off Opus also
   lowers pressure on the Anthropic account whose 429s stopped four L1s earlier.
-- **Executor → m_flash (directive 14, 13:46 -03).** executor now routes to @m_flash (was @m_swe);
-  every other seat role stays as directive 13 left it. Probe at the switch: m_flash's primary
-  (commandcode deepseek-v4.1-flash) returned 429 "5-hour usage limit … resets at
-  2026-10-20T19:47:54Z" (16:47 -03) and the request was answered by devin/claude-opus-5-5 through
-  fallback, so until the reset executor seats run on a fallback model. The m_swe fallback chain is
-  now unused by any role.
+- **Historical executor → m_flash (directive 14, 13:46 -03; later role routing changed).** Executor
+  then routed to @m_flash (was @m_swe); every other seat role stayed as directive 13 left it. Probe
+  at the switch: m_flash's primary (commandcode deepseek-v4.1-flash) returned 429 "5-hour usage
+  limit … resets at 2026-10-20T19:47:54Z" (16:47 -03); the request was answered by
+  devin/claude-opus-5-5 through fallback. That Opus fallback entry is historical, removed by
+  directive 30, and not current policy. The m_swe fallback chain was then unused by any role; critic
+  later returned to m_swe.
 - **Scribe stays m_haiku (directive 15).** scribe reverted to @m_haiku; critic and sentinel stay on
   @m_zfl, executor @m_flash. Wave mix ≈70% m_zfl (~66 of ~96).
 - **Critic + sentinel back on m_opus (directive 16).** Final seat routing (session-only): scout,
@@ -198,7 +200,7 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
   commandcode 429 → opencode-go deepseek-flash; zai 429 (type=1302) → openai-codex gpt-6-luna;
   Anthropic 429 → openai-codex gpt-6.1-sol. That proves failover for new spawns, not which key won
   (the alias chains hold the same hops) or what caused the earlier deaths.
-- **m_sol briefly replaced m_opus (directive 21), reverted by directive 22; directives 23–29.**
+- **m_sol briefly replaced m_opus (directive 21), reverted by directive 22; directives 23–30 (directive 30 changes fallback policy only).**
   Current routing (session-only): task (L1s, closures), planner → @m_opus; main → @m_strong;
   critic → @m_swe (exact-model fallback key `devin/swe-2` = m_swe cascade zai glm-5.3-flash →
   devin glm-5-3-flash); executor, sentinel → @m_luna (exact-model key `openai-codex/gpt-6-luna` =
@@ -206,33 +208,52 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
   mutation-tester → @m_sol; reviewer, revenger → @m_zfl; scribe, distiller → @m_haiku.
   Risk: Codex now carries m_luna, m_sol and the last hop of the m_zfl/m_flash cascades.
 - **Connector → m_flash (directive 29, supersedes directive 27).** "change the m_grok for the the
-  m_flash": connector leaves @m_grok for @m_flash, joining scout, labrat and simplifier; no other
-  role mapping, alias or fallback list changed. Historical, no longer routed: directive 27's
+  m_flash": connector leaves @m_grok for @m_flash, joining scout, labrat and simplifier; at that
+  time no other role mapping, alias or fallback list changed. Historical, no longer routed: directive 27's
   connector → @m_grok with exact-model key `cursor/grok-4.7-fast` = m_grok cascade cursor
   grok-4.7-500k-fast → xai-oauth grok-4.7 → devin grok-4-7, and the ~16:3x -03 probe
   (`probe-alias.sh m_grok m_swe m_luna`) where all three primaries answered. The change is
   session-only and reaches only seats spawned after it: running sessions and resumed seats keep
   the chain they captured at spawn; nothing was saved globally.
-- **Captured coordinator-chain correction (18:2x–18:3x -03).** Fresh KaidokuR20 and
-  ClosureTabiR18 snapshots contained the three-hop `m_opus` alias chain, without Sol, despite
-  the four-hop exact-model chain above. Reported to OMP QA: this disagrees with the documented
+- **Historical coordinator-chain correction (18:2x–18:3x -03; superseded by directive 30).** Fresh
+  KaidokuR20 and ClosureTabiR18 snapshots contained the three-hop `m_opus` alias chain, without Sol,
+  despite the four-hop exact-model chain above. Reported to OMP QA: this disagrees with the documented
   exact-model precedence at spawn. Existing failed coordinators retain those snapshots;
   warm resumes again failed on Anthropic ~8,727-second backoff or Devin weekly quota.
-  Session-only mitigation: append the already-configured Sol tail to `m_opus` itself, preserving
-  its Opus primary and first three fallback hops. KagiR22's new snapshot captures all four hops,
-  and its transcript shows Anthropic 429 → Codex gpt-6.1-sol serving real tool calls.
-  This proves the alias-chain mitigation for fresh spawns, not a refresh of old agents.
+  At that time, session-only mitigation appended the configured Sol tail to `m_opus`, preserving its
+  Opus primary and first three fallback hops. KagiR22's snapshot then captured all four hops, and its
+  transcript shows Anthropic 429 → Codex gpt-6.1-sol serving real tool calls. This is historical
+  evidence of the mitigation on fresh spawns, not a refresh of old agents.
 - **Next three ten-round blocks started:** kagi r22–31, kake r22–31, kasegi r23–32.
   First rounds dispatched as KagiR22, KakeR22, KasegiR23; each must finish its named round and
   independent closure before advancing. Their initial work may proceed while the shared
   jj helper's guarded recovery is verified; no live helper commits until that check completes.
 - **Routing precedence (ruling on kama r17 closure R8).** The closure found the addendum's
   role→model map contradicting the deployment `MISSION.md` buckets (connector heavy-reasoning,
-  critic/sentinel economy). For phase 2 the operator's explicit per-role directives (1–29 above)
+  critic/sentinel economy). For phase 2 the operator's explicit per-role directives (1–30 above)
   decide each seat's route; `MISSION.md` buckets stay the deployment default outside this phase.
   The addendum quotes each directive verbatim next to the role it binds. Not a lane defect.
 - **Scope ruling (integrator):** tabi owns live browser/CDP page observation including the WebMCP
   page-tool surface; kaidoku keeps CDP only as an REA provider surface (tabi r16 closure notes).
+- **Directive 30 — current session-only fallback policy.** For Flash, the configured sequence after
+  the Commandcode `commandcode/deepseek/deepseek-v4.1-flash` primary is
+  `charm-hyper/deepseek-v4.1-flash` → `opencode-go/deepseek-v4.1-flash` →
+  `devin/deepseek-v4-1-flash` → `openai-codex/gpt-6-luna:max`; `charm-hyper` is the first configured
+  fallback after Commandcode. The same exact-primary-model entry covers the m_flash/m_fast/high/plan
+  chains. m_zfl's configured fallbacks are devin GLM → charm-hyper GLM →
+  `openai-codex/gpt-6-luna:max`; m_haiku's are devin Haiku → cursor Haiku1m → cursor Haiku →
+  `openai-codex/gpt-6-luna:max`. These lists end with m_luna:max; no provider availability or
+  induced-failover claim is made. The default and m_opus fallback lists are Codex Sol only
+  (`openai-codex/gpt-6.1-sol`); every configured fallback entry containing Opus was removed,
+  including exact-model chains, so no subagent may inherit Opus as a fallback. Explicit Opus
+  primaries (task/planner and the main session where explicitly selected) remain unchanged, as do
+  the other role assignments above. Previously unassigned built-in overrides `security-reviewer`,
+  `sonic` and `seance` are explicitly pinned to @m_flash to prevent parent-model inheritance.
+  m_luna's separate own-provider backup was not changed. These session-only settings affect fresh
+  per-spawn captures only; existing sessions and resumed seats keep their captured chains and are
+  not retroactively refreshed. They were not saved globally. No policy/access restrictions changed;
+  KasegiR23 remains policy-paused under incident 7 and must not be retried. No provider probe or
+  forced-failover test was run for this directive.
 
 ## Incidents (phase 2)
 
@@ -291,11 +312,13 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
   the rea MCP's 207 tools natively (41,739 JSON nodes, `~/.omp/logs/http-400-requests/`). In-session
   subagents mount MCP tools under `xd://`, and a generic `task` and a `scout` probe were both served
   by commandcode deepseek-v4.1-flash (session transcripts ProbeTaskFlash/ProbeScoutFlash). With
-  `--tools=read` or rea disabled, the headless primary answers too. charm-hyper fallback: 402 out of
-  credits; opencode-go and devin deepseek-v4.1-flash answer.
-- m_haiku, m_swe (devin/swe-2), m_sol, m_opus: primary answered. m_swe has no fallback chain.
-  devin/claude-opus-5-5 (an m_opus fallback): weekly quota exhausted. google-antigravity rejects
-  this host's tool schemas (400).
+  `--tools=read` or rea disabled, the headless primary answered too. In that historical probe,
+  charm-hyper returned 402 (out of credits); opencode-go and devin answered then. This is not current
+  availability evidence.
+- **Historical probe results:** m_haiku, m_swe (devin/swe-2), m_sol and m_opus primaries answered;
+  at that time m_swe had no fallback chain. Historical m_opus fallback evidence: devin/claude-opus-5-5
+  weekly quota exhausted. This Opus fallback entry was removed by directive 30 and is not current
+  policy. google-antigravity rejects this host's tool schemas (400).
 
 ## Loop
 
