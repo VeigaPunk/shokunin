@@ -8390,6 +8390,51 @@
    "notes": "Dispatch/complete digest: 2026-10-20T10:51:16-03:00 launch tabi round=16 pgid=2431273 driver=hyaku-inline attempt=1; 2026-10-20T12:24:02-03:00 complete tabi round=16; hyaku-inline attempt=1. Conformance: report 5830720 by tabi-shokunin after last lane commit; all cited lane hashes ancestors of refs/heads/master; lane clean, ahead=0; SHONEN 4x[~]; prompt = rendered template + hyaku addendum; history pin ok. Integrator ruling (contested scope): tabi owns live browser/CDP page observation including the WebMCP page-tool surface; kaidoku keeps CDP only as an REA provider surface for shipped-artifact analysis and cites tabi for browser-side mechanics. Routed (status-neutral): (1) tabi liar-probe evidence unrooted (/tmp clone; liar commits 9ecfcc9/0754e44/7b497d1 absent from repo) - commit blobs/generator; (2) tabi binding/selftest.json + legacy-r15.json are pre-hardening gate 5150611c (43 cases) - commit receipts at registered gate 1f84fb54; (3) tabi report claims delivered-HEAD rerun at 1205d26 without committed receipt (holds by drift diff); (4) tabi census U3 browser-surface-census.md:188 lacks in-file pointer to README supersession; (5) tabi + kaidoku record the scope ruling in own PROVINCE/SKILL appends; (6) protocol/operator frozen step-1/step-4 closure-checker certification still absent; (7) carried: USER 6/10, r07 replay, user-record freezing, IPv6, Git env, validator pin, unsandboxed counter, page-level confinement, temp-dir leak, unretained 8/11 producer; 6 wave-1 executors dead (m_swe rate limit), seat tallies 84+73 author-reported. SHONEN not all non-author-checkable from this bounded review.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 16,
+   "date": "2026-10-20",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 16,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 16
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unprovable-but-better",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "landing-claim gate (tools/souji-landing-gate.py)",
+    "seat transcript audit (tools/souji-seat-audit.py)",
+    "protected-namespace census, value/effect-aware config (r16)"
+   ],
+   "report": ".ufo/reports/round-16/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-16-verifier-spotcheck.md@5fa6017ddcae9f6bd4412df44765f6360cb16294",
+    "rechecks": "C1 re-measured statically (bash -n/shellcheck/sha256 over git show bytes at a31642d, cc21683, b410186, 0a70bef, c46eabf: only b410186 fails, rc 2 line 1368; census 64a60fd0 unchanged 0a70bef->c46eabf) and evidence-verified (c1-matrix-final/landing.json: changed 20/20, 12/12, 38/38; cc21683 fails 15 HARM_CASES+19; a31642d fails 02,03,08,11,14,17,18,19; cases 03/04/16 PASS changed, FAIL r14-harm; live-fleet 21 rows identical; digests bind). C2 evidence-verified only (registry SKILL.md:152 complete; gate-landing.json resolved_rev 6ff91f5 findings 0 reg 21 pins 16 markers 30 reports 141 independently counted; b410186 replay 5 findings re-derived statically; selftest 18 cases counted; frozen pins match c6207bd/c46eabf bytes). No lane gate/selftest/fixture/census executed. SOURCES 42->50, A/B/C 38/3/1->46/3/1, mined/queued/rejected 25/15/2->31/15/4; sources-census validate exit 0 (W04 S035/S036/S038/S049). Spot-check agree on admits S049, S047, C1 and rejects S048, S044, 'disclosure enforcement'. Seats: ClosureSoujiR16.C1NoHarmLedger (critic), C1EvidenceCheck, C2GateEvidence, RoutedR3R7Check (reviewers)."
+   },
+   "commit": "souji-shokunin@c46eabf80f4c5b34a6774cd8725a0787306ba754",
+   "closed_at": "2026-10-20T15:43:00Z",
+   "campaign": "hyaku",
+   "notes": "Driver: 2026-10-20T10:51:17-03:00 launch souji round=16 pgid=2432921 driver=hyaku-inline attempt=1; 2026-10-20T12:29:49-03:00 complete souji round=16; hyaku-inline attempt=1; lane-dead-no-report count 0. Conformance ok: report 85f2aa9 by souji-shokunin after c46eabf; all cited hashes ancestors of refs/heads/master; ahead=0; only operator-owned ?? census/operator-sweep-20261019/ (fingerprint f6a84466 unchanged); SHONEN heading 4x[~]; prompt = template substitutions + section 6. Admission covers r16 claims only: not a no-harm certification vs pre-harm a31642d; inherited r14 residual contractions stay open under L0 souji|round-16 (fleet 273d6a6). Routed R1,R4,R6,R7 resolved; R2 admission-blocking predicate (value-blind benign config, hooksPath=/dev/null, mixed fleet) resolved, broader residual under L0; R3 resolved with gaps; R5 audit not enforcement. Routed to souji r17: D1 false-clean on repo-local status.showUntrackedFiles=no (all revisions; include/config.worktree variant newly reachable vs cc21683) -> explicit --untracked-files=normal + paired case; D2 info/attributes hardlinked/non-regular whole-run trigger (entered b410186) -> per-repo degrade or L0; D3 LOG:902 '28' vs 29 and LOG:858 'pre-harm fails only refusal/safety' need named corrections; D4 seat-audit w2 3 majors are false positives (lstrip('./') at seat-audit.py:76-82, comma split :68-73), transcripts uncommitted/undigested in /var/tmp; D5 R3 carry format gaps (lesson:54 no hash, 2 truncated quotes, RevGateSpec.md:226 uncarried); D6 replay verdicts transcript/prose-only, selftest asserts id subset, regenerate.py literal verdict; D7 gate-landing.json lands at c46eabf not 6ff91f5. Operator: L0 ruling; operator-sweep disposition. SHONEN not certified checkable by non-author. Installs: none.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
