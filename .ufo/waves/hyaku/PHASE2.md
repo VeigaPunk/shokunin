@@ -207,6 +207,11 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
   scribe, distiller → @m_haiku. Probe ~16:3x -03 (`probe-alias.sh m_grok m_swe m_luna`): all
   three primaries answered. Risk: Codex now carries m_luna, m_sol and the last hop of the
   m_zfl/m_flash cascades.
+- **Routing precedence (ruling on kama r17 closure R8).** The closure found the addendum's
+  role→model map contradicting the deployment `MISSION.md` buckets (connector heavy-reasoning,
+  critic/sentinel economy). For phase 2 the operator's explicit per-role directives (1–28 above)
+  decide each seat's route; `MISSION.md` buckets stay the deployment default outside this phase.
+  The addendum quotes each directive verbatim next to the role it binds. Not a lane defect.
 - **Scope ruling (integrator):** tabi owns live browser/CDP page observation including the WebMCP
   page-tool surface; kaidoku keeps CDP only as an REA provider surface (tabi r16 closure notes).
 
