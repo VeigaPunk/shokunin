@@ -31,6 +31,9 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
 20. "something definetely bugged up here" / "check what's up and keep back on track"
 21. "opus is back" / "now remove m_opus from the subagent delegation though, use m_sol instead"
 22. "do not remove m_opus, but put m_swe as critic"
+23. "planner m_opus" (already so)
+24. "simplifier m_flash"
+25. "distiller m_haiku"
 
 ## Decisions
 
@@ -173,11 +176,11 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
   unchanged. Smoke seats (transcripts SmokeFlashCascade, SmokeZflCascade, SmokeOpusCascade):
   commandcode 429 → opencode-go deepseek-flash answered; zai 429 (type=1302) → openai-codex
   gpt-6-luna answered; Anthropic 429 → openai-codex gpt-6.1-sol answered.
-- **m_sol briefly replaced m_opus (directive 21), reverted by directive 22.** Current routing
-  (session-only): task (L1s, closures), planner, sentinel → @m_opus; main → @m_strong; critic →
-  @m_swe (exact-model fallback key `devin/swe-2` = m_swe cascade zai glm-5.3-flash → devin
-  glm-5-3-flash); mutation-tester → @m_sol; executor, scout, labrat → @m_flash; connector,
-  reviewer, simplifier, distiller, revenger → @m_zfl; scribe → @m_haiku.
+- **m_sol briefly replaced m_opus (directive 21), reverted by directive 22; directives 23–25.**
+  Current routing (session-only): task (L1s, closures), planner, sentinel → @m_opus; main →
+  @m_strong; critic → @m_swe (exact-model fallback key `devin/swe-2` = m_swe cascade zai
+  glm-5.3-flash → devin glm-5-3-flash); mutation-tester → @m_sol; executor, scout, labrat,
+  simplifier → @m_flash; connector, reviewer, revenger → @m_zfl; scribe, distiller → @m_haiku.
 - **Scope ruling (integrator):** tabi owns live browser/CDP page observation including the WebMCP
   page-tool surface; kaidoku keeps CDP only as an REA provider surface (tabi r16 closure notes).
 
