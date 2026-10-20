@@ -114,11 +114,14 @@ verify)
       || { echo "FAIL sweep commit"; exit 1; }
     echo "SWEPT report (attribution defect recorded)"
   fi
-  ahead=$(st_field "$(jjl state "$cwd" 2>/dev/null)" ahead)
-  if [ "${ahead:-0}" != 0 ]; then
-    if [ -d "$cwd/.jj" ]; then pushcmd=(jjl push "$cwd"); else pushcmd=(git -C "$cwd" push -q); fi
-    "${pushcmd[@]}" >/dev/null && { ev "durability-push lane=$lane round=$n"; echo "PUSHED lane repo (L1 left it unpushed)"; } \
-      || { ev "push-failed lane=$lane round=$n"; echo "WARN lane push failed"; }
+  # One captured state line (pure git). A lane the L1 left unpushed gets a
+  # fast-forward push only: a rebase here would orphan the hash the report cites.
+  st=$(jjl state "$cwd" 2>&1) || { echo "FAIL lane state: $st"; exit 1; }
+  ahead=$(st_field "$st" ahead)
+  if [ "$ahead" != 0 ]; then
+    if [ -d "$cwd/.jj" ]; then pushcmd=(jjl push --no-rebase "$cwd"); else pushcmd=(git -C "$cwd" push -q); fi
+    if "${pushcmd[@]}" >/dev/null; then ev "durability-push lane=$lane round=$n"; echo "PUSHED lane repo (L1 left it unpushed)"
+    else ev "push-failed lane=$lane round=$n"; echo "FAIL lane has $ahead unpushed commit(s) and a fast-forward push failed: not landed"; exit 1; fi
   fi
   [ -n "$(git -C "$cwd" status --porcelain)" ] && echo "WARN lane repo has uncommitted changes: $(git -C "$cwd" status --porcelain | wc -l) paths"
   if [ "$(git -C "$FLEET" rev-list --count origin/master..HEAD 2>/dev/null || echo 0)" != 0 ]; then

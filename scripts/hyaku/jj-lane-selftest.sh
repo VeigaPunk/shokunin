@@ -8,15 +8,33 @@
 # contact with the live repo is `git clone` reading it; nothing is pushed to
 # a real remote and no jj command runs inside a live lane. Prints one
 # PASS/FAIL line per case and `selftest <passed>/<total>`; exit 0 iff all pass.
+#
+# Every `z*` case asserts the hardened contract; each is also executed against
+# the OLD helper (git show HEAD:scripts/hyaku/jj-lane.sh, saved under the
+# sandbox) and is required to FAIL there — the "old-helper: FAIL" lines are
+# the regression proof.
 set -u
 
 SRC=${1:-/home/vgpnk/Projects/shokunin/kake-shokunin}
-HELPER=$(cd "$(dirname "$0")" && pwd)/jj-lane.sh
+SELF_DIR=$(cd "$(dirname "$0")" && pwd -P)
+HELPER=${HELPER:-$SELF_DIR/jj-lane.sh}
 JJ=${JJ_BIN:-$(command -v jj 2>/dev/null || echo "$HOME/.local/bin/jj")}
+export JJ_BIN=$JJ
 
 mkdir -p /fast/scratch
 SB=$(mktemp -d /fast/scratch/jj-hyaku.XXXXXX) || { echo "sandbox failed" >&2; exit 1; }
-cleanup() { if [ "${KEEP_SB:-0}" = 1 ]; then echo "sandbox kept: $SB" >&2; else rm -rf "$SB"; fi; }
+# jj keeps per-repo config in $HOME/.config/jj/repos/<config-id>/; init writes
+# there, so drop exactly the entries belonging to our sandbox clones (never a
+# live lane's) before removing the sandbox.
+cleanup() {
+  local c id
+  for c in "$SB"/*/; do
+    [ -f "$c.jj/repo/config-id" ] || continue
+    id=$(cat "$c.jj/repo/config-id" 2>/dev/null) || continue
+    [ -z "$id" ] || rm -rf "$HOME/.config/jj/repos/$id"
+  done
+  if [ "${KEEP_SB:-0}" = 1 ]; then echo "sandbox kept: $SB" >&2; else rm -rf "$SB"; fi
+}
 trap cleanup EXIT
 
 export HYAKU_STATE="$SB/state"
@@ -25,15 +43,27 @@ mkdir -p "$HYAKU_STATE"
 [ -d "$SRC/.git" ] || { echo "FAIL missing source lane repo $SRC" >&2; exit 1; }
 [ -x "$HELPER" ] || { echo "FAIL missing helper $HELPER" >&2; exit 1; }
 
+OLD="$SB/jj-lane-old.sh"
+if ! { git -C "$SELF_DIR/../.." show HEAD:scripts/hyaku/jj-lane.sh > "$OLD" 2>/dev/null && chmod +x "$OLD"; }; then
+  echo "FAIL cannot extract old helper" >&2; exit 1
+fi
+
 pass=0 total=0
 check() { # <label> <0|1>
   total=$((total + 1))
   if [ "$2" -eq 0 ]; then echo "PASS $1"; pass=$((pass + 1)); else echo "FAIL $1"; fi
 }
-rc() { if [ "$1" -eq 0 ]; then echo 0; else echo 1; fi }
 
 REMOTE="$SB/remote.git"
-git clone --bare -q "$SRC" "$REMOTE"
+new_remote() { # fresh bare remote; every prior clone's origin is re-pointed
+  rm -rf "$REMOTE"
+  git clone --bare -q "$SRC" "$REMOTE"
+  for c in "$SB"/*/; do
+    [ -d "${c}.git" ] && git -C "$c" remote set-url origin "$REMOTE" >/dev/null 2>&1
+  done
+  return 0
+}
+new_remote
 LANE_ID=testlane
 IDENT_NAME="${LANE_ID}-shokunin"
 IDENT_MAIL="${LANE_ID}@shokunin.local"
@@ -43,19 +73,43 @@ mkclone() { # <name> — fresh clone wired to the sandbox remote
   git -C "$SB/$1" remote set-url origin "$REMOTE" >/dev/null 2>&1 || true
 }
 
-branch_of() { git -C "$1" symbolic-ref -q refs/remotes/origin/HEAD | sed 's|.*/||'; }
+BR=$(git -C "$REMOTE" symbolic-ref -q HEAD 2>/dev/null | sed 's|refs/heads/||')
+[ -n "$BR" ] || BR=$(git -C "$REMOTE" for-each-ref --format='%(refname:short)' refs/heads/ | head -1)
 
 jcfg() { cat "$HOME/.config/jj/repos/$(cat "$1/.jj/repo/config-id")/config.toml" 2>/dev/null; }
 
-
-# operator-style commit on the remote through a separate clone (pull-rebase
-# first so it tracks whatever the lanes have already pushed).
+# operator-style commit on the remote through a separate clone.
 op_commit() { # <file> <content>
   local d="$SB/op" f=$1 c=$2
   if [ ! -d "$d" ]; then mkclone op; git -C "$d" config user.name operator; git -C "$d" config user.email op@sandbox.local; fi
-  git -C "$d" pull -q --rebase origin "$(branch_of "$d")"
+  git -C "$d" pull -q --rebase origin "$BR" 2>/dev/null || git -C "$d" pull -q --rebase origin "$BR"
   echo "$c" > "$d/$f"
-  git -C "$d" add "$f" && git -C "$d" commit -qm "operator: $f" && git -C "$d" push -q origin HEAD
+  git -C "$d" add "$f" && git -C "$d" commit -qm "operator: $f" && git -C "$d" push -q origin "HEAD:$BR"
+}
+
+remote_tip() { git -C "$REMOTE" rev-parse "refs/heads/$BR" 2>/dev/null; }
+
+# Run one scenario function against BOTH helpers on fresh clones: PASS
+# requires the hardened outcome (body exit 0) on the new helper and a failing
+# outcome on the old helper. $D = clone dir, $H = helper for the body's run.
+D=; H=
+try_both() { # <label> <function>
+  local label=$1 fn=$2 ok_new ok_old
+  new_remote
+  mkclone "${label}-new"; D="$SB/${label}-new"; H="$HELPER"
+  ( $fn ) >/dev/null 2>"$SB/${label}.new.err"; ok_new=$?
+  new_remote
+  mkclone "${label}-old"; D="$SB/${label}-old"; H="$OLD"
+  ( $fn ) >/dev/null 2>"$SB/${label}.old.err"; ok_old=$?
+  local ok=0
+  if [ $ok_new -ne 0 ]; then
+    ok=1; sed "s/^/    new-helper: /" "$SB/${label}.new.err" | head -5 >&2
+  elif [ $ok_old -eq 0 ]; then
+    ok=1; echo "  (old-helper: also passed — not a regression case)" >&2
+  else
+    echo "  (old-helper: FAIL, as required)"
+  fi
+  check "$label" "$ok"
 }
 
 #############################################################################
@@ -67,7 +121,8 @@ ok=0
 jcfg "$SB/a" | grep -q "name = \"$IDENT_NAME\"" || ok=1
 jcfg "$SB/a" | grep -q "email = \"$IDENT_MAIL\"" || ok=1
 jcfg "$SB/a" | grep -q 'auto-track = "none()"' || ok=1
-jcfg "$SB/a" | grep -q '"trunk()" = "master@origin"' || ok=1
+jcfg "$SB/a" | grep -q "\"trunk()\" = \"${BR}@origin\"" || ok=1
+[ "$(git -C "$SB/a" config lane.branch)" = "$BR" ] || ok=1
 "$HELPER" init "$SB/a" "$LANE_ID" >/dev/null 2>&1 || ok=1
 [ -d "$SB/a/.jj" ] || ok=1
 check "a init+reinit" "$ok"
@@ -78,7 +133,7 @@ mkclone b
 cid=$(cat "$SB/b/.jj/repo/config-id")
 cat > "$HOME/.config/jj/repos/$cid/config.toml" <<EOF
 [revset-aliases]
-"trunk()" = "master@origin"
+"trunk()" = "${BR}@origin"
 "immutable_heads()" = "builtin_immutable_heads() | ::bookmarks()"
 EOF
 "$HELPER" init "$SB/b" "$LANE_ID" >/dev/null 2>&1
@@ -88,34 +143,27 @@ jcfg "$SB/b" | grep -q "name = \"$IDENT_NAME\"" || ok=1
 check "b keeps-immutable-alias" "$ok"
 
 # c-f. pathspec commit on clone a.
-A="$SB/a"; BR=$(branch_of "$A")
+A="$SB/a"
 printf 'a-change\n' >> "$A/README.md"          # A: tracked, modified -> commit
 printf 'b-change\n' >> "$A/LOG.md"             # B: tracked, modified -> stays
-echo newfile > "$A/NEWFILE-$RANDOM.txt"        # N: untracked -> commit
-echo scratch > "$A/SCRATCH-$$.tmp"             # S: untracked -> stays
 N="NEWFILE-$RANDOM.txt"; echo newfile > "$A/$N"; S="SCRATCH-$$.tmp"; echo scratch > "$A/$S"
 out=$("$HELPER" commit "$A" --as "$LANE_ID" -m "selftest c" -- README.md "$N" 2>/dev/null)
-CHASH=$(printf '%s\n' "$out" | sed -n 's/^committed //p' | head -1)
-PHASH=$(printf '%s\n' "$out" | sed -n 's/^pushed //p' | head -1)
+CHASH=$(printf '%s\n' "$out" | sed -n 's/^landed //p' | head -1)
 ok=0
 [ -n "$CHASH" ] || ok=1
-[ "$(git -C "$A" show --format= --name-only "$CHASH" 2>/dev/null | sort | xargs)" = "README.md $N" ] || \
-  { git -C "$A" show --format= --name-only "$CHASH" | grep -qx 'README.md' \
-    && git -C "$A" show --format= --name-only "$CHASH" | grep -qx "$N" \
-    && [ "$(git -C "$A" show --format= --name-only "$CHASH" | wc -l)" -eq 2 ] || ok=1; }
+names=$(git -C "$A" show --format= --name-only "$CHASH" 2>/dev/null | sort | tr '\n' ' ' | sed 's/ $//')
+[ "$names" = "README.md $N" ] || [ "$names" = "$N README.md" ] || ok=1
 [ "$(git -C "$A" cat-file -p "$CHASH:README.md" | tail -1)" = "a-change" ] || ok=1
-[ "$(git -C "$A" show "$CHASH:LOG.md" | tail -1)" != "b-change" ] || ok=1  # B not in commit
-[ "$(tail -1 "$A/LOG.md")" = "b-change" ] || ok=1                        # B intact on disk
-[ "$(cat "$A/$S")" = "scratch" ] || ok=1                                 # S intact on disk
-git -C "$A" status --porcelain | grep -q "^?? $S\$" || ok=1              # S still untracked
-git -C "$A" status --porcelain | grep -q "^ M LOG.md\$" || ok=1          # B still modified
+[ "$(git -C "$A" show "$CHASH:LOG.md" | tail -1)" != "b-change" ] || ok=1
+[ "$(tail -1 "$A/LOG.md")" = "b-change" ] || ok=1
+[ "$(cat "$A/$S")" = "scratch" ] || ok=1
+git -C "$A" status --porcelain | grep -q "^?? $S\$" || ok=1
+git -C "$A" status --porcelain | grep -q "^ M LOG.md\$" || ok=1
 check "c pathspec-commit" "$ok"
 
 line=$(git -C "$A" log -1 --format='%an|%ae|%cn|%ce' "$CHASH" 2>/dev/null)
 if [ "$line" = "$IDENT_NAME|$IDENT_MAIL|$IDENT_NAME|$IDENT_MAIL" ]; then ok=0; else ok=1; fi
 check "d lane-identity" "$ok"
-
-
 
 ok=0
 [ "$(git -C "$A" rev-parse "$BR")" = "$CHASH" ] || ok=1
@@ -126,10 +174,9 @@ echo "  (git HEAD after jj commit: $head_kind)"
 check "e git-interop" "$ok"
 
 ok=0
-[ -n "$PHASH" ] || ok=1
-[ "$(git -C "$REMOTE" rev-parse "refs/heads/$BR")" = "$PHASH" ] || ok=1
-[ "$PHASH" = "$CHASH" ] || ok=1
-"$HELPER" push "$A" >/dev/null 2>&1 || { [ "$(git -C "$REMOTE" rev-parse "refs/heads/$BR")" = "$PHASH" ]; }
+[ "$(remote_tip)" = "$CHASH" ] || ok=1
+out=$("$HELPER" push "$A" 2>/dev/null)
+[ "$(printf '%s\n' "$out" | sed -n 's/^landed //p')" = "$CHASH" ] || ok=1
 [ "$(cd "$A" && git rev-list --count "origin/$BR..$BR")" = "0" ] || ok=1
 "$HELPER" state "$A" | grep -q 'ahead=0' || ok=1
 check "f push-landed" "$ok"
@@ -139,7 +186,7 @@ mkclone d2
 "$HELPER" init "$SB/d2" "$LANE_ID" >/dev/null 2>&1
 echo proto > "$SB/d2/PROTO.md"
 out=$("$HELPER" commit "$SB/d2" --as protocol -m "closure" -- PROTO.md 2>/dev/null)
-ph=$(printf '%s\n' "$out" | sed -n 's/^committed //p' | head -1)
+ph=$(printf '%s\n' "$out" | sed -n 's/^landed //p' | head -1)
 line=$(git -C "$SB/d2" log -1 --format='%an|%ae|%cn|%ce' "$ph" 2>/dev/null)
 if [ "$line" = "protocol-shokunin|protocol@shokunin.local|protocol-shokunin|protocol@shokunin.local" ]; then ok=0; else ok=1; fi
 check "d protocol-identity" "$ok"
@@ -148,48 +195,33 @@ check "d protocol-identity" "$ok"
 op_commit OP-G.md "operator-g"
 echo lanework > "$A/LANE-G.md"
 out=$("$HELPER" commit "$A" --as "$LANE_ID" -m "selftest g" -- LANE-G.md 2>/dev/null)
-PH=$(printf '%s\n' "$out" | sed -n 's/^pushed //p' | head -1)
+PH=$(printf '%s\n' "$out" | sed -n 's/^landed //p' | head -1)
+RW=$(printf '%s\n' "$out" | sed -n 's/^rewritten .* -> //p' | head -1)
 ok=0
 [ -n "$PH" ] || ok=1
 remote_log=$(git -C "$REMOTE" log --format='%H %s' "$BR")
 printf '%s\n' "$remote_log" | grep -q "$PH" || ok=1
 printf '%s\n' "$remote_log" | grep -q 'operator: OP-G.md' || ok=1
-# operator commit untouched: its subject+files unchanged and it is an ancestor
-git -C "$REMOTE" merge-base --is-ancestor "$(git -C "$REMOTE" rev-parse "$BR~1" 2>/dev/null)" "$BR" 2>/dev/null || true
 op_hash=$(git -C "$REMOTE" log --format=%H -1 --grep='operator: OP-G.md' "$BR")
 [ -n "$op_hash" ] && git -C "$REMOTE" merge-base --is-ancestor "$op_hash" "$PH" || ok=1
 check "g fetch-rebase-recovery" "$ok"
 
+ok=0
+{ [ -n "$RW" ] && [ "$PH" = "$(remote_tip)" ] && git -C "$REMOTE" merge-base --is-ancestor "$RW" "$PH"; } || ok=1
+check "g2 rewritten-line" "$ok"
+
 # h. same recovery with the ::bookmarks() immutable alias configured.
 B="$SB/b"
-# h commits only a new file so the recovery rebase cannot hit a text conflict.
 echo laneh > "$B/LANE-H.md"
 op_commit OP-H.md "operator-h"
 out=$("$HELPER" commit "$B" --as "$LANE_ID" -m "selftest h" -- LANE-H.md 2>/dev/null)
-PH=$(printf '%s\n' "$out" | sed -n 's/^pushed //p' | head -1)
+PH=$(printf '%s\n' "$out" | sed -n 's/^landed //p' | head -1)
 ok=0
 [ -n "$PH" ] || ok=1
 git -C "$REMOTE" log --format=%H "$BR" | grep -q "$PH" || ok=1
 git -C "$REMOTE" log --format=%s "$BR" | grep -q 'operator: OP-H.md' || ok=1
 jcfg "$B" | grep -q 'immutable_heads()" = "builtin_immutable_heads() | ::bookmarks()"' || ok=1
 check "h immutable-alias-recovery" "$ok"
-
-# i. plain git commit in colocated clone imported by next helper commit.
-mkclone i
-"$HELPER" init "$SB/i" "$LANE_ID" >/dev/null 2>&1
-echo direct > "$SB/i/DIRECT.md"
-git -C "$SB/i" -c user.name=op -c user.email=op@x commit -qm "direct git commit" -- DIRECT.md 2>/dev/null \
-  || { git -C "$SB/i" add DIRECT.md && git -C "$SB/i" -c user.name=op -c user.email=op@x commit -qm "direct git commit"; }
-echo lanei > "$SB/i/LANE-I.md"
-out=$("$HELPER" commit "$SB/i" --as "$LANE_ID" -m "selftest i" -- LANE-I.md 2>/dev/null)
-PH=$(printf '%s\n' "$out" | sed -n 's/^pushed //p' | head -1)
-ok=0
-[ -n "$PH" ] || ok=1
-git -C "$REMOTE" log --format=%s "$BR" | grep -q 'direct git commit' || ok=1
-git -C "$REMOTE" log --format=%s "$BR" | grep -q 'selftest i' || ok=1
-[ -z "$(cd "$SB/i" && "$JJ" log --ignore-working-copy --no-graph -T x -r 'divergent()' 2>/dev/null)" ] || ok=1
-(cd "$SB/i" && "$JJ" bookmark list --ignore-working-copy 2>/dev/null | grep -q 'conflict') && ok=1
-check "i git-commit-import" "$ok"
 
 # j. big untracked files.
 mkclone j
@@ -198,33 +230,46 @@ head -c 2097152 /dev/urandom > "$SB/j/MED.bin"
 "$HELPER" init "$SB/j" "$LANE_ID" >/dev/null 2>&1
 echo jx > "$SB/j/j.md"
 out=$("$HELPER" commit "$SB/j" --as "$LANE_ID" -m "selftest j" -- j.md MED.bin 2>/dev/null)
-PH=$(printf '%s\n' "$out" | sed -n 's/^pushed //p' | head -1)
+PH=$(printf '%s\n' "$out" | sed -n 's/^landed //p' | head -1)
 ok=0
 [ -n "$PH" ] || ok=1
 "$HELPER" state "$SB/j" >/dev/null 2>&1 || ok=1
-git -C "$SB/j" status --porcelain | grep -q '^?? BIG.bin' || ok=1   # BIG stays untracked
-git -C "$REMOTE" show "$PH:MED.bin" >/dev/null 2>&1 || ok=1       # 2MiB committed
+git -C "$SB/j" status --porcelain | grep -q '^?? BIG.bin' || ok=1
+git -C "$REMOTE" show "$PH:MED.bin" >/dev/null 2>&1 || ok=1
 [ "$(git -C "$REMOTE" cat-file -s "$PH:MED.bin")" = "2097152" ] || ok=1
 check "j big-files" "$ok"
 
-# k. two concurrent helper commits on different paths.
+# k. two lanes write concurrently from the same base: both commits must land.
+#    k1/k2 commit locally first (no push), then push in sequence — the second
+#    push is lease-rejected, fetches a conflicted bookmark, and must recover.
 mkclone k1; mkclone k2
 "$HELPER" init "$SB/k1" "$LANE_ID" >/dev/null 2>&1
 "$HELPER" init "$SB/k2" "$LANE_ID" >/dev/null 2>&1
 echo k1 > "$SB/k1/K1.md"; echo k2 > "$SB/k2/K2.md"
-"$HELPER" commit "$SB/k1" --as "$LANE_ID" -m "k1" -- K1.md >/dev/null 2>&1 &
-p1=$!
-"$HELPER" commit "$SB/k2" --as "$LANE_ID" -m "k2" -- K2.md >/dev/null 2>&1 &
-p2=$!
-r1=0; r2=0; wait $p1 || r1=$?; wait $p2 || r2=$?
+for kl in k1 k2; do
+  kf=$(printf '%s' "$kl" | tr '[:lower:]' '[:upper:]')
+  ( cd "$SB/$kl" &&
+    "$JJ" --config 'snapshot.auto-track="none()"' \
+      --config "user.name=$IDENT_NAME" --config "user.email=$IDENT_MAIL" \
+      file track --include-ignored -- "root-file:\"$kf.md\"" >/dev/null 2>&1 &&
+    "$JJ" --config 'snapshot.auto-track="none()"' \
+      --config "user.name=$IDENT_NAME" --config "user.email=$IDENT_MAIL" \
+      metaedit --update-author >/dev/null 2>&1 &&
+    "$JJ" --config 'snapshot.auto-track="none()"' \
+      --config "user.name=$IDENT_NAME" --config "user.email=$IDENT_MAIL" \
+      commit -m "$kl" >/dev/null 2>&1 &&
+    "$JJ" --ignore-working-copy bookmark set "$BR" -r @- >/dev/null 2>&1 )
+done
+r1=0; r2=0
+"$HELPER" push "$SB/k1" >/dev/null 2>&1 || r1=$?
+"$HELPER" push "$SB/k2" >/dev/null 2>&1 || r2=$?
 ok=0
 [ $r1 -eq 0 ] || ok=1
 [ $r2 -eq 0 ] || ok=1
 git -C "$REMOTE" show "$BR:K1.md" >/dev/null 2>&1 || ok=1
 git -C "$REMOTE" show "$BR:K2.md" >/dev/null 2>&1 || ok=1
-(cd "$SB/k1" && "$JJ" git fetch >/dev/null 2>&1)
-[ -z "$(cd "$SB/k1" && "$JJ" log --ignore-working-copy --no-graph -T x -r 'divergent()' 2>/dev/null)" ] || ok=1
-(cd "$SB/k1" && "$JJ" bookmark list --ignore-working-copy 2>/dev/null | grep -q 'conflict') && ok=1
+(cd "$SB/k2" && "$JJ" --ignore-working-copy bookmark list 2>/dev/null | grep -q 'conflict') && ok=1
+(cd "$SB/k2" && "$JJ" --ignore-working-copy log --no-graph -T x -r 'divergent()' 2>/dev/null | grep -q .) && ok=1
 check "k concurrent-commits" "$ok"
 
 # l. state changes nothing.
@@ -232,39 +277,35 @@ mkclone l
 "$HELPER" init "$SB/l" "$LANE_ID" >/dev/null 2>&1
 echo dirty >> "$SB/l/README.md"
 echo untracked > "$SB/l/u.tmp"
-op_head() { (cd "$SB/l" && "$JJ" op log --ignore-working-copy -n1 --no-graph -T 'self.id()' 2>/dev/null); }
-gstat() { git -C "$SB/l" status --porcelain; }
-o1=$(op_head); s1=$(gstat)
+o1=$(cd "$SB/l" && "$JJ" op log --ignore-working-copy -n1 --no-graph -T 'self.id()' 2>/dev/null)
+s1=$(git -C "$SB/l" status --porcelain)
 "$HELPER" state "$SB/l" >/dev/null 2>&1
-o2=$(op_head); s2=$(gstat)
+o2=$(cd "$SB/l" && "$JJ" op log --ignore-working-copy -n1 --no-graph -T 'self.id()' 2>/dev/null)
+s2=$(git -C "$SB/l" status --porcelain)
 ok=0
 [ "$o1" = "$o2" ] || ok=1
 [ "$s1" = "$s2" ] || ok=1
 [ -n "$o1" ] || ok=1
 check "l state-readonly" "$ok"
 
-# m. git index interplay: staged entry across helper state+commit of a
-# different path — reported either way, asserts only that the helper worked
-# and the file content survived on disk.
+# m. git index interplay: a staged entry does not survive a snapshotting
+# mutation, but the file content always does.
 mkclone m
 "$HELPER" init "$SB/m" "$LANE_ID" >/dev/null 2>&1
 echo staged-content > "$SB/m/STAGED.md"
 git -C "$SB/m" add STAGED.md
-staged_before=$(git -C "$SB/m" ls-files --error-unmatch STAGED.md >/dev/null 2>&1 && echo yes || echo no)
 "$HELPER" state "$SB/m" >/dev/null 2>&1
-staged_after_state=$(git -C "$SB/m" ls-files --error-unmatch STAGED.md >/dev/null 2>&1 && echo yes || echo no)
 echo mfile > "$SB/m/M.md"
 out=$("$HELPER" commit "$SB/m" --as "$LANE_ID" -m "selftest m" -- M.md 2>/dev/null)
-PH=$(printf '%s\n' "$out" | sed -n 's/^pushed //p' | head -1)
-staged_after_commit=$(git -C "$SB/m" ls-files --error-unmatch STAGED.md >/dev/null 2>&1 && echo yes || echo no)
-echo "  (staged entry: before=$staged_before after-state=$staged_after_state after-commit=$staged_after_commit)"
+PH=$(printf '%s\n' "$out" | sed -n 's/^landed //p' | head -1)
+staged_after=$(git -C "$SB/m" ls-files --error-unmatch STAGED.md >/dev/null 2>&1 && echo yes || echo no)
+echo "  (staged entry after commit: $staged_after)"
 ok=0
 [ -n "$PH" ] || ok=1
 [ -f "$SB/m/STAGED.md" ] && [ "$(cat "$SB/m/STAGED.md")" = "staged-content" ] || ok=1
 check "m staged-index-interplay" "$ok"
 
-# n. init on a dirty tree (seat scratch, operator sweep dir present) must not
-# track anything: every untracked path stays "??" in git and absent from jj.
+# n. init on a dirty tree tracks nothing.
 mkclone n
 mkdir -p "$SB/n/census/opsweep" && echo o > "$SB/n/census/opsweep/a.txt"
 echo u > "$SB/n/SCRATCH-N.tmp"
@@ -276,19 +317,401 @@ git -C "$SB/n" status --porcelain | grep -qv '^??' && ok=1
 (cd "$SB/n" && "$JJ" file list --ignore-working-copy | grep -qE '^(SCRATCH-N.tmp|census/opsweep/a.txt)$') && ok=1
 check "n dirty-init-tracks-nothing" "$ok"
 
-# o. committing a named directory behaves like `git add <dir>`: ignored
-# content inside it (caches, seat scratch) stays out of the commit.
+# o. committing a named directory behaves like `git add <dir>`.
 mkclone o
 "$HELPER" init "$SB/o" "$LANE_ID" >/dev/null 2>&1
 mkdir -p "$SB/o/wave/__pycache__" && echo keep > "$SB/o/wave/keep.md" && echo junk > "$SB/o/wave/__pycache__/x.pyc"
 echo '__pycache__/' >> "$SB/o/.git/info/exclude"
 out=$("$HELPER" commit "$SB/o" --as "$LANE_ID" -m "selftest o" -- wave 2>/dev/null)
-PH=$(printf '%s\n' "$out" | sed -n 's/^pushed //p' | head -1)
+PH=$(printf '%s\n' "$out" | sed -n 's/^landed //p' | head -1)
 ok=0
 [ -n "$PH" ] || ok=1
 git -C "$REMOTE" ls-tree -r --name-only "$PH" -- wave | grep -qx 'wave/keep.md' || ok=1
 git -C "$REMOTE" ls-tree -r --name-only "$PH" -- wave | grep -q '__pycache__' && ok=1
 check "o dir-commit-skips-ignored" "$ok"
+
+#############################################################################
+# z* — hardening cases. Each body runs on a fresh clone under the new helper
+# and under the old helper; PASS needs the hardened outcome (exit 0) on the
+# new one and a different outcome on the old one.
+
+case_z1() {
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  echo x > "$D/X.md"; "$H" commit "$D" --as testlane -m c1 -- X.md >/dev/null 2>&1 || return 1
+  local tip; tip=$(git -C "$REMOTE" rev-parse "refs/heads/$BR")
+  git -C "$D" update-ref "refs/heads/$BR" "$BR~1"
+  "$H" push "$D" >/dev/null 2>&1 && return 1
+  [ "$(git -C "$REMOTE" rev-parse "refs/heads/$BR")" = "$tip" ]
+}
+try_both z1-backward-push-refused case_z1
+
+case_z1b() {
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  echo x > "$D/X.md"; "$H" commit "$D" --as testlane -m c1 -- X.md >/dev/null 2>&1 || return 1
+  local tip t; tip=$(git -C "$REMOTE" rev-parse "refs/heads/$BR")
+  t=$(cd "$D" && git commit-tree "$BR^{tree}" -p "$BR~1" -m sideways)
+  git -C "$D" update-ref "refs/heads/$BR" "$t"
+  "$H" push "$D" >/dev/null 2>&1 && return 1
+  [ "$(git -C "$REMOTE" rev-parse "refs/heads/$BR")" = "$tip" ]
+}
+try_both z1b-sideways-push-refused case_z1b
+
+case_z2() {
+  git -C "$D" config user.name op; git -C "$D" config user.email op@x
+  echo local > "$D/LOCAL.md"; git -C "$D" add LOCAL.md; git -C "$D" commit -qm "local work"
+  local d="$SB/op2-$RANDOM"; git clone -q "$REMOTE" "$d"
+  git -C "$d" config user.name op; git -C "$d" config user.email op@x
+  echo rem > "$d/REM.md"; git -C "$d" add REM.md; git -C "$d" commit -qm "operator"; git -C "$d" push -q origin "HEAD:$BR"
+  git -C "$D" fetch -q origin
+  "$H" init "$D" testlane >/dev/null 2>&1 && return 1
+  git -C "$REMOTE" merge-base --is-ancestor "$(git -C "$d" rev-parse HEAD)" "$BR"
+}
+try_both z2-init-diverged-refused case_z2
+
+case_z3() {
+  git -C "$D" checkout -qb feat
+  git -C "$D" push -q origin feat:feat
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  echo f1 > "$D/F1.md"; "$H" commit "$D" --as testlane -m f1 -- F1.md >/dev/null 2>&1 || return 1
+  [ "$("$H" state "$D" | sed -n 's/^state branch=\([^ ]*\).*/\1/p')" = "feat" ] || return 1
+  echo f2 > "$D/F2.md"; "$H" commit "$D" --as testlane -m f2 -- F2.md >/dev/null 2>&1 || return 1
+  git -C "$REMOTE" rev-parse --verify -q refs/heads/feat >/dev/null || return 1
+  git -C "$REMOTE" cat-file -e feat:F2.md
+}
+try_both z3-branch-binding case_z3
+
+case_z4() {
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  mkdir -p "$D/.ufo/state"; echo s > "$D/.ufo/state/run.json"; echo n > "$D/.ufo/notes.md"
+  local base
+  base=$(git -C "$REMOTE" ls-tree -r --name-only "$BR" -- .ufo | sort)
+  "$H" commit "$D" --as testlane -m x -- ./ >/dev/null 2>&1 && return 1
+  "$H" commit "$D" --as testlane -m x -- .ufo >/dev/null 2>&1 && return 1
+  "$H" commit "$D" --as testlane -m x -- .ufo/state >/dev/null 2>&1 && return 1
+  "$H" commit "$D" --as testlane -m x -- ./.ufo/state/run.json >/dev/null 2>&1 && return 1
+  ! git -C "$REMOTE" cat-file -e "$BR:.ufo/state/run.json" 2>/dev/null || return 1
+  [ "$(git -C "$REMOTE" ls-tree -r --name-only "$BR" -- .ufo | sort)" = "$base" ]
+}
+try_both z4-ufo-paths-refused case_z4
+
+case_z5() {
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  echo a > "$D/a~b.md"; echo x > "$D/x|y.md"; echo s > "$D/sp ace.md"
+  local out ph
+  out=$("$H" commit "$D" --as testlane -m names -- "a~b.md" "x|y.md" "sp ace.md" 2>/dev/null)
+  ph=$(printf '%s\n' "$out" | sed -n 's/^landed //p')
+  [ -n "$ph" ] || return 1
+  git -C "$REMOTE" cat-file -e "$BR:a~b.md" &&
+  git -C "$REMOTE" cat-file -e "$BR:x|y.md" &&
+  git -C "$REMOTE" cat-file -e "$BR:sp ace.md"
+}
+try_both z5-fileset-literals case_z5
+
+case_z6() {
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  head -c 11534336 /dev/urandom > "$D/BIG.bin"
+  "$H" commit "$D" --as testlane -m big -- BIG.bin >/dev/null 2>&1 && return 1
+  ! git -C "$REMOTE" cat-file -e "$BR:BIG.bin" 2>/dev/null
+}
+try_both z6-large-file-gate case_z6
+
+case_z7() {
+  mkdir -p "$D/tests/vadv54-run/p/p6repo/.git" "$D/tests/vadv54-run/p/p6repo/inner"
+  echo one > "$D/tests/vadv54-run/p/p6repo/one.txt"; echo keep > "$D/tests/vadv54-run/p/p6repo/inner/keep.txt"
+  git -C "$D" add tests && git -C "$D" -c user.name=seed -c user.email=s@x commit -qm "add tests" \
+    && git -C "$D" push -q origin "HEAD:$BR" || return 1
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  "$H" commit "$D" --as testlane -m tests -- tests/vadv54-run >/dev/null 2>&1 && return 1
+  git -C "$REMOTE" cat-file -e "$BR:tests/vadv54-run/p/p6repo/one.txt"
+}
+try_both z7-phantom-deletion case_z7
+
+case_z8() {
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  local key holder before elapsed
+  key=$(printf '%s' "$(cd "$D" && pwd -P)" | tr '/.' '__' | tr -cd '[:alnum:]_-')
+  flock -w2 "$HYAKU_STATE/jj-$key.lock" true || return 1
+  ( exec {fd}>"$HYAKU_STATE/jj-$key.lock"; flock -n "$fd" || exit 1; sleep 3 ) &
+  holder=$!; sleep 1
+  before=$(date +%s)
+  ( cd "$D" && echo r > rel.md && timeout 12 "$H" commit . --as testlane -m rel -- rel.md ) >/dev/null 2>&1
+  elapsed=$(( $(date +%s) - before ))
+  wait "$holder" 2>/dev/null || true
+  [ "$elapsed" -ge 2 ] || return 1
+  echo a > "$D/abs.md"; timeout 30 "$H" commit "$D" --as testlane -m abs -- abs.md >/dev/null 2>&1
+}
+try_both z8-lock-canonical case_z8
+
+case_z9() {
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  local d="$SB/opz9-$RANDOM" out ph
+  git clone -q "$REMOTE" "$d"
+  git -C "$d" config user.name op; git -C "$d" config user.email op@x
+  echo op > "$d/OPZ.md"; git -C "$d" add OPZ.md; git -C "$d" commit -qm op; git -C "$d" push -q origin "HEAD:$BR"
+  echo c > "$D/C.md"
+  out=$("$H" commit "$D" --as protocol -m closure -- C.md 2>/dev/null)
+  ph=$(printf '%s\n' "$out" | sed -n 's/^landed //p'); [ -n "$ph" ] || return 1
+  [ "$(git -C "$REMOTE" log -1 --format='%an|%ae|%cn|%ce' "$ph")" = \
+    "protocol-shokunin|protocol@shokunin.local|protocol-shokunin|protocol@shokunin.local" ]
+}
+try_both z9-protocol-committer-recovery case_z9
+
+case_z10() {
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  local out ph
+  mv "$REMOTE" "$REMOTE.off"
+  echo w1 > "$D/W1.md"
+  if "$H" commit "$D" --as testlane -m w1 -- W1.md >/dev/null 2>&1; then
+    mv "$REMOTE.off" "$REMOTE"; return 1
+  fi
+  mv "$REMOTE.off" "$REMOTE"
+  "$H" push "$D" >/dev/null 2>&1 || return 1
+  echo w2 > "$D/W2.md"
+  out=$("$H" commit "$D" --as testlane -m w2 -- W2.md 2>/dev/null)
+  ph=$(printf '%s\n' "$out" | sed -n 's/^landed //p'); [ -n "$ph" ] || return 1
+  git -C "$REMOTE" cat-file -e "$BR:W2.md"
+}
+try_both z10-retry-lands case_z10
+
+case_z11() {
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  local cited d
+  echo c > "$D/CITED.md"; "$H" commit "$D" --as testlane -m cited -- CITED.md >/dev/null 2>&1 || return 1
+  cited=$(git -C "$REMOTE" rev-parse "$BR")
+  d="$SB/opz11-$RANDOM"; git clone -q "$REMOTE" "$d"
+  git -C "$d" config user.name op; git -C "$d" config user.email op@x
+  git -C "$d" reset -q --hard HEAD~1; echo z > "$d/Z.md"; git -C "$d" add Z.md
+  git -C "$d" commit -qm rewrite; git -C "$d" push -qf origin "HEAD:$BR"
+  echo n > "$D/N.md"
+  "$H" commit "$D" --as testlane -m next -- N.md >/dev/null 2>&1 && return 1
+  "$H" push "$D" >/dev/null 2>&1 && return 1
+  ! git -C "$REMOTE" merge-base --is-ancestor "$cited" "$BR" 2>/dev/null || return 1
+  ! git -C "$REMOTE" log --format=%s "$BR" | grep -q cited
+}
+try_both z11-remote-rewrite-refused case_z11
+
+case_z12() {
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  printf 'seat-half-line\n' >> "$D/README.md"
+  ( cd "$D" && "$JJ" --config "user.name=testlane-shokunin" --config "user.email=testlane@shokunin.local" \
+      commit -m "seat wip checkpoint" >/dev/null 2>&1 )
+  echo real > "$D/REAL.md"
+  "$H" commit "$D" --as testlane -m real -- REAL.md >/dev/null 2>&1 || true
+  ! git -C "$REMOTE" log --format=%s "$BR" | grep -q "seat wip" || return 1
+  ! git -C "$REMOTE" show "$BR:README.md" | tail -1 | grep -qx "seat-half-line"
+}
+try_both z12-seat-commit-not-swept case_z12
+
+case_z13() {
+  git -C "$D" config user.name ci; git -C "$D" config user.email ci@local
+  echo raw > "$D/RAW.md"; git -C "$D" add RAW.md; git -C "$D" commit -qm "raw git commit"
+  local raw; raw=$(git -C "$D" rev-parse HEAD)
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  echo mine > "$D/MINE.md"
+  "$H" commit "$D" --as testlane -m mine -- MINE.md >/dev/null 2>&1 && return 1
+  "$H" push "$D" >/dev/null 2>&1 && return 1
+  ! git -C "$REMOTE" merge-base --is-ancestor "$raw" "$BR" 2>/dev/null
+}
+try_both z13-foreign-identity-refused case_z13
+
+case_z14() {
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  echo x > "$D/X.md"
+  "$H" commit "$D" --as testlane -m x -- X.md >/dev/null 2>&1 || return 1
+  echo y > "$D/Y.md"
+  "$H" commit "$D" --as kama -m x -- Y.md >/dev/null 2>&1 && return 1
+  ! git -C "$REMOTE" cat-file -e "$BR:Y.md" 2>/dev/null
+}
+try_both z14-foreign-as-refused case_z14
+
+case_z15() {
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  local wt="$SB/wt-$RANDOM"
+  git -C "$D" worktree add -q --detach "$wt" "$BR" 2>/dev/null || return 1
+  "$H" init "$wt" testlane >/dev/null 2>&1 && return 1
+  "$H" commit "$wt" --as testlane -m x -- README.md >/dev/null 2>&1 && return 1
+  "$H" state "$wt" >/dev/null 2>&1 && return 1
+  # The fleet root itself: `state` is read-only and safe on both helpers;
+  # `init` would mutate the live repo under the OLD helper, so new-helper only.
+  "$H" state /home/vgpnk/Projects/shokunin >/dev/null 2>&1 && return 1
+  if [ "$(readlink -f "$H")" != "$(readlink -f "$OLD")" ]; then
+    "$H" init /home/vgpnk/Projects/shokunin testlane >/dev/null 2>&1 && return 1
+    "$H" commit /home/vgpnk/Projects/shokunin --as testlane -m x -- README.md >/dev/null 2>&1 && return 1
+  fi
+  return 0
+}
+try_both z15-fleet-and-worktree-refused case_z15
+
+case_z16() {
+  export JJ_USER="Env Attacker" JJ_EMAIL=env@evil.test
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  echo x > "$D/X.md"
+  local out ph
+  out=$("$H" commit "$D" --as testlane -m env -- X.md 2>/dev/null)
+  ph=$(printf '%s\n' "$out" | sed -n 's/^landed //p'); [ -n "$ph" ] || return 1
+  [ "$(git -C "$REMOTE" log -1 --format='%an|%ae|%cn|%ce' "$ph")" = \
+    "testlane-shokunin|testlane@shokunin.local|testlane-shokunin|testlane@shokunin.local" ]
+}
+try_both z16-env-scrub case_z16
+
+jj_lane_commit() { # <file> <msg> — native jj commit inside $D, lane identity
+  ( cd "$D" &&
+    "$JJ" --config 'snapshot.auto-track="none()"' \
+      --config "user.name=testlane-shokunin" --config "user.email=testlane@shokunin.local" \
+      file track --include-ignored -- "$1" >/dev/null 2>&1 &&
+    "$JJ" --config 'snapshot.auto-track="none()"' \
+      --config "user.name=testlane-shokunin" --config "user.email=testlane@shokunin.local" \
+      metaedit --update-author >/dev/null 2>&1 &&
+    "$JJ" --config 'snapshot.auto-track="none()"' \
+      --config "user.name=testlane-shokunin" --config "user.email=testlane@shokunin.local" \
+      commit -m "$2" -- "$1" >/dev/null 2>&1 &&
+    "$JJ" --ignore-working-copy bookmark set "$BR" -r @- >/dev/null 2>&1 )
+}
+
+case_z17() {
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  echo local > "$D/LC.md"
+  jj_lane_commit LC.md "lane commit" || return 1
+  local d="$SB/opz17-$RANDOM" tip
+  git clone -q "$REMOTE" "$d"
+  git -C "$d" config user.name op; git -C "$d" config user.email op@x
+  echo op > "$d/OPZ17.md"; git -C "$d" add OPZ17.md; git -C "$d" commit -qm op; git -C "$d" push -q origin "HEAD:$BR"
+  ( cd "$D" && "$JJ" --ignore-working-copy git fetch --remote origin >/dev/null 2>&1 )
+  tip=$(git -C "$REMOTE" rev-parse "refs/heads/$BR")
+  "$H" push "$D" >/dev/null 2>&1 && return 1
+  [ "$(git -C "$REMOTE" rev-parse "refs/heads/$BR")" = "$tip" ]
+}
+try_both z17-conflicted-bookmark case_z17
+
+case_z18() {
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  echo l > "$D/L.md"; "$H" commit "$D" --as testlane -m l -- L.md >/dev/null 2>&1 || return 1
+  local d="$SB/opz18-$RANDOM" tip out ph
+  git clone -q "$REMOTE" "$d"
+  git -C "$d" config user.name op; git -C "$d" config user.email op@x
+  echo op > "$d/OPZ18.md"; git -C "$d" add OPZ18.md; git -C "$d" commit -qm op; git -C "$d" push -q origin "HEAD:$BR"
+  echo l2 > "$D/L2.md"
+  jj_lane_commit L2.md "l2" || return 1
+  tip=$(git -C "$REMOTE" rev-parse "refs/heads/$BR")
+  "$H" push --no-rebase "$D" >/dev/null 2>&1 && return 1
+  [ "$(git -C "$REMOTE" rev-parse "refs/heads/$BR")" = "$tip" ] || return 1
+  out=$("$H" push "$D" 2>/dev/null)
+  ph=$(printf '%s\n' "$out" | sed -n 's/^landed //p'); [ -n "$ph" ]
+}
+try_both z18-norebase-driver-push case_z18
+
+case_z19() {
+  ( cd "$D" && "$JJ" git init --colocate . >/dev/null 2>&1 )
+  echo scratch > "$D/SCRATCH-LEGACY.md"
+  ( cd "$D" && "$JJ" status >/dev/null 2>&1 )
+  "$H" init "$D" testlane >"$D/.initout" 2>&1 || return 1
+  grep -q "untracked (kept on disk): SCRATCH-LEGACY.md" "$D/.initout" || return 1
+  [ -f "$D/SCRATCH-LEGACY.md" ] || return 1
+  git -C "$D" status --porcelain | grep -q "^?? SCRATCH-LEGACY.md" || return 1
+  ! ( cd "$D" && "$JJ" --ignore-working-copy file list -r @ | grep -q "SCRATCH-LEGACY" )
+}
+try_both z19-legacy-untracks-scratch case_z19
+
+case_z20() {
+  ( cd "$D" && "$JJ" --config 'snapshot.auto-track="none()"' git init --colocate . >/dev/null 2>&1 )
+  git -C "$D" config user.name testlane-shokunin; git -C "$D" config user.email testlane@shokunin.local
+  echo g1 > "$D/G1.md"; git -C "$D" add G1.md; git -C "$D" commit -qm "git commit one"
+  echo g2 > "$D/G2.md"; git -C "$D" add G2.md; git -C "$D" commit -qm "git commit two"
+  local before
+  before=$(git -C "$D" status --porcelain --untracked-files=no)
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  [ "$(git -C "$D" status --porcelain --untracked-files=no)" = "$before" ] || return 1
+  [ "$(cd "$D" && "$JJ" --ignore-working-copy log --no-graph -r @- -T commit_id)" = \
+    "$(git -C "$D" rev-parse "refs/heads/$BR")" ]
+}
+try_both z20-stale-jj-imports-head case_z20
+
+case_z21() {
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  local out rc
+  out=$("$H" commit "$D" --as testlane -m noop -- README.md 2>/dev/null); rc=$?
+  [ $rc -eq 0 ] || return 1
+  printf '%s\n' "$out" | grep -q "^nothing to commit" || return 1
+  ! printf '%s\n' "$out" | grep -qE "[0-9a-f]{40}|landed|pushed|committed"
+}
+try_both z21-nothing-no-hash case_z21
+
+case_z22() {
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  echo x > "$D/X.md"
+  local holder out rc
+  ( exec {fd}>"$D/.git/index.lock"; flock -n "$fd" || exit 1; sleep 4 ) &
+  holder=$!; sleep 1
+  out=$("$H" commit "$D" --as testlane -m x -- X.md 2>/dev/null); rc=$?
+  wait "$holder" 2>/dev/null || true
+  [ $rc -ne 0 ] || return 1
+  ! printf '%s\n' "$out" | grep -q "nothing to commit"
+}
+try_both z22-index-lock-error case_z22
+
+case_z23() {
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  git -C "$D" rm -q README.md
+  local out ph
+  out=$("$H" commit "$D" --as testlane -m del -- README.md 2>/dev/null)
+  ph=$(printf '%s\n' "$out" | sed -n 's/^landed //p'); [ -n "$ph" ] || return 1
+  ! git -C "$REMOTE" cat-file -e "$BR:README.md" 2>/dev/null
+}
+try_both z23-deletion-lands case_z23
+
+case_z24() {
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  mv "$D/LOG.md" "$D/RENAMED.md"
+  local out ph
+  out=$("$H" commit "$D" --as testlane -m mv -- LOG.md RENAMED.md 2>/dev/null)
+  ph=$(printf '%s\n' "$out" | sed -n 's/^landed //p'); [ -n "$ph" ] || return 1
+  ! git -C "$REMOTE" cat-file -e "$BR:LOG.md" 2>/dev/null || return 1
+  git -C "$REMOTE" cat-file -e "$BR:RENAMED.md"
+}
+try_both z24-rename-lands case_z24
+
+# z25 — first colocation refuses a repo with staged index entries (jj init
+# would silently unstage them). The staged entry must survive the refusal.
+case_z25() {
+  echo s > "$D/STAGED-INIT.md"
+  git -C "$D" add STAGED-INIT.md
+  "$H" init "$D" testlane >/dev/null 2>&1 && return 1
+  [ ! -d "$D/.jj" ] || return 1
+  git -C "$D" ls-files --error-unmatch -- STAGED-INIT.md >/dev/null 2>&1
+}
+try_both z25-init-staged-refused case_z25
+
+# z26 — commit refuses when the repo lost snapshot.auto-track="none()"
+# ("run init"): an unguarded snapshot would track every untracked file.
+case_z26() {
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  ( cd "$D" && "$JJ" --ignore-working-copy config unset --repo snapshot.auto-track >/dev/null 2>&1 ) || return 1
+  echo x > "$D/X.md"
+  "$H" commit "$D" --as testlane -m x -- X.md >/dev/null 2>&1 && return 1
+  ! git -C "$REMOTE" cat-file -e "$BR:X.md" 2>/dev/null
+}
+try_both z26-commit-needs-init-config case_z26
+
+# z27 — state is pure git and refuses a non-40-hex (missing) origin ref.
+case_z27() {
+  "$H" init "$D" testlane >/dev/null 2>&1 || return 1
+  git -C "$D" update-ref -d "refs/remotes/origin/$BR"
+  "$H" state "$D" >/dev/null 2>&1 && return 1
+  "$H" state "$D" 2>&1 | grep -q "not a 40-hex"
+}
+try_both z27-state-needs-40hex case_z27
+
+# p. `state` serves the driver for EVERY lane: a plain git clone never init'ed
+# (detached HEAD) and a lane colocated before lane.branch existed must still
+# report their branch. New helper only — the old helper also detects branches.
+mkclone p
+git -C "$SB/p" checkout -q --detach
+ok=0
+"$HELPER" state "$SB/p" 2>/dev/null | grep -q "^state branch=$BR " || ok=1
+"$HELPER" init "$SB/p" "$LANE_ID" >/dev/null 2>&1 || ok=1
+git -C "$SB/p" config --unset lane.branch
+"$HELPER" state "$SB/p" 2>/dev/null | grep -q "^state branch=$BR " || ok=1
+check "p state-without-lane-branch" "$ok"
 
 echo "selftest $pass/$total"
 [ "$pass" -eq "$total" ]
