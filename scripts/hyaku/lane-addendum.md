@@ -52,6 +52,10 @@ inherited: reuse what you re-verify, discard what you do not, and name both in t
    unchanged (`context` + `tasks`); direct call or `await tool.task(**taskCall)` from eval.
    Every seat is a leaf with a disjoint write set inside {{LANE_CWD}} or is read-only; seats
    never write the fleet repo, MANIFEST.json, or another lane. You integrate; seats advise.
+   **Seat paths are absolute:** seat tools also start at the fleet root, so a relative path such as
+   `.ufo/waves/...` lands in the FLEET repo (observed hyaku r11/r12: kama and tsukuroi seats). The
+   wave `context`, every item, and the spec `reportDir` must name absolute paths under
+   {{LANE_CWD}}; never `agent://all` (it reaches every lane's seats) — message your seats by id.
 3. **Write scope:** {{LANE_CWD}} (your lane repo); your report
    `{{FLEET_ROOT}}/.ufo/reports/round-{{ROUND}}/{{LANE}}.md`; appended lines in
    `{{FLEET_ROOT}}/.ufo/l0-questions.md`. Never edit MANIFEST.json (a separate non-author hyaku
