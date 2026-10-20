@@ -207,6 +207,19 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
   scribe, distiller → @m_haiku. Probe ~16:3x -03 (`probe-alias.sh m_grok m_swe m_luna`): all
   three primaries answered. Risk: Codex now carries m_luna, m_sol and the last hop of the
   m_zfl/m_flash cascades.
+- **Captured coordinator-chain correction (18:2x–18:3x -03).** Fresh KaidokuR20 and
+  ClosureTabiR18 snapshots contained the three-hop `m_opus` alias chain, without Sol, despite
+  the four-hop exact-model chain above. Reported to OMP QA: this disagrees with the documented
+  exact-model precedence at spawn. Existing failed coordinators retain those snapshots;
+  warm resumes again failed on Anthropic ~8,727-second backoff or Devin weekly quota.
+  Session-only mitigation: append the already-configured Sol tail to `m_opus` itself, preserving
+  its Opus primary and first three fallback hops. KagiR22's new snapshot captures all four hops,
+  and its transcript shows Anthropic 429 → Codex gpt-6.1-sol serving real tool calls.
+  This proves the alias-chain mitigation for fresh spawns, not a refresh of old agents.
+- **Next three ten-round blocks started:** kagi r22–31, kake r22–31, kasegi r23–32.
+  First rounds dispatched as KagiR22, KakeR22, KasegiR23; each must finish its named round and
+  independent closure before advancing. Their initial work may proceed while the shared
+  jj helper's guarded recovery is verified; no live helper commits until that check completes.
 - **Routing precedence (ruling on kama r17 closure R8).** The closure found the addendum's
   role→model map contradicting the deployment `MISSION.md` buckets (connector heavy-reasoning,
   critic/sentinel economy). For phase 2 the operator's explicit per-role directives (1–28 above)
