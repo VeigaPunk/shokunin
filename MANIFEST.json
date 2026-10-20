@@ -8347,6 +8347,49 @@
    "notes": "Driver digest: 2026-10-20T10:51:22-03:00 launch mado round=17 pgid=2433501 driver=hyaku-inline attempt=1; 2026-10-20T12:18:08-03:00 complete mado round=17; hyaku-inline attempt=1. Step-1 conformance ok: report by lane identity (fb81be5/3f02dd0/16546d0) after its commits; SHONEN heading 4 lines; 14/14 cited hashes ancestors of refs/heads/master; jj-lane state ahead=0, porcelain clean; prompt = canonical template rendering + addendum at 4bb0943 verbatim. Round tip 0ab1ccc; spot-check landed d9a5a18. Seats 70+78 (148 transcripts), one dead seat MadoR17.TripwireCore (m_swe free-model rate limit). Routed to mado: R17-V1 scan receipts (tripwire-r13..r16, anchor, pacmanlog-join) lack tool sha/measured_commit and the claimed 0ab1ccc re-cut is unreceipted; R17-V2 report table cites f71ccbe tool sha 7a98720e vs tip 962919ce; R17-V3 rubric V cannot detect invented rows - commit raw fetch receipts; R17-V4 tripwire probe needs frozen digest-pinned replay before gate registration; R17-V5 commit measure.py mutant receipts (M3). Host evidence (operator-owned): pacman.log lines 2440-3152 show 13 runs 07:45-09:39 on 2026-10-20 incl. pacman -Syu at :2462 (mkinitcpio 41.1->42.2), no recorded actor; 0 runs after 10:00; R15-V1 operator-owned. SHONEN stays [~]; not fully checkable by a non-author this round (no end-to-end desktop task). Closure installs: none.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 16,
+   "date": "2026-10-20",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 16,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 16
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "unchanged",
+    "coverage": "improved",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "webmcp-cdp-observation"
+   ],
+   "report": ".ufo/reports/round-16/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-16-verifier-spotcheck.md@5859243183c4d7ac5429dfdb8a73ce0d9a43d583",
+    "rechecks": "Re-measured over committed bytes e38d259->1205d26 (measured 3254740): counter blob sha256 c8b4100a equal at 3254740 and 1205d26 and in both manifest claims; counted inputs + counter diff 3254740..1205d26 empty. C1 0->1: gate+selftest absent->present (gate 1f84fb54 / selftest 481eefae at measured rev), manifest 2 claims with digest+countedInputs, evidence-verified counter stdout selftest 59 clean / stub gate failed / legacy exact, binding/check.json --check --reproduce exit0 claims=2 bound=2 at 6c8e0ff. C2 0->1: knowledge 32->33 (new note only), README map row 0->1, note sources S020+S030-S037 all A/mined with note in used-by, receipt 11/11 producer 0adbbe0e = harness blob, real pids/argv, host chromium 154.0.8037.97 exe sha 95b17db7 = receipt. Sources 29->40 (A23/B4/C2,m24/q3/r2 -> A31/B4/C5,m33/q2/r5), census validate exit0. Harm: SCORECARD +44/-0 scalars unchanged; append-only prefixes hold; only S020 status/used-by changed in place. Spot-check 4 admits (C1, C2, S033, S030) + 3 rejects (S038, S039->S040 via webmcp commit c7b5c702, coverage 9->10) all agree; S032 quote 6 words, page dated 2026-10-07. No lane script/gate/browser executed by closure; no tools installed."
+   },
+   "commit": "tabi-shokunin@1205d261776a349af99a5a205c7c2467fbabae16",
+   "closed_at": "2026-10-20T15:31:17Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-10-20T10:51:16-03:00 launch tabi round=16 pgid=2431273 driver=hyaku-inline attempt=1; 2026-10-20T12:24:02-03:00 complete tabi round=16; hyaku-inline attempt=1. Conformance: report 5830720 by tabi-shokunin after last lane commit; all cited lane hashes ancestors of refs/heads/master; lane clean, ahead=0; SHONEN 4x[~]; prompt = rendered template + hyaku addendum; history pin ok. Integrator ruling (contested scope): tabi owns live browser/CDP page observation including the WebMCP page-tool surface; kaidoku keeps CDP only as an REA provider surface for shipped-artifact analysis and cites tabi for browser-side mechanics. Routed (status-neutral): (1) tabi liar-probe evidence unrooted (/tmp clone; liar commits 9ecfcc9/0754e44/7b497d1 absent from repo) - commit blobs/generator; (2) tabi binding/selftest.json + legacy-r15.json are pre-hardening gate 5150611c (43 cases) - commit receipts at registered gate 1f84fb54; (3) tabi report claims delivered-HEAD rerun at 1205d26 without committed receipt (holds by drift diff); (4) tabi census U3 browser-surface-census.md:188 lacks in-file pointer to README supersession; (5) tabi + kaidoku record the scope ruling in own PROVINCE/SKILL appends; (6) protocol/operator frozen step-1/step-4 closure-checker certification still absent; (7) carried: USER 6/10, r07 replay, user-record freezing, IPv6, Git env, validator pin, unsandboxed counter, page-level confinement, temp-dir leak, unretained 8/11 producer; 6 wave-1 executors dead (m_swe rate limit), seat tallies 84+73 author-reported. SHONEN not all non-author-checkable from this bounded review.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
