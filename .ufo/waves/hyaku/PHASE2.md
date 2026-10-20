@@ -65,6 +65,50 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
   (`fleet-commit.sh`) pending the jj-w1 fleet-root trial. Prior jj state: tameshi and mado already
   carried `.jj/` from 2026-10-19 (immutable alias `::bookmarks()`); `.tower/jj-probe/` holds an
   earlier probe.
+- **jj study wave jj-w1** (`.ufo/waves/hyaku/jj-w1/`, 67 seats, reports committed 7d0c760):
+  22 sandbox trials (21 lanes + fleet root), 21 lane git-usage audits, 12 jj doc probes, 12 fleet
+  tool audits, critics and a sentinel. Every lane trial passed init/commit/push/recovery; the
+  sentinel and critics found helper defects (non-fast-forward push could rewind the remote,
+  branch flip, `.ufo/state` path-guard bypass, basename lock, orphaned `committed` hash after a
+  recovery rebase, committer drift on rebase, remote-rewrite re-publish, deletions/renames not
+  landing, phantom deletion through an empty nested `.git`, `--include-ignored` bypassing the size
+  cap). Fleet root stays on git (JjAuditFleetCommit, JjAuditWatchdog, JjDocWorktrees: one
+  working-copy-moving jj command poisons the next git commit; JjTrialFleetRoot dissented).
+- **jj-lane.sh v2** (14df5b9): fast-forward-only pushes, remote-rewrite stop, rebase without
+  `--ignore-immutable` keeping the `--as` committer, branch bound at init, canonical paths passed as
+  filesets, `.ufo/state`/large-file/phantom-deletion/sweep/foreign-identity guards, deletions and
+  renames land, realpath lock, one citable `landed <hash>`, `push --no-rebase` for the driver;
+  `state` stays pure git and falls back to detection for lanes init never touched. Selftest 45/45
+  (28 cases fail on v1). `inline.sh verify` now treats an unpushed lane as not landed.
+- **Per-lane jj routing.** Each lane's next dispatch names its `JjAudit<Lane>.md` and
+  `JjTrial<Lane>.md` as routed defects (tooling that reads `HEAD`/`@{u}`/the index under jj).
+- **Concurrency.** Seven lanes in flight (tsukuroi r17 added for next-boot safety, below). The
+  100-job cap refuses orchestrator dispatches while lane waves run; dispatches retry.
+- **Session-only routing addition:** `retry.fallbackChains.m_swe` = commandcode → opencode-go
+  deepseek-v4.1-flash, after m_swe rate limits killed executor seats (tabi r16 6, souji r16 2,
+  kaidoku r17 2, mado r17 1).
+- **Scope ruling (integrator):** tabi owns live browser/CDP page observation including the WebMCP
+  page-tool surface; kaidoku keeps CDP only as an REA provider surface (tabi r16 closure notes).
+
+## Incidents (phase 2)
+
+1. **Seat in the fleet root (11:19–11:20 -03).** JjAuditMado-2 ran `git commit` and
+   `jj git init --colocate` in the live fleet root after a failed `cd`. It self-repaired: HEAD
+   re-attached, `git reset --mixed df54adf`, `.jj` and `refs/jj/keep/*` removed. Reflog shows no
+   other fleet commit in that window; `origin/master` never moved (verified 11:4x).
+2. **tameshi index reset (11:57).** v1 `init` on the stale 2026-10-19 pilot `.jj` (git HEAD had
+   moved; every init call used `--ignore-working-copy`) reset the git index to the stale `@-` tree
+   (225 staged `D`). Repaired by backing jj out (`refs/jj/*`, `.jj`, per-repo jj config removed,
+   `git reset -q`) and re-colocating fresh; git history and working tree untouched. mado's pilot
+   `.jj` got the same pre-emptive replacement at its r17 closure. v2 init imports git HEAD first
+   and asserts `git status` is unchanged (selftest z20).
+3. **Host upgrade by an unknown actor.** `/var/log/pacman.log`: 13 runs 07:45–09:39 -03 including
+   `pacman -Syu … linux-lts linux-lts-headers` at 09:15:30 (mkinitcpio 41.1→42.2) — the boot-chain
+   change the update-safety gate guards. Operator-owned; tsukuroi r17 carries next-boot safety as a
+   priority claim and an L0 question.
+4. **Installs by lanes.** kama r16: llama.cpp b11755 (`~/.local/opt`, `~/.local/bin/llama-server`,
+   L0 question). kaidoku r17 seat: Go 1.27.3 (`~/.local/opt/go-1.27.3`, not on PATH).
+
 
 ## Provider probes (2026-10-20 10:0x -03)
 
