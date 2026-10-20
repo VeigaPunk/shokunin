@@ -33,7 +33,8 @@ inherited: reuse what you re-verify, discard what you do not, and name both in t
          node ~/Projects/ufo-fsd-alpha/scripts/ufo-swarm-wave.mjs run --spec <spec.json>
 
    Put specs and the registry under `{{LANE_CWD}}/.ufo/waves/round-{{ROUND}}/` (spec
-   `reportDir` there) and commit them as wave evidence. Items are distinct, concrete work items
+   `reportDir: ".ufo/waves/round-{{ROUND}}/<wave>"`, lane-relative) and commit them as wave
+   evidence. Items are distinct, concrete work items
    serving this round's 1–3 claims plus the frontier step and verification — never padding.
    Wave 1 typically builds (recon, source opening, entry drafting, tooling); wave 2 falsifies
    (re-run counting commands, re-open sources, attack each claim). The §3 L2 floor is met
@@ -54,8 +55,10 @@ inherited: reuse what you re-verify, discard what you do not, and name both in t
    never write the fleet repo, MANIFEST.json, or another lane. You integrate; seats advise.
    **Seat paths are absolute:** seat tools also start at the fleet root, so a relative path such as
    `.ufo/waves/...` lands in the FLEET repo (observed hyaku r11/r12: kama and tsukuroi seats). The
-   wave `context`, every item, and the spec `reportDir` must name absolute paths under
-   {{LANE_CWD}}; never `agent://all` (it reaches every lane's seats) — message your seats by id.
+   wave `context` and every item must name absolute paths under {{LANE_CWD}}; the spec
+   `reportDir` alone stays lane-relative (the validator requires a relative path and resolves it
+   beneath `UFO_PROJECT_ROOT` = your lane). Never `agent://all` (it reaches every lane's seats) —
+   message your seats by id.
 3. **Write scope:** {{LANE_CWD}} (your lane repo); your report
    `{{FLEET_ROOT}}/.ufo/reports/round-{{ROUND}}/{{LANE}}.md`; appended lines in
    `{{FLEET_ROOT}}/.ufo/l0-questions.md`. Never edit MANIFEST.json (a separate non-author hyaku
