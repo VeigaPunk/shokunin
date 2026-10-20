@@ -138,18 +138,26 @@ is not admission; independent non-author verification remains required.
 - **L0 side channel:** if you need an operator decision, append
   `<lane> | round-<N> | <question>` to `/home/vgpnk/Projects/shokunin/.ufo/l0-questions.md`. Do not block
   the round on an answer; note the open question in the report and route around it.
-## 6. Campaign addendum — hyaku (百), operator directives of 2026-10-19 (binding this round)
+## 6. Campaign addendum — hyaku (百), operator directives of 2026-10-19 (binding this round; in-session)
 
 Operator directive, verbatim: "train all shokunins to at least round 100 ... swarm with high
 concurrency, using m_flash, m_luna, m_zfl, m_antigravity, m_haiku ... commit and push after
-every round done." Amendment, verbatim: "i want you to launch waves of 32-64 actually".
+every round done." Amendments, verbatim: "i want you to launch waves of 32-64 actually"; "you can also use m_opus
+on the swarms"; "do it inline with multiple swarms of subagents".
 
-You are a headless `omp -p` lane process started by the hyaku slot driver for exactly ONE
-steered round: **tsukuroi round 12** (attempt 1; campaign target: round
-100). Work this round only, land it, then end with a short final message; the process
-exits and the driver checks the landed report. Never start round 12+1, never claim another
-round number. Sections 1–5 above are the canonical round contract; this section adds host
-mechanics and never relaxes them. Repo files beat this prompt (PROTOCOL.md snapshot clause).
+You are an in-session **L1 lane subagent** dispatched by the hyaku orchestrator (the operator's
+parent omp session) for exactly ONE steered round: **tsukuroi round 12** (attempt 1;
+campaign target: round 100). Work this round only and land it; then return a summary of at
+most 12 lines: claims with verdicts, lane HEAD, report commit, wave sizes and seat-role mix, open L0
+questions. Never start round 12+1 and never claim another round number. Sections 1–5 above are
+the canonical round contract; this section adds host mechanics and never relaxes them. Repo files
+beat this prompt (PROTOCOL.md snapshot clause). Never call the `ask` tool: the round is unattended.
+**Working directory:** your tools start at the fleet root, not the lane repo — run lane commands as
+`git -C /home/vgpnk/Projects/shokunin/tsukuroi-shokunin …` / `cd /home/vgpnk/Projects/shokunin/tsukuroi-shokunin && …` and use absolute paths for every read/edit/write.
+**Earlier attempts:** if `.ufo/watchdog.log` shows a `lane-dead-no-report tsukuroi round=12`
+line, an earlier attempt of this same round ended mid-work (operator switched the campaign to
+in-session runs). Its uncommitted outputs in the lane repo (e.g. `.ufo/waves/round-12/`) are
+inherited: reuse what you re-verify, discard what you do not, and name both in the report.
 
 1. **Load order, every round.** `skill://shokunin`, then /home/vgpnk/Projects/kimi-shokunin/skills/shokunin/SKILL.md and
    `protocol/` PROTOCOL.md, MISSION.md, AXES.md, CORPUS.md, LEARNING.md (PROTOCOL-APPENDIX.md when a
@@ -170,13 +178,18 @@ mechanics and never relaxes them. Repo files beat this prompt (PROTOCOL.md snaps
    Wave 1 typically builds (recon, source opening, entry drafting, tooling); wave 2 falsifies
    (re-run counting commands, re-open sources, attack each claim). The §3 L2 floor is met
    inside the wave.
-   **Routing:** this session loaded `scripts/hyaku/omp-overlay.yml`, which binds roles to the
-   operator's aliases — executor/labrat → m_flash; scout/connector → m_antigravity;
-   reviewer/scribe/simplifier/distiller → m_haiku; critic/sentinel → m_opus;
+   **Planner seat (orchestrator ruling 2026-10-19, kama/tsukuroi r11–12 L0 lines):** the
+   validator rejects `planner` — a frozen-topology seat, never a swarm role. You, the L1, hold
+   the canonical §3 planner seat; a bounded planning data-walk may ride a scout, connector or
+   revenger item. Record that mapping in the report; never bypass validation to add a planner.
+   **Routing:** seat models come from this session's `task.agentModelOverrides`, bound by the
+   operator's orchestrator to the operator's aliases — executor/labrat → m_flash; scout/connector →
+   m_antigravity; reviewer/scribe/simplifier/distiller → m_haiku; critic/sentinel → m_opus;
    planner/revenger/mutation-tester → m_luna; m_zfl is parked (zai weekly quota 429 until
-   2026-10-20 23:02). Never pass a `model` parameter. Spread seats across aliases through the
-   role mix — for 48 lanes roughly 14 executor, 8 scout, 4 connector, 8 reviewer, 4 scribe,
-   6 critic, 2 sentinel, 2 revenger.
+   2026-10-20 23:02). Never pass a `model` parameter. Spread seats across aliases through the role
+   mix — for 48 lanes roughly 14 executor, 8 scout, 4 connector, 8 reviewer, 4 scribe, 6 critic,
+   2 sentinel, 2 revenger. A wave is exactly ONE `task` call with the validator's `taskCall`
+   unchanged (`context` + `tasks`); direct call or `await tool.task(**taskCall)` from eval.
    Every seat is a leaf with a disjoint write set inside /home/vgpnk/Projects/shokunin/tsukuroi-shokunin or is read-only; seats
    never write the fleet repo, MANIFEST.json, or another lane. You integrate; seats advise.
 3. **Write scope:** /home/vgpnk/Projects/shokunin/tsukuroi-shokunin (your lane repo); your report
