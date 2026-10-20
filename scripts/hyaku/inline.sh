@@ -6,7 +6,7 @@
 # closure as a fresh `task`; this script does everything mechanical around them,
 # reusing the canonical driver's render_prompt / report_of / record_report_baseline / log.
 #
-#   inline.sh queue                 eligible lanes, lowest next round first (pool order breaks ties)
+#   inline.sh queue                 eligible lanes, lowest next round first (least recently dispatched breaks ties)
 #   inline.sh dispatch <lane> [base]  claim + render prompt + baseline + commit dispatch evidence + launch line
 #   inline.sh verify <lane>         landed? (report_of, committed — swept if not, pushed); logs complete
 #   inline.sh fail <lane> <why>     record a failed attempt; blocks the lane after MAX_ATTEMPTS
@@ -69,8 +69,9 @@ queue)
     [ -e "$STATE/blocked/$l" ] && continue
     [ -d "$STATE/claims/$l" ] && continue
     n=$(cat "$STATE/next/$l" 2>/dev/null) || continue
-    [ "$n" -le "$TARGET" ] && printf '%s %s\n' "$n" "$l"
-  done < "$H/pool.txt" | sort -s -n -k1,1 | awk '{print $2, $1}'
+    last=$(cat "$STATE/last/$l" 2>/dev/null || echo 0)
+    [ "$n" -le "$TARGET" ] && printf '%s %s %s\n' "$n" "$last" "$l"
+  done < "$H/pool.txt" | sort -s -n -k1,1 -k2,2 | awk '{print $3, $1}'
   ;;
 dispatch)
   lane=${1:?lane}; [ -n "${LANE_CWD[$lane]:-}" ] || die "unknown lane $lane"
@@ -81,7 +82,7 @@ dispatch)
   else rm -rf -- "$c"; mkdir -p "$c"; a=1
        printf '%s\n' "${2:-$(git -C "${LANE_CWD[$lane]}" rev-parse HEAD)}" > "$c/base"; fi
   printf 'inline\n' > "$c/owner"; printf '%s\n' "$n" > "$c/round"; printf '%s\n' "$a" > "$c/attempt"
-  date -Is > "$c/dispatched"
+  date -Is > "$c/dispatched"; mkdir -p "$STATE/last"; date +%s > "$STATE/last/$lane"
   mkdir -p "$UFO/reports/round-$n"
   render_prompt "$lane" "$n" || die "render failed"
   subst "$H/lane-addendum.md" "$lane" "$n" "$a" >> "$UFO/prompts/$lane-round-$n.md" || die "addendum failed"
