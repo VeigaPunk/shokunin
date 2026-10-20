@@ -40,6 +40,7 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
 29. "change the m_grok for the the m_flash"
 30. "ok, so, hyper has to be a secondary provider, after commandcode on deepseek v4.1 flash (m_flash) | aside from this, no subagent can inherit m_opus as the fallback; for m_zfl, mflash, m_fast, m_haiku, the last cascade fallback has to be m_luna"
 31. "ok let's wrap up and commit and push current progress. dont stop running runs, let them fginish; then we can keep up from where we left off in the same schema"
+32. "oh yeah, commit and push what we have developed"
 
 ## Decisions
 
@@ -335,3 +336,35 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
 `inline.sh verify <lane>` → `inline.sh closure <lane>` → closure `task` → `inline.sh closed <lane>`
 → `inline.sh advance <lane>` → next dispatch while the lane's block of 10 is unfinished.
 Failed attempt: `inline.sh fail <lane> "<why>"` then re-dispatch (blocked after 3 attempts).
+
+## Wrap checkpoint — developed work, not admission
+
+Snapshot at wrap; active owners may subsequently move their tips and land reports. No running run,
+worker or service was stopped. All claims/attempts/original baselines remain intact; no round advanced.
+
+| Claim | Pushed checkpoint or snapshot state | Original owner / pending action |
+|---|---|---|
+| kama r18 | Still running | `KamaR18`; let its current round finish |
+| souji r18 | Still running | `SoujiR18`; let its current round finish |
+| kagi r22 | Still running | `KagiR22`; let its current round finish |
+| tameshi r18 | Author report landed; no closure verdict | `ClosureTameshiR18` pending provider recovery |
+| tabi r18 | Author report landed; no closure verdict | `ClosureTabiR18` pending provider recovery |
+| kaidoku r20 | `aa78b0d23bbd154189e0b45497c8051a240ed33e` | `KaidokuR20`; interrupted, unadmitted |
+| kake r22 | `26b27af3be44fec9de221f716b3cf3d2861ab146` | `KakeR22`; interrupted, unadmitted |
+| mado r20 | `ed4bf222f4913a0641715c200336cf35bc82e875` | `MadoR20`; interrupted, unadmitted |
+| tsukuroi r19 | `8e5916360f2dfe7bc4eb4ba144081af555900116` | `TsukuroiR19`; interrupted, unadmitted |
+| kasegi r23 | `8bf980721554d2d24bcc83e2e0996e0c27684a06` | Archival checkpoint only; policy pause remains, no model retry or code execution |
+| mori r18 | No r18 work; r17 rejected at `rounds[372]` | `MoriR18`; quota-blocked before work |
+| chousa r25 | No r25 work | `ChousaR25`; quota-blocked before work |
+
+- These five checkpoint hashes came from helper `landed` receipts. They preserve developed code,
+  tools, corpus edits and evidence; they do not certify claims or replace missing author reports.
+- Fleet runtime `.ufo/watchdog.log`/`.ufo/state/*`, operator sweeps and unrelated/ambiguous scratch
+  were not swept into commits. Latest actual closure row is 372; a rendered closure prompt is not a verdict.
+- Resume only after operator continuation: reconcile `proc://`, named histories and
+  `.ufo/reports/round-N/lane.md` first; warm follow-up completions may be absent from `wait`.
+- Reuse the original unfinished identities and claimed baselines; do not call `inline.sh dispatch`
+  on an already-claimed round or replace dead seats. Apply/verify directives 29–30 for new captures;
+  old sessions retain their captured retry policies. Kasegi's policy stop is not a quota retry.
+- Same schema: landed author report → `inline.sh verify` → non-author closure → `inline.sh closed`
+  → `inline.sh advance` → next dispatch. Never advance without the closure; no new dispatch during pause.
