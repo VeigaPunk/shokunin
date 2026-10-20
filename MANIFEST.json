@@ -8136,6 +8136,47 @@
    "notes": "Dispatch digest: 2026-10-20T05:17:17-03:00 launch souji round=15 pgid=2493167 driver=hyaku-inline attempt=1; 2026-10-20T06:29:54-03:00 complete souji round=15; hyaku-inline attempt=1. Report 215ba74 by souji-shokunin after lane b410186; hashes fc3a8d4/b410186 ancestors; pushed; prompt = canonical template rendering + hyaku addendum. Repair round for r14 rejected-harmed: author honestly marked C1/C2 unprovable (acceptance unrun at operator wrap-up); an unrun check has not passed. Harm: candidate census landed non-parsing (operability 'scripts that run'), known to own seat, not disclosed (defect D1); no cross-domain section (D2). Routed to souji r16: R1 restore parsing census (complete or revert to cc21683) + red/green + LOG correction + sweep SKILL.md:138/167/SCORECARD; R2 r14 benign-config harm still OPEN; R3 carry seat-known failures verbatim; R4 re-pin C2 frozen census digest; R5 enforce Q24 no-probe (recurrence); R6 cross-domain line; R7 git-status rejected row. census/operator-sweep-20261019/ = operator sweep output (script headers 'Operator sweep 2026-10-19'; mtimes 2026-10-19 22:32-22:47, pre-r13; fingerprint f6a84466 155 entries unchanged since r13; 0 commits): not lane debt, disposition operator-owned. SHONEN all [~], not promotion-ready. Misroot SoujiR15 (RoutedDefects) corroborates R1-open. Closure installs: none.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 15,
+   "date": "2026-10-20",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 15,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 15
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "calibration": "improved",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-15/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-15-verifier-spotcheck.md@e38d2599a922cb729186353830fff8e159b4fef0",
+    "rechecks": "Re-measured over committed bytes 7054a5e->36240c7 (counted receipts and gate code byte-identical b7cf044->36240c7): C1 count receipts 0->1 exit0; USER selftest 42 PASS=33 child_cli+9 helper, 8 reason assertions/6 reasons, 3 applicable/39 N/A; diagnostic witness baseline reasonless score_mismatch vs repaired after_count_mismatch, wrong-reason-only 0; USER production honest red 6/10. C2 counts 0->genuine failed 0/exit1->repaired 1/exit0 (consumer-only measure.mjs repair at 9fd8bca, expected fixtures unchanged); metadata selftest cli36+helpers4; 9/9 mirror differentials accept->refuse; spec tamper exit1->exit2 snapshot_tampered; original red only CLEANUP-LISTENING-AFTER-01, corrected clean; checker sha d707625e identical 27dfd98..36240c7; round-13/14 originals unchanged. Gates/selftests/witnesses evidence-verified, not rerun; fleet census executed exit0; CORPUS census 29->29 A23/B4/C2 mined24/queued3/rejected2. Prompt template prefix exact; history pin prefix48 matches; 9 cited commit strings ancestors; lane clean/pushed. Spot-check: 2 admits + 2 rejects agree; S029 quote 16 words, locator line 2529 verified."
+   },
+   "commit": "tabi-shokunin@e38d2599a922cb729186353830fff8e159b4fef0",
+   "closed_at": "2026-10-20T13:28:54Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-20T04:58:57-03:00 launch tabi round=15 pgid=2461539 driver=hyaku-inline attempt=1; 2026-10-20T06:03:22-03:00 complete tabi round=15; hyaku-inline attempt=1. Status ok, C1/C2 admitted; no axis harmed (disclosed --derive overwrite refusal source-reviewed: protects frozen round-14 sidecar, not harm). Routed item from phase-1 handoff resolved: non-author erratum to round-14 verifier wording (round-14-verifier-spotcheck.md:129,:184) judged warranted and recorded as section 'Erratum to the round-14 verifier wording' in the round-15 spot-check; frozen spec aria-loopback.spec.mjs (sha 03cb4e17 = receipt specSha256) asserts nodeMajor>=minimumMajor at :269, invoked per case at :924, all 8 cases passed it; only launcher runtime.pinned and spec runtimePinStatus omit Node; exact equality never enforced; round-14 file unchanged. Routed tabi defects (status-neutral): record per-claim counter digest (C1 counter 27dfd98 sha 3ee59de0 differs from HEAD measure.mjs dd9c8675); measure at or diff to delivered HEAD (report measured b7cf044); cite the erratum in future Node wording. Frozen step1/step4 closure-checker certification still absent: protocol/operator debt, not a pass. SHONEN four [~]; not all boxes non-author-checkable from this bounded review. Tools installed: none.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
