@@ -6993,6 +6993,50 @@
    "notes": "Dispatch/complete digest: 2026-10-20T01:04:44-03:00 launch mori round=13 pgid=655352 driver=hyaku-inline attempt=1; 2026-10-20T01:43:25-03:00 complete mori round=13; hyaku-inline attempt=1. Real report 953c786c224448cfb72b623e07efa7821c82f291 authored by mori-shokunin; cited lane commits exist/ancestor; delivered 2e576474707c4936ecd9d9baca64e2f1085aded2 clean and pushed. Rejected-harmed: structured journal cutover removes prior OOM crit/DRIFT alert (new OOM notices INFO), and reuses UNIT_FAILURE_JOURNAL beyond fleet units while losing explicit non-fleet tsukuroi routing. Cgroup local counter is not equivalent coverage. Route to mori next round: restore sourced structured OOM/general-signal detection semantics and fleet/non-fleet owner distinction; correct no-anchored-structured-field overstatement; register verdict-producing r13 harness; record selftest on delivered harness revision (24/24 is at 80bd58a, not c13df48); qualify F01 whole-function reversal and F02 reconstructed shim rather than exact-original-byte restoration; finish stale README/QUALITY historical-count wording sweep. Gate/registry and attribution defects are status-neutral. All-zero 12/12 is not positive-load proof. SHONEN left untouched; not all four boxes would pass current review; promotion operator-owned. No closure-session tool installs or updates.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 13,
+   "date": "2026-10-20",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 13,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 13
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "depth": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "source-fragment collision screen",
+    "digest-pinned frozen regression"
+   ],
+   "report": ".ufo/reports/round-13/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_strong session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-13-verifier-spotcheck.md@873ff081b2ac363df771261b0ed950cba50d8988",
+    "rechecks": "Independent committed-byte source joins U1-U3 3/7 to U1-U4 4/7; source rows 39 to 46; C2 transcripts independently counted complete owning-row diagnostics 0/4 to 4/4, overall failures 3/4 to 4/4. Gate evidence verified, never executed: 310/310, historical 10/10, covering 8/8, frozen 12/12 plus pinned replay 10/10 frozen_match. Both frozen input pins and four committed bindings match. Admit/reject source reopens agree; new S040/S042/S045 quotes within 25 words; maintained census exit 0 with 3 W04 warnings. No owned-axis harm; history pin matches anchored prefix."
+   },
+   "commit": "mado-shokunin@873ff081b2ac363df771261b0ed950cba50d8988",
+   "closed_at": "2026-10-20T05:00:07Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-20T01:04:05-03:00 launch mado round=13 pgid=654654 driver=hyaku-inline attempt=1; completion digest: 2026-10-20T01:52:01-03:00 complete mado round=13; hyaku-inline attempt=1. Report committed as mado-shokunin at 50f6f4558ffe09eb4ca245d7f2075536751d76f7; delivered 59cfbdc3ab5e7b6aaf68f86e1b2ae8d51c938b1e clean/pushed; all cited lane hashes ancestors; full template prefix and four SHONEN assessment lines conform. Status-neutral routed mado next-round items R13-V1 retained-header versus sanitized metadata wording, R13-V2 distinguish within-run config boundary from revision-to-revision output equality, R13-V3 direct selftest receipt digest/revision provenance. Preserved strict responsible-row rubric; not overall detection or saturation. Fixed in-round scratch disclosure retained; no retained harm. Inherited gkeep permanence L0 remains unresolved; no new L0. SHONEN not promotion-cleared; no marks changed. No verifier tool installs; lane wayland-utils 1.3.0-1 pacman extra installation disclosed. Reader raw-source offset discrepancy reported; initial reviewer anchor finding withdrawn after raw-byte recheck.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
