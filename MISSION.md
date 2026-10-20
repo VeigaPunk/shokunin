@@ -55,8 +55,8 @@ lanes may add/remove axes on evidence (falsifiable claim per move).
 Every L1 lane MUST dispatch **at least 8 L2 subagents per round**, in **one
 batched AgentSwarm call** (the Kimi host surface) — one call carrying all lanes,
 not a sequence of individual dispatches. Roles are expressed as lane roles and
-routed through the host model route table (persisted globally in
-`shokunin.conf` + the operator's route override file):
+routed through the operator's global host model table; `shokunin.conf` contains
+no role pins. The original role-class grouping below is advisory to host routing:
 
 | Role class | Route bucket |
 |---|---|
