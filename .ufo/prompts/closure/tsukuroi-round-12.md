@@ -11,7 +11,7 @@ from outside), AXES.md, CORPUS.md.
 Inputs:
 - report: `.ufo/reports/round-12/tsukuroi.md`; dispatched prompt: `.ufo/prompts/tsukuroi-round-12.md`
   (canonical `templates/round-prompt.md` rendering + hyaku addendum §6)
-- lane HEAD before the round: `b76b5c377eaee3e3d8d47fdddde977828d05dbd5`; after: `670126f5161b824d9dabdfacd085d27ff0afa3e3`
+- lane HEAD before the round: `b76b5c377eaee3e3d8d47fdddde977828d05dbd5`; after: `f3868cdef07027f7ec8ecd095457d95108f75676`
 - driver dispatch/completion lines (`.ufo/watchdog.log`, mutable — copy this digest into notes):
 2026-10-19T23:10:56-03:00 launch tsukuroi round=12 pgid=12830 driver=hyaku slot=2 attempt=1
 2026-10-19T23:24:27-03:00 lane-dead-no-report tsukuroi round=12; retry same round (hyaku: headless attempt ended by operator directive to run in-session)
@@ -26,9 +26,9 @@ never pass a model parameter; you write only the two artifacts in steps 4–5):
    holds; the lane repo has no uncommitted round work and is pushed (`git status --porcelain`,
    `git rev-list --count @{u}..HEAD`); the prompt carries the template contract. Marker report
    (no checkable work/commit) → status `failed`. Defects are named in notes, status-neutral.
-2. **Claims.** For each declared claim (1–3): re-run its counting command against `670126f5161b824d9dabdfacd085d27ff0afa3e3` and
+2. **Claims.** For each declared claim (1–3): re-run its counting command against `f3868cdef07027f7ec8ecd095457d95108f75676` and
    compare with the reported before→after; check no owned axis was harmed
-   (`git -C /home/vgpnk/Projects/shokunin/tsukuroi-shokunin diff b76b5c377eaee3e3d8d47fdddde977828d05dbd5 670126f5161b824d9dabdfacd085d27ff0afa3e3 -- SCORECARD.md`, plus spot reads). A capability
+   (`git -C /home/vgpnk/Projects/shokunin/tsukuroi-shokunin diff b76b5c377eaee3e3d8d47fdddde977828d05dbd5 f3868cdef07027f7ec8ecd095457d95108f75676 -- SCORECARD.md`, plus spot reads). A capability
    claim needs its demonstration to run now. For an exploratory claim YOU are the named non-author
    reviewer: rule `unprovable-but-better` or `unprovable`, with reasons. Grade each axis
    `improved | harmed | unchanged | unprovable-but-better | unprovable`.
