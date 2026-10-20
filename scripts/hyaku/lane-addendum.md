@@ -56,7 +56,9 @@ inherited: reuse what you re-verify, discard what you do not, and name both in t
    "and m_swe on code heavy tasks") — executor → m_swe (devin/swe-2; code-heavy: scripts, gates,
    selftests, fixtures, parsers; falls back to deepseek-flash on opencode-go); scout/labrat → m_fast
    (opencode-go/deepseek-v4.1-flash); connector/reviewer/scribe/simplifier/distiller → m_haiku;
-   critic → m_sol (gpt-6.1-sol max); sentinel → m_opus; planner/revenger/mutation-tester → m_luna.
+   critic/sentinel → m_opus; mutation-tester → m_sol (gpt-6.1-sol max); planner/revenger → m_luna.
+   Codex (m_strong L1s, m_sol, m_luna) hit `turn_rate_limit_exceeded` at 05:15 with critics on m_sol,
+   so critics moved to m_opus: keep revenger + mutation-tester seats ≤4 per wave to spare Codex.
    Out of service (2026-10-20): m_flash (charm-hyper credits exhausted, 402), m_antigravity
    (antigravity rejects this session's tool schemas; Cursor Gemini monthly limit until 11/18), m_zfl
    (zai weekly quota until 2026-10-20 23:02). Give code-heavy items to executors and prose
@@ -109,7 +111,10 @@ inherited: reuse what you re-verify, discard what you do not, and name both in t
    tools that help the task — read `/home/vgpnk/.omp/agent/RULES.md` first (official channels,
    update-safety gate, record tool/version/channel/reason in the report). Put that sentence in
    each wave's `context`. **pacman guard (orchestrator, 2026-10-20, after the mado r15 libinput
-   incident):** this host's sync DB is ~413 packages ahead of the installed system (last
+   incident):** **all pacman transactions are PAUSED host-wide** (orchestrator ruling 2026-10-20 on
+   tsukuroi r15's L0 recommendation) until the operator resolves the host-recovery L0 question —
+   install via `uv tool`/`npx`/an official binary in `~/.local/bin`, or file an L0 question. When the
+   pause lifts, the dry-run rule below applies. This host's sync DB is ~413 packages ahead of the installed system (last
    `pacman -Sy` 2026-10-18), so installing or naming an already-installed package is a forbidden
    partial upgrade. Before any `pacman -S`, run `pacman -Sp --print-format '%n %v' <pkgs>`: proceed
    only if every listed package is not installed yet (`pacman -Q <name>` fails); otherwise do not
