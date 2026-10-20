@@ -26,6 +26,7 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
 15. "leave scribe as m_haiku"
 16. "critic + sentinel (m_opus)"
 17. "labrat and scout should be m_flash"
+18. "the fallback for the m_zfl should be m_luna max" / "as the last in the cascade"
 
 ## Decisions
 
@@ -136,6 +137,9 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
   sentinel → @m_opus; scribe → @m_haiku; mutation-tester → @m_sol; task (L1s, closures) → @m_opus.
   Wave mix ≈40 m_flash / ≈32 m_zfl of ~96. m_flash's primary (commandcode) is at its 5-hour plan
   limit until 2026-10-20T19:47:54Z (16:47 -03); until then those seats answer through a fallback.
+- **m_zfl cascade (directive 18).** Session-only `retry.fallbackChains.m_zfl` = devin
+  glm-5-3-flash-1m → charm-hyper glm-5.3-flash → openai-codex gpt-6-luna:max (m_luna max, last).
+  Probe of the new last hop at 14:24 -03: openai-codex gpt-6-luna answered (`stop`).
 - **Scope ruling (integrator):** tabi owns live browser/CDP page observation including the WebMCP
   page-tool surface; kaidoku keeps CDP only as an REA provider surface (tabi r16 closure notes).
 

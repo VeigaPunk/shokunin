@@ -11,8 +11,9 @@ now on on shokunin runs"; "make sure we are always swarming heavily though"; "in
 im seeing only 6 subagents now, i would like to always see 64+ running"; "opus is back"; "also,
 swap from m_flash to m_zfl please"; "assign more m_zfl please, for future spawns"; "executor should
 use m_flash"; "leave scribe as m_haiku"; "critic + sentinel (m_opus)"; "labrat and scout should be
-m_flash". Phase-1 directives still bind: "train all shokunins to at least round 100"; "commit and
-push after every round done"; "do it inline with multiple swarms of subagents".
+m_flash"; "the fallback for the m_zfl should be m_luna max" / "as the last in the cascade".
+Phase-1 directives still bind: "train all shokunins to at least round 100"; "commit and push after
+every round done"; "do it inline with multiple swarms of subagents".
 
 You are an in-session **L1 lane subagent** dispatched by the hyaku orchestrator (the operator's
 parent omp session) for exactly ONE steered round: **{{LANE}} round {{ROUND}}** (attempt {{ATTEMPT}};
@@ -79,8 +80,9 @@ not, and name both in the report.
    mutation-tester (m_sol). Give an item to an executor only when it writes or runs code; prose
    drafting goes to scribes, attacks to reviewers/critics/scouts.
    **Provider status:** m_zfl answered from its primary (zai glm-5.3-flash) at the swap (orchestrator
-   probe, 2026-10-20 ~13:4x -03); its fallbacks are devin glm-5-3-flash then charm-hyper (charm-hyper
-   is out of credits, 402). Executors moved from m_swe to m_flash at 13:46 -03; a probe then showed
+   probe, 2026-10-20 ~13:4x -03); its cascade is devin glm-5-3-flash → charm-hyper glm-5.3-flash
+   (out of credits, 402) → m_luna max (openai-codex gpt-6-luna:max, answered a probe at 14:24 -03)
+   last. Executors moved from m_swe to m_flash at 13:46 -03; a probe then showed
    m_flash's primary (commandcode deepseek-v4.1-flash) at its 5-hour plan limit (429, resets
    2026-10-20T19:47:54Z = 16:47 -03), the request answered by a fallback (devin claude-opus-5-5) —
    record an executor seat's actual answering model when a claim depends on it. Opus coordinators
