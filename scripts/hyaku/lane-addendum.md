@@ -57,8 +57,11 @@ inherited: reuse what you re-verify, discard what you do not, and name both in t
    `.ufo/waves/...` lands in the FLEET repo (observed hyaku r11/r12: kama and tsukuroi seats). The
    wave `context` and every item must name absolute paths under {{LANE_CWD}}; the spec
    `reportDir` alone stays lane-relative (the validator requires a relative path and resolves it
-   beneath `UFO_PROJECT_ROOT` = your lane). Never `agent://all` (it reaches every lane's seats) —
-   message your seats by id.
+   beneath `UFO_PROJECT_ROOT` = your lane). The validator renders each seat a relative
+   `Report: .ufo/waves/...` trailer, which a seat would resolve from the fleet root: every wave
+   `context` must say "every `Report:` trailer path is relative to {{LANE_CWD}} — write it at
+   {{LANE_CWD}}/<that path>". Never `agent://all` (it reaches every lane's seats) — message your
+   seats by id.
 3. **Write scope:** {{LANE_CWD}} (your lane repo — including its own `scripts/`, `tools/`, gates);
    your report `{{FLEET_ROOT}}/.ufo/reports/round-{{ROUND}}/{{LANE}}.md`; appended lines in
    `{{FLEET_ROOT}}/.ufo/l0-questions.md`. Never edit MANIFEST.json (a separate non-author hyaku
