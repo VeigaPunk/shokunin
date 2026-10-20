@@ -11,6 +11,8 @@
 #                     [--today YYYY-MM-DD] [--out PATH] [--verbose]
 #   modes:  census (default) | validate | overdue | shared | selftest
 #   lanes:  lane ids from conf or root *-shokunin dirs, or explicit lane dirs
+#   default targets: child repositories only; conf entries with repo "." are excluded.
+#                     use --file or an explicit directory for a specific registry.
 #   exit:   0 clean or warnings · 1 E/overdue findings (or census missing)
 #           · 2 usage/env/missing registry · 3 selftest failure; W-codes and unlisted
 #             lanes never change status (validate missing registry returns 2).
@@ -34,11 +36,15 @@
 #             cadence<SPC>id<SPC>recheck=<x> — symbolic cadences (e.g. on-release)
 #             are reported, never judged overdue.
 #   shared:   url<TAB>shared<TAB>lane,lane,… — normalized URL present in >=2 lanes.
+
+# Maintained parser accepts 0–3 leading ASCII spaces before Markdown rows/headings;
+# 4 or more spaces are indented code and ignored. Frozen manual examples assume
+# column-zero input.
 set -u
 MODE=census; OUT=""; FILE=""; ROOT=""; ROOT_SET=0; VERBOSE=0; TODAY=""
 declare -a LANES_WANT=()
 
-usage() { sed -n '2,33p' "$0"; }
+usage() { sed -n '2,38p' "$0"; }
 die() { echo "ERROR: $*" >&2; exit 2; }
 iso_epoch() {
   gawk -v input="$1" '
@@ -189,6 +195,78 @@ EOF
   checkline "FLEET-status-rejected" $'FLEET\tstatus.rejected\t1' "$0" census --root "$fleet_root"
   checkline "FLEET-status-invalid" $'FLEET\tstatus.invalid\t1' "$0" census --root "$fleet_root"
   checkline "FLEET-missing" $'FLEET\tmissing\t1' "$0" census --root "$fleet_root"
+
+  base_census_out="$test_root/child-only-census.out"
+  if "$0" census --root "$fleet_root" > "$base_census_out" 2>&1; then
+    base_census_rc=0
+  else
+    base_census_rc=$?
+  fi
+  base_validate_out="$test_root/child-only-validate.out"
+  if "$0" validate --root "$fleet_root" > "$base_validate_out" 2>&1; then
+    base_validate_rc=0
+  else
+    base_validate_rc=$?
+  fi
+  conf_canary="$test_root/conf-was-sourced"
+  cat > "$fleet_root/shokunin.conf" <<EOF
+LANES="
+protocol|.|main repo protocol lane
+aggregator|.|main repo aggregator lane
+known|known-shokunin|known fixture
+missing|missing-shokunin|missing fixture
+"
+touch "$conf_canary"
+EOF
+  dot_census_out="$test_root/root-dot-census.out"
+  if "$0" census --root "$fleet_root" > "$dot_census_out" 2>&1; then
+    dot_census_rc=0
+  else
+    dot_census_rc=$?
+  fi
+  base_census_fleet=$(grep '^FLEET[[:space:]]' "$base_census_out")
+  dot_census_fleet=$(grep '^FLEET[[:space:]]' "$dot_census_out")
+  if [ "$base_census_rc" = "$dot_census_rc" ] &&
+     [ "$base_census_fleet" = "$dot_census_fleet" ] &&
+     ! grep -qE '^(protocol|aggregator)[[:space:]]' "$dot_census_out"; then
+    printf 'killed\troot-dot-default-census-keeps-child-totals\n'
+  else
+    printf 'SURVIVED\troot-dot-default-census-keeps-child-totals\n'; fail=1
+  fi
+  dot_validate_out="$test_root/root-dot-validate.out"
+  if "$0" validate --root "$fleet_root" > "$dot_validate_out" 2>&1; then
+    dot_validate_rc=0
+  else
+    dot_validate_rc=$?
+  fi
+  if [ "$base_validate_rc" = "$dot_validate_rc" ] &&
+     cmp -s "$base_validate_out" "$dot_validate_out" &&
+     ! grep -qE '^(protocol|aggregator)[[:space:]]' "$dot_validate_out" &&
+     [ ! -e "$conf_canary" ]; then
+    printf 'killed\troot-dot-default-validate-and-text-conf-parsing\n'
+  else
+    printf 'SURVIVED\troot-dot-default-validate-and-text-conf-parsing\n'; fail=1
+  fi
+
+  root_only="$test_root/root-only-fleet"
+  mkdir -p "$root_only" || exit 3
+  cat > "$root_only/shokunin.conf" <<'EOF'
+LANES="
+protocol|.|main repo protocol lane
+aggregator|.|main repo aggregator lane
+:"
+EOF
+  if "$0" census --root "$root_only" > "$test_root/root-only-census.out" 2>&1; then
+    root_only_rc=0
+  else
+    root_only_rc=$?
+  fi
+  if [ "$root_only_rc" = 2 ] &&
+     grep -qF "no lanes parsed from $root_only/shokunin.conf" "$test_root/root-only-census.out"; then
+    printf 'killed\troot-only-default-fails-closed\n'
+  else
+    printf 'SURVIVED\troot-only-default-fails-closed\n'; fail=1
+  fi
   outside_dir="$test_root/outside-shokunin"
   mkdir -p "$outside_dir/corpus" || exit 3
   cat > "$outside_dir/corpus/SOURCES.md" <<'EOF'
@@ -381,7 +459,10 @@ build_roster() {
   while IFS=$'\t' read -r lane repo; do
     [ -n "$lane" ] || continue
     while [[ "$repo" == *[[:space:]] ]]; do repo=${repo%?}; done
-    [ "$repo" = . ] && repo=""
+    if [ "$repo" = . ]; then
+      # Main-repo lanes have no corpus; defaults enumerate child repositories only.
+      continue
+    fi
     [ -n "${files[$lane]+x}" ] || order+=("$lane")
     files[$lane]="$ROOT/${repo:+$repo/}corpus/SOURCES.md"
     dirs[$lane]="$ROOT${repo:+/$repo}"

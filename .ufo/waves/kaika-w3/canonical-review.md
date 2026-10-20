@@ -240,3 +240,105 @@ python3  # structural walk of MANIFEST.json vs templates/MANIFEST.schema.json co
 LC_ALL=C grep -qE -f pat-new.txt <report>                 # 284 fleet reports, old-vs-new regex
 source <canon>/scripts/shokunin-watchdog.sh; render_prompt <lane> <n>   # in /tmp probe fleet
 ```
+
+---
+
+# Addendum (post-review) — F2 repair review, validator correction, byte-sync status
+
+Original sections above are preserved verbatim; this addendum supersedes only the two specific
+statements named in §B/§C. No repository or fleet file was modified.
+
+## A. Targeted review — F2 repair only
+
+Artifact: `/home/vgpnk/Projects/shokunin/.tower/worktrees/kaika/fleet-driver-retry`, branch
+`kaika/driver-retry`, HEAD `7ea217c` ("Fix source-gate retry report freshness"), parent `8db21a9`.
+Commit touches only `scripts/shokunin-watchdog.sh` (+61/−2) and its evidence files. Review-time
+driver sha256 `e56927e36cfdf0f886d48650729e5de364cb1e44a3ade58a2a3371c421071661`, identical to the
+sha recorded in `driver-retry-after.txt`; the "before" sha `5042448a…` is byte-identical to the
+canonical and fleet pre-fix drivers, so the red-before was produced on the reviewed bytes. The
+canonical worktree still carries `5042448a…`; per instruction, the canonical F2 state is **not
+judged** until the parent copies the driver in.
+
+Mechanism reviewed: `report_digest()` (`:108-118`), `record_report_baseline()` (`:120-138`),
+baseline suppression in `report_of()` (`:144-164`), capture before every spawn
+(`launch_lane`, `:202-205`) and before every gate-failed retry (`advance`, `:363-366`); header
+documents `.ufo/state/<lane>.report-baseline` at `:31-32`.
+
+**Verdict: the F2 stale-completion defect is closed in this worktree.** No path was found in which
+the failed attempt's unchanged bytes close the round, and no path in which fresh bytes are
+suppressed. State/race/capture-fail behaviour:
+
+- **State.** One file per lane, `"<round> <sha256>"`; written tmp+`mv -f` in the same directory
+  (atomic; single writer under the driver's flock). Missing report hashes as the empty stream
+  (`e3b0c442…`), proven by `A-round-N-plus-1-absent-report-baseline-is-empty-digest`. The baseline
+  is round-scoped: a baseline for another round skips the digest test and falls back to the old
+  heading/size checks (`A-round-N-report-digest-is-not-reused-for-N-plus-1`). Corrupt, empty, extra-field or
+  unreadable baselines make `report_of` return 1 (fail closed: no completion) and are rewritten
+  atomically at the next launch, so they self-heal without a false advance. Directory/FIFO at the
+  baseline path is rejected by `-f`; `mv -f` replaces a symlink rather than following it. Only
+  hand-edited state can fail open (uppercase-hex digest compares unequal and accepts; trailing extra
+  lines after the first are ignored).
+- **Race.** Identity is bytes, never mtime (`A/B-mtime-only-probe-really-changed-mtime` +
+  `…-change-did-not-change-report-bytes`). Capture precedes spawn and precedes every retry, so the
+  dead and live cases both start from the failed attempt's digest
+  (`A/B-registry-fix-alone-rejects-unchanged-report`). A lane writing while the digest is computed
+  can only make the current bytes differ from the captured baseline (accepted); no suppression of
+  newer bytes is possible. In the live case a blocked gate does not kill or relaunch
+  (`B-live-gate-failure-*`), and because unchanged bytes are suppressed the driver neither re-runs
+  the gate nor re-baselines on every tick; if the live lane itself rewrites the report, the new
+  bytes are accepted as the lane's fresh evidence (intended per "including live"). An unchanged
+  report when the lane dies falls to the dead branch and relaunches the same round — the intended
+  forcing function.
+- **Capture failure.** Fail closed everywhere: launch refuses to spawn
+  (`launch-fail … report baseline unavailable; not spawning`, `:203-205`); a blocked gate refuses to
+  retry or close (`advance-blocked … report baseline unavailable; NOT retrying`, `:364-366`); an
+  unreadable/corrupt baseline or a hash failure makes `report_of` deny completion. `sha256sum`
+  becomes a hard prerequisite on the launch path — coreutils is already the header's stated
+  dependency, and this inherits F9's Linux-only note.
+- **Findings (addendum):**
+  - **F2-fix-1 — LOW — diagnostics misattribute the new suppression state.**
+    `scripts/shokunin-watchdog.sh:398` (retry WT): a dead lane whose report is *valid but unchanged
+    since the baseline* is logged as `lane-round-failed … marker/contentless report`. After the
+    repair that is a false cause, and `report_of:150-158` returns 1 silently for baseline
+    parse/hash failures, so the log cannot distinguish marker, stale-since-baseline, or corrupt
+    baseline. Minimal repair: one-line message change to "marker/contentless, unchanged since
+    baseline, or corrupt baseline; NOT advancing", or a third tick branch that logs
+    `report-unchanged-since-baseline; retry pending`.
+  - **F2-fix-2 — LOW — capture-failure behaviour is implemented but not regression-tested.** The
+    committed 42-check harness (`.ufo/waves/kaika-w3/driver-retry-regression.sh`) covers the stale
+    path and both live/dead flows, but injects no capture failure. Recommend one negative case in
+    the parent's CLI probe: unwritable `.ufo/state` → assert no spawn on launch and no retry/close
+    on gate failure. Not a defect; a verification gap.
+  - **Semantic note (not a finding).** A retried round must change report bytes to close; an
+    identical re-land loops by design, exactly as an ordinary failed round does. The lane prompt
+    already requires pasting the census before→after, which changes bytes after a registry fix.
+- **Evidence assessment.** Red-before: 17/40 named checks fail on `5042448a…` (dead 10, live 7).
+  Green-after: 42/42 pass on `e56927e3…` (dead 22, live 20), including the exact F2 scenario
+  (registry fix alone + mtime change still rejected; fresh **appended** bytes accepted; advance
+  exactly once to N+1; N+1 baseline round-scoped with the empty digest; live group killed only
+  after close; heading/size checks still reject short/marker reports). The harness spawns real
+  `sleep 90` process groups and uses a stub census, so the lifecycle is exercised with live PIDs.
+  I did not re-run it (runtime is the parent's seat); the source was read line-by-line and the
+  recorded hashes tie the evidence to this commit.
+
+## B. Correction — JSON-Schema validator availability (supersedes §0/§4 wording)
+
+`check-jsonschema` 0.38.2 is installed (`/home/vgpnk/.local/bin/check-jsonschema`, `uv tool list`
+confirms). The §0 sentence "No JSON-Schema validator is installed" and §4's corresponding gap are
+superseded: the Python-module absence was not validator absence. Re-ran the real CLI read-only
+against the canonical schema and the fleet ledger:
+`check-jsonschema --schemafile <canon>/templates/MANIFEST.schema.json /home/vgpnk/Projects/shokunin/MANIFEST.json`
+→ rc 1, **111 errors**: 75 `type` enum (`train`/`craft`/compounds), 24 `lanes` `closed`, 11 required
+(5 missing `type`, 5 missing `date`, 1 missing `closed_at`), 1 null `round` (`rounds[138]`). This
+matches and sharpens my structural walk (my "80 fail `type`" = 75 enum + 5 missing type). F1's
+substance is unchanged and remains CanonicalCloseout's to repair; not re-judged here.
+Evidence: `/tmp/kaika-verify/d5-canonical-review/checkjsonschema.out`.
+
+## C. Correction — census integration gap (supersedes the §3 integration note)
+
+Shared main now includes `ff701da`, so the §3 bullet "fleet-root copy … is still `aed9ed65…` / the
+deployment's gate uses the pre-fix parser" is outdated at the time of this addendum: the corrected
+census parser is in shared main. The §3 finding text is preserved as the state observed at the
+original review time. The canonical driver copy from `fleet-driver-retry` is the parent's next
+integration step; F1 and F3–F11 cleanup remain with CanonicalCloseout, and neither is re-judged in
+this addendum.

@@ -50,9 +50,12 @@ contract v1 in `{{FLEET_ROOT}}/CORPUS.md` §SOURCES.md — follow it, never rede
    rows with reason and flip. Every `status` / `recheck` / `used-by` change is logged
    old→new in the lesson.
 2. **Record the census before → after.** Run this command at round start and at round
-   end; paste both outputs and their exit codes. Exit 0 is required at round end.
-   Exit 2 is expected at round start only when `corpus/SOURCES.md` does not yet
-   exist. The frozen manual census commands remain in `{{FLEET_ROOT}}/CORPUS.md`
+   end; paste both outputs and their exit codes. Exit 0 is required at round end for
+   conformance. Exit 2 is expected at round start only when `corpus/SOURCES.md` does not
+   yet exist. If it is still missing at round end, the driver logs a warning and continues;
+   that is a conformance defect, not a pass. Record it in the report and create or repair
+   the registry. Driver completion is not admission; independent non-author verification
+   remains required. The frozen manual census commands remain in `{{FLEET_ROOT}}/CORPUS.md`
    §SOURCES.md; that section is the specification.
 
    ```sh

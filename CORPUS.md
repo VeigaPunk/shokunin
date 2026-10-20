@@ -147,6 +147,13 @@ awk -F'|' '/^\|[[:space:]]*S[0-9][0-9][0-9]+[[:space:]]*\|/ && NF==13 {i=$2;k=$4
 awk -F'|' '/^\|[[:space:]]*S[0-9][0-9][0-9]+[[:space:]]*\|/ && NF==13 {s=$9; gsub(/[[:space:]]/,"",s); if (s=="mined") {n=split($12, a, /[,;]/); for (j=1;j<=n;j++) {p=a[j]; gsub(/^[[:space:]]+|[[:space:]]+$/,"",p); if (p!="" && p!="—") print p}}}' corpus/SOURCES.md | while read -r p; do [ -e "$p" ] || echo "missing: $p"; done
 ```
 
+### Maintained parser note (outside frozen v1)
+
+The maintained `scripts/sources-census.sh` CLI accepts 0–3 leading ASCII spaces before
+Markdown table rows and headings; 4 or more spaces are indented code and are ignored.
+The frozen manual census examples above assume column-zero input and remain unchanged.
+Default discovery covers child repositories only: `repo=.` main-repo lanes hold no corpus.
+
 ## Rules added from the kaika campaign
 
 Evidence: `.ufo/waves/kaika-w1/mistakes.md` (fleet mistake taxonomy, §5 lesson
