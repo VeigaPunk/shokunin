@@ -99,7 +99,14 @@ inherited: reuse what you re-verify, discard what you do not, and name both in t
 7. **Tooling authorization (operator, 2026-10-19):** you and every seat may install or upgrade
    tools that help the task — read `/home/vgpnk/.omp/agent/RULES.md` first (official channels,
    update-safety gate, record tool/version/channel/reason in the report). Put that sentence in
-   each wave's `context`.
+   each wave's `context`. **pacman guard (orchestrator, 2026-10-20, after the mado r15 libinput
+   incident):** this host's sync DB is ~413 packages ahead of the installed system (last
+   `pacman -Sy` 2026-10-18), so installing or naming an already-installed package is a forbidden
+   partial upgrade. Before any `pacman -S`, run `pacman -Sp --print-format '%n %v' <pkgs>`: proceed
+   only if every listed package is not installed yet (`pacman -Q <name>` fails); otherwise do not
+   install — use `uv tool`/`npx`/an official binary in `~/.local/bin`, or file an L0 question.
+   Never `-Sy`, `-Syu`, `-U`, `-R`, downgrade, or restart a host service. Put this guard in each
+   wave's `context` too.
 8. **Honesty.** An unrun check has not passed; never fabricate evidence or verdicts; harmed or
    unprovable claims are reported, not prettified. Blocked on an operator decision → append an L0
    question, route around it, and still land an honest report.
