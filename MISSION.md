@@ -6,15 +6,15 @@ by steer.
 
 ## Fleet shape (declared config)
 
-Lanes are declared in `shokunin.conf` at the fleet root — the driver reads the
-config each tick; nothing is hardcoded in `scripts/shokunin-watchdog.sh`. Each
-lane declaration carries `id`, `cwd` (a repo under `$SHOKUNIN_ROOT` — the two
-main-repo lanes point at the fleet root itself), `route` (a route name resolved
-through the host model route table, never a bare model alias), and `axes`
-(owned axes per `AXES.md`). All L1 lanes dispatch on the `swe`-class route of
-the host model route table.
+Lanes are declared in `shokunin.conf` at the fleet root. The driver sources this
+config once at startup; it does not reload it each tick. Each `LANES` row carries
+`id`, `repo` (relative to `$SHOKUNIN_ROOT`; `.` means the fleet root), and `axes`;
+the driver derives the lane cwd from `repo`. Rows have no per-lane route field,
+and the driver does not enforce a `swe`-class route. Runtime model choice is left
+to `SUBSTRATE_CMD` and the host/operator's global model routing.
 
-Initial config (the upstream fleet's nine lanes, axes preserved):
+Historical example — the upstream fleet's initial nine-lane config, not the
+current roster (axes preserved):
 
 ```yaml
 lanes:
