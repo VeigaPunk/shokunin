@@ -87,11 +87,16 @@ not, and name both in the report.
    (commandcode deepseek-v4.1-flash) at its 5-hour plan limit (429, resets 2026-10-20T19:47:54Z =
    16:47 -03). m_flash's cascade is charm-hyper deepseek-flash (402) → opencode-go deepseek-flash →
    devin deepseek-flash → m_luna max (openai-codex gpt-6-luna:max) last. Record a seat's actual
-   answering model when a claim depends on it. Opus coordinators
-   received 429s with 13–14-minute retry-after values earlier
-   today ("opus is back" since): respect any backoff and resume the same identity, never restart a
-   duplicate writer. Historical availability is not current capacity proof. A dead seat stays dead
-   in the evidence.
+   answering model when a claim depends on it. **zai rate limit (observed 14:00–15:25 -03):** with
+   several lanes in waves at once, zai answers m_zfl seats with `429 Rate limit reached for requests
+   (type=1302)`; the session retried the same model and ~130 seats died with "Retry budget exhausted
+   after 10 retries" without walking the m_zfl cascade (tabi r17 lost 17, tsukuroi r17 43, souji
+   r17 28+). The orchestrator raised `retry.maxRetries` 10 → 40 (session-only, 15:2x -03) so seats
+   ride out bursts; expect slower m_zfl seats rather than dead ones, and report any that still die.
+   Opus coordinators received 429s with 13–14-minute retry-after values earlier today ("opus is
+   back" since): respect any backoff and resume the same identity, never restart a duplicate
+   writer. Historical availability is not current capacity proof. A dead seat stays dead in the
+   evidence.
    **REA MCP:** the operator authorized disabling the OMP `rea` MCP entry for this phase —
    `~/.omp/agent/mcp.json` now carries `"enabled": false` (orchestrator edit 2026-10-20 10:12 -03;
    pre-edit copy `~/.omp/agent/mcp.json.pre-disable-20261020T1015`). That is operator-authorized

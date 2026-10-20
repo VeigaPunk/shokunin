@@ -28,6 +28,7 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
 17. "labrat and scout should be m_flash"
 18. "the fallback for the m_zfl should be m_luna max" / "as the last in the cascade"
 19. "make m_luna the last fallback for m_flash also"
+20. "something definetely bugged up here" / "check what's up and keep back on track"
 
 ## Decisions
 
@@ -145,6 +146,20 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
   deepseek-v4.1-flash → opencode-go deepseek-v4.1-flash → devin deepseek-v4-1-flash →
   openai-codex gpt-6-luna:max (m_luna max, last). The chain is keyed by the m_flash role only, so
   m_fast/plan (same primary model) keep their own chains.
+- **Diagnosis at directive 20 (15:2x -03).** Three faults:
+  1. *zai rate limit kills m_zfl seats.* Seat transcripts in this session: 3,550 × `429 Rate limit
+     reached for requests (type=1302)` from zai in 90 min and 127 transcripts ending in "Retry budget
+     exhausted after 10 retries" — those seats retried zai only and never walked the m_zfl cascade
+     (e.g. TameshiR17.RR7-2, RR1-2). Losses: tabi r17 17, tsukuroi r17 43 of 82 wave-2 seats, souji
+     r17 28+. Fix: `retry.maxRetries` 10 → 40 (session-only) so seats ride out bursts.
+  2. *Revived L1 completions were not delivered to the orchestrator.* TabiR17 had exited on a 429,
+     was revived by message, and landed r17 at 14:51 (af41737), but its completion never surfaced in
+     the orchestrator's job waits, so its closure sat undispatched ~35 min. Fix: the orchestrator
+     now also polls `.ufo/reports/round-<N>/` and `proc://` for revived L1s.
+  3. *Orchestrator routing broadcasts interrupted L1 waits.* Seven routing notes × seven L1s
+     (directives 12–17) each interrupted an L1's wait; routing is by role and needs no L1 action, so
+     those broadcasts stop. Concurrency fell to ~27 jobs while lanes integrated; mori r17 joins to
+     restore wave pressure.
 - **Scope ruling (integrator):** tabi owns live browser/CDP page observation including the WebMCP
   page-tool surface; kaidoku keeps CDP only as an REA provider surface (tabi r16 closure notes).
 
