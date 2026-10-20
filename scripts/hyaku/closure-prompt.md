@@ -23,11 +23,15 @@ never pass a model parameter; you write only the two artifacts in steps 4–5):
    holds; the lane repo has no uncommitted round work and is pushed (`git status --porcelain`,
    `git rev-list --count @{u}..HEAD`); the prompt carries the template contract. Marker report
    (no checkable work/commit) → status `failed`. Defects are named in notes, status-neutral.
-2. **Claims.** For each declared claim (1–3): re-run its counting command against `{{HEAD}}` and
-   compare with the reported before→after; check no owned axis was harmed
-   (`git -C {{LANE_CWD}} diff {{BASE}} {{HEAD}} -- SCORECARD.md`, plus spot reads). A capability
-   claim needs its demonstration to run now. For an exploratory claim YOU are the named non-author
-   reviewer: rule `unprovable-but-better` or `unprovable`, with reasons. Grade each axis
+2. **Claims.** For each declared claim (1–3): re-derive its before→after against `{{HEAD}}` with a
+   plain measurement you run yourself (grep/wc/jq/git/census counts over committed bytes) and
+   compare with the reported values; check no owned axis was harmed
+   (`git -C {{LANE_CWD}} diff {{BASE}} {{HEAD}} -- SCORECARD.md`, plus spot reads). Where the claim
+   rests on a lane-owned **gate** or selftest, PROTOCOL §Gate standard (Closure consequence) binds:
+   verify its committed evidence (self-test tally, frozen-run verdict, revision measured) — never
+   execute a sibling's gate — and say which claims were re-measured vs evidence-verified. For an
+   exploratory claim YOU are the named non-author reviewer: rule `unprovable-but-better` or
+   `unprovable`, with reasons. Grade each axis
    `improved | harmed | unchanged | unprovable-but-better | unprovable`.
 3. **Discernment spot-check (LEARNING.md).** From `corpus/lessons/round-{{ROUND}}.md` `## Gate`
    sample ≥1 admit and ≥1 reject; re-open each source (URL, path, or command) and record
