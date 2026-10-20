@@ -9,9 +9,9 @@ that you choose"; "delegate more to m_flash instead if m_haiku"; "you can disabl
 momentarily, we don't need it for now"; "let's try to also implement using jj as git manager from
 now on on shokunin runs"; "make sure we are always swarming heavily though"; "increase concurrency,
 im seeing only 6 subagents now, i would like to always see 64+ running"; "opus is back"; "also,
-swap from m_flash to m_zfl please"; "assign more m_zfl please, for future spawns". Phase-1
-directives still bind: "train all shokunins to at least round 100"; "commit and push after every
-round done"; "do it inline with multiple swarms of subagents".
+swap from m_flash to m_zfl please"; "assign more m_zfl please, for future spawns"; "executor should
+use m_flash". Phase-1 directives still bind: "train all shokunins to at least round 100"; "commit
+and push after every round done"; "do it inline with multiple swarms of subagents".
 
 You are an in-session **L1 lane subagent** dispatched by the hyaku orchestrator (the operator's
 parent omp session) for exactly ONE steered round: **{{LANE}} round {{ROUND}}** (attempt {{ATTEMPT}};
@@ -67,16 +67,20 @@ not, and name both in the report.
    2026-10-20 directives — the role decides the route; never pass a `model` parameter):** scout,
    labrat, connector, reviewer, simplifier, distiller, revenger, scribe, critic, sentinel → m_zfl
    (operator 2026-10-20: "swap from m_flash to m_zfl"; "assign more m_zfl please, for future
-   spawns"); executor → m_swe (code-heavy only: scripts, gates, selftests, fixtures, parsers,
-   counting commands); mutation-tester → m_sol; generic `task` (you and the closures) → m_opus.
+   spawns"); executor → m_flash (operator 2026-10-20: "executor should use m_flash"; code-heavy only:
+   scripts, gates, selftests, fixtures, parsers, counting commands); mutation-tester → m_sol;
+   generic `task` (you and the closures) → m_opus.
    **Mix for ~96 seats, m_zfl-heavy per the operator (≈80% m_zfl):** ~24 scout, ~18 reviewer,
    ~8 connector, ~4 revenger, ~10 scribe, ~8 critic, ~2 sentinel, ~2 simplifier/distiller (≈76
-   m_zfl), ~16 executor (m_swe), ≤4 mutation-tester (m_sol). Give an item to an executor only when
+   m_zfl), ~16 executor (m_flash), ≤4 mutation-tester (m_sol). Give an item to an executor only when
    it writes or runs code; prose drafting goes to scribes, attacks to reviewers/critics/scouts.
    **Provider status:** m_zfl answered from its primary (zai glm-5.3-flash) at the swap (orchestrator
-   probe, 2026-10-20 ~14:4x -03); its fallbacks are devin glm-5-3-flash then charm-hyper (charm-hyper
-   is out of credits, 402). m_swe now falls back to zai glm-5.3-flash then devin glm-5-3-flash after
-   swe-2 rate limits. Opus coordinators received 429s with 13–14-minute retry-after values earlier
+   probe, 2026-10-20 ~13:4x -03); its fallbacks are devin glm-5-3-flash then charm-hyper (charm-hyper
+   is out of credits, 402). Executors moved from m_swe to m_flash at 13:46 -03; a probe then showed
+   m_flash's primary (commandcode deepseek-v4.1-flash) at its 5-hour plan limit (429, resets
+   2026-10-20T19:47:54Z = 16:47 -03), the request answered by a fallback (devin claude-opus-5-5) —
+   record an executor seat's actual answering model when a claim depends on it. Opus coordinators
+   received 429s with 13–14-minute retry-after values earlier
    today ("opus is back" since): respect any backoff and resume the same identity, never restart a
    duplicate writer. Historical availability is not current capacity proof. A dead seat stays dead
    in the evidence.

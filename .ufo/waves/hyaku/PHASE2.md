@@ -22,6 +22,7 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
 11. "opus is back"
 12. "also, swap from m_flash to m_zfl please"
 13. "assign more m_zfl please, for future spawns"
+14. "executor should use m_flash"
 
 ## Decisions
 
@@ -92,7 +93,7 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
   deepseek-v4.1-flash after m_swe rate limits killed executor seats (tabi r16 6, souji r16 2,
   kaidoku r17 2, mado r17 1); replaced at directive 12 by zai glm-5.3-flash → devin
   glm-5-3-flash so no route uses the m_flash models.
-- **m_flash → m_zfl (directive 12, ~14:4x -03).** scout, labrat, connector, reviewer, simplifier,
+- **m_flash → m_zfl (directive 12, ~13:4x -03).** scout, labrat, connector, reviewer, simplifier,
   distiller and revenger route to @m_zfl (session-only `task.agentModelOverrides`); headless probe
   `scripts/hyaku/probe-alias.sh m_zfl` → `answered-by=zai/glm-5.3-flash primary-ok=True`. Seats
   already running keep their model; new seats take m_zfl.
@@ -115,6 +116,12 @@ Integrator-of-record artifact for the second in-session run of the hyaku campaig
   L1s and closures (`task`) @m_opus. Addendum wave mix now ≈80% m_zfl seats (~76 of ~96) with
   executors reserved for items that write or run code. Moving critics/sentinels off Opus also
   lowers pressure on the Anthropic account whose 429s stopped four L1s earlier.
+- **Executor → m_flash (directive 14, 13:46 -03).** executor now routes to @m_flash (was @m_swe);
+  every other seat role stays as directive 13 left it. Probe at the switch: m_flash's primary
+  (commandcode deepseek-v4.1-flash) returned 429 "5-hour usage limit … resets at
+  2026-10-20T19:47:54Z" (16:47 -03) and the request was answered by devin/claude-opus-5-5 through
+  fallback, so until the reset executor seats run on a fallback model. The m_swe fallback chain is
+  now unused by any role.
 - **Scope ruling (integrator):** tabi owns live browser/CDP page observation including the WebMCP
   page-tool surface; kaidoku keeps CDP only as an REA provider surface (tabi r16 closure notes).
 
