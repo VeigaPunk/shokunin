@@ -298,3 +298,16 @@ Filed after the orchestrator reopened capacity and directed the wave to run.
   and the clone-path majors are already disclosed as a residual.
 - **Final lane tip at this erratum: `c6703daef7dfa7de2f1a5a72e86f40de3717049b`.** No
   production code changed after the 18/18 acceptance at `63bb887`.
+
+## Erratum 10 — late adjacency/source findings (appended after Erratum 9)
+
+- `ConnProcAdjacency` flags two wording tensions in the F5 entry: it assigns **all other-uid
+  residue to mori** (broader than mori's stated health surface), and it says souji never reads
+  secret content while the census reads `argv` **before** redacting credential-shaped values.
+  A proposed adjacency sentence covers mori/tsukuroi/kagi. Not applied: it belongs to the open
+  entry revision, and the read-then-redact order is a real disclosure the entry must state.
+- `ScoutSourceSearch`: `pidfd_send_signal(2)` is a candidate for PID-reuse context but does not
+  prove the no-signal claim; `proc_pid_stat(5)` field 22 duplicates S075. No row added at the
+  budget stop; the proposed row joins the open source list.
+- Lane tip unchanged at **`c6703daef7dfa7de2f1a5a72e86f40de3717049b`**. No code or corpus change
+  in this erratum; late wave reports remain uncommitted under `.ufo/waves/round-19/w1/`.
