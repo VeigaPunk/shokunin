@@ -188,3 +188,14 @@ Filed after the orchestrator reopened capacity and directed the wave to run.
   r20, alongside the already-disclosed D5 TOCTOU. Report committed in lane commit `7d199d2b2446cac1a0c6d08c53e1e950e99bec35`.
 - Lane tip after this erratum: `7d199d2b2446cac1a0c6d08c53e1e950e99bec35`. The other wave-1b
   seats' reports continue to land under `.ufo/waves/round-19/w1/` and remain uncommitted at filing.
+
+## Erratum 3 — additional wave-1b mutation result (appended after Erratum 2)
+
+- `MutCarryEllipsis` completed: mutant M1 (accept any prefix without the ellipsis check) is
+  **KILLED** by the unchanged carry fixture — pristine PASS/exit 0, M1 FAIL/exit 1, restored
+  PASS/exit 0; the restored rule's sha256 matches pristine exactly
+  (`342085992da876a75418ca00471d4e70d0c13adc14a3ac475f5280a42c973674`). This confirms the
+  ellipsis guard is load-bearing for C1. Report committed in lane commit
+  `93e51f58a5d2346e96bfa7d965670a38aed0c272`; no code change.
+- Final lane tip at this erratum: `93e51f58a5d2346e96bfa7d965670a38aed0c272`. Remaining
+  wave-1b seats' reports, if still landing, remain uncommitted and unadjudicated.
