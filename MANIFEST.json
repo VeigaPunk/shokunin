@@ -9441,6 +9441,51 @@
    "notes": "Dispatch/complete digest: 2026-10-21T02:22:24-03:00 launch tameshi round=19 pgid=80985 driver=hyaku-inline attempt=1; 2026-10-21T04:21:02-03:00 complete tameshi round=19; hyaku-inline attempt=1. Report 30e9a383 by the tameshi-shokunin identity; lane 6acaf4dd (base 7243e7f), pushed, ahead=0. C1 verifies: the five round-18-routed metadata/receipt defects move 0/5 -> 5/5 under one final ruler (7af3e951) on both endpoints with input maps matching the pinned expectations (c1-before 7243e7f corrected0/open5 exit1; c1-final 32838a5 corrected5/open0 exit0); the five corrections were re-read directly (guard erratum + probes open=0 closed=11 at 921ef807; S008 mined at 4b7c682; sources-diff 25/5 with the five-line/six-cell range; retained exit-64 witness row with successor selftest 43/43; 60/60 receipt at 4b7c682 with instrument sha). Evidence-verified: 33/33 active registry outcomes held (four superseded retained/executed with superseded_by), correction selftest 43/43, selector 3/3, frozen algorithm 98/98, strict input-keyed monitor 60/60 restraint8 no overrides at 32838a5, sources 76->76 with six W04s. Numeric calibration held 8; no axis harmed. QUALITY20 conformance defect: L1 edited the live ruler in place during wave 2, disclosed; frozen 55e1 bytes were restored, repairs staged and installed after the wave (329b6dd 06:48Z > wave-2 registry 06:15Z), and the final measurement is same-ruler/input-pinned with the final ruler requiring the retained exit-64 row, so the C1 measurement stayed valid; the review-scope caveat stands. Routed to the lane for round 20 (append-only): stage instrument edits before dispatch and add a receipt instrument-sha interval check; name each of the three executor instruments' sha rather than one singular frozen sha; keep the S049 local-vs-UTC opened-date basis explicit. Waves 64+64, dead [], unstarted [], unique_seats_round=128, five same-identity residuals completed, grants cap92 then cap200, L1 changed neither capacity nor routing. No capability/frontier entry admitted; SHONEN stays 4x[~]; no promotion. No installs, no model parameters, no routing or config changes.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 18,
+   "date": "2026-10-21",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 18,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 18
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "adjacency": "improved",
+    "calibration": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "retention gate (tools/mori-retention-gate.py; selftest 21/21; C1 after metric 0, routed 0 at 3127c3a)",
+    "freeze-order check (tools/mori-freeze-order.py; selftest 12/12; overclaims 4->0 at 3127c3a)",
+    "dispatch-attempt ledger verify (tools/mori-dispatch-ledger.py; selftest 14/14; w1 1/1 and w2 2/2 bound clean, residual 7/7 bound with STARTED_MISSING)"
+   ],
+   "report": ".ufo/reports/round-18/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-18-verifier-spotcheck.md@b3602869dadd4016675aeba8db2adf3fa1e1b531",
+    "rechecks": "C1 re-measured at tip 3786f3f with an independent R1-R9 policy scan over git-show bytes plus the committed allowlist: base d005cdd hits 119, non-author 3, must-redact 40, metric 116, routed 40 -> tip hits 89, non-author 3, allowlisted 86, metric 0, routed 0, stale 0, forbidden 0; the three must-redact reports scan 0 and are minimized replacement bodies; sampled redactions landed; 14 sampled allowlist rows are surface/instruction/field-name text; ruling: the r17 routed privacy harm is cured in the tip's committed bytes, with pushed-history exposure (r17 originals and the round-18 Redact draft at b8f5c6c) left to operator/kagi and no rewrite. C2 evidence-verified: 6 claims, overclaims 4->0, r17-C3 appended correction co-evolved, freeze 29b0dc7 precedes first implementation b8f5c6c, selftest 12/12; evidence JSONs lack revision metadata. C3 evidence-verified at rev 3127c3a: r17 legacy 9/9 unbound -> r18 w1 1/1 and w2 2/2 bound clean, residual 7/7 bound with STARTED_MISSING, selftest 14/14. Census exit 0, rows 48->63 (15 new, opened 2026-10-21), old cells unchanged."
+   },
+   "commit": "mori-shokunin@3786f3f1bde2fbcc5ce617e35e8c9becdbf9d9e8",
+   "closed_at": "2026-10-21T07:34:23Z",
+   "campaign": "hyaku",
+   "notes": "watchdog digest: 2026-10-20T18:52:38-03:00 launch mori round=18 pgid=3876169 driver=hyaku-inline attempt=1 / 2026-10-21T02:47:20-03:00 lane-dead-no-report mori round=18; retry same round (attempt-1 coordinator ended before report; operator-authorized recovery coordinator reuses retained round-18 work) / 2026-10-21T02:47:21-03:00 launch mori round=18 pgid=543176 driver=hyaku-inline attempt=2 / 2026-10-21T04:09:03-03:00 complete mori round=18; hyaku-inline attempt=2. Report 61a32221 by mori-shokunin identity, lands after lane tip 3786f3f; spotcheck @b3602869 (protocol identity, pushed); lane ahead=0/clean. W1 68 seats with 15 provider-capacity deaths (resumed once each, no replacements), w2 67 seats, total 135. RULING: the r17 routed privacy harm is cured at the tip's committed bytes (must-redact 40->0, metric 116->0, routed 0, 86 allowlisted surface/field lines, sampled redactions landed, r16 SiblingScope line redacted); pushed history still holds the r17 originals and the r18 Redact draft at b8f5c6c - operator/kagi exposure decision, never rewrite. Step-1 defects (status-neutral, routed): report trend verdicts overclaim expansion and quality (README coverage map unchanged, no existing entry re-verified); census tier arithmetic says A11/B1/C4 but the 15 new rows are A9/B1/C5 and the C parenthetical lists five; Gate lacks the required located <=25-word quote for rejected S055/S057/S059/S063; C2 evidence lacks measured-revision metadata and the flat 4->0 is 1 historical overclaim + 3 prospective r18 labels; capability rows are prose, not the AXES table; the final-tip out-of-metric re-sweep is not committed (ResweepRound18 pinned at e2bfbd6) and residuals remain routed: same-wave dead-seat receipt with exact provider/model alias, error text and resume timestamp, six r16 host-home path lines with contradictory triage dispositions (one says withheld this round, one queued next round), SW1 same-wave rejection based on provenance not content, line-digest guessability limit. SHONEN: three [~] with pointers and one [ ] (cross-domain bleed); boxes 1-3 are non-author checkable, box 4 remains open pending the residuals and the operator/kagi history decision. No promotion, mint or [x].",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
