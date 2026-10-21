@@ -10445,6 +10445,53 @@
    "closed_at": "2026-10-21T11:42:21Z",
    "campaign": "hyaku",
    "notes": "Dispatch digest: 2026-10-21T06:47:50-03:00 launch tabi round=20 pgid=3502656 driver=hyaku-inline attempt=1. Author TabiR20 finished; report fleet commit 8bc70543. Admitted: single declared C1 depth claim re-measured 0->12 at measured e45b052 and delivered e7cf11a, binding reproduces clean, 28/28 serial checks and selftests 45/45, 27/27 reproduced, no axis harm. Disclosed and accepted as non-blocking: W1 actor-settlement overclaims withdrawn (not converted to passes); W2 dispatch snapshot taken after spawn; ReviewBindingInputs unsolicited r19 binding replay; one misrooted ResidualFrozen report recovered byte-exact; round-20 MDRT 0; 136 seats, 0 dead, no tools installed. Streak reset from r19 rejected-honest-stop. Lane's own trend verdicts (expansion unchanged, quality improved, discernment unchanged) accepted. Report's honest bounding (not 12 novel predicates, no runtime capability, S100 same bytes as S096) noted."
+  },
+  {
+   "round": 20,
+   "date": "2026-10-21",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 20,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 20
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "adjacency": "improved",
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "unprovable-but-better"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-20/tsukuroi.md",
+   "verification": {
+    "reviewer": "CloseTsukuroi20 (orchestrator-dispatched non-author closure; authors TsukuroiR20 then TsukuroiR19Recovery as recovery owner)",
+    "scope": "Read-only lane/report. Explicit assignment authorized independent claim counting, all 17 repository selftests and changed-path CLI smoke; all were executed in a disposable clone at fc2a008, with origin removed and master set to measured pin as in the retained runner. No lane/report edits, host/boot/package actions or installs. No lane verifier lesson created because closure assignment forbids lane writes; spotcheck is recorded in this row.",
+    "spotcheck": "No lane file (write prohibited); source admit/reject observations recorded below, against lane commits and the reopened primary Git documentation.",
+    "ancestry": "Report b9e2f129e9a3adef45a710524aa6ebc944aa12fe authored tsukuroi-shokunin and ancestor of fleet master. Baseline 0cbc34dd6b20896085a8fb07943e3ea4027d8472 and all four cited landings 7f4231401e4918146c4442e8633334231c7d88d6, a90cefef43198d8593c7c862bc6d6868e5171d16, fc2a0085088cedb3ab59dc3fff16523c0f42a6b4, 82e519203e676c532b1dc5ea91a85671f2286e7b exist and are ancestors of lane master. jj-lane.sh state: local=remote=82e5192, ahead=0 behind=0 tracked=0 untracked=0; detached HEAD understood. Required report sections and four SHONEN evidence lines present. Dispatch prompt .ufo/prompts/tsukuroi-round-20.md at fleet 15521eb75f9ac8230b2836ae7fed7e509780d522 carries claim/mission/L2/report/commit-push/scope/L0 contracts and hyaku addendum.",
+    "rechecks": "Independent same-final-evaluator before/after at BASE=0cbc34d, REV=fc2a008: python3 tools/check-adjacency-anchors.py --revision <REV> --ownership-corrections gives ownership_corrections 0->1, exit1 OWNERSHIP-CORRECTION-MISSING -> exit0 no findings. python3 tools/check-revision-binding.py --tools-revision <REV> --object-selectors gives object_selector_tools 0/9->9/9, exit1->0, all nine per-tool rows false->true. python3 tools/check-registry-coverage.py --revision <REV> --audit-live-map gives audit_live_map_errors 1->0, exit1 REGISTRY-AUDIT-LIVE-MAP SKILL:2073 -> exit0. C1/C3 before/after outputs byte-match final-r20c receipts; C2 metrics/verdicts match (synthesized diagnostic object hashes differ as expected). Default original-nine continuity, adjacency legacy and registry coverage with --baseline-tools BASE all exit0. Executed each tools/*.py via python3 and tools/*.sh via bash with --selftest: exactly17, all exit0; case totals _revision57, boot-chain-audit45, adjacency25, appended-notices47, boot-chain83, boot-writers12, freshness59, locator37, recheck95, registry23, revision-binding62, root-dac54, seat-scope54, section-citations68, source-scope29, update-recheck20, census97; all zero failures. All17 evaluator SHA256s equal final-r20c/evaluator-digests.json. Independent git diff BASE REV --name-only -- tools/ gives exactly five changed paths: _revision.py, check-adjacency-anchors.py, check-recheck-commands.py, check-registry-coverage.py, check-revision-binding.py. CLI smoke python3 _revision.py exits64 (usage, expected); others --help exit0, matching smoke-final2. Re-run seat-scope at fc2: build exit1 with13 missing, falsify exit1 with20 malformed; both unauthorized0 undeclared0; declarations explicitly do not prove execution absence.",
+    "disclosed_items": "Reviewer CloseTsukuroi20.DisclosedItems20 independently compared build spec64 with51 reports: exact13 missing names match checker findings; falsify64 reports have44 exact 'Scope: executed=none' and20 period-appended 'Scope: executed=none.' trailers. Per-seat provider death cause is author-reported, not independently established by the committed pre-spawn-refusal receipt; missing-report accounting is verified. C2 per-consumer matrix lacks tree/tag-to-noncommit/nested-tag cases; shared _revision selftests include direct stored tree, tag-to-blob/tree, nested-tag-to-commit and pass57/57. Candidate source digests were not pinned at build/falsify dispatch. Both limits disclosed in report:65-66, lesson:43,46-47 and SCORECARD:621,629; 9/9 is admitted only for the frozen original-nine matrix, never universal object-type or independent algorithmic-oracle coverage. Missing L2 planner-tagged item is disclosed (L1 planner/connector ConnPlanner is not a substitute), status-neutral process defect.",
+    "axis_harm": "No measured axis harmed. SCORECARD diff is append-only18 lines; ordinals remain adjacency8, operability9, calibration9, other axes unchanged. Independent prefix comparison confirms preserved BASE bytes in PROVINCE, SKILL, LOG and SCORECARD; all seven protected document prefixes match retained prefixes.json. IN-101 correction accurately points at measured _revision.py line63 (baseline quote was at62 before r20 blank-line shift); only lane-owned locator/note changed, not sibling source. C1 correction SHA256 23289c7a8fa558c0249ff56b53ccddf9dcae522ef6dcd3064dc3ce607453fc2a independently matches; PROVINCE:148-152 preserves attribution/unresolved arbitration/no-write scope. SKILL:2109 live0/2 versus selftest1 agrees with baseline audit summary return paths.",
+    "source_spotcheck": "Outside admit samples agree: S077 https://git-scm.com/docs/git-rev-parse/2.56.0 reopened, OPTIONS --disambiguate quote 'Show every object whose name begins with the given prefix.' exact; this supports object enumeration, not landed/pushed proof. S078 pinned Revenger PROVINCE lines3-4 exact Electron/JavaScript package scope, sha25663acc3d033869f93f3e13da79e35023d86baa60b3f1d3b52861b019183b4b19f independently matches; attributed declaration does not award ownership. S079 git show BASE:tools/boot-chain-audit.sh lines81-85,795-800 explicitly yields UNKNOWN/2 or CONSISTENT/0, agrees. Outside reject sample agrees: S080 git show BASE:corpus/knowledge/boot-writers-r19.md line93 no-Updated/no-write claim conflicts with line164 qualification; absence is not content-write proof. SOURCES rows independently76->80, additionsA4 mined3 rejected1, no removed/altered prior rows. Required sources-census validate --root /home/vgpnk/Projects/shokunin tsukuroi exits0 with8 existing W04 duplicate-URL warnings.",
+    "learning": "Quality improved by precise supersessions and verified repairs. Expansion changed from author's improved to unchanged: corpus/README.md:184 explicitly says deepens held ground, not new coverage; four source rows alone are not uncovered-ground/capability admission, frontier0 and no capability acquisition. Discernment retained unprovable-but-better: outside sampled admits/rejects agree and lesson-backed QUALITY34-41 improve boundaries, but author-dispatched mutable-snapshot review cannot establish broad discernment or outside SHONEN closure. No admission credit awarded for this trend; the only three declared claims are numerical and independently verified. No SHONEN promotion or host-readiness inference."
+   },
+   "commit": "tsukuroi-shokunin@82e519203e676c532b1dc5ea91a85671f2286e7b",
+   "closed_at": "2026-10-21T11:52:27Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: watchdog 2026-10-21T05:13:11-03:00 launch tsukuroi round=20 pgid=968868 driver=hyaku-inline attempt=1; no round20 complete line observed at initial verification. Report b9e2f12 is real committed work, status ok. Reviewer CloseTsukuroi20.OwnershipHistory20 found ownership/process history only partially disclosed: original TsukuroiR20 parked for TsukuroiR19Recovery, which dispatched/integrated r20; LOG:1027/SCORECARD:616/lesson:3 retain nominal TsukuroiR20 attribution rather than explicit recovery handoff. Report title says recovery continuation but does not name the coordinator. Runtime OMP transcript corroborates build64 spawn at 2026-10-21T09:19:50Z and reservation at09:21:01Z (~67s later); Main corrected obsolete READY/GRANT assumption at09:20:41Z. Durable LOG.md:1039 explicitly calls build acquire retroactive and says existing dispatch recorded, so not a fabricated pre-reservation. Report:15 omits that ordering but points to LOG dispatch/review correction. Falsify reservation preceded dispatch and was released after all64 reports. Route clearer recovery-owner identity and report-level post-hoc reservation disclosure; require pre-dispatch wave-slot gate next round. Exactly128 spawned,115 reports,13 missing/dead, no replacements; no extra wave. Rerun red seat-scope counts remain disclosed process conformance debt, not evidence of unauthorized execution or no-execution proof. Route missing L2 planner seat, candidate-digest pinning and bounded C2 type/oracle coverage. Admission is only for C1/C2/C3 finite measured deltas; not for process perfection, expansion, discernment trend, contested ownership, SHONEN or next-boot readiness. Prior r19 admitted (rounds[389]), so no consecutive-rejection block. No lane/report writes or tool installations.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
