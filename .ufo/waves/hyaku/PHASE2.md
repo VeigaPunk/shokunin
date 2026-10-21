@@ -708,3 +708,12 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   `[421]` tameshi r23 admitted. Dispatched: kagi r27 (KagiR26), kake r26 (KakeR25), tameshi r24
   (CloseTameshi22), and first hyaku rounds kotoba r47 (MoriR22R), kotodama r50 (ChousaR27R2)
   and revenger r61 (CloseChousa26), all reused idle agents while Main stays job-capped.
+
+50. "change m_swe delegations for m_mim"
+
+- **Routing, saved globally.** `task.agentModelOverrides.reviewer` `@m_swe` → `@m_mim`
+  (`opencode-go/minimax-m3.1-flash-free`; operator-defined chain → commandcode minimax free →
+  `inception/mercury-3`, on both the role key and the model key). Reviewer was the only role
+  delegated to m_swe. Unchanged: `modelRoles.default` = `@m_swe` and the `@m_swe` fallback hops
+  (not delegations). Fresh-process probe: m_mim answered by `opencode-go/minimax-m3.1-flash-free`,
+  primary-ok. Fresh spawns only; running reviewer seats keep the model they started with.
