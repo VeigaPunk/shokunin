@@ -885,3 +885,15 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
 - **Kengaku source-copy incident review:** Kengaku29CopyReview (sentinel) is checking the
   five removed account-default/endpoint copies and retained history, without reproducing values
   or using credentials. This is advisory safety evidence, not an admission verdict.
+- **Landed:** chousa r27, lane `457fbb04fa872c88ce5c5da9a48d3a767eaf51ff`, report
+  `dd19a5b5489ff4748d6c00b794e6d03c453a2093`; parent verify passed and full closure prompt
+  rendered. Author reports C1/C2 improvements but C3 harm remains (canonical citation-prefix
+  over-refusal), so no author admission. Pending independent closure.
+- **Additional provider hold:** KagiR28 failed on Devin weekly quota. Its r28 claim remains
+  held; no immediate re-wake. CheckpointTabi22-3 is collecting its read-only checkpoint.
+- **Kengaku safety finding:** the five removed upstream copies included public benchmark login
+  literals; their validity was not tested. Removal from the final tree does not remove retained
+  history. The sentinel's sanitized review is in `/fast/scratch/hyaku-resume-s3/`; current
+  published-ref reachability is still being checked without using the credentials. An operator
+  history-disposition question is durable in `.ufo/l0-questions.md` (`7a40283885e0f16ed4c522e1c7138bf81720b2fe`).
+  No purge, force-push, rotation or next-round admission is authorized.
