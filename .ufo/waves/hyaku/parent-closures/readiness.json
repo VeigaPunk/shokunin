@@ -1,6 +1,6 @@
 {
   "schema": "hyaku-parent-closure-readiness-v1",
-  "captured_at": "2026-10-21T21:46:50.605418+00:00",
+  "captured_at": "2026-10-21T21:59:23.444552+00:00",
   "landed_verifiers": {
     "kotodama": {
       "round": 50,
@@ -43,13 +43,19 @@
       "producer_tip": "457fbb04fa872c88ce5c5da9a48d3a767eaf51ff",
       "verifier_tip": "11d7c5da1ee7f6a4e01b1661d14a9d08fb8de01a",
       "verdict": "rejected-harmed"
+    },
+    "souji": {
+      "round": 22,
+      "producer_tip": "fe7590b3010bed9b9b808b79c2bf2be1a18bce2a",
+      "verifier_tip": "4edb25dfe262515d0da63224bbba71e02e36cba5",
+      "verdict": "rejected-honest-stop",
+      "forward_hold": true
     }
   },
   "ledger_entries_published_this_stage": 0,
   "rounds_advanced_this_stage": 0,
   "blocker": "Registeredrootclosure-check.pyknownmalformed-roundcrash; existingisolatedwriter/reviewerworking. Nohistoricalnormalizationorfrozensnapshotbypass; Mainawaitscoherentpatchthenrunsregisteredcontrols/live/frozensnapshot.",
   "other_remaining": [
-    "souji22-policy-boundary-and-non-author-accounting",
     "kengaku29-source-history-hold"
   ],
   "author_work_active": [
@@ -64,6 +70,16 @@
     "campaign_wave_gate_target": 200
   },
   "limits": "Verifiernotesarenotpublishedaccountingclosures/trainingroundcredit. Originalclaims/producerpins remainseparatefromoperatorinventorymetadata.",
-  "new_safety_hold": "souji forwarddispatchpausedwhileoriginalcyber_policyitemscopeismetadatachecked; no refuseditemretried",
-  "native_repair_diagnostic": "RootClosureBlocker snapshot21:14:22: five acknowledgedsourceedits, no errors/unpairedrequests/transporthold; sourcewriterstillmidpatch,reviewerawaitscoherence. No readyhandoffassumed."
+  "new_safety_hold": "souji originalcyber_policystopconfirmed; exactrefusedscopeunresolvedfromsafe metadata; successorproseisnotallclear; forwardholdpersists",
+  "native_repair_diagnostic": "RootClosureBlocker snapshot21:14:22: five acknowledgedsourceedits, no errors/unpairedrequests/transporthold; sourcewriterstillmidpatch,reviewerawaitscoherence. No readyhandoffassumed.",
+  "latest_live_floor": {
+    "observed_at": "2026-10-21T21:57:56.779182+00:00",
+    "actual_running_tasks": 96,
+    "actual_kake_r27_children_running": 85,
+    "source64_dispatch_deferred": true,
+    "source64_spawned": 0,
+    "producer_receipt": "KakeR27 actual85 unchangedvalidatedtaskCall, candidateac46a7472d945a6d7ff135e4d7f07b0b6913d835; actualIDs/w2registry authoritative",
+    "limits": "Single post-launch runtimeobservation, not a continuous-floor guarantee or completed-training proof; no extra maintenance added on top of reserved producerwave."
+  },
+  "handoff_rule": "Userapprovedgenuineoverlapupto200; measured96includes85realKakeFseats; validatedsource64awaitsevent-drivenhandoff."
 }

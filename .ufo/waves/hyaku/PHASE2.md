@@ -1119,3 +1119,38 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   stays separate from the corrected58-obligation enumeration. Prepared85fresh falsifiers
   would make153actual author identities if spawned, not153completed proofs. Candidate
   safety migration preserves received-versus-retained digests and does not retry r24.
+- **Souji r22 report-only judgment landed:** `4edb25dfe262515d0da63224bbba71e02e36cba5`.
+  The negative admission record preserves original214/final258/listed59 distinctions and
+  incomplete independent review. Forward dispatch remains held: original `cyber_policy`
+  at14:16:16.760Z and automatic retry are confirmed, but safely identifying the refused
+  item's boundary from lifecycle metadata is not an all-clear. No payload was executed,
+  reconstructed or rephrased; credential identifiers are not published.
+
+63. "I need you to keep up 64-100 subagents running at all times /skill:swarm"
+
+64. Handoff choice: "Overlap up to 200"
+
+- A fresh runtime observation found11running tasks, exposing a real floor gap rather than
+  treating prepared work as active. Main prepared64distinct old public-primary URL checks
+  (72scoped source uses) with72additional genuine URL bundles as a disjoint backlog.
+  These are source-maintenance evidence for later authorized rounds, not training credit,
+  replacement reviews or refused-work retries. Existing independently pinned source views
+  are reused read-only; no source writer or wall mission was added.
+- Required validation initially refused underscore-containing names, zero spawned.
+  Names were corrected before plan/run passed for the complete64-member payload. Its
+  source-family roles are33scout/17reviewer/8critic/6connector, through normal global aliases.
+- The live gate showed the author's85-seat reservation. Main released its maintenance
+  reservation and deferred its64spawn so genuine training filled the gap instead.
+  Kake then actually spawned85unique falsifiers in one unchanged validated call, first
+  attempt, at candidate `ac46a7472d945a6d7ff135e4d7f07b0b6913d835`. Total author spend153,
+  no replacement. Original57-population evidence and the corrected58-obligation set remain
+  separately named; unknowns are not counted as strictly decided.
+- At `2026-10-21T21:57:56.779182Z`, the single post-launch observation found
+  **96running tasks, including85Kake children**. This is measured live concurrency, not
+  a continuous-floor guarantee or completed-round count. `live-floor-observation.json`
+  preserves it; source64 remains explicitly unspawned in `s3-source64/deferred.json`.
+- Main explained the whole-wave handoff constraint (63active+64new=127); the operator
+  selected genuine overlap up to the existing200ceiling rather than a hard100cap with
+  floor dips. Target64+useful occupancy, normal64–100-seat waves, no filler/replacements.
+  Kake will send event-driven settlement thresholds; Kama/Revenger prepare their next
+  genuine handoffs. The validated source queue is a fallback, not extra claimed activity.

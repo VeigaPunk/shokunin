@@ -1,0 +1,1575 @@
+{
+  "schema": "hyaku-primary-source-audit-input-v1",
+  "fleet_view": "/fast/scratch/hyaku/s3-ready66",
+  "fleet_base": "e82b86b8c02fdbb6282c1c459c032f43d16af9f8",
+  "catalogs": {
+    "kama": {
+      "base": "2e254a1763a9c08aa07fc53081287f506c447d84",
+      "sha256": "f42c75522e064b34bcaedd3188c85967718a625b7886786c430bdbebaf17d9bd"
+    },
+    "revenger": {
+      "base": "d97761952be256d145d298022de03091de91d358",
+      "sha256": "5c13831b8b64b1a2d715fc4031415750d92af4daf3ef8021c91a8912b5d66bbe"
+    },
+    "kotoba": {
+      "base": "92aa937fb767ace51752fa4188e3382905042737",
+      "sha256": "bd7282c31d3fed54bfb2c1b220f78f71154b083eb3f70606caa885edcffe7951"
+    },
+    "kotodama": {
+      "base": "bff83ba65bf9559af4d7567e81703059667a0005",
+      "sha256": "7689f80fbae9015d7e0db5f757a69f40623046d1f77b057487ca37fdf41c66ff"
+    },
+    "mori": {
+      "base": "83d65857aca66552680a72958bdf0c77ab9cefc0",
+      "sha256": "2a4d5387d447a0b41c148856939a7ac798f479b6a8495b9bf34f0db1b645dd26"
+    },
+    "tameshi": {
+      "base": "09a3a309376e3e883053773a35bac801d10d8402",
+      "sha256": "20119ebbc1f153c93ee5338c0072b731a07d3ef3ac633b72c6890c5089a7c2b9"
+    },
+    "tsukuroi": {
+      "base": "626668261c87a7418b8947898e66e9a098502228",
+      "sha256": "09b6348736d4f020b1e13e7c1976e894924daabc21b03f7cef06245697662b39"
+    },
+    "kaidoku": {
+      "base": "1e1bbef45ea0b92e443cdca04b814e74dfecbca1",
+      "sha256": "94bb0a736c6d0de1b74a22290b6f269d42fd3018d1fa1ba159aeaea91ae8ca0f"
+    },
+    "chousa": {
+      "base": "457fbb04fa872c88ce5c5da9a48d3a767eaf51ff",
+      "sha256": "ac4744a324505d04618970188034e2c11844eb43f52b44643fcdd9b6606cab26"
+    }
+  },
+  "selected": [
+    {
+      "name": "Src6401e4b3f106",
+      "role": "connector",
+      "url": "https://docs.jj-vcs.dev/latest/git-compatibility/",
+      "rows": [
+        {
+          "lane": "mori",
+          "id": "S044",
+          "url": "https://docs.jj-vcs.dev/latest/git-compatibility/",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "colocated jj/Git HEAD state",
+          "anchor": "Detached HEAD feature row and Colocated Jujutsu/Git workspaces; opened 2026-10-20",
+          "teaches": "jj commands usually put Git in detached HEAD state; a commit-id read is not a branch-identity proof.",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/jj-branch-anchor-r17.md",
+          "lane_base": "83d65857aca66552680a72958bdf0c77ab9cefc0"
+        },
+        {
+          "lane": "tameshi",
+          "id": "S061",
+          "url": "https://docs.jj-vcs.dev/latest/git-compatibility/",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "colocated jj/git workspaces: what Git HEAD points at and why a Git-side HEAD read is not the branch tip",
+          "anchor": "\u00a7Colocated Jujutsu/Git workspaces \u00b62 and \u00a7Converting a workspace into a colocated workspace, recipe comment @ v0.46.0 (alias latest), fetched 2026-10-20",
+          "teaches": "in a colocated workspace jj leaves Git detached at the working-copy commit's parent, so `git rev-parse HEAD` is not the bookmark tip; read the branch ref or an explicit revision",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "180d",
+          "used_by": "corpus/lessons/round-17.md, corpus/knowledge/guard-kill-closure.md",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        },
+        {
+          "lane": "tameshi",
+          "id": "S076",
+          "url": "https://docs.jj-vcs.dev/latest/git-compatibility/",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "supersedes S061's paragraph anchor only",
+          "anchor": "\u00a7Colocated Jujutsu/Git workspaces \u00b63 (\"jj commands will usually put the Git repo in a \\\"detached HEAD\\\" state \u2026\") and \u00a7Converting\u2026, recipe shell comment @ v0.46.0 (alias latest), re-opened 2026-10-20",
+          "teaches": "supersedes S061 \u2014 the detached-HEAD statement is \u00b63, not \u00b62; the \"working-copy commit's parent\" quote is a shell comment in the conversion recipe, not section prose; S061's conclusion (a Git-side HEAD read is not the branch tip) stands",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "180d",
+          "used_by": "corpus/lessons/round-18.md",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        }
+      ]
+    },
+    {
+      "name": "Src6402c9c50a50",
+      "role": "connector",
+      "url": "https://docs.python.org/3/library/json.html",
+      "rows": [
+        {
+          "lane": "kotoba",
+          "id": "S007",
+          "url": "https://docs.python.org/3/library/json.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "This host's actual duplicate-name decode behavior",
+          "anchor": "\u00a7 Standard Compliance and Interoperability",
+          "teaches": "Python's decoder accepts repeated names and keeps only the last pair, so a last-wins silent read is the implementation default the comparator must not inherit uncritically",
+          "status": "queued",
+          "opened": "2026-10-19",
+          "recheck": "365d",
+          "used_by": "\u2014",
+          "lane_base": "92aa937fb767ace51752fa4188e3382905042737"
+        },
+        {
+          "lane": "tameshi",
+          "id": "S065",
+          "url": "https://docs.python.org/3/library/json.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Python `json` decoder's default acceptance of NaN, Infinity and -Infinity, and the `parse_constant` hook that receives them",
+          "anchor": "\u00a7Standard Compliance and Interoperability \u203a Infinite and NaN Number Values; json.load() parameter `parse_constant` @ Python 3.15.0 docs, fetched 2026-10-20 (version-coupled; no commit pin)",
+          "teaches": "json.loads accepts Infinity, -Infinity and NaN by default as if they were valid JSON number literals; parse_constant is called with each such literal, so a registry loader can reject it by name instead of trusting the default",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/guard-kill-closure.md",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        }
+      ]
+    },
+    {
+      "name": "Src6403d094a783",
+      "role": "connector",
+      "url": "https://git-scm.com/docs/git-merge-base",
+      "rows": [
+        {
+          "lane": "mori",
+          "id": "S046",
+          "url": "https://git-scm.com/docs/git-merge-base",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "ancestry-check exit status",
+          "anchor": "OPERATION MODES, --is-ancestor; last updated 2.43.0, no changes listed through 2.56.0; opened 2026-10-20",
+          "teaches": "Exit 0 means ancestor, 1 means not ancestor, and another nonzero status means error; a probe must not report every nonzero status as divergence.",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/jj-branch-anchor-r17.md",
+          "lane_base": "83d65857aca66552680a72958bdf0c77ab9cefc0"
+        },
+        {
+          "lane": "tsukuroi",
+          "id": "S061",
+          "url": "https://git-scm.com/docs/git-merge-base",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Exit classes of --is-ancestor, not particular repository failure causes",
+          "anchor": "OPERATION MODES, --is-ancestor; last updated2.43.0, version panel2.43.1\u20132.56.0 no changes; accessed2026-10-20",
+          "teaches": "Ancestry is status0, non-ancestry status1, and other nonzero statuses are errors; binding must not collapse a git error into non-ancestry",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/lessons/round-18.md",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        }
+      ]
+    },
+    {
+      "name": "Src64045410f2ef",
+      "role": "connector",
+      "url": "https://git-scm.com/docs/git-symbolic-ref",
+      "rows": [
+        {
+          "lane": "mori",
+          "id": "S047",
+          "url": "https://git-scm.com/docs/git-symbolic-ref",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "quiet detached-HEAD detection",
+          "anchor": "OPTIONS -q and NOTES exit status; no changes listed 2.48.1 through 2.56.0; opened 2026-10-20",
+          "teaches": "Detached HEAD is a silent nonzero under -q; NOTES distinguishes status 1 from other errors such as 128.",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/jj-branch-anchor-r17.md",
+          "lane_base": "83d65857aca66552680a72958bdf0c77ab9cefc0"
+        },
+        {
+          "lane": "tameshi",
+          "id": "S074",
+          "url": "https://git-scm.com/docs/git-symbolic-ref",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "git's own definition of reading the symbolic HEAD: which branch it names, and the detached case",
+          "anchor": "\u00a7DESCRIPTION (Typically you would give HEAD\u2026), \u00a7OPTIONS -q/--quiet, \u00a7NOTES exit-status sentence @ git-scm.com manual page, fetched 2026-10-20; page version list runs to 2.56.0, last content change recorded at 2.48.0",
+          "teaches": "`git symbolic-ref HEAD` names the branch only when HEAD is attached; with -q a detached HEAD exits 1 silently and any other error exits 128, so a P08 resolver must branch on exit 1 rather than treat it as a failed read",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/guard-kill-closure.md",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        }
+      ]
+    },
+    {
+      "name": "Src6405ed3fae2e",
+      "role": "connector",
+      "url": "https://kubernetes.io/docs/concepts/workloads/pods/probes/",
+      "rows": [
+        {
+          "lane": "kama",
+          "id": "S017",
+          "url": "https://kubernetes.io/docs/concepts/workloads/pods/probes/",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Probe lifecycle vocabulary",
+          "anchor": "\u00a7Types of probe, \u00a7Caution under Liveness probe; page modified 2026-06-30",
+          "teaches": "Startup, liveness and readiness probes answer initialization, restart and traffic-admission questions; bad liveness checks cause cascading restarts.",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "90d",
+          "used_by": "corpus/knowledge/runtime-health-surface-matrix.md, corpus/knowledge/llamacpp-loading-lifecycle.md",
+          "lane_base": "2e254a1763a9c08aa07fc53081287f506c447d84"
+        },
+        {
+          "lane": "mori",
+          "id": "S028",
+          "url": "https://kubernetes.io/docs/concepts/workloads/pods/probes/",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "probe lifecycle and Unknown result semantics",
+          "anchor": "Probe results > Unknown; page modified 2026-06-30",
+          "teaches": "An Unknown probe result requires no action and further checks, keeping missing evidence distinct from failure.",
+          "status": "queued",
+          "opened": "2026-10-19",
+          "recheck": "180d",
+          "used_by": "\u2014",
+          "lane_base": "83d65857aca66552680a72958bdf0c77ab9cefc0"
+        }
+      ]
+    },
+    {
+      "name": "Src64060ab883de",
+      "role": "connector",
+      "url": "https://man.archlinux.org/man/pacman.conf.5",
+      "rows": [
+        {
+          "lane": "mori",
+          "id": "S048",
+          "url": "https://man.archlinux.org/man/pacman.conf.5",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "package action-log location and override",
+          "anchor": "LogFile directive; pacman v7.1.0 local manual, live page opened 2026-10-20",
+          "teaches": "The default action log is /var/log/pacman.log and LogFile overrides it; this location documentation does not promise actor attribution in each record.",
+          "status": "queued",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "\u2014",
+          "lane_base": "83d65857aca66552680a72958bdf0c77ab9cefc0"
+        },
+        {
+          "lane": "tsukuroi",
+          "id": "S007",
+          "url": "https://man.archlinux.org/man/pacman.conf.5",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "HookDir search precedence and pacman.conf download-sandbox options",
+          "anchor": "OPTIONS: HookDir, DownloadUser, DisableSandboxFilesystem, DisableSandboxSyscalls and CleanMethod; Pacman 7.1.0 man-page footer dated 2026-10-15",
+          "teaches": "Later HookDir directories take precedence; the man page also specifies DownloadUser, sandbox-disable switches and cache cleanup semantics",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/degraded-triage-r4.md, corpus/knowledge/boot-writers-r19.md",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        }
+      ]
+    },
+    {
+      "name": "Src640743625fef",
+      "role": "scout",
+      "url": "https://aclanthology.org/2025.acl-long.1574/",
+      "rows": [
+        {
+          "lane": "chousa",
+          "id": "S010",
+          "url": "https://aclanthology.org/2025.acl-long.1574/",
+          "kind": "paper",
+          "tier": "A",
+          "scope": "what this framework proposes and measured on citation evaluation",
+          "anchor": "Abstract; ACL 2025, pages 32759-32778, DOI 10.18653/v1/2025.acl-long.1574",
+          "teaches": "NLI-style binary support is a suboptimal proxy; evaluate citations across the full query, retrieval, and generated-answer context",
+          "status": "queued",
+          "opened": "2026-10-19",
+          "recheck": "365d",
+          "used_by": "\u2014",
+          "lane_base": "457fbb04fa872c88ce5c5da9a48d3a767eaf51ff"
+        }
+      ]
+    },
+    {
+      "name": "Src6408248b4327",
+      "role": "critic",
+      "url": "https://aclanthology.org/2026.acl-long.1430/",
+      "rows": [
+        {
+          "lane": "chousa",
+          "id": "S018",
+          "url": "https://aclanthology.org/2026.acl-long.1430/",
+          "kind": "paper",
+          "tier": "B",
+          "scope": "the taxonomy and metric map of evidence-based generation",
+          "anchor": "Abstract; ACL 2026, pages 30956-31000, DOI 10.18653/v1/2026.acl-long.1430",
+          "teaches": "A survey of 134 papers and 300 metrics across seven dimensions \u2014 a lead index to primary sources, never sole support for a claim",
+          "status": "queued",
+          "opened": "2026-10-19",
+          "recheck": "365d",
+          "used_by": "\u2014",
+          "lane_base": "457fbb04fa872c88ce5c5da9a48d3a767eaf51ff"
+        }
+      ]
+    },
+    {
+      "name": "Src6409fb7a863a",
+      "role": "reviewer",
+      "url": "https://aclanthology.org/2026.acl-long.1586/",
+      "rows": [
+        {
+          "lane": "chousa",
+          "id": "S012",
+          "url": "https://aclanthology.org/2026.acl-long.1586/",
+          "kind": "paper",
+          "tier": "A",
+          "scope": "what this study measured on claim-level factuality verification",
+          "anchor": "Abstract, Audit-then-Score rounds; ACL 2026, pages 34356-34386, DOI 10.18653/v1/2026.acl-long.1586",
+          "teaches": "Keep labels and rationales revisable through evidence submission and adjudication; experts audit better than they one-shot label",
+          "status": "queued",
+          "opened": "2026-10-19",
+          "recheck": "365d",
+          "used_by": "\u2014",
+          "lane_base": "457fbb04fa872c88ce5c5da9a48d3a767eaf51ff"
+        }
+      ]
+    },
+    {
+      "name": "Src6410e38423cc",
+      "role": "scout",
+      "url": "https://arxiv.org/abs/2103.07189",
+      "rows": [
+        {
+          "lane": "tameshi",
+          "id": "S042",
+          "url": "https://arxiv.org/abs/2103.07189",
+          "kind": "paper",
+          "tier": "A",
+          "scope": "F1 \u2014 empirical mutant\u2013real-fault coupling at industrial scale",
+          "anchor": "Abstract; arXiv 2103.07189",
+          "teaches": "reports evidence that mutants are coupled with real faults and that mutation testing changes testing practice",
+          "status": "queued",
+          "opened": "2026-10-19",
+          "recheck": "730d",
+          "used_by": "\u2014",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        }
+      ]
+    },
+    {
+      "name": "Src6411e665c7cd",
+      "role": "scout",
+      "url": "https://arxiv.org/abs/2501.12862",
+      "rows": [
+        {
+          "lane": "tameshi",
+          "id": "S007",
+          "url": "https://arxiv.org/abs/2501.12862",
+          "kind": "paper",
+          "tier": "A",
+          "scope": "Meta ACH's production LLM mutation and test-generation results",
+          "anchor": "Abstract, arXiv:2501.12862v1 (submitted 2025-01-22)",
+          "teaches": "concern-specific LLM mutants that are currently uncaught, then tests that kill them; equivalence agent at precision 0.79 recall 0.47, or 0.95/0.96 with pre-processing; 9,095 mutants, 571 tests, 73% accepted",
+          "status": "queued",
+          "opened": "2026-10-19",
+          "recheck": "365d",
+          "used_by": "\u2014",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        }
+      ]
+    },
+    {
+      "name": "Src6412a53b191b",
+      "role": "reviewer",
+      "url": "https://arxiv.org/abs/2508.06094",
+      "rows": [
+        {
+          "lane": "kotodama",
+          "id": "S012",
+          "url": "https://arxiv.org/abs/2508.06094",
+          "kind": "paper",
+          "tier": "A",
+          "scope": "LLM conlang generation method and its evaluation",
+          "anchor": "Abstract, arXiv v1, published 2025-08-08",
+          "teaches": "multi-hop LLM pipeline staging phonology, morphology, syntax, lexicon, translation; randomness injected for diversity and self-refinement for consistency, evaluated on consistency and typological diversity",
+          "status": "queued",
+          "opened": "2026-10-19",
+          "recheck": "90d",
+          "used_by": "\u2014",
+          "lane_base": "bff83ba65bf9559af4d7567e81703059667a0005"
+        }
+      ]
+    },
+    {
+      "name": "Src6413e2c35f6a",
+      "role": "scout",
+      "url": "https://arxiv.org/abs/2510.09907",
+      "rows": [
+        {
+          "lane": "tameshi",
+          "id": "S021",
+          "url": "https://arxiv.org/abs/2510.09907",
+          "kind": "paper",
+          "tier": "A",
+          "scope": "agentic PBT bug validity on real packages",
+          "anchor": "Abstract, arXiv:2510.09907v1 (submitted 2025-10-10)",
+          "teaches": "an LLM agent infers properties from code and docs, writes Hypothesis tests and reflects before reporting: 56% of reports were valid bugs; ranking lifts the top-21 validity to 86%",
+          "status": "queued",
+          "opened": "2026-10-19",
+          "recheck": "180d",
+          "used_by": "\u2014",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        }
+      ]
+    },
+    {
+      "name": "Src6414a7b34d54",
+      "role": "scout",
+      "url": "https://arxiv.org/abs/2602.19098",
+      "rows": [
+        {
+          "lane": "tameshi",
+          "id": "S027",
+          "url": "https://arxiv.org/abs/2602.19098",
+          "kind": "paper",
+          "tier": "A",
+          "scope": "environmental flakiness rates in JavaScript tests",
+          "anchor": "Abstract, arXiv:2602.19098v1 (submitted 2026-02-22)",
+          "teaches": "varying OS, Node.js version and browser exposed 65 environmentally flaky JS projects (28 OS, 5 Node, 16 both, 17 browser); its sanitizer skips and reports such tests instead of failing them",
+          "status": "queued",
+          "opened": "2026-10-19",
+          "recheck": "180d",
+          "used_by": "\u2014",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        }
+      ]
+    },
+    {
+      "name": "Src64155dce8701",
+      "role": "reviewer",
+      "url": "https://arxiv.org/abs/2603.19283",
+      "rows": [
+        {
+          "lane": "kotodama",
+          "id": "S020",
+          "url": "https://arxiv.org/abs/2603.19283",
+          "kind": "paper",
+          "tier": "A",
+          "scope": "computational motif indexing",
+          "anchor": "abstract, submitted 2026-03-06, cs.CL",
+          "teaches": "2,670 annotated expressions of 200 El-Shamy motifs over 58,450 sentences; five method families compared; fine-tuned Llama3 reaches 0.85 F1",
+          "status": "queued",
+          "opened": "2026-10-19",
+          "recheck": "90d",
+          "used_by": "\u2014",
+          "lane_base": "bff83ba65bf9559af4d7567e81703059667a0005"
+        }
+      ]
+    },
+    {
+      "name": "Src64164383d7b3",
+      "role": "critic",
+      "url": "https://arxiv.org/abs/2606.17350",
+      "rows": [
+        {
+          "lane": "kotodama",
+          "id": "S021",
+          "url": "https://arxiv.org/abs/2606.17350",
+          "kind": "paper",
+          "tier": "A",
+          "scope": "LLM narrative diversity",
+          "anchor": "abstract, submitted 2026-06-15, cs.CL/cs.AI",
+          "teaches": "LLM-generated narratives are consistently more similar to each other than human stories across 10 models; frontier models converge on a mean generic narrative; negative prompting and temperature scaling fail",
+          "status": "queued",
+          "opened": "2026-10-19",
+          "recheck": "90d",
+          "used_by": "\u2014",
+          "lane_base": "bff83ba65bf9559af4d7567e81703059667a0005"
+        }
+      ]
+    },
+    {
+      "name": "Src6417cfbee2f4",
+      "role": "scout",
+      "url": "https://arxiv.org/abs/2608.17214",
+      "rows": [
+        {
+          "lane": "tameshi",
+          "id": "S012",
+          "url": "https://arxiv.org/abs/2608.17214",
+          "kind": "paper",
+          "tier": "B",
+          "scope": "oracle anchoring as a survivor class (single-system preprint, one author)",
+          "anchor": "Abstract, arXiv:2608.17214v1 (submitted 2026-08-17)",
+          "teaches": "names state-anchored oracles, whose expectation flows from the code under mutation so the comparison cancels out; re-anchoring one oracle recovered 8 of 46 mutants; measured on one system (366 mutants)",
+          "status": "queued",
+          "opened": "2026-10-19",
+          "recheck": "90d",
+          "used_by": "\u2014",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        }
+      ]
+    },
+    {
+      "name": "Src6418ba36e438",
+      "role": "reviewer",
+      "url": "https://arxiv.org/pdf/2404.09952",
+      "rows": [
+        {
+          "lane": "tameshi",
+          "id": "S044",
+          "url": "https://arxiv.org/pdf/2404.09952",
+          "kind": "paper",
+          "tier": "A",
+          "scope": "F9 \u2014 LLM-generated mutants beyond fixed operators",
+          "anchor": "Abstract, p. 1; arXiv v2 revised 2025-03-07",
+          "teaches": "LLM-proposed mutants can resemble real bugs that StrykerJS's standard operators cannot produce",
+          "status": "queued",
+          "opened": "2026-10-19",
+          "recheck": "365d",
+          "used_by": "\u2014",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        }
+      ]
+    },
+    {
+      "name": "Src641909913bc6",
+      "role": "scout",
+      "url": "https://docs.kernel.org/admin-guide/iostats.html",
+      "rows": [
+        {
+          "lane": "mori",
+          "id": "S033",
+          "url": "https://docs.kernel.org/admin-guide/iostats.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "/proc/diskstats sector counters and reset conditions",
+          "anchor": "Field 3:56-58; Field 7:73-75; Additional notes; Linux documentation commit c03c1a14507dfaf8b856c2608f9ac216021fc222 (2026-10-18)",
+          "teaches": "Field 7 counts sectors written; cumulative counters need boot and device-reset context before deriving a rate.",
+          "status": "queued",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "\u2014",
+          "lane_base": "83d65857aca66552680a72958bdf0c77ab9cefc0"
+        }
+      ]
+    },
+    {
+      "name": "Src6420523b5133",
+      "role": "scout",
+      "url": "https://docs.ollama.com/api/usage",
+      "rows": [
+        {
+          "lane": "kama",
+          "id": "S025",
+          "url": "https://docs.ollama.com/api/usage",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Ollama API response-level usage and timing fields",
+          "anchor": "Usage; Ollama API docs source commit efe43c5561047d8baf8c862730b2151249d51fd5, 2026-10-06; Introduction \u00a7Versioning notes the API is not strictly versioned",
+          "teaches": "Documents response timing and token counts, with timings in nanoseconds; this is not an aggregate server-metrics contract.",
+          "status": "queued",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "\u2014",
+          "lane_base": "2e254a1763a9c08aa07fc53081287f506c447d84"
+        }
+      ]
+    },
+    {
+      "name": "Src6421e68c6105",
+      "role": "reviewer",
+      "url": "https://docs.vllm.ai/en/v0.25.0/features/per_request_metrics/",
+      "rows": [
+        {
+          "lane": "kama",
+          "id": "S022",
+          "url": "https://docs.vllm.ai/en/v0.25.0/features/per_request_metrics/",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "vLLM v0.25.0 per-request timing response fields",
+          "anchor": "v0.25.0; Enabling; Response Format; Relationship to Prometheus Metrics; page date 2026-07-07",
+          "teaches": "Defines response-level timing separately from aggregated Prometheus histograms, with enablement and attribution limits.",
+          "status": "queued",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "\u2014",
+          "lane_base": "2e254a1763a9c08aa07fc53081287f506c447d84"
+        }
+      ]
+    },
+    {
+      "name": "Src6422811012c1",
+      "role": "scout",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0283218",
+      "rows": [
+        {
+          "lane": "kotodama",
+          "id": "S005",
+          "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0283218",
+          "kind": "paper",
+          "tier": "A",
+          "scope": "kinship terminology data and coevolution claims",
+          "anchor": "Abstract and article metadata, published 24 May 2023",
+          "teaches": "210,903 kinterms from 1,229 languages in CLDF; worked null result \u2014 no evidence for coevolution of cross-cousin marriage and bifurcate-merging terminology in Bantu",
+          "status": "queued",
+          "opened": "2026-10-19",
+          "recheck": "180d",
+          "used_by": "\u2014",
+          "lane_base": "bff83ba65bf9559af4d7567e81703059667a0005"
+        }
+      ]
+    },
+    {
+      "name": "Src6423f792a759",
+      "role": "scout",
+      "url": "https://man7.org/linux/man-pages/man2/pidfd_open.2.html",
+      "rows": [
+        {
+          "lane": "mori",
+          "id": "S027",
+          "url": "https://man7.org/linux/man-pages/man2/pidfd_open.2.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "pollable task identity and process termination observation",
+          "anchor": "NOTES > Use cases for PID file descriptors; man-pages 6.19, fetched 2026-09-09",
+          "teaches": "A held pidfd reports termination through polling and avoids PID reuse ambiguity, but it is a persistent handle rather than a one-shot snapshot.",
+          "status": "queued",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "\u2014",
+          "lane_base": "83d65857aca66552680a72958bdf0c77ab9cefc0"
+        }
+      ]
+    },
+    {
+      "name": "Src64244b7c61ec",
+      "role": "critic",
+      "url": "https://opentelemetry.io/docs/specs/otel/protocol/file-exporter/",
+      "rows": [
+        {
+          "lane": "mori",
+          "id": "S023",
+          "url": "https://opentelemetry.io/docs/specs/otel/protocol/file-exporter/",
+          "kind": "spec",
+          "tier": "A",
+          "scope": "OTLP file serialization and ordering guarantees",
+          "anchor": "JSON lines file; Streaming appending; OpenTelemetry.io commit cca8dfe2634a30d58f07f2a69b272e30d328accd (2026-10-19)",
+          "teaches": "JSONL provides a file-oriented export option, but ordering and monotonically increasing timestamps are not guaranteed.",
+          "status": "queued",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "\u2014",
+          "lane_base": "83d65857aca66552680a72958bdf0c77ab9cefc0"
+        }
+      ]
+    },
+    {
+      "name": "Src642565cd4e1c",
+      "role": "scout",
+      "url": "https://opentelemetry.io/docs/specs/semconv/cicd/cicd-spans/",
+      "rows": [
+        {
+          "lane": "mori",
+          "id": "S022",
+          "url": "https://opentelemetry.io/docs/specs/semconv/cicd/cicd-spans/",
+          "kind": "spec",
+          "tier": "A",
+          "scope": "CI/CD pipeline and task result vocabulary",
+          "anchor": "Pipeline run and Pipeline task run > result; Release Candidate; OpenTelemetry.io commit cca8dfe2634a30d58f07f2a69b272e30d328accd (2026-10-19)",
+          "teaches": "The vocabulary separates a CI-system error such as a killed worker from a command failure and enumerates the run results.",
+          "status": "queued",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "\u2014",
+          "lane_base": "83d65857aca66552680a72958bdf0c77ab9cefc0"
+        }
+      ]
+    },
+    {
+      "name": "Src6426ce7afb80",
+      "role": "scout",
+      "url": "https://raw.githubusercontent.com/torvalds/linux/c03c1a14507dfaf8b856c2608f9ac216021fc222/include/trace/events/oom.h",
+      "rows": [
+        {
+          "lane": "mori",
+          "id": "S005",
+          "url": "https://raw.githubusercontent.com/torvalds/linux/c03c1a14507dfaf8b856c2608f9ac216021fc222/include/trace/events/oom.h",
+          "kind": "code",
+          "tier": "A",
+          "scope": "Linux oom:mark_victim tracepoint field schema",
+          "anchor": "include/trace/events/oom.h:76,82-105; Linux master commit c03c1a14507dfaf8b856c2608f9ac216021fc222 (2026-10-18)",
+          "teaches": "The victim-mark tracepoint exposes PID, comm, UID, memory fields and oom_score_adj as a distinct event schema.",
+          "status": "queued",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "\u2014",
+          "lane_base": "83d65857aca66552680a72958bdf0c77ab9cefc0"
+        }
+      ]
+    },
+    {
+      "name": "Src64277a96f161",
+      "role": "reviewer",
+      "url": "https://raw.githubusercontent.com/torvalds/linux/c03c1a14507dfaf8b856c2608f9ac216021fc222/include/trace/events/signal.h",
+      "rows": [
+        {
+          "lane": "mori",
+          "id": "S006",
+          "url": "https://raw.githubusercontent.com/torvalds/linux/c03c1a14507dfaf8b856c2608f9ac216021fc222/include/trace/events/signal.h",
+          "kind": "code",
+          "tier": "A",
+          "scope": "Linux signal generation and delivery tracepoint distinction",
+          "anchor": "include/trace/events/signal.h:37,50,83; Linux master commit c03c1a14507dfaf8b856c2608f9ac216021fc222 (2026-10-18)",
+          "teaches": "Generated signals carry target and sender context; delivery is separate and may differ after a signal is generated.",
+          "status": "queued",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "\u2014",
+          "lane_base": "83d65857aca66552680a72958bdf0c77ab9cefc0"
+        }
+      ]
+    },
+    {
+      "name": "Src6428a9c7a52e",
+      "role": "scout",
+      "url": "https://spec.commonmark.org/0.31.2/",
+      "rows": [
+        {
+          "lane": "kotoba",
+          "id": "S005",
+          "url": "https://spec.commonmark.org/0.31.2/",
+          "kind": "spec",
+          "tier": "A",
+          "scope": "Fenced code block syntax the lane's box/quote extraction implements",
+          "anchor": "\u00a7 Fenced code blocks; version 0.31.2",
+          "teaches": "A code fence is at least three backticks or tildes preceded by up to three spaces of indentation; a backtick fence's info string may not contain a backtick",
+          "status": "queued",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "\u2014",
+          "lane_base": "92aa937fb767ace51752fa4188e3382905042737"
+        }
+      ]
+    },
+    {
+      "name": "Src64290bfd0829",
+      "role": "scout",
+      "url": "https://wiki.archlinux.org/title/Arch_Linux_Archive?oldid=879665",
+      "rows": [
+        {
+          "lane": "tsukuroi",
+          "id": "S013",
+          "url": "https://wiki.archlinux.org/title/Arch_Linux_Archive?oldid=879665",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Date-pinned historical official-repository snapshots as a rollback reference",
+          "anchor": "Restore all packages to a specific date; oldid 879665 (2026-06-19)",
+          "teaches": "The Archive retains dated repository snapshots that can identify a consistent package epoch; this reference does not by itself establish a safe rollback plan for a particular host",
+          "status": "queued",
+          "opened": "2026-10-19",
+          "recheck": "180d",
+          "used_by": "\u2014",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        }
+      ]
+    },
+    {
+      "name": "Src643085abe4a4",
+      "role": "reviewer",
+      "url": "https://wiki.archlinux.org/title/Limine?oldid=887253",
+      "rows": [
+        {
+          "lane": "tsukuroi",
+          "id": "S018",
+          "url": "https://wiki.archlinux.org/title/Limine?oldid=887253",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "ArchWiki Limine configuration, boot-entry automation and Snapper snapshot integration",
+          "anchor": "Boot entry automation; Snapper snapshot integration for Btrfs; oldid 887253 (2026-10-08)",
+          "teaches": "The page documents Limine snapshot boot integration, restore options, overlay guidance and boot-entry automation settings; configuration is distinct from proof of a working rollback",
+          "status": "queued",
+          "opened": "2026-10-19",
+          "recheck": "90d",
+          "used_by": "\u2014",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        }
+      ]
+    },
+    {
+      "name": "Src643129b4bb9c",
+      "role": "scout",
+      "url": "https://wiki.archlinux.org/title/Official_repositories_web_interface?oldid=867367",
+      "rows": [
+        {
+          "lane": "tsukuroi",
+          "id": "S012",
+          "url": "https://wiki.archlinux.org/title/Official_repositories_web_interface?oldid=867367",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "JSON query interface for official Arch package search and package-detail records",
+          "anchor": "Package information > Details and Package search; oldid 867367 (2026-02-25)",
+          "teaches": "The article documents official-repository JSON search and per-package detail endpoints for upstream package metadata; it does not represent non-official repositories or installed host state",
+          "status": "queued",
+          "opened": "2026-10-19",
+          "recheck": "180d",
+          "used_by": "\u2014",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        }
+      ]
+    },
+    {
+      "name": "Src64320a454ccc",
+      "role": "critic",
+      "url": "https://www.freedesktop.org/software/systemd/man/latest/oomctl.html",
+      "rows": [
+        {
+          "lane": "mori",
+          "id": "S009",
+          "url": "https://www.freedesktop.org/software/systemd/man/latest/oomctl.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "read-only systemd-oomd cgroup and system context view",
+          "anchor": "Commands > dump; systemd 262 man page opened 2026-10-19",
+          "teaches": "oomctl dump reports the current contexts held by oomd without equating that state with a kill count.",
+          "status": "queued",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "\u2014",
+          "lane_base": "83d65857aca66552680a72958bdf0c77ab9cefc0"
+        }
+      ]
+    },
+    {
+      "name": "Src64331b3adf9d",
+      "role": "reviewer",
+      "url": "https://www.freedesktop.org/software/systemd/man/latest/oomd.conf.html",
+      "rows": [
+        {
+          "lane": "mori",
+          "id": "S008",
+          "url": "https://www.freedesktop.org/software/systemd/man/latest/oomd.conf.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "systemd-oomd thresholds, prekill notification and OOM ruleset actions",
+          "anchor": "Prekill event; OOM Rulesets; [OOM] Section Options; systemd 262 man page opened 2026-10-19",
+          "teaches": "Separate synchronous privileged prekill notification from the configured kill action and its thresholds.",
+          "status": "queued",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "\u2014",
+          "lane_base": "83d65857aca66552680a72958bdf0c77ab9cefc0"
+        }
+      ]
+    },
+    {
+      "name": "Src6434131aa16b",
+      "role": "scout",
+      "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd-coredump.html",
+      "rows": [
+        {
+          "lane": "mori",
+          "id": "S032",
+          "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd-coredump.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "systemd-coredump signal metadata for crash classification",
+          "anchor": "Information about the crashed process; COREDUMP_SIGNAL_NAME and COREDUMP_SIGNAL:351-353; systemd 262 man page opened 2026-10-19",
+          "teaches": "COREDUMP_SIGNAL supplies a numeric signal field so crash classification need not infer signal from message wording.",
+          "status": "queued",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "\u2014",
+          "lane_base": "83d65857aca66552680a72958bdf0c77ab9cefc0"
+        }
+      ]
+    },
+    {
+      "name": "Src6435e4537143",
+      "role": "scout",
+      "url": "https://www.rfc-editor.org/rfc/rfc8259.txt",
+      "rows": [
+        {
+          "lane": "kotoba",
+          "id": "S006",
+          "url": "https://www.rfc-editor.org/rfc/rfc8259.txt",
+          "kind": "spec",
+          "tier": "A",
+          "scope": "Duplicate-name semantics in JSON objects (round-46 C2 door)",
+          "anchor": "\u00a74 Objects",
+          "teaches": "Object names SHOULD be unique; when they are not, receiver behavior is unpredictable \u2014 the normative basis for the comparator's duplicate-member detection",
+          "status": "queued",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "\u2014",
+          "lane_base": "92aa937fb767ace51752fa4188e3382905042737"
+        }
+      ]
+    },
+    {
+      "name": "Src6436e593c606",
+      "role": "reviewer",
+      "url": "https://www.rfc-editor.org/rfc/rfc9110",
+      "rows": [
+        {
+          "lane": "mori",
+          "id": "S042",
+          "url": "https://www.rfc-editor.org/rfc/rfc9110#section-10.2.3",
+          "kind": "spec",
+          "tier": "A",
+          "scope": "Retry-After response-header semantics",
+          "anchor": "\u00a710.2.3 Retry-After; Standards Track, June 2022; opened 2026-10-20",
+          "teaches": "Retry-After indicates how long a user agent ought to wait before a follow-up request; this section is not proof of a client retry implementation.",
+          "status": "queued",
+          "opened": "2026-10-20",
+          "recheck": "365d",
+          "used_by": "\u2014",
+          "lane_base": "83d65857aca66552680a72958bdf0c77ab9cefc0"
+        }
+      ]
+    },
+    {
+      "name": "Src64378009390f",
+      "role": "scout",
+      "url": "https://aclanthology.org/2025.acl-long.1534/",
+      "rows": [
+        {
+          "lane": "chousa",
+          "id": "S005",
+          "url": "https://aclanthology.org/2025.acl-long.1534/",
+          "kind": "paper",
+          "tier": "A",
+          "scope": "what this study measured about scholarly citation fidelity",
+          "anchor": "Abstract; section 4 \"Measuring Citation Fidelity\"; section 6 \"Telephone Effect in Citation\"; Figure 1 footnote 1; ACL 2025, pages 31786-31802, DOI 10.18653/v1/2025.acl-long.1534",
+          "teaches": "Citation fidelity varies measurably and low fidelity at one hop predicts lower fidelity downstream \u2014 the telephone effect",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "365d",
+          "used_by": "corpus/knowledge/citation-chain-fidelity-r24.md",
+          "lane_base": "457fbb04fa872c88ce5c5da9a48d3a767eaf51ff"
+        }
+      ]
+    },
+    {
+      "name": "Src643899cbd8bf",
+      "role": "scout",
+      "url": "https://aclanthology.org/2025.findings-acl.1194/",
+      "rows": [
+        {
+          "lane": "kaidoku",
+          "id": "S009",
+          "url": "https://aclanthology.org/2025.findings-acl.1194/",
+          "kind": "paper",
+          "tier": "A",
+          "scope": "The authors' ACL Findings 2025 benchmark comparison and measures",
+          "anchor": "ACL Anthology 2025.findings-acl.1194, pp. 23250\u201323267; Abstract",
+          "teaches": "Read its benchmark as a tradeoff between human-centric understandability and functionality correctness, within the authors' evaluation.",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "180d",
+          "used_by": "corpus/lessons/round-13.md",
+          "lane_base": "1e1bbef45ea0b92e443cdca04b814e74dfecbca1"
+        }
+      ]
+    },
+    {
+      "name": "Src6439ccd1207e",
+      "role": "reviewer",
+      "url": "https://aclanthology.org/2026.acl-long.527/",
+      "rows": [
+        {
+          "lane": "kaidoku",
+          "id": "S010",
+          "url": "https://aclanthology.org/2026.acl-long.527/",
+          "kind": "paper",
+          "tier": "A",
+          "scope": "The authors' ACL 2026 lifting method and evaluated x86-64/ARM64 tasks",
+          "anchor": "ACL Anthology 2026.acl-long.527, pp. 11498\u201311516; Abstract",
+          "teaches": "Study retrieval-plus-feedback verification for the paper's evaluated lifting tasks without treating its metric as a lane result.",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "180d",
+          "used_by": "corpus/lessons/round-13.md",
+          "lane_base": "1e1bbef45ea0b92e443cdca04b814e74dfecbca1"
+        }
+      ]
+    },
+    {
+      "name": "Src64403ed1034f",
+      "role": "critic",
+      "url": "https://agentskills.io/client-implementation/adding-skills-support",
+      "rows": [
+        {
+          "lane": "kotoba",
+          "id": "S002",
+          "url": "https://agentskills.io/client-implementation/adding-skills-support",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Client-side loading and validation policy for SKILL.md",
+          "anchor": "\u00a7 Handling malformed YAML, \u00a7 Lenient validation; live page opened 2026-10-19",
+          "teaches": "Unquoted values containing colons are technically invalid YAML; lenient clients warn and load anyway on name mismatch, so a strict local gate is stricter than the client contract",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "90d",
+          "used_by": "SKILL.md",
+          "lane_base": "92aa937fb767ace51752fa4188e3382905042737"
+        }
+      ]
+    },
+    {
+      "name": "Src6441f36ae400",
+      "role": "scout",
+      "url": "https://agentskills.io/specification",
+      "rows": [
+        {
+          "lane": "kotoba",
+          "id": "S001",
+          "url": "https://agentskills.io/specification",
+          "kind": "spec",
+          "tier": "A",
+          "scope": "SKILL.md frontmatter format and file-structure rules",
+          "anchor": "\u00a7 Skill metadata table, \u00a7 Progressive disclosure; live page opened 2026-10-19",
+          "teaches": "Name is 1-64 lowercase-hyphen chars matching its directory; description 1-1024 chars saying what and when; SKILL.md under 500 lines with detail moved to reference files",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "SKILL.md",
+          "lane_base": "92aa937fb767ace51752fa4188e3382905042737"
+        }
+      ]
+    },
+    {
+      "name": "Src64427d00e373",
+      "role": "reviewer",
+      "url": "https://archlinux.org/news/",
+      "rows": [
+        {
+          "lane": "tsukuroi",
+          "id": "S001",
+          "url": "https://archlinux.org/news/",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Official Arch news items that may require manual intervention or awareness before upgrades",
+          "anchor": "Arch Linux News Archives; dated feed snapshot opened 2026-10-19",
+          "teaches": "The official archive is a dated source for upgrade-relevant notices; pair it with the pre-upgrade news check rather than treating it as a host-state report",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "90d",
+          "used_by": "corpus/knowledge/arch-news-gate-2026.md",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        }
+      ]
+    },
+    {
+      "name": "Src644306917baa",
+      "role": "scout",
+      "url": "https://archlinux.org/news/active-aur-malicious-packages-incident/",
+      "rows": [
+        {
+          "lane": "tsukuroi",
+          "id": "S003",
+          "url": "https://archlinux.org/news/active-aur-malicious-packages-incident/",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "The time-bounded official 2026-06-12 AUR incident advisory and its recommended review scope",
+          "anchor": "Article published 2026-06-12; incident notice and final advisory paragraph",
+          "teaches": "The dated notice urged review of all PKGBUILD and install-script changes during the reported incident; the page does not establish whether the incident remained active on 2026-10-19",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "90d",
+          "used_by": "corpus/knowledge/arch-news-gate-2026.md",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        }
+      ]
+    },
+    {
+      "name": "Src64445b634261",
+      "role": "scout",
+      "url": "https://archlinux.org/news/manual-intervention-for-pacman-700-and-local-repositories-required/",
+      "rows": [
+        {
+          "lane": "tsukuroi",
+          "id": "S005",
+          "url": "https://archlinux.org/news/manual-intervention-for-pacman-700-and-local-repositories-required/",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "The 2024 pacman 7.0 DownloadUser local-repository permission change",
+          "anchor": "Article published 2024-09-14; paragraphs on DownloadUser and local repositories",
+          "teaches": "pacman 7.0 introduced separate-user downloading; local repository files and directories may need appropriate alpm-group access, and the notice calls out pacnew handling",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "180d",
+          "used_by": "corpus/knowledge/arch-news-gate-2026.md",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        }
+      ]
+    },
+    {
+      "name": "Src64451426a781",
+      "role": "reviewer",
+      "url": "https://archlinux.org/news/mkinitcpio-42-requires-manual-intervention-for-tpm2-based-unlocking-of-luks-devices/",
+      "rows": [
+        {
+          "lane": "tsukuroi",
+          "id": "S002",
+          "url": "https://archlinux.org/news/mkinitcpio-42-requires-manual-intervention-for-tpm2-based-unlocking-of-luks-devices/",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "TPM2-bound LUKS unlocks using mkinitcpio's systemd hook and the listed PCR measurements",
+          "anchor": "Article published 2026-09-22; opening paragraph and PCR condition",
+          "teaches": "Starting with mkinitcpio 42-1 the systemd hook changes measured PCR values; re-enrollment applies only when the systemd hook and dependent TPM2 unlock policy are in use, not to a busybox-only configuration",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/arch-news-gate-2026.md, corpus/knowledge/initramfs-v42-sysroot-recovery.md",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        }
+      ]
+    },
+    {
+      "name": "Src644601ee55d7",
+      "role": "scout",
+      "url": "https://archlinux.org/news/recent-services-outages/",
+      "rows": [
+        {
+          "lane": "tsukuroi",
+          "id": "S004",
+          "url": "https://archlinux.org/news/recent-services-outages/",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Officially documented fallback sources during Arch service disruption",
+          "anchor": "Workarounds during service disruption; article published 2025-08-21",
+          "teaches": "During outages the notice names pacman-mirrorlist mirrors, a GitHub AUR mirror, and offline ArchWiki documentation snapshots; it is not a current service-health signal",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "180d",
+          "used_by": "corpus/knowledge/arch-news-gate-2026.md",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        }
+      ]
+    },
+    {
+      "name": "Src644790b5fa5b",
+      "role": "scout",
+      "url": "https://arxiv.org/abs/2102.11378",
+      "rows": [
+        {
+          "lane": "tameshi",
+          "id": "S008",
+          "url": "https://arxiv.org/abs/2102.11378",
+          "kind": "paper",
+          "tier": "A",
+          "scope": "Google's diff-scoped mutation testing at code review",
+          "anchor": "Abstract, arXiv:2102.11378v2 (v1 2021-02-22, last revised 2021-02-26)",
+          "teaches": "diff-scoped mutation at code review; mutants filtered and capped per line and per review; operators chosen by historical productivity; 24,000+ developers on 1,000+ projects",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "365d",
+          "used_by": "corpus/knowledge/mutation-case-kumitate-sources-check.md",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        }
+      ]
+    },
+    {
+      "name": "Src64483edc87a3",
+      "role": "critic",
+      "url": "https://arxiv.org/abs/2507.10062",
+      "rows": [
+        {
+          "lane": "tameshi",
+          "id": "S030",
+          "url": "https://arxiv.org/abs/2507.10062",
+          "kind": "paper",
+          "tier": "B",
+          "scope": "VLM triage of visual iOS snapshot diffs (rejected row)",
+          "anchor": "Abstract, arXiv:2507.10062v2 (v1 2025-07-14, last revised 2025-07-24)",
+          "teaches": "REJECTED: VLM triage of visual iOS UI snapshot diffs while tameshi fixtures are the text verdict lines of CLI gates; an adjacent UI domain to report, not absorb; flip: the lane adopts visual or UI snapshot fixtures",
+          "status": "rejected",
+          "opened": "2026-10-19",
+          "recheck": "365d",
+          "used_by": "\u2014",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        }
+      ]
+    },
+    {
+      "name": "Src644937de0c42",
+      "role": "scout",
+      "url": "https://arxiv.org/abs/2607.12507",
+      "rows": [
+        {
+          "lane": "kaidoku",
+          "id": "S011",
+          "url": "https://arxiv.org/abs/2607.12507",
+          "kind": "paper",
+          "tier": "A",
+          "scope": "The author's RARE experiments on origin grouping, evidence support, and tool authorization",
+          "anchor": "arXiv, 2026-07-14; Abstract",
+          "teaches": "The paper gives an empirical reason to group evidence by origin rather than count multiple readers of the same bytes as independent support.",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "180d",
+          "used_by": "corpus/lessons/round-13.md",
+          "lane_base": "1e1bbef45ea0b92e443cdca04b814e74dfecbca1"
+        }
+      ]
+    },
+    {
+      "name": "Src64500983a0e7",
+      "role": "scout",
+      "url": "https://arxiv.org/abs/2609.05370v1",
+      "rows": [
+        {
+          "lane": "kaidoku",
+          "id": "S008",
+          "url": "https://arxiv.org/abs/2609.05370v1",
+          "kind": "paper",
+          "tier": "A",
+          "scope": "The authors' v1 evaluation of recompilability, test passing, and behavioral agreement for evaluated LLM decompilers",
+          "anchor": "arXiv v1, 2026-09-04; Abstract",
+          "teaches": "The study separates build/test outcomes from behavioral agreement in its evaluated systems and corpora.",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "180d",
+          "used_by": "corpus/lessons/round-13.md",
+          "lane_base": "1e1bbef45ea0b92e443cdca04b814e74dfecbca1"
+        }
+      ]
+    },
+    {
+      "name": "Src645157fc4f11",
+      "role": "reviewer",
+      "url": "https://arxiv.org/html/2601.08536v3",
+      "rows": [
+        {
+          "lane": "chousa",
+          "id": "S007",
+          "url": "https://arxiv.org/html/2601.08536v3",
+          "kind": "paper",
+          "tier": "A",
+          "scope": "what this paper itself states, including its section 2.1 statement of what citation-accuracy measurement does and does not establish; not its benchmark results",
+          "anchor": "section 2.1 passage noting support does not confirm correctness; arXiv:2601.08536v3, 2026-09-10",
+          "teaches": "Whether a citation supports a claim is separate from whether the cited information is correct",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "90d",
+          "used_by": "corpus/knowledge/claim-support-states-r24.md",
+          "lane_base": "457fbb04fa872c88ce5c5da9a48d3a767eaf51ff"
+        }
+      ]
+    },
+    {
+      "name": "Src64525e776265",
+      "role": "scout",
+      "url": "https://arxiv.org/html/2605.06635v1",
+      "rows": [
+        {
+          "lane": "chousa",
+          "id": "S006",
+          "url": "https://arxiv.org/html/2605.06635v1",
+          "kind": "paper",
+          "tier": "A",
+          "scope": "the evaluation framework this preprint defines (its own dimensions), not its results about evaluated systems",
+          "anchor": "section 3.3 Evaluation dimensions (3.3.1 Link Works, 3.3.2 Relevant Content, 3.3.3 Fact Check); arXiv:2605.06635v1, 2026-05-07",
+          "teaches": "Split citation checks into link accessibility, topical relevance, and factual support \u2014 three separately failable checks",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "90d",
+          "used_by": "corpus/knowledge/claim-support-states-r24.md",
+          "lane_base": "457fbb04fa872c88ce5c5da9a48d3a767eaf51ff"
+        }
+      ]
+    },
+    {
+      "name": "Src6453d8d6e2a1",
+      "role": "scout",
+      "url": "https://bazel.build/reference/test-encyclopedia",
+      "rows": [
+        {
+          "lane": "tameshi",
+          "id": "S028",
+          "url": "https://bazel.build/reference/test-encyclopedia",
+          "kind": "spec",
+          "tier": "A",
+          "scope": "Bazel's normative hermetic test contract",
+          "anchor": "\u00a7Role of the test runner and \u00a7Initial conditions @ bazel.build (fetched 2026-10-19)",
+          "teaches": "normative hermetic test contract: the outcome depends only on declared inputs; the exit code alone decides and PASS or FAIL on stdout means nothing; LANG unset and TZ=UTC required; TEST_PREMATURE_EXIT_FILE catches early exits",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "365d",
+          "used_by": "corpus/lessons/round-12.md, corpus/knowledge/hermetic-env-differential.md",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        }
+      ]
+    },
+    {
+      "name": "Src64540da7ccb0",
+      "role": "reviewer",
+      "url": "https://docs.kernel.org/accounting/psi.html",
+      "rows": [
+        {
+          "lane": "mori",
+          "id": "S001",
+          "url": "https://docs.kernel.org/accounting/psi.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Linux PSI counters, totals, thresholds and per-cgroup files",
+          "anchor": "Pressure interface:74-77; Monitoring for pressure thresholds:104-119; Cgroup2 interface; kernel documentation date 2018-04, current page opened 2026-10-19",
+          "teaches": "Keep avg10 trends distinct from absolute stall microseconds; PSI trigger lifetime follows its file descriptor.",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "corpus/lessons/2026-10-15-free-lunch-measurements-counter-baselines.md",
+          "lane_base": "83d65857aca66552680a72958bdf0c77ab9cefc0"
+        }
+      ]
+    },
+    {
+      "name": "Src645511a08c17",
+      "role": "scout",
+      "url": "https://docs.kernel.org/admin-guide/cgroup-v2.html",
+      "rows": [
+        {
+          "lane": "mori",
+          "id": "S002",
+          "url": "https://docs.kernel.org/admin-guide/cgroup-v2.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "cgroup-v2 memory events, memory.peak and local versus hierarchical scope",
+          "anchor": "memory.events:1448-1509; memory.peak:1418-1426; kernel documentation date 2015-10, current page opened 2026-10-19",
+          "teaches": "Distinguish hierarchical memory.events from memory.events.local; the documented oom_kill count includes processes killed by any kind of OOM killer.",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/oom-kill-counter-kernel-only-r12.md, corpus/knowledge/userspace-oom-killers-r12.md, corpus/knowledge/journal-alarm-routing-r14.md",
+          "lane_base": "83d65857aca66552680a72958bdf0c77ab9cefc0"
+        }
+      ]
+    },
+    {
+      "name": "Src6456dff93eba",
+      "role": "critic",
+      "url": "https://docs.ollama.com/api/introduction",
+      "rows": [
+        {
+          "lane": "kama",
+          "id": "S009",
+          "url": "https://docs.ollama.com/api/introduction",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Ollama API base URLs",
+          "anchor": "\u00a7Base URLs and \u00a7Versioning; source docs/api/introduction.mdx @ ollama/ollama 370c9b6739e38df6542ca906b1848434e71ab551 (2026-10-15)",
+          "teaches": "Local native `/api` and OpenAI-compatible `/v1` roots at `localhost:11434` are distinct surfaces; no health route appears on this page.",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/runtime-health-surface-matrix.md",
+          "lane_base": "2e254a1763a9c08aa07fc53081287f506c447d84"
+        }
+      ]
+    },
+    {
+      "name": "Src6457ddcc6cfd",
+      "role": "reviewer",
+      "url": "https://docs.ollama.com/api/openai-compatibility",
+      "rows": [
+        {
+          "lane": "kama",
+          "id": "S010",
+          "url": "https://docs.ollama.com/api/openai-compatibility",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Ollama OpenAI-compatible surface",
+          "anchor": "\u00a7Endpoints `/v1/models`; source docs/api/openai-compatibility.mdx @ ollama/ollama c1737589973d5cefd676ef16eb43835663540035 (2026-09-23)",
+          "teaches": "Ollama supports a subset of the OpenAI API; `/v1/models` notes `created` and `owned_by` semantics; no health route appears on this page.",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/runtime-health-surface-matrix.md, corpus/knowledge/served-identity-crosswalk.md",
+          "lane_base": "2e254a1763a9c08aa07fc53081287f506c447d84"
+        }
+      ]
+    },
+    {
+      "name": "Src6458a1b66a8d",
+      "role": "scout",
+      "url": "https://docs.ollama.com/api/ps",
+      "rows": [
+        {
+          "lane": "kama",
+          "id": "S012",
+          "url": "https://docs.ollama.com/api/ps",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Ollama model inventory currently loaded into memory",
+          "anchor": "OpenAPI 3.1.0, info.version 0.1.0; List running models; GET /api/ps",
+          "teaches": "Separates running models from the available-model list and exposes digest, context length, VRAM use, and expiry.",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "90d",
+          "used_by": "corpus/knowledge/runtime-health-surface-matrix.md, corpus/knowledge/served-identity-crosswalk.md, corpus/knowledge/ollama-evidence-replay.md, corpus/lessons/round-15.md",
+          "lane_base": "2e254a1763a9c08aa07fc53081287f506c447d84"
+        }
+      ]
+    },
+    {
+      "name": "Src64596c296178",
+      "role": "scout",
+      "url": "https://docs.ollama.com/api/tags",
+      "rows": [
+        {
+          "lane": "kama",
+          "id": "S011",
+          "url": "https://docs.ollama.com/api/tags",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Ollama locally available model inventory, not proof of a loaded model",
+          "anchor": "OpenAPI 3.1.0, info.version 0.1.0; List models; GET /api/tags",
+          "teaches": "Lists locally available models with names, digests, and format or quantization metadata; availability is distinct from running state.",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "90d",
+          "used_by": "corpus/knowledge/runtime-health-surface-matrix.md, corpus/knowledge/served-identity-crosswalk.md",
+          "lane_base": "2e254a1763a9c08aa07fc53081287f506c447d84"
+        },
+        {
+          "lane": "kama",
+          "id": "S031",
+          "url": "https://docs.ollama.com/api/tags",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Ollama `/api/tags` remote inventory caveat: available-model membership is not proof of local residency",
+          "anchor": "OpenAPI 3.1.0, info.version 0.1.0; GET /api/tags; ModelSummary `remote_model` and `remote_host` descriptions",
+          "teaches": "supersedes S011 \u2014 available inventory may include `remote_model`/`remote_host`; list membership does not prove local residency; `remote_model` names the upstream model and `remote_host` the upstream Ollama URL.",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "90d",
+          "used_by": "corpus/knowledge/served-identity-crosswalk.md, corpus/knowledge/ollama-evidence-replay.md",
+          "lane_base": "2e254a1763a9c08aa07fc53081287f506c447d84"
+        }
+      ]
+    },
+    {
+      "name": "Src646025aa9e04",
+      "role": "reviewer",
+      "url": "https://docs.ollama.com/import",
+      "rows": [
+        {
+          "lane": "kama",
+          "id": "S013",
+          "url": "https://docs.ollama.com/import",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Ollama GGUF import behavior",
+          "anchor": "\u00a7Importing a GGUF model; page undated, live text mirrors ollama/ollama docs/import.md commit 6d02a43a75cd3364b3c230e9070f1413e60f0d02 (2025-10-28)",
+          "teaches": "GGUF import consumes a prepared file and does not quantize it; shards need original filenames plus a wildcard",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/gguf-runtime-compatibility-boundary.md",
+          "lane_base": "2e254a1763a9c08aa07fc53081287f506c447d84"
+        }
+      ]
+    },
+    {
+      "name": "Src64616b1d6ecb",
+      "role": "scout",
+      "url": "https://docs.python.org/3/library/codecs.html",
+      "rows": [
+        {
+          "lane": "revenger",
+          "id": "S011",
+          "url": "https://docs.python.org/3/library/codecs.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Python codec error-handler semantics: strict default and surrogatepass",
+          "anchor": "\"Error Handlers\" table, surrogatepass row; Python 3.15.0 documentation",
+          "teaches": "Which documented decode mode rejects and which preserves a lone surrogate, to reproduce parser-like behavior.",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/utf16-unpaired-surrogates-in-resource-names.md",
+          "lane_base": "d97761952be256d145d298022de03091de91d358"
+        }
+      ]
+    },
+    {
+      "name": "Src6462e5d48b70",
+      "role": "scout",
+      "url": "https://docs.sglang.io/docs/advanced_features/quantization",
+      "rows": [
+        {
+          "lane": "kama",
+          "id": "S008",
+          "url": "https://docs.sglang.io/docs/advanced_features/quantization",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "SGLang offline/online quantization and GGUF load support",
+          "anchor": "\u00a7Quantization note and \u00a7Platform Compatibility; source docs/docs/advanced_features/quantization.mdx @ bdf8886ad386685b4d089c8e66725b9280533591 (2026-09-15) \u2014 the earlier .md path's last commit was 50ed4c01 (2026-07-13)",
+          "teaches": "Offline and online quantization are distinct; online must not be layered on pre-quantized weights; gguf supported on NVIDIA and Ascend, not AMD",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/gguf-runtime-compatibility-boundary.md",
+          "lane_base": "2e254a1763a9c08aa07fc53081287f506c447d84"
+        }
+      ]
+    },
+    {
+      "name": "Src6463be4aad7e",
+      "role": "reviewer",
+      "url": "https://docs.sglang.io/docs/basic_usage/native_api",
+      "rows": [
+        {
+          "lane": "kama",
+          "id": "S006",
+          "url": "https://docs.sglang.io/docs/basic_usage/native_api",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "SGLang native server routes",
+          "anchor": "\u00a7Health Check, \u00a7Get Model Info, \u00a7Get Server Info; source docs/docs/basic_usage/native_api.mdx @ sgl-project/sglang 16d1c93b3d28227a40f0b4c5559f12dedbb64b26 (2026-09-25)",
+          "teaches": "`/health` and one-token `/health_generate` are separate checks; model metadata lives on `/get_model_info`.",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/runtime-health-surface-matrix.md",
+          "lane_base": "2e254a1763a9c08aa07fc53081287f506c447d84"
+        }
+      ]
+    },
+    {
+      "name": "Src6464ab2f4bf5",
+      "role": "critic",
+      "url": "https://docs.sglang.io/docs/references/production_metrics",
+      "rows": [
+        {
+          "lane": "kama",
+          "id": "S007",
+          "url": "https://docs.sglang.io/docs/references/production_metrics",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "SGLang exporter enablement and metric definitions",
+          "anchor": "\u00a7Language model metrics, \u00a7Request-level time per output token and \u00a7Setup Guide; source docs/docs/references/production_metrics.mdx @ sgl-project/sglang 51ace48387ad8b86e6c81988de4bbbe6a014a544 (2026-09-29)",
+          "teaches": "--enable-metrics flag, sglang: metric names, streaming vs non-streaming TTFT boundary and request-level TPOT semantics.",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/serving-metrics-crosswalk.md",
+          "lane_base": "2e254a1763a9c08aa07fc53081287f506c447d84"
+        }
+      ]
+    }
+  ],
+  "remaining_distinct_urls": 72,
+  "credit": "No traininground/admission/producerwave credit"
+}
