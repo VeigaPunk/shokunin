@@ -375,3 +375,17 @@ Filed after the orchestrator reopened capacity and directed the wave to run.
   attribution and the S038 anchor drift (S089/S090 proposals open).
 - **Final lane tip at this erratum: `2efadf6f55a6b2371475d9a64b85ee4b21a5a621`.** Remaining
   wave reports stay uncommitted; no round 20.
+
+## Erratum 15 — final falsifier confirmations (appended after Erratum 14)
+
+- `ReviewerCarryFixture` notes the fixture's vacuity guard would pass if only TC4 discriminated,
+  and that the summary counters are not asserted. The committed run shows **both** TC1 and TC4
+  base mismatches (`base_discriminating=2`), so the present evidence is intact; a strict
+  two-case guard and counter assertions are open fixture-strength items for r20.
+- `RevCarryRule` restates the known conflict: the `--round >= 18` branch preserves the pinned r16
+  replay while leaving its seven unmarked cuts unreported. Already disclosed; no change.
+- `ScoutD1Receipt` confirms no committed r18 receipt binds `8be6523`; the r18 gate claim remains
+  scoped to `74f9adb`, and r19's receipt binds `63bb887`. The `8be6523` result stays unavailable,
+  not claimed.
+- **Final lane tip at this erratum: `2efadf6f55a6b2371475d9a64b85ee4b21a5a621`.** Remaining wave
+  reports stay uncommitted; no round 20.
