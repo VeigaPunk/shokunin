@@ -74,3 +74,11 @@ Attempt 2: no new wave (≤37 left); one ordinary task call of 8 seats (5 review
 refused three times by the 100-job cap, started on the 4th try; reports pending at
 `mado-shokunin/.ufo/waves/round-20/a2/review/` when this report landed. Round total 171.
 Installs: none. L0: none. Open: removal-side criterion queued for round 21; 20 VCS false positives remain.
+
+## Residual review update (after report)
+
+CriticRecallV3 (`mado-shokunin/.ufo/waves/round-20/a2/review/CriticRecallV3.md`): **partly falsifies
+C1's no-recall-loss reading** — an invoked `functools.partialmethod` spawn is reported by `9c54c56`
+and `1f7f995` but silent at `28c6837` and `a8960de` (pre-existing since `28c6837`, not fixed in
+attempt 2); all four tools miss a same-line bash `function name { …; }; call`. Open defect for
+round 21; C1 admission should weigh it. Other seven review reports were still running.
