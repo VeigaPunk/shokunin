@@ -132,6 +132,20 @@ S029 (pinned census). Census before→after: 28 → 32 rows, exit 0 → exit 0.
   changed the rule before landing; whether that agrees with the non-author closure spot-check is not
   self-assessable, so the lane does not claim `improved`.
 
+## Residual verification gap (recorded, not hidden)
+
+The falsify wave was validated (81 seats) but **not dispatched** before the run's request-budget
+stop, so the round's own claims are author-measured and the independent attack wave the contract
+asks for did not run. Build-wave reviewers that did land found two things the report must carry:
+(a) `ReviewFidRouteProbe` measured five `route-probe-cluster.md` anchors as gate-mechanical under the
+frozen right-first predicate before the clause-guarded arm was in the tree (the delivered arm reads
+`FIDELITY: CLEAN nonok=0`, but a non-author re-run of that note is required); (b) reviewers flagged
+that some repaired anchors may have been moved under the earlier right-first rule, which the
+clause-guarded arm now reads as `noid` rather than debt — semantic spot-checks of the repair set are
+owed to the closure. `round-gate --round 36` on the lane reads `CLEAN (checks=10 errors=0
+warnings=1)`; the one warning is `SCORECARD_PLAN_MISSING` (the round-37 pre-registration is recorded
+in `SCORECARD.md` under `## Round 36 — limits and round-37 pre-registration`, not under `## Planned`).
+
 ## SHONEN
 
 - [~] `SHONEN.md:5` craft — `SKILL.md` decision table / failure patterns / anti-patterns / gate registry / 14-item checklist; `corpus/SOURCES.md` 32 rows; `surface-probe --checklists` 14/14 at `src-rev=31c465f15669`. Outside check: a cold-run reviewer re-executes the 14 items.
