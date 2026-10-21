@@ -897,3 +897,15 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   published-ref reachability is still being checked without using the credentials. An operator
   history-disposition question is durable in `.ufo/l0-questions.md` (`7a40283885e0f16ed4c522e1c7138bf81720b2fe`).
   No purge, force-push, rotation or next-round admission is authorized.
+- **Safety-hold correction for kagi r28:** its detailed checkpoint found a Codex content-safety
+  refusal immediately before the terminal Devin quota error. It is not eligible for ordinary
+  backoff recovery; `blocked/kagi` now preserves this stop and excludes wakes/replacement authors.
+  Lane `899c50b` is pushed; 137/137 seat reports exist, 71 still untracked, plus authored edits
+  and a large private sandbox tree. No active descendants were found; nothing is retried or
+  deleted. Documentary disposition is recorded in L0.
+- **Kengaku publication scope confirmed:** the sentinel's unauthenticated transport attempt failed
+  TLS, but the parent's normal configured-origin `ls-remote --refs` succeeded:
+  `refs/heads/master=6a2c2df788a4fdb216dd5790f9ae6dd326169f47`, confirming that master retains
+  the five introducing/removal histories. Other advertised refs were not adjudicated and no
+  live account breach is claimed. `blocked/kengaku` prevents next-round dispatch; the appended
+  L0 follow-up requests a scoped disposition without authorizing a history rewrite.
