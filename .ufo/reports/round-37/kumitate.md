@@ -154,3 +154,8 @@ lost. A correct per-anchor D1 (choose base if its symbol is on the base line, el
 line, else the true line) was NOT implemented — it needs a sentence-symbol parser per line that does
 not collide on multi-anchor parentheses, which is the exact failure this round hit. Owed to the
 closure/next round with a fixture-first parser.
+
+Eighth erratum (lane `c7648c7747ede6b85a884d35385dc72e913166b2`): `Verify6` showed the D6 record's `cmp` claim had no retained output
+and the sweep predated the wave settling. The lesson and `repairs.md` now cite the committed copy's
+sha256 (`3f51c7e7…`, 249 lines / 19 hunks) instead, and the re-run misroot sweep with its timestamp is
+in `.ufo/waves/round-37/final/misroot.txt` (driver files only; kumitate seat residue 0).
