@@ -311,3 +311,19 @@ Filed after the orchestrator reopened capacity and directed the wave to run.
   budget stop; the proposed row joins the open source list.
 - Lane tip unchanged at **`c6703daef7dfa7de2f1a5a72e86f40de3717049b`**. No code or corpus change
   in this erratum; late wave reports remain uncommitted under `.ufo/waves/round-19/w1/`.
+
+## Erratum 11 — C2 abbreviation contraction and a seat read deviation (appended after Erratum 10)
+
+- `ScoutCountClaims` found that the lane's logged r13 commands use **abbreviated** hashes (e.g.
+  `31984f4`), while the C2 resolver accepts only full 40-hex ids; those historical commands now
+  refuse. The claim was worded for 40-hex replay commands, so it is not false, but the contraction
+  is real and is disclosed here. Open for r20: either widen the helper to a unique hex prefix
+  (still refusing symrefs) or re-record the affected commands with full hashes. r14's committed
+  command records already use full ids; default `HEAD` refusal is expected and documented.
+- The same seat disclosed a contract deviation: an initial broad grep over the lane root included
+  `census/operator-sweep-20261019/` (read-only; no write). Per Q26 the affected evidence is not
+  relied on: the abbreviation finding is independently verifiable from `LOG.md` itself.
+- `RevCarryVacuity` confirms the minimal non-vacuity guard is the complete source-line boundary and
+  that wrapped lesson entries still need joining; no change required.
+- Lane tip unchanged at **`c6703daef7dfa7de2f1a5a72e86f40de3717049b`**. Late reports remain
+  uncommitted under `.ufo/waves/round-19/w1/`.
