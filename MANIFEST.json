@@ -11783,6 +11783,103 @@
    "notes": "ADMITTED for the frozen finite coverage move R23-C1 1/6->4/6 only (k>=2 target met; completeness incomplete, c1_incomplete exit1 is status-neutral disclosed inventory incompleteness; gdb/rizin unheld/Adjacent). Not mastery, promotion, capability, hardware acquisition or authentication. Dispatch digest watchdog.log:606 2026-10-21T11:30:23-03:00 launch kaidoku round=23 pgid=2910938 driver=hyaku-inline attempt=1. Prior r22 admitted (rounds[415]); rejection streak 0. Routed defects: (1) corpus/README.md lost three blank separator lines (map/knowledge/lessons tables now abut the next heading); 'nonempty-line order preserved' is literally true but README is not insert-only; restore blanks next round. (2) count-c1.py, named by the frozen counting_command, did not exist at freeze commit a3c92eb6 and was revised v1->v3 in-round; accepted because v3 is strictly stricter and closure re-derived the count independently; future rounds should freeze the counter with the claim. (3) Gitignored runtime no longer holds the Saber APK or sigrok extraction; envelope local_path values dangle; reproduction requires re-fetch/re-extract (closure did, digests match). (4) a3c92eb6 author-date 11:02:41-03 precedes dispatch 11:30:21 (jj change-creation at r22 landing); committer 11:33:00 is post-dispatch; diagnostic only. (5) Origin of the 08:39 AppImage under ~/.local/opt is unrecorded by r23 (predates the round); whoever installed it should record it. Open: 12 reportless r23 seats and r22's 102 reportless seats uncredited; kaidoku/revenger shipped-artifact L0 overlap unanswered (revenger training in parallel). Discernment improved via this non-author agreement on 3 admits + 2 rejects. SHONEN all [~]; not fully checkable by a non-author yet (no named promotion verifier). No promotion.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 27,
+   "date": "2026-10-21",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 27,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 27
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "freshness": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "claims": {
+    "C1": {
+     "axis": "calibration",
+     "verdict": "improved",
+     "scalar_before": 9,
+     "scalar_after": 9,
+     "finding": "Closure-authored recount over Git blobs (locator regex per KN row; source = rows: data-line count or the committed ledger pin for ledger:/expect:): 22 KN bindings over 8 knowledge entries; BASE docs disagree on 4 (KN-LEDGER-REPRO-SELFTEST 72 vs 170, KN-OPREF-REPRO-SELFTEST 29 vs 36, KN-OPREF-FALSIFY-SELFTEST 21 vs 36, KN-CENSUS-DRIFT-SYMBOLS 19 vs 20) -> 0 at 3fb77271 and at 3553d499. Old values retained as history/misstated clauses. Bounded population, not a complete digit census."
+    },
+    "C2": {
+     "axis": "freshness",
+     "verdict": "improved",
+     "scalar_before": 9,
+     "scalar_after": 9,
+     "finding": "Committed c2-before/after: downgrades accepted CLEAN 4/4 -> 0/4, REGRESSED exact 0/4 -> 4/4, control/default CLEAN30 both. Closure-authored fixtures in /tmp clones running each revision's own release-clock.py in receipt mode: S040 3.14.12 and S041 2.7.18 marked fired are CLEAN at BASE -> REGRESSED exit1 at 3fb77271; S028-only 3.14.0 un-fire INCONSISTENT at BASE -> REGRESSED; control CLEAN30 both; upward 3.15.2 and 3.15.10 stay CLEAN (numeric, not lexical). Sourced S042/S043. Ordering only; no feed-completeness or vendor-rollback claim."
+    }
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-27/kagi.md",
+   "report_commit": "d248e85b7c425581687bafc2ef38cf232493d4be",
+   "commit": "kagi-shokunin@3553d499577084a6c98d7078906017840bbf7b28",
+   "verification": {
+    "reviewer": "CloseKaidoku23 (reused idle hyaku closure agent, opus session, fresh non-author; never touched kagi; authors KagiR26 (dead session 01a15c83, claim work) and KagiR27-2 (landing + report)). No subagent seats dispatched.",
+    "scope": "Read-only over lane and report; throwaway clone /tmp/cg27; no lane/report/state writes; no tools installed. self-counts.py, claim-ledger.sh, scope/selftest gates and c1/c2-measure.py evidence-verified, not executed; C1 re-derived by closure Python over Git blobs; C2 re-measured with closure-authored fixtures against each revision's release-clock.py in temp roots; fleet sources-census executed; S042/S043 reopened live.",
+    "conformance": "Report d248e85b authored kagi-shokunin <kagi@shokunin.local>, fleet-HEAD ancestor, unchanged since; SHONEN heading four [~]. Cited lane commits 144babcb, 3fb77271 (measured), 29fa79b7, 3553d499 (tip) and base 0a47dd18 all ancestors of refs/heads/master; jj-lane state local=remote=ls-remote 3553d499 ahead=0 behind=0 tracked=0 untracked=0; porcelain empty. Prompt 2676796f (kagi-shokunin). Dispatch digest watchdog.log:611 '2026-10-21T12:04:00-03:00 launch kagi round=27 pgid=571820 driver=hyaku-inline attempt=1'; :619 '2026-10-21T13:30:29-03:00 complete kagi round=27'.",
+    "routed_checks": {
+     "census_correction_scope": "3553d499 = 7 appended lesson lines + one stamps.tsv restamp. Reconstructed KagiR26's last write from KagiR26.jsonl (16:09:38Z eval: les.rstrip + appended text) over 29fa79b7's lesson: byte-identical to 3553d499 lesson, sha256 3a3ee417...bf66e; KagiR26's own commit call (16:09:42Z) was cancelled by the session kill. No new scope added by the replacement.",
+     "no_start_census": "Prompt §Sources item 2 requires a start run; none was run or retained. Conformance debt (disclosed, append-only correction withdraws the wrong 'start had 8'), not harm: base-committed .ufo/waves/round-26/census-end.json exit0/11 W04 serves as before; final/census-end.json exit0/11 W04; closure census now exit0, same 11 W04, S042/S043 clean.",
+     "remeasure": "C1 4->0 and C2 4/4->0/4 re-measured as in claims.",
+     "followup_batch": "Residual 8 (CritFinalC2/C1/Sources/Harm/Separability/Docs, ReviewFinalCode, MutFinalClock; suffix -27-t3) all target candidate 144babcb with new falsification items; dead seats were BUILD per-row C2 anchor audits (ClockCurl/Openbao/Sops/Quotes/Python/Vault) and pre-build reviews (RevwBookkeeping/DocsAudit/Locator). Not replacements; no dead item re-issued.",
+     "dead_seats": "Nine BUILD reviewer transcripts KagiR26.<name>-17.jsonl (10 lines each, empty .md, no lane report) end in 'Devin stream error resource_exhausted: Reached free model rate limit'; matches terminal-error-notices.json and wave-outcomes dead list. 67 -17 + 8 -27-t3 transcripts = 75 seats, 66 reports (58 build + 8 residual)."
+    },
+    "gate_evidence": "final/c1-before exit1 STALE (claims=60 stale=4) over BASE docs + 3fb77271 table; c1-after exit0 CLEAN (claims=60 stale=0); 22/22 c1-mutate receipts at docs 3fb77271 exit1 naming exactly the mutated id (18 STALE, 4 UNLOCATED). invocations.json: RELEASE_CLOCK_SELFTEST 67 -> 79; CLAIM_LEDGER fleet CLEAN (claims=65 stamped=90), lone clone INCOMPLETE layout_incomplete=1 (inherited R11-08). Zero round-27 JSON timestamps later than their introducing commit.",
+    "no_harm": "LOG/SCORECARD/QUALITY exact base prefixes; SOURCES no deleted lines, 41->43 tier A mined; knowledge deletions are corrected lines with old values retained as history/misstated clauses (knowledge-migrations.json). SCORECARD scalars all 9->9; candidate-time table text (18 bindings, 2/2, selftest 73) superseded by appended measured outcome, not rewritten.",
+    "outside_spotcheck": [
+     {
+      "item": "Admit S042 SemVer 2.0.0 §11.2",
+      "decision": "admit",
+      "reopened": "https://semver.org/spec/v2.0.0.html (live)",
+      "verdict": "agree",
+      "reason": "'Major, minor, and patch versions are always compared numerically.' present (line 514); scope excludes vendor API semantics."
+     },
+     {
+      "item": "Admit S043 PyPA version specifiers, final releases",
+      "decision": "admit",
+      "reopened": "https://packaging.python.org/en/latest/specifications/version-specifiers/ (live, 'Last updated on Oct 12, 2026')",
+      "verdict": "agree",
+      "reason": "19-word quote present verbatim (line 503); the zero-padding sentence that follows is honestly declared unimplemented."
+     },
+     {
+      "item": "Reject 'ordering spec proves feed completeness/monotonicity'",
+      "decision": "reject",
+      "reopened": "both pages",
+      "verdict": "agree",
+      "reason": "Neither page discusses feeds or yanks; REGRESSED is correctly a typed stop, not a rollback claim."
+     },
+     {
+      "item": "Reject lexical/date ordering",
+      "decision": "reject",
+      "reopened": "S042 §11.2 + closure fixture S040 3.15.10",
+      "verdict": "agree",
+      "reason": "Numeric order is the spec; closure run shows 3.15.10 > 3.15.1 accepted as a release at 3fb77271."
+     }
+    ]
+   },
+   "closed_at": "2026-10-21T16:37:35.977486+00:00",
+   "campaign": "hyaku",
+   "notes": "ADMITTED: C1 calibration knowledge-number staleness 4->0 (22 bindings, 22/22 red controls) and C2 freshness numeric-downgrade acceptance 4/4->0/4 (REGRESSED exact 4/4) both independently re-measured; scalars held 9->9; no axis harmed. Dispatch digest watchdog.log:611 launch 2026-10-21T12:04:00-03:00 attempt=1; :619 complete 13:30:29-03:00. Prior r26 admitted (rounds[419]); rejection streak 0. Two authors: KagiR26 (dead session, claim work 144babcb/3fb77271/29fa79b7) and KagiR27-2 (landed the byte-identical predecessor correction 3553d499 + report). Conformance debt routed: (1) no round-27 start census run (prompt §2) — disclosed, before reference is the base-committed r26 end receipt; run and retain the start census next round. (2) plans/round-27.md first committed with candidate 144babcb, not before work; the 'frozen declaration' has no pre-work commit — freeze claims in a separate commit next round. (3) C2 scope widened in-round (feed floor/observe floor) via appended plan corrections; accepted because the frozen counting command still holds and the change is stricter. Named debts (derived-anchor forgery, leading-zero equality, >4300-digit ValueError, branch-scoped rows, X.Y zero-padding) stay open. 9 dead reviewers (Devin free-model resource_exhausted), 0 replacements. Discernment improved via this non-author agreement on 2 admits + 2 rejects. SHONEN all [~]; not fully checkable by a non-author. No promotion. Open L0: none.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
