@@ -9111,6 +9111,47 @@
    "notes": "Dispatch digest: launch 2026-10-20T16:23:30-03:00 pgid=1848077; complete 19:03:31; duplicate driver re-complete 2026-10-21T00:39:06 (same attempt, no second report commit). Report a85e4d8 by tameshi-shokunin 18:50:39, after lane tip 4b7c682 18:49:16; all 13 cited hashes exist and are ancestors of refs/heads/master; lane pushed local=remote=ahead0, worktree clean; prompt ef397f9 committed before launch and byte-identical to template body; 166 seats (w1 73, w2 93) match registries. Routed defects next round: guard-kill-closure.md:2 still PENDING at tip; case8 entry line1 still calls S008 queued while SOURCES says mined; lesson round-18.md:79 falsifier says four deleted SOURCES cells but diff has five (S001,S008,S052,S056,S057); final/checks.json bash-witness-selftest exit64/empty stdout while real tally 43/43 is in bash-witness.stdout; report's final-4b7c682 60/60 count has no committed receipt (strict receipt is a85f710). Named residuals preserved: 18 mutation survivors, P08/P11/P09 probe breadth, unimplemented required-command binding. No promotion or mint; SHONEN 4x[~], operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 18,
+   "date": "2026-10-21",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 18,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 18
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "freshness": "improved",
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "promotions": [],
+   "minted": [],
+   "report": ".ufo/reports/round-18/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-18-verifier-spotcheck.md@66251bfc1aef393e4aec599e950a8deb867736bb",
+    "rechecks": "C1 re-measured at df51a072: 51/51 fixed-cohort receipts (41 held, 9 drift-superseded, 1 own-work, 0 rejected); 51/51 receipt gzip+raw+excerpt digests and normalized quotes re-derived from committed bytes; before 0/51 at B. C2 evidence-verified and binding --reproduce at df51 exit0 verdict=clean claims=3 bound=3 findings=[] (12/12 cases, 4 controls, hazards h1-h4/s1/f6 0->6; browser-PID/argv identity preconditions read). C3 re-measured at df51 5/5: 20-gate equality vs round-17 baseline, 57-case adjacency receipt vs checker blob, 7 rerun digests vs index, S058 supersession, six-sibling recount. No harm: SCORECARD append-only 45/0, PROVINCE/SHONEN unchanged, 23/23 gate exits equal baseline at M and at c0aff236, SOURCES 57->76 pure additions (A46/B4/C7->A64/B4/C8), census exit0, knowledge 34->36. Source spot-check: S063/S065 admits and S058 reject all agree on re-open."
+   },
+   "commit": "tabi-shokunin@df51a0724772e8190445544767248d9f6fca05a7",
+   "closed_at": "2026-10-21T04:00:45Z",
+   "campaign": "hyaku",
+   "notes": "watchdog digest: 2026-10-20T15:36:24-03:00 launch tabi round=18 pgid=2944975 driver=hyaku-inline attempt=1 / 2026-10-20T18:14:59-03:00 complete tabi round=18; hyaku-inline attempt=1 / 2026-10-21T00:39:06-03:00 complete tabi round=18; hyaku-inline attempt=1. Lane tip df51a0724; report fleet bd330f86 by tabi-shokunin identity, lands 2 min after lane tip; spotcheck @66251bfc (protocol identity, pushed). Step-1 clean: SHONEN 4x[~] with pointers, prompt §1-§5 verbatim plus §6 mechanics and five child-lane items, five cited commits all ancestors of master, lane ahead=0/clean, fleet root only driver runtime. Defects (status-neutral, routed): wave-1 writers used disjoint files in one checkout rather than addendum §6.2 worktrees (disclosed); LOG.md:1059 says QUALITY33-38 while criteria 33-39 landed; C2 predicates: H4 download scan matches only suggested filename and its record is pasteable with real browsers, H1 covers SIGTERM not SIGINT/SIGHUP, F6 counter tries only literal --rev HEAD, 6 of 15 original checks loosened to message substrings; registries carry wave:null. Trends: expansion unchanged (34->36 notes on held ground, no capability); quality improved (retained-body rechecks, 12 supersessions); discernment improved (outside check agrees 2 admits + 1 reject). 150 L2 seats (70+80), no dead replacement seats. Depth deferred. Two L0 rulings open (l0-questions:62,:65). No promotion or mint; SHONEN boxes 1-3 non-author-checkable, box 4 awaits L0."
   }
  ]
 }
