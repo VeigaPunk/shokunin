@@ -2,7 +2,7 @@
 
 Lane: `kagi-shokunin`. Base `d218603b74099ddca0bd8f869516fc41db0979bf`; measured
 lane commit `e1884c6ecb7ccd717965b0d748bc193137118dbf`, final lane commit
-`17858cf1bf93de1441e0300e88aa7510250d59e7` (helper `landed` lines, pushed).
+`c349fc7f7a4039e5b311ebd1ca07a5a8fecb1c50` (helper `landed` lines, pushed).
 Build wave: parent-held 66 seats (43 claim-ledger command-row audits + 23 source-row
 audits, `parent-build-dispatch.json`). This lane dispatched no second build wave and
 remained the sole production writer. Falsify wave: 64 seats, `.ufo/waves/round-23/falsify-spec.json`.
@@ -126,6 +126,7 @@ Other evidence bullets:
 | parent-build disposition-scope bound; M23-4 sweep wording; adjacency stamp pointer | `LOG.md` §Round 23 | `89344643` |
 | illustrative-id markers (real cells `missing_ids=0`), absolute gate-path refusal, op-ref prose repair, migration pointer | `LOG.md` §Round 23 | `3764bc57` |
 | ledger policy bound recorded | `LOG.md` §Round 23 | `17858cf1` |
+| working-tree pointer, plan-wording supersession, system-file clarification, manual fixture-mutation bound | `LOG.md` §Round 23 | `c349fc7f` |
 
 ## Before → after measurements
 
