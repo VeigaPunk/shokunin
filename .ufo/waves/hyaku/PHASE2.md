@@ -630,3 +630,52 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   `pending` window 120 s self-cleans; observed pending=0 at resumption.
 - **Next:** re-wake TameshiR19-2 + MoriR18Recovery after the Opus window; collect reports,
   run non-author closures, then `dispatch` the next unclaimed rounds.
+
+## Session 2 continuation, later directives (2026-10-21, session 01a15c83)
+
+- **Operator ruling (ask):** mado block → "Authorize r22 recovery". `blocked/mado` removed, an
+  `operator-unblock` event appended to `events.log`, mado r22 dispatched (MadoR22, attempt 1). The
+  r19–r21 rejection history stays on record; the recovery round still needs a non-author closure.
+
+45. "continue"
+46. "use m_flash for the scout and connector"
+47. "commit and push current progres and developments to the repos"
+48. "i want you to add m_inc as the fallback before m_luna for m_zfl, m_flash, m_haiku" /
+    `modelRoles: m_inc: inception/mercury-3:max`
+49. "m_zfl as executor"
+
+- **Routing, saved globally.** `task.agentModelOverrides`: scout and connector `@m_auto` →
+  `@m_flash`; executor `@m_luna` → `@m_zfl` (sentinel stays `@m_luna`, critic `@m_auto`).
+  `retry.fallbackChains`: `@m_inc` (`inception/mercury-3:max`, already in `modelRoles`) inserted
+  immediately before the final `openai-codex/gpt-6-luna:max` hop on role keys m_zfl, m_flash,
+  m_haiku AND on their exact-model keys `zai/glm-5.3-flash`,
+  `commandcode/deepseek/deepseek-v4.1-flash`, `anthropic/claude-haiku-5-5` (model keys apply
+  whenever that model is active, so a role-only edit never fires for the primaries). Fresh
+  spawns only.
+- **Checkpoint (directive 47).** Fleet `0db5068` (report baselines + watchdog) pushed. Seven jj
+  lanes (kagi, kama, kengaku, mado, mori, souji, tabi) got `jj describe` + `jj new` wip snapshots;
+  the snapshot-plus-empty-child topology blocked tabi's and kagi's landing helpers ("non-tip
+  dirty base"), so the parent moved each lane's `master` bookmark onto its checkpoint and pushed
+  (remote == local verified for all seven; kagi folded its own via `jj-lane.sh recover`).
+  game-dev-3d (`89dd182`) and lore (`380ef3a`) were rebased onto their remotes and pushed.
+  Lesson: a parent snapshot inside an active jj lane must advance the bookmark in the same step.
+- **Coordinator deaths.** MoriR22 (Devin weekly quota, 27 m) and ChousaR27 (Devin quota, 15 m 50 s)
+  were revived by message. SoujiR22 (27 m 49 s) and TameshiR23 (34 m) died on Codex `cyber_policy`
+  while on the Opus → `gpt-6.1-sol` fallback, as ChousaR26R did earlier. Rule: one fresh
+  coordinator per lane with stop-on-refusal; never rephrase, reroute or retry refused work; a
+  repeat parks the lane for the operator. MoriR22R, SoujiR22R and CloseKama22 died instantly on
+  Opus 429 before doing any work; SoujiR22R and CloseKama22 were later revived. A ChousaR27R2
+  replacement overlapped the revived original for ~6 min (parent-caused). It stood down without
+  commits and handed its uncommitted lane edits to ChousaR27.
+- **Closures this stretch.** `rounds[413]` tameshi r22 admitted; `[414]` chousa r26
+  rejected-harmed (selftest FAIL 3/187, streak 1); `[415]` kaidoku r22 admitted (C1 1/6, explicitly
+  incomplete, not unprovable); `[416]` tsukuroi r21 rejected-honest-stop (C3 unprovable; 13 Bash
+  starts across 9 NO-EXEC seats + 6 fetches = conformance debt; streak 1); `[417]` tabi r21
+  admitted; `[418]` kama r22 admitted.
+- **Dispatched since.** tameshi r23, kaidoku r23, chousa r27, tsukuroi r22, tabi r22, kama r23.
+  Running `dispatch` on tsukuroi and kaidoku while their landed rounds were still unclosed
+  re-claimed the same rounds as attempt 2. The closures covered the landed attempt-1 work and
+  cleared those claims.
+- **Job cap.** Main's spawns are refused at 100 again, so idle agents are reused by message:
+  CloseTabi21 → kagi r26 closure; CloseTameshi22 → tameshi r23 recovery author (inherits TameshiR23's
+  wave, no re-dispatch); CloseKama22 → kama r23 author.
