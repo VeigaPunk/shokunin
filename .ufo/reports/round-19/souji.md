@@ -211,3 +211,23 @@ Filed after the orchestrator reopened capacity and directed the wave to run.
 - Lane commit `4be24d515fa09166dd47942eb4f3ed6774deeb84`; final lane tip at this erratum
   `4be24d515fa09166dd47942eb4f3ed6774deeb84`. No code changed after the 18/18 acceptance
   at `63bb887`. Remaining wave-1b reports, if still landing, remain uncommitted/unadjudicated.
+
+## Erratum 5 — wave-1b corrections and residuals (appended after Erratum 4)
+
+- `ScribeProcSkillRow` verified the integrated r19 text and found: (a) the C3 preregistered
+  counting command `grep -c 'status: admitted'` is **defective** (matches nothing; returns 0
+  before and after) — corrected by appending to `preregistration.txt` that the measured command
+  is `count-claims.py` (6→7); (b) the F5 entry's "reads only" list omits `/proc/uptime`,
+  `boot_id` and the `/proc` listing — an append-only correction now names the full set;
+  (c) the SKILL rule and README F5 row are **close but incomplete** versus the seat's verbatim
+  draft (exact command, list/nominate/reap vocabulary, zero-signal route, fixture command,
+  cross-link), and the Frontier bullet cites an L0 line no lane file locates. Those two text
+  improvements are **open for r20**, not applied at this budget stop; no behavior changes.
+- `MutRevPin` could not produce killed/survived verdicts: the fixture creates a synthetic git
+  repo, and the wave contract's blanket "no git or jj mutations" stopped all five attempts before
+  `git init`. Both mutants were restored byte-for-byte; **no killed claim is made**. This is the
+  same contract-wording defect as R19-M7; it remains the reason wave 2 must allow private
+  `/var/tmp` sandboxes.
+- Lane commit `d707fc982cc4754fb73ab366238ae0266dca691a`; **final lane tip at this
+  erratum: `d707fc982cc4754fb73ab366238ae0266dca691a`.** No code changed after the 18/18
+  acceptance at `63bb887`; later seat reports, if still landing, remain uncommitted.
