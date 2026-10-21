@@ -980,3 +980,56 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   names the containment tip, and original producer measurements remain pinned to `6baa3090`.
   The isolated containment worktree is retained with its reviewed proposal; no orphan sweep
   or unintegrated-work deletion was performed.
+
+57. "keep moving forward toward 100 rounds trained on each shokunin through multiple swarms of 64-100"
+
+- Current authors retain their claimed rounds. Every successor still requires an independently
+  reviewed parent closure; new preparatory work is not counted as training or admission.
+- Kotodama r50's parent verifier/index landed as `bff83ba65bf9559af4d7567e81703059667a0005`.
+  The declared Ca invocation still exits 2, and the commissioned neighbor table remains 11/15;
+  no alternate manifest or post-hoc exploratory label repairs those clauses. Its closure entry
+  is prepared but not appended. The registered root closure checker has a documented
+  malformed-round crash; one isolated executor and one read-only reviewer are repairing that
+  prerequisite without changing closed history, expected controls or admission authority.
+
+58. "use m_zfl as scout"
+
+- Saved the global scout seat from `@m_flash` to `@m_zfl`, preserving every other role binding.
+  Existing jobs retain captured routes; fresh scouts use the operator's normal alias/fallback
+  routing. No provider/model pin or fallback-chain change was made.
+
+59. "use more concurrency, you can go up to 200 subagents"
+
+- The live task ceiling was already 200. Aligned the campaign reservation target from its older
+  320 value to the requested 200; the actual gate granted the new wave at `cap=200`.
+- Launched and attested one complete validated 66-seat `hyaku-s3-readiness66` wave: six distinct
+  prospective facets across eleven unheld lanes. The facets cover target, primary-source
+  frontier, consumer scenario, separating control, custody and cross-axis risk. They prepare
+  later authorized rounds, not replacements, new frozen claims or training-round credit.
+- Readers use `/fast/scratch/hyaku/s3-ready66`, branch `hyaku/s3-ready66`, observed base
+  `e82b86b8c02fdbb6282c1c459c032f43d16af9f8`; each may write only its unique report.
+  Source, gate, test and artifact execution are forbidden. Policy/history/streak-held lanes
+  stay excluded. No concurrent source writers or Sighting missions were created.
+- Required plan/run validation passed with 66 spawns and zero resumes. All 66 actual identities
+  were recorded. A single post-launch observation at `2026-10-21T20:49:34.750207Z` found all
+  66 new jobs running and 95 running tasks overall, not 200 claimed active.
+- Dispatch/pinning/registry/observation artifacts live under
+  `.ufo/waves/hyaku/s3-readiness66/`. The mounted transport adds only required `solutionSpace`
+  metadata; validated context, names, roles and task text remain unchanged. No optional
+  route-family audit success is claimed.
+- Current Kama, Revenger and Kake authors were told to prepare genuine successor waves while
+  waiting for full pinned-reader barriers, then dispatch promptly within actual spend/seat
+  limits. No live straggler, dead seat or policy-held task is replaced to fill capacity.
+- Souji22GateReceipts additionally disclosed temporary-file writes and accepted VOID.
+  It remains preserved and uncredited, not a death or replacement; its arithmetic requires
+  independent non-VOID authority. A separate read-only metadata audit is checking the original
+  64-seat evidence wave, so no blanket report-validity claim is made.
+- **Preparation-input correction:** the fleet checkout ignores the independent lane repositories;
+  the initial shared view supplied fleet metadata, not the promised lane bytes. The parent then
+  created eleven actual, independently pinned lane worktrees at the originally assigned paths.
+  `lane-view-creation.json` records observed source bases, branches and successful creation;
+  `lane-input-amendment.json` explicitly separates the fleet-only and late-source epochs.
+  Every original seat received the correction without a new identity or replacement. Earlier
+  report prefixes are preserved; any recheck is a labeled late-input addendum, not a claim that
+  original inputs were complete or past custody was repaired. No initial missing-input report
+  is credited as source verification.
