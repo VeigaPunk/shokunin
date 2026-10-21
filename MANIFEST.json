@@ -10744,6 +10744,63 @@
    "promotions": [],
    "minted": [],
    "closed_at": "2026-10-21T13:32:01.930493+00:00"
+  },
+  {
+   "round": 25,
+   "date": "2026-10-21",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 25,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 25
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "freshness": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "release-clock observation: 28 declared clocks, dated receipt-bound observations; not continuous vendor truth"
+   ],
+   "report": ".ufo/reports/round-25/kagi.md",
+   "verification": {
+    "reviewer": "CloseKagi25 (orchestrator-dispatched non-author closure)",
+    "scope": "Lane and report read-only per assignment. Independent verification and routed residuals retained in this closure row; no verifier lesson written into lane.",
+    "report_commit": "db436fdc4f835ba6cf3b11328002526ab7e91d5a",
+    "base": "4587c61a348e4528717404a68912c373f3ef4d03",
+    "measured_commit": "9b755f5b44ace949fc4d71c9d6d8f125a560e9cf",
+    "rechecks": "Independently executed python3 -B kagi-shokunin/.ufo/waves/round-25/tools/final-measure.py 9b755f5b44ace949fc4d71c9d6d8f125a560e9cf /fast/scratch/kagi-r25-closure-independent.json; 15/15 PASS in fresh scratch clones with empty HOME/default host exclusion. Also independently ran final-tip lone-clone verify and recomputed every final-tip stamp SHA256/newline/byte count from git blobs. Counting commands and committed author receipts remain reproducible; scratch receipt is supplemental, not the sole evidence.",
+    "independent_receipt_sha256": "5854b0e80571482c9a83aeadd605430602aa38306742a726975cf5537fdc3cc4",
+    "measurements": {
+     "C1": "c1-measure.sh --common <measured> <base|measured> <label>: identical34 bindings STALE8/unlocated0/ambiguous0 exit1 -> CLEAN34 exit0; full38 CLEAN exit0; SC-SKILL-STAMPS one-digit mutant exactly1 STALE exit1; selftest48 PASS. Bounded reviewed doc/source agreement, not completeness/statistical calibration.",
+     "C2": "c2-measure.sh <base|measured> <label>: lone BROKEN cites1371 unresolved88 exit1 -> INCOMPLETE cites1639 unresolved0 fleet_absent48 exit3. Fleet CLEAN in both. After local/self/owned-nested misses all UNRESOLVED1 exit1 in both layouts; fleet-target miss is INCOMPLETE3 in lone and BROKEN1 in fleet. Final-tip lone verify exit1: LAYOUT-INCOMPLETE R11-08; CLAIM_LEDGER: INCOMPLETE (claims=65 layout_incomplete=1 deferred=0 stamped=88 ids=65 cited=55 labeled_ids=20 orphans=10 host_skipped=12). Honest explicit limitation, not absent citations checked or a false CLEAN.",
+     "C3": "c3-measure.py <base|measured>: on_release28 bound0/unbound28/observed0/fired0 -> bound28/unbound0/orphan0/observed28/fired1. Offline receipt-bound gate CLEAN28, derived15; selftest67 PASS. S008 contradicted against retained receipt gives RECEIPT-MISMATCH exit1 observed27, never CLEAN. S012 detects already-stale Vault anchor, with teaching re-verification retained; no new drift event or continuous freshness claimed.",
+     "full_verification": "15/15 independent checks PASS. Ledger selftest170 PASS; full measured default verify exit0 CLAIM_LEDGER: CLEAN (claims=65 deferred=0 stamped=88 ids=65 cited=55 labeled_ids=20 orphans=10 host_skipped=12). Host rows remain unexecuted/uncredited.",
+     "independent_git_blob_counts": "Sources32->38; on-release population remains28; stamps83->88 and claims61->65 with zero original paths/IDs dropped; all88 final-tip stamp hashes/lines/bytes match. Original source rows unchanged; historical LOG bytes preserved as a prefix. Measured->final changes are receipts/outcome metadata and stamp updates, not runtime scripts or binding tables. Claim-only overlay input hashes match measured blobs for all3 committed separability records.",
+     "source_census": "Fleet scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin kagi exit0; same8 disclosed duplicate-URL W04 warnings. Lane census CLEAN rows38 A36 B0 C2 queued1 mined34 rejected3 captures38."
+    },
+    "spotcheck": "CloseKagi25.FreshnessReview independently refetched S033-S038 official feeds. Agree admit S033 SOPS max stable3.13.3, S034 Vault2.2.0 with rc/sdk noise excluded, S035 OpenBao2.7.1, S037 curl Version8.23.0; agree reject S038 WHATWG releases.atom (0 entries, root title Release notes from html). Located quotes <=25 words. S036 old3.15.0 item still exists but a new3.15.1 item is now newest; see routed dated limitation. Receipt bundle digest matches the code pin and28 dated observations. CloseKagi25.CitationReview source audit agrees C2 is honest improvement; no blocking code/claim harm found.",
+    "conformance": "Report has required sections in order and4 author-assertion SHONEN lines. Dispatched prompt carries mission/axes,1-3 causally separable distinct-axis claims, frontier, L2 floor, report/hash/write-scope/push/L0 contracts and64-100 wave addendum. All cited lane commits exist and are ancestors of master/HEAD; branch and remote both1bf3eec48d3761580ffd375c88143232485ae814, ahead0 behind0 tracked0 untracked0. Report is kagi-authored and ancestor of fleet origin/master; lane final commit precedes report."
+   },
+   "commit": "kagi-shokunin@1bf3eec48d3761580ffd375c88143232485ae814",
+   "closed_at": "2026-10-21T13:32:29Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: watchdog launch2026-10-21T07:23:21-03:00 kagi round25 pgid1928365 attempt1; author finished with pushed report db436fd. Independently counted88 build seats/reports,64 falsify seats/52 reports/12 missing reports matching the named provider deaths; total152 seats, no model arguments. XMeasureC1 repair-continuation failure separately disclosed, not replaced. No axis harm observed; defects remain status-neutral, not erased: late protocol loading, transient live README edit restored, pycache removed, broad transcript grep not adopted, some account-free op fixture runs beyond seat instructions, no complete whole-round no-private-read attestation; historical LOG edit restored byte-exact. No vault/account/handler/CDP operation or host-row consent credited. Installs recorded: pyrage1.4.0 via uv pip/PyPI sandbox venv for throwaway age identities; official checksum-verified sops3.13.0/3.13.3 sandbox binaries for key-group comparison; no host PATH/system/pacman changes, Sigstore unrun. Closure installed nothing. Routed D1: independent refetch https://www.python.org/downloads/feed.rss now has Python3.15.1 pubDate Wed21Oct2026 09:59:50+0000 (before retained11:31:53Z observation), whereas retained receipt reports3.15.0. Cached-edge versus backdated insertion is unresolvable from retained digests; do not rewrite the dated fired1 result or infer mismeasurement. S036 present-tense newest-stable wording is now stale; next round append a dated correction/superseding source row and refetch/reobserve S027/S028 with a new receipt. D2: C1 intentionally excludes complete digit/corpus coverage; remaining knowledge-entry and checklist-count debts must not be pronounced covered by CLEAN38. Shared shallow .ufo namespaces cannot prove lane ownership; deeper owned-path controls are red. Admission is for the bounded dated observations and explicit INCOMPLETE diagnosis, not universal citation resolution or continuous source freshness. Previous r24 admitted; rejection streak0. No promotion, no next-round dispatch, lane/report untouched.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
