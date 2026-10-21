@@ -744,3 +744,21 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   touches the lane. The parent advances lanes with `inline.sh advance` (outcome file then rewritten
   to the row's exact verdict). kasegi r23 stays policy-paused; kumitate stays blocked.
 - **Routing unchanged:** the global role map, including directive 50 (reviewer `@m_mim`).
+- **Job-cap semantics, observed this session.** `async.maxJobs` is session-wide and capped at 100
+  (omp docs: "default and maximum 100"). A `task` call is admitted only while fewer than 100 jobs
+  run, and then the WHOLE batch starts, which is why 117 ran at once. Main's spawns are refused
+  whenever waves keep the count ≥100, but reviving an idle agent by message is not capped. So
+  finished coordinators and closers are reused by message, and fresh spawns land in the dips.
+- **Ruling: dead-wave clarification (sent to every resumed coordinator).** The resume contract's
+  "never re-issue their items" was stricter than the addendum. Crash-killed seats stay dead and
+  listed, count toward ≤200, and are never respawned one-for-one. When the crash wiped a stage the
+  round still needs (usually falsification) and ≥64 seats of budget remain, the coordinator may
+  dispatch ONE fresh validated 64–100 wave with new identities, designed from the integrated state
+  and the pre-registered tests, and must disclose it as a post-crash wave (precedent: KagiR24-2).
+  revenger r61 had landed with C1 "not met" because all 65 falsify seats died with the host. With
+  67 seats of budget left, RevengerR61-2 is authorized to run that wave and append an erratum.
+- **Closures:** `rounds[424]` kaidoku r23 admitted (CloseKaidoku23; coverage 1/6→4/6 under the
+  frozen definition); `[425]` kagi r27 admitted (CloseKaidoku23, reused). The census correction it
+  rebuilt from KagiR26's transcript is byte-identical to the landed 3553d499.
+- **Dispatched:** kaidoku r24 (KagiR27-2, reused by message after landing kagi r27); kagi r28
+  (fresh KagiR28).
