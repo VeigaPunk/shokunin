@@ -717,3 +717,30 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   delegated to m_swe. Unchanged: `modelRoles.default` = `@m_swe` and the `@m_swe` fallback hops
   (not delegations). Fresh-process probe: m_mim answered by `opencode-go/minimax-m3.1-flash-free`,
   primary-ok. Fresh spawns only; running reviewer seats keep the model they started with.
+
+---
+
+## Session 3 continuation (2026-10-21, session 01a15f3a; parent resumed from 01a15c83)
+
+51. "ok we had a session going on, it just froze and i had to close it. resume it, please"
+
+- **Loss.** Session 01a15c83 froze; the operator closed it at 13:10:51 -03 (`session_exit`
+  sighup). Every coordinator, closer and seat of that session died with it and cannot be messaged.
+  Host at resume: MemAvailable 26 GB, memory/CPU PSI ~0, no OOM in the journal. The only process
+  inside a lane dir is a day-old kama r16 seat leftover (pid 863272, sleeping python), left alone.
+- **Durable state held.** All 16 claimed lanes show `ahead=0`, so no commit was local-only.
+  MANIFEST still ends at `rounds[423]`: CloseTsukuroi21 (mori r22) and CloseTabi21 (kaidoku r23)
+  died mid-check without rows. souji r22's fleet report is drafted but untracked. kama r23 owns a
+  fleet misroot (`.ufo/waves/round-23/falsify/…/ScribeLogEntry*`), routed to its replacement.
+- **Gate.** `live-session-dir` now points at 01a15f3a, so wave-live counts this session's agents.
+  At resume: live 0, cap 320, stale ledger grants expired.
+- **Resumption (one batch at job count 0).** Each of the 13 held claims got a fresh replacement
+  coordinator plus a resume brief in `/fast/scratch/hyaku-resume-s3/<lane>.md` (predecessor's
+  verbatim assignment and messages, transcript tail, lane state): ChousaR27-2, KagiR27-2,
+  KakeR26-2, KamaR23-2, KengakuR29-2, KotobaR47-2, KotodamaR50-2, MadoR22-2, RevengerR61-2,
+  SoujiR22-2, TabiR22-2, TameshiR24-2, TsukuroiR23-2. Seats the dead session dispatched count
+  toward each round's ≤200 and are never replaced. Fresh closures CloseKaidoku23 and CloseMori22
+  follow the rounds[419–423] practice: the spot-check lives in the row and the closer never
+  touches the lane. The parent advances lanes with `inline.sh advance` (outcome file then rewritten
+  to the row's exact verdict). kasegi r23 stays policy-paused; kumitate stays blocked.
+- **Routing unchanged:** the global role map, including directive 50 (reviewer `@m_mim`).
