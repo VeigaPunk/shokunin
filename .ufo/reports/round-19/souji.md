@@ -428,3 +428,15 @@ Filed after the orchestrator reopened capacity and directed the wave to run.
   tree-check its own script. Not fixed (path-set completeness needs a fresh acceptance).
 - Lane commit `bf104970048e51939de1a45efc4ef5f068fb46cc`; **final lane tip at this
   erratum: `bf104970048e51939de1a45efc4ef5f068fb46cc`**. No further changes.
+
+## Erratum 19 — evidence packet records added (appended after Erratum 18)
+
+- `ConnEvidenceLayout` identified missing r18-style packet records. Added: `census/round-19/source-census.json`
+  (start over base bytes: 78 rows, sha `74c5e01e…`, exit 0; current end: `88` rows, sha
+  `436b015c79386b0931641ffe01f4af4c416163e33f8ceed4fd1061a5da72ecff`, exit 0, 17 W04 warnings) and `census/round-19/dead-seats.json` (68 spawned after the
+  first-attempt 68/68 refusal, 0 dead, 22 packing-unexecuted named, last live snapshot 9 running).
+  Not produced: a 68-seat transcript export and an r18-style census matrix — the former would need
+  a per-seat transcript pull after the budget stop, the latter is an r18 artifact not run this
+  round. Both are disclosed rather than simulated.
+- Lane commit `49b64584e48aee7c21757a19601bfa4524c05b13`; **final lane tip at this erratum:
+  `49b64584e48aee7c21757a19601bfa4524c05b13`**.
