@@ -909,3 +909,43 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   the five introducing/removal histories. Other advertised refs were not adjudicated and no
   live account breach is claimed. `blocked/kengaku` prevents next-round dispatch; the appended
   L0 follow-up requests a scoped disposition without authorizing a history rewrite.
+- **Tabi safety-hold correction:** a dedicated terminal-chain review found Codex `cyber_policy`
+  at 17:58:58.301Z before the final Devin quota error. The earlier quota-only framing and wake
+  were wrong. `blocked/tabi` now excludes wakes, parent takeover, replacement authors and recovery
+  waves; the L0 correction preserves the record. An immutable snapshot worktree was created at
+  `e3cf4e0d`, but no tabi source was executed and no proposed recovery wave was dispatched.
+- **Souji r22 landed:** lane `fe7590b3010bed9b9b808b79c2bf2be1a18bce2a`, report
+  `e675f20a951f3b4425fef2f8df84d0e84dcd8135`. Parent verify passed with two leftover-path
+  warnings for ownership classification; full closure prompt rendered. Accounting is 140 identities,
+  111 reports and 29 deaths; six Q26-void reports are disjoint from deaths and uncredited.
+  Strict full adequacy remains unproven despite the finite measured improvements.
+
+56. "increase concurrency, keep training with heavy parallelization, swarms of 64-100 /skill:swarm /skill:godspeed"
+
+- **Actual concurrency increase:** one validated `hyaku-s3-nonauthor64` task batch started all
+  members, all identities were attested with `record`, and a post-launch observation found all
+  64 running. It prepares independent evidence for six landed rounds and documentary metadata
+  for two safety-held interruption records; it does not execute or restart held work.
+
+  | Role | Spawned |
+  |---|---:|
+  | reviewer | 32 |
+  | scout | 16 |
+  | critic | 8 |
+  | connector | 8 |
+
+- **Isolation:** readers share the pinned fleet worktree `/fast/scratch/hyaku/s3-nonauthor64`,
+  branch `hyaku/s3-nonauthor64`, observed base `6114598048275ebe63bb015dcb14979d12c6992f`.
+  Each writes only its unique report artifact; no concurrent source writer, Git/JJ mutation,
+  test/gate execution, provider override or Sighting mission is allowed. Cross-device FICLONE
+  was unavailable, so the host used a plain checkout.
+- **Dispatch evidence:** `.ufo/waves/hyaku/s3-nonauthor64/` preserves frozen case hashes,
+  spec, rendered payload, actual spawn response, assignments and attested registry. Required
+  shape/band/role validation passed. Optional route-family preflight failed on a stale global
+  fallback-chain key unrelated to selected roles; that refusal is preserved and no global
+  configuration was changed. No optional routing-audit success is claimed. The mounted task
+  schema's required `solutionSpace` metadata was added as transport-only data; validated
+  names, roles, task text and context remained byte-identical.
+- **Producer waves:** KamaR23-2 and RevengerR61-2 were instructed to prepare their next genuine
+  64–100-seat falsification waves promptly, after build settlement and pinned integration,
+  without waiting for parent approval. No already-dispatched payload was duplicated or padded.
