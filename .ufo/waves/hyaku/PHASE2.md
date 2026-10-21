@@ -409,14 +409,48 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   absolute paths; seats do not edit production or execute live credential gates.
   KagiR23 remains the sole production integrator. Souji's next build dispatch
   waits for capacity while it prepares independently; no quota-padding tasks.
-- Runtime settings differ from the previous session-only overrides: current
-  `task.maxConcurrency=100`, `async.maxJobs=1000`, and the globally configured
-  role map are active. Historical directives 29–30 were **not** restored or
-  claimed active; no routing, model or credential configuration was changed.
-  Helper log labels such as `model=@m_opus` are configured labels, not evidence
-  of the answering model. New workers use the current host role routing.
+- *Superseded (next bullets):* at first the continuation ran on the global role map; directives 29–30
+  were not yet restored. Helper log labels such as `model=@m_opus` are configured labels, not
+  evidence of the answering model.
 - Verification so far: real dispatch, assigned registry and observed running
   jobs; landed-report checks above. These do not certify the new rounds'
   behavior. Each new round still requires actual changed-path execution,
   committed evidence, report landing and independent non-author closure.
 - No tools installed or updated by this continuation's orchestrator.
+
+### Continuation directives and corrections (2026-10-21, later)
+
+34. "swwwarm heavy, 64-100 concurrent parallelization" (twice) / "64-100 swarm subagents please"
+35. "use m_zfl on revenger"
+
+- **Opus fallback observed, routing restored.** Under the global map, m_flash seats fell through
+  `commandcode` (429 weekly limit, resets 2026-10-27T09:47:39Z) → `charm-hyper` (402 out of
+  credits) → `anthropic/claude-opus-5-5`: 25 m_flash parent-build seats answered on Opus (transcript
+  scan, e.g. `ClaimR11X02` model_change 03:46:43Z). That violates directive 30, so the exact
+  directive-29/30 session values were replayed from the prior transcript and re-applied
+  (session-only, NOT saved): `retry.fallbackChains` with no Opus entry and m_zfl/m_flash/m_fast/
+  m_haiku tails `openai-codex/gpt-6-luna:max`; `task.agentModelOverrides` task/planner @m_opus,
+  critic @m_swe, executor/sentinel @m_luna, mutation-tester @m_sol, scribe/distiller @m_haiku,
+  scout/labrat/connector/simplifier @m_flash, reviewer/revenger @m_zfl (directive 35 satisfied).
+  Agents spawned before the restore keep their captured chains. Devin also reports weekly quota
+  exhausted; these are provider observations, not availability proof.
+- **Job cap.** The process refuses `task` spawns at 100 running background jobs, process-wide,
+  nested seats and coordinators included ("Background job limit reached (100)"), although
+  `async.maxJobs` reads 1000. A 100-seat wave can never start from an L1; waves stay ≤88.
+- **Gate failure and fix.** A Main-held GRANT protocol stalled while Main's eval kernel blocked
+  600 s on a config write: SoujiR19 landed r19 with 0 seats and TsukuroiR19Recovery landed r19
+  without its prepared falsify wave (both disclosed in their reports). Main revived both to run
+  their validated waves through the new self-service gate `scripts/hyaku/wave-slot.sh` (acquire/
+  release; live-agent transcript proxy + recent grants ≤ CAP 92, 8 slots reserved for
+  coordinators; sandbox smoke: grant, timeout, release-regrant) and to append report errata after
+  the filed bytes. Tsukuroi's 100-seat falsify spec must be re-validated ≤88.
+- **Closures since resume:** `rounds[375]` kumitate r35 admitted; `[376]` kengaku r25
+  rejected-honest-stop (expansion harmed at first landing; operator may rule the tip-corrected
+  reading admissible); `[377]` tameshi r18 admitted; `[378]` tabi r18 admitted. All four advanced;
+  kengaku r26 is repair-first.
+- **Live now:** KumitateR36 (96-seat build wave dispatched), KamaR18Recovery (integration, ≤8
+  residual seats), SoujiR19 and TsukuroiR19Recovery (gated post-hoc waves), TameshiR19-2, TabiR19-2,
+  KengakuR26-2 (fresh rounds, restored routing), CloseKagi23 (kagi r23 landed `8a4ecbbd`, wave
+  evidence `46fac5a2`, report `00cfe25d`; disclosed L1 deviation: a real-tree `cells` run executed
+  host-private R18-01, uncredited, M23-5). Remaining interrupted claims (kaidoku r20, kake r22,
+  mado r20, mori r18, chousa r25) wait for coordinator capacity; kasegi r23 stays policy-paused.
