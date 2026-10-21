@@ -97,3 +97,10 @@ CriticPrecisionV3 (`mado-shokunin/.ufo/waves/round-20/a2/review/CriticPrecisionV
 run), and a purity hole: `imaplib.IMAP4_stream` (stdlib, outside PROCESS_STDLIB) launches a process,
 reported at `28c6837`, silent at v3.1. Confirms C1 **harmed** (recall and precision regressions vs
 `28c6837` off-suite). Round-21 work: narrow reference sweeps, add process-launching stdlib entries.
+
+CriticAdmission (`mado-shokunin/.ufo/waves/round-20/a2/review/CriticAdmission.md`): C1 172/175 is
+below its registered 175/175 target; C2's 30′ green reuses the C1 counter (L 17/18, b14 emits no
+lead), so C2 is not independent of C1; held-out 2/12 still includes the `jj log --version` false
+positive; it also notes a revision-bound `measure.py` rejection discrepancy (the note's `surface:`
+head at `a8960de`, renamed `scope:` only at `94b6925`). Author verdicts after review: C1 harmed,
+C2 unprovable-independently (22/30 literal; 21/29 conservative) — admission is the closure's.
