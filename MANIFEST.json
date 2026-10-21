@@ -10245,6 +10245,48 @@
    "notes": "Dispatch digest: watchdog 2026-10-21T02:43:10-03:00 launch kagi round=24 pgid=466188 driver=hyaku-inline attempt=1; events.log inline launch model=@m_opus; no complete line at closure. Reports 01d1c22d (original) and 1eed5087 (recovery erratum) committed by kagi-shokunin on fleet; all 13 cited lane hashes ancestral to master 4587c61a = origin (jj-lane state ahead=0 behind=0 tracked=0 untracked=0, detached HEAD handled via branch). Prompt .ufo/prompts/kagi-round-24.md carries template contract + hyaku addendum; report has all required sections both passes. Author KagiR24-2 (recovery writer inheriting c5ef9e92). Disclosed and confirmed defects (status-neutral): 11 dead seats (ProbeAbsPath inherited + FGateDecisions, FSeparability, FWaveEvidence, FMigration, FIdentityR2104, FIdentityR1110, FPolicyCitations, FNormWhitespace, plus repair executors FixGateConfinement, FixIdentityInstrument-2; Codex turn_rate_limit_exceeded), 8 atomic whole-wave job-cap refusals before 64-seat falsify start, round total 133 seats; original report filed before evidence commit and wave-2 absent (superseded by recovery wave), M24-4 late start census, M24-16 working-tree repairs begun before final read-only reports returned, IdentR1111 live census mutation and IdentR1604 ambient HOME verify. Closure caveats: default verify/citations go red (R11-08 exit-mismatch; 73 unresolved fleet-relative cites) in a lone clone by design (R11-08 NOTE requires fleet layout) - reproduced CLEAN in fleet layout; gate-regression fixture identity holds by construction (new 151-case suffix applied to both revs), not identical committed fixtures; tripwire counts stub invocations (attempts), not host reads. Routed: SKILL.md:46 stamp/claim count stale ('63 stamps + 39 claims, round 21' vs 83/61); make R11-08/citations lone-clone behavior explicit in the verify output. SHONEN boxes remain [~] author assertions; none appear fully non-author-checkable this round. r23 admitted; no rejection streak.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 21,
+   "date": "2026-10-21",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 21,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 21
+   },
+   "admitted": false,
+   "verdict": "rejected-harmed",
+   "verdicts": {
+    "operability": "harmed",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "harmed",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-21/mado.md",
+   "verification": {
+    "reviewer": "CloseMado21 (orchestrator-dispatched non-author closure; author MadoR21-2)",
+    "scope": "Read-only lane/report; all re-runs in scratch clone /tmp/closemado21.fQib at 741122d1 (tool bytes identical to a6cef89).",
+    "ancestry": "a6cef89 ancestor of 741122d1 = lane HEAD = origin/master; lane worktree clean; report commit 850b0750 ancestor of fleet master; report carries Work performed/Landed changes/Before->after/Sources & frontier/Trend verdicts/SHONEN; prompt .ufo/prompts/mado-round-21.md carries the report contract (section 4) and closure protocol.",
+    "rechecks": "C1 harm reproduced: tripwire sha256 46c82902 (= git show 741122d1); six FinalBindingReview fixtures sha256-match the review; one measure.py scan child over the fixture dir gave exit1, package_query5/host_mutation0, all eval_unparsed/unparsed_spawns 0. capture-invoke-time -> observed 'pacman -Q r21-invoke' (truth: factory-time 'pacman -S r21-factory', F1); capture-unbound-global -> fabricated observed 'pacman -Q r21-global' from module global though make(*parts) is unresolved (F2); returned-rebound -> observed 'pacman -Q r21-a' (truth a=b -> 'pacman -S r21-b', F3); thread-run-direct -> no row, silent miss of synchronous t.run() 'pacman -S r21-thread-run' (F4); thread-key-hygiene -> lead vs control observed (F5). Truths checked against Python semantics by reading the fixtures. Oracle measure.py: primary 35/35, supplemental 17/17 (numbers real but do not support the general binding repair claim). Round-20 tw-precision at a6cef89: P66/66 S17/17 W21/22 H47/52 L15/18 = 166/175 (was 172/175 at round20) - independent second precision harm. C2: mado-assessment --selftest 20/20 pass; independence runner pass, identical C2 stdout across C1base(a57d4fe9)/C1changed(46c82902)/C1absent; mutation runner mutant exit1 pass; verifier-na check exit1 unnamed_nonauthor_verifier."
+   },
+   "commit": "mado-shokunin@741122d177ae8ff68a73768777f20484d5bdcbe4",
+   "closed_at": "2026-10-21T10:24:41.836257+00:00",
+   "campaign": "hyaku",
+   "notes": "Author declared C1 harmed / admission false; independently reproduced. C2 bounded artifact-assessment demonstration verified 20/20 but carries no admission credit in a rejected round. Third consecutive mado rejection (r19 rejected, r20 rejected, r21 rejected-harmed) -> lane blocked; open L0 'mado | round-21 | Post-third-rejection disposition requested' awaits operator hold/unblock. Closure tool installs/updates: none.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
