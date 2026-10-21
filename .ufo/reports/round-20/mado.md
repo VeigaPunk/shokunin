@@ -1,0 +1,76 @@
+# mado — round 20 report (attempt 2, recovery coordinator MadoR20Recovery)
+
+Lane `/home/vgpnk/Projects/shokunin/mado-shokunin`; claim base `1f7f995`; lane landed `94b692591a99ebac34fd2ba03094ad13fcf0fbe7`.
+Stale-lane: respawn-per-round driver; no other mission of this lane is open.
+
+## Work performed
+
+Declared claims (registered `e629f73`, unchanged): **C1 operability** — tripwire precision
+(`python3 -I .ufo/waves/round-20/tw-precision.py REV`, suite pin `f3da504`); **C2 calibration**
+(lowest measured axis; `python3 .ufo/waves/round-17/measure.py REV`, key c1). L1 holds the planner seat.
+
+- Recovery inventory: attempt 1 left `f8576f7` (helper-recovered, PHASE2 incident 6), `ed4bf22`,
+  `38d1b36`, w1 85/85 and w2 76/78 reports; wave 2 falsified C1's no-harm reading at `28c6837`
+  (52 recall losses, 13 crash flips, ~N⁴ hang, 24 pure-data leads, missed `jj -R` writes).
+- Attempt-2 registration + frozen guard counter `a2/a2-guards.py` and nine fixtures: `6a7d9ca`;
+  before-receipts: `107955e` (`.ufo/waves/round-20/a2/evidence/guards-before-*.txt`).
+- Tripwire v3 `3610e3e` (reached-body `lead` sweeps, recursion guard + 2000-follow budget,
+  iterative eager walk + deep-stack thread, jj subcommand by index, git short clusters, stdlib
+  purity by process denylist, namespace reads, installer `--help`, same-command lead dedup).
+- v3.1 `a8960de`: no exemption in unparsed segments (found by the removal-side corpus diff, lesson M15).
+- Receipts at `a8960de`, sources S113–S115, lesson M9–M15, QUALITY/SKILL/README/note, w2
+  dispositions (`.ufo/waves/round-20/a2/w2-dispositions.md`), SCORECARD/LOG: `94b6925`.
+
+## Landed changes
+
+| Commit | Content | LOG |
+|---|---|---|
+| `6a7d9ca` | attempt-2 registration, `a2-guards.py`, fixtures | LOG "Round 20, attempt 2" |
+| `107955e` | before-receipts | same |
+| `3610e3e` | tripwire v3 | same |
+| `a8960de` | tripwire v3.1 | same |
+| `94b6925` | receipts, docs, sources, lesson, SCORECARD, LOG | same |
+
+Reused after re-run at `a8960de`: precision suite/counter, recall counters, 11 suites + frozen
+replays, measure.py, tally-check, isolation check + harnesses/mutants, census, w2 fixture
+populations. Discarded: attempt-1's `28c6837` after-readings as C1's final state (kept append-only).
+
+## Before → after measurements
+
+- C1 `tw-precision.py`: `1f7f995` 29/175 = 1.6571 → `a8960de` 172/175 = 9.8286
+  (`a2/evidence/precision-a8960de….txt`); target 175/175 **missed by 3**. Guards: recall 6/6 =
+  5 observed + 1 lead, 20 controls 0; corpus diff `9c54c56`→`a8960de` 0 lost
+  (`corpus-diff-9c54c56-vs-a8960de.json`); `a2-guards.py REV --fixtures-rev 6a7d9ca`
+  `28c6837`→`a8960de`: recall_lost 52→0, crash_flip 13→0, pure_rows 24→0, vcs_fn 0→0,
+  vcs_fp 31→20; held-out 0/12→2/12.
+- C2 `measure.py` c1: 20/28 = 7.1429 → `a8960de` 22/30 = 7.3333 (21/29 if 30′ ruled a swap);
+  criterion 29 re-verified (`a2/evidence/iso/`).
+
+## Sources & frontier
+
+`scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin mado`: start exit 0
+(`.ufo/waves/round-20/evidence/census-start.txt`), end exit 0 (`a2/evidence/census-end.txt`; rerun at lane tip: `ok`, exit 0).
+Rows 112 → 115 (tier A +3: S113 os Process Management, S114 json, S115 subprocess.list2cmdline;
+opened 2026-10-21); no row touched old→new. Sourced claim: C1's v3 stdlib purity split.
+Mistakes mined: M9–M15 (`corpus/lessons/round-20.md`).
+
+## Trend verdicts
+
+- expansion: improved — +3 tier-A rows, two capability rows (`SCORECARD.md` attempt-2 capabilities).
+- quality: improved — C1 172/175 with out-of-suite guards clean; target miss stated.
+- discernment: improved — wave-2 falsification turned into the removal-side guard and M15; a 30′ scope limit is recorded (M9).
+
+## SHONEN
+
+- [~] claims measured with receipts — `.ufo/waves/round-20/a2/evidence/`
+- [~] no axis harmed — harm-watch PASS `a2/evidence/harm/harm-watch-summary.txt`
+- [~] sources curated — S113–S115, census exit 0
+- [~] mistake mined — lesson M9–M15
+
+## Waves and seats
+
+Attempt 1: w1 85 seats (0 dead), w2 78 seats (2 dead: SentinelPostWaveScan, ConnConsumers) = 163.
+Attempt 2: no new wave (≤37 left); one ordinary task call of 8 seats (5 reviewer, 3 critic),
+refused three times by the 100-job cap, started on the 4th try; reports pending at
+`mado-shokunin/.ufo/waves/round-20/a2/review/` when this report landed. Round total 171.
+Installs: none. L0: none. Open: removal-side criterion queued for round 21; 20 VCS false positives remain.
