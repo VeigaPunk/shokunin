@@ -473,3 +473,35 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   (128 spent → ≤72 left), MadoR20Recovery (163 spent → no new wave), MoriR18Recovery (repair-first
   after `rounds[372]` rejected-harmed), ChousaR25Recovery (0 spent). kasegi r23 stays policy-paused.
 - **Band at dispatch:** `wave-slot.sh status` → running 92, tameshi r19-w1 64 granted.
+
+38. "i want more concurrency" / "just increase it, ive seen it running 175 concurrently"
+39. "run more m_zfl subagents, also" / "and some more m_luna"
+40. "for simplifier, use m_composer"
+
+- **Job cap, corrected.** The earlier "process-wide 100" note was wrong. After the gate target went
+  to 200 (`~/.local/state/shokunin-hyaku/wave-cap`, re-read on every acquire), MoriR18Recovery
+  started 68/68 seats and KagiR24 67 while other waves ran: `proc://` and the transcript census
+  showed ~160 concurrent agents (the operator's 175 observation stands). Main's own spawns were
+  still refused with "Background job limit reached (100)" (KamaR19 and CloseKumitate36), so while
+  waves run Main reuses idle agents by message instead of spawning: KamaR18Recovery became the
+  kama r19 L1, CloseKagi23 (never touched kumitate) the kumitate r36 closure.
+- **Routing (session + saved globally):** critic @m_swe → @m_luna (critic/executor/sentinel on
+  m_luna), simplifier → @m_composer (`xai-oauth/grok-composer-2.5-fast`, fallback
+  `cursor/composer-2.5-fast`); scout/labrat/connector/reviewer/revenger @m_zfl unchanged.
+  Session-only, not saved: `task.maxConcurrency` 100 → 200, `retry.maxRetries` 10 → 40 (the
+  directive-era value; fresh spawns only).
+- **Provider saturation (transcripts modified in the last 15 min, 2026-10-21 ~03:5x -03):**
+  461 Codex `gpt-6-luna` "at capacity" errors and 31 seats dead after the 10-retry budget; 202 zai
+  `glm-5.3-flash` 429s; devin weekly quota (33), charm-hyper out of credits (37), commandcode weekly
+  limit (19). Answering-model census of the new Mori/Kagi seats: m_zfl 24 on zai, 19 failed over to
+  Codex Luna, 54 not yet answered; m_luna 19 on Codex Luna; m_haiku 17 on Anthropic Haiku. Every
+  m_zfl/m_luna fallback path ends on the saturated Codex, so more seats there mostly add retries
+  and deaths; dead seats are recorded, never respawned.
+- **Memory.** One reading showed 29/30 GB used, 0 available, 22 GB swap, PSI `full avg10=19.95`;
+  a minute later MemAvailable was 25 GB and swap 3.3 GB (omp RSS 1.9 GB): a transient seat
+  workload spike, not agent count. `wave-slot.sh` now also waits while MemAvailable is below
+  `HYAKU_WAVE_MIN_AVAIL_MB` (default 6144); sandbox smoke: floor met → granted, floor unmet →
+  timeout exit 3.
+- **Closures since:** `rounds[379]` kagi r23 admitted (r24 running), `rounds[380]` kama r18
+  admitted (r19 assigned). kumitate r36 landed (lane `91da27c6`, erratum `ba523308`; author keeps
+  C1 unadmitted) and awaits its closure.
