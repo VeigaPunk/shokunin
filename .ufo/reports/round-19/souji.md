@@ -286,3 +286,15 @@ Filed after the orchestrator reopened capacity and directed the wave to run.
   that souji must not absorb.
 - **Final lane tip at this erratum: `3a25875cee6053ec7f76ed278986d6367bf7bff7`.** No
   production code changed after the 18/18 acceptance at `63bb887`.
+
+## Erratum 9 — Q36 lesson anchor corrected (appended after Erratum 8)
+
+- `ScoutQualityMap` found that Q36's lesson cell cited a nonexistent "round-16.md D5"; the
+  truncation finding is **round-17.md:72 (D5)**. Corrected in lane commit
+  `c6703daef7dfa7de2f1a5a72e86f40de3717049b`; no other criterion text changed.
+- `ScoutAuditModel` confirms the two base shapes (patch delivery, slot-suffixed clone) both major
+  at base and proposes granting the seat's explicitly slot-qualified scratch root in addition to
+  the exact patch file. **Not applied**: it would need a fresh r18 re-audit and acceptance run,
+  and the clone-path majors are already disclosed as a residual.
+- **Final lane tip at this erratum: `c6703daef7dfa7de2f1a5a72e86f40de3717049b`.** No
+  production code changed after the 18/18 acceptance at `63bb887`.
