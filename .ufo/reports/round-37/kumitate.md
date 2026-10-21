@@ -108,9 +108,9 @@ lesson and LOG still quoted `C2=83/83`; both now record the intermediate `5ceb8c
 (`C2_TOTAL_DRIFT declared=83 computed=84`) and the final `84/84`, and `repairs.md` carries a D8 line.
 The numbers in this report were already 84/84.
 
-Third erratum (lane `503172065a46f7494c42ae1883993635ebd176a2`): `AuditSighting4` showed D1 is only partial in
+Third erratum (lane `fdac52c353c0b07a1509c90444f3ef645afefb1b`): `AuditSighting4` showed D1 is only partial in
 `sighting-wall.md` — nine anchor positions still differ from base (five never reverted, four set to
 values in neither base nor pre-repair), two remain false (`MANIFEST_SCHEMA` should be `base.mjs:41`,
-`MAX_MANIFEST_BYTES` `:49`), and the first notice overclaimed. The notice is amended to say PARTIAL;
+`MAX_MANIFEST_BYTES` `:49`), and the first notice overclaimed. The notice now says PARTIAL;
 the remaining positions and the other audit groups are owed to the closure/next round. The report's
 D1 line above ('every symbol-keyed anchor ... reverted') is superseded to that extent.
