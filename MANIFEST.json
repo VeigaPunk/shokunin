@@ -9276,6 +9276,49 @@
    "notes": "watchdog digest: 2026-10-21T00:47:22-03:00 launch kumitate round=36 pgid=2986834 driver=hyaku-inline attempt=1 / 2026-10-21T03:06:44-03:00 complete kumitate round=36; hyaku-inline attempt=1. Lane 3d5760a8 work, 0b5dcfb/91da27c6 late evidence, cb80bc16 LOG correction; report fleet 20802331..ba523308 (correction 6625a5d0). Step-1 clean (ahead=0, porcelain empty, all hashes ancestors). Build wave 96/96 reports (scout23 exec17 rev16 scribe10 conn8 crit8 mut4 revenger4 sent3 simp3), falsify 81 validated never dispatched (falsify/ empty): conformance defect. Rejected-harmed: C1 fails as declared (author concurs) and the right-first shift-repair broke 123 previously true anchors in S8/S4/S7/native-trial-launch notes (author named only S8), unmarked in notes; lesson Mistakes row claims an unlanded clause-guarded fix; SCORECARD runtime row text still 83/92=9, C2=81/81 stale. Fleet-root stray -.rej (19 hunks of remaining-scripts-census.md, 02:48) untouched. Routed D1-D8: restore anchors + in-note markers; one canonical pairing + shift-mutation selftest; correct lesson/SCORECARD wording; QUALITY criterion; falsify before report; clear -.rej + re-sweep; apply/discard ExecFidSmall.patch; README map row for this note. SHONEN stays [~]; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 22,
+   "date": "2026-10-21",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 22,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 22
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "freshness": "unchanged",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "adjacency": "unchanged",
+    "calibration": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "Offline static canonical preflight (scripts/canonical_audit.py)"
+   ],
+   "report": ".ufo/reports/round-22/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-22-verifier-spotcheck.md@b5d599e19bead54b96f589444e9ec64cdf67c28a",
+    "rechecks": "Re-measured with jq over committed bytes (lane counter/validator not executed): measure-before-v2 accepted 0/32 available false exit 0 x2 identical; measure-after-v2 32/32 rows PASS and 32/32 actual==expected vs cases.json oracle, ids identical, x2 identical; sha256 measure.py/matrix.py/cases.json = runnerSha256 + PINNED_INSTRUMENT_SHA256; validator digest 5de32200 = frozen/expected.json pin; frozen population unchanged c0fd6d5..d5a0369. Counter fix verified in code (reconcile_rows row-derived numerator, digest pins, unvalidated baseline exit 2, total=len(EXPECTED_CASES)) and committed counter-probe before 3/3 accepted -> after 3/3 rejected. Evidence-verified: selftest 62/62 (c0fd6d5 56/56), defect-probe 2/8->8/8, replay frozen_replay_match 69 inputs/32 cases. Reuse: w1 64/60 (4 scribes dead), w2 64/43 (21 missing = lesson names), residual 8; total 136. Web read-only: validator no network imports; writes only in --selftest temp dir; domain snapshot sha 43d321f9 = ufo-fsd-alpha 31c465f1 blob; seat network = public doc GETs only. Spot-check agree: admits S020,S027,S028(sha 21c1cdce),S029(sha 3102dae4); rejects search-engine-selection (S022) and WHATWG slash-skipping row. Census kake ok exit 0; SOURCES 19->27->29. SCORECARD pure append."
+   },
+   "commit": "kake-shokunin@d5a03697c780fc6b5721ac0065fdb89ed4a7815c",
+   "closed_at": "2026-10-21T06:26:30Z",
+   "campaign": "hyaku",
+   "notes": "Digest: launch kake r22 2026-10-20T18:30:56-03:00 pgid=1128758 hyaku-inline attempt=1; lane-dead-no-report 2026-10-21T02:47:17-03:00 (attempt-1 coordinator ended; operator-authorized recovery reuses retained work); launch attempt=2 02:47:18 pgid=538289; complete 03:19:54. Report 712c620+d7ecdb5 by kake-shokunin; no step-1 conformance defect. Re-check seats refused by host job cap; all checks by closure reviewer alone. Routed: (1) QUALITY 'derived counts' criterion fail predicate inverted (counter-probe exits 0 on pass) - append correction; (2) misroot err.txt/out.txt committed at lane root - relocate under .ufo/waves/round-22/; (3) postfix *-before.json name /tmp c0fd6d5 runners - record git show reconstruction command; (4) four last fixes probe-only, 21 dead w2 items (S021,S023-S026 re-opens, Boundary attacks) unattacked; (5) carried paths gate red 3 targets/missSet 55 (operator restore-or-retire); (6) SHONEN all [ ], none non-author checkable yet; promotion operator-owned. No tool installs.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
