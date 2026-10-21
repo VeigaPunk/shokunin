@@ -183,15 +183,16 @@ is its explicitly lane-owned registry section in root `SCORECARD.md` — protoco
 "Registry home"; design record `.ufo/waves/round-14/registry-home-rerun/contract.md`).
 Row fields are that clause's eight: name, `gate|probe`, entry command, verdict map
 (code → class), self-test command and spelling, pinned-value path, write scope, owner.
-**This row is registration only — not blanket conformance, not a live clean verdict.**
-Every pointer, flag and code below was source-verified in `.ufo/waves/round-15/closure-check.py`
-(sha256 `0ac440f7…9a778c`, pinned in `.ufo/waves/round-14/registry-home-rerun/before.json`)
-without executing the gate; pinned expected values stay in the referenced committed files
-and are not copied into this registry.
+**Registry presence is not blanket conformance or a live clean verdict.**
+Current checker SHA256 is `d8c1620df147d2e576f157f43e149ae4a1251a760b9f111f210b516744187a48`.
+The 2026-10-21 operator maintenance below records actual parent selftest/frozen/live runs;
+the earlier registration-only source check at `0ac440f7…9a778c` remains historical evidence
+in `.ufo/waves/round-14/registry-home-rerun/before.json`. Expected values remain in their
+committed fixture/snapshot files, not copied into this registry.
 
 | name | gate/probe | entry command (fleet root) | verdict map (code → class) | self-test command and spelling | pinned-value path | write scope | owner |
 |---|---|---|---|---|---|---|---|
-| closure-check | gate | `python3 .ufo/waves/round-15/closure-check.py --repo . --json --no-citations` (live mode from fleet root `/home/vgpnk/Projects/shokunin`; the invocation the inherited record captured; flags real at `closure-check.py:1984-2000`) | `0` → clean · `1` → failed (source "debt/contradiction": `stale_in_flight`, `unrowed_terminated`, `prompt_orphan`, `prompt_untracked`, `keying_violation`, `contradiction`, `history_pin_{unavailable,invalid,mismatch,unanchored,orphan,unverifiable}`) · `2` → could-not-evaluate (missing input, parse error, bad usage, `snapshot_tampered`, `unknown_lane`, `unknown_entry_type`) · `3` → could-not-evaluate (source label `no-baseline`: pinned expected-value baseline absent under `--selftest` / `--frozen`) — map at `closure-check.py:66-71` | `python3 .ufo/waves/round-15/closure-check.py --selftest` — spelling `--selftest` (argparse flag, `closure-check.py:1989`), runs only the committed fixtures, never the live tree; recorded tally 27/27 quoted from M25 — not re-run by this registration | frozen: `.ufo/waves/round-15/frozen/r15-pre-003400/expected.json` and `.ufo/waves/round-15/frozen/r15-post-012710/expected.json` · fixtures: `.ufo/waves/round-15/fixtures/closure-sample/<case>/expected.json` (25 cases) · history-pin pointer: `.ufo/history-pin.json` (live mode only; `--pin PATH` overrides; frozen snapshots are pinned by their `expected.json` input digests instead) | stdout/stderr only — source opens no file for writing (no write-mode `open`, `mkdir`, `shutil`, `tempfile`, `.write(`); the only subprocess fed stdin is read-only `git cat-file --batch-check`; read-only over the main repo, no external surface, no driver/runtime mutation | `protocol` lane (main repo) |
+| closure-check | gate | `python3 .ufo/waves/round-15/closure-check.py --repo . --json --no-citations` (live mode from fleet root `/home/vgpnk/Projects/shokunin`) | `0` → clean · `1` → failed (`stale_in_flight`, `unrowed_terminated`, `prompt_orphan`, `prompt_untracked`, `keying_violation`, `contradiction`, `history_pin_{unavailable,invalid,mismatch,unanchored,orphan,unverifiable}`) · `2` → could-not-evaluate (missing input, parse error, bad usage, `snapshot_tampered`, `unknown_lane`, `unknown_entry_type`, `unknown_round`) · `3` → could-not-evaluate (`no-baseline` under `--selftest` / `--frozen`) | `python3 .ufo/waves/round-15/closure-check.py --selftest --json` — spelling `--selftest`, fixtures only, actual parent tally29/29 on 2026-10-21; original27/27 and interim28/28 remain historical measurements | frozen: `.ufo/waves/round-15/frozen/r15-pre-003400/expected.json` and `r15-post-012710/expected.json` · fixtures: `.ufo/waves/round-15/fixtures/closure-sample/<case>/expected.json` (27 cases; malformed-round-entry and malformed-round-shapes pin typed CNEs and retained valid ledger rows/tallies) · `.ufo/history-pin.json` live only, with `--pin PATH` override; frozen input digests remain in each expected.json | stdout/stderr only; read-only repo/Git inspection, no external surface or driver/runtime mutation | `protocol` lane (main repo) |
 | root-ledgers | gate | `python3 .ufo/gates/root-ledgers.py --json` (also `--root DIR`, `--rev COMMIT`, `--frozen`; live mode reports `worktree <path> @<HEAD> dirty_ledgers=N` as its revision) | `0` → clean · `1` → failed (findings: `scorecard_header_lost`, `log_header_lost`, `protocol_registry_lost`, `protocol_registry_duplicated`, `closure_check_row_lost`, `aggregator_section_lost`, `registry_below_aggregator`; frozen path also `baseline_mismatch`; headings/rows inside fenced code do not count; a spacing variant such as `\|closure-check\|gate\|` reads `closure_check_row_lost`, a fail-closed false positive) · `2` → could-not-evaluate (missing input, unreadable ledger, git error, unreadable pinned values, `snapshot_tampered` on the frozen path) · `64` → usage | `python3 .ufo/gates/root-ledgers.py --selftest` (9 fixtures, exit + sorted finding ids) — runs only committed fixtures under `.ufo/gates/root-ledgers/fixtures/<name>/` in temp dirs, never the live tree; teeth: `sh .ufo/waves/round-16/gate/mutate.sh` (9/9 killed) | `.ufo/gates/root-ledgers/expected.json` · fixtures: `.ufo/gates/root-ledgers/fixtures/<name>/{SCORECARD.md,LOG.md,expected.json}` | none — read-only; selftest writes only to its own temp dirs | `protocol` lane (main repo) |
 
 - **Qualified frozen replays** (bare names fail closed on duplicates; `--frozen NAME`
@@ -201,15 +202,15 @@ and are not copied into this registry.
   `expected.json` pins the digest of every snapshot input file; an edited snapshot yields
   `snapshot_tampered` (exit 2), not a compared verdict. The pinned verdict values live only
   in those committed files.
-- **Self-test spelling and assertion ceiling:** `do_selftest` (`closure-check.py:1850-1920`)
-  asserts exit code plus the committed `expected.json` count fields per fixture, plus two
-  prompt-key unit checks (27 total: 25 fixture repos each carrying `MANIFEST.json` +
-  `expected.json`). It compares counts, not per-finding ids; id-level comparison exists only
-  on the frozen path (`_compare_baseline`, `closure-check.py:1828-1840`, diffing exit plus
-  `(lane, lane_round, class)` debt triples). This row records the lane's flag spelling and
-  this ceiling; it does not claim §Self-test full conformance.
-- **No live verdict rides on this row (registration ceiling):** the only recorded live run
-  of this gate is the inherited, read-only
+- **Self-test spelling and assertion ceiling:** `--selftest` asserts exit and declared
+  expected count fields over27fixture repos plus two prompt-key checks,29total.
+  The two malformed-round fixtures also pin `unknown_round:entry-round-not-an-integer`,
+  retained valid ledger rows/tallies, and independent round/lanes-shape defects for
+  list/dict/null identities. Per-case fields are not a full-id/full-§Self-test claim.
+  Frozen comparison remains exit plus `(lane, lane_round, class)` debt triples, not an
+  admission verdict or a complete status-map/semantic comparison.
+- **Historical registration evidence (retained at its original revision):** the live run
+  available to that earlier registration was the inherited, read-only
   `.ufo/waves/round-14/registry-home/live-closure.json` — command
   `python3 .ufo/waves/round-15/closure-check.py --repo . --json --no-citations`,
   `measured_commit e163d15bb1b080ae567ada3b86441455e9808f9b`, returncode 1 delivered as a
@@ -218,6 +219,19 @@ and are not copied into this registry.
   statuses derived". Per the round-14 contract it is cited, not re-run to confirm; the gate
   is unchanged by this registration and the defect remains parent-routed. Closure grades no
   live state of this gate from this row.
+- **2026-10-21 operator maintenance — executable malformed-round handling:** an adjudicated
+  non-integer `entry.round` is now explicit `unknown_round` CNE and unadjudicable evidence,
+  not a fabricated round0, lane_rounds re-key or silently dropped clean row. Valid integer
+  status rows remain analyzable; malformed closure instants do not poison valid joins.
+  Parent exercised the public malformed-fixture CLI (exit2, one typed CNE, valid kagi1ok),
+  selftest28/28 and all five old frozen baselines (pinned exits1,0,1,1,0).
+  Actual live CLI emits JSON without the former traceback: exit1,67debt/57contradictions,
+  81CNE (80unknown types plus one malformed round), zero history-pin findings at the
+  measured worktree. These are disclosed existing ledger debts, not a clean verdict.
+  Receipt: `.ufo/waves/hyaku/native-checker-repair/parent-runs.json`; source hash above.
+  No closed history, original frozen input/expectation or annotation-keying convention
+  was normalized. `admitted`, per-claim truth and commit ancestry still need parent review;
+  this status gate does not certify them.
 - **Baseline count:** rows starting `| closure-check | gate |` above `## Aggregator lane`
   were 0 before this section (`protocol_registered_closure_gates=0` at commit `99efc52b`,
   `.ufo/waves/round-14/registry-home-rerun/before.json`); this section adds exactly one.

@@ -29,6 +29,13 @@ plus the stable section heading; `A:<row>` is a PROTOCOL-APPENDIX.md first-colum
     status (live: entries #0/#1 pre-fleet-2); a `type: "mint"` entry is a *recognized
     non-closure entry*: reported, excluded from lane-status tallies, never silently skipped.
     (P:208-211 "Non-closure entry types are recognized, never silent"; A:43)
+  * a malformed round is an explicit could-not-evaluate finding, never a re-key: an adjudicated
+    entry whose `round` is not an integer names no lane-round, so its lane rows cannot be
+    adjudicated and must never become status rows. The entry is reported with its index, type,
+    lanes and `lane_rounds` annotation; the annotation annotates and never re-keys, and the
+    round is never coerced to 0. The finding is emitted even when the entry is malformed in
+    two ways at once (a non-integer round AND a missing/unusable `lanes` map): neither defect
+    hides the other.                                                 (P:202-211, P:241-256)
   * dispatch evidence = `launch <lane> round=N` or `steer <lane> -> round N`; a prompt with no
     dispatch line is an attempted dispatch -> `failed`.                         (P:217-223)
   * completion evidence = a report at the contract path; a contentless marker -> `failed`; a
@@ -67,7 +74,8 @@ Exit map (the fleet verdict-gate convention this round standardises):
                            keying_violation / contradiction /
                            history_pin_{unavailable,invalid,mismatch,unanchored,orphan,unverifiable}
   2  could-not-evaluate    missing input, parse error, bad usage, snapshot_tampered,
-                           unknown_lane (an id no evidence source knows)
+                           unknown_lane (an id no evidence source knows),
+                           unknown_round (an adjudicated entry that names no lane-round)
   3  no-baseline           a pinned expected-value baseline is absent (--selftest / --frozen)
 
 A could-not-evaluate finding never masks debt: findings the gate *cannot* adjudicate are kept
@@ -103,7 +111,9 @@ NONCLOSURE_TYPES = ("mint", "scaffold", "work", "ops")
 HISTORY_PIN_REL = os.path.join(".ufo", "history-pin.json")
 # Class of findings the gate cannot adjudicate: excluded from `debt`, exit 2 when alone. The
 # constant is the single source of the taxonomy -- `analyze` classifies every finding by it.
-COULD_NOT_EVALUATE_CLASSES = ("unknown_lane", "unknown_entry_type")
+# `unknown_round` is an adjudicated entry whose `round` is not an integer: it names no
+# lane-round, so its lane rows cannot be adjudicated at all (never keyed, never coerced).
+COULD_NOT_EVALUATE_CLASSES = ("unknown_lane", "unknown_entry_type", "unknown_round")
 
 TWO_TICKS_S = 900
 MARKER_MAX_BYTES = 400          # record: markers 101-254 B, smallest real report 4370 B
@@ -152,7 +162,8 @@ HELP_EPILOG = """exit map:
   1  debt/contradiction stale_in_flight / unrowed_terminated / prompt_orphan / contradiction /
                         history_pin_* (append-only history pin)
   2  could-not-evaluate missing input, parse error, bad usage, snapshot_tampered,
-                        unknown_lane (a lane id no evidence source knows)
+                        unknown_lane (a lane id no evidence source knows),
+                        unknown_round (an adjudicated entry whose round is not an integer)
   3  no-baseline        pinned expected values absent (--selftest / --frozen)
 
 lane universe: MANIFEST roster ids u base LANES u .ufo/state/*.round counters u lanes named by
@@ -178,6 +189,31 @@ closed (exit 3) when a bare NAME matches more than one; disambiguate with --froz
 def lane_sort(lane):
     """Sort key that tolerates a lane id outside the fixed roster (never raises)."""
     return LANES.index(lane) if lane in LANES else len(LANES) + 1
+
+
+def round_sort_key(value):
+    """One total, hashable projection of a round value that may be missing or non-integer.
+
+    Integers order first by value; every other value (None, float, str, bool, list, dict)
+    orders after them by (type name, repr), so a ledger that mixes integer and non-integer
+    rounds sorts deterministically instead of raising TypeError. The key never coerces a value
+    to an int and never re-keys a row: it only decides the order of what is already in the
+    ledger.
+
+    The same projection is the hashable key for the DIAGNOSTIC census tallies and the
+    legacy-row exemption, because those key on every entry's raw `round`, which is any JSON
+    value an operator can write -- including an unhashable list or dict, which cannot be a
+    dict key at all. It never touches the authoritative status ledger, which is keyed on an
+    integer `entry.round` and nothing else, and it never re-keys a row from `lane_rounds`.
+    Every projection is tagged with the original type name, so a malformed round can never
+    collide with a valid integer lane-round: `None` stays `None` (never 0), `1` stays distinct
+    from `"1"`, and a dict is canonicalised by sorted items so the census stays deterministic.
+    """
+    if isinstance(value, int) and not isinstance(value, bool):
+        return (0, value, "")
+    if isinstance(value, dict):
+        return (1, 0, "dict:%r" % (sorted(value.items(), key=lambda kv: repr(kv[0])),))
+    return (1, 0, "%s:%r" % (type(value).__name__, value))
 
 
 def iso(text):
@@ -543,9 +579,17 @@ def build_ledger(entries, allowed):
     `unknown_lane` finding (could-not-evaluate): an annotation for a lane no evidence source
     knows (A:42).
 
+    An adjudicated entry whose `round` is not an integer names no lane-round at all, so none of
+    its lane rows is a status row: the entry is reported as an `unknown_round` finding
+    (could-not-evaluate) and its rows are held out of the ledger and listed in `unadjudicable`.
+    `lane_rounds` annotates and never re-keys, and a null round is never coerced to 0
+    (P:247-256). The finding is emitted BEFORE the `lanes`-shape early exits, so an entry
+    that is malformed in both ways (a non-integer round AND a missing/unusable `lanes` map)
+    reports BOTH defects: neither hides the other.
+
     Returns a dict: rows, all_rows, unadjudicable, unadj_keys, shape, nonclosure,
-    unadjudicable_ids (findings naming an id outside the lane universe, classified by the
-    caller against COULD_NOT_EVALUATE_CLASSES)."""
+    unadjudicable_ids (findings the caller classifies against COULD_NOT_EVALUATE_CLASSES:
+    an id outside the lane universe, an unrecognized entry type, a non-integer round)."""
     rows = {}
     all_rows = []
     unadjudicable = []
@@ -560,6 +604,14 @@ def build_ledger(entries, allowed):
             continue
         r = e.get("round")
         t = e.get("type")
+        # A closure entry names the lane-round it describes: `round` IS the row identity and
+        # `lane_rounds` annotates it and never re-keys it (P:247-256). Only an integer names a
+        # lane-round; any other value (null, float, string, list, dict) names none.
+        round_ok = isinstance(r, int) and not isinstance(r, bool)
+        # The annotation, read defensively for the malformed-round finding below. The real
+        # parse (and its shape finding) stays where it was, so an entry that leaves the
+        # adjudication early still reports exactly the same shape findings as before.
+        lr_view = e.get("lane_rounds") if isinstance(e.get("lane_rounds"), dict) else {}
         raw = e.get("lanes")
         if isinstance(raw, list):
             pairs = []
@@ -574,6 +626,24 @@ def build_ledger(entries, allowed):
         elif raw is not None and not isinstance(raw, dict):
             shape.append(_finding("*", r, "*", "contradiction", "lanes-not-a-map",
                                   "entry #%d `lanes` is %s, not a map (P:206-207)" % (i, type(raw).__name__)))
+        # The malformed-round finding is emitted here, BEFORE any early exit below, so an
+        # entry that also carries a malformed `lanes` map still reports the round defect:
+        # the two defects are independent and neither may hide the other. A non-closure
+        # entry is not adjudicated at all, so it keeps its own reporting (below) and is
+        # never given a malformed-round finding -- its type, not its round, is why.
+        if t in ADJUDICATED_TYPES and not round_ok:
+            id_findings.append(_finding(
+                "*", r, "*", "unknown_round", "entry-round-not-an-integer",
+                "entry #%d type=%s has round=%r, which is not an integer lane-round identity: "
+                "the entry names no lane-round, so its lane row(s) (%s) cannot be adjudicated "
+                "and are held out of the status ledger; lane_rounds (%s) annotates and never "
+                "re-keys them (P:202-211, P:247-256)" % (
+                    i, t, r,
+                    ",".join("%s=%s" % (k, raw[k]) for k in sorted(raw)) if isinstance(raw, dict) else "none",
+                    ",".join("%s=%s" % (k, lr_view[k]) for k in sorted(lr_view)) or "none")))
+            unadjudicable.append({"entry": i, "round": r, "type": t,
+                                   "lanes": raw if isinstance(raw, dict) else {},
+                                   "reason": "invalid-round", "lane_rounds": lr_view})
         if t not in ADJUDICATED_TYPES:
             nonclosure.append({"entry": i, "round": r, "type": t,
                                "recognized": t in NONCLOSURE_TYPES,
@@ -588,7 +658,7 @@ def build_ledger(entries, allowed):
             if isinstance(raw, dict) and raw:
                 unadjudicable.append({"entry": i, "round": r, "type": t, "lanes": raw})
                 for lane in raw:
-                    unadj_keys[(lane, r)] = i
+                    unadj_keys[(lane, round_sort_key(r))] = i
             continue
         if raw is None:
             shape.append(_finding("*", r, "*", "contradiction", "entry-missing-lanes",
@@ -648,6 +718,12 @@ def build_ledger(entries, allowed):
             if st == "not-dispatched" and lane not in lr:
                 shape.append(_finding(lane, r, lane, "contradiction", "not-dispatched-without-lane_rounds",
                                       "entry #%d (round %s) lane_rounds=%s lacks %s (P:244-247)" % (i, r, json.dumps(lr), lane)))
+            if not round_ok:
+                # The entry names no lane-round, so none of its lane rows is a status row:
+                # there is no contract report path, no dispatch join and no keying check to
+                # run on them. The rows are held out of the ledger and reported once, above --
+                # never re-keyed from `lane_rounds`, never coerced to 0.
+                continue
             row = {"lane": lane, "round": r, "status": st, "entry": i,
                    "entry_type": t, "closed_at": ca, "counter": lr.get(lane)}
             rows[(lane, r)] = row
@@ -1091,12 +1167,16 @@ def analyze(inp, opts):
     after_closure = []
     row_findings = {}     # (lane, round) -> finding dict (dedup)
 
-    # closure instant per round (latest closed_at among entries naming that round)
+    # closure instant per round (latest closed_at among entries naming that round). Only an
+    # integer round names a round, so an entry whose round is not an integer contributes to
+    # no round's closure instant (its own lane rows are held out of the ledger instead).
     closure = {}
     for e in inp.entries:
         if isinstance(e, dict) and e.get("closed_at"):
             dt = iso(e["closed_at"])
             r = e.get("round")
+            if not isinstance(r, int) or isinstance(r, bool):
+                continue
             if dt is not None and (r not in closure or dt > closure[r]):
                 closure[r] = dt
 
@@ -1140,7 +1220,7 @@ def analyze(inp, opts):
     dispatch_keys = set(inp.dispatch)
     complete_keys = set(inp.completes)
     seen_keying = set()
-    for row in sorted(all_rows, key=lambda x: (lane_sort(x["lane"]), x["round"], x["entry"])):
+    for row in sorted(all_rows, key=lambda x: (lane_sort(x["lane"]), round_sort_key(x["round"]), x["entry"])):
         lane, r, v, st = row["lane"], row["round"], row["counter"], row["status"]
         if not isinstance(v, int) or isinstance(v, bool):
             continue                      # already a shape contradiction
@@ -1154,7 +1234,7 @@ def analyze(inp, opts):
         if v == r:
             continue
         if (lane, v) not in dispatch_keys and (lane, v) not in complete_keys \
-                and (lane, v) not in rows and (lane, v) not in unadj_keys:
+                and (lane, v) not in rows and (lane, round_sort_key(v)) not in unadj_keys:
             f = _finding(lane, r, "row", "keying_violation", "lane_rounds-identity-absent",
                          "lane_rounds[%s]=%d names lane-round (%s,%d) with no dispatch/complete line and no ledger row (P:244-249)" % (
                              lane, v, lane, v))
@@ -1177,7 +1257,7 @@ def analyze(inp, opts):
                 continue
 
     # ---- ledger rows -------------------------------------------------------
-    for key in sorted(rows, key=lambda k: (lane_sort(k[0]), k[1])):
+    for key in sorted(rows, key=lambda k: (lane_sort(k[0]), round_sort_key(k[1]))):
         row = rows[key]
         lane, n, st, ca = row["lane"], row["round"], row["status"], iso(row["closed_at"])
         if st == "ok":
@@ -1286,11 +1366,11 @@ def analyze(inp, opts):
                         row_findings[key] = f
 
     # ---- dispatch keys / prompt orphans -----------------------------------
-    for key in sorted(set(inp.dispatch) | set(inp.prompts), key=lambda k: (lane_sort(k[0]), k[1])):
+    for key in sorted(set(inp.dispatch) | set(inp.prompts), key=lambda k: (lane_sort(k[0]), round_sort_key(k[1]))):
         lane, n = key
         if key in rows or key in row_findings:
             continue
-        if key in unadj_keys:
+        if (lane, round_sort_key(n)) in unadj_keys:
             continue       # legacy-typed row: unadjudicable, not a missing row
         d = first_dispatch(lane, n)
         if d is None:
@@ -1336,7 +1416,7 @@ def analyze(inp, opts):
         unrowed.append(f)
 
     # ---- dispatched after their round's closure ---------------------------
-    for key in sorted(inp.dispatch, key=lambda k: (lane_sort(k[0]), k[1])):
+    for key in sorted(inp.dispatch, key=lambda k: (lane_sort(k[0]), round_sort_key(k[1]))):
         lane, n = key
         c = closure.get(n)
         d = first_dispatch(lane, n)
@@ -1433,8 +1513,8 @@ def analyze(inp, opts):
         "debt": _sorted_debt(debt),
         "could_not_evaluate": _sorted_debt(cne),
         "nonclosure": nonclosure,
-        "live_in_flight": sorted(live_in_flight, key=lambda f: (lane_sort(f["lane"]), f["lane_round"])),
-        "pending_round": sorted(pending_round, key=lambda f: (lane_sort(f["lane"]), f["lane_round"])),
+        "live_in_flight": sorted(live_in_flight, key=lambda f: (lane_sort(f["lane"]), round_sort_key(f["lane_round"]))),
+        "pending_round": sorted(pending_round, key=lambda f: (lane_sort(f["lane"]), round_sort_key(f["lane_round"]))),
         "unadjudicable": unadjudicable,
         "history_pin": {"note": pin_note, "findings": pin_findings},
         "untracked_prompts": untracked_prompts or [],
@@ -1457,7 +1537,7 @@ def analyze(inp, opts):
         "citations": inp.citations,
         "citation_tally": citation_tally,
         "citation_scope": inp.citation_scope,
-        "ledger": [rows[k] for k in sorted(rows, key=lambda k: (lane_sort(k[0]), k[1]))],
+        "ledger": [rows[k] for k in sorted(rows, key=lambda k: (lane_sort(k[0]), round_sort_key(k[1])))],
         "meta": {"repo": inp.root, "kind": inp.kind, "entries": len(inp.entries),
                  "log_lines": len(inp.log_lines),
                  "dispatch_events": sum(len(v) for v in inp.dispatch.values()),
@@ -1533,7 +1613,7 @@ def _lane_round_keying_tally(entries):
             continue
         lr = e.get("lane_rounds") if isinstance(e.get("lane_rounds"), dict) else {}
         for lane, st in _entry_lane_items(e):
-            rows[(lane, lr.get(lane, e.get("round")))] = st
+            rows[(lane, round_sort_key(lr.get(lane, e.get("round"))))] = st
     return _tally([{"status": s} for s in rows.values()])
 
 
@@ -1543,7 +1623,7 @@ def _all_entries_keying_tally(entries):
         if not isinstance(e, dict):
             continue
         for lane, st in _entry_lane_items(e):
-            rows[(lane, e.get("round"))] = st
+            rows[(lane, round_sort_key(e.get("round")))] = st
     return _tally([{"status": s} for s in rows.values()])
 
 
@@ -1604,12 +1684,22 @@ def render_text(result, opts):
 
     if result["unadjudicable"]:
         out.append("")
-        out.append("== Unadjudicable (legacy-typed entries: fleet-keyed, never a lane-round status) ==")
-        out.append("statuses inside these entries are not integrity-protected: a status edit here is "
-                   "mutant not-applicable, not a gate blind spot")
+        out.append("== Unadjudicable (entries whose lane rows name no lane-round: legacy-typed "
+                   "fleet-keyed rows, and entries whose round is not an integer) ==")
+        legacy = [u for u in result["unadjudicable"] if not u.get("reason")]
+        if legacy:
+            out.append("legacy-typed entries: their statuses are not integrity-protected (a status "
+                       "edit here is mutant not-applicable, not a gate blind spot) and no finding "
+                       "names them")
         for u in result["unadjudicable"]:
             lanes = ", ".join("%s=%s" % (k, u["lanes"][k]) for k in sorted(u["lanes"]))
-            out.append("entry #%d round=%s type=%s  %s" % (u["entry"], u["round"], u["type"], lanes))
+            line = "entry #%d round=%s type=%s  %s" % (u["entry"], u["round"], u["type"], lanes)
+            if u.get("reason"):
+                # A held-out entry IS named by a finding (unknown_round): its round names no
+                # lane-round, so its lane rows cannot be adjudicated and are not counted.
+                line += "  [%s: names no lane-round; reported as an unknown_round finding, " \
+                        "lane rows held out of the ledger and not counted]" % u["reason"]
+            out.append(line)
 
     out.append("")
     out.append("== Debt (exit-%d drivers): %d ==" % (EXIT_DEBT, counts["debt"]))
@@ -1678,8 +1768,10 @@ def render_text(result, opts):
     ek = result["keying_tallies"]["entry_keyed"]
     ak = result["keying_tallies"]["all_entries_entry_keyed"]
     lk = result["keying_tallies"]["lane_round_keyed"]
-    out.append("entry-keyed, adjudicated (closure*) entries only: %s" % _tally_text(ek))
-    out.append("entry-keyed, all entries incl. legacy fleet-keyed rows: %s" % _tally_text(ak))
+    out.append("entry-keyed, adjudicated (closure*) entries only -- AUTHORITATIVE: %s" % _tally_text(ek))
+    out.append("entry-keyed, all entries incl. legacy fleet-keyed rows and rows held out "
+               "because their entry names no lane-round -- DIAGNOSTIC census, not a verdict: %s"
+               % _tally_text(ak))
     if opts.get("show_keying"):
         out.append("lane_rounds-keyed (non-authoritative, --show-keying): %s" % _tally_text(lk))
     out.append("unadjudicable rows: %d (entries %s)" % (
@@ -1759,6 +1851,7 @@ def _counts(result):
             "history_pin": by_class.get("history_pin", 0),
             "unknown_lane": cne_class.get("unknown_lane", 0),
             "unknown_entry_type": cne_class.get("unknown_entry_type", 0),
+            "unknown_round": cne_class.get("unknown_round", 0),
             "could_not_evaluate": len(cne),
             "nonclosure": len(nonclosure),
             "nonclosure_unrecognized": sum(1 for e in nonclosure if not e.get("recognized")),
@@ -1879,8 +1972,8 @@ def do_selftest(script_dir, opts):
             continue
         want = {}
         for k in ("exit", "debt", "contradictions", "unrowed_terminated", "pending_round",
-                  "could_not_evaluate", "unknown_lane", "unknown_entry_type",
-                  "nonclosure", "nonclosure_unrecognized"):
+                  "could_not_evaluate", "unknown_lane", "unknown_entry_type", "unknown_round",
+                  "nonclosure", "nonclosure_unrecognized", "ledger_rows", "entry_keyed_ok"):
             if k in baseline:
                 want[k] = int(baseline[k])
         counts = _counts(result)
@@ -1891,9 +1984,18 @@ def do_selftest(script_dir, opts):
                    "could_not_evaluate": counts["could_not_evaluate"],
                    "unknown_lane": counts["unknown_lane"],
                    "unknown_entry_type": counts["unknown_entry_type"],
+                   "unknown_round": counts["unknown_round"],
                    "nonclosure": counts["nonclosure"],
-                   "nonclosure_unrecognized": counts["nonclosure_unrecognized"]}
+                   "nonclosure_unrecognized": counts["nonclosure_unrecognized"],
+                   "ledger_rows": len(result["ledger"]),
+                   "entry_keyed_ok": result["tallies"]["ok"]}
         got = {k: got_all[k] for k in want}
+        if "cne_kinds" in baseline:
+            # A stable finding id, not only a count: the could-not-evaluate findings the
+            # fixture expects, each as "<class>:<kind>".
+            want["cne_kinds"] = sorted(str(x) for x in baseline["cne_kinds"])
+            got["cne_kinds"] = sorted("%s:%s" % (f["class"], f["kind"])
+                                       for f in result["could_not_evaluate"])
         ok = want == got
         passed += 1 if ok else 0
         reports.append({"case": name, "status": "pass" if ok else "FAIL",

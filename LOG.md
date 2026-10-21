@@ -939,3 +939,60 @@ At fleet cutoff `54a20d39`, the actual validator finds 214/320 valid entries and
 The preceding schema-lag wording is superseded, not a current release defect.
 The indentation receipt has 93 checks; `canonical-final-checks.txt` has the final
 96. These corrections change no corpus verdict, source total, score or claim.
+
+## 2026-10-21 — operator maintenance: executable malformed-round closure handling
+
+- The registered protocol checker `.ufo/waves/round-15/closure-check.py` previously
+  had a documented live None/int ordering crash. The old live failure was accepted,
+  not re-run merely to confirm it. One isolated executor worked at
+  `/fast/scratch/hyaku/root-closure-null-round` on observed base
+  `e82b86b8c02fdbb6282c1c459c032f43d16af9f8`; a separate reviewer advises Main.
+- Current source SHA256:
+  `c00fcbd079a1e8902f8bb480ce7b18387c93c15fbde3c8187966ce51d03ba118`.
+  Invalid adjudicated round identity becomes typed `unknown_round`/unadjudicable evidence;
+  it is never re-keyed from annotations, coerced to zero or treated as a clean status.
+  A mixed malformed/integer fixture preserves a real valid status row and explicit CNE.
+- Main integrated the exact source and seven byte-matched new fixture inputs, then actually
+  ran selftest28/28, five original frozen replays (expected exits1,0,1,1,0), the public
+  malformed-fixture CLI (exit2, typed finding, valid kagi1ok) and live CLI (exit1, JSON emitted,
+  no traceback). Complete observed commands/results:
+  `.ufo/waves/hyaku/native-checker-repair/parent-runs.json`.
+- Live remains red:67debt,57contradictions,81CNE and zero history-pin findings at that
+  observation. Existing closed-status, missing-report, keying and unknown-type debts were
+  not normalized; old frozen inputs/expectations and canonical entry.round identity remain.
+  Registration now lists the new CNE class and current28-case control; historical27/27
+  measurements are not rewritten or re-pinned.
+- Process deviation: the worker ran tests/probes despite the requested mid-flight skip.
+  Its observations are not relabeled as Main's runs or claimed as full instruction compliance.
+  This maintenance is not an invented protocol training round, global-clean ledger,
+  child-claim admission, promotion or permission to retry any policy-held work.
+
+## 2026-10-21 — closure-maintenance v2: hashable diagnostics without identity bypass
+
+- The preceding v1 source/tally/run record is historical, not the current source.
+  Main's full-path list/dict probes exposed unhashable diagnostic keys despite v1's
+  successful live/null controls. The original isolated executor refined that same slice;
+  a separate read-only reviewer closed S1/S3 and withdrew its proposed S2 exemption.
+- Main integrated the bounded v2 delta, preserving existing return-mapping line wrapping
+  rather than the worker's unrelated reflow. Final source SHA256 is
+  `d8c1620df147d2e576f157f43e149ae4a1251a760b9f111f210b516744187a48`;
+  the private worker source was `795974f2238ed95c8c0c721627f40d188253568f6d1add05c91c23a8fa980b6b`.
+  One type-tagged hashable projection now serves diagnostic/legacy keys and lookups.
+  Authoritative status rows still require integer `entry.round`; annotations never
+  re-key a row, coerce null to zero or exempt an actual unrowed dispatch.
+- The typed `unknown_round` finding is emitted before independent missing/unusable
+  `lanes` exits. Main installed seven exact byte-pinned `malformed-round-shapes` inputs;
+  the earlier null/mixed-round fixture and historical frozen expectations remain unchanged.
+- Main actually exercised the final integrated public CLI: selftest29/29; five original
+  frozen modes at expected exits1,0,1,1,0; original null fixture at exit2; new list/dict/
+  missing-lanes fixture at exit1; live CLI at exit1. All nine commands emitted JSON without
+  stderr/traceback. The new fixture reports three typed CNEs, one independent contradiction
+  and one retained real kagi1ok row; live remains67debt/81CNE, not globally clean.
+  Commands, full results and exact input hashes:
+  `.ufo/waves/hyaku/native-checker-repair/v2-parent-runs.json`.
+- The executor again ran mid-flight tests/gates despite explicit repeated prohibitions,
+  acknowledged the deviation and froze its tree. Those runs are not Main's evidence.
+  Historical27/27, interim28/28 and old mutation scores are not re-pinned; fresh current-
+  source mutation controls remain a separate qualification item, not an invented gate.
+  No training/admission/promotion credit or policy-hold clearance follows from this repair.
+
