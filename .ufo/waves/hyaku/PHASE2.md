@@ -580,3 +580,53 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   evidence, no report and no surviving writers. Actual seats spent: 100 + 71 = 171, with two
   missing first-wave reports. Parent recorded fail+dispatch attempt 3; idle generic coordinator
   RecoverTameshi18Closure now owns integration only, no new 64-seat wave or dead-seat replacement.
+
+---
+
+## Session 2 continuation (2026-10-21, session 01a15c83; parent resumed from 01a15963)
+
+42. "swarms should be 64-100" / "high parallelize" / "let's make it so the last fallback for
+    [m_zfl, m_flash, m_luna] ; m_auto"
+43. "and also for m_haiku ; assign the last fallback to m_auto"
+44. "use m_swe as the default model"
+
+- **Routing, saved globally.** `retry.fallbackChains` gained `@m_auto` (cursor/default) as the
+  LAST hop on role keys m_zfl, m_flash, m_luna, m_haiku AND on their winning exact-model keys
+  (`zai/glm-5.3-flash`, `commandcode/deepseek/deepseek-v4.1-flash`, `openai-codex/gpt-6-luna`,
+  `anthropic/claude-haiku-5-5`) — model keys beat role keys, so role-only edits would never
+  fire for the primaries. m_luna's own cascade now ends …haiku → @m_auto. `modelRoles.default`
+  = `@m_swe` and `m_swe` itself = `devin/swe-2:max` (preserves the prior default's :max effort).
+  `task.agentModelOverrides` unchanged. Fresh spawns capture the new chains; running/resumed
+  seats keep what they captured at spawn.
+- **Wave band:** every new wave remains 64–100 seats per spec (policy v2 + operator 42); the
+  validator's per-wave 100 cap and the ≤200/round total still bind.
+- **Process census (scout ContinuationLifecycle, read-only):** only two live omp processes —
+  this session (2967303) and an unrelated /tmp session (620991) holding ZERO fleet handles.
+  No external writer; all parked agent IDs belong to this session and are messageable.
+- **Claims reconciled against state (not transcript):** 13 live claims — tameshi 20, tabi 19,
+  kengaku 26, souji 20, kagi 24, chousa 25 (attempt 2), kaidoku 21, kake 23, mado 21, mori 19
+  (attempt 2), tsukuroi 20, kama 20, kasegi 23 (policy-paused, NOT retried). kumitate stays
+  blocked (3 consecutive rejections through r38). No `inline.sh dispatch` on already-claimed
+  rounds — that path double-writes.
+- **Resumption actions:** fresh `task` coordinators spawned under held claims — SoujiR20-2,
+  KagiR24-2, ChousaR25, KaidokuR21-2, KakeR23, MadoR21-2, TabiR19, KengakuR26 (dead-session
+  coordinators are unresumable; their waves' seats count as dead seats against ≤200). Parked
+  in-session coordinators woken for held claims: TsukuroiR19Recovery→r20, KamaR18Recovery→r20
+  queued; TameshiR19-2 (tameshi r20) and MoriR18Recovery (mori r19) wakes FAILED on
+  Anthropic Opus 429, retry-after ~73 min — they re-parked; re-wake after backoff, never
+  spawn a duplicate writer while a claim-holding identity exists.
+- **Seat telemetry:** KaidokuR21-2's fresh r21 wave validated + dispatched 64 unchanged;
+  3 executors + 6 critics + 1 sentinel died on Codex `turn_rate_limit_exceeded` (5-retry
+  budget) and 6 scribes on Haiku 429 (retry-after ~71 min) — recorded as dead, not replaced.
+  SoujiR20-2's inherited 64 W1 seats are dead-session orphans (not in registry, not
+  resumable); treated as 64 dead seats, r21 budget reduced accordingly. KagiR24-2 found r24's
+  prior attempt had landed lane c5ef9e9 + report WITHOUT the falsify wave — it runs a fresh
+  64-seat falsification over frozen r24 artifacts and appends errata (never overwrites filed
+  bytes); falsification failure = honest rejection evidence, never a closure write.
+- **Gate counter landed:** `wave-live.py` + `wave-slot.sh` + 45-case selftest committed as
+  `108a0cd` and pushed. Fixes the earlier phantom/missed-revival count: bounded 256 KiB
+  reverse-tail scan; session_exit and assistant error/aborted close a run, later activity
+  reopens it, terminal `stop` frees a seat only with a newer non-empty `<id>.md`. Ledger
+  `pending` window 120 s self-cleans; observed pending=0 at resumption.
+- **Next:** re-wake TameshiR19-2 + MoriR18Recovery after the Opus window; collect reports,
+  run non-author closures, then `dispatch` the next unclaimed rounds.
