@@ -2,7 +2,7 @@
 
 Lane: `kagi-shokunin`. Base `d218603b74099ddca0bd8f869516fc41db0979bf`; measured
 lane commit `e1884c6ecb7ccd717965b0d748bc193137118dbf`, final lane commit
-`7af07b4d80009988202ab771b47e4f5c1a788903` (helper `landed` lines, pushed).
+`284d40e025544805520e38522574612d5d848b64` (helper `landed` lines, pushed).
 Build wave: parent-held 66 seats (43 claim-ledger command-row audits + 23 source-row
 audits, `parent-build-dispatch.json`). This lane dispatched no second build wave and
 remained the sole production writer. Falsify wave: 64 seats, `.ufo/waves/round-23/falsify-spec.json`.
@@ -55,8 +55,10 @@ planner seat). Zero seats were replaced. Integrated findings:
   (file + anchor substring + id token); its source digest is pinned in the same
   lane-writable JSON; only `fixed` requires the id token. C2 `SC_FETCH` is shape/identity,
   not content verification: 16 legacy in-row digests pass on presence and are never
-  compared (stated historical bound); quote text is not substring-checked; captures are
-  point attestations. C3 proves the `cells` mechanics, not all 43 row obligations;
+  compared (stated historical bound); quote text and location are not verified against
+  the page (a changed-word quote, a blank quote/location, or thin-space-joined words
+  pass the ASCII word/shape test); the 59-case selftest does not exercise the in-row
+  branch; captures are point attestations. C3 proves the `cells` mechanics, not all 43 row obligations;
   `rows_run` counts selected rows, so only `row_deferred=0`/`self_skipped=0` exclude an
   unexecuted fixture; one fixture stamp (`fx-ok.sh`) is inert because no cell cites it.
 - **Inherited, reported unverified:** `R11-08` citations is red at base because the
@@ -103,6 +105,7 @@ Other evidence bullets:
 | closure disposition gate + records, source-fetch table, census SC_FETCH, hermetic cells fixture, lesson, SOURCES S024–S026, SCORECARD/LOG/SKILL/prose corrections, stamps, wave specs | `LOG.md` §Round 23 | `e1884c6e` |
 | measured verdict with `measured_commit`, corrected provenance header/location, final pins | `LOG.md` §Round 23 | `ea5b7348` |
 | migration record (R12-03/R13-01/R21-02/R21-03/R21-04/R22-03 old→new), symlink regression case, stale 47→59 counts, S015 debt | `LOG.md` §Round 23 | `7af07b4d` |
+| quote/location bound corrections (declared, shape-checked only; location unverified; blank/thin-space bypass named) and in-row selftest-adequacy bound | `LOG.md` §Round 23 | `284d40e0` |
 
 ## Before → after measurements
 
