@@ -8985,6 +8985,46 @@
    "notes": "watchdog digest: 2026-10-20T18:30:55-03:00 launch kagi round=22 pgid=1119391 driver=hyaku-inline attempt=1 / 2026-10-20T20:24:43-03:00 complete kagi round=22; hyaku-inline attempt=1. Landings 8ada17a5, 4be5da3c (measured), 254d632e; report fleet c5c5d1d2. Step-1 clean. r21 debts learned: QA10/QM13/QM14 appended; E1/E3 active correction with historical bodies kept; 9 deleted r21 stamp lines justified 9/9 by round21-migrations.json; stale pins repaired. Waves 64+66 (130 spawn IDs, 129 names: CriticNoTrade reused as fresh -2); 4 Haiku-429 scribes dead, uncredited, no replacements. Disclosed safety deviations are conformance defects, status-neutral: two unauthorized legacy full-verify runs (incl. R18-01) with unretained receipts, no secret-access attestation; AttackActiveReview claims withdrawn/quarantined; scratch collision /tmp/kagi-shokunin retained; mise node@26.12.0 side effect also wrote global ~/.config/mise/config.toml (mtime 18:33:38-03:00). Routed D1-D9 in spotcheck: census W04 omission; mise global-config disclosure + operator revert decision; full-verify forbidden-path contexts/guard selftest; boilerplate pin dispositions lack drift commits; seat-name reuse; verdict file lacks measured commit; S017-S023 per-row quote/digest + stale Gate prose; /tmp residue cleanup (operator); hermetic cells run. SHONEN all [~]; closure supplies box-3 outside check; promotion operator-owned. No r23 work started.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 35,
+   "date": "2026-10-21",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 35,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 35
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "unchanged",
+    "coverage:script-layer": "improved",
+    "coverage:runtime-layer": "unchanged",
+    "coverage:kimi-layer": "improved"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-35/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-35-verifier-spotcheck.md@0614092e0804aaca06642cb3a263a05c1cacc98e",
+    "rechecks": "C1: committed layerTerms occurrence-sum -> distinct Set(section.file); selftest check() calls 75->80, committed 104->109, mutation 0/2->2/2 (S 88->87, R 83->82). C2: pin 70 top-level + 18 subtree = 88 members; base 91 - 5 member deletions + 2 additions = 88 (dev-verify.sh non-member); S8 note 68=5 topic+63 member headings -> 66=5+60+1 departed, 63-5+2=60; committed proxy 9 -> 10 and claims 6 errors -> MATCH errors=0. C3: K1 member entries 3->4, FROZEN 50->51, no readFileSync/openSync (lstat+mode only), committed census DRIFT -> CLEAN members=51 strays=0, selftest 45->48. sources-census validate ok exit 0; spot-check 4/4 agree (S021/S022/S023 admits, S020 reject); lane clean ahead=0."
+   },
+   "commit": "kumitate-shokunin@4c9e40759d0946d8abac07d87ea0b6363fa8dbc3",
+   "closed_at": "2026-10-21T03:43:56Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch 2026-10-20T21:05:26-03:00 launch kumitate round=35 pgid=2568700 driver=hyaku-inline attempt=1; complete 2026-10-21T00:34:26-03:00. Report 00b0344 committed by kumitate-shokunin after lane tip 4c9e407 (report 23:36:23 > lane 23:35:06; lane ahead=0, clean). 3 claims verify; no axis harmed (operability 8 held, coverage:runtime-layer 9 held, A=7 C=13 held, stanza C2 77->79). Distinct-axis ruling: coverage retired and split into three recorded live successors; C2/C3 are distinct sub-axes, and even under a strict one-coverage reading they merge to one claim (2 claims on 2 axes, still in cap). C2/C3 both coverage is therefore not an over-cap violation. Routed defects: (1) claims gate verifies anchor liveness, not symbol-on-line (36 dead S8 anchors survived until the falsify wave); (2) LOG 'S regressed anchors 223 -> 182' and report 'per-file cite-check vs a master clone/no edited file rose/91' lack committed counting outputs (59->42->30 is backed); (3) 624 non-ok anchors in 11 S1-S7 notes remain marked in situ, not fixed; (4) final/cite.txt names the operator checkout (src=/home/vgpnk/Projects/ufo-fsd-alpha), not the pinned clone. SHONEN boxes appear fully checkable by an operator promotion reviewer; no [x] written (operator-owned).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
