@@ -91,3 +91,9 @@ plus new false leads (function passed only to `print`; class target sweeps an un
 a read-only `globals()` comparison that still clears bindings. Author verdict for C1 is therefore
 revised to **harmed (recall regression vs `28c6837` on two shapes)** pending the closure; fixes are
 round-21 work. Remaining six review reports were still running.
+
+CriticPrecisionV3 (`mado-shokunin/.ufo/waves/round-20/a2/review/CriticPrecisionV3.md`): falsified —
+18 false `lead` rows at `a8960de` that are clean at `28c6837` (reference sweeps of bodies that never
+run), and a purity hole: `imaplib.IMAP4_stream` (stdlib, outside PROCESS_STDLIB) launches a process,
+reported at `28c6837`, silent at v3.1. Confirms C1 **harmed** (recall and precision regressions vs
+`28c6837` off-suite). Round-21 work: narrow reference sweeps, add process-launching stdlib entries.
