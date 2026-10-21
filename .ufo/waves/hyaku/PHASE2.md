@@ -867,3 +867,21 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   2026-10-21T19:50:45Z. Tabi's Devin weekly-quota reset time is not supplied.
   Checkpoint scouts and the finite backoff timer were refused at the 100-job cap; no timer
   is running. Existing job results still wake the orchestrator. No route/model/auth changes.
+- **Backoff timer now running:** a later admission succeeded as `bg_737` (`sleep 5531`),
+  automatically waking Main at the conservative provider deadline. The two checkpoint scouts
+  also started and completed; reports are in `/fast/scratch/hyaku-resume-s3/`.
+  Kotoba r47 has an unlanded 21-file L1 diff in its private scratch clone; 169 seats spent,
+  145 reports, 24 dead. Tabi r22 has 129 seats spent (64 W1 + 65 W2b), 58 W2b reports
+  and seven W2b deaths. All-refused waves spent zero. No live descendants were found for
+  either failed coordinator. Their reports remain absent. Scout first-draft advice to
+  reissue dead items or refresh dispatch baselines was explicitly retracted.
+- **Landed, not yet closed:** kengaku r29, lane `6a2c2df788a4fdb216dd5790f9ae6dd326169f47`,
+  report `2ae9ba1cbeece14cb548291c3fe37464c869cf2b`; tsukuroi r23, lane
+  `626668261c87a7418b8947898e66e9a098502228`, report `3d4110e168b444e42c1be24a346492619af48175`;
+  kaidoku r24, lane `1e1bbef45ea0b92e443cdca04b814e74dfecbca1`, report
+  `dd3eb06f57ad3b4f728d63ce93a21c3fe24ab7a1`. Parent verify passed and full closure prompts
+  rendered for all three. Tsukuroi C2 remains unprovable across waves; kaidoku's original
+  C2 gate is 9/11, not passed by the revised gate's 11/11.
+- **Kengaku source-copy incident review:** Kengaku29CopyReview (sentinel) is checking the
+  five removed account-default/endpoint copies and retained history, without reproducing values
+  or using credentials. This is advisory safety evidence, not an admission verdict.
