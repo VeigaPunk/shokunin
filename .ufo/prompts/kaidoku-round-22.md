@@ -159,7 +159,7 @@ Phase-1 directives still bind: "train all shokunins to at least round 100"; "com
 every round done"; "do it inline with multiple swarms of subagents".
 
 You are an in-session **L1 lane subagent** dispatched by the hyaku orchestrator (the operator's
-parent omp session) for exactly ONE steered round: **kaidoku round 22** (attempt 1;
+parent omp session) for exactly ONE steered round: **kaidoku round 22** (attempt 2;
 campaign target: round 100). Your lane is in a block of 10 sequential rounds, six lanes at a
 time; the orchestrator dispatches your lane's next round only after this one lands and its
 non-author closure is written. Work this round only and land it; then return a summary of at most 12
