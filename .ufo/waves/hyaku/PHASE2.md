@@ -557,3 +557,26 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   This supersedes all earlier retry-40 instructions in this campaign record and old prompt
   snapshots. Fallback chains, routing, concurrency targets and running workers were not changed.
   Already-created child sessions may retain their captured settings; no worker was restarted.
+- **Further closures:** mori r18 admitted at `rounds[386]` (spot-check `b3602869`); its r19
+  first author wake failed before any answer on Anthropic 429/backoff. Parent recorded failure,
+  preserved the baseline and dispatched attempt 2 as fresh MoriR19Recovery; no old worker seat
+  was revived or replaced.
+- **mado r20 closure:** Main performed the non-author integration after a proposed reviewer's
+  wake failed before an answer and a fresh coordinator spawn was refused. RecoverReadyLanes
+  independently recounted receipts and reopened sources read-only. Main's immutable `got==want`
+  recount confirmed 29/175 → 172/175, unchanged case names/order/expectations; C2's 30-prime
+  shares C1 evidence. Unresolved committed recall/precision/resource counterexamples and the
+  knowledge entry's current overclaims mean `rejected-harmed`, `rounds[387]`, fleet `eeba593d`.
+  Spot-check `794aaeb2` is remote-confirmed. mado r21 is now assigned to fresh MadoR21; a third
+  consecutive rejected closure would block the lane.
+- **tsukuroi r19:** the held falsify wave finally ran (72 seats, 66 reports, six provider-dead,
+  no replacements; total 140), seven repair classes landed. Author tip `e1865d17`, measured
+  `1f35705a`, fleet erratum `d70ce422`; fresh CloseTsukuroi19 owns its non-author closure.
+  Boot readiness is not certified: the author retains plymouth/hook rechecks as INCONCLUSIVE.
+- **souji r19:** its parked follow-up reported a successful 68-seat wave with zero dead, tip
+  `49b64584`, errata through `9764dc55`; late reports were still uncommitted. Parent requested
+  their helper-only landing before closure, preserving the unrelated operator sweep.
+- **kaidoku r20:** failed recovery attempt 2 left pushed tip `5c0b46c4` plus dirty authored
+  evidence, no report and no surviving writers. Actual seats spent: 100 + 71 = 171, with two
+  missing first-wave reports. Parent recorded fail+dispatch attempt 3; idle generic coordinator
+  RecoverTameshi18Closure now owns integration only, no new 64-seat wave or dead-seat replacement.
