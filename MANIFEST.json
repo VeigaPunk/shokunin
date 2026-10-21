@@ -10171,6 +10171,80 @@
    "notes": "Dispatch digest: 2026-10-21T04:38:59-03:00 launch mori round=19 attempt=1;04:40:20 lane-dead-no-report (author wake failed before answer/wave);04:51:00 launch mori round=19 attempt=2. At closure no watchdog completion line yet; actual lane/report pushed and author completed. R18 admitted, rejection streak reset. W1 64 returned IDs,16 reports,8 known provider failures,1 cancellation,39 unknown no-report causes (not successful reviews/deaths inferred); W2 70 returned IDs,48 reports,22 provider failures;134 total,0 replacements. Status-neutral debt routed to mori: preserve actual RED194-path/155 unresolved review dispositions until genuine content review; do not infer privacy clearance or broad authenticity. W1 custom-object/noncanonical attempt ledger remains nonconformant; do not rewrite historical ledger. Preserve original failed smoke and assumed-before counter as superseded, no rerun-to-prettify. Future erratum should reference the historical blob mapping here and explicitly distinguish minimized present copies from historical rerun inputs, never re-pin originals. Seven new account-qualified RULES pointers and two old JSONAttack executable pointers are low location-minimization debt; bound dispatch payloads must not be silently rewritten. Scope-breach M7 remains a lesson-backed conduct gap, not clean-state compliance credit; no blanket SHONEN/no-cross-domain certification. Exposure/history decision remains operator/kagi-owned; no history rewrite or rotation authorized. Existing S054 source-fetch limitation remains routed provenance debt, no new re-verification credit. Trends unchanged/unchanged/improved; no promotion, mint, new L0 question or tool install/update. No lane/report file edited by closure.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 24,
+   "date": "2026-10-21",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 24,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 24
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "freshness": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-24/kagi.md",
+   "verification": {
+    "reviewer": "CloseKagi24 (orchestrator-dispatched non-author closure)",
+    "scope": "Read-only lane/report per assignment; independent evidence retained in this closure row, no verifier lesson written into lane.",
+    "rechecks": "All re-measured in fresh scratch clones at 4587c61a with empty HOME (lane untouched, no installs). C1: host-tripwire.sh BASE total=35 (verify 1/22, cells 1/11) complete=4/4 -> HEAD total=0 complete=4/4 population_skipped=12/12 on all four runs (host_skip_lines=48); gate-regression.py c5ef9e92->277a0d4f GATE_REGRESSION PASS before_exit=1 (SELFTEST FAIL 10/151) after_exit=0 (PASS 151) fixtures_identical=True; env -i empty-HOME verify in fleet layout exit0 CLAIM_LEDGER CLEAN (claims=61 deferred=0 stamped=83 ids=61 cited=51 labeled_ids=20 orphans=10 host_skipped=12); citations CLEAN unresolved=0 (cites=1371 docs=67). C2: recovery-count.py BASE rows=26 captures=10 inrow_only=16 stamp_rows=79 -> 017cc4c5/HEAD rows=32 captures=32 inrow_only=0 stamp_rows=83 mismatches=[]; tool-free git show+grep cross-check 10->32 captures, 26->32 SOURCES rows, S001-S016 all captured; normalizer-replay.py exit0 rows=10 v1_matches=10 ascii_matches=7 (fresh fetch, v1 digests byte-identical to receipt); rendered-text-v1.py unchanged 21293b4f..HEAD. C3: identity-swap.py --selftest PASS cases=12; BASE population=15 survived=15 killed=0 invalid=0; HEAD survived=0 killed=15 invalid=0, all controls exit0, mutants exit1 with complete receipts; same hardcoded 15-ID population; R24-C6 scopes C3 to declared projections (semantic extension excluded). Fleet sources-census validate kagi exit0 ok + 8 W04.",
+    "source_spotchecks": [
+     {
+      "item": "S027 admit/mined",
+      "decision": "agree",
+      "source": "https://docs.python.org (re \\s / str.isspace)",
+      "reason": "Live page contains 'Matches Unicode whitespace characters'; SOURCES quote 13 words."
+     },
+     {
+      "item": "S029 admit/mined",
+      "decision": "agree",
+      "source": "https://curl.se/docs/manpage.html (--compressed)",
+      "reason": "Live manpage contains 'automatically decompress the content'; quote 17 words."
+     },
+     {
+      "item": "S030 reject",
+      "decision": "agree",
+      "source": "kagi-shokunin/.ufo/waves/round-24/recovery-normalizer-replay.json",
+      "reason": "ASCII-collapse alternative mismatches exactly S022/S023/S024 (7/10) while v1 reproduces 10/10; rejection scoped to collapse choice."
+     },
+     {
+      "item": "R24-C6 semantic identity extension reject",
+      "decision": "agree",
+      "source": "kagi-shokunin/plans/round-24.md:89-93",
+      "reason": "Case-name/path-key projections do not bind assertion bodies or all row columns; C3 correctly restricted to declared projected identity."
+     }
+    ],
+    "axis_harm": "None found. SCORECARD all axes 9->9 (no inflation); SOURCES +12/-0 with S001-S031 bytes untouched (S032 added, S007 not rewritten); LOG +129/-0, QUALITY +25/-0 append-only; selftests only rise (121->151, census 59->70); stamps 79->83 zero dropped; PROVINCE boundaries identical. Default-skip population is exactly 12 tagged rows (11 [substrate], 1 [host] R18-01 newly tagged); 49/61 non-host rows still execute, so no non-host coverage reduced.",
+    "independent_seats": [
+     "CloseKagi24.C1Measure",
+     "CloseKagi24.C2Measure",
+     "CloseKagi24.C3Measure",
+     "CloseKagi24.AxisHarm"
+    ]
+   },
+   "commit": "kagi-shokunin@4587c61a348e4528717404a68912c373f3ef4d03",
+   "closed_at": "2026-10-21T10:22:53Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: watchdog 2026-10-21T02:43:10-03:00 launch kagi round=24 pgid=466188 driver=hyaku-inline attempt=1; events.log inline launch model=@m_opus; no complete line at closure. Reports 01d1c22d (original) and 1eed5087 (recovery erratum) committed by kagi-shokunin on fleet; all 13 cited lane hashes ancestral to master 4587c61a = origin (jj-lane state ahead=0 behind=0 tracked=0 untracked=0, detached HEAD handled via branch). Prompt .ufo/prompts/kagi-round-24.md carries template contract + hyaku addendum; report has all required sections both passes. Author KagiR24-2 (recovery writer inheriting c5ef9e92). Disclosed and confirmed defects (status-neutral): 11 dead seats (ProbeAbsPath inherited + FGateDecisions, FSeparability, FWaveEvidence, FMigration, FIdentityR2104, FIdentityR1110, FPolicyCitations, FNormWhitespace, plus repair executors FixGateConfinement, FixIdentityInstrument-2; Codex turn_rate_limit_exceeded), 8 atomic whole-wave job-cap refusals before 64-seat falsify start, round total 133 seats; original report filed before evidence commit and wave-2 absent (superseded by recovery wave), M24-4 late start census, M24-16 working-tree repairs begun before final read-only reports returned, IdentR1111 live census mutation and IdentR1604 ambient HOME verify. Closure caveats: default verify/citations go red (R11-08 exit-mismatch; 73 unresolved fleet-relative cites) in a lone clone by design (R11-08 NOTE requires fleet layout) - reproduced CLEAN in fleet layout; gate-regression fixture identity holds by construction (new 151-case suffix applied to both revs), not identical committed fixtures; tripwire counts stub invocations (attempts), not host reads. Routed: SKILL.md:46 stamp/claim count stale ('63 stamps + 39 claims, round 21' vs 83/61); make R11-08/citations lone-clone behavior explicit in the verify output. SHONEN boxes remain [~] author assertions; none appear fully non-author-checkable this round. r23 admitted; no rejection streak.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
