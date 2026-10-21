@@ -82,3 +82,12 @@ C1's no-recall-loss reading** — an invoked `functools.partialmethod` spawn is 
 and `1f7f995` but silent at `28c6837` and `a8960de` (pre-existing since `28c6837`, not fixed in
 attempt 2); all four tools miss a same-line bash `function name { …; }; call`. Open defect for
 round 21; C1 admission should weigh it. Other seven review reports were still running.
+
+ReviewV3Diff (`mado-shokunin/.ufo/waves/round-20/a2/review/ReviewV3Diff.md`): **v3/v3.1 introduce
+recall losses vs `28c6837`** — a recursive helper call carrying a literal shell string
+(`pacman -S pkg`, observed at `28c6837`, clean at `a8960de`: the recursion branch only reads argv
+lists) and a swept callback that loses the module literal env (clean + unparsed instead of a lead);
+plus new false leads (function passed only to `print`; class target sweeps an uncalled method) and
+a read-only `globals()` comparison that still clears bindings. Author verdict for C1 is therefore
+revised to **harmed (recall regression vs `28c6837` on two shapes)** pending the closure; fixes are
+round-21 work. Remaining six review reports were still running.
