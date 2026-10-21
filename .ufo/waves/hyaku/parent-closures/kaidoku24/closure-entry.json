@@ -1,0 +1,62 @@
+{
+  "round": 24,
+  "date": "2026-10-21",
+  "type": "closure",
+  "lane": "kaidoku",
+  "lane_round": 24,
+  "lanes": {
+    "kaidoku": "ok"
+  },
+  "lane_rounds": {
+    "kaidoku": 24
+  },
+  "admitted": false,
+  "verdict": "rejected-honest-stop",
+  "verdicts": {
+    "coverage": "improved",
+    "operability": "unchanged",
+    "calibration": "unprovable",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+  },
+  "claims": {
+    "R24-C1": {
+      "axis": "coverage",
+      "verdict": "improved",
+      "scope": "Finite and evidence-verified. Four declared REA6.5.0 offline pcap verbs (client, capture summary, fields, packet-field projection) held 0/4->4/4 with five envelopes and adjacent run records, scoped source rows and retained author-side replay. Not a replacement for the frozen R23 six-verb denominator, which stays 4/6, and not live-network mastery, independent decryption capability or a path-bound client record."
+    },
+    "R24-C2": {
+      "axis": "calibration",
+      "verdict": "unprovable",
+      "finding": "Target unmet as declared. The unchanged original criterion controls admission: the original gate SHA256 1e2a937018feec21ad200f80a4c9a749b3de4af190fff548eb4dd84717b8870f at final/after-c2-frozen.json, measured source 5c88c05b, exits 1 with exact 9/11 and a mismatched round 17/18. The disclosed replacement instrument's 11/11 is separately disclosed ledger agreement and cannot substitute for the original frozen result or for independent audit accuracy. The frozen receipt's expected_exit 1 with passed true means the final producer expected the red result; it does not mean C2 passed. The post-hoc selftest 17/17 is not a frozen independent oracle. No exploratory conversion or revised-oracle rescue."
+    }
+  },
+  "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+  },
+  "capabilities_added": [],
+  "report": ".ufo/reports/round-24/kaidoku.md",
+  "report_commit": "dd3eb06f57ad3b4f728d63ce93a21c3fe24ab7a1",
+  "producer_commit": "kaidoku-shokunin@1e1bbef45ea0b92e443cdca04b814e74dfecbca1",
+  "commit": "kaidoku-shokunin@18e7eb6d9fe8842678af5f1cffbd680ead4ad473",
+  "verification": {
+    "reviewer": "Main, hyaku non-author integrator and admission authority. This is not a global-clean ledger claim and not an assertion that the heavy-wave requirement was met.",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-24-verifier-spotcheck.md@18e7eb6d9fe8842678af5f1cffbd680ead4ad473",
+    "report_provenance": "report_commit is root-repository (shokunin) provenance: dd3eb06f57ad3b4f728d63ce93a21c3fe24ab7a1 'round-24: kaidoku report' adds only .ufo/reports/round-24/kaidoku.md. No lane-repository hash is used here.",
+    "rechecks": "Main's inert Git-object counts: SOURCES 63->72 (A57->66, B5/C1 unchanged; new S064-S072; every older eleven-cell row unchanged). Knowledge Markdown 106->107, distinct from lexical mention counts and the four-verb held set. Original preservation set: 1141 paths across prior knowledge, lessons and round 20 - every original blob and mode is unchanged at the producer tip, zero changed or missing original paths (a concrete preservation check, not full behavioural equivalence). Root-owned scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin kaidoku actually returned exit 0 with five retained W04 duplicate-URL/scope warnings. The C1/C2-only overlays and other lane-owned measurements are checked as committed evidence, not re-executed. Exact counts and limits are in fleet .ufo/waves/hyaku/parent-closures/kaidoku24/evidence.json.",
+    "gate_evidence": "Committed evidence verified, never executed: claims froze at 5dc49bfe25d21139693161c786e69c5a11a65bcc after instruments at 97ade2e5e2dcf6cfd01d0da8634879d14969f9cc; the original gate bytes above exit 1 with exact 9/11; the disclosed revised gate 11/11 is retained as ledger agreement only. Bare-name resolution, forged/unverified supersession hashes, narrow claims[] scanning, spelling-blind instrument matches and the unguarded original disclosure ledger remain limitations, not dismissed because eleven row labels agree.",
+    "evidence": ".ufo/waves/hyaku/parent-closures/kaidoku24/evidence.json",
+    "scope": "Concurrency and tooling limits retained. BUILD85 was validated but refused atomically 20 times: zero spawned, not 85 dead and not a completed heavy swarm; eight ordinary residual seats reported, zero reported deaths or replacements, and the 64-100 heavy-wave floor remains unfulfilled for this round. The explicit refusal-stop history is retained, not repaired by a padded replacement wave. L1 installed cmake 4.4.4 via uv tool install cmake and built official-source Wireshark 4.6.9 into the declared local prefix; no pacman transaction was reported; reading RULES/load-order after installation remains a tooling-process defect, and this closure installs nothing. The committed public Wireshark test vector contains secret-bearing metadata blocks - retain its public-fixture origin, license/provenance and dependency limits, and do not treat those as live account credentials, print values, or purge a functional fixture blindly; no supplied-key or applied-decryption ability is granted here. The start census is an explicitly later BASE reconstruction, not a start-time execution; the literal declared_at time is wrong and is not used as ancestry proof. Scratch paths and runtime external inputs may be gone; current-source integrity is not replay of those deleted execution trees. Current full-quality absolutes exceed the narrow audit, including missing-at-freeze and path-spelling blind spots; counterexamples and the original 9/11 are retained rather than silently re-pinning controls, rewriting the ledger to fit a wrong detector, or erasing superseded results.",
+    "seats": "BUILD85 refused atomically 20 times with zero spawned; eight ordinary residual seats reported, zero reported deaths or replacements. Refused calls are not credited as work and no prior round's seats are charged to r24.",
+    "outside_spotcheck": "Public originals reopened by Main on 2026-10-21; no capture data, secret bytes or source code was executed. AGREE narrowly S065/S069 on tshark -2 semantics at https://www.wireshark.org/docs/man-pages/tshark.html: 'Perform a two-pass analysis', the same paragraph requiring seeking backwards and excluding live captures, pipes and FIFOs - this establishes option semantics only, not always-on two-pass processing, producer correctness or a live-network capability. DISAGREE with the initial capinfos -c not-needed rejection and AGREE with its recorded flip: https://www.wireshark.org/docs/man-pages/capinfos.html '-c Displays the number of packets in the capture file', and the description also exposes timestamp/count statistics the provider's summary depends on; the historical mistaken rejection and the corrective S071 are preserved rather than relabelled as always correct. AGREE with S068 preregistration scope at https://pmc.ncbi.nlm.nih.gov/articles/PMC5856500/ ('define the research questions and analysis plan before observing the research outcomes') as transparent-deviation authority, and REJECT oracle substitution as confirmation - reporting a revision preserves visibility but does not make its result satisfy the old criterion. A good signature under a fetched, unanchored key is not independently established signer identity; content digest matching and trusted-key provenance remain different claims.",
+    "native_gate": "Mainactualregisteredchecker d8c1620df147d2e576f157f43e149ae4a1251a760b9f111f210b516744187a48@32e5e7c and generator 7cc7b2f88a5a273e1d3c7cbe32380ade2fae03d8f773c04aeb2f7e8838596cdd@5846150daa629fc34b273b64f7957e64f7dd6bfa:checker29/29,fivehistoricalfrozenmatches;pristine29/29,eightnamedmutantfailuresplusoneM7crash-only;generator38/38,actualdefault/manual/forceCLI/nativefrozenreplaysbaseline+6inputsmatch(exit1,debt65,81CNE). Incompleteanalysisrefused3/noexpected. Old328derivedsnapshotremainsMISMATCH/unqualified; matchingnewprojectionisnotchildclaimtruth/globalcleanliness/admission. Artifacts: .ufo/waves/hyaku/native-checker-repair/{v2-parent-runs,mutation-parent-runs,freeze-v2-parent-initial,freeze-v2-parent-edges,freeze-v2-native-controls}.json."
+  },
+  "closed_at": "2026-10-21T23:21:06+00:00",
+  "campaign": "hyaku",
+  "notes": "Parent rejected as declared: the original R24-C2 frozen-byte target is unmet (exact 9/11, exit 1) and the disclosed replacement instrument's 11/11 cannot substitute for the original target, so no exploratory conversion or revised-oracle rescue was applied. The bounded R24-C1 coverage gain is retained (0/4->4/4 over four declared REA6.5.0 offline pcap verbs; R23's six-verb denominator stays 4/6 and live-network mastery is not claimed). Numeric scores may hold despite the bounded C1 gain. No exploratory conversion, promotion or capability grant; lanes{kaidoku:ok} records that the report exists, not admission. The heavy-wave floor (64-100) is unfulfilled: refused calls spawned none and are not credited as work. Driver digest: 2026-10-21T13:33:21-03:00 launch kaidoku round=24 pgid=851022 driver=hyaku-inline attempt=1; 2026-10-21T15:22:41-03:00 complete kaidoku round=24; hyaku-inline attempt=1. Report dd3eb06 (root repo), lane producer tip 1e1bbef, verifier 18e7eb6. Nativecheckerremainslegacyred; OLD328prebaselineisMISMATCH/unqualified, corrected65projectionnowinternallymatches6inputswithoutclaimingglobalcleanliness. Mainpublishesnegativeindependentaccountingat2026-10-21T23:21:06+00:00; no claimscope/expectedvaluechanged, cap/promotion/mintempty, allforwardholdsremain.",
+  "promotions": [],
+  "minted": []
+}
