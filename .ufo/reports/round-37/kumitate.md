@@ -160,3 +160,18 @@ Eighth erratum (lane `c7648c7747ede6b85a884d35385dc72e913166b2`): `Verify6` show
 and the sweep predated the wave settling. The lesson and `repairs.md` now cite the committed copy's
 sha256 (`3f51c7e7…`, 249 lines / 19 hunks) instead, and the re-run misroot sweep with its timestamp is
 in `.ufo/waves/round-37/final/misroot.txt` (driver files only; kumitate seat residue 0).
+
+Ninth erratum (lane `08ee2cf0852d8e0afcc2976f3399fb9d36f3220b`): `Rep1` refuted four body claims; they are superseded as follows.
+(1) The D1 figures "274 + 29 + 36 + 30 anchor replacements" are **withdrawn** — they were the
+symbol-keyed restorer's write counts, not a reproducible diff; the actual reset moves 123/27/25/33
+anchor tokens across the four notes (the exact inverse of the round-36 shift). D1 = full base reset,
+per the fifth/sixth errata. (2) The "Landed changes" citation `86c0676c` is the first landing only;
+D1/D3/D8 hold at the later commits `5bc40d0` (reset), `a5d627b` (D3), `5031720` (D8). (3) The D6
+"cmp equal" claim remains withdrawn (moved copy sha256 `3f51c7e7…`, 249 lines/19 hunks, committed in
+`5ceb8cd`; the `cmp` output was not retained). (4) The D5 slot grant is now recorded in
+`.ufo/waves/round-37/final/README.txt` (`granted lane=kumitate wave=r37-falsify seats=68 live=108
+pending=0 cap=240`) together with the fact that the slot was **not released** before the budget stop.
+(5) The notes' notices name their audit groups, not the spot-check file (corrected in `c589b384`).
+(6) The stale `anchors=1551`/`nonok=186`/`ratchet 186` figures in this report's measurement table are
+superseded by the final `anchors=1574 … nonok=200` and ratchet total 200 (commit `5bc40d0`).
+Erratum 3's scope is widened: the symbol-keyed restore defect applied to all four notes.
