@@ -2,7 +2,7 @@
 
 Lane: `kagi-shokunin`. Base `d218603b74099ddca0bd8f869516fc41db0979bf`; measured
 lane commit `e1884c6ecb7ccd717965b0d748bc193137118dbf`, final lane commit
-`31f24e0789c80cd7b2cb28ab39146956a8c87ffb` (helper `landed` lines, pushed).
+`893446434ed8d0a7b2821b01a23a7d250bd0dbb5` (helper `landed` lines, pushed).
 Build wave: parent-held 66 seats (43 claim-ledger command-row audits + 23 source-row
 audits, `parent-build-dispatch.json`). This lane dispatched no second build wave and
 remained the sole production writer. Falsify wave: 64 seats, `.ufo/waves/round-23/falsify-spec.json`.
@@ -61,6 +61,12 @@ planner seat). Zero seats were replaced. Integrated findings:
   branch; captures are point attestations. C3 proves the `cells` mechanics, not all 43 row obligations;
   `rows_run` counts selected rows, so only `row_deferred=0`/`self_skipped=0` exclude an
   unexecuted fixture; one fixture stamp (`fx-ok.sh`) is inert because no cell cites it.
+- **Parent build wave scope:** the 66 parent-held reports informed this round
+  selectively. The machine-tracked obligation set is the non-author closure's
+  D1-D9/SPOT/ADJ (15 ids); material build-wave findings outside that set are
+  reported as named debt or accepted bounds, not individually dispositioned.
+  The connector measured 19 fixed / 11 reported / 9 bounded / 78 outside the
+  disposition ledger — the last group is not claimed as consumed.
 - **Inherited, reported unverified:** `R11-08` citations is red at base because the
   round-22 spot-check adds three class-shaped tokens (`CITATION_GATE: BROKEN
   (cites=1257 docs=65 unresolved=3 ephemeral=0 labeled=13)`, exit 1); this round did not
@@ -113,6 +119,7 @@ Other evidence bullets:
 | W04 base/round-end wording, R13-03 SKIP-SELF semantics, D4 named tuples | `LOG.md` §Round 23 | `57776b28` |
 | measured verdict refreshed to the final tree (`measured_commit=57776b28`, R23-02 `fixed=6 reported=3`) | `LOG.md` §Round 23 | `5dd14116` |
 | supersession prose-only bound recorded in lesson/LOG/report | `LOG.md` §Round 23 | `31f24e07` |
+| parent-build disposition-scope bound; M23-4 sweep wording; adjacency stamp pointer | `LOG.md` §Round 23 | `89344643` |
 
 ## Before → after measurements
 
