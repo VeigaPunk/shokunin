@@ -694,3 +694,17 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   10-21 05:05, 12:08), all under heavy campaign load. The store sits on btrfs (`/@home`,
   zstd) and is opened per operation by several processes (this session, the 5-minute
   `ai-usage.timer`, `omp -p` probes); no process holds it open between operations.
+- **Wave gate 240 → 320 (state file, events.log `operator-policy`).** Queued waves were refused at
+  live 183 + kotoba 92 / revenger 68 / souji 64 > 240, while MemAvailable was 14.3 GB (floor 6 GB)
+  and memory PSI was 0. Raised under directives 36–38 (more concurrency); the memory floor still
+  guards the host. The gate admitted a 64-seat reservation at once (live 156).
+- **Three-strike rule fix (`inline.sh advance`).** The streak loop counted only outcome files
+  equal to `rejected`, but closures write the protocol's whole verdict set (`rejected-harmed`,
+  `rejected-honest-stop`), so those never counted toward the block (flagged by CloseTsukuroi21).
+  It now matches `rejected*`. Throwaway check: harmed + honest-stop + rejected → 3; mixed with an
+  admit → 2; all admitted → 0. Re-audit under the corrected rule: only kumitate (already
+  blocked) and mado (r19–r21, operator-authorized r22 recovery) reach 3, so no state changed.
+- **Closures since.** `rounds[419]` kagi r26 admitted; `[420]` kake r25 admitted (streak reset);
+  `[421]` tameshi r23 admitted. Dispatched: kagi r27 (KagiR26), kake r26 (KakeR25), tameshi r24
+  (CloseTameshi22), and first hyaku rounds kotoba r47 (MoriR22R), kotodama r50 (ChousaR27R2)
+  and revenger r61 (CloseChousa26), all reused idle agents while Main stays job-capped.

@@ -161,7 +161,7 @@ advance)
   printf '%s\n' "$outcome" > "$STATE/outcome/$lane-r$n"
   printf '%s\n' "$((n+1))" > "$STATE/next/$lane"
   rm -rf -- "$STATE/claims/$lane"
-  streak=0; for ((k=n; k>n-3 && k>0; k--)); do [ "$(cat "$STATE/outcome/$lane-r$k" 2>/dev/null)" = rejected ] && streak=$((streak+1)); done
+  streak=0; for ((k=n; k>n-3 && k>0; k--)); do case $(cat "$STATE/outcome/$lane-r$k" 2>/dev/null) in rejected*) streak=$((streak+1)) ;; esac; done
   if [ "$streak" -ge 3 ]; then
     printf 'three consecutive rejected closures through round %s (%s)\n' "$n" "$(date -Is)" > "$STATE/blocked/$lane"
     ev "BLOCKED lane=$lane :: 3 consecutive rejected closures"; echo "BLOCKED after 3 rejected"
