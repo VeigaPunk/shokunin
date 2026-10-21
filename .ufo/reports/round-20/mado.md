@@ -128,3 +128,24 @@ populations and additions changed as live transcripts grew. Historical corpus to
 observations, not repeatable pinned-population measurements; a frozen manifest/snapshot is
 missing. Review landed at `4386045f73ef892bbc01f361c81ac4e8436795be`.
 Seven of eight residual reviews are committed; only ReviewVcsV3 remains outstanding.
+
+## Final disposition — all eight residual reviews returned
+
+ReviewVcsV3 reproduced the requested parser fixes, but found jj remote-add,
+bookmark-forget and workspace-add mutations unflagged under `--ignore-working-copy`
+(present at both revisions), and Git object/index writes under newly exempted
+`add -Nn` / `commit -zn`. Bare `uv tool run --help` is a measured non-acquisition
+still flagged. The object/index findings expose an unsettled definition of a VCS
+write; do not equate an unchanged ref with no repository write.
+
+All 8/8 residual reports are now committed (0 dead); attempt-1 w1 85 + w2 78,
+attempt-2 8 = 171 seats, with only the two previously named attempt-1 seats dead.
+Final lane landing: `39e213192dcf48cb094e2c159c3cd21522de0a8f`, including final
+SCORECARD and LOG dispositions. No review is outstanding and no next round started.
+
+Final verdicts supersede the initial author report: **C1 harmed; C2 not independently
+established** (literal 22/30, conservative 21/29). Final trends: **expansion improved,
+quality harmed, discernment improved**. The fixed-population checks reproduce but
+do not refute the independent counterexamples. Behavioral defects remain unresolved
+and are handed to Main under the operator's wrap-up instruction; admission is not
+claimed. No tools installed, no host reconfiguration, no new L0 question.
