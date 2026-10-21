@@ -402,3 +402,17 @@ Filed after the orchestrator reopened capacity and directed the wave to run.
 - Lane commit `bbeb73bd4dad181b9b293b242dbf5749acbe3568`. These change code **after** the
   18/18 acceptance at `63bb887`; they are verified by the probes and selftest above, not by a
   full acceptance re-run. **Final lane tip at this erratum: `bbeb73bd4dad181b9b293b242dbf5749acbe3568`.**
+
+## Erratum 17 — final acceptance at the fixed tip (appended after Erratum 16)
+
+- Acceptance re-run at `bbeb73bd4dad181b9b293b242dbf5749acbe3568`: the first attempt failed only
+  because `gate-replays` refused to overwrite the `63bb887` record (`exit 2`, not a product
+  failure). The driver now writes a revision-scoped replay record; the repeat run is **18/18 all
+  matched** (`census/round-19/final-verification-bbeb73b-fixed.json`); the failed record is
+  retained as `final-verification-bbeb73b.json`.
+- `RevProcEntry` finds the entry needs pinned code evidence for the procfs read-set/no-environ
+  claims (Q2) and cites S083–S085, now superseded by S086–S088 — an open entry revision, not
+  applied. `ScoutAuditSignal` maps the r18 signal shapes and V-SIGNAL false-positive risks
+  (`kill -0` probes, quoted search patterns) for the r20 token refinement.
+- Lane commit `649eba34cd02d03aa9b0dc1b92abd5149e131d41`; **final lane tip at this
+  erratum: `649eba34cd02d03aa9b0dc1b92abd5149e131d41`**.
