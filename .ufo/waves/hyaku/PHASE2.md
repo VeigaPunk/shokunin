@@ -787,3 +787,9 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   one free-tier primary (opencode-go minimax-m3.1-flash-free → commandcode minimax free →
   `inception/mercury-3`). If it rate-limits under wave load, seats lean on that chain. Fresh
   spawns only.
+
+54. "use m_mim as labrat also"
+
+- **Routing, saved globally.** `task.agentModelOverrides.labrat` `@m_zfl` → `@m_mim`. Only
+  revenger stays on `@m_zfl`. `@m_mim` now serves executor, labrat, reviewer, scribe and
+  distiller. Fresh spawns only.
