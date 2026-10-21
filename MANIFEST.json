@@ -11391,6 +11391,84 @@
     "streak": "r21 admitted; no rejection streak.",
     "tools_installed": "none"
    }
+  },
+  {
+   "round": 26,
+   "date": "2026-10-21",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 26,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 26
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "freshness": "improved",
+    "calibration": "unchanged",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "claims": {
+    "C1": {
+     "axis": "freshness",
+     "verdict": "improved",
+     "scalar_before": 9,
+     "scalar_after": 9,
+     "finding": "Real bounded drift-detection-and-response move, not unprovable: observed Python 3.15.0->3.15.1 drift (exactly S027/S028 on identity projection), re-verified both relied-on teachings against served 3.15.1 docs (independently reopened live), retained the original receipt, and rearmed named 3.15.1 successors 0->2 with red-before (UNBOUND/RECEIPT-MISMATCH exit1) -> CLEAN exit0 and a future-3.15.2 fire control. Scalar held at 9; no semantic-change, installed-upgrade, or continuous-monitoring credit."
+    }
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-26/kagi.md",
+   "report_commit": "5a0ac5ee9bd48da67b80729f7077d6a4981b34c6",
+   "commit": "kagi-shokunin@0a47dd189356ea66ec83c3891eed54526e95b89b",
+   "verification": {
+    "reviewer": "CloseTabi21 (orchestrator-reassigned idle non-author closure; never touched kagi; author KagiR26). No subagents dispatched.",
+    "scope": "Read-only lane/report verification; no lane/report writes, no dispatch/revival/replacement. Canonical Gate standard: final-measure.py, replay-current.sh, release-clock/claim-ledger gates and selftests were evidence-verified, not executed. Independent Python over Git blobs re-derived populations, drift projection, pins, migrations and wave counts; fleet sources-census validator executed; live public sources reopened. No tools installed/updated.",
+    "conformance": "Cited lane hashes 1bf3eec4 (BASE), d30c9892, d109c752 (measured), 0a47dd18 (final) and wip 65318c01 all ancestors of HEAD; wip is parent-requested operator snapshot earning no credit (round commits d30c9892/d109c752/0a47dd18 carry the work). HEAD=origin/master=ls-remote=0a47dd18; porcelain empty. Report 5a0ac5ee authored kagi-shokunin <kagi@shokunin.local>, fleet-HEAD ancestor, committed bytes equal filed. Six required sections in order (extra trailing conformance section is additive); four SHONEN rows [~]. Prompt equals tracked bytes and exactly matches full canonical template prefix after substitution (axes freshness + calibration); addendum carries lane write scope and never-MANIFEST.",
+    "c1_remeasurement": "Independent blob parsing: SOURCES 38->41 at measured and final, new S039-S041 only, all 38 original rows byte-identical (no mutable-cell changes). release-clocks 28->30, all original IDs retained, new S040/S041; only S027/S028 observed-version 3.15.0->3.15.1, not-fired->fired and note changed; anchors 3.15.0 kept. Round25 receipt SHA b74c8ee3... unchanged BASE->final; frozen release-clock.py and before-table byte-equal BASE. Drift projection round25 vs new 28-record observe-1: same IDs, exactly S027/S028 change (parsed_version, verdict; HTTP 200 both). Rearmed observe-2 SHA 13b8540c... = migrated DEFAULT_RECEIPT_SHA256; adds only S040/S041 (3.15.1 not-fired) with no other change vs observe-1. frozen 11/11 and rearmed 10/10 inputs.sha256 entries match measured blobs. Capture bodies match metadata and source-fetches decoded-body pins; S040/S041 titles 3.15.1 and both quotes located in captures. final-verification.json at d109c752: 29 unique checks, 29 passed, 18 exit==expected; red-before rows (rearmed-before exit1 UNBOUND S040/S041; missing-binding-S040/S041 exit1; tamper/missing-manifest exit2) and future-3.15.2 fire row present.",
+    "c2_and_no_harm": "C2 is round25's claim, not a round26 claim; its honest state is unchanged from closed r25: lone citations INCOMPLETE fleet_absent48 exit3, lone verify INCOMPLETE exit1, prose mutant BROKEN exit1 - never presented CLEAN, so no harm and no credit. No deleted paths. LOG/SCORECARD/QUALITY baseline prefixes preserved; all prior lessons/knowledge and round25 wave evidence byte-unchanged; round26 lesson append-only measured->final. Stamps 88->89 (only round26 lesson added, none dropped; 11 restamps all match final blobs). Claim-ledger: same 65 IDs/commands; expectation changes only count/digest migrations (88->89, 31->32, census 38->41, added 25->26, row-identity, R25-04 CLEAN28->CLEAN30) consistent with landed rows. Active default migration does not weaken detection: successors rearmed with fire control; inherited non-monotonic firing rule disclosed, not introduced. CritNoAxisHarm-caught 90d demotion rejected before landing (QM24, M26-3).",
+    "sources": "Fleet census independently exit0, 11 W04 duplicate-URL-across-scope warnings (8 prior + 3 expected correction URLs), no malformed rows. Live reopen 2026-10-21: re.html title 'Python 3.15.1 documentation', exact clause 'Matches Unicode whitespace characters (as defined by str.isspace())' present; html.html title 3.15.1, exact sentence 'This function uses the rules defined by the HTML 5 standard for both valid and invalid character references' present; feed.rss first item Python 3.14.9 (13:08:09Z), max stable Python 3.15.1 pubDate 09:59:50Z, 3.16.0a1 prerelease - matches S039 and M26-2. Host python3 --version reports 3.14.8, corroborating the rejected installed-upgrade reading.",
+    "outside_spotcheck": [
+     {
+      "item": "Admit S040/S041 successor rows (teachings unchanged on 3.15.1 docs)",
+      "verdict": "agree",
+      "reason": "Live reopened pages carry 3.15.1 titles and both exact relied-on clauses; supersession is scoped to doc-version locator only, no equivalence over runtimes claimed."
+     },
+     {
+      "item": "Admit S039 max-stable 3.15.1 reading",
+      "verdict": "agree",
+      "reason": "Live feed's first item is backport 3.14.9; max stable is 3.15.1; prerelease excluded."
+     },
+     {
+      "item": "Reject feed-version-proves-semantic-change and docs-version-proves-installed-upgrade",
+      "verdict": "agree",
+      "reason": "Both teachings are textually unchanged on the new docs; host interpreter is 3.14.8, so docs labels do not witness the runtime."
+     },
+     {
+      "item": "Reject 90d successor demotion (M26-3)",
+      "verdict": "agree",
+      "reason": "With S027/S028 already fired, 90d successors would leave no fireable release clock for the active teachings; on-release rearm plus 3.15.2 fire control fixes it."
+     }
+    ],
+    "seats": "Independent recount: BUILD 64 (scout28/reviewer12/critic8/scribe8/connector5/executor3), dispatch taskCall 64 tasks, 41 nonempty reports; residual 8 (critic4/reviewer4), 8 reports; total 72 seats, 49 reports, 23 dead = reviewer12/scribe8/executor3, matching 23 terminal notices (3 Codex capacity, 12 free-model rate limit, 8 Anthropic 429). No replacements. Second wave below 64 is the prompt's permitted <=8 residual path with stated shortfall reason. L1 held planner seat.",
+    "conformance_debt": "Some BUILD seats ran normalizer selftests despite mid-flight restriction (disclosed, uncredited); late redundant MISSION/AXES reload disclosed; no whole-round no-tests attestation. Fleet-layout citation check reads live siblings (dated, not frozen). Executed-at-final claims rest on measured-revision receipts; measured->final changes are outcome metadata/stamps only."
+   },
+   "closed_at": "2026-10-21T15:02:54.103572+00:00",
+   "campaign": "hyaku",
+   "notes": "ADMITTED: held-scalar freshness 9->9 is real bounded axis progress (observed drift, live re-verification, rearmed fireable successors with failure-capable controls), not unprovable. C2 honest INCOMPLETE/48 retained unchanged from r25, no false CLEAN. Dispatch digest watchdog.log:599 2026-10-21T10:33:35-03:00 launch kagi round=26 pgid=1679568 driver=hyaku-inline attempt=1. Prior r25 admitted (rounds[410]); rejection streak 0. Discernment improved via this non-author agree on admits and rejects. No promotion; SHONEN remains [~]. Open L0: none new. Closure never edited lane or report; no tools installed.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
