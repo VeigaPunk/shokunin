@@ -1254,3 +1254,42 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   disclosed a DocKnowledge canonical-write breach and froze those bytes without restore
   churn; the final document reader stays on its original private2e input. No VOID
   replacement, oracle change, policy-held author wake or new ledger closure is claimed.
+
+- **Final genuine refill:** the remaining69different kotodama files actually launched in
+  one validated call; the original233eligible unassigned files are now partitioned and
+  actually assigned100+64+69, with no pair overlap or failed-item substitution. At
+  `2026-10-21T23:03:52.359740Z`, runtime was99tasks,69new and8from the preceding64.
+  The gate counted43/projected112; another transition-floor gap is disclosed, not hidden.
+- **Native derivation landed:** `5846150daa629fc34b273b64f7957e64f7dd6bfa`
+  committed/pushed the existing generator correction and its exercised docs/evidence.
+  Main source `7cc7b2f88a5a273e1d3c7cbe32380ade2fae03d8f773c04aeb2f7e8838596cdd`:
+  generator38/38; fresh default/manual/actual-force native replays match baseline and
+  six input hashes at exit1/debt65; incomplete analysis is refused at exit3/no expectation.
+  Obsolete mirror helpers are removed. The old328-debt mismatch and protected baselines
+  remain untouched; derived matching is still self-pinning, not independent admission.
+- **Eight independent negative closures actually published, target-checked, committed
+  and pushed separately** at23:20:56–23:21:19Z; status `ok` means a real filed report,
+  all `admitted=false`, zero capability/promotion/mint grants:
+
+| Lane | Round | Decision | MANIFEST index | Fleet commit |
+|---|---:|---|---:|---|
+| kotodama | 50 | rejected-honest-stop | 431 | `2126cd1bf6bb30e4f709074e4139b114c3f81d16` |
+| mori | 23 | rejected-honest-stop | 432 | `762c11538e71bac9de517ebbaed6995563c768ee` |
+| kotoba | 47 | rejected-honest-stop | 433 | `a247e3c0c6c40d2ed10c914c76d6ffa7b5a06868` |
+| kaidoku | 24 | rejected-honest-stop | 434 | `0a1a7d2ccacdeef98194e6774b758f8f07cb8262` |
+| tameshi | 24 | rejected-honest-stop | 435 | `e3ef9bd7ca7342e541a14d94056ffd92248ab001` |
+| tsukuroi | 23 | rejected-honest-stop | 436 | `fa067a5eefe2e7daaba1b21f34acfd88a724e8b0` |
+| chousa | 27 | rejected-harmed | 437 | `6c7f7b1637133059f2f5d9ab872fc60a09e63279` |
+| souji | 22 | rejected-honest-stop | 438 | `2b9dfbed10c59f3043a0bb07743fd05c283b5bd3` |
+
+- Fresh post-publication native frozen accounting has57debt/81CNE, baseline/input6match,
+  exactly8new target rows `ok` and zero target debt/CNE. This is not a globally clean
+  ledger. `parent-closures/post-eight-native-proof.json` records the actual commands.
+  Report-only souji accounting does not lift its forward policy hold.
+- The ninth pending report, kengaku29, remains source-history held; safe negative
+  metadata accounting must not inspect/reproduce the unsafe source material or clear
+  the hold. Existing-driver next-round/rejection-streak/owner checks are separately
+  mapped before advancing any eligible lane; no manual counter increment is assumed.
+- Independent old-debt review also found that some historical in-flight contradiction
+  labels overreach a large driver-log gap. Those findings remain preserved/unresolved,
+  not re-pinned or silently normalized; the65finding rows are not65independent defects.
