@@ -72,3 +72,5 @@ Census command: `scripts/sources-census.sh census --root /home/vgpnk/Projects/sh
 - **Open L0:** the round-17 question on `~/.local/opt/llama-b11755-bin-ubuntu-x64.tar.gz` remains open. No new L0.
 - **Tool installs:** one, by build seat SrcGoDirhash: Go go1.27.3, official sha256-verified release, installed to `~/.local/opt/go1.27.3` with `~/.local/bin/go` and `gofmt` symlinks, used to execute the dirhash probe. No pacman transaction, and no persistent server or host change.
 - **Stale-lane:** respawn-per-round driver; no other kama mission is open; round 22 was not started.
+
+- **Late wave evidence (append-only):** `10271460cc575fc2280aa831e442726385fc2319` lands the three late falsify reports (C1EnvSentinel, C1SelftestReview, C2DigestSentinel) and `out/C2DigestSentinel/attacks/setup.sh`; pushed lane tip is now this evidence commit, while claim head `a0050a4c1af3ab91e07cf1d24dc8e680abae96b4` and measured claims are unchanged.
