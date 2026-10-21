@@ -114,3 +114,10 @@ values in neither base nor pre-repair), two remain false (`MANIFEST_SCHEMA` shou
 `MAX_MANIFEST_BYTES` `:49`), and the first notice overclaimed. The notice now says PARTIAL;
 the remaining positions and the other audit groups are owed to the closure/next round. The report's
 D1 line above ('every symbol-keyed anchor ... reverted') is superseded to that extent.
+
+Fourth erratum (lane `fb5b90ebeca488c22216562a70df48c10659c958`): `Verify4` showed D4 is partial and this report's anchor-truth
+wording overstated it. The lane gate's `FIDELITY: CLEAN` is machine output under the canonical
+left-first rule, not anchor truth; the lesson, LOG and Q16 now say so and Q16 requires a committed
+command with recorded output. Independent re-measurement of the restored notes is owed to the
+closure; the committed `fidelity-reference.mjs.txt` is right-first and disagrees with the gate
+(281 vs 186 nonok), so it cannot serve as that check.
