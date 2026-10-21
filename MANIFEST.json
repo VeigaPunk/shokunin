@@ -10376,6 +10376,75 @@
    "notes": "Driver: launch souji round=20 pgid=970405 hyaku-inline attempt=1 (2026-10-21T05:13:50-03:00); claim base 12516f7. Both preregistered claims verify; no owned axis harmed. Author set admitted:false pending outside verdict; prior r19 is rejected-harmed in the ledger (dispatch brief's 'r19 admitted' is wrong). F5 RULING: routed defect, NOT axis harm. tools/souji-proc-census.sh reason column (argv-path-gone/fd-path-gone) gets sanitize_field only while cmd gets redact_command (lines 346-368) — confirmed in source, unchanged since r18 (no diff 12516f7..6ff3413); r20 introduced no new exposure, withdrew the universal-redaction wording (SCORECARD row narrowed, Q46) and opened fleet L0 souji/round-20. A disclosed latent defect plus corrected overclaim is calibration honesty, not regression. Routed: synthetic-only reason-field redaction+length bound with canary fixture should land next round independent of the historical-exposure ruling unless operator holds it; report's 'operator explicitly upheld' overstates the lesson's 'Parent Main confirmed operator/Kagi ownership'. Other defects (status-neutral): own-wave scope deviations disclosed — AuditCase07 wrote a fleet-root report (copied to lane, fleet copy removed), implicit root-namespace reads by 5+ seats, relative-path edit attempts; final wave audit still 3 major/recovery 37 major clipped/unparsed payloads; acceptance runner not non-author-replayable at final HEAD (route: accept --rev without HEAD equality via clean clone). Open L0 held: r18 inherited reap, r14 NAMESPACE pin, F5 exposure/repair. 128 seats, 25 provider-dead, 0 replaced. SHONEN all [~], none appears fully non-author checkable. Closure tool installs/updates: none.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 20,
+   "date": "2026-10-21",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 20,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 20
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "promotions": [],
+   "minted": [],
+   "report": ".ufo/reports/round-20/tabi.md",
+   "verification": {
+    "reviewer": "CloseTabi20 (orchestrator-dispatched non-author closure agent)",
+    "scope": "Read-only on lane and report; all counters run in scratch clone /tmp/ct20 at e7cf11a or the lane's own private-clone harness writing only to /tmp; no verifier lesson written into lane.",
+    "rechecks": "Report commit 8bc70543 is ancestor of fleet HEAD; all six cited lane commits plus baseline c4992943 are ancestors of e7cf11a; lane HEAD=origin/master=e7cf11a, porcelain empty. C1 counter digest 19921191...7945 matches report. node measure-c1.mjs REV: c4992943 verdict=baseline c1_lifecycle_decisions=0 exit0; e45b052 clean 12 exit0; e7cf11a clean 12 exit0, findings[] each. Independent run of run-checks.py e45b052 -> /tmp/ct20-serial-checks.json: verdict clean, 28/28 pass, errors[]; MEASURE_C1_SELFTEST clean cases=45 reasons=24; CHECK_WAVE_SELFTEST clean cases=27 failed=0; wave-frozen-real exit0. check-measurement-binding.mjs --at e7cf11a --reproduce: verdict clean claims1 bound1 findings[] exit0. counts.mjs c4992943->e7cf11a: rows99->100, A86->87/B4/C9, mined71->72/queued19/rejected9, knowledge37->38. git diff e45b052..e7cf11a over SOURCES/decisions.json/knowledge note/measure-c1/SKILL.md empty.",
+    "source_spotchecks": [
+     {
+      "item": "S100/S096 bytes",
+      "decision": "agree",
+      "source": "https://chromium.googlesource.com/chromium/src/+/refs/tags/154.0.8037.97/third_party/blink/renderer/core/html/forms/html_form_element.cc?format=TEXT",
+      "reason": "Fresh fetch decoded SHA-256 8c8d6796...6916 equals source-opening.json decodedSha256; 1740 lines."
+     },
+     {
+      "item": "LC11 787-815",
+      "decision": "agree",
+      "source": "html_form_element.cc@154.0.8037.97",
+      "reason": "executing_tool CurrentlyRunning, no TakeRespondWithPromise, !should_submit -> CallDoneCallback(kToolInvocationFailed, 'The site has a programming error: it called ...') present at quoted span."
+     },
+     {
+      "item": "LC03 249-258",
+      "decision": "agree",
+      "source": "html_form_element.cc@154.0.8037.97",
+      "reason": "!*submit_button && require_submit_button returns kMissingRequiredSubmitButton before mcp_schema.FillData."
+     },
+     {
+      "item": "LC07 261-275 / LC12 818-830",
+      "decision": "agree",
+      "source": "html_form_element.cc@154.0.8037.97",
+      "reason": "CallDoneCallback null early-return then Run before clearing running/button/invocation; should_submit block calls CallDoneCallback(base::ok(String())) after ScheduleFormSubmission, ungated on its return; rows' no-CDP/no-navigation-guarantee hedges match code."
+     }
+    ],
+    "axis_harm": "None found. Baseline..tip: 212 files, +28127/-1; sole deletion is S096 used-by cell extension (status/recheck/immutable cells unchanged); no deleted or renamed paths. 22 historical clean-cohort gates (incl. check-sources/adjacency/freshness/aria/binding r16,r17 reproductions) all exit0 as expected in the private-clone run. lesson-history.mjs at e7cf11a: refused set exactly round-18.md, round-19.md (inherited, unchanged at 2, documented conformance debt per orchestrator L0 ruling, axis-neutral); round-20.md laterMDRTCommits [] refused false. Inherited USER production gate not rerun per report and ruling. Scalar depth8->8 per SCORECARD; C1 is a bounded 0->12 source-distillation count, not 12 novel predicates or runtime coverage.",
+    "independent_seats": []
+   },
+   "commit": "tabi-shokunin@e7cf11a810003d4a65cc85bd265f2c17dd65b738",
+   "closed_at": "2026-10-21T11:42:21Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-21T06:47:50-03:00 launch tabi round=20 pgid=3502656 driver=hyaku-inline attempt=1. Author TabiR20 finished; report fleet commit 8bc70543. Admitted: single declared C1 depth claim re-measured 0->12 at measured e45b052 and delivered e7cf11a, binding reproduces clean, 28/28 serial checks and selftests 45/45, 27/27 reproduced, no axis harm. Disclosed and accepted as non-blocking: W1 actor-settlement overclaims withdrawn (not converted to passes); W2 dispatch snapshot taken after spawn; ReviewBindingInputs unsolicited r19 binding replay; one misrooted ResidualFrozen report recovered byte-exact; round-20 MDRT 0; 136 seats, 0 dead, no tools installed. Streak reset from r19 rejected-honest-stop. Lane's own trend verdicts (expansion unchanged, quality improved, discernment unchanged) accepted. Report's honest bounding (not 12 novel predicates, no runtime capability, S100 same bytes as S096) noted."
   }
  ]
 }
