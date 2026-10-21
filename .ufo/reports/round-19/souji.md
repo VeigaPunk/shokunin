@@ -440,3 +440,14 @@ Filed after the orchestrator reopened capacity and directed the wave to run.
   round. Both are disclosed rather than simulated.
 - Lane commit `49b64584e48aee7c21757a19601bfa4524c05b13`; **final lane tip at this erratum:
   `49b64584e48aee7c21757a19601bfa4524c05b13`**.
+
+## Erratum 20 — all late wave-1b evidence committed (appended after Erratum 19)
+
+- Committed the complete `.ufo/waves/round-19/` set (late seat reports, w1/w1b/w2 specs,
+  dispatch registry, preregistration) after a gitleaks secret-shape scan (dir scan, redacted,
+  exit 0, no leaks) and a >1MiB check (none). Lane commit `e6df080a60cae997bfcd387738a87aa449c85484`.
+- These reports are **committed but unadjudicated**: their findings are already routed in
+  errata 1–19 (fixes landed where bounded, the rest open for r20). No production change, no new
+  claim, no filed-text rewrite, no round 20.
+- **Final lane tip: `e6df080a60cae997bfcd387738a87aa449c85484`.** Lane dirt after this
+  commit: only the inherited, untouched `census/operator-sweep-20261019/`.
