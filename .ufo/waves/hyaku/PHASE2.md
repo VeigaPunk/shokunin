@@ -1076,3 +1076,46 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   `/tmp/kg.diff` redirection and lane-derived `exec(compile(...))` request. The latter's
   errored result is still not proof of successful execution; quarantine is retained.
   No command was re-executed and no VOID report was laundered into admission credit.
+- **Parent verification checkpoint (not seven newly trained rounds):**
+
+  | Lane / held round | Non-author verifier/index landing | Parent claim verdict |
+  |---|---|---|
+  | kotodama 50 | `bff83ba65bf9559af4d7567e81703059667a0005` | rejected-honest-stop |
+  | mori 23 | `c725aa37aa3c9ec4f34e3c2abc8ca1b616c7c130` | rejected-honest-stop |
+  | kotoba 47 | `197b5a4087bad49a465df7d13d7e821fe4cf227b` | rejected-honest-stop |
+  | kaidoku 24 | `18e7eb6d9fe8842678af5f1cffbd680ead4ad473` | rejected-honest-stop |
+  | tameshi 24 | `1f7315732e0cfe0ba9dfe0fff2ef36d1c8481bb5` | rejected-honest-stop |
+  | tsukuroi 23 | `f169b3ba9a59abaf3e324c1b591e1e07a4d6003a` | rejected-honest-stop |
+  | chousa 27 | `11d7c5da1ee7f6a4e01b1661d14a9d08fb8de01a` | rejected-harmed |
+
+  These are landed independent judgments, not published accounting rows or successor
+  author-round dispatches. `parent-closures/readiness.json` retains that distinction.
+- **Original-scope decisions:** tameshi's numerical1/11→11/11 is retained, but Main keeps
+  the original routed-source qualifier rather than adopting the advisory's narrower
+  counter-only admission. Kaidoku's expected-red12-condition producer does not pass the
+  original9/11 calibration criterion. Tsukuroi's incomplete/unsupported cohort is not
+  normalized into mode1. Chousa's new over-refusal is actual harm, not offset by green suites.
+- **Kotoba operator metadata:** a disjoint executor prepared the active inventory update,
+  Main qualified the parent-fleet report revision to its actual repository, and an independent
+  parser exercised61future tracked files,79coverage tokens, no unindexed consumer files and
+  one added resolvable lane citation. The active baseline moves60→61 and29→30, with40report
+  pointers and zero-defect expectations unchanged. No foreign-object fetch, source-pin
+  rebase, frozen-input edit or peer-gate execution. The original producer remains60files.
+- **Byte-copy tool issue:** a complete raw read omitted the new note's final LF. The parent
+  preserved the known original terminator before the isolated metadata writer consumed it;
+  a sanitized automated QA issue was filed. No byte-equivalence claim uses the truncated copy.
+- **Native prerequisite:** a one-cutoff metadata diagnostic found the private checker path
+  reachable, five acknowledged edits and no error/transport hold at21:14:22Z. The writer
+  was still mid-patch; the reviewer was legitimately waiting for coherence. They may overlap
+  production review with remaining distinct fixture work after an explicit pinned handshake.
+  No old failure is re-run just to confirm it and no unobserved ready/test result is claimed.
+- **New forward-only souji hold:** its filed r22 report explicitly names an inherited
+  `cyber_policy` stop. Main is checking the original stop/excluded-item metadata before any
+  successor dispatch rather than trusting a quota-only or generic no-retry assurance.
+  Existing report-only accounting may finish; no refused payload is executed/rephrased,
+  no replacement author is launched, and no retrospective blanket judgment is inferred.
+- **Current kake pipeline:** true build barrier settled; the discovered extra historical
+  obligation and seven unknown units remain explicit. Original57-population evidence
+  stays separate from the corrected58-obligation enumeration. Prepared85fresh falsifiers
+  would make153actual author identities if spawned, not153completed proofs. Candidate
+  safety migration preserves received-versus-retained digests and does not retry r24.
