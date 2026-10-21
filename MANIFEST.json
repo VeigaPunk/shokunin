@@ -9359,6 +9359,47 @@
    "notes": "Watchdog digest: 2026-10-21T03:16:49-03:00 launch kumitate round=37 pgid=2498319 driver=hyaku-inline attempt=1 / 2026-10-21T03:48:57-03:00 complete kumitate round=37; hyaku-inline attempt=1. Late tip 198091c9 adds only 11 falsify reports. Defects: LOG.md round-37 entry rewritten in place (5031720, fb5b90e) and still states superseded symbol-keyed/186/1551 figures; final gate captures were taken at 8c41439, before 6f88d12 changed claims-check, and no selftest/PROXY run is committed for the final bytes; falsify seat AuditRemainder6 is dead and undisclosed, and the slot was never released; the report header names base 91da27c6 instead of 5833351. Routed: R1 per-anchor D1 for the 62 regressed anchors, listed in the spot-check, with a committed parser (Q16); R2 make the ratchet a non-increasing burn-down; R3 fix the gate under-count on multi-anchor runs (noid); R4 sweep README.md:99 clause-guarded, SCORECARD.md:1717 'measures anchor truth', the LOG round-37 entry and lessons/round-37.md:13; R5 re-capture final evidence at the final bytes; R6 record the dead seat; R7 add a README row for the round-37 spot-check (C2 85). SHONEN stays [~] and is not promotion-ready.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 19,
+   "date": "2026-10-21",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 19,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 19
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-19/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-19-verifier-spotcheck.md@37bd4c5bd456a2f8a54d3312c28495c321715856",
+    "rechecks": "C1 re-measured with git+sha256sum (checker not executed): 4 registry rows, blob sha match at rev, rev ancestor of master, exact cite() token in round-18.md at tip 1 each, at 8bf99cae 0 -> 0/4->4/4 = evidence/c1-counting.txt @028235e6; post-measure tool diff print-only. C2 evidence-verified (gate not executed): receipt-1 install_tree 51 members recomputes to 6c216313 = recorded/--tree-sha; c2-grid.txt @028235e6 no-pin rejected 0/3 exit 1 -> pin 3/3 exit 0, invalid baseline exit 2; gate mut cases 32->37, no check removed. Routed r18 defects 1-4 verified vs bytes (VERDICT grep 4 confirm/3 partial; commands.json absent c6dc46f, ce7dc79c at 1c325b2/101f3991; live-gate-1 live/ at 1c325b2, live-recovery/ at 1b85a24; SCORECARD:755 erratum appended; assignments.json retrospective). No model server: pgrep llama/ollama/vllm empty, no new gguf/model files, live tool SIGTERM/SIGKILL teardown. Spot-check agree: S057 two admits (verbatim, man-pages 6.19 2026-08-03), reject tree-digest-authenticates. Census validate kama ok exit 0 (3 W04), rows 56->57. SCORECARD pure append, scores held."
+   },
+   "commit": "kama-shokunin@3389513f5107d5d77213cafa35ff2cbc18845100",
+   "closed_at": "2026-10-21T07:05:26Z",
+   "campaign": "hyaku",
+   "notes": "Digest: launch kama r19 2026-10-21T03:01:06-03:00 pgid=1538680 hyaku-inline attempt=1; complete 03:59:14. Report ac9859f4 by kama-shokunin; author agent KamaR18Recovery also authored r18. Re-check seats refused by host job cap; all checks by closure reviewer alone. Conformance defects (status-neutral): citation-provenance.py and install-tree-grid.py unregistered in SKILL.md; r19 census receipts uncommitted (report cites r18 paths). Routed: stale C1 counts (required=3/three rows) in SCORECARD r19 section, LOG, errata, lesson-19 vs final 4 rows; 'falsify-wave refutation' mislabel (falsify 0/66 spawned; critics were build-wave); round-18.md:42 rewritten in place (30ed378) - append correction; final-selftests.txt on dirty worktree 5b108c1a, 76 vs 77 mutations; residual/assignments.json retrospective unlabeled; carried author r20 items (grid exit-1-without-INVALID kill, checker observed-branch selftest gap, 13 unregistered r18 citations, c2-survivors verdict-only agreement, S051 anchor after S057 insert, TreeCap/TreeDeterminism/GridDefaults/SentinalSecrets). Operator housekeeping: ~5.95 GiB /tmp/kama-r19-* seat scratch incl. 675MB strace written 04:02 after completion (not a download). SHONEN all [~]; box 2 best non-author candidate; promotion operator-owned. Expansion graded unchanged (lane said improved-narrow): S057 row only, no new entry/capability. No tool installs.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
