@@ -793,3 +793,15 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
 - **Routing, saved globally.** `task.agentModelOverrides.labrat` `@m_zfl` → `@m_mim`. Only
   revenger stays on `@m_zfl`. `@m_mim` now serves executor, labrat, reviewer, scribe and
   distiller. Fresh spawns only.
+- **Incident: /tmp ENOSPC (~14:20 -03).** `/tmp` is its own 128 GB xfs volume (`nvme0n1p1`) and
+  filled to 100%. Seat clones from this and earlier rounds piled up there, and seat writes failed
+  with ENOSPC; KengakuR29-2 and TameshiR24-2 reported it. `/home`, which holds agent.db, sits on
+  `/dev/mapper/root` at 20% and was not affected. Both coordinators deleted only their own
+  scratch. The parent then removed 193 top-level entries of ≥100 MB (~57 GB, including the
+  read-only `/tmp/fw/ro` tree) that had been idle ≥90 min and were not referenced by any process
+  cwd or fd; `/tmp` went to 28% (93 GB free). New rule, sent to every running agent and added to
+  the spawn contract: clones and heavy scratch (≥200 MB) go under `/fast/scratch/hyaku/<lane>-r<N>/`
+  and are deleted at round end. Agents never delete another lane's scratch.
+- **Landed:** kama r23 (KamaR23-2; C1 calibration 7→7, fault grid 0/26→26/26, mutation kills
+  30/31; T01/F23 now refuse, which is the operability trade-off the closure must rule on).
+  Its closure went to CloseMori22, reused.
