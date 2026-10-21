@@ -152,3 +152,16 @@ Only `.ufo/waves/round-15/freeze-snapshot.py` and this file were written in the 
 repos, mutant copies and checker mirrors live under `/tmp` (removed); bytecode artifacts created
 by importing the module were deleted (`.ufo/waves/round-15/__pycache__/`,
 `.ufo/waves/round-13/__pycache__/freeze-snapshot.cpython-314.pyc`).
+
+## 2026-10-21 operator cutover note
+
+F3 above records the former mirror implementation and its measured behavior; it is not
+rewritten as a judgment of the current source. The active round-15 generator now uses the
+native frozen projection, removes the obsolete mirror helpers and pins the six actual
+snapshot inputs. New notes identify a self-pinning, unreviewed frozen projection, not a
+live run. Protected historical snapshots/notes remain byte-unchanged.
+
+Main's actual default/manual/force replays and incomplete-analysis refusal are recorded
+in `.ufo/waves/hyaku/native-checker-repair/freeze-v2-*.json`; generator38/38 and the
+existing checker29/29/five historical comparisons passed. A matching derived baseline
+is not independent claim truth, a global-clean ledger or a live-durability check.

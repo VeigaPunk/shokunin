@@ -1024,3 +1024,33 @@ The indentation receipt has 93 checks; `canonical-final-checks.txt` has the fina
   frozen CLI and bind its input digests; Main must exercise/review it before further
   frozen-accounting claims. This is not a new trained round or child admission.
 
+## 2026-10-21 — native frozen derivation cutover exercised
+
+- The existing round-15 generator now invokes the same native frozen path used by replay,
+  not the obsolete Gitless live mirror. Main's source SHA256:
+  `7cc7b2f88a5a273e1d3c7cbe32380ade2fae03d8f773c04aeb2f7e8838596cdd`.
+  Private reviewed v2 was `8d1fce4c6b80aaef0885d44ca3f2b7af5715d2d3a7f570fb30101fb36a9d2670`;
+  Main corrected comments about analysis-before-comparison and preserved separators.
+  The checker stays at `d8c1620d…`; no new gate, shim or historical oracle was introduced.
+- Missing/incomplete native analysis is refused, not defaulted to empty debt/CNE and a
+  false clean zero. Derivation distinguishes CLI3/no-baseline from the analyzed exit.
+  Explicitly regenerated output clears stale producer-owned expectations/notes; only the
+  six produced input files are pinned. Unrelated output leftovers are not inputs.
+- Main actually ran generator38/38, including the independent flat-fixture derive/replay
+  regression. Fresh default output contains65debt/81CNE, not263phantom live-only findings;
+  its native replay matches the baseline and all six input hashes at exit1.
+- Actual `--force` and explicit manual expected-value CLI paths both regenerate/replay at
+  exit1/debt65 with six matching input hashes. Force removes the planted obsolete live
+  note while leaving an unrelated leftover unpinned. A throwaway incomplete checker
+  returns an incomplete JSON result; generation refuses at exit3 and leaves no fabricated
+  expectation. The temporary checker and leftover were removed after observation.
+- Main re-ran current checker29/29 and the five original frozen comparisons: expected
+  exits1,0,1,1,0 and all `match`. Protected inputs/expectations and the original failed
+  fresh328-debt snapshot remain unchanged. Commands/results:
+  `.ufo/waves/hyaku/native-checker-repair/freeze-v2-{parent-initial,default-replay,parent-edges,native-controls}.json`.
+- A stale expectation's tamper path already retained full analysis; no observed
+  force-path false-zero is claimed. The corrected defects are projection mismatch,
+  incomplete-result fallback, contradictory notes and unrelated input pinning.
+  Derived output remains explicitly unreviewed/self-pinning. Frozen matching does not
+  authenticate child measurements, imply a clean ledger or clear any source/policy hold.
+

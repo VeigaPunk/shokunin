@@ -202,6 +202,27 @@ Distinct names avoid the fail-closed duplicate-name rule. A missing baseline
 still exits 3; an edited pinned input exits 2 (`snapshot_tampered`) before any
 verdict comparison.
 
+### 2026-10-21 operator cutover — newly generated baselines
+
+The historical snapshots and round-15 measurements above/below remain at their original
+inputs and source revisions. Current `freeze-snapshot.py` derives through the native
+`--frozen-root <parent> --frozen <name>` CLI, not a synthesized Gitless live tree.
+It pins exactly the six produced inputs; an explicitly regenerated output clears its
+obsolete producer-owned expectation/notes without pinning unrelated leftovers.
+
+Main exercised generator38/38, fresh default derivation, manual expected-value mode,
+actual `--force` regeneration and rejection of incomplete checker analysis (exit3, no
+fabricated `expected.json`). Fresh default/manual/force native replays match both
+baseline and six input digests at exit1/debt65; this is not a clean-ledger certificate.
+The former unqualified328-versus65 mismatch remains preserved, not overwritten.
+
+Current generator SHA256:
+`7cc7b2f88a5a273e1d3c7cbe32380ade2fae03d8f773c04aeb2f7e8838596cdd`.
+Commands/results: `.ufo/waves/hyaku/native-checker-repair/freeze-v2-*.json`.
+The derived note still warns that it is unreviewed/self-pinning. Frozen projection
+cannot certify live prompt durability, the live history pin, child claims or admission;
+reviewed values still use explicit `--expected-exit` / `--expected-debt`.
+
 ## 7. Residuals (honest, not silent)
 
 - **The universe is closed over the sources the gate reads** (roster, base lanes, counters, log, prompts). A lane with no counter, no log line, no prompt and no roster row is not observable by construction — the union narrows but cannot close that, since nothing in the tree names the lane.

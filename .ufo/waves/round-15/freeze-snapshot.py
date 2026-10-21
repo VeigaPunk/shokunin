@@ -9,8 +9,8 @@ assembled by hand from the prose in `frozen/README.md`; this script is that
 prose expressed once, deterministically, so a round-15 baseline can be
 re-derived instead of re-implemented.
 
-READ-ONLY OVER THE REPO.  The only writes are inside `--out` (plus a scratch
-staging tree under the system temp dir that is removed again).  Never written:
+READ-ONLY OVER THE REPO.  The only writes are inside `--out` (plus the `--selftest`
+run's own temp tree, which it creates and removes again).  Never written:
 the repo, `.ufo/waves/round-11/**`, `.ufo/waves/round-12/**`,
 `.ufo/waves/round-13/**`, `MANIFEST.json`, `.ufo/state/**`.  A round-15 `--out`
 (for example `.ufo/waves/round-15/frozen/pre`) is the intended target.
@@ -34,6 +34,18 @@ Freezing rule (see `frozen/README.md` §"One freezing rule"; one instant `C`):
   state-counters.txt highest `launch`/`steer` round per lane among the *kept* log lines.
   CLOSED_AT.txt      C, the manifest source, main_HEAD, the four counts, the rule.
   MANIFEST.json      the pinned `rounds[]` blob, byte-for-byte as sourced.
+
+Derived baseline (`expected.json`, when `--expected-exit/--expected-debt` are not
+given): the checker's OWN frozen projection of the snapshot it was just written --
+`closure-check.py --frozen-root <parent> --frozen <name> --json --no-citations`
+-- so the baseline is the analysis of the very bytes that will be replayed.
+There is no mirror and no live-only check in it: frozen mode has neither the
+untracked-prompt sweep nor the history-pin read, so a derived baseline cannot
+pin rows that only a materialized live tree could manufacture.  The baseline
+exit follows the checker's own precedence (debt -> 1, else could-not-evaluate
+-> 2, else 0), never the CLI's "no-baseline" 3.  A derived baseline is
+self-pinning and unreviewed; `DERIVED-FROM-FROZEN-PROJECTION.txt` in the
+snapshot says so.
 
 "Present at C" is: the add-commit committer time is <= C (landed, `tracked=1`), or
 -- for a file not committed at C -- the on-disk mtime is <= C (`tracked=0`,
@@ -62,7 +74,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
-from datetime import datetime, timezone
+from datetime import datetime
 
 SCRIPT = os.path.abspath(__file__)
 ROUND_15 = os.path.dirname(SCRIPT)
@@ -95,6 +107,28 @@ FORBIDDEN_OUT_DIRS = ("round-11", "round-12", "round-13")
 DEFAULT_CHECKER = os.path.join(".ufo", "waves", "round-15", "closure-check.py")
 
 EXIT_OK, EXIT_SELFTEST, EXIT_USAGE, EXIT_CHECKER = 0, 1, 2, 3
+
+# The checker's own exit precedence for an analysis (closure-check.py:1508):
+# debt -> 1, else could-not-evaluate -> 2, else 0.  The frozen CLI returns 3
+# ("no-baseline") while the snapshot carries no expected.json yet, so a derived
+# baseline computes its exit from the analysis and never from that code.
+PROJECT_EXIT_OK, PROJECT_EXIT_DEBT, PROJECT_EXIT_CNE = 0, 1, 2
+
+# The checker's own exit codes (closure-check.py:98-101), named so a note that carries one
+# says what it means: 3 is "no-baseline", the answer while the snapshot has no expected.json.
+EXIT_NOBASELINE = 3
+CLI_EXIT_NAMES = {0: "ok", 1: "debt", 2: "could-not-evaluate", 3: "no-baseline"}
+
+# The note a derived snapshot carries: it names where the baseline came from and
+# that it is unreviewed and self-pinning.  The claim, not an input: excluded from
+# the pinned input digests.
+DERIVED_NOTE = "DERIVED-FROM-FROZEN-PROJECTION.txt"
+DERIVED_MARKER = "DERIVED-FROZEN-PROJECTION"
+
+# Classes only a live tree can produce: the untracked-prompt sweep and the
+# history-pin read (closure-check.py:1402, :1011).  A derived baseline must never
+# carry them -- they are what a materialized mirror used to manufacture.
+LIVE_ONLY_CLASSES = ("prompt_untracked", "history_pin", "history_pin_unavailable")
 
 # git runs with a minimal environment so an ambient GIT_DIR / GIT_WORK_TREE cannot
 # redirect a read, and so the output is locale-stable.
@@ -410,87 +444,98 @@ def with_input_digests(expected_text, files):
     doc = json.loads(expected_text)
     doc["inputs"] = {name: hashlib.sha256(data).hexdigest()
                      for name, data in sorted(files.items())
-                     if name not in ("expected.json", "DERIVED-FROM-LIVE-RUN.txt")}
+                     if name not in ("expected.json", DERIVED_NOTE, "DERIVED-FROM-LIVE-RUN.txt")}
     return json.dumps(doc, indent=1, sort_keys=True) + "\n"
 
 
-# --------------------------------------------------------------- live-run derivation
+# --------------------------------------------------- frozen-projection derivation
 
-FAR_FUTURE = datetime(2999, 1, 1, tzinfo=timezone.utc)
+def clear_stale_claim(out):
+    """Drop a stale producer-owned claim from a rewritten output directory.
 
-
-def _synth_report(text_bytes, has_hash, has_shonen):
-    """Bytes of exactly `text_bytes` length satisfying the pinned predicates.
-
-    Live `_grade_file` grades the *content* (hash run / SHONEN heading) and the size; the
-    mirror must reproduce both so the derived run sees the same rows as the snapshot does.
-    """
-    head = b""
-    if has_shonen:
-        head += b"## SHONEN\n"
-    if has_hash:
-        head += b"commit abc1234\n"
-    if len(head) > text_bytes:
-        return head[:text_bytes]
-    return head + b"." * (text_bytes - len(head))
+    A rewritten snapshot must not keep the previous expected.json or derived note:
+    the frozen replay would compare against stale input digests, and a stale note would
+    misdescribe the new baseline.  Only the given output directory is touched."""
+    for name in ("expected.json", DERIVED_NOTE, "DERIVED-FROM-LIVE-RUN.txt"):
+        path = os.path.join(out, name)
+        if os.path.isfile(path):
+            os.remove(path)
 
 
-def stage_mirror(snapshot, closed):
-    """Materialize a live-decodable tree from the flat snapshot (checker `--repo` layout).
+def run_checker_frozen(repo, snapshot, checker):
+    """The checker's OWN frozen analysis of this snapshot.
 
-    `closure-check.py --repo` cannot read a flat snapshot: its live loader wants
-    `.ufo/watchdog.log` and grades worktree files (`load_live`, closure-check.py:216-254).
-    The mirror is still built from the snapshot's own bytes -- the pinned sizes, the pinned
-    hash/SHONEN flags, the pinned landed_at (as git-trackedness, which is the live
-    loader's own landed predicate) -- and it is thrown away after the run.
-    """
-    stage = os.path.join(tempfile.gettempdir(), "freeze-stage-" + os.path.basename(snapshot.rstrip(os.sep)))
-    if os.path.isdir(stage):
-        shutil.rmtree(stage)
-    for sub in (("",), (".ufo",), (".ufo", "reports"), (".ufo", "prompts"), (".ufo", "state")):
-        os.makedirs(os.path.join(stage, *sub), exist_ok=True)
-    shutil.copyfile(os.path.join(snapshot, "MANIFEST.json"), os.path.join(stage, "MANIFEST.json"))
-    shutil.copyfile(os.path.join(snapshot, "watchdog.log"), os.path.join(stage, ".ufo", "watchdog.log"))
+    The snapshot is a flat directory and `closure-check.py --frozen` reads it directly
+    (`load_frozen`, closure-check.py:429-473), so this is the analysis of the very bytes
+    that will be replayed -- no mirror, no git index, no live-only check.  The snapshot is
+    named by `--frozen-root <parent> --frozen <name>`: an absolute root resolves the
+    snapshot by path, so a bare name can never be ambiguous across wave roots
+    (`_resolve_frozen`, closure-check.py:1085-1090).
 
-    landed = []
-    for line in read_text(os.path.join(snapshot, "reports-index.txt")).splitlines():
-        if not line.strip():
-            continue
-        parts = line.split("\t")
-        if len(parts) < 5:
-            raise FreezeError("malformed reports-index.txt line: %r" % line)
-        rel, nbytes, tracked, has_hash, has_shonen = parts[:5]
-        dst = os.path.join(stage, rel)
-        os.makedirs(os.path.dirname(dst), exist_ok=True)
-        with open(dst, "wb") as fh:
-            fh.write(_synth_report(int(nbytes), has_hash == "1", has_shonen == "1"))
-        # mtimes are pinned far-future: the live loader's `report_seen_by` is the one place
-        # mtime is read (closure-check.py:189-197) and the frozen loader always answers False
-        # from a snapshot ("snapshots carry no mtimes"), so this reproduces frozen semantics.
-        os.utime(dst, (FAR_FUTURE.timestamp(), FAR_FUTURE.timestamp()))
-        if tracked == "1":
-            landed.append(rel)
-    for line in read_text(os.path.join(snapshot, "prompts-index.txt")).splitlines():
-        rel = line.strip()
-        if not rel:
-            continue
-        dst = os.path.join(stage, rel)
-        os.makedirs(os.path.dirname(dst), exist_ok=True)
-        with open(dst, "w", encoding="utf-8") as fh:
-            fh.write("prompt (mirrored from prompts-index.txt)\n")
-    for line in read_text(os.path.join(snapshot, "state-counters.txt")).splitlines():
-        parts = line.split("\t")
-        if len(parts) >= 2 and parts[1].strip().isdigit():
-            with open(os.path.join(stage, ".ufo", "state", parts[0] + ".round"), "w",
-                      encoding="utf-8") as fh:
-                fh.write(parts[1].strip() + "\n")
-    if git(stage, ["init", "-q"])[0] is None:
-        raise FreezeError("git is not usable; the derived run needs a mirror git index")
-    if landed:
-        code, out = git(stage, ["add", "--"] + landed)
-        if code != 0:
-            raise FreezeError("mirror git add failed: %s" % out.strip())
-    return stage
+    Returns the run's command, the CLI exit code, the debt rows, the could-not-evaluate
+    rows and the checker's own result dict.  The CLI exit is 3 ("no-baseline") while the
+    snapshot carries no expected.json yet, so the baseline exit is computed from the
+    analysis, never from that code."""
+    if not os.path.isfile(checker):
+        raise FreezeError("no checker at %s" % checker, EXIT_CHECKER)
+    cmd = [sys.executable, checker, "--repo", repo,
+           "--frozen-root", os.path.dirname(snapshot),
+           "--frozen", os.path.basename(snapshot),
+           "--json", "--no-citations"]
+    try:
+        done = subprocess.run(cmd, capture_output=True, text=True, timeout=600)
+    except (OSError, subprocess.SubprocessError) as exc:
+        raise FreezeError("checker invocation failed: %s" % exc, EXIT_CHECKER)
+    try:
+        result = json.loads(done.stdout)
+    except ValueError as exc:
+        raise FreezeError("checker did not emit JSON (%s): %s | stderr: %s"
+                          % (exc, done.stdout[:400], done.stderr[-400:]), EXIT_CHECKER)
+    if not isinstance(result, dict):
+        raise FreezeError("checker did not return an analysis object: %s | stderr: %s"
+                          % (done.stdout[:400], done.stderr[-400:]), EXIT_CHECKER)
+    if result.get("verdict") == "error":
+        raise FreezeError("checker refused the snapshot: %s" % result.get("error"), EXIT_CHECKER)
+    # the projection is the analysis: both lists must be there.  A missing list is not an
+    # empty one -- an incomplete result would project as a clean zero.
+    for key in ("debt", "could_not_evaluate"):
+        if not isinstance(result.get(key), list):
+            raise FreezeError("checker result carries no %s list: %s | stderr: %s"
+                              % (key, done.stdout[:400], done.stderr[-400:]), EXIT_CHECKER)
+    verdict = result.get("verdict")
+    if verdict not in ("ok", "debt", "could-not-evaluate", "no-baseline"):
+        raise FreezeError("checker returned an unsupported verdict %r" % (verdict,), EXIT_CHECKER)
+    reported_exit = result.get("exit")
+    if not isinstance(reported_exit, int) or isinstance(reported_exit, bool):
+        raise FreezeError("checker result carries no exit code: %s" % done.stdout[:400],
+                          EXIT_CHECKER)
+    if done.returncode != reported_exit:
+        raise FreezeError("checker exited %d but reported exit %d" % (done.returncode, reported_exit),
+                          EXIT_CHECKER)
+    # the exit must be the frozen mode's own: a baseline-less snapshot answers 3
+    # ("no-baseline"), otherwise it is the analysis exit (debt -> 1, else
+    # could-not-evaluate -> 2, else 0).  A mismatch means the run is not the analysis
+    # it claims to be, and a baseline is then refused rather than written.
+    analysis_exit = (PROJECT_EXIT_DEBT if result["debt"]
+                     else (PROJECT_EXIT_CNE if result["could_not_evaluate"] else PROJECT_EXIT_OK))
+    if verdict == "no-baseline":
+        if reported_exit != EXIT_NOBASELINE:
+            raise FreezeError("checker answered verdict no-baseline with exit %d" % reported_exit,
+                              EXIT_CHECKER)
+    elif reported_exit != analysis_exit:
+        raise FreezeError("checker answered verdict %s with exit %d, the analysis says %d"
+                          % (verdict, reported_exit, analysis_exit), EXIT_CHECKER)
+    return {
+        "cmd": cmd,
+        "cli_exit": reported_exit,
+        "process_exit": done.returncode,
+        "debt": canon_debt(result["debt"]),
+        "cne": result["could_not_evaluate"],
+        "analysis_exit": analysis_exit,
+        "baseline_status": (result.get("baseline") or {}).get("status"),
+        "baseline_inputs_status": (result.get("baseline_inputs") or {}).get("status"),
+        "result": result,
+    }
 
 
 def default_checker(repo):
@@ -501,55 +546,55 @@ def default_checker(repo):
     return os.path.join(ROUND_15, "closure-check.py")
 
 
-def run_checker(stage, checker):
-    """The checker's live run over the mirror; (cmd, exit, debt triples) or FreezeError."""
-    if not os.path.isfile(checker):
-        raise FreezeError("no checker at %s" % checker, EXIT_CHECKER)
-    cmd = [sys.executable, checker, "--repo", stage, "--no-citations", "--json"]
-    try:
-        done = subprocess.run(cmd, capture_output=True, text=True, timeout=600)
-    except (OSError, subprocess.SubprocessError) as exc:
-        raise FreezeError("checker invocation failed: %s" % exc, EXIT_CHECKER)
-    try:
-        result = json.loads(done.stdout)
-    except ValueError as exc:
-        raise FreezeError("checker did not emit JSON (%s): %s" % (exc, done.stdout[:400]), EXIT_CHECKER)
-    if result.get("verdict") == "error":
-        raise FreezeError("checker refused the mirror: %s" % result.get("error"), EXIT_CHECKER)
-    return cmd, int(result.get("exit", -1)), canon_debt(result.get("debt") or [])
 
 
-def derive_expected(snapshot, checker):
-    """Write expected.json from a checker run over a mirror of this snapshot."""
+def derive_expected(repo, snapshot, checker, files):
+    """Write expected.json from the checker's own frozen projection of this snapshot.
+
+    The projection is the checker's analysis of the very bytes the snapshot holds
+    (`--frozen-root <parent> --frozen <name>`), so the live-only classes -- the
+    untracked-prompt rows and the history-pin row a materialized mirror used to
+    manufacture -- cannot appear: frozen mode has neither check
+    (closure-check.py:1402, :1011).
+
+    `files` is the produced snapshot file list (what write_snapshot wrote): the digests
+    pin exactly those inputs, never a leftover in the output directory.
+
+    The baseline exit follows the checker's own precedence (debt -> 1, else
+    could-not-evaluate -> 2, else 0), not the CLI's "no-baseline" 3, and expected.json
+    pins the digests of the snapshot's own inputs, so an edited snapshot reads
+    `snapshot_tampered` instead of a green match."""
     closed_line = ""
     for line in read_text(os.path.join(snapshot, "CLOSED_AT.txt")).splitlines():
         if line.startswith("closed_at\t"):
             closed_line = line.split("\t", 1)[1]
-    stage = stage_mirror(snapshot, iso_dt(closed_line))
-    try:
-        cmd, exit_code, debt = run_checker(stage, checker)
-        with open(os.path.join(snapshot, "expected.json"), "w", encoding="utf-8") as fh:
-            fh.write(expected_json_text(exit_code, debt))
-        with open(os.path.join(snapshot, "DERIVED-FROM-LIVE-RUN.txt"), "w", encoding="utf-8") as fh:
-            fh.write("\n".join([
-                "DERIVED-FROM-LIVE-RUN",
-                "closed_at\t%s" % closed_line,
-                "staging\t%s (removed after the run)" % stage,
-                "command\t%s" % " ".join(cmd),
-                "checker_exit\t%d" % exit_code,
-                "mirror_rule\treports re-materialized at the pinned bytes/has_hash/has_shonen; mtimes far-future",
-                "mirror_rule\tlanded_at != '-' staged in the mirror's git index; landed_at == '-' left untracked",
-                "mirror_rule\tstate/*.round and prompts/ mirrored from the two indexes",
-                "derived_debt\t%s" % json.dumps(debt, sort_keys=False),
-                "warning\texpected.json pins the debt set of THIS run; the baseline is only as good",
-                "warning\tas that run - re-check it, then pin --expected-exit/--expected-debt explicitly",
-            ]) + "\n")
-        sys.stderr.write(
-            "freeze-snapshot: DERIVED-FROM-LIVE-RUN -- expected.json came from a checker run over a\n"
-            "freeze-snapshot: materialized mirror of this snapshot (%s), not from a reviewed\n"
-            "freeze-snapshot: baseline. The baseline is only as good as that run.\n" % stage)
-    finally:
-        shutil.rmtree(stage, ignore_errors=True)
+    run = run_checker_frozen(repo, snapshot, checker)
+    debt = run["debt"]
+    cne = run["cne"]
+    exit_code = PROJECT_EXIT_DEBT if debt else (PROJECT_EXIT_CNE if cne else PROJECT_EXIT_OK)
+    with open(os.path.join(snapshot, "expected.json"), "w", encoding="utf-8") as fh:
+        fh.write(with_input_digests(expected_json_text(exit_code, debt), files))
+    with open(os.path.join(snapshot, DERIVED_NOTE), "w", encoding="utf-8") as fh:
+        fh.write("\n".join([
+            DERIVED_MARKER,
+            "closed_at\t%s" % closed_line,
+            "projection\tnative frozen analysis of this snapshot (closure-check.py --frozen)",
+            "command\t%s" % " ".join(run["cmd"]),
+            "checker_exit\t%d" % run["cli_exit"],
+            "checker_exit_note\t%d = %s" % (run["cli_exit"], CLI_EXIT_NAMES.get(run["cli_exit"], "unknown")),
+            "projected_exit\t%d" % exit_code,
+            "projected_exit_rule\tdebt -> 1, else could-not-evaluate -> 2, else 0",
+            "scope\ta frozen projection cannot see prompt durability or the live history pin:",
+            "scope\tthis baseline is a weaker verdict than a live run's, and it is self-pinning",
+            "derived_debt\t%s" % json.dumps(debt, sort_keys=False),
+            "warning\texpected.json pins the debt set of THIS projection; the baseline is only as good",
+            "warning\tas that projection - re-check it, then pin --expected-exit/--expected-debt explicitly",
+            "warning\tit is self-pinning: it pins the digests of the very inputs it was derived from",
+        ]) + "\n")
+    sys.stderr.write(
+        "freeze-snapshot: %s -- expected.json came from the checker's own frozen\n"
+        "freeze-snapshot: projection of this snapshot, not from a reviewed baseline. The\n"
+        "freeze-snapshot: baseline is only as good as that projection.\n" % DERIVED_MARKER)
     return exit_code, debt
 
 
@@ -576,7 +621,7 @@ def snapshot_files(closed, manifest, rows_reports, rows_prompts, kept, counters,
     if expected_text is not None:
         files["expected.json"] = with_input_digests(expected_text, files).encode("utf-8")
     if derived_note is not None:
-        files["DERIVED-FROM-LIVE-RUN.txt"] = derived_note.encode("utf-8")
+        files[DERIVED_NOTE] = derived_note.encode("utf-8")
     return files
 
 
@@ -803,6 +848,50 @@ def run_selftest():
                "reports-index.txt", "state-counters.txt", "watchdog.log"])
         check("expected-json-input-digest", exp_doc["inputs"]["MANIFEST.json"],
               hashlib.sha256(files["MANIFEST.json"]).hexdigest())
+        # the derived baseline is the checker's OWN frozen projection of the snapshot it
+        # was written for: the fixture's own contract (exit 0, no debt), no live-only rows
+        # (prompt_untracked, history_pin -- a materialized mirror used to manufacture one
+        # per prompt), exactly the six produced inputs pinned, a native replay that reads
+        # the baseline back as a match, and a --force rewrite that regenerates the baseline
+        # instead of inheriting a stale claim or a stale note
+        derived_out = os.path.join(tmp_root, "snapshot-derived")
+        derived_files = dict(files)
+        derived_files.pop("expected.json", None)
+        write_snapshot(derived_out, derived_files, force=True)
+        checker_path = default_checker(fixture)
+        contract = (exp_doc["exit"], exp_doc["debt"])
+        expected_inputs = {name: hashlib.sha256(data).hexdigest()
+                           for name, data in sorted(derived_files.items())
+                           if name not in ("expected.json", DERIVED_NOTE)}
+        with open(os.path.join(derived_out, "expected.json"), "w", encoding="utf-8") as fh:
+            fh.write(json.dumps({"exit": 7, "debt": [{"lane": "stale", "lane_round": 1,
+                                                       "class": "stale"}]}, indent=1) + "\n")
+        write_snapshot(derived_out, derived_files, force=True)   # the --force rewrite
+        clear_stale_claim(derived_out)
+        derived = call(derive_expected, fixture, derived_out, checker_path, derived_files)
+        if isinstance(derived, str):
+            check("derived-frozen-projection", derived, "a projected baseline")
+        else:
+            replay = call(run_checker_frozen, fixture, derived_out, checker_path)
+            if isinstance(replay, str):
+                check("derived-frozen-projection", replay, "a replayable baseline")
+            else:
+                doc = json.loads(read_text(os.path.join(derived_out, "expected.json")))
+                inputs = doc.get("inputs") or {}
+                observed = {
+                    "exit_is_the_fixture_contract": doc["exit"] == contract[0],
+                    "debt_is_the_fixture_contract": doc["debt"] == contract[1],
+                    "no_live_only_rows": not [row for row in doc["debt"]
+                                              if row.get("class") in LIVE_ONLY_CLASSES],
+                    "inputs_are_the_six_produced_files": sorted(inputs) == sorted(expected_inputs),
+                    "inputs_digest_every_file": all(inputs.get(name) == digest
+                                                     for name, digest in expected_inputs.items()),
+                    "replay_baseline_matches": replay["baseline_status"] == "match",
+                    "replay_inputs_match": replay["baseline_inputs_status"] == "match",
+                    "replay_exit_is_the_pinned_exit": replay["cli_exit"] == doc["exit"],
+                }
+                check("derived-frozen-projection", observed,
+                      {name: True for name in observed})
         check("manifest-verbatim", files["MANIFEST.json"], read_bytes(os.path.join(fixture, "MANIFEST.json")))
         # refusals: the read-only wave dirs, then a non-empty --out without --force
         for name in ("round-11", "round-12", "round-13"):
@@ -912,6 +1001,10 @@ def main(argv=None):
                                counters_text(kept), source, main_head(repo, closed), None, None)
         write_snapshot(args.out, files, args.force)
         out_real = os.path.realpath(args.out)
+        # A rewritten --out must not keep the previous producer-owned claim: comparisons
+        # would use old input digests and a stale derived note would misdescribe the baseline.
+        # Only this --out is touched, after check_out_dir has vetted it.
+        clear_stale_claim(out_real)
 
         if args.expected_exit is not None:
             text = with_input_digests(
@@ -921,11 +1014,7 @@ def main(argv=None):
             exit_code, debt = args.expected_exit, parse_expected_debt(args.expected_debt)
         else:
             checker = args.checker or default_checker(repo)
-            temp_root = os.path.realpath(tempfile.gettempdir())
-            if temp_root == os.path.realpath(repo) or temp_root.startswith(os.path.realpath(repo) + os.sep):
-                raise FreezeError("temp dir %s is inside the repo; point TMPDIR outside it "
-                                  "(derive mode stages a mirror there)" % temp_root)
-            exit_code, debt = derive_expected(out_real, checker)
+            exit_code, debt = derive_expected(repo, out_real, checker, files)
     except FreezeError as exc:
         return die(str(exc), exc.code or EXIT_USAGE)
 
@@ -936,7 +1025,8 @@ def main(argv=None):
     print("  log_lines\t%d kept, %d dropped (> closed_at or unparsable)" % (len(kept), dropped))
     print("  reports\t%d\tprompts\t%d" % (len(rows_reports), len(rows_prompts)))
     print("  expected\t%s\tdebt rows\t%d\texit\t%d" % (
-        "pinned" if args.expected_exit is not None else "derived from a live run", len(debt), exit_code))
+        "pinned" if args.expected_exit is not None else "derived from the checker's frozen projection",
+        len(debt), exit_code))
     return EXIT_OK
 
 
