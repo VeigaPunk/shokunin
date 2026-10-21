@@ -64,3 +64,242 @@ The sourced claim is C2 (S027–S029, S031); the mined mistakes are M24-1..M24-7
 - Seat deviations: IdentR1111 edited the live `corpus/surface-census.tsv` once, restored it, and admitted it. IdentR1604 ran a default `verify` in a BASE scratch clone without an isolated HOME. Both are disclosed in the lesson, and no value was copied. No vault, account or handler action was taken, and no credential was read.
 - Misroot sweep: `git -C /home/vgpnk/Projects/shokunin status --porcelain` showed no kagi seat files (none moved).
 - Tool installs: none. No pacman use. Stale-lane: respawn-per-round driver; no other mission of this lane is open. L0 questions: none.
+
+## Recovery erratum — same round 24, attempt 1 (2026-10-21)
+
+This append supersedes the earlier completion, wave, current-count and
+discernment assertions where they conflict below; the filed bytes above are
+preserved. Replacement writer inherited pushed lane
+`c5ef9e92201b6c36396301f12b23740565bf86a0`, not an empty round. Final pushed
+lane tip: **`4587c61a348e4528717404a68912c373f3ef4d03`**. Round 23 was not
+redone; no new round, claim, MANIFEST row or closure was started.
+
+### Work performed
+
+The declared claims remain **C1 operability — default host-row exclusion**,
+**C2 freshness — captured/classified legacy provenance under one normalizer**,
+and **C3 calibration — the declared projected-membership identities**.
+All remain 9 → 9: no scalar inflation, retirement or stagnation waiver.
+Engineering results verify the bounded claims below; independent admission
+belongs to the integrator, not this writer or its seats.
+
+- Reverified inherited code/evidence binding and every stamp tuple; retained
+  all inherited production work and build reports. Nothing was silently
+  discarded (`kagi-shokunin/.ufo/waves/round-24/recovery-inheritance.json`).
+  Later inherited commits `9b92a23f`, `6cce477e`, `c5ef9e92` had already landed
+  the remaining build reports after the original report. Its “still running”
+  and “uncommitted” text is therefore superseded, not erased.
+- Dispatched a **fresh 64-seat falsify wave**, without replacing dead seats,
+  using the validator's unchanged taskCall. Its 56 reports found real
+  counterexamples, not a consensus pass (`kagi-shokunin/.ufo/waves/round-24/falsify-outcomes.json`).
+- C1's inherited lexical policy and skip ordering were **falsified**:
+  expansion, attached external pattern-file arguments, script ancestor
+  symlinks, a prefix-only fixture exception and invalid/missing self skips.
+  Closed those concrete paths; policy/host classification now precedes
+  recursion skips. See the retained red
+  `kagi-shokunin/.ufo/waves/round-24/falsify/FPolicyPath.md`,
+  `FPolicyRowsRun.md`, `FPolicySkipSelf.md` and `FPolicyUntagged.md` in that
+  directory, and `corpus/claim-ledger.sh` at `277a0d4f`.
+- C2: added **S032**, not a rewrite of immutable S007 cells, for its
+  case-sensitive quote failure. The new exact excerpt locates twice; the old
+  lowercase excerpt locates zero times
+  (`kagi-shokunin/.ufo/waves/round-24/recovery-source-S032.json`).
+  Preserved v1 transform bytes, corrected malformed-tag prose and added two
+  expected-output boundary cases. A fresh byte replay reproduces all ten
+  original normalized digests; changing only the step-5 collapse class
+  reproduces seven (`recovery-normalizer-replay.json` in the same directory).
+- C3's original **no printed FAIL ⇒ clean control** inference was rejected:
+  fresh partial-ledger controls exited nonzero on unrelated document IDs.
+  The instrument now isolates selected-ID docs and requires consistent
+  exit, terminal, claim-population, skip and failure accounting. Twelve
+  synthetic receipt cases reject timeout, empty, truncated and inconsistent
+  receipts. The broader semantic reading is also **rejected**: case-name
+  identity does not bind assertion bodies; path-key identity does not bind
+  every row column (`plans/round-24.md` R24-C6; fresh `FIdentityR2204.md`).
+- Recorded all rejections, M24-8 through M24-16, QUALITY QM19/QM20, the
+  explicit CLI-consent plan correction, and the gate/helper inventory fix.
+  The first repair candidate's S032 body-only citation failed the real
+  census; its red receipt was retained and the provenance continuation
+  repaired, rather than bypassing the handshake
+  (`kagi-shokunin/corpus/lessons/round-24.md` recovery sections).
+- Executed **three digest-pinned claim-only overlays over BASE**. C1 and C2
+  core changes are absent from the C3-only test; the same 15 trial IDs remain.
+  All three produce their claimed measurements independently
+  (`kagi-shokunin/.ufo/waves/round-24/separability/`).
+
+### Landed changes
+
+Every row is tied to `kagi-shokunin/LOG.md` §Round-24 recovery, including its
+appended observed failures and outcomes. Hashes below are helper-confirmed
+`landed` results, not unpushed candidates.
+
+| Pushed lane commit | Landed content |
+|---|---|
+| `277a0d4f1d9bc6c5cea9b1d0ab92e33e5c17bb56` | Fresh wave evidence; C1 repairs; strict C3 receipt accounting; S032 and explicit normalizer bounds. Its source handshake initially failed and is not called CLEAN. |
+| `017cc4c5eb87f7942fa41ff8893e8737fd14cfb4` | S032 provenance continuation and retained red receipt; actual safe full ledger and source census then exit 0. |
+| `e6210511a25ddd98ce54be346367f991ce9ff3ed` | Measured outcomes and committed, digest-pinned claim-only inputs. |
+| `31c8421407ec2c1776d52c49be85c2d4f0d40167` | Executed separability receipts, active corpus index, fresh public-byte recorder. |
+| `21293b4fcf8b9405961572c5779b46a6d8939cd2` | Fresh ten-row byte replay, bounded verdicts and final metadata/pins. |
+| `4587c61a348e4528717404a68912c373f3ef4d03` | Append-only quote-count (seven words, not eight) and freeze-sequencing errata; no source/runtime change. |
+
+Old/new expectation and pin tuples, with zero dropped/added stamp paths,
+are preserved in `kagi-shokunin/.ufo/waves/round-24/recovery-migrations.json`.
+No aggregator/operator-owned lesson was edited. All new wave evidence was
+pushed before this erratum; that does not undo the original post-report
+evidence timing defect.
+
+### Before → after measurements
+
+Commands run from `kagi-shokunin/`. BASE is
+`4f94b52a3cdfaa289d779bd8a2afcd0b1fcd9105`; combined measured repair is
+`017cc4c5eb87f7942fa41ff8893e8737fd14cfb4`.
+Exact argv/stdout/exits and per-run revisions are committed in
+`kagi-shokunin/.ufo/waves/round-24/recovery-checks.json`.
+
+| Claim | Actual counting/check command | Before → after; verdict |
+|---|---|---|
+| C1 | `bash .ufo/waves/round-24/tools/host-tripwire.sh <label> <rev>` | BASE host executions **35 → 0**; complete **4/4** in both; after **12/12 distinct population skips in every run**, including cells. **Verifies the frozen population exclusion.** Stubs intentionally make underlying verdicts FAIL/BROKEN; those are not promoted to CLEAN. |
+| C1 | `python3 .ufo/waves/round-24/tools/gate-regression.py c5ef9e92201b6c36396301f12b23740565bf86a0 277a0d4f1d9bc6c5cea9b1d0ab92e33e5c17bb56 <output>` | Identical **151-case fixture suffix**: inherited logic exit **1**, repaired logic exit **0**; recorder exit 0. Red findings remain in `recovery-gate-regression.json`. |
+| C1/all | `bash corpus/claim-ledger.sh verify` under empty HOME; no host-consent flag | At `017cc4c5`: exit **0**, `CLAIM_LEDGER: CLEAN (claims=61 deferred=0 stamped=83 ids=61 cited=51 labeled_ids=20 orphans=10 host_skipped=12)`. Thus 49 non-host rows executed; no host row was credited. Citations separately exit 0/unresolved=0 at `277a0d4f`. |
+| C2 | `python3 .ufo/waves/round-24/tools/recovery-count.py <rev>` | BASE → measured repair: in-row-only **16 → 0**, captures **10 → 32**, registry **26 → 32**, stamps **79 → 83**, mismatches **0 → 0**. **Verifies provenance coverage, not historical page truth.** |
+| C2 | `python3 .ufo/waves/round-24/tools/normalizer-replay.py .ufo/waves/round-24/recovery-normalizer-replay.json` | At `31c84214`, exit **0**, rows=10/v1_matches=10/ascii_matches=7. Only step 5 changes in the alternative; trim remains v1. The normalizer's 22-case ledger expectation also matches. |
+| C3 | `python3 .ufo/waves/round-24/tools/identity-swap.py <label> <rev>` | SAME population: BASE survivors **15**, after survivors **0/killed 15**, invalid **0 in both**. Every pristine process exits 0; after mutants exit 1 with complete receipts. **Verifies declared projected identity only**; the semantic extension remains rejected. |
+| C3 instrument | `python3 .ufo/waves/round-24/tools/identity-swap.py --selftest` | At `277a0d4f`, exit **0**, `IDENTITY_INSTRUMENT_SELFTEST: PASS (cases=12 failed=0)`. This supports the counter, not an outside calibration accuracy score. |
+
+Separability is executed evidence: run
+`python3 .ufo/waves/round-24/tools/claim-separability.py c1-only`
+(and c2-only, c3-only) against committed inputs at `e6210511`.
+All outer exits are 0. C1 alone: total=0/complete=4/4/skip_lines=48;
+C2 alone: CLEAN rows=32/captures=32/inrow_only=0; C3 alone:
+population=15/killed=15/survived=0/invalid=0 with clean controls.
+C3's isolated bookkeeping is explicitly BASE-shaped, **80 pins/59 rows**,
+not the combined tree's 83/61. Each input digest is checked before use;
+the three `*-run.json` files preserve exact commands and outputs.
+
+Final pushed-tree check, actually run after landing:
+`python3 .ufo/waves/round-24/tools/recovery-count.py 4587c61a348e4528717404a68912c373f3ef4d03`
+→ exit 0, rows=32/captures=32/inrow=16/inrow_only=0/stamp_rows=83/
+stamp_mismatches=[].
+
+### Sources & frontier
+
+Full round **26 → 32 rows**; added **six tier-A rows** (S027–S032), no
+tier-B/C additions. S027/S028/S029/S031/S032 are mined; S030 is rejected
+for the v1 collapse choice, not for the source's accuracy. No existing
+row's status/recheck/used-by changed. S032 supersedes only S007's incorrect
+quote capitalization; S019's feature-status correction remains active.
+Located quotes, access dates, decisions and the fresh S030 comparison
+are in `kagi-shokunin/corpus/lessons/round-24.md` Gate/recovery sections.
+
+Counting command is the immutable `recovery-count.py <rev>` above; source
+conformance command for the following actual recovery-start/end outputs:
+`/home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin kagi`.
+
+Recovery start (31-row inherited state), **exit 0**:
+
+```text
+kagi	W04	S019 duplicate url www.1password.dev/brokered-access across scopes
+kagi	W04	S020 duplicate url 1password.com/blog/1password-credential-broker-public-preview across scopes
+kagi	W04	S021 duplicate url openbao.org/docs/concepts/tokens across scopes
+kagi	W04	S022 duplicate url developer.hashicorp.com/vault/docs/auth/jwt across scopes
+kagi	W04	S023 duplicate url developer.hashicorp.com/vault/docs/concepts/lease across scopes
+kagi	W04	S025 duplicate url openbao.org/docs/auth/jwt across scopes
+kagi	W04	S026 duplicate url openbao.org/docs/concepts/tokens across scopes
+kagi	ok	/home/vgpnk/Projects/shokunin/kagi-shokunin/corpus/SOURCES.md
+```
+
+Recovery end (32 rows), **exit 0**:
+
+```text
+kagi	W04	S019 duplicate url www.1password.dev/brokered-access across scopes
+kagi	W04	S020 duplicate url 1password.com/blog/1password-credential-broker-public-preview across scopes
+kagi	W04	S021 duplicate url openbao.org/docs/concepts/tokens across scopes
+kagi	W04	S022 duplicate url developer.hashicorp.com/vault/docs/auth/jwt across scopes
+kagi	W04	S023 duplicate url developer.hashicorp.com/vault/docs/concepts/lease across scopes
+kagi	W04	S025 duplicate url openbao.org/docs/auth/jwt across scopes
+kagi	W04	S026 duplicate url openbao.org/docs/concepts/tokens across scopes
+kagi	W04	S032 duplicate url www.1password.dev/brokered-access across scopes
+kagi	ok	/home/vgpnk/Projects/shokunin/kagi-shokunin/corpus/SOURCES.md
+```
+
+Receipts are `recovery-census-start.txt` / `recovery-census-end.txt` in the
+lane wave directory. These do **not** retroactively cure M24-4: the original
+round-start census was missing and its BASE-clone reconstruction was late.
+End conformance is clean; the start timing defect remains disclosed.
+No core/frontier ground moved and no new knowledge entry was admitted:
+OIDC/scanning/NIST frontier remains unchanged. C2 is sourced by opened
+S027–S029/S031 and the exact-quote correction S032.
+
+### Trend verdicts
+
+- **expansion — unchanged:** no new governed domain surface, knowledge entry
+  or repertoire acquisition. Source-row/tool evidence is not knowledge growth.
+- **quality — improved:** the weak quote is explicitly superseded, legacy
+  provenance coverage is complete, v1 freshly reproduces ten digests, and
+  concrete policy/measurement falsifiers are repaired with red/green evidence.
+  Historical host facts remain historical; a restamp does not make them live.
+- **discernment — unchanged pending outside review:** this supersedes the
+  earlier “improved” assertion based on authored counts/rejections. Fresh
+  seats and learned criteria are useful author-side evidence, not the
+  required independent admit-and-reject spot-check. No outside agreement or
+  native admission is self-certified.
+
+### SHONEN
+
+These supersede the earlier mismapped box pointers. Marks remain author
+assertions; no named non-author promotion verifier is present.
+
+- [~] Real decision tables/error patterns/checklists/citations —
+  `kagi-shokunin/SKILL.md` active registry and decision tables;
+  `kagi-shokunin/corpus/lessons/round-24.md` recovery Gate.
+- [~] End-to-end domain task logged — historical round-3 auth-gate handoff
+  in `kagi-shokunin/LOG.md`, referenced by canonical `SHONEN.md`; this round's
+  local fixture work is not claimed as a fresh vault task.
+- [~] Instructions executable without oral context — committed commands,
+  paired fixture receipts, safe ledger CLEAN and three isolated overlays
+  in `kagi-shokunin/.ufo/waves/round-24/recovery-checks.json`.
+- [~] No cross-domain bleed — `kagi-shokunin/PROVINCE.md` and unchanged
+  adjacent/core boundaries; browser lease/opencode ownership remains
+  unresolved, not silently absorbed.
+
+### Waves, deaths and residual conformance
+
+- Build wave: **67** seats, inherited; mix **29 scout / 15 reviewer /
+  5 executor / 4 revenger / 4 critic / 4 scribe / 3 connector /
+  2 sentinel / 1 mutation-tester**. Its late reports are now durable;
+  **66 reports, one dead seat**. L1 holds the frozen planner seat.
+- Fresh falsify wave: **64** seats, policy-v2 validated; mix **21 scout /
+  27 reviewer / 11 mutation-tester / 4 critic / 1 connector**.
+  **56 reports, eight deaths**. Eight whole-wave attempts were refused
+  atomically with `Background job limit reached (100)`; attempt nine
+  started all 64. No split/shrink/replacement was used
+  (`falsify-refusals.json`, `falsify-dispatch.json`, registry).
+- Two additional genuine repair executors were dispatched after concrete
+  findings; both died before producing patches, so L1 integrated the repairs.
+  **Round total: 133 seats** (67 + 64 + 2), no replacements, within 200.
+- Dead fresh wave names: **FGateDecisions, FSeparability, FWaveEvidence,
+  FMigration, FIdentityR2104, FIdentityR1110, FPolicyCitations,
+  FNormWhitespace**. Dead repair executors: **FixGateConfinement,
+  FixIdentityInstrument-2**. Their exact shared error:
+  `[openai-codex/gpt-6-luna] Retry budget exhausted after 5 retries: Codex error event: Codex is at capacity, please try again later (code=turn_rate_limit_exceeded)`.
+  The inherited **ProbeAbsPath** death remains recorded separately; it was
+  never replaced. Total deaths across inherited/fresh work: **11**.
+- A completed seat's mistyped frozen hash (`FPolicyTagSkip`) failed checkout
+  and ran no gate: its unverified static notes are not runtime passes.
+  L1 also began working-tree repairs before the final read-only reports
+  returned (M24-16). The Git freeze stayed immutable; final committed-input
+  measurements waited for all seats to settle. This sequencing defect is
+  not relabelled conformant, and unbound live-tree notes are not credited.
+  Original live-checkout mutation/ambient-HOME deviations and late-report
+  timing remain disclosed. No complete whole-round no-private-read
+  attestation is available; the recovery measurements use stubs/empty HOME
+  and do not erase inherited deviations.
+- Required fleet misroot sweep returned empty, exit 0; no files moved or
+  deleted (`kagi-shokunin/.ufo/waves/round-24/recovery-misroot-sweep.txt`).
+  No new tool install/update, pacman transaction, account/vault/handler
+  action, real-host consent invocation or routing/configuration mutation.
+  Selftest opt-in cases act only on synthetic fixture roots.
+- **Stale-lane:** respawn-per-round; no other mission of this lane is open.
+  **L0:** no new kagi round-24 question. Global package pause respected.
+  **Closure:** pending the integrator's non-author verification; no
+  MANIFEST/append-closure operation was performed by this lane.
