@@ -1033,3 +1033,46 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   report prefixes are preserved; any recheck is a labeled late-input addendum, not a claim that
   original inputs were complete or past custody was repaired. No initial missing-input report
   is credited as source verification.
+- **Evidence validity, not headcount:** a captured-request/result audit inspected 5,591 requests
+  across the original 64-seat evidence wave at approximately 20:56Z. Parent disposition is
+  25 observed-write VOID reports, two attempted/uncertain quarantines, 36 with no detected
+  breach at that cutoff, and one incomplete/unclassified. Seven logs were still moving;
+  these are not blanket-clean/final-compliance counts. Outside report-path scratch remains
+  a breach even when removed. No reports are replaced or credited through a VOID PASS.
+- **Execution boundary correction:** own in-memory parsers are allowed, but compiling/executing
+  fetched lane/agent source is not made permissible by keeping it in memory. The audit's
+  original zero-execution statement is superseded by its appended correction; observed and
+  errored attempts are distinct. The child's approximate 22:00Z correction heading is not
+  adopted as event authority; the parent captured the corrected record at 21:08:03Z.
+  Sanitized audit, request/result IDs, lower-bound limits and dispositions are preserved.
+- **Mori r23 parent verification landed:** `c725aa37aa3c9ec4f34e3c2abc8ca1b616c7c130`.
+  Main independently counted sources 76→89, matched the measured C1 source hash, confirmed
+  withdrawn production paths absent, reopened the narrow btrfs admit and hashlib reject,
+  and ran the root-owned census (exit 0, six W04 warnings). Original C2 remains 29/30,
+  unprovable; no capability/privacy/baseline admission. The explicit pre-seal parent-ID
+  clause at amendment115–121, not just original contract§C2, governs the frozen contradiction.
+  Accounting closure and successor dispatch still await executable native root verification.
+
+60. "set the effort of m_mim to max"
+
+- Saved `m_mim` with effort `max` in the global alias record, preserving its provider/model,
+  every other alias and every role binding. Fresh captures use the updated alias; no existing
+  worker is restarted or reissued.
+- Actual fresh, ephemeral, no-tools alias invocation returned `MIM_MAX_OK`, exit 0, in 7.66s.
+  `.ufo/waves/hyaku/m-mim-max-smoke.json` records the observed tool output and exact flags.
+  No physical-provider/fallback/effort attestation beyond configured alias success is claimed.
+
+61. "set the effort of m_mim to xhigh"
+
+62. "the model alias m_mim set its thinking effort to xhigh"
+
+- The superseding setting is on **the `m_mim` alias itself**: thinking effort `xhigh`,
+  replacing the preceding `max`. Provider/model, every other alias and all role assignments
+  are unchanged. Existing workers were not restarted to apply it.
+- A fresh no-tools alias invocation returned `MIM_XHIGH_OK`, exit 0, in 10.18s.
+  `.ufo/waves/hyaku/m-mim-xhigh-smoke.json` preserves the flags, observed tool output
+  and configured-versus-physical-attestation boundary. The earlier max smoke is historical.
+- Parent spot-checks of two contested audit request IDs confirm the original captured
+  `/tmp/kg.diff` redirection and lane-derived `exec(compile(...))` request. The latter's
+  errored result is still not proof of successful execution; quarantine is retained.
+  No command was re-executed and no VOID report was laundered into admission credit.
