@@ -70,9 +70,9 @@ Counting command (both runs, pin): `node scripts/claims-check.mjs --fidelity --f
 ## Sources & frontier
 
 `SOURCES: unchanged — rows 32 (A:31/B:1, mined 16, queued 14, rejected 2); no new row this round
-(repair-first); census `sources-census.sh validate --root /home/vgpnk/Projects/shokunin kumitate` →
+(repair-first); census `/home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin kumitate` →
 `kumitate ok`, exit 0`. Frontier: no new ground entered; the fidelity instrument itself moved from
-"green by shift" to "green by recorded debt", which is the round's quality claim.
+"green by shift" to "green by recorded debt", which is the round's operability claim (quality is only the trend verdict).
 
 ## Trend verdicts
 
