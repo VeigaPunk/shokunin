@@ -11688,6 +11688,101 @@
    "notes": "ADMITTED: C1 capability acquisition on lowest legacy-novelty/coverage axis (score held 7) and C2 calibration literal-reference repair 2->0 (score held 8) both independently remeasured; P4 boundary preserved exactly; no harm. Dispatch digest watchdog.log:600 2026-10-21T10:47:58-03:00 launch kengaku round=28 pgid=1802424 driver=hyaku-inline attempt=1. Prior r27 admitted (rounds[411]); rejection streak 0. Discernment improved via this non-author agreement on admit and rejects. No promotion; SHONEN [~]. Closure never edited lane or report; no tools installed.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 23,
+   "date": "2026-10-21",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 23,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 23
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "claims": {
+    "R23-C1": {
+     "axis": "coverage",
+     "verdict": "improved",
+     "before": "1/6",
+     "after": "4/6",
+     "scalar_before": 10.0,
+     "scalar_after": 10.0,
+     "finding": "Frozen at a3c92eb6 (claims.json): six-verb T1 denominator, target cumulative sourced original-envelope bound held count >=2/6, completeness incomplete unless 6/6. Re-measured 1/6 (identify-flutter-build) -> 4/6 (+inspect-dart-aot, inspect-signal-decoders, decode-signal-recording); debug-with-gdb/debug-with-rizin unheld; c1_incomplete exit1 at B/F/H. Demonstrated per the frozen definition, not redefined: closure re-executed all four positive REA6.5.0 calls and the refusal control on independently re-fetched/re-extracted inputs with matching normalized results. Finite holdings only; no mastery, completeness, debugger ownership, hardware acquisition or authentication credit."
+    }
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-23/kaidoku.md",
+   "report_commit": "fbb9ebfec480d037539830edf48b6465db1f8c55",
+   "commit": "kaidoku-shokunin@fe10219ec6e92c32b7eb40d83fbcac888756c6c1",
+   "verification": {
+    "reviewer": "CloseKaidoku23 (hyaku-closure, opus session, fresh non-author; never touched kaidoku; author KaidokuR23). No subagent seats dispatched (fleet background-job cap observed at 100).",
+    "scope": "Read-only over lane and report; throwaway clone /tmp/ck23 at H; no lane or report writes; no tool installs/updates (temporary /tmp extraction of the existing AppImage only). Lane gate verify.py and count-c1.py --selftest evidence-verified, not executed; count-c1.py measurement command executed in the clone; independent closure-authored linkage/source/no-harm checks over Git blobs; REA calls re-executed on independently obtained inputs.",
+    "conformance": "Report fbb9ebfe authored kaidoku-shokunin <kaidoku@shokunin.local>, ancestor of fleet HEAD, unchanged since; SHONEN heading with four [~] lines. Seven cited lane commits a3c92eb6, 2b40aec5, 6615aeae, 28383514, 9d64b953, fe18f13f, fe10219e plus base aa1450b8 exist and are ancestors of refs/heads/main. jj-lane state: local=remote=ls-remote main=fe10219e ahead=0 behind=0 tracked=0 untracked=0; status --porcelain empty. Prompt (75eafb91, kaidoku-shokunin) contains all 105 fixed template lines in order plus §6 hyaku addendum. Dispatch digest watchdog.log:606 '2026-10-21T11:30:23-03:00 launch kaidoku round=23 pgid=2910938 driver=hyaku-inline attempt=1'.",
+    "c1_remeasurement": "count-c1.py --rev B/F/H in clone: B exit1 c1_incomplete 1/6 [identify-flutter-build], catalog 135/153 zero18; F and H exit1 c1_incomplete 4/6, catalog 137/153 zero16. Closure-independent: four envelope files ok:true with operation matching verb and evidence_ids ev_d2ff19d7 (dart), ev_940cf7bb (inventory), ev_bcadf773 (uart-hi), ev_1d361f25 (official uart); decode-invalid-decoder envelope ok:false execution_failure (refusal, not counted). Re-fetched F-Droid Saber APK sha256 a7b1f5c8...a618 (41263437 B) and sigrok-dumps hello_world_8n1_9600.sr 01b72610...0b61 (58381 B) = committed; extracted AppImage 49d2f597...0b614 to /tmp and re-ran npx rea-agents@6.5.0 inspect-dart-aot / inspect-signal-decoders --all / two decode-signal-recording / invalid-decoder: all exit/ok match; dart normalized_result abi/coverage/libapp/string_pool/target equal; signal results equal except wrapper path/digest and input filename. Knowledge entries cite these paths+ids and S058-S063; each new row tier A/mined with used-by naming the entry. R22 envelopes and all 18616 base files present; only LOG/PROVINCE/SCORECARD/SKILL/README/SOURCES modified.",
+    "gate_evidence": "verify-final-producer.json exit0, executed_sha256 81e53469...0f20 = sha256 of F:.ufo/waves/round-23/verify.py; summary.json 15/15 passed failed[]; selftest.json selftest_clean 25/25; pre-v3-red.json 21/25 with exactly four false accepts (inherited_entry_lost, inherited_entry_changed, symlink_evidence, symlink_knowledge) eliminated in v3; r22-c1 exit1 1-of-6 R22 predicate retained, r22-c2 exit0. Evidence-timestamp sweep over round-23 JSON: zero stamps later than their introducing commit.",
+    "no_harm": "LOG/SCORECARD/SKILL/PROVINCE exact base prefixes; SOURCES 57 old rows byte-identical, +6 rows (57->63, A51->57, B5, C1, mined55->61, rejected2); SCORECARD append-only with finite proxies coverage/depth/calibration 10.0->10.0; README +3 map rows/-3 blank lines (see routed defects). Fleet sources-census validate exit0 with four W04 duplicate-URL-across-scope warnings (S033, S047, S054, S062; S062 is a deliberate supersession of S058).",
+    "outside_spotcheck": [
+     {
+      "item": "Admit S058/S062 sigrok-cli 0.7.2 manual, input-file option",
+      "decision": "admit",
+      "reopened": "https://raw.githubusercontent.com/sigrokproject/sigrok-cli/sigrok-cli-0.7.2/doc/sigrok-cli.1 (sha256 e3f06dfe...a5f9 = retained copy)",
+      "verdict": "agree",
+      "reason": "Quote 'Load input from a file instead of a hardware device.' at line 111, 11 words; scope limited to option meaning, not REA semantics."
+     },
+     {
+      "item": "Admit S059 sigrok-dumps UART hello_world README",
+      "decision": "admit",
+      "reopened": "https://raw.githubusercontent.com/sigrokproject/sigrok-dumps/c8fad052.../uart/hello_world/README (sha256 7af1c784...6f66 = retained)",
+      "verdict": "agree",
+      "reason": "Quote at line 5 verbatim; README also states 625kHz for 9600 baud and TX-only, supporting the dataset-provenance-only admission."
+     },
+     {
+      "item": "Admit S061/S063 legacy-layout Saber inspect-dart-aot (own-work)",
+      "decision": "admit",
+      "reopened": "re-fetched F-Droid APK + re-run REA6.5.0 inspect-dart-aot",
+      "verdict": "agree",
+      "reason": "Independent rerun reproduces libapp coverage complete, snapshot_hash_sources 2, sections, and partial string_pool exactly; qualification (selected x86_64 carrier only) is honest."
+     },
+     {
+      "item": "Reject invalid-decoder execution_failure as a held witness",
+      "decision": "reject",
+      "reopened": "re-run decode-signal-recording --decoders round23_nonexistent_decoder",
+      "verdict": "agree",
+      "reason": "Rerun exits 1 with ok:false execution_failure identical to the retained envelope; a refusal cannot count as a holding (frozen falsifier 'refusal counted')."
+     },
+     {
+      "item": "Reject crediting debugger verbs / prior R22 Dart refusal",
+      "decision": "reject",
+      "reopened": "count-c1.py targets at H; R22 evidence unchanged B->F",
+      "verdict": "agree",
+      "reason": "No gdb/rizin envelopes exist; R22 Saber unsupported_target refusal is a different carrier and remains intact, so it neither adds nor erases a holding."
+     }
+    ],
+    "seats": "W1 build 64 (scout24/reviewer16/scribe8/critic6/connector6/executor3/sentinel1): 52 reports, 12 reportless (7 Haiku 429, 5 Codex capacity; executors BuildSigrok/BuildSignalRunner/BuildCounter, scribes SourceSigrokCli/SourceSigrokUart/SourceSigrokRaw/SourceDartSnapshots/DraftSignalEntry/DraftMistake/DraftSearchLog/DraftCompleteness, sentinel SentinelBoundary). W2 falsify 64 (reviewer48/critic8/scout6/connector1/mutation-tester1): 64 reports. 128 transcripts = 128 unique spawns; 116 reported seat files all hash-match registries; zero replacements. RunBefore ran C not B (no baseline credit, disclosed).",
+    "tool_acquisition": "sigrok-cli 0.7.2 lane-local: wrapper tools/sigrok-cli.sh points at gitignored .ufo/waves/round-23/runtime/squashfs-root, extracted from /home/vgpnk/.local/opt/sigrok-cli-0.7.2-x86_64.AppImage (sha256 49d2f597...0b614, created 2026-10-21 08:39 -03, before r23 dispatch). pacman -Qs sigrok empty; no sigrok-cli on PATH; pacman.log shows no sigrok transaction. Lane-local, no global/pacman change confirmed."
+   },
+   "closed_at": "2026-10-21T16:32:19.665609+00:00",
+   "campaign": "hyaku",
+   "notes": "ADMITTED for the frozen finite coverage move R23-C1 1/6->4/6 only (k>=2 target met; completeness incomplete, c1_incomplete exit1 is status-neutral disclosed inventory incompleteness; gdb/rizin unheld/Adjacent). Not mastery, promotion, capability, hardware acquisition or authentication. Dispatch digest watchdog.log:606 2026-10-21T11:30:23-03:00 launch kaidoku round=23 pgid=2910938 driver=hyaku-inline attempt=1. Prior r22 admitted (rounds[415]); rejection streak 0. Routed defects: (1) corpus/README.md lost three blank separator lines (map/knowledge/lessons tables now abut the next heading); 'nonempty-line order preserved' is literally true but README is not insert-only; restore blanks next round. (2) count-c1.py, named by the frozen counting_command, did not exist at freeze commit a3c92eb6 and was revised v1->v3 in-round; accepted because v3 is strictly stricter and closure re-derived the count independently; future rounds should freeze the counter with the claim. (3) Gitignored runtime no longer holds the Saber APK or sigrok extraction; envelope local_path values dangle; reproduction requires re-fetch/re-extract (closure did, digests match). (4) a3c92eb6 author-date 11:02:41-03 precedes dispatch 11:30:21 (jj change-creation at r22 landing); committer 11:33:00 is post-dispatch; diagnostic only. (5) Origin of the 08:39 AppImage under ~/.local/opt is unrecorded by r23 (predates the round); whoever installed it should record it. Open: 12 reportless r23 seats and r22's 102 reportless seats uncredited; kaidoku/revenger shipped-artifact L0 overlap unanswered (revenger training in parallel). Discernment improved via this non-author agreement on 3 admits + 2 rejects. SHONEN all [~]; not fully checkable by a non-author yet (no named promotion verifier). No promotion.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
