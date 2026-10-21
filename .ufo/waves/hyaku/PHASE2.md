@@ -549,3 +549,11 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   no wave was undone or replaced. Independent falsification still must verify the frozen
   811-anchor population, explicit unchecked/debt members, and zero true→nontrue regressions
   against the fixed pairing rule before closure. Author-side numbers are not admission.
+
+41. "make the global default for retry to be 5, not 40" / "on omp, when a model fails"
+
+- **Current retry limit:** `retry.maxRetries=5`, set for this session and saved globally.
+  Readback reports `5`, source `global config`, "Maximum retry attempts on API errors".
+  This supersedes all earlier retry-40 instructions in this campaign record and old prompt
+  snapshots. Fallback chains, routing, concurrency targets and running workers were not changed.
+  Already-created child sessions may retain their captured settings; no worker was restarted.
