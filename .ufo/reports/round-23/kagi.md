@@ -88,9 +88,9 @@ Other evidence bullets:
   R16-01/03, R17-01, R18-01 — host-bound/substrate), one inherited fail (R11-08).
   Recorded measured commit is the verdict file's own `measured_commit: e1884c6e…`.
   No full legacy `verify`/`cells` was run; no host-private gate was executed.
-- Misroot sweep (`git -C /home/vgpnk/Projects/shokunin status --porcelain`): three
+- Misroot sweep (`git -C /home/vgpnk/Projects/shokunin status --porcelain`): four
   seat reports had landed at the fleet root (`falsify/RevS019.md`,
-  `falsify/ScoutMigration.md`, `parent-build/ClaimR11X11.md`); each was byte-copied
+  `falsify/ScoutMigration.md`, `falsify/RevW04.md`, `parent-build/ClaimR11X11.md`); each was byte-copied
   into the same lane-relative path under `.ufo/waves/round-23/`, verified with `cmp`,
   then the fleet copy was deleted. Recorded as M23-4. Inherited lane leftovers: none
   for round 23 (attempt 1 was clean); other parent-built reports remain parent-owned
