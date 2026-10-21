@@ -1,0 +1,60 @@
+{
+  "lane": "tameshi",
+  "round": 24,
+  "at": "2026-10-21T23:21:11.939168+00:00",
+  "append_argv": [
+    "python3",
+    "scripts/hyaku/append-closure.py",
+    "--entry",
+    "/fast/scratch/hyaku-resume-s3/closure-drafts/tameshi24-closure-entry.json"
+  ],
+  "append_exit": 0,
+  "append_stdout": "appended rounds[435] commit 62fea92bb723844376ea2af4636f0cabc1e0efa3\npushed\n",
+  "append_stderr": "",
+  "native_argv": [
+    "python3",
+    "/home/vgpnk/Projects/shokunin/.ufo/waves/round-15/closure-check.py",
+    "--repo",
+    "/home/vgpnk/Projects/shokunin",
+    "--json",
+    "--no-citations"
+  ],
+  "native_exit": 1,
+  "native_stderr": "",
+  "target_row": {
+    "closed_at": "2026-10-21T23:21:10+00:00",
+    "counter": 24,
+    "entry": 435,
+    "entry_type": "closure",
+    "lane": "tameshi",
+    "round": 24,
+    "status": "ok"
+  },
+  "target_debt_cne": [],
+  "whole_ledger_counts": {
+    "by_class": {
+      "contradiction": 57,
+      "keying_violation": 1,
+      "unrowed_terminated": 4
+    },
+    "contradictions": 57,
+    "could_not_evaluate": 81,
+    "debt": 62,
+    "history_pin": 0,
+    "live_in_flight": 0,
+    "nonclosure": 100,
+    "nonclosure_unrecognized": 80,
+    "pending_round": 13,
+    "prompt_orphan": 0,
+    "stale_in_flight": 0,
+    "unknown_entry_type": 80,
+    "unknown_lane": 0,
+    "unknown_round": 1,
+    "unrowed": 17,
+    "unrowed_terminated": 4
+  },
+  "whole_ledger_verdict": "debt",
+  "source_sha256": "d8c1620df147d2e576f157f43e149ae4a1251a760b9f111f210b516744187a48",
+  "admitted": false,
+  "limits": "Targetstatusokmeansrealfiledreport,notclaimadmission;wholeledgerred/legacyCNEretained;noheldsource/policypayloadrerun."
+}
