@@ -89,3 +89,16 @@ Counting command (both runs, pin): `node scripts/claims-check.mjs --fidelity --f
 - [~] `SHONEN.md:6` end-to-end — LOG round-37 + this report citing `86c0676c`; `round-gate --round 37` to be run by closure.
 - [~] `SHONEN.md:7` no oral context — pin recreate + checklist commands + pairing rule documented; `cite-check` still needs explicit `--src` (named limit).
 - [~] `SHONEN.md:8` province — every changed path is in the lane; upstream/operator files untouched; `PROVINCE.md` accurate.
+
+## Erratum (appended 2026-10-21; lane `a5d627b155c754d7f90d933d251368ae8ee6f273`)
+
+The falsify seat `Verify3` **refuted D3 as first landed**: the live `coverage:runtime-layer` row still
+read `floor(10 × 11/11 × 83/92) = 9` and no named round-37 SCORECARD correction existed, while this
+report and `corpus/lessons/round-37.md` asserted they did. Fixed in `a5d627b1`: the live row now reads
+`floor(10 × 11/11 × 92/92)` = 10, `SCORECARD.md` carries a named `## Round 37 correction` stating the
+shipped rule was right-first (the clause-guarded claim is superseded), and
+`corpus/lessons/round-36.md` carries an appended `## Correction`. Historical `C2=81/81`/`82/82` quotes
+stay as that round's readings and are named as such. `PROXY: MATCH (… C2=84/84 …)` still holds,
+`CHECKLIST: 14/14`. Late falsify survivors/gaps remain as recorded: `selftest-fidelity-inclusive-upper-bound`
+(Pair8) and `SELFTEST_ANCHOR_SPAN_EXCLUSION` (Pair6), plus `FIDELITY_SHORT_SYMBOL_FLOOR_SELFTEST`
+(Pair7) — all selftest-coverage gaps, none changing the landed rule.
