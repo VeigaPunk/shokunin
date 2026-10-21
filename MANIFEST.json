@@ -8942,6 +8942,49 @@
    "notes": "Driver digest (.ufo/watchdog.log:507,524): 2026-10-20T16:24:51-03:00 launch souji round=18 pgid=1861869 driver=hyaku-inline attempt=1; 2026-10-20T20:26:38-03:00 complete souji round=18; hyaku-inline attempt=1. Report 856e4f6 by souji-shokunin; 8 cited lane hashes ancestors of refs/heads/master; state ahead=0; only untracked path is operator-owned census/operator-sweep-20261019/ (not author work, untouched). Waves 91+79=170 unique, initial deaths 0+0; same-identity follow-up ScribeRowsGit-5 failed Haiku 429, not replaced, L1 completed re-opens. Transcript audit not clean, disclosed: raw majors 139/92; adjudicated 196 false-positive, 26 contract-deviation, 9 confirmed driver-state reads; MatrixR18 foreign-prefix SIGKILL (R18-M6) voided. Certification OFF; K5 HELD. Routed: D1 tip-8be6523 gate recheck lacks committed receipt (receipt binds 74f9adb); D2 counter post-fix digest unpinned in agreement records; D3 gate selftest baseline 33 is static count, not receipt; D4 seat auditor lacks signal class; D5 r15/r17 kill_session lacks starttime recheck. Carried operator-owned L0 (lines 59,66,67,70,71): inherited contractions vs a31642d, jj keep refs, operator-sweep disposition, orphan-reap approval (58 listed, none reaped), r14 control-pin procedure; S038 anchor drift. SHONEN 4x[~] look non-author-checkable; promotion operator-owned. No r19 work started. Tool installs: none.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 22,
+   "date": "2026-10-20",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 22,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 22
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "freshness": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "feature-bound typed credential review (corpus/feature-claims.py; R22-01/R22-02; final-verification.json @4be5da3)"
+   ],
+   "report": ".ufo/reports/round-22/kagi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kagi-shokunin/corpus/lessons/round-22-verifier-spotcheck.md@d218603b74099ddca0bd8f869516fc41db0979bf",
+    "rechecks": "C2 re-measured by plain sha256/LF/byte comparison of stamps.tsv via git show: BASE stale=6 (config-layering, handler-on-disk-state, handler-trust-boundary, janitor-env-contract, lessons/round-18, LOG) -> 0 at 4be5da3/254d632; members 63->70, dropped 0, added 7; frozen/before 6 inputs byte-identical to BASE and expected_stale_original equals the re-derived six. C1 presence re-measured (absent at BASE, byte-identical 4be5da3==254d632; inputs digests match 4be5da3); gate exits/tallies evidence-verified only (after exit0 admitted=4, before exit1 2 false+8 bar-fail, boundary exit2 x3, selftests ledger121/feature12/revision17/source47, 31/31 safe rows, 12 skips none C1/C2, heading 17/17 bound to claim-ledger.sh sha cf56f9ea). Spot-check 5/5 admits + 4/4 rejects agree (S017/S018 re-opened); fleet census exit0 with 5 W04 warnings. 4 read-only closure seats; no sibling gate, legacy verifier, vault/account op or installer run."
+   },
+   "commit": "kagi-shokunin@254d632ed2f6174e1ffcfe636a17b5e18284212f",
+   "closed_at": "2026-10-21T00:12:36Z",
+   "campaign": "hyaku",
+   "notes": "watchdog digest: 2026-10-20T18:30:55-03:00 launch kagi round=22 pgid=1119391 driver=hyaku-inline attempt=1 / 2026-10-20T20:24:43-03:00 complete kagi round=22; hyaku-inline attempt=1. Landings 8ada17a5, 4be5da3c (measured), 254d632e; report fleet c5c5d1d2. Step-1 clean. r21 debts learned: QA10/QM13/QM14 appended; E1/E3 active correction with historical bodies kept; 9 deleted r21 stamp lines justified 9/9 by round21-migrations.json; stale pins repaired. Waves 64+66 (130 spawn IDs, 129 names: CriticNoTrade reused as fresh -2); 4 Haiku-429 scribes dead, uncredited, no replacements. Disclosed safety deviations are conformance defects, status-neutral: two unauthorized legacy full-verify runs (incl. R18-01) with unretained receipts, no secret-access attestation; AttackActiveReview claims withdrawn/quarantined; scratch collision /tmp/kagi-shokunin retained; mise node@26.12.0 side effect also wrote global ~/.config/mise/config.toml (mtime 18:33:38-03:00). Routed D1-D9 in spotcheck: census W04 omission; mise global-config disclosure + operator revert decision; full-verify forbidden-path contexts/guard selftest; boilerplate pin dispositions lack drift commits; seat-name reuse; verdict file lacks measured commit; S017-S023 per-row quote/digest + stale Gate prose; /tmp residue cleanup (operator); hermetic cells run. SHONEN all [~]; closure supplies box-3 outside check; promotion operator-owned. No r23 work started.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
