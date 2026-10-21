@@ -178,3 +178,13 @@ Filed after the orchestrator reopened capacity and directed the wave to run.
   at `63bb887`; that record remains the code measurement.
 - **Slot.** `souji r19-w1b` released at filing; the running seats remain counted by the gate's
   live measure.
+
+## Erratum 2 — additional wave-1b finding (appended after Erratum 1)
+
+- `CriticD5` completed after Erratum 1. It judges the D5 `(pid, starttime)` recheck an
+  admissible **bounded** improvement, not a PID-recycle proof, and records the residual
+  check-to-signal window plus an **unguarded `killpg(session, SIGKILL)`** call in the fixture
+  cleanup. No code change was made at the budget stop; this is an open operability residual for
+  r20, alongside the already-disclosed D5 TOCTOU. Report committed in lane commit `7d199d2b2446cac1a0c6d08c53e1e950e99bec35`.
+- Lane tip after this erratum: `7d199d2b2446cac1a0c6d08c53e1e950e99bec35`. The other wave-1b
+  seats' reports continue to land under `.ufo/waves/round-19/w1/` and remain uncommitted at filing.
