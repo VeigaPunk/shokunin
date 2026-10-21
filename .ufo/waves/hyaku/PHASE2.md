@@ -762,3 +762,20 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   rebuilt from KagiR26's transcript is byte-identical to the landed 3553d499.
 - **Dispatched:** kaidoku r24 (KagiR27-2, reused by message after landing kagi r27); kagi r28
   (fresh KagiR28).
+- **Closures since:** `rounds[426]` mado r22 rejected-honest-stop (CloseKaidoku23). Both strict
+  targets are unmet, exactly as reported; the detector is byte-identical to v2, so the v3
+  suppression is fully withdrawn, and there is no new harm. That is the fourth consecutive
+  non-admission, so `inline.sh advance` re-blocked mado; its operator L0 disposition question
+  stays open. `[427]` mori r22 admitted (CloseMori22). All three routed rulings hold: the frozen
+  field is honest but needs a registered rename, W2 was issued exactly once, and the SOURCES edit
+  is cell-limited.
+- **Dispatched:** mori r23 (MadoR22-2, reused by message; the fresh MoriR23 spawn was refused at the cap).
+
+52. "instead of m_haiku, use m_mim"
+
+- **Routing, saved globally.** `task.agentModelOverrides` scribe and distiller `@m_haiku` →
+  `@m_mim`. They were the only roles delegated to m_haiku; reviewer was already `@m_mim`
+  (directive 50). Unchanged, because they are fallbacks rather than delegations: the haiku hops
+  inside other `retry.fallbackChains`, and `modelRoles.smol`. A fresh-process probe was answered by
+  `opencode-go/minimax-m3.1-flash-free` (primary-ok). The change applies to fresh spawns only;
+  running seats keep what they captured at spawn.
