@@ -779,3 +779,11 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   inside other `retry.fallbackChains`, and `modelRoles.smol`. A fresh-process probe was answered by
   `opencode-go/minimax-m3.1-flash-free` (primary-ok). The change applies to fresh spawns only;
   running seats keep what they captured at spawn.
+
+53. "also change executor to use m_mim"
+
+- **Routing, saved globally.** `task.agentModelOverrides.executor` `@m_zfl` → `@m_mim`. Labrat and
+  revenger stay on `@m_zfl`. `@m_mim` now serves executor, reviewer, scribe and distiller, all on
+  one free-tier primary (opencode-go minimax-m3.1-flash-free → commandcode minimax free →
+  `inception/mercury-3`). If it rate-limits under wave load, seats lean on that chain. Fresh
+  spawns only.
