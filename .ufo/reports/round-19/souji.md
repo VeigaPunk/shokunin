@@ -251,3 +251,20 @@ Filed after the orchestrator reopened capacity and directed the wave to run.
 - Lane commit `8acf281ab0e8ce360a7c315081c911992b6e8e4d`; **final lane tip at this
   erratum: `8acf281ab0e8ce360a7c315081c911992b6e8e4d`.** No code changed after the 18/18
   acceptance at `63bb887`; further seat reports remain uncommitted.
+
+## Erratum 7 — auditor-fixture coverage gap fixed (appended after Erratum 6)
+
+- `MutAuditPatchPath`: two requested mutants **survived the r19 fixture** — accepting any
+  absolute target ending `.patch` (the negative tools case tested only `x.py`) and dropping
+  `os.kill` from the signal tokens (the signal case tested shell `kill` only). A supplemental
+  exact-class witness killed both, so the mutations were effective and the **fixture** lacked the
+  cases. Fixed in lane commit `019aefa27c1c5a85e851376345dca6be2f33cfcf` by adding
+  `patch-in-tools` (`tools/x.patch` must stay `V-WRITE-SCOPE`) and `signal-os-kill`
+  (`python3 -c 'os.kill(...)'` must be `V-SIGNAL`); the fixture now runs 7 cases, 0 failed.
+- `ScoutProcCounter` independently confirms the D2 digests: counter at `2d4c7f8`
+  `a26530199434ecddf4b36d2513730765bb0ae7487fa3c007f9c04d33244ebb3b`, tool
+  `37c3316a1fd8cdda18cbefdc7692d3d3f388e5783e8fe19085f5d932a8ceba64`; the r18 agreement
+  records indeed carry no counter digest, which is why `proc-agreement-pinned.json` exists.
+- Lane tip at this erratum: `019aefa27c1c5a85e851376345dca6be2f33cfcf`. No other code
+  changed after the 18/18 acceptance at `63bb887`; the acceptance record does not cover this
+  fixture-coverage edit, which is verified by the fixture's own 7/0 run.
