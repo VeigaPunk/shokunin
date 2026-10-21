@@ -813,3 +813,14 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   scribe, distiller, simplifier and connector. The rest: scout `@m_flash`, critic `@m_auto`,
   sentinel `@m_luna`, mutation-tester `@m_sol`, revenger `@m_zfl`, task/planner `@m_opus`.
   Fresh spawns only.
+
+- **Closure:** `rounds[428]` kama r23 rejected-harmed (CloseMori22,
+  `e6a5eeaff99a2d12ae3f73535af0e8580073235f`). The bounded grid and historical parity verify,
+  but T01's correct verdict on a complete promisor-marked clone becomes exit 2: operability harm,
+  not waived by disclosure. Falsify accounting correction: 69 lane reports, not 68; RowC03
+  wrote its report before its final answer was aborted. Kama r24 dispatched repair-first to
+  KamaR23-2; no claim of repair yet.
+- **Revenger r61 post-crash falsification:** the new 66-seat wave brings the round to 199/200.
+  It falsified both candidate entries: missing derivations/edge spans, overcredited quality rows,
+  and an unsupported citation. The author is withdrawing C04/C09 to uncovered (K back to 4/14),
+  retaining rejected candidates and appending a report erratum. Independent closure is pending.
