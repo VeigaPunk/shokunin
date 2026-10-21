@@ -184,3 +184,11 @@ the gate measures the sentence's own adjacent symbol under a canonical left-firs
 anchor truth, and the late falsify findings were folded back in (ratchet 186 → 200, anchors
 1551 → 1574) — the lesson's D5/D2 lines now say so. Slot grant and dispatch are recorded in
 `final/README.txt`; the slot was not released before the budget stop.
+
+Eleventh erratum (lane `28164ee5782b75aa01d48a93348caf7c72b2dbad`): `Verify1` measured the final reset with an independent parser and
+corrects erratum 7's magnitude. Per note (base-true/r36-false harms removed; base-false/r36-true gains
+discarded): native-trial 6 / 22; remaining-scripts-census 81 / 22; route-probe 7 / 1; sighting-wall
+15 / 9 — totals **109 harms removed and 54 round-36 gains discarded** (not "8 per note"), plus 183
+false-in-both carried and 68 unpaired by the parser. `repairs.md` and the lesson now state the reset
+form with these counts; the earlier "symbol-keyed revert" descriptions are superseded, and the
+`git diff --stat` evidence is the four one-line insertions recorded here.
