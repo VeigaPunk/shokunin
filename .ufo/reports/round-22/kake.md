@@ -22,7 +22,7 @@ Declared claim (1 of 1–3): **C1, operability, capability acquisition: offline 
 - Planner seat: held by the L1 (validator rejects `planner`). No planning data-walk rode a seat this attempt.
 - Stale-lane: respawn-per-round driver; this assignment opens no other kake mission. No next round was started.
 - Tool installs/updates: none (L1 and residual seats reported none). pacman pause respected.
-- Misroot sweep: `git -C /home/vgpnk/Projects/shokunin status --porcelain` found no kake-authored fleet-root file. `-.rej` (charter-scribe content) and `.ufo/state/*` belong to others and were untouched. A seat-created `kake-shokunin/scripts/__pycache__/` was removed and never committed.
+- Misroot sweep: `git -C /home/vgpnk/Projects/shokunin status --porcelain`. The first sweep found no kake-authored fleet-root file. A final sweep found `err.txt`/`out.txt`, a residual seat's `--selftest --json` probe output. They were copied byte-exact to `kake-shokunin/err.txt` and `kake-shokunin/out.txt`, verified with `cmp`, and the fleet copies deleted. This is recorded under `corpus/lessons/round-22.md` §Recovery misroot. `-.rej` (charter-scribe content) and `.ufo/state/*` belong to others and were untouched. A seat-created `kake-shokunin/scripts/__pycache__/` was removed and never committed.
 
 Waves and seats (round total 136 of ≤200):
 
@@ -40,8 +40,9 @@ Waves and seats (round total 136 of ≤200):
 | `26b27af3be44fec9de221f716b3cf3d2861ab146` (attempt-1 checkpoint) | w2 reports and registry | same; recovery entry |
 | `b539cc17c25e5f42fe8803e2aa42b4574c4b44c6` | wave-2/residual fixes (validator, counter digest pins + row-derived numerator + baseline exit 2, per-case replay, validator re-pin), postfix probes, residual reports, S028/S029, QUALITY "derived counts and resolver neighbours", knowledge/SKILL boundaries, lesson recovery section | `LOG.md` §Round 22 — recovery attempt 2 |
 | `adc04dae88ec06ff507515f6bbb1619b08ccddf7` | `measure-after-v2.json`, `final-suite.txt`, SCORECARD capability row + round-22 section, LOG entry, lesson measurement | same |
+| `1dc75e3923cc8fada88363a4da98d143f5e6f457`, `d5a03697c780fc6b5721ac0065fdb89ed4a7815c` | misroot recovery (`err.txt`, `out.txt`) and lesson §Recovery misroot | lesson-only; covered by the recovery LOG entry |
 
-Lane tip after landing: `adc04dae88ec06ff507515f6bbb1619b08ccddf7` (`jj-lane.sh state`: ahead=0 behind=0).
+Lane tip after landing: `d5a03697c780fc6b5721ac0065fdb89ed4a7815c` (`jj-lane.sh state`: ahead=0 behind=0). C1 measured commit remains `b539cc1`; later commits change no validator or instrument bytes.
 
 ## Before → after measurements
 
