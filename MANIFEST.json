@@ -12106,6 +12106,67 @@
    "promotions": [],
    "minted": [],
    "rejection_streak_impact": 1
+  },
+  {
+   "round": 26,
+   "date": "2026-10-21",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 26,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 26
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "freshness": "unprovable",
+    "operability": "unchanged",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "claims": {
+    "C1": {
+     "axis": "freshness",
+     "verdict": "unprovable",
+     "admitted": false,
+     "scalar_before": 10,
+     "scalar_after": 10,
+     "before": "0/32 round-26 decided receipts",
+     "after": "32/32 HOLD; 313 ledger units, 7 STALE corrections, 4 reclassified tags, 6 UNVERIFIABLE units",
+     "finding": "The bounded receipt improvement independently verifies, but the frozen contract.json:9 also requires knowledge-entry claims citing the rows rechecked. static-canonical-preflight.md:53–54 grouped S001–S006 remains unadjudicated: all six source/file pairs absent from final statements.json. Both w1/ClaimCritic.md:53 and w2/CounterCritic.md:147 explicitly named it; w1/PairS001GhpServedSet.md:75 says not judged. Replacement author confirms no durable final judgment exists. The other named omissions were repaired by 37 added units, not this one. Do not narrow the frozen target, retroactively repair during closure, or count a reviewer judgment as author work. No stale/false content or axis harm demonstrated by this omission; strict claim remains unprovable."
+    }
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-26/kake.md",
+   "report_commit": "ba1126190c5fc75c10ce75b1391d50732e7aed36",
+   "author_final_commit": "kake-shokunin@a2be0dc53845a4963f9af447d7c7c6644bfde6b3",
+   "measured_revision": "b44daedc9658d86374f1c3e3cdfc3a6951d0bdf6",
+   "commit": "kake-shokunin@83528f7c486fd1b9a85e6c0bb643b25fa4fb9fba",
+   "verification": {
+    "reviewer": "CloseKaidoku23 (orchestrator-reassigned fresh non-author closure, @m_opus session; neither author KakeR25 nor KakeR26-2). Two read-only reviewer requests refused at 100-job cap, zero spawned.",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-26-verifier-spotcheck.md@83528f7c486fd1b9a85e6c0bb643b25fa4fb9fba",
+    "scope": "Only the new non-author verifier lesson written to lane; helper landed 83528f7c486fd1b9a85e6c0bb643b25fa4fb9fba as protocol, pushed and clean. No author-owned file/report/state edits, dispatch or advance. All heavy scratch confined to /fast/scratch/hyaku/kake-r26-closure/ and removed. No gate/selftest execution or r24 stopped probe/counter work. No tools installed/updated.",
+    "rechecks": "Independent Python over committed Git blobs, JSON and gzip payloads in throwaway clone at a2be0dc5, without importing/executing lane code: base no r26 receipt paths -> H 32 ids,32 HOLD. All 35 retained raw-payload lengths/SHA256 valid; effective 34 row/index slots,33 URLs; every population URL/file/digest matches effective manifest,0 mismatches. Independent HTMLParser visible-text normalization: all 32 bounded quotes present,>=6 alphanumeric tokens and <=25 whitespace words, reasons/anchors nonempty. Cross matches only declared RFC group S010/S028/S033, three distinct non-containing quotes. Population pin16330e1e...03. Ledger41 unique pairs sum313/7/4/6; every listed tag count=stale+reclassified. Literal citing-set sweep43 pairs vs listed41 exposes endpoints S001/S006 of the omitted six-row range. All26 baseline knowledge files exact prefixes, nine extended; LOG/SCORECARD/SKILL/QUALITY/PROVINCE prefixes preserved. Source35->35 A33/C2 mined31/queued2/rejected2; only S024/S025 used-by cell changed, logged. 88 evidence timestamps checked against introducing commits,0 future values. Full commands/reproducer and outputs in verifier lesson.",
+    "gate_evidence": "Verified committed receipts only: final counter at measured b44daedc exit0,HOLD32,findings[],32 row records,313 statements/7 corrections; base measurement exit1 receipts_absent0/32. Counter source identical I/H; selftest-final24/24,failed0; mutation replay12/12 killed,measureSha matches I. Extractor red-before22 failures exit1 ->74 cases green exit0; attributed-HTML sniff mutant killed. Extractor fixture captures disclose candidate source plus working-tree fixtures, not false committed-source authority. Corpus contract exit0,0 findings; offline freshness exit0,ok=true,complete=false. Structural gate cleanliness cannot prove semantic citing-set completeness.",
+    "conformance": "Report ba112619 by kake-shokunin <kake@shokunin.local>,fleet-HEAD ancestor; six sections,four SHONEN[~]. Prompt carries105 fixed template lines in order plus hyaku6. Base97404de4,candidate e28312b,measured b44daedc,author-final a2be0dc5 all ancestors of master. Before verifier state local=remote=a2be0dc5,ahead0,clean; after helper landed verifier83528f7c,ls-remote master=83528f7c,ahead0,tracked0,untracked0. W1 executor2 vs required3 NOT MET,disclosed/status-neutral debt; no padding. Prior scratch-bound deviations/prose locator drift remain disclosed.",
+    "seats": "W1 inherited64 (scout32/reviewer26/executor2/critic2/connector1/scribe1),registry KakeR25.<name>-6,64 nonempty reports. Separate predecessor r25 seats excluded. Predecessor final transcript pending W2 eval then session_exit16:10:15.968Z, no returned Spawned and no W2-named seat transcript. Replacement reads existing w2-dispatch.json and sends taskCall unchanged; W2 registry KakeR26-2.<name>:64 (reviewer36/critic23/mutation-tester2/scout2/scribe1),64 nonempty reports. Total128 distinct identities/128 reports/0dead/0replacement. Later executor request cap-refused,0spawns.",
+    "outside_spotcheck": "Agree admits S003 branch-versus-Actions and root-or-/docs on source branch (reopened live GitHub Docs); S024 first base WITH href (reopened live WHATWG,15-word retained receipt quote). Agree rejects/reclassifications S026 all implicit closures (entry negative is weaker and consistent with Python docs),and base-scoped pointer/date drift (historical scope explicit). No newly written source rows this round: new-row quote sample N/A; sampled existing and changed-used-by S024. Fleet census validate independently exit0,W04 S033 duplicate RFC9110 inherited. Detailed admit/reject table and URLs in verifier lesson."
+   },
+   "closed_at": "2026-10-21T18:02:40.587962+00:00",
+   "campaign": "hyaku",
+   "notes": "REJECTED-HONEST-STOP: retain the verified bounded freshness maintenance0/32->32/32,313units/7corrections/4reclassified, but frozen full citing-set clause is unproved. Exact omission: corpus/knowledge/static-canonical-preflight.md:53–54 grouped S001–S006; w1/ClaimCritic.md:53 and w2/CounterCritic.md:147 flagged it; w1/PairS001GhpServedSet.md:75 says not judged; final ledger omits all six pairs. Author confirmed no durable final adjudication; parent agreed repair-first debt, no r27 dispatch or retroactive repair. No axis harmed; quality bounded improved,nine entries reverified and false diagnoses reclassified; discernment improved via non-author agrees on admits/rejects. Conformance debt: W1 only2executors vs min3, scratch deviations, prose locator errata/manual completeness. Dispatch digest:2026-10-21T12:07:39-03:00 launch kake round26 pgid643742 hyaku-inline attempt1;2026-10-21T14:54:23-03:00 complete. Prior r25 admitted rounds[420]; r26 non-admission starts streak1. Open L0 prior round24 policy-stop disposition remains unresolved; no stopped work retried,rephrased or rerouted. SHONEN all[~],not fully independently checkable; no promotion. No tools installed.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
