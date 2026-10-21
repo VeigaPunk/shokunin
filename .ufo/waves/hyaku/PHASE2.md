@@ -824,3 +824,12 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   It falsified both candidate entries: missing derivations/edge spans, overcredited quality rows,
   and an unsupported citation. The author is withdrawing C04/C09 to uncovered (K back to 4/14),
   retaining rejected candidates and appending a report erratum. Independent closure is pending.
+- **Revenger erratum landed:** `6e60ffb4ebec17c42db00156395a5ae2e573bc06`; final lane
+  `45faeae55d563d3daefce8cee17b3b361b72545b`, verified by `inline.sh verify`. Fresh wave
+  finished 66/66, zero deaths; C1 falsified, K 4/14→4/14, C2 separately 0/2→2/2.
+  CloseMori22 owns the independent closure.
+- **Closure delivery correction:** current canonical `PROTOCOL.md`/`CORPUS.md`/`LEARNING.md`
+  and the full rendered closure template take precedence over session-2 summaries that skipped
+  the separate verifier artifact. Starting with revenger r61, the closer writes its new
+  non-author verifier-spotcheck lesson through the jj helper, then appends the manifest row;
+  no lane-authored content or filed report is edited. Earlier closed rows remain append-only.
