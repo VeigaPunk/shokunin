@@ -2,7 +2,7 @@
 
 Lane: `kagi-shokunin`. Base `d218603b74099ddca0bd8f869516fc41db0979bf`; measured
 lane commit `e1884c6ecb7ccd717965b0d748bc193137118dbf`, final lane commit
-`893446434ed8d0a7b2821b01a23a7d250bd0dbb5` (helper `landed` lines, pushed).
+`3764bc57cfb41146324dac3952974a3564b0bc42` (helper `landed` lines, pushed).
 Build wave: parent-held 66 seats (43 claim-ledger command-row audits + 23 source-row
 audits, `parent-build-dispatch.json`). This lane dispatched no second build wave and
 remained the sole production writer. Falsify wave: 64 seats, `.ufo/waves/round-23/falsify-spec.json`.
@@ -92,6 +92,10 @@ Other evidence bullets:
 - QM12 safe-row substitute (`.ufo/waves/round-23/final-verification.json`): 45 rows
   considered, 32 pass, 12 skipped by id (R11-01/02/03/04/06, R12-01, R13-03, R15-01,
   R16-01/03, R17-01, R18-01 — host-bound/substrate), one inherited fail (R11-08).
+  A direct real-tree `cells` run (the audit R13-03 skips) then printed
+  `CELL_AUDIT: CLEAN (cells=156 row_pointed=104 stamp_pointed=87 uncited=0
+  missing_ids=0 rows_run=37 row_deferred=10 row_failures=0 stale_pointers=0
+  self_skipped=6 orphans=0)`; R23-01 is one of the six self-skips.
   Recorded measured commit is the verdict file's own `measured_commit: e1884c6e…`.
   No full legacy `verify`/`cells` was run; no host-private gate was executed.
 - Misroot sweep (`git -C /home/vgpnk/Projects/shokunin status --porcelain`): four
@@ -120,6 +124,7 @@ Other evidence bullets:
 | measured verdict refreshed to the final tree (`measured_commit=57776b28`, R23-02 `fixed=6 reported=3`) | `LOG.md` §Round 23 | `5dd14116` |
 | supersession prose-only bound recorded in lesson/LOG/report | `LOG.md` §Round 23 | `31f24e07` |
 | parent-build disposition-scope bound; M23-4 sweep wording; adjacency stamp pointer | `LOG.md` §Round 23 | `89344643` |
+| illustrative-id markers (real cells `missing_ids=0`), absolute gate-path refusal, op-ref prose repair, migration pointer | `LOG.md` §Round 23 | `3764bc57` |
 
 ## Before → after measurements
 
@@ -139,7 +144,7 @@ corpus/claim-ledger.tsv` = 45; ledger selftest 121 cases; revision audit
 Census before (round start): exit 0, `rows=23 A=21 B=0 C=2 queued=1 mined=21
 rejected=1 entries_sourced=4 legacy=21` plus the five W04 lines above.
 Census after: exit 0, `rows=26 A=24 B=0 C=2 queued=1 mined=24 rejected=1
-entries_sourced=4 legacy=21`, same five W04 lines. Command:
+entries_sourced=4 legacy=21`, same seven W04 lines. Command:
 `bash scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin kagi`.
 
 Rows added by tier: S024, S025, S026 — three A/mined correction rows (only the KV v2
