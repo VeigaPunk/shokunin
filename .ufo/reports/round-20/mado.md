@@ -104,3 +104,10 @@ lead), so C2 is not independent of C1; held-out 2/12 still includes the `jj log 
 positive; it also notes a revision-bound `measure.py` rejection discrepancy (the note's `surface:`
 head at `a8960de`, renamed `scope:` only at `94b6925`). Author verdicts after review: C1 harmed,
 C2 unprovable-independently (22/30 literal; 21/29 conservative) — admission is the closure's.
+
+ReviewRuntimeV3 (`mado-shokunin/.ufo/waves/round-20/a2/review/ReviewRuntimeV3.md`): **v3.1 memory
+blow-up** — 50,000 assignment-only statements and a 20,000-statement cell exceed an 1,800 MiB RSS cap
+at `a8960de` (earlier revisions 80–167 MiB) [INFERENCE: `prepare_eval_calls` copies env and bindings
+per statement, O(n²)]; no new exit-2; 300-file aged corpus sample max 0.112 s; `huge_bash_cmd`
+~82 s at all revisions (parity). Another resource harm for C1; round-21 fix: share snapshots
+copy-on-write or snapshot only statements holding a call/reference.
