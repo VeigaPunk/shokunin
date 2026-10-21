@@ -148,3 +148,97 @@ Probe: `A=<tmp>; git -C /home/vgpnk/Projects/shokunin/revenger-shokunin archive 
 - Routing: no seat dispatched by the replacement L1; the inherited waves used the host role map.
   No provider death recorded (all 65 deaths are the host kill). No Codex cyber_policy refusal.
 - L0 questions: none new.
+
+## Erratum — fresh falsification and final claim verdicts (2026-10-21)
+
+**This appended erratum supersedes the provisional C1/6-of-14 verdict, the
+133-seat total, the “no new wave” explanation, the “no installs” statement,
+and the old lane tip above. Filed bytes are otherwise unchanged.**
+
+### Parent ruling and fresh wave
+
+After the first report commit `2ed86bfd638d8065e4d6d9a168d4ba572cff7cf6`,
+Main ruled that the replacement L1's strict reading followed its contract,
+which was stricter than the addendum; because the 65 seats died to the host
+kill rather than their own failures, one fresh validated 64–67-seat wave was
+authorized. This did not revive or erase any dead seat, or relax a frozen
+claim. The new design attacked landed `ab580698` with 66 new identities.
+
+- Wave `revenger-r61-w3`: one validated 66-seat task call, spawned first try
+  at 13:41:59 -03; gate `wave-slot acquire revenger r61-w3 66` granted and
+  released after the call returned. Specs, unchanged rendered dispatch,
+  attempts, spawn result, assignments and registry are under
+  `revenger-shokunin/.ufo/waves/round-61/` (`falsify-w3-*` and `falsify-w3/`).
+- Role mix: scout 19, reviewer 16, critic 13, mutation-tester 5, revenger 4,
+  executor 4, connector 3, sentinel 2; L1 holds planner. Roles followed host
+  routing, no model parameter. Later host routing changes did not restart
+  or rewrite captured seats.
+- Outcome: **66/66 reports, 0 fresh deaths**. Advisory grades: HOLDS 30,
+  PARTIAL 31, BROKEN 5. Full per-seat report hashes and L1 adjudication:
+  `.ufo/waves/round-61/falsify-w3/adjudication.json`.
+- **Round total 199/200 = 68 build + 65 inherited dead falsify + 66 fresh
+  falsify**. The original dead seats remain listed in `falsify/dead-seats.json`.
+
+### Final admission adjudication — C1 falsified, C2 separate
+
+Both candidate entries **failed the unchanged Q11 admission gate** and were
+rejected, not repaired or redefined:
+
+| candidate | decisive counterexample | final disposition |
+|---|---|---|
+| C04 CommonJS entry | The Limitations claimed its Reproduce block carried edge spans, but neither code nor output printed location/column fields (`falsify-w3/W3JsOverclaimCritic.md:5-7,39`). `W3JsQTable.md` and `W3QualityQ13Apply.md` also found unsupported Q11/Q13 pass claims. | retained as explicitly rejected evidence; C04 `held` → `uncovered` |
+| C09 EVM entry | r24 PUSH32/raw-0x5B counts, pattern span and embedded target were correct independently but lacked in-entry derivations (`falsify-w3/W3EvmR24Immediate.md:16-21`); `W3EvmQTable.md` corroborated Q11 failure. | retained as explicitly rejected evidence; C09 `held` → `uncovered` |
+
+The lesson's appended rejection erratum supersedes the old admit decisions;
+the entries' admission warnings supersede their old pass tables; SCORECARD's
+final-adjudication section supersedes the provisional K row. Counterexamples,
+including the false kasegi citation, role-label semantics, source-search-log
+defects and missing derivations, remain in the reports. No candidate was fixed
+to escape its frozen test.
+
+Final measurement on **`7a66d224ef671c086c6e48fa0fc27dff4381281f`**:
+`git archive --format=tar <revision> corpus | tar -x -C "$A"` then
+`python3 -B /home/vgpnk/Projects/shokunin/revenger-shokunin/reports/round-61/measure.py "$A"`
+with `cwd=/`, `$A=/fast/scratch/hyaku/revenger-r61/final-measure`.
+Exact outputs: `reports/round-61/measure-after.log:96-136`.
+
+| criterion | base → final | final verdict |
+|---|---|---|
+| C1 K | **4/14 → 4/14**, 2.9 → 2.9; provisional 6/14 withdrawn; both target rows uncovered | **falsified**, matching the registered 4/14 falsifier |
+| C2 attributed receipt-command kill | **0/2 → 2/2** | improved, causally separate; does not rescue C1 |
+| controls / d2 / calibration / replay | 2/2, 2/2, 4/4, 10/10; `HOLDS_OK=yes`, probe exit 0 | unchanged holds |
+| saved records and fixtures | diff from `cf02419` empty, exit 0 | byte-preserved |
+| source census | `revenger ok`, exit 0; same W04 duplicate-URL warning | conformance pass; semantic search-log defects remain disclosed |
+
+Final learning trends supersede the earlier trends: **expansion unchanged**
+(no new admitted knowledge rows; sources 15→27 retained); **quality improved**
+(C2's independently measured regression guard; rejected candidates not counted);
+**discernment unchanged** (fresh wave is internal lane review, not outside
+closure). C1's failure means this is **not an all-claims-admitted round**.
+SHONEN remains unchanged with no new `[x]`.
+
+### Landed erratum evidence and cleanup
+
+- `7a66d224ef671c086c6e48fa0fc27dff4381281f`: fresh wave's 66 reports and
+  counterexamples, rejection labels and map rollback, append-only claim,
+  lesson, SCORECARD and LOG adjudication (`LOG.md:808-815`).
+- **Final lane tip `45faeae55d563d3daefce8cee17b3b361b72545b`**: final
+  measurement and scratch-cleanup receipt (`LOG.md:816-817`).
+  `jj-lane.sh state`: local=remote, ahead=0, behind=0, tracked=0, untracked=0.
+- Tool acquisitions reported by fresh seats (official package registries):
+  pyevmasm 0.2.3 via `uv run`/PyPI (independent disassembly);
+  scratch evmole 0.9.3 + pyevmasm 0.2.3 via `uv pip`/PyPI and evmole@0.9.3
+  via npm registry (static-provider cross-checks); ephemeral pycryptodome
+  4.1.0 via `uv run`/PyPI (Keccak cross-check). `uv venv` resolved CPython
+  3.15.0; its prior presence is unverified. See W3EvmPairR19R21,
+  W3EvmR25R26Targets and W3EvmSelectorConstants reports. No pacman, service
+  changes or L1 installs.
+- Parent reported /tmp ENOSPC and reclaimed inactive older scratch. All 66
+  seats completed despite it. At landing, 343 owned round-61 scratch paths
+  were removed from /tmp and /fast/scratch, with no owned-prefix remainder
+  and no sibling scratch touched (`falsify-w3/scratch-cleanup.json`).
+  Retained counterexample scripts and integration receipt have provenance
+  hashes in `falsify-w3/counterexamples/provenance.json`.
+- Required fleet misroot sweep: no fresh revenger seat files at the fleet
+  root; other-lane files and driver state untouched. No new L0 questions,
+  no new provider death, no policy refusal, no round 62 started.
