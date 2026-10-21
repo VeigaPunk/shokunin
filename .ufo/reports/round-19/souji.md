@@ -327,3 +327,20 @@ Filed after the orchestrator reopened capacity and directed the wave to run.
   that wrapped lesson entries still need joining; no change required.
 - Lane tip unchanged at **`c6703daef7dfa7de2f1a5a72e86f40de3717049b`**. Late reports remain
   uncommitted under `.ufo/waves/round-19/w1/`.
+
+## Erratum 12 — final wave-1b disclosures (appended after Erratum 11)
+
+- `ConnToolsPatterns` reports **partial** status and discloses a second Q26 deviation: a `census/`
+  root listing displayed child names/metadata of `census/operator-sweep-20261019/`; it did not read
+  or search files there and made no change. No evidence in this report rests on that listing. It
+  also maps duplicated r13/r14 worktree-pin and counter adapters (candidates for a shared
+  entrypoint, not applied) and flags the helper's `git diff --quiet` tree check as a read-only risk
+  to verify. The diff docs state `--quiet` disables external diff helpers; the helper already
+  neutralizes hooks/fsmonitor/maintenance, and it runs only in the lane repo. Recorded, not changed.
+- `ScoutWriteScope` confirms 68 distinct report paths, no same-file executor collisions among the
+  planned targets, and flags the D1 receipt filename (now fixed as
+  `census/round-19/gate-at-commitB.json`) and the C2/C3 shared counter dependency (both use
+  `count-claims.py`; C3's count is independent of the C2 resolver for the base/end measurements).
+- Lane tip unchanged at **`c6703daef7dfa7de2f1a5a72e86f40de3717049b`**. This is the final erratum
+  filed by this run; late wave reports remain uncommitted and unadjudicated under
+  `.ufo/waves/round-19/w1/`.
