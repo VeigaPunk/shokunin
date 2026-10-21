@@ -119,3 +119,12 @@ is pinned to the review's measured `451c7e41` (not tool measurement `a8960de`); 
 watchdog citation resolves through `../.ufo/watchdog.log`. Six of eight residual review
 reports are committed; ReviewVcsV3 and RerunAllV3 remain outstanding. Final author
 verdicts remain C1 harmed, C2 not independently established.
+
+RerunAllV3 independently reproduced precision 172/175, held-out 2/12, recall 6/6
+(5 observed + 1 lead), zero control findings, all frozen guard counts, harm-watch PASS,
+tally 9/9 and all isolation results at `a8960de`. Its corpus rerun retained zero lost
+findings versus `9c54c56` and the same 5 lost / 10 added versus `28c6837`, but whole-corpus
+populations and additions changed as live transcripts grew. Historical corpus totals are
+observations, not repeatable pinned-population measurements; a frozen manifest/snapshot is
+missing. Review landed at `4386045f73ef892bbc01f361c81ac4e8436795be`.
+Seven of eight residual reviews are committed; only ReviewVcsV3 remains outstanding.
