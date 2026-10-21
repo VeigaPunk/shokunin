@@ -175,3 +175,12 @@ pending=0 cap=240`) together with the fact that the slot was **not released** be
 (6) The stale `anchors=1551`/`nonok=186`/`ratchet 186` figures in this report's measurement table are
 superseded by the final `anchors=1574 … nonok=200` and ratchet total 200 (commit `5bc40d0`).
 Erratum 3's scope is widened: the symbol-keyed restore defect applied to all four notes.
+
+Tenth erratum (lane `eb4c10697835df08b59afde22a921c6246b71862`): `Verify5` caught two stale statements. (a) The report's D5 sentence saying
+the 64–100 band "is not recorded by any artifact" is wrong: `falsify-dispatch.json .policy` records
+`waveMinLanes 64, waveMaxLanes 100`; what was missing is the policy file path and digest, now in
+`final/README.txt`. (b) The "Declared claim" line at the top is superseded by the sixth/ninth errata:
+the gate measures the sentence's own adjacent symbol under a canonical left-first rule; it is not
+anchor truth, and the late falsify findings were folded back in (ratchet 186 → 200, anchors
+1551 → 1574) — the lesson's D5/D2 lines now say so. Slot grant and dispatch are recorded in
+`final/README.txt`; the slot was not released before the budget stop.
