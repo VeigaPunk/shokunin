@@ -231,3 +231,23 @@ Filed after the orchestrator reopened capacity and directed the wave to run.
 - Lane commit `d707fc982cc4754fb73ab366238ae0266dca691a`; **final lane tip at this
   erratum: `d707fc982cc4754fb73ab366238ae0266dca691a`.** No code changed after the 18/18
   acceptance at `63bb887`; later seat reports, if still landing, remain uncommitted.
+
+## Erratum 6 — further wave-1b falsification results (appended after Erratum 5)
+
+- `MutCarryJoin`: mutant M2 (bypass `carry_entries`) is **KILLED** by TC4 — pristine 10/0,
+  M2 9/1, restored 10/0; all five pinned carry verdicts and a strict round-18 control stayed
+  unchanged. Confirms the lesson-bullet join is load-bearing.
+- `ConnCarryParsers`: no second production STATUS-carry parser exists in tools/ or tests/; the
+  auditor and harnesses parse different formats. No blind spot found.
+- `CriticRevPin`: **open C2 gap** — `census/round-14/run-targeted.py` is not in the r14
+  `MEASURED_PATHS` list, so that wrapper's own bytes can be dirty when it stamps its revision
+  (false provenance). Not fixed at this budget stop: a one-line fix without a re-run of the
+  fixture and acceptance would be an unverified change. Recorded for r20.
+- `ScribeProcEntry`: its 8-item revision proposal is recorded, but **L1 disputes item 3** —
+  `proc_pid_status(5)` does document the state-letter list in its State field paragraph, so
+  S085/S088 stand; the remaining items (source line missing the fixture, verified-at, redaction
+  scope, argv/fd defaults, silent omission, identity detail, recheck header) are **open revisions**
+  and were not applied unverified at the stop.
+- Lane commit `8acf281ab0e8ce360a7c315081c911992b6e8e4d`; **final lane tip at this
+  erratum: `8acf281ab0e8ce360a7c315081c911992b6e8e4d`.** No code changed after the 18/18
+  acceptance at `63bb887`; further seat reports remain uncommitted.
