@@ -11880,6 +11880,101 @@
    "notes": "ADMITTED: C1 calibration knowledge-number staleness 4->0 (22 bindings, 22/22 red controls) and C2 freshness numeric-downgrade acceptance 4/4->0/4 (REGRESSED exact 4/4) both independently re-measured; scalars held 9->9; no axis harmed. Dispatch digest watchdog.log:611 launch 2026-10-21T12:04:00-03:00 attempt=1; :619 complete 13:30:29-03:00. Prior r26 admitted (rounds[419]); rejection streak 0. Two authors: KagiR26 (dead session, claim work 144babcb/3fb77271/29fa79b7) and KagiR27-2 (landed the byte-identical predecessor correction 3553d499 + report). Conformance debt routed: (1) no round-27 start census run (prompt §2) — disclosed, before reference is the base-committed r26 end receipt; run and retain the start census next round. (2) plans/round-27.md first committed with candidate 144babcb, not before work; the 'frozen declaration' has no pre-work commit — freeze claims in a separate commit next round. (3) C2 scope widened in-round (feed floor/observe floor) via appended plan corrections; accepted because the frozen counting command still holds and the change is stricter. Named debts (derived-anchor forgery, leading-zero equality, >4300-digit ValueError, branch-scoped rows, X.Y zero-padding) stay open. 9 dead reviewers (Devin free-model resource_exhausted), 0 replacements. Discernment improved via this non-author agreement on 2 admits + 2 rejects. SHONEN all [~]; not fully checkable by a non-author. No promotion. Open L0: none.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 22,
+   "date": "2026-10-21",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 22,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 22
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unprovable-but-better",
+    "calibration": "unprovable-but-better",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "claims": {
+    "C1": {
+     "axis": "operability",
+     "verdict": "unprovable-but-better",
+     "admitted": false,
+     "finding": "Frozen registration (a963ce67, byte-unchanged at tip) requires all eligible expectations to match and says a new counterexample to the declared supported forms defeats admission. Closure re-ran sealed oracle (expected.sha256/inputs committed once at 5c7b983, unchanged): base 46c82902 13/50 proposals, 15/57 full -> final cd9da20c 50/50, 57/57. Supplemental (residual-truth, authored_before_patch) base 0/4 -> final 2/4 (ReturnedGlobalCallableShadow keeps the foreign -S lead; ForwardExistingClosure keeps unparsed 1), so the strict target is not met. Closure probe: forwarder-invoked callback still yields false observed 'pacman -S cl-forward-foreign' at base, final and v3 (pre-existing caller-frame leak, unresolved). Better than base with no measured loss; strict claim unprovable/not admitted, as the author reported."
+    },
+    "C2": {
+     "axis": "calibration",
+     "verdict": "unprovable-but-better",
+     "admitted": false,
+     "finding": "Standalone auditor tools/mado-evidence-audit.py (sha 277eced2, no tripwire import) re-run in clone after the 3 manifest-pinned empty dirs: 46/46 (status complete), fixtures committed once. Literal registered target unprovable: r19 frozen scan re-counted 11 markerless rows / 6 incident lines / 11 missing markers, so the unchanged-row 5-observed/1-lead green cannot exist without rewriting history; author kept it code2/could-not-evaluate rather than relabelling. Mutant 44/46 and intervention 235/235 evidence-verified only."
+    }
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-22/mado.md",
+   "report_commit": "c98fa5cd56f49d65c0e4de72be05f986f46ec33f",
+   "commit": "mado-shokunin@e33ea30461f6e9bbeee40beef19770a953f7a105",
+   "verification": {
+    "reviewer": "CloseKaidoku23 (reused idle hyaku closure agent, opus session, fresh non-author; never touched mado; authors MadoR22 (dead session 01a15c83) and MadoR22-2). No subagent seats dispatched.",
+    "scope": "Read-only over lane/report/state; throwaway clone /tmp/cm22 at e33ea304; scanner payloads parsed only (prlimit 384MiB-2GiB); oracle/measure.py read sealed inputs from the lane path read-only; no tools installed. Re-ran lane measurement harnesses on base/final/v3 tool bytes; mutant and intervention receipts evidence-verified, not executed.",
+    "conformance": "Report c98fa5cd authored mado-shokunin <mado@shokunin.local>, fleet-HEAD ancestor, unchanged; SHONEN heading four [~]. Cited 9185f1f9, 8c742093, 579109a6, d6de0892, 78b18240, e33ea304 and base 741122d1 ancestors of origin/master; jj-lane state local=remote=ls-remote e33ea304 ahead=0 tracked=0 untracked=0, porcelain empty. Prompt 0820349c contains all 105 fixed template lines in order plus §6. Range also holds operator commit 234f0bc4 (considerthese, J.P. Veiga; not round work) and parent-requested wip eda932e0. Dispatch digest watchdog.log:602 '2026-10-21T11:14:32-03:00 launch mado round=22 pgid=2310064 driver=hyaku-inline attempt=1'; :622 '13:41:36-03:00 complete mado round=22'.",
+    "routed_checks": {
+     "1_production_bytes": "tools/mado-tripwire.py sha256: base 46c82902, 8c742093 cd9da20c, v3 4d308e5e a9532373, 579109a6 and e33ea304 cd9da20c. git diff 8c742093..e33ea304 -- tools/ empty; the v3 diff is exactly the 8-line resolved_consumers suppression. Withdrawal complete.",
+     "2_honest_unprovable": "registration.md unchanged since a963ce67; oracle expected/inputs/audit fixtures single-commit (5c7b983), residual-truth expected single-commit (0382690, authored_before_patch, base 71228fd); assemble.py ORIGINALS literals match the r21 closure truths (F1 'pacman -S r21-factory', F2 forbid 'pacman -Q r21-global', F3 'pacman -S r21-b'). Normalized expectations were materialized after implementation 330de68 from the 9185f1f9 raw seal (disclosed); closure did not re-derive every proposal row. Both strict targets reported unprovable/not admitted; nothing relabelled.",
+     "3_harm_vs_r21": "Base vs final: r21 F1-F5 originals inside the 57 now pass; precision tw-precision 166/175 -> 166/175 with identical per-case pass set (175 cases, 0 changed); r21 oracle 35/35+17/17 both; 1356-file corpus: 1214 retained, 107 error pairs all equal, 3 added (dict-unpack/kwarg helpers that truly run pacman) and 5 removed (dead-decorator observed, four pure-callable leads: print/len/' '.join) — closure adjudicates all 8 as corrections; resource guards API/CLI 1000/2000/4000 and closure 512/1024/2048 exit0 clean; eleven selftests 247/247. Closure probe of ResidualForward gap 2 (callback stored in dict then called): base lead, final lead, v3 zero rows — v3 was a real recall loss, withdrawal justified. Gap 1 frame leak present identically at base. Verdict: r21 harm improved, nothing harmed.",
+     "4_untracked": "inherited-inventory.json: 206 status records, 458 listed files, 106/106 seal files verified; inherited-worktrees.tar.gz sha256 matches inventory 5478de8c…, 22/22 archived source files hash-verified; exclusions only .ufo/worktrees/r22-* admin dirs and bytecode; lane clean.",
+     "5_seats": "Dead-session MadoR22/ holds 170 seat transcripts = 64+100+2+4. Dead: RepairBindings, ImplementEvidenceAudit (Codex 'Retry budget exhausted… capacity… turn_rate_limit_exceeded', empty .md), ResidualOwner/ResidualCaller/ResidualCallable ('Request was aborted', empty .md); ResidualForward completed (3315 B). 165 completed, 0 replacements; 4 fresh advisory requests cap-refused with 0 spawned.",
+     "6_knowledge_overclaim": "r20 entry tripwire-precision-r20.md carries the append-only 'Round-21 correction — delivered round-20 claims were too broad'. New tripwire-lifetime-recovery-r22.md is source-bounded (S121/S122) and ends with 'Final round-22 withdrawal — not a general binding repair' stating strict C1/C2 unprovable; no deletions across its commits. No overclaim found."
+    },
+    "outside_spotcheck": [
+     {
+      "item": "Admit S121 CPython v3.14.8 executionmodel.rst",
+      "decision": "admit",
+      "reopened": "raw.githubusercontent.com/python/cpython/v3.14.8/Doc/reference/executionmodel.rst (sha256 11f99f83…eb89 = row)",
+      "verdict": "agree",
+      "reason": "Line 322 verbatim 'Name resolution of free variables occurs at runtime, not at compile time.'; scope limited to the finite lexical/global distinction."
+     },
+     {
+      "item": "Admit S122 CPython v3.14.8 threading.py Thread.run/Timer.run",
+      "decision": "admit",
+      "reopened": "raw …/v3.14.8/Lib/threading.py (sha256 53239096…b7e3 = row)",
+      "verdict": "agree",
+      "reason": "Lines 1023-1024 and 1383-1385 match the quotes; subclass/cancellation limits honestly excluded."
+     },
+     {
+      "item": "Reject 'finite green suite or operator permission restores admission'",
+      "decision": "reject",
+      "reopened": "registration.md + closure supplemental 2/4 and gap-1 probe",
+      "verdict": "agree",
+      "reason": "57/57 green coexists with supplemental reds and a pre-existing frame-leak false observed; registration's defeat clause applies."
+     },
+     {
+      "item": "Reject/withdraw v3 consumer-sweep suppression",
+      "decision": "reject",
+      "reopened": "closure probe hooks['k']=cb; hooks['k']()",
+      "verdict": "agree",
+      "reason": "v3 returns zero rows where base and v2 keep a lead: a silent recall loss despite v3 scoring 4/4 supplemental."
+     }
+    ],
+    "sources": "Fleet census validate exit0 with 7 W04 (S030/S042/S045/S097/S119/S120/S121); rows 120->122 (+S121/S122 A/mined), no deleted SOURCES lines; LOG/SCORECARD/SKILL/QUALITY/README exact base prefixes."
+   },
+   "closed_at": "2026-10-21T16:49:21.185711+00:00",
+   "campaign": "hyaku",
+   "notes": "REJECTED-HONEST-STOP (admitted=false): operator-authorized recovery round; both declared strict targets are unprovable/not met exactly as the author reported (C1 supplemental 2/4 under the registration's counterexample-defeat clause; C2 literal r19 unchanged-row target impossible without rewriting markerless history). No axis harmed: closure re-measured base vs final (primary 15/57->57/57, proposals 13/50->50/50, supplemental 0/4->2/4, precision 166/175 identical per case, corpus 3 added/5 removed all corrections, 107 error pairs equal, resources and 247/247 selftests clean); the r21 harm is improved, not repaired to the frozen target. This is mado's fourth consecutive non-admission (r19, r20, r21 rejected-harmed; r22 rejected-honest-stop); authorization did not reset the streak; parent applies any block. Dispatch digest watchdog.log:602 launch 11:14:32-03:00 attempt=1; :622 complete 13:41:36-03:00. Defects routed: (1) report's pasted End census omits the S121 W04 line present in its own receipt E/sources-end.json (7 W04 at end vs 6 at start); correct next report. (2) Normalized oracle expectations and assemble.py ORIGINALS literals were committed after implementation 330de68 (raw seal 9185f1f9 precedes it, disclosed); next round commit normalized expectations before any production edit. (3) Unresolved detector defects: caller-frame leakage when a forwarder invokes a callback (false observed foreign argv, pre-existing at base), ReturnedGlobalCallableShadow foreign lead, forward unparsed. (4) Conformance debt retained by author: shared-checkout harness writers (M6), W2 scope overruns (M11), overlapping comparators (M13). Open L0: 'mado | round-22 | …' rejection-hold disposition. SHONEN all [~]; no promotion. Closure installed nothing.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
