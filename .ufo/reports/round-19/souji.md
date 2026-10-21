@@ -199,3 +199,15 @@ Filed after the orchestrator reopened capacity and directed the wave to run.
   `93e51f58a5d2346e96bfa7d965670a38aed0c272`; no code change.
 - Final lane tip at this erratum: `93e51f58a5d2346e96bfa7d965670a38aed0c272`. Remaining
   wave-1b seats' reports, if still landing, remain uncommitted and unadjudicated.
+
+## Erratum 4 — source-quote correction from wave 1b (appended after Erratum 3)
+
+- `ScribeSources` re-opened S082–S085 (and S075/S076) on the live man7 pages: every quote is
+  verbatim; three **Gate word counts were wrong** (S082 13 not 15, S083 13 not 17, S085 18 not
+  23; all ≤25) and three `teaches` cells overreached the page text. Corrections: a lesson
+  correction section appended; **S086–S088** supersede only the S083/S084/S085 teaches cells; no
+  other SOURCES cell changed. S079–S081 were outside that seat's item and are not re-verified by
+  it (open second-source check).
+- Lane commit `4be24d515fa09166dd47942eb4f3ed6774deeb84`; final lane tip at this erratum
+  `4be24d515fa09166dd47942eb4f3ed6774deeb84`. No code changed after the 18/18 acceptance
+  at `63bb887`. Remaining wave-1b reports, if still landing, remain uncommitted/unadjudicated.
