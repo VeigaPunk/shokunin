@@ -1154,3 +1154,103 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   floor dips. Target64+useful occupancy, normal64–100-seat waves, no filler/replacements.
   Kake will send event-driven settlement thresholds; Kama/Revenger prepare their next
   genuine handoffs. The validated source queue is a fallback, not extra claimed activity.
+
+65. "you can go above 100 subagents, make the ceiling 200 like we agreed upon"
+
+- The campaign admission ceiling and saved `task.maxConcurrency` remain200. Main also
+  aligned saved `async.maxJobs` from1000 to200; this does not prove the runtime has
+  reloaded its separate admission limit. One native scoped maintenance launch was
+  refused with `Background job limit reached (100)` despite the configured values.
+  The inconsistency was reported. No provider, credential, fallback or role override
+  was introduced to evade it.
+- The previously deferred source64 actually launched as one validated64-seat call;
+  its post-launch observation measured122running, including64new source readers and
+  47Kake children. A separate72-URL wave then actually launched unchanged; its single
+  observation measured129running, including72new readers. Both are advisory primary
+  source maintenance, not completed rounds, admission credit or failed-item retries.
+- Follow-on downstream-attribution audits cover158distinct existing knowledge files
+  against independently pinned source catalogs: one validated64-seat call, then one
+  validated94-seat call over the remaining94files. No file assignment was duplicated;
+  these waves perform no network fetch, corpus/code/fixture mutation or gate execution.
+  Their reports require scope review and Main judgment before being used as evidence.
+- A real occupancy gap preceded carrier64 (35running); its post-launch snapshot
+  measured86running,63from that wave. At `2026-10-21T22:21:00.137388Z`, the next
+  post-launch observation measured **163running tasks**, including94new carrier readers
+  and46from the previous carrier64. Registry handoffs attest actual identities, not
+  planned seats. This proves overlap above100, not a continuous64-seat floor.
+- Capacity-terminal members remain spent and un-replaced. One source72 reader
+  disclosed an outside-allowlist `/tmp` write; deletion is not a cure. Final scope
+  disposition must preserve that incident and inspect other disclosed path anomalies.
+- Shared closure maintenance remains open: v1 passed Main's28-case selftest, five
+  historical frozen modes and actual live CLI without the known null-round crash,
+  but full-path list/dict probes exposed unhashable diagnostic keys. The original
+  isolated writer owns the boundedv2 correction; no next author is unlocked by
+  uncommitted code, advisory audits or a prepared ledger entry. Historical mutation
+  scores remain historical until controls are re-cut from the final source.
+- A new mutation-preparation worktree is preserved at
+  `/fast/scratch/hyaku/native-mutation-proof`, branch `hyaku/native-mutation-proof`,
+  base `58c94352884c3ce8131546d2b2392d1fe6ea755a`. The refused new job spawned zero;
+  the settled inventory executor was resumed natively into this disjoint assignment.
+  It prepares controls only; Main executes and judges them after final integration.
+
+- **Native v2 parent proof:** Main integrated the bounded hashable-diagnostic/early-CNE
+  changes with its own source hash
+  `d8c1620df147d2e576f157f43e149ae4a1251a760b9f111f210b516744187a48`
+  (kept existing return-map wrapping, unlike private source795974…). Actual publicCLI:
+  selftest29/29, all five historical frozen baselines `match`, both malformed-round
+  fixtures retain exactly `(kagi,1,ok)`, and live emits JSON without traceback but stays
+  red at67debt/81CNE. `native-checker-repair/v2-parent-runs.json` preserves all commands.
+  Fresh current-source mutation qualification remains pending; old scores stay historical.
+- **Revenger r62 forward hold:** metadata audit found `cyber_policy` at22:07:40.001Z
+  before later weekly-quota errors/automatic fallback and continued activity. A quota-only
+  recovery was therefore not safe. Main persisted `blocked/revenger` and instructed the
+  original owner to halt, not retry/rephrase/reroute or launch another author/wave.
+  The owner acknowledged halt with no further tools after the instruction, reporting
+  last tip `876630dbb4d630e016d7d8c32a19ea04c646cbae`, clean/pushed, and r62 fleet report
+  still unfiled. That tip/state is owner-reported, not Main-verified. Preserve all bytes
+  and completed child reports; no payload was reconstructed and no policy all-clear exists.
+
+- **Durable repair:** fleet commit `32e5e7c43ccc0afa705ba39ac7006e0e52214978`
+  landed/pushed the native checker, fourteen exact fixture files, actual parent controls
+  and registry/log updates. Fresh current-source controls then measured pristine29/29,
+  eight named behavioral detections and one M7 parser-unit crash-only TypeError; zero
+  survivors/construction refusals. Old mutation scores/expectations remain historical.
+- **Separate frozen derivation defect:** the existing generator's Gitless live mirror
+  produced an unreviewed328-debt baseline, while the native frozen replay sees65debt/81CNE
+  and MISMATCH. The exact excess is262live-only untracked-prompt findings plus one live
+  history-pin finding, not hidden substantive debt. The failed new snapshot is retained
+  unqualified; no protected baseline was re-pinned. The existing generator correction
+  uses the native frozen CLI and is separately reviewed before Main's runtime proof.
+- **Two genuine rolling refills:** Source metadata found233eligible unassigned knowledge
+  files outside the prior158carrier assignments. Main actually launched one validated
+  100-file wave, then one validated64-file wave over distinct remaining files. Eight
+  source views are pinned; the64's real availability is31kaidoku+31kotodama+2kotoba, not
+  an invented even split. Another69kotodama files remain metadata-only/unspawned.
+  Absence from a SOURCES used-by table is not itself a defect; own-work provenance can
+  suffice. No network, target/source execution or canonical edits are authorized.
+- At `2026-10-21T22:44:13.844429Z`, actual runtime was131tasks,100new; the pre-grant
+  gate counted32, exposing another floor gap. At `2026-10-21T22:56:31.664827Z`,
+  actual runtime was95tasks,64new plus13from the prior100. The conservative gate had
+  counted126/projected190; it is not the runtime observation. Hard ceiling remains200,
+  normal whole-wave band64–100; no continuous-floor or trained-round claim follows.
+- **Instruction-scope correction:** the100-wave input restriction overbroadly mentioned
+  host skills. Required instructional Godspeed/RULES prereads are exceptions, never
+  corpus evidence. Main's attempted live broadcast also woke completed peers; these
+  acknowledgement wakes are not productive new seats, replacements or replays. The
+  behavior was reported and no further scoped correction uses `agent://all`. Missing
+  initial prereads are not retroactively called compliant.
+- **Scope disposition:** final original64 tail adds Chousa27GateReceipts's eleven outside
+  writes (copied gate source was not executed):26observedVOID plus the existing2quarantines.
+  Readiness66 has3observed outside writes; amended-scope read breaches and missing18/66
+  amendment deliveries remain explicit. Main's omitted-input error is not a retro-grant.
+  Subsequent wave ledgers retain self-disclosed outside writes/execution and quarantines;
+  report presence, cleanup and no tracked change are not independent-review credit.
+- **New item hold:** U064N008Hf47eb933 reported a safety filter followed by automatic model
+  fallback. Main held that original item/question in `blocked-items` and
+  `s3-unjoined64/policy-holds.json`, without inferring a whole-lane cause or retrying it.
+  A separate metadata-only chain check is not continuation of the refused work.
+- **Author barriers:** Kake preserves the actually falsified ac46candidate and original
+  targets; finite C2 counters do not erase full-interface acceptance findings. Kama
+  disclosed a DocKnowledge canonical-write breach and froze those bytes without restore
+  churn; the final document reader stays on its original private2e input. No VOID
+  replacement, oracle change, policy-held author wake or new ledger closure is claimed.

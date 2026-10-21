@@ -1,0 +1,39 @@
+{
+  "wave": "hyaku-s3-readiness66",
+  "scope_rule": "Ownreportonlywrites, pinnedsourceview/ancestoronlyafteramendment; removingoutsidefiledoesnotcure.",
+  "reports": {
+    "KaidokuReadyCrossAxis": {
+      "reason": "Successfulwrong-rootreportwritepersisted, latercorrectedwritesdo notcure.",
+      "evidence": "call_01a1603f5b35779fa99b2f05,2026-10-21T20:55:47.846Z",
+      "credit": "VOID",
+      "dead": false,
+      "replacement": false
+    },
+    "TameshiReadyCustody": {
+      "reason": "Successfuloutside/tmp/xscratchwritepersistsatcutoff.",
+      "evidence": "call_b45e89bf945e47f5a8d,2026-10-21T20:54:43Z",
+      "credit": "VOID",
+      "dead": false,
+      "replacement": false
+    },
+    "SoujiReadyCrossAxis": {
+      "reason": "Successfuloutside/tmp/x.jsonscratchwrite,laterremoveddoesnotcure.",
+      "evidence": "call_01a16071236e76a996f,2026-10-21T21:49:53Z",
+      "credit": "VOID",
+      "dead": false,
+      "replacement": false
+    }
+  },
+  "epoch2_read_scope_breaches": 16,
+  "note": "Epoch1Maininputomissiondoesnotretrograntoutside-readpermission; missing-inputreportsvalidonlyfortheirepoch. Noadmission/trainingcredit/replacement.",
+  "audit": {
+    "source": "/fast/scratch/hyaku-resume-s3/s3-final-scope-audit.{md,json}",
+    "close_utc": "2026-10-21T22:42:38Z",
+    "execution_events_observed": 0,
+    "write_breaches": 3,
+    "postcorrection_read_events": 24,
+    "postcorrection_seats": 16,
+    "delivery": "Auditfound48/66amendmentdeliveries;18missing.Mainsentisnotdelivered.",
+    "barrier_limits": "Audit65session_exit+66reportsnotexactruntimecompletion; MainseparatelyreceivedSoujiReadyCrossAxiscompletednotification, no re-run/rescan claimed."
+  }
+}

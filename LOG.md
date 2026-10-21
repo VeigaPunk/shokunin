@@ -996,3 +996,31 @@ The indentation receipt has 93 checks; `canonical-final-checks.txt` has the fina
   source mutation controls remain a separate qualification item, not an invented gate.
   No training/admission/promotion credit or policy-hold clearance follows from this repair.
 
+## 2026-10-21 — current-source mutation qualification and distinct freeze blocker
+
+- Main prepared nine bounded mutation copies from the actual committed checker source
+  `d8c1620df147d2e576f157f43e149ae4a1251a760b9f111f210b516744187a48`,
+  then ran the pristine copy (29/29) before running each mutant's native selftest.
+  Eight produce named consumer-visible fixture failures; M7's old prompt grammar raises
+  TypeError in the shipped prompt-key unit and is **crash-only**, not a behavioral kill.
+  There are zero survivors/construction refusals; old oracles and scores were not re-pinned.
+- M8 suppresses typed round findings while leaving rows held out; both new fixtures fail.
+  M9's actual null-to-zero read creates a phantom round0 row in the original null fixture;
+  it does not coerce lists/dicts, so the shape fixture retains two CNEs rather than three.
+  This corrects the preparer's prediction, not the unchanged consumer expectations.
+  Exact edits/hashes and all parent-run outputs:
+  `.ufo/waves/hyaku/native-checker-repair/mutation-{construction,control-run,parent-runs}.json`.
+  The private preparation helper is a control scaffold, not another shipped gate.
+- A new pre-closure snapshot exposed a separate default-generator projection defect.
+  `freeze-snapshot.py` generated an unreviewed328-debt expectation from a materialized
+  Gitless **live** mirror; the native **frozen** replay produces65debt/81CNE and MISMATCH.
+  The exact difference is262phantom `prompt_untracked` plus one live history-pin finding;
+  all65substantive triples and the exit agree. The live67-debt observation is a different
+  input projection and is not equated to either snapshot result.
+- Both failed fresh artifacts remain intact and explicitly unqualified:
+  `native-checker-repair/pre-closure-{freeze,replay}.json` and the referenced new snapshot.
+  No protected historical baseline was regenerated or overwritten to make this green.
+  The existing generator correction is separately scoped to derive through the native
+  frozen CLI and bind its input digests; Main must exercise/review it before further
+  frozen-accounting claims. This is not a new trained round or child admission.
+

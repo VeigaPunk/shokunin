@@ -219,7 +219,7 @@ committed fixture/snapshot files, not copied into this registry.
   statuses derived". Per the round-14 contract it is cited, not re-run to confirm; the gate
   is unchanged by this registration and the defect remains parent-routed. Closure grades no
   live state of this gate from this row.
-- **2026-10-21 operator maintenance — executable malformed-round handling:** an adjudicated
+- **2026-10-21 operator maintenance v1 — executable malformed-round handling:** an adjudicated
   non-integer `entry.round` is now explicit `unknown_round` CNE and unadjudicable evidence,
   not a fabricated round0, lane_rounds re-key or silently dropped clean row. Valid integer
   status rows remain analyzable; malformed closure instants do not poison valid joins.
@@ -228,10 +228,21 @@ committed fixture/snapshot files, not copied into this registry.
   Actual live CLI emits JSON without the former traceback: exit1,67debt/57contradictions,
   81CNE (80unknown types plus one malformed round), zero history-pin findings at the
   measured worktree. These are disclosed existing ledger debts, not a clean verdict.
-  Receipt: `.ufo/waves/hyaku/native-checker-repair/parent-runs.json`; source hash above.
+  Receipt: `.ufo/waves/hyaku/native-checker-repair/parent-runs.json`; v1 source was
+  `c00fcbd079a1e8902f8bb480ce7b18387c93c15fbde3c8187966ce51d03ba118`.
   No closed history, original frozen input/expectation or annotation-keying convention
   was normalized. `admitted`, per-claim truth and commit ancestry still need parent review;
   this status gate does not certify them.
+- **Current v2 qualification:** the hash above is committed at `32e5e7c`; actual parent
+  selftest29/29 and all five historical frozen comparisons `match`. List/dict diagnostic
+  keys are hashable and missing-lanes exits retain the independent typed round finding.
+  `native-checker-repair/v2-parent-runs.json` records nine public CLI controls.
+  Fresh controls cut from this exact source detected **eight named behavioral mutants**;
+  M7's old prompt parser caused a **crash-only** TypeError, not a named behavioral kill.
+  Pristine copy29/29, zero survivors/construction refusals. Actual commands/results:
+  `native-checker-repair/mutation-{construction,control-run,parent-runs}.json` under
+  `.ufo/waves/hyaku/`. Historical mutation scores/expected files remain untouched.
+  This finite mutation set is not full behavioral adequacy, source truth or admission.
 - **Baseline count:** rows starting `| closure-check | gate |` above `## Aggregator lane`
   were 0 before this section (`protocol_registered_closure_gates=0` at commit `99efc52b`,
   `.ufo/waves/round-14/registry-home-rerun/before.json`); this section adds exactly one.

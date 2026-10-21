@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-21T22:35:47+00:00",
+  "source_sha256": "d8c1620df147d2e576f157f43e149ae4a1251a760b9f111f210b516744187a48",
+  "source_commit": "32e5e7c43ccc0afa705ba39ac7006e0e52214978",
+  "argv": [
+    "python3",
+    "/home/vgpnk/Projects/shokunin/.ufo/waves/round-15/freeze-snapshot.py",
+    "--repo",
+    "/home/vgpnk/Projects/shokunin",
+    "--closed-at",
+    "2026-10-21T22:35:47+00:00",
+    "--manifest-source",
+    "live",
+    "--out",
+    "/home/vgpnk/Projects/shokunin/.ufo/waves/hyaku/frozen/s3-v2-pre-closures-20261021T223547Z",
+    "--checker",
+    "/home/vgpnk/Projects/shokunin/.ufo/waves/round-15/closure-check.py"
+  ],
+  "exit": 0,
+  "stdout": "freeze-snapshot: /home/vgpnk/Projects/shokunin/.ufo/waves/hyaku/frozen/s3-v2-pre-closures-20261021T223547Z\n  closed_at\t2026-10-21T22:35:47+00:00\n  manifest_source\tlive MANIFEST.json\n  main_HEAD\t32e5e7c\n  log_lines\t638 kept, 0 dropped (> closed_at or unparsable)\n  reports\t390\tprompts\t262\n  expected\tderived from a live run\tdebt rows\t328\texit\t1\n",
+  "stderr": "freeze-snapshot: DERIVED-FROM-LIVE-RUN -- expected.json came from a checker run over a\nfreeze-snapshot: materialized mirror of this snapshot (/fast/scratch/hyaku/freeze-stage-s3-v2-pre-closures-20261021T223547Z), not from a reviewed\nfreeze-snapshot: baseline. The baseline is only as good as that run.\n",
+  "snapshot": ".ufo/waves/hyaku/frozen/s3-v2-pre-closures-20261021T223547Z"
+}
