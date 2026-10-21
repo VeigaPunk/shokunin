@@ -9319,6 +9319,46 @@
    "notes": "Digest: launch kake r22 2026-10-20T18:30:56-03:00 pgid=1128758 hyaku-inline attempt=1; lane-dead-no-report 2026-10-21T02:47:17-03:00 (attempt-1 coordinator ended; operator-authorized recovery reuses retained work); launch attempt=2 02:47:18 pgid=538289; complete 03:19:54. Report 712c620+d7ecdb5 by kake-shokunin; no step-1 conformance defect. Re-check seats refused by host job cap; all checks by closure reviewer alone. Routed: (1) QUALITY 'derived counts' criterion fail predicate inverted (counter-probe exits 0 on pass) - append correction; (2) misroot err.txt/out.txt committed at lane root - relocate under .ufo/waves/round-22/; (3) postfix *-before.json name /tmp c0fd6d5 runners - record git show reconstruction command; (4) four last fixes probe-only, 21 dead w2 items (S021,S023-S026 re-opens, Boundary attacks) unattacked; (5) carried paths gate red 3 targets/missSet 55 (operator restore-or-retire); (6) SHONEN all [ ], none non-author checkable yet; promotion operator-owned. No tool installs.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 37,
+   "date": "2026-10-21",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 37,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 37
+   },
+   "admitted": false,
+   "verdict": "rejected-harmed",
+   "verdicts": {
+    "operability": "unprovable-but-better",
+    "coverage:script-layer": "harmed",
+    "coverage:runtime-layer": "unchanged",
+    "coverage": "unchanged",
+    "coverage:kimi-layer": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "harmed",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-37/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-37-verifier-spotcheck.md@753446a829edda519c75777ce95888443f51fa94",
+    "rechecks": "Closure ran every check itself (review seats refused twice by the job cap). Own parser (committed in the spot-check, sha256 bcaff2f0) against a private read-only pin clone at 31c465f1: the four notes are byte-equal to 0614092 plus one notice line. Across 811 anchors, true at round open 400 -> at close 469: 131 round-36 shift harms removed, 62 anchors true at open now false (S8 27, S7 6, S4 8, native-trial 21), versus the lane's 109/54. Declared claim 'gate measures anchor truth' refuted: ratchet ceilings sum to 200 = current nonok, so CLEAN is tautological; the gate reports 144 nonok against 202 closure-false anchors in the four notes. Shift half evidence-verified: one rule prev??next at claims-check.mjs:303, a discriminating fixture by reading, Pair1 mutation kill 47/47 -> 46/47. D2/D6/D7/D8 verified; D1 not as routed (full reset, not per-anchor); D3 partial; D4 present but its own bar not met; D5 dispatched before the report with 67/68 reports. C2 84 recounted; .rej sha 3f51c7e7/249 L/19 hunks; claims-check pin hand-checked; sources census kumitate ok, exit 0; S032 quote verbatim, 23 words. Spot-check agrees 4/4 (D1 magnitude differs)."
+   },
+   "commit": "kumitate-shokunin@ea63c4e68c0d0559f4aafefcd3c7ae239247b2ae",
+   "closed_at": "2026-10-21T07:03:54Z",
+   "campaign": "hyaku",
+   "notes": "Watchdog digest: 2026-10-21T03:16:49-03:00 launch kumitate round=37 pgid=2498319 driver=hyaku-inline attempt=1 / 2026-10-21T03:48:57-03:00 complete kumitate round=37; hyaku-inline attempt=1. Late tip 198091c9 adds only 11 falsify reports. Defects: LOG.md round-37 entry rewritten in place (5031720, fb5b90e) and still states superseded symbol-keyed/186/1551 figures; final gate captures were taken at 8c41439, before 6f88d12 changed claims-check, and no selftest/PROXY run is committed for the final bytes; falsify seat AuditRemainder6 is dead and undisclosed, and the slot was never released; the report header names base 91da27c6 instead of 5833351. Routed: R1 per-anchor D1 for the 62 regressed anchors, listed in the spot-check, with a committed parser (Q16); R2 make the ratchet a non-increasing burn-down; R3 fix the gate under-count on multi-anchor runs (noid); R4 sweep README.md:99 clause-guarded, SCORECARD.md:1717 'measures anchor truth', the LOG round-37 entry and lessons/round-37.md:13; R5 re-capture final evidence at the final bytes; R6 record the dead seat; R7 add a README row for the round-37 spot-check (C2 85). SHONEN stays [~] and is not promotion-ready.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
