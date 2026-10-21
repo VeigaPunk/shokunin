@@ -149,3 +149,37 @@ configs, runtime validity, hosted judges, contamination and other named benchmar
 - **Stale-lane:** respawn-per-round; only held r29 was worked. No r30/claim advance/dispatch call.
 - **L0:** the2 inherited round25 coverage-cap/novelty-conversion questions remain; no new L0 question.
   No outside admission or history-purge authority claimed. Separate non-author closure decides admission.
+
+## Erratum — compressed copied source remained after the five-path cleanup (2026-10-21)
+
+This appends to, rather than rewrites, the filed report. Its original 11811-byte prefix has
+SHA-256 `906b628006ce51fd195c88a8541c87c586a78df546669c123e1829d2cdef705b`.
+
+The safety discussion at lines52–57 described a bounded absence check over five loose paths.
+It did **not** establish that their material was absent from every carrier. Independent non-author
+review found that the baseline `6a2c2df788a4fdb216dd5790f9ae6dd326169f47` still contained
+`.ufo/waves/round-29/scratch/falsify/FCritNovelty/fetch/libwebarena-0.0.5-py3-none-any.whl`.
+Its member `webarena/browser_env/env_config.py` is byte-identical, by Git blob identity
+`81cf52de7d998c90abb3741416e2c8ab9b434758`, to the removed flagged module. The archive itself
+has SHA-256 `5cfdf8abc2b40cc4442905a29af1c45c5fd0ed57bbfe8e3a6421a2e53cb6cb1b` (116645 bytes).
+No credential literals or private endpoints are reproduced here; validity was not tested.
+
+The orchestrator integrated current-tree containment through the lane helper:
+**landed `1f3b0f1ec41ec297130e8944ff97968d32324632`**. Exactly the known copied wheel was
+removed, with an appended LOG correction, a sanitized
+`corpus/lessons/round-29-source-copy-containment.md`, and its corpus index row.
+An isolated writer prepared the change; a separate read-only metadata reviewer checked identity,
+dependency scope and citation effects; the parent integrated it.
+
+Actual committed-object smoke: the wheel exists at the old baseline (`git cat-file -e` exit0)
+and is absent at the containment commit (exit128). `plans/config_projection.py` and the canonical
+round28 task-raw fixture retain identical Git blob ids across that change. No package, lane gate,
+selftest, mutant or oracle was executed to claim a broader pass. The fetch receipt is retained
+as a historical fetch record, not a current presence claim.
+
+This is **known-artifact tip containment only**. Git history still retains the wheel and module;
+other worktrees, caches, ignored/untracked material and unexamined carrier formats are not certified.
+No history rewrite, force-push, rotation, revocation, global-clean statement, outside admission or
+new score is claimed. Original projection measurements remain pinned to their original revision,
+not re-credited as a result of this removal. Kengaku's safety/history-disposition hold and the
+new operator question remain open; the earlier “no new L0 question” sentence is superseded.
