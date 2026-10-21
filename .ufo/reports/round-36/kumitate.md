@@ -170,3 +170,13 @@ reproduced the four before/after lines (543→0, 11/13→14/14, DRIFT→MATCH, D
 nonok=1 under the frozen rule (readable prose, gated only by the guarded rule) and must be repaired or
 declared. The round's admission must therefore read: C1 unproven/harmed, C2 improved, no axis harmed
 by C2 alone; the non-author closure decides.
+
+## Erratum (appended 2026-10-21; lane commit `91da27c6ac17712aa53ea0adb27d89b133d60081`)
+
+The late build-wave evidence is now committed under `.ufo/waves/round-36/` (lane tip
+`91da27c6…`, porcelain 0): the reviewer/critic/executor reports that arrived after the work commit,
+including `ExecFidSmall.patch` and `ReviewFidSmallB.md`. The `ExecFidSmall` patch remains
+**UNAPPLIED** — it is not rebased into the tree and its own `nonok=0` depends on the amended pairing
+rule the committed gate does not implement; `ReviewFidSmallB` names four semantic failures to fix
+before application (`swarm-wave-lifecycle.md:55-58` and `:106-112`, `native-admission-detail.md:29`,
+`local-ship.md:31-32`). No claim changes: C1 remains not admitted, C2 remains admitted.
