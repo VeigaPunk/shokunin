@@ -2,7 +2,7 @@
 
 Lane: `kagi-shokunin`. Base `d218603b74099ddca0bd8f869516fc41db0979bf`; measured
 lane commit `e1884c6ecb7ccd717965b0d748bc193137118dbf`, final lane commit
-`c349fc7f7a4039e5b311ebd1ca07a5a8fecb1c50` (helper `landed` lines, pushed).
+`8a4ecbbd578398ce097c801081761348ba920325` (helper `landed` lines, pushed).
 Build wave: parent-held 66 seats (43 claim-ledger command-row audits + 23 source-row
 audits, `parent-build-dispatch.json`). This lane dispatched no second build wave and
 remained the sole production writer. Falsify wave: 64 seats, `.ufo/waves/round-23/falsify-spec.json`.
@@ -92,12 +92,21 @@ Other evidence bullets:
 - QM12 safe-row substitute (`.ufo/waves/round-23/final-verification.json`): 45 rows
   considered, 32 pass, 12 skipped by id (R11-01/02/03/04/06, R12-01, R13-03, R15-01,
   R16-01/03, R17-01, R18-01 — host-bound/substrate), one inherited fail (R11-08).
-  A direct real-tree `cells` run (the audit R13-03 skips) then printed
+  A direct real-tree `cells` run (the audit R13-03 skips) printed
   `CELL_AUDIT: CLEAN (cells=156 row_pointed=104 stamp_pointed=87 uncited=0
   missing_ids=0 rows_run=37 row_deferred=10 row_failures=0 stale_pointers=0
   self_skipped=6 orphans=0)`; R23-01 is one of the six self-skips.
-  Recorded measured commit is the verdict file's own `measured_commit: e1884c6e…`.
-  No full legacy `verify`/`cells` was run; no host-private gate was executed.
+  **Safety deviation (disclosed):** that run executed untagged host-private
+  R18-01 (`drift-pins.sh`) because SCORECARD cites it; the QM12 safe-row list
+  excludes it. It is not credited, was not re-run, left no per-row receipt, and
+  no config contents or secret values were copied. No other host/private gate
+  was executed. Recorded code/data commit is `e1884c6e`; the verdict file was
+  re-measured at `57776b28` after bookkeeping, and this report's final lane
+  commit is `8a4ecbbd`.
+  Round-22 operator debts named here for completeness: the mise global
+  `~/.config/mise/config.toml` write is recorded in the lesson (revert
+  operator-owned), and `/tmp/kagi-shokunin` scratch residue remains
+  (operator-owned cleanup).
 - Misroot sweep (`git -C /home/vgpnk/Projects/shokunin status --porcelain`): four
   seat reports had landed at the fleet root (`falsify/RevS019.md`,
   `falsify/ScoutMigration.md`, `falsify/RevW04.md`, `parent-build/ClaimR11X11.md`); each was byte-copied
@@ -127,6 +136,7 @@ Other evidence bullets:
 | illustrative-id markers (real cells `missing_ids=0`), absolute gate-path refusal, op-ref prose repair, migration pointer | `LOG.md` §Round 23 | `3764bc57` |
 | ledger policy bound recorded | `LOG.md` §Round 23 | `17858cf1` |
 | working-tree pointer, plan-wording supersession, system-file clarification, manual fixture-mutation bound | `LOG.md` §Round 23 | `c349fc7f` |
+| unauthorized host-private R18-01 execution disclosed (M23-5), not credited | `LOG.md` §Round 23 | `8a4ecbbd` |
 
 ## Before → after measurements
 
