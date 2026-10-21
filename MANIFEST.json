@@ -9195,6 +9195,47 @@
    "notes": "watchdog digest: 2026-10-21T00:38:35-03:00 launch kagi round=23 pgid=2971557 driver=hyaku-inline attempt=1 / 2026-10-21T02:22:20-03:00 complete kagi round=23; hyaku-inline attempt=1. Landings e1884c6e..8a4ecbbd (14 cited, all ancestors of master); report fleet 00cfe25d; lane tip 46fac5a (wave evidence only) then closure spot-check 4f94b52a. Waves: parent-build 66/66 reports, falsify 64/64 (registry 19 rev/12 crit/19 scout/4 mut/4 conn/4 revenger/2 sentinel vs report's 20/10/20), 0 dead, 0 replaced. Conformance defects (status-neutral): M23-5 real-tree cells executed untagged host-private R18-01 against the plan boundary (read-only, digests/paths only, disclosed, uncredited); wave evidence 46fac5a landed after report and driver complete; inherited R11-08 red. Bounds accepted as stated: closure pointers presence-only, legacy in-row digests presence-only, SC_FETCH shape-only, supersession prose-only. Routed D1-D8: repertoire-table row missing; SKILL gate-registry row for closure-dispositions absent (gate non-conformant until added) and census row omits source-fetches.tsv; bind closure selftest + refresh measured_commit past 3764bc57; tag/refuse host rows in cells; name non-reproducing legacy pins + captures/inrow split + restrict exemption; single rendered-text-v1 declaration; evidence before report; explicit Gate rejects + plan wording correction. SHONEN boxes stay [~]; box 3 gains outside check for R23-01/R23-02; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 18,
+   "date": "2026-10-21",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 18,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 18
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-18/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-18-verifier-spotcheck.md@8bf99cae7de2517fd4ebe209f3b940aeabb6b687",
+    "rechecks": "C1/C2 evidence-verified (lane counters/harness not executed): jq over 1b85a24 runs/commands.json (measured_commit eb78788b, 32 cmds, 0 unexpected exits), runs/c1-measure.json (accepted_bad 5->0, good_rejected 1->0, misclassified 1->0, uncontrolled 0->0, arms 16->17, clean, faults [], exit 0), runs/c2-survivors.stdout (15 named: survived 11/miscount 1/accepted 3 -> killed 11/correct 1/handled 3, witnesses 15/15); stdout sha256 bound to commands.json; frozen SHA256SUMS = e75cf680 blobs. Spot-check 3 admits (S050, S048, S056) + 3 rejects (SystemExit guard, duplicate-flag rejection, proc_net_tcp IPv6 order) re-opened, all agree; sources-census validate exit 0 (3 W04), census 47->56. Recovery: live/ receipts byte-identical to checkpoint 101f3991; PrivacyScope env-value leak fixed with fail-capable sentinel cases; seats 75+76(66 reports,10 dead)+7=158; no service left running, no >100M file since 00:47."
+   },
+   "commit": "kama-shokunin@1b85a24eca4d1fe81ef8d9ddf513fda1aad93e0e",
+   "closed_at": "2026-10-21T05:55:11Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-10-20T16:42:33-03:00 launch kama round=18 pgid=3591651 attempt=1; 2026-10-21T00:47:36-03:00 lane-dead-no-report kama round=18 (attempt-1 coordinator ended on provider weekly quota; operator-authorized recovery reuses checkpoint 101f3991d3570bc9350fbf9c5561f4be1185699d); 2026-10-21T00:47:37-03:00 launch kama round=18 pgid=2988422 attempt=2; 2026-10-21T02:39:37-03:00 complete kama round=18 attempt=2. Report 23bdc3f8 by kama-shokunin, lands after lane tip; step-1 conformant (ancestry vs refs/heads/master, ahead=0, clean, SHONEN 4/4 lines, prompt = template rendering). Attempt-1 reuse/discard disclosed honestly (20 unassigned build members, 10 dead falsify seats, pre-repair C2 artifact retained). No fresh 64-100 wave in recovery (budget), disclosed. Routed defects: (1) lesson:316-318 and LOG:1122 say five confirm/two partial + ResidClaims for 7 seats; committed is 4 confirm/3 partial; (2) S055 anchor and lesson:53 pointers (runs/commands.json, runs/live-gate-1.stdout) now resolve to the recovery pass; described bytes only at 1c325b2/101f3991; (3) SCORECARD:755 C2 command shows --out PATH vs official --json-only argv, plus pre-official runs/c2-survivors.json beside official stdout; (4) residual 6 reviewer/1 critic split ungrounded; (5) lane-declared residuals (1/51 install-tree pin, C2 selftest-arm enumeration, mutant (b), GateCaptureHashes M1-M4, fresh-mutant survivors). SHONEN all [~]; box 2 looks non-author checkable (operator-owned promotion). No tool installs by closure.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
