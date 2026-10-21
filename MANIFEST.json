@@ -11077,6 +11077,94 @@
    "promotions": [],
    "minted": [],
    "closed_at": "2026-10-21T14:20:04+00:00"
+  },
+  {
+   "round": 26,
+   "date": "2026-10-21",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 26,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 26
+   },
+   "admitted": false,
+   "verdict": "rejected-harmed",
+   "verdicts": {
+    "operability": "harmed",
+    "freshness": "harmed",
+    "calibration": "harmed",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "claims": {
+    "C1": {
+     "axis": "operability",
+     "verdict": "unprovable",
+     "finding": "Narrow amplification4/4->0/4 verifies in retained measurements; complete contract unverified because registered selftest PASS hold fails and falsification incomplete. No full-claim credit."
+    },
+    "C2": {
+     "axis": "freshness",
+     "verdict": "harmed",
+     "finding": "Frozen classification/oracle0/29->29/29 and controls0/6->6/6 do not offset independent input-domain termination and locale counterexamples."
+    },
+    "C3": {
+     "axis": "calibration",
+     "verdict": "harmed",
+     "finding": "Frozen controls0/5->5/5, positive0/1->1/1 and population0/5->5/5 do not offset independent header-state/token/refusal counterexamples."
+    }
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "harmed",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-26/chousa.md",
+   "report_commit": "0bd711f80cbbedb6b941efeefc85e3fd188e5fbc",
+   "commit": "chousa-shokunin@64eec5d41c7cf7f17f5ce1e968e28b3769952596",
+   "verification": {
+    "reviewer": "CloseChousa26 (orchestrator-dispatched non-author integrator, openai-codex/gpt-6.1-sol)",
+    "scope": "Explicit closure bounds forbid lane/report edits: findings retained in this durable row, no lane verifier lesson. No lane-owned gate/selftest executed, no dead campaign seat resumed/replaced/re-dispatched. Independent stdlib arithmetic/counts over Git blobs, raw receipts and reconciliation records; source-census validator independently executed. Two bounded closure reviews, not campaign seats. Counting reviewer explicitly confirms no gate/harness invocation began before corrected evidence-only instruction. No build/test/lint/formatter run credited; no tool installs/updates.",
+    "conformance": "Report commit authored chousa-shokunin <chousa@shokunin.local> and fleet-HEAD ancestor; landing bytes equal current report. All six required report sections in order, four SHONEN [~] rows. Committed prompt bytes equal current and entire canonical round template prefix is exact after lane/round/root/axes substitution. Cited base ba3333254dd337658a4f25e7a9471f9cf4e4567e, prereg f361d12e44687841e30ec35710ddb366c6f795e0, measured0e9784bd52eca456b24d0bc40921480a47f91a2b and landed64eec5d41c7cf7f17f5ce1e968e28b3769952596 all exist and are ancestors of lane HEAD. jj-lane.sh state local=remote=64eec5d41c7cf7f17f5ce1e968e28b3769952596 ahead0/behind0/head detached/tracked0/untracked0. Direct porcelain empty; git ls-remote origin refs/heads/master independently same hash. Real report, status ok, not failed-marker.",
+    "measurement_method": "Registered bash corpus/evidence/round26-measure.sh TREE all was NOT executed by closure: invokes sibling gate/selftest, prohibited by canonical PROTOCOL Gate standard. Read-only independent Python over committed receipt rows recomputed C1 amplified=(rc==timeout or extra_kb*1024>8*bytes), C2 matched-control count, C3 negative/positive controls and raw clean META population count. Scalar classification/oracle receipt values compared, not misrepresented as newly executed runtime measurements. Independently remeasured source rows and wave populations.",
+    "receipt_identity": "Inherited-after log SHA2561a5febda2d8327b29bdf4845aceb3269bbc601e5b6cbe11aac93ac5733642a6b matches provenance. All six recovery-identity records independently match measured0e9784bd and landed64eec5d4 Git blobs: gate, counting probe, date differential, registry oracle/differential and SOURCES. Gate SHA256c2c813f1b425bc4e74625a2607eaca1b97addf9898f834e88af8f1fe2143abc6. Independently reopened original history://ChousaR26R.FNoTrade: actual all-mode invocation and separate selftest exist; retained result bfe44158 is observed output, not reconstructed prediction. Critic scope violation remains disclosed.",
+    "C1_recount": "Raw resource rows independently reclassified4/4->0/4. Target four RSS54,536/54,980/54,876/54,864KiB, control11,880KiB, each input8,388,000 bytes. Frozen29 rc1/SHA3f83ba4844cac8d2057b47661be225f84a5945fc7c1db739ec2070b6aa2a4a37 identical, complete26/29. Legacy161 case-line digest5eac4a7e2af964f6e81631f66990426e5c8ef58fb41ba6ec6d0054ef819e01cb identical; not full-suite PASS. Drift none/rc0 and archived-input3/3 unchanged; scalar3->3/delta0 is not a resource/readiness score.",
+    "C2_C3_recount": "Independently recounted C2 control ok lines0->6 of6. C3 negative control matches0->5 of5, positive0->1 of1, five raw clean META population rows0->5 of5. C2 classification/oracle fields0/29->29/29 remain committed receipts, not evidence of complete domain validity. No threshold/oracle relaxed; missing seat results never inferred green.",
+    "selftest_harm": "Persisted round26-inherited-after.log:42,49 FAIL(3/187 cases), :50 exit1, versus before.log:66 PASS161/exit0. New deterministic harness bug independently proven by source: tools/research-gate.sh:6016 requires out not containing RESEARCH_GATE: substring; die_usage:390 invokes usage with Verdict: RESEARCH_GATE: CLEAN|DRIFT at385, merged via2>&1 at6014. Exactly three new invalid/missing/wrong-mode usage calls6083-6087; absent at base. New regression violates preregistered shared PASS hold, not inherited red debt. SelftestEvidence reviewer independently corroborated provenance, six blob identities and mechanism without rerun.",
+    "independent_falsifier_review": "FDateHugeCadence records new opt-in C2 termination/zero-output, base/plain survive, breaching spec-v1 does-not-terminate requirement; unchanged production source still has problematic leading-zero normalization at2348. FRegistryHeaderless records headerless-table acceptance rc0 instead of2 plus false positive/negative status verdicts; source2412-2415 retains stale header column indices across non-pipe lines. C3 token/refusal and registry allocation/time findings retained and disclosed. These delivered harms, not merely unprovable claims, justify rejected-harmed. No counterexample/selftest rerun or repair by closure.",
+    "sources": "Independent git-show table parsing33->39 rows; A27->33/B1->1/C5->5; mined10->16/queued19->19/rejected4->4. NewS034-S039; only preexistingS029 row changed, used-by adds recheck-due note. Markdown knowledge29->32 files, zero admitted expansion/capability. Independently ran scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin chousa: chousa TAB ok TAB lane/corpus/SOURCES.md, exit0.",
+    "outside_spotcheck": [
+     {
+      "item": "S038 scoped source-curation acceptance",
+      "verdict": "agree",
+      "source": "https://docs.python.org/3/library/datetime.html#datetime.date.toordinal",
+      "reason": "Reopened official docs: exact17-word lesson quote Return the proleptic Gregorian ordinal of the date, where January 1 of year 1 has ordinal 1. present; MINYEAR1/MAXYEAR9999 corroborated. Current served title3.15.1 versus recorded3.15.0 is disclosed mutable-version drift, not authentication of the earlier version. Supports calendar arithmetic only, not freshness policy or failed implementation."
+     },
+     {
+      "item": "S025 retained rejection as generic research-validity authority",
+      "verdict": "agree",
+      "source": "https://www.rfc-editor.org/rfc/rfc9111.html#section-4.2",
+      "reason": "Reopened RFC formula and direct scope paragraph freshness applies only to cache operation. Rejection justified; historical formula quote alone is weaker grounding than direct scope sentence. Used-by omission and analogy equality caveat remain routed debt, no repair claimed."
+     },
+     {
+      "item": "C2/C3 implementation rejection; no new implementation admit",
+      "verdict": "agree",
+      "source": "corpus/lessons/round-26.md:128-217 and named falsifier reports",
+      "reason": "Withdrawn candidates and current safety addenda correctly disclose delivered failures. No new implementation admit exists for paired implementation sampling; source-curation acceptance is not implementation admission. No fabricated admit sample or improved discernment credit; previous r25 outside agreement not recycled."
+     }
+    ],
+    "wave_recount": "Independently counted reconciliation rows64 build+68 falsify=132 unique original agentIds,132 terminal_exit objects. Build39 reports/25 absent; falsify37 reports/31 absent. Every falsify report hash matches. Four build report-hash mismatches are expressly superseded by append-only-report-preservation.json: independently verified all four final hashes, exact0e9784bd checkpoint prefixes, embedded late-body digests/lengths and retained bodies. Remaining build hashes match. No finding discarded, no report presence equated with success, missing56 reports not green. Recovery itself spawned/resumed/replaced0 campaign seats.",
+    "routed_defects": "Shared selftest usage assertions, C2 domain/locale/termination, C3 header state/token identity/refusal/resource/oracle gaps; incomplete31 falsify assignments. Carried concurrent JSON appender race, other readers, parent-root/receipt/source-span pairing debt and round12 authentic-dispatcher Receipt identity L0 remain open. No new field-readiness, full semantic support or source-truth claim. Documentation honesty does not repair the executable."
+   },
+   "closed_at": "2026-10-21T14:29:06Z",
+   "campaign": "hyaku",
+   "notes": "REJECTED-HARMED: real lane-authored report status ok, admission false; narrow C1 allocation gain does not offset newly failing shared PASS hold and independently falsified C2/C3. Recovery final64eec5d4 evidence/docs only leaves measured0e9784bd executable unchanged. Dispatch digest watchdog.log:589 2026-10-21T08:32:01-03:00 launch chousa round=26 pgid=4191208 driver=hyaku-inline attempt=1; no complete round26 line observed. Original coordinator Devin weekly quota, R Codex cyber_policy, R2 Opus429; R3 reconciled existing artifacts only. No denied workflow retried or policy/routing changed. Original critic full-probe/selftest/background runs exceeded bounded assignment; retained as observed failures, not authorized outside verification. No lane/report mutation. Previous chousa r25 admitted at rounds[395], so this is rejection streak1, no block. Closure outcome rejected-harmed, next27, claims/chousa cleared. No promotion/mint/capability admission.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
