@@ -130,3 +130,15 @@ scope-accurate notice (round-36 shift-repair removed; pre-existing base anchors 
 pin carried as ratcheted debt). Ratchet total is now 200 (was 186); `FIDELITY: CLEAN` means no
 regression. The D1 sentence in this report is superseded: restoration = full base reset, not a
 symbol-keyed revert.
+
+Sixth erratum (fleet, 2026-10-21): the remaining audit groups (`AuditRouteProbe1/6`, `AuditRemainder7`,
+`AuditNativeTrial8`, and the earlier `AuditSighting2/4`) all refuted the symbol-keyed restoration — it
+moved true anchors onto neighbouring symbols on multi-anchor lines and produced third values. The
+final state is therefore the **full base reset** (lane `5bc40d07`, later `469500f4` with late
+evidence): each of the four notes is byte-identical to `0614092` plus a scope-accurate notice, and
+anchors that were already false at the pin are carried as measured, ratcheted debt (total 200).
+`FIDELITY: CLEAN` under the ratchet means no regression; it is not anchor truth. Wave conformance
+defects found by `Wave3`: `Wave1`–`Wave4` are near-duplicate prompts (the validator only refuses exact
+duplicates), and the 64–100 band used is not recorded by any artifact (the fleet config says 16/32;
+the policy file used is `scripts/hyaku/ufo-wave-policy-v2.json`). Registry `item` is null for 68/68
+members. These are recorded, not fixed, at the run's budget stop.
