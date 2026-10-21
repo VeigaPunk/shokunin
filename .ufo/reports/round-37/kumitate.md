@@ -148,9 +148,10 @@ base reset trades. The reset removes every round-36 shift artefact, but it also 
 anchors that were **true** at the pin (`sighting-wall`: 8 such values — acquireOperationLock,
 withOperationLock, spawnPaneForMission, completeMission, scheduleReconcile, peekMission, emitFatal
 region, runLegacyNativeDirect). Those positions now carry their base line, which is false at the
-pin, and are counted in the ratchet (total 200) as carried debt. Net: the harm is gone; anchor
-quality in these four notes is no better than base, and 8 true improvements per affected note were
-lost. A correct per-anchor D1 (choose base if its symbol is on the base line, else the round-36
+pin, and are counted in the ratchet (total 200) as carried debt. Net: the harm is gone; anchor quality in these four notes is no better than base. The lost
+r36-true improvements are per-note, not uniform: `sighting-wall` 8 (AuditSighting6), `native-trial-launch`
+21 (AuditNativeTrial1, table C); remainder/route-probe loss counts were still being reported when the
+run stopped. A correct per-anchor D1 (choose base if its symbol is on the base line, else the round-36
 line, else the true line) was NOT implemented — it needs a sentence-symbol parser per line that does
 not collide on multi-anchor parentheses, which is the exact failure this round hit. Owed to the
 closure/next round with a fixture-first parser.
