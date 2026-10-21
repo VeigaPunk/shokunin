@@ -852,3 +852,18 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   recheck omits the grouped S001–S006 claim in `static-canonical-preflight.md`, despite W1
   and W2 reviewers naming it. The author confirmed no durable adjudication. Bounded freshness
   improvement remains real, but the closer will not narrow the frozen requirement to admit it.
+- **Closure:** `rounds[430]` kake r26 rejected-honest-stop,
+  `9b4ccb062952e9aa0058d32e3a4aed5d995dceb9` (CloseKaidoku23). Strict C1 is unprovable
+  because the grouped citing-set requirement remains unanswered; bounded 0/32→32/32 and
+  no-harm findings verify. Verifier lesson landed `83528f7c486fd1b9a85e6c0bb643b25fa4fb9fba`.
+  Kake r27 is dispatched and held; its author wake is queued, not started during shared
+  Anthropic backoff.
+- **Landed:** tameshi r24, lane `09a3a309376e3e883053773a35bac801d10d8402`, report
+  `42b647c721f463910fc1e66326d75cb135879f2f`; parent verify passed and full closure prompt
+  rendered. CloseMori22's closure wake failed before an answer on Anthropic429
+  (retry-after 6,416 seconds). Tameshi r24 remains unclosed.
+- **Provider recovery checkpoint:** `/fast/scratch/hyaku-resume-s3/provider-holds.json` records
+  conservative not-before times: KotobaR47-2 2026-10-21T19:50:56Z, CloseMori22
+  2026-10-21T19:50:45Z. Tabi's Devin weekly-quota reset time is not supplied.
+  Checkpoint scouts and the finite backoff timer were refused at the 100-job cap; no timer
+  is running. Existing job results still wake the orchestrator. No route/model/auth changes.
