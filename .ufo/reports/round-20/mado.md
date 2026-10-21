@@ -111,3 +111,11 @@ at `a8960de` (earlier revisions 80–167 MiB) [INFERENCE: `prepare_eval_calls` c
 per statement, O(n²)]; no new exit-2; 300-file aged corpus sample max 0.112 s; `huge_bash_cmd`
 ~82 s at all revisions (parity). Another resource harm for C1; round-21 fix: share snapshots
 copy-on-write or snapshot only statements holding a call/reference.
+
+ReviewDocsV3: three documentation defects fixed at lane landing
+`c2a306db8a0425925111c46ba2c2083f48e63611`: wave-2 wording now distinguishes 49 certain
+recall-loss shapes from one signal-contingent and one old false positive; `rejected=[]`
+is pinned to the review's measured `451c7e41` (not tool measurement `a8960de`); the
+watchdog citation resolves through `../.ufo/watchdog.log`. Six of eight residual review
+reports are committed; ReviewVcsV3 and RerunAllV3 remain outstanding. Final author
+verdicts remain C1 harmed, C2 not independently established.
