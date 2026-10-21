@@ -379,3 +379,44 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   old sessions retain their captured retry policies. Kasegi's policy stop is not a quota retry.
 - Same schema: landed author report → `inline.sh verify` → non-author closure → `inline.sh closed`
   → `inline.sh advance` → next dispatch. Never advance without the closure; no new dispatch during pause.
+
+## Continuation — 2026-10-21
+
+- The prior session ended on SIGHUP after the operator selected **Allow recovery
+  coordinators**: new identities only for failed checkpointed coordinators, with
+  original rounds/baselines preserved, recovery recorded, completed work reused,
+  and no respawn of dead worker seats. This supersedes the original-identity-only
+  hold above for those failed coordinators; Kasegi's separate policy stop remains.
+- The operator resumed sequential training and reiterated: "swwwarm heavy,
+  64-100 concurrent parallelization" and "64-100 swarm subagents please".
+- Recovered completions: souji r18 admitted at `rounds[373]`, kagi r22 admitted
+  at `rounds[374]`. Both claims were advanced only after `inline.sh closed`
+  returned `1 admitted`; SoujiR19 and KagiR23 now own their next named rounds.
+- `inline.sh verify` observed landed kengaku r25 (`c163a04`, lane `9d8a00d2a`)
+  and kumitate r35 (`00b0344`, lane `4c9e40759`). Fresh independent closures
+  `CloseKengaku25` and `CloseKumitate35` are pending; neither round is admitted.
+- Retained tameshi r18 and tabi r18 also verified landed (`a85e4d8`/`4b7c6823a`
+  and `bd330f8`/`df51a0724`). Their earlier closure coordinators failed before
+  writing spot-checks; `RecoverTameshi18Closure` and `RecoverTabi18Closure`
+  are the explicitly authorized recovery coordinators. No author work is rerun.
+- Actual concurrency proof: one validated `kagi-r23-parent-build` task call
+  spawned **66** agents: 43 existing command-ledger obligations and 23 existing
+  source rows, with 45 scouts, 6 critics, 4 connectors and 11 reviewers.
+  `proc://` observed all 66 running alongside the lane coordinators/closures.
+  Spec, dispatch and assigned-ID registry live under
+  `kagi-shokunin/.ufo/waves/round-23/parent-build*`. This is KagiR23's build
+  wave, not an extra round or an admission verdict. Reports have disjoint
+  absolute paths; seats do not edit production or execute live credential gates.
+  KagiR23 remains the sole production integrator. Souji's next build dispatch
+  waits for capacity while it prepares independently; no quota-padding tasks.
+- Runtime settings differ from the previous session-only overrides: current
+  `task.maxConcurrency=100`, `async.maxJobs=1000`, and the globally configured
+  role map are active. Historical directives 29–30 were **not** restored or
+  claimed active; no routing, model or credential configuration was changed.
+  Helper log labels such as `model=@m_opus` are configured labels, not evidence
+  of the answering model. New workers use the current host role routing.
+- Verification so far: real dispatch, assigned registry and observed running
+  jobs; landed-report checks above. These do not certify the new rounds'
+  behavior. Each new round still requires actual changed-path execution,
+  committed evidence, report landing and independent non-author closure.
+- No tools installed or updated by this continuation's orchestrator.
