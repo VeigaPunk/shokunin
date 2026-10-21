@@ -2,7 +2,7 @@
 
 Lane: `kagi-shokunin`. Base `d218603b74099ddca0bd8f869516fc41db0979bf`; measured
 lane commit `e1884c6ecb7ccd717965b0d748bc193137118dbf`, final lane commit
-`5dd14116f76968f28c6446a9487936a23b1630b3` (helper `landed` lines, pushed).
+`31f24e0789c80cd7b2cb28ab39146956a8c87ffb` (helper `landed` lines, pushed).
 Build wave: parent-held 66 seats (43 claim-ledger command-row audits + 23 source-row
 audits, `parent-build-dispatch.json`). This lane dispatched no second build wave and
 remained the sole production writer. Falsify wave: 64 seats, `.ufo/waves/round-23/falsify-spec.json`.
@@ -53,7 +53,7 @@ planner seat). Zero seats were replaced. Integrated findings:
   `SC_FETCH ... missing-provenance` findings and exit 1.
 - **Reported as remaining bounds, not fixed:** C1 pointer proof is presence-only
   (file + anchor substring + id token); its source digest is pinned in the same
-  lane-writable JSON; only `fixed` requires the id token. C2 `SC_FETCH` is shape/identity (17 selftest mutants survive; the in-row branch covers 16/26 rows only in the real-tree run),
+  lane-writable JSON; only `fixed` requires the id token. C2 `SC_FETCH` is shape/identity (17 selftest mutants survive; `fetch-disagree` is now vacuous; the in-row branch covers 16/26 rows only in the real-tree run; supersession is prose-only, so an active entry may still cite a superseded row — the Vault/OpenBao entry cites S012–S016),
   not content verification: 16 legacy in-row digests pass on presence and are never
   compared (stated historical bound); quote text and location are not verified against
   the page (a changed-word quote, a blank quote/location, or thin-space-joined words
@@ -112,6 +112,7 @@ Other evidence bullets:
 | D3 relabelled reported, seven-W04 correction, selftest-adequacy bounds, dead-array removal, closure docstring bounds | `LOG.md` §Round 23 | `58bd8d70` |
 | W04 base/round-end wording, R13-03 SKIP-SELF semantics, D4 named tuples | `LOG.md` §Round 23 | `57776b28` |
 | measured verdict refreshed to the final tree (`measured_commit=57776b28`, R23-02 `fixed=6 reported=3`) | `LOG.md` §Round 23 | `5dd14116` |
+| supersession prose-only bound recorded in lesson/LOG/report | `LOG.md` §Round 23 | `31f24e07` |
 
 ## Before → after measurements
 
