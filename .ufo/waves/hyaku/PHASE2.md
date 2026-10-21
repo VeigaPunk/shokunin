@@ -532,3 +532,20 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
 - **Seat losses observed by lanes:** Mori r18 w1 lost 15/68 seats to Codex `turn_rate_limit_exceeded`;
   kake r22 attempt 1 lost 25 (4 Haiku 429 at startup, 21 when its coordinator died); several
   closures had their ≤8 review seats refused by the job cap and did every check themselves.
+- **Latest closures:** kama r19 admitted at `rounds[384]` (spot-check `37bd4c5b`; author
+  KamaR18Recovery, verifier CloseKake22); kama r20 is now assigned to CloseKama18 as its author.
+  tameshi r19 admitted at `rounds[385]` (spot-check `c144dcd8`; same-ruler 0/5 → 5/5 verified,
+  QUALITY20 editing violation disclosed and bounded). Its first r20 author wake failed before
+  producing an answer: Anthropic 429, `retry-after-ms=8247000`. No worker wave ran in that wake.
+  Parent recorded fail+dispatch as r20 attempt 2, preserving the original baseline. Fresh
+  TameshiR20Recovery spawn was refused by Main's job cap; idle CloseKumitate35 is now its
+  recovery author. No retry of the failed wake or provider-capacity probe was made.
+- **Outstanding coordinator failure:** KaidokuR20Recovery ended on Devin weekly quota before a
+  final handoff. Retained round-20 work remains unadmitted. RecoverClaims is reconciling its
+  report/checkpoints/actual spent seats and surviving descendants before another writer starts;
+  the existing quota error is accepted without a new provider probe.
+- **kumitate r38:** the author reports a validated 90-seat build (89 reports) and disclosed its
+  mismatch with the narrower 64–88 dispatch context. The operator's 64–100 wave band admits 90;
+  no wave was undone or replaced. Independent falsification still must verify the frozen
+  811-anchor population, explicit unchecked/debt members, and zero true→nontrue regressions
+  against the fixed pairing rule before closure. Author-side numbers are not admission.
