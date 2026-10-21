@@ -2,7 +2,7 @@
 
 Lane: `kagi-shokunin`. Base `d218603b74099ddca0bd8f869516fc41db0979bf`; measured
 lane commit `e1884c6ecb7ccd717965b0d748bc193137118dbf`, final lane commit
-`3764bc57cfb41146324dac3952974a3564b0bc42` (helper `landed` lines, pushed).
+`17858cf1bf93de1441e0300e88aa7510250d59e7` (helper `landed` lines, pushed).
 Build wave: parent-held 66 seats (43 claim-ledger command-row audits + 23 source-row
 audits, `parent-build-dispatch.json`). This lane dispatched no second build wave and
 remained the sole production writer. Falsify wave: 64 seats, `.ufo/waves/round-23/falsify-spec.json`.
@@ -58,7 +58,7 @@ planner seat). Zero seats were replaced. Integrated findings:
   compared (stated historical bound); quote text and location are not verified against
   the page (a changed-word quote, a blank quote/location, or thin-space-joined words
   pass the ASCII word/shape test); the 59-case selftest does not exercise the in-row
-  branch; captures are point attestations. C3 proves the `cells` mechanics, not all 43 row obligations;
+  branch; captures are point attestations. C3 proves the `cells` mechanics, not all row obligations; the ledger policy still allow-lists `stamp --prune` and under-specified `cells` flags, so hermeticity rests on row text plus the exact expected line;
   `rows_run` counts selected rows, so only `row_deferred=0`/`self_skipped=0` exclude an
   unexecuted fixture; one fixture stamp (`fx-ok.sh`) is inert because no cell cites it.
 - **Parent build wave scope:** the 66 parent-held reports informed this round
@@ -125,6 +125,7 @@ Other evidence bullets:
 | supersession prose-only bound recorded in lesson/LOG/report | `LOG.md` §Round 23 | `31f24e07` |
 | parent-build disposition-scope bound; M23-4 sweep wording; adjacency stamp pointer | `LOG.md` §Round 23 | `89344643` |
 | illustrative-id markers (real cells `missing_ids=0`), absolute gate-path refusal, op-ref prose repair, migration pointer | `LOG.md` §Round 23 | `3764bc57` |
+| ledger policy bound recorded | `LOG.md` §Round 23 | `17858cf1` |
 
 ## Before → after measurements
 
