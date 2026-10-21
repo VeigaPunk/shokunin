@@ -268,3 +268,21 @@ Filed after the orchestrator reopened capacity and directed the wave to run.
 - Lane tip at this erratum: `019aefa27c1c5a85e851376345dca6be2f33cfcf`. No other code
   changed after the 18/18 acceptance at `63bb887`; the acceptance record does not cover this
   fixture-coverage edit, which is verified by the fixture's own 7/0 run.
+
+## Erratum 8 — PROVINCE F5 contradiction corrected (appended after Erratum 7)
+
+- Two independent wave-1b seats (`CriticProcEntry`, `ConnSiblingOverlap`) found the same
+  internal contradiction: `PROVINCE.md` still said F5 had no knowledge entry while the r19
+  SKILL/README identify one. Corrected by appending a **Round 19 boundary refinement**: the F5
+  observation surface (own-uid cwd/argv/fd listing) is Core with its entry and SKILL rule; the
+  earlier frontier sentence is superseded for that surface only; reaping still requires operator
+  approval, fresh identity verification and LOG receipts; other uids/liveness stay mori's.
+  Lane commit `3a25875cee6053ec7f76ed278986d6367bf7bff7`.
+- `RevCarryHistory`: the evidence points to the r16 gate's first-physical-line rule (inference,
+  no explicit L1 intent found) for five incomplete cuts; two other excerpts stop at complete
+  clause boundaries. No retro-correction — the disclosure stands.
+- `ConnSiblingOverlap`: no sibling charter claims wrap-aware STATUS parsing or souji's
+  list-only residue surface; five siblings have analogous lane-scoped revision/landing rules
+  that souji must not absorb.
+- **Final lane tip at this erratum: `3a25875cee6053ec7f76ed278986d6367bf7bff7`.** No
+  production code changed after the 18/18 acceptance at `63bb887`.
