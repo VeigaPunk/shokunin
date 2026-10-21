@@ -160,3 +160,15 @@ only, `t1246-link` excluded, `t1246-objdump` ended on a later Java heap OOM, and
 `## Open`; C2’s pathless objdump target is not carrier-bound and Harmony is synthetic path-hint only; S041/S045/S046
 quotes are rendered text and S043’s `-c` anchors remain unadded; the two 2030 fixture literals require the documented
 timestamp allows.
+
+## Round-21 author erratum — recovery failure chronology and review boundary
+
+Appended by KaidokuR21 under Main's explicit authorization on 2026-10-21; the filed round-20 bytes above are preserved.
+
+This corrects the incomplete attempt-2 account in the opening paragraph and **Waves, cancellations, conformance**: Main recovered an actual Codex `cyber_policy` flag for `KaidokuR20Recovery` at **2026-10-21T07:34:34Z**, before the Devin quota error at **07:34:36Z**. Attempt 2 therefore did not have a quota-only failure. The quota observation neither erases nor resolves the safety flag; provider retry/fallback is not safety authorization. This erratum does not reproduce or replay the historically flagged request.
+
+Main commissioned independent scope-only review by **ScopeKaidokuFlag**. Main's resulting instruction reports that inspection of the reviewed prompts/report and pre-flag retained JSON/TOON found no exploitation, vulnerability reproduction, intrusion, or offensive request in that inspected material. This is a bounded scope assessment, not proof about every unreviewed historical action and not a retroactive rewrite of the flag or round-20 closure.
+
+Main expressly permits only the current round-21 C1/C2 offline receipt/schema/observation-envelope validation with synthetic fixtures, already-retained static evidence, public documentation and owned validators. It does not authorize replaying/rerouting the historically flagged request, executing analyzed carriers or live provider targets, or using `--host-home` paths. No sandbox, security-containment or cryptographic-authentication claim follows from revexec, a receipt, or a carrier guard. Round-21 wave dispatch remains separately subject to Main's counter-gate prerequisite.
+
+Evidence authority: Main's safety-hold and subsequent scope-review messages to **KaidokuR21**, naming **ScopeKaidokuFlag**, the two recovered event timestamps, and this explicit append-only correction permission. This author performed no new target execution to confirm either event.
