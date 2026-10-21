@@ -833,3 +833,12 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   the separate verifier artifact. Starting with revenger r61, the closer writes its new
   non-author verifier-spotcheck lesson through the jj helper, then appends the manifest row;
   no lane-authored content or filed report is edited. Earlier closed rows remain append-only.
+- **Closure:** `rounds[429]` revenger r61 rejected-honest-stop (CloseMori22,
+  `f8b7577fa3a21017c83e575f74cdfb9d230f64c3`). Independent K recount 4/14→4/14;
+  C2 0/2→2/2 verified separately from committed gate evidence. The verifier lesson landed
+  `5bd4a90fc1a34caa94496601b60537b3aab12301`. Revenger r62 dispatched to RevengerR61-2.
+- **Landed:** kake r26, lane `a2be0dc53845a4963f9af447d7c7c6644bfde6b3`, report
+  `ba1126190c5fc75c10ce75b1391d50732e7aed36`; parent verify passed. Author claims
+  freshness 0/32→32/32; W1 and W2 total 128/128 reports, zero dead. W1's two executors
+  versus the required three are disclosed without padding. CloseKaidoku23 owns its
+  independent closure under the full rendered template.
