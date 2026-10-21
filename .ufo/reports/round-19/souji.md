@@ -416,3 +416,15 @@ Filed after the orchestrator reopened capacity and directed the wave to run.
   (`kill -0` probes, quoted search patterns) for the r20 token refinement.
 - Lane commit `649eba34cd02d03aa9b0dc1b92abd5149e131d41`; **final lane tip at this
   erratum: `649eba34cd02d03aa9b0dc1b92abd5149e131d41`**.
+
+## Erratum 18 — r17 cleanup decode guard restored (appended after Erratum 17)
+
+- `ScoutKillSession` found a regression in the integrated r17 `process_identity`: the original
+  cleanup caught `ValueError` per entry, but the new helper caught only `OSError`, so a
+  `UnicodeDecodeError` on a malformed `/proc/<pid>/stat` would have crashed cleanup. Fixed with
+  `except (OSError, UnicodeDecodeError)`; r17 fixture rerun **29/0**.
+- `ScoutRevSites` adds two measured-path gaps to the recorded open list: r14 full verification
+  runs `tests/fixtures/r14-cache-frozen` without it in the path set, and r14 targeted does not
+  tree-check its own script. Not fixed (path-set completeness needs a fresh acceptance).
+- Lane commit `bf104970048e51939de1a45efc4ef5f068fb46cc`; **final lane tip at this
+  erratum: `bf104970048e51939de1a45efc4ef5f068fb46cc`**. No further changes.
