@@ -154,12 +154,12 @@ use m_flash"; "leave scribe as m_haiku"; "critic + sentinel (m_opus)"; "labrat a
 m_flash"; "the fallback for the m_zfl should be m_luna max" / "as the last in the cascade"; "make
 m_luna the last fallback for m_flash also"; "do not remove m_opus, but put m_swe as critic"; "planner
 m_opus"; "simplifier m_flash"; "distiller m_haiku"; "sentinel m_luna"; "connector m_grok";
-"executor m_luna".
+ "change the m_grok for the the m_flash"; "executor m_luna"; "ok, so, hyper has to be a secondary provider, after commandcode on deepseek v4.1 flash (m_flash) | aside from this, no subagent can inherit m_opus as the fallback; for m_zfl, mflash, m_fast, m_haiku, the last cascade fallback has to be m_luna".
 Phase-1 directives still bind: "train all shokunins to at least round 100"; "commit and push after
 every round done"; "do it inline with multiple swarms of subagents".
 
 You are an in-session **L1 lane subagent** dispatched by the hyaku orchestrator (the operator's
-parent omp session) for exactly ONE steered round: **tsukuroi round 19** (attempt 1;
+parent omp session) for exactly ONE steered round: **tsukuroi round 19** (attempt 2;
 campaign target: round 100). Your lane is in a block of 10 sequential rounds, six lanes at a
 time; the orchestrator dispatches your lane's next round only after this one lands and its
 non-author closure is written. Work this round only and land it; then return a summary of at most 12
@@ -210,46 +210,71 @@ not, and name both in the report.
    the report; never bypass validation to add a planner.
    **Routing (session `task.agentModelOverrides`, set by the orchestrator on the operator's
    2026-10-20 directives — the role decides the route; never pass a `model` parameter):**
-   reviewer, revenger → m_zfl (operator 2026-10-20: "swap from m_flash to m_zfl"; "assign more
-   m_zfl please, for future spawns"); connector → m_grok (operator: "connector m_grok"; cursor
-   grok-4.7-fast, cascade cursor grok-4.7-500k-fast → xai grok-4.7 → devin grok-4-7; primary answered
-   a probe ~16:3x -03); scout, labrat, simplifier → m_flash (operator: "labrat and scout should be
-   m_flash"; "simplifier m_flash"); executor, sentinel → m_luna (operator: "executor m_luna";
-   "sentinel m_luna"; executors only for code-heavy items: scripts, gates, selftests, fixtures,
-   parsers, counting commands); critic → m_swe (operator: "do not remove m_opus, but put m_swe as
-   critic"); mutation-tester → m_sol; scribe, distiller → m_haiku (operator: "leave scribe as
-   m_haiku"; "distiller m_haiku"; prose: knowledge entries, SOURCES rows, lessons); planner (the
-   L1-held frozen seat) and generic `task` (you and the closures) → m_opus (operator: "planner
-   m_opus").
-   **Mix for ~96 seats:** ~24 scout + ~2 simplifier (≈26 m_flash), ~18 reviewer, ~4 revenger (≈22
-   m_zfl), ~16 executor + ≤2 sentinel (≈18 m_luna), ~8 connector (m_grok), ~10 scribe (m_haiku), ~8
-   critic (m_swe), ≤4 mutation-tester (m_sol). Codex now hosts m_luna, m_sol and the last hop of
-   the m_zfl/m_flash cascades: if executors start failing on Codex rate limits, say so in the report
-   with the error text. Give an item to an executor only when it writes or runs code; prose
-   drafting goes to scribes, attacks to reviewers/critics/scouts.
-   **Provider status:** m_zfl answered from its primary (zai glm-5.3-flash) at the swap (orchestrator
-   probe, 2026-10-20 ~13:4x -03); its cascade is devin glm-5-3-flash → charm-hyper glm-5.3-flash
-   (out of credits, 402) → m_luna max (openai-codex gpt-6-luna:max, answered a probe at 14:24 -03)
-   last. Executors moved from m_swe to m_flash at 13:46 -03; a probe then showed m_flash's primary
-   (commandcode deepseek-v4.1-flash) at its 5-hour plan limit (429, resets 2026-10-20T19:47:54Z =
-   16:47 -03). m_flash's cascade is charm-hyper deepseek-flash (402) → opencode-go deepseek-flash →
-   devin deepseek-flash → m_luna max (openai-codex gpt-6-luna:max) last. Record a seat's actual
-   answering model when a claim depends on it. **zai rate limit (observed 14:00–15:25 -03):** with
-   several lanes in waves at once, zai answers m_zfl seats with `429 Rate limit reached for requests
-   (type=1302)`; ~130 seats died with "Retry budget exhausted after 10 retries" after retrying zai
-   alone (~72 s apart). Why they never switched is unresolved: role-bound seats do capture and walk
-   their alias cascade, and a provider retry-after or cooldown fits but is unproven. Since 15:50 -03
-   each cascade is also keyed by its primary model (`zai/glm-5.3-flash`,
+   connector, scout, labrat, simplifier → m_flash (operator: directive 27 "connector m_grok"
+   superseded by directive 29 "change the m_grok for the the m_flash"; "labrat and scout should be
+   m_flash"; "simplifier m_flash"); reviewer, revenger → m_zfl (operator 2026-10-20: "swap from
+   m_flash to m_zfl"; "assign more m_zfl please, for future spawns"); executor, sentinel → m_luna
+   (operator: "executor m_luna"; "sentinel m_luna"; executors only for code-heavy items: scripts,
+   gates, selftests, fixtures, parsers, counting commands); critic → m_swe (operator: "do not
+   remove m_opus, but put m_swe as critic"); mutation-tester → m_sol; scribe, distiller → m_haiku
+   (operator: "leave scribe as m_haiku"; "distiller m_haiku"; prose: knowledge entries, SOURCES
+   rows, lessons); planner (the L1-held frozen seat) and generic `task` (you and the closures) →
+   m_opus (operator: "planner m_opus"). Explicit Opus primaries remain unchanged; no subagent may
+   inherit Opus as a fallback. Directives 29–30 affect fresh captures only: running sessions and
+   resumed seats keep the chain captured at spawn; the settings are session-only, not saved globally.
+   **Mix for ~96 seats:** ~24 scout + ~2 simplifier + ~8 connector (≈34 m_flash), ~18 reviewer, ~4
+   revenger (≈22 m_zfl), ~16 executor + ≤2 sentinel (≈18 m_luna), ~10 scribe (m_haiku), ~8 critic
+   (m_swe), ≤4 mutation-tester (m_sol); distiller stays m_haiku if used, planner and `task` (L1s,
+   closures) m_opus. Codex now hosts m_luna, m_sol and the last hop of the configured m_zfl/m_flash/
+   m_fast/m_haiku cascades: if executors start failing on Codex rate limits, say so in the report
+   with the error text. Give an item to an executor only when it writes or runs code; prose drafting goes to
+   scribes, attacks to reviewers/critics/scouts.
+   **Historical provider observations (2026-10-20 probes):** m_zfl answered from its primary
+   (zai glm-5.3-flash) at the swap (~13:4x -03); its observed cascade was devin glm-5-3-flash →
+   charm-hyper glm-5.3-flash (out of credits, 402) → m_luna max (openai-codex gpt-6-luna:max,
+   answered a probe at 14:24 -03) last. Executors moved from m_swe to m_flash at 13:46 -03; the
+   probe then showed m_flash's primary (commandcode deepseek-v4.1-flash) at its 5-hour plan limit
+   (429, reset 2026-10-20T19:47:54Z = 16:47 -03). Its observed cascade was charm-hyper deepseek-flash
+   (402) → opencode-go deepseek-flash → devin deepseek-flash → m_luna max
+   (openai-codex gpt-6-luna:max) last. Record a seat's actual answering model when a claim depends
+   on it; these observations are not current availability proof.
+   **Historical zai rate-limit evidence (observed 14:00–15:25 -03):** with several lanes in waves at
+   once, zai answered m_zfl seats with `429 Rate limit reached for requests (type=1302)`; ~130 seats
+   died with "Retry budget exhausted after 10 retries" after retrying zai alone (~72 s apart). Why
+   they never switched is unresolved: role-bound seats do capture and walk their alias cascade, and
+   a provider retry-after or cooldown fits but is unproven.
+   **Historical cascade-keying and smoke outcomes (since 15:50 -03):** the then-configured cascades
+   were also keyed by their primary models (`zai/glm-5.3-flash`,
    `commandcode/deepseek/deepseek-v4.1-flash`, `openai-codex/gpt-6.1-sol`,
-   `anthropic/claude-opus-5-5`, `devin/swe-2`, `openai-codex/gpt-6-luna`, `cursor/grok-4.7-fast`),
-   and fresh smoke seats failed over (zai 429 → gpt-6-luna; commandcode 429 → opencode-go;
-   Anthropic 429 → gpt-6.1-sol). A seat keeps the chain it captured at spawn, also when resumed, so
-   only seats spawned after a routing change get it. `retry.maxRetries` is 40. Report any seat that
-   dies, with its last error text.
-   Opus coordinators received 429s with 13–14-minute retry-after values earlier today ("opus is
-   back" since): respect any backoff and resume the same identity, never restart a duplicate
-   writer. Historical availability is not current capacity proof. A dead seat stays dead in the
-   evidence.
+   `anthropic/claude-opus-5-5`, `devin/swe-2`, `openai-codex/gpt-6-luna`, `cursor/grok-4.7-fast`;
+   the m_grok key stayed configured, unused by any role since directive 29). Fresh smoke seats
+   (SmokeFlashCascade, SmokeZflCascade, SmokeOpusCascade) then failed over: commandcode 429 →
+   opencode-go deepseek-flash; zai 429 (type=1302) → gpt-6-luna; Anthropic 429 → gpt-6.1-sol. Those
+   observations showed failover for those fresh spawns, not which key won (the alias chains held the
+   same hops) or what caused the earlier deaths. A seat keeps the chain it captured at spawn, also
+   when resumed; only fresh captures receive changed settings. `retry.maxRetries` is 40. Report any
+   seat that dies, with its last error text.
+   **Historical Opus coordinator backoff:** coordinators received 429s with 13–14-minute
+   retry-after values earlier today ("opus is back" since); respect any backoff and resume the same
+   identity, never restart a duplicate writer. Historical availability is not current capacity
+   proof. A dead seat stays dead in the evidence.
+   **Directive 30 — current session-only fallback policy:** for the shared Commandcode
+   `commandcode/deepseek/deepseek-v4.1-flash` primary (m_flash/m_fast/high/plan), the configured
+   fallback sequence is `charm-hyper/deepseek-v4.1-flash` → `opencode-go/deepseek-v4.1-flash` →
+   `devin/deepseek-v4-1-flash` → `openai-codex/gpt-6-luna:max`; `charm-hyper` is the first configured
+   fallback after Commandcode. The exact-primary-model key mirrors the role chains. m_zfl's
+   configured fallbacks are devin GLM → charm-hyper GLM → `openai-codex/gpt-6-luna:max`; m_haiku's
+   are devin Haiku → cursor Haiku1m → cursor Haiku → `openai-codex/gpt-6-luna:max`. Each of these
+   configured lists ends with m_luna:max; no provider availability or induced-failover claim is made.
+   The default and m_opus fallback lists now contain only Codex Sol (`openai-codex/gpt-6.1-sol`);
+   every configured fallback entry containing Opus was removed, including exact-model chains. No
+   subagent may inherit Opus as a fallback; explicit Opus primaries and all other role assignments
+   are unchanged. Previously unassigned built-in overrides security-reviewer, sonic and seance are
+   explicitly pinned to m_flash to prevent parent-model inheritance. m_luna's separate own-provider
+   backup was not changed. These settings affect fresh per-spawn captures only; already-running or
+   resumed sessions keep their captured chain and are not retroactively refreshed. They are
+   session-only, not saved globally. No policy/access restrictions changed; KasegiR23 remains
+   policy-paused under PHASE2.md §Incidents and must not be retried.
    **REA MCP:** the operator authorized disabling the OMP `rea` MCP entry for this phase; the
    orchestrator set `"enabled": false` in `~/.omp/agent/mcp.json` at 10:12 -03 (pre-edit copy
    `~/.omp/agent/mcp.json.pre-disable-20261020T1015`). An unidentified writer rewrote that file at
@@ -301,8 +326,29 @@ not, and name both in the report.
          -m "round-19: <what>" -- <repo-relative path>...
 
    Cite ONLY the helper's final `landed <hash>` line after successful remote verification.
-   `rewritten <old> -> <new>` is diagnostic, never a citable landed hash. Exit 3 retains a local
-   commit but proves no push: resolve the reported cause, then retry the helper push; never force.
+   `rewritten <old> -> <new>` is diagnostic, never a citable landed hash. For an ordinary
+   `commit`, exit 3 retains a local commit but proves no push: resolve the cause, then retry
+   the helper push; never force.
+   The post-commit scope/deletion guard reads NUL-delimited `git diff-tree
+   --name-status -z --no-renames` records, not human brace summaries: a rename
+   is checked as a deletion plus an addition, and an unchanged copy source is
+   not treated as a changed path.
+   If a specific helper-stranded candidate must be recovered, supply its
+   reviewed full hash and the original requested paths explicitly:
+
+       /home/vgpnk/Projects/shokunin/scripts/hyaku/jj-lane.sh recover /home/vgpnk/Projects/shokunin/tsukuroi-shokunin --as tsukuroi \
+         --revision <full-commit-hash> -- <original repo-relative path>...
+
+   Recovery is never automatic: the candidate must be a single direct child of
+   the current lane branch tip, current `@` must be its direct child, both
+   author and committer must match the lane/protocol identity, it must be
+   conflict-free with a nonempty tree diff, and every changed path must pass
+   the same scope, runtime and phantom-deletion guards. Its local mutation
+   advances only the named branch bookmark; it does not snapshot or rewrite
+   the remainder of `@`, and refuses stale-remote rebasing.
+   Exit 3 means no landed-hash proof; never cite a candidate unless the helper
+   prints `landed <hash>` after remote verification. Do not retry ordinary `push`
+   while unrelated edits remain in `@`.
    `nothing to commit` lands nothing. Explicit files above 10 MiB require `--allow-large`. A named
    directory commits like `git add <dir>` (ignored content stays out; new files over 1 MiB inside it
    are skipped with a warning — name them as files). **Never** `git add`, `git commit`, `git stash`,
