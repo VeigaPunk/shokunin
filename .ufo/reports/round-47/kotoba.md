@@ -172,3 +172,24 @@ Reported, not resolved.
   source-snapshot cleanup are not converted into passes. Parent retains MANIFEST/admission.
 - Fleet misroot sweep (unrestricted `git status --porcelain`) found only parent-owned
   driver/state modifications; no round-47 seat misroot to move. Those files were untouched.
+
+## Final object-custody append (supersedes earlier tip/custody availability wording)
+
+Final lane tip: `92aa937fb767ace51752fa4188e3382905042737`, landed through the helper
+after `f1c2a68`; LOG.md final append and
+`.ufo/waves/round-47/after-falsify/git-object-custody.json` carry the additional audit.
+No code or claimed counting target changed in this custody-only commit.
+
+The restored snapshot is **reconstructed**, not uninterrupted custody. All four byte
+digests were compared against the **original committed expectations**, not refitted.
+Restoring identical bytes did not recover past Git objects: explicit cited scratch commits
+`b1b48d1`, `5d50621`, `371e901`, `51385ae`, `d68eae3`, `2e6e5c1`, and measured scratch tree
+`a736f6407ba02a038a6c0256c40cc932727688fc` do not resolve in lane or fleet stores.
+They were not synthesized. Production landing commits and their source bytes remain retained.
+
+Audit population: 953 standalone hex candidates (deliberately overinclusive, many truncated
+SHA-256s, **not 953 claimed Git commits**); 90 resolve to commits reachable from lane refs,
+17 from fleet refs, 60 existing objects lack proved ref reachability, 786 candidates
+do not resolve in either repository. Thus durable availability of **every** cited
+experiment object is not established; that limitation remains **unprovable**. No further
+cleanup, source reconstruction, routing change or round dispatch occurred.
