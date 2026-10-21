@@ -144,3 +144,37 @@ admission of the wave obligation is not claimed.
 
 None by L1 or seats (gitleaks, jq, node and the fixture toolchain were already present). No
 pacman transaction was run.
+
+## Erratum — waves (appended after the filed bytes; the filed text above is unchanged)
+
+Filed after the orchestrator reopened capacity and directed the wave to run.
+
+- **Wave 1 packing.** The validated 90-seat build spec was re-packed to **68 seats** under the
+  process-wide 100-job cap; the 22 dropped items are named in
+  `.ufo/waves/round-19/w1b-spec.json` as unexecuted with reason "packing under the 100-job cap".
+  The retained seats are read-only falsifiers of the landed work (no executor patch builders).
+- **Dispatch.** A first attempt with the 68-seat payload returned 68/68 runtime refusals
+  ("Background job limit reached (100)"); **no seat started**. The identical payload was retried
+  after 180 s and **spawned 68** (`SoujiR19.*-2`), under slot `souji r19-w1b` granted at
+  `live=129 pending=0 cap=200`.
+- **State at filing.** Completed: 3 (`SimplCarryRule`, `SimplRevPin`, `SimplAuditShapes`);
+  still running: 65; dead/unstarted from the spawning call: 0. Their reports land under
+  `.ufo/waves/round-19/w1/`.
+- **Verified findings.** The three completed seats independently re-ran the integrated artifacts:
+  carry fixture 4/4 with the base arm discriminating and the invariant probe 0 violations;
+  rev-pin helper/fixture API minimal and correctly wired across five call sites; auditor delivery
+  and `V-SIGNAL` minimal with `r19-seat-audit-shapes.py` 5/0 and base discriminating. No code
+  correction was required. One contract defect was disclosed: `MutRevPin` refused to run a fixture
+  that creates a synthetic git repo because the wave contract's blanket "no git or jj mutations
+  anywhere" conflicts with it; the seat refused rather than fabricate. Lesson **R19-M7** records
+  the wording fix for wave 2; the fixture itself is unchanged (L1 ran it: 13/0).
+- **Wave 2.** NOT RUN: 65 wave-1 seats were still running at the run budget stop, so dispatching
+  the prepared 65-seat falsification spec (`.ufo/waves/round-19/w2-spec.json`) would have exceeded
+  the process job cap. Round seats spawned: **68**; completed at filing: 3; running: 65.
+- **Corrections landed.** Lane commits `90dd68ce33053d8b210a88f90362011dc9047281`
+  (wave-1b spec, 68-member registry, first report, R19-M7) and
+  `4f0d500339aa4b5103ecb4fb4d921c43e2adbb84` (completed seat reports). **Final landed lane hash:
+  `4f0d500339aa4b5103ecb4fb4d921c43e2adbb84`.** No code changed after the 18/18 acceptance record
+  at `63bb887`; that record remains the code measurement.
+- **Slot.** `souji r19-w1b` released at filing; the running seats remain counted by the gate's
+  live measure.
