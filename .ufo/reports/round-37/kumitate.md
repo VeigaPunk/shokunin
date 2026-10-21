@@ -102,3 +102,8 @@ stay as that round's readings and are named as such. `PROXY: MATCH (… C2=84/84
 `CHECKLIST: 14/14`. Late falsify survivors/gaps remain as recorded: `selftest-fidelity-inclusive-upper-bound`
 (Pair8) and `SELFTEST_ANCHOR_SPAN_EXCLUSION` (Pair6), plus `FIDELITY_SHORT_SYMBOL_FLOOR_SELFTEST`
 (Pair7) — all selftest-coverage gaps, none changing the landed rule.
+
+Second erratum (lane `503172065a46f7494c42ae1883993635ebd176a2`): `Verify8` found the round-37
+lesson and LOG still quoted `C2=83/83`; both now record the intermediate `5ceb8cd` reading
+(`C2_TOTAL_DRIFT declared=83 computed=84`) and the final `84/84`, and `repairs.md` carries a D8 line.
+The numbers in this report were already 84/84.
