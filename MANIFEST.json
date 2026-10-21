@@ -11975,6 +11975,50 @@
    "notes": "REJECTED-HONEST-STOP (admitted=false): operator-authorized recovery round; both declared strict targets are unprovable/not met exactly as the author reported (C1 supplemental 2/4 under the registration's counterexample-defeat clause; C2 literal r19 unchanged-row target impossible without rewriting markerless history). No axis harmed: closure re-measured base vs final (primary 15/57->57/57, proposals 13/50->50/50, supplemental 0/4->2/4, precision 166/175 identical per case, corpus 3 added/5 removed all corrections, 107 error pairs equal, resources and 247/247 selftests clean); the r21 harm is improved, not repaired to the frozen target. This is mado's fourth consecutive non-admission (r19, r20, r21 rejected-harmed; r22 rejected-honest-stop); authorization did not reset the streak; parent applies any block. Dispatch digest watchdog.log:602 launch 11:14:32-03:00 attempt=1; :622 complete 13:41:36-03:00. Defects routed: (1) report's pasted End census omits the S121 W04 line present in its own receipt E/sources-end.json (7 W04 at end vs 6 at start); correct next report. (2) Normalized oracle expectations and assemble.py ORIGINALS literals were committed after implementation 330de68 (raw seal 9185f1f9 precedes it, disclosed); next round commit normalized expectations before any production edit. (3) Unresolved detector defects: caller-frame leakage when a forwarder invokes a callback (false observed foreign argv, pre-existing at base), ReturnedGlobalCallableShadow foreign lead, forward unparsed. (4) Conformance debt retained by author: shared-checkout harness writers (M6), W2 scope overruns (M11), overlapping comparators (M13). Open L0: 'mado | round-22 | …' rejection-hold disposition. SHONEN all [~]; no promotion. Closure installed nothing.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 22,
+   "date": "2026-10-21",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 22,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 22
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "Retention receipt reconciliation (tools/mori-retention-reconcile.py sha256 0795bac9…de32): independent identity recount of a committed retention receipt's measured tree; accounting agreement only, privacy_clearance always false"
+   ],
+   "report": ".ufo/reports/round-22/mori.md",
+   "commit": "mori-shokunin@1bfe708a170c877db3319060d0ab38771efe03ac",
+   "campaign": "hyaku",
+   "promotions": [],
+   "minted": [],
+   "rejection_streak_impact": 0,
+   "verification": {
+    "reviewer": "CloseMori22 (fresh non-author closure integrator, session 3 resume; never touched mori; replaces dead CloseTsukuroi21 which wrote no row)",
+    "spotcheck": "Recorded in this MANIFEST entry only (no lane writes). corpus/lessons/round-22.md ## Gate: ADMIT S064 git-rev-parse(1) re-admit A at existing-commit-resolution scope — AGREE; re-opened https://git-scm.com/docs/git-rev-parse 2026-10-21: quote 'git rev-parse \"$VAR^{commit}\" will make sure $VAR names an existing object that is a commit-ish' found verbatim (14 words, ≤25), page 'last updated in 2.56.0' 2026-09-28; scope limit (no authorship/push/privacy) is correct. REJECT S065 Python hashlib as sole provenance/privacy authority — AGREE; re-opened https://docs.python.org/3/library/hashlib.html (3.15.1): quote 'At any point you can ask it for the digest of the concatenation of the data fed to it so far' verbatim (20 words); bytes→digest says nothing about which repository supplied the bytes. SOURCES row S064 re-opened: only the used-by cell (field 11) changed at 8cb4afb and da40bb2; both new used-by targets (corpus/knowledge/freeze-order-r18.md:51, retention-reconciliation-r22.md:1) cite S064. sources-census validate mori rc=0 (6 pre-existing W04 duplicate-url warnings S035/S037/S073-S076), rows 76→76.",
+    "rechecks": "Throwaway clone /tmp/hyaku-close-mori-r22-s3-09k3 at 1bfe708. (a) Re-ran the author driver myself: measure-round22.py --revision da40bb2 → rc0, [before.capability_absent,after.capability_absent,after.pass,all_claim_checks_pass]=[24,0,24,true]; selftest 4/4; refinements 52/52; mutants 22/22 killed, all_killed_and_restored=true; real_matches_frozen_expected, contradictory_entering_rejected, all_arm_output_safety true; my summary.json is jq -S identical to committed evidence/measure3/summary.json (minus workspace archive). (b) Plain checks: tool absent at 77a5bbe and at freeze e2f549b (cat-file rc128); first added 8cb4afb 11:02:25-03 after freeze e2f549b 10:55:59-03; contract/frozen v1+v2/oracle-v2/denominator-correction byte-unchanged e2f549b→1bfe708 except frozen/expected-real*.json + SOURCES-entering.txt added later (author-disclosed); tool/driver/refinements byte-unchanged da40bb2→1bfe708; tool sha256 0795bac9…de32 matches. (c) Direct run: --selftest PASS 4/4; check on r21 receipt at 77a5bbe → rc0 RETENTION_RECONCILED raw95/policy_excluded5/scanner90/raw_unallowlisted4/raw_not_allowlisted9/allowlisted86/forbidden0, red, privacy_clearance=false, measured 9fb1f91; receipt's own committed stdout: hits95, unallowlisted4, allowlisted86, non_author5, metric4; existing gate scan at 9fb1f91 and at 1bfe708: RETENTION_FINDINGS metric4/95 hits/86 allowlisted/5 non-author (debt unchanged, still red). (d) Non-author controls (not co-evolved): 4 tampered-receipt commits on 77a5bbe (drop one hit; metric 4→3; flip one line_sha256; move one unallowlisted hit into allowlisted) → all rc1 RETENTION_RECONCILIATION_MISMATCH naming the right fields; 4/4 detected. Step-1: report 879df5e authored mori-shokunin with SHONEN (4 [~] boxes); all 15 cited commits ancestors of refs/heads/master; jj-lane state ahead=0 behind=0, remote=1bfe708; lane identity on all 14 round commits; only untracked .scratch/. SCORECARD diff append-only, all scores held (calibration 5→5). Claim C1 re-measured (not merely evidence-verified)."
+   },
+   "closed_at": "2026-10-21T16:52:29Z",
+   "notes": "Dispatch digest: .ufo/watchdog.log:601 '2026-10-21T10:48:44-03:00 launch mori round=22 pgid=1803918 driver=hyaku-inline attempt=1'; report fleet 879df5e; lane tip 1bfe708 (measured da40bb2). ADMITTED for one bounded calibration capability at held score; frozen 24 weigh highest, the 52 controls/22 mutants are co-evolved author-side and weigh lower (my 4/4 outside tamper controls corroborate). Rulings on routed questions: (1) raw_unallowlisted=4 is HONEST, no re-freeze this round: the frozen v2 builder at e2f549b binds expected_raw_unallowlisted=1 in a 5-raw/1-non-author-excluded fixture whose excluded hit is unallowlisted, i.e. the frozen meaning is the policy-filtered count; the true raw complement (95−86=9) is emitted separately as raw_not_allowlisted and caveated in SKILL.md:556 and the knowledge note; re-freezing after observing outputs would itself be post-hoc. The name is misleading — route: next contract must pre-register a rename/deprecation of raw_unallowlisted. (2) W2 issued exactly once: MoriR22.jsonl holds exactly two tool.task invocations (13:52:39Z W1, 14:58:54Z W2) with two 'Spawned 64' results; W2 follows the 14:22:53Z→14:56:51Z transcript gap (death/revival); payload sha 375fb2a7…28ad = wave2-attempt1.json; W1/W2 name sets 64/64 disjoint; 128 seat transcripts = their union; W2 41 non-empty reports, 23 empty = dead-seats-wave2.json; W1 56 reports + AttackR22 46-byte stub, 8 dead = dead-seats-wave1.json. No duplicated pre-death dispatch. (3) SOURCES python replace (da40bb2, transcript 15:28:42Z, assert count==1) changed only S064 field 11 (used-by); 8cb4afb likewise field 11 plus an appended 'Bounded search13' log paragraph. Defects (status-neutral): all executors died so L1 authored tool and oracle (pre-implementation frozen, not non-author); frozen/expected-real.json committed with implementation, not pre-freeze (disclosed in SCORECARD); b095ecc wip checkpoint earns no credit; untracked .scratch/ left in lane. Open debt unchanged and not cleared: 4 unallowlisted hits (nested round-20 policy copy), permission control RED 11/12, two historical dispositions unknown, baseline acceptance blocked; no privacy clearance. SHONEN boxes are [~], not promotion-ready. Routed: rename raw_unallowlisted by pre-registration; carry debt."
   }
  ]
 }
