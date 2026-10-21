@@ -344,3 +344,18 @@ Filed after the orchestrator reopened capacity and directed the wave to run.
 - Lane tip unchanged at **`c6703daef7dfa7de2f1a5a72e86f40de3717049b`**. This is the final erratum
   filed by this run; late wave reports remain uncommitted and unadjudicated under
   `.ufo/waves/round-19/w1/`.
+
+## Erratum 13 — S079 count corrected; final late-report routing (appended after Erratum 12)
+
+- `RevSourcesQuotes`: **S079's quote is 18 words, not 20** — corrected by an appended lesson
+  correction; S079–S081 teaches cells mix documentation with implementation statements and need
+  narrowing rows (S089+) before the next admission. Quotes are verbatim; no row rewritten.
+  Lane commit `51aa813077fa8f5e414dd5d30b2e7291188ce427`.
+- `RevAuditOrigin`: patch delivery/clone workflows postdate the auditor's r16 creation and r17
+  calibration; r18 declared them, and the derived scratch rule misclassified some W2/variant
+  paths. Recommendation (exact per-item patch and scratch permissions) matches Q38; the
+  slot-qualified scratch grant remains open.
+- `ConnClaimSeparability`: C1/C2 have independent measurements; C3's count shares the C2 helper
+  and the aggregate acceptance runner is the shared surface — noted, no change.
+- **Final lane tip at this erratum: `51aa813077fa8f5e414dd5d30b2e7291188ce427`.** No code
+  changed after the 18/18 acceptance at `63bb887`; remaining reports stay uncommitted.
