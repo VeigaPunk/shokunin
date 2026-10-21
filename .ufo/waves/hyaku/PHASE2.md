@@ -520,3 +520,15 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
 - **Closure:** `rounds[381]` kumitate r36 **rejected-harmed** (123 anchors shifted one symbol off at
   the pin, `FIDELITY nonok=0` a false green; C1 operability unprovable, coverage:script-layer
   harmed, runtime-layer improved). Advanced to r37 repair-first.
+- **Closures (continued):** `rounds[382]` kake r22 admitted (recovery attempt 2; KakeR22Recovery
+  reused for kake r23). `rounds[383]` kumitate r37 **rejected-harmed**: the four notes were reset to
+  `0614092` text (131 anchors fixed, 62 previously true anchors broken: S8 27, S7 6, S4 8,
+  native-trial 21, by the closure's independent parser at pin `31c465f1`); the fidelity ratchet
+  ceilings sum exactly to the current error count, so `FIDELITY: CLEAN` cannot fail; r37 LOG entry
+  edited in place. Kumitate now has two consecutive rejections (a third blocks the lane);
+  r38 repair-first is assigned to CloseKumitate37, the r37 verifier that holds the independent parser
+  and the repair list. kama r19 landed (lane `3389513f`, report `ac9859f4`; KamaR18Recovery reused
+  as its author) and its closure went to CloseKake22 (never touched kama).
+- **Seat losses observed by lanes:** Mori r18 w1 lost 15/68 seats to Codex `turn_rate_limit_exceeded`;
+  kake r22 attempt 1 lost 25 (4 Haiku 429 at startup, 21 when its coordinator died); several
+  closures had their ≤8 review seats refused by the job cap and did every check themselves.
