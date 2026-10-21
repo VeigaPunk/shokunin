@@ -359,3 +359,19 @@ Filed after the orchestrator reopened capacity and directed the wave to run.
   and the aggregate acceptance runner is the shared surface — noted, no change.
 - **Final lane tip at this erratum: `51aa813077fa8f5e414dd5d30b2e7291188ce427`.** No code
   changed after the 18/18 acceptance at `63bb887`; remaining reports stay uncommitted.
+
+## Erratum 14 — Q38 protected-path wording corrected (appended after Erratum 13)
+
+- `RevAuditShapes` raised a high finding: the auditor's allow-list can clear a protected-path
+  write through an exact absolute `OWN ONLY` grant (that is the executor contract, and wave 1b
+  grants none), through unvalidated spec `name`/`reportDir` (the wave parser validates the name
+  grammar and a relative reportDir; the auditor itself does not), and through pre-existing symlink
+  aliases (the check is lexical). The published Q38 sentence "any `tools/` … stays major" was too
+  absolute; it now names the `OWN ONLY` exception, the lexical/symlink limit, and the parser's
+  validation role (lane commit `2efadf6f55a6b2371475d9a64b85ee4b21a5a621`). A defensive
+  spec-symlink check remains open for r20; no production code changed.
+- `RevD5` confirms the bounded `(session,starttime)` recheck and that the later `killpg` is not
+  covered by the per-PID check; `RevCarryHistory` and `ScoutS038` confirm the recorded carry
+  attribution and the S038 anchor drift (S089/S090 proposals open).
+- **Final lane tip at this erratum: `2efadf6f55a6b2371475d9a64b85ee4b21a5a621`.** Remaining
+  wave reports stay uncommitted; no round 20.
