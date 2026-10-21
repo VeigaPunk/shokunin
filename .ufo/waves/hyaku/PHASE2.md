@@ -959,3 +959,24 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   result. A sanitized automated QA report requests preservation of the original safety-stop
   cause and no automatic provider retry after policy refusals. No refused content was copied
   into that report, and no fallback/auth configuration was changed.
+- **Additional scope exclusion:** Kagi28HeldCheckpointMatch disclosed a temporary `/tmp`
+  aggregation file outside its sole report path. It is retained but VOID; no replacement.
+  Chousa27WaveLedger likewise disclosed a temporary `/tmp/b.json` copy; its report is VOID.
+- **Compressed-copy containment:** Kengaku29NoHarm found the flagged module still inside the
+  tracked `libwebarena-0.0.5` wheel at the original r29 tip. An isolated executor prepared
+  removal and sanitized records; a separate scout confirmed the archive/member identities and
+  no active production dependency. The parent integrated bounded removal, lesson/index and
+  appended LOG through the lane helper: `1f3b0f1ec41ec297130e8944ff97968d32324632`.
+  The filed report's appended erratum landed as `17d58281812e687def931fb18f55fc66b010ca1f`;
+  its original 11811-byte prefix is pinned in the erratum.
+- **Exercised containment:** committed `git cat-file -e` changes from exit0 at `6a2c2df7`
+  to exit128 at `1f3b0f1e` for the known wheel; projection-instrument and canonical-fixture
+  blob ids are unchanged. Exact operation and smoke records are under the evidence-wave
+  directory. Archive reads exposed no hashline container tag, so the parent used one
+  regular-file/size/SHA/inode-guarded binary unlink rather than inventing an edit tag or
+  printing raw bytes; the tool-interface gap was reported. No source/gate/package execution.
+- **Remaining limits:** history still retains the material; no history rewrite, force-push,
+  rotation, global-clean claim or admission. The kengaku block stays, its closure prompt now
+  names the containment tip, and original producer measurements remain pinned to `6baa3090`.
+  The isolated containment worktree is retained with its reviewed proposal; no orphan sweep
+  or unintegrated-work deletion was performed.
