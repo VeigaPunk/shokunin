@@ -118,3 +118,10 @@ waves invisible (souji r19 w1, LiveSouji), exit 0 with zero discovered waves, ST
 - Tool installs: none (all seats reported none).
 - Stale-lane: respawn-per-round driver; no other mori mission open.
 - Open L0 questions: none.
+
+Late wave-evidence addendum: the late wave-2 seat reports (ReviewQuality, FamLaneRowsA, LiveTameshi,
+SelftestC2, the LiveMoriR19W2/LiveTsukuroi stub-file check; LiveKama was already in `b6be916`) landed
+append-only at lane commit `e9f340ce986f82a60baad1b8e5ead655ab818a1c`. The cited claim head
+`b6be91670d6232ac8bf86db9bc51119d1247b9a6` and all claimed measurements are unchanged; QUALITY 64–68 are
+not edited (ReviewQuality defects go to the closure as found). Uncommitted seat scratch copies
+(build/HistR12–R17, TokSilenceB, TrailerVariants, NoHarmRun/r14/evidence.json) were deleted; the lane is clean.
