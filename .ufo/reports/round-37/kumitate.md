@@ -121,3 +121,12 @@ left-first rule, not anchor truth; the lesson, LOG and Q16 now say so and Q16 re
 command with recorded output. Independent re-measurement of the restored notes is owed to the
 closure; the committed `fidelity-reference.mjs.txt` is right-first and disagrees with the gate
 (281 vs 186 nonok), so it cannot serve as that check.
+
+Fifth erratum (lane `5bc40d078259117489c8a30c25809a7070805054`): the audit groups (AuditSighting2/4, AuditNativeTrial8,
+AuditRemainder7) proved the symbol-keyed restoration itself was unsafe — anchors on multi-anchor
+lines collided (e.g. `resumeMissionLocked` set to `resumeMission`'s base line), leaving nine values
+that were neither base nor true. The four notes are therefore **reset to their 0614092 bytes** with a
+scope-accurate notice (round-36 shift-repair removed; pre-existing base anchors that are false at the
+pin carried as ratcheted debt). Ratchet total is now 200 (was 186); `FIDELITY: CLEAN` means no
+regression. The D1 sentence in this report is superseded: restoration = full base reset, not a
+symbol-keyed revert.
