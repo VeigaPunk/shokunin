@@ -1,0 +1,45 @@
+{
+  "round": 26,
+  "date": "2026-10-21",
+  "type": "closure",
+  "lane": "kengaku",
+  "lane_round": 26,
+  "lanes": {
+    "kengaku": "ok"
+  },
+  "lane_rounds": {
+    "kengaku": 26
+  },
+  "admitted": true,
+  "verdict": "admitted",
+  "verdicts": {
+    "novelty": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+  },
+  "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+  },
+  "capabilities_added": [
+    "grader-perturbation-audit (1964 pinned responses, 15168 MP/MC verdict audits across 9 families and 909 separate NOT_SCORED policy captures; ten-family independent n/k oracle agrees)"
+  ],
+  "report": ".ufo/reports/round-26/kengaku.md",
+  "verification": {
+    "reviewer": "CloseKengaku26 (fresh non-author closure verifier; not an author-dispatched seat)",
+    "evidence": ".ufo/reports/round-26/kengaku-closure-evidence.json",
+    "spotcheck": ".ufo/reports/round-26/kengaku-closure-evidence.json#/outside_gate_spotcheck",
+    "rechecks": "22 independently executed commands, including before v3 on exported f11bffbf and after d4dfdb0 plus b571944; family oracle, 278 cases, 12 caught mutants, checker and P3 oracle selftests, Q13 red/green, separability and sources census. Full P2 keyed projection 247/247 identical; independent stdlib binomial-tail inversion reproduces CP95 bounds."
+  },
+  "commit": "kengaku-shokunin@b5719440e5eee46c1886fddbdf7bdc1624829454",
+  "closed_at": "2026-10-21T08:58:29Z",
+  "campaign": "hyaku",
+  "notes": "ADMITTED, non-author reproduction. Every cited child commit exists and is ancestral: e0037a8, 9b0567f6, 3a2aeb15, f11bffbf, d4dfdb0, b571944, 8ea41f9. Lane initially clean, HEAD and origin/master b571944. Report 9a28017 is ancestral, lane-authored, committed bytes match; all six required sections exist; dispatched contract exactly matches rendered fleet template. C1 absent at frozen base -> population1964/excluded0/audited15168/policy909/families9; all ten oracle n/k agree, cases278/0fail, selftest families10/branches10/mutants12/0fail. Novelty score7 held because evalmut is direct prior art. C2 v3 frozen assertions278: before match269/mismatch5/superseded1/offline3, exit1 -> after match270/mismatch0/superseded5/offline3, exit0; calibration score8 held, no routed-defect discovery credit. Frozen P2 full keyed records247 unchanged; all other score axes held. Grader replay733/0, separability unchanged both directions; sources42->48 (A38 B2 C2 -> A43 B3 C2), knowledge/index33/33->34/34; validator0. No deleted/replaced base lines in six core docs, all33 historical knowledge files and42 old source rows unchanged. Fresh outside spotcheck agrees with new admit plus novelty-credit, D1-as-MP and future-iid rejects. Source samples S044/S045/S046/S048 reopened; admitting d4dfdb0 includes corrected F1 definition, exact pooled bounds, entry/index/coverage and qualifying reports. Q13 r25 actual admission red1; r26 actual admission green0. Expansion, quality and discernment improved; r25 rejection and lesson history preserved, not regraded. Bound requires no lane/report edits, so outside spotcheck is durable in report-adjacent closure JSON, not the lane lesson. MULTI14/31, composite187/194 CP95[0.927072,0.985372] INDETERMINATE, 3 offline-unverifiable and 2 marked extension-only historical-range findings remain explicit; no iid/forecast/general novelty claims. Prior outcome only r25 rejected; admission resets rejection streak0, no block. No tool installs or updates.",
+  "promotions": [],
+  "minted": []
+}
