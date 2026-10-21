@@ -2,7 +2,7 @@
 
 Lane: `kagi-shokunin`. Base `d218603b74099ddca0bd8f869516fc41db0979bf`; measured
 lane commit `e1884c6ecb7ccd717965b0d748bc193137118dbf`, final lane commit
-`57776b2859638d3af26d5443e7fc4b54131b6eab` (helper `landed` lines, pushed).
+`5dd14116f76968f28c6446a9487936a23b1630b3` (helper `landed` lines, pushed).
 Build wave: parent-held 66 seats (43 claim-ledger command-row audits + 23 source-row
 audits, `parent-build-dispatch.json`). This lane dispatched no second build wave and
 remained the sole production writer. Falsify wave: 64 seats, `.ufo/waves/round-23/falsify-spec.json`.
@@ -111,6 +111,7 @@ Other evidence bullets:
 | removed the contradictory cross-capture equality rule, aligned case counts, S024 frontier-row wording and the KV v2 lead disposition | `LOG.md` §Round 23 | `def9bc2e` |
 | D3 relabelled reported, seven-W04 correction, selftest-adequacy bounds, dead-array removal, closure docstring bounds | `LOG.md` §Round 23 | `58bd8d70` |
 | W04 base/round-end wording, R13-03 SKIP-SELF semantics, D4 named tuples | `LOG.md` §Round 23 | `57776b28` |
+| measured verdict refreshed to the final tree (`measured_commit=57776b28`, R23-02 `fixed=6 reported=3`) | `LOG.md` §Round 23 | `5dd14116` |
 
 ## Before → after measurements
 
