@@ -389,3 +389,16 @@ Filed after the orchestrator reopened capacity and directed the wave to run.
   not claimed.
 - **Final lane tip at this erratum: `2efadf6f55a6b2371475d9a64b85ee4b21a5a621`.** Remaining wave
   reports stay uncommitted; no round 20.
+
+## Erratum 16 — two code fixes from the last falsifiers (appended after Erratum 15)
+
+- `RevRevPin`/`CriticRoundAdmission` found that r14's `resolve_revision()` printed to
+  `sys.stderr` without importing `sys`, so a refusal raised `NameError` instead of exiting 2.
+  Fixed (`import sys`); exercised in place: the refusal path now prints and exits 2.
+- The auditor's signal token set missed `os.killpg`/`killpg`; added. Auditor selftest 73/0 and
+  a direct in-memory probe on `python3 -c 'os.killpg(...)'` now fires `V-SIGNAL`.
+- Still open: r13/r14 `MEASURED_PATHS` omit `run-targeted.py` and the helper itself (provenance
+  completeness; not falsified by the current fixture, recorded for r20).
+- Lane commit `bbeb73bd4dad181b9b293b242dbf5749acbe3568`. These change code **after** the
+  18/18 acceptance at `63bb887`; they are verified by the probes and selftest above, not by a
+  full acceptance re-run. **Final lane tip at this erratum: `bbeb73bd4dad181b9b293b242dbf5749acbe3568`.**
