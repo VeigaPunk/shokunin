@@ -949,3 +949,13 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
 - **Producer waves:** KamaR23-2 and RevengerR61-2 were instructed to prepare their next genuine
   64–100-seat falsification waves promptly, after build settlement and pinned integration,
   without waiting for parent approval. No already-dispatched payload was duplicated or padded.
+- **Evidence-wave scope exclusions:** Chousa27FrozenScope disclosed a temporary `/dev/shm`
+  write, and Kengaku29WaveLedger disclosed temporary `/tmp` set-file writes, both outside the
+  sole permitted report path. Their reports remain retained but VOID and uncredited; neither
+  is a death or replacement. `.ufo/waves/hyaku/s3-nonauthor64/void-reports.json` records the
+  distinction. Removing the temporary files does not erase the scope violation.
+- **Harness safety-cause issue reported:** independent metadata reviews confirmed automatic
+  fallback after `cyber_policy`, with only the later quota error surfaced in the terminal task
+  result. A sanitized automated QA report requests preservation of the original safety-stop
+  cause and no automatic provider retry after policy refusals. No refused content was copied
+  into that report, and no fallback/auth configuration was changed.
