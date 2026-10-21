@@ -152,3 +152,21 @@ in `SCORECARD.md` under `## Round 36 — limits and round-37 pre-registration`, 
 - [~] `SHONEN.md:6` end-to-end — `LOG.md` round-36 entry + `SCORECARD.md` Move-log rows + this report citing `3d5760a8`; `round-gate --round 36` run after the report lands. Missing: the non-author closure's independent re-run.
 - [~] `SHONEN.md:7` no oral context — checklist preamble + literal commands, PIN/FIDELITY working rules, and the pin's recreate one-liner are self-contained; `cite-check`'s explicit `--src` remains the one command a reader must supply (named limit). Missing: a fresh-session cold run.
 - [~] `SHONEN.md:8` province — every changed path is under the lane repo; upstream defects reported, never patched; `PROVINCE.md` untouched and still accurate (`.ufo/pins/` sits in the lane's own instrument band).
+
+## Correction (appended 2026-10-21, lane commit `cb80bc1601dfe22fd4b435c9e881387b06d681e8`)
+
+**C1 is NOT admitted.** The record above says the delivered `--fidelity` arm uses a clause-guarded
+pairing rule; the committed code is plain right-first (`scripts/claims-check.mjs`: `pair = next ?? prev`),
+and the guarded rule exists only in an un-integrated patch. `ReviewFidRemainder` re-opened the landed
+`corpus/knowledge/remaining-scripts-census.md` repair: 105 of 163 changed anchors cite a line that does
+not contain the symbol the sentence names (digits shifted so each anchor pairs the *next* symbol), and an
+independent FIDELITY v1 run reads `nonok=2`, not 0, on that note. The delivered `FIDELITY: CLEAN
+nonok=0` line is reproducible machine output but does not certify anchor truth; the note is **harmed**
+until the shift-repair is redone under one canonical pairing rule. `ReviewNumbersC1` independently
+reproduced the four before/after lines (543→0, 11/13→14/14, DRIFT→MATCH, DRIFT→CLEAN) and flags
+`SCORECARD.md` line 316's stale `83/92 = 9` and three stale `C2=81/81` quotes as record defects.
+**C2 stands**: R5 4 + R7 5 sections, R 92/92 ⇒ 10, re-measured by `ReviewNumbersC2` and
+`ReviewFidS8Counts` (S8 60/60 count-neutral); C2's `native-admission-detail.md:113` anchor reads
+nonok=1 under the frozen rule (readable prose, gated only by the guarded rule) and must be repaired or
+declared. The round's admission must therefore read: C1 unproven/harmed, C2 improved, no axis harmed
+by C2 alone; the non-author closure decides.
