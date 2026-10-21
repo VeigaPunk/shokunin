@@ -805,3 +805,11 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
 - **Landed:** kama r23 (KamaR23-2; C1 calibration 7→7, fault grid 0/26→26/26, mutation kills
   30/31; T01/F23 now refuse, which is the operability trade-off the closure must rule on).
   Its closure went to CloseMori22, reused.
+
+55. "use m_mim for simplifier and also the connector"
+
+- **Routing, saved globally.** `task.agentModelOverrides` simplifier `@m_composer` → `@m_mim`,
+  connector `@m_flash` → `@m_mim`. `@m_mim` now serves seven roles: executor, labrat, reviewer,
+  scribe, distiller, simplifier and connector. The rest: scout `@m_flash`, critic `@m_auto`,
+  sentinel `@m_luna`, mutation-tester `@m_sol`, revenger `@m_zfl`, task/planner `@m_opus`.
+  Fresh spawns only.
