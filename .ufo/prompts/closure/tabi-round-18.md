@@ -15,6 +15,7 @@ Inputs:
 - driver dispatch/completion lines (`.ufo/watchdog.log`, mutable — copy this digest into notes):
 2026-10-20T15:36:24-03:00 launch tabi round=18 pgid=2944975 driver=hyaku-inline attempt=1
 2026-10-20T18:14:59-03:00 complete tabi round=18; hyaku-inline attempt=1
+2026-10-21T00:39:06-03:00 complete tabi round=18; hyaku-inline attempt=1
 
 Duties (you may dispatch up to 8 read-only reviewer/critic `task` seats to parallelize re-checks;
 never pass a model parameter; you write only the two artifacts in steps 4–5):
@@ -53,8 +54,24 @@ never pass a model parameter; you write only the two artifacts in steps 4–5):
    — cite ONLY the final `landed <hash>` line after successful remote verification; a
    `rewritten <old> -> <new>` line is diagnostic, not evidence that either hash landed.
    Confirm with `git -C /home/vgpnk/Projects/shokunin/tabi-shokunin ls-remote origin refs/heads/<branch>`.
-   Exit 3 retains a local commit but proves no push: resolve the reported cause before retrying
-   the helper push. Never `git add`/`git commit`/`git push` or a mutating jj command in the lane:
+   If the helper left one explicitly identified commit stranded after its scope
+   guard, do not retry `commit` or adopt a descendant automatically. Recover
+   only that reviewed full hash with the original requested paths:
+
+       /home/vgpnk/Projects/shokunin/scripts/hyaku/jj-lane.sh recover /home/vgpnk/Projects/shokunin/tabi-shokunin --as protocol \
+         --revision <full-commit-hash> -- corpus/lessons/round-18-verifier-spotcheck.md
+
+   The candidate must be a single direct child of the lane tip and current `@`
+   its direct child; author and committer must both match the protocol identity,
+   it must be conflict-free with a nonempty tree diff, and every NUL-delimited
+   Git tree path must pass the same scope/deletion guards. Recovery leaves
+   `@`'s other edits untouched and
+   refuses to rebase on a moved remote; only a verified `landed <hash>` is
+   citable. An exit 3 is not a push proof: do not retry ordinary `push` while
+   the working copy has unrelated edits.
+   For an ordinary `commit`, exit 3 retains a local commit but proves no push:
+   resolve the reported cause before retrying the helper push. Never
+   `git add`/`git commit`/`git push` or a mutating jj command in the lane:
    jj transactions can reset the index, and a stray commit could ride the next push.
 5. **Closure entry.** Write the JSON object to a temp file and run
    `/home/vgpnk/Projects/shokunin/scripts/hyaku/append-closure.py --entry <file>` (validates, appends under the
