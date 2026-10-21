@@ -10287,6 +10287,49 @@
    "notes": "Author declared C1 harmed / admission false; independently reproduced. C2 bounded artifact-assessment demonstration verified 20/20 but carries no admission credit in a rejected round. Third consecutive mado rejection (r19 rejected, r20 rejected, r21 rejected-harmed) -> lane blocked; open L0 'mado | round-21 | Post-third-rejection disposition requested' awaits operator hold/unblock. Closure tool installs/updates: none.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 20,
+   "date": "2026-10-21",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 20,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 20
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-20/tameshi.md",
+   "verification": {
+    "reviewer": "CloseTameshi20-2 (orchestrator-dispatched hyaku non-author closure, @m_opus session; author TameshiR20-3)",
+    "spotcheck": "inline in this row (closure bounds: lane repo read-only; no lane spot-check file written)",
+    "scope": "Read-only lane/report; all re-runs in scratch mirror /tmp/closetameshi20.xEim (git clone --no-hardlinks --branch master at 08175c62 + read-only sibling symlinks); scratch clone stayed porcelain-clean.",
+    "ancestry": "All 11 cited lane hashes (6fd220b, c51eb32, d0ec3c8, 4fc1b80, dc046fa, 2f1f855, f2a225c, d8968e5, cab3ae5, 08175c6, base c144dcd) are ancestors of master; jj-lane.sh state: local=remote=08175c62 ahead=0 behind=0 tracked=0 untracked=0; ls-remote origin master=08175c62. Report 7fd7c785 authored by tameshi-shokunin, ancestor of fleet master; carries Work performed/Landed changes/Before->after/Sources & frontier/Trend verdicts/SHONEN (4 [~] lines, no [x]). Prompt .ufo/prompts/tameshi-round-20.md carries canonical sections 1-5 + hyaku addendum 6 (report contract s4, MANIFEST read-only for author).",
+    "rechecks": "C1 re-measured (python3 tools/receipt-measure.py --repo <mirror> --rev REV --json; wrapper sha a67bffa9 matches report): c144dcd corrected0/open6/total6 exit1 (all six FAIL, inputs absent) -> 2f1f855 corrected6/open0/total6 exit0, and 6/6 exit0 at HEAD 08175c6. Frozen stage measure.py sha f34dc233, stage receipt-window.py = tools/receipt-window.py = f03ae7e9; contract/stage unchanged 6fd220b..08175c6; freeze committer 07:41:02Z < wave dispatch 09:28:54Z (author-date 07:30:45Z is jj change-creation, predates attempt-1 launch, correctly not used as freeze criterion). No-harm re-measured: round-19 in-tree ruler (unchanged since base) at c144dcd 60/60 restraint8 depth8 strict no-overrides -> round-20 selector at d0ec3c8 46/61 restraint6 (harmed intermediate reproduced), d8968e5 and 08175c6 61/61 restraint8 depth8 recorded_cases8 legs8/8/8 trace_gate strict overrides_used=false ledger_committed=true sources 76 malformed0. Ledger: carried=184 total=199 new=15 prefix_preserved=True. Registry battery re-run at 08175c6: REGISTRY_CHECK held=36/36 superseded=4 exit0 (162s) — matches committed cab3ae5 receipt. Selector refuses --ledger-file, --ledger-f=x, --inputs-overlay, --ledger-rev with exit64 SELECTOR_OVERRIDE_FORBIDDEN. Sources: rows 76->76 A67/B7/C2 mined48/queued23/rejected5 at both revs; only diff is S049 used-by +corpus/lessons/round-20.md; census validate exit0 with the same six W04 duplicate-URL warnings. SCORECARD diff base..HEAD is append-only (+85/-0); numeric calibration and depth both held 8. Discernment spot-check: S049 re-fetched live (Python 3.15.0 docs) — 14-word quote found verbatim, agree. Admit sampled: E07GitProvenance historical ruler sha96a68b60 recoverable only from fenced code ReceiptDesign.md:53-376 at c144dcd — recomputed sha256 of fence body = 96a68b60538504a8..., agree. Reject sampled: inherited contract --check spelling — staged measure.py exits 2 'unrecognized arguments: --check', agree it is superseded as invocation not shimmed. Seat accounting re-counted from w1 original-outcomes.json: 72 seats (executor23 scout12 reviewer8 critic10 scribe13 connector4 sentinel2), completed24/failed48 (Codex turn_rate_limit_exceeded 35, Haiku 429 13); residual/outcomes.json 4/4 completed (reviewer3 critic1) -> 76 unique seats."
+   },
+   "commit": "tameshi-shokunin@08175c62d661fddf052ed10abc91313dec8eb77d",
+   "closed_at": "2026-10-21T11:30:30+00:00",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: watchdog 2026-10-21T04:32:13-03:00 launch tameshi round=20 attempt=1 -> 04:33:14 lane-dead-no-report (Anthropic429 retry-after-ms8247000, no seats dispatched, parked Opus author) -> 04:33:16 launch attempt=2 (claims/tameshi attempt=2 round=20 base=c144dcd owner=inline); no complete line observed at closure; report 7fd7c785 committed by lane identity. Every claimed number independently reproduced; no axis harmed; C1 is one measured calibration claim (six receipt-hygiene predicates), numeric score held 8, so 'improved' is bounded to the declared unit. Provider deaths weighed honestly: 48/72 (67%) original wave seats died to provider capacity (Codex 35, Haiku 429 13) with no replacements and exact errors retained; 24 completed still exceeds the >=8 L2 floor and the 72-seat wave was validated in the 64-100 band, so deaths are status-neutral, not rejections; three E07-woken dead identities correctly not rehabilitated. Discernment graded improved: round-19 routed QUALITY20 recurrence became grounded QUALITY41 with a guard-removal mutant that fails (20/20->19/20->20/20), the selector overstatement became a failure-backed exit64 refusal (QUALITY42), and closure spot-check agrees 2/2 + source quote verified. Routed for r21: Codex/Haiku capacity should be checked before a 64+ wave (two-thirds seat loss); 18 round-18 guard survivors, required-command binding, successor sweeps and source-anchor/backlink debts remain open; 15 new ledger entries are L1-author input-keyed re-anchors, not independent cold-read. SHONEN 4x[~]; none checkable to [x] by this closure. Closure tool installs/updates: none.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
