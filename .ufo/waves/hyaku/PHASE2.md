@@ -842,3 +842,13 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   freshness 0/32→32/32; W1 and W2 total 128/128 reports, zero dead. W1's two executors
   versus the required three are disclosed without padding. CloseKaidoku23 owns its
   independent closure under the full rendered template.
+- **Provider holds:** TabiR22-2 stopped on Devin weekly-quota exhaustion; its same-identity
+  wake also failed before answering. The tabi r22 claim and pushed `e3cf4e0d` checkpoint stay
+  held (16 untracked paths, no live/queued tabi descendants in the ownership check).
+  KotobaR47-2 stopped on Anthropic 429 with retry-after 6,621 seconds. Its r47 claim is
+  preserved; no duplicate author or model override is started during backoff. Read-only
+  checkpoint scouts for both were refused at the 100-job cap and remain pending.
+- **Pending kake closure finding:** CloseKaidoku23 confirmed that the strict citing-set
+  recheck omits the grouped S001–S006 claim in `static-canonical-preflight.md`, despite W1
+  and W2 reviewers naming it. The author confirmed no durable adjudication. Bounded freshness
+  improvement remains real, but the closer will not narrow the frozen requirement to admit it.
