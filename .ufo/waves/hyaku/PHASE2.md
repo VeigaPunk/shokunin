@@ -505,3 +505,18 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
 - **Closures since:** `rounds[379]` kagi r23 admitted (r24 running), `rounds[380]` kama r18
   admitted (r19 assigned). kumitate r36 landed (lane `91da27c6`, erratum `ba523308`; author keeps
   C1 unadmitted) and awaits its closure.
+- **Operator rulings (ask, 2026-10-21):** "Save both globally" → `task.maxConcurrency` 200 and
+  `retry.maxRetries` 40 saved; "Add Haiku hop" → `retry.fallbackChains` m_zfl and
+  `zai/glm-5.3-flash`: devin GLM → charm-hyper GLM → `anthropic/claude-haiku-5-5` →
+  `openai-codex/gpt-6-luna:max` (Luna stays last, directive 30); m_luna and
+  `openai-codex/gpt-6-luna`: devin Luna → `anthropic/claude-haiku-5-5`. No Opus entry anywhere.
+  Session and global; fresh spawns only. Wave target raised to 240 (state file) with the Haiku
+  overflow in place; memory floor unchanged.
+- **Job-cap mechanism (scout LiveConcurrencyControl, read against omp 18.12.3 docs + binary):** the
+  admission ceiling is `Math.min(100, async.maxJobs)` per spawning session's AsyncJobManager, read
+  live; `async.maxJobs` 1000 is inert above 100; completed jobs hold no slot. Observed effect: L1
+  sessions dispatch full waves while Main's own spawns can still be refused, so Main reuses idle
+  agents by message (KumitateR36 → kumitate r37 repair-first).
+- **Closure:** `rounds[381]` kumitate r36 **rejected-harmed** (123 anchors shifted one symbol off at
+  the pin, `FIDELITY nonok=0` a false green; C1 operability unprovable, coverage:script-layer
+  harmed, runtime-layer improved). Advanced to r37 repair-first.
