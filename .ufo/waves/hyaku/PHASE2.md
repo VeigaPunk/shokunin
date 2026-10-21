@@ -454,3 +454,22 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   evidence `46fac5a2`, report `00cfe25d`; disclosed L1 deviation: a real-tree `cells` run executed
   host-private R18-01, uncredited, M23-5). Remaining interrupted claims (kaidoku r20, kake r22,
   mado r20, mori r18, chousa r25) wait for coordinator capacity; kasegi r23 stays policy-paused.
+
+36. "more concurrency, i want 64-100"
+37. "use more m_zfl please"
+
+- **Routing saved globally (operator chose "Save globally").** `retry.fallbackChains` and
+  `task.agentModelOverrides` are persisted in `~/.omp/agent/config.yml`. Directive 37 moved scout,
+  labrat, connector and simplifier from @m_flash to @m_zfl (reviewer/revenger already @m_zfl),
+  session and global; executor/sentinel @m_luna, critic @m_swe, mutation-tester @m_sol,
+  scribe/distiller @m_haiku, task/planner @m_opus unchanged. Coordinators spawned earlier keep
+  their captured map.
+- **Gate measure corrected.** `wave-slot.sh` now counts running agents as subagent transcripts
+  without a non-empty `<id>.md` output (+3 revived allowance), CAP 98; the transcript-recency proxy
+  overcounted (live 44 vs 26 jobs) and starved a 68-seat wave. Sandbox smoke: 20 running + 70 granted,
+  then 64 refused (timeout) with 70 pending.
+- **Recovery coordinators dispatched (attempt 2 each, `inline.sh fail` + `dispatch` recorded):**
+  KaidokuR20Recovery (w1 registry records 0 assigned; lane determines real spend), KakeR22Recovery
+  (128 spent → ≤72 left), MadoR20Recovery (163 spent → no new wave), MoriR18Recovery (repair-first
+  after `rounds[372]` rejected-harmed), ChousaR25Recovery (0 spent). kasegi r23 stays policy-paused.
+- **Band at dispatch:** `wave-slot.sh status` → running 92, tameshi r19-w1 64 granted.
