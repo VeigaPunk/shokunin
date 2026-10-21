@@ -2,7 +2,7 @@
 
 Lane: `kagi-shokunin`. Base `d218603b74099ddca0bd8f869516fc41db0979bf`; measured
 lane commit `e1884c6ecb7ccd717965b0d748bc193137118dbf`, final lane commit
-`b55e0e7b19b1c6e18094bbd194bf37c236533a6a` (helper `landed` lines, pushed).
+`7af07b4d80009988202ab771b47e4f5c1a788903` (helper `landed` lines, pushed).
 Build wave: parent-held 66 seats (43 claim-ledger command-row audits + 23 source-row
 audits, `parent-build-dispatch.json`). This lane dispatched no second build wave and
 remained the sole production writer. Falsify wave: 64 seats, `.ufo/waves/round-23/falsify-spec.json`.
@@ -17,7 +17,7 @@ Declared claims (`plans/round-23.md`):
   one typed disposition per obligation, resolves every `fixed` pointer in-tree, and
   fails on missing/duplicate/unknown obligations or source drift. Verdict: **verifies**.
   `CLOSURE_DISPOSITIONS: CLEAN (obligations=15 fixed=7 reported=2 operator_owned=1
-  no_action=5 rejected=0 pointers=15)` exit 0; selftest `PASS (13 cases)`.
+  no_action=5 rejected=0 pointers=15)` exit 0; selftest `PASS (14 cases)` (13 + symlink-escape regression).
 - **C2 freshness (D7)** — declared source provenance.
   `corpus/source-fetches.tsv` carries 10 declared captures (S017–S026) over nine distinct
   URLs with request profile, final URL, HTTP status, representation, raw digest, decoded
@@ -102,6 +102,7 @@ Other evidence bullets:
 |---|---|---|
 | closure disposition gate + records, source-fetch table, census SC_FETCH, hermetic cells fixture, lesson, SOURCES S024–S026, SCORECARD/LOG/SKILL/prose corrections, stamps, wave specs | `LOG.md` §Round 23 | `e1884c6e` |
 | measured verdict with `measured_commit`, corrected provenance header/location, final pins | `LOG.md` §Round 23 | `ea5b7348` |
+| migration record (R12-03/R13-01/R21-02/R21-03/R21-04/R22-03 old→new), symlink regression case, stale 47→59 counts, S015 debt | `LOG.md` §Round 23 | `7af07b4d` |
 
 ## Before → after measurements
 
@@ -141,7 +142,11 @@ defects get active superseding rows. New rows are sourced from public pages open
   red rows are recorded rather than absorbed.
 - discernment — **improved**: outside D1–D9 became typed obligations instead of prose;
   five falsify seats' defects were integrated and their residual bounds are stated; no
-  self-certified outside agreement is claimed.
+  self-certified outside agreement is claimed. Late falsify reports added a
+  QM14 migration record (`expectation-migrations.json`), a symlink-escape
+  regression case, and the bounds: `cells` row paths are not contained,
+  in-root hardlinks can reach outside inodes, and captures live only in
+  declared metadata (no bytes in-lane).
 
 ## SHONEN
 
