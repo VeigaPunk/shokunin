@@ -679,3 +679,18 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
 - **Job cap.** Main's spawns are refused at 100 again, so idle agents are reused by message:
   CloseTabi21 → kagi r26 closure; CloseTameshi22 → tameshi r23 recovery author (inherits TameshiR23's
   wave, no re-dispatch); CloseKama22 → kama r23 author.
+- **agent.db corruption #3 (12:08:43; operator: "agent.db jsut broke, fix please").** omp
+  quarantined the malformed store as `agent.db.corrupt-1792595323977-…` and started a blank one
+  (0 credentials), so fresh omp processes were unauthenticated; this session ran on in-memory
+  credentials. Fix, following the 10-20 procedure: `sqlite3 .recover` of the quarantined copy
+  in a 0700 tmp dir. With and without freelist pages it gave identical rows: integrity ok, 27
+  credentials across 14 providers, 10 credential blocks, newest token updates minutes before the
+  crash. It was restored at 12:26:14 through the SQLite backup API (`.restore`, WAL preserved,
+  page size 4096 = 4096). Snapshots: `agent.db.pre-restore-20261021T122614` and
+  `agent.db.recovered-20261021T122614`, both 0600; the tmp copies were deleted. Smoke test: fresh
+  `probe-alias.sh` processes, m_inc → inception/mercury-3, m_haiku → anthropic/claude-haiku-5-5,
+  m_zfl → zai/glm-5.3-flash, all primary-ok. Lost: ~18 min of blank-store telemetry (kept in
+  the pre-restore snapshot). Root cause still unknown. This is the third corruption (10-20 02:40,
+  10-21 05:05, 12:08), all under heavy campaign load. The store sits on btrfs (`/@home`,
+  zstd) and is opened per operation by several processes (this session, the 5-minute
+  `ai-usage.timer`, `omp -p` probes); no process holds it open between operations.
