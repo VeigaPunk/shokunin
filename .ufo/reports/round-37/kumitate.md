@@ -142,3 +142,15 @@ defects found by `Wave3`: `Wave1`–`Wave4` are near-duplicate prompts (the vali
 duplicates), and the 64–100 band used is not recorded by any artifact (the fleet config says 16/32;
 the policy file used is `scripts/hyaku/ufo-wave-policy-v2.json`). Registry `item` is null for 68/68
 members. These are recorded, not fixed, at the run's budget stop.
+
+Seventh erratum (fleet, 2026-10-21): `AuditSighting6` (and the sibling audits) quantify what the
+base reset trades. The reset removes every round-36 shift artefact, but it also discards round-36
+anchors that were **true** at the pin (`sighting-wall`: 8 such values — acquireOperationLock,
+withOperationLock, spawnPaneForMission, completeMission, scheduleReconcile, peekMission, emitFatal
+region, runLegacyNativeDirect). Those positions now carry their base line, which is false at the
+pin, and are counted in the ratchet (total 200) as carried debt. Net: the harm is gone; anchor
+quality in these four notes is no better than base, and 8 true improvements per affected note were
+lost. A correct per-anchor D1 (choose base if its symbol is on the base line, else the round-36
+line, else the true line) was NOT implemented — it needs a sentence-symbol parser per line that does
+not collide on multi-anchor parentheses, which is the exact failure this round hit. Owed to the
+closure/next round with a fixture-first parser.
