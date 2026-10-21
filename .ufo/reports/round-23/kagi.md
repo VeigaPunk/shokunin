@@ -2,7 +2,7 @@
 
 Lane: `kagi-shokunin`. Base `d218603b74099ddca0bd8f869516fc41db0979bf`; measured
 lane commit `e1884c6ecb7ccd717965b0d748bc193137118dbf`, final lane commit
-`def9bc2e12534ae2c2492bae1034eb8122c2c179` (helper `landed` lines, pushed).
+`58bd8d70d310ecaac0316e4b576073cc75142332` (helper `landed` lines, pushed).
 Build wave: parent-held 66 seats (43 claim-ledger command-row audits + 23 source-row
 audits, `parent-build-dispatch.json`). This lane dispatched no second build wave and
 remained the sole production writer. Falsify wave: 64 seats, `.ufo/waves/round-23/falsify-spec.json`.
@@ -16,7 +16,7 @@ Declared claims (`plans/round-23.md`):
   (nine routed defects, five discernment decisions, one adjudication), requires exactly
   one typed disposition per obligation, resolves every `fixed` pointer in-tree, and
   fails on missing/duplicate/unknown obligations or source drift. Verdict: **verifies**.
-  `CLOSURE_DISPOSITIONS: CLEAN (obligations=15 fixed=7 reported=2 operator_owned=1
+  `CLOSURE_DISPOSITIONS: CLEAN (obligations=15 fixed=6 reported=3 operator_owned=1
   no_action=5 rejected=0 pointers=15)` exit 0; selftest `PASS (14 cases)` (13 + symlink-escape regression).
 - **C2 freshness (D7)** — declared source provenance.
   `corpus/source-fetches.tsv` carries 10 declared captures (S017–S026) over nine distinct
@@ -53,7 +53,7 @@ planner seat). Zero seats were replaced. Integrated findings:
   `SC_FETCH ... missing-provenance` findings and exit 1.
 - **Reported as remaining bounds, not fixed:** C1 pointer proof is presence-only
   (file + anchor substring + id token); its source digest is pinned in the same
-  lane-writable JSON; only `fixed` requires the id token. C2 `SC_FETCH` is shape/identity,
+  lane-writable JSON; only `fixed` requires the id token. C2 `SC_FETCH` is shape/identity (17 selftest mutants survive; the in-row branch covers 16/26 rows only in the real-tree run),
   not content verification: 16 legacy in-row digests pass on presence and are never
   compared (stated historical bound); quote text and location are not verified against
   the page (a changed-word quote, a blank quote/location, or thin-space-joined words
@@ -74,13 +74,15 @@ planner seat). Zero seats were replaced. Integrated findings:
 
 Other evidence bullets:
 
-- Census at round start: exit 0, `rows=23`, five W04 warnings; at round end exit 0,
-  `rows=26`, the same five W04 lines plus no new warning:
+- Census at round start: lane exit 0 `rows=23`; the fleet wrapper then printed five W04
+  lines. At round end: lane exit 0 `rows=26`; the fleet wrapper prints seven W04 lines:
   `W04 S019 duplicate url www.1password.dev/brokered-access across scopes`,
   `W04 S020 duplicate url 1password.com/blog/1password-credential-broker-public-preview across scopes`,
   `W04 S021 duplicate url openbao.org/docs/concepts/tokens across scopes`,
   `W04 S022 duplicate url developer.hashicorp.com/vault/docs/auth/jwt across scopes`,
-  `W04 S023 duplicate url developer.hashicorp.com/vault/docs/concepts/lease across scopes`.
+  `W04 S023 duplicate url developer.hashicorp.com/vault/docs/concepts/lease across scopes`,
+  `W04 S025 duplicate url openbao.org/docs/auth/jwt across scopes`,
+  `W04 S026 duplicate url openbao.org/docs/concepts/tokens across scopes`.
 - QM12 safe-row substitute (`.ufo/waves/round-23/final-verification.json`): 45 rows
   considered, 32 pass, 12 skipped by id (R11-01/02/03/04/06, R12-01, R13-03, R15-01,
   R16-01/03, R17-01, R18-01 — host-bound/substrate), one inherited fail (R11-08).
@@ -107,6 +109,7 @@ Other evidence bullets:
 | migration record (R12-03/R13-01/R21-02/R21-03/R21-04/R22-03 old→new), symlink regression case, stale 47→59 counts, S015 debt | `LOG.md` §Round 23 | `7af07b4d` |
 | quote/location bound corrections (declared, shape-checked only; location unverified; blank/thin-space bypass named) and in-row selftest-adequacy bound | `LOG.md` §Round 23 | `284d40e0` |
 | removed the contradictory cross-capture equality rule, aligned case counts, S024 frontier-row wording and the KV v2 lead disposition | `LOG.md` §Round 23 | `def9bc2e` |
+| D3 relabelled reported, seven-W04 correction, selftest-adequacy bounds, dead-array removal, closure docstring bounds | `LOG.md` §Round 23 | `58bd8d70` |
 
 ## Before → after measurements
 
