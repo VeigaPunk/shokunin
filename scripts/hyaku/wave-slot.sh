@@ -10,18 +10,21 @@
 #   wave-slot.sh acquire <lane> <wave> <seats> [timeout-seconds=7200]  -> exit 0 `granted …`, 3 timeout
 #   wave-slot.sh release <lane> <wave>
 #   wave-slot.sh status
-# Live estimate = subagent transcripts (*.jsonl, any depth) under the live session dir that have
-# no non-empty `<id>.md` output yet (every subagent writes it when it finishes; measured against
-# proc:// 2026-10-21: 23 + 2 revived = 25 vs 26 jobs), plus REVIVED (agents revived by message
-# after a first completion already own an .md). Session dir: $HYAKU_SESSION_DIR, else the path
-# in $STATE/live-session-dir.
+# Live estimate = bounded JSONL tail metadata, recursively under the live session dir.
+# Later activity supersedes old exits and old .md artifacts; terminal failures do not
+# reserve phantom seats. Unknown tails count as active. See wave-live.py for limits.
+# HYAKU_WAVE_MANUAL_RESERVE optionally reserves additional seats (default 0), not revivals.
+# Session dir: $HYAKU_SESSION_DIR, else the path in $STATE/live-session-dir.
 set -euo pipefail
 STATE=${HYAKU_STATE:-$HOME/.local/state/shokunin-hyaku}
-CAP_SOURCE=default REVIVED=${HYAKU_WAVE_REVIVED:-3} PENDING=${HYAKU_WAVE_PENDING:-120}
+CAP_SOURCE=default MANUAL_RESERVE=${HYAKU_WAVE_MANUAL_RESERVE:-0} PENDING=${HYAKU_WAVE_PENDING:-120}
 MIN_AVAIL_MB=${HYAKU_WAVE_MIN_AVAIL_MB:-6144}
 LEDGER="$STATE/wave-slots" LOCK="$STATE/wave-slots.lock"
 mkdir -p "$STATE"; touch "$LEDGER"
 die() { echo "wave-slot: $*" >&2; exit 2; }
+[[ $MANUAL_RESERVE =~ ^[0-9]+$ ]] || die "manual reserve must be a nonnegative decimal integer"
+while [[ ${#MANUAL_RESERVE} -gt 1 && ${MANUAL_RESERVE:0:1} == 0 ]]; do MANUAL_RESERVE=${MANUAL_RESERVE:1}; done
+HELPER_DIR=$(dirname -- "${BASH_SOURCE[0]}")
 configured_cap() {
   local value source cap_file="$STATE/wave-cap"
   if [[ ${HYAKU_WAVE_CAP+x} ]]; then
@@ -56,10 +59,10 @@ session_dir() {
   printf '%s\n' "$d"
 }
 live() {
-  local n=0 f
-  while IFS= read -r -d '' f; do [ -s "${f%.jsonl}.md" ] || n=$((n + 1)); done \
-    < <(find "$(session_dir)" -name '*.jsonl' -print0 2>/dev/null)
-  echo $(( n + REVIVED ))
+  local n d
+  d=$(session_dir) || die "cannot locate live session dir"
+  n=$(python3 "$HELPER_DIR/wave-live.py" "$d") || die "cannot estimate live agents"
+  echo $(( n + MANUAL_RESERVE ))
 }
 pending() { awk -v t="$(( $(date +%s) - PENDING ))" '$1 >= t {s += $2} END {print s + 0}' "$LEDGER"; }
 mem_avail_mb() { awk '/^MemAvailable:/ {print int($2 / 1024)}' /proc/meminfo; }
@@ -72,7 +75,8 @@ acquire)
   while :; do
     exec 9>"$LOCK"; flock -x 9
     configured_cap
-    a=$(live) p=$(pending) m=$(mem_avail_mb) used=$((a + p + seats))
+    a=$(live) || die "cannot estimate live agents"
+    p=$(pending) m=$(mem_avail_mb) used=$((a + p + seats))
     if fits_cap "$used" "$CAP" && [ "$m" -ge "$MIN_AVAIL_MB" ]; then
       printf '%s %s %s %s\n' "$(date +%s)" "$seats" "$lane" "$wave" >> "$LEDGER"
       flock -u 9
@@ -92,8 +96,9 @@ release)
   ;;
 status)
   configured_cap
-  a=$(live) p=$(pending)
-  echo "live_estimate=$a recent_reservations=$p cap=$CAP cap_source=$CAP_SOURCE revived_allowance=$REVIVED mem_avail_mb=$(mem_avail_mb) min_avail_mb=$MIN_AVAIL_MB"
+  a=$(live) || die "cannot estimate live agents"
+  p=$(pending)
+  echo "live_estimate=$a recent_reservations=$p cap=$CAP cap_source=$CAP_SOURCE manual_reserve=$MANUAL_RESERVE mem_avail_mb=$(mem_avail_mb) min_avail_mb=$MIN_AVAIL_MB"
   cat "$LEDGER"
   ;;
 *) sed -n '2,16p' "$0"; exit 64 ;;
