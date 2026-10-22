@@ -638,3 +638,7 @@ Metrics at T0+8h:
 | 2026-10-22T17:10:00Z | Steer to the five in-flight L1s | Gate compensated, so run planned waves now. Stop spawning m_mim-role seats. A falsify wave already planned may run after the freeze message (freeze means no new scope). All five delivered. |
 
 Deadline list update (UTC): add 18:35 freeze kaidoku r28; 18:50 freeze kotodama r54; 19:15 hard stop kaidoku r28; 19:20 hard stop kotodama r54. The other deadlines stand: freezes mori r27 17:35:25, kake r31 17:38:23, kotoba r52 17:48:37, tsukuroi r27 17:50:59, kumitate r41 17:56:44; hard stops 18:55:25, 18:58:23, 19:08:37, 19:10:59, 19:16:44.
+
+| Observed checkpoint | Event | Evidence / result |
+|---|---|---|
+| 2026-10-22T17:24:25Z | Kake r31 wave 2 still waiting; gate recount | KakeR31: `acquire kake kake-r31-w2 36` timed out at 17:07Z and again at 17:23Z ("live=136 pending=0 cap=155"); a third acquire is waiting; wave 2 is 36 reviewer, critic and scout items. Recount: phantoms 70 (none new since tsukuroi's 23), estimate 135, so 65 real agents (seven L1s, mori w2 41 granted 17:08:24Z, tsukuroi w1 seats). The gate is now reading real demand: 65 + 36 = 101 > 85. Cap stays 155 (real ≤ 85 keeps a 15-job margin under the 100-job hard cap for bash jobs). Answer sent to KakeR31 (live, not completed) with the numbers; its planned falsify wave may run after the freeze. |
