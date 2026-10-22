@@ -153,3 +153,16 @@ Computed at `2026-10-22T08:00:22Z` from the latest five explicitly admitted hyak
 |---|---|---|
 | 2026-10-22T08:12:00Z | Inline confirmation | `pgrep -af` for the watchdog, `inline.sh`, tower-fleet, ufo-sighting and `omp -p` returned no matches (exit 1); no tmux server is running. `proc://` lists only in-session jobs: TameshiR25, KotobaR48, MoriR24 (task, running) and timers bg_4 and bg_5. Ledger commit `7b2d2093` pushed. |
 | 2026-10-22T08:12:00Z | Directives relayed | Main sent directives 5 and 6, verbatim, to TameshiR25, KotobaR48 and MoriR24. They are a steer only, with no new scope; every L1 prompt already carries both rules. |
+
+### Operator directive 7 — concurrency
+
+- Verbatim: "more concurrency". This is a priority interjection. It supersedes the goal file's K=3 start and its K-raise gate (≥4 in-session closures at ≥50% admitted). K is raised from 3 to 6 immediately, taking the next three lanes in the training order. The 200-job gate (`async.maxJobs` 200; wave-slot cap 200 from state) stays the hard ceiling; it was not changed. Above about 6 lanes, extra lanes mostly queue on seats, so a further raise waits for observed headroom during running waves. Drop-back trips stay in force: >20% dead seats in a wave, refusal of Main's own dispatches at the job cap, or a memory stall.
+
+| Observed checkpoint | Event | Evidence / result |
+|---|---|---|
+| 2026-10-22T08:15:00Z | Seat gate before raise | `wave-slot.sh status`: live_estimate=66, recent_reservations=33, cap=200, mem_avail_mb=25255. |
+| 2026-10-22T08:15:06Z | Dispatch tsukuroi r24 attempt 2 (B5) | `inline.sh dispatch` exit 0; dispatch evidence `88f66dc`; base `f169b3ba9a59`; L1 job `TsukuroiR24`. Old identity backoff not inherited. |
+| 2026-10-22T08:15:08Z | Dispatch kaidoku r25 attempt 2 (C6) | `inline.sh dispatch` exit 0; dispatch evidence `6677542`; base `18e7eb6d9fe8`; L1 job `KaidokuR25`. |
+| 2026-10-22T08:15:09Z | Dispatch kotodama r51 attempt 2 (C7) | `inline.sh dispatch` exit 0; dispatch evidence `2136bbc`; base `bff83ba65bf9`; L1 job `KotodamaR51`. The `kotodama51-prereg-critic` hold is quoted in the session note. |
+| 2026-10-22T08:15:30Z | Timer armed | `bg_217` fires the 2 h freeze message for the second batch at 10:15:10Z. The job counter is session-global, so seats' shell jobs also advance it. |
+| 2026-10-22T08:15:30Z | Slots | 6/6 busy: tameshi, kotoba, mori, tsukuroi, kaidoku, kotodama. Next eligible in order: kama (C8), kake (C9), kumitate (D10 recovery), mado (D11 recovery). |
