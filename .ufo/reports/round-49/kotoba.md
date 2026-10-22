@@ -1,7 +1,7 @@
 # kotoba — round 49 report
 
 Lane `/home/vgpnk/Projects/shokunin/kotoba-shokunin`, base `a5adc146a2995dcc5a95a6d8db6e5674f75191ac`,
-pushed lane head `b38bc0d419c17d7790ad81b203cdfb9e970692eb` (jj-lane.sh `landed`; late corrections after the first report filing at lane `bfd5a58`). Attempt 1. Plan
+pushed lane head `22720198db6799dd6fabb4523b5a6d45425757cf` (jj-lane.sh `landed`; late corrections after the first report filing at lane `bfd5a58`). Attempt 1. Plan
 `plans/round-49.md`. Drift guard honoured: no freshness claim, SKILL.md frontmatter unchanged.
 
 ## Work performed
@@ -126,3 +126,10 @@ re-sized before any landing after the build-wave critics showed the first counte
 - Lane commits this round: `f054b8e`, `c48793d`, `bfd5a58`, `b38bc0d` (all pushed). Still running at this
   filing: `RowChousa`, `RowMori`, `MutR1Keying`, `CrossCheckC2Live`, `ReviewEntryRules`, `ReviewLessonQ25`,
   `CalibrationRecords`; not judged here.
+- Second late batch (lane `2272019`): `ReviewLessonQ25` FAILS two lesson statements — M30 wrongly said the
+  round-46 scout file lacked the kasegi clause (it carries it and mis-cites kasegi), and the C2 proof does not
+  enforce its own fixture coverage; both corrected in `corpus/lessons/round-49.md` (append-only). It also found
+  the census guard accepts duplicated rows (carried). `RowMori` and `CrossCheckC2Live` HOLDS-BOUNDED
+  (literal dispatch.04 count is 7, not 6, because `aggregator-L1.md` is exempted). Lane commits this round:
+  `f054b8e`, `c48793d`, `bfd5a58`, `b38bc0d`, `2272019`. Still running: `RowChousa`, `MutR1Keying`,
+  `ReviewEntryRules`, `CalibrationRecords`.
