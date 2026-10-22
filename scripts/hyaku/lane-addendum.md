@@ -214,5 +214,12 @@ not, and name both in the report.
      commit met both counters). Before freezing, build the cheapest control that skips the claimed
      work, score it with the frozen counter, and commit that receipt: if it meets the target, the
      counter or target is wrong — fix it before data.
-   - Never change a counter or kill rule after data without an independent attack on the new
-     version; the claim is judged on the version declared before data.
+   - The claim is judged on the counter, kill rule and predicate declared before data. A rule
+     changed after any seat has scored is not the claim's rule, whatever attacks it later passes
+     (kumitate r42). Freeze one predicate that is the same sentence in the plan, the same
+     condition in the counter's code and the same label in the receipt.
+   - Name the axis by the surface the round changes, not by the number it produces (kaidoku r29).
+     Re-scoring a rule the lane already holds on new inputs, or counting rows a sourceless
+     fixture also counts, is quality work, never coverage or depth. A coverage claim names the
+     surface it moves (frontier → core, a new tool, operation or edge class) and the command that
+     would show it unmoved.
