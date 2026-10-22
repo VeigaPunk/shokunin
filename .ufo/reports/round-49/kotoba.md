@@ -1,7 +1,7 @@
 # kotoba — round 49 report
 
 Lane `/home/vgpnk/Projects/shokunin/kotoba-shokunin`, base `a5adc146a2995dcc5a95a6d8db6e5674f75191ac`,
-pushed lane head `22720198db6799dd6fabb4523b5a6d45425757cf` (jj-lane.sh `landed`; late corrections after the first report filing at lane `bfd5a58`). Attempt 1. Plan
+pushed lane head `9f2f1a751292a9a267ce8a83870efab76429e9e6` (jj-lane.sh `landed`; late corrections after the first report filing at lane `bfd5a58`). Attempt 1. Plan
 `plans/round-49.md`. Drift guard honoured: no freshness claim, SKILL.md frontmatter unchanged.
 
 ## Work performed
@@ -133,3 +133,11 @@ re-sized before any landing after the build-wave critics showed the first counte
   (literal dispatch.04 count is 7, not 6, because `aggregator-L1.md` is exempted). Lane commits this round:
   `f054b8e`, `c48793d`, `bfd5a58`, `b38bc0d`, `2272019`. Still running: `RowChousa`, `MutR1Keying`,
   `ReviewEntryRules`, `CalibrationRecords`.
+- Third late batch (lane `9f2f1a7`): `CalibrationRecords` FAILS with 6 self-assessment mismatches judged at
+  `c48793d`. Fixed in `9f2f1a7`: README checklist count (33 → 31 of 41, dispatch boxes delegated), SCORECARD
+  blind-instrument sentence (7 dispatch.04 and 168 frozen-authority dispatch.08 failures now stated), kumitate
+  citation. Already fixed in `bfd5a58`: PROVINCE Frontier count and arbitration wording, the pending LOG
+  falsify entry. That seat overwrote `DispatchIndependent`'s scratch `indep.json` (disclosed by the seat).
+  `RowChousa` HOLDS-BOUNDED on the row; its chousa boundary note ("claim admission stays here" is a fleet
+  rule, "kotoba cites it" uncited) is not corrected this round. Still running: `MutR1Keying`,
+  `ReviewEntryRules`.
