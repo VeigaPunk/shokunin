@@ -14112,6 +14112,48 @@
    "notes": "Digest: 2026-10-22T12:48:39-03:00 launch kotoba round=52 pgid=3875350 driver=hyaku-inline attempt=1; 2026-10-22T14:30:02-03:00 lane-dead-no-report kotoba round=52 (omp restart 17:26Z); 2026-10-22T14:30:04-03:00 launch kotoba round=52 pgid=1002393 driver=hyaku-inline attempt=2; 2026-10-22T15:56:52-03:00 complete kotoba round=52 attempt=2. Rulings: C2 counts only the declared target (5 of 7 >= 3), 7 of 7 credited as quality correction; host drift opencode 1.19.3->1.19.4 (17:50:30Z, corroborated) reads identically at base and head = not harm, red gate routed; swarm total 34 upheld (attempt-1 gate files empty, registries agentId null, no task calls; attempt-2 34 seat transcripts/reports). Conformance defect (status-neutral): planned build+falsify wave shape not run (M37 capacity). Routed: re-pin opencode 1.19.4; re-record corpus-integrity baseline (commit_total); self-test arms for the two attempt-2 C1 fixes; C2 counter loose host pins/substring Gate (M12,M16); drift sentinel (record wider than verified, r50-52) -> different frontier r53; Q30 must open changelogs/current docs-source before an absence. SHONEN boxes 2-3 lack fresh non-author runs; not all checkable.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 41,
+   "date": "2026-10-22",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 41,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 41
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "unchanged",
+    "coverage:script-layer": "unchanged",
+    "coverage:runtime-layer": "unchanged",
+    "coverage:kimi-layer": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "unprovable-but-better"
+   },
+   "capabilities_added": [
+    "wave-census: read a round's committed swarm evidence (validated wave payloads, seats per role, attack seats, reports present) and check a declared count with --expect (SCORECARD.md:1681; gate row SKILL.md:607)"
+   ],
+   "report": ".ufo/reports/round-41/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-41-verifier-spotcheck.md@dfabe92bcec021f5beec457fb50cec484e047e35",
+    "rechecks": "One counted claim on operability (C1+C2 share the axis, AXES.md:31-33); both sub-items verify. C1 evidence-verified (gate not executed): counter frozen cb2d8d09, unchanged to tip; receipts survived=15/16 @a58b7f72 -> 0/16 @68db3419, @4e58bb0e, @fae386aa (cases 75/75); cite-check.mjs unchanged fae386aa..fb7046ca; check( count re-measured 64->75->75; 16 ids match ScoutCiteVerdict.md:1. C2 re-measured: capability rows 1->2 (awk over SCORECARD at a58b7f72/fb7046ca); jq recount of 7 dispatch payloads rounds 38-40 matches receipts (mismatches 7->0); --expect exit 1@4, 0@3 and selftest 26/26 evidence-verified on wave-census sha256 d6068d1b = tip bytes; post-fae386aa hunks all in selftest(). No-harm: SCORECARD diff no axis integer or proxy term decreased; ExecProxyNoHarm decreased=0. Spot-check: S038 admit agree, S018 re-open agree (Appendix J locator), S020 standing reject agree (no round-41 reject); census validate exit=0 (pre-existing W04 S034)."
+   },
+   "commit": "kumitate-shokunin@fb7046ca862e0d92f76c2a718a24807433c603ff",
+   "closed_at": "2026-10-22T19:06:30Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-10-22T12:56:46-03:00 launch kumitate round=41 pgid=3902645 driver=hyaku-inline attempt=1; 2026-10-22T14:30:06-03:00 lane-dead-no-report kumitate round=41; retry same round (omp process restart at 17:26Z); 2026-10-22T14:30:08-03:00 launch kumitate round=41 pgid=1003083 driver=hyaku-inline attempt=2; 2026-10-22T15:56:50-03:00 complete kumitate round=41; hyaku-inline attempt=2. Report 1914377d by kumitate-shokunin; SHONEN [~][~][ ][~]; all 11 cited hashes ancestors of master; lane ahead=0, porcelain empty. Holds AtkNovelIdentity, AtkNovelRecords (r40) not recreated. Rulings (status-neutral defects): section-3 floor unmet in wave 1 (executor 0, scribe 0; route down); third v1 wave (disclosed, restart-caused; 72 spawned <=100, payload 106); falsify wave dispatched without a dispatched build wave (undisclosed); report keys C1/C2 verdicts separately. Unscored trades, not axis harms, for the operator: proxy --strict warnings 2->3 (PIN_UNPINNED wave-census), cite-check selftest 0.17s->~0.85s, guard 5320e0da recursion + 2 skip-bypass survivors (code added this round, outside C1's 16 anchors). Routed R41-1..R41-7: record same-round rejects; pin wave-census in proxy; guard red-before cases; key verdicts by axis; record every shape deviation; carried limits (R40-2, R40-4, 12 census findings, 5 report gaps, sentinel findings); receipt headers name measured digest. SHONEN not fully checkable by a non-author (box 3 14/17 bare clone); no promotion recommended.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
