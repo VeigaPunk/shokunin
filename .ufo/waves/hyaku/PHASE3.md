@@ -144,3 +144,12 @@ Computed at `2026-10-22T08:00:22Z` from the latest five explicitly admitted hyak
 | Observed checkpoint | Event | Evidence / result |
 |---|---|---|
 | 2026-10-22T08:10:00Z | Validator band smoke (`plan` only; no dispatch, no registry) | `ufo-swarm-wave.mjs plan` over synthetic scout specs. Policy v1: 31 → exit 1 `too_few_lanes`; 32 → exit 0; 64 → exit 0; 65 → exit 1 `wave_too_wide`. Policy v2: 63 → exit 1 `too_few_lanes`; 64 → exit 0; 100 → exit 0; 101 → exit 1 `too_many_lanes` (cap 100). The validator gates each wave; the addendum text and the closure enforce the 100-seat round total across waves. |
+
+### Operator directive 6 — tower skill invoked
+
+- Verbatim, with `/tower` invoked (argument "r"): "yyyou should do it inline". Read as: keep the training inline. Rounds and closures run as in-session `task` subagents through `inline.sh`; no watchdog, no headless `omp -p` processes, no tower or Sighting fleet panes. This matches the binding contract and the phase-1 directive "do it inline with multiple swarms of subagents". Nothing changed.
+
+| Observed checkpoint | Event | Evidence / result |
+|---|---|---|
+| 2026-10-22T08:12:00Z | Inline confirmation | `pgrep -af` for the watchdog, `inline.sh`, tower-fleet, ufo-sighting and `omp -p` returned no matches (exit 1); no tmux server is running. `proc://` lists only in-session jobs: TameshiR25, KotobaR48, MoriR24 (task, running) and timers bg_4 and bg_5. Ledger commit `7b2d2093` pushed. |
+| 2026-10-22T08:12:00Z | Directives relayed | Main sent directives 5 and 6, verbatim, to TameshiR25, KotobaR48 and MoriR24. They are a steer only, with no new scope; every L1 prompt already carries both rules. |
