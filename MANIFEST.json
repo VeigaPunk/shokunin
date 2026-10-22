@@ -12922,6 +12922,49 @@
    "notes": "Driver digest: 2026-10-21T20:34:11-03:00 launch mori round=24 pgid=2902434 attempt=1; 2026-10-22T04:58:59-03:00 lane-dead-no-report mori round=24, superseded at 2026-10-22T04:56:36-03:00 (stale author, fresh attempt); 2026-10-22T05:03:02-03:00 launch mori round=24 pgid=7946 attempt=2; 2026-10-22T06:26:03-03:00 complete mori round=24 attempt=2. Conformance: report by lane identity at fleet c7613588 after lane tip; SHONEN 4 lines for 4 boxes; all cited lane hashes ancestors of master; ahead=0. Untracked .scratch/ (round-22, newest 2026-10-21T12:30) and tools/__pycache__/ (bytecode) are not round work. Bounds: C1 trusts lane-written times, denominator 2 rows; C2 tool read the cases while building (order shown, not independence), 6 surviving mutants. Routed: D1 c2-selftest-after.txt names no revision and is stale; D2 knowledge entry lines 94-95, 170, 171 still carry corrected K5/K4/P3 wording; D3 lesson says supplementary PASS 6/6, tip has 7; D4 ignore tools/__pycache__. No SHONEN box non-author-checkable. No installs.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 25,
+   "date": "2026-10-22",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 25,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 25
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "mutation report interop: tools/mte-interop.py emits the 8 recorded ledger legs as mutation-testing-elements 3.9.0 reports, validated by the official schema and scored by the official metrics library (first-working round 25)"
+   ],
+   "report": ".ufo/reports/round-25/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-25-verifier-spotcheck.md@d4140796f4e48e8ec81b793facba73fbd03b4443",
+    "rechecks": "C1 re-measured by plain counts: SCORECARD R23-ROUTED dispositioned rows 0 at base -> 3 at head; 34/34 dead round-23 seats name-identical to the disposition file, 20 agree/14 finding, 34/34 report tokens match; 10/10 round-23 guard anchors verbatim; frozen counter sha unchanged; kill tallies 10/10 and 14/14 evidence-verified (lane gate not executed). C2 re-derived: tool absent at base; my own Draft7 validation of the 8 committed reports against the registry-fetched 3.9.0 schema 8/8 valid; per-mutant id:status equal to TABLE_* 8/8 legs (85 mutants); scores equal; live counter PASS 8/8 and selftest 17/17 evidence-verified. Amendments 2 (09dc114) and 3 (in measured commit 77302fa) precede the recorded after receipts (154bf4d), which carry amendment-3 features; seat probes saw C2 PASS before them but targets unchanged and amendments only add refusals. Monitor 62/62 -> 45/62 -> 62/62: ledger append-only, 287-entry prefix equal as data, 17 appended headings = 17 uncovered, 162/162 recorded input hashes match head, no traced input changed after 3b20f07; valid input-keyed no-harm, not independent cold-read. Spot-check 2 admits + 2 rejects agree; S086/S087 integrity and quotes re-opened. Census exit 0, 83->85."
+   },
+   "commit": "tameshi-shokunin@f4e8f7d835a8e33c64a87ff93e79da32264f031c",
+   "closed_at": "2026-10-22T09:50:02Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: launch attempt=1 2026-10-21T20:38:07-03:00 pgid=2906730; lane-dead-no-report 2026-10-22T04:58:59-03:00 (superseded 04:56:36, stale author, fresh attempt); launch attempt=2 05:02:58-03:00 pgid=7349; complete 06:42:00-03:00. Conformance: report by lane identity (fleet 0888a12), SHONEN 4/4 lines all [~], 10/10 hashes ancestors of master, lane pushed ahead=0 clean, prompt = template render + addendum. Both claims verified; no owned axis harmed at head; restore of the cold-read monitor is valid input-keyed evidence via 17 author re-anchors, not independent cold reads (SHONEN box 3 stays [~]). Routed to tameshi: (1) tools/mte-interop.py verdict tool lacks a registry row at SKILL.md / tools/registry.json; (2) SCORECARD r25 header and lesson Claims omit amendment 3 and its before_any_after_measurement flag ignores seat probes at c9ff09f/09dc114 - append a correction; (3) knowledge/mte-report-interop.md verified-at cites 09dc114 tool 8c24255c 16/16, not measured 8269b82f 17/17; (4) open: MtGuardGaps 17 weakenings, 14 re-attack findings, round-24 spot-check items 2-4, emitted reports lack lane/revision pin; (5) seat ReReplay14 ran jj log at fleet root, ReOutputComplete jj st in lane. SHONEN: no box fully checkable by a non-author yet. Installs: none (ephemeral uv --with jsonschema==4.25.1).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
