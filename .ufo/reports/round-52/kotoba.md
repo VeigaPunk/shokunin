@@ -1,8 +1,9 @@
 # kotoba — round 52 report (hyaku campaign, attempt 2)
 
 Lane repo `/home/vgpnk/Projects/shokunin/kotoba-shokunin`, branch `master`. Base `c8579a4c5b48789e56fb9060ddd48f33569e1215`
-(round 51 closed `rejected-honest-stop`). Lane head after this round: `a44196d8a654fcb32491964c846e986122f9c51b`
-(helper `landed a44196d8a654fcb32491964c846e986122f9c51b`; `jj-lane.sh state` → `local=remote=a44196d8… ahead=0 behind=0`).
+(round 51 closed `rejected-honest-stop`). Lane head after this round: `0c9180a69017c47d36b5f032c4bb27ed1d131908` (helper `landed 0c9180a6…`, the
+last seat report); content commit `a44196d8a654fcb32491964c846e986122f9c51b` (helper `landed a44196d8…`; `jj-lane.sh state` →
+`local=remote ahead=0 behind=0`).
 L1 attempt 2: `KotobaR52a2`. Scope frozen by Main at 18:41Z; nothing was added after the freeze.
 
 ## Work performed
@@ -30,8 +31,8 @@ Work items:
   carried with reasons (`corpus/lessons/round-52.md:111-116`). The session rule (a target missed on frozen tables is an honest stop,
   never a widened table) is held by Q28 plus Q15 (seat `ReviewSpotcheckRouting`). On this round's frozen counters: `git diff
   4c003a4b a44196d8 -- verifiers/check_callee_rename.py verifiers/check_mcp_instructions.py` is empty.
-- The attempt-2 falsify wave had 34 seats. All 34 reports except `ExecGateMatrix` are committed at
-  `.ufo/waves/round-52/falsify-a2/`; `ExecGateMatrix` was still running at the report time, see below. Corrections by seat:
+- The attempt-2 falsify wave had 34 seats, and all 34 reports are committed at `.ufo/waves/round-52/falsify-a2/` (33 at `a44196d8`;
+  `ExecGateMatrix` at `0c9180a6`). Corrections by seat:
   `corpus/lessons/round-52.md` § Falsify-wave corrections (attempt 2).
 - C2 false negatives (`CriticLearning`, `SweepOpencode`, `SweepCopilotCli`). opencode documents server instructions
   (`mcp-servers.mdx:429`) and so does Copilot CLI (`changelog.md:1157`, `:2895`), but attempt 1 had recorded both as "silent".
@@ -56,6 +57,7 @@ Work items:
 | `4c003a4b` (attempt 1) | plan; frozen counters `check_callee_rename.py`, `check_mcp_instructions.py` | § Round 52, bullet 1 |
 | `c2107ecf` (attempt 1) | C1: declared-pair admission in `verify_surfaces.py`; self-test 119 → 129, floor 129 | § Round 52, bullets 1-2 |
 | `c8407a45` (attempt 1) | C2 entry, rows S032–S038, `SKILL.md` table, PROVINCE Core; routed defects 1-2; M36 fix `check_correction_sweep.py`; Q29 | § Round 52, bullets 1-2 |
+| `0c9180a6` (attempt 2) | wave evidence: the `ExecGateMatrix` seat report | § Round 52, bullet 4 |
 | `a44196d8` (attempt 2) | falsify corrections (S039–S042, entry, SKILL.md, PROVINCE, README, Q30, Q31, M38–M40), fixture labels, two C1 fixes, sweep rows, SCORECARD leftover rewritten, LOG, wave evidence | § Round 52, bullets 3-6 |
 
 ## Before → after measurements
@@ -138,7 +140,9 @@ Work items:
   - The gate printed `granted … seats=34 live=50`.
 - Round total: 34 seats. No seat died, no seat was refused, and no residual call was made.
 - Planner seat: held by the L1, which wrote no planning items.
-- `ExecGateMatrix` had not returned when this report was written. Its report is not part of this report's evidence.
+- `ExecGateMatrix` returned at 18:55Z with HOLDS. Across 17 lane gates at base and head, default and `--self-test` modes, it found
+  no exit flip from 0 to nonzero and no self-test tally drop; every red row was already red at base. Its report was committed at
+  `0c9180a6`, and the wave slot was released.
 - Misroot sweep: `git -C /home/vgpnk/Projects/shokunin status --porcelain` shows no untracked fleet-root file written by this lane's
   seats.
 - Installs: none, by the L1 or by any seat that reported (every seat report says none).
