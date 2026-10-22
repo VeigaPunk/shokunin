@@ -29,8 +29,9 @@ not, and name both in the report.
    rule seems not to fit). Read `skill://swarm` before the first wave. Then your lane's SKILL.md,
    PROVINCE.md, SCORECARD.md (its `planned` row is your starting point), corpus/QUALITY.md,
    corpus/README.md (`## Frontier`), and the newest corpus/lessons.
-2. **Swarm: each round is 32–100 seats in total** (operator directive 3, 2026-10-22: "each round
-   should be a 32-100 swarm round"). Choose one shape and name it in the report:
+2. **Swarm: each round is 32–128 seats in total** (operator directive 3, 2026-10-22: "each round
+   should be a 32-100 swarm round"; raised by the operator the same day: "increase L1 max to 128
+   subagents", "make it 256 max xwarm lanes"). Choose one shape and name it in the report:
    - **Default — two v1 waves.** **Wave 1 — build (32–64):** recon, source opening, entry drafting,
      tooling, plus first falsifiers of the round's declared claims. **Wave 2 — falsify (32–64)**,
      dispatched after wave 1 returns and only when wave 1's output yields ≥32 distinct attack items:
@@ -38,17 +39,17 @@ not, and name both in the report.
      counting command, re-open each new source row, attack each claim, review each new entry or
      tool, mutation-test each new gate; every item names what it attacks. Both waves validate under
      policy v1 (`{{FLEET_ROOT}}/scripts/hyaku/ufo-wave-policy.json`, band 32–64); the two waves
-     together stay ≤100 seats.
-   - **Alternative — one v2 wave (64–100)** under policy v2
-     (`{{FLEET_ROOT}}/scripts/hyaku/ufo-wave-policy-v2.json`, band 64–100) carrying build and
+     together stay ≤128 seats.
+   - **Alternative — one v2 wave (64–128)** under policy v2
+     (`{{FLEET_ROOT}}/scripts/hyaku/ufo-wave-policy-v2.json`, band 64–128) carrying build and
      attack items together, with ≥25% of its seats attack roles (reviewer, critic,
      mutation-tester, labrat).
 
    Residual checks (fewer than 32 attack items for a wave 2, or leftovers after the waves) go into
-   one ordinary `task` call of ≤8 reviewer/critic seats, counted in the round total; say so in the
+   one ordinary `task` call of ≤8 reviewer/critic seats, counted in the round total (≤128); say so in the
    report. Never pad: if fewer than 32 genuine items exist, the claims are too thin — choose a
-   larger frontier claim instead of adding filler seats. Validate every wave under its policy (the
-   validator hard-caps one wave at 100), then dispatch it as exactly ONE `task` call carrying the
+   larger frontier claim instead of adding filler seats. Validate every wave under its policy (both
+   policies set `maxLanes` 256, the validator's hard ceiling), then dispatch it as exactly ONE `task` call carrying the
    validator's `taskCall` (`context` + `tasks`) unchanged; a refused wave is fixed, never split.
    For a v1 wave:
 

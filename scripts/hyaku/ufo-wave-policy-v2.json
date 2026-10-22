@@ -81,13 +81,13 @@
         "l1Alias": "m_strong"
       },
       "swarm": {
-        "maxLanes": 100,
+        "maxLanes": 256,
         "minLanes": 16,
         "rampBatchSize": 5,
         "rampIntervalMs": 700,
-        "note": "hyaku campaign policy v2 (operator directive 2026-10-20: 'increaase concurrency to 64-128 subagent swarms'); band 64-100 because the validator hard-caps any wave and the per-L1 round budget at MAX_SWARM_LANES=100 (UFO invariant); copy of ufo-fsd-alpha config/ufo.json with only the swarm band changed. v1 (ufo-wave-policy.json, 32-64) stays for rounds dispatched under it.",
+        "note": "hyaku campaign policy v2 (operator directives 2026-10-20: 'increaase concurrency to 64-128 subagent swarms'; 2026-10-22: 'increase L1 max to 128 subagents', 'make it 256 max xwarm lanes'); wave band 64-128; per-L1 round budget maxLanes 256 = the validator's MAX_SWARM_LANES (ufo-mission-result.mjs); copy of ufo-fsd-alpha config/ufo.json with only the swarm band changed. v1 (ufo-wave-policy.json, 32-64) stays for rounds dispatched under it.",
         "waveMinLanes": 64,
-        "waveMaxLanes": 100
+        "waveMaxLanes": 128
       }
     }
   },
