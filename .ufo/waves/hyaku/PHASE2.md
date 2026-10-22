@@ -1458,3 +1458,27 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   canonical membership or promotion. Drafts, holds, runtime and unrelated
   artifacts are not silently swept into the release.
 
+### Session 3 — operator-requested wrap (2026-10-22)
+
+- Training paused for final jj publication. The previous completed Root
+  checkpoint is `b4b338e92ca483b92079f8a2486b77024bf76847`; all64
+  publication scouts finished and four clean source-remote integrations
+  were pushed. No new mint or membership change.
+- Durable resume map: `session-wrap-20261022.json` in this directory.
+  It separates actual Kaidoku25 M, Kotoba48 I/before and Tsukuroi24 D
+  from unlanded proposals, pending author finalization and future authority.
+- Mori24 and Tameshi25 pre-implementation review advice is preserved
+  privately; neither packet was integrated or approved during wrap.
+  Tameshi's52-case before remains unrun and its custody qualifier unresolved.
+- Kotoba48 froze its completed prospective handoff; RawTagControls remains
+  missing evidence. No fresh leaf/replacement or production permission.
+- Tsukuroi's original identity is rate-limited before any answer; preserve
+  `tsuku24-design-review/author-backoff.json` and its supplied backoff.
+  Do not manufacture an I source, skip before authority or change routing.
+- Kake's parent qualification disposition records the bounded correction
+  to the outside audit; literal scope violations and unqualified contributions
+  remain excluded. No distiller, SRT or implementation was dispatched.
+- Canonical runtime state, unrelated files and all useful unmerged/private
+  worktrees remain untouched. Existing safety/source/rejection holds stay
+  effective; no admission, promotion or100-round completion is claimed.
+

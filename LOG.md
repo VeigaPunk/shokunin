@@ -1258,3 +1258,37 @@ The indentation receipt has 93 checks; `canonical-final-checks.txt` has the fina
 - Unreviewed author/prereg work, private/held material, runtime state and the
   unrelated `write` artifact remain excluded. No tools installed or updated.
 
+## 2026-10-22 — session wrap and preserved publication boundary
+
+- Operator requested session wrap, commit and push through jj. Training is
+  paused; no new round, preregistration approval, candidate or admission is
+  created by this checkpoint.
+- Previous Root publication is
+  `b4b338e92ca483b92079f8a2486b77024bf76847`. Its64 metadata scouts
+  completed; clean remote-ahead work in kasegi, kumitate, audio and
+  game-dev-2d was integrated through jj and their primary bookmarks pushed.
+  README links all21 existing lane repositories; no mint or roster change.
+- `.ufo/waves/hyaku/session-wrap-20261022.json` records the six unfinished
+  lane handoffs and their actual authority boundaries. Mori24's114-path and
+  Tameshi25's5-path prospective packets remain unlanded; review advice is
+  not a pushed freeze or permission to implement.
+- Kotoba48 stopped with actual I/before data, original64 terminal identities
+  plus planner/distiller, and RawTagControls still terminal/incomplete without
+  a report. Executor0/3 and excluded-contribution debts remain; no replacement.
+- Tsukuroi24's data D remains landed. Its existing measuring-source wake
+  failed before an answer with429/rate_limit_error and supplied
+  retry-after311754000ms. The exact backoff record is preserved; no early
+  retry, reroute or replacement was made.
+- Kaidoku25's measured M and existing original34/separate22 receipts are
+  preserved. Newly unfinished author finalization is private, not swept into
+  publication or treated as independent closure.
+- Kake28's original72 wave and same-id continuations settled. Main corrected
+  the outside audit's alleged project-execution classification from the
+  complete original request metadata: three requests parsed inert JSON with
+  stdlib code, not lane programs. Literal no-Bash/Eval deviations and the
+  auditor's own disclosed outside-scope scratch write remain unqualified;
+  cleanup does not cure them. No request was rerun or body authority adopted.
+- All safety/source/rejection holds, private worktrees, raw reports and
+  original expectations remain preserved. Root runtime dirt and unrelated
+  files are excluded. No tools installed or updated.
+

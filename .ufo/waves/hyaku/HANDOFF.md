@@ -143,3 +143,21 @@ Late-found seat notes: three agent-to-L1 notes that seats wrote as plain files a
 (`MoriR16.Lesson`, `SoujiR15`, `TameshiR15`, outside the `.ufo/` sweep pathspec) are archived
 byte-for-byte under `.ufo/waves/hyaku/misroots/` — evidence for the mori r16, souji r15 and tameshi
 r15 closures. Future misroot sweeps should check `git -C <fleet> status --porcelain` with no pathspec.
+
+## Latest wrap checkpoint — 2026-10-22
+
+The tables and launch instructions above are historical, not current dispatch
+permission. Read `PHASE2.md`'s final session-wrap section and
+`session-wrap-20261022.json` in this directory before any continuation.
+
+Operator requested session wrap and jj publication. Training is paused.
+Completed measured work and the prior64-agent publication audit are preserved;
+Mori24/Tameshi25 proposed freezes and Kaidoku25 author finalization remain private
+and unlanded. Kotoba48 has real I/before but no approved F/candidate.
+Tsukuroi24 has real D but no measuring I; obey its recorded429 backoff.
+Kake28 requires qualified distillation and judgment before any implementation.
+
+All safety/source/rejection holds remain. A successful command or completed
+native identity is not admission, actor conformance, privacy clearance or a
+completed100-round campaign. Preserve unfinished worktrees; no replacement
+workers, retry/reroute of held items, cleanup or host/service action is implied.
