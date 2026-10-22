@@ -13817,6 +13817,48 @@
    "notes": "Dispatch/complete digest: 2026-10-22T10:33:25-03:00 launch tsukuroi round=26 pgid=2784134 driver=hyaku-inline attempt=1; 2026-10-22T12:39:34-03:00 complete tsukuroi round=26; hyaku-inline attempt=1. Step 1: the report was landed by the lane (e0dda73) after the lane tip; SHONEN heading present; nine round commits plus 4677350 are ancestors of master; ahead=0; the prompt carries all 105 template lines. Foreign operator commit 4677350 is in range and not judged. Payload deviation: the operator tooling-directive block was appended to every seat task outside the validated taskCall; disclosed, status-neutral, no effect (67 seat reports say Installs: none). Dead seats: 4 of 35 wave-2 mutation-testers died with 'No model selected'; operator-owned route, not replaced. Routed to the lane: (1) storage-health-r26.json still carries withdrawn SH2, SH4 and SH6 text, SH6 HEALTHY and S129 line 190, unmarked; (2) implement QUALITY 65 so K01-K06 never read the round's own record; (3) fix R26-GATE-COLUMN-OFFSET in check-storage-health.py; (4) two 0-byte untracked w1/w2-dispatch.err files; (5) dispatched seat text must equal the validated taskCall. The spot-check commit makes K10 read 28 vs 29; this closure caused it. SHONEN boxes all [~]; none ready for promotion review. Installs: none.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 40,
+   "date": "2026-10-22",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 40,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 40
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage:kimi-layer": "improved",
+    "coverage": "unchanged",
+    "coverage:script-layer": "unchanged",
+    "coverage:runtime-layer": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "anchor-truth --open REV: round-open floor (REVIEW_UNBOUND, DEBT_NEW, open-revision BASE_TRUE_LOST/DEBT_GREW/CHECKED_SHRANK); probe 20/26 -> 0/26 attacks accepted, 10/10 benign clean"
+   ],
+   "report": ".ufo/reports/round-40/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-40-verifier-spotcheck.md@a58b7f72afc1eb44b37e438a2f8b212c658874e5",
+    "rechecks": "C1 evidence-verified (gate not executed): probe sha b6c1f7ee identical 1530a755..69ceb529, same 36-case set in all three receipts, CASE recount 20/26->0/26 attacks accepted, 10/10 benign, 0 setup errors at 1530a755 and 5ae8ac9c; scripts unchanged 5ae8ac9c..tip; selftest ids 30->41->42. C2 re-measured: README rows/notes 88/89 -> 90/90, stanza 88/88,51/51 -> 90/90,52/52, live skills/ 7, K2 heading added; proxy receipts 5 error rows exit 1 -> 0 MATCH exit 0. Statements not wider than counters. --open refusal of 4 honest re-cites ruled a recorded trade in a new opt-in mode, not harm (checklist item byte-identical to open, 9/17 honest CLEAN at both ends). R39-1..8 dispositioned against failing-before receipts (R39-2/R39-3 classes partly open, recorded). Cite-check 510->511 ruled not harm (S036 external commit re-opened: 200, sha256 matches); 511 unreceipted at tip. Spot-check: admit S035 agree, rejects (token-equality, webbridge->tabi) agree, S036/S037 quotes verbatim, S012 quote present; census exit 0; ledgers validate vs S036 (0 errors)."
+   },
+   "commit": "kumitate-shokunin@69ceb5291a4dbcc80c62329e0057abe43cc3b7c3",
+   "closed_at": "2026-10-22T15:53:57Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-10-22T10:52:53-03:00 launch kumitate round=40 pgid=23468 driver=hyaku-inline attempt=1; 2026-10-22T12:40:22-03:00 complete kumitate round=40; hyaku-inline attempt=1. Report b2be279b by kumitate-shokunin; SHONEN 4/4 [~]; all cited hashes ancestors of master; lane ahead=0 clean. Held seats AtkNovelIdentity and AtkNovelRecords (automatic model switch after provider safety filter; not clearance) excluded from all evidence. Dead seats: 7/35 wave-2 mutation-testers 'No model selected' (20%, operator-owned route; not replaced). Defects: 8eea5608 author date precedes launch; seat-gate says 4 wave-1 mutation-testers (3 dispatched); anchor-truth registry row lacks --open. Routed R40-1..R40-7: registry --open; re-measure honest recipes at AT46 gate and record BEN_NEWREVIEW limit; tip cite-check receipt and external-commit class; sentinel registry cap and open-pin size check; name S035 in K2 section; seat-gate count slip; closure-file C2_total drift (next open reads coverage 9 vs 10 unless README row added). Spot-check landed a58b7f72. SHONEN boxes 1,2,4 look non-author-checkable; box 3 qualified (bare clone 13/15); promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
