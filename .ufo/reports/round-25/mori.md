@@ -173,3 +173,19 @@ refusals).
     ReviewAxesTable (Last-change column undefined; D5 pin is a declaration), ScoutRefusalRecount.
   - **corrections to apply in round 26:** ScoutRefusalRecount's refusal-count wording, the round-12
     SCORECARD line, and the operability credit round.
+
+## Addendum 4 — correction to addendum 3
+
+- Addendum 3's heading says all 38 wave-2 seats had returned. That is false. Four seats had not returned when
+  it was filed: MutRoutedD1, ReopenDocsAndCommit, ReviewD2Sweep and ReviewQualityLesson. Their reports are not
+  in the lane.
+- Final lane tip: `c4e4ff0f82b20689183154d1528d0cda84727c56`, pushed. It adds the ReviewSkillPattern report.
+  The retention scan still finds 4 unallowlisted hits at this tip.
+- **ReviewSkillPattern verdict: broken, for the round-25 SKILL block (not fixed).**
+  - Row 2 says a bash or eval call at a full cap is silent. That holds only for auto-backgrounded calls:
+    eval `agent()`, workpool and explicit `async: true` bash register without a capacity check and refuse
+    (S103; upstream `eval/agent-bridge.ts:210`, `task/workpool.ts:175,363`).
+  - Row 3 lists too few refusing paths.
+  - Row 4 lacks the flow-mapping false-number caveat.
+  - The retention repair garbled row 1's host sentence.
+  - The SKILL block needs these fixes in round 26. The "never edit settings, kill jobs or split waves" rule held.
