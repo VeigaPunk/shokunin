@@ -1,7 +1,7 @@
 # kotoba — round 49 report
 
 Lane `/home/vgpnk/Projects/shokunin/kotoba-shokunin`, base `a5adc146a2995dcc5a95a6d8db6e5674f75191ac`,
-pushed lane head `bfd5a583a9ba5e7ab702cca301ec2c44c8bf5287` (jj-lane.sh `landed`). Attempt 1. Plan
+pushed lane head `b38bc0d419c17d7790ad81b203cdfb9e970692eb` (jj-lane.sh `landed`; late corrections after the first report filing at lane `bfd5a58`). Attempt 1. Plan
 `plans/round-49.md`. Drift guard honoured: no freshness claim, SKILL.md frontmatter unchanged.
 
 ## Work performed
@@ -114,3 +114,15 @@ re-sized before any landing after the build-wave critics showed the first counte
 - Misroot sweep: `git -C /home/vgpnk/Projects/shokunin status --porcelain` shows no file from this
   round's seats (a staged `write` file holds another agent's id; untouched).
 - Driver completion is not admission; the non-author closure judges both claims.
+
+## Addendum (late falsify seats, after the first report filing)
+
+- `RowSouji` HOLDS; `RowLore` and `RowGameDev2d` HOLDS-BOUNDED (rule wording: the arbitration cell leaves out
+  the row's own lane name; game-dev-2d's "generic harness/evidence audits → their owning lanes" not ruled on).
+- `RowKama` FAILS on the kama row's basis: the PROVINCE note misquoted kama's split (corrected verbatim at
+  lane `b38bc0d`), and kama's `consumer-registry.md` audits agent prompt text and a sibling SKILL.md, a
+  possible `contested` element under a literal reading; the rule has no precedence between arms. Recorded
+  for the integrator; row stays `adjacent`. C1's declared after-value (20 rows) and guard output are unchanged.
+- Lane commits this round: `f054b8e`, `c48793d`, `bfd5a58`, `b38bc0d` (all pushed). Still running at this
+  filing: `RowChousa`, `RowMori`, `MutR1Keying`, `CrossCheckC2Live`, `ReviewEntryRules`, `ReviewLessonQ25`,
+  `CalibrationRecords`; not judged here.
