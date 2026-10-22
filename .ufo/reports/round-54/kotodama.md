@@ -1,6 +1,6 @@
 # kotodama — round 54 report (hyaku phase 3, attempt 2, L1 KotodamaR54a2)
 
-Lane repo `/home/vgpnk/Projects/shokunin/kotodama-shokunin`. The lane tip after landing is `25375f1481f148a7b5295142f0b2795c53311315` (jj-lane helper `landed`). The claim base is `260c68d`, the declaration is `7fa37fb` and the original base `e0bfb13e` is unchanged. The scope freeze arrived at 18:41Z and this report was filed at about 19:01Z.
+Lane repo `/home/vgpnk/Projects/shokunin/kotodama-shokunin`. The lane tip after landing is `e17bc2bc14168e16873580c52d03e9ec1d462e67` (jj-lane helper `landed`). The claim base is `260c68d`, the declaration is `7fa37fb` and the original base `e0bfb13e` is unchanged. The scope freeze arrived at 18:41Z and this report was filed at about 19:04Z.
 
 ## Work performed
 
@@ -28,8 +28,8 @@ Lane repo `/home/vgpnk/Projects/shokunin/kotodama-shokunin`. The lane tip after 
 - **Entry integration (L1).** 153 lines. It cites 46 rows, S239 and above, each opened this round. Draft ids were mapped to S-ids in order of first citation (`/fast/scratch/hyaku/kotodama-r54-a2/idmap.tsv`); `tools/check-draft-ids.py` reports 0 findings. §2 points one-way to 12 owners, and restricted traditions are handled only through community statements (§4).
 - **Residual falsify call, 8 seats** (7 reviewer, 1 critic), payload `.ufo/waves/round-54/residual-sent-payload.json`, reports in `.ufo/waves/round-54/residual/`.
   - CriticClaimC: the mechanical legs hold. Four review-clause failures were found: Kòmò construction detail, a Phillips over-read, two one-case generalisations and a boundary-cell over-read.
-  - Row reviewers (5 of 6 slices reported): 69 of 81 checked citing items CARRIED, 6 WRONG-LOCATOR, 6 OVER-READ.
-  - All findings were fixed at `58b2fae` except row-level tier harmonisation (S256 vs S258), which needs a superseding row and is carried. ReviewRows247to254 had not reported by the deadline and is not integrated.
+  - Row reviewers (all 6 slices): 85 of 102 checked citing items CARRIED, 9 WRONG-LOCATOR, 8 OVER-READ.
+  - All entry findings were fixed at `58b2fae`, and the late ReviewRows247to254 slice was fixed at `e17bc2b`. Carried to round 55: the S256 vs S258 tier harmonisation, which needs a superseding row, and the S248 and S254 anchor-cell locators.
 - **Frontier mistake fix:** `tools/check-gate-quotes.py` (R54-M1). It exits 1 on `corpus/lessons/round-53.md` with 12 findings and on round-52 with 7; it exits 0 on `round-54.md`. Mutation-tested by ReviewGateQuoteTool: 3 of 3 mutants killed, and 5 escape classes were recorded.
 
 ## Landed changes
@@ -41,13 +41,14 @@ All commits were landed by the jj-lane helper after remote verification.
 | `5757c45118771d8baac238b52aa5e95fc18cbd54` | attempt-1 dead-wave dispatch records; attempt-2 build-a2 spec, generator, dispatch and payload; census at attempt-2 start | round 54 (attempt 2) |
 | `6a658ca4fe9230f70eaa3b421e6c9d78da5c1633` | claim C lands: entry, `corpus/README.md` (revision 2.11, row, 28→29, totals and footer), `corpus/SOURCES.md` rows S239–S284 | round 54, C |
 | `58b2faed54b3a12dde3db0a6a3185b34e8b9e9a6` | residual falsify fixes (entry wording and locators; PNW cell; community-row tier notes) | round 54, C |
+| `e17bc2bc14168e16873580c52d03e9ec1d462e67` | late-slice fixes (S251 section locator, S248 paragraph, S247 and S253 over-reads); lesson falsify row; lessons-index pin; slice report | round 54, C |
 | `25375f1481f148a7b5295142f0b2795c53311315` | records: `corpus/lessons/round-54.md`, `corpus/lessons/README.md` (row and revision 11), `tools/check-gate-quotes.py`, SCORECARD, LOG, SHONEN line 6, `reports/round-54/telemetry/final-measures.txt`, build-a2 and residual wave reports | round 54 |
 
 ## Before → after measurements
 
 - **C:** `python3 -B reports/round-54/accept-c.py`
   - Before, measured at `7fa37fb` (receipt `reports/round-54/telemetry/declaration-dry-run.txt`, re-run by ExecDryRunCensus): exit 1. SET FAIL (count 229), SWEEP FAIL (rows 229 files 229) and FLOOR FAIL (cited 0); RANGE, STATUS and USEDBY pass vacuously; ACCESS PASS.
-  - After, measured at `58b2fae` and `25375f1` (`reports/round-54/telemetry/final-measures.txt`): exit 0. SET PASS (count 230, added [masks-masquerade.md], removed []). SWEEP PASS (rows 230 files 230, missing 0). FLOOR PASS (cited 46). RANGE, STATUS and USEDBY PASS. ACCESS PASS (exit 0).
+  - After, measured at `58b2fae` and `25375f1` (`reports/round-54/telemetry/final-measures.txt`), and re-run by the L1 at `e17bc2b`: exit 0. SET PASS (count 230, added [masks-masquerade.md], removed []). SWEEP PASS (rows 230 files 230, missing 0). FLOOR PASS (cited 46). RANGE, STATUS and USEDBY PASS. ACCESS PASS (exit 0). The census at `e17bc2b` also exits 0.
   - Also exit 0 at `6a658ca`, re-run in a clone by CriticClaimC.
 - Separability: `python3 -B tools/check-claim-separability.py reports/round-54/separability-manifest.json` → 0 findings, exit 0.
 
@@ -68,7 +69,7 @@ All commits were landed by the jj-lane helper after remote verification.
 ## Trend verdicts
 
 - **expansion: improved.** One new owner for previously unowned ground (0 filename owners at base), 230 files, and 46 new mined rows.
-- **quality: improved, bounded.** All seven acceptance legs pass. The residual reviewers found 12 locator or over-read defects in citing sentences and 4 review-clause failures, all fixed at `58b2fae` before filing. One row-level tier inconsistency (S256 vs S258) is carried, and one reviewer slice (S247–S254) was unreported at the deadline.
+- **quality: improved, bounded.** All seven acceptance legs pass. The residual reviewers found 17 locator or over-read defects in citing sentences and 4 review-clause failures; all were fixed at `58b2fae` and `e17bc2b`. Three registry-cell items are carried (S256 vs S258 tier, and the S248 and S254 anchors).
 - **discernment: improved.** The Gate-quote checker turns an outside verifier's routed defect into a mechanical check that kills three mutants and caught 3 of this round's own draft Gate lines before filing. Restricted traditions follow only community statements, after the critic removed a Kòmò construction detail.
 
 ## SHONEN
@@ -86,7 +87,7 @@ All commits were landed by the jj-lane helper after remote verification.
   - The falsify step ran as one residual `task` call of 8 seats (reviewer 7, critic 1).
   - Round total: 50 seats.
 - **§3 L2 floor:** met inside wave 1. The L1 holds the canonical planner seat; the planning data-walk rode ScoutEntryMechanics and ConnectInLaneMasks.
-- **Dead seats:** none; no refusals or holds. Three build seats (ExecIntegrateRows, ScribeSpotcheckRouting and the residual ReviewRows247to254) were still running at the report deadline. Their outputs are not integrated or cited, and their reports, if filed later, are not part of this round's commits. `kotodama51-prereg-critic` stays excluded.
+- **Dead seats:** none; no refusals or holds. Two build seats, ExecIntegrateRows and ScribeSpotcheckRouting, were still running at the report deadline. Their outputs are not integrated or cited, and no commit includes their reports. The L1 did the integration and the spot-check routing instead (lesson sections). `kotodama51-prereg-critic` stays excluded.
 - **Tool installs:** none, by the L1 or any reporting seat; pacman pause respected.
 - **Stale-lane:** respawn-per-round driver; no other mission of this lane is open.
 - **Open L0 questions:** none new. The round-11 freshness question stays open.
