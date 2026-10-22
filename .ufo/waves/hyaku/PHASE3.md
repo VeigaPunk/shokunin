@@ -166,3 +166,9 @@ Computed at `2026-10-22T08:00:22Z` from the latest five explicitly admitted hyak
 | 2026-10-22T08:15:09Z | Dispatch kotodama r51 attempt 2 (C7) | `inline.sh dispatch` exit 0; dispatch evidence `2136bbc`; base `bff83ba65bf9`; L1 job `KotodamaR51`. The `kotodama51-prereg-critic` hold is quoted in the session note. |
 | 2026-10-22T08:15:30Z | Timer armed | `bg_217` fires the 2 h freeze message for the second batch at 10:15:10Z. The job counter is session-global, so seats' shell jobs also advance it. |
 | 2026-10-22T08:15:30Z | Slots | 6/6 busy: tameshi, kotoba, mori, tsukuroi, kaidoku, kotodama. Next eligible in order: kama (C8), kake (C9), kumitate (D10 recovery), mado (D11 recovery). |
+| 2026-10-22T08:16:00Z | Seat gate after K=6 | `wave-slot.sh status`: live_estimate=71, recent_reservations=0, cap=200, mem_avail_mb=24896. |
+| 2026-10-22T08:16:00Z | K raised 6 → 8 | Same directive. Reasoning: a lane averages roughly 20–30 live seats across a round (waves cover part of its time), so eight lanes put expected demand at about the 200 cap. Beyond eight, lanes mostly queue for seats and rounds drift toward the freeze limit, which costs quality. |
+| 2026-10-22T08:16:39Z | Dispatch kama r25 attempt 1 (C8) | `inline.sh dispatch` exit 0; dispatch evidence `a79fb0f`; base `147f5bdd3228`; L1 job `KamaR25`. Repair-first; outcome files r23=rejected-harmed, r24=rejected, so one more rejection blocks it. |
+| 2026-10-22T08:16:40Z | Dispatch kake r28 attempt 2 (C9) | `inline.sh dispatch` exit 0; dispatch evidence `9765401`; base `22c1669c1fec`; L1 job `KakeR28`. Repair-first; outcome files r26=rejected-honest-stop, r27=rejected, so one more rejection blocks it. |
+| 2026-10-22T08:17:00Z | Timer armed | `bg_276` fires the 2 h freeze message for kama and kake at 10:16:41Z. |
+| 2026-10-22T08:17:00Z | Slots | 8/8 busy: tameshi, kotoba, mori, tsukuroi, kaidoku, kotodama, kama, kake. Waiting in order: kumitate (D10 recovery), mado (D11 recovery). |
