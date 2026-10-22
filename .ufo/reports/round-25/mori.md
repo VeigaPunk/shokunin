@@ -149,3 +149,27 @@ Final lane tip (pushed, `jj-lane.sh` `landed`): `90cc042f22ea7a7f492502b7210ccca
 Still not fixed: the round-12 SCORECARD line left stale by the D5 rewrite, the round-13 versus round-14
 operability credit, and the lesson's refusal-count wording (48 occurrences in 29 failed results, 26 of them
 refusals).
+
+## Addendum 3 — final tip and late wave-2 results (all 38 wave-2 seats returned)
+
+- Final lane tip: `e0591e48420e512b83a564593200a40d9d591386`, pushed. Since addendum 2, the late wave-2 reports
+  are committed, the FR15 pointer is re-pinned (`f1370462`), and two late reports had the settings-file path
+  reduced to a name (`98fd5b08`).
+- The retention scan was re-measured at `98fd5b08`: 4 unallowlisted hits, the pre-existing round-20 hits
+  (`evidence/retention-scan-after-repair.txt`). C1 still holds 4 of 4.
+- **ReviewRunwayCode (C2 tool): broken against A2, held for the frozen after-value.**
+  - False absents: in a 307-config probe, 72 configs that set `async.maxJobs` read as absent (`RUNWAY_DEFAULT`,
+    exit 0, effective 100 where omp reads 50).
+  - `set` for files Bun refuses to parse.
+  - `--selftest --cases ""` silently runs the frozen cases.
+  - Uncaught exceptions exit 1, the `RUNWAY_CLAMPED` code.
+  - No guard on FIFO or `/dev/zero` inputs.
+  - These widen the C2 false-number defect already disclosed. They are not fixed this round, so C2's capability
+    statement holds only for block-style configs like this host's.
+- Late wave-2 verdicts, all disclosed and not fixed:
+  - **held:** RerunC1Count, RerunC2Count, RerunD1Evidence, ReopenUpstreamCode, ReopenRejections,
+    ReviewHarnessFacts (F10 parenthetical mis-cited), ReviewNoHarmCensus, ReviewProvinceReadme.
+  - **weakened:** MutRunwayClampRegex (4 of 6 survive), MutRoutedD2 (the committed evidence cannot falsify D2),
+    ReviewAxesTable (Last-change column undefined; D5 pin is a declaration), ScoutRefusalRecount.
+  - **corrections to apply in round 26:** ScoutRefusalRecount's refusal-count wording, the round-12
+    SCORECARD line, and the operability credit round.
