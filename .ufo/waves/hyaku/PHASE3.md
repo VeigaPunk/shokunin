@@ -427,3 +427,11 @@ Metrics at T0+4h:
 | 2026-10-22T12:07:31Z | Dispatch tameshi r27 attempt 1 (A1, cycle 2) | Dispatch evidence `5b5db60`; base `91edf9cd`; L1 `TameshiR27`. Harm repair first: restore the cold-read monitor with independent cold reads at the repair wave's validated size; gate acquire timeout 5400 s; the freeze exempts this wave. Then a different frontier claim (drift rule). |
 
 Deadline list update (UTC): remove 13:02:02 (mori r25 landed). Add 14:07:31 freeze tameshi r27; 15:27:31 hard stop tameshi r27.
+
+| Observed checkpoint | Event | Evidence / result |
+|---|---|---|
+| 2026-10-22T12:12:00Z | Mado r23 landed (L1 MadoR23, 1h30m; recovery round) | Lane pushed at `fa819d561d61`; report fleet `36edb174`, landed last. Author verdict: honest stop. C1 operability repair missed (6/12 at the tip against a target of 12/12; the repair reached 12/12, but wave 2 found cases worse than base, so the L1 restored the base classifier bytes `cd9da20c` at `3df10626`); C2 coverage met (0/3 → 3/3, terminal-trees note, S123–S152 re-opened, digests match); C3 calibration met (SHONEN box 4 self-assessment mismatches 5 → 0). Shape: two v1 waves, 36 + 33 = 69 seats, 0 dead; 14 still-running seats cancelled at wrap; 5 idle W2 attackers resumed by id (no new seats). L0 line filed on whether the repair-first ruling covers the r21 precision drop. Installs: none. |
+| 2026-10-22T12:13:30Z | Verify mado; closure | `OK mado r23 landed: report 36edb17 lane tip fa819d561`; lane clean. Depth sentinel: 7816 bytes (0.55), 93 pointers (0.73). No trip. Fresh non-author job `HyakuCloseMado23`. |
+| 2026-10-22T12:13:49Z | Dispatch kotoba r50 attempt 1 (A3, cycle 2) | Dispatch evidence `eec2a7e`; base `f3046466`; L1 `KotobaR50`. Routes r49 D1–D6, requires each claim statement to match exactly what its counter proves, and routes sibling sources (tameshi interop; kake Pages base path) only if used. Gate live_estimate=72. Lanes in flight 7/7: kumitate r39, tsukuroi r25, kotodama r52, kake r30, kaidoku r26, tameshi r27, kotoba r50. |
+
+Deadline list update (UTC): remove 12:43:09 and 14:03:09 (mado r23 landed). Add 14:13:49 freeze kotoba r50; 15:33:49 hard stop kotoba r50.
