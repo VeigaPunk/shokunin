@@ -14195,6 +14195,47 @@
    "notes": "Dispatch 2026-10-22T15:50:22-03:00 launch tsukuroi round=28 pgid=3542973 driver=hyaku-inline attempt=1; complete 2026-10-22T16:19:53-03:00. Post-freeze correction d9727e98: sandbox commits were made by SentinelBattery via GIT_DIR (not RevFamilyB2); report records the orchestrator-approved update-ref --no-deref HEAD 938ca8ec repair. Inert unpushed jj keep-refs refs/jj/keep/ee430cdf6f8c181b615c81da7d7c61c4636b3359 and refs/jj/keep/a080e4efd961ece8871921942188b92989b6a2a9 left for the operator (untouched). Routed: (1) commit C2 battery receipt at tip counter 99f35675 and revision in selftest receipts; report 'Gates at ca6b1499' C2 line lacks a receipt; (2) batteries inherit GIT_* env (SentinelBattery finding 3, mutants-adjacency-overlap.py subprocess.run) - scrub + failing selftest; (3) R4a 2-word half unanchored (MutC2Counter m1/m7); (4) C1 padding shapes 15/22 still score 6; (5) carried round-27 defects 4, 5 (oom-event-plane.md, kill-event-deep-r8.md), 6; (6) RevFamilyB2 findings lost, MutC1Counter absent by design, SentinelBattery committed but not folded; (7) lowest-axis duty contested (CritClaimSizing), operator. SHONEN: 4 boxes [~], not fully checkable by a non-author.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 32,
+   "date": "2026-10-22",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 32,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 32
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "freshness": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-32/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-32-verifier-spotcheck.md@5777d5af79cac1ebf9144b348a9d274099e77338",
+    "rechecks": "C1 evidence-verified (gate not executed): counter c1_m3_probe.py frozen since 5b32cc7 (sha 411498bb…6c27); receipts before a0b0dff killed 0, after 2f2f12d/d061f38/df31d30 killed 1 guard_ok true, mutant fails P6 only, pristine 6/6, benign 45/0; plain re-measure P6 spec 0->1, reason_contains 0->7, no scripts drift df31d30..e9283ec6. C2 re-measured by hand (counter has 7 reproduced defects): blobs d17ab7e5/ee0b6381 absent at a0b0dffc, present at e9283ec6 and equal to ds4cc clone at 1fbdb8ed; S062 row opened 2026-10-22 names ds4cc-marketplace+1fbdb8ed; entry S062 cites 0->4; 0/3->3/3. SCORECARD diff append-only (0 removed lines). Census exit 0 (W04 S033 pre-existing); rows 61->64. Spot-check S062 admit, S063 reject, S064 reject all re-opened: agree."
+   },
+   "commit": "kake-shokunin@e9283ec6289e2873997878f5e2331da90616dfc9",
+   "closed_at": "2026-10-22T19:26:19Z",
+   "campaign": "hyaku",
+   "notes": "launch 2026-10-22T15:51:36-03:00 kake round=32 pgid=3550738 driver=hyaku-inline attempt=1; complete 2026-10-22T16:23:57-03:00 attempt=1. One v1 wave of 34 seats, 34/34 returned, no wave 2; holds KakeR31.CriticC1Counter and KakeR31.CriticSandboxThreatModel carried, not recreated. Conformance: pass (report by lane identity 896a47b4, SHONEN 4 lines, 9 commits on master, ahead=0, porcelain clean). C1 narrow: kill rests on reason text; m3d/m3f/m3g survive. C2 weak freshness fit (pinned snapshot). Routed: (1) Git-pin mutants m3d/m3f/m3g; (2) pin refusal by structured field, not message text; (3) c1 probe killed not gated on guard_ok, timeout raises; (4) c2 counter 7 defects, hollow commit scores 3; (5) PROVINCE.md:122 says five hostile shapes (now six); (6) concurrent selftest scratch collision; (7) round-31 item 3 low items open. SHONEN: no box ready for promotion.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
