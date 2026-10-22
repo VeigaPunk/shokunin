@@ -1,7 +1,7 @@
 # kotoba — round 49 report
 
 Lane `/home/vgpnk/Projects/shokunin/kotoba-shokunin`, base `a5adc146a2995dcc5a95a6d8db6e5674f75191ac`,
-pushed lane head `9f2f1a751292a9a267ce8a83870efab76429e9e6` (jj-lane.sh `landed`; late corrections after the first report filing at lane `bfd5a58`). Attempt 1. Plan
+pushed lane head `374ecf9820722e34f55ee21f3a27419b61aafc06` (jj-lane.sh `landed`; late corrections after the first report filing at lane `bfd5a58`). Attempt 1. Plan
 `plans/round-49.md`. Drift guard honoured: no freshness claim, SKILL.md frontmatter unchanged.
 
 ## Work performed
@@ -141,3 +141,7 @@ re-sized before any landing after the build-wave critics showed the first counte
   `RowChousa` HOLDS-BOUNDED on the row; its chousa boundary note ("claim admission stays here" is a fleet
   rule, "kotoba cites it" uncited) is not corrected this round. Still running: `MutR1Keying`,
   `ReviewEntryRules`.
+- Final batch (lane `374ecf9`, evidence only): all 38 falsify seats returned, 0 dead; falsify gate
+  reservation released. `MutR1Keying` HOLDS-BOUNDED (two R1 mutants survive: no-name fallback and agents-root
+  keying; no live effect, value 10 under every mutant). `ReviewEntryRules` HOLDS-BOUNDED on the entry at
+  `c48793d`; its major finding (kake and kasegi) was already corrected in `bfd5a58`. Lane working tree clean.
