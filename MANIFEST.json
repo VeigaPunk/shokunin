@@ -13129,6 +13129,49 @@
    "notes": "Dispatch/completion digest: 2026-10-22T05:16:40-03:00 launch kama round=25 pgid=370096 attempt=1; 05:31:20-03:00 lane-dead-no-report (capacity stand-down by Main at 08:30Z, not a lane fault); 06:19:51-03:00 launch kama round=25 pgid=1077911 attempt=2; 07:42:41-03:00 complete kama round=25 attempt=2. Report f1a75c9e was committed by kama-shokunin after lane tip a46a6181. All 11 cited hashes are ancestors of master; pushed, ahead=0. Rejected-honest-stop: C1's value verifies, but it counts instrument-versus-auditor anchor drift, not self-assessment mismatches, so calibration is unchanged. The lowest-axis obligation is unmet (calibration, depth and adjacency are all 7; C2 is on coverage 9); no axis is harmed. Step-1 defect: 42 uncommitted lane paths under .ufo/waves/round-25/a2-falsify/, written 07:17-07:41 by late falsify seats. Committed evidence is not overwritten; the deleted receipt copy is byte-identical to the committed receipt. KQ36 ruling: it is grounded (lesson row 1 and r24 spotcheck:80-82), but its 'landed tip' wording cannot be met literally, and lesson Mistakes row 2 falsely says the SKILL row states that M17 survives. Routed: resolve the 42 paths; KQ36 qualification plus an erratum for lesson row 2; supersedes rows for S106/S109/S113; entry wording at lines 55-56 ('only trace') and 137 ('2x1025'); count-c2.py has no raw-hash binding; the SCORECARD trend line contradicts the report; the wave-2 gate reservation was released while seats ran; the next round works a lowest axis. The context-capacity-receipt capability ran (receipt verified), but the round is not admitted, so capabilities_added is empty. SHONEN stays [~]: boxes 2-3 have closure-verified evidence; promotion is operator-owned. This is the third consecutive kama rejection (r23 and r24 harmed). Installs: none. No review seats were used.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 29,
+   "date": "2026-10-22",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 29,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 29
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "freshness": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "Offline project-site base-path audit (scripts/base_path_audit.py): C2 30/30 frozen matrix at d8cd2e45 (tool sha256 c5a13a32 = tip), selftest 45/45, real-input run 3 sites/114 refs/4 findings"
+   ],
+   "report": ".ufo/reports/round-29/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-29-verifier-spotcheck.md@035668132250b75b38d399e86e540b0a0371efbc",
+    "rechecks": "Step 1: report by kake-shokunin at 1458dab, SHONEN 4 lines; 8 cited hashes plus base are ancestors of master; jj-lane.sh state ahead=0 untracked=0; prompt carries 116/116 template lines plus hyaku addendum section 6. Declarations frozen in d18bbf3 (committer 07:28:41) before f8675e5/98dbab2; counter and matrix blobs identical d18bbf3..234524c. C1 re-measured: c1_quote_truth.py 0/4 exit 1 at fe1805cf, 4/4 exit 0 controlBroken false at 234524c; independent sweep: 23/23 entry quotes found in sha-verified retained text of the cited source; S040-S043 live bodies byte-identical to receipts. C2 evidence-verified (gate not executed): tool absent at base; matrix 30 cases, sha256 matches pin; c2-after-d8cd2e4.json 30/30, constant gates 7/30,0/30,7/30 rejected, toolSha256 equals tip blob; selftest receipt 45/45 with 45 fixture dirs; SKILL registry row present. No-harm: SCORECARD +62/-0, SOURCES 0 rows removed, 1 knowledge file added none modified, census exit 0 unchanged (pre-existing W04). Spot-check: S042 admit agree, S043 admit agree (new row quote checked), S044 reject agree (live body sha identical; locked at 3.9.0, website/basewebsite keys)."
+   },
+   "commit": "kake-shokunin@234524cdc06167ad14477e0956a8786cc3fc752d",
+   "closed_at": "2026-10-22T11:44:33Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-22T07:22:41-03:00 launch kake round=29 pgid=3879740 driver=hyaku-inline attempt=1; 2026-10-22T08:38:46-03:00 complete kake round=29; hyaku-inline attempt=1. Seat incidents: NoHarmExistingGates ran freshness-sweep.mjs without a section flag (live GETs to owned sites, git ls-remote) - boundary breach, disclosed, results unverified and unused, status-neutral; HtmlParsingEdges headless Chromium on local file:// only, proxy blackholed - within bounds. Seat installs: parse5 8.0.1 (npm --prefix sandbox), GNU time 1.9 from ftp.gnu.org tarball into ~/.local/bin (official source, no pacman). Closure installed nothing. Quality trend unchanged (no existing entry re-verified), differs from lane self-verdict. Routed (kake next round): (1) r28 routed defects 1-2 still open as named debt; (2) bar no-flag freshness-sweep in falsify seat items; (3) selftest and real-input receipts lack revision/tool digest, re-run real-input at current tool; (4) re-measured-at 7697990/234524c claims lack committed receipts; (5) C2 counter limits (id/page/resolved/counts, usage on exit only). SHONEN boxes look checkable by a non-author (operator-owned promotion). Main owns inline advance.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
