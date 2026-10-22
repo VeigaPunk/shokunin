@@ -123,7 +123,7 @@ The same seat also reports two smaller defects:
 Neither is fixed. Fix for round 26: redact the copied values and the three session lines, add name-only allowlist
 rows, re-scan to 4 hits, and add the scan to the no-harm checks.
 
-## Addendum 2 — the adjacency harm was repaired before closure (12:0xZ)
+## Addendum 2 — the adjacency harm was repaired before closure (about 11:53Z)
 
 After Main's 11:52Z ruling (an unrepaired harm costs admission), I repaired the harm inline. No new wave was
 dispatched for it.
