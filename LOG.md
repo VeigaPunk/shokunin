@@ -1074,3 +1074,38 @@ The indentation receipt has 93 checks; `canonical-final-checks.txt` has the fina
   Root-state guards attest named instants only, not continuous enforcement or a
   full no-harm certificate. No audited instrument, fixture or held item was executed.
 
+## 2026-10-22 — correct the Parent's overbroad artifact-path exclusion
+
+- Parent's earlier assertion that every `.ufo` descendant is uncommittable was wrong.
+  The actual `jj-lane.sh:506–516` guard rejects the bare runtime directory and its
+  named state/watchdog paths, not descendant evidence files. The existing helper
+  tracks explicitly named files through its normal `--include-ignored` path;
+  no guard, ignore, routing or helper configuration was changed or bypassed.
+- Kotoba48's exact three proposed artifact paths are not ignored (read-only
+  `check-ignore`, exit1). Kaidoku's own check likewise confirms its future
+  `.ufo/waves/round-25/claims.json` path is not ignored. Before any claims freeze,
+  that existing convention replaces the unlanded reports-path proposal; the
+  prerequisite commit and all34 expectations remain unchanged. No detector was run,
+  no CLEAN was inferred, and the separate literal QUALITY33 cyclic debt remains.
+
+## 2026-10-22 — Kotodama51 semantic ruler prerequisite and actual BASE result
+
+- The serialized lane helper pushed the exact two reviewed files at
+  `5ab36346bafbbf2d35d74073d248e2c8d8847804`; ruler SHA256 `5a07689f…`,
+  oracle SHA256 `473b244f…`. The original blocked revisions remain private audit
+  history; all18 inputs and semantic expectations equal reviewed v2.
+- Main's actual pinned BASE checker completed all18 cases: ruler exit1,
+  mismatch10/18, observed18, notObserved0, unevaluable0. The eight mismatches
+  include relative/locator normalization, URL boundaries and root underflow;
+  the genuine existing-BASE-path control holds. This is a new bounded matrix,
+  not a replay or rescue of R50's original malformed claim.
+- Actual empty-case and wrong-selected-source-digest invocations both refuse
+  at exit2 before any checker run. The selected checker is pinned to BASE
+  `bff83ba6…` and its actual Git blob SHA256 `5764ea27…`, not a copied label.
+  The empty input was removed after its exact bytes and process receipt were retained.
+- No candidate implementation, SRT approval, admission or scalar increase.
+  QUALITY7's historical literal pre-dispatch gap is unchanged. Timeout and
+  export-form parser branches were not runtime-qualified by these runs.
+  Exact commands, streams, exits and limits:
+  `.ufo/waves/hyaku/kotodama51-prerequisite/parent-{before-process,edge-processes,proof}.json`.
+

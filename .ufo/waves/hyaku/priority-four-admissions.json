@@ -1,0 +1,53 @@
+{
+  "at": "2026-10-22T00:22:27.578489+00:00",
+  "configured_ceiling": 200,
+  "ordering": "OrdinarymandatoryseatsbeforeANYNEW64+wave;currentwavescontinue",
+  "admitted": [
+    {
+      "owner": "TameshiR25AuthorS3",
+      "job": "TameshiR25AuthorS3.T25Planner-3",
+      "role": "planner",
+      "prior_refusals_spawned": 0,
+      "round_actual_spent": 65,
+      "terminal_completion_observed": false
+    },
+    {
+      "owner": "KaidokuR25AuthorS3",
+      "job": "KaidokuR25AuthorS3.Kd25Distill-2",
+      "role": "distiller",
+      "prior_refusals_spawned": 0,
+      "round_actual_spent": 65,
+      "terminal_completion_observed": false
+    },
+    {
+      "owner": "TsukuroiR24AuthorS3",
+      "job": "TsukuroiR24AuthorS3.TsukuR24Planner",
+      "role": "planner",
+      "prior_refusals_spawned": 0,
+      "round_actual_spent": 1,
+      "proposal_wave_actual_spent": 0,
+      "terminal_completion_observed": true
+    },
+    {
+      "owner": "KaidokuR25AuthorS3",
+      "job": "KaidokuR25AuthorS3.Kd25Planner",
+      "role": "planner",
+      "round_actual_spent": 66,
+      "terminal_completion_observed": true,
+      "chronology": "ACTUAL native planner POSTproposal64;P54remainsreviewer;nomodeloverride/noreplacement"
+    }
+  ],
+  "limits": [
+    "Nativeadmissionsnotretroactivepre-waveconformance",
+    "OnlyTsuku/Kaidoplannerterminalcallbacksobservedhere;Tameplanneranddistillercompletionnotasserted",
+    "Actual132runtime/63Tsu-descendantsnapshotseparatefrom64actualauthorattestation",
+    "Noalias/provider/harness/configchange;no dead/VOID/policyitemreplacement"
+  ],
+  "large_wave_release": {
+    "owner": "TsukuroiR24AuthorS3",
+    "reason": "ownactualplannerterminalandall4priorityseatsadmitted;3Mainclosureadvisoriesactuallyadmitted",
+    "actual_proposal_spawn_callback": 64,
+    "actual_spent_after": 65,
+    "other_large_waves": "stillMainphasedgates"
+  }
+}

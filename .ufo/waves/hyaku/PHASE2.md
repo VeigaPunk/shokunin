@@ -1293,3 +1293,55 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
 - Independent old-debt review also found that some historical in-flight contradiction
   labels overreach a large driver-log gap. Those findings remain preserved/unresolved,
   not re-pinned or silently normalized; the65finding rows are not65independent defects.
+
+### Session 3 — isolated author continuation and real admission windows (2026-10-22)
+
+- Seven eligible owners were actually advanced through the existing driver and
+  dispatched once into distinct real worktrees: mori24, kotodama51, kotoba48,
+  kaidoku25, tameshi25, tsukuroi24 and chousa28. They are scoped authors,
+  not new coordinators/judges. Main alone copies approved exact bytes into the
+  canonical clone and uses the serialized lane helper; the `.git`-file worktree
+  refusal was not weakened and no writer committed from its isolated tree.
+- Reviewed independent prerequisites now have actual pushed lane identities:
+  kaidoku `62feef9c…`, kotodama `5ab36346…`. Their real Parent CLI observations,
+  pre-result oracle corrections, source pins and remaining conformance limits
+  are in Root LOG and the two `*25/51-prerequisite/parent-*` evidence families.
+  These are measurement prerequisites, not candidate implementations or admissions.
+  The Parent's overbroad all-`.ufo` exclusion was corrected from actual helper
+  source; future kaidoku claims use the existing discoverable path, not a bypass.
+- The saved global/campaign ceiling remains200, but ordinary admission still
+  sometimes refuses at100. Main preserved a real under100 window for four
+  actual ordinary seats before another large wave: Tame native planner,
+  Kaido distiller, Tsuku native planner, then Kaido's genuinely missing native
+  planner. Exact job IDs and honest terminal/chronology states are in
+  `priority-four-admissions.json`. Refused zero-spawn attempts are not dead
+  identities or replacements. Kaido's prior P54 reviewer remains a reviewer;
+  its native planner was post-proposal and does not repair that chronology.
+- After its actual planner terminal barrier and all four admissions, Tsuku
+  actually launched the unchanged validated64 proposal call: actual spent65
+  including planner1. Main's event-triggered observation at
+  `2026-10-22T00:21:48.042653Z` found132running tasks and63running Tsuku
+  descendants. This is not a perpetual-floor/completion/isolation certificate;
+  an already-settled child is not inferred dead from the snapshot.
+- Kotoba's optional outside instrument reviewer raced that wave and was refused
+  at100 before spawning0. Its unused reservation was released, exact logical
+  item/role retained, no reroute/replacement or Phase-A review credit. The
+  corrected ruler stays frozen with the same13 oracle cases awaiting actual
+  independent review and Parent landing/execution.
+- Kake27's final pushed lane is `62aeddf…`, measured algorithms remain ac46,
+  Root report is filed at `3cefad98…`. Three real non-author closure advisory
+  seats were dispatched under the global guard. The native planner exists
+  only now during closure, not retrospectively before author W1/W2. Two
+  reports are complete; freshness is still pending. No Kake27 MANIFEST row,
+  admission or round28 advance is claimed at this checkpoint.
+- Kengaku29 remains the earlier source-history-held ninth report; Kake27 is
+  an additional pending closure, not an excuse to inspect that unsafe material.
+  All policy/item/source/rejection-streak holds and original negative clauses
+  remain. Scope ledgers retain the additional old69-wave outside writes and
+  new-author disclosures; cleanup does not cure, actual spent identities stay,
+  and no VOID task is replaced. Required instructional prereads are distinct
+  from broad host discovery or corpus evidence.
+- No new candidate implementation, approved SRT freeze, capability/rank grant,
+  score increase, whole-fleet clean result or100-round completion is asserted.
+  No tools were installed, system/service transactions remain paused, and
+  useful unmerged worktrees plus unrelated/untracked files are preserved.
