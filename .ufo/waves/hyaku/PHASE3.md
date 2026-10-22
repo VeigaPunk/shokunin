@@ -352,3 +352,7 @@ Deadline list update (UTC): kama landed, so 11:19:46 and 12:39:46 now apply to k
 | 2026-10-22T11:38:47Z | Verify kake r29; closure | `OK kake r29 landed: report 1458dab lane tip 234524cdc`; lane clean. Depth sentinel: 12682 bytes (1.00 of median), 108 pointers (1.05). No trip. Fresh non-author job `HyakuCloseKake29`. Slot freed; no eligible lane waiting (all in flight, chousa and kama parked), so 8 lanes in flight. |
 
 Deadline list update (UTC): remove 12:22:39 and 13:42:39 (kake r29 landed).
+
+| Observed checkpoint | Event | Evidence / result |
+|---|---|---|
+| 2026-10-22T11:43:13Z | Freeze messages: mori r25 and kumitate r39 (2 h) | Timer `bg_4630` fired. Freeze sent to MoriR25 (hard stop 13:02:02Z) and KumitateR39 (hard stop 13:03:13Z). Next timer at 11:52:10Z (tameshi r26 freeze). |
