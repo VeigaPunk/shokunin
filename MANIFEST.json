@@ -14821,6 +14821,47 @@
    "notes": "launch 2026-10-22T17:56:48-03:00 kotodama round=56 pgid=4116816 driver=hyaku-inline attempt=1; complete 2026-10-22T19:31:04-03:00 kotodama round=56; hyaku-inline attempt=1. Conformance pass: report b37501d1 by kotodama-shokunin after lane tip; SHONEN 4 lines all [~]; 10/10 cited hashes are ancestors of main; lane ahead=0, clean, remote 6386218a; prompt = template with placeholders filled plus §6. Status-neutral defects: prompt committed under the lane identity (2075410); untracked fleet .ufo/state/kotodama.report-baseline (operator-owned). Routed to kotodama next round: (1) O acceptance blind to S-id shortcuts, so renumber ids at run time, add an out-of-list named reference and commit a skip-the-work control receipt; (2) survivors: double decoding, stop-at-first-bad-file, CLI label not pinned by the selftest; ';' on numeric references undecided; (3) erratum for the false koon1244 reason at round-56.md:83; (4) S410 /download URL stale; (5) carried row findings S359 S360 S383-S385 S392 S395-S397 S399 S407 S367 and the S379 tier; (6) QUALITY c10 amendment for third-party scans (R56-M4); (7) accept-c.py:18 SyntaxWarning. Do-nothing-control rule in the L1 context is asserted by the orchestrator and was not found in committed bytes; the ruling also rests on prompt §6 item 9. SHONEN box 3 now has non-author re-run evidence; promotion is operator-owned. Holds respected (kotodama51-prereg-critic not recreated).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 30,
+   "date": "2026-10-22",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 30,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 30
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "improved",
+    "operability": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unprovable-but-better",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-30/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-30-verifier-spotcheck.md@a12c68ae81257fb6f918bb165bcb39c73f82d212",
+    "rechecks": "C1 re-measured under the ORIGINAL contract a66751b1:23-54 (not A1): own Python checker over committed bytes, 3 eligible fixture blobs tip==58b61681, 13/13 row case ids in exactly one eligible file (12 cases-a2.json, 1 cases-supplementary.json), expect verdict+fields match 13/13, tip tool (/tmp copy, python3 -I -B --inputs) prints them 13/13 (base tool 13/13); conds 1,2,4,5 met (seat C1OriginalRule independent checker; S156-S159 Gate admit+excerpt+verbatim quotes, SKILL Round30 rows 4); matches evidence/tip-c1.txt @926ac146 C1=met. Three rows re-pointed in 95cd794e make original exactly-one hold; A1 3a not load-bearing. C2 evidence-verified (no gate run): tip-c2.txt @926ac146 counter blob f4f86b0d r29 PASS 24/24, older 32/32,32/32,30/30, gate_selftest=PASS mutants 4/4, blind_violations=1 C2=unmet exit 1; hit CaseR30a.md:105 closing sentence re-read; A2 gate 4 hits, A3 (after-data) 1 -> miss under both; w2/ReviewR30Cases rules unclear text on all 8 verdict/exit pins (second miss ground); freeze blob a05863cc unchanged, older fixtures blob-identical, acted_lost=0. No-harm: SCORECARD +25/-0 held scores unchanged; no deleted files; retention 4<=4. Spot-check: admits S158 (re-fetched by me, sha256 428dc830 match, 16-word quote verbatim) and S157 agree; rejects journald.conf.xml, service.c, journal-util.c, earlyoom.service.in (S120 dup) agree; census validate mori ok exit 0 (ten pre-existing W04)."
+   },
+   "commit": "mori-shokunin@5c99f2d4213b41966d670d10006a2ff5135273e4",
+   "closed_at": "2026-10-22T22:54:43Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-10-22T18:01:21-03:00 launch mori round=30 pgid=45266 driver=hyaku-inline attempt=1; 2026-10-22T19:45:25-03:00 complete mori round=30; hyaku-inline attempt=1. Step 1 pass: report 02419cfb by mori-shokunin (after tip 5c99f2d4); SHONEN 4 lines/4 boxes all [~] (not promotion-ready); 23/23 cited hashes ancestors of master; state ahead=0 behind=0; porcelain only ?? .scratch/ (151344 files, newest mtime 2026-10-21, round-22 scratch, nothing newer than launch: pre-round, not round work); prompt = template + placeholder fills + hyaku addendum s6. C1 met under pre-data rule; C2 honest miss (not withdrawn) -> not admitted, no axis harmed. Expansion unprovable-but-better (no corpus/README.md coverage-map row for the new entry); quality unprovable-but-better (entry :53 'reports its version' over-broad, QUALITY 93/92 carried). Routed: D1 gate parser past Files-opened + first-hit-only + selftest locks FP; D2 A1 3a silent loosening ('nothing is narrowed') needs a Mistakes row citing QUALITY 25, A3 after-data no precedent; D3 supersede QUALITY 93, QUALITY 92 unmet; D4 correct entry :53 per QUALITY 77 + S159/S120 overlap; D5 README coverage-map row; D6 pin CriticHarmAxes dry-run flips X1/X2; D7 LOG entry for 713be294; D8 SCORECARD outcome row stale counts (ee61010d new_ids=5 vs tip 4) + contract C2 cond 4 parenthetical stale; D9 redacted tokens in history d03203c5, original on non-durable /fast/scratch.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
