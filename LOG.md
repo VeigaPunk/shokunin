@@ -1054,3 +1054,23 @@ The indentation receipt has 93 checks; `canonical-final-checks.txt` has the fina
   Derived output remains explicitly unreviewed/self-pinning. Frozen matching does not
   authenticate child measurements, imply a clean ledger or clear any source/policy hold.
 
+## 2026-10-22 — Kaidoku25 ruler prerequisite landed before claims
+
+- Main integrated only the four independently reviewed prerequisite paths and the
+  serialized lane helper pushed `62feef9c0cbd5aadafa453456c55c28832175206`.
+  Ruler SHA256 is `20fe3f3d3d68ba21c8d8bbfed175bb57db46a8618bd179b179acb6fda99d0532`;
+  the three fixed oracle/contract/derivation digests stayed unchanged. The optional
+  false-red preservation draft remains private and unlanded; no no-harm duty was waived.
+- Main exercised the actual committed CLI against BASE `18e7eb6…`: exit2,
+  `candidate_unavailable`, 34not_observed, executed0, exact0. These are not 34
+  experimentally observed old failures. A separate wrong-digest invocation returned
+  exit2 / `snapshot_tampered:oracle`, with no fabricated comparable result.
+- No candidate, claim freeze, implementation approval, admission or score increase.
+  QUALITY33's literal subject/instrument cyclic debt remains UNMET; the unchanged R24
+  detector does not discover the proposed reports path, so its status is UNDETECTED,
+  never a round-level CLEAN. R24's original9/11 and all safety holds remain intact.
+- Exact commands, streams, exits and limits:
+  `.ufo/waves/hyaku/kaidoku25-prerequisite/parent-{before-process,tamper-process,proof}.json`.
+  Root-state guards attest named instants only, not continuous enforcement or a
+  full no-harm certificate. No audited instrument, fixture or held item was executed.
+
