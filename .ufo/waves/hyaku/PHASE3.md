@@ -313,3 +313,31 @@ Deadline list update (UTC): kama landed, so 11:19:46 and 12:39:46 now apply to k
 | 2026-10-22T10:51:00Z | Closure kama r25: REJECTED (honest stop) | `HyakuCloseKama25` (fresh, non-author; model `anthropic/claude-opus-5-5`; 8m50s; no review seats): status ok, admitted=false, verdict rejected-honest-stop. MANIFEST `rounds[448]` at fleet `a96b1215cee0`; spot-check lane commit `1560e4d83f42`. C1 re-run (27/2 → 28/0) is correct but counts instrument-versus-auditor mismatches, not self-assessment versus repo, so calibration is unchanged and the lowest-axis rule is unmet (calibration, depth, adjacency all 7; C2 sat on coverage 9). C2 coverage improved (`registered 14 observed 14 bound True`; 70 raw hashes match). No axis harmed. The 42 late paths are uncommitted round work (step-1 defect, status-neutral); no committed evidence was overwritten. KQ36 is grounded, but two wording and citation defects are routed. Trends: expansion improved, quality unchanged, discernment unchanged. |
 | 2026-10-22T10:52:10Z | Advance kama → BLOCKED | `closed` → `1 rejected`; `advance` printed `BLOCKED after 3 rejected` and `kama r25 rejected -> next 26`; `blocked/kama`: "three consecutive rejected closures through round 25 (2026-10-22T07:52:10-03:00)". Parked for the leg; L0 line filed. Sentinel windows: 7 in-session closures, 5 admitted; last six (mori24 A, tameshi25 A, tsukuroi24 R, kake28 A, kotodama51 A, kama25 R) hold 4 admitted, so no trip. |
 | 2026-10-22T10:52:30Z | Lesson in motion | Two of the last three rejections share one cause: the calibration claim counted the wrong mismatch set (tsukuroi r24 C1, kama r25 C1). The goal's Claim sizing text already says a calibration claim must count mismatches between SCORECARD/SHONEN self-assessment and observed repo state. Future L1 notes name that rule explicitly when calibration is a lane's lowest axis. |
+| 2026-10-22T10:54:00Z | Calibration rule relayed | Steer to all nine running L1s: a calibration claim must count mismatches between SCORECARD/SHONEN self-assessment and observed repo state (cause: tsukuroi r24 and kama r25). Delivered to all nine. |
+| 2026-10-22T11:19:46Z | Freeze message: kaidoku r25 a3 (2 h) | Timer `bg_1985` fired. Kotodama r51 and kama r25 from the same batch had already landed. Main sent KaidokuR25a3: "freeze scope; land what verifies; file an honest report", no new wave, wait for running seats, a miss is an honest stop. Hard stop at 12:39:46Z. Next timer armed for 11:30:26Z (kotoba r49 freeze). |
+
+#### Deadline list, consolidated at 11:20Z (UTC; supersedes the earlier list and updates)
+
+| Deadline | Action |
+|---|---|
+| 11:30:26 | Freeze message: kotoba r49 |
+| 11:42:02 | Freeze message: mori r25 |
+| 11:43:13 | Freeze message: kumitate r39 |
+| 11:52:10 | Freeze message: tameshi r26 |
+| 11:56:36 | T0+4h read-only drift checkpoint (≤15 min) |
+| 11:59:28 | Freeze message: tsukuroi r25 |
+| 12:22:39 | Freeze message: kake r29 |
+| 12:32:12 | Freeze message: kotodama r52 |
+| 12:39:46 | Hard stop if no landed report: kaidoku r25 a3 |
+| 12:43:09 | Freeze message: mado r23 |
+| 12:50:26 | Hard stop: kotoba r49 |
+| 13:02:02 | Hard stop: mori r25 |
+| 13:03:13 | Hard stop: kumitate r39 |
+| 13:12:10 | Hard stop: tameshi r26 |
+| 13:19:28 | Hard stop: tsukuroi r25 |
+| 13:42:39 | Hard stop: kake r29 |
+| 13:52:12 | Hard stop: kotodama r52 |
+| 14:03:09 | Hard stop: mado r23 |
+| 15:56:36 | T0+8h read-only drift checkpoint |
+| 18:56:36 | T0+11h: no new dispatches |
+| 19:56:36 | Wrap complete |
