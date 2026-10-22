@@ -241,3 +241,15 @@ Medium findings, none fixed:
 and the floor of 1 held.
 
 All of these are round-26 corrections.
+
+## Addendum 8 — all 38 wave-2 seats returned; gate released
+
+Final lane tip: `829d8c9072d5907b9050d06c16cc34b0bb73d0f8`, pushed; the retention scan still finds 4 unallowlisted hits.
+
+**MutRoutedD1: held, with coverage gaps.** 18 of 19 mutants were killed by a 24-commit sandbox corpus. The
+survivor (the 40-hex format check) is equivalent to the commit-resolution check. It confirms
+ReviewQualityLesson's finding: the D1 body is compared with a constant, not with R's real output (only
+`--rerun` detects a mismatch). The routed tool also has no committed selftest corpus.
+
+The wave-2 seat-gate reservation was released after the last seat returned. Wave 2 final: 38 of 38 returned,
+no dead seats.
