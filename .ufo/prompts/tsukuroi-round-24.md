@@ -138,33 +138,23 @@ is not admission; independent non-author verification remains required.
 - **L0 side channel:** if you need an operator decision, append
   `<lane> | round-<N> | <question>` to `/home/vgpnk/Projects/shokunin/.ufo/l0-questions.md`. Do not block
   the round on an answer; note the open question in the report and route around it.
-## 6. Campaign addendum — hyaku (百) phase 2, operator directives of 2026-10-20 (binding this round; in-session)
+## 6. Campaign addendum — hyaku (百) phase 3, operator directives of 2026-10-22 (binding this round; in-session)
 
-Operator directives, verbatim (phase 2, 2026-10-20): "ok, we will be doing more training on our
-shokunins, I want you to train them until round 100; do 3 shokunins at a time, use heavy
-parallelization 64-100 subagents; do it inline | favor using m_flash, m_haiku, m_swe for code heavy
-work"; "you can also use m_sol and m_opus"; "do not restrict yourself to the 16-32 waves; do it
-64-100"; "train them on the order you deem best, i prefer you to do 10 sequential rounds on the three
-that you choose"; "delegate more to m_flash instead if m_haiku"; "you can disable the rea mcp
-momentarily, we don't need it for now"; "let's try to also implement using jj as git manager from
-now on on shokunin runs"; "make sure we are always swarming heavily though"; "increase concurrency,
-im seeing only 6 subagents now, i would like to always see 64+ running"; "opus is back"; "also,
-swap from m_flash to m_zfl please"; "assign more m_zfl please, for future spawns"; "executor should
-use m_flash"; "leave scribe as m_haiku"; "critic + sentinel (m_opus)"; "labrat and scout should be
-m_flash"; "the fallback for the m_zfl should be m_luna max" / "as the last in the cascade"; "make
-m_luna the last fallback for m_flash also"; "do not remove m_opus, but put m_swe as critic"; "planner
-m_opus"; "simplifier m_flash"; "distiller m_haiku"; "sentinel m_luna"; "connector m_grok";
- "change the m_grok for the the m_flash"; "executor m_luna"; "ok, so, hyper has to be a secondary provider, after commandcode on deepseek v4.1 flash (m_flash) | aside from this, no subagent can inherit m_opus as the fallback; for m_zfl, mflash, m_fast, m_haiku, the last cascade fallback has to be m_luna".
+Operator directive 3, verbatim (phase 3, 2026-10-22): "each round should be a 32-100 swarm round".
+Session scope, lane order and blocks, holds and operator rulings: `.scratch/goal-20261022-hyaku-12h.md`
+under /home/vgpnk/Projects/shokunin. Phase-2 directives still bind (2026-10-20): "let's try to also implement using
+jj as git manager from now on on shokunin runs"; "make sure we are always swarming heavily though".
 Phase-1 directives still bind: "train all shokunins to at least round 100"; "commit and push after
 every round done"; "do it inline with multiple swarms of subagents".
 
 You are an in-session **L1 lane subagent** dispatched by the hyaku orchestrator (the operator's
-parent omp session) for exactly ONE steered round: **tsukuroi round 24** (attempt 1;
-campaign target: round 100). Your lane is in a block of 10 sequential rounds, six lanes at a
-time; the orchestrator dispatches your lane's next round only after this one lands and its
-non-author closure is written. Work this round only and land it; then return a summary of at most 12
-lines: claims with verdicts, lane HEAD, report commit, wave sizes and seat-role mix, dead seats, open
-L0 questions. Never start round 24+1 and never claim another round number. Sections 1–5 above
+parent omp session) for exactly ONE steered round: **tsukuroi round 24** (attempt 2;
+campaign target: round 100). Your lane's place in the session follows the goal file (lane
+order and blocks: `.scratch/goal-20261022-hyaku-12h.md`); the orchestrator dispatches your lane's
+next round only after this one lands and its non-author closure is written. Work this round only
+and land it; then return a summary of at most 12 lines: claims with verdicts, lane HEAD, report
+commit, round shape, wave sizes and seat-role mix, round total, dead seats, open L0 questions.
+Never start round 24+1 and never claim another round number. Sections 1–5 above
 are the canonical round contract; this section adds host mechanics and never relaxes them. Repo files
 beat this prompt (PROTOCOL.md snapshot clause). Never call the `ask` tool: the round is unattended.
 **Working directory:** your tools start at the fleet root, not the lane repo — run lane commands as
@@ -179,102 +169,55 @@ not, and name both in the report.
    rule seems not to fit). Read `skill://swarm` before the first wave. Then your lane's SKILL.md,
    PROVINCE.md, SCORECARD.md (its `planned` row is your starting point), corpus/QUALITY.md,
    corpus/README.md (`## Frontier`), and the newest corpus/lessons.
-2. **Swarm: every wave 64–100 seats** (operator 2026-10-20: "use heavy parallelization 64-100
-   subagents"; "do not restrict yourself to the 16-32 waves; do it 64-100"). Validate every wave
-   under policy v2 (band 64–100; the validator hard-caps one wave at 100), then dispatch it as
-   exactly ONE `task` call carrying the validator's `taskCall` (`context` + `tasks`) unchanged; a
-   refused wave is fixed, never split:
+2. **Swarm: each round is 32–100 seats in total** (operator directive 3, 2026-10-22: "each round
+   should be a 32-100 swarm round"). Choose one shape and name it in the report:
+   - **Default — two v1 waves.** **Wave 1 — build (32–64):** recon, source opening, entry drafting,
+     tooling, plus first falsifiers of the round's declared claims. **Wave 2 — falsify (32–64)**,
+     dispatched after wave 1 returns and only when wave 1's output yields ≥32 distinct attack items:
+     fresh reviewer/critic/mutation-tester/scout seats attack what wave 1 produced — re-run each
+     counting command, re-open each new source row, attack each claim, review each new entry or
+     tool, mutation-test each new gate; every item names what it attacks. Both waves validate under
+     policy v1 (`/home/vgpnk/Projects/shokunin/scripts/hyaku/ufo-wave-policy.json`, band 32–64); the two waves
+     together stay ≤100 seats.
+   - **Alternative — one v2 wave (64–100)** under policy v2
+     (`/home/vgpnk/Projects/shokunin/scripts/hyaku/ufo-wave-policy-v2.json`, band 64–100) carrying build and
+     attack items together, with ≥25% of its seats attack roles (reviewer, critic,
+     mutation-tester, labrat).
 
-       cd /home/vgpnk/Projects/shokunin/tsukuroi-shokunin && UFO_CONFIG_PATH=/home/vgpnk/Projects/shokunin/scripts/hyaku/ufo-wave-policy-v2.json \
+   Residual checks (fewer than 32 attack items for a wave 2, or leftovers after the waves) go into
+   one ordinary `task` call of ≤8 reviewer/critic seats, counted in the round total; say so in the
+   report. Never pad: if fewer than 32 genuine items exist, the claims are too thin — choose a
+   larger frontier claim instead of adding filler seats. Validate every wave under its policy (the
+   validator hard-caps one wave at 100), then dispatch it as exactly ONE `task` call carrying the
+   validator's `taskCall` (`context` + `tasks`) unchanged; a refused wave is fixed, never split.
+   For a v1 wave:
+
+       cd /home/vgpnk/Projects/shokunin/tsukuroi-shokunin && UFO_CONFIG_PATH=/home/vgpnk/Projects/shokunin/scripts/hyaku/ufo-wave-policy.json \
          UFO_FLEET_ALLOW_EXTERNAL_TOOLS=1 UFO_PROJECT_ROOT=/home/vgpnk/Projects/shokunin/tsukuroi-shokunin \
          node ~/Projects/ufo-fsd-alpha/scripts/ufo-swarm-wave.mjs run --spec <wave-spec.json>
 
-   **Wave 1 — build (64–100):** recon, source opening, entry drafting, tooling, plus first
-   falsifiers of the round's declared claims. **Wave 2 — falsify (64–100)**, dispatched after wave 1
-   returns: fresh reviewer/critic/mutation-tester/scout seats attack what wave 1 produced — re-run
-   each counting command, re-open each new source row, attack each claim, review each new entry or
-   tool, mutation-test each new gate; every item names what it attacks. Run wave 2 whenever wave 1's
-   output yields ≥64 distinct attack items (the normal case); with fewer, never pad — run the
-   residual checks yourself or through one ordinary `task` call of ≤8 reviewer/critic seats, and say
-   so. Round total ≤200 seats: the operator's directives ("swarm rounds of 64-128", "64-100",
-   "make sure we are always swarming heavily", "always see 64+ running") supersede the swarm skill's
-   default 100-member round budget; the validator's 100-seat cap per wave still binds. Never replace
-   a dead seat. Put specs and registries under `/home/vgpnk/Projects/shokunin/tsukuroi-shokunin/.ufo/waves/round-24/` (spec
-   `reportDir: ".ufo/waves/round-24/<wave>"`, lane-relative) and commit them as wave evidence.
+   For a v2 wave, set `UFO_CONFIG_PATH=/home/vgpnk/Projects/shokunin/scripts/hyaku/ufo-wave-policy-v2.json`
+   instead; nothing else changes. Never replace a dead seat. Put specs and registries under
+   `/home/vgpnk/Projects/shokunin/tsukuroi-shokunin/.ufo/waves/round-24/` (spec `reportDir: ".ufo/waves/round-24/<wave>"`,
+   lane-relative) and commit them as wave evidence.
    Items are distinct, concrete work items serving the round's 1–3 claims plus the frontier step
-   and verification — never padding. Record each wave's seat count, role mix, dead seats, and the
-   round total in the report. The §3 L2 floor is met inside wave 1.
+   and verification — never padding. Record the round shape, each wave's seat count, role mix and
+   dead seats, any residual call, and the round total in the report. The §3 L2 floor is met inside
+   wave 1 (or inside the single v2 wave).
    **Planner seat (orchestrator ruling 2026-10-19):** the validator rejects `planner` — a
    frozen-topology seat, never a swarm role. You, the L1, hold the canonical §3 planner seat; a
    bounded planning data-walk may ride a scout, connector or revenger item. Record that mapping in
    the report; never bypass validation to add a planner.
-   **Routing (session `task.agentModelOverrides`, set by the orchestrator on the operator's
-   2026-10-20 directives — the role decides the route; never pass a `model` parameter):**
-   connector, scout, labrat, simplifier → m_flash (operator: directive 27 "connector m_grok"
-   superseded by directive 29 "change the m_grok for the the m_flash"; "labrat and scout should be
-   m_flash"; "simplifier m_flash"); reviewer, revenger → m_zfl (operator 2026-10-20: "swap from
-   m_flash to m_zfl"; "assign more m_zfl please, for future spawns"); executor, sentinel → m_luna
-   (operator: "executor m_luna"; "sentinel m_luna"; executors only for code-heavy items: scripts,
-   gates, selftests, fixtures, parsers, counting commands); critic → m_swe (operator: "do not
-   remove m_opus, but put m_swe as critic"); mutation-tester → m_sol; scribe, distiller → m_haiku
-   (operator: "leave scribe as m_haiku"; "distiller m_haiku"; prose: knowledge entries, SOURCES
-   rows, lessons); planner (the L1-held frozen seat) and generic `task` (you and the closures) →
-   m_opus (operator: "planner m_opus"). Explicit Opus primaries remain unchanged; no subagent may
-   inherit Opus as a fallback. Directives 29–30 affect fresh captures only: running sessions and
-   resumed seats keep the chain captured at spawn; the settings are session-only, not saved globally.
-   **Mix for ~96 seats:** ~24 scout + ~2 simplifier + ~8 connector (≈34 m_flash), ~18 reviewer, ~4
-   revenger (≈22 m_zfl), ~16 executor + ≤2 sentinel (≈18 m_luna), ~10 scribe (m_haiku), ~8 critic
-   (m_swe), ≤4 mutation-tester (m_sol); distiller stays m_haiku if used, planner and `task` (L1s,
-   closures) m_opus. Codex now hosts m_luna, m_sol and the last hop of the configured m_zfl/m_flash/
-   m_fast/m_haiku cascades: if executors start failing on Codex rate limits, say so in the report
-   with the error text. Give an item to an executor only when it writes or runs code; prose drafting goes to
-   scribes, attacks to reviewers/critics/scouts.
-   **Historical provider observations (2026-10-20 probes):** m_zfl answered from its primary
-   (zai glm-5.3-flash) at the swap (~13:4x -03); its observed cascade was devin glm-5-3-flash →
-   charm-hyper glm-5.3-flash (out of credits, 402) → m_luna max (openai-codex gpt-6-luna:max,
-   answered a probe at 14:24 -03) last. Executors moved from m_swe to m_flash at 13:46 -03; the
-   probe then showed m_flash's primary (commandcode deepseek-v4.1-flash) at its 5-hour plan limit
-   (429, reset 2026-10-20T19:47:54Z = 16:47 -03). Its observed cascade was charm-hyper deepseek-flash
-   (402) → opencode-go deepseek-flash → devin deepseek-flash → m_luna max
-   (openai-codex gpt-6-luna:max) last. Record a seat's actual answering model when a claim depends
-   on it; these observations are not current availability proof.
-   **Historical zai rate-limit evidence (observed 14:00–15:25 -03):** with several lanes in waves at
-   once, zai answered m_zfl seats with `429 Rate limit reached for requests (type=1302)`; ~130 seats
-   died with "Retry budget exhausted after 10 retries" after retrying zai alone (~72 s apart). Why
-   they never switched is unresolved: role-bound seats do capture and walk their alias cascade, and
-   a provider retry-after or cooldown fits but is unproven.
-   **Historical cascade-keying and smoke outcomes (since 15:50 -03):** the then-configured cascades
-   were also keyed by their primary models (`zai/glm-5.3-flash`,
-   `commandcode/deepseek/deepseek-v4.1-flash`, `openai-codex/gpt-6.1-sol`,
-   `anthropic/claude-opus-5-5`, `devin/swe-2`, `openai-codex/gpt-6-luna`, `cursor/grok-4.7-fast`;
-   the m_grok key stayed configured, unused by any role since directive 29). Fresh smoke seats
-   (SmokeFlashCascade, SmokeZflCascade, SmokeOpusCascade) then failed over: commandcode 429 →
-   opencode-go deepseek-flash; zai 429 (type=1302) → gpt-6-luna; Anthropic 429 → gpt-6.1-sol. Those
-   observations showed failover for those fresh spawns, not which key won (the alias chains held the
-   same hops) or what caused the earlier deaths. A seat keeps the chain it captured at spawn, also
-   when resumed; only fresh captures receive changed settings. `retry.maxRetries` is 40. Report any
-   seat that dies, with its last error text.
-   **Historical Opus coordinator backoff:** coordinators received 429s with 13–14-minute
-   retry-after values earlier today ("opus is back" since); respect any backoff and resume the same
-   identity, never restart a duplicate writer. Historical availability is not current capacity
-   proof. A dead seat stays dead in the evidence.
-   **Directive 30 — current session-only fallback policy:** for the shared Commandcode
-   `commandcode/deepseek/deepseek-v4.1-flash` primary (m_flash/m_fast/high/plan), the configured
-   fallback sequence is `charm-hyper/deepseek-v4.1-flash` → `opencode-go/deepseek-v4.1-flash` →
-   `devin/deepseek-v4-1-flash` → `openai-codex/gpt-6-luna:max`; `charm-hyper` is the first configured
-   fallback after Commandcode. The exact-primary-model key mirrors the role chains. m_zfl's
-   configured fallbacks are devin GLM → charm-hyper GLM → `openai-codex/gpt-6-luna:max`; m_haiku's
-   are devin Haiku → cursor Haiku1m → cursor Haiku → `openai-codex/gpt-6-luna:max`. Each of these
-   configured lists ends with m_luna:max; no provider availability or induced-failover claim is made.
-   The default and m_opus fallback lists now contain only Codex Sol (`openai-codex/gpt-6.1-sol`);
-   every configured fallback entry containing Opus was removed, including exact-model chains. No
-   subagent may inherit Opus as a fallback; explicit Opus primaries and all other role assignments
-   are unchanged. Previously unassigned built-in overrides security-reviewer, sonic and seance are
-   explicitly pinned to m_flash to prevent parent-model inheritance. m_luna's separate own-provider
-   backup was not changed. These settings affect fresh per-spawn captures only; already-running or
-   resumed sessions keep their captured chain and are not retroactively refreshed. They are
-   session-only, not saved globally. No policy/access restrictions changed; KasegiR23 remains
-   policy-paused under PHASE2.md §Incidents and must not be retried.
+   **Routing:** Routing is `task.agentModelOverrides` in `~/.omp/agent/config.yml`. The role
+   decides the route. Never pass `model`. That file, its aliases and fallback chains are
+   operator-owned: read them, never change them. Give an item to an executor only when it writes or
+   runs code (scripts, gates, selftests, fixtures, parsers, counting commands); prose drafting
+   (knowledge entries, SOURCES rows, lessons) goes to scribes; attacks go to reviewers, critics,
+   mutation-testers and scouts. A seat keeps the route chain it captured at spawn, also when
+   resumed. Record a seat's actual answering model when a claim depends on it. Report every seat
+   that dies, with its last error text; a dead seat stays dead in the evidence. When a coordinator
+   receives a provider backoff, respect it and resume the same identity; never restart a duplicate
+   writer.
    **REA MCP:** the operator authorized disabling the OMP `rea` MCP entry for this phase; the
    orchestrator set `"enabled": false` in `~/.omp/agent/mcp.json` at 10:12 -03 (pre-edit copy
    `~/.omp/agent/mcp.json.pre-disable-20261020T1015`). An unidentified writer rewrote that file at
@@ -282,11 +225,13 @@ not, and name both in the report.
    kaidoku r19; left for the operator to decide). The file is operator-owned either way: never edit
    or restore it. Do REA work through the CLI (`npx -y rea-agents@6.5.0 <command>`), never through
    `xd://mcp__rea_*` devices.
-   **Job cap:** this session refuses a `task` call while ≥100 background jobs are running
-   (`async.maxJobs` 100, fixed at process start; three lanes run concurrently); the refusal
-   ("Background job limit reached (100)") spawns nothing. Retry the same payload every ~3 min
-   (`sleep 180`), up to 20 tries; never split or shrink below the band; if still refused, land the
-   round with verifiable work and report the refusals. Every concurrent writer needs an actual
+   **Capacity:** the session's job and concurrency limits are `async.maxJobs` and
+   `task.maxConcurrency` in `~/.omp/agent/config.yml` (operator-owned: read them, never change
+   them). Several lanes run at once, so a `task` call can still be refused at the job limit; the
+   refusal ("Background job limit reached") spawns nothing. Never split or shrink a wave below its
+   band, and never poll, sleep or loop on retries: resend the same payload only after one of your
+   own running jobs settles; if it is still refused, land the round with verifiable work and report
+   each refusal with its error text. Every concurrent writer needs an actual
    separate worktree, unique branch/path and observed base; bind its absolute paths there and
    keep one integration owner. Read-only seats return findings without production edits. Never
    run concurrent writers on one checkout. Seats never mutate the fleet repo, sibling lanes,
@@ -394,3 +339,12 @@ not, and name both in the report.
 8. **Honesty.** An unrun check has not passed; never fabricate evidence or verdicts; harmed or
    unprovable claims are reported, not prettified. Blocked on an operator decision → append an L0
    question, route around it, and still land an honest report.
+9. **Claim sizing** (fleet lesson from the 12 rejections):
+   - Declare each after-state as one concrete value that the closure can re-derive with one
+     command over committed bytes. Size it to what one round can land and verify.
+   - Use no universal clauses ("all", "complete", "every", "no harm anywhere") unless the counting
+     command enumerates the full set.
+   - A calibration claim must count mismatches between the lane's self-assessment
+     (SCORECARD/SHONEN) and observed repo state. It cannot be an assertion.
+   - Prefer 2 claims. Add a 3rd only if it is independent and cheap to verify.
+   - Never narrow a target after landing: a miss is an honest stop.
