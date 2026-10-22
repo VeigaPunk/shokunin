@@ -13358,6 +13358,47 @@
    "notes": "Dispatch digest: '2026-10-22T07:43:10-03:00 launch mado round=23 pgid=555711 driver=hyaku-inline attempt=1'; '2026-10-22T09:13:47-03:00 complete mado round=23; hyaku-inline attempt=1'. Operator-authorized repair-first recovery round (unblocked 10:43:09Z): C1 missed (6/12 vs 12/12) after the lane withdrew the classifier to base bytes, so the round is rejected-honest-stop and the lane re-blocks through the driver (Main). Routed defects: (1) lesson round-23.md:197-199 stale 'note file does not yet exist'; (2) corpus/README round-23 bullet omits C1 withdrawal; (3) M23-4/5/7 captured-by none but QUALITY.md unchanged; (4) sha256 prefixes cd9da20c/e1dc8029 printed like commit hashes; (5) S149 quote anchor :1014 spans :1013-1014; (6) C1 carry-forward: freeze wave-2 regression fixtures before any tripwire change; (7) H2 precision 166/175 unrepaired, L0 at .ufo/l0-questions.md:103. SHONEN boxes not fully checkable by a non-author (boxes 2-3 unchanged).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 39,
+   "date": "2026-10-22",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 39,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 39
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage:script-layer": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-39/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-39-verifier-spotcheck.md@f69817edf687c8ce4f87ed7953a353399232f69e",
+    "rechecks": "C1 re-measured by this closure: round-38 closure block (sha256 f4ecff36, extracted independently) over clone at 31c465f1 reads PRIOR62_CORRECTED 58/62 at fac39171 and 59/62 at 3908f322 and 774582670, OLD_TOKEN_LOSSES 0, pin 777/21/13 -> 778/20/13, baseline_true_changes []; pin diff changes only entry 475. C2 evidence-verified (lane gate not executed, PROTOCOL Gate standard): floor-probe receipts accepted=6/6 at fac39171 -> 0/6 at 3908f322, probe blob f33588ae identical at measured and tip; selftest 22/22 -> 30/30 receipts, AT case ids re-counted 22 -> 30; red-before 23/30; mutants 11/11; no scripts/pin/knowledge change 3908f322..tip. Spot-check: admit S8#475 agree, reject S8#112/#324/#410 agree, S034 quote verbatim agree (note R39-6). sources-census validate exit 0 (W04 S034). No review seats dispatched."
+   },
+   "commit": "kumitate-shokunin@f69817edf687c8ce4f87ed7953a353399232f69e",
+   "closed_at": "2026-10-22T12:28:45Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-22T06:43:14-03:00 launch kumitate round=39 pgid=2290663 driver=hyaku-inline attempt=1; 2026-10-22T09:22:48-03:00 complete kumitate round=39; hyaku-inline attempt=1. Repair-first recovery round (operator unblock). Lane open fac39171, tip 77458267, measured 3908f322; report eb3a7249 by kumitate-shokunin; 9/9 cited hashes ancestors; ahead=0, porcelain clean; prompt = template plus 11 substitutions plus addendum. Conformance facts (status-neutral): no wave ran (46-seat build wave never granted: 3600 s timeout then cancelled at freeze; 37-seat falsify wave timed out, live=70 pending=33 cap=85); one ordinary call of 8 seats (5 critic, 3 reviewer), round total 8, below the operator 32-100 band; canonical L2 floor count of 8 in one call met, role split (connector, executor, scribe, scout) not met. Routed defects: R39-1 self-declared review source reads CLEAN (S8#92, token the); R39-2 raw swap inside one path loses base-true hatch claim at S8#456, run reorder 5/20 accepted; R39-3 debt headroom 73 in S8; R39-4 probe lacks benign-edit control, CritClaimC2 sweep 3/15 mutants alive, no round-39 frozen replay; R39-5 (routed from tameshi r26 closure) cite-check.mjs@1205c66 dropping only the resolved guard at :1590 passes 62/62 selftest yet flips VERDICT FAIL->PASS on a zero-resolved document, statically confirmed (FAIL asserts only :1873, :1968); R39-6 report misattributes W04 to kama/tameshi, census W04 is per-lane and the duplicate is the lane's own S023; R39-7 cite-check 639->639 has no committed receipt (only errors=643 at 654d1b28); R39-8 default pin clone missing (checklist 8/15) and kimi-layer declared 10 vs derived 9, both present at open. SHONEN all [~], not judged fully checkable (checklist environment-blocked); promotion operator-owned. Runtime model exposed: anthropic/claude-opus-5-5. Installs: none.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
