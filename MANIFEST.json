@@ -14697,6 +14697,46 @@
    "notes": "launch 2026-10-22T17:52:50-03:00 kake round=34 pgid=3998466 driver=hyaku-inline attempt=1; complete 2026-10-22T18:35:18-03:00 kake round=34; hyaku-inline attempt=1. Conformance pass: report 6d7e9971 by kake-shokunin, prompt 7b1c1e84, SHONEN 4 lines all [~], 9 cited lane hashes ancestors of master, controls dcef39b5/0cce15f0 resolve only from retained bundles (disclosed), lane ahead=0 clean, template 116/116 lines. SOURCES.md seat write/revert never committed (blob bac1bf2e identical base..5613071; 9ef758c +11 rows; 76fac3b S077 tier only). Holds KakeR31.CriticC1Counter and KakeR31.CriticSandboxThreatModel not recreated. Not admitted: both declared targets reached by do-nothing controls; work itself judged real (unprovable-but-better). Routed: (1) declare a target a do-nothing control cannot reach, scoring retained controls before build; (2) lookup control misdescribed as keying on case directory name (it hashes argv+file contents; dir rename would not defeat it); (3) no gate|probe registry row for link-preview-audit in SKILL.md; (4) C2 census published in pre-build receipt c2-at-d08d8de.json; (5) S074 'no og: occurrence' overclaims; (6) carried D1-D4, tool first-og:url/template-canonical/non-UTF-8, Git-pin mutants, option tables, NUL crash, freshness-pins, r31 F1-F3. Operator: trivial-baseline clause not in committed prompt/template/addendum bytes (grep empty). SHONEN: none promoted.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 42,
+   "date": "2026-10-22",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 42,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 42
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unprovable",
+    "coverage": "unchanged",
+    "coverage:script-layer": "unchanged",
+    "coverage:runtime-layer": "unchanged",
+    "coverage:kimi-layer": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-42/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-42-verifier-spotcheck.md@2a7f37d2b0a413db8499b413783c27a0effdc989",
+    "rechecks": "C1 NOT verified against the kill rule declared before data (plan b237e3f0:21-22 'killed = exit non-zero with a VERDICT: FAIL line', counters frozen): awk re-count over committed final/c1-measured-c9a084bf.txt lines 12-54 -> 34/41 killed (survivors suite-group-verdict, suite-exit-text, suite-any-fail, V382, V385, V387, M19) so the gate counter reads SURVIVED not the declared CLEAN exit 0; A1 (a0a07bae 17:01:18 -03) was written after build seats scored both rules (CritC1Honesty 17:00:02 plan_rule_survived=6) and the code implements a third rule (failLines>0, gate-mutants.mjs:426-434). Terms re-measured by plain count (A runnable files in scripts/, C '- [' lines in SKILL.md): A 9->10, C 17->19, integer 8->9, capability rows 2->3 reproduce, but the counter is blind (listed lines; zero-byte .mjs reads 9 per post-close CritC1Claim) -> operability unprovable. C2 re-measured and verified: census member ids 31->32 with locks/ K3 at kimi-census.mjs:125 (0 locks hits at dfabe92), live root 27 non-chain children with locks the only base-undeclared one, host stat equals receipt (inode 96401346), knowledge :415-426 cites S041/S042; every pre-data after-value met; integer held 10 as pre-declared; falsify 'unchanged' (integer did not move) rejected: AXES coverage is the fraction of real surfaces governed, 26/27->27/27. No-harm: SCORECARD diff no axis or v1 term decreased, v1 keyset 23=23, v1 functions byte-identical. Gates not executed; GATE_MUTANTS/KIMI_CENSUS/proxy MATCH/selftests evidence-verified only. Spot-check 7/7 agree (S039, S041 admits; S043, S044, S045, Stryker intro, GfG rejects); S039 quote re-fetched verbatim by closure; sources-census validate W04+ok exit 0; rows 38->45."
+   },
+   "commit": "kumitate-shokunin@43f54c16a808094d60fa4d1caff84380ed4cc582",
+   "closed_at": "2026-10-22T22:03:15Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-10-22T16:46:15-03:00 launch kumitate round=42 pgid=618710 driver=hyaku-inline attempt=1; 2026-10-22T18:15:09-03:00 complete kumitate round=42; hyaku-inline attempt=1. Step 1: report e46327c3 by kumitate-shokunin (18:14:44, before complete); SHONEN 4 lines/4 boxes [~][~][~][ ]; 6/6 cited lane hashes ancestors of master; jj-lane state ahead=0 behind=0 tracked=0 untracked=3; prompt carries the template contract (2 rendering hunks; AXES wording drift vs MISSION.md:26, operator-side). Status ok; not admitted: C1 misses its pre-data frozen counter (34/41), a miss is an honest stop (prompt 6.9); C2 verified. Defects (status-neutral, routed in the spot-check D1-D8): D1 three falsify reports from seats the report calls cancelled (CritC1Claim, CritSeparabilityTip, CritTradesTip) delivered after close and sit untracked in the lane; D2 three different kill rules (plan, A1, code) and false 'before any counted run' provenance (plan:81, lesson:10,:111); D3 operability proxy counter-blind; D4 gate-mutants hard-coded seat SCRATCH_TMPDIR, frozen --rev both-target check exits 2, 4/8 isolation mutants survive; D5 cite-check before-side 526/481 not committed; D6 gate-pins prefix head match + fail-open; D7 C2 locks mode floor/owner/sessions/stub gaps; D8 B1 fix lacks red-before case, S045 names no Q criterion; report lacks an explicit cross-domain line. R41-2 kumitate-gate-pins-v1 block: no harm (no axis or v1 term moved by it), but a widening of the lane's round-34 'advisory retained' text; operator ruling pending (L0 9a00d09). 12 falsify seats cancelled: their attacks are absent, not passed. Holds AtkNovelIdentity, AtkNovelRecords not recreated. SHONEN not fully non-author checkable; no promotion. Tool installs: none.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
