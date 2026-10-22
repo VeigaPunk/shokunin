@@ -576,3 +576,10 @@ Holds added this leg: `kumitate40-AtkNovelIdentity`, `kumitate40-AtkNovelRecords
 | 2026-10-22T15:48:37Z | Advance kotoba; dispatch kotoba r52 attempt 1 (A3, third Tier-A round of cycle 2) | `advance` → `kotoba r51 rejected -> next 52` (kotoba's first rejection this leg). Sentinel windows: 22 in-session closures, 16 admitted, 6 rejected. Dispatch evidence `0697c2b`; base `c8579a4c`; L1 `KotobaR52`. Repair-first note; frozen-counter rule; aim to land by 17:45Z. New L1 context rule: a seat reporting an automatic model switch after a safety filter has ended its item, and its findings are not evidence. Lanes in flight 4: kaidoku r27, mori r27, kake r31, kotoba r52. |
 
 Deadline list update (UTC): add 17:48:37 freeze kotoba r52; 19:08:37 hard stop kotoba r52.
+
+| Observed checkpoint | Event | Evidence / result |
+|---|---|---|
+| 2026-10-22T15:50:00Z | Closure tsukuroi r26: ADMITTED | `HyakuCloseTsukuroi26` (fresh, non-author; model `anthropic/claude-opus-5-5`; 10m45s): MANIFEST `rounds[464]` at fleet `77b5e7fb6a4f`; spot-check `3beab8ddcf4e`. C1 depth re-counted on `git archive` exports (0 → 6/6); corrected SH rows checked true against committed sources. C2 calibration valid on its earned part (21 repo-state checks 3 → 0; K01–K06 self-referential, no credit). Axes depth and calibration improved; no harm (SCORECARD append-only). Trends: expansion improved, quality unchanged, discernment improved. The tooling-directive append is a status-neutral fidelity defect. Routed 1–5. Two admits in a row for tsukuroi. |
+| 2026-10-22T15:50:59Z | Advance tsukuroi; dispatch tsukuroi r27 attempt 1 (B5, cycle 2) | `advance` → `tsukuroi r26 admitted -> next 27`. Sentinel windows: 23 in-session closures, 17 admitted. Dispatch evidence `0ec746b`; base `3beab8dd`; L1 `TsukuroiR27`; routes r26 items 1–5, bars a third calibration claim, routes `mori-shokunin/corpus/knowledge/userspace-oom-killers-r26.md@ef9dbee1`, aims to land by 17:50Z. Lanes in flight 5/5: kaidoku r27, mori r27, kake r31, kotoba r52, tsukuroi r27. Closures running: kotodama r53, kumitate r40. |
+
+Deadline list update (UTC): add 17:50:59 freeze tsukuroi r27; 19:10:59 hard stop tsukuroi r27.
