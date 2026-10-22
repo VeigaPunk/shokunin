@@ -13943,6 +13943,47 @@
    "notes": "Driver digest: 2026-10-22T11:41:36-03:00 launch kaidoku round=27 pgid=1190817 driver=hyaku-inline attempt=1; 2026-10-22T12:56:42-03:00 complete kaidoku round=27; hyaku-inline attempt=1. Report landed by lane identity at 57a140ed after tip 29a76a63; all 7 cited commits are ancestors of main; jj-lane state ahead=0, porcelain empty. Honest stop: R27-C1 missed 15/16 (one genuine byte-identical repeat refused by the frozen duplicate-bytes gate, M27-2/QUALITY row 40); R27-C2 met. Freeze row round-27 FLAGGED INSTRUMENT_ABSENT (C2 product absent at freeze by design), INSTRUMENT_REVISED, INSTRUMENT_UNPINNED (recompute-ids.py, byte-identical since base). Dead seats: 6/34 wave-2 mutation-testers died at spawn 'No model selected' (17.6%, operator-owned route); QUALITY rows 38-40 and the C2 tool got no mutation test. Conformance defects (status-neutral): no SKILL.md registry rows for round-27 counters/tool; C2 selftest red at tip (correct-stub anchored pre-row). Routed to kaidoku: (1) round-27 pointer in r26 evidence-ID entry and a QUALITY row superseding row 37 (analyze/inspect id holds only for same snapshot suffix); (2) re-anchor C2 selftest; (3) registry rows; (4) pin every counter-loaded file at freeze; (5) repaired duplicate-bytes gate only as a new frozen claim; (6) contiguous HTML quotes; (7) SCORECARD :3125/:3130 clarifications; (8) mutation tests deferred by dead seats. SHONEN boxes 1-2 look checkable by a non-author (operator-owned promotion). Installs: none.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 27,
+   "date": "2026-10-22",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 27,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 27
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "improved",
+    "operability": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-27/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-27-verifier-spotcheck.md@6ebd518f10e53057da926353d99442d51267ccaf",
+    "rechecks": "C1 re-measured: count-c1.sh fc09f96c -> entry=absent 0/0 C1=unmet exit 1; df886be1 -> entry=present new_rows_cited=7 skill_rows=11 C1=met exit 0 (matches report); SOURCES rows 126 -> 144, no id deleted; entry facts re-checked against upstream bytes (base.c:597 v7.2, systemd v262 main.c:3063 and user@.service.in:35, earlyoom v1.9.0 kill.c:25,27,411-421 and earlyoom.default:5, omp v18.12.6 executor.ts:2): all hold, no overclaim in 3 spot-reads. C2 re-measured: count-c2.sh df886be1 -> a2_cases=0 0/10 C2=unmet exit 1; withdrawn by amendment W1 before data -> not verified. Evidence-verified, not executed: tools/ diff empty, CriticC1Admission PASS 32/32 21/21 12/12 census 134, ReviewPrivacyLanded retention metric 4 at 5f00fd04 = base. SCORECARD diff 29+/0-; QUALITY 19+/0-; S090/S093/S124 byte-equal to first publication. Census validate mori ok exit 0, six pre-existing W04. Spot-check 3/3 agree (admit S127; rejects oom.h row folded into S127, cgroup-v2 v7.2 already S092); S129 quote verbatim, 24 words. Seats: ReCheckEntryFacts, ReCheckNoHarm, ReCheckPromptContract (read-only reviewers)."
+   },
+   "commit": "mori-shokunin@df886be1cc75f1052002698bdb4a3d18a2eaf6c6",
+   "closed_at": "2026-10-22T17:51:16Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-10-22T12:35:27-03:00 launch mori round=27 pgid=3771336 driver=hyaku-inline attempt=1; 2026-10-22T14:25:31-03:00 complete mori round=27; hyaku-inline attempt=1. Closure re-dispatch (first closure seat killed by an omp restart before writing). Step 1 pass: report ee9adb22 by mori-shokunin after lane tip df886be1; SHONEN 4 lines; 14/14 cited hashes ancestors of master; state ahead=0 behind=0; porcelain only ?? .scratch/ (2026-10-21, pre-round); prompt = template + substitutions + hyaku addendum s6. RULING: C2 was declared at 761b4cdb (SCORECARD, contract) and withdrawn by amendment W1 (dd4dbb20) after its case-writer seat died at spawn; no A2 case exists, so nothing was narrowed after landing, but no protocol path removes a declared claim from the admission set and C2 is unmet at the tip. A withdrawn claim is not a verified claim: admission fails; honest disclosure before data, outside cause, no axis harmed -> rejected-honest-stop. C1 alone verifies (depth improved). Defects (status-neutral): W1 heading dated 15:55Z but shipped in dd4dbb20 committed 15:50:10Z (future-dated evidence). Routed to mori: (1) append dated correction for W1 time; (2) commit tip-revision receipts (no C1 receipt or retention scan committed at df886be1); (3) QUALITY 81 unmet at tip, S096/S097/S101 restore or supersede; (4) superseding rows for S127/S128/S129/S131 defects and ReopenS140 low finding; (5) C2 / r26 D7 A2 case freeze with a blind case writer and CriticC2Counter fixes; (6) r25 R1, R5 code debt. Operator: seven misrooted fleet-root files (base.c, oom_kill.c, MANPAGE.md, main.c, meminfo.c, sd-main.c, user@.service.in) still present, writer unknown; wave-1 dead-at-spawn 7/34 from route outage; wave 2 22 seats cancelled at run budget (6 partial reports committed). SHONEN not fully checkable by a non-author (two boxes [ ], two [~]).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
