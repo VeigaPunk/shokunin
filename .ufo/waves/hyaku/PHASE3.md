@@ -459,3 +459,22 @@ Deadline list update (UTC): remove 13:03:13 (kumitate r39 landed).
 | 2026-10-22T12:29:36Z | Advance kumitate | `closed` → `1 admitted`; `advance` → `kumitate r39 admitted -> next 40`; no `blocked/kumitate` (streak broken). Kumitate rejoins the normal order at D10. Sentinel windows: 13 in-session closures, 9 admitted (`AAARAARAAARRA`). Five lanes in flight, at the K target of 5, so no backfill. Waiting for slots, in rank order: kumitate r40 (D10), plus mori and tsukuroi after their closures. |
 | 2026-10-22T12:30:00Z | Closure mori r25: ADMITTED | `HyakuCloseMori25` (fresh, non-author; model `anthropic/claude-opus-5-5`; 22m21s): MANIFEST `rounds[455]` at fleet `d610afff86a2`; spot-check `248408f5b661`. C1 re-measured with git and Python reads (4 → 0; holds under the original D1–D4 rules too; claim wider than its counter). C2 after-value holds (21 frozen cases before the tool; tool blob at head equals the measured blob); none of the 72 broken configs is in the frozen set; the claim is wider than its counter and the SCORECARD capability row is contradicted (routed). No axis harmed at head: independent re-scan 4 → 88 → 4. Public-remote history `7634be7..f137046` still holds settings-file paths and line refs, 4 copied key values, a 10-key layout, 1 session id, 1 session-store path, 1 session-record field; 0 credential or secret values; nothing rewritten. SKILL row 2 contradiction confirmed (R3). Trends: expansion improved, quality improved, discernment improved. Routed R1–R8; drift: r26 must work a different frontier area. |
 | 2026-10-22T12:30:09Z | Advance mori; L0 filed | `closed` → `1 admitted`; `advance` → `mori r25 admitted -> next 26`. L0 line filed for the operator's history-disposition decision (remote `github.com/VeigaPunk/mori-shokunin`). Mori keeps training; its next note bars copied settings values and session identifiers. Sentinel windows: 14 in-session closures, 10 admitted (`AAARAARAAARRAA`). Five lanes in flight at the K target of 5. Waiting, in rank order: mori r26 (B4), kumitate r40 (D10); tsukuroi after its closure. |
+| 2026-10-22T12:31:00Z | Seat misaddressed Main | `KotobaR50.SrcOpencodeDocs` asked Main which S-id to claim. Main redirected it to its L1 (KotobaR50 owns SOURCES integration) and told it not to message Main or `agent://all` about lane content. |
+| 2026-10-22T12:32:12Z | Freeze message: kotodama r52 (2 h) | Sent to KotodamaR52, keeping the harm-repair exemption; hard stop 13:52:12Z. Next timer at 13:45:33Z. |
+
+#### Deadline list, consolidated at 12:33Z (UTC; supersedes earlier lists)
+
+| Deadline | Action |
+|---|---|
+| 13:45:33 | Freeze message: kake r30 |
+| 13:52:12 | Hard stop if no landed report: kotodama r52 |
+| 13:54:44 | Freeze message: kaidoku r26 |
+| 14:07:31 | Freeze message: tameshi r27 (harm-repair wave exempt) |
+| 14:13:49 | Freeze message: kotoba r50 |
+| 15:05:33 | Hard stop: kake r30 |
+| 15:14:44 | Hard stop: kaidoku r26 |
+| 15:27:31 | Hard stop: tameshi r27 |
+| 15:33:49 | Hard stop: kotoba r50 |
+| 15:56:36 | T0+8h read-only drift checkpoint |
+| 18:56:36 | T0+11h: no new dispatches |
+| 19:56:36 | Wrap complete |
