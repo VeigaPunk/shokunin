@@ -14324,6 +14324,47 @@
    "notes": "dispatch 2026-10-22T14:52:07-03:00 launch mori round=28 pgid=1917534 driver=hyaku-inline attempt=1; complete 2026-10-22T16:27:12-03:00. Both declared claims verified as declared; none withdrawn. Lane pushed ahead=0. Six untracked lane paths: .scratch/ (pre-round, not round work per r24), w1/FixR1Runway.md (withheld round output, disclosed), wave1-run.err (validator stderr), w2/MutCountC1Amended.md, w2/MutHeadingCheck.md, w2/MutTipReceiptCheck.md (late wave-2 round outputs, uncommitted, not evidence). Defects routed: commit/disposition late outputs; C2 blindness leak (CaseA2r03) and uncovered A2-07/A2-10 breach shapes; Gate table has no reject line; tip receipts measured at parent 5ef4e8db (receipt-only tip); report census count off (10 W04, 4 new incl. S147); carried MutCountC1 F1/F2/F3/F6/F10, S146 teaches, reader range citations, old used-by cells, r25 R1/R5. SHONEN not fully checkable by a non-author.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 28,
+   "date": "2026-10-22",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 28,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 28
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "depth": "unprovable-but-better",
+    "calibration": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unprovable-but-better",
+    "discernment": "unprovable-but-better"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-28/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-28-verifier-spotcheck.md@bacbe9cc31d09b5e58e265b0138bd75d0cdb6b47",
+    "rechecks": "Re-measured, counters not executed: C1 runs.tsv exit0=60 exit1=1, heldout 187 rows, tally recovered 186, primary rule named 137 right 137 wrong 0 (target 61/61, 187/187 missed: h09 holds one unlinked-library placeholder, envelope invalid_format). C2 own jq rule check over 230 ok responses: entries 246, mismatches 0, predicted_true 59 (target met; 168/230 pre-seen per preseen-overlap receipt, so a re-observation). Evidence-verified: after receipts c1 exit 1 / c2 exit 0, selftests 21/0 and 17/0; frozen inputs unchanged since 87d3dfb6/86fa8526 (git diff --quiet). Range diff +16482 -0, no axis harmed. Census kaidoku ok, six W04, exit 0. Spot-check: S084, S085, S086 re-curled, sha256 match, quotes located (agree); S087 reject-not-row (agree)."
+   },
+   "commit": "kaidoku-shokunin@242b0d8b8ad6ff6c693fa5114216fbb538b587bf",
+   "closed_at": "2026-10-22T19:31:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch: attempt 1 launched 14:09:06-03, lane-dead-no-report 14:30:08-03 (omp restart 17:26Z); attempt 2 launched 14:30:09-03, complete 16:27:10-03; report fleet 656e724. Conformance pass (ahead=0, 12 commits on main, lane identity) except one tracked leftover: .ufo/waves/round-28/a2w/ExecR27SelftestFix.md modified after 242b0d8b by the still-running seat (timestamps 19:26Z and one sentence); seat report only, not round work. Routed: (1) do not file with a live seat; settle that report; (2) r27 defect 2 still open, selftest FAIL correct-stub; (3) hex-screen before any C1 freeze; (4) real held-out filtered test with unseen predicted-true and predicted-false entries; (5) freeze gate must audit every claims*.json; (6) counters must require the claim-specific Gate row. SHONEN 4 boxes [~], not judged fully checkable.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
