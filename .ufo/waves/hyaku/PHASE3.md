@@ -248,3 +248,19 @@ Computed at `2026-10-22T08:00:22Z` from the latest five explicitly admitted hyak
 | 19:56:36 | Wrap complete |
 
 - Each new dispatch adds a freeze line at +2 h and a hard-stop line at +3 h 20 min. A landed report removes that lane's later lines.
+
+### Landings 3–4 and the first recovery round
+
+| Observed checkpoint | Event | Evidence / result |
+|---|---|---|
+| 2026-10-22T09:40:00Z | Tameshi r25 landed (L1 TameshiR25, 1h37m) | Lane pushed at `f4e8f7d835a8`; report fleet `0888a12dd3c3`, landed last. Shape: one v2 wave of 65 seats (28 reviewer, 16 critic, 4 mutation-tester, 5 scout, 6 executor, 4 scribe, 2 connector); attack 48/65 (74%); 0 dead; no residual call. L1 claims: C1 calibration (`c1-measure` 0/3 → 3/3, a record repair with gate code unchanged), C2 coverage capability (`tools/mte-interop.py` absent → PASS 8/8, selftest 17/17). Disclosed mid-round harm: cold-read monitor 62/62 → 45/62 → back to 62/62 through 17 author re-anchors (not independent cold reads). Seat install: `puppeteer-core@23.11.1` via npm into /tmp. |
+| 2026-10-22T09:41:50Z | Verify tameshi; closure | `OK tameshi r25 landed: report 0888a12 lane tip f4e8f7d83`. Depth sentinel: 13446 bytes (0.83 of median), 83 pointers (0.63). No trip. Fresh non-author job `HyakuCloseTameshi25`; it must rule on the harm-and-restore. |
+| 2026-10-22T09:42:02Z | Dispatch mori r25 attempt 1 (B4, second round this cycle) | Dispatch evidence `49f0d4a`; base `28b79d3d`; L1 `MoriR25`. Routes r24 D1–D4 plus the six surviving mutants. |
+| 2026-10-22T09:42:30Z | Tsukuroi r24 landed (L1 TsukuroiR24, 1h26m) | Author verdict: honest stop. C1 missed (267/268 findings with recorded operations); C2 missed (4/5 premises; snapshot-boot behaviour unverified). Lane `f923750ddcb5`; report fleet `6babb7cd5743`. Shape: two v1 waves, build 40 + falsify 34 = 74 seats, 0 dead. Sources 86 → 114. Scope and sequencing violations disclosed. Installs: none. |
+| 2026-10-22T09:43:00Z | Verify tsukuroi; closure | `OK tsukuroi r24 landed: report 6babb7c lane tip f923750dd`. Depth sentinel: 14876 bytes (0.81), 76 pointers (0.54). No trip. Fresh non-author job `HyakuCloseTsukuroi24`. |
+| 2026-10-22T09:43:13Z | Kumitate unblocked (operator ruling, D10) | Removed `blocked/kumitate`, which read: "three consecutive rejected closures through round 38 (2026-10-21T05:19:27-03:00)". Appended to `events.log`: `2026-10-22T06:43:13-03:00 operator-unblock lane=kumitate round=39 reason=goal-20261022-hyaku-12h operator ruling: one repair-first recovery round (D10); restore block if rejected`. Outcome files r36–r38 are all rejected, so a rejected r39 re-blocks through the driver's streak rule. Main verifies that at advance. |
+| 2026-10-22T09:43:13Z | Dispatch kumitate r39 attempt 1 (recovery) | Dispatch evidence `072cbfd`; base `fac39171`; L1 `KumitateR39`. |
+| 2026-10-22T09:44:00Z | Timers | `bg_4` and `bg_1965` killed as moot (tameshi and tsukuroi landed). One timer: `bg_1985` fires at 11:19:46Z. |
+| 2026-10-22T09:44:00Z | State | Lanes in flight 7/7: kaidoku r25, kotodama r51, kama r25, kake r28, kotoba r49, mori r25, kumitate r39. Closures running: tameshi r25, tsukuroi r24. Next in order: tameshi r26 and tsukuroi r25 after their closures, then mado r23 (recovery). |
+
+Deadline list update (UTC): remove 10:03:00, 10:15:06, 11:22:57 and 11:35:06 (landed). Add 11:42:02 freeze mori r25; 11:43:13 freeze kumitate r39; 13:02:02 hard stop mori r25; 13:03:13 hard stop kumitate r39.
