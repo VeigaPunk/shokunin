@@ -1,6 +1,6 @@
 # tsukuroi — round 28 report (attempt 1, 2026-10-22, L1 TsukuroiR28)
 
-Lane repo `/home/vgpnk/Projects/shokunin/tsukuroi-shokunin`; claim base `3b9e0430b88d01415c241dd5a18b8939b8a520ac`; lane branch `master` = remote = **`ca6b14997a97dd024194633a4135674079f1affe`** (helper `landed` line). Short box (dispatch 18:50Z); two small repair claims from the round-27 routed list.
+Lane repo `/home/vgpnk/Projects/shokunin/tsukuroi-shokunin`; claim base `3b9e0430b88d01415c241dd5a18b8939b8a520ac`; lane branch `master` = remote = **`d824884a16b34e6fab12ab2aa8df4ad15de50379`** (helper `landed` line). Short box (dispatch 18:50Z); two small repair claims from the round-27 routed list.
 
 ## Work performed
 
@@ -29,6 +29,8 @@ Work items:
 | `938ca8ec564f911df22162cec64ae3c48a9f1eb5` | measured outcome, axes table round 28, LOG entry, final receipts | LOG "Round 28" |
 
 | `ca6b14997a97dd024194633a4135674079f1affe` | residual CritC2OverStrict repair (R4a floor 16 → 10 characters, Gate `Id`/`Source id` column read first; 55-case selftest); lesson residual section and Mistake R28-SEAT-COMMITTED-IN-LANE; residual reports and `measure/final2/` receipts | LOG "Round 28" |
+
+| `d824884a16b34e6fab12ab2aa8df4ad15de50379` | residual RevFrontierRows corrections appended to the lesson: S147 located quote replaced by a verbatim substring ("means a test caught the mutation successfully."; the first cell was tag-stripped), QUALITY 60 disclosure of the one in-place QUALITY line (69); residual report | LOG "Round 28" |
 
 Gates at `ca6b1499`: C1 battery 0 of 24, control 6; C2 battery 0 of 5, control 6; `check-kernel-taint.py --revision` 6 rows; `check-self-assessment.py` PASS, 0 mismatches; `check-registry-coverage.py` PASS; sources census exit 0; lane worktree clean.
 
@@ -63,7 +65,7 @@ Census `/home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate --root 
 ## Round shape, seats and process
 
 - Shape: one v1 wave (validated, policy band 32-64) plus one residual `task` call. **Wave 1: 35 seats** — 17 reviewer, 5 critic, 4 executor, 4 scribe, 2 mutation-tester, 1 sentinel, 1 connector, 1 scout (`.ufo/waves/round-28/w1-spec.json`, `w1-dispatch.json`); a planned labrat item was refused by the validator as a non-swarm role and re-filed as reviewer RevSiblingMode before dispatch. **Residual: 6 seats** (4 reviewer, 2 critic; `residual-dispatch.json`). **Round total 41.** No second wave: fewer than 32 attack items remained after wave 1. Planner seat: held by the L1.
-- Dead seats (never replaced): RevFamilyB6, RevBatteryFidelity, RevC1Docstring, RevFamilyB7 — "Retry budget exhausted after 5 retries: Devin stream error resource_exhausted: Reached free model rate limit … Your limit will reset in 28 minutes (at 19:43 UTC)". RevFamilyB2 cancelled by the L1 at 19:15Z as the suspected writer of sandbox commits into the lane. Returned after the first draft and folded in: ExecRegistryCoverage (registry red at `f8e3a8f2`, green from `bd5bd683`), MutC2Counter, RevC1Repairs. Still running at report time: MutC1Counter, SentinelBattery, RevFrontierRows (findings not in this report).
+- Dead seats (never replaced): RevFamilyB6, RevBatteryFidelity, RevC1Docstring, RevFamilyB7 — "Retry budget exhausted after 5 retries: Devin stream error resource_exhausted: Reached free model rate limit … Your limit will reset in 28 minutes (at 19:43 UTC)". RevFamilyB2 cancelled by the L1 at 19:15Z as the suspected writer of sandbox commits into the lane. Returned after the first draft and folded in: ExecRegistryCoverage (registry red at `f8e3a8f2`, green from `bd5bd683`), MutC2Counter, RevC1Repairs. RevFrontierRows (S146 verified byte-identical on re-fetch; S147 quote not verbatim → corrected in `d824884a`; QUALITY 60 disclosure added) returned after the first landing and is folded in. Still running at report time: MutC1Counter, SentinelBattery (findings not in this report). Census exit 0 and self-assessment 0 mismatches re-checked at `d824884a`.
 - Observed answering models: minimax-code/MiniMax-M3.1-Flash (ExecSourcesCensus, ExecRerunAllGates), opencode-go/deepseek-v4.1-flash (ScribeMistake), zai/glm-5.3-flash, devin/swe-2, openai-codex/gpt-6.1-sol (ConnSiblingCounters); others not exposed.
 - Lane contamination: see Landed changes, "Lane HEAD repair"; working-tree bytes were verified equal to `master` (`cmp` of every round-28 file) before the repair.
 - Misroot sweep: `git -C /home/vgpnk/Projects/shokunin status --porcelain` lists no file written by this lane's seats (ScoutLaneState checked the untracked fleet files for tsukuroi content).
