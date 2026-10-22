@@ -14406,6 +14406,47 @@
    "notes": "launch 2026-10-22T15:52:18-03:00 pgid=3552765 hyaku-inline attempt=1; complete 16:28:50-03:00. Lane landed 41da22a/1dde85f and rewrote the fleet report (2012146 -> 38ae0ff) after the prompt's head 1076914a; verdict identical at both. Transient untracked c1-after-final3.stdout committed by lane before close (final state ahead=0, clean). Routed: (1) C1 open: cover Round-18 registry, restore restraint 8/box3_mismatch 0, land widely-read input edits before the content revision; (2) S059 digests no longer reproduce: supersedes row; (3) close against one head, no post-complete landings/report rewrites; (4) round-27 routed items 4-6 still open. SHONEN all [~], none promotable.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 29,
+   "date": "2026-10-22",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 29,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 29
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "depth": "improved",
+    "calibration": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unprovable-but-better",
+    "quality": "improved",
+    "discernment": "unprovable-but-better"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-29/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-29-verifier-spotcheck.md@d210fb8fa62d2af04d009cfa0c65a4e8137dc742",
+    "rechecks": "Gates not executed (PROTOCOL Gate standard); committed evidence verified: C1 selftest cases=22 failures=0, C2 cases=19 failures=0, after receipts at 2f18996d exit 0, 12 frozen pins equal, data after freeze. Re-measured independently at 33570c3a: C1 16/16 runs exit 0, 152/152 rows, primary triple 122/122/0/30 recomputed, 0/152 base overlap; C2 178/178, 252 entries, 0 mismatches, 38/214, 26 keys unseen, rival rules 15 and 38 mismatches. Axis ruling: C1 coverage misfit (replication of a held rule on author-picked stubs; PROVINCE:95 frontier unchanged; openchain_first baseline 152/152/0) -> coverage unchanged, claim does not verify as axis-move; C2 depth fit, verifies. INSTRUMENT_UNPINNED (M29-3) not material: pinned counter implements the rule, round-28 script unloaded and unchanged. Spot-check: S087, S088 admits and 2 rejects agree; census kaidoku ok exit 0."
+   },
+   "commit": "kaidoku-shokunin@33570c3ab8e4c9748fa48ae4609113c561e20e05",
+   "closed_at": "2026-10-22T20:52:30Z",
+   "campaign": "hyaku",
+   "notes": "Driver: 2026-10-22T16:46:20-03:00 launch kaidoku round=29 pgid=619856 driver=hyaku-inline attempt=1; 2026-10-22T17:43:19-03:00 complete kaidoku round=29; hyaku-inline attempt=1. Conformance pass (report by lane f9560fa5, SHONEN 4x[~], 7 hashes ancestors of main, ahead=0, tree clean, prompt sections 1-6). Round-28 routed defects 1-6 closed. Rejection rests on C1 axis fit, not a missed target: every frozen number was met. Routed: (1) C1 axis misfit, mine lesson + QUALITY criterion; (2) C1 target cannot fail on rule quality, need bar a trivial baseline fails; (3) M29-3 unpinned round-28 script, record supersession and exit-code pre-freeze check; (4) M29-1 fix not shown able to fail; (5) 15/16 C1 carriers lack opened provenance; (6) SCORECARD:3166 S085 correction incomplete; (7) c1 counter docstring names round-28 paths. SHONEN not judged fully checkable by a non-author. Tool use: pycryptodome 4.1.0 via ephemeral uv run (uv 0.13.0). HOLD U064N008Hf47eb933 untouched.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
