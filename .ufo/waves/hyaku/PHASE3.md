@@ -610,3 +610,9 @@ Metrics at T0+8h:
 - Blocked or parked: chousa, kama, mado (driver blocks); tameshi (session park). Recovered: kumitate (r39 recovery admitted, then r40 admitted), kake (three straight admits), tsukuroi (two straight admits).
 - Holds added this leg: kumitate r40 `AtkNovelIdentity`, `AtkNovelRecords` (safety filter with automatic switch).
 - Open L0 lines filed this leg: chousa block; job ceiling; bot-challenge access; kama block; mori public history; tameshi park; m_mim route degradation; kumitate safety hold. Plus lane-filed: mori capacity cause, mado precedence, kotoba precedence, tsukuroi pause-lift evidence.
+
+| Observed checkpoint | Event | Evidence / result |
+|---|---|---|
+| 2026-10-22T15:59:00Z | Load re-run (sentinel action) | Re-read the binding contract (Quality bar through Early stop). Points carried forward: no new dispatches after 18:56:36Z; stop earlier for a lane whose median round would end past 19:41:36Z; the wrap JSON name `session-wrap-20261022.json` already belongs to the previous session's wrap, so it is not overwritten (the name is decided at wrap time, with the reason recorded). |
+| 2026-10-22T16:00:00Z | Early-stop check: credential store | The dead-seat error text names a credential store ("No model selected. Use /login, set an API key environment variable, or create …/agent.db"). `~/.omp/agent/agent.db` exists (18 MB, written 12:57 -03) and every other route authenticates. "No model selected" appears in 21 session files, all m_mim-role spawns after its primary was deprecated. Classified as route degradation (L0 filed), not a credential-store error, so no early stop. |
+| 2026-10-22T16:00:00Z | Timer armed | Next timer fires at 17:35:25Z (mori r27 freeze). Remaining freezes: kake r31 17:38:23, kotoba r52 17:48:37, tsukuroi r27 17:50:59, kumitate r41 17:56:44. Effective last dispatch about 17:35Z. |
