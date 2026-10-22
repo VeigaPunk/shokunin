@@ -83,3 +83,56 @@
 | 2026-10-22T07:59:38Z | Baseline closure count | 118 hyaku rows exist before new closures. Latest existing row index 440 is kama r24. New closure sequence begins after this checkpoint. |
 
 - All seven retryable stale failures used: `superseded at 2026-10-22T04:56:36-03:00: stale 2026-10-21/22 author; fresh attempt`. No prior author identity was resumed; no private tree was deleted.
+
+### Provider preflight settled — 2026-10-22T08:00:22Z
+
+| Alias | Probe role | Answering model observed | Result |
+|---|---|---|---|
+| @m_opus | task | anthropic/claude-opus-5-5 | Ready |
+| @m_auto | critic | cursor/default (Auto; underlying model not exposed) | Ready |
+| @m_luna | sentinel | Not exposed to seat | Ready |
+| @m_mim | scribe | opencode-go/minimax-m3.1-flash-free:high | Ready |
+| @m_flash | scout | charm-hyper/deepseek-v4.1-flash | Ready |
+| @m_zfl | reviewer | zai/glm-5.3-flash | Ready |
+
+- Six distinct configured aliases answered. No model parameter, routing change, install, or explicit reroute was used. This proves current answers, not the availability of every fallback or sustained swarm capacity.
+- The scribe reported unrelated historical/global log noise; it is not attributed to this session without a correlated identity. No held item gains clearance from a smoke answer.
+- Initial ledger commit/push observed: `b76621931c7bf094a79c1fff5bac9f2e2b64f397`.
+
+### Depth sentinel baseline
+
+Computed at `2026-10-22T08:00:22Z` from the latest five explicitly admitted hyaku reports available per lane. Evidence pointers are occurrences matching repo-relative paths, URLs, or 7–40-digit commit hashes; the same expression is used at closure. Fewer than five available reports are disclosed, not fabricated.
+
+| Lane | Available admitted reports | Median bytes | Median evidence-pointer occurrences |
+|---|---:|---:|---:|
+| tameshi | 5 | 16228 | 131 |
+| chousa | 1 | 17076 | 107 |
+| kotoba | 0 | unavailable | unavailable |
+| mori | 5 | 14952 | 114 |
+| tsukuroi | 5 | 18253 | 141 |
+| kaidoku | 5 | 16446 | 125 |
+| kotodama | 0 | unavailable | unavailable |
+| kama | 5 | 10129 | 70 |
+| kake | 4 | 12665.5 | 102.5 |
+| kumitate | 1 | 12145 | 94 |
+| mado | 5 | 14093 | 128 |
+
+- Sentinel threshold is strictly below 40% of a lane's median in either field; it triggers a restore-depth note to the next L1, not a padded report or automatic verdict.
+
+### Phase 0 close and first dispatches
+
+| Observed checkpoint | Event | Evidence / result |
+|---|---|---|
+| 2026-10-22T08:02:00Z | Operator interjection | Message `/m,odel`, read as a mistyped `/model` picker command. No setting, route or model changed; the leg continues. |
+| 2026-10-22T08:02:00Z | Addendum amendment landed | `HyakuAmendAddendum` committed and pushed `2a835a9523da1560412ab45d802900334b6282a6` through `fleet-commit.sh --as protocol`; only `scripts/hyaku/lane-addendum.md` changed. Main reviewed it: directive 3 quoted verbatim, round total 32–100 seats, v1 build/falsify default and v2 single-wave alternative, the exact routing sentence, the goal-file reference for lane order, and §6.9 Claim sizing. Residual note: the v2 attack-role list names labrat, but the validator taxonomy is normative and labrat runs only as an executor-spawned probe. |
+| 2026-10-22T08:02:30Z | Seat gate | `wave-slot.sh status`: live_estimate=1, recent_reservations=0, cap=200 (state), mem_avail_mb=27038. Old ledger rows are outside the 120 s pending window. |
+| 2026-10-22T08:02:57Z | Dispatch tameshi r25 attempt 2 (A1) | `inline.sh dispatch tameshi` exit 0; dispatch evidence `699a21d`; base `1f7315732e0c`; L1 job `TameshiR25`. |
+| 2026-10-22T08:02:58Z | Dispatch kotoba r48 attempt 2 (A3) | `inline.sh dispatch kotoba` exit 0; dispatch evidence `70fc54b`; base `197b5a4087ba` (attempt-1 prerequisites `c0185da5` and `75f671b1` are on the branch); L1 job `KotobaR48`. |
+| 2026-10-22T08:03:00Z | Dispatch mori r24 attempt 2 (B4) | `inline.sh dispatch mori` exit 0; dispatch evidence `3c2bf2f`; base `c725aa37aa3c`; L1 job `MoriR24`. |
+| 2026-10-22T08:04:00Z | Closure chousa r28 | `HyakuCloseChousa28` (fresh, non-author; model `anthropic/claude-opus-5-5`): status ok, admitted=false, verdict rejected-honest-stop. Operability unprovable, other axes unchanged. Trends: expansion unchanged, quality unchanged, discernment improved. Spot-check `6c5eb1466f2b`; MANIFEST rounds[441] at fleet `fd9509e4586d`. Routed defects D1–D5 include run-together words and an 8 h 21 min round. |
+| 2026-10-22T08:04:07Z | Advance chousa → BLOCKED | `inline.sh advance chousa` printed `BLOCKED after 3 rejected` (r26 rejected-harmed, r27 rejected, r28 rejected); next=29. Parked for this leg; L0 line appended. |
+| 2026-10-22T08:05:00Z | Timers armed | `bg_4` fires the 2 h freeze message at 10:03:00Z; `bg_5` fires the T0+4h checkpoint at 11:56:36Z. |
+| 2026-10-22T08:05:00Z | Phase 0 complete | Finished in about 9 minutes, inside the 75-minute cap. Slots 3/3: tameshi, kotoba, mori. Next eligible in order: tsukuroi, kaidoku, kotodama, kama, kake, kumitate (recovery), mado (recovery). |
+
+- Sentinel accounting rule: an in-session closure is the closure of a round dispatched after T0. The chousa r28 closure reconciled a pre-T0 round. It appears in the wrap tally but is excluded from the sentinel windows and the K-raise count, because it measures the old regime, not this leg's dispatch note.
+- L0 baseline: 2 lines contained `L0 ANSWER` at T0+9min. Any later increase is checked for a hold answer, and the answered lane joins at the end of the order.
