@@ -341,3 +341,10 @@ Deadline list update (UTC): kama landed, so 11:19:46 and 12:39:46 now apply to k
 | 15:56:36 | T0+8h read-only drift checkpoint |
 | 18:56:36 | T0+11h: no new dispatches |
 | 19:56:36 | Wrap complete |
+
+### Freeze phase
+
+| Observed checkpoint | Event | Evidence / result |
+|---|---|---|
+| 2026-10-22T11:30:26Z | Freeze message: kotoba r49 (2 h) | Timer `bg_4380` fired; freeze sent to KotobaR49; hard stop 12:50:26Z. Next timer `bg_4630` at 11:43:13Z covers both mori r25 (71 s late) and kumitate r39. |
+| 2026-10-22T11:30:38Z | Gate sample | live_estimate=66, cap=85. Active grants (UTC): tsukuroi r25-w1 38 at 10:19:18; kaidoku a3-w1 33 at 10:42:14 (1h23m after dispatch); tameshi r26-w1 39 at 10:53:07 (1h01m after); mado r23-w1 36 at 11:01:46; kake r29-w2 39 at 11:14:40; kotoba r49-falsify 38 at 11:25:06. Late first waves at K=9 suggest gate queueing. K stays at 9 at most and does not rise. All nine eligible lanes are in flight (chousa and kama parked), so freed slots go to lanes whose closures clear, by rank. |
