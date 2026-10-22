@@ -13690,6 +13690,49 @@
    "notes": "Driver digest: 2026-10-22T09:07:33-03:00 launch tameshi round=27 pgid=4159631 driver=hyaku-inline attempt=1; 2026-10-22T11:07:14-03:00 complete tameshi round=27; hyaku-inline attempt=1. Step-1 conformance: pass (report 4a3106b9 by lane identity, after lane head; SHONEN 4/4 [~]; 9/9 cited lane hashes ancestors of master; ahead=0, porcelain 0; prompt = template plus substitutions and hyaku addendum section 6). Operator commit 167c0e3 (considerthese) inside base..head, not round work. Round shape: v1 wave 51 (reviewer 42 with 39 cold reads, executor 3, critic 2, mutation-tester 1, connector 1, scout 1, scribe 1; attack 45/51) plus residual 8 reviewers = 59. Rejected-honest-stop: C2 verified (classified 0->4), C1 missed (25/64 -> 60/64, restraint 6 -> 6, mismatch 1 -> 1); no axis harmed vs base 91edf9cd; calibration still harmed vs pre-harm r26 base d4140796 (62/62, restraint 8). '15 SKILL errors' = 13 pre-existing + 2 self-introduced; last 3 corrections not re-read. Drift: calibration claimed six rounds running (r22-r27); routed-item origin r24-r27; Main applies the same-surface rule. Routed to tameshi: cold-read 4 uncovered sections and restore restraint 8; registry-check full run at landed head (2227d83 receipt predates SKILL registry-row edits); SOURCES.md:338 next id S092 and missing round-27 search-log note; README F8 'independently anchored' -> 3 of 4; QUALITY 53/54 amendments and S012 tier supersedes row; runner --regression nlegs sum check; wording (39 of 51 seats, 13+2 defects) and ledger re-indent. Routed to kumitate: round-26 cite-check hole routing dropped by kumitate R39-5 (seat ConnectorOverlap). SHONEN not fully checkable by a non-author (box 3 backed 60/64; boxes 1, 2, 4 lane assertion). No seats dispatched; no installs.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 26,
+   "date": "2026-10-22",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 26,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 26
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "freshness": "improved",
+    "coverage": "improved",
+    "operability": "unchanged",
+    "depth": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "userspace OOM killer one-shot read (tools/mori-oom-killers.py, blob 3fb78bbc): earlyoom 1.9.0 and systemd-oomd unit state, earlyoom version and four startup thresholds, counts of earlyoom send/escalation/failed-kill/low-memory lines for the current invocation, oomd kill notices this boot, KILLER_ACTED/KILLERS_UNKNOWN/KILLERS_QUIET verdict; frozen selftest PASS 32/32 over cases blob 5b4dcee7 landed at 5b10649d before the tool c2fdd929 (evidence-verified at 950d8a56, tool and cases bytes equal at head); amendment-A2 rules pinned by no case file (detector inputs only); counts are log lines, not processes killed"
+   ],
+   "report": ".ufo/reports/round-26/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-26-verifier-spotcheck.md@fc09f96c8036094bef06370dbb4b436edf96e6e3",
+    "rechecks": "C1 re-measured: plain fixed-string grep of the 4 frozen phrases 4 -> 0 (248408f5 -> ef9dbee1), committed count-c1.sh agrees (r26_entry present, 13 new source ids S114-S126, r12 names r26 4x); independent markup-tolerant sweep of corpus/SKILL/PROVINCE/SCORECARD finds no undated present-tense inactive-earlyoom statement; host read-only probe earlyoom 1.9.0-1 active/enabled, systemd-oomd inactive/disabled, systemd 262-1. C2: before absent and freeze order (5b10649d ancestor of c2fdd929, cases unchanged, N=32, blob 5b4dcee7) re-measured; PASS 32/32 evidence-verified at 950d8a56 (tool blob 3fb78bbc equal at head); not executed. Retention scan re-implemented from the frozen round-18 policy: 4 unallowlisted at base and at head (109 -> 113 hits, 4 new all class R7 name-only and allowlisted; 0 new session-identity/store/routing/session-record hits). Census validate exit 0 (6 pre-existing W04). Spot-check: 5 admits (S114, S117, S118, S124, S126) and 1 seat-level reject (v1.9.0 earlyoom.service URL, 404) re-opened, all agree; S124 row and 16-word quote re-opened. No review seats dispatched."
+   },
+   "commit": "mori-shokunin@ef9dbee136d6ed2ef98687f5cb0c0a16506a5155",
+   "closed_at": "2026-10-22T14:52:22Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-22T10:05:13-03:00 launch mori round=26 pgid=1826598 driver=hyaku-inline attempt=1; completion digest: 2026-10-22T11:41:32-03:00 complete mori round=26; hyaku-inline attempt=1. Report by mori identity (1 commit e9943445, after lane tip, before complete line); 24 cited commits all ancestors of master (deadbeef is the counter's bad-rev probe); jj-lane state ahead=0; prompt = template (11 placeholder lines) + hyaku addendum. Uncommitted paths ruled: .scratch/ inherited; w2/OperabilityNoHarm.md late prose-only rewrite (no number changed); w2/ReopenS116S117.md returned and cited but uncommitted (conformance defect, status-neutral); w2/ReopenS118S119.md and w2/ReviewEntryOomdFacts.md complete late reports from seats counted as cancelled, not integrated. Attack share on returned seats: wave 1 11/35 (31%), wave 2 18/19 (95%), round 29/54; 15/34 wave-2 seats cancelled at the L1 budget, no dead seats. Drift rule: r23-r25 counted calibration routed repairs; r26 claims freshness+coverage on FR10, a new frontier area (watch: coverage via a new one-shot tool 3 rounds running on different surfaces). Routed to mori r27: D1 commit or dispose the uncommitted wave-2 reports and fix the returned/cancelled tally; D2 S117 entry source-line description differs from the row, gate quote unlocated; D3 S124 teaches changed in place (CORPUS rule 2: new superseding row); D4 r26 entry says oomd xattrs account killed pids (they count processes); D5 README r26 row says S114-S125; D6 count-c2.sh exits 0 on selftest failure; D7 no case file pins the A2 rules; round-25 R1/R3/R7 and R5 self-test still debt. SHONEN boxes 1 and 2 look non-author-checkable from committed bytes; box 3 unassessed; promotion operator-owned. Installs: none.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
