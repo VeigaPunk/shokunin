@@ -1,6 +1,6 @@
 # kake round 31 report (hyaku, in-session L1 KakeR31a2, attempt 2)
 
-Lane tip (pushed): `08ff06c224620f1fd259b421430b1ba8fafdff67` (branch `master`; `jj-lane.sh state`: local = remote, ahead 0, untracked 0). Base `f1ffb81738c92c0537b99b30970143ab9419f990`, unchanged from the claim.
+Lane tip (pushed): `46b94fa588e1b9c33e7ffbfb3bebb66b52a950db` (branch `master`; `jj-lane.sh state`: local = remote, ahead 0, untracked 0). Base `f1ffb81738c92c0537b99b30970143ab9419f990`, unchanged from the claim.
 
 Attempt 1 (L1 `KakeR31`) died in an omp process restart at 17:26Z (`.ufo/watchdog.log` line 734, `lane-dead-no-report kake round=31`) after landing up to `92235a0`. Attempt 2 re-measured that tip, re-checked the attempt-1 draft of this report claim by claim, and finished it.
 
@@ -17,7 +17,7 @@ Work items, attempt 1 (re-verified by attempt 2 and by wave-2 seats):
 
 Work items, attempt 2:
 - Re-measured the inherited tip `92235a0`: C1 5/5 K1 holds, C2 4/4, strict 5/5 (`.ufo/waves/round-31/verification/c1-a2-at-92235a0.json`, `c2-a2-at-92235a0.json`, `c2-strict-a2-at-92235a0.json`).
-- Wave 2 (falsify), 36 seats, `.ufo/waves/round-31/a2-w2/` (35 reports, `seat-status.json`). Repairs it caused, all at `9a7f5be`:
+- Wave 2 (falsify), 36 seats, `.ufo/waves/round-31/a2-w2/` (36 reports, `seat-status.json`). Repairs it caused, all at `9a7f5be`:
   - A dot-named symlinked case is now a failed case. Before, it was skipped silently (`a2-w2/CriticSymlinkCases.md`, `CriticC1Wording.md`). Spec P5 gained `.h5b`, and the `fde133a` runner fails it (`verification/a2-fixes/hostile-selftest-fde133a-runner.json`: exit 1, P5 false).
   - The ambiguous `--r` is refused by the runner (`CriticArgvAllowlist.md`).
   - A scratch path containing ":" is refused, because Git splits `GIT_CEILING_DIRECTORIES` on it (`CriticGitPins.md`). Under the `fde133a` runner such a path exits 0; under the repaired runner it exits 2 (`a2-fixes/colon-tmpdir-*.json`).
@@ -49,6 +49,7 @@ All landed through `jj-lane.sh`. Each change is tied to a LOG.md entry ("Round 3
 - `92235a0` SCORECARD measured results, after receipts at `fde133a`, attempt-1 wave-2 spec.
 - `9a7f5be2b2091fc9b76adc803b8b442d5c292d08`: the attempt-2 wave-2 repairs and appended corrections listed above, the inherited leftovers, the a2-w2 spec and dispatch, re-measure and fix receipts.
 - `08ff06c224620f1fd259b421430b1ba8fafdff67`: SCORECARD "Round 31 — attempt 2 re-measure and wave-2 repairs", the LOG attempt-2 entry, lesson row notes, wave-2 reports and `seat-status.json`, receipts at `9a7f5be`.
+- `46b94fa588e1b9c33e7ffbfb3bebb66b52a950db`: the late wave-2 report `a2-w2/ReviewRunnerDiff.md` (returned after the 18:41Z freeze) and `seat-status.json` updated to 36/36 returned. No code changed.
 
 ## Before → after measurements
 
@@ -102,7 +103,11 @@ The 45 committed fixtures stay clean at `9a7f5be` (`verification/benign-a2-at-9a
   - The §3 floor (connector, 3 executors, scribe, scout, reviewer, critic) was dispatched in wave 1, but the executor and scribe seats died there. The L1 holds the planner seat; the validator rejects `planner`.
 - Wave 2, `kake-r31-a2-w2` (attempt 2, wave-slot granted, dispatched 18:04Z; policy v1, `a2-w2-dispatch.json`): 36 seats.
   - Roles: reviewer 23, critic 11, scout 1, mutation-tester 1.
-  - Outcomes: 0 dead, 0 refused, 0 model switches. 35 returned. `ReviewRunnerDiff` had not returned when this report landed, so its review is not evidence for this round.
+  - Outcomes: 0 dead, 0 refused, 0 model switches, 36 returned. `ReviewRunnerDiff` returned after the 18:41Z freeze. It found no falsification of the runner diff and four LOW/INFO items, none repaired because of the freeze:
+    - OSError from `fstat` or `read` in `read_expected` escapes the error handler;
+    - stray regular files, FIFOs and sockets at the fixture root are skipped;
+    - the option tables duplicate the gate parser by hand;
+    - the docstring wording on symlinks inside a case could be misread.
   - The attempt-1 wave-2 item `ReviewC1CounterDesign` was dropped as a rephrase of the held CriticC1Counter. `MutRunnerGuards` was added; the guards it tests did not exist when wave 1 ran.
   - `ReviewHostileSelftestCode` (an attempt-1 planned item) built a name-refusing runner, an attack close to the held item's ground. It completed with no refusal, and its finding is used above.
 - The attempt-1 wave 2 (`kake-r31-w2`, 36 specified) was never dispatched: no slot was granted before the restart. It counts 0 seats.
