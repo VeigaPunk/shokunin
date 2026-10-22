@@ -1205,3 +1205,56 @@ The indentation receipt has 93 checks; `canonical-final-checks.txt` has the fina
   to fill concurrency. No100-round completion, full conformance or global
   privacy/no-effects certificate is asserted. No tools installed or updated.
 
+## 2026-10-22 — measured custody API and jj publication checkpoint
+
+- Kaidoku25's corrected subject landed/pushed at
+  `fafdd283432731a675b71e201bb9ba767c394553`, SHA256
+  `54c43cdc01930fcb58f14053d8099f4b28352147656a05d811574cc74e7d34fb`.
+  Independent static review caught the trailing-LF anchoring and failed-Git-
+  read-as-absence defects before the first candidate run; both were corrected
+  without changing the original oracle or the frozen full contract.
+- Main's actual unchanged I ruler executed34/34 original pairs exactly,
+  exit0. Separately, all22 expanded H01–H16 calls matched their primary
+  exit/finding and scope; both H15 positive evidence vectors matched actual
+  Git modes, objects, computed hashes and revision identities. All named
+  before/after state hashes were unchanged. No audited instrument/fixture
+  program was executed; original before remains unavailable, not34 failures.
+- The first held-result serialization redundantly repeated446MB of identical
+  state maps and hit a transport error after every measurement had completed.
+  Main recovered the existing results without rerunning: the55KB held record
+  references the already-persisted exact ruler baseline and two tiny owned
+  fixture states. Full argv/env/stdout/stderr/expected/observed data remains.
+  These finite passes do not erase QUALITY33, native-role/chronology/pin/
+  scratch debts, grant admission or rescue original R24 calibration.
+- Kama24's independent verifier is pushed at
+  `147f5bdd3228ab712520b5f377346cb2d9a64769`; MANIFEST[440] at
+  `383fca88674a3ccebb4547d9496d0aeb5f076c05` rejects the full original
+  claim without substituting amended47/47. The initial Root caller timeout
+  was diagnosed: one real instrumented invocation finished in225.6s,
+  with the stale-mission walk traversing23.3M mostly `.jj` files in mori.
+  Its actual output proves Kama24 statusok/target debt0/CNE0; global60 debt
+  and81CNE remain. No gate weakening, source edit or confirmation rerun.
+- Kotodama51's outside prereg review reported a provider safety filter plus
+  automatic fallback. Exact cause/scope was not exposed in native metadata.
+  Main preserved the original item and frozen88/97 packet, parked the author
+  and filed an L0 documentary disposition. No post-filter findings, F,
+  corrections, reroute, replacement or implementation were authorized.
+- Latest user routing supersedes the temporary FlashX primary: global
+  `m_zfl = zai/glm-5.3-flash:max`; the remaining existing cascade is preserved.
+  A fresh no-tools call answered directly from zai Flash. The temporary
+  FlashX model-selector binding was removed; unrelated aliases stayed intact.
+- User requested publication through jj. Main initialized a colocated Root
+  workspace with automatic tracking disabled, tracked/fetched `master@origin`
+  and retained runtime/user dirt outside the publication selection.
+  Exactly64 native scouts were dispatched once through the existing `m_zfl`
+  role binding, each in its own small metadata worktree. They audit21 lane
+  repositories across three distinct checks plus one Root check; they cannot
+  merge, edit source, create repositories or push.
+- No new shokunin was minted in this resumed work. Five existing public
+  repository links missing from Root README were independently GitHub-verified
+  and added: tameshi, mado, tsukuroi, tabi and souji. Souji's actual remote is
+  `VeigaPunk/shokunin-repo-hygiene`. Canonical roster membership remains13;
+  all21 physical repositories are linked without fabricated promotion.
+- Unreviewed author/prereg work, private/held material, runtime state and the
+  unrelated `write` artifact remain excluded. No tools installed or updated.
+

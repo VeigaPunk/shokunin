@@ -125,11 +125,17 @@ repo names are `<id>-shokunin`; remotes use both historical naming patterns.
 | [mori-shokunin](https://github.com/VeigaPunk/mori-shokunin) | fleet & host observability (森) — census gate, silence oracle, drift pin | repository link only — not in MANIFEST |
 | [chousa-shokunin](https://github.com/VeigaPunk/chousa-shokunin) | deep-research method (調査) — research gate: claims/chains/sweeps/integrity verification | repository link only — not in MANIFEST |
 | [kotodama-shokunin](https://github.com/VeigaPunk/kotodama-shokunin) | linguistic-cultural worldbuilding (言霊) — languages, myths, symbols, eras & costumes coupled; hands off to the lore world bible | repository link only — not in MANIFEST |
+| [tameshi-shokunin](https://github.com/VeigaPunk/tameshi-shokunin) | verification-fixture craft | repository link only — not in MANIFEST |
+| [mado-shokunin](https://github.com/VeigaPunk/mado-shokunin) | desktop & compositor craft | repository link only — not in MANIFEST |
+| [tsukuroi-shokunin](https://github.com/VeigaPunk/tsukuroi-shokunin) | host operability & repair | repository link only — not in MANIFEST |
+| [tabi-shokunin](https://github.com/VeigaPunk/tabi-shokunin) | browser & web-interaction craft | repository link only — not in MANIFEST |
+| [souji-shokunin](https://github.com/VeigaPunk/shokunin-repo-hygiene) | repository & workspace hygiene | repository link only — not in MANIFEST |
 
-(2026-10 inventory note: mori, chousa, and kotodama have repository links here
-but are not among the current 13 `MANIFEST.json` roster entries. The physical
-local-directory count is 21; see the Round 12 audit for the exact census and
-revision-bound lane verdicts.)
+(The eight repository-link-only entries remain outside the canonical 13-entry
+`MANIFEST.json` roster; a working repository or a README link does not grant
+membership or promotion. All 21 physical lane repositories are linked above.
+The publication audit verified the GitHub destinations, including souji's
+historical remote name `shokunin-repo-hygiene`.)
 
 
 ## Files

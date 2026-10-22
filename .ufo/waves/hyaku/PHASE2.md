@@ -1432,3 +1432,29 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   per-lane prerequisite/publication records; no new admission or100-round
   completion is claimed.
 
+
+### Session 3 — measured results and requested jj integration (2026-10-22)
+
+- Kaidoku25 M=`fafdd283432731a675b71e201bb9ba767c394553`: actual original34
+  exact/exit0 plus separately reported22 expanded held matches, H15 semantic
+  evidence checks and unchanged named state. Scope/process debts remain;
+  no admission or old-failure rescue. The transport-only oversized-record
+  failure was recovered by lossless state references, no measurement rerun.
+- Kama24 is independently rejected at Root MANIFEST[440]/`383fca88`, with
+  verifier `147f5bdd`. The one diagnostic Root run225.6s supplies its real
+  statusok/target debt0/CNE0; original120s caller timeout remains recorded.
+  Global60debt/81CNE is not a clean ledger. No source/gate weakening.
+- Kotodama51 pre-F is documentary safety-held after its review's generic
+  provider-filter/autoswitch notice; author and exact88/97 files stay parked.
+  L0 has the explicit no-retry/no-reroute disposition request.
+- Latest routing: `m_zfl` is zai Flash:max, not FlashX; fresh direct smoke
+  succeeded. Remaining cascade and other alias values are unchanged.
+- User asked commit/push using jj and a64-`m_zfl` swarm. Root is now
+  jj-colocated, auto-tracknone, master@origin tracked/fetched. One actual64-
+  scout audit has64 independent metadata worktrees, no source write/push
+  authority; exact dispatch/registry and outputs are retained for publication.
+- README now links all21 existing lane repositories. No new mint/repository
+  creation was needed; five omitted existing links were fixed without adding
+  canonical membership or promotion. Drafts, holds, runtime and unrelated
+  artifacts are not silently swept into the release.
+

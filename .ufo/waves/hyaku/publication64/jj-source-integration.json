@@ -1,0 +1,318 @@
+{
+  "at": "2026-10-22T04:00:09.512407+00:00",
+  "results": [
+    {
+      "lane": "kasegi",
+      "repo": "/home/vgpnk/Projects/shokunin/kasegi-shokunin",
+      "branch": "master",
+      "dirty_exit": 0,
+      "dirty_paths": [],
+      "empty_working_copy": true,
+      "fast_forward_proven": true,
+      "operations": [
+        {
+          "argv": [
+            "jj",
+            "--config",
+            "snapshot.auto-track=\"none()\"",
+            "--repository",
+            "/home/vgpnk/Projects/shokunin/kasegi-shokunin",
+            "bookmark",
+            "track",
+            "master@origin"
+          ],
+          "exit": 0,
+          "stdout": "",
+          "stderr": "Warning: Remote bookmark already tracked: master@origin\nNothing changed.\n"
+        },
+        {
+          "argv": [
+            "jj",
+            "--config",
+            "snapshot.auto-track=\"none()\"",
+            "--repository",
+            "/home/vgpnk/Projects/shokunin/kasegi-shokunin",
+            "bookmark",
+            "set",
+            "master",
+            "-r",
+            "master@origin"
+          ],
+          "exit": 0,
+          "stdout": "",
+          "stderr": "Nothing changed.\n"
+        },
+        {
+          "argv": [
+            "jj",
+            "--config",
+            "snapshot.auto-track=\"none()\"",
+            "--repository",
+            "/home/vgpnk/Projects/shokunin/kasegi-shokunin",
+            "rebase",
+            "-r",
+            "@",
+            "-d",
+            "master@origin"
+          ],
+          "exit": 0,
+          "stdout": "",
+          "stderr": "Rebased 1 commits to destination.\nWorking copy  (@) now at: wmosxzxu 59fd35ca (empty) (no description set)\nParent commit (@-)      : uqqnklku 1fafde8f master | considerthese: 2026-10-21 daily reflection\nAdded 1 files, modified 0 files, removed 0 files\n"
+        },
+        {
+          "argv": [
+            "jj",
+            "--ignore-working-copy",
+            "--repository",
+            "/home/vgpnk/Projects/shokunin/kasegi-shokunin",
+            "git",
+            "push",
+            "--remote",
+            "origin",
+            "--bookmark",
+            "master"
+          ],
+          "exit": 0,
+          "stdout": "",
+          "stderr": "Bookmark master@origin already matches master\nNothing changed.\n"
+        }
+      ],
+      "disposition": "Fast-forward remote work integrated; published branch verified with jj git push"
+    },
+    {
+      "lane": "kumitate",
+      "repo": "/home/vgpnk/Projects/shokunin/kumitate-shokunin",
+      "branch": "master",
+      "dirty_exit": 0,
+      "dirty_paths": [],
+      "empty_working_copy": true,
+      "fast_forward_proven": true,
+      "operations": [
+        {
+          "argv": [
+            "jj",
+            "--config",
+            "snapshot.auto-track=\"none()\"",
+            "--repository",
+            "/home/vgpnk/Projects/shokunin/kumitate-shokunin",
+            "bookmark",
+            "track",
+            "master@origin"
+          ],
+          "exit": 0,
+          "stdout": "",
+          "stderr": "Warning: Remote bookmark already tracked: master@origin\nNothing changed.\n"
+        },
+        {
+          "argv": [
+            "jj",
+            "--config",
+            "snapshot.auto-track=\"none()\"",
+            "--repository",
+            "/home/vgpnk/Projects/shokunin/kumitate-shokunin",
+            "bookmark",
+            "set",
+            "master",
+            "-r",
+            "master@origin"
+          ],
+          "exit": 0,
+          "stdout": "",
+          "stderr": "Nothing changed.\n"
+        },
+        {
+          "argv": [
+            "jj",
+            "--config",
+            "snapshot.auto-track=\"none()\"",
+            "--repository",
+            "/home/vgpnk/Projects/shokunin/kumitate-shokunin",
+            "rebase",
+            "-r",
+            "@",
+            "-d",
+            "master@origin"
+          ],
+          "exit": 0,
+          "stdout": "",
+          "stderr": "Rebased 1 commits to destination.\nWorking copy  (@) now at: nqvzsuul 1234b6dd (empty) (no description set)\nParent commit (@-)      : usxkvpko fac39171 master | considerthese: 2026-10-21 daily reflection\nAdded 1 files, modified 0 files, removed 0 files\n"
+        },
+        {
+          "argv": [
+            "jj",
+            "--ignore-working-copy",
+            "--repository",
+            "/home/vgpnk/Projects/shokunin/kumitate-shokunin",
+            "git",
+            "push",
+            "--remote",
+            "origin",
+            "--bookmark",
+            "master"
+          ],
+          "exit": 0,
+          "stdout": "",
+          "stderr": "Bookmark master@origin already matches master\nNothing changed.\n"
+        }
+      ],
+      "disposition": "Fast-forward remote work integrated; published branch verified with jj git push"
+    },
+    {
+      "lane": "audio",
+      "repo": "/home/vgpnk/Projects/shokunin/audio-shokunin",
+      "branch": "main",
+      "dirty_exit": 0,
+      "dirty_paths": [],
+      "empty_working_copy": true,
+      "fast_forward_proven": true,
+      "operations": [
+        {
+          "argv": [
+            "jj",
+            "--config",
+            "snapshot.auto-track=\"none()\"",
+            "--repository",
+            "/home/vgpnk/Projects/shokunin/audio-shokunin",
+            "bookmark",
+            "track",
+            "main@origin"
+          ],
+          "exit": 0,
+          "stdout": "",
+          "stderr": "Started tracking 1 remote bookmarks.\n"
+        },
+        {
+          "argv": [
+            "jj",
+            "--config",
+            "snapshot.auto-track=\"none()\"",
+            "--repository",
+            "/home/vgpnk/Projects/shokunin/audio-shokunin",
+            "bookmark",
+            "set",
+            "main",
+            "-r",
+            "main@origin"
+          ],
+          "exit": 0,
+          "stdout": "",
+          "stderr": "Nothing changed.\n"
+        },
+        {
+          "argv": [
+            "jj",
+            "--config",
+            "snapshot.auto-track=\"none()\"",
+            "--repository",
+            "/home/vgpnk/Projects/shokunin/audio-shokunin",
+            "rebase",
+            "-r",
+            "@",
+            "-d",
+            "main@origin"
+          ],
+          "exit": 0,
+          "stdout": "",
+          "stderr": "Rebased 1 commits to destination.\nWorking copy  (@) now at: qqtnuyoo 00988a6b (empty) (no description set)\nParent commit (@-)      : kllzmokk 7a2fcd4f main | considerthese: 2026-10-21 daily reflection\nAdded 2 files, modified 0 files, removed 0 files\n"
+        },
+        {
+          "argv": [
+            "jj",
+            "--ignore-working-copy",
+            "--repository",
+            "/home/vgpnk/Projects/shokunin/audio-shokunin",
+            "git",
+            "push",
+            "--remote",
+            "origin",
+            "--bookmark",
+            "main"
+          ],
+          "exit": 0,
+          "stdout": "",
+          "stderr": "Bookmark main@origin already matches main\nNothing changed.\n"
+        }
+      ],
+      "disposition": "Fast-forward remote work integrated; published branch verified with jj git push"
+    },
+    {
+      "lane": "game-dev-2d",
+      "repo": "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin",
+      "branch": "main",
+      "dirty_exit": 0,
+      "dirty_paths": [],
+      "empty_working_copy": true,
+      "fast_forward_proven": true,
+      "operations": [
+        {
+          "argv": [
+            "jj",
+            "--config",
+            "snapshot.auto-track=\"none()\"",
+            "--repository",
+            "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin",
+            "bookmark",
+            "track",
+            "main@origin"
+          ],
+          "exit": 0,
+          "stdout": "",
+          "stderr": "Started tracking 1 remote bookmarks.\n"
+        },
+        {
+          "argv": [
+            "jj",
+            "--config",
+            "snapshot.auto-track=\"none()\"",
+            "--repository",
+            "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin",
+            "bookmark",
+            "set",
+            "main",
+            "-r",
+            "main@origin"
+          ],
+          "exit": 0,
+          "stdout": "",
+          "stderr": "Nothing changed.\n"
+        },
+        {
+          "argv": [
+            "jj",
+            "--config",
+            "snapshot.auto-track=\"none()\"",
+            "--repository",
+            "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin",
+            "rebase",
+            "-r",
+            "@",
+            "-d",
+            "main@origin"
+          ],
+          "exit": 0,
+          "stdout": "",
+          "stderr": "Rebased 1 commits to destination.\nWorking copy  (@) now at: szpxvpvl dde5b5ea (empty) (no description set)\nParent commit (@-)      : slkmwvkr 7753d49b main | considerthese: 2026-10-21 daily reflection\nAdded 2 files, modified 0 files, removed 0 files\n"
+        },
+        {
+          "argv": [
+            "jj",
+            "--ignore-working-copy",
+            "--repository",
+            "/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin",
+            "git",
+            "push",
+            "--remote",
+            "origin",
+            "--bookmark",
+            "main"
+          ],
+          "exit": 0,
+          "stdout": "",
+          "stderr": "Bookmark main@origin already matches main\nNothing changed.\n"
+        }
+      ],
+      "disposition": "Fast-forward remote work integrated; published branch verified with jj git push"
+    }
+  ],
+  "scope": "Only existing primary bookmarks, clean empty unpublished working copies, proven fast-forward; no private/held/topic history or immutable published commit rewritten."
+}
