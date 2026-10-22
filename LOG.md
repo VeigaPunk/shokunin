@@ -1109,3 +1109,29 @@ The indentation receipt has 93 checks; `canonical-final-checks.txt` has the fina
   Exact commands, streams, exits and limits:
   `.ufo/waves/hyaku/kotodama51-prerequisite/parent-{before-process,edge-processes,proof}.json`.
 
+## 2026-10-22 — Kake27 closed independently; current user routing saved
+
+- Three actual non-author advisory seats completed. Main rejected the full C1/C2
+  claims, retained their bounded evidence and published the verifier plus append-only
+  lane LOG/index at `22c1669c1fec83d1a0769de6b9ce686c75657e66`.
+  The existing locked append helper committed and pushed MANIFEST[439] at
+  `2537b4aaedea4b653873fa924cfcba2075b962ef`; admitted remains false.
+- Main exercised the published Sources census and corpus document consumer: both
+  exit0, with the inherited W04 duplicate-URL warning preserved. The actual registered
+  Root closure CLI gives Kake27 status `ok`, counter27, no target debt/CNE. Global
+  exit1/debt59/CNE81 is not clean. Exact processes and scope:
+  `.ufo/waves/hyaku/parent-closures/kake27/`.
+- Only then did the existing driver confirm `1 rejected`, advance27→28 and dispatch
+  once. A distinct real Kake28 worktree at that pushed verifier base and one actual
+  scoped author were created; no stopped R24 work or old failed item is reissued.
+  Cross-device FICLONE fell back to an ordinary Git worktree checkout, not a shared
+  writer or model fallback. The new author must obtain a real native planner and
+  durable prospective inputs before another genuine proposal wave.
+- Latest explicit user choices are saved and freshly read from global config:
+  planner `@m_swe`; mutation-tester `@m_mim`, whose existing alias effort is `xhigh`.
+  All other bindings, alias definitions, fallbacks and200ceilings are unchanged.
+  Already-admitted/completed work is not restarted, relabelled or replayed; configuration
+  verification is not physical provider-thinking attestation.
+  Evidence: `planner-m-swe-routing.json` and `mutation-tester-m-mim-xhigh-routing.json`
+  under `.ufo/waves/hyaku/`.
+

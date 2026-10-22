@@ -1345,3 +1345,37 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   score increase, whole-fleet clean result or100-round completion is asserted.
   No tools were installed, system/service transactions remain paused, and
   useful unmerged worktrees plus unrelated/untracked files are preserved.
+
+### Session 3 — completed Kake27 closure and latest role requests (2026-10-22)
+
+- All three fresh Kake27 outside reviews actually completed. Parent publication is
+  now real: lane verifier `22c1669c…`, Root MANIFEST[439] at `2537b4aa…`, all pushed.
+  Both full claims remain unprovable/admittedfalse. Main's canonical document/census
+  smoke and target-specific registered native proof are retained under
+  `parent-closures/kake27/`; globaldebt59/CNE81 remains, not a clean-ledger claim.
+- The driver confirmed exactly one negative closure, advanced Kake27→28, and dispatched
+  once from the verifier commit into `/fast/scratch/hyaku/kake-r28-author` on its own
+  branch. Native `KakeR28AuthorS3` actually spawned under a one-seat cap200 guard.
+  No code/claim freeze or new capability is asserted; planner-first and immutable
+  prospective payload custody are required before the next proposal wave.
+- Explicit user updates: global planner now resolves `@m_swe`; global mutation-tester
+  now resolves `@m_mim`, with the alias's existing `xhigh`. Saved writes and fresh
+  config reads verify both; other roles/settings and200ceilings remain unchanged.
+  Running work is not restarted and prior model/identity/chronology remains historical.
+- The exact originally zero-spawn Kotoba48 review payload was recovered from native
+  session metadata and admitted only after a genuine68-running-task event plus guard.
+  `Ko48InstrumentReview-2` is the first actual reviewer identity, not a dead replacement.
+  Its independent static review exposed instrument verdict/partial-receipt gaps;
+  the source-author corrected only pre-result ruler/metadata, keeping the13-case
+  oracle fixed. Actual Parent landing/baseline execution awaits exact delta approval.
+- Tsuku's original64/current continuations truly settled, then one actual distiller
+  made66known-native-spawned. Its numeric/API/scope errors and multiple leaf breaches
+  remain uncredited with separate author adjudication; no case/source code is executed
+  to repair chronology. Known native same-ID wakes add0seats, not productive floor.
+  Literal no-command violations are distinguished from actual project-source execution.
+- Kama reports one real post-fix64 wave at `92063cfc…`, after its full original W2
+  barrier; author budget192/200, not another whole wave. Current actual pins, guards
+  and terminal evidence—not planned counts—will determine independent closure.
+- Kengaku/source-history and all policy/item/rejection holds remain. No new hypothesis
+  is permission to retry stopped work, hide denied ancestors with nested allow roots,
+  replenish VOID seats, promote an unproved claim or report100rounds completed.
