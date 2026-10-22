@@ -801,3 +801,7 @@ Blocked lanes need operator unblock: tameshi, chousa, kama, mado. Set `wave-cap`
 Wrap artifacts: `.ufo/waves/hyaku/session-wrap-20261022-phase3.json` (schema `hyaku-session-wrap-v1`; `session-wrap-20261022.json` is not overwritten) and the HANDOFF.md pointer section. No admission, promotion or round-100 completion is claimed beyond MANIFEST.
 
 **Correction (appended, 19:36Z):** the running "Sentinel windows" admit counts in the rows from 19:30:37Z to 19:32:11Z over-count by one. A recount of MANIFEST `rounds[442..478]` gives 37 in-session closures with 27 admitted (not 28) and 10 rejected (9 honest-stop, 1 harmed). The wrap figures above use the recount. No sentinel decision changes: the lowest six-window still holds 3 admits.
+
+| Observed checkpoint | Event | Evidence / result |
+|---|---|---|
+| 2026-10-22T19:34:02Z | Final cancellations after closure | MoriR28 (closed `rounds[476]`, hard stop 19:35Z) and TameshiR28 (closed `rounds[478]`) still had seats running after the 19:32Z stop message, so both jobs were cancelled to prevent writes after closure. Lane state after the cancel: mori `7118f320` = remote, `ahead=0`, the 6 untracked paths its closure named; tameshi `367ec0f1` = remote, clean. No inline.sh fail was needed (both rounds advanced). No jobs remain except none; no timer is armed. |
