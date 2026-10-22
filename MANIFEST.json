@@ -13254,6 +13254,47 @@
    "notes": "Driver digest: 2026-10-22T06:30:28-03:00 launch kotoba round=49 pgid=1467692 driver=hyaku-inline attempt=1; 2026-10-22T08:48:49-03:00 complete kotoba round=49 hyaku-inline attempt=1. Report filed 8bf9073 by lane identity, extended by four appended addenda ecb3a52, 5d2774f, 87de5ea, c688a71 (each also rewrote header line 4, the lane-head pointer: defect D1); SHONEN 4/4 [~]; all 8 cited lane hashes ancestors of master; lane ahead=0, clean; operator commit aabf4cd (considerthese) in range, not judged. Routed r48 items: R1 fixed-bounded (frontmatter keying, 116->123; no-name fallback diverges from opencode), R2 answered (M29/Q25), R3 appended, R4 partly (21/23; stays open), R5 carried (v2 oracle specified). Routed defects: D1 report header rewritten by addenda; D2 box_proof docstring and SCORECARD operability headline still overstate (every conjunct / boxes executed), box proof not gated and coverage unenforced; D3 classification rule lacks contested-vs-split precedence, kengaku and tameshi unruled, guard accepts duplicate rows and is not floored; D4 SCORECARD adjacency row 'from their own bytes, 0 contested' needs qualifier; D5 lesson Gate records rejected 0 despite reject decisions; D6 carried R4/R5/R1 fallback. SHONEN not fully non-author checkable (box 3 rests on round-8 cold run). No review seats dispatched. Runtime model exposed: anthropic/claude-opus-5-5. Installs: none.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 26,
+   "date": "2026-10-22",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 26,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 26
+   },
+   "admitted": false,
+   "verdict": "rejected-harmed",
+   "verdicts": {
+    "depth": "improved",
+    "calibration": "harmed",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-26/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-26-verifier-spotcheck.md@91edf9cd82ccc72e10f62f81d37181f549d593b8",
+    "rechecks": "C1 re-measured: frozen c1-measure.py on git-archive trees d4140796 depth_score=8 exit 1, 40a12bf and e08444d3 depth_score=9 exit 0; plain grep of command-D ledger lines 8 -> 9; sweep 5/10 killed with restore OK, regression 9/9, interop 9/9, selftest 17/17 evidence-verified (gates not executed). C2 re-measured: c2-measure.py 3/3 exit 1 -> 0/3 exit 0 at 40a12bf and head; bytes re-read by plain grep/sha256 (registry rows 0 -> 4 mte-interop mentions plus SKILL.md:2118 row; amendment-3 file added in 77302fa as the correction states; verified-at names tool sha256 193ea6e3 = tool at head, receipts exist); under the session calibration rule only R25-SPOT-2 is a SCORECARD self-assessment record, so the calibration-qualifying population is 1 label (1 -> 0). Harm re-measured with round-21/coldread/measure.py in a clone: d4140796 62/62 restraint 8 depth 8; e08444d3 25/64 restraint 6 depth 9, strict, overrides false -> calibration harmed, unrestored. Census validate exit 0 (87 rows, seven old W04). Spot-check: admit (cite-check entry) agree, two rejects (S_EMPTY_GUARD equivalence; depth_score as table proof) agree; S088 and S089 quotes verbatim at source."
+   },
+   "commit": "tameshi-shokunin@e08444d3f2b40fc6734be4f1c57a56639add9c2d",
+   "closed_at": "2026-10-22T11:58:03Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-10-22T06:52:11-03:00 launch tameshi round=26 pgid=2455563 driver=hyaku-inline attempt=1; 2026-10-22T08:50:06-03:00 complete tameshi round=26; hyaku-inline attempt=1. Step-1 conformance: pass (report bf02f493 by lane identity, landed after lane head; SHONEN 4/4 [~]; 7/7 cited lane hashes ancestors of master; kumitate pin 1205c66 sha256 equal; ahead=0, porcelain 0; prompt = template plus substitutions and addendum). Round shape: wave 1 only, 39 seats, attack 14/39 = 35.9%; wave 2 (55 seats) validated, not dispatched; grant 10:53:07Z per PHASE3. Rejected-harmed: strict cold-read monitor 62/62 restraint 8 -> 25/64 restraint 6 at head; calibration harmed although C2 record repair verified. Drift: calibration claimed five consecutive rounds (r22-r26) confirmed from SCORECARD; 'from routed items' holds for r24-r26 only (three running); Main applies the same-surface drift rule. Routed to tameshi: restore monitor first; append correction to SCORECARD r26 C2 row 'numeric 8 -> 8' (monitor read 6); commit registry --only receipt at 2b064cf or a full head run; c2-measure gameable, bind receipts to tool digest; runner --regression nlegs sum check. Routed to kumitate: scripts/cite-check.mjs@1205c66 dropping only the resolved guard (filesScanned > 0 && !drift) survives the 62-case hermetic selftest and is not equivalent (VERDICT flips FAIL->PASS on a scanned doc with zero resolved citations; exit stays 2); add that case plus line n+1, --strict one-warning, unknown-flag exit 64, interior-slice pin. SHONEN not fully checkable by a non-author (box 3 backing 25/64). No seats dispatched; no installs.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
