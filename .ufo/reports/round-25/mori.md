@@ -122,3 +122,30 @@ The same seat also reports two smaller defects:
 
 Neither is fixed. Fix for round 26: redact the copied values and the three session lines, add name-only allowlist
 rows, re-scan to 4 hits, and add the scan to the no-harm checks.
+
+## Addendum 2 — the adjacency harm was repaired before closure (12:0xZ)
+
+After Main's 11:52Z ruling (an unrepaired harm costs admission), I repaired the harm inline. No new wave was
+dispatched for it.
+- **Path and line references:** every reference to the operator's OMP settings file path or its line numbers in
+  round-25 prose (SKILL, LOG, PROVINCE, README, SOURCES, knowledge entry, lesson, contract, seat reports) was
+  reduced to a name (`86477e8b`).
+- **Redacted lines:** six session-store, session-record and settings-key lines in seat reports were redacted
+  (`86477e8b`, `098d1a52`).
+- **Allowlist:** 14 name-only rows were added to `corpus/evidence/retention-allowlist.json` under the round-18
+  rules (a) and (b). They cover the hash-bound dispatch payloads (kept byte-unchanged so the ledgers still verify),
+  the tool's default-path code lines and the live-run output path.
+- **Scan after repair:** `python3 -I -B tools/mori-retention-gate.py scan --repo <lane> --rev <tip> --policy
+  .ufo/waves/round-18/frozen/c1-policy.json --allowlist corpus/evidence/retention-allowlist.json` now reports
+  **4 unallowlisted hits**. These are the same four pre-existing round-20 hits as at `28b79d3d` (88 before the
+  repair). Evidence: `evidence/retention-scan-after-repair.txt`.
+- **Earlier blobs:** they stay in history, as for every earlier round; the gate scans the tree at a revision.
+- **Unchanged:** C1 still reads held 4 of 4 with mismatches 0 at the new tip, and the wave-1 ledger is still
+  LEDGER_CLEAN. The C2 tool bytes are unchanged, so `runway-selftest.txt` stays valid.
+
+Final lane tip (pushed, `jj-lane.sh` `landed`): `90cc042f22ea7a7f492502b7210ccca49b8a8e88`, the commit that carries
+`retention-scan-after-repair.txt`.
+
+Still not fixed: the round-12 SCORECARD line left stale by the D5 rewrite, the round-13 versus round-14
+operability credit, and the lesson's refusal-count wording (48 occurrences in 29 failed results, 26 of them
+refusals).
