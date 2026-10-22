@@ -101,3 +101,24 @@ Route to kumitate: facts F4–F9 of the knowledge entry are the OMP harness cont
 - [~] At least one end-to-end domain task executed and logged in LOG.md — the live runway read is logged (`evidence/runway-live-run.txt`, LOG round-25 outcome).
 - [ ] Instructions executable by an agent without oral context
 - [~] No cross-domain bleed (PROVINCE.md still accurate) — the FR15 note routes mechanism to kumitate and configuration to the operator (`1888bc62`, `51dc8209`).
+
+## Late wave-2 finding, appended after filing (honest disclosure; not fixed)
+
+Wave-2 seat CriticHarmAxes (`mori-shokunin/.ufo/waves/round-25/w2/CriticHarmAxes.md`, not yet committed in the
+lane) ran the lane's own retention gate scan (`tools/mori-retention-gate.py scan`) over the committed tree.
+Unallowlisted hits went from 4 at `28b79d3d` to 88 at `07a31ae8`, and all 84 new hits are in round-25 files:
+- 80 operator-config references, some copying values or line numbers (for example `SKILL.md:658`, `LOG.md:1801` and
+  line 2 of the knowledge entry);
+- a session-identity hit and a session-store-path hit at `w1/SeatGateRelation.md:109`, the round-17 harm classes;
+- one session-record field (`SeatGateRelation.md:135`) and one routing-table key (`SrcRejections.md:86`).
+
+**Adjacency is therefore harmed by this round's own privacy gate, and under the admission rule ("no axis is
+harmed") both claims should be read as not admissible as filed.** The round's no-harm check ran only the gate's
+selftest, never the scan over the real tree.
+
+The same seat also reports two smaller defects:
+- `SCORECARD.md:620-621` (round 12) is left stale by the D5 table rewrite;
+- the Axes row credits operability 7 to round 13, which was rejected (7 was first admitted in round 14).
+
+Neither is fixed. Fix for round 26: redact the copied values and the three session lines, add name-only allowlist
+rows, re-scan to 4 hits, and add the scan to the no-harm checks.
