@@ -1379,3 +1379,23 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
 - Kengaku/source-history and all policy/item/rejection holds remain. No new hypothesis
   is permission to retry stopped work, hide denied ancestors with nested allow roots,
   replenish VOID seats, promote an unproved claim or report100rounds completed.
+
+### Session 3 — measured Kotoba48 before; frozen next design reviews (2026-10-22)
+
+- Kotoba48 has actual pushed independent I `c0185da5…` and before-data `75f671b1…`.
+  Main's fixed13 actual CLI matches every BASE prediction, with exactly5target
+  reds/8controls and caller/custody assertions complete. The new cross-run
+  missing-reference guard returns2 before scratch. Root LOG and the exact
+  `kotoba48-prerequisite/parent-*` records carry details and unchanged-oracle limits.
+  No production source or full SRT freeze is authorized.
+- Two genuine ordinary Tsuku24 design advisories now inspect the fixed12-file
+  prospective packet: native planner for C1 causal depth versus carrier/counting,
+  reviewer for C2 opt-in sidecar/legacy isolation/original occurrence authority.
+  Main independently pinned all12 files; the freeze is an endpoint, not retroactive
+  first-read or continuous enforcement. Ruler source is still absent.
+- One ordinary Kake28 payload reviewer inspects the staged validated72 evidence
+  assignments, actual planner qualifications and only the required native
+  `solutionSpace` transport addition. No72call is claimed; Main must approve and
+  durably land the exact adapted payload before dispatch. All three advisories
+  actually spawned under separate cap200 guards, are not another swarm/round,
+  have no shipping/judge authority and do not replace any failed/VOID member.

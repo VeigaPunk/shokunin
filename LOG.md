@@ -1135,3 +1135,32 @@ The indentation receipt has 93 checks; `canonical-final-checks.txt` has the fina
   Evidence: `planner-m-swe-routing.json` and `mutation-tester-m-mim-xhigh-routing.json`
   under `.ufo/waves/hyaku/`.
 
+## 2026-10-22 — Kotoba48 guarded ruler and actual configured-root baseline
+
+- Main pushed only the reviewed three-file prerequisite at
+  `c0185da52c673a463aa1631369fbb9e177d81c93`. Ruler `01af33a6…`, metadata
+  `8ef3c74f…` and fixed13 oracle `1d09a38c…` bind the unchanged BASE consumer.
+  A proved cross-run fail-open was closed before execution: a non-BASE revision
+  without the committed before receipt refuses before scratch/consumer creation.
+- Main ran the one literal13-case BASE matrix with per-command Git environment
+  neutralization. All13 real consumer exits are0; every independently predicted
+  BASE count matches. The ruler exits1 with exactly5target reds and8controls,
+  no evaluation errors, no behavioral mismatches and no unsettled/unobserved case.
+  Other27 values/28ids-statuses and source/input custody hold within this matrix.
+- The byte-exact actual receipt SHA256 is
+  `8bec447aa538446e84b7cb87b902c5f1021c42bd7a01f81ea14313262f7e2312`;
+  committed before-data is `75f671b109d8eddd0d64c1429bd6379fe577175a`,
+  `.ufo/round-48/verification/before-configured-root.json`. Ranged raw-reader
+  pagination footers initially broke reconstruction; only those tool-added footers
+  were removed, then the independent whole-file digest matched. No data/expected
+  value was re-pinned or measurement rerun; the tool issue was reported.
+- A separate new non-BASE/missing-before invocation returns exit2 with empty stdout;
+  its planned scratch is absent. That is a caller-boundary observation plus source
+  placement proof, not a global effects trace. Candidate runs must supply the pinned
+  committed before receipt; old BASE counts are not required after the fix.
+- No candidate implementation, SRT approval, scalar or capability grant. The new
+  direct-child input class does not rescue R47's full join/default2/identity/builtin
+  limits. Other published-channel contents, nonvacuous r39 probes and other modes
+  remain unproved. Commands, exact receipt and limits:
+  `.ufo/waves/hyaku/kotoba48-prerequisite/parent-*`.
+
