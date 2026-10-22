@@ -202,3 +202,15 @@ reproduces at every tip, but the checker has fail-open paths, none fixed this ro
 - a `--repo` below the top level changes results.
 
 Also, the SCORECARD round-25 note saying D5 does not check Last change is wrong: it checks the `round 1` rule. These are round-26 work.
+
+## Addendum 6 — ReviewD2Sweep: held
+
+Final lane tip `40106c0335429e7f41ff303a9cce67ec7b61f7fb`, pushed; retention scan still at 4 unallowlisted hits.
+
+All five in-place rewrites (K5, K4, P3, K3, P4) in `system-pressure-r24.md` were verified against v7.2 psi.c and
+psi.rst re-opened by curl. No sibling file restates the old wording. Three minor stale mentions remain inside the
+entry, none among the routed rows, all for round 26:
+- the `psi.c:1538-1550` citation range (already disclosed);
+- line 143, which places `irq.pressure` beside the cpu, io and memory files in cgroup-v2.rst, though they sit in
+  separate sections (not disclosed before);
+- line 158, where F11's "no warn at N% rule" is not scoped to the files read (not disclosed before).
