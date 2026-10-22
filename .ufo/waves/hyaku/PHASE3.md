@@ -211,3 +211,15 @@ Computed at `2026-10-22T08:00:22Z` from the latest five explicitly admitted hyak
 | 2026-10-22T09:26:30Z | Closure dispatched | Fresh non-author job `HyakuCloseMori24` for `.ufo/prompts/closure/mori-round-24.md`. |
 | 2026-10-22T09:26:30Z | Timer armed | `bg_1580` fires the 2 h freeze message for kake at 11:26:15Z. `bg_4` (10:03Z) now applies to tameshi only. |
 | 2026-10-22T09:26:30Z | State | Lanes in flight 6/6: tameshi r25, tsukuroi r24, kaidoku r25, kotodama r51, kama r25, kake r28. Closures running: kotoba r48, mori r24. Next in order: kumitate r39 (recovery), mado r23 (recovery). Seat gate live_estimate=35, cap=85. |
+
+### First admission
+
+| Observed checkpoint | Event | Evidence / result |
+|---|---|---|
+| 2026-10-22T09:29:00Z | Closure kotoba r48: ADMITTED | `HyakuCloseKotoba48` (fresh, non-author; model `anthropic/claude-opus-5-5`; 10m08s): status ok, admitted=true. MANIFEST `rounds[442]` at fleet `7de34fe995d2`; spot-check lane commit `a5adc146a299`. C1 freshness re-measured 34 → 35 knowledge entries (the closure ruled the axis dispute for freshness); C2 depth verified from pinned receipts (5 → 0 target failures). Spot-check agreed on 4 of 4 decisions. Trends: expansion improved, quality improved, discernment improved. Routed R1–R5 to r49. Remote `main` in kotoba is stale at `c87cb30` (helper pushes `master` only). |
+| 2026-10-22T09:30:07Z | Advance kotoba | `inline.sh closed kotoba` → `1 admitted`; `advance` → `kotoba r48 admitted -> next 49`. Sentinel windows (in-session closures): 1 closure, 1 admitted. |
+| 2026-10-22T09:30:07Z | Seat gate | live_estimate=39, recent_reservations=38, cap=85. Samples this hour ran 20 to 78 of 85. Landed rounds took 1h15m and 1h22m, inside the 2 h freeze. |
+| 2026-10-22T09:30:26Z | K raised 6 → 7; dispatch kotoba r49 attempt 1 (Tier A, second round this cycle) | Directive 7 plus observed slack. Dispatch evidence `595f068`; base `a5adc146`; L1 `KotobaR49`. The note routes R1–R5 and guards against a third same-surface freshness claim (r47 and r48 both worked freshness on the frontmatter/instrument surface). |
+| 2026-10-22T09:31:00Z | Timer armed | `bg_1650` fires the 2 h freeze message for kotoba r49 at 11:30:27Z. |
+| 2026-10-22T09:31:00Z | Cross-lane source available | Admitted this session: `kotoba-shokunin/corpus/knowledge/frontmatter-rule-authorities-round48.md@e5c926c5` (which authority imposes which SKILL.md frontmatter rule). Later dispatch notes may route it to lanes whose claims touch SKILL.md frontmatter or triggers. |
+| 2026-10-22T09:31:00Z | State | Lanes in flight 7/7: tameshi r25, tsukuroi r24, kaidoku r25, kotodama r51, kama r25, kake r28, kotoba r49. Closure running: mori r24. Next in order: kumitate r39 (recovery), mado r23 (recovery). |
