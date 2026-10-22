@@ -14447,6 +14447,47 @@
    "notes": "Driver: 2026-10-22T16:46:20-03:00 launch kaidoku round=29 pgid=619856 driver=hyaku-inline attempt=1; 2026-10-22T17:43:19-03:00 complete kaidoku round=29; hyaku-inline attempt=1. Conformance pass (report by lane f9560fa5, SHONEN 4x[~], 7 hashes ancestors of main, ahead=0, tree clean, prompt sections 1-6). Round-28 routed defects 1-6 closed. Rejection rests on C1 axis fit, not a missed target: every frozen number was met. Routed: (1) C1 axis misfit, mine lesson + QUALITY criterion; (2) C1 target cannot fail on rule quality, need bar a trivial baseline fails; (3) M29-3 unpinned round-28 script, record supersession and exit-code pre-freeze check; (4) M29-1 fix not shown able to fail; (5) 15/16 C1 carriers lack opened provenance; (6) SCORECARD:3166 S085 correction incomplete; (7) c1 counter docstring names round-28 paths. SHONEN not judged fully checkable by a non-author. Tool use: pycryptodome 4.1.0 via ephemeral uv run (uv 0.13.0). HOLD U064N008Hf47eb933 untouched.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 33,
+   "date": "2026-10-22",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 33,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 33
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "freshness": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-33/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-33-verifier-spotcheck.md@1e54c89515b0b1f7c9d7d10e6232d15e43320713",
+    "rechecks": "C1 evidence-verified (no gate executed) + plain re-measure: c1_code_probe.py sha256 74bf1f80…b047 equal at bc6c4a8 and 93359ff; receipts met 2/4 guard_ok true at 5777d5a/bc6c4a8 -> 4/4 guard_ok true benign 45/0 at b1752a2/e490381/1cf452e/3abfc44; no scripts/ or counter byte change 3abfc44..93359ff; tip P6 hostile.json carries reason_code setup_commit_before_init (base: reason_contains) and the hostile selftest checks codes[n]==code apart from reason text. Ruling: the strict supplement (added at e490381 after the code-in-text finding 489714be) is corroboration, not counted; the frozen counter's code-in-text acceptance does not touch the landed bytes. C2 re-measured: 4 retained files mode 100644 with blob ids equal to upstream 7fc6aa2f (67d8c7a, e0d9ee2, 12c58e2, 4e6d70a); <loc> 100 vs 97 at 1fbdb8ed; three self-canonical pages; S065 at SOURCES.md:73 in Registry (absent at base); entry section :184 cites S065 and states 100/clean x3; receipts 0/4 -> 4/4. Junk-row counter acceptance ruled a routed counter defect, not a claim defeat. Harm: deletions only in 3 script/fixture files; ledgers/docs/SOURCES append-only (+2 rows S065,S066); axis ratings unchanged. Spot-check: S065 admit agree, S066 admit agree (live gh api run 39644779773 success), option-table patch reject agree; census exit 0 (W04 S033 pre-existing), rows 64->66."
+   },
+   "commit": "kake-shokunin@93359ff0924bf622acc51eb15c2afa3cd2743022",
+   "closed_at": "2026-10-22T20:52:25Z",
+   "campaign": "hyaku",
+   "notes": "launch 2026-10-22T16:46:10-03:00 kake round=33 pgid=617729 driver=hyaku-inline attempt=1; complete 2026-10-22T17:42:52-03:00 kake round=33 hyaku-inline attempt=1. Conformance pass: report 221c680 by kake-shokunin, SHONEN 4 lines all [~], 9 cited hashes ancestors of master, lane ahead=0 clean, prompt carries template contract. Holds KakeR31.CriticC1Counter and KakeR31.CriticSandboxThreatModel not recreated. Routed: (1) C2 counter hollow shapes (junk row, misplaced section, even-backslash pipe, fence-blind split, S0650 substring, crash N1/N2) absent from lesson carried-open; (2) C1 counterexample 489714be and option-table patch.diff live only in /fast/scratch sandbox, retain in lane; (3) round-33 Gate records no reject; (4) report cites an uncommitted 93359ff run; (5) carried: NUL-byte crash, null code outside setup refusals, freshness-pins re-pin, m3d/m3f/m3g, option tables, r31 QUALITY F1-F3. SHONEN: no box promotion-ready.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
