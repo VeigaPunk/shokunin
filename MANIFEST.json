@@ -12965,6 +12965,47 @@
    "notes": "Driver digest: launch attempt=1 2026-10-21T20:38:07-03:00 pgid=2906730; lane-dead-no-report 2026-10-22T04:58:59-03:00 (superseded 04:56:36, stale author, fresh attempt); launch attempt=2 05:02:58-03:00 pgid=7349; complete 06:42:00-03:00. Conformance: report by lane identity (fleet 0888a12), SHONEN 4/4 lines all [~], 10/10 hashes ancestors of master, lane pushed ahead=0 clean, prompt = template render + addendum. Both claims verified; no owned axis harmed at head; restore of the cold-read monitor is valid input-keyed evidence via 17 author re-anchors, not independent cold reads (SHONEN box 3 stays [~]). Routed to tameshi: (1) tools/mte-interop.py verdict tool lacks a registry row at SKILL.md / tools/registry.json; (2) SCORECARD r25 header and lesson Claims omit amendment 3 and its before_any_after_measurement flag ignores seat probes at c9ff09f/09dc114 - append a correction; (3) knowledge/mte-report-interop.md verified-at cites 09dc114 tool 8c24255c 16/16, not measured 8269b82f 17/17; (4) open: MtGuardGaps 17 weakenings, 14 re-attack findings, round-24 spot-check items 2-4, emitted reports lack lane/revision pin; (5) seat ReReplay14 ran jj log at fleet root, ReOutputComplete jj st in lane. SHONEN: no box fully checkable by a non-author yet. Installs: none (ephemeral uv --with jsonschema==4.25.1).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 24,
+   "date": "2026-10-22",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 24,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 24
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "unchanged",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-24/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-24-verifier-spotcheck.md@b9046016831237cd04d38da11ba76e50d5380c53",
+    "rechecks": "Re-measured from committed bytes; no lane tool executed. C1 (calibration): frozen base falsify-limit.json gives path 266 + schema 1 (FxC3Build08:17) + incomplete seat 1 (ConnFxPlanner) = 268. The four input sha256 pins match f169b3ba. All 267 call-id rows of c1-final per_finding, (seat, call_id, tool, request_line), join to the frozen events.json with 0 unmatched (read 230, grep 28, glob 6, write 2, edit 1); the 1 seat-level row has operation null. Result 267/268, declared 268: missed. Tool absent at base (exit 2). C2: my own parser over pause-lift-gate-r24.json@f923750d checks the capture sha, line-resolved evidence, a unique non-header capture pointer, and sources mined/opened 2026-10-22/used-by the gate. P1, P2, P4, P5 pass; P3 unverified. Result 4/5, declared 5: missed. Gate evidence verified, not run: selftests 12 and 24 cases exit 0; registry 26/26, findings 0, at 44e95428. SOURCES 86->114 (A 78->106, mined 72->100), malformed 0, no duplicate IDs, 0 old-row lines changed. sources-census validate exit 0 with 21 W04. SCORECARD and the whole diff are append-only (0 deletions); no ordinal changed; no axis harmed. Spot-check against re-opened sources: S105, S106 and S109 admits agree (quotes verbatim, ≤25 words); rejects agree on Omarchy master vs v3.8.4 (installed helper sha equals the v3.8.4 tag) and on ordinary boot vs btrfs-overlayfs (early-return branches)."
+   },
+   "commit": "tsukuroi-shokunin@f923750ddcb5be2f25d0b91f5e78bc89be2608d6",
+   "closed_at": "2026-10-22T09:50:22Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-10-21T20:38:09-03:00 launch tsukuroi round=24 pgid=2907002 attempt=1; 2026-10-22T04:58:59-03:00 lane-dead-no-report (superseded, stale author); 2026-10-22T05:15:08-03:00 launch pgid=208780 attempt=2; 2026-10-22T06:42:49-03:00 complete attempt=2. Step-1: report by tsukuroi-shokunin at 6babb7cd; SHONEN 4/4 lines; all cited commits are ancestors of master; ahead=0 and porcelain clean at closure start; prompt has all 140 template lines. Honest stop: C1 267/268, C2 4/5 (snapshot boot unverified); neither target narrowed. Disclosed violations are conformance defects (status-neutral), with no axis harm: privileged scratch probe (sudo unshare, mkinitcpio -g --nopost, 4x sudo python3 -; the sudo journal matches the disclosure, the wrapper ran no limine step, and pacman.log shows no transaction after 2026-10-21T18:07); print-only pacman -Sup; wave 2 dispatched before the wave-1 connector returned; late canonical load; lowest-axis miss (C2 declared on freshness 9 while depth/adjacency were 8); shared checkout and temp files outside declared paths; no verbatim Godspeed body or model identity; a private identifier in published history (operator decision). Routed to the lane: (1) calibration claims count SCORECARD/SHONEN-vs-repo mismatches, plus the lowest-axis duty; (2) a read-only sudo allow-list for seats; (3) wave settlement order, canonical load first, worktrees, declared temp paths; (4) Godspeed body and model capture; (5) six same-page re-registrations and W04 9->21 caused by the opened-date rule; (6) QUALITY 54/55 heading IDs do not match the lesson Mistake IDs; (7) P3 needs an operator-authorized read-only snapshot boot. SHONEN boxes not fully checkable by a non-author; no promotion signal. Post-closure: round-24 wave-1 seats (TsukuroiR24.ExecPauseGateChecker-2, ScribeGateEntry-2) were still running and left uncommitted lane edits at 06:45-06:48 -0300 (w1/ExecPauseGateChecker/check-pause-gate.py, w1/RevGateSchema.md, untracked w1/ScribeGateEntry/p2-measured-probe.txt). Not round evidence and left untouched; Main should stop the stray seats. Installs: none.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
