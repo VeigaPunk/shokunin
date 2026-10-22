@@ -13649,6 +13649,47 @@
    "notes": "Driver digest: 2026-10-22T09:13:51-03:00 launch kotoba round=50 pgid=202450 driver=hyaku-inline attempt=1; 2026-10-22T10:52:49-03:00 complete kotoba round=50; hyaku-inline attempt=1. Report fleet cc7d642 (single filing commit). Lane pushed ahead=0, remote 2abd290 before spot-check; spot-check landed 43ca0bf. Conformance defect (status-neutral): untracked .ufo/waves/round-50/build/DescDraft.md is an uncommitted round-50 seat report (mtime 10:52:19 -03:00, 57 s after 2abd290), not claim-bearing; the seat the report calls cancelled wrote after the last commit. L0 kotoba r50 line (fleet 8d56eb1): evidence supports kama/kengaku/tameshi adjacent under the rule as written (sibling-authored splits verified verbatim at ancestor pins); the rule was authored after the rows were known and its exit clause clears exactly the three; no scope ruling made here. Routed: D1 commit/dispose DescDraft.md and fix seat accounting; D2 bound or fix checklist-gate --box-proof fail-open (SCORECARD.md:31, SKILL.md:135); D3 sweep corpus/README.md:72 finding-3 universal and bound SKILL.md:375-377 (eight pages; Copilot SDK disable/reorganize remedy); D4 correct Copilot SDK reject reason; D5 PROVINCE.md:44 kama quote/citation, census:273 kengaku wording; D6 keep precedence rule provisional, bound generic-refusal exit; D7 carried driver laundering, mutant survivors, driver unregistered in floors. SHONEN 4/4 [~], not fully non-author checkable; no promotion signal.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 27,
+   "date": "2026-10-22",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 27,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 27
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "unchanged",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-27/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-27-verifier-spotcheck.md@06b59b93697c9b0a8795ac2d0fe3d0bd7e18572c",
+    "rechecks": "C1 re-measured in a no-hardlinks clone with frozen c1-measure.py (monitor measure.py byte-identical d4140796..35a01b3c): 91edf9cd covered=25/64 restraint=6 box3_mismatch=1 exit 1; af7b70d and 35a01b3c covered=60/64 restraint=6 box3_mismatch=1 exit 1; target 64/64 restraint 8 mismatch 0 missed (4 uncovered: report shape, Triggers T1-T3, Gate/probe registry, Round-21 registry). Pre-harm r26 base d4140796 re-measured 62/62 restraint 8 full page: calibration still harmed against it. Cold-read tallies re-counted (w1 27 credited/12 failed; residual 8/3 wrong-expectation/1 gap-blocking); ledger append-only as data 304->342->354 (bytes re-indented). C2 re-measured: c2-measure.py classified=0 exit 1 at base, classified=4 anchored_holes=4 exit 0 at af7b70d and head; receipt sha256 = probe/anchors bytes; anchors frozen in 06a6707 before receipt 2227d83; anchor quotes verbatim at cite-check.mjs@1205c66 lines 35/38/61/69/71; negative control anchored_holes=0. Amendment 1 (check 3 opened->used-by) ruled not narrowing: target unchanged, dropped clause unpassable under SOURCES rule 2, amended counter 0 at base. Spot-check: admits S012, S090, S091, F8 entry agree (quotes verbatim at re-opened URLs); reject 'anchored_holes=4 shows differential sound' agree. Census validate exit 0 (89 rows, same seven W04). SCORECARD diff append-only and matches. No seats dispatched; all checks by the integrator."
+   },
+   "commit": "tameshi-shokunin@35a01b3c5afa9b4b7f6497bcb196125ee759141b",
+   "closed_at": "2026-10-22T14:15:44Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-10-22T09:07:33-03:00 launch tameshi round=27 pgid=4159631 driver=hyaku-inline attempt=1; 2026-10-22T11:07:14-03:00 complete tameshi round=27; hyaku-inline attempt=1. Step-1 conformance: pass (report 4a3106b9 by lane identity, after lane head; SHONEN 4/4 [~]; 9/9 cited lane hashes ancestors of master; ahead=0, porcelain 0; prompt = template plus substitutions and hyaku addendum section 6). Operator commit 167c0e3 (considerthese) inside base..head, not round work. Round shape: v1 wave 51 (reviewer 42 with 39 cold reads, executor 3, critic 2, mutation-tester 1, connector 1, scout 1, scribe 1; attack 45/51) plus residual 8 reviewers = 59. Rejected-honest-stop: C2 verified (classified 0->4), C1 missed (25/64 -> 60/64, restraint 6 -> 6, mismatch 1 -> 1); no axis harmed vs base 91edf9cd; calibration still harmed vs pre-harm r26 base d4140796 (62/62, restraint 8). '15 SKILL errors' = 13 pre-existing + 2 self-introduced; last 3 corrections not re-read. Drift: calibration claimed six rounds running (r22-r27); routed-item origin r24-r27; Main applies the same-surface rule. Routed to tameshi: cold-read 4 uncovered sections and restore restraint 8; registry-check full run at landed head (2227d83 receipt predates SKILL registry-row edits); SOURCES.md:338 next id S092 and missing round-27 search-log note; README F8 'independently anchored' -> 3 of 4; QUALITY 53/54 amendments and S012 tier supersedes row; runner --regression nlegs sum check; wording (39 of 51 seats, 13+2 defects) and ledger re-indent. Routed to kumitate: round-26 cite-check hole routing dropped by kumitate R39-5 (seat ConnectorOverlap). SHONEN not fully checkable by a non-author (box 3 backed 60/64; boxes 1, 2, 4 lane assertion). No seats dispatched; no installs.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
