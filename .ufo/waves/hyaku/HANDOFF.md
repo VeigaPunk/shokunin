@@ -161,3 +161,22 @@ All safety/source/rejection holds remain. A successful command or completed
 native identity is not admission, actor conformance, privacy clearance or a
 completed100-round campaign. Preserve unfinished worktrees; no replacement
 workers, retry/reroute of held items, cleanup or host/service action is implied.
+
+## Phase-3 leg wrap — 2026-10-22 (supersedes the checkpoint above for current state)
+
+The 12-hour phase-3 leg (T0 07:56:36Z) is wrapped. Read, in order:
+`.ufo/waves/hyaku/PHASE3.md` §"Session wrap (2026-10-22T19:35Z …)" and
+`.ufo/waves/hyaku/session-wrap-20261022-phase3.json` (schema `hyaku-session-wrap-v1`).
+The contract was `.scratch/goal-20261022-hyaku-12h.md`.
+
+- MANIFEST `rounds[441..478]`: 37 in-session closures, 27 admitted, 9 honest-stop, 1 harmed.
+  No claims are in flight.
+- Eligible next, in order: kake r33, tsukuroi r29, kotodama r55, kumitate r42, mori r29,
+  kotoba r53 (different frontier area), kaidoku r29 (repair-first).
+- Driver-blocked, needing operator unblock: tameshi (r28, new), chousa, kama, mado.
+  Held by the operator: kagi, revenger, souji, tabi, kasegi, kengaku. Item holds are listed in the wrap.
+- Routing and limits changed by the operator this leg (saved globally): see the wrap JSON
+  `operator_config_changes_this_session`. omp 18.12.6 still clamps running jobs at 100 per
+  spawning session tree. Reset `~/.local/state/shokunin-hyaku/wave-cap` (128 at wrap) and
+  `live-session-dir` for the next session.
+- No promotion and no round-100 completion is claimed.

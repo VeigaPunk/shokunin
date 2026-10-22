@@ -726,3 +726,78 @@ Deadline list (UTC, this session): 18:30 Mori r27 closure box; 18:45 freeze mess
 | 2026-10-22T19:30:00Z | TsukuroiR28 returned (38m19s) | C1 adjacency (bad register shapes accepted 19/24 → 0/24; live 6) and C2 depth (kernel-taint 5/5 → 0/5; live 6); a wave-1 critic disputes the axis framing (both look like operability), left for the operator. Shape: one v1 wave of 35 + a residual call of 6 = 41. Dead: 4 reviewer seats ("Reached free model rate limit", 4/35 = 11%); RevFamilyB2 cancelled on a wrong suspicion. Post-closure: the L1 added a seat report as evidence, so the lane is now `16e9ab2a` and the report `e7a725a6`, after `HyakuCloseTsukuroi28` judged `d9727e98`/`dbe21095`. The `rounds[473]` entry stands for the judged revision; the later commit adds evidence only. Recorded here and not re-closed. |
 | 2026-10-22T19:30:00Z | Closure mori r28: ADMITTED | `HyakuCloseMori28` (fresh, non-author; 2m51s; no seats): MANIFEST `rounds[476]` at fleet `0cbc5204`; spot-check `7118f320`. Both claims verify as declared; none was withdrawn. C1 freshness re-measured (SOURCES 144 → 152; S096/S097/S101 restored; live citations of old ids 35 → 1, and that one is tsukuroi's). C2 operability (30 frozen cases, counter committed before the cases; PASS 30/30 from evidence). No harm (SCORECARD append-only; retention 4 = 4). Misroot sweep verified by sha256. Spot-check: 4 admits agree on re-fetch; rejected candidate re-checked (404). Six untracked paths (five late round outputs plus `.scratch/`). Routed: late outputs; C2 blindness leak (a case writer read a critic's design report); missing A2-07/A2-10 breach cases; Gate rejects; tip receipt revision; census count. The repair-first round after the r27 rejection succeeded. |
 | 2026-10-22T19:30:37Z | Advance mori | `closed` → `1 admitted`; `advance` → `mori r28 admitted -> next 29`. Sentinel windows: 35 in-session closures, 28 admitted. |
+| 2026-10-22T19:31:00Z | Closure kaidoku r28: REJECTED (honest stop) | `HyakuCloseKaidoku28` (fresh, non-author; 3m49s; no seats): MANIFEST `rounds[477]` at fleet `2ae56c2c`; spot-check `bacbe9cc`. C1 coverage missed (re-counted: 60/61 runs, 186/187 rows; the h09 carrier with an unlinked-library placeholder was refused `invalid_format`; frozen files unchanged). C2 depth meets its number (230 responses, 0 mismatches), but 168 of 230 selectors were seen before the freeze, so it was ruled `unprovable-but-better`. No axis harmed (+16482/−0). The uncommitted tracked path is a seat self-rewrite after the hard stop, not round work. Spot-check: S084–S086 re-fetched with matching hashes, all agree. Trends: expansion improved (knowledge 110 → 112), quality unprovable-but-better, discernment unprovable-but-better. Routed: don't file while seats run; red r27 selftest; screen carriers before freezing; a real held-out test; freeze gate over every `claims*.json`; counters require the claim's own gate row. |
+| 2026-10-22T19:31:37Z | Advance kaidoku; sentinel trip → PARKED for the leg | `closed` → `1 rejected`; `advance` → `kaidoku r28 rejected -> next 29`; driver streak 2 of 3 (r27 R, r28 R), no block. Two consecutive in-session rejections, so kaidoku is parked for the rest of this leg (moot: dispatch closed at 18:56:36Z) and the L0 line is filed and committed. Sentinel windows: 36 in-session closures, 28 admitted; last six `AAAAAR` hold 5. |
+| 2026-10-22T19:32:00Z | Closure tameshi r28: REJECTED (honest stop) | `HyakuCloseTameshi28` (fresh, non-author; 2m56s; no seats): MANIFEST `rounds[478]` at fleet `b2f5bb99`; spot-check `367ec0f1`. One calibration claim: frozen counter byte-identical to r27; base 60/64, `1076914a` 62/64, final `1dde85f3` 63/64; restraint 6 throughout, target 64/64 with restraint 8, so missed. No axis harmed against base. The lane landed two commits and rewrote the report (`2012146` → `38ae0ff`) after the verify; the verdict is the same at both heads, and MANIFEST records `1dde85f3`. Spot-check: S059 re-open admit and S092 duplicate reject agree. Trends: expansion unchanged, quality unprovable-but-better, discernment improved. Routed: cover the "Round-18 gate/probe registry" section; supersede S059's digests; close against one head; r27 items 4–6. |
+| 2026-10-22T19:32:11Z | Advance tameshi → BLOCKED | `closed` → `1 rejected`; `advance` printed `BLOCKED after 3 rejected` and `tameshi r28 rejected -> next 29`; `blocked/tameshi`: "three consecutive rejected closures through round 28 (2026-10-22T16:32:11-03:00)". This is the risk named at the 18:52Z un-park. L0 line filed and committed. MoriR28 and TameshiR28 told their rounds are closed: stop and return. Sentinel windows: 37 in-session closures, 28 admitted, 9 rejected. |
+
+## Session wrap (2026-10-22T19:35Z; resume session `01a164ae`, leg T0 07:56:36Z)
+
+The leg ran to its clock. The last dispatch was at 18:52:18Z (before the 18:56:36Z cutoff), and every dispatched round landed and was closed by a fresh non-author closure before the wrap. Nothing is in flight. MANIFEST is canonical for every verdict below.
+
+**Leg totals** (MANIFEST `rounds[441..478]`, campaign hyaku): 38 closures, of which 37 were in-session (`rounds[442..478]`) plus the chousa r28 reconciliation (`[441]`). In-session: 27 admitted, 9 rejected honest-stop, 1 rejected harmed. Trends over the 37: expansion improved 30, unchanged 7; quality improved 27, unchanged 8, unprovable-but-better 2; discernment improved 32, unprovable-but-better 3, unchanged 2. No trend was graded harmed. This resume session closed 11 rounds (8 admitted): mori r27 R, tsukuroi r27 A, kake r31 A, kotoba r52 A, kumitate r41 A, tsukuroi r28 A, kake r32 A, kotodama r54 A, mori r28 A, kaidoku r28 R, tameshi r28 R.
+
+| Lane | Rounds this leg (start → next) | Closures (A/R) | Knowledge A / M (`git diff --name-status <start> <end> -- corpus/knowledge`) | Capabilities added (closure field) | State at wrap |
+|---|---|---|---|---|---|
+| kake | 28 → 33 | r28 A, r29 A, r30 A, r31 A, r32 A | 4 / 1 | 1 | eligible |
+| tsukuroi | 24 → 29 | r24 R, r25 A, r26 A, r27 A, r28 A | 10 / 8 | 0 | eligible |
+| kotoba | 48 → 53 | r48 A, r49 A, r50 A, r51 R, r52 A | 5 / 0 | 4 | eligible; r53 must work a different frontier area |
+| kotodama | 51 → 55 | r51 A, r52 A, r53 A, r54 A | 4 / 1 | 2 | eligible; `kotodama51-prereg-critic` held |
+| mori | 24 → 29 | r24 A, r25 A, r26 A, r27 R, r28 A | 4 / 2 | 7 (closure strings) | eligible |
+| kumitate | 39 → 42 | r39 A, r40 A, r41 A | 0 / 4 | 2 | eligible; r40 holds stay |
+| kaidoku | 25 → 29 | r25 A, r26 A, r27 R, r28 R | 5 / 3 | 1 | parked for this leg (2 in-session R); next round repair-first |
+| tameshi | 25 → 29 | r25 A, r26 R, r27 R, r28 R | 3 / 0 | 1 | driver-BLOCKED (3 R); L0 filed |
+| chousa | 28 → 29 | r28 R (reconciled) | 0 / 0 | 0 | driver-blocked |
+| kama | 24 → 26 | r25 R (r24 R reconciled pre-leg) | 1 / 1 | 0 | driver-blocked |
+| mado | 23 → 24 | r23 R (recovery failed) | 1 / 0 | 0 | driver-blocked |
+| kagi, revenger, souji, tabi, kasegi, kengaku | unchanged | none | 0 / 0 | 0 | held (operator) |
+
+**Sentinels tripped this session:** >20% dead seats (attempt-1 waves, m_mim outage, before this session); two consecutive rejections, so kaidoku was parked at 19:31:37Z; driver block on tameshi at 19:32:11Z after the operator's un-park. Depth was never below 0.40 (lowest this session: tameshi r28 at 0.58). The six-closure window never held ≤2 admits (lowest 3).
+
+**Dead seats this session:**
+- Attempt-1 waves lost to the m_mim outage or the 17:26Z restart, and inherited by attempt 2: tsukuroi r27 23 (attempt 1), kake r31 18 (attempt 1), kumitate r41 7.
+- Tsukuroi r28 lost 4 reviewers to "Reached free model rate limit".
+- None was replaced or rerouted.
+
+**Holds kept:** `KakeR31.CriticC1Counter` and `KakeR31.CriticSandboxThreatModel`; kumitate r40 `AtkNovelIdentity` and `AtkNovelRecords`; `kotodama51-prereg-critic`; lanes kagi, revenger, souji, tabi, kasegi, kengaku.
+
+**Installs:** none reported by any L1 or closure.
+
+**L0 lines this session:** kaidoku park; tameshi driver block; tsukuroi r27 (the host appends RULES.md to seat texts).
+
+**Operator-ordered configuration changes this session** (all saved globally; the contract's no-settings rule yielded to the owner):
+- sentinel, sonic and seance → `@m_mim`;
+- connector → `@m_sol`;
+- `m_mim` effort `:max` → `:high`;
+- scribe, simplifier and distiller → `@m_flash`;
+- `async.maxJobs` and `task.maxConcurrency` 200 → 300 (the omp 18.12.6 binary still clamps running jobs at `Math.min(100, async.maxJobs)`);
+- wave policies `maxLanes` 256 and v2 band 64–128;
+- addendum round total 32–128;
+- seat gate `wave-cap` 85 → 95 → 128 (`~/.local/state`).
+
+**Operator-owned residue:**
+- Tsukuroi local jj keep-refs `refs/jj/keep/ee430cdf…` and `refs/jj/keep/a080e4efd961…` point at sandbox commits created by SentinelBattery through `GIT_DIR`; they are unpushed.
+- The fleet remote's `origin/main` is 264+ commits behind `master`, which every closure and ledger write uses.
+- Untracked late seat outputs sit in kaidoku, kotodama and mori; each closure named them.
+- The kumitate r41 trades on unscored measures still need a ruling.
+- The tsukuroi r28 axis-framing dispute is open.
+
+**Proposed order for the next leg** (eligible lanes by streak and readiness):
+1. kake r33
+2. tsukuroi r29
+3. kotodama r55
+4. kumitate r42
+5. mori r29
+6. kotoba r53 (different frontier area)
+7. kaidoku r29 (repair-first: screen inputs before freezing; apply the r27 selftest fix as hygiene)
+
+Blocked lanes need operator unblock: tameshi, chousa, kama, mado. Set `wave-cap` back to the leg's real-job budget before dispatching. The 128 cap only holds while Main spawns little.
+
+**Top lessons:**
+1. Frozen targets missed by one item are the leading rejection cause: kaidoku 15/16 then 60/61, tameshi 63/64. Screen inputs before the freeze and size targets to what the inputs can carry.
+2. Recovery through fresh attempt-2 L1s that inherit pushed work worked: all 6 landed after the 17:26Z restart and 4 were admitted. Repair-first rounds after a rejection were admitted twice (kotoba r52, mori r28).
+3. Seat containment leaks cost time. A seat committed into the lane through `GIT_DIR`, seats misrooted files into the fleet root, and late seat or L1 writes landed after verify or closure (tameshi r28, tsukuroi r28). Close against one head, strip inherited `GIT_*`, and cancel seats before filing.
+
+Wrap artifacts: `.ufo/waves/hyaku/session-wrap-20261022-phase3.json` (schema `hyaku-session-wrap-v1`; `session-wrap-20261022.json` is not overwritten) and the HANDOFF.md pointer section. No admission, promotion or round-100 completion is claimed beyond MANIFEST.
+
+**Correction (appended, 19:36Z):** the running "Sentinel windows" admit counts in the rows from 19:30:37Z to 19:32:11Z over-count by one. A recount of MANIFEST `rounds[442..478]` gives 37 in-session closures with 27 admitted (not 28) and 10 rejected (9 honest-stop, 1 harmed). The wrap figures above use the recount. No sentinel decision changes: the lowest six-window still holds 3 admits.
