@@ -12878,6 +12878,50 @@
    "notes": "Driver digest: 2026-10-21T20:38:04-03:00 launch kotoba round=48 pgid=2906116 attempt=1; 2026-10-22T04:58:59-03:00 lane-dead-no-report kotoba round=48 retry (attempt 1 superseded at 04:56:36, stale author); 2026-10-22T05:03:00-03:00 launch kotoba round=48 pgid=7637 attempt=2; 2026-10-22T06:19:11-03:00 complete kotoba round=48 attempt=2. Report ff9b983 by lane identity; SHONEN 4/4 [~]; all 12 cited hashes ancestors of master; lane ahead=0, clean. Conformance notes: report base 75f671b vs driver base 197b5a4 (attempt-1 lane commits c0185da/75f671b, re-verified, no count effect); lesson Gate lacks explicit admit line for the knowledge entry. Routed: R1 configured/log roots keyed by directory vs agents root by frontmatter name, contradicting own S016 (latent double count, A21); R2 C1 counter blind to content, next freshness claim counts supersessions/rechecks; R3 SCORECARD.md:112 stale 'now exits 2' after 48819b9 fix; R4 entry counts without command/date (Q13) and Gate entry admit line; R5 routed defect 1 and oracle nested/frontmatter-name gap carried. SHONEN not fully non-author checkable (box 3 rests on round-8 cold run). Runtime model exposed: anthropic/claude-opus-5-5. Installs: none.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 24,
+   "date": "2026-10-22",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 24,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 24
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "improved",
+    "operability": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "one-shot system pressure read (tools/mori-pressure.py): /proc/pressure/{cpu,memory,io,irq} per-resource states, unavailable never zero, system cpu full flagged undefined, irq some null; frozen selftest PASS 12/12 over cases landed before the tool (f6a29702 before 6ee62487), 6 wave-2 survivors disclosed",
+    "round-23 routed-item check (tools/mori-routed-check.py): R1-R3 regression pins plus R4 dispatch-before-call ordering over lane-written times; held 3 -> 4, round-23 wave-1 timing mismatches 8, round-24 0 of 2"
+   ],
+   "report": ".ufo/reports/round-24/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-24-verifier-spotcheck.md@28b79d3d1b76824f0c825aabe6cb6c5dc49961bf",
+    "rechecks": "C1 re-measured with plain git/json (lane tool not run): R4 at c725aa37 --round 23 has 8 of 9 dispatch rows with at earlier than dispatch commit 22772c10; at 4f05dd5a round 24 has 0 of 2, payload sha256/bytes/task counts match; R1-R3 pins equal at base and head (round-23 tree 3e5b2c9d, retention tool blobs, quota paths absent, 0 privacy-true added lines). C2 before re-measured (cat-file exit 128); freeze order re-measured (tool absent at f6a29702, cases blob 39cc96ab unchanged to tip, 12 cases); tally evidence-verified, not re-run (registered gate SKILL.md:641): wave-2 RerunC2Count PASS 12/12 at a730ecfe, report/SCORECARD PASS 12/12 with MATCHER 48/48 at tip, later tool diff read statically. Spot-check: S091 admit agree, S093 new row quote byte-exact agree, S097 reject agree (HTTP 404, digests match Gate). Census validate exit 0 with six W04. SCORECARD diff +39/-0."
+   },
+   "commit": "mori-shokunin@4f05dd5a32055e85a9297eb8fc8dfec7dfc4625e",
+   "closed_at": "2026-10-22T09:34:49Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-10-21T20:34:11-03:00 launch mori round=24 pgid=2902434 attempt=1; 2026-10-22T04:58:59-03:00 lane-dead-no-report mori round=24, superseded at 2026-10-22T04:56:36-03:00 (stale author, fresh attempt); 2026-10-22T05:03:02-03:00 launch mori round=24 pgid=7946 attempt=2; 2026-10-22T06:26:03-03:00 complete mori round=24 attempt=2. Conformance: report by lane identity at fleet c7613588 after lane tip; SHONEN 4 lines for 4 boxes; all cited lane hashes ancestors of master; ahead=0. Untracked .scratch/ (round-22, newest 2026-10-21T12:30) and tools/__pycache__/ (bytecode) are not round work. Bounds: C1 trusts lane-written times, denominator 2 rows; C2 tool read the cases while building (order shown, not independence), 6 surviving mutants. Routed: D1 c2-selftest-after.txt names no revision and is stale; D2 knowledge entry lines 94-95, 170, 171 still carry corrected K5/K4/P3 wording; D3 lesson says supplementary PASS 6/6, tip has 7; D4 ignore tools/__pycache__. No SHONEN box non-author-checkable. No installs.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
