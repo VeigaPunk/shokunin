@@ -13295,6 +13295,69 @@
    "notes": "Driver digest: 2026-10-22T06:52:11-03:00 launch tameshi round=26 pgid=2455563 driver=hyaku-inline attempt=1; 2026-10-22T08:50:06-03:00 complete tameshi round=26; hyaku-inline attempt=1. Step-1 conformance: pass (report bf02f493 by lane identity, landed after lane head; SHONEN 4/4 [~]; 7/7 cited lane hashes ancestors of master; kumitate pin 1205c66 sha256 equal; ahead=0, porcelain 0; prompt = template plus substitutions and addendum). Round shape: wave 1 only, 39 seats, attack 14/39 = 35.9%; wave 2 (55 seats) validated, not dispatched; grant 10:53:07Z per PHASE3. Rejected-harmed: strict cold-read monitor 62/62 restraint 8 -> 25/64 restraint 6 at head; calibration harmed although C2 record repair verified. Drift: calibration claimed five consecutive rounds (r22-r26) confirmed from SCORECARD; 'from routed items' holds for r24-r26 only (three running); Main applies the same-surface drift rule. Routed to tameshi: restore monitor first; append correction to SCORECARD r26 C2 row 'numeric 8 -> 8' (monitor read 6); commit registry --only receipt at 2b064cf or a full head run; c2-measure gameable, bind receipts to tool digest; runner --regression nlegs sum check. Routed to kumitate: scripts/cite-check.mjs@1205c66 dropping only the resolved guard (filesScanned > 0 && !drift) survives the 62-case hermetic selftest and is not equivalent (VERDICT flips FAIL->PASS on a scanned doc with zero resolved citations; exit stays 2); add that case plus line n+1, --strict one-warning, unknown-flag exit 64, interior-slice pin. SHONEN not fully checkable by a non-author (box 3 backing 25/64). No seats dispatched; no installs.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 23,
+   "date": "2026-10-22",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 23,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 23
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unchanged",
+    "coverage": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "claims": {
+    "C1": {
+     "axis": "operability",
+     "verdict": "unchanged",
+     "admitted": false,
+     "finding": "Repair-first claim. Registered target 12/12 (registration 6b383c46, before first tools/ change 2e592aff). Closure re-ran repair/measure.py on extracted classifier bytes: base e33ea304 (sha256 cd9da20c) 6/12 rc=1; withdrawn candidates 2e592aff (41489991) 12/12 and 03227ddf (e1dc8029) 12/12; tip fa819d56 (cd9da20c, tools/ byte-identical to base) 6/12 rc=1, same six failures. Withdrawal reasons evidence-verified (w2 AttackLateCell 1 regression, ReClosureNeighbour 7 worse). Target missed, not narrowed; no harm (tip = base bytes)."
+    },
+    "C2": {
+     "axis": "coverage",
+     "verdict": "improved",
+     "admitted": true,
+     "finding": "c2/count.py v2 (tightened at 4de44647 before after-measurement): e33ea304 0/3 -> fa819d56 3/3 (foot 8, kitty 9, ghostty 8 citing rows). SOURCES rows 122 -> 152 (mined 29, queued 1, malformed 0). Note corpus/knowledge/terminal-trees-r23.md with provenance trio."
+    },
+    "C3": {
+     "axis": "calibration",
+     "verdict": "improved",
+     "admitted": true,
+     "finding": "c3/count.py v2: SHONEN box 4 vs tracked tools lacking a PROVINCE table row, e33ea304 5 -> fa819d56 0 (v1 shell form 4 -> 0). PROVINCE +12 lines, 0 removed; mado-verify.sh scratch paths spot-read against :418 and :2251."
+    }
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-23/mado.md",
+   "report_commit": "36edb174ba05b75d1a6817595ac2b7dd778c01a7",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "reviewer_agent": "HyakuCloseMado23 (fresh task dispatched by hyaku orchestrator; exposed runtime model anthropic/claude-opus-5-5); no review seats dispatched; no installs",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-23-verifier-spotcheck.md@8e5d93691e2f7baa3d4a0a61c9428e5acb5d2122",
+    "rechecks": "Re-measured C1/C2/C3 with lane counters over committed bytes at e33ea304, 2e592aff, 03227ddf, fa819d56 (C1) and base/tip (C2, C3) plus plain grep/awk/git cross-checks; no-harm via git diff (tools/ identical, all other changes additions only, 0 removed lines). Conformance: report by mado-shokunin, 4 SHONEN lines [~], 11 cited commits ancestors of master, jj-lane state ahead=0 tracked=0 untracked=0, porcelain 0, prompt = template + section 6. Spot-check 5/5 agree (admits S128, S146, S136; reject kitty/conf/generate.py; queued S132) + S149 quote agree; tag pins via git ls-remote; census rc=0, 7 pre-existing W04, byte-identical to report."
+   },
+   "commit": "mado-shokunin@fa819d561d613cf3cfd8f58ed763e1ca57ab5eb4",
+   "closed_at": "2026-10-22T12:20:15Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: '2026-10-22T07:43:10-03:00 launch mado round=23 pgid=555711 driver=hyaku-inline attempt=1'; '2026-10-22T09:13:47-03:00 complete mado round=23; hyaku-inline attempt=1'. Operator-authorized repair-first recovery round (unblocked 10:43:09Z): C1 missed (6/12 vs 12/12) after the lane withdrew the classifier to base bytes, so the round is rejected-honest-stop and the lane re-blocks through the driver (Main). Routed defects: (1) lesson round-23.md:197-199 stale 'note file does not yet exist'; (2) corpus/README round-23 bullet omits C1 withdrawal; (3) M23-4/5/7 captured-by none but QUALITY.md unchanged; (4) sha256 prefixes cd9da20c/e1dc8029 printed like commit hashes; (5) S149 quote anchor :1014 spans :1013-1014; (6) C1 carry-forward: freeze wave-2 regression fixtures before any tripwire change; (7) H2 precision 166/175 unrepaired, L0 at .ufo/l0-questions.md:103. SHONEN boxes not fully checkable by a non-author (boxes 2-3 unchanged).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
