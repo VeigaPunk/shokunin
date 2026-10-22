@@ -392,3 +392,22 @@ Deadline list update (UTC): remove 11:52:10 and 13:12:10 (tameshi r26 landed).
 | 2026-10-22T11:54:43Z | Advance kaidoku; dispatch kaidoku r26 attempt 1 (cycle 2) | `closed` → `1 admitted`; `advance` → `kaidoku r25 admitted -> next 26`. Sentinel windows: 9 in-session closures, 7 admitted. Six lanes were in flight, below K=7. Dispatch evidence `4037433`; base `a0639d8e`; L1 `KaidokuR26`. The L1 context now names the 25% attack floor, waves of 32–40 seats, and the harm-repair exemption. |
 
 Deadline list update (UTC): add 13:54:44 freeze kaidoku r26; 15:14:44 hard stop kaidoku r26.
+
+### T0+4h checkpoint (11:56:36Z; read-only, under 15 minutes, no review swarm)
+
+| Sentinel | Observed (command or source) | Result |
+|---|---|---|
+| 2 consecutive in-session rejections in a lane | MANIFEST rounds[442..450]: tsukuroi 1 (r24), kama 1 (r25; driver-blocked on the 3-streak) | not tripped |
+| First 4 all rejected, or any 6 consecutive with ≤2 admitted | In-session sequence `AAARAARAA` (rounds[442..450]); minimum admitted in any 6-window = 4 | not tripped |
+| Report depth below 40% of the lane's median | Lowest: tameshi r26 at 0.49 bytes / 0.56 pointers; all others ≥0.54 | not tripped (tameshi watched) |
+| Same axis and surface 3 rounds running | Kotoba changed axis in r49; kake left the citing-set gate in r29 and returns in r30 (allowed). Tameshi reports calibration from routed items five rounds running; its r26 closure is confirming | pending: if confirmed, tameshi r27 must work a different frontier area after repairing its declared harm |
+| Run-together tokens or private jargon | Regex scan over this leg's 11 reports and this ledger: every hit is an agent or seat identifier (`KotobaR48`, `ReReplay14`, `ReopenS106`); one borderline criterion label (`QUALITY48`, tameshi r25). No degraded prose like "all64" or "Preparedonly" | not tripped |
+| More than 20% of a wave's seats dead | Every landed round reports 0 dead from errors; kama a1's 30 cancellations were ordered by its L1 at a Main stand-down | not tripped |
+
+Metrics at T0+4h:
+
+- Landed this leg: 11 lane-rounds. Closed in session: 9 (7 admitted, 2 rejected honest-stop, 0 harmed). Closing: kotoba r49, tameshi r26. Reconciliation: chousa r28 rejected and parked.
+- Trends across the 9 in-session closures: expansion improved 8, unchanged 1; quality improved 3, unchanged 6; discernment improved 8, unchanged 1. No harmed trend.
+- Capacity: the effective ceiling is 100 jobs (L0 filed). Seat gate cap 85. K target 7 after the starvation trip. No provider refusals, no 429s reported, no dead-seat bursts.
+- Parked or blocked: chousa (driver block, r28), kama (driver block, r25). Recovery rounds in flight: kumitate r39, mado r23.
+- Main lessons so far: (1) the config's 200-job value is not the enforced limit, so size the gate from refusals, not config; (2) above about 7 lanes the gate starves large waves and pushes falsify waves past the freeze; (3) a capacity steer must exempt harm-repair waves; (4) both rejections came from calibration claims counting the wrong mismatch set.
