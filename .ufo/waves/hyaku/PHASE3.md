@@ -223,3 +223,28 @@ Computed at `2026-10-22T08:00:22Z` from the latest five explicitly admitted hyak
 | 2026-10-22T09:31:00Z | Timer armed | `bg_1650` fires the 2 h freeze message for kotoba r49 at 11:30:27Z. |
 | 2026-10-22T09:31:00Z | Cross-lane source available | Admitted this session: `kotoba-shokunin/corpus/knowledge/frontmatter-rule-authorities-round48.md@e5c926c5` (which authority imposes which SKILL.md frontmatter rule). Later dispatch notes may route it to lanes whose claims touch SKILL.md frontmatter or triggers. |
 | 2026-10-22T09:31:00Z | State | Lanes in flight 7/7: tameshi r25, tsukuroi r24, kaidoku r25, kotodama r51, kama r25, kake r28, kotoba r49. Closure running: mori r24. Next in order: kumitate r39 (recovery), mado r23 (recovery). |
+| 2026-10-22T09:35:00Z | Closure mori r24: ADMITTED | `HyakuCloseMori24` (fresh, non-author; 8m46s; no review seats): status ok, admitted=true. MANIFEST `rounds[443]` at fleet `a39a35bfecfb`; spot-check lane commit `28b79d3d1b76`. C1 calibration re-derived (8 of 9 rows pre-dispatch at base → 0 of 2 at head; bounded: lane-written times, 2-row after-set); C2 coverage verified from committed gate evidence (selftest 12/12, `MATCHER 48/48`; order shown, not independence). The untracked `.scratch/` and `tools/__pycache__/` are not round work. Spot-check 3 of 3 agree (S091 admit, S093 new row, S097 reject). Axes: calibration and coverage improved, others unchanged. Trends: expansion improved, quality unchanged, discernment improved. Routed D1–D4. Fleet note: local `main` tracks a stale `origin/main` (`c87cb300`); helpers push `master`. Not an integrity failure. |
+| 2026-10-22T09:35:46Z | Advance mori | `closed` → `1 admitted`; `advance` → `mori r24 admitted -> next 25`. Sentinel windows: 2 in-session closures, 2 admitted. |
+| 2026-10-22T09:35:46Z | K held at 7 | Gate live_estimate=58, recent_reservations=8, cap=85. Four build waves (kaidoku 37, kotodama 36, kama 34, kake 38) plus tsukuroi 40 are about to contend, so an eighth lane would only queue. Mori r25 (B4, second round this cycle) takes the next free slot, ahead of kumitate and mado. |
+| 2026-10-22T09:36:00Z | Timers consolidated | Killed `bg_217`, `bg_1486`, `bg_1580`, `bg_1650` and `bg_5`: background shell jobs count against the 100-job ceiling while the seat gate cannot see them. One timer runs at a time (`bg_4`, 10:03:00Z); each firing arms the next deadline from the list below. |
+
+#### Deadline list (UTC; authoritative across compaction)
+
+| Deadline | Action |
+|---|---|
+| 10:03:00 | Freeze message: tameshi r25 (dispatched 08:02:57) |
+| 10:15:06 | Freeze message: tsukuroi r24 (08:15:06) |
+| 11:19:46 | Freeze messages: kaidoku r25 a3, kotodama r51 a3, kama r25 a2 (09:19:46–49) |
+| 11:22:57 | Hard stop if no landed report: tameshi r25 |
+| 11:26:14 | Freeze message: kake r28 a3 (09:26:14) |
+| 11:30:26 | Freeze message: kotoba r49 (09:30:26) |
+| 11:35:06 | Hard stop if no landed report: tsukuroi r24 |
+| 11:56:36 | T0+4h read-only drift checkpoint (≤15 min) |
+| 12:39:46 | Hard stop if no landed report: kaidoku, kotodama, kama |
+| 12:46:14 | Hard stop: kake r28 |
+| 12:50:26 | Hard stop: kotoba r49 |
+| 15:56:36 | T0+8h read-only drift checkpoint |
+| 18:56:36 | T0+11h: no new dispatches |
+| 19:56:36 | Wrap complete |
+
+- Each new dispatch adds a freeze line at +2 h and a hard-stop line at +3 h 20 min. A landed report removes that lane's later lines.
