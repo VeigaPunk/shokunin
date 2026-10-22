@@ -136,3 +136,11 @@ Computed at `2026-10-22T08:00:22Z` from the latest five explicitly admitted hyak
 
 - Sentinel accounting rule: an in-session closure is the closure of a round dispatched after T0. The chousa r28 closure reconciled a pre-T0 round. It appears in the wrap tally but is excluded from the sentinel windows and the K-raise count, because it measures the old regime, not this leg's dispatch note.
 - L0 baseline: 2 lines contained `L0 ANSWER` at T0+9min. Any later increase is checked for a hold answer, and the answered lane joins at the end of the order.
+
+### Operator directive 5 — swarm skill invoked
+
+- Verbatim, with `/swarm` invoked: "for this, 32-100 per round". Read as: swarm mode on for this conversation; each lane round totals 32–100 seats. This matches directive 3 and the landed addendum (`2a835a95`) that every prompt this leg embeds. No prompt, setting or route changed. The three running L1s already carry the rule (one match each for "32–100 seats in total" in their rendered prompts).
+
+| Observed checkpoint | Event | Evidence / result |
+|---|---|---|
+| 2026-10-22T08:10:00Z | Validator band smoke (`plan` only; no dispatch, no registry) | `ufo-swarm-wave.mjs plan` over synthetic scout specs. Policy v1: 31 → exit 1 `too_few_lanes`; 32 → exit 0; 64 → exit 0; 65 → exit 1 `wave_too_wide`. Policy v2: 63 → exit 1 `too_few_lanes`; 64 → exit 0; 100 → exit 0; 101 → exit 1 `too_many_lanes` (cap 100). The validator gates each wave; the addendum text and the closure enforce the 100-seat round total across waves. |
