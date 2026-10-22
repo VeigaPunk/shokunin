@@ -14365,6 +14365,47 @@
    "notes": "Dispatch: attempt 1 launched 14:09:06-03, lane-dead-no-report 14:30:08-03 (omp restart 17:26Z); attempt 2 launched 14:30:09-03, complete 16:27:10-03; report fleet 656e724. Conformance pass (ahead=0, 12 commits on main, lane identity) except one tracked leftover: .ufo/waves/round-28/a2w/ExecR27SelftestFix.md modified after 242b0d8b by the still-running seat (timestamps 19:26Z and one sentence); seat report only, not round work. Routed: (1) do not file with a live seat; settle that report; (2) r27 defect 2 still open, selftest FAIL correct-stub; (3) hex-screen before any C1 freeze; (4) real held-out filtered test with unseen predicted-true and predicted-false entries; (5) freeze gate must audit every claims*.json; (6) counters must require the claim-specific Gate row. SHONEN 4 boxes [~], not judged fully checkable.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 28,
+   "date": "2026-10-22",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 28,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 28
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "unchanged",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-28/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-28-verifier-spotcheck.md@367ec0f1d79cb9b67d724f2962e7554a0841b1fc",
+    "rechecks": "C1 re-measured with frozen counter (byte-identical): base 06b59b93 60/64 r6 mm1 exit1; prompt head 1076914a 62/64 r6 mm1 exit1; report head 1dde85f3 63/64 r6 mm1 exit1; target 64/64 r8 mm0 exit0 not met. Ledger entries[:354] equal base at both heads (370/371). SCORECARD/LOG/SKILL additions only. Census exit 0 ok, W04 only. Spot-check: S059 admit agree (quote verbatim, 14w; pinned digests drift), S092 duplicate reject agree. No reviewer seats dispatched."
+   },
+   "commit": "tameshi-shokunin@1dde85f3af3dfeae777c1ca4eed26aaf18df1167",
+   "closed_at": "2026-10-22T19:31:42Z",
+   "campaign": "hyaku",
+   "notes": "launch 2026-10-22T15:52:18-03:00 pgid=3552765 hyaku-inline attempt=1; complete 16:28:50-03:00. Lane landed 41da22a/1dde85f and rewrote the fleet report (2012146 -> 38ae0ff) after the prompt's head 1076914a; verdict identical at both. Transient untracked c1-after-final3.stdout committed by lane before close (final state ahead=0, clean). Routed: (1) C1 open: cover Round-18 registry, restore restraint 8/box3_mismatch 0, land widely-read input edits before the content revision; (2) S059 digests no longer reproduce: supersedes row; (3) close against one head, no post-complete landings/report rewrites; (4) round-27 routed items 4-6 still open. SHONEN all [~], none promotable.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
