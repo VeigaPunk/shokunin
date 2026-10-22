@@ -189,3 +189,16 @@ refusals).
   - Row 4 lacks the flow-mapping false-number caveat.
   - The retention repair garbled row 1's host sentence.
   - The SKILL block needs these fixes in round 26. The "never edit settings, kill jobs or split waves" rule held.
+
+## Addendum 5 — ReviewRoutedCode (C1 tool): weakened
+
+Final lane tip `df4fd6e0ee572f5c444216bd35eda95ba541ee91`, pushed; retention scan still at 4 unallowlisted hits. The C1 after-value
+reproduces at every tip, but the checker has fail-open paths, none fixed this round:
+- D5 reads Score and Last change by column position, so an extra or reordered column hides a `round 1` cell;
+- D2 does not scan headings;
+- D3 holds on an appended correction beside the uncorrected `PASS 6/6` line, which is this tip's state;
+- a missing pinned baseline exits 1 rather than 2;
+- a run against a promisor clone writes objects;
+- a `--repo` below the top level changes results.
+
+Also, the SCORECARD round-25 note saying D5 does not check Last change is wrong: it checks the `round 1` rule. These are round-26 work.
