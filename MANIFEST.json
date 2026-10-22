@@ -12836,6 +12836,48 @@
    "notes": "Driver digest: 2026-10-21T20:38:11-03:00 launch chousa round=28 pgid=2907258 driver=hyaku-inline attempt=1; 2026-10-22T04:58:59-03:00 complete chousa round=28; hyaku-inline attempt=1. Report fleet commit 60f0810a1fbbff912fbf2865e734b02c8a873234 by chousa-shokunin; lane state ahead=0, porcelain clean; prompt carries template sections 1-5 verbatim with placeholders only. Honest stop: sole claim C1 not achieved, so not admitted; status ok (real committed work, not a marker). Defects routed to the lane: D1 run-together tokens in report and lesson (23 distinct in the report, e.g. all69, proposal64); D2 session-3 custody vocabulary (Parent approval, directive ids, private hashes) in lane records; D3 lesson/SCORECARD/LOG say no end census ran, but fleet witness parent-census.json (b4b338e9) and this closure re-run show exit 0, so append a dated correction; D4 report counts not re-run; D5 wall time 8 h 21 min. C1 ancestor over-refusal and R27 C3 path-vs-prefix conflict stay open; same axis and surface two rounds running. SHONEN boxes all [~] as lane assertions, none fully non-author checkable from this round. A rejected closure feeds the driver's rejection-streak rule; any block or advance is Main's action. Closure model string exposed: anthropic/claude-opus-5-5. No installs.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 48,
+   "date": "2026-10-22",
+   "type": "closure",
+   "lane": "kotoba",
+   "lane_round": 48,
+   "lanes": {
+    "kotoba": "ok"
+   },
+   "lane_rounds": {
+    "kotoba": 48
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "freshness": "improved",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "calibration": "unchanged",
+    "consistency": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-48/kotoba.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kotoba-shokunin/corpus/lessons/round-48-verifier-spotcheck.md@a5adc146a2995dcc5a95a6d8db6e5674f75191ac",
+    "rechecks": "C1 re-measured: git ls-tree -r --name-only <rev> corpus/knowledge | grep -c '\\.md$' 34 @197b5a4/75f671b -> 35 @887b6af/e5c926c (sole add: frontmatter-rule-authorities-round48.md); supersedes S0 0->4; entry recheck re-run = 1 (spec.md 7608 B sha256 9a67de89). Axis dispute (A09: count is expansion observable) ruled for freshness: file-exists measure allowed by AXES, content re-verifies SKILL.md:151 rules against six live authorities and fixes stale rows; counter weakness routed. C2 evidence-verified (ruler not executed): pinned receipts 5 target failures @197b5a4 (sha 8bec447a) -> 0 @d1ae458/48819b9/03f5394, ruler 01af33a6 and oracle 1d09a38c unchanged since c0185da, consumer hashes match, diff implements direct-child union. No-harm: SCORECARD scores unchanged; intermediate reds (84b9c9b, 2788704) repaired by head; 109 added path tokens resolve at e5c926c. Spot-check: S018 and S021 admits agree (quotes verbatim 12 and 22 words), S017 entry cell agree, opencode-docs reject agree. Census validate exit 0 (3 W04)."
+   },
+   "commit": "kotoba-shokunin@e5c926c5f9d4c32446de5107d35ec8f5c8e924fb",
+   "closed_at": "2026-10-22T09:29:30Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-10-21T20:38:04-03:00 launch kotoba round=48 pgid=2906116 attempt=1; 2026-10-22T04:58:59-03:00 lane-dead-no-report kotoba round=48 retry (attempt 1 superseded at 04:56:36, stale author); 2026-10-22T05:03:00-03:00 launch kotoba round=48 pgid=7637 attempt=2; 2026-10-22T06:19:11-03:00 complete kotoba round=48 attempt=2. Report ff9b983 by lane identity; SHONEN 4/4 [~]; all 12 cited hashes ancestors of master; lane ahead=0, clean. Conformance notes: report base 75f671b vs driver base 197b5a4 (attempt-1 lane commits c0185da/75f671b, re-verified, no count effect); lesson Gate lacks explicit admit line for the knowledge entry. Routed: R1 configured/log roots keyed by directory vs agents root by frontmatter name, contradicting own S016 (latent double count, A21); R2 C1 counter blind to content, next freshness claim counts supersessions/rechecks; R3 SCORECARD.md:112 stale 'now exits 2' after 48819b9 fix; R4 entry counts without command/date (Q13) and Gate entry admit line; R5 routed defect 1 and oracle nested/frontmatter-name gap carried. SHONEN not fully non-author checkable (box 3 rests on round-8 cold run). Runtime model exposed: anthropic/claude-opus-5-5. Installs: none.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
