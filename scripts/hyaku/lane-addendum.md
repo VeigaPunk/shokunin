@@ -1,4 +1,4 @@
-## 6. Campaign addendum — hyaku (百) phase 3, operator directives of 2026-10-22 (binding this round; in-session)
+## 6. Campaign addendum — hyaku (百) phases 3–4, operator directives of 2026-10-22 (binding this round; in-session)
 
 Operator directive 3, verbatim (phase 3, 2026-10-22): "each round should be a 32-100 swarm round".
 Session scope, lane order and blocks, holds and operator rulings: `.scratch/goal-20261022-hyaku-12h.md`
@@ -209,3 +209,10 @@ not, and name both in the report.
      (SCORECARD/SHONEN) and observed repo state. It cannot be an assertion.
    - Prefer 2 claims. Add a 3rd only if it is independent and cheap to verify.
    - Never narrow a target after landing: a miss is an honest stop.
+   - A target must be one a do-nothing control cannot reach (phase-4 closures: kaidoku r29 C1,
+     where a first-answer baseline scored 152/152; kake r34, where a no-parse replay and a junk-row
+     commit met both counters). Before freezing, build the cheapest control that skips the claimed
+     work, score it with the frozen counter, and commit that receipt: if it meets the target, the
+     counter or target is wrong — fix it before data.
+   - Never change a counter or kill rule after data without an independent attack on the new
+     version; the claim is judged on the version declared before data.
