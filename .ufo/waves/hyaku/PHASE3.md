@@ -368,3 +368,10 @@ Deadline list update (UTC): add 13:45:33 freeze kake r30; 15:05:33 hard stop kak
 | 2026-10-22T11:47:00Z | Drop-back trip: K target 9 → 7 | Evidence: kaidoku's 65-seat wave waited an hour for a grant, its falsify wave was then cut by the freeze, and first waves started 1h01m–1h23m after dispatch (gate sample 11:30Z). The gate polls without fairness, so large waves starve when 8–9 lanes share 85 seats. Action: no backfill until fewer than 7 lanes are in flight (8 now). Steer to all eight running L1s: prefer waves of 32–40 seats for anything not yet dispatched; rounds still total 32–100; never pad. |
 
 Deadline list update (UTC): remove 12:39:46 (kaidoku landed).
+
+| Observed checkpoint | Event | Evidence / result |
+|---|---|---|
+| 2026-10-22T11:47:30Z | Kotoba r49 landed (L1 KotobaR49, 2h17m) | Lane pushed at `374ecf982072`; report fleet `8bf9073` plus appended addenda `ecb3a52`, `5d2774f`, `87de5ea` and `c688a71` (the last after all seats returned). Shape: two v1 waves, build 36 + falsify 38 = 74 seats, 0 dead, 51% attack, no residual call. L1 claims: C1 adjacency (classified Adjacent rows with pinned sibling commits 0 → 20; score held 8.0), C2 operability (`boxes proven` 0 → 2 plus a capability row; score held 8.5). Corpus integrity failing checks went from 4 to 1. L0 lines filed at fleet `ff3aff2` (opencode config owner; retiring round-1 `*-L1.md` prompts). Installs: none. |
+| 2026-10-22T11:48:51Z | Verify kotoba r49; closure | `OK kotoba r49 landed: report c688a71 lane tip 374ecf982`. Depth sentinel against the single admitted baseline (r48: 13973 bytes, 110 pointers): 12492 bytes (0.89), 87 pointers (0.79). No trip. Fresh non-author job `HyakuCloseKotoba49`. Seven lanes are now in flight (mori, kumitate, tameshi, tsukuroi, kotodama, mado, kake), equal to the K target of 7, so no backfill. |
+
+Deadline list update (UTC): remove 12:50:26 (kotoba r49 landed).
