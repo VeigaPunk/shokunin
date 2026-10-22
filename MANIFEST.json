@@ -14067,6 +14067,51 @@
    "notes": "Driver: launch r31 attempt=1 12:38:24-03:00; lane-dead-no-report 14:30:11-03:00 (omp restart 17:26Z); launch attempt=2 14:30:13-03:00; complete 15:44:05-03:00. Report fleet 4155cf7e (replaces d085219), lane tip 46b94fa, pushed ahead=0 clean. Held seats KakeR31.CriticC1Counter (cyber-content block) and KakeR31.CriticSandboxThreatModel (auto model switch) not retried or re-created; ReviewHostileSelftestCode judged from committed evidence only. Disclosed weaknesses ruled: C1 counter name-trust does not reach the landed runner (content-based refusals, h0-control); C2 strict provenance-only offset by 6/6 truth sample. Routed: (1) counter benign hostile-named control; (2) m3 survives / Git pins unprobed alone; (3) ReviewRunnerDiff LOW items (read_expected OSError, stray root files skipped, hand-duplicated option tables, symlink docstring); (4) strict C2 needs truth sampling step; (5) ds4cc-marketplace render.yaml blob d17ab7e5 unretained; (6) history://KakeR30.* pointers dead; (7) no screened candidates this round. SHONEN boxes 1,3,4 look non-author checkable (operator-owned).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 52,
+   "date": "2026-10-22",
+   "type": "closure",
+   "lane": "kotoba",
+   "lane_round": 52,
+   "lanes": {
+    "kotoba": "ok"
+   },
+   "lane_rounds": {
+    "kotoba": 52
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "freshness": "improved",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "consistency": "unchanged",
+    "calibration": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [
+    "corpus/knowledge/mcp-server-instructions-round52.md (MCP server instructions per client, 7 of 7 located quotes)",
+    "verifiers/check_correction_sweep.py (correction-sweep pin, shown able to fail)"
+   ],
+   "report": ".ufo/reports/round-52/kotoba.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kotoba-shokunin/corpus/lessons/round-52-verifier-spotcheck.md@e78dff667237fba2e3cf9eccb802eff5bc9ea302",
+    "rechecks": "C1 re-measured with frozen counter (diff 4c003a4b..0c9180a6 empty): 0 of 4 exit 1 @c8579a4c -> 4 of 4 exit 0 @c2107ecf/0c9180a6, seeds 7,1234. C2 re-measured: 0 of 7 exit 1 @c8579a4c -> declared 5 of 7 @c8407a45 (--fetch 5 of 5, exit 0) meets target >=3; 7 of 7 at tip is a later measurement on the same frozen counter, not credited as the claim. No-harm evidence-verified (ExecGateMatrix: 17 gates base/head, no 0->nonzero flip, surfaces self-test 119->129, floor 129); SCORECARD no score moved. Spot-check: 3 admits agree (S035, S041, S042 byte-identical sha256), 2 rejects agree page-level / client verdict already corrected (M38); S042 quote verbatim; census exit 0."
+   },
+   "commit": "kotoba-shokunin@0c9180a69017c47d36b5f032c4bb27ed1d131908",
+   "closed_at": "2026-10-22T19:02:13Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 2026-10-22T12:48:39-03:00 launch kotoba round=52 pgid=3875350 driver=hyaku-inline attempt=1; 2026-10-22T14:30:02-03:00 lane-dead-no-report kotoba round=52 (omp restart 17:26Z); 2026-10-22T14:30:04-03:00 launch kotoba round=52 pgid=1002393 driver=hyaku-inline attempt=2; 2026-10-22T15:56:52-03:00 complete kotoba round=52 attempt=2. Rulings: C2 counts only the declared target (5 of 7 >= 3), 7 of 7 credited as quality correction; host drift opencode 1.19.3->1.19.4 (17:50:30Z, corroborated) reads identically at base and head = not harm, red gate routed; swarm total 34 upheld (attempt-1 gate files empty, registries agentId null, no task calls; attempt-2 34 seat transcripts/reports). Conformance defect (status-neutral): planned build+falsify wave shape not run (M37 capacity). Routed: re-pin opencode 1.19.4; re-record corpus-integrity baseline (commit_total); self-test arms for the two attempt-2 C1 fixes; C2 counter loose host pins/substring Gate (M12,M16); drift sentinel (record wider than verified, r50-52) -> different frontier r53; Q30 must open changelogs/current docs-source before an absence. SHONEN boxes 2-3 lack fresh non-author runs; not all checkable.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
