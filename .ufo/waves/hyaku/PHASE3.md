@@ -588,3 +588,25 @@ Deadline list update (UTC): add 17:50:59 freeze tsukuroi r27; 19:10:59 hard stop
 |---|---|---|
 | 2026-10-22T15:54:00Z | Closure kumitate r40: ADMITTED | `HyakuCloseKumitate40` (fresh, non-author; 14m22s; ephemeral `uv run --with jsonschema`, nothing persistent): MANIFEST `rounds[465]` at fleet `b539e07e3f86`; spot-check `a58b7f72afc1`. C1 operability verified from committed receipts (probe byte-identical; recount 20/26 → 0/26; honest edits clean at all three revisions); the `--open` refusals are not a harm (new opt-in mode; default checklist path unchanged; documented workaround reads clean). C2 coverage re-measured (88/89 → 90/90; PROXY: MATCH). R39-1 to R39-8 dispositioned against failing-before receipts. Cite-check 510 → 511 not a harm (external commit re-opened; hash matches). The two held seats were excluded from all evidence. Trends: expansion improved, quality improved, discernment improved. Routed R40-1 to R40-7. Two admits in a row for kumitate. |
 | 2026-10-22T15:55:12Z | Advance kumitate | `closed` → `1 admitted`; `advance` → `kumitate r40 admitted -> next 41`. Sentinel windows: 24 in-session closures, 18 admitted, 6 rejected. Lanes in flight 5/5; waiting: kumitate r41 (D10); kotodama after its r53 closure. |
+| 2026-10-22T15:56:44Z | Kaidoku r27 landed; closure; dispatch kumitate r41 | Kaidoku r27 (L1 KaidokuR27, 1h14m): lane `29a76a637ad4`, report `57a140edf49d`. Author honest stop: C1 depth missed at 15/16 (two runs returned byte-identical envelopes, which the frozen counter rejects; the passing extra run was not swapped in); C2 capability met (24/24, 3/3). Shape: 33 + 34 = 67 seats, 45 attack; 6 of 34 wave-2 mutation-testers dead at spawn ("No model selected", 17.6%). Verify OK; depth 15764 bytes (0.96), 108 pointers (0.86). Fresh non-author job `HyakuCloseKaidoku27`. Dispatch kumitate r41 attempt 1 (D10): evidence `9dca887`; base `a58b7f72`; L1 `KumitateR41`; routes R40-1 to R40-7; held items not to be recreated; aim to land by 17:50Z. |
+
+Deadline list update (UTC): remove 16:41:34 and 18:01:34 (kaidoku r27 landed). Add 17:56:44 freeze kumitate r41; 19:16:44 hard stop kumitate r41.
+
+### T0+8h checkpoint (15:56:36Z; read-only, under 15 minutes, no review swarm)
+
+| Sentinel | Observed (command or source) | Result |
+|---|---|---|
+| 2 consecutive in-session rejections in a lane | MANIFEST rounds[442..465], per lane: only tameshi (r26 R, r27 R) | already actioned: tameshi parked 14:16Z |
+| First 4 all rejected, or any 6 consecutive with ≤2 admitted | Sequence `AAARAARAAARRAAAAAAARARAA` (24 closures); minimum admitted in any 6-window = 3 | not tripped |
+| Report depth below 40% of the lane median | Lowest ratios this leg: tsukuroi r25 at 0.56 bytes / 0.43 pointers; tameshi r26 at 0.49 / 0.56 | not tripped |
+| Same axis and surface 3 rounds running | tameshi calibration (parked); kotodama claim-sizing defect three rounds (r51 D, r52 C, r53 C), so its next round must work a different frontier area; kaidoku calibration twice, steered off in r27; mori routed-repair (handled in r26); kake citing-set gate (watched) | actioned per lane |
+| Run-together tokens or private jargon | Reports: only seat identifiers (`Read17`), criterion labels (`QUALITY48`) and hex hashes, so not degraded prose. **This ledger**: compact lane-round labels ("mori24 A, tameshi25 A, … kama25 R") in the T0+4h sentinel row, written by Main | **tripped (writer: Main)**. Action: ledger checkpointed (this commit), binding contract re-loaded below, labels written as "mori r24" from now on. Main cannot force a context compaction from inside the session; noted honestly. |
+| More than 20% of a wave's seats dead | Worst this leg: kumitate r40 wave 2 at 7/35 (exactly 20%), then kaidoku r27 at 17.6%, kotodama r53 at 15.6%, tsukuroi r26 at 11%, all from the degraded @m_mim route | not tripped (at the line); L0 filed for the route |
+
+Metrics at T0+8h:
+
+- Landed this leg: 26 lane-rounds. In-session closures: 24 (18 admitted, 5 rejected honest-stop, 1 rejected harmed). Closing: kotodama r53, kaidoku r27. In flight: mori r27, kake r31, kotoba r52, tsukuroi r27, kumitate r41.
+- Trends over the 24 closures: expansion improved 21, unchanged 3; quality improved 16, unchanged 8; discernment improved 23, unchanged 1. No harmed trend.
+- Blocked or parked: chousa, kama, mado (driver blocks); tameshi (session park). Recovered: kumitate (r39 recovery admitted, then r40 admitted), kake (three straight admits), tsukuroi (two straight admits).
+- Holds added this leg: kumitate r40 `AtkNovelIdentity`, `AtkNovelRecords` (safety filter with automatic switch).
+- Open L0 lines filed this leg: chousa block; job ceiling; bot-challenge access; kama block; mori public history; tameshi park; m_mim route degradation; kumitate safety hold. Plus lane-filed: mori capacity cause, mado precedence, kotoba precedence, tsukuroi pause-lift evidence.
