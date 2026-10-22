@@ -478,3 +478,8 @@ Deadline list update (UTC): remove 13:03:13 (kumitate r39 landed).
 | 15:56:36 | T0+8h read-only drift checkpoint |
 | 18:56:36 | T0+11h: no new dispatches |
 | 19:56:36 | Wrap complete |
+
+| Observed checkpoint | Event | Evidence / result |
+|---|---|---|
+| 2026-10-22T12:33:00Z | Closure tsukuroi r25: ADMITTED | `HyakuCloseTsukuroi25` (fresh, non-author; model `anthropic/claude-opus-5-5`; 18m03s; one reviewer seat, self-reported `zai/glm-5.3-flash`): MANIFEST `rounds[456]` at fleet `66bb06aab32a`; spot-check `e9f5356cd68c`. C1 calibration re-measured with git and regex (base 12 real mismatches, one path-grammar false positive, so 12 → 0 of 23); a valid calibration claim; the SHONEN rewording is not a narrowing. C2 depth re-parsed 0 → 6/6 under stricter variants too; rows re-opened. Refuted claims now carry correction notices. VCS incident: status-neutral conformance defect (stray commit on no branch, remote never had it, `fsck` clean). Trends: expansion unchanged, quality improved, discernment improved. Routed 8 defects, including an undisclosed in-place SCORECARD edit and late canonical loading (third recurrence). The tsukuroi rejection streak is broken. |
+| 2026-10-22T12:33:25Z | Advance tsukuroi; gate | `closed` → `1 admitted`; `advance` → `tsukuroi r25 admitted -> next 26`. Sentinel windows: 15 in-session closures, 11 admitted (`AAARAARAAARRAAA`). Gate live_estimate=90 over cap 85, with active grants kake 34 (12:02:50), kaidoku 33 (12:11:26), kotodama 35 (12:20:08), kotoba 33 (12:28:14). Waves now get a grant about 17 min after dispatch at K=5 (it took up to 1h48m at K=9). The gate is saturated at five lanes, so K stays at 5. Waiting in rank order: mori r26 (B4), tsukuroi r26 (B5), kumitate r40 (D10). |
