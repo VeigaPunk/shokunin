@@ -1164,3 +1164,44 @@ The indentation receipt has 93 checks; `canonical-final-checks.txt` has the fina
   remain unproved. Commands, exact receipt and limits:
   `.ufo/waves/hyaku/kotoba48-prerequisite/parent-*`.
 
+## 2026-10-22 — actual Kaidoku25 freeze and scoped Chousa28 negative publication
+
+- Kaidoku25's exact corrected 25-file preregistration landed and pushed at
+  `a4ab912a956fb863fedb0e9b9bb866777af27495`. Main verified its sole parent
+  `62feef9c0cbd5aadafa453456c55c28832175206`, the claims path's unique first
+  addition, and all four unchanged independent instrument/oracle hashes.
+  Original34 and the separately frozen H01–H16/dataflow obligations remain
+  load-bearing; 34/34 alone cannot establish the claim.
+- One real executor now owns only the declared subject CLI in the separate
+  `/fast/scratch/hyaku/kaidoku-r25-subject-impl` worktree. It has no runtime,
+  VCS, oracle or old-source mutation permission. Main owns source review,
+  canonical candidate landing and quiescent measurement. The old unavailable
+  before is not34 observed failures; all role/scratch/pin/QUALITY33 debts remain.
+- Main materialized the already-frozen held-control recipe as inert, owned
+  Git histories before any candidate measurement. No fixture program or
+  audited instrument was executed. Actual commits, trees, modes, blobs,
+  isolated decoy and setup operations are retained in
+  `.ufo/waves/hyaku/kaidoku25-prerequisite/held-input-materialization.json`.
+- Chousa28's exact14 derived negative records landed and pushed at
+  `7c87b9734eb71985e19767af36d57dff89536521`. Main preserved every old public
+  line; original29 files/bodies, private archives and the unapproved ruler
+  remain excluded. Relative logical provenance names are not permission to
+  publish those bodies. The independent publication review's path-only HOLD
+  was explicitly withdrawn after this scope clarification, not erased.
+- Actual canonical source validation returned0 with `chousa ok` and empty
+  stderr. Main reopened the Python path API and the retained historical
+  diagnosis: API/history support is not privacy-policy authority. Full C1
+  remains not achieved/unprovable, denylist unchanged, no implementation,
+  after value, scalar, capability or admission. Root-report text and outside
+  closure follow separately; records are under
+  `.ufo/waves/hyaku/chousa28-negative-records/`.
+- Kake28's exact72 native evidence assignments actually dispatched after
+  payload approval/push, with unchanged task text/roles and only the required
+  transport metadata addition. Completion events are not qualification;
+  late peer continuations and missing initial instruction reads remain
+  explicit. This is not72 causal improvements or a continuous64-active floor.
+- Useful work continues through the existing owners and genuine scoped
+  prerequisites. No stopped item, failed/VOID seat or policy hold is retried
+  to fill concurrency. No100-round completion, full conformance or global
+  privacy/no-effects certificate is asserted. No tools installed or updated.
+

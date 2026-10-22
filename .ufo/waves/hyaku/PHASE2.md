@@ -1399,3 +1399,36 @@ Devin weekly quota and no workers remained. Nothing was cancelled. Claims/attemp
   durably land the exact adapted payload before dispatch. All three advisories
   actually spawned under separate cap200 guards, are not another swarm/round,
   have no shipping/judge authority and do not replace any failed/VOID member.
+
+### Session 3 — actual first-add and safe-negative landings (2026-10-22)
+
+- Kaidoku25 F is now `a4ab912a956fb863fedb0e9b9bb866777af27495`, sole parent
+  I62feef9c, exact25 approved files and all four I hashes preserved. One
+  separate actual subject executor is active; Main alone reviews, lands and
+  measures. Full original34 plus frozen H01–H16/non-tautology scope remains.
+  Owned inert held-history inputs are materialized, not executed programs.
+- Chousa28 safe14 is pushed at `7c87b9734eb71985e19767af36d57dff89536521`;
+  actual canonical common census returned0. Private original29 bodies and
+  operational draft remain excluded, policy relaxation rejected, full claim
+  unprovable. Author may prepare only a Root-report-LAST text draft for Main.
+- Kake28's approved72 actually dispatched once, after durable transport
+  custody. Initial runtime observation and actual IDs are in
+  `kake28-author/proposal72/`; many terminals are received, but current
+  continuations must settle before a distiller. No replacement or padding,
+  no continuous-floor or completed-training inference from slot counts.
+- Tsukuroi24's exact74-path v2 data/design packet is under bounded continuation
+  review by the same two ordinary advisers. No measuring source exists yet;
+  actual D/I landing and before authority remain separate prerequisites.
+- Kotodama51's one authorised pre-F correction now names16 genuine method
+  interfaces with one operative current table; original minimum15 and I18
+  remain unchanged. One actual outside prereg critic reviews the frozen
+  packet; no F or candidate implementation permission.
+- Tameshi's original known-native barrier settled at65. The original planned
+  ordinary distiller is authorised, not a replacement or new wave; broader
+  literal-import/source-mirror qualifications are metadata-only and uncredited.
+  Mori/Kotoba's original source-only continuations remain their owners'.
+- The live floor can dip while existing work settles; no filler is counted.
+  All policy/item/source/rejection holds remain. See Root LOG and exact
+  per-lane prerequisite/publication records; no new admission or100-round
+  completion is claimed.
+
