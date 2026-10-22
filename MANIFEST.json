@@ -13210,6 +13210,50 @@
    "notes": "Digest: 2026-10-21T20:38:06-03:00 launch kaidoku round=25 attempt=1; 2026-10-22T04:58:59-03:00 lane-dead-no-report (attempt 1 superseded, stale author); 2026-10-22T05:15:09-03:00 launch attempt=2; 2026-10-22T05:31:57-03:00 lane-dead-no-report (attempt 2 stood down, job limit 100, capacity); 2026-10-22T06:19:48-03:00 launch attempt=3; 2026-10-22T08:46:42-03:00 complete kaidoku round=25 attempt=3. Report d0c4492f by kaidoku-shokunin; all cited lane hashes ancestors of main; lane ahead=0, clean. Session quality-bar fact: only wave 1 ran (33 seats, 8 attack = 24.2%, one short of the 25% floor); wave 2 (32 attack seats) cut by the 2 h freeze after an hour at the seat gate; not a protocol admission criterion. Attempt 1 froze a different claim (.ufo/waves/round-25/claims.json at a4ab912a, subject fafdd283); attempt 2 froze new claims at 7ef837a4 before their after-measurement; disclosed as not pursued, FLAGGED in claim-freezes.tsv; not a narrowing. Conformance defects (status-neutral): Sources before->after counted from 7ef837a4 (74) not base (72 -> 78 over the lane-round); attempt-1 commits 62feef9c/a4ab912a/fafdd283 missing from Landed changes; attempt-1 run-together tokens in SCORECARD/SKILL. Routed to kaidoku: SKILL.md r25 custody section says candidate not implemented though fafdd283 landed it; C1Cherrypick stale statements still open; both frozen instruments have disclosed false accepts; entry 'per selector' wording for 138 responses (per carrier-selector row); r24 capinfos source disagreement has no QUALITY criterion. SHONEN all [~]; the cross-domain-bleed box looks checkable by a non-author (operator-owned promotion). No review seats dispatched; no installs.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 49,
+   "date": "2026-10-22",
+   "type": "closure",
+   "lane": "kotoba",
+   "lane_round": 49,
+   "lanes": {
+    "kotoba": "ok"
+   },
+   "lane_rounds": {
+    "kotoba": 49
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "adjacency": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "calibration": "unchanged",
+    "consistency": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "dispatch-prompt box check: verifiers/verify_dispatch_prompts.py --box-proof -> boxes proven 2 (six named conjuncts of dispatch.04/dispatch.08, one must-fail fixture each; bounded)"
+   ],
+   "report": ".ufo/reports/round-49/kotoba.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kotoba-shokunin/corpus/lessons/round-49-verifier-spotcheck.md@f30464660c675d1c1e2851a3bf0366a3aaffe5a8",
+    "rechecks": "C1 re-measured: plan awk/grep row counter on PROVINCE.md Adjacent = 0 @a5adc146 -> 20 @f054b8e (7 adjacent/13 none) -> 20 @bfd5a58 and @374ecf98 (9/11); sampled sibling pins (kasegi 1fafde8f, kake e73d48bb, kotodama 35f0d49f) exist and are ancestors; census guard evidence-verified (LOG landing-pin entry: rows 20 verified 20, province rows 20 matched 20 after corrections; later PROVINCE edits only unchecked boundary cells). Statement wider than counter (format-only counter read 20 at the misclassified first landing; SCORECARD 'from their own bytes, 0 contested' over kake/kasegi kotoba-side basis and unruled kengaku/tameshi arms); no target narrowed (20 held; rule sentences made explicit, no row moved off a reported value). C2 evidence-verified (box proof not executed): instrument absent at a5adc146 (0); boxes proven 2 exit 0 in seven committed falsify re-runs at c48793d, instrument/fixtures/map unchanged to head; plain reads: map executed 8/delegated 2/unexecuted 31 (base 8/0/33), both boxes delegated, map hashes equal instrument pins, manifest 2 controls + 6 per-conjunct must-fail + 1 N/A. Statement wider than counter ('boxes executed' vs six named conjuncts; variable, <= equality, legacy arm, non-digit folder unfixtured; coverage not enforced); bfd5a58 narrowed prose only (every conjunct -> six named conjuncts), value/command unchanged. No-harm: SCORECARD scores unchanged; LOG, lesson, round-48 entry append-only (0 removed lines); NoHarmGates no green->red at c48793d; 115 added path tokens checked, 31 unresolved all sibling/fleet/example tokens. Spot-check: census admit agree (4 quotes re-read at pins), S022 (skills.md:389, 18 words, 111557 B cdfcb0df) and S023 (overview.md:59, 13 words, 21840 B 7913d455) admits agree, S018 re-open byte-identical agree, kasegi clause reject agree (grep exit 1 at pin), kake/kasegi none->adjacent reject agree. Census validate exit 0 (3 W04)."
+   },
+   "commit": "kotoba-shokunin@374ecf9820722e34f55ee21f3a27419b61aafc06",
+   "closed_at": "2026-10-22T11:57:53Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-10-22T06:30:28-03:00 launch kotoba round=49 pgid=1467692 driver=hyaku-inline attempt=1; 2026-10-22T08:48:49-03:00 complete kotoba round=49 hyaku-inline attempt=1. Report filed 8bf9073 by lane identity, extended by four appended addenda ecb3a52, 5d2774f, 87de5ea, c688a71 (each also rewrote header line 4, the lane-head pointer: defect D1); SHONEN 4/4 [~]; all 8 cited lane hashes ancestors of master; lane ahead=0, clean; operator commit aabf4cd (considerthese) in range, not judged. Routed r48 items: R1 fixed-bounded (frontmatter keying, 116->123; no-name fallback diverges from opencode), R2 answered (M29/Q25), R3 appended, R4 partly (21/23; stays open), R5 carried (v2 oracle specified). Routed defects: D1 report header rewritten by addenda; D2 box_proof docstring and SCORECARD operability headline still overstate (every conjunct / boxes executed), box proof not gated and coverage unenforced; D3 classification rule lacks contested-vs-split precedence, kengaku and tameshi unruled, guard accepts duplicate rows and is not floored; D4 SCORECARD adjacency row 'from their own bytes, 0 contested' needs qualifier; D5 lesson Gate records rejected 0 despite reject decisions; D6 carried R4/R5/R1 fallback. SHONEN not fully non-author checkable (box 3 rests on round-8 cold run). No review seats dispatched. Runtime model exposed: anthropic/claude-opus-5-5. Installs: none.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
