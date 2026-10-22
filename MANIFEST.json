@@ -13485,6 +13485,47 @@
    "notes": "Dispatch digest: 2026-10-22T06:59:30-03:00 launch tsukuroi round=25 pgid=2526458 driver=hyaku-inline attempt=1; completion digest: 2026-10-22T09:14:48-03:00 complete tsukuroi round=25; hyaku-inline attempt=1. Report f61aaaf6 by the lane identity; SHONEN heading with 4 [~] lines; 6 cited commits are all ancestors of master; jj-lane state ahead=0; porcelain clean; prompt carries the contract. Conformance defect (status-neutral): a wave-1 seat (DraftSkillTable) pushed 4 scratch commits (tip d5e64812) into the lane's local master from its clone. The L1 reset master to 0cd9b28 with a CAS git update-ref before any jj import. The reflog confirms this; d5e64812 is on no branch, origin never had it, and fsck --connectivity-only is clean. r24 leftovers verified: 3 restored (round-24 tree identical base->head), 2 deleted (absent; digests no longer re-derivable). Routed defects: (1) the in-place edit of the round-11 SCORECARD.md:51 row in c93bd70f is undisclosed, so the lesson's 'one in-place edit' record is false; (2) S127/S126 have no lesson Gate record; (3) C1 ordinal checks can be satisfied by the round's own declaration prose, and live counts drift (K10 now 27 vs 26 after the spot-check commit); (4) harden the C2 checker (8/17 mutants killed; crashed at c93bd70f); (5) show the QUALITY 59 seat-push bound and no-seat-messaging rule in round-26 contexts; (6) R25-LATE-CANONICAL-LOAD is a third recurrence (r21, r24, r25); (7) SHONEN boxes 3/4 cite superseded notes and none is non-author-checkable yet; (8) S121/S122/S118 teaches cells overstate. No promotion or mint.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 52,
+   "date": "2026-10-22",
+   "type": "closure",
+   "lane": "kotodama",
+   "lane_round": 52,
+   "lanes": {
+    "kotodama": "ok"
+   },
+   "lane_rounds": {
+    "kotodama": 52
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "coverage": "improved",
+    "calibration": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-52/kotodama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kotodama-shokunin/corpus/lessons/round-52-verifier-spotcheck.md@6524184e9c55665b84884a25ec240c695cacb64e",
+    "rechecks": "Step 1: report by kotodama-shokunin at 821fb60, SHONEN 4 lines for 4 boxes; 6 cited hashes are ancestors of main; jj-lane.sh state ahead=0; prompt has 105/105 template lines plus addendum section 6; claims.json and manifest unchanged d9f73c8..2eb489fb. Re-measured on git-archive exports: D awk S094 count 5 (2b956d7, 147cfde, d9f73c8) -> 0 (2eb489fb), manifest acceptance exit 0; S096 and S097 re-opened by plain curl (200) and carry every re-cited detail on lines 83, 87, 90, 92 and 93. C find corpus/knowledge 227 -> 228; acceptance exit 0 (cited 49, C_SID_BAD 0); sweep alone exit 0, rows 228 = files 228, missing_from_index 0; 49 of 49 cited rows mined with the entry in used-by; gap at 147cfde 0 filename owners. R52-M3 confirmed on a scratch mutant: with the README row removed the declared acceptance still exits 0 and the sweep alone exits 1. Ruling: C verifies on its statement, re-derived clause by clause; the weak argv is a routed claim-sizing defect. Post-integration attack on C (no falsify wave ran): 55 sentences re-opened, 46 supported, 4 partly supported, 5 not supported as cited, none false. Separability and the criterion-10 checker were evidence-verified from committed receipts and not executed (prereq-access-check.txt: 6 findings, exit 1 at 2b956d7; selftest 15/15 in final-measures.txt). Spot-check: admits S139, S145, S157 and rejects S178, S132 all agree. sources-census validate: ok, exit 0, W04 on S127-S133 only; rows 131 -> 183. SCORECARD diff append-only."
+   },
+   "commit": "kotodama-shokunin@2eb489fb954bfa448918223cf1c9bad622c694a5",
+   "closed_at": "2026-10-22T13:32:32Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-10-22T07:32:14-03:00 launch kotodama round=52 pgid=12209 driver=hyaku-inline attempt=1; 2026-10-22T10:04:53-03:00 complete kotodama round=52; hyaku-inline attempt=1. Shape: one v1 build wave of 35 seats, 13 attack (37%); Main froze scope at 12:32Z, so no falsify wave ran. The solutionSpace string is a conformant host-binding adaptation (the task schema requires it), but the bytes actually dispatched are not committed. Defects (status-neutral): a cancelled seat modified ScribeSec05Drummed.md after the report; it was back at the committed bytes by 10:06:24 -03:00 (erratum in the spot-check). Routed to lane: (1) C entry: line 104 quotes 'up to five kilometres' with (S157, -2), but S157 lacks it and the true source, UNESCO nomination 01610-EN.doc, has no row; 11 draft-id fragments ', -N' on 8 lines; line 106 should cite S162 and line 113 S159; over-reads on lines 54, 76, 79 and 121. (2) R52-M3 claim sizing, 2nd consecutive round; a 3rd trips the drift sentinel; the acceptance must fail on a missing README row. (3) SHONEN line 8 says 53 mined / 8 queued; observed 52 / 9 (S081); the filed r51 SCORECARD frontier line has the same error. (4) Gate text: S178 line says queued; S145 quote substitutes words and gives p.2131 for p.2132; S157 row omits the captcha it met. (5) Carried: undrafted drummed and decline sections, checker limits, dry-run check gaps, S072, and indexing this spot-check. SHONEN is all [~] and not judged fully checkable. Installs: none. Held kotodama51-prereg-critic was not touched.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
