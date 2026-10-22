@@ -214,3 +214,30 @@ entry, none among the routed rows, all for round 26:
 - line 143, which places `irq.pressure` beside the cpu, io and memory files in cgroup-v2.rst, though they sit in
   separate sections (not disclosed before);
 - line 158, where F11's "no warn at N% rule" is not scoped to the files read (not disclosed before).
+
+## Addendum 7 — ReviewQualityLesson (weakened) and ReopenDocsAndCommit (agree, one knowledge correction)
+
+Final lane tip: `4e51054df96277a15e7edf66c49ee5dc2d271146`, pushed. The retention scan still finds 4 unallowlisted
+hits. 37 of 38 wave-2 seats have returned; MutRoutedD1 has not.
+
+**ReviewQualityLesson: High finding — C1's D1 predicate does not prove the body is real output.**
+- The default check compares the body with a hard-coded two-line constant. A forged PASS body over a commit whose
+  selftest really fails would read held. Only `--rerun` detects this, and it does not decide the verdict.
+- At this tip the evidence is genuine: wave-2 RerunD1Evidence re-ran revision `ec840f9d` and the body is
+  byte-equal. So the counted value is true today, but D1 and QUALITY 76's byte-equality clause are not enforced
+  by the counted check.
+
+Medium findings, none fixed:
+- **D4:** the blanket `__pycache__/` rule would still pass.
+- **D2:** the paraphrase "recomputed on each read" still passes.
+- **Lesson wording:**
+  - the headline "100 whatever the config says" is false for values below 100;
+  - "only registration paths throw" omits eval `agent()`;
+  - the header claims A1–A4 preceded their code, but A4 landed 15 seconds after the tool, and A5 is unlisted;
+  - the stale round-26 Axes bullet is shadowed by a correction rather than removed, which QUALITY 77 forbids.
+
+**ReopenDocsAndCommit:** agree on S101, S103 and S104. One correction: U1's "only the default moved" is wrong. The
+"(1-100)" description was removed on 2026-05-03, and the clamp was rewritten on 2026-09-24, while the 100 ceiling
+and the floor of 1 held.
+
+All of these are round-26 corrections.
