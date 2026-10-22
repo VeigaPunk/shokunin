@@ -384,3 +384,11 @@ Deadline list update (UTC): remove 12:50:26 (kotoba r49 landed).
 | 2026-10-22T11:51:00Z | Slots | Six lanes in flight (mori, kumitate, tsukuroi, kotodama, mado, kake), below the K target of 7, but no eligible lane is waiting: kaidoku, kotoba and tameshi await closures; chousa and kama are parked. Timer `bg_4927` killed (moot); `bg_5050` fires at 11:56:36Z for the T0+4h checkpoint. |
 
 Deadline list update (UTC): remove 11:52:10 and 13:12:10 (tameshi r26 landed).
+
+| Observed checkpoint | Event | Evidence / result |
+|---|---|---|
+| 2026-10-22T11:52:00Z | Steer correction relayed | To the six running L1s: the 32–40-seat preference never applies to a harm-repair wave; such a wave goes out at its validated size and waits for the gate. |
+| 2026-10-22T11:53:00Z | Closure kaidoku r25: ADMITTED | `HyakuCloseKaidoku25` (fresh, non-author; model `anthropic/claude-opus-5-5`; 7m31s): status ok, admitted=true. MANIFEST `rounds[450]` at fleet `a1fb243b0536`; spot-check lane commit `a0639d8e61e4`. C1 calibration re-measured with git and grep (5/5 → 0/5); statement not wider than its counter. C2 coverage 107 → 108; statement wider than its counter, so the closure closed the gap itself (frontier ground at base; S075–S078 re-opened with exact quotes; two live hashes match). Spot-check: 5 admits and 2 rejects, all agree. Trends: expansion improved, quality unchanged (L1 claimed improved), discernment improved. The 24% attack share is recorded as a session quality-bar fact; it does not block protocol admission. Routed: stale custody text, stale self-assessment lines, tool false accepts, wording, a capinfos criterion, Sources counting base. |
+| 2026-10-22T11:54:43Z | Advance kaidoku; dispatch kaidoku r26 attempt 1 (cycle 2) | `closed` → `1 admitted`; `advance` → `kaidoku r25 admitted -> next 26`. Sentinel windows: 9 in-session closures, 7 admitted. Six lanes were in flight, below K=7. Dispatch evidence `4037433`; base `a0639d8e`; L1 `KaidokuR26`. The L1 context now names the 25% attack floor, waves of 32–40 seats, and the harm-repair exemption. |
+
+Deadline list update (UTC): add 13:54:44 freeze kaidoku r26; 15:14:44 hard stop kaidoku r26.
