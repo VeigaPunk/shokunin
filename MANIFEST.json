@@ -15278,6 +15278,49 @@
    "notes": "Driver digest: 2026-10-22T21:37:18-03:00 launch kotodama round=58 pgid=3580278 driver=hyaku-inline attempt=1; 2026-10-22T22:00:51-03:00 lane-dead-no-report (attempt 1 died with orchestrator freeze at 00:54Z, landed nothing); 2026-10-22T22:00:53-03:00 launch attempt=2 pgid=3651885; 2026-10-22T23:18:00-03:00 complete kotodama round=58 attempt=2. Step 1 passes (report 7e41821 by lane identity after tip; 19/19 hashes ancestors of main; ahead=0 behind=0; prompt carries template contract plus section 6). Status-neutral defects: 11 untracked lane-root files (carriers.txt, flagged_rows.txt, locator_diff.txt, met_check.txt, plwiki_check.txt, s313_check.txt, s435_entry.txt, s452_locate.txt, tier_rule.txt, uncited_terms.txt, wayback_rows.txt) written by cancelled round-58 seat ExecReasonSweep58 - report's 'not attributable' is false (containment). Six pre-data revisions, not five (31cf8b6 added TOPIC, omitted). claims.json declared_at 'before any seat scored' contradicts revision_note. '123 controls 0 pass' overstated (18 fail only SUPPORT incl. honest green on missing registry). Census start run late. Quality harmed: twelve verified kongo-kingdom sentence fixes carried a third round unapplied (:84 mestres). Routed to kotodama next round: dispose stray files and confine seat writes; correct revision count and freeze provenance; declare any fetch-class rule before data; declare support/ in lands; apply or mark kongo fixes. SHONEN 4x[~], none fully non-author checkable yet.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 29,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 29,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 29
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "tools/quote-reopen.py verify (quote re-open against registry URLs; QUOTE_REOPEN_MATCH 0/130 -> 130/130 under frozen v3 counter, landed 30c9d24d)"
+   ],
+   "report": ".ufo/reports/round-29/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-29-verifier-spotcheck.md@a3a3710e3d0adf2f95882292f17b5093e3baf97c",
+    "rechecks": "C1 evidence-verified, not re-executed (lane-owned counter with live fetches; L0 fetch scope open): tool sha256 72a3ad47 = 30c9d24d; counter cd509650 and fixture/claims byte-identical aa5e1a31..7692bf13; before 0/130 exit 1; after 130/130 x2 (after-run1/2) + 4 JSON reruns + rederive3.out; 28 v3 controls max 126/130. Rulings: v3 frozen before data under it (only pre-freeze v3 run is the do-nothing receipt inside aa5e1a31; MutateCounter scored controls only; v1 reference impl 82/82 disclosed, redesigns control-triggered and stricter); the frozen predicate (claims.md:49-53) asserts item-label equality, not candidate liveness, so the cache-only 130/130 verifier (needs fetched page text + contract matcher; best no-page-text control 115/130) does not fail C1 under addendum 9; liveness backed separately by DiffToolB landed-fixture.network.json; 3 surviving mutants break the tool contract but not the predicate wording (coverage gap). Re-measured: census ok exit 0, manual census 45->49 rows matching report; research-gate.sh identical; diff insertions-only; prose-check exit 1 on round-28 lesson (14 hits), exit 0 on new prose. Spot-check: 4 admits (S046-S049) + 2 rejects re-opened, all agree."
+   },
+   "commit": "chousa-shokunin@7692bf13a3e4bc4a75e23793e268a3288356ec50",
+   "closed_at": "2026-10-23T02:38:56Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-10-22T22:03:00-03:00 launch chousa round=29 pgid=3655527 driver=hyaku-inline attempt=1; 2026-10-22T23:27:23-03:00 complete chousa round=29; hyaku-inline attempt=1. Report f314a4f by chousa-shokunin; L0 fleet 8d77e6c1. Step-1 clean (hashes ancestors of master, ahead=0, porcelain empty, SHONEN 4/4 [~], prompt carries template). Defects: report/SCORECARD claim 6 further reruns, committed evidence 5 (ScoutFreshnessH run 2 output absent); ExecTool.md:5 mistyped revision (erratum in lesson); snapshot-control code left in scratch. Routed D1-D7 in spot-check: liveness wording vs counter, rerun-count correction, fixture classes for MutOrder/MutSkipScript/MutCasefold, h20 correction in lessons/round-25.md, chronology wording, commit snapshot-control artifacts, carried L0 fetch scope + sentinel T1/T4 + </head>/2xx-challenge limits. SHONEN box 3 is non-author checkable; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
