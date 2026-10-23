@@ -17515,6 +17515,49 @@
    "notes": "dispatch/complete digest: 2026-10-23T07:15:52-03:00 launch mado round=27 pgid=4176664 driver=hyaku-inline attempt=1; 2026-10-23T15:03:19-03:00 lane-dead-no-report mado round=27 (stale phase-4 author; fresh attempt); 2026-10-23T15:10:22-03:00 launch mado round=27 pgid=92816 attempt=2; 2026-10-23T19:05Z complete mado round=27 attempt 2 (in-session L1; live watchdog log carried no complete line at closure, this digest is the completion record). Lane HEAD 767b12db..., pushed ahead=0; report fleet 9f966367... by mado-shokunin identity. Claims: C1 coverage improved (tool missing at 543f0445 -> tools/mado-wsrules.py@20022a65, 41/41 TARGET_MET; 13 controls best 32/41; 5 new A-tier sources); C2 operability improved (suites absent -> green 17/17, W 15/15, H 15/18 vs need 14 TARGET_MET at 0b53bd86; measurement-1 miss at 48b9434a kept as evidence; repair candidate A2 landed by the pre-declared first-returned rule). No axis harmed (SCORECARD +24/-1 only; tools/mado-binds.py docstring-only; no deletions; census exit 0). Directed defects (status-neutral, r28): (1) SKILL.md:630-635 r27 gate registry rows are stale 'pending' placeholders after the suites landed — Gate standard Delivery not conformant; (2) lesson M27-2 has a dead pointer (SOURCES.md:195-199 holds no malformed rows in any commit) and a stale 'still contains them/pending' fix cell — needs appended correction; (3) E01 fix has no committed red-before receipt (sources-start.txt is a clean 177-row run); (4) report pointer quality/q36-successor-receipts.txt dead (actual .ufo/waves/round-27/quality/q36-successor-receipts.txt); (5) report harm-watch omits the tools/mado-binds.py docstring change; (6) report says the tool docstring cites S178-S182 (it cites upstream files; the knowledge entry cites the rows); (7) registration declares one C2 measurement, round ran two (repair flow unregistered); (8) w3 declared 8 seats, only 7 seat reports/names committed; (9) report cites SKILL.md:631-636 vs rows at 630-635; (10) late uncommitted .ufo/waves/round-27/w4/reports/RevRepair.md (+166/-33, mtime 16:50:46 -03) written after lane tip — land as r28 erratum or revert. r28 items relayed from w4 RevRepair: exact->=3 tolerance disjuncts (or nm == 3, or ne == 3) survive both repair candidates (zero slack left on HeldC2); A1 e36f12f2 was empirically wider than landed A2 aa0e14d1 under the first-returned rule. SHONEN 4x[~] unchanged; no [x] written; promotion operator-owned. Tool installs: none.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 30,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 30,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 30
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [
+    "instrument-agreement"
+   ],
+   "report": ".ufo/reports/round-30/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-30-verifier-spotcheck.md@07794a4d30a54a60ebdff50ac76d12c6df40a0f1",
+    "rechecks": "C1 re-measured with the frozen counter (sha256 c3f16ef1...9ce40d, unchanged since fdf8cda1) on a scratch clone of the lane remote: base 2aa46e24 unresolved 13 met False; 52ac3af8 valid 11 unresolved 2 met False; 026eede9 and 043ba425 valid 13 false 0 unresolved 0 mismatched_at_base 13 bound 72 met True, matching committed receipts; both SA30 spans git-grep exit 1 at W. C2 verified from committed evidence (sibling tool not executed): tool absent at 2aa46e24/52ac3af8 (exit 128), selftest.out IA_SELFTEST pass=4 fail=0, receipt-a/receipt-b agree=3 disagree=0, corpus-guard refused agree=1 disagree=2. SCORECARD diff append-only (0 removed lines). Discernment: 2 admits (S178, S179 quotes re-opened, 11 and 16 words) + 2 rejects (corpus-guard subject refusal, CtlEditInPlace) all agree. sources-census validate kama exit 0."
+   },
+   "commit": "kama-shokunin@043ba425b20ff846bdec17e35273feb2c7df6065",
+   "closed_at": "2026-10-23T20:24:37Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: launch kama round=30 2026-10-23T16:38:08-03:00 pgid=2382901 hyaku-inline attempt=1; complete (in-session L1) landed lane HEAD 043ba425 ahead=0 clean, fleet report 2cec458f. Step 1: report by kama-shokunin, SHONEN 4 boxes all [~], 15 cited commit tokens exist and are ancestors of refs/heads/master, lane clean and pushed, prompt sections 1-5 verbatim render of templates/round-prompt.md plus hyaku addendum 6, L2 floor met (14-seat control call + 64 registered wave members). Defects (status-neutral, routed in spot-check section 6): report Landed-changes omits f41dce3 and 043ba425; completion digest 2026-10-24T~00:25Z future-dated vs lane tip 20:16Z; instrument-agreement lacks a SKILL.md gate/probe registry row; its receipts name cwd not revision and persist no exit codes, and 'isolated temp dirs' overstates isolation (shared cwd, fresh TMPDIR only); lesson Mistakes row 1 has no committed failing receipt and row 3 cites long-digest-fix.json for the bound-68 reading held by bound68.json; Gate section records no reject; frozen counter docstring names only Round 29/SA29 while code accepts SA30; fleet prompt-evidence commit 90ff051 carries the lane identity (integrator scope). SHONEN not fully checkable by a non-author this round: boxes 1 and 4 readable, boxes 2-3 need real-surface e2e task and independent execution; no [x] written.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
