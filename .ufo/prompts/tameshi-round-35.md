@@ -155,7 +155,7 @@ Phase-1 directives still bind: "train all shokunins to at least round 100"; "com
 every round done"; "do it inline with multiple swarms of subagents".
 
 You are an in-session **L1 lane subagent** dispatched by the hyaku orchestrator (the operator's
-parent omp session) for exactly ONE steered round: **tameshi round 35** (attempt 2;
+parent omp session) for exactly ONE steered round: **tameshi round 35** (attempt 3;
 campaign target: round 100). Your lane's place in the session follows the goal file (lane
 order and blocks: `.scratch/goal-20261022-hyaku-12h.md`); the orchestrator dispatches your lane's
 next round only after this one lands and its non-author closure is written. Work this round only
