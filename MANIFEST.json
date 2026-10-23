@@ -17273,6 +17273,43 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-10-23T08:04:35-03:00 launch kumitate round=48 pgid=1614930 driver=hyaku-inline attempt=1; 2026-10-23T15:03:19-03:00 lane-dead-no-report kumitate round=48; retry same round (hyaku-inline attempt=1: superseded at T0 2026-10-23T18:00Z: stale phase-4 author (orchestrator died 2026-10-23 ~09:30 -03); fresh attempt); 2026-10-23T15:10:27-03:00 launch kumitate round=48 pgid=94401 driver=hyaku-inline attempt=2; 2026-10-23T16:09:30-03:00 complete kumitate round=48; hyaku-inline attempt=2. Attempt-1 freeze/build inherited, re-verified, committed in close. Report committed by lane identity (08c3202) after lane record; SHONEN heading 4 boxes all [~]/[ ] lane-asserted, none checkable to [x] by this non-author - promotion stays operator-owned. Conformance defects (status-neutral): 5 uncommitted lane-authored leftovers at close (modified close/ReRunCounter48-1.md + close/ReRunCounterA.md prose reformats, untracked close/ReviewIntegration.md, r48-plan.stderr, r48-residual-plan.stderr); report named only the ReviewIntegration/CritClose late-output class as round-49 inheritance - the other four paths were not named; every score-bearing receipt is committed and the working-tree edits are post-completion seat writes. Routed to round 49 (lane-owned): (1) resolve/name the 5 leftovers; (2) register counter-rerun at the SKILL.md gate registry (only pin.counter-rerun exists) or record the exemption; (3) LOG.md 'two mistakes' vs lesson's four - appended correction; (4) report re-run timestamp 18:59Z vs receipt 19:01:13Z (minor); (5) leak-delta receipt one line (=13) vs claimed quiet-host delta 0 - decomposition not committed. Round verified declared limits present (bind view, argv identity, A48 output-text oracle, cap-spawn OOM->status-0, PID-wrap exit-2).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 29,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 29,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 29
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-29/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_kfc session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-29-verifier-spotcheck.md@52ac3af8614b5040ba5e17f17a2c7af029706e6c",
+    "rechecks": "C1 re-measured with frozen counter (sha256 fe11d599...7383, identical at freeze and tip) in fresh clones at base/data/tip: base met False unresolved 11, data 513eba3b met True unresolved 0 valid 11, tip met True — byte-identical to committed receipts; 11 SA29 correction rows counted; pre-data control order 827d1365->35b90184->513eba3b verified; sources census exit 0 at tip (177 rows, committed end receipt matches); 3/3 prereg-time-check mutants (m02, m05, m07s) KILLED against landed tool and landed selftest 13 PASS exit 0 (D3 resolved); lesson timestamps == git committer metadata (10:55:43Z/11:11:28Z/12:02:52Z); SCORECARD+65/-0, LOG+67/-0, QUALITY/README/SOURCES/knowledge/lesson all additive; SHONEN 1+/1- and tool 16/5 are the disclosed fixes; report sections+SHONEN 4 boxes verified; dispatched prompt carries 10/10 contract items; 2 read-only scout seats (SOURCES S174-S177 quote re-open incl. live page fetches; prompt/template fidelity)."
+   },
+   "commit": "kama-shokunin@7f595a3bf8027e5e48cac3634e79990df513c7ab",
+   "closed_at": "2026-10-23T19:24:05Z",
+   "campaign": "hyaku",
+   "notes": "watchdog digest (lines 919/933/944/958): launch attempt=1 07:41:43-03:00 pgid=447289; lane-dead-no-report 15:03:19-03:00 (stale phase-4 author, orchestrator died ~09:30 -03); launch attempt=2 15:10:23-03:00 pgid=93338; complete attempt=2 16:12:49-03:00. Report 9596e03 by kama-shokunin; all 6 cited commits ancestors of master; ahead=0 at close (remote master == local == 7f595a3bf). Orchestrator repair confirmed: operator commit 49f849f (considerthese only) between 513eba3b and integration 6de225c2, rebased over per report; L0 line (7400d67) resolved in-session. Disclosed items verified resolved in landed tree: VerifyMistakeFix D1 (13-case count now in LOG/lesson), D2 (mined/patched-513eba3b.out exit 1 by design), D3 (mutant-killing case landed, 3/3 mutants die), stale LOG working-tree clause, census exit 0 at tip. Routed defects for r30 (status-neutral): (1) 2 untracked round-work files (.ufo/waves/round-29/w2/VerifyLogFreshness.md and out/.../report.md — only evidence/ landed in 7f595a3b); (2) LOG.md names neither 6de225c2 nor 227dd1ee though the report ties them to the attempt-2 LOG entry; (3) S174 SOURCES teaches cell marked verbatim but drops 'given' (page: 'Annotates each line in the given file'); (4) S176 teaches cell vs SrcS176 decision-record mismatch (singular 'given tree', :(exclude) composition; decision records tree->trees fix); (5) minor: SCORECARD appended cause-cell note omits corpus/lessons/round-2.md:49 hit. Lane self-graded expansion unchanged; closure grades expansion improved per LEARNING.md corpus observable (1 net-new knowledge entry on previously unmapped ground citing mined S174-S177) — grade difference recorded in the spot-check. No capabilities added (verified). SHONEN: 4 boxes all [~], none [x]-checkable by this closure; box-2 corrected wording independently verified against controls-frozen.json by w2 seat VerifyShonenBox2 (lane-dispatched, cannot supply non-author mark); promotion is operator-owned. No tool installs by closure or its seats (curl, system git 2.56.0, python3 only).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
