@@ -16203,6 +16203,65 @@
    "notes": "Dispatch digest: 2026-10-23T01:45:30-03:00 launch attempt=1; 02:26:44 lane-dead-no-report (L1 died with orchestrator 05:25:25Z); 02:26:46 launch attempt=2; 03:40:34 lane-dead-no-report (omp SIGSEGV 06:19:06Z); 03:40:36 launch attempt=3 pgid=3140048; 05:00:00-03:00 complete attempt=3. Report d3d0f6d5 lands 58 s after lane tip. Defects (status-neutral): report lost its ## Gate heading (Gate content under SHONEN; judged in place per main ruling, not rewritten) and line 46 says 'five' controls vs line 55 three+RescoreConfineA3; rev 5 forced by L1 review, not a control receipt; void breakdown misstated (actual 5 cwd, 4 chr(, 1 kotodama BLIND, 1 U60 no verdicts; not 5 chr( / 11 by CONFINED); SupportX60 said voided but counted qualified; pypdf 5.4.0 via uv run --with disclosed for 2 seats but 5 seats materialised it; no explicit cross-domain item. Routed to kotodama r61: void/X60/pypdf/heading corrections, R60-M6 precision (packet joined lines 69+95+120), S646 teaches cell joins the seven disclosed over-reaching rows (S601 S608 S614 S624 S636 S640 S641), pin committed session copies as counter inputs. SHONEN 4/4 [~], none checkable by a non-author yet.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 25,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 25,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 25
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "unprovable-but-better",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "claims": {
+    "C1": {
+     "axis": "operability",
+     "type": "capability acquisition (sourced)",
+     "verdict": "improved",
+     "admitted": true,
+     "finding": "tools/mado-binds.py absent at 41cc04c8 (git cat-file); counter v4 c1/count.py sha256 323a3849...42e2 identical at 1ed41fa8/459dd17f/ef94763c/16e57dac; tool sha 9efa1136 at ef94763c=tip; receipt evidence/c1-after-v4-ef94763c.txt ORACLE_CHECK missing=0 extra=0, PRED-C1 (v4) cases_pass=41/41 embed_hits=0 TARGET_MET exit 0 (before 0/41 MISSING_TOOL). 10 controls landed 459dd17f 07:29:16Z before a3w2 createdAt 07:31:20Z, none met (best K4LabelKeyed 37/41, K4EncodedTable 31/41). mountinfo case-label leak not used by the tool (no /proc read, no labels/operator strings); surviving counter mutants are guard gaps, not pass paths; split dispatcher literal is grammar; {{...}} literal and out-of---home reads are disclosed scope limits."
+    },
+    "C2": {
+     "axis": "calibration",
+     "type": "exploratory",
+     "verdict": "unprovable-but-better",
+     "admitted": true,
+     "finding": "Re-judged by the closure (RevC2Judgment was lane-dispatched). Ledger covers all 15 capability identities (population verified) with fresh runs at base vs 12/15 stale transcriptions; marks :437/:1342 failing and four doc defects; 5 sampled rows agree with receipts. Receipt sentence false twice incl. mid-review edit (M25-5); F1-F5 corrected by append-only errata; :1409/:1410 single-run."
+    }
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "static bind-table resolver"
+   ],
+   "report": ".ufo/reports/round-25/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-25-verifier-spotcheck.md@96101be523b2f6e897eee743d5b396b0225bf9ed",
+    "rechecks": "Re-measured: commit ancestry, ahead=0/clean, prompt-template diff (22 substitution lines), tool absence at base, counter/generator/tool sha freeze, control-receipt order and scores, SCORECARD diff (+94/-0), census validate (mado ok, 7 pre-existing W04), source re-opens S172/S169 (sha match, quotes verbatim) and 4 reject URLs (404). Evidence-verified (not executed): counter v4 before/after receipts, Q36 red/green outputs, RevNoHarm re-runs. Seats: R25Chrono, R25ToolProbe, R25Mutants, R25C2Facts, R25RepairsHarm (none died)."
+   },
+   "commit": "mado-shokunin@16e57dac26cb97e36e44a3b0552d1e4c27479dfc",
+   "closed_at": "2026-10-23T08:19:33Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: '2026-10-23T01:45:27-03:00 launch mado round=25 pgid=2452123 driver=hyaku-inline attempt=1'; '2026-10-23T02:26:41-03:00 lane-dead-no-report mado round=25 (attempt 1: L1 died with orchestrator exit 05:25:25Z)'; '2026-10-23T02:26:43-03:00 launch ... attempt=2'; '2026-10-23T03:40:30-03:00 lane-dead-no-report mado round=25 (attempt 2: omp SIGSEGV 06:19:06Z)'; '2026-10-23T03:40:32-03:00 launch mado round=25 pgid=3138821 driver=hyaku-inline attempt=3'; '2026-10-23T05:07:05-03:00 complete mado round=25; hyaku-inline attempt=3'. Base 41cc04c8, tip 16e57dac (C1 measured ef94763c), report fleet db62c5d7 by mado-shokunin. Step 1 passes (SHONEN 4/4 [~] with pointers, ancestry, ahead=0, clean, template contract). Weighed without regard to the prior rejection streak or directive-36 unblock. Defects (status-neutral): round-23 C3 inventory counter read 1 at ef94763c until 90224671 (intermediate, not tip harm); before-v4 receipt lacks exit= line; registration.md:85 R8 overclaims hardened MutCheck checks. Routed: M25-2 label-free case paths; drift-fault witness + embed fixture for surviving counter mutants; R2/M25-4 population-equality clause; M25-3 Q36 checker fixtures; R8 registration correction; {{...}} arithmetic and out-of---home reads; C2 :1409/:1410 second derivation and :308 command (F2). SHONEN box 3 looks non-author-checkable (operator-owned). No installs.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
