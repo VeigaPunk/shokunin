@@ -54,7 +54,17 @@ Work items, each with its evidence:
   S101; census 97 → 98 rows, end exit 0; lesson `corpus/lessons/round-34.md` (1 mined mistake,
   r35 Holds).
 - **Wave:** one v2 wave built and validated under policy v2; taskCall returned to the
-  orchestrator (zero dispatches from this session — see Round shape).
+  orchestrator (zero dispatches from this session — see Round shape); 60+ seat reports returned
+  and folded: C1's deciding receipt stands under 6+ independent re-derivations (ho 8/8 + 6/6 +
+  invalid=0; counting command byte-identical at the recorded seed and PASSING at fresh seeds —
+  not seed-fragile), pins byte-identical at every commit, freeze-before-data order verified,
+  sibling-overlap scan clean. Convergent findings (8 seats on the witness-gate bounds, 6 on
+  witness-shim fidelity, 4 on panel distinctness) are capability bounds and r35 hardening
+  material — every attack against the LANDED set is fail-closed; the top-priority item is the
+  accept-side config hole (auto,KEEP) = (0,0)/(1,1) unswept (would void, not falsely pass).
+  Fold: `corpus/lessons/round-34.md` Wave-fold section (incl. the correction of this round's
+  wrong Holds text claiming the whole-stdout fix landed — it was routed, still open), r35
+  Holds, S100 used-by fix (logged old→new), validator receipts committed.
 
 ## Landed changes
 
@@ -68,6 +78,11 @@ Work items, each with its evidence:
 - `.ufo/evidence/round-34/measure/`, `census-end.*`, `src/` — deciding receipt, census, S101 snapshot — `0b99d48e` — LOG Round 34.
 - `LOG.md`, `SCORECARD.md`, `corpus/lessons/round-34.md`, `corpus/knowledge/witness-equivalence-rule.md`, `corpus/SOURCES.md` — round records — `0b99d48e` — LOG Round 34.
 - `.ufo/waves/round-34/spec-w1.json`, `dispatch-w1.json` — wave evidence — `a5b19364` — LOG Round 34.
+- `.ufo/waves/round-34/w1/` (60 seat reports + registry), `validate.{stdout,stderr,exit}`,
+  lesson Wave-fold + r35 Holds, S100 used-by fix — `d8eeb3a2` — LOG Round 34.
+- CalibMonitor fold: sourced-claim restatement (S101 = opened-this-round row; tier-A S097
+  carries the semantics; MK-7 satisfied), first-W01 disclosure, stale Next-unused-id pointer
+  corrected to S102 — `ecfc8e38` — LOG Round 34.
 
 ## Before → after measurements
 
@@ -89,15 +104,24 @@ Census command: `TZ=UTC bash scripts/sources-census.sh validate --root /home/vgp
 Start: exit 0, 97 rows (r33 end receipt; r33 closure-verified). End
 (`.ufo/evidence/round-34/census-end.{stdout,exit}`): exit 0, `tameshi ok`, 98 rows.
 Rows added: 1 — S101 (tier C, mutation-testing.org, Major framework; mined; used-by
-`corpus/knowledge/witness-equivalence-rule.md`). Rows touched: none. Frontier rows advanced:
+`corpus/knowledge/witness-equivalence-rule.md`). Rows touched: 1 — S100 used-by corrected
+(old `corpus/lessons/round-33.md, corpus/knowledge/executable-self-assessment.md` → new
+`corpus/lessons/round-33.md`; the dropped path never cited S100; old→new logged in the
+round-34 lesson and the SOURCES registry log; the stale `- Next unused id: S100.` pointer
+corrected to S102 per the file's convention, E03-duplicate risk demonstrated by seat
+CalibMonitor). Frontier rows advanced:
 none (S101 new; S097 already holds the bash exit-status scope — the gnu.org/TLDP duplicates
-rejected, Gate-recorded). Rejections: gnu.org bash manual (host-unreachable ×2, receipts kept)
-and TLDP ABS exit-status (duplicate scope of S097; draft + snapshot kept as evidence only).
+rejected, Gate-recorded). Rejections: gnu.org bash manual (host-unreachable ×2; the committed
+`s101-fetch.exit` holds the successful mutation-testing.org fetch record, not the timeout log —
+the timeouts are session-transcript-only, honestly disclosed) and TLDP ABS exit-status
+(duplicate scope of S097; draft + snapshot kept as evidence only).
 Lesson Gate carries URL/access-date/≤25-word quote per row. Mined mistake:
 `corpus/lessons/round-34.md` `## Mistakes` ×1 (authoring prediction asserted, not executed —
 caught by the per-copy authoring harness; the fix shown able to fail by the caught receipt).
-The round's sourced-claim conjunct rests on S101 (opened this round; the knowledge entry the
-claim lands cites it, alongside S097).
+The round's sourced-claim conjunct cites S101 (the row opened this round) with tier-A S097
+carrying the load-bearing semantics — the r34 census carries the lane's first-ever W01
+(`S101 tierC mined`, exit still 0), disclosed here and in the lesson (MK-7 satisfied: tier-C
+is not sole support).
 
 ## Trend verdicts
 
@@ -113,7 +137,11 @@ claim lands cites it, alongside S097).
 - **discernment: improved** — C1's r33 honest stop is discharged by a measured true, not a
   retry; the kill rule consumed exactly once; every rejection (live pins, duplicates, the r33
   stale pin) kept as a lesson row; v3 residue classes explicitly NOT adopted post-data and
-  routed to r35 under the freeze-before-data discipline.
+  routed to r35 under the freeze-before-data discipline; and the lane corrected its OWN landed
+  lesson text when four seats proved the "whole-stdout landed" claim wrong — plus the
+  r33-routed cold-read premise falsified by CalibMonitor (monitor byte-identical freeze→tip;
+  the re-credit did no harm but answered a stale-premise question; routed re-reads should
+  check the drift counters first).
 
 ## SHONEN
 
@@ -154,8 +182,20 @@ under-counted its dev seats — the r34 counts above are from the validated disp
 
 ## Dead seats / refusals
 
-None at report time — the wave had not been dispatched by the L1 (orchestrator-owned dispatch);
-any dead seats are reported by the orchestrator's relay and appended at closure.
+- **CriticVoidClaim — DEAD**: provider cyber_policy refusal (Codex flag on the seat's
+  adversarial-worded text; no output produced). Recorded per the standing rule: not retried,
+  not rerouted; its slice (void-claim critique) was independently covered by
+  ReviewCounterSemantics (four reproducible bypasses, systematic statement) plus seven
+  converging mutation seats and RevengerIndependentSet (two successful accept-side mislabel
+  constructions, conservative direction).
+- **CalibMonitor and PanelSeed4 — still running at fold time** (named, not replaced): the
+  monitor slice is covered by the committed r33 baseline receipt + ReviewSHONEN's tip-level
+  re-run; the seed-replay slice is covered 4× (PanelSeed1/2/3 + LabratPanelReplay, all PASS,
+  104+ decisive runs). Their reports, if they land, are ordinary wave evidence under the
+  committed registry. (CalibMonitor landed before close: monitor byte-identical to the r33
+  baseline — NO calibration drift; its F1 named in this report's Trend verdicts: the
+  r33-routed cold-read premise was falsified, the re-credit answered a stale-premise question
+  and did no harm. PanelSeed4 did not land; its slice stays 4×-covered.)
 
 ## Open L0 questions
 
@@ -164,7 +204,10 @@ stands; the orchestrator owns the wave dispatch and its seat-relay accounting.)
 
 ## Tooling note
 
-The orchestrator dispatches `round-34-w1` from the returned taskCall; seat relays return tagged
-`[seat <name>]` and are folded into the round-34 lesson (findings) or this report at closure.
-Post-data findings cannot amend the frozen rule (kumitate r42); proven defects route to r35
-under the freeze-before-data discipline.
+The orchestrator dispatched `round-34-w1` from the returned taskCall; 60+ seat reports are
+committed under `.ufo/waves/round-34/w1/` and folded into the round-34 lesson's Wave-fold
+section (findings) and this report. Post-data findings did not amend the frozen rule
+(kumitate r42); proven bounds route to r35 under the freeze-before-data discipline. This
+round's own lesson needed a correction too — the Holds text claiming the whole-stdout fix
+"already landed" was wrong (routed, still open); the fold records the fix and the four seat
+receipts that caught it.
