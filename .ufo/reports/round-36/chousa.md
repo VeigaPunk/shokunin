@@ -2,12 +2,14 @@
 
 Lane: chousa (deep-research method). Round 36, attempt 2 of 2 (attempt 1 was OOM-killed mid-round;
 `lane-dead-no-report chousa round=36`, `.ufo/watchdog.log` line 980). Campaign target round 100.
-Lane tip at this report: `e66c4563e3a76c90dcbb37e834cd07b533199849`. Round commits:
+Lane tip at this report: `f19589d63e291328ac647e5434188fc56310ba9b`. Round commits:
 `76597487c8c3f963465cdbcfcabe91acd1ea2500` (round work — counters/claims/errata, corpus entries,
 SCORECARD/LOG/SKILL/QUALITY/SOURCES/lesson, wave evidence), `6b3aba52f046bae0bf7b48fcf8e4eda16e20aff7`
 (late seat evidence `CritC2CallForShow`), `e66c4563e3a76c90dcbb37e834cd07b533199849` (critic
 corrections to the two knowledge entries, the lesson and SCORECARD; late seat evidence
-`ConnOverlap`, `CritLessonGate`, `RevReportCounts`). Base lane tip at round start:
+`ConnOverlap`, `CritLessonGate`, `RevReportCounts`), `f19589d63e291328ac647e5434188fc56310ba9b`
+(non-author source re-open result: S069/S070 VERBATIM, S070 anchor-label nit recorded). Base lane
+tip at round start:
 `700bd5fcbf9abc118a6a0f078d51a2e7460c2878` (attempt-1 freeze: counters, witness, gate edits,
 controls, receipts), pushed (`local=remote=700bd5f`, `ahead=0` at start).
 
@@ -160,7 +162,10 @@ Census command (run at round start and at round end):
   C-locale arm's evidence is measured behaviour plus a selftest case, not a documented norm).
 - Frontier rows advanced: S069 → `corpus/knowledge/per-record-argv-attribution-r36.md` (C2's sourced
   claim); S070 → `corpus/knowledge/engine-swap-canary-r36.md` (C1's S11 arm). Non-author re-open:
-  `w1/RevSourcesNew.md`.
+  `w1/RevSourcesNew.md` — both rows **VERBATIM** (file hashes, quoted words and lines exact,
+  `used-by` resolves); one cosmetic anchor-label defect in S070 (lines 19-20 labelled SYNOPSIS
+  instead of DESCRIPTION) recorded in the lesson as a round-37 supersede-row candidate, not edited
+  in place.
 
 ## Trend verdicts
 
