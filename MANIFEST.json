@@ -16387,6 +16387,48 @@
    "notes": "Digest: launch a1 01:45:23-03:00 pgid=2450711; lane-dead-no-report a1 02:26:38 (orchestrator exit 05:25:25Z); launch a2 02:26:39 pgid=2558324; lane-dead-no-report a2 03:40:27 (omp SIGSEGV 06:19:06Z); launch a3 03:40:29 pgid=3137686; complete a3 05:25:19-03:00. Report 3ed9506 by tameshi-shokunin; 14 cited hashes ancestors of master; ahead=0; clean. Defects: report/SCORECARD call JudgeC1 non-author (lane seat); ColdA01 killed two ColdA09 replay processes (no cited result affected) and misrooted its report (no fleet copy remains); wave-C reused dead seat name ConnectorOverlap without a pre-dispatch dead-list diff (distinct measured object; RegressionReplayHead/SelftestsNoHarmHead came from unspawned wave-B); lesson cite :60-62 -> :60. Expansion not improved: README marks the new entry core ground. Routed: JudgeC1 erratum, per-seat --workdir + kill cwd check, committed dead-seat diff, binding v4, per-leg tally check + 8 MutateHead survivors, owner of /tmp/tameshi-r4-2-regression.j0FKnk. SHONEN boxes 2-3 look non-author checkable (operator-owned).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 58,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "kotoba",
+   "lane_round": 58,
+   "lanes": {
+    "kotoba": "ok"
+   },
+   "lane_rounds": {
+    "kotoba": 58
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "consistency": "unchanged",
+    "calibration": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-58/kotoba.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kotoba-shokunin/corpus/lessons/round-58-verifier-spotcheck.md@a975cbbf00534443c49bf02e29c813a3db0bf0f8",
+    "rechecks": "C1 (depth) verified: re-measured by hand (SKILL section 0->1, 7 client rows / 6 own tokens; git grep new ground 4 zero-hit tokens at f56f6e19; SOURCES 88->94) and evidence-verified (counter check_command_files.py sha256 aae12d36 single commit 3de87aad, identical at every rev to ed44e0c4; targets TARGET=4/NEW_TARGET=3 in source at 3de87aad after census, draft 8db20702 'TBD'; no C1 content before 46b4a706; receipts base 0 of 0 exit 1, 46b4a706 and 6de8e2eb 6 of 6 new ground 4 exit 0; self-test 0/244). cursor.com urllib 403 window: 5 of 6, new ground 3 = G floor, still passes. 'What a file sets' cells unread by counter; all six re-fetched byte-identical and supported (CellsReopen58). C2 withdrawn before data (a39942c9 < 46b4a706), CtlC2SourceGrep 11/11 5/5 on counter sha f7664401; operability row byte-identical; nothing counted. No-harm: axes identical, 0 deletions, LOG 0 removed, SOURCES 1 disclosed used-by edit, SKILL 598->596 verbatim move 038880d0. Prompt RENDER_IDENTICAL (b94382a3). Census validate kotoba ok exit 0. Spot-check agrees 6 admits / 4 rejects. Seats: PromptConformance58, NoHarm58, C1Freeze58, CellsReopen58, RejectsC2Seats58; none died; no lane gate executed."
+   },
+   "commit": "kotoba-shokunin@ed44e0c4807b92d99417eaff04a0fd2122f981b4",
+   "closed_at": "2026-10-23T08:55:23Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 2026-10-23T04:28:25-03:00 launch kotoba round=58 pgid=559238 driver=hyaku-inline attempt=1; 2026-10-23T05:44:16-03:00 complete kotoba round=58; hyaku-inline attempt=1. Step-1 conformance pass (report 8f470627 by lane identity after tip; SHONEN 4x[~]; all cited hashes ancestors of master; sandbox c6b6f306 labelled and present; ahead=0, porcelain clean). Disclosed: M76 stale 'targets None' controls context (5 seats scored committed bytes); R1 in-cell 'claim withdrawn' instead of probe relabel (M77). Defects routed (status-neutral): R1 falsify seat ReviewBudgetMove report misrooted to fleet root .ufo/waves/round-58/falsify/ReviewBudgetMove.md (untracked, 05:34:09-03:00, after ScoutMisroot snapshot), omitted from report seat accounting; operator-side removal; R2 no committed verify_skill_checklist / corpus-integrity receipt at ed44e0c4; R3 C1 counter blind to field cells and no frozen snapshot run for --fetch (403 window on G floor); R4 SOURCES.md:102 S089 anchor label; R5 report 600->596 counts from freeze (base 598); R6 carried SHONEN.md:6 drift, C2 redesign, L0 kotoba|round-55. SHONEN box 1 looks non-author checkable (operator note).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
