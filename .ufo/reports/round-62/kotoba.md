@@ -1,6 +1,6 @@
 # kotoba — round 62 report (hyaku run 5, attempt 2)
 
-Date: 2026-10-23. Lane: `/home/vgpnk/Projects/shokunin/kotoba-shokunin`, branch `master`, landed tip `a751a9b1811eace17586f5bad84bdad6ce6cb843` (pushed). Prompt: `.ufo/prompts/kotoba-round-62.md`. Attempt 1 was OOM-killed at ~18:00-03 with no report; this attempt inherited and re-verified its artifacts (see *Inherited state*).
+Date: 2026-10-23. Lane: `/home/vgpnk/Projects/shokunin/kotoba-shokunin`, branch `master`, landed tip `cd4cb574acb8096db506381951215c44f979f101` (pushed). Prompt: `.ufo/prompts/kotoba-round-62.md`. Attempt 1 was OOM-killed at ~18:00-03 with no report; this attempt inherited and re-verified its artifacts (see *Inherited state*).
 
 **Stale-lane:** respawn-per-round driver; this lane has no other open mission.
 
@@ -44,7 +44,8 @@ Every change ties to the `LOG.md` § Round 62 entry and its commit:
 | `225f1b16` | final-sweep commit for a late rewrite of `FalsifyC2Mutants.md` |
 | `306381da` | third sweep: 32 wave-2 reports committed (connector, battery-self-test, D1-basis, C2-mutants write) |
 | `d519047c` | fourth sweep: `FalsifyC2Mutants` final wording (G-c coverage bound; split-evaluator dies on the landed CLI dependency arm) |
-| `a751a9b1` | fifth sweep: `FalsifyGateRegress` evidence; the report cites this pushed tip |
+| `a751a9b1` | fifth sweep: `FalsifyGateRegress` evidence |
+| `cd4cb574` | sixth sweep: `FalsifyClaimC2` evidence (predicate identity, per-arm re-runs, fingerprint lookup dies on the hardened bytes); the report cites this pushed tip |
 
 `LOG.md` § Round 62 carries the same commit order and the falsification/correction record; no change is claimed without a row there.
 
@@ -111,6 +112,8 @@ Two seats reported after the first report commit; both findings land as correcti
 
 - **Gate regression re-check (fifth sweep, `a751a9b1`).** `FalsifyGateRegress` ran the battery one arm at a time: floors 14/14 PASS, registry `39 of 39` exit 0, seat-count self-test 0 failures, dispatch box-proof `boxes proven 2` exit 0. Two gates are red — `verify_corpus_integrity` and `verify_skill_checklist` — but **both were already red at the r61 base `a745411c`** (corpus baseline frozen at round 17; the checklist base set already carries `governance.citation_resolves`). The one genuine r62 regression was the `check-ptr` arm: `SCORECARD.md` cited `.ufo/reports/round-62/kotoba.md` (permanently dead in-lane) beside `LOG.md`'s census pointer (dead until `3f91150` tracked the file). The SCORECARD pointer was repointed to `../.ufo/reports/round-62/kotoba.md` before close; at the current tip the gate's output lists only the two pre-existing round-60 pointers, so r62 adds none. r62 also fixed wave 1's `reg_gate` and `corpus-idx` arms.
 
+- **C2 claim re-check (sixth sweep, `cd4cb574`).** `FalsifyClaimC2` verified the frozen sentence is byte-identical in `plans/round-62.md:118`, the v2 print template and the receipt; no post-freeze plan commit touched C2 text; base `0 of 6` exit 1 is real; each D tree loses exactly its targeted repair and an independent `git ls-tree` re-derivation gives 29. Its fingerprint-memorized lookup passed the superseded `de5e3471` self-test but exits 1 under the landed `604ae4fb` — consistent with F2/F3; the claim itself is unaffected because the receipt pins the honest bytes that compute.
+
 ## Compliance
 
-Write scope: lane repo, this report, no `l0-questions` append. No MANIFEST/`.ufo/state`/watchdog/templates/scripts edits. Fleet commits via `scripts/hyaku/fleet-commit.sh`; lane commits via `scripts/hyaku/jj-lane.sh commit … --as kotoba`; the report lands last and cites the pushed lane tip `a751a9b1811eace17586f5bad84bdad6ce6cb843`; a final sweep commit for a late rewrite of `FalsifyC2Mutants.md` follows the report as a child commit (wave evidence only, no product change).
+Write scope: lane repo, this report, no `l0-questions` append. No MANIFEST/`.ufo/state`/watchdog/templates/scripts edits. Fleet commits via `scripts/hyaku/fleet-commit.sh`; lane commits via `scripts/hyaku/jj-lane.sh commit … --as kotoba`; the report lands last and cites the pushed lane tip `cd4cb574acb8096db506381951215c44f979f101`; a final sweep commit for a late rewrite of `FalsifyC2Mutants.md` follows the report as a child commit (wave evidence only, no product change).
