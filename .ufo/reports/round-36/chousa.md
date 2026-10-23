@@ -2,7 +2,12 @@
 
 Lane: chousa (deep-research method). Round 36, attempt 2 of 2 (attempt 1 was OOM-killed mid-round;
 `lane-dead-no-report chousa round=36`, `.ufo/watchdog.log` line 980). Campaign target round 100.
-Lane HEAD measured at `76597487c8c3f963465cdbcfcabe91acd1ea2500`. Base lane tip at round start:
+Lane tip at this report: `e66c4563e3a76c90dcbb37e834cd07b533199849`. Round commits:
+`76597487c8c3f963465cdbcfcabe91acd1ea2500` (round work — counters/claims/errata, corpus entries,
+SCORECARD/LOG/SKILL/QUALITY/SOURCES/lesson, wave evidence), `6b3aba52f046bae0bf7b48fcf8e4eda16e20aff7`
+(late seat evidence `CritC2CallForShow`), `e66c4563e3a76c90dcbb37e834cd07b533199849` (critic
+corrections to the two knowledge entries, the lesson and SCORECARD; late seat evidence
+`ConnOverlap`, `CritLessonGate`, `RevReportCounts`). Base lane tip at round start:
 `700bd5fcbf9abc118a6a0f078d51a2e7460c2878` (attempt-1 freeze: counters, witness, gate edits,
 controls, receipts), pushed (`local=remote=700bd5f`, `ahead=0` at start).
 
@@ -54,7 +59,9 @@ Work items (each carries its evidence pointer):
   witness directly (9/9 attributed, one representative `-a -z -b -o -P` argv quoted).
   `w1/MutC2AttrKey.md`: collapsing attribution to a global count drops the count to 0/5 (the key is
   load-bearing); requiring only the span's first 64 bytes **survives at 5/5** (Erratum 8).
-  `w1/CritC2CallForShow.md` scores the call-for-show engine.
+  `w1/CritC2CallForShow.md` scores the call-for-show engine (not separated, as the stated limit
+  predicts) and a recorder-reading forger (passes; the disclosed anti-instrumentation limit), and
+  shows a deeper legitimate refactor is not killed.
 - **No-harm.** `w1/ExecSelftest.md`: `PASS (261 cases, 0 skipped)` under default, `LC_ALL=C` and a
   scratch `TMPDIR`. `w1/SentNoHarm.md`: claims 17/17, chain 17/22, broken control 1/2, archives 3/3.
   `w1/ExecNewCases.md`: the five new cases (257-261) are absent from the base's 256-case suite and
@@ -64,11 +71,22 @@ Work items (each carries its evidence pointer):
   encoded faithfully; F1-F4 errata), `w1/RevLocaleSeam.md` (seam closed for the decode across 11 escape cases × 7 locales; one verdict-flipping seam outside it at `research-gate.sh:1015`, Erratum 13), `w1/RevCounterHonesty.md`.
 - **Frontier drafted.** `w1/ScribeSrcGrep.md` + `w1/ScribeSrcSha.md` (S069/S070 drafts),
   `w1/ScribeKnowC1.md`, `w1/ScribeKnowC2.md`, `w1/ScribeLesson.md`; integrated by the L1.
-- **Sibling-overlap and YAGNI.** `w1/ConnOverlap.md`; `w1/SimpDiff.md` (gate diff clean — every hunk
-  claimed; three dead fields in `argv-witness.py` named as r37 candidates, not edited post-data).
-- **Residual attack call (3 seats, counted in the round total).** `w1/RevSourcesNew.md` (non-author
-  re-open of S069/S070), `w1/RevReportCounts.md` (count reconciliation), `w1/CritLessonGate.md`
-  (adversarial read of the lesson, QUALITY 50-52 and the two knowledge entries).
+- **Sibling-overlap and YAGNI.** `w1/ConnOverlap.md`: both r36 capabilities are fleet-unique; the
+  closest sibling is tameshi's declared-witness mutation study, a pattern-family cousin that
+  separates no output-equivalent engine and attributes nothing per record. The L1's own token sweep
+  agrees (no `argv-witness`/`WITNESS_PER_RECORD`/`ENGINE_SWAP_CANARY`/`RESEARCH_GATE_GREP` outside
+  this lane; one unrelated `mechanism-witness` mention in `audio-shokunin`).
+  `w1/SimpDiff.md`: gate diff clean — every hunk claimed; three dead fields in `argv-witness.py`
+  named as r37 candidates, not edited post-data.
+- **Residual attack call (3 seats, counted in the round total).** `w1/RevReportCounts.md` (count
+  reconciliation: found the SCORECARD's "6 entries" claim and the C1 seed-list ambiguity, both
+  corrected) and `w1/CritLessonGate.md` (adversarial read of the lesson, QUALITY 50-52 and the two
+  knowledge entries: demanded the heading overclaim, the V1/V4 admission wording, the S070 policy
+  labelling, the S11 refusal-observation wording, the S069 quote word count and a
+  `## Spot-check intake` section — all landed before the commit). The third seat
+  (`RevSourcesNew`, non-author re-open of S069/S070) did not return; the rows' quotes were verified
+  by the L1 against the installed pages (`zcat` + line numbers) and by `w1/ScoutC2Counter.md`'s
+  independent read of the grep page.
 
 ## Landed changes
 
@@ -82,6 +100,7 @@ because this round's receipts are measured against them.
 | `tools/research-gate.sh`: `sha256_hex_file` + manifest/`--pin` hash pin, `json_unescape` C-locale UTF-8, pin-echo scrub, `GATE_GREP` drift token, selftest 257-261 | Round 36 | `700bd5f` (inherited freeze) |
 | `corpus/evidence/round36/{claims.md,c1-count.py,c2-count.py}`, `tools/argv-witness.py`, `.ufo/waves/round-36/{controls,measure}/` | Round 36 | `700bd5f` (inherited freeze) |
 | `corpus/evidence/round36/claims.md` §Erratum 1-13 (six L1 + seven wave findings, append-only) | Round 36 | `76597487c8c3f963465cdbcfcabe91acd1ea2500` |
+| Critic corrections to the two knowledge entries, the lesson (`## Spot-check intake`, S069 word count) and SCORECARD (erratum count, C1 seed-list wording) | Round 36 | `e66c4563e3a76c90dcbb37e834cd07b533199849` |
 | `corpus/evidence/round36/c{1,2}-count.py` docstrings corrected to their receipts (R7) | Round 36 | `76597487c8c3f963465cdbcfcabe91acd1ea2500` |
 | `corpus/knowledge/engine-swap-canary-r36.md`, `corpus/knowledge/per-record-argv-attribution-r36.md` | Round 36 | `76597487c8c3f963465cdbcfcabe91acd1ea2500` |
 | `corpus/SOURCES.md` S069, S070 | Round 36 | `76597487c8c3f963465cdbcfcabe91acd1ea2500` |
@@ -170,7 +189,8 @@ Census command (run at round start and at round end):
   --selftest` → `PASS (261 cases, 0 skipped)`; `python3 corpus/evidence/round36/c1-count.py --seed N`
   → 14/14; `python3 corpus/evidence/round36/c2-count.py --seed N` → 5/5.
 - [~] No cross-domain bleed (PROVINCE.md still accurate) — `PROVINCE.md`; out-of-province findings
-  (another lane's fleet-root files) were named, not absorbed; `w1/ConnOverlap.md`.
+  (another lane's fleet-root files) were named, not absorbed; `w1/ConnOverlap.md` finds both r36
+  capabilities fleet-unique.
 
 ## Round shape, dead seats, stale-lane, installs, sweep, L0
 
@@ -185,13 +205,15 @@ Census command (run at round start and at round end):
   names what it attacks in its report). Seat briefs were delivered as byte-exact per-seat files
   under `.ufo/waves/round-36/w1-briefs/` (the validated payload is 77 KB; the task texts carry the
   Godspeed lead and point at each brief).
-- **Seat reports on disk at integration:** **33** of 36 wave seats (`.ufo/waves/round-36/w1/*.md`).
+- **Seat reports on disk at integration:** **35** of 36 wave seats (`.ufo/waves/round-36/w1/*.md`;
+  seat reports committed by the round commit `76597487` and the late-evidence commit `6b3aba52`).
 - **Dead seats:** `CritC1Swap` (critic) — provider refusal, first error text:
   `[openai-codex/gpt-6.1-sol] Codex error event: This content was flagged for possible cybersecurity risk … (code=cyber_policy)`;
-  not retried, no replacement. Seats unreturned at the integration cutoff: `CritC2CallForShow`
-  and `ConnOverlap` (their receipts exist under `.ufo/waves/round-36/w1/<Name>/` and are committed;
-  no report on disk — named here as unreturned, not as dead).
-  `RevLocaleSeam` and `RevCounterHonesty` returned before the commit.
+  not retried, no replacement. All live seats returned; the only missing
+  report is the dead `CritC1Swap`. `CritC2CallForShow` returned late and landed as `6b3aba52`: a call-for-show engine
+  is NOT separated and a recorder-reading forger passes — both are the limits `claims.md` already
+  discloses, so they confirm the frontier as stated; a deeper legitimate refactor (rename plus argv
+  construction moved into helpers) is not killed.
 - **Stale-lane:** respawn-per-round driver; no other mission of this lane is open.
 - **Tool installs:** none (no pacman/uv/npm transaction this round; pacman transactions stayed
   paused host-wide).
