@@ -90,3 +90,7 @@ K=3 (raise to 4 only per goal rule). Held all session: kagi kasegi kengaku reven
   only per the sentinel conditions) — ~600+ live seats. Resume parameters: K=3 strict; per-L1 wave
   band 32–64 (v1 shape preferred over v2 64–128); wave-slot mem floor 6G observed before each
   dispatch; no new dispatch if MemAvailable < 8G. Seat cap 256 unchanged, expected live ~150–200.
+- 2026-10-23T21:1xZ RESUME: smoke seat SmokeRoute answered `opencode-go/deepseek-v4.1-flash`
+  (task route @m_flash, directive 7) — route live. K=3 wave 1 dispatched: tameshi r35 (attempt 2),
+  chousa r36 (attempt 2), kotoba r62 (attempt 2), prompts `.ufo/prompts/{tameshi,chousa,kotoba}-round-{35,36,62}.md`,
+  dispatch evidence committed by inline.sh. MemAvailable 21.7G at dispatch.
