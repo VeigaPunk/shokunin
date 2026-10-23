@@ -16119,6 +16119,49 @@
    "notes": "Digest: 2026-10-23T01:45:21-03:00 launch tsukuroi round=33 pgid=2448928 attempt=1; 02:26:36 lane-dead-no-report (L1 died with orchestrator exit 05:25:25Z); 02:26:38 launch attempt=2 pgid=2557798; 03:40:25 lane-dead-no-report (omp SIGSEGV 06:19:06Z); 03:40:27 launch attempt=3 pgid=3137150; 04:53:24-03:00 complete tsukuroi round=33 attempt=3. Report fdbfdfc7 by lane identity; 13 linear lane commits 1f521b93..ca768636, all ancestors, ahead=0, porcelain empty; prompt = template + 11 placeholder lines + hyaku addendum. 85 seats (45+37+3), 2 holds (X01/X02 cyber_policy), 0 dead; closure seats 6 reviewers, 0 dead. Defects (status-neutral): oversize mutant diffs only under /fast/scratch/hyaku/tsukuroi-r33a3/oversize; amendment-2 text under-disclosed attempt-1 scoring; pause-gate/red-causes last measured at eb388c9c. Routed: (1) QUALITY 8 source:/verified-at: on kill-oom-boundary-r33.md + gate that fails a missing field, red-before; (2) CritC2AddedRows wording (Shmem exclusivity, mori PROVINCE.md:8->8-9, automatic vs conditional); (3) r32 defect 1 open (R33-FIXTURE-LABEL-SHORTCUT); (4) open-search control as code-reading item before any re-claim on probe; (5) SCORECARD correction disclosing 54 attempt-1 receipts under 965bc5d9; (6) commit digests for scratch-only diffs; (7) carried ambient copies (check-revision-binding:104, btrfs-space-r30:96, btrfs-repair-r31:108, probe-git-env-leak:58), is_git paths, repo-local config, census line 500, S175/S177, W04, receipts/run-receipt LOW, r31 mutants. r32 defects 2-5 closed. SHONEN all [~]; not fully non-author checkable; no promotion suggested.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 32,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 32,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 32
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "unprovable-but-better",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "serialized manifest appends in tools/research-gate.sh verify-all --json (probe and append in one flock -x section on the manifest's own fd; APPEND_SERIALIZED 0/24 -> 24/24 x2 on gate f4731885, frozen counter e6bf9531)"
+   ],
+   "report": ".ufo/reports/round-32/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-32-verifier-spotcheck.md@2b9cc73aed30c2e2c95699db6617d9531ef49fb2",
+    "rechecks": "C1 and C2 evidence-verified from committed receipts, not re-executed (lane-owned gate and counters; Gate standard Closure consequence). C1: counter c1-count-v2.py e6bf9531 byte-identical 3d586d3a..aa472066 and equal to both final receipts; P1 v2 text unchanged (claims.md +27/-0 append); final c1-s3210{1,2} 24/24 on gate f4731885 (= sha256 of research-gate.sh at 53cf649c and aa472066); base 0/24 on 0bc318b3; 53cf649c repair hunk keeps probe+append in one flock -x section (probe via /proc/$$/fd, unreadable-under-lock exit 2), rule unchanged. C2: counter 8ec1a1ed unchanged since 3d586d3a; final 132/132 x2, base 0/132; CriticAxis32 metadata control opens no cited source (trace: record + root dir only) and scores 132/132 x2 on the same counter because generate() writes the 36 resolvable sources first; first committed at aa472066, post-data. Chronology: v2 06:59:48Z; last control commit a065845a 07:20:56Z; 80 candidate receipts utc 07:21:14Z-07:56:21Z; no control JSON added after a065845a. Layout hazard: flat scratch gate paths occur only in v1-counter C2 receipts; v2 guard (c2-count-v2.py:284-294) exits 2; no counted score used the flat layout. No-harm battery identical to base; selftest 228 -> 241 PASS; SCORECARD append-only. Spot-check: S060, S061 re-opened (quotes found once each), Link_rot and v1 counter rejects agree; census exit 0."
+   },
+   "commit": "chousa-shokunin@aa472066aec0e3d8bc51a9ba2f2276cc3b421530",
+   "closed_at": "2026-10-23T08:14:36Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-10-23T02:50:39-03:00 launch chousa round=32 pgid=1132756 driver=hyaku-inline attempt=1; 2026-10-23T03:40:39-03:00 lane-dead-no-report chousa round=32; retry same round (attempt 1 L1 died with the orchestrator process (omp SIGSEGV) at 06:19:06Z; landed commits kept, uncommitted files untrusted); 2026-10-23T03:40:41-03:00 launch chousa round=32 pgid=3141706 driver=hyaku-inline attempt=2; 2026-10-23T05:02:15-03:00 complete chousa round=32; hyaku-inline attempt=2. Step 1 clean: report b6c90b57 by chousa-shokunin after lane tip; SHONEN heading with four [~] lines; 8 cited lane hashes ancestors of master (8d77e6c1 is a fleet commit, bfc0b02b a file sha256); ahead=0, porcelain empty; prompt = template rendering + hyaku addendum, committed 2 s before each launch. Not admitted: C2 coverage not verified (no-reader metadata-order control meets P2 v2 132/132), as the lane itself reported; no axis harmed. Disclosed: RerunC1b pkill -x sleep killed three sibling sleep processes; three cyber_policy holds not retried (CtlC1ShortcutB, CriticPredicateGaps32b, CtlC1JitterB v2 re-score). Routed: D1 C2 fixture must decouple mtime/inode order from truth and score the CriticAxis32 metadata control before freezing; D2 report/SCORECARD '10f2fe12 x18' vs 20 committed 24/24 receipt files, state the counting command; D3 measure/final/battery.out lacks gate_sha256/lane-rev header; D4 carried nested line/sha256 key defect; D5 seats must not pkill by name on the shared host. SHONEN: no box fully non-author-checkable as filed (operator-owned promotion).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
