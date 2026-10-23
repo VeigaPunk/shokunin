@@ -16262,6 +16262,49 @@
    "notes": "Dispatch digest: '2026-10-23T01:45:27-03:00 launch mado round=25 pgid=2452123 driver=hyaku-inline attempt=1'; '2026-10-23T02:26:41-03:00 lane-dead-no-report mado round=25 (attempt 1: L1 died with orchestrator exit 05:25:25Z)'; '2026-10-23T02:26:43-03:00 launch ... attempt=2'; '2026-10-23T03:40:30-03:00 lane-dead-no-report mado round=25 (attempt 2: omp SIGSEGV 06:19:06Z)'; '2026-10-23T03:40:32-03:00 launch mado round=25 pgid=3138821 driver=hyaku-inline attempt=3'; '2026-10-23T05:07:05-03:00 complete mado round=25; hyaku-inline attempt=3'. Base 41cc04c8, tip 16e57dac (C1 measured ef94763c), report fleet db62c5d7 by mado-shokunin. Step 1 passes (SHONEN 4/4 [~] with pointers, ancestry, ahead=0, clean, template contract). Weighed without regard to the prior rejection streak or directive-36 unblock. Defects (status-neutral): round-23 C3 inventory counter read 1 at ef94763c until 90224671 (intermediate, not tip harm); before-v4 receipt lacks exit= line; registration.md:85 R8 overclaims hardened MutCheck checks. Routed: M25-2 label-free case paths; drift-fault witness + embed fixture for surviving counter mutants; R2/M25-4 population-equality clause; M25-3 Q36 checker fixtures; R8 registration correction; {{...}} arithmetic and out-of---home reads; C2 :1409/:1410 second derivation and :308 command (F2). SHONEN box 3 looks non-author-checkable (operator-owned). No installs.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 39,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 39,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 39
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "unprovable-but-better",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unprovable-but-better",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "Offline sitemap file audit (round 39, exploratory): scripts/sitemap_audit.py at 565ef4c9, unprovable-but-better by hyaku closure"
+   ],
+   "report": ".ufo/reports/round-39/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-39-verifier-spotcheck.md@f171c58b918f705ca875b6cb42b9e75489cd3589",
+    "rechecks": "C1 exploratory, evidence-verified (no lane gate/selftest/counter executed): counter sealed_count.py sha256 f3a0cd60 identical at ceecb1b1/4c080d3d/565ef4c9/f841a48d; key cases.json at aa73d919 = pin 16440f62..4767c10b; predicate 'met: passed >= 24 of 24' and c1-contract.md unchanged ceecb1b1->tip; kill rule (1) in declaration ceecb1b1 (git log -S), fired at 4c080d3d/57bdd802 before build 565ef4c9; jq met tally 15/54 mutants + CtlRegexTweak 24. Critic copies: 6 text returns byte-identical to committed bytes, all 16 met receipts toolSha256 = committed, mutants written directly -> no control result rests on an unverified transcription. Build: ls-tree sitemap_audit 0->2, tool unchanged after 565ef4c9 (sha 6d86c8ce), selftest receipt PASS 150/150 (131+19 fixtures counted), copy guard max 0.2868, witnesses 18/18, realrun build=reference jq -S sha fd985a41 6/6, contract review 4 deviations (D2 UTF-16 no BOM clean). Integrator verdict C1 unprovable-but-better (lane seat ExploratoryVerdictC1 is the lane, not counted). Harm: SCORECARD +207/-0, no axis line changed; SKILL/PROVINCE/QUALITY/README/LOG 0 deletions; no D/R files; robots sha f4d057c4 unchanged, 194->204; recheck 106/106, hardening 9->10. Spot-check: S108 admit agree (live quote 17 words), S105 agree, S107 agree w/ caveat, S106-clause reject agree (no 'ignor' in live S102/S106), draft-(o) reject agree, counter-as-instrument reject agree. Census exit 0, 6 W04, kake ok; rows 101->109."
+   },
+   "commit": "kake-shokunin@f841a48d8591b014dc706a3a47e44ce5c17454f4",
+   "closed_at": "2026-10-23T08:21:00Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 02:10:15-03:00 launch kake round=39 attempt=1; 02:26:46 lane-dead-no-report (L1 died with orchestrator exit 05:25:25Z); 02:26:48 launch attempt=2; 03:40:36 lane-dead-no-report (omp SIGSEGV 06:19:06Z); 03:40:38 launch attempt=3; 05:07:26-03:00 complete kake round=39 attempt=3. Report 61d5d79e by kake-shokunin after tip f841a48d; SHONEN 4/4 [~]; 16 cited commits ancestors of master; ahead=0, porcelain clean; prompt = template render + hyaku addendum. First kake round since r36 to apply its frozen consequence as written; the exploratory C1 is admitted on the integrator's non-author verdict, no axis harmed. Closure seats: 6 read-only, 0 dead; one seat's claim that kill rule (1) first appeared at 57bdd802 was refuted (pickaxe: ceecb1b1). Defects (status-neutral): report surface command says 1 at 565ef4c9, observed 2; 'seven' critic text returns, observed six; lesson '5 of 15' should be 5 of 7 adversarial samples. Routed to kake: (1) superseding SOURCES rows for S106/S107/S109 corrections (CORPUS rule 2; S106 row still carries the refuted 'ignored' clause); (2) fix build D2 UTF-16-no-BOM, D1, D4, D5 red-then-green, record D3; (3) append SCORECARD correction marking the r39 capability row admitted unprovable-but-better with spotcheck pointer; (4) any countable sitemap re-claim passes QUALITY (o) first; (5) carried: (j) M06, MutRecheckOversize survivors, r38 routed defect 6 items 2-10. SHONEN boxes look non-author-checkable; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
