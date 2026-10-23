@@ -15996,6 +15996,47 @@
    "notes": "Driver digest: 2026-10-23T01:45:19-03:00 launch attempt=1; 02:26:34 lane-dead-no-report (L1 died with orchestrator 05:25:25Z); 02:26:36 launch attempt=2; 03:40:23 lane-dead-no-report (omp SIGSEGV 06:19:06Z); 03:40:25 launch attempt=3; 04:31:24 complete attempt=3. Step 1 ok: report a25198dd by lane identity, SHONEN heading, 14 cited hashes ancestors of master, jj-lane state ahead=0 tracked=0 untracked=0, prompt = template render + hyaku addendum. Seats 174 = build 40 + a2-control 50 (49 receipts) + a2-falsify 44 (0, disclosed) + a3-falsify 33/33 + residual 7/7: consistent. Leftovers: snapshot holds 46 files (report 45); 4 committed byte-identical as dead-wave record 9c4785ea; none cited by corpus. Defects routed: D1 plan.md:93 cites uncommitted build/CritRoundShape.md (E1-E6 basis unresolvable) and leftover count 45 vs 46; D2 K3/K3' lack an erratum clause yet the report treats X7-X9 as curing them; add a QUALITY criterion checking teaches against every locator before the entry commit; D3 S076 reason contradicts S063 (2.49.0 text is the 2.56.0 text); D4 guard tested vs prescribed (X4) and 5/6 rows failed ablation at the judged commit: make byte-exact guard copy a QUALITY criterion. Closure seats: 2 spawn calls of 5 read-only reviewers refused at the 100-job limit; no seat ran, all checks by the closure session. SHONEN: no box fully checkable by a non-author this round.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 27,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 27,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 27
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "unchanged",
+    "calibration": "unprovable-but-better",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-27/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-27-verifier-spotcheck.md@4179301f7516ad667509d54b5ebfe0a70a002d5b",
+    "rechecks": "C1 evidence-verified, not re-run (lane gate): counter sha256 49491b80 byte-identical 0ec32cac..8057282c; receipts at a720399e/d183ec57/4d2e74f4 print registered 0 counted 0 target 15 met False; plain re-measure: registry/error-signatures-r27.json absent and SKILL round-27 section count 0 at tip -> counted 0 < 15, miss under frozen kill rule; no data seat in any dispatch record. X1 ruled unprovable-but-better by this closure: RFC 8259 and llama.cpp server-common.cpp@704366d76 re-fetched (sha256 equal, quotes verbatim at 433/455-457/1375); committed receipts verified (raw echo test 0/12 vs decoded 12/12; both mutants killed; frame replay E26 17/17 0 collisions; boundary leg costs 3/17 genuine, disclosed). Repairs: D1,D3-D7 repaired, D2 partial (no F3 leg; per-class receipts vacuous), D8 open. Spot-check: 2 admits + 2 rejects agree; S137/S139 quotes verbatim <=25 words; census exit 0 kama ok (50 W04). SCORECARD +39/-0, no score lowered; append-only files 0 deletions. 5 read-only seats, none died."
+   },
+   "commit": "kama-shokunin@8057282c6d16f5b8471457ba15265dcae51d502a",
+   "closed_at": "2026-10-23T07:57:30Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 2026-10-23T01:45:25-03:00 launch kama round=27 pgid=2451543 driver=hyaku-inline attempt=1; 2026-10-23T02:26:39-03:00 lane-dead-no-report kama round=27 (attempt 1: L1 died with orchestrator exit 05:25:25Z); 2026-10-23T02:26:41-03:00 launch attempt=2 pgid=2558883; 2026-10-23T03:40:29-03:00 lane-dead-no-report kama round=27 (attempt 2: orchestrator omp SIGSEGV 06:19:06Z); 2026-10-23T03:40:30-03:00 launch attempt=3 pgid=3138238; 2026-10-23T04:44:08-03:00 complete kama round=27; hyaku-inline attempt=3. Report 1b723c9a by kama-shokunin; all cited hashes ancestors of master; ahead=0, porcelain clean; prompt d234c359 = template byte-identical + hyaku addendum section 6, committed before report. Honest stop: C1 (depth) withdrawn before data after the attempt-2 control wave died; reported as a miss. Housekeeping confirmed: 1846 attempt-2 files in /fast/scratch/hyaku/kama-r27/attempt2-untracked-w1-scratch, none cited as evidence; 262 GB sitecustomize.py reduced to Main's note + head4k, cited only as incident record (a3/mistake-runaway/); orphan llama-servers gone; early gate-slot release disclosed (report line 135). Conformance defect (status-neutral): round-27 count-c1.py has no SKILL.md gate registry row. Routed: (1) count-c2.py cell trust open (r25 d5, r26 d8); (2) r26 d2 remainder: F3 file-content echo leg + per-class non-author control receipts before data; (3) register or retire round-27 count-c1.py in SKILL.md; (4) append KQ37 qualification: S139 wording for QUALITY.md:219, correct qualification 1 clause-(d) overstatement (QUALITY.md:234); (5) state boundary-probe scope (exact case-sensitive decoded strings len>=4) where 3/17 cost is cited; (6) runnable recheck procedure for echo-discriminating-counters.md; (7) report imprecisions (residual spawn 07:23:39Z not ~07:27Z; 8057282c also adds census/append-only outputs). SHONEN: all [~], none newly checkable by a non-author; no [x] written.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
