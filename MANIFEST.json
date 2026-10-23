@@ -16998,6 +16998,47 @@
    "notes": "Dispatch digest: 2026-10-23T06:28:20-03:00 launch kumitate round=47 pgid=665961 driver=hyaku-inline attempt=1; 2026-10-23T07:58:09-03:00 complete kumitate round=47; hyaku-inline attempt=1. Report fleet ed17d1de (lane identity, committed after lane tip); 78 seats, 0 dead, 16 cancelled at budget stop, none of their reports cited. C1 operability not verified (author's single 5/5 not reproduced; confirmed: the passing receipt itself misses 2 AT802 execs); no axis harmed on committed evidence; checklist harm unprobed. R46-1 restore confirmed byte-exact. Routed: R47-1 commit the counter re-run receipts (only IRC quotes); R47-2 errata: A2 'all controls 0/5' (CtlRetParse 3/5, calibration 1/5), 'all 16 rows re-opened' (S084/S091/S092 no report), ReopenS088 listed cancelled but committed; R47-3 plan A1/A2 heading times later than their commits; R47-4 run checklist harness at base/tip (2-4x slower selftests vs 120 s budget); R47-5 counter accepts n<base_n, CritChronology objections open. SHONEN: no box fully non-author-checkable this round.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 32,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 32,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 32
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unchanged",
+    "depth": "unchanged",
+    "calibration": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-32/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-32-verifier-spotcheck.md@66e1fb444615b3afe380e7df0244ef7fae1dd985",
+    "rechecks": "C1 (operability, capability acquisition, measured): MISS re-derived by grep over committed receipt after/c1v2-at-measurement.stdout at 6706bbd6: ho_kill 1/10, ho_accept 8/12, v1 18/18 8/8, C1_R32V2_PASS=false; 22 held-out files from 5 completed authors at 24a5a5bb; tool sha 9639c458 at 24a5a5bb and tip; git diff 24a5a5bb..6706bbd6 over v2/, heldout/, tool, contract, runner empty (not re-scaled, re-seeded or amended); RerunV2 reproduction evidence-verified (0/22 differ, two seeds). No harm: runner sha256 a7d3f2dd unchanged at base/24a5a5bb/tip; SCORECARD 56/0 append-only, depth 9->9, calibration 8->8; ledger 480->493 with base prefix equal; monitor 64/64 restraint 8 and command D 9 evidence-verified; census validate run: exit 0, 8 W04, rows 94->96. r31 repairs verified (exact 'Score (0–10)' header test, byte-prefix append-only, base monitor receipt, command D .exit files). Spot-check 4/4 agree (S097, S099 admits re-fetched with matching sha256 and <=25-word quotes; S098 reject still times out; counter v1 reject CriticC1 true on two seeds)."
+   },
+   "commit": "tameshi-shokunin@6706bbd67835f8cc63ab47c434aba2151bc59377",
+   "closed_at": "2026-10-23T12:24:30Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 2026-10-23T07:24:57-03:00 launch tameshi round=32 pgid=66510 driver=hyaku-inline attempt=1; 2026-10-23T09:18:26-03:00 complete tameshi round=32; hyaku-inline attempt=1. Report ae79942 by lane identity; 13/13 cited hashes ancestors of master; lane ahead=0, clean; prompt = canonical template rendering (22 placeholder-only diff lines). 72 seats (35+33+4); dead: HeldOutFree, HeldOutHarnessVectors, HeldOutHarnessCmp (code=cyber_policy), not retried, files unused. §9: v1 redesign before data conformant; amendment 2 (528f8dee) re-pinned TOOL_SHA256 after v1/dev-sweep data but before any v2 run, ruled not a change of the claim's rule, and immaterial (false under amendment-1 constants too). Defects (status-neutral): declared v2 control re-score ran after the first v2 run; DeterminismProbe ran outside its item; measurement .exit hand-written. Routed: counter refuses to run without a committed control receipt; seat item-scope rule; exit capture without &&; ReviewCounterV2 defects; tool v2 on a fresh sealed set; carried queue (MutCounter M07/M08, dead-seat threshold, binding v5 FA-1..3, QUALITY 69/71 errata, mte-interop SETUP, S055 drift). SHONEN all [~], not non-author-checkable.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
