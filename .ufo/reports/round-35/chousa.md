@@ -96,7 +96,12 @@ Verdicts and the narrowing (all named in SCORECARD and claims.md §Erratum):
   that validates the override and then assigns `GREP_BIN=/usr/bin/grep` scores 9/9 while misreporting
   `source=override` (S7/S9 override with the same path as the default pin), and `--pin`'s capture
   body inherits `CHOUSA_GREP_PIN_ECHO=1`, so a baseline pinned with the echo on makes `--drift`
-  report `GATE_DRIFT: -LINE` against an unchanged gate (ExecPinModePinDrift).
+  report `GATE_DRIFT: -LINE` against an unchanged gate (ExecPinModePinDrift). A further survivor
+  (ExecC1Control): the counter reads the `GATE_GREP:` echo as a **string**, so a gate that prints a
+  hardcoded version literal with zero `--version` calls, or that validates an override and then
+  swaps `GREP_BIN` to a byte copy after the echo, scores 9/9 while the substitute serves the matches —
+  and `S6`'s stub prints its banner to stderr, which the gate discards, so the non-GNU branch is
+  never exercised. Verified against the final gate.
 - **C2: met under P2 as a ROUTING witness.** It proves the routed matcher function was entered, not
   that its body ran: a one-record shortcut (8 stamps for 8 records — the landed gate itself emits 9),
   a length-keyed engine (6/31 scanned seeds), a real chunk call with a discarded result, a
