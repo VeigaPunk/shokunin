@@ -16078,6 +16078,47 @@
    "notes": "Driver digest (.ufo/watchdog.log): 2026-10-23T02:45:50-03:00 launch kaidoku round=32 pgid=889844 driver=hyaku-inline attempt=1; 2026-10-23T03:40:38-03:00 lane-dead-no-report kaidoku round=32; retry same round (attempt 1 L1 died with orchestrator omp SIGSEGV at 06:19:06Z; landed commits kept, uncommitted files untrusted); 2026-10-23T03:40:39-03:00 launch kaidoku round=32 pgid=3141121 driver=hyaku-inline attempt=2; 2026-10-23T04:50:00-03:00 complete kaidoku round=32; hyaku-inline attempt=2. Step 1 pass: report 01b95387 by lane identity after tip, SHONEN heading 4x[~], 9 cited commits ancestors of main, ahead=0, porcelain clean. Attempt 1: 36 planned seats excluded, only its 3 freeze commits carried, no attempt-1 result cited; residual 8 resent unchanged after job-limit refusal, 40/40 seats returned, 0 dead. Held item U064N008Hf47eb933 untouched. Author honest stop confirmed: C1 verifies narrowly (12 synthetic exported-leaf DLLs, native view only); C2 falsified, no re-freeze/relabel. Routed defects: (1) strict timestamp gate red on planned-deadline fields; (2) M32-4 scoped find under /fast/scratch contrary to disk directive (no claim depends on it); (3) freeze-integrity registered as gate without selftest; (4) C2v3 must not be reused, next calibration claim needs pre-data denial/word-bag controls; (5) open instrument limits (forged-tag classifier, 5 surviving mutants, secondary gates without selftests). SHONEN boxes 1-2 look non-author-checkable from committed bytes (operator-owned promotion).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 33,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 33,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 33
+   },
+   "admitted": false,
+   "verdict": "rejected-harmed",
+   "verdicts": {
+    "operability": "improved",
+    "adjacency": "unprovable-but-better",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged"
+   },
+   "trends": {
+    "expansion": "harmed",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-33/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-33-verifier-spotcheck.md@2641591e303057cd0f67e190a6bdf7fa91a45c31",
+    "rechecks": "C1 re-measured: os.environ reads in _revision.py and v4shapes 1->0 each (1f521b93/9c89ff4f vs c8fcfbf6/ca768636), clean_env and ENV are literal dicts, binder pins = sha256(tip _revision.py) fc861ec8; evidence-verified receipts under probe c24f344b: before 15/15 exit1 at 9c89ff4f, after 0/15 exit0 at c8fcfbf6, reruns agree; 19 controls committed 4e521ce0 before change c8fcfbf6, only positive C16 reads 0; 5 after-mutants killed; regression 5->0 of 33. Ruling: amendment 9c89ff4f follows 54 attempt-1 receipts under 965bc5d9 (05:06-05:23Z) but is additive-only (stricter), pre-data, and no attempt-1 control reached target (read untrusted via tar xOf) -> pre-freeze fix, not kake-r38 class. Unscored open search (X01/X02 cyber_policy holds): kill rule never fired, skip-work and 4 observation-keyed controls >=5/15, shipped builders have zero ambient reads -> C1 admissible, counter debt routed. C1 verified, operability improved. C2 judged by closure (lane seat JudgeC2Exploratory does not count): unprovable-but-better; 15+ mori pointers at 24603186 and all lane pointers resolve, no absorption. But the note lacks source:/verified-at: (52/53 notes have both): fails QUALITY 8 -> expansion harmed -> not admitted. Gates evidence-verified: self-assessment 1->0, registry-coverage 1->0, recheck 0->0, adjacency 0->0, pause-gate 1->1 same P3, red-causes 0->0, 25 selftests byte-identical. Spot-check: admits S180, S182 agree; rejects S183 (=S163 bytes), S185 (=S115 bytes) agree; S180 row re-opened ok. Census exit 0, 31 W04, tsukuroi ok; rows 179->185."
+   },
+   "commit": "tsukuroi-shokunin@ca768636f3525c9567842674789cb6e798b5e6c1",
+   "closed_at": "2026-10-23T08:11:53Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 2026-10-23T01:45:21-03:00 launch tsukuroi round=33 pgid=2448928 attempt=1; 02:26:36 lane-dead-no-report (L1 died with orchestrator exit 05:25:25Z); 02:26:38 launch attempt=2 pgid=2557798; 03:40:25 lane-dead-no-report (omp SIGSEGV 06:19:06Z); 03:40:27 launch attempt=3 pgid=3137150; 04:53:24-03:00 complete tsukuroi round=33 attempt=3. Report fdbfdfc7 by lane identity; 13 linear lane commits 1f521b93..ca768636, all ancestors, ahead=0, porcelain empty; prompt = template + 11 placeholder lines + hyaku addendum. 85 seats (45+37+3), 2 holds (X01/X02 cyber_policy), 0 dead; closure seats 6 reviewers, 0 dead. Defects (status-neutral): oversize mutant diffs only under /fast/scratch/hyaku/tsukuroi-r33a3/oversize; amendment-2 text under-disclosed attempt-1 scoring; pause-gate/red-causes last measured at eb388c9c. Routed: (1) QUALITY 8 source:/verified-at: on kill-oom-boundary-r33.md + gate that fails a missing field, red-before; (2) CritC2AddedRows wording (Shmem exclusivity, mori PROVINCE.md:8->8-9, automatic vs conditional); (3) r32 defect 1 open (R33-FIXTURE-LABEL-SHORTCUT); (4) open-search control as code-reading item before any re-claim on probe; (5) SCORECARD correction disclosing 54 attempt-1 receipts under 965bc5d9; (6) commit digests for scratch-only diffs; (7) carried ambient copies (check-revision-binding:104, btrfs-space-r30:96, btrfs-repair-r31:108, probe-git-env-leak:58), is_git paths, repo-local config, census line 500, S175/S177, W04, receipts/run-receipt LOW, r31 mutants. r32 defects 2-5 closed. SHONEN all [~]; not fully non-author checkable; no promotion suggested.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
