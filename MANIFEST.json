@@ -17730,6 +17730,47 @@
    "notes": "kotoba r61 (hyaku run 5, attempt 1). Digest: launch 2026-10-23T15:50:34-03:00 pgid=136767 attempt=1; complete 2026-10-24T~03:30Z in-session L1; lane HEAD a745411c (plan freeze 7827628a, parent/base f3246d14), clean+pushed; fleet report 1ffba7ad. C1 depth MEASURED (counter v3 verifiers/check_scoped_rules.py@6a7f722e sha 5a5adc94; predicate verified: worlds reject 7 of 7 + eligible 4 of 4, receipt b4a8d2ee strictly before data 43fe0180; --rev 43fe0180 --fetch exit 0; base exit 1; counter bytes unchanged freeze->tip). C2 calibration MEASURED (six r60 routed repairs 0 of 6 exit 1 -> 6 of 6 exit 0 at de37c1d1, receipts controls/C2-base.txt and C2-measure.txt@3f47aaf6; all six re-derived substantively by the closure; presence-floor bound disclosed). C3 adjacency WITHDRAWN PRE-DATA, honest: E1 c630c4cb is an ancestor of the data commit; CriticC3Axis's hollow counterexample preserves every named observable; no adjacency claim in report/SCORECARD (score 8.0 held); M92 mined. No axis harmed. Routed to r62: (1) report says 66/68 seat reports but only 65 .md reports are committed (66th file is swarm-registry.json) and RevCounterHistory is unaccounted (SentNovelty/SimplEntry named; no error text) - recurrence of M91's class; (2) writing-revision-calibration-round61.md opens with a stray 'n' before source:; (3) C2 'frozen at 7827628a' is not a byte freeze (final 95ade9b; R-d guard changed verdict logic pre-data, disclosed); (4) no-harm arm count is 15+3 not 16+3; (5) lesson Gate has no reject rows (rejects live in wave ScoutKeyPagesA); (6) this spotcheck needs a corpus/README.md index row next round. SentNovelty/SimplEntry disposition: no report, no error text; classes covered by SentContext/SentBounds + entry limits; RevCounterHistory also returned no committed report. SHONEN: four [~] boxes with resolvable pointers; fully checkable by a non-author; closure wrote no [x]. Open L0: r60 fleet-report erratum authorization (fleet c6746bc) and the round-55 line remain operator-owned. Observation: round 62 was launched 17:40:02-03 and its plan freeze 45a7ecf landed 17:45:54-03, before this closure artifact existed.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 43,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 43,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 43
+   },
+   "admitted": true,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unchanged",
+    "freshness": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-43/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-43-verifier-spotcheck.md@18cb2c28f47c3ec3732ffa06c456e61b3444b1a2",
+    "rechecks": "C1 NOT MET re-verified, not relabelled: predicate byte-identical at freeze SCORECARD.md:3199 / c43_count_v4.py:78-80 / receipts; kill rules frozen at b49cba9c before dispatch (freeze 16:44:33 < wave spec 16:51:44 < earliest seat artifact 16:53). Four independent fresh-seed re-scores: V7_prefix_cache45 met 11/11 (T1 1.048 T5 1.135), casememo v7 met 11/11, hosttable A met 11/11; r42 v2_prefix32 red 8/11. Two witnesses reproduced: ref41 loc_not_absolute entry 2 vs V7 clean; ref41 loc_out_of_scope entry 2 vs case-fold v7 clean. Build met x3 (equal 11/11); four r42 controls red 9/9/7/9 of 11; do-nothing T1 4.207 T5 7.047; timing channel held (3 attack receipts met=false, equal 11/11). C2 re-derived at HEAD: node scripts/freshness-sweep.mjs --section=paths exit 0 (missSet 65, drift 0), annotations round-29.md:104 / round-33.md:45, pins 63->65 at b49cba9c, movement census md5-matched :120-124 / :126-134. Registry census 119->128 (mined +7, rejected +2) and 128->130 at freeze; checker red/green receipts agree (smoke aid, not a gate). Disk tally spot-checked: HeadTail 5 + PortLen 3 + CaseMemo 4 + Repeat 5 + HostTable 3 + PortValue 2 + PrefixCache 1 + build mutants 4 = 27."
+   },
+   "commit": "kake-shokunin@a377c5d0b98e7d5f28171bc47096e9592ac989a5",
+   "closed_at": "2026-10-23T20:56:45Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (.ufo/watchdog.log, mutable): 2026-10-23T16:05:04-03:00 launch kake round=43 pgid=2199380 driver=hyaku-inline attempt=1. The orchestrator supplied an in-session completion digest (2026-10-24T~03:15Z) that is not a line in the live log and postdates this closure; it is recorded as supplied and not used as termination evidence. Termination evidence: landed report d0cbc9d by kake-shokunin at 17:38:10 -0300, after lane tip a377c5d0 at 17:36:56 (lands last); live log also carries no complete line and .ufo/state/kake.round reads 16 (driver runtime, operator-side). Step-1 PASS: report committed by the lane identity; SHONEN heading present with 4 author-side lines ([~],[ ],[~],[~]) and no [x]; all eight cited lane commits (61046fc, b49cba9c, eddbbf6, 7c07079, a377c5d0, 020bc457, 1ef7a0e9, 5949e66ffe) exist and are ancestors of master; lane ahead=0 behind=0, porcelain empty, remote master a377c5d0 at check time (now 18cb2c28 = this spot-check commit); prompt committed e93ab55 with the full contract and no quoted L2 route map. Claims: C1 declared NOT MET and the kill-rule evidence verifies (27 witnessed meeting controls; 4 re-scored independently here with fresh seeds; 2 witnesses reproduced). C2 verified with its declared paths-only bounds; the §armed redness is pre-existing base debt and was not re-run. Discernment: S129/S130 admits agree (quotes verbatim; the paragraph-1 locator erratum is correct); this round's Gate rejected none, so a standing registry reject (S101 WHATWG, retained sha256 matches the live fetch) was sampled - agree; sources-census validate exit 0 (130 rows, 0 malformed). Corrections verified as append-only (stale freeze numbers superseded, movement census +2, T2/fold/port defects, checker overclaim qualification, exit-code receipts). Dead seats (15, named in the settle line): CriticReportContract, CtlSeedKeyed, CtlShapeKeyed, MutBuildLong, MutBuildManifest, MutBuildOutput, MutBuildZone, RevengerCounterLineage, ReviewFreezeReceipts, ReviewReceiptSchema, ReviewSpecFidelity, ScoutChronology, ScoutFleetRootWide, ScoutMissingFiles, ScoutRegistryUsedBy. Defects (status-neutral, routed in §8 of the spot-check): (1) L1 re-score tally says 18 of 27, committed receipts of record are 14; (2) w1/RevengerCounterLineage cited as evidence but listed dead with no report; (3) corpus/README.md row attributed to the freeze commit, actually landed in settle a377c5d0; (4) wave composition 47 reports / 4 live in SCORECARD and LOG vs settle line 50 / 1; (5) LOG keeps pre-T2-fix ratios (4.27/8.68) without a superseding LOG line; (6) report role mix 16 vs 14+3+1=18; (7) S129/S130 SOURCES anchor paragraph locators uncorrected (erratum only); (8) no corpus/QUALITY.md criterion for Mistakes 7/9/10/11 (captured-by none); (9) CtlPrefixCache has no durable seat report (one L1 re-score receipt); (10) driver runtime bookkeeping (no complete line, kake.round=16, empty report-baseline sha). No axis harmed: no deletions in 61046fc..a377c5d0, SKILL/PROVINCE/QUALITY untouched, no SCORECARD axis row changed. admitted=true under step-5's 'every claim verifies AS DECLARED' criterion (C1's declaration is NOT MET and verified); verdict rejected-honest-stop records that no operability axis-move was admitted (score unchanged) while freshness improved. SHONEN fully checkable by a non-author (all four boxes carry resolvable pointers; box 2 [ ] honestly records the second consecutive C1 not-met); this closure wrote no [x].",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
