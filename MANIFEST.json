@@ -17392,6 +17392,47 @@
    "notes": "watchdog digest: 2026-10-23T07:41:46-03:00 launch mori round=36 pgid=451829 driver=hyaku-inline attempt=1; 2026-10-23T15:03:19-03:00 lane-dead-no-report mori round=36 retry same round (attempt=1 superseded: stale phase-4 author, orchestrator died ~09:30 -03); 2026-10-23T15:10:29-03:00 launch mori round=36 pgid=94896 driver=hyaku-inline attempt=2; 2026-10-23T16:23:39-03:00 complete mori round=36 hyaku-inline attempt=2. Report committed by lane identity 1c7d081; all cited commits ancestors of master; ahead=0. Defects (status-neutral): untracked .scratch/ is the 1 uncommitted lane path (disclosed operator item); 62/66 w2 reports, 4 seats never returned (partial settlement disclosed); freeze-pointer slip (sha256 pins cited as freeze-v3 live in freeze-v2; v3 git-blob pins verify); interloper commit c081375 in round range (disclosed); w2 registry null agent ids (lane lesson); frozen-byte residuals disclosed with r37 paths (SIGKILL child, docstring v1, delete+restore detection, no 429/4xx arm); absolute operator paths in 4 evidence files (fix-forward). Routed to r37 per report. SHONEN all [~]; boxes look non-author-checkable — promotion review is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 63,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "kotodama",
+   "lane_round": 63,
+   "lanes": {
+    "kotodama": "ok"
+   },
+   "lane_rounds": {
+    "kotodama": 63
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "improved",
+    "calibration": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-63/kotodama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "kotodama-shokunin/corpus/lessons/round-63-verifier-spotcheck.md@ff30a205c8d23b35f1ac533740121a955a9fda96",
+    "rechecks": "O evidence-verified (final-measures-o 15/15 PASS exit 0, review tokens 4/4, MEDIUM-1 repair 42a30dc9, tool selftest 49/49; code read confirms redirect re-validation under --allow-private, read1 deadline, gzip, TRUNCATED, MALFORMED, --timeout); C re-measured (SOURCES 619->643, knowledge 236->237, culture-material 30->31, 24 rows S694-S717, one S-id per bullet, gate quotes <=25 words and verbatim in anchors; tier A=13/B=11 vs reported A14/B10); census exit 0; 14/14 cited commits ancestor of main; prompt = template + addendum; SHONEN block answers 2 of 4 boxes"
+   },
+   "commit": "kotodama-shokunin@38ec1316859850afc605bd21ce38b6a766716e4e",
+   "closed_at": "2026-10-23T20:02:34Z",
+   "campaign": "hyaku",
+   "notes": "Digest copied from .ufo/watchdog.log (mutable): 2026-10-23T15:17:50-03:00 launch kotodama round=63 pgid=122856 driver=hyaku-inline attempt=1; 2026-10-23T~20:20Z complete kotodama round=63 (in-session L1), claims O PASS (ACCEPT-O-63 15/15) and C PASS (ACCEPT-C-63 10/10 at 8d2041fa), lane HEAD 38ec1316 (final measures 80ff34c + separability manifest 38ec1316; pushed, ahead=0, clean), report commit f07bbc9 by kotodama-shokunin. Conformance: report real (not a marker), status ok; cited hashes 14/14 exist and are ancestors of main; project prompt = templates/round-prompt.md modulo substitutions plus addendum 6; L2 floor 8 matches MISSION.md. Routed defects to r64: (1) round-63 LOG entry landed in a new corpus/LOG.md while canonical root LOG.md is byte-unchanged (append a pointer/entry to LOG.md, name the canonical file); (2) dead pointer reports/round-63/telemetry/final-measures.txt cited in SCORECARD.md and corpus/LOG.md (actual -o/-c receipts); (3) tier histogram A14/B10 reported vs A13/B11 measured; (4) false disposition of r62 cosmetic items 5-6 ('via R63-M2'; R63-M2 is the stale-pin class) and r62 item 7 unaddressed; (5) SHONEN block answers only boxes 1-2, boxes 3-4 missing, two lines answer no box -> re-file one line per box, disqualified as promotion evidence this round; (6) new entry lacks the CORPUS provenance trio (source/verified-at/recheck) unlike the r61 footwear entry; (7) rejects not curated as rejected rows with reason+flip; (8) acceptance receipts do not name the revision measured; (9) nits: 45 seat reports claimed vs 47 committed, W04 is 27 rows not S650/S651, O dry-run parenthetical lists 6 of 9 FAIL legs; (10) report predates 80ff34c/38ec1316 and does not carry the separability re-run (2 findings: C->REC and O->base via acceptance, named record dependency, exit 1) - disclose next round. Operator: SHONEN boxes are NOT fully checkable from this report (2 of 4 unanswered); promotion review remains operator-owned and no [x] was written by this closure.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
