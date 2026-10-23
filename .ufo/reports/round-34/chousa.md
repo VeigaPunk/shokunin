@@ -4,7 +4,7 @@ Lane: chousa-shokunin (deep-research method: question framing, source hierarchy,
 chaining, claim-vs-source verification). Driver: hyaku-inline attempt=2 (watchdog launch
 2026-10-23 15:04:49 -03). Attempt 1 of this round died `lane-dead-no-report` (~09:30 -03)
 after landing its work (`f20aeaa7`…`bf7c931a`); this attempt inherits it, re-verifies it,
-and completes the round. Lane HEAD at report: `53e4aa0579d81eabfe4fe311984ffcb97eb119d5`.
+and completes the round. Lane HEAD at report: `fc93dc5e0059f00cde10d41d16b9241dc33282b6` (two late-arriving wave artifacts committed after the integration cutoff; nothing else outstanding).
 
 ## Work performed
 
