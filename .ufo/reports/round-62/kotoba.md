@@ -1,6 +1,6 @@
 # kotoba — round 62 report (hyaku run 5, attempt 2)
 
-Date: 2026-10-23. Lane: `/home/vgpnk/Projects/shokunin/kotoba-shokunin`, branch `master`, landed tip `225f1b1650fd3be30dbd642edf5af3946c49730c` (pushed). Prompt: `.ufo/prompts/kotoba-round-62.md`. Attempt 1 was OOM-killed at ~18:00-03 with no report; this attempt inherited and re-verified its artifacts (see *Inherited state*).
+Date: 2026-10-23. Lane: `/home/vgpnk/Projects/shokunin/kotoba-shokunin`, branch `master`, landed tip `306381dac3c8e02e5ad6c3d9e22c498ead8ad392` (pushed). Prompt: `.ufo/prompts/kotoba-round-62.md`. Attempt 1 was OOM-killed at ~18:00-03 with no report; this attempt inherited and re-verified its artifacts (see *Inherited state*).
 
 **Stale-lane:** respawn-per-round driver; this lane has no other open mission.
 
@@ -41,7 +41,8 @@ Every change ties to the `LOG.md` § Round 62 entry and its commit:
 | `e424f2a4` | wave-2 falsification evidence (29 reports + registry), C2 hardening (v2 `604ae4fb…`), C2 receipt re-run, F1–F15 corrections, before-state correction |
 | `91fecae2` | late wave-2 seat writes (ScribeEntry62, ScribeLessonQ57, FalsifyC2Mutants) |
 | `e681737d` | F16/F17 late wave-2 corrections: method provenance in the entry/Q57 (tameshi/kumitate/kagi/chousa credits), the floor-guard coverage bound, and the two late seat reports |
-| `225f1b16` | final-sweep commit for a late rewrite of `FalsifyC2Mutants.md`; the report cites this pushed tip |
+| `225f1b16` | final-sweep commit for a late rewrite of `FalsifyC2Mutants.md` |
+| `306381da` | third sweep: 32 wave-2 reports committed (connector, battery-self-test, D1-basis, C2-mutants final write); the report cites this pushed tip |
 
 `LOG.md` § Round 62 carries the same commit order and the falsification/correction record; no change is claimed without a row there.
 
@@ -76,7 +77,7 @@ Every change ties to the `LOG.md` § Round 62 entry and its commit:
 
 - **Wave 1** `kotoba-r62-w1`, policy v1: **39 spawn**, band 32–64; 34 reports at attempt-1 death, **35** after the completion call. Four spec seats never reported: `ScribeLesson62`, `ScribeScorecard62`, `ScribeReportSkeleton`, `MutAbsorbMutants` (attempt-1 OOM). `ExecSuccessor31` died with attempt 1 and its report was re-worked by the completion call. No dead seat was replaced by a reseat; the completion call used new identities and its three reports are `unmatched` by the spec (`controls/seat-counts-r62.txt`: `35 of 39; missing 4; unmatched 3: ExecNoHarmRun.md, ScoutRegistry.md, ScribeLessonQ57.md`).
 - **Build-completion call:** 5 seats (executor 2, scribe 2, scout 1) — `ExecV31`, `ExecNoHarm`, `ScribeEntry62`, `ScribeLessonQ57`, `ScoutRegistry`.
-- **Wave 2** `kotoba-r62-w2`, policy v1: **39 spawn**, band 32–64, one `task` call; reviewer 17, critic 10, scout 5, mutation-tester 3, sentinel 2, revenger 1, connector 1 (core attack roles 30 of 39, 77%). **29 reports by the freeze**; the remaining ten seats were still running and are counted as landed-but-late, not as passes; no wave-2 seat was replaced.
+- **Wave 2** `kotoba-r62-w2`, policy v1: **39 spawn**, band 32–64, one `task` call; reviewer 17, critic 10, scout 5, mutation-tester 3, sentinel 2, revenger 1, connector 1 (core attack roles 30 of 39, 77%). **32 reports committed** (29 at the first freeze, three more landed and were swept into `306381da`); at close seven seats had still not settled and are counted as landed-but-late, not as passes; no wave-2 seat was replaced.
 - **Round total: 83 seats** (39 + 5 + 39). §3 planner seat: the L1 (the validator rejects `planner`); planning data-walks rode `ScoutPriorReceipts`, `ScoutR62Candidates`, `RevPlanScope`.
 - **Dead wave-2 seat:** `FalsifyControls` died at provider level with `[openai-codex/gpt-6.1-sol] Codex error event: This content was flagged for possible cybersecurity risk … (code=cyber_policy)`; its item is unreported and stays dead in the evidence.
 
@@ -102,6 +103,8 @@ Two seats reported after the first report commit; both findings land as correcti
 - **F16 — method provenance was missing** (`FalsifyConnector`). The guard-disabled flip + hollow/label controls (tameshi method; kotoba `SKILL.md:14` concedes it), controls-before-data (kumitate D49), the self-derived count (kagi `self-counts.py`) and the "absorbed" vocabulary (chousa r16; game-dev-2d r65–r68) appeared in zero landed r62 artifacts. Corrected: the entry carries a `## Method provenance` section and Q57's evidence cell the credits; nearest-evidence corrections recorded (kumitate r40 `attacks_accepted 20/26→0/26` with `benign_clean=10/10`; r48 A48). No sibling now holds either instrument shape; kotoba retains both.
 - **F17 — deleted self-test arms are invisible to the floor guard** (`FalsifyBatterySelfTests`). In a sandbox, deleting the C1 isolation arm and the C2 base-world CLI assertion left both self-tests exit 0 with byte-identical output, and `check_assertion_floors.py` passes 14 of 14 while executing neither gate (neither is in `floors-registry.json` and no count pattern matches its output). Recorded as a coverage bound; the frozen predicates are untouched, and the smallest fix is an assertion-count line plus registry rows (v31 already prints `201 assertions`).
 
+- **Late-report disposition (third sweep, `306381da`).** `FalsifyC2D1Basis` confirmed the count basis from committed blobs at base, r60 close, `TIP_REV` and tip (29 matching names; D1 adds a real matching name to reach 30; the paired tuple is computed). `FalsifyConnector`, `FalsifyBatterySelfTests` and `FalsifyC2Mutants` are committed. Seven wave-2 seats (`FalsifyV31Harm`, `FalsifyC2Mutants`, `FalsifyC2HonestH1`, `FalsifyClaimC2`, `FalsifyScorecard`, `FalsifyStatementSemantics`, `FalsifyGateRegress`) had not settled at close: their items are reported as late, never as passes, and any write they land after this report is a late write for the next integrator, not evidence this round counts.
+
 ## Compliance
 
-Write scope: lane repo, this report, no `l0-questions` append. No MANIFEST/`.ufo/state`/watchdog/templates/scripts edits. Fleet commits via `scripts/hyaku/fleet-commit.sh`; lane commits via `scripts/hyaku/jj-lane.sh commit … --as kotoba`; the report lands last and cites the pushed lane tip `225f1b1650fd3be30dbd642edf5af3946c49730c`; a final sweep commit for a late rewrite of `FalsifyC2Mutants.md` follows the report as a child commit (wave evidence only, no product change).
+Write scope: lane repo, this report, no `l0-questions` append. No MANIFEST/`.ufo/state`/watchdog/templates/scripts edits. Fleet commits via `scripts/hyaku/fleet-commit.sh`; lane commits via `scripts/hyaku/jj-lane.sh commit … --as kotoba`; the report lands last and cites the pushed lane tip `306381dac3c8e02e5ad6c3d9e22c498ead8ad392`; a final sweep commit for a late rewrite of `FalsifyC2Mutants.md` follows the report as a child commit (wave evidence only, no product change).
