@@ -4,7 +4,10 @@ Lane: chousa-shokunin (deep-research method: question framing, source hierarchy,
 chaining, claim-vs-source verification). Driver: hyaku-inline attempt=2 (watchdog launch
 2026-10-23 15:04:49 -03). Attempt 1 of this round died `lane-dead-no-report` (~09:30 -03)
 after landing its work (`f20aeaa7`…`bf7c931a`); this attempt inherits it, re-verifies it,
-and completes the round. Lane HEAD at report: `fc93dc5e0059f00cde10d41d16b9241dc33282b6` (two late-arriving wave artifacts committed after the integration cutoff; nothing else outstanding).
+and completes the round. Lane HEAD at report: `8bc930a9a0cb53b5c65b6a2d1a15e7c52cb539cb` (late-arriving wave evidence committed
+after the integration cutoff: ExecC1RerunA2's four c1v3 receipts on the C2-landed gate — LONGSPAN_MATCH=42/42
+on seeds 4601-4603 (LC_ALL=C) and 4604 (UTF-8) — closing the gap that every committed c1v3 receipt had bound
+the pre-C2 gate; plus its mutation battery and a SKILL.md stale gate pointer it flagged, fixed in `8bc930a9`).
 
 ## Work performed
 
@@ -168,10 +171,9 @@ Sourced claim: C2 rests on S065 (opened this round, re-opened this attempt).
 - Dead seats: attempt 1 — five provider `cyber_policy` holds (CtlC1Shortcut, CtlC1Windows,
   CtlC1Halves, MutC1Counter, CritC1AxisFit; refrozen as the exclusion, never rerouted).
   This attempt — none dead; no error text received.
-- Returned: 23 of 33 wave-2 reports committed (`w2a2/*.md`). Queued-out at the integration
-  cutoff (named, not dead, no error text): ExecC2Oracle, ExecC1RerunA2, ExecNoHarmA2,
-  CritC1Wording, CritRoundShape, RevClaimsA2, RevQualityA2, RevProvinceA2,
-  ScribeReportFacts, ScribeCloseout. Their items are covered by redundancy (ExecC2Oracle's
+- Returned: 23 of 33 wave-2 reports committed (`w2a2/*.md`). Queued-out at the integration cutoff (named, not dead, no error text): ExecC2Oracle,
+  ExecNoHarmA2, CritC1Wording, CritRoundShape, RevClaimsA2, RevQualityA2, RevProvinceA2,
+  ScribeReportFacts, ScribeCloseout. ExecC1RerunA2 returned post-cutoff (see HEAD note above). Their items are covered by redundancy (ExecC2Oracle's
   feasibility by the four 37/37 receipts + MutC2Counter's ablation; ExecNoHarmA2 by the L1
   battery committed at `fe0f22e0`; CritRoundShape's registry counts by the committed
   w1/w2 registries) or remain open honesty gaps named for the closure.
