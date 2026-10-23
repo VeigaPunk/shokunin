@@ -17310,6 +17310,49 @@
    "notes": "watchdog digest (lines 919/933/944/958): launch attempt=1 07:41:43-03:00 pgid=447289; lane-dead-no-report 15:03:19-03:00 (stale phase-4 author, orchestrator died ~09:30 -03); launch attempt=2 15:10:23-03:00 pgid=93338; complete attempt=2 16:12:49-03:00. Report 9596e03 by kama-shokunin; all 6 cited commits ancestors of master; ahead=0 at close (remote master == local == 7f595a3bf). Orchestrator repair confirmed: operator commit 49f849f (considerthese only) between 513eba3b and integration 6de225c2, rebased over per report; L0 line (7400d67) resolved in-session. Disclosed items verified resolved in landed tree: VerifyMistakeFix D1 (13-case count now in LOG/lesson), D2 (mined/patched-513eba3b.out exit 1 by design), D3 (mutant-killing case landed, 3/3 mutants die), stale LOG working-tree clause, census exit 0 at tip. Routed defects for r30 (status-neutral): (1) 2 untracked round-work files (.ufo/waves/round-29/w2/VerifyLogFreshness.md and out/.../report.md — only evidence/ landed in 7f595a3b); (2) LOG.md names neither 6de225c2 nor 227dd1ee though the report ties them to the attempt-2 LOG entry; (3) S174 SOURCES teaches cell marked verbatim but drops 'given' (page: 'Annotates each line in the given file'); (4) S176 teaches cell vs SrcS176 decision-record mismatch (singular 'given tree', :(exclude) composition; decision records tree->trees fix); (5) minor: SCORECARD appended cause-cell note omits corpus/lessons/round-2.md:49 hit. Lane self-graded expansion unchanged; closure grades expansion improved per LEARNING.md corpus observable (1 net-new knowledge entry on previously unmapped ground citing mined S174-S177) — grade difference recorded in the spot-check. No capabilities added (verified). SHONEN: 4 boxes all [~], none [x]-checkable by this closure; box-2 corrected wording independently verified against controls-frozen.json by w2 seat VerifyShonenBox2 (lane-dispatched, cannot supply non-author mark); promotion is operator-owned. No tool installs by closure or its seats (curl, system git 2.56.0, python3 only).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 34,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 34,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 34
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "improved",
+    "freshness": "improved",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "dead-zone span verification (verify-claims, spans 32765..32767 bytes; verified measured r34 attempt 2)",
+    "long-span verification (verify-claims, spans 32768..65536 bytes; unverified, required controls held)"
+   ],
+   "report": ".ufo/reports/round-34/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_kfc session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-34-verifier-spotcheck.md@b8b0af76c2f82736d79861e68041b81eae450e6a",
+    "rechecks": "C2 re-measured fresh seeds 8609/8777 DEADZONE_MATCH=37/37 on gate a6307edf (before receipts 21/37 on unfixed 772a1d8e; sole functional line TOK_DIRECT_SPAN_MAX 32767->32764 confirmed by diff; no committed below-37 run); C3 auditor re-run on landed tree: MISMATCHES=1 dispositioned / UNDISPOSITIONED=0 over 62 checks, byte-consistent with committed final receipt; C1 exclusion record re-opened, carried unverified; SCORECARD/PROVINCE diffs clean; census exit 0 re-run"
+   },
+   "commit": "chousa-shokunin@fc93dc5e0059f00cde10d41d16b9241dc33282b6",
+   "closed_at": "2026-10-23T19:26:30Z",
+   "campaign": "hyaku",
+   "notes": "Watchdog digest: 2026-10-23T07:41:50-03:00 launch chousa round=34 attempt=1; 15:03:19 lane-dead-no-report (stale phase-4 author, orchestrator died ~09:30 -03); 15:04:49 launch attempt=2; 16:21:05 complete. Step-1: report committed by lane identity 22b0b7ae; SHONEN heading present (4 boxes [~]); 17/17 cited commits ancestors of master; ahead=0 pushed; prompt carries full contract. Defects (status-neutral): 3 untracked ExecC2Oracle wave debris files (.ufo/waves/round-34/w2a2/ExecC2Oracle/*.txt, seat report never landed; 24 .md reports on disk vs 23 claimed); report-vs-lesson seat-return snapshots (20 vs 23) are timing differences, named. Routed: r35 grep-binary pin/provenance (host self-reports pi-uu-grep 0.2.0), slen decoupling research-gate.sh:1631, selftest comment numbering 255-257 vs 254-256 (comment-only churn), C1 unverified debt carried with exclusion intact. SHONEN: 4 [~] boxes checkable by a non-author per my evidence check; promotion is operator-owned. 10 seats queued-out named in report (host job clamp), covered by redundancy or open honesty gaps. Spotcheck pushed and verified at origin/master b8b0af76.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
