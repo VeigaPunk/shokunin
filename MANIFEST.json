@@ -17234,6 +17234,45 @@
    "notes": "Digest (.ufo/watchdog.log, mutable): 2026-10-23T15:04:48-03:00 launch tameshi round=33 pgid=84507 driver=hyaku-inline attempt=1; 2026-10-23T16:02:27-03:00 complete tameshi round=33; hyaku-inline attempt=1. Report ea215a7 by tameshi-shokunin (lands-last holds vs cited hashes; SHONEN heading present, 4x[~]). Step-1 clean except: post-report lane commits 8b7f3d60 (16:04:07) and 051c1e65 (16:04:35) landed after the report and after watchdog complete; seat reports w1/DevPrintf.md and w1/RevengerWitness.md left untracked at closure (uncommitted round work; 61401c28 subject says '33 seat reports', 31 tracked); report role mix says mt16/rev8 and 9 dev sweeps, registry shows mt15/rev9 and 11 Dev* seats. Verdict basis: C2 (freshness) verified by independent re-measurement; C1 (operability capability, falsifiable predicate) honestly NOT measured — sealed held-out set never authored, controls receipt unminted, kill rule unconsumed — so not every claim verifies; per r30/r32 precedent the round is rejected-honest-stop, not admitted, with no harm and C2's improvement recorded on the freshness axis. Routed to r34: (1) lesson Holds names stale amendment-3 pin 7a59f576...8833 — author the sealed set against head pin 7b11ba25...8d10 per the counter; (2) commit the two untracked seat reports and record the report/tip divergence in LOG.md; (3) fix report role-mix tally and lesson '12 dev sweeps' count (registry: 33 members, mt15/rev9/critic2/scout2/scribe2/sentinel1/revenger1/connector1, attack 28/33); (4) lesson Gate quote is 14 words not 17; (5) C1 measurement queue: controls mint (score_tool restored 5bfa3b59), sealed set authoring, counter run; cold-read re-crediting ~19 SOURCES-citing sections + 3 all-four per LedgerAudit. SHONEN boxes all [~] lane-asserted — none checkable to [x] by this non-author; promotion stays operator-owned. Cited lane head 6e25524ae superseded live by 051c1e65 (lane-authored) before this closure; all round claims re-measured against the cited head and C2 also passes at the live tip.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 48,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 48,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 48
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "counter-rerun"
+   ],
+   "report": ".ufo/reports/round-48/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_kfc session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-48-verifier-spotcheck.md@b7b040b5519659ddffa8bf6841a8ada56a9c2701",
+    "rechecks": "C1 evidence-verified per Gate standard (no sibling gate executed): 3 committed held=4/4 runs at ce9aee5d time-spaced, counter sha256 matches committed bytes, A48 sentence byte-identical plan<->counter with kill/stability receipts, H2 r47-set 5/5; static re-measure of the 4 sites spawnSync->capSpawnSync at f00cf278->ce9aee5d. C2: absent at freeze -> exists at ce9aee5d; committed selftest PASS (14 cases) + real AGREE runs=2 with byte-identical summary; capability row entered. H1 re-derived item-level: base 18/22 FAIL{685,686,687,697} both runs, tip 19/22 FAIL{685,686,687} both runs, zero pass->fail flips. H3 proxy --strict MATCH pins=6; H4 census exit 0 (closure-run too). S098 re-opened: sha256 exact, quote 25 words located. Wave accounting exact (65+8=73)."
+   },
+   "commit": "kumitate-shokunin@4e4f4713a7a2d62d6ba7767b5f6e37211ba9baca",
+   "closed_at": "2026-10-23T19:22:20Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-10-23T08:04:35-03:00 launch kumitate round=48 pgid=1614930 driver=hyaku-inline attempt=1; 2026-10-23T15:03:19-03:00 lane-dead-no-report kumitate round=48; retry same round (hyaku-inline attempt=1: superseded at T0 2026-10-23T18:00Z: stale phase-4 author (orchestrator died 2026-10-23 ~09:30 -03); fresh attempt); 2026-10-23T15:10:27-03:00 launch kumitate round=48 pgid=94401 driver=hyaku-inline attempt=2; 2026-10-23T16:09:30-03:00 complete kumitate round=48; hyaku-inline attempt=2. Attempt-1 freeze/build inherited, re-verified, committed in close. Report committed by lane identity (08c3202) after lane record; SHONEN heading 4 boxes all [~]/[ ] lane-asserted, none checkable to [x] by this non-author - promotion stays operator-owned. Conformance defects (status-neutral): 5 uncommitted lane-authored leftovers at close (modified close/ReRunCounter48-1.md + close/ReRunCounterA.md prose reformats, untracked close/ReviewIntegration.md, r48-plan.stderr, r48-residual-plan.stderr); report named only the ReviewIntegration/CritClose late-output class as round-49 inheritance - the other four paths were not named; every score-bearing receipt is committed and the working-tree edits are post-completion seat writes. Routed to round 49 (lane-owned): (1) resolve/name the 5 leftovers; (2) register counter-rerun at the SKILL.md gate registry (only pin.counter-rerun exists) or record the exemption; (3) LOG.md 'two mistakes' vs lesson's four - appended correction; (4) report re-run timestamp 18:59Z vs receipt 19:01:13Z (minor); (5) leak-delta receipt one line (=13) vs claimed quiet-host delta 0 - decomposition not committed. Round verified declared limits present (bind view, argv identity, A48 output-text oracle, cap-spawn OOM->status-0, PID-wrap exit-2).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
