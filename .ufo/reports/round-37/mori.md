@@ -2,7 +2,7 @@
 
 Lane: `mori-shokunin` (fleet root `/home/vgpnk/Projects/shokunin`). Entering tip
 `842a32074b5c7972e9728f3f629d83eb92f127c2`. Scored tip `e57c58b5`; final lane tip
-`5dff52a1ba4e76b8a30f2557a09239b9568b5680` (pushed, `ahead=0 behind=0`).
+`c31076ed85b3aadf2454637747343e0ab97eb58f` (pushed, `ahead=0 behind=0`).
 
 ## Work performed
 
@@ -63,6 +63,9 @@ Work items (one bullet each, evidence pointer):
 | freeze + both counters + three fixtures; drift entry; S221–S225; README/SCORECARD rows; scoped r17-jj assertion; `--selftest` named arms | `e57c58b5` | `LOG.md` Round 37 entry (declared claims, freeze pins, before/after) |
 | C1/C2 receipts, measured outcome, QUALITY 106/107, lesson `round-37`, LOG entry, wave spec/plan/taskCall | `bcf65505` | same entry (verdicts, capability rows, census) |
 | dispatch log + final-tip re-scores (`C1=met` seed 5097152322487907681, `C2=met`) | `5dff52a1` | same entry (round shape, debts) |
+| S225 source copy named explicitly (1.9 MiB; the directory form skips new files over 1 MiB — lesson M5) | `52d636d5` | `LOG.md` Round 37 entry (lesson M1–M5) |
+| lesson M5 appended | `4bec58eb` | same entry |
+| LOG lesson range M1–M5 + S225 packaging note | `c31076ed` | same entry |
 
 No axis score was moved; the SCORECARD diff from `842a320` to `5dff52a1` is additive (Round-37
 section, capability rows, two evidence-cell clauses).
