@@ -3,7 +3,7 @@
 Lane: chousa (deep-research method). Round 35, attempt 1. Lane repo
 `/home/vgpnk/Projects/shokunin/chousa-shokunin`, branch `master`.
 Base `08be4c9e3a4ebe55d915ce4761c81854286c23ae` (gate `a6307edf…2995b`).
-Landed lane tip **`9b88179356ed2feccfcd527e39f38dc69d149858`** (pushed; `ahead=0`, clean porcelain; the report-landing tip was `119efa28`, and the late seat artifacts plus errata 9–12 sit on top).
+Landed lane tip **`73921312f843f51d5364f0fbe84e0db3ff1f4a3e`** (pushed; `ahead=0`, clean porcelain; the report-landing tip was `119efa28`, and the late seat artifacts plus errata 9–13 sit on top).
 
 ## Work performed
 
@@ -214,6 +214,15 @@ corrected in `corpus/README.md` and the knowledge table gained the three r35 ent
   leaks the temp dir and orphans the traced child. Receipt-loop conditions: ≥512 MiB free per slot,
   explicit `WITNESS_TMP`, no hard kill (r36 hardening: ENOSPC detection, `OSError`→2, process-group
   cleanup, atomic receipt write). The runbook row states the size.
+- **Pre-existing, live defect routed to r36** (erratum 13, ExecPinModeAll): `verify-all --json` builds
+  `record_sha256`/`gate_sha256` with `sha256sum | cut` resolved through `PATH` and validates them only
+  for non-emptiness (`research-gate.sh:3668-3671`), so a shim wrote `0000…0` and even
+  `HOSTILE-CUT-OUTPUT` with the run still CLEAN; the claims path already validates `^[0-9a-f]{64}$`.
+  This matters because SCORECARD rows and receipts cite `gate_sha256` as identity.
+- A further mode-coverage correction (erratum 12): `verify-integrity` and `verify-sweeps` run **no**
+  matcher grep — the pre-pin gate behaves identically there — so neither may be cited as pin
+  coverage; `verify`, `verify-claims` and `verify-chain` do, and the `--selftest` run through a
+  `RESEARCH_GATE_GREP` wrapper logged 348 `--version` probes and 1781 pinned-binary calls.
 - **Known defect in the landed bytes, routed to r36:** `CHOUSA_GREP_PIN_ECHO=1` is inherited by the
   `--pin` capture body (the capture's `env -u` list omits it), so a baseline pinned with the echo on
   embeds a `GATE_GREP:` line and `--drift` against an unchanged gate reports `GATE_DRIFT: -LINE`
