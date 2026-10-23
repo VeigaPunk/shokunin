@@ -3,7 +3,7 @@
 Lane: chousa (deep-research method). Round 35, attempt 1. Lane repo
 `/home/vgpnk/Projects/shokunin/chousa-shokunin`, branch `master`.
 Base `08be4c9e3a4ebe55d915ce4761c81854286c23ae` (gate `a6307edf…2995b`).
-Landed lane tip **`119efa28a6bdfb0a72c3abfd178755ec59addaf7`** (pushed; `ahead=0`, clean porcelain).
+Landed lane tip **`9b88179356ed2feccfcd527e39f38dc69d149858`** (pushed; `ahead=0`, clean porcelain; the report-landing tip was `119efa28`, and the late seat artifacts plus errata 9–12 sit on top).
 
 ## Work performed
 
@@ -108,8 +108,13 @@ Verdicts and the narrowing (all named in SCORECARD and claims.md §Erratum):
 - **C2: met under P2 as a ROUTING witness.** It proves the routed matcher function was entered, not
   that its body ran: a one-record shortcut (8 stamps for 8 records — the landed gate itself emits 9),
   a length-keyed engine (6/31 scanned seeds), a real chunk call with a discarded result, a
-  body-replaced matcher (`3e5648b8…`), a column-0 decoy definition and static marker forgery all pass
-  (wave seats MutC2KeyedBattery, MutWitnessBypass1/2, MutWitnessThreshold, RevWitnessCode). The axis
+  body-replaced matcher (`3e5648b8…`), a column-0 decoy definition, and a gate that forges the
+  marker's own stamps — the marker is shipped into the gate as `PS4` and the trace is the gate's own
+  stderr, so a zero-hardcoding forger that reads the marker from its own environment scores 9/9 with
+  0 real stamps and the full P2 pass line (ExecC2Fresh1, claims.md §Erratum 11) — all pass
+  (wave seats MutC2KeyedBattery, MutWitnessBypass1/2, MutWitnessThreshold, RevWitnessCode,
+  ExecC2Fresh1/2). The witness is therefore a speed bump for engines that do not forge, not a proof;
+  the report names it so. The axis
   caveat is recorded (CritC2AxisFit): P2 measures receipt strength, not the lane's self-assessment
   accuracy.
 - **R1's probe is a demonstration, not a counter** (ExecSlenProbe): a hardcoded `slen=32766` or a
@@ -202,8 +207,13 @@ corrected in `corpus/README.md` and the knowledge table gained the three r35 ent
   longer reproduces (both gates 36-38 s); appended to claims.md, frozen r34 text untouched
   (ExecR34C1V3). It also shows the pin is load-bearing through that independent counter
   (base 0/42 under a corrupting PATH grep vs landed 42/42).
-- The witness's xtrace file is large (~310 MB per 9-record run, RevWitnessCode) and is written under
-  its temp dir and deleted; the runbook row states the size.
+- The witness's xtrace file is large — **190–300 MiB per 9-record run** (wave seats RevWitnessCode and
+  ExecWitnessTiming; 335× the 566 KiB fixture) — written under its temp dir and deleted on exit; a
+  bounded tmpfs truncates it and reads as `WITNESS=fail` (indistinguishable from a skipped matcher),
+  `c2-count.py` then exits 1 with an unhandled `OSError` instead of the documented 2, and a hard kill
+  leaks the temp dir and orphans the traced child. Receipt-loop conditions: ≥512 MiB free per slot,
+  explicit `WITNESS_TMP`, no hard kill (r36 hardening: ENOSPC detection, `OSError`→2, process-group
+  cleanup, atomic receipt write). The runbook row states the size.
 - **Known defect in the landed bytes, routed to r36:** `CHOUSA_GREP_PIN_ECHO=1` is inherited by the
   `--pin` capture body (the capture's `env -u` list omits it), so a baseline pinned with the echo on
   embeds a `GATE_GREP:` line and `--drift` against an unchanged gate reports `GATE_DRIFT: -LINE`
