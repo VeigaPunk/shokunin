@@ -138,17 +138,24 @@ is not admission; independent non-author verification remains required.
 - **L0 side channel:** if you need an operator decision, append
   `<lane> | round-<N> | <question>` to `/home/vgpnk/Projects/shokunin/.ufo/l0-questions.md`. Do not block
   the round on an answer; note the open question in the report and route around it.
-## 6. Campaign addendum — hyaku (百) phases 3–4, operator directives of 2026-10-22 (binding this round; in-session)
+## 6. Campaign addendum — hyaku (百) phases 3–5, operator directives of 2026-10-22/23 (binding this round; in-session)
 
 Operator directive 3, verbatim (phase 3, 2026-10-22): "each round should be a 32-100 swarm round".
-Session scope, lane order and blocks, holds and operator rulings: `.scratch/goal-20261022-hyaku-12h.md`
+Operator directives of run 5, verbatim (2026-10-23): "i want you to swarm heavily, continuing on
+our past session of training them; we will be using jj as the git manager. i want 128 concurrent
+subagents; you can choose the shokunins to be trained, as you deem best, which ones are more prio
+to train before other etc. the goal is to push them all to round100 of training. /skill:tower |
+Do it inline, this will be the 5th hyaku run"; "I need you to swap m_opus for m_kfc; across all
+roles on the run"; "use m_kfc on max thinking effort"; "I want you to be running for the next
+24hours, autonomously."
+Session scope, lane order and blocks, holds and operator rulings: `.scratch/goal-20261023-hyaku-24h.md`
 under /home/vgpnk/Projects/shokunin. Phase-2 directives still bind (2026-10-20): "let's try to also implement using
 jj as git manager from now on on shokunin runs"; "make sure we are always swarming heavily though".
 Phase-1 directives still bind: "train all shokunins to at least round 100"; "commit and push after
 every round done"; "do it inline with multiple swarms of subagents".
 
 You are an in-session **L1 lane subagent** dispatched by the hyaku orchestrator (the operator's
-parent omp session) for exactly ONE steered round: **mado round 27** (attempt 1;
+parent omp session) for exactly ONE steered round: **mado round 27** (attempt 2;
 campaign target: round 100). Your lane's place in the session follows the goal file (lane
 order and blocks: `.scratch/goal-20261022-hyaku-12h.md`); the orchestrator dispatches your lane's
 next round only after this one lands and its non-author closure is written. Work this round only
