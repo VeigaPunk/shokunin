@@ -3,7 +3,7 @@
 Lane: chousa (deep-research method). Round 35, attempt 1. Lane repo
 `/home/vgpnk/Projects/shokunin/chousa-shokunin`, branch `master`.
 Base `08be4c9e3a4ebe55d915ce4761c81854286c23ae` (gate `a6307edf…2995b`).
-Landed lane tip **`038543b208be2d87d01985b9e0aa60771b909d71`** (pushed; `ahead=0`, clean porcelain; the report-landing tip was `119efa28`, and the late seat artifacts plus errata 9–13 sit on top).
+Landed lane tip **`c1dbbec33dc6f8ef7e188dff1efae64951c26d05`** (pushed; `ahead=0`, clean porcelain; the report-landing tip was `119efa28`, and the late seat artifacts plus errata 9–14 sit on top).
 
 ## Work performed
 
@@ -223,6 +223,13 @@ corrected in `corpus/README.md` and the knowledge table gained the three r35 ent
   matcher grep — the pre-pin gate behaves identically there — so neither may be cited as pin
   coverage; `verify`, `verify-claims` and `verify-chain` do, and the `--selftest` run through a
   `RESEARCH_GATE_GREP` wrapper logged 348 `--version` probes and 1781 pinned-binary calls.
+- **Pre-existing, live defect with an exact seam** (erratum 14, ExecSelftestEnv): `json_unescape`
+  (`research-gate.sh:1398-1449`) lacks the `LC_ALL=C` scope the span matchers carry, so a `\uXXXX`
+  span near the 32764-byte boundary routes by **locale** and flips supported↔unsupported both ways.
+  `LC_ALL=C --selftest` fails 10/256 on the landed gate, identically with the pin bypassed (1443
+  base shim calls vs 0 landed, same failing set); the round-34 "base 11 vs landed 10" delta is a
+  `PROVINCE.md` readability artifact, not a base-vs-landed difference. r36: pin a locale for gate,
+  counters and selftest, and add a C-locale selftest arm.
 - **Known defect in the landed bytes, routed to r36:** `CHOUSA_GREP_PIN_ECHO=1` is inherited by the
   `--pin` capture body (the capture's `env -u` list omits it), so a baseline pinned with the echo on
   embeds a `GATE_GREP:` line and `--drift` against an unchanged gate reports `GATE_DRIFT: -LINE`
