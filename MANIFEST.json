@@ -15237,6 +15237,47 @@
    "notes": "Digest: 2026-10-22T21:47:03-03:00 launch mori round=32 pgid=3590349 driver=hyaku-inline attempt=1; 2026-10-22T22:00:50-03:00 lane-dead-no-report mori round=32; retry same round (attempt 1 died with the orchestrator session freeze at 00:54Z, landed nothing); 2026-10-22T22:00:51-03:00 launch mori round=32 pgid=3651298 driver=hyaku-inline attempt=2; 2026-10-22T23:07:30-03:00 complete mori round=32; hyaku-inline attempt=2. Conformance pass: report 6f159a1 by mori-shokunin after tip; 11 cited commits ancestors of master; jj-lane state ahead=0; only pre-round untracked .scratch/ (0 files newer than launch, named, not counted); prompt = template + addendum. Defect: lesson :113-114 cites a non-existent 'JudgeRecheck finding 1'. Routed (spot-check s8): (1) append corrections for the five unsupported current rows S058/S117/S128/S149/S137 and recheck their companion sources or split rows; (2) judge receipts must name the applied rule, a conceded unsupported part is disagree; (3) undeclared lane-inference clauses S041/S044/S051/S062/S064/S069 and misstated judge reasons S062/S069; (4) S128/S149 quotes cut before the 'although' exception; (5) first-URL population leaves multi-URL rows' other unpinned URLs unchecked; (6) r31 defect 6 (r30 detectors, FR5 probe) carried a third time. SHONEN boxes look fully checkable by a non-author from committed pointers (operator-owned promotion). No tool installed.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 58,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "kotodama",
+   "lane_round": 58,
+   "lanes": {
+    "kotodama": "ok"
+   },
+   "lane_rounds": {
+    "kotodama": 58
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unprovable",
+    "calibration": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "harmed",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-58/kotodama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kotodama-shokunin/corpus/lessons/round-58-verifier-spotcheck.md@1542f7a211e12c8663fc6a4c73bfb5c4fa8fef57",
+    "rechecks": "Claim C MISSED on its frozen predicate: final-measures.txt shows ACCEPT-C-58 FAIL 4/4 (a7e47ab BOILER S510; e27c8a6 TOPIC S511 and BOILER S510; 45bb7e1 BOILER/TOPIC S511, all fetch-class; accept-c.py@80f48c2c:28 'No slack'); evidence-verified, gate not executed. Section 9 ordering verified: all instrument revisions 22:05-22:25:34 -03, build dispatch 22:48:29, no instrument/predicate diff 6faef400..tip; control seats scored earlier revisions (sanctioned pre-data fixes). Re-measured at tip: entry absent at base/present at tip, SOURCES 465->525, cited 44 = S500-S543, tiers A38/B6, hosts 23; separability dependency on undeclared .ufo/waves/round-58/support/ confirmed. Routed r57 repairs agree: CODH H236 192,162 B re-fetched (S576), heraldry :41 -> S575 p.8 verbatim (98,899 B), S413-S454 tiers A36/B6 at 89b94b6 and tip, S428 no row owed. Spot-check 3/3 admits (S510, S511 via Wayback verbatim, live 403 today; S514) and 4/4 rejects (Toronto TOPIC 0, Barnet 403, GSI TLS legacy renegotiation, Innervate tier) agree. Census validate kotodama ok exit 0."
+   },
+   "commit": "kotodama-shokunin@af1a348980f9b9ac20cdf8829e5bdd176b401735",
+   "closed_at": "2026-10-23T02:27:05Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-10-22T21:37:18-03:00 launch kotodama round=58 pgid=3580278 driver=hyaku-inline attempt=1; 2026-10-22T22:00:51-03:00 lane-dead-no-report (attempt 1 died with orchestrator freeze at 00:54Z, landed nothing); 2026-10-22T22:00:53-03:00 launch attempt=2 pgid=3651885; 2026-10-22T23:18:00-03:00 complete kotodama round=58 attempt=2. Step 1 passes (report 7e41821 by lane identity after tip; 19/19 hashes ancestors of main; ahead=0 behind=0; prompt carries template contract plus section 6). Status-neutral defects: 11 untracked lane-root files (carriers.txt, flagged_rows.txt, locator_diff.txt, met_check.txt, plwiki_check.txt, s313_check.txt, s435_entry.txt, s452_locate.txt, tier_rule.txt, uncited_terms.txt, wayback_rows.txt) written by cancelled round-58 seat ExecReasonSweep58 - report's 'not attributable' is false (containment). Six pre-data revisions, not five (31cf8b6 added TOPIC, omitted). claims.json declared_at 'before any seat scored' contradicts revision_note. '123 controls 0 pass' overstated (18 fail only SUPPORT incl. honest green on missing registry). Census start run late. Quality harmed: twelve verified kongo-kingdom sentence fixes carried a third round unapplied (:84 mestres). Routed to kotodama next round: dispose stray files and confine seat writes; correct revision count and freeze provenance; declare any fetch-class rule before data; declare support/ in lands; apply or mark kongo fixes. SHONEN 4x[~], none fully non-author checkable yet.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
