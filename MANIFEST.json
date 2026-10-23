@@ -15570,6 +15570,47 @@
    "notes": "Driver digest (.ufo/watchdog.log:800,814): 2026-10-22T23:14:13-03:00 launch kaidoku round=30 pgid=2538305 driver=hyaku-inline attempt=1; 2026-10-23T00:23:06-03:00 complete kaidoku round=30; hyaku-inline attempt=1. Step 1 pass: report by kaidoku-shokunin at fleet bd693c8, SHONEN 4x[~], 11 cited commits ancestors of main, jj-lane state ahead=0 tracked=0 untracked=0, porcelain empty, prompt sections 1-6. Incident M30-2 confirmed: a w1 seat's llvm-objcopy rewrote 4 uncommitted carriers 02:42:35-02:43:47Z; caught by C1 pin exit 2 in 4 control seats; restored by 02:44:44Z (chattr +i), 15 min before first counted run; tampered hashes absent from all committed data; carriers 16/16 equal official wheel members. M30-3 (C2 committed check compares ok only) real but not material: committed refusal bytes match predicted code+message 16/16. Conformance defects (status-neutral): report asserts settle-gate PASS and prefile PASS without committed runs (only committed prefile run is red). Routed: (1) commit cited gate receipts; (2) M30-3 full-envelope counter; (3) 4 wrong prediction code pointers; (4) 1 MiB/64x limits already held at l7-02:10; (5) lowest-axis basis unstated, stale owned-axes rows; (6) province_ok/entry_ok token-only; (7) restore-time ~02:46Z correction; (8) carried r29 docstring. Hold U064N008Hf47eb933 untouched. Operator: SHONEN box 1 (decision table) looks non-author checkable (SKILL.md:970-993 = live 19/19); promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 30,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 30,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 30
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-30/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-30-verifier-spotcheck.md@be7b8d8d54962286417465a305fd9a1a7b3b1525",
+    "rechecks": "C1 and C2 evidence-verified, not re-executed (lane-owned loopback counters; Gate standard). Re-measured: tool sha256 47a657e7...1201 = 49b2aa30; counters 5b312d84/0a59e373 and harness e2be0dd1 byte-identical 60d51f7..b9ed43c6. C1 78/106 x2 -> 106/106 on 14 landed runs (met). C2 12/27 x2 -> 27/27 on 41 of 44 runs, 26/27 on RerunC2B run2/run4/extra16 (slow-ok UNREACHABLE 0.062-0.068 s past DEADLINE): not met under the frozen kill rule, reported as a miss. Chronology: first data seat ExecC1Head c1-run1 03:22:04Z; all design commits (v2 6b1c5177, v3 bf657822, wording dad857af/00cf2365, v4 abfdf932, wording 60d51f79 03:13:52Z) precede it; 61 v4 control receipts none met (max C1 86/106, C2 18/27). r29 mutants killed on landed tool: MutR29Order 104, SkipScript 66, Casefold 86 of 106; MutHeadNoText survives 106/106. No harm: research-gate.sh unchanged, r29 counter 130/130, lane record files insertion-only, SCORECARD lowers no score. Census chousa ok exit 0 (2 W04), rows 49->56. Spot-check: admits S050 S051 S052(corrected) S053 S055 S056 agree (quotes re-opened verbatim; S050 page sha 1db65aef matches), rejects undated W3C URL (301->307 to html.spec.whatwg.org) and the real-network inference agree. Prompt carries all 105 literal template lines. Seats: ChronoR30, ReceiptsR30, CorrectionsR30."
+   },
+   "commit": "chousa-shokunin@b9ed43c64e373b98176dd6e03f0c8259c21122fb",
+   "closed_at": "2026-10-23T04:04:30Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-10-22T23:39:45-03:00 launch chousa round=30 pgid=1886412 driver=hyaku-inline attempt=1; 2026-10-23T00:50:45-03:00 complete chousa round=30; hyaku-inline attempt=1. Report 54c617b by chousa-shokunin; step-1 clean (cited hashes ancestors of master, ahead=0, porcelain empty, SHONEN 4/4 [~], L0 fleet 8d77e6c1). Honest stop: C1 verified, C2 missed its frozen 27/27 predicate, so not admitted; status ok. Containment: whatwg redirect disclosed (ReviewContractV2 finding 13, lesson cites 7); misrooted ConnectorKagiPin moved, fleet path absent and never committed. Routed: D1 README:942-948 says C2 moved to held ground (contradicts the miss) plus capabilities pointer c2-count 27/27; D2 backlog-5 diagnosis stated as fact, seat tags it INFERENCE, 18/18 backlog-128 receipts only in /fast/scratch; D3 'four controls forced redesigns' is three control findings / two control-forced redesigns (v2 was the L1 read); D4 C1 rerun count double-counted (14 total, not 9+14), CriticClaimsAfter 'RerunC2B 17/20' is 20/23; D5 v4 C1 control max 86 not 84; D6 dead seat CriticS047Live re-issued as LiveS047After (same critic role) while report says not retried, and refused CriticHarnessIntegrity scripts landed unreviewed; D7 S052 non-verbatim Gate quote not mined in Mistakes; D8 pointer nits (7908ce2a vs bf657822, dad857af omitted, report time 03:52Z after commit 03:50:30Z, second DiffToolB network run, NCBI host). Carried: L0 fetch scope, resolver/dial outside DEADLINE, hop timers, MutHeadNoText, 2xx challenge, IPv6. SHONEN box 3 checkable by a non-author; promotion operator-owned. Tools installed: none.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
