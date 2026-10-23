@@ -16676,6 +16676,66 @@
    "notes": "Digest: 2026-10-23T04:59:29-03:00 launch kama round=28 pgid=504272 driver=hyaku-inline attempt=1; 2026-10-23T06:43:02-03:00 complete kama round=28; hyaku-inline attempt=1. Report b459870b by kama-shokunin, lands after tip; all 8 cited lane commits ancestors of master; state ahead=0, porcelain clean; prompt 6dd5e59 carries contract. Conformance defect: preregistration.json pre_data_amendment_A1 says 'Written ~08:45Z' but landed in 75b78bb4 at 08:38:16Z (future-dated). Routed: (1) depth re-claim needs counter frozen before any seat scores, with pre-data type-only and declared-bounds projection controls; (2) append correction for ~08:45Z; (3) commit DataG01/DataG15 timing transcript excerpts with sha256; (4) gate-registry-check.py occurrence-only, no fixture self-test, no revision printed; (5) registry kinds measurement: not gate|probe, retired row lacks kind/entry; (6) echo-recheck exit-2 refusal lacks exit-code receipt; (7) lesson Gate preamble says 4 non-verbatim seat quotes, quote-check.out says 8; (8) report omits that final A1 counter is met 20/20 by post-data projection; (9) SHONEN box 2 round-17 wording open. Fleet root shows ' M .ufo/state/kama.report-baseline' (driver state, operator-side). SHONEN box 1 looks non-author checkable (operator-owned promotion). No tool installs.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 26,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 26,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 26
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "claims": {
+    "C1": {
+     "axis": "coverage",
+     "type": "sourced",
+     "verdict": "improved",
+     "admitted": true,
+     "finding": "tools/mado-anims.py absent at 96101be5; count-v2.py sha256 4ed70b54...6428 frozen at 1b0b91e9 (pre-data, unchanged to tip); receipt at 2b3487f7 41 CASE/41 PASS TARGET_MET, tool sha 2beda3f7, ORACLE v0.56.2 efb50993, HOST_SAFETY delta 0; controls v2 max 9/41 pre-data, 13/41 w2 rescores. Closure re-measure: tool on operator tree vs live hyprctl animations -j: 35/35 nodes, 6/6 beziers numerically equal. M26-9 (one seed per v2 control) ruled status-neutral conformance defect."
+    },
+    "C2": {
+     "axis": "operability",
+     "type": "capability extension",
+     "verdict": "improved",
+     "admitted": true,
+     "finding": "c2/count.py sha256 b92c32da...16a8; tool sha 01751e13 at a496b02a; 22/51 -> 51/51 embed_hits=0, V3 21/21 both; closure re-measure: r25 and r26 tools identical on operator tree (192 binds) and multiset-equal to live hyprctl binds -j. M26-10 (env seeding removed; hyprlang seeds env-first) ruled a disclosed in-scope trade answering r25 routed defect 6, not an axis harm; documentation routed."
+    }
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "static animation-table resolver",
+    "isolated Hyprland oracle"
+   ],
+   "report": ".ufo/reports/round-26/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-26-verifier-spotcheck.md@543f0445e9d60bdfa026c54772d29e8b96bc844b",
+    "rechecks": "Re-measured: commit ancestry (8 lane hashes), ahead=0/clean, lane authorship 7/7, prompt-template diff (4 substitution lines, §6 present), seat counts 40+34+4, counter/tool sha freeze, CASE/PASS counts in 4 receipts, control tallies and chronology (controls 09:16:22Z < w2 createdAt 09:16:39Z < data), SCORECARD diff (+36/-0), census validate (mado ok, 7 pre-existing W04, 172->177), source re-opens S173-S177 + S158/S162 (sha match, quotes verbatim), live-surface tool runs (anims 35/35+6/6, binds 192/192 equal to read-only hyprctl), coredumpctl 1330->1338 attribution (5 pilots + 3 seat probes), live Hyprland pid 1614 unchanged. Evidence-verified (not executed): counters c1 v2/c2, harness/isolation probe (770/770), counter-selftest 9/9, Q37 red/green, Q36 successor 8/8 and red on r26. Seats: CloseC1Evidence, CloseC2Evidence, CloseHostSafety, CloseWaveAndPrompt, CloseGateRegistry (none died)."
+   },
+   "commit": "mado-shokunin@14fcb814a4808527f93317d496fe5c87dbfc8036",
+   "closed_at": "2026-10-23T10:15:13Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: '2026-10-23T05:20:09-03:00 launch mado round=26 pgid=916826 driver=hyaku-inline attempt=1'; '2026-10-23T07:03:22-03:00 complete mado round=26; hyaku-inline attempt=1'. Base 96101be5, tip 14fcb814 (C1 measured 2b3487f7, C2 a496b02a), report fleet b3f5d225 by mado-shokunin. Step 1 passes. Rulings: M26-9 status-neutral conformance defect (seed clause serves the kill rule; every seed <=13/41); M26-10 in-scope trade, not harm (registered no-harm scope 21/21, answers r25 routed defect 6, real tree unchanged); M26-4 wave validation stands (validator checks spec-side properties only; appended block is host-injected RULES.md); M26-5 measurements ran under env -i. Host safety: no measurement run touched the live session. Defects routed (spot-check §7): document env-literal limit + stale PROVINCE:36-39; seed-count completeness; SKILL.md registry rows for 3 gates (none registered); Q36 successor red on .txt receipts + self-test/Q37 survivors; uncommitted check-population after-receipt runs; successor harness env -i / no crash inputs; protocol lane: §6.2 taskCall-unchanged clause vs host RULES.md injection. SHONEN 4x[~]; box 3 looks non-author checkable (operator-owned).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
