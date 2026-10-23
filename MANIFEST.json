@@ -17472,6 +17472,49 @@
    "notes": "dispatch: 2026-10-23T16:38:14-03:00 launch kumitate round=49 pgid=2384716 driver=hyaku-inline attempt=1; complete: 2026-10-23T~20:15Z complete kumitate round=49 (in-session L1): landed, lane master=64b92866b3c119d4a3434039569a82786ab323f1 pushed ahead=0; fleet report commit 0fdce71a. Lane advanced after the report: 01b70bb0 (C2 addendum, C2 re-scored 16/16) -> 923a172 (record addendum) -> c432cc9 (ConnSiblingOverlap seat report); verifier spotcheck ff40d7dc; final round-work tip c432cc958304856d989438fb74c4cb48cb0ea3fc. Base b7b040b5519659ddffa8bf6841a8ada56a9c2701 (the orchestrator's 65b393e resolves in neither this lane nor the fleet repo; base unchanged from dispatch). Shape: one v2 wave, 64 seats, attack 24 = 37.5% (reviewer 8, critic 4, mutation-tester 12); role mix verified in r49-spec/r49-taskcall; no residual call and no dead seat recorded. Overrun 2h15m vs the 2h freeze (report write-up + fleet push), disclosed. Defects (status-neutral): (1) report filed before its last four commits - it cites 64b92866 while C2 now measures 16/16 at 01b70bb0 and ConnSiblingOverlap landed at c432cc9; the LOG addendum names the extension but no report erratum exists; (2) corpus/lessons/round-49.md has no '## Gate' section; (3) the S095/S098 're-opened' claims have no committed receipt; (4) the three C1 receipts are byte-identical (sha256 03a258d6), so 'three time-spaced runs' is not byte-evidenced - the integrator's own re-runs at two revisions read 6/6, so the score stands; (5) SKILL.md:595 and :598 still say 'all eleven' against 'Twelve are gates' at :589 (correction sweep incomplete); (6) the wave's 'validator exit 0' and slot line have no committed receipt, and r49-taskcall.json is a bare 64-element array while the report describes a context+tasks taskCall (context lives in r49-spec.json). Operator note: all four SHONEN boxes look checkable by a non-author now (box1 SKILL.md:589-617; box2 the r49 instrument plus its score receipts; box3 the frozen counters ran from committed instructions; box4 no sibling/domain-tree edits); no box was marked, promotion is operator-owned. No tool installs by the lane this round.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 27,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 27,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 27
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "static workspace-rule table resolver (tools/mado-wsrules.py)"
+   ],
+   "report": ".ufo/reports/round-27/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-27-verifier-spotcheck.md@da33a3ffb3d2004c0d8d8f526e3d0cba1bdabf79",
+    "rechecks": "Claim receipts re-derived from committed bytes and verified as gate evidence (gates not executed): C1 tool absent at 543f0445, tool@20022a65 sha256 dcf5c8c0 = receipt, 41 CASE/41 PASS, PRED-C1-r27-v4 41/41 TARGET_MET exit 0, 13 v4 controls best 32/41; C2 suites absent at base, suite A 7fd94b04->aa0e14d1 and B 99e7d876 match receipts, 17 GREEN PASS/15 W KILLED/15 H KILLED (h_need 14), TARGET_MET exit 0 at rev 0b53bd86, subject+seal digests match; 11 cited lane commits are ancestors of pushed master; census exit 0, rows 177->182, malformed 0; all five new sources re-fetched (row digests and located quotes match)."
+   },
+   "commit": "mado-shokunin@767b12db62ceb3ad38d24a13e4c693b4375ceb5a",
+   "closed_at": "2026-10-23T20:03:17Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest: 2026-10-23T07:15:52-03:00 launch mado round=27 pgid=4176664 driver=hyaku-inline attempt=1; 2026-10-23T15:03:19-03:00 lane-dead-no-report mado round=27 (stale phase-4 author; fresh attempt); 2026-10-23T15:10:22-03:00 launch mado round=27 pgid=92816 attempt=2; 2026-10-23T19:05Z complete mado round=27 attempt 2 (in-session L1; live watchdog log carried no complete line at closure, this digest is the completion record). Lane HEAD 767b12db..., pushed ahead=0; report fleet 9f966367... by mado-shokunin identity. Claims: C1 coverage improved (tool missing at 543f0445 -> tools/mado-wsrules.py@20022a65, 41/41 TARGET_MET; 13 controls best 32/41; 5 new A-tier sources); C2 operability improved (suites absent -> green 17/17, W 15/15, H 15/18 vs need 14 TARGET_MET at 0b53bd86; measurement-1 miss at 48b9434a kept as evidence; repair candidate A2 landed by the pre-declared first-returned rule). No axis harmed (SCORECARD +24/-1 only; tools/mado-binds.py docstring-only; no deletions; census exit 0). Directed defects (status-neutral, r28): (1) SKILL.md:630-635 r27 gate registry rows are stale 'pending' placeholders after the suites landed — Gate standard Delivery not conformant; (2) lesson M27-2 has a dead pointer (SOURCES.md:195-199 holds no malformed rows in any commit) and a stale 'still contains them/pending' fix cell — needs appended correction; (3) E01 fix has no committed red-before receipt (sources-start.txt is a clean 177-row run); (4) report pointer quality/q36-successor-receipts.txt dead (actual .ufo/waves/round-27/quality/q36-successor-receipts.txt); (5) report harm-watch omits the tools/mado-binds.py docstring change; (6) report says the tool docstring cites S178-S182 (it cites upstream files; the knowledge entry cites the rows); (7) registration declares one C2 measurement, round ran two (repair flow unregistered); (8) w3 declared 8 seats, only 7 seat reports/names committed; (9) report cites SKILL.md:631-636 vs rows at 630-635; (10) late uncommitted .ufo/waves/round-27/w4/reports/RevRepair.md (+166/-33, mtime 16:50:46 -03) written after lane tip — land as r28 erratum or revert. r28 items relayed from w4 RevRepair: exact->=3 tolerance disjuncts (or nm == 3, or ne == 3) survive both repair candidates (zero slack left on HeldC2); A1 e36f12f2 was empirically wider than landed A2 aa0e14d1 under the first-returned rule. SHONEN 4x[~] unchanged; no [x] written; promotion operator-owned. Tool installs: none.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
