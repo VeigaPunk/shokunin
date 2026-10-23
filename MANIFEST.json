@@ -15529,6 +15529,47 @@
    "notes": "Digest: 2026-10-22T22:13:05-03:00 launch kotoba round=56 pgid=3896356 driver=hyaku-inline attempt=1; 2026-10-23T00:21:20-03:00 complete kotoba round=56; hyaku-inline attempt=1. Report d8b2098 by kotoba-shokunin. The 10 cited lane hashes are ancestors of master; the lane is pushed (ahead=0) with an empty porcelain. Defects (status-neutral): the report cites sandbox hashes 40c2b5eb/41c2f484/7639deba without labelling them; they are not in the lane repo. Routed to kotoba: (R1) label the sandbox hashes; (R2) land the ReopenS076S077 F3 and ReopenS078 F4 quote-note corrections, and source or drop the SKILL.md:109 claim that singular agent/ still loads; (R3) commit every counter version that a control scores, and rescore the C1 controls under v1.3; (R4) make the held-ground count case- and segment-aware; (R5) make the self-test kill the 10/18 surviving mutants; (R6) mark the stale SKILL.md:518 line (~/.config/opencode/agents is absent on this host); (R7, M56) bounds incident: ExecFloorsTimeout ran pkill -f over the shared scratch root, killing 3 ExecCneShortcuts runs, and its contention test drove host load to 96. The lane must commit a PID-only kill bound and a contention cap in its wave contexts. R7 is also routed to the protocol lane and the orchestrator as a fleet-wide seat bound: never kill by pattern over shared paths. (R8) M55: freeze and re-control the C2 redesign before any delegate. The lowest-axis duty holds under the owned-axes reading (depth 9) but not under all-axes (freshness 8, adjacency 8.0). This is the open L0 question; it is noted here, not decided. SHONEN boxes are all [~]; box 1 is now non-author checkable (S074-S078 re-opened). Promotion is operator-owned. Two critic seats failed on 429 quota and were resent as reviewers.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 30,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 30,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 30
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "depth": "improved",
+    "calibration": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-30/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-30-verifier-spotcheck.md@c369242fee9f559f895e3f7956b1242076c7b1be",
+    "rechecks": "Gates not executed (PROTOCOL Gate standard); committed evidence verified: selftests C1 25/0, C2 16/0; counters exit 2 at d210fb8f, exit 0 at 92b1dd2d/39fbad9d (328ca4f4 adds only receipts); freeze: 6 pinned paths unchanged 0dbabf78..328ca4f4, all 72 data files first added at 24da3459 after freeze 4ee65c67 and control receipts f39f4530. Re-measured with independent code: C1 own ELF/PE/Mach-O parser + zlib agreement=16/16 (packages, edges, offsets, sizes); base PROVINCE inspect-rust-binary 0 -> 3; C2 full-envelope (code+message) 19/19, SKILL table 19/19 positional equal, 16/16 messages in REA 6.5.0 source. Controls max 1/16 (C1) and 16/19 (C2, copied predictions) before data. Axis fit (replacing the lane's 429-dead critics; this session's own critic seat also died on 429, replaced by a reviewer): C1 coverage fit (new positive input class into Core), C2 depth fit; separable; harm: one deleted line (SHONEN pointer refresh). Spot-check 6/6 agree (S089, S090, S091 admits; master-copy, cli.js anchor, registry kind rejects); census kaidoku ok, 7 W04, exit 0."
+   },
+   "commit": "kaidoku-shokunin@328ca4f4b1ed4b73dc47fceaf8d127ad31d0ddab",
+   "closed_at": "2026-10-23T03:31:03Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest (.ufo/watchdog.log:800,814): 2026-10-22T23:14:13-03:00 launch kaidoku round=30 pgid=2538305 driver=hyaku-inline attempt=1; 2026-10-23T00:23:06-03:00 complete kaidoku round=30; hyaku-inline attempt=1. Step 1 pass: report by kaidoku-shokunin at fleet bd693c8, SHONEN 4x[~], 11 cited commits ancestors of main, jj-lane state ahead=0 tracked=0 untracked=0, porcelain empty, prompt sections 1-6. Incident M30-2 confirmed: a w1 seat's llvm-objcopy rewrote 4 uncommitted carriers 02:42:35-02:43:47Z; caught by C1 pin exit 2 in 4 control seats; restored by 02:44:44Z (chattr +i), 15 min before first counted run; tampered hashes absent from all committed data; carriers 16/16 equal official wheel members. M30-3 (C2 committed check compares ok only) real but not material: committed refusal bytes match predicted code+message 16/16. Conformance defects (status-neutral): report asserts settle-gate PASS and prefile PASS without committed runs (only committed prefile run is red). Routed: (1) commit cited gate receipts; (2) M30-3 full-envelope counter; (3) 4 wrong prediction code pointers; (4) 1 MiB/64x limits already held at l7-02:10; (5) lowest-axis basis unstated, stale owned-axes rows; (6) province_ok/entry_ok token-only; (7) restore-time ~02:46Z correction; (8) carried r29 docstring. Hold U064N008Hf47eb933 untouched. Operator: SHONEN box 1 (decision table) looks non-author checkable (SKILL.md:970-993 = live 19/19); promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
