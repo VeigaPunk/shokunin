@@ -16512,6 +16512,47 @@
    "notes": "Dispatch/complete digest: 2026-10-23T04:59:31-03:00 launch kumitate round=46 pgid=504841 driver=hyaku-inline attempt=1; 2026-10-23T06:16:12-03:00 complete kumitate round=46; hyaku-inline attempt=1. Report landed by lane identity at fleet 445eb71a (06:15:50 -03, after lane tip 06:15:14); SHONEN 4/4 lines; 8/8 cited lane hashes ancestors of master; jj-lane state ahead=0, porcelain empty; prompt = template rendering + addendum section 6. Author read the round not admitted for unresolved item-697 harm; closure rules it pre-existing load flake and admits. Cancelled seats MutCapRun/ReviewRepairs/HarmChecks cited only as cancelled. Closure seats: 5 read-only reviewers, 0 dead. Routed: R46-1 13 SOURCES rows corrected in place against CORPUS.md:116-118 (no supersedes rows; r45 D3 wording invited S076); R46-2 report count errata (15 vs 13 rows, 3/4 vs 4/4 runs, open census omits W04 S034); R46-3 checklist receipts drop gate-mutants stdout, root-cause load flake (R43-1/R43-5); R46-4 control hashes 7af3d978/9800b17f/3f5dd9f6/76df5c28 scratch-only; R46-5 ReviewC1Diff lows cap-run.mjs:119,182-183. SHONEN: no box fully non-author checkable. No tool installs.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 33,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 33,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 33
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unprovable-but-better",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-33/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-33-verifier-spotcheck.md@b80539005176ac6ce39bc1c7afb846cb1f2f7c75",
+    "rechecks": "C1 evidence-verified from committed receipts, not re-executed (lane-owned gate, counter, fuzz; Gate standard Closure consequence). Counter c1-count-v2.py cb354dd1 one commit e3e24ec, claims.md byte-identical e3e24ec..1b6312e5; gate chain f4731885->52f07c74->94a7be5a->165acd5f->43a1af35 by git show|sha256sum; base 60/156, final c1v2-s370{1,2} 156/156 on 43a1af35; census: every v2 receipt on a committed lane gate is 156 (none lower); never-committed states 45d76b4f x3, fc08410e x1, b808e9b5 x1 (0/156) not counted as P1. Design v2 08:35:29Z < first candidate receipt 08:41:21Z. Not verified: post-data mask gate ae7d4bfc (six counter confuser literals masked + regex strip + repeat count, no string lexer) scores 156/156 x2 on the unamended counter; CtlC1Shortcut (pre-data control for that shape) left no artefact (cyber_policy hold). Fuzz weighed: independent json/object_pairs_hook reference, post-data, never run on the mask; measure/final/fz-9021{2,3,4}.json (1950/1950) bind b2c07eda, an uncommitted scratch state overwritten to 43a1af35 at 06:23:31-03 after the runs; no fuzz receipt binds 43a1af35 (committed: 94a7be5a/165acd5f all agree, base 313/750) -> supports unprovable-but-better only. No harm: battery on 43a1af35 equals base row-for-row, selftest 241->251 with first 241 case lines identical; SCORECARD +53/-0, QUALITY +48/-0, SOURCES +2/-0, PROVINCE unchanged. D1-D5 and QUALITY 36-41 verified with failing cases. Spot-check: S062, S063 re-opened (sha match, quotes found once, <=25 words); rejects ECMA-404, v1 counter, v2-as-clause-3 agree. sources-census validate chousa ok exit 0 (2x W04 pre-existing). 7 read-only seats, none dead (first spawn refused at 100-job limit, resent unchanged)."
+   },
+   "commit": "chousa-shokunin@1b6312e5fb411f489d80db550a241db26401a1ce",
+   "closed_at": "2026-10-23T09:42:11Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-10-23T05:15:09-03:00 launch chousa round=33 pgid=709425 driver=hyaku-inline attempt=1; 2026-10-23T06:27:52-03:00 complete chousa round=33; hyaku-inline attempt=1. Step 1 clean: report 6467ba90 by chousa-shokunin 40 s after lane tip; SHONEN heading with four [~] lines; 11 cited lane commits ancestors of master (6 other tokens are gate sha256 prefixes); ahead=0, porcelain empty; prompt = template rendering + hyaku addendum (empty diff), committed 1 s before launch. Misroot: no fleet-root SentinelParser33 copy remains or was ever committed; byte identity no longer provable. Not admitted: the only claim C1 operability meets P1 v2 but its frozen counter is met by a fixture-literal shortcut (clause 3 not discriminated), as the lane itself reported; no axis harmed. Second consecutive chousa rejection, same blocker class as r32 (frozen counter met by a post-data shortcut control); parking is orchestrator-owned. Routed: E1 fuzz receipts measure/final/fz-9021{2,3,4}.json bind uncommitted b2c07eda not 43a1af35 - correct report, SCORECARD capability row, knowledge claim-record-fields-r33.md:65-66; E2 per-seed confuser content and score mask-gate.sh before freezing (QUALITY 40); E3 SKILL.md:83 stale metadata range 137-154; E4 never cite receipts on uncommitted gate bytes, relabel 5 'c1-landed' receipts on 45d76b4f/fc08410e; E5 commit sha256 of both copies before deleting a misroot. Disclosed holds not retried: CtlC1Shortcut, MutC1Counter. SHONEN: no box fully non-author-checkable as filed (operator-owned promotion).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
