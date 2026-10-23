@@ -4,7 +4,7 @@ Lane: chousa-shokunin (deep-research method: question framing, source hierarchy,
 chaining, claim-vs-source verification). Driver: hyaku-inline attempt=2 (watchdog launch
 2026-10-23 15:04:49 -03). Attempt 1 of this round died `lane-dead-no-report` (~09:30 -03)
 after landing its work (`f20aeaa7`…`bf7c931a`); this attempt inherits it, re-verifies it,
-and completes the round. Lane HEAD at report: `8bc930a9a0cb53b5c65b6a2d1a15e7c52cb539cb` (late-arriving wave evidence committed
+and completes the round. Lane HEAD at report: `6a3cc32cf47c9cda6b10fe8131b53d11fbef2541` (final: post-cutoff wave reports ExecC1RerunA2.md and ExecC2Oracle artifacts; HEAD was `8bc930a9` when this report line was last meaningfully accurate) (late-arriving wave evidence committed
 after the integration cutoff: ExecC1RerunA2's four c1v3 receipts on the C2-landed gate — LONGSPAN_MATCH=42/42
 on seeds 4601-4603 (LC_ALL=C) and 4604 (UTF-8) — closing the gap that every committed c1v3 receipt had bound
 the pre-C2 gate; plus its mutation battery and a SKILL.md stale gate pointer it flagged, fixed in `8bc930a9`).
