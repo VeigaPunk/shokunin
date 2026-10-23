@@ -2,7 +2,7 @@
 
 Lane: `mori-shokunin` (fleet root `/home/vgpnk/Projects/shokunin`). Entering tip
 `842a32074b5c7972e9728f3f629d83eb92f127c2`. Scored tip `e57c58b5`; final lane tip
-`c31076ed85b3aadf2454637747343e0ab97eb58f` (pushed, `ahead=0 behind=0`).
+`0a05f7e6765b025c321bc0b71bb1f44e2600d591` (pushed, `ahead=0 behind=0`).
 
 ## Work performed
 
@@ -66,6 +66,7 @@ Work items (one bullet each, evidence pointer):
 | S225 source copy named explicitly (1.9 MiB; the directory form skips new files over 1 MiB — lesson M5) | `52d636d5` | `LOG.md` Round 37 entry (lesson M1–M5) |
 | lesson M5 appended | `4bec58eb` | same entry |
 | LOG lesson range M1–M5 + S225 packaging note | `c31076ed` | same entry |
+| wave-1 seat reports (SentScope PASS, ScoutCensusSurfaces PASS), lesson M6 (bytecode hygiene), lane-wide `__pycache__`/`*.pyc` ignore | `0a05f7e6` | `LOG.md` Round 37 entry (lesson M1–M6) |
 
 No axis score was moved; the SCORECARD diff from `842a320` to `5dff52a1` is additive (Round-37
 section, capability rows, two evidence-cell clauses).
@@ -106,7 +107,7 @@ Live demonstration for the C2 capability: `python3 tools/mori-source-drift.py --
 - **quality: improved** — the drift probe's two policies are now named, each killed by its own
   mutation (`cap_kill`, `redirect_kill`), and the entry states five limits with sources; QUALITY 106
   and 107 convert the r36 routed defects into standing criteria.
-- **discernment: improved** — the round's own two fixture defects (a mutation fixture that resized
+- **discernment: improved** — the round's own three defects (two fixtures, one packaging/bytecode) (a mutation fixture that resized
   itself; a memoizer fixture that did not reproduce the class it named) are mined as M1/M2 with the
   correction and the observable that caught them, and the r36 closure's routed defects (a)–(h) each
   have a named disposition (two as claims, one fixed and re-run green, four as counter properties or
@@ -142,9 +143,17 @@ Live demonstration for the C2 capability: `python3 tools/mori-source-drift.py --
 - Wave slot: `granted lane=mori wave=mori-r37-w1 seats=73 live=75 pending=0 cap=256` (acquired
   2026-10-23T17:07Z).
 - **Dispatch:** none from this session — per the orchestrator-inline contract the validated
-  `taskCall` is returned to the orchestrator, which dispatches it and relays seat outputs. Dead
-  seats: none to report from this session (no seat was dispatched here); the wave's returns are
-  therefore not part of this report.
+  `taskCall` was returned to the orchestrator, which dispatched it inline and relayed seat outputs.
+  **Wave-1 returns landed at this report's commit (2 of 73):** `w1/SentScope.md` — write-scope audit
+  of `842a320..e57c58b5`, all changed paths inside the lane, **PASS**, with two residuals it surfaced
+  (see below); `w1/ScoutCensusSurfaces.md` — census/silence/oracle/baseline surfaces unchanged across
+  the range, `quiet_exit=0`, **PASS**. Dead seats: none observed at this commit. The remaining 71
+  seats' reports arrive through the orchestrator and are collected by the closure; this report does
+  not claim them.
+- **Wave-1 residuals acted on:** SentScope and ScoutCensusSurfaces both list the two
+  `.ufo/waves/round-37/__pycache__/*.pyc` paths added by the freeze commit (an import of the counters)
+  and removed at `bcf65505`. Recorded as lesson M6 and fixed durably: `.gitignore` now ignores
+  `__pycache__/` and `*.pyc` lane-wide (`git check-ignore` exit 0), committed at `0a05f7e6`.
 - Gates L2 floor: ≥1 planner (L1), 1 connector (4), 3 executors (24), 1 scribe (7), 1 scout (8),
   1 reviewer (10), 1 critic (6) — all inside the single v2 wave.
 
