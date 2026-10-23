@@ -15956,6 +15956,46 @@
    "notes": "Digest (.ufo/watchdog.log:816,835,836,855,856,877): 2026-10-23T00:52:32-03:00 launch kotoba round=57 pgid=969371 driver=hyaku-inline attempt=1; 02:26:32-03:00 lane-dead-no-report (attempt 1, L1 died with orchestrator 05:25:25Z); 02:26:34-03:00 launch attempt=2 pgid=2556726; 03:40:21-03:00 lane-dead-no-report (attempt 2, omp SIGSEGV 06:19:06Z); 03:40:23-03:00 launch attempt=3 pgid=3136047; 04:12:37-03:00 complete kotoba round=57 attempt=3. Report 03564ae4 by kotoba-shokunin, filed after tip; 8 cited hashes ancestors of master; sandbox 61debdc9 labelled and exists in scratch clone; pushed ahead=0, porcelain clean. Seats 126 (2+11+32+33+8+40) honest: dead attempt-1/2 seats recorded dead, untrusted, not resent; 40/40 attempt-3 reports present. Owned-axes lowest-axis reading used (L0 kotoba|round-55| open). Routed: (1) check_infoless_fences.py registered as gate while its claim was withdrawn as hollow - annotate or register as probe; (2) corpus/README round-57 note cites S079-S085, omits S086-S088; (3) correction-sweep arms 7/11 mutants survive (M68); (4) C1 v2 self-test lacks successful main() path; (5) dead lowercase /home/vgpnk/projects/ paths SKILL.md:514-515; (6) Q45 census in round-58 plan; (7) R8 C2 redesign + M63 kill-by-PID bound in every wave context; (8) band-10 attribution SCORECARD.md:29 not ruled, to operator. SHONEN box 1 checkable by a non-author (operator-owned promotion).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 45,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 45,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 45
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unprovable",
+    "operability": "unchanged",
+    "coverage:script-layer": "unchanged",
+    "coverage:runtime-layer": "unchanged",
+    "coverage:kimi-layer": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-45/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-45-verifier-spotcheck.md@2b2bf7bbdedaff3f0c749a8703002bebb104d15c",
+    "rechecks": "Re-measured: entry absent at 3632602c, README/PROVINCE grep 1/1 at 330ebfeb, SOURCES rows 61->77, entry diff 6b2a4517..330ebfeb numstat 94/0; census validate exit 0 (W04 S034, S068). Evidence-verified: K2' Abl*Row 6/6 baseline=reproduces control_clean=yes (5/6 verdict=defect, answered by errata X1/X4/X7); K0/K1'/K4/K5' per KSheetFull; close proxy --strict MATCH C2=102/102 rev 9e3e3ed9, sources-check CLEAN rows=77, Q32 empty. K3' literal exceptions ruled HOLD on re-open: S068 (// leader only), S069 (XML markup only), S066-S070 (immutable tag/commit refs resolve: v0.45.1=7c41cdeb, v0.13.1=362936ae, v18.12.6=45c35e40; pins reproduce), S063 (page states 2.49.1->2.56.0 no changes; adoc v2.49.0=v2.56.0 sha 39ce8d13); S077 outside the judged object's K3' scope, sound admit. K3' FAILS on S073: teaches at 6b2a4517 'Buffers share ArrayBuffer backing memory outside it' not in cli.html or buffer.html; K3 has no erratum clause, so C1 unprovable per frozen plan.md:127-129. No axis harmed. Spot-check: admits S077, S063 agree; rejects S075, S076 agree (S076 reason partly wrong)."
+   },
+   "commit": "kumitate-shokunin@330ebfeb0bc7a361ab1b69d43adf1e76d21e5cfc",
+   "closed_at": "2026-10-23T07:40:21Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-10-23T01:45:19-03:00 launch attempt=1; 02:26:34 lane-dead-no-report (L1 died with orchestrator 05:25:25Z); 02:26:36 launch attempt=2; 03:40:23 lane-dead-no-report (omp SIGSEGV 06:19:06Z); 03:40:25 launch attempt=3; 04:31:24 complete attempt=3. Step 1 ok: report a25198dd by lane identity, SHONEN heading, 14 cited hashes ancestors of master, jj-lane state ahead=0 tracked=0 untracked=0, prompt = template render + hyaku addendum. Seats 174 = build 40 + a2-control 50 (49 receipts) + a2-falsify 44 (0, disclosed) + a3-falsify 33/33 + residual 7/7: consistent. Leftovers: snapshot holds 46 files (report 45); 4 committed byte-identical as dead-wave record 9c4785ea; none cited by corpus. Defects routed: D1 plan.md:93 cites uncommitted build/CritRoundShape.md (E1-E6 basis unresolvable) and leftover count 45 vs 46; D2 K3/K3' lack an erratum clause yet the report treats X7-X9 as curing them; add a QUALITY criterion checking teaches against every locator before the entry commit; D3 S076 reason contradicts S063 (2.49.0 text is the 2.56.0 text); D4 guard tested vs prescribed (X4) and 5/6 rows failed ablation at the judged commit: make byte-exact guard copy a QUALITY criterion. Closure seats: 2 spawn calls of 5 read-only reviewers refused at the 100-job limit; no seat ran, all checks by the closure session. SHONEN: no box fully checkable by a non-author this round.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
