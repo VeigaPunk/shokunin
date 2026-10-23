@@ -1,6 +1,6 @@
 # kotoba — round 62 report (hyaku run 5, attempt 2)
 
-Date: 2026-10-23. Lane: `/home/vgpnk/Projects/shokunin/kotoba-shokunin`, branch `master`, landed tip `d519047cb895d84e5a6518215a75d94f3b30d20c` (pushed). Prompt: `.ufo/prompts/kotoba-round-62.md`. Attempt 1 was OOM-killed at ~18:00-03 with no report; this attempt inherited and re-verified its artifacts (see *Inherited state*).
+Date: 2026-10-23. Lane: `/home/vgpnk/Projects/shokunin/kotoba-shokunin`, branch `master`, landed tip `a751a9b1811eace17586f5bad84bdad6ce6cb843` (pushed). Prompt: `.ufo/prompts/kotoba-round-62.md`. Attempt 1 was OOM-killed at ~18:00-03 with no report; this attempt inherited and re-verified its artifacts (see *Inherited state*).
 
 **Stale-lane:** respawn-per-round driver; this lane has no other open mission.
 
@@ -43,7 +43,8 @@ Every change ties to the `LOG.md` § Round 62 entry and its commit:
 | `e681737d` | F16/F17 late wave-2 corrections: method provenance in the entry/Q57 (tameshi/kumitate/kagi/chousa credits), the floor-guard coverage bound, and the two late seat reports |
 | `225f1b16` | final-sweep commit for a late rewrite of `FalsifyC2Mutants.md` |
 | `306381da` | third sweep: 32 wave-2 reports committed (connector, battery-self-test, D1-basis, C2-mutants write) |
-| `d519047c` | fourth sweep: `FalsifyC2Mutants` final wording (G-c coverage bound; split-evaluator dies on the landed CLI dependency arm); the report cites this pushed tip |
+| `d519047c` | fourth sweep: `FalsifyC2Mutants` final wording (G-c coverage bound; split-evaluator dies on the landed CLI dependency arm) |
+| `a751a9b1` | fifth sweep: `FalsifyGateRegress` evidence; the report cites this pushed tip |
 
 `LOG.md` § Round 62 carries the same commit order and the falsification/correction record; no change is claimed without a row there.
 
@@ -108,6 +109,8 @@ Two seats reported after the first report commit; both findings land as correcti
 
 - **C2 mutation result on the landed bytes (fourth sweep, `d519047c`).** Disabling G-a/G-b/G-d/G-e/G-f and the R-c direction each flips its D tree to 6 of 6 and the self-test exits 1 (killed). **G-c (window/scope/cue) is load-bearing but untested by the D universe**: four constructed trees score `frozen 6/6, pristine 5/6` and flip to 6 only under their matching G-c sub-mutant; recorded as a coverage bound. The split-evaluator hollow survives on the superseded `de5e3471` bytes but **dies on the landed `604ae4fb`** via the CLI dependency arm (`zero-score scorer … observed exit 0, score 6`), with the printed predicate unchanged — the exit code is the detector.
 
+- **Gate regression re-check (fifth sweep, `a751a9b1`).** `FalsifyGateRegress` ran the battery one arm at a time: floors 14/14 PASS, registry `39 of 39` exit 0, seat-count self-test 0 failures, dispatch box-proof `boxes proven 2` exit 0. Two gates are red — `verify_corpus_integrity` and `verify_skill_checklist` — but **both were already red at the r61 base `a745411c`** (corpus baseline frozen at round 17; the checklist base set already carries `governance.citation_resolves`). The one genuine r62 regression was the `check-ptr` arm: `SCORECARD.md` cited `.ufo/reports/round-62/kotoba.md` (permanently dead in-lane) beside `LOG.md`'s census pointer (dead until `3f91150` tracked the file). The SCORECARD pointer was repointed to `../.ufo/reports/round-62/kotoba.md` before close; at the current tip the gate's output lists only the two pre-existing round-60 pointers, so r62 adds none. r62 also fixed wave 1's `reg_gate` and `corpus-idx` arms.
+
 ## Compliance
 
-Write scope: lane repo, this report, no `l0-questions` append. No MANIFEST/`.ufo/state`/watchdog/templates/scripts edits. Fleet commits via `scripts/hyaku/fleet-commit.sh`; lane commits via `scripts/hyaku/jj-lane.sh commit … --as kotoba`; the report lands last and cites the pushed lane tip `d519047cb895d84e5a6518215a75d94f3b30d20c`; a final sweep commit for a late rewrite of `FalsifyC2Mutants.md` follows the report as a child commit (wave evidence only, no product change).
+Write scope: lane repo, this report, no `l0-questions` append. No MANIFEST/`.ufo/state`/watchdog/templates/scripts edits. Fleet commits via `scripts/hyaku/fleet-commit.sh`; lane commits via `scripts/hyaku/jj-lane.sh commit … --as kotoba`; the report lands last and cites the pushed lane tip `a751a9b1811eace17586f5bad84bdad6ce6cb843`; a final sweep commit for a late rewrite of `FalsifyC2Mutants.md` follows the report as a child commit (wave evidence only, no product change).
