@@ -1,6 +1,6 @@
 # kotoba — round 62 report (hyaku run 5, attempt 2)
 
-Date: 2026-10-23. Lane: `/home/vgpnk/Projects/shokunin/kotoba-shokunin`, branch `master`, landed tip `cd4cb574acb8096db506381951215c44f979f101` (pushed). Prompt: `.ufo/prompts/kotoba-round-62.md`. Attempt 1 was OOM-killed at ~18:00-03 with no report; this attempt inherited and re-verified its artifacts (see *Inherited state*).
+Date: 2026-10-23. Lane: `/home/vgpnk/Projects/shokunin/kotoba-shokunin`, branch `master`, landed tip `e53b6e5c0aaa1ef2b0861b9399fef44f8b907f02` (pushed). Prompt: `.ufo/prompts/kotoba-round-62.md`. Attempt 1 was OOM-killed at ~18:00-03 with no report; this attempt inherited and re-verified its artifacts (see *Inherited state*).
 
 **Stale-lane:** respawn-per-round driver; this lane has no other open mission.
 
@@ -45,7 +45,8 @@ Every change ties to the `LOG.md` § Round 62 entry and its commit:
 | `306381da` | third sweep: 32 wave-2 reports committed (connector, battery-self-test, D1-basis, C2-mutants write) |
 | `d519047c` | fourth sweep: `FalsifyC2Mutants` final wording (G-c coverage bound; split-evaluator dies on the landed CLI dependency arm) |
 | `a751a9b1` | fifth sweep: `FalsifyGateRegress` evidence |
-| `cd4cb574` | sixth sweep: `FalsifyClaimC2` evidence (predicate identity, per-arm re-runs, fingerprint lookup dies on the hardened bytes); the report cites this pushed tip |
+| `cd4cb574` | sixth sweep: `FalsifyClaimC2` evidence (predicate identity, per-arm re-runs, fingerprint lookup dies on the hardened bytes) |
+| `e53b6e5c` | seventh sweep: `FalsifyScorecard` evidence + SCORECARD fixes (line-369 before-state, six survivor instances, four gate rows); the report cites this pushed tip |
 
 `LOG.md` § Round 62 carries the same commit order and the falsification/correction record; no change is claimed without a row there.
 
@@ -114,6 +115,8 @@ Two seats reported after the first report commit; both findings land as correcti
 
 - **C2 claim re-check (sixth sweep, `cd4cb574`).** `FalsifyClaimC2` verified the frozen sentence is byte-identical in `plans/round-62.md:118`, the v2 print template and the receipt; no post-freeze plan commit touched C2 text; base `0 of 6` exit 1 is real; each D tree loses exactly its targeted repair and an independent `git ls-tree` re-derivation gives 29. Its fingerprint-memorized lookup passed the superseded `de5e3471` self-test but exits 1 under the landed `604ae4fb` — consistent with F2/F3; the claim itself is unaffected because the receipt pins the honest bytes that compute.
 
+- **SCORECARD re-check (seventh sweep, `e53b6e5c`).** `FalsifyScorecard` found four ledger defects against the committed tip: unfilled `{W2_COUNT}`/`{TOTAL}` placeholders (fixed before its measurement), a dead `.ufo/reports/` pointer (repointed to `../`), a second `0 of 5` before-state sentence at line 369 (now 2 of 5 with one arm-level reject, 0 of 5 with both directions), the "six surviving errata classes" wording (now six survivor instances, five closed by v3.1 and G9 residual), and the "both new instruments" count (now the four registered gate rows). Scores, band-move absence and the no-capability-row decision were verified clean.
+
 ## Compliance
 
-Write scope: lane repo, this report, no `l0-questions` append. No MANIFEST/`.ufo/state`/watchdog/templates/scripts edits. Fleet commits via `scripts/hyaku/fleet-commit.sh`; lane commits via `scripts/hyaku/jj-lane.sh commit … --as kotoba`; the report lands last and cites the pushed lane tip `cd4cb574acb8096db506381951215c44f979f101`; a final sweep commit for a late rewrite of `FalsifyC2Mutants.md` follows the report as a child commit (wave evidence only, no product change).
+Write scope: lane repo, this report, no `l0-questions` append. No MANIFEST/`.ufo/state`/watchdog/templates/scripts edits. Fleet commits via `scripts/hyaku/fleet-commit.sh`; lane commits via `scripts/hyaku/jj-lane.sh commit … --as kotoba`; the report lands last and cites the pushed lane tip `e53b6e5c0aaa1ef2b0861b9399fef44f8b907f02`; a final sweep commit for a late rewrite of `FalsifyC2Mutants.md` follows the report as a child commit (wave evidence only, no product change).
