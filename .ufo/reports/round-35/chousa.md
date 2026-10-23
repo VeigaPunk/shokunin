@@ -3,7 +3,7 @@
 Lane: chousa (deep-research method). Round 35, attempt 1. Lane repo
 `/home/vgpnk/Projects/shokunin/chousa-shokunin`, branch `master`.
 Base `08be4c9e3a4ebe55d915ce4761c81854286c23ae` (gate `a6307edf…2995b`).
-Landed lane tip **`b6f2c0db8de4047e6518f4232da2fd3c3954cf00`** (pushed; `ahead=0`, no untracked lane files).
+Landed lane tip **`119efa28a6bdfb0a72c3abfd178755ec59addaf7`** (pushed; `ahead=0`, clean porcelain).
 
 ## Work performed
 
@@ -70,7 +70,8 @@ Work items (each with its evidence pointer):
 | three knowledge entries, QUALITY 45–49, S067/S068, README front/rows, SKILL rows + section, SCORECARD, lesson, wave evidence | LOG.md §Round 35 | `beb04ea1` |
 | erratum 7, witness trace-size/survivor corrections, late wave seat evidence | LOG.md §Round 35 | `770a69d6` |
 | erratum 8 (late survivors) | LOG.md §Round 35 | `7d21a333` |
-| late wave seat evidence, `tools/__pycache__` ignored, `MutCounterC1` | LOG.md §Round 35 | `234c95d4`, `b6f2c0db` (tip) |
+| late wave seat evidence, `tools/__pycache__` ignored, `MutCounterC1`, post-landing returns | LOG.md §Round 35 | `234c95d4`, `b6f2c0db`, `3810bcca` |
+| erratum 9 (round-34 figure no longer reproduces) | LOG.md §Round 35 | `119efa28` (tip) |
 | this report | — | fleet repo, `fleet-commit.sh`; lane tip at landing `b6f2c0db` |
 
 ## Before → after measurements
@@ -173,8 +174,8 @@ corrected in `corpus/README.md` and the knowledge table gained the three r35 ent
 - **Role mix**: 22 executor, 11 reviewer, 10 mutation-tester, 8 scout, 6 critic, 6 scribe,
   2 connector — attack 27/65 = **41.5 %**. No planner seat anywhere (the L1 holds the §3 planner
   seat; the planning data-walk rode scout/connector items).
-- **Returned**: 46 of 65 seat reports are on disk at the landing commit (some seats were still
-  writing at the cutoff); the reports that returned cover both claims, the repairs, the sources and
+- **Returned**: 51 of 65 seat reports are on disk at the final integration commit (late seats were
+  still writing at the cutoff; their artifacts are committed); the reports that returned cover both claims, the repairs, the sources and
   the round shape. **Dead seats: 1** — `CritWitnessBlind`, provider `cyber_policy` refusal, no
   output, not retried, not rerouted; its slice (witness blind spots) is covered by MutWitnessBypass1/
   2, MutWitnessThreshold, RevWitnessCode and MutC2KeyedBattery.
@@ -196,6 +197,11 @@ corrected in `corpus/README.md` and the knowledge table gained the three r35 ent
   cannot block the gate; when `timeout` is absent the probe runs unbounded (documented).
 - C1 receipts carry `gate_sha256` but not `counter_sha256` (wave seat ExecC1Fresh1); C2 receipts bind
   the battery and both variant gates. Carried to r36.
+- Late erratum (9): the round-34 long-span counter scores 42/42 on the *base* gate as well, so it
+  cannot corroborate round 35, and the round-34 SCORECARD figure "0/42 x2 under a UTF-8 locale" no
+  longer reproduces (both gates 36-38 s); appended to claims.md, frozen r34 text untouched
+  (ExecR34C1V3). It also shows the pin is load-bearing through that independent counter
+  (base 0/42 under a corrupting PATH grep vs landed 42/42).
 - The witness's xtrace file is large (~310 MB per 9-record run, RevWitnessCode) and is written under
   its temp dir and deleted; the runbook row states the size.
 - **Known defect in the landed bytes, routed to r36:** `CHOUSA_GREP_PIN_ECHO=1` is inherited by the
