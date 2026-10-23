@@ -16594,6 +16594,47 @@
    "notes": "Driver digest (.ufo/watchdog.log): 2026-10-23T05:12:28-03:00 launch tsukuroi round=34 pgid=689582 driver=hyaku-inline attempt=1; 2026-10-23T06:35:04-03:00 complete tsukuroi round=34; hyaku-inline attempt=1. Step 1: report by lane identity, SHONEN 4x[~], all cited commits ancestors of master, ahead=0, prompt sections 1-5 verbatim (placeholders only), seats 39+6+43=88 match. Conformance defects (status-neutral): report line 50 'gates at a8b46ac8 all exit 0' unreceipted (latest receipts 879daa95, self-assessment exit 1); future-dated dev READMEs (dev-base 08:58Z in 6de666c4 08:23:48Z; dev-amend2 ~09:08Z in 3457f287 09:04:36Z); late-evidence/hold accounting (SelftestsAfterNoHarm landed a8b46ac8; 'other 12' lists 13; lesson '2 refusals' vs 3 holds; MutBinGitAlias has pre-filing uncommitted output); 22 untracked post-filing w2 paths (not evidence, not cited). Routed to r35: untraced child-env view scored vs MutAttrgetterCopy/MutPathCopy; score the counter on r33claim/regression sets and fix normalisation (short hashes, fixture paths, GIT_CEILING_DIRECTORIES/$HOME values); freeze wording + correct amendment-1 disclosure (C06/C16/C18 finished 08:45-08:48Z before 15c9ac0e) + fork-without-exec as named limit; gate receipts at tip or correction; timestamp corrections; hold/late accounting; disposition of 22 untracked w2 paths (land as post-filing records or remove); C2 note remnants (lines 11/15, recheck procedure cannot reproduce split); carried ambient copies (check-revision-binding:104, probe-git-env-leak:58, 11 non-target builders), is_git. R33 routed defects 1-6 closed, 7 partly. SHONEN: no box fully non-author-checkable; no promotion suggested. Fourth straight rejection (honest stop).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 35,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 35,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 35
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "unprovable",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-35/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-35-verifier-spotcheck.md@6bd57097f7ab2b471b4593ed2019c980b1368c68",
+    "rechecks": "C1 re-measured with an independent jq oracle over MANIFEST@37b51a24 (13 admitted mori closures, 18 capabilities; register 18/18 key+round, 0 extra; base 0 matched/18 missing/5 extra), so the binding is correct. The honest stop was evidence-verified: count-c1.py and contract.md are byte-identical f2d28711..42a8ae65; pre-data control 10c (and 9d) C1=met (c1-controls.txt:36,38) was ruled a residual against QUALITY 98 (dd76eb79:715-725); post-data CtlDenial, CtlWordBag and CtlOffTopic also C1=met; CritC1Verdict concurs. Round-34 repairs re-judged from bytes: S201/S202 supersede rows (SOURCES +6 -0), w1 pointer correction, SKILL:834 marked observed, QUALITY 98 correction and 100-102 grounded, Axes Last-change cells match MANIFEST round 31. The final append-only-checker fix (6d3d94b3->42a8ae65) was judged sound by code read plus plain git re-derivation (round_changed [S182,S193] for r34, [] for r35); the checker was not executed. The M4 git add -N reached no commit (no .scratch path, no new empty blob, index==HEAD). Spot-check: S201 admit agree, S204 reject agree, S203 reject agree, S199 quote ok; live sha match. Census validate mori ok EXIT=0 (13 W04, new one S201 by design)."
+   },
+   "commit": "mori-shokunin@42a8ae651a006443ab17e2690279e28623af8d39",
+   "closed_at": "2026-10-23T09:52:35Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-23T05:24:38-03:00 launch mori round=35 pgid=1214789 driver=hyaku-inline attempt=1; 2026-10-23T06:36:50-03:00 complete mori round=35; hyaku-inline attempt=1. 83 seats; CtlParserAttack cyber_policy hold; GateS204 no report. Step 1 conformant (ahead=0; only untracked .scratch/ dated 2026-10-21, pre-round). Fourth straight non-admitted mori round (r32-r35). Routed: (1) calibration counter must fail 10c/9d/denial/word-bag/off-topic before data, and QUALITY 98/101 must be applied at the freeze; (2) 15 pre-r34 in-place SOURCES ids plus S069 need supersede rows or rulings, and deleted rows are uncovered; (3) check-sources-appendonly.py has no SKILL.md registry row or self-test, and no post-fix run receipt at 42a8ae65; (4) M4 has no check able to fail. Operator: LOG.md:1801, refs/jj/keep 3b19cac, .scratch/; all four SHONEN [~] boxes look checkable by a non-author (promotion operator-owned).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
