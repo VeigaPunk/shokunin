@@ -16429,6 +16429,47 @@
    "notes": "Digest: 2026-10-23T04:28:25-03:00 launch kotoba round=58 pgid=559238 driver=hyaku-inline attempt=1; 2026-10-23T05:44:16-03:00 complete kotoba round=58; hyaku-inline attempt=1. Step-1 conformance pass (report 8f470627 by lane identity after tip; SHONEN 4x[~]; all cited hashes ancestors of master; sandbox c6b6f306 labelled and present; ahead=0, porcelain clean). Disclosed: M76 stale 'targets None' controls context (5 seats scored committed bytes); R1 in-cell 'claim withdrawn' instead of probe relabel (M77). Defects routed (status-neutral): R1 falsify seat ReviewBudgetMove report misrooted to fleet root .ufo/waves/round-58/falsify/ReviewBudgetMove.md (untracked, 05:34:09-03:00, after ScoutMisroot snapshot), omitted from report seat accounting; operator-side removal; R2 no committed verify_skill_checklist / corpus-integrity receipt at ed44e0c4; R3 C1 counter blind to field cells and no frozen snapshot run for --fetch (403 window on G floor); R4 SOURCES.md:102 S089 anchor label; R5 report 600->596 counts from freeze (base 598); R6 carried SHONEN.md:6 drift, C2 redesign, L0 kotoba|round-55. SHONEN box 1 looks non-author checkable (operator note).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 40,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 40,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 40
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "unprovable-but-better",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-40/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-40-verifier-spotcheck.md@8eb121c81ffebada064eefcabcd94dd2303d646f",
+    "rechecks": "C1 exploratory (kill rule (1) fired at 12211cc5 before build 56d57ee4), evidence-verified, no lane gate/selftest/counter executed: w1 receipts jq met 27/76, 26/72 excluding dead seat CtlUTabOnly; base 10/30 met=false; c1-at-d8d5578e met 30/30 info only; tool sha 56d57ee4=03a8fba4 (declared ref), d8d5578e=tip=4de35f8c; build2 selftest receipts PASS 159/183 base, 179/183 56d57ee4, 183/183 d8d5578e; d1check base/build2 exit 0, mutant exit 1; realrun jq -S sha fd985a41 = report. Fresh non-author check of d8d5578e (L1 only reran it): code read generic, no keying; integrator probe on 19 fresh manifests base vs tip: tip matches contract 19/19, base misses 8 E/U inputs + R missing-member repeat; seat SM_PREFIX residual refuted. Verdict of record C1 unprovable-but-better. Spot-check: D1 reject (S110 2.8 re-opened live, sha f58a4b9e), ReopenS114 reject, counter reject, S111/S112/S114 admits all agree; SOURCES +7/-0, S106/S107/S109 byte-identical; census exit 0, 10 W04, kake ok. r39 corrections 3/3 confirmed, r39 report blob unchanged (61d5d79e only), carried by appended text. SCORECARD/LOG/SOURCES 0 deleted lines; no axis score change."
+   },
+   "commit": "kake-shokunin@0c732d5a808aa1ff3881840fc2e943254940a769",
+   "closed_at": "2026-10-23T09:27:00Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 2026-10-23T05:21:24-03:00 launch kake round=40 pgid=1036763 driver=hyaku-inline attempt=1; 06:10:27-03:00 complete kake round=40 attempt=1. Report 103bdc6d by kake-shokunin; SHONEN 4/4 [~]; 10 cited commits ancestors of master; ahead=0, porcelain clean; prompt = template render + hyaku addendum. Closure seats: 4 read-only, 0 dead, 0 refused. Dead lane seat CtlUTabOnly ('SYSTEM WARNING: Subagent ended without a final message.', not resent): its leftover tool_tab_only_query is counted in 27/76 and preseal independentReceipts 76, but no result rests on it (26/72 live still fires kill rule (1); TAB-in-query covered by live MutFamilyU M11). Defects (status-neutral): dead-seat leftovers counted as controls; final build d8d5578e checked in-round only by L1 reruns (closure supplied fresh check). Routed: (1) tally controls over live seats only, restate r40 as 26/72; (2) fresh non-author seat on any revised build before report; (3) next counter meets QUALITY (r): no witness label in case dir names or /proc; (4) interior C0 other than TAB/CR/LF in loc/sitemapUrl is an open contract question for the RFC 3986 oracle frontier step. SHONEN boxes cite non-author-checkable artifacts; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
