@@ -17645,6 +17645,50 @@
    "notes": "Digest (.ufo/watchdog.log, mutable): 2026-10-23T16:09:11-03:00 launch tameshi round=34 pgid=3367092 driver=hyaku-inline attempt=1; 2026-10-24T~01:30Z complete tameshi round=34 (in-session L1) landed at dce02595 (ahead=0, clean), fleet report commit 034e22d6. Report filed by lane identity (two commits, the last after the wave fold); base at round open 3fc1b2f (the orchestrator-supplied 'before' 0b99d48e is an r34 commit - digest error, no lane defect). SHONEN is fully checkable by a non-author: four [~] lines, one per box, each pointer resolves (reports/round-1-calibration.md #box-1..#box-4, .ufo/evidence/round-21/coldread/ledger.json); no [x] claimed. Defects (status-neutral, routed to r35): (1) seat report ReviewDevReceipts.md (136 lines, mtime 17:01:21) misrooted untracked at the FLEET root .ufo/waves/round-34/w1/ - not swept per the prompt's misroot rule and not in ## Mistakes; the lane wave dir holds 61 reports; the report's dead-seat section (CriticVoidClaim dead, CalibMonitor landed, PanelSeed4 never landed) omits it, though its F1/F2 are folded in the committed lesson; (2) new knowledge entry corpus/knowledge/witness-equivalence-rule.md lacks the required provenance trio (source:/verified-at:/recheck: first); (3) no coverage-map row for it in corpus/README.md (3 knowledge entries now unindexed: runner-tally-audit-v2, survivor-fixture-minimization, witness-equivalence-rule); (8) report's attack share 52/64=81% counts sentinel+revenger as attack roles (policy v2 list reviewer/critic/mutation-tester/labrat -> 50/64=78%, >=25% either way); (9) dce02595 (dev-dir receipt originals) not named in Landed changes (all cited hashes are ancestors; report committer 17:21:29 postdates cited ecfc8e38 17:19:43). Disclosed-and-closed in the lane's own lesson: Gate quote wc 15 vs 16 (<=25 met), s101-fetch.exit holds the successful fetch not the gnu.org timeouts (rejection ground independently verified via S097's tier-A scope), dev/tool-selftest.stdout is a tail (re-run 22/22), contract.json tool_sha256 citation stale (defect 7). Routed capability bounds already in r35 Holds, not r34 defects: unswept (auto,KEEP) (0,0)/(1,1), twice-only substring head rule, whole-stdout comparison OPEN. PanelSeed4 disposition: never landed; its seed-replay slice is 4x covered (PanelSeed1/2/3 + LabratPanelReplay, all PASS) and no claim depends on it. CriticVoidClaim dead on a provider cyber_policy refusal, slice covered by ReviewCounterSemantics + converging mutation seats + RevengerIndependentSet. No installs this round. Promotions/mints: none; no other lane touched.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 35,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 35,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 35
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "pinned-binary resolution (research-gate.sh)",
+    "output-vs-routing witness (tools/mechanism-witness.py)"
+   ],
+   "report": ".ufo/reports/round-35/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-35-verifier-spotcheck.md@1eb91dbe4aa79a1a1399fb402702e91a5aca75f6",
+    "rechecks": "fresh-seed snapshots via git archive (base 08be4c9e gate a6307edf; final c1dbbec3 gate a4768851): C1 0/9 -> 9/9 (seeds 3701, 3711; control 3/9); C2 0/2 battery=absent -> 2/2 OUTPUT_EQUIV=2/2 LANDED_WITNESS=pass (3701, 3711); direct witness pass 9/9, chunk=9 for 8 long records; slen probe base offsets=0 / final offsets=1 first=5; case comments 252-253/254-256 match selftest labels; census exit 0, rows 66->68; no-harm battery 14/14 base=tip, selftest PASS 256; SCORECARD append-only, PROVINCE empty"
+   },
+   "commit": "chousa-shokunin@c1dbbec33dc6f8ef7e188dff1efae64951c26d05",
+   "closed_at": "2026-10-23T20:39:21Z",
+   "campaign": "hyaku",
+   "promotions": [],
+   "minted": [],
+   "notes": "Driver digest: 2026-10-23T16:38:10-03:00 launch chousa round=35 pgid=2383533 driver=hyaku-inline attempt=1; 2026-10-24T~02:20Z complete chousa round=35 (in-session L1). Final lane tip c1dbbec3 (ahead=0; report cites it); report fleet commit 852372f0 by chousa-shokunin (supersedes dbe9f8cf and 315d96b0); 12/12 cited lane commits are ancestors of master; prompt chousa-round-35.md carries the round contract and the five child-lane items; spotcheck landed 1eb91dbe. Claims re-derived as narrowed (fresh seeds, extracted snapshots): C1 0/9 on base a6307edf -> 9/9 on final a4768851 (seeds 3701/3711; cheapest control 3/9; 3601/3611 also 9/9 at 73921312) — proves path+version, refusal shape and output equality, NOT per-call engine identity; C2 0/2 battery=absent -> 2/2 OUTPUT_EQUIV=2/2 LANDED_WITNESS=pass (3701/3711; stubs 0/2 and landed-fail; absent 0/2) — proves the routed matcher function was ENTERED, not that its body ran. Repairs R1/R2/R3 re-derived. No axis harmed: SCORECARD pure append (53+/0-), PROVINCE diff empty, ExecNoHarm 14/14 rows base=tip after timestamp mask, selftest PASS (256 cases, 0 skipped), census exit 0 66->68. DEFECTS (status-neutral): (a) lesson ## Gate has no rejected candidates and no spot-check result (CORPUS.md requires both) — rejects live only in ## Mistakes/report; (b) report wave figure says 60/65 at its cited c1dbbec3, while 62 seat reports are on disk there, and the 3 missing (CritWitnessBlind dead, ExecC1Fresh1, ExecPinModeSelftest) are unnamed; (c) at closure 2 seat reports and 1 receipt were uncommitted under .ufo/waves/round-35/w2/ (live ExecC2Fresh1/2 seats writing after the tip); (d) known CHOUSA_GREP_PIN_ECHO leak into the --pin capture (GATE_DRIFT:-LINE on an unchanged gate); (e) erratum 13 verify-all --json trusts PATH sha256sum|cut (non-empty only); (f) erratum 14 json_unescape locale seam (:1398-1449; LC_ALL=C selftest 10/256, pin-independent); (g) S068 quote-anchor 391-395 vs actual word span 390-396; (h) stale 'lane tip at landing b6f2c0db' row. SEATS: report says 60/65 at its cited tip; final bytes hold 62/65; the earlier digest (59/65, 6 missing) and the retarget note (4 missing) are superseded by straggler integration; dead seats 1 (CritWitnessBlind, provider cyber_policy). S068 ANCHOR DISPOSITION: the landed row is narrowed to BASH_ENV only, paragraph anchor 388-404 with quote at 391-395 (quote words actually span 390-396); the exported-function clause is excluded and the text it originally cited is at bash.1.gz 5294-5304, so the wave-found anchor defect is resolved; sha256 b68beb3e...bdffe matches. SHONEN: 4 boxes all [~], each box fully checkable by a non-author (commands and pointers resolve); no [x] written by lane or verifier. Routed to r36: semantic canary, per-record witness attribution, C1 counter_sha256, locale pin + C-locale selftest arm, echo-leak fix, hash-tool pinning, Gate rejects."
   }
  ]
 }
