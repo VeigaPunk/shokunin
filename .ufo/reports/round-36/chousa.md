@@ -71,9 +71,11 @@ Work items (each carries its evidence pointer):
   encoded faithfully; F1-F4 errata), `w1/RevLocaleSeam.md` (seam closed for the decode across 11 escape cases × 7 locales; one verdict-flipping seam outside it at `research-gate.sh:1015`, Erratum 13), `w1/RevCounterHonesty.md`.
 - **Frontier drafted.** `w1/ScribeSrcGrep.md` + `w1/ScribeSrcSha.md` (S069/S070 drafts),
   `w1/ScribeKnowC1.md`, `w1/ScribeKnowC2.md`, `w1/ScribeLesson.md`; integrated by the L1.
-- **Sibling-overlap and YAGNI.** `w1/ConnOverlap.md`: both r36 capabilities are fleet-unique; the
-  closest sibling is tameshi's declared-witness mutation study, a pattern-family cousin that
-  separates no output-equivalent engine and attributes nothing per record. The L1's own token sweep
+- **Sibling-overlap and YAGNI.** `w1/ConnOverlap.md`: both r36 capabilities are fleet-unique **by token over
+  every sibling lane**, with one disclosed limit — mori's `worktrees/round-19` fixture copies were
+  unscanned after three 30 s timeouts (recorded `[INFERENCE]` as mori-own gates in the scan log,
+  sha256 `722e44bb…`). The closest sibling is tameshi's declared-witness mutation study, a
+  pattern-family cousin that separates no output-equivalent engine and attributes nothing per record. The L1's own token sweep
   agrees (no `argv-witness`/`WITNESS_PER_RECORD`/`ENGINE_SWAP_CANARY`/`RESEARCH_GATE_GREP` outside
   this lane; one unrelated `mechanism-witness` mention in `audio-shokunin`).
   `w1/SimpDiff.md`: gate diff clean — every hunk claimed; three dead fields in `argv-witness.py`
