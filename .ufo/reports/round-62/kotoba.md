@@ -1,6 +1,6 @@
 # kotoba — round 62 report (hyaku run 5, attempt 2)
 
-Date: 2026-10-23. Lane: `/home/vgpnk/Projects/shokunin/kotoba-shokunin`, branch `master`, landed tip `306381dac3c8e02e5ad6c3d9e22c498ead8ad392` (pushed). Prompt: `.ufo/prompts/kotoba-round-62.md`. Attempt 1 was OOM-killed at ~18:00-03 with no report; this attempt inherited and re-verified its artifacts (see *Inherited state*).
+Date: 2026-10-23. Lane: `/home/vgpnk/Projects/shokunin/kotoba-shokunin`, branch `master`, landed tip `d519047cb895d84e5a6518215a75d94f3b30d20c` (pushed). Prompt: `.ufo/prompts/kotoba-round-62.md`. Attempt 1 was OOM-killed at ~18:00-03 with no report; this attempt inherited and re-verified its artifacts (see *Inherited state*).
 
 **Stale-lane:** respawn-per-round driver; this lane has no other open mission.
 
@@ -42,7 +42,8 @@ Every change ties to the `LOG.md` § Round 62 entry and its commit:
 | `91fecae2` | late wave-2 seat writes (ScribeEntry62, ScribeLessonQ57, FalsifyC2Mutants) |
 | `e681737d` | F16/F17 late wave-2 corrections: method provenance in the entry/Q57 (tameshi/kumitate/kagi/chousa credits), the floor-guard coverage bound, and the two late seat reports |
 | `225f1b16` | final-sweep commit for a late rewrite of `FalsifyC2Mutants.md` |
-| `306381da` | third sweep: 32 wave-2 reports committed (connector, battery-self-test, D1-basis, C2-mutants final write); the report cites this pushed tip |
+| `306381da` | third sweep: 32 wave-2 reports committed (connector, battery-self-test, D1-basis, C2-mutants write) |
+| `d519047c` | fourth sweep: `FalsifyC2Mutants` final wording (G-c coverage bound; split-evaluator dies on the landed CLI dependency arm); the report cites this pushed tip |
 
 `LOG.md` § Round 62 carries the same commit order and the falsification/correction record; no change is claimed without a row there.
 
@@ -105,6 +106,8 @@ Two seats reported after the first report commit; both findings land as correcti
 
 - **Late-report disposition (third sweep, `306381da`).** `FalsifyC2D1Basis` confirmed the count basis from committed blobs at base, r60 close, `TIP_REV` and tip (29 matching names; D1 adds a real matching name to reach 30; the paired tuple is computed). `FalsifyConnector`, `FalsifyBatterySelfTests` and `FalsifyC2Mutants` are committed. Seven wave-2 seats (`FalsifyV31Harm`, `FalsifyC2Mutants`, `FalsifyC2HonestH1`, `FalsifyClaimC2`, `FalsifyScorecard`, `FalsifyStatementSemantics`, `FalsifyGateRegress`) had not settled at close: their items are reported as late, never as passes, and any write they land after this report is a late write for the next integrator, not evidence this round counts.
 
+- **C2 mutation result on the landed bytes (fourth sweep, `d519047c`).** Disabling G-a/G-b/G-d/G-e/G-f and the R-c direction each flips its D tree to 6 of 6 and the self-test exits 1 (killed). **G-c (window/scope/cue) is load-bearing but untested by the D universe**: four constructed trees score `frozen 6/6, pristine 5/6` and flip to 6 only under their matching G-c sub-mutant; recorded as a coverage bound. The split-evaluator hollow survives on the superseded `de5e3471` bytes but **dies on the landed `604ae4fb`** via the CLI dependency arm (`zero-score scorer … observed exit 0, score 6`), with the printed predicate unchanged — the exit code is the detector.
+
 ## Compliance
 
-Write scope: lane repo, this report, no `l0-questions` append. No MANIFEST/`.ufo/state`/watchdog/templates/scripts edits. Fleet commits via `scripts/hyaku/fleet-commit.sh`; lane commits via `scripts/hyaku/jj-lane.sh commit … --as kotoba`; the report lands last and cites the pushed lane tip `306381dac3c8e02e5ad6c3d9e22c498ead8ad392`; a final sweep commit for a late rewrite of `FalsifyC2Mutants.md` follows the report as a child commit (wave evidence only, no product change).
+Write scope: lane repo, this report, no `l0-questions` append. No MANIFEST/`.ufo/state`/watchdog/templates/scripts edits. Fleet commits via `scripts/hyaku/fleet-commit.sh`; lane commits via `scripts/hyaku/jj-lane.sh commit … --as kotoba`; the report lands last and cites the pushed lane tip `d519047cb895d84e5a6518215a75d94f3b30d20c`; a final sweep commit for a late rewrite of `FalsifyC2Mutants.md` follows the report as a child commit (wave evidence only, no product change).
