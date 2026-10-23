@@ -15871,6 +15871,49 @@
    "notes": "Driver digest (.ufo/watchdog.log): 2026-10-23T00:52:34-03:00 launch kaidoku round=31 pgid=970932 driver=hyaku-inline attempt=1; 2026-10-23T01:45:55-03:00 complete kaidoku round=31; hyaku-inline attempt=1. Report landed by kaidoku-shokunin at fleet dcd6c59; prompt committed by the lane at dddfae2 before launch with sections 1-6. A first closure session (HyakuCloseKaidoku31) died with the orchestrator process at 05:25:25Z and landed nothing; this closure started fresh. Conformance defects (status-neutral): report labels the M31-7 fleet git-commit slip as w2, it was w1 CriticSeparability (exit 1, nothing staged, no commit; 0 non-shokunin commits 03:50-04:55Z; wave context forbade it, no tool enforces it); lesson :21 still says trivial ceiling 3/23 (entry corrects to 7/23); SKILL.md:1038 says 6.7.0 drift 'static reading, not run' though the live probe w2/ProbePin670.md is committed; no committed cited-runs-gate run over the round-31 report. Dead seats (not resent): w2 ReviewProvinceSkill, ReviewCensus '[inception/mercury-3] 429 Rate limit reached: output token limit exceeded' (settle.tsv:67,80); cancelled at budget: ReviewEntryC1, ReviewQualityLesson, CriticHarm. Routed to kaidoku (spot-check 'Routed defects' 1-7): widen QUALITY row 56 novelty sweep to corpus/README.md and knowledge file names and correct C1 entry :9; correct lesson :21; correct SKILL.md:1038; report erratum w1/w2; commit the cited-runs run on the report; M31-3 write-mode target line still open; timestamps inside receipts. Item hold U064N008Hf47eb933 untouched. SHONEN: all [~]; box 1 (SKILL decision table) looks checkable by a non-author; promotion operator-owned. No installs.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 31,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 31,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 31
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "claim location and revision binding in tools/research-gate.sh verify-claims (\"line\" -> mislocated/CLAIM_LINE_MISMATCH; \"sha256\" -> stale/CLAIM_SOURCE_REVISION_MISMATCH); LINE_BINDING_MATCH and REVISION_BINDING_MATCH 50/120 -> 120/120 under frozen v2 counters on landed gate 0bc318b3 (lane 25c5bb70)"
+   ],
+   "report": ".ufo/reports/round-31/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-31-verifier-spotcheck.md@7a7259f0ad41a68068131bfa422a829db9fd1b55",
+    "rechecks": "C1 and C2 evidence-verified from committed receipts, not re-executed (lane-owned gate and counters; Gate standard). Re-measured by this closure: counter sha256 c3aca35d/1064fdb3 unchanged 8070f92b->25c5bb70; gate sha256 per revision (base ac1315dd, final 0bc318b3); after-c{1,2}-run{7,8}-final.json 120/120 predicate_holds=true on gate 0bc318b3; v2-counter base-gate receipts all 50/120; census of 1253 receipts: no receipt on the landed or any committed candidate gate below 120. Design v2 8070f92b (04:37:44Z) precedes first candidate receipt (04:43:33Z); v2 control maxima C1 116, C2 118, oracles 120. No counted receipt in the 04:26:19-04:26:45.9Z gate-edit window; all 191 counted receipts bind committed gate blobs. Carried gaps (non-string line/sha256 as absent 120/120, fail-open hashing 120/120, selftest gaps) are contract gaps outside P1/P2, not cheap controls. Discernment: 3 admits (S057-S059, quotes verbatim, sha match) and 3 rejects agree. sources-census validate chousa ok exit 0 (2x W04 pre-existing). 6 read-only seats, none dead."
+   },
+   "commit": "chousa-shokunin@25c5bb7045df744ddf20b29729625656f375faca",
+   "closed_at": "2026-10-23T05:48:30Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-10-23T01:05:08-03:00 launch chousa round=31 pgid=2286421 driver=hyaku-inline attempt=1; 2026-10-23T02:24:44-03:00 complete chousa round=31; hyaku-inline attempt=1. Step 1 clean: report 68536dc by chousa-shokunin after lane tip; SHONEN heading; 11 cited hashes ancestors of master; ahead=0, porcelain empty; prompt = template rendering + hyaku addendum. First closure HyakuCloseChousa31 died at 05:25:25Z and landed nothing; this closure started fresh. Routed: R1 lesson round-31.md:97-98 falsely says fail-open hashing is counter-killed (receipts 120/120, MutC2Hash SURVIVED BOTH; whitespace trim 118/120 is the omitted third); R2 counter v3 non-string line/sha256 sub-variants plus selftest cases (non-string sha256, end-line-only, span-before-stale, trim, fail-open fault); R3 no-harm battery measured gate c23d7537 not landed 0bc318b3; R4 SKILL.md:88-90 161-cases sentence, README Round31 disposition cites superseded 6d0ae19f, gate comment cases 216-224; R5 42 MutOracleC1 receipts bind uncommitted gate bfc0b02b; R6 report's 30-seed sweep ran on superseded gate c23d7537. SHONEN boxes 1-3 look checkable by a non-author; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
