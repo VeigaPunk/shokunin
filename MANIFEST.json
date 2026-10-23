@@ -17689,6 +17689,47 @@
    "promotions": [],
    "minted": [],
    "notes": "Driver digest: 2026-10-23T16:38:10-03:00 launch chousa round=35 pgid=2383533 driver=hyaku-inline attempt=1; 2026-10-24T~02:20Z complete chousa round=35 (in-session L1). Final lane tip c1dbbec3 (ahead=0; report cites it); report fleet commit 852372f0 by chousa-shokunin (supersedes dbe9f8cf and 315d96b0); 12/12 cited lane commits are ancestors of master; prompt chousa-round-35.md carries the round contract and the five child-lane items; spotcheck landed 1eb91dbe. Claims re-derived as narrowed (fresh seeds, extracted snapshots): C1 0/9 on base a6307edf -> 9/9 on final a4768851 (seeds 3701/3711; cheapest control 3/9; 3601/3611 also 9/9 at 73921312) — proves path+version, refusal shape and output equality, NOT per-call engine identity; C2 0/2 battery=absent -> 2/2 OUTPUT_EQUIV=2/2 LANDED_WITNESS=pass (3701/3711; stubs 0/2 and landed-fail; absent 0/2) — proves the routed matcher function was ENTERED, not that its body ran. Repairs R1/R2/R3 re-derived. No axis harmed: SCORECARD pure append (53+/0-), PROVINCE diff empty, ExecNoHarm 14/14 rows base=tip after timestamp mask, selftest PASS (256 cases, 0 skipped), census exit 0 66->68. DEFECTS (status-neutral): (a) lesson ## Gate has no rejected candidates and no spot-check result (CORPUS.md requires both) — rejects live only in ## Mistakes/report; (b) report wave figure says 60/65 at its cited c1dbbec3, while 62 seat reports are on disk there, and the 3 missing (CritWitnessBlind dead, ExecC1Fresh1, ExecPinModeSelftest) are unnamed; (c) at closure 2 seat reports and 1 receipt were uncommitted under .ufo/waves/round-35/w2/ (live ExecC2Fresh1/2 seats writing after the tip); (d) known CHOUSA_GREP_PIN_ECHO leak into the --pin capture (GATE_DRIFT:-LINE on an unchanged gate); (e) erratum 13 verify-all --json trusts PATH sha256sum|cut (non-empty only); (f) erratum 14 json_unescape locale seam (:1398-1449; LC_ALL=C selftest 10/256, pin-independent); (g) S068 quote-anchor 391-395 vs actual word span 390-396; (h) stale 'lane tip at landing b6f2c0db' row. SEATS: report says 60/65 at its cited tip; final bytes hold 62/65; the earlier digest (59/65, 6 missing) and the retarget note (4 missing) are superseded by straggler integration; dead seats 1 (CritWitnessBlind, provider cyber_policy). S068 ANCHOR DISPOSITION: the landed row is narrowed to BASH_ENV only, paragraph anchor 388-404 with quote at 391-395 (quote words actually span 390-396); the exported-function clause is excluded and the text it originally cited is at bash.1.gz 5294-5304, so the wave-found anchor defect is resolved; sha256 b68beb3e...bdffe matches. SHONEN: 4 boxes all [~], each box fully checkable by a non-author (commands and pointers resolve); no [x] written by lane or verifier. Routed to r36: semantic canary, per-record witness attribution, C1 counter_sha256, locale pin + C-locale selftest arm, echo-leak fix, hash-tool pinning, Gate rejects."
+  },
+  {
+   "round": 61,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "kotoba",
+   "lane_round": 61,
+   "lanes": {
+    "kotoba": "ok"
+   },
+   "lane_rounds": {
+    "kotoba": 61
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "calibration": "improved",
+    "adjacency": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-61/kotoba.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "kotoba-shokunin/corpus/lessons/round-61-verifier-spotcheck.md@a1cb8abc3911a5df3a2877915509118e384651a4",
+    "rechecks": "Step-1: report by lane identity 1ffba7ad; 4 [~] SHONEN lines; 20 cited lane hashes exist and are ancestors; lane clean+pushed (ahead=0); prompt carries template contract + addendum. C1: counter sha 5a5adc94 at 6a7f722e and tip (byte-frozen), W1 fixture 971d75bf, self-test re-run read-only by closure printed 'worlds reject 7 of 7; eligible rows pass 4 of 4', 0 failures/189 assertions, exit 0; M90 ancestry b4a8d2ee<43fe0180<cd1910c4; base control exit 1 with 0 S112-S115 rows. C2: 0 of 6 exit 1 at base -> 6 of 6 exit 0 at de37c1d1; all six repairs re-derived substantively (29-report count, landed-scope names, freeze2 pointer, census-after, Q56/M91, ancestry receipt). C3: E1 c630c4cb pre-data, sound hollow counterexample, no adjacency claim, score 8.0 held. Axis harm: SCORECARD +4 note lines only, PROVINCE unchanged, SKILL +2/-1 registry rows, no-harm OK exit 0 at 147ac42e. Discernment: 3 admits + 2 rejects + the C3 withdrawal re-opened, all agree; sources-census validate exit 0 (15 W04); SOURCES 110->115 append-only."
+   },
+   "commit": "kotoba-shokunin@a745411c66d4765e9ac0ce48f1d96c34f425dab4",
+   "closed_at": "2026-10-23T20:50:56Z",
+   "campaign": "hyaku",
+   "notes": "kotoba r61 (hyaku run 5, attempt 1). Digest: launch 2026-10-23T15:50:34-03:00 pgid=136767 attempt=1; complete 2026-10-24T~03:30Z in-session L1; lane HEAD a745411c (plan freeze 7827628a, parent/base f3246d14), clean+pushed; fleet report 1ffba7ad. C1 depth MEASURED (counter v3 verifiers/check_scoped_rules.py@6a7f722e sha 5a5adc94; predicate verified: worlds reject 7 of 7 + eligible 4 of 4, receipt b4a8d2ee strictly before data 43fe0180; --rev 43fe0180 --fetch exit 0; base exit 1; counter bytes unchanged freeze->tip). C2 calibration MEASURED (six r60 routed repairs 0 of 6 exit 1 -> 6 of 6 exit 0 at de37c1d1, receipts controls/C2-base.txt and C2-measure.txt@3f47aaf6; all six re-derived substantively by the closure; presence-floor bound disclosed). C3 adjacency WITHDRAWN PRE-DATA, honest: E1 c630c4cb is an ancestor of the data commit; CriticC3Axis's hollow counterexample preserves every named observable; no adjacency claim in report/SCORECARD (score 8.0 held); M92 mined. No axis harmed. Routed to r62: (1) report says 66/68 seat reports but only 65 .md reports are committed (66th file is swarm-registry.json) and RevCounterHistory is unaccounted (SentNovelty/SimplEntry named; no error text) - recurrence of M91's class; (2) writing-revision-calibration-round61.md opens with a stray 'n' before source:; (3) C2 'frozen at 7827628a' is not a byte freeze (final 95ade9b; R-d guard changed verdict logic pre-data, disclosed); (4) no-harm arm count is 15+3 not 16+3; (5) lesson Gate has no reject rows (rejects live in wave ScoutKeyPagesA); (6) this spotcheck needs a corpus/README.md index row next round. SentNovelty/SimplEntry disposition: no report, no error text; classes covered by SentContext/SentBounds + entry limits; RevCounterHistory also returned no committed report. SHONEN: four [~] boxes with resolvable pointers; fully checkable by a non-author; closure wrote no [x]. Open L0: r60 fleet-report erratum authorization (fleet c6746bc) and the round-55 line remain operator-owned. Observation: round 62 was launched 17:40:02-03 and its plan freeze 45a7ecf landed 17:45:54-03, before this closure artifact existed.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
