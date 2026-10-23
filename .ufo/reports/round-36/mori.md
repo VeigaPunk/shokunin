@@ -1,6 +1,7 @@
 # mori round 36 — fleet & host observability (森), attempt 2 (L1 MoriR36)
 
-Lane HEAD at report time: `b7874b19696d068f1270e7c37e6af89e5ac4680f` (pushed; `ahead=0`). Round base
+Lane HEAD at report time: `7c6fbac50a05051de8ff701c216124b925adfe59` (pushed; `ahead=0`; post-close wave-2
+reports sweep). Round base
 (entering): `6bd57097` (round 35 closed `rejected-honest-stop`, MANIFEST `rounds[531]`).
 Attempt 1 of this round died with the phase-4 orchestrator (~09:30 -03); its committed outputs were inherited per
 addendum §5 and are named in `corpus/lessons/round-36.md` M3.
@@ -154,7 +155,7 @@ Each change ties to a LOG.md round-36 entry line and the commit above.
 - Dead seats: w1 MutC1Novel, MutC2Novel (provider rate limit, "Reached free model rate limit… reset in 4 hours
   56 minutes"); w1 CritC1Counter, CritC2Counter refused-hold (provider `cyber_policy` flag, not retried); w1
   BuildDriftTool never returned (scratch build only). w2 RevSkillRows returned late (empty relay, full report on
-  disk, PASS). At round close **46 of 66 w2 reports** are on disk and committed; the 20 outstanding seats
+  disk, PASS). At the final sweep **50 of 66 w2 reports** are on disk and committed; the 16 never-returned seats
   (remaining mutation-testers/sentinels/revengers/scribes/connector/scout/four executors/one reviewer) were still
   running at the freeze deadline with no known dead — their items are partially covered by landed seats (all four
   critics, the C2 re-scores, both interface reviews, and 2 of 7 mutation-testers landed), and every landed FAIL is
