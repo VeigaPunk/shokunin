@@ -17039,6 +17039,47 @@
    "notes": "Digest: 2026-10-23T07:24:57-03:00 launch tameshi round=32 pgid=66510 driver=hyaku-inline attempt=1; 2026-10-23T09:18:26-03:00 complete tameshi round=32; hyaku-inline attempt=1. Report ae79942 by lane identity; 13/13 cited hashes ancestors of master; lane ahead=0, clean; prompt = canonical template rendering (22 placeholder-only diff lines). 72 seats (35+33+4); dead: HeldOutFree, HeldOutHarnessVectors, HeldOutHarnessCmp (code=cyber_policy), not retried, files unused. §9: v1 redesign before data conformant; amendment 2 (528f8dee) re-pinned TOOL_SHA256 after v1/dev-sweep data but before any v2 run, ruled not a change of the claim's rule, and immaterial (false under amendment-1 constants too). Defects (status-neutral): declared v2 control re-score ran after the first v2 run; DeterminismProbe ran outside its item; measurement .exit hand-written. Routed: counter refuses to run without a committed control receipt; seat item-scope rule; exit capture without &&; ReviewCounterV2 defects; tool v2 on a fresh sealed set; carried queue (MutCounter M07/M08, dead-seat threshold, binding v5 FA-1..3, QUALITY 69/71 errata, mte-interop SETUP, S055 drift). SHONEN all [~], not non-author-checkable.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 35,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 35,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 35
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "depth": "unprovable-but-better",
+    "operability": "unchanged",
+    "freshness": "improved",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-35/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_kfc session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-35-verifier-spotcheck.md@cefe752d9facf74113bb00a5925e3bfd0c863659",
+    "rechecks": "C1 battery before/after re-measured from committed jsonl (0/24 exit1 @7186722b; 24/24, sf 0/17, exit 0 @e2f97e6e); kill rule re-derived (W2TreeKeyed+W2LogKeyed 24/24 pre-freeze); selftest 105/105 and gate receipts evidence-verified only; C2 note re-opened against pinned 54d9411 sources (all claims verified, [inf]/[unk] honest) and ruled unprovable-but-better by this named non-author reviewer; gate sample S191 admit + S197 reject agree; sources-census validate exit 0, rows 190->197; R35-FRESHNESS re-measured live (11 unreadable, pacdiff present)."
+   },
+   "commit": "tsukuroi-shokunin@c535371b4570a869bdadcf46c4d85187e96d4900",
+   "closed_at": "2026-10-23T18:13:41Z",
+   "campaign": "hyaku",
+   "notes": "Watchdog digest: 2026-10-23T07:41:44-03:00 launch tsukuroi round=35 pgid=450165 driver=hyaku-inline attempt=1; 2026-10-23T09:27:34-03:00 complete tsukuroi round=35; hyaku-inline attempt=1; 2026-10-23T15:03:26-03:00 complete tsukuroi round=35; hyaku-inline attempt=1. Step-1 pass: report committed by lane identity da506d92 after lane tip; all cited commits ancestors of master; ahead=0 behind=0; prompt carries full template contract. Defects (status-neutral): 1 untracked leftover .ufo/waves/round-35/w1/ScribeC2Draft/pacman-54d9411.tar.gz (commit or remove; routed); R35-LOG-TIME-ESTIMATES recurrence (5 LOG headings later than commits, second occurrence; routed). Routed to round 36: NoUpgrade supersession sweep incomplete (SKILL.md:397-399, update-safety-note.md:420-424, update-safety-v2.md:52,198 still pin-grouping); counter debts (untraced view, VERSION 6 normalisation, forced-shape count ranges + W2TreeKeyed/W2LogKeyed/W2LiveOracle patches in should-fail battery, ctime/live-view coverage, five ambient copies); gate-timing discipline. C1 not verified = honest stop under the declared kill rule; C2 exploratory admitted via named non-author reviewer ruling. Operator: SHONEN boxes all [~]; boxes 1 and 4 look checkable by a non-author (promotion is operator-owned). No seats died except recorded provider hold K09HarnessSnoop (cyber_policy), not retried. Fleet-root stray file '0' (31 bytes) reported [unk], left untouched. Closure writes: spot-check cefe752d (pushed, ls-remote confirmed) + this entry.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
