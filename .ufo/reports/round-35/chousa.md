@@ -3,7 +3,7 @@
 Lane: chousa (deep-research method). Round 35, attempt 1. Lane repo
 `/home/vgpnk/Projects/shokunin/chousa-shokunin`, branch `master`.
 Base `08be4c9e3a4ebe55d915ce4761c81854286c23ae` (gate `a6307edf…2995b`).
-Landed lane tip **`c1dbbec33dc6f8ef7e188dff1efae64951c26d05`** (pushed; `ahead=0`, clean porcelain; the report-landing tip was `119efa28`, and the late seat artifacts plus errata 9–14 sit on top).
+Landed lane tip **`86bfc0f4f63c4e4dc8dcd8eb2e96dfeab1639f06`** (pushed; `ahead=0`, clean porcelain; the report-landing tip was `119efa28`, and the late seat artifacts plus errata 9–15 sit on top).
 
 ## Work performed
 
@@ -207,6 +207,12 @@ corrected in `corpus/README.md` and the knowledge table gained the three r35 ent
   longer reproduces (both gates 36-38 s); appended to claims.md, frozen r34 text untouched
   (ExecR34C1V3). It also shows the pin is load-bearing through that independent counter
   (base 0/42 under a corrupting PATH grep vs landed 42/42).
+- **Pin output-neutrality measured** (erratum 15, ExecPinEchoStability): off the echo path the
+  landed gate is byte-identical to the base gate on all 24 invocations tested (selftest 256/256,
+  12 781 bytes identical; `--json` manifests differ only in `gate_sha256`; `--pin` only in the
+  gate's own stamp). With grep absent from `PATH` the base gate silently degrades (verify rc 0 plus
+  a 232-byte "grep: command not found"; claims rc 2) where the landed gate behaves exactly as
+  clean — the intended C1 delta.
 - The witness's xtrace file is large — **190–300 MiB per 9-record run** (wave seats RevWitnessCode and
   ExecWitnessTiming; 335× the 566 KiB fixture) — written under its temp dir and deleted on exit; a
   bounded tmpfs truncates it and reads as `WITNESS=fail` (indistinguishable from a skipped matcher),
