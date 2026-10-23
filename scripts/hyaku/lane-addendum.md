@@ -1,7 +1,14 @@
-## 6. Campaign addendum — hyaku (百) phases 3–4, operator directives of 2026-10-22 (binding this round; in-session)
+## 6. Campaign addendum — hyaku (百) phases 3–5, operator directives of 2026-10-22/23 (binding this round; in-session)
 
 Operator directive 3, verbatim (phase 3, 2026-10-22): "each round should be a 32-100 swarm round".
-Session scope, lane order and blocks, holds and operator rulings: `.scratch/goal-20261022-hyaku-12h.md`
+Operator directives of run 5, verbatim (2026-10-23): "i want you to swarm heavily, continuing on
+our past session of training them; we will be using jj as the git manager. i want 128 concurrent
+subagents; you can choose the shokunins to be trained, as you deem best, which ones are more prio
+to train before other etc. the goal is to push them all to round100 of training. /skill:tower |
+Do it inline, this will be the 5th hyaku run"; "I need you to swap m_opus for m_kfc; across all
+roles on the run"; "use m_kfc on max thinking effort"; "I want you to be running for the next
+24hours, autonomously."
+Session scope, lane order and blocks, holds and operator rulings: `.scratch/goal-20261023-hyaku-24h.md`
 under {{FLEET_ROOT}}. Phase-2 directives still bind (2026-10-20): "let's try to also implement using
 jj as git manager from now on on shokunin runs"; "make sure we are always swarming heavily though".
 Phase-1 directives still bind: "train all shokunins to at least round 100"; "commit and push after
