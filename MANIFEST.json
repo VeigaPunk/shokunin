@@ -15789,6 +15789,47 @@
    "notes": "Dispatch digest: '2026-10-23T00:01:53-03:00 launch mado round=24 pgid=1346361 driver=hyaku-inline attempt=1'; '2026-10-23T01:29:02-03:00 complete mado round=24; hyaku-inline attempt=1'. Repair-first round after the operator lifted the driver block; base 8e5d9369, tip b02cf294 (claims measured at eb14fa3d), report fleet 17cb0923 by mado-shokunin. Step 1 passes (SHONEN 4/4 [~], ancestry, ahead=0, clean, template contract); 5bb2c87 is an operator considerthese commit on the base. Timing confirmed: C1 v1 scored by CtlC1DoNothing/CtlC1FabFetch before v2 landed (c9b76646 00:33:39 -03); v2 landed 114 s before wave-1 registry createdAt (00:35:33) and before any data landed (cf86f9e0 01:03:16); no counter/manifest/predicate change afterwards. Both claims meet their frozen targets but a cheap control meets each after data, so neither verifies; no axis harmed -> rejected-honest-stop. Routed defects: (1) re-cut C1 counter so generic rule notes cannot meet it (M24-2); (2) C2 population must match the predicate (15 rows) and not be met by transcribing observed output (M24-5); (3) rule-attribution-r24.md:25 A18 body contradicts errata :152-154; (4) lesson round-24.md:58-59 S161 '||' rationale false of committed quote; (5) 'receipts committed before any data seat' false (receipts 00:53:36, wave 1 created 00:35:33); (6) SCORECARD :437 stale and :1342 L 17/18 need pointers to the round-24 correction; (7) report SHONEN boxes 2-3 lack a resolvable pointer; (8) H2 (L0 :103) and QUALITY 33-35 check survivors carried. SHONEN boxes not yet fully checkable by a non-author.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 38,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 38,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 38
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unprovable-but-better",
+    "freshness": "unprovable-but-better",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-38/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-38-verifier-spotcheck.md@2909f1dcf2a4e411394a5093c4ed811a81809895",
+    "rechecks": "C2 evidence-verified (counter not executed): base tool 944d2f51..d3e5, build=tip f4d057c4..baace (3ed8e15c touches only robots_audit.py); counter v3 28b120a5 identical at 2dab7f31 and tip, PREDICATE 'met: passed >= 20 of 20 sealed cases', key absent at 2dab7f31, 749ef6a6..3aa6 at reveal 99357694 = pin; receipts 8/20 exit 1 at af43a50f/b0ab7f60/2dab7f31, 20/20 met exit 0 at 3ed8e15c, reveal exit 2. v3 controls: trivial 0-1, label 16, stdlib 13, min wrapper 14; four full-rule tools (CtlBaseWrapper-care, CtlLabelShortcut-delegate_ceiling, CriticPredicate-rulepatch/_pct) 20/20 under v2 AND v3, both receipt sets landed in declaration commit 2dab7f31; v3 mutants 42 at 16-19, ablations 16-18; v2 mutants 13 at 20, 29 >=19. Ruling (prompt s6.9): the 'implements all three rules => build' class (2dab7f31:SCORECARD:2250) first appears after those seats scored (C1 b0ab7f60:2168 listed the wrapper as a control, :2171 forbade reclassification; QUALITY (j) 'unless named beforehand'; r37 precedent) -> rule changed after seats scored -> C2 not admitted. Supporting: 4 reference mutants breaking C2-declared clarifications (sha256 ed00b962/f20d1bf8/e11073ae/e7907567, receipts 20/20 counter 28b120a5) and 6 build mutants surviving selftest 194 + key v3 show the build/control line is unmeasurable. C1 withdrawal agreed. Harm: no axis-row edits; deletions only logged (SCORECARD 2 cap rows, SOURCES 1, knowledge 1); harm receipts 28/28, 137/137, 194/194, 106/106, 9/9, 28/28. Spot-check: admits S098 (sha256 3102dae4 = row), S099 agree; reject S101 (sha256 08cb42a9 = row) agree; C1 withdrawal agree; C2 class disagree. Census exit 0, 5 W04, kake ok; rows 97->101."
+   },
+   "commit": "kake-shokunin@729878e3e74e18b55cd9a58d071a4f7b2419a8b7",
+   "closed_at": "2026-10-23T05:09:50Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 2026-10-23T01:05:34-03:00 launch kake round=38 pgid=2352315 driver=hyaku-inline attempt=1; 2026-10-23T02:03:58-03:00 complete kake round=38; hyaku-inline attempt=1. 73 seats (7 ctl + 32 w1 + 34 w2), 0 dead. Closure seats: one 3-seat batch refused at the 100-job limit; all checks run by the integrator. Defects (status-neutral): QUALITY (j) check landed 145a6468 after build 3ed8e15c and encodes C2's class by file name (green circular); wave-2 mutant tools/receipts only under /fast/scratch/hyaku/kake-r38w2 (sha256 in committed reports). Routed: (1) append SCORECARD correction: r38 C2 not admitted, v3 counter+key stay rule of record; (2) any re-claim freezes control classes incl. build/control boundary before any tool is scored, or is exploratory; (3) add /robots.txt?, bare %, explicit Disallow: /robots.txt, 20 s bound and 6 MutBuildTool survivors to selftest/key before a new claim; (4) (j) check classifies by declaration not file name (11/15 mutants survive); (5) commit wave-2 mutant evidence; (6) report's carried items stay open. SHONEN 4/4 [~] with non-author-checkable pointers; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
