@@ -120,3 +120,14 @@ No box is promoted to `[x]`: every one is lane-asserted here and needs a named n
 
 Respawn-per-round driver: this lane process serves round 49 only; no other kumitate mission is open. No tool installs
 were made by the L1 this round (seats that installed anything name it in their reports; none reported).
+## Erratum (round 50; append-only)
+
+This report was filed in fleet commit `0fdce71a764cf0093380d64b9c55f4c58a08c593`, citing lane record commit
+`64b92866b3c119d4a3434039569a82786ab323f1`. Three lane commits landed after it: `01b70bb0` added clause C16
+and prior-art citations; `923a172` recorded the addendum and re-scored C2; `c432cc95` added the
+`ConnSiblingOverlap` seat report. The statement above that the C2 entry had 15/15 clauses is superseded:
+it was 15/15 at `589d25e4`, but the appended C16 makes it **16/16 at the r49 tip** (`c432cc95`), with
+entry sha256 `11828698f0feee79405037cff3a31f65297ecebfcedf4f812cbdceb3d53f527b`; the frozen counter at
+`.ufo/waves/round-49/probe/doctrine49-probe.mjs` reproduces the 16/16 reading. The earlier report bytes remain
+unchanged; this erratum supersedes only the stale C2 count and clarifies which late seat report was not in
+`64b92866`.
