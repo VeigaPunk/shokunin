@@ -15830,6 +15830,47 @@
    "notes": "Digest: 2026-10-23T01:05:34-03:00 launch kake round=38 pgid=2352315 driver=hyaku-inline attempt=1; 2026-10-23T02:03:58-03:00 complete kake round=38; hyaku-inline attempt=1. 73 seats (7 ctl + 32 w1 + 34 w2), 0 dead. Closure seats: one 3-seat batch refused at the 100-job limit; all checks run by the integrator. Defects (status-neutral): QUALITY (j) check landed 145a6468 after build 3ed8e15c and encodes C2's class by file name (green circular); wave-2 mutant tools/receipts only under /fast/scratch/hyaku/kake-r38w2 (sha256 in committed reports). Routed: (1) append SCORECARD correction: r38 C2 not admitted, v3 counter+key stay rule of record; (2) any re-claim freezes control classes incl. build/control boundary before any tool is scored, or is exploratory; (3) add /robots.txt?, bare %, explicit Disallow: /robots.txt, 20 s bound and 6 MutBuildTool survivors to selftest/key before a new claim; (4) (j) check classifies by declaration not file name (11/15 mutants survive); (5) commit wave-2 mutant evidence; (6) report's carried items stay open. SHONEN 4/4 [~] with non-author-checkable pointers; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 31,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 31,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 31
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "depth": "improved",
+    "calibration": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-31/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-31-verifier-spotcheck.md@283aad7fe56d82f4ed4f8e43f099c2e1ceed5525",
+    "rechecks": "Gates not executed (PROTOCOL Gate standard); committed evidence verified: selftests C1 14/0, C2 12/0, cited-runs 17/17; counters exit 2 at c369242f, C1 12/12 and C2 23/23 exit 0 at 0007731e and 16c00c2d (f2f5977b adds only SOURCES/lesson/receipts); freeze-integrity CLEAN, settle PASS, 5 pins + claims.json byte-identical freeze->tip; 35 live runs between controls 7474d269 and data f368a101. Re-measured with own code: C1 12/12 carriers (on-disk sha = pin, chattr +i) equal committed envelopes field-for-field via stdlib sqlite3 PRAGMAs, subject sha 12/12, PROVINCE 0 -> Core row at :349 under a Core heading; C2 predictions sha acac45e3 frozen, full-envelope 23/23, SKILL table 23/23, best trivial predictor 7/23, copied-predictions control 0/23 committed pre-data. C1 frozen text 'never run or named' false (l7-04 run; l7-04/l8-01/README name it): ruled does-not-sink (no novelty clause in predicate/counter/target; corrected in entry, SCORECARD:3254, LOG:3032, lesson; QUALITY row 56), axis narrow fit; C2 fit. Harm: only deletions are the SCORECARD owned-axes recount rows (scores unchanged) and the routed round-29 docstring fix. Spot-check 7/7 agree (S092, S094, S096, S097 admits; REA main guide, pyproj 3.7.2, refusals S096/S097 citation rejects); census kaidoku ok exit 0 (8 W04)."
+   },
+   "commit": "kaidoku-shokunin@f2f5977b8266d8233927fe1f1a77507df59c26fa",
+   "closed_at": "2026-10-23T05:45:30Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest (.ufo/watchdog.log): 2026-10-23T00:52:34-03:00 launch kaidoku round=31 pgid=970932 driver=hyaku-inline attempt=1; 2026-10-23T01:45:55-03:00 complete kaidoku round=31; hyaku-inline attempt=1. Report landed by kaidoku-shokunin at fleet dcd6c59; prompt committed by the lane at dddfae2 before launch with sections 1-6. A first closure session (HyakuCloseKaidoku31) died with the orchestrator process at 05:25:25Z and landed nothing; this closure started fresh. Conformance defects (status-neutral): report labels the M31-7 fleet git-commit slip as w2, it was w1 CriticSeparability (exit 1, nothing staged, no commit; 0 non-shokunin commits 03:50-04:55Z; wave context forbade it, no tool enforces it); lesson :21 still says trivial ceiling 3/23 (entry corrects to 7/23); SKILL.md:1038 says 6.7.0 drift 'static reading, not run' though the live probe w2/ProbePin670.md is committed; no committed cited-runs-gate run over the round-31 report. Dead seats (not resent): w2 ReviewProvinceSkill, ReviewCensus '[inception/mercury-3] 429 Rate limit reached: output token limit exceeded' (settle.tsv:67,80); cancelled at budget: ReviewEntryC1, ReviewQualityLesson, CriticHarm. Routed to kaidoku (spot-check 'Routed defects' 1-7): widen QUALITY row 56 novelty sweep to corpus/README.md and knowledge file names and correct C1 entry :9; correct lesson :21; correct SKILL.md:1038; report erratum w1/w2; commit the cited-runs run on the report; M31-3 write-mode target line still open; timestamps inside receipts. Item hold U064N008Hf47eb933 untouched. SHONEN: all [~]; box 1 (SKILL decision table) looks checkable by a non-author; promotion operator-owned. No installs.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
