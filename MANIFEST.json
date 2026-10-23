@@ -16876,6 +16876,47 @@
    "notes": "Digest: 2026-10-23T05:56:19-03:00 launch kotoba round=59 pgid=1333872 driver=hyaku-inline attempt=1; 2026-10-23T07:10:58-03:00 complete kotoba round=59; hyaku-inline attempt=1. Report b00eeb4d by lane identity after tip; all 11 cited lane commits ancestors of master; lane pushed ahead=0, clean. Conformance defect (status-neutral): report says Closed 10:12Z after its 10:10:35Z commit (future-dated). Spot-check: agrees on all sampled admits (S101, S098, S096-S100) and rejects (audit.json lead, opencode hooks 404, cursor .md URL, S089 in-place edit); Gemini overview reject agrees on decision but its reason '29 words' is 25 by wc -w through the token. Routed: R1 Gemini word-count correction with command; R2 QUALITY criteria for M84/M85; R3 future-dated close time; R4 carried (SHONEN.md:6 pointer, C2 redesign, 13 counter survivors, S096 anchor label, S097 teaches wording, L0 kotoba round-55). Operator: SHONEN box 1 looks non-author checkable; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 31,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 31,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 31
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unprovable-but-better",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-31/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-31-verifier-spotcheck.md@e24688b2ff6cca1c9ad20e112f02c629b8597ff8",
+    "rechecks": "C1 (calibration, measured) verified: counter sha256 657fcc12...7584 equal at c111dab5 and head and in contract.json; freeze 09:01:22Z before wave-1 registry 09:04:11Z; claimed values of all 12 statements re-extracted by plain python at base/83c001a5/67c0e013 equal every receipt claimed= (0 disagreements); SCORECARD base is a byte prefix of head (73 insertions, 0 deletions), untouched 67c0e013..head, tools/ unchanged; observed tuples evidence-verified from counter receipts (base mismatches=7 exit 1; 83c001a5 and 67c0e013 mismatches=0 append_only=1 C1_R31_PASS=true exit 0), corroborated by older committed receipts and SOURCES rows 92->94 plain count. Section 9 rulings: receipt-copy route declared before data and counter re-runs commands at REV (stale copy fails, do-nothing 7) -> not unverifiable; `| Axis | Score |` header = predicate-identity defect (code startswith('Score') vs contract Score (0-10)) but strict and loose selection pick identical rows at 67c0e013 and strict gives 7->0 -> not unverifiable (seat CloseT31Counter dissented, recorded). Size: 3 stale current counts (round-17 line) + 4 dated literals; modest consolidated restatement, scores 8->8/9->9. No harm: ledger 456->480 data-prefix equal, 24 new read_rev=2da841bd; binding v5 sha 8760ddc9 at 87eb64e before dispatch 3351738 and data 83c001a5; monitor 64/64 restraint 8 and command D 9 (receipts); census exit 0 (closure run, 8 W04). Spot-check agree on 3 admits (S095, S096 exact digests; S055 equal bytes, rebuilt digest) and 3 rejects. Lane gates not executed."
+   },
+   "commit": "tameshi-shokunin@08125328f87df92d3f25d0034ee792253ecbcbd9",
+   "closed_at": "2026-10-23T10:24:12Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 2026-10-23T05:50:40-03:00 launch tameshi round=31 pgid=800710 driver=hyaku-inline attempt=1; 2026-10-23T07:14:27-03:00 complete tameshi round=31; hyaku-inline attempt=1. Report 1e2bdd27 by tameshi-shokunin; 9 cited hashes ancestors of master; ahead=0; clean; prompt is a byte-exact template rendering + addendum. 64 seats, 1 dead (CtlBindV5Fresh, cyber_policy; not resent). Defects routed: c1-measure.py:116 header selector looser than contract text (Mistake 5; quote exact selector conditions + per-clause control before next freeze); :201 append-only test is text startswith not byte prefix; per-leg tally check + 8 MutateHead guard survivors deferred twice (r30->r31->r32); no round-31 base monitor receipt, command D lacks .exit; lane-routed queue (MutCounter M07/M08, dead-seat-check threshold + 3 survivors, binding v5 FA-1..3, spec-w2 v4 text, QUALITY 69/71 errata); S055 live page rebuilt (3.15.1, new digest, equal bytes). Gain size: modest (3 stale current counts + 4 dated literals restated). SHONEN boxes 2 and 3 look non-author-checkable from committed evidence (operator-owned).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
