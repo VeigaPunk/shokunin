@@ -3,7 +3,7 @@
 Lane: chousa (deep-research method). Round 35, attempt 1. Lane repo
 `/home/vgpnk/Projects/shokunin/chousa-shokunin`, branch `master`.
 Base `08be4c9e3a4ebe55d915ce4761c81854286c23ae` (gate `a6307edf…2995b`).
-Landed lane tip **`73921312f843f51d5364f0fbe84e0db3ff1f4a3e`** (pushed; `ahead=0`, clean porcelain; the report-landing tip was `119efa28`, and the late seat artifacts plus errata 9–13 sit on top).
+Landed lane tip **`038543b208be2d87d01985b9e0aa60771b909d71`** (pushed; `ahead=0`, clean porcelain; the report-landing tip was `119efa28`, and the late seat artifacts plus errata 9–13 sit on top).
 
 ## Work performed
 
@@ -179,7 +179,7 @@ corrected in `corpus/README.md` and the knowledge table gained the three r35 ent
 - **Role mix**: 22 executor, 11 reviewer, 10 mutation-tester, 8 scout, 6 critic, 6 scribe,
   2 connector — attack 27/65 = **41.5 %**. No planner seat anywhere (the L1 holds the §3 planner
   seat; the planning data-walk rode scout/connector items).
-- **Returned**: 51 of 65 seat reports are on disk at the final integration commit (late seats were
+- **Returned**: 60 of 65 seat reports are on disk at the final integration commit (late seats were
   still writing at the cutoff; their artifacts are committed); the reports that returned cover both claims, the repairs, the sources and
   the round shape. **Dead seats: 1** — `CritWitnessBlind`, provider `cyber_policy` refusal, no
   output, not retried, not rerouted; its slice (witness blind spots) is covered by MutWitnessBypass1/
