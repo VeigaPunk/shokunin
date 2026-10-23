@@ -17771,6 +17771,50 @@
    "notes": "Dispatch digest (.ufo/watchdog.log, mutable): 2026-10-23T16:05:04-03:00 launch kake round=43 pgid=2199380 driver=hyaku-inline attempt=1. The orchestrator supplied an in-session completion digest (2026-10-24T~03:15Z) that is not a line in the live log and postdates this closure; it is recorded as supplied and not used as termination evidence. Termination evidence: landed report d0cbc9d by kake-shokunin at 17:38:10 -0300, after lane tip a377c5d0 at 17:36:56 (lands last); live log also carries no complete line and .ufo/state/kake.round reads 16 (driver runtime, operator-side). Step-1 PASS: report committed by the lane identity; SHONEN heading present with 4 author-side lines ([~],[ ],[~],[~]) and no [x]; all eight cited lane commits (61046fc, b49cba9c, eddbbf6, 7c07079, a377c5d0, 020bc457, 1ef7a0e9, 5949e66ffe) exist and are ancestors of master; lane ahead=0 behind=0, porcelain empty, remote master a377c5d0 at check time (now 18cb2c28 = this spot-check commit); prompt committed e93ab55 with the full contract and no quoted L2 route map. Claims: C1 declared NOT MET and the kill-rule evidence verifies (27 witnessed meeting controls; 4 re-scored independently here with fresh seeds; 2 witnesses reproduced). C2 verified with its declared paths-only bounds; the §armed redness is pre-existing base debt and was not re-run. Discernment: S129/S130 admits agree (quotes verbatim; the paragraph-1 locator erratum is correct); this round's Gate rejected none, so a standing registry reject (S101 WHATWG, retained sha256 matches the live fetch) was sampled - agree; sources-census validate exit 0 (130 rows, 0 malformed). Corrections verified as append-only (stale freeze numbers superseded, movement census +2, T2/fold/port defects, checker overclaim qualification, exit-code receipts). Dead seats (15, named in the settle line): CriticReportContract, CtlSeedKeyed, CtlShapeKeyed, MutBuildLong, MutBuildManifest, MutBuildOutput, MutBuildZone, RevengerCounterLineage, ReviewFreezeReceipts, ReviewReceiptSchema, ReviewSpecFidelity, ScoutChronology, ScoutFleetRootWide, ScoutMissingFiles, ScoutRegistryUsedBy. Defects (status-neutral, routed in §8 of the spot-check): (1) L1 re-score tally says 18 of 27, committed receipts of record are 14; (2) w1/RevengerCounterLineage cited as evidence but listed dead with no report; (3) corpus/README.md row attributed to the freeze commit, actually landed in settle a377c5d0; (4) wave composition 47 reports / 4 live in SCORECARD and LOG vs settle line 50 / 1; (5) LOG keeps pre-T2-fix ratios (4.27/8.68) without a superseding LOG line; (6) report role mix 16 vs 14+3+1=18; (7) S129/S130 SOURCES anchor paragraph locators uncorrected (erratum only); (8) no corpus/QUALITY.md criterion for Mistakes 7/9/10/11 (captured-by none); (9) CtlPrefixCache has no durable seat report (one L1 re-score receipt); (10) driver runtime bookkeeping (no complete line, kake.round=16, empty report-baseline sha). No axis harmed: no deletions in 61046fc..a377c5d0, SKILL/PROVINCE/QUALITY untouched, no SCORECARD axis row changed. admitted=true under step-5's 'every claim verifies AS DECLARED' criterion (C1's declaration is NOT MET and verified); verdict rejected-honest-stop records that no operability axis-move was admitted (score unchanged) while freshness improved. SHONEN fully checkable by a non-author (all four boxes carry resolvable pointers; box 2 [ ] honestly records the second consecutive C1 not-met); this closure wrote no [x].",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 36,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 36,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 36
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "unchanged",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "improved",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "engine-swap canary (corpus/evidence/round36/c1-count.py)",
+    "per-record argv attribution (tools/argv-witness.py)"
+   ],
+   "report": ".ufo/reports/round-36/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_kfc session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-36-verifier-spotcheck.md@bb13ee9d3d4a4c8e3b562feaabd9de6138712e2d",
+    "rechecks": "C1 14/14 on seeds 36401/36411 vs base-gate 10/14 on 36421; C2 5/5 RENAMED=pass on 36401/36411 vs legacy 2/5 RENAMED=fail on 36421; cited commits 6/6 ancestors of refs/heads/master; lane ahead=0 pushed; census exit 0 rows 70; S069/S070 quotes re-opened on installed pages"
+   },
+   "commit": "chousa-shokunin@f19589d63e291328ac647e5434188fc56310ba9b",
+   "closed_at": "2026-10-23T21:58:30Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-10-23T17:41:40-03:00 launch chousa round=36 pgid=2668655 driver=hyaku-inline attempt=1; 2026-10-23T18:13:04-03:00 lane-dead-no-report chousa round=36 retry same round (attempt 1 superseded at resume, orchestrator OOM); 2026-10-23T18:14:08-03:00 launch chousa round=36 pgid=4142276 attempt=2; 2026-10-23T18:48:44-03:00 complete chousa round=36 hyaku-inline attempt=2. Report committed by lane identity at 0f3507a5 (bytes sha256 f75ac468, ancestor of fleet HEAD); report lands after lane tip f19589d6. Both claims re-measured by the non-author closure on fresh seeds with reproduced before controls: C1 operability 10/14 -> 14/14 (S11-S14 are the four new separations; round-1 archive scale stays 3->3), C2 calibration 2/5 -> 5/5 with the renamed matcher no longer false-killed. No-harm evidence-verified (selftest 261 cases under 3 environments; claims 17/17, chain 17/22, control 1/2, archives 3/3). Round shape: one v1 wave 36 seats + 3-seat residual call = 39 (cap 128), attack roles 10 (28%); one dead seat CritC1Swap (provider cyber_policy), not retried; wave 2 not dispatched. Inherited attempt-1 freeze 700bd5f re-verified; inherited __pycache__ discarded and gitignored. Routed defects for r37: report erratum owed for the RevSourcesNew 'did not return' vs VERBATIM contradiction (report :91 vs :165) and the S069 word count (report :156 says 15, lesson/recount 13); the kill-rule sentence (:128-131) omits mutant-gate lower labels (11/14 base-gate arms, 12/14 non-executing pin, 0/5 global-count witness); S070 anchor label SYNOPSIS->DESCRIPTION needs a supersede row; remove empty .ufo/waves/round-36/w2/ and the regenerated ignored pycache; carried r37 debt stays (BASH_ENV re-export, prefix-64 bypass, call-for-show, locale seam research-gate.sh:1015, S7-S9 assertions, argv-witness dead fields). SHONEN boxes: all four look checkable by a non-author from this closure's evidence; promotion operator-owned, no [x] written.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
