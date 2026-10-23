@@ -11,10 +11,11 @@ from outside), AXES.md, CORPUS.md.
 Inputs:
 - report: `.ufo/reports/round-62/kotodama.md`; dispatched prompt: `.ufo/prompts/kotodama-round-62.md`
   (canonical `templates/round-prompt.md` rendering + hyaku addendum §6)
-- lane HEAD before the round: `d42ffb890a54c8431fa891380b6c38bb608b8362`; after: `2ce9d4d1544763ecbc89bdd2bca88dfd11d18473`
+- lane HEAD before the round: `d42ffb890a54c8431fa891380b6c38bb608b8362`; after: `972b52d3d9678f6844b062d1e484a4e92f65da47`
 - driver dispatch/completion lines (`.ufo/watchdog.log`, mutable — copy this digest into notes):
 2026-10-23T07:41:48-03:00 launch kotodama round=62 pgid=453586 driver=hyaku-inline attempt=1
 2026-10-23T09:30:19-03:00 complete kotodama round=62; hyaku-inline attempt=1
+2026-10-23T15:03:28-03:00 complete kotodama round=62; hyaku-inline attempt=1
 
 Duties (you may dispatch up to 8 read-only reviewer/critic `task` seats to parallelize re-checks;
 never pass a model parameter; you write only the two artifacts in steps 4–5):
@@ -28,10 +29,10 @@ never pass a model parameter; you write only the two artifacts in steps 4–5):
    template contract. Marker report (no checkable work/commit) → status `failed`. Defects are named
    in notes, status-neutral. Never run a jj command in the lane except through the helper (even
    `jj log` snapshots state unless it carries `--ignore-working-copy`).
-2. **Claims.** For each declared claim (1–3): re-derive its before→after against `2ce9d4d1544763ecbc89bdd2bca88dfd11d18473` with a
+2. **Claims.** For each declared claim (1–3): re-derive its before→after against `972b52d3d9678f6844b062d1e484a4e92f65da47` with a
    plain measurement you run yourself (grep/wc/jq/git/census counts over committed bytes) and
    compare with the reported values; check no owned axis was harmed
-   (`git -C /home/vgpnk/Projects/shokunin/kotodama-shokunin diff d42ffb890a54c8431fa891380b6c38bb608b8362 2ce9d4d1544763ecbc89bdd2bca88dfd11d18473 -- SCORECARD.md`, plus spot reads). Where the claim
+   (`git -C /home/vgpnk/Projects/shokunin/kotodama-shokunin diff d42ffb890a54c8431fa891380b6c38bb608b8362 972b52d3d9678f6844b062d1e484a4e92f65da47 -- SCORECARD.md`, plus spot reads). Where the claim
    rests on a lane-owned **gate** or selftest, PROTOCOL §Gate standard (Closure consequence) binds:
    verify its committed evidence (self-test tally, frozen-run verdict, revision measured) — never
    execute a sibling's gate — and say which claims were re-measured vs evidence-verified. For an
@@ -43,7 +44,7 @@ never pass a model parameter; you write only the two artifacts in steps 4–5):
    agree/disagree with a reason. Re-open ≥1 newly written `corpus/SOURCES.md` row and check its
    ≤25-word quote. Run `/home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin kotodama`.
 4. **Write `/home/vgpnk/Projects/shokunin/kotodama-shokunin/corpus/lessons/round-62-verifier-spotcheck.md`** (non-author;
-   headed `author: hyaku closure (non-author integrator, @m_opus)`): conformance results,
+   headed `author: hyaku closure (non-author integrator, @m_kfc)`): conformance results,
    per-claim re-check with commands and observed output, per-axis verdicts, spot-check table
    (item · decision · re-opened source · agree/disagree · reason), trend verdicts with evidence,
    and routed defects the lane must fix next round. Commit and push only that path through the
@@ -80,7 +81,7 @@ never pass a model parameter; you write only the two artifacts in steps 4–5):
    "admitted": true|false, "verdict": "admitted"|"rejected-honest-stop"|"rejected-harmed"|"failed-marker",
    "verdicts": {"<axis>": "<verdict>"}, "trends": {"expansion": …, "quality": …, "discernment": …},
    "capabilities_added": […], "report": ".ufo/reports/round-62/kotodama.md",
-   "verification": {"reviewer": "hyaku-closure (@m_opus session, non-author)",
+   "verification": {"reviewer": "hyaku-closure (@m_kfc session, non-author)",
    "spotcheck": "kotodama-shokunin/corpus/lessons/round-62-verifier-spotcheck.md@<hash>", "rechecks": "<summary>"},
    "commit": "kotodama-shokunin@<lane HEAD>", "closed_at": "<ISO-8601 UTC>", "campaign": "hyaku",
    "notes": "<dispatch/complete digest; defects; routed items>", "promotions": [], "minted": []}`.
