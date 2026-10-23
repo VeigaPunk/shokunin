@@ -15364,6 +15364,47 @@
    "notes": "Digest: 2026-10-22T22:02:55-03:00 launch kake round=36 pgid=3654558 driver=hyaku-inline attempt=1; 2026-10-22T23:35:58-03:00 complete kake round=36; hyaku-inline attempt=1. 77 seats (7 ctl + 36 w1 + 34 w2). Defects (status-neutral): orphaned citation bf9b2089 (only in retained bundle); declaration base-hash typo at 3555f63f (corrected by append); containment - ExecCriterionAblation and ExecCriterionControlTree wrote criteria/*.py into the lane outside their report path (sha-verified, committed e5a293b6). Routed: (1) cite bf9b2089 via bundle or land it; (2) sandbox-only seat deliverables + git status before integration; (3) capability/claim wording overstates contract coverage: 7 single-point mutants also score 28, M24 BOM-mark survives selftest too; (4) key v2 changed after control seats scored and loosened casefold class 24->26 - keep original-key measurement as rule of record (build met it here); (5) junk control untested (cyber_policy hold) - say so, rerun next round; (6) Gate nits: S091 quote at sec 7 not 1.2, S093 lacks flip:, S094 'contradicts' overstated, used-by names a script not knowledge/lesson; (7) QUALITY (f) lacks polarity red-before receipt, (d) control_tree_check false pass on root listing, (a) bare-id negative missing; (8) carried tool defects (attribute <script, FIFO/huge manifest, body_path race, counter D1/D2, jail visibility, 18 undecided points). SHONEN boxes 1-3 non-author checkable, box 4 unassessed; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 32,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 32,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 32
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "adjacency": "unprovable-but-better",
+    "operability": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-32/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-32-verifier-spotcheck.md@1f521b93387590666bfbe7534708d8f416898424",
+    "rechecks": "Judged at lane tip efe6d135 / report f9796d76; 5 read-only seats (C1Remeasure, C2Remeasure, Sec9Timing, GatesHarm, SpotcheckSources); no lane tool executed. C1 re-measured: census HANDOFF ADJ-04 grep 0->6, diff +128/-4 C1-scoped; scorer v3 f45136c3 frozen 44c8eee5..tip; receipts K0 8/24 -> 24/24 live true exit 0 at 4ac5ebaa and b8bf1507; post-data K11 24/24 live true exit 0 -> not verified (adjacency unprovable-but-better). C2 re-measured: os.environ reads 1-3 -> 0 in 12 builders, CHILD_ENV_BASE in each; probe v2 d43f95ed frozen; 11/11 -> 0/11 exit 0; H0-H4 11, H6 1, H5 positive 0; r31 guard 0/33 -> verified (operability improved). Harm: append-only files 0 deletions, IN-109 found_line 2216->2277 justified, adjacency-anchors red at b8bf1507 repaired at 83b017c2, ordinals unchanged. Gates evidence-verified (self-assessment 1->0, pause-gate 1 as at base with base receipt, selftest 101/101). Spot-check agrees: admits S174, S176, S177 (live sha = pins), rejects S178 (=S138 bytes), S179 (tier C, ambient-copy advice); census exit 0, rows 173->179."
+   },
+   "commit": "tsukuroi-shokunin@efe6d135a557ce61186b94045831e75e12c1492a",
+   "closed_at": "2026-10-23T03:01:02Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-10-22T22:02:53-03:00 launch tsukuroi round=32 pgid=3654218 driver=hyaku-inline attempt=1; 2026-10-22T23:52:45-03:00 complete tsukuroi round=32; hyaku-inline attempt=1. Section 9 ruling: counter amendments f28442cb (22:48:26) and 44c8eee5 (22:58:35) precede every data seat (ExecHandoffCensus dispatched 22:59:51-03, ExecAllowA/B 23:06:02-03 per history://TsukuroiR32; all sandbox parents 44c8eee5); intended pre-freeze fixes under the 01:05Z directive. Conformance defects (status-neutral): data executors and counter builders ran outside validated waves (work verifiable, committed patches and receipts); controls/README overstates 'all final controls before the first data seat' (C2 receipts 4e685163 23:05:54 follow the C1 seat start; order holds per claim); check-owed-statements-r29 migrated but outside the probe targets. Routed: C1 counter varying both classes plus distractors (K11/K12); C2 probe exclusion-list assertions (MutAllowlist m3-m6); _revision.clean_env and v4shapes ambient copies; README sequence erratum; out-of-wave executor exemption; carried r30/r31 items. SHONEN all [~]; not non-author checkable, no promotion suggested.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
