@@ -15405,6 +15405,47 @@
    "notes": "Driver digest: 2026-10-22T22:02:53-03:00 launch tsukuroi round=32 pgid=3654218 driver=hyaku-inline attempt=1; 2026-10-22T23:52:45-03:00 complete tsukuroi round=32; hyaku-inline attempt=1. Section 9 ruling: counter amendments f28442cb (22:48:26) and 44c8eee5 (22:58:35) precede every data seat (ExecHandoffCensus dispatched 22:59:51-03, ExecAllowA/B 23:06:02-03 per history://TsukuroiR32; all sandbox parents 44c8eee5); intended pre-freeze fixes under the 01:05Z directive. Conformance defects (status-neutral): data executors and counter builders ran outside validated waves (work verifiable, committed patches and receipts); controls/README overstates 'all final controls before the first data seat' (C2 receipts 4e685163 23:05:54 follow the C1 seat start; order holds per claim); check-owed-statements-r29 migrated but outside the probe targets. Routed: C1 counter varying both classes plus distractors (K11/K12); C2 probe exclusion-list assertions (MutAllowlist m3-m6); _revision.clean_env and v4shapes ambient copies; README sequence erratum; out-of-wave executor exemption; carried r30/r31 items. SHONEN all [~]; not non-author checkable, no promotion suggested.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 29,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 29,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 29
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-29/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-29-verifier-spotcheck.md@9ed6db840dc97a0a5f4758b6b5f60cee83a61645",
+    "rechecks": "C1 evidence-verified on frozen counter receipts (base 63/64 restraint=6 PASS=false; bc2058a4/7a45f7b9/9bb699ad 64/64 restraint=8 box3_mismatch=0 bound=22 PASS=true; counter+monitor diff 09e4f273..3c16b3a6 empty); ledger re-measured 371->393 append-only (prefix/non-entry equal, numstat 1781 0, 22 entries read_rev 9f3084bc); 22/10 selection reproduced independently from the frozen predicate (frozen check as written, all 36 reads passing, dry-all-32 same coverage); shortcut-class control unscored but 36 seat transcripts in host session store back the bindings. C2 missed confirmed (c2-at-E PASS=false; counter sha = amendment-1; target unreachable, 3 exec rows 755). Spot-check: S024 admit agree (sha 3abede35 identical, 15-word quote verbatim), S059 deferral agree (live md 266915c5 != anchor 0d362d11), Read07A reject agree (16-hex digest), binding exclusions agree. Census exit 0, 7 W04. Counters not executed (gate standard)."
+   },
+   "commit": "tameshi-shokunin@3c16b3a649181b0dbfa386997de8c573f5bf7c3b",
+   "closed_at": "2026-10-23T03:12:17Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-10-22T22:02:58-03:00 launch tameshi round=29 pgid=3655176 driver=hyaku-inline attempt=1; 2026-10-23T00:03:44-03:00 complete tameshi round=29; hyaku-inline attempt=1. Step 1 pass: report by lane identity (772f710), SHONEN 4x[~], 9 cited commits ancestors of master, ahead=0, porcelain empty, prompt conformant (template byte-identical, addendum s6). Status ok; not admitted because C2 missed (honest stop); C1 verified. Defects (status-neutral): report names measured commits 6892c3ee/1a1e8b22/3c16b3a6 with no committed receipt there; C2 quote_located=1 in report vs 0 in c2-at-E receipt. Routed to tameshi r30: (1) required shortcut control class unscored (CtlC1/C2Shortcut cyber_policy holds, no hold path in contract); (2) syntactic binding - bind to outside seat artifact; (3) assembler/binding shape mismatch (Mistake 5), select-bound.py lacks bool(reports); (4) data dispatched before control report landed (Mistake 1); (5) containment: Read10C fleet-root misroot (untracked, moved byte-exact fafd4c36), BuildF6B killed BuildF6A processes, cancelled BuildF6A kept writing (own report only, pre-freeze) - runtime deadline/kill isolation is operator-side; (6) commit receipts at every named measured rev, erratum in r30 report; (7) carried: S059 supersedes row, runner leg-sum defect. SHONEN: no box checkable by a non-author from this round's evidence; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
