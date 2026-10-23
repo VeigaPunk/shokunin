@@ -16736,6 +16736,63 @@
    "notes": "Dispatch digest: '2026-10-23T05:20:09-03:00 launch mado round=26 pgid=916826 driver=hyaku-inline attempt=1'; '2026-10-23T07:03:22-03:00 complete mado round=26; hyaku-inline attempt=1'. Base 96101be5, tip 14fcb814 (C1 measured 2b3487f7, C2 a496b02a), report fleet b3f5d225 by mado-shokunin. Step 1 passes. Rulings: M26-9 status-neutral conformance defect (seed clause serves the kill rule; every seed <=13/41); M26-10 in-scope trade, not harm (registered no-harm scope 21/21, answers r25 routed defect 6, real tree unchanged); M26-4 wave validation stands (validator checks spec-side properties only; appended block is host-injected RULES.md); M26-5 measurements ran under env -i. Host safety: no measurement run touched the live session. Defects routed (spot-check §7): document env-literal limit + stale PROVINCE:36-39; seed-count completeness; SKILL.md registry rows for 3 gates (none registered); Q36 successor red on .txt receipts + self-test/Q37 survivors; uncommitted check-population after-receipt runs; successor harness env -i / no crash inputs; protocol lane: §6.2 taskCall-unchanged clause vs host RULES.md injection. SHONEN 4x[~]; box 3 looks non-author checkable (operator-owned).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 61,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "kotodama",
+   "lane_round": 61,
+   "lanes": {
+    "kotodama": "ok"
+   },
+   "lane_rounds": {
+    "kotodama": 61
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "claims": {
+    "C": {
+     "axis": "coverage",
+     "type": "sourced",
+     "verdict": "unchanged",
+     "admitted": false,
+     "finding": "MISSED confirmed: final-measures.txt (first and sole run at efbee29c, 09:57:40Z) LOCATE FAIL located=40 cited=41 (S671 live 403 + Wayback capture HTTPError at 09:58Z), ACCEPT-C-61: FAIL exit=1; counters sha-identical freeze 2f4f8a40 -> tip (accept-c 9751743a, reopen-quote 39d5bccc); kill rule first-run-final; separability.txt 10:02Z re-run labelled dependency check only, not counted; nothing amended after receipt (entry/README/tool/counters diff empty efbee29c..c587cd57). Plain re-measure: 1 added knowledge file (235->236), 41 distinct ids S652-S692, 41 cited lines, 0 multi-id lines, 0 id table rows, SOURCES 577->618, all mined/opened 2026-10-23/used-by entry, tiers A27 B13 C1. S671 capture re-opened 10:15Z: 200, quote present (transient miss; rule correctly applied)."
+    },
+    "O": {
+     "axis": "operability",
+     "type": "capability acquisition",
+     "verdict": "improved",
+     "admitted": false,
+     "finding": "PASS confirmed: receipt TOOL/INDEP/GEN 92/92/CLEAN 0/ERR 2,2,2/REAL 603/603 ACCEPT-O-61: PASS exit=0 at efbee29c; ReviewRerunO 5/5; MutToolO 8/9 killed (order survivor routed); tool unchanged 675d59af->tip; no round-61/reports/accept-o strings. Independent re-count over git archive 942abdf4 corpus/knowledge: 297 multi-id lines + 306 id table rows = 603 in 11 files, amulets line 95 [S612,S613]; 0 on footwear entry; tool absent at base."
+    }
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-61/kotodama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kotodama-shokunin/corpus/lessons/round-61-verifier-spotcheck.md@d42ffb890a54c8431fa891380b6c38bb608b8362",
+    "rechecks": "Re-measured: 7/7 lane hashes exist+ancestor of main, lane authorship 7/7, jj-lane state ahead=0 clean, report by kotodama-shokunin f7c8a3de, SHONEN 4 lines=4 boxes, ## Gate present, prompt template §1-§5 diff = 1 substitution + §6 addendum (64b66c8), seat dirs 36+47, counter sha freeze->tip, C surfaces (files, ids, lines, rows, statuses, tiers), O 603 independent re-count, census validate exit=0 (27 W04, W01 S687). Evidence-verified: final-measures.txt both verdicts, separability.txt, ReviewRerunO 5/5, MutToolO, selftest 26/26 (review-only). Spot-check (4 read-only seats, 0 dead): admits S652/S671/S681 agree, S687 sole-support disagree (lane-routed); rejects Bata Arctic, Smithsonian bound-feet, wave-2 S665/S666/S692 agree. r60 repairs 7/7 verified appended (0 deletions in LOG/SCORECARD/lessons)."
+   },
+   "commit": "kotodama-shokunin@c587cd57b5e2d981468b8877d327cf3599e47e5b",
+   "closed_at": "2026-10-23T10:18:27Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log): 2026-10-23T05:17:04-03:00 launch kotodama round=61 pgid=725543 driver=hyaku-inline attempt=1; 2026-10-23T07:09:53-03:00 complete kotodama round=61; hyaku-inline attempt=1. Report landed by lane (f7c8a3de); 83 seats (36+47), 0 dead, 0 refused; anti-loop honoured (no amulets re-entry, one row one clause per review seat). Claim C MISSED honestly under the frozen first-run rule; claim O PASS. Kotodama's fourth straight rejection (r58-r61). Defects (status-neutral): S655/S658/S681 kind news->docs edited in place in landed rows (efbee29c->ae8e393e), not appended corrections (CORPUS SOURCES rule 2; disclosed R61-M7; repeats R58-M6); LOG round-61 entry and SCORECARD calibration row say R61-M1..M6 while lesson has M7. Routed to round 62: fix or mark entry lines S666 (hedge dropped), S692 (closed etc. list), re-source S665 (caption-only), S687 tier-C sole support (first carry; unmarked third carry = quality harmed per r58 precedent); log kind-cell old->new; accept-o set comparison ignores order (MutToolO); accept-c 160-char miss truncation; QUALITY 13 transient-error allowance with control before next live-leg predicate. Capability (clause-scoping lint) verified running but not added: round not admitted. SHONEN boxes all [~], not fully non-author-checkable; no promotion signal.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
