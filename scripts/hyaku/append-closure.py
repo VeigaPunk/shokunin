@@ -5,16 +5,23 @@ Integrator-of-record helper for hyaku closure sessions. Under the shared fleet
 git lock it validates the entry, refuses duplicates, re-serializes the ledger
 byte-identically to its existing format (indent=1, ensure_ascii=False,
 separators=(',', ': ')), appends, commits MANIFEST.json alone as
-protocol-shokunin, and pushes. Closed history is never edited in place.
+protocol-shokunin through Jujutsu (colocated .jj; auto-track off, so untracked
+strays are never tracked), fast-forwards main and master together, and pushes
+both with `jj git push`. Closed history is never edited in place.
 
   append-closure.py --entry <entry.json> [--dry-run]
 
 Exit: 0 appended (+pushed) · 1 invalid/refused · 3 appended+committed, push failed.
 """
-import argparse, fcntl, json, os, subprocess, sys, time
+import argparse, fcntl, json, os, shutil, subprocess, sys, time
 
 FLEET = os.environ.get("SHOKUNIN_ROOT", "/home/vgpnk/Projects/shokunin")
 STATE = os.environ.get("HYAKU_STATE", os.path.expanduser("~/.local/state/shokunin-hyaku"))
+REMOTE = os.environ.get("FLEET_REMOTE", "origin")
+BOOKMARKS = (os.environ.get("FLEET_BRANCH", "master"), os.environ.get("FLEET_MIRROR", "main"))
+BACKOFF = int(os.environ.get("FLEET_PUSH_BACKOFF", "15"))
+JJ = os.environ.get("JJ_BIN") or shutil.which("jj") or os.path.expanduser("~/.local/bin/jj")
+JJ_ENV = {k: v for k, v in os.environ.items() if k not in ("JJ_USER", "JJ_EMAIL")}
 MANIFEST = os.path.join(FLEET, "MANIFEST.json")
 STATUSES = {"ok", "failed", "not-dispatched", "in-flight"}
 TRENDS = {"expansion", "quality", "discernment"}
@@ -57,11 +64,38 @@ def validate(e):
         die("closure-correction needs supersedes")
 
 
-def git(*args, ident=True):
-    pre = ["git", "-C", FLEET]
-    if ident:
-        pre += ["-c", "user.name=protocol-shokunin", "-c", "user.email=protocol@shokunin.local"]
-    return subprocess.run(pre + list(args), capture_output=True, text=True)
+def jj(*args, snapshot=True):
+    """Snapshotting calls carry auto-track off + protocol identity; others --ignore-working-copy."""
+    if snapshot:
+        pre = [JJ, "--config", 'snapshot.auto-track="none()"',
+               "--config", "user.name=protocol-shokunin", "--config", "user.email=protocol@shokunin.local"]
+    else:
+        pre = [JJ, "--ignore-working-copy"]
+    return subprocess.run(pre + list(args), cwd=FLEET, env=JJ_ENV, capture_output=True, text=True)
+
+
+def ids(revset):
+    r = jj("log", "--no-graph", "-r", revset, "-T", 'commit_id ++ "\\n"', snapshot=False)
+    return r.stdout.split() if r.returncode == 0 else []
+
+
+def advance_bookmarks():
+    """Fast-forward main and master to @- (never backwards/sideways); None or an error."""
+    tip = ids("@-")
+    if len(tip) != 1:
+        return "cannot read the working-copy parent"
+    tip = tip[0]
+    for b in BOOKMARKS:
+        if ids(f"{b} & ::{tip}"):
+            r = jj("bookmark", "set", b, "-r", tip, snapshot=False)
+            if r.returncode != 0:
+                return f"bookmark set {b}: {r.stderr.strip()}"
+        elif not ids(f"{tip} & ::{b}"):
+            return f"bookmark {b} is not an ancestor of {tip} (moved sideways or conflicted)"
+    for b in BOOKMARKS:
+        if not ids(f"{b}@{REMOTE} & ::{b}"):
+            return f"{b}@{REMOTE} is not an ancestor of {b}; refusing a backwards/sideways push"
+    return None
 
 
 def main():
@@ -113,18 +147,38 @@ def main():
     os.replace(tmp, MANIFEST)
     msg = (f"rounds ledger: {entry['lane']} r{entry['lane_round']} closure "
            f"({entry.get('verdict', entry['lanes'][entry['lane']])}) — hyaku, non-author")
-    r = git("commit", "-q", "-m", msg, "--", "MANIFEST.json")
+    # The first jj call snapshots: it imports git HEAD/refs moved by plain git
+    # before any jj transaction builds on them.
+    path = ["--", 'root-file:"MANIFEST.json"']
+    r = jj("status")
+    if r.returncode == 0:
+        r = jj("diff", "--summary", *path)
+        if r.returncode == 0 and not r.stdout.strip():
+            die("commit failed: nothing to commit")
+    if r.returncode == 0:
+        # `jj commit <paths>` keeps @'s author: stamp it so author == committer.
+        r = jj("metaedit", "--update-author")
+    if r.returncode == 0:
+        r = jj("commit", "-m", msg, *path)
     if r.returncode != 0:
         die(f"commit failed: {r.stderr.strip()[:300]}")
-    head = git("rev-parse", "HEAD", ident=False).stdout.strip()
+    head = ids("@-")
+    head = head[0] if len(head) == 1 else ""
     print(f"appended rounds[{idx}] commit {head}")
+    e = advance_bookmarks()
+    if e:
+        print(f"push failed (commit kept): {e[:300]}", file=sys.stderr)
+        return 3
     for i in range(4):
-        p = git("push", "-q", "origin", "HEAD:master", ident=False)
+        p = jj("git", "push", "--remote", REMOTE, "--bookmark", BOOKMARKS[0], "--bookmark", BOOKMARKS[1],
+               snapshot=False)
         if p.returncode == 0:
             print("pushed")
             return 0
-        time.sleep(15 * (i + 1))
-    print(f"push failed (commit kept): {p.stderr.strip()[:300]}", file=sys.stderr)
+        time.sleep(BACKOFF * (i + 1))
+    detail = "\n".join(l for l in p.stderr.splitlines()
+                       if not l.startswith(("Changes to push", "  bookmark: ")))
+    print(f"push failed (commit kept): {detail.strip()[:300]}", file=sys.stderr)
     return 3
 
 
