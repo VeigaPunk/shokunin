@@ -1,6 +1,6 @@
 # mori round 36 — fleet & host observability (森), attempt 2 (L1 MoriR36)
 
-Lane HEAD at report time: `4890c2d571c5275f6a5c214545f79e59e0f4afca` (pushed; `ahead=0`). Round base
+Lane HEAD at report time: `6b68b2e1eb343924e4c95cc05ffe49e230145be6` (pushed; `ahead=0`; index clean). Round base
 (entering): `6bd57097` (round 35 closed `rejected-honest-stop`, MANIFEST `rounds[531]`).
 Attempt 1 of this round died with the phase-4 orchestrator (~09:30 -03); its committed outputs were inherited per
 addendum §5 and are named in `corpus/lessons/round-36.md` M3.
@@ -154,12 +154,11 @@ Each change ties to a LOG.md round-36 entry line and the commit above.
 - Dead seats: w1 MutC1Novel, MutC2Novel (provider rate limit, "Reached free model rate limit… reset in 4 hours
   56 minutes"); w1 CritC1Counter, CritC2Counter refused-hold (provider `cyber_policy` flag, not retried); w1
   BuildDriftTool never returned (scratch build only). w2 RevSkillRows returned late (empty relay, full report on
-  disk, PASS). At the final sweep **62 of 66 w2 reports** are on disk and committed; the 4 never-returned seats
-  (of the outstanding set: revengers/some executors) were still running at the hard-stop with no known dead —
-  their items are covered by landed seats (all four critics, all seven mutation-testers, both interface reviews,
-  the connector, the scribes, three sentinels, five executors, 33 reviewers), and every landed FAIL is repaired
-  or disclosed above. This partial settlement is reported honestly as a conformance limitation; no refusing or
-  shrinking of the wave occurred.
+  disk, PASS). At the final sweep **64 of 66 w2 reports** are on disk and committed; the 2 never-returned seats
+  were still running at the hard-stop with no known dead — every attack class is covered by landed seats (all 4
+  critics, all 7 mutation-testers, 3 sentinels, both revengers, the connector, the scribes, 5 executors,
+  34 reviewers), and every landed FAIL is repaired or disclosed above. This partial settlement is reported
+  honestly as a conformance limitation; no refusing or shrinking of the wave occurred.
 - Wave-2 attack results: 21 FAIL reports — all documentary or tool-hardening, all repaired (13 in `9ca8f2e`,
   3 in `6827d6e`, 2 in `8ff9bba`, 3 in `1caa2423`) or disclosed as frozen-byte residuals below; the measurement
   core is PASS-clean. Post-close sentinel findings repaired in `1caa2423`: the drift tool's unbounded `read()`
@@ -169,7 +168,11 @@ Each change ties to a LOG.md round-36 entry line and the commit above.
   receipts, both C1 receipts, BuildDriftTool reconciliation, out-of-round `c081375`) were added to LOG.md.
   Disclosed fix-forward (r37 hygiene): SentData LOW — absolute operator paths in four evidence files
   (census-start/end, c0-rescore); the frozen counters' remaining hardening list (per-id line checks, seed-derived
-  scratch collision, delete+restore detection, 429/4xx re-probe coverage) is in the lesson and SCORECARD Planned.
+  scratch collision, delete+restore detection, 429/4xx re-probe coverage, real-arm memoization challenge rows —
+  w2/RevNgC2 N1, bounded: the declared known-witness real arm is inherently memoizable, receipt not invalidated)
+  is in the lesson and SCORECARD Planned. Revenger boundary note: the v2 anti-harness-key design is
+  invocation-relative (--repo under scratch re-arms the K9/J11 key class; documented invocation is safe) —
+  recorded in `corpus/lessons/round-36.md`.
 
 ## Stale-lane
 
