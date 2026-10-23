@@ -11,9 +11,8 @@ from outside), AXES.md, CORPUS.md.
 Inputs:
 - report: `.ufo/reports/round-50/kumitate.md`; dispatched prompt: `.ufo/prompts/kumitate-round-50.md`
   (canonical `templates/round-prompt.md` rendering + hyaku addendum §6)
-- lane HEAD before the round: `227b9e6e7c93edb24ea29d189f12d9526e096c4e`; after: `329fcb8018d2f125128a454c1a1ccd6fb3faf6ce`
+- lane HEAD before the round: `227b9e6e7c93edb24ea29d189f12d9526e096c4e`; after: `c90b9de94009b938fa19a089bfaa97df20b54f86`
 - driver dispatch/completion lines (`.ufo/watchdog.log`, mutable — copy this digest into notes):
-2026-10-23T17:04:15-03:00 launch kumitate round=50 pgid=3652781 driver=hyaku-inline attempt=1
 2026-10-23T18:13:04-03:00 lane-dead-no-report kumitate round=50; retry same round (hyaku-inline attempt=1: superseded at resume 2026-10-23T18:0x-03: orchestrator session OOM (memcg seat kills 18:00:55/18:01:43/18:02:17 kernel plazir27); L1 r50 died mid-round, no report landed)
 2026-10-23T19:31:47-03:00 launch kumitate round=50 pgid=1495819 driver=hyaku-inline attempt=2
 2026-10-23T19:43:24-03:00 lane-dead-no-report kumitate round=50; retry same round (hyaku-inline attempt=2: superseded at resume 2026-10-23T19:43:24-03:00: orchestrator session froze after attempt-2 launch 19:31:45; L1 r50 died mid-round, no report landed)
@@ -23,6 +22,7 @@ Inputs:
 2026-10-23T19:57:07-03:00 lane-dead-no-report kumitate round=50; retry same round (hyaku-inline attempt=1: orchestrator loss: parent omp session froze at 19:4x-03:00 after launch; L1 never ran; zero lane progress; no report)
 2026-10-23T19:57:25-03:00 launch kumitate round=50 pgid=3680796 driver=hyaku-inline attempt=2
 2026-10-23T20:16:37-03:00 complete kumitate round=50; hyaku-inline attempt=2
+2026-10-23T20:27:05-03:00 complete kumitate round=50; hyaku-inline attempt=2
 
 Duties (you may dispatch up to 8 read-only reviewer/critic `task` seats to parallelize re-checks;
 never pass a model parameter; you write only the two artifacts in steps 4–5):
@@ -36,10 +36,10 @@ never pass a model parameter; you write only the two artifacts in steps 4–5):
    template contract. Marker report (no checkable work/commit) → status `failed`. Defects are named
    in notes, status-neutral. Never run a jj command in the lane except through the helper (even
    `jj log` snapshots state unless it carries `--ignore-working-copy`).
-2. **Claims.** For each declared claim (1–3): re-derive its before→after against `329fcb8018d2f125128a454c1a1ccd6fb3faf6ce` with a
+2. **Claims.** For each declared claim (1–3): re-derive its before→after against `c90b9de94009b938fa19a089bfaa97df20b54f86` with a
    plain measurement you run yourself (grep/wc/jq/git/census counts over committed bytes) and
    compare with the reported values; check no owned axis was harmed
-   (`git -C /home/vgpnk/Projects/shokunin/kumitate-shokunin diff 227b9e6e7c93edb24ea29d189f12d9526e096c4e 329fcb8018d2f125128a454c1a1ccd6fb3faf6ce -- SCORECARD.md`, plus spot reads). Where the claim
+   (`git -C /home/vgpnk/Projects/shokunin/kumitate-shokunin diff 227b9e6e7c93edb24ea29d189f12d9526e096c4e c90b9de94009b938fa19a089bfaa97df20b54f86 -- SCORECARD.md`, plus spot reads). Where the claim
    rests on a lane-owned **gate** or selftest, PROTOCOL §Gate standard (Closure consequence) binds:
    verify its committed evidence (self-test tally, frozen-run verdict, revision measured) — never
    execute a sibling's gate — and say which claims were re-measured vs evidence-verified. For an
