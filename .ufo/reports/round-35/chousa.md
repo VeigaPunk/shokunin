@@ -3,7 +3,7 @@
 Lane: chousa (deep-research method). Round 35, attempt 1. Lane repo
 `/home/vgpnk/Projects/shokunin/chousa-shokunin`, branch `master`.
 Base `08be4c9e3a4ebe55d915ce4761c81854286c23ae` (gate `a6307edf…2995b`).
-Landed lane tip **`7d21a333bb3428e17c69324569c59e32c536278d`** (pushed; `ahead=0`).
+Landed lane tip **`b6f2c0db8de4047e6518f4232da2fd3c3954cf00`** (pushed; `ahead=0`, no untracked lane files).
 
 ## Work performed
 
@@ -68,8 +68,10 @@ Work items (each with its evidence pointer):
 | wave spec, validated plan/taskCall, registry, generator | LOG.md §Round 35 | `2b2e0171` |
 | gate: grep pin (landed form) + R1 `slen` + R2 case ranges; C1/C2 after receipts, R1 probe | LOG.md §Round 35 | `e87c5d7e` |
 | three knowledge entries, QUALITY 45–49, S067/S068, README front/rows, SKILL rows + section, SCORECARD, lesson, wave evidence | LOG.md §Round 35 | `beb04ea1` |
-| erratum 7, witness trace-size/survivor corrections, late wave seat evidence | LOG.md §Round 35 | `770a69d6` (tip) |
-| this report | — | fleet repo, `fleet-commit.sh` (cited in the closure) |
+| erratum 7, witness trace-size/survivor corrections, late wave seat evidence | LOG.md §Round 35 | `770a69d6` |
+| erratum 8 (late survivors) | LOG.md §Round 35 | `7d21a333` |
+| late wave seat evidence, `tools/__pycache__` ignored, `MutCounterC1` | LOG.md §Round 35 | `234c95d4`, `b6f2c0db` (tip) |
+| this report | — | fleet repo, `fleet-commit.sh`; lane tip at landing `b6f2c0db` |
 
 ## Before → after measurements
 
