@@ -180,9 +180,11 @@ Census command: `/home/vgpnk/Projects/shokunin/scripts/sources-census.sh validat
   59 min, after return-now nudges) and were integrated; **ScribeEntry returned at 1h4m** as a review pass (all gates green at the tip; two entry nits fixed in the final commit).
   Wave 2: 27/32 reports at close. Post-close returns: MutShipped (R52-6 selftest-coverage
   findings routed in the SCORECARD limits), MutCounters (14/14 drop-one mutants UNMET),
-  RevStanza (A-term composition correction landed in the SCORECARD terms). Final
-  unreturned at budget stop: MutReceiptBytes, MutSkillItem (recorded dead; their items are
-  covered by sibling evidence or carried as residual candidates in `w2/SimplDedup.md`). One provider-flag death and
+  RevStanza (A-term composition correction landed in the SCORECARD terms). Final accounting:
+  **all 64 seats returned** (MutSkillItem last, 31m — item-23 executions verified; its
+  live-tripwire finding cross-named with RevStanza; the ExecForgerControl `lanes/`
+  nested-repo scratch stays as documented evidence, its A-term tripwire the named r52
+  round-open cleanup). One provider-flag death and
   recovery: CritA2Span (completed on plain-wording resume; the two flagged attempts are
   the recorded error text).
 - **Harm battery at close** (`close/FINAL-harm-census.txt`): H1 `CHECKLIST: 22/23 pass` at the live close run (`close/FINAL-harm-census.txt`) —
