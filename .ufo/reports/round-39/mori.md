@@ -110,3 +110,28 @@ All four remain `[ ]`: no named non-author verifier exists in-round; wave seats 
 - Misroot sweep: `git status --porcelain` at the fleet root shows only `.ufo/state/*` driver files (not
   touched). Stale-lane: respawn-per-round driver; no other mission open. Tool installs: none.
 - Stale-lane line: respawn-per-round driver, no other mission of this lane is open.
+
+## Erratum (appended after wave-1 returns; lane tip 34319b26)
+
+Wave 1 returned 17 of 30 live seats (2 critics died on provider content-filter, §Round shape; one report,
+RevGateS228, is preserved in its seat transcript `history://mori-r39.RevGateS228` — its file write did not
+land before this append). Findings adjust disclosures, not the measured verdicts:
+
+- **C2**: the routed M19 fixtures and the conjunct are rejected (ExecC8Replay, MutC8NoneVal PASS), but
+  RevC8Value reproduced two HIGH survivors of the name-not-value class (function-local shadow; conditional
+  module rebind) plus an inf-value and two crash-class notes. C2's frozen claim stands on its frozen
+  predicate; the survivors are routed to round 40 (lesson finding 4).
+- **C3**: lane byte-parity re-verified (RevC9Live PASS, line-22 receipt confirmed) and the fixtures
+  re-derived (ExecC9Dags, MutC9IndexOrder — index-order mutation killed by fixtures A+D). CritC9Semantics
+  reproduced two bounds: byte-parity excludes re-add histories (none on the lane), and the merge ref can
+  fall through to the second parent, contradicting P-C9's "first parent's state" wording. RevCensus and
+  RevGateS228 independently confirm the `superseded` eligible set is edit-bounded, so the contract prose
+  "18 ids + S226 once S228 lands" is unreachable (receipts honest; prose overclaims). The walk-count
+  receipt named no rev (amended; 53/52 at the entering tip, 54/53 at the landed tip). Integration items
+  1-7 in `corpus/lessons/round-39.md`.
+- **C1**: three-seed replay PASS (drawn states fresh/unavailable/no-copy); cheat-probe discrimination
+  re-derived (MutC7Cheat PASS — structural parse rejects what r38 accepts); ScoutC7Bounds FAIL records
+  P-C7's honest-vs-mutated wording exceeding the code (semantically equivalent on a gated honest PASS).
+
+Wave 2 remains undispatched (named open work). The closure session rules on the claims with these
+disclosures in view; all evidence is committed under `.ufo/waves/round-39/w1/` and `evidence/`.
