@@ -19378,6 +19378,49 @@
    "notes": "Driver digest: 00:58:45-03 launch pgid=1768791 attempt=1; 02:24:02-03 launch pgid=2682784 attempt=1; 04:45:22-03 complete. Report landed by lane identity 9a8eed59; SHONEN 4x [~]; all cited commits ancestors of main; ahead=0 clean. L1 claimed no admission. Defects: L2 floor unmet (0 dispatched seats; 64-seat v2 taskcall prepared but never issued, 10 dead-seat names without error text); separability checker timed out 600s; Ca receipt-parent mismatch (records commit not direct child of lands A); S753 capture no longer replays (CDX 200 but replay 404) routed R65-D1; receipt-sequencing process defect routed R65-D2; L2 evidence retention routed R65-D3; separability bound routed R65-D4. Spot-check: agreed with gate on S754/S770/S771 admits (S771 needs gzip decode), agreed S765 reject cascade, disagreed S753 durability; all 26 quotes <=25 words. SHONEN boxes look non-author checkable - operator to decide promotion review.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 55,
+   "date": "2026-10-24",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 55,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 55
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "source-capture"
+   ],
+   "report": ".ufo/reports/round-55/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_swe session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-55-verifier-spotcheck.md@3eae059e929e4da317c45eba18b4099b90f7541b",
+    "rechecks": "C1 evidence-verified from committed frozen receipts (ATTEST55_UNMET 0/10 at base c562d285 -> ATTEST55_HELD 10/10 at measured tip 465a96f5; idempotence 10/10 at R3 3b3e1e96; hold-drop mutant 0/0 exit1; selftest 13/13; SOURCE_CAPTURE CLEAN captures=5 exemptions=107); re-measured over committed bytes: pins captures=5 + exemptions ids=107 = 112 rows, S108 capture sha256 3edddaa1 matches committed 19,749B file, checklist 24->25, operability integer 9 terminal. C2 evidence-verified (DOCTRINE55_UNMET 2/5 -> DOCTRINE55_HELD 5/5 at 465a96f5, R3 idempotence 5/5); census re-derived 108->112 rows, tiers A91->93/B9->11/C8 (report's B->10 falsified, routed R55-V2), 0 malformed/dup, sources-census validate exit 0, strict PROXY MATCH C2=129/129 committed. Harm check: A53 17/17 D53 5/5 D54 5/5 HELD; A54 9/10 at R3 = named counter-obsolescence (frozen B7 pins exactly-24 items; verified in probe src) — accurate measurement, calibration not harmed. Spot-check 5/5 AGREE: S109/S110/S111 admit quotes + S112 reject quote verbatim inside committed captures (sha-pinned); S108 re-adjudicated reject verified on now-committed bytes (r54 UNVERIFIABLE repaired, R54-C1 closed)."
+   },
+   "commit": "kumitate-shokunin@3eae059e929e4da317c45eba18b4099b90f7541b",
+   "closed_at": "2026-10-24T11:44:39Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-10-24T08:03:57-03:00 launch kumitate round=55 pgid=3488432 driver=hyaku-inline attempt=1; 2026-10-24T08:40:05-03:00 complete kumitate round=55; hyaku-inline attempt=1. Conformance: report committed by lane identity (968d91f0); SHONEN heading 4x [~] w/ pointers; all 4 cited commits ancestors of master; lane pushed ahead=0 clean tree; prompt carries full template contract + hyaku addendum. Defects (status-neutral): R55-V1 report Landed changes omits trailing bookkeeping commits e7a07111/26c886d7 (both ancestors of tip, nothing dangles); R55-V2 report+lesson+LOG claim tier B 9->10, measured B=9->11 — append-only corrections owed next round. Routed: R55-V2 correction entries; carried R41-2, R43-1/R43-5, A3e, R53-2. SHONEN note for operator: all four boxes look fully checkable by a non-author (SKILL gate registry + 25-item executable checklist, end-to-end source-capture run logged, self-contained commands, PROVINCE frontier edit stayed in-lane); promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
