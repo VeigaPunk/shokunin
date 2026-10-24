@@ -17973,6 +17973,51 @@
    "notes": "dispatch/complete digest (watchdog.log, mutable): 19:43:51 launch attempt=3 (invalidated: L1 under executor leaf role); 19:48:02 launch attempt=1 (orchestrator freeze, zero progress); 19:57:18 launch attempt=2 (second freeze); 20:17:49 launch attempt=3; 20:33:27 launch attempt=1; 22:40:31 launch attempt=1; 23:43:39 complete attempt=1. Defects (status-neutral): round-44 Gate logged zero reject decisions (reject leg of outside spot-check could not run; resume next round); S131/S132 Gate quotes recorded under S129/S130 rows rather than per new row (grounding holds, same sources, same date). Routed to r45 (lane's own queue, SCORECARD.md:3621-3626): audit-driver HIGH latent gate defects (counter-error/tool-absent receipts can witness; stale planted receipts accepted); v4-mode predicate text naming ten unexecuted class runs; frozen selftest missing timing-only/error fixtures; SOURCES supersedes-marker enforcement gap; claim-count-derivation.md still cites S130. SHONEN boxes 2 and 4 look fully checkable by a non-author (C1/C2 end-to-end domain work logged at 942fe187; diff names only lane-domain files) - promotion is operator-owned, noted for the operator. Tool installs: none.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 38,
+   "date": "2026-10-24",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 38,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 38
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "unchanged",
+    "operability": "improved",
+    "depth": "improved",
+    "calibration": "improved",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "content-anchor corpus check (round-38 C1)",
+    "counter conformance checker (round-38 C2)",
+    "timed supersede reading (round-38 C3)"
+   ],
+   "report": ".ufo/reports/round-38/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_kfc session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-38-verifier-spotcheck.md@3f232c3e8e4e159e22b75f9727d290420ffcaac7",
+    "rechecks": "conformance PASS (report by mori-shokunin@a5015561; 15 cited commits ancestor-of-master; lane ahead=0/behind=0, only untracked .scratch/ named in report; prompt carries template contract). C1/C2 evidence-verified per gate-standard closure consequence (receipts c4/c5 before-after + selftest 6/6 + m13 kill; freeze v3 pins sha256 re-matched to committed bytes). C3 re-measured over committed bytes: S069 row diff at 62db24c, ancestry 71abd41<62db24c<daa1d4d, gate receipts :22 lines, selftest 9/0. Counters re-derived: w1 13/65, w2 40/43 (missing exactly CritC4Gaming/CritC5Gaming/ConnReceipts), resid 8/8, census rows 225->226, census validate exit 0 (W04 benign only). SCORECARD axis-score rows byte-identical f725f30..13f3db7e; QUALITY +7 append-only."
+   },
+   "commit": "mori-shokunin@13f3db7e5c7163e7ef300259ff597a42a79f81f1",
+   "closed_at": "2026-10-24T03:02:01Z",
+   "campaign": "hyaku",
+   "notes": "Watchdog digest: attempts 1-3 died to orchestrator freezes (lane-dead-no-report 19:47/19:57/20:17-03:00); final attempt launched 23:10:44, completed 2026-10-23T23:52:57-03:00. No verifier tool installs (curl/git/sha256sum/python3 present). Routed to r39 (minor): SOURCES S226 quote suffix :657-658 should read :657-659 (lane-disclosed); report/LOG cite gate-after-e37dcc6.txt:2 for stale_supersede=[S069], value at line 22 (SCORECARD already :22); w2 swarm-registry stores agentId:null for all 43 members so it cannot evidence never-spawned seats (count claim verifies independently); w1-validate.log is 0 bytes (policy-v2 band validation unevidenced, claim-adjacent only). SHONEN: all four boxes checkable by non-author now (this closure session is verifier of record); promotion is operator-owned, no [x] written, no promotion/mint performed. Spot-check: agree S226 admit (quote verbatim live+committed, 24 words); agree corpus rejects S065 and S057; round-38 Gate recorded zero rejects, sampled nearest in-registry rejects.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
