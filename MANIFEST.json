@@ -18607,6 +18607,45 @@
    "notes": "dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-10-24T01:45:55-03:00 launch revenger round=65 pgid=2484178 attempt=1; 2026-10-24T02:24:03-03:00 launch revenger round=65 pgid=2683737 attempt=1; 2026-10-24T02:49:07-03:00 complete revenger round=65. Step-1 conformant: report by lane identity e095167, SHONEN heading 4 lines, all cited commits ancestors of main, ahead=0 clean, prompt carries template contract. C2 calibration VERIFIED (re-measured). C1 coverage: frozen 9/14 target not met in-round — candidate landed, README flip deferred to orchestrator-dispatched 64-seat wave per accepted host mapping (committed spec+validated plan); honest pending-dispatch, not falsified; admission requires every claim to verify, so admitted=false / rejected-honest-stop, lanes.revenger=ok. Routed defects: D1 report seat-role mix says scribe 3, spec has 4 (mix sums 63 vs 64); D2 S039 located-quote cites line 5, committed snapshot has it at line 7 (quote text exact); D3 carried r64 routing 1 — SHONEN box 1 [x] rests on lane-dispatched verifier R64ReviewSkill, counts as [~] until non-lane confirmation; D4 orchestrator must dispatch committed round-65 wave and revenger r66 adjudicates C05 flip either way then re-measures. SHONEN boxes look non-author-checkable next round once D3 resolves — promotion is operator-owned. Spotcheck landed+pushed 8214e4dd (ls-remote verified).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 28,
+   "date": "2026-10-24",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 28,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 28
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "rotating held-out mutation gate"
+   ],
+   "report": ".ufo/reports/round-28/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_kfc session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-28-verifier-spotcheck.md@f652ca99c64631a72e06a7d2f6ffa1708794f65e",
+    "rechecks": "Step-1 conformant: report by lane identity 6c0119f, SHONEN heading 4x[~], all cited commits ancestors of master, ahead=0 clean, prompt=canonical template +hyaku addendum. C2 calibration VERIFIED: K2DoNothing 1/9 (D1-D8 FAIL) and c2-after 9/9 TARGET_MET receipts read at 123d8cd/77cdda86, counter hash c0415c9a frozen since 4f61006 (pre-data), D1 SKILL rows 633-635 and D8 630-635 spot-read, rubric 7.4286 not re-scored (honest). C1 operability: c1-before all-six-FAIL and c1-after vector read verbatim (composite TARGET_MISSED exit 1); seals sha256sum -c OK (H2+refpub); refpub 12 mutants 4/subject + 6 benign rows; r26 artifact sha 803e0096 pin matches; q36 receipts rows=4 failed=0; guard-pin defect verified (pin 3d7d301f vs committed 635ae788 at freeze 5198cc8, r27 tip 20022a65, tip); h1-rotation after-state from committed w2 receipt ReviewerSuiteMonotone.md (18/18, three held-c1v2 survivors flip, monotone, green 17/17 w 15/15). Frozen composite predicate MISSED at 77cdda86 -> rejected-honest-stop (both causes declared/evidenced, no leg rule changed after data). Census re-run exit 0, 183 rows (A=176 B=1 C=6; mined=164 queued=10 rejected=9), 7 W04 unchanged. Gate spot-check: S183 admit agreed (DOI re-opened, title/venue/date exact, 11-word quote verbatim); S062 registry reject agreed (page's 0.12 TOML claim false vs v0.13.0 changelog :36); round-28 Gate had no reject candidate (minor note). No axis harmed (diff 317ff19..3565f13 records+refpub+receipts only)."
+   },
+   "commit": "mado-shokunin@3565f13786ca563f29021db733c2d436d70c77cd",
+   "closed_at": "2026-10-24T06:13:19Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-10-23T19:47:47 lane-dead-no-report mado round=28 (attempt=1: L1 under executor leaf role); 19:47:53 launch attempt=2; 19:57:07 lane-dead (parent froze, L1 never ran); 19:57:27 launch attempt=3; 20:17:39 lane-dead (second freeze); 20:17:57 launch attempt=1; 20:33:23 lane-dead (parent SIGSEGV); 20:33:34 launch attempt=2; 2026-10-24T02:24:08 launch attempt=1; 03:01:57 complete mado round=28. Completing attempt inherited 2026-10-23 committed work (tip 317ff19). VERDICT rejected-honest-stop: C2 calibration verifies (1/9->9/9, D9 retained as non-gain); C1 operability improved on committed evidence (4 legs green on committed bytes; leg-1 substance 18/18 committed w2 receipt; refpub 12/12 sealed) but the frozen six-leg composite printed TARGET_MISSED at 77cdda86 and the claim is judged on the frozen predicate - a miss is an honest stop. Both blockers named: (a) registration-declared ephemeral H1 boundary (input cleaned pre-closure; L0 open), (b) frozen-counter guard pin never matching committed bytes since 5198cc8 (L0 open; M28-1). No leg rule changed after data; composite miss published verbatim; no axis harmed. Routed to r29: fix count-v4 guard pin + smoke-run composite at freeze (QUALITY 38); ephemeral-input preservation policy (QUALITY 39); commit standalone boolword-v5 receipts (currently report-quoted only); residual 10th record defect (SS6.6 docstring-citation overclaim) stays on queue. Operator note: SHONEN boxes 1+3 look non-author-checkable to [x]; box 2 (no new live-desktop task) and box 4 (outside-lane verifier independence) open - promotion is operator-owned. Capability row 'rotating held-out mutation gate' entered SCORECARD with demonstrated runs (h2-rotate TARGET_MET, refpub 12/12 at 77cdda86); operator may rule on its standing given the composite miss. Trivial: census-end.txt lacks the start receipt's literal exit=0 trailer line.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
