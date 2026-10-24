@@ -261,39 +261,69 @@ not, and name both in the report.
      records ≥1 admit and ≥1 reject from the assimilation set for the round's non-author closure to
      spot-check (LEARNING.md — a seat this lane dispatched is still the lane).
    - **Id collision check in scratch, before any append.** The lane registry keeps moving after the
-     package was built (kumitate and kotodama already collided — census note, risk 2). Run the check
-     with scratch committed as wave evidence:
+     package was built (kumitate and kotodama already collided — census note, risk 2). The census
+     parser accepts rows with 0–3 leading spaces (`CORPUS.md` census clause), so the extractor must
+     too — a column-zero-only pattern false-greens an indented collision (proven on a scratch
+     `  | S002 |` fixture: registry census-valid, old pattern empty `collisions`, 0–3-space pattern
+     catches S002). Run the check with scratch committed as wave evidence:
 
          S=/home/vgpnk/Projects/shokuknow
          A={{LANE_CWD}}/.ufo/waves/round-{{ROUND}}/assimilation; mkdir -p "$A"
-         grep -oE '^\|[[:space:]]*S[0-9]{3,}' {{LANE_CWD}}/corpus/SOURCES.md \
+         grep -oE '^ {0,3}\|[[:space:]]*S[0-9]{3,}' {{LANE_CWD}}/corpus/SOURCES.md \
            | grep -oE 'S[0-9]+' | sort > "$A/reg-ids"
-         grep -oE '^\|[[:space:]]*S[0-9]{3,}' "$S/merge/{{LANE}}/SOURCES.append.md" \
+         grep -oE '^ {0,3}\|[[:space:]]*S[0-9]{3,}' "$S/merge/{{LANE}}/SOURCES.append.md" \
            | grep -oE 'S[0-9]+' | sort > "$A/staged-ids"
-         comm -12 "$A/reg-ids" "$A/staged-ids" > "$A/collisions"   # empty -> cited rows append exact
+         comm -12 "$A/reg-ids" "$A/staged-ids" > "$A/collisions"   # nonempty -> renumber in scratch
 
-     A nonempty `collisions` file is fixed in scratch only: adopted ids continue the lane's registry
-     (append-only, CORPUS.md rule 2) and every adopted entry's citation is re-pointed **by document**
-     — the URL/anchor is the evidence and the id follows it, never arithmetic (fleet lesson: an id
-     shifted by one repairs one citation and breaks the next). Paste both id lists, the collision
-     count and the renumber map into the report. Drift a read-only check cannot fix (mass id drift,
-     reshuffled register) → append an L0 question and adopt nothing this round. Round end still
-     requires `{{FLEET_ROOT}}/scripts/sources-census.sh validate --root {{FLEET_ROOT}} {{LANE}}`
-     exit 0.
-   - **Quarantine — payload-absent rows.** Register (read-only; its header totals are stale — derive
-     your slice yourself):
-     `/home/vgpnk/Projects/shokuknow/.ufo/waves/corpus-expansion-1/absent-defect-register.md`, slice
-     via `awk -F'|' -v l='{{LANE}}' '$2 ~ l {print $4, $5, $6}' <register>`. Every register row of
-     this lane is quarantined: not appendable until hand-checked this round — fetch the cited
+     Prove the guard once before this lane's first append under this item: a scratch registry with
+     an indented row the staged set collides with must produce a nonempty `collisions` — if it does
+     not, the guard is broken and nothing appends. A nonempty `collisions` file is fixed in scratch
+     only: adopted ids continue the lane's registry (append-only, CORPUS.md rule 2) and every
+     adopted entry's citation is re-pointed **by document** — the URL/anchor is the evidence and the
+     id follows it, never arithmetic (fleet lesson: an id shifted by one repairs one citation and
+     breaks the next). Paste both id lists, the collision count and the renumber map into the
+     report. Drift a read-only check cannot fix (mass id drift, reshuffled register) → append an L0
+     question and adopt nothing this round.
+   - **Scratch transformation and validation, before any append — no staged row is appended as-is.**
+     Staged rows are campaign-schema, not fleet-schema: on the real kengaku package a byte-exact
+     append fails its own census gate (2 malformed rows carrying escaped `\|` pipes; 132 prose
+     recheck cells such as `2026-10-23 — re-verify …`), and a 1-entry subset copied unchanged dangles
+     `used-by` at unadopted entries. Build the append block in scratch from the rows the admitted
+     entries cite (`source:` ids in each admitted knowledge file): normalize every row to
+     `CORPUS.md`/census schema — recheck becomes a valid ISO date, `NNd`, or symbolic cadence, with
+     the stripped prose (re-verify conditions, Gate pointers) recorded in the round lesson's Gate
+     block; no cell contains a literal or escaped `|` (rewrite the anchor in your own located quote
+     so the row parses as 11 columns); `used-by` lists exactly the admitted entries citing the row;
+     status is `mined`. Then mirror the lane in scratch (copy of its `corpus/` + the append block in
+     the Registry table + the admitted knowledge files at their repo-relative paths) and gate the
+     append on it:
+
+         {{FLEET_ROOT}}/scripts/sources-census.sh validate --file "$A/validate/corpus/SOURCES.md"
+
+     Exit 0 (warnings allowed) BEFORE the first registry append — E03/E04 findings mean a duplicate
+     id or a within-scope duplicate URL: refuse that row or supersede per CORPUS.md rule 2, never
+     append past it. Round end still requires
+     `{{FLEET_ROOT}}/scripts/sources-census.sh validate --root {{FLEET_ROOT}} {{LANE}}` exit 0.
+   - **Quarantine — payload-absent rows.** Register (read-only; its header AND `## By lane` summary
+     totals are stale — derive your slice yourself), data rows only — the lane cell, a round cell
+     and an id cell (summary rows match a bare lane name and print blanks):
+
+         A={{LANE_CWD}}/.ufo/waves/round-{{ROUND}}/assimilation; mkdir -p "$A"
+         R=/home/vgpnk/Projects/shokuknow/.ufo/waves/corpus-expansion-1/absent-defect-register.md
+         awk -F'|' -v l='{{LANE}}' '$2 ~ ("`" l "`") && $3 ~ /round[0-9]+/ && $4 ~ /S[0-9]+/ \
+           {print $4, $5}' "$R" > "$A/quarantine-slice"    # every line must carry an S-id
+
+     Every slice row is quarantined: not appendable until hand-checked this round — fetch the cited
      source and locate the quote; absent → refuse the row (fabrication class, reason in the Gate
-     block); present → adopt with the anchor you located. `unreachable` is not fabrication: mark the
-     row unverifiable. Never edit the register or any campaign file; verdicts land in the lane's
-     lesson and report.
+     block); present → adopt with the anchor you located. A prose class cell ("could not be
+     fetched", "named no locator") is the register's unchecked family: mark the row unverifiable —
+     `unreachable` is not fabrication. Never edit the register or any campaign file; verdicts land
+     in the lane's lesson and report.
    - **Wave-4 quarantine-first (tabi, revenger, chousa, kotodama).** This lane's first round under
      this item adopts nothing from its package: it hand-checks the lane's full register slice and
-     lands a verdict per row (2026-10-24 counts: tabi 39, revenger 27, chousa 25, kotodama 22 —
-     re-derive at round time). An honest partial verdict list keeps adoption closed; package
-     adoption starts a later round.
+     lands a verdict per row (2026-10-24 data-row counts: tabi 38, revenger 26, chousa 24,
+     kotodama 21 — re-derive at round time). An honest partial verdict list keeps adoption closed;
+     package adoption starts a later round.
    - **considerthese.** `{{LANE_CWD}}/considerthese/` is operator-authored input: mine it, never
      edit it. At most ONE still-unimplemented proposal per round (a "proposals only … not
      implemented" item from the latest file), grounded through the lane's own bar — the reflection
