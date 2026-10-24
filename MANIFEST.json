@@ -19503,6 +19503,49 @@
    "notes": "digest: 2026-10-24T08:04:15-03:00 launch kotodama round=66 pgid=3489184 driver=hyaku-inline attempt=1 / 2026-10-24T09:03:46-03:00 complete kotodama round=66 hyaku-inline attempt=1. Defects: .ufo/waves/round-66/ fully untracked (63 seat reports + registry + row fragments; D3 undurable); end census exit 1 (E12 x23 rows appended under Leads not Registry; E11 S753 used-by '-' vs em-dash); no LOG.md round-66 entry, no SCORECARD delta (dead SHONEN box-2 pointer); report missing Sources & frontier and Trend verdicts sections; no first-class rejected rows (repeat of r65 note); Ca receipt committed FAIL while report claims PASS (sequencing artifact, predicate holds at tip). Routed: R66-D1 wave-evidence commit, R66-D2 registry placement + em-dash + census-end, R66-D3 receipt-of-receipts sequencing, R66-D4 LOG/SCORECARD entries, R66-D5 rejected rows. SHONEN not fully non-author checkable this round.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 67,
+   "date": "2026-10-24",
+   "type": "closure",
+   "lane": "kotodama",
+   "lane_round": 67,
+   "lanes": {
+    "kotodama": "ok"
+   },
+   "lane_rounds": {
+    "kotodama": 67
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "check-receipt-seq: tools/check-receipt-seq.py evaluates frozen receipts at --lands over committed bytes (git show, moved_past flag), asserts stamped==evaluated==measured + tree + counter-sha256 headers, grades post-records carrier parentage via --topo; 14/14 selftest; first working round 67"
+   ],
+   "report": ".ufo/reports/round-67/kotodama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_swe session, non-author)",
+    "spotcheck": "kotodama-shokunin/corpus/lessons/round-67-verifier-spotcheck.md@99fae3085ec858446df00c2b294748f635cb6c45",
+    "rechecks": "C re-measured over committed bytes (knowledge 240->241, registry 724->752->756, NOHARM diff = new entry only); O/Ca evidence-verified: all 3 receipts carry stamped==evaluated==measured headers, tree pins 8beb30ae/bd87caef and counter shas re-derived byte-equal; carrier proofs re-derived (e7e17af0^==c58eb84b, ecbb2851^==e7e17af0); base controls all FAIL; census validate -> ok; spot-check agree on 1 admit (S805 verbatim quote re-opened live) + 2 rejects (S829 Cloudflare 403 re-opened, S830 dup of S252)"
+   },
+   "commit": "kotodama-shokunin@99fae3085ec858446df00c2b294748f635cb6c45",
+   "closed_at": "2026-10-24T13:00:32Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-24T09:11:27-03:00 launch kotodama round=67 pgid=83855 driver=hyaku-inline attempt=1 / 2026-10-24T09:56:38-03:00 complete kotodama round=67; hyaku-inline attempt=1. No conformance defects: report landed by lane identity 9cca9ecd, SHONEN heading + 4 [~] boxes, all cited hashes ancestors of main, ahead=0. r65/r66 receipt-sequencing rejection class fixed: stamped==evaluated receipts + per-claim lands chain (A_r c5f0992 -> A_c c58eb84b -> A_ca e7e17af0 -> records ecbb2851) + post-records carrier proof. Routed: R67-D1 26 untracked wave-scratch paths (.ufo/waves/round-66 manifest-excluded classes + 172MiB r67 fabric-c clone — debt to sweep, not committable round work); R67-D2 census W04 duplicate-URL warnings; R67-D4 note — all 4 SHONEN boxes checkable by non-author, promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
