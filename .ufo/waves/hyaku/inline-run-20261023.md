@@ -312,3 +312,7 @@ dispatches prepared waves between rounds.
 - Watch item routed to the kumitate r57 close: `LOG.md:2212-2214` still says
   the r57 wave is "prepared-but-undispatched" while its seats are returning;
   the close must reconcile against this ruling.
+- Mori r41 attempt 2 FAILED on Devin free-tier rate limit (resets 14:01 UTC);
+  attempt 3 held until reset. Kumitate r57 W1 settled at 64/64 seat reports.
+- Tameshi r37 attempt 2 FAILED on the same Devin rate limit; attempt 3 held
+  to the same reset. Two L1s (kumitate r57 a2, kotodama r68) still running.
