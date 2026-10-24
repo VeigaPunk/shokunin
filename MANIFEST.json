@@ -18926,6 +18926,43 @@
    },
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 36,
+   "date": "2026-10-24",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 36,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 36
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "depth": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-36/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_kfc session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-36-verifier-spotcheck.md@fbb01cf46f8437fd1264c1a3acc053c882fa2164",
+    "rechecks": "C1 re-measured by closure (monitor at 4 revs): 796e08b=6 60/64, e423c41b control=6 60/64, b455001e=8 64/64, d9c496b1=8 64/64; kill rule diff e423c41b..b455001e = coldread evidence set only; ledger 493->497. C2 evidence-verified (lane-owned gate not executed): counter sha256 9eb8944c... equals contract.json at b455001e/tip/worktree; v1 vacuous-accept gap confirmed at c1-measure.py:517; v1 PASS / v2 FAIL on emptied-panel mutant and v2 deciding PASS at b455001e receipts verbatim (16 COPY lines = 9 pub + 7 holdout); tool 6188db16... and runner a7d3f2dd... pins byte-identical base-tip; depth 9/9 unchanged. Census re-derived 99->100 rows; SHONEN 4 boxes all [~]; S103 snapshot sha dd826dae... + 18-word quote verified; gnu.org reject re-fetched (still 60s timeout) — agree. sources-census validate exit 0."
+   },
+   "commit": "tameshi-shokunin@d9c496b19371b779ce0eec6dfee1b049b27a3a2d",
+   "closed_at": "2026-10-24T06:33:29Z",
+   "campaign": "hyaku",
+   "notes": "dispatch digest: 2026-10-24T02:51:48-03:00 launch tameshi round=36 pgid=722781 driver=hyaku-inline attempt=1; 2026-10-24T03:24:28-03:00 complete tameshi round=36; hyaku-inline attempt=1. Step-1 clean: report by lane identity f4ef953, 4/4 cited commits ancestors of master, ahead=0 behind=0, prompt carries template contract+hyaku addendum, not a marker. Routed defects for next round: (1) emptied-panel mutant commit 91373d55... not reachable from lane repo (scratch clone) — commit the mutant tree/spec next time so control inputs resolve at closure time; (2) SHONEN all [~] lane-asserted, no named non-author verifier — operator-owned promotion; boxes look mechanically checkable by a non-author. Disclosed: two v1 waves (39+39 seats) prepared-but-undispatched (no dispatch tool this seat), validated under policy v1 band 32-64; code_view ANSI-C quote class deferred to r37 with reason recorded in contract/SCORECARD/lesson Holds.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
