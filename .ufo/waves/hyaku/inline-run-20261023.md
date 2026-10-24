@@ -239,3 +239,20 @@ dispatches prepared waves between rounds.
   carries R65-D1..D4 as required repairs).
 - Waves running: kama r33 w1 (15/33), chousa r41 w1 (3/35), kotoba r65 w1
   (22/32). Kotoba r66 w1 settled at 35/35.
+
+## Checkpoint 2026-10-24 ~08:45Z
+- **kumitate r56 closed admitted** (`rounds[600]`, `f1f9c53b`): C1 source-dupes
+  (ATTEST56 0/10→10/10), C2 DOCTRINE56 2/5→5/5; census 112→116. Routed:
+  R56-V1 wave floor, R56-V2 stale A54/A55 literals, R56-V3 spotcheck README row.
+- **kotodama r66 closed rejected-honest-stop** (`rounds[601]`, `1bc00d8`):
+  C improved (registry 701→724), O improved (ACCEPT-O 9/9 legs), Ca unprovable
+  AGAIN — same receipt-sequencing class as r65: committed counter verdict FAIL
+  at stamp while the predicate holds at tip (CJ re-derived carrier
+  `4589ebdd` parent = stamped `65fe8572`). Second consecutive honest-stop;
+  r67 brief names the root cause (run counter AT the stamped lands rev, stamp
+  == evaluated in receipt). A third consecutive rejection mechanically blocks
+  the lane (tsukuroi precedent). Also routed: wave dir fully untracked (~18.6k
+  files — dur owed), census E12×23/E11, missing LOG/SCORECARD entries.
+- Dispatched: L1-kumitate-r57, L1-kotodama-r67.
+- Still active: L1-mori-r41, L1-tameshi-r37; waves kama r33 w1, chousa r41 w1,
+  kotoba r65 w1 settling.
