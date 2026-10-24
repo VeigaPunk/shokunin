@@ -40,3 +40,12 @@ excluded by the shrunk claim.
   names the other claims' counters and records; O's counter relies on
   round-66 counter files present only in other units. The manifest and run are
   receipts, not claim gates.
+
+## SHONEN
+
+- [~] Box 1 — `SKILL.md:20` decision table, `:468` error patterns, `:522` checklist; sources in `corpus/SOURCES.md` (lane assertion, no non-author verifier).
+- [~] Box 2 — end-to-end work and measurements are logged in `LOG.md` Round 66 and `SCORECARD.md` Round 66.
+- [~] Box 3 — instructions and counters are executable from repo paths; C/O/Ca receipts and census outputs are under `reports/round-66/telemetry/`.
+- [~] Box 4 — PROVINCE scope holds; entry hands canon to lore and names adjacent partial owners one-way (`corpus/knowledge/culture-material/scent-perfume-aromatics-codes.md`, Boundaries).
+
+Stale-lane: respawn-per-round driver; no other mission of this lane is open.
