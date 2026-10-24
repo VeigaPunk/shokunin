@@ -11,9 +11,8 @@ from outside), AXES.md, CORPUS.md.
 Inputs:
 - report: `.ufo/reports/round-50/kumitate.md`; dispatched prompt: `.ufo/prompts/kumitate-round-50.md`
   (canonical `templates/round-prompt.md` rendering + hyaku addendum §6)
-- lane HEAD before the round: `227b9e6e7c93edb24ea29d189f12d9526e096c4e`; after: `c90b9de94009b938fa19a089bfaa97df20b54f86`
+- lane HEAD before the round: `ff40d7dcbc90aa043d7f4003976af6a99ff76642`; after: `c90b9de94009b938fa19a089bfaa97df20b54f86`
 - driver dispatch/completion lines (`.ufo/watchdog.log`, mutable — copy this digest into notes):
-2026-10-23T18:13:04-03:00 lane-dead-no-report kumitate round=50; retry same round (hyaku-inline attempt=1: superseded at resume 2026-10-23T18:0x-03: orchestrator session OOM (memcg seat kills 18:00:55/18:01:43/18:02:17 kernel plazir27); L1 r50 died mid-round, no report landed)
 2026-10-23T19:31:47-03:00 launch kumitate round=50 pgid=1495819 driver=hyaku-inline attempt=2
 2026-10-23T19:43:24-03:00 lane-dead-no-report kumitate round=50; retry same round (hyaku-inline attempt=2: superseded at resume 2026-10-23T19:43:24-03:00: orchestrator session froze after attempt-2 launch 19:31:45; L1 r50 died mid-round, no report landed)
 2026-10-23T19:43:52-03:00 launch kumitate round=50 pgid=2391749 driver=hyaku-inline attempt=3
@@ -23,6 +22,7 @@ Inputs:
 2026-10-23T19:57:25-03:00 launch kumitate round=50 pgid=3680796 driver=hyaku-inline attempt=2
 2026-10-23T20:16:37-03:00 complete kumitate round=50; hyaku-inline attempt=2
 2026-10-23T20:27:05-03:00 complete kumitate round=50; hyaku-inline attempt=2
+2026-10-23T22:23:30-03:00 complete kumitate round=50; hyaku-inline attempt=2
 
 Duties (you may dispatch up to 8 read-only reviewer/critic `task` seats to parallelize re-checks;
 never pass a model parameter; you write only the two artifacts in steps 4–5):
@@ -39,7 +39,7 @@ never pass a model parameter; you write only the two artifacts in steps 4–5):
 2. **Claims.** For each declared claim (1–3): re-derive its before→after against `c90b9de94009b938fa19a089bfaa97df20b54f86` with a
    plain measurement you run yourself (grep/wc/jq/git/census counts over committed bytes) and
    compare with the reported values; check no owned axis was harmed
-   (`git -C /home/vgpnk/Projects/shokunin/kumitate-shokunin diff 227b9e6e7c93edb24ea29d189f12d9526e096c4e c90b9de94009b938fa19a089bfaa97df20b54f86 -- SCORECARD.md`, plus spot reads). Where the claim
+   (`git -C /home/vgpnk/Projects/shokunin/kumitate-shokunin diff ff40d7dcbc90aa043d7f4003976af6a99ff76642 c90b9de94009b938fa19a089bfaa97df20b54f86 -- SCORECARD.md`, plus spot reads). Where the claim
    rests on a lane-owned **gate** or selftest, PROTOCOL §Gate standard (Closure consequence) binds:
    verify its committed evidence (self-test tally, frozen-run verdict, revision measured) — never
    execute a sibling's gate — and say which claims were re-measured vs evidence-verified. For an
