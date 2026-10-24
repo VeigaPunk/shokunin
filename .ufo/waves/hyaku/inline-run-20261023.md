@@ -347,3 +347,8 @@ dispatches prepared waves between rounds.
   repairs), L1-mori-r41-attempt3, L1-tameshi-r37-attempt3,
   L1-kotodama-r68-attempt2 (resume-from-partial; must not re-dispatch the
   wave).
+- **mori r41 closed ADMITTED** (`rounds[604]`, spot-check `9de7323d`, fleet
+  `eed40896`): all three claims verified; 45/64 wave-seat shortfall (rate
+  wall) judged sufficient with risk recorded; routed to r42: false "8/8
+  mutants" claim (5/8 actual, 3 survivors), seat-count discrepancies, ~145
+  unnamed inherited files. Dispatched L1-mori-r42 with those repairs.
