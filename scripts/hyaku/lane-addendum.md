@@ -230,3 +230,79 @@ not, and name both in the report.
      fixture also counts, is quality work, never coverage or depth. A coverage claim names the
      surface it moves (frontier → core, a new tool, operation or edge class) and the command that
      would show it unmoved.
+10. **Assimilation contract (operator directive of 2026-10-24; binds every round dispatched on or
+   after that date).** Directive, verbatim: "it should incorporate shokuknow corpuses, and also the
+   'considerthese' subdir on each of the shokunins repos" — "assimilating these other sources (be it
+   corpuses or considerations, into each of them, individually)". External root:
+   `/home/vgpnk/Projects/shokuknow` — staging campaign `corpus-expansion-1`; its `RUNBOOK.md` §5 and
+   your package `merge/{{LANE}}/` are the adoption interface (census evidence 2026-10-24:
+   `/home/vgpnk/Projects/shokunin/.tower/comms/missions/M12-r100-assimilation-census.md`). This item
+   rides inside §2b of sections 1–5 and the 1–3 claim cap; it adds no claim slot and never relaxes
+   the canonical contract.
+   - **Source repo read-only.** Never write, commit, fetch or push into `/home/vgpnk/Projects/shokuknow`,
+     and never run a campaign tool there — `renumber-staged.py`, `merge-plan.py`, `quote-lint.py` and
+     `absent-defect-register.py` all write into it. Read their outputs; run nothing. Adoption = read
+     package bytes, write only inside {{LANE_CWD}}, with registry and knowledge edits landing solely
+     through the §4 helper; pre-adoption checks live in scratch and nothing is committed until then.
+   - **Assimilation round shape.** A round either assimilates or says `Assimilation: none` in the
+     report's Sources & frontier section (no penalty). An assimilation round takes ONE theme and
+     1–3 knowledge entries from `merge/{{LANE}}/` — `MERGE-REPORT.md` names what was staged and why,
+     entries sit at `knowledge/<target path>`, their rows in `SOURCES.append.md`. Re-ground each
+     entry in-round under CORPUS.md rule 1: re-open every cited source yourself; your Gate block
+     carries YOUR access date and ≤25-word located quote — the campaign's `opened` date and quote
+     prove nothing about this lane. Append only the rows the admitted entries cite; never
+     bulk-append a package (CORPUS.md rule 4: expansion is knowledge, not rows — a row no admitted
+     entry cites is not appended). Refused entries keep reason + flip condition in the Gate block
+     and stay refused until the reason clears. `doctrine/` is curation guidance, not corpus
+     material; only chousa may judge it as a source through its own gate.
+   - **Per-entry gates.** PROVINCE.md scope check per entry — refuse generic or sibling-domain
+     material even though the package was built per-lane. QUALITY.md bar per entry. Expansion credit
+     only on coverage-map ground the lane did not hold (corpus/README.md). The lesson's `## Gate`
+     records ≥1 admit and ≥1 reject from the assimilation set for the round's non-author closure to
+     spot-check (LEARNING.md — a seat this lane dispatched is still the lane).
+   - **Id collision check in scratch, before any append.** The lane registry keeps moving after the
+     package was built (kumitate and kotodama already collided — census note, risk 2). Run the check
+     with scratch committed as wave evidence:
+
+         S=/home/vgpnk/Projects/shokuknow
+         A={{LANE_CWD}}/.ufo/waves/round-{{ROUND}}/assimilation; mkdir -p "$A"
+         grep -oE '^\|[[:space:]]*S[0-9]{3,}' {{LANE_CWD}}/corpus/SOURCES.md \
+           | grep -oE 'S[0-9]+' | sort > "$A/reg-ids"
+         grep -oE '^\|[[:space:]]*S[0-9]{3,}' "$S/merge/{{LANE}}/SOURCES.append.md" \
+           | grep -oE 'S[0-9]+' | sort > "$A/staged-ids"
+         comm -12 "$A/reg-ids" "$A/staged-ids" > "$A/collisions"   # empty -> cited rows append exact
+
+     A nonempty `collisions` file is fixed in scratch only: adopted ids continue the lane's registry
+     (append-only, CORPUS.md rule 2) and every adopted entry's citation is re-pointed **by document**
+     — the URL/anchor is the evidence and the id follows it, never arithmetic (fleet lesson: an id
+     shifted by one repairs one citation and breaks the next). Paste both id lists, the collision
+     count and the renumber map into the report. Drift a read-only check cannot fix (mass id drift,
+     reshuffled register) → append an L0 question and adopt nothing this round. Round end still
+     requires `{{FLEET_ROOT}}/scripts/sources-census.sh validate --root {{FLEET_ROOT}} {{LANE}}`
+     exit 0.
+   - **Quarantine — payload-absent rows.** Register (read-only; its header totals are stale — derive
+     your slice yourself):
+     `/home/vgpnk/Projects/shokuknow/.ufo/waves/corpus-expansion-1/absent-defect-register.md`, slice
+     via `awk -F'|' -v l='{{LANE}}' '$2 ~ l {print $4, $5, $6}' <register>`. Every register row of
+     this lane is quarantined: not appendable until hand-checked this round — fetch the cited
+     source and locate the quote; absent → refuse the row (fabrication class, reason in the Gate
+     block); present → adopt with the anchor you located. `unreachable` is not fabrication: mark the
+     row unverifiable. Never edit the register or any campaign file; verdicts land in the lane's
+     lesson and report.
+   - **Wave-4 quarantine-first (tabi, revenger, chousa, kotodama).** This lane's first round under
+     this item adopts nothing from its package: it hand-checks the lane's full register slice and
+     lands a verdict per row (2026-10-24 counts: tabi 39, revenger 27, chousa 25, kotodama 22 —
+     re-derive at round time). An honest partial verdict list keeps adoption closed; package
+     adoption starts a later round.
+   - **considerthese.** `{{LANE_CWD}}/considerthese/` is operator-authored input: mine it, never
+     edit it. At most ONE still-unimplemented proposal per round (a "proposals only … not
+     implemented" item from the latest file), grounded through the lane's own bar — the reflection
+     is a pointer, not evidence; open what it points at. It lands as a lesson, QUALITY.md criterion
+     or SOURCES row citing `considerthese/<file>` + date. No such dir (tabi, souji, kaidoku,
+     kotodama) → one report line says so.
+   - **Frozen and resumed rounds.** This item never rewrites a frozen claim: predicate, counter,
+     kill rule and target stay exactly as declared. A resumed attempt of a round whose prompt
+     predates 2026-10-24, or whose claims are already frozen, runs those claims unchanged;
+     shokuknow/considerthese material may serve an already-frozen claim as ordinary §2b curation
+     (a source it cites, opened this round) — never as a new or widened target. Assimilation work
+     otherwise waits for the lane's next round.
