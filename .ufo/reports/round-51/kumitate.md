@@ -177,8 +177,7 @@ Census command: `/home/vgpnk/Projects/shokunin/scripts/sources-census.sh validat
   (`.ufo/l0-questions.md`, kumitate round 42 — no line number per R51-3). No new L0
   appended; the R52 routes are lane-planned, not operator decisions.
 - **Late/dead seats:** wave 1: ExecForgerControl and MutCounter delivered late (53 min /
-  59 min, after return-now nudges) and were integrated; **dead seat: ScribeEntry** (never
-  delivered, named).
+  59 min, after return-now nudges) and were integrated; **ScribeEntry returned at 1h4m** as a review pass (all gates green at the tip; two entry nits fixed in the final commit).
   Wave 2: 27/32 reports at close. Post-close returns: MutShipped (R52-6 selftest-coverage
   findings routed in the SCORECARD limits), MutCounters (14/14 drop-one mutants UNMET),
   RevStanza (A-term composition correction landed in the SCORECARD terms). Final
