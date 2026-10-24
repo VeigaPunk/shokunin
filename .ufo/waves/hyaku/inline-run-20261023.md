@@ -336,3 +336,14 @@ dispatches prepared waves between rounds.
   r37 attempt 3 queued — ALL held to the Devin rate-limit reset at 14:01 UTC
   (13:24 now); avoiding burned attempts against a hard window. Kotodama r68
   (pre-limit stream) still running.
+- 13:30Z update: kotodama r68 attempt 1 ALSO hit the wall mid-round (reset
+  slid to 14:36 — each retry pushes it out; waiting is a losing strategy).
+  Partial r68 work committed at lane tip `c1adbdf5`. Config rerouted:
+  `task: @m_kfc` (kimi-for-coding; config sha `51f2d5ed`, backup
+  `/tmp/omp-agent-config.yml.mkfc-reroute-20261024`) — Devin/swe-2 wall is
+  bypassed; revert to `@m_swe` after its reset if desired. No OpenAI route
+  touched.
+- Dispatched on the restored route (one batch): L1-kumitate-r58 (R57-V1..V4
+  repairs), L1-mori-r41-attempt3, L1-tameshi-r37-attempt3,
+  L1-kotodama-r68-attempt2 (resume-from-partial; must not re-dispatch the
+  wave).
