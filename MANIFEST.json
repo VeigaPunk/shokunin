@@ -19129,6 +19129,50 @@
    "notes": "dispatch/complete digest: 2026-10-24T03:25:51-03:00 launch kotoba round=66 pgid=359000 driver=hyaku-inline attempt=1; 2026-10-24T04:24:00-03:00 complete kotoba round=66; hyaku-inline attempt=1. Report commit 1154d57a9ebb17faa4c9f8f456a6e53c51c230ae by kotoba-shokunin; all seven cited lane commits ancestors of master; lane ahead=0 behind=0, clean worktree, pushed; prompt carries full contract (L2 >=8 matches MISSION.md); all lane commits carry kotoba-shokunin identity. Status-neutral notes: (1) round-66 gate produced zero rejected candidates (1 identified/1 screened/1 included), so the >=1-admit+>=1-reject outside sample covers only the admit — honest recorded limit, not a defect; (2) prepared W1 wave (35 seats, validated band 32-64) undispatched by the L1 seat — orchestrator dispatches prepared waves between rounds (same posture as mado r29/r30); (3) SHONEN boxes remain all [~] lane-asserted — pointers resolve but boxes 2/3 rest on r11/r8 cold runs; whether they are fully non-author checkable is the operator's promotion call (r65 D3 still operator-owned). Depth/consistency scores held 9/10 with real landed strengthening; admitted.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 31,
+   "date": "2026-10-24",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 31,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 31
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "index-row fidelity gate",
+    "resolved-citation admissions counter v2"
+   ],
+   "report": ".ufo/reports/round-31/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_swe session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-31-verifier-spotcheck.md@91862344b9fddbb5b4c3a9977acc776632993799",
+    "rechecks": "all 3 claims re-measured over committed bytes: C1 check-index-rows.py 274f7355 errors=1 exit1 -> 25622288 errors=0 exit0 + selftest 10/10; C2 count.py v2 base resolved_active 39/40 TARGET_MISSED (UNRESOLVED criterion 35) -> tip 41/41 TARGET_MET + 4 negative fixtures reproduced; C3 check-index.py 43/43 at both revs, selftest base 9/9 -> tip 12/12; sources-census.sh validate exit 0"
+   },
+   "commit": "mado-shokunin@91862344b9fddbb5b4c3a9977acc776632993799",
+   "closed_at": "2026-10-24T07:29:38Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 04:08:04 launch attempt=1; 04:11:14 lane-dead-no-report (Kimi 429 pre-prompt, no lane work); 04:11:17 launch attempt=2; 04:25:19 complete attempt=2. Defects (status-neutral): no corpus/lessons/round-31.md (Gate+Mistakes+sourced-claim evidence unrecorded; SOURCES 185->185 unchanged); report missing Sources&frontier/Trend-verdicts/Stale-lane/Landed-changes headings; report attribution defect (hyaku sweep 3186fbe appended SHONEN+shape under lane identity); wave spec 15 seats PREPARED never dispatched (below v1 band and L2 floor; lane names missing host dispatch surface); C2 axis labeled discernment in registration vs calibration in report/SCORECARD; residual cheats routed forward (n2 relevance-free resolution, outside-only criteria 19/22/23/26/28, Holds syntactic proxy, r24 S###.bin glob); inherited uncommitted r30 wave-seat leftovers are orchestrator artifacts not lane debt. SHONEN boxes look non-author checkable (operator-owned promotion).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
