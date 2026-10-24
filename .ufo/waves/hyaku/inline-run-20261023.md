@@ -275,3 +275,24 @@ dispatches prepared waves between rounds.
   archive had resolved to fleet root — same defect class fixed).
 - Kotodama r67 W1 is running (L1 self-dispatched, 64 seats; registry shows 0
   assigned — D3 class repeating, for the CJ to route).
+
+## Checkpoint 2026-10-24 ~10:00Z
+- **kotodama r67 closed ADMITTED** (`rounds[602]`, spot-check `99fae308`,
+  fleet `64f15126`): the receipt-sequencing fix verified end-to-end
+  (stamped==evaluated==measured on all three receipts; carrier proofs
+  `e7e17af0^==c58eb84b`, `ecbb2851^==e7e17af0`; base controls all FAIL).
+  Two-rejection streak broken; lane NOT blocked. Routed: R67-D1 (sweep 26
+  uncommitted `.ufo/waves/` leftovers incl. 172 MiB fabric-c clone), R67-D2
+  (W04 ×28 cross-scope duplicate URLs).
+- **kumitate r57 W1 (64 seats) dispatched**; ~50/64 reports landed at this
+  checkpoint. Notable seat findings for the L1 to disposition: A57 B8's
+  cross-round nonce sweep is dead code (git pathspec wildcards), forged
+  receipts can pass `verify --ledger` (CriticReceiptForgery); C2Overfit:
+  fabricated quotes pass E1–E3; A57 B5 "without regression" unfalsifiable
+  (CriticStaticVerdict); readme-map F1 (directory same-name substitution
+  reads CLEAN) + B10 flat-scope hole (CriticC1Scope). Also ExecChecklistBattery
+  F2: live-tree `proxy --strict` A_DRIFT from seat scratch — L1 must measure
+  H1/H3 at a committed rev.
+- Dispatched: L1-kotodama-r68 (R67-D1/D2 repairs), L1-mori-r41-attempt2,
+  L1-tameshi-r37-attempt2, CJ-kotodama-r67 (done). Kumitate r57 attempt-2 L1
+  still integrating.
