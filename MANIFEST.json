@@ -18530,6 +18530,46 @@
    "notes": "Digest (.ufo/watchdog.log, mutable): 2026-10-23T19:43:43 launch attempt=3 pgid=2386773; 19:47:47 lane-dead-no-report (invalidated: executor leaf role); 19:47:55 launch attempt=1 pgid=2411146; 19:57:07 lane-dead-no-report (orchestrator freeze); 19:57:20 launch attempt=2 pgid=3679046; 20:17:39 lane-dead-no-report (second freeze); 20:17:51 launch attempt=3 pgid=1085203; 20:33:29 launch attempt=1 pgid=2229311; 2026-10-24T02:24:06 launch attempt=1 pgid=2686292; 02:44:11 complete kama round=31 attempt=1. Attempts 1-2 froze claims/data; attempt 3 re-executed counters byte-stable, committed inherited receipts, opened S192, prepared wave-3 (32 seats, undispatched per host mapping). All three claims honestly NOT admitted (C1 no-op registry meets counter; C2 predicate False, non-injective key; C3 occurrence-only gate); no axis harmed; defects routed to round 32. Defects: RefRepair pointer drift (w2/out/RefRepair -> controls/RefRepair); w2 seat count 43 dirs vs 44 claimed. SHONEN boxes all [~] with resolvable pointers; none fully checkable non-author-side this pass. Tool installs: none.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 35,
+   "date": "2026-10-24",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 35,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 35
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "unchanged",
+    "calibration": "improved",
+    "operability": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "tally-audit-v3 runner audit (tools/tally-audit-v3.py)"
+   ],
+   "report": ".ufo/reports/round-35/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_kfc session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-35-verifier-spotcheck.md@796e08b888849308d0c4d5e932e56833600a139f",
+    "rechecks": "C1 evidence-verified (lane-owned counters not executed per Gate standard; deciding/control/before receipts verbatim, tool sha256 6188db16de045f29 re-measured, runner a7d3f2dd byte-identical base-tip, selftest 33/33, sealed manifest committed) + plain re-measurements; C2 receipts verbatim + all six classes hand re-derived at tip (m1 headers, m2 README rows 48/482/483, m3 lane copy present + fleet copy gone, m4 pin reconciliation 9dbbce62->7b11ba25, m5 adjudication block, m6 re-derivable row); command D re-run 9->9; cold-read monitor re-run 8(64/64)->6(60/64) as reported; census validate exit 0 re-run; S102 admit agreed (hash/size/quote line 303, 25 words), gnu.org reject agreed (curl timeout reproduced); wave evidence spot-checked (w1 spawn=64 v2, w2 spawn=58 v1, 54+5 reports)"
+   },
+   "commit": "tameshi-shokunin@5df962b32fec2c341df9757245a51a14176eb905",
+   "closed_at": "2026-10-24T05:50:57Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (watchdog.log): 2026-10-23T19:47:47 lane-dead-no-report attempt=1 (executor-leaf dispatch error); 19:47:57 launch attempt=2; 19:57:07 dead (parent freeze, zero progress); 19:57:31 launch attempt=3; 20:17:39 dead (second freeze); 20:18:00 launch attempt=1; 20:33:23 dead (SIGSEGV); 20:33:37 launch attempt=2; 2026-10-24T02:24:10 launch attempt=1; 02:40:46 complete. Eight dead attempts inherited, re-verified and folded by the fresh-claim landing; report @712049b by lane identity, pushed; all 12 cited commits ancestors of master; lane ahead=0 clean. Routed defects for r36: (1) LOG cites ResidualSentinelClosure.md which was never committed — dead pointer, commit file or correct pointer; (2) c1-measure.py:517 PASS lacks slot-total/distinctness asserts (disclosed in-round, successor counter frozen pre-data); (3) code_view not universal after ANSI-C $'...' quotes (disclosed, lane-routed). Calibration scalar 8->6 is the cold-read input-drift rule on four headings this round's own repairs rewrote; disclosed, refresh routed to r36; not a harm. No exploratory claim; both claims measured, no axis harmed.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
