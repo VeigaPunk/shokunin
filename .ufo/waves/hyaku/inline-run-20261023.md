@@ -316,3 +316,14 @@ dispatches prepared waves between rounds.
   attempt 3 held until reset. Kumitate r57 W1 settled at 64/64 seat reports.
 - Tameshi r37 attempt 2 FAILED on the same Devin rate limit; attempt 3 held
   to the same reset. Two L1s (kumitate r57 a2, kotodama r68) still running.
+- **Orchestration defect (self-reported)**: kumitate r57 ran DOUBLE-LIVE. I
+  declared attempt 1 dead on its PROVIDER_ERROR failure status, but the task
+  kept running; its commits (`f0dc6d1`, `c42afe1c`, `8c6f5b0`) interleaved
+  with attempt 2's (`b3bd063`…`617a9414`). All lane identity; attempt 2 reused
+  and re-verified attempt-1 artifacts; wave evidence committed at `0162083f`
+  after pruning ~3.8GB. CJ-r57 is adjudicating the final state on its own
+  merits. Lesson recorded: a `failed` task status does NOT prove the lane
+  session stopped — check lane tip movement before redispatching.
+- Kumitate r57 L1 landed: tip `617a9414`, report `8e43dbcd`; routed R57-V1..V4
+  (B8 dead nonce-grep, drop-one `held=9/9` acceptance, name-only covered
+  entries, forged-receipt defeat).
