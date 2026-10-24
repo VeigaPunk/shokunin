@@ -65,7 +65,11 @@ Work items (each with an evidence pointer):
 | the deciding receipts (before/after stdout for both counters) | `LOG.md` round-38 entry, claims C1/C2 | `97bb8f893c3f3db07bce2ff935b56fd64dc152e3` |
 | the wave dispatch outcome record (65 seats dispatched, 65 aborted, 0 reports) | `LOG.md` round-38 entry, waves bullet | `a470cc3011a965e5f3c8c960d5e8f5e0b8e8d9fc` |
 
-Lane HEAD after the round: `a470cc3011a965e5f3c8c960d5e8f5e0b8e8d9fc` (jj-lane.sh `landed` lines; the two content
+Lane tip after the round: `3a174a974f84ddac8f7c89912f30f8e514fb44f8` (jj-lane.sh `landed`; `ahead=0 behind=0`, clean
+tree). The commits that carry the round, in order: the content commit, the deciding receipts and the wave-outcome
+record were the three landed hashes `e118024ae8c45862fa393a85bd29aa928ea80d3e`,
+`97bb8f893c3f3db07bce2ff935b56fd64dc152e3` and `a470cc3011a965e5f3c8c960d5e8f5e0b8e8d9fc`; the final tip adds the
+append-only LOG line that records the wave outcome (the two content
 commits are `e118024ae8c45862fa393a85bd29aa928ea80d3e` and `97bb8f893c3f3db07bce2ff935b56fd64dc152e3`, the wave-outcome
 commit `a470cc3011a965e5f3c8c960d5e8f5e0b8e8d9fc`).
 
