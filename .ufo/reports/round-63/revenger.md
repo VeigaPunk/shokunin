@@ -57,7 +57,17 @@ All via `scripts/hyaku/jj-lane.sh`, lane identity `revenger-shokunin
 - `f6ea2932` — README C06 `partial → held` (one line; names only the new
   entry).
 - `98ad3a0c`, `aaa1790a`, `a6f5c421` — measure-after.log, final-verification,
-  SCORECARD/LOG, wave-2 receipts, routed-debt table.
+  SCORECARD/LOG, wave-2 receipts, routed-debt table. Routed debt (13-item
+  table `.ufo/waves/round-63/falsify/routed-debt.md` at the cited HEAD, 79
+  pointers verified): frozen-counter semantics (K backed-regex prefix false
+  positive, F presence-only, C3 attribution-string weakness, HOLDS_OK drift —
+  probe frozen, fixes route to a later registered counter, next unused id
+  S036); M35 both `stdout_sha256` conjuncts; C07 frontier-token legend
+  staleness (cannot fix under frozen void conditions); evidence-ID transplant
+  corollary (no committed check binds a receipt/Evidence ID to origin — Q09
+  disclaimers carried, owner unassigned); round-58/59 PASS-count quotes (139)
+  not reproducing after the C3 patch (142) — historical records left unedited,
+  disclosed; freshness hold proves byte survival, not current-host truth.
 
 LOG.md round-63 entries carry the narrative; every change above ties to one.
 
