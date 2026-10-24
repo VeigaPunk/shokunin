@@ -110,3 +110,38 @@ dispatches prepared waves between rounds.
   (honest-stop, C1 counter-falsified; CJ re-measured before/after itself), 3rd
   consecutive rejection (inline.sh advance gate). Not dispatchable without
   operator merit review.
+
+## Resume checkpoint 2026-10-24 ~03:41 -03
+### Final routing (operator clarification)
+- All 24 retry fallback chains contain no `openai-codex` route and terminate at
+  `cursor/default` (`m_auto`). OpenAI remains only as the explicitly retained
+  `m_luna` primary (`openai-codex/gpt-6-luna:max`); `m_luna` is not used by
+  standard task seats. `sentinel` and `executor` now route to `@m_flash`;
+  `m_sol` routes to `devin/swe-2:max`. `tier.openai: priority` and the enabled
+  gpt-6-luna model entry remain metadata/explicit alias availability, not
+  fallback selection. YAML validated. Backup:
+  `/tmp/omp-agent-config.yml.final-20261024`.
+
+### Settled rounds
+| lane | closed round | result | next |
+|---|---:|---|---:|
+| kotoba | 65 | admitted | 66 active |
+| tameshi | 36 | admitted | 37 active |
+| kama | 32 | admitted | 33 active |
+| chousa | 39 | admitted | 40 active |
+| kake | 46 | admitted | 47 active |
+| mori | 40 | rejected (C1 falsified; C2 also falsified by new DAG counterexamples) | 41 active |
+| revenger | 65 | rejected (C1 falsified; C2 2/2 attributed) | 66 active |
+| mado | 28 | rejected honest-stop | 29 closure pending |
+| tsukuroi | 36 | rejected; mechanically blocked after 3 consecutive rejections | blocked |
+
+### Orchestrator-dispatched waves
+- revenger r65: 64-seat validated v2 wave fully dispatched; findings informed r66.
+- mori r40: 66-seat v2 wave fully dispatched; 8 cap-race re-runs documented in
+  events.log; all 66 seat reports landed.
+- tameshi r36: w1 build (39) settled with 39 distinct reports; w2 falsify (39)
+  dispatched as one wave after the ≥32 distinct-target floor was met.
+- kake r46: residual attack wave (8) dispatched; reports landed.
+- Active L1s at checkpoint: kotodama 65, kumitate 54, kake 47, mado closure
+  29, kotoba 66, chousa 40, kama 33, tameshi 37, mori 41, revenger 66,
+  tameshi w2 falsify wave (39 seats) still settling. Holds above remain in force.
