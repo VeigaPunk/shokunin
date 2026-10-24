@@ -19589,6 +19589,51 @@
    "notes": "dispatch digest: 2026-10-24T09:07:50-03:00 launch kumitate round=57 pgid=75616 driver=hyaku-inline attempt=1; 2026-10-24T10:20:30-03:00 complete kumitate round=57; hyaku-inline attempt=1. Defects (status-neutral): (1) double-live L1 orchestration defect — attempt-1 wrongly declared dead on PROVIDER_ERROR, attempt-2 dispatched; commits interleaved on one linear tip (A1 f0dc6d1/c42afe1c/8c6f5b0; A2 b3bd063/798d4d2/1238575b/0162083f/617a9414), all lane-identity; second launch absent from watchdog log; no claim harm — counters re-measure HELD at R1 and tip; (2) report commit 8e43dbcd rewrote paragraphs of earlier filed commit 7c3d1203 in place rather than appending an erratum — routed. Routed to round 58: R57-V1 B8 dead nonce-grep+argv assert, R57-V2 drop-one held=9/9 acceptance, R57-V3 name-only covered entries, R57-V4 forged-receipt replay defeat. SHONEN boxes fully checkable by a non-author (promotion is operator-owned). Carried L0: R41-2, R43-1/R43-5, A3e, R53-2.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 41,
+   "date": "2026-10-24",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 41,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 41
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "depth": "improved",
+    "calibration": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "round-41 C1 counter conformance binding inventory v4 (P-C10 r41; evidence control-after.txt §C1)",
+    "round-41 C2 ancestry supersede reading P-C12 (evidence control-after.txt §C2)",
+    "round-41 C3 correction-record reconciliation via frozen counter (evidence calibration-after.txt)"
+   ],
+   "report": ".ufo/reports/round-41/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_swe session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-41-verifier-spotcheck.md@9de7323de482699743619cfa2ee444e7418421e3",
+    "rechecks": "C1/C2/C3 evidence-verified per Gate standard (no lane gate executed; receipts, selftest tallies 14/0 and 22/0, frozen-run verdicts, revision headers all committed and ancestor-checked) + plain re-measurement: 19/19 freeze pins hash-match git show 46275ca4; independent git derivation of the C2 36-as-of stale=[] list exact-matches the receipt (S069 stale re-derived via landing ancestry 71abd41f->daa1d4d2 vs edit 62db24c0); C3 correction records 1/1/1 in SCORECARD/LOG/round-40.md, diff 62a207f..46275ca4 = 0 deletions, frozen r40 gate bytes = pin bde5a9a3; census validate exit 0, own counts 229->231 rows, 0 malformed; 6 read-only reviewer/critic seats parallelized (C1/C2/C3 evidence, wave audit, discernment, no-harm); fixtures contain the named walrus/tuple-unpack/deadloop constructs. Wave shortfall 45/64 dead seats assessed SUFFICIENT: every claim's falsification surface covered by surviving 19 reports + L1 tip re-runs; critic layer 11/11 lost recorded as risk, not falsification."
+   },
+   "commit": "mori-shokunin@9de7323de482699743619cfa2ee444e7418421e3",
+   "closed_at": "2026-10-24T14:16:34Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-10-24T03:30:11-03:00 launch mori round=41 pgid=1096651 driver=hyaku-inline attempt=1; 2026-10-24T09:53:10-03:00 lane-dead-no-report mori round=41; retry same round (hyaku-inline attempt=1: unspecified); 2026-10-24T09:53:12-03:00 launch mori round=41 pgid=917049 driver=hyaku-inline attempt=2; 2026-10-24T10:56:52-03:00 complete mori round=41; hyaku-inline attempt=2. Report 65cf5b73 by lane identity, lands last (10:56:21 > lane tip 10:54:12), pushed; SHONEN heading 4 boxes all [ ]; cited commits ancestors of master (d4475417 correctly absent as never-pushed disposable probe); lane ahead=0 behind=0. Claims verify: C1 v4 binding inventory VERIFIED (3 survivors unmet only-timeout_scope, honest counter met, selftest 14/0, early-continue mutant kills selftest_conjunct; v3 bytes pass all 3 = do-nothing control); C2 P-C12 VERIFIED (selftest 22/0, 36 as-of stale=[] at tip incl S229-via-S231, e37dcc6 stale=[S069], 7 DAG fixtures); C3 VERIFIED (mismatches=0 observed 35/17, records append-only). No axis harmed (append-only 0 deletions in all lane-authored files; r40 freeze append is labeled +3, pins spot-verify). Routed defects for r42: (1) report says 8/8 mutants killed, committed seats show 5/8 with 3 SURVIVED coverage findings (MutC1Walrus/Tuple/DropSort) — erratum required; (2) attack-seat figure 34/53% contradicts spec 31/48.4% and 9/34 mixes definitions; (3) returned roles 1 scout/5 scribes not 2/4; (4) ~145 inherited r40/pre-r41 files committed unnamed inside d72ac16 — name them per protocol; (5) C3 had no mutation seats in spec — seat a falsifier next round. Notes: considerthese/2026-10-24.md (e4293ad9) is operator-authored, not lane debt; no SHONEN box [x]-able by a non-author — promotion operator-owned. Closure spotcheck artifact committed via jj-lane.sh --as protocol, landed 9de7323de482699743619cfa2ee444e7418421e3, ls-remote verified.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
