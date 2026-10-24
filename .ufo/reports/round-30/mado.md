@@ -222,3 +222,32 @@ disposition:
   — reverted to committed bytes, same handling as r29.
 - No finding affects the three claims' measured outcomes; all receipts
   reproduce. Lane tip is now `15ddd7d64a5f30f835533818dac5b7bcc8965181`.
+
+## Erratum 2 — counter repair, gate v2, and record corrections (appended)
+
+Lane tip at write: `a0dd664a16f90b1efe129a1ca864e873a5fb1331`
+(committed/pushed via `jj-lane.sh`).
+
+- **C2 counter repaired to the frozen rubric** (RevC2Counter S3–S6):
+  `M01-M07`-style ranges now expand to all seven ids (was: endpoints
+  only); `M<round>-<n>` compounds stay literal; `SUPER_RE` honors
+  `<N1>-<N2>` on every list member; supersession is position-guarded
+  ("later line"); `active=0` never passes. Byte-identical output at
+  `8f51071b`, `446dc396`, `d72243e`, `15ddd7d` — no verdict moves.
+- **C3 gate v2** (RevC1Fence post-review addendum): `%(path)` C-quoting
+  under `-z` still dropped non-ASCII names; fixed with
+  `core.quotepath=off` + a real-git selftest case 9. `MADO_INDEX_SELFTEST`
+  is now `9/9`; all rev verdicts unchanged.
+- **Record repairs**: `evidence/freeze-smoke-451e8b3c-full.txt`
+  (complete 14-line C2 leg, per criterion 49's full-output rule);
+  `evidence/selftest-d72243e.txt` (committed 460/460 harm watch);
+  criterion row 48 regained its dropped normative accounting sentence.
+  Errata noted: registration `:61` off-by-one; `controls/` path scope;
+  harm-watch label said `446dc396` but measured at `d72243e`.
+- **Recorded limit**: C2's rubric measures citation resolvability, not
+  lesson derivation (RevRecordsChain F3, RevC2Counter S7) — the
+  seed-five's M30-1 ground is legitimate under the rubric but the
+  metric's name overstates it; section-scoped anchor+id conjunction is
+  routed to round 31 with the fence/table-context tighten.
+- 31 of 33 seat reports are in; the two stragglers land in the next
+  sweep. No finding affects the three claims' measured outcomes.
