@@ -19790,6 +19790,49 @@
    "notes": "dispatch 2026-10-24T19:58:09-03:00 launch tameshi round=38 pgid=1645856 driver=hyaku-inline attempt=1; complete 2026-10-24T20:41:17-03:00 (~43min). Both claims re-measured and verified; no axis harmed. Wave shortfall honest: 65 seats dispatched once via headless omp -p dispatcher, all 65 aborted on dispatcher-parent exit (0 reports, 0 bytes) — claims unattacked by seats; L1-direct evidence evaluated on its own. L0 dispatch question already filed d0531d7861011830e6f43f96fd60fc37b6d72f5a (not re-filed). Routed defects: (1) contract.json no_harm_guard.depth_command_d regex ^\\s*leg matches no line in tools/mutate-and-run.sh — vacuous guard, prints recorded_cases=0 at any rev; canonical command D (SCORECARD.md:73) is operative, verified 9->9; (2) F4 write-path census unmeasured (named hold); (3) wave dispatch mechanism awaits L0 ruling.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 42,
+   "date": "2026-10-24",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 42,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 42
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "improved",
+    "coverage": "improved",
+    "freshness": "improved",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "quarantine-check surface: tools/quarantine-check.py (slice/examine/verdict/digests) re-derives the lane's 24-row absent-defect-register slice and examines all 43 quarantined quotes against committed capture material"
+   ],
+   "report": ".ufo/reports/round-42/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_swe session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-42-verifier-spotcheck.md@15f9f3fbd3c17b2155f718c67cbef0624034cf6d",
+    "rechecks": "c1-count.py and c2-count.py re-executed by the closure at pushed tip e0f4895c48d6c6e739ce9deb614b97c771a3a096 — all reported figures reproduce verbatim (C1: 24/24, 43/43, 1/1 x4, exit 0; C2: 24/24 x5, 0 dup, exit 0); committed do-nothing controls read (c1 tool-absent exit 1; c2 flipped-row CLASS_CONSISTENT=23/24 exit 1); admit spot-check S077 man-page row verified by sha256+located quote (agree); reject spot-check S086 absent verdict re-derived independently (4/46, 2/29, agree); S077 bot-wall and S100-S103 unchecked-family unverifiable calls confirmed (agree); census validate exit 0."
+   },
+   "commit": "chousa-shokunin@e0f4895c48d6c6e739ce9deb614b97c771a3a096",
+   "closed_at": "2026-10-24T23:52:29Z",
+   "campaign": "hyaku",
+   "notes": "dispatch digest: 2026-10-24T19:58:10-03:00 launch chousa round=42 pgid=1646428 driver=hyaku-inline attempt=1; 2026-10-24T20:45:11-03:00 complete chousa round=42; hyaku-inline attempt=1. Lane HEAD before 872bf3a3507875b382313f955d15960f9638256f after e0f4895c48d6c6e739ce9deb614b97c771a3a096; report committed 980859a48a156f76bc6872e608150de9a8dcfe8c under chousa-shokunin identity. Item-10 wave-4 quarantine-first honored: nothing adopted from the shokuknow package; no external fetch (fetch-scope L0 8d77e6c1 still open); S077 id collision real and routed to L0. Driver verify warned 40 uncommitted paths — all inherited/orchestrator-side (4 M: PROVINCE.md mode-bit, 2 prior-wave swarm-registries, r41 cells.json; 36 ??: r40/r41 seat reports), none authored by r42, named not swept. Wave shortfall honest: 64-seat v2 dispatch issued with 64 null agentIds, 0 seat reports/claims/dead at budget close; claims do not rest on any seat verdict. Routed defects: (1) absent-class split to r43; (2) wave dispatch-completion mechanism; (3) inherited working-tree debt resolution; (4) register staleness upstream (chousa 20 vs derived 24; header 194/324) to campaign owner via L0; (5) cosmetic 265 vs 267-byte S077 capture size. SHONEN boxes all [~] lane-asserted — checkable by a non-author; promotion is operator-owned, noted for the operator.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
