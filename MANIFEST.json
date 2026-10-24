@@ -19872,6 +19872,47 @@
    "notes": "Dispatch/complete digest: 2026-10-24T19:56:38-03:00 launch mado round=32 pgid=1636979 driver=hyaku-inline attempt=1 | 2026-10-24T20:33:30-03:00 complete mado round=32; hyaku-inline attempt=1. C1 honest stop confirmed by re-measurement (counter prints cited_entries=7 at tip, target 3; junk tree reaches the target so the counter is unsound; target not narrowed; the 3 entries + 5 rows S186-S196 are real and re-opened). C2 target met on committed evidence. Routed defects: (1) SCORECARD r32 C1 claims row (a551f71c) asserts 'target met ... cited_entries=3' - false at tip, no appended correction; (2) report's 'data commit 20:05:38' is 50e6a8f (wave-report commit); the data commit f5910876 is 20:22:50, ~15 min AFTER the 20:08:00 CriticC1Predicate falsification, and the claims row landed 20:27:38; (3) '187 MB scratch committed at f5910876' unsupported: committed scratch 11.6 MB/554 blobs, 48f9fe09 removed 2.7 MB/130 files, no gitlinks; (4) quality/check-axis-scores.py has no SKILL.md ## Gate registry row; (5) promised K2 control receipts absent from .ufo/waves/round-32/c2/controls/ (holds only the critic's c1-predicate-attack trees); (6) CriticC2Predicate attacks 3+5 graded CLAIM DEAD (rfind locator shadowing, 400-char parse window, single-axis control coverage) - report cites only the SURVIVES verdicts; (7) five uncommitted round-30 leftovers in the lane repo at closure (driver verify WARN 5 paths): M .ufo/waves/round-30/w1/reports/RevRecordsChain.md, M RevTrendExpansion.md, M SentScope.md, untracked RevTrendDiscernment.md and SimplifierC2.md - named here, untouched by closure, lane must commit-or-revert next round; (8) '~35 min over its 170-minute budget' unreconciled with the 36m52s watchdog digest (ROUND_MAXTIME=170m); (9) minor: SCORECARD base hash misrendered 25622288 (real short 2562228); (10) minor: landed-changes list omits b1b740d1/50e6a8f3; (11) minor: 'no quarantined row was appended' imprecise - S189 was slice->hand-checked PRESENT->adopted per the prescribed flow; (12) process: the §9 pre-freeze junk control was run only post-data by the critic. SHONEN boxes all [~] asserted-by-author - promotion review remains operator-owned. No L0 questions appended; no round 33 started; no lane-authored file edited.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 68,
+   "date": "2026-10-24",
+   "type": "closure",
+   "lane": "kotodama",
+   "lane_round": 68,
+   "lanes": {
+    "kotodama": "ok"
+   },
+   "lane_rounds": {
+    "kotodama": 68
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "unprovable",
+    "calibration": "unprovable",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-68/kotodama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_swe session, non-author)",
+    "spotcheck": "kotodama-shokunin/corpus/lessons/round-68-verifier-spotcheck.md@793f79746712a79f915bb481215e54bbea8b5e7a",
+    "rechecks": "C re-measured over committed bytes (hair-grep 0 at base 99fae308; corpus 241->242; registry 756->780@44c9cc28->782; entry 57L/1H1/7H2/24 cited ids; S833-S856 = 24 rows A10/B14 all mined, 23 hosts; ACCEPT-C-68 receipt 12/12 PASS stamped==evaluated==measured 44c9cc28, counter sha256 re-derived byte-equal). O/Ca evidence-verified FAIL as declared: O receipt EXEC FAIL with structural fixture defect (fixture lane never creates corpus/knowledge/a.md -> missing_paths=1; red at T0 dry-run, attempt-2 counter-legs.json, A_c receipt; accept-o.py touched only at T0); Ca receipt NameError git_bytes at accept-ca.py:224 with no assignment anywhere in the committed file (rev-1 frozen pre-data at T1, untouched after; D1 leg 26/26 paths absent, re-checked at tip incl. 172MiB fabric-c); SCORECARD diff base->tip additive only, no axis harmed; instruments untouched post-data per per-file git log. Census validate exit 0 (kotodama ok, 28 W04 groups). Discernment spot-check 4/4 agree: S839+S836 admits re-opened live (HTTP 200, quotes present), S857 reject reproduced (HTTP 403 Cloudflare ~5595 bytes), item-10 slice re-tallied offline from committed JSON (21 rows = 9 present / 8 refused / 4 unverifiable; no shokuknow adoption, considerthese absent, register recount 21 via the lesson's awk). Wave: taskcall-v2.json = 64 tasks, attack roles 37/64 = 57.8% (reviewer 23 + critic 11 + mutation-tester 3), ~50 seats dead to the rate wall, none replaced, not re-dispatched, residuals named L1 work (seat-evidence.txt). Mode-bit repairs verified: RevToolA/B/C at 100644, zero content diff base->tip."
+   },
+   "commit": "kotodama-shokunin@34121750e6579bd0c6c219a0a20aa93b408cc99f",
+   "closed_at": "2026-10-24T23:58:07Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (from closure prompt; watchdog.log mutable): 2026-10-24T10:01:15-03:00 launch kotodama round=68 pgid=2013756 driver=hyaku-inline attempt=1; 2026-10-24T20:34:31-03:00 complete kotodama round=68; hyaku-inline attempt=1. Report landed by lane identity at fleet commit cbc87da3056d996010e45a4b6d38c23c5b5904d7; lane clean, ahead=0, local==remote at closure. Status ok / admitted=false: real report and landed work, but claims O and Ca failed their frozen predicates as declared (honest stop) — useful settlement/coverage work does not rescue them (kumitate r42 class; counters frozen post-data, not edited). Trends: expansion improved, quality unchanged (two frozen instruments lacked green pre-data controls), discernment improved. Routed defects to round 69: (1) O re-declaration with an EXEC fixture that creates the used-by file, shown green before freeze (R68-M1); (2) Ca re-declaration with the rev-1 git_bytes helper fixed and the counter run end-to-end pre-data; (3) status-neutral conformance nit: report's '(+M9 in LOG)' pointer unresolved — no R68-M9 row exists in LOG.md or the lesson; append the correction; (4) status-neutral nit: '9/10 legs PASS' vs receipt's 9 printed legs (8 PASS + EXEC FAIL); (5) optional MUTABLE repair to activate S490 on preserved audit evidence (lane-routed). Item 10 verified quarantine-first without network: slice 21 rows, verdicts 9 present / 8 refused / 4 unverifiable, no adoption, considerthese absent. SHONEN: all four boxes [~] self-asserted, no [x] written by closure; promotion is operator-owned. L0: none filed this round.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
