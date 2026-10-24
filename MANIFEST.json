@@ -19460,6 +19460,49 @@
    "notes": "dispatch 2026-10-24T08:45:18-03:00 launch kumitate round=56 pgid=4136111 driver=hyaku-inline attempt=1; complete 2026-10-24T09:03:33-03:00. Claims C1 source-dupes capability and C2 visibility-lease-ack-deadlines both re-measured at reported values. Defects routed: R56-V1 L2 floor unmet (64-seat v2 wave prepared-but-undispatched; 0 L2 seats ran), R56-V2 stale frozen literals A54/A55 read 9/10 at close rev, R56-V3 spotcheck artifact lacks corpus/README.md map row (add next round). R55-V1/R55-V2 corrections landed append-only this round. Operator commit 453f6e97 sits between base and round commits; all round commits carry lane identity.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 66,
+   "date": "2026-10-24",
+   "type": "closure",
+   "lane": "kotodama",
+   "lane_round": 66,
+   "lanes": {
+    "kotodama": "ok"
+   },
+   "lane_rounds": {
+    "kotodama": 66
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved",
+    "calibration": "unprovable",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "bounded separability checker (--jobs/--budget/--max-runs/--static-only, honest-partial exit 2; tools/check-claim-separability.py)"
+   ],
+   "report": ".ufo/reports/round-66/kotodama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_swe session, non-author)",
+    "spotcheck": "kotodama-shokunin/corpus/lessons/round-66-verifier-spotcheck.md@ad5b52b0ab5691358cd38718ab75649dc9916f9a",
+    "rechecks": "C re-measured over committed bytes (registry 701->724, S779-S800 x1 each, no S777/S778, entry 22 cites; ACCEPT-C-66 PASS receipt at 65fe8572); O evidence-verified (ACCEPT-O-66 PASS, 9/9 legs, 63/63 selftest, bounded manifest run 9 runs/8 findings/exit 1); Ca committed receipt ACCEPT-CA-66 FAIL (D2 no_carrier at stamped lands rev) while the D2 carrier-parent/tree/counter-sha predicate re-derives PASS at tip for all three receipts -> unprovable per frozen-predicate convention; D3 seat files exist but are uncommitted"
+   },
+   "commit": "kotodama-shokunin@4589ebdd36659060a978d0bb5b41b8c4e275a549",
+   "closed_at": "2026-10-24T15:30:00Z",
+   "campaign": "hyaku",
+   "notes": "digest: 2026-10-24T08:04:15-03:00 launch kotodama round=66 pgid=3489184 driver=hyaku-inline attempt=1 / 2026-10-24T09:03:46-03:00 complete kotodama round=66 hyaku-inline attempt=1. Defects: .ufo/waves/round-66/ fully untracked (63 seat reports + registry + row fragments; D3 undurable); end census exit 1 (E12 x23 rows appended under Leads not Registry; E11 S753 used-by '-' vs em-dash); no LOG.md round-66 entry, no SCORECARD delta (dead SHONEN box-2 pointer); report missing Sources & frontier and Trend verdicts sections; no first-class rejected rows (repeat of r65 note); Ca receipt committed FAIL while report claims PASS (sequencing artifact, predicate holds at tip). Routed: R66-D1 wave-evidence commit, R66-D2 registry placement + em-dash + census-end, R66-D3 receipt-of-receipts sequencing, R66-D4 LOG/SCORECARD entries, R66-D5 rejected rows. SHONEN not fully non-author checkable this round.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
