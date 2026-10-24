@@ -97,3 +97,12 @@ Time budget 170m. Model label @m_kfc.
 ## Holds maintained (NOT dispatched — explicit prior orders)
 - kagi, kaidoku, kengaku, souji, tabi: content-safety/cyber-policy refusal holds.
 - kasegi: policy-paused by its own checkpoint 8bf9807.
+
+## Seat correction 2026-10-24 ~02:40 -03
+First resume spawn (11 seats, executor/reviewer role cards) cancelled: role cards
+are leaf-only and contradict the round briefs. Generic `task` seats respawned
+(suffix -2). Verified host surface: child seats expose NO task/AgentSwarm tool;
+all wave/worker dispatch is orchestrator-side per operator mapping 2026-10-23
+("every L1/wave worker/judge is a task subagent of this orchestrator"). L1s
+prepare wave specs under their lane's .ufo/waves/round-<n>/; the orchestrator
+dispatches prepared waves between rounds.
