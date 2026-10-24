@@ -67,3 +67,33 @@ Time budget 170m. Model label @m_kfc.
   true history in events.log.
 - 18:00-era OOM: 9 concurrent L1 seats were killed by memcg (kernel plazir27). Seat gate
   (`scripts/hyaku/wave-slot.sh status`) checked before waves; MemAvailable was 21151MB at 19:45.
+
+## Resume 2026-10-24 ~02:25 -03 (session turnover ~01:56, new parent session)
+- Operator directives this resume: high concurrency up to round 100;
+  OpenAI routes scrubbed from ~/.omp/agent/config.yml (gpt-6.1-sol/astra out,
+  m_sol -> devin/swe-2:max, m_luna kept as openai-codex/gpt-6-luna:max per
+  operator, cursor/default terminal fallback in every chain).
+- Verify of 7 stale claims: tsukuroi r36 LANDED (report 3e7fc4e, tip fe24c4c2b);
+  kotodama r65, revenger r65, kotoba r65, kumitate r53, kake r46, mori r40 all
+  FAIL (no report — dead-session L1s). All six reset operator-override
+  (precedent 22:26), fresh attempt 1.
+- 6-lane cap SUPERSEDED by operator "high concurrency" directive.
+
+## Claims at resume dispatch (2026-10-24 ~02:25 -03)
+| lane | round | attempt | spawned |
+|---|---|---|---|
+| tsukuroi | 36 | (closure judge) | CJ 02:25 |
+| kotodama | 65 | 1 | 02:25 |
+| revenger | 65 | 1 | 02:25 |
+| kotoba | 65 | 1 | 02:25 |
+| kumitate | 53 | 1 | 02:25 |
+| kake | 46 | 1 | 02:25 |
+| mori | 40 | 1 | 02:25 |
+| chousa | 39 | 1 | 02:25 |
+| kama | 31 | 1 | 02:25 |
+| mado | 28 | 1 | 02:25 |
+| tameshi | 35 | 1 | 02:25 |
+
+## Holds maintained (NOT dispatched — explicit prior orders)
+- kagi, kaidoku, kengaku, souji, tabi: content-safety/cyber-policy refusal holds.
+- kasegi: policy-paused by its own checkpoint 8bf9807.
