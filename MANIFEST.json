@@ -18018,6 +18018,47 @@
    "notes": "Watchdog digest: attempts 1-3 died to orchestrator freezes (lane-dead-no-report 19:47/19:57/20:17-03:00); final attempt launched 23:10:44, completed 2026-10-23T23:52:57-03:00. No verifier tool installs (curl/git/sha256sum/python3 present). Routed to r39 (minor): SOURCES S226 quote suffix :657-658 should read :657-659 (lane-disclosed); report/LOG cite gate-after-e37dcc6.txt:2 for stale_supersede=[S069], value at line 22 (SCORECARD already :22); w2 swarm-registry stores agentId:null for all 43 members so it cannot evidence never-spawned seats (count claim verifies independently); w1-validate.log is 0 bytes (policy-v2 band validation unevidenced, claim-adjacent only). SHONEN: all four boxes checkable by non-author now (this closure session is verifier of record); promotion is operator-owned, no [x] written, no promotion/mint performed. Spot-check: agree S226 admit (quote verbatim live+committed, 24 words); agree corpus rejects S065 and S057; round-38 Gate recorded zero rejects, sampled nearest in-registry rejects.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 37,
+   "date": "2026-10-24",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 37,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 37
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "freshness": "improved",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-37/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_kfc session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-37-verifier-spotcheck.md@95e33de8250ad9da8657d5af03958f4df53165f0",
+    "rechecks": "C1/C2 re-measured from committed receipts (2/7->7/7, 3/7->7/7, all after-receipts gate_sha256=9fcac047 matching recomputed landed-gate hash); gate hash recomputed via git show|sha256sum; gate evidence (selftest 267 PASS, no-harm 17/17 CLEAN) verified committed, gate never executed; SCORECARD diff additive (no axis harmed); claims body frozen at b905217 before receipt data, Errata 5-6 appended in e85ea21 naming superseded text; census validate exit 0 (70->71 rows, W04x2 standing); prompt carries full template contract; spotcheck committed+pushed via jj-lane helper, remote verified"
+   },
+   "commit": "chousa-shokunin@e85ea218deaf7deb6c46721572e71889c359d1b6",
+   "closed_at": "2026-10-24T03:02:24Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 2026-10-23T19:47:47 lane-dead (attempt=2 dispatch error, executor leaf); 19:47:59 launch a3; 19:57:07 dead (parent froze); 19:57:16 launch a1; 20:17:39 dead (second freeze); 20:17:48 launch a2; 20:33:23 dead (parent SIGSEGV); 20:33:25 launch a3; 23:24:29 launch a1; 23:58:19 complete attempt=1 (attempt 5 of the underlying round). Orchestrator deaths, not refusals. ADMIT-with-errata as the lane requested: frozen predicates P1/P2 verify on every committed receipt and no axis is harmed; residual wave falsified both claim texts beyond their counter cells (unprivileged LD_PRELOAD pin-child inheritance; BASH_FUNC_* startup-export into the capture child) — pre-existing-defect descriptions, frozen as claims.md Errata 5-6 with r38 fix directions; handling conforms to the erratum mechanism. Defects routed: (1) counter-strength debt receipts bind gate_sha256 post-run / score gate self-report (lane already carries to r38); (2) S068 anchor-label supersede row carried to r38; (3) witnessed SHELLOPTS=noexec false pin success, named limit, r38 candidate; (4) seats' answering models not individually recorded (disclosed; no claim depends on one); (5) 8 of 39 wave-1 seats returned (31 orchestrator deaths, never replaced) — disclosed, residual call met the floor. SHONEN: all 4 boxes remain [~]; box 3 evidence (selftest 267 PASS) verified from committed bytes; promotion is operator-owned — no [x] written. Tool installs this round: none (lane and closure).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
