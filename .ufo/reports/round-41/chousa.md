@@ -65,3 +65,7 @@ Misroot sweep: `git -C /home/vgpnk/Projects/shokunin status --porcelain` — no 
 Tool installs: none. Host route table read; no model aliases pinned or changed. Pacman paused host-wide; no pacman transaction attempted. No external fetches performed (loopback/installed sources only).
 
 Open L0 questions: fetch-scope `8d77e6c1` remains unanswered (round-41 additions all loopback); one new line appended this round asking whether a wave dispatch item may ever constitute egress approval pending that ruling.
+
+## Erratum (post-filed, supersedes the wording of "worktree-vs-commit" above, 2026-10-24)
+
+The routed defect paragraph above predates the sentinel's committed-tip addendum and is corrected for scope precision: after the r41 gate commit `1bd9001…` landed, the r40 counter at the **current committed tip** (`a3aac044…`, gate sha `2cb04bdd…`) returns `R39_ACTIVE_RECEIPTS=2/6` exit 1 with four `gate-sha256-mismatch` refusals; it returns 6/6 only at the **pinned revision** `6bc90e0` with gate sha `4253c187…`. This is expected receipt-sha binding, not a regression of the frozen r40 predicate and not a fresh worktree-only mismatch — the r40 claim is revision-scoped and replays 6/6 at its pinned bytes. Reissue/pinning-scope design is routed to round 42 (lane tip `d720b1de…`, `corpus/lessons/round-41.md` post-landing addendum). No r40 bytes and no gate bytes were rewritten or reset.
