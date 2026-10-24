@@ -296,3 +296,19 @@ dispatches prepared waves between rounds.
 - Dispatched: L1-kotodama-r68 (R67-D1/D2 repairs), L1-mori-r41-attempt2,
   L1-tameshi-r37-attempt2, CJ-kotodama-r67 (done). Kumitate r57 attempt-2 L1
   still integrating.
+
+## Orchestrator ruling 2026-10-24 (R56-V1 remedy, per ReviewMistakeR56V1)
+- Ruling: kumitate waves for r53–r56 were prepared-but-undispatched because the
+  accepted host mapping gives L1 seats NO task/AgentSwarm dispatch tool (seat
+  correction 2026-10-24 02:40 -03, this run card) — wave dispatch is
+  orchestrator-side, by design, not a lane omission. The r57 w1 64-seat wave
+  was dispatched by the orchestrator on 2026-10-24 (registry recorded).
+- Disposition of the four superseded payloads (r53–r56, 256 prepared seats):
+  validation artifacts retained lane-side; no retroactive dispatch owed; Q23
+  stands as the standard ("a payload proves validation, not dispatch"; floor
+  counted from spawned seats). Prompt §3/§6 "dispatch in ONE batched call"
+  text is stale against the host mapping — operator-side correction, named
+  here instead of edited lane-side.
+- Watch item routed to the kumitate r57 close: `LOG.md:2212-2214` still says
+  the r57 wave is "prepared-but-undispatched" while its seats are returning;
+  the close must reconcile against this ruling.
