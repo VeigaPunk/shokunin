@@ -18846,6 +18846,43 @@
    "notes": "dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-10-24T01:32:11-03:00 launch mori round=40 pgid=863776 driver=hyaku-inline attempt=1; 2026-10-24T02:24:04-03:00 launch mori round=40 pgid=2685288 driver=hyaku-inline attempt=1; 2026-10-24T02:58:24-03:00 complete mori round=40; hyaku-inline attempt=1. Report 22fc3dd by lane identity; cited commits bb1f2457/265a955/8d3badd/ede486b all ancestors of master; ahead=0 behind=0. Rejected: C1 falsified (binding-model blind spot: BFS-order resolution + NamedExpr/destructuring-target invisibility — three one-edit counters pass met with runtime timeout None); C2 claim layer falsified (34 vs measured 35; dag-2l walk-order arbitration, dag-h stale colmap, dag-z dead-branch eligible set); no axis harmed (diff +1084/-0). Conformance defects: 3 uncommitted c10 receipt rewrites (absolute-path/timing-only), untracked w1+scratch, stray root file 265a955. Routed to r41: (1) C1 source-order binding collection + NamedExpr/tuple/loop targets + fail-closed multi-binding + 3 selftest arms; (2) C2 ancestry-grounded supersede_landing, per-commit colmap, at-R sup_map constraint; (3) append-only 34->35/16->17 correction in SCORECARD+LOG+M24; (4) commit-or-revert receipt rewrites, delete stray, land w1 per policy; (5) freeze both conjunct-gutted interpreters + post-repair census receipt; (6) nine-survivors wording (divzero exit-2 class), dag-p/dag-r wording; (7) selftest_conjunct application gap (presence-vs-apply mutant); (8) contract 64-seat vs spec 66 reconciliation; (9) S229 word-count 15->17 + located-range fix; (10) C1 rev-arg/head_pin binding note. SHONEN: no [x] possible (no named non-author verifier); [ ] box stays lane-owned. Spot-check: S229 admit agree (quote verbatim at src:294; locator :254-256 imprecise); no reject exists this round (search log excluded 0). No tools installed by this closure.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 32,
+   "date": "2026-10-24",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 32,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 32
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-32/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_kfc session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-32-verifier-spotcheck.md@e1756593cdb6c7ad4fa9fca0eb61befe5ed45dd2",
+    "rechecks": "C1 re-measured on fresh clone at base 18464d08 and tip 967d8852: before/after receipts byte-match the committed ones (met False unresolved 3 -> met True unresolved 0; CR31:11/12/13:C1:p1 distinct keys); kill-rule controls KeyCollapse/DupKey verified from committed receipts both directions; C2 evidence-verified per Gate standard (selftest pass=6 fail=0 at named rev 967d88528c1d, gate-tip registered 10/0/0, v1 do-nothing controls exit 0, v2 fixture arms thin/noexit/badpath named defects, mutation arms load-bearing, thin-row entanglement disclosed); reconciliations 5-6 re-derived; KQ36 re-runs match; sources-census exit 0 (192->193)"
+   },
+   "commit": "kama-shokunin@907cdcc0a76f8656fde4574c0c50725fcea42fa9",
+   "closed_at": "2026-10-24T06:32:37Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (watchdog.log, mutable): 2026-10-24T02:48:12-03:00 launch kama round=32 pgid=589693 driver=hyaku-inline attempt=1; 2026-10-24T03:23:02-03:00 complete kama round=32; hyaku-inline attempt=1. Step-1 conformance pass: report committed by kama-shokunin (1d9840bb), SHONEN 4x[~] with pointers, all cited commits ancestors of master, lane ahead=0 clean, prompt embeds full contract. Claims verify; no axis harmed (SCORECARD append-only, scores held, knowledge/ untouched). Routed defects for r33: (1) report Receipt-lineage bullet contradicts committed c2r-tip.json (measures dc4258bd, committed 967d8852, not 967d8852/3f1a7330 as the bullet says); (2) C2 citation c2/controls/*-v2.out overbroad — thin-row-v2.out/empty-exit-v2.out/nonexistent-path-v2.out hold base-tree clean output, genuine arms are thin-v2/noexit-v2/badpath-v2 (substance verified); (3) S193 lesson quote location line 22 vs 15, 16 vs 17 words (<=25 satisfied); (4) gate receipts should record EXIT_CODE and evaluated revision inline. Round-32 Gate recorded zero rejections (verified against SOURCES diff); spot-check agree on admit S193 and standing reject S104. SHONEN boxes look fully checkable by a non-author — promotion is operator-owned, no [x] written. Wave w1 prepared not dispatched (accepted host mapping, validator receipts committed).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
