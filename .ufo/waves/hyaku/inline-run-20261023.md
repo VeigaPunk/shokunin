@@ -256,3 +256,22 @@ dispatches prepared waves between rounds.
 - Dispatched: L1-kumitate-r57, L1-kotodama-r67.
 - Still active: L1-mori-r41, L1-tameshi-r37; waves kama r33 w1, chousa r41 w1,
   kotoba r65 w1 settling.
+
+## Operator directive 2026-10-24 ~09:00Z: widen cheap-model routes
+- `agentModelOverrides` (config sha `81c38df1`, backup
+  `/tmp/omp-agent-config.yml.mzfl-mmim-20261024`): scribe + reviewer →
+  `@m_zfl` (zai glm-5.3-flash), distiller + sonic + seance + labrat → `@m_mim`
+  (minimax M3.1-flash). Both fallback chains verified OpenAI-free (terminate
+  cursor/default). Unchanged: executor/sentinel/mutation-tester `@m_flash`,
+  critic/planner/scout `@m_sol`, connector `@m_grok`, task `@m_swe`, main
+  `@m_kfc`; m_luna stays an explicit unused alias.
+- Operator also directed: resume dispatching waves at 64–128 width. Validator
+  band caps at 256 (live config 32–256); operator contract per-L1 atomized max
+  is 100 — waves of 64–128 are inside both.
+- **kumitate r57 W1 dispatched**: 64 seats, one task call, all 64 handles
+  recorded at `kumitate-shokunin/.ufo/waves/round-57/w1/swarm-registry.json`.
+  The attempt-1 legacy registry was archived to
+  `swarm-registry.legacy-wave-v1.json` (absolute-path mv; the earlier chousa
+  archive had resolved to fleet root — same defect class fixed).
+- Kotodama r67 W1 is running (L1 self-dispatched, 64 seats; registry shows 0
+  assigned — D3 class repeating, for the CJ to route).
