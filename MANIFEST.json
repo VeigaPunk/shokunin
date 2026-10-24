@@ -18414,6 +18414,43 @@
    "notes": "watchdog digest: 2026-10-24T00:27:42-03:00 launch kumitate round=52 pgid=2066817 driver=hyaku-inline attempt=1; 2026-10-24T01:44:36-03:00 complete kumitate round=52; hyaku-inline attempt=1. Round shape: ONE v2 wave of exactly 64 seats under policy v2 (spawn=64, one task call; 24 attack-role = 37.5% by reviewer+critic+mutation-tester, 25 with revenger = 39.1%; planner seat held by L1), no residual call. Two counting claims (C1 operability capability-deepening receipt-attest v2 ATTEST52_HELD 5/13->13/13; C2 frontier coverage sourced fail-closed-clock-validation DOCTRINE52_HELD 0/1->5/5 on S102/S103); no exploratory claim. Spot-check: S102+S103 re-opens AGREE (fresh fetches byte-identical to pinned body sha256s 9ab2b886.../9c120292..., quotes 5/14 words verbatim); zero rejects recorded this round - withheld-claims sample checked AGREE; discernment 4/4 agree. Defects (status-neutral, routed to r53): (1) SCORECARD round-52 H5 prose says 'D51 5/5 at R2' but committed census + report read DOCTRINE51 4/5 at R2 (D2 hash-miss on v1 bytes, archived hash-matching, re-anchor already routed) - stanza contradicts its own census; (2) report says all other 63 seats returned but w1/ holds 62 reports (CritDoNothing died twice named; ScribeReadme delivered payload without a w1 report). Carried lane routings: R52-9, R52-10 remainder, A3e, B5d counter source-pin arm, D51 re-anchor, freeze-time scratch-HELD witness (Q43/M5), R43-1/R43-5, R41-2 L0 pending. SHONEN 4x[~] all non-author-checkable this round - named for the operator; promotion operator-owned. Tool installs: none by closure or lane (pacman paused host-wide).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 64,
+   "date": "2026-10-24",
+   "type": "closure",
+   "lane": "kotoba",
+   "lane_round": 64,
+   "lanes": {
+    "kotoba": "ok"
+   },
+   "lane_rounds": {
+    "kotoba": 64
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "consistency": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-64/kotoba.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_kfc session, non-author)",
+    "spotcheck": "kotoba-shokunin/corpus/lessons/round-64-verifier-spotcheck.md@c98d1378236bae56d9d2ecacd5db59a4cc142e1e",
+    "rechecks": "step-1 all PASS (lane-authored report d89d640d; all cited commits ancestors of master; jj-lane state ahead=0/tracked=0/untracked=0; prompt = template rendering + hyaku addendum §6). C1/C2 evidence-verified per gate standard (lane-owned selftests not executed): v32 sha256 f8f69cad… re-derived @c019919c (223 assertions), base 12d093a1… @078eec4 (219), SM1-SM6 kill receipt arm-attributed; C2 hardened pin 8928408e… re-derived @dad926c4 (4 of 4, 43 assertions), base 0 of 4. Census exit 0, 16 W04, rows 117->118 (my counts). Spot-check: S120 admit live re-open byte-identical (sha256 15963c3e…, 22-word quote <=25) AGREE; arXiv:2103.02722 reject re-opened = wrong work AGREE. SCORECARD diff append-only; noharm 16/17 with the one sources red honestly disclosed (S120 teaches-cell append-only breach, disposition recorded)."
+   },
+   "commit": "kotoba-shokunin@247f1189db2f2ca548a2a21b07aeb1286c6034ba",
+   "closed_at": "2026-10-24T04:55:23Z",
+   "campaign": "hyaku",
+   "notes": "dispatch digest: 2026-10-24T00:21:20-03:00 launch kotoba round=64 pgid=1795540 driver=hyaku-inline attempt=1; 2026-10-24T01:51:24-03:00 complete kotoba round=64; hyaku-inline attempt=1. Defects (status-neutral, routed): (1) noharm sources arm red at tip — one append-only S120 teaches-cell correction, disposition recorded, supersede-row form rides round-65 debt (lane already routed it); (2) 1 dead seat CriticW2C1Dishonest-2 (provider cyber-policy filter, disclosed, attack covered pre-data); (3) cosmetic: C1 receipt files committed in b99fb79c while '@ c019919c' in report is the frozen measured rev — internally consistent. SHONEN boxes all [~] lane-asserted, no non-author [x]; promotion is operator-owned — no action taken. No tool installs this closure run.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
