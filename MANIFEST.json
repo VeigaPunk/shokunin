@@ -18103,6 +18103,45 @@
    "notes": "Dispatch/complete digest (from .ufo/watchdog.log, verified lines 1015-1108): 19:43:54 launch attempt=1; 19:47:47 lane-dead (executor-leaf dispatch error); 19:48:06 launch attempt=2; 19:57:07 lane-dead (parent freeze); 19:57:22 launch attempt=3; 20:17:39 lane-dead (second freeze); 20:17:53 launch attempt=1; 20:33:23 lane-dead (parent SIGSEGV); 20:33:30 launch attempt=2; 22:40:29 launch attempt=1 (successful run); 2026-10-24T00:08:49 complete attempt=1. Report committed by kotoba-shokunin (636c7ee). Conformance defects (status-neutral): (1) uncommitted working-tree edit .ufo/waves/round-63/w2/MutW2SplitClauses.md at closure (live seat) — lane commits or reverts next round; (2) report cites both controls '@ 35d44b4b' but they were committed at 8c4cefa/cbbee56 (pin base 35d44b4b internally) — citation class the lane itself mines as M95; (3) report names calibration/consistency as lowest owned axis, SCORECARD owns depth+consistency, lowest is depth (9) — rule satisfied via C1, wording to fix; (4) ExecW2E2Patch seat table '21 assertions' stale vs committed 23 (report correct). Routed: MutW2V32 G7 span_missing pinning arms deferred to round 64 per lane record a107520 + lesson row (t). SHONEN: all four boxes [~] with resolvable pointers, non-author-checkable — promotion is operator-owned; no [x] written. Tool installs: none (git/grep/wc/sha256sum/curl + committed census script only).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 51,
+   "date": "2026-10-24",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 51,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 51
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "receipt-attest"
+   ],
+   "report": ".ufo/reports/round-51/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_kfc session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-51-verifier-spotcheck.md@02c01258464cac3804faf177d0cfbf113cd59706",
+    "rechecks": "step-1 green: report by lane identity (e248fe62, lands-last by committer date), SHONEN 4x[~] conformant, 20/20 cited commits ancestral to master, ahead=0 clean pushed; census re-run exit 0 (101 rows A:87/B:6/C:8, 4 pre-existing W04); pin.receipt-attest sha256 re-measured (44919763...); A-term 71 re-counted (16 scripts + 45 .ufo + 10 nested); A51 9/9@cd7f69d3 and D51 5/5@57333ead evidence-verified with fef67079 tree delta SCORECARD-only + MutStanza proxy MATCH control; S100/S101 quotes (22/17 words) verbatim vs saved bytes and fresh re-fetch (byte-identical hashes), wave-2 re-opens AGREE; lane-owned frozen counters not executed per Gate-standard closure consequence"
+   },
+   "commit": "kumitate-shokunin@23471fb511dd18f66991b7d924891afaf699bfb9",
+   "closed_at": "2026-10-24T03:26:00Z",
+   "campaign": "hyaku",
+   "notes": "watchdog digest: 2026-10-23T22:40:30-03:00 launch kumitate round=51 pgid=11602 driver=hyaku-inline attempt=1; 2026-10-24T00:15:31-03:00 complete kumitate round=51; hyaku-inline attempt=1. Round shape: two v1 waves 32+32=64 seats, no residual call; post-close returns covered all seats (MutSkillItem last). Two counting claims (C1 operability capability receipt-attest ATTEST_HELD 0/9->9/9; C2 frontier coverage sourced DOCTRINE_HELD 0/5->5/5); no exploratory claim. Defects (status-neutral): R52-11 routed - no frozen A51/D51 receipt committed at the measured close revision fef67079 (report citation close/FINAL-*.txt reads 8/9@57333ead; after-value compositional and every conjunct verified, but Q43-class fix owed); carried lane routings R52-1..R52-10 incl. H5 R50 7/8 stale literal (no r50 repair regressed); live-tree H1 22/23 transient-scratch artifact honestly disclosed. SHONEN: all four boxes carry resolvable [~] evidence and look checkable by a non-author - promotion is operator-owned. No tool installs by this closure. Spotcheck committed by protocol identity via jj-lane helper: landed 02c01258464cac3804faf177d0cfbf113cd59706, remote-verified.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
