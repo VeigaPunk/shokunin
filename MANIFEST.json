@@ -18570,6 +18570,43 @@
    "notes": "Dispatch/complete digest (watchdog.log): 2026-10-23T19:47:47 lane-dead-no-report attempt=1 (executor-leaf dispatch error); 19:47:57 launch attempt=2; 19:57:07 dead (parent freeze, zero progress); 19:57:31 launch attempt=3; 20:17:39 dead (second freeze); 20:18:00 launch attempt=1; 20:33:23 dead (SIGSEGV); 20:33:37 launch attempt=2; 2026-10-24T02:24:10 launch attempt=1; 02:40:46 complete. Eight dead attempts inherited, re-verified and folded by the fresh-claim landing; report @712049b by lane identity, pushed; all 12 cited commits ancestors of master; lane ahead=0 clean. Routed defects for r36: (1) LOG cites ResidualSentinelClosure.md which was never committed — dead pointer, commit file or correct pointer; (2) c1-measure.py:517 PASS lacks slot-total/distinctness asserts (disclosed in-round, successor counter frozen pre-data); (3) code_view not universal after ANSI-C $'...' quotes (disclosed, lane-routed). Calibration scalar 8->6 is the cold-read input-drift rule on four headings this round's own repairs rewrote; disclosed, refresh routed to r36; not a harm. No exploratory claim; both claims measured, no axis harmed.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 65,
+   "date": "2026-10-24",
+   "type": "closure",
+   "lane": "revenger",
+   "lane_round": 65,
+   "lanes": {
+    "revenger": "ok"
+   },
+   "lane_rounds": {
+    "revenger": 65
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "calibration": "improved"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-65/revenger.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_kfc session, non-author)",
+    "spotcheck": "revenger-shokunin/corpus/lessons/round-65-verifier-spotcheck.md@8214e4dd7289d5a96cc23c0b2bf6407a9a43dbe0",
+    "rechecks": "C2 re-measured: frozen counter re-run on git-archive trees before(3eebcdd7)/after(5b4d29eb) byte-identical to committed receipts, C5 0/2->2/2 attributed, mutant lines identical, holds 4/4+10/10, foreign evidence ids real (round-42/47); C1 re-measured 8/14 both ends, candidate entry+fixture hashes verified, wave plan counts 64/dispatch.calls 1; census exit 0 (41 rows); Gate spot-check 4 rows (quotes exact, S039 line-number off-by-2); harms sweep clean"
+   },
+   "commit": "revenger-shokunin@5b4d29eb28d3d77c26009a11bbc6a68c0f559c40",
+   "closed_at": "2026-10-24T05:55:10Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-10-24T01:45:55-03:00 launch revenger round=65 pgid=2484178 attempt=1; 2026-10-24T02:24:03-03:00 launch revenger round=65 pgid=2683737 attempt=1; 2026-10-24T02:49:07-03:00 complete revenger round=65. Step-1 conformant: report by lane identity e095167, SHONEN heading 4 lines, all cited commits ancestors of main, ahead=0 clean, prompt carries template contract. C2 calibration VERIFIED (re-measured). C1 coverage: frozen 9/14 target not met in-round — candidate landed, README flip deferred to orchestrator-dispatched 64-seat wave per accepted host mapping (committed spec+validated plan); honest pending-dispatch, not falsified; admission requires every claim to verify, so admitted=false / rejected-honest-stop, lanes.revenger=ok. Routed defects: D1 report seat-role mix says scribe 3, spec has 4 (mix sums 63 vs 64); D2 S039 located-quote cites line 5, committed snapshot has it at line 7 (quote text exact); D3 carried r64 routing 1 — SHONEN box 1 [x] rests on lane-dispatched verifier R64ReviewSkill, counts as [~] until non-lane confirmation; D4 orchestrator must dispatch committed round-65 wave and revenger r66 adjudicates C05 flip either way then re-measures. SHONEN boxes look non-author-checkable next round once D3 resolves — promotion is operator-owned. Spotcheck landed+pushed 8214e4dd (ls-remote verified).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
