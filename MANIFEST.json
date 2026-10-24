@@ -18761,6 +18761,47 @@
    "notes": "Watchdog digest: 2026-10-24T01:56:02-03:00 launch kotoba round=65 pgid=2648025 driver=hyaku-inline attempt=1; 2026-10-24T02:24:03-03:00 launch kotoba round=65 pgid=2684098 driver=hyaku-inline attempt=1; 2026-10-24T03:17:11-03:00 complete kotoba round=65; hyaku-inline attempt=1. Report committed by lane identity kotoba-shokunin (7b370d5). All cited commits ancestors of master; jj-lane state ahead=0 behind=0 at closure (spot-check commit 11385e04 landed+remote-verified post-closure checks, moving tip). Prompt cc2929f5 carries full template contract. Defects (status-neutral): D1 uncommitted generated wave-runner artifacts .ufo/waves/round-65/w1|w2/swarm-registry.json (r47 precedent committed them) — kotoba to commit or ignore next round; D2 verify_corpus_integrity red identically at base and tip (pre-existing, disclosed, rides Next-66); D3 all four SHONEN boxes remain [~] lane-asserted, no non-author [x] — promotion gate not met, operator-owned. w1/w2 64 prepared-but-undispatched seats are orchestrator-dispatched between rounds, itemized in the lane specs.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 39,
+   "date": "2026-10-24",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 39,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 39
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "freshness": "improved",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-39/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_kfc session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-39-verifier-spotcheck.md@691d26476ac39b8ec8b65155b41199e6f6d1f299",
+    "rechecks": "C1 re-measured over committed receipt bytes: base 7/8 (eighth family fails live, drift -GATE_GREP/suppress/relative-override) -> 8/8 on seeds 39011/39111 against landed gate 4253c187 (tip and 6d914e95), PATH-env mutant e1251030 4/8 with exactly the claimed cells failing; all 24 receipt scenario-expect rows tie byte-exact to committed expectations.jsonl; gate/counter/verifier/subject sha256 pins re-derived by hand. C2 re-measured: c2-after-39101/39121 8/8 predicate_holds, receipt c2-after-39121 re-verified VERIFY: ok against committed bytes; committed r38 receipt refuses predicate-mismatch under r39 verifier (re-run live); verifier code re-derives verifier/subject bindings with named refusals. Selftest tally 275 cases (272->275) and no-harm battery verified as committed evidence; gate/counters themselves not executed (sibling-owned). Discernment spot-check: S071 re-opened (file sha 4ae797e6 match, quote 'remove variable from the environment' at decompressed line 28, 6 words) agree; both rejects (2nd bash(1) row, 3rd sha256sum(1) row) agree vs S068/S070/S073; census exit 0 with the 3 standing W04 named; D1-D6 repairs all verified. No axis harmed (SCORECARD diff adds only r38 attribution note + r39 section)."
+   },
+   "commit": "chousa-shokunin@6ac1007e6a5d699d0742801026554fac1d900b5d",
+   "closed_at": "2026-10-24T06:28:22Z",
+   "campaign": "hyaku",
+   "notes": "dispatch digest: launch 2026-10-24T02:24:06-03:00 'launch chousa round=39 pgid=2685723 driver=hyaku-inline attempt=1'; complete 2026-10-24T03:18:39-03:00 'complete chousa round=39; hyaku-inline attempt=1'. Report f713ee1 by lane identity, ancestor of fleet HEAD; cited commits 6d914e95/6ac1007e6 ancestors of lane master; lane ahead=0, clean tree; prompt carries full template contract. Routed for round 40: R1 must-fix - four committed c1 receipts bind stale expect_sha256 3abd2dcb (expectations edited after the c1 runs); they refuse expect-sha256-mismatch under committed bytes, so the report's 'six receipts all VERIFY: ok' is inaccurate for them - regenerate c1 receipts or append claims erratum naming superseded expectations bytes; R2 - superseded drafting receipt c1-mutenv-s39003.json (uncommitted byte bindings 89022659/1c3b2a9e) is committed though lesson says 'not committed', and report/LOG say 'receipts (6)' while seven are committed - name as superseded in erratum; R3 - report knowledge count '29 -> 31' wrong (observed 50 -> 52); R4 minor - report wave role mix (reviewer 6/revenger 2) != validated spec (reviewer 8/revenger 0; totals 32 both); R5 minor - SCORECARD 'two independent runners' overstates (both runs are the L1's own, disclosed in claims.md freeze). 32-seat wave prepared+validated but undispatched per accepted host mapping - closure judges landed claims, not the wave. All four SHONEN boxes are [~] asserted-by-author and non-author checkable - promotion review is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
