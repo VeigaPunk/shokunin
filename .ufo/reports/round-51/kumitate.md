@@ -202,3 +202,4 @@ Census command: `/home/vgpnk/Projects/shokunin/scripts/sources-census.sh validat
   needed; R51-2 terms phrasing: this report's Terms lines declare computed-vs-declared
   with the revs that moved them; R51-3 L0 style honored; R51-4 live-census limit carried
   (D5 is live-by-contract; recorded in the SCORECARD limits).
+- **Post-close addendum:** MutReceiptBytes returned after filing with A2's span-arm counterexample (true 230.042 s span displayed as 350.042 s via ±60 s prelude drift; the M2 class stays closed — routed R52-7, one-line fix named) plus R52-8..R52-10 (TZ-dependent prelude parsing, ledger extension scope, distinct-sha weakness); all recorded in the SCORECARD limits. Post-close returns now cover every wave-2 seat except MutSkillItem.
