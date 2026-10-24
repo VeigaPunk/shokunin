@@ -120,7 +120,7 @@ land before this append). Findings adjust disclosures, not the measured verdicts
 - **C2**: the routed M19 fixtures and the conjunct are rejected (ExecC8Replay, MutC8NoneVal PASS), but
   RevC8Value reproduced two HIGH survivors of the name-not-value class (function-local shadow; conditional
   module rebind) plus an inf-value and two crash-class notes. C2's frozen claim stands on its frozen
-  predicate; the survivors are routed to round 40 (lesson finding 4).
+  predicate; the survivors are routed to round 40 (lesson findings 4 and 8 — including the drain_shape decoy-communicate bypass that admits the exact M19-B shape with a dummy communicate in-function).
 - **C3**: lane byte-parity re-verified (RevC9Live PASS, line-22 receipt confirmed) and the fixtures
   re-derived (ExecC9Dags, MutC9IndexOrder — index-order mutation killed by fixtures A+D). CritC9Semantics
   reproduced two bounds: byte-parity excludes re-add histories (none on the lane), and the merge ref can
