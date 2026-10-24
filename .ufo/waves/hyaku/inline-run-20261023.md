@@ -165,3 +165,58 @@ dispatches prepared waves between rounds.
   fail` returned RETRYABLE and attempt 2 is live as `L1-mado-r31-attempt2`
   under `@m_swe`. No lane work from attempt 1.
 - Tameshi r36 w2 (39-seat falsify wave) remains in progress; r37 L1 is active.
+
+## Resume checkpoint 2026-10-24 (post 07:36Z)
+- Routing remains: generic tasks `@m_swe`; non-OpenAI fallbacks terminate at
+  `cursor/default` (`m_auto`); `m_luna` remains explicitly
+  `openai-codex/gpt-6-luna:max` but no task role points to it. The dispatched
+  kotoba seats resolved to `m_flash`, `m_sol`, and `m_grok`; no OpenAI model was
+  selected.
+- **Closed admitted:** mado r31 (`rounds[593]`, spot-check `91862344`, closure
+  `21cad5f`); kotoba r66 (`rounds[592]`, spot-check `2a8eba56`, closure
+  `27ddde75`); kake r47 (`rounds[594]`, spot-check `766f4610`, closure
+  `b41d4022`). Mado's missing SHONEN heading was added without replacing report
+  content; its prepared 15-seat wave was refused `too_few_lanes` (configured
+  floor 32), with no padding or dispatch.
+- Kotoba r66 W1: 35 seats dispatched and all 35 registry handles recorded;
+  26/35 reports present at this checkpoint. Its post-closure corpus-integrity
+  observation is red at tip `2a8eba56` because the closure spot-check is an
+  unindexed corpus file; frozen C2 measurements remain at the lane-authored
+  revisions and the issue is routed to r67, not retroactively applied.
+- Kotoba r65 W1: 32 seats dispatched and 32 handles recorded; 3 reports
+  present. Hold W2 until W1 returns at least 32 distinct output attacks and
+  the acceptance gate is met. `plan` used live config (32–256); `run` used
+  built-in policy because `UFO_PROJECT_ROOT` was lane-local, but the 32-seat
+  payload is inside the verified live band. Do not set the external-config
+  bypass to change that.
+- Chousa r41 landed at `d720b1de` with report erratum `b0b681d`; closure
+  reviewer is active. Its 35-seat wave is prepared, not yet dispatched. Chousa
+  r40 W1 has 33 reports: the live docs.python.org GET in `ScoutHashSource`
+  violated the open fetch-scope L0 (no secrets found). C1's 6/6 is scoped to
+  `6bc90e0`/gate `4253c187`; the later r41 gate commit makes the current-tip
+  result 2/6 by expected `gate-sha256-mismatch`. No gate reset; r42 owns the
+  revision/pinning follow-up. No further chousa external fetches.
+- Mado r30 W1: 33 reports; tameshi r36 W1/W2: 39 reports each. Kake r47's
+  32-seat wave and kama r33's 33-seat wave remain prepared, not dispatched.
+  Active L1s: kotodama r65, kumitate r54, mori r41, tameshi r37; independent
+  kumitate source-decision review and closure judges for chousa r41/kama r33
+  remain active. Holds from §Holds maintained remain unchanged.
+
+## Dispatch incident + checkpoint 2026-10-24 ~07:50Z
+- Kama r33 W1 (33) and chousa r41 W1 (35) hit the background-job limit (100)
+  on the first batched dispatch; a retry under the limit spawned kama's 33
+  plain-named seats for real and recorded them (`kama …/w1/out/swarm-registry.json`,
+  33 handles). A later re-dispatch attempt produced only ghost name registrations
+  (`-3` suffixed) that never started — verified absent via proc kill (33/33 not
+  found); no duplicates are running. Chousa's registry carries mixed-generation
+  ghost IDs from repeated partial attempts; its seats ARE live (reports landing).
+  Both registries may not match the live seat generation; impact is bookkeeping
+  only (all-spawn waves, no resume lanes). Reconciling registry→live-handle
+  mapping is routed to the operator, not patched lane-side.
+- Report counts at checkpoint: kama-r33-w1 15/33, chousa-r41-w1 3/35,
+  kotoba-r65-w1 22/32, kotoba-r66-w1 35/35 (settled).
+- Closures dispatched: CJ-kotodama-r65 (L1 made no admission claim — receipt-
+  parent mismatch on the calibration claim; judge assesses independently),
+  CJ-kumitate-r54 (S108 unverifiable from local captures per independent
+  reviewer; no fetch performed).
+- Active L1s: mori r41, tameshi r37. Holds unchanged.
