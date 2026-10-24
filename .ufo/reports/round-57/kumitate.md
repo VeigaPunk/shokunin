@@ -35,10 +35,11 @@ Declared claims:
   `sources-check` reads
   `CLEAN (rows=120 tiers=A:99,B:13,C:8 status=queued:12,mined:88,rejected:20 entries_with_source=14 legacy=38)`.
 - Routed-defect answers (append-only; filed bytes unchanged):
-  - **R56-V1 — L2 floor unmet (prepared-undispatched wave).** The orchestrator
-    dispatches waves between rounds, so this round prepares, validates and
-    reports its wave the same way and spawns nothing (see the wave bullet
-    below).
+  - **R56-V1 — L2 floor unmet (prepared-undispatched wave).** The round
+    prepares and validates its wave; dispatch is the orchestrator's between
+    rounds — this round the orchestrator-side machinery dispatched the
+    frozen 64-seat spec in-round (see the wave bullet below), so the defect
+    is answered in the strongest available form: the wave ran.
   - **R56-V2 — stale frozen A54/A55 exactly-N literals.** Chosen shape:
     append-only correction plus a frozen convention, not a re-pin of old
     counters. A57's B7 arm binds `items === 27` AND every item id→gate
@@ -57,27 +58,50 @@ Declared claims:
   24/64 = 37.5%; planner seat held by the L1. Spec, validation, taskCall and
   registry committed at `.ufo/waves/round-57/w1-spec.json`,
   `w1-validate.json`, `w1-taskcall.json` and `w1/swarm-registry.json`.
-  **Prepared-but-undispatched:** no seats spawned, returned or killed;
-  returned-without-report=0, dead=0, total=64 prepared. After the lane tip, at
-  2026-10-24 12:50:32Z, a non-lane writer (presumably orchestrator wave
-  tooling) rewrote the working-copy `w1/swarm-registry.json` into
-  `ufo-swarm-registry-v1` (64 members, `agentId: null`) and preserved the
-  committed file as `swarm-registry.legacy-wave-v1.json` (byte-identical). The
-  L1 left both uncommitted and untouched.
+  **Dispatched during the round** (the orchestrator-side wave machinery ran
+  the frozen spec at 2026-10-24 12:50:32Z, rewriting the working-copy
+  `w1/swarm-registry.json` into `ufo-swarm-registry-v1` (64 members) and
+  preserving the committed file as `swarm-registry.legacy-wave-v1.json`
+  byte-identical). **Seat accounting:** 64/64 reports filed under
+  `w1/<Seat>.md` (last landed ~10:20); dead=0,
+  returned-without-report=0, round total 64 (no residual call needed —
+  wave 1 carried the §3 L2 floor). Seat workspaces under `build/<Seat>/`
+  were committed after pruning extraction trees and nested `.git` clones
+  (they would have doubled proxy term A; scripts preserved as
+  `seat-scripts.tar.gz` per seat). Wave attack findings: four defects
+  routed to round 58 (`corpus/lessons/round-57.md` §Round-58 routed
+  defects — R57-V1 B8 dead nonce-grep + absent argv assert
+  (ExecReceiptSpan/CriticReceiptForgery reproductions), R57-V2 drop-one
+  `held=9/9` in-band acceptance (MutA57DropCheck), R57-V3 name-only
+  `covered` entries (SentinelRegistryPaths), R57-V4 forged-receipt defeat
+  of the replay arm); one in-round repair — SKILL.md `all sixteen` →
+  `all seventeen` (CriticNoHarm F1, the R56-V2 doc-literal class).
+  ReviewMistakeR56V1's NO-verdict notes the R56-V1 answer rests on
+  convention, not a recorded ruling — the wave's in-round dispatch is
+  the stronger answer now on record.
 - Pre-score witness (QUALITY Q43/M5): both frozen counters were run against a
-  scratch post-state commit in a `/tmp` clone before scoring — A57 10/10, D57
-  5/5 (`witness/`). The first witness attempts found two lane-artifact
-  defects, repaired before R1 with counters untouched: the entry wrapped its
-  clauses across lines (E2 read 0 bound), and one receipt path was shared by
-  two clauses (E2 distinct 12/13). The first mutant transcript also deleted a
-  single hold call; it was replaced by the all-hold-deleted mutant the B5c arm
-  specifies (`held=0/0`, exit 1).
+  scratch conformant post-state commit in a `/tmp` clone before scoring —
+  A57 10/10, D57 5/5 (`witness/`, scratch rev
+  `1cd6d667e20075fd2e77e6e655bc755f95e3d940`). Reuse audit: attempt-1's
+  inherited witness was UNMET (1/10, 1/5 — its scratch carried the base
+  state), so it was re-run; the audit also found and repaired, before any
+  R1 scoring: a B3-arm(d) `ReferenceError` crash in the frozen A57 counter
+  (`lines` out of scope; probe re-pinned in `counter-pins.json` before any
+  score was taken), a receipt span of 189 s (< 300 s; run-3 re-minted, final
+  span 326,213 ms), the entry's receipt tokens on continuation lines (E2
+  bound 0/13 — the E2 fix folded each token onto its clause line), one
+  receipt path shared by two clauses (E2 distinct 12/13 — clause 11 moved
+  to a new `grace-window.txt` receipt), a lane-internal `ScratchWitness`
+  clone that doubled proxy term A (180 vs 90 — removed), and a mutant
+  transcript run against pre-state; it was replaced by the all-hold-deleted
+  mutant the B5c arm specifies (`held=0/0`, exit 1).
 - Misroot sweep: the lane wrote no fleet-root files besides this report.
   `.ufo/state/*` and `.ufo/watchdog.log` untouched. Two misrouted IRC messages
-  about kotodama's r67 counters reached this session: an alert from
-  `L1-kotodama-r67.CriticFrontier` and the resolution from `L1-kotodama-r67`.
-  Neither was acted on (cross-lane) or answered (no agent messaging channel in
-  this session); the kotodama orchestrator should confirm the alert reached
+  about kotodama's r67 counters reached this lane's sessions: an alert from
+  `L1-kotodama-r67.CriticFrontier` (answered by attempt-2's L1 with a
+  decline-to-act, cross-lane scope) and the resolution from
+  `L1-kotodama-r67` (read; no reply owed). Neither was acted on
+  (cross-lane); the kotodama orchestrator should confirm the alert reached
   its own L1.
 - Tool installs/updates: none. **Stale-lane:** respawn-per-round; no other
   kumitate mission open.
@@ -95,27 +119,39 @@ Declared claims:
   capability row + move log + round-57 section, frontier entry + S117–S120
   rows + captures + lesson + README rows + PROVINCE + QUALITY Q48,
   counter-mutant transcript, LOG.md round-57 entry, R56-V1/V2/V3 answers.
-- `b3bd0633aec43ad2559f980b400e4d7077e10af3` — **concurrent writer, not this
-  L1 session**: committed this session's uncommitted R1 claim receipts
-  (`close/FINAL-attest57-R1.txt`, `close/FINAL-doctrine57-R1.txt`,
-  `selftests.txt`, `prior-probes.txt`), re-minted receipt run-3, and rewrote
-  the mutant transcript and witness outputs.
-- `798d4d23743487d0c642239ca54deba421021af3` — **concurrent writer**: a second
-  set of close receipts scored at `b3bd0633` (`attest57-final.txt` 10/10,
-  `doctrine57-final.txt` 5/5, `prior-counters-at-close.txt`,
-  `sources-census-after.txt`, `harm-battery.txt`).
+- `b3bd0633aec43ad2559f980b400e4d7077e10af3` — **concurrent writer
+  (`L1-kumitate-r57-attempt2`, the second dispatched L1)**: its own R1 over
+  the same post-state plus the corrected receipts (run-3 re-mint, span
+  326,213 ms), HELD witness files, honest mutant transcript and the
+  B3-arm(d) probe fix with re-pin.
+- `798d4d23743487d0c642239ca54deba421021af3` — **concurrent writer
+  (attempt-2)**: a second set of close receipts scored at `b3bd0633`
+  (`attest57-final.txt` 10/10, `doctrine57-final.txt` 5/5,
+  `prior-counters-at-close.txt`, `sources-census-after.txt`,
+  `harm-battery.txt`).
 - `c42afe1c189f2a1ecbe175f6e4ea4f9065c138d7` — SCORECARD measured-commit slots
   filled with R1.
+- `1238575b6522d839699df443ed40b29c49d2b5a7` — **concurrent writer
+  (attempt-2)**: idempotence re-run at `798d4d23`
+  (`close/IDEMPOTENCE-798d4d2.txt`): A57 10/10, D57 5/5.
 - `8c6f5b017d149b18134917378cdbed3b492d8e89` — idempotence re-run at the
   bookkeeping tip (`close/IDEMPOTENCE-c42afe1c….txt`): A57 10/10, D57 5/5
-  (lane tip).
+  (lane tip at report time).
 
-(Complete r57 lane-commit list. All five carry the lane identity, but two
-landed from a concurrent writer — most likely a second live session on the
-same round, e.g. an `omp` process running from the fleet root since 02:11.
-Both claims were independently re-measured at its tip `798d4d23`: A57 10/10,
-D57 5/5. The orchestrator should confirm that only one kumitate r57 L1 was
-meant to be live and reconcile any second report it files.)
+(Complete r57 lane-commit list: `0162083f44b1508a22b8bd6d16d6f0822f99d3c8`
+— wave-1 evidence commit (64 seat reports `w1/*.md`, settled
+`ufo-swarm-registry-v1` + preserved `swarm-registry.legacy-wave-v1.json`,
+`build/` seat evidence with workspace trees pruned and scripts tarred,
+lesson round-58 routed defects R57-V1..V4, SKILL `all seventeen` repair);
+`617a9414c32913b8fe75fbd76741febc68d3e80c` — tip recheck transcript
+`close/tip-recheck-0162083f….txt`: A57 10/10, D57 5/5 at the wave-evidence
+tip. All eight r57 commits carry the lane identity; two L1 sessions
+interleaved on the same round — attempt 1
+(`L1-kumitate-r57`, presumed dead on PROVIDER_ERROR but alive) and attempt 2
+(`L1-kumitate-r57-attempt2`). Every claim was independently re-measured at
+both branches' tips: A57 10/10, D57 5/5 at `f0dc6d1`, `b3bd063`, `798d4d2`,
+`8c6f5b0` and `0162083f`. The orchestrator should confirm only one kumitate
+r57 L1 was meant to be live.)
 
 ## Before → after measurements
 
