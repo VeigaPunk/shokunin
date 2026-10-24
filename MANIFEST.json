@@ -19214,6 +19214,47 @@
    "notes": "dispatch/complete digest: 2026-10-24T03:23:42-03:00 launch kake round=47 pgid=314224 driver=hyaku-inline attempt=1; 2026-10-24T04:33:29-03:00 complete kake round=47; hyaku-inline attempt=1. Report commit 7b29caa2817f4c6af5847256019e65e9b10fb519 by kake-shokunin; all five cited lane commits ancestors of master; ahead=0 behind=0, pushed; prompt carries full contract. Status-neutral items: (1) prepared 32-seat v1 wave committed but 0 seats dispatched (host mapping: orchestrator dispatches) — L2 floor unmet in execution, operator-routed; (2) eight orchestrator-owned untracked reports under .ufo/waves/round-46/residual/ remain uncommitted in lane worktree — durability item; (3) no rejected source candidate recorded this round — reject leg of outside spot-check unexercised, lane round 48 should record one; (4) R46 advisory residual findings stay open (rev-parse full-40 false-greens, Base-case misses, fixture-mirror oracle, 3 surviving semantic mutants, receipt-binding alternative); (5) superseded [r47-correction R6] line names a never-committed path, correctly superseded append-only. SHONEN not fully non-author-checkable (box2 [ ]). Tool installs: none.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 41,
+   "date": "2026-10-24",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 41,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 41
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "improved",
+    "coverage": "improved",
+    "freshness": "improved",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-41/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_swe session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-41-verifier-spotcheck.md@872bf3a3507875b382313f955d15960f9638256f",
+    "rechecks": "C1 re-measured: c1-count.py --gate controls/base-gate-r41.sh -> CAPTURE_PIN_MATCH=1/12 exit1 (matches committed control-before.txt); --gate tools/research-gate.sh -> 12/12 exit0 (matches measure-after-c1.txt); pin table/CAP_CHILD_PATH/LD-scrub verified in committed bytes a3aac044:tools/research-gate.sh. C2 re-measured: TSV-absent via /tmp copy -> W04_DISPOSITIONED=0/5 exit1; landed tree -> 5/5 exit0 (matches committed receipts). Selftest 275/275 evidence-verified (committed tally lesson:11 + SCORECARD r41 + 272->275 lineage), sibling gate not executed. sources-census.sh validate exit 0 (5x W04 advisory + ok). Spot-check 5/5 agree (admit knowledge entry, reject canonical-URL fetch under open L0 8d77e6c1, S075/S076 quotes+sha256 re-opened byte-exact from installed copies)."
+   },
+   "commit": "chousa-shokunin@d720b1de0864e68d7cbe79fbb9d3f1a340bade25",
+   "closed_at": "2026-10-24T07:38:30Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-10-24T04:15:40-03:00 launch chousa round=41 pgid=1521000 driver=hyaku-inline attempt=1; 2026-10-24T04:34:10-03:00 complete chousa round=41; hyaku-inline attempt=1. Conformance: report a54d40c8 + erratum b0b681d (append-only, lane identity); SHONEN heading 4x [~] w/ pointers; cited commits b173b094/1bd90013/a3aac044 ancestors of master; lane state ahead=0 pushed at closure tip d720b1de (post-filed lesson addendum, lane identity); prompt carries full contract. Inherited worktree: 33 untracked + swarm-registry.json under .ufo/waves/round-40/w1/ (orchestrator r40 wave, untouched) + cells.json receipt churn (counter artifact, wave-state restored). Routed: (R1) r40 counter revision-scope design -> round 42 (2/6 at tip vs 6/6 at pinned 6bc90e0 is expected receipt-sha binding per lane erratum); (R2) cells.json tracked-but-regenerated drift -> lane next round; (R3) prepared-undispatched 35-seat wave -> orchestrator dispatch; fetch-scope L0 8d77e6c1 + new dispatch-item egress question remain open; SHONEN boxes are non-author checkable (operator promotion decision). No external fetches performed by closure.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
