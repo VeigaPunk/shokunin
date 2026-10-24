@@ -19753,6 +19753,43 @@
    "notes": "Dispatch digest (committed copy of the mutable .ufo/watchdog.log lines): 2026-10-24T10:24:41-03:00 launch kumitate round=58 pgid=217014 driver=hyaku-inline attempt=1 | 2026-10-24T19:58:14-03:00 complete kumitate round=58; hyaku-inline attempt=1. Step-1 conformance: report committed in the fleet repo by the lane identity 8071b5bf3550df5d6dbe2d42391283d75a63476e (pathspec-limited, 1 file); SHONEN heading present with one line per box; every cited lane commit (50548ae5, 6affb9eb, 8984889d, b81a598e, 95ab6fc9) exists and is an ancestor of master; lane clean and pushed (ahead=0, remote=95ab6fc9); the dispatched prompt carries the round contract and all five child-lane items; report is not a marker. Claims: C1 operability capability receipt-evidence + readme-map v2 (ATTEST58 0/10 -> 10/10, re-measured) and C2 coverage frontier entry failure-recovery-replay.md (DOCTRINE58 2/5 -> 5/5, re-measured; the report states the base as 0/5, its own committed base receipt reads 2/5) both verify; no owned axis harmed; the K_members/K_sections 53->52 move is disclosed host drift on the kimi host root (search-index absent), not a lane-owned surface. No exploratory claim, so no unprovable-but-better judgment was owed. Routed defects (lane must fix next round; recorded in the spot-check file): R58-V1 C2 base counter misreported as held=0/5 in the report and SCORECARD (measured 2/5; the lane's own README row says 2/5); R58-V2 report says seats spawned/dispatched 64/64 while the registry shows 64 planned, 35 reporting and 29 never spawned (agentId=null); R58-V3 corpus/README.md:172 cites S121 for the new entry's Temporal source and S121 is not a row in corpus/SOURCES.md (correct id S112; a live citation defect no gate covers); R58-V4 tier counts stated as 96->99 A, census reads 99->102 A (123 rows, B=13, C=8); R58-V5 SKILL.md prose says Seventeen are gates while its own table carries 18 gate rows (the verdict-map line for eighteen is correct); R58-V6 no receipt-evidence row in the SCORECARD capabilities table although C1 is typed a capability acquisition, and the readme-map row is stale (v1/135/14-14 vs v2/138/16-16); R58-V7 this non-author spot-check file lands without a README row or readme-map pin (the lane owns both, Q48 pattern, else readme-map reads DRIFT at r59 open); R58-V8 wording - the lesson calls S126 a same-page duplicate where the campaign MERGE-REPORT says a shared page is not automatically a duplicate (decision unaffected). Handoff-claim correction: the two open L0 questions are appended and committed to .ufo/l0-questions.md by protocol-shokunin in 5426ed4238885c480f0a98ba838d47a7603bf6c5 (round-58 kumitate L0 questions, orchestrator durability), an ancestor of the fleet HEAD - the claim that they were never appended is stale; no L0 append was made on the lane's behalf by the reviewer. Integrator commit for the spot-check: 0f66ecd4a9efd10b7c0daab35891edbdd6c74b5f (protocol identity, one path, pushed; remote master = 0f66ecd4). No report/SCORECARD/LOG/SKILL/PROVINCE edit, no promotion, no mint, no r59, no sibling gate executed.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 38,
+   "date": "2026-10-24",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 38,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 38
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "depth": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-38/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_swe session, non-author; Kimi fresh closure agent)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-38-verifier-spotcheck.md@50aadd1bbd94e43cd3fcfb81459414394db2dc35",
+    "rechecks": "C1 counter re-run at base (m6=1 total=1 live fleet; total=2 with m3 file re-staged in scratch fleet clone) and tip (total=0 exit 0); C2 counter re-run at base (cases=0/3 exit 1) and tip (cases=3/3 mutant_killed=true entry_ok=true, tool sha matches frozen pin); command D recorded_cases=9 depth_score=9 at both revs; S105/S106 re-fetched sha256-match, quotes verbatim <=25 words; census validate exit 0"
+   },
+   "commit": "tameshi-shokunin@3a174a974f84ddac8f7c89912f30f8e514fb44f8",
+   "closed_at": "2026-10-24T23:49:10Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-10-24T19:58:09-03:00 launch tameshi round=38 pgid=1645856 driver=hyaku-inline attempt=1; complete 2026-10-24T20:41:17-03:00 (~43min). Both claims re-measured and verified; no axis harmed. Wave shortfall honest: 65 seats dispatched once via headless omp -p dispatcher, all 65 aborted on dispatcher-parent exit (0 reports, 0 bytes) — claims unattacked by seats; L1-direct evidence evaluated on its own. L0 dispatch question already filed d0531d7861011830e6f43f96fd60fc37b6d72f5a (not re-filed). Routed defects: (1) contract.json no_harm_guard.depth_command_d regex ^\\s*leg matches no line in tools/mutate-and-run.sh — vacuous guard, prints recorded_cases=0 at any rev; canonical command D (SCORECARD.md:73) is operative, verified 9->9; (2) F4 write-path census unmeasured (named hold); (3) wave dispatch mechanism awaits L0 ruling.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
