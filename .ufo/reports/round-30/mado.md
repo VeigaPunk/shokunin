@@ -251,3 +251,22 @@ Lane tip at write: `a0dd664a16f90b1efe129a1ca864e873a5fb1331`
   routed to round 31 with the fence/table-context tighten.
 - 31 of 33 seat reports are in; the two stragglers land in the next
   sweep. No finding affects the three claims' measured outcomes.
+
+## Erratum 3 — expansion verdict restated (append-only)
+
+Lane tip at write: `274f7355366d38d6e78f641ad62472e68df4686a`.
+
+`w1/reports/RevTrendExpansion.md` (F1/F2, adopted reading F4): the
+expansion bullet's supports were overclaimed. Restated verdict:
+**expansion — improved, narrow, capability-only.** The single valid
+support is the admitted capability row; the SOURCES row (source growth
+is not expansion, r21/r29) and C1's index rows (already booked as
+r27/r28 expansions) carry no expansion weight. This is the lane's first
+capability-only expansion verdict — a reading of `LEARNING.md:33`'s
+observable column + `LOG.md:1447/1529` vocabulary; the strict
+entries-only cell would read `unchanged` (0 new knowledge entries).
+The capability row's scope is corrected in SCORECARD (new surfaces:
+`--root`, refusals, `--selftest`, setup-error, exit contract — not
+revision scoring, which pre-existed); evidence re-pointed to the
+repaired-gate receipt. All three claims' measured outcomes stand; 32 of
+33 seats reported.
