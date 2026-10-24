@@ -176,10 +176,14 @@ Census command: `/home/vgpnk/Projects/shokunin/scripts/sources-census.sh validat
 - **Open L0:** the R41-2 gate-pins authority question stays pending
   (`.ufo/l0-questions.md`, kumitate round 42 — no line number per R51-3). No new L0
   appended; the R52 routes are lane-planned, not operator decisions.
-- **Late/dead seats:** wave 1 dead: MutCounter, ScribeEntry (never delivered, named).
-  Wave 2 unreturned at budget stop: MutShipped, MutCounters, MutReceiptBytes,
-  MutSkillItem, RevStanza (recorded dead; their items are covered by sibling evidence
-  or carried as residual candidates in `w2/SimplDedup.md`). One provider-flag death and
+- **Late/dead seats:** wave 1: ExecForgerControl and MutCounter delivered late (53 min /
+  59 min, after return-now nudges) and were integrated; **dead seat: ScribeEntry** (never
+  delivered, named).
+  Wave 2: 27/32 reports at close. Post-close returns: MutShipped (R52-6 selftest-coverage
+  findings routed in the SCORECARD limits), MutCounters (14/14 drop-one mutants UNMET),
+  RevStanza (A-term composition correction landed in the SCORECARD terms). Final
+  unreturned at budget stop: MutReceiptBytes, MutSkillItem (recorded dead; their items are
+  covered by sibling evidence or carried as residual candidates in `w2/SimplDedup.md`). One provider-flag death and
   recovery: CritA2Span (completed on plain-wording resume; the two flagged attempts are
   the recorded error text).
 - **Harm battery at close** (`close/FINAL-harm-census.txt`): H1 `CHECKLIST: 22/23 pass` at the live close run (`close/FINAL-harm-census.txt`) —
