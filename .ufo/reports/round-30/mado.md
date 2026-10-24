@@ -194,3 +194,31 @@ C1's rows are navigation only — no new domain claim is admitted through
 them. C2's resolved-active rubric is new this round (frozen in the
 registration and counter docstring); the literal rubric is reported
 unchanged beside it.
+
+## Erratum — w1 wave findings and C3 gate repair (appended post-report)
+
+After this report was filed, the orchestrator dispatched the prepared
+33-seat wave; 24 reports landed (`.ufo/waves/round-30/w1/reports/`,
+committed `15ddd7d64a5f30f835533818dac5b7bcc8965181`). Findings and
+disposition:
+
+- **C3 gate repaired** (`quality/check-index.py`, new blob): RevC1Fence
+  S1–S6, MutC3Gate F1/M3a, RevC3Gate H1 showed the gate was a strict
+  superset of the frozen fence — `^\|\s*` vs `^\| ` row grammar,
+  `split()` vs `splitlines()`, non-ASCII ls-tree quoting, `--root`
+  0/0 false-green on a wrong root, and a silent `master` default. All
+  latent on committed bytes. Repair is fence-faithful (literal regex,
+  NUL ls-tree, setup-error empty/missing knowledge, explicit `--rev`
+  required); selftest 6→8. `PRED-C3-r30` re-verified at `d72243e`:
+  `evidence/c3-repair-d72243e.txt` — base red, both tips green, 8/8.
+- **Routed to round 31:** table-context laxity in fence AND gate
+  (CritKillRules/CritPredicates — rows outside the table or in comments
+  count; a fence limitation the claim prose acknowledges), C2 counter
+  resolves-citation-not-grounding (empty-lesson cheat), weak kill rules,
+  own-work circularity guard, gate wiring into `mado-verify.sh`
+  selftest/SKILL gate-registry (RevC1Fence S7 + r30 spot-check routing).
+- Seat observation, resolved: `quality/q36-successor-receipts.txt` was
+  regenerated out-of-scope mid-review (ephemeral paths, no verdict moved)
+  — reverted to committed bytes, same handling as r29.
+- No finding affects the three claims' measured outcomes; all receipts
+  reproduce. Lane tip is now `15ddd7d64a5f30f835533818dac5b7bcc8965181`.
