@@ -352,3 +352,46 @@ dispatches prepared waves between rounds.
   wall) judged sufficient with risk recorded; routed to r42: false "8/8
   mutants" claim (5/8 actual, 3 survivors), seat-count discrepancies, ~145
   unnamed inherited files. Dispatched L1-mori-r42 with those repairs.
+
+## WRAP-UP 2026-10-24 ~14:45Z (operator stop; end of run)
+- **Stopped by operator**: L1-kumitate-r58, L1-kotodama-r68-attempt2,
+  L1-mori-r42 cancelled mid-flight. No new dispatches after this point.
+- Stopped-lane state (all `ahead=0 behind=0`, pushed):
+  - kumitate r58 OPEN, partial work committed at `50548ae5` (resumed from
+    r57 close `c49f2a8d`); no report. Next session: resume r58 (verify the
+    partial against the brief, then finish) — do not restart from scratch.
+  - kotodama r68 OPEN, partial at `c1adbdf5` (attempt-1's wave work +
+    attempt-2 additions); no report. Resume, reusing `.ufo/waves/round-68/`.
+  - mori r42 OPEN, no lane work beyond the r41 close (`9de7323d`); fresh
+    start with the r42 brief (routed repairs: 8/8-mutants erratum, seat
+    counts, unnamed-inheritance record).
+- **Session ledger** (`rounds[]`): 592 kotoba r66 admitted · 593 mado r31 ·
+  594 kake r47 · 595 chousa r41 · 596 kama r33 · 597 kumitate r54 ·
+  598 kotodama r65 honest-stop · 599 kumitate r55 · 600 kumitate r56 ·
+  601 kotodama r66 honest-stop · 602 kotodama r67 admitted (sequencing fix
+  verified) · 603 kumitate r57 admitted · 604 mori r41 · 605 tameshi r37.
+  14 closures this session; rejection streaks broken where routed repairs
+  landed.
+- **Orchestrator defects self-caught this session**: (1) double-live kumitate
+  r57 L1 (failed status ≠ dead session — check lane tip before redispatch);
+  (2) chousa registry archive MV resolved to fleet root once (fixed; both
+  artifacts preserved); (3) ghost registry generations under the 100-job
+  background limit (kama/chousa registries may not match live seats;
+  bookkeeping-only; operator reconciliation owed).
+- **Config state at wrap-up** (`~/.omp/agent/config.yml`, sha on file):
+  task=@m_kfc (Devin/swe-2 rate-walled 13:14Z, sliding reset); scribe/
+  reviewer=@m_zfl; distiller/sonic/seance/labrat=@m_mim; executor/sentinel/
+  mutation-tester=@m_flash; critic/planner/scout=@m_sol; connector=@m_grok.
+  Backups: `/tmp/omp-agent-config.yml.mzfl-mmim-20261024`,
+  `/tmp/omp-agent-config.yml.mkfc-reroute-20261024`. Operator decision owed:
+  keep m_kfc for task or revert to m_swe after the Devin window.
+- **Holds unchanged**: kagi, kaidoku, kengaku, souji, tabi (policy holds);
+  kasegi (self-paused); tsukuroi (3-rejection block, merit review owed).
+- **Deferred to next session**: kumitate r58 / kotodama r68 / mori r42
+  resumes; tameshi r38 brief ready (advance not run); kama r34, chousa r42,
+  kake r48, kotoba r67, mado r32, revenger r66 next-round dispatches per
+  round-robin; kama r33 w1 (15/33), chousa r41 w1 (3/35), kotoba r65 w1
+  (22/32) post-closure recon waves stalled — disposition owed (resume vs
+  abandon); kotoba r65 w2 held (w1 < 32 distinct); fleet-root seat strays
+  (live.html, nama.html, s395.txt, bm.json, tf_bavelas.html, wb2.html,
+  unblob.log) sweep decision owed; registry-ghost reconciliation owed.
