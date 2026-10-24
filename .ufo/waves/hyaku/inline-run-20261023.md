@@ -220,3 +220,22 @@ dispatches prepared waves between rounds.
   CJ-kumitate-r54 (S108 unverifiable from local captures per independent
   reviewer; no fetch performed).
 - Active L1s: mori r41, tameshi r37. Holds unchanged.
+
+## Checkpoint 2026-10-24 ~08:05Z
+- **kumitate r54 closed admitted** (`rounds[597]`, spot-check `c562d285`,
+  fleet commit `fb56849`): C1 0/10→10/10 and C2 0/1→5/5 re-measured; S106/S107
+  admits AGREE on committed captures; S108 reject recorded UNVERIFIABLE (no
+  committed capture; no fetch performed) → discernment unprovable-but-better.
+  Independent reviewer report was never persisted to disk (subagent delivery
+  only) — durability note for operator.
+- **kotodama r65 closed rejected-honest-stop** (`rounds[598]`, spot-check
+  `94209e8f`, fleet commit `5e32e353`): C improved (0→1 owners, SOURCES
+  675→701), O improved (ACCEPT-O 26/26), Ca unprovable — RECEIPTS FAIL at tip
+  (lands `53a60275`/`29d0b0fc` vs stamp `3b1b5a67`); no axis harmed. Routed:
+  R65-D1 S753 re-capture, R65-D2 receipt-sequencing, R65-D3 dispatch/evidence
+  retention, R65-D4 separability bound.
+- Dispatched: L1-kumitate-r55 (round 55, brief
+  `.ufo/prompts/kumitate-round-55.md`), L1-kotodama-r66 (round 66, brief
+  carries R65-D1..D4 as required repairs).
+- Waves running: kama r33 w1 (15/33), chousa r41 w1 (3/35), kotoba r65 w1
+  (22/32). Kotoba r66 w1 settled at 35/35.
