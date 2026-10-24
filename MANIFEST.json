@@ -18802,6 +18802,50 @@
    "notes": "dispatch digest: launch 2026-10-24T02:24:06-03:00 'launch chousa round=39 pgid=2685723 driver=hyaku-inline attempt=1'; complete 2026-10-24T03:18:39-03:00 'complete chousa round=39; hyaku-inline attempt=1'. Report f713ee1 by lane identity, ancestor of fleet HEAD; cited commits 6d914e95/6ac1007e6 ancestors of lane master; lane ahead=0, clean tree; prompt carries full template contract. Routed for round 40: R1 must-fix - four committed c1 receipts bind stale expect_sha256 3abd2dcb (expectations edited after the c1 runs); they refuse expect-sha256-mismatch under committed bytes, so the report's 'six receipts all VERIFY: ok' is inaccurate for them - regenerate c1 receipts or append claims erratum naming superseded expectations bytes; R2 - superseded drafting receipt c1-mutenv-s39003.json (uncommitted byte bindings 89022659/1c3b2a9e) is committed though lesson says 'not committed', and report/LOG say 'receipts (6)' while seven are committed - name as superseded in erratum; R3 - report knowledge count '29 -> 31' wrong (observed 50 -> 52); R4 minor - report wave role mix (reviewer 6/revenger 2) != validated spec (reviewer 8/revenger 0; totals 32 both); R5 minor - SCORECARD 'two independent runners' overstates (both runs are the L1's own, disclosed in claims.md freeze). 32-seat wave prepared+validated but undispatched per accepted host mapping - closure judges landed claims, not the wave. All four SHONEN boxes are [~] asserted-by-author and non-author checkable - promotion review is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 40,
+   "date": "2026-10-24",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 40,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 40
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unprovable",
+    "depth": "unprovable",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [
+    "round-40 C1 conformance checker v3 (P-C10)",
+    "round-40 C2 ancestry supersede reading v3 (P-C11)"
+   ],
+   "report": ".ufo/reports/round-40/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_kfc session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-40-verifier-spotcheck.md@62a207f7521fa2e2fcd2e8b0260f047ccfce8862",
+    "rechecks": "66/66 wave seats landed; C1 re-measured at 265a955 (CONFORM=met on count-c8; selftest pass=11 fail=0, 57.2s; 9 after-receipts unmet+named checks) BUT new-survivor class falsifies P-C10: walrus/tuple-unpack/dead-loop-rebind fixtures print CONFORM=met with runtime read-site timeout None (reproduced live, 2.01s completions); C2 re-measured at 265a955: 35 as-of ids incl S226 (report/SCORECARD/LOG/M24 say 34 — off-by-one), stale=[S069] at e37dcc6 reproduced, selftest pass=15 fail=0; dag-z dead-branch eligible-set contradiction reproduced live; census validate exit 0 re-run; freeze pins match; receipt-rewrite drift (3 c10 files) and stray root file 265a955 confirmed uncommitted"
+   },
+   "commit": "mori-shokunin@ede486b7a09afbacfb380d5871c46a8051a6dc2e",
+   "closed_at": "2026-10-24T06:29:04Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-10-24T01:32:11-03:00 launch mori round=40 pgid=863776 driver=hyaku-inline attempt=1; 2026-10-24T02:24:04-03:00 launch mori round=40 pgid=2685288 driver=hyaku-inline attempt=1; 2026-10-24T02:58:24-03:00 complete mori round=40; hyaku-inline attempt=1. Report 22fc3dd by lane identity; cited commits bb1f2457/265a955/8d3badd/ede486b all ancestors of master; ahead=0 behind=0. Rejected: C1 falsified (binding-model blind spot: BFS-order resolution + NamedExpr/destructuring-target invisibility — three one-edit counters pass met with runtime timeout None); C2 claim layer falsified (34 vs measured 35; dag-2l walk-order arbitration, dag-h stale colmap, dag-z dead-branch eligible set); no axis harmed (diff +1084/-0). Conformance defects: 3 uncommitted c10 receipt rewrites (absolute-path/timing-only), untracked w1+scratch, stray root file 265a955. Routed to r41: (1) C1 source-order binding collection + NamedExpr/tuple/loop targets + fail-closed multi-binding + 3 selftest arms; (2) C2 ancestry-grounded supersede_landing, per-commit colmap, at-R sup_map constraint; (3) append-only 34->35/16->17 correction in SCORECARD+LOG+M24; (4) commit-or-revert receipt rewrites, delete stray, land w1 per policy; (5) freeze both conjunct-gutted interpreters + post-repair census receipt; (6) nine-survivors wording (divzero exit-2 class), dag-p/dag-r wording; (7) selftest_conjunct application gap (presence-vs-apply mutant); (8) contract 64-seat vs spec 66 reconciliation; (9) S229 word-count 15->17 + located-range fix; (10) C1 rev-arg/head_pin binding note. SHONEN: no [x] possible (no named non-author verifier); [ ] box stays lane-owned. Spot-check: S229 admit agree (quote verbatim at src:294; locator :254-256 imprecise); no reject exists this round (search log excluded 0). No tools installed by this closure.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
