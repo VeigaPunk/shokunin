@@ -528,3 +528,4 @@ Trend verdicts: **expansion unchanged** (no knowledge admission), **quality
 unchanged** (no semantic source/corpus revalidation or knowledge edit), and
 **discernment unchanged** (this lane's L2 seats are not independent non-author
 verification). No scalar score is computed.
+
