@@ -18646,6 +18646,45 @@
    "notes": "dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-10-23T19:47:47 lane-dead-no-report mado round=28 (attempt=1: L1 under executor leaf role); 19:47:53 launch attempt=2; 19:57:07 lane-dead (parent froze, L1 never ran); 19:57:27 launch attempt=3; 20:17:39 lane-dead (second freeze); 20:17:57 launch attempt=1; 20:33:23 lane-dead (parent SIGSEGV); 20:33:34 launch attempt=2; 2026-10-24T02:24:08 launch attempt=1; 03:01:57 complete mado round=28. Completing attempt inherited 2026-10-23 committed work (tip 317ff19). VERDICT rejected-honest-stop: C2 calibration verifies (1/9->9/9, D9 retained as non-gain); C1 operability improved on committed evidence (4 legs green on committed bytes; leg-1 substance 18/18 committed w2 receipt; refpub 12/12 sealed) but the frozen six-leg composite printed TARGET_MISSED at 77cdda86 and the claim is judged on the frozen predicate - a miss is an honest stop. Both blockers named: (a) registration-declared ephemeral H1 boundary (input cleaned pre-closure; L0 open), (b) frozen-counter guard pin never matching committed bytes since 5198cc8 (L0 open; M28-1). No leg rule changed after data; composite miss published verbatim; no axis harmed. Routed to r29: fix count-v4 guard pin + smoke-run composite at freeze (QUALITY 38); ephemeral-input preservation policy (QUALITY 39); commit standalone boolword-v5 receipts (currently report-quoted only); residual 10th record defect (SS6.6 docstring-citation overclaim) stays on queue. Operator note: SHONEN boxes 1+3 look non-author-checkable to [x]; box 2 (no new live-desktop task) and box 4 (outside-lane verifier independence) open - promotion is operator-owned. Capability row 'rotating held-out mutation gate' entered SCORECARD with demonstrated runs (h2-rotate TARGET_MET, refpub 12/12 at 77cdda86); operator may rule on its standing given the composite miss. Trivial: census-end.txt lacks the start receipt's literal exit=0 trailer line.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 53,
+   "date": "2026-10-24",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 53,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 53
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "receipt-attest v3 (kumitate-receipt-attest-v3, whole-directory ledger evidence set)"
+   ],
+   "report": ".ufo/reports/round-53/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_kfc session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-53-verifier-spotcheck.md@383ad787ac3a9301b25422e50ebfef256d534924",
+    "rechecks": "C1 re-measured 9/17 at base (B7a/B7b defect live) -> 17/17 at tip; C2 re-measured 0/1 -> 5/5; receipts (356.358s span, distinct nonces/digests, TAMPERED control, sidecar hashes) verified; H1-H6 committed evidence verified, H6 pins re-hashed; census 103->105 tiers A88->89 B7->8 re-derived; S104/S105 re-fetched byte-identical, quotes <=25 words; M1/R53-1 divergence confirmed and corrected append-only; no axis harmed"
+   },
+   "commit": "kumitate-shokunin@5a7ea567941634beec999f55cd036e5c71a8be60",
+   "closed_at": "2026-10-24T06:16:52Z",
+   "campaign": "hyaku",
+   "notes": "dispatch digest: launch 2026-10-24T01:55:12-03:00, relaunch 02:24:03, complete 03:12:06 (hyaku-inline attempt 1). Report b5e033b by lane identity; all 6 cited commits ancestors of origin/master; lane ahead=0, clean tree; prompt is canonical template rendering, committed fc13952. Routed: R53-2 seat accounting stays open; lesson ## Gate spot-check line reads <pending> in committed bytes — this closure's spotcheck satisfies it, lane may point to it next round (append-only); 64-seat wave prepared-but-undispatched is orchestrator-owned. Operator note: all four SHONEN boxes are non-author checkable ([~] asserted-by-author) — promotion review is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
