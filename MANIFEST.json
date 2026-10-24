@@ -19833,6 +19833,45 @@
    "notes": "dispatch digest: 2026-10-24T19:58:10-03:00 launch chousa round=42 pgid=1646428 driver=hyaku-inline attempt=1; 2026-10-24T20:45:11-03:00 complete chousa round=42; hyaku-inline attempt=1. Lane HEAD before 872bf3a3507875b382313f955d15960f9638256f after e0f4895c48d6c6e739ce9deb614b97c771a3a096; report committed 980859a48a156f76bc6872e608150de9a8dcfe8c under chousa-shokunin identity. Item-10 wave-4 quarantine-first honored: nothing adopted from the shokuknow package; no external fetch (fetch-scope L0 8d77e6c1 still open); S077 id collision real and routed to L0. Driver verify warned 40 uncommitted paths — all inherited/orchestrator-side (4 M: PROVINCE.md mode-bit, 2 prior-wave swarm-registries, r41 cells.json; 36 ??: r40/r41 seat reports), none authored by r42, named not swept. Wave shortfall honest: 64-seat v2 dispatch issued with 64 null agentIds, 0 seat reports/claims/dead at budget close; claims do not rest on any seat verdict. Routed defects: (1) absent-class split to r43; (2) wave dispatch-completion mechanism; (3) inherited working-tree debt resolution; (4) register staleness upstream (chousa 20 vs derived 24; header 194/324) to campaign owner via L0; (5) cosmetic 265 vs 267-byte S077 capture size. SHONEN boxes all [~] lane-asserted — checkable by a non-author; promotion is operator-owned, noted for the operator.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 32,
+   "date": "2026-10-24",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 32,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 32
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unprovable",
+    "calibration": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [
+    "published-axis staleness gate (quality/check-axis-scores.py, selftest 17/17)"
+   ],
+   "report": ".ufo/reports/round-32/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (Kimi fresh closure agent, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-32-verifier-spotcheck.md@de8fe248579520ee9af0f6a6f2db9d116bd55aeb",
+    "rechecks": "C1 frozen counter re-run over committed bytes at 2562228/9186234/d9ed3816: 0/0/0, 0/0/0, 3/5/7 vs registered target 3/5/3 -> not met; junk-tree control reaches the target (counter unsound, matches CriticC1Predicate CLAIM DEAD), realistic tree false-rejected (8), one-sided do-nothing controls fall short (0/5/0, 3/0/3). C2 evidence-verified without executing the gate: published table 39/40+9/9 at base vs 41/41+12/12 at tip (SCORECARD bytes), LOG/SCORECARD record gate base mismatched=2 exit 1 -> tip mismatched=0 exit 0, selftest 17/17, no registry row (routed). Census validate exit 0, 190 rows (+5), 0 malformed, all used-by resolve; all 5 fetch digests byte-verified; quarantine slice 13 rows hand-checked; wave 32 seats, 13 attack roles, godspeed on 32, 24 exit codes all 0"
+   },
+   "commit": "mado-shokunin@d9ed38166cc3be8ef4c52b41d66ad94010feb047",
+   "closed_at": "2026-10-24T23:55:07Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-10-24T19:56:38-03:00 launch mado round=32 pgid=1636979 driver=hyaku-inline attempt=1 | 2026-10-24T20:33:30-03:00 complete mado round=32; hyaku-inline attempt=1. C1 honest stop confirmed by re-measurement (counter prints cited_entries=7 at tip, target 3; junk tree reaches the target so the counter is unsound; target not narrowed; the 3 entries + 5 rows S186-S196 are real and re-opened). C2 target met on committed evidence. Routed defects: (1) SCORECARD r32 C1 claims row (a551f71c) asserts 'target met ... cited_entries=3' - false at tip, no appended correction; (2) report's 'data commit 20:05:38' is 50e6a8f (wave-report commit); the data commit f5910876 is 20:22:50, ~15 min AFTER the 20:08:00 CriticC1Predicate falsification, and the claims row landed 20:27:38; (3) '187 MB scratch committed at f5910876' unsupported: committed scratch 11.6 MB/554 blobs, 48f9fe09 removed 2.7 MB/130 files, no gitlinks; (4) quality/check-axis-scores.py has no SKILL.md ## Gate registry row; (5) promised K2 control receipts absent from .ufo/waves/round-32/c2/controls/ (holds only the critic's c1-predicate-attack trees); (6) CriticC2Predicate attacks 3+5 graded CLAIM DEAD (rfind locator shadowing, 400-char parse window, single-axis control coverage) - report cites only the SURVIVES verdicts; (7) five uncommitted round-30 leftovers in the lane repo at closure (driver verify WARN 5 paths): M .ufo/waves/round-30/w1/reports/RevRecordsChain.md, M RevTrendExpansion.md, M SentScope.md, untracked RevTrendDiscernment.md and SimplifierC2.md - named here, untouched by closure, lane must commit-or-revert next round; (8) '~35 min over its 170-minute budget' unreconciled with the 36m52s watchdog digest (ROUND_MAXTIME=170m); (9) minor: SCORECARD base hash misrendered 25622288 (real short 2562228); (10) minor: landed-changes list omits b1b740d1/50e6a8f3; (11) minor: 'no quarantined row was appended' imprecise - S189 was slice->hand-checked PRESENT->adopted per the prescribed flow; (12) process: the §9 pre-freeze junk control was run only post-data by the critic. SHONEN boxes all [~] asserted-by-author - promotion review remains operator-owned. No L0 questions appended; no round 33 started; no lane-authored file edited.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
