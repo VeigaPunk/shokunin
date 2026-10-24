@@ -17856,6 +17856,43 @@
    "notes": "Dispatch/complete digest (2026-10-23T17:40:02-03:00 launch kotoba round=62 pgid=2626496 driver=hyaku-inline attempt=1; 2026-10-23T18:13:04-03:00 lane-dead-no-report kotoba round=62 retry same round, attempt-1 superseded at resume after orchestrator OOM; 2026-10-23T18:14:10-03:00 launch kotoba round=62 pgid=4142816 attempt=2; 2026-10-23T19:27:42-03:00 complete kotoba round=62 attempt=2). Round shape: wave 1 39 seats (34 reports at attempt-1 death, 35 after the completion call, 4 missing) + build-completion call 5 seats + wave 2 39 seats (32 reports at first freeze; 35 committed by tip; roles reviewer 17/critic 10/scout 5/mutation-tester 3/sentinel 2/revenger 1/connector 1, attack roles 30 of 39) = 83 seats. Defects (status-neutral): (1) untracked lane file .ufo/waves/round-62/w2/FalsifyC2HonestH1.md is a late wave-2 seat write, not committed round evidence — lane must commit or revert next round; if committed, its H1-narrowness finding is a C2 honest-arm bound; (2) report cites C2 'receipt_rev e6da78bb' but the receipt says receipt_rev=3f911504 (re-recorded at e424f2a4); (3) report's entry size '723 words, 50 lines' is stale at tip (64 lines/1,044 words; true at e6da78bb); (4) compliance line claims a post-report child sweep commit that does not exist (cited tip is the tip); (5) LOG bullets from this round were rewritten in place at e424f2a4 (net base->tip LOG diff 23 insertions, 0 deletions) — prefer appended corrections; (6) no-harm receipt at 3e7aed9b shows interim reg_gate 36 of 38 and corpus-idx red, both fixed at tip (4 new registry rows, both spotchecks indexed); verify_corpus_integrity/verify_skill_checklist red at tip but already red at base a745411c. Routed to round 63: (a) resolve the untracked write / H1 honest-arm bound; (b) fix the three report citations; (c) name the Accept-header condition in the Cursor .md rejection reason and re-open whether S049's .md URL is minable as text/markdown; (d) record the no-harm interim reds as fixed-at-tip; (e) SHONEN boxes remain [~] and are checkable by a non-author (promotion operator-owned, no [x] written). Tool installs: none. Prose-vs-code note (lane-owned): the late seat's H1 attack is not counted against C2.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 50,
+   "date": "2026-10-23",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 50,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 50
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-50/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_kfc session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-50-verifier-spotcheck.md@d788f747ce8035852b9c456c27aed9d8374add05",
+    "rechecks": "C1 re-measured: frozen bindguard50-probe re-run by me at ff40d7d -> GUARD_UNMET held=5/8 exit 1 (G2 /tmp triple, G6 pin.bind-oracle absent, G7 DRIFT) and at ab3c64e9 -> GUARD_HELD held=8/8 exit 0, matching committed receipts; implicit-cwd attribution delta independently reproduced (6927903 cwd=/tmp exit 0; ab3c64e9 exit 64 CAP_RUN: USAGE); R50 after re-measured LEDGER_HELD 8/8 at ab3c64e9, before rests on committed pre-data receipt held=1/8 (R8 reads live fleet bytes, not post-hoc reproducible). Gate-standard: committed evidence verified for selftests/pins (RevCloseG50 hand-recomputed sha256s, RevCloseHarm H1-H5, census exit 0 re-run by me). Spot-check: S095+S098 re-opens AGREE (fresh fetches match pinned body sha256s 2cb77df2/c16859e0; anchors verified, locator caveat correctly refuted); NO gate reject and NO new SOURCES row exist this round, recorded honestly; census validate re-run exit 0 (99 rows, 4 pre-existing W04)."
+   },
+   "commit": "kumitate-shokunin@c90b9de94009b938fa19a089bfaa97df20b54f86",
+   "closed_at": "2026-10-24T01:53:53Z",
+   "campaign": "hyaku",
+   "notes": "Watchdog digest (verified line-for-line vs .ufo/watchdog.log): launch attempt=2 19:31:47; lane-dead-no-report 19:43:24 (orchestrator froze after launch); launch attempt=3 19:43:52; lane-dead-no-report 19:47:47 (invalid executor-leaf dispatch); launch attempt=1 19:48:04; lane-dead-no-report 19:57:07 (parent omp session froze, zero progress); launch attempt=2 19:57:25; complete 20:16:37, 20:27:05, 22:23:30 -03:00 (hyaku-inline attempt=2). Step-1 PASS: report committed by lane identity b275e94 (pathspec-limited), SHONEN heading 4x[~] with pointers, all 6 cited lane commits ancestors of master, fleet erratum f50d178 exists and is append-only, lane clean and pushed (ahead=0), prompt carries full template contract + 5 child-lane items and its L2 minimum matches MISSION.md. Conformance defects (status-neutral): D1 report landed via hyaku sweep (subject self-declares attribution defect; swept report still landed per protocol); D2 lane tip c90b9de is a sweep commit for 3 L1-left-untracked B-record receipts; D3 report cites L0 question by stale line number (:114, actual :115); D4 Terms line 'A 43 (unchanged...)' imprecise — declared A moved 38->43 during the round (R50-9). Routed to lane for r51: R51-1 L1 commits its own close receipts before returning (sweep-attribution pattern); R51-2 phrase stanza deltas declared-vs-computed with revs; R51-3 cite L0 by opening words not line number; R51-4 pin snapshot digests for repair-counter live-surface checks. SHONEN note for operator: all four boxes now carry executable [~] pointers — a named non-author [x] pass looks feasible; promotion is operator-owned. Lane HEAD closed at c90b9de (round work; spot-check d788f747 landed on top as integrator work). No tool installs this closure.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
