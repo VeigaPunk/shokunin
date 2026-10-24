@@ -18883,6 +18883,49 @@
    "notes": "Dispatch digest (watchdog.log, mutable): 2026-10-24T02:48:12-03:00 launch kama round=32 pgid=589693 driver=hyaku-inline attempt=1; 2026-10-24T03:23:02-03:00 complete kama round=32; hyaku-inline attempt=1. Step-1 conformance pass: report committed by kama-shokunin (1d9840bb), SHONEN 4x[~] with pointers, all cited commits ancestors of master, lane ahead=0 clean, prompt embeds full contract. Claims verify; no axis harmed (SCORECARD append-only, scores held, knowledge/ untouched). Routed defects for r33: (1) report Receipt-lineage bullet contradicts committed c2r-tip.json (measures dc4258bd, committed 967d8852, not 967d8852/3f1a7330 as the bullet says); (2) C2 citation c2/controls/*-v2.out overbroad — thin-row-v2.out/empty-exit-v2.out/nonexistent-path-v2.out hold base-tree clean output, genuine arms are thin-v2/noexit-v2/badpath-v2 (substance verified); (3) S193 lesson quote location line 22 vs 15, 16 vs 17 words (<=25 satisfied); (4) gate receipts should record EXIT_CODE and evaluated revision inline. Round-32 Gate recorded zero rejections (verified against SOURCES diff); spot-check agree on admit S193 and standing reject S104. SHONEN boxes look fully checkable by a non-author — promotion is operator-owned, no [x] written. Wave w1 prepared not dispatched (accepted host mapping, validator receipts committed).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 32,
+   "date": "2026-10-24",
+   "type": "closure-correction",
+   "lane": "kama",
+   "lane_round": 32,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 32
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-32/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_kfc session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-32-verifier-spotcheck.md@cc46980359278d0967cf65e785b41c27b8d9c36c",
+    "rechecks": "Same re-checks as rounds[586]; corrected the full lane-tip citation to 907cdcc0a76f8656fde4574c0a50725fcea42fa9 after landing the spot-check correction."
+   },
+   "commit": "kama-shokunin@907cdcc0a76f8656fde4574c0a50725fcea42fa9",
+   "closed_at": "2026-10-24T06:34:24Z",
+   "campaign": "hyaku",
+   "notes": "Closure correction supersedes rounds[586] (2026-10-24 closure) solely to correct the malformed full lane-tip hash in its commit field and update the spotcheck pointer: actual round tip is 907cdcc0a76f8656fde4574c0a50725fcea42fa9; corrected spotcheck landed and was remotely verified at cc46980359278d0967cf65e785b41c27b8d9c36c. The original closure verdicts, evidence, trends, and routed defects remain unchanged.",
+   "supersedes": {
+    "round": 32,
+    "type": "closure",
+    "date": "2026-10-24",
+    "entry": 586
+   },
+   "promotions": [],
+   "minted": []
   }
  ]
 }
