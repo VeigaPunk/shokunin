@@ -100,3 +100,37 @@ rule fired on the reported controls.
 3. Holds overlap ≥5 words is a proxy; a row can paraphrase the wrong note.
 4. `.ufo/waves/round-24/fetch/S###.bin` convention — glob with `#` digits;
    WARNed on zero match at tip (ephemeral r24 dir).
+
+## SHONEN
+
+- [~] SKILL.md contains real decision tables, error patterns, checklists,
+  cited sources — asserted: SKILL.md byte-unchanged this round
+  (`git diff 274f7355 25622288 -- SKILL.md` empty); no SKILL work claimed.
+- [~] At least one end-to-end domain task executed and logged in LOG.md —
+  asserted: LOG.md round-31 entry (row-fidelity gate, resolved-citation
+  counter v2, gate hardening, with committed receipts at named revisions).
+- [~] Instructions executable by an agent without oral context — asserted:
+  all three counters/gates ran end-to-end from committed bytes at named
+  revisions (`--rev 274f7355` / `25622288`) with the transcripts above.
+- [~] No cross-domain bleed (PROVINCE.md still accurate) — asserted:
+  `git diff 274f7355 25622288 -- PROVINCE.md SKILL.md` empty; the two
+  `quality/` checkers are lane-internal gates (same class as the existing
+  `quality/` fleet tools; no new province surface); no sibling/fleet writes
+  (misroot sweep clean; only `mado-shokunin/` at fleet root).
+
+No `[x]`: every box lacks a named non-author verifier on record this round;
+the prepared w1 wave's reviewer seats are the candidate verifiers.
+
+## Round shape, waves, seats
+
+Shape: **three-claim repair round on the routed r30-w1 defects with a
+prepared wave** (default shape). Round total: **15 prepared seats, 0
+dispatched, 0 dead** — below the live swarm floor; the orchestrator
+validates and records that boundary (this seat has no dispatch tool).
+
+- Wave 1 (prepared): 15 seats — executors 4 (ExecC1Rerun, ExecC2Rerun,
+  ExecC3Rerun, ExecCensusRerun), scribes 2 (ScribeCriteria, ScribeRecords),
+  critics 2 (CritPredicates, CritKillRules), reviewers 3 (RevC1Rows,
+  RevC2Resolution, RevC3Gate), mutation-tester 1 (MutGates), sentinel 1
+  (SentScope), scouts 1 (ScoutAxisTable), revenger 1 (RevengerRowGap). Spec
+  `.ufo/waves/round-31/w1-spec.json` at `72021ded`.
