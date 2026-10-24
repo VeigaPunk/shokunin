@@ -145,3 +145,23 @@ dispatches prepared waves between rounds.
 - Active L1s at checkpoint: kotodama 65, kumitate 54, kake 47, mado closure
   29, kotoba 66, chousa 40, kama 33, tameshi 37, mori 41, revenger 66,
   tameshi w2 falsify wave (39 seats) still settling. Holds above remain in force.
+
+## Resume checkpoint 2026-10-24 ~07:10 -03
+- Routing: Kimi `@m_kfc` hit a 429 quota wall before mado r31 loaded its brief.
+  Generic `task` now routes to `@m_swe`; hyaku L1/JUDGE labels match. Sentinel
+  and executor use `@m_flash`; all 24 retry chains have no OpenAI route and
+  terminate at `cursor/default`. Explicit `m_luna` primary remains
+  `openai-codex/gpt-6-luna:max`; no standard task role points to it. YAML
+  validated. Final config backup at
+  `/tmp/omp-agent-config.yml.final-20261024` (sha256 fd24c5ae…).
+- Mado r30: admitted. Its 33-seat w1 wave is dispatched; registry with 33
+  handles is at the declared lane path. Wave findings routed to r31: C1 counts
+  path rows, not content fidelity; C2 can be satisfied by existence-only
+  citations/supersession denominator collapse; C3 green tip depends on C1 and
+  can be mimicked by a stub. The transient `quality/q36-successor-receipts.txt`
+  worktree rewrite was restored byte-identically to HEAD by a peer; no further
+  action taken.
+- Mado r31 attempt 1 failed before loading its brief (Kimi 429); `inline.sh
+  fail` returned RETRYABLE and attempt 2 is live as `L1-mado-r31-attempt2`
+  under `@m_swe`. No lane work from attempt 1.
+- Tameshi r36 w2 (39-seat falsify wave) remains in progress; r37 L1 is active.
