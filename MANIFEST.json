@@ -19335,6 +19335,49 @@
    "notes": "Driver digest: 2026-10-24T03:17:41-03:00 launch kumitate round=54 pgid=3526760 driver=hyaku-inline attempt=1; 2026-10-24T04:46:28-03:00 complete kumitate round=54; hyaku-inline attempt=1. Conformance: report committed by lane identity (504205c6); SHONEN heading 4x [~] w/ pointers; all 4 cited commits ancestors of master; lane pushed ahead=0, clean tree; prompt carries full template contract. No conformance defects. Routed: R54-C1 — S108 reject has no committed source capture (quote unverifiable from committed bytes; relayed reviewer artifact ReviewKumitateR54SourceDecisions.md not found committed in lane/fleet tree — commit if it exists); prepared 64-seat v2 wave still undispatched (orchestrator-owned); R53-2, R43-1/R43-5, R41-2, A3e carried open. SHONEN note: all 4 boxes [~] but each non-author checkable; promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 65,
+   "date": "2026-10-24",
+   "type": "closure",
+   "lane": "kotodama",
+   "lane_round": 65,
+   "lanes": {
+    "kotodama": "ok"
+   },
+   "lane_rounds": {
+    "kotodama": 65
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved",
+    "calibration": "unprovable",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "row-fragment checker (tools/check-row-fragments.py)"
+   ],
+   "report": ".ufo/reports/round-65/kotodama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_swe session, non-author)",
+    "spotcheck": "kotodama-shokunin/corpus/lessons/round-65-verifier-spotcheck.md@94209e8f80969dbac48d56c5d0e2e623635b8616",
+    "rechecks": "C re-measured over committed bytes (0 owners at base 17c32302; 238->239 knowledge; 675->701 SOURCES; S750-S775 A=8/B=18 all mined; committed ACCEPT-C-65 PASS 10/10 evidence). O evidence-verified per gate standard (committed ACCEPT-O-65 PASS 26/26, FULL 23/23, MUT 10/10, MUTEX, FRAG; earlier red run preserved). Ca: committed receipts show R1-R7/CRITERION/QUOTES PASS but RECEIPTS FAIL at post-record tip (lands=53a60275 then 29d0b0fc vs stamp 3b1b5a67) -> claim unprovable; census validate exit 0 kotodama ok."
+   },
+   "commit": "kotodama-shokunin@94209e8f80969dbac48d56c5d0e2e623635b8616",
+   "closed_at": "2026-10-24T09:30:00Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 00:58:45-03 launch pgid=1768791 attempt=1; 02:24:02-03 launch pgid=2682784 attempt=1; 04:45:22-03 complete. Report landed by lane identity 9a8eed59; SHONEN 4x [~]; all cited commits ancestors of main; ahead=0 clean. L1 claimed no admission. Defects: L2 floor unmet (0 dispatched seats; 64-seat v2 taskcall prepared but never issued, 10 dead-seat names without error text); separability checker timed out 600s; Ca receipt-parent mismatch (records commit not direct child of lands A); S753 capture no longer replays (CDX 200 but replay 404) routed R65-D1; receipt-sequencing process defect routed R65-D2; L2 evidence retention routed R65-D3; separability bound routed R65-D4. Spot-check: agreed with gate on S754/S770/S771 admits (S771 needs gzip decode), agreed S765 reject cascade, disagreed S753 durability; all 26 quotes <=25 words. SHONEN boxes look non-author checkable - operator to decide promotion review.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
