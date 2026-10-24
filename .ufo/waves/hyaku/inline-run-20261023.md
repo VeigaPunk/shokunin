@@ -327,3 +327,12 @@ dispatches prepared waves between rounds.
 - Kumitate r57 L1 landed: tip `617a9414`, report `8e43dbcd`; routed R57-V1..V4
   (B8 dead nonce-grep, drop-one `held=9/9` acceptance, name-only covered
   entries, forged-receipt defeat).
+- **kumitate r57 closed ADMITTED** (`rounds[603]`, spot-check `c49f2a8d`,
+  fleet `24d17e73`): A57 10/10 + D57 5/5 re-measured at base/R1/tip; linear
+  lane-identity lineage, interleaving harmless; discernment improved. Routed:
+  report `8e43dbcd` in-place rewrite of `7c3d1203` paragraphs (erratum
+  discipline), R57-V1..V4 to r58.
+- Dispatch hold: kumitate r58 brief generated; mori r41 attempt 3 and tameshi
+  r37 attempt 3 queued — ALL held to the Devin rate-limit reset at 14:01 UTC
+  (13:24 now); avoiding burned attempts against a hard window. Kotodama r68
+  (pre-limit stream) still running.
