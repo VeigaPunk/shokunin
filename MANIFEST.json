@@ -19047,6 +19047,47 @@
    "notes": "dispatch/complete digest: 2026-10-24T03:44:14-03:00 launch mado round=30 pgid=1798865 driver=hyaku-inline attempt=1; 2026-10-24T04:00:56-03:00 complete mado round=30; hyaku-inline attempt=1. Report commit bbae16bf9615fa8eb3619c03348f6388b23271cb by mado-shokunin; all four cited lane commits ancestors of master; ahead=0 behind=0; clean worktree. All three claims re-executed by closure and verify; no axis harmed. The r29-routed index gap (41/43) is closed 43/43. Status-neutral note: wave 1 (33 seats) validated/prepared but 0 dispatched — L1 seat has no swarm-dispatch tool (same as r29; orchestrator dispatches between rounds). Routed to round 31: (1) check-index.py lacks a SKILL.md gate-registry row (not conformant under §Gate Delivery until added); (2) S185 lesson quote is a schematic of the f-string format, not a verbatim located quote — restate. Four SHONEN boxes remain [~]; cited evidence looks mechanically checkable by a non-author — promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 40,
+   "date": "2026-10-24",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 40,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 40
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "improved",
+    "coverage": "improved",
+    "freshness": "improved",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-40/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_swe session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-40-verifier-spotcheck.md@6bc90e04ac60307befacd554f7eee2b7284e2652",
+    "rechecks": "both claims re-measured: c1-count.py 3/6 exit1 @6c01a414 (byte-identical to committed control) -> 6/6 exit0 @282dc768; c2-count.py 0/4 exit1 -> 4/4 exit0; R4 not-reproduced independently re-derived (spec+plan+report all reviewer 6/revenger 2 vs prior spot-check's wrong 8/0); SOURCES census re-derived 74 rows; sources-census.sh validate exit 0; 4/4 gate-decision agreement in spot-check"
+   },
+   "commit": "chousa-shokunin@282dc76856b22747fc531f188df1718a8e18e99a",
+   "closed_at": "2026-10-24T12:30:00Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-10-24T03:29:24-03:00 launch chousa round=40 pgid=59457 driver=hyaku-inline attempt=1; 2026-10-24T04:13:35-03:00 complete chousa round=40; hyaku-inline attempt=1. Conformance: report committed by lane identity (72ab899); SHONEN heading 4x [~] w/ pointers; all cited commits ancestors of master; lane ahead=0, clean worktree, pushed; prompt carries full contract. Defects/observations (status-neutral): (1) 33-seat v1 wave prepared and validated under policy v1 but undispatched - seat lacked L2 dispatch surface; orchestrator must dispatch or rule. (2) r39 verifier spot-check erratum: its R4 finding misread w1-spec.json (claimed reviewer 8/revenger 0; actual 6/2) - lane correctly dispositioned not-reproduced. (3) W04 duplicate-URL warnings S051/S053/S073 still open. (4) C1 frozen metric moved 3/6->6/6 but legacy 0-10 score stays 3/10 (counts only archive exports) - consider splitting observable. SHONEN boxes fully checkable by non-author; promotion is operator-owned. No tool installs.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
