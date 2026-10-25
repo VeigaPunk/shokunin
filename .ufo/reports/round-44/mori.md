@@ -243,3 +243,56 @@ reason and flip in `corpus/lessons/round-44.md` §Gate.
   `coverage 7.17.0` via `uv` for its dead-weight analysis (`w1/SimpCounters.md`);
   no `pacman` transaction was run (host-wide pause respected).
 - **Misroot:** clean (0 candidates).
+
+---
+
+## Erratum appended after filing — post-filing seat bytes, the connector's adjacency finding, and two entry amendments
+
+Appended after the filed bytes above; nothing above is rewritten (the round-43
+closure's routed defect 2 binds this round's own filing). The lane advanced to
+`7b6998e620d436c3d01bc252e77e447debdaa8ce` after the report was filed; every claim
+was re-derived there: `C1=met mismatches=0`, `C2=met`, `C3=met`, census `ok`
+exit 0.
+
+1. **Two seat reports landed after the filing** (`w1/ConnSiblings.md`,
+   `w1/ExecOffHostReplay.md`, `w1/RevLedgerVsReport.md` final bytes) — committed in
+   `407da787`, `cd9e699e`, `7b6998e6`. Their findings, which the filed report could
+   not carry:
+   - **Adjacency (material):** `w1/ConnSiblings.md` finds that the gate-registry
+     class is **already held by a sibling** — `kama`'s
+     `tools/gate-registry-check.py` (which enumerates the counter population from
+     `git ls-files` rather than taking it from the caller, so it is *stronger* on
+     the arm that matters) and `kumitate`'s `gate-mutants.mjs` predicate **K43**
+     (a two-run, verdict-line mutant standard). C2's `@REV@`-ledger grammar is new
+     fleet-wide (`grep -rln '@REV@'` → no files outside mori), but its registry
+     class is not. The same seat measured that `tools/mori-gate-registry.py` parses
+     only mori's and chousa's heading+header pair across 12 lanes holding a gate
+     registry, so it **cannot be a fleet auditor** and is not claimed as one.
+     Scope held: no sibling tool was imported, and `PROTOCOL.md`'s scope rule was
+     respected.
+   - `w1/RevLedgerVsReport.md` reviewed the 20-row **draft** ledger, not the landed
+     16-row `figures.tsv` (no ledger existed at its reading).
+   - `w1/ExecOffHostReplay.md` replays the four selftests and `count-c2` from a
+     scratch clone at another path, so QUALITY 115's practice holds for this
+     round's instruments.
+2. **Two entry amendments after the filing** (`w1/CritAssimilationGate.md`), landed
+   in `cd9e699e`:
+   - the Boundaries section no longer says the entry "adds the state alphabet"
+     while the Claim discloses it is already held (a self-contradiction);
+   - the mm discriminator now rests on a `/proc/<pid>/maps` reading of its own
+     (`evidence/cmdline-empty-by-state.txt`: 1229/1229 empty-`cmdline` pids have an
+     empty `maps`, 190/190 non-empty ones do not), and the snapshot totals are
+     labelled as moving between runs (1931/1698 then 1419/1229) — the earlier
+     receipt asserted the discriminator without reading an `mm` indicator.
+   - the S472 `scope` cell's negative about S170 is imprecise (S170's source
+     carries the swap-out sentence as a roff comment at `:15`); the row is
+     append-only, so this is recorded in `corpus/lessons/round-44.md` M10 rather
+     than rewritten.
+3. **Not adopted from the critic's list:** it recommends admitting
+   `effective-limit-is-cross-level-r44.md` instead of the pid-probe entry. This
+   round's entry stays: it is the theme the round declared, its sources were
+   opened by this L1, and the critic's own verdict is that the entry clears the
+   bar after the six amendments above (five of which are landed; the sixth — a
+   re-punctuated zh quote — is disclosed here: the entry's zh sentence uses the
+   page's wording with normalized sentence punctuation, and the recheck counts
+   words, not punctuation).
