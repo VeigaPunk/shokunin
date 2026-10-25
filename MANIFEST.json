@@ -22270,6 +22270,43 @@
    "notes": "dispatch digest: 2026-10-25T08:25:52-03:00 launch chousa round=47 pgid=4014925 driver=hyaku-inline attempt=1; 2026-10-25T09:21:22-03:00 complete chousa round=47; hyaku-inline attempt=1. C1 ruling: frozen predicate verifies, but held-out (2/12 false refusals, 8/12 misses, 5/7 refinement mutants survive) shows a trade -> operability harmed; round not admitted on C1; C2/C3 separable and verified. Attribution defect recorded: L1 returned without committing; report bytes fleet-swept at c159aaee (lane report commit f82d64f2 followed by uncommitted edits; stray t@t commit 35b91714 between). Routed to lane for round 48: C1 docstring Named-limit false-refusal class + held-out precision fixtures; frozen-counter fixture coverage for 5 surviving mutants; SCORECARD operability verdict to read harmed/trade with figure-leg fixture-only note; carried: round-39/40 receipts gate-sha256-mismatch, L0 8d77e6c1 open. SHONEN boxes all [~] with resolvable pointers; a fresh non-author could check them - promotion remains operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 53,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 53,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 53
+   },
+   "admitted": false,
+   "verdict": "rejected-harmed",
+   "verdicts": {
+    "freshness": "improved",
+    "operability": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "harmed",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-53/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-53-verifier-spotcheck.md@68228b2d74e7930ae4f07e90e382a0d03ab80c7b",
+    "rechecks": "Freshness claim re-measured from committed bytes at base 3994101 (rows 148, dangling S367/S372/S373/S390/S409), source-commit fd91527a (rows 155, dangling none) and tip 189ba6d (155, none) — matches report exactly; SOURCES diff adds 7 tier-A rows with no cell edited (append-only holds). Gate claim evidence-verified from committed selftest (17/17, input digest 6aea343dd5f7209b) and frozen base run (gate-truth 2/7 met=false at 3994101, EXIT=1); sibling gate not executed. Census re-run: 155 rows, exit 0, 14 W04 (12 prior + S416/S417). Spot-check: admits S367 (body sha256 matches receipt; quote/heading present), S416/S417 superseding rows (quotes occur once; page-header markers not section dates) — agree; refusals CrUX S303/S304 and Jekyll (staged S296) kept — agree (ids absent from registry, frozen R3 PASS). Trend ruling: L1 quality=harmed confirmed (S374 crawl-qualifier gloss unmarked; retained body contains the qualifier verbatim); rejected-harmed."
+   },
+   "commit": "kake-shokunin@189ba6d1da97b40e758865fd3fa7ae3900835430",
+   "closed_at": "2026-10-25T12:27:44Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-10-25T08:19:56-03:00 launch kake round=53 pgid=3967366 driver=hyaku-inline attempt=1; 2026-10-25T09:22:32-03:00 complete kake round=53; hyaku-inline attempt=1 (attempt 1, resumed once). Conformance: report committed by kake-shokunin (e1f3223a; earlier byte-identical 0619111d deleted by environmental rogue commit 35b91714, re-landed); SHONEN heading present; all six cited lane commits are ancestors of master; ahead=0, ls-remote tip 189ba6d. Defects routed (status-neutral): (1) dead-seat count unverified — spec w53-spec.json spawns 40 seats (scout 14/reviewer 8/critic 8/scribe 6/executor 3/connector 1) but zero committed seat reports and no settlement artifact; lesson/report cite w1 seat-report paths that do not resolve; (2) c53_gate_truth.py lacks a SKILL.md registry row; (3) S367/S372/S373 gate quotes exceed 25 units under the lane's CJK counter — clarify quote-length accounting; (4) quality harm: S374 translation qualifier left unmarked (fix next round). Fleet-repo tracked-tree deletion incident (35b91714) is environmental, not kake's defect.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
