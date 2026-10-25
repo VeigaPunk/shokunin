@@ -22025,6 +22025,46 @@
    "notes": "Orchestrator-side dispatch-evidence defect (status-neutral): at 08:19:22 -03 the orchestrator mistakenly re-ran inline.sh dispatch chousa while r46 was still claimed — watchdog line 1323 `launch chousa round=46 pgid=3963557 driver=hyaku-inline attempt=2` and fleet commit 7690edbe (round-46: chousa dispatch evidence (hyaku inline attempt 2), prompt re-rendered, 11+/4- lines) are SPURIOUS: no L1 was spawned for that attempt; the round-46 work, report 666c473e and lane tip 5c6e2ca are all attempt 1, graded as before. Original dispatch digest: 2026-10-25T07:10:05-03:00 launch chousa round=46 pgid=3265394 driver=hyaku-inline attempt=1; complete 2026-10-25T08:14:45-03:00 hyaku-inline attempt=1. SHONEN boxes all [~] (no named non-author verifier) — checkable by a non-author, promotion operator-owned. Routed defects: freeze-time NAMED sentence/code gap (residual, fixed by repair); C2 kill-floor not enforced in counter (values satisfy it); stale pre-widening labels/digest in c2-controls.txt (forges re-verified still refuse); cheap-gate residue (8-pipe row / dotslash) kept as named limit; anchor char drift between SOURCES/lesson and spans.tsv offsets; report wording on dead seat CritC2Scope (its report is committed at tip).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 43,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 43,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 43
+   },
+   "admitted": false,
+   "verdict": "rejected-harmed",
+   "verdicts": {
+    "depth": "improved",
+    "calibration": "harmed",
+    "operability": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "staged-id-guard"
+   ],
+   "report": ".ufo/reports/round-43/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-43-verifier-spotcheck.md@506e99c7b73c85711f066895984d501fcf7539cd",
+    "rechecks": "C1 and C3 independently remeasured at landing; C2 independently remeasured and failed m7 (unknown S256 citation). C1 freeze rule and fixture semantics spot-checked; C3 committed selftest/frozen evidence verified."
+   },
+   "commit": "tameshi-shokunin@718a1e987febd32eb78ebc65adfe939f23b3de63",
+   "closed_at": "2026-10-25T12:00:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete: 2026-10-25T07:34:37-03:00 launch tameshi round=43 pgid=280132 driver=hyaku-inline attempt=1; 2026-10-25T08:19:18-03:00 complete tameshi round=43; hyaku-inline attempt=1. Defects: lane worktree has modified tracked .ufo/waves/round-43/w1/RevC2Classes.md; route to r44 for disposition. C2 at landing fails m7 because SCORECARD round-43 claims cite unknown S256. S089 registry anchor digest stale after source drift; update anchor and log old-to-new next round. SHONEN items are asserted [~]; operator may consider separate promotion review if independently checkable.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
