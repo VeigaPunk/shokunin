@@ -332,6 +332,16 @@ cell** — S211's `anchor` was corrected in place from "Introduction, the Jackso
   state — the stale figure was a pre-commit tally carried through all nine report versions
   (`w1/reports/ScoutD7Counts.md`).
 
+## Post-report lane commit (correction line; append-only)
+
+One lane commit follows the tip this report cites: `4bac2163ac0fc3dd55e806947597a11596885139`
+carries the last two seat artifacts produced before closure (a critic's manuscript-balance report
+and a scratch tree). `64979efb7f95acc67e753c642294c41a4d102bfa`, the tip named above, remains an
+ancestor, and no file this report cites changed in it. `CritManifestBalance` confirms the
+manifest-substitution hole named in the limits: a trimmed or rewritten manifest reaches 25/25
+with the unmodified round-35 counters, which is why both receipts now carry the manifest's
+sha256.
+
 ## Stale-lane
 
 Respawn-per-round driver; this lane-round ran well inside two driver ticks and no other
