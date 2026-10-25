@@ -43,6 +43,9 @@ rode the `connector`/`revenger` items.
   `RevQuarantineSlice.md`, `RevIdRemap.md`, `MutCensusRow.md`, `RevShonen.md`, `RevReadmeFrontier.md`,
   `RevLogEvidence.md`, `ScoutConsiderthese.md`, `SentProvenance.md`, `SimplifyRows.md`, `RevScorecard.md`,
   `RevReportShape.md`, `RevQuoteS204.md`.
+  - Two further C1 gaps were routed rather than repaired: a row moved out of `## Registry` still
+    counts (the counter scans the whole file, while the census returns `E12 … row outside Registry
+    section`), and the digest clause is a dead store at `count.py:174` (`RevC1Tip` F1/F2).
   - The C1 counter is **shape-scored**: `count.py:174` computes the receipt digest and never reads it, so
     fabricated receipts at the frozen paths print `TARGET_MET`. The two cribs are committed
     (`.ufo/waves/round-35/controls-content/c1-shape-only/`, `c1-fabricated-payload/`); a one-line repair on
