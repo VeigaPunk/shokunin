@@ -22533,6 +22533,48 @@
    "notes": "dispatch 2026-10-25T09:22:36-03:00 launch kasegi round=26 pgid=1360699 driver=hyaku-inline attempt=1; complete 2026-10-25T09:56:04-03:00 hyaku-inline attempt=1. Defects (status-neutral, routed to lane next round): (1) fleet report filed only after an orchestrator prompt (L1 first returned without it; attribution correct, ordering not); (2) wave-1 build had no reviewer seat (critic x3 present; reviewers only in wave 2); (3) lesson ## Gate rows lack inline <=25-word quotes (quote record lives in manifest/entries); (4) note: stale mid-wave selftest receipt artifact shows lines=13 total=15 while regenerated index claims 15/0/0. SHONEN boxes are [~] asserted by author; no non-author verifier checked boxes, so promotion remains operator-owned. Round shape: wave1 35 seats (5 lost to 429 rate-limit at spawn, recovery recorded), wave2 36 seats; total 71 <=128; bands v1 32-64 ok. No tool installs by the lane.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 32,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 32,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 32
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "calibration": "improved",
+    "freshness": "unprovable",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged",
+    "novelty": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "unprovable-but-better"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-32/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-32-verifier-spotcheck.md@112091c2d9077e484b53512ca363d2fe6ba6fc5c",
+    "rechecks": "C1 re-measured: 19 staged package id intersections; committed adoption receipt census=fail, exit 1, no admission. C2 evidence-verified: frozen 7/7 to after receipt 5/7, exit 1; not re-executed. C3 evidence-verified: HF schema delta 4, OR delta 0, exit 1; raw response absent, so freshness unprovable. S093 quote reopened at pinned README; Toolathlon S094 source reopened and 0.05 call confirmed. Census exit 0, 15 W04."
+   },
+   "commit": "kengaku-shokunin@bcd2a6c0d49e6c7d3c30307cf0cd43be6d9660d0",
+   "closed_at": "2026-10-25T13:08:22Z",
+   "campaign": "hyaku",
+   "notes": "2026-10-25T09:35:50-03:00 launch kengaku round=32 pgid=1754086 driver=hyaku-inline attempt=1; 2026-10-25T09:59:57-03:00 complete kengaku round=32; hyaku-inline attempt=1. Claims confirmed per verifier spot-check. C1 refused, C2 incomplete, C3 failed as declared. Conformance defect: lane has 10 untracked round-32 wave paths (state ahead=0); prompt is fleet-tracked. Route R1/R2/R5/R6/R7, raw C3 response retention, collision-safe C1 ids, and untracked wave ownership to next round. SHONEN boxes remain [~]; promotion operator-owned. No promotion or mint.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
