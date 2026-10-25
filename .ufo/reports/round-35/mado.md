@@ -86,7 +86,7 @@ Every change is committed inside the lane repo (jj-colocated; the helper committ
 | `7b745a1` | the axis republication in the gate's own format, plus the wave-2 reports that landed after the first pass | `LOG.md` round-35 entry, "Honest notes" (the stale-publication paragraph) |
 | `4efaf63` | the 235 seat evidence files checkpointed under `.ufo/waves/round-35/scratch-evidence/`; the 3.2 GB of mutant/crib working trees dropped | cleanup, not a claim: the trees were scratch, and every report's quoted command + output survives in the checkpoint |
 
-Lane tip at report time: `8889bdc35b00c1ac496214a55b3c354081c1aebc`
+Lane tip at report time: `b632f0b980772aad4be9ab20f8b26e9329d62239`
 
 ## Before → after measurements
 
@@ -182,8 +182,21 @@ Open L0 questions: none new. Campaign-side remains open: the merge package's sta
 the lane's S203–S210 (different documents) and must be renumbered past S210 before any future adoption; L0
 `ae2c52b8` (stale merge-package id remap) still stands.
 
-Cleanup: `.ufo/waves/round-35/scratch/` (3.2 GB of per-mutant trees, crib copies and clones) was deleted after its top-level text evidence was copied into `.ufo/waves/round-35/scratch-evidence/` (235 files, 1.7 MB, committed at `4efaf63`). Seat reports that cite a `scratch/...` path should read it under `scratch-evidence/`.
+Cleanup: `.ufo/waves/round-35/scratch/` (3.2 GB of per-mutant trees, crib copies and clones) was deleted after its top-level text evidence was copied into `.ufo/waves/round-35/scratch-evidence/` (235 files plus the three late seats' trees, committed at `4efaf63` and `b632f0b`). Seat reports that cite a `scratch/...` path should read it under `scratch-evidence/`; a seat that rebuilt its scratch after the sweep had the rebuild folded in the same way.
 
-Dead/no-report seats: wave 2 dispatched 40; **38 wrote reports**; `SentBoundary` and `ConnOverlap` wrote
-scratch only (`ConnOverlap` left `scan.txt` and `sibling-sources-manifest.txt`) and no report at close — both
-are recorded as no-report, not replaced. Wave 1: 64 dispatched, 64 reports (inherited from attempt 1).
+Dead/no-report seats: wave 2 dispatched 40; **40 wrote reports** (`SentBoundary` and `ConnOverlap` landed
+last, after the first tally; the report was amended rather than the count prettified). Wave 1: 64 dispatched,
+64 reports (inherited from attempt 1). No seat died and none was replaced.
+
+The last two seats' findings: `ConnOverlap` scanned all 21 lane registries and found **no sibling holds**
+`omarchy-toggle-idle`, the waybar idle indicator, `hypridle` or `omarchy-first-run` — three siblings
+(tsukuroi `ADJ-03`/`OUT-004`, game-dev-3d, kotoba) route that ground to mado and none claims it.
+`SentBoundary` found **no write outside the lane and the report path** (fleet containment, `shokuknow`
+HEAD unchanged, no sibling repo touched) and recorded a concurrency warning that matters for every cited
+number: the lane HEAD moved four times during wave 2, so a reviewer's command run at 03:29 and the same
+command at 03:45 do not describe the same tree.
+
+Reviewed-but-not-adopted capacity: `MutC1Real` ran 28 counter runs and found all ten live clauses
+verdict-dead under clause-dropping on a `TARGET_MET` baseline (a degenerate polarity — each is still
+killable by violating the clause, 10/10 `TARGET_MISSED`), and `SimplifyRows` proved by arithmetic that no
+row may be deleted: the frozen target is a bijection over the eight sids. Both are round-36 material.
