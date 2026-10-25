@@ -1,7 +1,7 @@
 # kengaku round 29 — attempt 2 (hyaku run 6): shokuknow assimilation + standing adoption gate
 
 Lane: `/home/vgpnk/Projects/shokunin/kengaku-shokunin`, branch `master`, HEAD
-**`15156173850d110ba97db32336dff8e7fa07047c`** (pushed, ahead 0 / behind 0). Baseline
+**`9df6226775d565f5055b8efb5c39a62b21b10be2`** (pushed, ahead 0 / behind 0; the last commit carries the late seat reports as wave evidence and no counted byte changed after `15156173`). Baseline
 `1f3b0f1ec41ec297130e8944ff97968d32324632`; frozen prereg `plans/round-29-attempt2-claims.md`,
 freeze commit `8c14a5dcd15ac364a352d544660c69f521c3a6af`.
 
@@ -103,6 +103,7 @@ moves the generated-config work of attempt 1.
 | `30ee3b5ffab68c7e7eb08ed3e73907971dbc767d` | row-laundering refusal, explicit `--attest-opened`, CLI argument validation, receipts | LOG §… third corrections batch |
 | `8a25d9e32cbc4463fd72b3355ce71d49a9ad39b1` | four entry claims corrected from the residual reviewer; S091 `used-by` names the priced entry | LOG §… fourth corrections batch |
 | `15156173850d110ba97db32336dff8e7fa07047c` | the package's two count cells attributed rather than quoted as this entry's own words | `corpus/knowledge/benchmark-task-validity-checklist.md` §Counts |
+| `9df6226775d565f5055b8efb5c39a62b21b10be2` | late seat reports committed as wave evidence (no production byte) | `.ufo/waves/round-29/attempt2/build/`, `…/residual/` |
 
 Every change is motivated in `LOG.md` §"Round 29 attempt 2" (including both appended correction
 batches) and in `corpus/lessons/round-29.md` §"Attempt 2" (M92–M103, Gate, rejected candidates,
