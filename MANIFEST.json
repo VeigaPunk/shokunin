@@ -22307,6 +22307,49 @@
    "notes": "Dispatch/complete digest: 2026-10-25T08:19:56-03:00 launch kake round=53 pgid=3967366 driver=hyaku-inline attempt=1; 2026-10-25T09:22:32-03:00 complete kake round=53; hyaku-inline attempt=1 (attempt 1, resumed once). Conformance: report committed by kake-shokunin (e1f3223a; earlier byte-identical 0619111d deleted by environmental rogue commit 35b91714, re-landed); SHONEN heading present; all six cited lane commits are ancestors of master; ahead=0, ls-remote tip 189ba6d. Defects routed (status-neutral): (1) dead-seat count unverified — spec w53-spec.json spawns 40 seats (scout 14/reviewer 8/critic 8/scribe 6/executor 3/connector 1) but zero committed seat reports and no settlement artifact; lesson/report cite w1 seat-report paths that do not resolve; (2) c53_gate_truth.py lacks a SKILL.md registry row; (3) S367/S372/S373 gate quotes exceed 25 units under the lane's CJK counter — clarify quote-length accounting; (4) quality harm: S374 translation qualifier left unmarked (fix next round). Fleet-repo tracked-tree deletion incident (35b91714) is environmental, not kake's defect.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 37,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 37,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 37
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved",
+    "calibration": "unchanged",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "event-socket subscriber census"
+   ],
+   "report": ".ufo/reports/round-37/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-37-verifier-spotcheck.md@f6e3247f73152a39afb86066af48f3cedf95fb0a",
+    "rechecks": "C1/C2 evidence-verified from committed receipts (controls-v2 13/13, before/after v2 receipts, eventq-live + proc crosscheck AGREE) and re-derived by plain measurements over committed bytes (entries, README index, SOURCES 201->207, census validate exit 0, tool sha256 match, base-ground git grep empty). Upstream re-opened: 6 code sources byte-identical to fetch receipts; located quotes verified (S189 :14/:35/:73/:128/:133/:149/:152/:155/:169/:174-175; S201 :105/:115-117/:120/:136; S212 :804-815/:821/:827; S214 :15-16/:21-22/:47/:48; S215 :629/:632; S216 :298/:304-307; S217 :22-24/:42). Spot-check: admit event-delivery-limits-r26.md agree; reject r28/r29 agree; S212 row quote agree."
+   },
+   "commit": "mado-shokunin@6542248266b58d41ccccf31564d436f59857336d",
+   "closed_at": "2026-10-25T12:40:51Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest: launch 2026-10-25T06:05:39-03:00 mado round=37 pgid=1729662 attempt=1; lane-dead-no-report 06:46:34-03:00 (retry same round); launch 08:50:16-03:00 pgid=819016 attempt=2; complete 09:35:45-03:00. Conformance: report committed by lane identity; SHONEN heading one line per box; all cited commits exist and are ancestors of master; lane state ahead=0, porcelain empty, remote == tip. Prompt carries template contract. Defects routed: M37-5 (self-defect) - C1 counter crib-reachable (19-line self-receipt; no control exercises clause b; refused r28 pasted verbatim meets target), C2 live clause reachable via fixture-row snapshot, lagging/--expect-client lack discriminating cases; v3 counters planned round 38 (bind Gate receipts to fetch/ + re-fetch digests; cross-check live snapshot vs /proc/net/unix inodes; add discriminating cases). SHONEN boxes remain [~] with historical pointers; promotion operator-owned; boxes look non-author-checkable over cited artifacts - flagged for operator, not a closure blocker. No cross-domain defects filed. Both counters kept crib-reachable after freeze (kumitate r42); report carries named instrument limits.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
