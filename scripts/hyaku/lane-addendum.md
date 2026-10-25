@@ -1,14 +1,20 @@
-## 6. Campaign addendum — hyaku (百) phases 3–5, operator directives of 2026-10-22/23 (binding this round; in-session)
+## 6. Campaign addendum — hyaku (百) phases 3–6, operator directives of 2026-10-22/23/25 (binding this round; in-session)
 
 Operator directive 3, verbatim (phase 3, 2026-10-22): "each round should be a 32-100 swarm round".
-Operator directives of run 5, verbatim (2026-10-23): "i want you to swarm heavily, continuing on
-our past session of training them; we will be using jj as the git manager. i want 128 concurrent
-subagents; you can choose the shokunins to be trained, as you deem best, which ones are more prio
-to train before other etc. the goal is to push them all to round100 of training. /skill:tower |
-Do it inline, this will be the 5th hyaku run"; "I need you to swap m_opus for m_kfc; across all
-roles on the run"; "use m_kfc on max thinking effort"; "I want you to be running for the next
-24hours, autonomously."
-Session scope, lane order and blocks, holds and operator rulings: `.scratch/goal-20261023-hyaku-24h.md`
+Operator directives of run 6, verbatim (2026-10-25): "we will be doing a 12hour shokunin training,
+aiming for developing and expanding capabilities in terms of quality, resourcefulness, depth and
+breadth of all the shokunins that havwen't gotten to round 100 yet"; "make all subagents run on
+m_flash and swarm with high concurrency every round 32-64 per shokunin round"; "ideally, you do
+3-4 rounds then you train another shokunin; keep doing that until we get them to 100"; "try to
+assimilate shokuknow to their corpuses, also, and check them for capabilities enhancing"; "ideally,
+you do it inline". Later the same run: "use some m_zfl and m_mim instead of m_flash | also, use
+some m_kfc for the more diffficult roles". Run-6 routing (global role map — never pass a model):
+task/main/planner/critic/revenger `@m_kfc`; reviewer/connector/sentinel/mutation-tester/
+security-reviewer `@m_zfl`; scout/scribe/simplifier/sonic/distiller/seance `@m_mim`;
+executor/labrat `@m_flash`. Wave band stays v1 32–64 (directive satisfied, unchanged); lane
+order is lowest-round-first per the queue; one shokuknow-assimilation claim per round under §10
+below plus capability-deepening claims.
+Session scope, lane order and blocks, holds and operator rulings: `.scratch/goal-20261025-hyaku-12h.md`
 under {{FLEET_ROOT}}. Phase-2 directives still bind (2026-10-20): "let's try to also implement using
 jj as git manager from now on on shokunin runs"; "make sure we are always swarming heavily though".
 Phase-1 directives still bind: "train all shokunins to at least round 100"; "commit and push after
@@ -17,7 +23,7 @@ every round done"; "do it inline with multiple swarms of subagents".
 You are an in-session **L1 lane subagent** dispatched by the hyaku orchestrator (the operator's
 parent omp session) for exactly ONE steered round: **{{LANE}} round {{ROUND}}** (attempt {{ATTEMPT}};
 campaign target: round {{TARGET}}). Your lane's place in the session follows the goal file (lane
-order and blocks: `.scratch/goal-20261022-hyaku-12h.md`); the orchestrator dispatches your lane's
+order and blocks: `.scratch/goal-20261025-hyaku-12h.md`); the orchestrator dispatches your lane's
 next round only after this one lands and its non-author closure is written. Work this round only
 and land it; then return a summary of at most 12 lines: claims with verdicts, lane HEAD, report
 commit, round shape, wave sizes and seat-role mix, round total, dead seats, open L0 questions.
@@ -58,6 +64,11 @@ not, and name both in the report.
    larger frontier claim instead of adding filler seats. Validate every wave under its policy (both
    policies set `maxLanes` 256, the validator's hard ceiling), then dispatch it as exactly ONE `task` call carrying the
    validator's `taskCall` (`context` + `tasks`) unchanged; a refused wave is fixed, never split.
+   **Dispatch bridge (run 6):** tool output truncates long strings, so do not hand-transcribe the
+   payload — load it in ONE eval (py) cell and call the session tool directly:
+   `p=json.load(open('<abs>/<wave>-dispatch.json')); tc=p['taskCall']; tasks=[{**t,'solutionSpace':'one wave item, spec in task text'} for t in tc['tasks']]; r=await tool.task({'context':tc['context'],'tasks':tasks,'i':'Dispatching wave'})`.
+   That is the one batched call, payload unchanged. **A return without a landed report is a failed
+   attempt** — finish the round end to end (run 6: two L1s returned mid-round with nothing landed).
    For a v1 wave:
 
        cd {{LANE_CWD}} && UFO_CONFIG_PATH={{FLEET_ROOT}}/scripts/hyaku/ufo-wave-policy.json \
@@ -97,13 +108,23 @@ not, and name both in the report.
    `task.maxConcurrency` in `~/.omp/agent/config.yml` (operator-owned: read them, never change
    them). Several lanes run at once, so a `task` call can still be refused at the job limit; the
    refusal ("Background job limit reached") spawns nothing. Never split or shrink a wave below its
-   band, and never poll, sleep or loop on retries: resend the same payload only after one of your
-   own running jobs settles; if it is still refused, land the round with verifiable work and report
-   each refusal with its error text. Every concurrent writer needs an actual
+   band, and never poll or loop on retries: resend the same payload after one of your own running
+   jobs settles. **Run-6 amendment (the swarm is the operator's directive, not optional):** if you
+   hold no running job of your own, wait with one `sleep 240` per attempt and resend the same
+   payload, up to 8 resends (~32 min); size waves near the band floor (32–40) while the cap is
+   shared. Only after the 8th refusal land the round with verifiable work, reporting each refusal
+   with its error text — a round whose swarm never ran gets no falsification credit. **Resend only
+   on an explicit "Background job limit reached" refusal**: before any resend, `read proc://` and
+   look for your wave's seat names; if any are listed, the dispatch succeeded — never send it
+   again (run 6: kama r38/r39 and souji r25 each dispatched a wave twice). Every concurrent writer needs an actual
    separate worktree, unique branch/path and observed base; bind its absolute paths there and
    keep one integration owner. Read-only seats return findings without production edits. Never
    run concurrent writers on one checkout. Seats never mutate the fleet repo, sibling lanes,
-   lane jj state or lane Git index; put those bounds in every wave context.
+   lane jj state or lane Git index; put those bounds in every wave context. **Git fixtures (run-6
+   incident: a seat's fixture commit, author `t <t@t>`, landed on the FLEET repo and deleted 4,606
+   paths):** any fixture repo is created as `D=$(mktemp -d) && git -C "$D" init -q` and every later
+   git/jj call names `-C "$D"` explicitly; verify `git -C "$D" rev-parse --show-toplevel` equals
+   `$D` before the first commit. Never run `git commit`/`jj` with a throwaway identity anywhere else.
    **Depth (`task.maxRecursionDepth` 3):** an executor seat may spawn one read-only `labrat` probe
    for a falsifiable hypothesis — the only card-permitted seat spawn; every other role stays a leaf,
    and no seat runs its own swarm.
@@ -127,7 +148,9 @@ not, and name both in the report.
    of your seats wrote into the fleet root (check its content names your lane/round), copy it
    byte-exact into the same relative path under {{LANE_CWD}}, verify with `cmp`, then delete the
    fleet copy (the one fleet-root deletion you may make) and record the misroot under `## Mistakes`.
-   Never touch files another lane's seats wrote, and never touch `.ufo/state/*` driver files.
+   Never touch files another lane's seats wrote, never touch `.ufo/state/*` driver files, and never
+   touch `{{FLEET_ROOT}}/.scratch/` — orchestrator-owned run state that names many lanes and rounds
+   by design; it is never a misroot (incident 2026-10-25: the tracked tree was deleted mid-run).
 4. **Commit order (landed = committed and pushed) — jj lane VCS** (operator 2026-10-20: "let's try
    to also implement using jj as git manager from now on on shokunin runs"). Your lane repo is
    jj-colocated (jj 0.45.1; git stays the backend and the GitHub remote). Commit ONLY through the
@@ -183,6 +206,12 @@ not, and name both in the report.
          -- .ufo/reports/round-{{ROUND}}/{{LANE}}.md
 
    (also for an l0-questions append). The report lands last and cites the pushed lane hash.
+   **Pre-report gate (run 6: kotoba r69 and kake r52 left every round commit off-branch):** before
+   writing the report run `git -C {{LANE_CWD}} ls-remote origin refs/heads/<branch>` — it MUST print
+   your final lane hash. If it prints an older hash, your commits are not on the branch: land them
+   through `jj-lane.sh` (never plain git) until it does. Commit the report only via `fleet-commit.sh --as {{LANE}}`.
+   Before committing the report run `grep -c '^## SHONEN' <report>` — it must print 1, followed by
+   one `[~]`/`[ ]` line per SHONEN.md box (run 6: kotoba r69 and r71 both filed without it).
 5. **Inherited state.** Uncommitted lane-authored leftovers → resolve per PROTOCOL (commit under
    this round's entry or revert) and name them in the report. Files you did not author (operator
    sweeps, `round-*-aggregator-*`, `round-*-verifier-spotcheck.md`) → never edit; name them.

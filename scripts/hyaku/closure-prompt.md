@@ -85,6 +85,11 @@ never pass a model parameter; you write only the two artifacts in steps 4–5):
    "notes": "<dispatch/complete digest; defects; routed items>", "promotions": [], "minted": []}`.
    `admitted` only if every claim verifies and no axis is harmed; trends use only
    `improved | harmed | unchanged | unprovable-but-better`. A refusal from the helper is fixed, not bypassed.
+   Conformance defects (wrong path, late filing, undispatched wave, attribution) stay in notes and
+   never bar admission; "could not re-open" grades `unprovable`, never `harmed`. Gitiles endpoints
+   (`…googlesource.com/…?format=TEXT`) return base64 — decode before ruling a quote absent (run 6:
+   tabi r25 needed two closure-corrections after both mistakes). Your spot-check axis table and your
+   MANIFEST entry must agree.
 6. **Never** edit lane-authored files (report, SCORECARD, LOG, lessons, SKILL, PROVINCE), never
    write `[x]` into SHONEN.md, never promote, mint, or touch another lane. If SHONEN boxes look
    fully checkable by a non-author, say so in notes for the operator (promotion is operator-owned).
