@@ -342,6 +342,22 @@ manifest-substitution hole named in the limits: a trimmed or rewritten manifest 
 with the unmodified round-35 counters, which is why both receipts now carry the manifest's
 sha256.
 
+## Second post-report lane commit (append-only)
+
+Two further lane commits followed, each carrying only wave output or a gate hardening, never a
+file this report cites by content:
+
+- `4bac216` — the last two straggler seat artifacts.
+- `4d28b19` — two fail-opens a critic closed at the end of the wave: the discrimination gate now
+  binds the manifest's id, its control-id set and every control's expectation to the frozen
+  manifest (a trimmed or rewritten manifest dies `manifest-control-set-drift`, proven), and the
+  pointer gate fails closed (`error=git-status-unusable`, exit 1) when `git status` cannot
+  answer, instead of reading an unmeasurable tree as clean (proven on a bare clone).
+- `fe55a90` — the after receipts re-pinned to `4d28b19` with the gate digests bound.
+
+Lane tip at closure: `fe55a90ca4d16c1929bb3832c73396fd0170f2f1`, working tree clean. The tip
+this report cites (`64979ef`) and the round's data commit (`a3094c9`) are ancestors.
+
 ## Stale-lane
 
 Respawn-per-round driver; this lane-round ran well inside two driver ticks and no other
