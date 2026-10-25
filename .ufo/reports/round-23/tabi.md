@@ -7,7 +7,9 @@ Lane repo `/home/vgpnk/Projects/shokunin/tabi-shokunin`. Baseline
 `dfae5cdb09ee3384c7f3edd4474d8a1ad22a6843`; post-report corrections
 `add37e7671365c381ba8df139704633997152e3f`; final wave-2 reports
 `af00b59a4728be30757b62b6222756d710a1261e`; late wave-2 fail-open closures
-`2433ed25c44eabcdd24d1a5a10ab692668bb023e` (**lane tip, pushed, ahead=0**); round shape:
+`2433ed25c44eabcdd24d1a5a10ab692668bb023e`; all 44 wave-2 reports
+`e059a8f1878424261c6d1e3d025a9139cadfb143`; final predicate/test
+`b905efb5abd148dc73c7dece477c834eeab9a26f` (**lane tip, pushed, ahead=0**); round shape:
 **two v1 waves, 44 + 44 = 88 seats**.
 
 ## Work performed
@@ -74,8 +76,8 @@ Work items, each with its pointer:
 | C2 | `git grep -lE '^source: S10[23] ' <REV> -- corpus/knowledge \| wc -l` | 0 | **1** (`corpus/knowledge/csrf-defense-shape-boundary.md`; `git diff --diff-filter=A` names that file only; rows 101 → 103) | `03c1b4d` |
 
 Round-23 self-audit at the final tip: `node scripts/round-evidence-audit.mjs --rev 2433ed25c44eabcdd24d1a5a10ab692668bb023e --round 23 --round-cap 128 --json`
-→ **exit 0, clean, 0 findings** (also clean at `add37e76` and `af00b59`; at `7ac9fff` it was clean
-once the last report row was bound) — the auditor run against this round's own committed bytes, with
+→ **exit 0, clean, 0 findings** (re-run clean at `2433ed2`, `43e9bb5` and `e059a8f`; the lesson's
+`## Gate` now carries this command so the receipt is re-derivable from committed bytes) — the auditor run against this round's own committed bytes, with
 this report present (at the production checkpoint it had found two real evidence gaps of this
 round's own: the wave-2 registry and receipts were not yet committed, and a scratch fixture tree
 was being read as a wave; both fixed before this landing).
@@ -157,13 +159,12 @@ attempts are graded in `corpus/lessons/round-23.md` §Corrections item 4.)
   connector 2 · mutation-tester 1 · sentinel 1; **44/44 reports, 0 dead**; registry ids
   recorded (`w1-record.json`), 44/44 non-null.
 - **W2 (falsify) 44 seats** — reviewer 28 · critic 6 · mutation-tester 3 · sentinel 2 ·
-  revenger 2 · scout 2 · simplifier 1 (37/44 attack roles, 84%). **34/44 reports, 10 dead
-  seats, none replaced:** `W2Determinism`, `W2SelfAudit`, `W2NoHarm`, `W2LandedCites`,
-  `W2QuoteB`, `W2Mistakes`, `W2Simplifier`, `W2Log`, `W2Scorecard`, `W2Cheat`. Their work
-  items are covered by the L1 where the artifact exists (the arms table above, the append-only
-  prefix checks, the report and LOG/SCORECARD conformance, the deleted-scratch defect) and are
-  named as not-harvested where they are not. Registry ids recorded (`w2-record.json`),
-  44/44 non-null.
+  revenger 2 · scout 2 · simplifier 1 (37/44 attack roles, 84%). **44/44 reports, 0 dead** by the final
+  tip (34 reports existed when the correction commit landed; the remaining ten
+  — `W2Determinism`, `W2SelfAudit`, `W2NoHarm`, `W2LandedCites`, `W2QuoteB`, `W2Mistakes`,
+  `W2Simplifier`, `W2Log`, `W2Scorecard`, `W2Cheat` — landed in `e059a8f`, and every one of
+  their findings is accounted for above or in the disclosed-defect list). Registry ids recorded
+  (`w2-record.json`), 44/44 non-null.
 - Round total **88 seats** (≤128). The canonical planner seat is held by the L1 (the validator
   rejects a `planner` seat); the bounded planning data-walk rode `ConnPlannerWalk`.
 - Wave-2 harvest: 16 line-level defects accepted and fixed in `7ac9fff` / `dfae5cd` (c1 receipt shape,
@@ -177,7 +178,7 @@ attempts are graded in `corpus/lessons/round-23.md` §Corrections item 4.)
 ## Defects this round leaves open (disclosed)
 
 - **M5 — seat scratch over-committed.** The production checkpoint carries 868 files / 23.6 MB of
-  seat scratch under `.ufo/waves/round-23/scratch/` (`git ls-tree -r <A> .ufo/waves/round-23/scratch | wc -l`
+  seat scratch (1,034 scratch paths by the final tip) under `.ufo/waves/round-23/scratch/` (`git ls-tree -r <A> .ufo/waves/round-23/scratch | wc -l`
   → 868). `7ac9fff` and `dfae5cd` carry none; a follow-up cleanup commit removes the committed
   scratch (the helper is the only writer, so it is one commit). Recorded as M5 in
   `corpus/lessons/round-23.md`, with the check that would have caught it.
@@ -199,6 +200,11 @@ attempts are graded in `corpus/lessons/round-23.md` §Corrections item 4.)
 - **The round cap is supplied, not verified** against any committed declaration
   (`W2Determinism` §F5): the auditor records the value it was given, so a caller could pass a
   looser cap. The claim's counter always passes 128.
+- **c2 and c5 read only top-level `<stem>-spec.json` waves**, so nine of the twelve report-bearing
+  rounds (whose specs sit at `w1/spec.json`) are outside their reach — a coverage limit of the
+  instrument, named rather than hidden (`.ufo/waves/round-23/w2/W2Simplifier.md`).
+- **c1 drops a citation line that contains a correction word** (e.g. "… were filed this round"),
+  and c4 is vacuous for round 23 because this round committed no attempt receipts.
 - **`SCORECARD.md`'s append-only wording was corrected in `2433ed2`:** five of the six mutable docs
   are byte-prefix extensions; `corpus/SOURCES.md` is a pure mid-file insertion (2 added, 0 removed).
 
