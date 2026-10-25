@@ -21221,6 +21221,50 @@
    "notes": "Dispatch/complete digest (mutable log, copied here): 2026-10-25T04:05:52-03:00 launch kasegi round=24 pgid=3198091 driver=hyaku-inline attempt=1; 2026-10-25T04:34:54-03:00 complete kasegi round=24; hyaku-inline attempt=1. Shape: wave 1 kasegi-r24-build 43 seats (scout 22, reviewer 7, executor 5, scribe 3, critic 3, mutation-tester 1, connector 1, sentinel 1), 43 reports, 699 KB, none under 800 B; wave 2 kasegi-r24-falsify validated at 35 seats (reviewer 12, critic 6, revenger 3, mutation-tester 2, sentinel 1, scout 8, scribe 2, executor 1; attack 24/35) and refused four times at the host job cap with 0 spawned, payload unchanged — executed seats 43, not the reported 78, and 0 dead seats. Conformance: report landed by kasegi-shokunin <kasegi@shokunin.local> at 5c95d9d3 (04:34:30), SHONEN heading with 4 lines for 4 boxes and no [x], all six cited lane hashes exist and are ancestors of master, lane ahead=0 with a clean porcelain. Status-neutral defects, all routed in the spot-check: D24-1 the cited hash d3614a2c was not the lane HEAD at file time (492538b, eight minutes later) and the report's 'every change below is inside that commit' excludes wave2-refusal-{2,3,4}.json; D24-2 three assertion counts for one manifest (README 62, lesson 77, report/manifest 76 — measured 76 = 50 + 26); D24-3 the bound-64->8 mutant's 8/8 is stated as measured in four places but only the baseline-base 4/8 has a receipt; D24-4 L4's fail-before is described three incompatible ways (erratum 3, ResolverAttack:176, c1-control-baseline.txt) with the receipt showing more fail-before than the prose; D24-5 cwd dependence survives on 30 of 35 recheck lines (5 carry the cd prefix) and the harness's own cwd pin masks it. Falsification depth graded partial in the spot-check §5: no second-pass review of the round's weakest sentence ('from committed captures' — a recheck can be re-pointed at another manifest) and no mutant run against the landed bytes. Operator note: SHONEN boxes 1/3/4 now carry non-author-checkable evidence, box 2 is genuinely unmet (domain roots absent; 14 ops/* executables named but gone); promotion stays operator-owned and this round does not ask for it. No installs: no pacman/uv/npm call this closure; pdftotext and curl were already present. Cross-domain: none absorbed; standard-body classification entries refused on PROVINCE scope.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 30,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 30,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 30
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "novelty": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "quote-validating adoption gate (plans/sources_adopt.py --quote-file/--artifact, exit 6 over-long / 7 absent / 4 structural / 2 unreadable; 14 selftest cases)"
+   ],
+   "report": ".ufo/reports/round-30/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-30-verifier-spotcheck.md@0883e72ef8474ca42ac1a54eb0273079f1507035",
+    "rechecks": "C1/C2/C3 re-derived over committed bytes at 2dcf06c5 against 363a4ebf: registry 82->88, knowledge 38->39, index 38->39, tier A76/B4/C2->A78/B8/C2 (erratum 2, not the table's 79/7), six new rows mined/2026-10-25/180d/used-by entry+lesson, SOURCES numstat 6/2 with both deletions blank separator lines; lane gates evidence-verified not executed (adoption-after entries=1..census=ok exit 0, control exit 1, hardening control exit 1, defects-after checks=5 defects=0 exit 0 plus selftest checks=5 failed=0, gate selftest cases=14 failed=0 vs cases=10 + argparse exit 2); D1/D3/D4/D5 re-derived from the artifacts themselves; fleet census exit 0 with the same 14 W04; two new sources re-opened byte-identically (S084 sha256 c4447d93, S086 sha256 c3706aca) with every claimed quote located and counted, plus two re-opened rejects (card-publication-contracts tier-C mirror of tier-B S126; judge-calibration kappa figures absent from all three anchor cells)."
+   },
+   "commit": "kengaku-shokunin@2dcf06c56acb63cbaaba59e74908a721ad153709",
+   "closed_at": "2026-10-25T08:05:37Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-10-25T04:09:56-03:00 launch kengaku round=30 pgid=3280770 driver=hyaku-inline attempt=1; 2026-10-25T04:57:31-03:00 complete kengaku round=30; hyaku-inline attempt=1. Round shape verified against the committed registries: wave1 build 36 seats, wave2 falsify 33 seats (16 attack roles, 48%), 69 total, role mixes matching the report byte for byte; no dead seat recorded. Step-1: report committed by kengaku-shokunin (4 commits, head c5807fe7), SHONEN 4 boxes / 4 report lines all [~], 12/12 cited lane hashes ancestor-of-master, lane pushed (local=remote, ahead=0), prompt carries the five child-lane items and the @m_flash route map that ~/.omp/agent/config.yml actually holds. CONFORMANCE DEFECTS (status-neutral): (a) report filed before its final lane commit - c5807fe7 04:56:55 vs lane commits 6966645 04:57:02, c1daaa7 04:57:10, 2dcf06c 04:57:19, so erratum 3's 'lane tip caf1e2b4' is three commits stale and the true tip is the dispatched after-hash 2dcf06c; (b) five wave seat reports (build/R30DraftGate.md, build/R30RevLesson.md, falsify/R30FxCoverageAxis.md, falsify/R30FxEntryCompleteSet.md, falsify/R30FxEntryQ4Q6.md) left modified in the lane worktree, 349+/82-, with a writer still appending at 05:02:48 -03 after the driver's complete line - uncommitted round work, not touched by the closure; (c) lesson round-30.md:3 says 34 falsify seats, registries and report say 33. ROUTED to the lane for round 31: LOG.md:792-793 still declares the delta as 'two new fields, one new value set' (append-only: needs a named correction entry, since the entry retracts it at :78-79); lesson :66-67 states Q6 pass on the retracted 'one field, one placement, one value set'; lesson :60-61 lists S086 as tier A where the registry and :93 say B; entry :125-126 duplicates a sentence; entry :68/:71 'S2's tri-state integrity flag is the only new field' against its own S2 row (form already carries unknown/not_controlled) and :139 'the CC0 card' where the form is reported CC BY 4.0; the five uncommitted wave reports; the stale tip citation; the lesson's seat count. Disclosed limitations accepted as stated: CJK 25-word cap inert (confirmed - the S086 caveat is 30 CJK chars and 1 whitespace token), zero-row quote file exits 0, 115 unexercised gate lines kept as a recorded delete list. No source repo was written; kengaku-shokunin source tree read-only. SHONEN promotion: boxes 2-4 look checkable by a non-author from this round's evidence, box 1 rests on unchanged SKILL.md content - operator-owned, no [x] written by the closure. No promotions, no mints, no other lane touched.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
