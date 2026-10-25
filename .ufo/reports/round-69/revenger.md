@@ -1,7 +1,7 @@
 # revenger — round 69 (hyaku run 6)
 
 lane: revenger · lane repo: `/home/vgpnk/Projects/shokunin/revenger-shokunin` · fleet root: `/home/vgpnk/Projects/shokunin`
-claim base: `222a7a702529fb60598633ebdf5e1442007bc15d` · final lane tip: `1446da59cd722d580b3278640b7d945ae5cd4e38` (pushed, `ahead=0`)
+claim base: `222a7a702529fb60598633ebdf5e1442007bc15d` · final lane tip: `db956eca73bf810db9bdf2c98dc843a528f5d789` (pushed, `ahead=0`, `tracked=0`, `untracked=0`)
 round shape: ONE v2 wave, exactly 64 seats, one batched `task` call, 64/64 reports, 0 dead seats
 date: 2026-10-25
 
@@ -59,6 +59,9 @@ repair bundle) and **C2 on calibration** (a new Q15 tree-identity criterion plus
 | `0f078d9` | after receipt: registered crash + separately labelled diagnostic | `reports/round-69/measure-after.log` |
 | `19c6783` | wave evidence: 64/64 seat reports, spec, dispatch, registry, assimilation id sets | `.ufo/waves/round-69/` |
 | `1446da5` | `R69ReviewEntryQ09` final bytes (seat appended after the evidence commit) | `.ufo/waves/round-69/R69ReviewEntryQ09.md` |
+| `6282e55` | wave evidence: late appends to `R69CounterReplay` / `R69ReviewC7Gate` / `R69ReviewEntryQ11` | `.ufo/waves/round-69/` |
+| `3d9e92c` | wave evidence: `R69CounterReplay` final bytes | `.ufo/waves/round-69/R69CounterReplay.md` |
+| `db956ec` | wave evidence: the remaining late seat appends; lane tree clean (`tracked=0`, `untracked=0`) at this tip | `.ufo/waves/round-69/` |
 
 Every commit carries the lane identity `revenger-shokunin <revenger@shokunin.local>` and was landed through
 `scripts/hyaku/jj-lane.sh commit`, each with a `landed <hash>` line. Nothing was pushed outside the lane
@@ -184,6 +187,10 @@ re-confirmation (`R69ShonenBox1` lists seven live defects on them).*
 
 - **Stale-lane:** respawn-per-round driver; this L1 was dispatched for round 69 only. No other mission of
   this lane is open.
+- **Evidence boundary:** the seat reports are committed as of lane tip `db956ec`; four seats flushed
+  their final bytes *after* the first evidence commit and each flush is its own commit above. The
+  measured state (`measure-after.log`) is the adjudicated tree, not the seat-report tree, so a late
+  seat append cannot move a measurement.
 - **Wave accounting:** 64 seats in one batched call; roles reviewer 21 · critic 17 · executor 11 · scout 5 ·
   mutation-tester 3 · sentinel 3 · scribe 2 · connector 1 · revenger 1; attack share 45/64 = 70.3 % (lane
   predicate) / 41/64 = 64.1 % (prompt §3 floor list); **0 dead seats**, 0 provider refusals; residual
