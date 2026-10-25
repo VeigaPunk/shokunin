@@ -21265,6 +21265,47 @@
    "notes": "Driver digest: 2026-10-25T04:09:56-03:00 launch kengaku round=30 pgid=3280770 driver=hyaku-inline attempt=1; 2026-10-25T04:57:31-03:00 complete kengaku round=30; hyaku-inline attempt=1. Round shape verified against the committed registries: wave1 build 36 seats, wave2 falsify 33 seats (16 attack roles, 48%), 69 total, role mixes matching the report byte for byte; no dead seat recorded. Step-1: report committed by kengaku-shokunin (4 commits, head c5807fe7), SHONEN 4 boxes / 4 report lines all [~], 12/12 cited lane hashes ancestor-of-master, lane pushed (local=remote, ahead=0), prompt carries the five child-lane items and the @m_flash route map that ~/.omp/agent/config.yml actually holds. CONFORMANCE DEFECTS (status-neutral): (a) report filed before its final lane commit - c5807fe7 04:56:55 vs lane commits 6966645 04:57:02, c1daaa7 04:57:10, 2dcf06c 04:57:19, so erratum 3's 'lane tip caf1e2b4' is three commits stale and the true tip is the dispatched after-hash 2dcf06c; (b) five wave seat reports (build/R30DraftGate.md, build/R30RevLesson.md, falsify/R30FxCoverageAxis.md, falsify/R30FxEntryCompleteSet.md, falsify/R30FxEntryQ4Q6.md) left modified in the lane worktree, 349+/82-, with a writer still appending at 05:02:48 -03 after the driver's complete line - uncommitted round work, not touched by the closure; (c) lesson round-30.md:3 says 34 falsify seats, registries and report say 33. ROUTED to the lane for round 31: LOG.md:792-793 still declares the delta as 'two new fields, one new value set' (append-only: needs a named correction entry, since the entry retracts it at :78-79); lesson :66-67 states Q6 pass on the retracted 'one field, one placement, one value set'; lesson :60-61 lists S086 as tier A where the registry and :93 say B; entry :125-126 duplicates a sentence; entry :68/:71 'S2's tri-state integrity flag is the only new field' against its own S2 row (form already carries unknown/not_controlled) and :139 'the CC0 card' where the form is reported CC BY 4.0; the five uncommitted wave reports; the stale tip citation; the lesson's seat count. Disclosed limitations accepted as stated: CJK 25-word cap inert (confirmed - the S086 caveat is 30 CJK chars and 1 whitespace token), zero-row quote file exits 0, 115 unexercised gate lines kept as a recorded delete list. No source repo was written; kengaku-shokunin source tree read-only. SHONEN promotion: boxes 2-4 look checkable by a non-author from this round's evidence, box 1 rests on unchanged SKILL.md content - operator-owned, no [x] written by the closure. No promotions, no mints, no other lane touched.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 34,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 34,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 34
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "calibration": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-34/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-34-verifier-spotcheck.md@aa04633a686d49756763b1feed4be6830d5bb479",
+    "rechecks": "No lane gate, counter, selftest, reader or parser executed (PROTOCOL Gate standard). Two claims graded: R34-C1 (inherited, run-5 attempt-1 report 27322359) and R34-C2 (re-dispatch). Re-measured over committed bytes: base ec3125ad has 0 tools/round-34 paths (before receipt gate_absent); all 26 pins of r34b/instruments.json hash-match at c79bbe7b AND 2e8a7758 with claims.json digest de3afbfb unchanged; after receipt exit 0, six clauses true, selftest 12/0, mutants 3/3, red REFUSED, green CLEAN positive_matched 8; five controls miss 4/6,5/6,4/6,5/6 and gate_absent. Decisive counterexample nameset.py sha 2e8feaea verified structure-blind (regex SONAME-set key + stored table, no header/record/name_off) and its receipt runs the very counter gate-config-mini.json names (counter_sha 43ef669f = pin) at 4 seeds 8/8 -> the claim's 'surface forces record traversal' is falsified; no capability row entered, SCORECARD 27/1. R34-C1: version-needs-counter sha d7f0a8cf identical at 54a87a51 and 2e8a7758, five named artifacts identical blob OIDs across f432c8e3..2e8a7758, size-pristine receipt 12/12 both schedules documents_ok true translated_inputs 11 395 reads/5741 bytes, mutant killed. SOURCES 105->106 (A 99->100, mined 101->102, rejected 4, malformed 0), census exit 0 + 9 W04. Live reopens byte-identical to captures: S106 readelf.c 7e81eedf 689644B (quote :14149, anchors 14020/14056/14058/14072-14076/14102-14106/467-470), S103 982fe120 (:717), S104 fd6e7f3e, S105 860a6916 (reject sustained: 0 hits in four gabi chapters). Step-1: report 23cf8e41 by kaidoku-shokunin (committer 04:57:23 after lane tip 04:57:15), 23/23 cited hashes ancestors of main, SHONEN 4/4 boxes, jj state ahead=0 tracked=0 untracked=0, prompt carries template sections 1-5 + hyaku addendum 6."
+   },
+   "commit": "kaidoku-shokunin@2e8a775849f5f4a8e6363d835c85ed8ef2154149",
+   "closed_at": "2026-10-25T08:09:48Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest (.ufo/watchdog.log): 2026-10-23T07:19:48-03:00 launch kaidoku round=34 pgid=8630 driver=hyaku-inline attempt=1; 2026-10-23T08:22:51-03:00 complete; 2026-10-23T20:41:32-03:00 complete; 2026-10-25T03:33:31-03:00 launch round=34 pgid=1973081 driver=hyaku-inline attempt=1; 2026-10-25T04:57:43-03:00 complete. Step 1: pass, no status-changing defect; report is a real report (not a marker). Two claims, both honest stops: R34-C1 (inherited, depth, fixed-offset replay met the frozen version-needs counter 12/12) and R34-C2 (depth capability acquisition, six frozen clauses true then falsified by an unregistered content-multiset class reaching the green 8/8). admitted=false: no claim verified and no axis moved; no capability row. Trends: expansion unchanged (PROVINCE untouched, no domain ground); quality improved (QUALITY 68-74 + 75/76 from evidence, 26-pin container re-verified, S105 row restored, C1 entry corrected by appended pointer); discernment improved (round stopped on its own counterexample; outside spot-check agrees on 3 admits + 1 reject). Routed defects for round 35: (D-1) census-start.txt is byte-identical to census-end.txt (cmp 0) and the report's start row '105 rows, 8 W04' describes no artifact - a real base-blob census prints the same 9 W04; capture the start census before the first registry edit. (D-2) final seat accounting says 32/32 w2 reports on disk but only 31 exist: AAdjacencyCite has a prompt, no report, and an emptied scratch dir; record it unreported, not settled. (D-3) corpus/knowledge/2026-10-25-r34b-pre-freeze-shortcut-replay-gate-stop.md lacks the source:/verified-at:/recheck: trio required by CORPUS.md and present in all 17 preceding entries; fix by appended block. (D-4) the new SKILL registry rows (and the two earlier ones) omit gate|probe, pinned-value path, write scope and owner required by PROTOCOL Gate standard. Protocol-lane item (D-5): the re-dispatch replaced the attempt-1 report bytes at the contract path (27322359 recoverable only from history, labelled supersession); the template gives a re-dispatched round no per-attempt report path - operator decision. SHONEN: no [x] written by this session; boxes 1, 3 and 4 look checkable by a non-author from this round's evidence, box 2 (end-to-end domain task) is not - promotion remains operator-owned. Not done here: no lane file edited, no promotion, no mint, no sibling lane touched, no jj transaction in the lane except the helper commit; tool installs: none.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
