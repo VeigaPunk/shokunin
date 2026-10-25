@@ -355,3 +355,31 @@ of kama is open, and no round other than 36 was started.
 None. No tool was installed or upgraded this round, so no tool, version or
 channel is recorded. The pacman guard (all pacman transactions paused
 host-wide) was carried in every wave context and no seat ran pacman.
+
+## Erratum — the parked chain grew after the first description
+
+The deviation section above named three foreign-identity commits on the lane's
+parked working copy. When the round was verified at the final lane tip the
+chain was five commits deep, because the same wave-3 seat kept committing in
+the lane repo as it worked:
+
+    tip 6a4afdfe48b0
+      -> 28a8bf50  "baseline: round-36 draft lesson bytes (sandbox only)"
+      -> 10094ed1b9eb  "mut1: delete R35-WORDS correction row (sandbox only)"
+      -> f3517a161e97  "mut2: one-word change 20->19 in R35-WORDS row (sandbox only)"
+      -> f3bdcd036878  "mut3: unchecked word change in R35-WORDS row (sandbox only)"
+      -> 873c5d7774b9  "mut4: corrupt cited blob hash in R35-WORDS row (sandbox only)"
+      -> 6ae4da76c9ff  @ (lane identity, empty description)
+
+All four mut commits carry the foreign identity
+`MutLessonRow sandbox <sandbox@mut.invalid>`; none of them is an ancestor of
+the branch tip and none was pushed. The seat's own working-tree mutations were
+reverted by the seat before it exited, and the committed bytes are the correct
+ones: the counter re-measures `met True` at the final lane tip
+`6a4afdfe48b0b54239d127761d21a5cf21b5b0ea`, and the committed blobs of the
+four tracked round-35 paths are byte-identical to their round-35 values
+(`ExecDisposition.md` is still `9307c5d61c1942857a17cb259b4313460b37d0da`), so
+the overwrite, the three seat-log flushes, the mixed mirror and the two
+helper-skipped HTML files all remain uncommitted exactly as the round-35
+closure required. The lane's working copy is still parked on this chain; the
+L0 question filed with this report stands, with the corrected chain depth.
