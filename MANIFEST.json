@@ -23439,6 +23439,47 @@
    "notes": "Dispatch digest: 2026-10-25T15:52:38-03:00 launch tabi round=28 pgid=3164201 driver=hyaku-inline attempt=1; 2026-10-25T16:39:22-03:00 complete tabi round=28; hyaku-inline attempt=1. Round range eb23c0b8->b4128c42 (one lane commit); report committed 32d6c304 by tabi-shokunin after lane commit; SHONEN 4x[~]; state ahead=0, porcelain clean; prompt sections 1-5 match template (placeholders only). Lane honestly declared C1 depth and C2 calibration unprovable (post-edit self-tests not run); no score delta. Defects (status-neutral): w1/ holds 62 reports for 64 results (Mut04, Mut06 missing; Mut06 inline output unfinished); census After block S068 URL not byte-reproducible. Routed to tabi next round: (1) fix s106 self-test controls (positive-case field inversion at runner :301; mismatch case never commits receipt) with red-before; (2) commit post-edit self-test and --rev evidence for both gates and update SKILL registry tallies; (3) citesLine must bind cited document to f.doc per QUALITY 70, add cross-document red case; (4) wave report accounting for Mut04/Mut06; (5) byte-exact census capture. SHONEN boxes 1,2,4 look non-author-checkable; box 3 needs a non-author executor run (operator-owned promotion).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 40,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 40,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 40
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "unprovable",
+    "operability": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-40/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-40-verifier-spotcheck.md@8893b89466250c4d542912a867392698d2da00ce",
+    "rechecks": "Plain re-measurement over committed bytes, base efe25f96 -> tip 04f3ce93 (fresh clone; no lane counter executed). C2 re-measured: round-38 w1 spec/run absent at base; at tip sha256 397f5980.../d0666a36... = pinned, counts 36/36; authenticated against independent /fast/scratch/hyaku/kama-r38 originals (mtime 06:10, inside r38 window) -> verified. C1 evidence-verified: frozen counter reads row[7] (status) for the teaches test, receipts c1-base (false_corrections=1, met=False) and c1/after (s474_row=0 ... met=False) match the report; a schema-correct plain re-read flips every prose leg 0->1, but the preregistration makes the frozen code the predicate and the lane declares no C1 improvement -> unprovable, not rescued post hoc. S474 re-opened: git ls-remote --tags sglang re-run exit 0, 190 lines, sha256 5585f6027df2... byte-identical to committed evidence; package SOURCES.append.md sha256 3ad0df68...ce234ff matches. Census: fleet-root validate exit 0 (93 W04, 0 E; reads parked 203-row worktree), tip mirror validate exit 0 (93 W04, 0 E); rows 214->215, A 204->205, mined 195->196. Spot-check: admit S474 agree; reject of staged shokuknow package agree on decision (scope), reason caveat (27/142 rows held, not 'duplicates'); proposal-2 deferral agree."
+   },
+   "commit": "kama-shokunin@04f3ce93184eda038ae6a453b3aa650b7291b1c3",
+   "closed_at": "2026-10-25T19:49:30Z",
+   "campaign": "hyaku",
+   "notes": "Digest (watchdog.log, mutable): 2026-10-25T15:56:18-03:00 launch kama round=40 pgid=3183165 driver=hyaku-inline attempt=1; 2026-10-25T16:39:24-03:00 complete kama round=40; hyaku-inline attempt=1. Step 1 OK: report 58fde7e1 by kama-shokunin with SHONEN 4x[~]; six round commits f327904b..04f3ce93 by kama-shokunin, all ancestors of origin master 04f3ce93 (ls-remote); lane scratch clone porcelain 0; prompt carries sections 1-5 + hyaku addendum 6; 64/64 wave outputs. Conformance (status-neutral): N1 closure prompt lists lane HEAD before/after as df61204c - the parked worktree's unfetched local master; actual base efe25f96, tip 04f3ce93. N2 report body quotes the v0.5.22 tag object as 39 hex (drops trailing 9). N3 SCORECARD r40 C2 row cites nonexistent c2/base.out (receipt is controls/c2-base.out). N4 fleet-root census validate reads the parked worktree (203 rows), not the 215-row tip. Not admitted - honest stop: C2 verified (operability improved, 8->8 held); C1 frozen counter cannot evaluate its predicate, lane declared it unverified, closure does not re-specify post hoc (calibration unprovable). No axis harmed (0 deleted lines in LOG/SCORECARD/corpus). Routed to kama next round: D1 C1 counter/schema mismatch + false base kill-rule prose mined in Mistakes but no QUALITY criterion cites round-40 lesson; D2 Gate reject of staged package names no candidate/flip and 'duplicates held territory' holds for 27/142 rows only; D3 corpus/lessons/round-38.md:67 still carries wrong evidence digest 5585f602f71c... with no in-file pointer to S474; D4 append corrections for N2/N3; D5 (carry, operator) parked worktree detached on mutation-sandbox lineage with stale remote-tracking ref. Operator: SHONEN boxes stay [~]; not fully checkable by a non-author this round. Spot-check committed from scratch clone /fast/scratch/hyaku/kama-r40-closure via jj-lane.sh (landed 8893b894).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
