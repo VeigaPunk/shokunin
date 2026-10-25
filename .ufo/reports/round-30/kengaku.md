@@ -143,3 +143,13 @@ the hash this report cited earlier (`6f6d6c98…`) remains an ancestor. Re-measu
 `checks=5 defects=0` exit 0 and `--selftest checks=5 failed=0`; C3 `cases=14 failed=0`; Q13 at
 `5cd92295` → `admissions=1 passed=1 failed=0 second-seat-reports=31`, exit 0. The four disclosed
 limitations stand; the Q20 and counter defects the wave found are now closed rather than only recorded.
+
+Second erratum item (2026-10-25, after the committed bytes above and the first erratum): a falsify seat
+found that **S086 is not peer-reviewed** — the society's own submission page states the proceedings are
+"published without peer review". The entry's attribution, the registry row's tier (A → **B**, the same
+call this lane makes for preprints) and the tier tallies were corrected at lane commit
+`a6a9b57a…`/the S086 correction that follows it: **tier A 76 → 78, tier B 4 → 8** (not the 79/7 the
+measurement table above reports), with the C1 counter re-issued unchanged
+(`entries=1 indexed=1 cited_rows=6 … census=ok`) because tier is not one of its fields. The Q4 falsifier
+now names its unit, population and observation. The Q5 label and the tier count in this report are
+superseded by that commit; the claim, its predicate and the axis verdict are not.
