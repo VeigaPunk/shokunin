@@ -2,7 +2,7 @@
 
 **Status: `rejected-honest-stop`.** One new claim, frozen before its data, met its six frozen clauses and then stopped: an unregistered structure-blind class reached the green target without decoding a record. No capability, no score, no credit. The previous attempt of round 34 (report `27322359`, inherited through `f432c8e3`) stays intact and is not rewritten; this report supersedes it as the round's record and cites it where it stands.
 
-Lane tip at filing: `39f433b2a2973ced6285ea81a919afcab437c524` (this report cites no later lane commit). Base `ec3125ad3d130d92f888a4128dfaa2982f36fff7`; freeze `c79bbe7b0959132b9873ff3431cf5eb313b58b33`; stop `cd75b92e583735729546b0ea3b250f2df6d0652a`; docs `66b84027`; stop bindings `5a0435ff`.
+Lane tip at filing: `c05984e72a7afb59c995359cfd16c51d94a1480d` (this report cites no later lane commit). Base `ec3125ad3d130d92f888a4128dfaa2982f36fff7`; freeze `c79bbe7b0959132b9873ff3431cf5eb313b58b33`; stop `cd75b92e583735729546b0ea3b250f2df6d0652a`; docs `66b84027`; stop bindings `5a0435ff`.
 
 ## Work performed
 
@@ -52,7 +52,8 @@ Every wave-2 seat attacked the stop, its evidence, the six record defects or the
 | `1675a8d8` | addendum extended under attack: `predicate_status` "satisfied as written (registered scope)", the producer's recorded dissent, limits X1-X5 and the corrected repair route; LOG blindness wording fixed; last wave reports | `w2/AStopJustified.md`, `w2/ACounterexample2.md` |
 | `2eafca42` | addendum: post-filing seal findings Y1-Y3, the closure-style disposition, the chousa r33 precedent; late wave-2 reports | `w2/ASealVerdict.md`, `w2/ASiblingStop.md` |
 | `39f433b2` | Y4/Y5 recorded (the forward-dated rerun field is superseded by the receipt; the capability-table wording is clarified) | `w2/AStopFields.md` |
-| fleet report commit | this file | cites `39f433b2` |
+| `c05984e7` | QUALITY row-range citations aligned to 68-74 in SKILL and the entry; last wave-1 report | `w2/ANoCredit.md` |
+| fleet report commit | this file | cites `c05984e7` |
 
 Wave evidence: `.ufo/waves/round-34/r34b/` (specs, payloads, seat maps, prompts, w1, w2, receipts, controls, assimilation, census start/end).
 
@@ -91,9 +92,9 @@ Census command (run at round start and round end):
 | | rows | A / B / C | mined / rejected / malformed | exit |
 |---|---|---|---|---|
 | start (`census-start.txt`) | 105 | 99 / 5 / 1 | 101 / 4 / 0 | 0 (8 × W04 duplicate-url warnings) |
-| end (`census-end.txt`) | 106 | 100 / 5 / 1 | 102 / 4 / 0 | 0 (9 × W04) |
+| end (`census-end.txt`) | 106 | 100 / 5 / 1 (A +1 for S106) | 102 / 4 / 0 | 0 (9 × W04) |
 
-Rows added: **S106** (tier A, mined) — binutils `readelf.c` at tag `binutils-2_47`, commit `6ce87bbc`, capture sha256 `7e81eedf19b2b93663bb3f598f74b54c107bd699f551667eb1b3d0e33eddeeff`; the `SHT_GNU_verneed` decode: `sh_info` count (`:14058`), `endbuf` bound (`:14056`, `:14067-14068`), field order (`:14072-14076`, `:14102-14106`), dynamic-string resolution (`:467-470`), ten warn-only failure paths including the located quote `warn (_("Missing Version Needs information\n"))` at `:14149`. Opened 2026-10-25 via sourceware `blob_plain` after `raw.githubusercontent.com` 404'd every binutils-gdb path; three fetches byte-identical; release tag tree equals commit tree. Rows touched old→new: none of the 105 existing rows changed status, recheck or used-by (S105 was overwritten by a bad anchor and restored verbatim — M34-12; the swap is visible in `66b84027` and repaired before this filing).
+Rows added: **S106** (tier A, mined; A 99→100, B and C unchanged) — binutils `readelf.c` at tag `binutils-2_47`, commit `6ce87bbc`, capture sha256 `7e81eedf19b2b93663bb3f598f74b54c107bd699f551667eb1b3d0e33eddeeff`; the `SHT_GNU_verneed` decode: `sh_info` count (`:14058`), `endbuf` bound (`:14056`, `:14067-14068`), field order (`:14072-14076`, `:14102-14106`), dynamic-string resolution (`:467-470`), ten warn-only failure paths including the located quote `warn (_("Missing Version Needs information\n"))` at `:14149`. Opened 2026-10-25 via sourceware `blob_plain` after `raw.githubusercontent.com` 404'd every binutils-gdb path; three fetches byte-identical; release tag tree equals commit tree. Rows touched old→new: none of the 105 existing rows changed status, recheck or used-by (S105 was overwritten by a bad anchor and restored verbatim — M34-12; the swap is visible in `66b84027` and repaired before this filing).
 
 Frontier rows advanced: **none**. PROVINCE is unchanged; the gate's home is SKILL.md's registry only, because Core needs an end-to-end REA probe with an `evidence_id` and subject sha256 (`w1/ConnectorFrontier.md`). Adjacency: the family is held by kake, tsukuroi, mado, chousa, kama, mori, tameshi and kotoba; cited, not absorbed.
 
