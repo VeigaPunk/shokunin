@@ -1,7 +1,7 @@
 # kengaku round 29 — attempt 2 (hyaku run 6): shokuknow assimilation + standing adoption gate
 
 Lane: `/home/vgpnk/Projects/shokunin/kengaku-shokunin`, branch `master`, HEAD
-**`30ee3b5ffab68c7e7eb08ed3e73907971dbc767d`** (pushed, ahead 0 / behind 0). Baseline
+**`8a25d9e32cbc4463fd72b3355ce71d49a9ad39b1`** (pushed, ahead 0 / behind 0). Baseline
 `1f3b0f1ec41ec297130e8944ff97968d32324632`; frozen prereg `plans/round-29-attempt2-claims.md`,
 freeze commit `8c14a5dcd15ac364a352d544660c69f521c3a6af`.
 
@@ -101,6 +101,7 @@ moves the generated-config work of attempt 1.
 | `c88310fb7cb71e77e6ce6c56ea8a92609ad1244c` | dead gate code deleted after a simplifier proved it behaviour-neutral | LOG §Round 29 attempt 2 |
 | `5fd54a41c34f1275cf47d50bf1fbecde61c4e6ca` | `corpus/QUALITY.md` Q19 (seat-yield obligation) and `.ufo/waves/yield.tsv` with the round-29 rows | `corpus/QUALITY.md` Q19; `…/build/R29a2Considerthese.md` |
 | `30ee3b5ffab68c7e7eb08ed3e73907971dbc767d` | row-laundering refusal, explicit `--attest-opened`, CLI argument validation, receipts | LOG §… third corrections batch |
+| `8a25d9e32cbc4463fd72b3355ce71d49a9ad39b1` | four entry claims corrected from the residual reviewer; S091 `used-by` names the priced entry | LOG §… fourth corrections batch |
 
 Every change is motivated in `LOG.md` §"Round 29 attempt 2" (including both appended correction
 batches) and in `corpus/lessons/round-29.md` §"Attempt 2" (M92–M103, Gate, rejected candidates,
@@ -245,12 +246,16 @@ Run at round start and at round end; **both exit 0**. Outputs: `corpus/evidence/
   round 29 — 40 rows, **27 of 40 caused a landed correction, supersede or verdict change**
   (`awk -F'\t' '$1==29 && $5=="yes"' .ufo/waves/yield.tsv | wc -l` → 27), against 1/179 in round 25
   and 11/125 in round 26. `corpus/QUALITY.md` Q19 makes the ledger a per-round obligation.
-- **Residual call:** 4 seats (3 reviewer, 1 critic). Two returned before this report landed —
+- **Residual call:** 4 seats (3 reviewer, 1 critic). Three returned and each produced a repair:
   `residual/R29a2rCounterRerun.md` reproduced the frozen C1 line byte-for-byte (`cmp` exit 0, sha256
-  `810c54e0…f76d1cb`, exit 0) and `residual/L1Kengaku29.R29a2rGateAttack.md` produced the laundering
-  finding repaired above. `R29a2rEntryVerify` and `R29a2rCalibration` were still running at
-  filing time and are **not** claimed as passed; their reports will land under
-  `.ufo/waves/round-29/attempt2/residual/` and the closure should read them.
+  `810c54e0…f76d1cb`); `residual/L1Kengaku29.R29a2rGateAttack.md` produced the laundering finding;
+  `residual/L1Kengaku29.R29a2rEntryVerify.md` found four entry claims to correct (a quote crossing a
+  code element, an unattributed "applies ABC to itself", an incomplete canary count, and a
+  post-publication claim S090 does not make) — all four repaired in `8a25d9e3`. The calibration seat
+  (`R29a2rCalibration`) was still running at filing time and is **not** claimed as passed; the L1
+  re-derived its object itself: every quoted span in the entry was re-tested against the fetched
+  bytes (13 spans, 11 byte-runs, 2 prose spans, all ≤25 words) and the counts in this report were
+  re-measured on `8a25d9e3`.
 - **Honest limits:** this is an author-side measurement; independent non-author closure decides
   admission. Two claim-term deviations are disclosed above for that ruling.
 
