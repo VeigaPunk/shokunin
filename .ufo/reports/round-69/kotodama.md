@@ -2,8 +2,9 @@
 
 Lane repo `/home/vgpnk/Projects/shokunin/kotodama-shokunin` · branch `main`
 Base `793f79746712a79f915bb481215e54bbea8b5e7a` · attempt-1 lands `6a98d7d`, `52b92a6`, `e86ed3e`,
-`9e82c7b` · attempt-2 lands `975e8f2` (repair + records) and `3e59d1d` (attempt-2 receipts), both
-remote-verified by the lane helper.
+`9e82c7b` · attempt-2 lands `975e8f2` (repair + records), `3e59d1d` (attempt-2 receipts) and
+`ef75509` (CritDepth's late self-update to its own seat report), all remote-verified by the lane
+helper; lane tip at report time `ef75509`, `ahead=0 behind=0`, worktree clean.
 
 ## Work performed
 
