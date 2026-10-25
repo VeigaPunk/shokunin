@@ -2,8 +2,9 @@
 
 Lane repo `/home/vgpnk/Projects/shokunin/kotoba-shokunin`, branch `master`.
 Base `a5f7459f99bb27bf697e9438362e75ac5833eca8`; attempt-1 freeze commit `a238989a`;
-landing commits `a02ba7e4` (content + repairs) and `54f4b6c` (baseline re-record, honest
-receipts, counter hardening). Working tree clean at report time (2 untracked = this report's
+landing commits `a02ba7e4` (content + repairs), `54f4b6c` (baseline re-record, honest receipts,
+counter hardening), `278b9dc` (C1 semantic corrections from the wave-1 critic) and `9ce102b`
+(Gate/correction location + flip condition). Working tree clean at report time (2 untracked = this report's
 sibling seat artifacts under `.ufo/waves/round-69/w1/`, committed in `a02ba7e`).
 
 ## Earlier attempt
@@ -116,3 +117,41 @@ classified setup failure on partial states, bullet-block D6, diff-size D7, citat
   splits V1/V2 across routes and one row cannot carry both.
 - Inherited reds (the r67 governance citation) are cheaper to disclose with their cause than to
   excuse with a new pin under time pressure.
+
+## Post-landing corrections (wave-1 seat findings, all applied and re-verified)
+
+The seats finished after the first landing; each finding below was reproduced, fixed and re-run,
+not argued:
+
+- **C1 semantics (CritC1Semantics).** The counter proves citation plumbing, not that the rule
+  cells are fair readings. Fixed in the entry: Amp now states both directions of its order (its
+  `.agents` tree ranks user-before-project while its `.claude` tree ranks project-before-user —
+  the one page-backed demonstration of the reversal), Junie's cell and the Limits scope the rule
+  to the `.junie/skills/` pair only, and the opencode cell no longer borrows S064's anchor for a
+  section it does not hold (the V2 page's bytes moved since round 54; the route is named as read
+  by this round's seat, not as a mined row). `corpus/README.md`'s coverage row lost the retracted
+  "Deep Code by root, Amp by source" synthesis.
+- **Counter identity (CritC1Semantics, RevFreezeReceipt).** `controls/freeze-receipt.txt` records
+  the pre-attack counters. `controls/postfreeze-receipt.txt` now records the landed sha256s and
+  self-test lines (22 / 25 / 10 / 6 assertions), and `SKILL.md`'s C1 row states the five-word
+  quote floor the landed counter enforces.
+- **S208's admission record (ReviewLessonGate).** The lesson's § Gate bullet now carries S208's URL
+  and access date and names its true section (`Use Agent Skills with Harness Agent`, two
+  occurrences — the page's separate `Tool approval` heading holds a different sentence); the r68
+  amendment carried the same wrong location and is corrected. The refusal now states a real flip
+  condition instead of "none".
+- **D7's pin.** `R68_INS=4081` was the ten tracked paths only; committing the fourteen untracked
+  ones yields 6379. The constant and the lesson both say +6379/−251.
+
+Re-verified after every edit: C1 `5 of 5`, C2 `8 of 8`, C3 `2 of 2`, integrity `9/9 checks pass`,
+gate registry 49 of 49, checklist 10/11 (the inherited r67 governance citation is the only red).
+
+## Residual, disclosed
+
+- C1's five-of-five is a provenance count. The rule cells were corrected against the pages by
+  hand and by two critics, but no counter observes a cell's meaning; a future round that wants a
+  semantic gate needs per-cell assertions, not more citations.
+- S207 re-carries a fact round 50 already holds for opencode. Superseding it against S024 is the
+  clean move a later round should make; doing it inside this round would re-point a frozen claim's
+  five ids after the fact.
+- The r67 governance citation red stays disclosed rather than excused (see § Gate battery).
