@@ -3,8 +3,8 @@
 Lane: `/home/vgpnk/Projects/shokunin/chousa-shokunin` · lane branch `master`
 Base: `6e2630a6343948b3fe5bf299901207a0619ad949` · freeze:
 `c2f0e9d100c0d46633a6277b2fd51d2ac99678eb` · landing:
-`c294484f736dca099b8cce6e978c31dad51095dd` · receipt commit: `72a0f2bcd2d635259866efd567eb00541f5a5aab` · lane tip after the
-last seat-report commit: `91a4be56a604a7b0f2a67ea9a6de5f630cef9978`
+`1e9756f568961d176173d584828a902eea3d867c` · final receipt commit (lane tip):
+`b8bc44f41174d37ca341e9720d895b5cb8a47af6`
 
 Declared claims (frozen in `corpus/evidence/round46/claims.md` before any seat
 scored, with their do-nothing controls): **C1 operability** (the lane's lowest
@@ -76,20 +76,20 @@ knowledge entries. Routed from the round-45 closure as D7 and D8.
 | wave-2 corrections: registry designator leg, C2 fence/comment/boundary, span paths, context spans, entry narrowings, map + anchor fixes | instrument-revision bullet; lesson mistakes 1–14 | `3807537d` |
 | fence-above-Inference crash fix, CANARY leg, S084 remainder arithmetic, instrument limits | lesson `### Named limits` | `e50b388a` |
 | wave-2 finish: Zenodo role correction, entry pointers, Gates rows into the table, registry table glue, C2 eight-cell rule, C1 dedupe, C3 span-id/context legs, shipped forges, four-tree before receipt | lesson `## Wave-2 corrections and record errata` | `45ede9c2` |
-| final measurement receipt over `45ede9c2` | — | `524ef466` |
+| interim measurement receipts | — | `524ef466`, `72a0f2bc` |
+| C2 literal-set completion: `NAMED` widened to repo-relative names, five `.ufo` gate controls registered, receipts and records refreshed | C2 bullet; lesson | `1e9756f5` |
 | Gates verdict maps corrected against observed exit contracts | C2 bullet | `0e2d7b8f` |
 | checklist wiring + QUALITY 66 | Understanding bullet | `29793159` |
 | C2 receipt positive control labelled | C2 bullet | `158ab27c` |
 | multi-line comment scan, refreshed receipts, lesson sentence | C2 bullet; lesson errata | `c294484f` |
-| receipt over `c294484f` | — | `72a0f2bc` |
-| six wave-2 seat reports as updated by their seats | — | `91a4be56` |
+| final measurement receipt over `1e9756f5` (supersedes the C2 numbers of the earlier receipts) | — | `b8bc44f4` |
 
 ## Before → after measurements
 
 | claim | counting command | before | after | measured commit |
 |---|---|---|---|---|
 | C1 operability | `python3 corpus/evidence/round46/c1-count.py` | `TOOL=absent POSITIVE_PASS=0/3 JUNK_KILLED=0/3 C1=FAIL` exit 1 (`controls/c1-before.txt`, tree A = base `6e2630a6` + this round's counters and fixtures) | `POSITIVE_PASS=3/3 JUNK_KILLED=3/3 CANARY=pass C1=PASS` exit 0 | `c294484f` (`corpus/evidence/round46/measure-after.txt`) |
-| C2 calibration | `python3 corpus/evidence/round46/c2-count.py --list` | `ENTRY_POINTS=71 (tools=7 counters=50 named=69) REGISTERED=55/71 UNREGISTERED=16` exit 1; pristine base archive `ENTRY_POINTS=68 (7/47/66) REGISTERED=55/68 UNREGISTERED=13` (`controls/c2-before.txt` trees A–D) | `ENTRY_POINTS=73 (tools=8 counters=50 named=71) GATES_ROWS=35 REGISTERED=73/73 UNREGISTERED=0 C2=PASS` exit 0 | `c294484f` |
+| C2 calibration | `python3 corpus/evidence/round46/c2-count.py --list` | literal frozen set: freeze-equivalent trees A–C `ENTRY_POINTS=79 (tools=7 counters=50 named=74/77) REGISTERED=58/79 UNREGISTERED=21` exit 1; pristine base tree D `ENTRY_POINTS=76 (7/47/74) REGISTERED=58/76 UNREGISTERED=18` exit 1 (`controls/c2-before.txt`) | `ENTRY_POINTS=81 (tools=8 counters=50 named=79) GATES_ROWS=36 REGISTERED=81/81 UNREGISTERED=0 C2=PASS` exit 0 | `1e9756f5` (`corpus/evidence/round46/measure-after.txt`) |
 | C3 depth | `python3 corpus/evidence/round46/c3-count.py` (and `--lane-only`) | `ENTRIES=0/2 CITES_BOUND=0/5 QUOTE_ROWS=0/11 C3=FAIL` exit 1 (`controls/c3-before.txt`) | both modes full, exit 0 (`CAPTURE_BOUND=11/11` default, `skipped` lane-only) | `c294484f` |
 
 Verdicts: **C1 improved** (frozen predicate met at every revision; the D7
@@ -106,7 +106,7 @@ connector 1, sentinel 1; 32/32 reports. Wave 2 (falsify) 32 seats — reviewer 2
 critic 4, mutation-tester 3, scout 3, sentinel 2; **31/32 reports**: seat
 `CritC2Scope` produced no report and is recorded dead, not replaced (its subject
 — C2's mention-vs-dependence scope — was independently hit by `RevC2TagCount`,
-`RevRerunC2` and `CritC2Framing`). No residual task call was needed. Both waves
+`RevRerunC2` and `CritC2Framing`). No residual task call was needed (the late seat was not replaced; its report is committed). Both waves
 validated under `scripts/hyaku/ufo-wave-policy.json` (band 32–64) and were
 dispatched as one batched `task` call each from the emitted `taskCall`
 (`.ufo/waves/round-46/{w1,w2}-dispatch.json`). Planner = the L1 (validator
