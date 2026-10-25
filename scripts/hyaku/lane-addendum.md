@@ -25,6 +25,17 @@ m_antigravity as the connector".
   both when they fit the claims; say which in the report.
 - Run state, lane order, blocks: `.scratch/goal-20261025-hyaku-run7.md` under {{FLEET_ROOT}}
   (replaces the run-6 goal file named below).
+- **Inline spawn handoff (binding; replaces §2's "Dispatch bridge" and the capacity resend rule).**
+  Operator, verbatim: "the spawns should spoawn inline, here on this session". NEVER call `task` /
+  `tool.task` yourself for a wave or a residual call. Build the spec, validate it, write
+  `<wave>-dispatch.json` as before; then write `{{LANE_CWD}}/.ufo/waves/round-{{ROUND}}/<wave>.ready`
+  holding JSON `{"lane":"{{LANE}}","round":{{ROUND}},"wave":"<wave>","dispatch":"<abs dispatch json>","l1":"<your agent id>"}`.
+  The orchestrator's dispatcher takes it within ~15 s (marker `<wave>.ready.dispatched`), spawns every
+  seat of `taskCall` unchanged in the operator session, and when all seats settle writes
+  `<wave>-results.json` beside the dispatch file (per seat: name, agent, id, status, final output) and
+  messages you `WAVE-DONE <wave> … results=<path>`. After writing the ready file call the `wait`
+  tool, and call it again if it returns without that message; never poll files, never sleep-loop,
+  never re-write a taken ready file. Seat counts, dead seats and role mix come from results.json.
 
 
 Operator directive 3, verbatim (phase 3, 2026-10-22): "each round should be a 32-100 swarm round".
