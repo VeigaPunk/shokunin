@@ -22698,6 +22698,43 @@
    "notes": "dispatch launch 2026-10-25T09:56:14-03 pgid=1996094 hyaku-inline attempt=1; complete 10:22:16-03; conformance clean (report authorship, SHONEN heading, ancestry, ahead=0, pushed, template contract, watchdog digest match). Defects routed: lesson Gate first quote word-count label (20 vs ~28/24 tokens) imprecise, cosmetic. Observation: v1 wave 32 seats, 14 attack-role seats <32 -> no wave2/residual, as reported.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 62,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 62,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 62
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unchanged",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-62/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-62-verifier-spotcheck.md@dfa6fca8f362e9c962f5b940025a2619380b759b",
+    "rechecks": "No declared claims to re-measure (zero-claim round). Re-verified landed repairs from committed bytes at a2281a39: S195 live refetch sha256 8ef2ee5f matches committed capture and quote at line 39; C2 bundle 16488385 bytes sha256 c5c01540 verified 'is okay' complete history rev 4247d2da; proxy stanza A=117 C2=150/150 and pin.make-dispatch-actual f0194314 match sha256sum of committed script; readme-map covered=150 incl. both new lesson rows; round-62 probes byte-identical to round-61 (R61-V2 unrepaired). Census exit 0 myself."
+   },
+   "commit": "kumitate-shokunin@dfa6fca8f362e9c962f5b940025a2619380b759b",
+   "closed_at": "2026-10-25T14:05:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (watchdog.log, mutable): 2026-10-25T10:14:09-03:00 launch kumitate round=62 pgid=2351683 driver=hyaku-inline attempt=1 / 2026-10-25T10:39:09-03:00 complete kumitate round=62; hyaku-inline attempt=1. Step-1 ok: report fleet 198f40ed by kumitate-shokunin; SHONEN 4x[~]; all cited commits ancestors of master; lane pushed ahead=0, clean. Defects: (1) ZERO declared claims — the report's defense ('the prompt contains no frozen claim sentences') is a misreading; prompts never carry claims, the lane had to declare and freeze them before evidence seats, and .ufo/waves/round-62/plan/ stayed empty. A zero-claim round cannot satisfy 'every claim verifies', so admission is impossible despite honest work. (2) Wave contract violated: five ordinary task batches (8/8/40/39/1 = 96 seats), no validator taskCall, no dispatch registry/actual-outcomes receipt — undispatched-wave defect, advisory artifacts only. Landed repairs recorded: R61-V1 C2 forgery bundle archived+verified; R61-V3 append-only r60 corrections; R61-V4 six placeholder mappings; R61-V5 proxy refresh A=117/C2=150 + make-dispatch-actual pin + readme-map rows; R61-V6 Audit19 re-queue landed; misroot swept. R61-V2 NOT repaired (routes to next round). Spot-check: S195 reopen AGREE (my fetch byte-identical), carried-over package reject AGREE, S195 row quote AGREE, census AGREE.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
