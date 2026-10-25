@@ -101,3 +101,4 @@ Then repeat from the lowest next-round.
   enabled devin credential. Probe (probe-model.sh): devin/deepseek-v4-1-flash OK, devin/glm-5-3-flash-1m OK; devin/swe-2 still returns
   the free-model rate limit on the Max account (model-level limit, not quota) and falls to mercury-3. Re-enable 31: set disabled_cause NULL.
 - operator: "remove m_swe from all fallback chains" -> 23 `devin/swe-2(:max)` entries removed from fallbackChains (backup config.yml.pre-noswe-20261025). m_flash chain now: commandcode/deepseek-v4.1-flash:high (primary) -> opencode-go/deepseek-v4.1-flash -> devin/deepseek-v4-1-flash -> inception/mercury-3:max -> openai-codex/gpt-6-luna:low.
+- operator: "create m_sonnet (sonnet 5.5 high, anthropic primary); assign task to m_sonnet". Added modelRoles.m_sonnet = anthropic/claude-sonnet-5-5:high, chain devin/claude-sonnet-5-5 -> inception/mercury-3:max -> openai-codex/gpt-6-luna:low; task -> @m_sonnet (main/planner stay @m_opus).
