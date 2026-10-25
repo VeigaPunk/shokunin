@@ -20568,6 +20568,52 @@
    "notes": "dispatch digest: 2026-10-24T23:07:32-03:00 launch kumitate round=60 pgid=4184743 driver=hyaku-inline attempt=1; 2026-10-25T03:23:10-03:00 complete kumitate round=60; hyaku-inline attempt=1. Report landed last as 7b0581ed by the lane identity, subject 'round-60: kumitate report (operator stop sweep)'. Claims: C1 (operability, dispatch-evidence) NOT verified - the frozen DISPATCH60 predicate never holds in committed bytes (close/dispatch60-work.txt: held=8/10 at a745a3b0, A7 row-absent and A10 wave-dir-absent; the report claims 9/10 with only A10 missed), the A7 SCORECARD fix, all of .ufo/waves/round-60/w1/, the launcher artifacts and both close receipts are uncommitted, no dispatch-actual.json exists (the launcher wrote w1/swarm-registry.json with members as an object and agentId null on all 32 seats - the gate's own NOT_A_DISPATCH/REGISTRY_UNREADABLE classes), and 27/32 seats settled exit=-9 session=null with only 5 exit=0, 6 seat reports, and launcher.py.txt dead on a ValueError; the capability therefore does not enter the table. C2 (coverage, band-4 durable execution) VERIFIED by independent re-measurement at a745a3b0: 126->133 rows, A=110 B=15 C=8, 0 malformed, 2 entries with provenance trios, 7/7 used-by paths, S126 capture byte-identical to S117 and the dup group pinned, census validate exit 0 (six W04), readme-map 145/145/145. No owned axis harmed; admitted=false only for want of C1. Routed to round 61: R60-V1 uncommitted round work (LOG.md, PROVINCE.md, SCORECARD.md, corpus/QUALITY.md, corpus/SOURCES.md, corpus/lessons/round-60.md, .ufo/waves/round-60/{close/,w1/,launcher.py.txt,w1-launcher.log,w1-plan.json,w1-spec.json,w1-taskcall.json}); R60-V2 report placeholders __TIP__/__MEASURED__/__COMMITS__ filed (third landed change and both after-measurements cite no object); R60-V3 reported 9/10 contradicts its own receipt's 8/10; R60-V4 cited close/dispatch60-tip.txt and close/doctrine60-tip.txt do not exist; R60-V5 registry not in the gate's schema; R60-V6 27 dead seats unreported plus the launcher ValueError; R60-V7 no round-60 LOG entry at either committed rev (grep -ci 'round 60' -> 0); R60-V8 this round's spot-check file needs a corpus/README.md row plus covered pin in round 61 (sixth recurrence of the R56-V3/R58-V7 class); R60-V9 the exactly-once reject reason cites S141 where the package now assigns S211. SHONEN boxes 2 and 4 look checkable by a non-author once R60-V1 lands (LOG round-60 entry, PROVINCE band-4 line, w1/ConnectorSiblings.md); promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 43,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 43,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 43
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "successor operability counter .ufo/waves/round-43/count-c1s.py (14 checks, C1S=met, no-harm arm pass=22 fail=0, frozen r42 counter unamended)",
+    "calibration counter .ufo/waves/round-43/count-c2.py (append-only S349 correction row + SCORECARD correction line, 8 checks)",
+    "SOURCES registry 238 -> 243: tier-A S348/S349/S470 admitted, tier-B S350/S351 rejected with flips",
+    "three knowledge entries (c1s-cwd-r43, s235-sha-correction-r43, journal-disk-usage-total-r51) and QUALITY 115/116"
+   ],
+   "report": ".ufo/reports/round-43/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-43-verifier-spotcheck.md@1429c791db5891c484684feef893799909d2d6a8",
+    "rechecks": "C1S re-derived from committed receipts + counter sha 93482248 (14/14 PASS, entering tip C1S=unmet exit 1); C2 re-derived independently (S235 line sha 971df55e, S349 corrects-S235 with a30dca99 and no a30cda99, correction line count 1, declaration fragment intact, PDF sha 9855a498); SOURCES rows 238->243 counted by grep; census validate exit 0 with 19 W04; 72 seat logs and role mix 31 attack/33 build counted; four Gate sources re-opened live (agree on all four)"
+   },
+   "commit": "mori-shokunin@1429c791db5891c484684feef893799909d2d6a8",
+   "closed_at": "2026-10-25T06:31:24Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (.ufo/watchdog.log, mutable): 2026-10-24T21:21:34-03:00 launch mori round=43 pgid=2878367 driver=hyaku-inline attempt=1; 2026-10-25T03:23:12-03:00 complete mori round=43; hyaku-inline attempt=1. Round tip 91cb221f35f7cb9afeff99ef1959512dabddfc46 (lane HEAD at spot-check time); lane state ahead=0 local=remote; working tree clean. ATTRIBUTION DEFECT: the report was fleet-swept, not landed by the lane -- commits 484e6eff (operator stop sweep) and 0c9e9999 (hyaku sweep, subject says the L1 returned without committing) carry the mori identity via fleet-commit --as mori. ORDERING: initial filing 484e6eff 23:31:10 preceded the lane's final commit 91cb221f 23:35:46, and the 03:23 amendment rewrote filed report bytes in place (10+/5-) instead of an appended erratum. Both status-neutral. Routed to mori r44: (1) report count slips -- '15 checks PASS' is 14 in evidence/c1s-after.txt and the green control, and '34 seat logs carry provider.rate_limit: 429' is 8 (39 logs merely contain the string 429); (2) count-c1s.py and count-c2.py are gate-shaped but have no SKILL.md registry row and no --selftest mode, so no gate is graded conformant until registered; (3) C1S receipt measured at dde525ea while the report says 'at the landed tip' -- tip equivalence rests on the documented identical counter sha, a tip run receipt would close it. Operator-side: templates/round-prompt.md still lacks explicit lands-last and lane write-scope child items; this prompt carried both only via the hyaku addendum. SHONEN not fully checkable by a non-author: three [~] pointers, box 4 [ ], no [x]; promotion stays operator-owned and is not proposed. C1S's disclosed instrument limitation (4/8 mutant classes survive) was accepted; frozen r42 counter untouched (empty diff, sha 105ce075).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
