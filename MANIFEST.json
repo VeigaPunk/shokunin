@@ -21804,6 +21804,47 @@
    "notes": "Dispatch/complete digest: 2026-10-25T06:59:32-03:00 launch kotodama round=70 pgid=3242996 driver=hyaku-inline attempt=1; 2026-10-25T07:20:45-03:00 complete kotodama round=70; hyaku-inline attempt=1. SWARM CONFORMANCE DEFECT (orchestrator-side, status-neutral): 0 of the 33 planned wave-1 seats ran - the single batched dispatch was refused six times at the shared host job cap (Background job limit reached (100)), so the MISSION.md L2 floor (>=8 in one batched call) and the operator's swarm directive went unmet and NO falsification wave attacked the claims; the integrator's own re-measurement is therefore the only independent check. Step-1 conformance otherwise clean: report committed by the lane identity kotodama-shokunin at 779e29b (23s after the cited lane HEAD), SHONEN heading with 4 lines matching the 4 boxes, every cited hash exists and is an ancestor of main, lane repo clean and ahead=0 (lane HEAD now b94a543c after the verifier commit), prompt carried the full contract and the L2 route map matches MISSION.md. Routed to the lane for round 71 (durable queue): V70-1 receipts dropped the QUALITY 17/19 header block (no counter sha256 / stamped / evaluated / measured revision / tree; header names 6cb51a4+landed edits, a revision whose bytes lack the after-state) and the counters carry no --lands leg; V70-2 S860 verify-at pairs hardened blob 6a314e9c with revision 6cb51a4, which holds blob 1ef2e965 (MALFORMED-ROW absent there) - repoint to acc2d614; V70-3 lesson Gate quote is 27 words under a <=25-word header and the report calls it 25; V70-4 report trends overstate - expansion improved contradicts CORPUS.md criterion 4 (expansion is knowledge, not rows) and discernment improved rests on record repair, closure grades both unchanged; V70-5 Gate records no reject and no explicit 'rejected this round: none' statement, so no reject decision exists for the outside spot-check; V70-6 accept-d --selftest depends on git object 793f797:SKILL.md and reports red (SELFTEST 1/2, exit 1) instead of a declared could-not-evaluate on an exported tree with no .git. SHONEN: all four boxes stay [~] with resolvable pointers and look fully checkable by a non-author - promotion review is operator-owned and ready. No installs or updates were made.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 69,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "revenger",
+   "lane_round": 69,
+   "lanes": {
+    "revenger": "ok"
+   },
+   "lane_rounds": {
+    "revenger": 69
+   },
+   "admitted": false,
+   "verdict": "rejected-harmed",
+   "verdicts": {
+    "coverage": "unchanged",
+    "calibration": "improved",
+    "freshness": "harmed",
+    "operability": "harmed",
+    "depth": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "harmed",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-69/revenger.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "revenger-shokunin/corpus/lessons/round-69-verifier-spotcheck.md@3f5edbc206351232a3d2d801334dd930499ccaf5",
+    "rechecks": "frozen counter (sha256 bca74e6d, pin matches) re-run by reviewer on git-archive corpus trees: base 222a7a7 exit 0 with K_HELD_BACKED/STRICT 8/14, C05_STATUS uncovered, C05_SINGLE_V4 no, HOLDS_C2_V4 no, Q15_PRESENT no, C7_V3_CLEAN yes exit 0; tip db956ec exit 1 with the same coverage labels and NameError at measure.py:158 after Q15_PRESENT=yes. C1 falsification re-measured (target 9/14 unmet, README byte-identical 3501479 both ends, v4 entry admission-status rejected) and the six Q FAILs evidence-verified from the committed seat reports; C2 falsification re-measured (checker run directly: --self-test exit 0, false-sentence scan exit 1, restatement scan exit 0, and the three tree ids re-derived independently). Harms sweep: corpus/fixtures 865a4e8e and corpus/live 74376f31 identical at both ends, round-65/67/68 candidates and README/SHONEN unchanged, QUALITY +1 row only, SOURCES +2 lines (46->47). C7 regression re-derived at byte level without executing the gate (base script 17 bare enum lines vs tip 20 value-suffixed; the r68 candidate embeds the bare forms). Census validate exit 0 with the same four W04s. Wave accounting verified from evidence: 64 seat reports, registry 64 members, dispatch spawn=64 calls=1, slot grant line committed; attack share 45/64 lane predicate and 41/64 floor list re-counted."
+   },
+   "commit": "revenger-shokunin@db956eca73bf810db9bdf2c98dc843a528f5d789",
+   "closed_at": "2026-10-25T10:32:42Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest (.ufo/watchdog.log, mutable; copied): 2026-10-25T06:56:04-03:00 launch revenger round=69 pgid=3231681 driver=hyaku-inline attempt=1; 2026-10-25T07:27:31-03:00 complete revenger round=69; hyaku-inline attempt=1. Both declared claims falsified and stopped honestly (kill rule executed: README unflipped, v4 entry marked rejected; the C2 predicate reads labels the pinned counter cannot print). Grade: rejected-harmed because two axes were harmed by self-inflicted, reported regressions, not by the falsified claims. Defects routed (status-neutral): V1 uncommitted lane-authored leftover at closure — .ufo/waves/round-69/R69CounterReplay.md rewritten 07:27:07 after tip commit db956ec 07:26:29, so the lane repo is tracked=1 while the report states tracked=0/untracked=0; V2 report and claims cite pre-registration as e1d22caf, which does not resolve (true commit e1d22caa); V3 the report's C1 table says K_HELD_BACKED was not printed, but the registered run printed 8/14 before the NameError at measure.py:158; V4 the C1 counting command as printed (relative path from cwd=/) does not execute — the claims.md absolute-path form is the working one; V5 the frozen counter crashes (def run at :187, used at :158) — hoist in a new counter revision with a fresh red-before, map uncaught exceptions to exit 2, move the D1 fixture under corpus/; V6 the in-place derivation extension reformatted seven enum lines the retained round-68 candidate embeds verbatim, so C7_V3_CLEAN went yes->no and HOLDS_OK_V6=no (the round's own void condition) — make the extension additive; V7 SHONEN box 1 [x] rests on a lane-dispatched seat (revenger-r64.R64ReviewSkill), which the promotion gate counts as lane attestation [~], and certifies r64 bytes not the current 51809 B bytes. Item-10 quarantine: the 26-row slice is genuine verificatory work (all 26 rows hand-checked, per-seat verdicts) but carried no claim and earned no axis credit; adoption stays closed. Open L0: round-68 question unanswered and a new one filed (may a frozen instrument's crash be repaired in-revision when a claim is otherwise unevaluable); not pre-empted. Conformance: report committed by revenger-shokunin identity in the fleet repo, SHONEN heading with 4 box lines, every cited lane commit resolves and is an ancestor of refs/heads/main, prompt carries the template contract (§1-§5 plus the hyaku addendum; §3 L2 floor matches MISSION.md:53-65). Verifier spot-check landed and pushed as revenger-shokunin 3f5edbc (protocol identity) with the lane remote at the same commit.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
