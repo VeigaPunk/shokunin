@@ -20036,6 +20036,43 @@
    "notes": "dispatch/complete digest: 2026-10-24T19:58:12-03:00 launch kake round=48 pgid=1647007 driver=hyaku-inline attempt=1; 2026-10-24T21:13:06-03:00 complete kake round=48; hyaku-inline attempt=1. Report 124cf646ab96589ff30068b02f28bfc60f834e38 by kake-shokunin, ancestor of fleet HEAD. Round work tip fd917a42567ff3642c0f7930659681141200b419 ancestor of master and pushed (ahead=0) before this spot-check. Prompt carries the contract. Status-neutral leftovers, classified and not swept: porcelain 10 paths = 8 orchestrator-owned .ufo/waves/round-46/residual/ reports (mtimes 03:26-03:37, before launch; continuing r47 durability) plus 9 >1MiB files under assimilation/validate/ that are byte-identical to already-tracked sources and were skipped by directory-track (snapshot.max-new-file-size=1MiB), so a repeat directory commit returns nothing to commit. Routed to the lane: (1) committed validate/corpus/SOURCES.md is byte-identical to the post-append registry, so validate-before-append is not re-derivable — file a pre-append census stdout and SOURCES digest before the next append; (2) C1 R4 still opens worktree retained bytes rather than git show <revision>; the path-join fix did not change the predicate and no seat had scored. Operator-routed: residual reports stay orchestrator-owned; the 64-seat/27-attack wave produced 0 reports and is not claim validation. SHONEN not fully checkable (box 2 open, others [~]); promotion operator-owned. Reviewer is a Kimi fresh closure agent, not an @m_swe session.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 67,
+   "date": "2026-10-24",
+   "type": "closure",
+   "lane": "kotoba",
+   "lane_round": 67,
+   "lanes": {
+    "kotoba": "ok"
+   },
+   "lane_rounds": {
+    "kotoba": 67
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "consistency": "improved",
+    "depth": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-67/kotoba.md",
+   "verification": {
+    "reviewer": "hyaku-closure (Kimi fresh closure agent session, non-author)",
+    "spotcheck": "kotoba-shokunin/corpus/lessons/round-67-verifier-spotcheck.md@e94ae32a5cd8dc3ee8e2d247816784bec2750cc0",
+    "rechecks": "Re-ran in isolated checkouts: integrity 5/9 exit 1 at 2a8eba56 (unindexed r66 spot-check) -> 9/9 exit 0 at 532cda09; independent exit 1 -> 0; K2 index-only 6/9 exit 1; K3 baseline-only 8/9 exit 1. C2 --rev tip and 89ca03ae print 1 of 1 exit 0; --self-test 0 failures over 10 assertions. Base --rev 2a8eba56 prints environment error and exits 2, not 0 of 1; receipt C2-authority-measure.txt already records exit 2. Plan kill rule fires, so C2 does not verify. Census validate exit 0, rows 120->123, 16 W04. S123/S124/S129 quotes re-opened; staged 2026/08/18 absent from the fetched Model Spec text. Description 1019 stripped / 1020 YAML-folded vs 1024. Post-land integrity at e94ae32 is 6/9 exit 1 because this spot-check is unindexed."
+   },
+   "commit": "kotoba-shokunin@532cda09ad39a4b8d45bdded86d6dd9a53755141",
+   "closed_at": "2026-10-25T00:21:39Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-24T19:58:14-03:00 launch kotoba round=67 pgid=1647559 driver=hyaku-inline attempt=1; 2026-10-24T21:11:49-03:00 complete kotoba round=67; hyaku-inline attempt=1. Status ok (real report, lane identity 33953ff54fec145181c845b0fd06899c89b98562, cited hashes ancestors of master, prompt contract present, ahead=0). Admitted false: C2 frozen kill rule (plans/round-67.md:97-98) fires because --rev 2a8eba56 exits 2 and does not print 0 of 1, while the report/LOG/SCORECARD assert that print; C1 verifies. Defects (status-neutral): report cites 89ca03ae and does not cite post-report 532cda09; operator considerthese commit 8d029a21 sits between base and lane commits; census receipt path in the report (w1/controls/) is absent, file is controls/census-validate-append.txt; M107 says porcelain lists nothing after live.md removal, but ?? .ufo/waves/round-67/w1/controls/junk-world/ remains (254M untracked control mirror, not production edits, not edited here). Waves: w1 32 seats, 14 exit 1 on weekly 429, 18 exit 0, 15 reports, not replaced; w2 35 seats, 9 reports, seat-results 31 exit 1 and 4 unset — unfinished seats not credited. Weekly-quota L0 already at .ufo/l0-questions.md; not duplicated. SHONEN four [~]; not fully non-author-checked; promotion operator-owned. Routed: R67-1 make --rev missing-entry print 0 of 1 or correct the asserted print; R67-2 fix the census receipt path; R67-3 disclose/remove the 254M junk-world and correct M107; R67-4 index this spot-check and re-record the baseline (post-land integrity 6/9 exit 1, unindexed, tracked 122 vs 121, report_total 85 vs 82). Integrator commits: fe194f6aef0f144bf1b5bd9c6622e00a8edd773d then e94ae32a5cd8dc3ee8e2d247816784bec2750cc0 (protocol identity, one path, pushed; remote master = e94ae32). No lane-authored file edited, no promotion, no mint, no r68, no inline verify/closed/advance.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
