@@ -23163,6 +23163,48 @@
    "notes": "dispatch 2026-10-25T14:42:35-03 launch round=27 pgid=1728588 attempt=1; 14:46:45 lane-dead-no-report (L1 misread inline-spawn handoff, no lane writes); 14:46:47 relaunch pgid=1952211 attempt=2; 15:38:46 complete. Report committed by lane identity 6468c465; SHONEN heading 1 line/box; cited commits ancestors of master; lane pushed ahead=0. Defects: uncommitted leftover wave-runtime (.ufo/waves/round-{26,27}/) and census/operator-sweep-20261019/ + __pycache__ dirs in lane worktree (helper refuses .ufo paths; r27 dispatch/results not committable); S119/Q57 stale composite-site citation unresolved (r28 planned); clean-worktree check of new pre-report gate fails on those leftovers. Observation: run-7 m_flash-majority share 36/79 seats (45.6%) if all routed per map; per-seat models not recorded in committed wave artifacts. SHONEN boxes look fully checkable by a non-author (promotion is operator-owned). No tools installed/updated.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 33,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 33,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 33
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "freshness": "improved",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged",
+    "novelty": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-33/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_kfc session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-33-verifier-spotcheck.md@5022357cc69334e83b5a2f76c34daea440077a57",
+    "rechecks": "C1/C2/C3 re-measured by closure over committed bytes (registry/entry/index/census/quote-location, N1-N6 items, raw byte sizes+sha256+counts); all three claims verify; no axis harmed"
+   },
+   "commit": "kengaku-shokunin@4e6a8b1f124db8494cfb96fb85be1967ea11aa5f",
+   "closed_at": "2026-10-25T18:41:05Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest: 2026-10-25T13:52:09-03:00 launch kengaku round=33 pgid=17455 driver=hyaku-inline attempt=1; 2026-10-25T15:39:23-03:00 complete kengaku round=33 hyaku-inline attempt=1. Report committed by lane identity (fa569faf), SHONEN 1 line/box, cited hashes ancestors of master, lane pushed/clean (ahead=0). Prompt carries template contract + five child-lane items; L2 route map matches MISSION.md. Orphan 2b4cef2e exists but is not an ancestor - disclosed by lane as abandoned and re-landed via helper; no landed claim cites it. Frozen control-nothing.txt prints entries=1 (claims-file prose says entries=0) and S093 already named the entry at baseline - both disclosed in report, frozen claims preserved. Minor routed item: round-33 lesson header says 36+36 seats vs actual registry 36+53=89 (report and registries correct).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
