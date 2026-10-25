@@ -3,8 +3,8 @@
 Lane: `/home/vgpnk/Projects/shokunin/chousa-shokunin` · lane branch `master`
 Base: `6e2630a6343948b3fe5bf299901207a0619ad949` · freeze:
 `c2f0e9d100c0d46633a6277b2fd51d2ac99678eb` · landing:
-`c294484f736dca099b8cce6e978c31dad51095dd` · receipt commit (lane tip):
-`72a0f2bcd2d635259866efd567eb00541f5a5aab`
+`c294484f736dca099b8cce6e978c31dad51095dd` · receipt commit: `72a0f2bcd2d635259866efd567eb00541f5a5aab` · lane tip after the
+last seat-report commit: `91a4be56a604a7b0f2a67ea9a6de5f630cef9978`
 
 Declared claims (frozen in `corpus/evidence/round46/claims.md` before any seat
 scored, with their do-nothing controls): **C1 operability** (the lane's lowest
@@ -82,6 +82,7 @@ knowledge entries. Routed from the round-45 closure as D7 and D8.
 | C2 receipt positive control labelled | C2 bullet | `158ab27c` |
 | multi-line comment scan, refreshed receipts, lesson sentence | C2 bullet; lesson errata | `c294484f` |
 | receipt over `c294484f` | — | `72a0f2bc` |
+| six wave-2 seat reports as updated by their seats | — | `91a4be56` |
 
 ## Before → after measurements
 
