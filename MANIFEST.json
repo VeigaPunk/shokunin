@@ -19954,6 +19954,47 @@
    "notes": "dispatch/complete digest (.ufo/watchdog.log): 2026-10-24T19:58:07-03:00 launch kama round=34 pgid=1645288 driver=hyaku-inline attempt=1; 2026-10-24T20:57:46-03:00 complete kama round=34; hyaku-inline attempt=1. Report 16cf603 by kama-shokunin. Both claims re-measured and verified; scores held (calibration 7, operability 8); no axis harmed. Wave: 33 validated seats, same taskCall relaunch after a spawn failure recorded in the lesson and wave-census (Cannot combine --prompt with --auto); the failure note is not in the committed manifest, only in the dirty working copy. 5 reports committed at the tip and still the only 5 on disk; 28 seats have no report and are not evidence; no replacement. Parent's 6th report and 1-live-at-release are not observable now. Report's 2-live claim is contradicted by seat-log mtimes (last 20:54:03) and the 20:53:29 exit snapshot (rc=1 for all 33). Driver verify 61 uncommitted paths, classified not edited: 24 round-33 inherited (23 untracked + 1 modified registry; report said 22), 37 round-34 (dirty manifest + 33 seat dirs + dispatch.log + exit codes + null-agentId registry). Operator-identity commit 82ca9608 (considerthese/2026-10-24.md) inside the range. Routed: commit the manifest note or stop citing dirty bytes; coverage-map sentence is false (README unchanged); L2 delivered 5/33; MISSION.md still says operability+freshness vs conf/prompt operability+calibration; ~205-minute session envelope noted, measured span 59m39s inside ROUND_MAXTIME=170m, not repaired. SHONEN all [~], non-author-checkable, promotion operator-owned. Spot-check landed 719655f12517a9ce6b1a5ca44316897fed8420b0.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 42,
+   "date": "2026-10-24",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 42,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 42
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unprovable",
+    "calibration": "improved",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-42/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (Kimi fresh closure agent, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-42-verifier-spotcheck.md@e3a2b58f72ba3bd52a90646f7285fb85f0ee5dd2",
+    "rechecks": "C1 frozen counter at 25200325: 28 PASS then TypeError cwd, exit 1, no C1= line (unprovable). C2 unmet->met. C3 unmet->met; independent diff-tree 145/145. Census 231->238 exit 0. S235/S262/S347 agree; S268 reject agree, stampPDF 418 not a confirmed flip."
+   },
+   "commit": "mori-shokunin@e3a2b58f72ba3bd52a90646f7285fb85f0ee5dd2",
+   "closed_at": "2026-10-25T00:13:32Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-10-24T11:17:51-03:00 launch mori round=42 pgid=162932 driver=hyaku-inline attempt=1; 2026-10-24T20:58:07-03:00 complete mori round=42; hyaku-inline attempt=1. Report 93394cb377c9856a8789607a26ff6b1f8bb0da12 by mori-shokunin, ancestor of fleet HEAD. Measured round tip 2520032569dae65511e7a347181004b530d99174 (pushed, ahead=0, porcelain empty); report cited 62b95e51 and landed before 25200325, which added S235.pdf and removed the recursive scratch mirror. C1 honest stop graded on the frozen counter (not the 28 passes, not the manual no-harm file); counter not amended. C2/C3 repairs of r41 defects re-measured met. MutC2Record and MutC3Manifest kills evidenced in committed transcripts. Wave: 64 dispatched, 18 reports, 46 registry-absent/dead, all agentIds null; missing seats not credited as attack evidence. L0 527fc8dd already filed, not re-filed. Routed: successor C1 measurement; S235 SOURCES sha transposition a30cda99 vs actual a30dca99; SCORECARD declaration still says C1=met; S268 stampPDF flip not closure-confirmed (HTTP 418). SHONEN has no [x]; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
