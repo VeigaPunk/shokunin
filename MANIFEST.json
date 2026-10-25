@@ -23773,6 +23773,49 @@
    "notes": "driver: 2026-10-25T16:08:30-03:00 launch tameshi round=45 pgid=2141782 driver=hyaku-inline attempt=1; 2026-10-25T17:41:37-03:00 complete tameshi round=45; hyaku-inline attempt=1. Conformance ok (report by tameshi-shokunin 8b3d7bb6, 8 cited hashes ancestors of master, ahead=0, clean, receipts-only tail 0 paths). Status-neutral defects/routed: (1) contract no_harm round-44 record-agreement counter red m11=1 (external GoogleTest hash cd8e73f0 not a lane object) m12=1 (round-bound): false positive, not harm; fix counter before reuse; (2) selftest tallies C1 19/19 C2 10/10 have no standalone committed receipt, survivors 12/8 routed r46; (3) freshness score 1->9 is a formula change, comparable measure is fresh 0->71; (4) anchor-refresh candidates and dynamic-page whole-hash pins (S026,S093,S108); (5) one dead w2 seat and duplicate Mut seats disclosed. SHONEN boxes all remain [~]; none newly checkable by non-author, no operator promotion item.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 41,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 41,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 41
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "pin-watch"
+   ],
+   "report": ".ufo/reports/round-41/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_sonnet session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-41-verifier-spotcheck.md@0b606b03bf0b2a87b791aa537f6c72c941624cf0",
+    "rechecks": "Plain re-measurement in a fresh clone of the lane remote, base 8893b894 -> tip aa960577. C1 re-measured: head Axes table facts re-derived (sha256/wc of 6 files equal the table); reconcile counter base mismatches=16 met=False -> tip mismatches=0 facts=24 met=True; frozen counters/preregistration byte-unchanged since freeze 6fec0c4c; SCORECARD diff additions only, scores held 8/8/7/9/7/7. C2 re-measured: audit base tool=0..capability=0 met=False -> tip all 1 met=True (fresh seed 7); pin-watch selftest pass=9 fail=0; independent git ls-remote: llama.cpp newest b11887 with 115 tags above b11755, vLLM v0.32.0 and SGLang v0.5.22 current, equal to tool output; ls-remote evidence sha256 for sglang/vllm/llama.cpp match S474/S476/S477. capability-repertoire-audit listed 7 observed 7 met True. Spot-check: S475 re-opened live, page sha256 296a3d5c equals committed copy, 22-word quote present in OUTPUT (agree admit); S476/S477 evidence digests/lines match (agree); staged package reject agreed: SOURCES.append.md sha 3ad0df68 unchanged, own URL pass 142 rows = 27 held / 81 not held / 34 no-URL, equal to lane and r40 closure counts; D3/D4 corrections verified append-only. Census 215->218 (A 205->208, mined 196->199) equals report; validate exit 0, 93 W04 0 E at fleet root and on tip mirror."
+   },
+   "commit": "kama-shokunin@aa960577c1bff891d37bbf3ad7914745ff3aaa7a",
+   "closed_at": "2026-10-25T20:48:00Z",
+   "campaign": "hyaku",
+   "notes": "Digest (watchdog.log, mutable): 2026-10-25T16:50:00-03:00 launch kama round=41 pgid=134737 driver=hyaku-inline attempt=1; 2026-10-25T17:43:17-03:00 complete kama round=41; hyaku-inline attempt=1. Step 1 OK: report 48199b98 by kama-shokunin with SHONEN 4x[~]; commits 6fec0c4c, 24aa1d34, 4fe239a4, aa960577 all ancestors of origin master aa960577 (ls-remote); prompt carries sections 1-6; no marker report. Conformance (status-neutral): D-A closure prompt again lists lane HEAD before/after as df61204c (parked worktree's stale local master, same as r40 N1); real base 8893b894, tip aa960577; the SCORECARD diff was run on real hashes. D-B report says skill://shokunin not installed, but ~/.agents/skills/shokunin exists. D-C seat R41D07 wrote no report file (self-disclosed landing mistake). Helper note: jj-lane.sh commit on the parked worktree refused (working copy on non-tip base, stale local master df61204c), so the spot-check was landed through a fresh jj-colocated scratch clone /fast/scratch/hyaku/kama-r41-closure initialised with jj-lane.sh init (landed 0b606b03, ls-remote confirmed); the parked worktree was not touched. Limits: C1 counter proves facts true, not relevant (R41A03, R41A06); no score moved, so improved is for the self-assessment match (16->0 mismatches) and for a new working capability. Routed to round 42: strengthen C1 evidence relevance with a counter a low-cost edit fails; name pin-watch in PROVINCE.md Owns (R41A10); operator-owned parked-worktree disposition (r40 D5) and fleet-root validate reading the stale registry. SHONEN: all four boxes remain [~]; none fully checkable by a non-author from this round alone, promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
