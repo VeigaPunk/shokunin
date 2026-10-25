@@ -23318,6 +23318,44 @@
    "notes": "dispatch/complete digest: 2026-10-25T15:43:01-03:00 launch kasegi round=30 pgid=3083380 driver=hyaku-inline attempt=1; 2026-10-25T16:03:22-03:00 complete kasegi round=30; hyaku-inline attempt=1. Defects (status-neutral, routed to round 31): (1) 8 untracked round-30 leftovers in lane repo (wave1/ConnHarm.md, wave1/RevC1Controls.md, wave1/fetch/, wave1/mutant-b1/, dispatcher markers, plan.err/run.err); (2) round-30 LOG.md entry missing (lane-disclosed editor-hash failure; changes landed in 5703f9f/bc1a1e); (3) SCORECARD round-30 'recheck-audit open item exit=1' paragraph stale after final ledger-recheck fix (final audit strict pass=43/43 exit=0); (4) M30-1 B2 fixture isolation gap disclosed and routed (kill clause satisfied; supplementary same-stem fixture proves limb). Operator note: wave1-results.json/WAVE-DONE never arrived; answering-model identities and dead-seat counts unavailable, disclosed; seat reports committed as wave evidence. Round shape: one v2 wave, 64 seats (run-7 band floor), m_flash roles 39/64=60.9%, attack roles 19/64=29.7% verified from committed spec/dispatch.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 28,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 28,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 28
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "improved",
+    "operability": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-28/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_kfc session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-28-verifier-spotcheck.md@691dd29211c53d0ef94fa072394cb9c8a69fe92e",
+    "rechecks": "C1 evidence-verified (landing gate c1-before findings=2 -> c1-after findings=0 at de478b4, no exemption; rc2 COULD-NOT-EVALUATE identical at base) + plain re-measure: Q57/Q59 tokens 0 at fec846d, new targets resolve, tip SCORECARD path tokens resolve; C2 re-measured F4 grounded 4->6, SOURCES 135->139 = 138 excluding S215 per frozen exclusion clause, F4 map row 6/6, census validate rc0, gate ok=2 evidence-verified -> verified (closure disagrees with lane's self-declared miss); C3 re-measured dirty .ufo/waves 163->0, fixture 6/6 evidence-verified, but git archive of fec846d: r26 manifest 1228 ok / 152 records absent from committed bytes (nested .gitignore in capture), sha256sum -c rc1 -> kill rule fires; r27/r28 manifests rc0; SCORECARD diff adds only r28 table, no owned score change"
+   },
+   "commit": "souji-shokunin@fec846dd1781a414ae3a7d71d2d8fa2fb17900eb",
+   "closed_at": "2026-10-25T19:14:30Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-10-25T15:40:35-03:00 launch souji round=28 pgid=3077632 driver=hyaku-inline attempt=1; 2026-10-25T16:08:12-03:00 complete souji round=28; hyaku-inline attempt=1. Report committed by lane identity 9cb1a3ce (prompt b5022a43); SHONEN heading 4 [~] lines; cited commits 0c96332/765fe8b/ed270c4/de478b4/fec846d ancestors of master; lane pushed ahead=0, worktree clean. Prompt carries full contract. No step-1 defect. Routed to souji: (1) r26 wave capture misses 152 manifest records ignored by nested .gitignore copies; capture tool verifies disk not committed set; fixture needs nested-.gitignore + symlink cases (15 symlinks uncovered); (2) append-only correction: LOG/SCORECARD/lesson r28 blame 2 'malformed' newline records, which are valid GNU escapes rejected by host uutils sha256sum 0.8.0; real defect is the 152 absent records; (3) landing gate can never evaluate .ufo/waves reports now gitignored -> point at census/round-N/waves; (4) C2 6/6 coverage-agreement literal not the tool's output shape (Q58 class); (5) S215 used-by git-auto-maintenance-trigger-set.md which does not cite S215; (6) lane misread its own frozen S119 exclusion clause. Spot-check: 2 admits (S212, S214) + 2 rejects (S216, S138) all agree; live POSIX digests equal pins. SHONEN boxes look fully checkable by a non-author (promotion is operator-owned). No tools installed/updated.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
