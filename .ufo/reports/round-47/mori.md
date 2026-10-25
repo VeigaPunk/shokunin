@@ -1,6 +1,6 @@
 # mori — round 47 report (L1 MoriR47, attempt 1)
 
-Lane HEAD (pushed): `dd17d927ffcb10908c191893472bd60e5d028c29` — `git -C mori-shokunin ls-remote origin refs/heads/master` prints this hash.
+Lane HEAD (pushed): `356fb94a5bdc3d206b30072744711067d18f8140` — `git -C mori-shokunin ls-remote origin refs/heads/master` prints this hash.
 Entering tip `2d85e33d14198d388fd3cda9cc15ec07e57e7a53`; freeze `63eecf2738db96f46b0bd02b1b2dfd66787493d0`.
 
 ## Work performed
@@ -29,7 +29,10 @@ Work items:
 - **Misroots.** The W1 sweep found none (`w1/ExecMisrootBaseline.md`: `MORI_MISROOT_CLEAN`).
 - **Round shape:** two v1 waves.
   - **w1 (build + first falsifiers): 42 seats.** Roles: scribe 12, executor 12, reviewer 4, mutation-tester 4, scout 3, critic 3, connector 2, sentinel 1, simplifier 1. m_flash share 59%, attack share 26%. 41 reports are on disk. MutPinSemanticCell's report was never written because the orchestrator's kernel restarted (`w1-results.json`). That seat is also believed to have edited the tracked tool; the orchestrator restored it (lesson M4).
-  - **w2 (falsify): 37 seats.** Roles: executor 14, reviewer 7, mutation-tester 5, scribe 4, critic 3, connector 2, simplifier 1, scout 1. m_flash share 51%, attack share 41%. 34 reports were on disk when this report was filed. CritV2Junk, MutV2Rebound and ScoutMisroot had not returned, and `w2-results.json` had not been written. Those three are not counted as dead.
+  - **w2 (falsify): 37 seats.** Roles: executor 14, reviewer 7, mutation-tester 5, scribe 4, critic 3, connector 2, simplifier 1, scout 1. m_flash share 51%, attack share 41%. All 37 settled (`w2-results.json`) with 37 reports on disk. Three seats returned after the first filing of this report:
+    - `CritV2Junk` found five new structural false-green classes against v2 on the real registry: an un-hyphenated `selftest` header, Unicode homoglyph prefixes, an archived tool copy pinned on a brand-new row, and a fenced replacement. These limit the v2 capability row and are routed to round 48.
+    - `MutV2Rebound`: the rebound conjunct is killed by the selftest.
+    - `ScoutMisroot`: `MORI_MISROOT_CLEAN`.
   - **Round total: 79 seats.** No residual call. I held the planner seat. No seat died with an error at report time.
 - **Tool installs:** none.
 
@@ -45,6 +48,7 @@ Each commit is tied to the `LOG.md` "Round 47" entry:
 - `af2250d8` — v2 closes `RevPinCheckCode` M1/M3/L1 (PIN_CHECK_SELFTEST 34/34).
 - `68d66ca5` — after-receipts and w1 results.
 - `dd17d927` — w2 evidence, SCORECARD/LOG round 47, lesson w2 findings, census end.
+- `356fb94a` — w2 settled: results, the three late reports, lesson note.
 
 ## Before → after measurements
 
@@ -96,6 +100,7 @@ Stale-lane: respawn-per-round driver; no other mission of this lane is open.
 Open L0 questions: none.
 
 Routed to round 48:
+- v2 structural false greens (`w2/CritV2Junk.md` FG1–FG5): key the floor and baseline on table identity, and require ASCII prefixes;
 - a successor `count-c2.py` with a used-by arm, matching of rows indented 0–3 spaces, and one path per cell;
 - v2 selftest arms for symlink containment, the argv sub-checks and case-insensitive unparsed detection (`w2/MutV2*.md`);
 - checks for line-count pins and truncated digests;
