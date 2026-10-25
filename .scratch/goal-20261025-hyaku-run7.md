@@ -96,3 +96,7 @@ Then repeat from the lowest next-round.
   current config.yml (KamaR41/ChousaR49/MoriR47/KengakuR35/TameshiR45 = anthropic/claude-opus-5-5). Live/parked agents keep their
   spawn-time model: TsukuroiR37 and MadoR39 (m_kfc era) were running on openai-codex/gpt-6-luna fallback (237/175 turns).
   Fix: cancel + respawn both L1s under current routing (task=@m_opus) with resume context.
+- operator: "use the jpveigao (Max) devin auth, not vgpnk (daily-exhausted)". agent.db auth_credentials id=31 (vgpnk1337, Pro;
+  identified by its 4h daily-reset block + "daily usage quota exhausted" error) set disabled_cause; id=12 (jpveigao10, Max) is the only
+  enabled devin credential. Probe (probe-model.sh): devin/deepseek-v4-1-flash OK, devin/glm-5-3-flash-1m OK; devin/swe-2 still returns
+  the free-model rate limit on the Max account (model-level limit, not quota) and falls to mercury-3. Re-enable 31: set disabled_cause NULL.
