@@ -21347,6 +21347,50 @@
    "notes": "Dispatch digest: '2026-10-25T04:14:42-03:00 launch kama round=37 pgid=3307577 driver=hyaku-inline attempt=1' and '2026-10-25T05:05:37-03:00 complete kama round=37; hyaku-inline attempt=1'. Report committed by kama-shokunin as a7361db0097b2005de59b6a2a9c1adac4c688277 (ancestor of fleet origin/master); SHONEN heading with 4 lines for 4 boxes; prompt carries the round contract and all five child-lane items; wave 1 is one v1 wave of 37 seats (reviewer 10, scout 10, critic 5, scribe 4, mutation-tester 3, executor 3, connector 1, revenger 1) under the 32-64 band; base->tip diff is pure addition (zero deleted lines), SCORECARD 35/0, PROVINCE.md and SKILL.md byte-identical. Conformance defects (status-neutral, routed to kama r38): (1) both round-37 counters are uncommitted — tools/round37-statement-audit.py and tools/round37-coverage-audit.py are untracked in the parked worktree and absent from the tip, so C2's printed counting command cannot be re-executed from landed bytes (C1's is recoverable only as .ufo/waves/round-37/w1/out/EnvironmentalQuokka/counter.pristine.py); (2) .ufo/waves/round-37/ is left untracked (148 worktree files vs 123 at tip) including the 37th seat report w1/out/CriticEntries.md (seat L1Kama37.WetHornet, 20238 B, written after the last lane commit), so 'Seat accounts: 37/37 returned reports' has 36 landed witnesses; (3) wave 1 has no seat exit-code receipt (w1/run.json has no rc, no seat-exit-codes.json exists), so 'Dead seats: none' is unverifiable — the class r36 D3 was routed for; (4) r36 D2's third sub-fact ('cites S331 to S334' -> S332/S336/S337/S338/S339, verified against the staged package) has no correction row in round-37.md and no counter re-derives it, so round-36.md:43 still carries the wrong range; (5) C2's cited_ids is a bare \\bS[0-9]{3,}\\b regex over whole entry text (over-credit risk, disclosed in the report) — narrow it when the freeze lifts. Lane state: the working copy stays parked on the five foreign-identity commits (r36 L0 open) and its local master is stale at 6a4afdfe; jj-lane.sh state prints ahead=0 against that stale ref, which does not prove the landing — git ls-remote does. SHONEN stays four [~] boxes (each with a resolvable pointer except the seat tally); no [x] written, promotion operator-owned. No tool installed or upgraded this round.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 36,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 36,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 36
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "counter-discrimination audit",
+    "evidence-pointer durability audit"
+   ],
+   "report": ".ufo/reports/round-36/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-36-verifier-spotcheck.md@b4e47e980bfb0cbc8a4e788f59a41db858751fd8",
+    "rechecks": "C1 re-measured from committed receipts: 14/25 ok-lines before, 25/25 after, control-id sets equal the 25-id manifest (3 accept / 22 reject), the receipt header's four sha256 digests equal the committed gate/counter/manifest bytes; C2: six of seven observables re-derived from committed bytes (dangling=2 absent, pair closed=1 to existing targets, scratch=124, disposition text, tip transcript committed+ancestor with mismatched=0, setup sections), inherited_dirty is a disclosed worktree reading; SOURCES 200->201 with numstat 1/0 and census exit 0 re-run; D6/D7 errata re-derived (3 rows/6 cells; 37/37/40); harm watch 0 deletions in quality/tools, mado-verify.sh blob 9113c7c0 identical; S211 re-opened (17-word quote at #S2/#P15), PMC2833407 reject re-opened (proteomics paper)"
+   },
+   "commit": "mado-shokunin@a5aaa09ad38bfd90c13d76ccf371e36c45a2697e",
+   "closed_at": "2026-10-25T08:45:19Z",
+   "campaign": "hyaku",
+   "notes": "driver: 2026-10-25T04:09:05-03:00 launch mado round=36 pgid=3277229 driver=hyaku-inline attempt=1; 2026-10-25T05:41:00-03:00 complete mado round=36; hyaku-inline attempt=1. Report landed last (fleet b26422a6 05:40:34 > lane tip a5aaa09 05:40:09); lane ahead=0, pushed. Defects routed, status-neutral: R1 uncommitted round artifact .ufo/waves/round-36/w1/reports/DistillerFindings.md left untracked while the report says 'working tree clean'; R2 report lines 196/215/231 name the after state at 64979ef while both receipts (re-pinned in fe55a90) and SCORECARD name 4d28b19; R3 'six criteria (57-61)' is five; R4 lesson quotes the S211 receipt as 1,037 B, it is 1,756 B at tip; R5 inherited_dirty is a worktree reading so C2's after state is not fully byte-reproducible. Carried from the lane's own routing: manifest identity in the gate (now bound), exit/verdict coherence, three-substring transcript, control ordering, inherited check-index-rows.py rev-mode exists_glob defect, generator /tmp traversal+race, digest-clause anchor half not exercised by the frozen manifest. Operator note: SHONEN boxes 1, 2 and 4 read as non-author checkable; box 3 (instructions executable without oral context) rests on in-lane seat evidence only. Environment: host /tmp is 100% full (3 MB free); no tool installs or updates were made by this reviewer.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
