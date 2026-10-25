@@ -22065,6 +22065,47 @@
    "notes": "Dispatch/complete: 2026-10-25T07:34:37-03:00 launch tameshi round=43 pgid=280132 driver=hyaku-inline attempt=1; 2026-10-25T08:19:18-03:00 complete tameshi round=43; hyaku-inline attempt=1. Defects: lane worktree has modified tracked .ufo/waves/round-43/w1/RevC2Classes.md; route to r44 for disposition. C2 at landing fails m7 because SCORECARD round-43 claims cite unknown S256. S089 registry anchor digest stale after source drift; update anchor and log old-to-new next round. SHONEN items are asserted [~]; operator may consider separate promotion review if independently checkable.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 45,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 45,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 45
+   },
+   "admitted": false,
+   "verdict": "rejected-harmed",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "harmed",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "harmed",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-45/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-45-verifier-spotcheck.md@9834fed4dd8a2ee201ebc4183e2435f4c7272674",
+    "rechecks": "Plain re-derivation at baabc992 vs 554ff416, no lane gate/selftest executed: C1 ledger 15 rows mismatches=0 moved=5 const=10, no dup ids/cmds, witnesses embody their classes; C2 population 36->39, unregistered 3->0 (path-in-row), no_selftest 5->0, tables=7, dup names 0; C3 entry/S473 mined+used-by/README row absent->present, census mori ok rc0. Gate verdicts evidence-verified from LOG r45 + freeze manifest (27/27 digests match). SKILL.md:184/190/191/194 pins (f80e75ac, e8ee29eb, d67ffacd, 64db765e/622, pass=6/10) contradict committed bytes (5f2deea0, 153423c4, 9850b3fc, 8b82ac99/743) -> calibration harmed. Spot-check: S473 admit agree (re-fetched, sha a9433bb0, 17-word quote at :1518-1519), who-sets-the-scope-cap and cap-control-wording rejects agree."
+   },
+   "commit": "mori-shokunin@12c89ea63491fcca0f46169d809740711d3d052e",
+   "closed_at": "2026-10-25T11:36:01Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch: 2026-10-25T07:31:38-03:00 launch attempt=1 pgid=271214; 08:22:30 lane-dead-no-report (content-policy refusal, work landed baabc992); 08:22:32 launch attempt=2 pgid=3993108; 08:29:29 complete attempt=2. Conformance ok: report 308a27ad by mori-shokunin, SHONEN 4x[~], cited commits ancestors of master, ahead=0 clean, prompt = template + addendum. One wave (37+2 seats), no wave 2. Defects: SCORECARD.md lacks r45 claim rows; report+LOG claim freeze 29/29, measured 27/27; two residual executor seats outside spec. Rejected-harmed: four SKILL.md registry cells pin digests/tallies the committed instruments lack (found in-round by w1/CritAxisHarm 1b, shipped unmarked; :191 also misses counter+mutant digests beyond the report's list). Routed r46: re-pin SKILL.md:184,190,191,194 by superseding rows; LOG correction 27/27; SCORECARD r45 rows recording calibration harmed; selftest-rule keys (M3-M5), GIT_* scrub (M11), r44 ledger admissibility. SHONEN not non-author-checkable until re-pin lands; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
