@@ -8,14 +8,14 @@ their given shokunins that match the contents; do it with high parallelization; 
 7th run; choose the shokunin orders. for delegations, i want a mix of m_zfl, m_flash, m_kcode,
 m_mim, m_glm53 | delegate accordingly. | i want the swarm rounds to be of 64-100 subagents per
 shokunin;" — then: "use more m_flash"; "oh, its m_kfc; my bad, not m_kcode"; "also, include
-m_antigravity as the connector".
+m_antigravity as the connector"; "stop with the m_glm53 roles assignment, use m_flash".
 - **Round size: 64–100 seats in total, every round** (floor 64 is the directive, ceiling 100). Shape:
   one v2 wave of 64–100, or two v1 waves (32–64 each) summing to 64–100. Residual calls count
   toward the 100. The capacity rule's "size near the band floor" means 64 this run.
 - **Run-7 routing** (global role map; never pass `model`): task/main/planner `@m_kfc`;
-  critic/revenger/sentinel `@m_glm53`; reviewer/mutation-tester/security-reviewer `@m_zfl`;
-  connector `@m_antigravity`; scout/distiller/seance `@m_mim`;
-  executor/labrat/scribe/sonic/simplifier `@m_flash`. Every wave carries a few connector seats
+  reviewer/mutation-tester/security-reviewer `@m_zfl`; connector `@m_antigravity`;
+  scout/distiller/seance `@m_mim`; executor/labrat/scribe/sonic/simplifier/critic/revenger/sentinel
+  `@m_flash` (m_glm53 dropped by the operator). Every wave carries a few connector seats
   (cross-claim/cross-source pattern finding). **"use more m_flash":** m_flash roles carry the
   majority of every wave (≥50% of seats as executor/scribe/labrat/sonic/simplifier) — drafting goes
   to scribes, runnable checks to executors/labrats; attack share (≥25%) is met with

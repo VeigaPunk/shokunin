@@ -19,11 +19,10 @@ m_glm53→zai/glm-5.3).
 | roles | alias |
 |---|---|
 | task, main, planner (L1s, closure judges) | @m_kfc |
-| critic, revenger, sentinel | @m_glm53 |
 | scout, distiller, seance | @m_mim |
 | reviewer, mutation-tester, security-reviewer | @m_zfl |
 | connector | @m_antigravity |
-| executor, labrat, scribe, sonic, simplifier | @m_flash (≥50% of each wave's seats) |
+| executor, labrat, scribe, sonic, simplifier, critic, revenger, sentinel | @m_flash (≥50% of each wave's seats) |
 
 ## Round shape
 
@@ -55,3 +54,13 @@ Then repeat from the lowest next-round.
 - kagi stays HOLD: operator ruling on L0 `kagi | round-28` (content-safety refusal) not given.
 
 ## Incidents
+- ~13:2x -03 operator interjection: "the spawns should spoawn inline, here on this session". Wave seats
+  now spawn from the orchestrator session: L1s write `<wave>.ready`; a kernel dispatcher (eval,
+  log /fast/scratch/hyaku-run7/dispatcher.log) spawns seats with agent(), writes `<wave>-results.json`,
+  messages the L1 `WAVE-DONE`. Block-1 L1s were told mid-flight via agent:// messages.
+- 14:09–14:15 -03: kernel background dispatcher failed — agent() needs an active eval cell ("No active
+  Python tool bridge session"); 3 ready waves sat 5–10 min unspawned. Fix: spawns happen inside cells;
+  a bash ready-watcher (`/fast/scratch/hyaku-run7/ready-watch.sh`) wakes the orchestrator; seat
+  completions wake it too. Live async job cap is 100 (config 450 not applied): a capacity queue
+  spawns pending seats as slots free (reserve 3). kengaku build partially spawned 25/36 at the cap.
+- Operator interjection: "stop with the m_glm53 roles assignment, use m_flash" — critic/revenger/sentinel → @m_flash (config.yml). Seats already spawned keep their captured route.
