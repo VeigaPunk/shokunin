@@ -22891,6 +22891,44 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log): 2026-10-25T10:17:46-03:00 launch chousa round=48 pgid=2365961 driver=hyaku-inline attempt=1; 2026-10-25T11:22:48-03:00 complete chousa round=48; hyaku-inline attempt=1. Conformance defects (status-neutral): uncommitted corpus/QUALITY.md seat edit made inside the round window (mtime 2026-10-25 11:17:47 -03:00) never landed in 73ea8110; three inherited R40/R41 leftovers (two swarm-registry.json, cells.json) still uncommitted - LOG inherited note covers only the three; W1 of 32 seats lacked connector/scribe roles (W2 had both); W1 Attack04 died on invalid_prompt, not replaced. Routed to lane for round 49: (1) append-only correction of the propagated a05 figure (3/12 incl. a05 -> true 2/12 false refusals; a05 refusal was correct) sweeping r48 lesson S095 block and QUALITY 69 framing; (2) document the unmeasured P2-narrowing false-negative class (negator 3-before-stem denials now accepted); (3) resolve the four uncommitted working-copy paths under the next round's entry; (4) S093 quote hygiene ((2) elision, mid-word truncation; reuse anchors @1526/1576/1669). Operator note: all four SHONEN boxes are author [~] this round and are fully checkable by a non-author promotion reviewer without new evidence. L0 8d77e6c1 remains open; no live fetch made; no tools installed.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 27,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 27,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 27
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth:verifiability": "unchanged",
+    "coverage": "unchanged",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-27/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_kfc session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-27-verifier-spotcheck.md@261a6651b7e52c58e9ad0ceaef6f3bd0bf2d904f",
+    "rechecks": "All C1/C2 before-values re-measured by integrator on c2ab51de (bad/bounties fixtures, --selftest FileNotFoundError before-state, SKILL.md exit 0 bad=0, frontier=11, S042-citing entries=0, rows=41, census exit 0, harness entries=14 pass=14 exit=0); after-states confirmed absent (anchorcheck.py byte-identical to base, no source-snapshots/round-27, no workflow knowledge entry, no S042 row, no c1-receipt-index.txt); receipts evidence-verified against committed files; no lane-owned gate verdict executed"
+   },
+   "commit": "kasegi-shokunin@c2ab51de7a97820794ccde9db8c673bb993a434f",
+   "closed_at": "2026-10-25T14:42:54Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (.ufo/watchdog.log L1366-1367): 2026-10-25T11:22:53-03:00 launch kasegi round=27 pgid=2743195 driver=hyaku-inline attempt=1; 2026-10-25T11:37:21-03:00 complete kasegi round=27; hyaku-inline attempt=1. Honest stop: operator ended the run mid-round; zero waves, 0 seats; C1/C2 frozen pre-dispatch in .ufo/waves/round-27/claims.json with committed before-receipts; after-states never produced; both declared NOT VERIFIED and verified honest by integrator re-measurement - no prettification. Step-1 conformance clean: report committed by lane identity kasegi-shokunin <kasegi@shokunin.local> (4b5817df, in fleet master, pushed), SHONEN heading + 4 box lines ([~]/[ ] only), c2ab51de ancestor of master, jj state ahead=0 clean, prompt carries full round contract + hyaku addendum. Census exit 0 (pre-existing W04 S028/S029 only). Gate made zero admit/reject decisions (honest stop); integrator spot-checked the Gate's 4 factual claims against the read-only staged package (S042 free id, staged S043 = lane S041, vendor-third-party entry ground:F20 names no lane frontier row, staged-row schema needs normalization) - all agree, one with a quote-location-precision reservation. Defects (status-neutral): section-3 L2 floor and 32-64 wave band unexercised (external operator wrap-up, lesson M27-2); staged entry grounds F13 vs lane plan F12 - reconcile at adoption. Routed to lane for round 28: execute >=1 admit and >=1 reject in the Gate so the non-author sample has decisions; F12/F13 numbering reconcile; quote-cell location precision; round-26 carried defects (reviewer seats inside build wave, inline <=25-word Gate quotes, single canonical receipt at landed digest). No owned axis harmed; SCORECARD/LOG honest-stop appends only. No tools installed or upgraded; no pacman transaction attempted (host-wide pause in force).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
