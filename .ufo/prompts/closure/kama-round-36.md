@@ -15,6 +15,7 @@ Inputs:
 - driver dispatch/completion lines (`.ufo/watchdog.log`, mutable — copy this digest into notes):
 2026-10-24T21:43:16-03:00 launch kama round=36 pgid=3178699 driver=hyaku-inline attempt=1
 2026-10-24T23:17:47-03:00 complete kama round=36; hyaku-inline attempt=1
+2026-10-25T03:23:10-03:00 complete kama round=36; hyaku-inline attempt=1
 
 Duties (you may dispatch up to 8 read-only reviewer/critic `task` seats to parallelize re-checks;
 never pass a model parameter; you write only the two artifacts in steps 4–5):
@@ -43,7 +44,7 @@ never pass a model parameter; you write only the two artifacts in steps 4–5):
    agree/disagree with a reason. Re-open ≥1 newly written `corpus/SOURCES.md` row and check its
    ≤25-word quote. Run `/home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin kama`.
 4. **Write `/home/vgpnk/Projects/shokunin/kama-shokunin/corpus/lessons/round-36-verifier-spotcheck.md`** (non-author;
-   headed `author: hyaku closure (non-author integrator, @m_swe)`): conformance results,
+   headed `author: hyaku closure (non-author integrator, @m_flash)`): conformance results,
    per-claim re-check with commands and observed output, per-axis verdicts, spot-check table
    (item · decision · re-opened source · agree/disagree · reason), trend verdicts with evidence,
    and routed defects the lane must fix next round. Commit and push only that path through the
@@ -80,7 +81,7 @@ never pass a model parameter; you write only the two artifacts in steps 4–5):
    "admitted": true|false, "verdict": "admitted"|"rejected-honest-stop"|"rejected-harmed"|"failed-marker",
    "verdicts": {"<axis>": "<verdict>"}, "trends": {"expansion": …, "quality": …, "discernment": …},
    "capabilities_added": […], "report": ".ufo/reports/round-36/kama.md",
-   "verification": {"reviewer": "hyaku-closure (@m_swe session, non-author)",
+   "verification": {"reviewer": "hyaku-closure (@m_flash session, non-author)",
    "spotcheck": "kama-shokunin/corpus/lessons/round-36-verifier-spotcheck.md@<hash>", "rechecks": "<summary>"},
    "commit": "kama-shokunin@<lane HEAD>", "closed_at": "<ISO-8601 UTC>", "campaign": "hyaku",
    "notes": "<dispatch/complete digest; defects; routed items>", "promotions": [], "minted": []}`.
