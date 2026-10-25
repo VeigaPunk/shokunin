@@ -9,7 +9,7 @@ declares two claims, frozen before data in
 `.ufo/waves/round-22/attempt2/preregistration.txt` at base
 `4edb25dfe262515d0da63224bbba71e02e36cba5`.
 
-**Lane tip and measured revision: `c1664fcde8b12c7e6082a98cbbab1f1e7509177d`**
+**Lane tip and measured revision: `77d659524c777276bcef33568be3c4cbcb9d1052`**
 (`jj-lane.sh state` → `ahead=0 behind=0 tracked=0`).
 
 ## Work performed
@@ -117,6 +117,16 @@ role was dispatched (the validator rejects it). Round total **59 seats** (≤128
 | w1 (v1 wave) | 53 | 12 executor, 15 reviewer, 8 scout, 7 scribe, 4 critic, 3 mutation-tester, 2 revenger, 1 sentinel, 1 connector | 53/53 |
 | residual | 6 | 4 reviewer, 1 sentinel, 1 critic | 6/6 |
 
+Residual outcome (all six reports at `.ufo/waves/round-22/attempt2/residual/`):
+**6/6 prescribed mutations killed** on the C2 counter (indented `source:`,
+missing `reason:`, symlink escape, locator-from-filename, byte-exact copy
+without a Gate, missing verdict row) and **5/6 forced defects killed** on the
+C1 counter (declaration absent at `--rev`, uppercase wrong digest, glob crossing
+`/`, `rev:path`, trailing-punctuation token) — the surviving case and the two
+loopholes they exposed (a revision named *inside* a command span is not
+measured; a dash counts as a reason) are recorded as limits below, not
+silently absorbed.
+
 Attack share of w1: 23/53 (43%). **Dead seats: none**; every seat returned a
 report. No seat was replaced or resumed. Two seats' assigned candidate paths did
 not exist when they ran (`evidence/impl-a`, `impl-b`); they fell back to the
@@ -154,14 +164,19 @@ entry *Round22 attempt2*.
 - `f8f0b4a2c4ab3d16369413b6aa9f2d2c08590581` — digest-pinned calibration row.
 - `8990ae4c6284005d42e6edeb9bf0060a2450f566` — instrument digest receipt, row
   cleanup, frontier note.
-- `c1664fcde8b12c7e6082a98cbbab1f1e7509177d` — final calibration numbers at
-  the measured tip. **Final lane hash cited above.**
+- `c1664fcd`, `7bc458c1`, `8680755`, `9fcc4f7`, `dd8a6b7`, `9301d98c`,
+  `77d659524c777276bcef33568be3c4cbcb9d1052` (full hashes in the LOG) —
+  residual-driven corrections: S111 anchor/teaches, lesson boundary text, S118
+  verdict note, pinned-instrument before receipt, verdicts id-space header,
+  gate-check reason/locator loopholes, and the calibration row converged to the
+  final tip. **`77d659524c777276bcef33568be3c4cbcb9d1052` is the final lane
+  hash cited above.**
 
 ## Before → after measurements
 
 | claim | counting command (lane root) | before | after |
 |---|---|---|---|
-| C1 calibration | `python3 -B tools/souji-declared-evidence.py --root . --file SCORECARD.md --rev <rev> --format counts` | base `4edb25d`: `assertions=55 resolved=52 skipped=33 mismatches=3`, exit 1 | tip `c1664fc`: `assertions=62 resolved=62 skipped=39 mismatches=0`, exit 0 |
+| C1 calibration | `python3 -B tools/souji-declared-evidence.py --root . --file SCORECARD.md --rev <rev> --format counts` | base `4edb25d`: `assertions=55 resolved=52 skipped=33 mismatches=3`, exit 1 | tip `77d6595`: `assertions=63 resolved=63 skipped=40 mismatches=0`, exit 0 (a wider span-inclusive class-B reading scores 67/67/40/0, also 0) |
 | C2 coverage | `python3 -B tools/souji-gate-check.py --root . --round-date 2026-10-25 --entries corpus/knowledge/quarantine-staging-no-copy-r23.md corpus/knowledge/quarantine-origin-record-fields-r24.md --snapshot-dir census/round-22/attempt2/sources --slice census/round-22/attempt2/quarantine-slice --slice-verdicts census/round-22/attempt2/slice-verdicts.tsv` | entries absent: `entries=2 ok=0 slice_verdicts=0 slice_total=8 fail=10`, exit 1 | `entries=2 ok=2 slice_verdicts=8 slice_total=8 fail=0`, exit 0 |
 
 Both ends of C1 use the **same instrument** (digest pinned in
@@ -182,6 +197,16 @@ missing verdict row and an always-green control all fail.
 **Claims are causally separable** — C1 verifies from `SCORECARD.md` and one tool;
 C2 from the entries, registry rows, snapshots, verdict table and the other tool.
 Neither needs the other's bytes.
+
+**Residual findings that stay open, stated plainly.** (1) C1 class B does not
+see a revision named inside a command span, so its enumeration is narrower than
+a reader might assume; the wider reading still scores 0 mismatches at the tip,
+so the after-state survives both readings while the *falsifiability* of the
+narrower one does not. (2) A sentence-final period silently removes a dead path
+from the audit. (3) The C2 slice counter counts rows, not anchors: S133's
+accepted verdict rests on a campaign payload path outside this repo. (4)
+Unreachable-by-design receipts (the DOI) are classed `unverifiable`, with the
+reachable copy named as the flip.
 
 ### Verdicts (with the attacks on record)
 
@@ -226,6 +251,15 @@ own-work), S110 `rename(2)`, S111 `mv(1)`, S112 `gio(1)`, S113 GIO
 row's status/recheck/used-by/teaches cell was rewritten, and S022 was reused as
 is. Rows by tier: 6 A / 0 B / 0 C. Frontier rows advanced: **F4** (map row,
 Frontier note and README § Round22 attempt 2); no promotion to core.
+
+**Frozen slice derivation** (the command that produced
+`census/round-22/attempt2/quarantine-slice`, 8 ids):
+
+```sh
+awk -F'|' -v l='souji' '$2 ~ ("`" l "`") && $3 ~ /round[0-9]+/ && $4 ~ /S[0-9]+/ {print $4, $5}' \
+  /home/vgpnk/Projects/shokuknow/.ufo/waves/corpus-expansion-1/absent-defect-register.md \
+  > census/round-22/attempt2/quarantine-slice
+```
 
 **Assimilation (§10).** One theme, 2 entries, package `merge/souji/`;
 re-grounded in-round (every cited source opened 2026-10-25, this lane's own Gate
