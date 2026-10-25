@@ -2,9 +2,9 @@
 
 Lane repo `/home/vgpnk/Projects/shokunin/mado-shokunin`, branch `master`, base
 `b4e47e980bfb0cbc8a4e788f59a41db858751fd8`, final lane hash
-**`372a3efd82c22fdc0e6291d82686cc2f5cb4d194`** (pre-report gate:
+**`6542248266b58d41ccccf31564d436f59857336d`** (pre-report gate:
 `git -C /home/vgpnk/Projects/shokunin/mado-shokunin ls-remote origin refs/heads/master` →
-`372a3efd82c22fdc0e6291d82686cc2f5cb4d194	refs/heads/master`).
+`6542248266b58d41ccccf31564d436f59857336d	refs/heads/master`).
 
 ## Work performed
 
@@ -87,6 +87,7 @@ verification.
 | `3f424257a1ea69cd2655770259ba00b423293f4f` | **data**: two entries, rows S212–S217, README map rows + route, QUALITY 62–63, lesson, `tools/mado-eventq.py` + live receipts, GIT_* scrub in four gates, Erratum 1 | `## Round 37` (C1, C2, M37-4) |
 | `f6ae0c36ff4282e0e605e75212358890223eeafc` | records: LOG and SCORECARD round-37 sections, errata, residual E2 corrections, after receipts, wave-1 and residual reports and scratch | `### Round 37 — residual-call corrections …` |
 | `372a3efd82c22fdc0e6291d82686cc2f5cb4d194` | tip receipts and the last seat report | (evidence only) |
+| `6542248266b58d41ccccf31564d436f59857336d` | late wave-1 findings folded into LOG (R2 seven lines, two more C1 counter limits, r29 flip) | `### Round 37 — late seat findings folded into the record` |
 
 Inherited state: attempt 1 left only an empty `.ufo/waves/round-37/assimilation/` directory, which was
 reused and filled. The untracked round-36 `DistillerFindings.md` is lane-authored and was committed
@@ -216,3 +217,16 @@ SCORECARD capability row). Exploratory claim: none.
 - Counter routing: the simplifier's P1/P3/P4/P5 proposals (`w1/reports/SimplifyCounters.md`) are
   not applied, because the counters are frozen. They are routed to round 38 with M37-5's v3
   counters.
+
+## Addendum — late seat findings (after the first report commit)
+
+Three wave-1 reports delivered after landing add facts the records understated; folded into
+`LOG.md` at `6542248`:
+
+- R2 spans seven round-36 report lines (6, 196, 215, 231, 303, 339, 381), not four.
+- R5 is wider: the pointer gate checks ten hard-coded paths, and two of them no longer exist.
+- Two more C1 counter limits (M37-5): no control exercises clause b, and the refused r28 entry
+  pasted verbatim also meets the target.
+- The r29 flip needs both `debug:disable_logs = false` and `debug:enable_stdout_logs = true`.
+
+The claim verdicts are unchanged. They already carried the instrument-limit qualifier.
