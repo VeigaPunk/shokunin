@@ -1,7 +1,7 @@
 # kengaku round 29 — attempt 2 (hyaku run 6): shokuknow assimilation + standing adoption gate
 
 Lane: `/home/vgpnk/Projects/shokunin/kengaku-shokunin`, branch `master`, HEAD
-**`8a25d9e32cbc4463fd72b3355ce71d49a9ad39b1`** (pushed, ahead 0 / behind 0). Baseline
+**`15156173850d110ba97db32336dff8e7fa07047c`** (pushed, ahead 0 / behind 0). Baseline
 `1f3b0f1ec41ec297130e8944ff97968d32324632`; frozen prereg `plans/round-29-attempt2-claims.md`,
 freeze commit `8c14a5dcd15ac364a352d544660c69f521c3a6af`.
 
@@ -102,6 +102,7 @@ moves the generated-config work of attempt 1.
 | `5fd54a41c34f1275cf47d50bf1fbecde61c4e6ca` | `corpus/QUALITY.md` Q19 (seat-yield obligation) and `.ufo/waves/yield.tsv` with the round-29 rows | `corpus/QUALITY.md` Q19; `…/build/R29a2Considerthese.md` |
 | `30ee3b5ffab68c7e7eb08ed3e73907971dbc767d` | row-laundering refusal, explicit `--attest-opened`, CLI argument validation, receipts | LOG §… third corrections batch |
 | `8a25d9e32cbc4463fd72b3355ce71d49a9ad39b1` | four entry claims corrected from the residual reviewer; S091 `used-by` names the priced entry | LOG §… fourth corrections batch |
+| `15156173850d110ba97db32336dff8e7fa07047c` | the package's two count cells attributed rather than quoted as this entry's own words | `corpus/knowledge/benchmark-task-validity-checklist.md` §Counts |
 
 Every change is motivated in `LOG.md` §"Round 29 attempt 2" (including both appended correction
 batches) and in `corpus/lessons/round-29.md` §"Attempt 2" (M92–M103, Gate, rejected candidates,
@@ -253,9 +254,10 @@ Run at round start and at round end; **both exit 0**. Outputs: `corpus/evidence/
   code element, an unattributed "applies ABC to itself", an incomplete canary count, and a
   post-publication claim S090 does not make) — all four repaired in `8a25d9e3`. The calibration seat
   (`R29a2rCalibration`) was still running at filing time and is **not** claimed as passed; the L1
-  re-derived its object itself: every quoted span in the entry was re-tested against the fetched
-  bytes (13 spans, 11 byte-runs, 2 prose spans, all ≤25 words) and the counts in this report were
-  re-measured on `8a25d9e3`.
+  re-derived its object itself: all 13 quoted spans in the entry were re-tested against the fetched
+  bytes on `15156173` — 7 locate in the cited source bytes, 6 are prose or identifiers the entry names
+  rather than quotes (three phrases, one URL, two cells it attributes to the staging package), and the
+  longest span is 18 words. The counts in this report were re-measured on `15156173`.
 - **Honest limits:** this is an author-side measurement; independent non-author closure decides
   admission. Two claim-term deviations are disclosed above for that ruling.
 
