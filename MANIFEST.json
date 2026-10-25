@@ -21518,6 +21518,47 @@
    "notes": "watchdog: 2026-10-25T05:41:06-03:00 launch kengaku round=31 pgid=451980 driver=hyaku-inline attempt=1; 2026-10-25T06:07:59-03:00 complete kengaku round=31; hyaku-inline attempt=1. Step 1: report landed by lane identity in 4 append-only commits; SHONEN 4/4 lines; lane ahead=0, clean; prompt is placeholder-only template rendering. Routed defects (status-neutral): D1 report cites nonexistent a44b5a8 (fix landed in ae95fe0); D2 report-ordering recurred (r30 item 7 still open): final lane commits ae95fe0/87f0d32 uncited, erratum names 9591131e as tip; D3 ae14f46 overwrote gate-cli-exits.txt with a broken run (../../../plans resolves to .ufo/plans, all exit=2) while addendum 2 calls it self-contained and SCORECARD C3 row cites 0/8/9/2; D4 sources_adopt.py has no SKILL.md Gate/probe registry row, so gate not graded conformant; D5 falsify seat R31FxEntryBar has no committed report (35/36) against '0 dead'; D6 sweep misses (lesson Gate verifier_mode.py :35-38, r30 erratum Q6 locator :78-81). Carried: r30 lesson :66 peer-reviewed, freeze-before-data commit, C2 counter survivors. dbb0736 author date precedes launch (jj change creation; committer 06:01:14), noted only. Operator: SHONEN boxes 2-4 look non-author checkable; box 1 weaker.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 25,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 25,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 25
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:verifiability": "improved",
+    "coverage": "improved",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "recheck-audit (corpus/instruments/recheck-audit.py sha256 c3c19adc…@98261eb: audits every corpus/knowledge/*.md recheck: line for bash -n parse, cwd-invariance and entry binding with strict limbs and executes/gated/broken classes; receipts c1-before-strict 6/35, c1-after-35 35/35, c1-after 37/37; first working round 25)",
+    "source-capture-round-25 (corpus/source-snapshots/round-25/manifest.json: 5 hash-pinned captures S036-S040, 40 located assertions; capture digests equal manifest sha256 fields)"
+   ],
+   "report": ".ufo/reports/round-25/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-25-verifier-spotcheck.md@b76676eedca72200835e2eb9f1235ffae8dbb5a9",
+    "rechecks": "C1 re-measured with plain shell over git-show extracts (no lane instrument executed): recheck lines 35 base / 37 tip; bash -n failures 23 -> 0; abs cd-prefix 5 -> 36 plus 1 ~/-only cwd-invariant line, so pass-by-form 6/35 -> 35/35 frozen, 37/37 tip; 29 files changed one line each, 0 of 34 base test clauses lost (kill rule holds); evaluating test builtins gives executes 14 / gated 23. recheck-audit.py digest c3c19adc equals all three receipts (evidence-verified); selftest 14/0 evidenced only in wave-2 prose. C2 re-measured: frontier admitted awk 9 -> 10, entries citing S036+ 0 -> 2, registry rows 35 -> 40, all 5 new rows cited, SOURCES.md numstat 5 0, census exit 0 with only pre-existing W04 S028/S029; manifest 5 records/40 assertions; frontier-recheck-count 12/12 evidence-verified. D24-2 76 assertions re-counted; D24-3 receipt present. SKILL.md untouched; no SCORECARD axis score changed. Spot-check 4/4 agree: S038 live http 200 quotes match capture L17; S040 live via instrument UA (301 -> sec.cloudapps.cisco.com, 200) four expedite bullets; staged crosswalk reject reproduces (two vs four conditions, prose recheck, F20 absent); 招待 0 hits in S036-S039."
+   },
+   "commit": "kasegi-shokunin@41a77b83f3a338053fa69629d753546b8d592617",
+   "closed_at": "2026-10-25T09:17:14Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-10-25T05:06:21-03:00 launch kasegi round=25 pgid=4033181 driver=hyaku-inline attempt=1; complete 2026-10-25T06:09:34-03:00 hyaku-inline attempt=1. Step-1 conformant: report by lane identity (b051de3), SHONEN heading 4 [~] lines, 98261eb and 41a77b8 ancestors of master, jj-lane state ahead=0 clean, prompt = template rendering + hyaku §6. Routed defects: R25-1 claims.json edited in place after its stated freeze and first committed at round end (no commit pins frozen bytes); R25-2 selftest tally absent from committed c1-receipt-index.txt despite wave2/C1InstrumentDigest.md citing it at line 4; R25-3 recheck-audit.py (exit 0/1 + --selftest) has no gate|probe registry row in SKILL.md; R25-4 lesson fix-control #3 grep returns 1 hit (round-24.md:77) not the stated 0; R25-5 S040 URL now redirects and 403s browser UA, record final URL. Lane-declared open debt carried: entry-file deletion shrinks audited set, anchorcheck.py cannot fail, capture-source TAG_RE lossy/no raw_sha256, source-recheck --source single-valued. Operator note: ~3.77k files/~65 MB wave evidence committed under .ufo/waves/round-25. SHONEN: boxes 2 and 4 look non-author checkable from committed evidence; 1 and 3 carry caveats (anchorcheck cannot fail; 23/37 rechecks gated). No tool installs.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
