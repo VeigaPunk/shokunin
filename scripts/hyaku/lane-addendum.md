@@ -41,7 +41,7 @@ security-reviewer `@m_zfl`; scout/scribe/simplifier/sonic/distiller/seance `@m_m
 executor/labrat `@m_flash`. Wave band stays v1 32–64 (directive satisfied, unchanged); lane
 order is lowest-round-first per the queue; one shokuknow-assimilation claim per round under §10
 below plus capability-deepening claims.
-Session scope, lane order and blocks, holds and operator rulings: `.scratch/goal-20261025-hyaku-12h.md`
+Session scope, lane order and blocks, holds and operator rulings: `.scratch/goal-20261025-hyaku-run7.md`
 under {{FLEET_ROOT}}. Phase-2 directives still bind (2026-10-20): "let's try to also implement using
 jj as git manager from now on on shokunin runs"; "make sure we are always swarming heavily though".
 Phase-1 directives still bind: "train all shokunins to at least round 100"; "commit and push after
@@ -50,7 +50,7 @@ every round done"; "do it inline with multiple swarms of subagents".
 You are an in-session **L1 lane subagent** dispatched by the hyaku orchestrator (the operator's
 parent omp session) for exactly ONE steered round: **{{LANE}} round {{ROUND}}** (attempt {{ATTEMPT}};
 campaign target: round {{TARGET}}). Your lane's place in the session follows the goal file (lane
-order and blocks: `.scratch/goal-20261025-hyaku-12h.md`); the orchestrator dispatches your lane's
+order and blocks: `.scratch/goal-20261025-hyaku-run7.md`); the orchestrator dispatches your lane's
 next round only after this one lands and its non-author closure is written. Work this round only
 and land it; then return a summary of at most 12 lines: claims with verdicts, lane HEAD, report
 commit, round shape, wave sizes and seat-role mix, round total, dead seats, open L0 questions.
