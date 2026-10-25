@@ -21473,6 +21473,51 @@
    "notes": "dispatch/complete: 2026-10-25T04:27:39-03:00 launch mori round=44 pgid=3471430 driver=hyaku-inline attempt=1; 2026-10-25T06:05:35-03:00 complete mori round=44; hyaku-inline attempt=1. Defects routed: S472 source could not be independently reopened (ECONNRESET); C3 replay needs explicit census outside this host; SHONEN remains unsigned. Three claims verified, no owned axis harmed. SHONEN evidence is substantially checkable, but promotion remains operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 31,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 31,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 31
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "novelty": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "citation-bound adoption gate (plans/sources_adopt.py --url-map: exit 8 capture mapped to a different cited URL, exit 9 unmapped; selftest 14 -> 17 cases, neutered binding -> failed=2)",
+    "adoption second receipt (plans/round31_c1_verify.py: checks=6 defects=0)"
+   ],
+   "report": ".ufo/reports/round-31/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-31-verifier-spotcheck.md@f20a1097af900dc4595e0da0fa5e12e673f9ce7e",
+    "rechecks": "C1 re-measured: entry 0->1, knowledge/index 39->40, registry 88->91, S092/S093/S100 tier A mined opened 2026-10-25 used-by entry; all three sources re-opened live at pins, six captures sha256-equal to lane SHA256SUMS, TB2 root 92=89 dirs+3 files. C2 judged on byte-level review (counter disclosed not self-proving): R1/R2/R3/R10 pure appends with correct content, R4-R8 entry edits read in diff, R9 five blobs digest-equal to the seat's worktree digests. C3 evidence-verified, not executed: selftest 17/0, neutered 17/2 exit 1, CLI receipt 0/8/9/0/2 at 634ded8 over gate bytes unchanged since d6aa66e, control exit 2 / cases=14. Discernment 1 admit + 2 rejects + 1 new row quote: all agree. Census exit 0, 15 W04."
+   },
+   "commit": "kengaku-shokunin@87f0d32e4a4416a918020bf3fcd2df51cc2d3732",
+   "closed_at": "2026-10-25T09:16:38Z",
+   "campaign": "hyaku",
+   "notes": "watchdog: 2026-10-25T05:41:06-03:00 launch kengaku round=31 pgid=451980 driver=hyaku-inline attempt=1; 2026-10-25T06:07:59-03:00 complete kengaku round=31; hyaku-inline attempt=1. Step 1: report landed by lane identity in 4 append-only commits; SHONEN 4/4 lines; lane ahead=0, clean; prompt is placeholder-only template rendering. Routed defects (status-neutral): D1 report cites nonexistent a44b5a8 (fix landed in ae95fe0); D2 report-ordering recurred (r30 item 7 still open): final lane commits ae95fe0/87f0d32 uncited, erratum names 9591131e as tip; D3 ae14f46 overwrote gate-cli-exits.txt with a broken run (../../../plans resolves to .ufo/plans, all exit=2) while addendum 2 calls it self-contained and SCORECARD C3 row cites 0/8/9/2; D4 sources_adopt.py has no SKILL.md Gate/probe registry row, so gate not graded conformant; D5 falsify seat R31FxEntryBar has no committed report (35/36) against '0 dead'; D6 sweep misses (lesson Gate verifier_mode.py :35-38, r30 erratum Q6 locator :78-81). Carried: r30 lesson :66 peer-reviewed, freeze-before-data commit, C2 counter survivors. dbb0736 author date precedes launch (jj change creation; committer 06:01:14), noted only. Operator: SHONEN boxes 2-4 look non-author checkable; box 1 weaker.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
