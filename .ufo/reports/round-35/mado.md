@@ -46,14 +46,14 @@ rode the `connector`/`revenger` items.
   - The C1 counter is **shape-scored**: `count.py:174` computes the receipt digest and never reads it, so
     fabricated receipts at the frozen paths print `TARGET_MET`. The two cribs are committed
     (`.ufo/waves/round-35/controls-content/c1-shape-only/`, `c1-fabricated-payload/`); a one-line repair on
-    a scratch copy (`.ufo/waves/round-35/scratch/L1DigestFix/count-fixed.py`) keeps the real root and
+    a scratch copy (`.ufo/waves/round-35/scratch-evidence/L1DigestFix/count-fixed.py`) keeps the real root and
     `controls/golden` at `TARGET_MET` and turns both cribs to `TARGET_MISSED closed_entries=0 closed_rows=0
     open_cites=8` exit 1.
   - The C2 claim's **substance is falsified**: `ledger_tip_ok` scores `TARGET_MET` on the round-34 defect
     itself (stale `fa7ba113`), `uncovered=0` is fail-open on clause deletion, covered-receipts are token
     greps, and the pinned round-34 tip is disputed (`dff3941` was master for 0:17:37; the last
     round-34-labelled commit is `6d754bd`).
-  - Three semantic inferences in the admitted entries were falsified and withdrawn by append-only errata:
+  - Ten append-only errata bullets across the three entries falsified or corrected five distinct claims, three of them inferences:
     "the operator never toggled" (the journal shows the daemon's scope consumed at
     `2026-10-23T19:24:38-03:00` and restarted at `22:14:11`; zero `omarchy-toggle` lines is a null
     channel), the 150 s step being a lock (`omarchy-launch-screensaver` has no lock call), and "built not
