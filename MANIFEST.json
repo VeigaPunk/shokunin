@@ -22811,6 +22811,43 @@
    "notes": "dispatch digest: 2026-10-25T10:22:20-03:00 launch kake round=54 pgid=2379153 driver=hyaku-inline attempt=1; 2026-10-25T11:05:40-03:00 complete kake round=54; hyaku-inline attempt=1. Report landed by kake-shokunin identity (fleet 935f3b2); all cited commits ancestors of master; lane ahead=0, clean. Claims: C1 calibration S374 qualifier repair 1->0; C2 operability r53 settlement + c53_gate_truth registry row, absent->present, uncovered 7->0. Defects (status-neutral): single 33-seat v1 wave, no W2/residual — lane self-recorded shape gap; C1 declared on calibration outside prompt-declared axes (operability+freshness), added as bounded reasoned sub-axis in SCORECARD — operator may rule. Routed to lane r55: (1) run declared wave shape or record capacity refusal; (2) name axis-ownership deviations in report claims; (3) CJK <=25-word rule for S367/S372/S373 still open; (4) keep committing seat reports at creation. No SHONEN boxes checked ([ ] all). Spot-check: no new SOURCES rows (no admits/rejects to sample); S374 re-open verified; census reproduced.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 71,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kotoba",
+   "lane_round": 71,
+   "lane_rounds": {
+    "kotoba": 71
+   },
+   "lanes": {
+    "kotoba": "ok"
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "consistency": "improved",
+    "depth": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-71/kotoba.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_kfc session, non-author)",
+    "spotcheck": "kotoba-shokunin/corpus/lessons/round-71-verifier-spotcheck.md@c69711ee08279609374d895bb0f3c8c18ccf15c9",
+    "rechecks": "C1: junk-world receipts (c1/c2-junk-world.txt, control bundles, frozen plan) committed 3677b2e 11:13:23 BEFORE data commit bf98d28 11:13:29 and tip receipts eb394f5 11:16:39 (git log --diff-filter=A per receipt). C1 disposition re-measured in plain bytes: LOG.md:2678 line hash d7f442ed... matches gate pin at all of 2b79115/bf98d28/eb394f5/53d7019/f55f2d2; GOVERNANCE_ERRATA_HORIZON=2678; counter allowlist pins both checklist blobs 508512da/8d44c06; receipts evidence-verified (base 9/10 exit 1, tip bf98d28 10/10 exit 0, junk 5/10, selftest 0 failures) per Gate standard, gates not executed. C2 re-measured: SOURCES rows 137@2b79115 -> 139@bf98d28/f55f2d2; S212/S213 rows present with 9/17-word quotes and upstream-commit anchor; S209/S210 anchor cells updated; SKILL.md 600 lines, exactly one rendered citation line naming entry+S211/S212/S213; git ls-remote agentskills main = pinned 69ef37e9...; both .mdx fetched at pinned commit (S213 quote verbatim; S212 located line 84 modulo stripped backticks). Receipts evidence-verified (base 1/10, tip 10/10, junk 0/10, selftest 0 failures). No-harm: LOG +19/-0, SCORECARD +2/-0 append-only, SKILL 1/1, PROVINCE unchanged, SHONEN untouched; checklist-tip.json 11/11 exit 0; census validate exit 0 (closure-rerun, W04 only). Spot-check: S212 admit agree, S213 admit agree, K69-11 mechanism-reject agree (no source reject recorded this round)."
+   },
+   "commit": "kotoba-shokunin@f55f2d24fae1b4938f8f15dd75072ad0602e4fd5",
+   "closed_at": "2026-10-25T14:30:37Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest: 2026-10-25T10:42:42-03:00 launch kotoba round=71 pgid=2529848 driver=hyaku-inline attempt=1; 2026-10-25T11:19:08-03:00 complete kotoba round=71; hyaku-inline attempt=1. Status ok (real report; not a marker). Admitted: both claims verify (C1 consistency 9->10 of 10 with junk world 5/10 committed red before data; C2 depth 1->10 of 10 with junk world 0/10 committed red before data), no axis harmed. Conformance defects (status-neutral): report first filed c8a6c88a without SHONEN + Sources & frontier (same class as r69), appended additively by erratum 41700b6c; canonical Trend verdicts section absent (closure-derived verdicts recorded in spotcheck); round shape/wave seat counts/role mix/dead seats/round total not recorded and no wave spec/seat reports committed under .ufo/waves/round-71/; verify_corpus_integrity 9/9 claim lacks a committed receipt; Landed list cites 53d7019 but lane HEAD is f55f2d2; no 'Assimilation: none' line and no considerthese mining record. SHONEN boxes all [~] with resolvable pointers - mechanically checkable by a non-author; promotion remains operator-owned. Routed to r72: the 7 defects in corpus/lessons/round-71-verifier-spotcheck.md (report completeness, wave evidence, integrity receipt, >=1 recorded source rejection per Gate block, Landed-list tip citation, assimilation/considerthese lines, verbatim-quote style).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
