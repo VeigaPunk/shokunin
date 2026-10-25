@@ -228,3 +228,12 @@ explicit mode when set" docstring, and `:35-38` → **`:39-40`** for the step-pr
 re-derives `checks=6 defects=0` after the fix. The seat's other two findings — the missing lesson file and the
 `40 → 40` index cell — were already closed at `d6aa66e` and `3e13607e`. Its trend verdicts agree with the
 filed ones: **C1 improved, C2 held, C3 held**.
+
+**Erratum addendum 2 (final instrument verdict).** The last falsify seat (`R31FxC2Survivors.md`) re-ran the
+fakeability routes against the final C2 counter: **all ten items R1–R10 still print `defects=0` without the
+mismatch being repaired** (three earlier routes are now killed, so the counter is stronger than at the freeze
+and still not self-proving). C2's verdict therefore rests on the counter **plus** the byte-level review of each
+item in `.ufo/waves/round-31/build/R31Def*.md`, not on the green line alone; the lesson's closing section states
+this in the same words. Also landed after the filed bytes: the C3 CLI receipt is now self-contained (its
+fixtures are committed at `.ufo/waves/round-31/c3-fixtures/`, `ae14f46d`), and the stale
+`defects-before-tightened.txt` is marked SUPERSEDED by `defects-before-final.txt` rather than deleted.
