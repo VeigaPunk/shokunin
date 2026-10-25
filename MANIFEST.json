@@ -21094,6 +21094,49 @@
    "notes": "Driver digest (copied; .ufo/watchdog.log is mutable): 2026-10-21T10:32:45-03:00 launch souji round=22 pgid=1677714 driver=hyaku-inline attempt=1; 2026-10-21T15:46:25-03:00 complete souji round=22; hyaku-inline attempt=1; 2026-10-23T20:41:39-03:00 launch souji round=22 pgid=3505869 driver=hyaku-inline attempt=1; 2026-10-25T03:23:46-03:00 launch souji round=22 pgid=1758934 driver=hyaku-inline attempt=1; 2026-10-25T04:09:02-03:00 complete souji round=22; hyaku-inline attempt=1. This entry supersedes rounds[438] (attempt 1, rejected-honest-stop): attempt 2 does not re-claim attempt 1's strict-adequacy claim and lands two new claims instead. Status ok, not a marker. Routed defects for the lane's next round: D1 five modified round-22 wave seat reports plus two untracked evidence/impl-a/head-c9f1fe3 files left uncommitted while the report claims none (lane repo dirty at closure, ahead=0); D2 no committed run receipt for the C1 after-state at the revision SCORECARD names (9301d98) or the tip the report names (77d6595); D3 the C2 after run was measured with gate-check blob f26aa728 while the tip holds 63ac63b8 (sha256 d5ed0805, the digest instrument-digests.txt records) and the report cites the pre-9fcc4f7 digest 5b8025a8, with no committed receipt for the before (fail=10) state either; D4 corpus/README.md Round22 attempt 2 says 1 present / 1 refused while the lesson and slice-verdicts.tsv say 2 present / 0 refused; D5 the LOG Round22 attempt2 entry keeps superseded numbers (assertions=56 resolved=53; slice 1 present, 1 refused) with no append-only correction entry; D6 the lesson Gate's reject reason for quarantine-staging-no-copy-r24 is overbroad (the candidate adds RENAME_EXCHANGE/RENAME_WHITEOUT, eight writable paths, and names an atomic-swap consequence) while the entry-level Gate states the defensible reason (entry budget plus rv --no-copy fallback); D7 M17 and M22 record captured-by none but corpus/QUALITY.md is unchanged base->tip; D8 cosmetic stray backtick on the S118 slice row. Minor: the preregistration froze 52 seats and the wave ran 53 without explanation. Orchestrator .scratch question: no evidence found linking any souji r22 seat to the deletion of the thirteen tracked fleet-root .scratch files; none of their names appears in the lane's round-22 evidence and no seat recorded an rm/mv/quarantine outside its own scratch (residual suspicion only: the deleted set matches the shape of the lane's own stale classifier). No files under .scratch were touched by this closure. Round-22 prompts: .ufo/prompts/souji-round-22.md is committed by the lane identity. No [x] was written into SHONEN.md; the four boxes read as checkable by a non-author from committed bytes, but D1-D3 should be seen by the operator before any promotion decision. Trend detail: expansion unprovable-but-better (F4 was already frontier with entries held, so LEARNING's uncovered-ground test is not met, yet two verified entries, six tier-A rows, committed snapshots and a gate that rejects byte-exact copies make the corpus better), quality improved bounded (no admitted entry fails its re-check; both selftests corroborated by receipts; bounds are D2/D3/D4/D5), discernment unchanged (both admits agree from outside, one reject reason overbroad, no QUALITY criterion from the captured-by-none classes).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 41,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 41,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 41
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "write-path-census-v3 (tools/write-path-census-v3.py @ 095924a7: variable write-destination resolution to depth 4 via assignment/os.path.join/+///f-string + os.symlink, expected/scratch/update-flag classification; selftest + 3 recognizer mutants killed; first working round 41)"
+   ],
+   "report": ".ufo/reports/round-41/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-41-verifier-spotcheck.md@c77c2b7e64d2e356381441ecf94abac03e984606",
+    "rechecks": "C1 re-measured by closure over committed bytes: m6 103-row standing claim vs 107 registry rows at base -> 109-row appended row at tip; m9 quarantine table (1,6,10) vs summary (1,7,9) at base -> 'six refused'+'ten present' correction present at tip; m7/m8 re-derived by audit seat (3 records, S001/S153/S154 all mined, all path tokens resolve). C2: v3 sha256 095924a7 matches contract pin, v2 40228532 unchanged; repeat-control.py:811/:820 confirmed live sites via grep -n; receipts verify selftest_exit=0, 3 mutants killed, v2 misses both sites. Census re-run by closure: exit 0, same 9xW04+1xW01. Wave audit: 40/40 non-empty reports, role mix exact, one batched 40-task call transcript-verified, residual 8/8 present, total 48 in 32-128. Whole-range diff 19125+/0-, append-only files clean. No lane gate executed; counters and selftests evidence-verified per Gate standard."
+   },
+   "commit": "tameshi-shokunin@c77c2b7e64d2e356381441ecf94abac03e984606",
+   "closed_at": "2026-10-25T07:26:45Z",
+   "campaign": "hyaku",
+   "notes": "Attempt 1 died lane-dead-no-report (watchdog: launch 2026-10-24T23:07-03 -> dead 2026-10-25T03:23-03); attempt 2 launched 03:23:42, complete 04:14:36; nothing inherited. Conformance: report by tameshi identity (5dcedf4/2f5651c), SHONEN 4x[~], all 9 cited commits ancestors of master, ahead=0 clean tree, prompt = template 1-5 + hyaku addendum 6. Routed to round 42: (1) C1 m8 BACKTICK_RE spans newlines so a cited path inside a mispaired span is silently skipped - fix [^`\\n]+; (2) residual/receipt.json ResidualReceipts present:false stale though the report exists; (3) carried holds: C1 self-pin/records>=1/out-of-process tool exec, v3 docstring overstatement, context-capture:1682/:1685 + registry-replay:123 false positives; (4) staged ids S153/S154 now collide with own rows - renumber by document before any append. SHONEN: all boxes [~] lane-asserted; none fully non-author-checkable this round; no promotion recommendation. Tool installs: none.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
