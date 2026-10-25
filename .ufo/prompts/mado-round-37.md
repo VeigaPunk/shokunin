@@ -158,7 +158,7 @@ Phase-1 directives still bind: "train all shokunins to at least round 100"; "com
 every round done"; "do it inline with multiple swarms of subagents".
 
 You are an in-session **L1 lane subagent** dispatched by the hyaku orchestrator (the operator's
-parent omp session) for exactly ONE steered round: **mado round 37** (attempt 1;
+parent omp session) for exactly ONE steered round: **mado round 37** (attempt 2;
 campaign target: round 100). Your lane's place in the session follows the goal file (lane
 order and blocks: `.scratch/goal-20261025-hyaku-12h.md`); the orchestrator dispatches your lane's
 next round only after this one lands and its non-author closure is written. Work this round only
@@ -201,6 +201,11 @@ not, and name both in the report.
    larger frontier claim instead of adding filler seats. Validate every wave under its policy (both
    policies set `maxLanes` 256, the validator's hard ceiling), then dispatch it as exactly ONE `task` call carrying the
    validator's `taskCall` (`context` + `tasks`) unchanged; a refused wave is fixed, never split.
+   **Dispatch bridge (run 6):** tool output truncates long strings, so do not hand-transcribe the
+   payload — load it in ONE eval (py) cell and call the session tool directly:
+   `p=json.load(open('<abs>/<wave>-dispatch.json')); tc=p['taskCall']; tasks=[{**t,'solutionSpace':'one wave item, spec in task text'} for t in tc['tasks']]; r=await tool.task({'context':tc['context'],'tasks':tasks,'i':'Dispatching wave'})`.
+   That is the one batched call, payload unchanged. **A return without a landed report is a failed
+   attempt** — finish the round end to end (run 6: two L1s returned mid-round with nothing landed).
    For a v1 wave:
 
        cd /home/vgpnk/Projects/shokunin/mado-shokunin && UFO_CONFIG_PATH=/home/vgpnk/Projects/shokunin/scripts/hyaku/ufo-wave-policy.json \
@@ -240,9 +245,12 @@ not, and name both in the report.
    `task.maxConcurrency` in `~/.omp/agent/config.yml` (operator-owned: read them, never change
    them). Several lanes run at once, so a `task` call can still be refused at the job limit; the
    refusal ("Background job limit reached") spawns nothing. Never split or shrink a wave below its
-   band, and never poll, sleep or loop on retries: resend the same payload only after one of your
-   own running jobs settles; if it is still refused, land the round with verifiable work and report
-   each refusal with its error text. Every concurrent writer needs an actual
+   band, and never poll or loop on retries: resend the same payload after one of your own running
+   jobs settles. **Run-6 amendment (the swarm is the operator's directive, not optional):** if you
+   hold no running job of your own, wait with one `sleep 240` per attempt and resend the same
+   payload, up to 8 resends (~32 min); size waves near the band floor (32–40) while the cap is
+   shared. Only after the 8th refusal land the round with verifiable work, reporting each refusal
+   with its error text — a round whose swarm never ran gets no falsification credit. Every concurrent writer needs an actual
    separate worktree, unique branch/path and observed base; bind its absolute paths there and
    keep one integration owner. Read-only seats return findings without production edits. Never
    run concurrent writers on one checkout. Seats never mutate the fleet repo, sibling lanes,
@@ -328,6 +336,10 @@ not, and name both in the report.
          -- .ufo/reports/round-37/mado.md
 
    (also for an l0-questions append). The report lands last and cites the pushed lane hash.
+   **Pre-report gate (run 6: kotoba r69 and kake r52 left every round commit off-branch):** before
+   writing the report run `git -C /home/vgpnk/Projects/shokunin/mado-shokunin ls-remote origin refs/heads/<branch>` — it MUST print
+   your final lane hash. If it prints an older hash, your commits are not on the branch: land them
+   through `jj-lane.sh` (never plain git) until it does. Commit the report only via `fleet-commit.sh --as mado`.
 5. **Inherited state.** Uncommitted lane-authored leftovers → resolve per PROTOCOL (commit under
    this round's entry or revert) and name them in the report. Files you did not author (operator
    sweeps, `round-*-aggregator-*`, `round-*-verifier-spotcheck.md`) → never edit; name them.
