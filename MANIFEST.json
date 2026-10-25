@@ -20361,6 +20361,49 @@
    "notes": "DIGEST (.ufo/watchdog.log, mutable): the only kumitate line for round 59 is '2026-10-24T21:51:18-03:00 complete kumitate round=59; hyaku-inline attempt=1'. There is NO 'launch kumitate round=59' line and NO .ufo/prompts/kumitate-round-59.md. ~/.local/state/shokunin-hyaku/events.log:1497 '2026-10-24T21:51:18-03:00 inline claim-recovered lane=kumitate round=59 attempt=1 base=0f66ecd4 reason=dispatch-omitted', :1498 'inline complete lane=kumitate round=59 attempt=1', :1499 'inline closure-launch lane=kumitate round=59 model=@m_swe' - the claim was reconstructed at verification time, so it is not contemporaneous dispatch evidence (rounds 57 and 58 each carry an 'inline launch' line; round 59 carries none). DEFECT (orchestrator ordering, not lane-owned, status-neutral): inline.sh dispatch was omitted before the L1 spawn, so round 59 has no launch line and no prompt file and prompt fidelity could not be checked; the report is not a marker, the lane-round terminated with a landed report and every cited hash resolves as an ancestor of refs/heads/master, so the status stays ok. Step 1 otherwise conforms: the report was committed by the lane identity (e56ed383dcf744c9d570598a6456784078e07b31, ancestor of fleet HEAD), the lane is pushed at 8e753588fae37c1ba22015776f72f81d6f2829ea (ahead=0 behind=0) with a clean tree, and the four round-59 lane commits (c5494332, 5469c0a5, 61228683, 8e753588) all carry kumitate-shokunin <kumitate@shokunin.local>. ROUTED DEFECTS: none new and none lane-owned - R58-V1..V8 are repaired in lane bytes without rewriting the filed r58 report, the r58 lesson, the r58 spot-check or the r58 probes. OPERATOR NOTES: the two [x] SHONEN boxes name the round-58 non-author spot-check as verifier and the report itself states the new cite-sources row is not yet non-author-checked (the other two boxes are [~]); this reviewer's spot-check now re-measures that row (REPAIR59_HELD 8/8 with CITE_SOURCES_SELFTEST PASS 8/8), but promotion stays operator-owned and nothing was written to SHONEN.md. The dead SentinelBounds seat (exit -9, no session id, no report, not replaced) was not credited, and the 40s launcher abort (8 processes started, 0 session ids, 24 never started) was archived and not counted as seats. No L0 question was appended; the two round-58 questions remain open. This closure made no lane-authored edit: the only lane write is corpus/lessons/round-59-verifier-spotcheck.md, landed as ffbfe3cc38ff8eaa6375550b16472c90a006a179 through scripts/hyaku/jj-lane.sh --as protocol (verified by git ls-remote origin refs/heads/master).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 40,
+   "date": "2026-10-24",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 40,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 40
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "freshness": "improved",
+    "calibration": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "write-path-census-v2"
+   ],
+   "report": ".ufo/reports/round-40/tameshi.md",
+   "verification": {
+    "reviewer": "Kimi fresh closure agent (hyaku non-author integrator, non-author; not the @m_swe session)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-40-verifier-spotcheck.md@a3d6c690bcbf8914551d4f4e8e1612784c1c2046",
+    "rechecks": "C1 re-run at base 304e3355 (tool_absent=1 PASS=false exit 1), at 5641ed84 and at tip 46781274 (tool_sha_ok=1 v1_sha_ok=1 bytes_unflagged=1 replace_unflagged=1 live_json_v2=1 live_replace_v2=1 mutant_replace_killed=1 mutant_json_killed=1 PASS=true exit 0); v1 control PASS=false exit 1; C2 re-run at base (snapshot_absent=1 exit 1) and both later revs (quote_in_snapshot=1 sha_ok=1 stripped_quote_fails=1 exit 0); snapshot independently 111405 bytes sha256 f27cf274..., quote absent from raw bytes and present in tag-stripped text, prefix-removal falsifier fires; freeze commit 5641ed84 verified not rewritten (contract, counters, fixtures, snapshot, v2 tool blob-identical at freeze and tip, direct child of the base); no-harm command D recorded_cases=9 depth_score=9 and command C boxes=4 checked=0 asserted=4 at all three revisions; wave registry 64 = reports 64 = taskCall 64, attack roles 43/64 67.2%, dead 0, omp log 65 normal exits, last seat 22:02:36.564 parent 22:02:36.574 (+10 ms), wave-parent-settle SETTLED exit 0 selftest 3/3 with the red fixture UNSETTLED; spot-check admits S152 (live PDF sha256 65f9603f matches the pin) and S132 (live README sha256 8871d19c matches the pin), rejects S137 (no write-path census at 31687496) and S143 (mavis-trash absent), S105 present in the live POSIX diff page; census validate exit 0 warnings only"
+   },
+   "commit": "tameshi-shokunin@46781274ea882274892dc1dbe81a07b7aee40e25",
+   "closed_at": "2026-10-25T01:50:30Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-10-24T21:34:39-03:00 launch tameshi round=40 pgid=3086320 driver=hyaku-inline attempt=1; complete 2026-10-24T22:36:57-03:00. Both claims re-measured by the closure; no axis harmed; admitted. Freeze commit 5641ed84, inherited from the dead first L1, was verified rather than rewritten: contract.json, both counters, the fixtures, the S108 snapshot and the v2 tool carry identical blob ids at 5641ed84 and at the tip, and 5641ed84 is a direct child of the base; the rewritten quarantine table from the inherited draft is disclosed in the lesson's draft-summary-drift mistake row and in the report's attempt note, not silent. Wave reconciled from registries and reports, not prose. Assimilation: only S132 and S152 appended (105 to 107 rows, all 13 awk fields), used-by restricted to the admitting entries, recheck normalized to 365d, opened 2026-10-24, validate-before-append green in scratch, collisions empty with the indented-row guard proof committed; staged S137 refused, its round-39 flip still unmet at 31687496 (tools/write-path-census.py absent there); considerthese/2026-10-24.md not edited, its proposal 3 mined as QUALITY criterion 79 whose falsifier fails at the base revision; shokuknow was not written (register byte-identical to HEAD, merge/tameshi untouched inside the wave window). S108 was not used as support for the new write-form entry and its registry row is unchanged; os.symlink/handle.write remain outside the frozen WRITE_RE and the predicate claims no universality. L0 d0531d78 not re-filed. Routed: (1) corpus/lessons/round-40.md closes its Gate with seven refused and nine present-but-not-appended while its own table and the report say one adopted, six refused, ten present-but-not-appended - append a correction next round, do not rewrite the closed file; (2) the wave grant ledger line is deleted on release so it does not resolve at closure - cite a durable receipt; (3) item 10 asked for both id lists to be pasted into the report, they are committed as wave evidence instead; (4) the S152 quote is labelled 11 words and has 13 tokens; (5) the round-38 vacuous depth guard ^\\s*leg still matches 0 lines. SHONEN remains four [~]; not promoted.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
