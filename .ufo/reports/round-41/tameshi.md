@@ -62,6 +62,8 @@ window N=2.
 | deciding-run receipts and the after sections | same entry, deciding-runs bullet | `2ae00eb750b86eba6c9b54b36b1a6e875e9fd8a6` |
 | confirmation receipts at the measured commit, round-end census | same entry | `0c8e1bebaac3c09b916127de5413440429663506` |
 | late seat report, census end exit code | same entry | `812ee0d11d267e131be3dc8db0b71253cbae9234` |
+| residual attack (8 seats), append-only repairs, settlement map, record corrections | same entry | `b14ff1100f5bb330fc2fa2873d38bf69c165b5e2` |
+| tip receipts (both counters green at the final tip) | same entry | `b8e39564b0a83817d99d341de12112de454fc32a` |
 
 Pre-data amendments, all in the contract with `before_data: true`: A1 the m7 status column index
 (9 → 8; without it every cited S-id would fail m7), A2 the symlink fixture root plus a third
@@ -254,6 +256,10 @@ promoted this round and no `[x]` was written.
   already resolve write destinations (depth 8 / 6, landing 2026-10-19). This lane's tool is a subset
   and claims no novelty; absorbing the code is refused by `PROVINCE.md`.
 - L0 questions: none filed this round. The round-38 question `d0531d78` was not re-filed.
+- Two record defects the residual wave found are fixed and mined in `corpus/lessons/round-41.md`
+  `## Mistakes`: a replace-all on a sentence three LOG sections shared (two deletions in an
+  append-only file) and an in-place restatement of the standing `sources-registry` row. Both files
+  are additions-only from the base to the tip now (LOG `75 0`, SCORECARD `100 0`).
 - Tool installs or upgrades this round: **none** (pacman left paused per the orchestrator ruling;
   nothing was needed).
 - Stale-lane: respawn-per-round driver; this lane has no other mission open.
