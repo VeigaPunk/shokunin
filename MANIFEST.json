@@ -23857,6 +23857,47 @@
    "notes": "dispatch digest: 2026-10-25T17:31:07-03:00 launch kake round=55 pgid=1900495 driver=hyaku-inline attempt=1; 2026-10-25T18:51:14-03:00 complete kake round=55; hyaku-inline attempt=1. Report landed by kake-shokunin identity (fleet f333f77); all 9 cited commits ancestors of master; lane ahead=0, clean. Claims: C1 calibration README coverage-map mismatches 21->0 (files 46->49); C2 freshness three Yahoo! JAPAN robots.txt entries 0/8->8/8, registry 155->156. Defects (status-neutral): C1 declared on calibration outside prompt-declared axes (operability+freshness), operator may rule; number drift - report says C2 selftest 47 fixtures+3 unit=54 (actual 51 cases+3), SKILL registry rows 1233-1234 state 35 and 47 fixtures vs 44/44 and 54/54 receipts; three scribe seats returned other lanes' output (lane-recorded); MutC2Counter's 29 kill fixtures not ported (lane-disclosed). Routed to lane r56: fix SKILL registry fixture counts and report wording with recorded derivation commands; S367 31-unit CJK overrun, S364 reject and quarantine slice not re-checked. SHONEN boxes all untouched and not checkable by a non-author from this round; no promotion claim.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 70,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "revenger",
+   "lane_round": 70,
+   "lanes": {
+    "revenger": "ok"
+   },
+   "lane_rounds": {
+    "revenger": 70
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "calibration": "improved",
+    "freshness": "improved",
+    "operability": "unchanged",
+    "depth": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-70/revenger.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_sonnet session, non-author)",
+    "spotcheck": "revenger-shokunin/corpus/lessons/round-70-verifier-spotcheck.md@6da884c6708fa25a7af013b6fc6802492e3264fa",
+    "rechecks": "frozen counters re-run by reviewer on a git-archive tree of the tip (measure.py sha256 488f95aa pin matches, measure-a1.py 96feeaa0 pin matches): every label equals measure-after.log, exit 0, A1_C1/C2/C3=yes. C1 re-measured plain: README held rows 8/14 at base and tip, C05 uncovered, v5.1 entry admission-status rejected; Q04 and Q11b/Q13 FAILs reproduced by running entry_checks.py --spec-quotes/--zip-layout (prints line number + phrase, not the raw line; last three lines are 4.3.16 + two fixed widths; readout.py:22,166 uncompared) => C1 falsified as reported. C2 re-measured per class (SM1 Q01-Q13 vs Q15 -> Q01-Q16/Q16; SM2 four unnamed files now named; SM3/SM4 digest and lane-seat [x] removed; SM5 e1d22caf unresolvable, e1d22caaf... resolves, erratum line present); checker evidence-verified via counter fixtures SELF_MUTANTS_KILLED=6/6 and no-op control E 0/6, not executed directly. C3 re-measured: pinned script sha256 bce497d6 = S046 row = pin file; its 17 output lines all present in the r68 entry (0 missing), current script prints 20; r65/r67/r68/r69 entry bytes unchanged base->tip. Holds identical (HOLD_REPLAY 10/10, GATE_SELFTEST 0, F_COVERAGE 5/8, FRESH_ROWS 18/18); SCORECARD diff append-only. Spot-check: S048 and S049 admits re-opened live (S049 sha256 equal, S048 quote and line 5035 present), Q04/Q11b/Q13 rejects and Unblob draft reject reproduced, SWGDE scope-only admit read from seat report; 0 disagreements. Census exit 0."
+   },
+   "commit": "revenger-shokunin@f645e1fb16cd9b22f732dbccb940744763b7c222",
+   "closed_at": "2026-10-25T22:08:04Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest (.ufo/watchdog.log, mutable; copied): 2026-10-25T17:41:41-03:00 launch revenger round=70 pgid=2035893 driver=hyaku-inline attempt=1; 2026-10-25T19:03:53-03:00 complete revenger round=70; hyaku-inline attempt=1. C1 (C05 fifth pass) falsified honest stop: wave-2 FAIL Q04/Q11b/Q13 on four prose sentences, kill rule executed (README unflipped, entry marked rejected); C2 and C3 verified as declared, no axis harmed, so rejected-honest-stop (not admitted because C1 falsified). Step-1 conformance clean: report committed by lane identity 8ff0eddb, SHONEN heading with 4 box lines, all cited hashes ancestors of main, lane ahead=0 with no leftovers. Status-neutral defects routed: measure-after.log omits the ten HOLD rows the before log prints; C1_LINT reads LINT_QMAP=1 [Q16] at tip (rejected entry predates Q16); lane-named residuals stand (gate missing-path exit 1 not 2, timeout traceback, one-directional comparison, env-override hybrid checker, PROVINCE.md rea-agents@6.4.0 vs 6.5.0). SHONEN boxes all [~]; none fully checkable by a non-author as written (box 1 needs outside re-confirmation of current SKILL.md bytes, box 4 a named non-author verifier); promotion operator-owned. Open L0s (.ufo/l0-questions.md:156,160) untouched.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
