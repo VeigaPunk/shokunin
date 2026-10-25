@@ -88,3 +88,11 @@ Then repeat from the lowest next-round.
   block_scope ''), which also blocked devin/deepseek-v4-1-flash. Deleted that block row (backup agent.db.pre-devinunblock-20261025);
   re-probe devin/deepseek-v4-1-flash -> PONG. Credential 31 (vgpnk1337) is genuinely daily-exhausted per usage_history (resets 00:00 UTC); left blocked.
   Recurs whenever a chain reaches devin/swe-2 on the jp account.
+- operator: "devin shouldn't be blocked at all". Devin accounts: jpveigao10 (Max, weekly 5%), vgpnk1337 (Pro, daily 100% — devin's own report).
+  Cause of jp blocks: devin/swe-2 free-model rate limit -> omp writes provider-wide credential block. Fix: service `devin-unblock`
+  (/fast/scratch/hyaku-run7/devin-unblock.py) deletes every devin row in auth_credential_blocks every 15 s and bumps auth_change_revision.
+  Backups agent.db.pre-devinunblock{,2}-20261025.
+- operator: "model assignment changes not working / persisting through spawns". Measured from session jsonl: new spawns DO follow
+  current config.yml (KamaR41/ChousaR49/MoriR47/KengakuR35/TameshiR45 = anthropic/claude-opus-5-5). Live/parked agents keep their
+  spawn-time model: TsukuroiR37 and MadoR39 (m_kfc era) were running on openai-codex/gpt-6-luna fallback (237/175 turns).
+  Fix: cancel + respawn both L1s under current routing (task=@m_opus) with resume context.
