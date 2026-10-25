@@ -75,3 +75,5 @@ Then repeat from the lowest next-round.
   (anthropic/claude-opus-5-5:high). Operator "more concurrency": 8 concurrent lanes (block 1 + block 2 kaidoku/tsukuroi/mado/kama);
   live cap observed 100 jobs; dispatcher CAP raised to 400 to test.
 - results so far: souji r26 admitted, r27 rejected; kasegi r28/r29/r30 admitted; kengaku r33 admitted; tabi r27 rejected-harmed.
+- operator: "remove cursor/default from all fallbacks" -> 26 chain entries removed from ~/.omp/agent/config.yml fallbackChains (backup config.yml.pre-nocursordefault-20261025). Model list entry + m_auto alias untouched.
+- hyaku.env L1_MODEL/JUDGE_MODEL labels corrected @m_kfc -> @m_opus (no role routes to m_kfc).
