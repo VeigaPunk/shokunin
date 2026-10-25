@@ -86,9 +86,9 @@ Every change is committed inside the lane repo (jj-colocated; the helper committ
 | `7b745a1` | the axis republication in the gate's own format, plus the wave-2 reports that landed after the first pass | `LOG.md` round-35 entry, "Honest notes" (the stale-publication paragraph) |
 | `4efaf63` | the 235 seat evidence files checkpointed under `.ufo/waves/round-35/scratch-evidence/`; the 3.2 GB of mutant/crib working trees dropped | cleanup, not a claim: the trees were scratch, and every report's quoted command + output survives in the checkpoint |
 | `b632f0b` | the last two seat reports (`SentBoundary`, `ConnOverlap`), the seats' revised reports, and the restored digest-repair receipt | the final tally in "Work performed" |
-| `ca870e9` | the seats' post-sweep revisions and rebuilt evidence folded into `scratch-evidence/`; no scratch tree left in the lane | the cleanup paragraph |
+| `ca870e9`, `1bb25c7` | the seats' post-sweep revisions and rebuilt evidence folded into `scratch-evidence/` (261 files across 59 seat dirs); no scratch tree left in the lane | the cleanup paragraph |
 
-Lane tip at report time: `ca870e96c320fce74de2289f6ac8922abca2bf4e`
+Lane tip at report time: `1bb25c751409f67f1f9b6d8ac5a91faf3d92f948` (subsequent seat report revisions are named by `git log --oneline -1 -- .ufo/waves/round-35/w2/reports`)
 
 ## Before → after measurements
 
@@ -184,7 +184,7 @@ Open L0 questions: none new. Campaign-side remains open: the merge package's sta
 the lane's S203–S210 (different documents) and must be renumbered past S210 before any future adoption; L0
 `ae2c52b8` (stale merge-package id remap) still stands.
 
-Cleanup: `.ufo/waves/round-35/scratch/` (3.2 GB of per-mutant trees, crib copies and clones) was deleted after its top-level text evidence was copied into `.ufo/waves/round-35/scratch-evidence/` (235 files plus the three late seats' trees, committed at `4efaf63` and `b632f0b`). Seat reports that cite a `scratch/...` path should read it under `scratch-evidence/`; a seat that rebuilt its scratch after the sweep had the rebuild folded in the same way.
+Cleanup: `.ufo/waves/round-35/scratch/` (3.2 GB of per-mutant trees, crib copies and clones) was deleted after its top-level text evidence was copied into `.ufo/waves/round-35/scratch-evidence/` (235 files plus the three late seats' trees, committed at `4efaf63` and `b632f0b`). Seat reports that cite a `scratch/...` path should read it under `scratch-evidence/`; a seat that rebuilt its scratch after the sweep had the rebuild folded in the same way. Two caveats stated rather than glossed: the checkpoint is a *snapshot* of each seat's top-level (and second-level) evidence files, not a full copy — per-mutant trees, clones and anything deeper were dropped — so a report citing a file the checkpoint does not carry must be read against its own inlined output; and a rebuild is not evidence, so a seat that reconstructed a file from its transcript should pin the hash of what it wrote, as `RevQuoteS210` did.
 
 Dead/no-report seats: wave 2 dispatched 40; **40 wrote reports** (`SentBoundary` and `ConnOverlap` landed
 last, after the first tally; the report was amended rather than the count prettified). Wave 1: 64 dispatched,
