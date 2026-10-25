@@ -88,7 +88,7 @@ knowledge entries. Routed from the round-45 closure as D7 and D8.
 | claim | counting command | before | after | measured commit |
 |---|---|---|---|---|
 | C1 operability | `python3 corpus/evidence/round46/c1-count.py` | `TOOL=absent POSITIVE_PASS=0/3 JUNK_KILLED=0/3 C1=FAIL` exit 1 (`controls/c1-before.txt`, tree A = base `6e2630a6` + this round's counters and fixtures) | `POSITIVE_PASS=3/3 JUNK_KILLED=3/3 CANARY=pass C1=PASS` exit 0 | `c294484f` (`corpus/evidence/round46/measure-after.txt`) |
-| C2 calibration | `python3 corpus/evidence/round46/c2-count.py --list` | `ENTRY_POINTS=71 (tools=7 counters=50 named=69) REGISTERED=55/71 UNREGISTERED=16` exit 1; pristine base archive `ENTRY_POINTS=68 (7/47/66) REGISTERED=55/68 UNREGISTERED=13` (`controls/c2-before.txt` trees A–D) | `ENTRY_POINTS=73 (tools=8 counters=50 named=71) GATES_ROWS=40 REGISTERED=73/73 UNREGISTERED=0 C2=PASS` exit 0 | `c294484f` |
+| C2 calibration | `python3 corpus/evidence/round46/c2-count.py --list` | `ENTRY_POINTS=71 (tools=7 counters=50 named=69) REGISTERED=55/71 UNREGISTERED=16` exit 1; pristine base archive `ENTRY_POINTS=68 (7/47/66) REGISTERED=55/68 UNREGISTERED=13` (`controls/c2-before.txt` trees A–D) | `ENTRY_POINTS=73 (tools=8 counters=50 named=71) GATES_ROWS=35 REGISTERED=73/73 UNREGISTERED=0 C2=PASS` exit 0 | `c294484f` |
 | C3 depth | `python3 corpus/evidence/round46/c3-count.py` (and `--lane-only`) | `ENTRIES=0/2 CITES_BOUND=0/5 QUOTE_ROWS=0/11 C3=FAIL` exit 1 (`controls/c3-before.txt`) | both modes full, exit 0 (`CAPTURE_BOUND=11/11` default, `skipped` lane-only) | `c294484f` |
 
 Verdicts: **C1 improved** (frozen predicate met at every revision; the D7
