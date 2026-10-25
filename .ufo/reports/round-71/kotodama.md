@@ -63,8 +63,8 @@ W04=28 standing (all pre-existing). README sweep exit 0;
 ## Trend verdicts
 
 - **expansion — improved.** One admitted knowledge entry on uncovered coverage-map ground (`dance-performance-movement-codes.md`, 0/0 pre-entry owners), citing 13 mined rows S861–S873 opened this round (expansion criterion of LEARNING.md fires).
-- **quality — improved.** The round's record instruments are re-verified: receipt headers restored to the QUALITY 17/19 bar (V70-1), S860 pointer accuracy repaired (V70-2), Gate quote discipline restored (V70-3). No admitted entry fails its re-check.
-- **discernment — improved.** The outside round-70 spot-check's five disagreements were turned into landings (V70-1..V70-5) and the round-71 lesson adds mistake rows + a reject-sweep with refused candidates; the Gate admits 13 and rejects 8 with reasons+flips (both ends sampled by wave-2 seats).
+- **quality — unchanged.** LEARNING.md's quality observable (re-verified/deepened/superseded entries) did not fire: the corpus diff is the one new entry; no entry was re-verified. The record repairs (V70-1..V70-3) are calibration work (QUALITY criterion 20, added this round).
+- **discernment — unchanged.** LEARNING.md's discernment observable fires only on a gate decision agreed with an outside non-author spot-check or a new lesson-grounded QUALITY criterion; the round-71 lesson adds mistake rows and a reject-sweep, but a subagent the lane dispatched is still the lane and the wave-2 seats are not an outside spot-check. QUALITY criterion 20 (grounded in V70-4 and this round's recurrence) is the criterion addition; the hyaku non-author closure is the round's outside spot-check.
 
 ## SHONEN
 
