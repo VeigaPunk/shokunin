@@ -21559,6 +21559,47 @@
    "notes": "dispatch 2026-10-25T05:06:21-03:00 launch kasegi round=25 pgid=4033181 driver=hyaku-inline attempt=1; complete 2026-10-25T06:09:34-03:00 hyaku-inline attempt=1. Step-1 conformant: report by lane identity (b051de3), SHONEN heading 4 [~] lines, 98261eb and 41a77b8 ancestors of master, jj-lane state ahead=0 clean, prompt = template rendering + hyaku §6. Routed defects: R25-1 claims.json edited in place after its stated freeze and first committed at round end (no commit pins frozen bytes); R25-2 selftest tally absent from committed c1-receipt-index.txt despite wave2/C1InstrumentDigest.md citing it at line 4; R25-3 recheck-audit.py (exit 0/1 + --selftest) has no gate|probe registry row in SKILL.md; R25-4 lesson fix-control #3 grep returns 1 hit (round-24.md:77) not the stated 0; R25-5 S040 URL now redirects and 403s browser UA, record final URL. Lane-declared open debt carried: entry-file deletion shrinks audited set, anchorcheck.py cannot fail, capture-source TAG_RE lossy/no raw_sha256, source-recheck --source single-valued. Operator note: ~3.77k files/~65 MB wave evidence committed under .ufo/waves/round-25. SHONEN: boxes 2 and 4 look non-author checkable from committed evidence; 1 and 3 carry caveats (anchorcheck cannot fail; 23/37 rechecks gated). No tool installs.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 38,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 38,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 38
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "improved",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-38/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-38-verifier-spotcheck.md@c5545d894e60d496f39f52f83bce2398c5dfcaf9",
+    "rechecks": "C1/C2/C3 re-measured at origin master ce41bae6 and reported tip d854475a — all met True exit 0, controls met False exit 1; census exit 0 (93 W04); sources S352/S353/S472 admits and S360/S396 rejects re-opened"
+   },
+   "commit": "kama-shokunin@ce41bae692c86d7b9f56cec8466157673c3bed4e",
+   "closed_at": "2026-10-25T09:33:06Z",
+   "campaign": "hyaku",
+   "notes": "dispatch digest: 2026-10-25T06:04:09-03:00 launch attempt=1; 06:06:04 lane-dead-no-report (no work on parked worktree); 06:06:05 launch attempt=2; 06:30:21 complete. Defects routed to kama: (1) S472 row/amendment/lesson cite sha256 not matching committed evidence or rerun (actual 5585f6027df2dbc4…); (2) R36-D2C correction cites SOURCES.append.md sha256 not matching current bytes; (3) wave spec.json/run.json not committed; (4) report SHONEN section lists per-axis lines instead of repo's four boxes; (5) missing literal Landed changes/Before-after headings. Notes: parked worktree carries inherited stale r35/r36 leftovers and untracked round-37 dir (not round-38 debt); MISSION.md:29 axes line vs prompt disclosed by lane; remote-tracking ref stale in parked worktree (true origin verified by ls-remote).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
