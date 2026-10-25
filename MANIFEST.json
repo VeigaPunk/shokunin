@@ -22143,6 +22143,46 @@
    "notes": "Dispatch digest: launch attempt=1 2026-10-25T06:30:24-03:00 pgid=2141986; lane-dead-no-report 08:26:13 (attempt 1 ran both waves, stopped at be4a820c, work uncommitted); launch attempt=2 08:26:15 pgid=4018117; complete 08:32:52. Attempt 2 landed 15084153, 019a844c, f351c520; the report is fleet 88b2c21f. Both claims fail as declared (honest stop). The landed S195 entry/row and the R60 repairs are graded as frontier work: R60-V1/V3/V4/V6/V7/V9 repaired; V2 and V8 partial; V5 forward-fixed. Defects (status-neutral): falsifier fixture revs resolve only under /tmp; in-place rewrites in 165b830 (lessons/round-60.md A=102->104, SCORECARD capabilities row 1794). Routed R61-V1..V6: bundle the fixtures; v2 counters read revision bytes, use \\s and 11-cell indices, and bind P2 to non-lane-authored evidence; append corrections for the in-place edits; erratum for 6 R60 fleet-report placeholders; refresh the proxy stanza (A=115, C2=148) and pin make-dispatch-actual.mjs together with this spot-check's README row and covered pin; re-queue the Audit19 item. Operator note: SHONEN boxes 2 and 3 look non-author-checkable.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 71,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kotodama",
+   "lane_round": 71,
+   "lanes": {
+    "kotodama": "ok"
+   },
+   "lane_rounds": {
+    "kotodama": 71
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "depth": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [
+    "no-git selftest guard reports/round-71/accept-d.py: a git-less export prints SELFTEST: COULD-NOT-EVALUATE (no git) exit 2 and git failures print (git unavailable: ...) exit 2, while the in-repo run keeps the frozen round-69 selftest 2/2 exit 0"
+   ],
+   "report": ".ufo/reports/round-71/kotodama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "kotodama-shokunin/corpus/lessons/round-71-verifier-spotcheck.md@b60c7b140c5350caa7d1073711f14092541533f0",
+    "rechecks": "C and Ca re-measured by the integrator in fresh clones at b94a543c (before) and 99e3d63a (after); D evidence-verified (selftest-based, lane counter not executed). C: culture-material 35->36, knowledge .md 242->243, registry rows 784->797, word-bounded filename/topic owners 0/0 at base, entry cites 13 distinct rows S861-S873 (each 1 row, mined, used-by the entry, opened 2026-10-25, tier A12/B1), entry has verified-at/recheck/gap-filled; check-cited-lines exit 0 from measures-c.txt with counter sha matching HEAD; sources-census validate exit 0 (W04=28 pre-existing, none in S861-S873). Ca: six round-70 receipts 0->6 header lines each with marker and preserved first line; S860 verify-at 6cb51a4->acc2d614 with old->new in corrections-r70.md; round-70 Gate quote 27->25 words; SCORECARD trend-correction row 0->1; lesson 'rejected this round:' sweep (8 candidates); quarantine table 21 rows with recognized verdicts (tally 10/7/4). D: accept-d.py carries the COULD-NOT-EVALUATE (no git)/git-unavailable exit-2 paths; measures-d.txt stamped 1d1b4325 with tree 84a304ba = that commit's tree and counter sha 459cfa9d unchanged through HEAD; legs 2/2 exit 0, no-git exit 2, ACCEPT-D-69 8/8. SCORECARD diff only appends the round-70 trend-correction section; no axis harmed. Spot-check: admits S873 (SEP live), S870 (ICKL live), S865 (Flamenco Wayback 20210302140159) agree, quotes verbatim; rejects EFDSS Morris (200 soft-404 title) and Dance Notation Bureau (DNS timeout) agree; Capoeira reject DISAGREE: live page serves the full narrative with no challenge, and CDX holds 2017 200-captures under canonical slug capoeira-circle-00892, so 'no Wayback capture' is false. All 13 Gate quotes <=15 words."
+   },
+   "commit": "kotodama-shokunin@99e3d63a1fded6e47a015708e516570cfedfb638",
+   "closed_at": "2026-10-25T11:59:36Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-10-25T08:14:54-03:00 launch kotodama round=71 pgid=3895906 driver=hyaku-inline attempt=1; 2026-10-25T08:50:12-03:00 complete kotodama round=71; hyaku-inline attempt=1. Step-1: report committed by kotodama-shokunin (5 commits), SHONEN 4x[~], 12 cited lane hashes all ancestors of main, ahead=0, prompt carries the template contract. Defects (status-neutral, routed in the spot-check section 6): K71-1 uncommitted round work in the lane (QUALITY.md criterion 20 that the report/lesson call 'added'; at HEAD grep '^20\\. ' = 0; plus 2 modified and 5 untracked w2 seat files); K71-2 report did not land last (cites tip ccadb598; 17 later lane commits incl. corpus edits, HEAD 99e3d63a never named); K71-3 filed report rewritten in place at bc418b99, 98873dfd, 8380f703 (no appended erratum); K71-4 append-only LOG.md round-71 entry edited in place at 1721fbd and 99e3d63; K71-5 post-landing id-map correction S861->S992 => S874->S1005 was a rewrite, not an append: id-renumber-map.json overwritten (27db4ce, 99e3d63), LOG.md:4274 and lesson :83 edited in place, and the fleet report still cites S861->S992 at :57/:61 (new map itself correct: next_free S874, no registry id >= S874); K71-6 quarantine tally is 10/7/4 in the table (57e0a72) but 10/6/5 in the report, LOG and lesson; wave-2 is 40 seats (spec.json) but LOG/lesson say 41/78; K71-7 measures-ca.txt header pairs counter sha 1ce25fb9 with stamp 64da9e14 (counter there = f706aacd); K71-8 Gate rejects ROH/DNB/Princeton/EFDSS carry no URLs, and the Capoeira reject reason is falsified, so it must become a lesson plus a grounded QUALITY criterion (probe canonical slug in CDX; record reject URLs). Carried lane routes: R71-M6, R71-M8, R71-M14, vacuous accept-c legs. SHONEN: no box fully checkable by a non-author yet; no promotion recommended. Tool installs: none.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
