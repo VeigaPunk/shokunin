@@ -22394,6 +22394,56 @@
    "notes": "Dispatch/complete digest: 2026-10-25T09:10:16-03:00 launch tabi round=25 pgid=981677 driver=hyaku-inline attempt=1; 2026-10-25T09:50:22-03:00 complete tabi round=25; hyaku-inline attempt=1. Defects: report first written to wrong fleet path without SHONEN, re-filed contract path only after orchestrator prompt; W2 (34 validated items) not dispatched, so falsification rests on W1 attack seats plus gate mutation selftests; lane repo has untracked .ufo/waves/round-25/w2/ and is not clean; S106 source exact-line claim not independently readable in closure. Calibration harmed by discrepancy/unverified S106 admit, so round rejected. Routed: correct report-path/heading before handoff; ensure W2 attack batch dispatched or clearly bound limitations; resolve untracked W2 material; persist resolvable decoded source evidence. SHONEN checklist appears checkable in parts; operator owns promotion and no boxes checked here.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 25,
+   "date": "2026-10-25",
+   "type": "closure-correction",
+   "lane": "tabi",
+   "lane_round": 25,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 25
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "improved",
+    "freshness": "improved",
+    "operability": "improved",
+    "coverage": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "unprovable-but-better"
+   },
+   "capabilities_added": [
+    "bfcache-receipt",
+    "source-reopen-receipt"
+   ],
+   "report": ".ufo/reports/round-25/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-25-verifier-spotcheck.md@62fb2c410f555a249bda636077d146147d236058",
+    "rechecks": "S106 reopened with base64 decode: line 187 BASE_FEATURE(kBackForwardCache, base::FEATURE_ENABLED_BY_DEFAULT); agree. Axis table and ledger corrected consistently: no harmed axis. Claims remain re-measured as recorded in original closure."
+   },
+   "commit": "tabi-shokunin@8769b2e06119ac9d58ea57ddf66cfa476608ace2",
+   "closed_at": "2026-10-25T16:05:00Z",
+   "campaign": "hyaku",
+   "notes": "Append-only correction supersedes rounds[670] (2026-10-25 closure). S106 spot-check corrected to agree after decoding ?format=TEXT base64; previous disagreement was reader transport handling, not source contradiction. Calibration is unchanged; original harmed verdict was inconsistent with its own axis table. Admission remains false as honest-stop because W2's 34 validated items were not dispatched, limiting intended falsification coverage. Report wrong-path/SHONEN timing defects and untracked W2 path remain conformance defects; no axis harmed. No promotion or mint.",
+   "promotions": [],
+   "minted": [],
+   "supersedes": {
+    "round": 25,
+    "type": "closure",
+    "date": "2026-10-25",
+    "entry": 670
+   }
   }
  ]
 }
