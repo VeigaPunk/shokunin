@@ -1,6 +1,7 @@
 # kasegi — round 23 report (attempt 2)
 
-Lane: `kasegi-shokunin`. Pushed lane hash: **`f6966d4dd25b29687d1d1f831417e9b8d1900760`** (helper `landed`).
+Lane: `kasegi-shokunin`. Pushed lane hash: **`f6966d4dd25b29687d1d1f831417e9b8d1900760`** (helper `landed`; measured bytes — the lane tip
+later advanced to `5842ef72a545477d6f9729d7a986d62c7c370486` only by amended seat reports).
 Base `922a4dde90b60b465e2b8b241d1fe363f1f27e98`; lane tip at attempt start
 `1fafde8f11454f3b0b98ab7f2b2e640aaf7f399a` (inherited checkpoint `8bf9807`,
 "policy-paused, unadmitted, no task resumption"). Frozen claims unchanged from
