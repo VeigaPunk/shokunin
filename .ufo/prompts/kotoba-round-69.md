@@ -158,7 +158,7 @@ Phase-1 directives still bind: "train all shokunins to at least round 100"; "com
 every round done"; "do it inline with multiple swarms of subagents".
 
 You are an in-session **L1 lane subagent** dispatched by the hyaku orchestrator (the operator's
-parent omp session) for exactly ONE steered round: **kotoba round 69** (attempt 1;
+parent omp session) for exactly ONE steered round: **kotoba round 69** (attempt 2;
 campaign target: round 100). Your lane's place in the session follows the goal file (lane
 order and blocks: `.scratch/goal-20261025-hyaku-12h.md`); the orchestrator dispatches your lane's
 next round only after this one lands and its non-author closure is written. Work this round only
@@ -201,6 +201,11 @@ not, and name both in the report.
    larger frontier claim instead of adding filler seats. Validate every wave under its policy (both
    policies set `maxLanes` 256, the validator's hard ceiling), then dispatch it as exactly ONE `task` call carrying the
    validator's `taskCall` (`context` + `tasks`) unchanged; a refused wave is fixed, never split.
+   **Dispatch bridge (run 6):** tool output truncates long strings, so do not hand-transcribe the
+   payload — load it in ONE eval (py) cell and call the session tool directly:
+   `p=json.load(open('<abs>/<wave>-dispatch.json')); tc=p['taskCall']; tasks=[{**t,'solutionSpace':'one wave item, spec in task text'} for t in tc['tasks']]; r=await tool.task({'context':tc['context'],'tasks':tasks,'i':'Dispatching wave'})`.
+   That is the one batched call, payload unchanged. **A return without a landed report is a failed
+   attempt** — finish the round end to end (run 6: two L1s returned mid-round with nothing landed).
    For a v1 wave:
 
        cd /home/vgpnk/Projects/shokunin/kotoba-shokunin && UFO_CONFIG_PATH=/home/vgpnk/Projects/shokunin/scripts/hyaku/ufo-wave-policy.json \
