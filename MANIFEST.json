@@ -21974,6 +21974,57 @@
    "notes": "dispatch 2026-10-25T07:10:05-03:00 launch chousa round=46 pgid=3265394 driver=hyaku-inline attempt=1; complete 2026-10-25T08:14:45-03:00 hyaku-inline attempt=1. SHONEN boxes all [~] (no named non-author verifier) — checkable by a non-author, promotion operator-owned. Routed defects: freeze-time NAMED sentence/code gap (residual, fixed by repair); C2 kill-floor not enforced in counter (values satisfy it); stale pre-widening labels/digest in c2-controls.txt (forges re-verified still refuse); cheap-gate residue (8-pipe row / dotslash) kept as named limit; anchor char drift between SOURCES/lesson and spans.tsv offsets; report wording on dead seat CritC2Scope (its report is committed at tip).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 46,
+   "date": "2026-10-25",
+   "type": "closure-correction",
+   "lane": "chousa",
+   "lane_round": 46,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 46
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "improved",
+    "coverage": "improved",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "inference-grounding check",
+    "verifier registry alongside the name pattern",
+    "capture-bound span builder with context"
+   ],
+   "report": ".ufo/reports/round-46/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-46-verifier-spotcheck.md@9a9f94dbcb010eca6636886e53950f38ca806329",
+    "rechecks": "C1/C2/C3 re-measured over git archive of lane tip 5c6e2ca (C1 3/3+3/3 CANARY=pass exit0; C2 81/81 UNREGISTERED=0 exit0; C3 both modes PASS exit0) — all match committed measure-after.txt; before-states reproduced on base 6e2630a6 (C1 FAIL no-fixtures; C2 UNREGISTERED=21 exit1; C3 CAPTURE_BOUND=0/11 exit1); capture digests for all five S085-S089 sources verified against .qcache; 11/11 span slices+quotes verified; census validate exit0 (89 rows, five W04); C2 NAMED widening judged a repair to the literal frozen predicate, not a post-scoring rule change"
+   },
+   "commit": "chousa-shokunin@5c6e2ca1f3f11425c38e42fdcf10914e9b73cb62",
+   "closed_at": "2026-10-25T11:23:30Z",
+   "campaign": "hyaku",
+   "supersedes": {
+    "round": 46,
+    "type": "closure",
+    "date": "2026-10-25",
+    "entry": 660
+   },
+   "notes": "Orchestrator-side dispatch-evidence defect (status-neutral): at 08:19:22 -03 the orchestrator mistakenly re-ran inline.sh dispatch chousa while r46 was still claimed — watchdog line 1323 `launch chousa round=46 pgid=3963557 driver=hyaku-inline attempt=2` and fleet commit 7690edbe (round-46: chousa dispatch evidence (hyaku inline attempt 2), prompt re-rendered, 11+/4- lines) are SPURIOUS: no L1 was spawned for that attempt; the round-46 work, report 666c473e and lane tip 5c6e2ca are all attempt 1, graded as before. Original dispatch digest: 2026-10-25T07:10:05-03:00 launch chousa round=46 pgid=3265394 driver=hyaku-inline attempt=1; complete 2026-10-25T08:14:45-03:00 hyaku-inline attempt=1. SHONEN boxes all [~] (no named non-author verifier) — checkable by a non-author, promotion operator-owned. Routed defects: freeze-time NAMED sentence/code gap (residual, fixed by repair); C2 kill-floor not enforced in counter (values satisfy it); stale pre-widening labels/digest in c2-controls.txt (forges re-verified still refuse); cheap-gate residue (8-pipe row / dotslash) kept as named limit; anchor char drift between SOURCES/lesson and spans.tsv offsets; report wording on dead seat CritC2Scope (its report is committed at tip).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
