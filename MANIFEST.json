@@ -23088,6 +23088,43 @@
    "notes": "dispatch 2026-10-25T13:52:04-03:00 launch souji round=26 pgid=15822 driver=hyaku-inline attempt=1; complete 2026-10-25T14:39:08-03:00. Defects: (1) trailing wave-seat outputs under .ufo/waves/round-26/w1/ (8 modified + 10 untracked, mtimes past driver complete) plus untracked census/operator-sweep-20261019/ and __pycache__/ dirs remain uncommitted in lane repo — status-neutral, routed to lane; (2) S119 zh-Hans reject reason time-fragile: page now stamped last-updated-in-2.56.0 and carries the switch; reject outcome sound, routed to r27 re-evaluation with pinned snapshot; (3) SHONEN boxes [~] asserted-by-author only — promotion checkability operator-owned. Wave w1 spec 87 seats committed; no L0; no tools installed.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 28,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 28,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 28
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "coverage": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-28/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_kfc session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-28-verifier-spotcheck.md@7a6591c1eb8a14f427297980a96fa8bb339f29ee",
+    "rechecks": "Before counters re-derived at freeze c9f8b115 (instrument c2a9e6c6ef748, no selftest, SOURCES 41, frontier 11, S042 0). After counters re-derived at 32f694b38: instrument sha23818c120... matches c1-receipt-index.txt; bad-fixture exit=1, BOUNTIES-ABSENT lines=1, selftest cases=9 failures=0 exit=0, SKILL.md exit=0 bad=0 LOST=306; frontier 12, S042 entries 1, rows 42, census exit 0, harness 15/15; manifest 12 quotes all exactly-once, stems match; S041 capture identical to round-26. SCORECARD diff append-only, no axis harmed. Gate evidence verified as committed (self-test tally, frozen verdict, revision measured). Spot-check agrees with 1 admit (S042/F12) and 2 rejects (chinese-criminal-thresholds, vendor-third-party) after re-opening sources."
+   },
+   "commit": "kasegi-shokunin@32f694b38e02b3dccbc696ba7ea1e52a928101cf",
+   "closed_at": "2026-10-25T18:25:00Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-10-25T13:52:07-03:00 launch kasegi round=28 pgid=16898 driver=hyaku-inline attempt=1; complete 2026-10-25T15:03:53-03:00 hyaku-inline attempt=1. Report committed by lane identity kasegi-shokunin (361c31bd...). Conformance clean: cited hashes ancestor of master, ahead=0, no leftovers, prompt carries contract, SHONEN heading one line per box. Defects routed to round 29: M28-3 malformed frozen sed counter limb; M28-1 seven PRE-STATE receipts; M28-6 R6 SKILL.md line shift + stale resolve-dispatch-fixtures.json pointer; M28-8 Q9 stem check uninstrumented; M28-5 frontier harness crashes on absent entry; M28-12 receipt digest drift. Round's own discernment verdict was 'unchanged' pending outside spot-check; closure spot-check lands and agrees (admit+rejects), so discernment improved. SHONEN boxes are [~] self-assertions; no [x] written by this non-author (promotion operator-owned). No L0 question open; stale-lane none; no tool installs.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
