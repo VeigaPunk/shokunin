@@ -301,7 +301,7 @@ arithmetic.
 - [~] End-to-end domain task executed and logged — LOG *Round22 attempt2*; both
   counters run before and after at named revisions.
 - [~] Instructions executable by an agent without oral context — every cited
-  command runs at `c1664fc`; the vendored probe is labelled not-re-run.
+  command runs at `77d6595`; the vendored probe is labelled not-re-run.
 - [~] No cross-domain bleed; PROVINCE accurate — both entries are F4 restorable
   quarantine; credential/exposure decisions stay with Kagi/operator, host
   liveness with Mori.
