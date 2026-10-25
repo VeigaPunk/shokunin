@@ -141,3 +141,11 @@ the `tool_present` clause is per-path, not per-binary.
   `hyprctl getoption debug:disable_logs -j` → `int: 1`. No new instance epoch
   and no new client: the committed triplet is still accurate, no honest-aging
   caveat needed. Report at `.ufo/waves/round-38/w1/reports/RevLiveTriplet.md`.
+- `RevCommitChain` (reviewer, **major findings**): `859d0cf` (C1 clause-c
+  uniqueness) and `b6c1d31` (manifest `c1-duprow`/`c2-docconn` fixes) landed
+  **after** the freeze — breaching the registration's "a later change to a
+  counter is a new predicate and the claim fails as declared". At the frozen
+  pair the gate scores **18/19**, not 19/19. Recorded as an erratum in
+  `LOG.md`; the C1 claim's honest verdict as frozen is MISSED on instrument
+  defect, the repaired pair's 19/19 is a new predicate, routed to closure for
+  a re-registration ruling. Report: `.ufo/waves/round-38/w1/reports/RevCommitChain.md`.
