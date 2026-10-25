@@ -23009,6 +23009,47 @@
    "notes": "dispatch digest: 2026-10-25T11:05:44-03:00 launch kotodama round=72 pgid=2574253 driver=hyaku-inline attempt=1; 2026-10-25T12:42:22-03:00 complete kotodama round=72; hyaku-inline attempt=1. Report committed by lane identity (a151ec38 + 6 errata, all kotodama-shokunin); prompt committed a02268ca; lane ahead=0 behind=0. Defects: R1 two untracked w1 seat reports (.ufo/waves/round-72/w1/ScoutMergeScan.md, ScribeLesson.md); R2 ACCEPT-CA-72 post-report rerun receipt uncommitted and SCORECARD round-72 row asserts 12/12 PASS against a committed FAIL receipt; R3 SKILL.md gate registry stops at accept-*-69 (no rows for 70-72); R4 carried, lane self-routed to r73 via errata (stale round-71 id-renumber-map.json; staged S934/S936 fabrication-class + companion re-verification; S869 correction-chain re-verification; shokuknow SOURCES-PROPOSED Gate headings off-by-one; per-citation by-document check for staged era amendments; check-gate-quotes pipe-row blind spot). f47ad6ba is a fleet commit (exists there); f0a4e98 was a provisional hash corrected to 82e9e680 by erratum. SHONEN boxes all [~] but fully non-author-checkable (promotion operator-owned). Spot-check axis table and this entry agree.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 38,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 38,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 38
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved",
+    "calibration": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-38/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_kfc session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-38-verifier-spotcheck.md@08be4eb7fd13358ed29b096e8924005d46ac409c",
+    "rechecks": "C1 frozen-pair 18/19 re-derived from committed bytes (registry_rows parses only ## Registry; frozen duprow append never bites; f551b70 cross-pair 18/19-19/19-18/19-19/19 confirmed; RevCensusBefore 19/19-at-freeze-rev refuted, its HEADxfrozen 18/19 confirmed); C2 evidence-verified (eventq triplet pinned, after-discrimination receipt c2-live ok=1, verbatim seat re-runs at b6c1d31 and tip 23a0e0f); C3 re-measured (entries absent at freeze/base, all 6 frozen tokens present at HEAD, receipts 0/3->3/3); 3 read-only reviewer seats (C2/C3 evidence, lane health, discernment mechanics); sources-census validate exit=0 (6 pre-existing W04 + 1 W01 + ok)"
+   },
+   "commit": "mado-shokunin@f9057de60896d5c91a879c27fec24a8a9c010038",
+   "closed_at": "2026-10-25T16:00:44Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (watchdog.log, mutable): launch 2026-10-25T10:39:13-03:00 launch mado round=38 pgid=2523589 driver=hyaku-inline attempt=1; complete 2026-10-25T12:49:09-03:00 complete mado round=38; hyaku-inline attempt=1. Closure ruling on the routed re-registration question: C1 fails as declared -- frozen counter x frozen manifest = 18/19 (c1-duprow observed TARGET_MET), mechanically verified from committed bytes; the landed 19/19 belongs to the post-freeze manifest rewrite b6c1d31, which the registration freeze contract makes a new predicate -- re-registration in a future round is required, calibration holds no verified r38 move (SCORECARD diff 15+/0-, no axis harmed; lane declared the failure honestly: errata 3f14bd2/c46f868/f551b70 + report addendum). Conformance defects (status-neutral): report lacks Sources & frontier and Trend verdicts sections; report addendum 5 repeats the since-refuted RevCensusBefore frozen-pair refinement (correct in r39 report or appended erratum); C3 after-receipt pins rev 3674cf28, report says efb0ec2; SCORECARD '2 refused' stale vs corrected 3; 3 uncommitted w1 seat reports (RevEntryBound/RevRegistry/ScoutS253) left in the working tree at closure -- commit or revert before r39. Routed to r39: SentSocketSafety HIGH (committed eventq-live-ss.txt is a full ss -xpa dump of 147 pids incl. 1password/gnome-keyring/ssh/docker on a public repo; regenerate census-only keeping >=1 non-socket2 row), eventq counter has no standalone committed after-receipt, plus lane-routed instrument residuals (RevC1v3 F1/F2/F4, RevC2v3 F1/F2, MutC1/MutC2 gaps, LabratProcProof, LabratClockSkew, request-ground frozen control set). One wave only (35 seats), W2 not dispatched per registration (<32 residual items); report filed across 7 lane-identity commits. Tool installs: none. SHONEN boxes all [~] with pointers -- non-author-checkable by an outside verifier; promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
