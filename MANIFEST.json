@@ -24106,6 +24106,51 @@
    "notes": "Digest (watchdog.log, mutable): 2026-10-25T17:49:56-03:00 launch kama round=42 pgid=2295067 driver=hyaku-inline attempt=1; 2026-10-25T19:59:12-03:00 complete kama round=42; hyaku-inline attempt=1. Step 1 OK: report af737dd1 by kama-shokunin with SHONEN 4x[~]; ten commits 0b606b03..3e6fdbe9 all ancestors of origin master (ls-remote 3e6fdbe9); prompt carries sections 1-6; 64/64 seat reports; no marker report. Conformance (status-neutral): D-A closure prompt again lists lane HEAD before/after as df61204c (parked worktree's stale detached local master, same as r40/r41); real base 0b606b03, tip 3e6fdbe9; the SCORECARD diff was run on the real hashes; the parked worktree is still 107 porcelain lines dirty and the jj helper refuses it (non-tip base), so the spot-check was committed through jj-lane.sh from a scratch clone /fast/scratch/hyaku/kama-r42-closure (landed 6897ead5). D-B lane used plain git in a fresh clone, not jj-lane.sh (disclosed). D-C corpus/SOURCES.md search-log line 259 says S401/S424 were 'not opened this round' while the round-42 Gate and report say both were re-checked (I re-checked both; Gate is accurate). Routed to lane for r43: SOURCES correction entry for D-C; counters prove facts not sufficiency (C1 relevance needles, C2 contract mirror, C3 coverage leg: add do-nothing/cheap-edit controls); restate head verifier-spotcheck count (28 at measured commit, 29 with this file); README names no hidden entries; operator-owned parked worktree and fleet-root validate reading stale registry; S-id prose cross-check (planned r43 item 1) must cover the 65-character digest class at round-38.md:51. SHONEN: all four boxes [~], none fully non-author-checkable from this round; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 46,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 46,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 46
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "standing-statement counter",
+    "declared-mutant driver with neutral controls",
+    "no-harm-at-base gate and seat-name collision gate"
+   ],
+   "report": ".ufo/reports/round-46/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_sonnet session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-46-verifier-spotcheck.md@0b5b7cd2b2c15d23086e811a0f0348d84261277b",
+    "rechecks": "C1 inputs re-measured: 16 tool sha256 prefixes equal SCORECARD rows, tools diff base..HEAD 0 paths, statements.json pin and 5 counter pins match, SCORECARD diff 91+/0- append-only, frozen paths unchanged except hardening counters; counter verdict total 21->0 evidence-verified (after/c1.stdout, FROZEN_UNCHANGED=1, selftest 18/18), not executed. C2 evidence-verified: killed 0->25/25 neutral 0 pristine=1 equivalence=1 (after/c2.stdout, selftest 8/8, mutants.json 25+6, EXTRA_RECEIPTS_BAD=0), not executed. C3 re-measured: rows 117->120 by grep, 3 entries indexed in README, snapshot sha256 equal rows, quotes located, sources-census exit 0, unheld ground (README base 0 hits). No-harm all six ok, coldread 60 sections, PROVINCE/SKILL unchanged. Spot-check 3 admits (S258 S259 S260 live re-opened) + 2 rejects ($5.67 arithmetic, S140 xref) + S258 row: all agree"
+   },
+   "commit": "tameshi-shokunin@b5425635961c3279c1bca95b8b42ca3816825df4",
+   "closed_at": "2026-10-25T23:40:00Z",
+   "campaign": "hyaku",
+   "notes": "driver: 2026-10-25T17:46:17-03:00 launch tameshi round=46 pgid=2147959 driver=hyaku-inline attempt=1; 2026-10-25T20:22:17-03:00 complete tameshi round=46; hyaku-inline attempt=1. Conformance ok (report by tameshi-shokunin e0bffbb6, 8 cited hashes ancestors of master, ahead=0, clean, receipts-only tail 0 paths, prompt carries contract). Status-neutral/routed: (1) fresh-mutant generalization 17/73 killed, hardened counters not operative, add AST-pin control; (2) three C1 statements host-dependent (live census, jj/bwrap on PATH) and five tool-less statements lack sha256; (3) round-45 defect 4 (anchor refresh, per-snapshot fetch receipt) not worked, still open; (4) lesson S259 gate quote hyphen-folded vs source en dash (disclosed in entry); (5) C2 0->10 operability score definitional, comparable measure killed 0->25/25; calibration monitor 6->6 (no raise). Discernment improved: round-45 routed defects 1-3 became QUALITY 88-90, committed selftest receipts, named comparable measure. SHONEN: all four boxes remain [~]; nothing newly fully checkable by a non-author; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
