@@ -309,3 +309,24 @@ hard-coded-rev row pass at a measured rev) and confirms the `Z ゾンビ` sweep 
 files at the landing commit — which is `F03`'s asserted value, not the frozen
 contract's 1. Its narrower reading of `C1=met` ("ledger well-formedness and
 arithmetic at one revision") is the one this report adopts.
+
+### Erratum 3 — C3's verdict needs `--census` as well as `TMPDIR`, and the round's census evidence has a different shape
+
+Supersedes the C3 rows' single-condition phrasing ("satisfiable only with
+`TMPDIR=<lane>`"). `w1/ExecOffHostReplay.md` (final bytes committed `554ff416`,
+lane tip `554ff416459c92f0dea9762f834a556df2990187`) measured the full condition
+off-host: `C3=met` requires **both** `TMPDIR=<repo>` **and** `--census <real
+sources-census.sh>`; with the default `--census` (`<repo>/../scripts/sources-census.sh`,
+outside the repo, absent in a clone) the arm is `bash` 127 → exit 1, and with any
+other `TMPDIR` the census's `E11` rule fires on every `used-by`. The
+after-measurement in this report used the default census (present on this host) with
+`TMPDIR=<lane>` — that is the exact invocation behind `after/c3-after.txt`, and no
+`C3=met` claim should be read without it.
+
+Also from that seat: the round's census receipts (`evidence/census-start.txt`,
+`census-end.txt`) are fleet-root-scoped (`--root /home/vgpnk/Projects/shokunin`), a
+different shape from C3's `validate --file`, so they corroborate the registry but
+are not the same check; and `/tmp` reaching 100% mid-wave made the round-43 C1S
+counter report a false `C1S=unmet` (`frozen_still_crashes FAIL`) until space was
+freed — the receipt of record for C1S is the run at `evidence/c1s-tip-run.txt`,
+taken before the partition filled.
