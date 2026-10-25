@@ -23050,6 +23050,44 @@
    "notes": "Dispatch digest (watchdog.log, mutable): launch 2026-10-25T10:39:13-03:00 launch mado round=38 pgid=2523589 driver=hyaku-inline attempt=1; complete 2026-10-25T12:49:09-03:00 complete mado round=38; hyaku-inline attempt=1. Closure ruling on the routed re-registration question: C1 fails as declared -- frozen counter x frozen manifest = 18/19 (c1-duprow observed TARGET_MET), mechanically verified from committed bytes; the landed 19/19 belongs to the post-freeze manifest rewrite b6c1d31, which the registration freeze contract makes a new predicate -- re-registration in a future round is required, calibration holds no verified r38 move (SCORECARD diff 15+/0-, no axis harmed; lane declared the failure honestly: errata 3f14bd2/c46f868/f551b70 + report addendum). Conformance defects (status-neutral): report lacks Sources & frontier and Trend verdicts sections; report addendum 5 repeats the since-refuted RevCensusBefore frozen-pair refinement (correct in r39 report or appended erratum); C3 after-receipt pins rev 3674cf28, report says efb0ec2; SCORECARD '2 refused' stale vs corrected 3; 3 uncommitted w1 seat reports (RevEntryBound/RevRegistry/ScoutS253) left in the working tree at closure -- commit or revert before r39. Routed to r39: SentSocketSafety HIGH (committed eventq-live-ss.txt is a full ss -xpa dump of 147 pids incl. 1password/gnome-keyring/ssh/docker on a public repo; regenerate census-only keeping >=1 non-socket2 row), eventq counter has no standalone committed after-receipt, plus lane-routed instrument residuals (RevC1v3 F1/F2/F4, RevC2v3 F1/F2, MutC1/MutC2 gaps, LabratProcProof, LabratClockSkew, request-ground frozen control set). One wave only (35 seats), W2 not dispatched per registration (<32 residual items); report filed across 7 lane-identity commits. Tool installs: none. SHONEN boxes all [~] with pointers -- non-author-checkable by an outside verifier; promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 26,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 26,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 26
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "improved",
+    "operability": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-26/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_kfc session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-26-verifier-spotcheck.md@e78ac7c4837b81b634db4a927605a751a7f006ba",
+    "rechecks": "C1 re-measured (markers 2->0; headings 17 175 231 -> 17 44 78; 7 protected spans byte-equal at tip 166baa18); C2 re-measured (rows 127->132, F1 0->2) + K4 re-executed (grounded=9 mapped=9 dangling=0 rc 0, identical to committed receipt); C3 counter re-executed (claims=3 flags=0; cases=12 pass=12 control=FALSE-GREEN-REJECTED; identical to committed receipt). Census validate exit 0. Conformance: report committed by lane identity, SHONEN heading OK, all 15 cited commits ancestors of master, lane pushed ahead=0."
+   },
+   "commit": "souji-shokunin@166baa18f808071bc385187691713044a26bd663",
+   "closed_at": "2026-10-25T17:41:44Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-10-25T13:52:04-03:00 launch souji round=26 pgid=15822 driver=hyaku-inline attempt=1; complete 2026-10-25T14:39:08-03:00. Defects: (1) trailing wave-seat outputs under .ufo/waves/round-26/w1/ (8 modified + 10 untracked, mtimes past driver complete) plus untracked census/operator-sweep-20261019/ and __pycache__/ dirs remain uncommitted in lane repo — status-neutral, routed to lane; (2) S119 zh-Hans reject reason time-fragile: page now stamped last-updated-in-2.56.0 and carries the switch; reject outcome sound, routed to r27 re-evaluation with pinned snapshot; (3) SHONEN boxes [~] asserted-by-author only — promotion checkability operator-owned. Wave w1 spec 87 seats committed; no L0; no tools installed.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
