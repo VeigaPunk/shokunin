@@ -21600,6 +21600,50 @@
    "notes": "dispatch digest: 2026-10-25T06:04:09-03:00 launch attempt=1; 06:06:04 lane-dead-no-report (no work on parked worktree); 06:06:05 launch attempt=2; 06:30:21 complete. Defects routed to kama: (1) S472 row/amendment/lesson cite sha256 not matching committed evidence or rerun (actual 5585f6027df2dbc4…); (2) R36-D2C correction cites SOURCES.append.md sha256 not matching current bytes; (3) wave spec.json/run.json not committed; (4) report SHONEN section lists per-axis lines instead of repo's four boxes; (5) missing literal Landed changes/Before-after headings. Notes: parked worktree carries inherited stale r35/r36 leftovers and untracked round-37 dir (not round-38 debt); MISSION.md:29 axes line vs prompt disclosed by lane; remote-tracking ref stale in parked worktree (true origin verified by ls-remote).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 24,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 24,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 24
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "unchanged",
+    "coverage": "improved",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "calibration": "improved",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "gate-registry-conformance (scripts/check-gate-registry.mjs @ f6f7f45: derives the gate set from committed bytes, five historical shapes, latest-row-wins supersession, --selftest 22 cases; first working round 24)",
+    "selfassessment-counter (scripts/check-selfassessment.mjs @ f6f7f45: m1 selftest-tally / m2 receipt-exit / m3 unlanded-paths classes, append-only supersession, fail-closed could-not-evaluate, --selftest 13 cases; first working round 24)"
+   ],
+   "report": ".ufo/reports/round-24/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-24-verifier-spotcheck.md@9e13666759bcf30665abec84dec13adefc1fa86a",
+    "rechecks": "C1/C2 evidence-verified from committed receipts (c1/c2-baseline/tip/measurements.json; selftest 22/22 and 13/13; before 3 -> 0 nonconformant gates 12 -> 14; before 5 -> 0 mismatches incl. four stale tallies at SCORECARD.md:410/:1138/:1139/:1151 + one m3 finding; after measured at 4722dba, delta to tip is receipt files only). C3 re-measured directly over committed bytes: git grep '^source: S10[45] ' = 0 at baseline, 1 at tip (navigation-history-bfcache-evidence.md); SOURCES rows 103 -> 105; sources-census validate exit 0; both sources re-opened live (web.dev 200/157667 B quote at line 2531 stripped = 25 words; Page.pdl decoded 61911 B lines 1345/1706/1713)."
+   },
+   "commit": "tabi-shokunin@8bc1d325e677f72c8ab12d32722fc2578dcf4ba7",
+   "closed_at": "2026-10-25T09:33:28Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch 2026-10-25T05:05:40-03:00 launch tabi round=24 pgid=4032110 driver=hyaku-inline attempt=1; complete 2026-10-25T06:19:44-03:00 attempt=1 (one attempt, no silent window). Dead seats verified: W1 32 dispatched -> 31 reports (ScribeLesson missing, not replaced); W2 33 -> 32 (RevUnlandedResolution). SHONEN boxes fully checkable by a non-author ([~] with pointers; promotion operator-owned). Routed observations (status-neutral): receipt-pinned measurement rev 4722dba vs report-cited tip 8bc1d32 (delta = receipt files only); m3 live-tree porcelain should be recorded in c2-tip.json itself; carried: LOG.md:1664 dated figure, four round-19 self-test receipts rewrite tracked receipts when run, five wave-local gates outside derived universe, adjacency historical table kind-column deferral.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
