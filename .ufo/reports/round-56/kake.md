@@ -1,7 +1,7 @@
 # Round 56 — kake report
 
 Lane `kake-shokunin`, base `e48354b7c26bb6dc544ab6bbdc534fabe0daf7b6`, measured content commit `4cb225fb032b04166fb0232bc98a7bcce72675ec`,
-final lane tip `ad06cb8a17bda28f0691b95aecda13cd4708ea6c` (`git ls-remote origin refs/heads/master` prints it). Inherited state: no
+final lane tip `413c3b4a5eb52202ae20fc7212ceaf87a75f613d` (`git ls-remote origin refs/heads/master` prints it). Inherited state: no
 `lane-dead-no-report kake round=56` line; nothing inherited. Round-55 verifier spot-check read; routed defects 1–4 addressed below.
 
 ## Work performed
@@ -14,7 +14,7 @@ two critics (`w1/CriticAxisClaim.md`, `w2/CriticClaimsAdmission.md`) argue C1's 
 three Yahoo! JAPAN crawl-handling entries, quote-true, on rows opened or re-opened this round (S367 re-opened; S419 and S420 new); the same critics argue its
 counter has no drift condition and the surface is coverage/expansion. No exploratory claim.
 
-- Round shape: two v1 waves — W1 build + pre-data attacks 43 seats, W2 falsify 41 seats, **84 total**, no residual call; the L1 held the planner seat (data walk by scouts and connectors). W1 roles: executor 18, scout 7, critic 6, scribe 5, reviewer 4, connector 2, mutation-tester 1. W2: executor 20, critic 7, reviewer 5, mutation-tester 3, scout 2, sentinel 1, connector 1, revenger 1, simplifier 1. `labrat` and `sonic` are not swarm roles under policy v1 (validator refusal `unknown_role`); those items ran as critic/executor seats. Settlement: `.ufo/waves/round-56/settlement.md`, `w1-results.json`. Dead/misdirected seats: none (84 of 84 seat reports committed, `ls .ufo/waves/round-56/w[12]/*.md | wc -l`). W2 `w2-results.json` had not been delivered when this report was filed (all 41 W2 reports exist in the lane); the count above is from the committed reports.
+- Round shape: two v1 waves — W1 build + pre-data attacks 43 seats, W2 falsify 41 seats, **84 total**, no residual call; the L1 held the planner seat (data walk by scouts and connectors). W1 roles: executor 18, scout 7, critic 6, scribe 5, reviewer 4, connector 2, mutation-tester 1. W2: executor 20, critic 7, reviewer 5, mutation-tester 3, scout 2, sentinel 1, connector 1, revenger 1, simplifier 1. `labrat` and `sonic` are not swarm roles under policy v1 (validator refusal `unknown_role`); those items ran as critic/executor seats. Settlement: `.ufo/waves/round-56/settlement.md`, `w1-results.json`. Dead/misdirected seats: none (84 of 84 seat reports committed, `ls .ufo/waves/round-56/w[12]/*.md | wc -l`). W2 `w2-results.json` (41 of 41 settled) arrived after the first filing and is committed with the final lane tip.
 - Counters attacked before and after build: W1 attacks found the version-1 C1 counter met by a fake `python3 -c` span, a duplicate earlier row, a host-exported pin, padded claims and a rewritten helper (`w1/CriticC1Contract.md` A1–A10, `CritCheatC1.md`, `MutC1Counter.md` 6 of 16 mutants survived, `ReviewerSelftallyCode.md`), and the version-1 C2 counter rejecting a truthful build (7 of 8: S367's row title is not a substring of the page; `w1/CriticC2Contract.md` WR-1) while a 16-file junk tree reached 8 of 8 (`w1/CritCheatC2.md`) → C1 v2 / C2 v2. W2 attacked version 2: `w2/CriticJunkC1v2.md` (5 trees reached met: two commands per cell, unvalidated pin, hollowed fixture), `w2/MutC1V2.md` (8 survivors), `w2/MutC2Selftest.md` (40 mutants, 14 killed → 19 validated fixtures ported, 7 structurally masked) → C1 v2.1 (59-check selftest) and C2 selftest 86 checks. `w2/CriticJunkC2v2.md`: a 3-file junk tree still reaches 8/8 — C2 certifies quote literalness, not support (stated limit).
 - Entries: `corpus/knowledge/yahoo-japan-link-target-crawl-restriction.md` (S367), `yahoo-japan-deleted-url-recrawl.md` (S419), `yahoo-japan-nonexistent-url-recrawl.md` (S420). Wave-2 repairs after 3 critics and 3 reviewers (`w2/CriticEntry*.md`, `w2/ReviewerEntry*.md`): deleted-URL title and outcome restored to the page's 可能性 hedge, a false negative about the page's own robots meta tag removed, "third surface" miscount fixed, のほかに gloss, the S420 conditional and verb span, page-silence sweeps with commands in all three, entry 2/3 quote-class wording, S419 row headline/teaches hedged, PROVINCE check-vs-set wording.
 - Re-verification (freshness): fresh GETs of all three pages equal the retained bodies (S367 equals the round-53 body, sha256 0188de9d…; `w1/ScoutFreshness.md`, `w2/ExecReopenS367.md`, `ExecReopenS419.md`, `ExecReopenS420.md`); recheck commands re-run, count 1 each; no drift; the site's robots.txt does not mention `archives`.
@@ -35,7 +35,8 @@ counter has no drift condition and the surface is coverage/expansion. No explora
 | W2 spec/dispatch | Round 56 | `7ad7db51dfcf` |
 | Wave-2 repairs, C1 v2.1, validation receipts, W2 reports | Round 56 | `f8438a282d59` |
 | C2 selftest 86, SKILL pin, SCORECARD, LOG, settlement (measured content revision) | Round 56 | `4cb225fb032b` |
-| Receipts, revision pins (tip) | Round 56 | `ad06cb8a17bd` |
+| Receipts, revision pins | Round 56 | `ad06cb8a17bd` |
+| W2 results, ready markers (tip) | Round 56 | `413c3b4a5eb5` |
 
 ## Before → after measurements
 
