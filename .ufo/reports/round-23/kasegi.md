@@ -1,7 +1,9 @@
 # kasegi — round 23 report (attempt 2)
 
 Lane: `kasegi-shokunin`. Pushed lane hash: **`f6966d4dd25b29687d1d1f831417e9b8d1900760`** (helper `landed`; measured bytes — the lane tip
-later advanced to `5842ef72a545477d6f9729d7a986d62c7c370486` only by amended seat reports).
+later advanced to `5842ef72a545477d6f9729d7a986d62c7c370486` by amended seat reports and to
+`c8ec0a6b2789f32d3dbeb4db04bbb7f7a8279eaf` by post-seal errata: guard instrument outputs,
+definition limits, instrument indexing — none of which changes a measured artifact).
 Base `922a4dde90b60b465e2b8b241d1fe363f1f27e98`; lane tip at attempt start
 `1fafde8f11454f3b0b98ab7f2b2e640aaf7f399a` (inherited checkpoint `8bf9807`,
 "policy-paused, unadmitted, no task resumption"). Frozen claims unchanged from
@@ -77,6 +79,7 @@ located quotes and executable local rechecks.
 | `4d9231e7` | log the post-attack repairs and final measurements | LOG |
 | `12edac47` | seal: ordering/prefix pins, declared recheck normalization, Q8/R10, final receipts | LOG "- Final seal" |
 | `bf9ce024` | rescue: 24-case matrix (root-name continuation), docstring truth fixes, supplementary Gate rows for S018/S031, corrected census | LOG "- Rescue pass" |
+| `c8ec0a6b` | post-seal errata: density (154.0, 652 cites) and anchorcheck (7 in-range / 0 bad) reported for the final resolver, unpack-path and duplicate-key limits disclosed, both new instruments indexed | LOG "- Rescue pass" |
 | `f6966d4d` | receipts carry each case's `method`/`domain`, so the baseline→landed routing change (`literal/bounty` → `literal/other`) is visible in the artifact | LOG "- Final seal" addendum |
 | `8acb255d` | failing Q7/Q8 control exits recorded beside the clean runs | — |
 
