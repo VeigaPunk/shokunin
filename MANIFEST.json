@@ -20946,6 +20946,50 @@
    "notes": "dispatch/complete digest: 2026-10-24T23:14:40-03:00 launch kake round=51 pgid=30137 driver=hyaku-inline attempt=1; 2026-10-25T03:23:08-03:00 lane-dead-no-report (attempt-1 orphan, session died ~23:30 -03); 2026-10-25T03:23:34-03:00 launch attempt=2 pgid=1755726; 2026-10-25T03:55:31-03:00 complete; hyaku-inline attempt=2. Lane HEAD before 007d66e4, round work 842c1b4, closure spot-check commit 93d7fdbd. Conformance clean (report by lane identity 11f058fb, all five cited commits ancestors of master, pushed ahead=0, no round-51 leftovers). DEFECTS, status-neutral and routed to r52: (1) both counters are unregistered instruments - no SKILL.md gate/probe row, no selftest mode, no frozen baseline with input digests, so PROTOCOL §Gate standard is unmet for them; (2) C8 must read show(root, rev, MIRROR) and pin the mirror sha256, plus C6 URL equality/httpStatus/bytes/fetchedAt and an entry-level quote-class condition; (3) C1 has no vacuity floor (synthetic 47-of-48 and phantom-seat waves score 3/3); (4) junk controls cite nonexistent revisions and are not replayable; (5) SCORECARD names the measured commit descriptively while the committed runs name 907790c; (6) 'frontier line 23 narrowed' overstates the bytes (PROVINCE line 23 unchanged, a new block narrows its reading); (7) the no-harm sentence cites only freshness-sweep --selftest while the live sweep exits 1 (PQ-2 GATE-OPENED, sitemap LISTED-LIVE, plazir-gate-anomaly) with only w1/CriticHarm.md carrying the base-clone control that proves it pre-existing; (8) staged-id lists match no shokuknow package revision; (9) 17 untracked files from rounds 46/48 remain in the lane worktree; (10) pacman.log records installs at 00:56:27 and 02:14:46 -0300 inside the round span - unattributable to this lane, whose attempt-2 window is clean; host-wide pause clause cannot be confirmed from any lane record, operator-visible only. Promotion is operator-owned: no SHONEN box is fully checkable by this closure (box 1 and box 4 are mechanically checkable by a non-author; box 2 needs a fresh end-to-end task run; box 3 needs an agent trial without oral context).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 29,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 29,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 29
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "novelty": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged",
+    "calibration": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "source-adoption-gate (kengaku plans/sources_adopt.py + plans/adoption_check.py: staged-row schema/collision/used-by validation and a one-command adoption counter; selftest 10 cases, real-package strict and targeted modes; first working round 29)"
+   ],
+   "report": ".ufo/reports/round-29/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-29-verifier-spotcheck.md@363a4ebfda0599bbc4b4b3cdc27a5f91bcaf37db",
+    "rechecks": "Step-1: report by kengaku identity (d4090261), 4/4 SHONEN boxes, 14/14 cited commits ancestors of master, ahead=0, prompt = template 1-5 + hyaku addendum 6. Re-measured myself: registry 76->82, knowledge files 37->38, index rows 37->38, entry absent->present with 5 source: lines, six rows mined/2026-10-25/180d/used-by, sources_adopt.py and adoption_check.py exit 128 at baseline -> present, SOURCES.csv census exit 0 with the same 14 W04, build 36 / residual 4 / yield 40 rows 27 yes, SCORECARD diff additive. Evidence-verified (not executed): adoption counter line entries=1..census=ok, selftest 10 cases failed=0, gate-strict registry=82 staged=173 collisions=6 defects=167 prose=167, gate-scoped exit 0 registry=76 prose=5, grader 733/0 PASS via R29a2Regression.md. Live non-author spot-check: S077 sha256 b0a7cb14..78b61 / 41842 bytes / line-95 quote verbatim; S078 sha256 dde4168f..8231f / line 99 '731 -> 642 tasks: 89 dropped after review.'; S079 tree at pin = 92 root = 89 dirs + 3 files; reject judge-calibration-thresholds premise holds (Q11 at QUALITY.md:82, attribution rule, judge-bias duplicate). Deviations ruled disclosed scope clarifications, not target narrowing: recheck declared->180d and clause-4 strict-default + --scope-to-admit. No axis harmed."
+   },
+   "commit": "kengaku-shokunin@2ff4b6f864fe852a6268055f684ae5b6e3428b09",
+   "closed_at": "2026-10-25T07:09:19Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (mutable .ufo/watchdog.log copy): 2026-10-21T12:49:50-03:00 launch kengaku round=29 pgid=200071 driver=hyaku-inline attempt=1; 2026-10-21T15:18:12-03:00 complete attempt=1; 2026-10-23T20:41:32-03:00 complete attempt=1; 2026-10-25T03:31:56-03:00 launch kengaku round=29 pgid=1872730 driver=hyaku-inline attempt=1; 2026-10-25T04:05:25-03:00 complete attempt=1. Attempt 1 (31934e5..1f3b0f1) was held on source-history/credential-copy disposition and is preserved verbatim in an appendix; this attempt claims two new claims and re-claims nothing. Routed defects for round 30 (status-neutral, none harms an axis): D1 report cites corpus/evidence/round29-attempt2/control-nothing.txt which is not committed (bytes at .ufo/waves/round-29/attempt2/control.nothing.txt, with verified_at=0); D2 lesson renders the kappa sweep as '0 hits in the lane' where its command scoped corpus/knowledge/*.md (lane-wide grep = 65 files); D3 lesson prices the S078 line-75 quote at 9 words, registry and bytes say 8; D4 uncommitted .ufo/waves/round-29/attempt2/build/R29a2CritEntry.md (+22-line critic addendum) left in the lane worktree; D5 S091 is used-by the entry in SOURCES.md but absent from the entry source: block, so the frozen counter cannot see the relation. Operator note: all four SHONEN boxes now have non-author-checkable pointers, but the lane correctly reports them [~]; promotion stays operator-owned. Verifier artifact landed as protocol-shokunin at 363a4ebf (remote refs/heads/master verified).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
