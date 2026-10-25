@@ -21929,6 +21929,51 @@
    "notes": "dispatch 2026-10-25T07:02:07-03:00 launch kake round=52 pgid=3248979 driver=hyaku-inline attempt=1; 2026-10-25T07:31:15-03:00 complete kake round=52; attempt=1. Lane HEAD before 93d7fdbd45b0e5698927e7f9cb3dafca24ace416, after 3994101d (integrator spot-check on top of the six round commits). The declared 46-seat wave ran ZERO seats (dispatch refused at the host job cap) — orchestrator-side, status-neutral; no falsification seat attacked the claims, so the integrator re-derived both. CONFORMANCE DEFECTS: (1) at filing the lane had left all six round commits (73c22a3 5422ff3 3a50ae4 1ae8de5 a4a890c a1d83ec) off refs/heads/master and unpushed, while the report asserted 'pushed: ls-remote origin refs/heads/master = a1d83ecf' — false: origin/master was the base 93d7fdbd and the last push was 2026-10-25 04:03:09Z; the orchestrator fast-forwarded refs/heads/master to a1d83ec after the check (93d7fdbd verified as its ancestor, all six authored kake-shokunin) and the closure landing pushed to 3994101d, so ancestry and push now hold; (2) report omits the contract-required 'Sources & frontier' and 'Trend verdicts' sections and the three named measurement headings (substance sits under 'Claims' and 'Measured'); (3) no LOG.md round-52 entry and no landed-change-to-LOG tie — minimum-content defect; (4) the measured revision is named three ways (report a4a890c, per-instrument receipts 1ae8de5, SCORECARD 1ae8de5) and final-verify.txt is a run at a4a890c labelled 'at the measured tip' (tip a1d83ec); (5) final-verify.txt's census block echoes one W04 line where every committed census receipt carries 12; (6) leftover uncommitted round work .ufo/waves/round-52/control/c1-mutation-ladder.json (18 nondeterministic old_tail strings; not the integrator's path, left in place). ROUTED TO KAKE (11 items, corpus/lessons/round-52-verifier-spotcheck.md section 5): push/ancestry discipline through the helper's landed line; LOG.md entry; report sections; five dangling cross-registry ids (S367 S372 S373 S390 S409 resolve only in kotodama-shokunin) presented as kake-held ground in three new entries and the lesson; wrong section locators on S329 and S312 (Gate, lesson, registry cells); both refusals restated on false grounds (S303/S304 unopened and unregistered; genuine duplicate is the S080 URL, not S041/S042); gate registry rows misdeclare the verdict map (64 unreachable — argparse exits 2; malformed settlement/route-map/probe JSON exits 1, not 2) and self-tests assert exit codes but no expected finding-id; receipt reproducibility (ladder old_tail from unpinned-timestamp fixture repos; c2 selftest pinned at 1ae8de5 while the selftest stamps HEAD); sitemapReconciled premise false (ds4cc source tree present, sitemap.xml tracked and byte-identical to the live listing at remote tip 24991e44) and plazir-15-site is ABSENT, not 'directory exists'; freshness-pins/SCORECARD prose. TREND quality and discernment unchanged: no entry re-verified or superseded and QUALITY.md untouched; the outside spot-check agreed on 1 of 3 admit locators and 0 of 2 rejects' stated reasons while all five gate decisions stand, and no QUALITY.md criterion landed, so the disagreement is recorded but not yet learned. Census validate exit 0 over 148 rows (12 W04) was re-run by the integrator. Admission rests on the predicates only: operability 2 rows / 2 receipts / 13-of-18 ladder / 3-of-3 and 8-of-8 reruns; freshness 3 entries / +3 rows / census exit 0 / legs 3-to-1; no owned axis harmed (both stay at 10/10, all owned-file diffs additive). Promotion is operator-owned: SHONEN.md is untouched ([ ] x4) and no box is checkable by a non-author — box 2 is honestly [ ] because no wave seat ran, and the cross-registry citation defect bears on box 4.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 46,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 46,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 46
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "improved",
+    "coverage": "improved",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "inference-grounding check",
+    "verifier registry alongside the name pattern",
+    "capture-bound span builder with context"
+   ],
+   "report": ".ufo/reports/round-46/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-46-verifier-spotcheck.md@9a9f94dbcb010eca6636886e53950f38ca806329",
+    "rechecks": "C1/C2/C3 re-measured over git archive of lane tip 5c6e2ca (C1 3/3+3/3 CANARY=pass exit0; C2 81/81 UNREGISTERED=0 exit0; C3 both modes PASS exit0) — all match committed measure-after.txt; before-states reproduced on base 6e2630a6 (C1 FAIL no-fixtures; C2 UNREGISTERED=21 exit1; C3 CAPTURE_BOUND=0/11 exit1); capture digests for all five S085-S089 sources verified against .qcache; 11/11 span slices+quotes verified; census validate exit0 (89 rows, five W04); C2 NAMED widening judged a repair to the literal frozen predicate, not a post-scoring rule change"
+   },
+   "commit": "chousa-shokunin@5c6e2ca1f3f11425c38e42fdcf10914e9b73cb62",
+   "closed_at": "2026-10-25T11:19:36Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-10-25T07:10:05-03:00 launch chousa round=46 pgid=3265394 driver=hyaku-inline attempt=1; complete 2026-10-25T08:14:45-03:00 hyaku-inline attempt=1. SHONEN boxes all [~] (no named non-author verifier) — checkable by a non-author, promotion operator-owned. Routed defects: freeze-time NAMED sentence/code gap (residual, fixed by repair); C2 kill-floor not enforced in counter (values satisfy it); stale pre-widening labels/digest in c2-controls.txt (forges re-verified still refuse); cheap-gate residue (8-pipe row / dotslash) kept as named limit; anchor char drift between SOURCES/lesson and spans.tsv offsets; report wording on dead seat CritC2Scope (its report is committed at tip).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
