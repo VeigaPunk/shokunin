@@ -1,7 +1,7 @@
 # kengaku round 29 — attempt 2 (hyaku run 6): shokuknow assimilation + standing adoption gate
 
 Lane: `/home/vgpnk/Projects/shokunin/kengaku-shokunin`, branch `master`, HEAD
-**`96c9d8fd7d2391ffb6538ddcc66348d7a73c72fb`** (pushed, ahead 0 / behind 0; the last two commits carry the late seat reports and three calibration repairs, and no counted byte changed after `15156173`). Baseline
+**`2ff4b6f864fe852a6268055f684ae5b6e3428b09`** (pushed, ahead 0 / behind 0; the commits after `15156173` carry the late seat reports and three calibration repairs — no production byte changes after `96c9d8fd`). Baseline
 `1f3b0f1ec41ec297130e8944ff97968d32324632`; frozen prereg `plans/round-29-attempt2-claims.md`,
 freeze commit `8c14a5dcd15ac364a352d544660c69f521c3a6af`.
 
