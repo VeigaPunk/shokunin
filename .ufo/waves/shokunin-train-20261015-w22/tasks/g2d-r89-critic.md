@@ -1,3 +1,0 @@
-# Seat: g2d r89 critic — adversarial review of committed 8cea888
-Lane: /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin
-Attack the 20 landed r89 rows (geo2d_lattice_* + input89_edges_*): hunt for false-positive shapes (a row that passes when it shouldn't — vacuous pins, unconditional tokens), scheduler/host-conditional pins the boundary missed, rows that only pass because a sibling seat's process is alive, envelope gaps (is a 3rd input89 mode reachable?). Read reports/round-89/{r89-author,r89-scout,r89-boundary}.md first. Run probes under >=12 hogs. reports/round-89/r89-critic.md + corpus/live/r89-critic/. No tracked writes, no commits.

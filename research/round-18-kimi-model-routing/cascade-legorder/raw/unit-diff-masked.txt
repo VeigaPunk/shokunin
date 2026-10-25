@@ -1,9 +1,0 @@
---- /home/vgpnk/.config/systemd/user/ds-flash-shim.service.20261015-112620.bak
-+++ /home/vgpnk/.config/systemd/user/ds-flash-shim.service
-@@ -1,5 +1,5 @@
- [Unit]
--Description=ds-flash-shim - OpenAI-compatible 3-leg cascade shim (opencode-go -> hyper -> devin)
-+Description=ds-flash-shim - OpenAI-compatible 3-leg cascade shim (alibaba-token-plan -> hyper -> opencode-go)
- After=network-online.target devin-shim.service
- Wants=network-online.target
- 

@@ -1,9 +1,0 @@
-closed_at	2026-09-28T21:20:00-03:00
-main_HEAD	e0170cd
-log_lines	215
-manifest_entries	30
-reports	85
-prompts	77
-rule	watchdog.log = lines with timestamp <= closed_at; reports-index/prompts-index = files with
-rule	mtime <= closed_at (landed_at = add-commit committer time, '-' when untracked);
-rule	state-counters = highest launch/steer round per lane among the kept log lines

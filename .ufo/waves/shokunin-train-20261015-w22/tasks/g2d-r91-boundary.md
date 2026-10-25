@@ -1,3 +1,0 @@
-# Seat: g2d r91 boundary — attack r91 Navigation2D scout claims under load
-Lane: /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin
-Read reports/round-91/r91-scout.md (committed 60c0bb3) + corpus/live/r91-scout/probes/nav_lattice.gd. Falsify: sync-gate ladder (iteration_id>=2), 2-4f change application, bake routes, avoidance callback + teardown crash rc=134, agent fin/reached split. Run each claim quiet + under >=12 hogs + at --fixed-fps 30/120; hunt unstated modes. Probes namespace r91b_*; godot headless; timeouts<=25s KILL. reports/round-91/r91-boundary.md + corpus/live/r91-boundary/ manifest. No tracked writes, no commits, kill all hogs.

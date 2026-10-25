@@ -1,3 +1,0 @@
-# Seat: g2d r99 scout — in-engine audio surface
-Lane: /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin
-ASSIGNED surface: AudioStreamPlayer2D / AudioStreamPlayer (playback position, bus routing, attenuation model readbacks, stream generators AudioStreamGenerator + playback push frames available, polyphony max_polyphony, autoplay/finished signal timing — note r88 pinned headless-null audio_pos; measure what is NOT null here). godot headless; verbatim pins x>=3; falsifications; author-ready rows (r99_ prefix). reports/round-99/r99-scout.md + corpus/live/r99-scout/. No tracked writes, no commits.

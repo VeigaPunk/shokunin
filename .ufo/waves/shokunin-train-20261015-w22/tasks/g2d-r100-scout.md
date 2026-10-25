@@ -1,3 +1,0 @@
-# Seat: g2d r100 scout — capstone regression-residue sweep
-Lane: /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin
-ASSIGNED surface: capstone — survey LOG.md + SCORECARD + all scout reports r60-r99; pick the largest RESIDUAL unmeasured 2D surface (candidates: Viewport/subviewport, InputEventMouse/Motion/ScreenDrag gesture stream, GPUParticles beyond r94, light_shadow/filter chain, backbuffer/copy-texture APIs, OS/threading in-engine). Deliver a verdict on which residue surfaces are worth pinning vs vacuous headless. author-ready rows (r100_ prefix). reports/round-100/r100-scout.md + corpus/live/r100-scout/. No tracked writes, no commits.
