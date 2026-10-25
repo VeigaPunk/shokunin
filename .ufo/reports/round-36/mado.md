@@ -362,7 +362,13 @@ file this report cites by content:
   clause and control`. That is D4's fail-open closed on the exact input class the spot-check
   named, measured after the fact and committed with the round.
 
-Lane tip at closure: `345fc3838075c51b4b20f7c0ad1f7710d2ee271e`, working tree clean. The tip
+- `0653ec6` — the supersede-binding audit (both D5 pairs close honestly; the frozen rule was
+  unsatisfiable before the exemption, which is why it exists) and the scratch-tree scout.
+- `de76525` — the scratch size corrected from measurement: **1,962,263 bytes ≈ 1.87 MiB**
+  (`git ls-tree -rl`), not the ~2.2 MB the round-35 records carried. The count stands at 124 and
+  the gate re-reads `TARGET_MET` at this tip.
+
+Lane tip at closure: `de76525b66f4a4b2bdc378d1ec63bcbd647bbcd6`, working tree clean. The tip
 this report cites (`64979ef`) and the round's data commit (`a3094c9`) are ancestors.
 
 ## Stale-lane
