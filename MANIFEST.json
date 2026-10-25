@@ -24063,6 +24063,49 @@
    "notes": "Driver: 2026-10-25T17:45:09-03:00 launch chousa round=50 pgid=2124778 driver=hyaku-inline attempt=1; 2026-10-25T19:39:20-03:00 complete chousa round=50; hyaku-inline attempt=1. Conformance ok: report by chousa-shokunin (9bcf5dcb), all 8 cited commits ancestors of master, ahead=0, tree clean. Defects (status-neutral): 13 of 42 W1 seats reused round-49 names (dead; 72 live seats total >= 64); C1/C2 gate rows and measure-after.txt name candidate ec52e632 / 'working tree' rather than the tip hash (closure re-ran the self-test at tip); frozen C1 counter replayable by a forge (lane disclosed; post-freeze c1-supplement.py fails it); C2 counter measures binding not entailment (closure sampled entailment); lane filename istic-* for a 中国科学院文献情报中心 page; calibration graded unchanged (no declared claim). SHONEN boxes remain lane-asserted [~]; the self-test and Gate-table boxes are non-author checkable for operator promotion review; closure wrote no [x].",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 42,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 42,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 42
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "coverage": "improved",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "digest-ledger"
+   ],
+   "report": ".ufo/reports/round-42/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_sonnet session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-42-verifier-spotcheck.md@6897ead55c24ba08c9ac0b09466d4fbfe005a459",
+    "rechecks": "Plain re-measurement in fresh clones of the lane remote, base 0b606b03 -> measured 2c018107 -> tip 3e6fdbe9; frozen counters/preregistration byte-unchanged since freeze 0bfd47ab. C1 re-measured: reconcile counter base mismatches=40 met=False -> 2c018107 and tip mismatches=0 met=True; independently re-derived: stale head phrases 2 at base -> 0, 7 head-table sha256/line facts re-hashed ok, run facts (grep ^## SKILL.md=30, recheck cadence 218, knowledge 34, spotchecks 28, pipe lines 16) and 5 selftests re-executed equal the table, README/PROVINCE name the cited entries, deleted head blocks preserved under Historical head sections, scores held 8/8/7/9/7/7. C2 re-measured: digest audit base tool=0..capability=0 met=False -> tip all 1 met=True at fresh seed 4242; digest-ledger selftest pass=10 fail=0; scan base tokens=94 unknown=9 wrong_unflagged=1 -> tip tokens=97 unknown=0; independent sha256sum of the six external ledger artifacts (b11755 archive, libllama-server-impl.so, staged SOURCES.append.md, round-35 dockerfile html, stories260K.gguf) and the gzip runs.json and S472 wrong/correct digests all equal the ledger. C3 re-measured: capacity audit base entry=0 rows=0 coverage=0 gate=0 met=False -> tip all 1 met=True; kv_cache_size_tokens 0 hits at base -> entry; S478/S479 raw sources re-fetched today, sha256 af4164bc.../9c5a6f2c... and bytes equal the committed copies, quotes at vllm kv_cache_utils.py:2308,1627 and llama.cpp server-models.cpp:2378-2379, entry line citations spot-read. Evidence-verified, not executed: the 64-seat wave (64 seat reports present), shortcut/separability controls (receipts read). Spot-check: admits S478, S479 agree; rejects r8 (S401 settings.py sha 8cd8036d, S405 llama.app docs) and r11 (S424 staged receipt, lane own receipt-1.json) agree; census rows 218->220, A 208->210, mined 199->201; validate on a full tip mirror exit 0 (93 W04, 0 E); fleet-root validate exit 0 reads the stale parked registry."
+   },
+   "commit": "kama-shokunin@3e6fdbe9e0ca1ca5b633d0b312d5561301e924c4",
+   "closed_at": "2026-10-25T23:06:58Z",
+   "campaign": "hyaku",
+   "notes": "Digest (watchdog.log, mutable): 2026-10-25T17:49:56-03:00 launch kama round=42 pgid=2295067 driver=hyaku-inline attempt=1; 2026-10-25T19:59:12-03:00 complete kama round=42; hyaku-inline attempt=1. Step 1 OK: report af737dd1 by kama-shokunin with SHONEN 4x[~]; ten commits 0b606b03..3e6fdbe9 all ancestors of origin master (ls-remote 3e6fdbe9); prompt carries sections 1-6; 64/64 seat reports; no marker report. Conformance (status-neutral): D-A closure prompt again lists lane HEAD before/after as df61204c (parked worktree's stale detached local master, same as r40/r41); real base 0b606b03, tip 3e6fdbe9; the SCORECARD diff was run on the real hashes; the parked worktree is still 107 porcelain lines dirty and the jj helper refuses it (non-tip base), so the spot-check was committed through jj-lane.sh from a scratch clone /fast/scratch/hyaku/kama-r42-closure (landed 6897ead5). D-B lane used plain git in a fresh clone, not jj-lane.sh (disclosed). D-C corpus/SOURCES.md search-log line 259 says S401/S424 were 'not opened this round' while the round-42 Gate and report say both were re-checked (I re-checked both; Gate is accurate). Routed to lane for r43: SOURCES correction entry for D-C; counters prove facts not sufficiency (C1 relevance needles, C2 contract mirror, C3 coverage leg: add do-nothing/cheap-edit controls); restate head verifier-spotcheck count (28 at measured commit, 29 with this file); README names no hidden entries; operator-owned parked worktree and fleet-root validate reading stale registry; S-id prose cross-check (planned r43 item 1) must cover the 65-character digest class at round-38.md:51. SHONEN: all four boxes [~], none fully non-author-checkable from this round; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
