@@ -126,3 +126,20 @@ refused this round with reasons and flips (`corpus/lessons/round-30.md` §Gate).
 - **Misroot sweep:** `git -C /home/vgpnk/Projects/shokunin status --porcelain` shows only driver-owned
   files (`.ufo/state/*`, `watchdog.log`, `scripts/hyaku/*`, `.scratch/`); no seat wrote into the fleet
   root, so nothing was relocated.
+
+## Erratum (appended 2026-10-25, after the report's first commit — the filed bytes above are unchanged)
+
+Lane corrections landed after this report's first commit, all as new commits (never as amendments):
+`d0253c52` (claims change record: the C1 counter was hardened in-round, with which body produced which
+receipt; S084 locator), `5cd92295` (**Q20 is now an executable check** with the roster closure over the
+touched gate, and its two wrong limits corrected — the detector is the `grader.py` PASS-line count, not
+the pinned integer, and R6 defines non-author by roster id, not by workflow run; the C2 counter now
+judges **committed** bytes for D2/D3/D5, requires exactly one control line, and requires the addendum
+**body**, not only its header), `baa53e70` (final seat reports, six-row quote-mode receipt) and
+`bdcd7bed` (the complete-set Q10 review report, which also carries a `VERDICT:` line).
+**Lane tip at this erratum: `bdcd7bed667ce5cf2b6053566d2eeb22e5bf5dbe`** (pushed, `local=remote`);
+the hash this report cited earlier (`6f6d6c98…`) remains an ancestor. Re-measured at the tip: C1
+`entries=1 indexed=1 cited_rows=6 rows_present=6 rows_mined=6 usedby_ok=1 census=ok` exit 0; C2
+`checks=5 defects=0` exit 0 and `--selftest checks=5 failed=0`; C3 `cases=14 failed=0`; Q13 at
+`5cd92295` → `admissions=1 passed=1 failed=0 second-seat-reports=31`, exit 0. The four disclosed
+limitations stand; the Q20 and counter defects the wave found are now closed rather than only recorded.
