@@ -119,8 +119,8 @@ Two validated v1 waves, each dispatched as exactly one task call:
 
 | wave | items | roles | returned | dead / cancelled | validation |
 |---|---|---|---|---|---|
-| w1 build + first falsifiers | 34 | executor 7, reviewer 6, scribe 5, mutation-tester 4, critic 4, scout 3, sentinel 2, revenger 2, connector 1 | 34 | 0 | `ufo-swarm-wave.mjs plan`, exit 0, band 32-64 |
-| w2 falsify the stop | 32 | reviewer 10, executor 6, critic 5, scribe 5, mutation-tester 2, sentinel 1, connector 1, revenger 1 | 23 landed with a report on disk at filing (9 still running; no dead or refused seat) | 0 | `plan --emit-tasks`, exit 0, band 32-64 |
+| w1 build + first falsifiers | 34 | executor 7, reviewer 6, scribe 5, mutation-tester 4, critic 4, scout 3, sentinel 2, revenger 2, connector 1 | 34 (34 reports on disk) | 0 | `ufo-swarm-wave.mjs plan`, exit 0, band 32-64 |
+| w2 falsify the stop | 32 | reviewer 10, executor 6, critic 5, scribe 5, mutation-tester 2, sentinel 1, connector 1, revenger 1 | 26 landed with a report on disk at filing (6 still running; no dead or refused seat) | 0 | `plan --emit-tasks`, exit 0, band 32-64 |
 
 Round total: **67 seats** (34 + 32 + the L1 holding the canonical planner seat; the validator rejects a `planner` role, so the planner duty is the L1's own, per the 2026-10-19 orchestrator ruling). Every seat carried `/skill:godspeed` and the verbatim directive as the first bytes of the prompt it was told to read first; prompt files and seat maps are committed under `.ufo/waves/round-34/r34b/{w1,w2}/prompts/` and `w1-seat-map.json`/`w2-seat-map.json`. Routing was the host role map; no model was passed. Tool installs: **none** (host `python3` 3.14.8 sufficed).
 
