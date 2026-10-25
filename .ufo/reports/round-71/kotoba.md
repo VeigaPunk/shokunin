@@ -72,3 +72,37 @@ Entry `source:` lines and the SKILL.md citation line now name S211/S212/S213.
 - `checklist_blob` in the C1 fake honest world pins `508512da`; both allowed blobs are
   documented in the counter.
 - This round's C2 source material is lane-opened (S212/S213 upstream pins), not assimilated.
+
+*Erratum (appended, the sections above are not rewritten):* this report as first committed at
+`c8a6c88a` omitted the `## SHONEN` and `## Sources & frontier` sections — the same defect the
+round-69 report carried. Both sections are appended below; no verdict above is changed.
+
+## Sources & frontier
+
+- **Rows before → after:** 137 → 139 —
+  `grep -cE '^\s*\|\s*S[0-9]{3,}\s*\|' corpus/SOURCES.md` at `2b79115` and `bf98d28`
+  (S212/S213 superseding rows; S209/S210 stay, anchor cells now carry the upstream commit).
+- **Census:** `scripts/sources-census.sh validate --file <SOURCES.md>` — exit 0 before
+  (`.ufo/waves/round-71/receipts/census-before.txt`, at `2b79115` registry) and exit 0 after
+  (`receipts/census-after.txt`); W04 warnings only, no E-codes.
+- **Added by tier:** A = 2 (S212 docs, S213 docs — the same agentskills.io pages now cited via
+  upstream commit `agentskills/agentskills@69ef37e9424c0a7ea9dd2293b559e43ec8176379`; quotes
+  re-located on the `.mdx` sources, recorded in `corpus/lessons/round-71.md` § Gate).
+- **Touched old → new:** S209/S210 anchor cells gained `upstream commit 69ef37e…` (the rows keep
+  their `mined` status; citation moves to the superseding rows).
+- **Frontier advanced:** none new — the depth move was counter honesty (junk-world rejection
+  committed before data), not new ground.
+- **Mined mistakes:** M121–M123 in `corpus/lessons/round-71.md` § Mistakes. **Sourced claim:** C2.
+
+## SHONEN
+
+- [~] SKILL.md contains real decision tables, error patterns, checklists, cited sources —
+  `SKILL.md` (600 lines; the round-71 citation line names S211/S212/S213 with the upstream
+  commit), `verifiers/check_skill_evals_v2.py --rev bf98d28` → 10 of 10; lane-asserted.
+- [~] At least one end-to-end domain task executed and logged in LOG.md — `LOG.md`
+  `## Round 71` entry (trigger → action → outcome → pointer) and the appended round-69 entry;
+  lane-asserted.
+- [~] Instructions executable by an agent without oral context — no fresh non-author cold run;
+  `corpus/lessons/round-8-aggregator-box3-coldrun.md` remains the only one.
+- [~] No cross-domain bleed (PROVINCE.md still accurate) — `PROVINCE.md` unchanged this round;
+  the two new rows re-cite domain sources already in the registry.
