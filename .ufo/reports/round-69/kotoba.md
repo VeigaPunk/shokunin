@@ -155,3 +155,18 @@ gate registry 49 of 49, checklist 10/11 (the inherited r67 governance citation i
   clean move a later round should make; doing it inside this round would re-point a frozen claim's
   five ids after the fact.
 - The r67 governance citation red stays disclosed rather than excused (see § Gate battery).
+
+## SHONEN
+
+**Erratum (appended, filed bytes above unchanged).** This report was filed without the `## SHONEN`
+heading PROTOCOL requires, and both of its commits (`4844216b`, `9d9f181e`) were authored `probe`
+rather than `kotoba-shokunin` — an attribution defect: the commits were made with plain `git` from
+the L1 shell instead of `scripts/hyaku/fleet-commit.sh --as kotoba`, so the lane identity the
+protocol says must ride on every report commit was lost. Correction: this section is appended and
+committed through `fleet-commit.sh --as kotoba`, which carries both author and committer as the
+lane. Assessment below is the author's own and is `[~]` throughout, never `[x]`.
+
+- [~] SKILL.md contains real decision tables, error patterns, checklists, cited sources — `python3 -B verifiers/check_gate_registry.py --rev 9ce102b` prints `gate registry rows conformant 49 of 49 lane verifiers; phantom 0`, exit 0 (three round-69 counters registered); `SKILL.md` is 597 lines against the 600-line budget and `verify_skill_checklist.py --json` passes `trigger.line_budget`, `trigger.decision_shape` and `trigger.citation_resolves` (10 of 11 checks PASS; the one red is the inherited r67 governance citation named in § Gate battery).
+- [~] At least one end-to-end domain task executed and logged in LOG.md — round 69 executed the assimilation and the eight routed repairs end to end (commits `a02ba7e`, `54f4b6c`, `278b9dc`, `9ce102b`; lesson `corpus/lessons/round-69.md`), but **no LOG.md landing entry was written this round**, so the box's literal condition is unmet and it stays `[~]`; the gap is named here rather than papered over.
+- [~] Instructions executable by an agent without oral context — `corpus/lessons/round-8-aggregator-box3-coldrun.md:36-37` still records the B1 recipe gap and the unlabeled mutating harness, and round 69 ran no new non-author cold run; the round's own seats did execute the lane's counters from written prompts alone (`.ufo/waves/round-69/w1/*.md`, 33 seat reports), which is weaker than a cold-run verdict.
+- [~] No cross-domain bleed (PROVINCE.md still accurate) — `python3 -B verifiers/check_province_core.py --rev 9ce102b` prints `province core rows 2 of 2`, exit 0, whose conjuncts include `## Frontier` and `## Adjacent` byte-identical to the base `a5f7459`; the round added two Core bullets (r67 authority ladder, r68 trust gates) and no Frontier/Adjacent change.
