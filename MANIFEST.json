@@ -21887,6 +21887,48 @@
    "notes": "dispatch digest: 2026-10-25T06:46:36-03:00 launch kotoba round=69 pgid=2607660 attempt=1; 06:59:59 lane-dead-no-report (Cursor PROVIDER_ERROR, m_flash fallback); 07:00:36 launch attempt=2 pgid=3244947; 07:34:22 complete attempt=2. Status ok, admitted: all three claims re-derive and no axis is harmed. Conformance defects (status-neutral): (a) the lane left its four round commits a02ba7e..9ce102b on a detached HEAD; the orchestrator fast-forwarded master to 9ce102b and pushed via jj-lane.sh after the report was filed; (b) the two substantive report commits 4844216b/9d9f181e were authored probe <probe@example.invalid> via plain git; (c) the SHONEN heading was missing at filing and was appended as erratum 0a1199a0 by the lane identity (filed bytes unchanged); (d) no LOG.md round-69 entry exists, so the report's landed-changes->LOG tie is absent; (e) SCORECARD.md is byte-identical base..tip (41c07e39) - no claim rows, counting commands or measured revisions recorded; (f) the report carries no Sources & frontier and no Trend verdicts section; (g) two round-69 wave paths (RevFreezeReceipt.md, ScoutStaleLane.md, mtimes 07:35:59/07:36:54) are uncommitted at closure - the M112 class recurring; (h) corpus/SOURCES.md S201 anchor cell was edited in place (13->14 words) without the old->new log; (i) corpus/lessons/round-69.md:24 still prints '18 assertions' where the shipped counter prints 22; (j) no receipt pins a verdict at the tip 9ce102b (postfreeze receipt measured-rev 54f4b6c, no exit lines). Routed to kotoba as K69-1..K69-11 in corpus/lessons/round-69-verifier-spotcheck.md. Pre-existing red, inherited from r67 and disclosed: verify_skill_checklist 10/11, governance.citation_resolves on LOG.md:2676 and :2678. SHONEN (operator-owned; no [x] written): boxes 1 and 4 are checkable now by a non-author; box 2 is blocked on the missing LOG entry; box 3 needs a non-author cold run.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 52,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 52,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 52
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "freshness": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [
+    "two gate registry rows in SKILL.md (wave-evidence-ledger, quote-truth-counter) with pinned baselines",
+    "self-test modes with committed receipts (ledger 19/19, quote-truth 18/18, registry 10/10)",
+    "red-before vacuity ladder: 13 of 18 mutant families rejected by the round-52 ledger and accepted by the round-51 one",
+    "LISTED-STEADY sitemap verdict with a selftest case (sweep selftest 36/36)"
+   ],
+   "report": ".ufo/reports/round-52/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-52-verifier-spotcheck.md@3994101dba28896830604fd0b08c7f00faca8ed6",
+    "rechecks": "C1 re-measured: registry rows 2 at SKILL.md:1214-1215; selftest receipts 19/19 and 18/18 present and digest-pinned; ladder 13/18 re-derived by jq with the pass control agreeing; L1-L3 and C1-C8 independently re-derived at 1ae8de5/a4a890c/93d7fdbd. C2 re-measured: SOURCES 145->148 rows (3 added, 0 removed); three entries each citing a row new at the tip; sources-census validate re-run by the integrator, exit 0 over 148 rows (12 W04, no E); drift legs 3->1 from the committed before/after logs with the sole remaining leg disclosed. No lane gate or counter was executed; seven read-only reviewer/critic seats ran (0-seat wave replaced by non-author re-derivation)."
+   },
+   "commit": "kake-shokunin@3994101dba28896830604fd0b08c7f00faca8ed6",
+   "closed_at": "2026-10-25T10:46:06Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-10-25T07:02:07-03:00 launch kake round=52 pgid=3248979 driver=hyaku-inline attempt=1; 2026-10-25T07:31:15-03:00 complete kake round=52; attempt=1. Lane HEAD before 93d7fdbd45b0e5698927e7f9cb3dafca24ace416, after 3994101d (integrator spot-check on top of the six round commits). The declared 46-seat wave ran ZERO seats (dispatch refused at the host job cap) — orchestrator-side, status-neutral; no falsification seat attacked the claims, so the integrator re-derived both. CONFORMANCE DEFECTS: (1) at filing the lane had left all six round commits (73c22a3 5422ff3 3a50ae4 1ae8de5 a4a890c a1d83ec) off refs/heads/master and unpushed, while the report asserted 'pushed: ls-remote origin refs/heads/master = a1d83ecf' — false: origin/master was the base 93d7fdbd and the last push was 2026-10-25 04:03:09Z; the orchestrator fast-forwarded refs/heads/master to a1d83ec after the check (93d7fdbd verified as its ancestor, all six authored kake-shokunin) and the closure landing pushed to 3994101d, so ancestry and push now hold; (2) report omits the contract-required 'Sources & frontier' and 'Trend verdicts' sections and the three named measurement headings (substance sits under 'Claims' and 'Measured'); (3) no LOG.md round-52 entry and no landed-change-to-LOG tie — minimum-content defect; (4) the measured revision is named three ways (report a4a890c, per-instrument receipts 1ae8de5, SCORECARD 1ae8de5) and final-verify.txt is a run at a4a890c labelled 'at the measured tip' (tip a1d83ec); (5) final-verify.txt's census block echoes one W04 line where every committed census receipt carries 12; (6) leftover uncommitted round work .ufo/waves/round-52/control/c1-mutation-ladder.json (18 nondeterministic old_tail strings; not the integrator's path, left in place). ROUTED TO KAKE (11 items, corpus/lessons/round-52-verifier-spotcheck.md section 5): push/ancestry discipline through the helper's landed line; LOG.md entry; report sections; five dangling cross-registry ids (S367 S372 S373 S390 S409 resolve only in kotodama-shokunin) presented as kake-held ground in three new entries and the lesson; wrong section locators on S329 and S312 (Gate, lesson, registry cells); both refusals restated on false grounds (S303/S304 unopened and unregistered; genuine duplicate is the S080 URL, not S041/S042); gate registry rows misdeclare the verdict map (64 unreachable — argparse exits 2; malformed settlement/route-map/probe JSON exits 1, not 2) and self-tests assert exit codes but no expected finding-id; receipt reproducibility (ladder old_tail from unpinned-timestamp fixture repos; c2 selftest pinned at 1ae8de5 while the selftest stamps HEAD); sitemapReconciled premise false (ds4cc source tree present, sitemap.xml tracked and byte-identical to the live listing at remote tip 24991e44) and plazir-15-site is ABSENT, not 'directory exists'; freshness-pins/SCORECARD prose. TREND quality and discernment unchanged: no entry re-verified or superseded and QUALITY.md untouched; the outside spot-check agreed on 1 of 3 admit locators and 0 of 2 rejects' stated reasons while all five gate decisions stand, and no QUALITY.md criterion landed, so the disagreement is recorded but not yet learned. Census validate exit 0 over 148 rows (12 W04) was re-run by the integrator. Admission rests on the predicates only: operability 2 rows / 2 receipts / 13-of-18 ladder / 3-of-3 and 8-of-8 reruns; freshness 3 entries / +3 rows / census exit 0 / legs 3-to-1; no owned axis harmed (both stay at 10/10, all owned-file diffs additive). Promotion is operator-owned: SHONEN.md is untouched ([ ] x4) and no box is checkable by a non-author — box 2 is honestly [ ] because no wave seat ran, and the cross-registry citation defect bears on box 4.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
