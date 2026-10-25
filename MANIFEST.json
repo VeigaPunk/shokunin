@@ -21306,6 +21306,47 @@
    "notes": "Driver digest (.ufo/watchdog.log): 2026-10-23T07:19:48-03:00 launch kaidoku round=34 pgid=8630 driver=hyaku-inline attempt=1; 2026-10-23T08:22:51-03:00 complete; 2026-10-23T20:41:32-03:00 complete; 2026-10-25T03:33:31-03:00 launch round=34 pgid=1973081 driver=hyaku-inline attempt=1; 2026-10-25T04:57:43-03:00 complete. Step 1: pass, no status-changing defect; report is a real report (not a marker). Two claims, both honest stops: R34-C1 (inherited, depth, fixed-offset replay met the frozen version-needs counter 12/12) and R34-C2 (depth capability acquisition, six frozen clauses true then falsified by an unregistered content-multiset class reaching the green 8/8). admitted=false: no claim verified and no axis moved; no capability row. Trends: expansion unchanged (PROVINCE untouched, no domain ground); quality improved (QUALITY 68-74 + 75/76 from evidence, 26-pin container re-verified, S105 row restored, C1 entry corrected by appended pointer); discernment improved (round stopped on its own counterexample; outside spot-check agrees on 3 admits + 1 reject). Routed defects for round 35: (D-1) census-start.txt is byte-identical to census-end.txt (cmp 0) and the report's start row '105 rows, 8 W04' describes no artifact - a real base-blob census prints the same 9 W04; capture the start census before the first registry edit. (D-2) final seat accounting says 32/32 w2 reports on disk but only 31 exist: AAdjacencyCite has a prompt, no report, and an emptied scratch dir; record it unreported, not settled. (D-3) corpus/knowledge/2026-10-25-r34b-pre-freeze-shortcut-replay-gate-stop.md lacks the source:/verified-at:/recheck: trio required by CORPUS.md and present in all 17 preceding entries; fix by appended block. (D-4) the new SKILL registry rows (and the two earlier ones) omit gate|probe, pinned-value path, write scope and owner required by PROTOCOL Gate standard. Protocol-lane item (D-5): the re-dispatch replaced the attempt-1 report bytes at the contract path (27322359 recoverable only from history, labelled supersession); the template gives a re-dispatched round no per-attempt report path - operator decision. SHONEN: no [x] written by this session; boxes 1, 3 and 4 look checkable by a non-author from this round's evidence, box 2 (end-to-end domain task) is not - promotion remains operator-owned. Not done here: no lane file edited, no promotion, no mint, no sibling lane touched, no jj transaction in the lane except the helper commit; tool installs: none.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 37,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 37,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 37
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "improved",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-37/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-37-verifier-spotcheck.md@2a4a97dc890fe393035986c951797c5d65b6cc69",
+    "rechecks": "Judged against origin/master e97ce4964b177a5f0473642032a239319cafc593 fetched from GitHub (the parked worktree's local master is stale at 6a4afdfe); all four cited lane commits and the base are ancestors of it. C1 re-measured with the tip's own pristine counter (sha256 50dea74c3a3e2b20a46b3d491ed2a311a3103c043abdfe416e95275657add14f): 'uncorrected 0 false_corrections 0 lesson_unchanged 1 report_unchanged 1 met True' exit 0 at tip vs 'uncorrected 4 ... met False' exit 1 at base — byte-identical to c1/after.out and controls/c1-noop.out; the four routed statements then re-derived independently (census-end.out 12426 B tracked at tip and absent at base ending 'kama ok'; staged native_api.mdx row S371; exactly four http_server.py staged rows S364/S365/S377/S396; seat-exit-codes.json rc=1 plus 'provider.rate_limit: 429' in both ScribeLog and RevQ206 seat logs). C2 re-measured with the worktree copy of the counter (absent from the tip): 'named 3 files_exist 3 cited_new 3 met True' exit 0 vs 'named 0 files_exist 0 cited_new 0 met False' exit 1 at base, selftest pass=1; independently README:562-568 names all three entries, corpus/knowledge 27->30, registry rows 203->210, base README has zero radix/prefix-cache/reclamation/evict matches. All seven new sources and all three rejects re-opened live: HTTP 200 and exact byte counts (435441 / 296606 / 277182 / 214951 / 36737 / 59059 / 215347) with every quoted span located. sources-census.sh validate exit 0, 93 W04, 0 E findings."
+   },
+   "commit": "kama-shokunin@e97ce4964b177a5f0473642032a239319cafc593",
+   "closed_at": "2026-10-25T08:22:01Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: '2026-10-25T04:14:42-03:00 launch kama round=37 pgid=3307577 driver=hyaku-inline attempt=1' and '2026-10-25T05:05:37-03:00 complete kama round=37; hyaku-inline attempt=1'. Report committed by kama-shokunin as a7361db0097b2005de59b6a2a9c1adac4c688277 (ancestor of fleet origin/master); SHONEN heading with 4 lines for 4 boxes; prompt carries the round contract and all five child-lane items; wave 1 is one v1 wave of 37 seats (reviewer 10, scout 10, critic 5, scribe 4, mutation-tester 3, executor 3, connector 1, revenger 1) under the 32-64 band; base->tip diff is pure addition (zero deleted lines), SCORECARD 35/0, PROVINCE.md and SKILL.md byte-identical. Conformance defects (status-neutral, routed to kama r38): (1) both round-37 counters are uncommitted — tools/round37-statement-audit.py and tools/round37-coverage-audit.py are untracked in the parked worktree and absent from the tip, so C2's printed counting command cannot be re-executed from landed bytes (C1's is recoverable only as .ufo/waves/round-37/w1/out/EnvironmentalQuokka/counter.pristine.py); (2) .ufo/waves/round-37/ is left untracked (148 worktree files vs 123 at tip) including the 37th seat report w1/out/CriticEntries.md (seat L1Kama37.WetHornet, 20238 B, written after the last lane commit), so 'Seat accounts: 37/37 returned reports' has 36 landed witnesses; (3) wave 1 has no seat exit-code receipt (w1/run.json has no rc, no seat-exit-codes.json exists), so 'Dead seats: none' is unverifiable — the class r36 D3 was routed for; (4) r36 D2's third sub-fact ('cites S331 to S334' -> S332/S336/S337/S338/S339, verified against the staged package) has no correction row in round-37.md and no counter re-derives it, so round-36.md:43 still carries the wrong range; (5) C2's cited_ids is a bare \\bS[0-9]{3,}\\b regex over whole entry text (over-credit risk, disclosed in the report) — narrow it when the freeze lifts. Lane state: the working copy stays parked on the five foreign-identity commits (r36 L0 open) and its local master is stale at 6a4afdfe; jj-lane.sh state prints ahead=0 against that stale ref, which does not prove the landing — git ls-remote does. SHONEN stays four [~] boxes (each with a resolvable pointer except the seat tally); no [x] written, promotion operator-owned. No tool installed or upgraded this round.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
