@@ -20737,6 +20737,49 @@
    "notes": "dispatch/complete digest: 2026-10-24T23:08:14-03:00 launch revenger round=68 pgid=8345 driver=hyaku-inline attempt=1; 2026-10-25T03:23:08-03:00 lane-dead-no-report revenger round=68, retry same round (attempt-1 orphan: no report, session died ~23:30 -03); 2026-10-25T03:23:40-03:00 launch attempt=2 pgid=1757348; 2026-10-25T03:43:18-03:00 complete revenger round=68 attempt=2. Conformance clean; report committed as revenger-shokunin 739ba3a on origin/main. Claim C1 improved (the registered gate attributes its own kill; caveat disclosed and routed: the counter's attribution leg proves marker presence on a textual mutation, not behavioural detection); C2 falsified by its own frozen kill rule and executed as an honest stop (C05 stays uncovered, v3 entry retained admission-status: rejected). No axis harmed. Routed defects for next round: R68-D1 reports/round-68/measure-after.log:102 asserts the 1c34603 corpus/ tree is byte-identical to the 14774a2c tree (51894d15) and to the receipt commit's while it is ddc6a4f6 and corpus/lessons/round-68.md differs - a tree-identity claim the command it names contradicts; R68-D2 the wave-slot grant line is quoted but not committed and the slot state file is released; R68-D3 the 46/64 attack share uses the build script predicate (reviewer/critic/mutation-tester/sentinel/revenger; 43/64 under the prompt's list) with the predicate unstated; R68-D4 SCORECARD says SHONEN box 1 keeps [~] while the report and SHONEN.md read [x] under the prior non-lane verifier; R68-D5 the round's own forwarded bundle (C7 counter gameability, V6 c7_v3_clean coupling, kill-rule closure, two-line drift fixture, C05 repair set) remains open, with operator L0 revenger round-68 pending. Operator note: SHONEN boxes 2-4 remain [~]; this closure wrote no [x], and promotion is operator-owned. No revenger lane-authored leftover at the fleet root; the only lane file this closure wrote is corpus/lessons/round-68-verifier-spotcheck.md.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 22,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 22,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 22
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "semantic outcome oracle — replays retained raw CDP/page evidence against independently pinned case expectations and blocks the count on any finding (45 isolated cases, incl. a mutant that isolates the expectations digest guard; .ufo/waves/round-22/measure-c1.mjs + selftest-c1.mjs; first working round 22)"
+   ],
+   "report": ".ufo/reports/round-22/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-22-verifier-spotcheck.md@a89f1935f523a64b00991d792fca6a8c0d321948",
+    "rechecks": "C1 re-measured with the declared counting command over committed bytes at 5f58577 (value 0 / baseline), 47bfb5f, fbee618 and be271a2 (12 / clean, findings none, exit 0 each) plus an independent jq join of the 12 pinned statuses against the retained round-21 receipt (12/12 match; expectations cases 12 = receipt cases 12). Value neutrality re-measured the hard way: in a throwaway git clone --shared checked out at e3cf4e0 the pre-revision oracle (pin 4a693dce…) reports 12/clean on the same frozen bytes, while the post-revision script at e3cf4e0 fails closed on the moved pin (exit 1, 2 findings) as designed; sha256 of the expectations and producer blobs at be271a2 equal d00aed4c… and bc11e4d6… exactly. Evidence-verified from committed receipts, not executed: cohort 35/35 with 0 exit≠expected mismatches and the preserved red arm, oracle22-selftest 45/45, preservation 4865 files/0 mismatches/0 scope errors/0 source errors with every mutable doc a byte-prefix extension, census exit 0 with 16 unchanged W04 warnings, register slice 38 rows (37 absent-refused + 1 unverifiable, 0 adopted) bound to register sha256 5afe1810…. No axis harmed: SCORECARD 48 insertions/0 deletions, no scalar moved, no admitted entry falsified."
+   },
+   "commit": "tabi-shokunin@be271a2d98f3e2f6ec3e179c8e17f50f80698571",
+   "closed_at": "2026-10-25T06:51:00Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest: 2026-10-21T11:47:45-03:00 launch tabi round=22 pgid=3858570 driver=hyaku-inline attempt=1; 2026-10-23T20:41:38-03:00 launch tabi round=22 pgid=3500528 driver=hyaku-inline attempt=1; 2026-10-25T03:23:44-03:00 launch tabi round=22 pgid=1758376 driver=hyaku-inline attempt=1; 2026-10-25T03:40:22-03:00 complete tabi round=22; hyaku-inline attempt=1. Conformance: report landed last by committer date (lane tip 03:38:49 -0300, report 03:39:56 -0300) by the lane identity, SHONEN heading with four [~] lines, all five cited commits exist and are ancestors of master, ahead=0 and no uncommitted round work, prompt §1–§5 byte-identical to templates/round-prompt.md with placeholders rendered. Defects (status-neutral): (1) round total 129 seats = one over the ≤128 cap — W2b was validated at 65 seats with spec maxLanes 65, above policy waveMaxLanes 64; disclosed by the lane; (2) W2 lost whole to the host's 100-job cap (64 validated, 0 spawned, all-64-seat refusal receipts) so W2 contributed no falsification and all falsification is author-side W2b 58/65; (3) refusal arithmetic off by one — report/SCORECARD/lesson say 23, committed receipts are 24 (13 w2- + 11 w2b-, each a whole 64/65-seat refusal); (4) W2b registry carries agentId null for every member and 7 dead seats named without ids, and its attempt numbering restarts at 1 while w2b-spawn-result records attempt 12; (5) stale-lane actuator not graded per attempt — attempt 2 (2026-10-23) has no tabi commit, i.e. silent on the commit test; (6) lesson §Gate carries no spot-check row (this closure supplies the result); (7) Landed-changes row 2 cites 47bfb5f, which carries no LOG.md change (entry landed in fbee618). Disclosure, not defect: the pinned `cases[na-native-submit].post.errors` was revised []→null after the data was observed and after the lane's own W2b seats scored it; disclosed in expectation-revision.json + note errata, value-neutral by my independent two-oracle measurement, and filed as an L0 question at .ufo/l0-questions.md:155 (unruled; the round did not block). Trends: discernment graded improved only because this closure's outside spot-check agrees on one admit (the round-22 oracle note, S101 evidence re-opened) and three refusal rulings (S102 and S106 quotes re-fetched and confirmed absent with controls present, S171 HTTP 404 = unverifiable not fabrication), plus two mined mistakes grounded as QUALITY 59–60; the lane's own pre-closure 'unchanged' was honest and should not be read as a lane-side improvement. SHONEN boxes 1–3 are checkable by a non-author from the cited pointers; box 4 still leans on open contested-scope L0 rulings — promotion remains operator-owned and no [x] was written.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
