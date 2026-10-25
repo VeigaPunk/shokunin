@@ -20862,6 +20862,47 @@
    "notes": "Dispatch digest: launch 2026-10-20T18:30:58-03:00 pgid=1137022; launch 2026-10-23T20:41:47-03:00 pgid=3508145; launch 2026-10-25T03:23:48-03:00 pgid=1759483; complete 2026-10-25T03:57:08-03:00 (all hyaku-inline attempt=1; report self-labels attempt 2 — naming nit). Lane tip 1fafde8f->d0a3f6a4 (+c2480b14 spotcheck). Report contract satisfied; all 12 cited lane commits ancestors of master; worktree clean, ahead=0. Both claims verify: C1 improved (24-case matrix, 12/12 escapes GONE, controls preserved, do-nothing control 12/24 cannot meet target); C2 improved (F06-F08 0->3 admitted, frontier 5/8->8/8, F07 re-grounded to current CNA Rules 4.2.6 S031 after falsify wave caught SHOULD->MUST). Spot-check agrees on sampled admit (S031, S029) and reject (S028). Routed defects: (1) F01-F05 rechecks exit 2 not-listed (S001-S015 uncaptured, lane-disclosed residual); (2) brace/glob first-match suppression liveness debt (falsify/BraceGlobProbe.md); (3) attempt-number naming nit; (4) SCORECARD first-landing cells superseded by append-only errata (cosmetic). SHONEN boxes all [~] asserted — look mechanically checkable by a non-author next pass; promotion is operator-owned. 100 seats total (64+36), inside 32-128 band; wave-2 refusal receipt committed.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 35,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 35,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 35
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "improved",
+    "depth": "improved",
+    "freshness": "improved",
+    "operability": "unchanged",
+    "calibration": "unprovable",
+    "adjacency": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-35/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-35-verifier-spotcheck.md@4243d031e3441f5063f92c33aa58377c6f9ff120",
+    "rechecks": "C1 coverage re-measured from committed bytes (registry 192 at 19e4ab3 -> 200 at 02088b4/7a068cb; knowledge 47 -> 50; eight rows S203-S210 11-cell, own-work/A/mined with exact used-by; eight receipts sha256 8/8 against c1/frozen.json; all eight gate-quotes contiguous and 14/13/17/13/15/14/13/15 words; SOURCES additions-only; census exit 0 on a git-archive 19e4ab3 mirror and on the root, same seven W04). C2 calibration ruled unprovable: c2/count.py's uncovered scans its own clause ledger (fail-open on deletion), covered receipts are verdict=TARGET_MISSED token greps, ledger_tip_ok is a substring test over prose; pinned r34 tip dff3941 is not the last round-34-labelled commit 6d754bd (17m37s later, identical blob ids). No axis harmed: SCORECARD diff 6d754bd..7a068cb = 71 insertions / 0 deletions; independent index check 50/50; suite 460/460 evidence-verified, gates not executed. Discernment spot-check: 3 admits (S203, S206, S210) and 2 refusals (chinese-article-revision-r30.md, staged S203 Hyprland IPC) re-opened, 5/5 agree; all 11 cited lane hashes ancestor of master."
+   },
+   "commit": "mado-shokunin@4243d031e3441f5063f92c33aa58377c6f9ff120",
+   "closed_at": "2026-10-25T07:02:30Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-24T23:14:38-03:00 launch attempt=1 pgid=29506; 2026-10-25T03:23:08-03:00 lane-dead-no-report (attempt-1 orphan); 03:23:38 launch attempt=2 pgid=1756809; 03:53:57 complete attempt=2. Lane-authored round tip 7a068cb (round-35: close, 03:53:37), report last commit 763734e1 (03:53:03); integrator spotcheck commit 4243d03 is the lane HEAD cited here. Status ok with conformance defects, all routed in the spotcheck: D1 report filed before its last three lane commits and no tip hash cited; D2 eight modified + two untracked round-35 paths at closure (seat writers active after the complete line: .ufo/waves/round-35/w2/reports/* and scratch/RevQuoteS20{3,5}/count_probe.py); D3 C1 counter shape-scored (count.py:174 dead digest store, content cribs reach TARGET_MET); D4 C2 observables fail-open plus disputed r34 tip; D5 LOG.md cites scratch/SimplifyCounter and scratch/MutC1Drop paths absent at the tip (content under scratch-evidence/); D6 report says four corrected rows, bytes show three (S203-S205, incl. recheck); D7 report says 38 w2 reports, bytes show 37 at 4f35c80/7b745a1 and 40 at the tip; D8 'no scratch tree left' falsified (124 tracked paths, 2.2 MB under .ufo/waves/round-35/scratch, added at 7d708cf); D9 three new entries do not open with the provenance trio; D10 no committed axis transcript at the closure tip. Campaign-side routed: merge package's staged S203-S210 collide with the lane's S203-S210 (different documents) and must be renumbered past S210; L0 ae2c52b8 (stale merge-package id remap) still stands. Promotion: no SHONEN box is promotion-checkable from this round (all four remain author-asserted [~]); promotion stays operator-owned and was not exercised.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
