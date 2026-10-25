@@ -3,7 +3,7 @@
 ## Summary
 
 Two frozen-before-data claims landed and measured clean at the measurement commit
-`3e213bea7363a2aad3f92af86afb3a95699cf9a7` and are re-run green at the lane tip
+`870fab29977a2ab8cbee7fbe0e6dc4ef87ff6009` and are re-run green at lane tip
 `8769b2e06119ac9d58ea57ddf66cfa476608ace2` (ls-remote confirms remote = local).
 C1 (depth) observes a real bfcache restore on loopback — closes round-24 U1
 (docs-held → runtime-held on this host). C2 (freshness) re-opens six on-release
@@ -64,13 +64,20 @@ No sibling writes; no overlaps absorbed.
 
 ## Sources & frontier
 
-Rows 105 → 106 (S106 opened 2026-10-25; quote located at decoded lines 186–187).
-Census before → after, same command:
-`scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin tabi`
-→ exit 0 at baseline `9e136667` and exit 0 at tip `8769b2e0` (rows 105 → 106;
-same W04 known duplicate-URL warnings). Frontier: bfcache surface runtime-held on
-this host; on-release source freshness held; two new gates held.
+Rows 105 → 106 (S106 opened this round; six re-opened rows are counted as freshness checks, not new rows). Census command `/home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin tabi` returned `tabi ok` (exit 0); duplicate-URL W04 warnings S058, S065, S066, S068–S070, S073–S077, S095–S100 remain. No earlier row cell changes observed. Frontier: bfcache runtime observation held on this Chromium host; source freshness held; two receipt gates added.
 
+## Trend verdicts
+
+- expansion: **improved** — S106 is a mined source on the newly held bfcache frontier; see `corpus/SOURCES.md` S106.
+- quality: **improved** — six held quotes checked against round-25 fetched bytes; 0 supersessions; `reopened.json`.
+- discernment: **unprovable-but-better** — source admits and a refusal are documented, but this lane's wave seats are not independent outside reviewers; closure spot-check is required.
+
+## SHONEN
+
+- [~] SKILL.md decision tables, error patterns and checklists exist with cited sources — `SKILL.md` existing tables/checklists; not independently re-assessed for promotion.
+- [~] End-to-end browser task executed and logged — `corpus/evidence/round-25/bfcache/receipt.json`; `LOG.md` round-25.
+- [~] Instructions executable without oral context — prior executor-test evidence; not freshly re-tested by an independent non-author.
+- [~] Province/no cross-domain bleed — connector sweep noted above; no province change assessed here.
 ## Assimilation
 
 None. Candidate `webmcp-devtools-agent-surface-r25.md` (staged S242) refused: its
@@ -101,10 +108,10 @@ executor/reviewer seats.
 
 ## SHONEN
 
-- [~] SKILL.md contains real decision tables, error patterns, checklists, cited sources — `SKILL.md` §Approval table (`:697`), §Evidence ladder, §Runbook, `:1598-1617` kaika decision rows; prior `[x]` named lane-dispatched TABI-B4/TABI-R3-4 — not non-author (orchestrator ruling, kaika round 1) — **unchanged this round; gate section appended (`:2480` onward)**
-- [~] At least one end-to-end domain task executed and logged in LOG.md — `corpus/knowledge/multi-step-journey.md` §1–§2, §7 (4-page loopback journey, 2 cold runs byte-identical); logged in `LOG.md` round-3 entry — **unchanged; this round adds the bfcache journey receipt (C1) logged in `LOG.md` round-25 entry**
-- [~] Instructions executable by an agent without oral context — `corpus/knowledge/executor-test-sufficiency.md` §0, §4 (verdict SUFFICIENT; the executor was a lane-dispatched seat) — **unchanged**
-- [~] No cross-domain bleed (PROVINCE.md still accurate) — `PROVINCE.md:3-19`; refusal routes revenger/kaidoku/kake/kagi held (`corpus/evidence/user-20261015-r02/boundary/refusal-receipt.txt`) — **unchanged; connector sweep confirms no overlap absorbed**
+- [~] SKILL.md decision tables, error patterns and checklists exist with cited sources — pointers in prior lane work; not independently re-assessed for promotion.
+- [~] End-to-end browser task executed and logged — `corpus/evidence/round-25/bfcache/receipt.json`; `LOG.md` round-25 entry.
+- [~] Instructions executable without oral context — prior executor-test evidence; not freshly re-tested by this closure.
+- [~] Province/no cross-domain bleed — connector sweep noted above; no province change assessed here.
 
 ## Carried items
 
