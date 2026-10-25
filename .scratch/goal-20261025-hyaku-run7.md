@@ -83,3 +83,8 @@ Then repeat from the lowest next-round.
   cursor/default removal is on disk in ~/.omp/agent/config.yml (cfg://task reflects file; 0 chain entries left).
 - incident: seat MutPinSemanticCell's edit resolved a scratch path to mori-shokunin/tools/mori-pin-check.py and deleted `bound = []`;
   orchestrator restored freeze bytes (sha256 e3ef425a...). MutC2Fields saw the same scratch-path resolution failure.
+- ~17:55 -03 operator: "devin quota is not exhausted". Correct for account jpveigao10 (weekly 5%, ok). Cause: a devin/swe-2
+  free-model rate limit (per-model, ~15 min) made omp write a provider-wide block on credential 12 (auth_credential_blocks,
+  block_scope ''), which also blocked devin/deepseek-v4-1-flash. Deleted that block row (backup agent.db.pre-devinunblock-20261025);
+  re-probe devin/deepseek-v4-1-flash -> PONG. Credential 31 (vgpnk1337) is genuinely daily-exhausted per usage_history (resets 00:00 UTC); left blocked.
+  Recurs whenever a chain reaches devin/swe-2 on the jp account.
