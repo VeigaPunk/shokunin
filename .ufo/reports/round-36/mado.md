@@ -355,7 +355,14 @@ file this report cites by content:
   answer, instead of reading an unmeasurable tree as clean (proven on a bare clone).
 - `fe55a90` — the after receipts re-pinned to `4d28b19` with the gate digests bound.
 
-Lane tip at closure: `fe55a90ca4d16c1929bb3832c73396fd0170f2f1`, working tree clean. The tip
+- `345fc38` — the last straggler: a receipt-forgery probe in which **all five** forgeries
+  (wrong clause id, wrong control id, right tokens in prose with no measured verdict, another
+  clause's real receipt, and the bare `verdict=TARGET_MISSED` token line) pass the round-35
+  counter and fail the round-36 one, each with `uncovered: entry-regular receipt does not bind
+  clause and control`. That is D4's fail-open closed on the exact input class the spot-check
+  named, measured after the fact and committed with the round.
+
+Lane tip at closure: `345fc3838075c51b4b20f7c0ad1f7710d2ee271e`, working tree clean. The tip
 this report cites (`64979ef`) and the round's data commit (`a3094c9`) are ancestors.
 
 ## Stale-lane
