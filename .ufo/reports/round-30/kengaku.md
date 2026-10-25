@@ -153,3 +153,15 @@ measurement table above reports), with the C1 counter re-issued unchanged
 (`entries=1 indexed=1 cited_rows=6 … census=ok`) because tier is not one of its fields. The Q4 falsifier
 now names its unit, population and observation. The Q5 label and the tier count in this report are
 superseded by that commit; the claim, its predicate and the axis verdict are not.
+
+Third erratum item (2026-10-25, after the complete-set Q10 seat's report): two contradictions the seat
+found still live at `9af639c9` are now closed in `caf1e2b4e445fab91ef3548a8aab2362e036b8ba` — the delta
+paragraph's "strata absent from all three tabulated designs" (contradicting the mapping row that records
+the CTC form's `strata_reported`) and the S085 "no measurements" wording in §Attribution and §Rejected
+(the report carries its own programme figures on p.38, just no contamination measurement). The seat's
+further admissions-commit findings (R1/S1 cells, the GEM-row exception, the CG7 bound) were already
+repaired at `d0253c52`/`5cd92295`/`a6a9b57a`. **Lane tip at this erratum:
+`caf1e2b4e445fab91ef3548a8aab2362e036b8ba`** (pushed, clean worktree). Re-measured there: C1
+`entries=1 indexed=1 cited_rows=6 … census=ok` exit 0; C2 `checks=5 defects=0` exit 0; C3
+`cases=14 failed=0`; Q13 exit 0 at `5cd92295`. The claim predicates, the kill rules and every axis
+verdict above are unchanged by these three erratum items; what they supersede is named item by item.
