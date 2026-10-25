@@ -20823,6 +20823,45 @@
    "notes": "watchdog: 2026-10-24T23:04:00-03:00 launch attempt=1; 2026-10-25T03:23:08-03:00 lane-dead-no-report, retry same round; 03:23:36 launch attempt=2; 03:45:27 complete attempt=2. Report committed by kotodama-shokunin identity (84b455f8) after lane tip ef75509; 7/7 cited commits are ancestors; lane pushed ahead=0. Shape: 32-seat v1 wave (21 reports, 11 dead = 9 rate-limit 429 + 2 timeout) + 7-seat residual task call = 39 seats. Defects (status-neutral, routed to r70): 2 uncommitted w2-verify seat edits at closure (mtimes ~45s after the report commit); Landed-changes mis-attribution (harness actually 6a98d7d, corrections-r68.md e86ed3e); 'claims.json unchanged since 6a98d7d' false although the frozen predicate/kill_rule/target fields are byte-identical; SCORECARD:1331 calibration 'improved' contradicts :1360 'FAILED AS DECLARED' with no correction row (the round-68 OVERREACH class recurs); 'Nothing above is rewritten' vs the disclosed ScoutAdj in-place pointer repair; misroot sentence names driver state (.ufo/state/kotodama.report-baseline); no gate-registry rows for accept-{o,ca,d}.py in SKILL.md ## Gates and probes; accept-d --selftest 1/2 exit 1 (R69-M11); guard-proof/note.txt dead pointer R69-M10 -> R69-M13; O2 SCORECARD row links only the attempt-1 receipt. No axis harmed; round not admitted solely because Ca2 fails its own rule. L0 open (non-blocking): frozen kill rule vs predicate conflict. SHONEN boxes stay [~]; box 1 is fully checkable by a non-author and verifies at the tip, box 4 partial; promotion operator-owned. Assimilation CLOSED; S859 package-id collision needs renumbering before any future append. No tool installs.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 23,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 23,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 23
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:verifiability": "improved",
+    "coverage": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "mirror-containment-matrix"
+   ],
+   "report": ".ufo/reports/round-23/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-23-verifier-spotcheck.md@c2480b143120364728b40397926ffcf30a7309c8",
+    "rechecks": "C2 re-measured over committed bytes: README F06-F08 admitted 0->3, F01-F08 5->8; SOURCES 27->31; census rc=0. C1 evidence-verified via committed receipts: c1-baseline.json 12/24 (all 12 escapes FAIL MIRROR-EQUIVALENT vs GONE), c1-fixed.json 24/24; matrix/resolver/checker sha binds re-derived byte-exact; guard changed=0 added=0 dropped=0 via falsify/NoHarmDiff.md with mirror=0 vacuity disclosed. Recheck receipts exit 0 x4 plus three failing controls (exit 1/2/1) verified as committed evidence."
+   },
+   "commit": "kasegi-shokunin@c2480b143120364728b40397926ffcf30a7309c8",
+   "closed_at": "2026-10-25T07:01:19Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: launch 2026-10-20T18:30:58-03:00 pgid=1137022; launch 2026-10-23T20:41:47-03:00 pgid=3508145; launch 2026-10-25T03:23:48-03:00 pgid=1759483; complete 2026-10-25T03:57:08-03:00 (all hyaku-inline attempt=1; report self-labels attempt 2 — naming nit). Lane tip 1fafde8f->d0a3f6a4 (+c2480b14 spotcheck). Report contract satisfied; all 12 cited lane commits ancestors of master; worktree clean, ahead=0. Both claims verify: C1 improved (24-case matrix, 12/12 escapes GONE, controls preserved, do-nothing control 12/24 cannot meet target); C2 improved (F06-F08 0->3 admitted, frontier 5/8->8/8, F07 re-grounded to current CNA Rules 4.2.6 S031 after falsify wave caught SHOULD->MUST). Spot-check agrees on sampled admit (S031, S029) and reject (S028). Routed defects: (1) F01-F05 rechecks exit 2 not-listed (S001-S015 uncaptured, lane-disclosed residual); (2) brace/glob first-match suppression liveness debt (falsify/BraceGlobProbe.md); (3) attempt-number naming nit; (4) SCORECARD first-landing cells superseded by append-only errata (cosmetic). SHONEN boxes all [~] asserted — look mechanically checkable by a non-author next pass; promotion is operator-owned. 100 seats total (64+36), inside 32-128 band; wave-2 refusal receipt committed.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
