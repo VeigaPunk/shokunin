@@ -82,3 +82,13 @@ W04=28 standing (all pre-existing). README sweep exit 0;
 - Inherited state: none (round-70 closed; w2 no leftovers named themselves).
 - Stale-lane: respawn-per-round driver; no other mission of this lane open at round-71 close.
 - Tool installs: **none** (no pacman — paused; no uv/npx install needed).
+
+
+## Wave-2 falsification results (40 seats; partial at filing, consolidated here)
+
+Seats re-ran the frozen counting commands in fresh clones at lane HEAD:
+
+- **C — verified.** Four independent re-runs (Filler31/32/34/40, Filler39, MutC) confirm the frozen command prints `36 / 243 / 797 / CITED-LINES: 0 finding(s)` exit 0 at HEAD, and `accept-c.py` prints ACCEPT-C-71 PASS (7/7). MutC killed all four counter mutants (used-by leg, CITED floor, COUNTS thresholds). Rows S861–S873 unique/mined/used-by the entry; README sweep and revisions checks pass (RevREADME); census exit 0 (RevCensus).
+- **Ca — data verifies; frozen shell command has a formatting-leg defect (R71-M5).** The frozen command's last leg (`awk -F'|'` counting verdict-table rows) prints 0 for markdown rows that start with `|` (Filler29/35/38) — a counter defect, not a data failure. The canonical instrument `reports/round-71/accept-ca.py` prints ACCEPT-CA-71 PASS (7 legs, incl. QUARANTINE 21/21) and its receipt is committed (measures-ca.txt). The claim's disposition table and S860/quote/scorecard/lesson legs all re-verify (headers 36, acc2d614, words 25, trend row, reject-sweep). Freeze rule: the frozen shell command is not edited; the defect is logged old→new in the lesson, and the committed Python counter is named as the executing instrument.
+- **D — verified as declared.** RevCounterDM: in-repo `SELFTEST: 2/2` exit 0; no-git `COULD-NOT-EVALUATE (no git)` exit 2; frozen data predicate 8/8 exit 0. MutD: guard mutants killed (false-red reintroduced without the guard; exit-code leg enforced). Residual gap (R71-M6): shallow clones / git-less copies nested in another repo can still false-red via the frozen round-69 fallback; the fix (guard on `git cat-file -e 793f797^{commit}`) is routed to a later round.
+- Process notes: measures-c.txt is now committed (c21213ab); accept-c.py's provenance (landed with data, not at freeze) is recorded as R71-M7; the shell commands' exit code only reflects their last step (kill rules are enforced by the landed Python counters and by wave-2 manual leg reads).
