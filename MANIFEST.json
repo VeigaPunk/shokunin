@@ -22106,6 +22106,43 @@
    "notes": "Dispatch: 2026-10-25T07:31:38-03:00 launch attempt=1 pgid=271214; 08:22:30 lane-dead-no-report (content-policy refusal, work landed baabc992); 08:22:32 launch attempt=2 pgid=3993108; 08:29:29 complete attempt=2. Conformance ok: report 308a27ad by mori-shokunin, SHONEN 4x[~], cited commits ancestors of master, ahead=0 clean, prompt = template + addendum. One wave (37+2 seats), no wave 2. Defects: SCORECARD.md lacks r45 claim rows; report+LOG claim freeze 29/29, measured 27/27; two residual executor seats outside spec. Rejected-harmed: four SKILL.md registry cells pin digests/tallies the committed instruments lack (found in-round by w1/CritAxisHarm 1b, shipped unmarked; :191 also misses counter+mutant digests beyond the report's list). Routed r46: re-pin SKILL.md:184,190,191,194 by superseding rows; LOG correction 27/27; SCORECARD r45 rows recording calibration harmed; selftest-rule keys (M3-M5), GIT_* scrub (M11), r44 ledger admissibility. SHONEN not non-author-checkable until re-pin lands; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 61,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 61,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 61
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unchanged",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-61/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-61-verifier-spotcheck.md@0cbe0d75e5a08718e2256408329692908c837766",
+    "rechecks": "Re-measured from committed bytes at f351c520 (probes not executed). C1 P3 MISS: SCORECARD l.1794 dispatch-evidence row lacks 'round 61'. C1 P4 MISS: close/dispatch61-tip.txt absent from the tree. So 2/4; P1 and the P2 gate verdict are evidence-verified from close/a2-tip-dispatch61.txt. C1 falsifier confirmed: fixture ab902da2 (/tmp) is one commit with 32 28-byte 'fabricated report' files and a hand-written progress file, and every P-check is fabricable. C2: S195 sits in ## Registry with NF=13; the probe's literal regex with [[:space:]] -> false under node (JS has no POSIX class); the probe reads c[9]/c[10]/c[12] where the 11-cell row holds mined/opened/used-by at c[8]/c[9]/c[11]; E4/E5 read the worktree. So 3/6. C2 forgery confirmed: 4247d2d puts '|:S195:|' under ## Leads (unopened) with a 1-line forged capture. Census run: exit 0, 6 W04, rows 133->134, A 110->111 B 15 C 8. readme-map inputs balance at 148 files / 148 rows. Wave tallies: w1 32/32 exit0; w2 39 exit0 plus Audit19 exit1. Spot-check: admit S195 agree (live page sha256 8ef2ee5f equals the pinned capture; 13-word quote at l.39); reject exactly-once-attribution agree (package S204/S211 and lane S134 are all arXiv 2609.29095). Axis table untouched (operability 9, coverage 10); no axis harmed."
+   },
+   "commit": "kumitate-shokunin@f351c520bfc4ce193a61145bdfecbcf1cb20db01",
+   "closed_at": "2026-10-25T11:38:24Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: launch attempt=1 2026-10-25T06:30:24-03:00 pgid=2141986; lane-dead-no-report 08:26:13 (attempt 1 ran both waves, stopped at be4a820c, work uncommitted); launch attempt=2 08:26:15 pgid=4018117; complete 08:32:52. Attempt 2 landed 15084153, 019a844c, f351c520; the report is fleet 88b2c21f. Both claims fail as declared (honest stop). The landed S195 entry/row and the R60 repairs are graded as frontier work: R60-V1/V3/V4/V6/V7/V9 repaired; V2 and V8 partial; V5 forward-fixed. Defects (status-neutral): falsifier fixture revs resolve only under /tmp; in-place rewrites in 165b830 (lessons/round-60.md A=102->104, SCORECARD capabilities row 1794). Routed R61-V1..V6: bundle the fixtures; v2 counters read revision bytes, use \\s and 11-cell indices, and bind P2 to non-lane-authored evidence; append corrections for the in-place edits; erratum for 6 R60 fleet-report placeholders; refresh the proxy stanza (A=115, C2=148) and pin make-dispatch-actual.mjs together with this spot-check's README row and covered pin; re-queue the Audit19 item. Operator note: SHONEN boxes 2 and 3 look non-author-checkable.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
