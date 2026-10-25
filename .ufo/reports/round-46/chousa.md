@@ -3,8 +3,8 @@
 Lane: `/home/vgpnk/Projects/shokunin/chousa-shokunin` · lane branch `master`
 Base: `6e2630a6343948b3fe5bf299901207a0619ad949` · freeze:
 `c2f0e9d100c0d46633a6277b2fd51d2ac99678eb` · landing:
-`1e9756f568961d176173d584828a902eea3d867c` · final receipt commit (lane tip):
-`b8bc44f41174d37ca341e9720d895b5cb8a47af6`
+`1e9756f568961d176173d584828a902eea3d867c` · final receipt commit: `b8bc44f41174d37ca341e9720d895b5cb8a47af6` · lane tip after
+committing the late `CritC2Scope` seat report: `5c6e2ca1f3f11425c38e42fdcf10914e9b73cb62`
 
 Declared claims (frozen in `corpus/evidence/round46/claims.md` before any seat
 scored, with their do-nothing controls): **C1 operability** (the lane's lowest
