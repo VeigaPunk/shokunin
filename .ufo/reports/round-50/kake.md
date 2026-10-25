@@ -260,10 +260,10 @@ attempted).
 
 `git -C /home/vgpnk/Projects/shokunin status --porcelain` was run before this report. No file
 written by a round-50 seat landed at the fleet root, so there was nothing to copy, `cmp` and
-delete. Five untracked files at the fleet root — `bm.json`, `live.html`, `live_s228.html`,
-`nama.html` and `s395.txt` — are dated 2026-10-24 18:07, hours before this round's launch
-(22:35), and their content names neither this lane nor this round; they are inherited from an
-earlier lane's seats and were left untouched. `.omp/mcp.json` and the `.ufo/state/*` driver files
+delete. Six untracked files at the fleet root — `bm.json`, `live.html`, `live_s228.html`,
+`nama.html`, `s395.txt` and `tf_bavelas.html` — are all dated 2026-10-24 18:07, hours before this
+round's launch (22:35), and their content names neither this lane nor this round; they are
+inherited from an earlier lane's seats and were left untouched. `.omp/mcp.json` and the `.ufo/state/*` driver files
 are operator-owned.
 
 ## Open L0 questions
