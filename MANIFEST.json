@@ -22575,6 +22575,47 @@
    "notes": "2026-10-25T09:35:50-03:00 launch kengaku round=32 pgid=1754086 driver=hyaku-inline attempt=1; 2026-10-25T09:59:57-03:00 complete kengaku round=32; hyaku-inline attempt=1. Claims confirmed per verifier spot-check. C1 refused, C2 incomplete, C3 failed as declared. Conformance defect: lane has 10 untracked round-32 wave paths (state ahead=0); prompt is fleet-tracked. Route R1/R2/R5/R6/R7, raw C3 response retention, collision-safe C1 ids, and untracked wave ownership to next round. SHONEN boxes remain [~]; promotion operator-owned. No promotion or mint.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 46,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 46,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 46
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "unchanged",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-46/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-46-verifier-spotcheck.md@2d85e33d14198d388fd3cda9cc15ec07e57e7a53",
+    "rechecks": "C1 pins re-measured vs committed tools: selftest tallies C1=16/C2=14/auditor=15 (rc 0), digests 8b82ac99…/5f2deea0…/153423c48…/9850b3fcc…, auditor wc -l=743 — all match pinned SKILL.md:184/190/191/194; counter red (control, rc 1)/green (repaired, rc 0) reproduced; freeze manifest 27 OK rc 0 at baabc992; census mori ok rc 0; SOURCES 246→247"
+   },
+   "commit": "mori-shokunin@2f04605ab1d113ecf27e77adc0202a21c9bb6ec7",
+   "closed_at": "2026-10-25T13:19:13Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest: launch 2026-10-25T10:00:01-03:00 mori round=46 pgid=2011258 driver=hyaku-inline attempt=1; complete 2026-10-25T10:16:48-03:00. Lane self-graded C1 unprovable (frozen counter false-green); integrator re-measured the four pinned registry cells against the committed instruments — all match, so r45 stale-cell harm is repaired; calibration graded improved on that measurement, with the counter weakness noted. Routed defects: replace/retire count-repins.py as a calibration proof (semantic-cell parsing + live re-measurement + red-before stale-string control), rows=4 is a constant, clean .scratch/ leftovers (MutMissing/MutStaleC1/MutStaleC2). No promotion claims (SHONEN all [~], operator-owned).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
