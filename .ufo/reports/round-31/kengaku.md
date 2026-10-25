@@ -221,3 +221,10 @@ findings changed or corrected landed bytes. **The lane tip this round actually l
 
 None of these changes a claim verdict: C1, C2 and C3 still re-derive on their frozen counters at the lane tip
 cited above, and every axis verdict in the filed report stands.
+
+**Erratum addendum (2026-10-25, trend-verdict seat).** Two entry locators were one line-range off and are
+fixed at lane tip `a44b5a8`-class commits (`verifier_mode.py:22-23` → **`:18-21`** for the "Returns the
+explicit mode when set" docstring, and `:35-38` → **`:39-40`** for the step-precedence docstring); the entry
+re-derives `checks=6 defects=0` after the fix. The seat's other two findings — the missing lesson file and the
+`40 → 40` index cell — were already closed at `d6aa66e` and `3e13607e`. Its trend verdicts agree with the
+filed ones: **C1 improved, C2 held, C3 held**.
