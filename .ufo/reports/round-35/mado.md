@@ -88,7 +88,9 @@ Every change is committed inside the lane repo (jj-colocated; the helper committ
 | `b632f0b` | the last two seat reports (`SentBoundary`, `ConnOverlap`), the seats' revised reports, and the restored digest-repair receipt | the final tally in "Work performed" |
 | `ca870e9`, `1bb25c7` | the seats' post-sweep revisions and rebuilt evidence folded into `scratch-evidence/` (261 files across 59 seat dirs); no scratch tree left in the lane | the cleanup paragraph |
 
-Lane tip at report time: `1bb25c751409f67f1f9b6d8ac5a91faf3d92f948` (subsequent seat report revisions are named by `git log --oneline -1 -- .ufo/waves/round-35/w2/reports`)
+Lane tip at report time: `1bb25c751409f67f1f9b6d8ac5a91faf3d92f948`
+
+**Evidence pin.** The C1 data is pinnable at `4f35c80`: `git diff --numstat 4f35c80..1bb25c7 -- corpus/knowledge corpus/SOURCES.md` is empty, and every later lane commit touched only documentation, seat reports and the evidence checkpoint. Wave-2 seats scored a tree that moved under them — seven round-35 commits, six during the wave — which `SentBoundary` records as the round's provenance defect: the registration froze *claims and counters*, not the list of paths the round would write, so errata and the content cribs are lane-authored files absent from its ledger. The counters were re-run after every errata append and at the tip, which is why the verdicts above are not byte-stale. (subsequent seat report revisions are named by `git log --oneline -1 -- .ufo/waves/round-35/w2/reports`)
 
 ## Before → after measurements
 
