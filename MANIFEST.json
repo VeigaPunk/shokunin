@@ -20903,6 +20903,49 @@
    "notes": "Dispatch digest: 2026-10-24T23:14:38-03:00 launch attempt=1 pgid=29506; 2026-10-25T03:23:08-03:00 lane-dead-no-report (attempt-1 orphan); 03:23:38 launch attempt=2 pgid=1756809; 03:53:57 complete attempt=2. Lane-authored round tip 7a068cb (round-35: close, 03:53:37), report last commit 763734e1 (03:53:03); integrator spotcheck commit 4243d03 is the lane HEAD cited here. Status ok with conformance defects, all routed in the spotcheck: D1 report filed before its last three lane commits and no tip hash cited; D2 eight modified + two untracked round-35 paths at closure (seat writers active after the complete line: .ufo/waves/round-35/w2/reports/* and scratch/RevQuoteS20{3,5}/count_probe.py); D3 C1 counter shape-scored (count.py:174 dead digest store, content cribs reach TARGET_MET); D4 C2 observables fail-open plus disputed r34 tip; D5 LOG.md cites scratch/SimplifyCounter and scratch/MutC1Drop paths absent at the tip (content under scratch-evidence/); D6 report says four corrected rows, bytes show three (S203-S205, incl. recheck); D7 report says 38 w2 reports, bytes show 37 at 4f35c80/7b745a1 and 40 at the tip; D8 'no scratch tree left' falsified (124 tracked paths, 2.2 MB under .ufo/waves/round-35/scratch, added at 7d708cf); D9 three new entries do not open with the provenance trio; D10 no committed axis transcript at the closure tip. Campaign-side routed: merge package's staged S203-S210 collide with the lane's S203-S210 (different documents) and must be renumbered past S210; L0 ae2c52b8 (stale merge-package id remap) still stands. Promotion: no SHONEN box is promotion-checkable from this round (all four remain author-asserted [~]); promotion stays operator-owned and was not exercised.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 51,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 51,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 51
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "freshness": "improved",
+    "depth": "improved",
+    "coverage": "improved",
+    "calibration": "improved",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "Wave-evidence ledger: re-derives a round's own seat accounting, route receipts and time accounting from committed bytes in one command (git show/git ls-tree only), and names the contract clause each check enforces - it certifies internal agreement between settlement, payload, route map, probe receipts, timing pair and LOG.md, not that the wave ran (c51_wave_ledger.py, 3 of 3 at 842c1b4)"
+   ],
+   "report": ".ufo/reports/round-51/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-51-verifier-spotcheck.md@93d7fdbd45b0e5698927e7f9cb3dafca24ace416",
+    "rechecks": "Both claims re-derived by the reviewer from committed tip bytes with plain git/python, not by executing the lane counters; counter verdicts evidence-verified from their committed outputs. C1: settlement spawn 48 = settled 48 = 48 report:true = 48 committed w1 .md + swarm-registry.json, name sets equal both ways, roles 10, all 48 seats on commandcode/deepseek-v4.1-flash; sum(seconds) 23554; 06:32:17Z->06:47:14Z = 897 s = wallClockSeconds = accounting = LOG.md:2088; one used route with a 200 receipt, one 403 receipt with bodyExcerpt bound to no role and recorded as a deviation; payload counts spawn 48, tasks 48, validator.err 0 bytes. C2: rows 143->145, sed '152,153d' on the tip reproduces base sha cd9ee4cf byte-for-byte, base id order an ordered subsequence, S262/S263 at lines 152/153, 11 cells, tier A, docs, mined, 2026-10-24, 180d, used-by exactly the citing entry; retained bodies committed with sha256 79222433/6afbdc82 matching receipts; Gate quotes 10 and 9 words, raw substrings; mirror at tip 143 rows / cd9ee4cf / no adopted ids, add-commit 19a99bd ancestor of tip, blob at 19a99bd 4ea81a5a = 145 rows with both ids; pre-append census argv --file, no --root, exit 0, W04 only. No counter input changed 907790c->842c1b4 (13-file diff, none an input), so the committed 907790c verdicts carry. Census validate --root . kake exit 0, kake ok; census rows 145, tier.A 122/B 6/C 17. Prompt contract byte-identical to the rendered template lines 1-140. SHONEN file untouched canonical seed; report has one line per box. Lane pushed, ahead=0. C2's C8 passes only under the counter's reading (live registry at mirror add-commit) and the tip-mirror reading; permanently false as 'blob committed at the add-commit', and the counter never reads mirror bytes - disclosed by the round and routed, so C2 is admitted met-with-limits, not clean met."
+   },
+   "commit": "kake-shokunin@93d7fdbd45b0e5698927e7f9cb3dafca24ace416",
+   "closed_at": "2026-10-25T07:05:00Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest: 2026-10-24T23:14:40-03:00 launch kake round=51 pgid=30137 driver=hyaku-inline attempt=1; 2026-10-25T03:23:08-03:00 lane-dead-no-report (attempt-1 orphan, session died ~23:30 -03); 2026-10-25T03:23:34-03:00 launch attempt=2 pgid=1755726; 2026-10-25T03:55:31-03:00 complete; hyaku-inline attempt=2. Lane HEAD before 007d66e4, round work 842c1b4, closure spot-check commit 93d7fdbd. Conformance clean (report by lane identity 11f058fb, all five cited commits ancestors of master, pushed ahead=0, no round-51 leftovers). DEFECTS, status-neutral and routed to r52: (1) both counters are unregistered instruments - no SKILL.md gate/probe row, no selftest mode, no frozen baseline with input digests, so PROTOCOL §Gate standard is unmet for them; (2) C8 must read show(root, rev, MIRROR) and pin the mirror sha256, plus C6 URL equality/httpStatus/bytes/fetchedAt and an entry-level quote-class condition; (3) C1 has no vacuity floor (synthetic 47-of-48 and phantom-seat waves score 3/3); (4) junk controls cite nonexistent revisions and are not replayable; (5) SCORECARD names the measured commit descriptively while the committed runs name 907790c; (6) 'frontier line 23 narrowed' overstates the bytes (PROVINCE line 23 unchanged, a new block narrows its reading); (7) the no-harm sentence cites only freshness-sweep --selftest while the live sweep exits 1 (PQ-2 GATE-OPENED, sitemap LISTED-LIVE, plazir-gate-anomaly) with only w1/CriticHarm.md carrying the base-clone control that proves it pre-existing; (8) staged-id lists match no shokuknow package revision; (9) 17 untracked files from rounds 46/48 remain in the lane worktree; (10) pacman.log records installs at 00:56:27 and 02:14:46 -0300 inside the round span - unattributable to this lane, whose attempt-2 window is clean; host-wide pause clause cannot be confirmed from any lane record, operator-visible only. Promotion is operator-owned: no SHONEN box is fully checkable by this closure (box 1 and box 4 are mechanically checkable by a non-author; box 2 needs a fresh end-to-end task run; box 3 needs an agent trial without oral context).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
