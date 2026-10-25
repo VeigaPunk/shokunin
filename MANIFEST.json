@@ -20278,6 +20278,47 @@
    "notes": "dispatch/complete digest: 2026-10-24T21:22:16-03:00 launch kake round=49 pgid=2899645 driver=hyaku-inline attempt=1; 2026-10-24T21:41:30-03:00 complete kake round=49; hyaku-inline attempt=1. Report 5cff012cf608026faf38fcc7a0e0368481231c81 by kake-shokunin, ancestor of fleet HEAD. Round-work tip b3ae50efbca6c569720887b03f3fad7710abde8a pushed, ahead=0; integrator spot-check 9619af67c52939daac502ca7a24c9d714f3f51db is the lane HEAD at closure. 10 untracked porcelain paths classified and not swept: one round-46/residual directory (eight orchestrator reports, mtimes 03:26-03:37, before launch) and nine >1MiB round-48 validate copies, each cmp-identical to an already-tracked twin. Not r49 lane work. SHONEN not fully checkable (box 2 is [ ], others author [~]); promotion stays operator-owned. Routed: (1) commit wave-slot grant stdout and the kimi --prompt dispatch next time the wave is cited — live=39 was not re-derived; (2) do not adopt the 12 quarantine ids on the r48 hand-check alone; (3) operator, not the lane: leave the eight residual reports and nine large copies uncommitted.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 67,
+   "date": "2026-10-24",
+   "type": "closure",
+   "lane": "revenger",
+   "lane_round": 67,
+   "lanes": {
+    "revenger": "ok"
+   },
+   "lane_rounds": {
+    "revenger": 67
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "calibration": "unchanged",
+    "freshness": "unchanged",
+    "operability": "unchanged",
+    "depth": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-67/revenger.md",
+   "verification": {
+    "reviewer": "hyaku-closure (Kimi fresh closure agent, @m_swe session, non-author)",
+    "spotcheck": "revenger-shokunin/corpus/lessons/round-67-verifier-spotcheck.md@f165908aaffcf14798de53405fe788986bd33ff9",
+    "rechecks": "Both claims RE-MEASURED by the reviewer over git-archived trees with the lane's pinned frozen counter (sha256 7933c060...bc07e, matches the pre-registration pin); my tip run is byte-identical to the committed reports/round-67/measure-after.log and my base run matches measure-before.log except its 2-line pinned-instrument footer. C1 coverage FALSIFIED: K_HELD 8/14 and K_ROW C05 status=uncovered at base fa0eb3eb and tip 8e97e3a2, C05_SINGLE_V2=no both ends; the pass branch did not fire. Independently confirmed at byte level: the entry anchors RES_XML_START_NAMESPACE_TYPE at snapshot :244 (entry:1 and :56) while the sha256-matching pinned snapshot (56b88bc4...c56f, 86255 B) has it at :245 and :244 is RES_XML_FIRST_CHUNK_TYPE -- off by one in two places; C05 stays uncovered and the candidate is retained admission-status: rejected. C2 calibration FALSIFIED: C7_GATE_PRESENT=yes, C7_SELFTEST=pass, C7_CONTROL_PASS=1/1, C7_MUTANT_KILLED=1/1 but C7_MUTANT_KILLED_ATTRIBUTED=0/1, HOLDS_OK_V5=no, HOLDS_OK_V4=yes; confirmed from the committed gate bytes -- check_embedded_outputs.py:132-134 raises before :141's require(not ok(dproblems), MARKER), so the registered marker can never be the killing line (shadowed dead code); the SKILL.md registry row was corrected, so no false attribution stands. Harms sweep: HOLD_CALIBRATION 4/4, HOLD_REPLAY 10/10, C2-C6 attributed at target, FRESH_ROWS 18/18, F_COVERAGE 5/8, README_TOKEN_LEGEND_MISMATCH 0, HOLDS_OK_V4 yes at both ends; corpus/fixtures, corpus/live, the retained r65 candidate, the verify_* replay family and QUALITY/PROVINCE/SHENEN are byte-identical over the round -- no axis harmed. Wave reconciled from committed bytes (not prose): plan-validated.json spawn 64 / dispatch.calls 1; taskCall.json 64 tasks, 64 unique names; swarm-registry.json 64 members; 64 R67*.md seat reports with no missing and no extra name; roles scribe19/reviewer13/scout11/critic10/executor5/mutation-tester2/connector1/sentinel1/simplifier1/revenger1, attack 25/64 = 39.1%. Attempt 1: dispatch-start 21:06:30 -> dispatch-run.log 21:07:21 (+51s), dispatcher session exit disposed all 64 children, zero reports. Attempt 2 re-issued the byte-identical taskCall (same 64 names, same order, no split, no shrink, no new seat) with a polling dispatcher -> {reports 64, settled true, jobs_with_errors {}, elapsed_min 7.4}. Judgment: legitimate parent-lifetime recovery of the same wave, not a no-replacement violation (no seat was substituted; each seat ID produced exactly one report). The lane's claim that the validator rejects a planner seat was verified true against the host validator (ufo-swarm-wave.mjs SWARM_ROLES: planner/distiller/labrat/Main can never be swarm lanes). Quarantine re-derived independently with the claims.md awk: 26 rows, ids identical to the lesson table; tally 4 PRESENT / 19 ABSENT / 1 UNREACHABLE / 2 UNVERIFIED-REACHABLE = 26; 26 evidence dirs on disk. Zero adoptions verified by my own sha256 cross-check: 0 byte-identical files between the shokuknow package (86 files) and the lane repo (2690 files), 0 of 142 round-changed paths identical to a package file, lane SOURCES.md 45 rows with the only new row being its own S045 dex spec; the campaign register is unmodified. Discernment spot-check from outside (non-author, no fetch): S055 admit-candidate -- committed fetch sha256 ff5aac3e..., quote verbatim at offsets 2336/2802/3785 -> AGREE; S060 reject -- committed fetch sha256 a481c369..., quote absent raw/unescaped/tag-stripped, components 0 -> AGREE. New S045 row quote re-opened at the committed dex-format.html snapshot: present verbatim after whitespace-normalised tag-strip (19 words, <=25) -> AGREE. Census validate exit 0, 45 rows, the same four disclosed W04s. Step-1 conformance clean: report committed by lane identity b2935b851d3927de82cc20da8aa118b6a61cfcf8, SHONEN heading with 4 [~] lines, all cited commits ancestors of refs/heads/main, lane ahead=0 with a clean tree, dispatched prompt carries the template contract verbatim."
+   },
+   "commit": "revenger-shokunin@8e97e3a2f9bd5f5d44feaace46a9f15f938b970d",
+   "closed_at": "2026-10-25T01:22:16Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest (.ufo/watchdog.log, mutable -- digest copied here): 2026-10-24T20:34:34-03:00 launch revenger round=67 pgid=1935276 driver=hyaku-inline attempt=1; 2026-10-24T21:57:33-03:00 complete revenger round=67; hyaku-inline attempt=1. Both declared claims falsified by their own frozen rules and honestly reported; admission requires every claim to verify, so admitted=false / verdict=rejected-honest-stop while lanes.revenger=ok (real report, real committed work, no marker). Fail branches executed as frozen, no acceptance condition repaired after the seats scored. No axis harmed (all prior holds at target, protected surfaces byte-identical). RANK: this round adds no held ground -- the v2 C05 candidate is retained rejected, the C7 gate's registered attribution is false and corrected, and the S045 row's used-by points at a rejected candidate. Routed defects (status-neutral, lane must fix next round): D1 the attempt-1 abort reason is asserted from per-seat transcripts under the runtime session dir, which is not committed and is not a closure-time-resolvable pointer under PROTOCOL §Evidence standard -- committed bytes support only the +51s dispatcher exit, zero reports and zero seat artifacts; commit the transcripts or restate the claim at the committed strength. D2 the C7 instrument is called a probe in the frozen claims.md and in the report prose but the landed SKILL.md ## Gate registry row records kind=gate (that row is authoritative and §Gate-standard complete); reconcile the prose. D3 the S045 located quote is stated as 18 words but is 19 by whitespace count (both <=25). D4 S045 used-by names a rejected candidate -- re-point the row on re-gate. Operator note: SHONEN box 1 stays [~] because this round's R67ReviewSkillRefresh is lane-dispatched (a dispatched subagent is still the lane); the non-lane re-confirmation remains a promotion-time duty, operator-owned. Wave-shape note for the operator: the attempt-1 abort is the same headless-dispatcher failure already routed as an L0 for tameshi round 38 -- attempt 2 re-dispatched the identical validated taskCall with a polling dispatcher and is judged a legitimate parent-lifetime recovery, not a replacement. The L0 about the shokuknow register S099/S100 wrapped row and URL cross-wiring is already committed fleet-side as 58b035be and is not duplicated here.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
