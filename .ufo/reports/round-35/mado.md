@@ -85,8 +85,10 @@ Every change is committed inside the lane repo (jj-colocated; the helper committ
 | `4f35c80` | the wave-2 falsifications as errata: three entries' errata blocks, row-cell corrections, README/frontier corrections, the committed content cribs, the 38 wave-2 reports, `scratch/L1DigestFix`, SCORECARD and LOG | `LOG.md` round-35 entry, paragraph "Then wave 2 attacked…" and "Honest notes" |
 | `7b745a1` | the axis republication in the gate's own format, plus the wave-2 reports that landed after the first pass | `LOG.md` round-35 entry, "Honest notes" (the stale-publication paragraph) |
 | `4efaf63` | the 235 seat evidence files checkpointed under `.ufo/waves/round-35/scratch-evidence/`; the 3.2 GB of mutant/crib working trees dropped | cleanup, not a claim: the trees were scratch, and every report's quoted command + output survives in the checkpoint |
+| `b632f0b` | the last two seat reports (`SentBoundary`, `ConnOverlap`), the seats' revised reports, and the restored digest-repair receipt | the final tally in "Work performed" |
+| `ca870e9` | the seats' post-sweep revisions and rebuilt evidence folded into `scratch-evidence/`; no scratch tree left in the lane | the cleanup paragraph |
 
-Lane tip at report time: `b632f0b980772aad4be9ab20f8b26e9329d62239`
+Lane tip at report time: `ca870e96c320fce74de2289f6ac8922abca2bf4e`
 
 ## Before → after measurements
 
