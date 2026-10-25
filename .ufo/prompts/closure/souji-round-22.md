@@ -11,10 +11,13 @@ from outside), AXES.md, CORPUS.md.
 Inputs:
 - report: `.ufo/reports/round-22/souji.md`; dispatched prompt: `.ufo/prompts/souji-round-22.md`
   (canonical `templates/round-prompt.md` rendering + hyaku addendum §6)
-- lane HEAD before the round: `41553adb139d06511dc386bb3ce4326aebfba675`; after: `fe7590b3010bed9b9b808b79c2bf2be1a18bce2a`
+- lane HEAD before the round: `4edb25dfe262515d0da63224bbba71e02e36cba5`; after: `77d659524c777276bcef33568be3c4cbcb9d1052`
 - driver dispatch/completion lines (`.ufo/watchdog.log`, mutable — copy this digest into notes):
 2026-10-21T10:32:45-03:00 launch souji round=22 pgid=1677714 driver=hyaku-inline attempt=1
 2026-10-21T15:46:25-03:00 complete souji round=22; hyaku-inline attempt=1
+2026-10-23T20:41:39-03:00 launch souji round=22 pgid=3505869 driver=hyaku-inline attempt=1
+2026-10-25T03:23:46-03:00 launch souji round=22 pgid=1758934 driver=hyaku-inline attempt=1
+2026-10-25T04:09:02-03:00 complete souji round=22; hyaku-inline attempt=1
 
 Duties (you may dispatch up to 8 read-only reviewer/critic `task` seats to parallelize re-checks;
 never pass a model parameter; you write only the two artifacts in steps 4–5):
@@ -28,10 +31,10 @@ never pass a model parameter; you write only the two artifacts in steps 4–5):
    template contract. Marker report (no checkable work/commit) → status `failed`. Defects are named
    in notes, status-neutral. Never run a jj command in the lane except through the helper (even
    `jj log` snapshots state unless it carries `--ignore-working-copy`).
-2. **Claims.** For each declared claim (1–3): re-derive its before→after against `fe7590b3010bed9b9b808b79c2bf2be1a18bce2a` with a
+2. **Claims.** For each declared claim (1–3): re-derive its before→after against `77d659524c777276bcef33568be3c4cbcb9d1052` with a
    plain measurement you run yourself (grep/wc/jq/git/census counts over committed bytes) and
    compare with the reported values; check no owned axis was harmed
-   (`git -C /home/vgpnk/Projects/shokunin/souji-shokunin diff 41553adb139d06511dc386bb3ce4326aebfba675 fe7590b3010bed9b9b808b79c2bf2be1a18bce2a -- SCORECARD.md`, plus spot reads). Where the claim
+   (`git -C /home/vgpnk/Projects/shokunin/souji-shokunin diff 4edb25dfe262515d0da63224bbba71e02e36cba5 77d659524c777276bcef33568be3c4cbcb9d1052 -- SCORECARD.md`, plus spot reads). Where the claim
    rests on a lane-owned **gate** or selftest, PROTOCOL §Gate standard (Closure consequence) binds:
    verify its committed evidence (self-test tally, frozen-run verdict, revision measured) — never
    execute a sibling's gate — and say which claims were re-measured vs evidence-verified. For an
@@ -43,7 +46,7 @@ never pass a model parameter; you write only the two artifacts in steps 4–5):
    agree/disagree with a reason. Re-open ≥1 newly written `corpus/SOURCES.md` row and check its
    ≤25-word quote. Run `/home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin souji`.
 4. **Write `/home/vgpnk/Projects/shokunin/souji-shokunin/corpus/lessons/round-22-verifier-spotcheck.md`** (non-author;
-   headed `author: hyaku closure (non-author integrator, @m_opus)`): conformance results,
+   headed `author: hyaku closure (non-author integrator, @m_flash)`): conformance results,
    per-claim re-check with commands and observed output, per-axis verdicts, spot-check table
    (item · decision · re-opened source · agree/disagree · reason), trend verdicts with evidence,
    and routed defects the lane must fix next round. Commit and push only that path through the
@@ -80,7 +83,7 @@ never pass a model parameter; you write only the two artifacts in steps 4–5):
    "admitted": true|false, "verdict": "admitted"|"rejected-honest-stop"|"rejected-harmed"|"failed-marker",
    "verdicts": {"<axis>": "<verdict>"}, "trends": {"expansion": …, "quality": …, "discernment": …},
    "capabilities_added": […], "report": ".ufo/reports/round-22/souji.md",
-   "verification": {"reviewer": "hyaku-closure (@m_opus session, non-author)",
+   "verification": {"reviewer": "hyaku-closure (@m_flash session, non-author)",
    "spotcheck": "souji-shokunin/corpus/lessons/round-22-verifier-spotcheck.md@<hash>", "rechecks": "<summary>"},
    "commit": "souji-shokunin@<lane HEAD>", "closed_at": "<ISO-8601 UTC>", "campaign": "hyaku",
    "notes": "<dispatch/complete digest; defects; routed items>", "promotions": [], "minted": []}`.
