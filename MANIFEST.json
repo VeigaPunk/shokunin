@@ -22444,6 +22444,56 @@
     "date": "2026-10-25",
     "entry": 670
    }
+  },
+  {
+   "round": 25,
+   "date": "2026-10-25",
+   "type": "closure-correction",
+   "lane": "tabi",
+   "lane_round": 25,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 25
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "freshness": "improved",
+    "operability": "improved",
+    "coverage": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "unprovable-but-better"
+   },
+   "capabilities_added": [
+    "bfcache-receipt",
+    "source-reopen-receipt"
+   ],
+   "report": ".ufo/reports/round-25/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-25-verifier-spotcheck.md@4ad4c77eed78bca1a149e65a7ec6a84b5f71c925",
+    "rechecks": "C1 and C2 re-measured green; S106 source decoded and confirmed; no axis harmed."
+   },
+   "commit": "tabi-shokunin@8769b2e06119ac9d58ea57ddf66cfa476608ace2",
+   "closed_at": "2026-10-25T16:10:00Z",
+   "campaign": "hyaku",
+   "notes": "Supersedes rounds[671] closure-correction. Under closure prompt step 5, admission requires only every declared claim verifies and no axis harmed. PROTOCOL.md §Round-robin rounds closure step 1 lines 243-246 says report-contract defects are status-neutral unless rules prescribe failed; no such rule applies to W2 non-dispatch. Both C1 and C2 were re-measured green and all axes are improved or unchanged. W2 (34 validated items) was not dispatched; coverage limitation and report-placement/SHONEN timing defects remain named/routed conformance defects, not admission blockers. Lane has untracked W2 directory; routed for owner resolution. No promotion/mint.",
+   "promotions": [],
+   "minted": [],
+   "supersedes": {
+    "round": 25,
+    "type": "closure-correction",
+    "date": "2026-10-25",
+    "entry": 671
+   }
   }
  ]
 }
