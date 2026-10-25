@@ -20696,6 +20696,47 @@
    "notes": "Driver digest (mutable .ufo/watchdog.log, copied): 2026-10-24T21:43:16-03:00 launch kama round=36 pgid=3178699 driver=hyaku-inline attempt=1; 2026-10-24T23:17:47-03:00 complete kama round=36 hyaku-inline attempt=1; 2026-10-25T03:23:10-03:00 complete kama round=36 hyaku-inline attempt=1. Step 1: report committed by kama-shokunin <kama@shokunin.local> as fleet 428a0560 and erratum 29698108, both ancestors of fleet master 04411e88; report carries Work performed, Landed changes, Before->after measurements, Sources & frontier, Trend verdicts and ## SHONEN with 4 lines matching the 4 SHONEN.md boxes; prompt carries the template contract and the hyaku addendum. All cited lane commits (9014843c freeze, 2e8beda5 claim work, 6a4afdfe tip) are ancestors of master; jj-lane.sh state before this closure showed ahead=0 behind=0; the worktree equals the tip byte-for-byte on all nine round-36 paths (git hash-object == git rev-parse <tip>:<path>). Conformance defects, status-neutral: (D1) .ufo/waves/round-36/census-end.out is cited at report:147 and report:232 but is not committed, so the pointer does not resolve at closure (the census claim itself re-verified by the integrator's own run); (D2) three staged-id cross-references in corpus/lessons/round-36.md §Gate name documents they do not hold (S366->S371; S359/S360/S372/S391->S364/S365/S377/S396; S331-S334->S332/S336/S337/S338/S339) - every reject/admit decision stands, only the id evidence is wrong; (D3) wave 3's seat-exit ledger has 2 rc=1 rate-limit deaths (ScribeLog, RevQ206, 'provider.rate_limit: 429') that the report's wave table omits, so it accounts for 30 of 32 seats. Routed to the lane's next round in the spot-check §6. Jj note: the round's working copy is still parked on five foreign-identity commits (filed as the lane's L0, operator item); jj-lane.sh commit in the lane therefore refused by design, and the spot-check was committed and pushed from a scratch clone of the lane remote under the protocol identity, landing 094cb46363d010959ec5b45d69634ccab07ec9e0 (single path, direct child of 6a4afdfe), verified with git ls-remote; the lane's local master bookmark still reads 6a4afdfe because the helper exposes no fetch/sync path and a raw fetch or bookmark move in the lane is forbidden to this integrator - the lane's next helper commit recovers through the helper's own fetch+rebase path. SHONEN: four [~] boxes, each with a resolvable pointer except the census receipt D1 names; no box is fully checkable by this non-author, so promotion stays operator-owned (no [x] written). Promotions and mints: none.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 68,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "revenger",
+   "lane_round": 68,
+   "lanes": {
+    "revenger": "ok"
+   },
+   "lane_rounds": {
+    "revenger": 68
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "operability": "unchanged",
+    "depth": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-68/revenger.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "revenger-shokunin/corpus/lessons/round-68-verifier-spotcheck.md@222a7a702529fb60598633ebdf5e1442007bc15d",
+    "rechecks": "C1 evidence-verified from the committed receipts (C7_MUTANT_KILLED_ATTRIBUTED 0/1 -> 1/1, C7_NEG_SPOOF_KILLED 1/1 with ATTRIBUTED 0/1 at both ends, HOLDS_OK_V5/V6 no -> yes, counter exit 0; instrument sha256 0de4eb6f matches the pre-registration pin) and re-derived at the byte level without executing the gate (base check_embedded_outputs.py:141 require(not ok(dproblems), MARKER) is a structurally dead control; tip :135-146 prints MARKER as the last line of the exit-1 branch). C2 falsified, re-measured: derive_axml_anchors.py prints 17 lines with no :237/:244 while the entry states both (lines 237-253 at :57/:148/:157 and 'line 244' at :148); readout.py:51-58 is a literal width dict presented as S038-derived; K_HELD_BACKED=8/14 with 14 C-rows and C05 uncovered; corpus/README.md byte-identical base->tip; entry admission-status rejected; Q14 falsifier re-derived (entry:46 quotes 18 hex chars = 9 bytes against '16-byte prefix'). Conformance: all six cited commits ancestors of main, ahead=0/tracked=0/untracked=0, report committed by the lane identity and on origin/main, SHONEN heading 4/4, wave 64 seats in one validated call with 64 seat reports. No axis harmed: corpus/fixtures, corpus/live, PROVINCE.md, SHONEN.md, corpus/README.md and the retained r65 candidate byte-identical; corpus/QUALITY.md gained one row and lost none. Census exit 0, 46 rows, no W03."
+   },
+   "commit": "revenger-shokunin@d00f77942d78cb9a3b41547370d7a8a4ebea6c72",
+   "closed_at": "2026-10-25T06:48:58Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest: 2026-10-24T23:08:14-03:00 launch revenger round=68 pgid=8345 driver=hyaku-inline attempt=1; 2026-10-25T03:23:08-03:00 lane-dead-no-report revenger round=68, retry same round (attempt-1 orphan: no report, session died ~23:30 -03); 2026-10-25T03:23:40-03:00 launch attempt=2 pgid=1757348; 2026-10-25T03:43:18-03:00 complete revenger round=68 attempt=2. Conformance clean; report committed as revenger-shokunin 739ba3a on origin/main. Claim C1 improved (the registered gate attributes its own kill; caveat disclosed and routed: the counter's attribution leg proves marker presence on a textual mutation, not behavioural detection); C2 falsified by its own frozen kill rule and executed as an honest stop (C05 stays uncovered, v3 entry retained admission-status: rejected). No axis harmed. Routed defects for next round: R68-D1 reports/round-68/measure-after.log:102 asserts the 1c34603 corpus/ tree is byte-identical to the 14774a2c tree (51894d15) and to the receipt commit's while it is ddc6a4f6 and corpus/lessons/round-68.md differs - a tree-identity claim the command it names contradicts; R68-D2 the wave-slot grant line is quoted but not committed and the slot state file is released; R68-D3 the 46/64 attack share uses the build script predicate (reviewer/critic/mutation-tester/sentinel/revenger; 43/64 under the prompt's list) with the predicate unstated; R68-D4 SCORECARD says SHONEN box 1 keeps [~] while the report and SHONEN.md read [x] under the prior non-lane verifier; R68-D5 the round's own forwarded bundle (C7 counter gameability, V6 c7_v3_clean coupling, kill-rule closure, two-line drift fixture, C05 repair set) remains open, with operator L0 revenger round-68 pending. Operator note: SHONEN boxes 2-4 remain [~]; this closure wrote no [x], and promotion is operator-owned. No revenger lane-authored leftover at the fleet root; the only lane file this closure wrote is corpus/lessons/round-68-verifier-spotcheck.md.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
