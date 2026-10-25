@@ -77,3 +77,9 @@ Then repeat from the lowest next-round.
 - results so far: souji r26 admitted, r27 rejected; kasegi r28/r29/r30 admitted; kengaku r33 admitted; tabi r27 rejected-harmed.
 - operator: "remove cursor/default from all fallbacks" -> 26 chain entries removed from ~/.omp/agent/config.yml fallbackChains (backup config.yml.pre-nocursordefault-20261025). Model list entry + m_auto alias untouched.
 - hyaku.env L1_MODEL/JUDGE_MODEL labels corrected @m_kfc -> @m_opus (no role routes to m_kfc).
+- ~17:45 -03 probe (persisted record): m_flash answered-by=inception/mercury-3 primary-ok=False.
+  commandcode/deepseek-v4.1-flash 429 weekly usage limit; devin/deepseek-v4-1-flash failed_precondition daily quota exhausted;
+  devin/swe-2 resource_exhausted free-model rate limit (resets Oct 26 00:01 UTC). Every m_flash seat currently runs on mercury-3.
+  cursor/default removal is on disk in ~/.omp/agent/config.yml (cfg://task reflects file; 0 chain entries left).
+- incident: seat MutPinSemanticCell's edit resolved a scratch path to mori-shokunin/tools/mori-pin-check.py and deleted `bound = []`;
+  orchestrator restored freeze bytes (sha256 e3ef425a...). MutC2Fields saw the same scratch-path resolution failure.
