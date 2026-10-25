@@ -130,3 +130,14 @@ the `tool_present` clause is per-path, not per-binary.
   unmeasured).
 - Whether any control exercises the c1 clause-b/k axes end-to-end
   (`RevManifestIntegrity`/`MutC1` seats report at closure).
+
+
+## Addendum — wave-1 seat findings folded in
+
+- `RevLiveTriplet` (reviewer, PASS): the live triplet re-derives byte-identical
+  ~15 min after the freeze — same socket2 inodes (181151236/38117/10029), same
+  client graph (waybar pid 935660 fd 21; socat pid 2293 fd 5), `OVERALL:
+  AGREE` re-derived from `/proc`, `markers_observable=no` corroborated by
+  `hyprctl getoption debug:disable_logs -j` → `int: 1`. No new instance epoch
+  and no new client: the committed triplet is still accurate, no honest-aging
+  caveat needed. Report at `.ufo/waves/round-38/w1/reports/RevLiveTriplet.md`.
