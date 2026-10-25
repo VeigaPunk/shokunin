@@ -21180,6 +21180,47 @@
    "notes": "Dispatch 2026-10-25T04:04:05-03:00 launch attempt=1; complete 2026-10-25T04:41:18-03:00 attempt=1 (one attempt, no silent window). Report authored by tabi-shokunin, landed 04:41:05 as three pre-completion drafts; all 10 cited lane commits ancestors of master; lane ahead=0 at closure, spot-check commit 573c99e pushed under protocol identity. Conformance defects (status-neutral, routed in the spot-check): (1) no registry row for round-evidence-audit in tabi SKILL.md -> gate not graded conformant; (2) 89 uncommitted paths left in the lane (2 modified tracked wave-2 seat reports, 87 untracked incl. 67 empty numeric files at repo root and three .err logs); (3) disclosed M5 scratch over-commit still at the tip (1,034 paths, 25.7 MB; cleanup commit promised in the report never landed); (4) stale self-test tally 12/12 in SCORECARD.md:1139,1151 and the report while the shipped script carries 13 cases; (5) c1-measurements.json before.exit=1 contradicts its own command's exit 128. Carried-open lane disclosures: c4 presence-not-truth, c1 whole-document reads, c3 word-presence, c2/c5 top-level-spec only, lessonSha256 re-encoding, missing object reads as absent, caller-supplied round cap, OWASP stripped-text digest unrecorded. SHONEN: 4 boxes, all [~] author-asserted; promotion remains operator-owned. Nothing installed or upgraded.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 24,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 24,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 24
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:verifiability": "improved",
+    "coverage": "improved",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "frontier-recheck-harness (corpus/instruments/frontier-recheck-count.py @ d3614a2c: binds each admitted Frontier entry to its own recheck line — header source ids covered by the --source set, set cited by the entry, ids listed by the manifest — and scores entries=K pass=P exit=0|1; base c2480b1 has no instrument, tip scores 10/10 where the bare shell loop reaches 8/8; first working round 24)",
+    "source-capture (corpus/instruments/capture-source.py + corpus/source-snapshots/round-24/ @ d3614a2c: fetches a public document to a committed UTF-8 text snapshot with sha256, deterministic conversion and --selftest; 19 records / 76 assertions re-checked offline by source-recheck.py exit 0; first working round 24)"
+   ],
+   "report": ".ufo/reports/round-24/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-24-verifier-spotcheck.md@b49948f1164ef65106b2c4cbee3f53e8a44b8c41",
+    "rechecks": "C1 re-measured by the integrator, both directions, cwd pinned: the frozen shell form over the eight Frontier entries' own recheck lines reads 5x exit 2 + 3x exit 0 = 3/8 for the c2480b1 values and 8/8 for the closure tree (F09's two entries also exit 0 each). C1 counter B evidence-verified, never executed: sha256 of the resolve.py content at c2480b1 = 690153ad... and at d3614a2c = db5e0767..., identical to the digest c1-baseline-resolver.py carries; c1-control-baseline.txt cases=8 pass=4 exit=1, c1-fixed.txt cases=8 pass=8 exit=0 with one matrix digest (fef0f02d...) and one checker digest (acbb6870...); containment regression 24/24 on the landed bytes. C2 re-measured: frontier admitted 8 -> 9 by the frozen awk over corpus/README.md, entries citing S032-S035 0 -> 2; sources-census validate exit 0, rows 35, malformed 0, same two pre-existing W04. No-harm: SCORECARD +55/-0, SKILL.md absent from the round's 121 changed paths, round-23 manifest change additive (anchor only, JSON-identical quote). Discernment spot-check: 5 decisions sampled, 5 agree, 0 disagree — S032 quote verbatim in the live NIST PDF at pdftotext:3920 (15 words, 1 occurrence), S033 sentence verbatim in the live e-Gov lawdata XML, the Chinese entry's own 285(1) text carries no 情节严重 element (live PDF, text line 2121) and 第一条(五) 其他情节严重的情形 exists twice on the live court.gov.cn page, standards-body entries outside PROVINCE core. Falsification graded partial: wave 2 (35 seats, 24 attack) never spawned — four host-cap refusals, 0 seats, corroborated by an empty wave2 report dir — so executed falsification is wave 1 only (43 seats, 11 attack), and three self-critical statements went unmeasured or mutually inconsistent; routed as D24-3/D24-4 and not counted as verification."
+   },
+   "commit": "kasegi-shokunin@492538b858b4e53e73badef00aa22d62698d097c",
+   "closed_at": "2026-10-25T08:04:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (mutable log, copied here): 2026-10-25T04:05:52-03:00 launch kasegi round=24 pgid=3198091 driver=hyaku-inline attempt=1; 2026-10-25T04:34:54-03:00 complete kasegi round=24; hyaku-inline attempt=1. Shape: wave 1 kasegi-r24-build 43 seats (scout 22, reviewer 7, executor 5, scribe 3, critic 3, mutation-tester 1, connector 1, sentinel 1), 43 reports, 699 KB, none under 800 B; wave 2 kasegi-r24-falsify validated at 35 seats (reviewer 12, critic 6, revenger 3, mutation-tester 2, sentinel 1, scout 8, scribe 2, executor 1; attack 24/35) and refused four times at the host job cap with 0 spawned, payload unchanged — executed seats 43, not the reported 78, and 0 dead seats. Conformance: report landed by kasegi-shokunin <kasegi@shokunin.local> at 5c95d9d3 (04:34:30), SHONEN heading with 4 lines for 4 boxes and no [x], all six cited lane hashes exist and are ancestors of master, lane ahead=0 with a clean porcelain. Status-neutral defects, all routed in the spot-check: D24-1 the cited hash d3614a2c was not the lane HEAD at file time (492538b, eight minutes later) and the report's 'every change below is inside that commit' excludes wave2-refusal-{2,3,4}.json; D24-2 three assertion counts for one manifest (README 62, lesson 77, report/manifest 76 — measured 76 = 50 + 26); D24-3 the bound-64->8 mutant's 8/8 is stated as measured in four places but only the baseline-base 4/8 has a receipt; D24-4 L4's fail-before is described three incompatible ways (erratum 3, ResolverAttack:176, c1-control-baseline.txt) with the receipt showing more fail-before than the prose; D24-5 cwd dependence survives on 30 of 35 recheck lines (5 carry the cd prefix) and the harness's own cwd pin masks it. Falsification depth graded partial in the spot-check §5: no second-pass review of the round's weakest sentence ('from committed captures' — a recheck can be re-pointed at another manifest) and no mutant run against the landed bytes. Operator note: SHONEN boxes 1/3/4 now carry non-author-checkable evidence, box 2 is genuinely unmet (domain roots absent; 14 ops/* executables named but gone); promotion stays operator-owned and this round does not ask for it. No installs: no pacman/uv/npm call this closure; pdftotext and curl were already present. Cross-domain: none absorbed; standard-body classification entries refused on PROVINCE scope.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
