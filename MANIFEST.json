@@ -20614,6 +20614,47 @@
    "notes": "Dispatch digest (.ufo/watchdog.log, mutable): 2026-10-24T21:21:34-03:00 launch mori round=43 pgid=2878367 driver=hyaku-inline attempt=1; 2026-10-25T03:23:12-03:00 complete mori round=43; hyaku-inline attempt=1. Round tip 91cb221f35f7cb9afeff99ef1959512dabddfc46 (lane HEAD at spot-check time); lane state ahead=0 local=remote; working tree clean. ATTRIBUTION DEFECT: the report was fleet-swept, not landed by the lane -- commits 484e6eff (operator stop sweep) and 0c9e9999 (hyaku sweep, subject says the L1 returned without committing) carry the mori identity via fleet-commit --as mori. ORDERING: initial filing 484e6eff 23:31:10 preceded the lane's final commit 91cb221f 23:35:46, and the 03:23 amendment rewrote filed report bytes in place (10+/5-) instead of an appended erratum. Both status-neutral. Routed to mori r44: (1) report count slips -- '15 checks PASS' is 14 in evidence/c1s-after.txt and the green control, and '34 seat logs carry provider.rate_limit: 429' is 8 (39 logs merely contain the string 429); (2) count-c1s.py and count-c2.py are gate-shaped but have no SKILL.md registry row and no --selftest mode, so no gate is graded conformant until registered; (3) C1S receipt measured at dde525ea while the report says 'at the landed tip' -- tip equivalence rests on the documented identical counter sha, a tip run receipt would close it. Operator-side: templates/round-prompt.md still lacks explicit lands-last and lane write-scope child items; this prompt carried both only via the hyaku addendum. SHONEN not fully checkable by a non-author: three [~] pointers, box 4 [ ], no [x]; promotion stays operator-owned and is not proposed. C1S's disclosed instrument limitation (4/8 mutant classes survive) was accepted; frozen r42 counter untouched (empty diff, sha 105ce075).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 68,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kotoba",
+   "lane_round": 68,
+   "lanes": {
+    "kotoba": "ok"
+   },
+   "lane_rounds": {
+    "kotoba": 68
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-68/kotoba.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "kotoba-shokunin/corpus/lessons/round-68-verifier-spotcheck.md@a5f7459f99bb27bf697e9438362e75ac5833eca8",
+    "rechecks": "C1+C2 re-derived over committed bytes at 2cf0d99a: SOURCES rows 123->128, entry absent->present, knowledge/ 56->57, five S198-S202 rows mined/tier B/opened 2026-10-24/used-by the entry, tracked corpus 122->124 = baseline expect, SOURCES 7/0 and LOG 52/0 and SCORECARD 35/0 append-only, r67 mirror removed, five located quotes re-opened 2026-10-25 (5/5). Gate verdicts evidence-verified, not executed: C2-base-integrity.txt names e94ae32a, C2-independent-after.json head 605b84b exit 0, C2-routed-measure 4 of 4, noharm 10 PASS + floors, registry 46 of 46 phantom 0, self-test tallies 12 and 6 assertions. Neither claim executed by the closure (PROTOCOL Gate standard, Closure consequence)."
+   },
+   "commit": "kotoba-shokunin@2cf0d99a6d5a3e1cb0b73e3b71cb495fd1eadc6f",
+   "closed_at": "2026-10-25T06:31:49Z",
+   "campaign": "hyaku",
+   "notes": "kotoba r68: real report, 2 claims on depth (client trust gates, 5 re-opened tier-B rows + 1 entry + counter) and consistency (4 routed r67 defects closed); both verify; no axis harmed. Dispatch/complete digest: 2026-10-24T22:45:21-03:00 launch pgid=3933907 hyaku-inline attempt=1; 2026-10-24T23:17:49-03:00 complete; 2026-10-25T03:23:10-03:00 complete. Step-1 defects (status-neutral, routed to r69): R68-1 nine receipts (C1-base/after/fetch/selftest, C2-integrity-after/routed-measure/routed-selftest, noharm-at-tip, gate-registry) name no measured revision (Q36/M48), report lines citing them struck; R68-2 C2-routed-selftest.txt records a failed --self-test invocation while cited for 0/6; R68-3 routed-repairs docstring promises 0 of 4 at base but the seat log shows exit 2 environment error (R67-1 class); R68-4 S200/S202 quotes strip <code>/** with no Q42 note; R68-5 S201 teaches cell asserts approval-by-default outside its located quote (r63 G9); R68-6 the lesson's S201 refusal reason is false (phrase is verbatim twice on the page; lane's own scout log said so) — mine it as a mistake and add a QUALITY criterion; R68-7 24 lane-authored round-68 wave paths (4081+/251-) uncommitted at the tip while the report says they landed at 2dd3567a; R68-8 this closure's spot-check lands unindexed by design and needs a coverage-map row + baseline re-record next round. SHONEN boxes stay [~]; three of four are mechanically checkable by a non-author but promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
