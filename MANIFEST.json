@@ -20655,6 +20655,47 @@
    "notes": "kotoba r68: real report, 2 claims on depth (client trust gates, 5 re-opened tier-B rows + 1 entry + counter) and consistency (4 routed r67 defects closed); both verify; no axis harmed. Dispatch/complete digest: 2026-10-24T22:45:21-03:00 launch pgid=3933907 hyaku-inline attempt=1; 2026-10-24T23:17:49-03:00 complete; 2026-10-25T03:23:10-03:00 complete. Step-1 defects (status-neutral, routed to r69): R68-1 nine receipts (C1-base/after/fetch/selftest, C2-integrity-after/routed-measure/routed-selftest, noharm-at-tip, gate-registry) name no measured revision (Q36/M48), report lines citing them struck; R68-2 C2-routed-selftest.txt records a failed --self-test invocation while cited for 0/6; R68-3 routed-repairs docstring promises 0 of 4 at base but the seat log shows exit 2 environment error (R67-1 class); R68-4 S200/S202 quotes strip <code>/** with no Q42 note; R68-5 S201 teaches cell asserts approval-by-default outside its located quote (r63 G9); R68-6 the lesson's S201 refusal reason is false (phrase is verbatim twice on the page; lane's own scout log said so) — mine it as a mistake and add a QUALITY criterion; R68-7 24 lane-authored round-68 wave paths (4081+/251-) uncommitted at the tip while the report says they landed at 2dd3567a; R68-8 this closure's spot-check lands unindexed by design and needs a coverage-map row + baseline re-record next round. SHONEN boxes stay [~]; three of four are mechanically checkable by a non-author but promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 36,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 36,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 36
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-36/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-36-verifier-spotcheck.md@094cb46363d010959ec5b45d69634ccab07ec9e0",
+    "rechecks": "Both claims re-measured by the integrator over committed bytes, not by running the lane counters: C1 base e5a8ecec has no corpus/lessons/round-36.md (0 of 4 corrected) and tip 6a4afdfe carries the four correction rows R35-S211/R35-WORDS/R35-MIRROR/R35-KEEP with 0 occurrences of the token 429, r35 lesson blob 428f1f8a unchanged at both revs, r35 fleet report blob unchanged (sole fleet commit 19b66dd4); the S327 sentence independently counts 20 words. C2 base README has 0 mentions of sglang-native-route-deprecation and 0 S328/S329 rows, tip README:550 names the 2831-byte entry which cites S328/S329 (SOURCES.md:214-215). SOURCES rows 201->203, tiers A194/B6/C3, statuses mined184/queued8/rejected11 all reproduce. Census run by the integrator: exit 0, 'kama ok', 93 pre-existing W04. SCORECARD diff 70 added 0 deleted, so no axis score was touched. Gate spot-check re-opened both admits (S328 15-word quote at line 6 of the 17359-byte doc; S329 16-word quote as the joined literals at 790-791 of the 110718-byte source), two quarantine rows (S202 present, S210 absent with 'Page Not Found' 0x), and the out-of-province reject (Google Cloud serving_container_health_route). Disagreements: three staged-id cross-references in the round-36 Gate do not resolve (S366 is AWS SageMaker, the native_api.mdx staged row is S371; the http_server.py staged rows are S364/S365/S377/S396, not S359/S360/S372/S391; the probe-conventions file cites S332/S336/S337/S338/S339, not S331-S334)."
+   },
+   "commit": "kama-shokunin@6a4afdfe48b0b54239d127761d21a5cf21b5b0ea",
+   "closed_at": "2026-10-25T06:33:33Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest (mutable .ufo/watchdog.log, copied): 2026-10-24T21:43:16-03:00 launch kama round=36 pgid=3178699 driver=hyaku-inline attempt=1; 2026-10-24T23:17:47-03:00 complete kama round=36 hyaku-inline attempt=1; 2026-10-25T03:23:10-03:00 complete kama round=36 hyaku-inline attempt=1. Step 1: report committed by kama-shokunin <kama@shokunin.local> as fleet 428a0560 and erratum 29698108, both ancestors of fleet master 04411e88; report carries Work performed, Landed changes, Before->after measurements, Sources & frontier, Trend verdicts and ## SHONEN with 4 lines matching the 4 SHONEN.md boxes; prompt carries the template contract and the hyaku addendum. All cited lane commits (9014843c freeze, 2e8beda5 claim work, 6a4afdfe tip) are ancestors of master; jj-lane.sh state before this closure showed ahead=0 behind=0; the worktree equals the tip byte-for-byte on all nine round-36 paths (git hash-object == git rev-parse <tip>:<path>). Conformance defects, status-neutral: (D1) .ufo/waves/round-36/census-end.out is cited at report:147 and report:232 but is not committed, so the pointer does not resolve at closure (the census claim itself re-verified by the integrator's own run); (D2) three staged-id cross-references in corpus/lessons/round-36.md §Gate name documents they do not hold (S366->S371; S359/S360/S372/S391->S364/S365/S377/S396; S331-S334->S332/S336/S337/S338/S339) - every reject/admit decision stands, only the id evidence is wrong; (D3) wave 3's seat-exit ledger has 2 rc=1 rate-limit deaths (ScribeLog, RevQ206, 'provider.rate_limit: 429') that the report's wave table omits, so it accounts for 30 of 32 seats. Routed to the lane's next round in the spot-check §6. Jj note: the round's working copy is still parked on five foreign-identity commits (filed as the lane's L0, operator item); jj-lane.sh commit in the lane therefore refused by design, and the spot-check was committed and pushed from a scratch clone of the lane remote under the protocol identity, landing 094cb46363d010959ec5b45d69634ccab07ec9e0 (single path, direct child of 6a4afdfe), verified with git ls-remote; the lane's local master bookmark still reads 6a4afdfe because the helper exposes no fetch/sync path and a raw fetch or bookmark move in the lane is forbidden to this integrator - the lane's next helper commit recovers through the helper's own fetch+rebase path. SHONEN: four [~] boxes, each with a resolvable pointer except the census receipt D1 names; no box is fully checkable by this non-author, so promotion stays operator-owned (no [x] written). Promotions and mints: none.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
