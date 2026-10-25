@@ -2,7 +2,7 @@
 
 **Status: `rejected-honest-stop`.** One new claim, frozen before its data, met its six frozen clauses and then stopped: an unregistered structure-blind class reached the green target without decoding a record. No capability, no score, no credit. The previous attempt of round 34 (report `27322359`, inherited through `f432c8e3`) stays intact and is not rewritten; this report supersedes it as the round's record and cites it where it stands.
 
-Lane tip at filing: `1675a8d84da23885a45b619bd08e650d0cef809f` (this report cites no later lane commit). Base `ec3125ad3d130d92f888a4128dfaa2982f36fff7`; freeze `c79bbe7b0959132b9873ff3431cf5eb313b58b33`; stop `cd75b92e583735729546b0ea3b250f2df6d0652a`; docs `66b84027`; stop bindings `5a0435ff`.
+Lane tip at filing: `2eafca42eaba2a7e627fa0ee51fa2bad9b274af1` (this report cites no later lane commit). Base `ec3125ad3d130d92f888a4128dfaa2982f36fff7`; freeze `c79bbe7b0959132b9873ff3431cf5eb313b58b33`; stop `cd75b92e583735729546b0ea3b250f2df6d0652a`; docs `66b84027`; stop bindings `5a0435ff`.
 
 ## Work performed
 
@@ -35,6 +35,7 @@ Every wave-2 seat attacked the stop, its evidence, the six record defects or the
 - **Source audit.** `w2/ASourceS106.md` re-fetched the tag, commit and `external.h` URLs live: all byte-identical to the capture, every anchor exact, three `\f` bytes in the file (so a `splitlines()` reader is +3), census `ok` on a HEAD fixture. Two corrections folded in: the row now names the tracked capture `.ufo/waves/round-34/prep/R34ElfReader-files/readelf.c-binutils-2_47`, and the line list now includes `:14121`. Stated limits: E11 is existence-only, and the census never reads quotes.
 - **Docs corrections accepted against interest.** `w2/ADocsOverclaim.md` enumerated 34 overclaiming sentences in the unlanded wave-1 scribe drafts; none of those blocks landed (the committed docs were written after the stop). Its four residual flags on landed text were fixed: "makes QUALITY 67 executable" → "built to make … executable", "eight readers" → nine reader files, and the empty `corpus/knowledge/2026-10-25-r34-pre-freeze-shortcut-replay-gate.md` a seat left behind was deleted.
 
+- **Closure-style read, recorded against interest.** `w2/ASealVerdict.md` returns `ok+conformance-defect` — the stop is substantively correct and reproducible, but three record defects remain: the counting command's gate path is production-legal and unpinned (a mock gate plus `--rev 0000…` yields `GATE_COUNTER_OK`, so the receipt proves its own shape, not that the pinned gate ran); the F3 repair as worded is count-only and a count-preserving swap defeats it (QUALITY 70 already asks for count+names+digests); and F1's `repair_landed` overstates a post-data documentary audit. All three are recorded in the addendum as Y1-Y3; none touches frozen bytes. Sibling precedent for the routing: chousa r33 stopped on a fixture-literal mask, took the criterion-before-build route and was admitted the next round (`w2/ASiblingStop.md`).
 - **Containment, measured.** `w2/ASentinelNewArtifacts.md`: both counters make no network calls and spawn only `/usr/bin/python3` (9 execve, all python), `-I` blocks a sibling-import trap, child env is rebuilt, writes stay in a temp dir with zero leftovers. But a scored reader is unsandboxed: it inherits the caller's cwd, can write the lane, and its grandchild survives the counter's exit; and the fresh-seed repair is replayable through its own receipt (`--seed` accepted and printed; a digest-keyed memoriser scores 8/8 with the known seed, 0/8 with `os.urandom`). Stated as a limit of the instruments, not repaired in frozen bytes.
 
 ## Landed changes
@@ -49,7 +50,8 @@ Every wave-2 seat attacked the stop, its evidence, the six record defects or the
 | `417a8211` | S105 and QUALITY 73 restored after two anchor-replacement mistakes, tracked S106 capture, the repair's own defeats, wave-2 reports | lesson M34-12, M34-13; QUALITY 74 |
 | `b62b4767` | SCORECARD criteria count corrected and the final census receipt confirmed identical to the landed one | this report |
 | `1675a8d8` | addendum extended under attack: `predicate_status` "satisfied as written (registered scope)", the producer's recorded dissent, limits X1-X5 and the corrected repair route; LOG blindness wording fixed; last wave reports | `w2/AStopJustified.md`, `w2/ACounterexample2.md` |
-| fleet report commit | this file | cites `1675a8d8` |
+| `2eafca42` | addendum: post-filing seal findings Y1-Y3, the closure-style disposition, the chousa r33 precedent; late wave-2 reports | `w2/ASealVerdict.md`, `w2/ASiblingStop.md` |
+| fleet report commit | this file | cites `2eafca42` |
 
 Wave evidence: `.ufo/waves/round-34/r34b/` (specs, payloads, seat maps, prompts, w1, w2, receipts, controls, assimilation, census start/end).
 
