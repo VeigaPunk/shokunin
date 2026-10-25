@@ -22735,6 +22735,44 @@
    "notes": "Dispatch digest (watchdog.log, mutable): 2026-10-25T10:14:09-03:00 launch kumitate round=62 pgid=2351683 driver=hyaku-inline attempt=1 / 2026-10-25T10:39:09-03:00 complete kumitate round=62; hyaku-inline attempt=1. Step-1 ok: report fleet 198f40ed by kumitate-shokunin; SHONEN 4x[~]; all cited commits ancestors of master; lane pushed ahead=0, clean. Defects: (1) ZERO declared claims — the report's defense ('the prompt contains no frozen claim sentences') is a misreading; prompts never carry claims, the lane had to declare and freeze them before evidence seats, and .ufo/waves/round-62/plan/ stayed empty. A zero-claim round cannot satisfy 'every claim verifies', so admission is impossible despite honest work. (2) Wave contract violated: five ordinary task batches (8/8/40/39/1 = 96 seats), no validator taskCall, no dispatch registry/actual-outcomes receipt — undispatched-wave defect, advisory artifacts only. Landed repairs recorded: R61-V1 C2 forgery bundle archived+verified; R61-V3 append-only r60 corrections; R61-V4 six placeholder mappings; R61-V5 proxy refresh A=117/C2=150 + make-dispatch-actual pin + readme-map rows; R61-V6 Audit19 re-queue landed; misroot swept. R61-V2 NOT repaired (routes to next round). Spot-check: S195 reopen AGREE (my fetch byte-identical), carried-over package reject AGREE, S195 row quote AGREE, census AGREE.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 25,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 25,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 25
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "unchanged",
+    "coverage": "improved"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-25/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-25-verifier-spotcheck.md@0eca7c8a5d10bcbfdae50d0c390d277deec63bfd",
+    "rechecks": "C1 re-measured by closure (coverage-agreement --rev 7e4dbef --base-rev a6d2d15 -> grounded=6 mapped=6 dangling=0 mismatches=0 kill_tested=6 kill_violations=0 rc 0; tip run grounded=7); C2/C3 evidence-verified on committed receipts c2-after.tsv (cases=12 pass=12, cases 9-12 bare/subdir/partialClone edge classes) and c3-after.tsv (ids=7/7, probe bytes unchanged); base tool has zero base-rev refs; six grounded entries at base re-derived; SCORECARD +26 insertions only, no score moved; gate decisions S124-S127 re-opened, all agree."
+   },
+   "commit": "souji-shokunin@a8773254cff7adbcf7f121e3f60260fbdb011602",
+   "closed_at": "2026-10-25T13:51:15Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch 2026-10-25T09:21:30-03:00 launch souji round=25 pgid=1332252 driver=hyaku-inline attempt=1; complete 10:42:35. C2 frozen on operability but the verified work is coverage of four refusal edge classes -> claim unprovable on declared axis, not an axis harm (closure rules: no score moved, SCORECARD discloses misattribution verbatim, catch by W2 is calibration working; lane self-grade 'calibration harmed' is overcorrection). Round not admitted: every claim must verify. Defects (status-neutral): W1 task call dispatched twice (64 spawn attempts, 30 duplicates cancelled, 8 Cursor RATE_LIMITED deaths; R25-M2); amendment-3 C3 red-arm receipts not committed before after-data (W2-reproduced); untracked census/operator-sweep-20261019 leftover (0 files new this round); MISSION.md route table stale vs run-6 @m_flash override. Routed: prereg axis check before freeze; red-arm receipt ordering; operator-sweep leftover; SHONEN boxes non-author-checkable for operator.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
