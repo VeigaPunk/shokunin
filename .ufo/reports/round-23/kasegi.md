@@ -1,6 +1,6 @@
 # kasegi — round 23 report (attempt 2)
 
-Lane: `kasegi-shokunin`. Pushed lane hash: **`bf9ce024695b2c74571d1c54741f6726118bfa02`** (helper `landed`).
+Lane: `kasegi-shokunin`. Pushed lane hash: **`f6966d4dd25b29687d1d1f831417e9b8d1900760`** (helper `landed`).
 Base `922a4dde90b60b465e2b8b241d1fe363f1f27e98`; lane tip at attempt start
 `1fafde8f11454f3b0b98ab7f2b2e640aaf7f399a` (inherited checkpoint `8bf9807`,
 "policy-paused, unadmitted, no task resumption"). Frozen claims unchanged from
@@ -76,13 +76,14 @@ located quotes and executable local rechecks.
 | `4d9231e7` | log the post-attack repairs and final measurements | LOG |
 | `12edac47` | seal: ordering/prefix pins, declared recheck normalization, Q8/R10, final receipts | LOG "- Final seal" |
 | `bf9ce024` | rescue: 24-case matrix (root-name continuation), docstring truth fixes, supplementary Gate rows for S018/S031, corrected census | LOG "- Rescue pass" |
+| `f6966d4d` | receipts carry each case's `method`/`domain`, so the baseline→landed routing change (`literal/bounty` → `literal/other`) is visible in the artifact | LOG "- Final seal" addendum |
 | `8acb255d` | failing Q7/Q8 control exits recorded beside the clean runs | — |
 
 ## Before → after measurements
 
 | Claim | Before | After | Counting command | Measured against |
 |---|---|---|---|---|
-| C1 | escape **0/12 GONE**; controls 12/12; matrix **12/24**, exit 1 | escape **12/12 GONE**; controls 12/12; matrix **24/24**, exit 0 | `python3 corpus/instruments/mirror-containment-check.py --resolver .ufo/waves/round-23/c1-baseline-resolver.py --json …c1-baseline.json`, then the same without `--resolver` (`--json …c1-fixed.json`); both print `matrix_sha256=d05b1e0c…b809` (`cases=24 escape=12 controls=12`) | before: `922a4dd` resolver bytes (`d6a3c3f1…f903`); after: `bf9ce024` tree (`690153ad…ea2d`) |
+| C1 | escape **0/12 GONE**; controls 12/12; matrix **12/24**, exit 1 | escape **12/12 GONE**; controls 12/12; matrix **24/24**, exit 0 | `python3 corpus/instruments/mirror-containment-check.py --resolver .ufo/waves/round-23/c1-baseline-resolver.py --json …c1-baseline.json`, then the same without `--resolver` (`--json …c1-fixed.json`); both print `matrix_sha256=d05b1e0c…b809` (`cases=24 escape=12 controls=12`) | before: `922a4dd` resolver bytes (`d6a3c3f1…f903`); after: `f6966d4` tree (`690153ad…ea2d`) |
 | C1 guard | — | `changed=0 added=0 dropped=0`; `mirror=0` (vacuous, disclosed) | export `git archive 922a4dd`, run both resolvers, diff `citation→class` | before: `922a4dd`; after: landed bytes |
 | C2 | F06–F08 admitted **0/3**; frontier **5/8**; rechecks exit 2 (manifest absent) | **3/3** admitted; frontier **8/8**; four rechecks exit 0, three failing controls exit 1/2/1 | `awk -F'|' '$2 ~ /^ *F0[6-8] / && $4 ~ /^ *admitted *$/ {n++} END{print n+0}' corpus/README.md` → 0 → **3**; F01–F08 variant → 5 → **8**; the four `recheck:` lines run from `/tmp` → exit 0 (`S018` 7 OK, `S029` 10 OK, `S030` 11 OK, `S031` 11 OK) | before: `922a4dd`; after: `8acb255d` |
 
@@ -151,7 +152,7 @@ normalize and pin, not just substring-match") landed as `QUALITY.md` **Q8** plus
 ## SHONEN
 
 - [~] SKILL.md contains real decision tables, error patterns, checklists, cited sources — pointer: `SKILL.md`; `python3 corpus/instruments/density.py SKILL.md` (r15 record 152.9); untouched this round.
-- [~] At least one end-to-end domain task executed and logged in LOG.md — pointer: `LOG.md` round-23 entries plus lane commit `bf9ce024`.
+- [~] At least one end-to-end domain task executed and logged in LOG.md — pointer: `LOG.md` round-23 entries plus lane commit `f6966d4d`.
 - [~] Instructions executable by an agent without oral context — pointer: `mirror-containment-check.py --help`, the four cwd-independent `recheck:` headers, `c2-recheck-S0xx.txt` receipts.
 - [~] No cross-domain bleed (PROVINCE.md still accurate) — pointer: `PROVINCE.md` unchanged; `falsify/SiblingOverlap.md` found 0/60 phrase hits across five sibling corpora.
 
