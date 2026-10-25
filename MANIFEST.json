@@ -21137,6 +21137,49 @@
    "notes": "Attempt 1 died lane-dead-no-report (watchdog: launch 2026-10-24T23:07-03 -> dead 2026-10-25T03:23-03); attempt 2 launched 03:23:42, complete 04:14:36; nothing inherited. Conformance: report by tameshi identity (5dcedf4/2f5651c), SHONEN 4x[~], all 9 cited commits ancestors of master, ahead=0 clean tree, prompt = template 1-5 + hyaku addendum 6. Routed to round 42: (1) C1 m8 BACKTICK_RE spans newlines so a cited path inside a mispaired span is silently skipped - fix [^`\\n]+; (2) residual/receipt.json ResidualReceipts present:false stale though the report exists; (3) carried holds: C1 self-pin/records>=1/out-of-process tool exec, v3 docstring overstatement, context-capture:1682/:1685 + registry-replay:123 false positives; (4) staged ids S153/S154 now collide with own rows - renumber by document before any append. SHONEN: all boxes [~] lane-asserted; none fully non-author-checkable this round; no promotion recommendation. Tool installs: none.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 23,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 23,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 23
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "round-evidence-audit (scripts/round-evidence-audit.mjs @ 03c1b4d9: six defect classes derived from a round's committed bytes, revision-scoped reads, exit 2 refusals, --selftest 13 cases; base a89f1935 has no instrument, tip carries six class predicates and corpus/evidence/round-23/c1-measurements.json; first working round 23)"
+   ],
+   "report": ".ufo/reports/round-23/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-23-verifier-spotcheck.md@573c99e4885382db38babc3a6fc90e77afeb42a6",
+    "rechecks": "C1 re-derived over committed bytes: git cat-file -e a89f1935:scripts/round-evidence-audit.mjs -> exit 128 (0 classes); six class ids at 03c1b4d:scripts/round-evidence-audit.mjs:39-44; receipt c1-measurements.json records before 0 / after 6 at a89f1935 and later revisions unsmoothed; selftest tally corrected to 13 (grep runFixtureCase - 1 definition). C2 re-measured: git grep -lE '^source: S10[23] ' -- corpus/knowledge -> 0 at a89f1935, 1 at 03c1b4d and c90dffd; SOURCES rows 101/103/103; diff --diff-filter=D empty; sources-census exit 0, 103 rows, 16 W04. Gate not executed by the integrator (PROTOCOL Gate standard); registry row for the auditor absent from SKILL.md, routed. Discernment spot-check 5 agree / 0 disagree on S102/S103 re-fetched with matching bytes and digests plus three rejections re-run."
+   },
+   "commit": "tabi-shokunin@c90dffd3807a68de7ab9c6503273eeddbcd03e2b",
+   "closed_at": "2026-10-25T08:02:35Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch 2026-10-25T04:04:05-03:00 launch attempt=1; complete 2026-10-25T04:41:18-03:00 attempt=1 (one attempt, no silent window). Report authored by tabi-shokunin, landed 04:41:05 as three pre-completion drafts; all 10 cited lane commits ancestors of master; lane ahead=0 at closure, spot-check commit 573c99e pushed under protocol identity. Conformance defects (status-neutral, routed in the spot-check): (1) no registry row for round-evidence-audit in tabi SKILL.md -> gate not graded conformant; (2) 89 uncommitted paths left in the lane (2 modified tracked wave-2 seat reports, 87 untracked incl. 67 empty numeric files at repo root and three .err logs); (3) disclosed M5 scratch over-commit still at the tip (1,034 paths, 25.7 MB; cleanup commit promised in the report never landed); (4) stale self-test tally 12/12 in SCORECARD.md:1139,1151 and the report while the shipped script carries 13 cases; (5) c1-measurements.json before.exit=1 contradicts its own command's exit 128. Carried-open lane disclosures: c4 presence-not-truth, c1 whole-document reads, c3 word-presence, c2/c5 top-level-spec only, lessonSha256 re-encoding, missing object reads as absent, caller-supplied round cap, OWASP stripped-text digest unrecorded. SHONEN: 4 boxes, all [~] author-asserted; promotion remains operator-owned. Nothing installed or upgraded.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
