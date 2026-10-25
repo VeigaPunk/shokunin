@@ -23978,6 +23978,48 @@
    "notes": "Driver: 2026-10-25T17:21:15-03:00 launch mado round=40 pgid=1571576 driver=hyaku-inline attempt=1; 2026-10-25T19:22:57-03:00 complete mado round=40; hyaku-inline attempt=1. Defects, status-neutral: untracked .ufo/waves/round-40/w1.ready.dispatched left in the lane; the report cites MADO_AXIS at fb49621 but only axis-base.txt (rev 9fc511d) is committed; ConnCrossClaim report misrouted (disclosed M40-6); v2 predicates were authored after the wave scored v1 and the delivered tool is the freeze-time reference (freeze 8122293 precedes data 91f0a2b and the counters are unchanged since); v1 C1 counter still scores TARGET_MISSED (clause g), operator rules; C2 counter measures admission wiring, content independently derived here. Routed to lane: commit the tip axis receipt, clear the dispatch marker, commit an independent fresh-nonce counter re-run. SHONEN: all four boxes remain [~]; not checkable by a non-author yet (SKILL.md tables, PROVINCE rows and bleed check not re-measured).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 72,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kotoba",
+   "lane_round": 72,
+   "lanes": {
+    "kotoba": "ok"
+   },
+   "lane_rounds": {
+    "kotoba": 72
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "improved",
+    "freshness": "improved",
+    "consistency": "unchanged (C3 fails as declared: tip battery 4 of 6 twice, instrument-size guard red, M127 sandbox-vs-hand discrepancy unresolved; no harm shown)",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-72/kotoba.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_sonnet session, non-author)",
+    "spotcheck": "kotoba-shokunin/corpus/lessons/round-72-verifier-spotcheck.md@072048fa8e8a52c707d25f7079772fa317244eb7",
+    "rechecks": "C1 re-measured in plain bytes: 4 author-rule box citations in SKILL.md 0@c69711e -> 4@e8207c6 (lines 277,281,285,289), checklist boxes 15->19, whole-file boxes 41->45, SOURCES rows 139->142; counter receipts (0 of 4 -> 4 of 4, self-test 50/0) evidence-verified only. C2 re-measured: host opencode sha256 ca9b3ee2..., v2.1.4, strings dump sha 020fb253... equals ledger, anchors CONTEXT.md 0 / disableClaudeCodePrompt 0 hits; counter receipts (exit 2 -> pins 3/3 surfaces 7/7 ledger 3/3, self-test 16/0) evidence-verified. C3 MISS: receipts tip-tip_battery.txt and run2 read 4 of 6 exit 1, instrument-size guard red (76>40); registry rows 51->56 re-measured; SCORECARD +2 lines append-only, no harm. Spot-check: S214/S215/S216 admit agree (quotes verbatim live and in sha-matching snapshots), rung entry admit agree, Letta S261 reject agree (page names five agents, not six); census validate exit 0. Gates not executed."
+   },
+   "commit": "kotoba-shokunin@e8207c64bda07b23964eabface7a917b2200bc8d",
+   "closed_at": "2026-10-25T22:40:00Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest: 2026-10-25T17:43:21-03:00 launch kotoba round=72 pgid=2089970 driver=hyaku-inline attempt=1; 2026-10-25T19:31:41-03:00 complete kotoba round=72; hyaku-inline attempt=1. Status ok (real report; not a marker). Admitted=false: C1 and C2 verify, C3 not verified (declared miss, 4 of 6). No axis harmed. Conformance defects (status-neutral): wave 2 (falsify) never dispatched, 53 seats vs 64 floor, reviewer/critic/mutation 0; report cites receipt names tip-check_tip_battery.txt / tip-check_substrate_repin_v2.txt that do not exist (actual tip-tip_battery*.txt, tip-substrate_repin_v2.txt); r72 search-log entry inserted mid-sentence into the round-64 placement note in corpus/SOURCES.md:209-215 (pre-existing stray Leads fragment worsened); admitted entry resident-index-and-rungs-round72.md:45 has garbled bullet 'format's,.'. Routed to r73: resolve M127 and C3 counter (instrument-size cap honesty), dispatch falsify wave, append SOURCES.md correction, fix entry bullet, correct receipt names by erratum. SHONEN boxes all [~]; none fully checkable by a non-author; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
