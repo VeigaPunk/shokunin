@@ -254,10 +254,10 @@ Run at round start and at round end; **both exit 0**. Outputs: `corpus/evidence/
   code element, an unattributed "applies ABC to itself", an incomplete canary count, and a
   post-publication claim S090 does not make) — all four repaired in `8a25d9e3`. The calibration seat
   (`R29a2rCalibration`) was still running at filing time and is **not** claimed as passed; the L1
-  re-derived its object itself: all 13 quoted spans in the entry were re-tested against the fetched
-  bytes on `15156173` — 7 locate in the cited source bytes, 6 are prose or identifiers the entry names
-  rather than quotes (three phrases, one URL, two cells it attributes to the staging package), and the
-  longest span is 18 words. The counts in this report were re-measured on `15156173`.
+  re-derived its object itself: all 11 quoted spans in the entry were re-tested against the fetched
+  bytes on `15156173` — 7 locate in the cited source bytes, 4 are prose or identifiers the entry names
+  rather than quotes (three phrases and one URL), and the longest span is 18 words. The counts in this
+  report were re-measured on `15156173`.
 - **Honest limits:** this is an author-side measurement; independent non-author closure decides
   admission. Two claim-term deviations are disclosed above for that ruling.
 
