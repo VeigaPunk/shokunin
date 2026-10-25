@@ -64,3 +64,14 @@ Then repeat from the lowest next-round.
   completions wake it too. Live async job cap is 100 (config 450 not applied): a capacity queue
   spawns pending seats as slots free (reserve 3). kengaku build partially spawned 25/36 at the cap.
 - Operator interjection: "stop with the m_glm53 roles assignment, use m_flash" — critic/revenger/sentinel → @m_flash (config.yml). Seats already spawned keep their captured route.
+- ~14:50 -03 fleet-root strays (tabi r27 wave, per its SentScope seat): empty `git init` dir `r2/` (no files, no commits) removed by
+  orchestrator; a one-blank-line append to fleet LOG.md (seat stray) reverted to HEAD. Tabi's own misroot (w1/SimplifyEvidence.md
+  under fleet .ufo/waves/round-27/) left for the tabi L1's misroot sweep.
+- souji r26 admitted (rounds[687]); souji r27 L1 spawned inline (SoujiR27) — it twice stalled thinking the orchestrator supplies
+  claims/ready files; told it owns claims+spec+ready. L1 prompt now states "YOU write the .ready file".
+- kengaku r33 L1 died on a provider policy refusal at the openai-codex/gpt-6-luna fallback hop of @m_kfc; resumed by message.
+- ~16:15 -03 routing: m_kfc exhausted (kimi 429, devin/swe-2 rate-limited, chain falls to gpt-6-luna which policy-refuses -> L1 deaths
+  kengaku r33, tabi r28). Operator: "use m_opus (high) on planner, task, main" -> task/main/planner = @m_opus
+  (anthropic/claude-opus-5-5:high). Operator "more concurrency": 8 concurrent lanes (block 1 + block 2 kaidoku/tsukuroi/mado/kama);
+  live cap observed 100 jobs; dispatcher CAP raised to 400 to test.
+- results so far: souji r26 admitted, r27 rejected; kasegi r28/r29/r30 admitted; kengaku r33 admitted; tabi r27 rejected-harmed.

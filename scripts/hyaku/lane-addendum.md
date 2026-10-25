@@ -12,7 +12,7 @@ m_antigravity as the connector"; "stop with the m_glm53 roles assignment, use m_
 - **Round size: 64–100 seats in total, every round** (floor 64 is the directive, ceiling 100). Shape:
   one v2 wave of 64–100, or two v1 waves (32–64 each) summing to 64–100. Residual calls count
   toward the 100. The capacity rule's "size near the band floor" means 64 this run.
-- **Run-7 routing** (global role map; never pass `model`): task/main/planner `@m_kfc`;
+- **Run-7 routing** (global role map; never pass `model`): task/main/planner `@m_opus` (operator, later in run: "use m_opus (high) on planner, task, main"; was `@m_kfc`);
   reviewer/mutation-tester/security-reviewer `@m_zfl`; connector `@m_antigravity`;
   scout/distiller/seance `@m_mim`; executor/labrat/scribe/sonic/simplifier/critic/revenger/sentinel
   `@m_flash` (m_glm53 dropped by the operator). Every wave carries a few connector seats
