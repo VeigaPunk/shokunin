@@ -2,7 +2,7 @@
 
 **Status: `rejected-honest-stop`.** One new claim, frozen before its data, met its six frozen clauses and then stopped: an unregistered structure-blind class reached the green target without decoding a record. No capability, no score, no credit. The previous attempt of round 34 (report `27322359`, inherited through `f432c8e3`) stays intact and is not rewritten; this report supersedes it as the round's record and cites it where it stands.
 
-Lane tip at filing: `dc7384ec512e043f62612d3c0c8de878102d0df2` (a late seat report revision was landed after the seal read; no frozen byte, claim or score moved) (this report cites no later lane commit). Base `ec3125ad3d130d92f888a4128dfaa2982f36fff7`; freeze `c79bbe7b0959132b9873ff3431cf5eb313b58b33`; stop `cd75b92e583735729546b0ea3b250f2df6d0652a`; docs `66b84027`; stop bindings `5a0435ff`.
+Lane tip at filing: `debc8dad18c0e962626b9165df6bd77b4302daee`, worktree clean (two late seat report revisions landed after the seal read; no frozen byte, claim or score moved) (this report cites no later lane commit). Base `ec3125ad3d130d92f888a4128dfaa2982f36fff7`; freeze `c79bbe7b0959132b9873ff3431cf5eb313b58b33`; stop `cd75b92e583735729546b0ea3b250f2df6d0652a`; docs `66b84027`; stop bindings `5a0435ff`.
 
 ## Work performed
 
@@ -57,8 +57,8 @@ Every wave-2 seat attacked the stop, its evidence, the six record defects or the
 | `c05984e7` | QUALITY row-range citations aligned to 68-74 in SKILL and the entry; last wave-1 report | `w2/ANoCredit.md` |
 | `06afa9e7` | addendum N1: the stop's causal sentence corrected (fixture design, not the registration gap) plus the validated derangement/payload-distinctness correction | `w2/AStopNarrative.md` |
 | `6ae73906` | addendum N2: the receipt is unbound (a stub reproduces it byte-identically) and a bound-receipt producer is validated for the next round | `w1/CritControlAdequacy.md`, `w2/ARerunAll.md` |
-| `dc7384ec` | last seat report revision | — |
-| fleet report commit | this file | cites `dc7384ec` |
+| `dc7384ec`, `debc8dad` | late seat report revisions only | — |
+| fleet report commit | this file | cites `debc8dad` |
 
 Wave evidence: `.ufo/waves/round-34/r34b/` (specs, payloads, seat maps, prompts, w1, w2, receipts, controls, assimilation, census start/end).
 
