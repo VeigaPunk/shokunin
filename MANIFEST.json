@@ -23937,6 +23937,47 @@
    "notes": "Dispatch digest: 2026-10-25T17:31:09-03:00 launch kumitate round=63 pgid=1901498 driver=hyaku-inline attempt=1; 2026-10-25T19:19:33-03:00 complete kumitate round=63; hyaku-inline attempt=1. Conformance clean (report by kumitate-shokunin, SHONEN 4 boxes, 9 commits ancestors of master, ahead=0, plan b38a2065 committed before first .ready). Defects, status-neutral, routed: D1 readme-map row for the spot-check file (R56-V3 recurrence); D2 commit selftest transcript (69/69 is prose only); D3 report says one w2 name collision, there are three (-2 stems); D4 proxy K_members 52->49 masks four missing kimi-root members (kimi-census still MEMBER_MISSING x4); D5 carried Audit19 residuals, Q51 hash 9237a72, six W04 warnings, counter holes (stub tool reads HELD, attacker-hosted row passes T5); D6 m_flash share 44.3% strict (<50%) and seats 79 vs plan 80-100. Coverage is a retired axis (score cannot move); counter T63 measures evidence chain, graded improved on real new frontier ground. SHONEN boxes 2-3 look checkable by a non-author; no [x] written; promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 40,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 40,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 40
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "improved",
+    "navigation": "unchanged",
+    "calibration": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "live option-table merge: tools/mado-options.py --live (hyprctl getoption -j, allowlisted keys, native-form conversions, angle inheritance)"
+   ],
+   "report": ".ufo/reports/round-40/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_sonnet session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-40-verifier-spotcheck.md@ab2bfaab661c846d1de9d58c01651cd156a13949",
+    "rechecks": "Re-measured in a clean clone at fb49621: tool sha256 63b5ebd9...ef13 and selftest 211/211; v2 C1 counter 0/19 at base -> 19/19 TARGET_MET at 91f0a2b with a fresh nonce; v2 C2 counter 0/1 -> 1/1; live tool run on the running Hyprland gave 70 rows, 62 agreement / 8 agreement*; C2 form counts 264/34/28/21/6 and set 70/283 derived from the raw census and from MS<> counts in the S215 blob; SOURCES rows 214->219; knowledge entries 56->58 all indexed; sources-census validate mado ok exit 0. Evidence-verified, not executed: control receipts CTL_C1V2 57/57 and CTL_C2V2 33/33, MADO_SELFTEST 460/460, MADO_VERIFY CLEAN, base MADO_AXIS. Spot-check: S280/S281, S158 and S282 admits agree (sha256 and quotes re-opened); K2 as-written reject agrees (rotating updated_at now 2026-10-25T22:22:49Z, hypridle running, seven producers); K1 and S224 not re-opened (unprovable)."
+   },
+   "commit": "mado-shokunin@fb49621074518333d855a2664ba5884c381079ad",
+   "closed_at": "2026-10-25T22:40:00Z",
+   "campaign": "hyaku",
+   "notes": "Driver: 2026-10-25T17:21:15-03:00 launch mado round=40 pgid=1571576 driver=hyaku-inline attempt=1; 2026-10-25T19:22:57-03:00 complete mado round=40; hyaku-inline attempt=1. Defects, status-neutral: untracked .ufo/waves/round-40/w1.ready.dispatched left in the lane; the report cites MADO_AXIS at fb49621 but only axis-base.txt (rev 9fc511d) is committed; ConnCrossClaim report misrouted (disclosed M40-6); v2 predicates were authored after the wave scored v1 and the delivered tool is the freeze-time reference (freeze 8122293 precedes data 91f0a2b and the counters are unchanged since); v1 C1 counter still scores TARGET_MISSED (clause g), operator rules; C2 counter measures admission wiring, content independently derived here. Routed to lane: commit the tip axis receipt, clear the dispatch marker, commit an independent fresh-nonce counter re-run. SHONEN: all four boxes remain [~]; not checkable by a non-author yet (SKILL.md tables, PROVINCE rows and bleed check not re-measured).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
