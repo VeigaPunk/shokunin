@@ -21763,6 +21763,47 @@
    "notes": "dispatch=2026-10-25T06:19:59-03:00 launch chousa round=45 pgid=1928892 driver=hyaku-inline attempt=1; complete=2026-10-25T07:01:59-03:00 complete chousa round=45; hyaku-inline attempt=1. Routed D7 C3 inference-presence blind spot and D8 C2 path-membership/entry-point blind spot to chousa next round. Three left-named inherited modified files remain outside round-45 work. SHONEN boxes appear fully checkable; promotion remains operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 70,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kotodama",
+   "lane_round": 70,
+   "lanes": {
+    "kotodama": "ok"
+   },
+   "lane_rounds": {
+    "kotodama": 70
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "improved"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [
+    "36-counter gate registry in SKILL.md: one row per reports/round-*/accept-*.py, registry set-equal to the enumerated counter files",
+    "settlement checker hardened: unique multi-path used-by counting, MALFORMED-ROW diagnostics, malformed-target guard (selftest 7/7 -> 10/10, accept-o regression 7/7)"
+   ],
+   "report": ".ufo/reports/round-70/kotodama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "kotodama-shokunin/corpus/lessons/round-70-verifier-spotcheck.md@b94a543c70f40dba7e49fff96d05bfb8bbd8c678",
+    "rechecks": "All three claims re-derived by the integrator in a clone materialized at 453676a2 (not read from lane receipts). O: SKILL.md registry rows 0->36 == 36 counter files (path set equal), accept-d selftest exit 1 SELFTEST 1/2 -> exit 0 SELFTEST 2/2, data predicate ACCEPT-D-69 PASS 8/8. Ca: corrections-r69.md 10 unique D-ids, 0 duplicates, no empty class/surface/landing cell; SCORECARD correction row at :1383 names the superseded round-69 calibration improved row. D: checker selftest 7/7 -> 10/10 with the three named cases PASS; accept-o regression ACCEPT-O-69 PASS 7/7. Spot-check: admit S860 agreed (quote verbatim at tools/check-supersession-settlement.py:20-21, scope matches the hardened behavior); rejects S857/S858 agreed (live Britannica URL: HTTP 403, 5,595 bytes, 'Just a moment...'; Tuareg page already rowed as S701). Census exit 0, W04 stable at 28. No axis harmed; diffs are additions plus one disclosed in-place SCORECARD reword."
+   },
+   "commit": "kotodama-shokunin@453676a2363c97e158cb112c9588906564d95a21",
+   "closed_at": "2026-10-25T10:25:10Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-10-25T06:59:32-03:00 launch kotodama round=70 pgid=3242996 driver=hyaku-inline attempt=1; 2026-10-25T07:20:45-03:00 complete kotodama round=70; hyaku-inline attempt=1. SWARM CONFORMANCE DEFECT (orchestrator-side, status-neutral): 0 of the 33 planned wave-1 seats ran - the single batched dispatch was refused six times at the shared host job cap (Background job limit reached (100)), so the MISSION.md L2 floor (>=8 in one batched call) and the operator's swarm directive went unmet and NO falsification wave attacked the claims; the integrator's own re-measurement is therefore the only independent check. Step-1 conformance otherwise clean: report committed by the lane identity kotodama-shokunin at 779e29b (23s after the cited lane HEAD), SHONEN heading with 4 lines matching the 4 boxes, every cited hash exists and is an ancestor of main, lane repo clean and ahead=0 (lane HEAD now b94a543c after the verifier commit), prompt carried the full contract and the L2 route map matches MISSION.md. Routed to the lane for round 71 (durable queue): V70-1 receipts dropped the QUALITY 17/19 header block (no counter sha256 / stamped / evaluated / measured revision / tree; header names 6cb51a4+landed edits, a revision whose bytes lack the after-state) and the counters carry no --lands leg; V70-2 S860 verify-at pairs hardened blob 6a314e9c with revision 6cb51a4, which holds blob 1ef2e965 (MALFORMED-ROW absent there) - repoint to acc2d614; V70-3 lesson Gate quote is 27 words under a <=25-word header and the report calls it 25; V70-4 report trends overstate - expansion improved contradicts CORPUS.md criterion 4 (expansion is knowledge, not rows) and discernment improved rests on record repair, closure grades both unchanged; V70-5 Gate records no reject and no explicit 'rejected this round: none' statement, so no reject decision exists for the outside spot-check; V70-6 accept-d --selftest depends on git object 793f797:SKILL.md and reports red (SELFTEST 1/2, exit 1) instead of a declared could-not-evaluate on an exported tree with no .git. SHONEN: all four boxes stay [~] with resolvable pointers and look fully checkable by a non-author - promotion review is operator-owned and ready. No installs or updates were made.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
