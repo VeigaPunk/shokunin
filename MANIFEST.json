@@ -21432,6 +21432,47 @@
    "notes": "dispatch 2026-10-25T05:03:04-03:00 launch souji round=23 pgid=4017492 driver=hyaku-inline attempt=1; complete 2026-10-25T06:04:05-03:00 complete souji round=23; spot-check notes untracked operator-sweep census excluded; map table/prose reconciliation routed next round; SHONEN checkable, promotion operator-owned",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 44,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 44,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 44
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "unprovable-but-better"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-44/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-44-verifier-spotcheck.md@b1d7269f4f263dc954f31d97208aee4b56055618",
+    "rechecks": "C1/C2/C3 counters re-measured at 554ff416; SOURCES census validated; C2 gate evidence receipts inspected; S471 and scope-reject checked, S472 source fetch unavailable."
+   },
+   "commit": "mori-shokunin@554ff416459c92f0dea9762f834a556df2990187",
+   "closed_at": "2026-10-25T00:00:00Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete: 2026-10-25T04:27:39-03:00 launch mori round=44 pgid=3471430 driver=hyaku-inline attempt=1; 2026-10-25T06:05:35-03:00 complete mori round=44; hyaku-inline attempt=1. Defects routed: S472 source could not be independently reopened (ECONNRESET); C3 replay needs explicit census outside this host; SHONEN remains unsigned. Three claims verified, no owned axis harmed. SHONEN evidence is substantially checkable, but promotion remains operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
