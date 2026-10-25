@@ -2,7 +2,7 @@
 
 **Status: `rejected-honest-stop`.** One new claim, frozen before its data, met its six frozen clauses and then stopped: an unregistered structure-blind class reached the green target without decoding a record. No capability, no score, no credit. The previous attempt of round 34 (report `27322359`, inherited through `f432c8e3`) stays intact and is not rewritten; this report supersedes it as the round's record and cites it where it stands.
 
-Lane tip at filing: `b62b47670a4116e1bf93c281a03644eedaa55933` (this report cites no later lane commit). Base `ec3125ad3d130d92f888a4128dfaa2982f36fff7`; freeze `c79bbe7b0959132b9873ff3431cf5eb313b58b33`; stop `cd75b92e583735729546b0ea3b250f2df6d0652a`; docs `66b84027`; stop bindings `5a0435ff`.
+Lane tip at filing: `1675a8d84da23885a45b619bd08e650d0cef809f` (this report cites no later lane commit). Base `ec3125ad3d130d92f888a4128dfaa2982f36fff7`; freeze `c79bbe7b0959132b9873ff3431cf5eb313b58b33`; stop `cd75b92e583735729546b0ea3b250f2df6d0652a`; docs `66b84027`; stop bindings `5a0435ff`.
 
 ## Work performed
 
@@ -48,7 +48,8 @@ Every wave-2 seat attacked the stop, its evidence, the six record defects or the
 | `5a0435ff` | stop addendum, nameset and payload receipts, enforced pin receipt, end census, QUALITY corrections | lesson M34-12, M34-13 wording fixes |
 | `417a8211` | S105 and QUALITY 73 restored after two anchor-replacement mistakes, tracked S106 capture, the repair's own defeats, wave-2 reports | lesson M34-12, M34-13; QUALITY 74 |
 | `b62b4767` | SCORECARD criteria count corrected and the final census receipt confirmed identical to the landed one | this report |
-| fleet report commit | this file | cites `b62b4767` |
+| `1675a8d8` | addendum extended under attack: `predicate_status` "satisfied as written (registered scope)", the producer's recorded dissent, limits X1-X5 and the corrected repair route; LOG blindness wording fixed; last wave reports | `w2/AStopJustified.md`, `w2/ACounterexample2.md` |
+| fleet report commit | this file | cites `1675a8d8` |
 
 Wave evidence: `.ufo/waves/round-34/r34b/` (specs, payloads, seat maps, prompts, w1, w2, receipts, controls, assimilation, census start/end).
 
