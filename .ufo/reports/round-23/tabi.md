@@ -9,7 +9,8 @@ Lane repo `/home/vgpnk/Projects/shokunin/tabi-shokunin`. Baseline
 `af00b59a4728be30757b62b6222756d710a1261e`; late wave-2 fail-open closures
 `2433ed25c44eabcdd24d1a5a10ab692668bb023e`; all 44 wave-2 reports
 `e059a8f1878424261c6d1e3d025a9139cadfb143`; final predicate/test
-`b905efb5abd148dc73c7dece477c834eeab9a26f` (**lane tip, pushed, ahead=0**); round shape:
+`b905efb5abd148dc73c7dece477c834eeab9a26f`; post-landing LOG binding
+`c90dffd3807a68de7ab9c6503273eeddbcd03e2b` (**lane tip, pushed, ahead=0**); round shape:
 **two v1 waves, 44 + 44 = 88 seats**.
 
 ## Work performed
@@ -66,6 +67,11 @@ Work items, each with its pointer:
 | Wave evidence under `.ufo/waves/round-23/` (specs, dispatches, registries, records, spawn receipts, W1 reports, scratch) | `LOG.md` §Round23 | `03c1b4d` |
 | Wave-2 corrections: c1 receipt shape, c2 spawn bound + unaccounted receipt, c4 attempt joining (top-level receipts only), c5 absent-registry + identity/cardinality arms, c2 wave specs restricted to the round directory's top level, the child environment switched from a denylist to an allowlist (a `GIT_CONFIG_COUNT`/`GIT_CONFIG_PARAMETERS` injection executed a command through `core.fsmonitor` — `.ufo/waves/round-23/w2/W2Secrets.md` §SEC-1), `--report` contained to the fleet reports tree; corrected lesson/entry/README text; W2 reports; W2 evidence | `LOG.md` §Round23 (entry lands in `03c1b4d`) | `7ac9fffa5303e27aac3e092eb1a4aad2802c24bd` |
 | M4 control restatement, counting commands for the spot-check counts, self-audit receipt | `LOG.md` §Round23 (entry lands in `03c1b4d`) | `dfae5cdb09ee3384c7f3edd4474d8a1ad22a6843` |
+| `measure.mjs` (the receipt generator) — carried by `7ac9fff`, not by the checkpoint | `LOG.md` §Round23 and §Round23 — post-landing corrections (entry lands in this commit) | `7ac9fffa5303e27aac3e092eb1a4aad2802c24bd` |
+| Late fail-open closures (c6 unresolvable commit, c2 non-blob spec), SCORECARD corrections, last late reports | `LOG.md` §Round23 — post-landing corrections; LOG entry lands in `c90dffd` | `2433ed25c44eabcdd24d1a5a10ab692668bb023e` |
+| c2 round-total red arm (13 selftest cases), c6 escape resolution, entry/claim wording | `LOG.md` §Round23 — post-landing corrections; LOG entry lands in `c90dffd` | `43e9bb575a015ac8753348f2a9ad920ed0757796` |
+| All 44 wave-2 seat reports landed | `LOG.md` §Round23 — post-landing corrections; LOG entry lands in `c90dffd` | `e059a8f1878424261c6d1e3d025a9139cadfb143` |
+| c1 markdown-emphasis citation, Gate self-audit command, corrected scratch count | `LOG.md` §Round23 — post-landing corrections (entry lands in `c90dffd`) | `b905efb5abd148dc73c7dece477c834eeab9a26f` |
 | Disposition (SCORECARD round-23 executed block + capability row) and this report | `LOG.md` §Round23; LOG entry lands in `03c1b4d` | `dfae5cd` carries the disposition; this report lands after it on the fleet repo |
 
 ## Before → after measurements
