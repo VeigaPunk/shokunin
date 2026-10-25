@@ -23398,6 +23398,47 @@
    "notes": "dispatch/complete digest: 2026-10-25T15:41:22-03:00 launch kengaku round=34 pgid=3080568 driver=hyaku-inline attempt=1; 2026-10-25T16:13:37-03:00 complete kengaku round=34; hyaku-inline attempt=1. Step-1: report 1eb806aa + appended correction 6982cbfb by kengaku-shokunin; SHONEN heading 4x [~]; cited lane commits adaf25df/0b3c627d/58a19f37 exist and are ancestors of master; jj-lane state ahead=0 behind=0; prompt sections 1-5 match template (placeholders only) + hyaku addendum 6. Both claims honest stops (C1 coverage 7->7, C2 calibration 8->8); no exploratory claim. Spot-check: Gate had zero admits (none samplable); agree C1, C2, S105 rejects; disagree S091 refusal reason: staged NEC quote present verbatim in the lane's own committed nec-s091-reopen.html and live page (refusal rested on the first 418-byte fetch); outcome still holds (no citing entry). Defects routed to kengaku: D1 1423 untracked leftovers incl. plans/round34_{c1_verify,defects,mutate}.py; D2 committed .ufo/waves/round-34/mut-entries-scratch = 106323 blobs/1650.6 MiB of recursive repo mirrors; D3 tb2-eval/SHA256SUMS omits test_outputs.py/test.sh contrary to R34CaptureTB2Eval.md; D4 SCORECARD r34 C2 row misattributes red selftest to counter draft; D5 S091 reason false, needs Mistakes row + erratum. SHONEN all [~] author-asserted; promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 28,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 28,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 28
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "unprovable",
+    "calibration": "unprovable",
+    "operability": "unprovable",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-28/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-28-verifier-spotcheck.md@856fa9e1202179f5cfbd28c1f0efdd4eb1f426bb",
+    "rechecks": "Gates not executed (Gate standard). Evidence-verified: no committed post-edit self-test/counter output for C1 or C2. Re-measured: CASES census s106 5->7, selfassessment 17->20; S106 measured_rev 0c666ad bytes sha256 9b93fe64 = receipt at 0c666ad and b4128c4, anchor :187 unique; LOG.md:221 citing paragraphs (:1931, :1970) name no script so new matcher should not clear it [inference]. Static read: both new s106 controls cannot pass (runner :301 field===false on valid case; mismatch case never commits receipt -> exit 2). Spot-check admit S106 (live Gitiles decoded sha matches) agree, reject S125 (rfc6265bis-13 cookie draft, 0 rate-limit hits) agree; census exit 0, 107 rows, 16 W04."
+   },
+   "commit": "tabi-shokunin@856fa9e1202179f5cfbd28c1f0efdd4eb1f426bb",
+   "closed_at": "2026-10-25T19:47:31Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-25T15:52:38-03:00 launch tabi round=28 pgid=3164201 driver=hyaku-inline attempt=1; 2026-10-25T16:39:22-03:00 complete tabi round=28; hyaku-inline attempt=1. Round range eb23c0b8->b4128c42 (one lane commit); report committed 32d6c304 by tabi-shokunin after lane commit; SHONEN 4x[~]; state ahead=0, porcelain clean; prompt sections 1-5 match template (placeholders only). Lane honestly declared C1 depth and C2 calibration unprovable (post-edit self-tests not run); no score delta. Defects (status-neutral): w1/ holds 62 reports for 64 results (Mut04, Mut06 missing; Mut06 inline output unfinished); census After block S068 URL not byte-reproducible. Routed to tabi next round: (1) fix s106 self-test controls (positive-case field inversion at runner :301; mismatch case never commits receipt) with red-before; (2) commit post-edit self-test and --rev evidence for both gates and update SKILL registry tallies; (3) citesLine must bind cited document to f.doc per QUALITY 70, add cross-document red case; (4) wave report accounting for Mut04/Mut06; (5) byte-exact census capture. SHONEN boxes 1,2,4 look non-author-checkable; box 3 needs a non-author executor run (operator-owned promotion).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
