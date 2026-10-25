@@ -22183,6 +22183,48 @@
    "notes": "Dispatch/complete digest: 2026-10-25T08:14:54-03:00 launch kotodama round=71 pgid=3895906 driver=hyaku-inline attempt=1; 2026-10-25T08:50:12-03:00 complete kotodama round=71; hyaku-inline attempt=1. Step-1: report committed by kotodama-shokunin (5 commits), SHONEN 4x[~], 12 cited lane hashes all ancestors of main, ahead=0, prompt carries the template contract. Defects (status-neutral, routed in the spot-check section 6): K71-1 uncommitted round work in the lane (QUALITY.md criterion 20 that the report/lesson call 'added'; at HEAD grep '^20\\. ' = 0; plus 2 modified and 5 untracked w2 seat files); K71-2 report did not land last (cites tip ccadb598; 17 later lane commits incl. corpus edits, HEAD 99e3d63a never named); K71-3 filed report rewritten in place at bc418b99, 98873dfd, 8380f703 (no appended erratum); K71-4 append-only LOG.md round-71 entry edited in place at 1721fbd and 99e3d63; K71-5 post-landing id-map correction S861->S992 => S874->S1005 was a rewrite, not an append: id-renumber-map.json overwritten (27db4ce, 99e3d63), LOG.md:4274 and lesson :83 edited in place, and the fleet report still cites S861->S992 at :57/:61 (new map itself correct: next_free S874, no registry id >= S874); K71-6 quarantine tally is 10/7/4 in the table (57e0a72) but 10/6/5 in the report, LOG and lesson; wave-2 is 40 seats (spec.json) but LOG/lesson say 41/78; K71-7 measures-ca.txt header pairs counter sha 1ce25fb9 with stamp 64da9e14 (counter there = f706aacd); K71-8 Gate rejects ROH/DNB/Princeton/EFDSS carry no URLs, and the Capoeira reject reason is falsified, so it must become a lesson plus a grounded QUALITY criterion (probe canonical slug in CDX; record reject URLs). Carried lane routes: R71-M6, R71-M8, R71-M14, vacuous accept-c legs. SHONEN: no box fully checkable by a non-author yet; no promotion recommended. Tool installs: none.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 70,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kotoba",
+   "lane_round": 70,
+   "lanes": {
+    "kotoba": "ok"
+   },
+   "lane_rounds": {
+    "kotoba": 70
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "unchanged (C2 met on a hollow counter - junk-satisfiable, not a verified measurement)",
+    "consistency": "unchanged (C1 fails as declared: 9 of 10; K69-11 half-closed, LOG.md:2678 red)",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-70/kotoba.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "kotoba-shokunin/corpus/lessons/round-70-verifier-spotcheck.md@2b79115cccdbe37b760e7f59b081bcfa62cfb94e",
+    "rechecks": "C1 confirmed miss as declared (receipt 9 of 10 exit 1 at 4dba3bc; K69-11 half-closed LOG.md:2678 red after withdrawal; self-test 0/17). C2 confirmed hollow (CritC2Control W12: 8 of 8 from pre-data a647fa7 with +13 junk lines; receipt itself carries met-on-a-hollow-counter caveat; self-test 0/13). Content re-derived over committed bytes: ten r69 repairs present except K69-11; entry + SOURCES S209-S211 + SKILL.md:241 + coverage-map row all present, ground uncovered at base. No-harm: SCORECARD +29/-0 append-only, PROVINCE byte-identical, checklist 10/1 red narrowed to :2678, integrity 6/9->9/9, registry 51/51, census exit 0. Spot-check: S209 admit agree (quote verbatim live), S301 reject agree (restates S209; flip correct), english-leads reject agree (OpenAI page live with should_trigger protocol). Step-1 all pass: report by lane identity, cited hashes ancestors of master, ahead=0, porcelain clean, prompt embeds template contract, watchdog digest matches."
+   },
+   "commit": "kotoba-shokunin@d1e9c93b664cf4e4ad6392711707254ddb8f3e6a",
+   "closed_at": "2026-10-25T12:13:31Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest: 2026-10-25T08:32:57-03:00 launch kotoba round=70 pgid=4135592 driver=hyaku-inline attempt=1; 2026-10-25T09:10:05-03:00 complete kotoba round=70; hyaku-inline attempt=1. Status ok (real report; not a marker). Admitted=false: C1 fails as declared (9 of 10, K69-11 half-closed), C2 not verified (hollow counter, W12 junk world). No step-1 conformance defects. Routed to r71: successor C2 counter rejecting W12 (fact-cell/rendered/polarity conjuncts), C1 presence-floor holes (RevC1Counter HIGH-1/2, MEDIUM-1..6), K69-11 LOG.md:2678 absence disposition, S209/S210 upstream-revision anchors, control worlds as committed bundles. SHONEN boxes all [~]; three of four carry mechanically checkable evidence - promotion remains operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
