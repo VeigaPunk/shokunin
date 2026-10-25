@@ -22494,6 +22494,45 @@
     "date": "2026-10-25",
     "entry": 671
    }
+  },
+  {
+   "round": 26,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 26,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 26
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "coverage": "improved",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-26/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-26-verifier-spotcheck.md@744a0d87e04445c3525c861194c0792e0d5ed39c",
+    "rechecks": "C1(a-d)/C2 counters re-derived over committed bytes at a04cc6c vs b76676e (a=1, b=1, c=0, frontier 10->11, S041-citing 0->2, census exit 0, harness 14/14, claims.json sha 343e568e frozen+equal); S041 URL re-opened HTTP 200, snapshot sha e18acbf9 matches manifest, 7 pinned quotes verbatim at pinned lines; reject evidence re-opened (F20 absent, four S040 expedite bullets); gate evidence verified from committed receipts (selftest 15/0/0 at landed digest, live audit 39/39) without executing the gate"
+   },
+   "commit": "kasegi-shokunin@a04cc6c103c61c3d75465e0ec374a7af3dcf3601",
+   "closed_at": "2026-10-25T12:58:19Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-10-25T09:22:36-03:00 launch kasegi round=26 pgid=1360699 driver=hyaku-inline attempt=1; complete 2026-10-25T09:56:04-03:00 hyaku-inline attempt=1. Defects (status-neutral, routed to lane next round): (1) fleet report filed only after an orchestrator prompt (L1 first returned without it; attribution correct, ordering not); (2) wave-1 build had no reviewer seat (critic x3 present; reviewers only in wave 2); (3) lesson ## Gate rows lack inline <=25-word quotes (quote record lives in manifest/entries); (4) note: stale mid-wave selftest receipt artifact shows lines=13 total=15 while regenerated index claims 15/0/0. SHONEN boxes are [~] asserted by author; no non-author verifier checked boxes, so promotion remains operator-owned. Round shape: wave1 35 seats (5 lost to 429 rate-limit at spawn, recovery recorded), wave2 36 seats; total 71 <=128; bands v1 32-64 ok. No tool installs by the lane.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
