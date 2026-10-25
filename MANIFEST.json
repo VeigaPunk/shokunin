@@ -23280,6 +23280,44 @@
    "notes": "dispatch=2026-10-25T13:52:06-03:00 launch tabi round=27 pgid=16364 driver=hyaku-inline attempt=1; complete=2026-10-25T15:49:35-03:00 complete tabi round=27; hyaku-inline attempt=1. Defects: report conformance omissions (opening claim declaration, per-change LOG links, full frontier counts, incomplete wave accounting); C1 false clear; C2 inherited revision/fetch binding absent; C3 claim-text drift and unresolved S114/S140 present-row instruction routed to tabi next round. SHONEN boxes appear non-author-checkable; operator owns any promotion.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 30,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 30,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 30
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:density": "unchanged",
+    "depth:verifiability": "improved",
+    "coverage": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-30/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_kfc session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-30-verifier-spotcheck.md@ecfd949d5a404204bb37f9b3d77f44d0bdd6fe6c",
+    "rechecks": "C1 evidence-verified (committed fixtures, selftest 9/9 tally, mutant flips; lane instruments not executed); C2 re-measured over committed bytes at bc1a1e: SOURCES 47, frontier 14, S046/S047 citations 1, census exit 0, committed harness 17/17 + recheck receipt; no-harm via SCORECARD diff +53/-0, PROVINCE unchanged"
+   },
+   "commit": "kasegi-shokunin@bc1a1e140914e65673daa586232128c964216ceb",
+   "closed_at": "2026-10-25T19:06:13Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest: 2026-10-25T15:43:01-03:00 launch kasegi round=30 pgid=3083380 driver=hyaku-inline attempt=1; 2026-10-25T16:03:22-03:00 complete kasegi round=30; hyaku-inline attempt=1. Defects (status-neutral, routed to round 31): (1) 8 untracked round-30 leftovers in lane repo (wave1/ConnHarm.md, wave1/RevC1Controls.md, wave1/fetch/, wave1/mutant-b1/, dispatcher markers, plan.err/run.err); (2) round-30 LOG.md entry missing (lane-disclosed editor-hash failure; changes landed in 5703f9f/bc1a1e); (3) SCORECARD round-30 'recheck-audit open item exit=1' paragraph stale after final ledger-recheck fix (final audit strict pass=43/43 exit=0); (4) M30-1 B2 fixture isolation gap disclosed and routed (kill clause satisfied; supplementary same-stem fixture proves limb). Operator note: wave1-results.json/WAVE-DONE never arrived; answering-model identities and dead-seat counts unavailable, disclosed; seat reports committed as wave evidence. Round shape: one v2 wave, 64 seats (run-7 band floor), m_flash roles 39/64=60.9%, attack roles 19/64=29.7% verified from committed spec/dispatch.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
