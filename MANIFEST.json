@@ -20780,6 +20780,49 @@
    "notes": "dispatch/complete digest: 2026-10-21T11:47:45-03:00 launch tabi round=22 pgid=3858570 driver=hyaku-inline attempt=1; 2026-10-23T20:41:38-03:00 launch tabi round=22 pgid=3500528 driver=hyaku-inline attempt=1; 2026-10-25T03:23:44-03:00 launch tabi round=22 pgid=1758376 driver=hyaku-inline attempt=1; 2026-10-25T03:40:22-03:00 complete tabi round=22; hyaku-inline attempt=1. Conformance: report landed last by committer date (lane tip 03:38:49 -0300, report 03:39:56 -0300) by the lane identity, SHONEN heading with four [~] lines, all five cited commits exist and are ancestors of master, ahead=0 and no uncommitted round work, prompt §1–§5 byte-identical to templates/round-prompt.md with placeholders rendered. Defects (status-neutral): (1) round total 129 seats = one over the ≤128 cap — W2b was validated at 65 seats with spec maxLanes 65, above policy waveMaxLanes 64; disclosed by the lane; (2) W2 lost whole to the host's 100-job cap (64 validated, 0 spawned, all-64-seat refusal receipts) so W2 contributed no falsification and all falsification is author-side W2b 58/65; (3) refusal arithmetic off by one — report/SCORECARD/lesson say 23, committed receipts are 24 (13 w2- + 11 w2b-, each a whole 64/65-seat refusal); (4) W2b registry carries agentId null for every member and 7 dead seats named without ids, and its attempt numbering restarts at 1 while w2b-spawn-result records attempt 12; (5) stale-lane actuator not graded per attempt — attempt 2 (2026-10-23) has no tabi commit, i.e. silent on the commit test; (6) lesson §Gate carries no spot-check row (this closure supplies the result); (7) Landed-changes row 2 cites 47bfb5f, which carries no LOG.md change (entry landed in fbee618). Disclosure, not defect: the pinned `cases[na-native-submit].post.errors` was revised []→null after the data was observed and after the lane's own W2b seats scored it; disclosed in expectation-revision.json + note errata, value-neutral by my independent two-oracle measurement, and filed as an L0 question at .ufo/l0-questions.md:155 (unruled; the round did not block). Trends: discernment graded improved only because this closure's outside spot-check agrees on one admit (the round-22 oracle note, S101 evidence re-opened) and three refusal rulings (S102 and S106 quotes re-fetched and confirmed absent with controls present, S171 HTTP 404 = unverifiable not fabrication), plus two mined mistakes grounded as QUALITY 59–60; the lane's own pre-closure 'unchanged' was honest and should not be read as a lane-side improvement. SHONEN boxes 1–3 are checkable by a non-author from the cited pointers; box 4 still leans on open contested-scope L0 rulings — promotion remains operator-owned and no [x] was written.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 69,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kotodama",
+   "lane_round": 69,
+   "lanes": {
+    "kotodama": "ok"
+   },
+   "lane_rounds": {
+    "kotodama": 69
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "unchanged",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "tools/check-settlement-fixture.py — lane-shaped supersession-settlement fixture harness with a missing-used-by negative case (claim O2)"
+   ],
+   "report": ".ufo/reports/round-69/kotodama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "kotodama-shokunin/corpus/lessons/round-69-verifier-spotcheck.md@21e6a7f3fb63e717f2021c46a172e396c4759a7c",
+    "rechecks": "O2 evidence-verified: harness absent at base, present at tip (blob 14b73802), receipt PASS 7/7 at 975e8f2 tree b154a919 with counter sha 08c7ea61; Ca2 failed as declared: frozen kill_rule 'any declared pair that is live or uncovered' fires on live_mismatches=4 (receipt PASS 8/8, unannotated=0), frozen block sha c6e8a7f6 identical across 6a98d7d/52b92a6/ef75509; D2 verified: 8/8 at 975e8f2, tip SKILL.md blob 2476a9c = measured tree blob, five repaired statements match tool code, S830 :88 pointer residual ledger-only; registry 782->783, 688/58/37; census exit 0 with 28 W04; 7/7 cited commits ancestors of refs/heads/main; lane pushed ahead=0. Lane counters were not executed (Gate standard, Closure consequence)."
+   },
+   "commit": "kotodama-shokunin@ef75509359d3289307f2eb95ea83d6679dc29bc4",
+   "closed_at": "2026-10-25T06:58:00Z",
+   "campaign": "hyaku",
+   "notes": "watchdog: 2026-10-24T23:04:00-03:00 launch attempt=1; 2026-10-25T03:23:08-03:00 lane-dead-no-report, retry same round; 03:23:36 launch attempt=2; 03:45:27 complete attempt=2. Report committed by kotodama-shokunin identity (84b455f8) after lane tip ef75509; 7/7 cited commits are ancestors; lane pushed ahead=0. Shape: 32-seat v1 wave (21 reports, 11 dead = 9 rate-limit 429 + 2 timeout) + 7-seat residual task call = 39 seats. Defects (status-neutral, routed to r70): 2 uncommitted w2-verify seat edits at closure (mtimes ~45s after the report commit); Landed-changes mis-attribution (harness actually 6a98d7d, corrections-r68.md e86ed3e); 'claims.json unchanged since 6a98d7d' false although the frozen predicate/kill_rule/target fields are byte-identical; SCORECARD:1331 calibration 'improved' contradicts :1360 'FAILED AS DECLARED' with no correction row (the round-68 OVERREACH class recurs); 'Nothing above is rewritten' vs the disclosed ScoutAdj in-place pointer repair; misroot sentence names driver state (.ufo/state/kotodama.report-baseline); no gate-registry rows for accept-{o,ca,d}.py in SKILL.md ## Gates and probes; accept-d --selftest 1/2 exit 1 (R69-M11); guard-proof/note.txt dead pointer R69-M10 -> R69-M13; O2 SCORECARD row links only the attempt-1 receipt. No axis harmed; round not admitted solely because Ca2 fails its own rule. L0 open (non-blocking): frozen kill rule vs predicate conflict. SHONEN boxes stay [~]; box 1 is fully checkable by a non-author and verifies at the tip, box 4 partial; promotion operator-owned. Assimilation CLOSED; S859 package-id collision needs renumbering before any future append. No tool installs.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
