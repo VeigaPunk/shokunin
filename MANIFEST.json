@@ -19995,6 +19995,47 @@
    "notes": "dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-10-24T11:17:51-03:00 launch mori round=42 pgid=162932 driver=hyaku-inline attempt=1; 2026-10-24T20:58:07-03:00 complete mori round=42; hyaku-inline attempt=1. Report 93394cb377c9856a8789607a26ff6b1f8bb0da12 by mori-shokunin, ancestor of fleet HEAD. Measured round tip 2520032569dae65511e7a347181004b530d99174 (pushed, ahead=0, porcelain empty); report cited 62b95e51 and landed before 25200325, which added S235.pdf and removed the recursive scratch mirror. C1 honest stop graded on the frozen counter (not the 28 passes, not the manual no-harm file); counter not amended. C2/C3 repairs of r41 defects re-measured met. MutC2Record and MutC3Manifest kills evidenced in committed transcripts. Wave: 64 dispatched, 18 reports, 46 registry-absent/dead, all agentIds null; missing seats not credited as attack evidence. L0 527fc8dd already filed, not re-filed. Routed: successor C1 measurement; S235 SOURCES sha transposition a30cda99 vs actual a30dca99; SCORECARD declaration still says C1=met; S268 stampPDF flip not closure-confirmed (HTTP 418). SHONEN has no [x]; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 48,
+   "date": "2026-10-24",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 48,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 48
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "freshness": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-48/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (Kimi fresh closure agent, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-48-verifier-spotcheck.md@090ce8f1cfbae2dfb8bfa65dedd2c72861c48166",
+    "rechecks": "C1 re-measured at base 766f4610 (0/4, exit 1) and tip fd917a42 (4/4, exit 0); independent substring check holds for S137/S138/S139/S249 against committed retained bytes; cross-wire none. Pre-fix counter at af7b217 exited 1 (retained text absent); PREDICATE string unchanged. C2 re-measured dead_full_40 0->1, live_full_40 0, live_short 0, exclusions_clean 1; selftest 8/8->9/9; live citation_lint verdict clean exit 0. Census validate exit 0, 12 W04. S137 live HTTP 200 quote present (body drifted). Both rejects re-opened and agreed. Wave 64/27 attack, 0 reports, not credited."
+   },
+   "commit": "kake-shokunin@090ce8f1cfbae2dfb8bfa65dedd2c72861c48166",
+   "closed_at": "2026-10-25T00:21:08Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest: 2026-10-24T19:58:12-03:00 launch kake round=48 pgid=1647007 driver=hyaku-inline attempt=1; 2026-10-24T21:13:06-03:00 complete kake round=48; hyaku-inline attempt=1. Report 124cf646ab96589ff30068b02f28bfc60f834e38 by kake-shokunin, ancestor of fleet HEAD. Round work tip fd917a42567ff3642c0f7930659681141200b419 ancestor of master and pushed (ahead=0) before this spot-check. Prompt carries the contract. Status-neutral leftovers, classified and not swept: porcelain 10 paths = 8 orchestrator-owned .ufo/waves/round-46/residual/ reports (mtimes 03:26-03:37, before launch; continuing r47 durability) plus 9 >1MiB files under assimilation/validate/ that are byte-identical to already-tracked sources and were skipped by directory-track (snapshot.max-new-file-size=1MiB), so a repeat directory commit returns nothing to commit. Routed to the lane: (1) committed validate/corpus/SOURCES.md is byte-identical to the post-append registry, so validate-before-append is not re-derivable — file a pre-append census stdout and SOURCES digest before the next append; (2) C1 R4 still opens worktree retained bytes rather than git show <revision>; the path-join fix did not change the predicate and no seat had scored. Operator-routed: residual reports stay orchestrator-owned; the 64-seat/27-attack wave produced 0 reports and is not claim validation. SHONEN not fully checkable (box 2 open, others [~]); promotion operator-owned. Reviewer is a Kimi fresh closure agent, not an @m_swe session.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
