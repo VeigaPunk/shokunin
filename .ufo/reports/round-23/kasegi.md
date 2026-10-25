@@ -3,7 +3,8 @@
 Lane: `kasegi-shokunin`. Pushed lane hash: **`f6966d4dd25b29687d1d1f831417e9b8d1900760`** (helper `landed`; measured bytes — the lane tip
 later advanced to `5842ef72a545477d6f9729d7a986d62c7c370486` by amended seat reports and to
 `c8ec0a6b2789f32d3dbeb4db04bbb7f7a8279eaf` by post-seal errata: guard instrument outputs,
-definition limits, instrument indexing — none of which changes a measured artifact).
+definition limits, instrument indexing — none of which changes a measured artifact — and finally
+to `d0a3f6a4643fc5f668e95d94fcdbe22830bb8f9a` by the last amended seat report).
 Base `922a4dde90b60b465e2b8b241d1fe363f1f27e98`; lane tip at attempt start
 `1fafde8f11454f3b0b98ab7f2b2e640aaf7f399a` (inherited checkpoint `8bf9807`,
 "policy-paused, unadmitted, no task resumption"). Frozen claims unchanged from
