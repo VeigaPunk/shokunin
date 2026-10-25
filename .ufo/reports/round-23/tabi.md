@@ -6,7 +6,8 @@ Lane repo `/home/vgpnk/Projects/shokunin/tabi-shokunin`. Baseline
 `7ac9fffa5303e27aac3e092eb1a4aad2802c24bd`; disposition commit
 `dfae5cdb09ee3384c7f3edd4474d8a1ad22a6843`; post-report corrections
 `add37e7671365c381ba8df139704633997152e3f`; final wave-2 reports
-`af00b59a4728be30757b62b6222756d710a1261e` (lane tip, pushed, ahead=0); round shape:
+`af00b59a4728be30757b62b6222756d710a1261e`; late wave-2 fail-open closures
+`2433ed25c44eabcdd24d1a5a10ab692668bb023e` (**lane tip, pushed, ahead=0**); round shape:
 **two v1 waves, 44 + 44 = 88 seats**.
 
 ## Work performed
@@ -72,15 +73,15 @@ Work items, each with its pointer:
 | C1 | `node scripts/round-evidence-audit.mjs --rev <REV> --round 22 --round-cap 128 --json` → distinct `findings[].class` | 0 (`git cat-file -e a89f1935:scripts/round-evidence-audit.mjs` → exit 128: no instrument) | **6** (exit 1; 7 findings; per-class 1/1/1/1/1/2) | `03c1b4d` |
 | C2 | `git grep -lE '^source: S10[23] ' <REV> -- corpus/knowledge \| wc -l` | 0 | **1** (`corpus/knowledge/csrf-defense-shape-boundary.md`; `git diff --diff-filter=A` names that file only; rows 101 → 103) | `03c1b4d` |
 
-Round-23 self-audit at the final tip: `node scripts/round-evidence-audit.mjs --rev af00b59 --round 23 --round-cap 128 --json`
-→ **exit 0, clean, 0 findings** (also clean at `add37e76`; at `7ac9fff` it was clean once the last
-report row was bound) — the auditor run against this round's own committed bytes, with
+Round-23 self-audit at the final tip: `node scripts/round-evidence-audit.mjs --rev 2433ed25c44eabcdd24d1a5a10ab692668bb023e --round 23 --round-cap 128 --json`
+→ **exit 0, clean, 0 findings** (also clean at `add37e76` and `af00b59`; at `7ac9fff` it was clean
+once the last report row was bound) — the auditor run against this round's own committed bytes, with
 this report present (at the production checkpoint it had found two real evidence gaps of this
 round's own: the wave-2 registry and receipts were not yet committed, and a scratch fixture tree
 was being read as a wave; both fixed before this landing).
 
-Supporting arms re-run at the final tip `af00b59`: `--rev af00b59 --round 22 --round-cap 128 --json`
-→ 6 classes / exit 1; `--selftest --rev af00b59 --round 22 --round-cap 128` → baseline 7 findings,
+Supporting arms re-run at the final tip `2433ed2`: `--rev 2433ed2 --round 22 --round-cap 128 --json`
+→ 6 classes / exit 1; `--selftest --rev 2433ed2 --round 22 --round-cap 128` → baseline 7 findings,
 6/6 repairs, exit 0; `--selftest` → 12/12 with the inventory assertion;
 `--selftest --rev 03c1b4d --round 22 --round-cap 128` → 6/6 repairs, exit 0; round-21
 evidence → exit 1 with `c3-gate-spotcheck` only (a true positive under the frozen predicate,
@@ -190,6 +191,16 @@ attempts are graded in `corpus/lessons/round-23.md` §Corrections item 4.)
   (`.ufo/waves/round-23/w2/W2CorrGate.md`).
 - **The S102/S103 digests pin the fetched bytes**; the two tag-interleaved OWASP spans are
   matched on stripped text whose own digest is not recorded (`corpus/evidence/round-23/c2-measurements.json`).
+- **Two read-path fail-opens closed at `2433ed2`, two left open.** Closed: a cited commit that
+  does not resolve is now a c6 finding rather than a skip, and a directory named `*-spec.json` is
+  now a c2 finding rather than an invisible wave. Open: `lessonSha256` hashes a re-encoded string
+  rather than the blob's bytes, and a missing/unreadable object still reads as "absent at this
+  revision" instead of refusing (`.ufo/waves/round-23/w2/W2Determinism.md` §F3/§F4).
+- **The round cap is supplied, not verified** against any committed declaration
+  (`W2Determinism` §F5): the auditor records the value it was given, so a caller could pass a
+  looser cap. The claim's counter always passes 128.
+- **`SCORECARD.md`'s append-only wording was corrected in `2433ed2`:** five of the six mutable docs
+  are byte-prefix extensions; `corpus/SOURCES.md` is a pure mid-file insertion (2 added, 0 removed).
 
 ## Honest bounds
 
