@@ -21391,6 +21391,47 @@
    "notes": "driver: 2026-10-25T04:09:05-03:00 launch mado round=36 pgid=3277229 driver=hyaku-inline attempt=1; 2026-10-25T05:41:00-03:00 complete mado round=36; hyaku-inline attempt=1. Report landed last (fleet b26422a6 05:40:34 > lane tip a5aaa09 05:40:09); lane ahead=0, pushed. Defects routed, status-neutral: R1 uncommitted round artifact .ufo/waves/round-36/w1/reports/DistillerFindings.md left untracked while the report says 'working tree clean'; R2 report lines 196/215/231 name the after state at 64979ef while both receipts (re-pinned in fe55a90) and SCORECARD name 4d28b19; R3 'six criteria (57-61)' is five; R4 lesson quotes the S211 receipt as 1,037 B, it is 1,756 B at tip; R5 inherited_dirty is a worktree reading so C2's after state is not fully byte-reproducible. Carried from the lane's own routing: manifest identity in the gate (now bound), exit/verdict coherence, three-substring transcript, control ordering, inherited check-index-rows.py rev-mode exists_glob defect, generator /tmp traversal+race, digest-clause anchor half not exercised by the frozen manifest. Operator note: SHONEN boxes 1, 2 and 4 read as non-author checkable; box 3 (instructions executable without oral context) rests on in-lane seat evidence only. Environment: host /tmp is 100% full (3 MB free); no tool installs or updates were made by this reviewer.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 23,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 23,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 23
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "coverage": "improved"
+   },
+   "trends": {
+    "expansion": "unprovable-but-better",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "blob-bound receipts",
+    "record agreement audit"
+   ],
+   "report": ".ufo/reports/round-23/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-23-verifier-spotcheck.md@a65fac98964b445758e94c805728c9a19d302ff8",
+    "rechecks": "C1 remeasured at 2f96bf4; C2 5 receipts count and all 5 verifier-checked; C3 source rows 119 remeasured; three gate decisions reopened, S115 quote checked; scorecard axis diff inspected"
+   },
+   "commit": "souji-shokunin@2f96bf4c269c353986178e128ca9711b0e928b8d",
+   "closed_at": "2026-10-25T00:00:00Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-10-25T05:03:04-03:00 launch souji round=23 pgid=4017492 driver=hyaku-inline attempt=1; complete 2026-10-25T06:04:05-03:00 complete souji round=23; spot-check notes untracked operator-sweep census excluded; map table/prose reconciliation routed next round; SHONEN checkable, promotion operator-owned",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
