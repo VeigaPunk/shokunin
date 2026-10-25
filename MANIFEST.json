@@ -23356,6 +23356,48 @@
    "notes": "dispatch 2026-10-25T15:40:35-03:00 launch souji round=28 pgid=3077632 driver=hyaku-inline attempt=1; 2026-10-25T16:08:12-03:00 complete souji round=28; hyaku-inline attempt=1. Report committed by lane identity 9cb1a3ce (prompt b5022a43); SHONEN heading 4 [~] lines; cited commits 0c96332/765fe8b/ed270c4/de478b4/fec846d ancestors of master; lane pushed ahead=0, worktree clean. Prompt carries full contract. No step-1 defect. Routed to souji: (1) r26 wave capture misses 152 manifest records ignored by nested .gitignore copies; capture tool verifies disk not committed set; fixture needs nested-.gitignore + symlink cases (15 symlinks uncovered); (2) append-only correction: LOG/SCORECARD/lesson r28 blame 2 'malformed' newline records, which are valid GNU escapes rejected by host uutils sha256sum 0.8.0; real defect is the 152 absent records; (3) landing gate can never evaluate .ufo/waves reports now gitignored -> point at census/round-N/waves; (4) C2 6/6 coverage-agreement literal not the tool's output shape (Q58 class); (5) S215 used-by git-auto-maintenance-trigger-set.md which does not cite S215; (6) lane misread its own frozen S119 exclusion clause. Spot-check: 2 admits (S212, S214) + 2 rejects (S216, S138) all agree; live POSIX digests equal pins. SHONEN boxes look fully checkable by a non-author (promotion is operator-owned). No tools installed/updated.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 34,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 34,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 34
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "calibration": "unchanged",
+    "novelty": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-34/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_kfc session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-34-verifier-spotcheck.md@5d0c73db432f75eea7d5f90b521811c6686fcb68",
+    "rechecks": "C1/C2 honest stops re-measured over committed bytes: SOURCES 97->97 (S102-S104 last ids both revs), knowledge 41->41, no diff in knowledge/SOURCES/QUALITY/SKILL/SHONEN/PROVINCE, frozen counters/tools absent from tip tree; C2 harness/counter red evidence-verified (R34MutC2Harness.md:12-13, R34C2CounterDraft.md:8-9), no gate executed; evaluator capture hashes match upstream 2fd12b88; census validate exit 0 15 W04 byte-equal to census-after.txt; SCORECARD scores held, no axis harmed"
+   },
+   "commit": "kengaku-shokunin@58a19f37312e1b22fd2a7957bdfc6bb7832aadd0",
+   "closed_at": "2026-10-25T19:19:20Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest: 2026-10-25T15:41:22-03:00 launch kengaku round=34 pgid=3080568 driver=hyaku-inline attempt=1; 2026-10-25T16:13:37-03:00 complete kengaku round=34; hyaku-inline attempt=1. Step-1: report 1eb806aa + appended correction 6982cbfb by kengaku-shokunin; SHONEN heading 4x [~]; cited lane commits adaf25df/0b3c627d/58a19f37 exist and are ancestors of master; jj-lane state ahead=0 behind=0; prompt sections 1-5 match template (placeholders only) + hyaku addendum 6. Both claims honest stops (C1 coverage 7->7, C2 calibration 8->8); no exploratory claim. Spot-check: Gate had zero admits (none samplable); agree C1, C2, S105 rejects; disagree S091 refusal reason: staged NEC quote present verbatim in the lane's own committed nec-s091-reopen.html and live page (refusal rested on the first 418-byte fetch); outcome still holds (no citing entry). Defects routed to kengaku: D1 1423 untracked leftovers incl. plans/round34_{c1_verify,defects,mutate}.py; D2 committed .ufo/waves/round-34/mut-entries-scratch = 106323 blobs/1650.6 MiB of recursive repo mirrors; D3 tb2-eval/SHA256SUMS omits test_outputs.py/test.sh contrary to R34CaptureTB2Eval.md; D4 SCORECARD r34 C2 row misattributes red selftest to counter draft; D5 S091 reason false, needs Mistakes row + erratum. SHONEN all [~] author-asserted; promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
