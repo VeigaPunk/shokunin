@@ -368,7 +368,16 @@ file this report cites by content:
   (`git ls-tree -rl`), not the ~2.2 MB the round-35 records carried. The count stands at 124 and
   the gate re-reads `TARGET_MET` at this tip.
 
-Lane tip at closure: `de76525b66f4a4b2bdc378d1ec63bcbd647bbcd6`, working tree clean. The tip
+- `a5aaa09` — the scorecard's after-pins corrected to `4d28b19`, the revision both receipts
+  name (a wave critic's F1: the row had kept the earlier pin while the receipts moved). The
+  distiller's deduplicated ledger (88 raw rows → 70 distinct) is committed with it; its two
+  HIGH findings against the gates — manifest identity and the `GIT_*`/control-id hygiene — were
+  already closed in `4d28b19` and `ea89bde`, and its supersede-pair finding in the pair-target
+  validation. Its remaining HIGH finding, that the frozen manifest does not exercise the digest
+  repair, is the limit this report states rather than a defect it hides.
+
+Lane tip at closure: `a5aaa09ad38bfd90c13d76ccf371e36c45a2697e`, working tree clean; the gate
+re-reads `TARGET_MET` at this tip. The tip
 this report cites (`64979ef`) and the round's data commit (`a3094c9`) are ancestors.
 
 ## Stale-lane
