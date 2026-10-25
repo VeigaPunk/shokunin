@@ -158,7 +158,7 @@ Phase-1 directives still bind: "train all shokunins to at least round 100"; "com
 every round done"; "do it inline with multiple swarms of subagents".
 
 You are an in-session **L1 lane subagent** dispatched by the hyaku orchestrator (the operator's
-parent omp session) for exactly ONE steered round: **mori round 45** (attempt 1;
+parent omp session) for exactly ONE steered round: **mori round 45** (attempt 2;
 campaign target: round 100). Your lane's place in the session follows the goal file (lane
 order and blocks: `.scratch/goal-20261025-hyaku-12h.md`); the orchestrator dispatches your lane's
 next round only after this one lands and its non-author closure is written. Work this round only
@@ -336,6 +336,10 @@ not, and name both in the report.
          -- .ufo/reports/round-45/mori.md
 
    (also for an l0-questions append). The report lands last and cites the pushed lane hash.
+   **Pre-report gate (run 6: kotoba r69 and kake r52 left every round commit off-branch):** before
+   writing the report run `git -C /home/vgpnk/Projects/shokunin/mori-shokunin ls-remote origin refs/heads/<branch>` — it MUST print
+   your final lane hash. If it prints an older hash, your commits are not on the branch: land them
+   through `jj-lane.sh` (never plain git) until it does. Commit the report only via `fleet-commit.sh --as mori`.
 5. **Inherited state.** Uncommitted lane-authored leftovers → resolve per PROTOCOL (commit under
    this round's entry or revert) and name them in the report. Files you did not author (operator
    sweeps, `round-*-aggregator-*`, `round-*-verifier-spotcheck.md`) → never edit; name them.
