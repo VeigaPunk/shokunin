@@ -84,7 +84,10 @@ W04=28 standing (all pre-existing). README sweep exit 0;
 - Tool installs: **none** (no pacman — paused; no uv/npx install needed).
 
 
-## Wave-2 falsification results (40 seats; partial at filing, consolidated here)
+## Wave-2 falsification results
+
+- **RevGate (wave 2) — Gate-checker blind spot (R71-M8).** `tools/check-gate-quotes.py` only parses bullet rows, so it reads 0 rows from the pipe-table Gate and prints `0 findings` for any quote length; all 13 round-71 quotes were verified by hand ≤15 words and word-for-word on the fetched pages. Ca's executing V70-3 leg is the direct word count (`words=25`). Fix routed (table-row parsing + table-form selftest cases).
+ (40 seats; partial at filing, consolidated here)
 
 Seats re-ran the frozen counting commands in fresh clones at lane HEAD:
 
