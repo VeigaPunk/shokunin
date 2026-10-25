@@ -20531,6 +20531,43 @@
    "notes": "dispatch/complete digest (mutable .ufo/watchdog.log, copied here): 2026-10-24T21:40:56-03:00 launch mado round=34 pgid=3166550 driver=hyaku-inline attempt=1 (log line 1224); 2026-10-24T22:55:29-03:00 complete mado round=34; hyaku-inline attempt=1 (log line 1233). Report 66c370b57cc7596883d556d8dd616960cd4a6180 committed by mado-shokunin <mado@shokunin.local> and an ancestor of fleet master; report carries Work performed, Landed changes, Before -> after measurements, Sources & frontier, Trend verdicts and SHONEN - a real report, not a marker. All 11 cited lane commits exist and are ancestors of master; lane base fefdefd4, freeze 3420e827, data fa7ba113, wave evidence 57622b84, tip dff3941; jj-lane.sh state -> ahead=0 behind=0 untracked=0, git ls-remote origin refs/heads/master = dff3941, working tree clean. Prompt .ufo/prompts/mado-round-34.md carries the round contract (MISSION/AXES, 1-3 claims, L2 floor of 8 in one batched call, commit-then-push, push scope, L0, report path, SHONEN heading, hash citation, write scope, report lands last). Both declared claims re-executed by closure and verify; no axis harmed (SCORECARD base..tip = +53/-0, no row lowered); admitted. Quality trend graded unchanged, matching the lane's own honest stop over the r33 closure's overclaim. SHONEN: all four boxes remain [~] author-asserted - no box is promotion-checkable (a seat the lane dispatched is still the lane); promotion is operator-owned and was not exercised. Three L0 questions filed at ae2c52b82018904ad891c304ba023c846a19bd8e (+3/-0 on .ufo/l0-questions.md) were NOT answered, corrected or duplicated here. Routed defects for the lane's next round: (1) the 1-25 word clause in PRED-C1-r34-v1 is provably dead code under its own frozen spec - retire it or give it a failing case in the next frozen spec; (2) the S_ISLNK/O_NOFOLLOW pair is TOCTOU-only and cannot kill any static tree - justify it as TOCTOU protection in the counter header or drop it, but do not count it as a demonstrated load-bearing clause; (3) .ufo/waves/round-34/w1/reports/RevFrozenBlobs.md labels fa7ba113 as the lane tip - the round tip is dff3941; the closure re-verified all seven frozen blobs at dff3941 and they are identical so the PROVEN conclusion stands, but the artifact's tip label is stale by one commit and should be re-issued; (4) operator-side, not the lane's: the shokuknow merge package's frozen id-remap base ('registry ends at S196') is stale now that the lane registry ends at S202, and it repeats the lane's S186-S189 URLs as S199/S200/S260 - filed as L0, left open. Status-neutral notes: the round's census 'before' figure (22:10) is a past observation that cannot be re-executed; the closure re-ran the census at the tip and got exit 0. The hardlink control's committed receipt (closed_rows=0 open_cites=2) corresponds to a hardlink on the entry file; a hardlink on the fetch instead yields closed_rows=1 open_cites=1 - both miss, so the clause is load-bearing either way.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 60,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 60,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 60
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unprovable",
+    "coverage": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-60/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-60-verifier-spotcheck.md@330433777256a578e4bf32fea3460c87d3510588",
+    "rechecks": "C2 re-derived by this non-author from committed bytes at a745a3b0: SOURCES 126->133 rows (grep -cE '^\\|[[:space:]]*S[0-9]{3,}'), tier A=110 B=15 C=8 vs base A=104 B=14 C=8 (awk -F'|' histogram), 0 malformed rows (NF!=13), both band-4 knowledge entries committed with source/verified-at/recheck trios, 7/7 used-by paths exist, S126 capture sha256 c7f7c401... 80679 B equal to S117's pin and the S117/S126 group pinned in source-dupes.json, corpus/README.md 145 rows = 145 corpus files = 145 pin entries (own count), sources-census.sh validate exit 0 with six W04 (S034 S068 S084 S095 S123 S126). DOCTRINE60 held=6/6 at a745a3b0 is evidence-verified from close/doctrine60-work.txt, not executed. C1 NOT verified: DISPATCH60 held=8/10 at a745a3b0 per close/dispatch60-work.txt (A7 row-absent, A10 wave-dir-absent); no measured revision exists (__MEASURED__ unfilled) and the after-state, w1/ evidence and both cited *-tip.txt receipts are uncommitted or absent. Lane gates/probes (readme-map, proxy-check, dispatch-evidence selftest) were NOT executed. Discernment spot-check: 2 admits (S190, S126; plus S134/S194 quote checks) and 2 rejects (exactly-once-attribution, multi-agent-coordinator-topologies) re-opened - all agree."
+   },
+   "commit": "kumitate-shokunin@a745a3b0e02253e722834ef95042d97ed92e5e53",
+   "closed_at": "2026-10-25T06:30:44Z",
+   "campaign": "hyaku",
+   "notes": "dispatch digest: 2026-10-24T23:07:32-03:00 launch kumitate round=60 pgid=4184743 driver=hyaku-inline attempt=1; 2026-10-25T03:23:10-03:00 complete kumitate round=60; hyaku-inline attempt=1. Report landed last as 7b0581ed by the lane identity, subject 'round-60: kumitate report (operator stop sweep)'. Claims: C1 (operability, dispatch-evidence) NOT verified - the frozen DISPATCH60 predicate never holds in committed bytes (close/dispatch60-work.txt: held=8/10 at a745a3b0, A7 row-absent and A10 wave-dir-absent; the report claims 9/10 with only A10 missed), the A7 SCORECARD fix, all of .ufo/waves/round-60/w1/, the launcher artifacts and both close receipts are uncommitted, no dispatch-actual.json exists (the launcher wrote w1/swarm-registry.json with members as an object and agentId null on all 32 seats - the gate's own NOT_A_DISPATCH/REGISTRY_UNREADABLE classes), and 27/32 seats settled exit=-9 session=null with only 5 exit=0, 6 seat reports, and launcher.py.txt dead on a ValueError; the capability therefore does not enter the table. C2 (coverage, band-4 durable execution) VERIFIED by independent re-measurement at a745a3b0: 126->133 rows, A=110 B=15 C=8, 0 malformed, 2 entries with provenance trios, 7/7 used-by paths, S126 capture byte-identical to S117 and the dup group pinned, census validate exit 0 (six W04), readme-map 145/145/145. No owned axis harmed; admitted=false only for want of C1. Routed to round 61: R60-V1 uncommitted round work (LOG.md, PROVINCE.md, SCORECARD.md, corpus/QUALITY.md, corpus/SOURCES.md, corpus/lessons/round-60.md, .ufo/waves/round-60/{close/,w1/,launcher.py.txt,w1-launcher.log,w1-plan.json,w1-spec.json,w1-taskcall.json}); R60-V2 report placeholders __TIP__/__MEASURED__/__COMMITS__ filed (third landed change and both after-measurements cite no object); R60-V3 reported 9/10 contradicts its own receipt's 8/10; R60-V4 cited close/dispatch60-tip.txt and close/doctrine60-tip.txt do not exist; R60-V5 registry not in the gate's schema; R60-V6 27 dead seats unreported plus the launcher ValueError; R60-V7 no round-60 LOG entry at either committed rev (grep -ci 'round 60' -> 0); R60-V8 this round's spot-check file needs a corpus/README.md row plus covered pin in round 61 (sixth recurrence of the R56-V3/R58-V7 class); R60-V9 the exactly-once reject reason cites S141 where the package now assigns S211. SHONEN boxes 2 and 4 look checkable by a non-author once R60-V1 lands (LOG round-60 entry, PROVINCE band-4 line, w1/ConnectorSiblings.md); promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
