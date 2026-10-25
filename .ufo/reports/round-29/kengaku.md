@@ -1,7 +1,7 @@
 # kengaku round 29 — attempt 2 (hyaku run 6): shokuknow assimilation + standing adoption gate
 
 Lane: `/home/vgpnk/Projects/shokunin/kengaku-shokunin`, branch `master`, HEAD
-**`9df6226775d565f5055b8efb5c39a62b21b10be2`** (pushed, ahead 0 / behind 0; the last commit carries the late seat reports as wave evidence and no counted byte changed after `15156173`). Baseline
+**`96c9d8fd7d2391ffb6538ddcc66348d7a73c72fb`** (pushed, ahead 0 / behind 0; the last two commits carry the late seat reports and three calibration repairs, and no counted byte changed after `15156173`). Baseline
 `1f3b0f1ec41ec297130e8944ff97968d32324632`; frozen prereg `plans/round-29-attempt2-claims.md`,
 freeze commit `8c14a5dcd15ac364a352d544660c69f521c3a6af`.
 
@@ -75,7 +75,7 @@ moves the generated-config work of attempt 1.
   executor 3 / critic 3 / connector 2 / simplifier 2 / mutation-tester 1 / revenger 1 / sentinel 1 —
   14 attack seats (39%). One residual ordinary `task` call of 4 seats (3 reviewer, 1 critic) carried
   the post-repair checks; wave 2 was not dispatched because the wave yielded fewer than 32 further
-  *distinct* attacks. L1 holds the canonical planner seat. **Round total 40 seats; 39 returned.** One residual seat (`R29a2rCalibration`) had not returned at filing and is recorded as **unreturned** — never replaced, never claimed as passed. The build wave itself had **0 dead seats** (36/36 returned).
+  *distinct* attacks. L1 holds the canonical planner seat. **Round total 40 seats; all 40 returned.** The last (calibration) seat returned after the first filing and produced three live repairs; no seat was replaced and none is claimed as passed on an unread report. The build wave itself had **0 dead seats** (36/36).
   Evidence: `.ufo/waves/round-29/attempt2/{build-spec.json,build-dispatch.json,build-registry-record.txt}`,
   `build/swarm-registry.json`, `.ufo/waves/round-29/attempt2/build/*.md` (36 reports),
   `.ufo/waves/round-29/attempt2/residual/`.
@@ -104,6 +104,7 @@ moves the generated-config work of attempt 1.
 | `8a25d9e32cbc4463fd72b3355ce71d49a9ad39b1` | four entry claims corrected from the residual reviewer; S091 `used-by` names the priced entry | LOG §… fourth corrections batch |
 | `15156173850d110ba97db32336dff8e7fa07047c` | the package's two count cells attributed rather than quoted as this entry's own words | `corpus/knowledge/benchmark-task-validity-checklist.md` §Counts |
 | `9df6226775d565f5055b8efb5c39a62b21b10be2` | late seat reports committed as wave evidence (no production byte) | `.ufo/waves/round-29/attempt2/build/`, `…/residual/` |
+| `96c9d8fd7d2391ffb6538ddcc66348d7a73c72fb` | three calibration mismatches repaired (registry count in SCORECARD/LOG, the overdue instrument and unit, the prose-`recheck` count) | LOG §… fifth corrections batch |
 
 Every change is motivated in `LOG.md` §"Round 29 attempt 2" (including both appended correction
 batches) and in `corpus/lessons/round-29.md` §"Attempt 2" (M92–M103, Gate, rejected candidates,
@@ -241,8 +242,8 @@ Run at round start and at round end; **both exit 0**. Outputs: `corpus/evidence/
   pacman transaction was attempted by any seat (the host-wide pause was respected).
 - **L0 questions:** none new. The two inherited round-25 questions (coverage cap, novelty conversion)
   remain open and C1 does not convert either. No operator decision blocked this round.
-- **Wave accounting:** 36-seat v1 build wave + 4-seat residual call = 40 seats; 39 returned, 1
-  unreturned (`R29a2rCalibration`); no seat replaced; every `task` dispatch carried the validator's `taskCall` unchanged; routing left to the
+- **Wave accounting:** 36-seat v1 build wave + 4-seat residual call = 40 seats; all 40 returned; no
+  seat replaced; every `task` dispatch carried the validator's `taskCall` unchanged; routing left to the
   operator's role map (no `model` parameter passed anywhere).
 - **Yield ledger (Q19, landed this round):** `.ufo/waves/yield.tsv` now carries one row per seat for
   round 29 — 40 rows, **27 of 40 caused a landed correction, supersede or verdict change**
@@ -254,8 +255,11 @@ Run at round start and at round end; **both exit 0**. Outputs: `corpus/evidence/
   `residual/L1Kengaku29.R29a2rEntryVerify.md` found four entry claims to correct (a quote crossing a
   code element, an unattributed "applies ABC to itself", an incomplete canary count, and a
   post-publication claim S090 does not make) — all four repaired in `8a25d9e3`. The calibration seat
-  (`R29a2rCalibration`) was still running at filing time and is **not** claimed as passed; the L1
-  re-derived its object itself: all 11 quoted spans in the entry were re-tested against the fetched
+  returned after the first filing and re-derived 32 claims: 26 MATCH, 5 MISMATCH — three were live and
+  are repaired in `96c9d8fd` (the registry count in the SCORECARD/LOG text, an overdue figure measured
+  against the wrong instrument with the exit code read as a count, and 171 vs 167 prose cells); two are
+  not errors (a mutant count numbered differently across two attack seats, and axis scores that no
+  command can derive, already labelled as held judgments). The L1 also re-derived the audit's object: all 11 quoted spans in the entry were re-tested against the fetched
   bytes on `15156173` — 7 locate in the cited source bytes, 4 are prose or identifiers the entry names
   rather than quotes (three phrases and one URL), and the longest span is 18 words. The counts in this
   report were re-measured on `15156173`.
