@@ -22929,6 +22929,44 @@
    "notes": "Dispatch digest (.ufo/watchdog.log L1366-1367): 2026-10-25T11:22:53-03:00 launch kasegi round=27 pgid=2743195 driver=hyaku-inline attempt=1; 2026-10-25T11:37:21-03:00 complete kasegi round=27; hyaku-inline attempt=1. Honest stop: operator ended the run mid-round; zero waves, 0 seats; C1/C2 frozen pre-dispatch in .ufo/waves/round-27/claims.json with committed before-receipts; after-states never produced; both declared NOT VERIFIED and verified honest by integrator re-measurement - no prettification. Step-1 conformance clean: report committed by lane identity kasegi-shokunin <kasegi@shokunin.local> (4b5817df, in fleet master, pushed), SHONEN heading + 4 box lines ([~]/[ ] only), c2ab51de ancestor of master, jj state ahead=0 clean, prompt carries full round contract + hyaku addendum. Census exit 0 (pre-existing W04 S028/S029 only). Gate made zero admit/reject decisions (honest stop); integrator spot-checked the Gate's 4 factual claims against the read-only staged package (S042 free id, staged S043 = lane S041, vendor-third-party entry ground:F20 names no lane frontier row, staged-row schema needs normalization) - all agree, one with a quote-location-precision reservation. Defects (status-neutral): section-3 L2 floor and 32-64 wave band unexercised (external operator wrap-up, lesson M27-2); staged entry grounds F13 vs lane plan F12 - reconcile at adoption. Routed to lane for round 28: execute >=1 admit and >=1 reject in the Gate so the non-author sample has decisions; F12/F13 numbering reconcile; quote-cell location precision; round-26 carried defects (reviewer seats inside build wave, inline <=25-word Gate quotes, single canonical receipt at landed digest). No owned axis harmed; SCORECARD/LOG honest-stop appends only. No tools installed or upgraded; no pacman transaction attempted (host-wide pause in force).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 26,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 26,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 26
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "unchanged",
+    "depth": "unchanged",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unprovable-but-better",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-26/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_kfc session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-26-verifier-spotcheck.md@f185b4e7ab10cd9e8925e8ec614c9c111772357d",
+    "rechecks": "all 3 claims re-derived failed-not-executed: C1 baseline mismatches=0 + selftest cases=13 re-run, LOG:1664 supersession oracle cases=13 re-run; C2 before-tree empty, sha256 chain 9b93fe64/f17347b2 verified, base64 decode reproduced, anchor unique at line 187; C3 0->0 entries, registry 106->106, census exit 0 re-run; S106 admit agreed, S125/S142 refuse pre-notes agreed; no axis harmed (diff 3082 ins / 0 del, no SKILL/PROVINCE/QUALITY/SOURCES byte touched)"
+   },
+   "commit": "tabi-shokunin@f47eb2d452f532e2215fb2075c79f31db1ed482d",
+   "closed_at": "2026-10-25T14:45:07Z",
+   "campaign": "hyaku",
+   "notes": "dispatch digest: 2026-10-25T11:19:12-03:00 launch tabi round=26 pgid=2658982 driver=hyaku-inline attempt=1; 2026-10-25T11:38:36-03:00 complete tabi round=26; hyaku-inline attempt=1. Operator wrapped up the run mid-round before any wave: 0-seat round, three claims frozen pre-data all recorded failed-not-executed per the run-6 amendment; report is real and honest (not a marker) so status ok, admitted=false (claims do not verify). Landed repairs verified: round-25 closure defect 4 (S106 decoded evidence bytes + sha256 receipt, anchor line 187 unique, base64 decode chain reproduced by verifier), round-25 closure defect 3 (.ufo/waves/round-25/w2/swarm-registry.json committed, working tree clean), LOG supersession of :1664 (oracle cases=13 re-measured, exit 0). Conformance clean (report by lane identity, SHONEN heading 4 boxes, cited commits ancestors of master, lane ahead=0 pushed, prompt carries template contract + 5 child-lane items). Nit only: LOG/report landed-paths brace-lists omit .ufo/waves/round-26/w1/swarm-registry.json (present in commit 0c666adc, group-covered as validated wave evidence). Owed next round (routed): (a) scripts/report-contract.mjs (ExecReportPreflight, confirmed absent); (b) QUALITY criterion 67 (next free id after 66) appended with a review seat's read; (c) C3 assimilation with full §10 machinery incl. S125/S142 adjudication; (d) C1/C2 instruments per frozen .ufo/waves/round-26/claims.json, the resumption point. SHONEN boxes all [~] lane-asserted with resolvable pointers; promotion review is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
