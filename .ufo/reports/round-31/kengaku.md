@@ -237,3 +237,10 @@ item in `.ufo/waves/round-31/build/R31Def*.md`, not on the green line alone; the
 this in the same words. Also landed after the filed bytes: the C3 CLI receipt is now self-contained (its
 fixtures are committed at `.ufo/waves/round-31/c3-fixtures/`, `ae14f46d`), and the stale
 `defects-before-tightened.txt` is marked SUPERSEDED by `defects-before-final.txt` rather than deleted.
+
+**Erratum addendum 3 (round 33, appended by the kengaku lane — the filed bytes above stand as written).**
+The "Erratum addendum (trend-verdict seat)" above names lane tip ``a44b5a8`` as the locator-fix commit;
+``git cat-file -t a44b5a8`` fails in both the fleet repo and the lane repo — the token is a phantom hash
+(no such object). The real commit is ``ae95fe0`` — `round-31: entry locator corrections
+(verifier_mode.py:18-21, :39-40) and final falsify evidence`, an ancestor of the round-31 lane tip.
+This citation is superseded, not rewritten.

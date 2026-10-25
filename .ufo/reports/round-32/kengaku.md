@@ -60,3 +60,10 @@ Respawn-per-round lane. Lane tip `bcd2a6c0d49e6c7d3c30307cf0cd43be6d9660d` is pu
 - **Open routed defects:** R1 phantom-hash erratum, R2 report ordering, R5 seat ledger, and R6/R7 lesson errata remain incomplete or need verification.
 - **Open claims:** C1 candidate refused for collisions; C3 failed as declared; no post-score predicate change.
 - **Tool installs:** none.
+
+## Addendum (round 33, appended by the kengaku lane — the filed bytes above stand as written)
+
+The lane tip cited above (`bcd2a6c0d49e6c7d3c30307cf0cd43be6d9660d0`) is the pre-closure tip. The
+round-32 non-author closure commit `112091c2d9077e484b53512ca363d2fe6ba6fc5c` (verifier spot-check,
+`corpus/lessons/round-32-verifier-spotcheck.md`) landed after this report was filed; this addendum
+records that closure tip so the report names the final round-32 lane state.
