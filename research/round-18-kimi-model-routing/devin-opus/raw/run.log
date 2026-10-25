@@ -1,0 +1,86 @@
+[14:30:35] stage discovery: provenance
+# M10 discovery + provenance, 2026-10-15T14:30:35Z
+
+## live config pin
+path:   /home/vgpnk/.kimi-code/config.toml
+sha256: c5f12997f7cee456eacddbaf03c95e598ca5911cb18d6e6cf7821909b6fc9ebf
+opus-matches-in-live-config: 0
+devin-model-blocks-in-live-config: 9
+
+## shim GET /v1/models (live)
+http_status: 200
+served_id_count: 9
+
+## devin CLI model catalog (authoritative for the backend)
+binary: /home/vgpnk/.local/bin/devin
+[14:30:35] devin models list via /home/vgpnk/.local/share/devin/cli/_versions/current/bin/devin
+exit: 0
+families: 56
+discovery done
+[14:30:36] run_all done: discovery
+[14:30:49] stage smoke (cold start observation)
+smoke-cold                   model=claude-opus-5-5-high       status=200 elapsed=1339ms tokens=4/4 class=None
+{
+ "status": 200,
+ "elapsed_ms": 1339,
+ "content": "pong"
+}
+exit: 0
+[14:30:50] run_all done: smoke
+[14:31:10] stage battery (M3 conventions: warm-up + 2 perf reps + c1-c5/k1-k3/t1)
+battery run: 1 models, 12 requests, concurrency 1, config sha256 6814d884d9c840d26da07c696f7a889bb14dfa7630b3fbdfb142562e85e1aac8
+[  1/ 12] devin/opus-5.5-high                           warmup   400     format_break     
+[  2/ 12] devin/opus-5.5-high                           perf-r1  400     format_break     
+[  3/ 12] devin/opus-5.5-high                           perf-r2  None    skipped_after_fatal 
+[  4/ 12] devin/opus-5.5-high                           c1-r1    None    skipped_after_fatal 
+[  5/ 12] devin/opus-5.5-high                           c2-r1    None    skipped_after_fatal 
+[  6/ 12] devin/opus-5.5-high                           c3-r1    None    skipped_after_fatal 
+[  7/ 12] devin/opus-5.5-high                           c4-r1    None    skipped_after_fatal 
+[  8/ 12] devin/opus-5.5-high                           c5-r1    None    skipped_after_fatal 
+[  9/ 12] devin/opus-5.5-high                           k1-r1    None    skipped_after_fatal 
+[ 10/ 12] devin/opus-5.5-high                           k2-r1    None    skipped_after_fatal 
+[ 11/ 12] devin/opus-5.5-high                           k3-r1    None    skipped_after_fatal 
+[ 12/ 12] devin/opus-5.5-high                           t1-r1    None    skipped_after_fatal 
+done: 12/12 requests in 1s -> /home/vgpnk/Projects/shokunin/.tower/worktrees/wt-10/research/round-18-kimi-model-routing/devin-opus/raw/telemetry.csv
+exit: 0
+[14:31:11] run_all done: battery
+[14:32:47] stage battery (M3 conventions: warm-up + 2 perf reps + c1-c5/k1-k3/t1)
+[14:32:47]   via run_battery_lane.py: temperature dropped (lane 400s on temperature 0)
+battery run: 1 models, 12 requests, concurrency 1, config sha256 6814d884d9c840d26da07c696f7a889bb14dfa7630b3fbdfb142562e85e1aac8
+[  1/ 12] devin/opus-5.5-high                           warmup   200     ok               pass
+[  2/ 12] devin/opus-5.5-high                           perf-r1  200     None             
+[  3/ 12] devin/opus-5.5-high                           perf-r2  200     None             
+[  4/ 12] devin/opus-5.5-high                           c1-r1    200     ok               pass
+[  5/ 12] devin/opus-5.5-high                           c2-r1    200     ok               pass
+[  6/ 12] devin/opus-5.5-high                           c3-r1    200     ok               pass
+[  7/ 12] devin/opus-5.5-high                           c4-r1    200     ok               pass
+[  8/ 12] devin/opus-5.5-high                           c5-r1    200     ok               pass
+[  9/ 12] devin/opus-5.5-high                           k1-r1    200     ok               pass
+[ 10/ 12] devin/opus-5.5-high                           k2-r1    200     ok               pass
+[ 11/ 12] devin/opus-5.5-high                           k3-r1    200     ok               pass
+[ 12/ 12] devin/opus-5.5-high                           t1-r1    200     ok               pass
+done: 12/12 requests in 58s -> /home/vgpnk/Projects/shokunin/.tower/worktrees/wt-10/research/round-18-kimi-model-routing/devin-opus/raw/telemetry.csv
+manifest annotated with adapter note
+exit: 0
+[14:33:45] run_all done: battery
+[14:33:58] stage ids (served-id spellings)
+id-claude-opus-5-5-high      model=claude-opus-5-5-high       status=200 elapsed=2522ms tokens=4/4 class=None
+id-claude-opus-5.5           model=claude-opus-5.5            status=403 elapsed=552ms tokens=None/None class=auth
+id-claude-opus-5-5           model=claude-opus-5-5            status=403 elapsed=458ms tokens=None/None class=auth
+id-opus-5.5-high             model=opus-5.5-high              status=403 elapsed=456ms tokens=None/None class=auth
+resolved ids: ['claude-opus-5-5-high']
+exit: 0
+[14:34:02] run_all done: ids
+[14:34:02] stage effort (invalid-value control)
+effort-m10-invalid-effort-value model=claude-opus-5-5-high       status=200 elapsed=1784ms tokens=4/4 class=None
+effort-high                  model=claude-opus-5-5-high       status=200 elapsed=3181ms tokens=4/4 class=None
+effort-low                   model=claude-opus-5-5-high       status=200 elapsed=1410ms tokens=4/4 class=None
+effort verdict: ignored (accepts invalid)
+exit: 0
+[14:34:09] run_all done: effort
+[14:34:09] stage tool (required + auto + control)
+tool-required                model=claude-opus-5-5-high       status=400 elapsed=413ms tokens=None/None class=format_break
+tool-auto                    model=claude-opus-5-5-high       status=400 elapsed=405ms tokens=None/None class=format_break
+tool-none                    model=claude-opus-5-5-high       status=200 elapsed=1550ms tokens=4/4 class=None
+exit: 0
+[14:34:11] run_all done: tool

@@ -1,0 +1,990 @@
+{
+  "at": "2026-10-22T03:31:42.375432+00:00",
+  "actual_M": "fafdd283432731a675b71e201bb9ba767c394553",
+  "frozen_original34_separate": {
+    "exit": 0,
+    "executed": 34,
+    "exact": 34,
+    "total": 34
+  },
+  "held_expanded_total": 22,
+  "held_observed": 22,
+  "held_primary_matches": 22,
+  "scope_matches": 22,
+  "semantic_H15_matches": [
+    true,
+    true
+  ],
+  "abort": null,
+  "limits": "Only immutable subject CLI executed. Audited instruments and fixture blob code never executed. Named-instant worktree/index/ref/status snapshots, not continuity/global absence, conformance/admission or old-target rescue.",
+  "records": [
+    {
+      "id": "H01_later_claim_touch_not_first_add",
+      "variant": null,
+      "argv": [
+        "python3",
+        "-I",
+        "-B",
+        "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/subject-M.py",
+        "--root",
+        "/home/vgpnk/Projects/shokunin/kaidoku-shokunin",
+        "--request-json",
+        "{\"claims_file\": \".ufo/waves/round-24/claims.json\", \"freeze\": \"69e82c48be5614ce96f7c1c32445fe61c4870630\", \"measured\": \"18e7eb6d9fe8842678af5f1cffbd680ead4ad473\", \"reference\": \".ufo/waves/round-24/tools/freeze-gate.py\", \"sha256\": \"1e2a937018feec21ad200f80a4c9a749b3de4af190fff548eb4dd84717b8870f\", \"supersessions\": [{\"commit\": \"9fb4eacd23eb69ee9d659dd041e006e9ccd61480\", \"reason\": \"Disclosed R24 bare-name correction; not old-result rescue\", \"sha256\": \"8a71fe84b94310b1b600793b4af011e586359304a6302ee33662d6522290b329\"}]}"
+      ],
+      "environment_override_names_and_owned_values": {},
+      "expected": {
+        "exit": 2,
+        "finding": "freeze_mismatch"
+      },
+      "exit": 2,
+      "stdout": "{\"claims_file\": \".ufo/waves/round-24/claims.json\", \"error\": \"freeze_is_not_claims_first_add\", \"finding\": \"freeze_mismatch\", \"freeze\": \"69e82c48be5614ce96f7c1c32445fe61c4870630\", \"measured\": \"18e7eb6d9fe8842678af5f1cffbd680ead4ad473\", \"reference\": \".ufo/waves/round-24/tools/freeze-gate.py\", \"requested_sha256\": \"1e2a937018feec21ad200f80a4c9a749b3de4af190fff548eb4dd84717b8870f\", \"resolved_first_add\": \"5dc49bfe25d21139693161c786e69c5a11a65bcc\", \"schema\": \"kaidoku-r25-instrument-custody-v1\", \"scope\": \"explicit_reference_custody_only\"}\n",
+      "stderr": "",
+      "status": "observed",
+      "actual_primary": {
+        "exit": 2,
+        "finding": "freeze_mismatch"
+      },
+      "primary_matches": true,
+      "scope_matches": true,
+      "named_root_state_unchanged": true,
+      "before": {
+        "at": "2026-10-22T03:31:31.646949+00:00",
+        "sha256": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda",
+        "state_reference": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda"
+      },
+      "after": {
+        "at": "2026-10-22T03:31:32.009397+00:00",
+        "sha256": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda",
+        "state_reference": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda"
+      }
+    },
+    {
+      "id": "H02_nonancestor_freeze",
+      "variant": null,
+      "argv": [
+        "python3",
+        "-I",
+        "-B",
+        "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/subject-M.py",
+        "--root",
+        "/home/vgpnk/Projects/shokunin/kaidoku-shokunin",
+        "--request-json",
+        "{\"claims_file\": \".ufo/waves/round-24/claims.json\", \"freeze\": \"62feef9c0cbd5aadafa453456c55c28832175206\", \"measured\": \"18e7eb6d9fe8842678af5f1cffbd680ead4ad473\", \"reference\": \".ufo/waves/round-24/tools/count-c1.py\", \"sha256\": \"f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c\", \"supersessions\": []}"
+      ],
+      "environment_override_names_and_owned_values": {},
+      "expected": {
+        "exit": 2,
+        "finding": "freeze_mismatch"
+      },
+      "exit": 2,
+      "stdout": "{\"claims_file\": \".ufo/waves/round-24/claims.json\", \"error\": \"freeze_is_not_claims_first_add\", \"finding\": \"freeze_mismatch\", \"freeze\": \"62feef9c0cbd5aadafa453456c55c28832175206\", \"measured\": \"18e7eb6d9fe8842678af5f1cffbd680ead4ad473\", \"reference\": \".ufo/waves/round-24/tools/count-c1.py\", \"requested_sha256\": \"f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c\", \"resolved_first_add\": \"5dc49bfe25d21139693161c786e69c5a11a65bcc\", \"schema\": \"kaidoku-r25-instrument-custody-v1\", \"scope\": \"explicit_reference_custody_only\"}\n",
+      "stderr": "",
+      "status": "observed",
+      "actual_primary": {
+        "exit": 2,
+        "finding": "freeze_mismatch"
+      },
+      "primary_matches": true,
+      "scope_matches": true,
+      "named_root_state_unchanged": true,
+      "before": {
+        "at": "2026-10-22T03:31:32.321677+00:00",
+        "sha256": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda",
+        "state_reference": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda"
+      },
+      "after": {
+        "at": "2026-10-22T03:31:33.085916+00:00",
+        "sha256": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda",
+        "state_reference": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda"
+      }
+    },
+    {
+      "id": "H03_future_supersession",
+      "variant": null,
+      "argv": [
+        "python3",
+        "-I",
+        "-B",
+        "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/subject-M.py",
+        "--root",
+        "/home/vgpnk/Projects/shokunin/kaidoku-shokunin",
+        "--request-json",
+        "{\"claims_file\": \".ufo/waves/round-24/claims.json\", \"freeze\": \"5dc49bfe25d21139693161c786e69c5a11a65bcc\", \"measured\": \"5dc49bfe25d21139693161c786e69c5a11a65bcc\", \"reference\": \".ufo/waves/round-24/tools/freeze-gate.py\", \"sha256\": \"1e2a937018feec21ad200f80a4c9a749b3de4af190fff548eb4dd84717b8870f\", \"supersessions\": [{\"commit\": \"9fb4eacd23eb69ee9d659dd041e006e9ccd61480\", \"reason\": \"Disclosed R24 bare-name correction; not old-result rescue\", \"sha256\": \"8a71fe84b94310b1b600793b4af011e586359304a6302ee33662d6522290b329\"}]}"
+      ],
+      "environment_override_names_and_owned_values": {},
+      "expected": {
+        "exit": 1,
+        "finding": "supersession_not_revision"
+      },
+      "exit": 1,
+      "stdout": "{\"claims_file\": \".ufo/waves/round-24/claims.json\", \"error\": \"supersession_not_a_path_revision\", \"finding\": \"supersession_not_revision\", \"freeze\": \"5dc49bfe25d21139693161c786e69c5a11a65bcc\", \"freeze_blob\": \"a7b2e46477729f7558a7b5423a12439233e1a906\", \"freeze_mode\": \"100755\", \"frozen_sha256\": \"1e2a937018feec21ad200f80a4c9a749b3de4af190fff548eb4dd84717b8870f\", \"measured\": \"5dc49bfe25d21139693161c786e69c5a11a65bcc\", \"parent_blob\": \"a7b2e46477729f7558a7b5423a12439233e1a906\", \"parent_mode\": \"100755\", \"reference\": \".ufo/waves/round-24/tools/freeze-gate.py\", \"requested_sha256\": \"1e2a937018feec21ad200f80a4c9a749b3de4af190fff548eb4dd84717b8870f\", \"resolved_first_add\": \"5dc49bfe25d21139693161c786e69c5a11a65bcc\", \"revision_commits\": [], \"schema\": \"kaidoku-r25-instrument-custody-v1\", \"scope\": \"explicit_reference_custody_only\"}\n",
+      "stderr": "",
+      "status": "observed",
+      "actual_primary": {
+        "exit": 1,
+        "finding": "supersession_not_revision"
+      },
+      "primary_matches": true,
+      "scope_matches": true,
+      "named_root_state_unchanged": true,
+      "before": {
+        "at": "2026-10-22T03:31:33.395230+00:00",
+        "sha256": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda",
+        "state_reference": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda"
+      },
+      "after": {
+        "at": "2026-10-22T03:31:33.749465+00:00",
+        "sha256": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda",
+        "state_reference": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda"
+      }
+    },
+    {
+      "id": "H04_modified_in_freeze_blob",
+      "variant": null,
+      "argv": [
+        "python3",
+        "-I",
+        "-B",
+        "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/subject-M.py",
+        "--root",
+        "/home/vgpnk/Projects/shokunin/kaidoku-shokunin",
+        "--request-json",
+        "{\"claims_file\": \".ufo/waves/round-18/claims.json\", \"freeze\": \"eb6c2668e5cb7054fd1e16d2f615cb65586d0fe0\", \"measured\": \"eb6c2668e5cb7054fd1e16d2f615cb65586d0fe0\", \"reference\": \".ufo/gates/citation-drift/citation-drift-probe.py\", \"sha256\": \"d3e24de4e91c01de1bdaf2c7b9db6cd5b86642eaeebc7c145f77660fd9e8679d\", \"supersessions\": []}"
+      ],
+      "environment_override_names_and_owned_values": {},
+      "expected": {
+        "exit": 1,
+        "finding": "instrument_not_prior"
+      },
+      "exit": 1,
+      "stdout": "{\"claims_file\": \".ufo/waves/round-18/claims.json\", \"error\": \"instrument_changed_in_freeze\", \"finding\": \"instrument_not_prior\", \"freeze\": \"eb6c2668e5cb7054fd1e16d2f615cb65586d0fe0\", \"freeze_blob\": \"68c72afbf0840d85a969395c89a50b0a83901cb6\", \"freeze_mode\": \"100644\", \"measured\": \"eb6c2668e5cb7054fd1e16d2f615cb65586d0fe0\", \"reference\": \".ufo/gates/citation-drift/citation-drift-probe.py\", \"requested_sha256\": \"d3e24de4e91c01de1bdaf2c7b9db6cd5b86642eaeebc7c145f77660fd9e8679d\", \"resolved_first_add\": \"eb6c2668e5cb7054fd1e16d2f615cb65586d0fe0\", \"schema\": \"kaidoku-r25-instrument-custody-v1\", \"scope\": \"explicit_reference_custody_only\"}\n",
+      "stderr": "",
+      "status": "observed",
+      "actual_primary": {
+        "exit": 1,
+        "finding": "instrument_not_prior"
+      },
+      "primary_matches": true,
+      "scope_matches": true,
+      "named_root_state_unchanged": true,
+      "before": {
+        "at": "2026-10-22T03:31:34.055674+00:00",
+        "sha256": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda",
+        "state_reference": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda"
+      },
+      "after": {
+        "at": "2026-10-22T03:31:34.443900+00:00",
+        "sha256": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda",
+        "state_reference": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda"
+      }
+    },
+    {
+      "id": "H05_modified_in_freeze_mode",
+      "variant": null,
+      "argv": [
+        "python3",
+        "-I",
+        "-B",
+        "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/subject-M.py",
+        "--root",
+        "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/history",
+        "--request-json",
+        "{\"claims_file\": \".ufo/waves/round-80/claims.json\", \"freeze\": \"7024c4bf9996910b351f2bef3f2506f623c1c9e6\", \"measured\": \"7024c4bf9996910b351f2bef3f2506f623c1c9e6\", \"reference\": \"tools/owned-check.py\", \"sha256\": \"79dd553598a83083e31ea0c0075d5d4a9d3ba8894633c04dde8282c9ba7393e8\", \"supersessions\": []}"
+      ],
+      "environment_override_names_and_owned_values": {},
+      "expected": {
+        "exit": 1,
+        "finding": "instrument_not_prior"
+      },
+      "exit": 1,
+      "stdout": "{\"claims_file\": \".ufo/waves/round-80/claims.json\", \"error\": \"instrument_changed_in_freeze\", \"finding\": \"instrument_not_prior\", \"freeze\": \"7024c4bf9996910b351f2bef3f2506f623c1c9e6\", \"freeze_blob\": \"265333a85b66755c12a213ce882fbcf7c8747b36\", \"freeze_mode\": \"100755\", \"measured\": \"7024c4bf9996910b351f2bef3f2506f623c1c9e6\", \"reference\": \"tools/owned-check.py\", \"requested_sha256\": \"79dd553598a83083e31ea0c0075d5d4a9d3ba8894633c04dde8282c9ba7393e8\", \"resolved_first_add\": \"7024c4bf9996910b351f2bef3f2506f623c1c9e6\", \"schema\": \"kaidoku-r25-instrument-custody-v1\", \"scope\": \"explicit_reference_custody_only\"}\n",
+      "stderr": "",
+      "status": "observed",
+      "actual_primary": {
+        "exit": 1,
+        "finding": "instrument_not_prior"
+      },
+      "primary_matches": true,
+      "scope_matches": true,
+      "named_root_state_unchanged": true,
+      "before": {
+        "at": "2026-10-22T03:31:34.507934+00:00",
+        "sha256": "ba3fafa23155add882327bd81b1164089388dcafbd78301b3220a5744c0e6aa5",
+        "state_reference": "ba3fafa23155add882327bd81b1164089388dcafbd78301b3220a5744c0e6aa5"
+      },
+      "after": {
+        "at": "2026-10-22T03:31:34.546124+00:00",
+        "sha256": "ba3fafa23155add882327bd81b1164089388dcafbd78301b3220a5744c0e6aa5",
+        "state_reference": "ba3fafa23155add882327bd81b1164089388dcafbd78301b3220a5744c0e6aa5"
+      }
+    },
+    {
+      "id": "H06_nonregular_git_entries",
+      "variant": "F_symlink",
+      "argv": [
+        "python3",
+        "-I",
+        "-B",
+        "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/subject-M.py",
+        "--root",
+        "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/history",
+        "--request-json",
+        "{\"claims_file\": \".ufo/waves/round-80/claims.json\", \"freeze\": \"e6c8598dc8f82c2ef9df24aa1b3f8b0203b696b7\", \"measured\": \"e6c8598dc8f82c2ef9df24aa1b3f8b0203b696b7\", \"reference\": \"tools/owned-check.py\", \"sha256\": \"79dd553598a83083e31ea0c0075d5d4a9d3ba8894633c04dde8282c9ba7393e8\", \"supersessions\": []}"
+      ],
+      "environment_override_names_and_owned_values": {},
+      "expected": {
+        "exit": 2,
+        "finding": "instrument_nonregular"
+      },
+      "exit": 2,
+      "stdout": "{\"claims_file\": \".ufo/waves/round-80/claims.json\", \"error\": \"instrument_entry_not_regular\", \"finding\": \"instrument_nonregular\", \"freeze\": \"e6c8598dc8f82c2ef9df24aa1b3f8b0203b696b7\", \"measured\": \"e6c8598dc8f82c2ef9df24aa1b3f8b0203b696b7\", \"reference\": \"tools/owned-check.py\", \"requested_sha256\": \"79dd553598a83083e31ea0c0075d5d4a9d3ba8894633c04dde8282c9ba7393e8\", \"resolved_first_add\": \"e6c8598dc8f82c2ef9df24aa1b3f8b0203b696b7\", \"schema\": \"kaidoku-r25-instrument-custody-v1\", \"scope\": \"explicit_reference_custody_only\"}\n",
+      "stderr": "",
+      "status": "observed",
+      "actual_primary": {
+        "exit": 2,
+        "finding": "instrument_nonregular"
+      },
+      "primary_matches": true,
+      "scope_matches": true,
+      "named_root_state_unchanged": true,
+      "before": {
+        "at": "2026-10-22T03:31:34.547921+00:00",
+        "sha256": "ba3fafa23155add882327bd81b1164089388dcafbd78301b3220a5744c0e6aa5",
+        "state_reference": "ba3fafa23155add882327bd81b1164089388dcafbd78301b3220a5744c0e6aa5"
+      },
+      "after": {
+        "at": "2026-10-22T03:31:34.584002+00:00",
+        "sha256": "ba3fafa23155add882327bd81b1164089388dcafbd78301b3220a5744c0e6aa5",
+        "state_reference": "ba3fafa23155add882327bd81b1164089388dcafbd78301b3220a5744c0e6aa5"
+      }
+    },
+    {
+      "id": "H06_nonregular_git_entries",
+      "variant": "F_gitlink",
+      "argv": [
+        "python3",
+        "-I",
+        "-B",
+        "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/subject-M.py",
+        "--root",
+        "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/history",
+        "--request-json",
+        "{\"claims_file\": \".ufo/waves/round-80/claims.json\", \"freeze\": \"74e5c44fdf7b2ac501923ccd6b460ba0bf934636\", \"measured\": \"74e5c44fdf7b2ac501923ccd6b460ba0bf934636\", \"reference\": \"tools/owned-check.py\", \"sha256\": \"79dd553598a83083e31ea0c0075d5d4a9d3ba8894633c04dde8282c9ba7393e8\", \"supersessions\": []}"
+      ],
+      "environment_override_names_and_owned_values": {},
+      "expected": {
+        "exit": 2,
+        "finding": "instrument_nonregular"
+      },
+      "exit": 2,
+      "stdout": "{\"claims_file\": \".ufo/waves/round-80/claims.json\", \"error\": \"instrument_entry_not_regular\", \"finding\": \"instrument_nonregular\", \"freeze\": \"74e5c44fdf7b2ac501923ccd6b460ba0bf934636\", \"measured\": \"74e5c44fdf7b2ac501923ccd6b460ba0bf934636\", \"reference\": \"tools/owned-check.py\", \"requested_sha256\": \"79dd553598a83083e31ea0c0075d5d4a9d3ba8894633c04dde8282c9ba7393e8\", \"resolved_first_add\": \"74e5c44fdf7b2ac501923ccd6b460ba0bf934636\", \"schema\": \"kaidoku-r25-instrument-custody-v1\", \"scope\": \"explicit_reference_custody_only\"}\n",
+      "stderr": "",
+      "status": "observed",
+      "actual_primary": {
+        "exit": 2,
+        "finding": "instrument_nonregular"
+      },
+      "primary_matches": true,
+      "scope_matches": true,
+      "named_root_state_unchanged": true,
+      "before": {
+        "at": "2026-10-22T03:31:34.585490+00:00",
+        "sha256": "ba3fafa23155add882327bd81b1164089388dcafbd78301b3220a5744c0e6aa5",
+        "state_reference": "ba3fafa23155add882327bd81b1164089388dcafbd78301b3220a5744c0e6aa5"
+      },
+      "after": {
+        "at": "2026-10-22T03:31:34.620663+00:00",
+        "sha256": "ba3fafa23155add882327bd81b1164089388dcafbd78301b3220a5744c0e6aa5",
+        "state_reference": "ba3fafa23155add882327bd81b1164089388dcafbd78301b3220a5744c0e6aa5"
+      }
+    },
+    {
+      "id": "H06_nonregular_git_entries",
+      "variant": "F_tree",
+      "argv": [
+        "python3",
+        "-I",
+        "-B",
+        "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/subject-M.py",
+        "--root",
+        "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/history",
+        "--request-json",
+        "{\"claims_file\": \".ufo/waves/round-80/claims.json\", \"freeze\": \"224c50ac0a00db7a35f45c6b23602c97d328ad79\", \"measured\": \"224c50ac0a00db7a35f45c6b23602c97d328ad79\", \"reference\": \"tools/owned-check.py\", \"sha256\": \"79dd553598a83083e31ea0c0075d5d4a9d3ba8894633c04dde8282c9ba7393e8\", \"supersessions\": []}"
+      ],
+      "environment_override_names_and_owned_values": {},
+      "expected": {
+        "exit": 2,
+        "finding": "instrument_nonregular"
+      },
+      "exit": 2,
+      "stdout": "{\"claims_file\": \".ufo/waves/round-80/claims.json\", \"error\": \"instrument_entry_not_regular\", \"finding\": \"instrument_nonregular\", \"freeze\": \"224c50ac0a00db7a35f45c6b23602c97d328ad79\", \"measured\": \"224c50ac0a00db7a35f45c6b23602c97d328ad79\", \"reference\": \"tools/owned-check.py\", \"requested_sha256\": \"79dd553598a83083e31ea0c0075d5d4a9d3ba8894633c04dde8282c9ba7393e8\", \"resolved_first_add\": \"224c50ac0a00db7a35f45c6b23602c97d328ad79\", \"schema\": \"kaidoku-r25-instrument-custody-v1\", \"scope\": \"explicit_reference_custody_only\"}\n",
+      "stderr": "",
+      "status": "observed",
+      "actual_primary": {
+        "exit": 2,
+        "finding": "instrument_nonregular"
+      },
+      "primary_matches": true,
+      "scope_matches": true,
+      "named_root_state_unchanged": true,
+      "before": {
+        "at": "2026-10-22T03:31:34.622005+00:00",
+        "sha256": "ba3fafa23155add882327bd81b1164089388dcafbd78301b3220a5744c0e6aa5",
+        "state_reference": "ba3fafa23155add882327bd81b1164089388dcafbd78301b3220a5744c0e6aa5"
+      },
+      "after": {
+        "at": "2026-10-22T03:31:34.658778+00:00",
+        "sha256": "ba3fafa23155add882327bd81b1164089388dcafbd78301b3220a5744c0e6aa5",
+        "state_reference": "ba3fafa23155add882327bd81b1164089388dcafbd78301b3220a5744c0e6aa5"
+      }
+    },
+    {
+      "id": "H07_readded_claim_history",
+      "variant": null,
+      "argv": [
+        "python3",
+        "-I",
+        "-B",
+        "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/subject-M.py",
+        "--root",
+        "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/history",
+        "--request-json",
+        "{\"claims_file\": \".ufo/waves/round-80/claims.json\", \"freeze\": \"6763744cabdde9d8e3cf46a082a0fe1609b953ae\", \"measured\": \"668f8920b761541520ab8a600873952aaefd38f8\", \"reference\": \"tools/owned-check.py\", \"sha256\": \"79dd553598a83083e31ea0c0075d5d4a9d3ba8894633c04dde8282c9ba7393e8\", \"supersessions\": []}"
+      ],
+      "environment_override_names_and_owned_values": {},
+      "expected": {
+        "exit": 2,
+        "finding": "claims_history_unsupported"
+      },
+      "exit": 2,
+      "stdout": "{\"claims_file\": \".ufo/waves/round-80/claims.json\", \"error\": \"claims_history_shape\", \"finding\": \"claims_history_unsupported\", \"freeze\": \"6763744cabdde9d8e3cf46a082a0fe1609b953ae\", \"measured\": \"668f8920b761541520ab8a600873952aaefd38f8\", \"reference\": \"tools/owned-check.py\", \"requested_sha256\": \"79dd553598a83083e31ea0c0075d5d4a9d3ba8894633c04dde8282c9ba7393e8\", \"schema\": \"kaidoku-r25-instrument-custody-v1\", \"scope\": \"explicit_reference_custody_only\"}\n",
+      "stderr": "",
+      "status": "observed",
+      "actual_primary": {
+        "exit": 2,
+        "finding": "claims_history_unsupported"
+      },
+      "primary_matches": true,
+      "scope_matches": true,
+      "named_root_state_unchanged": true,
+      "before": {
+        "at": "2026-10-22T03:31:34.660220+00:00",
+        "sha256": "ba3fafa23155add882327bd81b1164089388dcafbd78301b3220a5744c0e6aa5",
+        "state_reference": "ba3fafa23155add882327bd81b1164089388dcafbd78301b3220a5744c0e6aa5"
+      },
+      "after": {
+        "at": "2026-10-22T03:31:34.698877+00:00",
+        "sha256": "ba3fafa23155add882327bd81b1164089388dcafbd78301b3220a5744c0e6aa5",
+        "state_reference": "ba3fafa23155add882327bd81b1164089388dcafbd78301b3220a5744c0e6aa5"
+      }
+    },
+    {
+      "id": "H08_unknown_request_member",
+      "variant": null,
+      "argv": [
+        "python3",
+        "-I",
+        "-B",
+        "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/subject-M.py",
+        "--root",
+        "/home/vgpnk/Projects/shokunin/kaidoku-shokunin",
+        "--request-json",
+        "{\"claims_file\": \".ufo/waves/round-24/claims.json\", \"freeze\": \"5dc49bfe25d21139693161c786e69c5a11a65bcc\", \"measured\": \"18e7eb6d9fe8842678af5f1cffbd680ead4ad473\", \"reference\": \".ufo/waves/round-24/tools/count-c1.py\", \"sha256\": \"f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c\", \"supersessions\": [], \"undeclared_member\": true}"
+      ],
+      "environment_override_names_and_owned_values": {},
+      "expected": {
+        "exit": 2,
+        "finding": "request_invalid"
+      },
+      "exit": 2,
+      "stdout": "{\"error\": \"request_member_set\", \"finding\": \"request_invalid\", \"schema\": \"kaidoku-r25-instrument-custody-v1\", \"scope\": \"explicit_reference_custody_only\"}\n",
+      "stderr": "",
+      "status": "observed",
+      "actual_primary": {
+        "exit": 2,
+        "finding": "request_invalid"
+      },
+      "primary_matches": true,
+      "scope_matches": true,
+      "named_root_state_unchanged": true,
+      "before": {
+        "at": "2026-10-22T03:31:34.977657+00:00",
+        "sha256": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda",
+        "state_reference": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda"
+      },
+      "after": {
+        "at": "2026-10-22T03:31:35.316952+00:00",
+        "sha256": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda",
+        "state_reference": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda"
+      }
+    },
+    {
+      "id": "H09_unknown_supersession_member",
+      "variant": null,
+      "argv": [
+        "python3",
+        "-I",
+        "-B",
+        "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/subject-M.py",
+        "--root",
+        "/home/vgpnk/Projects/shokunin/kaidoku-shokunin",
+        "--request-json",
+        "{\"claims_file\": \".ufo/waves/round-24/claims.json\", \"freeze\": \"5dc49bfe25d21139693161c786e69c5a11a65bcc\", \"measured\": \"18e7eb6d9fe8842678af5f1cffbd680ead4ad473\", \"reference\": \".ufo/waves/round-24/tools/freeze-gate.py\", \"sha256\": \"1e2a937018feec21ad200f80a4c9a749b3de4af190fff548eb4dd84717b8870f\", \"supersessions\": [{\"commit\": \"9fb4eacd23eb69ee9d659dd041e006e9ccd61480\", \"reason\": \"Disclosed R24 bare-name correction; not old-result rescue\", \"sha256\": \"8a71fe84b94310b1b600793b4af011e586359304a6302ee33662d6522290b329\", \"undeclared_member\": true}]}"
+      ],
+      "environment_override_names_and_owned_values": {},
+      "expected": {
+        "exit": 2,
+        "finding": "request_invalid"
+      },
+      "exit": 2,
+      "stdout": "{\"error\": \"supersession_member_set\", \"finding\": \"request_invalid\", \"schema\": \"kaidoku-r25-instrument-custody-v1\", \"scope\": \"explicit_reference_custody_only\"}\n",
+      "stderr": "",
+      "status": "observed",
+      "actual_primary": {
+        "exit": 2,
+        "finding": "request_invalid"
+      },
+      "primary_matches": true,
+      "scope_matches": true,
+      "named_root_state_unchanged": true,
+      "before": {
+        "at": "2026-10-22T03:31:35.627479+00:00",
+        "sha256": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda",
+        "state_reference": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda"
+      },
+      "after": {
+        "at": "2026-10-22T03:31:36.026659+00:00",
+        "sha256": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda",
+        "state_reference": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda"
+      }
+    },
+    {
+      "id": "H10_wrong_claims_namespace",
+      "variant": null,
+      "argv": [
+        "python3",
+        "-I",
+        "-B",
+        "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/subject-M.py",
+        "--root",
+        "/home/vgpnk/Projects/shokunin/kaidoku-shokunin",
+        "--request-json",
+        "{\"claims_file\": \"reports/round-24/claims.json\", \"freeze\": \"5dc49bfe25d21139693161c786e69c5a11a65bcc\", \"measured\": \"18e7eb6d9fe8842678af5f1cffbd680ead4ad473\", \"reference\": \".ufo/waves/round-24/tools/count-c1.py\", \"sha256\": \"f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c\", \"supersessions\": []}"
+      ],
+      "environment_override_names_and_owned_values": {},
+      "expected": {
+        "exit": 2,
+        "finding": "request_invalid"
+      },
+      "exit": 2,
+      "stdout": "{\"error\": \"claims_file_path\", \"finding\": \"request_invalid\", \"schema\": \"kaidoku-r25-instrument-custody-v1\", \"scope\": \"explicit_reference_custody_only\"}\n",
+      "stderr": "",
+      "status": "observed",
+      "actual_primary": {
+        "exit": 2,
+        "finding": "request_invalid"
+      },
+      "primary_matches": true,
+      "scope_matches": true,
+      "named_root_state_unchanged": true,
+      "before": {
+        "at": "2026-10-22T03:31:36.341030+00:00",
+        "sha256": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda",
+        "state_reference": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda"
+      },
+      "after": {
+        "at": "2026-10-22T03:31:36.679922+00:00",
+        "sha256": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda",
+        "state_reference": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda"
+      }
+    },
+    {
+      "id": "H11_malformed_claims_path",
+      "variant": null,
+      "argv": [
+        "python3",
+        "-I",
+        "-B",
+        "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/subject-M.py",
+        "--root",
+        "/home/vgpnk/Projects/shokunin/kaidoku-shokunin",
+        "--request-json",
+        "{\"claims_file\": \".ufo/waves/round-24/../round-24/claims.json\", \"freeze\": \"5dc49bfe25d21139693161c786e69c5a11a65bcc\", \"measured\": \"18e7eb6d9fe8842678af5f1cffbd680ead4ad473\", \"reference\": \".ufo/waves/round-24/tools/count-c1.py\", \"sha256\": \"f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c\", \"supersessions\": []}"
+      ],
+      "environment_override_names_and_owned_values": {},
+      "expected": {
+        "exit": 2,
+        "finding": "request_invalid"
+      },
+      "exit": 2,
+      "stdout": "{\"error\": \"claims_file_path\", \"finding\": \"request_invalid\", \"schema\": \"kaidoku-r25-instrument-custody-v1\", \"scope\": \"explicit_reference_custody_only\"}\n",
+      "stderr": "",
+      "status": "observed",
+      "actual_primary": {
+        "exit": 2,
+        "finding": "request_invalid"
+      },
+      "primary_matches": true,
+      "scope_matches": true,
+      "named_root_state_unchanged": true,
+      "before": {
+        "at": "2026-10-22T03:31:36.990663+00:00",
+        "sha256": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda",
+        "state_reference": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda"
+      },
+      "after": {
+        "at": "2026-10-22T03:31:37.401053+00:00",
+        "sha256": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda",
+        "state_reference": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda"
+      }
+    },
+    {
+      "id": "H12_complete_valid_duplicate_member_request",
+      "variant": null,
+      "argv": [
+        "python3",
+        "-I",
+        "-B",
+        "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/subject-M.py",
+        "--root",
+        "/home/vgpnk/Projects/shokunin/kaidoku-shokunin",
+        "--request-json",
+        "{\"claims_file\":\".ufo/waves/round-24/claims.json\",\"freeze\":\"5dc49bfe25d21139693161c786e69c5a11a65bcc\",\"measured\":\"18e7eb6d9fe8842678af5f1cffbd680ead4ad473\",\"reference\":\".ufo/waves/round-24/tools/count-c1.py\",\"reference\":\".ufo/waves/round-24/tools/count-c1.py\",\"sha256\":\"f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c\",\"supersessions\":[]}"
+      ],
+      "environment_override_names_and_owned_values": {},
+      "expected": {
+        "exit": 2,
+        "finding": "request_invalid"
+      },
+      "exit": 2,
+      "stdout": "{\"error\": \"malformed_json\", \"finding\": \"request_invalid\", \"schema\": \"kaidoku-r25-instrument-custody-v1\", \"scope\": \"explicit_reference_custody_only\"}\n",
+      "stderr": "",
+      "status": "observed",
+      "actual_primary": {
+        "exit": 2,
+        "finding": "request_invalid"
+      },
+      "primary_matches": true,
+      "scope_matches": true,
+      "named_root_state_unchanged": true,
+      "before": {
+        "at": "2026-10-22T03:31:37.708987+00:00",
+        "sha256": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda",
+        "state_reference": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda"
+      },
+      "after": {
+        "at": "2026-10-22T03:31:38.048008+00:00",
+        "sha256": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda",
+        "state_reference": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda"
+      }
+    },
+    {
+      "id": "H13_direct_candidate_git_environment_isolation",
+      "variant": "H13a_existing_routing_and_config",
+      "argv": [
+        "python3",
+        "-I",
+        "-B",
+        "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/subject-M.py",
+        "--root",
+        "/home/vgpnk/Projects/shokunin/kaidoku-shokunin",
+        "--request-json",
+        "{\"claims_file\": \".ufo/waves/round-24/claims.json\", \"freeze\": \"5dc49bfe25d21139693161c786e69c5a11a65bcc\", \"measured\": \"18e7eb6d9fe8842678af5f1cffbd680ead4ad473\", \"reference\": \".ufo/waves/round-24/tools/count-c1.py\", \"sha256\": \"f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c\", \"supersessions\": []}"
+      ],
+      "environment_override_names_and_owned_values": {
+        "GIT_DIR": "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/decoy/.git",
+        "GIT_WORK_TREE": "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/decoy",
+        "GIT_COMMON_DIR": "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/decoy/.git",
+        "GIT_INDEX_FILE": "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/decoy/.git/held-index",
+        "GIT_CONFIG_COUNT": "not-an-integer"
+      },
+      "expected": {
+        "exit": 0,
+        "finding": "clean"
+      },
+      "exit": 0,
+      "stdout": "{\"claims_file\": \".ufo/waves/round-24/claims.json\", \"finding\": \"clean\", \"freeze\": \"5dc49bfe25d21139693161c786e69c5a11a65bcc\", \"freeze_blob\": \"d8ba53753a7436e5490fa17888193fcf87c77133\", \"freeze_mode\": \"100755\", \"frozen_sha256\": \"f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c\", \"measured\": \"18e7eb6d9fe8842678af5f1cffbd680ead4ad473\", \"parent_blob\": \"d8ba53753a7436e5490fa17888193fcf87c77133\", \"parent_mode\": \"100755\", \"reference\": \".ufo/waves/round-24/tools/count-c1.py\", \"requested_sha256\": \"f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c\", \"resolved_first_add\": \"5dc49bfe25d21139693161c786e69c5a11a65bcc\", \"revision_commits\": [], \"schema\": \"kaidoku-r25-instrument-custody-v1\", \"scope\": \"explicit_reference_custody_only\", \"verified_supersessions\": []}\n",
+      "stderr": "",
+      "status": "observed",
+      "actual_primary": {
+        "exit": 0,
+        "finding": "clean"
+      },
+      "primary_matches": true,
+      "scope_matches": true,
+      "named_root_state_unchanged": true,
+      "before": {
+        "at": "2026-10-22T03:31:38.354572+00:00",
+        "sha256": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda",
+        "state_reference": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda"
+      },
+      "after": {
+        "at": "2026-10-22T03:31:38.710020+00:00",
+        "sha256": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda",
+        "state_reference": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda"
+      }
+    },
+    {
+      "id": "H13_direct_candidate_git_environment_isolation",
+      "variant": "H13b_empty_object_directory",
+      "argv": [
+        "python3",
+        "-I",
+        "-B",
+        "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/subject-M.py",
+        "--root",
+        "/home/vgpnk/Projects/shokunin/kaidoku-shokunin",
+        "--request-json",
+        "{\"claims_file\": \".ufo/waves/round-24/claims.json\", \"freeze\": \"5dc49bfe25d21139693161c786e69c5a11a65bcc\", \"measured\": \"18e7eb6d9fe8842678af5f1cffbd680ead4ad473\", \"reference\": \".ufo/waves/round-24/tools/count-c1.py\", \"sha256\": \"f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c\", \"supersessions\": []}"
+      ],
+      "environment_override_names_and_owned_values": {
+        "GIT_OBJECT_DIRECTORY": "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/empty-objects",
+        "GIT_ALTERNATE_OBJECT_DIRECTORIES": ""
+      },
+      "expected": {
+        "exit": 0,
+        "finding": "clean"
+      },
+      "exit": 0,
+      "stdout": "{\"claims_file\": \".ufo/waves/round-24/claims.json\", \"finding\": \"clean\", \"freeze\": \"5dc49bfe25d21139693161c786e69c5a11a65bcc\", \"freeze_blob\": \"d8ba53753a7436e5490fa17888193fcf87c77133\", \"freeze_mode\": \"100755\", \"frozen_sha256\": \"f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c\", \"measured\": \"18e7eb6d9fe8842678af5f1cffbd680ead4ad473\", \"parent_blob\": \"d8ba53753a7436e5490fa17888193fcf87c77133\", \"parent_mode\": \"100755\", \"reference\": \".ufo/waves/round-24/tools/count-c1.py\", \"requested_sha256\": \"f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c\", \"resolved_first_add\": \"5dc49bfe25d21139693161c786e69c5a11a65bcc\", \"revision_commits\": [], \"schema\": \"kaidoku-r25-instrument-custody-v1\", \"scope\": \"explicit_reference_custody_only\", \"verified_supersessions\": []}\n",
+      "stderr": "",
+      "status": "observed",
+      "actual_primary": {
+        "exit": 0,
+        "finding": "clean"
+      },
+      "primary_matches": true,
+      "scope_matches": true,
+      "named_root_state_unchanged": true,
+      "before": {
+        "at": "2026-10-22T03:31:39.018055+00:00",
+        "sha256": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda",
+        "state_reference": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda"
+      },
+      "after": {
+        "at": "2026-10-22T03:31:39.456983+00:00",
+        "sha256": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda",
+        "state_reference": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda"
+      }
+    },
+    {
+      "id": "H13_direct_candidate_git_environment_isolation",
+      "variant": "H13c_owned_decoy_alternates",
+      "argv": [
+        "python3",
+        "-I",
+        "-B",
+        "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/subject-M.py",
+        "--root",
+        "/home/vgpnk/Projects/shokunin/kaidoku-shokunin",
+        "--request-json",
+        "{\"claims_file\": \".ufo/waves/round-24/claims.json\", \"freeze\": \"5dc49bfe25d21139693161c786e69c5a11a65bcc\", \"measured\": \"18e7eb6d9fe8842678af5f1cffbd680ead4ad473\", \"reference\": \".ufo/waves/round-24/tools/count-c1.py\", \"sha256\": \"f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c\", \"supersessions\": []}"
+      ],
+      "environment_override_names_and_owned_values": {
+        "GIT_OBJECT_DIRECTORY": "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/empty-objects",
+        "GIT_ALTERNATE_OBJECT_DIRECTORIES": "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/decoy/.git/objects"
+      },
+      "expected": {
+        "exit": 0,
+        "finding": "clean"
+      },
+      "exit": 0,
+      "stdout": "{\"claims_file\": \".ufo/waves/round-24/claims.json\", \"finding\": \"clean\", \"freeze\": \"5dc49bfe25d21139693161c786e69c5a11a65bcc\", \"freeze_blob\": \"d8ba53753a7436e5490fa17888193fcf87c77133\", \"freeze_mode\": \"100755\", \"frozen_sha256\": \"f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c\", \"measured\": \"18e7eb6d9fe8842678af5f1cffbd680ead4ad473\", \"parent_blob\": \"d8ba53753a7436e5490fa17888193fcf87c77133\", \"parent_mode\": \"100755\", \"reference\": \".ufo/waves/round-24/tools/count-c1.py\", \"requested_sha256\": \"f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c\", \"resolved_first_add\": \"5dc49bfe25d21139693161c786e69c5a11a65bcc\", \"revision_commits\": [], \"schema\": \"kaidoku-r25-instrument-custody-v1\", \"scope\": \"explicit_reference_custody_only\", \"verified_supersessions\": []}\n",
+      "stderr": "",
+      "status": "observed",
+      "actual_primary": {
+        "exit": 0,
+        "finding": "clean"
+      },
+      "primary_matches": true,
+      "scope_matches": true,
+      "named_root_state_unchanged": true,
+      "before": {
+        "at": "2026-10-22T03:31:39.763790+00:00",
+        "sha256": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda",
+        "state_reference": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda"
+      },
+      "after": {
+        "at": "2026-10-22T03:31:40.115620+00:00",
+        "sha256": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda",
+        "state_reference": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda"
+      }
+    },
+    {
+      "id": "H13_direct_candidate_git_environment_isolation",
+      "variant": "H13d_empty_namespace",
+      "argv": [
+        "python3",
+        "-I",
+        "-B",
+        "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/subject-M.py",
+        "--root",
+        "/home/vgpnk/Projects/shokunin/kaidoku-shokunin",
+        "--request-json",
+        "{\"claims_file\": \".ufo/waves/round-24/claims.json\", \"freeze\": \"5dc49bfe25d21139693161c786e69c5a11a65bcc\", \"measured\": \"18e7eb6d9fe8842678af5f1cffbd680ead4ad473\", \"reference\": \".ufo/waves/round-24/tools/count-c1.py\", \"sha256\": \"f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c\", \"supersessions\": []}"
+      ],
+      "environment_override_names_and_owned_values": {
+        "GIT_NAMESPACE": "kaidoku-r25-held-empty"
+      },
+      "expected": {
+        "exit": 0,
+        "finding": "clean"
+      },
+      "exit": 0,
+      "stdout": "{\"claims_file\": \".ufo/waves/round-24/claims.json\", \"finding\": \"clean\", \"freeze\": \"5dc49bfe25d21139693161c786e69c5a11a65bcc\", \"freeze_blob\": \"d8ba53753a7436e5490fa17888193fcf87c77133\", \"freeze_mode\": \"100755\", \"frozen_sha256\": \"f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c\", \"measured\": \"18e7eb6d9fe8842678af5f1cffbd680ead4ad473\", \"parent_blob\": \"d8ba53753a7436e5490fa17888193fcf87c77133\", \"parent_mode\": \"100755\", \"reference\": \".ufo/waves/round-24/tools/count-c1.py\", \"requested_sha256\": \"f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c\", \"resolved_first_add\": \"5dc49bfe25d21139693161c786e69c5a11a65bcc\", \"revision_commits\": [], \"schema\": \"kaidoku-r25-instrument-custody-v1\", \"scope\": \"explicit_reference_custody_only\", \"verified_supersessions\": []}\n",
+      "stderr": "",
+      "status": "observed",
+      "actual_primary": {
+        "exit": 0,
+        "finding": "clean"
+      },
+      "primary_matches": true,
+      "scope_matches": true,
+      "named_root_state_unchanged": true,
+      "before": {
+        "at": "2026-10-22T03:31:40.426515+00:00",
+        "sha256": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda",
+        "state_reference": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda"
+      },
+      "after": {
+        "at": "2026-10-22T03:31:40.782086+00:00",
+        "sha256": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda",
+        "state_reference": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda"
+      }
+    },
+    {
+      "id": "H14_direct_candidate_replacement_isolation",
+      "variant": null,
+      "argv": [
+        "python3",
+        "-I",
+        "-B",
+        "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/subject-M.py",
+        "--root",
+        "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/history",
+        "--request-json",
+        "{\"claims_file\": \".ufo/waves/round-80/claims.json\", \"freeze\": \"6763744cabdde9d8e3cf46a082a0fe1609b953ae\", \"measured\": \"6763744cabdde9d8e3cf46a082a0fe1609b953ae\", \"reference\": \"tools/owned-check.py\", \"sha256\": \"79dd553598a83083e31ea0c0075d5d4a9d3ba8894633c04dde8282c9ba7393e8\", \"supersessions\": []}"
+      ],
+      "environment_override_names_and_owned_values": {},
+      "expected": {
+        "exit": 0,
+        "finding": "clean"
+      },
+      "exit": 0,
+      "stdout": "{\"claims_file\": \".ufo/waves/round-80/claims.json\", \"finding\": \"clean\", \"freeze\": \"6763744cabdde9d8e3cf46a082a0fe1609b953ae\", \"freeze_blob\": \"265333a85b66755c12a213ce882fbcf7c8747b36\", \"freeze_mode\": \"100644\", \"frozen_sha256\": \"79dd553598a83083e31ea0c0075d5d4a9d3ba8894633c04dde8282c9ba7393e8\", \"measured\": \"6763744cabdde9d8e3cf46a082a0fe1609b953ae\", \"parent_blob\": \"265333a85b66755c12a213ce882fbcf7c8747b36\", \"parent_mode\": \"100644\", \"reference\": \"tools/owned-check.py\", \"requested_sha256\": \"79dd553598a83083e31ea0c0075d5d4a9d3ba8894633c04dde8282c9ba7393e8\", \"resolved_first_add\": \"6763744cabdde9d8e3cf46a082a0fe1609b953ae\", \"revision_commits\": [], \"schema\": \"kaidoku-r25-instrument-custody-v1\", \"scope\": \"explicit_reference_custody_only\", \"verified_supersessions\": []}\n",
+      "stderr": "",
+      "status": "observed",
+      "actual_primary": {
+        "exit": 0,
+        "finding": "clean"
+      },
+      "primary_matches": true,
+      "scope_matches": true,
+      "named_root_state_unchanged": true,
+      "before": {
+        "at": "2026-10-22T03:31:40.844810+00:00",
+        "sha256": "373dcddc2f32fa88671b97fd9a90194d92ef9327ae6c0bbb4c9cbfccfe7ff67c",
+        "state_reference": "373dcddc2f32fa88671b97fd9a90194d92ef9327ae6c0bbb4c9cbfccfe7ff67c"
+      },
+      "after": {
+        "at": "2026-10-22T03:31:40.884003+00:00",
+        "sha256": "373dcddc2f32fa88671b97fd9a90194d92ef9327ae6c0bbb4c9cbfccfe7ff67c",
+        "state_reference": "373dcddc2f32fa88671b97fd9a90194d92ef9327ae6c0bbb4c9cbfccfe7ff67c"
+      }
+    },
+    {
+      "id": "H15_required_scope_and_evidence_members",
+      "variant": "1",
+      "argv": [
+        "python3",
+        "-I",
+        "-B",
+        "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/subject-M.py",
+        "--root",
+        "/home/vgpnk/Projects/shokunin/kaidoku-shokunin",
+        "--request-json",
+        "{\"claims_file\": \".ufo/waves/round-24/claims.json\", \"freeze\": \"5dc49bfe25d21139693161c786e69c5a11a65bcc\", \"measured\": \"18e7eb6d9fe8842678af5f1cffbd680ead4ad473\", \"reference\": \".ufo/waves/round-24/tools/count-c1.py\", \"sha256\": \"f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c\", \"supersessions\": []}"
+      ],
+      "environment_override_names_and_owned_values": {},
+      "expected": {
+        "exit": 0,
+        "finding": "clean",
+        "scope": "explicit_reference_custody_only"
+      },
+      "exit": 0,
+      "stdout": "{\"claims_file\": \".ufo/waves/round-24/claims.json\", \"finding\": \"clean\", \"freeze\": \"5dc49bfe25d21139693161c786e69c5a11a65bcc\", \"freeze_blob\": \"d8ba53753a7436e5490fa17888193fcf87c77133\", \"freeze_mode\": \"100755\", \"frozen_sha256\": \"f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c\", \"measured\": \"18e7eb6d9fe8842678af5f1cffbd680ead4ad473\", \"parent_blob\": \"d8ba53753a7436e5490fa17888193fcf87c77133\", \"parent_mode\": \"100755\", \"reference\": \".ufo/waves/round-24/tools/count-c1.py\", \"requested_sha256\": \"f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c\", \"resolved_first_add\": \"5dc49bfe25d21139693161c786e69c5a11a65bcc\", \"revision_commits\": [], \"schema\": \"kaidoku-r25-instrument-custody-v1\", \"scope\": \"explicit_reference_custody_only\", \"verified_supersessions\": []}\n",
+      "stderr": "",
+      "status": "observed",
+      "actual_primary": {
+        "exit": 0,
+        "finding": "clean"
+      },
+      "primary_matches": true,
+      "scope_matches": true,
+      "independent_expected_members": {
+        "claims_file": ".ufo/waves/round-24/claims.json",
+        "reference": ".ufo/waves/round-24/tools/count-c1.py",
+        "freeze": "5dc49bfe25d21139693161c786e69c5a11a65bcc",
+        "measured": "18e7eb6d9fe8842678af5f1cffbd680ead4ad473",
+        "freeze_mode": "100755",
+        "freeze_blob": "d8ba53753a7436e5490fa17888193fcf87c77133",
+        "parent_mode": "100755",
+        "parent_blob": "d8ba53753a7436e5490fa17888193fcf87c77133",
+        "frozen_sha256": "f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c",
+        "requested_sha256": "f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c",
+        "revision_commits": [],
+        "verified_supersessions": []
+      },
+      "semantic_members_matches": true,
+      "named_root_state_unchanged": true,
+      "before": {
+        "at": "2026-10-22T03:31:41.166662+00:00",
+        "sha256": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda",
+        "state_reference": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda"
+      },
+      "after": {
+        "at": "2026-10-22T03:31:41.636727+00:00",
+        "sha256": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda",
+        "state_reference": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda"
+      }
+    },
+    {
+      "id": "H15_required_scope_and_evidence_members",
+      "variant": "2",
+      "argv": [
+        "python3",
+        "-I",
+        "-B",
+        "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/subject-M.py",
+        "--root",
+        "/home/vgpnk/Projects/shokunin/kaidoku-shokunin",
+        "--request-json",
+        "{\"claims_file\": \".ufo/waves/round-24/claims.json\", \"freeze\": \"5dc49bfe25d21139693161c786e69c5a11a65bcc\", \"measured\": \"18e7eb6d9fe8842678af5f1cffbd680ead4ad473\", \"reference\": \".ufo/waves/round-24/tools/freeze-gate.py\", \"sha256\": \"1e2a937018feec21ad200f80a4c9a749b3de4af190fff548eb4dd84717b8870f\", \"supersessions\": [{\"commit\": \"9fb4eacd23eb69ee9d659dd041e006e9ccd61480\", \"reason\": \"Disclosed R24 bare-name correction; not old-result rescue\", \"sha256\": \"8a71fe84b94310b1b600793b4af011e586359304a6302ee33662d6522290b329\"}]}"
+      ],
+      "environment_override_names_and_owned_values": {},
+      "expected": {
+        "exit": 0,
+        "finding": "clean",
+        "scope": "explicit_reference_custody_only"
+      },
+      "exit": 0,
+      "stdout": "{\"claims_file\": \".ufo/waves/round-24/claims.json\", \"finding\": \"clean\", \"freeze\": \"5dc49bfe25d21139693161c786e69c5a11a65bcc\", \"freeze_blob\": \"a7b2e46477729f7558a7b5423a12439233e1a906\", \"freeze_mode\": \"100755\", \"frozen_sha256\": \"1e2a937018feec21ad200f80a4c9a749b3de4af190fff548eb4dd84717b8870f\", \"measured\": \"18e7eb6d9fe8842678af5f1cffbd680ead4ad473\", \"parent_blob\": \"a7b2e46477729f7558a7b5423a12439233e1a906\", \"parent_mode\": \"100755\", \"reference\": \".ufo/waves/round-24/tools/freeze-gate.py\", \"requested_sha256\": \"1e2a937018feec21ad200f80a4c9a749b3de4af190fff548eb4dd84717b8870f\", \"resolved_first_add\": \"5dc49bfe25d21139693161c786e69c5a11a65bcc\", \"revision_commits\": [\"9fb4eacd23eb69ee9d659dd041e006e9ccd61480\"], \"schema\": \"kaidoku-r25-instrument-custody-v1\", \"scope\": \"explicit_reference_custody_only\", \"verified_supersessions\": [{\"commit\": \"9fb4eacd23eb69ee9d659dd041e006e9ccd61480\", \"sha256\": \"8a71fe84b94310b1b600793b4af011e586359304a6302ee33662d6522290b329\"}]}\n",
+      "stderr": "",
+      "status": "observed",
+      "actual_primary": {
+        "exit": 0,
+        "finding": "clean"
+      },
+      "primary_matches": true,
+      "scope_matches": true,
+      "independent_expected_members": {
+        "claims_file": ".ufo/waves/round-24/claims.json",
+        "reference": ".ufo/waves/round-24/tools/freeze-gate.py",
+        "freeze": "5dc49bfe25d21139693161c786e69c5a11a65bcc",
+        "measured": "18e7eb6d9fe8842678af5f1cffbd680ead4ad473",
+        "freeze_mode": "100755",
+        "freeze_blob": "a7b2e46477729f7558a7b5423a12439233e1a906",
+        "parent_mode": "100755",
+        "parent_blob": "a7b2e46477729f7558a7b5423a12439233e1a906",
+        "frozen_sha256": "1e2a937018feec21ad200f80a4c9a749b3de4af190fff548eb4dd84717b8870f",
+        "requested_sha256": "1e2a937018feec21ad200f80a4c9a749b3de4af190fff548eb4dd84717b8870f",
+        "revision_commits": [
+          "9fb4eacd23eb69ee9d659dd041e006e9ccd61480"
+        ],
+        "verified_supersessions": [
+          {
+            "commit": "9fb4eacd23eb69ee9d659dd041e006e9ccd61480",
+            "sha256": "8a71fe84b94310b1b600793b4af011e586359304a6302ee33662d6522290b329"
+          }
+        ]
+      },
+      "semantic_members_matches": true,
+      "named_root_state_unchanged": true,
+      "before": {
+        "at": "2026-10-22T03:31:41.950863+00:00",
+        "sha256": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda",
+        "state_reference": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda"
+      },
+      "after": {
+        "at": "2026-10-22T03:31:42.308430+00:00",
+        "sha256": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda",
+        "state_reference": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda"
+      }
+    },
+    {
+      "id": "H16_unique_freeze_parent",
+      "variant": null,
+      "argv": [
+        "python3",
+        "-I",
+        "-B",
+        "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/subject-M.py",
+        "--root",
+        "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/history",
+        "--request-json",
+        "{\"claims_file\": \".ufo/waves/round-80/claims.json\", \"freeze\": \"26aad95e542373820c3604b0adf03273273a7ced\", \"measured\": \"26aad95e542373820c3604b0adf03273273a7ced\", \"reference\": \"tools/owned-check.py\", \"sha256\": \"79dd553598a83083e31ea0c0075d5d4a9d3ba8894633c04dde8282c9ba7393e8\", \"supersessions\": []}"
+      ],
+      "environment_override_names_and_owned_values": {},
+      "expected": {
+        "exit": 2,
+        "finding": "freeze_parent_unsupported"
+      },
+      "exit": 2,
+      "stdout": "{\"claims_file\": \".ufo/waves/round-80/claims.json\", \"error\": \"freeze_parent_count\", \"finding\": \"freeze_parent_unsupported\", \"freeze\": \"26aad95e542373820c3604b0adf03273273a7ced\", \"measured\": \"26aad95e542373820c3604b0adf03273273a7ced\", \"reference\": \"tools/owned-check.py\", \"requested_sha256\": \"79dd553598a83083e31ea0c0075d5d4a9d3ba8894633c04dde8282c9ba7393e8\", \"schema\": \"kaidoku-r25-instrument-custody-v1\", \"scope\": \"explicit_reference_custody_only\"}\n",
+      "stderr": "",
+      "status": "observed",
+      "actual_primary": {
+        "exit": 2,
+        "finding": "freeze_parent_unsupported"
+      },
+      "primary_matches": true,
+      "scope_matches": true,
+      "named_root_state_unchanged": true,
+      "before": {
+        "at": "2026-10-22T03:31:42.340050+00:00",
+        "sha256": "373dcddc2f32fa88671b97fd9a90194d92ef9327ae6c0bbb4c9cbfccfe7ff67c",
+        "state_reference": "373dcddc2f32fa88671b97fd9a90194d92ef9327ae6c0bbb4c9cbfccfe7ff67c"
+      },
+      "after": {
+        "at": "2026-10-22T03:31:42.375397+00:00",
+        "sha256": "373dcddc2f32fa88671b97fd9a90194d92ef9327ae6c0bbb4c9cbfccfe7ff67c",
+        "state_reference": "373dcddc2f32fa88671b97fd9a90194d92ef9327ae6c0bbb4c9cbfccfe7ff67c"
+      }
+    }
+  ],
+  "snapshots": {
+    "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda": {
+      "kind": "existing_exact_measurement_baseline",
+      "artifact": "parent-after-process.json",
+      "decoder": "json.loads(document[\"process\"][\"stdout\"])[\"root_baseline\"][\"state\"]",
+      "same_state_independently_compared": true,
+      "state_sha256": "b2c37decfab239a974ddb87d5bd0e5e1643ac38d5715a6937a728e9608d78fda"
+    },
+    "ba3fafa23155add882327bd81b1164089388dcafbd78301b3220a5744c0e6aa5": {
+      "kind": "inline_owned_fixture_state",
+      "state": {
+        "worktree_lstat": {},
+        "refs_hex": "",
+        "index_sha256": null,
+        "status_hex": ""
+      },
+      "state_sha256": "ba3fafa23155add882327bd81b1164089388dcafbd78301b3220a5744c0e6aa5"
+    },
+    "373dcddc2f32fa88671b97fd9a90194d92ef9327ae6c0bbb4c9cbfccfe7ff67c": {
+      "kind": "inline_owned_fixture_state",
+      "state": {
+        "worktree_lstat": {},
+        "refs_hex": "3730323463346266393939363931306233353166326265663366323530366636323363316339653620726566732f7265706c6163652f363736333734346361626464653964386533636634366130383261306665313630396239353361650a",
+        "index_sha256": null,
+        "status_hex": ""
+      },
+      "state_sha256": "373dcddc2f32fa88671b97fd9a90194d92ef9327ae6c0bbb4c9cbfccfe7ff67c"
+    }
+  },
+  "serialization": {
+    "failed_redundant_payload_bytes": 446107236,
+    "transport_error": "URLError Broken pipe while writing oversized artifact, AFTER all22 actual measurements completed",
+    "lossless_recovery": "Identical repeated state dictionaries deduplicated by full equality and hash; all argv/env/output/expected/observed/timestamps retained, no control rerun",
+    "canonical_baseline_reference": "Same actual state already persisted once in original34 ruler output, parent-after-process.json"
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "at": "2026-10-22T01:20:49.010270+00:00",
+  "ruler_prerequisite_landed": "c0185da52c673a463aa1631369fbb9e177d81c93",
+  "baseline_data_landed": "75f671b109d8eddd0d64c1429bd6379fe577175a",
+  "canonical_before_path": ".ufo/round-48/verification/before-configured-root.json",
+  "actual_before_receipt_sha256": "8bec447aa538446e84b7cb87b902c5f1021c42bd7a01f81ea14313262f7e2312",
+  "actual_before_receipt_lines": 1632,
+  "ruler_sha256": "01af33a6724cb91ddcfd09b690fa7ba68114d799cc4552fa65d6519c3f78bd45",
+  "metadata_sha256": "8ef3c74fcf9fde83a082280999c10bbc6e7800ff2314b000c4b5014f74d48f94",
+  "oracle_sha256": "1d09a38ce04d6c0ab9a1c4edd7f4255978a0c2b8d44ce037d10fcd37d756b883",
+  "consumer_base_sha256": "872993f875338f4f89d5b76178c124313e9fc3368966f8a32583acd0430bdbd1",
+  "actual_before": {
+    "source_revision": "197b5a4087bad49a465df7d13d7e821fe4cf227b",
+    "ruler_exit": 1,
+    "verdict": "failed",
+    "settled_cases": 13,
+    "all_case_ids_exact": true,
+    "all_cli_exits0": true,
+    "all_static_base_predictions_match": true,
+    "exact_target_failures": [
+      "singular-unlogged",
+      "plural-unlogged",
+      "both-distinct-unlogged",
+      "same-name-both-config-roots",
+      "configured-plus-other-log-root"
+    ],
+    "control_count": 8,
+    "behavioral_mismatches": [],
+    "evaluation_errors": [],
+    "current_unsettled": null,
+    "remaining_not_observed": [],
+    "case_results": [
+      {
+        "id": "control-agents-only",
+        "cli_exit": 0,
+        "base_expected": 2,
+        "observed": 2,
+        "after_target": 2,
+        "target_met": true
+      },
+      {
+        "id": "singular-unlogged",
+        "cli_exit": 0,
+        "base_expected": 2,
+        "observed": 2,
+        "after_target": 3,
+        "target_met": false
+      },
+      {
+        "id": "plural-unlogged",
+        "cli_exit": 0,
+        "base_expected": 2,
+        "observed": 2,
+        "after_target": 3,
+        "target_met": false
+      },
+      {
+        "id": "both-distinct-unlogged",
+        "cli_exit": 0,
+        "base_expected": 2,
+        "observed": 2,
+        "after_target": 4,
+        "target_met": false
+      },
+      {
+        "id": "configured-duplicates-agent",
+        "cli_exit": 0,
+        "base_expected": 2,
+        "observed": 2,
+        "after_target": 2,
+        "target_met": true
+      },
+      {
+        "id": "same-name-both-config-roots",
+        "cli_exit": 0,
+        "base_expected": 2,
+        "observed": 2,
+        "after_target": 3,
+        "target_met": false
+      },
+      {
+        "id": "singular-already-logged",
+        "cli_exit": 0,
+        "base_expected": 3,
+        "observed": 3,
+        "after_target": 3,
+        "target_met": true
+      },
+      {
+        "id": "plural-already-logged",
+        "cli_exit": 0,
+        "base_expected": 3,
+        "observed": 3,
+        "after_target": 3,
+        "target_met": true
+      },
+      {
+        "id": "configured-plus-other-log-root",
+        "cli_exit": 0,
+        "base_expected": 3,
+        "observed": 3,
+        "after_target": 4,
+        "target_met": false
+      },
+      {
+        "id": "non-skill-child-files",
+        "cli_exit": 0,
+        "base_expected": 2,
+        "observed": 2,
+        "after_target": 2,
+        "target_met": true
+      },
+      {
+        "id": "skill-named-directory",
+        "cli_exit": 0,
+        "base_expected": 2,
+        "observed": 2,
+        "after_target": 2,
+        "target_met": true
+      },
+      {
+        "id": "empty-config-roots",
+        "cli_exit": 0,
+        "base_expected": 2,
+        "observed": 2,
+        "after_target": 2,
+        "target_met": true
+      },
+      {
+        "id": "duplicate-log-source",
+        "cli_exit": 0,
+        "base_expected": 3,
+        "observed": 3,
+        "after_target": 3,
+        "target_met": true
+      }
+    ],
+    "consumer_before_after_same": true,
+    "all_input_maps_before_after_same": true,
+    "all28ids_24derived_4scopedout": true
+  },
+  "negative_caller_guard": {
+    "revision": "c0185da52c673a463aa1631369fbb9e177d81c93",
+    "exit": 2,
+    "stdout": "",
+    "stderr": "CONFIG_ROOT_RULER: could-not-evaluate: non-BASE revision requires the committed before receipt\n",
+    "planned_scratch_absent_observed": true,
+    "scope": "Pre-scratch/consumer guard source + actualexit2/absenttargetdir;noglobalprocesseffects/tracecertificate"
+  },
+  "transport_note": "Rangedrawreadaddsnon-sourcepaginationfooter;onlyexacttoolfooterremoved, thenwholebytesmatchedindependentlyobserved8becSHA. QAissuefiled. No expectedvalue/rawmeasurementre-pin or rerun.",
+  "caller_boundary": "Trustedfixed13SHA+exactIDs/nonempty/observed/F2assertionsenforcedbyMain,notuniversalempty/unique-oracleguardinsideruler",
+  "limitations": [
+    "Nocandidateimplementation/after13of13/SRTfreeze/admission/scalarincrease",
+    "Newdirect-childconfigured-rootinputclassonly;no recursiveLoader/identity/builtin/livejoin/R47C3rescue",
+    "Otherfivechannelcontents,r39nonvacuousprobes,human/freezeselftest/directorynamefrontmatter/readabilitynotruntimequalified",
+    "No full privacy/noharm/continuoussourcecustody/no-effectsorall64source-scopecertificate",
+    "ExistingRoleModelbindings/failed/VOID/sourcepolicyholdsnotretaggedorcleared"
+  ],
+  "authority": "MainactualCLIonly;outsideKo48InstrumentReview-2staticdeltasadditionalboundedauthority"
+}

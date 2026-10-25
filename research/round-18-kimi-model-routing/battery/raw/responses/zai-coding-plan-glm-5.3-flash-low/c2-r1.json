@@ -1,0 +1,97 @@
+{
+  "pool_id": "zai-coding-plan/glm-5.3-flash-low",
+  "provider": "zai-coding-plan",
+  "model_id": "glm-5.3-flash",
+  "model_sent": "glm-5.3-flash",
+  "protocol": "openai",
+  "bucket": "FAST",
+  "base_url": "https://api.z.ai/api/coding/paas/v4",
+  "probe_id": "c2",
+  "probe_kind": "contract",
+  "rep": 1,
+  "measured": true,
+  "prompt": "Output only a JSON object with exactly two keys: <redacted> set to the integer 1, and \"b\" set to the string \"two\". No markdown fences, no explanation, no other keys.",
+  "max_tokens": 192,
+  "tools_sent": false,
+  "tool_choice": null,
+  "request_body": {
+    "model": "glm-5.3-flash",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Output only a JSON object with exactly two keys: <redacted> set to the integer 1, and \"b\" set to the string \"two\". No markdown fences, no explanation, no other keys."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "url": "https://api.z.ai/api/coding/paas/v4/chat/completions",
+  "timeout_s": 120,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 2860,
+  "response_headers": {
+    "Date": "Thu, 15 Oct 2026 11:59:27 GMT",
+    "Content-Type": "text/event-stream;charset=UTF-8",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "Alt-Svc": "h3=\":443\"; ma=3600",
+    "Set-Cookie": "<redacted:len=17>",
+    "ga-traceid": "9bd239cde6087c15c516d2bb5cd9d866",
+    "Vary": "Origin",
+    "X-LOG-ID": "20261015195925e70798d5ce9b4e3d",
+    "X-Request-ID": "63429758-cce1-4498-844b-17f961610be2"
+  },
+  "content_type": "text/event-stream;charset=UTF-8",
+  "content": "{\"a\": 1, \"b\": \"two\"}",
+  "content_truncated": false,
+  "reasoning_chars": 174,
+  "reasoning_text": "The user wants a JSON object with exactly two keys:\n<redacted> \"a\" set to integer 1\n- \"b\" set to string \"two\"\n\nNo markdown fences, no explanation, no other keys. Just output the JSON.",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": {
+    "prompt_tokens": 54,
+    "completion_tokens": 61,
+    "total_tokens": 115,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 47
+    }
+  },
+  "finish_reason": "stop",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 59,
+  "sse_line_count": 120,
+  "raw_preview": "data: {\"id\":\"20261015195925e70798d5ce9b4e3d\",\"created\":1792065565,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"The\"}}]}\ndata: {\"id\":\"20261015195925e70798d5ce9b4e3d\",\"created\":1792065565,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" user\"}}]}\ndata: {\"id\":\"20261015195925e70798d5ce9b4e3d\",\"created\":1792065565,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" wants\"}}]}\ndata: {\"id\":\"20261015195925e70798d5ce9b4e3d\",\"created\":1792065565,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" a\"}}]}\ndata: {\"id\":\"20261015195925e70798d5ce9b4e3d\",\"created\":1792065565,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" JSON\"}}]}\ndata: {\"id\":\"20261015195925e70798d5ce9b4e3d\",\"created\":1792065565,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" object\"}}]}\ndata: {\"id\":\"20261015195925e70798d5ce9b4e3d\",\"created\":1792065565,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" with\"}}]}\ndata: {\"id\":\"20261015195925e70798d5ce9b4e3d\",\"created\":1792065565,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" exactly\"}}]}\ndata: {\"id\":\"20261015195925e70798d5ce9b4e3d\",\"created\":1792065565,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" two\"}}]}\ndata: {\"id\":\"20261015195925e70798d5ce9b4e3d\",\"created\":1792065565,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" keys\"}}]}\ndata: {\"id\":\"20261015195925e70798d5ce9b4e3d\",\"created\":1792065565,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\":\\n\"}}]}\ndata: {\"id\":\"20261015195925e70798d5ce9b4e3d\",\"created\":1792065565,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"-\"}}]}\ndata: {\"id\":\"20261015195925e70798d5ce9b4e3d\",\"created\":1792065565,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" \\\"\"}}]}\ndata: {\"id\":\"20261015195925e70798d5ce9b4e3d\",\"created\":1792065565,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"a\"}}]}\ndata: {\"id\":\"20261015195925e70798d5ce9b4e3d\",\"created\":1792065565,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"\\\"\"}}]}\ndata: {\"id\":\"20261015195925e70798d5ce9b4e3d\",\"created\":1792065565,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" set\"}}]}\ndata: {\"id\":\"20261015195925e70798d5ce9b4e3d\",\"created\":1792065565,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" to\"}}]}\ndata: {\"id\":\"20261015195925e70798d5ce9b4e3d\",\"created\":1792065565,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" integer\"}}]}\ndata: {\"id\":\"20261015195925e70798d5ce9b4e3d\",\"created\":1792065565,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" \"}}]}\ndata: {\"id\":\"20261015195925e70798d5ce9b4e3d\",\"created\":1792065565,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"1\"}}]}\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "json match",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T11:59:27Z",
+  "ttft_content_ms": 2859,
+  "ttft_reasoning_ms": 2859,
+  "first_decoded_ms": 2859,
+  "decode_span_ms": 0,
+  "tps": null,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": "not derivable: stream was not incrementally flushed (decode span 0 ms < 50 ms)",
+  "completion_tokens": 61,
+  "prompt_tokens": 54,
+  "reasoning_tokens": 47,
+  "content_delta_count": 11,
+  "reasoning_delta_count": 47
+}

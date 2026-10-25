@@ -1,0 +1,25 @@
+/skill:godspeed
+Read your brief file first — it is the task. Execute it exactly and stop.
+
+Brief: /home/vgpnk/Projects/shokunin/.ufo/waves/shokunin-train-20261014-w7/tasks/g3d-reviewer.txt
+Lane: g3d
+Worktree/repo root: ~/Projects/prymeagnt/game-dev-3d
+Round: r76
+Declared axis-move (verbatim): pin the same-turn setter→server-sync WINDOW as tracked CASES: r75 measured the two-stage gate report-side (~2–3 frames; same-turn forcing calls serve stale/dead data) but no CASES row pins the window itself. Declared falsifiable claim: the sync boundary is frame-measurable — a forcing call on the same tick as a RID mutation serves the pre-mutation path while wait>=1 serves post-sync state; the exact frame count of the window is a stable measured constant on this host/build. Add same-turn-mutation arms (mutate + forcing read at wait=0/1/2), map_set_active(false) reachability, and same-value-mutation suppression arms; 156/156 + 4 probes + Node 31/31 must stay green.
+
+Seat: reviewer
+Report path (write ONLY this file + scratch inside your brief's write scope): reports/round-76/r76-reviewer.md
+Scratch: corpus/live/r76-reviewer/
+
+Seat rules (non-negotiable):
+- You are a LEAF: no subagent dispatch, and never run git commit/push/merge/rebase/stash/checkout in any repo.
+- Write only your own report file and scratch inside your brief's write scope.
+- Never touch another lane's files, another repo's tracked content, or shared state.
+- If the round's declared claim proves false under measurement, report the actual observed outcome: a falsified claim is a useful round; never force it or soften the record.
+- Every claim needs evidence: exact commands, observed exits, receipt paths, or file:line refs resolvable on this host.
+- Domain actions that would reach users/maintainers (push, publish) are operator-owned: do not attempt them.
+- Baseline seats: freeze via `git archive HEAD` (tracked files only — NEVER recursively embed prior r*-baseline/frozen/tree dirs or node_modules; the archive command lists tracked files, so it already excludes untracked scratch — do NOT extract then re-archive a populated tree).
+
+Audit the PRIOR round's committed state while the author's diff lands: re-run the r75 committed battery (156/156 + 4 probes + Node 31/31) on HEAD at an ABSOLUTE --runs path; verify mut_* arms incl. mut_latch_zombie; report any drift. Report to reports/round-76/r76-reviewer.md.
+
+| godspeed

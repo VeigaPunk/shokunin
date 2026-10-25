@@ -1,0 +1,182 @@
+{
+  "pool_id": "openai-codex/gpt-6.1-sol-high",
+  "provider": "openai-codex",
+  "model_id": "gpt-6.1-sol",
+  "model_sent": "gpt-6.1-sol",
+  "protocol": "openai_responses",
+  "bucket": "STRONG",
+  "base_url": "http://127.0.0.1:8789/backend-api/codex",
+  "probe_id": "t1",
+  "probe_kind": "tool",
+  "rep": 1,
+  "measured": true,
+  "prompt": "What is the weather in Paris right now? Use the get_weather tool.",
+  "max_tokens": 192,
+  "tools_sent": true,
+  "tool_choice": "auto",
+  "request_body": {
+    "model": "gpt-6.1-sol",
+    "stream": true,
+    "max_output_tokens": 192,
+    "input": [
+      {
+        "type": "message",
+        "role": "user",
+        "content": [
+          {
+            "type": "input_text",
+            "text": "What is the weather in Paris right now? Use the get_weather tool."
+          }
+        ]
+      }
+    ],
+    "tools": [
+      {
+        "type": "function",
+        "name": "get_weather",
+        "description": "Get the current weather for a city.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "city": {
+              "type": "string",
+              "description": "City name"
+            }
+          },
+          "required": [
+            "city"
+          ]
+        }
+      }
+    ],
+    "tool_choice": "auto",
+    "store": false
+  },
+  "url": "http://127.0.0.1:8789/backend-api/codex/responses",
+  "timeout_s": 300,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 3453,
+  "response_headers": {
+    "Server": "cloudflare",
+    "Date": "Thu, 15 Oct 2026 12:02:17 GMT",
+    "x-codex-active-limit": "premium",
+    "x-codex-plan-type": "pro",
+    "x-codex-primary-used-percent": "1",
+    "x-codex-secondary-used-percent": "0",
+    "x-codex-primary-window-minutes": "10080",
+    "x-codex-primary-over-secondary-limit-percent": "0",
+    "x-codex-secondary-window-minutes": "0",
+    "x-codex-primary-reset-after-seconds": "583893",
+    "x-codex-secondary-reset-after-seconds": "0",
+    "x-codex-primary-reset-at": "1792649629",
+    "x-codex-secondary-reset-at": "",
+    "x-codex-credits-has-credits": "True",
+    "x-codex-credits-balance": "62500.0000000000",
+    "x-codex-credits-unlimited": "False",
+    "x-models-etag": "W/\"a5b23a75ab9baa8209d3e49abda1d2e9\"",
+    "x-codex-turn-state": "gAAAAABq0MDIlF0kx9HlTU_FeNDW0Zg55dssrzx0wKEHbTo70Z2y12iw469K4awINvi9wre0b1rannTaZbtifQnwTyij0R1Zs8HzBh4j-N8HpZJGpM6Pol_5T6TR1tE3h-VerflNbUQpGgZkybLOSn350CqB41CnDYSOkzI2iw8Ke4zXlbI_up9-q9wFsXKbWjcTDVuW0agdL89IWoWL7C4SN1fnrigQk3xJ1ORzMaPeHUOI4z97Lo6QgZb1-VPEk4Lp_jcdYMtVwKHvVRvlG_udcbio7peHtrkn9Gel1IaRAEP12wK1vurF7wirhCIohmIY6YAzzoFRGSLgcfz-TLdPZy2PxmJQAaDpq77u2jPBKXvNnctk2RNCpPAwq1DCRjB5IkjCH9ZLvNHT4v6tLKfD80rqzXtptKP2pTbufabqS9rDGgl8lwI3JgVTGT9lt_bQsvp0nbT_0EBiZCuGqooovjkEyRQWjuWtBlQoG-zG9tXmrmOdsw2LaKa5aeI2L2UZdYSoqrFpEK6yZkUtfX3EUoDapVI26FnR4dCyxHEdb8AGQ_1phTUEqPcrIyJt7rAyT6K4URYERDgcG9T2iwhxb2oEb8l9FYepj1lAnKqKPo9rapDL7yhU0sg8xD9mengEtZnnOxb1Nm9YWFbSwrPKMHZwmbzi6Clx_0jWXRgpxuMtD1ut2S5_Q4e-HJeWJVHtu349lO02XkPMvhJVCEEMZOTF76avtRI8JJsLDA93lV1D0wpIVipLmaVQXHVF1q8wsFafs3sW",
+    "x-codex-safety-buffering-enabled": "true",
+    "x-codex-safety-buffering-faster-model": "gpt-6-luna",
+    "x-oai-request-id": "ae854be9-ea8d-4ab0-9281-57909dd95d6f",
+    "x-openai-proxy-wasm": "v0.1",
+    "X-Content-Type-Options": "nosniff",
+    "Cross-Origin-Opener-Policy": "same-origin-allow-popups",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "cf-cache-status": "DYNAMIC",
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+    "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.01,\"max_age\":604800}",
+    "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=5biCLWq8SdXcLZUFBFZLOthtuYxqMKlRJL11rwOpZDFW5NOQiz3aeud%2BGfTVrQpSZIOLV0FRWyNfE%2F3f7ti%2F5CC9BvPRQ8Ee1ttPhBifmU4pKyWGDGv92S%2FQdMLniaQ%2BxkcyXQD4PDvL\"}]}",
+    "Set-Cookie": "<redacted:len=18>",
+    "set-cookie": "<redacted:len=18>",
+    "CF-RAY": "a4aeac858cbd64f9-GIG",
+    "Connection": "close"
+  },
+  "content_type": null,
+  "content": "",
+  "content_truncated": false,
+  "reasoning_chars": 0,
+  "reasoning_text": "",
+  "refusal_text": "",
+  "tool_calls": [
+    {
+      "id": "call_04d746ab5a79499697193a2cf01f5bec",
+      "name": "get_weather",
+      "arguments": "{\"city\":\"Paris\"}"
+    }
+  ],
+  "usage": {
+    "input_tokens": 63,
+    "input_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0
+    },
+    "output_tokens": 18,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 81,
+    "attribution": {
+      "items": {
+        "fc_0052714c0ba9c9b2016ad0c0cb43188191bf49fca1df7dbbed": {
+          "input_tokens": 2,
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "output_tokens": 18
+        },
+        "msg_0052714c0ba9c9b2016ad0c0c8db8481918d8883098ecf3923": {
+          "input_tokens": 19,
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "output_tokens": 0,
+          "content": [
+            {
+              "input_tokens": 19,
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "output_tokens": 0
+            }
+          ]
+        }
+      },
+      "request_fields": {
+        "tools": {
+          "input_tokens": 42,
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "output_tokens": 0
+        }
+      }
+    }
+  },
+  "finish_reason": null,
+  "response_status": "completed",
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 11,
+  "sse_line_count": 33,
+  "raw_preview": "event: response.created\ndata: {\"type\":\"response.created\",\"sequence_number\":0,\"safety_buffering\":false,\"response\":{\"id\":\"resp_0052714c0ba9c9b2016ad0c0c8dafc8191b6476a2c2db6ac67\",\"object\":\"response\",\"created_at\":1792065736,\"completed_at\":null,\"status\":\"in_progress\",\"background\":false,\"frequency_penalty\":0.0,\"presence_penalty\":0.0,\"moderation\":null,\"model\":\"gpt-6.1-sol\",\"access_programs\":{\"cyber\":\"standard\"},\"previous_response_id\":null,\"instructions\":null,\"output\":[],\"error\":null,\"incomplete_details\":null,\"tools\":[{\"type\":\"function\",\"name\":\"get_weather\",\"description\":\"Get the current weather for a city.\",\"parameters\":{\"type\":\"object\",\"properties\":{\"city\":{\"type\":\"string\",\"description\":\"City name\"}},\"required\":[\"city\"],\"additionalProperties\":false},\"output_schema\":null,\"strict\":true}],\"tool_choice\":\"auto\",\"parallel_tool_calls\":true,\"prompt_cache_key\":\"2d4ea6c3-199c-47db-95de-727e76f85136\",\"prompt_cache_retention\":\"24h\",\"text\":{\"format\":{\"type\":\"text\"},\"verbosity\":\"medium\"},\"top_p\":0.98,\"top_logprobs\":0,\"temperature\":1.0,\"reasoning\":{\"context\":\"all_turns\",\"effort\":\"medium\",\"summary\":null,\"mode\":\"standard\"},\"user\":null,\"usage\":null,\"tool_usage\":{\"image_gen\":{\"input_tokens\":0,\"output_tokens\":0,\"total_tokens\":0,\"input_tokens_details\":{\"text_tokens\":0,\"image_tokens\":0},\"output_tokens_details\":{\"image_tokens\":0,\"text_tokens\":0}},\"web_search\":{\"num_requests\":0}},\"safety_identifier\":\"user-nkEENAXKpBEO8fzseUfNoxLC\",\"store\":false,\"metadata\":{},\"max_output_tokens\":192,\"max_tool_calls\":null,\"service_tier\":\"auto\",\"truncation\":\"disabled\"}}\nevent: response.in_progress\ndata: {\"type\":\"response.in_progress\",\"sequence_number\":1,\"safety_buffering\":false,\"response\":{\"id\":\"resp_0052714c0ba9c9b2016ad0c0c8dafc8191b6476a2c2db6ac67\",\"object\":\"response\",\"created_at\":1792065736,\"completed_at\":null,\"status\":\"in_progress\",\"background\":false,\"frequency_penalty\":0.0,\"presence_penalty\":0.0,\"moderation\":null,\"model\":\"gpt-6.1-sol\",\"access_programs\":{\"cyber\":\"standard\"},\"previous_response_id\":null,\"instructions\":null,\"output\":[],\"error\":null,\"incomplete_details\":null,\"tools\":[{\"type\":\"function\",\"name\":\"get_weather\",\"description\":\"Get the current weather for a city.\",\"parameters\":{\"type\":\"object\",\"properties\":{\"city\":{\"type\":\"string\",\"description\":\"City name\"}},\"required\":[\"city\"],\"additionalProperties\":false},\"output_schema\":null,\"strict\":true}],\"tool_choice\":\"auto\",\"parallel_tool_calls\":true,\"prompt_cache_key\":\"2d4ea6c3-199c-47db-95de-727e76f85136\",\"prompt_cache_retention\":\"24h\",\"text\":{\"format\":{\"type\":\"text\"},\"verbosity\":\"medium\"},\"top_p\":0.98,\"top_logprobs\":0,\"temperature\":1.0,\"reasoning\":{\"context\":\"all_turns\",\"effort\":\"medium\",\"summary\":null,\"mode\":\"standard\"},\"user\":null,\"usage\":null,\"tool_usage\":{\"image_gen\":{\"input_tokens\":0,\"output_tokens\":0,\"total_tokens\":0,\"input_tokens_details\":{\"text_tokens\":0,\"image_tokens\":0},\"output_tokens_details\":{\"image_tokens\":0,\"text_tokens\":0}},\"web_search\":{\"num_requests\":0}},\"safety_identifier\":\"user-nkEENAXKpBEO8fzseUfNoxLC\",\"store\":false,\"metadata\":{},\"max_output_tokens\":192,\"max_tool_calls\":null,\"service_tier\":\"auto\",\"truncation\":\"disabled\"}}\nevent: response.output_item.added\ndata: {\"type\":\"response.output_item.added\",\"sequence_number\":2,\"output_index\":0,\"item\":{\"type\":\"function_call\",\"id\":\"fc_0052714c0ba9c9b2016ad0c0cb43188191bf49fca1df7dbbed\",\"call_id\":\"call_04d746ab5a79499697193a2cf01f5bec\",\"name\":\"get_weather\",\"arguments\":\"\",\"status\":\"in_progress\"}}\nevent: response.function_call_arguments.delta\ndata: {\"type\":\"response.function_call_arguments.delta\",\"sequence_number\":3,\"item_id\":\"fc_0052714c0ba9c9b2016ad0c0cb43188191bf49fca1df7dbbed\",\"output_index\":0,\"delta\":\"{\\\"\",\"obfuscation\":\"9OwmGBxHKbLEpJ\"}\nevent: response.function_call_arguments.delta\ndata: {\"type\":\"response.function_call_arguments.delta\",\"sequence_number\":4,\"item_id\":\"fc_0052714c0ba9c9b2016ad0c0cb43188191bf49fca1df7dbbed\",\"output_index\":0,\"delta\":\"city\",\"obfuscation\":\"ij2PBAwF8MUf\"}\nevent: response.function_call_arguments.delta\ndata: {\"type\":\"response.function_call_arguments.delta\",\"sequence_number\":5,\"item_id\":\"fc_0052714c0ba9c9b2016ad0c0cb43188191bf49fca1df7dbbed\",\"output_index\":0,\"delta\":\"\\\":\\\"\",\"obfuscation\":\"yKFlO3V2NaS1V\"}\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "well-formed tool call",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T12:02:19Z",
+  "ttft_content_ms": null,
+  "ttft_reasoning_ms": null,
+  "first_decoded_ms": 3063,
+  "decode_span_ms": 172,
+  "tps": 98.59,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": null,
+  "completion_tokens": 18,
+  "prompt_tokens": 63,
+  "reasoning_tokens": 0,
+  "content_delta_count": 0,
+  "reasoning_delta_count": 0
+}

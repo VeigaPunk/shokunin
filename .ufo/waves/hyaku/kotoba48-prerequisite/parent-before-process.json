@@ -1,0 +1,59 @@
+{
+  "instrument_landed": "c0185da52c673a463aa1631369fbb9e177d81c93",
+  "literal_argv_unmodified": [
+    "/usr/bin/python3",
+    "-B",
+    "/fast/scratch/hyaku/kotoba-r48-author/.ufo/round-48/tools/config-root-ruler.py",
+    "--repo",
+    "/fast/scratch/hyaku/kotoba-r48-author",
+    "--revision",
+    "197b5a4087bad49a465df7d13d7e821fe4cf227b",
+    "--consumer-sha256",
+    "872993f875338f4f89d5b76178c124313e9fc3368966f8a32583acd0430bdbd1",
+    "--oracle",
+    "/fast/scratch/hyaku/kotoba-r48-author/.ufo/round-48/oracle/config-root-cases.json",
+    "--oracle-sha256",
+    "1d09a38ce04d6c0ab9a1c4edd7f4255978a0c2b8d44ce037d10fcd37d756b883",
+    "--scratch",
+    "/fast/scratch/hyaku/kotoba-r48-author-handoff/parent-before-root-matrix-01"
+  ],
+  "git_environment_wrapper": [
+    "env",
+    "GIT_NO_REPLACE_OBJECTS=1",
+    "GIT_NO_LAZY_FETCH=1",
+    "GIT_CONFIG_NOSYSTEM=1",
+    "GIT_CONFIG_GLOBAL=/dev/null",
+    "GIT_OPTIONAL_LOCKS=0"
+  ],
+  "process": {
+    "label": "kotoba48-fixed13-actual-base",
+    "argv": [
+      "env",
+      "GIT_NO_REPLACE_OBJECTS=1",
+      "GIT_NO_LAZY_FETCH=1",
+      "GIT_CONFIG_NOSYSTEM=1",
+      "GIT_CONFIG_GLOBAL=/dev/null",
+      "GIT_OPTIONAL_LOCKS=0",
+      "/usr/bin/python3",
+      "-B",
+      "/fast/scratch/hyaku/kotoba-r48-author/.ufo/round-48/tools/config-root-ruler.py",
+      "--repo",
+      "/fast/scratch/hyaku/kotoba-r48-author",
+      "--revision",
+      "197b5a4087bad49a465df7d13d7e821fe4cf227b",
+      "--consumer-sha256",
+      "872993f875338f4f89d5b76178c124313e9fc3368966f8a32583acd0430bdbd1",
+      "--oracle",
+      "/fast/scratch/hyaku/kotoba-r48-author/.ufo/round-48/oracle/config-root-cases.json",
+      "--oracle-sha256",
+      "1d09a38ce04d6c0ab9a1c4edd7f4255978a0c2b8d44ce037d10fcd37d756b883",
+      "--scratch",
+      "/fast/scratch/hyaku/kotoba-r48-author-handoff/parent-before-root-matrix-01"
+    ],
+    "exit": 1,
+    "stdout": "{\"behavioral_mismatches\": [], \"current_unsettled\": null, \"evaluation_errors\": [], \"receipt\": \"/fast/scratch/hyaku/kotoba-r48-author-handoff/parent-before-root-matrix-01/receipt.json\", \"remaining_not_observed\": [], \"settled_cases\": 13, \"target_failures\": [\"singular-unlogged\", \"plural-unlogged\", \"both-distinct-unlogged\", \"same-name-both-config-roots\", \"configured-plus-other-log-root\"], \"verdict\": \"failed\"}\n",
+    "stderr": "",
+    "at": "2026-10-22T01:15:32.829757+00:00"
+  },
+  "limit": "RulerexecutedfromWTcopywhoseexact01afbyteSHAwasintegratedatI;selectedConsumerGitblobBASE197bandoracle1d09,notuncommittedConsumer"
+}

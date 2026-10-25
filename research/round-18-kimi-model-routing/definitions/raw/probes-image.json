@@ -1,0 +1,401 @@
+{
+  "suite": "image",
+  "config_json_digest_16": "61f22a2bbe52d616",
+  "generated_by": "scripts/probe_live.py image",
+  "note": "headers redacted (<redacted:len=N>); no credential value is stored",
+  "results": [
+    {
+      "suite": "image",
+      "lane": "hyper",
+      "alias": "hyper/qwen3.8-27b",
+      "provider": "hyper",
+      "protocol": "openai",
+      "url": "https://hyper.charm.land/v1/chat/completions",
+      "model_id": "qwen3.8-27b",
+      "value": null,
+      "status": 400,
+      "ms": 1419,
+      "error": null,
+      "request_headers": {
+        "Authorization": "<redacted:len=52>"
+      },
+      "request_body": {
+        "model": "qwen3.8-27b",
+        "messages": [
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "image_url",
+                "image_url": {
+                  "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVR4nGNgAAIAAAUAAXpeqz8AAAAASUVORK5CYII="
+                }
+              },
+              {
+                "type": "text",
+                "text": "Describe this image in one word."
+              }
+            ]
+          }
+        ],
+        "max_tokens": 16,
+        "stream": false
+      },
+      "response": {
+        "error": {
+          "message": "Invalid image attachment size. Image is too small or too large.",
+          "type": "invalid_request_error",
+          "code": null
+        }
+      },
+      "derived": {
+        "status": 400,
+        "top_keys": [
+          "error"
+        ],
+        "usage": null
+      }
+    },
+    {
+      "suite": "image",
+      "lane": "zai-coding-plan",
+      "alias": "zai-coding-plan/glm-5.3-flash",
+      "provider": "zai-coding-plan",
+      "protocol": "openai",
+      "url": "https://api.z.ai/api/coding/paas/v4/chat/completions",
+      "model_id": "glm-5.3-flash",
+      "value": null,
+      "status": 200,
+      "ms": 2328,
+      "error": null,
+      "request_headers": {
+        "Authorization": "<redacted:len=56>"
+      },
+      "request_body": {
+        "model": "glm-5.3-flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "image_url",
+                "image_url": {
+                  "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVR4nGNgAAIAAAUAAXpeqz8AAAAASUVORK5CYII="
+                }
+              },
+              {
+                "type": "text",
+                "text": "Describe this image in one word."
+              }
+            ]
+          }
+        ],
+        "max_tokens": 16,
+        "stream": false
+      },
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "length",
+            "index": 0,
+            "message": {
+              "content": "",
+              "reasoning_content": "The user has shared an image and asked me to describe it in one word.",
+              "role": "assistant"
+            }
+          }
+        ],
+        "created": 1792065348,
+        "id": "202610151955460c7584ec3fde4086",
+        "model": "glm-5.3-flash",
+        "object": "chat.completion",
+        "request_id": "202610151955460c7584ec3fde4086",
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "reasoning_tokens": 13
+          },
+          "prompt_tokens": 37,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "total_tokens": 53
+        }
+      },
+      "derived": {
+        "status": 200,
+        "message_keys": [
+          "content",
+          "reasoning_content",
+          "role"
+        ],
+        "tool_call_wellformed": false,
+        "top_keys": [
+          "choices",
+          "created",
+          "id",
+          "model",
+          "object",
+          "request_id",
+          "usage"
+        ],
+        "has_reasoning_content": true,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "reasoning_tokens": 13
+          },
+          "prompt_tokens": 37,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "total_tokens": 53
+        }
+      }
+    },
+    {
+      "suite": "image",
+      "lane": "alibaba-token-plan",
+      "alias": "alibaba-token-plan/qwen3.8-flash",
+      "provider": "alibaba-token-plan",
+      "protocol": "openai",
+      "url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1/chat/completions",
+      "model_id": "qwen3.8-flash",
+      "value": null,
+      "status": 400,
+      "ms": 1911,
+      "error": null,
+      "request_headers": {
+        "Authorization": "<redacted:len=120>"
+      },
+      "request_body": {
+        "model": "qwen3.8-flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "image_url",
+                "image_url": {
+                  "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVR4nGNgAAIAAAUAAXpeqz8AAAAASUVORK5CYII="
+                }
+              },
+              {
+                "type": "text",
+                "text": "Describe this image in one word."
+              }
+            ]
+          }
+        ],
+        "max_tokens": 16,
+        "stream": false
+      },
+      "response": {
+        "error": {
+          "code": "invalid_parameter_error",
+          "param": null,
+          "message": "The image length and width do not meet the model restrictions. [height:1 or width:1 must be larger than 10]",
+          "type": "invalid_request_error"
+        },
+        "id": "chatcmpl-d6f7bac6-749d-4594-944f-837a804de746"
+      },
+      "derived": {
+        "status": 400,
+        "top_keys": [
+          "error",
+          "id"
+        ],
+        "usage": null
+      }
+    },
+    {
+      "suite": "image",
+      "lane": "opencode-go",
+      "alias": "opencode-go/mimo-v2.5",
+      "provider": "opencode-go",
+      "protocol": "openai",
+      "url": "https://opencode.ai/inference/go/v1/chat/completions",
+      "model_id": "mimo-v2.5",
+      "value": null,
+      "status": 403,
+      "ms": 368,
+      "error": null,
+      "request_headers": {
+        "Authorization": "<redacted:len=58>",
+        "x-opencode-session": "<redacted:len=36>"
+      },
+      "request_body": {
+        "model": "mimo-v2.5",
+        "messages": [
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "image_url",
+                "image_url": {
+                  "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVR4nGNgAAIAAAUAAXpeqz8AAAAASUVORK5CYII="
+                }
+              },
+              {
+                "type": "text",
+                "text": "Describe this image in one word."
+              }
+            ]
+          }
+        ],
+        "max_tokens": 16,
+        "stream": false
+      },
+      "response": "error code: 1010\n",
+      "derived": {
+        "status": 403,
+        "body_text_preview": "error code: 1010\n"
+      }
+    },
+    {
+      "suite": "image",
+      "lane": "opencode-go",
+      "alias": "opencode-go/deepseek-v4-flash-vision-exp",
+      "provider": "opencode-go",
+      "protocol": "openai",
+      "url": "https://opencode.ai/inference/go/v1/chat/completions",
+      "model_id": "deepseek-v4-flash-vision-exp",
+      "value": null,
+      "status": 403,
+      "ms": 368,
+      "error": null,
+      "request_headers": {
+        "Authorization": "<redacted:len=58>",
+        "x-opencode-session": "<redacted:len=36>"
+      },
+      "request_body": {
+        "model": "deepseek-v4-flash-vision-exp",
+        "messages": [
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "image_url",
+                "image_url": {
+                  "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVR4nGNgAAIAAAUAAXpeqz8AAAAASUVORK5CYII="
+                }
+              },
+              {
+                "type": "text",
+                "text": "Describe this image in one word."
+              }
+            ]
+          }
+        ],
+        "max_tokens": 16,
+        "stream": false
+      },
+      "response": "error code: 1010\n",
+      "derived": {
+        "status": 403,
+        "body_text_preview": "error code: 1010\n"
+      }
+    },
+    {
+      "suite": "image",
+      "lane": "xai-oauth",
+      "alias": "xai-oauth/grok-4.5",
+      "provider": "xai-oauth",
+      "protocol": "openai",
+      "url": "http://127.0.0.1:8790/v1/chat/completions",
+      "model_id": "grok-4.5",
+      "value": null,
+      "status": 400,
+      "ms": 587,
+      "error": null,
+      "request_headers": {
+        "Authorization": "<redacted:len=16>"
+      },
+      "request_body": {
+        "model": "grok-4.5",
+        "messages": [
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "image_url",
+                "image_url": {
+                  "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVR4nGNgAAIAAAUAAXpeqz8AAAAASUVORK5CYII="
+                }
+              },
+              {
+                "type": "text",
+                "text": "Describe this image in one word."
+              }
+            ]
+          }
+        ],
+        "max_tokens": 16,
+        "stream": false
+      },
+      "response": {
+        "code": "invalid_image",
+        "error": "code: 'Client specified an invalid argument', message: \"Image dimensions 1x1 are too small. Both width and height must be at least 8 pixels."
+      },
+      "derived": {
+        "status": 400,
+        "top_keys": [
+          "code",
+          "error"
+        ],
+        "usage": null
+      }
+    },
+    {
+      "suite": "image",
+      "lane": "zai-coding-plan",
+      "alias": "zai-coding-plan/glm-5-turbo",
+      "provider": "zai-coding-plan",
+      "protocol": "openai",
+      "url": "https://api.z.ai/api/coding/paas/v4/chat/completions",
+      "model_id": "glm-5-turbo",
+      "value": null,
+      "status": 400,
+      "ms": 722,
+      "error": null,
+      "request_headers": {
+        "Authorization": "<redacted:len=56>"
+      },
+      "request_body": {
+        "model": "glm-5-turbo",
+        "messages": [
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "image_url",
+                "image_url": {
+                  "url": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVR4nGNgAAIAAAUAAXpeqz8AAAAASUVORK5CYII="
+                }
+              },
+              {
+                "type": "text",
+                "text": "Describe this image in one word."
+              }
+            ]
+          }
+        ],
+        "max_tokens": 16,
+        "stream": false
+      },
+      "response": {
+        "error": {
+          "code": "1210",
+          "message": "messages.content.type is invalid, allowed values: ['text']"
+        }
+      },
+      "derived": {
+        "status": 400,
+        "top_keys": [
+          "error"
+        ],
+        "usage": null
+      }
+    }
+  ]
+}

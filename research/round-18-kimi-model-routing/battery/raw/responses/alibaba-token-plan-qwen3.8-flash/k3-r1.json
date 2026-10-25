@@ -1,0 +1,101 @@
+{
+  "pool_id": "alibaba-token-plan/qwen3.8-flash",
+  "provider": "alibaba-token-plan",
+  "model_id": "qwen3.8-flash",
+  "model_sent": "qwen3.8-flash",
+  "protocol": "openai",
+  "bucket": "MIDDLE",
+  "base_url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1",
+  "probe_id": "k3",
+  "probe_kind": "code",
+  "rep": 1,
+  "measured": true,
+  "prompt": "What does this Python expression evaluate to?\n\nsorted({3, 1, 2} | {5})\n\nAnswer with only the list, with no spaces.",
+  "max_tokens": 192,
+  "tools_sent": false,
+  "tool_choice": null,
+  "request_body": {
+    "model": "qwen3.8-flash",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "What does this Python expression evaluate to?\n\nsorted({3, 1, 2} | {5})\n\nAnswer with only the list, with no spaces."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1/chat/completions",
+  "timeout_s": 120,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 3362,
+  "response_headers": {
+    "content-type": "text/event-stream; charset=utf-8",
+    "grpc-encoding": "identity",
+    "grpc-accept-encoding": "gzip",
+    "x-envoy-upstream-service-time": "1364",
+    "cache-control": "no-cache",
+    "date": "Thu, 15 Oct 2026 12:02:06 GMT",
+    "server": "istio-envoy",
+    "x-request-id": "6b8ea6c2-af2f-4bc6-b00b-d611d25beda0",
+    "req-cost-time": "1364",
+    "req-arrive-time": "1792065724922",
+    "resp-start-time": "1792065726287",
+    "transfer-encoding": "chunked"
+  },
+  "content_type": null,
+  "content": "[1,2,3,5]",
+  "content_truncated": false,
+  "reasoning_chars": 214,
+  "reasoning_text": "We need answer user's simple Python expression. Need produce final only list no spaces. Expression: sorted({3,1,2} | {5}) set union gives {1,2,3,5}, sorted returns [1,2,3,5]. No spaces: [1,2,3,5]. Ensure only that.",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": {
+    "prompt_tokens": 95,
+    "total_tokens": 177,
+    "completion_tokens": 82,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "text_tokens": 95
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 70,
+      "text_tokens": 82
+    }
+  },
+  "finish_reason": "stop",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 30,
+  "sse_line_count": 62,
+  "raw_preview": "data: {\"model\":\"qwen3.8-flash\",\"id\":\"chatcmpl-6b8ea6c2-af2f-4bc6-b00b-d611d25beda0\",\"created\":1792065726,\"object\":\"chat.completion.chunk\",\"usage\":null,\"choices\":[{\"logprobs\":null,\"index\":0,\"delta\":{\"reasoning_content\":\"\",\"content\":\"\",\"role\":\"assistant\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-6b8ea6c2-af2f-4bc6-b00b-d611d25beda0\",\"object\":\"chat.completion.chunk\",\"created\":1792065726,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\"We\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-6b8ea6c2-af2f-4bc6-b00b-d611d25beda0\",\"object\":\"chat.completion.chunk\",\"created\":1792065726,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" need answer user's\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-6b8ea6c2-af2f-4bc6-b00b-d611d25beda0\",\"object\":\"chat.completion.chunk\",\"created\":1792065726,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" simple\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-6b8ea6c2-af2f-4bc6-b00b-d611d25beda0\",\"object\":\"chat.completion.chunk\",\"created\":1792065726,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" Python\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-6b8ea6c2-af2f-4bc6-b00b-d611d25beda0\",\"object\":\"chat.completion.chunk\",\"created\":1792065726,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" expression. Need produce\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-6b8ea6c2-af2f-4bc6-b00b-d611d25beda0\",\"object\":\"chat.completion.chunk\",\"created\":1792065726,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" final only list no\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-6b8ea6c2-af2f-4bc6-b00b-d611d25beda0\",\"object\":\"chat.completion.chunk\",\"created\":1792065726,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" spaces. Expression\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-6b8ea6c2-af2f-4bc6-b00b-d611d25beda0\",\"object\":\"chat.completion.chunk\",\"created\":1792065726,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\": sorted({3\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-6b8ea6c2-af2f-4bc6-b00b-d611d25beda0\",\"object\":\"chat.completion.chunk\",\"created\":1792065726,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\",\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-6b8ea6c2-af2f-4bc6-b00b-d611d25beda0\",\"object\":\"chat.completion.chunk\",\"created\":1792065726,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\"1,2}\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-6b8ea6c2-af2f-4bc6-b00b-d611d25beda0\",\"object\":\"chat.completion.chunk\",\"created\":1792065726,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" | {5\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-6b8ea6c2-af2f-4bc6-b00b-d611d25beda0\",\"object\":\"chat.completion.chunk\",\"created\":1792065726,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\"}) set union gives\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-6b8ea6c2-af2f-4bc6-b00b-d611d25beda0\",\"object\":\"chat.completion.chunk\",\"created\":1792065726,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" {1,2\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-6b8ea6c2-af2f-4bc6-b00b-d611d25beda0\",\"object\":\"chat.completion.chunk\",\"created\":1792065726,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\",3\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "exact match",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T12:02:07Z",
+  "ttft_content_ms": 3262,
+  "ttft_reasoning_ms": 2415,
+  "first_decoded_ms": 3262,
+  "decode_span_ms": 62,
+  "tps": 1302.02,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": null,
+  "completion_tokens": 82,
+  "prompt_tokens": 95,
+  "reasoning_tokens": 70,
+  "content_delta_count": 3,
+  "reasoning_delta_count": 24
+}

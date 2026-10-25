@@ -1,0 +1,198 @@
+{
+  "probes": [
+    {
+      "provider": "alibaba-token-plan",
+      "protocol": "openai",
+      "model_id": "glm-5",
+      "purpose": "unresolved-in-models-listing",
+      "method": "POST",
+      "url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1/chat/completions",
+      "timeout_s": 60,
+      "auth_headers_sent": [
+        "Authorization"
+      ],
+      "request_body": {
+        "model": "glm-5",
+        "max_tokens": 8,
+        "temperature": 0,
+        "messages": [
+          {
+            "role": "user",
+            "content": "ping"
+          }
+        ]
+      },
+      "latency_ms": 1292,
+      "status": 403,
+      "response_headers": {
+        "content-type": "text/plain",
+        "date": "Thu, 15 Oct 2026 11:32:59 GMT",
+        "server": "istio-envoy",
+        "x-request-id": "f306d908-de5f-470a-aaf6-5384f9b6dcef",
+        "req-cost-time": "<len=1>",
+        "req-arrive-time": "<len=13>",
+        "resp-start-time": "<len=13>",
+        "x-envoy-upstream-service-time": "7",
+        "content-encoding": "<len=4>",
+        "vary": "<len=15>",
+        "transfer-encoding": "<len=7>"
+      },
+      "body": {
+        "error": {
+          "message": "Access to model denied. Please make sure you are eligible for using the model.",
+          "id": "f306d908-de5f-470a-aaf6-5384f9b6dcef",
+          "type": "AccessDenied.Unpurchased",
+          "code": "AccessDenied.Unpurchased"
+        }
+      },
+      "shape": {
+        "parsed_json": true,
+        "reasoning_content_present": false,
+        "usage_fields": [],
+        "finish_reason": null,
+        "content_preview": null,
+        "error_type": "AccessDenied.Unpurchased",
+        "error_message": "Access to model denied. Please make sure you are eligible for using the model."
+      }
+    },
+    {
+      "provider": "zai-coding-plan",
+      "protocol": "openai",
+      "model_id": "glm-5.3-highspeed",
+      "purpose": "unresolved-in-models-listing",
+      "method": "POST",
+      "url": "https://api.z.ai/api/coding/paas/v4/chat/completions",
+      "timeout_s": 60,
+      "auth_headers_sent": [
+        "Authorization"
+      ],
+      "request_body": {
+        "model": "glm-5.3-highspeed",
+        "max_tokens": 8,
+        "temperature": 0,
+        "messages": [
+          {
+            "role": "user",
+            "content": "ping"
+          }
+        ]
+      },
+      "latency_ms": 1374,
+      "status": 429,
+      "response_headers": {
+        "Date": "Thu, 15 Oct 2026 11:33:00 GMT",
+        "Transfer-Encoding": "<len=7>",
+        "Connection": "<len=10>",
+        "Alt-Svc": "<len=18>",
+        "Set-Cookie": "<redacted:len=98>",
+        "ga-traceid": "<len=32>",
+        "Vary": "<len=148>",
+        "X-LOG-ID": "<len=30>",
+        "X-Request-ID": "f8055b87-4e84-4536-af28-e57871792fc2"
+      },
+      "body": {
+        "error": {
+          "code": "1311",
+          "message": "Your current subscription plan does not yet include access to GLM-5.3-Highspeed"
+        }
+      },
+      "shape": {
+        "parsed_json": true,
+        "reasoning_content_present": false,
+        "usage_fields": [],
+        "finish_reason": null,
+        "content_preview": null,
+        "error_type": "1311",
+        "error_message": "Your current subscription plan does not yet include access to GLM-5.3-Highspeed"
+      }
+    },
+    {
+      "provider": "opencode-go",
+      "protocol": "openai",
+      "model_id": "deepseek-v4-flash",
+      "purpose": "unresolved-in-models-listing",
+      "method": "POST",
+      "url": "https://opencode.ai/inference/go/v1/chat/completions",
+      "timeout_s": 60,
+      "auth_headers_sent": [
+        "Authorization",
+        "x-opencode-session"
+      ],
+      "request_body": {
+        "model": "deepseek-v4-flash",
+        "max_tokens": 8,
+        "temperature": 0,
+        "messages": [
+          {
+            "role": "user",
+            "content": "ping"
+          }
+        ]
+      },
+      "latency_ms": 1530,
+      "status": 200,
+      "response_headers": {
+        "Date": "Thu, 15 Oct 2026 11:33:02 GMT",
+        "Content-Type": "application/json",
+        "Transfer-Encoding": "<len=7>",
+        "Connection": "<len=10>",
+        "Cf-Placement": "<len=10>",
+        "x-opencode-endpoint-id": "<len=8>",
+        "x-opencode-log-id": "<len=36>",
+        "x-opencode-upstream-model-id": "<len=17>",
+        "x-zen-model": "<len=17>",
+        "Content-Encoding": "<len=4>",
+        "Server": "cloudflare",
+        "CF-RAY": "a4ae81ab1b7e23f3-MIA"
+      },
+      "body": {
+        "id": "f80ccdb9-6d05-4b56-b214-3c7d06c9fa3d",
+        "object": "chat.completion",
+        "created": 1792063981,
+        "model": "deepseek-v4-flash",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "length",
+            "logprobs": null,
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "reasoning_content": "The user just said \"ping\". This"
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 31,
+          "completion_tokens": 8,
+          "total_tokens": 39,
+          "prompt_cache_hit_tokens": 0,
+          "prompt_cache_miss_tokens": 31,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 8
+          }
+        }
+      },
+      "shape": {
+        "parsed_json": true,
+        "reasoning_content_present": true,
+        "usage_fields": [
+          "completion_tokens",
+          "completion_tokens_details",
+          "prompt_cache_hit_tokens",
+          "prompt_cache_miss_tokens",
+          "prompt_tokens",
+          "prompt_tokens_details",
+          "total_tokens"
+        ],
+        "finish_reason": "length",
+        "content_preview": null,
+        "error_type": null,
+        "error_message": null
+      }
+    }
+  ]
+}

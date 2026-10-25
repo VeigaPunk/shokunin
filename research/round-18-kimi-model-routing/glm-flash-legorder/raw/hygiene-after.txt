@@ -1,0 +1,54 @@
+$ cd research/round-18-kimi-model-routing/glm-flash-legorder
+$ scripts/hygiene_check.sh .
+HYGIENE OK: 0 credential-shaped hits under /home/vgpnk/Projects/shokunin/.tower/worktrees/wt-9/research/round-18-kimi-model-routing/glm-flash-legorder
+exit=0
+
+# residual-secret sweep over every file, shape-based (not the known key values).
+# Output goes to a file OUTSIDE the scanned tree: pointing it inside makes the
+# scan read the file it is writing and spin (observed, 90s+ in state R) -- use
+# a /tmp target, then move it in.
+$ grep -rlE "<hex32>\.<alnum16>|sk-<16+>|Bearer <16+>" . > /tmp/hyg.txt
+(no matches -> 0 hits; grep exit 1)
+
+# files covered by the scan:
+./LEGORDER.md
+./raw/backup-dir.txt
+./raw/backup-timestamp.txt
+./raw/comment-preservation.txt
+./raw/failover-scratch.txt
+./raw/health.after.json
+./raw/health.before.json
+./raw/hygiene-after.txt
+./raw/journal.after-probes.txt
+./raw/journal.after-restart.txt
+./raw/journal.before.txt
+./raw/legorder.diff
+./raw/models.after.json
+./raw/models.before.json
+./raw/patch.dryrun.log
+./raw/patch.live.log
+./raw/probe1-chat.headers.txt
+./raw/probe1-chat.json
+./raw/probe2-stream.headers.txt
+./raw/probe2-stream.sse
+./raw/probe3-stream-trace.txt
+./raw/probe4-devin-direct.headers.txt
+./raw/probe4-devin-direct.json
+./raw/scratch-dir.txt
+./raw/sha256.after.txt
+./raw/sha256.before.txt
+./raw/shim-buildlegs.after.txt
+./raw/shim-buildlegs.before.txt
+./raw/shim-docstring.after.txt
+./raw/shim-docstring.before.txt
+./raw/unit.after.txt
+./raw/unit.before.txt
+./raw/unit.diff
+./raw/unit-patch.log
+./scripts/apply_legorder.py
+./scripts/apply_unit_desc.py
+./scripts/hygiene_check.sh
+./scripts/mock_429.py
+./scripts/probe_stream_trace.py
+./scripts/redact.sh
+./scripts/scratch_failover_test.sh

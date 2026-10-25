@@ -1,0 +1,74 @@
+{
+  "provider": "cursor",
+  "declared_protocols": [
+    "openai"
+  ],
+  "model_entries": 4,
+  "probes": [
+    {
+      "provider": "cursor",
+      "protocol": "openai",
+      "model_id": "composer-2.5-fast",
+      "purpose": "provider-default-protocol",
+      "method": "POST",
+      "url": "http://127.0.0.1:8788/v1/chat/completions",
+      "timeout_s": 180,
+      "auth_headers_sent": [
+        "Authorization"
+      ],
+      "request_body": {
+        "model": "composer-2.5-fast",
+        "max_tokens": 8,
+        "temperature": 0,
+        "messages": [
+          {
+            "role": "user",
+            "content": "ping"
+          }
+        ]
+      },
+      "latency_ms": 6917,
+      "status": 200,
+      "response_headers": {
+        "Server": "BaseHTTP/0.6 Python/3.14.7",
+        "Date": "Thu, 15 Oct 2026 11:32:52 GMT",
+        "Content-Type": "application/json",
+        "Content-Length": "359"
+      },
+      "body": {
+        "id": "chatcmpl-80ba3eff5fcf4a4e935c",
+        "object": "chat.completion",
+        "created": 1792063972,
+        "model": "composer-2.5-fast",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "pong \u2014 I'm here and ready. What would you like to work on?"
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0
+        }
+      },
+      "shape": {
+        "parsed_json": true,
+        "reasoning_content_present": false,
+        "usage_fields": [
+          "completion_tokens",
+          "prompt_tokens",
+          "total_tokens"
+        ],
+        "finish_reason": "stop",
+        "content_preview": "pong \u2014 I'm here and ready. What would you like to work on?",
+        "error_type": null,
+        "error_message": null
+      }
+    }
+  ]
+}

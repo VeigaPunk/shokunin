@@ -1,0 +1,11 @@
+closed_at	2026-10-21T22:35:47+00:00
+manifest_source	git-ref 32e5e7c43ccc0afa705ba39ac7006e0e52214978
+main_HEAD	32e5e7c
+log_lines	638
+manifest_entries	431
+reports	390
+prompts	262
+rule	watchdog.log = lines with timestamp <= closed_at; reports-index/prompts-index = files with
+rule	mtime <= closed_at (landed_at = add-commit committer time, '-' when untracked);
+rule	state-counters = highest launch/steer round per lane among the kept log lines
+rule	main_HEAD = newest commit with committer time <= closed_at ('-' when git cannot answer)

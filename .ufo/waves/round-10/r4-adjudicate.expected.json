@@ -1,0 +1,48 @@
+{
+  "_what": "Pinned expected values for r4-adjudicate.mjs (aggregator lane, round 10). Read-only for the gate: r4-adjudicate.mjs only READS this file. Three pinned groups: selftest.cases[] (isolated fixture expectations), frozen[] (per-class tallies at the eight committed frozen revisions, in SNAPSHOT mode so they re-derive), capture (one committed gate stdout with its `# json` line, which is what makes --from-json reproducible).",
+  "_provenance": {
+    "gate": "r4-adjudicate-v1",
+    "gate_path": ".ufo/waves/round-10/r4-adjudicate.mjs",
+    "upstream": "node .ufo/waves/round-9/corpus-gate.mjs (frozen round-9 evidence; sha256 68939d0c70b6dc5ee9e2667b..., never edited by this round) supplies the r4 finding set; this gate only partitions it",
+    "author": "ExecR4Adjudicator seat, aggregator round-10 wave",
+    "selftest_cases": "fixtures are built by r4-adjudicate.mjs under os.tmpdir(); the expectations below were authored with the fixtures BEFORE the first --selftest run (as the round-9 gate's expected file declares for its own cases) and reconciled once against it",
+    "selftest_independence": "the fixture finding sets are injected into a synthesized gate-json line, and the selftest validates each injected file:line against the fixture bytes (line exists, carries no backtick, re-matches COUNT_NOUN_RE) before classifying; the two fixtures that inject an explicit excerpt (fx-line-unresolved, fx-line-mismatch) exercise the unresolvable/stale guards by construction and are marked as not byte-validated in the run's own `# fixture-note`",
+    "frozen": "each key is a committed round-9 frozen revision; the gate is re-spawned as `--snapshot <repo> <commit> --round 9 --json` (read-only, extracts into the gate's own os.tmpdir tree and removes it) and the per-class tallies below are compared against that run. The tallies were populated from THIS seat's first verified --frozen-all run and then re-run to confirm (a pin this seat measured itself is still a pin; the instant is named in the seat file .ufo/waves/round-10/seats/executor-adjudicator.md).",
+    "frozen_cross_check": "each frozen key is additionally cross-checked against the round-9 gate's own committed expected file (.ufo/waves/round-9/corpus-gate.expected.json frozen[key].stats.r4 and the count of CR-<repo>-r4-* ids in frozen[key].expect_findings); a disagreement is could-not-evaluate (exit 2), not drift, because it means the finding set itself did not reproduce",
+    "capture": "verbatim stdout of the frozen gate in --snapshot mode for one revision, committed so `--from-json` replays byte-exactly (snapshot revisions are read with `git show <commit>:corpus/<path>`, not from a moving worktree)",
+    "verdict_shape": "exit=1 means at least one r4 finding is a surviving `violation` (a measured count with no backticked command); it is NOT an error of this gate. exit=0 means every r4 finding is a classified false positive or is undecided."
+  },
+  "selftest": {
+    "cases": [
+      { "name": "fx-clean", "expect_exit": 0, "expect_class_ids": [] },
+      { "name": "fx-violation-plain", "expect_exit": 1, "expect_class_ids": ["CR-fx-violation-plain-r4-1:violation"] },
+      { "name": "fx-delta-arrow", "expect_exit": 1, "expect_class_ids": ["CR-fx-delta-arrow-r4-1:violation"] },
+      { "name": "fx-range-dash", "expect_exit": 1, "expect_class_ids": ["CR-fx-range-dash-r4-1:violation"] },
+      { "name": "fx-entity-keyword", "expect_exit": 0, "expect_class_ids": ["CR-fx-entity-keyword-r4-1:fp-entity-designation"] },
+      { "name": "fx-entity-code", "expect_exit": 0, "expect_class_ids": ["CR-fx-entity-code-r4-1:fp-entity-designation"] },
+      { "name": "fx-entity-designation-head", "expect_exit": 0, "expect_class_ids": ["CR-fx-entity-designation-head-r4-1:fp-entity-designation"] },
+      { "name": "fx-entity-leading-zero", "expect_exit": 0, "expect_class_ids": ["CR-fx-entity-leading-zero-r4-1:fp-entity-designation"] },
+      { "name": "fx-entity-date", "expect_exit": 0, "expect_class_ids": ["CR-fx-entity-date-r4-1:fp-entity-designation"] },
+      { "name": "fx-entity-quoted-id", "expect_exit": 0, "expect_class_ids": ["CR-fx-entity-quoted-id-r4-1:fp-entity-designation"] },
+      { "name": "fx-arith-product", "expect_exit": 0, "expect_class_ids": ["CR-fx-arith-product-r4-1:fp-design-arithmetic"] },
+      { "name": "fx-arith-equation", "expect_exit": 0, "expect_class_ids": ["CR-fx-arith-equation-r4-1:fp-design-arithmetic"] },
+      { "name": "fx-arith-sum", "expect_exit": 0, "expect_class_ids": ["CR-fx-arith-sum-r4-1:fp-design-arithmetic"] },
+      { "name": "fx-arith-range-design", "expect_exit": 0, "expect_class_ids": ["CR-fx-arith-range-design-r4-1:fp-design-arithmetic"] },
+      { "name": "fx-arith-estimate-design", "expect_exit": 0, "expect_class_ids": ["CR-fx-arith-estimate-design-r4-1:fp-design-arithmetic"] },
+      { "name": "fx-arith-equation-wrapped", "expect_exit": 0, "expect_class_ids": ["CR-fx-arith-equation-wrapped-r4-1:fp-design-arithmetic"] },
+      { "name": "fx-refutation-line", "expect_exit": 0, "expect_class_ids": ["CR-fx-refutation-line-r4-1:fp-quoted-refutation"] },
+      { "name": "fx-refutation-entry", "expect_exit": 0, "expect_class_ids": ["CR-fx-refutation-entry-r4-1:fp-quoted-refutation"] },
+      { "name": "fx-refutation-beats-delta", "expect_exit": 0, "expect_class_ids": ["CR-fx-refutation-beats-delta-r4-1:fp-quoted-refutation"] },
+      { "name": "fx-undecided-threshold", "expect_exit": 0, "expect_class_ids": ["CR-fx-undecided-threshold-r4-1:undecided"] },
+      { "name": "fx-undecided-ambiguous", "expect_exit": 0, "expect_class_ids": ["CR-fx-undecided-ambiguous-r4-1:undecided"] },
+      { "name": "fx-undecided-entry-command", "expect_exit": 0, "expect_class_ids": ["CR-fx-undecided-entry-command-r4-1:undecided"] },
+      { "name": "fx-mixed-entity-count", "expect_exit": 1, "expect_class_ids": ["CR-fx-mixed-entity-count-r4-1:violation"] },
+      { "name": "fx-line-unresolved", "expect_exit": 0, "expect_class_ids": ["CR-fx-line-unresolved-r4-1:undecided"] },
+      { "name": "fx-line-mismatch", "expect_exit": 0, "expect_class_ids": ["CR-fx-line-mismatch-r4-1:undecided"] },
+      { "name": "fx-multi-finding", "expect_exit": 1, "expect_class_ids": ["CR-fx-multi-finding-r4-1:violation", "CR-fx-multi-finding-r4-2:fp-entity-designation"] }
+    ]
+  },
+  "frozen": {},
+  "frozen_round": 9,
+  "capture": {}
+}

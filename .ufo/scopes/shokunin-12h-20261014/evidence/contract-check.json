@@ -1,0 +1,944 @@
+{
+  "ok": false,
+  "mode": "check",
+  "advisory": false,
+  "canonical": [
+    "skills/ufo/**",
+    "agents/*.md",
+    "config/ufo.json",
+    "ssot/godspeed-core/directive.md",
+    "ssot/godspeed-core/filter.md",
+    "ssot/godspeed-core/velocity.md",
+    "ssot/godspeed-core/SHA256SUMS",
+    "skills/wwkd/SKILL.md",
+    "ufo-deps.lock",
+    "skills/wwkd/**"
+  ],
+  "supportedSubstrates": [
+    "omp",
+    "kimi",
+    "codex",
+    "cursor",
+    "opencode",
+    "grok",
+    "devin"
+  ],
+  "copies": 193,
+  "projection": {
+    "ok": true,
+    "path": ".omp/config.yml",
+    "source": "config/ufo.json nativeProfiles.omp-native-v1",
+    "missing": [],
+    "drifted": [],
+    "changed": []
+  },
+  "packageScopes": {
+    "ok": true,
+    "count": 5,
+    "tags": [
+      {
+        "packageScope": "omp",
+        "path": "packages/substrate-omp/ufo-skill-scope.json"
+      },
+      {
+        "packageScope": "opencode",
+        "path": "packages/opencode/ufo-skill-scope.json"
+      },
+      {
+        "packageScope": "codex",
+        "path": "packages/codex/ufo-skill-scope.json"
+      },
+      {
+        "packageScope": "grok",
+        "path": "packages/grok/ufo-skill-scope.json"
+      },
+      {
+        "packageScope": "kimi",
+        "path": "packages/kimi/ufo-skill-scope.json"
+      }
+    ]
+  },
+  "editorialCharterlist": {
+    "ok": true,
+    "path": "docs/ufo-fsd-charterlist.json",
+    "assignedSlots": 5,
+    "nextUnassignedOrdinal": 6,
+    "isRuntimeRoster": false
+  },
+  "depsClosure": {
+    "ok": false,
+    "mode": "execution",
+    "unsatisfied": [
+      {
+        "dep": "godspeed-directive",
+        "path": ".devin/ssot/godspeed-core/directive.md",
+        "reason": "packaged dependency mirror is missing"
+      },
+      {
+        "dep": "wwkd-skill",
+        "path": ".devin/skills/wwkd/SHA256SUMS",
+        "reason": "packaged dependency mirror is missing"
+      },
+      {
+        "dep": "wwkd-skill",
+        "path": ".devin/skills/wwkd/SKILL.md",
+        "reason": "packaged dependency mirror is missing"
+      },
+      {
+        "dep": "godspeed-directive",
+        "path": "packages/devin/.devin/ssot/godspeed-core/directive.md",
+        "reason": "packaged dependency mirror is missing"
+      },
+      {
+        "dep": "wwkd-skill",
+        "path": "packages/devin/.devin/skills/wwkd/SHA256SUMS",
+        "reason": "packaged dependency mirror is missing"
+      },
+      {
+        "dep": "wwkd-skill",
+        "path": "packages/devin/.devin/skills/wwkd/SKILL.md",
+        "reason": "packaged dependency mirror is missing"
+      }
+    ]
+  },
+  "skillsSums": {
+    "ok": true,
+    "path": "skills/SHA256SUMS"
+  },
+  "constantsUnique": {
+    "ok": true,
+    "violations": []
+  },
+  "docsDates": {
+    "ok": true,
+    "violations": []
+  },
+  "unexpectedScopeTags": [],
+  "l1Overlay": {
+    "ok": true,
+    "path": "config/l1-max-context.yml"
+  },
+  "tickMachine": {
+    "ok": true,
+    "path": "config/the-tick.machine.json"
+  },
+  "surface": {
+    "ok": false,
+    "kind": "sighting-surface-v1",
+    "declared": "sha256:666cd0a162407ffd68b735e651a208a374bfa639af6284bc2a08850c6ed919ab",
+    "computed": "sha256:8884924f78106aa34e69e9b09c1fd76a2ce39fc59b4ff313719332057940553b",
+    "outcome": "drift",
+    "source": "scripts/ufo-sighting surface --json",
+    "message": "sighting surface digest mismatch: declared 'sha256:666cd0a162407ffd68b735e651a208a374bfa639af6284bc2a08850c6ed919ab', computed 'sha256:8884924f78106aa34e69e9b09c1fd76a2ce39fc59b4ff313719332057940553b'"
+  },
+  "routesEquivalence": {
+    "ok": false,
+    "step": "routes:equivalence",
+    "seats": 14,
+    "mismatches": [
+      {
+        "seat": "planner",
+        "detail": "alias",
+        "expected": "m_strong",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "planner",
+        "detail": "chainKey",
+        "expected": "m_strong",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "planner",
+        "detail": "requested",
+        "expected": "openai-codex/gpt-6.1-sol:high",
+        "actual": "alibaba-token-plan/deepseek-v4.1-flash:max"
+      },
+      {
+        "seat": "planner",
+        "detail": "resolved",
+        "expected": "openai-codex/gpt-6.1-sol",
+        "actual": "alibaba-token-plan/deepseek-v4.1-flash"
+      },
+      {
+        "seat": "planner",
+        "detail": "effort",
+        "expected": "high",
+        "actual": "max"
+      },
+      {
+        "seat": "planner",
+        "detail": "family",
+        "expected": "m_strong",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "planner",
+        "detail": "fallbackChain",
+        "expected": [
+          {
+            "effort": "high",
+            "family": "m_strong",
+            "requested": "devin/gpt-6-1-sol:high",
+            "resolved": "devin/gpt-6-1-sol"
+          }
+        ],
+        "actual": [
+          {
+            "effort": "max",
+            "family": "m_flash",
+            "requested": "opencode-go/deepseek-v4.1-flash:max",
+            "resolved": "opencode-go/deepseek-v4.1-flash"
+          },
+          {
+            "effort": "max",
+            "family": "m_flash",
+            "requested": "devin/deepseek-v4-1-flash:max",
+            "resolved": "devin/deepseek-v4-1-flash"
+          }
+        ]
+      },
+      {
+        "seat": "distiller",
+        "detail": "alias",
+        "expected": "m_fast",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "distiller",
+        "detail": "chainKey",
+        "expected": "m_fast",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "distiller",
+        "detail": "family",
+        "expected": "m_fast",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "distiller",
+        "detail": "fallbackChain",
+        "expected": [
+          {
+            "effort": "max",
+            "family": "m_fast",
+            "requested": "opencode-go/deepseek-v4.1-flash:max",
+            "resolved": "opencode-go/deepseek-v4.1-flash"
+          },
+          {
+            "effort": "max",
+            "family": "m_fast",
+            "requested": "devin/deepseek-v4-1-flash:max",
+            "resolved": "devin/deepseek-v4-1-flash"
+          },
+          {
+            "effort": "max",
+            "family": "m_fast",
+            "requested": "charm-hyper/deepseek-v4.1-flash:max",
+            "resolved": "charm-hyper/deepseek-v4.1-flash"
+          }
+        ],
+        "actual": [
+          {
+            "effort": "max",
+            "family": "m_flash",
+            "requested": "opencode-go/deepseek-v4.1-flash:max",
+            "resolved": "opencode-go/deepseek-v4.1-flash"
+          },
+          {
+            "effort": "max",
+            "family": "m_flash",
+            "requested": "devin/deepseek-v4-1-flash:max",
+            "resolved": "devin/deepseek-v4-1-flash"
+          }
+        ]
+      },
+      {
+        "seat": "labrat",
+        "detail": "alias",
+        "expected": "m_fast",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "labrat",
+        "detail": "chainKey",
+        "expected": "m_fast",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "labrat",
+        "detail": "family",
+        "expected": "m_fast",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "labrat",
+        "detail": "fallbackChain",
+        "expected": [
+          {
+            "effort": "max",
+            "family": "m_fast",
+            "requested": "opencode-go/deepseek-v4.1-flash:max",
+            "resolved": "opencode-go/deepseek-v4.1-flash"
+          },
+          {
+            "effort": "max",
+            "family": "m_fast",
+            "requested": "devin/deepseek-v4-1-flash:max",
+            "resolved": "devin/deepseek-v4-1-flash"
+          },
+          {
+            "effort": "max",
+            "family": "m_fast",
+            "requested": "charm-hyper/deepseek-v4.1-flash:max",
+            "resolved": "charm-hyper/deepseek-v4.1-flash"
+          }
+        ],
+        "actual": [
+          {
+            "effort": "max",
+            "family": "m_flash",
+            "requested": "opencode-go/deepseek-v4.1-flash:max",
+            "resolved": "opencode-go/deepseek-v4.1-flash"
+          },
+          {
+            "effort": "max",
+            "family": "m_flash",
+            "requested": "devin/deepseek-v4-1-flash:max",
+            "resolved": "devin/deepseek-v4-1-flash"
+          }
+        ]
+      },
+      {
+        "seat": "scout",
+        "detail": "alias",
+        "expected": "m_fast",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "scout",
+        "detail": "chainKey",
+        "expected": "m_fast",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "scout",
+        "detail": "family",
+        "expected": "m_fast",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "scout",
+        "detail": "fallbackChain",
+        "expected": [
+          {
+            "effort": "max",
+            "family": "m_fast",
+            "requested": "opencode-go/deepseek-v4.1-flash:max",
+            "resolved": "opencode-go/deepseek-v4.1-flash"
+          },
+          {
+            "effort": "max",
+            "family": "m_fast",
+            "requested": "devin/deepseek-v4-1-flash:max",
+            "resolved": "devin/deepseek-v4-1-flash"
+          },
+          {
+            "effort": "max",
+            "family": "m_fast",
+            "requested": "charm-hyper/deepseek-v4.1-flash:max",
+            "resolved": "charm-hyper/deepseek-v4.1-flash"
+          }
+        ],
+        "actual": [
+          {
+            "effort": "max",
+            "family": "m_flash",
+            "requested": "opencode-go/deepseek-v4.1-flash:max",
+            "resolved": "opencode-go/deepseek-v4.1-flash"
+          },
+          {
+            "effort": "max",
+            "family": "m_flash",
+            "requested": "devin/deepseek-v4-1-flash:max",
+            "resolved": "devin/deepseek-v4-1-flash"
+          }
+        ]
+      },
+      {
+        "seat": "reviewer",
+        "detail": "alias",
+        "expected": "m_mid",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "reviewer",
+        "detail": "chainKey",
+        "expected": "m_mid",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "reviewer",
+        "detail": "requested",
+        "expected": "alibaba-token-plan/qwen3.8-flash:high",
+        "actual": "alibaba-token-plan/deepseek-v4.1-flash:max"
+      },
+      {
+        "seat": "reviewer",
+        "detail": "resolved",
+        "expected": "alibaba-token-plan/qwen3.8-flash",
+        "actual": "alibaba-token-plan/deepseek-v4.1-flash"
+      },
+      {
+        "seat": "reviewer",
+        "detail": "effort",
+        "expected": "high",
+        "actual": "max"
+      },
+      {
+        "seat": "reviewer",
+        "detail": "family",
+        "expected": "m_mid",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "reviewer",
+        "detail": "fallbackChain",
+        "expected": [
+          {
+            "effort": "high",
+            "family": "m_mid",
+            "requested": "charm-hyper/qwen3.8-flash:high",
+            "resolved": "charm-hyper/qwen3.8-flash"
+          }
+        ],
+        "actual": [
+          {
+            "effort": "max",
+            "family": "m_flash",
+            "requested": "opencode-go/deepseek-v4.1-flash:max",
+            "resolved": "opencode-go/deepseek-v4.1-flash"
+          },
+          {
+            "effort": "max",
+            "family": "m_flash",
+            "requested": "devin/deepseek-v4-1-flash:max",
+            "resolved": "devin/deepseek-v4-1-flash"
+          }
+        ]
+      },
+      {
+        "seat": "critic",
+        "detail": "alias",
+        "expected": "m_strong",
+        "actual": "m_zfl"
+      },
+      {
+        "seat": "critic",
+        "detail": "chainKey",
+        "expected": "m_strong",
+        "actual": "m_zfl"
+      },
+      {
+        "seat": "critic",
+        "detail": "requested",
+        "expected": "openai-codex/gpt-6.1-sol:high",
+        "actual": "zai/glm-5.3-flash:max"
+      },
+      {
+        "seat": "critic",
+        "detail": "resolved",
+        "expected": "openai-codex/gpt-6.1-sol",
+        "actual": "zai/glm-5.3-flash"
+      },
+      {
+        "seat": "critic",
+        "detail": "effort",
+        "expected": "high",
+        "actual": "max"
+      },
+      {
+        "seat": "critic",
+        "detail": "family",
+        "expected": "m_strong",
+        "actual": "m_zfl"
+      },
+      {
+        "seat": "critic",
+        "detail": "fallbackChain",
+        "expected": [
+          {
+            "effort": "high",
+            "family": "m_strong",
+            "requested": "devin/gpt-6-1-sol:high",
+            "resolved": "devin/gpt-6-1-sol"
+          }
+        ],
+        "actual": [
+          {
+            "effort": "max",
+            "family": "m_zfl",
+            "requested": "charm-hyper/glm-5.3-flash:max",
+            "resolved": "charm-hyper/glm-5.3-flash"
+          },
+          {
+            "effort": "max",
+            "family": "m_zfl",
+            "requested": "devin/glm-5-3-flash-1m:max",
+            "resolved": "devin/glm-5-3-flash-1m"
+          }
+        ]
+      },
+      {
+        "seat": "connector",
+        "detail": "alias",
+        "expected": "m_mid",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "connector",
+        "detail": "chainKey",
+        "expected": "m_mid",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "connector",
+        "detail": "requested",
+        "expected": "alibaba-token-plan/qwen3.8-flash:high",
+        "actual": "alibaba-token-plan/deepseek-v4.1-flash:max"
+      },
+      {
+        "seat": "connector",
+        "detail": "resolved",
+        "expected": "alibaba-token-plan/qwen3.8-flash",
+        "actual": "alibaba-token-plan/deepseek-v4.1-flash"
+      },
+      {
+        "seat": "connector",
+        "detail": "effort",
+        "expected": "high",
+        "actual": "max"
+      },
+      {
+        "seat": "connector",
+        "detail": "family",
+        "expected": "m_mid",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "connector",
+        "detail": "fallbackChain",
+        "expected": [
+          {
+            "effort": "high",
+            "family": "m_mid",
+            "requested": "charm-hyper/qwen3.8-flash:high",
+            "resolved": "charm-hyper/qwen3.8-flash"
+          }
+        ],
+        "actual": [
+          {
+            "effort": "max",
+            "family": "m_flash",
+            "requested": "opencode-go/deepseek-v4.1-flash:max",
+            "resolved": "opencode-go/deepseek-v4.1-flash"
+          },
+          {
+            "effort": "max",
+            "family": "m_flash",
+            "requested": "devin/deepseek-v4-1-flash:max",
+            "resolved": "devin/deepseek-v4-1-flash"
+          }
+        ]
+      },
+      {
+        "seat": "sentinel",
+        "detail": "alias",
+        "expected": "m_mid",
+        "actual": "m_zfl"
+      },
+      {
+        "seat": "sentinel",
+        "detail": "chainKey",
+        "expected": "m_mid",
+        "actual": "m_zfl"
+      },
+      {
+        "seat": "sentinel",
+        "detail": "requested",
+        "expected": "alibaba-token-plan/qwen3.8-flash:high",
+        "actual": "zai/glm-5.3-flash:max"
+      },
+      {
+        "seat": "sentinel",
+        "detail": "resolved",
+        "expected": "alibaba-token-plan/qwen3.8-flash",
+        "actual": "zai/glm-5.3-flash"
+      },
+      {
+        "seat": "sentinel",
+        "detail": "effort",
+        "expected": "high",
+        "actual": "max"
+      },
+      {
+        "seat": "sentinel",
+        "detail": "family",
+        "expected": "m_mid",
+        "actual": "m_zfl"
+      },
+      {
+        "seat": "sentinel",
+        "detail": "fallbackChain",
+        "expected": [
+          {
+            "effort": "high",
+            "family": "m_mid",
+            "requested": "charm-hyper/qwen3.8-flash:high",
+            "resolved": "charm-hyper/qwen3.8-flash"
+          }
+        ],
+        "actual": [
+          {
+            "effort": "max",
+            "family": "m_zfl",
+            "requested": "charm-hyper/glm-5.3-flash:max",
+            "resolved": "charm-hyper/glm-5.3-flash"
+          },
+          {
+            "effort": "max",
+            "family": "m_zfl",
+            "requested": "devin/glm-5-3-flash-1m:max",
+            "resolved": "devin/glm-5-3-flash-1m"
+          }
+        ]
+      },
+      {
+        "seat": "executor",
+        "detail": "alias",
+        "expected": "m_mid",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "executor",
+        "detail": "chainKey",
+        "expected": "m_mid",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "executor",
+        "detail": "requested",
+        "expected": "alibaba-token-plan/qwen3.8-flash:high",
+        "actual": "alibaba-token-plan/deepseek-v4.1-flash:max"
+      },
+      {
+        "seat": "executor",
+        "detail": "resolved",
+        "expected": "alibaba-token-plan/qwen3.8-flash",
+        "actual": "alibaba-token-plan/deepseek-v4.1-flash"
+      },
+      {
+        "seat": "executor",
+        "detail": "effort",
+        "expected": "high",
+        "actual": "max"
+      },
+      {
+        "seat": "executor",
+        "detail": "family",
+        "expected": "m_mid",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "executor",
+        "detail": "fallbackChain",
+        "expected": [
+          {
+            "effort": "high",
+            "family": "m_mid",
+            "requested": "charm-hyper/qwen3.8-flash:high",
+            "resolved": "charm-hyper/qwen3.8-flash"
+          }
+        ],
+        "actual": [
+          {
+            "effort": "max",
+            "family": "m_flash",
+            "requested": "opencode-go/deepseek-v4.1-flash:max",
+            "resolved": "opencode-go/deepseek-v4.1-flash"
+          },
+          {
+            "effort": "max",
+            "family": "m_flash",
+            "requested": "devin/deepseek-v4-1-flash:max",
+            "resolved": "devin/deepseek-v4-1-flash"
+          }
+        ]
+      },
+      {
+        "seat": "mutation-tester",
+        "detail": "alias",
+        "expected": "m_fast",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "mutation-tester",
+        "detail": "chainKey",
+        "expected": "m_fast",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "mutation-tester",
+        "detail": "family",
+        "expected": "m_fast",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "mutation-tester",
+        "detail": "fallbackChain",
+        "expected": [
+          {
+            "effort": "max",
+            "family": "m_fast",
+            "requested": "opencode-go/deepseek-v4.1-flash:max",
+            "resolved": "opencode-go/deepseek-v4.1-flash"
+          },
+          {
+            "effort": "max",
+            "family": "m_fast",
+            "requested": "devin/deepseek-v4-1-flash:max",
+            "resolved": "devin/deepseek-v4-1-flash"
+          },
+          {
+            "effort": "max",
+            "family": "m_fast",
+            "requested": "charm-hyper/deepseek-v4.1-flash:max",
+            "resolved": "charm-hyper/deepseek-v4.1-flash"
+          }
+        ],
+        "actual": [
+          {
+            "effort": "max",
+            "family": "m_flash",
+            "requested": "opencode-go/deepseek-v4.1-flash:max",
+            "resolved": "opencode-go/deepseek-v4.1-flash"
+          },
+          {
+            "effort": "max",
+            "family": "m_flash",
+            "requested": "devin/deepseek-v4-1-flash:max",
+            "resolved": "devin/deepseek-v4-1-flash"
+          }
+        ]
+      },
+      {
+        "seat": "revenger",
+        "detail": "alias",
+        "expected": "m_mid",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "revenger",
+        "detail": "chainKey",
+        "expected": "m_mid",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "revenger",
+        "detail": "requested",
+        "expected": "alibaba-token-plan/qwen3.8-flash:high",
+        "actual": "alibaba-token-plan/deepseek-v4.1-flash:max"
+      },
+      {
+        "seat": "revenger",
+        "detail": "resolved",
+        "expected": "alibaba-token-plan/qwen3.8-flash",
+        "actual": "alibaba-token-plan/deepseek-v4.1-flash"
+      },
+      {
+        "seat": "revenger",
+        "detail": "effort",
+        "expected": "high",
+        "actual": "max"
+      },
+      {
+        "seat": "revenger",
+        "detail": "family",
+        "expected": "m_mid",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "revenger",
+        "detail": "fallbackChain",
+        "expected": [
+          {
+            "effort": "high",
+            "family": "m_mid",
+            "requested": "charm-hyper/qwen3.8-flash:high",
+            "resolved": "charm-hyper/qwen3.8-flash"
+          }
+        ],
+        "actual": [
+          {
+            "effort": "max",
+            "family": "m_flash",
+            "requested": "opencode-go/deepseek-v4.1-flash:max",
+            "resolved": "opencode-go/deepseek-v4.1-flash"
+          },
+          {
+            "effort": "max",
+            "family": "m_flash",
+            "requested": "devin/deepseek-v4-1-flash:max",
+            "resolved": "devin/deepseek-v4-1-flash"
+          }
+        ]
+      },
+      {
+        "seat": "simplifier",
+        "detail": "alias",
+        "expected": "m_fast",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "simplifier",
+        "detail": "chainKey",
+        "expected": "m_fast",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "simplifier",
+        "detail": "family",
+        "expected": "m_fast",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "simplifier",
+        "detail": "fallbackChain",
+        "expected": [
+          {
+            "effort": "max",
+            "family": "m_fast",
+            "requested": "opencode-go/deepseek-v4.1-flash:max",
+            "resolved": "opencode-go/deepseek-v4.1-flash"
+          },
+          {
+            "effort": "max",
+            "family": "m_fast",
+            "requested": "devin/deepseek-v4-1-flash:max",
+            "resolved": "devin/deepseek-v4-1-flash"
+          },
+          {
+            "effort": "max",
+            "family": "m_fast",
+            "requested": "charm-hyper/deepseek-v4.1-flash:max",
+            "resolved": "charm-hyper/deepseek-v4.1-flash"
+          }
+        ],
+        "actual": [
+          {
+            "effort": "max",
+            "family": "m_flash",
+            "requested": "opencode-go/deepseek-v4.1-flash:max",
+            "resolved": "opencode-go/deepseek-v4.1-flash"
+          },
+          {
+            "effort": "max",
+            "family": "m_flash",
+            "requested": "devin/deepseek-v4-1-flash:max",
+            "resolved": "devin/deepseek-v4-1-flash"
+          }
+        ]
+      },
+      {
+        "seat": "scribe",
+        "detail": "alias",
+        "expected": "m_fast",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "scribe",
+        "detail": "chainKey",
+        "expected": "m_fast",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "scribe",
+        "detail": "family",
+        "expected": "m_fast",
+        "actual": "m_flash"
+      },
+      {
+        "seat": "scribe",
+        "detail": "fallbackChain",
+        "expected": [
+          {
+            "effort": "max",
+            "family": "m_fast",
+            "requested": "opencode-go/deepseek-v4.1-flash:max",
+            "resolved": "opencode-go/deepseek-v4.1-flash"
+          },
+          {
+            "effort": "max",
+            "family": "m_fast",
+            "requested": "devin/deepseek-v4-1-flash:max",
+            "resolved": "devin/deepseek-v4-1-flash"
+          },
+          {
+            "effort": "max",
+            "family": "m_fast",
+            "requested": "charm-hyper/deepseek-v4.1-flash:max",
+            "resolved": "charm-hyper/deepseek-v4.1-flash"
+          }
+        ],
+        "actual": [
+          {
+            "effort": "max",
+            "family": "m_flash",
+            "requested": "opencode-go/deepseek-v4.1-flash:max",
+            "resolved": "opencode-go/deepseek-v4.1-flash"
+          },
+          {
+            "effort": "max",
+            "family": "m_flash",
+            "requested": "devin/deepseek-v4-1-flash:max",
+            "resolved": "devin/deepseek-v4-1-flash"
+          }
+        ]
+      },
+      {
+        "seat": null,
+        "detail": "byte-drift",
+        "expected": "sha256:63632a82a10cba9cb47313e4ad4c53564557947adaef328e479452a20993b46d",
+        "actual": "sha256:ec730a6edbfe3de07f17e1aa7e3afaeb7cba4cce4a139d1611ed0b6f93f414ca"
+      }
+    ],
+    "message": "routes:equivalence mismatch (74): seat planner alias"
+  },
+  "changed": [],
+  "missing": [
+    ".devin/skills/ufo/SKILL.md",
+    ".devin/skills/ufo/references/CHANGELOG.md",
+    ".devin/skills/ufo/references/godspeed-core/filter.md",
+    ".devin/skills/ufo/references/godspeed-core/velocity.md",
+    ".devin/skills/ufo/references/run-logic.md",
+    "packages/devin/.devin/skills/ufo/SKILL.md",
+    "packages/devin/.devin/skills/ufo/references/CHANGELOG.md",
+    "packages/devin/.devin/skills/ufo/references/godspeed-core/filter.md",
+    "packages/devin/.devin/skills/ufo/references/godspeed-core/velocity.md",
+    "packages/devin/.devin/skills/ufo/references/run-logic.md",
+    ".devin/skills/ufo/references/godspeed-core/directive.md",
+    "packages/devin/.devin/skills/ufo/references/godspeed-core/directive.md",
+    ".devin/ssot/godspeed-core/directive.md",
+    ".devin/skills/wwkd/SHA256SUMS",
+    ".devin/skills/wwkd/SKILL.md",
+    "packages/devin/.devin/ssot/godspeed-core/directive.md",
+    "packages/devin/.devin/skills/wwkd/SHA256SUMS",
+    "packages/devin/.devin/skills/wwkd/SKILL.md"
+  ],
+  "drifted": [
+    "crates/ufo-core-runtime/bundled/omp-seat-routing.json"
+  ],
+  "extras": [],
+  "validationErrors": []
+}

@@ -1,0 +1,115 @@
+{
+  "pool_id": "xai-oauth/grok-4.5",
+  "provider": "xai-oauth",
+  "model_id": "grok-4.5",
+  "model_sent": "grok-4.5",
+  "protocol": "openai",
+  "bucket": "MIDDLE",
+  "base_url": "http://127.0.0.1:8790/v1",
+  "probe_id": "k1",
+  "probe_kind": "code",
+  "rep": 1,
+  "measured": true,
+  "prompt": "Write a Python function named rev that takes a single string argument and returns that string reversed. Output only the function definition as plain Python code. No markdown fences, no explanation, no test calls, no example usage.",
+  "max_tokens": 192,
+  "tools_sent": false,
+  "tool_choice": null,
+  "request_body": {
+    "model": "grok-4.5",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Write a Python function named rev that takes a single string argument and returns that string reversed. Output only the function definition as plain Python code. No markdown fences, no explanation, no test calls, no example usage."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "url": "http://127.0.0.1:8790/v1/chat/completions",
+  "timeout_s": 300,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 3175,
+  "response_headers": {
+    "Server": "cloudflare",
+    "Date": "Thu, 15 Oct 2026 12:02:29 GMT",
+    "Content-Type": "text/event-stream",
+    "Cache-Control": "no-cache",
+    "x-zero-data-retention": "false",
+    "x-ratelimit-limit-tokens": "<redacted:len=8>",
+    "x-ratelimit-remaining-tokens": "<redacted:len=8>",
+    "x-ratelimit-limit-requests": "8300",
+    "x-ratelimit-remaining-requests": "8300",
+    "Strict-Transport-Security": "max-age=31536000",
+    "set-cookie": "<redacted:len=18>",
+    "cf-cache-status": "DYNAMIC",
+    "x-request-id": "03fb2a89-0350-969b-905c-8a9bc1f4bd16",
+    "x-data-retention": "general",
+    "traceparent": "00-0b3e6efe1452bbb43fafa79af3dbe5b5-078a9f2200066a87-01",
+    "vary": "origin, access-control-request-method, access-control-request-headers",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "*",
+    "CF-RAY": "a4aeacd46b338aef-GIG",
+    "Connection": "close"
+  },
+  "content_type": "text/event-stream",
+  "content": "def rev(s):\n    return s[::-1]",
+  "content_truncated": false,
+  "reasoning_chars": 82,
+  "reasoning_text": "Writing a Python function named `rev` that takes a string and returns it reversed.",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": {
+    "prompt_tokens": 537,
+    "completion_tokens": 13,
+    "total_tokens": 648,
+    "prompt_tokens_details": {
+      "text_tokens": 537,
+      "audio_tokens": 0,
+      "image_tokens": 0,
+      "cached_tokens": 384
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 98,
+      "audio_tokens": 0,
+      "accepted_prediction_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "num_sources_used": 0,
+    "cost_in_usd_ticks": 3696480
+  },
+  "finish_reason": "stop",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 19,
+  "sse_line_count": 40,
+  "raw_preview": "data: {\"id\":\"03fb2a89-0350-969b-905c-8a9bc1f4bd16\",\"object\":\"chat.completion.chunk\",\"created\":1792065749,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"Writing a Python function\",\"role\":\"assistant\"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"03fb2a89-0350-969b-905c-8a9bc1f4bd16\",\"object\":\"chat.completion.chunk\",\"created\":1792065749,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" named `rev` that takes\"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"03fb2a89-0350-969b-905c-8a9bc1f4bd16\",\"object\":\"chat.completion.chunk\",\"created\":1792065749,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" a string and returns\"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"03fb2a89-0350-969b-905c-8a9bc1f4bd16\",\"object\":\"chat.completion.chunk\",\"created\":1792065749,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" it reversed.\"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"03fb2a89-0350-969b-905c-8a9bc1f4bd16\",\"object\":\"chat.completion.chunk\",\"created\":1792065749,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"def\"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"03fb2a89-0350-969b-905c-8a9bc1f4bd16\",\"object\":\"chat.completion.chunk\",\"created\":1792065749,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\" rev\"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"03fb2a89-0350-969b-905c-8a9bc1f4bd16\",\"object\":\"chat.completion.chunk\",\"created\":1792065749,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"(\"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"03fb2a89-0350-969b-905c-8a9bc1f4bd16\",\"object\":\"chat.completion.chunk\",\"created\":1792065749,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"s\"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"03fb2a89-0350-969b-905c-8a9bc1f4bd16\",\"object\":\"chat.completion.chunk\",\"created\":1792065749,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"):\"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"03fb2a89-0350-969b-905c-8a9bc1f4bd16\",\"object\":\"chat.completion.chunk\",\"created\":1792065749,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\\n\"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"03fb2a89-0350-969b-905c-8a9bc1f4bd16\",\"object\":\"chat.completion.chunk\",\"created\":1792065749,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"   \"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"03fb2a89-0350-969b-905c-8a9bc1f4bd16\",\"object\":\"chat.completion.chunk\",\"created\":1792065749,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\" return\"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"03fb2a89-0350-969b-905c-8a9bc1f4bd16\",\"object\":\"chat.completion.chunk\",\"created\":1792065749,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\" s\"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"03fb2a89-0350-969b-905c-8a9bc1f4bd16\",\"object\":\"chat.completion.chunk\",\"created\":1792065749,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"[\"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"03fb2a89-0350-969b-905c-8a9bc1f4bd16\",\"object\":\"chat.completion.chunk\",\"created\":1792065749,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"::-\"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"03fb2a89-0350-969b-905c-8a9bc1f4bd16\",\"object\":\"chat.completion.chunk\",\"created\":1792065749,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"1\"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "3 cases pass",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T12:02:32Z",
+  "ttft_content_ms": 2962,
+  "ttft_reasoning_ms": 1959,
+  "first_decoded_ms": 2962,
+  "decode_span_ms": 160,
+  "tps": 75.11,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": null,
+  "completion_tokens": 13,
+  "prompt_tokens": 537,
+  "reasoning_tokens": 98,
+  "content_delta_count": 13,
+  "reasoning_delta_count": 4
+}

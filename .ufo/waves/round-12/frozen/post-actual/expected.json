@@ -1,0 +1,36 @@
+{
+ "exit": 1,
+ "verdict": "debt",
+ "debt": [
+  {
+   "lane": "aggregator",
+   "lane_round": 8,
+   "class": "stale_in_flight",
+   "source": "entry #23 in-flight; complete aggregator round=8 21:14:05 (<= 21:20) + landed report .ufo/reports/round-8/aggregator.md (add a5d6a7e, 24058 B, added 21:13:01)",
+   "evidence": "mission terminated inside the snapshot instant"
+  },
+  {
+   "lane": "kengaku",
+   "lane_round": 11,
+   "class": "stale_in_flight",
+   "source": "entry #24 in-flight; landed report .ufo/reports/round-11/kengaku.md (add e0170cd, 18585 B, added 21:18:11 <= 21:20); no complete line until 21:21:46 (outside the snapshot)",
+   "evidence": "termination evidence = landed report (rule c)"
+  },
+  {
+   "lane": "kumitate",
+   "lane_round": 12,
+   "class": "stale_in_flight",
+   "source": "entry #25 in-flight; landed report .ufo/reports/round-12/kumitate.md (add c41e197, 14986 B, added 21:15:59 <= 21:20)",
+   "evidence": "termination evidence = landed report (rule c)"
+  },
+  {
+   "lane": "kotoba",
+   "lane_round": 13,
+   "class": "stale_in_flight",
+   "source": "entry #26 in-flight; complete kotoba round=13 21:14:11 (<= 21:20) + landed report .ufo/reports/round-13/kotoba.md (add 98735cc, 10116 B, added 21:11:33)",
+   "evidence": "mission terminated inside the snapshot instant"
+  }
+ ],
+ "pin": "(lane, lane_round, class) triples; the four rows the pass's own 21:20:00 evidence instants",
+ "note": "post-actual = the pass's actual bytes (30 entries). Every row rests on evidence inside the snapshot instant, so this is real debt, not post-window leakage. frozen/post pins the TARGET end state (the same MANIFEST plus these four corrections), which is why it is green."
+}

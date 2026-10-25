@@ -1,0 +1,281 @@
+# kimi-secondary-models-round18.toml -- R18 routing table (mission M4, branch feat/r18-routing-table-and-docs)
+#
+# WHAT THIS FILE IS
+#   The complete replacement for the [secondary_model] / [secondary_model.models]
+#   region of ~/.kimi-code/config.toml (live region: lines 1483-1504 at pin time).
+#   The two TOML tables below are the spliceable payload; every other line in
+#   this file is a comment (inert under TOML, safe to splice whole).
+#
+# WHAT THIS FILE IS NOT
+#   It is not spliced by the author. The live config was never written by this
+#   mission. Operator steps, backup convention, verification checklist and
+#   rollback are in routing/APPLY.md.
+#
+# PROVENANCE (pinned at run start, 2026-10-15)
+#   live config           /home/vgpnk/.kimi-code/config.toml
+#   file sha256           c5f12997f7cee456eacddbaf03c95e598ca5911cb18d6e6cf7821909b6fc9ebf
+#   json-canonical /16    2c61f6bbe6c77dc7      (sha256(json.dumps(parsed,sort_keys=True))[:16])
+#   pool table sha256     9dcbc7d2549a911588fb15a8163a5732f00eeaf4ea29b8015415ed749322858d
+#                         (sha256 of json.dumps(secondary_model.models, sort_keys=True, separators=(',',':'))))
+#   pool size             17 entries; [models.*] entries 143; providers 13
+#   M3 measurement rev    config.toml.20261015-095235.bak
+#                         file sha256 e3c223e054a626b847e69f73020ac9b4fdec1ccc2c8f00dcbf414dcda8acfe78
+#                         json-canonical 61f22a2bbe52d616 (battery/ANALYSIS.md section 2 header)
+#   Drift live vs M3 rev  the 17 pool ids are IDENTICAL. Only prose and capability
+#                         fields moved: cascade/glm-5.3-flash role string, and
+#                         capabilities gained "tool_use" on 10 entries
+#                         (9x devin/*, cascade/glm-5.3-flash) -- the exact drift
+#                         M2 ANALYSIS section "Drift notice" recorded as 2c61f6bb.
+#                         Consequence: every measured number below applies to a
+#                         live entry, because the ids, providers and protocols
+#                         did not change. M3's per-entry measurements stand;
+#                         the drifted fields are named where they matter.
+#
+# EVIDENCE POINTERS used below (file + section)
+#   M1  research/round-18-kimi-model-routing/census/ANALYSIS.md       (13 providers, 143 entries, D1-D9, usage, TTFT/TPS smoke)
+#   M2  research/round-18-kimi-model-routing/definitions/ANALYSIS.md  (client semantics, defect classes), config-corrections.toml (56 blocks + quarantine + verify-later)
+#   M3  research/round-18-kimi-model-routing/battery/ANALYSIS.md      (n=2 TTFT/TPS/pass over this pool), SELECTION.md (26->17 pool diff)
+#   M5  research/round-18-kimi-model-routing/fastmode/ANALYSIS.md     (codex service_tier: accepted, not confirmed, NO-GO)
+#   M6  research/round-18-kimi-model-routing/battery-opencode/ANALYSIS.md (opencode-go/deepseek-v4.1-flash, no direct FAST slot)
+#
+# OPERATOR OVERRIDES (2026-10-16, post-M4) -- the spliceable payload below is
+# re-pinned to the LIVE config, which the operator edited by hand after M4.
+#   live config           /home/vgpnk/.kimi-code/config.toml
+#   file sha256           d87f22e6bb4bd1e62f1383c778e6b7d1ee9a433dad1cf82734b906aadf24c525
+#   pool table sha256     c3a7feff8307e8f419b8c8434529c3530954dc496668a6a133aafd6ea7067b28
+#   pool size             9 entries; [models.*] entries 144; default_model
+#                         opencode-go/deepseek-v4.1-flash
+#   Changes vs the 2026-10-15 table:
+#     - default_model cascade/deepseek-v4.1-flash -> opencode-go/deepseek-v4.1-flash,
+#       promoted to FAST rank 1 (operator decision over the M6 no-FAST-slot verdict)
+#     - zai-coding-plan/glm-5.3-flash-low effort pin low -> max (alias name kept
+#       for stable references; note zai ignores reasoning_effort on the wire, M2 s4.1)
+#     - openai-codex/gpt-6-luna-max added: max-effort variant of gpt-6-luna.
+#     - Fast servicing ENABLED 2026-10-16 for ALL THREE codex pool entries:
+#       SHIM_SERVICE_TIER=priority injected at the oauth-shim
+#       (~/.local/share/oauth-shim/shim.py) per codex-shim.service, scoped to
+#       wire-models gpt-6-luna and gpt-6.1-sol (MIDDLE + both STRONG entries).
+#       Backend accepts (200, acceptance verified per wire model); applied-tier
+#       echo unconfirmed -- M5's conditional-go re-test still stands.
+#     - cascade/glm-5.3-flash and cascade/deepseek-v4.1-flash DISABLED (commented
+#       out in the payload below; operator: revisit the CASCADE lanes later)
+#     - dropped from the pool: alibaba-token-plan{,-2,-3}/qwen3.8-flash,
+#       zai-coding-plan/glm-5-turbo, hyper/qwen3.8-flash, xai-oauth/grok-4.5
+#       (cursor/* were already dropped 2026-10-15)
+#   M3/M4 measurements for the surviving ids still stand; the evidence ledger
+#   below remains the record for the dropped/demoted ids.
+#
+# DECISION LEGEND (per pooled id, recorded in the EVIDENCE LEDGER below)
+#   keep            bucket assignment survives its own measurement
+#   demote          stays in the pool, moved to a slower/restricted role
+#   drop            removed from the pool table (evidence in the ledger)
+#   quarantine      removed until a named reset time, then re-verified
+#   verify-first    added from the wider [models.*] catalog, unmeasured by M3
+#
+# BUCKET SEMANTICS (measured, not intended)
+#   M3 section 4: bucket labels in the config describe intended role, not
+#   measured latency. Measured bucket order was STRONG 2545 ms < FAST 2796 ms <
+#   MIDDLE 4172 ms < VERY-FAST 7736 ms (TTFT medians). This table keeps the
+#   FAST/MIDDLE/STRONG labels as roles and states the measured facts in each
+#   role string; the VERY-FAST label is retired (both of its lanes measured
+#   slowest in the pool, M3 section 3).
+#
+# FAST ranking rule (M3 section 3): TTFT med ascending, TPS med tiebreak,
+#   8/9+ correctness required. Lanes whose stream is burst-flushed carry no TPS
+#   ("a throughput figure derived from a burst is a measurement artefact",
+#   M1 section 6) and are ranked by TTFT only.
+
+[secondary_model]
+default_model = "opencode-go/deepseek-v4.1-flash"
+
+[secondary_model.models]
+
+# --- FAST (operator order 2026-10-16; M3-measured lanes keep their numbers in the ledger below) ---
+"opencode-go/deepseek-v4.1-flash" = "FAST bucket rank 1, opencode-go lane (operator directive 2026-10-16). Cheap generalist; also the first leg of the CASCADE lane and the pool default. M6 measured 4157 ms TTFT / 327 tok/s — above the old FAST bar — promoted by operator decision over the M6 no-FAST-slot verdict."
+# DISABLED 2026-10-16 (operator: revisit the CASCADE lanes later) —
+# "cascade/glm-5.3-flash" = "FAST bucket, CASCADE lane: devin first (primary), zai fallback, hyper third. All legs are now tool-capable (devin speaks its native RPC through devin-shim v2), so this lane handles both text and tool subtasks."
+"zai-coding-plan/glm-5.3-flash-low" = "FAST bucket pinned to MAX thinking effort (effort pin flipped from low 2026-10-16; the -low alias name is kept for stable references), zai lane. Zai lane at full effort for trivial exploration and mechanical checks."
+"hyper/deepseek-v4.1-flash" = "FAST bucket, hyper lane. Cheap generalist for latency-sensitive subtasks on the alternative provider."
+# DISABLED 2026-10-16 (operator: revisit the CASCADE lanes later) —
+# "cascade/deepseek-v4.1-flash" = "FAST bucket, CASCADE lane (default): opencode-go first, hyper fallback, devin third on quota exhaustion. Legs 1-2 are tool-capable; leg 3 (devin) is chat-only — a tool task that cascades all the way degrades."
+"alibaba-token-plan/deepseek-v4.1-flash" = "FAST bucket, token-plan key 1. Cheap generalist for exploration, review, summaries."
+"alibaba-token-plan-2/deepseek-v4.1-flash" = "FAST bucket, token-plan key 2 — separate key/quota lane."
+"alibaba-token-plan-3/deepseek-v4.1-flash" = "FAST bucket, token-plan key 3 — separate key/quota lane."
+
+# --- MIDDLE ---
+"openai-codex/gpt-6-luna-max" = "MIDDLE bucket, codex lane. GPT-6 Luna at max thinking effort. Fast servicing enabled: service_tier=priority (codex 'Fast' tier) injected at the oauth-shim, scoped to wire-model gpt-6-luna (2026-10-16); accepted by the backend but applied-tier echo unconfirmed [M5 fastmode]. General implementation, refactors, and code-change subtasks."
+
+# --- STRONG ---
+"openai-codex/gpt-6.1-sol" = "STRONG bucket, codex lane (ChatGPT plan). Flagship coding model, 500k context, efforts low→max. Fast servicing enabled: service_tier=priority (codex 'Fast' tier) injected at the oauth-shim, scoped to wire-model gpt-6.1-sol (2026-10-16); accepted by the backend but applied-tier echo unconfirmed [M5 fastmode]."
+"openai-codex/gpt-6.1-sol-high" = "STRONG bucket pinned to HIGH effort (cheaper than max), codex lane. Everyday hard subtasks: implementation, deep debugging, reviews. Fast servicing enabled: service_tier=priority injected at the oauth-shim, scoped to wire-model gpt-6.1-sol (2026-10-16); applied-tier echo unconfirmed [M5 fastmode]."
+
+# Dropped from the pool 2026-10-16 (evidence in the ledger below):
+# alibaba-token-plan{,-2,-3}/qwen3.8-flash, zai-coding-plan/glm-5-turbo,
+# hyper/qwen3.8-flash, xai-oauth/grok-4.5. cursor/* were dropped 2026-10-15 (M4).
+# xai-oauth/grok-4.7 was a VERIFY-FIRST add that never entered the live pool.
+
+# SPLICE-END -- everything below this line is evidence and operator notes, not config.
+
+# ============================================================================
+# EVIDENCE LEDGER -- one line per pooled id, decision + quoted evidence
+# ============================================================================
+#
+# id | bucket | decision | measured (M3 unless stated) | caps (declared) | effort | evidence pointer
+#
+# LANE POLICY (operator directive 2026-10-15): opencode-go is used for
+#   deepseek-v4.1-flash ONLY. zai-coding-plan is the primary leg for glm-5.3-flash,
+#   and devin is its secondary/fallback leg. Applied below: the opencode-go GLM lane
+#   is not admitted at all, and the glm-5.3-flash cascade is described as
+#   zai-primary -> devin-secondary, with an operator check recorded on whether the
+#   live shim actually honours that order.
+#
+# hyper/deepseek-v4.1-flash        | FAST         | keep       | 2081 ms / 375.91 / 8-9 | ctx 1048576, out 262144 | low,high,xhigh -> global max | M3 s2+s3, M1 no defect
+# alibaba-token-plan/deepseek-v4.1-flash | FAST   | keep       | 2251 ms first-decoded / 226.72 / 8-9 | ctx 1000000, out 384000 | low,high,max -> max | M3 s2 dagger, M3 s8 TRUNCATION-PRONE+NO-CONTENT-TTFT
+# zai-coding-plan/glm-5.3-flash-low | FAST        | keep (restr.) | 2796 ms first-decoded / 138.21 / 7-9 | ctx 1000000, out 131072 | pin low (inert) | M3 s8 TRUNCATION-PRONE+NO-CONTENT-TTFT, M2 s3 rule 2, M2 s4.1
+# cascade/deepseek-v4.1-flash      | FAST         | keep (default) | 3179 ms / burst (no TPS) / 8-9 | ctx 1048576, no out cap (client sends none, M2 s3 rule 4) | none | M3 s2, M3 s8, M6 s6 (leg 1 measured 4157 ms)
+# cascade/glm-5.3-flash            | FAST -> FALLBACK | demote | 4952 ms / burst / 8-9 | ctx 1048576, no out cap | none | policy zai-primary -> devin-secondary (operator directive 2026-10-15); M3 s8 RE-BUCKET+NO-TOOL-FORMAT, M3 s6 t1, M1 D9, M2 s4.2 (leg order unverified -- operator check)
+# zai-coding-plan/glm-5-turbo      | MIDDLE       | keep       | 2957 ms / 157.07 / 8-9 | ctx 200000, out 131072 | none (client picks middle, M2 DEF-3d) | M3 s3
+# xai-oauth/grok-4.5               | MIDDLE       | keep       | 3476 ms / 66.71 / 9-9 | ctx 500000, no out cap | default_effort high (ignored lane, M2 s4.1) | M3 s3, M2 DEF-10 (reasoning_key missing)
+# hyper/qwen3.8-flash              | MIDDLE       | keep       | 4868 ms / 178.96 / 9-9 | ctx 1000000, out 128000 | minimal..high -> max (clamped? lane ignores, M2 s4.1) | M3 s3, M2 DEF-1/DEF-10 (off_effort inert; reasoning_key missing)
+# alibaba-token-plan/qwen3.8-flash | MIDDLE       | demote (batch) | 13282 ms / 235.56 / 9-9 | ctx 1000000, out 131072 | low,medium,xhigh -> global max | M3 s8 SLOW-OUTLIER, M2 DEF-3b
+# openai-codex/gpt-6.1-sol         | STRONG       | keep       | 2212 ms / 64.46 / 9-9 | ctx 500000, no out cap | low..max -> client picks high | M3 s2+s4, M1 D6, M2 DEF-3d
+# openai-codex/gpt-6.1-sol-high    | STRONG       | keep       | 2878 ms / 70.82 / 9-9 | ctx 500000, no out cap | pinned high | M3 s2, M3 SELECTION s3 (same upstream model)
+# alibaba-token-plan-2/deepseek-v4.1-flash | FAST | quarantine | 429 whole run, 0-9 | ctx 1000000, out 384000 | low,high,max | M3 s3 (auth 0/9), M1 D2 (reset 10-23 16:00Z)
+# alibaba-token-plan-3/deepseek-v4.1-flash | FAST | quarantine | 429 whole run, 0-9 | ctx 1000000, out 384000 | low,high,max | M3 s3, M1 D2 (reset 10-28 16:00Z)
+# alibaba-token-plan-2/qwen3.8-flash | MIDDLE     | quarantine | 429 whole run, 0-9 | ctx 1000000, out 131072 | low,medium,xhigh | M3 s3, M1 D2 (reset 10-23 16:00Z)
+# alibaba-token-plan-3/qwen3.8-flash | MIDDLE     | quarantine | 429 whole run, 0-9 | ctx 1000000, out 131072 | low,medium,xhigh | M3 s3, M1 D2 (reset 10-28 16:00Z)
+# cursor/composer-2.5              | VERY-FAST    | drop       | 7198 ms / burst / 7-9 (c5 wrong answer) | ctx 200000, no out cap | none (lane ignores, M2 s4.1) | M3 s8 RE-BUCKET+SLOW-OUTLIER+NO-TOOL-FORMAT+WRONG-ANSWER, M3 s6 c5, M2 s4.2
+# cursor/cursor-grok-4.5-low-fast  | VERY-FAST    | drop       | 8275 ms / burst / 8-9 | ctx 500000, no out cap | none | M3 s8 RE-BUCKET+SLOW-OUTLIER+NO-TOOL-FORMAT, M3 s6 t1
+# xai-oauth/grok-4.7               | STRONG (cand.) | verify-first | not battery-tested; census 1166 ms / 493.74 incremental | ctx 500000, no out cap | default high (ignored lane) | M1 s6, M1 s5 (quota 53M tok / 8300 req), M1 D9
+# opencode-go/deepseek-v4.1-flash  | MIDDLE (cand.) | verify-first | not battery-tested; M6 4157 ms / 327.29 / 8-9 | ctx 1000000, out 384000 | low,high,max | M6 s2+s6 (no FAST slot), M1 D4; opencode-go admitted for deepseek-v4.1-flash ONLY (operator lane policy 2026-10-15)
+#
+# ============================================================================
+# QUARANTINE -- dropped until the named reset, then re-verify before restoring
+# ============================================================================
+#
+# Evidence for all four: M1 D2 -- "Chat on key 2 returns 429 insufficient_quota
+# ... The quota will reset at 10-23 16:00:00 UTC ... Key 3 returns the same with
+# a 10-28 16:00:00 UTC reset", and M3 s3 shows the same four ids at 0/9 with the
+# auth failure class ("every measured request refused (auth); 1 attempt, no retry").
+# M1 D2 also warns the /models endpoint still answers 200 on dead keys, so an
+# endpoint listing is NOT evidence of usable quota -- re-enter only on a passing
+# completion probe.
+#
+# Re-entry stanzas (uncomment after the reset AND a passing chat probe):
+# "alibaba-token-plan-2/deepseek-v4.1-flash" = "FAST candidate, re-entry after 10-23 16:00Z quota reset; re-run one chat probe before restoring (M1 D2)."
+# "alibaba-token-plan-3/deepseek-v4.1-flash" = "FAST candidate, re-entry after 10-28 16:00Z quota reset; re-run one chat probe before restoring (M1 D2)."
+# "alibaba-token-plan-2/qwen3.8-flash" = "MIDDLE candidate, re-entry after 10-23 16:00Z quota reset; 9/9 correctness on the sibling key 1 suggests a usable lane once quota returns (M3 s3)."
+# "alibaba-token-plan-3/qwen3.8-flash" = "MIDDLE candidate, re-entry after 10-28 16:00Z quota reset; same as the key-2 twin."
+#
+# ============================================================================
+# DROPPED LANES -- why the two cursor entries are not in the table
+# ============================================================================
+#
+# M3 s8 tags both: RE-BUCKET (slower than the MIDDLE median), SLOW-OUTLIER
+# (TTFT > 2x the pool median), NO-TOOL-FORMAT (the tool probe returned no usable
+# call). Measured: composer-2.5 7198 ms / 7-9 with a wrong answer on c5;
+# cursor-grok-4.5-low-fast 8275 ms / 8-9. M2 s4.2 is the mechanism: "cursor
+# answers a tool request with prose ('Calling r18_echo ...') and tool_calls: null".
+# The client cannot express chat-only (M2 s3 rule 5: a model declaring only
+# ["thinking"] still receives every tool), so the label could not protect a tool
+# task from landing there. If the operator keeps a cursor lane anyway, label it
+# text-only and never claim latency: the measured numbers above stand.
+#
+# ============================================================================
+# CROSS-PROVIDER FALLBACK ORDER (per bucket, as configured today)
+# ============================================================================
+#
+# LANE POLICY (operator directive 2026-10-15, recorded verbatim in the mission
+# notes): "the opencode-go should be used for deepseek v4.1 flash only, i have a
+# zai subscription and devin is the secondary provider for the glm 5.3 flash".
+# Consequence: opencode-go's GLM lane is not admitted anywhere below; the
+# glm-5.3-flash cascade is zai-primary with devin as its secondary/fallback leg.
+#
+# FAST (latency-first ladder):
+#   1 hyper/deepseek-v4.1-flash            2081 ms / 375.91
+#   2 alibaba-token-plan/deepseek-v4.1-flash (key 1)  2251 ms / 226.72
+#   3 zai-coding-plan/glm-5.3-flash-low    2796 ms / 138.21
+#   4 cascade/deepseek-v4.1-flash          chain opencode-go -> hyper -> devin
+#   5 cascade/glm-5.3-flash                chain zai -> devin (declared policy; leg
+#                                          order currently unverified, see operator check)
+#   token-plan keys 2 and 3: excluded until 10-23 / 10-28 16:00Z resets (M1 D2).
+#   opencode-go: deepseek-v4.1-flash ONLY (operator lane policy) -- verify-first, no FAST slot.
+#   zai-coding-plan second lane and hyper fast lane beyond the two above: not in
+#   the pool; hyper/glm-5.3-flash measured burst-only in the census (no TPS,
+#   M1 s6) so it cannot rank until a battery run.
+#
+# MIDDLE:
+#   1 zai-coding-plan/glm-5-turbo           2957 ms / 157.07
+#   2 xai-oauth/grok-4.5                    3476 ms / 66.71 (9-9)
+#   3 hyper/qwen3.8-flash                   4868 ms / 178.96 (9-9)
+#   4 alibaba-token-plan/qwen3.8-flash      13282 ms -- batch only
+#   5 opencode-go/deepseek-v4.1-flash       verify-first overflow (M6: MIDDLE latency;
+#                                          opencode-go admitted for this model only)
+#   token-plan keys 2 and 3: excluded until reset.
+#
+# STRONG (quality-first):
+#   1 openai-codex/gpt-6.1-sol              2212 ms / 64.46 (9-9)
+#   2 openai-codex/gpt-6.1-sol-high         2878 ms / 70.82 (9-9)
+#   3 xai-oauth/grok-4.7                    verify-first (census 1166 ms / 493.74)
+#   Single-provider risk, named: the only battery-measured STRONG lanes share one
+#   shim (:8789) and one upstream model id (gpt-6.1-sol). M3 SELECTION s3 flagged
+#   this when the pool shrank 26 -> 17 ("If either codex path is unavailable, the
+#   pool has no STRONG lane left"). grok-4.7 is the cheapest mitigation; battery
+#   it before relying on it. openai-codex/gpt-6-luna is the other named candidate
+#   but has no TTFT/TPS measurement anywhere (M1 s3 lists the shim's static ids
+#   only), so it is not added here.
+#
+# ============================================================================
+# EFFORT POLICY (what actually reaches the wire)
+# ============================================================================
+#
+# 1. Live global [thinking] effort="max" overrides every model's default and is
+#    not clamped to support_efforts (M2 s3 rule 2, DEF-3b, 31 entries). Every
+#    library besides the ones that ignore the field receives "max".
+# 2. Lanes that IGNORE reasoning_effort (invalid control returned 200): hyper,
+#    zai-coding-plan, xai-oauth, cursor (M2 s4.1). Acceptance there is vacuous.
+# 3. Lanes that VALIDATE it (invalid control returned 400): alibaba-token-plan,
+#    openai-codex, opencode-go (M2 s4.1); they accepted "max" in the same sweep,
+#    so the global pin is not an outage on them -- it is a correctness-of-intent
+#    issue, and it makes the pin zai-flash-low's "LOW effort" inert.
+# 4. off_effort is not a field this client knows (0 occurrences in the binary,
+#    0 wire effect, M2 s1 + s3 rule 1); hyper/qwen3.8-flash and
+#    hyper/deepseek-v4.1-flash carry its definition in the catalog corrections.
+# 5. Codex service_tier: accepted but never confirmed applied, timing delta
+#    within noise at n=2, and the kimi client cannot send the field at all
+#    (M5 s1+s3+s7). No fast-mode entry exists in this table; the conditional-go
+#    protocol is M5 s7.
+#
+# ============================================================================
+# CAPS AND DEFINITION NOTES (declared values, not validated)
+# ============================================================================
+#
+# max_context_size is never transmitted by the client and was not validated
+#   (M2 s8); it is recorded as declared context only.
+# max_output_size IS transmitted, as max_tokens on openai/anthropic and
+#   max_completion_tokens on kimi (M2 s3 rule 4). With the field absent the
+#   openai lanes send no cap and the server decides -- which is why the M2
+#   corrections remove bad caps instead of replacing them with guesses.
+# Entries in this table with no declared output cap: the two cascades, both
+#   codex entries, cursor (dropped), xai-oauth. For the cascades that is the
+#   post-correction state already; for codex the lane's own floor is
+#   max_output_tokens >= 16 (M1 D6).
+# Cross-provider divergence (M2 s5 class E, DEF-5): deepseek-v4.1-flash is
+#   declared 262144 out on hyper vs 384000 on token-plan/opencode-go, and
+#   glm-5.3-flash 131072 vs 128000 on hyper. Unmeasured; this table cites each
+#   lane's own declared value and flags the conservative default.
+#
+# ============================================================================
+# LIMITS OF THIS TABLE
+# ============================================================================
+#
+# - n=2 reps per model for TTFT/TPS; correctness is ONE draw per probe
+#   (M3 s9). Every number here is a signal, not a benchmark score.
+# - Burst lanes carry no TPS by construction; the fix is in the shims
+#   (incremental flushing), not in routing (M3 s9, carried-open item).
+# - Fixed ~50-token performance prompt: long-context ranking may differ
+#   (M3 s9).
+# - Verify-first entries carry census smoke numbers only; they may not be
+#   promoted into a bucket without an M3-style battery run.
+# - The pool is an operator artifact: this table is a recommendation with a
+#   splice path (APPLY.md), not a change to the live file.

@@ -1,0 +1,45 @@
+{
+ "rounds": [
+  {
+   "round": 1,
+   "date": "2026-09-27",
+   "type": "closure",
+   "closed_at": "2026-09-27T11:00:00-03:00",
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 1
+   }
+  },
+  {
+   "round": 2,
+   "date": "2026-09-27",
+   "type": "closure",
+   "closed_at": "2026-09-27T11:00:00-03:00",
+   "lanes": {
+    "kagi": "in-flight"
+   },
+   "lane_rounds": {
+    "kagi": 2
+   }
+  },
+  {
+   "round": 3,
+   "date": "2026-09-27",
+   "type": "closure-correction",
+   "closed_at": "2026-09-27T11:00:00-03:00",
+   "supersedes": {
+    "round": 2,
+    "type": "closure",
+    "date": "2026-09-27"
+   },
+   "lanes": {
+    "kagi": "in-flight"
+   },
+   "lane_rounds": {
+    "kagi": 1
+   }
+  }
+ ]
+}

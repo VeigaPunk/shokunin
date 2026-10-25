@@ -1,0 +1,1005 @@
+{
+  "suite": "tool",
+  "config_json_digest_16": "61f22a2bbe52d616",
+  "generated_by": "scripts/probe_live.py tool",
+  "note": "headers redacted (<redacted:len=N>); no credential value is stored",
+  "results": [
+    {
+      "suite": "tool",
+      "lane": "alibaba-token-plan",
+      "alias": "alibaba-token-plan/deepseek-v4.1-flash",
+      "provider": "alibaba-token-plan",
+      "protocol": "openai",
+      "url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1/chat/completions",
+      "model_id": "deepseek-v4.1-flash",
+      "value": null,
+      "status": 200,
+      "ms": 1411,
+      "error": null,
+      "request_headers": {
+        "Authorization": "<redacted:len=120>"
+      },
+      "request_body": {
+        "model": "deepseek-v4.1-flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Echo the text 'ping' using the r18_echo tool."
+          }
+        ],
+        "max_tokens": 16,
+        "stream": false,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "r18_echo",
+              "description": "Echo a string back.",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "description": "text to echo"
+                  }
+                },
+                "required": [
+                  "text"
+                ]
+              }
+            }
+          }
+        ],
+        "tool_choice": {
+          "type": "function",
+          "function": {
+            "name": "r18_echo"
+          }
+        }
+      },
+      "response": {
+        "id": "chatcmpl-3a696d7a-7447-47dd-aed6-efafcc6ae12c",
+        "object": "chat.completion",
+        "created": 1792065186,
+        "model": "deepseek-v4.1-flash",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "reasoning_content": "The user wants me to echo 'ping' using r18_echo tool.",
+              "content": ""
+            },
+            "finish_reason": "length",
+            "logprobs": null
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 312,
+          "total_tokens": 328,
+          "completion_tokens": 16,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "text_tokens": 312
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "text_tokens": 0
+          }
+        }
+      },
+      "derived": {
+        "status": 200,
+        "message_keys": [
+          "content",
+          "reasoning_content",
+          "role"
+        ],
+        "tool_call_wellformed": false,
+        "top_keys": [
+          "choices",
+          "created",
+          "id",
+          "model",
+          "object",
+          "usage"
+        ],
+        "has_reasoning_content": true,
+        "usage": {
+          "prompt_tokens": 312,
+          "total_tokens": 328,
+          "completion_tokens": 16,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "text_tokens": 312
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 16,
+            "text_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "suite": "tool",
+      "lane": "zai-coding-plan",
+      "alias": "zai-coding-plan/glm-5.3-flash",
+      "provider": "zai-coding-plan",
+      "protocol": "openai",
+      "url": "https://api.z.ai/api/coding/paas/v4/chat/completions",
+      "model_id": "glm-5.3-flash",
+      "value": null,
+      "status": 200,
+      "ms": 5901,
+      "error": null,
+      "request_headers": {
+        "Authorization": "<redacted:len=56>"
+      },
+      "request_body": {
+        "model": "glm-5.3-flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Echo the text 'ping' using the r18_echo tool."
+          }
+        ],
+        "max_tokens": 16,
+        "stream": false,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "r18_echo",
+              "description": "Echo a string back.",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "description": "text to echo"
+                  }
+                },
+                "required": [
+                  "text"
+                ]
+              }
+            }
+          }
+        ],
+        "tool_choice": {
+          "type": "function",
+          "function": {
+            "name": "r18_echo"
+          }
+        }
+      },
+      "response": {
+        "choices": [
+          {
+            "finish_reason": "length",
+            "index": 0,
+            "message": {
+              "content": "",
+              "reasoning_content": "The user wants me to echo the text 'ping' using the r18_echo",
+              "role": "assistant"
+            }
+          }
+        ],
+        "created": 1792065193,
+        "id": "2026101519530891da148d44644bcc",
+        "model": "glm-5.3-flash",
+        "object": "chat.completion",
+        "request_id": "2026101519530891da148d44644bcc",
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "reasoning_tokens": 14
+          },
+          "prompt_tokens": 175,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "total_tokens": 191
+        }
+      },
+      "derived": {
+        "status": 200,
+        "message_keys": [
+          "content",
+          "reasoning_content",
+          "role"
+        ],
+        "tool_call_wellformed": false,
+        "top_keys": [
+          "choices",
+          "created",
+          "id",
+          "model",
+          "object",
+          "request_id",
+          "usage"
+        ],
+        "has_reasoning_content": true,
+        "usage": {
+          "completion_tokens": 16,
+          "completion_tokens_details": {
+            "reasoning_tokens": 14
+          },
+          "prompt_tokens": 175,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "total_tokens": 191
+        }
+      }
+    },
+    {
+      "suite": "tool",
+      "lane": "hyper",
+      "alias": "hyper/qwen3.8-flash",
+      "provider": "hyper",
+      "protocol": "openai",
+      "url": "https://hyper.charm.land/v1/chat/completions",
+      "model_id": "qwen3.8-flash",
+      "value": null,
+      "status": 400,
+      "ms": 2134,
+      "error": null,
+      "request_headers": {
+        "Authorization": "<redacted:len=52>"
+      },
+      "request_body": {
+        "model": "qwen3.8-flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Echo the text 'ping' using the r18_echo tool."
+          }
+        ],
+        "max_tokens": 16,
+        "stream": false,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "r18_echo",
+              "description": "Echo a string back.",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "description": "text to echo"
+                  }
+                },
+                "required": [
+                  "text"
+                ]
+              }
+            }
+          }
+        ],
+        "tool_choice": {
+          "type": "function",
+          "function": {
+            "name": "r18_echo"
+          }
+        }
+      },
+      "response": {
+        "error": {
+          "message": "Invalid input. Please review your request before trying again.",
+          "type": "invalid_request_error",
+          "code": null
+        }
+      },
+      "derived": {
+        "status": 400,
+        "top_keys": [
+          "error"
+        ],
+        "usage": null
+      }
+    },
+    {
+      "suite": "tool",
+      "lane": "opencode-go",
+      "alias": "opencode-go/glm-5.3-flash",
+      "provider": "opencode-go",
+      "protocol": "openai",
+      "url": "https://opencode.ai/inference/go/v1/chat/completions",
+      "model_id": "glm-5.3-flash",
+      "value": null,
+      "status": 403,
+      "ms": 384,
+      "error": null,
+      "request_headers": {
+        "Authorization": "<redacted:len=58>",
+        "x-opencode-session": "<redacted:len=36>"
+      },
+      "request_body": {
+        "model": "glm-5.3-flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Echo the text 'ping' using the r18_echo tool."
+          }
+        ],
+        "max_tokens": 16,
+        "stream": false,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "r18_echo",
+              "description": "Echo a string back.",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "description": "text to echo"
+                  }
+                },
+                "required": [
+                  "text"
+                ]
+              }
+            }
+          }
+        ],
+        "tool_choice": {
+          "type": "function",
+          "function": {
+            "name": "r18_echo"
+          }
+        }
+      },
+      "response": "error code: 1010\n",
+      "derived": {
+        "status": 403,
+        "body_text_preview": "error code: 1010\n"
+      }
+    },
+    {
+      "suite": "tool",
+      "lane": "opencode-go",
+      "alias": "opencode-go/qwen3.8-flash",
+      "provider": "opencode-go",
+      "protocol": "anthropic",
+      "url": "https://opencode.ai/inference/go/v1/messages",
+      "model_id": "qwen3.8-flash",
+      "value": null,
+      "status": 403,
+      "ms": 390,
+      "error": null,
+      "request_headers": {
+        "Authorization": "<redacted:len=58>",
+        "x-api-key": "<redacted:len=51>",
+        "anthropic-version": "2023-06-01",
+        "x-opencode-session": "<redacted:len=36>"
+      },
+      "request_body": {
+        "model": "qwen3.8-flash",
+        "max_tokens": 16,
+        "system": "You are a test harness.",
+        "messages": [
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "text",
+                "text": "Reply with the single word: pong"
+              }
+            ]
+          }
+        ],
+        "stream": false,
+        "tools": [
+          {
+            "name": "r18_echo",
+            "description": "Echo a string back.",
+            "input_schema": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "type": "string",
+                  "description": "text to echo"
+                }
+              },
+              "required": [
+                "text"
+              ]
+            }
+          }
+        ],
+        "tool_choice": {
+          "type": "tool",
+          "name": "r18_echo"
+        }
+      },
+      "response": "error code: 1010\n",
+      "derived": {
+        "status": 403,
+        "body_text_preview": "error code: 1010\n"
+      }
+    },
+    {
+      "suite": "tool",
+      "lane": "openai-codex",
+      "alias": "openai-codex/gpt-6.1-sol",
+      "provider": "openai-codex",
+      "protocol": "openai_responses",
+      "url": "http://127.0.0.1:8789/backend-api/codex/responses",
+      "model_id": "gpt-6.1-sol",
+      "value": null,
+      "status": 200,
+      "ms": 1454,
+      "error": null,
+      "request_headers": {
+        "Authorization": "<redacted:len=18>",
+        "OpenAI-Beta": "responses=experimental",
+        "originator": "codex_cli_rs"
+      },
+      "request_body": {
+        "model": "gpt-6.1-sol",
+        "input": [
+          {
+            "role": "user",
+            "content": [
+              {
+                "type": "input_text",
+                "text": "Reply with the single word: pong"
+              }
+            ]
+          }
+        ],
+        "store": false,
+        "stream": true,
+        "tools": [
+          {
+            "type": "function",
+            "name": "r18_echo",
+            "description": "Echo a string back.",
+            "parameters": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "text"
+              ]
+            }
+          }
+        ],
+        "tool_choice": "required"
+      },
+      "response": "event: response.created\ndata: {\"type\":\"response.created\",\"sequence_number\":0,\"safety_buffering\":false,\"response\":{\"id\":\"resp_06cb86887efd0f47016ad0beae230881918f27895ca52c9ad9\",\"object\":\"response\",\"created_at\":1792065198,\"completed_at\":null,\"status\":\"in_progress\",\"background\":false,\"frequency_penalty\":0.0,\"presence_penalty\":0.0,\"moderation\":null,\"model\":\"gpt-6.1-sol\",\"access_programs\":{\"cyber\":\"standard\"},\"previous_response_id\":null,\"instructions\":null,\"output\":[],\"error\":null,\"incomplete_details\":null,\"tools\":[{\"type\":\"function\",\"name\":\"r18_echo\",\"description\":\"Echo a string back.\",\"parameters\":{\"type\":\"object\",\"properties\":{\"text\":{\"type\":\"string\"}},\"required\":[\"text\"],\"additionalProperties\":false},\"output_schema\":null,\"strict\":true}],\"tool_choice\":\"required\",\"parallel_tool_calls\":true,\"prompt_cache_key\":\"a795472b-2ece-4288-9e85-40ca65e9e58b\",\"prompt_cache_retention\":\"24h\",\"text\":{\"format\":{\"type\":\"text\"},\"verbosity\":\"medium\"},\"top_p\":0.98,\"top_logprobs\":0,\"temperature\":1.0,\"reasoning\":{\"context\":\"all_turns\",\"effort\":\"medium\",\"summary\":null,\"mode\":\"standard\"},\"user\":null,\"usage\":null,\"tool_usage\":{\"image_gen\":{\"input_tokens\":0,\"output_tokens\":0,\"total_tokens\":0,\"input_tokens_details\":{\"text_tokens\":0,\"image_tokens\":0},\"output_tokens_details\":{\"image_tokens\":0,\"text_tokens\":0}},\"web_search\":{\"num_requests\":0}},\"safety_identifier\":\"user-nkEENAXKpBEO8fzseUfNoxLC\",\"store\":false,\"metadata\":{},\"max_output_tokens\":null,\"max_tool_calls\":null,\"service_tier\":\"auto\",\"truncation\":\"disabled\"}}\n\nevent: response.in_progress\ndata: {\"type\":\"response.in_progress\",\"sequence_number\":1,\"safety_buffering\":false,\"response\":{\"id\":\"resp_06cb86887efd0f47016ad0beae230881918f27895ca52c9ad9\",\"object\":\"response\",\"created_at\":1792065198,\"completed_at\":null,\"status\":\"in_progress\",\"background\":false,\"frequency_penalty\":0.0,\"presence_penalty\":0.0,\"moderation\":null,\"model\":\"gpt-6.1-sol\",\"access_programs\":{\"cyber\":\"standard\"},\"previous_response_id\":null,\"instructions\":null,\"output\":[],\"error\":null,\"incomplete_details\":null,\"tools\":[{\"type\":\"function\",\"name\":\"r18_echo\",\"description\":\"Echo a string back.\",\"parameters\":{\"type\":\"object\",\"properties\":{\"text\":{\"type\":\"string\"}},\"required\":[\"text\"],\"additionalProperties\":false},\"output_schema\":null,\"strict\":true}],\"tool_choice\":\"required\",\"parallel_tool_calls\":true,\"prompt_cache_key\":\"a795472b-2ece-4288-9e85-40ca65e9e58b\",\"prompt_cache_retention\":\"24h\",\"text\":{\"format\":{\"type\":\"text\"},\"verbosity\":\"medium\"},\"top_p\":0.98,\"top_logprobs\":0,\"temperature\":1.0,\"reasoning\":{\"context\":\"all_turns\",\"effort\":\"medium\",\"summary\":null,\"mode\":\"standard\"},\"user\":null,\"usage\":null,\"tool_usage\":{\"image_gen\":{\"input_tokens\":0,\"output_tokens\":0,\"total_tokens\":0,\"input_tokens_details\":{\"text_tokens\":0,\"image_tokens\":0},\"output_tokens_details\":{\"image_tokens\":0,\"text_tokens\":0}},\"web_search\":{\"num_requests\":0}},\"safety_identifier\":\"user-nkEENAXKpBEO8fzseUfNoxLC\",\"store\":false,\"metadata\":{},\"max_output_tokens\":null,\"max_tool_calls\":null,\"service_tier\":\"auto\",\"truncation\":\"disabled\"}}\n\nevent: response.output_item.added\ndata: {\"type\":\"response.output_item.added\",\"sequence_number\":2,\"output_index\":0,\"item\":{\"type\":\"function_call\",\"id\":\"fc_06cb86887efd0f47016ad0beaf1b788191857b00c8dc4aafd1\",\"call_id\":\"call_ba26a4786d174cc1b3a2121a0a760e73\",\"name\":\"r18_echo\",\"arguments\":\"\",\"status\":\"in_progress\"}}\n\nevent: response.function_call_arguments.delta\ndata: {\"type\":\"response.function_call_arguments.delta\",\"sequence_number\":3,\"item_id\":\"fc_06cb86887efd0f47016ad0beaf1b788191857b00c8dc4aafd1\",\"output_index\":0,\"delta\":\"{\\\"\",\"obfuscation\":\"At0ipJCPkBuvsV\"}\n\nevent: response.function_call_arguments.delta\ndata: {\"type\":\"response.function_call_arguments.delta\",\"sequence_number\":4,\"item_id\":\"fc_06cb86887efd0f47016ad0beaf1b788191857b00c8dc4aafd1\",\"output_index\":0,\"delta\":\"text\",\"obfuscation\":\"OmNB6IivbPFA\"}\n\nevent: response.function_call_arguments.delta\ndata: {\"type\":\"response.function_call_arguments.delta\",\"sequence_number\":5,\"item_id\":\"fc_06cb86887efd0f47016ad0b",
+      "derived": {
+        "status": 200,
+        "body_text_preview": "event: response.created\ndata: {\"type\":\"response.created\",\"sequence_number\":0,\"safety_buffering\":false,\"response\":{\"id\":\"resp_06cb86887efd0f47016ad0beae230881918f27895ca52c9ad9\",\"object\":\"response\",\"created_at\":1792065198,\"completed_at\":null,\"status\":\"in_progress\",\"background\":false,\"frequency_penalt"
+      }
+    },
+    {
+      "suite": "tool",
+      "lane": "xai-oauth",
+      "alias": "xai-oauth/grok-4.5",
+      "provider": "xai-oauth",
+      "protocol": "openai",
+      "url": "http://127.0.0.1:8790/v1/chat/completions",
+      "model_id": "grok-4.5",
+      "value": null,
+      "status": 200,
+      "ms": 2845,
+      "error": null,
+      "request_headers": {
+        "Authorization": "<redacted:len=16>"
+      },
+      "request_body": {
+        "model": "grok-4.5",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Echo the text 'ping' using the r18_echo tool."
+          }
+        ],
+        "max_tokens": 16,
+        "stream": false,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "r18_echo",
+              "description": "Echo a string back.",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "description": "text to echo"
+                  }
+                },
+                "required": [
+                  "text"
+                ]
+              }
+            }
+          }
+        ],
+        "tool_choice": {
+          "type": "function",
+          "function": {
+            "name": "r18_echo"
+          }
+        }
+      },
+      "response": {
+        "id": "8d8280aa-a145-9296-ac84-e21587ac9df4",
+        "object": "chat.completion",
+        "created": 1792065200,
+        "model": "grok-4.5",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "reasoning_content": "I will echo the text 'ping' using the r18_echo tool.",
+              "tool_calls": [
+                {
+                  "id": "call-4ffa0833-3b35-4853-9381-a604552e96d7-0",
+                  "function": {
+                    "name": "r18_echo",
+                    "arguments": "{\"text\":\"ping\"}"
+                  },
+                  "type": "function"
+                }
+              ],
+              "refusal": null
+            },
+            "finish_reason": "tool_calls"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 608,
+          "completion_tokens": 12,
+          "total_tokens": 741,
+          "prompt_tokens_details": {
+            "text_tokens": 608,
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "cached_tokens": 512
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 121,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "num_sources_used": 0,
+          "cost_in_usd_ticks": 3888240
+        },
+        "system_fingerprint": "fp_a39489019fa99b6e",
+        "service_tier": "default"
+      },
+      "derived": {
+        "status": 200,
+        "message_keys": [
+          "content",
+          "reasoning_content",
+          "refusal",
+          "role",
+          "tool_calls"
+        ],
+        "tool_call_wellformed": true,
+        "top_keys": [
+          "choices",
+          "created",
+          "id",
+          "model",
+          "object",
+          "service_tier",
+          "system_fingerprint",
+          "usage"
+        ],
+        "has_reasoning_content": true,
+        "usage": {
+          "prompt_tokens": 608,
+          "completion_tokens": 12,
+          "total_tokens": 741,
+          "prompt_tokens_details": {
+            "text_tokens": 608,
+            "audio_tokens": 0,
+            "image_tokens": 0,
+            "cached_tokens": 512
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 121,
+            "audio_tokens": 0,
+            "accepted_prediction_tokens": 0,
+            "rejected_prediction_tokens": 0
+          },
+          "num_sources_used": 0,
+          "cost_in_usd_ticks": 3888240
+        }
+      }
+    },
+    {
+      "suite": "tool",
+      "lane": "devin",
+      "alias": "devin/swe-2",
+      "provider": "devin",
+      "protocol": "openai",
+      "url": "http://127.0.0.1:8787/v1/chat/completions",
+      "model_id": "swe-2",
+      "value": null,
+      "status": null,
+      "ms": 90090,
+      "error": "TimeoutError: timed out",
+      "request_headers": {
+        "Authorization": "<redacted:len=18>"
+      },
+      "request_body": {
+        "model": "swe-2",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Echo the text 'ping' using the r18_echo tool."
+          }
+        ],
+        "max_tokens": 16,
+        "stream": false,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "r18_echo",
+              "description": "Echo a string back.",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "description": "text to echo"
+                  }
+                },
+                "required": [
+                  "text"
+                ]
+              }
+            }
+          }
+        ],
+        "tool_choice": {
+          "type": "function",
+          "function": {
+            "name": "r18_echo"
+          }
+        }
+      },
+      "response": null,
+      "derived": {
+        "status": null
+      }
+    },
+    {
+      "suite": "tool",
+      "lane": "cursor",
+      "alias": "cursor/composer-2.5-fast",
+      "provider": "cursor",
+      "protocol": "openai",
+      "url": "http://127.0.0.1:8788/v1/chat/completions",
+      "model_id": "composer-2.5-fast",
+      "value": null,
+      "status": 200,
+      "ms": 32725,
+      "error": null,
+      "request_headers": {
+        "Authorization": "<redacted:len=19>"
+      },
+      "request_body": {
+        "model": "composer-2.5-fast",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Echo the text 'ping' using the r18_echo tool."
+          }
+        ],
+        "max_tokens": 16,
+        "stream": false,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "r18_echo",
+              "description": "Echo a string back.",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "description": "text to echo"
+                  }
+                },
+                "required": [
+                  "text"
+                ]
+              }
+            }
+          }
+        ],
+        "tool_choice": {
+          "type": "function",
+          "function": {
+            "name": "r18_echo"
+          }
+        }
+      },
+      "response": {
+        "id": "chatcmpl-c74dd9c1cf8c47d6be61",
+        "object": "chat.completion",
+        "created": 1792065326,
+        "model": "composer-2.5-fast",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "Searching for the `r18_echo` tool in the workspace and available MCP resources.\nCalling `r18_echo` with the text `ping`.\nThe `r18_echo` tool isn't available in this session. When I tried to call it with `text: \"ping\"`, the environment returned:\n\n> Tool not found: r18_echo\n\nThe tools I do have access to are the standard Cursor agent tools (Shell, Read, Write, Grep, etc.) \u2014 not `r18_echo`.\n\nIf this is part of a benchmark or MCP setup, the dynamic tool may not have loaded correctly. You may need to verify that the MCP server providing `r18_echo` is configured and running in this workspace."
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0
+        }
+      },
+      "derived": {
+        "status": 200,
+        "message_keys": [
+          "content",
+          "role"
+        ],
+        "tool_call_wellformed": false,
+        "top_keys": [
+          "choices",
+          "created",
+          "id",
+          "model",
+          "object",
+          "usage"
+        ],
+        "has_reasoning_content": false,
+        "usage": {
+          "prompt_tokens": 0,
+          "completion_tokens": 0,
+          "total_tokens": 0
+        }
+      }
+    },
+    {
+      "suite": "tool",
+      "lane": "ds-flash-cascade",
+      "alias": "cascade/deepseek-v4.1-flash",
+      "provider": "ds-flash-cascade",
+      "protocol": "openai",
+      "url": "http://127.0.0.1:8791/v1/chat/completions",
+      "model_id": "deepseek-v4.1-flash",
+      "value": null,
+      "status": 200,
+      "ms": 1708,
+      "error": null,
+      "request_headers": {
+        "Authorization": "<redacted:len=20>"
+      },
+      "request_body": {
+        "model": "deepseek-v4.1-flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Echo the text 'ping' using the r18_echo tool."
+          }
+        ],
+        "max_tokens": 16,
+        "stream": false,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "r18_echo",
+              "description": "Echo a string back.",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "description": "text to echo"
+                  }
+                },
+                "required": [
+                  "text"
+                ]
+              }
+            }
+          }
+        ],
+        "tool_choice": {
+          "type": "function",
+          "function": {
+            "name": "r18_echo"
+          }
+        }
+      },
+      "response": {
+        "id": "048d883c00739298839628c9b693e78f",
+        "object": "chat.completion",
+        "created": 1792065328,
+        "model": "deepseek-v4.1-flash",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "length",
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "reasoning_content": "The user wants me to echo \"ping\". Simple tool call."
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 312,
+          "completion_tokens": 16,
+          "total_tokens": 328,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "cache_creation_input_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 13,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      },
+      "derived": {
+        "status": 200,
+        "message_keys": [
+          "content",
+          "reasoning_content",
+          "role"
+        ],
+        "tool_call_wellformed": false,
+        "top_keys": [
+          "choices",
+          "created",
+          "id",
+          "model",
+          "object",
+          "usage"
+        ],
+        "has_reasoning_content": true,
+        "usage": {
+          "prompt_tokens": 312,
+          "completion_tokens": 16,
+          "total_tokens": 328,
+          "prompt_tokens_details": {
+            "audio_tokens": 0,
+            "cached_tokens": 0,
+            "cache_creation_input_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "completion_tokens_details": {
+            "accepted_prediction_tokens": 0,
+            "audio_tokens": 0,
+            "reasoning_tokens": 13,
+            "rejected_prediction_tokens": 0
+          }
+        }
+      }
+    },
+    {
+      "suite": "tool",
+      "lane": "glm-flash-cascade",
+      "alias": "cascade/glm-5.3-flash",
+      "provider": "glm-flash-cascade",
+      "protocol": "openai",
+      "url": "http://127.0.0.1:8793/v1/chat/completions",
+      "model_id": "glm-5.3-flash",
+      "value": null,
+      "status": 200,
+      "ms": 14941,
+      "error": null,
+      "request_headers": {
+        "Authorization": "<redacted:len=20>"
+      },
+      "request_body": {
+        "model": "glm-5.3-flash",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Echo the text 'ping' using the r18_echo tool."
+          }
+        ],
+        "max_tokens": 16,
+        "stream": false,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "r18_echo",
+              "description": "Echo a string back.",
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "description": "text to echo"
+                  }
+                },
+                "required": [
+                  "text"
+                ]
+              }
+            }
+          }
+        ],
+        "tool_choice": {
+          "type": "function",
+          "function": {
+            "name": "r18_echo"
+          }
+        }
+      },
+      "response": {
+        "id": "chatcmpl-ba364e7bff3e4ffd84c30921",
+        "object": "chat.completion",
+        "created": 1792065343,
+        "model": "glm-5-3-flash-max",
+        "choices": [
+          {
+            "index": 0,
+            "finish_reason": "stop",
+            "message": {
+              "role": "assistant",
+              "content": "The tool list is large; let me check whether `r18_echo` exists in the REA server's tool inventory.No match in REA's tools. Let me check all configured MCP servers for this tool.I can't do that \u2014 there is no `r18_echo` tool available. I verified against the full tool inventory of the only configured MCP server (`rea`): it exposes ~100 reverse-engineering tools (Ghidra/Hopper analysis, Frida, GDB, Rizin, etc.), and nothing named `r18_echo` or containing \"r18\" exists.\n\nIf you just want the text echoed, I can run `echo 'ping'` in the shell \u2014 let me know. Otherwise, if `r18_echo` is supposed to come from a different MCP server, it isn't connected in this session."
+            }
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 18033,
+          "completion_tokens": 269,
+          "total_tokens": 18302
+        }
+      },
+      "derived": {
+        "status": 200,
+        "message_keys": [
+          "content",
+          "role"
+        ],
+        "tool_call_wellformed": false,
+        "top_keys": [
+          "choices",
+          "created",
+          "id",
+          "model",
+          "object",
+          "usage"
+        ],
+        "has_reasoning_content": false,
+        "usage": {
+          "prompt_tokens": 18033,
+          "completion_tokens": 269,
+          "total_tokens": 18302
+        }
+      }
+    }
+  ]
+}

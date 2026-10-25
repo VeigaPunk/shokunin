@@ -1,0 +1,16 @@
+{
+  "lane": "kotoba",
+  "label": "after-verifiers_verify_skill_checklist.py",
+  "round": 19,
+  "measured_revision": "02302c521b933c55fc4be79193e61537e3380751",
+  "started_at": "2026-10-15T00:14:12.151065+00:00",
+  "finished_at": "2026-10-15T00:14:12.200308+00:00",
+  "argv": [
+    "python3",
+    "verifiers/verify_skill_checklist.py"
+  ],
+  "exit_code": 1,
+  "timed_out": false,
+  "stdout": "PASS checklist.box_map_complete: evaluated 41 \u2014 41 boxes mapped (8 executed, 0 delegated, 33 unexecuted)\nPASS trigger.frontmatter_parses: evaluated 4 \u2014 frontmatter parses: name='kotoba-shokunin', description 814 chars\nPASS trigger.name_directory: evaluated 1 \u2014 name 'kotoba-shokunin' == directory 'kotoba-shokunin'\nPASS trigger.literal_trigger_string: evaluated 1 \u2014 description carries literal 'Triggers:'\nPASS trigger.anti_trigger_clause: evaluated 1 \u2014 exclusion marker 'Anti-triggers' present (vocabulary test, not semantics: a vacuous 'Never use this skill.' passes and an unlisted real exclusion fails)\nFAIL trigger.line_budget: evaluated 601 \u2014 601 lines exceed budget 600 (from box at line 329)\nPASS trigger.no_placeholder: evaluated 552 \u2014 no placeholder markers in 552 scanned lines\nPASS trigger.command_binary_resolves: evaluated 19 \u2014 15 segments; 19 command subject(s) resolve\nPASS trigger.citation_resolves: evaluated 42 \u2014 42 repo-rooted citation token(s) resolve from the repo root\nPASS governance.citation_resolves: evaluated 128 \u2014 128 governance citation token(s) resolve across 2 files; 6 quoted meta-finding(s), 3 schematic token(s) excluded\n",
+  "stderr": ""
+}

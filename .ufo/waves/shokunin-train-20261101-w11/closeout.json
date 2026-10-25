@@ -1,0 +1,13 @@
+{
+  "fleet": "shokunin-train-20261101-w11",
+  "closed_utc": "2026-10-14T14:45Z",
+  "theme": "third runtimes/decoders per lane — all pre-measured by wave-10 frontier seats",
+  "rounds": {
+    "audio-shokunin/r72": {"verdict": "ADMIT-with-correction", "commits": ["26baed1","4fff488","50f55eb"], "headline": "libsndfile 1.2.2 third decoder: measured 4-class partition (sox-only confirmed; sndfile-only FALSIFIED-as-stated — joint class; ffmpeg strictest not superset); .snd named-fork pinned; no hold band under sndfile (r70 band = SoX bridge artifact); 12B tier onset + sniff-consumption", "seats": "5/8 pre-commit landings (all byte-corroborated); author operator-substituted from boundary's verified scratch arm"},
+    "game-dev-2d-shokunin/r71": {"verdict": "ADMIT-with-correction", "commits": ["a993cbe","44127af"], "headline": "pygame 2.6.1 headless viable; withholding window = io.DEFAULT_BUFFER_SIZE=131072 on CPython 3.14 (frontier 8KB falsified); compound 2-layer window 139263B; tick(60)=~62Hz knife-edge fps 1000/1001; popen writer-bound; pump-free; queue cap 65535", "seats": "7/8 landed incl. independent scout prototype + baseline second implementation"},
+    "game-dev-3d-shokunin/r80": {"verdict": "ADMIT", "commits": ["faae4e0","e32e2de","ae89c13"], "headline": "bpy eval-event catalogue folded into pinned lattice: closure bounded-confirmed over ~100 probed classes (4 independent sweeps, 0 falsifiers); bpy.ops CALL is the eval event (CANCELLED also evals); frame_current=lazy tag; in-fixture falsifier armed", "seats": "full 8-seat landing + verifier AGREE 6/6"}
+  },
+  "model_mix_result": "deepseek-v4-1-flash-max carried scout/critic/scribe/simplifier/reviewer/boundary seats — ALL landed with falsification-grade output; swe-2 on authors/baselines/verifiers. Pool healthy this wave.",
+  "corrections_folded": ["audio _tail ASLR-tag strip (late r71 critic)", "g2d whf pin re-tightened to witness the fixed defect class", "g3d slept= nondeterminism removed, quirk_drift split", "adjudicator bounded-closure wording (critic)"],
+  "pushed": {"audio": "c079aba..50f55eb", "g2d": "d9ae207..44127af", "g3d": "3f9e070..ae89c13", "fleet": "a05cba1..(this)"}
+}

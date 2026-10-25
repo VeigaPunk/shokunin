@@ -1,0 +1,129 @@
+{
+  "pool_id": "alibaba-token-plan/qwen3.8-flash",
+  "provider": "alibaba-token-plan",
+  "model_id": "qwen3.8-flash",
+  "model_sent": "qwen3.8-flash",
+  "protocol": "openai",
+  "bucket": "MIDDLE",
+  "base_url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1",
+  "probe_id": "t1",
+  "probe_kind": "tool",
+  "rep": 1,
+  "measured": true,
+  "prompt": "What is the weather in Paris right now? Use the get_weather tool.",
+  "max_tokens": 192,
+  "tools_sent": true,
+  "tool_choice": "auto",
+  "request_body": {
+    "model": "qwen3.8-flash",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "What is the weather in Paris right now? Use the get_weather tool."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    },
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "get_weather",
+          "description": "Get the current weather for a city.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "city": {
+                "type": "string",
+                "description": "City name"
+              }
+            },
+            "required": [
+              "city"
+            ]
+          }
+        }
+      }
+    ],
+    "tool_choice": "auto"
+  },
+  "url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1/chat/completions",
+  "timeout_s": 120,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 3098,
+  "response_headers": {
+    "content-type": "text/event-stream; charset=utf-8",
+    "grpc-encoding": "identity",
+    "grpc-accept-encoding": "gzip",
+    "x-envoy-upstream-service-time": "1240",
+    "cache-control": "no-cache",
+    "date": "Thu, 15 Oct 2026 12:02:09 GMT",
+    "server": "istio-envoy",
+    "x-request-id": "6fcf7a2e-8db5-4538-a95c-e648625a6be5",
+    "req-cost-time": "1241",
+    "req-arrive-time": "1792065728281",
+    "resp-start-time": "1792065729522",
+    "transfer-encoding": "chunked"
+  },
+  "content_type": null,
+  "content": "",
+  "content_truncated": false,
+  "reasoning_chars": 133,
+  "reasoning_text": "We need to respond to user: \"What is the weather in Paris right now? Use the get_weather tool.\" We need call tool. Then final answer.",
+  "refusal_text": "",
+  "tool_calls": [
+    {
+      "id": "call_439f6da94f9f4d9cbf96e505",
+      "name": "get_weather",
+      "arguments": "{\"city\": \"Paris\"}"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 338,
+    "total_tokens": 398,
+    "completion_tokens": 60,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "text_tokens": 338
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 32,
+      "text_tokens": 60
+    }
+  },
+  "finish_reason": "tool_calls",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 19,
+  "sse_line_count": 40,
+  "raw_preview": "data: {\"model\":\"qwen3.8-flash\",\"id\":\"chatcmpl-6fcf7a2e-8db5-4538-a95c-e648625a6be5\",\"created\":1792065729,\"object\":\"chat.completion.chunk\",\"usage\":null,\"choices\":[{\"logprobs\":null,\"index\":0,\"delta\":{\"reasoning_content\":\"\",\"content\":\"\",\"role\":\"assistant\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-6fcf7a2e-8db5-4538-a95c-e648625a6be5\",\"object\":\"chat.completion.chunk\",\"created\":1792065729,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\"We\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-6fcf7a2e-8db5-4538-a95c-e648625a6be5\",\"object\":\"chat.completion.chunk\",\"created\":1792065729,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" need to\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-6fcf7a2e-8db5-4538-a95c-e648625a6be5\",\"object\":\"chat.completion.chunk\",\"created\":1792065729,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" respond\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-6fcf7a2e-8db5-4538-a95c-e648625a6be5\",\"object\":\"chat.completion.chunk\",\"created\":1792065729,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" to user: \\\"\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-6fcf7a2e-8db5-4538-a95c-e648625a6be5\",\"object\":\"chat.completion.chunk\",\"created\":1792065729,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\"What is the weather\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-6fcf7a2e-8db5-4538-a95c-e648625a6be5\",\"object\":\"chat.completion.chunk\",\"created\":1792065729,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" in Paris right now\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-6fcf7a2e-8db5-4538-a95c-e648625a6be5\",\"object\":\"chat.completion.chunk\",\"created\":1792065729,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\"? Use the get\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-6fcf7a2e-8db5-4538-a95c-e648625a6be5\",\"object\":\"chat.completion.chunk\",\"created\":1792065729,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\"_weather tool.\\\" We\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-6fcf7a2e-8db5-4538-a95c-e648625a6be5\",\"object\":\"chat.completion.chunk\",\"created\":1792065729,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" need call tool.\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-6fcf7a2e-8db5-4538-a95c-e648625a6be5\",\"object\":\"chat.completion.chunk\",\"created\":1792065729,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" Then final answer.\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-6fcf7a2e-8db5-4538-a95c-e648625a6be5\",\"object\":\"chat.completion.chunk\",\"created\":1792065730,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\"\",\"tool_calls\":[{\"id\":\"call_439f6da94f9f4d9cbf96e505\",\"type\":\"function\",\"index\":0,\"function\":{\"name\":\"get_weather\",\"arguments\":\"\"}}]},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-6fcf7a2e-8db5-4538-a95c-e648625a6be5\",\"object\":\"chat.completion.chunk\",\"created\":1792065730,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\"\",\"tool_calls\":[{\"id\":\"\",\"type\":\"function\",\"index\":0,\"function\":{\"arguments\":\"{\\\"city\\\": \"}}]},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\ndata: {\"id\":\"chatcmpl-6fcf7a2e-8db5-4538-a95c-e648625a6be5\",\"object\":\"chat.completion.chunk\",\"created\":1792065730,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\"\",\"tool_calls\":[{\"id\":\"\",\"type\":\"function\",\"index\":0,\"function\":{\"arguments\":\"\\\"Paris\"}}]},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "well-formed tool call",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T12:02:10Z",
+  "ttft_content_ms": null,
+  "ttft_reasoning_ms": 2298,
+  "first_decoded_ms": 2298,
+  "decode_span_ms": 790,
+  "tps": 74.69,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": null,
+  "completion_tokens": 60,
+  "prompt_tokens": 338,
+  "reasoning_tokens": 32,
+  "content_delta_count": 0,
+  "reasoning_delta_count": 10
+}

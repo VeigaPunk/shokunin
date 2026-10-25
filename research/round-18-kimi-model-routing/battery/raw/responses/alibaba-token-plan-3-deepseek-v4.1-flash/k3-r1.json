@@ -1,0 +1,22 @@
+{
+  "pool_id": "alibaba-token-plan-3/deepseek-v4.1-flash",
+  "provider": "alibaba-token-plan-3",
+  "model_id": "deepseek-v4.1-flash",
+  "protocol": "openai",
+  "bucket": "FAST",
+  "probe_id": "k3",
+  "probe_kind": "code",
+  "rep": 1,
+  "measured": true,
+  "prompt": "What does this Python expression evaluate to?\n\nsorted({3, 1, 2} | {5})\n\nAnswer with only the list, with no spaces.",
+  "max_tokens": 192,
+  "status": null,
+  "grade": {
+    "pass": false,
+    "failure_class": "skipped_after_fatal",
+    "detail": "lane refused at perf with class auth (HTTP 429 quota exhausted); no retry"
+  },
+  "skipped": true,
+  "skip_reason": "lane refused at perf with class auth (HTTP 429 quota exhausted); no retry",
+  "started_at_utc": "2026-10-15T12:00:44Z"
+}

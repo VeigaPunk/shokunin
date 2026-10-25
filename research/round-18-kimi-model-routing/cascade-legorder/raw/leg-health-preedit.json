@@ -1,0 +1,153 @@
+{
+  "config": "/home/vgpnk/.kimi-code/config.toml",
+  "probes": [
+    {
+      "auth_header_sent": true,
+      "body": {
+        "choices": [
+          {
+            "finish_reason": "length",
+            "index": 0,
+            "logprobs": null,
+            "message": {
+              "content": "",
+              "reasoning_content": "The user just said \"ping\". This",
+              "role": "assistant"
+            }
+          }
+        ],
+        "created": 1792074236,
+        "id": "chatcmpl-97eff7e0-39d4-4373-9684-924314ba1817",
+        "model": "deepseek-v4.1-flash",
+        "object": "chat.completion",
+        "usage": {
+          "completion_tokens": 8,
+          "completion_tokens_details": {
+            "reasoning_tokens": 8,
+            "text_tokens": 0
+          },
+          "prompt_tokens": 31,
+          "prompt_tokens_details": {
+            "cached_tokens": 0,
+            "text_tokens": 31
+          },
+          "total_tokens": 39
+        }
+      },
+      "headers": {
+        "connection": "close",
+        "content-type": "application/json; charset=utf-8",
+        "date": "Thu, 15 Oct 2026 14:23:56 GMT",
+        "grpc-accept-encoding": "gzip",
+        "grpc-encoding": "identity",
+        "req-arrive-time": "1792074236236",
+        "req-cost-time": "305",
+        "resp-start-time": "1792074236541",
+        "server": "istio-envoy",
+        "transfer-encoding": "chunked",
+        "vary": "Accept-Encoding",
+        "x-envoy-upstream-service-time": "304",
+        "x-request-id": "97eff7e0-39d4-4373-9684-924314ba1817"
+      },
+      "latency_ms": 1910,
+      "model": "deepseek-v4.1-flash",
+      "provider": "alibaba-token-plan",
+      "request_body": {
+        "max_tokens": 8,
+        "messages": [
+          {
+            "content": "ping",
+            "role": "user"
+          }
+        ],
+        "model": "deepseek-v4.1-flash",
+        "temperature": 0
+      },
+      "status": 200,
+      "url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1/chat/completions"
+    },
+    {
+      "auth_header_sent": true,
+      "body": {
+        "error": {
+          "code": "insufficient_quota",
+          "id": "a2fe426b-e4a4-4aa7-b81d-c72e12fc9fc8",
+          "message": "Your token-plan 1-month quota has been exhausted. The quota will reset at 10-23 16:00:00 UTC.",
+          "type": "insufficient_quota"
+        }
+      },
+      "headers": {
+        "connection": "close",
+        "content-type": "text/plain",
+        "date": "Thu, 15 Oct 2026 14:23:57 GMT",
+        "req-arrive-time": "1792074237589",
+        "req-cost-time": "10",
+        "resp-start-time": "1792074237599",
+        "retry-after": "696963",
+        "server": "istio-envoy",
+        "transfer-encoding": "chunked",
+        "vary": "Accept-Encoding",
+        "x-envoy-upstream-service-time": "10",
+        "x-request-id": "a2fe426b-e4a4-4aa7-b81d-c72e12fc9fc8"
+      },
+      "latency_ms": 1034,
+      "model": "deepseek-v4.1-flash",
+      "provider": "alibaba-token-plan-2",
+      "request_body": {
+        "max_tokens": 8,
+        "messages": [
+          {
+            "content": "ping",
+            "role": "user"
+          }
+        ],
+        "model": "deepseek-v4.1-flash",
+        "temperature": 0
+      },
+      "status": 429,
+      "url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1/chat/completions"
+    },
+    {
+      "auth_header_sent": true,
+      "body": {
+        "error": {
+          "code": "insufficient_quota",
+          "id": "4f0e200e-cd1b-4b08-8b23-759cec1da11a",
+          "message": "Your token-plan 1-month quota has been exhausted. The quota will reset at 10-28 16:00:00 UTC.",
+          "type": "insufficient_quota"
+        }
+      },
+      "headers": {
+        "connection": "close",
+        "content-type": "text/plain",
+        "date": "Thu, 15 Oct 2026 14:23:58 GMT",
+        "req-arrive-time": "1792074238652",
+        "req-cost-time": "11",
+        "resp-start-time": "1792074238663",
+        "retry-after": "1128962",
+        "server": "istio-envoy",
+        "transfer-encoding": "chunked",
+        "vary": "Accept-Encoding",
+        "x-envoy-upstream-service-time": "11",
+        "x-request-id": "4f0e200e-cd1b-4b08-8b23-759cec1da11a"
+      },
+      "latency_ms": 1064,
+      "model": "deepseek-v4.1-flash",
+      "provider": "alibaba-token-plan-3",
+      "request_body": {
+        "max_tokens": 8,
+        "messages": [
+          {
+            "content": "ping",
+            "role": "user"
+          }
+        ],
+        "model": "deepseek-v4.1-flash",
+        "temperature": 0
+      },
+      "status": 429,
+      "url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1/chat/completions"
+    }
+  ],
+  "started": "2026-10-15T11:23:54-0300"
+}

@@ -1,0 +1,27 @@
+/skill:godspeed
+Read your brief file first — it is the task. Execute it exactly and stop.
+
+Brief: /home/vgpnk/Projects/shokunin/.ufo/waves/shokunin-train-20261101-w10/tasks/g3d-verifier-v2.txt
+Lane: g3d
+Repo: ~/Projects/shokunin/game-dev-3d-shokunin
+Round: r79
+Report path: reports/round-79/r79-verifier.md
+Scratch: corpus/live/r79-verifier/
+
+Seat rules (non-negotiable):
+- You are a LEAF: no subagent dispatch, and never run git commit/push/merge/rebase/stash/checkout in any repo.
+- Write only your own report file and scratch inside your brief's write scope.
+- If the landed work is defective, report the defect with reproduction — never soften it.
+- Every claim needs evidence: exact commands, observed exits, receipt paths, or file:line refs.
+- This is a POST-LANDING seat: the author diff is already committed at the pinned commit below. Verify/criticize the LANDED state.
+
+Pinned commits: 08d1b10 work + 9a2e7b1 report-last (operator-authored bpy_sync_probe.py + bpy_battery.py, 37 pinned cases; scout lattice corpus/live/r79-scout/).
+
+Verify on the committed tree:
+1. `python3 corpus/fixtures/bpy_battery.py` — expect 37/37; record receipt.
+2. `python3 corpus/fixtures/run_battery.py --godot /usr/bin/godot` — 176 prior rows green.
+3. Determinism: bpy_battery 3x — ARM lines byte-identical? Report drift cells.
+4. Cross-check 3 pinned values on your own read of probe stdout (transform w0-held loc, modifier eval_verts, membership w0-held names).
+Report PASS/FAIL per item.
+
+| godspeed

@@ -1,0 +1,3 @@
+# Seat: g2d r93 scout — AnimationPlayer + Tween authorability lattice
+Lane: /home/vgpnk/Projects/shokunin/game-dev-2d-shokunin
+Surface ASSIGNED: AnimationPlayer runtime (track types, play/pause/seek determinism, signal timing, blending, caches) + Tween (interpolators, easers, chains, callbacks vs physics/idle). Tween interpolate_value receipt already measured by r91 scout: linear@0.25=2.5, quad/EIO=1.25, expo/EASE_OUT=9.69718754291534 — verify & extend, don't resurvey blindly. godot headless; verbatim pins x>=3; falsifications; author-ready rows. reports/round-93/r93-scout.md + corpus/live/r93-scout/. No tracked writes, no commits.

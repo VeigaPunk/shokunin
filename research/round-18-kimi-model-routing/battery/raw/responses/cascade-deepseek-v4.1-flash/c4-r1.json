@@ -1,0 +1,104 @@
+{
+  "pool_id": "cascade/deepseek-v4.1-flash",
+  "provider": "ds-flash-cascade",
+  "model_id": "deepseek-v4.1-flash",
+  "model_sent": "deepseek-v4.1-flash",
+  "protocol": "openai",
+  "bucket": "FAST",
+  "base_url": "http://127.0.0.1:8791/v1",
+  "probe_id": "c4",
+  "probe_kind": "contract",
+  "rep": 1,
+  "measured": true,
+  "prompt": "How many times does the letter r appear in the word strawberry? Answer with one digit and nothing else.",
+  "max_tokens": 192,
+  "tools_sent": false,
+  "tool_choice": null,
+  "request_body": {
+    "model": "deepseek-v4.1-flash",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "How many times does the letter r appear in the word strawberry? Answer with one digit and nothing else."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "url": "http://127.0.0.1:8791/v1/chat/completions",
+  "timeout_s": 300,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 2273,
+  "response_headers": {
+    "Date": "Thu, 15 Oct 2026 12:00:33 GMT",
+    "Content-Type": "text/event-stream",
+    "Cache-Control": "no-cache",
+    "Cf-Placement": "remote-IAD",
+    "x-opencode-endpoint-id": "novita-deepseek",
+    "x-opencode-log-id": "afacd756-3825-402f-9196-041dd5791802",
+    "x-opencode-upstream-model-id": "deepseek/deepseek-v4.1-flash",
+    "x-zen-model": "deepseek-v4.1-flash",
+    "Server": "cloudflare",
+    "CF-RAY": "a4aea9fa2d9dbd88-MIA",
+    "Connection": "close"
+  },
+  "content_type": "text/event-stream",
+  "content": "3",
+  "content_truncated": false,
+  "reasoning_chars": 311,
+  "reasoning_text": "We need answer only one digit. Need count r in \"strawberry\". Let's count letters s t r a w b e r r y? Actually strawberry = s t r a w b e r r y. r at positions 3, 8, 9? Let's spell: straw + berry. \"straw\" has r (s t r a w) one. \"berry\" has rr? b e r r y yes two. total 3. Need one digit nothing else. final \"3\".",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": {
+    "prompt_tokens": 51,
+    "completion_tokens": 110,
+    "total_tokens": 161,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_write_tokens": 0
+    },
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 108,
+      "rejected_prediction_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 34,
+  "sse_line_count": 70,
+  "raw_preview": "data: {\"id\":\"ecc056cc954f8ee597effb7ac1adac2d\",\"object\":\"chat.completion.chunk\",\"created\":1792065633,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\"}}]}\ndata: {\"id\":\"ecc056cc954f8ee597effb7ac1adac2d\",\"object\":\"chat.completion.chunk\",\"created\":1792065633,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"We\"}}]}\ndata: {\"id\":\"ecc056cc954f8ee597effb7ac1adac2d\",\"object\":\"chat.completion.chunk\",\"created\":1792065633,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" need answer only one\"}}]}\ndata: {\"id\":\"ecc056cc954f8ee597effb7ac1adac2d\",\"object\":\"chat.completion.chunk\",\"created\":1792065633,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" digit. Need count r\"}}]}\ndata: {\"id\":\"ecc056cc954f8ee597effb7ac1adac2d\",\"object\":\"chat.completion.chunk\",\"created\":1792065633,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" in \\\"strawberry\\\".\"}}]}\ndata: {\"id\":\"ecc056cc954f8ee597effb7ac1adac2d\",\"object\":\"chat.completion.chunk\",\"created\":1792065633,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" Let's count\"}}]}\ndata: {\"id\":\"ecc056cc954f8ee597effb7ac1adac2d\",\"object\":\"chat.completion.chunk\",\"created\":1792065633,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" letters\"}}]}\ndata: {\"id\":\"ecc056cc954f8ee597effb7ac1adac2d\",\"object\":\"chat.completion.chunk\",\"created\":1792065633,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" s\"}}]}\ndata: {\"id\":\"ecc056cc954f8ee597effb7ac1adac2d\",\"object\":\"chat.completion.chunk\",\"created\":1792065633,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" t r a w b e\"}}]}\ndata: {\"id\":\"ecc056cc954f8ee597effb7ac1adac2d\",\"object\":\"chat.completion.chunk\",\"created\":1792065633,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" r r y? Actually\"}}]}\ndata: {\"id\":\"ecc056cc954f8ee597effb7ac1adac2d\",\"object\":\"chat.completion.chunk\",\"created\":1792065633,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" strawberry = s t r\"}}]}\ndata: {\"id\":\"ecc056cc954f8ee597effb7ac1adac2d\",\"object\":\"chat.completion.chunk\",\"created\":1792065633,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" a w b e r r\"}}]}\ndata: {\"id\":\"ecc056cc954f8ee597effb7ac1adac2d\",\"object\":\"chat.completion.chunk\",\"created\":1792065633,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" y. r at positions\"}}]}\ndata: {\"id\":\"ecc056cc954f8ee597effb7ac1adac2d\",\"object\":\"chat.completion.chunk\",\"created\":1792065633,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" 3, 8,\"}}]}\ndata: {\"id\":\"ecc056cc954f8ee597effb7ac1adac2d\",\"object\":\"chat.completion.chunk\",\"created\":1792065633,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" 9?\"}}]}\ndata: {\"id\":\"ecc056cc954f8ee597effb7ac1adac2d\",\"object\":\"chat.completion.chunk\",\"created\":1792065633,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" Let's spell: straw\"}}]}\ndata: {\"id\":\"ecc056cc954f8ee597effb7ac1adac2d\",\"object\":\"chat.completion.chunk\",\"created\":1792065633,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" +\"}}]}\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "exact match",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T12:00:34Z",
+  "ttft_content_ms": 2273,
+  "ttft_reasoning_ms": 2273,
+  "first_decoded_ms": 2273,
+  "decode_span_ms": null,
+  "tps": null,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": "not derivable: no incremental deltas or fewer than 2 tokens",
+  "completion_tokens": 110,
+  "prompt_tokens": 51,
+  "reasoning_tokens": 108,
+  "content_delta_count": 1,
+  "reasoning_delta_count": 30
+}

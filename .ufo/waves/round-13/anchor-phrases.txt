@@ -1,0 +1,96 @@
+# anchor-phrases.txt — committed expected values for verify-protocol.sh check `anchors`
+#
+# One verbatim normative substring per line, matched as a fixed string (awk index(),
+# == `grep -F`) against the target. `#` and blank lines are comments. Each substring
+# is short enough to survive a re-wrap of its paragraph but long enough to contain the
+# rule's modal word (`never`, `only`, `must`, `required`, `MAY`), so a modal rewrite
+# (MUST->SHOULD) or a modal deletion breaks the anchor.
+#
+# ASCII only, deliberately: a shell `read` loop in this environment transcodes non-UTF-8
+# lines (verified; see exec-verifier.md), so every anchor avoids em dashes, arrows and
+# other non-ASCII bytes.
+#
+# Coverage: the seven round-12 pins, then every operative requirement of `## Gate standard`.
+# Source revision: PROTOCOL.md at 526 lines / md5 63de15a37a42ce57decb951a7e8aa2f0.
+# Commands and observed output: .ufo/waves/round-13/exec-verifier.md.
+#
+# --- pin 1: row identity / lane_rounds never re-keys / unadjudicable
+**A row names the lane-round it describes.**
+annotates it and never re-keys it, so last-wins is computed over `(id, entry.round)`
+are `unadjudicable` as lane-rounds
+`round` and is required on every `not-dispatched` row
+# --- pin 2: orphaned-report resolution order + re-grade-to-failed + aggregator-corpus exclusion
+report is resolved in order: the lane's own respawn inherits and lands it
+for durability only if that successor mission also terminates without landing it
+the order never reaches aggregator-owned
+re-grades it `failed` for want of a landed report if the successor never lands it
+# --- pin 3: filed-report correction = erratum appended after the filed bytes, never a rewrite
+report is a record: a correction to it lands in the correcting round's own report, or as an erratum
+appended after the filed bytes in a new commit and naming the text it supersedes
+of the filed bytes, labelled or silent
+# --- pin 4: progressing-weak
+a third grade, `progressing-weak`: named as such
+never called progressing, and never silent or `failed` on its own
+# --- pin 5: L0 append-only + integrator durability owner + cite-by-lane-and-round
+a lane restating or correcting its own question
+appends a new line naming the superseded one and never rewrites a filed line
+Cite a question by lane + round + its opening words,
+never by line number: the queue grows, so every line number moves
+Its durability owner is the
+non-durable until committed and no lane owns the path
+# --- pin 6: in-flight ended only by a landed report
+`in-flight` is therefore decided
+from the absence of both a `complete <lane> round=N` line and a *landed* report
+uncommitted file at the report path does not end `in-flight`
+and never from a status
+# --- pin 7: supersedes MAY carry entry
+**`rounds` is append-only after closure.**
+MAY also carry `entry`
+and a gate treats a correction that needs the disambiguator and omits it as ambiguous
+# --- Gate standard: verdict map
+A tool that cannot fail is
+a **probe**, and is registered as one
+is declared in its registry entry and mapped onto `clean | failed | could-not-evaluate`
+and an undeclared nonzero code reads as `could-not-evaluate`
+# --- Gate standard: self-test
+Every gate exposes a self-invocation mode over isolated fixtures (temp trees, no
+asserting both the exit code and a stable expected finding-id, with
+the expected values committed in the owning repo and independent of the recomputation
+a helper-only or model-only self-check does not satisfy this clause
+# --- Gate standard: two evidences
+also ships a run over a committed input snapshot
+with its committed expected verdict, so a later hand-edit of that artifact contradicts the frozen
+A verdict names the revision it was measured against
+# --- Gate standard: registry
+self-test command and spelling,
+pinned-value path, write scope, owner
+The aggregator ledger stays the routed-defect queue, not a
+a fleet index is pointers to lane rows, never copied expected values
+# --- Gate standard: scope
+Read-only over surfaces it does not own, and it never acts on an external surface
+A verdict is lane-local evidence: it never defines the host runtime's stop conditions
+and never stands in for the native judge
+# --- Gate standard: closure consequence
+A red gate is a conformance defect recorded in the round notes and routed
+never the marker predicate, since step 1 grades marker-versus-real-report first and only a marker
+The integrator verifies a gate's *committed evidence* (self-test tally,
+it does not execute a sibling's gate, whose
+# --- Gate standard: delivery
+This section reaches a lane through the re-read duty, not the driver's prompt
+#
+# --- appendix-only anchors
+# Prose/rows that live in `## Appendix — incident digest` and nowhere in the body.
+# In single-file mode they are matched against the target like any other anchor;
+# in `--appendix FILE` mode they are matched against the appendix artifact, which is
+# why dropping one there fires `anchors` (selftest case B-10). Verified at the
+# baseline to be present in the appendix region and absent from the body.
+the progressing test's "files modified under its repo" half attributes a sibling's work to the lane
+kotoba r13 graded progressing on three `aggregator-shokunin` commits
+tick counter resets on driver restart
+46 of 60 reports swept into
+the kengaku-r10 and kumitate-r10 questions sat uncommitted across two rounds
+its own r12 work uncommitted, no `complete` line, counter still 12
+self-declares "a report, not a gate"
+0 of 62 reports committed under a lane identity
+entry-keyed last-wins reproduces the round-11 record exactly
+falsified on round-11 re-execution already at write time

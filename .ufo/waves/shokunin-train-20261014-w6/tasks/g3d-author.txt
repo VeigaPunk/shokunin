@@ -1,0 +1,25 @@
+/skill:godspeed
+Read your brief file first — it is the task. Execute it exactly and stop.
+
+Brief: /home/vgpnk/Projects/shokunin/.ufo/waves/shokunin-train-20261014-w6/tasks/g3d-author.txt
+Lane: game-dev-3d
+Worktree/repo root: ~/Projects/prymeagnt/game-dev-3d
+Round: r75
+Declared axis-move (verbatim): pin server-side map/link MUTATION under a committed path — the zombie-waypoint question (XConnector wave-5 recommended arm): once a path materializes and latches, does mutating the map (disable/enable the off-mesh link, change navigation_layers on the link or agent, delete/recreate the region, region_set_transform) invalidate the stored path lazily, leave a traversable dead-gate waypoint, or update on the next forcing call? Declared falsifiable claim: the stored path is invalidated by map mutation (the r74 lazy-update model predicts invalidation is forcing-call-gated, and critic fw_mapedit/fw_layermask measured EMPTY path + final=(0,0,0) on map edits — land these as tracked CASES arms). Additive --arm= presets only; 145 prior CASES rows + 4 probes + Node 31/31 stable.
+
+Seat: author
+Report path (write ONLY this file + scratch inside your brief's write scope): reports/round-75/r75-author.md
+Scratch: corpus/live/r75-author/
+
+Seat rules (non-negotiable):
+- You are a LEAF: no subagent dispatch, and never run git commit/push/merge/rebase/stash/checkout in any repo.
+- Write only your own report file and scratch inside your brief's write scope.
+- Never touch another lane's files, another repo's tracked content, or shared state.
+- If the round's declared claim proves false under measurement, report the actual observed outcome: a falsified claim is a useful round; never force it or soften the record.
+- Every claim needs evidence: exact commands, observed exits, receipt paths, or file:line refs resolvable on this host.
+- Domain actions that would reach users/maintainers (push, publish) are operator-owned: do not attempt them.
+- Baseline seats: freeze via `git archive HEAD` (tracked files only — NEVER recursively embed prior r*-baseline/frozen/tree dirs or node_modules; the archive command lists tracked files, so it already excludes untracked scratch — do NOT extract then re-archive a populated tree).
+
+Own the declared move; bounded labrat spike first. Extend navagent3d_detour.gd's steps mechanism with a mutation step kind (e.g. {mutate:{...}} applied between steps — additive only; all 145 prior arms byte-identical): arms pinning (a) link-disable mid-path → stored path invalidated or zombie-traversal?; (b) agent navigation_layers flip → critic's measured EMPTY path + final=(0,0,0); (c) region disable/transform → lazy invalidation timing; (d) link re-enable → does the path re-materialize the link hop on next forcing call; (e) mutation WITHOUT a forcing call → state unchanged (laziness). New CASES rows + falsification path per clause. Full battery 145+N + 4 probes + Node 31/31 + prior rows 0-mismatch.
+
+| godspeed

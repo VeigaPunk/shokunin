@@ -1,0 +1,40 @@
+{
+  "fleet": "shokunin-train-20261101-w10",
+  "closed_utc": "2026-10-14T14:20Z",
+  "theme": "runtime expansion — first contact on second runtimes per lane",
+  "rounds": {
+    "audio-shokunin/r71": {
+      "move": "second decoder: ffmpeg/ffprobe n9.0.1 transport matrix, 9 members x 4 transports",
+      "verdict": "ADMIT",
+      "headline": "content-probing confirmed: all 7 no-match members reject uniformly on all 4 transports (suffix axis absent); dec_act->wav/99, dec_hcom->hcom/100 transport-invariant. SoX named/suffix partition is decoder-specific.",
+      "commits": ["7b9e75d", "77768fa", "6b46b7c"],
+      "verification": "verifier AGREE 3/3 post-landing; D1/D2/D3 corrected (mode/suffix wiring, path-normalized tails -> byte-stable receipts, probe_score present on detects); ledger 84/85 shared modes byte-identical, sole diff = measured transition-band jitter"
+    },
+    "game-dev-2d-shokunin/r70": {
+      "move": "LOVE 11.5 headless first contact; engine-general fabrication-window claim",
+      "verdict": "ADMIT-with-correction",
+      "headline": "headless love.update uncapped ~960Hz (60Hz = vsync artifact); io.popen writer-bound byte-exact; fabrication window confirmed at SPAWN layer via os.execute fd1 inheritance (critic F1 folded: splice arm 4 cells, gap-relative referent reproduced cell-for-cell); verdict relocalized engine-general -> spawn-general (POSIX)",
+      "commits": ["ceba654", "16d003c", "d9ae207"],
+      "verification": "verifier AGREE 4/4 own-run 15/15, Godot battery green; splice cells 19/19 post-fold"
+    },
+    "game-dev-3d-shokunin/r79": {
+      "move": "Blender bpy 5.2.1 headless two-layer lattice",
+      "verdict": "ADMIT-as-narrowed",
+      "headline": "split is write-through vs evaluation-gated (derived RNA lags like held handles); evaluated_depsgraph_get() IS the eval event (shared graph, is_same=True); NO implicit drain (unlike Godot per-tick serve); held-handle staleness unbounded; 37 pinned cases",
+      "commits": ["08d1b10", "9afcdc2", "3f9e070"],
+      "verification": "verifier AGREE 4/4 (78 ARM lines byte-identical x3, Godot 176/176); critic folded (quirk_drift split, RNA witness relabel)"
+    }
+  },
+  "infrastructure_events": {
+    "free_pool_massacre": "25/26 original seats died to shared free-model rate limit (swe-2 general seats included); reset ~seconds but respawns re-died",
+    "operator_substitution": "all three author seats substituted by operator on scout/measured evidence; disclosed in reports + adjudicators",
+    "v2_seats": "post-landing verification wave dispatched after commits (verifier+critic+boundary per lane); several landed and their corrections folded",
+    "profile_registration": "new model-pinned profiles do not register mid-session; deepseek-pinned executor/scribe profiles armed for next session (user directive)"
+  },
+  "frontier_evidence_for_wave_11": {
+    "audio": ["libsndfile 1.2.2 third decoder: post-sniff suffix fallback raw-family, same named/anonymous partition on .snd, magic-recognized-then-refused tier (txw)", "pipewire/pw-cat realtime transport: playback-paced fifo consumption, daemon-required", "mpv inverted seekability fork (non-seekable helps, lavf refresh-seek EPERM)"],
+    "g2d": ["pygame 2.6.1+SDL dummy-driver viable; withholding window = Python block-buffered stdout (~8KB/exit); tick(60) ~62Hz SDL_Delay undershoot", "love.physics box2d frontier seat dispatched"],
+    "g3d": ["bpy eval-event catalogue: bpy.ops auto-evaluate (new event class), drivers write-through edge=1, keyframes bind only at frame_set, handler timing mapped, wall-time drain CLOSED", "Godot PhysicsServer3D direct-API frontier seat dispatched"]
+  },
+  "standing_followups": ["tracked .pyc census (xsentinel F8)", "pre-existing ffmpeg orphans ~60 from r67-r70 seats need corpus hygiene sweep", "new pinned profiles need fresh session to register"]
+}

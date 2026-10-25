@@ -1,0 +1,39 @@
+{
+ "wave": "shokunin-train-20261014-w7",
+ "settled": "2026-10-14",
+ "lanes": {
+  "audio": {
+   "round": "r68",
+   "verdict": "ADMIT",
+   "work": "6c91040",
+   "report_last": "7b8d423",
+   "verifier": "AGREE 5/5",
+   "seats": "8/8",
+   "note": "declared claim falsified-as-stated: post-table fork = named axis ({file,fifo} vs {stdin,redir}), not seekable; txw reader-level seekable gate pinned; ledger 114 rows byte-stable"
+  },
+  "game-dev-2d": {
+   "round": "r67",
+   "verdict": "ADMIT",
+   "work": "d44ba86+9e946c9",
+   "report_last": "1101cb3",
+   "verifier": "AGREE 5/5",
+   "seats": "8/8",
+   "note": "classify_streams divergence map: 12/27 arms, 4 families (absorb/strict/seam-x-allowlist/agree); shipped reject arm itself divergent since r19; seam one-position"
+  },
+  "game-dev-3d": {
+   "round": "r76",
+   "verdict": "ADMIT",
+   "work": "3ab09fd+8a67f71",
+   "report_last": "e417365",
+   "verifier": "AGREE 5/5",
+   "seats": "8/8",
+   "note": "per-class sync edges {link:2,region:3,map_off:perm,agent:0} four-way converged; wait>=1 falsified on all RID classes; same-value suppression on 8 setters; _check_tuple extraction landed"
+  }
+ },
+ "events": [
+  "xsentinel w7-F1 head-tree/ ignore gap fixed pre-integration on both lanes (a0958a9, 3a53258: *tree*/ pattern)",
+  "g3d _check_tuple consolidation (twice-deferred, byte-identical 78/78+19/19 mutants) applied as 8a67f71 with own 163/163 re-verification",
+  "audio falsification is the finding: declared seekability fork transposed to named axis; genuine seekable gate lives inside txw reader",
+  "all 26 seats landed; zero rate-limit kills this wave"
+ ]
+}

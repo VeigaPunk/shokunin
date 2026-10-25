@@ -1,0 +1,60 @@
+{
+  "lane": "chousa",
+  "round": 27,
+  "at": "2026-10-21T23:21:18.391648+00:00",
+  "append_argv": [
+    "python3",
+    "scripts/hyaku/append-closure.py",
+    "--entry",
+    "/fast/scratch/hyaku-resume-s3/closure-drafts/chousa27-closure-entry.json"
+  ],
+  "append_exit": 0,
+  "append_stdout": "appended rounds[437] commit 8763f5a5c65ebcc85a2563cf598b30cb5bd8a37c\npushed\n",
+  "append_stderr": "",
+  "native_argv": [
+    "python3",
+    "/home/vgpnk/Projects/shokunin/.ufo/waves/round-15/closure-check.py",
+    "--repo",
+    "/home/vgpnk/Projects/shokunin",
+    "--json",
+    "--no-citations"
+  ],
+  "native_exit": 1,
+  "native_stderr": "",
+  "target_row": {
+    "closed_at": "2026-10-21T23:21:16+00:00",
+    "counter": 27,
+    "entry": 437,
+    "entry_type": "closure",
+    "lane": "chousa",
+    "round": 27,
+    "status": "ok"
+  },
+  "target_debt_cne": [],
+  "whole_ledger_counts": {
+    "by_class": {
+      "contradiction": 57,
+      "keying_violation": 1,
+      "unrowed_terminated": 2
+    },
+    "contradictions": 57,
+    "could_not_evaluate": 81,
+    "debt": 60,
+    "history_pin": 0,
+    "live_in_flight": 0,
+    "nonclosure": 100,
+    "nonclosure_unrecognized": 80,
+    "pending_round": 13,
+    "prompt_orphan": 0,
+    "stale_in_flight": 0,
+    "unknown_entry_type": 80,
+    "unknown_lane": 0,
+    "unknown_round": 1,
+    "unrowed": 15,
+    "unrowed_terminated": 2
+  },
+  "whole_ledger_verdict": "debt",
+  "source_sha256": "d8c1620df147d2e576f157f43e149ae4a1251a760b9f111f210b516744187a48",
+  "admitted": false,
+  "limits": "Targetstatusokmeansrealfiledreport,notclaimadmission;wholeledgerred/legacyCNEretained;noheldsource/policypayloadrerun."
+}

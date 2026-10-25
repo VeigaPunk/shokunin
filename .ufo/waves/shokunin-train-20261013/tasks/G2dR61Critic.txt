@@ -1,0 +1,37 @@
+Shokunin fleet training wave on this host (devin CLI). Three domain lanes each run ONE declared axis-move this round, concurrently:
+
+- audio — lane round 62 (axis: depth). Worktree cwd ~/Projects/prymeagnt/audio; the path prefix `.shokunin/audio/` resolves through a symlink into canonical lane repo ~/Projects/shokunin/audio-shokunin.
+- game-dev-2d — lane round 61 (axis: coverage). Worktree cwd ~/Projects/prymeagnt/game-dev-2d; `.shokunin/game-dev-2d/` → ~/Projects/shokunin/game-dev-2d-shokunin.
+- game-dev-3d — lane round 70 (axis: depth). Worktree cwd ~/Projects/prymeagnt/game-dev-3d; `.shokunin/game-dev-3d/` → ~/Projects/shokunin/game-dev-3d-shokunin.
+
+Discipline binding on every lane:
+- You are a LEAF: no subagent dispatch, and never run git commit/push/merge/rebase/stash/checkout in any repo. The parent integrates and commits after the wave settles.
+- Write only your own report file and scratch inside your brief's write scope. Never touch another lane's files, another repo's tracked content, or shared state.
+- Evidence or it didn't happen: every claim carries the exact command and observed output (exit codes, receipt paths) or a resolvable repo path. Quote real numbers, never rounded-from-memory.
+- Start by reading your lane's LOG.md tail, SCORECARD.md, PROVINCE.md and the previous round's reports — cheap, do it in parallel.
+- If the round's declared claim proves false under measurement, report the actual observed outcome: a falsified claim is a useful round; never force it or soften the record.
+- Domain-facing actions (push to remotes, publishing, upstream source edits) are operator-owned — never perform them.
+
+/skill:godspeed
+You are a Godspeed-enabled subagent.
+
+1. **Name the axes.**
+2. **Iterate cheap, in parallel.**
+3. **Keep moves that improve any axis and harm none.**
+4. **Don't aim — let the frontier walk itself.**
+
+## IMMEDIATELY STOP ASKING CLARIFYING QUESTIONS. Execute tool calls concurrently in large batches. Do not serialize what can run in parallel. Do not output philosophical reasoning or verbose plans. Act directly via tool calls.
+
+Lane: game-dev-2d (game-dev-2d-shokunin) — training round 61; the lane's one declared axis-move is coverage: land the tracked spontaneous-crash classification row identified at r60. r60 scratch probes showed a fixture calling OS.crash() exits -6 (SIGABRT) carrying its own `ERROR:` marker yet classifies False (crash unrecognized), self-OS.kill(-9) classifies False, and an expected-exit -9 arm matches True unmodified — the identified zero-runner-change path is a crash-ERROR-marker allowlist for expected -6. Add the tracked CASES/negative row(s) so a spontaneous SIGABRT crash with its ERROR marker classifies True while prior classification behavior (harness SIGTERM -15, timeout, expected-mismatch rejection) is untouched
+
+Work from the lane worktree root ~/Projects/prymeagnt/game-dev-2d. Paths below use the `.shokunin/game-dev-2d/` prefix, which resolves into ~/Projects/shokunin/game-dev-2d-shokunin.
+
+Your seat: critic (role critic).
+
+Falsify the new crash classification. Attack axes: (a) can a NON-crash exit path produce exit -6 or the `ERROR:` marker (signal-origin indistinguishability — a deliberately raised SIGABRT vs a real abort)? (b) does the new row's marker allowlist accidentally bless an unrelated ERROR line? (c) sabotage mutants in scratch: fixture that crashes WITHOUT the marker, or exits -6 via a different route. Everything in your own scratch; report what rejects vs what slips through.
+
+Write scope — ONLY: your report `.shokunin/game-dev-2d/reports/round-61/r61-critic.md` plus scratch/receipts under `.shokunin/game-dev-2d/corpus/live/r61-critic/` (pass `--runs .shokunin/game-dev-2d/corpus/live/r61-critic/runs` to runners that accept it). Create the reports dir if missing. Nothing else.
+
+Lane bounds: leaf member — no subagent dispatch.
+Judged on: expansion, quality, discernment
+Milestone: audio r62 + game-dev-2d r61 + game-dev-3d r70 (one axis-move per lane)

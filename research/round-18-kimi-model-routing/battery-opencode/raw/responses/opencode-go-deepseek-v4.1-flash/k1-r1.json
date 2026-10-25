@@ -1,0 +1,110 @@
+{
+  "pool_id": "opencode-go/deepseek-v4.1-flash",
+  "provider": "opencode-go",
+  "model_id": "deepseek-v4.1-flash",
+  "model_sent": "deepseek-v4.1-flash",
+  "protocol": "openai",
+  "bucket": "UNLABELLED",
+  "in_live_pool": false,
+  "base_url": "https://opencode.ai/inference/go/v1",
+  "reasoning_key": "reasoning_content",
+  "user_agent_class": "browser-chrome-141-linux",
+  "user_agent_sent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
+  "probe_id": "k1",
+  "probe_kind": "code",
+  "rep": 1,
+  "measured": true,
+  "prompt": "Write a Python function named rev that takes a single string argument and returns that string reversed. Output only the function definition as plain Python code. No markdown fences, no explanation, no test calls, no example usage.",
+  "max_tokens": 192,
+  "tools_sent": false,
+  "tool_choice": null,
+  "request_body": {
+    "model": "deepseek-v4.1-flash",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Write a Python function named rev that takes a single string argument and returns that string reversed. Output only the function definition as plain Python code. No markdown fences, no explanation, no test calls, no example usage."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "url": "https://opencode.ai/inference/go/v1/chat/completions",
+  "timeout_s": 120,
+  "auth_headers_sent": [
+    "Authorization",
+    "x-opencode-session"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 4767,
+  "response_headers": {
+    "Date": "Thu, 15 Oct 2026 12:46:53 GMT",
+    "Content-Type": "text/event-stream",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "Cache-Control": "no-cache",
+    "Cf-Placement": "remote-IAD",
+    "x-opencode-endpoint-id": "novita-deepseek",
+    "x-opencode-log-id": "8be38c00-a4ef-49f6-a0ad-758fa21523b7",
+    "x-opencode-upstream-model-id": "deepseek/deepseek-v4.1-flash",
+    "x-zen-model": "deepseek-v4.1-flash",
+    "Server": "cloudflare",
+    "CF-RAY": "a4aeedca3fae7088-MIA"
+  },
+  "content_type": "text/event-stream",
+  "content": "def rev(s):\n    return s[::-1]",
+  "content_truncated": false,
+  "reasoning_chars": 202,
+  "reasoning_text": "We need answer only function definition plain Python code. Need comply. Function rev takes single string argument returns reversed. Could simply def rev(s): return s[::-1]. Need no markdown. Final only.",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": {
+    "prompt_tokens": 74,
+    "completion_tokens": 52,
+    "total_tokens": 126,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_write_tokens": 0
+    },
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 41,
+      "rejected_prediction_tokens": 0
+    }
+  },
+  "finish_reason": "stop",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 21,
+  "sse_line_count": 44,
+  "raw_preview": "data: {\"id\":\"2f6c016641d4c68b8634e18abf72da86\",\"object\":\"chat.completion.chunk\",\"created\":1792068413,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\"}}]}\ndata: {\"id\":\"2f6c016641d4c68b8634e18abf72da86\",\"object\":\"chat.completion.chunk\",\"created\":1792068413,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"We\"}}]}\ndata: {\"id\":\"2f6c016641d4c68b8634e18abf72da86\",\"object\":\"chat.completion.chunk\",\"created\":1792068413,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" need answer only function\"}}]}\ndata: {\"id\":\"2f6c016641d4c68b8634e18abf72da86\",\"object\":\"chat.completion.chunk\",\"created\":1792068413,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" definition plain\"}}]}\ndata: {\"id\":\"2f6c016641d4c68b8634e18abf72da86\",\"object\":\"chat.completion.chunk\",\"created\":1792068413,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" Python code\"}}]}\ndata: {\"id\":\"2f6c016641d4c68b8634e18abf72da86\",\"object\":\"chat.completion.chunk\",\"created\":1792068413,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\". Need comply\"}}]}\ndata: {\"id\":\"2f6c016641d4c68b8634e18abf72da86\",\"object\":\"chat.completion.chunk\",\"created\":1792068413,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\". Function rev\"}}]}\ndata: {\"id\":\"2f6c016641d4c68b8634e18abf72da86\",\"object\":\"chat.completion.chunk\",\"created\":1792068413,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" takes single string\"}}]}\ndata: {\"id\":\"2f6c016641d4c68b8634e18abf72da86\",\"object\":\"chat.completion.chunk\",\"created\":1792068413,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" argument returns reversed.\"}}]}\ndata: {\"id\":\"2f6c016641d4c68b8634e18abf72da86\",\"object\":\"chat.completion.chunk\",\"created\":1792068413,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" Could\"}}]}\ndata: {\"id\":\"2f6c016641d4c68b8634e18abf72da86\",\"object\":\"chat.completion.chunk\",\"created\":1792068413,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" simply def\"}}]}\ndata: {\"id\":\"2f6c016641d4c68b8634e18abf72da86\",\"object\":\"chat.completion.chunk\",\"created\":1792068413,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" rev(s): return s[::-\"}}]}\ndata: {\"id\":\"2f6c016641d4c68b8634e18abf72da86\",\"object\":\"chat.completion.chunk\",\"created\":1792068413,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"1]. Need\"}}]}\ndata: {\"id\":\"2f6c016641d4c68b8634e18abf72da86\",\"object\":\"chat.completion.chunk\",\"created\":1792068413,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" no mark\"}}]}\ndata: {\"id\":\"2f6c016641d4c68b8634e18abf72da86\",\"object\":\"chat.completion.chunk\",\"created\":1792068413,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"down. Final\"}}]}\ndata: {\"id\":\"2f6c016641d4c68b8634e18abf72da86\",\"object\":\"chat.completion.chunk\",\"created\":1792068413,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" only\"}}]}\ndata: {\"id\":\"2f6c016641d4c68b8634e18abf72da86\",\"object\":\"chat.completion.chunk\",\"created\":1792068413,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":null,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\".\"}}]}\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "3 cases pass",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T12:46:54Z",
+  "ttft_content_ms": 4766,
+  "ttft_reasoning_ms": 4400,
+  "first_decoded_ms": 4766,
+  "decode_span_ms": 0,
+  "tps": null,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": "not derivable: stream was not incrementally flushed (decode span 0 ms < 50 ms)",
+  "completion_tokens": 52,
+  "prompt_tokens": 74,
+  "reasoning_tokens": 41,
+  "content_delta_count": 2,
+  "reasoning_delta_count": 16
+}

@@ -1,0 +1,20 @@
+{
+  "item": "Kotodama51PreregCritic",
+  "owner": "Main",
+  "disposition": "HOLD original review item and R51 pre-F phase; no retry or implementation",
+  "observed_result_footer": "Claude Opus 5.5 hit a safety filter, and the conversation was automatically switched to Claude Opus 4.8.",
+  "native_route_metadata": {
+    "agent": "critic",
+    "modelRole": "m_auto",
+    "resolvedModel": "cursor/default",
+    "retryFallback": {"primary": "cursor/default", "chain": ["openai-codex/gpt-6.1-sol"]}
+  },
+  "retained_evidence": "Exact native Kotodama51PreregCritic.jsonl in the current parent session; metadata-only model_change/error-status queries and exact safety-notice extraction",
+  "classification": "Provider-internal generic safety filter reported; exact cause/refused scope and relation of completed findings to that switch are unavailable in exposed structured metadata. Not classified as cyber or as clearance.",
+  "limits": "Two model_change records show cursor/default only; no structured error/cause/provider-internal switch record returned. No raw refused content inspected or reproduced; completed findings not adopted or sent for correction.",
+  "preserved": "Exact88 proposed F paths/97 ownership-path packet and all original reports/maps unchanged; author parked and acknowledged hold.",
+  "forbidden": ["F landing", "corrections based on filtered review", "new reviewer or replacement", "rerouting or rephrasing refused work", "source/consumer/runtime/implementation", "refused payload reproduction"],
+  "next": "Documentary cause/scope disposition from retained provider metadata/operator review, not permission to bypass a safety stop.",
+  "tool_issue_reported": true,
+  "all_other_eligible_lanes": "continue independently"
+}

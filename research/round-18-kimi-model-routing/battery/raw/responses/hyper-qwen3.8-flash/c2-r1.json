@@ -1,0 +1,100 @@
+{
+  "pool_id": "hyper/qwen3.8-flash",
+  "provider": "hyper",
+  "model_id": "qwen3.8-flash",
+  "model_sent": "qwen3.8-flash",
+  "protocol": "openai",
+  "bucket": "MIDDLE",
+  "base_url": "https://hyper.charm.land/v1",
+  "probe_id": "c2",
+  "probe_kind": "contract",
+  "rep": 1,
+  "measured": true,
+  "prompt": "Output only a JSON object with exactly two keys: <redacted> set to the integer 1, and \"b\" set to the string \"two\". No markdown fences, no explanation, no other keys.",
+  "max_tokens": 192,
+  "tools_sent": false,
+  "tool_choice": null,
+  "request_body": {
+    "model": "qwen3.8-flash",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Output only a JSON object with exactly two keys: <redacted> set to the integer 1, and \"b\" set to the string \"two\". No markdown fences, no explanation, no other keys."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "url": "https://hyper.charm.land/v1/chat/completions",
+  "timeout_s": 120,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 2009,
+  "response_headers": {
+    "cache-control": "no-cache",
+    "content-type": "text/event-stream",
+    "vary": "Accept-Encoding",
+    "x-ratelimit-limit-day": "10000",
+    "x-ratelimit-limit-hour": "1000",
+    "x-ratelimit-remaining-day": "9281",
+    "x-ratelimit-remaining-hour": "686",
+    "date": "Thu, 15 Oct 2026 12:01:10 GMT",
+    "server": "Google Frontend",
+    "x-cloud-trace-context": "13fcde228eb63d41db882ac594e8592e/11996086162710848862",
+    "traceparent": "00-13fcde228eb63d41db882ac594e8592e-a67aa8ce975be55e-00",
+    "Transfer-Encoding": "chunked"
+  },
+  "content_type": null,
+  "content": "{\"a\":1,\"b\":\"two\"}",
+  "content_truncated": false,
+  "reasoning_chars": 163,
+  "reasoning_text": "The user wants me to output a JSON object with exactly two keys: <redacted> set to integer 1, and \"b\" set to string \"two\". No markdown, no explanation, just the raw JSON.",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": {
+    "prompt_tokens": 65,
+    "completion_tokens": 56,
+    "total_tokens": 121,
+    "completion_tokens_details": {
+      "reasoning_tokens": 44
+    },
+    "cost": {
+      "usd": 0.0001,
+      "hypercredits": 0.002
+    }
+  },
+  "finish_reason": "stop",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 20,
+  "sse_line_count": 42,
+  "raw_preview": "data: {\"id\":\"chatcmpl-e3431e509d96e6bde1be01c2\",\"object\":\"chat.completion.chunk\",\"created\":1792065670,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-e3431e509d96e6bde1be01c2\",\"object\":\"chat.completion.chunk\",\"created\":1792065670,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"The\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-e3431e509d96e6bde1be01c2\",\"object\":\"chat.completion.chunk\",\"created\":1792065670,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" user wants me\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-e3431e509d96e6bde1be01c2\",\"object\":\"chat.completion.chunk\",\"created\":1792065670,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" to output a JSON\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-e3431e509d96e6bde1be01c2\",\"object\":\"chat.completion.chunk\",\"created\":1792065670,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" object with exactly two\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-e3431e509d96e6bde1be01c2\",\"object\":\"chat.completion.chunk\",\"created\":1792065670,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" keys: <redacted>\ndata: {\"id\":\"chatcmpl-e3431e509d96e6bde1be01c2\",\"object\":\"chat.completion.chunk\",\"created\":1792065670,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"\\\" set\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-e3431e509d96e6bde1be01c2\",\"object\":\"chat.completion.chunk\",\"created\":1792065670,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" to integer 1\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-e3431e509d96e6bde1be01c2\",\"object\":\"chat.completion.chunk\",\"created\":1792065670,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\", and\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-e3431e509d96e6bde1be01c2\",\"object\":\"chat.completion.chunk\",\"created\":1792065670,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" \\\"b\\\" set\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-e3431e509d96e6bde1be01c2\",\"object\":\"chat.completion.chunk\",\"created\":1792065670,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" to string \\\"two\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-e3431e509d96e6bde1be01c2\",\"object\":\"chat.completion.chunk\",\"created\":1792065670,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"\\\". No\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-e3431e509d96e6bde1be01c2\",\"object\":\"chat.completion.chunk\",\"created\":1792065670,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" markdown, no explanation\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-e3431e509d96e6bde1be01c2\",\"object\":\"chat.completion.chunk\",\"created\":1792065670,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\", just the raw\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-e3431e509d96e6bde1be01c2\",\"object\":\"chat.completion.chunk\",\"created\":1792065670,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" JSON.\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-e3431e509d96e6bde1be01c2\",\"object\":\"chat.completion.chunk\",\"created\":1792065670,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"{\\\"a\\\":\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-e3431e509d96e6bde1be01c2\",\"object\":\"chat.completion.chunk\",\"created\":1792065670,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"1,\\\"b\\\":\\\"\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-e3431e509d96e6bde1be01c2\",\"object\":\"chat.completion.chunk\",\"created\":1792065670,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"two\\\"}\"},\"finish_reason\":null}]}\ndata: {\"id\":\"chatcmpl-e3431e509d96e6bde1be01c2\",\"object\":\"chat.completion.chunk\",\"created\":1792065670,\"model\":\"qwen3.8-flash\",\"choices\":[{\"index\":0,\"delta\":{},\"finish_reason\":\"stop\"}]}\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "json match",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T12:01:11Z",
+  "ttft_content_ms": 1870,
+  "ttft_reasoning_ms": 1150,
+  "first_decoded_ms": 1870,
+  "decode_span_ms": 106,
+  "tps": 517.66,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": null,
+  "completion_tokens": 56,
+  "prompt_tokens": 65,
+  "reasoning_tokens": 44,
+  "content_delta_count": 3,
+  "reasoning_delta_count": 14
+}

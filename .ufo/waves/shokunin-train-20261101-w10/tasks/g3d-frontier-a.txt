@@ -1,0 +1,14 @@
+/skill:godspeed
+Read your brief file first — it is the task. Execute it exactly and stop.
+
+Brief: /home/vgpnk/Projects/shokunin/.ufo/waves/shokunin-train-20261101-w10/tasks/g3d-frontier-a.txt
+Lane-repo: ~/Projects/shokunin/game-dev-3d-shokunin
+Report: reports/frontier/fa-bpy-evalcat.md
+Scratch: corpus/live/frontier-bpyeval/
+
+Seat rules: LEAF — no subagents, no git mutations. SCRATCH + your report file only. This is a FRONTIER seat: measure the assigned surface honestly; if the runtime can't run here record the exact blockage. Findings are evidence for wave-11 dispatch — include exact commands/exits/paths so the author doesn't re-derive them.
+
+FRONTIER pre-measurement for wave-11 candidate "bpy eval-event catalogue" (extends r79): which mutation classes flush the depsgraph?
+From bpy_sync_probe.py's lattice: eval events measured = evaluated_depsgraph_get, view_layer.update, frame_set, dg.update. Now probe: (a) bpy.ops mutations (e.g. bpy.ops.object.transform_apply) — do they auto-eval? (b) driver writes (obj.driver_add / fcurve keyframes) — eval edge or immediate? (c) constraint-add — depsgraph sees it when? (d) msgbus/depsgraph_update_post handlers — when do they fire? (e) does WALL-TIME (time.sleep) between write and held-handle read ever flush (the draincheck open cell)? Report per-op eval-edge table + any new eval events found.
+
+| godspeed

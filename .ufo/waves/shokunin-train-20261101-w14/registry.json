@@ -1,0 +1,137 @@
+{
+ "wave": "shokunin-train-20261101-w14",
+ "dispatched": "2026-10-14T16:10Z",
+ "audio-r75": {
+  "author": "c9f9cf46",
+  "scout": "a7f8eb19",
+  "critic": "986ecf61",
+  "boundary": "345a532e",
+  "reviewer": "b1244919",
+  "simplifier": "de147569",
+  "scribe": "b5995706",
+  "verifier": "e49dcb1e",
+  "baseline": "2a021da9"
+ },
+ "g2d-r74": {
+  "author": "9cc7a014",
+  "scout": "c8afeeb8",
+  "critic": "fb58e93f",
+  "boundary": "c44426d2",
+  "reviewer": "1c067712",
+  "simplifier": "3b8dc992",
+  "scribe": "0ad47b14",
+  "verifier": "f99b4e50",
+  "baseline": "9b53e3f0"
+ },
+ "g3d-r83": {
+  "author": "71b3d880",
+  "scout": "086561c5",
+  "critic": "275bc170",
+  "boundary": "8ada6b34",
+  "reviewer": "b02e47da",
+  "simplifier": "7a925b32",
+  "scribe": "800a4118",
+  "verifier": "7dd39974",
+  "baseline": "140924d6"
+ },
+ "xsentinel-w13": "88512b1b",
+ "recovery_dispatch": {
+  "at": "2026-10-14T16:20Z",
+  "by": "devin-cli session (wave-A respawn after dispatching session died ~16:10Z; prior seat ids dead)",
+  "seats": {
+   "audio-r75": {
+    "author": "8c18a72d",
+    "scout": "53d3455b",
+    "boundary": "e2dce6d4",
+    "baseline": "bfdd1cc8",
+    "scribe": "98d7a5c2"
+   },
+   "g2d-r74": {
+    "author": "ce8cd480",
+    "boundary": "1fadc934",
+    "baseline": "b10d8362",
+    "scribe": "6875aa85"
+   },
+   "g3d-r83": {
+    "author": "60c74320",
+    "scout": "faaab9b3",
+    "boundary": "58683f01",
+    "baseline": "9b380d3d",
+    "scribe": "a2962489"
+   }
+  },
+  "deferred_to_post_commit": {
+   "per-lane": [
+    "critic",
+    "reviewer",
+    "simplifier",
+    "verifier"
+   ]
+  },
+  "already_landed_prior_generation": {
+   "g2d-r74": [
+    "scout"
+   ],
+   "audio-r75": [
+    "scribe-draft(uncommitted,superseded)"
+   ],
+   "g3d-r83": [
+    "scribe-draft(uncommitted,superseded)"
+   ]
+  },
+  "seats_wave_b_postcommit": {
+   "audio-r75": {
+    "critic": "903c9f81",
+    "reviewer": "832af493",
+    "simplifier": "e19679a6",
+    "verifier": "fd930c97"
+   },
+   "g2d-r74": {
+    "critic": "d516e674",
+    "reviewer": "8f2d4ef8",
+    "simplifier": "1fce0243",
+    "verifier": "318987e8"
+   },
+   "g3d-r83": {
+    "critic": "3dc2c9d7",
+    "reviewer": "844244ab",
+    "simplifier": "e647f5e0",
+    "verifier": "e1230ad8"
+   }
+  }
+ },
+ "outcomes": {
+  "audio-r75": {
+   "verdict": "ADMIT-corr",
+   "commits": [
+    "db46fba",
+    "5f60747",
+    "2250be9"
+   ],
+   "seats": "9/9",
+   "verifier": "AGREE all claims (byte-identical x5)"
+  },
+  "g2d-r74": {
+   "verdict": "ADMIT-corr",
+   "commits": [
+    "ae6cb16",
+    "35dcbf7",
+    "b2b20f2"
+   ],
+   "seats": "9/9",
+   "verifier": "AGREE 13/13"
+  },
+  "g3d-r83": {
+   "verdict": "ADMIT-corr",
+   "commits": [
+    "e9145d9",
+    "4c1c100",
+    "c4b2fa2"
+   ],
+   "seats": "9/9",
+   "verifier": "AGREE 18/18 (byte-identical x4)"
+  },
+  "closed": "2026-10-14T17:30Z",
+  "by": "Sol (operator-adjudicator)"
+ }
+}

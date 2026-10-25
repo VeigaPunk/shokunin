@@ -1,0 +1,55 @@
+{
+  "at": "2026-10-22T03:35:53.347018+00:00",
+  "supersedes": "m-zfl-flashx-primary-routing.json; latest user removed FlashX primary",
+  "primary": "zai/glm-5.3-flash:max",
+  "fallbacks": [
+    "devin/glm-5-3-flash-1m",
+    "charm-hyper/glm-5.3-flash",
+    "anthropic/claude-haiku-5-5",
+    "@m_auto",
+    "@m_swe",
+    "@m_inc",
+    "openai-codex/gpt-6-luna:max"
+  ],
+  "temporary_flashx_model_binding_removed": true,
+  "dedicated_m_zfx_unchanged": true,
+  "other_preexisting_aliases_and_cascade_entries_unchanged": true,
+  "max_effort_preserved": true,
+  "saved_globally": true,
+  "runtime_smoke": {
+    "argv": [
+      "omp",
+      "--cwd",
+      "/tmp",
+      "--model",
+      "@m_zfl",
+      "--no-session",
+      "--no-tools",
+      "--no-extensions",
+      "--no-skills",
+      "--no-rules",
+      "--no-lsp",
+      "--no-title",
+      "--max-time",
+      "45s",
+      "--mode",
+      "json",
+      "-p",
+      "Reply exactly M_ZFL_FLASH_OK. Do not use tools."
+    ],
+    "exit": 0,
+    "outcomes": [
+      {
+        "provider": "zai",
+        "model": "glm-5.3-flash",
+        "stopReason": "stop",
+        "errorStatus": null,
+        "errorMessage": null,
+        "text": "M_ZFL_FLASH_OK"
+      }
+    ],
+    "stderr": ""
+  },
+  "existing_jobs_restarted": false,
+  "tools_installed_or_updated": []
+}

@@ -1,0 +1,31 @@
+{
+  "observed_at": "2026-10-14T23:19:40.244538+00:00",
+  "before": {
+    "command": "bash -n shokunin.conf",
+    "exit_code": 2,
+    "stderr": "shokunin.conf: line 58: syntax error near unexpected token `('\nshokunin.conf: line 58: `tameshi|tameshi-shokunin|depth + calibration (verification-fixture craft)'\n"
+  },
+  "after": {
+    "syntax": {
+      "command": "bash -n shokunin.conf",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "source": {
+      "argv": [
+        "bash",
+        "-c",
+        "set -euo pipefail; . ./shokunin.conf; printf \"ROOT=%s\\n\" \"$SHOKUNIN_ROOT\"; while IFS=\"|\" read -r id repo axes; do [[ -n \"$id\" ]] || continue; printf \"%s|%s|%s\\n\" \"$id\" \"$repo\" \"$axes\"; done <<< \"$LANES\""
+      ],
+      "exit_code": 0,
+      "stdout": "ROOT=/home/vgpnk/Projects/shokunin\nprotocol|.|fleet-meta: protocol soundness, gate integrity\naggregator|.|cross-lane quality, mint/dormancy calls, corpus review\nkaidoku|kaidoku-shokunin|coverage + depth + calibration (reverse engineering with REA)\nkasegi|kasegi-shokunin|depth + coverage (bounty & security research)\nkengaku|kengaku-shokunin|novelty + calibration (LLM/model research & evaluation)\nkake|kake-shokunin|operability + freshness (web properties & publishing)\nkumitate|kumitate-shokunin|operability + coverage (orchestration & tooling)\nkotoba|kotoba-shokunin|depth + consistency (prompt & skill craft)\nkagi|kagi-shokunin|freshness + calibration (secrets & vault ops)\nkama|kama-shokunin|operability + calibration (local model serving & endpoint health)\naudio|audio-shokunin|depth + coverage + calibration (game audio, headless-verified)\ngame-dev-2d|game-dev-2d-shokunin|depth + coverage + calibration (2D fixtures, Godot headless)\ngame-dev-3d|game-dev-3d-shokunin|depth + coverage + calibration (3D fixtures, Godot/three.js)\nlore|lore-shokunin|depth + coverage + calibration (world-bible consistency)\nrevenger|revenger-shokunin|coverage + calibration (RE evidence-ledger discipline)\ntameshi|tameshi-shokunin|depth + calibration (verification-fixture craft)\nmado|mado-shokunin|coverage + operability (desktop & compositor craft)\ntsukuroi|tsukuroi-shokunin|operability + freshness (host operability & repair)\ntabi|tabi-shokunin|coverage + calibration (browser & web-interaction craft)\n",
+      "stderr": ""
+    },
+    "child_lane_count": 17,
+    "main_lane_count": 2,
+    "duplicates": 0
+  },
+  "watchdog_started": false,
+  "new_lanes_added": false
+}

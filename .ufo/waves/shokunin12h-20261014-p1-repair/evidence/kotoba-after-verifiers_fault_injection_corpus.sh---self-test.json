@@ -1,0 +1,17 @@
+{
+  "lane": "kotoba",
+  "label": "after-verifiers_fault_injection_corpus.sh---self-test",
+  "round": 19,
+  "measured_revision": "02302c521b933c55fc4be79193e61537e3380751",
+  "started_at": "2026-10-15T00:14:12.368842+00:00",
+  "finished_at": "2026-10-15T00:14:12.671909+00:00",
+  "argv": [
+    "bash",
+    "verifiers/fault_injection_corpus.sh",
+    "--self-test"
+  ],
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "self-test: building fixture worlds under /tmp/round12-faults.1315638\nself-test T1 must-fire assertion fires on planted (a): PASS\nself-test T2 no-op world correctly reads clean (exit 0): PASS\nself-test T4 plant guard rejects unmutated world (marker absent): PASS\nself-test T3 must-not-fire assertion accepts clean world: PASS\nself-test: OK\n",
+  "stderr": ""
+}

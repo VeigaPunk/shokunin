@@ -1,0 +1,108 @@
+{
+  "pool_id": "cascade/glm-5.3-flash",
+  "provider": "glm-flash-cascade",
+  "model_id": "glm-5.3-flash",
+  "model_sent": "glm-5.3-flash",
+  "protocol": "openai",
+  "bucket": "FAST",
+  "base_url": "http://127.0.0.1:8793/v1",
+  "probe_id": "t1",
+  "probe_kind": "tool",
+  "rep": 1,
+  "measured": true,
+  "prompt": "What is the weather in Paris right now? Use the get_weather tool.",
+  "max_tokens": 192,
+  "tools_sent": true,
+  "tool_choice": "auto",
+  "request_body": {
+    "model": "glm-5.3-flash",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "What is the weather in Paris right now? Use the get_weather tool."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    },
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "get_weather",
+          "description": "Get the current weather for a city.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "city": {
+                "type": "string",
+                "description": "City name"
+              }
+            },
+            "required": [
+              "city"
+            ]
+          }
+        }
+      }
+    ],
+    "tool_choice": "auto"
+  },
+  "url": "http://127.0.0.1:8793/v1/chat/completions",
+  "timeout_s": 400,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 11579,
+  "response_headers": {
+    "Server": "BaseHTTP/0.6 Python/3.14.7",
+    "Date": "Thu, 15 Oct 2026 12:00:14 GMT",
+    "Content-Type": "text/event-stream",
+    "Cache-Control": "no-cache",
+    "Connection": "close"
+  },
+  "content_type": "text/event-stream",
+  "content": "The `get_weather` tool isn't available in this environment \u2014 the only MCP server connected is `rea` (reverse-engineering tools), which has no weather capability. Let me get the current Paris weather via web search instead:No `get_weather` tool exists here (the only MCP server is `rea`, for reverse engineering), so I used a web search instead.\n\n**Paris right now (Thu, Oct 15, 2026, ~13:30 local):**\n- **18\u00b0C (64\u201367\u00b0F), partly cloudy** \u2014 feels like the same\n- Humidity ~50\u201366%, wind ~16\u201319 km/h southerly, pressure 1021 mb\n- No rain currently; today's high ~23\u201325\u00b0C (73\u201375\u00b0F), low ~11\u201312\u00b0C (52\u201353\u00b0F)\n- Clearing toward a sunny evening; slight rain possible Friday\n\nSources: BBC Weather, AccuWeather, Freemeteo (report ~22 min old).",
+  "content_truncated": false,
+  "reasoning_chars": 0,
+  "reasoning_text": "",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": {
+    "prompt_tokens": 15605,
+    "completion_tokens": 176,
+    "total_tokens": 15781
+  },
+  "finish_reason": "stop",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 3,
+  "sse_line_count": 8,
+  "raw_preview": "data: {\"id\": \"chatcmpl-2c858cb8054d45c4a856b050\", \"object\": \"chat.completion.chunk\", \"created\": 1792065614, \"model\": \"glm-5-3-flash-max\", \"choices\": [{\"index\": 0, \"delta\": {\"role\": \"assistant\"}}]}\ndata: {\"id\": \"chatcmpl-2c858cb8054d45c4a856b050\", \"object\": \"chat.completion.chunk\", \"created\": 1792065614, \"model\": \"glm-5-3-flash-max\", \"choices\": [{\"index\": 0, \"delta\": {\"content\": \"The `get_weather` tool isn't available in this environment \\u2014 the only MCP server connected is `rea` (reverse-engineering tools), which has no weather capability. Let me get the current Paris weather via web search instead:No `get_weather` tool exists here (the only MCP server is `rea`, for reverse engineering), so I used a web search instead.\\n\\n**Paris right now (Thu, Oct 15, 2026, ~13:30 local):**\\n- **18\\u00b0C (64\\u201367\\u00b0F), partly cloudy** \\u2014 feels like the same\\n- Humidity ~50\\u201366%, wind ~16\\u201319 km/h southerly, pressure 1021 mb\\n- No rain currently; today's high ~23\\u201325\\u00b0C (73\\u201375\\u00b0F), low ~11\\u201312\\u00b0C (52\\u201353\\u00b0F)\\n- Clearing toward a sunny evening; slight rain possible Friday\\n\\nSources: BBC Weather, AccuWeather, Freemeteo (report ~22 min old).\"}}]}\ndata: {\"id\": \"chatcmpl-2c858cb8054d45c4a856b050\", \"object\": \"chat.completion.chunk\", \"created\": 1792065614, \"model\": \"glm-5-3-flash-max\", \"choices\": [{\"index\": 0, \"delta\": {}, \"finish_reason\": \"stop\"}], \"usage\": {\"prompt_tokens\": 15605, \"completion_tokens\": 176, \"total_tokens\": 15781}}\ndata: [DONE]\n",
+  "grade": {
+    "pass": false,
+    "failure_class": "format_break",
+    "detail": "no tool_calls block emitted",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T12:00:14Z",
+  "ttft_content_ms": 11579,
+  "ttft_reasoning_ms": null,
+  "first_decoded_ms": 11579,
+  "decode_span_ms": null,
+  "tps": null,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": "not derivable: no incremental deltas or fewer than 2 tokens",
+  "completion_tokens": 176,
+  "prompt_tokens": 15605,
+  "reasoning_tokens": null,
+  "content_delta_count": 1,
+  "reasoning_delta_count": 0
+}

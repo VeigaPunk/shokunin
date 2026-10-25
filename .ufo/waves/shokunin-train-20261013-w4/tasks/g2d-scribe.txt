@@ -1,0 +1,24 @@
+/skill:godspeed
+Read your brief file first — it is the task. Execute it exactly and stop.
+
+Brief: /home/vgpnk/Projects/shokunin/.ufo/waves/shokunin-train-20261013-w4/tasks/g2d-scribe.txt
+Lane: game-dev-2d
+Worktree/repo root: ~/Projects/prymeagnt/game-dev-2d
+Round: r64
+Declared axis-move (verbatim): test the falsifiable claim that a while-live marker read discriminates forged post-death signatures from genuine child signatures (the XConnector wave-3 synthesis proposal): build a bounded-Popen meta arm that runs the EXISTING --spawn-forge-release and --spawn-forge-hold fixture arms under a signature read gated on the child's liveness (marker accepted only if observed while the child process is alive — e.g. poll()/read loop with a child-alive check at observation time); predicted outcome: the forged release-arm signature lands post-death so the gated read rejects or never observes it (classify False / marker absent), while a genuine child signature (unmodified descendant_pipe_probe default arm) still passes; if the gate cannot distinguish — e.g. the forged signature is observable pre-death through pipe buffering, or liveness timing makes the check nondeterministic — record the falsified outcome with measured timing. Additive only: a new meta probe row; the r63 pinned accepting-boundary row stays byte-stable (document, do not fix); all 96 prior rows field-stable.
+
+Seat: scribe
+Report path (write ONLY this file + scratch inside your brief's write scope): reports/round-64/r64-scribe.md
+Scratch: corpus/live/r64-scribe/
+
+Seat rules (non-negotiable):
+- You are a LEAF: no subagent dispatch, and never run git commit/push/merge/rebase/stash/checkout in any repo.
+- Write only your own report file and scratch inside your brief's write scope.
+- Never touch another lane's files, another repo's tracked content, or shared state.
+- If the round's declared claim proves false under measurement, report the actual observed outcome: a falsified claim is a useful round; never force it or soften the record.
+- Every claim needs evidence: exact commands, observed exits, receipt paths, or file:line refs resolvable on this host.
+- Domain actions that would reach users/maintainers (push, publish) are operator-owned: do not attempt them.
+
+Independently derive the mechanism: under corpus/live/r64-scribe/ run your own while-live observation experiments (you may copy classify_process/run_process source via ast-extraction into scratch like prior seats did — do NOT edit tracked files). Converge or diverge on whether the gate discriminates. Draft inside your report (fenced markdown) the r64 lesson text for corpus/lessons/r64-while-live-gate.md: what 'while-live' can and cannot observe reader-side, the buffering/zombie race findings, the measured discrimination table, boundary status after this round, recheck conditions, bounded UNKNOWNs. Leave [pending] slots for commit shas.
+
+| godspeed

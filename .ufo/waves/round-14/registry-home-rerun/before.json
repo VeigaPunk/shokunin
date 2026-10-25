@@ -1,0 +1,24 @@
+{
+  "round": 14,
+  "axis": "protocol-soundness",
+  "measured_commit": "99efc52b3a6f3648f7d8e097d78460901ad3c91c",
+  "captured_at": "2026-10-15T04:52:11.825191+00:00",
+  "command": [
+    "python3",
+    "-c",
+    "from pathlib import Path; s=Path(\"SCORECARD.md\").read_text().split(\"## Aggregator lane\",1)[0]; print(\"protocol_registered_closure_gates=\"+str(sum(line.startswith(\"| closure-check | gate |\") for line in s.splitlines()))); print(\"root_SKILL_exists=\"+str(Path(\"SKILL.md\").is_file()))"
+  ],
+  "stdout": "protocol_registered_closure_gates=0\nroot_SKILL_exists=False\n",
+  "stderr": "",
+  "returncode": 0,
+  "protected_sha256": {
+    ".ufo/waves/round-15/closure-check.py": "0ac440f7a3b3a7500568fa469b7efba451ee0eabb9683b827630dcc0869a778c",
+    ".ufo/waves/round-15/frozen/r15-pre-003400/expected.json": "19d6935b7d84e84ef3946db3d3f3537c615f122f14fbe197aad31023db2ddea9",
+    ".ufo/waves/round-15/frozen/r15-post-012710/expected.json": "ba78759bc4652f6d73802dda10aafe04cdb48fdd351e803092fc849fda602315",
+    ".ufo/history-pin.json": "b161cd4106c928472c1eca8395262beb7624e23349743fcd2880e2b416e7f81b",
+    ".ufo/reports/round-14/protocol.md": "d2567df3f11018ebd168918c46c7ea69119e45e41ac2f58140b1bf5634f691b4",
+    "MANIFEST.json": "c784fbd40f86ab07a71d0e93f8c957e9048c51820dfd338e41a0249ce7398fa4",
+    "SCORECARD.md#aggregator-section": "7abc0478efcb16d0d2e4bbe57271d52c00da08a8eb33bc76edc272ae5b5cfccf"
+  },
+  "inherited_evidence": ".ufo/waves/round-14/registry-home/; preserved, not this dispatch"
+}

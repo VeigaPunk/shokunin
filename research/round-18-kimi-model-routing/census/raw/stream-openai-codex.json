@@ -1,0 +1,132 @@
+{
+  "probes": [
+    {
+      "provider": "openai-codex",
+      "protocol": "openai_responses",
+      "model_id": "gpt-6.1-sol",
+      "method": "POST",
+      "url": "http://127.0.0.1:8789/backend-api/codex/responses",
+      "timeout_s": 120,
+      "prompt": "Count from 1 to 30, space separated, numbers only. No other text.",
+      "max_tokens": 64,
+      "auth_headers_sent": [
+        "Authorization"
+      ],
+      "request_body": {
+        "model": "gpt-6.1-sol",
+        "stream": true,
+        "max_output_tokens": 64,
+        "input": [
+          {
+            "type": "message",
+            "role": "user",
+            "content": [
+              {
+                "type": "input_text",
+                "text": "Count from 1 to 30, space separated, numbers only. No other text."
+              }
+            ]
+          }
+        ],
+        "store": false
+      },
+      "status": 200,
+      "response_headers": {
+        "Server": "BaseHTTP/0.6 Python/3.14.7, cloudflare",
+        "Date": "Thu, 15 Oct 2026 11:33:28 GMT, Thu, 15 Oct 2026 11:33:28 GMT",
+        "x-codex-active-limit": "premium",
+        "x-codex-plan-type": "pro",
+        "x-codex-primary-used-percent": "1",
+        "x-codex-secondary-used-percent": "0",
+        "x-codex-primary-window-minutes": "10080",
+        "x-codex-primary-over-secondary-limit-percent": "0",
+        "x-codex-secondary-window-minutes": "0",
+        "x-codex-primary-reset-after-seconds": "585622",
+        "x-codex-secondary-reset-after-seconds": "0",
+        "x-codex-primary-reset-at": "1792649629",
+        "x-codex-secondary-reset-at": "",
+        "x-codex-credits-has-credits": "True",
+        "x-codex-credits-balance": "62500.0000000000",
+        "x-codex-credits-unlimited": "False",
+        "x-models-etag": "W/\"a5b23a75ab9baa8209d3e49abda1d2e9\"",
+        "x-codex-turn-state": "<len=780>",
+        "x-codex-safety-buffering-enabled": "true",
+        "x-codex-safety-buffering-faster-model": "gpt-6-luna",
+        "x-oai-request-id": "3efb891c-021f-4b07-9374-ae42748dded7",
+        "x-openai-proxy-wasm": "<len=4>",
+        "X-Content-Type-Options": "<len=7>",
+        "cf-cache-status": "<len=7>",
+        "Cross-Origin-Opener-Policy": "<len=24>",
+        "Strict-Transport-Security": "<len=44>",
+        "Nel": "<len=63>",
+        "Report-To": "<len=247>",
+        "Set-Cookie": "<redacted:len=858>",
+        "Referrer-Policy": "<len=31>",
+        "CF-RAY": "a4ae8250d8b1df68-GIG",
+        "Connection": "<len=5>"
+      },
+      "content_type": null,
+      "sse_line_count": 201,
+      "raw_preview": "event: response.created\ndata: {\"type\":\"response.created\",\"sequence_number\":0,\"safety_buffering\":false,\"response\":{\"id\":\"resp_017c50dce73a7e8e016ad0ba0820688191bfe1b25908c38855\",\"object\":\"response\",\"created_at\":1792064008,\"completed_at\":null,\"status\":\"in_progress\",\"background\":false,\"frequency_penalty\":0.0,\"presence_penalty\":0.0,\"moderation\":null,\"model\":\"gpt-6.1-sol\",\"access_programs\":{\"cyber\":\"standard\"},\"previous_response_id\":null,\"instructions\":null,\"output\":[],\"error\":null,\"incomplete_details\":null,\"tools\":[],\"tool_choice\":\"auto\",\"parallel_tool_calls\":true,\"prompt_cache_key\":\"2efd5034-2ebe-40f1-97cf-4b6aa64c8458\",\"prompt_cache_retention\":\"24h\",\"text\":{\"format\":{\"type\":\"text\"},\"verbosity\":\"medium\"},\"top_p\":0.98,\"top_logprobs\":0,\"temperature\":1.0,\"reasoning\":{\"context\":\"all_turns\",\"effort\":\"medium\",\"summary\":null,\"mode\":\"standard\"},\"user\":null,\"usage\":null,\"tool_usage\":{\"image_gen\":{\"input_tokens\":0,\"output_tokens\":0,\"total_tokens\":0,\"input_tokens_details\":{\"text_tokens\":0,\"image_tokens\":0},\"output_tokens_details\":{\"image_tokens\":0,\"text_tokens\":0}},\"web_search\":{\"num_requests\":0}},\"safety_identifier\":\"user-nkEENAXKpBEO8fzseUfNoxLC\",\"store\":false,\"metadata\":{},\"max_output_tokens\":64,\"max_tool_calls\":null,\"service_tier\":\"auto\",\"truncation\":\"disabled\"}}\n\nevent: response.in_progress\ndata: {\"type\":\"response.in_progress\",\"sequence_number\":1,\"safety_buffering\":false,\"response\":{\"id\":\"resp_017c50dce73a7e8e016ad0ba0820688191bfe1b25908c38855\",\"object\":\"response\",\"created_at\":1792064",
+      "streaming_supported": true,
+      "content_chars": 80,
+      "reasoning_chars": 0,
+      "content_delta_count": 59,
+      "reasoning_delta_count": 0,
+      "content_sample": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30",
+      "ttft_content_ms": 1525,
+      "ttft_reasoning_ms": null,
+      "total_ms": 2559,
+      "usage": {
+        "input_tokens": 24,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0
+        },
+        "output_tokens": 63,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 87,
+        "attribution": {
+          "items": {
+            "msg_017c50dce73a7e8e016ad0ba08210c8191b451691a7dda84b3": {
+              "input_tokens": 22,
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "output_tokens": 0,
+              "content": [
+                {
+                  "input_tokens": 22,
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "output_tokens": 0
+                }
+              ]
+            },
+            "msg_017c50dce73a7e8e016ad0ba0949188191ad3fdc729c1da497": {
+              "input_tokens": 2,
+              "cached_tokens": 0,
+              "cache_write_tokens": 0,
+              "output_tokens": 63,
+              "content": [
+                {
+                  "input_tokens": 2,
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0,
+                  "output_tokens": 63
+                }
+              ]
+            }
+          }
+        }
+      },
+      "usage_completion_tokens": 63,
+      "usage_prompt_tokens": 24,
+      "decode_span_ms": 966,
+      "tps_basis": "server_usage_completion_tokens",
+      "tps": 64.2,
+      "tps_note": "single small draw; decode span excludes TTFT"
+    }
+  ]
+}

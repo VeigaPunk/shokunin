@@ -1,0 +1,41 @@
+{
+  "argv": [
+    "scripts/run_probe.py",
+    "--mock-base",
+    "http://127.0.0.1:8797/v1",
+    "--mock-behaviour",
+    "good",
+    "--deadline-min",
+    "5"
+  ],
+  "config_path": "/home/vgpnk/.kimi-code/config.toml",
+  "config_sha256": "e3c223e054a626b847e69f73020ac9b4fdec1ccc2c8f00dcbf414dcda8acfe78",
+  "config_core_sha256": "8569f80b6de44faa73eefc31faeb4e5206150121f9e5e5dc959697a744c92f0a",
+  "models": [
+    "opencode-go/deepseek-v4.1-flash"
+  ],
+  "lane": {
+    "pool_id": "opencode-go/deepseek-v4.1-flash",
+    "provider": "opencode-go",
+    "model_id": "deepseek-v4.1-flash",
+    "protocol": "openai",
+    "base_url": "https://opencode.ai/inference/go/v1",
+    "bucket": "UNLABELLED",
+    "in_live_pool": false,
+    "capabilities": [
+      "image_in",
+      "always_thinking",
+      "tool_use"
+    ],
+    "reasoning_key": "reasoning_content"
+  },
+  "requests_planned": 11,
+  "requests_recorded": 11,
+  "reps": 2,
+  "user_agent_class": "browser-chrome-141-linux",
+  "ua_constraint": "M2 definitions ANALYSIS section 1: opencode-go answers a scripted user agent with 403 error code 1010 (Cloudflare); a browser user agent returns 200",
+  "started_at_utc": "2026-10-15T12:45:35Z",
+  "finished_at_utc": "2026-10-15T12:45:36Z",
+  "duration_s": 0.3,
+  "telemetry_csv": "battery-opencode/smoke/raw/telemetry.csv"
+}

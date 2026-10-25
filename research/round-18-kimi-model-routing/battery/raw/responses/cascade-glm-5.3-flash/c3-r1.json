@@ -1,0 +1,86 @@
+{
+  "pool_id": "cascade/glm-5.3-flash",
+  "provider": "glm-flash-cascade",
+  "model_id": "glm-5.3-flash",
+  "model_sent": "glm-5.3-flash",
+  "protocol": "openai",
+  "bucket": "FAST",
+  "base_url": "http://127.0.0.1:8793/v1",
+  "probe_id": "c3",
+  "probe_kind": "contract",
+  "rep": 1,
+  "measured": true,
+  "prompt": "Write exactly three lines, nothing before or after. Line 1: ALPHA. Line 2: BETA. Line 3: GAMMA.",
+  "max_tokens": 192,
+  "tools_sent": false,
+  "tool_choice": null,
+  "request_body": {
+    "model": "glm-5.3-flash",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Write exactly three lines, nothing before or after. Line 1: ALPHA. Line 2: BETA. Line 3: GAMMA."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "url": "http://127.0.0.1:8793/v1/chat/completions",
+  "timeout_s": 400,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 4124,
+  "response_headers": {
+    "Server": "BaseHTTP/0.6 Python/3.14.7",
+    "Date": "Thu, 15 Oct 2026 11:59:39 GMT",
+    "Content-Type": "text/event-stream",
+    "Cache-Control": "no-cache",
+    "Connection": "close"
+  },
+  "content_type": "text/event-stream",
+  "content": "ALPHA\nBETA\nGAMMA",
+  "content_truncated": false,
+  "reasoning_chars": 0,
+  "reasoning_text": "",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": {
+    "prompt_tokens": 11746,
+    "completion_tokens": 39,
+    "total_tokens": 11785
+  },
+  "finish_reason": "stop",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 3,
+  "sse_line_count": 8,
+  "raw_preview": "data: {\"id\": \"chatcmpl-f7aaab151bb74984a381c00f\", \"object\": \"chat.completion.chunk\", \"created\": 1792065579, \"model\": \"glm-5-3-flash-max\", \"choices\": [{\"index\": 0, \"delta\": {\"role\": \"assistant\"}}]}\ndata: {\"id\": \"chatcmpl-f7aaab151bb74984a381c00f\", \"object\": \"chat.completion.chunk\", \"created\": 1792065579, \"model\": \"glm-5-3-flash-max\", \"choices\": [{\"index\": 0, \"delta\": {\"content\": \"ALPHA\\nBETA\\nGAMMA\"}}]}\ndata: {\"id\": \"chatcmpl-f7aaab151bb74984a381c00f\", \"object\": \"chat.completion.chunk\", \"created\": 1792065579, \"model\": \"glm-5-3-flash-max\", \"choices\": [{\"index\": 0, \"delta\": {}, \"finish_reason\": \"stop\"}], \"usage\": {\"prompt_tokens\": 11746, \"completion_tokens\": 39, \"total_tokens\": 11785}}\ndata: [DONE]\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "line match",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T11:59:39Z",
+  "ttft_content_ms": 4124,
+  "ttft_reasoning_ms": null,
+  "first_decoded_ms": 4124,
+  "decode_span_ms": null,
+  "tps": null,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": "not derivable: no incremental deltas or fewer than 2 tokens",
+  "completion_tokens": 39,
+  "prompt_tokens": 11746,
+  "reasoning_tokens": null,
+  "content_delta_count": 1,
+  "reasoning_delta_count": 0
+}

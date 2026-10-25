@@ -1,0 +1,59 @@
+{
+ "wave": "shokunin-train-20261101-w16",
+ "dispatched": "2026-10-14T18:14Z",
+ "by": "Sol (operator-adjudicator), devin-cli session",
+ "g2d-r76": {
+  "author": "64020efe",
+  "scout": "1aad8ae4",
+  "boundary": "72af647a",
+  "baseline": "494f205f",
+  "scribe": "873f5ff5",
+  "postcommit_deferred": [
+   "critic",
+   "reviewer",
+   "simplifier",
+   "verifier"
+  ],
+  "wave_b": {
+   "critic": "04c21d97",
+   "reviewer": "2e99e9db",
+   "simplifier": "677cfd8d",
+   "verifier": "d1acbc0e"
+  },
+  "work_commit": "6ca715d",
+  "fold_commit": "c8fa307",
+  "report_commit": "aa4d567",
+  "verdict": "ADMIT-corr",
+  "notes": "boundary ran read-only substrate (ufo-labrat) \u2014 source trace + predictions; exec-capable profile required next wave"
+ },
+ "g3d-r85": {
+  "author": "a625e839(died:rate-limit)->completion:33a86f0f",
+  "scout": "85d9db27",
+  "boundary": "e868d0ad(died:rate-limit)->ced4c361",
+  "baseline": "2adf746e",
+  "scribe": "4a8d8dcf",
+  "postcommit_deferred": [
+   "critic",
+   "reviewer",
+   "simplifier",
+   "verifier"
+  ],
+  "work_commit": "f230443",
+  "wave_b": {
+   "critic": "28fd20ed",
+   "reviewer": "1249f539",
+   "simplifier": "5e2f9d59",
+   "verifier": "749574c8"
+  },
+  "notes": "arrived diff dead-on-parse (missing child bodies); completion seat wrote _child_split + bodies, 191/191 x2; boundary: battery regex misses singular ObjectDB-leak line (fold candidate); threaded_edge hangs under Dummy (latent)"
+ },
+ "audio-r76": "continues under wave-15; author d566a31 committed; wave-B: critic 2703d070 reviewer e632b79c simplifier 40fec6f7 verifier 93a485fc(died)->54ba2a8e; baseline e175fc2a",
+ "wave17_prep": {
+  "scouts": {
+   "g2d-r77": "5d89aede",
+   "audio-r77": "78a7f8fb",
+   "g3d-r86": "cdd9970b"
+  },
+  "note": "frontier scouts dispatched early on deepseek seats (user: more concurrency, avoid swe-2 limits)"
+ }
+}

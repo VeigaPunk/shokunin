@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-22T00:21:48.033417+00:00",
+  "logical_name": "Ko48InstrumentReview",
+  "role": "reviewer",
+  "actual_spawned": 0,
+  "error": "Failed to start background task job: Ko48InstrumentReview: Background job limit reached (100). Wait for running jobs to finish or cancel one.",
+  "guard_granted": {
+    "label": "kotoba48-instrument-static-review-grant",
+    "argv": [
+      "bash",
+      "/home/vgpnk/Projects/shokunin/scripts/hyaku/wave-slot.sh",
+      "acquire",
+      "kotoba",
+      "r48-main-instrument-review-s3",
+      "1",
+      "120"
+    ],
+    "exit": 0,
+    "stdout": "granted lane=kotoba wave=r48-main-instrument-review-s3 seats=1 live=88 pending=0 cap=200\n",
+    "stderr": "",
+    "at": "2026-10-22T00:19:01.025642+00:00"
+  },
+  "scope": "Whole-callpreadmissioncapacityrefusal,no child/session/providerchain,nopolicyrefusalinthiscall",
+  "next": "Same exact task payload/identity/role on genuine capacity event only; no replacement/reroute/early phaseA credit",
+  "payload_authority": "Exact native task invocation in current Root session transcript; do not reconstruct narrowed payload"
+}

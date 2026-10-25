@@ -1,0 +1,31 @@
+/tmp/kaika-verify/driver2/harness.sh: line 243: 2861925 Killed                     setsid bash -c 'exec -a kaikaW3ForeignProbe sleep 60' > /dev/null 2>&1
+/tmp/kaika-verify/driver2/fleet/scripts/shokunin-watchdog.sh: line 114: 2861974 Killed                     setsid bash -c "exec 9>>'$LOCKF/.ufo/.watchdog.lock'; flock -n 9 || exit 9; sleep 60" > /dev/null 2>&1
+/tmp/kaika-verify/driver2/harness.sh: line 363: 2861361 Killed                     ( if [[ ${LOCKFD:-} =~ ^[0-9]+$ ]]; then
+    exec {LOCKFD}>&-;
+fi; export SHOKUNIN_LANE="$lane" SHOKUNIN_ROUND="$n"; exec setsid bash -c 'cd -- "$1" || exit 1; eval "$2"; exit $?' _ "${LANE_CWD[$lane]}" "$run_cmd" ) >> "$UFO/state/${lane}.out" 2>&1
+/tmp/kaika-verify/driver2/harness.sh: line 363: 2861419 Killed                     ( if [[ ${LOCKFD:-} =~ ^[0-9]+$ ]]; then
+    exec {LOCKFD}>&-;
+fi; export SHOKUNIN_LANE="$lane" SHOKUNIN_ROUND="$n"; exec setsid bash -c 'cd -- "$1" || exit 1; eval "$2"; exit $?' _ "${LANE_CWD[$lane]}" "$run_cmd" ) >> "$UFO/state/${lane}.out" 2>&1
+/tmp/kaika-verify/driver2/harness.sh: line 363: 2861501 Killed                     ( if [[ ${LOCKFD:-} =~ ^[0-9]+$ ]]; then
+    exec {LOCKFD}>&-;
+fi; export SHOKUNIN_LANE="$lane" SHOKUNIN_ROUND="$n"; exec setsid bash -c 'cd -- "$1" || exit 1; eval "$2"; exit $?' _ "${LANE_CWD[$lane]}" "$run_cmd" ) >> "$UFO/state/${lane}.out" 2>&1
+/tmp/kaika-verify/driver2/harness.sh: line 363: 2861600 Killed                     ( if [[ ${LOCKFD:-} =~ ^[0-9]+$ ]]; then
+    exec {LOCKFD}>&-;
+fi; export SHOKUNIN_LANE="$lane" SHOKUNIN_ROUND="$n"; exec setsid bash -c 'cd -- "$1" || exit 1; eval "$2"; exit $?' _ "${LANE_CWD[$lane]}" "$run_cmd" ) >> "$UFO/state/${lane}.out" 2>&1
+/tmp/kaika-verify/driver2/harness.sh: line 363: 2861676 Killed                     ( if [[ ${LOCKFD:-} =~ ^[0-9]+$ ]]; then
+    exec {LOCKFD}>&-;
+fi; export SHOKUNIN_LANE="$lane" SHOKUNIN_ROUND="$n"; exec setsid bash -c 'cd -- "$1" || exit 1; eval "$2"; exit $?' _ "${LANE_CWD[$lane]}" "$run_cmd" ) >> "$UFO/state/${lane}.out" 2>&1
+/tmp/kaika-verify/driver2/harness.sh: line 363: 2861767 Killed                     ( if [[ ${LOCKFD:-} =~ ^[0-9]+$ ]]; then
+    exec {LOCKFD}>&-;
+fi; export SHOKUNIN_LANE="$lane" SHOKUNIN_ROUND="$n"; exec setsid bash -c 'cd -- "$1" || exit 1; eval "$2"; exit $?' _ "${LANE_CWD[$lane]}" "$run_cmd" ) >> "$UFO/state/${lane}.out" 2>&1
+/tmp/kaika-verify/driver2/harness.sh: line 363: 2861908 Killed                     ( if [[ ${LOCKFD:-} =~ ^[0-9]+$ ]]; then
+    exec {LOCKFD}>&-;
+fi; export SHOKUNIN_LANE="$lane" SHOKUNIN_ROUND="$n"; exec setsid bash -c 'cd -- "$1" || exit 1; eval "$2"; exit $?' _ "${LANE_CWD[$lane]}" "$run_cmd" ) >> "$UFO/state/${lane}.out" 2>&1
+/tmp/kaika-verify/driver2/harness.sh: line 363: 2862156 Killed                     ( if [[ ${LOCKFD:-} =~ ^[0-9]+$ ]]; then
+    exec {LOCKFD}>&-;
+fi; export SHOKUNIN_LANE="$lane" SHOKUNIN_ROUND="$n"; exec setsid bash -c 'cd -- "$1" || exit 1; eval "$2"; exit $?' _ "${LANE_CWD[$lane]}" "$run_cmd" ) >> "$UFO/state/${lane}.out" 2>&1
+/tmp/kaika-verify/driver2/harness.sh: line 364: 2861458 Killed                     ( if [[ ${LOCKFD:-} =~ ^[0-9]+$ ]]; then
+    exec {LOCKFD}>&-;
+fi; export SHOKUNIN_LANE="$lane" SHOKUNIN_ROUND="$n"; exec setsid bash -c 'cd -- "$1" || exit 1; eval "$2"; exit $?' _ "${LANE_CWD[$lane]}" "$run_cmd" ) >> "$UFO/state/${lane}.out" 2>&1
+SUMMARY pass=125 fail=0
+(no FAIL lines)

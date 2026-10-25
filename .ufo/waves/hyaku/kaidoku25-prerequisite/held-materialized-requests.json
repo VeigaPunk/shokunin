@@ -1,0 +1,448 @@
+{
+  "actual_M": "fafdd283432731a675b71e201bb9ba767c394553",
+  "subject_sha256": "54c43cdc01930fcb58f14053d8099f4b28352147656a05d811574cc74e7d34fb",
+  "frozen_spec_sha256": "a6451369b095550db1eb1139cce11cb70fe823a751e18c71848c0a329ee4480e",
+  "expanded_calls": [
+    {
+      "id": "H01_later_claim_touch_not_first_add",
+      "variant": null,
+      "root": "/home/vgpnk/Projects/shokunin/kaidoku-shokunin",
+      "expected": {
+        "exit": 2,
+        "finding": "freeze_mismatch"
+      },
+      "environment_overrides": {},
+      "request": {
+        "freeze": "69e82c48be5614ce96f7c1c32445fe61c4870630",
+        "measured": "18e7eb6d9fe8842678af5f1cffbd680ead4ad473",
+        "reference": ".ufo/waves/round-24/tools/freeze-gate.py",
+        "sha256": "1e2a937018feec21ad200f80a4c9a749b3de4af190fff548eb4dd84717b8870f",
+        "supersessions": [
+          {
+            "commit": "9fb4eacd23eb69ee9d659dd041e006e9ccd61480",
+            "sha256": "8a71fe84b94310b1b600793b4af011e586359304a6302ee33662d6522290b329",
+            "reason": "Disclosed R24 bare-name correction; not old-result rescue"
+          }
+        ],
+        "claims_file": ".ufo/waves/round-24/claims.json"
+      }
+    },
+    {
+      "id": "H02_nonancestor_freeze",
+      "variant": null,
+      "root": "/home/vgpnk/Projects/shokunin/kaidoku-shokunin",
+      "expected": {
+        "exit": 2,
+        "finding": "freeze_mismatch"
+      },
+      "environment_overrides": {},
+      "request": {
+        "freeze": "62feef9c0cbd5aadafa453456c55c28832175206",
+        "measured": "18e7eb6d9fe8842678af5f1cffbd680ead4ad473",
+        "reference": ".ufo/waves/round-24/tools/count-c1.py",
+        "sha256": "f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c",
+        "supersessions": [],
+        "claims_file": ".ufo/waves/round-24/claims.json"
+      }
+    },
+    {
+      "id": "H03_future_supersession",
+      "variant": null,
+      "root": "/home/vgpnk/Projects/shokunin/kaidoku-shokunin",
+      "expected": {
+        "exit": 1,
+        "finding": "supersession_not_revision"
+      },
+      "environment_overrides": {},
+      "request": {
+        "freeze": "5dc49bfe25d21139693161c786e69c5a11a65bcc",
+        "measured": "5dc49bfe25d21139693161c786e69c5a11a65bcc",
+        "reference": ".ufo/waves/round-24/tools/freeze-gate.py",
+        "sha256": "1e2a937018feec21ad200f80a4c9a749b3de4af190fff548eb4dd84717b8870f",
+        "supersessions": [
+          {
+            "commit": "9fb4eacd23eb69ee9d659dd041e006e9ccd61480",
+            "sha256": "8a71fe84b94310b1b600793b4af011e586359304a6302ee33662d6522290b329",
+            "reason": "Disclosed R24 bare-name correction; not old-result rescue"
+          }
+        ],
+        "claims_file": ".ufo/waves/round-24/claims.json"
+      }
+    },
+    {
+      "id": "H04_modified_in_freeze_blob",
+      "variant": null,
+      "root": "/home/vgpnk/Projects/shokunin/kaidoku-shokunin",
+      "expected": {
+        "exit": 1,
+        "finding": "instrument_not_prior"
+      },
+      "environment_overrides": {},
+      "request": {
+        "claims_file": ".ufo/waves/round-18/claims.json",
+        "freeze": "eb6c2668e5cb7054fd1e16d2f615cb65586d0fe0",
+        "measured": "eb6c2668e5cb7054fd1e16d2f615cb65586d0fe0",
+        "reference": ".ufo/gates/citation-drift/citation-drift-probe.py",
+        "sha256": "d3e24de4e91c01de1bdaf2c7b9db6cd5b86642eaeebc7c145f77660fd9e8679d",
+        "supersessions": []
+      }
+    },
+    {
+      "id": "H05_modified_in_freeze_mode",
+      "variant": null,
+      "root": "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/history",
+      "request": {
+        "claims_file": ".ufo/waves/round-80/claims.json",
+        "freeze": "7024c4bf9996910b351f2bef3f2506f623c1c9e6",
+        "measured": "7024c4bf9996910b351f2bef3f2506f623c1c9e6",
+        "reference": "tools/owned-check.py",
+        "sha256": "79dd553598a83083e31ea0c0075d5d4a9d3ba8894633c04dde8282c9ba7393e8",
+        "supersessions": []
+      },
+      "expected": {
+        "exit": 1,
+        "finding": "instrument_not_prior"
+      },
+      "environment_overrides": {},
+      "replacement_setup": false
+    },
+    {
+      "id": "H06_nonregular_git_entries",
+      "variant": "F_symlink",
+      "root": "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/history",
+      "request": {
+        "claims_file": ".ufo/waves/round-80/claims.json",
+        "freeze": "e6c8598dc8f82c2ef9df24aa1b3f8b0203b696b7",
+        "measured": "e6c8598dc8f82c2ef9df24aa1b3f8b0203b696b7",
+        "reference": "tools/owned-check.py",
+        "sha256": "79dd553598a83083e31ea0c0075d5d4a9d3ba8894633c04dde8282c9ba7393e8",
+        "supersessions": []
+      },
+      "expected": {
+        "exit": 2,
+        "finding": "instrument_nonregular"
+      },
+      "environment_overrides": {},
+      "replacement_setup": false
+    },
+    {
+      "id": "H06_nonregular_git_entries",
+      "variant": "F_gitlink",
+      "root": "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/history",
+      "request": {
+        "claims_file": ".ufo/waves/round-80/claims.json",
+        "freeze": "74e5c44fdf7b2ac501923ccd6b460ba0bf934636",
+        "measured": "74e5c44fdf7b2ac501923ccd6b460ba0bf934636",
+        "reference": "tools/owned-check.py",
+        "sha256": "79dd553598a83083e31ea0c0075d5d4a9d3ba8894633c04dde8282c9ba7393e8",
+        "supersessions": []
+      },
+      "expected": {
+        "exit": 2,
+        "finding": "instrument_nonregular"
+      },
+      "environment_overrides": {},
+      "replacement_setup": false
+    },
+    {
+      "id": "H06_nonregular_git_entries",
+      "variant": "F_tree",
+      "root": "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/history",
+      "request": {
+        "claims_file": ".ufo/waves/round-80/claims.json",
+        "freeze": "224c50ac0a00db7a35f45c6b23602c97d328ad79",
+        "measured": "224c50ac0a00db7a35f45c6b23602c97d328ad79",
+        "reference": "tools/owned-check.py",
+        "sha256": "79dd553598a83083e31ea0c0075d5d4a9d3ba8894633c04dde8282c9ba7393e8",
+        "supersessions": []
+      },
+      "expected": {
+        "exit": 2,
+        "finding": "instrument_nonregular"
+      },
+      "environment_overrides": {},
+      "replacement_setup": false
+    },
+    {
+      "id": "H07_readded_claim_history",
+      "variant": null,
+      "root": "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/history",
+      "request": {
+        "claims_file": ".ufo/waves/round-80/claims.json",
+        "freeze": "6763744cabdde9d8e3cf46a082a0fe1609b953ae",
+        "measured": "668f8920b761541520ab8a600873952aaefd38f8",
+        "reference": "tools/owned-check.py",
+        "sha256": "79dd553598a83083e31ea0c0075d5d4a9d3ba8894633c04dde8282c9ba7393e8",
+        "supersessions": []
+      },
+      "expected": {
+        "exit": 2,
+        "finding": "claims_history_unsupported"
+      },
+      "environment_overrides": {},
+      "replacement_setup": false
+    },
+    {
+      "id": "H08_unknown_request_member",
+      "variant": null,
+      "root": "/home/vgpnk/Projects/shokunin/kaidoku-shokunin",
+      "expected": {
+        "exit": 2,
+        "finding": "request_invalid"
+      },
+      "environment_overrides": {},
+      "request": {
+        "freeze": "5dc49bfe25d21139693161c786e69c5a11a65bcc",
+        "measured": "18e7eb6d9fe8842678af5f1cffbd680ead4ad473",
+        "reference": ".ufo/waves/round-24/tools/count-c1.py",
+        "sha256": "f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c",
+        "supersessions": [],
+        "claims_file": ".ufo/waves/round-24/claims.json",
+        "undeclared_member": true
+      }
+    },
+    {
+      "id": "H09_unknown_supersession_member",
+      "variant": null,
+      "root": "/home/vgpnk/Projects/shokunin/kaidoku-shokunin",
+      "expected": {
+        "exit": 2,
+        "finding": "request_invalid"
+      },
+      "environment_overrides": {},
+      "request": {
+        "freeze": "5dc49bfe25d21139693161c786e69c5a11a65bcc",
+        "measured": "18e7eb6d9fe8842678af5f1cffbd680ead4ad473",
+        "reference": ".ufo/waves/round-24/tools/freeze-gate.py",
+        "sha256": "1e2a937018feec21ad200f80a4c9a749b3de4af190fff548eb4dd84717b8870f",
+        "supersessions": [
+          {
+            "commit": "9fb4eacd23eb69ee9d659dd041e006e9ccd61480",
+            "sha256": "8a71fe84b94310b1b600793b4af011e586359304a6302ee33662d6522290b329",
+            "reason": "Disclosed R24 bare-name correction; not old-result rescue",
+            "undeclared_member": true
+          }
+        ],
+        "claims_file": ".ufo/waves/round-24/claims.json"
+      }
+    },
+    {
+      "id": "H10_wrong_claims_namespace",
+      "variant": null,
+      "root": "/home/vgpnk/Projects/shokunin/kaidoku-shokunin",
+      "expected": {
+        "exit": 2,
+        "finding": "request_invalid"
+      },
+      "environment_overrides": {},
+      "request": {
+        "freeze": "5dc49bfe25d21139693161c786e69c5a11a65bcc",
+        "measured": "18e7eb6d9fe8842678af5f1cffbd680ead4ad473",
+        "reference": ".ufo/waves/round-24/tools/count-c1.py",
+        "sha256": "f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c",
+        "supersessions": [],
+        "claims_file": "reports/round-24/claims.json"
+      }
+    },
+    {
+      "id": "H11_malformed_claims_path",
+      "variant": null,
+      "root": "/home/vgpnk/Projects/shokunin/kaidoku-shokunin",
+      "expected": {
+        "exit": 2,
+        "finding": "request_invalid"
+      },
+      "environment_overrides": {},
+      "request": {
+        "freeze": "5dc49bfe25d21139693161c786e69c5a11a65bcc",
+        "measured": "18e7eb6d9fe8842678af5f1cffbd680ead4ad473",
+        "reference": ".ufo/waves/round-24/tools/count-c1.py",
+        "sha256": "f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c",
+        "supersessions": [],
+        "claims_file": ".ufo/waves/round-24/../round-24/claims.json"
+      }
+    },
+    {
+      "id": "H12_complete_valid_duplicate_member_request",
+      "variant": null,
+      "root": "/home/vgpnk/Projects/shokunin/kaidoku-shokunin",
+      "expected": {
+        "exit": 2,
+        "finding": "request_invalid"
+      },
+      "environment_overrides": {},
+      "raw_request": "{\"claims_file\":\".ufo/waves/round-24/claims.json\",\"freeze\":\"5dc49bfe25d21139693161c786e69c5a11a65bcc\",\"measured\":\"18e7eb6d9fe8842678af5f1cffbd680ead4ad473\",\"reference\":\".ufo/waves/round-24/tools/count-c1.py\",\"reference\":\".ufo/waves/round-24/tools/count-c1.py\",\"sha256\":\"f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c\",\"supersessions\":[]}"
+    },
+    {
+      "id": "H13_direct_candidate_git_environment_isolation",
+      "variant": "H13a_existing_routing_and_config",
+      "root": "/home/vgpnk/Projects/shokunin/kaidoku-shokunin",
+      "request": {
+        "freeze": "5dc49bfe25d21139693161c786e69c5a11a65bcc",
+        "measured": "18e7eb6d9fe8842678af5f1cffbd680ead4ad473",
+        "reference": ".ufo/waves/round-24/tools/count-c1.py",
+        "sha256": "f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c",
+        "supersessions": [],
+        "claims_file": ".ufo/waves/round-24/claims.json"
+      },
+      "expected": {
+        "exit": 0,
+        "finding": "clean"
+      },
+      "environment_overrides": {
+        "GIT_DIR": "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/decoy/.git",
+        "GIT_WORK_TREE": "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/decoy",
+        "GIT_COMMON_DIR": "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/decoy/.git",
+        "GIT_INDEX_FILE": "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/decoy/.git/held-index",
+        "GIT_CONFIG_COUNT": "not-an-integer"
+      }
+    },
+    {
+      "id": "H13_direct_candidate_git_environment_isolation",
+      "variant": "H13b_empty_object_directory",
+      "root": "/home/vgpnk/Projects/shokunin/kaidoku-shokunin",
+      "request": {
+        "freeze": "5dc49bfe25d21139693161c786e69c5a11a65bcc",
+        "measured": "18e7eb6d9fe8842678af5f1cffbd680ead4ad473",
+        "reference": ".ufo/waves/round-24/tools/count-c1.py",
+        "sha256": "f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c",
+        "supersessions": [],
+        "claims_file": ".ufo/waves/round-24/claims.json"
+      },
+      "expected": {
+        "exit": 0,
+        "finding": "clean"
+      },
+      "environment_overrides": {
+        "GIT_OBJECT_DIRECTORY": "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/empty-objects",
+        "GIT_ALTERNATE_OBJECT_DIRECTORIES": ""
+      }
+    },
+    {
+      "id": "H13_direct_candidate_git_environment_isolation",
+      "variant": "H13c_owned_decoy_alternates",
+      "root": "/home/vgpnk/Projects/shokunin/kaidoku-shokunin",
+      "request": {
+        "freeze": "5dc49bfe25d21139693161c786e69c5a11a65bcc",
+        "measured": "18e7eb6d9fe8842678af5f1cffbd680ead4ad473",
+        "reference": ".ufo/waves/round-24/tools/count-c1.py",
+        "sha256": "f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c",
+        "supersessions": [],
+        "claims_file": ".ufo/waves/round-24/claims.json"
+      },
+      "expected": {
+        "exit": 0,
+        "finding": "clean"
+      },
+      "environment_overrides": {
+        "GIT_OBJECT_DIRECTORY": "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/empty-objects",
+        "GIT_ALTERNATE_OBJECT_DIRECTORIES": "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/decoy/.git/objects"
+      }
+    },
+    {
+      "id": "H13_direct_candidate_git_environment_isolation",
+      "variant": "H13d_empty_namespace",
+      "root": "/home/vgpnk/Projects/shokunin/kaidoku-shokunin",
+      "request": {
+        "freeze": "5dc49bfe25d21139693161c786e69c5a11a65bcc",
+        "measured": "18e7eb6d9fe8842678af5f1cffbd680ead4ad473",
+        "reference": ".ufo/waves/round-24/tools/count-c1.py",
+        "sha256": "f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c",
+        "supersessions": [],
+        "claims_file": ".ufo/waves/round-24/claims.json"
+      },
+      "expected": {
+        "exit": 0,
+        "finding": "clean"
+      },
+      "environment_overrides": {
+        "GIT_NAMESPACE": "kaidoku-r25-held-empty"
+      }
+    },
+    {
+      "id": "H14_direct_candidate_replacement_isolation",
+      "variant": null,
+      "root": "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/history",
+      "request": {
+        "claims_file": ".ufo/waves/round-80/claims.json",
+        "freeze": "6763744cabdde9d8e3cf46a082a0fe1609b953ae",
+        "measured": "6763744cabdde9d8e3cf46a082a0fe1609b953ae",
+        "reference": "tools/owned-check.py",
+        "sha256": "79dd553598a83083e31ea0c0075d5d4a9d3ba8894633c04dde8282c9ba7393e8",
+        "supersessions": []
+      },
+      "expected": {
+        "exit": 0,
+        "finding": "clean"
+      },
+      "environment_overrides": {},
+      "replacement_setup": true
+    },
+    {
+      "id": "H15_required_scope_and_evidence_members",
+      "variant": "1",
+      "root": "/home/vgpnk/Projects/shokunin/kaidoku-shokunin",
+      "request": {
+        "freeze": "5dc49bfe25d21139693161c786e69c5a11a65bcc",
+        "measured": "18e7eb6d9fe8842678af5f1cffbd680ead4ad473",
+        "reference": ".ufo/waves/round-24/tools/count-c1.py",
+        "sha256": "f185960598b7c9b203156db42567dfa42c103e73c435bf4e5aa536e86dcff00c",
+        "supersessions": [],
+        "claims_file": ".ufo/waves/round-24/claims.json"
+      },
+      "expected": {
+        "exit": 0,
+        "finding": "clean",
+        "scope": "explicit_reference_custody_only"
+      },
+      "semantic_members": true,
+      "environment_overrides": {}
+    },
+    {
+      "id": "H15_required_scope_and_evidence_members",
+      "variant": "2",
+      "root": "/home/vgpnk/Projects/shokunin/kaidoku-shokunin",
+      "request": {
+        "freeze": "5dc49bfe25d21139693161c786e69c5a11a65bcc",
+        "measured": "18e7eb6d9fe8842678af5f1cffbd680ead4ad473",
+        "reference": ".ufo/waves/round-24/tools/freeze-gate.py",
+        "sha256": "1e2a937018feec21ad200f80a4c9a749b3de4af190fff548eb4dd84717b8870f",
+        "supersessions": [
+          {
+            "commit": "9fb4eacd23eb69ee9d659dd041e006e9ccd61480",
+            "sha256": "8a71fe84b94310b1b600793b4af011e586359304a6302ee33662d6522290b329",
+            "reason": "Disclosed R24 bare-name correction; not old-result rescue"
+          }
+        ],
+        "claims_file": ".ufo/waves/round-24/claims.json"
+      },
+      "expected": {
+        "exit": 0,
+        "finding": "clean",
+        "scope": "explicit_reference_custody_only"
+      },
+      "semantic_members": true,
+      "environment_overrides": {}
+    },
+    {
+      "id": "H16_unique_freeze_parent",
+      "variant": null,
+      "root": "/fast/scratch/hyaku/kaidoku-r25-main-held-20261022T025045Z/history",
+      "request": {
+        "claims_file": ".ufo/waves/round-80/claims.json",
+        "freeze": "26aad95e542373820c3604b0adf03273273a7ced",
+        "measured": "26aad95e542373820c3604b0adf03273273a7ced",
+        "reference": "tools/owned-check.py",
+        "sha256": "79dd553598a83083e31ea0c0075d5d4a9d3ba8894633c04dde8282c9ba7393e8",
+        "supersessions": []
+      },
+      "expected": {
+        "exit": 2,
+        "finding": "freeze_parent_unsupported"
+      },
+      "environment_overrides": {},
+      "replacement_setup": false
+    }
+  ],
+  "scope": "Original16controls and declared variants bound to actual Main-owned Git data; no expected-value revision"
+}

@@ -1,0 +1,749 @@
+This integration smoke precedes final audio citation-only metadata follow-through; aggregator pins final full heads separately.
+
+$ sources-census.sh census --root /home/vgpnk/Projects/shokunin
+exit=0
+kaidoku	rows	22
+kaidoku	tier.A	20
+kaidoku	tier.B	1
+kaidoku	tier.C	1
+kaidoku	status.mined	21
+kaidoku	status.rejected	1
+kasegi	rows	27
+kasegi	tier.A	25
+kasegi	tier.C	2
+kasegi	status.mined	15
+kasegi	status.queued	10
+kasegi	status.rejected	2
+kengaku	rows	26
+kengaku	tier.A	24
+kengaku	tier.C	2
+kengaku	status.mined	18
+kengaku	status.queued	5
+kengaku	status.rejected	3
+kake	rows	18
+kake	tier.A	16
+kake	tier.C	2
+kake	status.mined	14
+kake	status.queued	2
+kake	status.rejected	2
+kumitate	rows	20
+kumitate	tier.A	19
+kumitate	tier.B	1
+kumitate	status.mined	9
+kumitate	status.queued	9
+kumitate	status.rejected	2
+kotoba	rows	11
+kotoba	tier.A	10
+kotoba	tier.C	1
+kotoba	status.mined	4
+kotoba	status.queued	6
+kotoba	status.rejected	1
+kagi	rows	16
+kagi	tier.A	14
+kagi	tier.C	2
+kagi	status.mined	14
+kagi	status.queued	1
+kagi	status.rejected	1
+kama	rows	30
+kama	tier.A	27
+kama	tier.C	3
+kama	status.mined	17
+kama	status.queued	8
+kama	status.rejected	5
+lore	rows	32
+lore	tier.A	24
+lore	tier.B	3
+lore	tier.C	5
+lore	status.mined	12
+lore	status.queued	17
+lore	status.rejected	3
+revenger	rows	15
+revenger	tier.A	14
+revenger	tier.C	1
+revenger	status.mined	12
+revenger	status.queued	1
+revenger	status.rejected	2
+tameshi	rows	44
+tameshi	tier.A	37
+tameshi	tier.B	5
+tameshi	tier.C	2
+tameshi	status.mined	12
+tameshi	status.queued	29
+tameshi	status.rejected	3
+mado	rows	39
+mado	tier.A	35
+mado	tier.B	1
+mado	tier.C	3
+mado	status.mined	27
+mado	status.queued	9
+mado	status.rejected	3
+tsukuroi	rows	34
+tsukuroi	tier.A	31
+tsukuroi	tier.B	1
+tsukuroi	tier.C	2
+tsukuroi	status.mined	26
+tsukuroi	status.queued	5
+tsukuroi	status.rejected	3
+tabi	rows	28
+tabi	tier.A	22
+tabi	tier.B	4
+tabi	tier.C	2
+tabi	status.mined	20
+tabi	status.queued	6
+tabi	status.rejected	2
+mori	rows	34
+mori	tier.A	31
+mori	tier.B	2
+mori	tier.C	1
+mori	status.mined	12
+mori	status.queued	21
+mori	status.rejected	1
+chousa	rows	18
+chousa	tier.A	14
+chousa	tier.B	1
+chousa	tier.C	3
+chousa	status.mined	8
+chousa	status.queued	7
+chousa	status.rejected	3
+kotodama	rows	47
+kotodama	tier.A	34
+kotodama	tier.B	6
+kotodama	tier.C	7
+kotodama	status.mined	20
+kotodama	status.queued	22
+kotodama	status.rejected	5
+souji	rows	33
+souji	tier.A	29
+souji	tier.B	3
+souji	tier.C	1
+souji	status.mined	16
+souji	status.queued	15
+souji	status.rejected	2
+audio	rows	15
+audio	tier.A	11
+audio	tier.B	2
+audio	tier.C	2
+audio	status.mined	14
+audio	status.rejected	1
+game-dev-2d	rows	31
+game-dev-2d	tier.A	30
+game-dev-2d	tier.B	1
+game-dev-2d	status.mined	10
+game-dev-2d	status.queued	19
+game-dev-2d	status.rejected	2
+game-dev-3d	rows	36
+game-dev-3d	tier.A	33
+game-dev-3d	tier.B	2
+game-dev-3d	tier.C	1
+game-dev-3d	status.mined	6
+game-dev-3d	status.queued	28
+game-dev-3d	status.rejected	2
+FLEET	rows	576
+FLEET	tier.A	500
+FLEET	tier.B	33
+FLEET	tier.C	43
+FLEET	tier.invalid	0
+FLEET	status.queued	220
+FLEET	status.mined	307
+FLEET	status.rejected	49
+FLEET	status.invalid	0
+FLEET	missing	0
+
+
+$ sources-census.sh validate --root /home/vgpnk/Projects/shokunin
+exit=0
+kaidoku	ok	/home/vgpnk/Projects/shokunin/kaidoku-shokunin/corpus/SOURCES.md
+kasegi	ok	/home/vgpnk/Projects/shokunin/kasegi-shokunin/corpus/SOURCES.md
+kengaku	ok	/home/vgpnk/Projects/shokunin/kengaku-shokunin/corpus/SOURCES.md
+kake	ok	/home/vgpnk/Projects/shokunin/kake-shokunin/corpus/SOURCES.md
+kumitate	ok	/home/vgpnk/Projects/shokunin/kumitate-shokunin/corpus/SOURCES.md
+kotoba	ok	/home/vgpnk/Projects/shokunin/kotoba-shokunin/corpus/SOURCES.md
+kagi	ok	/home/vgpnk/Projects/shokunin/kagi-shokunin/corpus/SOURCES.md
+kama	ok	/home/vgpnk/Projects/shokunin/kama-shokunin/corpus/SOURCES.md
+lore	W04	S017 duplicate url arxiv.org/html/2603.05890 across scopes
+lore	W01	S027 tierC mined used-by=corpus/knowledge/r103-canon-status-and-supersession.md
+lore	W04	S032 duplicate url www.iso.org/standard/70908.html across scopes
+lore	ok	/home/vgpnk/Projects/shokunin/lore-shokunin/corpus/SOURCES.md
+revenger	ok	/home/vgpnk/Projects/shokunin/revenger-shokunin/corpus/SOURCES.md
+tameshi	ok	/home/vgpnk/Projects/shokunin/tameshi-shokunin/corpus/SOURCES.md
+mado	W04	S030 duplicate url wiki.hypr.land/Configuring/Basics/Window-Rules across scopes
+mado	ok	/home/vgpnk/Projects/shokunin/mado-shokunin/corpus/SOURCES.md
+tsukuroi	ok	/home/vgpnk/Projects/shokunin/tsukuroi-shokunin/corpus/SOURCES.md
+tabi	ok	/home/vgpnk/Projects/shokunin/tabi-shokunin/corpus/SOURCES.md
+mori	ok	/home/vgpnk/Projects/shokunin/mori-shokunin/corpus/SOURCES.md
+chousa	ok	/home/vgpnk/Projects/shokunin/chousa-shokunin/corpus/SOURCES.md
+kotodama	ok	/home/vgpnk/Projects/shokunin/kotodama-shokunin/corpus/SOURCES.md
+souji	ok	/home/vgpnk/Projects/shokunin/souji-shokunin/corpus/SOURCES.md
+audio	W01	S007 tierC mined used-by=corpus/knowledge/2026-10-19-game-loudness-whole-mix-protocol.md, corpus/lessons/round-101.md
+audio	W04	S014 duplicate url raw.githubusercontent.com/FFmpeg/FFmpeg/n9.0.1/libavfilter/af_loudnorm.c across scopes
+audio	W04	S015 duplicate url www.itu.int/dms_pubrec/itu-r/rec/bs/R-REC-BS.1770-5-202311-I!!PDF-E.pdf across scopes
+audio	ok	/home/vgpnk/Projects/shokunin/audio-shokunin/corpus/SOURCES.md
+game-dev-2d	ok	/home/vgpnk/Projects/shokunin/game-dev-2d-shokunin/corpus/SOURCES.md
+game-dev-3d	ok	/home/vgpnk/Projects/shokunin/game-dev-3d-shokunin/corpus/SOURCES.md
+
+
+$ sources-census.sh shared --root /home/vgpnk/Projects/shokunin
+exit=0
+kubernetes.io/docs/concepts/workloads/pods/probes	shared	kama,mori
+godot-gdunit-labs.github.io/gdUnit4/latest/advanced_testing/cmd	shared	game-dev-2d,game-dev-3d
+
+
+$ sources-census.sh overdue --root /home/vgpnk/Projects/shokunin
+exit=0
+kaidoku	cadence	S001 recheck=on-release opened=2026-10-19
+kaidoku	cadence	S002 recheck=on-release opened=2026-10-19
+kaidoku	cadence	S003 recheck=on-release opened=2026-10-19
+kaidoku	cadence	S004 recheck=on-release opened=2026-10-19
+kaidoku	cadence	S005 recheck=on-release opened=2026-10-19
+kaidoku	cadence	S006 recheck=on-release opened=2026-10-19
+kaidoku	cadence	S007 recheck=on-release opened=2026-10-19
+kaidoku	cadence	S008 recheck=180d opened=2026-10-19
+kaidoku	cadence	S009 recheck=180d opened=2026-10-19
+kaidoku	cadence	S010 recheck=180d opened=2026-10-19
+kaidoku	cadence	S011 recheck=180d opened=2026-10-19
+kaidoku	cadence	S012 recheck=on-release opened=2026-10-19
+kaidoku	cadence	S013 recheck=on-release opened=2026-10-19
+kaidoku	cadence	S014 recheck=on-release opened=2026-10-19
+kaidoku	cadence	S015 recheck=90d opened=2026-10-19
+kaidoku	cadence	S016 recheck=365d opened=2026-10-19
+kaidoku	cadence	S017 recheck=on-release opened=2026-10-19
+kaidoku	cadence	S018 recheck=365d opened=2026-10-19
+kaidoku	cadence	S019 recheck=on-release opened=2026-10-19
+kaidoku	cadence	S020 recheck=on-release opened=2026-10-19
+kaidoku	cadence	S021 recheck=on-release opened=2026-10-19
+kaidoku	cadence	S022 recheck=on-release opened=2026-10-19
+kasegi	cadence	S001 recheck=on-release opened=2026-10-19
+kasegi	cadence	S002 recheck=on-release opened=2026-10-19
+kasegi	cadence	S003 recheck=180d opened=2026-10-19
+kasegi	cadence	S004 recheck=180d opened=2026-10-19
+kasegi	cadence	S005 recheck=180d opened=2026-10-19
+kasegi	cadence	S006 recheck=90d opened=2026-10-19
+kasegi	cadence	S007 recheck=90d opened=2026-10-19
+kasegi	cadence	S008 recheck=180d opened=2026-10-19
+kasegi	cadence	S009 recheck=90d opened=2026-10-19
+kasegi	cadence	S010 recheck=on-release opened=2026-10-19
+kasegi	cadence	S011 recheck=90d opened=2026-10-19
+kasegi	cadence	S012 recheck=90d opened=2026-10-19
+kasegi	cadence	S013 recheck=on-release opened=2026-10-19
+kasegi	cadence	S014 recheck=on-release opened=2026-10-19
+kasegi	cadence	S015 recheck=on-release opened=2026-10-19
+kasegi	cadence	S016 recheck=90d opened=2026-10-19
+kasegi	cadence	S017 recheck=90d opened=2026-10-19
+kasegi	cadence	S018 recheck=180d opened=2026-10-19
+kasegi	cadence	S019 recheck=on-release opened=2026-10-19
+kasegi	cadence	S020 recheck=on-release opened=2026-10-19
+kasegi	cadence	S021 recheck=on-release opened=2026-10-19
+kasegi	cadence	S022 recheck=on-release opened=2026-10-19
+kasegi	cadence	S023 recheck=90d opened=2026-10-19
+kasegi	cadence	S024 recheck=on-release opened=2026-10-19
+kasegi	cadence	S025 recheck=on-release opened=2026-10-19
+kasegi	cadence	S026 recheck=90d opened=2026-10-19
+kasegi	cadence	S027 recheck=180d opened=2026-10-19
+kengaku	cadence	S005 recheck=on-release opened=2026-10-19
+kengaku	cadence	S006 recheck=on-release opened=2026-10-19
+kengaku	cadence	S014 recheck=90d opened=2026-10-19
+kengaku	cadence	S023 recheck=on-release opened=2026-10-19
+kengaku	cadence	S024 recheck=90d opened=2026-10-19
+kengaku	cadence	S025 recheck=90d opened=2026-10-19
+kengaku	cadence	S026 recheck=on-release opened=2026-10-19
+kake	cadence	S001 recheck=on-release opened=2026-10-19
+kake	cadence	S002 recheck=on-release opened=2026-10-19
+kake	cadence	S003 recheck=90d opened=2026-10-19
+kake	cadence	S004 recheck=90d opened=2026-10-19
+kake	cadence	S005 recheck=90d opened=2026-10-19
+kake	cadence	S006 recheck=90d opened=2026-10-19
+kake	cadence	S007 recheck=90d opened=2026-10-19
+kake	cadence	S008 recheck=365d opened=2026-10-19
+kake	cadence	S009 recheck=365d opened=2026-10-19
+kake	cadence	S010 recheck=365d opened=2026-10-19
+kake	cadence	S011 recheck=365d opened=2026-10-19
+kake	cadence	S012 recheck=365d opened=2026-10-19
+kake	cadence	S013 recheck=90d opened=2026-10-19
+kake	cadence	S014 recheck=90d opened=2026-10-19
+kake	cadence	S015 recheck=90d opened=2026-10-19
+kake	cadence	S016 recheck=90d opened=2026-10-19
+kake	cadence	S017 recheck=90d opened=2026-10-19
+kake	cadence	S018 recheck=180d opened=2026-10-19
+kumitate	cadence	S001 recheck=on-release opened=2026-10-19
+kumitate	cadence	S002 recheck=on-release opened=2026-10-19
+kumitate	cadence	S003 recheck=on-release opened=2026-10-19
+kumitate	cadence	S004 recheck=on-release opened=2026-10-19
+kumitate	cadence	S005 recheck=on-release opened=2026-10-19
+kumitate	cadence	S006 recheck=on-release opened=2026-10-19
+kumitate	cadence	S007 recheck=90d opened=2026-10-19
+kumitate	cadence	S008 recheck=30d opened=2026-10-19
+kumitate	cadence	S009 recheck=30d opened=2026-10-19
+kumitate	cadence	S010 recheck=on-release opened=2026-10-19
+kumitate	cadence	S011 recheck=365d opened=2026-10-19
+kumitate	cadence	S012 recheck=on-release opened=2026-10-19
+kumitate	cadence	S013 recheck=on-release opened=2026-10-19
+kumitate	cadence	S014 recheck=on-release opened=2026-10-19
+kumitate	cadence	S015 recheck=365d opened=2026-10-19
+kumitate	cadence	S016 recheck=365d opened=2026-10-19
+kumitate	cadence	S017 recheck=180d opened=2026-10-19
+kumitate	cadence	S018 recheck=365d opened=2026-10-19
+kumitate	cadence	S019 recheck=365d opened=2026-10-19
+kumitate	cadence	S020 recheck=365d opened=2026-10-19
+kotoba	cadence	S001 recheck=on-release opened=2026-10-19
+kotoba	cadence	S002 recheck=90d opened=2026-10-19
+kotoba	cadence	S003 recheck=90d opened=2026-10-19
+kotoba	cadence	S004 recheck=90d opened=2026-10-19
+kotoba	cadence	S005 recheck=on-release opened=2026-10-19
+kotoba	cadence	S006 recheck=on-release opened=2026-10-19
+kotoba	cadence	S007 recheck=365d opened=2026-10-19
+kotoba	cadence	S008 recheck=on-release opened=2026-10-19
+kotoba	cadence	S009 recheck=on-commit opened=2026-10-19
+kotoba	cadence	S010 recheck=on-commit opened=2026-10-19
+kotoba	cadence	S011 recheck=180d opened=2026-10-19
+kagi	cadence	S001 recheck=90d opened=2026-10-19
+kagi	cadence	S002 recheck=90d opened=2026-10-19
+kagi	cadence	S003 recheck=90d opened=2026-10-19
+kagi	cadence	S004 recheck=90d opened=2026-10-19
+kagi	cadence	S005 recheck=on-release opened=2026-10-19
+kagi	cadence	S006 recheck=on-release opened=2026-10-19
+kagi	cadence	S007 recheck=on-release opened=2026-10-19
+kagi	cadence	S008 recheck=on-release opened=2026-10-19
+kagi	cadence	S009 recheck=on-release opened=2026-10-19
+kagi	cadence	S010 recheck=on-release opened=2026-10-19
+kagi	cadence	S011 recheck=on-release opened=2026-10-19
+kagi	cadence	S012 recheck=on-release opened=2026-10-19
+kagi	cadence	S013 recheck=on-release opened=2026-10-19
+kagi	cadence	S014 recheck=on-release opened=2026-10-19
+kagi	cadence	S015 recheck=on-release opened=2026-10-19
+kagi	cadence	S016 recheck=on-release opened=2026-10-19
+kama	cadence	S001 recheck=on-release opened=2026-10-19
+kama	cadence	S002 recheck=on-release opened=2026-10-19
+kama	cadence	S003 recheck=on-release opened=2026-10-19
+kama	cadence	S004 recheck=on-release opened=2026-10-19
+kama	cadence	S005 recheck=on-release opened=2026-10-19
+kama	cadence	S006 recheck=on-release opened=2026-10-19
+kama	cadence	S007 recheck=on-release opened=2026-10-19
+kama	cadence	S008 recheck=on-release opened=2026-10-19
+kama	cadence	S009 recheck=on-release opened=2026-10-19
+kama	cadence	S010 recheck=on-release opened=2026-10-19
+kama	cadence	S011 recheck=90d opened=2026-10-19
+kama	cadence	S012 recheck=90d opened=2026-10-19
+kama	cadence	S013 recheck=on-release opened=2026-10-19
+kama	cadence	S014 recheck=on-release opened=2026-10-19
+kama	cadence	S015 recheck=on-release opened=2026-10-19
+kama	cadence	S016 recheck=90d opened=2026-10-19
+kama	cadence	S017 recheck=90d opened=2026-10-19
+kama	cadence	S018 recheck=90d opened=2026-10-19
+kama	cadence	S019 recheck=on-release opened=2026-10-19
+kama	cadence	S020 recheck=on-release opened=2026-10-19
+kama	cadence	S021 recheck=on-release opened=2026-10-19
+kama	cadence	S022 recheck=on-release opened=2026-10-19
+kama	cadence	S023 recheck=on-release opened=2026-10-19
+kama	cadence	S024 recheck=on-release opened=2026-10-19
+kama	cadence	S025 recheck=on-release opened=2026-10-19
+kama	cadence	S026 recheck=on-release opened=2026-10-19
+kama	cadence	S027 recheck=90d opened=2026-10-19
+kama	cadence	S028 recheck=90d opened=2026-10-19
+kama	cadence	S029 recheck=on-release opened=2026-10-19
+kama	cadence	S030 recheck=every round opened=2026-10-19
+lore	cadence	S001 recheck=on-release opened=2026-10-19
+lore	cadence	S002 recheck=on-release opened=2026-10-19
+lore	cadence	S003 recheck=on-release opened=2026-10-19
+lore	cadence	S004 recheck=180d opened=2026-10-19
+lore	cadence	S005 recheck=180d opened=2026-10-19
+lore	cadence	S006 recheck=180d opened=2026-10-19
+lore	cadence	S007 recheck=180d opened=2026-10-19
+lore	cadence	S008 recheck=on-release opened=2026-10-19
+lore	cadence	S009 recheck=180d opened=2026-10-19
+lore	cadence	S010 recheck=180d opened=2026-10-19
+lore	cadence	S011 recheck=90d opened=2026-10-19
+lore	cadence	S012 recheck=90d opened=2026-10-19
+lore	cadence	S013 recheck=180d opened=2026-10-19
+lore	cadence	S014 recheck=180d opened=2026-10-19
+lore	cadence	S015 recheck=on-release opened=2026-10-19
+lore	cadence	S016 recheck=180d opened=2026-10-19
+lore	cadence	S017 recheck=90d opened=2026-10-19
+lore	cadence	S018 recheck=on-release opened=2026-10-19
+lore	cadence	S019 recheck=on-release opened=2026-10-19
+lore	cadence	S020 recheck=on-release opened=2026-10-19
+lore	cadence	S021 recheck=180d opened=2026-10-19
+lore	cadence	S022 recheck=on-release opened=2026-10-19
+lore	cadence	S023 recheck=365d opened=2026-10-19
+lore	cadence	S024 recheck=180d opened=2026-10-19
+lore	cadence	S025 recheck=180d opened=2026-10-19
+lore	cadence	S026 recheck=180d opened=2026-10-19
+lore	cadence	S027 recheck=180d opened=2026-10-19
+lore	cadence	S028 recheck=on-release opened=2026-10-19
+lore	cadence	S029 recheck=90d opened=2026-10-19
+lore	cadence	S030 recheck=on-release opened=2026-10-19
+lore	cadence	S031 recheck=90d opened=2026-10-19
+lore	cadence	S032 recheck=365d opened=2026-10-19
+revenger	cadence	S001 recheck=90d opened=2026-10-19
+revenger	cadence	S002 recheck=on-release opened=2026-10-19
+revenger	cadence	S003 recheck=180d opened=2026-10-19
+revenger	cadence	S004 recheck=180d opened=2026-10-19
+revenger	cadence	S005 recheck=180d opened=2026-10-19
+revenger	cadence	S006 recheck=on-release opened=2026-10-19
+revenger	cadence	S007 recheck=180d opened=2026-10-19
+revenger	cadence	S008 recheck=on-release opened=2026-10-19
+revenger	cadence	S009 recheck=180d opened=2026-10-19
+revenger	cadence	S010 recheck=on-release opened=2026-10-19
+revenger	cadence	S011 recheck=on-release opened=2026-10-19
+revenger	cadence	S012 recheck=180d opened=2026-10-19
+revenger	cadence	S013 recheck=on-release opened=2026-10-19
+revenger	cadence	S014 recheck=90d opened=2026-10-19
+revenger	cadence	S015 recheck=90d opened=2026-10-19
+tameshi	cadence	S001 recheck=180d opened=2026-10-19
+tameshi	cadence	S002 recheck=on-release opened=2026-10-19
+tameshi	cadence	S003 recheck=180d opened=2026-10-19
+tameshi	cadence	S004 recheck=on-release opened=2026-10-19
+tameshi	cadence	S005 recheck=on-release opened=2026-10-19
+tameshi	cadence	S006 recheck=90d opened=2026-10-19
+tameshi	cadence	S007 recheck=365d opened=2026-10-19
+tameshi	cadence	S008 recheck=365d opened=2026-10-19
+tameshi	cadence	S009 recheck=730d opened=2026-10-19
+tameshi	cadence	S010 recheck=730d opened=2026-10-19
+tameshi	cadence	S011 recheck=730d opened=2026-10-19
+tameshi	cadence	S012 recheck=90d opened=2026-10-19
+tameshi	cadence	S013 recheck=on-release opened=2026-10-19
+tameshi	cadence	S014 recheck=on-release opened=2026-10-19
+tameshi	cadence	S015 recheck=365d opened=2026-10-19
+tameshi	cadence	S016 recheck=365d opened=2026-10-19
+tameshi	cadence	S017 recheck=on-release opened=2026-10-19
+tameshi	cadence	S018 recheck=on-release opened=2026-10-19
+tameshi	cadence	S019 recheck=730d opened=2026-10-19
+tameshi	cadence	S020 recheck=365d opened=2026-10-19
+tameshi	cadence	S021 recheck=180d opened=2026-10-19
+tameshi	cadence	S022 recheck=730d opened=2026-10-19
+tameshi	cadence	S023 recheck=90d opened=2026-10-19
+tameshi	cadence	S024 recheck=365d opened=2026-10-19
+tameshi	cadence	S025 recheck=730d opened=2026-10-19
+tameshi	cadence	S026 recheck=730d opened=2026-10-19
+tameshi	cadence	S027 recheck=180d opened=2026-10-19
+tameshi	cadence	S028 recheck=365d opened=2026-10-19
+tameshi	cadence	S029 recheck=180d opened=2026-10-19
+tameshi	cadence	S030 recheck=365d opened=2026-10-19
+tameshi	cadence	S031 recheck=90d opened=2026-10-19
+tameshi	cadence	S032 recheck=180d opened=2026-10-19
+tameshi	cadence	S033 recheck=180d opened=2026-10-19
+tameshi	cadence	S034 recheck=180d opened=2026-10-19
+tameshi	cadence	S035 recheck=180d opened=2026-10-19
+tameshi	cadence	S036 recheck=180d opened=2026-10-19
+tameshi	cadence	S037 recheck=180d opened=2026-10-19
+tameshi	cadence	S040 recheck=730d opened=2026-10-19
+tameshi	cadence	S041 recheck=90d opened=2026-10-19
+tameshi	cadence	S042 recheck=730d opened=2026-10-19
+tameshi	cadence	S043 recheck=730d opened=2026-10-19
+tameshi	cadence	S044 recheck=365d opened=2026-10-19
+tameshi	cadence	S045 recheck=365d opened=2026-10-19
+tameshi	cadence	S046 recheck=90d opened=2026-10-19
+mado	cadence	S001 recheck=180d opened=2026-10-19
+mado	cadence	S002 recheck=180d opened=2026-10-19
+mado	cadence	S003 recheck=on-change opened=2026-10-19
+mado	cadence	S004 recheck=on-change opened=2026-10-19
+mado	cadence	S005 recheck=on-release opened=2026-10-19
+mado	cadence	S006 recheck=180d opened=2026-10-19
+mado	cadence	S007 recheck=180d opened=2026-10-19
+mado	cadence	S008 recheck=180d opened=2026-10-19
+mado	cadence	S009 recheck=180d opened=2026-10-19
+mado	cadence	S010 recheck=180d opened=2026-10-19
+mado	cadence	S011 recheck=180d opened=2026-10-19
+mado	cadence	S012 recheck=180d opened=2026-10-19
+mado	cadence	S013 recheck=on-change opened=2026-10-19
+mado	cadence	S014 recheck=on-gate-change opened=2026-10-19
+mado	cadence	S015 recheck=on-change opened=2026-10-19
+mado	cadence	S016 recheck=90d opened=2026-10-19
+mado	cadence	S017 recheck=90d opened=2026-10-19
+mado	cadence	S018 recheck=on-release opened=2026-10-19
+mado	cadence	S019 recheck=90d opened=2026-10-19
+mado	cadence	S020 recheck=on-change opened=2026-10-19
+mado	cadence	S021 recheck=on-release opened=2026-10-19
+mado	cadence	S022 recheck=on-release opened=2026-10-19
+mado	cadence	S023 recheck=on-release opened=2026-10-19
+mado	cadence	S024 recheck=on-release opened=2026-10-19
+mado	cadence	S025 recheck=on-release opened=2026-10-19
+mado	cadence	S026 recheck=on-release opened=2026-10-19
+mado	cadence	S027 recheck=on-release opened=2026-10-19
+mado	cadence	S028 recheck=on-release opened=2026-10-19
+mado	cadence	S029 recheck=on-release opened=2026-10-19
+mado	cadence	S030 recheck=on-release opened=2026-10-19
+mado	cadence	S031 recheck=90d opened=2026-10-19
+mado	cadence	S032 recheck=90d opened=2026-10-19
+mado	cadence	S033 recheck=90d opened=2026-10-19
+mado	cadence	S034 recheck=90d opened=2026-10-19
+mado	cadence	S035 recheck=on-release opened=2026-10-19
+mado	cadence	S036 recheck=on-release opened=2026-10-19
+mado	cadence	S037 recheck=on-release opened=2026-10-19
+mado	cadence	S038 recheck=on-release opened=2026-10-19
+mado	cadence	S039 recheck=on-release opened=2026-10-19
+tsukuroi	cadence	S001 recheck=90d opened=2026-10-19
+tsukuroi	cadence	S002 recheck=on-release opened=2026-10-19
+tsukuroi	cadence	S003 recheck=90d opened=2026-10-19
+tsukuroi	cadence	S004 recheck=180d opened=2026-10-19
+tsukuroi	cadence	S005 recheck=180d opened=2026-10-19
+tsukuroi	cadence	S006 recheck=on-release opened=2026-10-19
+tsukuroi	cadence	S007 recheck=on-release opened=2026-10-19
+tsukuroi	cadence	S008 recheck=on-release opened=2026-10-19
+tsukuroi	cadence	S009 recheck=on-release opened=2026-10-19
+tsukuroi	cadence	S010 recheck=180d opened=2026-10-19
+tsukuroi	cadence	S011 recheck=180d opened=2026-10-19
+tsukuroi	cadence	S012 recheck=180d opened=2026-10-19
+tsukuroi	cadence	S013 recheck=180d opened=2026-10-19
+tsukuroi	cadence	S014 recheck=90d opened=2026-10-19
+tsukuroi	cadence	S015 recheck=on-release opened=2026-10-19
+tsukuroi	cadence	S016 recheck=on-release opened=2026-10-19
+tsukuroi	cadence	S017 recheck=180d opened=2026-10-19
+tsukuroi	cadence	S018 recheck=90d opened=2026-10-19
+tsukuroi	cadence	S019 recheck=on-release opened=2026-10-19
+tsukuroi	cadence	S020 recheck=on-release opened=2026-10-19
+tsukuroi	cadence	S021 recheck=on-release opened=2026-10-19
+tsukuroi	cadence	S022 recheck=on-release opened=2026-10-19
+tsukuroi	cadence	S023 recheck=180d opened=2026-10-19
+tsukuroi	cadence	S024 recheck=on-release opened=2026-10-19
+tsukuroi	cadence	S025 recheck=on-release opened=2026-10-19
+tsukuroi	cadence	S026 recheck=180d opened=2026-10-19
+tsukuroi	cadence	S027 recheck=180d opened=2026-10-19
+tsukuroi	cadence	S028 recheck=on-release opened=2026-10-19
+tsukuroi	cadence	S029 recheck=90d opened=2026-10-19
+tsukuroi	cadence	S030 recheck=90d opened=2026-10-19
+tsukuroi	cadence	S031 recheck=90d opened=2026-10-19
+tsukuroi	cadence	S032 recheck=90d opened=2026-10-19
+tsukuroi	cadence	S033 recheck=90d opened=2026-10-19
+tsukuroi	cadence	S034 recheck=on-release opened=2026-10-19
+tabi	cadence	S001 recheck=on-release opened=2026-10-19
+tabi	cadence	S002 recheck=90d opened=2026-10-19
+tabi	cadence	S003 recheck=180d opened=2026-10-19
+tabi	cadence	S004 recheck=on-release opened=2026-10-19
+tabi	cadence	S005 recheck=90d opened=2026-10-19
+tabi	cadence	S006 recheck=90d opened=2026-10-19
+tabi	cadence	S007 recheck=90d opened=2026-10-19
+tabi	cadence	S008 recheck=90d opened=2026-10-19
+tabi	cadence	S009 recheck=90d opened=2026-10-19
+tabi	cadence	S010 recheck=90d opened=2026-10-19
+tabi	cadence	S011 recheck=90d opened=2026-10-19
+tabi	cadence	S012 recheck=90d opened=2026-10-19
+tabi	cadence	S013 recheck=on-release opened=2026-10-19
+tabi	cadence	S014 recheck=on-release opened=2026-10-19
+tabi	cadence	S015 recheck=on-release opened=2026-10-19
+tabi	cadence	S016 recheck=on-release opened=2026-10-19
+tabi	cadence	S017 recheck=on-release opened=2026-10-19
+tabi	cadence	S018 recheck=180d opened=2026-10-19
+tabi	cadence	S019 recheck=180d opened=2026-10-19
+tabi	cadence	S020 recheck=on-release opened=2026-10-19
+tabi	cadence	S021 recheck=on-release opened=2026-10-19
+tabi	cadence	S022 recheck=365d opened=2026-10-19
+tabi	cadence	S023 recheck=on-release opened=2026-10-19
+tabi	cadence	S024 recheck=on-release opened=2026-10-19
+tabi	cadence	S025 recheck=365d opened=2026-10-19
+tabi	cadence	S026 recheck=on-release opened=2026-10-19
+tabi	cadence	S027 recheck=on-release opened=2026-10-19
+tabi	cadence	S028 recheck=on-release opened=2026-10-19
+mori	cadence	S001 recheck=on-release opened=2026-10-19
+mori	cadence	S002 recheck=on-release opened=2026-10-19
+mori	cadence	S003 recheck=on-release opened=2026-10-19
+mori	cadence	S004 recheck=on-release opened=2026-10-19
+mori	cadence	S005 recheck=on-release opened=2026-10-19
+mori	cadence	S006 recheck=on-release opened=2026-10-19
+mori	cadence	S007 recheck=on-release opened=2026-10-19
+mori	cadence	S008 recheck=on-release opened=2026-10-19
+mori	cadence	S009 recheck=on-release opened=2026-10-19
+mori	cadence	S010 recheck=on-release opened=2026-10-19
+mori	cadence	S011 recheck=on-release opened=2026-10-19
+mori	cadence	S012 recheck=90d opened=2026-10-19
+mori	cadence	S013 recheck=on-release opened=2026-10-19
+mori	cadence	S014 recheck=on-release opened=2026-10-19
+mori	cadence	S015 recheck=on-release opened=2026-10-19
+mori	cadence	S016 recheck=on-release opened=2026-10-19
+mori	cadence	S017 recheck=on-release opened=2026-10-19
+mori	cadence	S018 recheck=90d opened=2026-10-19
+mori	cadence	S019 recheck=on-release opened=2026-10-19
+mori	cadence	S020 recheck=on-release opened=2026-10-19
+mori	cadence	S021 recheck=180d opened=2026-10-19
+mori	cadence	S022 recheck=on-release opened=2026-10-19
+mori	cadence	S023 recheck=on-release opened=2026-10-19
+mori	cadence	S024 recheck=90d opened=2026-10-19
+mori	cadence	S025 recheck=90d opened=2026-10-19
+mori	cadence	S026 recheck=on-release opened=2026-10-19
+mori	cadence	S027 recheck=on-release opened=2026-10-19
+mori	cadence	S028 recheck=180d opened=2026-10-19
+mori	cadence	S029 recheck=365d opened=2026-10-19
+mori	cadence	S030 recheck=180d opened=2026-10-19
+mori	cadence	S031 recheck=on-release opened=2026-10-19
+mori	cadence	S032 recheck=on-release opened=2026-10-19
+mori	cadence	S033 recheck=on-release opened=2026-10-19
+mori	cadence	S034 recheck=90d opened=2026-10-19
+chousa	cadence	S001 recheck=on-release opened=2026-10-19
+chousa	cadence	S002 recheck=365d opened=2026-10-19
+chousa	cadence	S003 recheck=365d opened=2026-10-19
+chousa	cadence	S004 recheck=on-release opened=2026-10-19
+chousa	cadence	S005 recheck=365d opened=2026-10-19
+chousa	cadence	S006 recheck=90d opened=2026-10-19
+chousa	cadence	S007 recheck=90d opened=2026-10-19
+chousa	cadence	S008 recheck=on-release opened=2026-10-19
+chousa	cadence	S009 recheck=365d opened=2026-10-19
+chousa	cadence	S010 recheck=365d opened=2026-10-19
+chousa	cadence	S011 recheck=365d opened=2026-10-19
+chousa	cadence	S012 recheck=365d opened=2026-10-19
+chousa	cadence	S013 recheck=365d opened=2026-10-19
+chousa	cadence	S014 recheck=365d opened=2026-10-19
+chousa	cadence	S015 recheck=90d opened=2026-10-19
+chousa	cadence	S016 recheck=365d opened=2026-10-19
+chousa	cadence	S017 recheck=on-release opened=2026-10-19
+chousa	cadence	S018 recheck=365d opened=2026-10-19
+kotodama	cadence	S001 recheck=on-release opened=2026-10-19
+kotodama	cadence	S002 recheck=on-release opened=2026-10-19
+kotodama	cadence	S003 recheck=on-release opened=2026-10-19
+kotodama	cadence	S004 recheck=on-release opened=2026-10-19
+kotodama	cadence	S005 recheck=180d opened=2026-10-19
+kotodama	cadence	S006 recheck=180d opened=2026-10-19
+kotodama	cadence	S007 recheck=on-release opened=2026-10-19
+kotodama	cadence	S008 recheck=365d opened=2026-10-19
+kotodama	cadence	S009 recheck=90d opened=2026-10-19
+kotodama	cadence	S010 recheck=on-release opened=2026-10-19
+kotodama	cadence	S011 recheck=365d opened=2026-10-19
+kotodama	cadence	S012 recheck=90d opened=2026-10-19
+kotodama	cadence	S013 recheck=365d opened=2026-10-19
+kotodama	cadence	S014 recheck=365d opened=2026-10-19
+kotodama	cadence	S015 recheck=365d opened=2026-10-19
+kotodama	cadence	S016 recheck=on-release opened=2026-10-19
+kotodama	cadence	S017 recheck=180d opened=2026-10-19
+kotodama	cadence	S018 recheck=365d opened=2026-10-19
+kotodama	cadence	S019 recheck=180d opened=2026-10-19
+kotodama	cadence	S020 recheck=90d opened=2026-10-19
+kotodama	cadence	S021 recheck=90d opened=2026-10-19
+kotodama	cadence	S022 recheck=365d opened=2026-10-19
+kotodama	cadence	S023 recheck=on-release opened=2026-10-19
+kotodama	cadence	S024 recheck=365d opened=2026-10-19
+kotodama	cadence	S025 recheck=180d opened=2026-10-19
+kotodama	cadence	S026 recheck=365d opened=2026-10-19
+kotodama	cadence	S027 recheck=180d opened=2026-10-19
+kotodama	cadence	S028 recheck=365d opened=2026-10-19
+kotodama	cadence	S029 recheck=365d opened=2026-10-19
+kotodama	cadence	S030 recheck=365d opened=2026-10-19
+kotodama	cadence	S031 recheck=90d opened=2026-10-19
+kotodama	cadence	S032 recheck=90d opened=2026-10-19
+kotodama	cadence	S033 recheck=90d opened=2026-10-19
+kotodama	cadence	S034 recheck=365d opened=2026-10-19
+kotodama	cadence	S035 recheck=180d opened=2026-10-19
+kotodama	cadence	S036 recheck=365d opened=2026-10-19
+kotodama	cadence	S037 recheck=365d opened=2026-10-19
+kotodama	cadence	S038 recheck=365d opened=2026-10-19
+kotodama	cadence	S039 recheck=365d opened=2026-10-19
+kotodama	cadence	S040 recheck=365d opened=2026-10-19
+kotodama	cadence	S041 recheck=365d opened=2026-10-19
+kotodama	cadence	S042 recheck=on-release opened=2026-10-19
+kotodama	cadence	S043 recheck=365d opened=2026-10-19
+kotodama	cadence	S044 recheck=365d opened=2026-10-19
+kotodama	cadence	S045 recheck=365d opened=2026-10-19
+kotodama	cadence	S046 recheck=365d opened=2026-10-19
+kotodama	cadence	S047 recheck=365d opened=2026-10-19
+souji	cadence	S001 recheck=on-release opened=2026-10-19
+souji	cadence	S002 recheck=on-release opened=2026-10-19
+souji	cadence	S003 recheck=on-release opened=2026-10-19
+souji	cadence	S004 recheck=on-release opened=2026-10-19
+souji	cadence	S005 recheck=on-release opened=2026-10-19
+souji	cadence	S006 recheck=on-release opened=2026-10-19
+souji	cadence	S007 recheck=on-release opened=2026-10-19
+souji	cadence	S008 recheck=on-release opened=2026-10-19
+souji	cadence	S009 recheck=on-release opened=2026-10-19
+souji	cadence	S010 recheck=on-release opened=2026-10-19
+souji	cadence	S011 recheck=90d opened=2026-10-19
+souji	cadence	S012 recheck=on-release opened=2026-10-19
+souji	cadence	S013 recheck=on-release opened=2026-10-19
+souji	cadence	S014 recheck=180d opened=2026-10-19
+souji	cadence	S015 recheck=180d opened=2026-10-19
+souji	cadence	S016 recheck=on-release opened=2026-10-19
+souji	cadence	S017 recheck=365d opened=2026-10-19
+souji	cadence	S018 recheck=on-release opened=2026-10-19
+souji	cadence	S019 recheck=on-release opened=2026-10-19
+souji	cadence	S020 recheck=on-release opened=2026-10-19
+souji	cadence	S021 recheck=on-release opened=2026-10-19
+souji	cadence	S022 recheck=365d opened=2026-10-19
+souji	cadence	S023 recheck=on-release opened=2026-10-19
+souji	cadence	S024 recheck=on-release opened=2026-10-19
+souji	cadence	S025 recheck=on-release opened=2026-10-19
+souji	cadence	S026 recheck=on-release opened=2026-10-19
+souji	cadence	S027 recheck=365d opened=2026-10-19
+souji	cadence	S028 recheck=365d opened=2026-10-19
+souji	cadence	S029 recheck=365d opened=2026-10-19
+souji	cadence	S030 recheck=365d opened=2026-10-19
+souji	cadence	S031 recheck=on-release opened=2026-10-19
+souji	cadence	S032 recheck=on-release opened=2026-10-19
+souji	cadence	S033 recheck=on-release opened=2026-10-19
+audio	cadence	S001 recheck=on-release opened=2026-10-19
+audio	cadence	S002 recheck=on-release opened=2026-10-19
+audio	cadence	S003 recheck=365d opened=2026-10-19
+audio	cadence	S004 recheck=180d opened=2026-10-19
+audio	cadence	S005 recheck=on-release opened=2026-10-19
+audio	cadence	S006 recheck=on-release opened=2026-10-19
+audio	cadence	S007 recheck=365d opened=2026-10-19
+audio	cadence	S008 recheck=on-release opened=2026-10-19
+audio	cadence	S009 recheck=frozen opened=2026-10-19
+audio	cadence	S010 recheck=frozen opened=2026-10-19
+audio	cadence	S011 recheck=on-release opened=2026-10-19
+audio	cadence	S012 recheck=on-release opened=2026-10-19
+audio	cadence	S013 recheck=on-release opened=2026-10-19
+audio	cadence	S014 recheck=on-release opened=2026-10-19
+audio	cadence	S015 recheck=on-release opened=2026-10-19
+game-dev-2d	cadence	S001 recheck=on-release opened=2026-10-19
+game-dev-2d	cadence	S002 recheck=on-release opened=2026-10-19
+game-dev-2d	cadence	S003 recheck=on-release opened=2026-10-19
+game-dev-2d	cadence	S004 recheck=on-release opened=2026-10-19
+game-dev-2d	cadence	S005 recheck=on-release opened=2026-10-19
+game-dev-2d	cadence	S006 recheck=on-release opened=2026-10-19
+game-dev-2d	cadence	S007 recheck=on-release opened=2026-10-19
+game-dev-2d	cadence	S008 recheck=on-release opened=2026-10-19
+game-dev-2d	cadence	S009 recheck=on-release opened=2026-10-19
+game-dev-2d	cadence	S010 recheck=on-release opened=2026-10-19
+game-dev-2d	cadence	S011 recheck=on-release opened=2026-10-19
+game-dev-2d	cadence	S012 recheck=on-release opened=2026-10-19
+game-dev-2d	cadence	S013 recheck=on-release opened=2026-10-19
+game-dev-2d	cadence	S014 recheck=on-release opened=2026-10-19
+game-dev-2d	cadence	S015 recheck=180d opened=2026-10-19
+game-dev-2d	cadence	S016 recheck=on-release opened=2026-10-19
+game-dev-2d	cadence	S017 recheck=on-release opened=2026-10-19
+game-dev-2d	cadence	S018 recheck=on-release opened=2026-10-19
+game-dev-2d	cadence	S019 recheck=on-release opened=2026-10-19
+game-dev-2d	cadence	S020 recheck=on-release opened=2026-10-19
+game-dev-2d	cadence	S021 recheck=on-release opened=2026-10-19
+game-dev-2d	cadence	S022 recheck=on-release opened=2026-10-19
+game-dev-2d	cadence	S023 recheck=on-release opened=2026-10-19
+game-dev-2d	cadence	S024 recheck=on-release opened=2026-10-19
+game-dev-2d	cadence	S025 recheck=90d opened=2026-10-19
+game-dev-2d	cadence	S026 recheck=on-release opened=2026-10-19
+game-dev-2d	cadence	S027 recheck=on-release opened=2026-10-19
+game-dev-2d	cadence	S028 recheck=on-release opened=2026-10-19
+game-dev-2d	cadence	S029 recheck=on-release opened=2026-10-19
+game-dev-2d	cadence	S030 recheck=on-release opened=2026-10-19
+game-dev-2d	cadence	S031 recheck=180d opened=2026-10-19
+game-dev-3d	cadence	S001 recheck=on-release opened=2026-10-19
+game-dev-3d	cadence	S002 recheck=on-release opened=2026-10-19
+game-dev-3d	cadence	S003 recheck=on-release opened=2026-10-19
+game-dev-3d	cadence	S004 recheck=on-release opened=2026-10-19
+game-dev-3d	cadence	S005 recheck=on-release opened=2026-10-19
+game-dev-3d	cadence	S006 recheck=on-release opened=2026-10-19
+game-dev-3d	cadence	S007 recheck=on-release opened=2026-10-19
+game-dev-3d	cadence	S008 recheck=90d opened=2026-10-19
+game-dev-3d	cadence	S009 recheck=90d opened=2026-10-19
+game-dev-3d	cadence	S010 recheck=90d opened=2026-10-19
+game-dev-3d	cadence	S011 recheck=on-release opened=2026-10-19
+game-dev-3d	cadence	S012 recheck=on-release opened=2026-10-19
+game-dev-3d	cadence	S013 recheck=on-release opened=2026-10-19
+game-dev-3d	cadence	S014 recheck=on-release opened=2026-10-19
+game-dev-3d	cadence	S015 recheck=on-release opened=2026-10-19
+game-dev-3d	cadence	S016 recheck=on-release opened=2026-10-19
+game-dev-3d	cadence	S017 recheck=on-release opened=2026-10-19
+game-dev-3d	cadence	S018 recheck=on-release opened=2026-10-19
+game-dev-3d	cadence	S019 recheck=on-release opened=2026-10-19
+game-dev-3d	cadence	S020 recheck=180d opened=2026-10-19
+game-dev-3d	cadence	S021 recheck=90d opened=2026-10-19
+game-dev-3d	cadence	S022 recheck=90d opened=2026-10-19
+game-dev-3d	cadence	S023 recheck=on-release opened=2026-10-19
+game-dev-3d	cadence	S024 recheck=on-release opened=2026-10-19
+game-dev-3d	cadence	S025 recheck=180d opened=2026-10-19
+game-dev-3d	cadence	S026 recheck=90d opened=2026-10-19
+game-dev-3d	cadence	S027 recheck=180d opened=2026-10-19
+game-dev-3d	cadence	S028 recheck=180d opened=2026-10-19
+game-dev-3d	cadence	S029 recheck=180d opened=2026-10-19
+game-dev-3d	cadence	S030 recheck=180d opened=2026-10-19
+game-dev-3d	cadence	S031 recheck=180d opened=2026-10-19
+game-dev-3d	cadence	S032 recheck=on-release opened=2026-10-19
+game-dev-3d	cadence	S033 recheck=on-release opened=2026-10-19
+game-dev-3d	cadence	S034 recheck=on-release opened=2026-10-19
+game-dev-3d	cadence	S035 recheck=on-release opened=2026-10-19
+game-dev-3d	cadence	S036 recheck=on-release opened=2026-10-19

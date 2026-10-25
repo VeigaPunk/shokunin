@@ -1,0 +1,3 @@
+# Seat: g3d bpy dissection — the documented bpy_rbw3d_render flake
+Lane: /home/vgpnk/Projects/shokunin/game-dev-3d-shokunin
+The `bpy_rbw3d_render` row is the lane's longest-standing documented stochastic cell. Dissect it: read its fixture + every receipt mentioning it (grep corpus/live), reproduce under quiet/load/fixed conditions, identify the mechanism (Blender version? render device? scene nondeterminism? contention?). Deliver a verdict: pinnable-deterministic vs genuine-stochastic vs envelope; if fixable, specify the fix. reports/round-93-adjacent/bpy-dissection.md (or reports/round-101/bpy-dissection.md). gitignored corpus/live/bpy-dissection/. No tracked writes, no commits.

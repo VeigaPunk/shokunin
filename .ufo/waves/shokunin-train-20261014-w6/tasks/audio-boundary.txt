@@ -1,0 +1,25 @@
+/skill:godspeed
+Read your brief file first — it is the task. Execute it exactly and stop.
+
+Brief: /home/vgpnk/Projects/shokunin/.ufo/waves/shokunin-train-20261014-w6/tasks/audio-boundary.txt
+Lane: audio
+Worktree/repo root: ~/Projects/prymeagnt/audio
+Round: r67
+Declared axis-move (verbatim): pin TRANSPORT as a measured first-class axis of the autodetect ledger: r65/r66 established that fd seekability and pipe transport silently fork outcomes (gsrt decodes 88 samples on pipe vs premature EOF on file; the stdin ffmpeg bridge is structurally dead; txw/smp readers refuse pipes outright) yet NO receipt field records transport. Declared falsifiable claim: at least one tracked member's verdict forks on transport (gsrt does — file vs pipe); the set of transport-forking members is exactly measurable. Land an additive transport arm on measure_audio.py (per-member {file, stdin-pipe, redirected-fd, fifo-path} detection+decode verdict matrix over the existing fixture set — or the sharpest discriminating subset with justification) recording transport explicitly in the ledger/receipt shape; all 102 prior ledger rows + receipts byte-stable.
+
+Seat: boundary
+Report path (write ONLY this file + scratch inside your brief's write scope): reports/round-67/r67-boundary.md
+Scratch: corpus/live/r67-boundary/
+
+Seat rules (non-negotiable):
+- You are a LEAF: no subagent dispatch, and never run git commit/push/merge/rebase/stash/checkout in any repo.
+- Write only your own report file and scratch inside your brief's write scope.
+- Never touch another lane's files, another repo's tracked content, or shared state.
+- If the round's declared claim proves false under measurement, report the actual observed outcome: a falsified claim is a useful round; never force it or soften the record.
+- Every claim needs evidence: exact commands, observed exits, receipt paths, or file:line refs resolvable on this host.
+- Domain actions that would reach users/maintainers (push, publish) are operator-owned: do not attempt them.
+- Baseline seats: freeze via `git archive HEAD` (tracked files only — NEVER recursively embed prior r*-baseline/frozen/tree dirs or node_modules; the archive command lists tracked files, so it already excludes untracked scratch — do NOT extract then re-archive a populated tree).
+
+Edge probes once author lands (scratch-only): (1) transports not in the declared set — /proc/self/fd indirection, socket, mmap'd tmpfs, O_PATH fd; (2) fifo with a racing writer vs lazy reader — detection timing at pipe-buffer boundaries (a 257-byte predicate split across two writes); (3) the transport axis on the r63/r64 valid-bits family (does u8/s16/s24/s32/s64 fork too, or only act-bridge members); (4) pipe + `-t` forced legs on each member (does forcing bypass the fork); (5) any reader whose pipe behavior changed between detection and decode mid-stream (slow-writer starvation). Scratch corpus/live/r67-boundary/.
+
+| godspeed

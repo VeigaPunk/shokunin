@@ -1,0 +1,76 @@
+{
+  "probes": [
+    {
+      "provider": "alibaba-token-plan",
+      "protocol": "openai",
+      "model_id": "deepseek-v4-flash-0731",
+      "method": "POST",
+      "url": "https://token-plan.ap-southeast-1.maas.aliyuncs.com/compatible-mode/v1/chat/completions",
+      "timeout_s": 120,
+      "prompt": "Count from 1 to 30, space separated, numbers only. No other text.",
+      "max_tokens": 64,
+      "auth_headers_sent": [
+        "Authorization"
+      ],
+      "request_body": {
+        "model": "deepseek-v4-flash-0731",
+        "stream": true,
+        "max_tokens": 64,
+        "temperature": 0,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Count from 1 to 30, space separated, numbers only. No other text."
+          }
+        ],
+        "stream_options": {
+          "include_usage": true
+        }
+      },
+      "status": 200,
+      "response_headers": {
+        "content-type": "text/event-stream; charset=utf-8",
+        "grpc-encoding": "<len=8>",
+        "grpc-accept-encoding": "<len=4>",
+        "x-envoy-upstream-service-time": "1232",
+        "cache-control": "<len=8>",
+        "date": "Thu, 15 Oct 2026 11:33:11 GMT",
+        "server": "istio-envoy",
+        "x-request-id": "42e71148-7777-461e-9030-181480f03e95",
+        "req-cost-time": "<len=4>",
+        "req-arrive-time": "<len=13>",
+        "resp-start-time": "<len=13>",
+        "transfer-encoding": "<len=7>"
+      },
+      "content_type": "text/event-stream; charset=utf-8",
+      "sse_line_count": 46,
+      "raw_preview": "data: {\"model\":\"deepseek-v4-flash-0731\",\"id\":\"chatcmpl-42e71148-7777-461e-9030-181480f03e95\",\"created\":1792063991,\"object\":\"chat.completion.chunk\",\"usage\":null,\"choices\":[{\"logprobs\":null,\"index\":0,\"delta\":{\"reasoning_content\":\"\",\"content\":\"\",\"role\":\"assistant\"},\"finish_reason\":null}]}\n\ndata: {\"id\":\"chatcmpl-42e71148-7777-461e-9030-181480f03e95\",\"object\":\"chat.completion.chunk\",\"created\":1792063991,\"model\":\"deepseek-v4-flash-0731\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\"We\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\n\ndata: {\"id\":\"chatcmpl-42e71148-7777-461e-9030-181480f03e95\",\"object\":\"chat.completion.chunk\",\"created\":1792063991,\"model\":\"deepseek-v4-flash-0731\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" need answer exactly\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\n\ndata: {\"id\":\"chatcmpl-42e71148-7777-461e-9030-181480f03e95\",\"object\":\"chat.completion.chunk\",\"created\":1792063991,\"model\":\"deepseek-v4-flash-0731\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\".\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\n\ndata: {\"id\":\"chatcmpl-42e71148-7777-461e-9030-181480f03e95\",\"object\":\"chat.completion.chunk\",\"created\":1792063991,\"model\":\"deepseek-v4-flash-0731\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\",\"reasoning_content\":\" Count\"},\"logprobs\":null,\"finish_reason\":null}],\"usage\":null}\n\ndata: {\"id\":\"chatcmpl-42e71148-7777-461e-9030-181480f03e95\",\"object\":\"chat.completion.chunk\",\"created\":1792",
+      "streaming_supported": true,
+      "content_chars": 51,
+      "reasoning_chars": 94,
+      "content_delta_count": 11,
+      "reasoning_delta_count": 8,
+      "content_sample": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 ",
+      "ttft_content_ms": 2496,
+      "ttft_reasoning_ms": 2287,
+      "total_ms": 2863,
+      "usage": {
+        "prompt_tokens": 101,
+        "total_tokens": 165,
+        "completion_tokens": 64,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 23
+        }
+      },
+      "usage_completion_tokens": 64,
+      "usage_prompt_tokens": 101,
+      "decode_span_ms": 304,
+      "tps_basis": "server_usage_completion_tokens",
+      "tps": 207.17,
+      "tps_note": "single small draw; decode span excludes TTFT"
+    }
+  ]
+}

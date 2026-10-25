@@ -1,0 +1,1612 @@
+{
+  "schema": "hyaku-unspawned-primary-backlog-v1",
+  "count": 72,
+  "dispatched": false,
+  "items": [
+    {
+      "url": "https://docs.vllm.ai/en/stable/api/vllm/entrypoints/serve/instrumentator/health/",
+      "rows": [
+        {
+          "lane": "kama",
+          "id": "S004",
+          "url": "https://docs.vllm.ai/en/stable/api/vllm/entrypoints/serve/instrumentator/health/",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "vLLM `/health` handler semantics",
+          "anchor": "`health(raw_request)` source block, stable docs page footer 2026-10-17",
+          "teaches": "`/health` calls engine `check_health()` and render-only servers always return 200.",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/runtime-health-surface-matrix.md",
+          "lane_base": "2e254a1763a9c08aa07fc53081287f506c447d84"
+        }
+      ]
+    },
+    {
+      "url": "https://docs.vllm.ai/en/stable/features/quantization/",
+      "rows": [
+        {
+          "lane": "kama",
+          "id": "S005",
+          "url": "https://docs.vllm.ai/en/stable/features/quantization/",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "vLLM quantization and GGUF load support by hardware",
+          "anchor": "\u00a7Supported Hardware table; source docs/features/quantization/README.md commit d4ee7fe7a98b3012f64309e18dd425e565069a01 (2026-09-14)",
+          "teaches": "GGUF row shows support on NVIDIA Volta through Hopper and AMD GPU, no support on Intel GPU, x86 CPU or Arm CPU",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/gguf-runtime-compatibility-boundary.md",
+          "lane_base": "2e254a1763a9c08aa07fc53081287f506c447d84"
+        }
+      ]
+    },
+    {
+      "url": "https://docs.vllm.ai/en/stable/serving/online_serving/",
+      "rows": [
+        {
+          "lane": "kama",
+          "id": "S002",
+          "url": "https://docs.vllm.ai/en/stable/serving/online_serving/",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "vLLM server route inventory",
+          "anchor": "\u00a7Instrumentator APIs, stable docs page footer 2026-10-08",
+          "teaches": "`/health`, `/v1/models`, `/load`, `/version`, `/metrics` are distinct instrumentator surfaces.",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/runtime-health-surface-matrix.md",
+          "lane_base": "2e254a1763a9c08aa07fc53081287f506c447d84"
+        }
+      ]
+    },
+    {
+      "url": "https://docs.vllm.ai/en/stable/usage/metrics/",
+      "rows": [
+        {
+          "lane": "kama",
+          "id": "S003",
+          "url": "https://docs.vllm.ai/en/stable/usage/metrics/",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "vLLM metric names, request phases and histogram-cardinality design",
+          "anchor": "\u00a7General Metrics and \u00a7Custom Histogram Buckets \u2014 stable docs page dated 2026-10-17",
+          "teaches": "Exact vllm: metric names for queue, running, KV-cache, TTFT, TPOT, e2e latency and tokens, plus the custom-bucket cardinality warning.",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/serving-metrics-crosswalk.md",
+          "lane_base": "2e254a1763a9c08aa07fc53081287f506c447d84"
+        }
+      ]
+    },
+    {
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0287101",
+      "rows": [
+        {
+          "lane": "kotodama",
+          "id": "S031",
+          "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0287101",
+          "kind": "paper",
+          "tier": "A",
+          "scope": "frequency of women's hunting in the paper's 63-society ethnographic sample (a contested figure)",
+          "anchor": "Results para. 1 and Discussion; published 2023-06-28; corrected 2024-08-22 (see S033)",
+          "teaches": "50 of 63 documented foraging societies record women hunting, 36 of 41 scored cases intentional; Agta and Aka show women's own toolkits and partners \u2014 evidence against a universal male-hunt rule, not a settled fraction",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "90d",
+          "used_by": "corpus/knowledge/culture-material/hunting-foraging-subsistence.md",
+          "lane_base": "bff83ba65bf9559af4d7567e81703059667a0005"
+        }
+      ]
+    },
+    {
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0309543",
+      "rows": [
+        {
+          "lane": "kotodama",
+          "id": "S033",
+          "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0309543",
+          "kind": "paper",
+          "tier": "A",
+          "scope": "the authors' own methodological correction to S031",
+          "anchor": "full correction text, sections Definition of forager and Selection criteria; published 2024-08-22",
+          "teaches": "concerns about reliability and replicability were raised; the authors add page-level locators, define forager broadly and describe society selection \u2014 the honest status of the 79% figure",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "90d",
+          "used_by": "corpus/knowledge/culture-material/hunting-foraging-subsistence.md",
+          "lane_base": "bff83ba65bf9559af4d7567e81703059667a0005"
+        }
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows/win32/debug/pe-format",
+      "rows": [
+        {
+          "lane": "revenger",
+          "id": "S009",
+          "url": "https://learn.microsoft.com/en-us/windows/win32/debug/pe-format",
+          "kind": "spec",
+          "tier": "A",
+          "scope": "PE `.rsrc` field layouts: directory table, entry, string, data entry",
+          "anchor": "\"The .rsrc Section\" and its four subsections; ms.date 2026-09-10, git_commit_id 55e845e9f3a6a3261f59a2f460f61edc25ffcdd5",
+          "teaches": "Exact offsets, sizes, high-bit flag semantics and the Type/Name/Language tree rule needed to decode a resource tree.",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "180d",
+          "used_by": "corpus/knowledge/pe-resource-directory-layout.md, corpus/knowledge/utf16-unpaired-surrogates-in-resource-names.md",
+          "lane_base": "d97761952be256d145d298022de03091de91d358"
+        }
+      ]
+    },
+    {
+      "url": "https://man.archlinux.org/man/access.2",
+      "rows": [
+        {
+          "lane": "tsukuroi",
+          "id": "S034",
+          "url": "https://man.archlinux.org/man/access.2",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "How root's permission checks use permitted (not effective) capabilities, grounding the snapper EACCES falsifier",
+          "anchor": "DESCRIPTION, paragraph on privileged processes; Linux man-pages 6.19 footer dated 2026-02-08",
+          "teaches": "For root, access checks use the permitted capability set, so a capability-bounded root process can be denied a write that unbounded root passes",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/snapper-eacces-mechanism.md, corpus/knowledge/root-dac-decision-r12.md",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        },
+        {
+          "lane": "tsukuroi",
+          "id": "S038",
+          "url": "https://man.archlinux.org/man/access.2",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "access(2)/faccessat as a permission-check proxy for root: real IDs and permitted capabilities, not an actual operation",
+          "anchor": "DESCRIPTION, paragraphs on real-UID checks and on what access() does not answer; Linux man-pages 6.19 footer dated 2026-02-08",
+          "teaches": "supersedes S034 \u2014 access(2) answers a proxy permission question using the permitted capability set for root and explicitly does not attempt the operation, so a passing or failing check does not establish whether a real write or mkdir by that process would succeed or be denied",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/root-dac-decision-r12.md",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        }
+      ]
+    },
+    {
+      "url": "https://man.archlinux.org/man/alpm-hooks.5",
+      "rows": [
+        {
+          "lane": "tsukuroi",
+          "id": "S008",
+          "url": "https://man.archlinux.org/man/alpm-hooks.5",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Same-name hook overrides and disabling a hook through a higher-priority directory",
+          "anchor": "OVERRIDING HOOKS; Pacman 7.1.0 man-page footer dated 2026-10-15",
+          "teaches": "A higher-priority hook directory can override a same-name hook, and a /dev/null symlink disables it",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/degraded-triage-r4.md, corpus/knowledge/boot-writers-r19.md",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        }
+      ]
+    },
+    {
+      "url": "https://man.archlinux.org/man/mkdir.2",
+      "rows": [
+        {
+          "lane": "tsukuroi",
+          "id": "S035",
+          "url": "https://man.archlinux.org/man/mkdir.2",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "mkdir/mkdirat ERRORS semantics for directory creation: DAC denial versus read-only filesystem, existing path and unsupported-filesystem states",
+          "anchor": "ERRORS: EACCES, EROFS, EEXIST, EPERM and ENOSPC; Linux man-pages 6.19 footer dated 2026-02-11",
+          "teaches": "mkdir reports distinct errnos for distinct denial classes \u2014 EACCES when the parent directory denies write or a path component denies search, EROFS on a read-only filesystem, EEXIST when the path already exists, EPERM when the filesystem cannot create directories; errno discrimination is required before attributing a failure to DAC",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/root-dac-decision-r12.md",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        }
+      ]
+    },
+    {
+      "url": "https://man.archlinux.org/man/systemd-debug-generator.8",
+      "rows": [
+        {
+          "lane": "tsukuroi",
+          "id": "S025",
+          "url": "https://man.archlinux.org/man/systemd-debug-generator.8",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "systemd host and initrd breakpoints and debug-shell parameter semantics",
+          "anchor": "KERNEL COMMAND LINE > systemd.break=; systemd 262.1 man-page footer",
+          "teaches": "The man page says rd.systemd.break applies only in the initrd and systemd.break only on the host; breakpoints were added in v258",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/initramfs-v42-sysroot-recovery.md",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        }
+      ]
+    },
+    {
+      "url": "https://man.archlinux.org/man/systemd.exec.5",
+      "rows": [
+        {
+          "lane": "tsukuroi",
+          "id": "S028",
+          "url": "https://man.archlinux.org/man/systemd.exec.5",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "systemd unit CapabilityBoundingSet behavior for spawned process capabilities",
+          "anchor": "CapabilityBoundingSet= under execution environment options; systemd 262.1 man-page footer",
+          "teaches": "CapabilityBoundingSet includes listed capabilities in the bounding set and removes the others; unit text is a process restriction, not a standalone filesystem permission test",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/degraded-triage-r4.md, corpus/knowledge/snapper-eacces-mechanism.md, corpus/knowledge/root-dac-decision-r12.md",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        },
+        {
+          "lane": "tsukuroi",
+          "id": "S041",
+          "url": "https://man.archlinux.org/man/systemd.exec.5",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Unit namespace path-view mechanisms relevant to a read-only `/`: ProtectSystem= values, ReadOnlyPaths=, BindReadOnlyPaths=, TemporaryFileSystem= and the RootDirectory=/RootImage= root views",
+          "anchor": "\u00a7 RootDirectory=, \u00a7 RootImage= and \u00a7 BindPaths=/BindReadOnlyPaths= (PATHS); \u00a7 ProtectSystem=, \u00a7 ReadWritePaths=/ReadOnlyPaths= and \u00a7 TemporaryFileSystem= (SANDBOXING); systemd 262.1 man-page footer; page opened 2026-10-20",
+          "teaches": "Among ProtectSystem= values, `full` mounts `/usr/`, `/boot`, `/efi` and `/etc/` read-only but does not cover `/`, while `strict` mounts the entire hierarchy read-only except `/dev/`, `/proc/` and `/sys/`, with `ReadWritePaths=`, `StateDirectory=`/`LogsDirectory=` and the `PrivateTmp=` `/tmp` caveat as documented exceptions; `BindReadOnlyPaths=` creates read-only bind mounts and `TemporaryFileSystem=` accepts the `ro` mount option, so a read-only unit view of `/` is not exclusive to strict or `ReadOnlyPaths=`; the `RootDirectory=`/`RootImage=` sections present root path views without stating that they make the root read-only, and the page establishes no host's active configuration",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/root-dac-correction-r13.md",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        },
+        {
+          "lane": "tsukuroi",
+          "id": "S044",
+          "url": "https://man.archlinux.org/man/systemd.exec.5",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "The documented `ProtectSystem=` argument domain, distinguished from the page's separately documented unit-side read-only mechanisms",
+          "anchor": "\u00a7 ProtectSystem= under SANDBOXING; \u00a7 ReadWritePaths=/ReadOnlyPaths= and \u00a7 TemporaryFileSystem= for the separate mechanisms; systemd 262.1 man-page footer; page opened 2026-10-20",
+          "teaches": "Complements S041 without redefining it \u2014 the \u00a7 ProtectSystem= entry reads \u201cTakes a boolean argument or the special values \"full\" or \"strict\".\u201d, so the boolean and the two named modes are the documented values; `full` and `strict` are described in their own sentences, the page lists `ReadOnlyPaths=`, `BindReadOnlyPaths=` and `TemporaryFileSystem=` `ro` mounts as separate unit-side mechanisms, and its \u201cThis setting cannot ensure protection in all cases.\u201d is a protection limitation, not a statement that the option's value domain is open-ended; this row adds no host observation or new semantic surface",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/source-scope-correction-r14.md",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        },
+        {
+          "lane": "tsukuroi",
+          "id": "S046",
+          "url": "https://man.archlinux.org/man/systemd.exec.5",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "The documented `ProtectSystem=` argument domain and a stable renderer-independent locator for its first definition, as re-opened for the r15 locator/positive-domain clarifications",
+          "anchor": "\u00a7 SANDBOXING > \u00a7 ProtectSystem=, first definition sentence, located by heading rather than rendered line numbers; systemd 262.1 man-page footer, core/systemd 262.1-1; page opened 2026-10-20",
+          "teaches": "The \u00a7 ProtectSystem= first definition reads \u201cTakes a boolean argument or the special values \"full\" or \"strict\".\u201d, so the documented values are a boolean and the special values `full` and `strict`; this supplements S041 and S044 without redefining them, and the stable SANDBOXING > ProtectSystem= heading locates the sentence without a renderer-specific line. It documents the option domain only, not an exhaustive parser proof or the absence of other page text",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/source-locator-clarification-r15.md",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        }
+      ]
+    },
+    {
+      "url": "https://man7.org/linux/man-pages/man7/pipe.7.html",
+      "rows": [
+        {
+          "lane": "mori",
+          "id": "S031",
+          "url": "https://man7.org/linux/man-pages/man7/pipe.7.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "pipe write behavior when readers close and SIGPIPE generation",
+          "anchor": "I/O on pipes and FIFOs; man-pages 6.19, fetched 2026-09-09",
+          "teaches": "When all pipe read ends close, a write generates SIGPIPE; that pipe behavior explains a producer failure after an early-exiting consumer.",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/verdict-contract-r13.md",
+          "lane_base": "83d65857aca66552680a72958bdf0c77ab9cefc0"
+        }
+      ]
+    },
+    {
+      "url": "https://pitest.org/quickstart/incremental_analysis/",
+      "rows": [
+        {
+          "lane": "tameshi",
+          "id": "S041",
+          "url": "https://pitest.org/quickstart/incremental_analysis/",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "F7 \u2014 PIT's result-reuse assumptions",
+          "anchor": "\u00a7Incremental analysis, paragraph after the optimisation list; page as accessed 2026-10-19, version not stated",
+          "teaches": "PIT states that all but one of its reuse optimisations introduce potential error \u2014 reuse of a prior verdict is an inference, not an observation",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "90d",
+          "used_by": "corpus/knowledge/incremental-pin-disposition.md",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        },
+        {
+          "lane": "tameshi",
+          "id": "S047",
+          "url": "https://pitest.org/quickstart/incremental_analysis/",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "PIT's documented experimental incremental-analysis assumptions, not a general reuse guarantee",
+          "anchor": "\u00a7Incremental analysis, numbered optimisations 1\u20135 and dependency paragraphs; accessed 2026-10-20, page version unstated",
+          "teaches": "supersedes S041 \u2014 the dependency assumption is unproven; item 4 prioritises an old killing test, while proposed item 5 is not yet implemented; the potential-error sentence covers optimisations, not only live result-reuse skips",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "90d",
+          "used_by": "corpus/knowledge/incremental-pin-disposition.md",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        },
+        {
+          "lane": "tameshi",
+          "id": "S048",
+          "url": "https://pitest.org/quickstart/incremental_analysis/",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "PIT's item-4 prioritisation distinction without resolving an ambiguous pronoun",
+          "anchor": "\u00a7Incremental analysis, numbered items 4\u20135 and dependency paragraphs; accessed 2026-10-20, page version unstated",
+          "teaches": "supersedes S047 \u2014 item 4 is prioritisation rather than a reuse skip; no claim here resolves its pronoun to test versus mutation; item 5 is explicitly not yet implemented and the dependency assumption remains unproven",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "90d",
+          "used_by": "corpus/knowledge/incremental-pin-disposition.md",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        }
+      ]
+    },
+    {
+      "url": "https://prometheus.io/docs/practices/naming/",
+      "rows": [
+        {
+          "lane": "kama",
+          "id": "S018",
+          "url": "https://prometheus.io/docs/practices/naming/",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Prometheus naming, unit suffix and label-cardinality guidance",
+          "anchor": "\u00a7Metric names, \u00a7Labels and \u00a7Base Units; source docs/practices/naming.md @ prometheus/docs 410443d27be8bc911af86a826beb13c25d46e4dd (2026-01-27)",
+          "teaches": "Base-unit and suffix naming rules plus the high-cardinality label caution that bounds any kama-authored metric or panel.",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "90d",
+          "used_by": "corpus/knowledge/serving-metrics-crosswalk.md",
+          "lane_base": "2e254a1763a9c08aa07fc53081287f506c447d84"
+        }
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/torvalds/linux/c03c1a14507dfaf8b856c2608f9ac216021fc222/mm/memcontrol.c",
+      "rows": [
+        {
+          "lane": "mori",
+          "id": "S004",
+          "url": "https://raw.githubusercontent.com/torvalds/linux/c03c1a14507dfaf8b856c2608f9ac216021fc222/mm/memcontrol.c",
+          "kind": "code",
+          "tier": "A",
+          "scope": "memcg OOM report path labels and memory-event display",
+          "anchor": "mm/memcontrol.c:1820,1825,4965-4966; Linux master commit c03c1a14507dfaf8b856c2608f9ac216021fc222 (2026-10-18)",
+          "teaches": "The OOM summary appends the victim and OOM cgroup paths at event time, while the event display reads the memcg counter.",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/oom-kill-counter-kernel-only-r12.md, corpus/knowledge/kernel-oom-line-attribution-r12.md",
+          "lane_base": "83d65857aca66552680a72958bdf0c77ab9cefc0"
+        }
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/torvalds/linux/v7.2/mm/oom_kill.c",
+      "rows": [
+        {
+          "lane": "mori",
+          "id": "S003",
+          "url": "https://raw.githubusercontent.com/torvalds/linux/v7.2/mm/oom_kill.c",
+          "kind": "code",
+          "tier": "A",
+          "scope": "Linux 7.2 kernel OOM counter updates and kernel summary/victim records",
+          "anchor": "mm/oom_kill.c:447,935-936,945; tag v7.2",
+          "teaches": "Tie host and memcg OOM counter updates to the kernel victim path and use event-time kernel records for attribution.",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/oom-kill-counter-kernel-only-r12.md, corpus/knowledge/kill-classes-by-message-id-r12.md, corpus/knowledge/kernel-oom-line-attribution-r12.md, corpus/knowledge/userspace-oom-killers-r12.md",
+          "lane_base": "83d65857aca66552680a72958bdf0c77ab9cefc0"
+        }
+      ]
+    },
+    {
+      "url": "https://stryker-mutator.io/docs/mutation-testing-elements/mutant-states-and-metrics/",
+      "rows": [
+        {
+          "lane": "tameshi",
+          "id": "S001",
+          "url": "https://stryker-mutator.io/docs/mutation-testing-elements/mutant-states-and-metrics/",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Stryker Mutator's own mutant-state and metric definitions",
+          "anchor": "\u00a7Mutant states and \u00a7Metrics @ docs page fetched 2026-10-19",
+          "teaches": "eight mutant states; score = detected / valid x 100 with detected = killed + timeout; compile and runtime errors excluded; a separate score on covered code; test states killing, covering, not covering",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "180d",
+          "used_by": "corpus/knowledge/mutation-score-semantics.md, corpus/knowledge/mutation-case-kumitate-sources-check.md",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        }
+      ]
+    },
+    {
+      "url": "https://stryker-mutator.io/docs/stryker-js/incremental/",
+      "rows": [
+        {
+          "lane": "tameshi",
+          "id": "S003",
+          "url": "https://stryker-mutator.io/docs/stryker-js/incremental/",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "StrykerJS incremental verdict reuse",
+          "anchor": "\u00a7Incremental mode and \u00a7Limitations @ docs page fetched 2026-10-19",
+          "teaches": "when a prior verdict may be reused, and the declared blind spots: env vars, dependencies and .snap files are not detected; the dry run stays required",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "180d",
+          "used_by": "corpus/knowledge/incremental-pin-disposition.md",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        }
+      ]
+    },
+    {
+      "url": "https://wiki.archlinux.org/title/General_troubleshooting?oldid=882746",
+      "rows": [
+        {
+          "lane": "tsukuroi",
+          "id": "S026",
+          "url": "https://wiki.archlinux.org/title/General_troubleshooting?oldid=882746",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Boot-stage recovery shells and Arch chroot or sysroot package-repair options",
+          "anchor": "Boot problems > Recovery shells; Fixing a broken system; oldid 882746 (2026-08-05)",
+          "teaches": "The page distinguishes rescue, emergency and init=/bin/sh shells and documents arch-chroot -S and pacman --sysroot recovery routes",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "180d",
+          "used_by": "corpus/knowledge/initramfs-v42-sysroot-recovery.md",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        }
+      ]
+    },
+    {
+      "url": "https://wiki.archlinux.org/title/Mkinitcpio?oldid=886405",
+      "rows": [
+        {
+          "lane": "tsukuroi",
+          "id": "S014",
+          "url": "https://wiki.archlinux.org/title/Mkinitcpio?oldid=886405",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Busybox versus systemd initramfs behavior, runtime hooks and busybox break recovery points",
+          "anchor": "systemd-based initramfs; Busybox-based initramfs; Runtime hooks; Runtime customization; oldid 886405 (2026-09-28)",
+          "teaches": "The systemd hook distinguishes initramfs flavors; busybox runtime hooks include break=premount and break=postmount shells before or after root mounting",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "90d",
+          "used_by": "corpus/knowledge/initramfs-v42-sysroot-recovery.md, corpus/knowledge/journal-boot-plane.md",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        }
+      ]
+    },
+    {
+      "url": "https://wiki.archlinux.org/title/Pacman/Pacnew_and_Pacsave?oldid=869214",
+      "rows": [
+        {
+          "lane": "tsukuroi",
+          "id": "S011",
+          "url": "https://wiki.archlinux.org/title/Pacman/Pacnew_and_Pacsave?oldid=869214",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Creation, three-way MD5 behavior, discovery and current-state limits of pacnew/pacsave files",
+          "anchor": "Why these files are created; Types explained; Locating .pac* files; oldid 869214 (2026-03-15)",
+          "teaches": "Pacnew and pacsave require manual handling; filesystem discovery gives current presence while the pacman log records historical occurrences only",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "180d",
+          "used_by": "corpus/knowledge/pacnew-plane.md",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        }
+      ]
+    },
+    {
+      "url": "https://wiki.archlinux.org/title/Snapper?oldid=870168",
+      "rows": [
+        {
+          "lane": "tsukuroi",
+          "id": "S023",
+          "url": "https://wiki.archlinux.org/title/Snapper?oldid=870168",
+          "kind": "docs",
+          "tier": "B",
+          "scope": "Snapper create-config semantics and the archinstall pre-existing @.snapshots caveat",
+          "anchor": "Creating a new configuration; note on archinstall versions before 3.0.5; oldid 870168 (2026-03-29)",
+          "teaches": "create-config creates a .snapshots subvolume, while the documented pre-existing @.snapshots layout can cause a separate already-present failure; disputed sections remain scoped out",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "180d",
+          "used_by": "corpus/knowledge/snapper-eacces-mechanism.md",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        }
+      ]
+    },
+    {
+      "url": "https://wiki.archlinux.org/title/System_maintenance?oldid=885170",
+      "rows": [
+        {
+          "lane": "tsukuroi",
+          "id": "S010",
+          "url": "https://wiki.archlinux.org/title/System_maintenance?oldid=885170",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Arch package-manager doctrine for pre-upgrade news, full upgrades, pacnew handling and rollback consideration",
+          "anchor": "Read before upgrading the system; Avoid certain pacman commands; Partial upgrades are unsupported; oldid 885170 (2026-09-07)",
+          "teaches": "ArchWiki directs readers to check news before upgrading and rejects bare -Sy in favor of a full upgrade; it also advises prompt pacnew attention and considering broken-update rollback",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "180d",
+          "used_by": "corpus/knowledge/arch-news-gate-2026.md, corpus/knowledge/pacnew-plane.md, corpus/knowledge/update-safety-note.md, corpus/knowledge/closeout-r11.md, corpus/knowledge/degraded-triage-r4.md, corpus/knowledge/driver-firmware-plane.md, corpus/knowledge/host-health-report-r3.md, corpus/knowledge/update-safety-v2.md",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        }
+      ]
+    },
+    {
+      "url": "https://wiki.archlinux.org/title/Unified_kernel_image?oldid=886457",
+      "rows": [
+        {
+          "lane": "tsukuroi",
+          "id": "S017",
+          "url": "https://wiki.archlinux.org/title/Unified_kernel_image?oldid=886457",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "UKI assembly routes, kernel command-line source and mkinitcpio preset settings",
+          "anchor": "Preparing a unified kernel image; mkinitcpio, kernel-install and ukify subsections; oldid 886457 (2026-09-29)",
+          "teaches": "The article documents distinct mkinitcpio, kernel-install and ukify routes, plus /etc/cmdline.d and PRESET_uki configuration",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "180d",
+          "used_by": "corpus/knowledge/initramfs-v42-sysroot-recovery.md",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        }
+      ]
+    },
+    {
+      "url": "https://www.electronjs.org/docs/latest/tutorial/asar-integrity",
+      "rows": [
+        {
+          "lane": "kaidoku",
+          "id": "S014",
+          "url": "https://www.electronjs.org/docs/latest/tutorial/asar-integrity",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Electron's documented ASAR integrity mechanism and platform/version boundary",
+          "anchor": "Current docs, meta-docs-sha `60169b45c12488c6fda237af7f6425526a7ce5f0`; `Version support` and `How it works`",
+          "teaches": "Check that integrity scope and platform match the inspected package; this describes ASAR, not every code-bearing file.",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "corpus/lessons/round-13.md",
+          "lane_base": "1e1bbef45ea0b92e443cdca04b814e74dfecbca1"
+        }
+      ]
+    },
+    {
+      "url": "https://www.electronjs.org/docs/latest/tutorial/fuses",
+      "rows": [
+        {
+          "lane": "kaidoku",
+          "id": "S012",
+          "url": "https://www.electronjs.org/docs/latest/tutorial/fuses",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Electron's current fuse descriptions, including V8 snapshot selection and packaging-time toggles",
+          "anchor": "Current docs, meta-docs-sha `60169b45c12488c6fda237af7f6425526a7ce5f0`; `Current fuses` > `loadBrowserProcessSpecificV8Snapshot`",
+          "teaches": "The official page identifies a distinct browser-process V8 snapshot fuse and its documented behavior.",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "corpus/lessons/round-13.md",
+          "lane_base": "1e1bbef45ea0b92e443cdca04b814e74dfecbca1"
+        }
+      ]
+    },
+    {
+      "url": "https://www.freedesktop.org/software/systemd/man/latest/journalctl.html",
+      "rows": [
+        {
+          "lane": "mori",
+          "id": "S014",
+          "url": "https://www.freedesktop.org/software/systemd/man/latest/journalctl.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "journal source selection, cursor pagination and field-limited JSON output",
+          "anchor": "Source Options; Filtering Options --after-cursor:187-190; Output Options --output-fields:489-492; systemd 262 man page opened 2026-10-19",
+          "teaches": "Select journal scope and cursor bounds, and request only structured fields for count-only queries.",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/kill-classes-by-message-id-r12.md, corpus/knowledge/kernel-oom-line-attribution-r12.md, corpus/knowledge/structured-journal-scopes-r13.md, corpus/knowledge/journal-positive-evidence-r15.md, corpus/knowledge/journal-cursor-window-r16.md",
+          "lane_base": "83d65857aca66552680a72958bdf0c77ab9cefc0"
+        }
+      ]
+    },
+    {
+      "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd-oomd.service.html",
+      "rows": [
+        {
+          "lane": "mori",
+          "id": "S007",
+          "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd-oomd.service.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "systemd-oomd PSI monitoring, kill selection and service behavior",
+          "anchor": "Description; System requirements and configuration; Options --dry-run; Signals SIGHUP; systemd 262 man page opened 2026-10-19",
+          "teaches": "oomd selects eligible descendant cgroups and sends SIGKILL to all processes in the selected cgroup.",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/oom-kill-counter-kernel-only-r12.md, corpus/knowledge/userspace-oom-killers-r12.md",
+          "lane_base": "83d65857aca66552680a72958bdf0c77ab9cefc0"
+        }
+      ]
+    },
+    {
+      "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.journal-fields.html",
+      "rows": [
+        {
+          "lane": "mori",
+          "id": "S015",
+          "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.journal-fields.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "journal MESSAGE, MESSAGE_ID and trusted metadata fields",
+          "anchor": "User Journal Fields > MESSAGE=:32-39 and MESSAGE_ID=:41-44; Trusted Journal Fields > _TRANSPORT=:204; systemd 262 man page opened 2026-10-19",
+          "teaches": "MESSAGE is display text rather than metadata; MESSAGE_ID is the typed key and underscore-prefixed fields are trusted.",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/kill-classes-by-message-id-r12.md, corpus/knowledge/kernel-oom-line-attribution-r12.md, corpus/knowledge/structured-journal-scopes-r13.md, corpus/knowledge/journal-alarm-routing-r14.md, corpus/knowledge/journal-positive-evidence-r15.md, corpus/knowledge/journal-cursor-window-r16.md",
+          "lane_base": "83d65857aca66552680a72958bdf0c77ab9cefc0"
+        },
+        {
+          "lane": "mori",
+          "id": "S037",
+          "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.journal-fields.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "subject UNIT/USER_UNIT versus emitting-process _SYSTEMD_UNIT metadata",
+          "anchor": "User Journal Fields > UNIT=, USER_UNIT= (added version 251); Trusted Journal Fields > _SYSTEMD_CGROUP= and _SYSTEMD_UNIT=; systemd 262 page opened 2026-10-20",
+          "teaches": "UNIT/USER_UNIT identify units a manager logs about; trusted _SYSTEMD_UNIT fields describe the emitting process, not necessarily the failed subject.",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/journal-alarm-routing-r14.md, corpus/knowledge/journal-positive-evidence-r15.md",
+          "lane_base": "83d65857aca66552680a72958bdf0c77ab9cefc0"
+        }
+      ]
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc3227.txt",
+      "rows": [
+        {
+          "lane": "revenger",
+          "id": "S008",
+          "url": "https://www.rfc-editor.org/rfc/rfc3227.txt",
+          "kind": "spec",
+          "tier": "A",
+          "scope": "sysadmin-facing incident evidence collection guidance as published",
+          "anchor": "Abstract, \u00a71, \u00a73.2; RFC 3227 (February 2002)",
+          "teaches": "REJECTED: a 2002 BCP for system administrators that predates current device-specific acquisition guidance (S005 serves that role here); flip: an entry needs its volatility-ordering primitive specifically",
+          "status": "rejected",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "\u2014",
+          "lane_base": "d97761952be256d145d298022de03091de91d358"
+        }
+      ]
+    },
+    {
+      "url": "https://www.unicode.org/versions/Unicode18.0.0/core-spec/chapter-3/",
+      "rows": [
+        {
+          "lane": "revenger",
+          "id": "S010",
+          "url": "https://www.unicode.org/versions/Unicode18.0.0/core-spec/chapter-3/",
+          "kind": "spec",
+          "tier": "A",
+          "scope": "UTF-16 well-formedness, surrogate definitions, ill-formed sequences",
+          "anchor": "\u00a73.8 Surrogates, \u00a73.9 Unicode Encoding Forms, \u00a73.9.2 UTF-16 (D71\u2013D91, Table 3-5, C10); release dated 2026-09-16, version page still carries a preliminary-draft banner",
+          "teaches": "The definitions that make a lone surrogate code unit ill-formed, so observed name bytes can be classified from the spec.",
+          "status": "mined",
+          "opened": "2026-10-19",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/pe-resource-directory-layout.md, corpus/knowledge/utf16-unpaired-surrogates-in-resource-names.md",
+          "lane_base": "d97761952be256d145d298022de03091de91d358"
+        }
+      ]
+    },
+    {
+      "url": "https://bazel.build/basics/hermeticity",
+      "rows": [
+        {
+          "lane": "tameshi",
+          "id": "S064",
+          "url": "https://bazel.build/basics/hermeticity",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Bazel's own definition of hermetic builds and its catalogue of non-hermetic input sources",
+          "anchor": "\u00a7Benefits and \u00a7Identifying non-hermeticity @ page fetched 2026-10-20, markdown alternate sha256 76167a0dacc146cfbc13b54a0d6db03a283d413c75f50a32666611f90b0b73da",
+          "teaches": "a cached result holds only while its inputs are unchanged; host binaries, absolute paths and source-tree writes are named inputs outside the key, so a cached credit must pin or disclose them",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "180d",
+          "used_by": "corpus/knowledge/input-keyed-coldread-credit.md",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        }
+      ]
+    },
+    {
+      "url": "https://bazel.build/remote/caching",
+      "rows": [
+        {
+          "lane": "tameshi",
+          "id": "S059",
+          "url": "https://bazel.build/remote/caching",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Bazel's action-cache reuse keyed by action hash, and its documented false-hit class for inputs outside the key",
+          "anchor": "\u00a7Known issues, \"Bazel does not track tools outside a workspace\" @ page fetched 2026-10-20, version unstated, markdown alternate sha256 0d362d113cdb9c434779bc7601f79844db12339da0207fa2a1b31d5b08badac5",
+          "teaches": "a cache hit is reuse keyed to the recorded inputs; an input outside the key keeps the same hash while the outcome changes, so credit is sound only for what the key records",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "90d",
+          "used_by": "corpus/knowledge/input-keyed-coldread-credit.md",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        }
+      ]
+    },
+    {
+      "url": "https://docs.jj-vcs.dev/latest/cli-reference/",
+      "rows": [
+        {
+          "lane": "mori",
+          "id": "S045",
+          "url": "https://docs.jj-vcs.dev/latest/cli-reference/",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "metaedit author-rewrite flag",
+          "anchor": "metaedit section, author options lines 2220\u20132238; jj 0.45.1 local help cross-check; opened 2026-10-20",
+          "teaches": "metaedit --update-author sets author name/email from configured user without changing author timestamp; the CLI reference does not specify universal commit-author behavior.",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/jj-branch-anchor-r17.md",
+          "lane_base": "83d65857aca66552680a72958bdf0c77ab9cefc0"
+        }
+      ]
+    },
+    {
+      "url": "https://docs.jj-vcs.dev/latest/working-copy/",
+      "rows": [
+        {
+          "lane": "tameshi",
+          "id": "S071",
+          "url": "https://docs.jj-vcs.dev/latest/working-copy/",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "jj working-copy snapshot, conflict, ignore, workspace and stale-copy semantics (not colocated Git HEAD)",
+          "anchor": "\u00a7Introduction \u00b61 (`#introduction`) and \u00a7Stale working copy @ latest docs page (mkdocs-material 9.6.23 build; version unstated), fetched 2026-10-20",
+          "teaches": "REJECTED: the page defines working-copy snapshotting and stale-copy recovery but says nothing about colocated Git HEAD or bookmarks (zero article-body hits for colocat, HEAD, bookmark); the HEAD-versus-branch-tip claim stays with S061; flip: an official jj page stating what a colocated Git HEAD points at relative to the working-copy commit or a bookmark",
+          "status": "rejected",
+          "opened": "2026-10-20",
+          "recheck": "180d",
+          "used_by": "\u2014",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        }
+      ]
+    },
+    {
+      "url": "https://docs.kernel.org/admin-guide/mm/zswap.html",
+      "rows": [
+        {
+          "lane": "tsukuroi",
+          "id": "S063",
+          "url": "https://docs.kernel.org/admin-guide/mm/zswap.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Runtime zswap sysfs enable/disable and max_pool_percent semantics, not host pressure or incident causality",
+          "anchor": "Overview #overview sysfs paragraph; Design #design max_pool_percent bullet; blurb7.3.0, opened2026-10-20 by SrcZswap",
+          "teaches": "zswap can be toggled through sysfs, and max_pool_percent limits the compressed pool's memory share; observed host values remain S060 observations",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "180d",
+          "used_by": "corpus/lessons/round-18.md",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        }
+      ]
+    },
+    {
+      "url": "https://docs.pytest.org/en/stable/reference/exit-codes.html",
+      "rows": [
+        {
+          "lane": "kama",
+          "id": "S052",
+          "url": "https://docs.pytest.org/en/stable/reference/exit-codes.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "how one widely used test runner keeps \"nothing was collected\" distinct from \"collected and failed\" in its exit status; convention precedent only, not the lane's numbering; the `stable` alias, whose pytest version the page does not state",
+          "anchor": "\u00a7Exit codes, entries \"Exit code 1\" and \"Exit code 5\"",
+          "teaches": "Exit 1 means tests were collected and run and some failed; exit 5 means no tests were collected: an empty observation has its own non-zero status, distinct from failure.",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/llamacpp-loading-lifecycle.md, corpus/lessons/round-18.md",
+          "lane_base": "2e254a1763a9c08aa07fc53081287f506c447d84"
+        }
+      ]
+    },
+    {
+      "url": "https://docs.python.org/3.14/builtins/exceptions.html",
+      "rows": [
+        {
+          "lane": "kama",
+          "id": "S051",
+          "url": "https://docs.python.org/3.14/builtins/exceptions.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "which built-in exceptions escape `except Exception` in the host's Python 3.14 harness; not bare `except:`, not third-party exceptions",
+          "anchor": "\u00a7Exception hierarchy; \u00a7KeyboardInterrupt; \u00a7SystemExit; \u00a7GeneratorExit; \u00a7BaseExceptionGroup; page titled \"Built-in Exceptions \u2014 Python 3.14.8 documentation\" (host interpreter 3.14.8)",
+          "teaches": "`KeyboardInterrupt`, `SystemExit` and `GeneratorExit` derive from `BaseException`, not `Exception`, so a harness that guards only `except Exception` lets them escape without its receipt.",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/llamacpp-loading-lifecycle.md, corpus/lessons/round-18.md",
+          "lane_base": "2e254a1763a9c08aa07fc53081287f506c447d84"
+        }
+      ]
+    },
+    {
+      "url": "https://docs.python.org/3.14/library/subprocess.html",
+      "rows": [
+        {
+          "lane": "kama",
+          "id": "S044",
+          "url": "https://docs.python.org/3.14/library/subprocess.html#subprocess.Popen.returncode",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "meaning of a child return code as observed by kama's Python 3.14 harness; not llama.cpp exit semantics",
+          "anchor": "\u00a7`Popen.returncode` and \u00a7`Popen.wait`, page titled Python 3.14.8 documentation (host interpreter 3.14.8; `/3/` now serves 3.15)",
+          "teaches": "\"A negative value -N indicates that the child was terminated by signal N (POSIX only).\" `None` means not terminated at the last `poll()` or `wait()`, so liveness must be polled fresh before signalling.",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/llamacpp-loading-lifecycle.md, corpus/lessons/round-17.md",
+          "lane_base": "2e254a1763a9c08aa07fc53081287f506c447d84"
+        }
+      ]
+    },
+    {
+      "url": "https://docs.python.org/3/library/doctest.html",
+      "rows": [
+        {
+          "lane": "tameshi",
+          "id": "S055",
+          "url": "https://docs.python.org/3/library/doctest.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "executable documentation examples",
+          "anchor": "module introduction, first bullet @ Python 3.15.0 documentation, fetched 2026-10-20",
+          "teaches": "a documented example is a checkable claim: run it as written and compare with the shown output",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/lessons/round-16.md",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        }
+      ]
+    },
+    {
+      "url": "https://docs.python.org/3/using/cmdline.html",
+      "rows": [
+        {
+          "lane": "tameshi",
+          "id": "S073",
+          "url": "https://docs.python.org/3/using/cmdline.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "CPython 3.15's definition of the two environment variables that redirect .pyc writes: PYTHONDONTWRITEBYTECODE and PYTHONPYCACHEPREFIX",
+          "anchor": "\u00a71.2 Environment variables, entries PYTHONDONTWRITEBYTECODE and PYTHONPYCACHEPREFIX (#envvar-PYTHONDONTWRITEBYTECODE, #envvar-PYTHONPYCACHEPREFIX) @ Python 3.15.0 docs, fetched 2026-10-20",
+          "teaches": "a non-empty PYTHONDONTWRITEBYTECODE equals -B and stops .pyc writes on import of source modules; a set PYTHONPYCACHEPREFIX writes .pyc files in a mirror tree at that path instead of __pycache__ (added in 3.8), so a fixture can keep bytecode out of the source tree by environment; the entries state write behaviour only and say nothing about reads",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/guard-kill-closure.md",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        }
+      ]
+    },
+    {
+      "url": "https://git-scm.com/book/en/v2/Git-Internals-Environment-Variables",
+      "rows": [
+        {
+          "lane": "tameshi",
+          "id": "S070",
+          "url": "https://git-scm.com/book/en/v2/Git-Internals-Environment-Variables",
+          "kind": "book",
+          "tier": "B",
+          "scope": "GIT_DIR, GIT_WORK_TREE and GIT_INDEX_FILE as repository-location overrides; secondary to the normative S063",
+          "anchor": "\u00a710.8 Environment Variables, subsection Repository Locations @ 2nd-edition page, fetched 2026-10-20 (page version and last-modified not shown)",
+          "teaches": "GIT_DIR names the .git folder and, when unset, git walks up parent directories; with GIT_DIR set and no work-tree override the cwd is the top level of the working tree; GIT_INDEX_FILE relocates the index for non-bare repositories only",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "180d",
+          "used_by": "corpus/knowledge/guard-kill-closure.md",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        }
+      ]
+    },
+    {
+      "url": "https://git-scm.com/docs/git",
+      "rows": [
+        {
+          "lane": "tameshi",
+          "id": "S063",
+          "url": "https://git-scm.com/docs/git",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "git's upward repository-discovery walk and the environment variables that redirect or bound it",
+          "anchor": "ENVIRONMENT VARIABLES, \"The Git Repository\" @ page last updated in 2.56.0, fetched 2026-10-20",
+          "teaches": "discovery walks parent directories and environment variables override it, so a ceiling bounds the walk but is no identity check, and an inherited GIT_DIR redirects every `git -C`",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/lessons/round-17.md, corpus/knowledge/guard-kill-closure.md",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        }
+      ]
+    },
+    {
+      "url": "https://git-scm.com/docs/git-cat-file",
+      "rows": [
+        {
+          "lane": "kama",
+          "id": "S033",
+          "url": "https://git-scm.com/docs/git-cat-file",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Direct object-content comparison mechanics for kama evidence: explicit-type raw output, not endpoint truth",
+          "anchor": "OUTPUT \u201cIf `<type>` is specified\u201d raw-contents clause; OPTIONS `<type>`, `--textconv`, `--filters`; manual last updated in Git 2.56.0 (2026-09-28), same sentence in 2.55.0, opened 2026-10-20",
+          "teaches": "An explicit `<type>` returns the raw, though uncompressed, object contents; `--textconv` and `--filters` transform content. [INFERENCE] Byte comparison must avoid both. The page documents command mechanics only; it is not evidence that any comparison ran and not endpoint truth.",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/lessons/round-13.md",
+          "lane_base": "2e254a1763a9c08aa07fc53081287f506c447d84"
+        }
+      ]
+    },
+    {
+      "url": "https://git-scm.com/docs/git-check-ref-format",
+      "rows": [
+        {
+          "lane": "tsukuroi",
+          "id": "S062",
+          "url": "https://git-scm.com/docs/git-check-ref-format",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Git reference-name restrictions and distinction between raw refs/heads validation and branch shorthand expansion",
+          "anchor": "DESCRIPTION rules3,4,6 and --branch paragraph; last updated2.52.0, accessed2026-10-20",
+          "teaches": "Git forbids consecutive dots, spaces and trailing slash in reference names; --branch also expands previous-checkout shorthand, so the gate validates a literal full ref and separately forbids leading dash",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/lessons/round-18.md",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        }
+      ]
+    },
+    {
+      "url": "https://git-scm.com/docs/git-rev-parse",
+      "rows": [
+        {
+          "lane": "tameshi",
+          "id": "S062",
+          "url": "https://git-scm.com/docs/git-rev-parse",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "git's own definition of the working-tree top-level and its no-work-tree failure",
+          "anchor": "OPTIONS, \"Options for Files\", --show-toplevel @ page last updated in 2.56.0, fetched 2026-10-20",
+          "teaches": "--show-toplevel reports the discovered top-level, so comparing its realpath with the caller's repo path tests repository identity instead of assuming it",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/lessons/round-17.md",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        }
+      ]
+    },
+    {
+      "url": "https://git-scm.com/docs/git-show",
+      "rows": [
+        {
+          "lane": "kama",
+          "id": "S032",
+          "url": "https://git-scm.com/docs/git-show",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Byte-preserving historical blob retrieval for kama evidence capture, not endpoint truth",
+          "anchor": "DESCRIPTION, plain blobs; manual last updated in Git 2.56.0 (2026-09-28), opened 2026-10-20",
+          "teaches": "A blob selector returns plain contents, allowing exact historical source bytes to be compared independently of a snapshot manifest.",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/lessons/round-12.md",
+          "lane_base": "2e254a1763a9c08aa07fc53081287f506c447d84"
+        }
+      ]
+    },
+    {
+      "url": "https://go.dev/doc/devel/release",
+      "rows": [
+        {
+          "lane": "kaidoku",
+          "id": "S025",
+          "url": "https://go.dev/doc/devel/release",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Official stable Go toolchain names and release dates, for dating a carrier's toolchain against the release train",
+          "anchor": "Page fetched 2026-10-20 (snapshot sha256 `d9a4b0ebb8eed5e50b092d5360d811b6dd89a21cb2518f5953bcc12f744d8968`); anchors `#go1.27.0`, `#go1.27.3`, `#go1.26.0`, Release Policy",
+          "teaches": "Places go1.27.0 (2026-08-19) through go1.27.3 (2026-10-19) on the release train, so 1.27.x carriers on 2026-10-20 are time-plausible; release dates are lower bounds for a build, not build dates.",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/2026-10-20-r17-go-carrier-diagnostics.md, corpus/lessons/round-17.md",
+          "lane_base": "1e1bbef45ea0b92e443cdca04b814e74dfecbca1"
+        }
+      ]
+    },
+    {
+      "url": "https://go.dev/doc/go1.24",
+      "rows": [
+        {
+          "lane": "kaidoku",
+          "id": "S034",
+          "url": "https://go.dev/doc/go1.24",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Official statement that Go 1.24's builtin map is the new Swiss-table implementation and that `GOEXPERIMENT=noswissmap` disables it at build time; no Go 1.25 map claim",
+          "anchor": "Page fetched 2026-10-20 (sha256 `d35c2d52a864b3474451e28fb89bae013edba4adcc1fa7164796267c0e4ec4e7`, stable across 12 seat fetches and one L1 fetch); `<h2 id=\"runtime\">` raw line 560, Swiss sentence raw lines 567-568, opt-out sentence raw lines 571-573",
+          "teaches": "Map layout is a build-time choice: from Go 1.24 a binary uses Swiss maps unless built with `GOEXPERIMENT=noswissmap`, which it then records as `X:noswissmap`; a default build records no marker, so a reader needs both the release (\u2265 1.24) and the recorded experiments.",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/lessons/round-18.md, corpus/knowledge/2026-10-20-r18-swiss-map-replay.md",
+          "lane_base": "1e1bbef45ea0b92e443cdca04b814e74dfecbca1"
+        }
+      ]
+    },
+    {
+      "url": "https://go.dev/doc/go1.25",
+      "rows": [
+        {
+          "lane": "kaidoku",
+          "id": "S031",
+          "url": "https://go.dev/doc/go1.25#dwarf5-support",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Official meaning of the `nodwarf5` experiment opt-out that appears in the carriers' `X:nodwarf5` build versions",
+          "anchor": "Page fetched 2026-10-20 (sha256 `c9d872d374a3d52bbd5e1fad7d99b9eb44a7dac45d7032314d8cacd0702d38fd`); `h3 id=\"dwarf5-support\"`, page lines 621-630",
+          "teaches": "States that Go 1.25+ emits DWARF 5 by default and that `GOEXPERIMENT=nodwarf5` disables DWARF 5 generation at build time, so an `X:nodwarf5` carrier differs in debug-information format, not in Go release.",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/2026-10-20-r17-go-carrier-diagnostics.md, corpus/lessons/round-17.md, corpus/knowledge/2026-10-19-arc3-r12-go-evidence-id-domain.md",
+          "lane_base": "1e1bbef45ea0b92e443cdca04b814e74dfecbca1"
+        }
+      ]
+    },
+    {
+      "url": "https://go.dev/doc/go1.27",
+      "rows": [
+        {
+          "lane": "kaidoku",
+          "id": "S028",
+          "url": "https://go.dev/doc/go1.27",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Whether the 1.27 release notes document the `nodwarf5` experiment token seen in carrier build versions",
+          "anchor": "Page fetched 2026-10-20 (snapshot sha256 `a4c56ba584ac26614537ac40bf07aa638314decdacf32ea96acb60dbfe57393e`); `curl -sL https://go.dev/doc/go1.27` piped to case-insensitive `grep -c dwarf`: 0",
+          "teaches": "REJECTED: the 1.27 notes document `nosizespecializedmalloc` and `nojsonv2` opt-outs but not `nodwarf5`, so they cannot ground the carriers' `X:nodwarf5` token (S026 source and S031 do); flip: a 1.27-or-later release note that defines or changes the DWARF 5 opt-out.",
+          "status": "rejected",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/lessons/round-17.md",
+          "lane_base": "1e1bbef45ea0b92e443cdca04b814e74dfecbca1"
+        }
+      ]
+    },
+    {
+      "url": "https://man.archlinux.org/man/pacman.8",
+      "rows": [
+        {
+          "lane": "tsukuroi",
+          "id": "S048",
+          "url": "https://man.archlinux.org/man/pacman.8",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "The install-transaction `-p, --print` option semantics used by a print-only package-target preview",
+          "anchor": "TRANSACTION OPTIONS (APPLY TO -S, -R AND -U), `-p, --print` and `--print-format`; Pacman 7.1.0 man-page footer dated 2026-10-15; page opened 2026-10-20",
+          "teaches": "The entry states \"Only print the targets instead of performing the actual operation (sync, remove or upgrade).\", so `-Sp` is a target-listing path and `--print-format` only controls that listing. It documents option behavior, not a host transaction result or whether sync metadata is current",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/partial-upgrade-recheck-r15.md",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        },
+        {
+          "lane": "tsukuroi",
+          "id": "S049",
+          "url": "https://man.archlinux.org/man/pacman.8",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "The installed/out-of-date query and `--needed` transaction semantics used to interpret a package-upgrade preview, scoped to documented option behavior",
+          "anchor": "OPERATIONS > `-Q, --query`; QUERY OPTIONS (APPLY TO -Q) > `-u, --upgrades`; TRANSACTION OPTIONS (APPLY TO -S, -R AND -U) > `--needed`; Pacman 7.1.0 man-page footer dated 2026-10-15; page opened 2026-10-20",
+          "teaches": "`-Q` states \"Query the package database.\"; `-u` states \"Only package versions are used to find outdated packages; replacements are not checked here.\", so the filter is version-only and can omit replacement-driven changes; `--needed` states \"Do not reinstall the targets that are already up-to-date.\", so it skips same-version targets and does not turn an available upgrade into a no-op. This supplements S048 without redefining its `--print` semantics",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/partial-upgrade-recheck-r15.md",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        }
+      ]
+    },
+    {
+      "url": "https://man.archlinux.org/man/tmpfiles.d.5",
+      "rows": [
+        {
+          "lane": "tsukuroi",
+          "id": "S039",
+          "url": "https://man.archlinux.org/man/tmpfiles.d.5",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "`z` line-type semantics for applying mode and ownership to an existing path, including the `-` user/group columns",
+          "anchor": "LINE TYPES > z and the user/group column text; systemd 262.1 man-page footer",
+          "teaches": "A `z` line adjusts the access mode, user and group ownership of an existing path when tmpfiles runs; with `-` in the user/group columns ownership is not modified, and the line does not create the path",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/root-dac-decision-r12.md",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        }
+      ]
+    },
+    {
+      "url": "https://man7.org/linux/man-pages/man1/strace.1.html",
+      "rows": [
+        {
+          "lane": "tameshi",
+          "id": "S060",
+          "url": "https://man7.org/linux/man-pages/man1/strace.1.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "strace's own `%file`, `-f`, `-o` and `-y` semantics for an input observer over lane commands",
+          "anchor": "\u00a7Filtering `-e trace=syscall_set` \u2192 `%file`; \u00a7General `-f`; \u00a7Output format `-o`, `-y` @ man7 page footer strace 7.1.0.62.c605d6 2026-06-25, fetched 2026-10-20; host strace 7.2",
+          "teaches": "file-name syscalls are observable per followed process, so an open trace records files opened by name, never reads on inherited descriptors, env vars or stat-only probes",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/input-keyed-coldread-credit.md",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        },
+        {
+          "lane": "tameshi",
+          "id": "S075",
+          "url": "https://man7.org/linux/man-pages/man1/strace.1.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "supersedes S060's anchor only: the syscall filter the lane collector actually passes",
+          "anchor": "\u00a7Filtering `-e trace=syscall_set` (\"Traces only the specified set of system calls.\"); \u00a7Tracing `-f` @ man7 page as in S060, re-opened 2026-10-20",
+          "teaches": "supersedes S060 \u2014 the collector passes an explicit list (open, openat, openat2, creat, execve, execveat, chdir, fchdir, fork, vfork, clone, clone3, dup, dup2, dup3, close; `.ufo/evidence/round-17/coldread/trace-inputs.py:74-80`), not `%file`; `%file` would also record stat calls, so the stat-only exclusion follows from the list; `-f` is under \u00a7Tracing, not \u00a7General",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "180d",
+          "used_by": "corpus/lessons/round-18.md",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        }
+      ]
+    },
+    {
+      "url": "https://man7.org/linux/man-pages/man2/PR_SET_CHILD_SUBREAPER.2const.html",
+      "rows": [
+        {
+          "lane": "tameshi",
+          "id": "S068",
+          "url": "https://man7.org/linux/man-pages/man2/PR_SET_CHILD_SUBREAPER.2const.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "PR_SET_CHILD_SUBREAPER's reparenting rule: an orphaned process is reparented to the nearest still living ancestor subreaper",
+          "anchor": "\u00a7DESCRIPTION, first paragraph after the SYNOPSIS @ man-pages 6.19 (footer 2026-02-08), fetched 2026-10-20",
+          "teaches": "when a process becomes orphaned, it is reparented to the nearest still living ancestor subreaper, so a subreaper sees descendants whose parent has exited; the page states the rule, not how a signal reaches a descendant that left its process group",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "180d",
+          "used_by": "corpus/knowledge/guard-kill-closure.md",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        },
+        {
+          "lane": "tameshi",
+          "id": "S077",
+          "url": "https://man7.org/linux/man-pages/man2/PR_SET_CHILD_SUBREAPER.2const.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "supersedes S068's anchor only",
+          "anchor": "\u00a7DESCRIPTION \u00b62 (paragraph beginning \"A subreaper fulfills \u2026\") @ man-pages 6.19 (footer 2026-02-08), re-opened 2026-10-20",
+          "teaches": "supersedes S068 \u2014 the reparenting quote sits in \u00a7DESCRIPTION \u00b62, not the first paragraph after the SYNOPSIS (\u00b61 is \"If set is nonzero\u2026\"); the teaches of S068 is unchanged",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "180d",
+          "used_by": "corpus/lessons/round-18.md, corpus/knowledge/guard-kill-closure.md",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        }
+      ]
+    },
+    {
+      "url": "https://man7.org/linux/man-pages/man2/open.2.html",
+      "rows": [
+        {
+          "lane": "tameshi",
+          "id": "S072",
+          "url": "https://man7.org/linux/man-pages/man2/open.2.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "open(2)'s access modes and open-time effects, for whether an O_RDWR open is a pure read input",
+          "anchor": "\u00a7DESCRIPTION, O_TRUNC entry in the file creation flags list @ Linux man-pages 6.19 (footer 2026-02-08), fetched 2026-10-20",
+          "teaches": "O_RDWR requests read/write, and O_TRUNC truncates the file at open whenever the access mode allows writing, so an O_RDWR open with O_TRUNC is a write-capable input, not a pure read",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "365d",
+          "used_by": "corpus/knowledge/guard-kill-closure.md",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        },
+        {
+          "lane": "tameshi",
+          "id": "S078",
+          "url": "https://man7.org/linux/man-pages/man2/open.2.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "supersedes S072's teaches: what an O_RDWR open is, without the O_TRUNC overstatement",
+          "anchor": "\u00a7DESCRIPTION access-mode paragraph (\"These request opening the file read-only, write-only, or read/write, respectively.\") and O_TRUNC entry @ Linux man-pages 6.19, re-opened 2026-10-20",
+          "teaches": "supersedes S072 \u2014 O_RDWR requests read/write access, so an O_RDWR open is write-capable and is not recorded as a pure read input; O_TRUNC truncates only an existing regular file (ignored for FIFOs/terminals, otherwise unspecified), so S072's \"whenever the access mode allows writing\" overstated the page",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "180d",
+          "used_by": "corpus/lessons/round-18.md, corpus/knowledge/guard-kill-closure.md",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        }
+      ]
+    },
+    {
+      "url": "https://man7.org/linux/man-pages/man2/prctl.2.html",
+      "rows": [
+        {
+          "lane": "tameshi",
+          "id": "S067",
+          "url": "https://man7.org/linux/man-pages/man2/prctl.2.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "prctl(2) operation names only; not the semantics of PR_SET_CHILD_SUBREAPER",
+          "anchor": "\u00a7DESCRIPTION (operation list, names only) and \u00a7SEE ALSO; man-pages 6.19, page footer 2026-02-08; fetched 2026-10-20",
+          "teaches": "REJECTED: this page lists PR_SET_CHILD_SUBREAPER by name and states no reparenting rule (absence swept 2026-10-20); flip: this URL's text states the nearest-living-ancestor reparenting rule in a revision, or the rule is cited from PR_SET_CHILD_SUBREAPER(2const) under its own row (see S068)",
+          "status": "rejected",
+          "opened": "2026-10-20",
+          "recheck": "180d",
+          "used_by": "\u2014",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        }
+      ]
+    },
+    {
+      "url": "https://man7.org/linux/man-pages/man2/setsid.2.html",
+      "rows": [
+        {
+          "lane": "tameshi",
+          "id": "S069",
+          "url": "https://man7.org/linux/man-pages/man2/setsid.2.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Linux setsid(2) session and process-group semantics for a caller that leaves its group",
+          "anchor": "\u00a7DESCRIPTION \u00b62 and \u00a7ERRORS EPERM @ man-pages 6.19 (footer date 2026-06-05), fetched 2026-10-20",
+          "teaches": "the caller becomes the only process in a new process group and a new session, distinct from its old group; a group-directed signal sent to the old group does not reach it [INFERENCE: follows from the distinct group ID; killpg is not named on this page]; setsid fails with EPERM for a process group leader, so the escaping process must fork and let the child call setsid",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "180d",
+          "used_by": "corpus/knowledge/guard-kill-closure.md",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        }
+      ]
+    },
+    {
+      "url": "https://pitest.org/quickstart/basic_concepts/",
+      "rows": [
+        {
+          "lane": "kama",
+          "id": "S045",
+          "url": "https://pitest.org/quickstart/basic_concepts/",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "PIT's own vocabulary for mutant outcomes (killed, survived, no coverage) and mutation score; not a claim about test adequacy in general",
+          "anchor": "\u00a7Running the tests, and https://pitest.org/quickstart/commandline/ \u00a7`--mutationThreshold`; pitest-site gh-pages 614bec6fd16670852e94c8cc03a002f6bf05db09",
+          "teaches": "\"Killed means a test caught the mutation successfully.\" A survived mutant was not detected; kama reports killed over applicable per mutant and detector, never a bare pass/fail total.",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "180d",
+          "used_by": "corpus/lessons/round-17.md",
+          "lane_base": "2e254a1763a9c08aa07fc53081287f506c447d84"
+        }
+      ]
+    },
+    {
+      "url": "https://pitest.org/quickstart/mutators/",
+      "rows": [
+        {
+          "lane": "tameshi",
+          "id": "S056",
+          "url": "https://pitest.org/quickstart/mutators/",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "PIT's own operator definitions for Java bytecode mutation (boundary, negation, return values)",
+          "anchor": "\u00a7CONDITIONALS_BOUNDARY @ page fetched 2026-10-20 (version unstated; sha256 a31331da\u2026)",
+          "teaches": "the boundary operator moves a relational operator to its boundary counterpart, the shape of round-16's interval-edge pair; transfers to JS only as text-level boundary edits",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "180d",
+          "used_by": "corpus/knowledge/mutation-case-kumitate-round-gate.md, corpus/knowledge/mutation-case-kumitate-sources-check.md",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        }
+      ]
+    },
+    {
+      "url": "https://stryker-mutator.io/docs/mutation-testing-elements/supported-mutators/",
+      "rows": [
+        {
+          "lane": "tameshi",
+          "id": "S052",
+          "url": "https://stryker-mutator.io/docs/mutation-testing-elements/supported-mutators/",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "StrykerJS's named single-edit operator classes for JS mutant selection",
+          "anchor": "\u00a7Supported mutators opening paragraph and \u00a7Support table @ page fetched 2026-10-20 (Docusaurus build, last-modified 2026-10-19; no commit pin exposed)",
+          "teaches": "names the JS single-edit operator families a mutant set is drawn from (equality, conditional, string literal, boolean, array declaration) and which StrykerJS does not support (assignment expression)",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "180d",
+          "used_by": "corpus/knowledge/mutation-case-kumitate-round-gate.md, corpus/knowledge/mutation-case-kumitate-sources-check.md",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        }
+      ]
+    },
+    {
+      "url": "https://webassembly.github.io/spec/core/binary/modules.html",
+      "rows": [
+        {
+          "lane": "kaidoku",
+          "id": "S042",
+          "url": "https://webassembly.github.io/spec/core/binary/modules.html",
+          "kind": "spec",
+          "tier": "A",
+          "scope": "Grammar-level meaning of import and export section entries in the binary format, for reading `inspect-wasm-artifact` and `compare-wasm-interfaces` results; not validation or instantiation semantics",
+          "anchor": "Page title `WebAssembly 3.0 (2026-10-20)`, HTML sha256 `5d1afa388503fd2fdf743e6e339c5fe8e969f3c910b8c62ca59b9e130f89df8f` fetched 2026-10-20; reST `document/core/binary/modules.rst` at commit `a6ed9b2b5f266953872660b1b9ad95d7ca1c4515`, `Indices` (rst:48), Import and Export sections",
+          "teaches": "An import entry is module name + field name + external type; an export entry is a name + external index with no type, so export signatures come from the index spaces, not the export entry",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "180d",
+          "used_by": "corpus/knowledge/2026-10-20-r20-wasm-interfaces.md, corpus/lessons/round-20.md",
+          "lane_base": "1e1bbef45ea0b92e443cdca04b814e74dfecbca1"
+        }
+      ]
+    },
+    {
+      "url": "https://wiki.archlinux.org/title/System_maintenance",
+      "rows": [
+        {
+          "lane": "tsukuroi",
+          "id": "S047",
+          "url": "https://wiki.archlinux.org/title/System_maintenance",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "The documented Arch doctrine that partial upgrades are unsupported, scoped to package-manager advice rather than host state",
+          "anchor": "\u00a7 Partial upgrades are unsupported; revision oldid 885170, last edited 2026-09-07T06:06:18Z; page opened 2026-10-20",
+          "teaches": "The section states \"That is why partial upgrades are not supported.\" and its immediately following do-not list names `pacman -Sy package` and `pacman -Sy` followed by `pacman -S package`, directing readers to a full upgrade instead. This is doctrine about the supported upgrade path, not evidence that any particular installed package set is consistent",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "180d",
+          "used_by": "corpus/knowledge/partial-upgrade-recheck-r15.md",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        }
+      ]
+    },
+    {
+      "url": "https://www.freedesktop.org/software/systemd/man/latest/sd_journal_seek_cursor.html",
+      "rows": [
+        {
+          "lane": "mori",
+          "id": "S039",
+          "url": "https://www.freedesktop.org/software/systemd/man/latest/sd_journal_seek_cursor.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "journal seek to a cursor position and next-closest fallback",
+          "anchor": "sd_journal_seek_cursor page, Description: \"If no entry matching the specified cursor is found the call will seek to the next closest entry (in terms of time) instead.\"; systemd 262 page accessed 2026-10-20",
+          "teaches": "A seek to an absent cursor lands on the next closest entry in time, and seeking does not by itself make that entry current.",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/journal-cursor-window-r16.md",
+          "lane_base": "83d65857aca66552680a72958bdf0c77ab9cefc0"
+        }
+      ]
+    },
+    {
+      "url": "https://www.freedesktop.org/software/systemd/man/latest/sd_journal_test_cursor.html",
+      "rows": [
+        {
+          "lane": "mori",
+          "id": "S040",
+          "url": "https://www.freedesktop.org/software/systemd/man/latest/sd_journal_test_cursor.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "journal entry-identity test after a seek, distinct from cursor-string comparison",
+          "anchor": "sd_journal_test_cursor page, Description: \"the same entry might be referred to by multiple different cursor strings\"; systemd 262 page accessed 2026-10-20",
+          "teaches": "Cursor strings do not uniquely identify an entry, so string comparison is not an identity test; sd_journal_test_cursor verifies the sought entry after a seek. No deduplication or completeness is implied.",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/journal-cursor-window-r16.md",
+          "lane_base": "83d65857aca66552680a72958bdf0c77ab9cefc0"
+        }
+      ]
+    },
+    {
+      "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.service.html",
+      "rows": [
+        {
+          "lane": "tsukuroi",
+          "id": "S070",
+          "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.service.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "When ExecStopPost commands run relative to a service stop; not host unit state and not the cgroup a command runs in (the page has no such sentence; cgroup membership is observed in S068)",
+          "anchor": "OPTIONS ExecStopPost= (fragment ExecStopPost=); v262.1 XML lines 591-613; header systemd 262; opened 2026-10-20",
+          "teaches": "Additional commands that are executed after the service is stopped: the drop-in sync runs when snapper-cleanup stops, explaining one update per cleanup run",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/boot-writers-r19.md",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        }
+      ]
+    },
+    {
+      "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.timer.html",
+      "rows": [
+        {
+          "lane": "tsukuroi",
+          "id": "S071",
+          "url": "https://www.freedesktop.org/software/systemd/man/latest/systemd.timer.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "Monotonic OnBootSec and OnUnitActiveSec semantics and the default AccuracySec window; documentation only, not host timer state",
+          "anchor": "Options table rows OnBootSec= and OnUnitActiveSec=; AccuracySec= (Defaults to 1min); RandomizedDelaySec= (Defaults to 0); header systemd 262; opened 2026-10-20",
+          "teaches": "OnBootSec counts from boot and OnUnitActiveSec from the last activation, placed inside a 1min accuracy window, which bounds the 10:07:03 to 17:07:16 hourly drift",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "corpus/knowledge/boot-writers-r19.md",
+          "lane_base": "626668261c87a7418b8947898e66e9a098502228"
+        }
+      ]
+    },
+    {
+      "url": "https://www.gnu.org/software/automake/manual/html_node/Scripts_002dbased-Testsuites.html",
+      "rows": [
+        {
+          "lane": "kama",
+          "id": "S053",
+          "url": "https://www.gnu.org/software/automake/manual/html_node/Scripts_002dbased-Testsuites.html",
+          "kind": "docs",
+          "tier": "A",
+          "scope": "exit statuses of Automake's default test harness without a test protocol",
+          "anchor": "texi lines 9774-9777, node \"Scripts-based Testsuites\"",
+          "teaches": "REJECTED: its 77 (skip) and 99 (hard error) numbering is not the lane's exit table, and S052 already carries the empty-observation precedent; flip: an Automake-based runner needing this exact harness contract enters the lane's scope.",
+          "status": "rejected",
+          "opened": "2026-10-20",
+          "recheck": "on-release",
+          "used_by": "\u2014",
+          "lane_base": "2e254a1763a9c08aa07fc53081287f506c447d84"
+        }
+      ]
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc4291.txt",
+      "rows": [
+        {
+          "lane": "kama",
+          "id": "S050",
+          "url": "https://www.rfc-editor.org/rfc/rfc4291.txt",
+          "kind": "spec",
+          "tier": "A",
+          "scope": "the IPv6 loopback address and the IPv4-mapped address form; not `/proc` output format and not any kernel's printing",
+          "anchor": "\u00a72.5.3 The Loopback Address, line 474; \u00a72.5.5.2 IPv4-Mapped IPv6 Address, lines 548-552, layout diagram at line 570 (80 zero bits, 16 one bits, 32-bit IPv4 address); raw .txt sha256 4d58dff6b432d5d524bf3a3b7f0337a4177fa65f92ed72f2a92e97b471de48b2",
+          "teaches": "`0:0:0:0:0:0:0:1` is the loopback address `::1` (an exact /128); an IPv4-mapped address has 80 zero bits, then `FFFF`, then the IPv4 address, so `::ffff:127.0.0.0/104` is exactly 127.0.0.0/8 mapped.",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "180d",
+          "used_by": "corpus/knowledge/loopback-listener-ownership.md, corpus/knowledge/llamacpp-loading-lifecycle.md, corpus/lessons/round-18.md",
+          "lane_base": "2e254a1763a9c08aa07fc53081287f506c447d84"
+        }
+      ]
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc6585",
+      "rows": [
+        {
+          "lane": "mori",
+          "id": "S041",
+          "url": "https://www.rfc-editor.org/rfc/rfc6585",
+          "kind": "spec",
+          "tier": "A",
+          "scope": "HTTP 429 Too Many Requests status meaning",
+          "anchor": "\u00a74, plain-text lines 132\u2013135; Standards Track, April 2012; opened 2026-10-20",
+          "teaches": "HTTP 429 denotes too many requests in a time window; it does not identify a vendor business error or establish permanent seat death.",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "365d",
+          "used_by": "corpus/knowledge/seat-terminal-status-r17.md",
+          "lane_base": "83d65857aca66552680a72958bdf0c77ab9cefc0"
+        }
+      ]
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc8259",
+      "rows": [
+        {
+          "lane": "tameshi",
+          "id": "S066",
+          "url": "https://www.rfc-editor.org/rfc/rfc8259",
+          "kind": "spec",
+          "tier": "A",
+          "scope": "JSON number grammar: whether NaN and Infinity are valid JSON numbers",
+          "anchor": "\u00a76 Numbers, sentence before the `number` grammar @ RFC 8259, December 2017 (obsoletes RFC 7159), fetched 2026-10-20",
+          "teaches": "numeric values the number grammar cannot represent, such as Infinity and NaN, are not permitted in JSON, so a registry timeout_s that is NaN or Infinity is outside the grammar; \u00a76 does not say what a parser must do with them [INFERENCE: refusing it is a design choice]",
+          "status": "mined",
+          "opened": "2026-10-20",
+          "recheck": "365d",
+          "used_by": "corpus/knowledge/guard-kill-closure.md",
+          "lane_base": "09a3a309376e3e883053773a35bac801d10d8402"
+        }
+      ]
+    }
+  ]
+}

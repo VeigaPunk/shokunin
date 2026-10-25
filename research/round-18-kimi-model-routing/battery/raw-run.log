@@ -1,0 +1,191 @@
+battery run: 17 models, 188 requests, concurrency 4, config sha256 e3c223e054a626b847e69f73020ac9b4fdec1ccc2c8f00dcbf414dcda8acfe78
+[  1/188] cascade/glm-5.3-flash                         warmup   200     ok               pass
+[  2/188] zai-coding-plan/glm-5.3-flash-low             perf-r1  200     None             
+[  3/188] cursor/composer-2.5                           perf-r1  200     None             
+[  4/188] cursor/cursor-grok-4.5-low-fast               perf-r1  200     None             
+[  5/188] cascade/glm-5.3-flash                         perf-r1  200     None             
+[  6/188] zai-coding-plan/glm-5.3-flash-low             perf-r2  200     None             
+[  7/188] zai-coding-plan/glm-5.3-flash-low             c1-r1    200     ok               pass
+[  8/188] cascade/glm-5.3-flash                         perf-r2  200     None             
+[  9/188] zai-coding-plan/glm-5.3-flash-low             c2-r1    200     ok               pass
+[ 10/188] cursor/composer-2.5                           perf-r2  200     None             
+[ 11/188] cursor/cursor-grok-4.5-low-fast               perf-r2  200     None             
+[ 12/188] zai-coding-plan/glm-5.3-flash-low             c3-r1    200     ok               pass
+[ 13/188] cascade/glm-5.3-flash                         c1-r1    200     ok               pass
+[ 14/188] zai-coding-plan/glm-5.3-flash-low             c4-r1    200     ok               pass
+[ 15/188] cursor/composer-2.5                           c1-r1    200     ok               pass
+[ 16/188] cascade/glm-5.3-flash                         c2-r1    200     ok               pass
+[ 17/188] cursor/cursor-grok-4.5-low-fast               c1-r1    200     ok               pass
+[ 18/188] zai-coding-plan/glm-5.3-flash-low             c5-r1    200     truncation       
+[ 19/188] cascade/glm-5.3-flash                         c3-r1    200     ok               pass
+[ 20/188] zai-coding-plan/glm-5.3-flash-low             k1-r1    200     truncation       
+[ 21/188] cursor/composer-2.5                           c2-r1    200     ok               pass
+[ 22/188] cursor/cursor-grok-4.5-low-fast               c2-r1    200     ok               pass
+[ 23/188] cascade/glm-5.3-flash                         c4-r1    200     ok               pass
+[ 24/188] zai-coding-plan/glm-5.3-flash-low             k2-r1    200     ok               pass
+[ 25/188] zai-coding-plan/glm-5.3-flash-low             k3-r1    200     ok               pass
+[ 26/188] cascade/glm-5.3-flash                         c5-r1    200     ok               pass
+[ 27/188] cursor/composer-2.5                           c3-r1    200     ok               pass
+[ 28/188] cursor/cursor-grok-4.5-low-fast               c3-r1    200     ok               pass
+[ 29/188] zai-coding-plan/glm-5.3-flash-low             t1-r1    200     ok               pass
+[ 30/188] cascade/glm-5.3-flash                         k1-r1    200     ok               pass
+[ 31/188] hyper/deepseek-v4.1-flash                     perf-r1  200     None             
+[ 32/188] cursor/composer-2.5                           c4-r1    200     ok               pass
+[ 33/188] cursor/cursor-grok-4.5-low-fast               c4-r1    200     ok               pass
+[ 34/188] hyper/deepseek-v4.1-flash                     perf-r2  200     None             
+[ 35/188] cascade/glm-5.3-flash                         k2-r1    200     ok               pass
+[ 36/188] hyper/deepseek-v4.1-flash                     c1-r1    200     ok               pass
+[ 37/188] hyper/deepseek-v4.1-flash                     c2-r1    200     ok               pass
+[ 38/188] hyper/deepseek-v4.1-flash                     c3-r1    200     ok               pass
+[ 39/188] cascade/glm-5.3-flash                         k3-r1    200     ok               pass
+[ 40/188] hyper/deepseek-v4.1-flash                     c4-r1    200     ok               pass
+[ 41/188] cursor/composer-2.5                           c5-r1    200     wrong_answer     
+[ 42/188] cursor/cursor-grok-4.5-low-fast               c5-r1    200     ok               pass
+[ 43/188] cursor/composer-2.5                           k1-r1    200     ok               pass
+[ 44/188] cascade/glm-5.3-flash                         t1-r1    200     format_break     
+[ 45/188] cascade/deepseek-v4.1-flash                   perf-r1  200     None             
+[ 46/188] cursor/cursor-grok-4.5-low-fast               k1-r1    200     ok               pass
+[ 47/188] cursor/composer-2.5                           k2-r1    200     ok               pass
+[ 48/188] cascade/deepseek-v4.1-flash                   perf-r2  200     None             
+[ 49/188] cursor/cursor-grok-4.5-low-fast               k2-r1    200     ok               pass
+[ 50/188] cursor/composer-2.5                           k3-r1    200     ok               pass
+[ 51/188] cascade/deepseek-v4.1-flash                   c1-r1    200     ok               pass
+[ 52/188] cascade/deepseek-v4.1-flash                   c2-r1    200     ok               pass
+[ 53/188] cascade/deepseek-v4.1-flash                   c3-r1    200     ok               pass
+[ 54/188] hyper/deepseek-v4.1-flash                     c5-r1    200     truncation       
+[ 55/188] cursor/cursor-grok-4.5-low-fast               k3-r1    200     ok               pass
+[ 56/188] cascade/deepseek-v4.1-flash                   c4-r1    200     ok               pass
+[ 57/188] hyper/deepseek-v4.1-flash                     k1-r1    200     ok               pass
+[ 58/188] cascade/deepseek-v4.1-flash                   c5-r1    200     truncation       
+[ 59/188] hyper/deepseek-v4.1-flash                     k2-r1    200     ok               pass
+[ 60/188] cascade/deepseek-v4.1-flash                   k1-r1    200     ok               pass
+[ 61/188] cursor/composer-2.5                           t1-r1    200     format_break     
+[ 62/188] hyper/deepseek-v4.1-flash                     k3-r1    200     ok               pass
+[ 63/188] cascade/deepseek-v4.1-flash                   k2-r1    200     ok               pass
+[ 64/188] cursor/cursor-grok-4.5-low-fast               t1-r1    200     format_break     
+[ 65/188] alibaba-token-plan/deepseek-v4.1-flash        perf-r1  200     None             
+[ 66/188] alibaba-token-plan-2/deepseek-v4.1-flash      perf-r1  429     auth             
+[ 67/188] alibaba-token-plan-2/deepseek-v4.1-flash      perf-r2  None    skipped_after_fatal 
+[ 68/188] alibaba-token-plan-2/deepseek-v4.1-flash      c1-r1    None    skipped_after_fatal 
+[ 69/188] alibaba-token-plan-2/deepseek-v4.1-flash      c2-r1    None    skipped_after_fatal 
+[ 70/188] alibaba-token-plan-2/deepseek-v4.1-flash      c3-r1    None    skipped_after_fatal 
+[ 71/188] alibaba-token-plan-2/deepseek-v4.1-flash      c4-r1    None    skipped_after_fatal 
+[ 72/188] alibaba-token-plan-2/deepseek-v4.1-flash      c5-r1    None    skipped_after_fatal 
+[ 73/188] alibaba-token-plan-2/deepseek-v4.1-flash      k1-r1    None    skipped_after_fatal 
+[ 74/188] alibaba-token-plan-2/deepseek-v4.1-flash      k2-r1    None    skipped_after_fatal 
+[ 75/188] alibaba-token-plan-2/deepseek-v4.1-flash      k3-r1    None    skipped_after_fatal 
+[ 76/188] alibaba-token-plan-2/deepseek-v4.1-flash      t1-r1    None    skipped_after_fatal 
+[ 77/188] hyper/deepseek-v4.1-flash                     t1-r1    200     ok               pass
+[ 78/188] alibaba-token-plan-3/deepseek-v4.1-flash      perf-r1  429     auth             
+[ 79/188] alibaba-token-plan-3/deepseek-v4.1-flash      perf-r2  None    skipped_after_fatal 
+[ 80/188] alibaba-token-plan-3/deepseek-v4.1-flash      c1-r1    None    skipped_after_fatal 
+[ 81/188] alibaba-token-plan-3/deepseek-v4.1-flash      c2-r1    None    skipped_after_fatal 
+[ 82/188] alibaba-token-plan-3/deepseek-v4.1-flash      c3-r1    None    skipped_after_fatal 
+[ 83/188] alibaba-token-plan-3/deepseek-v4.1-flash      c4-r1    None    skipped_after_fatal 
+[ 84/188] alibaba-token-plan-3/deepseek-v4.1-flash      c5-r1    None    skipped_after_fatal 
+[ 85/188] alibaba-token-plan-3/deepseek-v4.1-flash      k1-r1    None    skipped_after_fatal 
+[ 86/188] alibaba-token-plan-3/deepseek-v4.1-flash      k2-r1    None    skipped_after_fatal 
+[ 87/188] alibaba-token-plan-3/deepseek-v4.1-flash      k3-r1    None    skipped_after_fatal 
+[ 88/188] alibaba-token-plan-3/deepseek-v4.1-flash      t1-r1    None    skipped_after_fatal 
+[ 89/188] cascade/deepseek-v4.1-flash                   k3-r1    200     ok               pass
+[ 90/188] alibaba-token-plan-2/qwen3.8-flash            perf-r1  429     auth             
+[ 91/188] alibaba-token-plan-2/qwen3.8-flash            perf-r2  None    skipped_after_fatal 
+[ 92/188] alibaba-token-plan-2/qwen3.8-flash            c1-r1    None    skipped_after_fatal 
+[ 93/188] alibaba-token-plan-2/qwen3.8-flash            c2-r1    None    skipped_after_fatal 
+[ 94/188] alibaba-token-plan-2/qwen3.8-flash            c3-r1    None    skipped_after_fatal 
+[ 95/188] alibaba-token-plan-2/qwen3.8-flash            c4-r1    None    skipped_after_fatal 
+[ 96/188] alibaba-token-plan-2/qwen3.8-flash            c5-r1    None    skipped_after_fatal 
+[ 97/188] alibaba-token-plan-2/qwen3.8-flash            k1-r1    None    skipped_after_fatal 
+[ 98/188] alibaba-token-plan-2/qwen3.8-flash            k2-r1    None    skipped_after_fatal 
+[ 99/188] alibaba-token-plan-2/qwen3.8-flash            k3-r1    None    skipped_after_fatal 
+[100/188] alibaba-token-plan-2/qwen3.8-flash            t1-r1    None    skipped_after_fatal 
+[101/188] alibaba-token-plan-3/qwen3.8-flash            perf-r1  429     auth             
+[102/188] alibaba-token-plan-3/qwen3.8-flash            perf-r2  None    skipped_after_fatal 
+[103/188] alibaba-token-plan-3/qwen3.8-flash            c1-r1    None    skipped_after_fatal 
+[104/188] alibaba-token-plan-3/qwen3.8-flash            c2-r1    None    skipped_after_fatal 
+[105/188] alibaba-token-plan-3/qwen3.8-flash            c3-r1    None    skipped_after_fatal 
+[106/188] alibaba-token-plan-3/qwen3.8-flash            c4-r1    None    skipped_after_fatal 
+[107/188] alibaba-token-plan-3/qwen3.8-flash            c5-r1    None    skipped_after_fatal 
+[108/188] alibaba-token-plan-3/qwen3.8-flash            k1-r1    None    skipped_after_fatal 
+[109/188] alibaba-token-plan-3/qwen3.8-flash            k2-r1    None    skipped_after_fatal 
+[110/188] alibaba-token-plan-3/qwen3.8-flash            k3-r1    None    skipped_after_fatal 
+[111/188] alibaba-token-plan-3/qwen3.8-flash            t1-r1    None    skipped_after_fatal 
+[112/188] alibaba-token-plan/deepseek-v4.1-flash        perf-r2  200     None             
+[113/188] cascade/deepseek-v4.1-flash                   t1-r1    200     ok               pass
+[114/188] alibaba-token-plan/deepseek-v4.1-flash        c1-r1    200     ok               pass
+[115/188] alibaba-token-plan/deepseek-v4.1-flash        c2-r1    200     ok               pass
+[116/188] zai-coding-plan/glm-5-turbo                   perf-r1  200     None             
+[117/188] alibaba-token-plan/deepseek-v4.1-flash        c3-r1    200     ok               pass
+[118/188] hyper/qwen3.8-flash                           perf-r1  200     None             
+[119/188] alibaba-token-plan/deepseek-v4.1-flash        c4-r1    200     ok               pass
+[120/188] alibaba-token-plan/deepseek-v4.1-flash        c5-r1    200     truncation       
+[121/188] zai-coding-plan/glm-5-turbo                   perf-r2  200     None             
+[122/188] alibaba-token-plan/deepseek-v4.1-flash        k1-r1    200     ok               pass
+[123/188] zai-coding-plan/glm-5-turbo                   c1-r1    200     ok               pass
+[124/188] alibaba-token-plan/qwen3.8-flash              perf-r1  200     None             
+[125/188] alibaba-token-plan/deepseek-v4.1-flash        k2-r1    200     ok               pass
+[126/188] zai-coding-plan/glm-5-turbo                   c2-r1    200     ok               pass
+[127/188] alibaba-token-plan/deepseek-v4.1-flash        k3-r1    200     ok               pass
+[128/188] alibaba-token-plan/deepseek-v4.1-flash        t1-r1    200     ok               pass
+[129/188] zai-coding-plan/glm-5-turbo                   c3-r1    200     ok               pass
+[130/188] hyper/qwen3.8-flash                           perf-r2  200     None             
+[131/188] zai-coding-plan/glm-5-turbo                   c4-r1    200     ok               pass
+[132/188] openai-codex/gpt-6.1-sol                      perf-r1  200     None             
+[133/188] hyper/qwen3.8-flash                           c1-r1    200     ok               pass
+[134/188] hyper/qwen3.8-flash                           c2-r1    200     ok               pass
+[135/188] zai-coding-plan/glm-5-turbo                   c5-r1    200     truncation       
+[136/188] hyper/qwen3.8-flash                           c3-r1    200     ok               pass
+[137/188] openai-codex/gpt-6.1-sol                      perf-r2  200     None             
+[138/188] hyper/qwen3.8-flash                           c4-r1    200     ok               pass
+[139/188] openai-codex/gpt-6.1-sol                      c1-r1    200     ok               pass
+[140/188] zai-coding-plan/glm-5-turbo                   k1-r1    200     ok               pass
+[141/188] openai-codex/gpt-6.1-sol                      c2-r1    200     ok               pass
+[142/188] alibaba-token-plan/qwen3.8-flash              perf-r2  200     None             
+[143/188] openai-codex/gpt-6.1-sol                      c3-r1    200     ok               pass
+[144/188] zai-coding-plan/glm-5-turbo                   k2-r1    200     ok               pass
+[145/188] alibaba-token-plan/qwen3.8-flash              c1-r1    200     ok               pass
+[146/188] openai-codex/gpt-6.1-sol                      c4-r1    200     ok               pass
+[147/188] alibaba-token-plan/qwen3.8-flash              c2-r1    200     ok               pass
+[148/188] zai-coding-plan/glm-5-turbo                   k3-r1    200     ok               pass
+[149/188] zai-coding-plan/glm-5-turbo                   t1-r1    200     ok               pass
+[150/188] alibaba-token-plan/qwen3.8-flash              c3-r1    200     ok               pass
+[151/188] openai-codex/gpt-6.1-sol                      c5-r1    200     ok               pass
+[152/188] alibaba-token-plan/qwen3.8-flash              c4-r1    200     ok               pass
+[153/188] openai-codex/gpt-6.1-sol                      k1-r1    200     ok               pass
+[154/188] hyper/qwen3.8-flash                           c5-r1    200     ok               pass
+[155/188] xai-oauth/grok-4.5                            perf-r1  200     None             
+[156/188] openai-codex/gpt-6.1-sol                      k2-r1    200     ok               pass
+[157/188] hyper/qwen3.8-flash                           k1-r1    200     ok               pass
+[158/188] openai-codex/gpt-6.1-sol                      k3-r1    200     ok               pass
+[159/188] openai-codex/gpt-6.1-sol                      t1-r1    200     ok               pass
+[160/188] xai-oauth/grok-4.5                            perf-r2  200     None             
+[161/188] hyper/qwen3.8-flash                           k2-r1    200     ok               pass
+[162/188] openai-codex/gpt-6.1-sol-high                 perf-r1  200     None             
+[163/188] xai-oauth/grok-4.5                            c1-r1    200     ok               pass
+[164/188] hyper/qwen3.8-flash                           k3-r1    200     ok               pass
+[165/188] xai-oauth/grok-4.5                            c2-r1    200     ok               pass
+[166/188] alibaba-token-plan/qwen3.8-flash              c5-r1    200     ok               pass
+[167/188] hyper/qwen3.8-flash                           t1-r1    200     ok               pass
+[168/188] xai-oauth/grok-4.5                            c3-r1    200     ok               pass
+[169/188] openai-codex/gpt-6.1-sol-high                 perf-r2  200     None             
+[170/188] openai-codex/gpt-6.1-sol-high                 c1-r1    200     ok               pass
+[171/188] openai-codex/gpt-6.1-sol-high                 c2-r1    200     ok               pass
+[172/188] xai-oauth/grok-4.5                            c4-r1    200     ok               pass
+[173/188] openai-codex/gpt-6.1-sol-high                 c3-r1    200     ok               pass
+[174/188] alibaba-token-plan/qwen3.8-flash              k1-r1    200     ok               pass
+[175/188] openai-codex/gpt-6.1-sol-high                 c4-r1    200     ok               pass
+[176/188] alibaba-token-plan/qwen3.8-flash              k2-r1    200     ok               pass
+[177/188] openai-codex/gpt-6.1-sol-high                 c5-r1    200     ok               pass
+[178/188] alibaba-token-plan/qwen3.8-flash              k3-r1    200     ok               pass
+[179/188] alibaba-token-plan/qwen3.8-flash              t1-r1    200     ok               pass
+[180/188] openai-codex/gpt-6.1-sol-high                 k1-r1    200     ok               pass
+[181/188] openai-codex/gpt-6.1-sol-high                 k2-r1    200     ok               pass
+[182/188] openai-codex/gpt-6.1-sol-high                 k3-r1    200     ok               pass
+[183/188] openai-codex/gpt-6.1-sol-high                 t1-r1    200     ok               pass
+[184/188] xai-oauth/grok-4.5                            c5-r1    200     ok               pass
+[185/188] xai-oauth/grok-4.5                            k1-r1    200     ok               pass
+[186/188] xai-oauth/grok-4.5                            k2-r1    200     ok               pass
+[187/188] xai-oauth/grok-4.5                            k3-r1    200     ok               pass
+[188/188] xai-oauth/grok-4.5                            t1-r1    200     ok               pass
+done: 188/188 requests in 208s -> /home/vgpnk/Projects/shokunin/.tower/worktrees/wt-3/research/round-18-kimi-model-routing/battery/raw/telemetry.csv
+EXIT=0

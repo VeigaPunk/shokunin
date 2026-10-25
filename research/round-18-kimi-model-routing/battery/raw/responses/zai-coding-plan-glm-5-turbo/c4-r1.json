@@ -1,0 +1,97 @@
+{
+  "pool_id": "zai-coding-plan/glm-5-turbo",
+  "provider": "zai-coding-plan",
+  "model_id": "glm-5-turbo",
+  "model_sent": "glm-5-turbo",
+  "protocol": "openai",
+  "bucket": "MIDDLE",
+  "base_url": "https://api.z.ai/api/coding/paas/v4",
+  "probe_id": "c4",
+  "probe_kind": "contract",
+  "rep": 1,
+  "measured": true,
+  "prompt": "How many times does the letter r appear in the word strawberry? Answer with one digit and nothing else.",
+  "max_tokens": 192,
+  "tools_sent": false,
+  "tool_choice": null,
+  "request_body": {
+    "model": "glm-5-turbo",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "How many times does the letter r appear in the word strawberry? Answer with one digit and nothing else."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "url": "https://api.z.ai/api/coding/paas/v4/chat/completions",
+  "timeout_s": 120,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 4318,
+  "response_headers": {
+    "Date": "Thu, 15 Oct 2026 12:01:06 GMT",
+    "Content-Type": "text/event-stream;charset=UTF-8",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "Alt-Svc": "h3=\":443\"; ma=3600",
+    "Set-Cookie": "<redacted:len=17>",
+    "ga-traceid": "313c877431ba16c950259c19d9aed438",
+    "Vary": "Origin",
+    "X-LOG-ID": "20261015200103d008b37c07504d8b",
+    "X-Request-ID": "ea185b12-bf23-4542-ba8b-672621da0b12"
+  },
+  "content_type": "text/event-stream;charset=UTF-8",
+  "content": "3",
+  "content_truncated": false,
+  "reasoning_chars": 178,
+  "reasoning_text": "The word \"strawberry\" \u2014 let me count the r's: s-t-r-a-w-b-e-r-r-y\n\ns(1), t(2), r(3) - first r, a(4), w(5), b(6), e(7), r(8) - second r, r(9) - third r, y(10)\n\nSo there are 3 r's.",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": {
+    "prompt_tokens": 33,
+    "completion_tokens": 89,
+    "total_tokens": 122,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 85
+    }
+  },
+  "finish_reason": "stop",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 87,
+  "sse_line_count": 176,
+  "raw_preview": "data: {\"id\":\"20261015200103d008b37c07504d8b\",\"created\":1792065663,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"The\"}}]}\ndata: {\"id\":\"20261015200103d008b37c07504d8b\",\"created\":1792065663,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" word\"}}]}\ndata: {\"id\":\"20261015200103d008b37c07504d8b\",\"created\":1792065663,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" \\\"\"}}]}\ndata: {\"id\":\"20261015200103d008b37c07504d8b\",\"created\":1792065663,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"str\"}}]}\ndata: {\"id\":\"20261015200103d008b37c07504d8b\",\"created\":1792065663,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"aw\"}}]}\ndata: {\"id\":\"20261015200103d008b37c07504d8b\",\"created\":1792065663,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"berry\"}}]}\ndata: {\"id\":\"20261015200103d008b37c07504d8b\",\"created\":1792065663,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"\\\"\"}}]}\ndata: {\"id\":\"20261015200103d008b37c07504d8b\",\"created\":1792065663,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" \u2014\"}}]}\ndata: {\"id\":\"20261015200103d008b37c07504d8b\",\"created\":1792065663,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" let\"}}]}\ndata: {\"id\":\"20261015200103d008b37c07504d8b\",\"created\":1792065663,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" me\"}}]}\ndata: {\"id\":\"20261015200103d008b37c07504d8b\",\"created\":1792065663,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" count\"}}]}\ndata: {\"id\":\"20261015200103d008b37c07504d8b\",\"created\":1792065663,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" the\"}}]}\ndata: {\"id\":\"20261015200103d008b37c07504d8b\",\"created\":1792065663,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" r\"}}]}\ndata: {\"id\":\"20261015200103d008b37c07504d8b\",\"created\":1792065663,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"'s\"}}]}\ndata: {\"id\":\"20261015200103d008b37c07504d8b\",\"created\":1792065663,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\":\"}}]}\ndata: {\"id\":\"20261015200103d008b37c07504d8b\",\"created\":1792065663,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" s\"}}]}\ndata: {\"id\":\"20261015200103d008b37c07504d8b\",\"created\":1792065663,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"-t\"}}]}\ndata: {\"id\":\"20261015200103d008b37c07504d8b\",\"created\":1792065663,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"-r\"}}]}\ndata: {\"id\":\"20261015200103d008b37c07504d8b\",\"created\":1792065663,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"-a\"}}]}\ndata: {\"id\":\"20261015200103d008b37c07504d8b\",\"created\":1792065663,\"object\":\"chat.completion.chunk\",\"model\":\"glm-5.3-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"-w\"}}]}\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "exact match",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T12:01:06Z",
+  "ttft_content_ms": 4317,
+  "ttft_reasoning_ms": 4283,
+  "first_decoded_ms": 4317,
+  "decode_span_ms": null,
+  "tps": null,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": "not derivable: no incremental deltas or fewer than 2 tokens",
+  "completion_tokens": 89,
+  "prompt_tokens": 33,
+  "reasoning_tokens": 85,
+  "content_delta_count": 1,
+  "reasoning_delta_count": 85
+}

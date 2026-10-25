@@ -1,0 +1,78 @@
+{
+  "schema": "r18-battery-predictions/1",
+  "mission": "M6 R18 opencode-go deepseek probe",
+  "filed_at_utc": "2026-10-15T12:41:43Z",
+  "filed_before_first_real_request": true,
+  "config_path": "~/.kimi-code/config.toml",
+  "config_sha256": "e3c223e054a626b847e69f73020ac9b4fdec1ccc2c8f00dcbf414dcda8acfe78",
+  "pool_source": "[models.opencode-go/deepseek-v4.1-flash] — present in [models.*], absent from the live [secondary_model.models] table",
+  "lane": {
+    "model_entry": "opencode-go/deepseek-v4.1-flash",
+    "provider": "opencode-go",
+    "model_id": "deepseek-v4.1-flash",
+    "protocol": "openai",
+    "base_url": "https://opencode.ai/inference/go/v1",
+    "reasoning_key": "reasoning_content",
+    "capabilities": ["image_in", "always_thinking", "tool_use"]
+  },
+  "evidence_base": [
+    "M3 ANALYSIS section 2: hyper/deepseek-v4.1-flash TTFT 2081 ms (1807/2355), TPS 375.91 (366.1/385.8), 8/9, c5 truncation",
+    "M3 ANALYSIS section 2: alibaba-token-plan/deepseek-v4.1-flash first-decoded 2251 ms, TPS 226.72 (215.2/238.3), 8/9, c5 truncation",
+    "M3 ANALYSIS section 2: cascade/deepseek-v4.1-flash TTFT 3179 ms, burst, 8/9 — its leg 1 is opencode-go/deepseek-v4.1-flash",
+    "M1 census raw/stream-summary.json ds-flash-cascade probe on model deepseek-v4.1-flash: 2467 ms to first decoded token through the local shim, upstream x-opencode-* headers, burst flush",
+    "M2 definitions ANALYSIS section 1: opencode-go requires a browser User-Agent (scripted UA returns 403 error code 1010); tool_choice forcing 400s were the anthropic-protocol lanes, the openai shape returned a tool call"
+  ],
+  "predictions": {
+    "opencode-go/deepseek-v4.1-flash": {
+      "bucket": "UNLABELLED (not in the live [secondary_model.models] table)",
+      "basis": "same model id measured on two sibling lanes at 2081 ms and 2251 ms; the only opencode-go-leg observation is the 2467 ms census smoke through the cascade shim; the cascade lane bounds the direct lane from above at 3179 ms",
+      "ttft_ms": 2500,
+      "ttft_range_ms": [1700, 3800],
+      "ttft_reps_ms": [2400, 2600],
+      "ttft_basis": "content token",
+      "content_ttft_expected": true,
+      "tps": 240,
+      "tps_range": [110, 430],
+      "tps_derivable": true,
+      "stream_shape": "incremental",
+      "pass_count": 8,
+      "pass_range": [7, 9],
+      "failing_probe": "c5",
+      "failure_modes": [
+        "truncation (reasoning consumes the fixed 192-token correctness budget before content; c5, as on both siblings)",
+        "transport (gateway queueing/timeout on a Cloudflare-fronted public router)",
+        "auth (only if the M2 UA block reappears despite the browser UA class; predicted not to)",
+        "format_break (tool probe rejected; lowest likelihood)"
+      ],
+      "notes": "always_thinking at this budget; both siblings failed exactly c5 by truncation; predicted to answer 8/9"
+    }
+  },
+  "ordering_claims": [
+    {"id": "OC1", "claim": "TTFT med < cascade/deepseek-v4.1-flash measured 3179 ms", "predicted": true},
+    {"id": "OC2", "claim": "TTFT med within +/-25% of the sibling median 2166 ms (1625-2708 ms)", "predicted": true},
+    {"id": "OC3", "claim": "TTFT med > hyper/deepseek-v4.1-flash 2081 ms", "predicted": true},
+    {"id": "OC4", "claim": "TPS med < hyper/deepseek-v4.1-flash 375.91 tok/s", "predicted": true},
+    {"id": "OC5", "claim": "TPS med > alibaba-token-plan/deepseek-v4.1-flash 226.72 tok/s", "predicted": true, "confidence": "low"},
+    {"id": "OC6", "claim": "pass count equals both siblings' 8/9", "predicted": true},
+    {"id": "OC7", "claim": "stream shape incremental, TPS derivable", "predicted": true}
+  ],
+  "global_claims": [
+    {"id": "OG1", "claim": "every request returns 200; none returns 403/1010", "predicted": true},
+    {"id": "OG2", "claim": "server usage block present with readable completion_tokens", "predicted": true},
+    {"id": "OG3", "claim": "perf probe bills >= 80 prompt tokens on the ~50-token prompt", "predicted": true},
+    {"id": "OG4", "claim": "at least one probe spends its whole output budget on reasoning", "predicted": true},
+    {"id": "OG5", "claim": "the response model field echoes deepseek-v4.1-flash", "predicted": true},
+    {"id": "OG6", "claim": "tool probe returns a well-formed get_weather call", "predicted": true}
+  ],
+  "routing_decision_rule": {
+    "earns_direct_FAST_slot_if": "TTFT med <= 2800 ms AND pass >= 8/9",
+    "predicted_to_earn": true,
+    "does_not_earn_if": "TTFT med > 3179 ms OR pass <= 6/9",
+    "note": "the cascade lane keeps its value either way: its worth is the hyper->devin fallback chain, not leg-1 speed"
+  },
+  "scoring_rules": {
+    "point_rows": "signed point error, predicted minus observed median (TTFT/TPS) and minus observed pass count",
+    "range_rows": "hit if the observed median is inside the predicted range, else miss with the signed gap",
+    "claims": "hit / miss / unprovable (unprovable when one side has no usable measurement)"
+  }
+}

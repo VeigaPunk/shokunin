@@ -1,0 +1,783 @@
+{
+  "generated_by": "scripts/probe_client_semantics.py",
+  "kimi_binary": "/home/vgpnk/.kimi-code/bin/kimi",
+  "scratch_config_note": "synthetic config; the only credential in it is the literal 'mock-local' for a loopback provider",
+  "results": [
+    {
+      "flavour": "global_max",
+      "alias": "mock/plain",
+      "declared": {
+        "global_effort": "max"
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "plain",
+        "tools": 25,
+        "stream": true,
+        "reasoning_effort": "max"
+      },
+      "error": null
+    },
+    {
+      "flavour": "global_max",
+      "alias": "mock/offnone",
+      "declared": {
+        "support_efforts": [
+          "low",
+          "high",
+          "max"
+        ],
+        "off_effort": "none",
+        "default_effort": "high",
+        "global_effort": "max"
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "offnone",
+        "tools": 25,
+        "stream": true,
+        "reasoning_effort": "max"
+      },
+      "error": null
+    },
+    {
+      "flavour": "global_max",
+      "alias": "mock/noonf",
+      "declared": {
+        "support_efforts": [
+          "low",
+          "high",
+          "max"
+        ],
+        "default_effort": "high",
+        "global_effort": "max"
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "noonf",
+        "tools": 25,
+        "stream": true,
+        "reasoning_effort": "max"
+      },
+      "error": null
+    },
+    {
+      "flavour": "global_max",
+      "alias": "mock/offeffs",
+      "declared": {
+        "support_efforts": [
+          "low",
+          "high",
+          "max"
+        ],
+        "off_effort": "none",
+        "global_effort": "max"
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "offeffs",
+        "tools": 25,
+        "stream": true,
+        "reasoning_effort": "max"
+      },
+      "error": null
+    },
+    {
+      "flavour": "global_max",
+      "alias": "mock/override",
+      "declared": {
+        "support_efforts": [
+          "low",
+          "high",
+          "max"
+        ],
+        "overrides": {
+          "default_effort": "low"
+        },
+        "global_effort": "max"
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "override",
+        "tools": 25,
+        "stream": true,
+        "reasoning_effort": "max"
+      },
+      "error": null
+    },
+    {
+      "flavour": "global_max",
+      "alias": "mock/xhigh",
+      "declared": {
+        "support_efforts": [
+          "low",
+          "medium",
+          "xhigh"
+        ],
+        "global_effort": "max"
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "xhigh",
+        "tools": 25,
+        "stream": true,
+        "reasoning_effort": "max"
+      },
+      "error": null
+    },
+    {
+      "flavour": "global_max",
+      "alias": "mock/onlymax",
+      "declared": {
+        "support_efforts": [
+          "max"
+        ],
+        "global_effort": "max"
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "onlymax",
+        "tools": 25,
+        "stream": true,
+        "reasoning_effort": "max"
+      },
+      "error": null
+    },
+    {
+      "flavour": "global_max",
+      "alias": "mock/onlylow",
+      "declared": {
+        "support_efforts": [
+          "low"
+        ],
+        "global_effort": "max"
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "onlylow",
+        "tools": 25,
+        "stream": true,
+        "reasoning_effort": "max"
+      },
+      "error": null
+    },
+    {
+      "flavour": "global_max",
+      "alias": "mock/lowhigh",
+      "declared": {
+        "support_efforts": [
+          "low",
+          "high"
+        ],
+        "global_effort": "max"
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "lowhigh",
+        "tools": 25,
+        "stream": true,
+        "reasoning_effort": "max"
+      },
+      "error": null
+    },
+    {
+      "flavour": "global_max",
+      "alias": "mock/allof",
+      "declared": {
+        "support_efforts": [
+          "minimal",
+          "low",
+          "medium",
+          "high"
+        ],
+        "off_effort": "none",
+        "global_effort": "max"
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "allof",
+        "tools": 25,
+        "stream": true,
+        "reasoning_effort": "max"
+      },
+      "error": null
+    },
+    {
+      "flavour": "global_max",
+      "alias": "mock/wide",
+      "declared": {
+        "support_efforts": [
+          "minimal",
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ],
+        "global_effort": "max"
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "wide",
+        "tools": 25,
+        "stream": true,
+        "reasoning_effort": "max"
+      },
+      "error": null
+    },
+    {
+      "flavour": "global_max",
+      "alias": "mock/maxout",
+      "declared": {
+        "max_output_size": 64000,
+        "global_effort": "max"
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "maxout",
+        "tools": 25,
+        "stream": true,
+        "reasoning_effort": "max",
+        "max_tokens": 64000
+      },
+      "error": null
+    },
+    {
+      "flavour": "global_max",
+      "alias": "mock/imgonly",
+      "declared": {
+        "capabilities": [
+          "image_in",
+          "thinking"
+        ],
+        "global_effort": "max"
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "imgonly",
+        "tools": 26,
+        "stream": true,
+        "reasoning_effort": "max"
+      },
+      "error": null
+    },
+    {
+      "flavour": "global_max",
+      "alias": "mock/notools",
+      "declared": {
+        "capabilities": [
+          "thinking"
+        ],
+        "global_effort": "max"
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "notools",
+        "tools": 25,
+        "stream": true,
+        "reasoning_effort": "max"
+      },
+      "error": null
+    },
+    {
+      "flavour": "global_max",
+      "alias": "mock/toolgated",
+      "declared": {
+        "capabilities": [
+          "image_in",
+          "video_in",
+          "audio_in",
+          "thinking",
+          "always_thinking",
+          "tool_use",
+          "dynamically_loaded_tools"
+        ],
+        "global_effort": "max"
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "toolgated",
+        "tools": 26,
+        "stream": true,
+        "reasoning_effort": "max"
+      },
+      "error": null
+    },
+    {
+      "flavour": "global_max",
+      "alias": "mock/anthropic",
+      "declared": {
+        "protocol": "anthropic",
+        "max_output_size": 12345,
+        "support_efforts": [
+          "low",
+          "high"
+        ],
+        "global_effort": "max"
+      },
+      "sent": {
+        "path": "/v1/messages?beta=true",
+        "model": "anthropic",
+        "tools": 25,
+        "stream": true,
+        "max_tokens": 12345,
+        "output_config.effort": "max",
+        "thinking.effort": null
+      },
+      "error": null
+    },
+    {
+      "flavour": "global_max",
+      "alias": "mock/anthropic2",
+      "declared": {
+        "protocol": "anthropic",
+        "support_efforts": [
+          "low",
+          "medium",
+          "xhigh"
+        ],
+        "global_effort": "max"
+      },
+      "sent": {
+        "path": "/v1/messages?beta=true",
+        "model": "anthropic2",
+        "tools": 25,
+        "stream": true,
+        "max_tokens": 64000,
+        "output_config.effort": "max",
+        "thinking.effort": null
+      },
+      "error": null
+    },
+    {
+      "flavour": "global_max",
+      "alias": "mock/responses",
+      "declared": {
+        "protocol": "openai_responses",
+        "max_output_size": 32000,
+        "support_efforts": [
+          "low",
+          "medium",
+          "xhigh"
+        ],
+        "global_effort": "max"
+      },
+      "sent": {
+        "path": "/v1/responses",
+        "model": "responses",
+        "tools": 25,
+        "stream": true,
+        "reasoning.effort": "max"
+      },
+      "error": null
+    },
+    {
+      "flavour": "global_max",
+      "alias": "mockkimi/kmock",
+      "declared": {
+        "provider_type": "kimi"
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "kmock",
+        "tools": 25,
+        "stream": true,
+        "max_completion_tokens": 261951,
+        "thinking.effort": "max"
+      },
+      "error": null
+    },
+    {
+      "flavour": "global_max",
+      "alias": "mockkimi/kimiout",
+      "declared": {
+        "provider_type": "kimi"
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "kimiout",
+        "tools": 25,
+        "stream": true,
+        "max_completion_tokens": 12345,
+        "thinking.effort": null
+      },
+      "error": null
+    },
+    {
+      "flavour": "no_global",
+      "alias": "mock/plain",
+      "declared": {},
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "plain",
+        "tools": 25,
+        "stream": true
+      },
+      "error": null
+    },
+    {
+      "flavour": "no_global",
+      "alias": "mock/offnone",
+      "declared": {
+        "support_efforts": [
+          "low",
+          "high",
+          "max"
+        ],
+        "off_effort": "none",
+        "default_effort": "high"
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "offnone",
+        "tools": 25,
+        "stream": true,
+        "reasoning_effort": "high"
+      },
+      "error": null
+    },
+    {
+      "flavour": "no_global",
+      "alias": "mock/noonf",
+      "declared": {
+        "support_efforts": [
+          "low",
+          "high",
+          "max"
+        ],
+        "default_effort": "high"
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "noonf",
+        "tools": 25,
+        "stream": true,
+        "reasoning_effort": "high"
+      },
+      "error": null
+    },
+    {
+      "flavour": "no_global",
+      "alias": "mock/offeffs",
+      "declared": {
+        "support_efforts": [
+          "low",
+          "high",
+          "max"
+        ],
+        "off_effort": "none"
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "offeffs",
+        "tools": 25,
+        "stream": true,
+        "reasoning_effort": "high"
+      },
+      "error": null
+    },
+    {
+      "flavour": "no_global",
+      "alias": "mock/override",
+      "declared": {
+        "support_efforts": [
+          "low",
+          "high",
+          "max"
+        ],
+        "overrides": {
+          "default_effort": "low"
+        }
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "override",
+        "tools": 25,
+        "stream": true,
+        "reasoning_effort": "low"
+      },
+      "error": null
+    },
+    {
+      "flavour": "no_global",
+      "alias": "mock/xhigh",
+      "declared": {
+        "support_efforts": [
+          "low",
+          "medium",
+          "xhigh"
+        ]
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "xhigh",
+        "tools": 25,
+        "stream": true,
+        "reasoning_effort": "medium"
+      },
+      "error": null
+    },
+    {
+      "flavour": "no_global",
+      "alias": "mock/onlymax",
+      "declared": {
+        "support_efforts": [
+          "max"
+        ]
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "onlymax",
+        "tools": 25,
+        "stream": true,
+        "reasoning_effort": "max"
+      },
+      "error": null
+    },
+    {
+      "flavour": "no_global",
+      "alias": "mock/onlylow",
+      "declared": {
+        "support_efforts": [
+          "low"
+        ]
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "onlylow",
+        "tools": 25,
+        "stream": true,
+        "reasoning_effort": "low"
+      },
+      "error": null
+    },
+    {
+      "flavour": "no_global",
+      "alias": "mock/lowhigh",
+      "declared": {
+        "support_efforts": [
+          "low",
+          "high"
+        ]
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "lowhigh",
+        "tools": 25,
+        "stream": true,
+        "reasoning_effort": "high"
+      },
+      "error": null
+    },
+    {
+      "flavour": "no_global",
+      "alias": "mock/allof",
+      "declared": {
+        "support_efforts": [
+          "minimal",
+          "low",
+          "medium",
+          "high"
+        ],
+        "off_effort": "none"
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "allof",
+        "tools": 25,
+        "stream": true,
+        "reasoning_effort": "medium"
+      },
+      "error": null
+    },
+    {
+      "flavour": "no_global",
+      "alias": "mock/wide",
+      "declared": {
+        "support_efforts": [
+          "minimal",
+          "low",
+          "medium",
+          "high",
+          "xhigh",
+          "max"
+        ]
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "wide",
+        "tools": 25,
+        "stream": true,
+        "reasoning_effort": "high"
+      },
+      "error": null
+    },
+    {
+      "flavour": "no_global",
+      "alias": "mock/maxout",
+      "declared": {
+        "max_output_size": 64000
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "maxout",
+        "tools": 25,
+        "stream": true,
+        "max_tokens": 64000
+      },
+      "error": null
+    },
+    {
+      "flavour": "no_global",
+      "alias": "mock/imgonly",
+      "declared": {
+        "capabilities": [
+          "image_in",
+          "thinking"
+        ]
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "imgonly",
+        "tools": 26,
+        "stream": true
+      },
+      "error": null
+    },
+    {
+      "flavour": "no_global",
+      "alias": "mock/notools",
+      "declared": {
+        "capabilities": [
+          "thinking"
+        ]
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "notools",
+        "tools": 25,
+        "stream": true
+      },
+      "error": null
+    },
+    {
+      "flavour": "no_global",
+      "alias": "mock/toolgated",
+      "declared": {
+        "capabilities": [
+          "image_in",
+          "video_in",
+          "audio_in",
+          "thinking",
+          "always_thinking",
+          "tool_use",
+          "dynamically_loaded_tools"
+        ]
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "toolgated",
+        "tools": 26,
+        "stream": true
+      },
+      "error": null
+    },
+    {
+      "flavour": "no_global",
+      "alias": "mock/anthropic",
+      "declared": {
+        "protocol": "anthropic",
+        "max_output_size": 12345,
+        "support_efforts": [
+          "low",
+          "high"
+        ]
+      },
+      "sent": {
+        "path": "/v1/messages?beta=true",
+        "model": "anthropic",
+        "tools": 25,
+        "stream": true,
+        "max_tokens": 12345,
+        "output_config.effort": "high",
+        "thinking.effort": null
+      },
+      "error": null
+    },
+    {
+      "flavour": "no_global",
+      "alias": "mock/anthropic2",
+      "declared": {
+        "protocol": "anthropic",
+        "support_efforts": [
+          "low",
+          "medium",
+          "xhigh"
+        ]
+      },
+      "sent": {
+        "path": "/v1/messages?beta=true",
+        "model": "anthropic2",
+        "tools": 25,
+        "stream": true,
+        "max_tokens": 64000,
+        "output_config.effort": "medium",
+        "thinking.effort": null
+      },
+      "error": null
+    },
+    {
+      "flavour": "no_global",
+      "alias": "mock/responses",
+      "declared": {
+        "protocol": "openai_responses",
+        "max_output_size": 32000,
+        "support_efforts": [
+          "low",
+          "medium",
+          "xhigh"
+        ]
+      },
+      "sent": {
+        "path": "/v1/responses",
+        "model": "responses",
+        "tools": 25,
+        "stream": true,
+        "reasoning.effort": "medium"
+      },
+      "error": null
+    },
+    {
+      "flavour": "no_global",
+      "alias": "mockkimi/kmock",
+      "declared": {
+        "provider_type": "kimi"
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "kmock",
+        "tools": 25,
+        "stream": true,
+        "max_completion_tokens": 261951,
+        "thinking.effort": "max"
+      },
+      "error": null
+    },
+    {
+      "flavour": "no_global",
+      "alias": "mockkimi/kimiout",
+      "declared": {
+        "provider_type": "kimi"
+      },
+      "sent": {
+        "path": "/v1/chat/completions",
+        "model": "kimiout",
+        "tools": 25,
+        "stream": true,
+        "max_completion_tokens": 12345,
+        "thinking.effort": null
+      },
+      "error": null
+    }
+  ]
+}

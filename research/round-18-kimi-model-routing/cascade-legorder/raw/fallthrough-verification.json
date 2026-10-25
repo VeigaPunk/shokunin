@@ -1,0 +1,145 @@
+{
+  "dead_url": "http://127.0.0.1:9/v1/chat/completions",
+  "scenarios": [
+    {
+      "kind": "real",
+      "port": 44385,
+      "response": {
+        "body": "{\"id\":\"792260c882d388bd66f21435b1e52586\",\"object\":\"chat.completion\",\"created\":1792074501,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"finish_reason\":\"length\",\"message\":{\"role\":\"assistant\",\"content\":\"\",\"reasoning_content\":\"The user just said \\\"ping\\\". This\"}}],\"usage\":{\"prompt_tokens\":31,\"completion_tokens\":8,\"total_tokens\":39,\"prompt_tokens_details\":{\"audio_tokens\":0,\"cached_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_write_tokens\":0},\"completion_tokens_details\":{\"accepted_prediction_tokens\":0,\"audio_tokens\":0,\"reasoning_tokens\":8,\"rejected_prediction_tokens\":0}}}",
+        "signature": "opencode-go",
+        "status": 200
+      },
+      "shim_leg_log": [
+        "leg=1/dead-leg1 FAIL status=None reason=connection error: ConnectionRefusedError: [Errno 111] Connection refused 0.000s",
+        "leg=2/dead-leg2 FAIL status=None reason=connection error: ConnectionRefusedError: [Errno 111] Connection refused 0.000s",
+        "leg=3/opencode-go OK status=200 stream=False 2.849s"
+      ],
+      "stream": false,
+      "stub_call_counts": {},
+      "stubs_contacted": [],
+      "title": "connection refused on legs 1-2 -> leg 3 (real opencode-go) serves",
+      "why": "dead legs produce connection errors; the chain advances to the real third leg"
+    },
+    {
+      "kind": "local",
+      "port": 35443,
+      "response": {
+        "body": "{\"error\":{\"message\":\"Your token-plan 1-month quota has been exhausted.\"}}",
+        "signature": "unidentified",
+        "status": 200
+      },
+      "shim_leg_log": [
+        "leg=1/stub-429 FAIL status=429 reason=http 429 0.001s",
+        "leg=2/stub-500 FAIL status=500 reason=http 500 (5xx) 0.000s",
+        "leg=3/stub-quota200 FAIL status=200 reason=200 body marker 'quota' 0.000s"
+      ],
+      "stream": false,
+      "stub_call_counts": {
+        "429": 1,
+        "500": 1,
+        "quota200": 1
+      },
+      "stubs_contacted": [
+        "429",
+        "500",
+        "quota200"
+      ],
+      "title": "stub legs 429 -> 500 -> 200-with-quota-marker: all fail, caller receives the LAST leg's response",
+      "why": "both documented failure classes fire and the exhausted chain hands back the last leg verbatim"
+    },
+    {
+      "kind": "real",
+      "port": 57555,
+      "response": {
+        "body": "{\"id\":\"chatcmpl-0eb1ba055e5ebb25d5c6c273\",\"object\":\"chat.completion\",\"created\":1792074503,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"\",\"reasoning_content\":\"The user just said \\\"ping\\\". This\"},\"finish_reason\":\"length\"}],\"usage\":{\"prompt_tokens\":31,\"completion_tokens\":8,\"total_tokens\":39,\"completion_tokens_details\":{\"reasoning_tokens\":8},\"cost\":{\"usd\":0.0001,\"hypercredits\":0.002},\"remaining\":{\"hypercredits\":137.228586256}}}\n",
+        "signature": "hyper",
+        "status": 200
+      },
+      "shim_leg_log": [
+        "leg=1/stub-quota200 FAIL status=200 reason=200 body marker 'quota' 0.000s",
+        "leg=2/hyper OK status=200 stream=False 1.296s"
+      ],
+      "stream": false,
+      "stub_call_counts": {
+        "quota200": 1
+      },
+      "stubs_contacted": [
+        "quota200"
+      ],
+      "title": "stub leg 1 200-with-quota-marker -> leg 2 (real hyper) serves",
+      "why": "a 200 whose body carries a quota marker is treated as a failure and the next leg answers"
+    },
+    {
+      "kind": "local",
+      "port": 45531,
+      "response": {
+        "body": "{\"error\":{\"message\":\"bad request: unsupported parameter\"}}",
+        "signature": "unidentified",
+        "status": 400
+      },
+      "shim_leg_log": [
+        "leg=1/stub-400 FAIL status=400 reason=http 400 (terminal) 0.000s"
+      ],
+      "stream": false,
+      "stub_call_counts": {
+        "400": 1
+      },
+      "stubs_contacted": [
+        "400"
+      ],
+      "title": "stub leg 1 answers 400 (terminal) -> chain does NOT advance",
+      "why": "non-200 outside the failure set is handed straight to the caller; legs 2-3 stay untouched"
+    },
+    {
+      "kind": "local",
+      "port": 53627,
+      "response": {
+        "body": "{\"error\":{\"message\":\"Your token-plan 1-month quota has been exhausted.\"}}",
+        "signature": "unidentified",
+        "status": 200
+      },
+      "shim_leg_log": [
+        "leg=1/stub-quota200 OK status=200 stream=True 0.000s"
+      ],
+      "stream": true,
+      "stub_call_counts": {
+        "quota200": 1
+      },
+      "stubs_contacted": [
+        "quota200"
+      ],
+      "title": "[stream] stub leg 1 200-with-quota-marker -> leg 1 is ACCEPTED, no advance",
+      "why": "on stream=true the leg is chosen from headers only, so a 200 body marker is invisible: the caller receives that body as the stream (documented consequence, no failover)"
+    },
+    {
+      "kind": "real",
+      "port": 42607,
+      "response": {
+        "body": "data: {\"id\":\"chatcmpl-d3700bd4d77b07572762778d\",\"object\":\"chat.completion.chunk\",\"created\":1792074504,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"role\":\"assistant\"},\"finish_reason\":null}]}\n\ndata: {\"id\":\"chatcmpl-d3700bd4d77b07572762778d\",\"object\":\"chat.completion.chunk\",\"created\":1792074504,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"The\"},\"finish_reason\":null}]}\n\ndata: {\"id\":\"chatcmpl-d3700bd4d77b07572762778d\",\"object\":\"chat.completion.chunk\",\"created\":1792074504,\"model\":\"deepseek-v4.1-flash\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_con",
+        "signature": "hyper",
+        "status": 200
+      },
+      "shim_leg_log": [
+        "leg=1/stub-429 FAIL status=429 reason=http 429 0.000s",
+        "leg=2/hyper OK status=200 stream=True 1.577s"
+      ],
+      "stream": true,
+      "stub_call_counts": {
+        "429": 1
+      },
+      "stubs_contacted": [
+        "429"
+      ],
+      "title": "[stream] stub leg 1 429 -> leg 2 (real hyper) serves",
+      "why": "status-based failures do fail over on the streaming path"
+    }
+  ],
+  "shim": "/home/vgpnk/.local/share/ds-flash-shim/shim.py",
+  "started": "2026-10-15T11:28:18-0300",
+  "stub_ports": {
+    "400": 46449,
+    "429": 41675,
+    "500": 45953,
+    "quota200": 35007
+  }
+}

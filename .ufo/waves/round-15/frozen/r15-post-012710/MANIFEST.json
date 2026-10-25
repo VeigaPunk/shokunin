@@ -1,0 +1,1437 @@
+{
+ "version": 1,
+ "repo": "shokunin",
+ "protocol": "PROTOCOL.md",
+ "roster": [
+  {
+   "id": "kasegi",
+   "name": "kasegi-shokunin",
+   "domain": "bounty & security research",
+   "rank": "shonen",
+   "repo": "kasegi-shokunin",
+   "minted": "2026-09-28"
+  },
+  {
+   "id": "kengaku",
+   "name": "kengaku-shokunin",
+   "domain": "LLM/model research & evaluation",
+   "rank": "shonen",
+   "repo": "kengaku-shokunin",
+   "minted": "2026-09-28"
+  },
+  {
+   "id": "kake",
+   "name": "kake-shokunin",
+   "domain": "web properties & publishing",
+   "rank": "shonen",
+   "repo": "kake-shokunin",
+   "minted": "2026-09-28"
+  },
+  {
+   "id": "kumitate",
+   "name": "kumitate-shokunin",
+   "domain": "orchestration & tooling (OMP, scripts, Rust runtime)",
+   "rank": "shonen",
+   "repo": "kumitate-shokunin",
+   "minted": "2026-09-28"
+  },
+  {
+   "id": "kotoba",
+   "name": "kotoba-shokunin",
+   "domain": "prompt & skill craft",
+   "rank": "shonen",
+   "repo": "kotoba-shokunin",
+   "minted": "2026-09-28"
+  },
+  {
+   "id": "kagi",
+   "name": "kagi-shokunin",
+   "domain": "secrets & vault ops",
+   "rank": "shonen",
+   "repo": "kagi-shokunin",
+   "minted": "2026-09-28"
+  }
+ ],
+ "minting_rule": "a shonen is minted when a domain demand is proven; promotion to shokunin requires demonstrated end-to-end domain work; jin'i-ryu requires self-iteration capability",
+ "rounds": [
+  {
+   "round": 0,
+   "date": "2026-09-28",
+   "type": "scaffold",
+   "notes": "roster minted: 6 shonen seeded from operator's live work surfaces"
+  },
+  {
+   "round": 1,
+   "date": "2026-09-28",
+   "type": "work",
+   "lanes": {
+    "protocol": "ok",
+    "kasegi": "ok",
+    "kengaku": "ok",
+    "kake": "ok",
+    "kumitate": "ok",
+    "kotoba": "ok",
+    "aggregator": "in-flight",
+    "kagi": "not-dispatched"
+   },
+   "minted": [],
+   "protocol_updates": [
+    "promotion gates verifiable",
+    "evidence standard",
+    "round schema",
+    "write-scope invariants",
+    "dormancy rule",
+    "corpus contract added"
+   ],
+   "notes": "7 L1 missions live in fleet window 'shokunin' (6 m_swe + aggregator m_qwen); watchdog keeps fleet at 7 @450s; L2 routes m_kcode/m_composer/m_lunamax/m_zfl/m_antigravity(connector)/m_flash(scout); kagi deferred by round-robin to round 2"
+  },
+  {
+   "round": 1.5,
+   "date": "2026-09-28",
+   "type": "ops",
+   "notes": "watchdog v2 = round driver: every 450s tick steers each live lane to next round (state in .ufo/state/<lane>.round, cap 1024), relaunches dead lanes storing missionId in .ufo/state/<lane>.mission; kagi-shokunin lane joined (mission m_574d9f1f956e499dabaa59de9834bdc0); fleet now 8 L1s"
+  },
+  {
+   "round": 9,
+   "date": "2026-09-28",
+   "type": "work",
+   "lanes": {
+    "protocol": "ok",
+    "kasegi": "ok",
+    "kengaku": "in-flight",
+    "kake": "in-flight",
+    "kumitate": "ok",
+    "kotoba": "in-flight",
+    "kagi": "in-flight",
+    "aggregator": "in-flight"
+   },
+   "minted": [],
+   "protocol_updates": [
+    "integrator-of-record instantiated (protocol lane; MANIFEST rounds append authorized)",
+    "report hash must be ancestor of HEAD at closure; amend-after-report = defect",
+    "append-only corrections clarified vs sweep-every-mention",
+    "aggregator commits own child-repo files pathspec-limited; lanes never commit aggregator files",
+    "evidence pointers must resolve at closure (no tmpfs/local://); future-dated evidence is defect",
+    "prompt-fidelity check gains route-map conformance vs MISSION.md",
+    "stale-lane listing duty on every lane report",
+    "lane git author identity <lane>-shokunin required",
+    "self-defects ride the routed-defect queue"
+   ],
+   "notes": "first closure recorded by integrator-of-record (protocol lane round 9); rounds 2-8 went unrecorded pre-instantiation — lane status detail lives in .ufo/reports/round-2..8/*.md (ledger at round-2/AGGREGATE.md); in-flight lanes: kengaku r8, kake r9, kotoba r8, kagi r8, aggregator r5 (~1h); conformance: 36/40 child reports lack SHONEN heading; kengaku r7 report cites orphaned hash 85b22e3; kumitate defect-1 still open; routed-defect ledger unmaintained"
+  },
+  {
+   "round": 1,
+   "date": "2026-09-28",
+   "type": "closure-correction",
+   "closed_at": "2026-09-28T18:21:16-03:00",
+   "supersedes": {
+    "round": 1,
+    "type": "work",
+    "date": "2026-09-28"
+   },
+   "lanes": {
+    "aggregator": "failed",
+    "kagi": "failed"
+   },
+   "lane_rounds": {
+    "aggregator": 1,
+    "kagi": 1
+   },
+   "minted": [],
+   "notes": "Resolves the two rows of the round-1 entry that dispatch evidence contradicts. aggregator: dispatched 15:50:56 ('steer aggregator -> round 1'), steered onward to round 3 at 15:52:38, no .ufo/reports/round-1/aggregator.md -> failed, not in-flight. kagi: 'not-dispatched / deferred by round-robin' contradicts 'launch kagi round=1' 15:50:56; re-steered to round 2 at 15:52:38 with no round-1 report -> failed. kagi's corpus repeats the not-dispatched claim in 5 files (LOG.md:4, corpus/README.md:6, corpus/lessons/round-1.md:3, round-1-aggregator-seed.md:10-11, round-4-aggregator-audit.md:35) — routed to kagi for an appended correction. kengaku and kake filed off-contract filenames (round-1/kengaku-shokunin.md, round-1/web-properties-publishing.md): statuses stand ok, filenames are conformance defects. Line-number-free evidence digest: .ufo/reports/round-10/protocol.md."
+  },
+  {
+   "round": 2,
+   "date": "2026-09-28",
+   "type": "retroactive-closure",
+   "closed_at": "2026-09-28T18:21:16-03:00",
+   "lanes": {
+    "kagi": "ok",
+    "protocol": "not-dispatched",
+    "aggregator": "not-dispatched",
+    "kasegi": "not-dispatched",
+    "kengaku": "not-dispatched",
+    "kake": "not-dispatched",
+    "kumitate": "not-dispatched",
+    "kotoba": "not-dispatched"
+   },
+   "lane_rounds": {
+    "protocol": 1,
+    "aggregator": 1,
+    "kasegi": 1,
+    "kengaku": 1,
+    "kake": 1,
+    "kumitate": 1,
+    "kotoba": 1
+   },
+   "minted": [],
+   "notes": "Steer-era driver skipped round 2 for 7 of 8 lanes ('steer <lane> -> round 3' at 15:52:38); only kagi was steered to round 2 and reported: round-2/kagi.md cites 9b3e49f (exists, ancestor of kagi HEAD), 'complete kagi round=2' 16:02:12. No round-2 prompt file ever existed for any lane (git log --all --diff-filter=D -- '.ufo/prompts/*round-2*' -> 0). round-2/AGGREGATE.md is the ledger snapshot, not a lane report. RETROACTIVE: statuses are presence-of-evidence only, integrator step-1 verification did not run at the time (no integrator existed), pre-fleet-2 regime so no axis-move duty — not a pass record."
+  },
+  {
+   "round": 3,
+   "date": "2026-09-28",
+   "type": "retroactive-closure",
+   "closed_at": "2026-09-28T18:21:16-03:00",
+   "lanes": {
+    "protocol": "ok",
+    "aggregator": "ok",
+    "kasegi": "ok",
+    "kengaku": "ok",
+    "kake": "ok",
+    "kumitate": "ok",
+    "kotoba": "ok",
+    "kagi": "ok"
+   },
+   "minted": [],
+   "notes": "All 8 lanes steered to round 3 at 15:52:38 (steer-era: no prompt files), all 8 reports present in .ufo/reports/round-3/, all 8 'complete <lane> round=3' lines present (15:56:51-16:17:23). Defects recorded, statuses unchanged per step 1: round-3/kake.md cites 61d0ce6, which resolves in no repo (dead citation; its other token ddf40e2 exists and is an ancestor of kake HEAD); round-3/kumitate.md cites no commit hash. RETROACTIVE: presence-of-evidence only; step-1 verification did not run; pre-fleet-2; not a pass record."
+  },
+  {
+   "round": 4,
+   "date": "2026-09-28",
+   "type": "retroactive-closure",
+   "closed_at": "2026-09-28T18:21:16-03:00",
+   "lanes": {
+    "protocol": "ok",
+    "aggregator": "ok",
+    "kasegi": "ok",
+    "kengaku": "ok",
+    "kake": "ok",
+    "kumitate": "ok",
+    "kotoba": "ok",
+    "kagi": "ok"
+   },
+   "minted": [],
+   "notes": "First round dispatched by prompt file (.ufo/prompts/<lane>-round-4.md, all tracked); all 8 reports present; all 8 'complete <lane> round=4' lines present (16:09:45-16:47:37). RETROACTIVE: presence-of-evidence only; step-1 verification did not run at the time; pre-fleet-2; not a pass record."
+  },
+  {
+   "round": 5,
+   "date": "2026-09-28",
+   "type": "retroactive-closure",
+   "closed_at": "2026-09-28T18:21:16-03:00",
+   "lanes": {
+    "protocol": "ok",
+    "aggregator": "failed",
+    "kasegi": "ok",
+    "kengaku": "ok",
+    "kake": "ok",
+    "kumitate": "ok",
+    "kotoba": "ok",
+    "kagi": "ok"
+   },
+   "minted": [],
+   "notes": "All 8 lanes dispatched and all 8 files present, but round-5/aggregator.md is a 3-line completion marker (254 B, added by main-repo 0a30b44 'fleet-1 closeout markers') citing no commit and describing no work -> failed under the marker rule; its aggregator mirror commits (kake 1395393, kasegi a50bbda, kumitate 294cbf1) exist unattributed by any report. round-5/kasegi.md cites no hash ('round-5' by subject) — conformance defect, status unchanged. RETROACTIVE: presence-of-evidence only; step-1 verification did not run; pre-fleet-2; not a pass record."
+  },
+  {
+   "round": 6,
+   "date": "2026-09-28",
+   "type": "retroactive-closure",
+   "closed_at": "2026-09-28T18:21:16-03:00",
+   "lanes": {
+    "protocol": "ok",
+    "aggregator": "in-flight",
+    "kasegi": "ok",
+    "kengaku": "ok",
+    "kake": "ok",
+    "kumitate": "ok",
+    "kotoba": "ok",
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "aggregator": 6
+   },
+   "minted": [],
+   "notes": "Seven lanes closed round 6 between 16:24:57 and 17:32:45; the aggregator's round-6 mission launched 17:57:52 and was live at closed_at -> in-flight, debt for the next protocol pass. This spread (16:17-17:57+) is the per-lane-counter case PROTOCOL.md step 4 now covers: a fleet-keyed entry cannot wait for all counters. RETROACTIVE for the seven ok rows: presence-of-evidence only; step-1 verification did not run; pre-fleet-2; not a pass record."
+  },
+  {
+   "round": 7,
+   "date": "2026-09-28",
+   "type": "retroactive-closure",
+   "closed_at": "2026-09-28T18:21:16-03:00",
+   "lanes": {
+    "protocol": "ok",
+    "aggregator": "not-dispatched",
+    "kasegi": "ok",
+    "kengaku": "ok",
+    "kake": "ok",
+    "kumitate": "ok",
+    "kotoba": "ok",
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "aggregator": 6
+   },
+   "minted": [],
+   "notes": "Seven lanes dispatched and reported (complete lines 16:40:02-17:57:53). round-7/kumitate.md is a 3-line marker (122 B, 0a30b44) but names real round-7 work 7a4c9a0 (= kumitate HEAD, 'round-7 corpus entries') -> ok with a minimum-content defect, not failed. round-7/protocol.md cites no own commit hash (window-start 4c86031; its work landed as 097c75e) — defect. aggregator was never dispatched for round 7 (counter 6). RETROACTIVE: presence-of-evidence only; step-1 verification did not run; pre-fleet-2; not a pass record."
+  },
+  {
+   "round": 8,
+   "date": "2026-09-28",
+   "type": "retroactive-closure",
+   "closed_at": "2026-09-28T18:21:16-03:00",
+   "lanes": {
+    "protocol": "ok",
+    "aggregator": "not-dispatched",
+    "kasegi": "ok",
+    "kengaku": "failed",
+    "kake": "ok",
+    "kumitate": "in-flight",
+    "kotoba": "ok",
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "aggregator": 6,
+    "kumitate": 8
+   },
+   "minted": [],
+   "notes": "round-8/kengaku.md is a 3-line marker (101 B, 0a30b44) claiming 'work pushed'; kengaku-shokunin HEAD is f147a27 'round-7' with no round-8 commit and no round-8 LOG.md entry, so the claim is false -> failed, and the marker advanced kengaku's counter 8->9 (watchdog 'complete kengaku round=8' 17:57:52). round-8/kotoba.md is a marker naming real work 8c300ad -> ok + minimum-content defect. kumitate's round-8 mission launched 17:57:53, live at closed_at -> in-flight (debt). aggregator counter 6, never dispatched for round 8. RETROACTIVE: presence-of-evidence only; step-1 verification did not run; pre-fleet-2; not a pass record."
+  },
+  {
+   "round": 9,
+   "date": "2026-09-28",
+   "type": "closure-correction",
+   "closed_at": "2026-09-28T18:21:16-03:00",
+   "supersedes": {
+    "round": 9,
+    "type": "work",
+    "date": "2026-09-28"
+   },
+   "lanes": {
+    "kake": "ok",
+    "kumitate": "not-dispatched",
+    "aggregator": "not-dispatched"
+   },
+   "lane_rounds": {
+    "kake": 9,
+    "kumitate": 8,
+    "aggregator": 6
+   },
+   "minted": [],
+   "notes": "Three of the round-9 entry's rows contradicted evidence and are corrected here; six of its eight rows were wrong when written (17:46:51, commit 4c81066) because the fleet-keyed shape forced statuses for lanes sitting on other counters. kake: round-9/kake.md was committed 8412df3 at 17:44:34, two minutes BEFORE that entry, and 'complete kake round=9' fired 17:50:20; cited ed0b632 is kake HEAD and an ancestor -> ok, not in-flight. kumitate: no round-9 prompt, no round-9 dispatch line, counter 8 -> not-dispatched (the lane-round that closed at 17:57:53 was its round 7). aggregator: counter 6, never dispatched for round 9 -> not-dispatched. The kengaku/kotoba/kagi in-flight rows were written before those lanes' round-9 dispatches (17:50:21-17:57:54); all three missions were live at closed_at, so the rows stand as debt for the next protocol pass rather than being corrected."
+  },
+  {
+   "round": 10,
+   "date": "2026-09-28",
+   "type": "closure",
+   "closed_at": "2026-09-28T18:21:16-03:00",
+   "lanes": {
+    "protocol": "in-flight",
+    "aggregator": "not-dispatched",
+    "kasegi": "ok",
+    "kengaku": "not-dispatched",
+    "kake": "in-flight",
+    "kumitate": "not-dispatched",
+    "kotoba": "not-dispatched",
+    "kagi": "not-dispatched"
+   },
+   "lane_rounds": {
+    "protocol": 10,
+    "aggregator": 6,
+    "kengaku": 9,
+    "kake": 10,
+    "kumitate": 8,
+    "kotoba": 9,
+    "kagi": 9
+   },
+   "minted": [],
+   "protocol_updates": [
+    "closure is per lane-round, not per fleet: partial entries are the norm, closed_at required with any not-dispatched row",
+    "completion marker is not a report -> lane-round failed; marker naming real committed work -> ok + minimum-content defect",
+    "dispatch evidence = watchdog.log dispatch line (prompt file corroborates content; prompt without dispatch line = attempted dispatch = failed)",
+    "in-flight is debt: resolved by an appended closure-correction entry carrying supersedes; rounds array is append-only after closure (never in-place, never prepended)",
+    "lane_rounds map makes not-dispatched rows falsifiable; ok rows are falsifiable by the derivable report path",
+    "retroactive-closure type: presence-of-evidence only, never a pass record",
+    "stale-lane age computed from launch timestamp, not the tick counter (which resets on driver restart); progressing missions are flagged, not failed",
+    "main-repo lanes keep SCORECARD.md + LOG.md at the main-repo root; SCORECARD.md joins the file contract and every score carries its counting command",
+    "integrator-of-record commits the round's generated .ufo/prompts/*.md (dispatch-evidence durability); .ufo/state + watchdog.log tracking reality corrected",
+    "L2 minimum sourced from MISSION.md; mint bar stated once (two unplaceable demand instances or operator directive); ledger fallback named while canonical AGGREGATE.md is absent"
+   ],
+   "notes": "kasegi closed its round 10: round-10/kasegi.md cites 04f9527 (exists, ancestor of kasegi HEAD fb9ac8e), 'complete kasegi round=10' 17:32:47. protocol (this integrator, launched 17:50:20) and kake (17:50:21) were live at closed_at -> in-flight; protocol's row resolves to ok when .ufo/reports/round-10/protocol.md lands, and both are debt for the round-11 protocol pass. Other lanes' counters were below 10. Conformance: neither kasegi round-10 nor round-11 report carries a SHONEN heading (41 of 45 child-lane reports fleet-wide lack one); the four prompts dispatched at 17:50 carried 1 of the 5 child-lane contract items (report path) and were untracked until this round's integration commit; 0/58 prompts name the SHONEN heading or the hash-citation rule."
+  },
+  {
+   "round": 11,
+   "date": "2026-09-28",
+   "type": "closure",
+   "closed_at": "2026-09-28T18:21:16-03:00",
+   "lanes": {
+    "protocol": "not-dispatched",
+    "aggregator": "not-dispatched",
+    "kasegi": "ok",
+    "kengaku": "not-dispatched",
+    "kake": "not-dispatched",
+    "kumitate": "not-dispatched",
+    "kotoba": "not-dispatched",
+    "kagi": "not-dispatched"
+   },
+   "lane_rounds": {
+    "protocol": 10,
+    "aggregator": 6,
+    "kengaku": 9,
+    "kake": 10,
+    "kumitate": 8,
+    "kotoba": 9,
+    "kagi": 9
+   },
+   "minted": [],
+   "notes": "Only kasegi has reached round 11: round-11/kasegi.md cites fb9ac8e (= kasegi HEAD, ancestor), 'complete kasegi round=11' 17:50:20. Every other lane's counter was below 11 at closed_at, so no round-11 dispatch exists for them; lane_rounds records the counter each actually held. Conformance: round-11/kasegi.md carries no SHONEN heading (defect; the assessment is disqualified as promotion evidence until re-filed under the heading)."
+  },
+  {
+   "round": 6,
+   "date": "2026-09-28",
+   "type": "closure-correction",
+   "closed_at": "2026-09-28T20:10:00-03:00",
+   "supersedes": {
+    "round": 6,
+    "type": "retroactive-closure",
+    "date": "2026-09-28"
+   },
+   "lanes": {
+    "aggregator": "ok"
+   },
+   "lane_rounds": {
+    "aggregator": 6
+   },
+   "minted": [],
+   "notes": "Resolves the round-6 aggregator in-flight row (debt since the 18:21:16 pass). complete aggregator round=6 19:35:38. Report .ufo/reports/round-6/aggregator.md (15931 B, SHONEN heading present, 19 cited commits ancestor-verified, ordering clean vs e333e7c 19:28:15) was UNTRACKED when the mission completed -> landed by this closure pass for durability; landed-by-the-lane attribution defect recorded. Real work: e333e7c (aggregator-shokunin identity): canonical ledger .ufo/reports/AGGREGATE.md refresh 4 committed - 821 lines / 79 D-rows re-verified from the committed blob; the ledger relocation itself landed inside kagi's ade32e4 (pathspec defect, see the round-10 entry)."
+  },
+  {
+   "round": 8,
+   "date": "2026-09-28",
+   "type": "closure-correction",
+   "closed_at": "2026-09-28T20:10:00-03:00",
+   "supersedes": {
+    "round": 8,
+    "type": "retroactive-closure",
+    "date": "2026-09-28"
+   },
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 8
+   },
+   "minted": [],
+   "notes": "Resolves the round-8 kumitate in-flight row. complete kumitate round=8 18:43:00. Report (7734 B) committed by the lane itself: 9a2e9fb kumitate <kumitate@shokunin.local> 18:37:14. Cited 7a4c9a0/45b4ed3/efe19da/e0f5ca7/e748e44/eca3d14 ancestors of kumitate HEAD; external pins b18e0274d/ee907f1cf verified read-only against ufo-fsd-alpha (296-behind count exact). Defects: SHONEN=0 (assessment disqualified until re-filed); /tmp/kumitate-r8/* pointers unresolvable at closure; own landing commit 2075363 not cited in the report body."
+  },
+  {
+   "round": 9,
+   "date": "2026-09-28",
+   "type": "closure-correction",
+   "closed_at": "2026-09-28T20:10:00-03:00",
+   "supersedes": {
+    "round": 9,
+    "type": "work",
+    "date": "2026-09-28"
+   },
+   "lanes": {
+    "kengaku": "ok",
+    "kotoba": "ok",
+    "kagi": "ok",
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 9
+   },
+   "minted": [],
+   "notes": "Resolves the round-9 kengaku/kotoba/kagi in-flight rows; adds kumitate r9 (dispatched 18:43:00 after the previous correction closed; complete 19:20:36). kengaku r9: report committed BY THE LANE under lane identity (8ec7a56 kengaku-shokunin 18:57:35) - first self-landed report of the fleet; SHONEN=1; 2575be6 ancestor. kotoba r9: report 9350189 operator identity (attribution defect); SHONEN=1; 8e22a41/e997d45/3b029b8 ancestors. kagi r9: report e8cd25e operator identity (attribution defect); SHONEN=0; e64e81b/ea77bf0 ancestors; sha256 pins byte-verified. kumitate r9: report (10464 B) untracked at completion, later committed 4f76d3b operator identity 20:00:31 (attribution defect); d65aa24 (= HEAD at filing) ancestor; defects: SHONEN=0, /tmp/kumitate-r9/spec.md pointer, surface-probe.mjs claimed 1438 L vs measured 1435."
+  },
+  {
+   "round": 10,
+   "date": "2026-09-28",
+   "type": "closure-correction",
+   "closed_at": "2026-09-28T20:10:00-03:00",
+   "supersedes": {
+    "round": 10,
+    "type": "closure",
+    "date": "2026-09-28"
+   },
+   "lanes": {
+    "protocol": "ok",
+    "kake": "ok",
+    "kotoba": "ok",
+    "kagi": "ok",
+    "kengaku": "ok",
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "protocol": 10,
+    "kake": 10,
+    "kotoba": 10,
+    "kagi": 10,
+    "kengaku": 10,
+    "kumitate": 10
+   },
+   "minted": [],
+   "notes": "Resolves the round-10 protocol+kake in-flight rows; adds every round-10 lane-round dispatched or terminated after the 18:21:16 entry: kotoba r10 (complete 18:58:03), kagi r10 (complete 19:13:05), kengaku r10 (complete 19:50:43), kumitate r10 (complete 20:05:46). protocol r10: report 025b2e3 lane identity; SHONEN=1; 35/36 cited hashes ancestor-verified (85b22e3 self-flagged orphan); one sub-claim falsified on re-execution - 'round-10/kake.md carries a conforming SHONEN heading' is false (committed blob 6a45ff2 greps 0) - corrected in the round-11 report, status-neutral per step 1. kake r10: report 6a45ff2 operator identity (attribution defect); NO hash citation (subject-only -> dd4eabf ancestor ok); SHONEN=0; /tmp/kake-r10/ pointer. kotoba r10: report (13113 B, SHONEN=1) untracked when the mission completed -> landed by this pass (attribution defect); abef8aa/32e0d79/d49dfa5 ancestors. kagi r10: report committed BY THE LANE (ade32e4 kagi 19:10:10) but that commit swept the aggregator's staged AGGREGATE.md rename and a l0-questions line -> main-repo pathspec violation; SHONEN=0; no hash citation; filed 30 s before its own child commit 03477c0 (report-before-commit). kengaku r10: report (13160 B, SHONEN=1) committed 7ef548e operator identity 19:45:22 (attribution defect); 0c51208 ancestor; e66e614 unresolvable in the main repo and all six child repos (dead-hash defect). kumitate r10: report (13507 B, SHONEN=1) committed 4f76d3b operator identity 20:00:31 (attribution defect); 0ac2272/31f09cd/c91fe96/d65aa24 ancestors; child commit c91fe96 authored under the operator identity (identity defect)."
+  },
+  {
+   "round": 11,
+   "date": "2026-09-28",
+   "type": "closure-correction",
+   "closed_at": "2026-09-28T20:10:00-03:00",
+   "supersedes": {
+    "round": 11,
+    "type": "closure",
+    "date": "2026-09-28"
+   },
+   "lanes": {
+    "protocol": "in-flight",
+    "kake": "ok",
+    "kotoba": "ok",
+    "kagi": "ok",
+    "kengaku": "in-flight",
+    "kumitate": "in-flight"
+   },
+   "lane_rounds": {
+    "protocol": 11,
+    "kake": 11,
+    "kotoba": 11,
+    "kagi": 11,
+    "kengaku": 11,
+    "kumitate": 11
+   },
+   "minted": [],
+   "notes": "Adds the round-11 lane-rounds dispatched after the 18:21:16 entry closed. protocol r11: launched 18:50:31, live at closed_at (this mission; its report is the round-11 closure artifact) -> in-flight. kake r11: complete 19:13:04; report (5504 B) committed 78bd39b operator identity (attribution defect); defects: SHONEN=0, no hash citation (lane commit 0262681 uncited), filed 8 s BEFORE its own commit (report-before-commit), /tmp/kake-r11/ pointers -> ok. kotoba r11: complete 19:35:39; report re-filed and committed by its round-12 respawn under kotoba-shokunin lane identity (f9dcfd2 19:47:54) - the respawn-inheritance rule observed working in the wild; SHONEN=1; 4dd7753/abef8aa/d49dfa5 ancestors; defect: /tmp pointers (self-flagged in-report) -> ok. kagi r11: report (10163 B) on disk UNTRACKED at closed_at with no complete line yet (driver completes on its next tick); mission live - recorded ok on completion evidence, durability debt named: the lane owes the landed-by-the-lane commit, next pass sweeps if still untracked; defects: SHONEN=0, no hash citation, child commit 301b9ec authored under the operator identity. kengaku r11: launched 19:50:44, live at closed_at, progressing -> in-flight. kumitate r11: launched 20:05:47, live at closed_at -> in-flight."
+  },
+  {
+   "round": 12,
+   "date": "2026-09-28",
+   "type": "closure",
+   "closed_at": "2026-09-28T20:10:00-03:00",
+   "lanes": {
+    "kasegi": "ok",
+    "kake": "ok",
+    "kotoba": "in-flight",
+    "protocol": "not-dispatched",
+    "aggregator": "not-dispatched",
+    "kengaku": "not-dispatched",
+    "kumitate": "not-dispatched",
+    "kagi": "not-dispatched"
+   },
+   "lane_rounds": {
+    "kasegi": 12,
+    "kake": 12,
+    "kotoba": 12,
+    "protocol": 11,
+    "aggregator": 7,
+    "kengaku": 11,
+    "kumitate": 11,
+    "kagi": 11
+   },
+   "minted": [],
+   "notes": "First round-12 entry: kasegi r12 complete 18:27:54 and kake r12 complete 19:43:10, both before closed_at. kasegi r12: report 18:25:59 committed 5309290 operator identity ~10 min later (attribution defect); external bounties hashes 58acb6d8/56d62572/f242659 ancestors (read-only probes only - push-scope rule respected); own landing fc6d398 named by subject only; SHONEN=0 -> ok with defects. kake r12: report (15348 B) committed 9af7245 operator identity (attribution defect); defects: SHONEN=0, no hash citation, filed 3m56s BEFORE its own commit a642f93 (report-before-commit), 8 /tmp/kake-r12/ pointers; central claims re-verified live (webzites-keeper.timer disabled+inactive; fleet.config.json:256 marker) -> ok with defects. kotoba r12: launched 19:35:40, live at closed_at, progressing (4dd7753, 7d15407) -> in-flight. The five not-dispatched rows carry each lane's actual counter at closed_at (lane_rounds); none had reached 12."
+  },
+  {
+   "round": 13,
+   "date": "2026-09-28",
+   "type": "closure",
+   "closed_at": "2026-09-28T20:10:00-03:00",
+   "lanes": {
+    "kasegi": "ok",
+    "kake": "ok",
+    "protocol": "not-dispatched",
+    "aggregator": "not-dispatched",
+    "kengaku": "not-dispatched",
+    "kumitate": "not-dispatched",
+    "kotoba": "not-dispatched",
+    "kagi": "not-dispatched"
+   },
+   "lane_rounds": {
+    "kasegi": 13,
+    "kake": 13,
+    "protocol": 11,
+    "aggregator": 7,
+    "kengaku": 11,
+    "kumitate": 11,
+    "kotoba": 12,
+    "kagi": 11
+   },
+   "minted": [],
+   "notes": "First round-13 entry. kasegi r13: complete 19:50:42; report landed 19:44:05, committed 0933e84 operator identity 19:44:22 - 15 s BEFORE its own child commit 7483333 (attribution + report-before-commit defects); SHONEN=0; cited d7dbd9a UNRESOLVABLE in every local object database (dead hash; bounties is mid-rebase and read-only per the operator push-scope rule) and 3d28a716 is an ancestor of bounties main but not of the detached rebase HEAD; live findings re-verified read-only (fleet-dispatch.mjs:200/:107, telemetry.jsonl 7225 lines markers=3) -> ok with defects. kake r13: complete 20:05:45; report (5739 B) UNTRACKED at mission completion -> landed by this pass (attribution defect); child commit 2a5502c authored under the operator identity (identity defect); SHONEN=0 -> ok with defects. kasegi r14 and kake r14 launched before closed_at (19:50:43 / 20:05:46) but no round-14 lane-round has terminated -> no round-14 entry (partial-entries rule). The six not-dispatched rows carry actual counters."
+  },
+  {
+   "round": 7,
+   "date": "2026-09-28",
+   "type": "closure-correction",
+   "closed_at": "2026-09-28T20:55:00-03:00",
+   "supersedes": {
+    "round": 7,
+    "type": "retroactive-closure",
+    "date": "2026-09-28"
+   },
+   "lanes": {
+    "aggregator": "ok"
+   },
+   "lane_rounds": {
+    "aggregator": 7
+   },
+   "minted": [],
+   "notes": "Resolves the round-7 aggregator row. rounds[10] (retroactive, closed_at 18:21:16) recorded aggregator not-dispatched at counter 6, which dispatch evidence contradicts only because it postdates that closed_at: '2026-09-28T19:35:39-03:00 launch aggregator round=7 runId=shokunin-r7-aggregator-r1790634938' and '2026-09-28T20:13:17-03:00 complete aggregator round=7; respawning'. Report .ufo/reports/round-7/aggregator.md (10695 B) was UNCOMMITTED when its mission completed; its round-8 respawn self-landed it at 20:32:43 in 6d27283 under aggregator-shokunin identity with ledger refresh 5 and the SCORECARD/LOG round-7 sections - the respawn-inheritance rule observed working a second time (cf. kotoba r11 -> f9dcfd2). Defect: report uncommitted at mission completion, 19 min 17 s gap. SHONEN n/a - a main-repo lane has no child SHONEN.md and is excluded from the child-lane count by the standing M6/M11 grep. -> ok."
+  },
+  {
+   "round": 8,
+   "date": "2026-09-28",
+   "type": "closure-correction",
+   "closed_at": "2026-09-28T20:55:00-03:00",
+   "supersedes": {
+    "round": 8,
+    "type": "retroactive-closure",
+    "date": "2026-09-28"
+   },
+   "lanes": {
+    "aggregator": "in-flight"
+   },
+   "lane_rounds": {
+    "aggregator": 8
+   },
+   "minted": [],
+   "notes": "aggregator r8 was dispatched after the round-8 retroactive entry closed: '2026-09-28T20:13:18-03:00 launch aggregator round=8 runId=shokunin-r8-aggregator-r1790637197'. No 'complete aggregator round=8' line and no .ufo/reports/round-8/aggregator.md at closed_at -> in-flight, decided from the absence of both a complete line and a report, never from a liveness probe; the probe clause was re-confirmed live this round (the driver's own live-grep still matched all four post-20:10 completed runIds, 12/12 rows, .ufo/waves/round-12/labrat.md H1). Progressing, not silent: 6d27283 at 20:32:43 plus box-3 cold-run commits in all six child repos 20:33:25-20:41:28 (kasegi 9dbe69f/2b0d869, kengaku d8f2898/06cdc98, kake 69c1856/4c9a985, kumitate e79fefa, kotoba 683d147/7163c81/ed5c261, kagi e0a04d8/7c3377c/4391b3b), so the stale-lane actuator does not record failed."
+  },
+  {
+   "round": 11,
+   "date": "2026-09-28",
+   "type": "closure-correction",
+   "closed_at": "2026-09-28T20:55:00-03:00",
+   "supersedes": {
+    "round": 11,
+    "type": "closure-correction",
+    "date": "2026-09-28"
+   },
+   "lanes": {
+    "protocol": "ok",
+    "kumitate": "ok",
+    "kengaku": "in-flight"
+   },
+   "lane_rounds": {
+    "protocol": 11,
+    "kumitate": 11,
+    "kengaku": 11
+   },
+   "minted": [],
+   "notes": "Resolves two of the three round-11 in-flight rows carried by rounds[19] and re-confirms the third with its launch pointer. protocol r11: '2026-09-28T20:28:20-03:00 complete protocol round=11; respawning'; report .ufo/reports/round-11/protocol.md committed 392b3c7 under protocol-shokunin identity at 20:27:31, i.e. BEFORE the complete line, so the lands-last ordering holds; SHONEN heading present; every main-repo hash it cites resolves and is an ancestor of HEAD -> ok. kumitate r11: '2026-09-28T20:50:56-03:00 complete kumitate round=11; respawning'; report .ufo/reports/round-11/kumitate.md (16341 B) landed 20:45:10 in 46e9ec3 under the OPERATOR identity 'Joao Pedro Veiga' (attribution defect - not kumitate-shokunin), SHONEN=1, cites 23452e7 which was kumitate-shokunin HEAD when the report was written; the lane then added 71b5e57/59e6c0c at 20:46 as close evidence -> ok. kengaku r11: '2026-09-28T19:50:44-03:00 launch kengaku round=11 runId=shokunin-r11-kengaku-r1790635843'; no complete line and no .ufo/reports/round-11/kengaku.md at closed_at -> in-flight re-confirmed. Stale (64 min, well past two 450 s ticks) but PROGRESSING: 30 files newer than the launch under kengaku-shokunin including a real 1473-request run and a prereg bundle whose analysis records VERDICT ESTABLISHED (t=+3.431, p=0.0011), all uncommitted. The only file at a report path is .ufo/reports/round-11/kengaku-DRAFT.md (15922 B, untracked), whose filename is not <id>.md so it never fires report_of() and is not completion evidence, and whose text still carries unfilled {{N}} placeholder tokens -> not failed (the actuator records failed only for silent missions); debt carried to the next pass."
+  },
+  {
+   "round": 12,
+   "date": "2026-09-28",
+   "type": "closure-correction",
+   "closed_at": "2026-09-28T20:55:00-03:00",
+   "supersedes": {
+    "round": 12,
+    "type": "closure",
+    "date": "2026-09-28"
+   },
+   "lanes": {
+    "kotoba": "ok",
+    "protocol": "in-flight",
+    "kagi": "in-flight",
+    "kumitate": "in-flight"
+   },
+   "lane_rounds": {
+    "kotoba": 12,
+    "protocol": 12,
+    "kagi": 12,
+    "kumitate": 12
+   },
+   "minted": [],
+   "protocol_updates": [
+    "new ## Gate standard section ruling .ufo/l0-questions.md rows kengaku|round-10 and kumitate|round-10",
+    "rounds[] row-identity pin: lane_rounds never re-keys a row, legacy fleet-keyed entries are unadjudicable",
+    "filed-report correction form (appended erratum naming the superseded text)",
+    "L0 side channel made append-only with the integrator as its durability owner",
+    "orphaned-report resolution order: lane respawn first, integrator sweep only if the successor also terminates",
+    "closure gate made executable: .ufo/waves/round-12/closure-check.py with frozen pre/post re-runs"
+   ],
+   "notes": "Resolves the round-12 kotoba in-flight row from rounds[20] and adds every lane-round dispatched for round 12 after that entry closed. kotoba r12: '2026-09-28T20:28:22-03:00 complete kotoba round=12; respawning'; report .ufo/reports/round-12/kotoba.md (14009 B, 225 lines) records real work with resolvable ancestors (4dd7753, abef8aa, d49dfa5 all ancestors of kotoba-shokunin HEAD) and carries a SHONEN heading -> ok. NOT swept for durability by this pass: its round-13 respawn is live and owns the file under the respawn-inheritance rule, and line 224 still reads 'Commit: `LANE_HASH`' where its round-work hash 633859f (kotoba-shokunin, 20:27:55) belongs, so committing it would freeze an unfilled placeholder into a permanent object. Two defects recorded: report uncommitted at mission completion, and the commit-hash citation rule violated by a literal placeholder. protocol r12: '2026-09-28T20:28:21-03:00 launch protocol round=12 runId=shokunin-r12-protocol-r1790638100' - this mission, live at closed_at, its report being the round-12 closure artifact -> in-flight. kagi r12: '2026-09-28T20:13:20-03:00 launch kagi round=12 runId=shokunin-r12-kagi-r1790637199'; no complete line, no report; progressing (15 files newer than launch, drift-symbols.tsv carrying an r12 twentieth pin) -> in-flight. kumitate r12: '2026-09-28T20:50:58-03:00 launch kumitate round=12 runId=shokunin-r12-kumitate-r1790639456', dispatched 40 min after round 12 closed, so it rides this correction and is never folded into round 13 -> in-flight."
+  },
+  {
+   "round": 13,
+   "date": "2026-09-28",
+   "type": "closure-correction",
+   "closed_at": "2026-09-28T20:55:00-03:00",
+   "supersedes": {
+    "round": 13,
+    "type": "closure",
+    "date": "2026-09-28"
+   },
+   "lanes": {
+    "kotoba": "in-flight"
+   },
+   "lane_rounds": {
+    "kotoba": 13
+   },
+   "minted": [],
+   "notes": "kotoba r13 was dispatched after the round-13 entry closed: '2026-09-28T20:28:23-03:00 launch kotoba round=13 runId=shokunin-r13-kotoba-r1790638102'. No complete line and no .ufo/reports/round-13/kotoba.md at closed_at -> in-flight. Graded progressing on the actuator's letter (kotoba-shokunin holds files newer than the launch: 683d147/7163c81/ed5c261 at 20:33-20:37) but the signal is WEAK and is recorded as an actuator defect: those three commits are aggregator-shokunin authored, not kotoba's, and no kotoba-authored commit exists since the launch, so the 'files modified under its repo' half of the progressing test attributes a sibling's activity to this lane. kasegi r13 and kake r13 stand ok per rounds[21]."
+  },
+  {
+   "round": 14,
+   "date": "2026-09-28",
+   "type": "closure",
+   "closed_at": "2026-09-28T20:55:00-03:00",
+   "lanes": {
+    "kasegi": "ok",
+    "kake": "in-flight",
+    "protocol": "not-dispatched",
+    "aggregator": "not-dispatched",
+    "kengaku": "not-dispatched",
+    "kumitate": "not-dispatched",
+    "kotoba": "not-dispatched",
+    "kagi": "not-dispatched"
+   },
+   "lane_rounds": {
+    "kasegi": 15,
+    "kake": 14,
+    "protocol": 12,
+    "aggregator": 8,
+    "kengaku": 11,
+    "kumitate": 12,
+    "kotoba": 13,
+    "kagi": 12
+   },
+   "minted": [],
+   "notes": "First round-14 entry. The partial-entries trigger fired on '2026-09-28T20:50:53-03:00 complete kasegi round=14; respawning', corroborated by the counter passing 14 at '2026-09-28T20:50:55-03:00 launch kasegi round=15 runId=shokunin-r15-kasegi-r1790639453'. kasegi r14: report .ufo/reports/round-14/kasegi.md (7338 B) landed 20:48:46 in 50b2179 under the OPERATOR identity (attribution defect); SHONEN heading ABSENT (conformance defect and disqualified as promotion evidence - the assessment must be re-filed under the heading next round); cited 7483333 and fc6d398 resolve in kasegi-shokunin and are ancestors of its HEAD, while 4028846 resolves in no local object database (dead pointer; ~/Projects/bounties is mid-rebase and read-only under the push-scope rule) -> ok with defects. kake r14: '2026-09-28T20:05:46-03:00 launch kake round=14 runId=shokunin-r14-kake-r1790636745'; no complete line, no report at closed_at -> in-flight; progressing, and its observable main-repo activity is an in-place uncommitted edit (+3/-1) of its own filed round-13 report carrying a self-labelled 'r14 erratum' that names the superseded 06:00:36Z value - substantively the right correction, but no rule governed its form until this round's filed-report correction clause. The six not-dispatched rows carry the counters actually held at closed_at. No round-15 entry: kasegi r15 was dispatched at 20:50:55 but round 15 has never closed and no r15 lane-round has terminated, so the trigger has nothing to fire on."
+  },
+  {
+   "round": 12,
+   "date": "2026-09-28",
+   "type": "closure-correction",
+   "closed_at": "2026-09-28T21:20:00-03:00",
+   "supersedes": {
+    "round": 12,
+    "type": "closure-correction",
+    "date": "2026-09-28",
+    "entry": 25
+   },
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 12
+   },
+   "minted": [],
+   "notes": "Second round-12 correction: kagi r12 terminated after the 20:55 pass, on '2026-09-28T21:06:05-03:00 complete kagi round=12; respawning' with the counter passing 12 at '2026-09-28T21:06:34-03:00 launch kagi round=13 runId=shokunin-r13-kagi-r1790640365'. Report .ufo/reports/round-12/kagi.md (13620 B, ten sections, written 21:02) records real work but is UNTRACKED, carries no SHONEN heading, and its only cited hashes (4391b3b / 7c3377c / e0a04d8) are aggregator-shokunin box-3 commits: kagi's own round-12 work is still uncommitted in kagi-shokunin (LOG.md, PROVINCE.md, SCORECARD.md, SHONEN.md, SKILL.md all modified, HEAD still 4391b3b), so under landed-means-committed nothing counts for the round yet. It is not a marker - it records changes and evidence pointers - so -> ok with three defects: report uncommitted at mission completion, SHONEN heading absent (conformance defect and disqualified as promotion evidence, to be re-filed under the heading next round), and no round-work commit cited. Resolution order per the orphaned-report clause: kagi r13 inherits and lands both the report and the child-repo work; if that successor mission also terminates without landing them the next protocol pass sweeps for durability and re-grades. First entry to carry supersedes.entry, because two corrections now share round+type+date and that triple alone cannot name a unique row."
+  },
+  {
+   "round": 13,
+   "date": "2026-09-28",
+   "type": "closure-correction",
+   "closed_at": "2026-09-28T21:20:00-03:00",
+   "supersedes": {
+    "round": 13,
+    "type": "closure-correction",
+    "date": "2026-09-28",
+    "entry": 26
+   },
+   "lanes": {
+    "kagi": "in-flight"
+   },
+   "lane_rounds": {
+    "kagi": 13
+   },
+   "minted": [],
+   "notes": "kagi r13 was dispatched after the round-13 entry and its first correction closed: '2026-09-28T21:06:34-03:00 launch kagi round=13 runId=shokunin-r13-kagi-r1790640365'; no complete line and no .ufo/reports/round-13/kagi.md at closed_at 21:20:00 -> in-flight. It inherits kagi r12's unlanded report and uncommitted child-repo work under the respawn-inheritance rule. Eight missions live at this closed_at: protocol r12 (this mission), aggregator r8, kasegi r15, kengaku r11, kake r14, kumitate r12, kotoba r13, kagi r13. kasegi r15 (launch 20:50:55) still carries no round-15 entry: round 15 has never closed and no r15 lane-round has terminated, so the partial-entries trigger has nothing to fire on."
+  },
+  {
+   "round": 8,
+   "date": "2026-09-28",
+   "type": "closure-correction",
+   "closed_at": "2026-09-28T21:30:00-03:00",
+   "supersedes": {
+    "round": 8,
+    "type": "closure-correction",
+    "date": "2026-09-28",
+    "entry": 23
+   },
+   "lanes": {
+    "aggregator": "ok"
+   },
+   "lane_rounds": {
+    "aggregator": 8
+   },
+   "minted": [],
+   "notes": "Third pass, and a correction to this round's own second pass: aggregator r8 terminated at '2026-09-28T21:14:05-03:00 complete aggregator round=8; respawning', i.e. BEFORE the 21:20:00 closed_at, so entry #23's in-flight row was already stale when written. The integrator missed it; the committed checker flagged it (closure-check.py live run, class stale_in_flight, suggested status ok) - the gate catching an integrator error is the measurement this round exists for. Report .ufo/reports/round-8/aggregator.md (24058 B) landed a5d6a7e at 21:13:01 under aggregator-shokunin identity, SHONEN heading present, ledger refresh 6 committed with it -> ok, no defects."
+  },
+  {
+   "round": 9,
+   "date": "2026-09-28",
+   "type": "closure-correction",
+   "closed_at": "2026-09-28T21:30:00-03:00",
+   "supersedes": {
+    "round": 9,
+    "type": "closure-correction",
+    "date": "2026-09-28",
+    "entry": 12
+   },
+   "lanes": {
+    "aggregator": "in-flight"
+   },
+   "lane_rounds": {
+    "aggregator": 9
+   },
+   "minted": [],
+   "notes": "aggregator r9 was dispatched after every round-9 entry closed: '2026-09-28T21:14:10-03:00 launch aggregator round=9 runId=shokunin-r9-aggregator-r1790640845'; no complete line and no .ufo/reports/round-9/aggregator.md at closed_at 21:30:00 -> in-flight, riding the correction for its own round rather than being folded into a later one. Supersedes the aggregator round-9 row in entry #12 (not-dispatched at counter 6, correct as of its 18:21:16 closed_at); entry #17 is the later round-9 correction and carries no aggregator row."
+  },
+  {
+   "round": 11,
+   "date": "2026-09-28",
+   "type": "closure-correction",
+   "closed_at": "2026-09-28T21:30:00-03:00",
+   "supersedes": {
+    "round": 11,
+    "type": "closure-correction",
+    "date": "2026-09-28",
+    "entry": 24
+   },
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 11
+   },
+   "minted": [],
+   "notes": "kengaku r11 resolved. The 20:55 pass re-confirmed it in-flight correctly: at that instant the only file at a report path was the non-conforming kengaku-DRAFT.md. The lane then committed its child work f09ff1f at 21:15:23 under kengaku-shokunin identity, replaced the draft with .ufo/reports/round-11/kengaku.md (18585 B) at 21:17:49, and that report landed e0170cd at 21:18:11 under the OPERATOR identity (attribution defect) - two minutes before the 21:20:00 closed_at, so the second pass owed this row and missed it; the checker flagged it. '2026-09-28T21:21:46-03:00 complete kengaku round=11; respawning' followed. Defects: report committed under the operator identity, and SHONEN heading absent (conformance defect, disqualified as promotion evidence, to be re-filed under the heading next round) -> ok."
+  },
+  {
+   "round": 12,
+   "date": "2026-09-28",
+   "type": "closure-correction",
+   "closed_at": "2026-09-28T21:30:00-03:00",
+   "supersedes": {
+    "round": 12,
+    "type": "closure-correction",
+    "date": "2026-09-28",
+    "entry": 25
+   },
+   "lanes": {
+    "kumitate": "ok",
+    "kengaku": "in-flight"
+   },
+   "lane_rounds": {
+    "kumitate": 12,
+    "kengaku": 12
+   },
+   "minted": [],
+   "notes": "kumitate r12 resolved and kengaku r12 opened. kumitate r12: report .ufo/reports/round-12/kumitate.md (14986 B) landed c41e197 at 21:15:59 under the OPERATOR identity, SHONEN heading present, child work 64a27e7 21:15:22 and e0e5de1 21:16:18 also under the operator identity (identity defect - kumitate-shokunin is configured, so these should carry the lane identity), '2026-09-28T21:21:49-03:00 complete kumitate round=12; respawning'; the report landed before the 21:20:00 closed_at, so the second pass owed this row too -> ok with defects. kengaku r12: '2026-09-28T21:21:48-03:00 launch kengaku round=12 runId=shokunin-r12-kengaku-r1790641306', live at closed_at, no complete line, no report -> in-flight. Supersedes the kumitate r12 in-flight row in entry #25; it also replaces the kengaku round-12 not-dispatched row of entry #20, which was correct as of its 20:10:00 closed_at."
+  },
+  {
+   "round": 13,
+   "date": "2026-09-28",
+   "type": "closure-correction",
+   "closed_at": "2026-09-28T21:30:00-03:00",
+   "supersedes": {
+    "round": 13,
+    "type": "closure-correction",
+    "date": "2026-09-28",
+    "entry": 26
+   },
+   "lanes": {
+    "kotoba": "ok",
+    "kumitate": "in-flight"
+   },
+   "lane_rounds": {
+    "kotoba": 13,
+    "kumitate": 13
+   },
+   "minted": [],
+   "notes": "kotoba r13 resolved, kumitate r13 opened. kotoba r13: '2026-09-28T21:14:11-03:00 complete kotoba round=13; respawning'; report .ufo/reports/round-13/kotoba.md (10116 B) landed 98735cc at 21:11:33 under the OPERATOR identity (attribution defect), SHONEN heading absent (conformance defect, disqualified as promotion evidence), child work 3ea0e08 and ae3bbb4 under kotoba-shokunin identity; the report landed before the 21:20:00 closed_at, so the second pass owed this row -> ok with defects. Its r12 report is still unlanded and is inherited by kotoba r14 under the orphaned-report order. kumitate r13: '2026-09-28T21:21:51-03:00 launch kumitate round=13 runId=shokunin-r13-kumitate-r1790641309', live at closed_at -> in-flight. Supersedes the kotoba r13 in-flight row in entry #26; entry #29 is the later round-13 correction and carries the kagi r13 row, which stands."
+  },
+  {
+   "round": 14,
+   "date": "2026-09-28",
+   "type": "closure-correction",
+   "closed_at": "2026-09-28T21:30:00-03:00",
+   "supersedes": {
+    "round": 14,
+    "type": "closure",
+    "date": "2026-09-28",
+    "entry": 27
+   },
+   "lanes": {
+    "kotoba": "in-flight"
+   },
+   "lane_rounds": {
+    "kotoba": 14
+   },
+   "minted": [],
+   "notes": "kotoba r14 was dispatched after the round-14 entry closed: '2026-09-28T21:14:16-03:00 launch kotoba round=14 runId=shokunin-r14-kotoba-r1790640851'; no complete line and no .ufo/reports/round-14/kotoba.md at closed_at -> in-flight. Eight missions live at this closed_at: protocol r12 (this mission), kasegi r15, kake r14, kagi r13, aggregator r9, kotoba r14, kengaku r12, kumitate r13. kasegi r15 still has no round-15 entry: round 15 has never closed and no r15 lane-round has terminated, so the partial-entries trigger has nothing to fire on."
+  },
+  {
+   "round": 11.5,
+   "date": "2026-09-28",
+   "type": "mint",
+   "minted": [],
+   "notes": "sibling-mint allowance landed in PROTOCOL.md Lifecycle; kama-shokunin minted in probation (local model serving & endpoint health — aggregator mint-eligible r4/r6/r7, demand instances: kagi r3 + kengaku r4 endpoint-drift 8080->34113). Roster row withheld until >=3 verified self-iteration rounds per the new clause; lane wired into watchdog (m_flash, axes operability+freshness)."
+  },
+  {
+   "round": 12,
+   "date": "2026-09-28",
+   "type": "closure-correction",
+   "closed_at": "2026-09-28T22:23:00-03:00",
+   "supersedes": {
+    "round": 12,
+    "type": "closure-correction",
+    "date": "2026-09-28",
+    "entry": 25
+   },
+   "lanes": {
+    "protocol": "ok"
+   },
+   "notes": "supersedes #25 (round-12 closure-correction whose protocol row read in-flight at closed_at 2026-09-28T20:55:00-03:00). Log lines this status rests on: `2026-09-28T20:28:21-03:00 launch protocol round=12 runId=shokunin-r12-protocol-r1790638100`; `2026-09-28T21:51:57-03:00 complete protocol round=12; respawning`. Status ok: PROTOCOL §Round-robin \"**Completion evidence** is a `.ufo/reports/round-N/<lane>.md` that satisfies the report contract\" and \"**Termination evidence** is a `complete <lane> round=N` line or the lane's counter passing `N`\"; the failed rule \"`failed` covers every lane-round that was prompted or dispatched and has no report by closure\" cannot reach a lane-round with a filed report. Evidence: `.ufo/reports/round-12/protocol.md` 39404 B, tracked, added by 62fdfbed93d7a48837554b6a4db3669f057d63f5 (protocol-shokunin <protocol@shokunin.local>, 2026-09-28T21:46:25-03:00) = ancestor of main HEAD 3d20676; file mtime 21:45:57 precedes that commit (lands-last holds); SHONEN heading present (grep -cE '^#{1,6} *SHONEN' -> 1); 28 hex tokens: 25 resolve as commits (main 16, kengaku-shokunin 2, kumitate-shokunin 3, kotoba-shokunin 4) and every one is an ancestor of that repo's HEAD; the 3 unresolvable tokens are not commit citations (391a54f4 'dead blob', 4028846 'dead pointer', 9b89166c mutation base sha256). Defects: none material."
+  },
+  {
+   "round": 12,
+   "date": "2026-09-28",
+   "type": "closure-correction",
+   "closed_at": "2026-09-28T22:23:00-03:00",
+   "supersedes": {
+    "round": 12,
+    "type": "closure-correction",
+    "date": "2026-09-28",
+    "entry": 33
+   },
+   "lanes": {
+    "kengaku": "in-flight"
+   },
+   "notes": "re-confirmation of the carried in-flight row (#33). Log line this status rests on: `2026-09-28T21:21:48-03:00 launch kengaku round=12 runId=shokunin-r12-kengaku-r1790641306`; still live at closed_at: `grep -c 'complete kengaku round=12' .ufo/watchdog.log` -> 0, `.ufo/state/kengaku.round` -> 12, no landed report (`ls .ufo/reports/round-12/kengaku.md` -> No such file or directory; the `round-12/` contract-path sweep shows kagi/kake/kasegi/kotoba/kumitate/protocol only). Rule: \"no lane may be recorded `in-flight` unless its mission was live at `closed_at`\" and \"`in-flight` is therefore decided from the absence of both a `complete <lane> round=N` line and a *landed* report\". Activity: 32 files newer than the launch under kengaku-shokunin (find -newermt 2026-09-28T21:21:48-03:00 -not -path '*/.git/*'), but the one commit inside that window is aggregator-authored (e171cdf, aggregator-shokunin, 22:19:06) - \"A commit authored by *another* lane is not the subject lane's activity\" - so the lane half is the untracked dirs corpus/evidence/round12-fleet/ + corpus/evidence/round12-ladder/ (32 files, git status -> ??): graded progressing with the caveat that if those files are aggregator-authored the row degrades to progressing-weak. Both dirs untracked = uncommitted lane work (work still in a working tree; does not count as landed round work)."
+  },
+  {
+   "round": 14,
+   "date": "2026-09-28",
+   "type": "closure-correction",
+   "closed_at": "2026-09-28T22:23:00-03:00",
+   "supersedes": {
+    "round": 14,
+    "type": "closure",
+    "date": "2026-09-28",
+    "entry": 27
+   },
+   "lanes": {
+    "kake": "ok"
+   },
+   "notes": "supersedes #27 (round-14 closure whose kake row read in-flight). Log lines this status rests on: `2026-09-28T20:05:46-03:00 launch kake round=14 runId=shokunin-r14-kake-r1790636745`; `2026-09-28T21:44:24-03:00 complete kake round=14; respawning`. Status ok by the §Round-robin completion-evidence rule (same derivation as the round-12 correction to #25). Evidence: `.ufo/reports/round-14/kake.md` 10417 B, tracked, added by 1dc7f6b81f86606e19d9c6c72f0a336bce4c291f (2026-09-28T21:42:48-03:00) = ancestor of main HEAD. Defects, all status-neutral per step 1 (\"this does not change the lane's status unless the round's rules already prescribe `failed`\"): (1) no SHONEN heading (grep -cE '^#{1,6} *SHONEN' -> 0) - a conformance defect and disqualified as evidence in the lane's promotion review; (2) its own round-14 kake-shokunin commit a2094411fe9051ebf3c10929ed33c1b6c032ea39 (2026-09-28T21:42:41-03:00) is uncited - the report's only commit token is 2a5502c (kake-shokunin, ancestor), which is the round-13 commit; (3) the report file mtime 21:42:18 precedes that own commit by 23 s, so the round's child work was not committed when the report was filed (\"written only after the lane's child-repo work is committed\"). The add commit's identity (Joao Pedro Veiga <jpveigao10@gmail.com>) equals kake-shokunin's own configured identity, so no attribution defect is determinable."
+  },
+  {
+   "round": 14,
+   "date": "2026-09-28",
+   "type": "closure-correction",
+   "closed_at": "2026-09-28T22:23:00-03:00",
+   "supersedes": {
+    "round": 14,
+    "type": "closure-correction",
+    "date": "2026-09-28",
+    "entry": 35
+   },
+   "lanes": {
+    "kotoba": "ok"
+   },
+   "notes": "supersedes #35 (round-14 closure-correction whose kotoba row read in-flight). Log lines this status rests on: `2026-09-28T21:14:16-03:00 launch kotoba round=14 runId=shokunin-r14-kotoba-r1790640851`; `2026-09-28T21:36:52-03:00 complete kotoba round=14; respawning`. Status ok on its termination evidence: PROTOCOL §Round-robin \"A terminated lane-round whose report exists on disk but is unlanded is recorded on its termination evidence with the durability debt named, and the next pass re-grades it `failed` for want of a landed report if the successor never lands it.\" Evidence: `.ufo/reports/round-14/kotoba.md` 9463 B, mtime 2026-09-28T21:36:23-03:00, UNTRACKED (`git ls-files --error-unmatch` exit 1; `git ls-files -o --exclude-standard .ufo/reports` lists it; `git log --diff-filter=A -1 -- .ufo/reports/round-14/kotoba.md` prints nothing = never added) -> durability + attribution defect (\"a lane whose report is still uncommitted when its mission completes has not satisfied this clause\"). It is a real report, not a marker: it names a resolvable committed hash (29c17be, kotoba-shokunin, ancestor of kotoba HEAD 0f658ff). Orphaned-report order applied, successor-first: the lane's own respawn `2026-09-28T21:36:53-03:00 launch kotoba round=15 runId=shokunin-r15-kotoba-r1790642212` is live at closed_at and inherits and lands it; the integrator sweeps for durability \"only if that successor mission also terminates without landing it\" - precondition unmet, so NO sweep this pass. Defect: SHONEN=0 (no heading) - conformance defect + disqualified as promotion evidence. Grade that follows: ok now; `failed` at the next pass if kotoba r15 never lands it."
+  },
+  {
+   "round": 14,
+   "date": "2026-09-28",
+   "type": "closure-correction",
+   "closed_at": "2026-09-28T22:23:00-03:00",
+   "supersedes": {
+    "round": 14,
+    "type": "closure",
+    "date": "2026-09-28",
+    "entry": 27
+   },
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "notes": "supersedes #27 (round-14 closure whose kumitate row read not-dispatched with lane_rounds 12; the dispatch of 21:52:06 postdates that row's closed_at 20:55:00, so the old row was true as written and is superseded, not contradicted). Log lines this status rests on: `2026-09-28T21:52:06-03:00 launch kumitate round=14 runId=shokunin-r14-kumitate-r1790643122`; `2026-09-28T22:22:15-03:00 complete kumitate round=14; respawning`. Status ok: §Round-robin \"`in-flight` is therefore decided from the absence of both a `complete <lane> round=N` line and a *landed* report\" - a complete line is present and `.ufo/reports/round-14/kumitate.md` 9116 B is landed (tracked; added by 5fa216c, 2026-09-28T22:19:00-03:00 = ancestor of main HEAD; appended by 3d20676 2026-09-28T22:20:09-03:00, +16 lines, a conforming erratum: \"as an erratum appended after the filed bytes in a new commit\"). SHONEN heading present (## SHONEN, count 1). Cited 93b0567 + dffbf0e (kumitate-shokunin) and 5fa216c (main repo) - all resolve and all are ancestors of their repo's HEAD; the two remaining hex tokens are digests, not citations. Defects: none material; the add commit's identity equals kumitate-shokunin's own configured identity, so no attribution defect is determinable."
+  },
+  {
+   "round": 14,
+   "date": "2026-09-28",
+   "type": "closure-correction",
+   "closed_at": "2026-09-28T22:23:00-03:00",
+   "supersedes": {
+    "round": 14,
+    "type": "closure",
+    "date": "2026-09-28",
+    "entry": 27
+   },
+   "lanes": {
+    "kagi": "ok"
+   },
+   "notes": "supersedes #27 (round-14 closure whose kagi row read not-dispatched with lane_rounds 12; dispatch 21:52:12 postdates its closed_at, so the row was true as written). Log lines this status rests on: `2026-09-28T21:52:12-03:00 launch kagi round=14 runId=shokunin-r14-kagi-r1790643128`; `2026-09-28T22:22:18-03:00 complete kagi round=14; respawning`. Status ok on its termination evidence: PROTOCOL §Round-robin \"A terminated lane-round whose report exists on disk but is unlanded is recorded on its termination evidence with the durability debt named, and the next pass re-grades it `failed` for want of a landed report if the successor never lands it.\" Evidence: `.ufo/reports/round-14/kagi.md` 15271 B, mtime 2026-09-28T22:21:02-03:00, UNTRACKED (`git ls-files --error-unmatch` exit 1; listed by `git ls-files -o --exclude-standard .ufo/reports`; `git log --diff-filter=A -1 -- .ufo/reports/round-14/kagi.md` prints nothing) -> durability + attribution defect; the driver's report_of() existence signal fired but \"an uncommitted file at the report path does not end `in-flight`\" until the complete line at 22:22:18 landed. Orphan order, successor-first: the lane's own respawn `2026-09-28T22:22:19-03:00 launch kagi round=15 runId=shokunin-r15-kagi-r1790644938` inherits and lands it; the integrator sweeps \"only if that successor mission also terminates without landing it\" - precondition unmet, NO sweep this pass. Defects: SHONEN=0 (no heading; conformance defect + disqualified as promotion evidence); the only commit token it cites is 4b8c018 (kagi-shokunin round-13 commit, ancestor of kagi HEAD baec94f) and no kagi-authored round-14 commit exists (`git -C kagi-shokunin log --since=2026-09-28T21:52:12-03:00` -> only the aggregator's baec94f, 22:19:06), so filed as-is it names no round-14 work hash. Grade that follows: ok now; `failed` at the next pass if kagi r15 never lands it."
+  },
+  {
+   "round": 9,
+   "date": "2026-09-28",
+   "type": "closure-correction",
+   "closed_at": "2026-09-28T22:23:00-03:00",
+   "supersedes": {
+    "round": 9,
+    "type": "closure-correction",
+    "date": "2026-09-28",
+    "entry": 31
+   },
+   "lanes": {
+    "aggregator": "in-flight"
+   },
+   "notes": "re-confirmation of the carried in-flight row (#31). Log line this status rests on: `2026-09-28T21:14:10-03:00 launch aggregator round=9 runId=shokunin-r9-aggregator-r1790640845`; still live at closed_at: `grep -c 'complete aggregator round=9' .ufo/watchdog.log` -> 0; `.ufo/state/aggregator.round` -> 9; no report (`ls .ufo/reports/round-9/aggregator.md` -> No such file or directory; the round-9 contract-path sweep shows kagi/kake/kasegi/kengaku/kotoba/kumitate/protocol only). Rule: \"no lane may be recorded `in-flight` unless its mission was live at `closed_at`\" + \"`in-flight` is therefore decided from the absence of both a `complete <lane> round=N` line and a *landed* report\". Activity = progressing, lane-authored: six aggregator commits in the child repos after the launch (kagi baec94f, kake 4214101, kasegi b021dc9, kengaku e171cdf, kotoba 0f658ff, kumitate 93b0567; all aggregator-shokunin, 22:19:05-22:19:06) plus its own ledger `.ufo/reports/AGGREGATE.md` dirty with 410 uncommitted insertions (§14 'Refresh 7 - round-9 aggregator audit'). Uncommitted aggregator-owned files are reported, not lane debt (\"uncommitted aggregator-owned files are reported, not lane debt\")."
+  },
+  {
+   "round": 13,
+   "date": "2026-09-28",
+   "type": "closure-correction",
+   "closed_at": "2026-09-28T22:23:00-03:00",
+   "supersedes": {
+    "round": 13,
+    "type": "closure",
+    "date": "2026-09-28",
+    "entry": 21
+   },
+   "lanes": {
+    "protocol": "in-flight"
+   },
+   "notes": "supersedes #21 (round-13 closure whose protocol row read not-dispatched with lane_rounds 11; that row was true at its closed_at 2026-09-28T20:10:00-03:00, and it is now falsified by dispatch evidence - \"No lane may be recorded `not-dispatched` while dispatch evidence for that lane-round exists\" - so it is superseded here rather than left standing). Log line this status rests on: `2026-09-28T21:52:01-03:00 launch protocol round=13 runId=shokunin-r13-protocol-r1790643117`; live at closed_at: `grep -c 'complete protocol round=13' .ufo/watchdog.log` -> 0, `.ufo/state/protocol.round` -> 13, no report (`ls .ufo/reports/round-13/protocol.md` -> No such file or directory). Dispatched after round 13 closed (row entry #21, closed_at 20:10:00) so it \"rides the next closure-correction for `N`\" = this entry. Status in-flight by \"`in-flight` is therefore decided from the absence of both a `complete <lane> round=N` line and a *landed* report\". Activity: progressing - this pass's own seats and instruments under .ufo/waves/round-13/ (81 untracked files, mtimes after the launch)."
+  },
+  {
+   "round": 15,
+   "date": "2026-09-28",
+   "type": "closure",
+   "closed_at": "2026-09-28T22:23:00-03:00",
+   "lanes": {
+    "kasegi": "ok",
+    "kake": "in-flight",
+    "kotoba": "in-flight",
+    "kumitate": "in-flight",
+    "kagi": "in-flight",
+    "protocol": "not-dispatched",
+    "aggregator": "not-dispatched",
+    "kengaku": "not-dispatched"
+   },
+   "lane_rounds": {
+    "protocol": 13,
+    "aggregator": 9,
+    "kengaku": 12
+   },
+   "notes": "First round-15 entry; written because one round-15 lane-round terminated (\"Write the entry for round `N` as soon as one lane's Nth lane-round terminates\"). kasegi r15 -> ok: log `2026-09-28T20:50:55-03:00 launch kasegi round=15 runId=shokunin-r15-kasegi-r1790639453` and `2026-09-28T22:14:43-03:00 complete kasegi round=15; respawning` (counter `.ufo/state/kasegi.round` -> 16 after `2026-09-28T22:14:45-03:00 launch kasegi round=16 runId=shokunin-r16-kasegi-r1790644483`); report `.ufo/reports/round-15/kasegi.md` 15865 B, tracked, added by f3cbdcf92a6136d2d16be9fcfd9157644ee0dd0e (2026-09-28T22:09:29-03:00) = ancestor of main HEAD; mtime 22:08:22 follows its own lane commit eb5b5902a4f20373eaebe0671b26a4296dcdb584 (kasegi-shokunin, 22:06:22) so lands-last holds; cited eb5b590/7483333/fc6d398 all resolve in kasegi-shokunin and are ancestors of its HEAD; defect: SHONEN=0 (no heading) - conformance defect + disqualified as promotion evidence (status-neutral per step 1). kake r15 -> in-flight: `2026-09-28T21:44:25-03:00 launch kake round=15 runId=shokunin-r15-kake-r1790642664`, `grep -c 'complete kake round=15'` -> 0, counter 15, no report (`ls .ufo/reports/round-15/kake.md` -> No such file or directory); activity = progressing-weak, named as such: zero lane-authored commits in the window and only one newer file, `kake-shokunin/corpus/lessons/round-9-aggregator-corpus-verdict.md` from the aggregator's 4214101 (22:19:06) - \"A commit authored by *another* lane is not the subject lane's activity ... sibling-authored activity alone is a third grade, `progressing-weak`: named as such in the row, never called progressing, and never silent or failed on its own\"; it was silent at 22:17 (find -newermt -> 0 files, 0 commits) and the stale-lane trigger (>2 driver ticks open: ticks 33-37) is flagged for the integrator's review. kotoba r15 -> in-flight: `2026-09-28T21:36:53-03:00 launch kotoba round=15 runId=shokunin-r15-kotoba-r1790642212`, `grep -c 'complete kotoba round=15'` -> 0, counter 15, no report; progressing - lane commit 63ceba7a0f73f7a576230c54aa164886ecbe7c47 (kotoba-shokunin, 21:44:36) and 90 files newer than the launch. kumitate r15 -> in-flight: `2026-09-28T22:22:17-03:00 launch kumitate round=15 runId=shokunin-r15-kumitate-r1790644935`, no complete line, counter 15, no report. kagi r15 -> in-flight: `2026-09-28T22:22:19-03:00 launch kagi round=15 runId=shokunin-r15-kagi-r1790644938`, no complete line, counter 15, no report. not-dispatched rows carry the counters the lanes actually held (\"required on every `not-dispatched` row - the counter the lane actually held is what makes such a row falsifiable\"): protocol 13, aggregator 9, kengaku 12, and the dispatch sweep is `grep -nE 'launch (protocol|aggregator|kengaku) round=15' .ufo/watchdog.log` -> no match (\"`not-dispatched` for lanes with no dispatch evidence **as of `closed_at`** - so `closed_at` is required on any entry carrying a `not-dispatched` row\"). Not written here, per the same rule: kasegi r16 (launched 22:14:45) and any round-16 lane-round - round 16 has no entry and no round-16 lane-round has terminated (informational, rides the next closure-correction for 16)."
+  },
+  {
+   "round": 13,
+   "date": "2026-09-28",
+   "type": "closure-correction",
+   "closed_at": "2026-09-28T22:23:00-03:00",
+   "supersedes": {
+    "round": 13,
+    "type": "closure-correction",
+    "date": "2026-09-28",
+    "entry": 34
+   },
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "notes": "supersedes #34 (round-13 closure-correction whose kumitate row read in-flight). Log lines this status rests on: `2026-09-28T21:21:51-03:00 launch kumitate round=13 runId=shokunin-r13-kumitate-r1790641309`; `2026-09-28T21:52:02-03:00 complete kumitate round=13; respawning`. Status ok by the §Round-robin completion-evidence rule. Evidence: `.ufo/reports/round-13/kumitate.md` 16347 B, tracked, added by a197445d0b06f463a188d22a28218cd10c302f15 (2026-09-28T21:49:18-03:00) = ancestor of main HEAD; SHONEN heading present (## SHONEN, count 1). Defects, status-neutral per step 1: (1) the report cites no commit hash at all - its four hex tokens are the read-only origin tree's HEADs (daa371583, 4f34e7dab) and proxy digests (8a6b5c9d, a11ead17), while line 7 `**Repo commit:** round-13 (lane)` and the tail `**Cited lane commits:** the round-13 commit (below)` name a branch, not a hash - against \"it must cite that commit's hash\" and \"The cited hash is the lane repo's `HEAD` when the report is written\"; (2) report-before-commit: file mtime 21:49:01.548 precedes its own kumitate-shokunin commits ed991d072665ad0b0f84a6072c323c8f723ab57c (21:49:07) and 7a099b2b7df98a23f8f443763bec05ee8593403c (21:49:54) - \"written only after the lane's child-repo work is committed\"."
+  },
+  {
+   "round": 13,
+   "date": "2026-09-28",
+   "type": "closure-correction",
+   "closed_at": "2026-09-28T22:23:00-03:00",
+   "supersedes": {
+    "round": 13,
+    "type": "closure-correction",
+    "date": "2026-09-28",
+    "entry": 29
+   },
+   "lanes": {
+    "kagi": "ok"
+   },
+   "notes": "supersedes #29 (round-13 closure-correction whose kagi row read in-flight). Log lines this status rests on: `2026-09-28T21:06:34-03:00 launch kagi round=13 runId=shokunin-r13-kagi-r1790640365`; `2026-09-28T21:52:08-03:00 complete kagi round=13; respawning`. Status ok by the §Round-robin completion-evidence rule. Evidence: `.ufo/reports/round-13/kagi.md` 9441 B, tracked, added by 383ea1ac252ee4b1a9ed6700eb6aa981a3992d8b (2026-09-28T21:51:23-03:00) = ancestor of main HEAD; cited 4b8c0183bd57ec5d0033fd07f650e116d7e9f600 (its own round-13 kagi-shokunin commit, 21:50:42, ancestor of kagi HEAD) and 4391b3b (ancestor); report mtime 21:51:17.703 follows 4b8c018, so lands-last holds. Defect, status-neutral per step 1: SHONEN=0 (no heading; grep -cE '^#{1,6} *SHONEN' -> 0) - conformance defect + disqualified as evidence in the lane's promotion review. No false accusation recorded: the literal `deadbeef` at line 102 is the fixture path `deadbeef/0/0`, not a hash citation (checked in context)."
+  },
+    {
+      "round": 15,
+      "date": "2026-09-29",
+      "type": "closure-correction",
+      "closed_at": "2026-09-29T00:34:00-03:00",
+      "supersedes": {
+        "round": 15,
+        "type": "closure",
+        "date": "2026-09-28",
+        "entry": 45
+      },
+      "lanes": {
+        "kake": "ok"
+      },
+      "notes": "supersedes #45 (round-15 closure whose kake row read in-flight; that row was true at its closed_at 2026-09-28T22:23:00-03:00 - the mission terminated 36 min later - so it is resolved here, never edited in place). Log lines this status rests on: `2026-09-28T21:44:25-03:00 launch kake round=15 runId=shokunin-r15-kake-r1790642664`; `2026-09-28T22:59:12-03:00 complete kake round=15; respawning`. Status ok by the §Round-robin completion-evidence rule. Evidence: `.ufo/reports/round-15/kake.md` 7486 B, tracked (`git ls-files --error-unmatch` -> rc 0), added by 3069841eb1e81a5eb63d1ce38daf4aceb3d7317c (Joao Pedro Veiga <jpveigao10@gmail.com>, 2026-09-28T22:52:19-03:00, subject `round-15: kake report — freshness 8->9, path-sweep caught same-window FS drift as kasegi bounties vanish (5 danglers annotated); + l0 corroboration line`) = ancestor of main HEAD (`git merge-base --is-ancestor 3069841 HEAD` -> rc 0); `grep -cE '^#{1,6}[[:space:]]*SHONEN'` -> 0; counter `.ufo/state/kake.round` -> 17. Defects, status-neutral per step 1: (1) SHONEN heading absent; (2) the report cites no resolvable commit - all 9 of its hex tokens (4427b7f8 6a0c24b5 6ab49127 93ddca9a 9c28d29 b6f65899 e6bd071 f3d2ecd fb365e38) resolve as commits in no local odb (main + 6 child repos + kama-shokunin + the origin-work read-only tree; the gate flags each dead, e.g. `.ufo/reports/round-15/kake.md:48 fb365e38 (cat-file resolves fb365e38 in no local odb (main + 6 child repos + external read-only trees))`), so step-1 hash ancestry is unverifiable for this lane-round; (3) attribution defect: the report landed under the operator identity, not `kake-shokunin` (§Lane identity)."
+    },
+    {
+      "round": 15,
+      "date": "2026-09-29",
+      "type": "closure-correction",
+      "closed_at": "2026-09-29T00:34:00-03:00",
+      "supersedes": {
+        "round": 15,
+        "type": "closure",
+        "date": "2026-09-28",
+        "entry": 45
+      },
+      "lanes": {
+        "kumitate": "ok"
+      },
+      "notes": "supersedes #45 (round-15 closure whose kumitate row read in-flight; true at closed_at, terminated 28 min later). Log lines this status rests on: `2026-09-28T22:22:17-03:00 launch kumitate round=15 runId=shokunin-r15-kumitate-r1790644935`; `2026-09-28T22:51:39-03:00 complete kumitate round=15; respawning`. Status ok. Evidence: `.ufo/reports/round-15/kumitate.md` 9072 B, tracked, added by 4d518fe5383fbe6fb6b7ec177700fa472b40370c (Joao Pedro Veiga <jpveigao10@gmail.com>, 2026-09-28T23:28:11-03:00, subject `round-15 kumitate report (recovered): the round-15 lane process ended before committing its report; filed here so round-gate --tracked resolves. Content is round 15's, unmodified.`) = ancestor of main HEAD; `grep -cE '^#{1,6}[[:space:]]*SHONEN'` -> 1; counter `.ufo/state/kumitate.round` -> 17. Step-1: its 2 hex tokens 637d181 and dffbf0e both resolve as commits (kumitate-shokunin) and both are ancestors of that repo's HEAD -> the cited round-work hash verifies. Defects, status-neutral: (1) the report was recovered and landed by the integrator, so the file's introducing commit carries the operator identity and its own subject records the durability debt ('the round-15 lane process ended before committing its report') - the landed-means-committed clause was satisfied only by that recovery; (2) mtime of the report (2026-09-28 22:47) precedes the commit that landed it (23:28), i.e. report-before-commit of the recovery, not report-before-work."
+    },
+    {
+      "round": 15,
+      "date": "2026-09-29",
+      "type": "closure-correction",
+      "closed_at": "2026-09-29T00:34:00-03:00",
+      "supersedes": {
+        "round": 15,
+        "type": "closure",
+        "date": "2026-09-28",
+        "entry": 45
+      },
+      "lanes": {
+        "kagi": "ok"
+      },
+      "notes": "supersedes #45 (round-15 closure whose kagi row read in-flight; true at closed_at, terminated 36 min later). Log lines this status rests on: `2026-09-28T22:22:19-03:00 launch kagi round=15 runId=shokunin-r15-kagi-r1790644938`; `2026-09-28T22:59:14-03:00 complete kagi round=15; respawning`. Status ok. Evidence: `.ufo/reports/round-15/kagi.md` 13554 B, tracked, added by 34858801b48279e96c5227c1f7d070f76d8132d6 (Joao Pedro Veiga <jpveigao10@gmail.com>, 2026-09-28T22:56:45-03:00, subject `round-15 kagi report: operability 8 -> 9, checklist executed`) = ancestor of main HEAD; `grep -cE '^#{1,6}[[:space:]]*SHONEN'` -> 0; counter `.ufo/state/kagi.round` -> 17. Step-1: its single hex token 2486643 resolves as a commit (kagi-shokunin) and is an ancestor of that repo's HEAD -> verifies. Defects, status-neutral: SHONEN heading absent; attribution defect (landed under the operator identity, not `kagi-shokunin`)."
+    },
+    {
+      "round": 15,
+      "date": "2026-09-29",
+      "type": "closure-correction",
+      "closed_at": "2026-09-29T00:34:00-03:00",
+      "supersedes": {
+        "round": 15,
+        "type": "closure",
+        "date": "2026-09-28",
+        "entry": 45
+      },
+      "lanes": {
+        "kotoba": "failed"
+      },
+      "notes": "supersedes #45 (round-15 closure whose kotoba row read in-flight; true at closed_at, terminated 51 min later with a marker). Log lines this status rests on: `2026-09-28T21:36:53-03:00 launch kotoba round=15 runId=shokunin-r15-kotoba-r1790642212`; `2026-09-28T23:14:17-03:00 complete kotoba round=15; respawning`; and the counter advanced past 15 by `2026-09-28T23:14:20-03:00 launch kotoba round=16 runId=shokunin-r16-kotoba-r1790648057` (`.ufo/state/kotoba.round` -> 17). Marker classification: `.ufo/reports/round-15/kotoba.md` 273 B (`stat -c%s` -> 273, < the gate's 400 B marker bound), hex tokens 0 (`grep -oE '(^|[^0-9a-fA-F])[0-9a-f]{7,}([^0-9a-fA-F]|$)' .ufo/reports/round-15/kotoba.md | wc -l` -> 0), `grep -cE '^#{1,6}[[:space:]]*SHONEN'` -> 0; body verbatim first line `# kotoba round-15 closeout (marker)` and its text `Lane was on @m_qwen, ran >57min, completed by operator directive (cost: m_qwen self-iteration too expensive). Respawned on @m_lunamax by watchdog. In-flight repo work survives in the child repo's working tree; next round resumes there.` (body line breaks joined) => completion marker, not a report: `failed` per P:150-155 ('a completion marker is not a report and makes the lane-round `failed`'), the file kept as a conformance defect. The marker names nothing checkable, and its introducing commit's subject does not rescue it: 4419fb9 (kotoba-shokunin <kotoba@shokunin.local>, 2026-09-28T23:14:00-03:00, subject `round-15: kotoba lane report (operability 7.5 -> 8.0 partial band; coverage 8.0 -> 8.5 attributed to round 14)`) is a lane-identity commit whose subject claims an axis move the file body does not record - 'A marker naming nothing checkable is failed whatever the lane actually did'. The respawn the marker claims is corroborated by the log (`complete kotoba round=15; respawning` -> `launch kotoba round=16`), so no durability debt is created by this row beyond the marker itself."
+    },
+    {
+      "round": 15,
+      "date": "2026-09-29",
+      "type": "closure-correction",
+      "closed_at": "2026-09-29T00:34:00-03:00",
+      "supersedes": {
+        "round": 15,
+        "type": "closure",
+        "date": "2026-09-28",
+        "entry": 45
+      },
+      "lanes": {
+        "protocol": "in-flight"
+      },
+      "notes": "supersedes #45 (round-15 closure whose protocol row was `not-dispatched` with `lane_rounds[protocol]=13`; that annotation was true at closed_at 2026-09-28T22:23:00-03:00 but the row is now falsified by dispatch evidence - 'No lane may be recorded `not-dispatched` while dispatch evidence for that lane-round exists' - so it is superseded here rather than left standing). Log line this status rests on: `2026-09-29T00:19:29-03:00 launch protocol round=15 runId=shokunin-r15-protocol-r1790651969`; still live at closed_at: `grep -c 'complete protocol round=15' .ufo/watchdog.log` -> 0, `.ufo/state/protocol.round` -> 15, no report (`ls .ufo/reports/round-15/protocol.md` -> No such file or directory). Dispatched after round 15 closed (row entry #45) so it rides the next closure-correction for 15, never folded into 16. Activity: `find . -newermt 2026-09-29T00:19:29 -type f -not -path './.git/*' | wc -l` -> 166 (tree-wide count for this main-repo lane, so `progressing` at tree granularity only); the two-ticks actuator had not fired at the probe instant (630 s < 900 s). Prompt `.ufo/prompts/protocol-round-15.md` exists and is untracked, so mission content is non-durable until committed with the round's integration commit. Self-reference: this is the protocol lane's own round-15 row, carry-forward of round 13's #44 rather than a fresh start."
+    },
+    {
+      "round": 14,
+      "date": "2026-09-29",
+      "type": "closure-correction",
+      "closed_at": "2026-09-29T00:34:00-03:00",
+      "supersedes": {
+        "round": 14,
+        "type": "closure",
+        "date": "2026-09-28",
+        "entry": 27
+      },
+      "lanes": {
+        "protocol": "failed"
+      },
+      "notes": "supersedes #27 (round-14 closure whose protocol row was `not-dispatched` with `lane_rounds[protocol]=12`; true at that entry's closed_at 2026-09-28T20:55:00-03:00, falsified by the dispatch 2h20m later - 'No lane may be recorded `not-dispatched` while dispatch evidence for that lane-round exists' - and now terminated, so the correct terminal status is written here). Log lines this status rests on: `2026-09-28T23:15:00-03:00 launch protocol round=14 runId=shokunin-r14-protocol-r1790648098`; `2026-09-29T00:19:29-03:00 complete protocol round=14; respawning`; corroborating wrap line `2026-09-28T23:54:59-03:00 wrap protocol round=14 complete; NOT respawning (fleet-wrap)` (third verb, not matched by the gate's RE_COMPLETE). Marker classification: `.ufo/reports/round-14/protocol.md` 340 B, hex tokens 0, `grep -cE '^#{1,6}[[:space:]]*SHONEN'` -> 0; body first line `# protocol round-14 closeout (marker)` and its text `Fleet wrap: operator ordered wrap after this round; lane was mid-move on the \"tracked-runtime\" axis item at ~63% context when the wrap window closed. In-flight work survives in the main repo working tree (24 modified paths per peek); the integrator decides whether to commit or reset. Not respawning.` (body line breaks joined) => marker, not a report: `failed` per P:150-155, marker file kept as a conformance defect; the '24 modified paths' claim is a naked assertion with no path list. Introducing commit ef3675715f67293733592dd374bcf895389cdefd (integrator <>, 2026-09-28T23:52:27-03:00, subject `protocol r14 closeout marker (fleet wrap)`) is an ancestor of main HEAD. Counter `.ufo/state/protocol.round` -> 15. Self-grading disclosure: this and the round-13 protocol row below are this lane's own lane-rounds; both grades are the measured marker predicate, which prescribes `failed` mechanically."
+    },
+    {
+      "round": 14,
+      "date": "2026-09-29",
+      "type": "closure-correction",
+      "closed_at": "2026-09-29T00:34:00-03:00",
+      "supersedes": {
+        "round": 14,
+        "type": "closure",
+        "date": "2026-09-28",
+        "entry": 27
+      },
+      "lanes": {
+        "kengaku": "in-flight"
+      },
+      "notes": "supersedes #27 (round-14 closure whose kengaku row was `not-dispatched`; true as of 2026-09-28T20:55:00-03:00, falsified by a dispatch 3h24m later). Log line this status rests on: `2026-09-29T00:19:31-03:00 launch kengaku round=14 runId=shokunin-r14-kengaku-r1790651970`; still live at closed_at: `grep -c 'complete kengaku round=14' .ufo/watchdog.log` -> 0, `.ufo/state/kengaku.round` -> 14, no report (`ls .ufo/reports/round-14/kengaku.md` -> No such file or directory; the contract-path sweep shows kagi/kake/kasegi/kotoba/kumitate plus the protocol marker only). Dispatched after round 14 closed (row entry #27 at 20:55:00) so it rides the next closure-correction for 14. Activity: `find kengaku-shokunin -newermt 2026-09-29T00:19:31 -type f -not -path '*/.git/*' | wc -l` -> 9, i.e. progressing; the two-ticks actuator had not fired at the probe instant. Prompt `.ufo/prompts/kengaku-round-14.md` exists and is untracked (non-durable dispatch evidence until the round's integration commit)."
+    },
+    {
+      "round": 13,
+      "date": "2026-09-29",
+      "type": "closure-correction",
+      "closed_at": "2026-09-29T00:34:00-03:00",
+      "supersedes": {
+        "round": 13,
+        "type": "closure-correction",
+        "date": "2026-09-28",
+        "entry": 44
+      },
+      "lanes": {
+        "protocol": "failed"
+      },
+      "notes": "supersedes #44 (round-13 closure-correction whose protocol row read in-flight; that row was true when written at closed_at 2026-09-28T22:23:00-03:00 - `grep -c 'complete protocol round=13'` was 0 then - and the mission has since terminated with a marker, so it is resolved here). Log lines this status rests on: `2026-09-28T21:52:01-03:00 launch protocol round=13 runId=shokunin-r13-protocol-r1790643117`; `2026-09-28T23:14:58-03:00 complete protocol round=13; respawning`. Marker classification: `.ufo/reports/round-13/protocol.md` 275 B, hex tokens 0, `grep -cE '^#{1,6}[[:space:]]*SHONEN'` -> 0; body first line `# protocol round-13 closeout (marker)` and its text `Lane was on @m_qwen, ran >57min, completed by operator directive (cost: m_qwen self-iteration too expensive). Respawned on @m_lunamax by watchdog. In-flight repo work survives in the child repo's working tree; next round resumes there.` (body line breaks joined) => marker, not a report: `failed` per P:150-155. Introducing commit 17c1fadfddc5ecbfa5ef362ef44d111792fa3e94 (fleet relaunch, 2026-09-29T00:19:02-03:00) - the marker file sat untracked from 23:14 until the relaunch swept it, so its attribution is a sweep defect recorded here (history is not rewritten). Counter `.ufo/state/protocol.round` -> 15. Self-grading disclosure applies (this lane grades its own round-13 row); the grade is mechanical marker-predicate plus log lines."
+    },
+    {
+      "round": 13,
+      "date": "2026-09-29",
+      "type": "closure-correction",
+      "closed_at": "2026-09-29T00:34:00-03:00",
+      "supersedes": {
+        "round": 13,
+        "type": "closure",
+        "date": "2026-09-28",
+        "entry": 21
+      },
+      "lanes": {
+        "kengaku": "ok"
+      },
+      "notes": "supersedes #21 (round-13 closure whose kengaku row was `not-dispatched`; true at 2026-09-28T20:10:00-03:00, falsified by the dispatch at 23:15:05). Log lines this status rests on: `2026-09-28T23:15:05-03:00 launch kengaku round=13 runId=shokunin-r13-kengaku-r1790648103`; `2026-09-29T00:19:30-03:00 complete kengaku round=13; respawning`. Status ok by the gate's completion-evidence predicate: `.ufo/reports/round-13/kengaku.md` 4220 B (>= the 400 B marker bound), tracked, added by 17c1fadfddc5ecbfa5ef362ef44d111792fa3e94 (fleet relaunch, 2026-09-29T00:19:02-03:00) = ancestor of main HEAD; hence not a marker (`report_status` -> `ok, report .ufo/reports/round-13/kengaku.md (4220 B)`). Defects, status-neutral per step 1, all recorded for the round notes: (1) the report cites no resolvable commit at all - `grep -oE '(^|[^0-9a-fA-F])[0-9a-f]{7,}([^0-9a-fA-F]|$)'` -> 0 tokens - so step-1 hash ancestry (the `git merge-base --is-ancestor <hash> HEAD` check) has nothing to run on; (2) `grep -cE '^#{1,6}[[:space:]]*SHONEN'` -> 0, so the contract-required SHONEN heading is absent (a conformance defect AND disqualifying for that lane's promotion review until re-filed under the heading); (3) the body records no landed changes: it is a data walk plus a labelled plan (`## WWKD plan - request-intent-aware ack-state audit`, `**Out of scope:** ...`) with evidence pointers into already-committed round-11 artifacts (`round11-power/results-r11.jsonl`, `run_r11.py:76-80`, `probe_plan_r11.md:32-35`) but no `## Files and verification` section and no LOG.md entry, and the round-13 work it describes sits uncommitted in the child repo (`git -C kengaku-shokunin status --short` -> ` M SKILL.md`, ` M grader.py`, `?? corpus/evidence/round12-fleet/`, `?? corpus/evidence/round12-ladder/`, `?? corpus/evidence/round13-ack-state/`, `?? corpus/knowledge/bench-arena-round12-ladder.md`) - 'Landed means committed, so changes that exist only in a working tree do not count for the round'; (4) attribution defect: the file was swept by the fleet relaunch rather than committed by the lane. Why not `failed`: the marker sentence requires no changes AND no evidence pointer AND no resolvable commit, and this file carries evidence pointers; and a `failed` row here would trip the gate's `failed-vs-report` contradiction. Flagged for L1 arbitration per JUDGMENT 2."
+    },
+    {
+      "round": 12,
+      "date": "2026-09-29",
+      "type": "closure-correction",
+      "closed_at": "2026-09-29T00:34:00-03:00",
+      "supersedes": {
+        "round": 12,
+        "type": "closure-correction",
+        "date": "2026-09-28",
+        "entry": 38
+      },
+      "lanes": {
+        "kengaku": "failed"
+      },
+      "notes": "supersedes #38 (round-12 closure-correction that re-confirmed the kengaku r12 in-flight row carried by #33; that re-confirmation was correct at its closed_at 2026-09-28T22:23:00-03:00 and the mission has since terminated with a marker, so the terminal status is written here). Log lines this status rests on: `2026-09-28T21:21:48-03:00 launch kengaku round=12 runId=shokunin-r12-kengaku-r1790641306`; `2026-09-28T23:15:03-03:00 complete kengaku round=12; respawning`. Marker classification: `.ufo/reports/round-12/kengaku.md` 274 B, hex tokens 0, `grep -cE '^#{1,6}[[:space:]]*SHONEN'` -> 0; body first line `# kengaku round-12 closeout (marker)` with the same cost/respawn text as the other three m_qwen markers => marker, not a report: `failed` per P:150-155, marker file kept as a conformance defect. Introducing commit 17c1fadfddc5ecbfa5ef362ef44d111792fa3e94 (fleet relaunch, 2026-09-29T00:19:02-03:00) = ancestor of main HEAD - swept rather than lane-landed (attribution defect recorded, not repaired). Counter `.ufo/state/kengaku.round` -> 14 corroborates termination."
+    },
+    {
+      "round": 11,
+      "date": "2026-09-29",
+      "type": "closure-correction",
+      "closed_at": "2026-09-29T00:34:00-03:00",
+      "supersedes": {
+        "round": 11,
+        "type": "closure",
+        "date": "2026-09-28",
+        "entry": 14
+      },
+      "lanes": {
+        "aggregator": "in-flight"
+      },
+      "notes": "supersedes #14 (round-11 closure whose aggregator row was `not-dispatched` with `lane_rounds[aggregator]=6`; true at that entry's closed_at 2026-09-28T18:21:16-03:00, falsified by dispatch evidence 5h58m later, so the row cannot stand as not-dispatched). Log line this status rests on: `2026-09-29T00:19:30-03:00 launch aggregator round=11 runId=shokunin-r11-aggregator-r1790651969`; still live at closed_at: `grep -c 'complete aggregator round=11' .ufo/watchdog.log` -> 0, `.ufo/state/aggregator.round` -> 11, no report (`ls .ufo/reports/round-11/aggregator.md` -> No such file or directory; round-11/ carries kagi kake kasegi kengaku kotoba kumitate protocol only). Dispatched after round 11 closed (#14) so it rides the next closure-correction for 11. Activity: `find . -newermt 2026-09-29T00:19:30 -type f -not -path './.git/*' | wc -l` -> 161 (tree-wide for this main-repo lane). Duty this row carries: the aggregator's round report is incomplete unless the rolling ledger `.ufo/reports/AGGREGATE.md` was refreshed or the report names why no row changed, and while the ledger is unrefreshed the integrator's round notes are the queue of record. Prompt `.ufo/prompts/aggregator-round-11.md` exists and is untracked (non-durable until the round's integration commit)."
+    },
+    {
+      "round": 10,
+      "date": "2026-09-29",
+      "type": "closure-correction",
+      "closed_at": "2026-09-29T00:34:00-03:00",
+      "supersedes": {
+        "round": 10,
+        "type": "closure",
+        "date": "2026-09-28",
+        "entry": 13
+      },
+      "lanes": {
+        "aggregator": "failed"
+      },
+      "lane_rounds": {
+        "aggregator": 10
+      },
+      "notes": "supersedes #13 (round-10 closure whose aggregator row was `not-dispatched` with `lane_rounds[aggregator]=6`; true at 2026-09-28T18:21:16-03:00, falsified by the dispatch at 22:37:21, and terminated with a marker). Log lines this status rests on: `2026-09-28T22:37:21-03:00 launch aggregator round=10 runId=shokunin-r10-aggregator-r1790645840`; `2026-09-29T00:19:29-03:00 complete aggregator round=10; respawning`; corroborating wrap lines `2026-09-28T23:47:27-03:00 wrap aggregator round=10 complete; NOT respawning (fleet-wrap)` and `2026-09-28T23:54:59-03:00 wrap aggregator round=10 complete; NOT respawning (fleet-wrap)`. Marker classification: `.ufo/reports/round-10/aggregator.md` 187 B, hex tokens 0, `grep -cE '^#{1,6}[[:space:]]*SHONEN'` -> 0; body first line `# aggregator round-10 closeout (marker)` and its text `Fleet wrap: lane completed by operator directive before its report landed. In-flight work survives in the main repo working tree. Not respawning.` (body line breaks joined) => marker, not a report: `failed` per P:150-155, marker file kept as a conformance defect. Introducing commit f5d8507f2e77f0a5298a24cb5640223ef2324ae8 (integrator <>, 2026-09-28T23:41:38-03:00, subject `fleet-wrap: sentinel + aggregator r10 closeout; respawn-per-round halted at current round per lane`) = ancestor of main HEAD. Counter `.ufo/state/aggregator.round` -> 11. Consequence for the ledger duty: the round-10 report is absent, so the AGGREGATE.md refresh for round 10 rests on the marker claim alone and the integrator's round notes remain the queue of record."
+    },
+    {
+      "round": 9,
+      "date": "2026-09-29",
+      "type": "closure-correction",
+      "closed_at": "2026-09-29T00:34:00-03:00",
+      "supersedes": {
+        "round": 9,
+        "type": "closure-correction",
+        "date": "2026-09-28",
+        "entry": 43
+      },
+      "lanes": {
+        "aggregator": "ok"
+      },
+      "notes": "supersedes #43 (round-9 closure-correction that re-confirmed the aggregator r9 in-flight row; true at its closed_at 2026-09-28T22:23:00-03:00 - the launch was 21:14:10 - and the mission terminated 14 min later, so the terminal status is written here). Log lines this status rests on: `2026-09-28T21:14:10-03:00 launch aggregator round=9 runId=shokunin-r9-aggregator-r1790640845`; `2026-09-28T22:37:20-03:00 complete aggregator round=9; respawning`. Status ok. Evidence: `.ufo/reports/round-9/aggregator.md` 18604 B, tracked, added by cc6d9d434cc664ac3ea0a20ea26bd7a31ff6b0e6 (aggregator-shokunin <aggregator@shokunin.local>, 2026-09-28T22:34:10-03:00, subject `round-9: aggregator lane report + ledger §14.18 addendum (bounties blast radius: 4 surfaces beyond kasegi cite the absent root - main 29 occ/17 files, kengaku 26/13 incl PROVINCE.md:15,75, kotoba 12/4, kumitate 1/1; kagi 0 and kake 0 are real sweeps) + D-150`) = ancestor of main HEAD - a clean lane-identity landing, the only row in this draft with no attribution defect. `grep -cE '^#{1,6}[[:space:]]*SHONEN'` -> 1 (contract heading present). Step-1 citation sweep: 31 hex tokens, 27 resolve as commits (11 in the main odb and 16 in the child repos - kasegi 0f2dca0/b021dc9/b7180b0, kotoba 0f658ff/63ceba7, kake 4214101/4c9a985/a209441, kagi 4391b3b/4b8c018/baec94f, kumitate 7a099b2/93b0567/e0e5de1), all of them ancestors of their repo's HEAD; 4 tokens do not resolve - the runId number 1790640845, the md5 pin 643e7114dd5f9286cdf27a4a654bc800, and 68939d0c / 6ca2a358 which the gate flags dead (`cat-file resolves 68939d0c in no local odb (main + 6 child repos + external read-only trees)` at line 55; same at line 128 for 6ca2a358). Defect, status-neutral per step 1: 2 dead hash citations. Ledger duty satisfied on its face: the subject names the §14.18 ledger addendum."
+    },
+    {
+      "round": 1,
+      "date": "2026-09-29",
+      "type": "closure",
+      "closed_at": "2026-09-29T00:34:00-03:00",
+      "lanes": {
+        "kama": "ok"
+      },
+      "notes": "First entry naming kama (lane minted in probation; see the roster context at the end of this note). Log lines this status rests on: `2026-09-28T22:44:08-03:00 launch kama round=1 runId=shokunin-r1-kama-r1790646247`; `2026-09-29T00:19:33-03:00 complete kama round=1; respawning`; interim wrap lines `2026-09-28T23:39:57-03:00 wrap kama round=1 complete; NOT respawning (fleet-wrap)` (and 23:47:29, 23:55:00) show the round was already being closed at the fleet wrap before the relaunch respawned it. Status ok by the gate's completion-evidence predicate. Evidence: `.ufo/reports/round-1/kama.md` 10144 B, tracked, added by 74768ab7cb18f110733df70686c9c45a7ddec01b (Joao Pedro Veiga <jpveigao10@gmail.com>, 2026-09-28T23:15:55-03:00, subject `round-1: kama lane report — operability move (runnable endpoint-identity gate), drift proven live`) = ancestor of main HEAD; `grep -cE '^#{1,6}[[:space:]]*SHONEN' .ufo/reports/round-1/kama.md` -> 0 (SHONEN count 0). Step-1 commit citation verifies: the report's `Commit: c6199a2` resolves in kama-shokunin as commit c6199a2542440db77d69918599e5a378ee116337 (`git -C kama-shokunin log -1` -> subject `round-1: operability axis - runnable endpoint-identity gate for local model serving`, author kama-shokunin) and `git -C kama-shokunin merge-base --is-ancestor c6199a2 HEAD` -> rc 0 (it is HEAD; remote `origin https://github.com/VeigaPunk/kama-shokunin.git`). Of the report's 8 hex tokens, 3 resolve as commits - c6199a2 in kama-shokunin (its own round-work commit) plus 0522e67a and 5725fa7d3 in the read-only origin-work/ufo-fsd-alpha tree - all ancestors; the other 5 (101125103, 1788033391, 531a8627a5cbd9852b21d3b7c1480a92, 87eb156b7cc36e98f3cbfb37c00f5351, 932ea3dc365e066e740731cf6a939506) are md5 digests and a runId number, correctly not commits. Defects, status-neutral per step 1: (1) the SHONEN heading is absent though the body summarizes the checklist ('4 boxes checked with evidence, promotion not claimed'); (2) attribution defect: the report landed under the operator identity, not kama-shokunin. Counter `.ufo/state/kama.round` -> 2, and `.ufo/state/kama.mission` -> shokunin-r2-kama-r1790651973. ROSTER CONTEXT (evidence-backed): kama is NOT in `MANIFEST.json` `roster` (roster ids -> kasegi, kengaku, kake, kumitate, kotoba, kagi) and has no ROADMAP.md table row - per Lifecycle (d) the operator adds the roster + ROADMAP rows only after >=3 verified self-iteration rounds, so probation is recorded in `rounds[].notes` meanwhile. The mint's own record is rounds[36] (round 11.5, type `mint`, notes verbatim: `sibling-mint allowance landed in PROTOCOL.md Lifecycle; kama-shokunin minted in probation (local model serving & endpoint health - aggregator mint-eligible r4/r6/r7, demand instances: kagi r3 + kengaku r4 endpoint-drift 8080->34113). Roster row withheld until >=3 verified self-iteration rounds per the new clause; lane wired into watchdog (m_flash, axes operability+freshness).`). Driver evidence that the lane is live regardless of the roster: `scripts/shokunin-watchdog.sh:14` LANES includes kama, `:24` `[kama]=\"$SK/kama-shokunin\"`. roster/ROADMAP.md rows pending (operator-side per Lifecycle). GATE CONSEQUENCE: the committed gates' LANES constants omit kama, so their `_roster()` (LANES UNION roster ids) will report this row as `unknown-lane` until kama joins LANES or the roster - a gate/roster defect to route, not a defect of this row."
+    },
+    {
+      "round": 2,
+      "date": "2026-09-29",
+      "type": "closure",
+      "closed_at": "2026-09-29T00:34:00-03:00",
+      "lanes": {
+        "kama": "in-flight"
+      },
+      "notes": "First entry naming kama round 2; the lane-round is live, so this row is debt to be re-confirmed or resolved by the next pass. Log line this status rests on: `2026-09-29T00:19:34-03:00 launch kama round=2 runId=shokunin-r2-kama-r1790651973` (its predecessor's terminal line being `2026-09-29T00:19:33-03:00 complete kama round=1; respawning`). Still live at closed_at: `grep -c 'complete kama round=2' .ufo/watchdog.log` -> 0, `.ufo/state/kama.round` -> 2, `.ufo/state/kama.mission` -> shokunin-r2-kama-r1790651973, no report (`ls .ufo/reports/round-2/kama.md` -> No such file or directory). Activity: `find kama-shokunin -newermt 2026-09-29T00:19:34 -type f -not -path '*/.git/*' | wc -l` -> 1, i.e. progressing; the two-ticks actuator had not fired at the probe instant. Prompt `.ufo/prompts/kama-round-2.md` exists (1561 B) and is untracked - non-durable dispatch evidence until committed with the round's integration commit. Roster context: kama holds no `MANIFEST.json` roster row and no ROADMAP.md table row (probation, >=3 verified rounds required per Lifecycle); the lane round 2 is nevertheless legal because the driver's LANES includes it. GATE CONSEQUENCE: both committed gates omit kama from LANES, so this row will read `unknown-lane` until the gate/roster is updated - to route, not a defect of the row."
+    },
+    {
+      "round": 16,
+      "date": "2026-09-29",
+      "type": "closure",
+      "closed_at": "2026-09-29T00:34:00-03:00",
+      "lanes": {
+        "kasegi": "failed",
+        "kake": "ok",
+        "kumitate": "ok",
+        "kotoba": "ok",
+        "kagi": "ok"
+      },
+      "notes": "First round-16 entry; written because five round-16 lane-rounds terminated and none had a ledger row (the gate classified them `unrowed_terminated`, three of them `no-row`). Per-row evidence. kasegi r16 -> failed: `2026-09-28T22:14:45-03:00 launch kasegi round=16 runId=shokunin-r16-kasegi-r1790644483`; `2026-09-28T23:15:00-03:00 complete kasegi round=16; respawning`; `.ufo/reports/round-16/kasegi.md` 273 B, hex tokens 0, SHONEN 0, body first line `# kasegi round-16 closeout (marker)` => marker, `failed` per P:150-155; introducing commit 17c1fadfddc5ecbfa5ef362ef44d111792fa3e94 (fleet relaunch) = swept, attribution defect; counter `.ufo/state/kasegi.round` -> 18. kake r16 -> ok: `2026-09-28T22:59:14-03:00 launch kake round=16 runId=shokunin-r16-kake-r1790647152`; `2026-09-29T00:19:31-03:00 complete kake round=16; respawning`; `.ufo/reports/round-16/kake.md` 12005 B, tracked, added by c3b0c0e8b6cb2838dcf94cc43da0915669c0e9ab (Joao Pedro Veiga <jpveigao10@gmail.com>, 2026-09-28T23:44:26-03:00, subject `round-16: kake lane report (freshness 9->10 — standing-claim sweep + drift-detection instrument; caught plazir15-ghp live/source drift, PQ-14)`) = ancestor of main HEAD; SHONEN 0; audit defect: all 17 hex tokens (0de5eb9 101125103 15a5c47f 3059bf0 3eb1722c 4669cb2 6ab49126 6ab49127 8e162356 93ddca9a 9c28d29 bd02d10 c814526 d93d6a0c e6bd071 f3d2ecd fb365e38) resolve as commits in no local odb, so no lane round-work hash is verifiable; attribution defect (operator identity). kumitate r16 -> ok: `2026-09-28T22:51:41-03:00 launch kumitate round=16 runId=shokunin-r16-kumitate-r1790646699`; `2026-09-29T00:19:31-03:00 complete kumitate round=16; respawning`; `.ufo/reports/round-16/kumitate.md` 15354 B, tracked, added by 58466793983f57600b57ac07dd39ecc73bf5e092 (Joao Pedro Veiga, 2026-09-28T23:27:21-03:00, subject `round-16 kumitate report: coverage successors 6 and 6 (pre-registered terms machine-derived; proxy carries the layer split + V, origin read priced)`) = ancestor of main HEAD; SHONEN 1; step-1: 637d181 and db61be0 resolve as commits and are ancestors of kumitate-shokunin HEAD, 5725fa7d3 and 93798be12 resolve in the read-only origin-work/ufo-fsd-alpha tree; attribution defect (operator identity). kotoba r16 -> ok: `2026-09-28T23:14:20-03:00 launch kotoba round=16 runId=shokunin-r16-kotoba-r1790648057`; `2026-09-29T00:19:32-03:00 complete kotoba round=16; respawning`; `.ufo/reports/round-16/kotoba.md` 9700 B, tracked, added by 208db49cefad90e0a27eaf320330b2fbd3a1309c (Joao Pedro Veiga, 2026-09-28T23:38:21-03:00, subject `round-16 kotoba: operability 8.0 -> 8.5 (M35/M40 closed, trigger.citation_resolves executes trigger.11, 3 citation bases named; 10 L2 lanes, 6 defects fixed in-round, 4 ceilings named)`) = ancestor of main HEAD; SHONEN 0; step-1: b25f37a resolves as a commit and is an ancestor of kotoba-shokunin HEAD, 2ee8abae and 70f8b38e are dead (gate: `cat-file resolves 2ee8abae in no local odb ...` line 23); attribution defect (operator identity). kagi r16 -> ok: `2026-09-28T22:59:16-03:00 launch kagi round=16 runId=shokunin-r16-kagi-r1790647154`; `2026-09-29T00:19:33-03:00 complete kagi round=16; respawning`; `.ufo/reports/round-16/kagi.md` 15021 B, tracked, added by 17c1fadfddc5ecbfa5ef362ef44d111792fa3e94 (fleet relaunch) - swept, attribution defect; SHONEN 0; step-1: 587fda0 resolves as a commit and is an ancestor of kagi-shokunin HEAD. Counter check: all five counters stood at 16 when the round ran and have advanced to 17 by the relaunch's round-17 dispatches (`.ufo/state/kasegi.round` -> 18, kake 17, kumitate 17, kotoba 17, kagi 17), which is the termination corroboration for each row. No round-16 lane-round went undispatched that should be listed here: no protocol, aggregator or kengaku round-16 dispatch line exists."
+    },
+    {
+      "round": 17,
+      "date": "2026-09-29",
+      "type": "closure",
+      "closed_at": "2026-09-29T00:34:00-03:00",
+      "lanes": {
+        "kasegi": "ok",
+        "kake": "in-flight",
+        "kumitate": "in-flight",
+        "kotoba": "in-flight",
+        "kagi": "in-flight"
+      },
+      "notes": "First round-17 entry; kasegi r17 terminated (no prior row) and four round-17 lane-rounds are live. kasegi r17 -> ok: `2026-09-28T23:15:03-03:00 launch kasegi round=17 runId=shokunin-r17-kasegi-r1790648100`; `2026-09-29T00:19:30-03:00 complete kasegi round=17; respawning`. Evidence: `.ufo/reports/round-17/kasegi.md` 4708 B, tracked, added by 17c1fadfddc5ecbfa5ef362ef44d111792fa3e94 (fleet relaunch, 2026-09-29T00:19:02-03:00) = ancestor of main HEAD (swept, attribution defect); `grep -cE '^#{1,6}[[:space:]]*SHONEN' .ufo/reports/round-17/kasegi.md` -> 0 (SHONEN count 0); counter `.ufo/state/kasegi.round` -> 18. Defects, status-neutral per step 1: the report cites no resolvable commit for its own round work - its only two hex tokens are `1307b8b` (described in the body as the HEAD of the read-only source repository: `The source file is untracked in its repository; its HEAD was reported as 1307b8b.`, which the gate flags dead: `cat-file resolves 1307b8b in no local odb (main + 6 child repos + external read-only trees)` at line 24) and `daaee21c387ff6b2103043e53db1794bb6b6b4eb0c9444bc615aa48ca476122b` (line 23, an observed SHA-256 of the source receipt, correctly not a commit) - while its `## Files and verification` block names changed files (`corpus/instruments/anchorcheck.py`, `corpus/instruments/README.md`, `SKILL.md`, `SCORECARD.md`, `LOG.md`) without a hash, so step-1 ancestry is unverifiable; plus the missing SHONEN heading. In-flight rows, each with its launch pointer and liveness probe at closed_at: kake r17 - `2026-09-29T00:19:31-03:00 launch kake round=17 runId=shokunin-r17-kake-r1790651971`, `grep -c 'complete kake round=17' .ufo/watchdog.log` -> 0, `.ufo/state/kake.round` -> 17, no `ls .ufo/reports/round-17/kake.md`, activity 4 files newer than launch under kake-shokunin; kumitate r17 - `2026-09-29T00:19:32-03:00 launch kumitate round=17 runId=shokunin-r17-kumitate-r1790651971`, complete count 0, counter 17, no report path, activity 4; kotoba r17 - `2026-09-29T00:19:33-03:00 launch kotoba round=17 runId=shokunin-r17-kotoba-r1790651972`, complete count 0, counter 17, no report path, activity 2; kagi r17 - `2026-09-29T00:19:33-03:00 launch kagi round=17 runId=shokunin-r17-kagi-r1790651973`, complete count 0, counter 17, no report path, activity 2. All four are progressing, none silent, and the two-ticks actuator had not fired at the probe instant; their prompts (`.ufo/prompts/{kake,kumitate,kotoba,kagi}-round-17.md`) exist and are untracked, i.e. non-durable dispatch evidence until the round's integration commit."
+    },
+    {
+      "round": 18,
+      "date": "2026-09-29",
+      "type": "closure",
+      "closed_at": "2026-09-29T00:34:00-03:00",
+      "lanes": {
+        "kasegi": "in-flight"
+      },
+      "notes": "First entry for round 18 (kasegi is the only lane on it). Log line this status rests on: `2026-09-29T00:19:30-03:00 launch kasegi round=18 runId=shokunin-r18-kasegi-r1790651970` (its predecessor's terminal line being `2026-09-29T00:19:30-03:00 complete kasegi round=17; respawning`). Still live at closed_at: `grep -c 'complete kasegi round=18' .ufo/watchdog.log` -> 0, `.ufo/state/kasegi.round` -> 18, `.ufo/state/kasegi.mission` -> shokunin-r18-kasegi-r1790651970, no report (`ls .ufo/reports/round-18/kasegi.md` -> No such file or directory; the round-18 report directory is empty). Activity: `find kasegi-shokunin -newermt 2026-09-29T00:19:30 -type f -not -path '*/.git/*' | wc -l` -> 3, i.e. progressing; the two-ticks actuator had not fired at the probe instant. Prompt `.ufo/prompts/kasegi-round-18.md` exists (1563 B) and is untracked - non-durable dispatch evidence until committed with the round's integration commit. Note the dependency: round 17's report and round 18's live round are both kasegi, so the next pass resolves this row together with the round-17 ok row above."
+  },
+    {
+      "round": 11,
+      "date": "2026-09-29",
+      "type": "closure-correction",
+      "closed_at": "2026-09-29T01:27:10-03:00",
+      "supersedes": {
+        "round": 11,
+        "type": "closure-correction",
+        "date": "2026-09-29",
+        "entry": 58
+      },
+      "lanes": {
+        "aggregator": "ok"
+      },
+      "notes": "supersedes #58 (aggregator r11 in-flight at 00:34:00). Evidence: `2026-09-29T00:19:30-03:00 launch aggregator round=11 runId=shokunin-r11-aggregator-r1790651969`; report `.ufo/reports/round-11/aggregator.md` is 9367 B, carries `## SHONEN`, and landed in main commit b159992bac5fcccf4dcbd7fe447b4a057678055e at 2026-09-29T01:24:49-03:00 under aggregator-shokunin; `2026-09-29T01:27:05-03:00 complete aggregator round=11; respawning`. The landed report and complete line both precede closed_at, so status is ok."
+    },
+    {
+      "round": 14,
+      "date": "2026-09-29",
+      "type": "closure-correction",
+      "closed_at": "2026-09-29T01:27:10-03:00",
+      "supersedes": {
+        "round": 14,
+        "type": "closure-correction",
+        "date": "2026-09-29",
+        "entry": 54
+      },
+      "lanes": {
+        "kengaku": "ok"
+      },
+      "notes": "supersedes #54 (kengaku r14 in-flight at 00:34:00). Evidence: `2026-09-29T00:19:31-03:00 launch kengaku round=14 runId=shokunin-r14-kengaku-r1790651970`; report `.ufo/reports/round-14/kengaku.md` is 8503 B, names child commit 0c16a79, and landed in main commit 896660a22af571bde36ae802136746d2d6187ab0 at 2026-09-29T01:22:57-03:00; `2026-09-29T01:27:06-03:00 complete kengaku round=14; respawning`. The real report and complete line precede closed_at, so status is ok."
+    },
+    {
+      "round": 17,
+      "date": "2026-09-29",
+      "type": "closure-correction",
+      "closed_at": "2026-09-29T01:27:10-03:00",
+      "supersedes": {
+        "round": 17,
+        "type": "closure",
+        "date": "2026-09-29",
+        "entry": 64
+      },
+      "lanes": {
+        "kake": "ok"
+      },
+      "notes": "supersedes #64 (kake r17 in-flight at 00:34:00). Evidence: `2026-09-29T00:19:31-03:00 launch kake round=17 runId=shokunin-r17-kake-r1790651971`; report `.ufo/reports/round-17/kake.md` is 8350 B and landed in main commit acbd3bc66abb6097934929fcfb38aa532f9fc006 at 2026-09-29T01:27:02-03:00; `2026-09-29T01:27:07-03:00 complete kake round=17; respawning`. The report is real (>400 B); its missing SHONEN heading is a recorded conformance defect, not a marker predicate. Status is ok."
+    },
+    {
+      "round": 12,
+      "date": "2026-09-29",
+      "type": "closure-correction",
+      "closed_at": "2026-09-29T01:27:10-03:00",
+      "supersedes": {
+        "round": 12,
+        "type": "closure",
+        "date": "2026-09-28",
+        "entry": 20
+      },
+      "lanes": {
+        "aggregator": "in-flight"
+      },
+      "notes": "supersedes #20 (aggregator r12 not-dispatched at 2026-09-28T20:10:00-03:00). Dispatch evidence now exists: `2026-09-29T01:27:06-03:00 launch aggregator round=12 runId=shokunin-r12-aggregator-r1790656025`. At closed_at there is no `complete aggregator round=12` line and no landed `.ufo/reports/round-12/aggregator.md`; therefore in-flight. Prompt `.ufo/prompts/aggregator-round-12.md` is committed by this integration pass."
+    },
+    {
+      "round": 15,
+      "date": "2026-09-29",
+      "type": "closure-correction",
+      "closed_at": "2026-09-29T01:27:10-03:00",
+      "supersedes": {
+        "round": 15,
+        "type": "closure",
+        "date": "2026-09-28",
+        "entry": 45
+      },
+      "lanes": {
+        "kengaku": "in-flight"
+      },
+      "notes": "supersedes #45 (kengaku r15 not-dispatched at 2026-09-28T22:23:00-03:00). Dispatch evidence now exists: `2026-09-29T01:27:07-03:00 launch kengaku round=15 runId=shokunin-r15-kengaku-r1790656026`. At closed_at there is no `complete kengaku round=15` line and no landed `.ufo/reports/round-15/kengaku.md`; therefore in-flight. Prompt `.ufo/prompts/kengaku-round-15.md` is committed by this integration pass."
+    },
+    {
+      "round": 18,
+      "date": "2026-09-29",
+      "type": "closure",
+      "closed_at": "2026-09-29T01:27:10-03:00",
+      "lanes": {
+        "kake": "in-flight"
+      },
+      "notes": "First kake row for round 18. Dispatch evidence: `2026-09-29T01:27:08-03:00 launch kake round=18 runId=shokunin-r18-kake-r1790656027`. At closed_at there is no `complete kake round=18` line and no landed `.ufo/reports/round-18/kake.md`; therefore in-flight. Prompt `.ufo/prompts/kake-round-18.md` is committed by this integration pass."
+  },
+    {
+      "round": 17,
+      "date": "2026-09-29",
+      "type": "closure-correction",
+      "closed_at": "2026-09-29T01:27:10-03:00",
+      "supersedes": {
+        "round": 17,
+        "type": "closure",
+        "date": "2026-09-29",
+        "entry": 64
+      },
+      "lanes": {
+        "kasegi": "ok"
+      },
+      "notes": "supersedes #64 for kasegi r17 only; status stays ok and this correction replaces a stale draft-time citation note. `.ufo/reports/round-17/kasegi.md` is a tracked 4708 B real report introduced by 17c1fadfddc5ecbfa5ef362ef44d111792fa3e94. After the gate's read-only citation roots were corrected to include `~/Projects/origin-work/open-bug-bounties`, token 1307b8b resolves as that repo's HEAD and an ancestor; it is not dead. The report still lacks SHONEN and was swept under the operator identity, both status-neutral conformance defects. Launch `2026-09-28T23:15:03-03:00 launch kasegi round=17 runId=shokunin-r17-kasegi-r1790648100`; complete `2026-09-29T00:19:30-03:00 complete kasegi round=17; respawning`."
+    },
+    {
+      "round": 13,
+      "date": "2026-09-29",
+      "type": "closure-correction",
+      "closed_at": "2026-09-29T01:27:10-03:00",
+      "supersedes": {
+        "round": 13,
+        "type": "closure-correction",
+        "date": "2026-09-29",
+        "entry": 56
+      },
+      "lanes": {
+        "kengaku": "ok"
+      },
+      "notes": "supersedes #56 for kengaku r13 only; status stays ok and this correction replaces the draft-time citation-root wording. Evidence is unchanged: launch `2026-09-28T23:15:05-03:00 launch kengaku round=13 runId=shokunin-r13-kengaku-r1790648103`; complete `2026-09-29T00:19:30-03:00 complete kengaku round=13; respawning`; tracked report `.ufo/reports/round-13/kengaku.md` is 4220 B and was introduced by 17c1fadfddc5ecbfa5ef362ef44d111792fa3e94. It is a real report, not a marker; missing SHONEN and sweep attribution remain status-neutral defects."
+    }
+ ]
+}

@@ -1,0 +1,115 @@
+{
+  "pool_id": "xai-oauth/grok-4.5",
+  "provider": "xai-oauth",
+  "model_id": "grok-4.5",
+  "model_sent": "grok-4.5",
+  "protocol": "openai",
+  "bucket": "MIDDLE",
+  "base_url": "http://127.0.0.1:8790/v1",
+  "probe_id": "c5",
+  "probe_kind": "contract",
+  "rep": 1,
+  "measured": true,
+  "prompt": "Write one short sentence about the color blue. Do not use the letter e (lower case or upper case) anywhere in your answer.",
+  "max_tokens": 192,
+  "tools_sent": false,
+  "tool_choice": null,
+  "request_body": {
+    "model": "grok-4.5",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Write one short sentence about the color blue. Do not use the letter e (lower case or upper case) anywhere in your answer."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "url": "http://127.0.0.1:8790/v1/chat/completions",
+  "timeout_s": 300,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 33119,
+  "response_headers": {
+    "Server": "cloudflare",
+    "Date": "Thu, 15 Oct 2026 12:01:56 GMT",
+    "Content-Type": "text/event-stream",
+    "Cache-Control": "no-cache",
+    "x-zero-data-retention": "false",
+    "x-ratelimit-limit-tokens": "<redacted:len=8>",
+    "x-ratelimit-remaining-tokens": "<redacted:len=8>",
+    "x-ratelimit-limit-requests": "8300",
+    "x-ratelimit-remaining-requests": "8300",
+    "Strict-Transport-Security": "max-age=31536000",
+    "set-cookie": "<redacted:len=18>",
+    "cf-cache-status": "DYNAMIC",
+    "x-request-id": "fe264812-86d4-9d1a-9f41-d74303491782",
+    "x-data-retention": "general",
+    "traceparent": "00-379e7e05a8ff44f5107f9e24d45c8230-88d72b1900080c10-01",
+    "vary": "origin, access-control-request-method, access-control-request-headers",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "*",
+    "CF-RAY": "a4aeac057f5964bb-GIG",
+    "Connection": "close"
+  },
+  "content_type": "text/event-stream",
+  "content": "Sky is a cobalt color.",
+  "content_truncated": false,
+  "reasoning_chars": 574,
+  "reasoning_text": "I need to write one short sentence about the color blue without using the letter e.\n\nThe word \"blue\" itself contains an e, so I need to describe the color using other words.\n\nNavy, indigo, cyan, and cobalt are blue shades without the letter e. \"Color\" also avoids it.\n\nDrafting sentences with cobalt, indigo, and sky to describe the color without using the letter e.\n\n\"Sky is cobalt\" avoids the letter e entirely. It directly links the color blue to a sky.\n\n\"Sky is a cobalt color\" is the chosen sentence. It avoids the letter e entirely and directly describes the blue sky.",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": {
+    "prompt_tokens": 521,
+    "completion_tokens": 6,
+    "total_tokens": 1895,
+    "prompt_tokens_details": {
+      "text_tokens": 521,
+      "audio_tokens": 0,
+      "image_tokens": 0,
+      "cached_tokens": 384
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 1368,
+      "audio_tokens": 0,
+      "accepted_prediction_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "num_sources_used": 0,
+    "cost_in_usd_ticks": 29352880
+  },
+  "finish_reason": "stop",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 36,
+  "sse_line_count": 74,
+  "raw_preview": "data: {\"id\":\"fe264812-86d4-9d1a-9f41-d74303491782\",\"object\":\"chat.completion.chunk\",\"created\":1792065716,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"I need to write one \",\"role\":\"assistant\"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"fe264812-86d4-9d1a-9f41-d74303491782\",\"object\":\"chat.completion.chunk\",\"created\":1792065716,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"short sentence about\"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"fe264812-86d4-9d1a-9f41-d74303491782\",\"object\":\"chat.completion.chunk\",\"created\":1792065716,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" the color blue without\"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"fe264812-86d4-9d1a-9f41-d74303491782\",\"object\":\"chat.completion.chunk\",\"created\":1792065716,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" using the letter e.\"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"fe264812-86d4-9d1a-9f41-d74303491782\",\"object\":\"chat.completion.chunk\",\"created\":1792065716,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"\\n\\nThe word \\\"blue\\\" itself\"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"fe264812-86d4-9d1a-9f41-d74303491782\",\"object\":\"chat.completion.chunk\",\"created\":1792065716,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" contains an e, so I\"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"fe264812-86d4-9d1a-9f41-d74303491782\",\"object\":\"chat.completion.chunk\",\"created\":1792065716,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" need to describe the\"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"fe264812-86d4-9d1a-9f41-d74303491782\",\"object\":\"chat.completion.chunk\",\"created\":1792065716,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" color using other words.\"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"fe264812-86d4-9d1a-9f41-d74303491782\",\"object\":\"chat.completion.chunk\",\"created\":1792065716,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"\\n\\nNavy, indigo, cyan,\"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"fe264812-86d4-9d1a-9f41-d74303491782\",\"object\":\"chat.completion.chunk\",\"created\":1792065716,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" and cobalt are blue\"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"fe264812-86d4-9d1a-9f41-d74303491782\",\"object\":\"chat.completion.chunk\",\"created\":1792065716,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" shades without the \"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"fe264812-86d4-9d1a-9f41-d74303491782\",\"object\":\"chat.completion.chunk\",\"created\":1792065716,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"letter e. \\\"Color\\\" also\"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"fe264812-86d4-9d1a-9f41-d74303491782\",\"object\":\"chat.completion.chunk\",\"created\":1792065716,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" avoids it.\"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"fe264812-86d4-9d1a-9f41-d74303491782\",\"object\":\"chat.completion.chunk\",\"created\":1792065716,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\"\\n\\nDrafting sentences\"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\ndata: {\"id\":\"fe264812-86d4-9d1a-9f41-d74303491782\",\"object\":\"chat.completion.chunk\",\"created\":1792065716,\"model\":\"grok-4.5\",\"choices\":[{\"index\":0,\"delta\":{\"reasoning_content\":\" with cobalt, indigo,\"}}],\"system_fingerprint\":\"fp_a39489019fa99b6e\",\"service_tier\":\"default\"}\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "constraint held",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T12:02:29Z",
+  "ttft_content_ms": 32987,
+  "ttft_reasoning_ms": 1973,
+  "first_decoded_ms": 32987,
+  "decode_span_ms": 126,
+  "tps": 39.54,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": null,
+  "completion_tokens": 6,
+  "prompt_tokens": 521,
+  "reasoning_tokens": 1368,
+  "content_delta_count": 6,
+  "reasoning_delta_count": 28
+}

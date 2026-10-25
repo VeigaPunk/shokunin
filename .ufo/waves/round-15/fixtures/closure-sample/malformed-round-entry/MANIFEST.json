@@ -1,0 +1,30 @@
+{
+ "rounds": [
+  {
+   "round": null,
+   "date": "2026-09-27",
+   "type": "closure",
+   "closed_at": "2026-09-27T11:00:00-03:00",
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 2
+   },
+   "notes": "malformed entry: the round is null, so the entry names no lane-round and its lane rows carry no status. The lane_rounds annotation (kagi=2) is shown for the reader and is never used as a row key."
+  },
+  {
+   "round": 1,
+   "date": "2026-09-27",
+   "type": "closure",
+   "closed_at": "2026-09-27T11:00:00-03:00",
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 1
+   },
+   "notes": "the valid sibling row: (kagi, 1) stays a status row and keeps its ok status."
+  }
+ ]
+}

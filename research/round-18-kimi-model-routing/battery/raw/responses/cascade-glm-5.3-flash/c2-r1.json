@@ -1,0 +1,86 @@
+{
+  "pool_id": "cascade/glm-5.3-flash",
+  "provider": "glm-flash-cascade",
+  "model_id": "glm-5.3-flash",
+  "model_sent": "glm-5.3-flash",
+  "protocol": "openai",
+  "bucket": "FAST",
+  "base_url": "http://127.0.0.1:8793/v1",
+  "probe_id": "c2",
+  "probe_kind": "contract",
+  "rep": 1,
+  "measured": true,
+  "prompt": "Output only a JSON object with exactly two keys: <redacted> set to the integer 1, and \"b\" set to the string \"two\". No markdown fences, no explanation, no other keys.",
+  "max_tokens": 192,
+  "tools_sent": false,
+  "tool_choice": null,
+  "request_body": {
+    "model": "glm-5.3-flash",
+    "stream": true,
+    "max_tokens": 192,
+    "temperature": 0,
+    "messages": [
+      {
+        "role": "user",
+        "content": "Output only a JSON object with exactly two keys: <redacted> set to the integer 1, and \"b\" set to the string \"two\". No markdown fences, no explanation, no other keys."
+      }
+    ],
+    "stream_options": {
+      "include_usage": true
+    }
+  },
+  "url": "http://127.0.0.1:8793/v1/chat/completions",
+  "timeout_s": 400,
+  "auth_headers_sent": [
+    "Authorization"
+  ],
+  "status": 200,
+  "error": null,
+  "error_kind": null,
+  "elapsed_ms": 4091,
+  "response_headers": {
+    "Server": "BaseHTTP/0.6 Python/3.14.7",
+    "Date": "Thu, 15 Oct 2026 11:59:35 GMT",
+    "Content-Type": "text/event-stream",
+    "Cache-Control": "no-cache",
+    "Connection": "close"
+  },
+  "content_type": "text/event-stream",
+  "content": "{\"a\": 1, \"b\": \"two\"}",
+  "content_truncated": false,
+  "reasoning_chars": 0,
+  "reasoning_text": "",
+  "refusal_text": "",
+  "tool_calls": [],
+  "usage": {
+    "prompt_tokens": 11758,
+    "completion_tokens": 29,
+    "total_tokens": 11787
+  },
+  "finish_reason": "stop",
+  "response_status": null,
+  "incomplete_reason": null,
+  "streaming_supported": true,
+  "sse_event_count": 3,
+  "sse_line_count": 8,
+  "raw_preview": "data: {\"id\": \"chatcmpl-7bf75ed63fb4414f8c7f8f32\", \"object\": \"chat.completion.chunk\", \"created\": 1792065575, \"model\": \"glm-5-3-flash-max\", \"choices\": [{\"index\": 0, \"delta\": {\"role\": \"assistant\"}}]}\ndata: {\"id\": \"chatcmpl-7bf75ed63fb4414f8c7f8f32\", \"object\": \"chat.completion.chunk\", \"created\": 1792065575, \"model\": \"glm-5-3-flash-max\", \"choices\": [{\"index\": 0, \"delta\": {\"content\": \"{\\\"a\\\": 1, \\\"b\\\": \\\"two\\\"}\"}}]}\ndata: {\"id\": \"chatcmpl-7bf75ed63fb4414f8c7f8f32\", \"object\": \"chat.completion.chunk\", \"created\": 1792065575, \"model\": \"glm-5-3-flash-max\", \"choices\": [{\"index\": 0, \"delta\": {}, \"finish_reason\": \"stop\"}], \"usage\": {\"prompt_tokens\": 11758, \"completion_tokens\": 29, \"total_tokens\": 11787}}\ndata: [DONE]\n",
+  "grade": {
+    "pass": true,
+    "failure_class": "ok",
+    "detail": "json match",
+    "request_level": false
+  },
+  "started_at_utc": "2026-10-15T11:59:35Z",
+  "ttft_content_ms": 4091,
+  "ttft_reasoning_ms": null,
+  "first_decoded_ms": 4091,
+  "decode_span_ms": null,
+  "tps": null,
+  "tps_basis": "server_usage_completion_tokens",
+  "tps_note": "not derivable: no incremental deltas or fewer than 2 tokens",
+  "completion_tokens": 29,
+  "prompt_tokens": 11758,
+  "reasoning_tokens": null,
+  "content_delta_count": 1,
+  "reasoning_delta_count": 0
+}

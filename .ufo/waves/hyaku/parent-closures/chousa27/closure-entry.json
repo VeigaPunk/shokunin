@@ -1,0 +1,67 @@
+{
+  "round": 27,
+  "date": "2026-10-21",
+  "type": "closure",
+  "lane": "chousa",
+  "lane_round": 27,
+  "lanes": {
+    "chousa": "ok"
+  },
+  "lane_rounds": {
+    "chousa": 27
+  },
+  "admitted": false,
+  "verdict": "rejected-harmed",
+  "verdicts": {
+    "coverage": "unchanged",
+    "operability": "improved",
+    "calibration": "harmed",
+    "depth": "unchanged",
+    "freshness": "improved",
+    "adjacency": "unchanged"
+  },
+  "claims": {
+    "C1": {
+      "axis": "operability",
+      "verdict": "improved",
+      "scope": "Bounded, evidence-verified. Accepted r26 FAIL 3/187 -> recorded final 215/215 with the old 187 identities retained, plus usage controls 6 and 5. The extra 28 cases are not 28 independent fixes, and a usage error must still have exit 2, the required diagnostics and no actual verdict. No baseline failure was rerun by the parent."
+    },
+    "C2": {
+      "axis": "freshness",
+      "verdict": "improved",
+      "scope": "Bounded, evidence-verified. Original 21 plus 8 controls, with a recorded date differential of 9024/9024 and ASCII/date/cadence corrections. Not arbitrary locale, timing/RSS or all-calendar implementation proof; inherited LC_ALL=C failures elsewhere remain disclosed and are not erased."
+    },
+    "C3": {
+      "axis": "calibration",
+      "verdict": "harmed",
+      "finding": "Axis token is the canonical `harmed`; 'partly falsified' is the narrative description of the record, not a replacement enum value. The original complete-filesystem-path clause is violated: corpus/evidence/round27-claims.md requires that filesystem-path denylist checks inspect complete filesystem paths, not citation-anchor prefixes, and preserve existing citation-pointer semantics. Existing prefix-only refusals violate the plain clause, and r27 additionally refuses a canonical claims path that the base accepted (residual/ResC3Clause.md:47-119) - a new over-refusal, not a secret-path read and not merely inherited debt. Three persisted checks intentionally encode that prefix behaviour, so they can stay green on the faulty union and fail a complete-path-only implementation; they must not be rewritten to hide this round's red. The claim text first landed with the repair in dd72641e, so pre-code immutable preregistration is not proved by that combined landing. No oracle inversion, no weakened frozen expectations, no netting the harm against green counts, and no admission of the union of incompatible rules."
+    }
+  },
+  "trends": {
+    "expansion": "unchanged",
+    "quality": "harmed",
+    "discernment": "unchanged"
+  },
+  "capabilities_added": [],
+  "report": ".ufo/reports/round-27/chousa.md",
+  "report_commit": "dd19a5b5489ff4748d6c00b794e6d03c453a2093",
+  "producer_commit": "chousa-shokunin@457fbb04fa872c88ce5c5da9a48d3a767eaf51ff",
+  "commit": "chousa-shokunin@11d7c5da1ee7f6a4e01b1661d14a9d08fb8de01a",
+  "verification": {
+    "reviewer": "Main, hyaku non-author integrator and admission authority. This note does not publish a MANIFEST row or grant a whole-ledger pass. No new knowledge, capability, Core graduation or promotion.",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-27-verifier-spotcheck.md@11d7c5da1ee7f6a4e01b1661d14a9d08fb8de01a",
+    "report_provenance": "report_commit is root-repository (shokunin) provenance: dd19a5b5489ff4748d6c00b794e6d03c453a2093 'round-27: chousa report' adds only .ufo/reports/round-27/chousa.md. No lane-repository hash is used here.",
+    "rechecks": "Main's inert Git-object counts: SOURCES 39->43 (new S040-S043; every old eleven-cell row unchanged). Current gate bytes equal the measured 4f484194 bytes, SHA256 ac1315ddaa12e79b68069d1a9866b9b1b55e3a43efef3ba0cb5ca5e665835765. Root-owned source census actually returned exit 0, 'chousa ok'. Main reopened residual/ResC3Clause.md:47-119 and the unchanged claim, and separated ordinary citation callers from three complete-filesystem-path consumers. No lane gate, selftest, differential, fixture, captured command, source expression or baseline failure was executed by Main; performance figures remain the recorded environment-bound measurements, not reruns or load-independent guarantees. Exact counts and limits are in fleet .ufo/waves/hyaku/parent-closures/chousa27/evidence.json.",
+    "gate_evidence": "58 original regressions, 32 additional controls, registry 48/48 and metadata 54/54 are retained finite receipts; the 22 additional controls that already passed the inherited candidate strengthen the suite but are not repair evidence. Source-mechanism counts 1/2/5->0/0/0 are spelling-foolable lexical counts and not semantic verdicts; the local scalar stays 3 and is not a resource or readiness score. The ancestor-wide canonical check can misattribute its diagnostic to a shorter component rather than to the selected complete path, so a clean count or a denylist finding by itself does not prove that the right object was considered; the current harmed result is not corrected by renaming a predicate or making its lexical count zero.",
+    "evidence": ".ufo/waves/hyaku/parent-closures/chousa27/evidence.json",
+    "scope": "136 actual seats are 64 inherited build + 64 inherited falsify + 8 ordinary residual, with seven reportless/dead identities retained; refused calls spawned none and no dead/VOID item is replaced. The 73 other transcripts carrying kotodama50 goals are not chousa27 seats, and parent- or author-dispatched advice is never independently granted admission by its PASS label. Recorded tooling: official PyPI/uv cmarkgfm 2025.10.22, markdown-it-py 4.2.0 and their listed dependencies, with uv-managed Python 3.15.0 for bounded local oracles; this closure installs nothing and performs no package, service or host operation. Prior scratch paths may be deleted, and the retained oracle bundle and receipt provenance do not imply those directories still exist. The selftest locale, dense-input timings and partial scanner/grammar guarantees remain explicit. The final gate is not promoted as full GFM, generic JSON-appender atomicity, field readiness, source semantics, runtime resource safety or host-file protection proof. L0 complete-path versus prefix-policy adjudication remains operator-owned; this note supplies no executable bypass and authorizes no host-secret read - all recorded examples were synthetic and local.",
+    "seats": "136 actual seats (64 inherited build + 64 inherited falsify + 8 ordinary residual), seven reportless/dead identities retained, no replacement and no credit for refused calls.",
+    "outside_spotcheck": "New own-work source S042 was reopened at .ufo/waves/round-26/falsify/FRegistryHeaderless.md:43-49, where it explicitly identifies parser columns surviving a non-table boundary; it is treated as inert evidence, not executed. AGREE narrowly for S042 as a bounded stale-header diagnosis: it supports the named parser-state cause and the discriminating controls, not all Markdown grammar or source truth. AGREE with rejecting that a green registry/date screen proves source truth - structural agreement is not the truth of a cited source or full-contract/no-harm success. AGREE with rejecting retroactive round26 admission from these repairs: current repairs do not rewrite the old failed result or its proof obligations. Own-work/A labels are scoped evidence, not an independent external primary family or universal consumer correctness, and four new rows do not count as domain expansion.",
+    "native_gate": "Mainactualregisteredchecker d8c1620df147d2e576f157f43e149ae4a1251a760b9f111f210b516744187a48@32e5e7c and generator 7cc7b2f88a5a273e1d3c7cbe32380ade2fae03d8f773c04aeb2f7e8838596cdd@5846150daa629fc34b273b64f7957e64f7dd6bfa:checker29/29,fivehistoricalfrozenmatches;pristine29/29,eightnamedmutantfailuresplusoneM7crash-only;generator38/38,actualdefault/manual/forceCLI/nativefrozenreplaysbaseline+6inputsmatch(exit1,debt65,81CNE). Incompleteanalysisrefused3/noexpected. Old328derivedsnapshotremainsMISMATCH/unqualified; matchingnewprojectionisnotchildclaimtruth/globalcleanliness/admission. Artifacts: .ufo/waves/hyaku/native-checker-repair/{v2-parent-runs,mutation-parent-runs,freeze-v2-parent-initial,freeze-v2-parent-edges,freeze-v2-native-controls}.json."
+  },
+  "closed_at": "2026-10-21T23:21:16+00:00",
+  "campaign": "hyaku",
+  "notes": "Parent rejected-harmed: C3's original complete-filesystem-path clause is falsified and r27 adds a new canonical-path over-refusal, so the harm is not netted against the green C1/C2 counts, no oracle inversion or weakened frozen expectation was applied, the new refusal is not relabelled as a control, and the union of incompatible rules is not admitted. The bounded C1 operability (accepted r26 FAIL 3/187 -> recorded final 215/215) and C2 freshness (recorded date differential 9024/9024) gains are retained. L0 complete-path versus prefix-policy adjudication stays operator-owned. lanes{chousa:ok} records that the report exists, not admission. Driver digest: 2026-10-21T11:31:59-03:00 launch chousa round=27 pgid=3271830 driver=hyaku-inline attempt=1; 2026-10-21T15:28:50-03:00 complete chousa round=27; hyaku-inline attempt=1. Report dd19a5b (root repo), lane producer tip 457fbb0, verifier 11d7c5d. Nativecheckerremainslegacyred; OLD328prebaselineisMISMATCH/unqualified, corrected65projectionnowinternallymatches6inputswithoutclaimingglobalcleanliness. Mainpublishesnegativeindependentaccountingat2026-10-21T23:21:16+00:00; no claimscope/expectedvaluechanged, cap/promotion/mintempty, allforwardholdsremain.",
+  "promotions": [],
+  "minted": []
+}
