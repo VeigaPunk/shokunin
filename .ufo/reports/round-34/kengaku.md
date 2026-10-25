@@ -34,3 +34,6 @@ SOURCES rows before→after: **97→97**; added by tier A/B/C: **0/0/0**; rows t
 [~] Province boundary accurate — `PROVINCE.md` (existing author assessment; unchanged).
 
 Stale-lane: progressing — freeze and wave evidence written; no other mission is open. Tool installs/updates: none.
+## Round 34 report correction (append-only)
+
+The lane commit `58a19f37312e1b22fd2a7957bdfc6bb7832aadd0` appends a `corpus/README.md` clarification: round-31's “Terminal-Bench 2.0 axis-E cell” means verifier-execution context only, not task-level scoring-code audit. C1 remains unadmitted; the frontier is not discharged by this round. The earlier report body cites the first round-34 lane landing `0b3c627d5199e291b2674a84fdfc87a752923981`, an ancestor of the final pushed lane tip.
