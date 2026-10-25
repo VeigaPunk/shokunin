@@ -296,3 +296,16 @@ exit 0.
    re-punctuated zh quote — is disclosed here: the entry's zh sentence uses the
    page's wording with normalized sentence punctuation, and the recheck counts
    words, not punctuation).
+
+### Erratum 2 — `RevLedgerVsReport` did review the landed ledger
+
+Supersedes erratum 1's clause "`w1/RevLedgerVsReport.md` reviewed the 20-row
+**draft** ledger, not the landed 16-row `figures.tsv`". The seat's final bytes
+(committed `30fe06d1`, lane tip `30fe06d1e2593e18280d83e7e3086f4d678762df`) review
+the **landed 16-row ledger**: 16/16 rows re-run and reconcile at `5157cdda` and
+`5102022a`, `C1=met mismatches=0` at both, classified 11 load-bearing, 3 proxies,
+2 decorative; it also demonstrates two grammar holes (a HEAD-reading row and a
+hard-coded-rev row pass at a measured rev) and confirms the `Z ゾンビ` sweep is 3
+files at the landing commit — which is `F03`'s asserted value, not the frozen
+contract's 1. Its narrower reading of `C1=met` ("ledger well-formedness and
+arithmetic at one revision") is the one this report adopts.
