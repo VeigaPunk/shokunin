@@ -191,3 +191,33 @@ progressing, not silent (commits `dbb07364`, `d6aa66e`, `97e69c7b` by the lane i
   not rewritten; the entry and the README say the corrected thing.
 - **Open L0 question:** none filed. No operator decision was needed to land this round.
 - **Tool installs:** none (no `pacman` transaction; `pacman` is paused host-wide and was not used).
+
+## Erratum (appended 2026-10-25, after the falsify wave returned — the filed bytes above stand as written)
+
+The report above was filed at lane tip `634ded8`. The falsify wave kept returning after it, and five of its
+findings changed or corrected landed bytes. **The lane tip this round actually leaves is
+`9591131e893696fd051246cb7f8fcef74172b672`** (local = remote, `ahead=0`, clean tree), through
+`f6422263` → `634ded8` → `a6ff2f0e` → `3e13607e` → `9591131e`.
+
+1. **C2's counter had a false positive and a false green** (`R31FxC2R6R8.md`): R6 required the byte-exact
+   landed sentence, so an honest paraphrase of the entry's own §Extends sentence reddened it; R8 scanned
+   every cell of every row, so a scope cell mentioning CC0 greened an ungrounded entry. Both tightened
+   (`a6ff2f0e`), and **both receipts regenerated from the tightened bytes**: before `checks=10 defects=10`
+   exit 1, after `checks=10 defects=0` exit 0. The claim's numbers are unchanged; the instrument is stronger.
+2. **The round shape in SCORECARD was wrong** (`R31FxQualityBar.md`): the row said "36 + 32 = 68"; the
+   committed falsify registry holds **36**, so the shape is **36 + 36 = 72**. Also corrected: index
+   **39 → 40** (not 40 → 40). Appended as corrections in `SCORECARD.md` (`3e13607e`); the cells stand.
+3. **The frontier bullet over-claimed what stays open** (`R31FxFrontierRows.md`): "task-level scoring code
+   stays open" is false for the one SWE-bench Pro V2 task whose grader this entry reads in depth. Narrowed in
+   `corpus/README.md` (`9591131e`).
+4. **Three closure gaps the round leaves open, named rather than hidden:** round 30 spot-check §5 **item 7**
+   (report-ordering) has no check in R1–R10 and is not claimed closed; C1's kill-rule branch ("fewer than two
+   of the three survive") is **unreachable** under the frozen predicate, because `cited_rows` must equal 3;
+   and C2's ten items are **8 self-assessment/repo mismatches + 2 copyedit residues**, not ten of one class
+   (`R31RevClaims.md`).
+5. **Still owed:** round 30's lesson `:66` calls S083/S086 "peer-reviewed" against S086's own registry cell —
+   outside the frozen R-list, recorded as debt in the lesson and owed an erratum by the next round that
+   touches that file.
+
+None of these changes a claim verdict: C1, C2 and C3 still re-derive on their frozen counters at the lane tip
+cited above, and every axis verdict in the filed report stands.
