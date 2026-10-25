@@ -2,8 +2,9 @@
 
 lane: mori · round: 43 (attempt 1) · host: Kimi, fresh L1 (`Kimi fresh L1`) · date: 2026-10-24 ·
 lane repo: `/home/vgpnk/Projects/shokunin/mori-shokunin` · entering tip
-`e3a2b58f72ba3bd52a90646f7285fb85f0ee5dd2` · landed lane tip (cited below) — the report lands
-last, after that commit.
+`e3a2b58f72ba3bd52a90646f7285fb85f0ee5dd2` · landed lane tip
+`91cb221f35f7cb9afeff99ef1959512dabddfc46` (`jj-lane.sh state`: local=remote=91cb221f…,
+ahead=0, behind=0, tracked=0, untracked=0) — the report lands last, after that commit.
 
 **Round shape.** One v2 wave (policy `scripts/hyaku/ufo-wave-policy-v2.json`, band 64–128),
 64 seats, 31 attack roles (48.4%), plus a residual call of 8 reviewer/critic seats — 72 seats
@@ -94,9 +95,12 @@ Work items, each with an evidence pointer:
 | frozen contract, successor counter `count-c1s.py`, calibration counter `count-c2.py`, wave spec, the 5 control receipts, the census-start receipt, the S268 header receipt, the disk-usage receipt, the wave plan | `dde525ea4a7fca365e8ff2f3c486bccf28b94e52` | `LOG.md` §"Round 43 (L1 Kimi fresh mori-r43)" |
 | registry rows S348–S351 + S470, three knowledge entries, the round-43 lesson, QUALITY 115, the coverage-map note, the SCORECARD declaration + correction, the assimilation mirror and its receipt | `dde525ea4a7fca365e8ff2f3c486bccf28b94e52` | same |
 | after-scores (`c1s-after.txt`, `c2-after.txt`), the round-end census, the generated P-C1S clause map, the L1 mutant battery receipt, the 10 seat reports, both settle tables, QUALITY 116, the wave record, the measured outcome | `efb92cd5fc27d392fbedc406933c398b35a5c09f` | `LOG.md` §"Round-43 wave record" |
+| the 72 seat logs (each dead seat's last error text), the frozen-sha mutant receipt | `91cb221f35f7cb9afeff99ef1959512dabddfc46` | `LOG.md` §"Round-43 seat logs" |
 
 The frozen round-42 counter was **not** touched: `.ufo/waves/round-42/count-c1.py` still hashes
-to `105ce075f331…` and `git diff e3a2b58… efb92cd5… -- .ufo/waves/round-42/count-c1.py` is empty.
+to `105ce075f331…` and `git diff e3a2b58… 91cb221f… -- .ufo/waves/round-42/count-c1.py` is empty.
+Both round-43 counters are byte-identical at the final tip and at the tip they were first
+measured at (`count-c1s.py` sha256 `93482248…`, `count-c2.py` sha256 `a1e05c98…`).
 
 ## Before → after measurements
 
@@ -250,8 +254,9 @@ None new this round. The OpenAlex tier-A L0 (`mori | round-42 | …`, fleet comm
 ## Report integrity
 
 - Lane work is committed and pushed only through `scripts/hyaku/jj-lane.sh`; the only citable
-  lane lines are its `landed <hash>` outputs: `dde525ea4a7fca365e8ff2f3c486bccf28b94e52` and
-  `efb92cd5fc27d392fbedc406933c398b35a5c09f`.
+  lane lines are its `landed <hash>` outputs: `dde525ea4a7fca365e8ff2f3c486bccf28b94e52`,
+  `efb92cd5fc27d392fbedc406933c398b35a5c09f` and
+  `91cb221f35f7cb9afeff99ef1959512dabddfc46` (the lane tip).
 - This report is committed on the fleet repo through `scripts/hyaku/fleet-commit.sh --as mori`,
   after the lane tip above — the last write of the round.
 - No host service was started, stopped, signalled or reconfigured; no sibling repo, lane jj
