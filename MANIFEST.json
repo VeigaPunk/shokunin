@@ -22616,6 +22616,47 @@
    "notes": "dispatch/complete digest: launch 2026-10-25T10:00:01-03:00 mori round=46 pgid=2011258 driver=hyaku-inline attempt=1; complete 2026-10-25T10:16:48-03:00. Lane self-graded C1 unprovable (frozen counter false-green); integrator re-measured the four pinned registry cells against the committed instruments — all match, so r45 stale-cell harm is repaired; calibration graded improved on that measurement, with the counter weakness noted. Routed defects: replace/retire count-repins.py as a calibration proof (semantic-cell parsing + live re-measurement + red-before stale-string control), rows=4 is a constant, clean .scratch/ leftovers (MutMissing/MutStaleC1/MutStaleC2). No promotion claims (SHONEN all [~], operator-owned).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 39,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 39,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 39
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-39/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_flash session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-39-verifier-spotcheck.md@efe25f962a0b3a2b9b111c03bb5b5386c9548195",
+    "rechecks": "Both claims re-measured by the integrator over committed bytes at origin master df61204c (scratch clone): C1 tip gate admit=1, two rejects with reasons and flips, S473=1 vs base d7954be8 all zero; attempt-1 declared grep 'Admit the amendment' reads 0 at tip (disclosed defect) and the ^Reject line-count prints 1 for the two decisions - substance verified, counter-fidelity defect routed. C2 pointer/file/S473 = 1/1/1 vs base 0/0/0. SOURCES 213->214 (A 203->204, mined 194->195), S473 the only added row, census validate exit 0 on fleet root (W04 only); S473 quote re-opened: HTTP 200, 1657 bytes, sha256 2bbf06bb7a1687dbc9d25ce86c5d249b3f9d1e2c60efc32dbf7af2e4d052793f, line 17, 10 words. Discernment spot-check agrees with all sampled decisions (S473 admit; runtime-health r16 reject; hosted-health-route reject)."
+   },
+   "commit": "kama-shokunin@df61204c8badac202f51335eb59d9289a67ef4b5",
+   "closed_at": "2026-10-25T13:20:47Z",
+   "campaign": "hyaku",
+   "notes": "Digest (watchdog.log, mutable): launch attempt=1 09:50:26-03; lane-dead-no-report 10:13:38 (attempt-1 commits eaa4106c+8e953f68 unlanded, report e52edfda cited them falsely); launch attempt=2 10:13:40; complete 10:17:20. Graded on the erratum's landed state df61204c. Defects routed to kama next round: D1 attempt-1 report body cites unlanded hashes (voided by the erratum; pre-report ls-remote gate must run - already mined as a mistake with demonstrated fix); D2 C1 counter-string fidelity (rejects measured as 2 decisions but `grep -c '^Reject'` prints 1 because both rejects share a line; attempt-1 string reads admit=0 - use a decision-counting command); D3 frozen preregistration.json pins S472 which round 38 already holds at the replay base; the S472->S473 renumber is correct and documented - append a note to the frozen artifact so the freeze and measured base align. Status-neutral: parked lane worktree still carries stale r35/r36 tracked edits and untracked round-37/round-39 wave copies (all byte-identical to tip where they exist); not round-39 debt; re-anchoring stays an operator item. No tools installed or updated.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
