@@ -23734,6 +23734,45 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log): 2026-10-25T16:50:02-03:00 launch chousa round=49 pgid=135352 driver=hyaku-inline attempt=1; 2026-10-25T17:38:28-03:00 complete chousa round=49; hyaku-inline attempt=1. Conformance defects (status-neutral): report filed before WAVE-DONE (W1 39/40, W2 27/35; self-disclosed); three late W2 seat reports (MutA05, MutSubstance, ReviewQuality) left untracked in the lane repo; stale quote count 28 vs measured 31 in QUALITY 72, corpus/README.md:1074 and LOG.md:1803 (needs appended correction); gate row 'chousa round-49 counters and checks' has no --selftest over isolated fixtures and no digest-pinned frozen snapshot (PROTOCOL Gate standard; I verified committed evidence and did not execute it); prompt committed under lane identity; W1 NCPSSD help-page offsets differ from plain utf-8-sig offsets by a constant 316 (decode form unstated, refusal unaffected). Limits accepted: C1 is conformance on fixed inputs (replay of outputs passes; named in report/QUALITY 72). C1 axis scale stays 3/10. SHONEN boxes are all [~]; boxes 1-3 look checkable by a non-author from this round's evidence - promotion is operator-owned and not written here. Routed to lane for round 50: items 1-6 of the spot-check file.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 45,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 45,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 45
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "freshness": "improved",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "calibration": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-45/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_sonnet session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-45-verifier-spotcheck.md@683eedde3a50441c34d85a22f5fd5346f8b1ec6d",
+    "rechecks": "C1 re-measured: population 73 (awk over SOURCES at base and head), ledger 73 entries, 0/73 sha mismatch, 73/73 quotes located, reviews 71 agree/2 dispute, 11 rows live re-fetched (8 byte-identical; S026/S093/S108 dynamic, quotes still located except S093 markup fragment confirming dispute); C2 re-measured: S256/S257 rows lines 131-132, snapshot sha256 equal to rows and to live pinned URLs, entry quotes all located, README indexed 2/2; counter stdout verified not executed; sources-census exit 0; spot-check 2 admits + 1 reject + 2 disputes all agree"
+   },
+   "commit": "tameshi-shokunin@85504972f2c35d4ef7b3de67bc1f624661bcbd04",
+   "closed_at": "2026-10-25T20:45:35Z",
+   "campaign": "hyaku",
+   "notes": "driver: 2026-10-25T16:08:30-03:00 launch tameshi round=45 pgid=2141782 driver=hyaku-inline attempt=1; 2026-10-25T17:41:37-03:00 complete tameshi round=45; hyaku-inline attempt=1. Conformance ok (report by tameshi-shokunin 8b3d7bb6, 8 cited hashes ancestors of master, ahead=0, clean, receipts-only tail 0 paths). Status-neutral defects/routed: (1) contract no_harm round-44 record-agreement counter red m11=1 (external GoogleTest hash cd8e73f0 not a lane object) m12=1 (round-bound): false positive, not harm; fix counter before reuse; (2) selftest tallies C1 19/19 C2 10/10 have no standalone committed receipt, survivors 12/8 routed r46; (3) freshness score 1->9 is a formula change, comparable measure is fresh 0->71; (4) anchor-refresh candidates and dynamic-page whole-hash pins (S026,S093,S108); (5) one dead w2 seat and duplicate Mut seats disclosed. SHONEN boxes all remain [~]; none newly checkable by non-author, no operator promotion item.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
