@@ -75,7 +75,7 @@ moves the generated-config work of attempt 1.
   executor 3 / critic 3 / connector 2 / simplifier 2 / mutation-tester 1 / revenger 1 / sentinel 1 —
   14 attack seats (39%). One residual ordinary `task` call of 4 seats (3 reviewer, 1 critic) carried
   the post-repair checks; wave 2 was not dispatched because the wave yielded fewer than 32 further
-  *distinct* attacks. L1 holds the canonical planner seat. **Round total 40 seats, 0 dead seats.**
+  *distinct* attacks. L1 holds the canonical planner seat. **Round total 40 seats; 39 returned.** One residual seat (`R29a2rCalibration`) had not returned at filing and is recorded as **unreturned** — never replaced, never claimed as passed. The build wave itself had **0 dead seats** (36/36 returned).
   Evidence: `.ufo/waves/round-29/attempt2/{build-spec.json,build-dispatch.json,build-registry-record.txt}`,
   `build/swarm-registry.json`, `.ufo/waves/round-29/attempt2/build/*.md` (36 reports),
   `.ufo/waves/round-29/attempt2/residual/`.
@@ -241,8 +241,8 @@ Run at round start and at round end; **both exit 0**. Outputs: `corpus/evidence/
   pacman transaction was attempted by any seat (the host-wide pause was respected).
 - **L0 questions:** none new. The two inherited round-25 questions (coverage cap, novelty conversion)
   remain open and C1 does not convert either. No operator decision blocked this round.
-- **Wave accounting:** 36-seat v1 build wave + 4-seat residual call = 40 seats; 0 dead; no seat
-  replaced; every `task` dispatch carried the validator's `taskCall` unchanged; routing left to the
+- **Wave accounting:** 36-seat v1 build wave + 4-seat residual call = 40 seats; 39 returned, 1
+  unreturned (`R29a2rCalibration`); no seat replaced; every `task` dispatch carried the validator's `taskCall` unchanged; routing left to the
   operator's role map (no `model` parameter passed anywhere).
 - **Yield ledger (Q19, landed this round):** `.ufo/waves/yield.tsv` now carries one row per seat for
   round 29 — 40 rows, **27 of 40 caused a landed correction, supersede or verdict change**
