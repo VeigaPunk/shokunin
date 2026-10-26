@@ -25707,6 +25707,49 @@
    "notes": "Digest (.ufo/watchdog.log, mutable): 2026-10-26T05:35:21-03:00 launch kama round=45 pgid=1382694 driver=hyaku-inline attempt=1; 2026-10-26T09:23:43-03:00 complete kama round=45; hyaku-inline attempt=1. Step 1 ok: report 277ee2ef by kama-shokunin (07:52:54, after L1 tip 0fddf257), SHONEN 4/4 [~]; cited 1641aa07 58ffddd6 052cb1e9 85977699 21945c61 0718b6ab 82b5e9d3 0fddf257 6b8ccfb3 all ancestors of master; jj-lane state ahead=0 tracked=0 untracked=0, porcelain empty; prompt 6105c587 lines 1-140 differ from template only by substitutions, addendum 6 and 7 present. Rejected-honest-stop: C1 (freshness) verifies, C2 (calibration) frozen predicate met=False under v1 and pre-data v2, ledger itself reproduces. Conformance (status-neutral): N-A orchestrator salvage a553bd7c committed under lane identity after the report (64 null-status members, no seat report; report's 'ls-remote prints 0fddf257' stale at closure); N-B preregistration frozen_at_utc 829 s after its commit (lane-disclosed, KQ64); N-C 0718b6ab truncated SCORECARD/LOG/QUALITY/README, restored by new commit 82b5e9d3, base->tip append-only; N-D wave kama-r45-w1 dispatched but 32/64 spawned, 0 seats worked (driver job cap), no L2 floor; N-E pinned model fixture deleted from ~/.cache (re-fetchable, sha matches). Spot-check commit landed on top of operator commit 221525bc (helper rebase; a553bd7c ancestor). Routed for round 46: D1 calibration re-claim on the now-known ledger needs KQ65 sample control committed before any new reader, or a fresh population; D2 KQ64 receipt at the freeze; D3 record model re-fetch path in S485/live recheck; carried frontier S013, S022, floating series, S002-S004, llama.cpp after b11889 (b11899). Operator: dispatcher stall at 32/64; L0 kama round-35, round-39, round-41..43 open. SHONEN boxes not fully checkable by a non-author this round.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 43,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 43,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 43
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "rule size versus reported size join (tools/mado-geometry.py)"
+   ],
+   "report": ".ufo/reports/round-43/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-43-verifier-spotcheck.md@6a1a90528fe533cadee506a9fa3e9d13d15cc41f",
+    "rechecks": "C1 re-measured: tools/mado-geometry.py absent at a35cfdf, present at 5846662 (tools 11->12), sha256 e3c2e471... equal to the round-42 frozen reference and the data commit; own 3-client fixture run gives AGREE/DIFFER/TILED; live host run reproduces NO_MATCHING_CLIENT exit 3 (gkeep.conf sha 3726e488... = pin). C2 re-measured: entry absent->present, knowledge 59->60, rows 226->234 (S290-S297, none removed), base grep for the ground 0 hits; 10/10 Gate receipts sha256 equal, each quote 1 occurrence in its receipt and 0 in the other nine; non-author reviewer read 14/14 entry claims supported at their receipt lines; upstream DefaultFloatingAlgorithm.cpp/WindowTarget.cpp (and RegexMatchEngine/GeometricMovableAnimated via seat) byte-identical to pins. Evidence-verified only (lane counters not executed): C1 0/37->37/37 TARGET_MET at 1959770 and 8750016, CTL_C1 PASS 0 of 47; C2 v2 0/1->1/1 TARGET_MET, CTL_C2 74/74. Harm: SCORECARD diff append-only; docs append-only; README links 59->60, QUALITY criteria 76->81 match published 60/60 and 68/68; committed MATCH at 2a3707c unaffected by later commits. Spot-check: REFUSE r10, REFUSE observation-route r11, ADMIT r11 successor, r30 withdrawal, rows S291/S293 re-fetched - all agree. Census validate mado ok exit 0, unchanged."
+   },
+   "commit": "mado-shokunin@58466627de847d6502283c3bb9e652caea97b411",
+   "closed_at": "2026-10-26T12:35:41Z",
+   "campaign": "hyaku",
+   "notes": "Driver: 2026-10-26T04:09:14-03:00 launch mado round=43 pgid=3089898 driver=hyaku-inline attempt=1; 2026-10-26T06:22:15-03:00 complete mado round=43; hyaku-inline attempt=1; 2026-10-26T09:23:40-03:00 complete mado round=43; hyaku-inline attempt=1 (duplicate completion line, driver-side, status-neutral). Conformance: report committed by lane identity (906cfe7, after lane tip 5846662), prompt dfc3f3f committed before launch and a canonical template rendering, SHONEN heading 4 [~] lines, 9 cited commits all ancestors of master, lane pushed ahead=0 and clean; L2 70 seats (38+32). Routed (spot-check s6): D1 lesson :74-75 r10 refusal under-cites S294/S158, flip should name the clients -j size field, S310 mapping omits S297; D2 S293 title wording + w2 row-cell defects await supersession; D3 SKILL.md:276 TILED licence overstated for pseudo-tiled; D4 entry :66 bare w1 paths dangled at data commit, 20-observation.txt:24 locator 156-164 -> 150-159; D5 registration.md:5 37 vs 38 seats, SCORECARD M43-1..8 vs M43-9; D6 open predicate defects (C1 cheats 4/6, C2 v2 do-nothing 14/14 and 6/16 mutants, check-locators 12/37 mutants); D7 no committed axis receipt at tip; r41 leftovers S041, O1-O5, PROVINCE.md:75-76. SHONEN boxes remain [~]; box 2 reproduced by non-author; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
