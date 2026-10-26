@@ -40,6 +40,15 @@
 # overrides the guard path; a missing guard is a logged warning and spawns
 # continue, so the driver works on hosts without the guard.
 #
+# HOST GATE (run 9, after run 8 wedged the host at ~92 live agents, load ~45 on 32 cores):
+# seats spawn only while fewer than SEAT_CEILING jobs are running (omp's own hard cap is
+# 100 running jobs), the 1-min load is <= LOAD_MAX and MemAvailable >= MEM_MIN_GB; otherwise
+# the wave waits for the next tick. FILL STATE ON DISK: a wave that fills across ticks keeps
+# {seat: job id} in <wave>.ready.partial and, once full, on the second line of
+# <wave>.ready.dispatched, so bootstrap() after a kernel loss resumes the fill without
+# re-spawning seats and tracks liveness by job id. A ready whose L1 is not running is never
+# spawned (tick status lists it as an orphan).
+#
 # Contract: the L1 writes <lane-repo>/.ufo/waves/round-N/<wave>.ready
 # {lane,round,wave,dispatch,l1}; we spawn every taskCall.tasks[] seat inline,
 # mark <ready>.dispatched, and when no seat is live write
@@ -55,7 +64,6 @@ import glob, json, os, re, subprocess, time, asyncio
 
 FLEET = '/home/vgpnk/Projects/shokunin'
 LOGF = os.environ.get('HYAKU_DISPATCH_LOG') or os.path.join(FLEET, '.ufo/state/inline-dispatcher.log')
-CAP = 95
 WAVES = globals().get('WAVES', {})      # ready path -> {meta, names, handles, l1, done}
 L1S = globals().get('L1S', set())       # L1 agent names to watch
 CLOS = globals().get('CLOS', {})        # lane -> closure agent name
@@ -78,7 +86,7 @@ L1_PROMPT = """/skill:godspeed
 Lane {lane}, round {rnd} (attempt {attempt}). Lane repo: {FLEET}/{lane}-shokunin.
 # Change
 Read {FLEET}/.ufo/prompts/{lane}-round-{rnd}.md in full and execute it end to end. Your agent id for ready files is `{label}`.
-Waves spawn in the orchestrator session via the inline spawn handoff (addendum §6 run-7 block): never call task yourself. YOU write <lane>/.ufo/waves/round-N/<wave>.ready (JSON: lane, round, wave, dispatch abs path, l1 = your agent id) after validating; the orchestrator polls for it, spawns the seats, and messages you WAVE-DONE. `wait` may return early when nothing is pending — call it again or keep doing round work; never give up for lack of a handoff. Do not file the report before WAVE-DONE for every wave you launched. Size the round 64-100 seats total; the operator's live job cap is 100 and is shared with other lanes, so waves queue and fill as slots free.
+Waves spawn in the orchestrator session via the inline spawn handoff (addendum §6 run-7 block): never call task yourself. YOU write <lane>/.ufo/waves/round-N/<wave>.ready (JSON: lane, round, wave, dispatch abs path, l1 = your agent id) after validating; the orchestrator polls for it, spawns the seats, and messages you WAVE-DONE. `wait` may return early when nothing is pending — call it again or keep doing round work; never give up for lack of a handoff. Do not file the report before WAVE-DONE for every wave you launched. Size the round 64-128 seats total (addendum §6 run-9 block; 256 is the hard ceiling). At most ~88 seats run at once across all lanes (omp caps a session at 100 running agents), so waves queue and a large wave fills in tranches as slots free.
 You own the whole round: protocol load, claim choice and freeze with controls, specs, validation, integration, landing, report. Nobody supplies claims. Never message agent://all; message only your own seats by id.
 # Acceptance
 Report {FLEET}/.ufo/reports/round-{rnd}/{lane}.md committed via fleet-commit.sh --as {lane}; lane pushed (ls-remote shows final hash). Never end your turn before that.
@@ -86,9 +94,39 @@ Report {FLEET}/.ufo/reports/round-{rnd}/{lane}.md committed via fleet-commit.sh 
 Tooling authorization (operator, 2026-10-19): you and every seat may install/upgrade tools that help the task; first read /home/vgpnk/.omp/agent/RULES.md (official channels, update-safety gate; record tool/version/channel/reason). pacman stays paused per the addendum guard.
 """
 
-HOST_JOB_CAP = 100   # omp background-job limit; counts every proc:// entry (running, completed-unconsumed, services)
-MARGIN = 2           # slots kept free for closure judges / L1 spawns / seat-spawned services
-PARTIAL = globals().get('PARTIAL', {})  # ready path -> {seat name: AgentHandle} while a wave is still filling
+HOST_JOB_CAP = 100   # omp 18.12.6 clamps async.maxJobs with Math.min(100, ...) and refuses a new job while
+                     # 100 jobs are running; queued, completed and service entries do not count
+SEAT_CEILING = int(os.environ.get('HYAKU_SEAT_CEILING', '88'))   # running jobs at which seat spawns stop;
+                     # the gap below HOST_JOB_CAP keeps L1 / closure-judge spawns and judge seats possible
+LOAD_MAX = float(os.environ.get('HYAKU_LOAD_MAX', str(1.25 * (os.cpu_count() or 8))))
+MEM_MIN_GB = float(os.environ.get('HYAKU_MEM_MIN_GB', '4'))
+PARTIAL = globals().get('PARTIAL', {})  # ready path -> {seat name: AgentHandle | _Spawned} while a wave is still filling
+
+class _Spawned:
+    """A seat whose handle was lost with the kernel: liveness by job id, no output."""
+    def __init__(self, id):
+        self.id = id
+
+def _ids(spawned):
+    return {n: getattr(h, 'id', None) for n, h in spawned.items()}
+
+def _save_partial(ready, spawned):
+    tmp = ready + '.partial.tmp'
+    with open(tmp, 'w') as f:
+        json.dump(_ids(spawned), f)
+    os.replace(tmp, ready + '.partial')
+
+def host_ok():
+    """True while the host can take more seats (1-min load and MemAvailable within bounds)."""
+    try:
+        load1 = float(open('/proc/loadavg').read().split()[0])
+        mem_gb = next(int(l.split()[1]) for l in open('/proc/meminfo') if l.startswith('MemAvailable:')) / 1048576
+    except (OSError, ValueError, StopIteration):
+        return True
+    if load1 > LOAD_MAX or mem_gb < MEM_MIN_GB:
+        dlog('host-pressure', f'load1={load1}', f'mem_avail_gb={mem_gb:.1f}')
+        return False
+    return True
 
 # --- disk guard hooks -------------------------------------------------------
 def _disk(argv):
@@ -132,12 +170,11 @@ def disk_sweep(emergency=False):
     return p.returncode
 
 async def proc_state():
-    """(running task/service names, total proc entries). The host cap counts every entry, not just running tasks."""
+    """(running job names, running job count). The host cap counts running jobs only."""
     r = await tool.read({'path': 'proc://'})
     txt = r.get('text', '') if isinstance(r, dict) else str(r)
-    lines = [l for l in txt.splitlines() if l.strip()]
-    run = {m.group(1) for m in re.finditer(r'^(\S+) \[\w[\w-]*\] running', txt, re.M)}
-    return run, len(lines)
+    run = {m.group(1) for m in re.finditer(r'^(\S+) \[\w[\w-]*\] (?:— )?running', txt, re.M)}
+    return run, len(run)
 
 async def running_names():
     run, _ = await proc_state()
@@ -169,52 +206,66 @@ def spawn_closure(lane, rnd):
 def adopt(ready):
     """Track an already-dispatched wave whose handles were lost (kernel restart)."""
     meta = json.load(open(ready)); d = json.load(open(meta['dispatch']))
+    lines = open(ready + '.dispatched').read().splitlines()
+    try:
+        ids = json.loads(lines[1]) if len(lines) > 1 else {}
+    except ValueError:
+        ids = {}
     WAVES[ready] = {'meta': meta, 'names': [t['name'] for t in d['taskCall']['tasks']],
-                    'agents': {t['name']: t['agent'] for t in d['taskCall']['tasks']}, 'done': False, 'adopted': True}
-    dlog('adopted', ready)
+                    'agents': {t['name']: t['agent'] for t in d['taskCall']['tasks']},
+                    'handles': {n: _Spawned(i) for n, i in ids.items() if i}, 'done': False, 'adopted': True}
+    dlog('adopted', ready, len(ids))
 
 async def register(ready, run, occupied):
-    """Spawn a wave's seats incrementally as host slots free up. Returns True once every seat is spawned
-    (wave registered in WAVES, .dispatched written); False while still filling or deferred.
+    """Spawn a wave's seats incrementally as host slots free up. Returns (registered, seats spawned now):
+    registered is True once every seat is spawned (wave in WAVES, .dispatched written).
 
-    Disk gate: an unregistered wave is the cheapest thing to hold — before the first
-    seat of a wave is spawned we ask the guard; on pressure we sweep once and defer
-    the whole wave (nothing spawned, .dispatched not written), so the next tick
-    retries it intact."""
+    Disk and host gates: an unregistered wave is the cheapest thing to hold — on disk
+    pressure we sweep once and defer; on host pressure we defer. A deferred or partial
+    wave keeps <ready>.partial fresh, which tells ready-watch.sh it is being driven."""
+    mine = PARTIAL.setdefault(ready, {})
     if not await asyncio.to_thread(disk_ok):
         await asyncio.to_thread(disk_sweep)
         if not await asyncio.to_thread(disk_ok):
             dlog('disk-defer', ready)      # wave stays unregistered; retried next tick
-            return False
+            _save_partial(ready, mine)
+            return False, 0
+    if not host_ok():
+        dlog('host-defer', ready)
+        _save_partial(ready, mine)
+        return False, 0
     meta = json.load(open(ready)); d = json.load(open(meta['dispatch']))
     tc = d['taskCall']; tasks = tc['tasks']
-    mine = PARTIAL.setdefault(ready, {})
     todo = [t for t in tasks if t['name'] not in mine]
-    room = HOST_JOB_CAP - MARGIN - occupied
-    if todo and room <= 0:
-        return False
+    room = SEAT_CEILING - occupied
+    n = 0
     for t in todo[:max(room, 0)]:
         prompt = tc.get('context', '') + f"\n\n# Seat {t['name']}\n" + t['task']
         try:
             h = agent(prompt, agent=t['agent'], label=t['name'])
         except RuntimeError as e:          # host cap hit mid-batch; resume next tick
             dlog('spawn-cap', ready, t['name'], repr(e)); break
-        mine[t['name']] = h; HANDLES[t['name']] = h
+        mine[t['name']] = h; HANDLES[t['name']] = h; n += 1
     if len(mine) < len(tasks):
+        _save_partial(ready, mine)
         dlog('partial', meta['lane'], meta['round'], meta['wave'], len(mine), len(tasks))
-        return False
+        return False, n
     with open(ready + '.dispatched', 'w') as f:
-        f.write(time.strftime('%Y-%m-%dT%H:%M:%S') + '\n')
+        f.write(time.strftime('%Y-%m-%dT%H:%M:%S') + '\n' + json.dumps(_ids(mine)) + '\n')
     WAVES[ready] = {'meta': meta, 'names': [t['name'] for t in tasks],
                     'agents': {t['name']: t['agent'] for t in tasks}, 'handles': dict(mine),
                     'done': False, 'adopted': False}
     PARTIAL.pop(ready, None)
+    try:
+        os.remove(ready + '.partial')
+    except OSError:
+        pass
     dlog('spawned', meta['lane'], meta['round'], meta['wave'], len(tasks))
-    return True
+    return True, n
 
 def seat_output(name, w=None):
     h = ((w or {}).get('handles') or {}).get(name) or HANDLES.get(name)
-    if h is None:
+    if h is None or isinstance(h, _Spawned):
         return None
     try:
         return str(h.output())[:20000]
@@ -226,7 +277,7 @@ async def finalize(ready, w):
     out = os.path.join(os.path.dirname(m['dispatch']), f"{m['wave']}-results.json")
     res = []
     for n in w['names']:
-        o = seat_output(n)
+        o = seat_output(n, w)
         res.append({'name': n, 'agent': w['agents'][n], 'output': o,
                     'note': None if o is not None else 'orchestrator kernel restarted mid-wave; seat output was delivered to the orchestrator session but not retained — read the seat report file in the wave dir'})
     json.dump({'lane': m['lane'], 'round': m['round'], 'wave': m['wave'], 'seats': len(res), 'results': res},
@@ -242,13 +293,17 @@ async def finalize(ready, w):
 
 async def tick():
     run, occupied = await proc_state()
+    orphans = []
     for ready in sorted(glob.glob(f'{FLEET}/*-shokunin/.ufo/waves/round-*/*.ready')):
         if ready not in WAVES and not os.path.exists(ready + '.dispatched'):
             try:
-                if await register(ready, run, occupied):
+                if not live(json.load(open(ready)).get('l1', ''), run):
+                    orphans.append(ready); continue
+                done, n = await register(ready, run, occupied)
+                if done:
                     run, occupied = await proc_state()
                 else:
-                    occupied += len(PARTIAL.get(ready, {}))  # approximate; refreshed next tick
+                    occupied += n
                     dlog('cap-defer', ready, 'occupied', occupied)
             except Exception as e:
                 dlog('wave-error', ready, repr(e))
@@ -261,7 +316,10 @@ async def tick():
             await finalize(ready, w)
         status.append(f"{w['meta']['lane']}/{w['meta']['wave']}: live {nlive}/{len(w['names'])}")
     for ready, mine in PARTIAL.items():
-        status.append(f"{os.path.basename(os.path.dirname(ready))}/{os.path.basename(ready)}: filling {len(mine)} spawned")
+        lane_dir, rnd_dir = ready.split('/')[-5], ready.split('/')[-2]
+        status.append(f"{lane_dir.removesuffix('-shokunin')}/{rnd_dir}/{os.path.basename(ready)[:-6]}: filling {len(mine)} spawned")
+    for ready in orphans:
+        status.append(f"ORPHAN ready (L1 not running, not spawned): {ready}")
     ev = []
     for n in list(L1S):
         if not live(n, run):
@@ -288,6 +346,16 @@ async def drive(max_s=1500, every=30):
 async def bootstrap():
     """Rebuild tracking after kernel loss: adopt dispatched waves lacking results, watch live L1s/closures."""
     run = await running_names()
+    for ready in sorted(glob.glob(f'{FLEET}/*-shokunin/.ufo/waves/round-*/*.ready')):
+        p = ready + '.partial'
+        if ready in PARTIAL or os.path.exists(ready + '.dispatched') or not os.path.exists(p):
+            continue
+        try:
+            ids = json.load(open(p))
+        except (OSError, ValueError):
+            continue
+        PARTIAL[ready] = {n: _Spawned(i) for n, i in ids.items() if i}
+        dlog('partial-restored', ready, len(PARTIAL[ready]))
     for ready in sorted(glob.glob(f'{FLEET}/*-shokunin/.ufo/waves/round-*/*.ready')):
         if ready in WAVES or not os.path.exists(ready + '.dispatched'):
             continue
