@@ -121,7 +121,7 @@ closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At 
 | tabi | 2 | r32–r35 | r32 admitted (`rounds[756]`), r33 rejected-honest-stop (`[763]`), r34 rejected-honest-stop (`[769]`, `e9949eaf`), r35 rejected-honest-stop (`[778]`, `01eef374`; C1 newMapped 0/2, C2 Firefox BiDi capability met, coverage improved, nothing harmed; spot-check `11c64b96`) | **blocked** ~19:22 by `advance` (three consecutive rejected closures r33–r35); block ended at 4 rounds, slot 2 → mori |
 | mori | 2 | r51–r60 | — | r51 in flight (MoriR51, ~19:22) |
 | souji | 3 | r33 | r33 rejected-honest-stop (`rounds[764]`) | **blocked** 16:39 by `advance` (three consecutive rejected closures through r33); block ended early at 1 round, slot 3 → kama |
-| kama | 3 | r46–r55 | r46 admitted (`rounds[770]`, `a4a605eb`), r47 admitted (`rounds[777]`, `30fd6e51`; calibration and operability improved, capability live-receipt-replay added; D1–D8 routed incl. C2 counter sufficiency) | r48 in flight (KamaR48, ~19:06; dispatch was refused once at ~19:00 on disk pressure, see Incidents) |
+| kama | 3 | r46–r55 | r46 admitted (`rounds[770]`, `a4a605eb`), r47 admitted (`rounds[777]`, `30fd6e51`; calibration and operability improved, capability live-receipt-replay added; D1–D8 routed incl. C2 counter sufficiency) | r48 landed ~20:00: report `dcc079e7` (corrects `15710a2a`, which was pushed with unfilled placeholders), lane tip `4d8334af`; one 69-seat wave, WAVE-DONE received; C1 calibration 7→7 met, C2 operability 8→8 met (replayed=3/3); High archive-hash hang (Sen2Live F1) routed to r49; `verify` OK; CloseKamaR48 spawned 20:00 |
 | kasegi | 4 | r36–r40 | r36, r37 admitted (`rounds[755]`, `[758]`), r38 rejected-honest-stop (`[762]`), r39 rejected-honest-stop (`[771]`, `13277204`; attempt 2 after attempt 1 hit the request budget; C1 not verified (G2 red, 7/8), C2 verified; expansion improved), r40 rejected (`[779]`, `b0513537`; attempt 2 after attempt 1 hit the request budget at ~19:10; 54+35 = 89 seats; C1 depth:verifiability NOT verified, kill rule fires on the lane's own wave-2 fixtures; C2 coverage 7→8 verified; D1–D7 routed; spot-check `5b29ea14`) | **blocked** ~19:56 by `advance` (three consecutive rejected closures r38–r40); block ended at 5 rounds, slot 4 → chousa |
 | chousa | 4 | r52–r61 | — | r52 in flight (ChousaR52, ~19:57) |
 | kaidoku | 5 | r39–r48 | r39 admitted (`rounds[757]`), r40 rejected-honest-stop (`[768]`; C1 3/4 counter suffix defect, C2 met), r41 rejected-honest-stop (`[774]`, `25d2770c`; C1 coverage met and improved, C2 not met on the counter's `declared` key gap; D1–D5 routed) | r42 in flight (KaidokuR42, ~18:55); rejection streak 2 |
@@ -207,3 +207,9 @@ closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At 
   The orchestrator moved both, bytes unchanged (sha256 `351684a6…`, `c85e3277…`), into
   `mori-shokunin/.ufo/waves/round-51/w1/`, removed the fleet dir, and told MoriR51. It is a conformance item for
   mori r51's closure.
+- 19:55-19:56 -03, fleet-root strays. Three untracked files appeared at the fleet root: `=1239` (16 B, `== shift I- for`),
+  `=3900` (49 B, `=== tracked-all siblings SKILL.md: near tsukuroi`) and `T` (0 B). Their names and contents
+  look like a seat shell command whose `>=`/`>` redirect misparsed, with cwd = fleet root; the text points at a
+  tsukuroi r43 pin-audit seat, but no w2 report quotes those strings, so the writer is unattributed. KamaR48
+  saw them at report time and left them. The orchestrator moved them, bytes unchanged, to the ignored
+  `.tower/quarantine/fleet-root-strays-20261026T1956/`. No tracked file was touched (`git status` clean after).
