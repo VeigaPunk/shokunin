@@ -152,3 +152,24 @@ bear on its closures. After block C, freed slots go to the lowest next-round.
       its lock and run from `~/.cache/uv/archive-v0`.
   - Kept: `/fast/scratch/hyaku-run7` and `hyaku-run8` (the run-7 and run-8 records cite them), plus the
     six claims listed above (Phase 0 of the next run).
+
+## Phase 0 resolution (2026-10-26 ~09:20-11:50, operator-directed)
+
+| Round | Outcome | `rounds[]` |
+|---|---|---|
+| kama r45 | rejected | 750 |
+| mado r43 | admitted | 751 |
+| tabi r31 (attempt 2) | admitted | 752 |
+| souji r32 (attempt 2) | rejected; souji now BLOCKED (3 rejects in a row: r30, r31, r32) | 753 |
+| mori r50 (attempt 2) | admitted | 754 |
+| tameshi r48 (attempt 2) | not landed | — |
+
+- tameshi r48: the attempt-2 L1 stopped committing after 10:28 and never filed. At operator wrap-up its 8
+  straggler seats and the L1 were killed, and `inline.sh fail` recorded attempt 2/3 as RETRYABLE. The claim
+  stays open, so the next run's Phase 0 is `inline.sh dispatch tameshi` (attempt 3, the last before the
+  lane is blocked). Its unlanded receipts and a2w1 wave were salvaged in
+  8f2922b8d8615e26d382e775bd9821fdd9204130. Note that c1-controls, after/ and the c94-96 falsifiers did run.
+- Orchestration lesson, operator 2026-10-26: Phase 0 ran with HOST_JOB_CAP=60. That was too low and too
+  slow. The swarm ceiling is 256 seats; aim for 64-128 dispatched seats per round. The polling drive loop
+  (`drive()`/`run_loop`) was slow and fragile: kernel state was lost on every interrupt. Replace it before
+  the next run.
