@@ -25539,6 +25539,51 @@
    "notes": "Dispatch digest: 2026-10-26T03:00:44-03:00 launch tabi round=30 pgid=486597 driver=hyaku-inline attempt=1; 2026-10-26T05:03:53-03:00 complete tabi round=30; hyaku-inline attempt=1. Step 1 clean: report ca815bbc by tabi-shokunin after lane tip 66171034 (05:03:20 vs 05:02:09); SHONEN 4 [~] lines = 4 boxes; 9 hashes ancestors of master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0; prompt d23911b6 = template + placeholders + addendum §6/§7; waves w1 32/32, w2 34/34 with reports, validate stderr empty. Round-29 routed defects 1-6 fixed; 7 fixed on its self-test half (C1), release-pin counter v2 carried as not claimed. Calibration ruled unchanged, not harmed: the one check-selfassessment mismatch is an instrument misread of a true 12/12 tally, disclosed in report, M8 and SCORECARD:1554-1557. Routed to tabi next round: (1) SCORECARD.md:1523 'mismatches 0 after the round-30 corrections above' is false at 0ffc6ea (3) and d3cd62a1 (1); append a line-cited correction (criterion 78); (2) check-selfassessment v2 must read the gate summary SELFTEST line, not the first cases= token; (3) planned counter v2 for check-gate-mutants (opaque run dirs, minimal env, killer attribution, MutC1Beyond survivors, empty work-dir leak on exit 2) and check-frontier-admission (https-only, same-host redirects, curl -q, refetch independence); (4) release-pin counter v2 (id-set population, DEPS-pinned S044/S068) still open. SHONEN boxes 1, 2 and 4 look non-author-checkable; box 3 still needs a non-author executor run; promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 39,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 39,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 39
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "improved",
+    "novelty": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "repo-history-grader-probe",
+    "order-of-operations-gate"
+   ],
+   "report": ".ufo/reports/round-39/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-39-verifier-spotcheck.md@d8fad16ab51982d7a552fd7eab15f9eacb438f4d",
+    "rechecks": "C1 evidence-verified, not executed (registered gate round39-c1-mutants): control-c1-nothing BATTERY fixtures=86 MUTANTS total=7 killed=3 survived=4 PREDICATE C1 fail exit=1 -> measure-final (34158b0c) and measure-tip2 (6081f60c) fixtures=90 killed=7 survived=0 PREDICATE C1 pass exit=0; plain: pkg_gate.py sha256 ea638822 at b2bdd425/088f7c36/9d3aff94, frozen-digests 9/9 OK, frozen inputs and r36-38 instruments unchanged, 86+4 battery39 fids=90, static read of p1m/d5m39 honest; calibration count 2->0. C2 counter evidence-verified (checks=7 defects=4 -> defects=0 PREDICATE C2 pass); probe re-measured in a clean clone at 9d3aff94: cases=25 observed_pass=13 observed_fail=12 mismatches=0 byte-equal to receipt, --dry byte-equal, captures 7/7 OK, receipt identical to first run 6a1eb5e1; SOURCES 109->111 (S117/S118 A mined), knowledge 45->46; fsck.c include_reflogs=0 at v2.56.0:905-908 and v2.43.0:950-953 confirmed. No-harm: SCORECARD +75/-0, lane docs +1263/-0, tip2 no-harm set green (evidence); R4 regex-log recheck re-run 5/5 OK and probe byte-equal. Spot-check 2/2 admits (S117, S118 live digest+quote) and 2/2 rejects (TASK_REVIEW_AUTOMATION.md:244, terminal-bench-2-audit audit.txt:1485) agree; census exit 0, 15 W04."
+   },
+   "commit": "kengaku-shokunin@9d3aff94b0d7dbea2c2a6a3d04da7524633ffc91",
+   "closed_at": "2026-10-26T08:28:20Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-26T03:23:52-03:00 launch kengaku round=39 pgid=2178757 driver=hyaku-inline attempt=1; 2026-10-26T05:21:44-03:00 complete kengaku round=39; hyaku-inline attempt=1. Report 981d47a3 by kengaku-shokunin (05:20:44, after lane tip 9d3aff94 05:19:28); 10/10 cited hashes ancestors of master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0; prompt = template with placeholders only; both waves (36/36, 34/34) integrated before filing (r37/r38 R1 shape did not recur). Defects (status-neutral): D1 round-38 L1 commit ef2fba06 landed 03:37:53 inside the round-39 window (disclosed; only corpus/lessons/round-38.md outside .ufo/waves, no frozen input moved); D2 plans/order_check.py (gate) and plans/round39_c1_audit.py lack SKILL.md registry rows; D3 git_leak_probe.py --work on an absent dir -> FileNotFoundError traceback, exit 1 undeclared; D4 frozen frontier sentence (order class in corpus/defects.jsonl recurrence=2) not done (disclosed); D5 two seat scratch dirs left (disclosed); prompt committed under lane identity (5c263b30). Routed round 40: R1 register order_check/round39_c1_audit; R2 probe --work handling; R3 defects.jsonl order row via frozen defect_ledger check; R4 lane-routed residuals (order_check 2/6 mutants + fail-open, Q30 wording, tip_receipts skips new receipt, ledger-tip clone-mode rows, direction check cannot load r39 list, C1 counter A1/A3/A4/A5 re-freeze); R5 seat scratch hygiene. Operator: SHONEN box 2 checkable by a non-author this round (probe receipt reproduced byte-equal from a clean clone); box 3 nearly (D3); box 1 not (F39CritSkill 12/15).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
