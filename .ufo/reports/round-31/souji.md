@@ -3,7 +3,7 @@
 Lane repo: `/home/vgpnk/Projects/shokunin/souji-shokunin`, branch `master`.
 
 - Base: `9f17a1ef571f3a510a51ac233d7cf50ac0c871fc`.
-- Final lane HEAD: `d999c596d389dbc710e939b340066297046f3204`.
+- Final lane HEAD: `73e9490eb23af40ef3e70b47d463534e5cb58cdf` (wave-2 results capture, landed after the final-tip receipt commit `d999c596d389dbc710e939b340066297046f3204`; it adds only `census/round-31/waves/` files).
 - `git ls-remote origin refs/heads/master` prints that hash.
 - `jj-lane.sh state` reads `ahead=0 behind=0 tracked=0 untracked=0`.
 - Lane L1: SoujiR31.
@@ -56,7 +56,7 @@ Round shape: **two v1 waves**, dispatched inline by the orchestrator through rea
 | W2 `souji-r31-w2` | falsify what landed | 36 | critic 10, executor 6, scribe 6, reviewer 5, mutation-tester 3, scout 2, connector 2, sentinel 1, simplifier 1 | 24 / 18 |
 
 - Round total: **74 seats**, no residual call, **0 dead seats**.
-- Every seat wrote its report: W1 38/38 per `census/round-31/waves/w1-results.json`; W2 36/36 reports, captured under `census/round-31/waves/w2/`.
+- Every seat wrote its report: W1 38/38 per `census/round-31/waves/w1-results.json`; W2 36/36 per `census/round-31/waves/w2-results.json` (36 non-empty outputs).
 - The validator rejects `planner` as a swarm role, so the L1 held the canonical planner seat.
 - One W1 reviewer (SwarmReviewer26) ran long and was nudged once by message.
 
@@ -80,6 +80,7 @@ All rows tie to the LOG.md entry "2026-10-26 — Round 31 attempt 1: capability-
 | wave-2 corrections, D1 | `76bb697cf17de2291ee7fc5ee4a3107ae1785e80` |
 | lesson, QUALITY, SKILL, SCORECARD, LOG, census, wave-2 capture | `f950267893340096964ae8ceb7116f6789d7c87b` |
 | final-tip receipt | `d999c596d389dbc710e939b340066297046f3204` |
+| wave-2 results capture | `73e9490eb23af40ef3e70b47d463534e5cb58cdf` |
 
 Inherited state: the worktree was clean at start, and `.ufo/watchdog.log` holds no earlier attempt of this round. Nothing was inherited or discarded.
 
