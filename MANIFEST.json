@@ -24577,6 +24577,44 @@
    "notes": "dispatch/complete digest: 2026-10-25T20:31:38-03:00 launch mori round=49 pgid=2957725 driver=hyaku-inline attempt=1; 2026-10-25T22:58:26-03:00 complete mori round=49; hyaku-inline attempt=1. Step-1: report 8af5b0b6 by mori-shokunin, SHONEN present (4 boxes all [~]), all cited commits ancestors of master, lane pushed ahead=0, 7 untracked round-40 selftest dirs only. Status-neutral defects routed to round 50: (a) report author date 22:54:10 precedes cited lane tip 22:56:42 (recurring from r48); (b) round shape: one v1 wave of 49 seats, below 64-100 directive, no wave 2/WAVE-DONE, two seats with no report; (c) 48-vs-47 wave-1 report count erratum sits only in the report, lesson and LOG.md still say 48; (d) PIN_CHECK_SELFTEST 114/114 and unlanded 17/17 have no committed output file (prose only, unverified); (e) ~183 .scratch dirs remain on disk (gitignored, not deleted) plus 7 round-40 selftest dirs; (f) after-c1-at-tip.txt lists 27 variant lines vs variants=26; (g) K4, R11 carve-out and content-derived handle stay open per lane disclosures. Operator note: SHONEN boxes remain [~]; 'executable without oral context' leans on tool selftest tallies not verifiable from committed output, so not yet fully non-author-checkable; no [x] written.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 32,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 32,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 32
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth:verifiability": "unchanged",
+    "coverage": "unchanged",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-32/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-32-verifier-spotcheck.md@690b69dae23ab9f4ccf056ba2d619cadc2abb3c4",
+    "rechecks": "C1/C2 honest stops re-measured over committed bytes a2b9fd84->762bfe95: capture-binding-check.py and capture-binding-ledger.json absent at both revs; manifest walk 38 records, with_url=0, with_fetched_utc=0 at both; frontier admitted 15->15 (no F16), SOURCES 48->48, S049/S050 rows 0, knowledge 44->44 with 0 citing S049/S050; diff over SCORECARD/SHONEN/LOG/SKILL/PROVINCE/corpus SOURCES/README/QUALITY/knowledge/instruments is empty; round diff = 25 files under .ufo/waves/round-32 + S049/S050 captures (sha256 match capture-lines.txt); census validate exit 0 (W04 S028/S029 only, same as census-before). Evidence-verified, not executed: c1-controls/before.txt (strict 44/44, selftest cases=10 failures=0, harness 18/18, limbs 13/13, controls 3/3) and fake-checker receipt. No lane gate run. Spot-check: no ## Gate (lessons/round-32.md absent); 4 pre-gate judgments re-opened live (CNVD helpList, 360SRC PDF, quarantine S037, id-collision guard), all agree."
+   },
+   "commit": "kasegi-shokunin@762bfe9584976b9317c5b2239461544280b5e413",
+   "closed_at": "2026-10-26T04:09:47Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest (.ufo/watchdog.log lines 1455/1457 at closure): 2026-10-25T23:02:02-03:00 launch kasegi round=32 pgid=2757062 driver=hyaku-inline attempt=1; 2026-10-26T01:03:32-03:00 complete kasegi round=32; hyaku-inline attempt=1. Honest stop: the operator ended hyaku run 7 (cap 0) before wave 1 (37 seats, validated) spawned; 0 seats ran; wave1.ready withdrawn. Step-1: report f18db96b by kasegi-shokunin, landed after lane tip; SHONEN heading with 4 [ ] lines; 3 cited commits exist and are ancestors of master; ahead=0, porcelain empty; prompt carries the template contract plus the hyaku §6 addendum. Status ok (real committed round work, not a marker). Status-neutral defects routed to the lane: D1 no LOG.md entry for the 3 round commits; D2 frontier step not run (no lessons/round-32.md, no ## Mistakes, no census-after); D3 no cross-domain-evidence item; D4 report misquotes dispatcher.log (the 23:15:04 cap-defer says occupied 67, not 18) and the pointer is uncommitted /fast/scratch; D5 S049/S050 captures committed without round-32/manifest.json, which the C1/C2 frozen predicates read; D6 quarantined S037 staged quote is a spliced field collage, not verbatim, so re-ground before adoption. Round-31 routed items stay open. SHONEN boxes are not fully checkable by a non-author this round. The orchestrator says the round needs re-dispatch.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
