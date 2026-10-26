@@ -117,7 +117,7 @@ closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At 
 
 | lane | slot | block rounds | closed (admitted / rejected) | state |
 |---|---|---|---|---|
-| tameshi | 1 | r48–r57 | r48 rejected-harmed (`rounds[765]`, `d98fe66c`; cold-read 60 → 57 below its floor), r49 admitted (`rounds[772]`, `fa882d7d`; calibration 6 → 8, coverage F10 held; spot-check `e3729de8`) | r50 in flight (TameshiR50, 18:31) |
+| tameshi | 1 | r48–r57 | r48 rejected-harmed (`rounds[765]`, `d98fe66c`; cold-read 60 → 57 below its floor), r49 admitted (`rounds[772]`, `fa882d7d`; calibration 6 → 8, coverage F10 held; spot-check `e3729de8`) | r50 landed ~20:13: report `9c4be4fe`, lane tip `616dee67`; two v1 waves 50+35 = 85 seats; C1 calibration routed-defect ledger 49 rows, PASS (stays 8 at the monitor ceiling); C2 coverage F6 open → held (shrinker on S271), PASS; no-harm red at candidate `80ea77e9` (S022 status) fixed before the deciding run; `verify` OK; CloseTameshiR50 spawned 20:14 |
 | tabi | 2 | r32–r35 | r32 admitted (`rounds[756]`), r33 rejected-honest-stop (`[763]`), r34 rejected-honest-stop (`[769]`, `e9949eaf`), r35 rejected-honest-stop (`[778]`, `01eef374`; C1 newMapped 0/2, C2 Firefox BiDi capability met, coverage improved, nothing harmed; spot-check `11c64b96`) | **blocked** ~19:22 by `advance` (three consecutive rejected closures r33–r35); block ended at 4 rounds, slot 2 → mori |
 | mori | 2 | r51–r60 | — | r51 in flight (MoriR51, ~19:22) |
 | souji | 3 | r33 | r33 rejected-honest-stop (`rounds[764]`) | **blocked** 16:39 by `advance` (three consecutive rejected closures through r33); block ended early at 1 round, slot 3 → kama |
@@ -213,3 +213,7 @@ closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At 
   tsukuroi r43 pin-audit seat, but no w2 report quotes those strings, so the writer is unattributed. KamaR48
   saw them at report time and left them. The orchestrator moved them, bytes unchanged, to the ignored
   `.tower/quarantine/fleet-root-strays-20261026T1956/`. No tracked file was touched (`git status` clean after).
+- 20:10 -03, fleet-root strays again. `p.out` (62 B, build-spans.py output naming S115) and `p.err` (0 B), from a
+  chousa r52 w1 seat with cwd = fleet root. Found by tsukuroi seat SentScopeFinal (F2) and by TameshiR50. The
+  orchestrator moved both, bytes unchanged, to the ignored `.tower/quarantine/fleet-root-strays-20261026T2010/`
+  and told ChousaR52. It is a conformance item for chousa r52's closure.
