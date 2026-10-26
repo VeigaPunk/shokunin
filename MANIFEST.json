@@ -24740,6 +24740,47 @@
    "notes": "Dispatch digest: 2026-10-25T21:47:15-03:00 launch kengaku round=36 pgid=3060325 driver=hyaku-inline attempt=1; 2026-10-26T01:03:32-03:00 complete kengaku round=36; hyaku-inline attempt=1. Report 05a69bf0 by lane identity (commit 23:59:43 -03, after lane tip 0fb87f88), SHONEN 4x [~], 11/11 cited hashes ancestors of master, ahead=0, porcelain clean, prompt = canonical template + hyaku addendum. Conformance defects (status-neutral): round size 40 seats (wave 1 only) below the run-7 64-seat floor, wave 2 (34 seats) committed but not dispatched; orchestrator snapshot 6e1bc4a carries the lane identity and is not in the landed-changes table; measure-final measured at 612458f3 (diff to tip = two receipt files only). Routed to kengaku next round: (1) S110 SOURCES anchor sha256 truncated to 63 hex (4f7ac05e70cf922ea0f... vs true 4f7ac05e70cf9220ea0f...), append a superseding row/erratum and a row-digest-vs-manifest check; (2) frozen C1 battery gameable + 8 clauses without fixture (R36CritBattery, R36RevClaims FG1); (3) C2 counter admits a junk package (R36CritC2Counter), needs a support check; (4) unabsorbed wave-1 findings R36CritScope F3-F6/F8/F10, R36RevProbePred confounded ip-boundary cases, minor anchor-line drift; (5) Amendment 1 L0 ruling still open (revenger | round-69), closure ruling for the record: revision, output-only; (6) lesson Spot-check section 'Pending' answered by the spotcheck file except gate hand-runs. Operator: SHONEN end-to-end-task box has non-author-checkable evidence (probe re-run byte-equal by closure); not ticked, promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 29,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 29,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 29
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "coverage": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "declared-record agreement audit (r29)",
+    "committed-bytes wave-evidence capture (r29)"
+   ],
+   "report": ".ufo/reports/round-29/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-29-verifier-spotcheck.md@9420341d9a814cb6089c25fb03a4cc9b23dc0d1b",
+    "rechecks": "C1 re-measured with independent parser over committed bytes: K1 6 (1 used-by nocite S215 + 5 source-not-listed) + K2 4 uncorrected at 691dd29 -> 0+0 at ea4d798 (LOG/SCORECARD/lessons r28 append-only, R29-CORRECTION tags present); 9 SOURCES cell edits = lesson touched-row log. C2 re-measured: r26 manifest 1382 records/152 absent/14 unrecorded symlinks at base -> 1381/0/0 at tip, r27-r29 0/0; 11 changed r26 digests now equal tracked .ufo/waves/round-26 source blobs. C3 re-measured: ground: F3 entries 0->2, SOURCES rows 139->143; gate/integrity legs and coverage 13->15 evidence-verified (final-tip-measure*.txt at de874ee/f4326a8). Fixtures evidence-verified red-before only; no lane gate executed. Spot-check: admits S219, S216, S217 agree (hash pins and quotes re-found); reject near-duplicate-threshold-r28 agree on decision, reason misstated. sources-census validate rc 0 (36 W04)."
+   },
+   "commit": "souji-shokunin@ea4d798f651db93556129e0c3f9c455ca85d8037",
+   "closed_at": "2026-10-26T04:11:31Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-10-25T20:07:54-03:00 launch souji round=29 pgid=818105 driver=hyaku-inline attempt=1; 2026-10-26T01:03:32-03:00 complete souji round=29; hyaku-inline attempt=1. Report 17cee42 by souji-shokunin (23:17:09) after cited lane HEAD 48e2e95; all cited hashes ancestors of master; lane pushed ahead=0, clean. Defects (status-neutral): D1 report cites census/round-29/records/final-tip-measure*.txt committed only later in ea4d798 (00:37:58), whose subject misdescribes its content; D2 no explicit cross-domain-evidence line. Routed to souji r30: commit observed green fixture output (20/20, 15/15 are prose-only; only red-before committed); correct lesson Gate reject reason for near-duplicate-threshold-r28 (and operating-point-r28), which set no threshold - sound reason is out-of-F3-byte-identical-scope/redundant (scout table); landing gate at tip findings=2 false positives + COULD-NOT-EVALUATE (r28 routed defect 3 still open); prereg SUMMARY literals omit rev=; scratch clones must drop origin (SwarmExecutor17 push to lane master, restored). SHONEN: four [~], not yet fully checkable by a non-author from committed evidence (box 3 depends on uncommitted green fixture runs).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
