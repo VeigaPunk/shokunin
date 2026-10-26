@@ -25791,6 +25791,52 @@
    "notes": "Driver digest: 2026-10-26T05:12:11-03:00 launch attempt=1 pgid=3183899; 09:23:46 lane-dead-no-report (attempt-1 L1 died in orchestrator host crash ~08:50 -03; work salvaged in ae15a37e); 09:23:48 launch attempt=2 pgid=1819594; 09:52:52 complete attempt=2. Report 67fabbe4 (09:50:34) after last lane commit 70e84a10 (09:49:19). Step 1: all 6 cited hashes ancestors of master; jj-lane state ahead=0 behind=0 porcelain 0; prompt diff vs template placeholder-only; waves w1 32 + a2w1 32 seats, validate stderr empty, w2 abandoned unspawned (agentId null), no model key. Step-1 defects: none (lesson header w2 naming corrected append-only at :298; control JSONs name scratch-clone revs, disclosed at lesson :292). Routed to tabi next round: (1) calibration counter v3 (word numerals, cli_cases=, failed-summary oracle M11, merged-correction survivor); (2) decision-table counter v2 (distinct pairs, unit/bound word, M10); (3) S119 June->September 2022 superseding row and entry recheck 180d vs registry 365d; (4) 27 carried w1 findings in a2w1/ScribeErrata/errata.md; (5) controls should record resolvable revs; (6) round-30 routed defects 3-4 still carried; (7) seat scratch cleanup (5 a2w1 seats ~145 MB each, removed by L1). SHONEN: boxes 1,2,4 have non-author-checkable pointers; box 3 still rests on lane-dispatched executor seats; promotion operator-owned, no [x] written.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 32,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 32,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 32
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "unchanged",
+    "operability": "unchanged",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "sandboxed scratch-discipline counter (r32)",
+    "jj mtime-clock fixture (r32)",
+    "record-contract check (r32, M1)",
+    "receipt out-guard under TMPDIR (r32 attempt 2)"
+   ],
+   "report": ".ufo/reports/round-32/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-32-verifier-spotcheck.md@6017a482e7068d5afb7617640198fbb0fe743357",
+    "rechecks": "Re-measured over committed bytes: C1 appended binding rows 0->38 (withdrawn 17, run 3, record 9, field 9; comm of c1-items.tsv ids leaves N28-N31,N33,N34 = unbound 6; SCORECARD append-only, 0 deleted lines; L29 bound by field pair) -> MISSED confirmed; C2 landing diff 27 tools/tests files, landing->tip only evidence-cache revert (blob 82de0e07 = base) and receipt-run guard; r15 frozen pin census.sh digest c1671f4c = tip sha256, record_sha256 matches, verdict clean; SKILL ../ pointers 2->0 -> MISSED confirmed (24/27 at tip, evidence-verified); C3 entry absent->present, ground: F1 4->5, SOURCES rows 146->147, S223 0->1, record jj 0.45.1/git 2.56.0 with 22 RESULT lines over 5 arms -> VERIFIED. Evidence-verified only: C1 v1/v2, C2, C3 v1/v2 counters, final-tip-measure.txt, m1-red-before.txt, a2-repairs.txt R1-R4. Spot-check: S223 and three sibling sources re-fetched live (sha256 equal to snapshots; S223 quote 19 words verbatim at :655-656); C3 entry quotes verbatim; 2 admits + 3 staged rejects all agree; sources-census validate souji ok rc 0, 36 W04."
+   },
+   "commit": "souji-shokunin@04b9221347073b9c58624b36e8d849481e4dacd6",
+   "closed_at": "2026-10-26T14:02:28Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest (watchdog.log l.1501,1512,1513,1521): launch souji round=32 2026-10-26T05:07:28-03:00 attempt=1; lane-dead-no-report 09:23:45 (attempt-1 L1 died in orchestrator host crash ~08:50, work salvaged); launch attempt=2 09:23:46; complete 10:56:13 attempt=2. Report 9c8b964 by souji-shokunin at 10:55:49 (after tip 10:53:49); 9 lane commits all ancestors of master; lane ahead=0, clean. Honest stop: C1 calibration MISSED (unbound 6, withdrawn 17 > cap 8) and C2 operability MISSED (24/27 at tip); C3 coverage VERIFIED. No axis harmed: C2 landing harms (2 gate digest pins, r15 frozen pin, receipt --out guard, SKILL ../ pointers) repaired before close. Defects (status-neutral): D1 orchestrator salvage 4e56c48 under lane identity (disclosed); D2 report says landing gate findings=0 at tip but the only committed run (at 4ea897f) reads findings=2, both self-pointers to final-tip-measure.txt resolved at 04b9221; D3 C2 landing touches 27 tools/tests files, not 26; D4 C3 entry S223 source line keeps a 'placeholder id' note. Routed to r33: C1 per-statement enumeration + feasibility leg, N28-N31/N33/N34, N25 re-adjudication; C2 trailing-slash TMPDIR regressions (souji-census.sh:1990, souji-round9-selftest.sh:7), evidence-cache T08 with run-acceptance digest pin, literal /var/tmp in r15 regenerate.py and r15-census-config.py, T18 moving anchor; D2 committed tip gate run; D4; C3/C2 counters beatable (SwarmMutationTester22, SwarmCritic34); name frozen re-pins as separate acts. SHONEN: four [~] boxes with pointers that resolve at tip; look non-author-checkable, promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
