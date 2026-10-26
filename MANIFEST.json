@@ -26423,6 +26423,49 @@
    "notes": "Driver digest: 2026-10-26T15:20:26-03:00 launch mado round=45 pgid=2926682 driver=hyaku-inline attempt=1 / 2026-10-26T16:55:41-03:00 complete mado round=45; hyaku-inline attempt=1. Step 1: report 4f8a65b by mado-shokunin after lane tip; SHONEN 4 lines [~]; 7 cited hashes exist and are ancestors of master; ahead=0, remote=4d22eeb; prompt = template rendering + section 6/7 addenda. Defects (status-neutral, routed): D1 round 41 seats < 64 floor, w2 not run; D2 M45-2 undercount - host monitor serial in 3 held entries (config-health-report-r3.md:149, hyprctl-verification-layer.md:153, hyprland-config-plane.md:184) + 21 .ufo copies, none added this round (history removal operator-owned); D3 check-session-material.py gate has no SKILL.md registry row and is red at ee6659b; D4 untracked w1/MutC1Counter/results.json (4 MB) left in worktree; D5 w1-results.json outputs null (kernel restart); D6 round-44 D6/D7 still open. Operator: SHONEN boxes 2 and 3 reproduced by this non-author (live AGREE/OK; SKILL command ran as written); promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 40,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 40,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 40
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "depth": "improved",
+    "calibration": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "executable SquashFS extract-firmware outcome triage v2 (label and action)"
+   ],
+   "report": ".ufo/reports/round-40/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-40-verifier-spotcheck.md@49096c7e6f226af0c750c4b003be58883cb6049f",
+    "rechecks": "R40-C1 not met confirmed: counter sha256 8d288e4c = freeze, c1-at-42c10a58.json carriers_matched 3/4 exit 1 (L2 nonregular_unpublished_ok false); plain read confirms same_rel suffix false positive (usr/bin/busy regular vs bin/busy symlink); do-nothing 0/4; selftests 70/7/8 (evidence-verified, not executed). R40-C2 met re-measured: rule blocks 18->19 in Queue-drain craft, jq recount 26/26 label+action, 12 distinct pairs, manifest==observed, 26/26 carrier digests, held-out unchanged since 2d1ac5bc, freeze exit 2 no_manifest_at_rev, best dev control 24/26, interpreter selftest 45/45 (evidence). Coverage map 128/128->130/130 re-measured. Census exit 0, 13x W04. Spot-check: admits S123, S124, S125, S126 and rejects avm-firmware-image-unblob, AVM-BE-format.txt duplicate all agree."
+   },
+   "commit": "kaidoku-shokunin@c4895cf1f0fc00b629fbf5f4f9d4dd789ae93210",
+   "closed_at": "2026-10-26T20:06:07Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-10-26T15:06:51-03:00 launch kaidoku round=40 pgid=1810920 driver=hyaku-inline attempt=1; 2026-10-26T17:00:10-03:00 complete kaidoku round=40; hyaku-inline attempt=1. Step 1 clean: report 34703e82 by kaidoku-shokunin filed after lane tip c4895cf1 (16:48:26 < 16:49:50); SHONEN 4/4 lines; 10 cited hashes are ancestors of main; jj-lane state ahead=0, porcelain empty; prompt carries template contract. Not admitted: R40-C1 honest stop (frozen counter suffix false negative on L2; AVM-BE demoted to measured-not-promoted at 4d62ee5a); R40-C2 verified; no axis harmed. Routed: R40-CL1..CL7 as filed in corpus/lessons/round-40.md; D1 S126/AVM lineage evidence lives outside the lane repo (/home/vgpnk/Projects/shokuknow/...), digest matches but not durable; D2 AVM vendor texts remain in history at 7fce3086 (R40-CL7, operator ruling); D3 C2 depth increment bounded (18/26 v1-decidable, labels from generator class map). SHONEN boxes 1, 2, 4 look non-author checkable on committed evidence; promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
