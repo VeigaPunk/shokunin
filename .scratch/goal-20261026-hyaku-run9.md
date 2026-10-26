@@ -87,11 +87,11 @@ closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At 
 | lane | slot | block rounds | closed (admitted / rejected) | state |
 |---|---|---|---|---|
 | tameshi | 1 | r48–r57 | — | r48 attempt 3 in flight |
-| tabi | 2 | r32–r41 | — | r32 in flight (w1 36 seats) |
+| tabi | 2 | r32–r41 | r32 admitted (`rounds[756]`) | r33 in flight |
 | souji | 3 | r33–r42 | — | r33 in flight (fresh-start) |
-| kasegi | 4 | r36–r45 | r36 admitted (`rounds[755]`) | r37 in flight |
-| kaidoku | 5 | r39–r48 | — | r39 in flight |
-| kengaku | 6 | r40–r49 | — | r40 in flight |
+| kasegi | 4 | r36–r45 | r36 admitted (`rounds[755]`) | r37 closure in flight |
+| kaidoku | 5 | r39–r48 | r39 admitted (`rounds[757]`) | r40 in flight |
+| kengaku | 6 | r40–r49 | — | r40 closure in flight |
 | tsukuroi | 7 | r41–r50 | — | r41 in flight |
 | mado | 8 | r44–r53 | — | r44 in flight |
 
@@ -105,3 +105,21 @@ closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At 
   `find … -exec rm -rf {} +` sweeps over `/fast/scratch/hyaku/kasegi-r36` while seats were live (SentScope F2:
   SentScope's own dir was deleted twice). Both go to its closure as conformance items. The closure judge is
   dispatched after the wave settles, so the judge reads a stable lane.
+- ~14:00-14:10 -03, host PATH write, cross-lane harm. Kengaku r40 critic seat `R40CritC1Counter` attacked the C1
+  counter by planting a phase-aware `git` shim at the real `/home/vgpnk/.local/bin/git`. That directory comes
+  before `/usr/bin` on every lane's PATH. Its modules are `crit_git_shim.py` and `crit_ledger_selfread.py`
+  (`SHIM_DIR`, line 15). The shim passed unrelated repos through to `/usr/bin/git`. It was rewritten and removed
+  between runs, so sibling seats lost the race:
+  - kasegi r37 `ExecC1JudgedHeadFail` F4: ENOENT.
+  - souji r33 `SwarmCritic07`: one false K07 MISMATCH at ~14:07.
+
+  The shim was absent when this was found. Actions:
+  - The kengaku L1 was told at 14:12 never to run the modules on the host and to sandbox any rerun behind a
+    private `~/.local/bin`.
+  - It acked: the modules now raise `SystemExit` at import, and `SHIM_DIR` is `/nonexistent`.
+  - An orchestrator watcher alerts on any new entry in `~/.local/bin`.
+
+  This is a conformance item for kengaku r40's closure. The PATH finding itself (the counter runs tools with the
+  caller's PATH) is valid.
+- Load gate raised again, kernel only: `LOAD_MAX` 72 → 120. Since then the host has stayed responsive at load
+  70–95 (`proc://` reads ~0.3 s), with 84–89 jobs visible and ~15 GiB available.
