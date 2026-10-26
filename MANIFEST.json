@@ -24533,6 +24533,50 @@
    "notes": "dispatch/complete digest: 2026-10-25T20:07:56-03:00 launch kasegi round=31 pgid=828159 driver=hyaku-inline attempt=1; 2026-10-25T22:54:10-03:00 complete kasegi round=31; hyaku-inline attempt=1. Status-neutral defects routed to round 32: (1) lesson round-31.md retains LANDED_HASH_PENDING header and stale open-items text (corrected by appended erratum only); (2) SHONEN.md:34 says 8 assertion OK lines, actual 11; (3) QUALITY.md selftest cases=4 stale (M31-4) and SOURCES.md:83 anchor drift (M31-3) still open; (4) QUALITY R16 weak, R18 CHECK B' accepts content-free heading, R19 token grep false greens; (5) C1 disclosures: frozen counter-mutant clause unmet as first landed (3 of 6 survived, repaired post-freeze by guard fixtures), 3 ledger rows weak (RA-paths, RA-cdroot, FR-missing-entry killed by traceback), 2 guard-harness tamper probes survive; (6) untracked fleet-root demo-cwd.txt seat probe disclosed by lane; (7) score-gap.py D2 repair lacks a receipt. Closure ran the lane counter only on /tmp git-archive copies, never in the lane tree. SHONEN boxes 1-3 look non-author checkable on committed bytes; promotion/ticking is operator-owned, no [x] written.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 49,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 49,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 49
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "opaque-handle junk-variant counter (count-c1.py, selftest 44/44 committed)",
+    "flagged-versus-fixed count (count-flagged.py)"
+   ],
+   "report": ".ufo/reports/round-49/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_sonnet session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-49-verifier-spotcheck.md@2023465f8b961eed8d5baa46cafde3259f36873f",
+    "rechecks": "C1 evidence-verified (lane gate not executed): freeze sha256 -c all OK, counter/controls unchanged since freeze, entering v3 C1=unmet junk_met=9 -> tip C1=met junk_met=0 variants=26 at 64c2d5fc with tool bytes equal at tip (sha 697ab2cc), counter selftest 44/44 committed, my awk over 27 variant lines 9 mismatches -> 0. C2 re-measured by own script: 21/21 quotes located in pinned copies (hashes equal freeze); live freedesktop pages byte-equal to copies; sweep 0 hits at b3e3453d; SOURCES rows 257->261. SCORECARD diff add-only, axes table unchanged. Census rc 0 (21 W04 + ok). Spot-check: 4 admits (S485-S488) and 2 rejects (staged second-instance r48, runtime-boot r49) all agree, one nuance on a reject argument; S486 supersedes S351 narrow reading accepted."
+   },
+   "commit": "mori-shokunin@43d846669efe5a2fcc2325006f165af4e7e7fda4",
+   "closed_at": "2026-10-26T02:20:00Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest: 2026-10-25T20:31:38-03:00 launch mori round=49 pgid=2957725 driver=hyaku-inline attempt=1; 2026-10-25T22:58:26-03:00 complete mori round=49; hyaku-inline attempt=1. Step-1: report 8af5b0b6 by mori-shokunin, SHONEN present (4 boxes all [~]), all cited commits ancestors of master, lane pushed ahead=0, 7 untracked round-40 selftest dirs only. Status-neutral defects routed to round 50: (a) report author date 22:54:10 precedes cited lane tip 22:56:42 (recurring from r48); (b) round shape: one v1 wave of 49 seats, below 64-100 directive, no wave 2/WAVE-DONE, two seats with no report; (c) 48-vs-47 wave-1 report count erratum sits only in the report, lesson and LOG.md still say 48; (d) PIN_CHECK_SELFTEST 114/114 and unlanded 17/17 have no committed output file (prose only, unverified); (e) ~183 .scratch dirs remain on disk (gitignored, not deleted) plus 7 round-40 selftest dirs; (f) after-c1-at-tip.txt lists 27 variant lines vs variants=26; (g) K4, R11 carve-out and content-derived handle stay open per lane disclosures. Operator note: SHONEN boxes remain [~]; 'executable without oral context' leans on tool selftest tallies not verifiable from committed output, so not yet fully non-author-checkable; no [x] written.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
