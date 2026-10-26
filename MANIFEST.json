@@ -25374,6 +25374,44 @@
    "notes": "Driver digest (.ufo/watchdog.log): 2026-10-26T02:35:53-03:00 launch tsukuroi round=39 pgid=3529108 driver=hyaku-inline attempt=1; 2026-10-26T03:38:41-03:00 complete tsukuroi round=39; hyaku-inline attempt=1. Report c9cd39c9 by tsukuroi-shokunin 03:38:11 (after a6ca8171 03:36:27); 9 round commits ancestors of master; lane ahead=0, porcelain empty; prompt 0 missing template lines, hyaku addendum §6. Conformance defects (status-neutral, routed): future-dated SCORECARD declaration heading (06:20Z vs commit 05:59:31Z) and LOG heading (07:45Z vs commit 06:35:44Z); after/gates-final-a2d7aad.txt 8th row check-self-assessment rc=1 (7 mismatches at a2d7aad7, superseded by eeba342e 27/0) unmentioned; SCORECARD:2245 'each written by run-receipt.py' true only for c1/c2 jsonl. Routed: C2 counter must read rule cell before any re-claim (QUALITY 87); C1 fixture literal monoculture + census_exit ignored by live leg; residual staged propositions from S219; cross-reference this spot-check from round-39 lesson Gate. SHONEN boxes 1-2 look non-author checkable; 3-4 not (operator-owned promotion).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 35,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 35,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 35
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth:verifiability": "unchanged",
+    "coverage": "unprovable",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "unprovable-but-better",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-35/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-35-verifier-spotcheck.md@87f6b95ec67dffb007c69ef07d9a9962d75e89b0",
+    "rechecks": "Re-measured at judged after 0aee0ef (plain git show/grep/ls-tree): C1 D1 'filled by the L1' 1->1 (reported 0; SCORECARD.md:1271 round-35 section), D3 SKILL registry r-defect-closure/kill-rule-check 0/0 (reported 4/4; rows only in worktree), D2 201.2 0->3, D4 tracked 0->1 + provenance, D5 erratum 5/5, D6 dead-seat 1->0 (in-place rewrite), D7 supersedes R22/R23 1/1, suite + 64 fixture files present; suite check_d1/check_d3 source read -> cannot print closed=7/7 at 0aee0ef; all closed=7/7 receipts are worktree readings (RevD5D6D7.md:141), base-export closed=0/7 and selftest 7/0 evidence-verified only. C2 F 17->18, S rows 51->52, S052 row 1, entries citing S052 1, knowledge 46->47 all match; S052.txt absent from 0aee0ef tree (manifest only) so entry recheck exits 2 there; capture at post-complete 5a25337 sha256 d69349e8 = pinned. Census validate exit 0 (W04 S028/S029). Spot-check: F18 admit agree on decision (live feed 200 1807090 B, normalized-equal to capture, Q1-Q5 <=25 words occ=1) but Gate 'recheck exit 0 on committed bytes' false at 0aee0ef; S048 reject agree (404 748 B); S068 reject agree (instrument UA 200 94027 B, quote occ=1, same URL as S040). No sibling gate executed."
+   },
+   "commit": "kasegi-shokunin@0aee0ef105395a2f1d6ace7eaeef13871bb26988",
+   "closed_at": "2026-10-26T07:08:30Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest (.ufo/watchdog.log, mutable): 2026-10-26T03:26:29-03:00 launch kasegi round=35 pgid=2458141 driver=hyaku-inline attempt=1; 2026-10-26T04:00:34-03:00 complete kasegi round=35; hyaku-inline attempt=1. Step 1: report e4eb5140 by kasegi-shokunin (04:00:23), SHONEN heading 4x[~]; all cited hashes (0aee0ef, 3266c993, 617496b9, da2d3c68, aa6ad99, c1c6a5f, 8ce6fb4f, 5a253372) are commits and ancestors of master; ahead=0 at filing; prompt = templates/round-prompt.md with substitutions + hyaku addendum s6 + s7 (committed under lane identity 41641539, status-neutral). Conformance defects (status-neutral): at filing 9 uncommitted paths incl. S052.txt capture and the SKILL.md D3 rows; post-complete lane commits 8ce6fb4 (04:01:12), 5a25337 (04:02:21), bb2dc8c (04:04:46), 48e6053 (04:04:55) and report errata 63ce2a63/8cfcb5b6; lane tree still dirty at closure (4 modified, 2 untracked receipts); D6 committed receipt rewritten in place. Verdict basis: judged at the pinned after 0aee0ef; C1 kill rule fires (placeholder present, D3 absent -> closed!=7/7), C2 kill rule fires (capture absent -> source-recheck exit 2); no owned axis harmed (SCORECARD 54+/15-, deletions = replaced round-34 placeholder paragraph). Routed to kasegi next round: (1) close against one head - quiesce wave, commit all claim inputs, run suite/harness on git archive of the final commit (M35-1 recurred); (2) C1/C2 re-measure closed at 5a25337 - re-claim only with a frozen export run; (3) D1/D3/D7 checks are file-wide literal greps - a later section re-opened D1 (SCORECARD.md:1271); scope them; (4) append corrections, never rewrite committed receipts/report; (5) lesson Gate 'source-recheck exit 0 on committed bytes' and No-harm 'SKILL.md +13/0', 'LOG.md 0 changed' false at 0aee0ef - append corrections; (6) commit or record-discard the post-48e6053 leftovers. SHONEN: all [~], box 2 has no new end-to-end task; no promotion signal.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
