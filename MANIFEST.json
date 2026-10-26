@@ -25037,6 +25037,49 @@
    "notes": "Dispatch digest (.ufo/watchdog.log): 2026-10-26T01:11:32-03:00 launch kengaku round=37 pgid=105920 driver=hyaku-inline attempt=1 · 2026-10-26T02:14:12-03:00 complete kengaku round=37; hyaku-inline attempt=1. Report 9b84562b by kengaku-shokunin after lane tip; 13/13 cited hashes ancestors of master; lane pushed ahead=0; prompt = template + placeholders only. Conformance defects (status-neutral): report filed before WAVE-DONE falsify; wave-2 outputs (.ufo/waves/round-37/falsify/, 19 reports at closure) untracked in the lane; landing measured at 5c7d5d75 not the tip (transfers). Routed (spot-check §5): D1 commit+integrate wave-2; D2 entry tb2-git-webserver-grader.md map row instruction.md:9 'enforced' contradicted by token-in-body observed=pass (row 8 witness wrong, row 7 qualifier) - lane's own flip clause triggered for that row, ruled correct-by-erratum; D3 anchor_digest_check accepts another row's real digest (F37AnchorRerun M4b/M5); D4 ledger-tip red in detached-HEAD clones (refs/heads/master hard-coded); D5 C1 over-count 6 non-advertised mutants and extra-mutant survivors in 8 clauses; D6 sibling sandbox prior art uncited (F37ConnSiblingCite); D7 carried C2 spec unpinned/filler, R36CritScope F3-F5. SHONEN all [~]; end-to-end box non-author-checkable in consecutive rounds (operator-owned).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 36,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 36,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 36
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "depth": "unchanged",
+    "calibration": "improved",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "REA SquashFS recursion through sasquatch (LE v4)"
+   ],
+   "report": ".ufo/reports/round-36/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-36-verifier-spotcheck.md@85218c5913c2c42094a2cbc7b1444dea976fa74a",
+    "rechecks": "Re-measured, no lane counter/gate/selftest executed (Gate standard). C1: committed K1-K4 after receipts match the frozen oracle 3/3, 4/4, 2130/2130, 2130/2130 and before receipts 0 with missing-extractor-dependency [sasquatch]; oracle re-derived independently (carrier sha256 = carriers.json, own ELF-end offsets 0/0/944632/936456, /usr/bin/unsquashfs 4.7.5 -> identical path:sha256 maps); outside reproduction via npx rea-agents@6.5.0 extract-firmware: K1 after 3/3 no gaps, K3 after 2130/2130, K1 without sasquatch 0 files + sasquatch gap, published sets identical to committed K1/K3 after.json; installed sasquatch/sasquatch-v4be sha256 = S107 deb members; PROVINCE Round-36 Core row, entry trio, S107-S109 mined. C2: own stricter pointer resolver over owned-axes/capabilities rows and SHONEN boxes 4 unresolved at cab59f22 -> 0 at 018ae628 (43 pointers); command A 122/122 -> 124/124, rules 17/17; craft 81-314 and Adjacent 97-125 ranges observed; no shadow rows (110->110 axis-named rows, 4 boxes). Evidence-verified: counter bytes unchanged since freeze 790561d4; selftests C1 14/14, C2 13/13 in committed wave reports; frozen runs after/c1-final.json and c2-final.json at a6c433b5 met_target; controls 7/7 exit 1 committed before after-data. Spot-check 5/5 agree (admit S107, S110, S111; reject AppImageSpec offset authority; refuse prebuilt-inventory: v1.0 amd64-only); census validate exit 0, 9 W04, 111 rows."
+   },
+   "commit": "kaidoku-shokunin@018ae62889cb0717be5a02a8bb74de055bd104cf",
+   "closed_at": "2026-10-26T05:33:30Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-10-26T01:05:47-03:00 launch kaidoku round=36 pgid=25605 driver=hyaku-inline attempt=1; 2026-10-26T02:24:03-03:00 complete kaidoku round=36; hyaku-inline attempt=1. Step 1: report by kaidoku-shokunin (fleet db0aacfe, filed after lane tip), SHONEN heading 4/4 boxes, all 12 cited hashes ancestors of main, jj-lane state ahead=0 behind=0, prompt = byte-exact template render + addendum §6/§7. Defects (status-neutral, routed in spot-check): R36-CL1 untracked .ufo/waves/round-36/w2.ready.dispatched in lane; R36-CL2 PROVINCE.md:157 dated pointer names the Core section, not the r36 entry stem; R36-CL3 frozen counters' blind spots (C1 F1 re-hashed oracle copy accepted, C2 A1-A6 shadow/decoy, mutants alive C1 2/10 C2 7/14, 12/17 skip controls green) - successors must implement QUALITY 77/78 before data; R36-CL4 map-free freeze unevaluable by lane freeze-integrity gate (exit 2); R36-CL5 own QUALITY rows 33/39/45/58/60/68 unmet by instruments; R36-CL6 envelopes' local_path point into deleted scratch. Operator note: SHONEN boxes 2 and 3 appear non-author-checkable (closure reproduced extract-firmware K1/K3 from committed instructions); promotion operator-owned, none done.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
