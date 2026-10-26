@@ -26293,6 +26293,47 @@
    "notes": "Driver digest (watchdog.log l.1526,1546,1551): launch souji round=33 2026-10-26T12:31:12-03:00 pgid=14213 attempt=1; complete 16:09:28 attempt=1; complete 16:27:30 attempt=1 (second completion after the report amendment). Report bc8045f (committed 16:08:56) amended b1c9f43 (16:27:08), both souji-shokunin; SHONEN heading with 4 [~] lines, pointers resolve; 11 cited lane hashes all ancestors of master; lane ahead=0, porcelain clean; prompt = template with placeholders only + hyaku addendum section 6 + section 7. Tip c442b97 is a disclosed protocol-shokunin orchestrator salvage adding only .ufo/waves/round-33/w1-results.json. Honest stop: C1 calibration predicate met on the frozen counter (evidence-verified) but not credited (cells already restated at r30/r31; lane M3); C2 operability MISSED at landing 756d77f (pass=3 fail=2: O3 r14 fixture literal /var/tmp under NAMESPACE hold, O4 flaky). No axis harmed: SCORECARD/SKILL/QUALITY/SOURCES/LOG append-only, guards G1-G6 PASS at landing and tip, G4 red at repair resolved by own-commit re-pin. Defects (status-neutral, routed in spot-check): D1 report/lesson claim 'All 48 reports landed, 0 dead, executor 11' but committed capture and wave dir hold 47 seat reports (executor 10; SwarmExecutor31 straggler stopped by orchestrator, no report); D2 48 seats < 64 floor, wave 2 undispatched (self-reported); D3 report filed before WAVE-DONE (self-reported), census/round-33/waves/summary.tsv header-only; D4 r33-c1/c2-counter registered as gate with no selftest (Gate standard) plus known C1 loopholes; D5 preregistration separability omits census/round-21/run-acceptance.py edited by a7c35c2 (ruled consumer repair, not harm); tip readings taken at 4d9bf02 (transfer holds by plain diff). Carry: O3 NAMESPACE-hold decision (operator) or non-r14 regenerate path; O4 load-stable anchor; r19-rev-pin /var/tmp; r32 items 1,3,4,5, T18. SHONEN boxes look non-author checkable; promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 48,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 48,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 48
+   },
+   "admitted": false,
+   "verdict": "rejected-harmed",
+   "verdicts": {
+    "calibration": "harmed",
+    "freshness": "improved",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-48/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-48-verifier-spotcheck.md@8ca67421111fa354b47b803358391d0b07fc6db9",
+    "rechecks": "C1 VERIFIES, evidence-verified with inputs re-measured: after/c1-a3.stdout:96 total=0 C1_R48_PASS=true exit 0 at c7586b9a. Re-measured: SCORECARD base is a byte prefix (62+/0-); 22 runs-3 rows, all stable; 19 cap evidence cells verbatim in emit-15b1521.stdout, 3 axis rows carry the emitted clause; 22/22 tool sha256 prefixes equal git show c7586b9a:<tool>; pinned-tool diff empty; statements.json 924102df; contract, counters and control scripts equal freeze-2.json digests. Controls CTL_A-D PASS=false, CTL_E PASS=true; selftests 76/0 and 43/0. Amendment-8 ruling: attempt 2's killed invocation left a 0-byte stdout (stdout+stderr redirected, block-buffered; a full run is 27,985 B, verdict last) and no exit file, so no value existed to select, and attempt 3's run is the one deciding value. C2 VERIFIES, re-measured: rows 124->128 (+4/-0, S026/S048/S093/S108 unchanged); snapshot sha256 = row anchors = receipts; four used-by entries re-pointed with verified-at 2026-10-26; all four Gate quotes located once in snapshot and once live today (15/21/25/6 tokens); census exit 0. HARM: pre-registered cold-read no-harm floor red, credited sections 60->57 (after/coldread-sections.stdout; precheck red at c7586b9a, ok at freeze). The lost sections are round-12/13/14, whose pinned inputs were edited by C2. This is the calibration instrument per contract.axes, and the round's calibration row overstated 60 until the erratum, so calibration is harmed (trade). Not executed: either counter, the cold-read monitor, the selftests."
+   },
+   "commit": "tameshi-shokunin@98e6304451f789413a21d30f16abf21bb7033c21",
+   "closed_at": "2026-10-26T19:48:06Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (watchdog.log): 2026-10-26T05:28:47-03:00 launch tameshi round=48 pgid=529494 attempt=1; 09:23:48 lane-dead-no-report (host crash, salvaged); 09:23:50 launch pgid=1820158 attempt=2; 11:47:59 lane-dead-no-report (L1 stalled after WAVE-DONE, a2w1 salvaged); 12:31:08 launch pgid=13046 attempt=3; 16:38:32 complete tameshi round=48 attempt=3. Conformance ok: report be65435d by tameshi-shokunin, after its cited tip 98e63044; SHONEN 4x[~]; 13 cited hashes are ancestors of master; ahead=0 and porcelain empty; prompt carries the template contract (0 missing of 140 lines). Status-neutral defects: (1) salvage commits 15b1521e and 8f2922b8 were made under the lane identity, disclosed; (2) C1 CTL_B-E were scored after the C1 deciding run, against freeze_plan step 2; (3) five a2w1 seats ran --only C1 previews at c7586b9a (14 statements, all total=0), not named in the report's C1 verdict; (4) FROZEN_UNCHANGED=0 false red from added receipts only, disclosed; (5) lesson S267/S268 line pointers, fixed by the lane's erratum; SCORECARD 'pasted byte-exact' holds for 19 cap rows, not the 3 axis rows; (6) census W04 on S265-S268, expected for supersession rows. Spot-check agrees on 4 admits (S265-S268) and 2 rejects (staged duplicates S209/S210/S212/S216; r8-predictive-test-selection-cost via QUALITY 10). Trend note: the lane self-graded quality harmed; closure charges the cold-read cost to calibration (axis harmed) and grades quality improved under LEARNING's definition. Routed: restore credit for the cold-read round-12/13/14 headings via a successor ledger and run the QUALITY 98 precheck before freeze; deciding-script start/exit receipts and receipt-free frozen list; score controls at freeze and declare pre-deciding previews; SCORECARD byte-exact correction; carried Planned (round 49) items. SHONEN boxes are not fully non-author-checkable; promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
