@@ -62,3 +62,7 @@ after:  the same six W04 warnings, then "kumitate ok …/corpus/SOURCES.md"     
 - [~] No cross-domain bleed; PROVINCE still accurate — PROVINCE line 20 names the entry; kasegi/kagi MCP security and kama serving are not absorbed.
 
 Stale-lane: respawn-per-round driver; no other mission of this lane is open. Tool installs: none (no pacman). Open L0 questions: none appended; for the operator — the per-round request budget ended the round before wave 2 and before `WAVE-DONE` arrived.
+
+## Erratum (appended after filing; supersedes the "WAVE-DONE not received" and "dead seats unknown" sentences above)
+
+`WAVE-DONE kumitate r65 w1` arrived after the report was filed: all 45 seats settled and `.ufo/waves/round-65/w1-results.json` lists 45 results, each with an output and no failed or dead entry (`node -e` count over `results`: 45 of 45 with output; the file carries no per-seat status field, so this is not an `inline-dispatch-evidence` run, which was not executed). Dead seats: none recorded. The file is committed in the lane at `090b4dd73b5c30da81f8fee387f1d152f077917a`. Everything else in this report, including the missing wave 2 and the round total of 45, stands.
