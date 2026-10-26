@@ -93,10 +93,10 @@ closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At 
 | lane | slot | block rounds | closed (admitted / rejected) | state |
 |---|---|---|---|---|
 | tameshi | 1 | r48–r57 | r48 rejected-harmed (`rounds[765]`, `d98fe66c`; cold-read 60 → 57 below its floor) | r49 in flight (TameshiR49, 16:49) |
-| tabi | 2 | r32–r41 | r32 admitted (`rounds[756]`), r33 rejected-honest-stop (`[763]`) | r34 in flight |
+| tabi | 2 | r32–r41 | r32 admitted (`rounds[756]`), r33 rejected-honest-stop (`[763]`), r34 rejected-honest-stop (`[769]`, `e9949eaf`; C1 newMapped 1/3, C2 met 20/20; operability improved, nothing harmed) | r35 in flight (TabiR35, ~17:58) |
 | souji | 3 | r33 | r33 rejected-honest-stop (`rounds[764]`) | **blocked** 16:39 by `advance` (three consecutive rejected closures through r33); block ended early at 1 round, slot 3 → kama |
 | kama | 3 | r46–r55 | — | r46 in flight (KamaR46, ~16:40) |
-| kasegi | 4 | r36–r45 | r36, r37 admitted (`rounds[755]`, `[758]`), r38 rejected-honest-stop (`[762]`) | r39 in flight |
+| kasegi | 4 | r36–r45 | r36, r37 admitted (`rounds[755]`, `[758]`), r38 rejected-honest-stop (`[762]`) | r39 attempt 1 (KasegiR39) force-stopped ~17:50 at the soft request budget (305/200) before filing its report; lane tip `5006097` (receipt Y), wave 2 settled; `inline.sh fail` → RETRYABLE 1/3; attempt 2 in flight (KasegiR39a2), given resume context |
 | kaidoku | 5 | r39–r48 | r39 admitted (`rounds[757]`), r40 rejected-honest-stop (`[768]`; C1 3/4 counter suffix defect, C2 met) | r41 in flight (KaidokuR41, ~17:12) |
 | kengaku | 6 | r40–r49 | r40, r41 admitted (`rounds[759]`, `[766]`) | r42 in flight (KengakuR42, 16:54) |
 | tsukuroi | 7 | r41–r50 | r41 rejected-honest-stop (`rounds[761]`) | r42 in flight |
