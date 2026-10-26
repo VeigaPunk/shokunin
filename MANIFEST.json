@@ -25167,6 +25167,47 @@
    "notes": "Driver digest: 2026-10-26T01:12:04-03:00 launch souji round=30 pgid=115880 driver=hyaku-inline attempt=1; 2026-10-26T02:49:22-03:00 complete souji round=30; hyaku-inline attempt=1. Report 3c361e8 by souji-shokunin (02:48:56, after lane HEAD 2726c3d 02:47:24); SHONEN 4/4 [~]; 14 cited hashes exist and are ancestors of master; ahead=0, worktree clean; prompt carries template contract; 69 seats, 0 dead. Step-1 defects: none. Not admitted: C2 (operability) missed its frozen kill rule at the landing commit (lane self-reported honest stop); no axis harmed. Routed to r31: (1) SKILL.md:115 keep-ref bullet lacks packed-ref caveat / step-5 count wording; (2) capability cells still carry stale literals beside R30-CORRECTION block; (3) A1 c2-counter-v2.py:69 tab-vs-space regex; (4) force-added .ufo/waves/round-30 tsv vs capture discovery precedence; (5) Q65 recurrence of r29 D1 (wave path cited before capture landed) sank C2. r29 routed D1-D4, D2 closed. SHONEN boxes look non-author checkable; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 37,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 37,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 37
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "calibration": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-37/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-37-verifier-spotcheck.md@676328449adf1abe411ee86d994baa81c9d06729",
+    "rechecks": "Honest stop at pre-freeze probe stage: no claim frozen/scored/landed, so there is no before->after to re-derive and no gate evidence to verify. Re-measured over committed bytes 85218c59..77091b49 (1 commit, 40 files, +816): SCORECARD/LOG/SKILL/PROVINCE/SHONEN/SOURCES/QUALITY diff 0 lines; SOURCES 111->111 rows; sources-census validate kaidoku ok (9x W04), exit 0. Probe facts spot-checked: K3/K4 apple sha256 = oracle.tsv 8/8; rea-k3.json coverage complete, 0 gaps, 28 B / 4 files; K1 REA extract = src 5/5 regular files; sasquatch-v4be -be extracts K1 byte-identically (unsquashfs 4.7.5 and 7-Zip 26.04 both refuse it), so the report's three probe decisions are agreed. No round-37 lesson file and no Gate section to sample."
+   },
+   "commit": "kaidoku-shokunin@77091b492cc53f8743bd0701b1e7d5e66123dd84",
+   "closed_at": "2026-10-26T05:59:14Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-10-26T02:34:47-03:00 launch kaidoku round=37 pgid=3451103 driver=hyaku-inline attempt=1; 2026-10-26T02:56:57-03:00 complete kaidoku round=37; hyaku-inline attempt=1. Report 4a8cd376 committed by kaidoku-shokunin with SHONEN 4x[ ]; lane main pushed ahead=0. Real report naming a resolvable hash (not a marker): status ok; honest stop before freeze (run budget), so the lane-round must be relaunched. Routed (status-neutral): R37-CL1 report cites REA receipts for K1-K4 under probes/rea/ but only the K1 extract tree and rea-k3.json are committed (no K2/K4 or K3 before-arm receipt); R37-CL2 avm.txt (Freetz AVM-BE note) and be-squashfs_v4*.bin committed without provenance/SOURCES row; R37-CL3 no corpus/lessons/round-37.md Gate section; R36-CL1 untracked .ufo/waves/round-36/w2.ready.dispatched still present; R36-CL2..CL6 carried forward. SHONEN boxes are not checkable for promotion.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
