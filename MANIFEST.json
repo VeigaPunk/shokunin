@@ -25412,6 +25412,47 @@
    "notes": "Driver digest (.ufo/watchdog.log, mutable): 2026-10-26T03:26:29-03:00 launch kasegi round=35 pgid=2458141 driver=hyaku-inline attempt=1; 2026-10-26T04:00:34-03:00 complete kasegi round=35; hyaku-inline attempt=1. Step 1: report e4eb5140 by kasegi-shokunin (04:00:23), SHONEN heading 4x[~]; all cited hashes (0aee0ef, 3266c993, 617496b9, da2d3c68, aa6ad99, c1c6a5f, 8ce6fb4f, 5a253372) are commits and ancestors of master; ahead=0 at filing; prompt = templates/round-prompt.md with substitutions + hyaku addendum s6 + s7 (committed under lane identity 41641539, status-neutral). Conformance defects (status-neutral): at filing 9 uncommitted paths incl. S052.txt capture and the SKILL.md D3 rows; post-complete lane commits 8ce6fb4 (04:01:12), 5a25337 (04:02:21), bb2dc8c (04:04:46), 48e6053 (04:04:55) and report errata 63ce2a63/8cfcb5b6; lane tree still dirty at closure (4 modified, 2 untracked receipts); D6 committed receipt rewritten in place. Verdict basis: judged at the pinned after 0aee0ef; C1 kill rule fires (placeholder present, D3 absent -> closed!=7/7), C2 kill rule fires (capture absent -> source-recheck exit 2); no owned axis harmed (SCORECARD 54+/15-, deletions = replaced round-34 placeholder paragraph). Routed to kasegi next round: (1) close against one head - quiesce wave, commit all claim inputs, run suite/harness on git archive of the final commit (M35-1 recurred); (2) C1/C2 re-measure closed at 5a25337 - re-claim only with a frozen export run; (3) D1/D3/D7 checks are file-wide literal greps - a later section re-opened D1 (SCORECARD.md:1271); scope them; (4) append corrections, never rewrite committed receipts/report; (5) lesson Gate 'source-recheck exit 0 on committed bytes' and No-harm 'SKILL.md +13/0', 'LOG.md 0 changed' false at 0aee0ef - append corrections; (6) commit or record-discard the post-48e6053 leftovers. SHONEN: all [~], box 2 has no new end-to-end task; no promotion signal.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 38,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 38,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 38
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "calibration": "improved",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-38/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-38-verifier-spotcheck.md@a2f64e1da78afcf8cc39287106604dbcc270844c",
+    "rechecks": "Re-measured over committed bytes, with no lane counter, gate or selftest executed (Gate standard). C1 (re-measured): first-freeze counter/claims bytes ship at 7e979514 (c1 sha256 a7a62b09 = e059ca93; git diff of claims/counters empty). jq over K1-K4 after.json vs round-37 oracle.tsv: handler squashfs_v4_be on all four; oracle 5/5, 3/3, 4/4, 4/4; gaps 0/1/0/0 (K2 unpublished-entry symlink run-link -> ../../a/run.sh); carrier pins ok. Result 3/4. No 'Round-38 additions to Core' in PROVINCE, so honest stop, agree. Before: efd5c47a CTL-C1-0 carriers_matched 0. C2 (re-measured): base PROVINCE:44 evidence/doctor/ does not exist; final .ufo/waves/round-19/evidence/doctor/ exists, the original round-19 path (4f6c73f8, shortened in 279e8b19). Coverage recount 124/124 -> 126/126 matches SCORECARD:23. An independent backtick-pointer sweep of SCORECARD owned/capabilities, SHONEN and PROVINCE Core/Frontier found the one real unresolved pointer at base fixed and no regression; 1 -> 0 mismatches. Evidence-verified: c2 receipts mismatches 0 guards_ok at 0fc61133 and 7a1ac7fe; intended-doc bound/not-bound receipts; selftests c1 15 (1/14) and c2 14 (1/13) failures [] (w1/R38ExecSelftests.md); controls all met_target false. Harm: SCORECARD diff is the coverage restatement plus an appended section; SKILL/SHONEN no diff; SOURCES S001-S111 byte-identical, 111 -> 117 appends. Spot-check re-opened: S112 (sha 2d7b901b, lines 26/40-41/68-69; tag 1fcc7a0a), S113 LFS oids = K4/K3, S116 (sha 8f8c29af, 97 h2, 'more than 30' x3, 89/8, 42 Vendor), S117 (sha 6544d60f, '78+' lines 5/22; quote 12 words); S115 reject (7z exit 2 on K1-K4, LE exit 0); S150 quarantine refuse (heading 0x). The two assimilation refusals hold on surviving grounds, but their 'source exists nowhere' reasons are false: the tsvs exist under shokuknow/lanes/kaidoku. Census validate kaidoku: exit 0, 11x W04, same as census-end.txt."
+   },
+   "commit": "kaidoku-shokunin@7e97951460647e4fc39542b7a4f0255b5bf1af17",
+   "closed_at": "2026-10-26T07:31:05Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-10-26T03:00:01-03:00 launch kaidoku round=38 pgid=415193 driver=hyaku-inline attempt=1; 2026-10-26T03:37:05-03:00 lane-dead-no-report kaidoku round=38; retry same round (hyaku-inline attempt=1: L1 KaidokuR38 exited without a landed round: FAIL report_of (missing, unchanged, no SHONEN heading, or < 400B): .ufo/reports/round-38/kaidoku.md); 2026-10-26T03:37:07-03:00 launch kaidoku round=38 pgid=1293607 driver=hyaku-inline attempt=2; 2026-10-26T04:21:00-03:00 complete kaidoku round=38; hyaku-inline attempt=2. Report e6fbc278 was committed by kaidoku-shokunin at 04:20:15, after lane tip 7e979514 and before complete. SHONEN has 4 lines ([ ],[~],[ ],[~]). All 11 cited hashes are ancestors of main; jj-lane state ahead=0, untracked=0; porcelain is clean. The prompt is a template-faithful rendering with the hyaku addendum. The report's base 77091b49 differs from the pre-round HEAD 67632844, which only adds the r37 spot-check (no scored surface). Real report: status ok. C1 honest stop (3/4; no Core row); C2 verified (1 -> 0). Not every claim verifies, so not admitted. Routed (status-neutral): R38-CL1 false absence claims in lesson round-38.md:80-82,96-97 and w2/R38W2AssimRejects.md. r7-local-measurements.tsv and lead2-avm-branch.tsv exist under /home/vgpnk/Projects/shokuknow/lanes/kaidoku/round{7,9}/work/, but the find was rooted at the fleet root only. Fix: append a correction plus a QUALITY criterion, or discernment reads harmed next round. R38-CL2: freeze-drift.py, intended-doc.py and registry-immutable.sh (bound by QUALITY 79/81) have no self-test mode and no SKILL.md registry row, and the c1/c2 counters are unregistered too, so they grade as unregistered probes. R38-CL3: the report says v3 'would have turned C1 green (4/4)', but the v3 receipt has met_target false. R38-CL4: freeze-drift is red (exit 1) at 7a1ac7fe while ships_freeze_bytes is true; the round-39 freeze must say which verdict blocks. R36-CL1 and R37-CL1..CL3 are closed. Operator note: SHONEN box 2 (end-to-end REA extract-firmware on K1-K4, LOG.md:3126-3135, receipts re-derived) looks checkable by a non-author; no [x] was written. Tool installs by closure: none.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
