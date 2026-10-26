@@ -25208,6 +25208,47 @@
    "notes": "Dispatch/complete digest: 2026-10-26T02:34:47-03:00 launch kaidoku round=37 pgid=3451103 driver=hyaku-inline attempt=1; 2026-10-26T02:56:57-03:00 complete kaidoku round=37; hyaku-inline attempt=1. Report 4a8cd376 committed by kaidoku-shokunin with SHONEN 4x[ ]; lane main pushed ahead=0. Real report naming a resolvable hash (not a marker): status ok; honest stop before freeze (run budget), so the lane-round must be relaunched. Routed (status-neutral): R37-CL1 report cites REA receipts for K1-K4 under probes/rea/ but only the K1 extract tree and rea-k3.json are committed (no K2/K4 or K3 before-arm receipt); R37-CL2 avm.txt (Freetz AVM-BE note) and be-squashfs_v4*.bin committed without provenance/SOURCES row; R37-CL3 no corpus/lessons/round-37.md Gate section; R36-CL1 untracked .ufo/waves/round-36/w2.ready.dispatched still present; R36-CL2..CL6 carried forward. SHONEN boxes are not checkable for promotion.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 29,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 29,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 29
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "freshness": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-29/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-29-verifier-spotcheck.md@f7c0317e4f8445502005e79e3d65767430912dab",
+    "rechecks": "No lane gate executed (Gate standard); all three claims evidence-verified AND re-measured by plain re-derivation. C1: s106 self-test diff read (existsSync import, value-correct field assertion, mismatch fixture commits receipt); committed captures baseline exit1 ReferenceError -> measure clean 7/7 at ab080992 (script sha 1a01256e identical at f36caf6); mutation receipt 6/7; prod inputs re-hashed 9b93fe64. C2: frozen counter sha 72812800 at 4 revs; doc-bound citesLine read; 6 stale lines (SCORECARD 410,1138,1139,1151,1439; LOG 221) byte-identical at unchanged numbers with same-doc appended corrections; SCORECARD/LOG diff 0 deletions; committed mismatches 6 -> 0 at ab080992 and 2cb31aa6. C3: counter sha 56763720 frozen since 97be89b; population id set = receipt ids (23); 80/80 committed blobs = receipt digests; 16/16 live Gitiles refetches (base64-decoded; S033,S062,S106,S042,S080,S100 at both tags) = committed bytes; span recompute holds 16 / drifted 7 exact set; S108 Chromium Dash live sha 90abf2c3 = committed, stable 156.0.8078.47; S109-S115 supersession mapping correct. Discernment: 5 admits (S108,S109,S111,S112,S113) + 2 rejects (16 held-row duplicates; S045 superseding row) re-opened, all agree; quotes <=25 words present live. Census validate exit 0, closure stdout byte-identical to committed census-end.txt."
+   },
+   "commit": "tabi-shokunin@f36caf6a12faa14e33ff27efabe09f7d6c1324df",
+   "closed_at": "2026-10-26T06:00:02Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-26T01:05:45-03:00 launch tabi round=29 pgid=25028 driver=hyaku-inline attempt=1; 2026-10-26T02:49:05-03:00 complete tabi round=29; hyaku-inline attempt=1. Step 1 clean: report 7207ff0b by tabi-shokunin after lane tip f36caf6 (02:48:29 vs 02:46:51); SHONEN 4 [~] lines = 4 boxes; 12 hashes ancestors of master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0; prompt 9b8717e1 = template + placeholders + addendum. Round-28 routed defects 1-5 resolved (w1 44/44, w2 39/39 reports; census byte-exact). Routed to tabi next round: (1) knowledge chromium-156-release-pin-recheck.md cites 23 re-opened rows whose used-by omits it; (2) S110/S114/S115 Gate quotes do not ground their own teaches (S114 reuses S111's quote; :207-208 quote spans two literals); (3) lesson Mistakes table lists M1-M3 only; (4) knowledge errata :110 (+10) contradicted by :117 (11) unmarked; S110 guard 201-209 is 9 lines; (5) C3 population rule unnamed, S044/S068 (DEPS-pinned devtools) silently excluded; (6) pre-existing S044 anchor cites nonexistent WebMCPModel.ts; (7) counter v2 for check-release-pins and s106 sha-drop/anchor-uniqueness/byte-count fixtures (lane-disclosed). SHONEN boxes 1,2,4 look non-author checkable; box 3 needs a non-author executor (operator-owned promotion).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
