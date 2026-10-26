@@ -26928,6 +26928,47 @@
    "notes": "Driver digest (.ufo/watchdog.log, mutable; lines 1568/1580/1581/1585 at read): 2026-10-26T18:05:47-03:00 launch kasegi round=40 pgid=2886620 driver=hyaku-inline attempt=1; 2026-10-26T18:57:11-03:00 lane-dead-no-report kasegi round=40; retry same round (attempt 1 force-stopped at the request budget mid-round: wave-1 54/54 settled, J5 3074c767 committed, Y receipt uncommitted, wave-2 rendered never dispatched, no report); 2026-10-26T18:57:13-03:00 launch kasegi round=40 pgid=2585990 driver=hyaku-inline attempt=2; 2026-10-26T19:37:21-03:00 complete kasegi round=40; hyaku-inline attempt=2. Step 1 conformant: report 28dfa1ae by kasegi-shokunin committed 19:36:09-03:00 after lane tip b01cbd50 (19:34:36) and before complete; SHONEN heading with 4 [~] lines; all 12 cited hashes resolve and are ancestors of master; jj-lane state ahead=0 tracked=0 untracked=0, porcelain empty; prompt (624 lines, commits 4041929b/271b268b before each launch) carries the template contract; waves 54+35=89 seats, all with output. Verdict: C1 (depth:verifiability, held 4) NOT VERIFIED - frozen kill rule fires on committed wave-2 fixtures (lane narrowed it to 'no live defect' after landing, against its own r39 standard); C2 (coverage 7->8) VERIFIED; no axis harmed -> not admitted. Routed to kasegi r41 (spot-check §5): D1 C1 graded 'verified' in SCORECARD/LOG/report while kill rule fires - append Correction (round 41); D2 Y-level selftest cases=10 failures=0 quoted without committed transcript (violates lane's own QUALITY R37; SHONEN L219 says receipt records it, it does not); D3 wave-2 instrument survivors H2/H3/H6/H9/H1/H5/H7/H8 + 7 kill-rule escapes (self-routed, carried); D4 round-40 lesson duplicate '## Gate' (L29/L31) and garbled census L27; D5 attack-role tally lesson L9 33/35 & 50/89 vs dispatch 25/35 & 42/89; D6 SKILL.md L1121 blank line splits r40 registry row from its table header; D7 S022/S024 teaches rewritten in place - CORPUS rule 2 vs rejected-row shape rule ambiguity, routed to protocol lane, status-neutral. SHONEN: box 2 still lacks a live end-to-end domain task, so the checklist is not fully checkable by a non-author (promotion operator-owned).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 48,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 48,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 48
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-48/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-48-verifier-spotcheck.md@438127bc01ff3b99f98468549d58046f932490ef",
+    "rechecks": "C1/C2 re-measured by closure on a fresh clone with the frozen counters (sha256 = preregistration): tip 4d8334af C1 selftest=1 contract=1 lane=1 fixture=1 stable=1 rows=10 files=91 met=True, C2 receipts..newrow=1 replayed=3/3 met=True; base 33e00582 both met=False; equal to lane c*-after/c*-final receipts. Regression gates (gate 42/0/0, cap 11/11, r41/r42/r43/pointer, hexrun/digest unknown=0) and selftests (AOA 28, KLR 22, check-receipt 16/107, sources-append-only exit 0) evidence-verified from committed receipts at 1541a0dd/c4b2175d, not executed; 1541a0dd..4d8334af touches only .ufo/waves/round-48/. SCORECARD diff: no score changed, capabilities 11->11. Spot-check re-opened S492 (headers, revision API, download sha256 270cba1b..) and S493 (verbatim 17-word quote) admits, and rejects x-linked-etag (main serves same etag), CDN redirect (signed Expires), C1 junk controls (met=False): agree 5/5. Census validate exit 0 (93 W04, 1 W01, 0 E); SOURCES 232->234."
+   },
+   "commit": "kama-shokunin@4d8334af1c45bce74fa6a3904a7f6aa3a1ec630e",
+   "closed_at": "2026-10-26T23:06:21Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-10-26T19:05:04-03:00 launch kama round=48 pgid=3968099 driver=hyaku-inline attempt=1; complete 2026-10-26T20:00:07-03:00 complete kama round=48; hyaku-inline attempt=1. Step 1: report by lane identity (15710a2a, dcc079e7), SHONEN 4x[~], 8 cited hashes ancestors of master, lane ahead=0 clean, prompt = template render + addendum section 6. Defects (status-neutral): R2 report filed 19:58:24 with __TIP__/__LASTROW__ placeholders before tip 4d8334af (19:58:49) and rewritten in place by dcc079e7 (filed bytes are a record; use appended erratum); R3 report end-census line omits the W01 (S481); R4 prompt section 6 quotes critic @m_flash but live agentModelOverrides routes critic @m_kfc since the 17:45 -03 config change, so live m_flash share is 26/69 (38%) vs lane-reported 42/69 (operator-side prompt fix; also corrects r47 spot-check step-1 row). Routed to lane r49: R1 Sen2Live F1 High availability (verify_archive_member unbounded sparse-member hash; cap size); R5 carried counter gaps (no server-execution witness, mutant survivors C1 21/52 tool 15/55 C2 6/27, content-blind exemption, sub-20 deletions, prerelease cliff). L0 open: kama round-35, round-39 (planner/labrat), round-41..43. Fleet root untracked =1239, =3900, T unattributed. Operator: SHONEN boxes look non-author checkable; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
