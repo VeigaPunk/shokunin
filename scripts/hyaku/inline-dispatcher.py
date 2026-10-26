@@ -22,6 +22,10 @@
 #     inline.sh closed <lane>         hyaku closure rows + outcome
 #     inline.sh advance <lane>        next=round+1, release claim, purge scratch
 # bootstrap() rebuilds WAVES/L1S/CLOS after a kernel restart.
+# Driving pattern (run 7; worked, run 8's long blocking drive loop did not): run ONE short
+# `await tick()` per wake-up, never a multi-minute drive()/loop cell. Wake-ups are seat/L1/
+# closure completions (host-delivered) plus scripts/hyaku/ready-watch.sh as an async bash
+# job that exits when a .ready lacks .dispatched; an interrupted long cell wipes the kernel.
 #
 # NEVER run this driver and scripts/shokunin-watchdog.sh together: they spawn the
 # same lanes into the same round state and double-drive every lane (AGENTS.md:

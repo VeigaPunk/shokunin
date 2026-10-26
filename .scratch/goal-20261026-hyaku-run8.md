@@ -173,3 +173,8 @@ bear on its closures. After block C, freed slots go to the lowest next-round.
   slow. The swarm ceiling is 256 seats; aim for 64-128 dispatched seats per round. The polling drive loop
   (`drive()`/`run_loop`) was slow and fragile: kernel state was lost on every interrupt. Replace it before
   the next run.
+- Follow-up (operator 2026-10-26): the replacement is the run-7 pattern, not new code. The canonical
+  `scripts/hyaku/inline-dispatcher.py` runs one short `await tick()` per wake-up. Wake-ups come from host
+  completions plus `scripts/hyaku/ready-watch.sh`, now committed from `/fast/scratch/hyaku-run7/`. The run-8
+  `controller.py` layer was deleted. Job cap: `async.maxJobs: 450` is set in `~/.omp/agent/config.yml`, but
+  runs 7 and 8 both observed a live limit of 100 `proc://` entries.

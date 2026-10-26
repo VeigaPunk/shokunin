@@ -4,3 +4,9 @@
 # xsentinel w8-F7: per-wave cross-lane seat scratch is transient
 .ufo/waves/*/*-scratch/
 r80-baseline-frozen-worktree/
+# driver runtime (AGENTS.md: never committed); files stay on disk
+.ufo/state/*
+!.ufo/state/.gitkeep
+.ufo/watchdog.log
+# tower orchestration comms/quarantine: local tool state, not fleet history
+.tower/
