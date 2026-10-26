@@ -25666,6 +25666,47 @@
    "notes": "Driver digest: 2026-10-26T04:34:53-03:00 launch kama round=44 pgid=2711885 driver=hyaku-inline attempt=1; 2026-10-26T05:26:49-03:00 complete kama round=44; hyaku-inline attempt=1. Step 1 ok: report 463f498c by kama-shokunin after the lane tip, SHONEN 4/4 [~] lines, cited commits 77d1bbf5 098df344 ef76777e d48e8cc3 9d9cc93e 9307b15e ancestors of master, lane state ahead=0 tracked=0 untracked=0 (head=detached, normal jj-colocated), prompt lines 1-140 differ from the template only by substitutions, hyaku addendum at 141. Conformance (status-neutral): report says K1J07 wrote no .md and 64 reports, but out/K1J07/K1J07.md is committed (65); tip-side regression lines (r42 counter met=True, capability census 9/9, 12 run facts) have no committed tip receipt, I plain-checked the r42 failing legs; dispatched prompt committed in the fleet by kama-shokunin (driver-side). Routed to the lane for round 45: D1 report seat-report count; D2 commit tip receipts for stated tip regressions; D3 cite S483 in the process qualifications of runtime-health-surface-matrix.md, endpoint-health-probe-conventions.md, engine-pin-watch.md (now S480+S481 only) and update S483 used-by; D4 manifest-crosscheck.py has no failing exit code (exit 1 on diff>0 or register as probe); carried: counter sufficiency (K1Cheat, K2Cheat), next release recheck of S038 S477 S041 S046 S055 S014 S058 S010 S019 S048 and the round-26 rerank candidates, base-unresolved.tsv producer. Lane self trends expansion unchanged, quality improved, discernment unchanged; closure grades discernment improved (spot-check agrees on 2 admits and 2 rejects), same underclaim pattern the lane's own C2 ledger exposes. SHONEN: all four boxes stay [~], none fully checkable by a non-author this round; promotion operator-owned. Open L0 kama round-35, round-39, round-41..43 unchanged.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 45,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 45,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 45
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "freshness": "improved",
+    "calibration": "unprovable",
+    "operability": "unchanged",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-45/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-45-verifier-spotcheck.md@0163fea2dab3f282ebd70c71da9ab5de4cedf733",
+    "rechecks": "No lane gate or counter executed; counter sha256 244b6690/0fb7ad42 equal preregistration, v2 024ba8ec equals the amendment, v2 pre-data (ledger absent at 85977699), diff v1->v2 = one regex line (+verify, +improved); receipts evidence-verified (c1/after.out met=True, c2-v1 valid=91 bad=35 met=False, c2-v2 valid=103 bad=23 met=False, tip 82b5e9d3 r41/r42/r43/gate 36/0/0/cap 9/9/pointer all green; D1 seat-yield exit 1/0, D4 manifest-crosscheck mutant exit 1, selftest pass=5). C1 re-measured: re-fetched all 12 upstream URLs today, 12/12 sha256 equal fetch.log and committed copies; classes re-derived from bytes 6/6 (S014/S058/S048:in6.h unchanged-file, S010/S019/S048:tcp_ipv6.c holds, witness after whitespace collapse); new_refs = current upstream HEADs (ollama 66ab8482, ggml da8e2a54, otel-genai 20259355, linux v7.3 c03c1a14); S038 gh api b11755 equal to committed record; S477 ls-remote b11755 still 704366d7, now b11899 / 123 above (capture b11897 / 121); receipts 1-3 v3 pass 11/11, build b11889-d854d98ba, server 248e790d = on-disk binary, tool 8c0dbb2b = tip tool; own live run of b11889 (model re-fetched, sha 270cba1b): /health 200 {\"status\":\"ok\"}, alias id owned_by llamacpp, /metrics 501, SIGTERM rc 0 in 3 ms, port refused. C2 re-measured: ledger 126 rows / 63 keys, 125/125 cited lines non-empty at cited rev, my recompute agree 58 over 1 (28 C1) under 2 (26, 40 C1) other 1 (24 C1) absent 1 (10 C1) = SCORECARD summary; 9 cited lines read, outcomes match; frozen predicate met=False under v1 and v2 -> honest stop, calibration unprovable (round-40 precedent). Census validate exit 0 (93 W04, 1 W01 S481), rows 224->226."
+   },
+   "commit": "kama-shokunin@a553bd7cdfb72b69431beed04e71173520bab715",
+   "closed_at": "2026-10-26T12:31:30Z",
+   "campaign": "hyaku",
+   "notes": "Digest (.ufo/watchdog.log, mutable): 2026-10-26T05:35:21-03:00 launch kama round=45 pgid=1382694 driver=hyaku-inline attempt=1; 2026-10-26T09:23:43-03:00 complete kama round=45; hyaku-inline attempt=1. Step 1 ok: report 277ee2ef by kama-shokunin (07:52:54, after L1 tip 0fddf257), SHONEN 4/4 [~]; cited 1641aa07 58ffddd6 052cb1e9 85977699 21945c61 0718b6ab 82b5e9d3 0fddf257 6b8ccfb3 all ancestors of master; jj-lane state ahead=0 tracked=0 untracked=0, porcelain empty; prompt 6105c587 lines 1-140 differ from template only by substitutions, addendum 6 and 7 present. Rejected-honest-stop: C1 (freshness) verifies, C2 (calibration) frozen predicate met=False under v1 and pre-data v2, ledger itself reproduces. Conformance (status-neutral): N-A orchestrator salvage a553bd7c committed under lane identity after the report (64 null-status members, no seat report; report's 'ls-remote prints 0fddf257' stale at closure); N-B preregistration frozen_at_utc 829 s after its commit (lane-disclosed, KQ64); N-C 0718b6ab truncated SCORECARD/LOG/QUALITY/README, restored by new commit 82b5e9d3, base->tip append-only; N-D wave kama-r45-w1 dispatched but 32/64 spawned, 0 seats worked (driver job cap), no L2 floor; N-E pinned model fixture deleted from ~/.cache (re-fetchable, sha matches). Spot-check commit landed on top of operator commit 221525bc (helper rebase; a553bd7c ancestor). Routed for round 46: D1 calibration re-claim on the now-known ledger needs KQ65 sample control committed before any new reader, or a fresh population; D2 KQ64 receipt at the freeze; D3 record model re-fetch path in S485/live recheck; carried frontier S013, S022, floating series, S002-S004, llama.cpp after b11889 (b11899). Operator: dispatcher stall at 32/64; L0 kama round-35, round-39, round-41..43 open. SHONEN boxes not fully checkable by a non-author this round.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
