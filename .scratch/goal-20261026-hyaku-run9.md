@@ -87,9 +87,9 @@ closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At 
 | lane | slot | block rounds | closed (admitted / rejected) | state |
 |---|---|---|---|---|
 | tameshi | 1 | r48–r57 | — | r48 attempt 3 in flight |
-| tabi | 2 | r32–r41 | r32 admitted (`rounds[756]`) | r33 in flight |
-| souji | 3 | r33–r42 | — | r33 in flight (fresh-start) |
-| kasegi | 4 | r36–r45 | r36, r37 admitted (`rounds[755]`, `[758]`) | r38 in flight |
+| tabi | 2 | r32–r41 | r32 admitted (`rounds[756]`), r33 rejected-honest-stop (`[763]`) | r34 in flight |
+| souji | 3 | r33–r42 | — | r33 closure in flight (L1 filed before WAVE-DONE; 48 seats) |
+| kasegi | 4 | r36–r45 | r36, r37 admitted (`rounds[755]`, `[758]`), r38 rejected-honest-stop (`[762]`) | r39 in flight |
 | kaidoku | 5 | r39–r48 | r39 admitted (`rounds[757]`) | r40 in flight |
 | kengaku | 6 | r40–r49 | r40 admitted (`rounds[759]`) | r41 in flight |
 | tsukuroi | 7 | r41–r50 | r41 rejected-honest-stop (`rounds[761]`) | r42 in flight |
@@ -134,3 +134,16 @@ closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At 
   Fix: the dispatcher now appends a host guard (`SEAT_GUARD`) to every seat prompt, file and live kernel: the
   cwd is the fleet root, so cd to scratch first; assert the fixture toplevel before git mutations; no PATH-dir
   writes; no fleet-root tracked-file writes. This is a conformance item for kasegi r38's closure.
+- ~16:20 -03, orchestrator kernel restart. An operator interjection cancelled a `tw()` tick, and the Python
+  kernel came back empty. Recovery: env `HYAKU_LOAD_MAX=120`, `HYAKU_SEAT_CEILING=96`, `%load` of the
+  dispatcher, helpers rebuilt, `bootstrap()` re-adopted kengaku falsify, mado w1, souji w1 and five live L1s.
+  Seat AgentHandles were lost, so the mado w1 and souji w1 results files carry `output: null` with the
+  restart note, and those L1s read seat reports from the wave dirs.
+- 16:26 -03: souji r33's L1 had filed and ended while seat `SwarmExecutor31` (FixO4 census rerun) still ran
+  with no consumer. The orchestrator stopped the seat to settle the wave. That woke the L1, which captured the
+  results (`af7fd25`) and amended its report (`b1c9f43b`). Orchestrator salvage commit `c442b974` holds
+  `.ufo/waves/round-33/w1-results.json`. Closure dispatched after that.
+- 16:28 -03: tameshi r48 attempt 3 has had no lane commit since 13:21. Its L1 is blocked on its own control
+  driver: CTL_B/D/E finished at 15:11, and CTL_C was still running after 3 h. On the orchestrator's nudge the
+  L1 committed to a 17:00 -03 deadline: if CTL_C is not done by then, it is recorded as not evaluated (timed
+  out) and the round lands.
