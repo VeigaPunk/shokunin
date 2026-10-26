@@ -129,12 +129,6 @@ closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At 
 | tsukuroi | 7 | r41–r50 | r41 rejected-honest-stop (`rounds[761]`), r42 rejected (`rounds[776]`, `e93c3831`; C1 operability improved, C2 depth failed its own kill rule on SC1/SC3; nothing harmed; spot-check `6951ead9`) | r43 in flight (TsukuroiR43, ~18:57); rejection streak 2 |
 | mado | 8 | r44–r53 | r44, r45 admitted (`rounds[760]`, `[767]`; r45 one 41-seat wave, routed as a defect), r46 admitted (`rounds[773]`, `f1da69fc`; operability and coverage improved, nothing harmed; spot-check `60edb66e`; R1–R4 routed) | r47 in flight (MadoR47, ~18:50) |
 
-Fleet-root misroot, 19:50 -03: mori r51 seats `Mo51CritEntail12` (ENTAILMENT vote seat, 6 vote lines) and
-`Mo51ConnSiblings` wrote their reports to `<fleet>/.ufo/waves/round-51/w1/` (cwd = fleet root, relative path).
-The orchestrator moved both, bytes unchanged (sha256 `351684a6…`, `c85e3277…`), into
-`mori-shokunin/.ufo/waves/round-51/w1/`, removed the fleet dir, and told MoriR51. It is a conformance item for
-mori r51's closure.
-
 ## Incidents
 
 - 12:36 -03: the first tick spawned kasegi r36's 64-seat wave and hit the eval tool's 30 s default cell timeout
@@ -208,3 +202,8 @@ mori r51's closure.
 
   The MadoR47 L1 was told to record ExecRefB as cancelled by the orchestrator. Kama r48 was dispatched once the
   guard read green.
+- 19:50 -03, fleet-root misroot. Mori r51 seats `Mo51CritEntail12` (ENTAILMENT vote seat, 6 vote lines) and
+  `Mo51ConnSiblings` wrote their reports to `<fleet>/.ufo/waves/round-51/w1/` (cwd = fleet root, relative path).
+  The orchestrator moved both, bytes unchanged (sha256 `351684a6…`, `c85e3277…`), into
+  `mori-shokunin/.ufo/waves/round-51/w1/`, removed the fleet dir, and told MoriR51. It is a conformance item for
+  mori r51's closure.
