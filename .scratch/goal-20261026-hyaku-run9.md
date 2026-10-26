@@ -117,15 +117,15 @@ closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At 
 
 | lane | slot | block rounds | closed (admitted / rejected) | state |
 |---|---|---|---|---|
-| tameshi | 1 | r48–r57 | r48 rejected-harmed (`rounds[765]`, `d98fe66c`; cold-read 60 → 57 below its floor) | r49 in flight (TameshiR49, 16:49) |
+| tameshi | 1 | r48–r57 | r48 rejected-harmed (`rounds[765]`, `d98fe66c`; cold-read 60 → 57 below its floor) | r49 landed (report `08ae56fa`, lane `7d3d977f`; 88 seats; C1_R49_PASS calibration 6→8, C2_R49_PASS 12/12 hidden-panel kills, F10 open→held); closure in flight (CloseTameshiR49) |
 | tabi | 2 | r32–r41 | r32 admitted (`rounds[756]`), r33 rejected-honest-stop (`[763]`), r34 rejected-honest-stop (`[769]`, `e9949eaf`; C1 newMapped 1/3, C2 met 20/20; operability improved, nothing harmed) | r35 in flight (TabiR35, ~17:58) |
 | souji | 3 | r33 | r33 rejected-honest-stop (`rounds[764]`) | **blocked** 16:39 by `advance` (three consecutive rejected closures through r33); block ended early at 1 round, slot 3 → kama |
 | kama | 3 | r46–r55 | r46 admitted (`rounds[770]`, `a4a605eb`; C1 freshness and C2 calibration improved, nothing harmed) | r47 in flight (KamaR47, ~18:30) |
 | kasegi | 4 | r36–r45 | r36, r37 admitted (`rounds[755]`, `[758]`), r38 rejected-honest-stop (`[762]`), r39 rejected-honest-stop (`[771]`, `13277204`; attempt 2 after attempt 1 hit the request budget; C1 not verified (G2 red, 7/8), C2 verified; expansion improved) | r40 in flight (KasegiR40, ~18:40) |
 | kaidoku | 5 | r39–r48 | r39 admitted (`rounds[757]`), r40 rejected-honest-stop (`[768]`; C1 3/4 counter suffix defect, C2 met) | r41 in flight (KaidokuR41, ~17:12) |
-| kengaku | 6 | r40–r49 | r40, r41 admitted (`rounds[759]`, `[766]`) | r42 in flight (KengakuR42, 16:54) |
+| kengaku | 6 | r40–r49 | r40, r41 admitted (`rounds[759]`, `[766]`) | r42 landed (report `987413e0`, lane `f9bbee69`; 72 seats; C1 14/14 mutants killed, C2 circuit-fibsqrt admitted; wave-2 m_flash share 14/33 below the 50% rule, disclosed); closure in flight (CloseKengakuR42) |
 | tsukuroi | 7 | r41–r50 | r41 rejected-honest-stop (`rounds[761]`) | r42 in flight |
-| mado | 8 | r44–r53 | r44, r45 admitted (`rounds[760]`, `[767]`; r45 one 41-seat wave, routed as a defect) | r46 in flight (MadoR46, 17:03) |
+| mado | 8 | r44–r53 | r44, r45 admitted (`rounds[760]`, `[767]`; r45 one 41-seat wave, routed as a defect) | r46 landed (report `b25732fc`, lane `edc14789`; 66 seats; C1 v3 110/110 + 150/150 TARGET_MET, C2 v2 admitted 1/1; predicates re-registered before data; one 3.3 MB seat file left untracked, disclosed); closure in flight (CloseMadoR46) |
 
 ## Incidents
 
