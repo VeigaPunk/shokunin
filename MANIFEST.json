@@ -26631,6 +26631,49 @@
    "notes": "Dispatch/complete digest (watchdog.log): 2026-10-26T16:49:03-03:00 launch tameshi round=49 pgid=1624230 driver=hyaku-inline attempt=1; 2026-10-26T18:21:05-03:00 complete tameshi round=49; hyaku-inline attempt=1. Conformance ok: report 258460ff then 08ae56fa (18:20:45) by tameshi-shokunin, after its last cited commit 7d3d977f (18:20:27); SHONEN 4x[~]; 13 cited commit hashes resolve and are ancestors of master (0cbee392, d6dd2cf3 are sha256 prefixes, verified); jj-lane state ahead=0, porcelain empty; prompt carries the template contract (139/140 lines verbatim, line 1 resolves <tameshi-repo>). Controls committed 6885adb4 before the deciding run; generator unchanged across panel reveal. No conformance defects bar admission. Hygiene: hidden panel copy remains at ~/.local/state/tameshi-r49/ (redundant, revealed and committed). Routed to round 50: (1) generator error paths T49W2RevGenCode F1-F3 (unreadable guard exits 1 not 2; needs red-before selftest); (2) counter blind spots: C1 absent uncapped, C2 cannot tell property-based from differential generator; (3) outside-section stale SKILL.md:1503/1509/1555; (4) restate the standing axis table (last table SCORECARD.md:2355 still reads calibration 6; round 49 states 8 in prose); (5) carried round-48 items still open. SHONEN: no box fully checkable by a non-author this round; promotion stays operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 46,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 46,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 46
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "input-device config versus running devices join: input/device config lines (hyprlang 0.6.8 rules) joined with hyprctl devices -j, per keyboard AGREE/DIFFER/FALLBACK/VIRTUAL over five XKB names, per pointer AGREE/DIFFER over scrollFactor, per device block MATCHED/NO_SUCH_DEVICE (tools/mado-devices.py, selftest 59/59)"
+   ],
+   "report": ".ufo/reports/round-46/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-46-verifier-spotcheck.md@60edb66e2f1cb90acc6e9442fc93ded0ca42d750",
+    "rechecks": "C1 re-measured: tool absent->present (tip sha 3a803689 = live receipt); counter v3 (unregistered, run as measurement) base 0/110+0/150 MISSED -> tip edc1478 110/110+150/150 MET under fresh nonce; controls ctl-c1-v3 PASS 0 of 40 evidence-verified; live run from committed bytes OK (9 kb AGREE, 4 mice AGREE; fcitx5 VK absent today), DIFFER exit 1 and STALE_BLOCK exit 4 reproduced on scratch configs, selftest 59/59; independent jq of hyprctl devices agrees. C2 re-measured: entry 0->1, knowledge 62->63, rows 252->262 (0 lines removed), ground grep exit 1 at base, counter v2 0/1 -> 1/1 MET at tip; ctl-c2-v2 PASS wrong 0 of 22 evidence-verified. Freeze integrity: counters/registrations unchanged 7f793280..edc1478. Axis gate evidence-verified (axis-tip 3/3 MATCH 63/77/12); SCORECARD pure append; round deletes 0 lines. Spot-check 5/5 agree (admits S317, S321, S325; rejects wiki Keywords.md at main 404, Keyboard.cpp 0 hits); S325 quote re-opened (11 words); census mado ok exit 0."
+   },
+   "commit": "mado-shokunin@edc147898e9de3c4e40f003277f20dbf67f18956",
+   "closed_at": "2026-10-26T21:34:12Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-10-26T17:03:35-03:00 launch mado round=46 pgid=2085458 driver=hyaku-inline attempt=1 / 2026-10-26T18:28:19-03:00 complete mado round=46; hyaku-inline attempt=1. Step 1: report b25732fc by mado-shokunin after tip; prompt 1a7a6925 canonical rendering + addendum; 9 cited hashes ancestors of master; pushed ahead=0; 66/66 seats. Routed (status-neutral): R1 r46 entry :57 cites l1-draft reference receipt live-devices-host-l1.txt (sha b229efd0, one config) not the landed tool's r46 receipt (QUALITY 24, M46-5 class) -> erratum; R2 untracked ExecStofOracle out.json.rows.tsv 3.3 MB -> digest or retention; R3 mado-session-material red at data (findings=115) -> install synthetic marker + serial rule; R4 carried: S290-S297 supersession (third deferral), round-44 ConnCalibration errata, round-45 entry six sentence units (CritW2Entry F1-F4). SHONEN boxes 2 and 3 reproduced by a non-author (operator-owned promotion). Operator note: host monitor serial in 3 held entries + 21 round-32/37 wave files (M46-10).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
