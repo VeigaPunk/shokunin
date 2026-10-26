@@ -24992,6 +24992,51 @@
    "notes": "dispatch/complete digest (.ufo/watchdog.log lines 1468/1471 at closure): 2026-10-26T01:10:54-03:00 launch kasegi round=33 pgid=99020 driver=hyaku-inline attempt=1; 2026-10-26T02:04:22-03:00 complete kasegi round=33; hyaku-inline attempt=1. Step-1: report 521b11c6 by kasegi-shokunin (committed 02:03:51, after lane tip 7963976e); SHONEN heading with 4 [~] lines; 7 cited commits exist and are ancestors of master; ahead=0, porcelain empty; prompt carries the full template contract plus hyaku addendum; wave 64/64 receipts. Status-neutral defects routed to the lane (spot-check §5): R1 SCORECARD.md:988/:1087 keep <LANE_HASH> markers; R2 frozen C1 'exactly one registry-row URL' clause unsatisfiable at freeze (erratum 2 + pre-freeze satisfiability check); R3 QUALITY R20 (QUALITY.md:169) restates the superseded global reading; R4 C1 counter mutants 3/4 under the frozen kill rule (skip-selftest survives; accept-record-without-url survives plain run) while report lines 41/49 say all killed; R5 selftest case url-matching-two-rows builds a dup-id fixture; R6 round-26 S040-live.txt orphan capture, no manifest record; R7 report cites S050.txt:69 (sentence at L70), lesson round-33.md:31-32 char counts wrong (31 not 19, 22 not 23); R8 round-32 fetched_utc carries -03:00 capture-commit time; R9 open gaps CritC1Kill H4-H8, C2 junk construction passes all counters but reviewer, no junk-twin control. Operator: SHONEN boxes 1/3/4 cite non-author-checkable evidence, box 2 lacks replay; not verified as boxes, no [x] written; kasegi round-32 L0 question still open.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 37,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 37,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 37
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "improved",
+    "novelty": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "gate-mutation-harness",
+    "service-grader-probe"
+   ],
+   "report": ".ufo/reports/round-37/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-37-verifier-spotcheck.md@fc1174f52b150999bef91f2e81da78732ca0eb9f",
+    "rechecks": "C2 re-measured: git_webserver_probe (registered probe) re-run in a clean clone of dc90676b, cmp-identical to the committed receipt; --dry byte-equal to the freeze table; SHA256SUMS 6/6; 22/22 join, 9=9 pass, 0 disagreements; S111-S114 re-opened live (4/4 digests and verbatim quotes). C1 evidence-verified (registered gates not executed): measure-final.txt killed=55 survived=0 PREDICATE C1 pass at 5c7d5d75 (transfers: no counter reads the post-measurement paths); controls red-before; 11/11 frozen digests match at tip; static AST audit 55/55 mutant old-strings present once, 50 battery37 fixtures, every mutant clause declared, no fixture keying; attribution 55/55 vs hostile 6/55. Plain counts: SOURCES 103->107 (A+3,B+1, all mined), knowledge/index 43/43->44/44, census exit 0 15 W04 unchanged, 0 removed lines in lane docs. Spot-check: 5/5 admits agree at admission level (one map-row disagreement on the entry), 2/2 rejects agree."
+   },
+   "commit": "kengaku-shokunin@dc90676b0a01bcb278dba3b5231b504fe2a9ff03",
+   "closed_at": "2026-10-26T05:25:37Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (.ufo/watchdog.log): 2026-10-26T01:11:32-03:00 launch kengaku round=37 pgid=105920 driver=hyaku-inline attempt=1 · 2026-10-26T02:14:12-03:00 complete kengaku round=37; hyaku-inline attempt=1. Report 9b84562b by kengaku-shokunin after lane tip; 13/13 cited hashes ancestors of master; lane pushed ahead=0; prompt = template + placeholders only. Conformance defects (status-neutral): report filed before WAVE-DONE falsify; wave-2 outputs (.ufo/waves/round-37/falsify/, 19 reports at closure) untracked in the lane; landing measured at 5c7d5d75 not the tip (transfers). Routed (spot-check §5): D1 commit+integrate wave-2; D2 entry tb2-git-webserver-grader.md map row instruction.md:9 'enforced' contradicted by token-in-body observed=pass (row 8 witness wrong, row 7 qualifier) - lane's own flip clause triggered for that row, ruled correct-by-erratum; D3 anchor_digest_check accepts another row's real digest (F37AnchorRerun M4b/M5); D4 ledger-tip red in detached-HEAD clones (refs/heads/master hard-coded); D5 C1 over-count 6 non-advertised mutants and extra-mutant survivors in 8 clauses; D6 sibling sandbox prior art uncited (F37ConnSiblingCite); D7 carried C2 spec unpinned/filler, R36CritScope F3-F5. SHONEN all [~]; end-to-end box non-author-checkable in consecutive rounds (operator-owned).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
