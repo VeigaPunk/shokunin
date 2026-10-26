@@ -97,10 +97,10 @@ closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At 
 | souji | 3 | r33 | r33 rejected-honest-stop (`rounds[764]`) | **blocked** 16:39 by `advance` (three consecutive rejected closures through r33); block ended early at 1 round, slot 3 → kama |
 | kama | 3 | r46–r55 | — | r46 in flight (KamaR46, ~16:40) |
 | kasegi | 4 | r36–r45 | r36, r37 admitted (`rounds[755]`, `[758]`), r38 rejected-honest-stop (`[762]`) | r39 in flight |
-| kaidoku | 5 | r39–r48 | r39 admitted (`rounds[757]`) | r40 in flight |
+| kaidoku | 5 | r39–r48 | r39 admitted (`rounds[757]`) | r40 landed (report `34703e82`, lane `c4895cf1`; 80 seats; C1 honest stop 3/4, C2 met 26/26); closure in flight (CloseKaidokuR40) |
 | kengaku | 6 | r40–r49 | r40, r41 admitted (`rounds[759]`, `[766]`) | r42 in flight (KengakuR42, 16:54) |
 | tsukuroi | 7 | r41–r50 | r41 rejected-honest-stop (`rounds[761]`) | r42 in flight |
-| mado | 8 | r44–r53 | r44 admitted (`rounds[760]`) | r45 in flight |
+| mado | 8 | r44–r53 | r44, r45 admitted (`rounds[760]`, `[767]`; r45 one 41-seat wave, routed as a defect) | r46 in flight (MadoR46, 17:03) |
 
 ## Incidents
 
