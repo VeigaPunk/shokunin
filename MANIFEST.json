@@ -26804,6 +26804,49 @@
    "notes": "Driver digest (.ufo/watchdog.log): 2026-10-26T15:58:45-03:00 launch tsukuroi round=42 pgid=3674584 driver=hyaku-inline attempt=1; 2026-10-26T18:29:39-03:00 complete tsukuroi round=42; hyaku-inline attempt=1. Step 1 ok: report cca21e97 by tsukuroi-shokunin (committed 18:28:53, after tip 18:27:21, before completion); 10/10 cited hashes are ancestors of master; lane ahead=0, porcelain empty; SHONEN 4 [~]/4 boxes; prompt = template plus placeholder substitutions plus addendum. Conformance defects (status-neutral): N1 the report omits the moved live tameshi pin (service-optin-protocol.md:153, census 915-970 -> 921-976) that w2/AdjMoriPin found; N2 the AdjMoriPin handoff arithmetic is inconsistent (the arm intro moved 1097 -> 1103, +6); N3 the report says C2RevSC1/SC4 had no verdict line, but each carried a JSON verdict field the binding does not match. Routed to tsukuroi: R42-C2-REGROUND (re-ground SC1/SC3, narrowed SC4/SC5; no not-verified marker in the first 20 lines); R42-CAP-HEADER-DUP (SCORECARD r42 capabilities header row duplicated); R42-ADJ-TAMESHI-UNREPORTED; R42-C1-COUNTER-AMEND (uid-1000 legs, gated-arm controls, --scratch required, :743 selftest case, boot-chain-audit.sh:480-487, single-line readers); R42-VERDICT-FORM. SHONEN box 1 looks checkable by a non-author (operator-owned promotion).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 47,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 47,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 47
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "live-receipt-replay"
+   ],
+   "report": ".ufo/reports/round-47/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-47-verifier-spotcheck.md@33e005827742b29772b153cda036ec9f27f653be",
+    "rechecks": "C1/C2 re-measured by closure at tip 6b7e6cf8 with the frozen counters (both met=True; base met=False); gate registered 40 unregistered 0 defective 0; capability census listed 11 observed 11 met True; hexrun unknown=0; digest unknown=0; KLR selftest 13/13, check-receipt/gguf-identity selftests pass; sources-census exit 0"
+   },
+   "commit": "kama-shokunin@6b7e6cf8d30b5794ed72fe97eb0e666f9b0572a9",
+   "closed_at": "2026-10-26T21:57:03Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-10-26T18:00:16-03:00 launch kama round=47 pgid=2438931 driver=hyaku-inline attempt=1; complete 2026-10-26T18:51:10-03:00 kama round=47. Conformance: report committed by lane identity (d0012618); SHONEN heading 4 lines/4 boxes; all 8 cited lane commits ancestors of master; lane ahead=0 clean and pushed (ls-remote = 6b7e6cf8); prompt carries template contract + addendum, route map matches config.yml. Status-neutral notes: planner seat impossible under policy-v2 validator (L0 kama|round-39, carried); report says r41-r43/pointer checks re-run at final tip but committed *-fix.out receipts show tip=3442d707 (closure re-verified at tip; D9). Routed to lane: D1-D8 (C2 counter sufficiency: host-copy/fabricated rerun/forged started_utc still reach met=True; replay replays receipt-1 only; record-time provenance unverified; pass/fail-only comparison; C1 counter gaps 13/44 mutants; moving main URL (S490); b11909 prerelease cliff; sources-append-only guard blind since r45). Operator: L0 open items (kama|round-35/39/41..43); SHONEN boxes all [~] and look checkable by a non-author - promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
