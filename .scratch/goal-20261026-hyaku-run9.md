@@ -16,6 +16,12 @@ Probe 2026-10-26T12:22:54-03:00 (`scripts/hyaku/probe-alias.sh`, receipts `/fast
 primary-ok: m_opus anthropic/claude-opus-5-5, m_zfl zai/glm-5.3-flash, m_sonnet anthropic/claude-sonnet-5-5,
 m_haiku anthropic/claude-haiku-5-5, m_kfc kimi-code/kimi-for-coding, m_flash opencode-go/deepseek-v4.1-flash.
 
+**Operator, ~16:38 -03, verbatim:** "can you make it so m_kfc fallback chain is actually the kimi-for-coding primary
+and m_swe as secondary fallback?" Done in `~/.omp/agent/config.yml:428-431`: `retry.fallbackChains.m_kfc` is now
+`["@m_swe", inception/mercury-3:max, openai-codex/gpt-6-luna:low]`; the primary `modelRoles.m_kfc`
+(kimi-code/kimi-for-coding:max) is unchanged. `cfg://retry/fallbackChains` shows the new chain live. It applies to
+connector seats spawned after the edit.
+
 ## Host limits (measured at run start)
 
 - omp 18.12.6 caps a session at 100 running jobs whatever `async.maxJobs` says (450 here): the bundled
@@ -86,9 +92,10 @@ closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At 
 
 | lane | slot | block rounds | closed (admitted / rejected) | state |
 |---|---|---|---|---|
-| tameshi | 1 | r48–r57 | — | r48 attempt 3 in flight |
+| tameshi | 1 | r48–r57 | — | r48 a3 landed (report `be65435d`, lane `98e63044`); closure in flight (CloseTameshiR48) |
 | tabi | 2 | r32–r41 | r32 admitted (`rounds[756]`), r33 rejected-honest-stop (`[763]`) | r34 in flight |
-| souji | 3 | r33–r42 | — | r33 closure in flight (L1 filed before WAVE-DONE; 48 seats) |
+| souji | 3 | r33 | r33 rejected-honest-stop (`rounds[764]`) | **blocked** 16:39 by `advance` (three consecutive rejected closures through r33); block ended early at 1 round, slot 3 → kama |
+| kama | 3 | r46–r55 | — | r46 in flight (KamaR46, ~16:40) |
 | kasegi | 4 | r36–r45 | r36, r37 admitted (`rounds[755]`, `[758]`), r38 rejected-honest-stop (`[762]`) | r39 in flight |
 | kaidoku | 5 | r39–r48 | r39 admitted (`rounds[757]`) | r40 in flight |
 | kengaku | 6 | r40–r49 | r40 admitted (`rounds[759]`) | r41 in flight |
