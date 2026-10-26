@@ -26466,6 +26466,47 @@
    "notes": "Dispatch/complete digest: 2026-10-26T15:06:51-03:00 launch kaidoku round=40 pgid=1810920 driver=hyaku-inline attempt=1; 2026-10-26T17:00:10-03:00 complete kaidoku round=40; hyaku-inline attempt=1. Step 1 clean: report 34703e82 by kaidoku-shokunin filed after lane tip c4895cf1 (16:48:26 < 16:49:50); SHONEN 4/4 lines; 10 cited hashes are ancestors of main; jj-lane state ahead=0, porcelain empty; prompt carries template contract. Not admitted: R40-C1 honest stop (frozen counter suffix false negative on L2; AVM-BE demoted to measured-not-promoted at 4d62ee5a); R40-C2 verified; no axis harmed. Routed: R40-CL1..CL7 as filed in corpus/lessons/round-40.md; D1 S126/AVM lineage evidence lives outside the lane repo (/home/vgpnk/Projects/shokuknow/...), digest matches but not durable; D2 AVM vendor texts remain in history at 7fce3086 (R40-CL7, operator ruling); D3 C2 depth increment bounded (18/26 v1-decidable, labels from generator class map). SHONEN boxes 1, 2, 4 look non-author checkable on committed evidence; promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 34,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 34,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 34
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "adjacency": "unchanged",
+    "operability": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-34/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-34-verifier-spotcheck.md@2d2c8a77428f9c95c3cd0eb4a3bbf0c6fb4ab684",
+    "rechecks": "No lane gate or counter executed (Gate standard). Frozen counters/controls/measure.sh sha256 equal claims.json frozenDigests at freeze 59f1b47a and HEAD; check-adjacency.mjs 4e2c2a64 unchanged. C1 re-measured by closure Python over git show (lane + sibling pins): 67 candidates (67/67 provenance-equal); 15dfaccb mapped 1/screened 0/unaccounted 66/newMapped 0; 04f9623d 5/62/0/4; b44b964d and 71a87305 4/63/0/1 (only kake lab-performance row counts; kaidoku rows' sibling quotes do not name tabi) -> not met (target newMapped>=3), honest stop. C2 evidence-verified: measure/c2-at-b44b964.json killed 20/20 (baseline 8/20), unappliable/twins none, pristine/neutral/decoy 0, battery true, selftest cases=56 passed=56 (was 44); gate sha 370e8e95 equals shipped gate; 12 v3 kill-case ids grep-counted. No-harm: numstat 0 deletions in append-only files (only gate +62/-7 and routed screen relabel 4/4), noharm 28/28, selfassessment 0, census tabi ok exit 0 (20 pre-existing W04), rows 129->133. Spot-check: 6 admits (S130-S133 Gitiles/GitLab re-opened byte-identical, map rows kake lab-perf and kaidoku HAR) and 3 rejects (withdrawn kotoba and kasegi rows, duplicate-URL W3C drafts re-fetched byte-identical) all agree."
+   },
+   "commit": "tabi-shokunin@71a873055ad7627ea4495ce554ff8bfb03513d74",
+   "closed_at": "2026-10-26T20:43:22Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log lines 1550/1561 when read): 2026-10-26T16:23:03-03:00 launch tabi round=34 pgid=3980957 driver=hyaku-inline attempt=1; 2026-10-26T17:36:34-03:00 complete tabi round=34; hyaku-inline attempt=1. Step 1: report 2904a678 by tabi-shokunin (committer 17:35:42, after lane HEAD 71a87305 17:34:22; author stamp 17:07:10 is the jj change-creation date, observation only), SHONEN heading 4/4 [~]; 5 cited commits ancestors of master; jj-lane state ahead=0 behind=0, porcelain empty; prompt 0929a340 committed 16:23:01 before launch, lines 1-140 differ from template only by placeholders; waves 37+39=76 seats, all outputs non-empty, no model key. C1 adjacency not met (newMapped 1<3; wave 2 withdrew 3 integrator admits, none kept against a finding); C2 operability met. Routed to tabi round 35: (1) corpus/README.md:794/:799 still say four new map rows / rows 15-18 after w2 withdrawals (corrections sweep); (2) adjacency carried claim, third miss: QUALITY-97 counter amendment before target, controls for 9/12 unguarded C1 counter clauses, sweep unnamed sibling-knowledge lines; (3) C2 counter amendment (lstat/scrubbed HOME, 9/10 unguarded counter mutants, self-sniff residual); (4) round-33 w2 findings U01-U28 need dispositions; (5) S125 on-release cadence; (6) precision lows: S131 Gate quote spans 244-248 vs locator 245-247, noHarmRule omitted kake:411 note cell, report lumps RFC 4122 into duplicate-URL rejects; (7) calibration counter v4 carried; (8) keep w2 wave-id path fix (M1). SHONEN: all four boxes appear checkable by a non-author from committed artifacts (operator-owned promotion; nothing written).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
