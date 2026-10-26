@@ -122,3 +122,33 @@ bear on its closures. After block C, freed slots go to the lowest next-round.
 - Lesson for run 9: watch `proc://` entry count against the ~100 cap before every handler spawn. Keep live
   agents well below the cap; ~92 live agents wedged the host. Keep controller state on disk
   (`/fast/scratch/hyaku-run8/controller.py`), because a kernel loss wiped `ACTIVE`/`ROT`/`PARTIAL`.
+- Cleanup before the next run (2026-10-26 ~09:00-09:30):
+  - Correction to the "Removed" entry above: only the untracked `mori-conform-selftest-*` dirs under mori's
+    `.ufo/waves/round-40/scratch/` were removed. The first `rm` also deleted 8 tracked files there; they were
+    restored with `git checkout HEAD -- .ufo/waves/round-40/scratch`, and mori is clean.
+  - Killed an orphan process group (pgid 1932374) that the dead TameshiR48 L1 had started:
+    `measure.py --emit`, six profiles of `tally-audit-v3.py`. It was still writing selftest dirs into /tmp.
+  - Worktrees:
+    - kake: removed `/fast/scratch/kake53/exec-cross-citation` and `exec-quality-gate`. Their unintegrated
+      round-53 state was first committed on the local branches as
+      3ed0f7d6dd251a858076342542c294c7d96e8a25 and 958f46d1d258346a789410eea47cadd72c26ca59.
+    - game-dev-2d: wt-r98, wt-r99 and wt-r100 were pushed to origin as branches (they lifted the souji r5 lock
+      condition), then unlocked and removed. The branches are kept.
+    - Stale worktree metadata pruned in kengaku (1 entry) and prymeagnt (4 entries).
+  - Disk:
+    - `disk-guard.sh sweep --all` with TARGET_PCT=1 and IDLE_MIN=1. Keep list:
+      `/fast/scratch/hyaku-run8/disk-guard.keep` (omp runtime dirs, kimi-webbridge, ZCode dirs).
+    - Removed by hand: idle plain files in /tmp and /var/tmp, `/fast/scratch/hyaku/kumitate-pin` (its dirs were
+      read-only), and closed-round lane scratch outside the guard root (kama-r41/42/43, mado-r33-k2-receipts,
+      mado-r35, c1r42/c2r42/c2ctl, r41a13, r41b04-tmp, revenger-r70, tabi-r19, tameshi-r39-w1,
+      kasegi-r33-l1, m18-selfheal).
+    - Space: /fast 218G → 177G used; `/fast/scratch/hyaku` 38G → empty; /var/tmp 7.7G → 1.6M.
+  - Caches:
+    - ~/.cache: removed seat strays (`PROVINCE.md`, `kake-r39a3-priv.path`, `cl65/`, `kama-shokunin/`), stale
+      `chromium-headless/scoped_dir*` profiles, the pip cache, and the old playwright build
+      (chromium/headless_shell 1194, ffmpeg 1011). About 1.3G freed, per-item `du` before removal; ~/.cache is
+      now 4.4G.
+    - ~/.cache/uv was NOT cleaned. Four `uvx mcp-for-blender` servers owned by the live ZCode CLI session hold
+      its lock and run from `~/.cache/uv/archive-v0`.
+  - Kept: `/fast/scratch/hyaku-run7` and `hyaku-run8` (the run-7 and run-8 records cite them), plus the
+    six claims listed above (Phase 0 of the next run).
