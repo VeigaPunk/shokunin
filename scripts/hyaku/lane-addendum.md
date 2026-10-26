@@ -9,6 +9,10 @@ which seems the one that works best; make sure to adapt to the 64-128 per round 
 256 | use the same model delegations we were using as before".
 - **Routing: the run-8 map, unchanged** (re-read from `~/.omp/agent/config.yml` and probed primary-ok
   at run start). Never pass `model`.
+- **Routing amendment (operator, run 9, live since ~17:45 -03):** critic moved from `@m_flash` to
+  `@m_glm53`, then to `@m_kfc`; every other run-8 role is unchanged. The ≥50 % m_flash share still
+  binds, but critic seats no longer count toward it: count only
+  executor/labrat/scribe/sonic/simplifier/revenger/sentinel seats.
 - **Round size: 64–128 seats in total, every round; 256 is the hard ceiling** (the validator's
   `maxLanes`). Shape per §2: one v2 wave of 64–128, or two v1 waves (32–64 each) summing to 64–128,
   residual call included. 64 is the floor; size to the claims inside the band and never pad. At most
