@@ -25498,6 +25498,47 @@
    "notes": "Driver digest: 2026-10-26T02:55:57-03:00 launch souji round=31 pgid=297674 driver=hyaku-inline attempt=1; 2026-10-26T04:58:50-03:00 complete souji round=31; hyaku-inline attempt=1. Report 3322a54 by souji-shokunin 04:58:17 (after tip d999c59, before complete); 15 cited hashes all ancestors of master; lane state ahead=0 behind=0 tracked=0 untracked=0; 74 seats (w1 38/38, w2 36), 0 dead. Honest stop: C1 calibration missed by one item (L29, SCORECARD.md:170); C2 operability and C3 coverage verified; no axis harmed. Conformance notes (status-neutral): D1 reflog-only arm outside frozen arm=<solo|descendant> contract (disclosed); A5 stricter amendment landed after C2 landing, re-measured at landing revision. Routed to souji r32: (1) bind L29 via named scalar fields or stricter record rule; (2) C3 entry traceability: cite S051 or drop quote, add CONFIGURATION anchor to S063, Gate quote for gc.recentObjectsHook; (3) amend enumerated fixture contracts before a record leaves them; (4) pre-landing sentence-to-record sweep (18 entry corrections + 18 M1 disposition corrections after wave 2); (5) lane residuals per SCORECARD Planned r31. SHONEN four [~] boxes resolve at tip and look non-author checkable; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 30,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 30,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 30
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-30/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-30-verifier-spotcheck.md@96a2d1a3e04a1d482a1bd8bfa97343bcc2acf3bc",
+    "rechecks": "No lane gate executed (Gate standard); both claims evidence-verified AND re-measured by plain re-derivation. C1: frozen digests check-gate-mutants 02945f88/catalogue cd1c27a2/frontier-admission cadef57e identical at 061e6202, d3cd62a1, 66171034 (d3cd62a1..tip touches only .ufo/waves/round-30/); catalogue fault=27 benign=13; 40/40 find strings occur exactly once in both gates at freeze and at d3cd62a1 (production lines byte-identical; diff confined to self-test fixtures/CASES/runner); CASES rows s106 7->10, release-pins 20->29 = counter pristine tallies; committed counter JSON 14/27 -> 0/27 survivors, 0/13 benign killed at d3cd62a1 (counter sha at rev = running), identity-blind random-dir rerun 0/0 (scripts unchanged 38891ca0..d3cd62a1). C2: frontier-tagged entries 0 -> 2; rows 115 -> 118, mined 87 -> 94, queued 19 -> 15; S116/S117 mined, opened 2026-10-26, used-by reciprocal; SOURCES row diff by id: 3 new, 19 used-by-only, 4 status+used-by, nothing else moved; receipt sha256 recomputed (S116 d6016dd0 = refetch; S117 b73dc7d1); 36/36 >=4-word entry quotes located in receipt bytes; independent live curl at closure: S116 200/67097 B byte-identical, -12 404; S117 200 quote present with emoji-route scope. No-harm evidence noharm-at-d3cd62a: registry 0 nonconformant, pins 23/23, s106 valid, sources clean; selfassessment 1 = instrument misread (12/12 true per committed GATE_MUTANTS_SELFTEST captures). Spot-check: admit S116 agree, admit S117 agree, reject rate-and-tos-signal-vocabulary.md (staged S106/S110) agree after live RFC 9309/6585 refetch (register quotes 0 hits); S118 live 200 sha c23d575e, old panels path 404; census validate exit 0, 19 W04, byte-identical to measure/census-end.txt."
+   },
+   "commit": "tabi-shokunin@66171034636cad5be49b479c98355bd944919b51",
+   "closed_at": "2026-10-26T08:12:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-26T03:00:44-03:00 launch tabi round=30 pgid=486597 driver=hyaku-inline attempt=1; 2026-10-26T05:03:53-03:00 complete tabi round=30; hyaku-inline attempt=1. Step 1 clean: report ca815bbc by tabi-shokunin after lane tip 66171034 (05:03:20 vs 05:02:09); SHONEN 4 [~] lines = 4 boxes; 9 hashes ancestors of master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0; prompt d23911b6 = template + placeholders + addendum §6/§7; waves w1 32/32, w2 34/34 with reports, validate stderr empty. Round-29 routed defects 1-6 fixed; 7 fixed on its self-test half (C1), release-pin counter v2 carried as not claimed. Calibration ruled unchanged, not harmed: the one check-selfassessment mismatch is an instrument misread of a true 12/12 tally, disclosed in report, M8 and SCORECARD:1554-1557. Routed to tabi next round: (1) SCORECARD.md:1523 'mismatches 0 after the round-30 corrections above' is false at 0ffc6ea (3) and d3cd62a1 (1); append a line-cited correction (criterion 78); (2) check-selfassessment v2 must read the gate summary SELFTEST line, not the first cases= token; (3) planned counter v2 for check-gate-mutants (opaque run dirs, minimal env, killer attribution, MutC1Beyond survivors, empty work-dir leak on exit 2) and check-frontier-admission (https-only, same-host redirects, curl -q, refetch independence); (4) release-pin counter v2 (id-set population, DEPS-pinned S044/S068) still open. SHONEN boxes 1, 2 and 4 look non-author-checkable; box 3 still needs a non-author executor run; promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
