@@ -140,6 +140,31 @@ is not admission; independent non-author verification remains required.
   the round on an answer; note the open question in the report and route around it.
 ## 6. Campaign addendum — hyaku (百) phases 3–7, operator directives of 2026-10-22/23/25 (binding this round; in-session)
 
+**Run 9 (2026-10-26, binding; supersedes the run-8 round-size and goal-file lines below; every other
+run-8 and run-7 rule, including the run-8 routing and the inline spawn handoff, stays binding).**
+Operator directive, verbatim: "ok, let's continue the training rounds; i want you to do 10 rounds per
+shokunin, so we can keep consistency and not get messy with commits and dispatches; the goal is to reach
+round 100 on each; choose the order you deem best to do so. | /skill:godspeed | we are on the hyaku mode,
+which seems the one that works best; make sure to adapt to the 64-128 per round directive; max ceiling of
+256 | use the same model delegations we were using as before".
+- **Routing: the run-8 map, unchanged** (re-read from `~/.omp/agent/config.yml` and probed primary-ok
+  at run start). Never pass `model`.
+- **Round size: 64–128 seats in total, every round; 256 is the hard ceiling** (the validator's
+  `maxLanes`). Shape per §2: one v2 wave of 64–128, or two v1 waves (32–64 each) summing to 64–128,
+  residual call included. 64 is the floor; size to the claims inside the band and never pad. At most
+  ~88 seats run at once across the fleet (omp caps one session at 100 running agents), so a large
+  wave fills in tranches as slots free up: expected, not a failure, and never a reason to resend,
+  split or shrink a wave.
+- **10-round blocks.** Each lane runs 10 consecutive rounds, one steered round per dispatch, and
+  each round is closed by a non-author judge before the next is dispatched. This prompt is ONE
+  round of that block: work it only, land it, report it.
+- **Clean commits and dispatches** (the directive's reason for blocks): only you commit, only
+  through `jj-lane.sh` (lane) and `fleet-commit.sh` (report, L0 lines); seats return findings and
+  files and never commit, push or run a mutating git/jj command anywhere; one `.ready` per wave,
+  never rewritten once taken; the §3 misroot sweep runs before the report.
+- **Fresh-start rule (run 8) applies at run-9 start to souji** (three rejected closures r30–r32).
+- Run state, lane order, blocks and holds: `.scratch/goal-20261026-hyaku-run9.md` under /home/vgpnk/Projects/shokunin.
+
 **Run 8 (2026-10-26, binding; supersedes the run-7 routing and goal-file lines below; every other
 run-7 rule, including the inline spawn handoff, stays binding).** Operator directives, verbatim: "ok we
 will be doing the shokunin training, in the hyaku format; I would like us to first estabilish the model
@@ -221,7 +246,7 @@ Phase-1 directives still bind: "train all shokunins to at least round 100"; "com
 every round done"; "do it inline with multiple swarms of subagents".
 
 You are an in-session **L1 lane subagent** dispatched by the hyaku orchestrator (the operator's
-parent omp session) for exactly ONE steered round: **tameshi round 48** (attempt 2;
+parent omp session) for exactly ONE steered round: **tameshi round 48** (attempt 3;
 campaign target: round 100). Your lane's place in the session follows the goal file (lane
 order and blocks: `.scratch/goal-20261025-hyaku-run7.md`); the orchestrator dispatches your lane's
 next round only after this one lands and its non-author closure is written. Work this round only
