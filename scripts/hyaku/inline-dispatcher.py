@@ -246,6 +246,7 @@ async def register(ready, run, occupied):
         except RuntimeError as e:          # host cap hit mid-batch; resume next tick
             dlog('spawn-cap', ready, t['name'], repr(e)); break
         mine[t['name']] = h; HANDLES[t['name']] = h; n += 1
+        _save_partial(ready, mine)         # each agent() spawn takes ~1 s: an interrupted tick keeps its fill
     if len(mine) < len(tasks):
         _save_partial(ready, mine)
         dlog('partial', meta['lane'], meta['round'], meta['wave'], len(mine), len(tasks))

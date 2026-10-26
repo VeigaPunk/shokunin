@@ -57,6 +57,11 @@ Block rules:
 - A lane that `advance` blocks (three rejected closures in a row) or that fails three attempts of one round ends
   its block early. Its slot goes to the next lane; the short block is recorded below.
 
+**Operator, ~13:10 -03, verbatim:** "more concurrency"; then "train 2 lanes concurrently"; then "go for your 4 lanes
+to 8". The last message rules: **eight lane slots.** Slots 5–8 went to the next four in the queue at 13:1x:
+kaidoku (39), kengaku (40), tsukuroi (41), mado (44). The queue now starts at kama (46). The seat ceiling is
+unchanged (88 running jobs, plus the load and memory gates), so with eight lanes, waves queue for seats.
+
 ## Holds / unblocks
 
 - **souji unblocked** at run start. Its block was a rejection streak (r30, r31, r32, `rounds[737,745,753]`), and a
@@ -76,9 +81,22 @@ Block rules:
 
 | lane | slot | block rounds | closed (admitted / rejected) | state |
 |---|---|---|---|---|
-| tameshi | 1 | r48–r57 | — | starting (r48 attempt 3) |
-| tabi | 2 | r32–r41 | — | starting |
-| souji | 3 | r33–r42 | — | starting (fresh-start) |
-| kasegi | 4 | r36–r45 | — | starting |
+| tameshi | 1 | r48–r57 | — | r48 attempt 3 in flight |
+| tabi | 2 | r32–r41 | — | r32 in flight (w1 36 seats) |
+| souji | 3 | r33–r42 | — | r33 in flight (fresh-start) |
+| kasegi | 4 | r36–r45 | — | r36 landed: report dd1ad9cf, lane a23dc4788aa7; closure pending |
+| kaidoku | 5 | r39–r48 | — | r39 in flight |
+| kengaku | 6 | r40–r49 | — | r40 in flight |
+| tsukuroi | 7 | r41–r50 | — | r41 in flight |
+| mado | 8 | r44–r53 | — | r44 in flight |
 
 ## Incidents
+
+- 12:36 -03: the first tick spawned kasegi r36's 64-seat wave and hit the eval tool's 30 s default cell timeout
+  after 31 spawns (`agent()` takes ~1 s per seat). The kernel survived with PARTIAL intact, and the next tick
+  finished the fill. Fixes: the dispatcher now saves `<ready>.partial` after every spawn (the line SentScope F3
+  found uncommitted, committed with this record), and tick cells run with a 900 s timeout.
+- KasegiR36 filed its report (dd1ad9cf) before WAVE-DONE, with 6 of its 64 seats still running. It also ran
+  `find … -exec rm -rf {} +` sweeps over `/fast/scratch/hyaku/kasegi-r36` while seats were live (SentScope F2:
+  SentScope's own dir was deleted twice). Both go to its closure as conformance items. The closure judge is
+  dispatched after the wave settles, so the judge reads a stable lane.
