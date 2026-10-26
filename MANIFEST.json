@@ -27056,6 +27056,49 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log): 2026-10-26T18:31:02-03:00 launch tameshi round=50 pgid=667330 driver=hyaku-inline attempt=1; 2026-10-26T20:14:13-03:00 complete tameshi round=50; hyaku-inline attempt=1. Step 1 clean: report 9c4be4fe by lane identity after last cited commit, SHONEN 4/4 lines ([~]), 14/14 cited commits ancestors of master, lane ahead=0 and porcelain empty, prompt = template rendering + hyaku addendum. Routed to the lane (status-neutral): (1) S022 status queued while used-by names fixture-shrinking-pilot.md (contract v1: mined) - held back to protect the frozen r45 freshness monitor; fix and re-base/supersede the monitor; (2) tools/shrink-case.py and tools/pbt-staged-id.py have selftests but no SKILL.md Gate/probe registry row (registry scope still round-12); (3) corpus/README.md frontier table rows F6 (:83) and F10 (:87) still read open while appended sections declare held; (4) carried: 7 open ledger items and successor counters for the disclosed C1/C2 forgery routes. Operator note: SHONEN box 2 looks non-author-checkable (round-50 LOG entry + after/c2.stdout); boxes 1/3/4 rest on lane assertion or lane-dispatched readers; promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 42,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 42,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 42
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "improved",
+    "depth": "unchanged",
+    "calibration": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "SquashFS v3 recursion through REA (squashfs_v3, squashfs_v3_ddwrt, LZMA bodies, both byte orders) with a non-sasquatch LZMA oracle (backhand-cli v3_lzma + 7-Zip)"
+   ],
+   "report": ".ufo/reports/round-42/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-42-verifier-spotcheck.md@6b9e64fe7e0de202d9383baad5792fbfe039a743",
+    "rechecks": "gates/counters not run. R42-C1 met: evidence-verified (controls CTL-C1-0/CTL-C1-1 0/4 exit 1 at freeze; c1-at-eb8215ac carriers_matched 4 exit 0, frozen_path_changed []; counter sha256 0f5052f9 = committed tool, unchanged since freeze d1681696; selftest 121/0) + re-measured (oracle.tsv 409/403/447/569 = receipt; handler per unblob.log; live re-fetch DW-MEGA and OW-X86FS md5 = publisher MD5SUMS line 68 / md5sums line 7, sha256 = fetch receipts, OW-X86FS superblock v3.0; S112 argv lines re-read live; SOURCES 129->134; PROVINCE Core row, entry, README rows present). R42-C2 not met (honest stop): receipt matched 78/78 but bindings_false [observed_features_match_declared], exit 1; re-derived C02 declared gap_kinds lack depth-limited that heldout/C02/rea-full.json observes; frozen target plans/round-42-claims.md:145-152 unchanged. Harm: SCORECARD +20/-0; knowledge/map/rule-blocks 133/133/20 -> 135/135/21 with block-21 cite resolving at af50af81. Spot-check: agree S131, S132, S133 admits, agree D-Link legacyfiles reject (curl exit 60, cert chain unverifiable); census validate exit 0 kaidoku ok."
+   },
+   "commit": "kaidoku-shokunin@af50af81751bbb02316c9bc9a0459ca96707b0c0",
+   "closed_at": "2026-10-26T23:28:20Z",
+   "campaign": "hyaku",
+   "notes": "digest: 2026-10-26T18:37:23-03:00 launch kaidoku round=42 pgid=1215130 driver=hyaku-inline attempt=1; 2026-10-26T20:19:51-03:00 complete kaidoku round=42; hyaku-inline attempt=1. Step 1 ok: report 1f92fd54 by kaidoku-shokunin after lane tip af50af81; SHONEN 4/4 [~]; 9 cited commits ancestors of refs/heads/main; jj-lane state ahead=0, porcelain empty; prompt carries the template contract. Range includes round-41 L1 commit ae5dc3f3 (disclosed). Defects (status-neutral): D1 round total 43 < run-9 floor 64, no wave 2; D2 pre-file gate GREEN at af50af81 asserted without committed output. Routed R42-V1..V5: size >=64 + falsify wave; commit gate runs; in-SKILL unscored/stopped status for rule blocks 20/21 (block 20 now reads superseded by 21); generator must refuse undeclared-vs-observed tuples (R42-CL1, QUALITY 85); provenance trio first in r42 v3-core entry. SHONEN boxes look non-author checkable; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
