@@ -25123,6 +25123,50 @@
    "notes": "Driver digest (.ufo/watchdog.log): 2026-10-26T01:05:49-03:00 launch tsukuroi round=38 pgid=26219 driver=hyaku-inline attempt=1; 2026-10-26T02:28:28-03:00 complete tsukuroi round=38; hyaku-inline attempt=1. Report 67d35b82 by tsukuroi-shokunin, filed after last lane commit f8b4df2a; SHONEN 4x[~]; all cited hashes ancestors of master; lane clean, ahead=0; prompt template 0 missing lines. Conformance defects (status-neutral): pre-seat amendment 9c9bb647 written after author after-receipts (tightening only, accepted); S210 anchor names non-existent _alpm_trans_commit, erratum only in lesson prose (needs supersedes row); before receipts lack tool_sha256. Routed to tsukuroi: (1) R38-Q82-LEAK counter fix with tmpfs-in-namespace views and four leak arms as should-fail controls; (2) R38-ABSENT-ROOT mounts cross-check; (3) check-hook-order-r38 gaps (S212-only stripped entry passes, S-id drop survives, block duplication invisible); (4) S210 supersedes row; (5) receipt tool_sha256 binding; (6) score-pacnew-arm-r35b historical marking; (7) cross-reference this spot-check from the round-38 lesson Gate. SHONEN boxes 1-2 look non-author-checkable; boxes 3-4 do not. Promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 30,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 30,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 30
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "unchanged",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "capability-literal agreement audit (r30)",
+    "committed-capture report discovery (r30)"
+   ],
+   "report": ".ufo/reports/round-30/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-30-verifier-spotcheck.md@9f17a1ef571f3a510a51ac233d7cf50ac0c871fc",
+    "rechecks": "C1 re-measured over committed bytes: R30-CORRECTION lines 0 -> 13 (9420341/7b16731/2726c3d), SCORECARD tip startswith base bytes, 13 correction row ids == 13 MISMATCH rows of c1-before.txt; counter rc/observed evidence-verified (c1-after-v1/a3 k1=0 k2=0 mismatches=0 at 7b16731 and 393b011). C2 MISS confirmed: c2-after-v1 at landing 68447af dangling=1 (SCORECARD.md:322 cites .ufo/waves/round-30/w1/deliver-c1-literal-history.tsv; 0 census/round-30/waves files at 68447af); tip dangling=0 but kill rule needs both; selftest 65/65 and r16 15/15 regress same (evidence-verified). C3 re-measured: entry absent at base/present at tip, ground: F1 entries 2 -> 3, SOURCES rows 143 -> 145 (S220/S221 mined, opened 2026-10-26), run record jj 0.45.1 + 8 RESULT lines, README F1 row names entry at 76c94eb; correction sweep clean. Spot-check: S220, S221, S054 re-fetched live, sha256 = SHA256SUMS pins, quotes verbatim <=25 words; 3 admits + 3 rejects all agree. sources-census validate rc 0, 36 W04. No lane gate executed."
+   },
+   "commit": "souji-shokunin@2726c3d819a025dd2c193a5c780645d7fb71319a",
+   "closed_at": "2026-10-26T05:55:20Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-10-26T01:12:04-03:00 launch souji round=30 pgid=115880 driver=hyaku-inline attempt=1; 2026-10-26T02:49:22-03:00 complete souji round=30; hyaku-inline attempt=1. Report 3c361e8 by souji-shokunin (02:48:56, after lane HEAD 2726c3d 02:47:24); SHONEN 4/4 [~]; 14 cited hashes exist and are ancestors of master; ahead=0, worktree clean; prompt carries template contract; 69 seats, 0 dead. Step-1 defects: none. Not admitted: C2 (operability) missed its frozen kill rule at the landing commit (lane self-reported honest stop); no axis harmed. Routed to r31: (1) SKILL.md:115 keep-ref bullet lacks packed-ref caveat / step-5 count wording; (2) capability cells still carry stale literals beside R30-CORRECTION block; (3) A1 c2-counter-v2.py:69 tab-vs-space regex; (4) force-added .ufo/waves/round-30 tsv vs capture discovery precedence; (5) Q65 recurrence of r29 D1 (wave path cited before capture landed) sank C2. r29 routed D1-D4, D2 closed. SHONEN boxes look non-author checkable; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
