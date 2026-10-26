@@ -62,6 +62,11 @@ to 8". The last message rules: **eight lane slots.** Slots 5–8 went to the nex
 kaidoku (39), kengaku (40), tsukuroi (41), mado (44). The queue now starts at kama (46). The seat ceiling is
 unchanged (88 running jobs, plus the load and memory gates), so with eight lanes, waves queue for seats.
 
+**Operator, ~14:05 -03, verbatim:** "use 8 slots, more concurrency". Eight slots stay. The seat gates are raised to
+the most the host allows: `SEAT_CEILING` 88 → 96 running jobs (omp's own cap is 100, and 4 are kept for L1 and
+closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At the change, load was already ~59 with
+56 jobs running, and the load gate (not the seat count) was holding souji r33 w1 and tabi r32 w2 at 0 spawned.
+
 ## Holds / unblocks
 
 - **souji unblocked** at run start. Its block was a rejection streak (r30, r31, r32, `rounds[737,745,753]`), and a
@@ -84,7 +89,7 @@ unchanged (88 running jobs, plus the load and memory gates), so with eight lanes
 | tameshi | 1 | r48–r57 | — | r48 attempt 3 in flight |
 | tabi | 2 | r32–r41 | — | r32 in flight (w1 36 seats) |
 | souji | 3 | r33–r42 | — | r33 in flight (fresh-start) |
-| kasegi | 4 | r36–r45 | — | r36 landed: report dd1ad9cf, lane a23dc4788aa7; closure pending |
+| kasegi | 4 | r36–r45 | r36 admitted (`rounds[755]`) | r37 in flight |
 | kaidoku | 5 | r39–r48 | — | r39 in flight |
 | kengaku | 6 | r40–r49 | — | r40 in flight |
 | tsukuroi | 7 | r41–r50 | — | r41 in flight |
