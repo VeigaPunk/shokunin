@@ -26334,6 +26334,52 @@
    "notes": "Dispatch/complete digest (watchdog.log): 2026-10-26T05:28:47-03:00 launch tameshi round=48 pgid=529494 attempt=1; 09:23:48 lane-dead-no-report (host crash, salvaged); 09:23:50 launch pgid=1820158 attempt=2; 11:47:59 lane-dead-no-report (L1 stalled after WAVE-DONE, a2w1 salvaged); 12:31:08 launch pgid=13046 attempt=3; 16:38:32 complete tameshi round=48 attempt=3. Conformance ok: report be65435d by tameshi-shokunin, after its cited tip 98e63044; SHONEN 4x[~]; 13 cited hashes are ancestors of master; ahead=0 and porcelain empty; prompt carries the template contract (0 missing of 140 lines). Status-neutral defects: (1) salvage commits 15b1521e and 8f2922b8 were made under the lane identity, disclosed; (2) C1 CTL_B-E were scored after the C1 deciding run, against freeze_plan step 2; (3) five a2w1 seats ran --only C1 previews at c7586b9a (14 statements, all total=0), not named in the report's C1 verdict; (4) FROZEN_UNCHANGED=0 false red from added receipts only, disclosed; (5) lesson S267/S268 line pointers, fixed by the lane's erratum; SCORECARD 'pasted byte-exact' holds for 19 cap rows, not the 3 axis rows; (6) census W04 on S265-S268, expected for supersession rows. Spot-check agrees on 4 admits (S265-S268) and 2 rejects (staged duplicates S209/S210/S212/S216; r8-predictive-test-selection-cost via QUALITY 10). Trend note: the lane self-graded quality harmed; closure charges the cold-read cost to calibration (axis harmed) and grades quality improved under LEARNING's definition. Routed: restore credit for the cold-read round-12/13/14 headings via a successor ledger and run the QUALITY 98 precheck before freeze; deciding-script start/exit receipts and receipt-free frozen list; score controls at freeze and declare pre-deciding previews; SCORECARD byte-exact correction; carried Planned (round 49) items. SHONEN boxes are not fully non-author-checkable; promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 41,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 41,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 41
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "improved",
+    "novelty": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "cli-exit-pair-mutants",
+    "embedded-model-grader-probe",
+    "routed-findings-burndown"
+   ],
+   "report": ".ufo/reports/round-41/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-41-verifier-spotcheck.md@d69452cfa4ea8f95a43caf3727a7c797ba390b6c",
+    "rechecks": "C1 evidence-verified, not executed (registered gate round41-c1-mutants): control-c1-nothing BATTERY fixtures=0 MUTANTS total=23 killed=0 survived=23 receipts=0/13 sources=0/10 PREDICATE C1 fail exit=1; control-c1-no-mutants MUTANTS total=0 PREDICATE C1 fail -> measure-final (74513c06) and measure-tip2 (53b9e4e5) BATTERY fixtures=48 wrong=0 tampered=0 sidechannel=0 killed=23 survived=0 invalid=0 receipts=13/13 sources=10/10 PINS-AFTER mismatched=0 PREDICATE C1 pass exit=0, verdict lines identical; plain: counter MUTANTS=23 (13+10, adv direct 21 indirect 2), 23/23 old strings unique in the unedited tools (pins e4f49714/38492bf1 match), TOTAL=23 FLOORS 13/10, frozen-digests 11/11 OK; closure reviewer seat: 48 fixtures by FIXTURES enumeration, 0 code-level side-channel hits, no witness reuse, T03/T04/S07/S11 traced agree; wave-2 F41C1Attribution 23/23, F41C1Hardened 23/23 repairs 5/5, battery 47 honest + 1 incidental + 0 dishonest. C2 counter evidence-verified (checks=8 defects=5 -> defects=0 PREDICATE C2 pass); probe re-measured in a clean clone at e61aff6f: byte-equal to constraints-probe.txt (cases=25 observed_pass=6 observed_fail=19 mismatches=2, regrade differ=0), --dry byte-equal to freeze table, captures 10/10 OK; SOURCES rows 114->117, knowledge 47->48, README 7 of 89. Sources re-opened: S122/S123 sha256 equal at pin, quotes verbatim; S124 gh api state=closed merged=false, quote verbatim; rejects (PR #245 adversarial file, 55 CASES static, unexecuted; captured-not-rows) agree. Census exit 0 kengaku ok, 15 W04 same set as before. SCORECARD diff 200 added 0 removed."
+   },
+   "commit": "kengaku-shokunin@e61aff6f72c7cc358f854762dd769cd55ef296b7",
+   "closed_at": "2026-10-26T19:53:03Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-26T15:14:33-03:00 launch kengaku round=41 pgid=749835 driver=hyaku-inline attempt=1; 2026-10-26T16:42:33-03:00 complete kengaku round=41; hyaku-inline attempt=1. Report 0ff2af1c by kengaku-shokunin (16:40:23, after lane tip e61aff6f committed 16:40:27; the report cites it), 10/10 cited hashes ancestors of master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0; prompt e25f28e3 = template with placeholders only (+ hyaku addendum §6, scratch §7); both waves (38/38, 34/34) integrated before filing. Defects (status-neutral): D1 wave-1 seat R41CritIndep rm -rf of shared scratch root /fast/scratch/hyaku/kengaku-r41 at 15:42:24 (disclosed; unguarded by tooling); D2 S124 anchor cell edited in place in 53b9e4e5 (CORPUS SOURCES rule 2 allows only status/recheck/used-by; logged old->new in lesson); D3 failed first baseline run evidenced only in a session transcript. Notes: freeze 8ef8b4fc author date 15:13:37 = e50c1345 commit time (jj working-copy creation; committer 15:30:52, after launch); prompt commit e25f28e3 carries the lane identity (orchestrator dispatch act). Routed to round 42: R1 C1 counter residuals F1-F4/A1' -> freeze the five F41C1Hardened repairs with red hostile controls, pin T08's uv-absent PATH assumption; R2 scratch-root guard + Q32 forward leg red on L1's own receipts; R3 C2 standing filler control + tier-B PR state check; R4 SOURCES corrections as superseding rows; R5 carried: 14 round_close/tip_receipts residuals, F39LedgerTip D1, F39MutDirection, F39OrderGateMut, s_usage-03 incidental fixture, 34 unpriced advertised rows. SHONEN: 4 boxes [~]; boxes 1-3 look checkable by a non-author from committed bytes, box 4 needs a judgment read (promotion operator-owned).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
