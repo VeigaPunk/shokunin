@@ -25878,6 +25878,44 @@
    "notes": "Driver digest: launch attempt=1 2026-10-26T05:31:49-03:00 pgid=998797; lane-dead-no-report 09:23:50 (L1 died in orchestrator host crash ~08:50, work salvaged 9b8562a3); launch attempt=2 09:23:52 pgid=1820734; complete 11:04:16 attempt=2. Conformance (status-neutral): D-a first filing 4a20abb1 authored 10:15:47 before lane tip (committed 10:54:21); second filing e9833c0f authored 10:54:42 satisfies r49 defect 1; mechanism is fleet-owned fleet-commit.sh:84-85 jj metaedit --update-author (routed to operator). D-b 104 seats across attempts (>100 ceiling); contract's two v1 waves not run; 35 attempt-1 seats with unknown outcome. D-c frozen considerthese 2026-10-25 s2 swapped for 2026-10-26 s3 (disclosed in lesson). D-d r47 re-execution transient divergence from non-hermetic round-40/conform.py. R49 routed defects 2 (selftest receipts) and 4 (.scratch residue) verified closed. Routed to lane r51: .scratch producers/hermetic conform.py; round shape within ceiling + disposition of 35 seats; successor C1 counter survivors + K4 beyond SHONEN; C2 entailment step (M4); log contract deviations in LOG.md. Operator: all SHONEN boxes [~] with resolvable pointers; executable-instructions box now checkable from committed receipts; promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 36,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 36,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 36
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:verifiability": "improved",
+    "coverage": "improved",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-36/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-36-verifier-spotcheck.md@b56a41680cefd391868c1c370dc063c69d827e7d",
+    "rechecks": "Re-measured at judged head a23dc478 vs base cc692008 (git archive + plain grep/awk/ls-tree/sha256sum; no lane gate executed). C1 depth:verifiability: r36-closure.sh absent->present (sha256 4db1ae70..., 894 lines); limbs E1-E8 re-derived closed by plain reads (E1 placeholders 0/0 + 5 Final-lane-commit hashes exist and are ancestors; E2 anchor 1/mean 7; E3 exact registry rows r35 1, r36 1 (B 0/0); E4 ls-tree 1 + provenance 1; E5 present; E6 L1Integration.md correction; E7 R22 1/R23 1; E8 M36 4, source-recheck 3, stale line 0); E9 live limbs at branch tip c20300df: porcelain 0, scratch dirs 0, HEAD=tip; a23dc478..c20300df touches only .ufo/waves/round-36. Evidence-verified: final-gates/all-gates.txt reds closed=0/9 (r35 base) and closed=3/9 (r35 judged head); selftest cases=9 failures=0 on fixture under suite-sha256 4db1ae70 (RevC1Selftest.md, SimplC1.md); positive real-head 9/9 + selftest summary not in a raw receipt (routed D1). C2 coverage re-measured: F-rows 18->19, S-rows 52->53, S053 row 0->1 (NF=13, A/docs/mined/90d, used-by exists), source: S053 entries 0->1, knowledge 47->48, EPSS sweep at base 0, capture sha256 4ec61c59 244 lines/8448 B, Q1-Q4 one hit each at L216/217/217/235; census exit 0 (W04 S028/S029). Harness 22/22, recheck-audit 48/48, binding 43/43 evidence-verified in all-gates.txt. SCORECARD diff append-only (90/0), no axis score row changed; SKILL/PROVINCE/QUALITY/SOURCES/README/LOG zero deletions. Spot-check: admit F19/S053 agree (live first.org/epss 200, 26804 B, all quotes present); reject junk-f19 agree (fabricated sentence 0 in capture and live); reject quarantine S048 agree (live 404, 748 B, sha256 prefix 95cd25d8 = receipt)."
+   },
+   "commit": "kasegi-shokunin@a23dc4788aa7c98831eed6db953434034ce5ae8d",
+   "closed_at": "2026-10-26T16:48:00Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest (.ufo/watchdog.log, mutable; lines 1527/1532 at read): 2026-10-26T12:31:14-03:00 launch kasegi round=36 pgid=14809 driver=hyaku-inline attempt=1; 2026-10-26T13:02:47-03:00 complete kasegi round=36; hyaku-inline attempt=1. No lane-dead-no-report line. Step 1: report dd1ad9cf by kasegi-shokunin (13:00:51) + appended erratum 1c43fd8f (13:41:38, no rewrite); SHONEN heading 1, 4x[~] vs 4 boxes; all 8 cited hashes are commits and ancestors of master; jj-lane state ahead=0 behind=0, porcelain empty; prompt carries template contract s1-s5 + hyaku addendum s6/s7. Branch tip at closure c20300df (13:41:37, .ufo/waves/round-36 only: WAVE-DONE results 64/64). Routed defects (kasegi owes next round): D1 final-gates/all-gates.txt lacks the positive --export-ref head run and the --selftest summary/case lines; D2 LOG.md round-36 C1 bullet claims corpus/instruments/r36-fixtures/ landed, absent at a23dc478 and c20300df (appended correction owed); D3 closure-order recurrence (M36-1/M36-4 class): c20300df and report erratum landed after complete, report filed with WAVE-DONE pending; D4 lesson round-36.md:3 and SCORECARD label intermediate e666d902 as 'final lane commit'; D5 SKILL.md r36-closure.sh registry row type 'gate|probe' undecided and verdict map omits exit 2 -> could-not-evaluate; D6 r36-closure.sh:465-466 E9 limb (b) fails open when git status errors. SHONEN box 2 (end-to-end task) still [~] 'none new': checklist not fully checkable by a non-author; no promotion recommended.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
