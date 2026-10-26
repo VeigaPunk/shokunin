@@ -26847,6 +26847,49 @@
    "notes": "dispatch 2026-10-26T18:00:16-03:00 launch kama round=47 pgid=2438931 driver=hyaku-inline attempt=1; complete 2026-10-26T18:51:10-03:00 kama round=47. Conformance: report committed by lane identity (d0012618); SHONEN heading 4 lines/4 boxes; all 8 cited lane commits ancestors of master; lane ahead=0 clean and pushed (ls-remote = 6b7e6cf8); prompt carries template contract + addendum, route map matches config.yml. Status-neutral notes: planner seat impossible under policy-v2 validator (L0 kama|round-39, carried); report says r41-r43/pointer checks re-run at final tip but committed *-fix.out receipts show tip=3442d707 (closure re-verified at tip; D9). Routed to lane: D1-D8 (C2 counter sufficiency: host-copy/fabricated rerun/forged started_utc still reach met=True; replay replays receipt-1 only; record-time provenance unverified; pass/fail-only comparison; C1 counter gaps 13/44 mutants; moving main URL (S490); b11909 prerelease cliff; sources-append-only guard blind since r45). Operator: L0 open items (kama|round-35/39/41..43); SHONEN boxes all [~] and look checkable by a non-author - promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 35,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 35,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 35
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "adjacency": "unchanged",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "webdriver-bidi-runtime-firefox"
+   ],
+   "report": ".ufo/reports/round-35/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-35-verifier-spotcheck.md@11c64b96f357de106c30a71c5e21ca44a3eacdc0",
+    "rechecks": "No lane gate or counter executed (Gate standard). Frozen counters/controls/measure.sh sha256 equal claims.json frozenDigests at freeze a4bfef0f and HEAD 1c432f2a; check-adjacency.mjs/check-bidi-runtime.mjs unchanged 2d2c8a77..1c432f2a. C1 re-measured (git show/cut/sort/comm): candidates 383, screened 383, unaccounted 0, adjacency.tsv unchanged -> newMapped 0 vs target >=2: not met, honest stop. C2 re-measured (jq/sha256sum over committed bytes): rows R1-R15,R17 admitted (16), R16 no BiDi command, failing 0, binding null; run1/run2 transcript sha256 equal receipt; both runs' first screenshot decodes to 7a3ae6a9... = receipt = counter live session (Firefox 158.0.1/geckodriver 0.37.1); SOURCES 133->141, entry source: cites S134-S141 -> met. No-harm evidence-verified: noharm 28/28 exit 0, check-freshness --worktree clean 34/34, selfassessment 0, round diff 0 deleted lines, SCORECARD append-only. Spot-check: admits S134/S137/S140 agree (bytes and sha256 identical to lesson), rejects release notes and kagi SKILL.md:40 row agree; S138 row quote 22 words at body :297 agree. sources-census validate tabi ok exit 0 (20 pre-existing W04)."
+   },
+   "commit": "tabi-shokunin@1c432f2aaa10d15a7793b967f596871ee5d14280",
+   "closed_at": "2026-10-26T22:13:48Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest (.ufo/watchdog.log lines 1564/1583 at closure): 2026-10-26T17:44:02-03:00 launch tabi round=35 pgid=1139653 driver=hyaku-inline attempt=1; 2026-10-26T19:07:47-03:00 complete tabi round=35; hyaku-inline attempt=1. Step-1: report 9f2a51f4 by tabi-shokunin committed 19:07:13 after lane tip 1c432f2a (19:05:13); SHONEN 4 lines all [~]; all cited commits ancestors of master; jj-lane state ahead=0 behind=0, porcelain empty; prompt 1a83320f carries the full template contract (0 template lines missing), no L2 route map; waves 51+34 non-empty, 0 dead. Defects (status-neutral, routed): (1) entry webdriver-bidi-firefox-runtime-round-35.md:279 (D11) and lesson round-35.md:76 cite 0-byte measure/driver-egress-sample.txt for '0 non-loopback sockets'; lesson :130 re-points to w2 SentinelDriverEgress but the entry was not corrected (corrections-sweep; QUALITY 100). (2) C2 counter TARGET 14 vs declared 16 (M1), caller-named binaries (M4), non-loopback live leg (M3), cloned run2 passes: planned operability amendment. (3) S125 on-release cadence second carry. (4) C1 fixed newMapped quota on a closed pool; planned meter split. Operator: SHONEN box 2 (end-to-end task) looks non-author-checkable (closure re-derived runs/receipt/live digest); promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
