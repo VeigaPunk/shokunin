@@ -24493,6 +24493,46 @@
    "notes": "Driver digest: 2026-10-25T20:34:46-03:00 launch kake round=57 pgid=465319 driver=hyaku-inline attempt=1; 2026-10-25T22:25:39-03:00 complete kake round=57; hyaku-inline attempt=1. Step-1 clean (report by kake-shokunin, SHONEN 4 lines, 8 of 8 cited hashes ancestors of master, ahead=0, 8 lane commits all kake-shokunin). Routed defects (status-neutral): (1) report line 60 says no receipt with a revision line was rewritten after commit, but controls/after-c1-receipt-pins.txt was committed at T0 as 'pending' + revision + EXIT=0 and rewritten in 20217f2 (disclosed in the landing table; the report contradicts itself); (2) untracked leftover .ufo/waves/round-57/w1/ExecPinsIndependent.files/relabels.json in the lane tree; (3) c56_quote_truth.py reads 6/8 at the tip by design (mirror pins 158 rows) - pin to measured revision or register as historical; (4) carried limits: id_resolver fence-blind and drops non-ASCII knowledge paths, C1 cannot prove a counter ran, C2 G4 reads live sibling registries; (5) axis ownership: C1 declared on calibration (round-54 sub-axis) outside the prompt's operability+freshness list, ownership left open by the lane for the operator. SHONEN boxes all [ ] and not fully checkable by a non-author from this round; promotion operator-owned. S404/S414 rejects not re-opened (evidence lives in a read-only shokuknow checkout).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 31,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 31,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 31
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:density": "unchanged",
+    "depth:verifiability": "improved",
+    "coverage": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "limb-mutation-ledger"
+   ],
+   "report": ".ufo/reports/round-31/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_sonnet session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-31-verifier-spotcheck.md@a2b9fd84eeae47d7c1c7d92061b4dc28da245915",
+    "rechecks": "C1 re-measured on a git-archive copy of 7079178 (counter exit 0, 13 LIMB killed, controls 3/3 rejected, stdout sha256 d6aefddc matches report, selftest cases=20; recheck-audit strict 44/44 exit 0, source-recheck selftest cases=10, frontier harness 18/18) plus 7 of 13 ledger patches hand re-derived (all live!=mutant; remaining 6 evidence-verified, 3 rows weak as disclosed); C2 re-measured over committed bytes: frontier 14->15, S048 entries 1, S048 rows 1, registry 47->48, census exit 0 (W04 S028/S029 only), harness 18/18 incl PASS F15, source-recheck S048 exit 0 (11 assertions), live MSVR page re-opened and quote located, entry Q1-Q10 non-author read clean, quote sweep 7/7 blockquotes exactly-once; no-harm via SCORECARD diff +145/-0 and QUALITY +69/-0; discernment sample agrees on 1 admit + 3 rejects"
+   },
+   "commit": "kasegi-shokunin@7079178fcfcae32b8fd53bb79b329e6156fd661b",
+   "closed_at": "2026-10-26T02:10:00Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest: 2026-10-25T20:07:56-03:00 launch kasegi round=31 pgid=828159 driver=hyaku-inline attempt=1; 2026-10-25T22:54:10-03:00 complete kasegi round=31; hyaku-inline attempt=1. Status-neutral defects routed to round 32: (1) lesson round-31.md retains LANDED_HASH_PENDING header and stale open-items text (corrected by appended erratum only); (2) SHONEN.md:34 says 8 assertion OK lines, actual 11; (3) QUALITY.md selftest cases=4 stale (M31-4) and SOURCES.md:83 anchor drift (M31-3) still open; (4) QUALITY R16 weak, R18 CHECK B' accepts content-free heading, R19 token grep false greens; (5) C1 disclosures: frozen counter-mutant clause unmet as first landed (3 of 6 survived, repaired post-freeze by guard fixtures), 3 ledger rows weak (RA-paths, RA-cdroot, FR-missing-entry killed by traceback), 2 guard-harness tamper probes survive; (6) untracked fleet-root demo-cwd.txt seat probe disclosed by lane; (7) score-gap.py D2 repair lacks a receipt. Closure ran the lane counter only on /tmp git-archive copies, never in the lane tree. SHONEN boxes 1-3 look non-author checkable on committed bytes; promotion/ticking is operator-owned, no [x] written.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
