@@ -1,7 +1,7 @@
 # souji — round 33 report (attempt 1, fresh-start round)
 
 L1: SoujiR33 (hyaku run 9, block r33–r42). Lane repo `/home/vgpnk/Projects/shokunin/souji-shokunin`, branch `master`.
-Base 6017a482e7068d5afb7617640198fbb0fe743357 → final lane hash d65a5c4328896742d2ec951f7156c6a70aa9325a (pushed; `git ls-remote origin refs/heads/master` prints it).
+Base 6017a482e7068d5afb7617640198fbb0fe743357 → final lane hash af7fd250c8a862130f88b8f77ad29debf343e54d (pushed; `git ls-remote origin refs/heads/master` prints it).
 This round is a fresh-start round under the run-8 rule: the r30, r31 and r32 closures were rejected. I read those three closures and their spot-checks first. In all three rounds, C1/C2 targets were unreachable under their own frozen rules.
 
 ## Work performed
@@ -93,7 +93,7 @@ Work items:
 ## Round shape and seats
 
 - Shape: one v1 wave, w1, with 48 seats: critic 21, executor 11, scribe 5, connector 3, scout 2, mutation-tester 2, reviewer 2, revenger 1, simplifier 1. Flash share 81 %, attack share 52 %.
-- `w1.ready` was written at 13:05 and dispatched at 14:12:17. All 48 reports landed, with 0 dead seats. No WAVE-DONE message and no `w1-results.json` had arrived when this report was filed; seat counts come from the 48 committed reports (`census/round-33/waves/`).
+- `w1.ready` was written at 13:05 and dispatched at 14:12:17. All 48 reports landed, with 0 dead seats. WAVE-DONE for w1 arrived after this report was first filed (bc8045f684efa2a5368296866c9620a415d00729). Its `w1-results.json` (seats=48; every entry noted "orchestrator kernel restarted mid-wave; seat output … not retained — read the seat report file") is captured at `census/round-33/waves/w1-results.json` (lane commit af7fd250c8a862130f88b8f77ad29debf343e54d). Seat counts come from the 48 committed reports. Filing before WAVE-DONE is a process defect of this round.
 - Wave 2 (37 attack items, `make-spec-w2.py`) was built but **not dispatched**. My request budget ran out while wave 1 and every measurement crawled under host load (1-minute load 60–95).
 - Round total: **48 seats, below the 64-seat floor**. This is a conformance defect.
 - No residual task call was made.
