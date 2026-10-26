@@ -26763,6 +26763,47 @@
    "notes": "Dispatch digest: 2026-10-26T16:53:44-03:00 launch kengaku round=42 pgid=4052559 driver=hyaku-inline attempt=1; 2026-10-26T18:28:04-03:00 complete kengaku round=42; hyaku-inline attempt=1. Report 987413e0 by kengaku-shokunin 18:26:23, after lane tip f9bbee69 (18:25:49); 9/9 cited lane hashes ancestors of master; state ahead=0, porcelain clean; prompt = template rendering (10 placeholder hunks) + hyaku addendum. Defects (status-neutral): D1 wave 2 m_flash 14/33 under the >=50% rule (self-disclosed); D2 S128 has no ## Gate row (CORPUS SOURCES rule 1); D3 Dockerfile conditional reject's flip fired (entry keeps WORKDIR /app as load-bearing) and was not executed - closure disagreement; D4 four wrong/overclaim sentences in the new entry (F42EntryQuotes; :297 re-derived false by closure: six graded inputs >2^15) not marked in the entry, only counted in SCORECARD, routed-findings.jsonl carries no wave-2 item; D5 landing measurement envelope local_bin_listing CHANGED (tip3 unchanged, verdict-equal); D6 R42PlanNext no report, F42ConnFrontier no verdict line. Notes: freeze bc856d80 author date 16:52:31 = d69452cf commit time (jj working copy), committer 17:11:01, not early work; fleet prompt commit e0551f18 carries lane identity (orchestrator act). Quality graded unprovable-but-better (r37 precedent): D4 routed not left after notice. Routed to round 43: R1 entry errata for F42EntryQuotes 4 + lesson pointer :6->:11; R2 S128 Gate row, Dockerfile tier-B row or conditioned sentence, D3 lesson+criterion; R3 wave-2 routed items into routed-findings.jsonl; R4 C1 counter hardening (gpg/showSignature, builder copy, ro lane, core.worktree, site-value attribution) + named correction of the frozen 'no fixture code' sentence; R5 C2 content leg beyond V9; R6 flash-share assert, content-hashing envelope. SHONEN: 4x [~]; boxes 1-3 look checkable by a non-author from committed bytes, box 4 needs a judgment read (operator-owned promotion).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 42,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 42,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 42
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-42/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-42-verifier-spotcheck.md@6951ead90566b2d74f7c45b4efca29246badad64",
+    "rechecks": "C1 evidence-verified + plain re-measure (counters/selftest not executed): the 7 declared early-reader sites (census :692/:694/:740/:1621/:1635/:1641/:1652 at c8efaa3f) are all rewritten as full-consumer awk at 12421a73 (7 -> 0), with no fixture, uid or package-name gating in the production hunks; check calls 125 -> 129 (selftest 128 -> 132); census unchanged since 78abb8b5; counter digests c511104a/dbe933ec equal the declaration; receipts: before FAIL invariant 3 -> after PASS invariant 10 ns 3; r41 counter PASS 13/13 killed; batteries should_fail_accepted 0. C2 re-measured: entry absent at base, 202 lines at tip; frozen snapshots sha256 OK; w2-results verdicts SC1 rev holds(JSON)/crit fails, SC2 holds/holds, SC3 fails/fails, SC4 holds(JSON)/partly, SC5 holds/partly; kill rule fires; two withdrawals checked against scrub.c :1831-1834 and :1692/:1698/:1706. No-harm: no file deleted; SCORECARD append-only; all 5 files carrying the 15 drifted pins are marked; sources census tsukuroi ok exit 0, 40 W04, rows 236 -> 239, malformed 0. Spot-check: admits SC2 and SC5 (narrowed) agree, rejects staged P2 and the novelty sentence agree; S237/S238 live re-fetch byte-identical; quotes for S237/S238/S239 found."
+   },
+   "commit": "tsukuroi-shokunin@12421a73b2816d7f9ed91ea25f230d9389452341",
+   "closed_at": "2026-10-26T21:37:14Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest (.ufo/watchdog.log): 2026-10-26T15:58:45-03:00 launch tsukuroi round=42 pgid=3674584 driver=hyaku-inline attempt=1; 2026-10-26T18:29:39-03:00 complete tsukuroi round=42; hyaku-inline attempt=1. Step 1 ok: report cca21e97 by tsukuroi-shokunin (committed 18:28:53, after tip 18:27:21, before completion); 10/10 cited hashes are ancestors of master; lane ahead=0, porcelain empty; SHONEN 4 [~]/4 boxes; prompt = template plus placeholder substitutions plus addendum. Conformance defects (status-neutral): N1 the report omits the moved live tameshi pin (service-optin-protocol.md:153, census 915-970 -> 921-976) that w2/AdjMoriPin found; N2 the AdjMoriPin handoff arithmetic is inconsistent (the arm intro moved 1097 -> 1103, +6); N3 the report says C2RevSC1/SC4 had no verdict line, but each carried a JSON verdict field the binding does not match. Routed to tsukuroi: R42-C2-REGROUND (re-ground SC1/SC3, narrowed SC4/SC5; no not-verified marker in the first 20 lines); R42-CAP-HEADER-DUP (SCORECARD r42 capabilities header row duplicated); R42-ADJ-TAMESHI-UNREPORTED; R42-C1-COUNTER-AMEND (uid-1000 legs, gated-arm controls, --scratch required, :743 selftest case, boot-chain-audit.sh:480-487, single-line readers); R42-VERDICT-FORM. SHONEN box 1 looks checkable by a non-author (operator-owned promotion).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
