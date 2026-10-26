@@ -26171,6 +26171,44 @@
    "notes": "Driver digest (.ufo/watchdog.log): 2026-10-26T13:00:51-03:00 launch tsukuroi round=41 pgid=264372 driver=hyaku-inline attempt=1; 2026-10-26T15:51:31-03:00 complete tsukuroi round=41; hyaku-inline attempt=1. Report c8cd8f3f by tsukuroi-shokunin (author 15:34:36, committer 15:50:40 after lane tip 6cc927df 15:48:46; report commit rewritten before push, landed-last holds); 10 cited commits + 0e5805a1 + 8b7c4132 exist and are ancestors of master; lane ahead=0, porcelain empty, ls-remote = 6cc927df; prompt 0 of 140 template lines missing, hyaku addendum section 6; SHONEN heading 1, 4 [~] lines for 4 boxes. Verdict: C1 operability verified; C2 depth not verified (declared kill rule: PA6 stays partly after appended correction, residual/C2RevPA6c.md), honestly reported; no axis harmed -> rejected-honest-stop. Discernment spot-check: admits S232/PA7 and S230/PA4 agree (live gitlab raw @54d9411, digests equal snapshots), rejects of staged r26:53-54 package() in $pkgdir and ground pointer r26:6 agree; S233/S232/S230 quotes found live. Defects (status-neutral): R41-BASE-MISREAD (base 0e5805a1 vs tip 8b7c4132, measured surfaces byte-identical); C1 before receipt run after the after receipt (value predeclared at d8b4d521, revision-pinned). Routed to tsukuroi: R41-PA6-UNJUDGED (verdict on PA6 third correction or mark unverified), R41-CENSUS-PIPEFAIL-692 (live wrong verdict, pre-existing), R41-GUARD-BYPASS counter amendment under QUALITY 89, R41-BASE-MISREAD, before-receipt ordering. SHONEN box 1 looks non-author checkable (operator-owned promotion).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 38,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 38,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 38
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth:verifiability": "unchanged",
+    "coverage": "improved",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-38/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-38-verifier-spotcheck.md@480b1a505a2dfc14a4f718d16d63808247214d0a",
+    "rechecks": "C1 evidence-verified, not executed (lane gate): committed receipt .ufo/waves/round-38/final-gates/all-gates.txt records the frozen counting command over judged head J 66703aca as closed=7/8 exit=1 (G2 receipt=0: J cannot contain the receipt naming it) -> frozen kill clause fires; the 8/8 run and selftest cases=8 failures=0 (26 mutants, 5 forged judges rejected) are over run-ref 7dd2fcd6, not J; reds.txt base a173b0c2 and r37 head 2387dcf6 closed=0/8 exit=1, plain run exit 2; report's 8/8 over tip f06148c6 has no committed transcript. D-A/D-C/D3/D-D/D-E/D-F corrections re-derived closed by plain reads (Correction lines 1 each, fences closed at EOF, declared-block tails hash-equal f0318ac8/797666b9, 8 resolution rows, 7 ledger rows, 73=73 results, no kasegi-r3[678] scratch). C2 re-measured via git show/ls-tree/git grep at B/freeze/J/Y: frontier 20->21, SOURCES rows 54->55 (S055 NF=13), knowledge 49->50, source: S055 0->1; S055.txt sha256 63c8ad52 5146 lines 272441 B; harness 24/24, audit 50, binding 45/45 evidence-verified from seat receipts (CritC2Kill, ConnC1C2). Live re-open of S055 (HTTP 200, raw sha256 fad0c60d = manifest raw_sha256), Q1-Q4 present (24/25/23/19 words); junk-f21 claims 0 hits live; CSAF v2.1 os/ 404, CSD04 only. Census exit 0 (W04 S028/S029). SCORECARD diff 21/0, all non-.ufo files N/0: no owned axis harmed."
+   },
+   "commit": "kasegi-shokunin@f06148c66c6d7aed948cb7024d9f0b9cffe4b95a",
+   "closed_at": "2026-10-26T19:21:40Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest (.ufo/watchdog.log, mutable; lines 1540/1548 at read): 2026-10-26T15:11:39-03:00 launch kasegi round=38 pgid=54701 driver=hyaku-inline attempt=1; 2026-10-26T16:14:03-03:00 complete kasegi round=38; hyaku-inline attempt=1. Step 1: report 1aa06a75 by kasegi-shokunin (16:13:32, after lane tip 16:11:44, before complete); SHONEN heading 1, 4x[~], 0 [x]; all 9 cited hashes are commits and ancestors of master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0, porcelain empty; prompt 44942bbe carries template s1-s5 + hyaku addendum s6; route map is the operator run-8 model map (MISSION grouping advisory) - no defect. Judged head J 66703aca; tip Y f06148c6 = J + receipt only. Not admitted: C1 (depth:verifiability) killed on its own frozen counting command at J (honest stop, reported by the lane); C2 (coverage) verified. Spot-check: agree admit F21/S055, agree reject junk-f21, agree not-taken CSAF v2.1. Routed to kasegi r39: R1 mine the self-referential G2 freeze into ## Mistakes + grounded QUALITY criterion; R2 append Correction (round 39) lines where lane records state C1 8/8/selftest over J (lessons/round-38.md:21 and :94, LOG round-38 C1 bullet, SCORECARD r38 depth:verifiability row, SHONEN.md:185) - receipt says 7/8 at J, selftest over 7dd2fcd6; R3 positive run over the named tip f06148c6 not committed (r37 D-B class); R4 M38-5/M38-7 captured-by none with no QUALITY criterion; R5 carry 25 surviving mutants / G4 / G8 findings (lane self-routed). SHONEN not fully checkable by a non-author (box 2 none new).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
