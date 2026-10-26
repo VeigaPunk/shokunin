@@ -92,13 +92,13 @@ closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At 
 
 | lane | slot | block rounds | closed (admitted / rejected) | state |
 |---|---|---|---|---|
-| tameshi | 1 | r48–r57 | — | r48 a3 landed (report `be65435d`, lane `98e63044`); closure in flight (CloseTameshiR48) |
+| tameshi | 1 | r48–r57 | r48 rejected-harmed (`rounds[765]`, `d98fe66c`; cold-read 60 → 57 below its floor) | r49 in flight (TameshiR49, 16:49) |
 | tabi | 2 | r32–r41 | r32 admitted (`rounds[756]`), r33 rejected-honest-stop (`[763]`) | r34 in flight |
 | souji | 3 | r33 | r33 rejected-honest-stop (`rounds[764]`) | **blocked** 16:39 by `advance` (three consecutive rejected closures through r33); block ended early at 1 round, slot 3 → kama |
 | kama | 3 | r46–r55 | — | r46 in flight (KamaR46, ~16:40) |
 | kasegi | 4 | r36–r45 | r36, r37 admitted (`rounds[755]`, `[758]`), r38 rejected-honest-stop (`[762]`) | r39 in flight |
 | kaidoku | 5 | r39–r48 | r39 admitted (`rounds[757]`) | r40 in flight |
-| kengaku | 6 | r40–r49 | r40 admitted (`rounds[759]`) | r41 in flight |
+| kengaku | 6 | r40–r49 | r40 admitted (`rounds[759]`) | r41 landed (report `0ff2af1c`, lane `e61aff6f`); closure in flight (CloseKengakuR41) |
 | tsukuroi | 7 | r41–r50 | r41 rejected-honest-stop (`rounds[761]`) | r42 in flight |
 | mado | 8 | r44–r53 | r44 admitted (`rounds[760]`) | r45 in flight |
 
