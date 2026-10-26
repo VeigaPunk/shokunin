@@ -3,7 +3,7 @@
 Lane `/home/vgpnk/Projects/shokunin/kengaku-shokunin`, branch `master`. Baseline as read at start `fc1174f52b150999bef91f2e81da78732ca0eb9f`
 (the round-37 L1 then landed `21e6251b` 3 s before the freeze, so the freeze is that commit's child — lesson header);
 frozen claims `plans/round-38-claims.md` (freeze `e0a378539a45cc9388c66cfba22f44275131de23`); first recorded probe run
-`e95cf5500b6c13305cc41b8532ae07fb2c9dcd7b`; final lane hash `1fa7af4528a5a5fe4e15a630caf33bacee7a05b9` (`git ls-remote origin refs/heads/master` → that hash).
+`e95cf5500b6c13305cc41b8532ae07fb2c9dcd7b`; final lane hash `ef2fba062069de4f29aea45cb2a03d29a131054b` (`git ls-remote origin refs/heads/master` → that hash).
 L1 agent id `KengakuR38`; the L1 holds the canonical planner seat (the wave validator rejects `planner`; the round-39
 planning data-walk rode scout `R38PlanNext`).
 
@@ -76,7 +76,7 @@ Work items:
   `/fast/scratch/hyaku/kengaku-r38/R38CritC1Counter2` (734 MB) — a defect of that seat; the L1 removes
   `/fast/scratch/hyaku/kengaku-r38` after landing.
 
-Round shape: two v1 waves. Wave 1 has 40 seats: 16 executor, 7 scribe, 6 critic, 4 scout, 2 reviewer, 2 mutation-tester, 2 connector, 1 sentinel; m_flash roles 30/40, attack 10/40, 0 dead (40/40 reports). Wave 2 has 34 seats: 11 critic, 7 reviewer, 7 executor, 5 mutation-tester, 2 connector, 1 scout, 1 sentinel; m_flash roles 19/34, attack 23/34; outcome not integrated at filing. Round total 74 seats, no residual call.
+Round shape: two v1 waves. Wave 1 has 40 seats: 16 executor, 7 scribe, 6 critic, 4 scout, 2 reviewer, 2 mutation-tester, 2 connector, 1 sentinel; m_flash roles 30/40, attack 10/40, 0 dead (40/40 reports). Wave 2 has 34 seats: 11 critic, 7 reviewer, 7 executor, 5 mutation-tester, 2 connector, 1 scout, 1 sentinel; m_flash roles 19/34, attack 23/34; 34/34 reports, 0 dead; integrated by amendment (below). Round total 74 seats, no residual call.
 
 Stale-lane: respawn-per-round driver, no other mission of this lane open.
 
@@ -98,6 +98,7 @@ the scratch); gcc 16.2.1, bubblewrap 0.13.1 and libX11 were already installed. p
 | `4d00e6d8` | wave-2 spec and dispatch | — |
 | `10d2e977` | post-hoc N21 mirror diagnostic | — |
 | `1fa7af45` | tip re-measure, round-37 attribution audit at tip, falsify ready marker | — |
+| `ef2fba06` | wave-2 reports and results (34/34), outcome appended to lesson | lesson §Wave 2 outcome |
 
 ## Before → after measurements
 
@@ -115,6 +116,16 @@ the scratch); gcc 16.2.1, bubblewrap 0.13.1 and libX11 were already installed. p
   - Verdict: **frozen predicate met**. Score **7 → 7 held** (L0 cap). Admission also rests on the wave-1 non-author-model re-reads (pytest parity, independent re-derivation) and is pending the wave-2 re-reads.
 - **Frontier fix shown able to fail:** `python3 plans/mutant_direction_check.py --lane .` → `mislabelled=1`, exit 1 on N21;
   V7 Control B (`build/R38MapErratum/controls.txt`) → `labelled enforced, receipt derives partly`.
+
+### Amendment — wave 2 integrated (after WAVE-DONE falsify)
+
+Wave 2 (34 seats, 34 reports, 0 dead; `.ufo/waves/round-38/falsify-results.json`, committed `ef2fba06`; summary appended to
+`corpus/lessons/round-38.md` §Wave 2 outcome). Verdicts unchanged: `F38C1Rerun` `c1-rerun-fail-killed-21/22`, `F38CritN21`
+`n21-silence-unreachable` (C1 honest stop confirmed); `F38C2Rerun` pass + probe byte-equal, `F38IndepProbe` 8/8, `F38ReopenRows`
+2/2, `F38EntryQuotes` 28/28 quotes (2 unsupported sentences), `F38MapV7Control` 5/5, `F38CritSeparability` yes, `F38NoHarmSweep`
+31/31 0 new red, `F38CritNoHarmDiff` 0 removed lines, `F38RevScorecard` 0 self-report mismatches. Routed to round 39: C2 informed
+filler stays green (`F38CritSkipControls`), C2 counter 3/5 mutants caught, direction check 1/3, extra gate mutants 29/36,
+battery defects 2+2 (p6m/p7m, d4m/d5m), 7 overclaims, lesson/QUALITY 2+2 defects, sentinel 7 findings, 22 scratch leftovers.
 
 ## Sources & frontier
 
