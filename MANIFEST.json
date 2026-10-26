@@ -27099,6 +27099,49 @@
    "notes": "digest: 2026-10-26T18:37:23-03:00 launch kaidoku round=42 pgid=1215130 driver=hyaku-inline attempt=1; 2026-10-26T20:19:51-03:00 complete kaidoku round=42; hyaku-inline attempt=1. Step 1 ok: report 1f92fd54 by kaidoku-shokunin after lane tip af50af81; SHONEN 4/4 [~]; 9 cited commits ancestors of refs/heads/main; jj-lane state ahead=0, porcelain empty; prompt carries the template contract. Range includes round-41 L1 commit ae5dc3f3 (disclosed). Defects (status-neutral): D1 round total 43 < run-9 floor 64, no wave 2; D2 pre-file gate GREEN at af50af81 asserted without committed output. Routed R42-V1..V5: size >=64 + falsify wave; commit gate runs; in-SKILL unscored/stopped status for rule blocks 20/21 (block 20 now reads superseded by 21); generator must refuse undeclared-vs-observed tuples (R42-CL1, QUALITY 85); provenance trio first in r42 v3-core entry. SHONEN boxes look non-author checkable; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 47,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 47,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 47
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "terminal selection versus the resolver: answers which desktop entry xdg-terminal-exec 0.14.3 (SUPER+RETURN) selects and why, read-only (no process, no socket); print reproduces the resolver's stdout/exit, explain traces lists/candidates/shadowed paths/rejections, --observed compares with a captured run (tools/mado-terminal.py, selftest 43/43, live AGREE)"
+   ],
+   "report": ".ufo/reports/round-47/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-47-verifier-spotcheck.md@579f694b45c797a9c39761fdb4f9e0a1b71b3585",
+    "rechecks": "C1 re-measured: tool absent->present; selftest 43/43 from committed bytes (sha b84d5c4f = live receipt); live resolver capture (--print-id/--print-path/--print-cmd, fresh cache) Alacritty.desktop at user override, explain --observed AGREE exit 0; empty arg refused exit 2; PRED-C1 MET at 0c699605 and f2b8568b, controls 0 of 28, h12 32/0 evidence-verified (counter not executed); seat confirmed H1/H2 fixed hermetically. C2 re-measured: entry 0->1, knowledge 63->64, rows 262->276, base [UNK] terminal-route-r17.md:144-145 answered; 10 script + 2 README locators verbatim on re-fetched tag (sha 89f2be9a = host); seat 30+ more agree, W1-W3 corrected; PRED-C2 MET receipts, controls POS 0 / 10 negatives 1. Harm watch: SCORECARD pure append (+45), round deletes 0 lines, axis receipts 3/3 MATCH (64/64, 82/82, 12/12). Discernment 5/5 agree (admits S326, S329, S328 tier B; rejects xdg-specs MR !87, basedir spec); S330/S327 quotes re-opened; census W04x17 + W01 S277, mado ok, exit 0."
+   },
+   "commit": "mado-shokunin@d40189c924e01dc1cbe290474eb4256d343590d4",
+   "closed_at": "2026-10-26T23:33:33Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-10-26T18:35:18-03:00 launch mado round=47 pgid=1078180 driver=hyaku-inline attempt=1 / 2026-10-26T20:24:36-03:00 complete mado round=47; hyaku-inline attempt=1. Step 1 clean: report landed by mado-shokunin at 6fd13912 (after lane tip, before complete line), SHONEN 4/4 [~], 7 cited commits exist and are ancestors of master, jj-lane state ahead=0 clean, prompt = template rendering + hyaku addendum. Defects routed (status-neutral): D1 C1 contract narrowed post-freeze without re-registration (landed docstring adds HOME unset / FIFO entry / symlink loops to out-of-contract; tool exit 2 where pin exits 1 or blocks); D2 report's session-material findings=128 at tip has no committed receipt; D3 readdir-order fixture blind spot (w2/ExecC1Determinism) unrouted; D4 entry Limits locator terminal-route-r17.md:150-151 should be :149-150. Carried: R3 marker install, R4b round-45 errata, M47-10 fixture schema v2, CritC1Explain cmd= compare, SentC1Sandbox F1-F4. SHONEN boxes 2 and 3 reproduced by a non-author (live AGREE; docstring usage ran without oral context); promotion is operator-owned. Operator notes carried: M46-10 monitor serial, R3 red gate.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
