@@ -26087,6 +26087,49 @@
    "notes": "Dispatch digest: 2026-10-26T13:00:48-03:00 launch kengaku round=40 pgid=210514 driver=hyaku-inline attempt=1; 2026-10-26T15:07:58-03:00 complete kengaku round=40; hyaku-inline attempt=1. Report 58126ecd by kengaku-shokunin (15:07:21, after lane tip 5b73c5e8 15:05:43); 9/9 cited hashes ancestors of master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0; prompt = template with placeholders only; both waves (37/37, 35/35) integrated before filing. Defects (status-neutral): D1 host-safety breach - wave-1 seat R40CritC1Counter wrote a git shim into shared /home/vgpnk/.local/bin, hit other lanes ~14:05-14:07 (disclosed, neutralized, absent at closure); D2 plans/round_close.py and the tip_receipts derived mapping lack SKILL registry rows (addendum only); D3 report census-after line omits the unchanged 15 W04. Routed to round 41: R1 C1 counter soundness (A1/A2, writable host fs, F1-F6; clean PATH + read-only host fs), R2 seat host-write hygiene, R3 register round_close.py and price tip_receipts/round_close residuals, R4 4 of 21 mutants not advertised - count adv cells separately, R5 carried r39 residuals and round40_c2_verify --work traceback. Discernment graded improved by the outside check (lane self-graded unprovable-but-better). SHONEN all [~]; boxes 1-2 look non-author checkable (operator-owned promotion).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 44,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 44,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 44
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "state-aware rule size versus reported size join: FULLSCREEN/MAXIMIZED verdicts and NOT_COMPARED exit 5 (tools/mado-geometry.py)"
+   ],
+   "report": ".ufo/reports/round-44/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-44-verifier-spotcheck.md@0c89478af821a6424c9ac922eafe02e39630cf4f",
+    "rechecks": "C1 re-measured: tool sha e3c2e471->1da3ddae; own dumps base DIFFER exit 1 -> tip FULLSCREEN/MAXIMIZED NOT_COMPARED exit 5 and FULLSCREEN+AGREE OK exit 0; selftest 73->94; counter v2 base 15/26 MISSED -> tip 8ac15c41 26/26 MET, clause r 37/37; live NO_MATCHING_CLIENT exit 3 reproduced. C2 re-measured: entry absent->present, knowledge 60->61, rows 234->238; counter v2 0/1 -> 1/1 MET at tip; 5/5 upstream pins byte-equal today, quotes located; sampled entry claims supported at receipt lines. Evidence-verified (gate not executed): axis-base/axis-tip mismatched=0 (tip receipt at 74c606a; 74c606a..8ac15c41 wave-only), ctl-c1-v2 0/20, ctl-c2-v2 0/11. Axis inputs re-derived: README links 60->61, QUALITY numbered 81->84. Spot-check 5/5 agree (ADMIT r12, S298, REFUSE r13, S164 used-by, S301). Census mado ok exit 0."
+   },
+   "commit": "mado-shokunin@8ac15c412051874836e0db36b1178723ade6c340",
+   "closed_at": "2026-10-26T18:19:38Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete: 2026-10-26T13:00:54-03:00 launch mado round=44 pgid=304371 driver=hyaku-inline attempt=1 / 2026-10-26T15:12:15-03:00 complete mado round=44; hyaku-inline attempt=1. Conformance clean: report 5c0676be by mado-shokunin after lane tip; 8 cited commits ancestors of master; ahead=0, porcelain empty; prompt template-conformant; L2 38+33 seats, 0 dead. Routed defects: D1 session material tracked at 8ac15c41 - .ufo/waves/round-43/w1/ExecLiveHost/host-clients-live.json and .ufo/waves/round-43/w2/SentLiveRun/dump-now.json each carry 4 live window titles (SKILL.md:343 rule 4); SentLiveReads S1 flagged the first, lesson silent, second unflagged - scrub both to the 7-key shape of round-43 fetch/host-clients-r43.json in a new commit and sweep. OPERATOR: titles remain in pushed history (2a3707c8, 58466627) unless history is rewritten - operator's decision, not a lane action. D2 SCORECARD Round 44 claim rows carry no after value/self-verdict (point to receipts) - append. D3 tip receipts measured 74c606a not 8ac15c41 (equivalent, state it). D4 C1 v2 base share nonce-dependent (receipt 11/26, re-run 15/26). D5 open v2 predicate defects (C1 cheat-h, M01; C2 clause j whole-file locators, 18 mutant survivors) - re-register before reuse. D6 round-43 D2 S290-S297 supersession still deferred. D7 w2/ConnCalibration content mismatches - errata. SHONEN: box 2 reproducible by non-author (NO_MATCHING_CLIENT exit 3 reproduced), box 3 rests on committed independent rebuilds; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
