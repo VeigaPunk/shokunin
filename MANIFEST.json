@@ -25584,6 +25584,47 @@
    "notes": "Dispatch digest: 2026-10-26T03:23:52-03:00 launch kengaku round=39 pgid=2178757 driver=hyaku-inline attempt=1; 2026-10-26T05:21:44-03:00 complete kengaku round=39; hyaku-inline attempt=1. Report 981d47a3 by kengaku-shokunin (05:20:44, after lane tip 9d3aff94 05:19:28); 10/10 cited hashes ancestors of master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0; prompt = template with placeholders only; both waves (36/36, 34/34) integrated before filing (r37/r38 R1 shape did not recur). Defects (status-neutral): D1 round-38 L1 commit ef2fba06 landed 03:37:53 inside the round-39 window (disclosed; only corpus/lessons/round-38.md outside .ufo/waves, no frozen input moved); D2 plans/order_check.py (gate) and plans/round39_c1_audit.py lack SKILL.md registry rows; D3 git_leak_probe.py --work on an absent dir -> FileNotFoundError traceback, exit 1 undeclared; D4 frozen frontier sentence (order class in corpus/defects.jsonl recurrence=2) not done (disclosed); D5 two seat scratch dirs left (disclosed); prompt committed under lane identity (5c263b30). Routed round 40: R1 register order_check/round39_c1_audit; R2 probe --work handling; R3 defects.jsonl order row via frozen defect_ledger check; R4 lane-routed residuals (order_check 2/6 mutants + fail-open, Q30 wording, tip_receipts skips new receipt, ledger-tip clone-mode rows, direction check cannot load r39 list, C1 counter A1/A3/A4/A5 re-freeze); R5 seat scratch hygiene. Operator: SHONEN box 2 checkable by a non-author this round (probe receipt reproduced byte-equal from a clean clone); box 3 nearly (D3); box 1 not (F39CritSkill 12/15).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 40,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 40,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 40
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-40/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-40-verifier-spotcheck.md@8b7c4132680103cd7ac1590ef668f42259f9cd6c",
+    "rechecks": "C1 evidence-verified + plain re-measure (counter/selftest not executed): diff confined to run_selftest (+36/-0, 5 fixture cases), probe_storage_arm sha256 71e6007e... identical at base/c707e356/tip, no self-reading in run_selftest, 124 check calls = receipt PASS 124/124, counter sha256 8b06de18... frozen a447b67b..tip, receipts survivors 9 -> 0 with full revs. C2 content re-measured: entry absent at base, 115 lines at tip; 6/6 snapshot digests match SHA256SUMS and live upstream (util.c 381618b6, trans.c 637c1165, hook.c 99f1044b, meson_options 89e5b350, alpm-hooks.5 2970cb35, PKGBUILD 32d40dfd); EX1-EX8 8/8 supports incl. appended corrections; S225 reproduced live (strings idx 1277 /usr/bin/bash, 14/69 NeedsTargets); SOURCES 218 -> 226, malformed 0; receipts d4a2bb94 rules 0 -> 8. No-harm: only deletions are S208/S209 used-by cells; LOG/SCORECARD/QUALITY/README/SKILL append-only; 7 gates + r39 C2 exit 0 at aad01138, self-assessment 27/0 at e3bc9340; axes counts equal at aad01138 and tip; sources-census validate tsukuroi ok exit 0. Seats: R40C1Recheck, R40C2Recheck, R40NoHarm (reviewer, closure-dispatched)."
+   },
+   "commit": "tsukuroi-shokunin@0e5805a1f149bd2ed9fe0db2e0a832afb034a835",
+   "closed_at": "2026-10-26T08:31:10Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest (.ufo/watchdog.log): 2026-10-26T03:48:27-03:00 launch tsukuroi round=40 pgid=2520481 driver=hyaku-inline attempt=1; 2026-10-26T05:19:42-03:00 complete tsukuroi round=40; hyaku-inline attempt=1. Report 3d5b808b by tsukuroi-shokunin 05:18:55 (after lane tip 0e5805a1 05:18:45); 10 cited commits exist and are ancestors of master; lane ahead=0, porcelain empty, ls-remote = 0e5805a1; prompt 0 missing template lines, hyaku addendum §6; SHONEN heading 1, 4 [~] lines for 4 boxes. Discernment spot-check: admits S219/S220/S221/S222/S224/S225/S226 agree (live re-open, digests equal Gate), reject of staged 'every path inside them must be absolute' agrees (util.c:679-687 chdir('/')). Expansion graded unchanged (held update-safety Core deepened, no uncovered ground; stricter than the r39 closure's same-plane 'improved'). Routed to tsukuroi r41: (1) R40-ANSWER-KEY counter amendments under QUALITY 88 (C1 declare-f/${0}/BASH_ARGV0 prologue + H5/H6/H9 as should-fail arms; C2 per-row proposition check vs token-list writer and C2CritXFalse); (2) C1 counter first_fails always empty (stderr), neutral_pass flaky, scratch kept after Ctrl-C; (3) R40-TMP-MISROOT: check-self-assessment.py --scratch; (4) S220 anchor 'meson call 110-117' is 111-117; (5) census W04 34 -> 39 (S221-S224, S226 same-URL distinct scopes) to be named in the next report. SHONEN: box 1 looks non-author checkable (EX table re-verified 8/8); box 2 not replayed; operator-owned promotion.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
