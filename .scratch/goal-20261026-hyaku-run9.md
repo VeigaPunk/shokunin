@@ -89,11 +89,11 @@ closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At 
 | tameshi | 1 | r48–r57 | — | r48 attempt 3 in flight |
 | tabi | 2 | r32–r41 | r32 admitted (`rounds[756]`) | r33 in flight |
 | souji | 3 | r33–r42 | — | r33 in flight (fresh-start) |
-| kasegi | 4 | r36–r45 | r36 admitted (`rounds[755]`) | r37 closure in flight |
+| kasegi | 4 | r36–r45 | r36, r37 admitted (`rounds[755]`, `[758]`) | r38 in flight |
 | kaidoku | 5 | r39–r48 | r39 admitted (`rounds[757]`) | r40 in flight |
-| kengaku | 6 | r40–r49 | — | r40 closure in flight |
+| kengaku | 6 | r40–r49 | r40 admitted (`rounds[759]`) | r41 in flight |
 | tsukuroi | 7 | r41–r50 | — | r41 in flight |
-| mado | 8 | r44–r53 | — | r44 in flight |
+| mado | 8 | r44–r53 | r44 admitted (`rounds[760]`) | r45 in flight |
 
 ## Incidents
 
