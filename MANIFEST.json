@@ -24826,6 +24826,47 @@
    "notes": "Dispatch/complete: 2026-10-25T20:28:53-03:00 launch tameshi round=47 pgid=2933816 driver=hyaku-inline attempt=1; 2026-10-26T01:03:32-03:00 complete tameshi round=47; hyaku-inline attempt=1. Conformance ok: report by tameshi-shokunin 445b71ab (after cited tip 663e0682), SHONEN 4x[~], 5 cited hashes ancestors of master, ahead=0, porcelain empty, prompt carries template contract (0 missing lines). Status-neutral defects: (1) undispatched wave 2, 40 seats below the 64-100 floor; (2) orchestrator commit 03facb22 rewrote seat report w1/T47ConnCross.md after the report (uncited); (3) counter selftest tallies (35/35, 14/14, 24/24) only in seat reports, addition-lint 7/7 uncommitted; (4) criterion-93 falsifier receipt missing; (5) lesson round-47.md:117-118 deps sets disagree with rows and deciding run. Not admitted: C1 honest miss (total 22->2, target 0), errata appended, no axis harmed. Routed: supersede the six-leg regression ledger row with a stable observation and make C1 observation repeatable; commit the selftest and c93 receipts; lesson deps correction; cite QUALITY 10, not PROVINCE:14-18, for the r8-predictive reject; carried r45 fetch-receipt/anchor-refresh, dead brace_depth_at helpers, C1/C3 counter survivors. SHONEN boxes not fully non-author checkable; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 74,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "kotodama",
+   "lane_round": 74,
+   "lanes": {
+    "kotodama": "ok"
+   },
+   "lane_rounds": {
+    "kotodama": 74
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-74/kotodama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kotodama-shokunin/corpus/lessons/round-74-verifier-spotcheck.md@f556d1049fe651d3d63975600b13acd9fb686f15",
+    "rechecks": "Re-measured over committed bytes: C at f7104cb/5e4796c/c4bf61a/5c5c9d3 (setting files 0->2, registry rows 804->808, litmemo/tuduku/chinawriter rows 0->4, CJK-term files 0->2, knowledge md 247->249; S877 used-by the only in-place SOURCES change; census validate exit 0). Ca: 12 ANNOTATE rows in SCORECARD Corrections r74, LC-09 SKILL.md:594 94->95 (95 files), six round-73 w2 files tracked with ledger sha256 6/6 equal, round-73 PASS receipts 0->2 lines. Evidence-verified (not executed): ACCEPT-C-74 PASS 13/13 at c4bf61a, ACCEPT-CA-74 PASS 11/11 at its own landing 5e4796c, selftests 69/69 and 179 checks/41 scenarios, counter sha256 equal to committed bytes and blobs unchanged freeze->HEAD. Ca FAIL 10/11 at combined tree is APPENDONLY on S877 used-by only (SOURCES rule-2 permitted) -> counter-scope defect, Ca ruled verified at its own landing (AXES separability). Spot-check 8 decisions: 4 admits agree (S881, S883, S884, S877; live bytes sha256 equal to recorded), 2 rejects agree (staged S882, S895), 2 disagree (staged S899/S900 reject reasons false: anchors present on own pages; mispairing is register S816/S817)."
+   },
+   "commit": "kotodama-shokunin@5c5c9d327c0102b7104cdf28aaa249224604c53f",
+   "closed_at": "2026-10-26T04:12:23Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-10-25T20:48:59-03:00 launch kotodama round=74 pgid=510969 driver=hyaku-inline attempt=1 | 2026-10-26T01:03:32-03:00 complete kotodama round=74; hyaku-inline attempt=1. Report landed by lane identity in fleet 3a740160 after lane 6ec552b3; all cited hashes ancestors of main; jj-lane state ahead=0, porcelain clean; prompt carries template contract (sections 1-5 identical headings, child-lane items in 4 and 6). Defects (status-neutral): D1 report's 'see the closing line below' pushed-hash pointer dangles; D2 orchestrator commits 92b8d4b8 (in-flight snapshot) and 5c5c9d32 (ConnectorAdjacency wrap-up) under lane identity not named in report; D3 run-7 shape directives missed per lane's own count (w1 attack 24% <25%, strict exec/scribe/simplifier 40.5% <50%). Routed to round 75: R1 accept-ca APPENDONLY must exempt SOURCES rule-2 cells; R2 lesson Gate reject rows for staged S899/S900 carry false reasons (correct as adopt-with-renumber; QUALITY criterion: reject reason names the artifact observed); R3 cite pushed hash inline; R4 lane self-routed items (S877 scope cell, SHONEN.md:6 412-row REPAIR, README index 245/247, sweep.py first-footer, junk receipts post-freeze, accept-c passes at lands==freeze). SHONEN all [~]; boxes 2-3 appear non-author-checkable (exercised by this closure), boxes 1 and 4 need a dedicated read; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
