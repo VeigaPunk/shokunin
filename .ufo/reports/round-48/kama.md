@@ -4,16 +4,16 @@ author: kama L1 (agent `KamaR48`)
 date: 2026-10-26
 attempt: 1 (watchdog: `2026-10-26T19:05:04-03:00 launch kama round=48 pgid=3968099 driver=hyaku-inline attempt=1`; no `lane-dead-no-report kama round=48` line, so nothing was inherited; the lane was clean at launch: `jj-lane.sh state` → `ahead=0 behind=0 tracked=0 untracked=0`)
 base: `33e005827742b29772b153cda036ec9f27f653be` (round-47 verifier spot-check; lane remote tip at launch)
-lane tip: `__TIP__` (`git ls-remote origin refs/heads/master` prints it)
+lane tip: `4d8334af1c45bce74fa6a3904a7f6aa3a1ec630e` (`git ls-remote origin refs/heads/master` prints it; `jj-lane.sh state` → `ahead=0 behind=0 tracked=0 untracked=0`)
 measured commit: `c4b2175d2ff9466beaed039dc8330176362e7d82`; re-measured at `1541a0dd1628225b838235fe2b7b3d69ad8f50de` with the same claim values (`.ufo/waves/round-48/measured/*-final.out`, each carrying `tip=1541a0dd…`).
 Stale-lane: progressing. The driver respawns the lane each round; no other mission of this lane is open.
 
 **Round shape:** one v2 wave, `kama-r48-w1`, 69 seats, validated under policy v2 with exit 0 (`.ufo/waves/round-48/w1/dispatch.json`).
 - Role mix: critic 16, reviewer 13, executor 12, scribe 11, scout 5, mutation-tester 5, connector 4, simplifier 1, revenger 1, sentinel 1.
 - m_flash roles (executor, scribe, critic, simplifier, revenger, sentinel): 42/69 (61%). Attack roles (reviewer, critic, mutation-tester): 34/69 (49%).
-- Ready file written 2026-10-26T22:32:39Z; marker `w1.ready.dispatched` present. __WAVEDONE__
-- Reports: __YIELD__
-- Dead seats: __DEAD__. Seat K1Hist yielded "Blocked" (its own recount did not implement the definitions); no finding is taken from it. Residual call: none. **Round total: 69 seats.**
+- Ready file written 2026-10-26T22:32:39Z; marker `w1.ready.dispatched` present. WAVE-DONE received ("all 69 seats settled"; `.ufo/waves/round-48/w1/w1-results.json`).
+- Reports: `python3 tools/seat-yield.py .ufo/waves/round-48/w1 --expect-reports 69` → `seats=69 status=unknown:69 reports=69 missing=0`, exit 0 (`.ufo/waves/round-48/measured/seat-yield-w1.out`).
+- Dead seats: 0. Seat K1Hist yielded "Blocked" (its own recount did not implement the definitions); no finding is taken from it. Seat Sen2Live landed after the measured commit: one **High** availability finding — `verify_archive_member()` in `tools/kama-llamacpp-live.py` hashes an archive member of any declared size, so a 104-byte crafted archive makes record time hash ~10^15 bytes before the server starts (a DoS on an operator-supplied archive, no escape); routed to round 49 (member-size cap), not fixed this round. Residual call: none. **Round total: 69 seats.**
 - Planner seat: held by the L1 (the validator rejects `planner` and `labrat`); the planning data-walk rode on revenger Rev1Head and connectors N4Pattern and N5Mistakes.
 
 ## Work performed
@@ -32,7 +32,7 @@ Work items:
 - **Measured results `1541a0dd`** (also fixes the head §Planned pointer to round 49 — the round-42 counter wanted it); **final-tip receipts `f5c60787`**.
 - **Routed closure items:** D1–D4, D6 → C2; D5 → C1; D7 → disclosed limit and round-49 plan; D8 → fixed (frontier, no claim); D9 → lesson Mistakes row 2, and this round's regression receipts carry their `tip=` line and were re-run at `1541a0dd`.
 - **Tooling:** no installs; the round-47 llama.cpp b11909 install and archive were reused. No pacman. Seats reported no installs.
-- **Misroot sweep:** `git -C /home/vgpnk/Projects/shokunin status --porcelain` → empty (`.ufo/waves/round-48/measured/misroot-sweep.out`). Scratch `/fast/scratch/hyaku/kama-r48` removed.
+- **Misroot sweep:** `git -C /home/vgpnk/Projects/shokunin status --porcelain` → empty before the report (`.ufo/waves/round-48/measured/misroot-sweep.out`). At report time three untracked fleet-root files appeared, `=1239`, `=3900` (text "tracked-all siblings SKILL.md: near tsukuroi") and an empty `T`, written 19:55–19:56 -03; none names kama or round 48, so they are not attributed to this lane's seats and were left untouched. Scratch `/fast/scratch/hyaku/kama-r48` removed.
 
 ## Landed changes
 
@@ -46,7 +46,7 @@ Every hash is a `landed` line from `jj-lane.sh`; each maps to `LOG.md` §Round 4
 | Integration (measured commit) | `c4b2175d2ff9466beaed039dc8330176362e7d82` |
 | Measured results, head Planned pointer, measured receipts | `1541a0dd1628225b838235fe2b7b3d69ad8f50de` |
 | Final-tip receipts, end census, misroot sweep, late seat reports | `f5c607875cdd9a4e057dfc893db6a6af2216a7b1` |
-__LASTROW__
+| Wave results, seat yield, late Sen2Live report | `4d8334af1c45bce74fa6a3904a7f6aa3a1ec630e` |
 
 ## Before → after measurements
 
