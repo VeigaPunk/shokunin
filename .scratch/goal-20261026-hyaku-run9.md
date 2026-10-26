@@ -218,3 +218,9 @@ closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At 
   chousa r52 w1 seat with cwd = fleet root. Found by tsukuroi seat SentScopeFinal (F2) and by TameshiR50. The
   orchestrator moved both, bytes unchanged, to the ignored `.tower/quarantine/fleet-root-strays-20261026T2010/`
   and told ChousaR52. It is a conformance item for chousa r52's closure.
+- 20:44 -03, fleet-root stray. `tree.json` (347495 B, a GitHub API tree dump of hyprwm/Hyprland `efb50993`)
+  appeared at the fleet root; the Hyprland keymap scouting shape attributes it to a mado r48 w1 seat with cwd =
+  fleet root. The orchestrator moved it, bytes unchanged, to the ignored
+  `.tower/quarantine/fleet-root-strays-20261026T2055/` (sha256 in `SHA256SUMS` there) and told MadoR48. It is a
+  conformance item for mado r48's closure. `.ufo/reports/round-49/kama.md` (untracked at the same moment) is
+  KamaR49's in-flight fleet report, not a stray; left alone.
