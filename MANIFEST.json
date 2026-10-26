@@ -27142,6 +27142,47 @@
    "notes": "Driver digest: 2026-10-26T18:35:18-03:00 launch mado round=47 pgid=1078180 driver=hyaku-inline attempt=1 / 2026-10-26T20:24:36-03:00 complete mado round=47; hyaku-inline attempt=1. Step 1 clean: report landed by mado-shokunin at 6fd13912 (after lane tip, before complete line), SHONEN 4/4 [~], 7 cited commits exist and are ancestors of master, jj-lane state ahead=0 clean, prompt = template rendering + hyaku addendum. Defects routed (status-neutral): D1 C1 contract narrowed post-freeze without re-registration (landed docstring adds HOME unset / FIFO entry / symlink loops to out-of-contract; tool exit 2 where pin exits 1 or blocks); D2 report's session-material findings=128 at tip has no committed receipt; D3 readdir-order fixture blind spot (w2/ExecC1Determinism) unrouted; D4 entry Limits locator terminal-route-r17.md:150-151 should be :149-150. Carried: R3 marker install, R4b round-45 errata, M47-10 fixture schema v2, CritC1Explain cmd= compare, SentC1Sandbox F1-F4. SHONEN boxes 2 and 3 reproduced by a non-author (live AGREE; docstring usage ran without oral context); promotion is operator-owned. Operator notes carried: M46-10 monitor serial, R3 red gate.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 43,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 43,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 43
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-43/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-43-verifier-spotcheck.md@98020ece0674e0b569ee23aed10ffbee355b248e",
+    "rechecks": "C1 re-measured: independent bash reproduction under set -uo pipefail (missing/unreadable start point first: old idiom 0, new 1; no false positive) + committed-bytes counts st_check 45->48->49, R43-C1 0->3->4, grep -q idiom 1->0; receipts c1-before FAIL correct 8 / c1-after-c395491 PASS correct 16, counter sha256 886f92c8 unchanged since fe357001 (evidence-verified, not executed). C2 re-measured: 3 rows, 33/33 quotes match pinned lines, SHA256SUMS OK, live re-fetch of ioctl.c (git.kernel.org v7.2.11) and scrub.c (v7.1) byte-identical, host re-probe agrees with S241, bound verdicts SR1 holds/holds, SR3 holds/partly + residual holds on the one-line narrowing, SR6 holds/holds; receipts c2-before rows 0 FAIL / c2-after-c395491 PASS, counter b4602c56 unchanged. No-harm: SCORECARD append-only, ordinals unchanged, deletions only the replaced idiom and S237 used-by; self-assessment 27/0; sources census exit 0, 40 W04, rows 239->241. Spot-check: admits SR6, SR3 agree; rejects devid-never-emitted, ext4-r32 agree; S240 quote re-located."
+   },
+   "commit": "tsukuroi-shokunin@5f8b3c58bbf46128c0d924149bf795bc8199c66b",
+   "closed_at": "2026-10-26T23:37:53Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-10-26T18:37:51-03:00 launch tsukuroi round=43 pgid=1248034 driver=hyaku-inline attempt=1; 2026-10-26T20:31:55-03:00 complete tsukuroi round=43; hyaku-inline attempt=1. Step-1: report ff846a48 by tsukuroi-shokunin (20:31:15, after lane tip), SHONEN heading 4 boxes [~], 11 cited commits + base exist and are ancestors of master, jj-lane state ahead=0 behind=0 tracked=0 untracked=0, porcelain empty, prompt 3fc4f25e carries template sections 1-5 (placeholder substitutions only) + hyaku addendum; no conformance defect. Routed: R43-SR1-LIMITS-CONTRADICTION (btrfs-scrub-record-r43.md:152 says SR1 tail consequence 'was not reproduced' while :28 and w1/C2ExecTailRepro.md:136 record a harness reproduction; append correction and sweep SKILL/PROVINCE). Carried lane-recorded limits: C2 binding accepts padded/blank-prefixed or contradictory-JSON verdicts; C1 counter open channels (mount-table, uid_map, script-path, cwd; empty-btime branch); no gate reads superseded-in-part pointers; census :743 lookup case and five single-line probe readers. Operator: SHONEN boxes 1-2 look non-author-checkable (this closure reproduced the C1 task and re-opened C2 sources); 3-4 need dedicated review; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
