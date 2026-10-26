@@ -65,6 +65,49 @@ MAX_ROUNDS=$ROUND_CAP
 
 log() { echo "$(date -Is) $*" >> "$UFO/watchdog.log"; }
 
+# --- disk guard (operator directive 2026-10-25) ------------------------------
+# scripts/hyaku/disk-guard.sh owns the policy (roots, thresholds, liveness,
+# exclusions); this driver only sweeps at the head of every round and refuses to
+# spawn a lane into a filesystem that is still above SOFT_PCT after one
+# --emergency sweep. The guard is ADVISORY for the exit-code contract: a missing
+# or unusable guard logs once and never stops the driver. HYAKU_DISK_GUARD
+# overrides the path (tests point it at a fixture).
+DISK_GUARD_WARNED=0
+disk_guard_path() { printf '%s\n' "${HYAKU_DISK_GUARD:-$SHOKUNIN_ROOT/scripts/hyaku/disk-guard.sh}"; }
+
+disk_guard_missing() { # lane|'' — one warning per driver process, never a stop
+  if [ "$DISK_GUARD_WARNED" -eq 0 ]; then
+    DISK_GUARD_WARNED=1
+    log "disk-guard-warn ${1:+$1 :: }guard missing at $(disk_guard_path); disk gate disabled for this driver"
+  fi
+  return 0
+}
+
+disk_guard_sweep() { # reclaim scratch once per round; never fails the tick
+  local g rc
+  g=$(disk_guard_path)
+  [ -f "$g" ] || { disk_guard_missing ''; return 0; }
+  bash "$g" sweep >/dev/null 2>&1; rc=$?
+  log "disk-sweep rc=$rc"
+  return 0
+}
+
+disk_guard_gate() { # lane round -> 0 spawn allowed, 1 defer (logged)
+  local lane="$1" n="$2" g rc
+  g=$(disk_guard_path)
+  [ -f "$g" ] || { disk_guard_missing "$lane"; return 0; }
+  bash "$g" check >/dev/null 2>&1; rc=$?
+  if [ "$rc" -eq 1 ]; then
+    bash "$g" sweep --emergency >/dev/null 2>&1 || true
+    bash "$g" check >/dev/null 2>&1; rc=$?
+    if [ "$rc" -eq 1 ]; then
+      log "disk-defer $lane round=$n :: still above SOFT_PCT after an --emergency sweep"
+      return 1
+    fi
+  fi
+  return 0
+}
+
 # --- lane roster from conf LANES pipe-table ----------------------------------
 : "${LANES:?$CONF must define the LANES table (<id>|<repo>|<axes> per line)}"
 declare -A LANE_CWD=() LANE_AXES=() LANE_REPO=()
@@ -193,6 +236,8 @@ render_prompt() {
 launch_lane() {
   local lane="$1" n="$2" prompt pid run_cmd
   [ "$n" -le "$MAX_ROUNDS" ] || { log "cap $lane round=$n (ROUND_CAP=$MAX_ROUNDS)"; return 1; }
+  # Disk gate before the prompt exists: no prompt, no baseline, no spawn on a full disk.
+  disk_guard_gate "$lane" "$n" || return 1
   [ -n "${SUBSTRATE_CMD:-}" ] || { log "launch-fail $lane round=$n :: SUBSTRATE_CMD unset"; return 1; }
   [ -d "${LANE_CWD[$lane]:-}" ] || { log "launch-fail $lane round=$n :: cwd missing: ${LANE_CWD[$lane]:-}"; return 1; }
   prompt="$UFO/prompts/${lane}-round-${n}.md"
@@ -384,6 +429,7 @@ main() {
   local tick=0 lane n mid live
   while :; do
     tick=$((tick+1))
+    disk_guard_sweep    # reclaim driver/seat scratch at the head of every lane round
     for lane in "${LANE_LIST[@]}"; do
       n=$(round_of "$lane"); mid=$(mission_of "$lane")
       live=0; mission_live "$lane" "$mid" && live=1

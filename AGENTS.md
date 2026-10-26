@@ -12,6 +12,7 @@ No install and no build. Requirements: bash, coreutils, `gawk`, `flock`, Python 
 
 - Fleet driver (round-robin, respawn-per-round): `scripts/shokunin-watchdog.sh`
 - In-session orchestrator (current mode): `scripts/hyaku/inline.sh {queue,dispatch,verify,fail,closure,closed,advance}`
+- Disk guard (driver scratch reclamation; every driver gates on it): `scripts/hyaku/disk-guard.sh {check,status,sweep,purge-lane,watch,selftest}`
 - Source-registry census: `scripts/sources-census.sh {census,validate,overdue,shared,selftest}`
 - Root-ledger gate: `python3 .ufo/gates/root-ledgers.py --selftest`
 - Fleet status: `scripts/hyaku/status.sh [n]` · Seat gate: `scripts/hyaku/wave-slot.sh {acquire,release,status}`
@@ -60,6 +61,7 @@ This is where agents break the protocol — read it twice.
 
 - Driver gate: `python3 .ufo/gates/root-ledgers.py --selftest`
 - Census: `bash scripts/sources-census.sh selftest`
+- Disk guard: `bash scripts/hyaku/disk-guard-selftest.sh`
 - Lane VCS: `bash scripts/hyaku/jj-lane-selftest.sh` · Seat gate: `bash scripts/hyaku/wave-slot-selftest.sh`
 - A gate must exit `0` on clean fixtures and non-zero on its seeded defect fixtures.
 - Gates read surfaces they do not own and never mutate them.

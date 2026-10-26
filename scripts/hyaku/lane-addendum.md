@@ -403,3 +403,35 @@ not, and name both in the report.
      shokuknow/considerthese material may serve an already-frozen claim as ordinary §2b curation
      (a source it cites, opened this round) — never as a new or widened target. Assimilation work
      otherwise waits for the lane's next round.
+
+## 7. Scratch discipline — operator directive of 2026-10-25 (binding every round, every seat)
+
+Every long run so far has ended with `/tmp` (a 128 GB partition) at 100 %: seats and lane counters
+clone the lane and build multi-GB work trees under `/tmp`, the trees outlive the seat (SIGKILL,
+ENOSPC, kernel restart, closed round) and nothing reclaims them, so later seats die of ENOSPC in
+cascades and their deaths get scored as red legs. Run 7 lost ~20 seats this way. The driver now
+runs `{{FLEET_ROOT}}/scripts/hyaku/disk-guard.sh` (gate before every spawn, sweep during the run,
+`purge-lane` at every `advance`), and the lane side binds as follows:
+
+1. **Scratch root.** Every clone, mirror, work tree, counter `--work` dir and fixture of this round
+   lives under `$HYAKU_SCRATCH/{{LANE}}-r{{ROUND}}/<seat-name>/` with `HYAKU_SCRATCH` defaulting to
+   `/fast/scratch/hyaku` (NVMe, ~600 GB free). Create it with `mkdir -p`, pass it explicitly
+   (`TMPDIR=… --work … mkdtemp(dir=…)`), never rely on an inherited `TMPDIR`. `/tmp` is for files
+   under 50 MB only. The L1 puts the exact path into every seat prompt.
+2. **Delete on exit.** A seat removes its scratch dir before it yields — `trap 'rm -rf -- "$S"' EXIT`
+   in shell, `finally: shutil.rmtree` in Python — receipts first copied into the wave dir. The L1
+   removes `$HYAKU_SCRATCH/{{LANE}}-r{{ROUND}}` after landing; `inline.sh advance` purges whatever
+   is left. A seat that ends with its tree still on disk reports that as a defect of its own.
+3. **One live clone per seat**, `git clone --shared` / `git worktree add` / `git archive` instead of
+   full clones, and no mirror of the whole lane inside a wave `build/` dir (a 600 MB mirror is not
+   evidence; cite the revision and the command instead).
+4. **No hardcoded `/tmp` in committed tools.** A counter, probe or gate that writes under `/tmp`
+   regardless of `TMPDIR`/`--work` (`mkdtemp(dir="/tmp")`, `/tmp/<name>.XXXX` roots) is a routed
+   defect this round and a frozen-counter amendment next round; counters must honour `TMPDIR`
+   and accept a scratch argument.
+5. **Reaper notice.** The driver deletes any entry under `/tmp`, `/var/tmp` or `$HYAKU_SCRATCH`
+   that has had no live process and no file change for 45 minutes (10 minutes above 90 % usage),
+   without asking. A `/tmp` path is therefore never citable evidence (QUALITY-class defect, as
+   kotodama Q14 already rules); anything a report must point at lands in the wave dir or the
+   lane tree. Check `disk-guard.sh status` before a heavy pass; a seat that gets ENOSPC reports
+   the free space it saw and does not re-run until `status` is green.

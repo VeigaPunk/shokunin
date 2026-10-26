@@ -13,6 +13,11 @@
 #   inline.sh closure <lane>        render + commit the non-author closure prompt; prints its path
 #   inline.sh closed <lane>         hyaku closure rows for the claimed round + outcome
 #   inline.sh advance <lane>        next=round+1, record outcome, release claim (3 rejected in a row -> blocked)
+#
+# Disk gate (operator directive 2026-10-25: every long run ended with /tmp at 100 %):
+# dispatch refuses while scripts/hyaku/disk-guard.sh reports pressure (it writes
+# nothing), and advance purges the closed round's $HYAKU_SCRATCH/<lane>-r<N> tree.
+# HYAKU_DISK_GUARD overrides the guard path; a missing guard only warns.
 set -u
 FLEET=/home/vgpnk/Projects/shokunin
 H="$FLEET/scripts/hyaku"
@@ -38,6 +43,41 @@ lane_tip() { st_field "$(jjl state "$1" 2>/dev/null)" local; }
 lane_vcs_init() { # lane cwd — colocate an idle lane (dispatch/closure time only)
   [ "${HYAKU_VCS:-git}" = jj ] || return 0
   jjl init "$2" "$1" >/dev/null || { ev "jj-init-failed lane=$1"; return 1; }
+}
+
+# --- disk guard (layer 1/2, operator directive 2026-10-25) -------------------
+# scripts/hyaku/disk-guard.sh owns the policy (roots, thresholds, liveness,
+# exclusions); inline.sh is a client: `dispatch` gates on it, `advance` purges
+# the closed round's scratch tree. HYAKU_DISK_GUARD overrides the guard path; a
+# missing guard warns on stderr and lets the step proceed, so inline.sh still
+# drives a host that has no guard installed.
+disk_guard() { printf '%s\n' "${HYAKU_DISK_GUARD:-$H/disk-guard.sh}"; }
+
+disk_gate() { # lane round -> 0 dispatch allowed, 1 refused (message on stderr)
+  local lane="$1" n="$2" g rc
+  g=$(disk_guard)
+  [ -f "$g" ] || { echo "inline.sh: WARN disk guard missing at $g; continuing without it" >&2; ev "disk-guard-missing"; return 0; }
+  bash "$g" check >/dev/null 2>&1; rc=$?
+  if [ "$rc" -eq 1 ]; then
+    bash "$g" sweep >/dev/null 2>&1 || true
+    bash "$g" check >/dev/null 2>&1; rc=$?
+  fi
+  [ "$rc" -eq 1 ] || return 0
+  echo "disk pressure: refusing to dispatch $lane r$n (run scripts/hyaku/disk-guard.sh status)" >&2
+  ev "disk-refuse lane=$lane round=$n"
+  return 1
+}
+
+disk_purge_lane() { # lane closed-round -> always 0 (round close must not fail on a purge)
+  local lane="$1" n="$2" g out rc
+  g=$(disk_guard)
+  [ -f "$g" ] || { echo "inline.sh: WARN disk guard missing at $g; scratch for $lane r$n not purged" >&2; return 0; }
+  out=$(bash "$g" purge-lane "$lane" "$n" 2>&1); rc=$?
+  if [ "$rc" -ne 0 ]; then
+    echo "inline.sh: WARN purge-lane $lane r$n rc=$rc: ${out:-no output}" >&2
+    ev "purge-warn lane=$lane round=$n rc=$rc"
+  fi
+  return 0
 }
 
 subst() { # template lane round attempt -> stdout (literal, & safe)
@@ -84,9 +124,15 @@ queue)
   done < "$H/pool.txt" | sort -s -n -k1,1 -k2,2 | awk '{print $3, $1}'
   ;;
 dispatch)
-  lane=${1:?lane}; [ -n "${LANE_CWD[$lane]:-}" ] || die "unknown lane $lane"
+  lane=${1:?lane}
+  # Disk gate before ANY dispatch write (claim, prompt, baseline, evidence commit):
+  # a refused dispatch exits 1 having created nothing. The round number is read
+  # first only so the refusal can name it.
+  n=$(cat "$STATE/next/$lane" 2>/dev/null || true)
+  disk_gate "$lane" "${n:-?}" || exit 1
+  [ -n "${LANE_CWD[$lane]:-}" ] || die "unknown lane $lane"
   [ -e "$STATE/blocked/$lane" ] && die "$lane is blocked: $(cat "$STATE/blocked/$lane")"
-  n=$(cat "$STATE/next/$lane") || die "no next round for $lane"
+  [ -n "$n" ] || die "no next round for $lane"
   lane_vcs_init "$lane" "${LANE_CWD[$lane]}" || die "jj init failed for $lane"
   c="$STATE/claims/$lane"
   if [ -d "$c" ] && [ "$(claim "$lane" round)" = "$n" ]; then a=$(( $(claim "$lane" attempt) + 1 ))
@@ -161,6 +207,7 @@ advance)
   printf '%s\n' "$outcome" > "$STATE/outcome/$lane-r$n"
   printf '%s\n' "$((n+1))" > "$STATE/next/$lane"
   rm -rf -- "$STATE/claims/$lane"
+  disk_purge_lane "$lane" "$n"   # round-close hook: $HYAKU_SCRATCH/<lane>-r<n>; never fails the advance
   streak=0; for ((k=n; k>n-3 && k>0; k--)); do case $(cat "$STATE/outcome/$lane-r$k" 2>/dev/null) in rejected*) streak=$((streak+1)) ;; esac; done
   if [ "$streak" -ge 3 ]; then
     printf 'three consecutive rejected closures through round %s (%s)\n' "$n" "$(date -Is)" > "$STATE/blocked/$lane"
