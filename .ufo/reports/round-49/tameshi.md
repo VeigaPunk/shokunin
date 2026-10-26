@@ -1,6 +1,6 @@
 # tameshi — round 49 report (attempt 1, L1 TameshiR49)
 
-Lane `tameshi-shokunin`, branch `master`. Base `8ca67421111fa354b47b803358391d0b07fc6db9`. Freeze `14d03ea4270c6904064022b62b6faf467e5c0968`. Content (deciding) revision `bda60768afe172fe9e81359f51c835d8d53494d9`. Final lane hash `143d91e979b37ef668fee238369149a1cc4a8d6e` (`git ls-remote origin refs/heads/master` prints it). The watchdog shows no earlier attempt of this round, so nothing was inherited.
+Lane `tameshi-shokunin`, branch `master`. Base `8ca67421111fa354b47b803358391d0b07fc6db9`. Freeze `14d03ea4270c6904064022b62b6faf467e5c0968`. Content (deciding) revision `bda60768afe172fe9e81359f51c835d8d53494d9`. Final lane hash `7d3d977f39acaa5723a696dff85ab183c80ddc8b` (a receipts-only commit after `143d91e9`) (`git ls-remote origin refs/heads/master` prints it). The watchdog shows no earlier attempt of this round, so nothing was inherited.
 
 ## Work performed
 
@@ -42,6 +42,7 @@ Work items:
 | `54a52365`, `fc5ac743` | wave-2 integration (4 clause fixes, row cells, entry limits, excerpt overrides); final re-key | same |
 | `bda60768` | lesson fixes, precheck receipt, panel reveal (deciding revision) | same |
 | `143d91e9` | deciding receipts, census end, SCORECARD deciding section and capability row | same |
+| `7d3d977f` | `w2-results.json` and the late T49W2RevGenCode review (receipts only) | same |
 
 ## Before → after measurements
 
@@ -99,7 +100,7 @@ Work items:
 
 - **Shape: two v1 waves.**
   - `w1` (build): 55 seats — scribe 25, critic 9, executor 8, scout 3, connector 3, reviewer 3, mutation-tester 2, revenger 1, sentinel 1. All 55 settled with output (`w1-results.json`).
-  - `w2` (falsify): 33 seats — critic 11, reviewer 10, executor 6, mutation-tester 2, connector 2, scout 1, sentinel 1. 32 reports landed. T49W2RevGenCode left probe files (`hang.out`, `noread.out`) but no report; it is counted as dead, with no report text.
+  - `w2` (falsify): 33 seats — critic 11, reviewer 10, executor 6, mutation-tester 2, connector 2, scout 1, sentinel 1. All 33 settled (`w2-results.json`). T49W2RevGenCode reported after the deciding run; its findings (F1 major: an unreadable guard exits 1 instead of 2, unreachable in the deciding run because the counter writes readable copies; F2/F3 minor error paths) are routed to round 50, not claimed fixed. Dead seats: 0.
   - Round total: 88 seats. No residual call. The L1 held the §3 planner seat; the planning data walk rode T49RevengerLapse.
 - **Misroot sweep.** `git -C /home/vgpnk/Projects/shokunin status --porcelain` shows only `?? .ufo/reports/round-42/kengaku.md`, which is another lane's file and was left untouched. No misroot of mine (`.ufo/waves/round-49/w2/T49W2ScoutMisroot.md`).
 - **Scratch.** `/fast/scratch/hyaku/tameshi-r49` was removed after landing. The hidden panel copy remains in `~/.local/state/tameshi-r49/`; it is revealed and committed.
