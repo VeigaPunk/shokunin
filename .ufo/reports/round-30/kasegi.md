@@ -1,6 +1,6 @@
 # Kasegi round 30
 
-Round 30, attempt 1. Lane base `a94871315cafa368f79c17d8c62d71fddd967986`; freeze commit `3c5573541300ba0fd3d89372dda3d841172eaa3f`; wave dispatch commit `002e92ce07ed398334ef7cd8ca08d3fd99631351`; round work committed in `5703f9fbf70ba0717e5c6890f4c338cd5be00b7b`, final close-out commit `bc1a1e140914e65673daa586232128c964216ceb` (lane tip and pushed master). Claims frozen before data at `.ufo/waves/round-30/claims.json`.
+Round 30, attempt 1. Lane base `a94871315cafa368f79c17d8c62d71fddd967986`; freeze commit `3c5573541300ba0fd3d89372dda3d841172eaa3f`; wave dispatch commit `002e92ce07ed398334ef7cd8ca08d3fd99631351`; round work committed in `5703f9fbf70ba0717e5c6890f4c338cd5be00b7b`, close-out commit `bc1a1e140914e65673daa586232128c964216ceb`, and late wave-settlement commit `eadedef402e0e23c9e84303c6bb66100f843066e` (the final round-30 lane hash; later lane commits are outside this round). Claims frozen before data at `.ufo/waves/round-30/claims.json`.
 
 ## Work performed
 
@@ -12,7 +12,7 @@ Declared claims: **C1 depth:verifiability** (lowest owned non-retired axis, scor
 - Curated source registry and frontier (SOURCES rows 45→47; F14 13→14); re-grounded rows are documented in `corpus/SOURCES.md:89-91`; F14 appendix in `corpus/README.md`.
 - Mined mistakes M30-1…M30-5 in `corpus/lessons/round-30.md` §Mistakes; final-state errata follow in §Close-out erratum.
 - Validated one v2 wave, `kasegi-r30-build`, 64 seats. Role composition from validated dispatch: scout 6, connector 4, executor 18, scribe 13, reviewer 11, critic 4, mutation-tester 4, sentinel 2, revenger 1, simplifier 1. m_flash-routed roles (executor/scribe/critic/sentinel/revenger/simplifier) = 39/64 (60.9%); attacks (reviewer/critic/mutation-tester) = 19/64 (29.7%). Planner was the L1's canonical seat; bounded data-walk rode `ScoutDatawalk`. Evidence: `.ufo/waves/round-30/wave1-spec.json`, `wave1-dispatch.json`, `wave1/swarm-registry.json`.
-- Result aggregator `wave1-results.json` and `WAVE-DONE` were not present/received at close-out; therefore actual settled/dead-seat counts and answering model identities are **unavailable**, not inferred from dispatch. Seat report files are committed as wave evidence. No replacement seats were spawned.
+- Result aggregator `kasegi-r30-build-results.json` and `WAVE-DONE` arrived after the first report landing; the orchestrator result file reports **64/64 seats settled** but every seat `output` is `null` because the orchestrator kernel restarted mid-wave and outputs were not retained. Seat reports in `.ufo/waves/round-30/wave1/` remain the usable wave evidence. Actual settled/dead-seat counts and answering model identities are therefore not inferred beyond the orchestrator settlement line and the on-disk reports. No replacement seats were spawned.
 - Tool installs/upgrades: none; no pacman transaction.
 
 ## Landed changes
@@ -20,6 +20,7 @@ Declared claims: **C1 depth:verifiability** (lowest owned non-retired axis, scor
 - C1 instrument changes — tied to intended round-30 LOG entry, **not landed**: LOG append failed because `read` repeatedly returned stale tag `#B26C` while `edit` rejected the current file hash `#114E`; no LOG bytes changed. This is an explicit protocol conformance defect. Evidence: `corpus/lessons/round-30.md` §Close-out erratum. Changes themselves landed at `5703f9f`.
 - C2 F14 admission, captures/manifest, registry/frontier, proposal ledger, and SCORECARD round result — tied to intended round-30 LOG entry, **not landed for the same editor hash inconsistency**; changes landed in `5703f9f` and `bc1a1e1`. SCORECARD appended the round results; no capabilities added.
 - Final lesson, recheck repair, and post-commit receipt — `bc1a1e1`; `corpus/lessons/round-30.md`, `.ufo/waves/round-30/post-commit-recheck.sh`, `.ufo/waves/round-30/post-commit-recheck-output.txt`.
+- Late wave-settlement receipt and late seat reports — `eadedef`; `.ufo/waves/round-30/kasegi-r30-build-results.json` records 64/64 seats settled with null retained outputs, plus late reports `wave1/ConnHarm.md`, `wave1/CritMeta.md`, `wave1/ExecControlC1.md`, `wave1/RevC1Controls.md`, and `.ufo/waves/round-30/c1-controls/c1-after.txt`.
 
 ## Before → after measurements
 
