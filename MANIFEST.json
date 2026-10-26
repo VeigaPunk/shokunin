@@ -24867,6 +24867,49 @@
    "notes": "Driver digest: 2026-10-25T20:48:59-03:00 launch kotodama round=74 pgid=510969 driver=hyaku-inline attempt=1 | 2026-10-26T01:03:32-03:00 complete kotodama round=74; hyaku-inline attempt=1. Report landed by lane identity in fleet 3a740160 after lane 6ec552b3; all cited hashes ancestors of main; jj-lane state ahead=0, porcelain clean; prompt carries template contract (sections 1-5 identical headings, child-lane items in 4 and 6). Defects (status-neutral): D1 report's 'see the closing line below' pushed-hash pointer dangles; D2 orchestrator commits 92b8d4b8 (in-flight snapshot) and 5c5c9d32 (ConnectorAdjacency wrap-up) under lane identity not named in report; D3 run-7 shape directives missed per lane's own count (w1 attack 24% <25%, strict exec/scribe/simplifier 40.5% <50%). Routed to round 75: R1 accept-ca APPENDONLY must exempt SOURCES rule-2 cells; R2 lesson Gate reject rows for staged S899/S900 carry false reasons (correct as adopt-with-renumber; QUALITY criterion: reject reason names the artifact observed); R3 cite pushed hash inline; R4 lane self-routed items (S877 scope cell, SHONEN.md:6 412-row REPAIR, README index 245/247, sweep.py first-footer, junk receipts post-freeze, accept-c passes at lands==freeze). SHONEN all [~]; boxes 2-3 appear non-author-checkable (exercised by this closure), boxes 1 and 4 need a dedicated read; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 43,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 43,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 43
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "coverage": "improved",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "hexrun-census"
+   ],
+   "report": ".ufo/reports/round-43/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-43-verifier-spotcheck.md@9d9cc93ec50783cd114829a91757b90d57c78dc6",
+    "rechecks": "Fresh clones at base 6897ead5, measured 25df591a, tip 9307b15e; no lane gate executed. C1 re-measured: tools/round* paths absent from SKILL.md 16 -> 0 (of 21), 19 registry rows with 19/19 sha256 prefixes equal to the tip blobs, spotcheck count 29 and SCORECARD row 28 -> 29, README hidden entries, D-C correction appended; gate selftest and counter receipts evidence-verified (base.c1 mismatches=42, after.c1 mismatches=0, gate-after registered 31 unregistered 0). C2 re-measured with an independent census: base tokens 766 distinct 210 lane_oid 136 md5 1 residual 73; measured tokens 778 distinct 215 lane_oid 138 md5 1; residual 76 classified against the ledger as upstream_ok 65, unverifiable 9, wrong 2, unknown 0; 5 upstream oids and the 404 wrong row re-queried with gh api; selftest 18/0 evidence-verified. C3 re-measured: ground 0 -> 5 files; release and PR 58552 re-fetched, bodies identical to the copies, quotes located; preload.py v0.31.0 re-fetched sha256 equal, lines 70-75 one /health 200/503. Spot-check: admits S480, S481 agree; rejects S440 (duplicate of S004), S438 (PR 46811 open, unmerged) agree. sources-census validate exit 0 (93 W04, 1 W01 S481, 0 E); census rows 222."
+   },
+   "commit": "kama-shokunin@9307b15e0731f91efbd17ea10ef0d579fc1c9065",
+   "closed_at": "2026-10-26T04:15:40Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-10-25T22:25:38-03:00 launch kama round=43 pgid=4093527 driver=hyaku-inline attempt=1; 2026-10-26T01:03:33-03:00 complete kama round=43; hyaku-inline attempt=1. Conformance (status-neutral): round short, 38 seats of a 64 floor, 48-seat falsify wave generated but never dispatched, attack share 3/38; lane committed with plain git from fresh clones (jj-lane.sh refused the then-detached parked worktree), all commits on the remote branch; at closure the parked worktree is attached at the tip and clean (ahead=0, tracked=0, untracked=0), so L0 kama round-41/42/43 parked-worktree lines can be answered or closed by the operator. Routed to the lane for round 44: D1 tip commit 9307b15e inserted the round-43 measured-results block inside the SCORECARD ## Planned pointer sentence (lines 53-67; correct at 25df591a); D2 register the vLLM preload.py v0.31.0 code source as its own code/A row so the entry's process claim does not rest on tier-C S481 plus an unregistered copy (validate W01); D3 report and lesson omit the W01 in census-end-mirror.out; D4 no tip-side gate-registry-check --selftest receipt; D5 stray backticks in the two round-41 registry pins and a malformed timestamp in one ledger note; carried: counters prove facts not sufficiency (W1R01-R03, 20/53 mutants survive), separability controls unbuilt, held-entry defects recorded in the lesson but unmarked (served-model-id-resolution.md:46 CANNOT-ANSWER.md absent). SHONEN boxes all [~]; none fully non-author checkable from this round; promotion operator-owned. Re-dispatch of the falsify wave is the orchestrator's call.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
