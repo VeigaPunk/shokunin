@@ -124,7 +124,7 @@ closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At 
 | kasegi | 4 | r36–r45 | r36, r37 admitted (`rounds[755]`, `[758]`), r38 rejected-honest-stop (`[762]`), r39 rejected-honest-stop (`[771]`, `13277204`; attempt 2 after attempt 1 hit the request budget; C1 not verified (G2 red, 7/8), C2 verified; expansion improved) | r40 in flight (KasegiR40, ~18:40) |
 | kaidoku | 5 | r39–r48 | r39 admitted (`rounds[757]`), r40 rejected-honest-stop (`[768]`; C1 3/4 counter suffix defect, C2 met) | r41 in flight (KaidokuR41, ~17:12) |
 | kengaku | 6 | r40–r49 | r40, r41 admitted (`rounds[759]`, `[766]`) | r42 landed (report `987413e0`, lane `f9bbee69`; 72 seats; C1 14/14 mutants killed, C2 circuit-fibsqrt admitted; wave-2 m_flash share 14/33 below the 50% rule, disclosed); closure in flight (CloseKengakuR42) |
-| tsukuroi | 7 | r41–r50 | r41 rejected-honest-stop (`rounds[761]`) | r42 in flight |
+| tsukuroi | 7 | r41–r50 | r41 rejected-honest-stop (`rounds[761]`) | r42 landed (report `cca21e97`, lane `12421a73`; 77 seats over two waves; C1 verified under the frozen predicate but counter sufficiency falsified by fixture/uid-0 variants, C2 not verified (kill rule fired on SC1/SC3)); closure in flight (CloseTsukuroiR42) |
 | mado | 8 | r44–r53 | r44, r45 admitted (`rounds[760]`, `[767]`; r45 one 41-seat wave, routed as a defect) | r46 landed (report `b25732fc`, lane `edc14789`; 66 seats; C1 v3 110/110 + 150/150 TARGET_MET, C2 v2 admitted 1/1; predicates re-registered before data; one 3.3 MB seat file left untracked, disclosed); closure in flight (CloseMadoR46) |
 
 ## Incidents
