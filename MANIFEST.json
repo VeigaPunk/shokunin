@@ -26041,6 +26041,52 @@
    "notes": "Driver digest (.ufo/watchdog.log, mutable; lines 1533/1537 at read): 2026-10-26T13:52:56-03:00 launch kasegi round=37 pgid=1603012 driver=hyaku-inline attempt=1; 2026-10-26T15:02:47-03:00 complete kasegi round=37; hyaku-inline attempt=1. Step 1: report 3aa4ed4d by kasegi-shokunin (15:02:03, before complete); SHONEN heading 1, 4x[~], 0 [x]; all 13 cited hashes are commits and ancestors of master; jj-lane state ahead=0 behind=0, porcelain empty; prompt carries template s1-s5 + hyaku addendum s6 + scratch s7. Branch tip at closure 83975acc (15:03:15, .ufo/waves/round-37 results json only). Routed defects (kasegi owes next round): D-A PROVINCE.md:80-152 and corpus/README.md r37 append carry pasted ScribeFrontierAmendments scaffolding (s3/s4 sections, duplicate F20 row in PROVINCE, unbalanced fences; README lost its Round-37 admission heading) - append a named correction + a block-sha check; D-B all-gates.txt grades 9492c776 while report/SCORECARD/SHONEN assert 14/14 at 2387dcf6/aa88877b with no committed transcript (three different 'final' heads); D-C 7 unresolved <pending> markers in corpus/lessons/round-37.md and stale 'entry not landed' line 85; E1 placeholder limb passed 9492c776 whose SCORECARD/SHONEN held <r37-final-head>/<r37-final-lane-hash>/<fill> - widen vocabulary; D3 recurrence: 83975acc landed after complete, and the report's 'all six routed defects closed' is untrue for D3 (no E-check); D-D SCORECARD r37 'Final lane commit: f3246559' labels an ancestor as final (qualified); D-E /fast/scratch/hyaku/kasegi-r37/build-spec.py left (report says scratch empty). Operator: SHONEN box 2 stays [~] (no new end-to-end task) and box 4 'PROVINCE.md still accurate' is contradicted by D-A; boxes not fully checkable by a non-author.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 40,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 40,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 40
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "improved",
+    "novelty": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "tripwire-mutation-counter",
+    "binary-db-grader-probe",
+    "round-close-check"
+   ],
+   "report": ".ufo/reports/round-40/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-40-verifier-spotcheck.md@e50c134556b4ba48e29dc7ff364e90d6ef07a3f3",
+    "rechecks": "C1 evidence-verified, not executed (registered gate round40-c1-mutants): control-c1-nothing BATTERY fixtures=0 MUTANTS total=21 killed=0 survived=21 PREDICATE C1 fail exit=1 -> measure-final (ec172168) and measure-tip2 (7984fd30) fixtures=21 killed=21 survived=0 invalid=0 PINS-AFTER mismatched=0 PREDICATE C1 pass exit=0, line-identical; plain: counter MUTANTS=21 (A11 L7 O3), 21/21 old strings unique in the unedited tools, frozen-digests 11/11 OK, battery40 21 fids 1:1 with mutants, static review of 7 modules honest (no PATH/environ/subprocess/self-read/host write vectors). C2 counter evidence-verified (checks=7 defects=4 -> defects=0 PREDICATE C2 pass); probe re-measured in a clean clone at 5b73c5e8: cases=28 observed_pass=8 observed_fail=20 mismatches=0, regrade differ=0, byte-equal to receipt, --dry byte-equal, captures 8/8 OK; independent XOR-0x42 decode gives 11 rows (base 5) and a plain rw open deletes the WAL; SOURCES 111->114, knowledge 46->47, README rows 46->47. No harm: SCORECARD diff append-only, baseline(3077adbc) vs tip receipts differ only on C1/C2/anchor rows, tip_receipts byte_equal 4->6. Spot-check: admits S119/S120/S121 agree (digests/quotes re-fetched), rejects sqlite wal.html and terminal-bench-2-audit agree; census validate exit 0 (15 W04 unchanged)."
+   },
+   "commit": "kengaku-shokunin@5b73c5e8a7c605b439ee37caac2b810fed4e1fb8",
+   "closed_at": "2026-10-26T18:15:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-26T13:00:48-03:00 launch kengaku round=40 pgid=210514 driver=hyaku-inline attempt=1; 2026-10-26T15:07:58-03:00 complete kengaku round=40; hyaku-inline attempt=1. Report 58126ecd by kengaku-shokunin (15:07:21, after lane tip 5b73c5e8 15:05:43); 9/9 cited hashes ancestors of master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0; prompt = template with placeholders only; both waves (37/37, 35/35) integrated before filing. Defects (status-neutral): D1 host-safety breach - wave-1 seat R40CritC1Counter wrote a git shim into shared /home/vgpnk/.local/bin, hit other lanes ~14:05-14:07 (disclosed, neutralized, absent at closure); D2 plans/round_close.py and the tip_receipts derived mapping lack SKILL registry rows (addendum only); D3 report census-after line omits the unchanged 15 W04. Routed to round 41: R1 C1 counter soundness (A1/A2, writable host fs, F1-F6; clean PATH + read-only host fs), R2 seat host-write hygiene, R3 register round_close.py and price tip_receipts/round_close residuals, R4 4 of 21 mutants not advertised - count adv cells separately, R5 carried r39 residuals and round40_c2_verify --work traceback. Discernment graded improved by the outside check (lane self-graded unprovable-but-better). SHONEN all [~]; boxes 1-2 look non-author checkable (operator-owned promotion).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
