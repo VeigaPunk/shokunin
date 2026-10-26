@@ -94,6 +94,16 @@ Report {FLEET}/.ufo/reports/round-{rnd}/{lane}.md committed via fleet-commit.sh 
 Tooling authorization (operator, 2026-10-19): you and every seat may install/upgrade tools that help the task; first read /home/vgpnk/.omp/agent/RULES.md (official channels, update-safety gate; record tool/version/channel/reason). pacman stays paused per the addendum guard.
 """
 
+# Appended to every seat prompt (run 9: a kengaku seat planted ~/.local/bin/git; a kasegi fixture
+# driver wrote relative paths before cd and truncated the fleet root's LOG.md and SCORECARD.md).
+SEAT_GUARD = f"""
+
+# Host guard (orchestrator; applies to every seat)
+- Your process cwd is the fleet root {FLEET}: not your lane, not your scratch. Use absolute paths, or `cd` into your own scratch dir before any command or fixture driver that writes a relative path.
+- Before any git/jj mutation in a fixture or clone, assert `git rev-parse --show-toplevel` prints that fixture dir.
+- Never create, modify or delete anything in ~/.local/bin or any other PATH directory, and never write a fleet-root tracked file (LOG.md, SCORECARD.md, MANIFEST.json, ...). Write only the paths your seat spec names plus your own scratch.
+"""
+
 HOST_JOB_CAP = 100   # omp 18.12.6 clamps async.maxJobs with Math.min(100, ...) and refuses a new job while
                      # 100 jobs are running; queued, completed and service entries do not count
 SEAT_CEILING = int(os.environ.get('HYAKU_SEAT_CEILING', '96'))   # running jobs at which seat spawns stop
@@ -240,7 +250,7 @@ async def register(ready, run, occupied):
     room = SEAT_CEILING - occupied
     n = 0
     for t in todo[:max(room, 0)]:
-        prompt = tc.get('context', '') + f"\n\n# Seat {t['name']}\n" + t['task']
+        prompt = tc.get('context', '') + f"\n\n# Seat {t['name']}\n" + t['task'] + SEAT_GUARD
         try:
             h = agent(prompt, agent=t['agent'], label=t['name'])
         except RuntimeError as e:          # host cap hit mid-batch; resume next tick

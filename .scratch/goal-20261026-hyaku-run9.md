@@ -123,3 +123,14 @@ closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At 
   caller's PATH) is valid.
 - Load gate raised again, kernel only: `LOAD_MAX` 72 → 120. Since then the host has stayed responsive at load
   70–95 (`proc://` reads ~0.3 s), with 84–89 jobs visible and ~15 GiB available.
+- 15:29:11 -03, fleet-root write. Kasegi r38 seat `ExecNoHarm` ran a fixture driver that wrote relative paths
+  before `cd`, with cwd = the fleet root. It truncated the tracked `LOG.md` (to 22 B) and `SCORECARD.md` (to 51 B)
+  and created `PROVINCE.md`, `SHONEN.md`, `SKILL.md` and five `corpus/` files there. The seat restored both
+  ledgers from fleet `HEAD` blobs and removed the created paths. Orchestrator check at 15:32:
+  - `git diff --stat HEAD -- LOG.md SCORECARD.md MANIFEST.json PROTOCOL.md ROADMAP.md` printed nothing.
+  - The last ledger commit, `2df7532d` (mado r44 closure, 15:19:38), predates the incident, so no uncommitted
+    ledger bytes were lost.
+
+  Fix: the dispatcher now appends a host guard (`SEAT_GUARD`) to every seat prompt, file and live kernel: the
+  cwd is the fleet root, so cd to scratch first; assert the fixture toplevel before git mutations; no PATH-dir
+  writes; no fleet-root tracked-file writes. This is a conformance item for kasegi r38's closure.
