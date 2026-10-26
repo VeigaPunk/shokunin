@@ -24781,6 +24781,51 @@
    "notes": "Driver digest: 2026-10-25T20:07:54-03:00 launch souji round=29 pgid=818105 driver=hyaku-inline attempt=1; 2026-10-26T01:03:32-03:00 complete souji round=29; hyaku-inline attempt=1. Report 17cee42 by souji-shokunin (23:17:09) after cited lane HEAD 48e2e95; all cited hashes ancestors of master; lane pushed ahead=0, clean. Defects (status-neutral): D1 report cites census/round-29/records/final-tip-measure*.txt committed only later in ea4d798 (00:37:58), whose subject misdescribes its content; D2 no explicit cross-domain-evidence line. Routed to souji r30: commit observed green fixture output (20/20, 15/15 are prose-only; only red-before committed); correct lesson Gate reject reason for near-duplicate-threshold-r28 (and operating-point-r28), which set no threshold - sound reason is out-of-F3-byte-identical-scope/redundant (scout table); landing gate at tip findings=2 false positives + COULD-NOT-EVALUATE (r28 routed defect 3 still open); prereg SUMMARY literals omit rev=; scratch clones must drop origin (SwarmExecutor17 push to lane master, restored). SHONEN: four [~], not yet fully checkable by a non-author from committed evidence (box 3 depends on uncommitted green fixture runs).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 47,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 47,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 47
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "unchanged",
+    "operability": "improved",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "dependence-observing standing-statement counter",
+    "deterministic mutant-pool scorer",
+    "lesson-quote byte-fidelity checker and addition lint"
+   ],
+   "report": ".ufo/reports/round-47/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-47-verifier-spotcheck.md@473336d9d789f6081195e7376d17836a24666bc3",
+    "rechecks": "C1 MISS evidence-verified (after/c1.stdout total=2 mismatches=1 dep_mismatch=1 PASS=false at 8b0e15d2; six-leg regression ledger row states a flaky FAIL 7/9, deciding observed PASS 9/9) with inputs re-measured: SCORECARD base is byte prefix (63+/0-), 22/22 rows carry sha256+deps, 19 pinned tool sha256 prefixes equal rows, tools diff 0 paths, statements.json and counter pins match. C2 evidence-verified, not executed: 183/183 MUT killed with FAIL lines, 14/14 neutral survived, pool 111+86 sha pinned, controls E-H false. C3 re-measured: SOURCES rows 120->124, snapshot sha256 = anchors, 3 entries with provenance trio indexed README:585-587, base 0 hits on the documents; census validate exit 0. Spot-check live: S261/S263 byte-identical live with quotes, Lam PDF sha equal and quote located, S264 S2 API 429 (Crossref + snapshot used); rejects r13 (duplicate) and r8-predictive (unopened row) agree."
+   },
+   "commit": "tameshi-shokunin@03facb22a3f083b93fb55d061be58ac867eabf24",
+   "closed_at": "2026-10-26T04:12:12Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete: 2026-10-25T20:28:53-03:00 launch tameshi round=47 pgid=2933816 driver=hyaku-inline attempt=1; 2026-10-26T01:03:32-03:00 complete tameshi round=47; hyaku-inline attempt=1. Conformance ok: report by tameshi-shokunin 445b71ab (after cited tip 663e0682), SHONEN 4x[~], 5 cited hashes ancestors of master, ahead=0, porcelain empty, prompt carries template contract (0 missing lines). Status-neutral defects: (1) undispatched wave 2, 40 seats below the 64-100 floor; (2) orchestrator commit 03facb22 rewrote seat report w1/T47ConnCross.md after the report (uncited); (3) counter selftest tallies (35/35, 14/14, 24/24) only in seat reports, addition-lint 7/7 uncommitted; (4) criterion-93 falsifier receipt missing; (5) lesson round-47.md:117-118 deps sets disagree with rows and deciding run. Not admitted: C1 honest miss (total 22->2, target 0), errata appended, no axis harmed. Routed: supersede the six-leg regression ledger row with a stable observation and make C1 observation repeatable; commit the selftest and c93 receipts; lesson deps correction; cite QUALITY 10, not PROVINCE:14-18, for the r8-predictive reject; carried r45 fetch-receipt/anchor-refresh, dead brace_depth_at helpers, C1/C3 counter survivors. SHONEN boxes not fully non-author checkable; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
