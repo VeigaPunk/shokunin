@@ -26130,6 +26130,47 @@
    "notes": "dispatch/complete: 2026-10-26T13:00:54-03:00 launch mado round=44 pgid=304371 driver=hyaku-inline attempt=1 / 2026-10-26T15:12:15-03:00 complete mado round=44; hyaku-inline attempt=1. Conformance clean: report 5c0676be by mado-shokunin after lane tip; 8 cited commits ancestors of master; ahead=0, porcelain empty; prompt template-conformant; L2 38+33 seats, 0 dead. Routed defects: D1 session material tracked at 8ac15c41 - .ufo/waves/round-43/w1/ExecLiveHost/host-clients-live.json and .ufo/waves/round-43/w2/SentLiveRun/dump-now.json each carry 4 live window titles (SKILL.md:343 rule 4); SentLiveReads S1 flagged the first, lesson silent, second unflagged - scrub both to the 7-key shape of round-43 fetch/host-clients-r43.json in a new commit and sweep. OPERATOR: titles remain in pushed history (2a3707c8, 58466627) unless history is rewritten - operator's decision, not a lane action. D2 SCORECARD Round 44 claim rows carry no after value/self-verdict (point to receipts) - append. D3 tip receipts measured 74c606a not 8ac15c41 (equivalent, state it). D4 C1 v2 base share nonce-dependent (receipt 11/26, re-run 15/26). D5 open v2 predicate defects (C1 cheat-h, M01; C2 clause j whole-file locators, 18 mutant survivors) - re-register before reuse. D6 round-43 D2 S290-S297 supersession still deferred. D7 w2/ConnCalibration content mismatches - errata. SHONEN: box 2 reproducible by non-author (NO_MATCHING_CLIENT exit 3 reproduced), box 3 rests on committed independent rebuilds; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 41,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 41,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 41
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-41/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-41-verifier-spotcheck.md@c8efaa3f120834541f8de1e5e0367e8d1593bae6",
+    "rechecks": "C1 evidence-verified + plain re-measure (counter/selftest not executed): census diff 0e5805a1..568c397d one run_selftest hunk +27/-0 with four genuine fixture cases (H5/H6/H9/H10), check calls 121 -> 125, census bytes identical 568c397d..tip, probe_storage_arm sha256 71e6007e... identical base/impl/d7bf279f/tip; counter sha256 8306d999... frozen e479fdc5..tip = receipt tool_sha256; receipts survivors 4 -> 0, params 0 -> 4, baseline PASS 124 -> 128 with full revisions. C2 re-measured: entry absent at base, 102 lines/8 PA rows at tip; SOURCES 226 -> 236, malformed 0; 9/9 snapshot digests OK; verdict files w1 16 (11 holds, 5 partly), residual PA2c/PA3c/PA5c/PA7c holds, PA6c partly -> declared kill rule fires, C2 not verified (closure read: PA6 third NULL path archive_read_new at be_local.c:263-265 confirmed; third bullet unjudged). Counter c83e29a4... receipt 8/8/6/1 exit 0 at d7bf279f. No-harm: only check-self-assessment.py has deletions (+18/-7 routed fix), SCORECARD append-only +106, self-assessment 27/0 and 7 gates exit 0 (evidence); census:692 pipefail pre-existing at base. sources-census validate tsukuroi ok exit 0, 40 W04 (S230 new)."
+   },
+   "commit": "tsukuroi-shokunin@6cc927dfcfaa66ca460eabe097fcce7ed5e23da0",
+   "closed_at": "2026-10-26T18:57:45Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest (.ufo/watchdog.log): 2026-10-26T13:00:51-03:00 launch tsukuroi round=41 pgid=264372 driver=hyaku-inline attempt=1; 2026-10-26T15:51:31-03:00 complete tsukuroi round=41; hyaku-inline attempt=1. Report c8cd8f3f by tsukuroi-shokunin (author 15:34:36, committer 15:50:40 after lane tip 6cc927df 15:48:46; report commit rewritten before push, landed-last holds); 10 cited commits + 0e5805a1 + 8b7c4132 exist and are ancestors of master; lane ahead=0, porcelain empty, ls-remote = 6cc927df; prompt 0 of 140 template lines missing, hyaku addendum section 6; SHONEN heading 1, 4 [~] lines for 4 boxes. Verdict: C1 operability verified; C2 depth not verified (declared kill rule: PA6 stays partly after appended correction, residual/C2RevPA6c.md), honestly reported; no axis harmed -> rejected-honest-stop. Discernment spot-check: admits S232/PA7 and S230/PA4 agree (live gitlab raw @54d9411, digests equal snapshots), rejects of staged r26:53-54 package() in $pkgdir and ground pointer r26:6 agree; S233/S232/S230 quotes found live. Defects (status-neutral): R41-BASE-MISREAD (base 0e5805a1 vs tip 8b7c4132, measured surfaces byte-identical); C1 before receipt run after the after receipt (value predeclared at d8b4d521, revision-pinned). Routed to tsukuroi: R41-PA6-UNJUDGED (verdict on PA6 third correction or mark unverified), R41-CENSUS-PIPEFAIL-692 (live wrong verdict, pre-existing), R41-GUARD-BYPASS counter amendment under QUALITY 89, R41-BASE-MISREAD, before-receipt ordering. SHONEN box 1 looks non-author checkable (operator-owned promotion).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
