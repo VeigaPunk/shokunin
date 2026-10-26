@@ -27224,6 +27224,49 @@
    "notes": "Driver digest: 2026-10-26T19:15:30-03:00 launch mori round=51 pgid=2223116 driver=hyaku-inline attempt=1; 2026-10-26T20:33:58-03:00 complete mori round=51; hyaku-inline attempt=1. Report df35e601 by mori-shokunin after lane tip 8e3df7e5; 8/8 cited commits are ancestors of master; lane ahead=0, porcelain clean; prompt = template render + hyaku addendum. Conformance (status-neutral): D-a count-c1.py registered gate with no self-test mode; D-b c1-at-landed receipt elides --scratch; D-c lesson Spot-check S493 locators drift (55-57/62/67-69/71-72 vs 54-55/56/64-66/69-70); D-d famzah hit is the author's 2017 reply, not a reader's; D-e round-40 conform.py edited in place (freeze-r40 hash 5025b966->7f5174d5). Routed: (1) counter self-test; (2) entailment arm >=2 non-authoring votes, ignore fences, restrict voters; (3) isolate C1 arms (7/9 mutants survive); (4) round-50 defect 3 (successor calibration counter, K4 beyond SHONEN) carried to r52; (5) erratum for D-c/D-d; (6) copy-on-change for frozen files; (7) literal receipt commands; (8) in-lane writer sweep (r38-42 conform.py, r48/49 count-c1.py) carried. Operator: fleet-owned inline-dispatcher.py:133 fails open on unreadable meminfo, MEM_MIN_GB is GiB, hyaku floors 4 GiB vs 6144 MiB (w1/Mo51ExecDispatcherGate.md). SHONEN 4/4 [~] look non-author-checkable; promotion is the operator's.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 52,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 52,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 52
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "depth": "improved",
+    "coverage": "improved",
+    "calibration": "improved",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "tools/capture-text.py: prints the text form of an OOXML .docx capture (main part from _rels/.rels; w:t, run tab/br/cr, paragraph ends; mc:Fallback, delText, instrText and pPr tab stops dropped), locates a quote's offset (--locate, exit 0 only on count 1), and refuses non-zip, relationship-less, missing/escaping-target, non-Word, encrypted, corrupt and inflated packages (exit 2, REFUSED)"
+   ],
+   "report": ".ufo/reports/round-52/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-52-verifier-spotcheck.md@5b550133d79bc09c82d8965cce2e48c2598b8c3e",
+    "rechecks": "C1 re-measured: tool absent at base; at tip my own 9-case probe (prefix q: not w:, single-quoted attrs, CDATA, comment, non-self-closing breaks, delText/instrText/Fallback/pPr tabs dropped, nested table p, random main part via /-prefixed rels target with a decoy word/document.xml; locate 1/many/0; five refusals) PROBE=9/9, lane forge 5/9, naive 2/9; NIPH .raw text form 19682 chars, 3.1 sentence at 8996, reproduced by an independent minidom reader; tool sha256 6902db6a equals the measure-after tool-rev pin. C2 re-measured: SOURCES 112->116, theme terms absent at base (git grep exit 1), 39/39 quotes once in their capture form and in entry and lesson, 39/39 lesson offsets exact, every S113-S116 anchor char N a located offset, census exit 0 with five pre-existing W04. Evidence-verified only (not executed): c1-count/c1-supplement/c2-count/build-spans/verdict-gap receipts, controls and before receipts. Spot-check 8/8 decisions agree (3 admits, 2 rejects, rows S115/S114, S120 quarantine verdict); one reject reason disputed (grey-literature r40 province framing)."
+   },
+   "commit": "chousa-shokunin@f80a9a255908389992faa6daa495fc6b9276af15",
+   "closed_at": "2026-10-26T23:46:14Z",
+   "campaign": "hyaku",
+   "notes": "Driver: 2026-10-26T19:51:22-03:00 launch chousa round=52 pgid=1151232 driver=hyaku-inline attempt=1; 2026-10-26T20:39:08-03:00 complete chousa round=52; hyaku-inline attempt=1. Step 1: report c8f8e436 by chousa-shokunin, committed 20:38:22 after lane tip f80a9a25 (20:38:07) and before the complete line; SHONEN heading with 4 [~] lines; all nine cited commits plus base are ancestors of master; jj-lane state ahead=0 behind=0, porcelain empty; prompt carries the template contract; W1 45 + W2 38 = 83 seats (run-9 band 64-128); diff 0 deletions. Routed to chousa: (1) lesson round-52.md:153 and SCORECARD r52 intro say erratum E1-E4 while the erratum carries E1-E6, so append a correction; (2) grey-literature-and-chinese-search-record-r40 refusal: decision upheld on S133=S111 one URL and the frozen by-document set, but the province reason is disputed (the headline is a search-record field; S130 UTF-16LE decode carries 是否检索灰色文献 once); restate it, and define an OLE .doc text form before any re-stage; (3) fold representation variance (prefix, quote style, CDATA, comments, non-self-closing breaks) into the next frozen capability counter; (4) still open from r51: adopter twin-id held label/refusal order and the anchored correction: check; (5) inference-ground CJK polarity leg inert, so add a red-before fixture. Status-neutral: W1 fleet-root strays p.out/p.err and W2 lane-root control outputs, both disclosed and removed. SHONEN for operator: boxes 1-3 look non-author checkable from committed bytes; box 4 (province fit) rests on lane-dispatched seats; no [x] written.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
