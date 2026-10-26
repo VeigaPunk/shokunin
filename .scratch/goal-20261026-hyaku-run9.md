@@ -98,7 +98,7 @@ closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At 
 | kama | 3 | r46–r55 | — | r46 in flight (KamaR46, ~16:40) |
 | kasegi | 4 | r36–r45 | r36, r37 admitted (`rounds[755]`, `[758]`), r38 rejected-honest-stop (`[762]`) | r39 in flight |
 | kaidoku | 5 | r39–r48 | r39 admitted (`rounds[757]`) | r40 in flight |
-| kengaku | 6 | r40–r49 | r40 admitted (`rounds[759]`) | r41 landed (report `0ff2af1c`, lane `e61aff6f`); closure in flight (CloseKengakuR41) |
+| kengaku | 6 | r40–r49 | r40, r41 admitted (`rounds[759]`, `[766]`) | r42 in flight (KengakuR42, 16:54) |
 | tsukuroi | 7 | r41–r50 | r41 rejected-honest-stop (`rounds[761]`) | r42 in flight |
 | mado | 8 | r44–r53 | r44 admitted (`rounds[760]`) | r45 in flight |
 
