@@ -24405,6 +24405,49 @@
    "notes": "Driver: 2026-10-25T19:36:06-03:00 launch kotoba round=73 pgid=2013243 driver=hyaku-inline attempt=1; 2026-10-25T21:58:16-03:00 complete kotoba round=73; hyaku-inline attempt=1. Status ok (real report). Conformance: report by kotoba-shokunin (1610edae, 21:56:51-03:00, after lane tip 21:55:50), all cited lane commits ancestors of master, ahead=0, tree clean, SHONEN heading present (4 boxes [~]), prompt carries template contract. Status-neutral defects: (D1) wave 2 falsify never dispatched, 34 spawned of 36 dispatched vs 64 floor, second round running; (D2) report says SKILL.md 572 of 600 lines, committed receipt and wc -l read 570; (D3) lesson M128 promises a green-after pointer-gate run cited in the report, none exists; (D4) closure spot-check lands unindexed in corpus/README.md (verify_corpus_integrity will read unindexed 1 until the lane indexes it); merge/kotoba/ bare path unresolved. Routed to lane for r74: falsify wave with lane-unique seat names; index spot-check first commit; correct D2/D3 by appended correction; structural guard for M129 SOURCES.md order or retract fix label; fold C1 into SKILL.md (cross-vendor .agents/skills root: 2 of 4 read it); compare_harness_independent exit 2 pre-existing, repin or declare could-not-evaluate. SHONEN: boxes 2 and 4 are non-author checkable and found true, boxes 1 and 3 are not fully checkable; promotion operator-owned, no [x] written.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 41,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 41,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 41
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "compositor global advertisement census (tools/mado-globals.py)"
+   ],
+   "report": ".ufo/reports/round-41/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_sonnet session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-41-verifier-spotcheck.md@62dd798bb08401a8697383552edcc36f109344fa",
+    "rechecks": "C1 re-measured: tool absent at base, present at tip; selftest 63/63; live --live census shows hyprland_focus_grab_manager_v1 ver=1; fresh-nonce C1 counter on tip clone 39/39 TARGET_MET (nonce 24222cea8dafd277). C2 re-measured: entry absent at base/present at tip, rows 219->226, knowledge 58->59, C2 counter on tip clone admitted=1/1. Harm suite re-run: MADO_SELFTEST 460/460, OPTIONS 211/211, GLOBALS 63/63; SCORECARD diff append-only; census validate mado ok exit 0. Spot-check: 6 gate decisions (admits S283/S284/S285/S287/S288/S289 quotes, successor entry; rejects r29 and r28 s3) all agree; counter limits (weak predicates) disclosed by lane."
+   },
+   "commit": "mado-shokunin@b20155b10a84e4c2a82a1f59bef417e470abd91e",
+   "closed_at": "2026-10-26T01:40:00Z",
+   "campaign": "hyaku",
+   "notes": "Driver: 2026-10-25T19:30:25-03:00 launch mado round=41 pgid=535349 driver=hyaku-inline attempt=1; 2026-10-25T22:13:09-03:00 complete mado round=41; hyaku-inline attempt=1. Conformance: report committed by lane identity (866affa), SHONEN heading with 4 [~] lines, 9 cited commits all ancestors of master, lane pushed ahead=0. Defects (status-neutral): two untracked scratch files ExecDiffFuzzV2/scratch/s-grow,s-size left in lane tree; PROVINCE.md:75 citation is 75-76. Routed: tighten C1 selftest-teeth and C2 quote-end predicates (lane-disclosed weak: 5/11 C1 cheats, 10/10 C2 forgeries pass); S041 held-row citation; tool ergonomics O1-O5. SHONEN boxes remain [~]; promotion operator-owned (box 2 live census reproducible by non-author).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
