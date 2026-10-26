@@ -89,3 +89,5 @@ Capture: `corpus/source-snapshots/round-35/S052.txt` — 200, 1479694 B, 27870 l
 ---
 
 **Erratum (appended after filing):** the final lane commit is `8ce6fb4f2a33a6e1fb0963021905fb20dd58cc05` (a D1 closure fix: the SCORECARD round-35 block's closing-commit sentence used the literal `filled by the L1`, re-opening D1; reworded to name the integration commit — `r35-defect-closure.sh` re-reads `closed=7/7 exit=0`). The earlier cited `0aee0ef` remains an ancestor.
+
+**Erratum 2 (appended after filing):** final lane commit is `5a253372d7ccda2fd7829932489481218c3b0efb` — wave leftovers committed (S052 capture named file, SKILL.md registry, control fixtures, ready markers, receipts); export replay of HEAD now reads `closed=7/7 exit=0` and `source-recheck S052` exit 0. Earlier cited 8ce6fb4f remains an ancestor.
