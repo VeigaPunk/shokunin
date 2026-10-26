@@ -26550,6 +26550,44 @@
    "notes": "Dispatch digest: 2026-10-26T16:39:29-03:00 launch kama round=46 pgid=368305 driver=hyaku-inline attempt=1. 2026-10-26T17:53:47-03:00 complete kama round=46; hyaku-inline attempt=1. Step 1: the report was committed by kama-shokunin (8bca0cf3). The SHONEN heading has 4 boxes, all [~]. All 9 cited lane hashes are ancestors of master. The lane state is ahead=0 and clean. The prompt is a placeholder-only rendering of the canonical template plus the addendum. Conformance defects (status-neutral): the wave has no planner seat because the policy-v2 validator rejects planner (L0 kama|round-39); hexrun-census is red at unknown=21, pre-existing and equal to base. Routed to the lane: D1, the append-only-audit and counter share a rule that drops deleted lines starting with ---, so ship v2 with a recomputation leg that does not share the definition; D2, restored_at_tip depends on the tip (the SCORECARD 0718b6ab figure went 2416->2409 from this round's re-anchor alone); D3, C1 counter sufficiency (K1Cheat relocation greens all rows, V1Code F1-F4, and the sufficiency family carried in rounds 41-45 with no Mistakes row); D4, the hexrun unknowns; D5, receipt log_path points into deleted scratch. For the aggregator or operator: N3Fleet reports the truncation class in 14 of 21 sibling lanes and was not absorbed. Operator: the four SHONEN boxes look checkable by a non-author (live receipts plus X1Replica, gate registry, selftest, PROVINCE clause); promotion is operator-owned and nothing was marked. Open L0 questions: kama|round-35, round-39, round-41..43.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 39,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 39,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 39
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth:verifiability": "unchanged",
+    "coverage": "improved",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-39/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-39-verifier-spotcheck.md@a7af2ce63bce153757d39bf66b366a96caf30c13",
+    "rechecks": "C1 evidence-verified, not executed (lane gate): committed receipt .ufo/waves/round-39/final-gates/all-gates.txt at Y 8371e7ac (all-gates v5, export-ref=J ee5ae5e1, suite-sha256 2856a210 = git show Y:corpus/instruments/r39-closure.sh) records closed=7/8 exit=1 (G2 closed=0) and selftest cases=8 failures=1 (G2 positive=fail) -> frozen kill rule fires; reds.txt base and r38 head closed=1/8; round-38 R1-R4 corrections re-derived closed by plain greps (Correction (round 39) counts 1/2/3/2; QUALITY R34-R36; M38-5|7 1; pending 0). C2 re-measured at B/freeze/J/Y via git show/ls-tree/grep: frontier 21->22 (22/22 admitted), SOURCES 55->59 (S057 mined A; S056/S058/S059 rejected, NF=13), knowledge 50->51, source: S057 0->1, capture sha256 11c8d6d6/275 lines/17971 B = manifest; harness 25/25, binding 46/46, audit expected=51, junk-f22 4x MISMATCH exit=1 evidence-verified. Census validate exit 0 (W04 S028/S029 only). Spot-check: S057 PDF re-opened live byte-identical (raw sha256 cbcbd77a), pdftotext+collapse reproduces S057.txt exactly, Q1-Q4 present -> agree admit; S056 page byte-identical (67bafe17) and S058 raw spec byte-identical (9375415c, mutable main, no v0.2.0 date) -> agree reject; junk-f22 claims absent live -> agree reject. SCORECARD diff 54/0, all non-.ufo files N/0: no owned axis harmed."
+   },
+   "commit": "kasegi-shokunin@8371e7ac9f32cae5ed72f8c28205634603f836fa",
+   "closed_at": "2026-10-26T21:05:00Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest (.ufo/watchdog.log, mutable; lines 1549/1562/1563/1566 at read): 2026-10-26T16:23:01-03:00 launch kasegi round=39 pgid=3965921 driver=hyaku-inline attempt=1; 2026-10-26T17:41:35-03:00 lane-dead-no-report kasegi round=39; retry same round (attempt 1 L1 force-stopped at soft request budget 305/200 before report; lane tip 5006097 receipt Y; wave2 falsify settled); 2026-10-26T17:41:38-03:00 launch kasegi round=39 pgid=452103 driver=hyaku-inline attempt=2; 2026-10-26T17:58:04-03:00 complete kasegi round=39; hyaku-inline attempt=2. Step 1 conformant: report 3af1bd1c by kasegi-shokunin committed 17:57:30-03:00 after lane tip 8371e7ac (17:55:17) and before complete; SHONEN heading with 4 [~] lines; all 11 cited hashes resolve and are ancestors of master; lane ahead=0, porcelain empty; prompt carries the template contract; 86 seats (49+37) dispatched = results. Status ok, not admitted: C1 (depth:verifiability, lowest axis) fails its frozen counter at J (7/8, selftest failures=1), reported honestly by the lane; C2 coverage verifies. Routed to kasegi (spot-check section 5): R1 attempt-1 receipt 5006097 all-gates v3 recorded run-utc 21:35:00Z after its commit (20:12:12Z) and an 8/8 tally while the L1's own scratch run over that tip printed 6/8, selftest failures=2 - disclosed and discarded but not mined into Mistakes with a criterion; R2 SCORECARD:1567, LOG C1 bullet, SHONEN box 1 and lesson :15 still state 8/8 / failures=0 at Y against the committed 7/8 / failures=1; R3 report says base/r38 controls printed 2/8, committed reds.txt says 1/8; R4 /fast/scratch/hyaku/kasegi-r39-l1 (attempt-1 L1 scratch) left at filing, outside G6's view; R5 M39-2 captured-by none with no QUALITY criterion (lane's own R36); R6 Gate lacks URL/date/<=25-word quote for new rejected rows S056/S058/S059; R7 lane-carried G2 payload binding and G6 scratch coupling. Operator note: all four SHONEN boxes [~]; box 2 has no end-to-end domain task this round, so not fully non-author-checkable.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
