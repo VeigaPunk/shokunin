@@ -26588,6 +26588,49 @@
    "notes": "Driver digest (.ufo/watchdog.log, mutable; lines 1549/1562/1563/1566 at read): 2026-10-26T16:23:01-03:00 launch kasegi round=39 pgid=3965921 driver=hyaku-inline attempt=1; 2026-10-26T17:41:35-03:00 lane-dead-no-report kasegi round=39; retry same round (attempt 1 L1 force-stopped at soft request budget 305/200 before report; lane tip 5006097 receipt Y; wave2 falsify settled); 2026-10-26T17:41:38-03:00 launch kasegi round=39 pgid=452103 driver=hyaku-inline attempt=2; 2026-10-26T17:58:04-03:00 complete kasegi round=39; hyaku-inline attempt=2. Step 1 conformant: report 3af1bd1c by kasegi-shokunin committed 17:57:30-03:00 after lane tip 8371e7ac (17:55:17) and before complete; SHONEN heading with 4 [~] lines; all 11 cited hashes resolve and are ancestors of master; lane ahead=0, porcelain empty; prompt carries the template contract; 86 seats (49+37) dispatched = results. Status ok, not admitted: C1 (depth:verifiability, lowest axis) fails its frozen counter at J (7/8, selftest failures=1), reported honestly by the lane; C2 coverage verifies. Routed to kasegi (spot-check section 5): R1 attempt-1 receipt 5006097 all-gates v3 recorded run-utc 21:35:00Z after its commit (20:12:12Z) and an 8/8 tally while the L1's own scratch run over that tip printed 6/8, selftest failures=2 - disclosed and discarded but not mined into Mistakes with a criterion; R2 SCORECARD:1567, LOG C1 bullet, SHONEN box 1 and lesson :15 still state 8/8 / failures=0 at Y against the committed 7/8 / failures=1; R3 report says base/r38 controls printed 2/8, committed reds.txt says 1/8; R4 /fast/scratch/hyaku/kasegi-r39-l1 (attempt-1 L1 scratch) left at filing, outside G6's view; R5 M39-2 captured-by none with no QUALITY criterion (lane's own R36); R6 Gate lacks URL/date/<=25-word quote for new rejected rows S056/S058/S059; R7 lane-carried G2 payload binding and G6 scratch coupling. Operator note: all four SHONEN boxes [~]; box 2 has no end-to-end domain task this round, so not fully non-author-checkable.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 49,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 49,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 49
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "property-based generator for a fixture gate (tools/pbt-staged-id.py against tools/staged-id-guard.py; 400 cases, 12 classes, 12/12 hidden panel mutants confirmed; round 49)"
+   ],
+   "report": ".ufo/reports/round-49/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-49-verifier-spotcheck.md@e3729de862f73ae080d98fcf522a7081ce16e40a",
+    "rechecks": "C1 VERIFIES (gate evidence-verified, inputs re-measured): after/c1.stdout total=0 C1_R49_PASS=true exit 0 at bda60768, counter self-sha a055e929 = freeze; selftests 34/0 and 11/0; controls CTL_0/J/K false, K2 true (disclosed blind spot). Re-measured: freeze.json 13/13 digests equal at 14d03ea4/bda60768/7d3d977f; round-21 ledger append-only 497->511 with base prefix equal; 7 new section sha256 recomputed from SKILL.md@bda60768 all match, 39/39 input blobs match, no VOLATILE record file among inputs; reads.json 94 rows (91 holds, 3 absent), all 91 excerpts present in cited files/ranges; corrections 44+1+4=49; SKILL.md 2136->2136 lines (+49/-49); non-author reviewer seat sampled 8 corrections across all 7 sections, 8/8 correct, none harmful. C2 VERIFIES (re-measured, reproduced without the counter): generator absent at base, byte-identical 0cbee392 at 9b9b2a01 (before panel reveal) and bda60768; panel sha d6dd2cf3 = contract pin; own run seed 4949 400 cases vs pristine guard exit 0 violations=0 with the same 12 class counts as after/c2.stdout; 12/12 panel mutants exit 1 violations=1; generator only subprocesses the guard. No-harm: SCORECARD +30/-0 append-only; LOG/QUALITY/README/SOURCES append-only; no-harm 9/9 ok (depth 9, freshness 71/73 unchanged vs base); FROZEN_UNCHANGED=1. Spot-check: admit S269 agree (both quotes present, sha bfddcaa6 = pin), admit S270 with anchor correction agree (quote on printed p.34 = PDF p.39 §2.10; p.44 is §3.4 Partiality), reject r4-quickcheck-primary-correction agree (DOI 10.1145/1660572.1660575 404 at doi.org and Crossref; 0 hits in lane history before base), reject pbt-generator-craft-author agree (S170 abstract says 'via a toy example in C'; S116 no tameshi row). sources-census validate exit 0, 15 W-lines all pre-existing and equal to census-start."
+   },
+   "commit": "tameshi-shokunin@7d3d977f39acaa5723a696dff85ab183c80ddc8b",
+   "closed_at": "2026-10-26T21:30:07Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (watchdog.log): 2026-10-26T16:49:03-03:00 launch tameshi round=49 pgid=1624230 driver=hyaku-inline attempt=1; 2026-10-26T18:21:05-03:00 complete tameshi round=49; hyaku-inline attempt=1. Conformance ok: report 258460ff then 08ae56fa (18:20:45) by tameshi-shokunin, after its last cited commit 7d3d977f (18:20:27); SHONEN 4x[~]; 13 cited commit hashes resolve and are ancestors of master (0cbee392, d6dd2cf3 are sha256 prefixes, verified); jj-lane state ahead=0, porcelain empty; prompt carries the template contract (139/140 lines verbatim, line 1 resolves <tameshi-repo>). Controls committed 6885adb4 before the deciding run; generator unchanged across panel reveal. No conformance defects bar admission. Hygiene: hidden panel copy remains at ~/.local/state/tameshi-r49/ (redundant, revealed and committed). Routed to round 50: (1) generator error paths T49W2RevGenCode F1-F3 (unreadable guard exits 1 not 2; needs red-before selftest); (2) counter blind spots: C1 absent uncapped, C2 cannot tell property-based from differential generator; (3) outside-section stale SKILL.md:1503/1509/1555; (4) restate the standing axis table (last table SCORECARD.md:2355 still reads calibration 6; round 49 states 8 in prose); (5) carried round-48 items still open. SHONEN: no box fully checkable by a non-author this round; promotion stays operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
