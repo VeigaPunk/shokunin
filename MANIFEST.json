@@ -24281,6 +24281,45 @@
    "notes": "Driver: 2026-10-25T18:56:34-03:00 launch kotodama round=73 pgid=88120 driver=hyaku-inline attempt=1; 2026-10-25T20:43:58-03:00 complete kotodama round=73; hyaku-inline attempt=1. Defects (status-neutral): 5 modified + 1 untracked .ufo/waves/round-73/w2 seat files left uncommitted after push (late seat writes, incl. RevengerOrigins.md); no committed PASS-at-lands receipt for either counter (PASS only in wave-2 seat reports); report says Ca selftest 9 scenarios vs receipt 10; counter survivors self-routed to round 74. SHONEN boxes 1-4 look checkable by a non-author given this verification; promotion operator-owned. Spot-check commit f7104cbc.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 64,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 64,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 64
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "report-receipt-diff"
+   ],
+   "report": ".ufo/reports/round-64/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_sonnet session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-64-verifier-spotcheck.md@47fe2383151909d31557ada118ad84f90404dc6c",
+    "rechecks": "Re-measured over committed bytes: C1 tool absent at base/present at tip, round-60 placeholder count 6 (P3 figure), report sha256 equals receipt64-final report_sha256, every hash in report is an ancestor of master, counters byte-identical freeze->tip; C2 entry/demo/rows absent->present, SOURCES rows 136->139 (tiers A 113->116), census exit 0, scripts/jj-seat-demo.sh re-run from git archive a004902 on jj 0.45.1 diff IDENTICAL to committed close/jj-seat-demo-run.txt (27 keys). Evidence-verified only (lane gates not executed): R64 held 0/5->5/5, J64 held 0/8 (do-nothing 1/8)->8/8, plan-before-ready selftest 38/38, readme-map CLEAN 156/156/156. Unproven: tool selftest tally '125 cases' has no committed transcript (last 52/52 at 2ed8a5f8); P1 only needs N>=20. SCORECARD diff append-only apart from proxy stanza/pins and one capability row; no axis harmed. Spot-check: 3 admits (merged jj entry, S199, S198/S200 re-opened live, byte hashes equal captures, quotes <=25 words found) and 2 rejects (staged transcript-sourced entries) agree 5/5."
+   },
+   "commit": "kumitate-shokunin@a004902d77d17741b807069fa2bd9ce2e310e424",
+   "closed_at": "2026-10-26T00:50:00Z",
+   "campaign": "hyaku",
+   "notes": "Driver: 2026-10-25T19:25:12-03:00 launch kumitate round=64 pgid=1368991 driver=hyaku-inline attempt=1; 2026-10-25T21:34:07-03:00 complete kumitate round=64; hyaku-inline attempt=1. 80 seats (w1 41, w2 39), 50.0% executor/scribe/simplifier, dead=0; w2 inline dispatch gate DRIFT with 4 SESSION_AMBIGUOUS scouts (retry transcripts, disclosed). Defects (status-neutral): two untracked seat receipts left in lane (K64ExecProxyRepair/receipts/13,15); unreceipted selftest tally 125 (D1); CHANGES-AFTER-FREEZE cites absent close/supplementary-c2.txt and a real-reports final-tool re-derivation not in the report (D3); post-freeze ratchet (controls 16->50, P2 floor unreachable at freeze) disclosed, operator-owned; fleet .git removal incident cause unknown; K layer DEGRADED 49/53 carried. Routed to round 65: D2 corpus/README.md row for lessons/round-64-verifier-spotcheck.md must land before the plan freeze (Q60 map arm enforced from round 65), D1, D3. SHONEN boxes 1-4 look checkable by a non-author given this verification; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
