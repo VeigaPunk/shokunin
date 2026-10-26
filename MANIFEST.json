@@ -24615,6 +24615,47 @@
    "notes": "dispatch/complete digest (.ufo/watchdog.log lines 1455/1457 at closure): 2026-10-25T23:02:02-03:00 launch kasegi round=32 pgid=2757062 driver=hyaku-inline attempt=1; 2026-10-26T01:03:32-03:00 complete kasegi round=32; hyaku-inline attempt=1. Honest stop: the operator ended hyaku run 7 (cap 0) before wave 1 (37 seats, validated) spawned; 0 seats ran; wave1.ready withdrawn. Step-1: report f18db96b by kasegi-shokunin, landed after lane tip; SHONEN heading with 4 [ ] lines; 3 cited commits exist and are ancestors of master; ahead=0, porcelain empty; prompt carries the template contract plus the hyaku §6 addendum. Status ok (real committed round work, not a marker). Status-neutral defects routed to the lane: D1 no LOG.md entry for the 3 round commits; D2 frontier step not run (no lessons/round-32.md, no ## Mistakes, no census-after); D3 no cross-domain-evidence item; D4 report misquotes dispatcher.log (the 23:15:04 cap-defer says occupied 67, not 18) and the pointer is uncommitted /fast/scratch; D5 S049/S050 captures committed without round-32/manifest.json, which the C1/C2 frozen predicates read; D6 quarantined S037 staged quote is a spliced field collage, not verbatim, so re-ground before adoption. Round-31 routed items stay open. SHONEN boxes are not fully checkable by a non-author this round. The orchestrator says the round needs re-dispatch.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 42,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 42,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 42
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unchanged",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-42/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-42-verifier-spotcheck.md@a35cfdfcdeb3bd42d1a2cd960faf22ceac1bef3f",
+    "rechecks": "Both claims declared misses (honest stop, wave 1 never spawned) and re-measured in plain bytes: C1 tools/mado-geometry.py absent at 62dd798 and a62f2e0 (tools 11->11); C2 corpus/knowledge/hyprland-gkeep-geometry-r42.md absent (knowledge 59->59, SOURCES rows 226->226). SCORECARD.md diff empty; tools/corpus/PROVINCE/SKILL/SHONEN diff empty; only LOG.md +8 and new counters/wave files. Evidence-verified, not executed: c1/c2 before receipts TARGET_MISSED at 62dd798, CTL_C1 PASS (0 of 47 reach TARGET_MET), CTL_C2 74/74, fetch sha256 10/10 OK. No round-42 lesson/## Gate exists, so no gate admit/reject to sample; substitutes: upstream Hyprland efb50993 RegexMatchEngine.cpp and HyprCtl.cpp re-fetched byte-identical to pins (facts agree, locators wrong), M38 equivalent-mutant exclusion agree, SHONEN box-2 live reference run reproduced (NO_MATCHING_CLIENT exit 3). Census validate mado ok exit 0."
+   },
+   "commit": "mado-shokunin@a62f2e0c3a5d1737bcf93ac45ae98a1b195e1341",
+   "closed_at": "2026-10-26T04:12:00Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest: 2026-10-25T22:33:48-03:00 launch mado round=42 pgid=3151411 driver=hyaku-inline attempt=1; 2026-10-26T01:03:32-03:00 complete mado round=42; hyaku-inline attempt=1. Status ok (real report: freeze 809dc2c, w1 spec 17b3956, tip a62f2e0; report da384db by lane identity after the tip commit; SHONEN heading 4 [~]; 5 cited hashes all ancestors of master; lane pushed ahead=0, clean; prompt = canonical template rendering + hyaku addendum). Admitted=false: C1 and C2 not met (declared honest stop); no axis harmed. Conformance defects (status-neutral): frontier step not done (no round-42 lesson, no mined mistake, no sourced claim); L2 floor unmet, 0 seats spawned (dispatcher spawn cap 0 at run-7 wrap-up); 8af0263 orchestrator snapshot carries lane identity. Routed to mado: LOG.md correction entry for locators HyprCtl.cpp:394-395,412-413 -> 427-428/448 and RegexMatchEngine.cpp:10-16 -> 7-8/16; C1 control tally (report 46 with 37 mutants vs receipt 38 M lines, '0 of 47'); SHONEN box-2 pointer to LOG.md does not resolve (commit a live-run receipt); still open from r41: S041 held-row citation, tool ergonomics O1-O5, PROVINCE.md:75-76 cite. Round-41 routed scratch leftovers closed. SHONEN boxes remain [~]; box 2 live run is non-author reproducible (operator-owned promotion).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
