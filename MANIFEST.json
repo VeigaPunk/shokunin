@@ -26003,6 +26003,44 @@
    "notes": "Dispatch/complete digest: 2026-10-26T13:00:45-03:00 launch kaidoku round=39 pgid=159311 driver=hyaku-inline attempt=1; 2026-10-26T14:57:54-03:00 complete kaidoku round=39; hyaku-inline attempt=1. Step 1: report e3b4783c by kaidoku-shokunin, landed after lane tip 8b9634ed; SHONEN heading 4/4 boxes [~]; all 9 cited hashes ancestors of main; jj-lane state ahead=0, porcelain clean; prompt = template verbatim + hyaku addendum. Conformance defects (status-neutral): no explicit cross-domain-evidence line in report; cited l1/scores JSONs carry no exit code; wave ledgers status null per seat; CTL-C2-5/6 formatfix inputs landed post-freeze (72359309). Routed (spot-check s5): R39-CL1 sqfs-triage.py lacks operation/provider domain guard (registry row SKILL.md:1351 over-broad); R39-CL2 SKILL rule block 18 lacks mixed-symlink caveat (K5/K6 lossy action); R39-CL3 rows 5/8 exclude measured outcomes, counter scores labels only (cause column unscored, 9 distinct decisions); R39-CL4 validate control-table format in freeze; R39-CL5 C1 counter cannot refuse re-minted fabrication (planned r40); R39-CL6 report/receipt hygiene; carried: heldout-gen docstring erratum, surviving mutants, S118/S121 loose anchors, R36-CL5 open. SHONEN: all four boxes look checkable by a non-author from committed bytes (operator-owned promotion; no [x] written).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 37,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 37,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 37
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:verifiability": "improved",
+    "coverage": "improved",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-37/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-37-verifier-spotcheck.md@a173b0c2b98c5ae39599fa9be76027fbbead0b9e",
+    "rechecks": "Re-measured at judged head 2387dcf6 vs base b56a4168 (git archive + plain grep/awk/wc/sha256sum/ls-tree/cat-file; no lane gate executed). C1 depth:verifiability evidence-verified: r37-closure.sh absent->present (blob sha256 0da98e37..., 1558 lines); final-gates/all-gates.txt carries header + digest equal to the blob, export-ref 9492c776 (ancestor), 14 E payload lines closed=1, closed=14/14 exit=0, 14 passing selftest case lines, cases=14 failures=0, 7 forged judges rejected; reds closed=4/14 (cc692008) and 7/14 (a23dc478) in wave1/MutC1Fixtures.md:23-24 with the landed suite. 9492c776..A touches only all-gates/SCORECARD/SHONEN, so E1/E10/E12 re-derived at A by plain reads (placeholders 0/0, Final-lane-commit f3246559 ancestor, stale e666d902 label in r37 section 0, anchor c20300df present); E11 LOG.md:1686 correction + ls-tree r36-fixtures 0; E13 SKILL.md:1112-1113 single-choice gate rows with exit-2 could-not-evaluate; E14 porcelain:-0 count 0, rc-checked status read :581. C2 coverage re-measured: F rows 19->20, S rows 53->54, S054 rows 0->1 (NF=13, A/docs/mined/2026-10-26/90d), source:S054 0->1, knowledge 48->49; capture ff3f3b2c... 518 lines 32623 B, manifest fabc3163... 3989 B; Q1-Q4 present once at anchors 259/277/473/68; 29 located entry quotes all at cited lines; SSVC sweep at B 0; census exit 0 (W04 S028/S029). Harm: diff B..A zero deletions; SCORECARD adds Round 37 section only; SKILL +2 registry rows. Spot-check: admit F20/S054 agree (live 200, raw sha256 9dba9f75... = manifest raw_sha256); reject junk-f20 agree (4 sentences 0 live/0 capture); reject standing refusals agree (6c05c98f vs 35de5f8b, newsType_6 0, sse.com.cn rows 0)."
+   },
+   "commit": "kasegi-shokunin@2387dcf6ccfefcfb703783387b9aade8fc82abfa",
+   "closed_at": "2026-10-26T18:10:40Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest (.ufo/watchdog.log, mutable; lines 1533/1537 at read): 2026-10-26T13:52:56-03:00 launch kasegi round=37 pgid=1603012 driver=hyaku-inline attempt=1; 2026-10-26T15:02:47-03:00 complete kasegi round=37; hyaku-inline attempt=1. Step 1: report 3aa4ed4d by kasegi-shokunin (15:02:03, before complete); SHONEN heading 1, 4x[~], 0 [x]; all 13 cited hashes are commits and ancestors of master; jj-lane state ahead=0 behind=0, porcelain empty; prompt carries template s1-s5 + hyaku addendum s6 + scratch s7. Branch tip at closure 83975acc (15:03:15, .ufo/waves/round-37 results json only). Routed defects (kasegi owes next round): D-A PROVINCE.md:80-152 and corpus/README.md r37 append carry pasted ScribeFrontierAmendments scaffolding (s3/s4 sections, duplicate F20 row in PROVINCE, unbalanced fences; README lost its Round-37 admission heading) - append a named correction + a block-sha check; D-B all-gates.txt grades 9492c776 while report/SCORECARD/SHONEN assert 14/14 at 2387dcf6/aa88877b with no committed transcript (three different 'final' heads); D-C 7 unresolved <pending> markers in corpus/lessons/round-37.md and stale 'entry not landed' line 85; E1 placeholder limb passed 9492c776 whose SCORECARD/SHONEN held <r37-final-head>/<r37-final-lane-hash>/<fill> - widen vocabulary; D3 recurrence: 83975acc landed after complete, and the report's 'all six routed defects closed' is untrue for D3 (no E-check); D-D SCORECARD r37 'Final lane commit: f3246559' labels an ancestor as final (qualified); D-E /fast/scratch/hyaku/kasegi-r37/build-spec.py left (report says scratch empty). Operator: SHONEN box 2 stays [~] (no new end-to-end task) and box 4 'PROVINCE.md still accurate' is contradicted by D-A; boxes not fully checkable by a non-author.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
