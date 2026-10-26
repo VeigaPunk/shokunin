@@ -7,7 +7,7 @@ choose the order you deem best to do so. | /skill:godspeed | we are on the hyaku
 works best; make sure to adapt to the 64-128 per round directive; max ceiling of 256 | use the same model
 delegations we were using as before" (run start 2026-10-26 ~12:15 -03).
 
-## Routing — run-8 map; critic → `@m_glm53` from ~18:05 -03
+## Routing — run-8 map; critic → `@m_glm53` ~18:05, → `@m_kfc` ~18:20 -03
 
 `~/.omp/agent/config.yml` `task.agentModelOverrides` re-read at run start (lines 350-368): task/main/planner
 `@m_opus`; reviewer/mutation-tester/security-reviewer `@m_zfl`; scout `@m_sonnet`; distiller/seance `@m_haiku`;
@@ -39,6 +39,13 @@ the global config. It said so in its own reply. `config.yml` mtime 17:45:21 matc
   `["@m_swe", openai-codex/gpt-6-luna:low]`.
 - `cfg://task/agentModelOverrides` and `cfg://retry/fallbackChains` show both changes live.
 - Critic seats spawned after the edit route to GLM. Seats already running keep the chain they captured at spawn.
+- Observed: the 11 tameshi r49 w2 critic seats spawned at 20:55Z answered on `zai/glm-5.3`. Critic seats from
+  20:47Z answered on `opencode-go/deepseek-v4.1-flash`. Source: the first `model_change` in each seat's session file.
+
+**Operator, ~18:20 -03, verbatim:** "ok swap the m_glm53 for the m_kfc". Read as: replace m_glm53 with m_kfc on the
+critic role. `task.agentModelOverrides.critic` is now `"@m_kfc"` (kimi-code/kimi-for-coding:max, chain `@m_swe` →
+mercury → luna). Connector stays `@m_kfc`. No role uses m_glm53 now. Its chain stays as the operator set it.
+`cfg://task/agentModelOverrides` shows `critic: "@m_kfc"` live.
 
 ## Host limits (measured at run start)
 
