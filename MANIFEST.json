@@ -25453,6 +25453,51 @@
    "notes": "Dispatch/complete digest: 2026-10-26T03:00:01-03:00 launch kaidoku round=38 pgid=415193 driver=hyaku-inline attempt=1; 2026-10-26T03:37:05-03:00 lane-dead-no-report kaidoku round=38; retry same round (hyaku-inline attempt=1: L1 KaidokuR38 exited without a landed round: FAIL report_of (missing, unchanged, no SHONEN heading, or < 400B): .ufo/reports/round-38/kaidoku.md); 2026-10-26T03:37:07-03:00 launch kaidoku round=38 pgid=1293607 driver=hyaku-inline attempt=2; 2026-10-26T04:21:00-03:00 complete kaidoku round=38; hyaku-inline attempt=2. Report e6fbc278 was committed by kaidoku-shokunin at 04:20:15, after lane tip 7e979514 and before complete. SHONEN has 4 lines ([ ],[~],[ ],[~]). All 11 cited hashes are ancestors of main; jj-lane state ahead=0, untracked=0; porcelain is clean. The prompt is a template-faithful rendering with the hyaku addendum. The report's base 77091b49 differs from the pre-round HEAD 67632844, which only adds the r37 spot-check (no scored surface). Real report: status ok. C1 honest stop (3/4; no Core row); C2 verified (1 -> 0). Not every claim verifies, so not admitted. Routed (status-neutral): R38-CL1 false absence claims in lesson round-38.md:80-82,96-97 and w2/R38W2AssimRejects.md. r7-local-measurements.tsv and lead2-avm-branch.tsv exist under /home/vgpnk/Projects/shokuknow/lanes/kaidoku/round{7,9}/work/, but the find was rooted at the fleet root only. Fix: append a correction plus a QUALITY criterion, or discernment reads harmed next round. R38-CL2: freeze-drift.py, intended-doc.py and registry-immutable.sh (bound by QUALITY 79/81) have no self-test mode and no SKILL.md registry row, and the c1/c2 counters are unregistered too, so they grade as unregistered probes. R38-CL3: the report says v3 'would have turned C1 green (4/4)', but the v3 receipt has met_target false. R38-CL4: freeze-drift is red (exit 1) at 7a1ac7fe while ships_freeze_bytes is true; the round-39 freeze must say which verdict blocks. R36-CL1 and R37-CL1..CL3 are closed. Operator note: SHONEN box 2 (end-to-end REA extract-firmware on K1-K4, LOG.md:3126-3135, receipts re-derived) looks checkable by a non-author; no [x] was written. Tool installs by closure: none.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 31,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 31,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 31
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "unchanged",
+    "operability": "improved",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "capability-cell binding audit (r31)",
+    "landing-gate reading precision (r31)",
+    "jj dropped-keep-ref object-clock fixture (r31)"
+   ],
+   "report": ".ufo/reports/round-31/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-31-verifier-spotcheck.md@85b61a151923986e7e6b48f7084b9122561b5f3d",
+    "rechecks": "Re-measured over committed bytes: C1 appended binding rows 0->40 (ids = c1-cells.tsv minus L29), SCORECARD append-only (prefix True, 0 deleted lines), 3 record bindings sampled (L03/L08/L09 literal present, record unchanged), L29 record holds scalar *_command_count=18 only (no 18/18) -> MISSED confirmed (mismatches 34->1, kill rule mismatches>0); C2 r26 union re-derived NUL-safe 466->495, diff scope gate+fixture only; C3 entry absent->present, ground F1 3->4, SOURCES rows 145->146 (S222 new), record 17 RESULT lines jj 0.45.1/git 2.56.0, correction sweep confined to entry. Evidence-verified (not executed): C1 counter v1/A2+A4, C2 counter v1-v3 + fixture 10/10 + REDARM + REGRESS + SHIFT, C3 counter v1-v3 incl. replay/PATH shim/remover mutants, final-tip-measure.txt at f950267. Spot-check: S222 re-fetched live sha256 59e7f0f1 (= pin), 23-word quote verbatim :66-68 agree; C3 entry admit agree (as corrected); rejects r35 grace-period, r29 prune-expiry, repo-size-census older revision agree. sources-census validate souji ok rc 0 (36 W04)."
+   },
+   "commit": "souji-shokunin@d999c596d389dbc710e939b340066297046f3204",
+   "closed_at": "2026-10-26T08:06:27Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-10-26T02:55:57-03:00 launch souji round=31 pgid=297674 driver=hyaku-inline attempt=1; 2026-10-26T04:58:50-03:00 complete souji round=31; hyaku-inline attempt=1. Report 3322a54 by souji-shokunin 04:58:17 (after tip d999c59, before complete); 15 cited hashes all ancestors of master; lane state ahead=0 behind=0 tracked=0 untracked=0; 74 seats (w1 38/38, w2 36), 0 dead. Honest stop: C1 calibration missed by one item (L29, SCORECARD.md:170); C2 operability and C3 coverage verified; no axis harmed. Conformance notes (status-neutral): D1 reflog-only arm outside frozen arm=<solo|descendant> contract (disclosed); A5 stricter amendment landed after C2 landing, re-measured at landing revision. Routed to souji r32: (1) bind L29 via named scalar fields or stricter record rule; (2) C3 entry traceability: cite S051 or drop quote, add CONFIGURATION anchor to S063, Gate quote for gc.recentObjectsHook; (3) amend enumerated fixture contracts before a record leaves them; (4) pre-landing sentence-to-record sweep (18 entry corrections + 18 M1 disposition corrections after wave 2); (5) lane residuals per SCORECARD Planned r31. SHONEN four [~] boxes resolve at tip and look non-author checkable; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
