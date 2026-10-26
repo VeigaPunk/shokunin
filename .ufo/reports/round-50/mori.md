@@ -107,6 +107,9 @@ Discarded: nothing; 35 attempt-1 seats left no report (outcome unknown).
   fleet root (only `.ufo/state/` driver files, untouched). Seat scratch dirs: all removed.
 - Stale-lane: respawn-per-round driver; no other mori mission open. Tool installs: none (L1 and seats). Open L0
   questions: none.
-- Author date check (round-49 D-a): lane tip `756d5b1a` committed `2026-10-26T10:54:21-03:00`; this report was
-  written after it and is filed by one `fleet-commit.sh` call; check `git -C /home/vgpnk/Projects/shokunin log -1
-  --format=%aI -- .ufo/reports/round-50/mori.md` ≥ that time.
+- Author date check (round-49 D-a): lane tip `756d5b1a` committed `2026-10-26T10:54:21-03:00`. The first filing
+  commit `4a20abb1` got author date `2026-10-26T10:15:47-03:00` (committer `10:54:42`) — before the tip, because
+  `fleet-commit.sh:84-85` runs `jj metaedit --update-author`, which keeps the shared working-copy change's creation
+  timestamp (`a2w1/Mo50bExecAuthorDate.md` §1; the script is fleet-owned, not edited). This second filing commit
+  carries the author date of a change created after `4a20abb1`; its `%aI` is checked against the tip after filing
+  and recorded in the lane's round-51 entry if it fails.
