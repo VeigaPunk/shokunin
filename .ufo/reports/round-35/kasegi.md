@@ -85,3 +85,7 @@ Capture: `corpus/source-snapshots/round-35/S052.txt` — 200, 1479694 B, 27870 l
 - [~] No cross-domain bleed — PROVINCE untouched; sibling sweep 20/20 no contested scope (`SHONEN.md:54-60`).
 
 **Tooling:** no installs or upgrades; no pacman transactions (host-wide pause). **Open L0:** kasegi round-15 (PROVINCE re-point), round-16 (second root loss), round-32 (re-dispatch vs L1-only landing ruling) remain open; none blocks this round.
+
+---
+
+**Erratum (appended after filing):** the final lane commit is `8ce6fb4f2a33a6e1fb0963021905fb20dd58cc05` (a D1 closure fix: the SCORECARD round-35 block's closing-commit sentence used the literal `filled by the L1`, re-opening D1; reworded to name the integration commit — `r35-defect-closure.sh` re-reads `closed=7/7 exit=0`). The earlier cited `0aee0ef` remains an ancestor.
