@@ -26969,6 +26969,52 @@
    "notes": "dispatch 2026-10-26T19:05:04-03:00 launch kama round=48 pgid=3968099 driver=hyaku-inline attempt=1; complete 2026-10-26T20:00:07-03:00 complete kama round=48; hyaku-inline attempt=1. Step 1: report by lane identity (15710a2a, dcc079e7), SHONEN 4x[~], 8 cited hashes ancestors of master, lane ahead=0 clean, prompt = template render + addendum section 6. Defects (status-neutral): R2 report filed 19:58:24 with __TIP__/__LASTROW__ placeholders before tip 4d8334af (19:58:49) and rewritten in place by dcc079e7 (filed bytes are a record; use appended erratum); R3 report end-census line omits the W01 (S481); R4 prompt section 6 quotes critic @m_flash but live agentModelOverrides routes critic @m_kfc since the 17:45 -03 config change, so live m_flash share is 26/69 (38%) vs lane-reported 42/69 (operator-side prompt fix; also corrects r47 spot-check step-1 row). Routed to lane r49: R1 Sen2Live F1 High availability (verify_archive_member unbounded sparse-member hash; cap size); R5 carried counter gaps (no server-execution witness, mutant survivors C1 21/52 tool 15/55 C2 6/27, content-blind exemption, sub-20 deletions, prerelease cliff). L0 open: kama round-35, round-39 (planner/labrat), round-41..43. Fleet root untracked =1239, =3900, T unattributed. Operator: SHONEN boxes look non-author checkable; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 43,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 43,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 43
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "improved",
+    "novelty": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unprovable-but-better",
+    "discernment": "unprovable-but-better"
+   },
+   "capabilities_added": [
+    "value-attributed-mutant-kills",
+    "in-process-import-grader-probe",
+    "gate-flip-check"
+   ],
+   "report": ".ufo/reports/round-43/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-43-verifier-spotcheck.md@0cb2e22598a39b7cd0bf5582d86d62492b57fa12",
+    "rechecks": "C1 re-measured + evidence-verified, not executed (registered gate round43-c1-mutants): battery43 FIXTURES ast count 0 -> 42 (a_alt 14, a_err 6, a_row 3, a_url 4, o_alt 6, o_excuse 3, o_scan 6); TOTAL=9 FLOORS anchor 6 order 3; counter/claims/probe/spec byte-equal to freeze 02753f26 (frozen-digests 12/12 OK); anchor_digest_check.py + order_check.py unedited, sha256 = PINS; control-c1-nothing killed=0 survived=9 PREDICATE C1 fail exit 1 -> measure-final@77ea425a + measure-tip@2a3e29c6 MUTANTS total=9 killed=9 unattributed=0 anchor=6/6 order=3/3 PINS-AFTER mismatched=0 PREDICATE C1 pass exit 0. C2 re-measured + evidence-verified (registered gate round43-c2): SOURCES rows 121 -> 130 (S129-S134 A, S135-S137 B, all mined, NF=13); knowledge 49 -> 50 (new feal entry with source/verified-at/recheck); captures sha256sum -c 12/12 OK; six upstream files re-fetched 2026-10-26T20:01-03 200 and cmp-identical; registered probe feal-probe re-run in clean clone exit 0 byte-equal to receipt (cases=12 pass=8 fail=4 mismatches=0, regrade differ=0); control-c2-nothing defects=7 -> measure-final checks=10 defects=0 PREDICATE C2 pass. No harm: SCORECARD diff +102/-0, no score lowered; lane docs append-only. Census validate kengaku ok, 15 W04, exit 0. Spot-check: admits S129, S134, S136 agree; reject merge/kengaku agree; reject task.toml/solve.sh flip verdict 'not fired' DISAGREE (entry Mechanism rows slow-oracle-45s -> task.toml:22 and oracle-solve-sh -> solve.sh:90 plus findings 11/12 rest on them alone)."
+   },
+   "commit": "kengaku-shokunin@1838be94b355e40139d4231f743bc6946f77c1f6",
+   "closed_at": "2026-10-26T23:06:52Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-26T18:37:20-03:00 launch kengaku round=43 pgid=1209004 driver=hyaku-inline attempt=1; 2026-10-26T19:57:48-03:00 complete kengaku round=43; hyaku-inline attempt=1. Report e8c221f2 by kengaku-shokunin 19:51:57, after lane tip 1838be94 (19:51:11); 9/9 cited lane hashes ancestors of master; state ahead=0 behind=0; prompt = template rendering (placeholder hunks only) + hyaku addendum (run 9, 64-128 seats). Defects (status-neutral): D1 round total 38 < 64, wave 2 (33 seats) validated but not dispatched (self-disclosed); D2 four wave control files left untracked in the lane (build.ready, build.ready.dispatched, integrate/DOCS, falsify/swarm-registry.json; round 42 committed the equivalents); D3 R43ConnClaims left no report file (disclosed). Routed to kengaku round 44: R1 false 'not fired' Flip check for task.toml/solve.sh - append corrected Flip check lines, admit as rows or append entry erratum reconciling findings 11/12 and the two Mechanism rows with entry :72-74, and make gate_flip_check/Q35 test 'not fired' against entry citations with a red control; R2 S134 entry source line says README lines 1-34 vs row :1-35 (no final newline) - append erratum; R3 commit or justify the untracked wave control files; R4 meet the 64-seat floor, dispatch wave 2 before integrating wave 1, every seat files a report; R5 lane's own routed limits carry (V10 readable key, counter fences F1-F4/V2', surviving C1 7/15 and V9/V10 7/13 guards, envelope mode-only gap). Operator note: all four SHONEN boxes are [~] with pointers that resolved in this closure (LOG.md:1309, probe re-run byte-equal, integrate/measure.sh, PROVINCE routing clause); they look non-author checkable; promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
