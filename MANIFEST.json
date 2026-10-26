@@ -26209,6 +26209,47 @@
    "notes": "Driver digest (.ufo/watchdog.log, mutable; lines 1540/1548 at read): 2026-10-26T15:11:39-03:00 launch kasegi round=38 pgid=54701 driver=hyaku-inline attempt=1; 2026-10-26T16:14:03-03:00 complete kasegi round=38; hyaku-inline attempt=1. Step 1: report 1aa06a75 by kasegi-shokunin (16:13:32, after lane tip 16:11:44, before complete); SHONEN heading 1, 4x[~], 0 [x]; all 9 cited hashes are commits and ancestors of master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0, porcelain empty; prompt 44942bbe carries template s1-s5 + hyaku addendum s6; route map is the operator run-8 model map (MISSION grouping advisory) - no defect. Judged head J 66703aca; tip Y f06148c6 = J + receipt only. Not admitted: C1 (depth:verifiability) killed on its own frozen counting command at J (honest stop, reported by the lane); C2 (coverage) verified. Spot-check: agree admit F21/S055, agree reject junk-f21, agree not-taken CSAF v2.1. Routed to kasegi r39: R1 mine the self-referential G2 freeze into ## Mistakes + grounded QUALITY criterion; R2 append Correction (round 39) lines where lane records state C1 8/8/selftest over J (lessons/round-38.md:21 and :94, LOG round-38 C1 bullet, SCORECARD r38 depth:verifiability row, SHONEN.md:185) - receipt says 7/8 at J, selftest over 7dd2fcd6; R3 positive run over the named tip f06148c6 not committed (r37 D-B class); R4 M38-5/M38-7 captured-by none with no QUALITY criterion; R5 carry 25 surviving mutants / G4 / G8 findings (lane self-routed). SHONEN not fully checkable by a non-author (box 2 none new).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 33,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 33,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 33
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "adjacency": "unchanged",
+    "operability": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-33/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-33-verifier-spotcheck.md@15dfaccb34601c2d221c78501e2befd8998d600c",
+    "rechecks": "No lane gate or counter executed (Gate standard). Frozen counters/controls/measure.sh sha256 identical at freeze e6b0a907 and HEAD; check-adjacency 4e2c2a64 unchanged b7d16fb8/0aa2281a/6f4053db. C1 adjacency RE-MEASURED by own quote-anchored parse of committed c1-candidates.tsv/adjacency.tsv/adjacency-screen.tsv: mapped 5->8, screened 0->44, unaccounted 47->0, newMapped 0->3 (kake 61/79/304; kake:347 row at bf48b81c withdrawn in w2); 52/52 candidate lines match sibling pins; frozen target newMapped>=4 MISSED -> honest stop. C2 operability EVIDENCE-VERIFIED: measure/c2-at-0aa2281.json F1-F8 all refused (t1-receipt/x3-duplicate-id/x4-measured-cell/s1-source-row) vs 8/8 accepted at baseline, H0/H1/H2 admitted 16 failing 0, selftest 44/44 exit 0; own checks: gate sha 2f25af5a->eded1be0 (same at HEAD), 0/5 honest-digest prefixes in gate source. No-harm: numstat deletions 0 outside scripts/check-bidi-runtime.mjs (+481/-113), SCORECARD +159/-0, noharm 28/28, selfassessment mismatches 0. Census validate tabi ok exit 0 (20 pre-existing W04), rows 126->129. Spot-check 5 admits (S127, S128 launcher.c, S129+switches.cc gitiles base64-decoded, sha-identical; map rows 12, 14) + 4 rejects (kake:347, kengaku:54, docs/linux/sandboxing.md 404, suid_sandbox_development.md) all agree."
+   },
+   "commit": "tabi-shokunin@6f4053dbdbddbed24f4515ff01a895b1038d2f37",
+   "closed_at": "2026-10-26T19:22:12Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-10-26T14:57:48-03:00 launch tabi round=33 pgid=81695 driver=hyaku-inline attempt=1; 2026-10-26T16:12:03-03:00 complete tabi round=33; hyaku-inline attempt=1. Report e777db66 (tabi identity, 16:11:33) after last lane commit 6f4053db (16:10:06), before completion; SHONEN heading 4/4 lines, all [~]. 7 cited commits ancestors of master; jj-lane state ahead=0, porcelain empty. Prompt 82a68a01 (lane-committed dispatch evidence, as r31/r32) = template with placeholder-only diffs + hyaku addendum. Waves w1 36 / w2 38 seats, outputs 36/38 non-empty, no model keys, planner seat held by L1 per ruling. Step-1 defects: none status-bearing (intermediate selfassessment mismatch 1 at bf48b81c and 9f008f6c, corrected append-only; c1-J3 control not byte-reproducible, M3 residual). Routed (tabi next round): (1) adjacency sweep re-run with regex blind spots fixed and sibling SKILL/knowledge in scope (ConnSiblingScan 34 leads), reversals recorded per criterion 91; (2) C2 battery v2 randomised subjects/paths/ids (M7) + MutGateV2 11/20 survivors + CritForgeV2B/C as cases; (3) calibration counter v4 carried; (4) run check-selfassessment before each integration commit; (5) precision carries: ReopenS128 x3, CritErrataLanded x3, kake 396/422/440 relabel, kake:411, 404 receipts by body text not sha; (6) S125 cadence draft-3 or discriminating reason; (7) pin c1-J3 control inputs. Operator: all four SHONEN boxes appear non-author-checkable from committed artifacts (see spot-check §Operator note); promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
