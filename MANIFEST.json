@@ -26890,6 +26890,44 @@
    "notes": "Driver digest (.ufo/watchdog.log lines 1564/1583 at closure): 2026-10-26T17:44:02-03:00 launch tabi round=35 pgid=1139653 driver=hyaku-inline attempt=1; 2026-10-26T19:07:47-03:00 complete tabi round=35; hyaku-inline attempt=1. Step-1: report 9f2a51f4 by tabi-shokunin committed 19:07:13 after lane tip 1c432f2a (19:05:13); SHONEN 4 lines all [~]; all cited commits ancestors of master; jj-lane state ahead=0 behind=0, porcelain empty; prompt 1a83320f carries the full template contract (0 template lines missing), no L2 route map; waves 51+34 non-empty, 0 dead. Defects (status-neutral, routed): (1) entry webdriver-bidi-firefox-runtime-round-35.md:279 (D11) and lesson round-35.md:76 cite 0-byte measure/driver-egress-sample.txt for '0 non-loopback sockets'; lesson :130 re-points to w2 SentinelDriverEgress but the entry was not corrected (corrections-sweep; QUALITY 100). (2) C2 counter TARGET 14 vs declared 16 (M1), caller-named binaries (M4), non-loopback live leg (M3), cloned run2 passes: planned operability amendment. (3) S125 on-release cadence second carry. (4) C1 fixed newMapped quota on a closed pool; planned meter split. Operator: SHONEN box 2 (end-to-end task) looks non-author-checkable (closure re-derived runs/receipt/live digest); promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 40,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 40,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 40
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth:verifiability": "unchanged",
+    "coverage": "improved",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-40/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-40-verifier-spotcheck.md@5b29ea1439450b712581edf5f0f0bf98dfb262ab",
+    "rechecks": "C2 re-measured over git-archive trees a7af2ce->b01cbd50 with the frozen counting commands: nine rows queued 9->0, mined 0->7 (S022/S024 rejected), entries citing nine 0->7, S06x rows 0->3, entries citing S06x 0->1, frontier 22->23, registry 59->62, CORPUS census checks clean, sources-census validate exit 0 (W04 S028/S029 only, identical to census-before); harness 26/26 and binding 54/54 evidence-verified from committed wave-2 records. C1 evidence-verified, gate not executed: receipt all-gates v4 export-ref=J7 c7aea5ef, suite-sha256 bdbd18a3 equal to committed suite bytes J5..Z, closed=10/10 exit=0, H8 base=3/10 r39=2/10, run-utc = J7 committer instant; selftest-at-Y tally has no committed transcript (only wave-2 Y' = J5+receipt). Frozen kill-rule clause 'a committed fixture shows a check passing while its defect is present' fires on the lane's committed wave-2 artifacts (RevC1Counters.defeats.txt T2 H2 closed=7/80 accepted, T4 H3 fenced row, T7 H9 symlink, T13 H1 mention-only row, T14 H6 kasegi_r40 stray; CritKillRule.h6-escapes.sh; MutH6H10 D2 H8) -> C1 not verified; independent closure-dispatched critic seat concurred (FIRES). r39 R1-R7 tree fixes re-derived by plain reads (Correction (round 40) counts SCORECARD 2/LOG 2/SHONEN 3/round-39 lesson 2; M39-2 in QUALITY 0->1; R6 gate rows +11/-0). Owned-axis harm check: SCORECARD +16/-0, zero deletions in SKILL/PROVINCE/QUALITY/README/LOG/SHONEN. Discernment: admits S023, S060 (new row, 3 located <=25-word quotes), S016, S017 and rejects S062 (v2.1 os/ 404, CSD 04), S061 (PDF sha 9a4027c6 matches row; labels carried by S055), S022 (S030 supersedes) re-opened live - all agree."
+   },
+   "commit": "kasegi-shokunin@b01cbd50d514bb7f8e154b40e0e608be3e6cf217",
+   "closed_at": "2026-10-26T22:50:15Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest (.ufo/watchdog.log, mutable; lines 1568/1580/1581/1585 at read): 2026-10-26T18:05:47-03:00 launch kasegi round=40 pgid=2886620 driver=hyaku-inline attempt=1; 2026-10-26T18:57:11-03:00 lane-dead-no-report kasegi round=40; retry same round (attempt 1 force-stopped at the request budget mid-round: wave-1 54/54 settled, J5 3074c767 committed, Y receipt uncommitted, wave-2 rendered never dispatched, no report); 2026-10-26T18:57:13-03:00 launch kasegi round=40 pgid=2585990 driver=hyaku-inline attempt=2; 2026-10-26T19:37:21-03:00 complete kasegi round=40; hyaku-inline attempt=2. Step 1 conformant: report 28dfa1ae by kasegi-shokunin committed 19:36:09-03:00 after lane tip b01cbd50 (19:34:36) and before complete; SHONEN heading with 4 [~] lines; all 12 cited hashes resolve and are ancestors of master; jj-lane state ahead=0 tracked=0 untracked=0, porcelain empty; prompt (624 lines, commits 4041929b/271b268b before each launch) carries the template contract; waves 54+35=89 seats, all with output. Verdict: C1 (depth:verifiability, held 4) NOT VERIFIED - frozen kill rule fires on committed wave-2 fixtures (lane narrowed it to 'no live defect' after landing, against its own r39 standard); C2 (coverage 7->8) VERIFIED; no axis harmed -> not admitted. Routed to kasegi r41 (spot-check §5): D1 C1 graded 'verified' in SCORECARD/LOG/report while kill rule fires - append Correction (round 41); D2 Y-level selftest cases=10 failures=0 quoted without committed transcript (violates lane's own QUALITY R37; SHONEN L219 says receipt records it, it does not); D3 wave-2 instrument survivors H2/H3/H6/H9/H1/H5/H7/H8 + 7 kill-rule escapes (self-routed, carried); D4 round-40 lesson duplicate '## Gate' (L29/L31) and garbled census L27; D5 attack-role tally lesson L9 33/35 & 50/89 vs dispatch 25/35 & 42/89; D6 SKILL.md L1121 blank line splits r40 registry row from its table header; D7 S022/S024 teaches rewritten in place - CORPUS rule 2 vs rejected-row shape rule ambiguity, routed to protocol lane, status-neutral. SHONEN: box 2 still lacks a live end-to-end domain task, so the checklist is not fully checkable by a non-author (promotion operator-owned).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
