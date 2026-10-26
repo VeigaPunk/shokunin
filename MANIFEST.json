@@ -25333,6 +25333,47 @@
    "notes": "dispatch/complete digest (.ufo/watchdog.log): 2026-10-26T02:24:07-03:00 launch kasegi round=34 pgid=98669 driver=hyaku-inline attempt=1; 2026-10-26T03:15:20-03:00 lane-dead-no-report kasegi round=34 (attempt 1, no report); 2026-10-26T03:15:22-03:00 launch kasegi round=34 pgid=1260200 driver=hyaku-inline attempt=2; 2026-10-26T03:19:31-03:00 complete kasegi round=34; hyaku-inline attempt=2. Step 1: report 82eb2a46 by kasegi-shokunin after lane tip; SHONEN 4/4 [~]; cited 014ee2d/206e5108/29f606d/4b0a9f2/4eafa84/c1c6a5f ancestors of master; lane ahead=0; prompt = template verbatim + hyaku addendum. Routed to kasegi (status-neutral): D1 SCORECARD.md:1129 and :1240 unfilled 'final lane commit' placeholders (R1 class; marker check spelling-brittle); D2 SCORECARD.md:1145 depth:density row stale (says SKILL/PROVINCE 0-line, mean 201.7; tip +1 line each, 201.2); D3 r-defect-closure.sh and kill-rule-check.py lack SKILL.md gate-registry rows (not graded conformant gates); D4 post-complete wave writes: untracked .ufo/waves/round-34/wave1-results.json (06:23:19Z) and transient rewrite of committed wave1/ExecRegressionC1.md (06:21:33Z, restored 06:22:26Z) - commit results with provenance, quiesce seats before final commit; D5 frozen predicate wording: junk-twin 'source-recheck exit != 0; reviewer REFUSE' non-discriminating and 'every assertion occurrences=1' false (Q9/Q17) - append claims erratum; D6 wave1/L1Integration.md:30 says ExecRegressionC1 filed no receipt, contradicted by c1c6a5f; D7 QUALITY R22 grounding cites M34-2 (should be M34-3), R23 cites considerthese not the lesson. SHONEN all [~]; not promotion-ready.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 39,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 39,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 39
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-39/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-39-verifier-spotcheck.md@53b294a274656be6479aadf2ec2fee890ded77ce",
+    "rechecks": "C1 re-measured (code read of probe_storage_arm at a2d7aad7: production-path mount-table guard, exact field-3 btrfs parse; independent Python emulation reproduces BLOCKED detail=mounts:btrfs-without-sysfs on absent root + host mounts, HEALTHY 1/1/0 on real sysfs, mounts:unreadable on FIFO/empty) + evidence-verified (counter sha256 75a9e8ab identical at 6a08925d/49cc53c7/a2d7aad7/a6ca8171; receipts 0/3/2/1/1 FAIL -> 2/3/5/1/1 PASS; selftest 113->119; controls and 4 leak arms FAIL). C2 re-measured by independent re-derivation (6 libalpm files fetched at 54d9411 equal frozen snapshots and S208/S213-S217 anchors; TO1-TO8 8 holds/0 false; own pacman.log oracle 60/60/0/0, 0 in-commit hook lines, 252/441 SCRIPTLET outside) because the frozen counter f1c97836 never reads the rule cell; receipts evidence-verified. No-harm: SCORECARD 82/0, ordinals unchanged, deletions limited to census comment/IN-109 repin/S208 used-by, S210 byte-identical, sibling PROVINCE sweep 0/20. Spot-check: agree S216, S214 admits; agree both staged-sentence rejects (devblog re-opened live). Census tsukuroi ok exit 0; rows 212->218, malformed 0."
+   },
+   "commit": "tsukuroi-shokunin@a6ca81717f97b9b38d5386be246e9218c07839dc",
+   "closed_at": "2026-10-26T06:47:32Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest (.ufo/watchdog.log): 2026-10-26T02:35:53-03:00 launch tsukuroi round=39 pgid=3529108 driver=hyaku-inline attempt=1; 2026-10-26T03:38:41-03:00 complete tsukuroi round=39; hyaku-inline attempt=1. Report c9cd39c9 by tsukuroi-shokunin 03:38:11 (after a6ca8171 03:36:27); 9 round commits ancestors of master; lane ahead=0, porcelain empty; prompt 0 missing template lines, hyaku addendum §6. Conformance defects (status-neutral, routed): future-dated SCORECARD declaration heading (06:20Z vs commit 05:59:31Z) and LOG heading (07:45Z vs commit 06:35:44Z); after/gates-final-a2d7aad.txt 8th row check-self-assessment rc=1 (7 mismatches at a2d7aad7, superseded by eeba342e 27/0) unmentioned; SCORECARD:2245 'each written by run-receipt.py' true only for c1/c2 jsonl. Routed: C2 counter must read rule cell before any re-claim (QUALITY 87); C1 fixture literal monoculture + census_exit ignored by live leg; residual staged propositions from S219; cross-reference this spot-check from round-39 lesson Gate. SHONEN boxes 1-2 look non-author checkable; 3-4 not (operator-owned promotion).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
