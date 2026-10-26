@@ -122,11 +122,18 @@ closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At 
 | mori | 2 | r51–r60 | — | r51 in flight (MoriR51, ~19:22) |
 | souji | 3 | r33 | r33 rejected-honest-stop (`rounds[764]`) | **blocked** 16:39 by `advance` (three consecutive rejected closures through r33); block ended early at 1 round, slot 3 → kama |
 | kama | 3 | r46–r55 | r46 admitted (`rounds[770]`, `a4a605eb`), r47 admitted (`rounds[777]`, `30fd6e51`; calibration and operability improved, capability live-receipt-replay added; D1–D8 routed incl. C2 counter sufficiency) | r48 in flight (KamaR48, ~19:06; dispatch was refused once at ~19:00 on disk pressure, see Incidents) |
-| kasegi | 4 | r36–r45 | r36, r37 admitted (`rounds[755]`, `[758]`), r38 rejected-honest-stop (`[762]`), r39 rejected-honest-stop (`[771]`, `13277204`; attempt 2 after attempt 1 hit the request budget; C1 not verified (G2 red, 7/8), C2 verified; expansion improved) | r40 attempt 1 force-stopped at the request budget (~19:10; w1 54/54 settled, J5 `3074c767` committed, Y receipt uncommitted, w2 never dispatched, no report); attempt 2 (KasegiR40a2) dispatched w2 (35 seats; round total 89), landed report `28dfa1ae` on lane tip `b01cbd50` at ~19:36 (C1 depth:verifiability held 4→4, C2 coverage 7→8); `verify` OK; CloseKasegiR40 spawned 19:37 |
+| kasegi | 4 | r36–r40 | r36, r37 admitted (`rounds[755]`, `[758]`), r38 rejected-honest-stop (`[762]`), r39 rejected-honest-stop (`[771]`, `13277204`; attempt 2 after attempt 1 hit the request budget; C1 not verified (G2 red, 7/8), C2 verified; expansion improved), r40 rejected (`[779]`, `b0513537`; attempt 2 after attempt 1 hit the request budget at ~19:10; 54+35 = 89 seats; C1 depth:verifiability NOT verified, kill rule fires on the lane's own wave-2 fixtures; C2 coverage 7→8 verified; D1–D7 routed; spot-check `5b29ea14`) | **blocked** ~19:56 by `advance` (three consecutive rejected closures r38–r40); block ended at 5 rounds, slot 4 → chousa |
+| chousa | 4 | r52–r61 | — | r52 in flight (ChousaR52, ~19:57) |
 | kaidoku | 5 | r39–r48 | r39 admitted (`rounds[757]`), r40 rejected-honest-stop (`[768]`; C1 3/4 counter suffix defect, C2 met), r41 rejected-honest-stop (`[774]`, `25d2770c`; C1 coverage met and improved, C2 not met on the counter's `declared` key gap; D1–D5 routed) | r42 in flight (KaidokuR42, ~18:55); rejection streak 2 |
 | kengaku | 6 | r40–r49 | r40, r41 admitted (`rounds[759]`, `[766]`), r42 admitted (`rounds[775]`, `de34e23c`; calibration and coverage improved; judge disagreed with the Dockerfile reject; R1–R6 routed) | r43 in flight (KengakuR43, ~18:55) |
 | tsukuroi | 7 | r41–r50 | r41 rejected-honest-stop (`rounds[761]`), r42 rejected (`rounds[776]`, `e93c3831`; C1 operability improved, C2 depth failed its own kill rule on SC1/SC3; nothing harmed; spot-check `6951ead9`) | r43 in flight (TsukuroiR43, ~18:57); rejection streak 2 |
 | mado | 8 | r44–r53 | r44, r45 admitted (`rounds[760]`, `[767]`; r45 one 41-seat wave, routed as a defect), r46 admitted (`rounds[773]`, `f1da69fc`; operability and coverage improved, nothing harmed; spot-check `60edb66e`; R1–R4 routed) | r47 in flight (MadoR47, ~18:50) |
+
+Fleet-root misroot, 19:50 -03: mori r51 seats `Mo51CritEntail12` (ENTAILMENT vote seat, 6 vote lines) and
+`Mo51ConnSiblings` wrote their reports to `<fleet>/.ufo/waves/round-51/w1/` (cwd = fleet root, relative path).
+The orchestrator moved both, bytes unchanged (sha256 `351684a6…`, `c85e3277…`), into
+`mori-shokunin/.ufo/waves/round-51/w1/`, removed the fleet dir, and told MoriR51. It is a conformance item for
+mori r51's closure.
 
 ## Incidents
 
