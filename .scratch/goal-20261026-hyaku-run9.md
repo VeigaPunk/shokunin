@@ -179,3 +179,11 @@ closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At 
   driver: CTL_B/D/E finished at 15:11, and CTL_C was still running after 3 h. On the orchestrator's nudge the
   L1 committed to a 17:00 -03 deadline: if CTL_C is not done by then, it is recorded as not evaluated (timed
   out) and the round lands.
+- 18:44 -03, post-closure write to a closed round. KaidokuR41 filed its report (`4c87e06d`) before its wave 2
+  settled, and CloseKaidokuR41 closed r41 at 18:36 on that report (`rounds[774]`, `25d2770c`). The last w2 seat
+  results then woke the r41 L1, which committed lane `ae5dc3f3` (wave-2 reports, results ledger, lesson wave-2
+  section) and rewrote its report in place (`00171131`, 7 insertions / 6 deletions). That is a closed round's
+  report edited after its MANIFEST row. The r42 L1 had started at 18:50 on top of `ae5dc3f3` (`fdabdfa4`), so the
+  lane history stayed linear. The MANIFEST row still cites `4c87e06d`, which resolves and is an ancestor. Left in
+  place; the closure verdict stands; this is a conformance item for kaidoku r42's closure. Same pattern as
+  souji r33 at 16:26: an L1 that yields before WAVE-DONE gets woken by late seat results.
