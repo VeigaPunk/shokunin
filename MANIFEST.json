@@ -24448,6 +24448,51 @@
    "notes": "Driver: 2026-10-25T19:30:25-03:00 launch mado round=41 pgid=535349 driver=hyaku-inline attempt=1; 2026-10-25T22:13:09-03:00 complete mado round=41; hyaku-inline attempt=1. Conformance: report committed by lane identity (866affa), SHONEN heading with 4 [~] lines, 9 cited commits all ancestors of master, lane pushed ahead=0. Defects (status-neutral): two untracked scratch files ExecDiffFuzzV2/scratch/s-grow,s-size left in lane tree; PROVINCE.md:75 citation is 75-76. Routed: tighten C1 selftest-teeth and C2 quote-end predicates (lane-disclosed weak: 5/11 C1 cheats, 10/10 C2 forgeries pass); S041 held-row citation; tool ergonomics O1-O5. SHONEN boxes remain [~]; promotion operator-owned (box 2 live census reproducible by non-author).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 57,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 57,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 57
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "freshness": "improved",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "id_resolver.py",
+    "receipt-pin-counter",
+    "differential-tool-gate"
+   ],
+   "report": ".ufo/reports/round-57/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_sonnet session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-57-verifier-spotcheck.md@7ff637929c938f56c625e01d54b6156843c9d469",
+    "rechecks": "C1 evidence-verified (base receipt undisclosed_relabels=6 met=False, tip 0 met=True new_receipts=3, selftest 71/71; receipt-errata.json has 6 entries matching the 6 base relabels; SCORECARD diff purely additive; C2/C3 receipts committed once each) - counter not executed; C2 re-measured (id_resolver.py runs at tip: ids_cited=106 resolved=106 dangling=0) and evidence-verified (gate 0/5 -> 5/5, tool selftest 49/49); C3 re-measured (SOURCES rows 158->160, knowledge files 52->54, zero 死链 hits at base, live GETs of S421/S422 HTTP 200 at 34750/27327 bytes equal to retained sizes, both recheck greps print 1, 33 of 33 quoted entry spans occur in the live pages, census exit 0 with 14 W04 unchanged) and evidence-verified (gate 0/8 -> 8/8, selftest 120/120); spot-check 2 admits (S421 S422) + 5 rejects (S390 S409 S410 S358 + SOURCES quote rows) agree, S404/S414 not re-opened; no gate executed"
+   },
+   "commit": "kake-shokunin@20217f23eca15862febe14545523832e21584106",
+   "closed_at": "2026-10-26T01:45:00Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-10-25T20:34:46-03:00 launch kake round=57 pgid=465319 driver=hyaku-inline attempt=1; 2026-10-25T22:25:39-03:00 complete kake round=57; hyaku-inline attempt=1. Step-1 clean (report by kake-shokunin, SHONEN 4 lines, 8 of 8 cited hashes ancestors of master, ahead=0, 8 lane commits all kake-shokunin). Routed defects (status-neutral): (1) report line 60 says no receipt with a revision line was rewritten after commit, but controls/after-c1-receipt-pins.txt was committed at T0 as 'pending' + revision + EXIT=0 and rewritten in 20217f2 (disclosed in the landing table; the report contradicts itself); (2) untracked leftover .ufo/waves/round-57/w1/ExecPinsIndependent.files/relabels.json in the lane tree; (3) c56_quote_truth.py reads 6/8 at the tip by design (mirror pins 158 rows) - pin to measured revision or register as historical; (4) carried limits: id_resolver fence-blind and drops non-ASCII knowledge paths, C1 cannot prove a counter ran, C2 G4 reads live sibling registries; (5) axis ownership: C1 declared on calibration (round-54 sub-axis) outside the prompt's operability+freshness list, ownership left open by the lane for the operator. SHONEN boxes all [ ] and not fully checkable by a non-author from this round; promotion operator-owned. S404/S414 rejects not re-opened (evidence lives in a read-only shokuknow checkout).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
