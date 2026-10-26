@@ -24320,6 +24320,49 @@
    "notes": "Driver: 2026-10-25T19:25:12-03:00 launch kumitate round=64 pgid=1368991 driver=hyaku-inline attempt=1; 2026-10-25T21:34:07-03:00 complete kumitate round=64; hyaku-inline attempt=1. 80 seats (w1 41, w2 39), 50.0% executor/scribe/simplifier, dead=0; w2 inline dispatch gate DRIFT with 4 SESSION_AMBIGUOUS scouts (retry transcripts, disclosed). Defects (status-neutral): two untracked seat receipts left in lane (K64ExecProxyRepair/receipts/13,15); unreceipted selftest tally 125 (D1); CHANGES-AFTER-FREEZE cites absent close/supplementary-c2.txt and a real-reports final-tool re-derivation not in the report (D3); post-freeze ratchet (controls 16->50, P2 floor unreachable at freeze) disclosed, operator-owned; fleet .git removal incident cause unknown; K layer DEGRADED 49/53 carried. Routed to round 65: D2 corpus/README.md row for lessons/round-64-verifier-spotcheck.md must land before the plan freeze (Q60 map arm enforced from round 65), D1, D3. SHONEN boxes 1-4 look checkable by a non-author given this verification; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 51,
+   "date": "2026-10-25",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 51,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 51
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "depth": "improved",
+    "coverage": "improved",
+    "calibration": "improved",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "tools/assimilate-rows.py v3: cites only header source: ids per entry (bodyonly.tsv, bodyclash.tsv), refuses a registry with no ## Registry heading or rows outside it, refuses unknown source ids, --cites all keeps the round-49/50 reading; receipt-check.py pins the measured tool revision; Japanese/Chinese search-record theme adopted by document as S107-S112 and three entries (one .docx refused for capture form)"
+   ],
+   "report": ".ufo/reports/round-51/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_sonnet session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-51-verifier-spotcheck.md@00f8c7f5272a1d98b6d34913985fa4537e00aaf9",
+    "rechecks": "C1 re-measured on my own nonce package: base tool renumbers body-only ids (CITED=3 APPEND=2) and restarts ids at S001 on a headless registry; tip CITED=1 BODYONLY=2, refuses the headless registry rc=1; tip --selftest PASS 27/27, round-50 pinned fixture PASS 26/26 digest c5c56480 equals the pin; tool sha256 10af959b equals the receipt tool-rev pin; frozen counter, supplement 10/10 and controls evidence-verified only (frozen counter forgeable, lane-disclosed). C2 re-measured: SOURCES rows 106->112, theme absent at base, all 70 manifest quotes single-occurrence in sha-matched captures and in their entries (<=25 words), census exit 0 with the same 5 W04; entailment sampled, none overstated. C3 re-measured with own extractor: dangling 5 -> 0, rows 36->37, pointers 74->77. Spot-check 8 items agree (S109 char 15310, S111 comment-only 学科分类号, S107 char 10234 with footer 122, search-log-fields-r36 reject on 265-char Client Challenge capture with quotes absent from the whole cache, NIPH .docx refusal as capture-form with note that word/document.xml is readable, S107 row quote, S108-S112 rows, one quarantine row)."
+   },
+   "commit": "chousa-shokunin@a84edcf960caec156251e5d9843afecf9ad870f4",
+   "closed_at": "2026-10-26T00:46:12Z",
+   "campaign": "hyaku",
+   "notes": "Driver: 2026-10-25T19:46:38-03:00 launch chousa round=51 pgid=3405295 driver=hyaku-inline attempt=1; 2026-10-25T21:38:49-03:00 complete chousa round=51; hyaku-inline attempt=1. Conformance ok: report by chousa-shokunin (c7d8d09f, 21:37:52, before complete), all ten cited commits ancestors of master, ahead=0, tree clean, SCORECARD diff append-only, 89 seats (48+41) >= 64. Status-neutral defects: none new. Routed to lane: (1) frozen C1 counter forgeable (lane-disclosed) - make the next counter nonce-only; (2) adopter twin-id held label and refusal ordering open; (3) NIPH .docx refused for capture form though .raw word/document.xml is readable - build the zip-member form before refusing a .docx again; (4) C3 existence-only, corrections read in any order, SCORECARD rows only; (5) round-49/50 one-shot counters fail at the new default without ASSIMILATE_CITES=all - say so in the SKILL Gates row. SHONEN: four [~] boxes, evidence pointers resolve; no [x] asserted, promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
