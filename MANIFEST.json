@@ -25959,6 +25959,50 @@
    "notes": "Driver digest: 2026-10-26T12:31:10-03:00 launch tabi round=32 pgid=13608 driver=hyaku-inline attempt=1; 14:47:16 complete attempt=1. Report a3ab0ec0 (14:46:48) after last lane commit 8fa57d29 (14:46:01), before completion. 6 cited commits ancestors of master; jj-lane state ahead=0, porcelain 0; prompt = template + lane-addendum, placeholder-only diffs. Waves w1 36 / w2 34 seats, outputs 36/34, no model keys. Step-1 defects: none (notes: w2 included 3 executor re-run seats; mutated-control clone_tree digests unresolved in lane repo). Routed (tabi next round): (1) C1 gate v2 incl. splice detection, MutC1 9/20 survivors, and the driver's import of serveFixture/FIXTURE_SHA256/VIEWPORT from the gate; (2) calibration counter v4 (m4 grammar, supersession bound to real correction, 5 MutC2 survivors); (3) S125 recheck on-release->90d made to leave the release-pins population: add a release-pin receipt or justify 90d; (4) claims.json C1 feasibilityDisclosed false as written (M2): named correction; (5) w2 precision defects carried (CritNewNumbers 5, CritEntry 10, ConnRoutedLedger 19, S124 Gate word counts 18/16 vs 17/15, S126 §6.7 anchor); (6) mark M9 fix landed; (7) commit or byte-pin mutated-control fixture trees. SHONEN operator note: boxes 1, 2, 4 non-author-checkable (SKILL.md:2629, bidi receipt + LOG, PROVINCE unchanged); box 3 still rests on lane seat RerunDriver.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 39,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 39,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 39
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "depth": "improved",
+    "calibration": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "standard big-endian SquashFS v4 recursion (squashfs_v4_be)",
+    "executable SquashFS extract-firmware outcome triage"
+   ],
+   "report": ".ufo/reports/round-39/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-39-verifier-spotcheck.md@fa6a8a3f85ec65946b3a54d37c0ddd1d6748664f",
+    "rechecks": "Lane gates/counters not executed; plain re-derivation over committed bytes at 8b9634ed. R39-C1 re-measured: PROVINCE Round-39 Core section 0 (base, freeze) -> 1 with squashfs_v4_be row (6fdaf4f1); own Python over carriers.json: 6/6 carrier pins ok, oracle files 5/5,3/3,4/4,4/4,10/10,8/8 matched by suffix+sha256, unpublished-entry gaps == in-tree links (0,1,0,0,2,1), no escaping path published, MSR on K1/K5/K6, superblock sqsh/v4, comp id 4 on K6 only; committed c1-at-6fdaf4f1/2b0b6a29 carriers_matched 6 met_target true frozen_path_changed []; do-nothing control 0; selftest 33/33. R39-C2 re-measured: own evaluator parsing only the SKILL table (absent at base) labels 20/20 held-out envelopes == manifest; seed == freeze 8fcda41c; 20 carrier pins ok; committed c2 scores matched 20/20; selftests triage 35/35, c2 27/27, absence-sweep 18/18. Freeze integrity: no commit 8fcda41c..8b9634ed touches frozen paths; tool/claims blobs equal at freeze/6fdaf4f1/tip; SKILL triage block byte-identical. Harm: coverage map 126->128/128, rule blocks 17->18, SOURCES 117->122 append-only + S112 used-by, Adjacent md5 equal. Spot-check: S122, S118, S121 admits agree (live sha/size equal; S121 quote in debian/rules, loose anchor disclosed); AVM rejects avm-image-build-blocker and avm-le-variant-reachability agree (superseded by producer's own later entries). Census exit 0, 12x W04 (new S119)."
+   },
+   "commit": "kaidoku-shokunin@8b9634ed8253653e7eb994aad9860a624e3b0366",
+   "closed_at": "2026-10-26T18:04:59Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-10-26T13:00:45-03:00 launch kaidoku round=39 pgid=159311 driver=hyaku-inline attempt=1; 2026-10-26T14:57:54-03:00 complete kaidoku round=39; hyaku-inline attempt=1. Step 1: report e3b4783c by kaidoku-shokunin, landed after lane tip 8b9634ed; SHONEN heading 4/4 boxes [~]; all 9 cited hashes ancestors of main; jj-lane state ahead=0, porcelain clean; prompt = template verbatim + hyaku addendum. Conformance defects (status-neutral): no explicit cross-domain-evidence line in report; cited l1/scores JSONs carry no exit code; wave ledgers status null per seat; CTL-C2-5/6 formatfix inputs landed post-freeze (72359309). Routed (spot-check s5): R39-CL1 sqfs-triage.py lacks operation/provider domain guard (registry row SKILL.md:1351 over-broad); R39-CL2 SKILL rule block 18 lacks mixed-symlink caveat (K5/K6 lossy action); R39-CL3 rows 5/8 exclude measured outcomes, counter scores labels only (cause column unscored, 9 distinct decisions); R39-CL4 validate control-table format in freeze; R39-CL5 C1 counter cannot refuse re-minted fabrication (planned r40); R39-CL6 report/receipt hygiene; carried: heldout-gen docstring erratum, surviving mutants, S118/S121 loose anchors, R36-CL5 open. SHONEN: all four boxes look checkable by a non-author from committed bytes (operator-owned promotion; no [x] written).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
