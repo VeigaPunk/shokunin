@@ -25837,6 +25837,47 @@
    "notes": "Driver digest (watchdog.log l.1501,1512,1513,1521): launch souji round=32 2026-10-26T05:07:28-03:00 attempt=1; lane-dead-no-report 09:23:45 (attempt-1 L1 died in orchestrator host crash ~08:50, work salvaged); launch attempt=2 09:23:46; complete 10:56:13 attempt=2. Report 9c8b964 by souji-shokunin at 10:55:49 (after tip 10:53:49); 9 lane commits all ancestors of master; lane ahead=0, clean. Honest stop: C1 calibration MISSED (unbound 6, withdrawn 17 > cap 8) and C2 operability MISSED (24/27 at tip); C3 coverage VERIFIED. No axis harmed: C2 landing harms (2 gate digest pins, r15 frozen pin, receipt --out guard, SKILL ../ pointers) repaired before close. Defects (status-neutral): D1 orchestrator salvage 4e56c48 under lane identity (disclosed); D2 report says landing gate findings=0 at tip but the only committed run (at 4ea897f) reads findings=2, both self-pointers to final-tip-measure.txt resolved at 04b9221; D3 C2 landing touches 27 tools/tests files, not 26; D4 C3 entry S223 source line keeps a 'placeholder id' note. Routed to r33: C1 per-statement enumeration + feasibility leg, N28-N31/N33/N34, N25 re-adjudication; C2 trailing-slash TMPDIR regressions (souji-census.sh:1990, souji-round9-selftest.sh:7), evidence-cache T08 with run-acceptance digest pin, literal /var/tmp in r15 regenerate.py and r15-census-config.py, T18 moving anchor; D2 committed tip gate run; D4; C3/C2 counters beatable (SwarmMutationTester22, SwarmCritic34); name frozen re-pins as separate acts. SHONEN: four [~] boxes with pointers that resolve at tip; look non-author-checkable, promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 50,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 50,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 50
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-50/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-50-verifier-spotcheck.md@aa3af1ec3118ee7766dfce1d9709ce3c0c3f6bfd",
+    "rechecks": "C1 axes half re-measured (jq over MANIFEST: latest admitted improved/harmed per axis 47/47/49/28/49/19 = tip Last-change cells; 4 lagging at 7197160b + 2 stale SHONEN pins = reported mismatches=6), pins half evidence-verified (selftest receipts 114/114, 17/17; pin-check at bae8656e met, 35 tally pins); frozen count-c1.py not run. C2 re-measured by own locator 22/22 quotes (S489 7, S490 8, S491 7); live sha256 of all three sources = committed copies; absence sweep 0/0/0 at 7197160b. Freeze sha256 34 OK; counters/controls unchanged since 950e99be. Census rc 0, 22 W04 (new: S491); rows 261->264; SOURCES/knowledge append-only. Spot-check 3 admits (S489,S490,S491) + 2 rejects (staged r47 entry/S539, S534): all agree."
+   },
+   "commit": "mori-shokunin@756d5b1a5679b131203663cbbbd2c4d96f7143ee",
+   "closed_at": "2026-10-26T14:10:30Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: launch attempt=1 2026-10-26T05:31:49-03:00 pgid=998797; lane-dead-no-report 09:23:50 (L1 died in orchestrator host crash ~08:50, work salvaged 9b8562a3); launch attempt=2 09:23:52 pgid=1820734; complete 11:04:16 attempt=2. Conformance (status-neutral): D-a first filing 4a20abb1 authored 10:15:47 before lane tip (committed 10:54:21); second filing e9833c0f authored 10:54:42 satisfies r49 defect 1; mechanism is fleet-owned fleet-commit.sh:84-85 jj metaedit --update-author (routed to operator). D-b 104 seats across attempts (>100 ceiling); contract's two v1 waves not run; 35 attempt-1 seats with unknown outcome. D-c frozen considerthese 2026-10-25 s2 swapped for 2026-10-26 s3 (disclosed in lesson). D-d r47 re-execution transient divergence from non-hermetic round-40/conform.py. R49 routed defects 2 (selftest receipts) and 4 (.scratch residue) verified closed. Routed to lane r51: .scratch producers/hermetic conform.py; round shape within ceiling + disposition of 35 seats; successor C1 counter survivors + K4 beyond SHONEN; C2 entailment step (M4); log contract deviations in LOG.md. Operator: all SHONEN boxes [~] with resolvable pointers; executable-instructions box now checkable from committed receipts; promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
