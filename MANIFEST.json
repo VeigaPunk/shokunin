@@ -24952,6 +24952,46 @@
    "notes": "dispatch/complete digest: 2026-10-25T22:05:09-03:00 launch kotoba round=74 pgid=1711177 driver=hyaku-inline attempt=1; 2026-10-26T01:03:32-03:00 complete kotoba round=74; hyaku-inline attempt=1. Status ok (real report, committed 00:01:50-03:00 after lane tip ec2c1d3; SHONEN present, 4 boxes [~]; all 8 cited commits ancestors of master; jj-lane state ahead=0, porcelain empty; prompt carries all 140 template lines verbatim + hyaku addendum). Admitted: C1 coverage and C2 freshness verify, no axis harmed. Conformance defects (status-neutral): D1 L2 floor short (34 seats vs 64), falsify wave 2 (33 seats) generated but never dispatched, third kotoba round in a row; D2 orchestrator snapshot commit d5aebcf (394 files) on master absent from report Landed table and LOG. Routed to lane: dispatch falsify wave; LOG correction naming d5aebcf as non-landing; forward pointer in sibling-overlap-census-round49.md to the r74 re-pin; floor the two new self-tests (250, 47) in assertion floors (E1.3 gap); check_sibling_reread.py scores the carry-forward world 20/20 (needs an arm failing on a carried-forward class). Quality graded improved by the closure (lane self-graded unchanged): r49 census re-verified at fresh heads and stale tsukuroi class corrected, verified from outside. Operator: SHONEN boxes 2 and 4 were non-author-checkable this round and check out; boxes 1 and 3 not exercised.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 33,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 33,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 33
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:verifiability": "improved",
+    "coverage": "improved",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "capture-binding-check"
+   ],
+   "report": ".ufo/reports/round-33/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-33-verifier-spotcheck.md@014ee2d7aa8c3c095ff57ae51097606a9906228c",
+    "rechecks": "Re-measured over committed bytes 690b69da->7963976e: C1 manifest walk records 38->40, with_url 0->40, fetched_utc 0->2, archival 0->38, per-id binding bound 0->40 (multi_row_url=2: S029/S006), round-32 manifest absent->present, 9/9 dirs; C2 frontier admitted 15->16, SOURCES rows 48->50 (S049/S050 1/1, additions only), entries citing S049/S050 0->1/1, census validate exit 0 (W04 S028/S029 only), contract census clean, capture sha256 = manifest pins; SCORECARD/SKILL/PROVINCE/QUALITY diffs append-only. Evidence-verified, not executed: capture-binding-check.py b4182665 selftest cases=11 failures=0, two runs byte-identical 1861fec8, base bytes exit 1 bound=0, fake rejected; harness 19/19 PASS F16; source-recheck S049 Q1-Q8/S050 Q1-Q6 occurrences=1. Rule-B erratum 1 accepted (literal clause unsatisfiable at freeze; filed before any scoring receipt). Closure reviewer seat: F16 ADMIT Q1-Q10, 30/30 quotes byte-checked. Spot-check: S049, S050 admits re-opened live (HTTP 200, quotes present), 2 staged rejects re-opened (agree 4/4); S050 row quote verified."
+   },
+   "commit": "kasegi-shokunin@7963976e60b2564860553c6ab4838128d5ca06ea",
+   "closed_at": "2026-10-26T05:23:38Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest (.ufo/watchdog.log lines 1468/1471 at closure): 2026-10-26T01:10:54-03:00 launch kasegi round=33 pgid=99020 driver=hyaku-inline attempt=1; 2026-10-26T02:04:22-03:00 complete kasegi round=33; hyaku-inline attempt=1. Step-1: report 521b11c6 by kasegi-shokunin (committed 02:03:51, after lane tip 7963976e); SHONEN heading with 4 [~] lines; 7 cited commits exist and are ancestors of master; ahead=0, porcelain empty; prompt carries the full template contract plus hyaku addendum; wave 64/64 receipts. Status-neutral defects routed to the lane (spot-check §5): R1 SCORECARD.md:988/:1087 keep <LANE_HASH> markers; R2 frozen C1 'exactly one registry-row URL' clause unsatisfiable at freeze (erratum 2 + pre-freeze satisfiability check); R3 QUALITY R20 (QUALITY.md:169) restates the superseded global reading; R4 C1 counter mutants 3/4 under the frozen kill rule (skip-selftest survives; accept-record-without-url survives plain run) while report lines 41/49 say all killed; R5 selftest case url-matching-two-rows builds a dup-id fixture; R6 round-26 S040-live.txt orphan capture, no manifest record; R7 report cites S050.txt:69 (sentence at L70), lesson round-33.md:31-32 char counts wrong (31 not 19, 22 not 23); R8 round-32 fetched_utc carries -03:00 capture-commit time; R9 open gaps CritC1Kill H4-H8, C2 junk construction passes all counters but reviewer, no junk-twin control. Operator: SHONEN boxes 1/3/4 cite non-author-checkable evidence, box 2 lacks replay; not verified as boxes, no [x] written; kasegi round-32 L0 question still open.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
