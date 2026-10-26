@@ -2,7 +2,7 @@
 
 Lane `/home/vgpnk/Projects/shokunin/kengaku-shokunin`, branch `master`. Baseline `3ea9a1d9005cc07d0a5ce69f4ebf53a81fbcecdd`;
 frozen claims `plans/round-37-claims.md` (freeze `ca790460e9b74d4dc5870c878affd13cc9c4437a`); final lane hash
-`dc90676b0a01bcb278dba3b5231b504fe2a9ff03` (`git ls-remote origin refs/heads/master` → that hash). L1 agent id `KengakuR37`;
+`21e6251bfebf87ecf09f7b0a6df98b5c6179d0e9` (`git ls-remote origin refs/heads/master` → that hash). L1 agent id `KengakuR37`;
 the L1 holds the canonical planner seat (the wave validator rejects `planner`).
 
 ## Work performed
@@ -68,10 +68,16 @@ Work items:
   two capability rows; LOG entry; lesson `corpus/lessons/round-37.md`.
 - No-harm: the pre-landing sweep was green 25/25 (`build/R37TipSweep.md`). At the tip, the round-36 C1/C2 counters still
   pass, census exit 0, and the frozen digests are unchanged (`measure-final.txt`).
-- Wave 2 (falsify, 37 seats, `falsify-dispatch.json` validated against `357deceb`, ready marker `dc90676b`) was handed to
-  the dispatcher after WAVE-DONE build. **I filed this report before WAVE-DONE falsify**, because the operator's request
-  budget forced the round to close. No wave-2 finding is integrated, and the closure should read
-  `.ufo/waves/round-37/falsify/*.md`.
+- Wave 2 (falsify, 37 seats, against `357deceb`): 37/37 reports, 0 dead (`falsify-results.json`, committed `21e6251b`).
+  Amendment: the first filing (fleet `9b84562b`) was made before WAVE-DONE falsify under the request budget; this amendment
+  integrates the outcome (`SCORECARD.md` and `corpus/lessons/round-37.md` §Wave 2 outcome). Re-measures agree — C1 55/55 on
+  two interpreters, C2 pass with the probe byte-equal, S111-S113 re-opened 3/3, battery code 0 defects, 0 removed lines,
+  C2 landed mutants 10/10. Limits found: 13 of 36 non-frozen near-variant gate mutants survive (`F37XMut*`); an overfit gate
+  matches every declaration with 2 cues; 6 mutant labels lack an advertising sentence (`F37CritC1Axis`); the anchor tool and
+  the attribution audit are weak against mutants of themselves; `ledger_tip.py` false-reds on a source clone without a local
+  `master` (`F37NoHarmSweep` N1). Wording defects routed to round 38: requirement map 2/4 disputed, 13 entry overclaims,
+  4 unsupported entry sentences (no quote fabricated), lesson/QUALITY/SCORECARD/SKILL/PROVINCE defects, 3/60 self-assessment
+  statements mismatched.
 - Misroot sweep: no fleet-root untracked file names kengaku round 37
   (`git -C /home/vgpnk/Projects/shokunin status --porcelain --untracked-files=all | grep -iE 'r37|round-37|R37|F37'` → only
   `kengaku-shokunin/`, which appears because the fleet `.gitignore` is deleted in the working tree). Six fleet-root tracked
@@ -80,7 +86,7 @@ Work items:
 
 Round shape: two v1 waves. Wave 1 has 40 seats: 16 executor, 8 scribe, 4 critic, 4 reviewer, 3 scout, 3 connector,
 2 mutation-tester; m_flash roles 28/40, attack 10/40, 0 dead. Wave 2 has 37 seats: 16 critic, 8 reviewer, 6 executor,
-4 mutation-tester, 2 connector, 1 scout; m_flash roles 22/37, attack 28/37; outcome not integrated. The round total is
+4 mutation-tester, 2 connector, 1 scout; m_flash roles 22/37, attack 28/37; 0 dead. The round total is
 77 seats, with no residual call.
 
 Stale-lane: respawn-per-round driver, no other mission of this lane open.
@@ -120,7 +126,7 @@ bubblewrap 0.13.1 was already installed. One wave-1 seat pulled and removed the 
   - After, at `5c7d5d75`: `checks=7 defects=0`, `PREDICATE C2 pass`, exit 0. Probe: `cases=22 observed_pass=9
     observed_fail=13 mismatches=0`.
   - Verdict: **frozen predicate met**. Score **7 → 7 held**, capped by the L0 question. The counter has documented
-    false-green paths, so admission also rests on the wave-1 non-author-model re-reads and is pending the wave-2 re-reads.
+    false-green paths, so admission also rests on the wave-1 non-author-model re-reads and is the wave-2 re-reads (quotes and rows confirmed; prose defects routed).
 - **Frontier:** `python3 plans/anchor_digest_check.py --lane .` gives `defects=5` at `3ea9a1d9` (AnchorSweep F0) → `rows=107
   tokens=15 defects=0` at `5c7d5d75`.
 
@@ -147,8 +153,8 @@ bubblewrap 0.13.1 was already installed. One wave-1 seat pulled and removed the 
 - **quality — improved.** Stale or false items were marked and re-verified rather than left. The S110 digest erratum is in
   place. Four true-but-unsupported digests now have committed captures. `tb2-regex-log-grader.md` gained errata for four
   mis-anchored `What decides it` cells and two non-independent rows. The round-36 spot-check's own off-by-one is recorded.
-  No admitted entry failed its re-check at the tip: the round-36 C2 counter still passes. Caveat: the wave-2 re-reads were
-  not integrated.
+  No admitted entry failed its re-check at the tip: the round-36 C2 counter still passes. Caveat: wave 2 found 4 unsupported
+  entry sentences and 13 overclaims, marked in the lesson and routed, not yet repaired in the entry.
 - **discernment — improved.** Last round's outside spot-check disagreement (the S110 digest) and its routed items 2 and 3
   became lesson rows. They are backed by grounded criteria: Q26 (anchor digests resolve to committed bytes) and Q27 (a gate
   class is held only when a fixture kills its silence mutant). This round's own counter weaknesses are recorded as lesson
