@@ -92,7 +92,7 @@ closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At 
 | kasegi | 4 | r36–r45 | r36, r37 admitted (`rounds[755]`, `[758]`) | r38 in flight |
 | kaidoku | 5 | r39–r48 | r39 admitted (`rounds[757]`) | r40 in flight |
 | kengaku | 6 | r40–r49 | r40 admitted (`rounds[759]`) | r41 in flight |
-| tsukuroi | 7 | r41–r50 | — | r41 in flight |
+| tsukuroi | 7 | r41–r50 | r41 rejected-honest-stop (`rounds[761]`) | r42 in flight |
 | mado | 8 | r44–r53 | r44 admitted (`rounds[760]`) | r45 in flight |
 
 ## Incidents
