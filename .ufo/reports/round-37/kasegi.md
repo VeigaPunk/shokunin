@@ -82,3 +82,7 @@ Respawn-per-round driver; no other mission of this lane is open.
 ## Tooling
 
 No installs or upgrades; no pacman transactions (host-wide pause). All work used existing host tools (bash 5.3.20, git 2.56.0, python3 3.14.8, GNU coreutils).
+
+## WAVE-DONE addendum (appended after filing)
+
+`WAVE-DONE kasegi-r37-build` arrived after the report was filed: all 64 seats settled, 0 dead. Results archived at `.ufo/waves/round-37/kasegi-r37-build-results.json` (64 entries with seat output) and committed at `83975acc…` — a post-measurement lane commit (claim measurements stand at `2387dcf6…`; the results commit is wave evidence, not a claim byte). The earlier "not finalised" note is superseded by this line.
