@@ -1,5 +1,27 @@
 ## 6. Campaign addendum — hyaku (百) phases 3–7, operator directives of 2026-10-22/23/25 (binding this round; in-session)
 
+**Run 8 (2026-10-26, binding; supersedes the run-7 routing and goal-file lines below; every other
+run-7 rule, including the inline spawn handoff, stays binding).** Operator directives, verbatim: "ok we
+will be doing the shokunin training, in the hyaku format; I would like us to first estabilish the model
+delegations for each role; then, you decide the order onto which shokunins to develop and train upon;"
+then "ok so start the training run, the goal is to get every single shokunin to round 100; we will be
+doing it for the next 12h".
+- **Run-8 routing** (global role map; never pass `model`; the operator chose it): task/main/planner `@m_opus`;
+  reviewer/mutation-tester/security-reviewer `@m_zfl`; scout `@m_sonnet`; distiller/seance `@m_haiku`;
+  connector `@m_kfc`; executor/labrat/scribe/sonic/simplifier/critic/revenger/sentinel `@m_flash`.
+  m_flash roles still carry ≥50 % of every wave; the attack share (≥25 %) still applies; every wave
+  still carries a few connector seats.
+- **Round size unchanged: 64–100 seats in total.** The live job cap of 100 is shared by up to 6
+  concurrent lanes, so waves queue and fill as slots free up. Size near the floor (64) unless the
+  claims need more.
+- **Assimilation (§10)** carries over as preferred, not required: take a `merge/{{LANE}}/` theme or a
+  `considerthese/` proposal when it fits the claims, and say which in the report.
+- **Fresh-start rounds:** a lane whose previous three closures were rejected (tabi, kaidoku, tsukuroi,
+  revenger at run start) begins with a fresh-start round. Read the last three rejected closures and
+  spot-checks first, and declare only claims a do-nothing control cannot reach (§9). Route around
+  open L0 questions; never treat them as answered.
+- Run state, lane order and holds: `.scratch/goal-20261026-hyaku-run8.md` under {{FLEET_ROOT}}.
+
 **Run 7 (2026-10-25, binding; supersedes run-6 band and routing lines below).** Operator directive,
 verbatim: "ok let's go back to training the shokunins, following that meethod of doing swarms
 inline for each round, and pushing towards round 100 on each shokunin that hasn't gotten to that
