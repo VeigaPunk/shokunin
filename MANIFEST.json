@@ -26380,6 +26380,49 @@
    "notes": "Dispatch digest: 2026-10-26T15:14:33-03:00 launch kengaku round=41 pgid=749835 driver=hyaku-inline attempt=1; 2026-10-26T16:42:33-03:00 complete kengaku round=41; hyaku-inline attempt=1. Report 0ff2af1c by kengaku-shokunin (16:40:23, after lane tip e61aff6f committed 16:40:27; the report cites it), 10/10 cited hashes ancestors of master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0; prompt e25f28e3 = template with placeholders only (+ hyaku addendum §6, scratch §7); both waves (38/38, 34/34) integrated before filing. Defects (status-neutral): D1 wave-1 seat R41CritIndep rm -rf of shared scratch root /fast/scratch/hyaku/kengaku-r41 at 15:42:24 (disclosed; unguarded by tooling); D2 S124 anchor cell edited in place in 53b9e4e5 (CORPUS SOURCES rule 2 allows only status/recheck/used-by; logged old->new in lesson); D3 failed first baseline run evidenced only in a session transcript. Notes: freeze 8ef8b4fc author date 15:13:37 = e50c1345 commit time (jj working-copy creation; committer 15:30:52, after launch); prompt commit e25f28e3 carries the lane identity (orchestrator dispatch act). Routed to round 42: R1 C1 counter residuals F1-F4/A1' -> freeze the five F41C1Hardened repairs with red hostile controls, pin T08's uv-absent PATH assumption; R2 scratch-root guard + Q32 forward leg red on L1's own receipts; R3 C2 standing filler control + tier-B PR state check; R4 SOURCES corrections as superseding rows; R5 carried: 14 round_close/tip_receipts residuals, F39LedgerTip D1, F39MutDirection, F39OrderGateMut, s_usage-03 incidental fixture, 34 unpriced advertised rows. SHONEN: 4 boxes [~]; boxes 1-3 look checkable by a non-author from committed bytes, box 4 needs a judgment read (promotion operator-owned).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 45,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 45,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 45
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "monitor rule versus running output join: monitor = lines joined with hyprctl monitors all -j, per-output AGREE/DIFFER/DISABLED/UNRULED/NOT_COMPARED (tools/mado-monitors.py)"
+   ],
+   "report": ".ufo/reports/round-45/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-45-verifier-spotcheck.md@b22ea56bff2faec39ce9ff75d2107eaf4612ecbe",
+    "rechecks": "C1 re-measured: tool absent->present (tip sha 2f007417 = live receipt); counter v2 base 0/81+0/150 MISSED exit 1 -> tip 4d22eeb 81/81+150/150 MET exit 0 under a fresh nonce; counters/registration/v2 reference unchanged 7c0b003..4d22eeb; live host run DP-1 AGREE verdict=OK exit 0 reproduced (conf sha 69c9d899 = receipt); altered scratch conf -> DIFFER exit 1; imports show no socket/process. C2 re-measured: entry absent->present, knowledge 61->62, README index 61->62, rows 238->252 (S302-S315 A mined), ground grep base exit 1 -> tip exit 0; counter v2 0/1 -> 1/1 MET at tip. Evidence-verified (not executed): mado-axis-scores axis-base/axis-tip mismatched=0 (tip receipt at ac3f9de, later commit receipts-only); ctl-c1-v2 0 of 45, ctl-c2-v2 0 of 15; check-session-material red at ee6659b (findings=97). SCORECARD diff pure append; outside .ufo insertions only. Spot-check 5/5 agree: admits S306 (sha=pin, quote :1001), S312 (:40), S313 (:21-22,:39); rejects float32 finding (Vector2D double) and wiki main (404, Lua-only after e99eac80). Census mado ok exit 0."
+   },
+   "commit": "mado-shokunin@4d22eeb66c2835af8aaa3fac6ad838fa616aa663",
+   "closed_at": "2026-10-26T20:02:24Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-10-26T15:20:26-03:00 launch mado round=45 pgid=2926682 driver=hyaku-inline attempt=1 / 2026-10-26T16:55:41-03:00 complete mado round=45; hyaku-inline attempt=1. Step 1: report 4f8a65b by mado-shokunin after lane tip; SHONEN 4 lines [~]; 7 cited hashes exist and are ancestors of master; ahead=0, remote=4d22eeb; prompt = template rendering + section 6/7 addenda. Defects (status-neutral, routed): D1 round 41 seats < 64 floor, w2 not run; D2 M45-2 undercount - host monitor serial in 3 held entries (config-health-report-r3.md:149, hyprctl-verification-layer.md:153, hyprland-config-plane.md:184) + 21 .ufo copies, none added this round (history removal operator-owned); D3 check-session-material.py gate has no SKILL.md registry row and is red at ee6659b; D4 untracked w1/MutC1Counter/results.json (4 MB) left in worktree; D5 w1-results.json outputs null (kernel restart); D6 round-44 D6/D7 still open. Operator: SHONEN boxes 2 and 3 reproduced by this non-author (live AGREE/OK; SKILL command ran as written); promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
