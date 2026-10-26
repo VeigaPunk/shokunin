@@ -1,6 +1,6 @@
 # kaidoku — round 41 report
 
-L1 `KaidokuR41` held the §3 planner seat. Lane `/home/vgpnk/Projects/shokunin/kaidoku-shokunin`, branch `main`. Base `49096c7e6f226af0c750c4b003be58883cb6049f`; lane hash at filing `740644747865c1c331bfacaf4daf46ea218762c3`. Attempt 1; the watchdog has no `lane-dead-no-report kaidoku round=41` line, so nothing was inherited.
+L1 `KaidokuR41` held the §3 planner seat. Lane `/home/vgpnk/Projects/shokunin/kaidoku-shokunin`, branch `main`. Base `49096c7e6f226af0c750c4b003be58883cb6049f`; final lane hash `ae5dc3f39c3374cb683fa05eb5fd069dda10d376` (first filed at `74064474`, amended after wave 2 settled). Attempt 1; the watchdog has no `lane-dead-no-report kaidoku round=41` line, so nothing was inherited.
 
 ## Work performed
 
@@ -36,7 +36,7 @@ Work items:
 - **Scores** at `bf5286c9`.
 - **Assimilation** at `e1c83313`.
 - **Lesson and ledgers** at `74064474`.
-- **Wave 2 (33 seats), falsify** (`.ufo/waves/round-41/w2/`). 26 reports had landed at filing; see Round shape.
+- **Wave 2 (33 seats), falsify** (`.ufo/waves/round-41/w2/`). All 33 seats settled and all 33 reports are committed at `ae5dc3f3`. Neither verdict was overturned. Wave-2 findings are in `corpus/lessons/round-41.md` `## Wave 2`. The most significant: a one-line counter mutant that reads the manifest key `declared` would flip C2 to met while the counter's selftest still passes. Applying it would change the rule after scoring, so it is routed as R41-CL1 and the stop stands. The reservation scan found zero REA/unblob runs on reserved carriers before the freeze.
 
 ## Landed changes
 
@@ -53,7 +53,8 @@ LOG entry: `LOG.md` `## 2026-10-26 — round 41 …`.
 | `bf5286c9832142a2ceabe2076883dfa2a8e99356` | scores |
 | `7a24ff74736e84b1903db7ba01891c406a6e32a2` | large wave-1 artifacts; R41C1Counter's post-freeze rewrites set aside |
 | `e1c83313f33a3d97edbd8fef402db2d06172fcdc` | assimilation: binwalk v3 entry, S129 |
-| `740644747865c1c331bfacaf4daf46ea218762c3` | lesson, QUALITY 84, SCORECARD `## Round 41`, LOG, SHONEN, entry citation fix, end census, wave-2 reports so far |
+| `740644747865c1c331bfacaf4daf46ea218762c3` | lesson, QUALITY 84, SCORECARD `## Round 41`, LOG, SHONEN, entry citation fix, end census, the first 26 wave-2 reports |
+| `ae5dc3f39c3374cb683fa05eb5fd069dda10d376` | wave 2 settled: the remaining 7 reports, `r41-w2-results.json`, the lesson's `## Wave 2` section; stray empty seat files (`green.err`/`red.err`) deleted |
 
 ## Before → after measurements
 
@@ -117,10 +118,10 @@ No harm was found (`w2/R41W2Harm.md`). One capability row entered: genuine AVM-l
 
 - **Shape:** two v1 waves under `/home/vgpnk/Projects/shokunin/scripts/hyaku/ufo-wave-policy.json`, both dispatched through the inline spawn handoff.
   - **Wave 1** `r41-w1`: 41 seats, all settled (WAVE-DONE; `r41-w1-results.json`). Mix: executor 15, critic 8, scribe 5, connector 3, mutation-tester 2, revenger 2, reviewer 2, scout 2, sentinel 1, simplifier 1.
-  - **Wave 2** `r41-w2`: 33 seats. Mix: critic 10, executor 7, reviewer 6, mutation-tester 3, scout 2, connector 2, sentinel 1, scribe 1, simplifier 1.
+  - **Wave 2** `r41-w2`: 33 seats, all settled (WAVE-DONE; `r41-w2-results.json`). Mix: critic 10, executor 7, reviewer 6, mutation-tester 3, scout 2, connector 2, sentinel 1, scribe 1, simplifier 1.
   - **Round total:** 74 seats. No residual call. The L1 holds the planner seat.
 - **Dead seats:** none observed.
-- **Conformance defect — report filed before wave 2's WAVE-DONE.** 26 of 33 wave-2 reports had landed when this report was filed. The L1 run hit its request budget. Late wave-2 reports are uncommitted, and stray seat files sit in the lane (`green.err`, `red.err` in the lane root and in `corpus/evidence/round-41/c1/V4/`).
+- **Conformance note — report filed before wave 2 settled, then amended.** The report was first filed (fleet `4c87e06d`) with 26 of 33 wave-2 reports landed, because the L1 run hit its request budget. After WAVE-DONE the remaining 7 reports were committed at `ae5dc3f3` and this report was amended. Wave-2 seats left empty stray files `green.err`/`red.err` in the lane root and in `corpus/evidence/round-41/c1/V4/`; they were never committed and were deleted.
 - **Wave-2 findings routed:**
   - `fetch-vendor.py` follows symlinks on write (`w2/R41W2C1Chain.md`);
   - the path rule accepts a non-segment-bounded diagnostic root (`w2/R41W2C1PathRule.md`).
@@ -129,4 +130,4 @@ No harm was found (`w2/R41W2Harm.md`). One capability row entered: genuine AVM-l
 - **Tool installs:** none by the L1, and no pacman transaction.
 - **Stale-lane:** respawn-per-round driver; no other mission of this lane is open.
 - **Open L0 questions:** none added. R40-CL7 and D2 remain operator rulings.
-- **Pre-report gate:** `git -C /home/vgpnk/Projects/shokunin/kaidoku-shokunin ls-remote origin refs/heads/main` prints `740644747865c1c331bfacaf4daf46ea218762c3 refs/heads/main`.
+- **Pre-report gate:** `git -C /home/vgpnk/Projects/shokunin/kaidoku-shokunin ls-remote origin refs/heads/main` prints `ae5dc3f39c3374cb683fa05eb5fd069dda10d376 refs/heads/main`.
