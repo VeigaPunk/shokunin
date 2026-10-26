@@ -120,7 +120,7 @@ closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At 
 | tameshi | 1 | r48–r57 | r48 rejected-harmed (`rounds[765]`, `d98fe66c`; cold-read 60 → 57 below its floor), r49 admitted (`rounds[772]`, `fa882d7d`; calibration 6 → 8, coverage F10 held; spot-check `e3729de8`) | r50 in flight (TameshiR50, 18:31) |
 | tabi | 2 | r32–r41 | r32 admitted (`rounds[756]`), r33 rejected-honest-stop (`[763]`), r34 rejected-honest-stop (`[769]`, `e9949eaf`; C1 newMapped 1/3, C2 met 20/20; operability improved, nothing harmed) | r35 in flight (TabiR35, ~17:58) |
 | souji | 3 | r33 | r33 rejected-honest-stop (`rounds[764]`) | **blocked** 16:39 by `advance` (three consecutive rejected closures through r33); block ended early at 1 round, slot 3 → kama |
-| kama | 3 | r46–r55 | r46 admitted (`rounds[770]`, `a4a605eb`; C1 freshness and C2 calibration improved, nothing harmed) | r47 landed (report `d0012618`, lane `6b7e6cf8`; one 65-seat wave; C1 append-only-audit v2 met, C2 b11909 replay met; shortcut tools also reach met=True on both frozen counters, disclosed); closure in flight (CloseKamaR47) |
+| kama | 3 | r46–r55 | r46 admitted (`rounds[770]`, `a4a605eb`), r47 admitted (`rounds[777]`, `30fd6e51`; calibration and operability improved, capability live-receipt-replay added; D1–D8 routed incl. C2 counter sufficiency) | r48 in flight (KamaR48, ~19:06; dispatch was refused once at ~19:00 on disk pressure, see Incidents) |
 | kasegi | 4 | r36–r45 | r36, r37 admitted (`rounds[755]`, `[758]`), r38 rejected-honest-stop (`[762]`), r39 rejected-honest-stop (`[771]`, `13277204`; attempt 2 after attempt 1 hit the request budget; C1 not verified (G2 red, 7/8), C2 verified; expansion improved) | r40 attempt 1 force-stopped at the request budget (~19:10; w1 54/54 settled, J5 `3074c767` committed, Y receipt uncommitted, w2 never dispatched, no report); attempt 2 in flight (KasegiR40a2, resume context sent) |
 | kaidoku | 5 | r39–r48 | r39 admitted (`rounds[757]`), r40 rejected-honest-stop (`[768]`; C1 3/4 counter suffix defect, C2 met), r41 rejected-honest-stop (`[774]`, `25d2770c`; C1 coverage met and improved, C2 not met on the counter's `declared` key gap; D1–D5 routed) | r42 in flight (KaidokuR42, ~18:55); rejection streak 2 |
 | kengaku | 6 | r40–r49 | r40, r41 admitted (`rounds[759]`, `[766]`), r42 admitted (`rounds[775]`, `de34e23c`; calibration and coverage improved; judge disagreed with the Dockerfile reject; R1–R6 routed) | r43 in flight (KengakuR43, ~18:55) |
@@ -187,3 +187,16 @@ closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At 
   lane history stayed linear. The MANIFEST row still cites `4c87e06d`, which resolves and is an ancestor. Left in
   place; the closure verdict stands; this is a conformance item for kaidoku r42's closure. Same pattern as
   souji r33 at 16:26: an L1 that yields before WAVE-DONE gets woken by late seat results.
+- 18:45-19:05 -03, disk runaway, fleet-wide hazard. Mado r47 seat `ExecRefB` left a shell write running that
+  streamed `x\n` into `/fast/scratch/hyaku/mado-r47/ExecRefB/probeA/d1/applications/bad` at ~0.5 GB/s. The
+  file reached ~590 GB and `/fast` went from 26% to 83% used; `inline.sh dispatch kama` refused r48 with
+  "disk pressure". Cancelling the ExecRefB job did not stop the write: the writer was a `tokio-rt-worker` thread
+  of the orchestrator's own `omp.real` (pid 3438, task 1512186, fds 600/601 in a private fd table), so killing
+  it would have killed the whole session. What worked:
+  - `truncate -s 0` on the file (space back at once; `/fast` 24%), with a 15 s truncation loop as a stopgap.
+  - `prlimit --pid 3438 --fsize=274877906944:unlimited`. `omp.real` ignores SIGXFSZ (SigIgn bit 25), so writes
+    past 256 GiB fail with EFBIG instead of killing the process. The writer's offset was ~588 GB, so it stopped;
+    the file stayed at 0 B afterwards. The 256 GiB soft cap stays in place and is inherited by new children.
+
+  The MadoR47 L1 was told to record ExecRefB as cancelled by the orchestrator. Kama r48 was dispatched once the
+  guard read green.
