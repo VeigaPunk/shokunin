@@ -26507,6 +26507,49 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log lines 1550/1561 when read): 2026-10-26T16:23:03-03:00 launch tabi round=34 pgid=3980957 driver=hyaku-inline attempt=1; 2026-10-26T17:36:34-03:00 complete tabi round=34; hyaku-inline attempt=1. Step 1: report 2904a678 by tabi-shokunin (committer 17:35:42, after lane HEAD 71a87305 17:34:22; author stamp 17:07:10 is the jj change-creation date, observation only), SHONEN heading 4/4 [~]; 5 cited commits ancestors of master; jj-lane state ahead=0 behind=0, porcelain empty; prompt 0929a340 committed 16:23:01 before launch, lines 1-140 differ from template only by placeholders; waves 37+39=76 seats, all outputs non-empty, no model key. C1 adjacency not met (newMapped 1<3; wave 2 withdrew 3 integrator admits, none kept against a finding); C2 operability met. Routed to tabi round 35: (1) corpus/README.md:794/:799 still say four new map rows / rows 15-18 after w2 withdrawals (corrections sweep); (2) adjacency carried claim, third miss: QUALITY-97 counter amendment before target, controls for 9/12 unguarded C1 counter clauses, sweep unnamed sibling-knowledge lines; (3) C2 counter amendment (lstat/scrubbed HOME, 9/10 unguarded counter mutants, self-sniff residual); (4) round-33 w2 findings U01-U28 need dispositions; (5) S125 on-release cadence; (6) precision lows: S131 Gate quote spans 244-248 vs locator 245-247, noHarmRule omitted kake:411 note cell, report lumps RFC 4122 into duplicate-URL rejects; (7) calibration counter v4 carried; (8) keep w2 wave-id path fix (M1). SHONEN: all four boxes appear checkable by a non-author from committed artifacts (operator-owned promotion; nothing written).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 46,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 46,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 46
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "freshness": "improved",
+    "calibration": "improved",
+    "operability": "unchanged",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "append-only-audit"
+   ],
+   "report": ".ufo/reports/round-46/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-46-verifier-spotcheck.md@172b8ad040d51ce8c011238c1408d4e0b6aa9595",
+    "rechecks": "No lane gate, counter or tool was executed. Counter sha256 values 502e6f57 and 4dcfbe10 equal the preregistration and are unchanged from freeze 57909443 to tip; the ledger and the tool are both absent at the freeze. C1 was re-measured with my own Python over a blobless llama.cpp clone: b11906=4d71b42f, 17 commits after b11889. Population is 95 on-release llama.cpp rows minus 4 that are not file-pinned (S026, S038, S482, S484), giving 91, and the set equals the ledger ids. All 91 blobs and changed flags re-derive. The holds and unchanged-file ranges are text-equal. All 4 reworded witnesses check inside the normalised ranges. The histogram is 81/6/4/0/0. Blob identity b11889 vs b11906 is 73 identical, 18 changed. SOURCES rows 226->228 (S486, S487) and the round-46 section is present. C2 was re-measured with git log --numstat over 294 commits: the same 5 events (0718b6ab x4, dd9f5dc6), with deletions 2421/2292 against the tool's 2417/2290, which is the disclosed --- blind spot. The capability row is at SCORECARD lines 130 and 2463 with last cell 46. Evidence-verified: AOA_SELFTEST pass=10 fail=0, c1/c2 after and final met=True exit 0, base controls met=False, gate registered 38 defective 0, cap census 10/10, r41/r42/r43 and pointer met=True, digest unknown 0, hexrun unknown 21 (equal to base). Spot-check: agree on 4 of 4 (admits S486, re-opened via gh api, and S487, re-opened via jq on the receipt; rejects: S121 single-line holds, re-read upstream lines 5799-5806 and 6851-6858, and teardown-duration, receipts 3/3/3). sources-census validate exit 0 with 93 W04, 1 W01, 0 E."
+   },
+   "commit": "kama-shokunin@e8fa87ef19ec5eb28f5fd9701a0a42da45bd688d",
+   "closed_at": "2026-10-26T20:59:24Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-26T16:39:29-03:00 launch kama round=46 pgid=368305 driver=hyaku-inline attempt=1. 2026-10-26T17:53:47-03:00 complete kama round=46; hyaku-inline attempt=1. Step 1: the report was committed by kama-shokunin (8bca0cf3). The SHONEN heading has 4 boxes, all [~]. All 9 cited lane hashes are ancestors of master. The lane state is ahead=0 and clean. The prompt is a placeholder-only rendering of the canonical template plus the addendum. Conformance defects (status-neutral): the wave has no planner seat because the policy-v2 validator rejects planner (L0 kama|round-39); hexrun-census is red at unknown=21, pre-existing and equal to base. Routed to the lane: D1, the append-only-audit and counter share a rule that drops deleted lines starting with ---, so ship v2 with a recomputation leg that does not share the definition; D2, restored_at_tip depends on the tip (the SCORECARD 0718b6ab figure went 2416->2409 from this round's re-anchor alone); D3, C1 counter sufficiency (K1Cheat relocation greens all rows, V1Code F1-F4, and the sufficiency family carried in rounds 41-45 with no Mistakes row); D4, the hexrun unknowns; D5, receipt log_path points into deleted scratch. For the aggregator or operator: N3Fleet reports the truncation class in 14 of 21 sibling lanes and was not absorbed. Operator: the four SHONEN boxes look checkable by a non-author (live receipts plus X1Replica, gate registry, selftest, PROVINCE clause); promotion is operator-owned and nothing was marked. Open L0 questions: kama|round-35, round-39, round-41..43.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
