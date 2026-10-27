@@ -28926,6 +28926,47 @@
    "notes": "Driver digest (.ufo/watchdog.log, mutable): 2026-10-27T04:55:18-03:00 launch kasegi round=41 pgid=3053209 driver=hyaku-inline attempt=1; 2026-10-27T08:27:32-03:00 lane-dead-no-report kasegi round=41; retry same round (hyaku-inline attempt=1: L1 ended its turn mid-integration (misread an operator interjection as wrap-up); state uncommitted in lane); 2026-10-27T09:49:19-03:00 complete kasegi round=41; hyaku-inline attempt=1. Both claims declared unverified and honestly reported (C1 suite red 10/12 on its own frozen counter with committed I1/I3 false acceptances; C2 counters all reached but coverage credit withheld pending the kake scope ruling L0) - rejected-honest-stop, no axis harmed. Defects (status-neutral, routed to r42 in the spot-check file): duplicated Correction (round 41) block in SCORECARD (x2); Gate recorded no reject (outside spot-check had no reject to sample); SKILL.md r40 registry table still blank-line-split with r40-closure.sh row now duplicated across the r40/r41 registry blocks; report lacks the Stale-lane line (prompt s.6); wave2 carried 0 connector seats (self-reported); wave-2 instrument survivors (I1 evidence union, I3 token boundary, I7 parser variants, I5/I12 completeness, I6 outside-config stray, binding missing-path variants, frontier status-flip blind spot) ride the SCORECARD planned block. SHONEN boxes all [~] (box 2 names no end-to-end domain task) - nothing non-author [x]-checkable this round; promotion is operator-owned. Report, prompt, commit ancestry, ahead=0 push state, census exit 0 all conform.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 63,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 63,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 63
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "unprovable",
+    "operability": "unprovable",
+    "freshness": "unchanged",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-63/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-63-verifier-spotcheck.md@1a48131577ba82c967650561be34e8dba909432a",
+    "rechecks": "step-1 conformance clean: report 4dd6935e + prompt 28049987 committed by kake-shokunin; SHONEN heading 1 + 4 boxes; all 9 cited hashes ancestors of master; jj-lane state ahead=0 behind=0, tree clean, ls-remote=788c0a6f; watchdog digest matches; contract froze (6d8c52a6/05b0d7f4) before green-after receipts (7f77d12b). C1 and C2 RE-MEASURED by this closure (frozen counter shas bcd16f68/9fcbfad0 and tool sha 431e75e8 re-derived byte-exact): C1 base met=false exit1 -> measured 05b0d7f4 met=true exit0 -> re-run green at 788c0a6f; controls committed (old c62 met=true vs new c63 met=false marker fixture; junk met=false). C2 base present=0 met=false -> measured present=1 selftest=4/4 frozen_cases=ok met=true -> re-run green at HEAD. Both kill rules evidence-verified from committed wave reports (ReviewerC1Semantics marker-prose greens; CriticClaims do-nothing 09cd73d5 greens BOTH counters component-identical; canned-JSON stub passes c63_quote_tool; ExecLedgerMutation M5 locatedRawLines survivor) -> both claims unprovable honest stop; no sibling gate executed. No axis harmed: corpus/SCORECARD/LOG diff zero deletions (append-only), SOURCES.md diff empty, census validate exit 0 (171->171 rows, 16 W04), guard seats committed. Outside spot-check 3/3: agree admit(a) S432 collapsed-only (quote in flat text not raw HTML; retained+live sha256 63b0a018 byte-identical, 1,854,393 bytes) and rejects (b) fragment-before-object + generic lead-in, (c) receipt-rewrite watch (c58_receipt_rewrites.py already counters the class)."
+   },
+   "commit": "kake-shokunin@788c0a6f283758cc79f9b0502cce61a6e6f0958f",
+   "closed_at": "2026-10-27T14:07:08Z",
+   "campaign": "hyaku",
+   "notes": "watchdog digest: 2026-10-27T09:56:19-03:00 launch kake round=63 pgid=336804 driver=hyaku-inline attempt=1; 2026-10-27T10:56:54-03:00 complete kake round=63; hyaku-inline attempt=1. Honest-stop round, fully disclosed: both frozen counters re-measured green at the measured commit yet both kill rules fired on committed wave falsifications, so C1 (calibration 2, HOLD) and C2 (operability 10, HOLD) land unprovable; scores hold; capability row correctly not entered. The measured work is genuine and bounded: S432 disagreement resolved as verified corpus evidence (derived collapsed-only span, ledger + both blob digests + committed recipe, live re-open byte-identical), QUALITY gained grounded criteria, 64-seat wave settled 64/64 with append-only discipline and zero deletions. Defects routed to round 64 (lane's own recipe confirmed): pin ledger/blob shas as constants in-counter; re-execute extract_text.py in-counter; gate disagreements unmasked; wire frozen shas into kill rules; bind prose components block-level; bind locatedRawLines against retained raw bytes (M5 survivor); C2: define stub as tool-sha mismatch, guard JSON parsing, pin selftest fixtures to revision. Orchestrator-side carried: w1 results handoff still lacks per-seat status/last-error (round-62 defect 2). Open L0 carried: round-59 calibration sub-axis ownership. Conformance defects: none. SHONEN boxes all [ ] and untouched; items look non-author-checkable when the lane claims them — promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
