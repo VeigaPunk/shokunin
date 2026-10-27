@@ -28026,6 +28026,47 @@
    "notes": "Driver digest (.ufo/watchdog.log, mutable): 2026-10-27T01:23:18-03:00 launch mado round=49 pgid=519055 driver=hyaku-inline attempt=1; 2026-10-27T02:37:17-03:00 complete mado round=49; hyaku-inline attempt=1. Step 1 ok: report b0184c43 by mado-shokunin at 02:36:01 (after lane tip 02:35:14, before complete); SHONEN 4x[~]; 5 cited hashes + base are ancestors of master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0; prompt sections 1-5 = template modulo placeholders, sections 6-7 present. C1 verified; C2 honest stop -> not admitted. Routed defects (status-neutral): D1 45 seats < 64 floor, w2 (38 items) never dispatched (M49-4); D2 report filed before WAVE-DONE with 7 w1 seats unsettled (lane clean at closure); D3 '57,865 pairs over 400 keymaps' (registration.md:22) has no committed receipt (seat evidence: 24898 comparisons); D4 do-nothing control ran on the w1 draft counter (7/60 generated), not the frozen 150-case counter; D5 sourced-claim item unmet (C2 carried; S352-S363 rightly unappended); D6 QUALITY criteria owed for M49-1/M49-3; D7 carried M48-8 gate v3 + M48-10 host guard drafted not installed, session-material gate red (110); D8 lesson round-49.md:26 '2 admits and 4 rejects' vs 2 located admits/5 rejected sources and gate.md 12 admits/5 rejects. Operator: SHONEN boxes 2 and 3 reproduced by the closure from committed bytes; boxes 1 and 4 not swept; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 52,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 52,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 52
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-52/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-52-verifier-spotcheck.md@4229ea1b9a789148dded1f159c20967d9a01373f",
+    "rechecks": "Frozen claim counters NOT executed (registered SKILL.md:1549-1550; Gate standard closure consequence): counter sha256 053ff502..21f5 / 29dfd886..53ea identical at freeze 8551ba7f, measured 35e3b1dc and tip eb7b16cf (= preregistration). C1 plain-measured + evidence-verified: grep counts base->tip kama-live-replay.py memfd_create 0->4, F_ADD_SEALS 0->2, sealed_member 0->6, server-fd 0->4; kama-llamacpp-live.py memfd_create 0->5, server-fd 0->19; SOURCES rows 240->246 with S500 new; spot read sealed_member():223-276 and sealed_fd():798-827 real; receipts base.c1 sealed=0 sealedruns=0/3 met=False exit 1 -> measured/c1.out (tip=35e3b1dc) sealed=1 sealedruns=3/3 met=True exit 0; seat reruns X1/X2 agree; ablations J1-J4 met=False; J5HostMemfd limit met=True as preregistered. r51c1 own=0 at 35e3b1dc judged supersession (replay names its own memfd; J6RenameOver shows r51 binding missed rename-over). C2 re-derived independently: 155 restored lines in 18 files, each with parent-of-deleting-commit multiplicity > deleting-commit multiplicity (155/155); ledger registry/append-only-disclosures.tsv 165->10 rows (7 SOURCES + 3 report-landing-errata); receipts base.c2 corr_lost=151 met=False -> measured/c2.out corr_lost=0 scenarios=8/8 met=True; J7-J10 met=False. Evidence-verified battery at 35e3b1dc: gate 50/0/0, cap 11/11, r41-43 mismatches=0, r48c2/r49c1/r50c1/r51c2 met, AOA 51/51, KLR 36/36, pointer met at ade21a45. SCORECARD diff 103+/5-, scores 8/8/7/9/7/7 unchanged. Census rerun exit 0 (1 ok, 1 W01, 94 W04, 0 E) = committed end.out. Spot-check: admits S500 (man7 memfd_create quote verbatim) and S502 (kernel mfd_noexec quote verbatim) agree; rejects S503 (fexecve: descriptor exec, not /proc fd path) and S505 (ggml search paths, cwd not categorical) agree; S505 anchor lines wrong (quote at line 491 not 431) routed R1."
+   },
+   "commit": "kama-shokunin@eb7b16cfa6b535d726027e338f0fb7232359a995",
+   "closed_at": "2026-10-27T05:49:49Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-10-27T01:28:37-03:00 launch kama round=52 pgid=638770 driver=hyaku-inline attempt=1; 2026-10-27T02:41:41-03:00 complete kama round=52; hyaku-inline attempt=1. Report 3945011969fbc4b0bdcf4c856626d016068558ec by kama-shokunin 02:40:15 -03 after tip eb7b16cf (02:39:49) and after WAVE-DONE (w1-results 70/70); all cited lane hashes ancestors of master; 39877b17 is the fleet round-51 report commit; jj-lane state ahead=0 tracked=0 untracked=0; status --porcelain empty; prompt ee016fdf = canonical template render (only <kama-repo> placeholder differs) + hyaku addendum; wave 70 seats (exec 21, rev 12, scout 10, critic 8, mt 6, scribe 5, sentinel 3, connector 3, simplifier 1, revenger 1), validate exit 0, no planner (carried L0 kama|round-39). Round-51 D1-D7 answered in lesson round-52 Errata (D5 partly carried). Routed: R1 S505 anchor/lesson line numbers wrong at b11909 (quote line 491, function 480; seat counted 7-word quote as 21) - append correction; R2 carried C1 limits (host-filled memfd J5, libs/model by path, download unobserved, memfd_noexec=2); R3 C2 limits (byte retention not visibility K4Cheat, simpler exempt rule, fixtures kill 2/8 tool mutants M5Fixtures, K7Calib); R4 seat-report-immutability instrument planned not landed. Operator: ruling needed on restoring withdrawn canon ed135b3c LOG lines as history (no L0 line filed); carried L0 kama|round-35, round-39, round-41..43. SHONEN boxes 1, 2, 4 look non-author checkable (gate 50/0/0; three sealed-memfd replays; PROVINCE unchanged); box 3 rests on lane seat X4Fresh which needed undocumented sibling files. Promotion operator-owned; nothing marked.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
