@@ -29086,6 +29086,46 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable — copied verbatim): 2026-10-27T09:17:49-03:00 launch tameshi round=53 pgid=3505549 driver=hyaku-inline attempt=1; 2026-10-27T09:19:27-03:00 lane-dead-no-report tameshi round=53; retry same round (hyaku-inline attempt=1: L1 died at start: kimi 5h limit (both creds) -> luna refusal; operator rule: pause until kimi resets); 2026-10-27T09:49:22-03:00 launch tameshi round=53 pgid=149370 driver=hyaku-inline attempt=2; 2026-10-27T11:20:10-03:00 complete tameshi round=53; hyaku-inline attempt=2. Claim outcomes: C1 (calibration, cold-read floor repair) honest stop — frozen predicate C1_R53_PASS=true not reached; closure re-run reproduces credited=58/lost=6 at final rev 88afa941 (before 45/19 at base); the 6 lost sections are exactly the report's 2 forfeited + 4 collateral; repair route named for round 54. C2 (operability, tools TMPDIR hygiene) verified — closure re-measured at base/final/tip. No axis harmed: calibration floor improved 45->58 (round-52 harm partially repaired; remaining RED is the C1 miss itself). Conformance defects (status-neutral, all named): (a) .ufo/evidence/round-53/after/ deciding receipts cited by SCORECARD/LOG.md in past tense do not exist — report discloses deciding-run.sh never executed, ledger does not; (b) SCORECARD quotes frozen C1 counter total=6 — committed counter actually prints total=37 (rekey arm ls-tree pathspec defect, rekey-dir-count=0 structurally, all C1 mutation receipts INCONCLUSIVE); (c) no phase-B CONTROLS_B receipt committed; (d) committed C2 receipt names rev 9c6ef7bc80c0 absent from the object DB, stale cr47=rc=1; (e) committed verify-freeze.stdout is amendments=5-era (final freeze amendment 7 at 9e09db2; tip digests independently re-verified, all 8 match); (f) LOG.md freeze pointer stale (e62d9971, amendments 1-5; cf872769 unnamed); (g) 4 of 7 tools exit rc=1 uncaught RuntimeError on set-but-unusable TMPDIR instead of declared could-not-evaluate exit 2 (frozen counter binds registry-check only, so C2 verifies); (h) 'inputs pinned at C7' imprecise — 11 of 11747 rekey input keys pin at read_rev/fix-pass-2; (i) uncommitted round work: 6 lane files under .ufo/waves/round-53/ untracked at push tip (w1-results.json, w2-results.json, T53W1ExecR523.md, T53W2CritClaims.md, T53W2ExecR523B.md, T53W2RevW1Specialists.md). Routed defects R53.1-R53.9 in the spotcheck. Discernment: outside spot-check agrees with the round gate on the sampled admit (S275/S276 re-opened, snapshots byte-identical, quotes verbatim) and both sampled rejects; one minor locator disagreement (S275 'p. 4' vs physical page 3) routed. SHONEN: all four boxes carry [~] lane assertions; box 3 independently supported by this closure re-running the frozen instruments without oral context; boxes 1/2/4 look non-author-checkable on committed evidence — promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 56,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 56,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 56
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "dual-shape seat-output vote binding (tools/mori-vote-bind.py, 16/16 selftest, r55 tally re-bound 78/78 while the frozen r55 counter reads voted=0 on the same bytes)",
+    "strict per-event driver-liveness probe over .ufo/watchdog.log (tools/mori-driver-liveness.py, 13/13 selftest, live receipt 1728 log lines / 0 malformed / 23 lanes)"
+   ],
+   "report": ".ufo/reports/round-56/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-56-verifier-spotcheck.md@53e2b4768af93dd2472eb26ecc9b9fdca2e9daf2",
+    "rechecks": "C1/C2 re-derived over committed bytes (tool absent->present at 5b295eee->eac193ca; frozen sha256 pins match; census 316->320 rows re-counted; ledger 78 rows and 16 Mo55Rc voters counted; tally arithmetic 68+10=78 consistent; census validator re-run exit 0); lane-owned gates not executed per Gate standard — committed evidence verified instead (selftest 13/13 and 16/16 receipts; at-freeze met at 3f494b49 and at-landed met at 097c342b receipts; do-nothing unmet failed=tool_absent at 5b295eee; 8/8 binder mutants KILLED; old-counter voted=0 contrast receipt); wave settlement re-measured (64/64 seats, 64 report files, dispatch role mix matches report, attack 25/64); S544/S545 admits and S546/S547 supersede rows re-opened by two read-only seats (quotes verbatim at pinned lines, copies sha-identical to live sources, section-label correction accurate); standing btrfs ABI reject re-checked live (404 reproduces) — agree on all samples"
+   },
+   "commit": "mori-shokunin@eac193ca0b3adc14ed156a4d8505345a22c7b7bc",
+   "closed_at": "2026-10-27T14:55:21Z",
+   "campaign": "hyaku",
+   "notes": "Watchdog digest: 2026-10-27T10:08:36-03:00 launch mori round=56 pgid=620717 driver=hyaku-inline attempt=1; 2026-10-27T11:44:43-03:00 complete mori round=56; hyaku-inline attempt=1 (attempt 1, no respawn). Conformance clean: report by lane identity a1c32aa, SHONEN heading with 4 [~] lines, all cited commits ancestors of master, ahead=0, prompt carries full template contract. r55 routed defects verified fixed: census before->after now captured bytes with the counting command (316->320 in census-end.txt); receipts cite their stamped rev. Lane self-caught the QUALITY-152 recurrence in census-start.txt and mined it honestly. Routed to round 57: (1) report/LOG cite short-formed evidence paths (evidence/... vs real .ufo/waves/round-56/evidence/...); (2) '1728 lines' parenthetical reads as receipt size (receipt is 304 lines; 1728 is the measured log-lines field); (3) count-c2.py do-nothing line prints arms ok on the tool_absent early-return path (add to lane's receipt-craft routing); (4) C2 capability row not entered in SCORECARD capabilities table; (5) S545 used-by names the tool which carries no in-file S-id citation; (6) operator note: all four SHONEN boxes [~] with resolvable pointers, fully checkable by a non-author — promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
