@@ -11,12 +11,13 @@ which seems the one that works best; make sure to adapt to the 64-128 per round 
   each amendment supersedes the one before: ~17:45 critic `@m_flash` → `@m_glm53` → `@m_kfc`;
   ~22:20 executor/labrat/sentinel `@m_flash` → `@m_mim` and reviewer/mutation-tester/security-reviewer
   `@m_zfl` → `@m_mim`; ~23:00 reviewer/mutation-tester/security-reviewer back to `@m_zfl` and
-  labrat/sentinel back to `@m_flash`. **Current map:** task/main/planner `@m_opus`; executor `@m_mim`;
+  labrat/sentinel back to `@m_flash`; ~23:40 connector `@m_kfc` → `@m_antigravity` and scout
+  `@m_sonnet` → `@m_kfc`. **Current map:** task/main/planner `@m_opus`; executor `@m_mim`;
   reviewer/mutation-tester/security-reviewer `@m_zfl`; scribe/sonic/simplifier/revenger/labrat/sentinel
-  `@m_flash`; critic/connector `@m_kfc`; scout `@m_sonnet`; distiller/seance `@m_haiku`. A seat keeps
-  the model it was spawned with. The run-7/8 rule "m_flash roles carry ≥50 % of every wave" no longer
-  binds (the operator moved volume off m_flash); the ≥25 % attack share and the few-connector-seats
-  rule still apply.
+  `@m_flash`; critic and scout `@m_kfc`; connector `@m_antigravity`; distiller/seance `@m_haiku`. A seat
+  keeps the model it was spawned with. The run-7/8 rule "m_flash roles carry ≥50 % of every wave" no
+  longer binds (the operator moved volume off m_flash); the ≥25 % attack share and the
+  few-connector-seats rule still apply.
 - **Round size: 64–128 seats in total, every round; 256 is the hard ceiling** (the validator's
   `maxLanes`). Shape per §2: one v2 wave of 64–128, or two v1 waves (32–64 each) summing to 64–128,
   residual call included. 64 is the floor; size to the claims inside the band and never pad. At most
