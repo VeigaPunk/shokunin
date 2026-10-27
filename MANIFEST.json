@@ -27521,6 +27521,47 @@
    "notes": "Driver digest (.ufo/watchdog.log): 2026-10-26T20:39:18-03:00 launch tsukuroi round=44 pgid=2725607 driver=hyaku-inline attempt=1; 2026-10-26T22:50:03-03:00 complete tsukuroi round=44; hyaku-inline attempt=1. Step 1: report 5908743b + SHONEN follow-up 0e363a51 by tsukuroi-shokunin (after lane tip 22:38:54, before complete); 9 cited hashes + base are ancestors of master; jj-lane state ahead=0, remote e9ca7ef6; prompt = template + placeholder substitutions + addendum §6/§7, committed c43f8bbc before launch. Status ok; admission false: C2 depth FAIL and adjacency harmed. Conformance defects (status-neutral): report lacks Sources & frontier, Trend verdicts, per-claim counting commands; SHONEN heading landed in a follow-up commit; 6 untracked round-44 files (w1/w2 .ready+.dispatched, w1/AdjPins/raw.json, w1/C1ExecLiveRead/strace-rev-live1.log cited by wave reports). Routed to tsukuroi (spot-check §5): D1 IN-109 found_line 2468->2582 + anchors-gate PASS receipt; D2 SKILL SR8 memparse row unswept after [inference] narrowing; D3 r44 entry/README/SKILL not marked as gate-failed/unjudged narrowings; D4 SCORECARD r44 planned row copied verbatim from r43 + awk names (round 43); D5 self-assessment PASS at e9ca7ef6 unreceipted (committed receipts FAIL at 8eee79db/3a1c6b5c); D6 report sections; D7 untracked files; D8 rejects outside lesson ## Gate; D9 AsmGate staged-path locator; D10 LOG r44 lacks freshness re-verification line; plus lane-routed C1 live-leg evasion, C2 json last-wins/CR/substring, census readers, orphaned w1 grep. SHONEN 4/4 [~]; none fully non-author-checkable this round; no promotion.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 50,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 50,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 50
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-50/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-50-verifier-spotcheck.md@57a2e25bf702b03aa61f9265e968cf68058ecb82",
+    "rechecks": "C1/C2 re-measured by closure on a fresh clone with the frozen counters (sha256 = preregistration): C1 tip 5a1e29a1 and measured 8370e39c bind=1 teardown=1 newrow=1 bound=3/3 met=True (teardown 0.10 s), base 26ecba64 bind=0 teardown=0 newrow=0 met=False (3 survivors after 30 s, canary+sitecustomize hits); C2 tip and measured fixture=1 lane=1 scenarios=12/12 met=True (byte-equal to measured/c2.out), base 9/12 met=False (= controls/base.c2.out). Evidence-verified at 1c030f18: gate 46/0/0, capability census 11/11, r43, pointer, digest, sao, aoa, selftests AOA 36/36 KLR 23/23 live ok check-receipt 16 VALID/107 rejected; r41/r42 committed only failing at 1c030f18 (1523 vs 1522), mismatch resolved in 8370e39c bytes by wc (1522). Census validate exit 0 (1 ok, 1 W01, 93 W04). SOURCES 236->239. Spot-check: 3 admits (S496-S498 re-opened, quotes verbatim) and 3 rejects all agree."
+   },
+   "commit": "kama-shokunin@5a1e29a14669521982843fd249583bf8ba755a51",
+   "closed_at": "2026-10-27T02:47:40Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-10-26T21:10:17-03:00 launch kama round=50 pgid=3210392 driver=hyaku-inline attempt=1; 2026-10-26T23:40:35-03:00 complete kama round=50; hyaku-inline attempt=1. Report 9e38a361 by kama identity, after tip 5a1e29a1; all cited hashes are ancestors of master; lane ahead=0, clean. Prompt lines 1-140 = rendered template. Routed (status-neutral): R1 report SOURCES count 237->240 vs command output 236->239; R2 r41/r42 'green at measured commit' lacks a committed receipt (only failing 1c030f18 runs); R3 SCORECARD depth row last-change still 'round 49'; R4 Gate reject 2 attributes O_NOFOLLOW/fstat to the counter (counter uses os.stat + path hash; live tool has O_NOFOLLOW/fstat); R5 S498 row quote elides without '...', blank separator line removed; R6 carried limits (J4Decoy, Sen1Env PATH probe, post-map rewrite, --out parent, C2 fence/CR not lane-exercised, tight 72<=72 bound, sub-20 threshold incl. ed135b3c, prerelease cliff, b11906 population, surviving mutants); R7 operator: prompt line 180 quotes critic @m_flash vs amendment @m_kfc, live config.yml changed 23:39:08 -03 (executor @m_mim) after the report, so round-time map not in committed bytes. Round-49 R1-R3 closed. Operator: SHONEN boxes 1, 2, 4 look non-author-checkable; box 3 needs a fresh-session run. Fleet-root untracked .ufo/waves/round-51/w2 belongs to tameshi.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
