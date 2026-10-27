@@ -12,7 +12,7 @@ Declared claims: **C1 operability 8→8**, byte-level identity for code executed
 - Round-52 R4: seat X9Immut delivered a 13/13 selftested tool and found 8 rewritten reports plus one restored in rounds 46–52 (`.ufo/waves/round-53/w1/out/X9Immut.md`); it was not installed as a lane tool before the wrap.
 - One considerthese proposal was reflected as QUALITY KQ97; shokuknow assimilation is none (`corpus/QUALITY.md:477`, `A1Assim.md`).
 - The sources census ran at start and end, both exit 0; the end result is `.ufo/waves/round-53/census/end.out`.
-- Lane commits and push: build/evidence `e81d90e64b043cc18fe0a52fe151b298c73f3c33`; late three-file M3Live seat evidence `96615c35e6606b155358f01d8970a9f29e5bbb68`. `git ls-remote origin refs/heads/master` and `jj-lane.sh state` confirm final lane tip `96615c35e6606b155358f01d8970a9f29e5bbb68`. LOG entry at `LOG.md:2435-2443`.
+- Lane commits and push: build/evidence `e81d90e64b043cc18fe0a52fe151b298c73f3c33`; late M3Live/M6Ledger seat evidence `96615c35e6606b155358f01d8970a9f29e5bbb68` and `2a7b3ba2b7e46cfd51e98065565b4c7784ddf143`. `git ls-remote origin refs/heads/master` and `jj-lane.sh state` confirm final lane tip `2a7b3ba2b7e46cfd51e98065565b4c7784ddf143`. LOG entry at `LOG.md:2435-2443`.
 
 ## Landed changes
 
@@ -23,7 +23,7 @@ Declared claims: **C1 operability 8→8**, byte-level identity for code executed
 | C2 cited-path counter, ledger, SKILL fixes, SCORECARD correction and counter-limit errata | `LOG.md` round 53, C2 paragraph | same |
 | Sources S506–S509, lesson with Gate/Mistakes/Errata, QUALITY KQ94–KQ97, README frontier, SCORECARD axes re-anchors and round-53 section | `LOG.md` round 53, closure and lesson pointers | same |
 | L0 question and two append-only wording corrections for the ed135b3c ruling | Fleet commits `ee9f7341`, `d2a6c59a`, and `70df4d76` | lane report records the unresolved operator question |
-| Late M3Live mutation receipts written after the user-directed wrap | No new LOG entry; supplementary wave artifact | `96615c35e6606b155358f01d8970a9f29e5bbb68` |
+| Late M3Live mutation and M6Ledger attack receipts written after the user-directed wrap | No new LOG entry; supplementary wave artifacts | `2a7b3ba2b7e46cfd51e98065565b4c7784ddf143` |
 
 ## Before → after measurements
 
