@@ -147,12 +147,16 @@ shokunin, so we can keep consistency and not get messy with commits and dispatch
 round 100 on each; choose the order you deem best to do so. | /skill:godspeed | we are on the hyaku mode,
 which seems the one that works best; make sure to adapt to the 64-128 per round directive; max ceiling of
 256 | use the same model delegations we were using as before".
-- **Routing: the run-8 map, unchanged** (re-read from `~/.omp/agent/config.yml` and probed primary-ok
-  at run start). Never pass `model`.
-- **Routing amendment (operator, run 9, live since ~17:45 -03):** critic moved from `@m_flash` to
-  `@m_glm53`, then to `@m_kfc`; every other run-8 role is unchanged. The ≥50 % m_flash share still
-  binds, but critic seats no longer count toward it: count only
-  executor/labrat/scribe/sonic/simplifier/revenger/sentinel seats.
+- **Routing: run-8 map at run start** (never pass `model`), amended by operator during run 9:
+  `executor/labrat/sentinel/mutation-tester/reviewer/security-reviewer` now use `@m_mim`;
+  `scribe/sonic/simplifier/revenger` remain `@m_flash`; `critic/connector` remain `@m_kfc`;
+  task/main/planner `@m_opus`, scout `@m_sonnet`, distiller/seance `@m_haiku`.
+  The operator's "change some lanes from m_flash to m_mim" is implemented by moving these three
+  former `m_flash` classes; the earlier ≥50% m_flash share rule is superseded and no longer binds.
+- **Run-9 routing amendment 2 (operator, 2026-10-26):** `executor`, `labrat`, `sentinel`,
+  `mutation-tester`, `reviewer`, and `security-reviewer` route to `@m_mim`; `scribe`, `sonic`,
+  `simplifier`, and `revenger` remain `@m_flash`. The critic and connector remain `@m_kfc`;
+  other role mappings are unchanged. This supersedes the earlier run-9 routing amendment below.
 - **Round size: 64–128 seats in total, every round; 256 is the hard ceiling** (the validator's
   `maxLanes`). Shape per §2: one v2 wave of 64–128, or two v1 waves (32–64 each) summing to 64–128,
   residual call included. 64 is the floor; size to the claims inside the band and never pad. At most
@@ -250,7 +254,7 @@ Phase-1 directives still bind: "train all shokunins to at least round 100"; "com
 every round done"; "do it inline with multiple swarms of subagents".
 
 You are an in-session **L1 lane subagent** dispatched by the hyaku orchestrator (the operator's
-parent omp session) for exactly ONE steered round: **kengaku round 45** (attempt 1;
+parent omp session) for exactly ONE steered round: **kengaku round 45** (attempt 2;
 campaign target: round 100). Your lane's place in the session follows the goal file (lane
 order and blocks: `.scratch/goal-20261025-hyaku-run7.md`); the orchestrator dispatches your lane's
 next round only after this one lands and its non-author closure is written. Work this round only
