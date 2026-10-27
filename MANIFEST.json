@@ -28268,6 +28268,43 @@
    "notes": "Dispatch digest (.ufo/watchdog.log, mutable; copied verbatim): 2026-10-27T03:06:10-03:00 launch kumitate round=66 pgid=2213934 driver=hyaku-inline attempt=1; 2026-10-27T03:52:47-03:00 complete kumitate round=66; hyaku-inline attempt=1. Honest stop at wave handoff: one validated v2 wave of 66 seats (role mix verified against committed w1-dispatch.json: scout 17 scribe 14 executor 9 reviewer 9 critic 6 mutation-tester 4 connector 3 sentinel 2 revenger 1 simplifier 1; attack 19/66=28.8%; connectors 3) dispatched inline, no WAVE-DONE and no w1-results.json at closure; orchestrator-dispatched seats still writing into .ufo/waves/round-66/build/. Both declared claims reported and confirmed NOT verified. Defects (status-neutral): uncommitted live-seat leftovers at closure ( M build/K66MutLedgerProbe/results.tsv, ?? build/K66ReviewStagedClaims/captures/timeline.json); report cutoff reading held=3/6 cites tip 6c79d68 but the only committed receipt names rev 621212ba; SOURCES/frontier advance missing (self-declared in report); post-report lane salvage commit a3d76c03 (ancestor check holds). Routed to kumitate r67: D1 settle/reconcile w1 leftovers and final results under its own LOG entry; D2 receipt revision precision; D3 land C2 rows/entry or re-declare under fresh freeze. SHONEN boxes all [~] author-asserted; non-author [x] verification is operator-owned at promotion. Closure spotcheck commit f29eb699 landed+ls-remote verified, ahead=0.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 67,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 67,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 67
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unchanged",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-67/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-67-verifier-spotcheck.md@f9fcd4b648d9969915822a4b990deed437f45eb0",
+    "rechecks": "no claims declared (honest stop); baselines re-derived: routed-ledger selftest PASS 33/33 exit 0, SOURCES.md 145 rows, registry+routed-ledger absent, census exit 0 with six W04 (S034/S068/S084/S095/S123/S126); HEAD before==after f29eb699, zero lane commits, SCORECARD/LOG/SKILL/SOURCES diffs empty; ancestry+ls-remote verified; gate spot-check n/a (no round-67 lesson/Gate, no new rows)"
+   },
+   "commit": "kumitate-shokunin@f9fcd4b648d9969915822a4b990deed437f45eb0",
+   "closed_at": "2026-10-27T07:30:41Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-10-27T04:04:42-03:00 launch kumitate round=67 pgid=839780 driver=hyaku-inline attempt=1; 2026-10-27T04:24:02-03:00 complete kumitate round=67; hyaku-inline attempt=1. Operator ended the hyaku run mid-round: no wave dispatched, no .ready marker, no claim frozen; report is conformant (lane-committed b9359be6, SHONEN heading 4 boxes [~], cited f29eb699 ancestor+pushed). Conformance notes (disclosed, status-neutral): uncommitted inherited state .ufo/waves/round-67/ (plan.md, probe/ledger67-probe.mjs, empty base//controls/) named per earlier-attempts rule; r66 dead-seat debris still landing from live seats. Routed for attempt 2: run the frontier step (no round-67 lesson/Gate/mistake; mine the mid-round stop); settle D1 receipts for six r66 dead seats before wave validation; reconcile worktree before next wave; PROVINCE.md:20 stale omp.real wrapper picture re-flag (routed K66ReviewR65Entry-2/-5 unlanded; host now omp/18.13.1, ~/.local/bin/omp.real absent). No SHONEN box fully checkable non-author-side beyond notes; promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
