@@ -11,9 +11,13 @@ from outside), AXES.md, CORPUS.md.
 Inputs:
 - report: `.ufo/reports/round-50/mado.md`; dispatched prompt: `.ufo/prompts/mado-round-50.md`
   (canonical `templates/round-prompt.md` rendering + hyaku addendum §6)
-- lane HEAD before the round: `8ae47b957034ae21012bbf09173cca2c48be345e`; after: `13631f24050f22db92bf5bd33e0f4d014192992e`
+- lane HEAD before the round: `8ae47b957034ae21012bbf09173cca2c48be345e`; after: `74782d39e7697608917b5e909f0e8580aaa3e15c`
 - driver dispatch/completion lines (`.ufo/watchdog.log`, mutable — copy this digest into notes):
 2026-10-27T02:45:41-03:00 launch mado round=50 pgid=755091 driver=hyaku-inline attempt=1
+2026-10-27T03:26:40-03:00 lane-dead-no-report mado round=50; retry same round (hyaku-inline attempt=1: L1 exited before WAVE-DONE without filing (w1 still had 9 seats in progress; awaiting orchestrator results handoff))
+2026-10-27T04:49:13-03:00 lane-dead-no-report mado round=50; retry same round (hyaku-inline attempt=1: operator run wrap-up mid-round; in-flight state committed to lane for next-run inheritance)
+2026-10-27T04:55:12-03:00 launch mado round=50 pgid=3051436 driver=hyaku-inline attempt=2
+2026-10-27T06:25:36-03:00 complete mado round=50; hyaku-inline attempt=2
 
 Duties (you may dispatch up to 8 read-only reviewer/critic `task` seats to parallelize re-checks;
 never pass a model parameter; you write only the two artifacts in steps 4–5):
@@ -27,10 +31,10 @@ never pass a model parameter; you write only the two artifacts in steps 4–5):
    template contract. Marker report (no checkable work/commit) → status `failed`. Defects are named
    in notes, status-neutral. Never run a jj command in the lane except through the helper (even
    `jj log` snapshots state unless it carries `--ignore-working-copy`).
-2. **Claims.** For each declared claim (1–3): re-derive its before→after against `13631f24050f22db92bf5bd33e0f4d014192992e` with a
+2. **Claims.** For each declared claim (1–3): re-derive its before→after against `74782d39e7697608917b5e909f0e8580aaa3e15c` with a
    plain measurement you run yourself (grep/wc/jq/git/census counts over committed bytes) and
    compare with the reported values; check no owned axis was harmed
-   (`git -C /home/vgpnk/Projects/shokunin/mado-shokunin diff 8ae47b957034ae21012bbf09173cca2c48be345e 13631f24050f22db92bf5bd33e0f4d014192992e -- SCORECARD.md`, plus spot reads). Where the claim
+   (`git -C /home/vgpnk/Projects/shokunin/mado-shokunin diff 8ae47b957034ae21012bbf09173cca2c48be345e 74782d39e7697608917b5e909f0e8580aaa3e15c -- SCORECARD.md`, plus spot reads). Where the claim
    rests on a lane-owned **gate** or selftest, PROTOCOL §Gate standard (Closure consequence) binds:
    verify its committed evidence (self-test tally, frozen-run verdict, revision measured) — never
    execute a sibling's gate — and say which claims were re-measured vs evidence-verified. For an
