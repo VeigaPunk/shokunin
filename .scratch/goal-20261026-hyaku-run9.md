@@ -309,3 +309,15 @@ closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At 
     (byte-identical to the lane copy, sha256 `9b17352c…`); moved to `.tower/quarantine/fleet-root-strays-20261027T0020/`.
   - The 256 GiB `prlimit --fsize` soft cap was re-applied to the new omp process (pid 875345; SIGXFSZ ignored, so
     oversized writes fail with EFBIG instead of killing the session). omp 18.13.1 still caps running jobs at 100.
+- 00:3x -03 Oct 27, operator: "m_mim should be working, i have a new subscription, you are not selecting the correct one".
+  Finding: the route is right (`m_mim` → `minimax-code/MiniMax-M3.1-Flash`; executor seats' first `model_change` shows it),
+  but both stored `minimax-code` keys return 429. `/v1/token_plan/remains` per key: credential 55 (added Oct 22) has its
+  5-hour window at 72 % but weekly at 0 % until Oct 29 14:17; credential 65 (new subscription, added Oct 26 22:27) has weekly
+  at 89 % but its 5-hour window at 0 % until 03:27:12 today (the fleet's executor seats burned it in ~2 h). omp blocks a
+  429'd key for only 30 min, so it kept retrying the dead old key; executor seats have been answering on the
+  `opencode-go/deepseek-v4.1-flash` fallback. Fix (backup `~/.omp/agent/agent.db.pre-mimblock-20261027`):
+  `auth_credential_blocks` now holds key 55 until its weekly reset and key 65 until 03:27:12, and `auth_change_revision` was bumped.
+  From 03:27, executor seats should land on key 65 only. Not yet observed.
+- 00:3x -03 Oct 27: the operator interjection cancelled a `tw()` tick and wiped the Python kernel again. Rebuilt from
+  `/fast/scratch/hyaku-run9/tick-helpers.py` (new: the tick glue as a file, `%load`/exec after the dispatcher);
+  `bootstrap()` re-adopted kake a2r1, kengaku a3w1 and the mori a2r1 / tsukuroi a2w1 fills, and the 8 live L1s.
