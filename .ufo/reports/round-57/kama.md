@@ -49,3 +49,14 @@ SOURCES.md rows: 256→257. Counting command: `grep -cE '^ {0,3}\|[[:space:]]*S[
 [~] No cross-domain bleed — author assertion, `PROVINCE.md` boundary; no non-author verifier this round.
 
 Stale-lane: respawn-per-round driver; no other kama mission is open. L0 questions: none added; the existing MISSION/config axis discrepancy remains operator-owned and unresolved.
+
+## Erratum — partial seat findings received after filing
+
+This append-only correction supersedes the report's earlier statement that no seat findings were available; WAVE-DONE still had not arrived at this correction.
+
+- R02's independent review found axis attribution, claim separability, freeze ordering and base controls valid, but the rendered wave context retained the pre-amendment claim labels and incorrectly said “expected 46” for `maxN` (`.ufo/waves/round-57/w1/out/R02AxisFit.md`, lane commit `9df8e8ddb4d245611ef3ce65490c42f102ecda95`). The actual frozen C2 defect is the calibration row's 42-versus-43 verifier-spotcheck count, as the committed amendment and SCORECARD record.
+- E03's 13-fixture selftest found the C1 repair still accepts dead-code and unused-function call-site no-ops (2/7 cases fail); therefore C1's execution-binding claim does **not** verify. C1 is an honest stop; do not credit its operability move. Evidence: `.ufo/waves/round-57/measured/R57Item05CounterSelftest/` and `.ufo/waves/round-57/reports/R57Item05CounterSelftest-case05{,-evidence}.md`, lane commit `9df8e8ddb4d245611ef3ce65490c42f102ecda95`.
+- Quality trend remains improved only on the bounded selftest comparison (frozen-checker no-ops rejected 4/7; repaired-checker no-ops rejected 5/7); surviving dead-code and unused-function no-ops still invalidate C1's frozen execution-binding predicate.
+- E02's independent canonical-row instrument rejected the frozen no-op while accepting the genuine 11-row table; it made no lane source edits and does not replace C1's frozen predicate. Evidence: `.ufo/waves/round-57/w1/out/E02CanonicalBinding.md`, lane commit `9df8e8ddb4d245611ef3ce65490c42f102ecda95`.
+- Other seats remained unsettled and the results handoff was unavailable. Settled/dead-seat counts remain unknown. The original wave context is a conformance defect; the committed pre-data amendment remains the declared claim authority.
+- C1's residual survivors and the no-credit ruling are now append-only in `SCORECARD.md`, `LOG.md` and `corpus/lessons/round-57.md`, lane commit `d7cb74dda164e19eb362536e12dc127926c3735a`. C2 remains measured; no scalar changed.
