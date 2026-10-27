@@ -359,3 +359,4 @@ closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At 
 - ChousaR57a2 unblocked: will land inherited freeze work then write 64-seat spec + w1.ready. KengakuR47 fixing spec schema (removing kind key).
 - 2026-10-27 05:0x local: KumitateR66 filed honest-stop (no WAVE-DONE; report 3b4fe4aa, tip 5b02f807): verify OK; 125 uncommitted wave paths salvaged a3d76c03; kumitate wave muted; CloseKumitateR66 spawned.
 - MoriR55 attempt 1 exited pre-WAVE-DONE without filing: RETRYABLE 1/3; dispatched + spawned MoriR55a2 (note: wait for WAVE-DONE, claims unmet-only-for-votes, rev-freeze trap, routed items).
+- 2026-10-27 05:2x local: CloseKumitateR66: rejected-honest-stop, MANIFEST rounds[811] (da940eda); spot-check f29eb699. advance kumitate r66 -> 67; dispatched + spawned KumitateR67 (note carries D1-D3 + the full wave-1 finding set: sentinel HIGH/CRITICAL env-poisoning, critic fence/quote holes, staged-theme clocks, omp 18.13.1 host drift).
