@@ -27351,6 +27351,47 @@
    "notes": "dispatch 2026-10-26T20:07:45-03:00 launch kengaku round=44 pgid=3731132 driver=hyaku-inline attempt=1; 2026-10-26T21:20:56-03:00 complete. Report committed by lane identity e7b06154 (21:11:07 -03) cites final 7857ce55 (21:19:02) - both ancestors, no conformance defect. Lane pushed ahead=0. Routed defects: R44SentinelFences V1-V3 (fence bypasses 3/6), R44LabratLaneInclude, R44CritV11 memorizable sample. SHONEN boxes fully checkable by non-author - promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 52,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 52,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 52
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-52/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-52-verifier-spotcheck.md@20edafa59b38dac1ca358893f0259b1f436372d3",
+    "rechecks": "C1 and C2 evidence-verified per Gate standard (sibling gates not executed): committed receipts verbatim, selftests 42/0 and 45/0, 8 C1 controls unmet + disclosed witness met, revisions named (e7e056b8 vs base 4f266ef2); item-level corroboration by three non-author seats (MANIFEST last mori closure 51/admitted, axes lead r51 for operability/depth, all 28 locators resolve, SHONEN 4 [~] boxes; entry 28 claim rows S497 7/S498 6/S499 9/S500 2/S501 4, 93 unfenced ENTAIL votes, 28 landed hashes >=2 distinct voters, w1-results 68 seats dead 0); judge re-opened S497/S499/S501 quotes verbatim at cited lines, sha256 of 5 pinned copies match anchors, live util.c fetch byte-identical; SOURCES rows 269->274 (diff 5 0), census exit 0 with 23 W04; no axis score decreased. Spot-check: agree admit S499 (live sha256 match), agree admit S497, agree reject kernel.org latest (renders 7.3.0, moving locator)."
+   },
+   "commit": "mori-shokunin@20edafa59b38dac1ca358893f0259b1f436372d3",
+   "closed_at": "2026-10-27T01:09:03Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-10-26T20:40:50-03:00 launch mori round=52 pgid=2882097 driver=hyaku-inline attempt=1; 2026-10-26T21:57:11-03:00 complete mori round=52; hyaku-inline attempt=1. Conformance ok: report committed by lane identity (aacd7a83), SHONEN heading with 4 [~] lines, all 7 cited commits ancestors of master, lane pushed ahead=0, prompt carries full contract, one v2 wave of 68 seats (attack 28>=25%). Defects (status-neutral, routed): (1) report [FILL] placeholders for its own commit hash; (2) SCORECARD round-52 C1 row cites evidence/c1-at-landed.txt but carries at-data tally items=42/locators=27 vs landed 43/28 — verdict met either way, append-only correction routed; (3) locator arm covers only Axes rows/SHONEN boxes (78 QUALITY/README pointers unarmed) — already in lane's Planned r53. Admitted: every claim verified, no axis harmed; discernment upgraded from lane's unprovable-but-better to improved on 4/4 spot-check agreement.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
