@@ -27816,6 +27816,48 @@
    "notes": "Driver digest: 2026-10-26T20:34:11-03:00 launch mado round=48 pgid=2182744 attempt=1 / 21:58:35 lane-dead-no-report (attempt 1 unspecified) / 21:58:37 launch attempt=2 / 22:35:09 lane-dead-no-report (attempt 2 exited incomplete) / 22:35:12 launch attempt=3 / 2026-10-27T00:16:15-03:00 lane-dead-no-report (attempt 3 L1 died in orchestrator session exit 23:57:36 SIGHUP during operator omp update; salvaged cf3deeec; not counted toward MAX_ATTEMPTS) / 00:16:28 launch attempt=4 pgid=890225 / 01:04:49 complete mado round=48 attempt=4. Step 1 clean: report a72080e7 by mado-shokunin (committed 01:03:55 after lane tip 01:03:22, before complete), SHONEN 4/4 [~], 9 cited commits exist and are ancestors of master, jj-lane state ahead=0 tracked=0 (47 untracked inherited round-45/46 *.synthetic), prompt = template rendering (sections 1-5 identical across 4 attempt commits) + hyaku addendum. Attribution note A1: cf3deeec is the orchestrator's salvage committed under the lane identity (disclosed in subject), re-verified by attempt 4. Round-47 routed D1-D4, R3, R4b closed with evidence. Defects routed (status-neutral): N1 report :37 '52 untracked synthetic' reproduces as 47; N2 live-terminal-cache-r48.txt:4 host_cache_untouched_sha256 c8b104e6 = sha256('r48-w2\\n'), i.e. the receipt recorded the operator cache while it held the w2 M-WRITE mutant bytes (M48-10) under an 'untouched' label; N3 lesson :425 spot-check shape says five gate decisions (3 admits/2 rejects) vs 12 admits/3 rejects; N4 c2v2 matrix text shows 96 of 98 variants; N5 S346/S347 gitlab -/raw/ URLs now return an anti-bot page (files API returns pinned bytes). Carried: M48-8 session-material gate red at tip findings=159 (16-shape gap, .ufo-only scope), M48-10 sandbox-only mutant writes, w2 SentScratch /tmp --work refusal, M48-13 residual cap vs clone recipe (clause-r mutant attack and gate both-ways demo owed), registration-v2 residuals. Operator: M48-10 overwrote operator-owned ~/.cache/xdg-terminal-exec during w2 (resolver regenerated it 23:59:27; no decision open). SHONEN box 2 and 3 reproducible by a non-author (live AGREE and xkbcli receipt from committed bytes; tool docstring usage ran as written); promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 45,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 45,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 45
+   },
+   "admitted": false,
+   "verdict": "rejected-harmed",
+   "verdicts": {
+    "calibration": "unprovable",
+    "coverage": "improved",
+    "depth": "harmed",
+    "novelty": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "harmed",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-45/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-45-verifier-spotcheck.md@64ba8385ea10af1b78d367dcb242b92d97062af7",
+    "rechecks": "C1 evidence-verified (gate standard, not executed): r44 fence before contradicted=7 fail, nothing control contradicted=10 fail; after measure-final + a3-tip-c1 PREDICATE C1 pass (fence sha ac65c032 = tip bytes, plans/ unchanged fbad1c5..3d9ea54); keyed_name.py (refuse iff '/refusals45-' in path) also PREDICATE C1 pass -> counter non-discriminating; held-out 8/10 admitted; mutants 7/15; frozen digests 18/18 OK -> C1 does not verify, calibration unprovable. C2 re-measured: SOURCES 141->149 (S149-S156 tier A, used-by exists), knowledge 51->52, frontier 10->11 of 89, captures 9/9 sha OK, provenance trio present; predicate evidence-verified (a3-tip-c2 defects=0 vs nothing defects=8). Frozen rider (non-author predictor review) fails: entry predictor replace('\\r\\n') diverges from grader universal-newline read on 3 lone-CR classes (in-memory re-run); S152 :15/S153 :28/S154 :44 anchors cite lines without the quote (live re-open, quotes at :17/:26/:31); unmarked in rows and entry -> depth harmed. SCORECARD diff: appended section, no score change. Spot-check: admit S149 agree, admit S154 agree (row cells disagree), reject varsea seeds agree, reject gitignore agree; census 15 W04 kengaku ok exit 0."
+   },
+   "commit": "kengaku-shokunin@3d9ea54a558b40993dba251474535edbf33afa21",
+   "closed_at": "2026-10-27T04:27:30Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log): 2026-10-26T21:50:23-03:00 launch kengaku round=45 attempt=1; 22:48:23 lane-dead-no-report (attempt 1 policy refusal); 22:48:25 launch attempt=2; 2026-10-27T00:16:15-03:00 lane-dead-no-report (attempt 2 L1 died in orchestrator session exit 23:57:36, w2 39 seats killed, salvage fbad1c56); 00:16:26 launch attempt=3; 01:12:36 complete kengaku round=45 attempt 3. Step 1 pass: report 792165ce by kengaku-shokunin, SHONEN 4x[~], 14 cited commits ancestors of master, lane ahead=0 clean, prompt = canonical template rendering + addendum. Not admitted: C1 counter passed by a keyed do-nothing control; C2 predictor-review rider fails; depth harmed (unmarked false predictor + 3 mislocated anchors); expansion-improved/quality-harmed is a trade; lane self-reported both honestly. Defects (status-neutral): D1 LOG.md in-place rewrite of 2 committed round-45 lines (4290d64 -> 3d9ea54); D2 lesson Gate lacks per-row <=25-word quote+location; D3 after-receipts do not embed measured revision, no counter run at final tip; D4 claims-file edit 52d7486 after freeze not named in amendment paragraph; D5 2 a3w1 seats reportless (C1-instrument, C2-check mutation items unattacked); D6 S154 teaches quotes a string absent from README. Routed to kengaku r46: supersede S152-S154 + gate anchor-line check; mark/supersede entry Predictor + lone-CR states in V11; LOG correction entry; Gate quotes; revision-in-receipt; re-freeze C1 under Q39 with held-out modules; R45CritV11Bypass, R45SentC2Grader F1-F3, R45CritIntent carried. Operator: SHONEN boxes look non-author checkable (promotion operator-owned); unattributed OpenBot AppImage in ~/.local/bin (R45SentSeatAudit H3).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
