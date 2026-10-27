@@ -29398,6 +29398,47 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable - copied verbatim): 2026-10-27T11:57:31-03:00 launch mado round=53 pgid=402773 driver=hyaku-inline attempt=1; 2026-10-27T13:08:05-03:00 complete mado round=53; hyaku-inline attempt=1; 2026-10-27T13:36:07-03:00 complete mado round=53; hyaku-inline attempt=1 (duplicate complete line; single landed attempt corroborated by lane state and report commit 87da6270 at 13:07:30 after lane tip 13:04:56). Status ok: substantive lane-authored report committed by lane identity; SHONEN heading with 4 [~] boxes; cited commits 8d5c36a/5bbf0ce ancestors of master; lane ahead=0 clean; prompt carries full template contract (committed by lane identity). Claim outcomes: C1 operability unprovable (honest stop, 0->0 counters re-measured); C2 coverage unprovable (honest stop: correction 68->69 re-measured with verbatim P19-P22 quotes, but frozen discriminator and independent source-truth review unmet; no expansion credit). Trends: expansion unchanged; quality improved (defective P16-P18 superseded by bounded verbatim correction); discernment improved (non-author sample agrees with gate on admit S374 and reject P16 plus both QUALITY 17 scope verdicts; thin sample caveat recorded; lane had filed unchanged pending this sample). Routed defects for r54: (1) pre-data control freeze omitted (M53-4, lane-self-reported) - freeze registration/fixture inventory/controls/predicates before any seat scores; (2) errata note unadmitted until independent non-author source-truth review of P19-P22; (3) all four SHONEN boxes remain [~] author-asserted - operator-owned promotion flag; (4) 23 persistent census W04 duplicate-URL warnings, monitoring only. Conformance defects: none beyond lane-self-reported items. Fleet misroot leftovers .scratch/closure-mado-r50.json and kotoba-shokukin/ observed, not mado-53, left untouched.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 71,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "revenger",
+   "lane_round": 71,
+   "lanes": {
+    "revenger": "ok"
+   },
+   "lane_rounds": {
+    "revenger": 71
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "calibration": "unprovable",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-71/revenger.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "revenger-shokunin/corpus/lessons/round-71-verifier-spotcheck.md@0027e3f62b60373f4dbc3937321ce9624f3ebdb4",
+    "rechecks": "C1 re-measured committed README held rows with grep: 8 at base b7abcd8 and tip bced500, C05 uncovered at both; final counter also records 0/16 qualifying votes, HOLDS_C1_V6=no, candidate rejected (Q09/Q16 FAIL). C2 gate behavior evidence-verified, not executed: committed before/after logs show missing-entry and production-timeout rc=1/traceback→rc=2/no traceback; named self-test legs 0→1, HOLDS_C2_V1 yes. Calibration axis unprovable because prompt §6.9 requires counting self-assessment mismatches and the gate-outcome count does not do so. SCORECARD append-only; retained holds unchanged, no owned-axis harm. Sources census exit 0, disclosed warnings. Outside spot-check agrees with S052 admit and S053 reject after reopening both sources; discernment improved. All 12 cited lane commits exist and are ancestors of main; report lane-attributed; lane ahead=0 and clean; prompt/report contract present."
+   },
+   "commit": "revenger-shokunin@bced500398f3c4aa60536a79642ef78af4a68f20",
+   "closed_at": "2026-10-27T17:29:31Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest copied from watchdog: 2026-10-27T11:45:30-03:00 launch revenger round=71 pgid=3964129 driver=hyaku-inline attempt=1; 2026-10-27T14:12:37-03:00 complete revenger round=71; hyaku-inline attempt=1. Status ok: substantive report committed by revenger-shokunin; SHONEN four [~] lines; all cited hashes ancestors of main; pushed clean lane. C1 falsified honest stop; C2's gate outcomes verified as data, but calibration axis unprovable under the required self-assessment-mismatch metric; no axis harmed. Trends: expansion unchanged, quality unchanged, discernment improved on outside S052/S053 sample. Census exit 0 with disclosed W04/W01 warnings. Routed for next round: calibration claim must count self-assessment mismatches; make the disclosed round-70 live-path counter import revision-bound/hermetic or exclude it from frozen archived verdicts. All SHONEN boxes remain [~]; none fully non-author checked; promotion remains operator-owned. No capabilities, promotions, or mints.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
