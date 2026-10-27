@@ -341,3 +341,4 @@ closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At 
 - CloseMoriR54: admitted, MANIFEST rounds[807] (c66eca4e); spot-check de5595c5. Untracked w1.ready.dispatched committed ca52426e; advance mori r54 -> 55; dispatched + spawned MoriR55.
 - 2026-10-27 03:2x local: kimi reroute VERIFIED: 138 kimi-code turns since 06:05Z, all stopReason=toolUse, 0 errors; cred 40 usage moved (5h used 3/100, weekly used 1/100). Earlier 429s on mado r50 seats were 02:54-02:55 local, before the reroute.
 - CloseTsukuroiR46: rejected-harmed, MANIFEST rounds[808] (9066d917); spot-check 3c738a87. Late w1-results.json + C1SimplifyIdentity salvaged 91601905. advance -> BLOCKED (3 consecutive rejections r44-r46). Next queued lane kumitate r66 dispatched + KumitateR66 spawned.
+- 2026-10-27 03:3x local: KengakuR46 L1 exited (C1 predicate met but kill rule fired; C2 met; C3 not admitted; 67 seats): verify OK (report 33540c6e, tip a68afb2f); CloseKengakuR46 spawned.
