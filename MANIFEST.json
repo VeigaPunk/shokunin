@@ -28149,6 +28149,47 @@
    "notes": "Driver digest: 2026-10-27T01:43:19-03:00 launch tsukuroi round=46 pgid=968762 driver=hyaku-inline attempt=1; 2026-10-27T02:50:26-03:00 complete tsukuroi round=46; hyaku-inline attempt=1. Step-1 conformance clean: report d46f6156 by tsukuroi-shokunin 02:49:05 (after lane tip 102cf670 02:48:21, before complete); SHONEN heading 4 [~] boxes; 9 cited hashes resolve and are ancestors of master; jj-lane state ahead=0 behind=0 at 26fada30; prompt f26cba45 committed 01:43:18 carries template contract (22 placeholder-only diff lines, hyaku addendum s6/s7). Orchestrator committed late w1 seat output 26fada30 (C1ExecPriorA/B, C1MutIdentity) after filing; at closure the lane worktree again holds untracked orchestrator-landing files (w1-results.json, C1SimplifyIdentity) not lane round work. Verdict: C1 operability NOT verified - its frozen kill rule fires (r40 selftest-literals PASS->FAIL, selfref 5->17->20) while the report/SCORECARD claim PASS; graded unprovable not harmed (failing term is a lexical self-read proxy tripped by the declared self-hashing target; r40 behavioural legs held at a4477049; plane output unchanged). C2 depth FAIL honestly reported (verdicts_ok 1). Calibration harmed: SCORECARD:3018 C1 PASS + 'counters PASS->PASS where measured' while b313963c ships the r40 FAIL receipt; SCORECARD:3045 admits capability census-identity on the killed claim; SCORECARD:3019/LOG:1664/lesson:20 verdicts_ok 2 vs receipt 1 (receipt cited before it existed). Routed to tsukuroi r47: D1 R46C-C1-KILL-RULE-FIRED (append C1 FAIL corrections; pre-freeze rule for self-hashing vs r40 guard); D2 R46C-KILL-UNIVERSE-AT-MEASURED-REV (r40-r45 unmeasured at 61e06740); D3 R46C-C2-VERDICTS-COUNT; D4 R46C-RECEIPT-READ-BEFORE-COMMIT; D5 R46C-LATE-SEATS (w1 WAVE-DONE/results absent at filing; C1MutIdentity report missing, mut02/03/06 survive); D6 R46C-S251-ANCHOR (72-81 omits :84). Fleet: C2ExecLiveSources fleet-root misroot (12 files) quarantined at .tower/quarantine/fleet-root-strays-20261027T0600/ (third recurrence: r37, r44, r46). SHONEN: all [~]; none fully non-author-checkable (boxes 1/3 need whole-SKILL retest); promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 46,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 46,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 46
+   },
+   "admitted": false,
+   "verdict": "rejected-harmed",
+   "verdicts": {
+    "calibration": "harmed",
+    "depth": "improved",
+    "coverage": "unprovable",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unprovable-but-better",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-46/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-46-verifier-spotcheck.md@f139f5213a2c38f75c9932cde27052a8ef857c7f",
+    "rechecks": "C1/C2/C3 evidence-verified from committed receipts, gates not run: base C1 contradicted=22 versus repaired counter contradicted=0; frozen C1 kill rule fires on 3 held-out admissions and 9/9 novel honest refusals. C2 control: anchor live=8, predictor disagreements=6, bad ranges=4, errata=0/5; landing: live=0, disagreements=0, bad ranges=0, errata=5/5, selftest exit=0; leg-C token bypass noted. C3 re-measured from git show/tree listings: SOURCES 149->165, knowledge files 52->53, frontier 11/89->12/89; frozen receipt has 2 defects (V7, V8), predicate fail. Reopened pinned S166 scorer and Docker Hub/main reject sources; agree with 1 admit and 2 rejects, quote verified. sources-census.sh validate exit=0 (W04 duplicate warnings). Full commands, reasons, axis table and trend evidence are in the pushed spotcheck."
+   },
+   "commit": "kengaku-shokunin@f139f5213a2c38f75c9932cde27052a8ef857c7f",
+   "closed_at": "2026-10-27T06:23:12Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest from .ufo/watchdog.log: 2026-10-27T01:28:11-03:00 launch kengaku round=46 pgid=203847 driver=hyaku-inline attempt=1; 2026-10-27T03:20:04-03:00 complete kengaku round=46; hyaku-inline attempt=1. Report 33540c6e by kengaku-shokunin landed after lane tip a68afb2f; SHONEN 4 [~]; all cited lane-work hashes exist and are ancestors of master; prompt carries template contract; jj-lane state ahead=0, clean worktree, remote tip verified. Status-neutral conformance defects: 4 wave-2 seats left no ordinary reports (their C2 row/mutation work unattacked); misrooted R46CritC1Freeze artifact was copied/quarantined; C3 control ran P10 before first receipt. Closure rejected-harmed: C1 kill rule (3 held-out admissions) plus 9/9 novel honest refusals; C3 fails V7/V8. Routed to round 47: C1 over-refusal/bind-mount/advertisement and weak mutation sensitivity; C2 errata-token bypass and missing wave-2 attacks; C3 freeze violating cases for every tag, isolate pre-receipt P10, improve mutation sensitivity. SHONEN boxes look fully checkable by a non-author; promotion remains operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
