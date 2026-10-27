@@ -29521,6 +29521,47 @@
    "notes": "Dispatch digest: 2026-10-27T08:36:10-03:00 launch attempt 1; 13:47:19-03:00 lane-dead-no-report, retry same round after ChousaR58 aborted with no lane changes; 13:47:21-03:00 launch attempt 2; 15:03:39-03:00 complete. Conformance defects: first attempt had no report; frozen claim counters contain unreachable positive predicates (C1 token case mismatch, C2 incompatible offsets); five pre-existing W04 duplicate-URL warnings. Routed to chousa next round: require a positive control reaching exact final counter verdict before wave data; correct/re-freeze counters and provide after receipts. Lane status remains ok because report is substantive, committed by lane identity, and round work is pushed. SHONEN boxes are fully checkable by non-author; operator owns promotion decision.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 39,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 39,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 39
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "unchanged",
+    "coverage": "unprovable",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unprovable",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-39/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-39-verifier-spotcheck.md@a1b1e939048885d2793759b7f49b10c5c820d70d",
+    "rechecks": "C1 re-measured with committed counter; receipt sample spans 799/701 ms fail 1000ms criterion. C2 re-measured with committed counter exit 1; D2 23/11, D6 absent/self-referential. S145, quarantined S110 and S171 externally reopened; all decisions agree."
+   },
+   "commit": "tabi-shokunin@a1b1e939048885d2793759b7f49b10c5c820d70d",
+   "closed_at": "2026-10-27T19:00:00Z",
+   "campaign": "hyaku",
+   "notes": "2026-10-27T13:31:09-03:00 launch tabi round=39 pgid=2307862 driver=hyaku-inline attempt=1; 2026-10-27T15:07:35-03:00 complete tabi round=39; hyaku-inline attempt=1. Report/SHONEN and lane ancestry/state conform; status ok. C1 and C2 targets fail; no axis harmed, claims not admitted. Routed: fix C1 sample-window/surface evidence; fix C2 revision self-reference, receipt integrity, claim identity, causal separation; quarantine adoption remains closed with misrooted/missing checks; operator reconcile prompt L2 8 vs 64–128 directive. Lesson initially says outside check pending; verifier artifact is the independent check. SHONEN appears checkable for operator-owned promotion review; no promotion or [x] written.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
