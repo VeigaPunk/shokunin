@@ -27940,6 +27940,49 @@
    "notes": "Driver digest (.ufo/watchdog.log): 2026-10-26T23:01:48-03:00 launch tsukuroi round=45 pgid=2691459 driver=hyaku-inline attempt=1; 2026-10-27T00:16:15-03:00 lane-dead-no-report tsukuroi round=45; retry same round (attempt 1 L1 TsukuroiR45 died in the orchestrator session exit 2026-10-26 23:57:36 -03, SIGHUP during an operator omp update; no report; w1 14/66 spawned then killed, abandoned; salvaged to 5b3029bf); 2026-10-27T00:16:33-03:00 launch tsukuroi round=45 pgid=892090 driver=hyaku-inline attempt=2; 2026-10-27T01:33:46-03:00 complete tsukuroi round=45; hyaku-inline attempt=2. Step 1: report 48aacd2b by tsukuroi-shokunin at 01:32:40 (after lane tip 01:31:34, before complete), SHONEN 4x[~], all prompt-§4 sections present; 12 cited hashes + base are ancestors of master; jj-lane state ahead=0 untracked=0, remote 2e46142d; porcelain empty; scratch and __pycache__ removed; prompt = template + placeholder substitutions + addendum §6/§7, committed befec172 (a1) / f60a99b9 (a2) before each launch. Status ok; admission false: C1 operability verified, C2 depth FAIL (verdicts_ok 0, binding channel lost), no axis harmed; round-44 adjacency harm repaired. Routed defects (owner tsukuroi): D1 R45C-D3-R44-MARK-SWEEP (README:434/:440-452 and SKILL.md:4214 r44 rows still lack the FAILED/pending mark; lesson disposition says closed); D2 R45C-D7-CITATION (round-44 citations still name strace-rev-live1.log, only .log.gz resolves); D3 R45C-ASMGATE-RECEIPT (AsmGate 183/30 vs true 249/50 uncorrected in receipt); D4 R45C-START-CENSUS (attempt 2 did not re-run the sources census at its start); D5 R45C-POSTFREEZE-NAME (declare counter wave binding retire-proof before freeze). SHONEN: no box fully non-author-checkable this round (boxes 1/3 need a whole-SKILL retest); nothing promoted or minted.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 56,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 56,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 56
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "depth": "improved",
+    "coverage": "improved",
+    "calibration": "improved",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "Gate clause coverage by clause-reason mutation kills (corpus/evidence/round56/c1-count.py; build-spans re-registered as a gate)"
+   ],
+   "report": ".ufo/reports/round-56/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-56-verifier-spotcheck.md@6656f0770a1460d6ba73d9d2976f698a35311921",
+    "rechecks": "C1 evidence-verified only. Two after-receipts at 99eff0ec (CANDIDATE=2/2 KILLED=9/9 DENIED=2/2 C1=PASS, 124 runs each). Gate, builder and 8 battery digests equal the TIP bytes. C1 inputs are unchanged from 46e1758f to TIP and frozen inputs from 41c58925 to TIP. Before and HOOKONLY/JUNK/EMPTY controls all FAIL. The gate was not executed (§Gate standard). RE-MEASUREMENT GAP: the campaign .qcache was deleted at ~02:16:49 -03 (host event, L0 a714799f), so capture-reading counters exit ENV_CHANGED. This is not scored as falsification; both receipts predate it. C2 re-measured by the judge: registry 126->130 (S127-S130 new, mined, opened 2026-10-27, used-by = entry); S118 used-by +entry; 中国循证医学中心 absent from corpus/knowledge at e5a37951 (exit 1), 6 at TIP; 23 spans rows (9/5/6/3). 23/23 spans are exact slices of the defined forms: a live read-only re-fetch plus pdftotext -layout 26.08.0 reproduces each recorded sha256 (S127 23306b9f, S128 7e3e3cf4, S129 beac2b7f, S130 71fed1a3; held S118 927ff71c). Anchors 23/23. SUBSTANCE/INFERENCE_GROUNDED evidence-verified from the receipt at 98977070. Spot-check: r42 admit agree (表7 attribution confirmed by layout; all 10 表7 rows Ⅰ级/A); r44 refuse agree (duplicate theme; reason understates the S127 §2 normative refs); new rows S128 and S130 quotes agree. Census validate exit 0 (5 pre-existing W04)."
+   },
+   "commit": "chousa-shokunin@b804147b55f17c78e082e05eca0eadbab47f3320",
+   "closed_at": "2026-10-27T05:43:02Z",
+   "campaign": "hyaku",
+   "notes": "Driver: 2026-10-27T01:21:54-03:00 launch chousa round=56 pgid=2786557 driver=hyaku-inline attempt=1; 2026-10-27T02:33:53-03:00 complete chousa round=56; hyaku-inline attempt=1. Conformance: report 435d2d06 by lane identity at 02:32:32, after tip b804147b. SHONEN has 4 lines [~]. 12 cited hashes are ancestors of master. ahead=0 and porcelain is empty. The prompt matches the template (2 placeholder-resolved lines) plus the §6/§7 addendum. Wave settled 69/69 (64 reports + 5 output-only, as reported). Defects (status-neutral): D1 corrections-sweep miss: grey-literature-field-china-r42.md:9 recheck line still says 'the journal's 表 10 row' after the 表7 fix. D2: three C1 driver attacks unmeasured (R56CritC1Forge archive recipe ENV, R56MutC1Driver inconclusive from cache deletion, R56MutC2Counter fragment), disclosed. Routed to round 57: (1) append a correction for the D1 recheck line and sweep; (2) re-run the unmeasured attacks once the cache is restored or on a proven recipe; (3) hook classes beyond the two frozen probes (dir_fd without chdir, native import, sqlite3.connect); (4) r44 lead: bind S127 §2 规范性引用文件 for the national-centre-inputs claim; (5) capture-cache dependency: consider a digest-pinned re-fetch recipe. SHONEN boxes are checkable by a non-author from committed pointers (operator-owned promotion). Prior-round scratch dirs /fast/scratch/hyaku/chousa-r53..r55 remain.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
