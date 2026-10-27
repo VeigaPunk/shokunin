@@ -28466,6 +28466,49 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-10-27T00:52:16-03:00 launch tameshi round=52 pgid=1080098 driver=hyaku-inline attempt=1; 2026-10-27T04:23:10-03:00 complete tameshi round=52; hyaku-inline attempt=1. Honest-stop report (run wrap-up): both claims land and re-verify on the frozen counters at the tip (closure-measured; the lane's own frozen deciding run never occurred), but the frozen no-harm coldread floor is RED at the lane tip (64->45 credited, 19 sections lost by the round's own edits, re-key never landed) so the calibration axis is harmed and admission fails. Conformance defects (status-neutral): report body falsely says 'not committed/pushed' (it is: fleet commit 53fdd555 by tameshi-shokunin); missing Landed changes + Before->after sections; SHONEN one line for four boxes; trend word 'unprovable' outside vocabulary; LOG.md round-52 entry absent; start-census '133 rows' unprinted (inferred); w3 artifact says 16/19 readers while 18 JSONs committed; 4 untracked lane files (uncommitted round work). Routed to lane (fix next round): R52.1 coldread re-key debt; R52.2 LOG.md round-52 entry; R52.3 Corr12 over-count review overstated, re-derive the 8-record over-count verdict under one written counting rule; R52.4 commit/revert the 4 untracked files; R52.5 tools/registry-check.py:766 hard-coded /tmp; R52.6 report-contract repairs.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 60,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 60,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 60
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "freshness": "improved",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "append-only correction guard for knowledge files (scripts/append_guard.py)"
+   ],
+   "report": ".ufo/reports/round-60/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-60-verifier-spotcheck.md@9f07731a873585e655a6518233ea39f5d9fb8204",
+    "rechecks": "C1/C2/C3 re-derived by closure + 3 independent reviewer seats, plain measurements over committed bytes (lane counters never executed, receipts evidence-verified per Gate standard): C1 population 28 (base and T1), 12 unregistered->0 rows added, pins b322cca/a631cc02/20217f23 ancestors of T1, scores 10/10/2 held, redbefore score-mutant scores_held 2/3 exit 1; C2 tool absent at base/present at T1, 24/24 receipt, selftest 54/54, real-lane files=53=closure count at base fd6303ce; C3 registry 164->167 pure append, S425 byte-identical, S427 teaches opens 'supersedes S425', retained sources sha256 match receipts.json, quotes verbatim on live pages. Discernment: 4 admits + 1 reject re-opened, all agree; census validate exit 0."
+   },
+   "commit": "kake-shokunin@437f53b1f6cd22dbf307f1187f41d1c0850a1ac2",
+   "closed_at": "2026-10-27T08:51:47Z",
+   "campaign": "hyaku",
+   "notes": "watchdog digest: 2026-10-27T00:56:19-03:00 launch kake round=60 pgid=1453839 attempt=1; 2026-10-27T04:49:13-03:00 lane-dead-no-report (run-9 operator wrap-up, in-flight state committed 592c2ae for inheritance); 2026-10-27T04:55:10-03:00 launch attempt=2 pgid=3050861; 2026-10-27T05:30:45-03:00 complete attempt=2. Report caddf63b by lane identity kake-shokunin, committer date 05:27:10 lands after lane tip 05:22:09 (author date is jj working-copy stamp). Round shape verified: w1 44 seats (17exec/9scribe/7critic/4scout/4reviewer/2connector/1revenger), w2 38 seats 34 reports 4 dead (MutC2Counter, ReviewerC2Rerun, CriticNoHarm, CriticAxisV2), total 82 in 64-128 band. Conformance: no defects; prompt carries full template contract. Operator ruling noted: C1<->C3 causal coupling (independently falsifiable at one revision, not isolation-separable at build; mechanism committed in contract v3). Routed nits: 'three relabels' prose vs 2 relabels+1 pin move (+ops-debt historical); ScoutRejectCommonJa EN quote '19' units vs measured 22 (flip stands); after-c1-gate-status-t1.txt lacks receipt header. Open L0s (round-58 quarantine, round-59 calibration ownership) routed around, not answered. SHONEN all [~] lane-asserted; boxes look non-author-checkable - promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
