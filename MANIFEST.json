@@ -28509,6 +28509,51 @@
    "notes": "watchdog digest: 2026-10-27T00:56:19-03:00 launch kake round=60 pgid=1453839 attempt=1; 2026-10-27T04:49:13-03:00 lane-dead-no-report (run-9 operator wrap-up, in-flight state committed 592c2ae for inheritance); 2026-10-27T04:55:10-03:00 launch attempt=2 pgid=3050861; 2026-10-27T05:30:45-03:00 complete attempt=2. Report caddf63b by lane identity kake-shokunin, committer date 05:27:10 lands after lane tip 05:22:09 (author date is jj working-copy stamp). Round shape verified: w1 44 seats (17exec/9scribe/7critic/4scout/4reviewer/2connector/1revenger), w2 38 seats 34 reports 4 dead (MutC2Counter, ReviewerC2Rerun, CriticNoHarm, CriticAxisV2), total 82 in 64-128 band. Conformance: no defects; prompt carries full template contract. Operator ruling noted: C1<->C3 causal coupling (independently falsifiable at one revision, not isolation-separable at build; mechanism committed in contract v3). Routed nits: 'three relabels' prose vs 2 relabels+1 pin move (+ops-debt historical); ScoutRejectCommonJa EN quote '19' units vs measured 22 (flip stands); after-c1-gate-status-t1.txt lacks receipt header. Open L0s (round-58 quarantine, round-59 calibration ownership) routed around, not answered. SHONEN all [~] lane-asserted; boxes look non-author-checkable - promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 50,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 50,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 50
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "repo-wide session-material scan: detect structural home paths, account columns and exec-cache records outside .ufo/ (quality/check-session-material.py v3; selftest 94/94; PRED-C2-r50 TARGET_MET at 906178b6, two nonces)",
+    "host-state guard: sandbox a command and fail if declared paths move (tools/mado-hostguard.py; selftest 45/45)",
+    "wave-done check: verify dispatched seats are settled from committed wave artifacts (quality/check-wave-done.py; selftest 58/58)"
+   ],
+   "report": ".ufo/reports/round-50/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-50-verifier-spotcheck.md@6ca8c559a4a3d6d361101592116eea2bc7452437",
+    "rechecks": "C1/C2 before->after re-measured over committed bytes (git cat-file/grep/wc + committed receipts; lane counters and gates evidence-verified, not executed per Gate standard); C1 falsification (r49-recycle bypass, 81.7% shingles) and C2 falsification (7046-byte canned-transcript parrot) re-derived from committed w2 seat reports; 12/12 new-row quotes verified verbatim at cited pin lines; 4 admit URLs re-opened live (quotes present) and 2 reject pages re-opened (ArchWiki absence counts, wiki.hypr.land no forty-hex anchor) - all agree with the gate; sources-census validate exit 0 at closure"
+   },
+   "commit": "mado-shokunin@74782d39e7697608917b5e909f0e8580aaa3e15c",
+   "closed_at": "2026-10-27T09:37:52Z",
+   "campaign": "hyaku",
+   "notes": "Watchdog digest: 2026-10-27T02:45:41-03:00 launch mado round=50 attempt=1; 03:26:40 lane-dead-no-report (L1 exited before WAVE-DONE, w1 9 seats in progress); 04:49:13 lane-dead-no-report (operator run wrap-up mid-round, in-flight state committed); 04:55:12 launch attempt=2; 06:25:36 complete. Round shape: w1 54 (attempt-1 wave, integrated from committed seat reports; w1-results.json 54 null outputs with dispatcher notes, accepted per criterion 102) + w2 32 falsify, all settled. Both claims predicate-MET but falsified by the lane's own w2 (C1 recycled round-49 candidate + one receipt-citation line passes the frozen counter; 81.7% shingle overlap; held ground facts omitted; C2 7046-byte canned-transcript/all-rule-tag parrot passes) - honest stops, predicates not re-frozen, reported exactly as found. Defects (status-neutral): D1 report+LOG assert final WAVE-DONE at 74782d39 waves=2 settled=2 but the committed receipt stops at 8dbbf61a waves=1 - commit the final re-run receipt or correct both texts; D2 SHONEN section is one summary line for four boxes instead of one line per box; D3 untracked leftover .ufo/wakes (388B) in the lane repo; D4 M50-9 registration-manifest self-digest row cleanup still open. Lane self-recorded one prohibited agent://all broadcast (conformance failure, no repeat). SHONEN: four [~] historical assertions, no outside-lane verifier - promotion operator-owned. Routed to lane: C1 freshness baseline must include .ufo/waves/round-*/candidate/; C2 needs independent behavioral fixture execution with exact rule attribution; tracked lane-level tool ledger (RevLedgerR50).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
