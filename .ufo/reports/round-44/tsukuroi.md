@@ -100,6 +100,27 @@ stays at 9.
 
 No installs or updates by the L1. pacman was paused throughout.
 
+## SHONEN
+
+- [~] SKILL.md contains real decision tables, error patterns, checklists, cited sources.
+  - Round 44 adds the SCRUB-line observation → reading → action table and the SR7-SR9 rows table (`SKILL.md`
+    "Scrub-record census arm — round 44", "Scrub record — round 44 rows"), plus the round44 registry table (70 rows).
+  - Wave-2 `W/w2/SkillReview.md` reviewed them and supports; that seat is the lane, not a non-author.
+- [~] At least one end-to-end domain task executed and logged in LOG.md.
+  - `LOG.md` "Round 44": a read-only census arm was built, measured red-before at base and PASS at `fbfef071`, and
+    reproduced independently in a private namespace (`W/w2/C1ExecHandReproFinal.md`).
+  - Non-author replay is pending.
+- [~] Instructions executable by an agent without oral context.
+  - The round-44 sections carry paste-ready read-only commands and the counter invocations. Seat
+    `W/w2/C1ExecHandReproFinal.md` derived the expected lines from the header contract text alone.
+  - A whole-SKILL retest was not executed.
+- [~] No cross-domain bleed (PROVINCE.md still accurate).
+  - `W/w1/ConnSiblings.md` found no contested scope. The PROVINCE promotion covers only the unprivileged view;
+    record content and running state stay Frontier.
+  - Moved anchors: the census insertions move the lane's own anchor IN-109, which is unmarked
+    (`W/w2/CritNoHarmFinal.md`) and routed to round 45. Sibling pins are inventoried in `W/w1/AdjPins.md`.
+- No promotion is claimed. No box changed state this round.
+
 ## Next
 
 The planned row for round 45 is drafted in w2/ConnFrontierFinal. It covers:
