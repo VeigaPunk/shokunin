@@ -27983,6 +27983,49 @@
    "notes": "Driver: 2026-10-27T01:21:54-03:00 launch chousa round=56 pgid=2786557 driver=hyaku-inline attempt=1; 2026-10-27T02:33:53-03:00 complete chousa round=56; hyaku-inline attempt=1. Conformance: report 435d2d06 by lane identity at 02:32:32, after tip b804147b. SHONEN has 4 lines [~]. 12 cited hashes are ancestors of master. ahead=0 and porcelain is empty. The prompt matches the template (2 placeholder-resolved lines) plus the §6/§7 addendum. Wave settled 69/69 (64 reports + 5 output-only, as reported). Defects (status-neutral): D1 corrections-sweep miss: grey-literature-field-china-r42.md:9 recheck line still says 'the journal's 表 10 row' after the 表7 fix. D2: three C1 driver attacks unmeasured (R56CritC1Forge archive recipe ENV, R56MutC1Driver inconclusive from cache deletion, R56MutC2Counter fragment), disclosed. Routed to round 57: (1) append a correction for the D1 recheck line and sweep; (2) re-run the unmeasured attacks once the cache is restored or on a proven recipe; (3) hook classes beyond the two frozen probes (dir_fd without chdir, native import, sqlite3.connect); (4) r44 lead: bind S127 §2 规范性引用文件 for the national-centre-inputs claim; (5) capture-cache dependency: consider a digest-pinned re-fetch recipe. SHONEN boxes are checkable by a non-author from committed pointers (operator-owned promotion). Prior-round scratch dirs /fast/scratch/hyaku/chousa-r53..r55 remain.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 49,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 49,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 49
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "keysym-to-key parity with how-to-type: given a keymap from xkbcli compile-keymap and a keysym (name, U name, hex or decimal), prints keycode, key name, layout, level and every modifier mask that types it, byte-equal to the pinned xkbcli how-to-type --disable-compose --keysym (libxkbcommon 1.13.2); no process/socket/write (tools/mado-keysym.py sha dcc13cce, selftest 38/38, PRED-C1-r49 633/633 + 150/150 at 430d2569; closure re-ran 90/90 stdout+exit parity vs host xkbcli)"
+   ],
+   "report": ".ufo/reports/round-49/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-49-verifier-spotcheck.md@c0d847cea95aeb77277d4215aa5b9c9a48581b82",
+    "rechecks": "C1 operability re-measured: tool absent at 03e4ae76, blob 0d65ab7f at 430d2569 and tip, sha256 dcc13cce = registration candidate; selftest 38/38 from committed bytes; closure's own 3 keymaps x 30 keysyms vs host xkbcli how-to-type 1.13.2: stdout+exit equal 90/90; fixtures jq length 633; PRED-C1-r49 base MISSED / data MET (two nonces) evidence-verified from receipts, not executed. C2 coverage re-measured: entry absent at tip, knowledge 65->65, rows 288->288, c2-at-data MISSED (honest stop). Harm: LOG +9/0, SCORECARD +23/0, lesson +64/0, no deletions/renames, axis-tip checked=3 mismatched=0 (receipt), operator cache sha ddd94f6b unchanged today. Discernment: 5 sampled (S352, S355 admits; wiki 0.56.0 Binds, ArchWiki Hyprland, IKeyboard.cpp re-register rejects) all agree on re-fetch (pins byte-equal); drafted S359 quote verbatim at wiki-Binds.md:40 (10 words); census exit 0 W04x17 W01x1 = census-after receipt."
+   },
+   "commit": "mado-shokunin@8a370cd481c6044b2f5c09fd66acde8fc54d173c",
+   "closed_at": "2026-10-27T05:43:30Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest (.ufo/watchdog.log, mutable): 2026-10-27T01:23:18-03:00 launch mado round=49 pgid=519055 driver=hyaku-inline attempt=1; 2026-10-27T02:37:17-03:00 complete mado round=49; hyaku-inline attempt=1. Step 1 ok: report b0184c43 by mado-shokunin at 02:36:01 (after lane tip 02:35:14, before complete); SHONEN 4x[~]; 5 cited hashes + base are ancestors of master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0; prompt sections 1-5 = template modulo placeholders, sections 6-7 present. C1 verified; C2 honest stop -> not admitted. Routed defects (status-neutral): D1 45 seats < 64 floor, w2 (38 items) never dispatched (M49-4); D2 report filed before WAVE-DONE with 7 w1 seats unsettled (lane clean at closure); D3 '57,865 pairs over 400 keymaps' (registration.md:22) has no committed receipt (seat evidence: 24898 comparisons); D4 do-nothing control ran on the w1 draft counter (7/60 generated), not the frozen 150-case counter; D5 sourced-claim item unmet (C2 carried; S352-S363 rightly unappended); D6 QUALITY criteria owed for M49-1/M49-3; D7 carried M48-8 gate v3 + M48-10 host guard drafted not installed, session-material gate red (110); D8 lesson round-49.md:26 '2 admits and 4 rejects' vs 2 located admits/5 rejected sources and gate.md 12 admits/5 rejects. Operator: SHONEN boxes 2 and 3 reproduced by the closure from committed bytes; boxes 1 and 4 not swept; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
