@@ -29855,6 +29855,47 @@
    "notes": "Dispatch/complete: 2026-10-27T15:05:58-03:00 launch chousa round=59 pgid=888535 driver=hyaku-inline attempt=1; 2026-10-27T17:03:53-03:00 complete chousa round=59; claims file absent before dispatch, no valid claims or claim measurements, honest-stop (no axis harmed). Conformance defects: missing freeze; zero connectors; persisted wave spec mismatch after dispatch. Round work is progressing and lane clean/pushed. SHONEN boxes are author [~] only; checkability noted for operator, no promotion. Routed next-round defects: freeze predicates before ready; guard immutable dispatch spec and assign connector; re-freeze C1/C2 with positive controls; resolve L0 fetch scope. No new SOURCES row; current-source verification incomplete.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 40,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 40,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 40
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unprovable",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-40/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-40-verifier-spotcheck.md@fecbdf0a3aa79ce17bce3ef7338f69112f604f88",
+    "rechecks": "C1 measured receipt re-derived 13 samples/1204ms and 13/1202ms; binding 0→1 corroborated. Committed selftest evidence 7/7 checked; F4-full verified from committed CritControlReach artifacts, disproves no-op control and leaves claim unprovable. Outside spot-check agrees with S134 admit and S102 reject; S145 quote re-opened (11 words). Census exit 0, tabi ok, 20 W04 warnings."
+   },
+   "commit": "tabi-shokunin@26cfde0382e4512f8e357690526a21c594991d86",
+   "closed_at": "2026-10-27T21:00:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-10-27T15:10:29-03:00 launch tabi round=40 pgid=1091225 driver=hyaku-inline attempt=1; 2026-10-27T15:11:43-03:00 lane-dead-no-report tabi round=40; retry same round (hyaku-inline attempt=1: TabiR40 exited incomplete before freeze/ready/report); 2026-10-27T15:11:46-03:00 launch tabi round=40 pgid=1250087 driver=hyaku-inline attempt=2; 2026-10-27T17:26:03-03:00 complete tabi round=40; hyaku-inline attempt=2. Attempt 1 terminated without report; attempt 2 has a substantive lane-authored report and clean/pushed lane work, so status ok; no marker. C1 coverage capability unprovable: F4-full NODE_OPTIONS preload substitutes driver and reaches predicate true without Firefox, hence not admitted; no axis harmed. Conformance defect: attempt 1 died before freeze/ready/report. Routed own-lane defects for next round: prevent F4 driver substitution with frozen red-before and same-command red→green proof; address F1 zero-observation acceptance and F3 stale process-tree ownership and sampling gaps; capture census stdout/stderr/exit contemporaneously. Operator process note: accidental agent://all broadcast reached 140 recipients, no cross-lane writes; report notes it. SHONEN checklist checkable but author [~] only; no promotion mark. Spot-check agrees S134 admit/S102 reject. Verifier artifact pushed at fecbdf0a3aa79ce17bce3ef7338f69112f604f88. Fleet had unrelated dirty paths, untouched.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
