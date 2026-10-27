@@ -28764,6 +28764,47 @@
    "notes": "Dispatch digest: 2026-10-27T04:55:20-03:00 launch attempt 1; 2026-10-27T06:04:03-03:00 lane-dead-no-report retry (provider fallback exhausted, gpt-6-luna invalid_prompt); 2026-10-27T06:04:06-03:00 launch attempt 2; 2026-10-27T09:15:28-03:00 complete attempt 2. Defects status-neutral: dispatched prompt missing canonical full-contract clauses; report omits some SOURCES touch/frontier details. Route C2 exact insertion mismatch and W2 C1 provenance/path and C2 symlink/containment findings to kaidoku next round; route prompt contract issue to operator. SHONEN boxes appear checkable on inspection; promotion remains operator-owned. C2 failed frozen target, so honest-stop and not admitted.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 62,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 62,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 62
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "unprovable",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-62/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-62-verifier-spotcheck.md@13d4519818db28cd0aa912e49020659140d7b9fa",
+    "rechecks": "step-1 conformance clean (report+prompt committed by kake-shokunin; all 5 cited hashes ancestors of master; ahead=0; tree clean); C1 counter evidence-verified not executed: frozen sha256 matches contract, base/after counter inputs re-derived exactly over committed blobs (lesson_gate 0->1 only), marker-only false-green confirmed by code read + committed L1 receipt + ReviewerCounterControls attack; claim honestly lands unprovable, score 2->2 HOLD; wave re-tallied from w1-results.json (64 seats, attack 23/64=35.9%, 50 reports, 14 dead exactly as named); census validate exit 0 (171->171 rows); SCORECARD diff append-only, no axis harmed; outside spot-check agrees with 1 admit + 2 rejects"
+   },
+   "commit": "kake-shokunin@a5a0c4448adbc365cb65d84c9ac37192e13f748d",
+   "closed_at": "2026-10-27T12:53:41Z",
+   "campaign": "hyaku",
+   "notes": "watchdog digest: 2026-10-27T08:50:56-03:00 launch kake round=62 pgid=1120682 driver=hyaku-inline attempt=1; 2026-10-27T09:49:13-03:00 complete kake round=62; hyaku-inline attempt=1. Honest-stop round: frozen calibration counter falsified (marker-only false-green; committed fixture receipt + wave attack), C1 unprovable, no score credit claimed; report discloses this fully. Defects routed to lane for round 63: (1) repair c62_calibration.py so resolved binds semantics, with committed red-before/green-after, fix frozen per standing rule; (2) orchestrator-side: w1 results handoff lacks per-seat status/last-error, 14/64 dead seats with no recorded cause; (3) round-59 calibration-ownership L0 question still open, correctly carried. SHONEN boxes all [ ] untouched - non-author checkable but promotion is operator-owned. No tools installed; no pacman transactions.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
