@@ -29773,6 +29773,47 @@
    "notes": "Dispatch/complete: 2026-10-27T14:33:03-03:00 launch revenger round=72 pgid=202041 driver=hyaku-inline attempt=1; 2026-10-27T15:34:18-03:00 complete revenger round=72; hyaku-inline attempt=1. C1 (C15 tool landscape coverage) falsified by the lane's own frozen counter and honestly not admitted; C15 stays uncovered, knowledge entry stays candidate; 42 source rows S054-S095 added (53->95). Coverage graded unchanged (held numerator 8->8; ratio 5.7->5.3 is a denominator effect of mapping C15), expansion unchanged (lane said harmed). Defects, status-neutral: (1) S082 row and lesson Gate carry a quote from the AutoDecompiler abstract (S083), absent from LLM4Decompile abstract/PDF; (2) S071 registry quote paraphrased, not verbatim; (3) source-quotes-check script counts words only, not presence in source; (4) lane has 3 untracked wave paths (.ufo/waves/round-72/w1.ready, w1.ready.partial, w1/ with 17 review files) uncommitted, contradicting the report's 'no worker outcomes' wording; wave not credited. Routed: fix S082/S071 quotes, strengthen quote audit, commit or remove wave artifacts and reconcile report; C15 admission needs independent review plus counter 1/1. SHONEN boxes remain [~] and are not fully checkable by a non-author; no promotion suggested.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 58,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 58,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 58
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "unchanged",
+    "depth": "unprovable-but-better",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unprovable-but-better",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-58/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-58-verifier-spotcheck.md@2b9f03975bfb6e508f35074ac8181ec8bf54e805",
+    "rechecks": "Re-measured: count-c1.py at b783d0b8/7d317495/8053ef91 -> C1=met rows=2 ... rc0 at all three (identical before/after; frozen target token selftest=ok never emitted -> C1 unverified); count-c2.py entering unmet entry=absent rc1, data/tip met claims=11 rc0; selftests C1 4/4, C2 6/6; closure script verified all 11 K-quotes at cited lines of tools/mori-driver-liveness.py (sha256 6b3dba74 = pinned copy); counters/contract byte-frozen since fe880112; census validate rc0, rows 322->325, W04 24->25; S551 and S552 sources re-opened (S552 IEEE PDF sha256 matches, quote present, but duplicates S478). Evidence-verified: W1 64 outputs / 58 report files / partial settlement, role mix attack 42/64."
+   },
+   "commit": "mori-shokunin@8053ef91d4491590d563fa3f280720add4f088c8",
+   "closed_at": "2026-10-27T19:37:02Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-27T13:47:08-03:00 launch mori round=58 pgid=2352464 driver=hyaku-inline attempt=1; 2026-10-27T15:30:13-03:00 complete mori round=58; hyaku-inline attempt=1. Report filed 15:29:29 by mori-shokunin (83b9e22c). Lane repo clean, pushed (ahead=0); cited commits fe880112/4272736c/7d317495/76ad9cf3 ancestors of master; fac6534a is a fleet commit. Both claims unverified by the lane's own declaration, agreed by closure: C1 frozen target requires selftest=ok that count-c1.py cannot emit and its output is identical at entering and landed revisions; C2 content verified (11/11 quotes) but counter fails frozen control (c) under W1 counterexamples. Not admitted per all-claims-verify rule. Defects routed to lane for r59: (1) report SHONEN lines cite kotodama-shokunin/SHONEN.md not mori SHONEN.md (four [~] boxes, none checkable fully by a non-author; no promotion suggested); (2) S552 duplicates S478 (same paper/p.3016 paragraph/sha256) - append reconciliation, Mistakes row, QUALITY criterion; (3) freeze C1 whose target token is emitted and binds exact keys/pointer roots/pinned MANIFEST; (4) harden C2 frontmatter/distinct-claim/quote-span/used-by predicates and add --scratch option. Observation: connector planner-mapping drift honestly recorded; hyaku marker commit 8053ef91 postdates report-cited tip 76ad9cf3.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
