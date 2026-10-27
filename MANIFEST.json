@@ -28595,6 +28595,49 @@
    "notes": "dispatch digest: 2026-10-27T04:55:22-03:00 launch tsukuroi round=47 pgid=3054453 driver=hyaku-inline attempt=1; 2026-10-27T06:23:17-03:00 complete tsukuroi round=47. Honest wrap on operator instruction before WAVE-DONE w1; orchestrator salvage 76819197 landed w1-results.json (64/64 outputs) post-report; 1 seat (C1MutBinding) still live, 2 receipt files untracked (defect). C1 unsettled admission (verdicts_ok 0; K22 map omits S240 ioctl.c — routed). C2 kill rule fired on new /tmp fallback — routed defect already mined by lane. Other defects: Gate holds zero reject rows; report cites uncommitted selftest-space-before.log; W04 count misstated (40 not 2); godspeed directive bytes trimmed in w1-dispatch. Fresh-start corrections for r46 landed honestly (C1 unverified, census-identity capability withdrawn, verdicts_ok 1). No axis harmed; no admission.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 57,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 57,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 57
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "freshness": "improved",
+    "depth": "improved",
+    "coverage": "improved",
+    "calibration": "improved",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "Digest-pinned freshness re-fetch"
+   ],
+   "report": ".ufo/reports/round-57/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-57-verifier-spotcheck.md@b13ca7b5c8bbb40d2d29a37fb443c64ca043f791",
+    "rechecks": "5 read-only seats + integrator re-derivation; lane counters c2-count.py/c3-count.py never executed (gate standard); all reported C2/C3 tokens independently reproduced from committed bytes at 5dc18607730a73e0a30ad938a20dbfaa37461f1c; freeze/blob integrity confirmed; spot-check 3 admits + 1 reject, all agree (2 live URL re-opens); sources-census validate exit 0 (five pre-existing W04s)"
+   },
+   "commit": "chousa-shokunin@5dc18607730a73e0a30ad938a20dbfaa37461f1c",
+   "closed_at": "2026-10-27T11:31:28Z",
+   "campaign": "hyaku",
+   "notes": "Watchdog digest (mutable log, copied per protocol): 2026-10-27T02:45:44-03:00 launch chousa round=57 pgid=797764 driver=hyaku-inline attempt=1; 03:26:40 lane-dead-no-report (L1 exited mid-round, C2 frozen C3 drafting, no report); 04:49:13 lane-dead-no-report (operator run wrap-up; in-flight state committed for inheritance); 04:55:09 launch attempt=2; 06:25:38 lane-dead-no-report (kimi cred 40 5h limit, fallback chain exhausted gpt-6-luna invalid_prompt); 06:25:40 launch attempt=3; 08:19:18 complete chousa round=57 attempt=3. Attempts 2+3 both contributed to the landed tip after a disclosed concurrency merge. Step-1 conformance clean: report filed under lane identity with SHONEN heading (4x [~]), all 12 cited lane commits ancestors of master, lane repo clean and pushed ahead=0 (jj-lane.sh state), prompt embeds the full template contract (5 round-level + 5 child-lane items). Claims re-measured, not evidence-verified: C2 freshness VERIFIED (47/47 verdicts, REPRODUCED=41 DRIFTED=5 UNREACHABLE=1 BYTE_BACKED=46 CONSISTENT=46/46 all independently reproduced; FLAGGED=0/0 vacuous as disclosed); C3 depth VERIFIED (BOUND=4/7 R1:S131 R2:S132 R3:S133 R7:S118, SWEPT=3/3, QUOTE_ROWS=10, all substance/anchor/grounding legs reproduced; 5/5 raw-to-record bindings genuine). No axis harmed (SCORECARD pure-append; LOG append-only; SHONEN byte-identical; fleet root clean of chousa strays). Routed items: (1) lane — first committed report 01286956298 was rewritten in place by f47fa39aa5 instead of an appended erratum, and v1 cited tip 75004f0a before it existed; operative report resolves. (2) operator ruling via open L0 2c6edbab — lowest-axis/plan obligation unmet (operability 3/10 not worked; round-56 planned row did not name R57-C2/C3, freezes were in-round attempt 1); claims verify and no axis harmed so closure admits with the deviation named. (3) lane — W2 residual (8 seats) not policy-validated as a 64-128-seat wave and exceeded the residual role wording (mutation-tester/sentinel); total round 73 seats. (4) lane recurrence RW-1 — c3-count.py provenance leg forgeable (W2 A1a/A1b reach C3=PASS on a fabricated success row + replayed bytes); committed state genuine and disclosed; re-freeze must bind the record to an independently authenticated fetch receipt. (5) lane hygiene (resolved) — unidentified-writer attempt3-sidecar-audits.md correctly re-derived under L1 authorship, never adopted. (6) fleet pre-existing — five W04 duplicate-URL warnings unremediated, predate round 57.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
