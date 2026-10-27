@@ -27730,6 +27730,49 @@
    "notes": "Driver digest: 2026-10-26T22:10:05-03:00 launch mori round=53 pgid=1612126 driver=hyaku-inline attempt=1; 2026-10-27T00:16:15-03:00 lane-dead-no-report mori round=53; retry same round (attempt 1 L1 MoriR53 died in the orchestrator session exit 2026-10-26 23:57:36 -03, SIGHUP during an operator omp update; w1 66/67 settled; salvaged to 0df80303); 2026-10-27T00:16:30-03:00 launch mori round=53 pgid=890907 driver=hyaku-inline attempt=2; 2026-10-27T00:59:05-03:00 complete mori round=53; hyaku-inline attempt=2. Conformance ok: report b27a71b0 by lane identity, landed after tip 28401324; SHONEN heading 4 [~]; 10/10 cited commits ancestors of master; jj-lane state ahead=0, porcelain empty; prompt carries full contract (commits ce4c5e94, bbebff81); round 75 seats (w1 67 + a2r1 8). Defects (status-neutral, routed): D1 salvage 0df80303 committed by the orchestrator under the lane identity (disclosed, re-verified by attempt 2); D2 SCORECARD round-53 C1/C2 After cells cite at-salvage receipts (R=0df80303), not the landed 0b36d23e receipts (tokens identical) - append a note; D3 inherited tracked lane-root strays (0, base.c, main.c, meminfo.c, oom_kill.c, sd-main.c, user@.service.in, --repo/) still present. Routed: round-54 named limits (filename voter identity, C2 exit-code arm, no live mode-2 leg, anchor corrections on one seat); lead: /doc/html/v7.3/ rendered vm.html answers 200 (second locator for S507). Spot-check: admit S510, S514 agree; reject raw.githubusercontent v7.3 (429 reproduced on mm/util.c) and kernel.org latest agree. SHONEN 4 [~] boxes look checkable by a non-author (operator-owned promotion).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 55,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 55,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 55
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "depth": "improved",
+    "coverage": "improved",
+    "calibration": "improved",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "OLE-aware span builder (tools/build-spans.py)"
+   ],
+   "report": ".ufo/reports/round-55/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-55-verifier-spotcheck.md@98484fb9b04702d7b785dec6fc3d9017e37ab850",
+    "rechecks": "No lane gate executed; frozen claims.md + c1/c2/c3-count.py + controls unchanged FREEZE 1fc5d92b..TIP. C1 evidence-verified (before 0/4 x4, controls R54SHIM 1/4 TXTONLY 1/4 DELEGATE 0/4, after 4/4 x4, 40/40 seeds, tool sha 1ed2650a == TIP) AND re-measured by running the landed probe (not the counter): tool absent at base; round-55 quotes -> 19/19 spans.tsv + span files identical, --check STALE=0; round-54 quotes@dba605de -> 33/33 byte-identical (REGRESS); scratch-cache refusals (no defined form, quote absent) exit 1 with no spans.tsv; stdlib-only imports. C2 re-measured: 是否检索灰色文献 absent from corpus/knowledge at base (exit 1), present at TIP; rows 123->126, S124-S126 mined/2026-10-27/used-by r40 only; judge-built defined forms: 19/19 spans exact slice, digest, once, <=25w/160c, in entry+lesson; all anchor char N are quote offsets. C3: 11/11 anchors occur once at base and TIP; round deletes 0 lines; observations E01-E07,E10 re-derived equal, E08/E09/E11 evidence-verified (receipt + W1 R55ExecC3ObsProbe); R55MutC3Counter 5/5 killed. SCORECARD diff additions only; census exit 0 (5 pre-existing W04) == census-end. Spot-check: admit r40/S124 agree; reject r43 (S161 Guizhou: 灰色文献 x0, different instrument) agree; reject S133 leg (paymentAmount=10 a serialized page field) agree; quarantine S125 absent-as-written agree; S126 quote 'which was issued on June 18, 2019' once at char 1324 agree."
+   },
+   "commit": "chousa-shokunin@53f1ce6b8a479c05c27436026557f05658929313",
+   "closed_at": "2026-10-27T04:20:38Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-27T00:23:04-03:00 launch chousa round=55 pgid=1294370 driver=hyaku-inline attempt=1; 2026-10-27T01:12:25-03:00 complete chousa round=55; hyaku-inline attempt=1. Report ac629889 (lane identity, 01:11:40 -0300) after lane tip 53f1ce6b (01:11:04); SHONEN heading 4x[~]; 7 cited lane hashes exist and are ancestors of master (8d77e6c1 is the fleet L0 commit); lane pushed ahead=0, porcelain clean; prompt carries template 139/140 verbatim + rendered line 1. Conformance defects (status-neutral): D1 report filed before W1 settled (35/48 reports, no w1-results.json, wave-settled-r55 UNSETTLED exit 1; W1 seats still live at closure) and W2 (36 items) never dispatched; D2 48 seats < 64 floor; D3 report cites C2/C3 measured at 29cfb12a but receipts name 5a35ebd6, no receipt for the claimed 53f1ce6b re-run; D4 lesson quarantine line puts 即“灰色文献” at char 994 (sentence start; phrase at 1012). Routed to chousa: (1) commit w1-results.json, integrate late W1 seats, dispatch or retire w2-spec items, correct any landed statement they falsify; (2) C1 counter hardening: hook gaps (cwd/dir_fd, unlisted events, R55CritForgeHook) and 9/9 surviving counter mutants (R55MutC1Counter) need killing fixtures before the counter is cited again; (3) cite receipt revisions exactly (D3); (4) appended correction for D4; (5) build-spans registered as probe but can fail (exit 1 on refusal/STALE) - re-register as gate with self-test or justify. Discernment upgraded from lane's unprovable-but-better to improved: outside spot-check agrees on 1 admit + 2 rejects + quarantine verdict; QUALITY 101/104 ground the round's lessons. SHONEN boxes look non-author checkable from committed pointers (operator-owned promotion; no [x] written).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
