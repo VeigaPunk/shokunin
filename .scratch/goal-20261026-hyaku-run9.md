@@ -247,3 +247,7 @@ closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At 
   Recovery: `next/kake` reset to 59, the two phantom `outcome/kake-r58`/`kake-r59` files deleted, r59
   re-dispatched and KakeR59 spawned. Correct order: wait for the closure job's result, confirm the
   MANIFEST row, then `closed` -> `advance` -> `dispatch`. `advance` must not run before the verdict lands.
+- ~22:20 -03, operator routing change: `executor`, `labrat`, `sentinel`, `mutation-tester`,
+  `reviewer`, and `security-reviewer` now route to `@m_mim`; `scribe`, `sonic`, `simplifier`,
+  and `revenger` remain `@m_flash`; critic/connector stay `@m_kfc`. Existing in-flight work
+  retains its spawn-time routing; the revised map applies to future delegations. Addendum updated.
