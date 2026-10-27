@@ -60,3 +60,12 @@ This append-only correction supersedes the report's earlier statement that no se
 - E02's independent canonical-row instrument rejected the frozen no-op while accepting the genuine 11-row table; it made no lane source edits and does not replace C1's frozen predicate. Evidence: `.ufo/waves/round-57/w1/out/E02CanonicalBinding.md`, lane commit `9df8e8ddb4d245611ef3ce65490c42f102ecda95`.
 - Other seats remained unsettled and the results handoff was unavailable. Settled/dead-seat counts remain unknown. The original wave context is a conformance defect; the committed pre-data amendment remains the declared claim authority.
 - C1's residual survivors and the no-credit ruling are now append-only in `SCORECARD.md`, `LOG.md` and `corpus/lessons/round-57.md`, lane commit `d7cb74dda164e19eb362536e12dc127926c3735a`. C2 remains measured; no scalar changed.
+
+## Erratum — WAVE-DONE and settled evidence
+
+The orchestrator delivered `WAVE-DONE kama r57 w1`; all 64 seats settled: 62 complete, 1 done and 1 closed, with 0 dead seats (`.ufo/waves/round-57/w1-results.json`, lane integration commit `46d1fde97cd24c2ee1dd3338ee52071fc0bec98e`). This supersedes the earlier unsettled-seat count.
+
+- R57Item29 and E03 independently falsified C1's frozen execution-binding predicate: dead-code and unused-function no-op variants still satisfy the AST-only checker. C1 is not verified and earns no operability credit. The report's first quality-trend statement is narrowed: quality improved only on the bounded selftest comparison, where no-op survivors fell 4/7→2/7 rejected; the surviving shortcuts remain material.
+- R02 confirms the claim axes, separability and pre-data freeze chain, and flags the dispatched context's false `maxN expected 46` premise and stale C1/C2 labels. `maxN` is 56 at base; the actual C2 calibration defect is 42 stated versus 43 observed. The committed amendment governs.
+- R04CounterSemantics found equal-number duplicate canonical headings select the first match; this is preserved as an unclaimed counter limitation in the round-57 lesson. E02's independent canonical-row prototype rejected the frozen no-op and accepted the 11-row table, but was not integrated and does not replace either frozen claim.
+- Lane evidence for all settled seats is committed at `46d1fde97cd24c2ee1dd3338ee52071fc0bec98e`; final lane ledger correction is `83c1c4a5e2c210d9f4e1454b64c686994330f05f`.
