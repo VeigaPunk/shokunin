@@ -140,6 +140,31 @@ is not admission; independent non-author verification remains required.
   the round on an answer; note the open question in the report and route around it.
 ## 6. Campaign addendum — hyaku (百) phases 3–7, operator directives of 2026-10-22/23/25 (binding this round; in-session)
 
+**Run 10 (2026-10-27, binding; supersedes the run-9 routing, fresh-start and goal-file lines below;
+every other run-9, run-8 and run-7 rule, including the 64–128 band, the 256 ceiling, 10-round blocks,
+clean commits and the inline spawn handoff, stays binding).** Operator directive, verbatim (same text
+as run 9): "ok, let's continue the training rounds; i want you to do 10 rounds per shokunin, so we can
+keep consistency and not get messy with commits and dispatches; the goal is to reach round 100 on each;
+choose the order you deem best to do so. | /skill:godspeed | we are on the hyaku mode, which seems the
+one that works best; make sure to adapt to the 64-128 per round directive; max ceiling of 256 | use the
+same model delegations we were using as before".
+- **Routing: the map live at the end of run 9, unchanged** (never pass `model`): task `@m_kfc`;
+  main/planner `@m_opus`; executor `@m_mim`; critic/scout/reviewer/mutation-tester `@m_kfc`;
+  security-reviewer `@m_zfl`; scribe/sonic/simplifier/revenger/labrat/sentinel `@m_flash`; connector
+  `@m_antigravity`; distiller/seance `@m_haiku`. All seven aliases answered on their primary at run
+  start. The ≥25 % attack share and the few-connector-seats rule still apply.
+- **Fresh-start rule (run 8) applies at run-10 start to souji, tabi, kasegi, kaidoku, tsukuroi and
+  kengaku** (each blocked at run-9 end by three rejected closures in a row; the run-start directive
+  lifts streak blocks). Their first run-10 round reads the last three rejected closures and
+  spot-checks first and declares only claims a do-nothing control cannot reach (§9).
+- **File only after WAVE-DONE** (run-9 lesson, 9 incidents): an L1 that files before every launched
+  wave settles gets woken by late seat results after its closure. Wait for WAVE-DONE and the
+  `<wave>-results.json` handoff; if seats stall, ask the orchestrator to settle the wave.
+- **Counters that bind seat votes** parse the seat's final text; seats wrap output unpredictably (run-9
+  mori r55: JSON-wrapped vote lines failed a counter that bound plain lines). Freeze a parser that
+  accepts both, or bind on files the seat writes.
+- Run state, lane order, blocks and holds: `.scratch/goal-20261027-hyaku-run10.md` under /home/vgpnk/Projects/shokunin.
+
 **Run 9 (2026-10-26, binding; supersedes the run-8 round-size and goal-file lines below; every other
 run-8 and run-7 rule, including the run-8 routing and the inline spawn handoff, stays binding).**
 Operator directive, verbatim: "ok, let's continue the training rounds; i want you to do 10 rounds per
@@ -255,7 +280,7 @@ Phase-1 directives still bind: "train all shokunins to at least round 100"; "com
 every round done"; "do it inline with multiple swarms of subagents".
 
 You are an in-session **L1 lane subagent** dispatched by the hyaku orchestrator (the operator's
-parent omp session) for exactly ONE steered round: **mado round 50** (attempt 1;
+parent omp session) for exactly ONE steered round: **mado round 50** (attempt 2;
 campaign target: round 100). Your lane's place in the session follows the goal file (lane
 order and blocks: `.scratch/goal-20261025-hyaku-run7.md`); the orchestrator dispatches your lane's
 next round only after this one lands and its non-author closure is written. Work this round only
