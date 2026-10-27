@@ -27562,6 +27562,49 @@
    "notes": "Dispatch/complete digest: 2026-10-26T21:10:17-03:00 launch kama round=50 pgid=3210392 driver=hyaku-inline attempt=1; 2026-10-26T23:40:35-03:00 complete kama round=50; hyaku-inline attempt=1. Report 9e38a361 by kama identity, after tip 5a1e29a1; all cited hashes are ancestors of master; lane ahead=0, clean. Prompt lines 1-140 = rendered template. Routed (status-neutral): R1 report SOURCES count 237->240 vs command output 236->239; R2 r41/r42 'green at measured commit' lacks a committed receipt (only failing 1c030f18 runs); R3 SCORECARD depth row last-change still 'round 49'; R4 Gate reject 2 attributes O_NOFOLLOW/fstat to the counter (counter uses os.stat + path hash; live tool has O_NOFOLLOW/fstat); R5 S498 row quote elides without '...', blank separator line removed; R6 carried limits (J4Decoy, Sen1Env PATH probe, post-map rewrite, --out parent, C2 fence/CR not lane-exercised, tight 72<=72 bound, sub-20 threshold incl. ed135b3c, prerelease cliff, b11906 population, surviving mutants); R7 operator: prompt line 180 quotes critic @m_flash vs amendment @m_kfc, live config.yml changed 23:39:08 -03 (executor @m_mim) after the report, so round-time map not in committed bytes. Round-49 R1-R3 closed. Operator: SHONEN boxes 1, 2, 4 look non-author-checkable; box 3 needs a fresh-session run. Fleet-root untracked .ufo/waves/round-51/w2 belongs to tameshi.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 54,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 54,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 54
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "depth": "improved",
+    "coverage": "improved",
+    "calibration": "improved",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "OLE Word 97+ .doc text form (tools/capture-text.py)"
+   ],
+   "report": ".ufo/reports/round-54/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-54-verifier-spotcheck.md@714cf5550420b44c72aedb7e36c715ce978dc6e8",
+    "rechecks": "C1 evidence-verified per Gate standard (frozen c1/c2-count.py + claims.md unchanged FREEZE..TIP; before 1/6 x4, controls 0-1/6, after 6/6 x4, supplement 3/3 x4, tool sha 2c0140bc == measure-after) AND re-measured by judge running the landed tool (not the gate) on a git-archive export: base refuses all 5 pinned captures, landed rc0 0 U+FFFD; judge's own LibreOffice oracle under the frozen REAL rule 0 missing lines on 4/4 docs (ratios 0.97-1.00); pinned quotes count=1; ole-malformed/ole-not-word refusals; tracked.doc deletion dropped (candidate leaks it); candidate==landed on 5 pinned forms; stdlib-only imports. C2 re-measured: ENTRIES 2/2 new, rows 120->123 append-only, S121-S123 NF=13 mined, 33/33 quotes in span/entry/lesson, unique in capture, span windows exact at offset, anchors 3/3, quarantine S080/S088/S096 absent-as-written re-derived. Calibration: 9/9 anchored corrections exact; S100/S101 dumps byte-identical to judge re-run. Census exit 0 (5 pre-existing W04). Spot-check agree 3 admits + 2 rejects + 1 row quote + 1 quarantine."
+   },
+   "commit": "chousa-shokunin@25abbe82b9f2b7c6e24580ac3f028611ba21f01f",
+   "closed_at": "2026-10-27T03:21:22Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-26T22:15:22-03:00 launch chousa round=54 pgid=540574 driver=hyaku-inline attempt=1; 2026-10-26T23:55:10-03:00 complete chousa round=54; hyaku-inline attempt=1. Report 86023b97 (lane identity, 23:50:07 -0300) after lane tip 25abbe82; SHONEN heading 4x[~]; 8 cited hashes exist and are ancestors of master; lane pushed ahead=0. Conformance defects (status-neutral): report filed before W2 WAVE-DONE (disclosed); uncommitted W2 output at lane tip (M R54W2DraftScorecard.md, ?? w2-results.json + 24 W2 seat reports). Routed to chousa: (1) commit/record W2 output; (2) integrate W2 falsifications as errata (R54W2SentFinal: supplement forgeable 3/3 by non-reading tool, TMPDIR echo, forge-builder SIGKILL residue, ledger-checker root escape, vacuous pdf-crosscheck; R54W2CritC1Verdict: ctypes delegate bypasses audit hook vs QUALITY 98); (3) RW-1 forgeable C1 instrument, 6th round; (4) r36 'belongs to no line here' overstated (latent i18n noFullText @1712 in b9ca2a4f) + hedge I5; (5) QUALITY 97 F1 offsets; (6) lesson Mistakes row 2 BAD=6 -> observed BAD=9; (7) carried 5 W04 duplicate-url rows. C1 graded improved (narrow instrument, capability independently re-measured). SHONEN boxes look fully checkable by a non-author; promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
