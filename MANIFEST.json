@@ -27480,6 +27480,47 @@
    "notes": "Driver digest: 2026-10-26T20:47:51-03:00 launch chousa round=53 pgid=3537509 driver=hyaku-inline attempt=1; 2026-10-26T21:54:46-03:00 complete chousa round=53; hyaku-inline attempt=1. Step-1 clean: report committed by lane identity (3ffca1dd) with SHONEN heading + 4 [~] pointer lines; all 6 cited commits ancestors of master; lane pushed ahead=0 (jj-lane state); prompt carries full contract; two v1 waves 49+43=92 seats, L1 held planner seat, no residual call. Conformance defects (status-neutral): (1) .ufo/waves/round-53/w2/swarm-registry.json uncommitted at lane HEAD (w1 counterpart committed); (2) W2 dispatched but WAVE-DONE/results never arrived before wrap - dispatch artifacts committed, results unintegrated, honestly disclosed, no falsification credit taken; (3) no standalone measure-after receipt - after-values in LOG.md/SCORECARD.md; supplement/forge receipts assertion-only. Routed: commit-or-explain w2 registry; land w2 results or declare seats; standalone frozen-counter receipts; clarify report digest label (9822ad59 is FIXTURES_SHA256 not tool sha); carried 5 W04 duplicate-url debt; RW-1 forgeable-counter streak exposure (5 rounds). SHONEN boxes look fully checkable by non-author - promotion review is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 44,
+   "date": "2026-10-26",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 44,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 44
+   },
+   "admitted": false,
+   "verdict": "rejected-harmed",
+   "verdicts": {
+    "coverage": "improved",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "harmed"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "harmed",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-44/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-44-verifier-spotcheck.md@5bbd5ff588120fd8e7c744695351a6978b4241c1",
+    "rechecks": "C1 coverage re-measured over committed bytes (probe_scrub_record 0->1, SCRUB fmt 0->18, R44-C1 0->16 = selftest_r44; wired after STORAGE, before verdict-neutral rollup; fbfef071..e9ca7ef6 census-identical) + receipts verified (c1-final-fbfef071 PASS, 148/148; counter sha256 1409a5fd.. frozen since 1d2afffe; live NONE line matches host read-only). C2 depth FAIL evidence-verified (c2-final verdicts_ok 0; C2RevSR7 string output, C2CritSR9 contradictory verdict key, SR8/SR9 partly no residual; counter c96aeda9.. frozen). Adjacency harmed: lane anchors gate PASS@98020ece -> FAIL@8eee79db (committed CritNoHarmFinal receipts), IN-109 found_line 2468 vs quote at census:2582 re-measured at e9ca7ef6. Spot-check: S242/S244 live re-fetch sha256 = pinned, quotes verbatim (agree); S245 host re-read (agree); reject staged btrfs-ioctl-surface-r27 9-row table vs 64 dispatch labels (agree). sources-census validate exit 0, rows 241->245, malformed 0. No lane gate/counter executed (Gate standard)."
+   },
+   "commit": "tsukuroi-shokunin@e9ca7ef629810df61f7090eff2f3aa57de7925ae",
+   "closed_at": "2026-10-27T01:58:48Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest (.ufo/watchdog.log): 2026-10-26T20:39:18-03:00 launch tsukuroi round=44 pgid=2725607 driver=hyaku-inline attempt=1; 2026-10-26T22:50:03-03:00 complete tsukuroi round=44; hyaku-inline attempt=1. Step 1: report 5908743b + SHONEN follow-up 0e363a51 by tsukuroi-shokunin (after lane tip 22:38:54, before complete); 9 cited hashes + base are ancestors of master; jj-lane state ahead=0, remote e9ca7ef6; prompt = template + placeholder substitutions + addendum §6/§7, committed c43f8bbc before launch. Status ok; admission false: C2 depth FAIL and adjacency harmed. Conformance defects (status-neutral): report lacks Sources & frontier, Trend verdicts, per-claim counting commands; SHONEN heading landed in a follow-up commit; 6 untracked round-44 files (w1/w2 .ready+.dispatched, w1/AdjPins/raw.json, w1/C1ExecLiveRead/strace-rev-live1.log cited by wave reports). Routed to tsukuroi (spot-check §5): D1 IN-109 found_line 2468->2582 + anchors-gate PASS receipt; D2 SKILL SR8 memparse row unswept after [inference] narrowing; D3 r44 entry/README/SKILL not marked as gate-failed/unjudged narrowings; D4 SCORECARD r44 planned row copied verbatim from r43 + awk names (round 43); D5 self-assessment PASS at e9ca7ef6 unreceipted (committed receipts FAIL at 8eee79db/3a1c6b5c); D6 report sections; D7 untracked files; D8 rejects outside lesson ## Gate; D9 AsmGate staged-path locator; D10 LOG r44 lacks freshness re-verification line; plus lane-routed C1 live-leg evasion, C2 json last-wins/CR/substring, census readers, orphaned w1 grep. SHONEN 4/4 [~]; none fully non-author-checkable this round; no promotion.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
