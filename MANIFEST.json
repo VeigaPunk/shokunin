@@ -27899,6 +27899,47 @@
    "notes": "Driver digest: 2026-10-26T23:50:04-03:00 launch kama round=51 pgid=3034560 driver=hyaku-inline attempt=1; 2026-10-27T00:16:15-03:00 lane-dead-no-report kama round=51 (attempt 1 died in orchestrator session exit, no lane writes); 2026-10-27T00:16:24-03:00 launch kama round=51 pgid=889077 driver=hyaku-inline attempt=2; 2026-10-27T01:12:23-03:00 complete kama round=51; hyaku-inline attempt=2. Report 39877b17 by lane identity 01:11:05 after tip b1d7b7ae (01:10:06); all cited hashes ancestors of master; jj-lane state ahead=0. Defects (status-neutral, routed in spot-check): D1 report filed before WAVE-DONE (disclosed); late seats (M1Ctr, M2Live, V3Review) leave uncommitted outputs in lane worktree and X7Regen.md was rewritten in place uncommitted; D2 '50 of 66' is 51 at 1ab1de39 (V1Review committed); D3 planned-pointer met=True at 1ab1de39 has no committed receipt (committed pointer receipts read met=False); D4 X7Regen agreement is a scoped 142-line slice; D5 carried C1/C2 limits (copy decoy, counter accepts hardlink, rename-over provenance, ledger cutoff untested by counter); D6 'Flip: never' overstated on rejects; D7 KQ86/KQ87 cite no lesson file. Round-50 R1-R5, R7 answered. Prereg frozen_at 6 s late caught by KQ64, erratum committed. Operator: SHONEN boxes 1, 2, 4 look non-author checkable; box 3 needs a non-author fresh-session run. Open L0: kama round-35, round-39, round-41..43.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 45,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 45,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 45
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-45/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-45-verifier-spotcheck.md@2042117cfb724170772f4c128cc2ddba0b61d817",
+    "rechecks": "C1 operability re-measured over committed bytes (census printf|head -n1 $CAP_OUT readers 5->0 at :965/:1003/:1085/:1460/:1535, parameter-expansion readers 0->5, R45-C1 0->11, check lines 145->151 (+6 = 148->154 selftest), census sha256 17c82406..=K0 base, 237b21c9..=receipt at 44560592 and tip); SIGPIPE class reproduced independently (620 KB printf|head -n1 rc 141 under pipefail, expansion rc 0); receipts verified (c1-final-44560592 PASS 154/154, adjacency_ok 1; counter fe0e31e2.. frozen since ea6e0ee3). C2 depth FAIL evidence-verified (c2-final verdicts_ok 0, all bound verdicts null; a2w1-results output null for six counted seats, C2RevGR1 report absent; counter rebinding 057c1804 changes only the w1/r1 wave literals, predicate unchanged). No-harm: SCORECARD append-only (+117/-0), 0 deleted files, gate sweep at 44560592 PASS or FAIL-with-findings-identical-to-base, adjacency anchors FAIL@base->PASS (IN-109 2468->2582 re-measured), self-assessment 27/0 PASS at bb1a24e5. Spot-check: S247/S248 admits agree (live sha256 = SHA256SUMS, quotes verbatim at cited lines, S249 host matches); S269/S270 ext4 splice and S223 ioctl-closure rejects agree (live journal.html shows the dropped words; 9 rows vs 64 case labels); S242/S246 re-fetched byte-identical; sources-census exit 0, 245->249 rows, 40 W04."
+   },
+   "commit": "tsukuroi-shokunin@2e46142d4c5ce63b7c9fbf73df422944e3be38c1",
+   "closed_at": "2026-10-27T04:41:45Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest (.ufo/watchdog.log): 2026-10-26T23:01:48-03:00 launch tsukuroi round=45 pgid=2691459 driver=hyaku-inline attempt=1; 2026-10-27T00:16:15-03:00 lane-dead-no-report tsukuroi round=45; retry same round (attempt 1 L1 TsukuroiR45 died in the orchestrator session exit 2026-10-26 23:57:36 -03, SIGHUP during an operator omp update; no report; w1 14/66 spawned then killed, abandoned; salvaged to 5b3029bf); 2026-10-27T00:16:33-03:00 launch tsukuroi round=45 pgid=892090 driver=hyaku-inline attempt=2; 2026-10-27T01:33:46-03:00 complete tsukuroi round=45; hyaku-inline attempt=2. Step 1: report 48aacd2b by tsukuroi-shokunin at 01:32:40 (after lane tip 01:31:34, before complete), SHONEN 4x[~], all prompt-§4 sections present; 12 cited hashes + base are ancestors of master; jj-lane state ahead=0 untracked=0, remote 2e46142d; porcelain empty; scratch and __pycache__ removed; prompt = template + placeholder substitutions + addendum §6/§7, committed befec172 (a1) / f60a99b9 (a2) before each launch. Status ok; admission false: C1 operability verified, C2 depth FAIL (verdicts_ok 0, binding channel lost), no axis harmed; round-44 adjacency harm repaired. Routed defects (owner tsukuroi): D1 R45C-D3-R44-MARK-SWEEP (README:434/:440-452 and SKILL.md:4214 r44 rows still lack the FAILED/pending mark; lesson disposition says closed); D2 R45C-D7-CITATION (round-44 citations still name strace-rev-live1.log, only .log.gz resolves); D3 R45C-ASMGATE-RECEIPT (AsmGate 183/30 vs true 249/50 uncorrected in receipt); D4 R45C-START-CENSUS (attempt 2 did not re-run the sources census at its start); D5 R45C-POSTFREEZE-NAME (declare counter wave binding retire-proof before freeze). SHONEN: no box fully non-author-checkable this round (boxes 1/3 need a whole-SKILL retest); nothing promoted or minted.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
