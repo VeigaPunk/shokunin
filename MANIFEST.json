@@ -28888,6 +28888,44 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable, copied at closure): 2026-10-27T04:55:16-03:00 launch tabi round=36 pgid=3052598 driver=hyaku-inline attempt=1; 2026-10-27T06:40:43-03:00 lane-dead-no-report tabi round=36; retry same round (hyaku-inline attempt=1: L1 hit the request budget mid-round (state committed bd688fc, L1-STATE.md handoff)); 2026-10-27T06:40:45-03:00 launch tabi round=36 pgid=429279 driver=hyaku-inline attempt=2; 2026-10-27T09:49:17-03:00 complete tabi round=36; hyaku-inline attempt=2. Status ok; substantive lane-authored report committed by lane identity; prompt carries full template contract (round-level items + five child-lane items). Round-35 routed defects all landed: D11 0-byte pointer fixed (sockets-summary.txt 1765B), C2 v2 counter amendment, S125 on-release + four companions, C1 fixed-quota meter replaced by completeness/drift/delta split meter. Conformance defects status-neutral: w1 dispatch Godspeed directive not byte-identical to host directive (self-reported, LOG.md; w2 exact); frozen C1 counter does not digest-bind c1-delta-pins.json (T8/F1) with out-of-band-only receipt; frozen build tool 39-char kama pin typo; moved-note first-token ambiguity; frozen C1 predicate sentence not verbatim counter header; measure.sh numstat path bug + invalid check-freshness invocation; 4 incomplete w2 seats (RevF1, RevC2b, MutC2b, ExecEgressLive) honestly disclosed without verification credit. Routed to round 37 per spot-check file. SHONEN all four boxes [~] with pointers; no [x] written by closure; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 41,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 41,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 41
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth:verifiability": "unchanged",
+    "coverage": "unchanged",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "unprovable-but-better",
+    "quality": "unchanged",
+    "discernment": "unprovable-but-better"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-41/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-41-verifier-spotcheck.md@5053a7f46de35784cff4b56756906e9014a38276",
+    "rechecks": "C2 re-measured at clean tip 7ebe3cc over committed bytes: frontier 23->24, registry 62->63, S063 mined 1, entry citing S063 1 (provenance trio), knowledge 59->60, harness 27/27 (PASS F24), binding 55/55, audit 60/60, source-recheck S063 sha256+Q1-Q3 OK (anchors 330/270/235), r22 measure 44/44=1.000, census exit 0 (W04 S028/S029 only); base before-state re-derived via git show B. C1 evidence-verified, gate not executed: receipt all-gates 31 lines sha256 0915f51d, export-ref=J 1f746461 (run-utc=J committer instant, time-basis=ref-commit), closed=10/12 exit=1, selftest cases=12 failures=6 with I1/I3 committed defeats (wave2/CritC1KillRule.md, RevC1Counters.md); do-nothing control exit 127 at base; suite+SKILL registry row present at Z, absent at B. kake overlap confirmed (security-txt-publishing.md covers RFC 9116 fields/expiry/redirects); L0 filed. Wave accounting verified from dispatch JSONs: 60+33=93, attack 52/93, wave2 0 connectors (self-reported). Spot-check: S063 admit agreed after live re-open (HTTP 200, 45,129 B, sha256 79d19ce7; capture sha256 925512e7; three Gate quotes verbatim <=25 words at L335/270/536 and in live text); no reject recorded to sample (routed)."
+   },
+   "commit": "kasegi-shokunin@7ebe3cc71b3d1c18d44155ce5f71f92e07d6c409",
+   "closed_at": "2026-10-27T13:06:00Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest (.ufo/watchdog.log, mutable): 2026-10-27T04:55:18-03:00 launch kasegi round=41 pgid=3053209 driver=hyaku-inline attempt=1; 2026-10-27T08:27:32-03:00 lane-dead-no-report kasegi round=41; retry same round (hyaku-inline attempt=1: L1 ended its turn mid-integration (misread an operator interjection as wrap-up); state uncommitted in lane); 2026-10-27T09:49:19-03:00 complete kasegi round=41; hyaku-inline attempt=1. Both claims declared unverified and honestly reported (C1 suite red 10/12 on its own frozen counter with committed I1/I3 false acceptances; C2 counters all reached but coverage credit withheld pending the kake scope ruling L0) - rejected-honest-stop, no axis harmed. Defects (status-neutral, routed to r42 in the spot-check file): duplicated Correction (round 41) block in SCORECARD (x2); Gate recorded no reject (outside spot-check had no reject to sample); SKILL.md r40 registry table still blank-line-split with r40-closure.sh row now duplicated across the r40/r41 registry blocks; report lacks the Stale-lane line (prompt s.6); wave2 carried 0 connector seats (self-reported); wave-2 instrument survivors (I1 evidence union, I3 token boundary, I7 parser variants, I5/I12 completeness, I6 outside-config stray, binding missing-path variants, frontier status-flip blind spot) ride the SCORECARD planned block. SHONEN boxes all [~] (box 2 names no end-to-end domain task) - nothing non-author [x]-checkable this round; promotion is operator-owned. Report, prompt, commit ancestry, ahead=0 push state, census exit 0 all conform.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
