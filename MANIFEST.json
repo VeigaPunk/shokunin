@@ -28847,6 +28847,47 @@
    "notes": "Dispatch/complete digest (watchdog.log): 2026-10-27T06:43:20-03:00 launch kengaku round=48 pgid=689875 driver=hyaku-inline attempt=1; 2026-10-27T08:18:48-03:00 lane-dead-no-report kengaku round=48 (L1 died: kimi 5h limit -> fallback chain exhausted (gpt-6-luna invalid_prompt)); 2026-10-27T09:49:15-03:00 complete kengaku round=48. Fresh-start round after three rejected closures (r45/r46 rejected-harmed, r47 rejected-honest-stop); both claims declared, tested, honestly not admitted; scores held (calibration 8, coverage 7 L0-capped). Routed defects for next round: (1) 7 settled seats left no report file and results rows carry no status/error text; (2) run-10 role->alias map embedded in build_spec.py/w1-dispatch.json context despite no-alias-in-lane rule (no model field passed, preserved as evidence); (3) keep the V15/V7 unsatisfiable-tag precondition check; (4) C1 kill-battery (>=12 mutants) never reported for the candidate. Non-author closure spot-check file landed 3a548330, remote-verified.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 36,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 36,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 36
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "adjacency": "improved",
+    "operability": "improved",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-36/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-36-verifier-spotcheck.md@ed8ccfc00ad3784bc424aa118e056f8edf4ee803",
+    "rechecks": "No lane gate/counter executed (Gate standard, Closure consequence). C1/C2 evidence-verified: frozen receipts c1/c2-at-20a69e0 predicate true; do-nothing J1 auditCoverage 0/307 predicate false -> 307/307 audited 0 findings (304 unchanged/3 moved/0 stale, delta 0); C2 before v2-absent -> population 17, admitted 16, failing 0, unmeasured 1, binding null, live Firefox 158.0.1/geckodriver 0.37.1, 0 non-loopback; all 8 frozen digests equal at 20a69e0 and at final HEAD 354eb330; measured-inputs-diff empty. Re-measured by closure: drift ledger 307 rows (308 lines), SOURCES 141->142 (A125->126, mined 117->118, S125 recheck 90d->on-release only existing cell), census validate exit 0 (20 pre-existing W04, tabi ok), check-selfassessment mismatches=0 at 354eb330, noharm 27/29 with both nonzero reproducing at baseline, D11 correction target 1765 bytes at f2f3f145. Spot-check: S142 admit agree (re-fetch byte-identical sha256 0a95cbcd..., quote at line 3272, 10 words); S106 and S149 quarantine rejects agree (needles absent). All 14 cited commits ancestors of master; report committed by lane identity; lane ahead=0."
+   },
+   "commit": "tabi-shokunin@354eb330f1601913e3489da91f120907252a9159",
+   "closed_at": "2026-10-27T13:03:15Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable, copied at closure): 2026-10-27T04:55:16-03:00 launch tabi round=36 pgid=3052598 driver=hyaku-inline attempt=1; 2026-10-27T06:40:43-03:00 lane-dead-no-report tabi round=36; retry same round (hyaku-inline attempt=1: L1 hit the request budget mid-round (state committed bd688fc, L1-STATE.md handoff)); 2026-10-27T06:40:45-03:00 launch tabi round=36 pgid=429279 driver=hyaku-inline attempt=2; 2026-10-27T09:49:17-03:00 complete tabi round=36; hyaku-inline attempt=2. Status ok; substantive lane-authored report committed by lane identity; prompt carries full template contract (round-level items + five child-lane items). Round-35 routed defects all landed: D11 0-byte pointer fixed (sockets-summary.txt 1765B), C2 v2 counter amendment, S125 on-release + four companions, C1 fixed-quota meter replaced by completeness/drift/delta split meter. Conformance defects status-neutral: w1 dispatch Godspeed directive not byte-identical to host directive (self-reported, LOG.md; w2 exact); frozen C1 counter does not digest-bind c1-delta-pins.json (T8/F1) with out-of-band-only receipt; frozen build tool 39-char kama pin typo; moved-note first-token ambiguity; frozen C1 predicate sentence not verbatim counter header; measure.sh numstat path bug + invalid check-freshness invocation; 4 incomplete w2 seats (RevF1, RevC2b, MutC2b, ExecEgressLive) honestly disclosed without verification credit. Routed to round 37 per spot-check file. SHONEN all four boxes [~] with pointers; no [x] written by closure; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
