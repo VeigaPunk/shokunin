@@ -30016,6 +30016,43 @@
    "notes": "dispatch 2026-10-27T17:06:29-03:00 launch chousa round=60 pgid=3588550 driver=hyaku-inline attempt=1; complete 2026-10-27T18:13:21-03:00 complete chousa round=60; honest stop: C1/C2 unprovable, so rejected-honest-stop, status ok. Conformance defects: report uses alternate Sources & frontier/Trend headings; S101 existed before round 60 so no new source row/sourced claim; no round-local outside admit+reject source sample; freeze digest mismatch. Census warnings W04 S051/S053/S073/S074/S075. Routed self-defects in verifier artifact; prompt template contract included. SHONEN boxes appear checkable only as prior assertions; operator owns promotion.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 75,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "kotodama",
+   "lane_round": 75,
+   "lanes": {
+    "kotodama": "ok"
+   },
+   "lane_rounds": {
+    "kotodama": 75
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-75/kotodama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kotodama-shokunin/corpus/lessons/round-75-verifier-spotcheck.md@98c486bdb4650ba5b8e651d332910e8ee60ad121",
+    "rechecks": "C re-measured: narrative files 0->3, knowledge files 249->252, registry rows 808->817 (A3/B5/C1, all mined, SOURCES append-only, census exit 0); gate evidence verified not executed (selftest-c 85/85, controls 4/13 FAIL, measures-c PASS 13/13). Ca re-measured: all 10 ledger pairs red at base, SHONEN.md:6 = 808/713/58/37 matches histogram at 012e8d3, README 32/40, round-74 span reclassification confirmed, 0 deletions in append-only files; evidence verified selftest-ca 154/154, controls 7/12 FAIL, measures-ca PASS 12/12 (needs --combined). Spot-check: 4 admits (S885, S888, S891, S893) and 3 rejects (staged S870 span 0 hits, Persee docAsPDF 403, S891 live challenge) plus round-74 S899/S900 reclassification all agree; sources-census validate exit 0."
+   },
+   "commit": "kotodama-shokunin@f601f7f3c2132eb3b54020fc84626a66b75ddb72",
+   "closed_at": "2026-10-27T21:30:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-27T13:29:20-03:00 launch kotodama round=75 pgid=2306172 driver=hyaku-inline attempt=1; 16:37:22-03:00 lane-dead-no-report (attempt 1 force-wrapped incomplete: 42-seat w1 only, no freeze, no report); 16:37:25-03:00 launch pgid=2086915 attempt=2; 18:18:28-03:00 complete kotodama round=75 hyaku-inline attempt=2. Step-1 conformant: report committed by lane identity (15df0c2), SHONEN heading 4 [~] lines, cited hashes ancestors of main, lane ahead=0 clean. Conformance defects (status-neutral): lesson header carries superseded pre-freeze present-tense text; misrooted w1 seat file moved (R75-M4); wave-2 seat rm -rf'd shared scratch root. Routed to r76: lesson counting statements false (ExecCountsSweep F1-F13, re-confirmed sizes/window counts); claim-Ca published command omits --combined and pinned main; accept-ca.py writes /tmp (R74_TMPDIR); accept-c.py fails QUALITY 23 limb 1 and QUALITY 27 selector inert; entry sentences wider than page (S891 design order, Todorov/Formalists, five-vs-six); selftest-c.txt/SKILL.md:707 cite pre-freeze counter sha fa5060b9 (committed 315c5f3f); incomplete mutation coverage; round-74 closure R1/R3/R4 remain open. SHONEN boxes are not fully checkable by a non-author from this closure; promotion operator-owned, none written.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
