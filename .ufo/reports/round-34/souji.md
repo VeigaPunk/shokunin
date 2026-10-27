@@ -34,4 +34,4 @@ STATUS: PARTIAL — both frozen targets were missed; five honest C1 restatements
 - Lane tip pushed: `cdbae3bda828075c472a40b5181e8edc7f3f3b70` (`jj-lane.sh push` returned `landed` for this hash).
 - Committed round-34 wave receipt: `souji-shokunin/census/round-34/waves/manifest.sha256` (`records=170 failed=0 uncovered=0`).
 - Committed lesson: `souji-shokunin/corpus/lessons/round-34.md`.
-- This report: `.ufo/reports/round-34/souji.md` (to be committed via `fleet-commit.sh --as souji`).
+- This report was committed and pushed via `fleet-commit.sh --as souji` at `00fdf1a768a5afd394768c69a6d337328fc683bd`; `git ls-remote --exit-code origin refs/heads/master` returned lane hash `cdbae3bda828075c472a40b5181e8edc7f3f3b70`.
