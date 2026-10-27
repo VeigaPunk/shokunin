@@ -342,3 +342,7 @@ closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At 
 - 2026-10-27 03:2x local: kimi reroute VERIFIED: 138 kimi-code turns since 06:05Z, all stopReason=toolUse, 0 errors; cred 40 usage moved (5h used 3/100, weekly used 1/100). Earlier 429s on mado r50 seats were 02:54-02:55 local, before the reroute.
 - CloseTsukuroiR46: rejected-harmed, MANIFEST rounds[808] (9066d917); spot-check 3c738a87. Late w1-results.json + C1SimplifyIdentity salvaged 91601905. advance -> BLOCKED (3 consecutive rejections r44-r46). Next queued lane kumitate r66 dispatched + KumitateR66 spawned.
 - 2026-10-27 03:3x local: KengakuR46 L1 exited (C1 predicate met but kill rule fired; C2 met; C3 not admitted; 67 seats): verify OK (report 33540c6e, tip a68afb2f); CloseKengakuR46 spawned.
+- 2026-10-27 03:5x local: CloseKengakuR46: rejected-harmed, MANIFEST rounds[809] (a5ed97f1); spot-check f139f521. advance kengaku r46 -> 47; dispatched + spawned KengakuR47 (note: C1 kill-rule/over-refusal decision, C3 V7/V8 fixes).
+- ChousaR57 attempt 1 died mid-round (no report): fail marked RETRYABLE 1/3; respawned ChousaR57a2 (note: rebuild state, qcache blocker, routed D1/D2).
+- MadoR50 attempt 1 exited pre-WAVE-DONE without filing: fail marked RETRYABLE 1/3; respawned MadoR50a2 (note: wait for WAVE-DONE + w1-results.json handoff, ExecWaveDone gate, read late seat reports).
+- kimi reroute holding: cred 40 serving m_kfc traffic.
