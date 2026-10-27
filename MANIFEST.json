@@ -28387,6 +28387,48 @@
    "notes": "Dispatch/completion digest: 2026-10-27T03:37:00-03:00 launch kama round=54 pgid=3515322 driver=hyaku-inline attempt=1; 2026-10-27T04:28:08-03:00 complete kama round=54; hyaku-inline attempt=1 (matches .ufo/watchdog.log). Report e2e2d10f committed by kama-shokunin after lane tip 1406a91e; all cited hashes ancestors of master; ahead=0, porcelain clean; prompt 85c1851e carries the full template contract. Honest stop truthful: wrap-up arrived before claim freeze/wave dispatch; counters built but unfrozen (no preregistration.json). Step-1 defects (status-neutral, lane-recorded): round-54 lesson not written -> census cannot pass; LOG.md has no round-54 entry; SHONEN all [~]. Routed to lane: (1) write the lesson and re-point S510 used-by so census exits 0; (2) commit receipts for the X5 sabotage and C2 smoke runs; (3) freeze C1/C2 before data next attempt and run the C1 end-to-end measurement; (4) land a LOG.md round-55 entry naming this wrap-up. Operator-owned: ed135b3c ruling still open, forwarded in committed L0 line. No SHONEN box promoted; boxes 1/3/4 mechanically checkable by a non-author, box 2 lacks a LOG.md entry — promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 47,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 47,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 47
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "unchanged",
+    "novelty": "unchanged",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-47/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-47-verifier-spotcheck.md@ce6d90e2eab7231d6460544cce090335eb7ec09f",
+    "rechecks": "Conformance pass: report 59913077 by kengaku-shokunin on origin/main; SHONEN 1 heading + 4 [~] matching SHONEN.md boxes; prompt 305a7cac carries full template contract incl. L2 floor matching MISSION.md; lane tip f139f521 ancestor of master, ahead=0, remote verified; untracked .ufo/waves/round-47/ disclosed in report. Honest stop: no claims frozen, nothing to re-derive. Re-measured (all plain commands, none gate-evidence-only): start census re-run -> kengaku ok exit 0 with the 15 pre-existing W04 duplicate-URL warnings; w1-spec.json = 64 items, attack roles 44/64 (critic 16 + mutation-tester 15 + reviewer 13), ufo-swarm-wave.mjs plan re-run accepts under policy v2; local==remote==f139f521; r46 spot-check citations :19-23,43-48 resolve and match. Defect: report asserts w1.ready handoff marker written but no w1.ready/.dispatched/results exists in the tree (rounds 33-46 all retain theirs). No axis harmed (empty same-commit diff). All 7 axes unchanged."
+   },
+   "commit": "kengaku-shokunin@ce6d90e2eab7231d6460544cce090335eb7ec09f",
+   "closed_at": "2026-10-27T07:39:22Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest from .ufo/watchdog.log (mutable, copied verbatim): 2026-10-27T03:26:42-03:00 launch kengaku round=47 pgid=25007 driver=hyaku-inline attempt=1; 2026-10-27T04:23:25-03:00 complete kengaku round=47; hyaku-inline attempt=1. Honest stop at wave handoff: 64-seat v2 wave spec built and validator-accepted (attack 44/64) but no WAVE-DONE received before run-wrap; no claims frozen, no lane commit (before==after f139f521), no lesson, no end census, no sourced claim. Status ok (real report with checkable work, not a marker); verdict rejected-honest-stop. Status-neutral conformance defects: (1) report asserts w1.ready marker written, absent from tree; (2) uncommitted .ufo/waves/round-47/ artifacts (build_spec.py, w1-spec.json) disclosed but left in tree; (3) frontier step unpaid (start census only, no lesson/## Mistakes/sourced claim). Spot-check impossibility recorded: no round-47 lesson Gate exists to sample >=1 admit/reject; census + wave spec re-validated and agreed. Routed to kengaku r48: commit-or-revert wave artifacts; cite only tree-present artifacts; mine the stop into a lesson if early-stopped again; C1 over-refusal + frozen held-out kill rule, C2 leg-C errata-content bypass, C3 V7/V8 counter failures remain open from r46.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
