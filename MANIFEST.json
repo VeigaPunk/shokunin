@@ -27773,6 +27773,49 @@
    "notes": "Dispatch digest: 2026-10-27T00:23:04-03:00 launch chousa round=55 pgid=1294370 driver=hyaku-inline attempt=1; 2026-10-27T01:12:25-03:00 complete chousa round=55; hyaku-inline attempt=1. Report ac629889 (lane identity, 01:11:40 -0300) after lane tip 53f1ce6b (01:11:04); SHONEN heading 4x[~]; 7 cited lane hashes exist and are ancestors of master (8d77e6c1 is the fleet L0 commit); lane pushed ahead=0, porcelain clean; prompt carries template 139/140 verbatim + rendered line 1. Conformance defects (status-neutral): D1 report filed before W1 settled (35/48 reports, no w1-results.json, wave-settled-r55 UNSETTLED exit 1; W1 seats still live at closure) and W2 (36 items) never dispatched; D2 48 seats < 64 floor; D3 report cites C2/C3 measured at 29cfb12a but receipts name 5a35ebd6, no receipt for the claimed 53f1ce6b re-run; D4 lesson quarantine line puts 即“灰色文献” at char 994 (sentence start; phrase at 1012). Routed to chousa: (1) commit w1-results.json, integrate late W1 seats, dispatch or retire w2-spec items, correct any landed statement they falsify; (2) C1 counter hardening: hook gaps (cwd/dir_fd, unlisted events, R55CritForgeHook) and 9/9 surviving counter mutants (R55MutC1Counter) need killing fixtures before the counter is cited again; (3) cite receipt revisions exactly (D3); (4) appended correction for D4; (5) build-spans registered as probe but can fail (exit 1 on refusal/STALE) - re-register as gate with self-test or justify. Discernment upgraded from lane's unprovable-but-better to improved: outside spot-check agrees on 1 admit + 2 rejects + quarantine verdict; QUALITY 101/104 ground the round's lessons. SHONEN boxes look non-author checkable from committed pointers (operator-owned promotion; no [x] written).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 48,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 48,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 48
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "warm-cache terminal selection versus the resolver: predicts xdg-terminal-exec 0.14.3's stdout and exit with an existing $XDG_CACHE_HOME/xdg-terminal-exec (hit, stale, invalid, disabled, symlinked, unreadable, default location), names the cache verdict in explain, models HOME unset as the pin (rc 1, empty stdout), no process/socket/write (tools/mado-terminal.py, selftest 70/70, PRED-C1-r48-v2 228/228 warm, live AGREE in absent/hit/stale/invalid)"
+   ],
+   "report": ".ufo/reports/round-48/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-48-verifier-spotcheck.md@03e4ae76aff7a4be59cb69970dd553baa319695a",
+    "rechecks": "C1 re-measured: tool sha 14382047 identical at cf3deeec/e5d0130d/f029de3a/627914f6/b361c846 = ctl/FINAL.txt and live receipt; selftest 70/70 from committed bytes; resolver sha 89f2be9a = pin; scratch XDG_CACHE_HOME live runs stdout-identical with explain --observed verdict=AGREE for cache=absent/hit/stale/invalid, tool wrote nothing; HOME unset parity rc 1/empty; fixtures 228 (204 v1 + 24, 10 v2-hu, 10 READDIR). Evidence-verified (counter not executed): BASE warm=149/228 TARGET_MISSED exit 1 (base tool sha b84d5c4f) -> TARGET_MET at e5d0130d, cf3deeec, f029de3a, 627914f6; controls 0 of 66; do-nothing 149/228, 154/228 MISSED; counters unchanged since v2 freeze 02165600. C2 re-measured: entry absent->present, knowledge 64->65, rows 276->288 (+12/0 removed, 11 cells, A, mined, used-by entry), base open ground hyprland-input-devices-r46.md:69 + README.md:112 answered; 12/12 pins re-fetched sha-equal (gitlab via files API), 21 locators verbatim, host br/evdev byte-equal; six xkbcli probes (ok, layout/variant/rules rc 1, option XKB-595 dropped, model silent) and keymap digest efd487a3 match. Evidence-verified: c2v2 before-base admitted=0/1 MISSED -> 1/1 MET at e5d0130d/f029de3a/627914f6; 98-variant matrix two v1 admits flip. Harm: SCORECARD/LOG pure append; 67 deletions are the D1/R3 rewrites and a superset SKILL registry row; axis checked=3 mismatched=0 (65/65, 86/86, 12/12) at d8e3d600/f029de3a/627914f6; PRED-C2-r47 MET, PRED-C1-r47 3/4 MET + 1 bwrap-detach flake supported by bytes; PRED-C2-r45-v2 1/1. Discernment 6/6 agree (S340, S347, S349 admits; ArchWiki, xkbcommon.org current index, duplicate S319 IKeyboard.cpp rejects); census W04x17 W01x1 mado ok exit 0. Seats: 3 read-only reviewers (C1, C2, harm/conformance)."
+   },
+   "commit": "mado-shokunin@b361c8466bd203cda8ce38add796883cf8f97302",
+   "closed_at": "2026-10-27T04:22:28Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-10-26T20:34:11-03:00 launch mado round=48 pgid=2182744 attempt=1 / 21:58:35 lane-dead-no-report (attempt 1 unspecified) / 21:58:37 launch attempt=2 / 22:35:09 lane-dead-no-report (attempt 2 exited incomplete) / 22:35:12 launch attempt=3 / 2026-10-27T00:16:15-03:00 lane-dead-no-report (attempt 3 L1 died in orchestrator session exit 23:57:36 SIGHUP during operator omp update; salvaged cf3deeec; not counted toward MAX_ATTEMPTS) / 00:16:28 launch attempt=4 pgid=890225 / 01:04:49 complete mado round=48 attempt=4. Step 1 clean: report a72080e7 by mado-shokunin (committed 01:03:55 after lane tip 01:03:22, before complete), SHONEN 4/4 [~], 9 cited commits exist and are ancestors of master, jj-lane state ahead=0 tracked=0 (47 untracked inherited round-45/46 *.synthetic), prompt = template rendering (sections 1-5 identical across 4 attempt commits) + hyaku addendum. Attribution note A1: cf3deeec is the orchestrator's salvage committed under the lane identity (disclosed in subject), re-verified by attempt 4. Round-47 routed D1-D4, R3, R4b closed with evidence. Defects routed (status-neutral): N1 report :37 '52 untracked synthetic' reproduces as 47; N2 live-terminal-cache-r48.txt:4 host_cache_untouched_sha256 c8b104e6 = sha256('r48-w2\\n'), i.e. the receipt recorded the operator cache while it held the w2 M-WRITE mutant bytes (M48-10) under an 'untouched' label; N3 lesson :425 spot-check shape says five gate decisions (3 admits/2 rejects) vs 12 admits/3 rejects; N4 c2v2 matrix text shows 96 of 98 variants; N5 S346/S347 gitlab -/raw/ URLs now return an anti-bot page (files API returns pinned bytes). Carried: M48-8 session-material gate red at tip findings=159 (16-shape gap, .ufo-only scope), M48-10 sandbox-only mutant writes, w2 SentScratch /tmp --work refusal, M48-13 residual cap vs clone recipe (clause-r mutant attack and gate both-ways demo owed), registration-v2 residuals. Operator: M48-10 overwrote operator-owned ~/.cache/xdg-terminal-exec during w2 (resolver regenerated it 23:59:27; no decision open). SHONEN box 2 and 3 reproducible by a non-author (live AGREE and xkbcli receipt from committed bytes; tool docstring usage ran as written); promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
