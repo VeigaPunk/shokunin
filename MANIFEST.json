@@ -29045,6 +29045,47 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable, copied at closure): 2026-10-27T10:04:51-03:00 launch tabi round=37 pgid=465460 driver=hyaku-inline attempt=1; 2026-10-27T11:15:35-03:00 complete tabi round=37; hyaku-inline attempt=1. Status ok: substantive lane-authored report committed by lane identity (11b43d35), SHONEN heading with 4 boxes present, all cited commits ancestors of master, lane ahead=0 and clean, prompt carries the full template contract. Both claims verified, no axis harmed; scores held adjacency 8->8 and operability 9->9 per the lane's declared no-auto-bump rubric. Discernment improved: closure outside spot-check agreed with the gate on the sampled admit (S143 git-replace manual, re-opened HTTP 200 38,351 B sha256 46750b9f... exact match, 16-word quote located) and both rejects (merge/tabi assimilation set; quarantine slice re-counted 38 payload-absent rows); SOURCES row 143 parses 11 columns, tier A mined, used-by resolves. Routed defects for round 38 (status-neutral): (1) SCORECARD waves/seats block overclaims 68 seats (w1 34 + w2 34) though w2 was never dispatched - append correction; (2) report seat-verdict tally 18ok/16finding reproduces no extraction - committed reports show 23 ok / 11 finding - correct next report; (3) LOG round-37 freeze entry landed at 34ed508c not 99437d29, no commit hashes cited in LOG, no per-commit ledger - append hash-carrying entries; (4) lesson M3 row missing Captured-by and its byte-identity fix is green-only (no mutated-sentence red control; w2 falsify wave never dispatched); (5) census receipts are validate-only warning logs, byte-identical to each other, not count witnesses; (6) committed numstat receipt spans the r36-r37 window (lane-disclosed; report wording imprecise, appends-only claim itself verified on the round window). Conformance notes: w2 not dispatched (honestly reported; 64-seat floor passes to r38 with committed gen-w2-spec.py of 34 falsify items); orchestrator marker commit bf8ecd5 (w1.ready.dispatched only) rides the tip under the lane identity; SHONEN boxes all [~] and look fully checkable by a named non-author - promotion is operator-owned, pointer-only.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 53,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 53,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 53
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-53/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-53-verifier-spotcheck.md@abae0a04c885a42ecad53d13dca05770f22cd825",
+    "rechecks": "closure re-ran both frozen counters over git objects: c1 at base 6db1d220 credited=45/lost=19 -> at final 88afa941 credited=58/lost=6, C1_R53_PASS=false (honest stop reproduced; lost-6 set matches report exactly; manual ledger parse 28/30 re-keyed); c2 at base C2_R53_PASS=false (tmp_hits=9, docs stale) -> at final 88afa941 and tip ab3a972 C2_R53_PASS=true (tmp_hits=0, registry 51/51, envdiff 9/9, cr47=rc=2, docs ok); direct greps 9->0 dir=/tmp hardcodes in 7 tools; sandbox selftests under redirected TMPDIR rc=0 with strace-proven scratch placement; census 134->136 rows, validate exit 0; 4 read-only seats corroborated (C2 direct, C1 rekey, discernment re-open of S275/S276 with byte-identical snapshots, conformance)"
+   },
+   "commit": "tameshi-shokunin@ab3a972c2147a6526709f0b1c5a0d22a31736706",
+   "closed_at": "2026-10-27T14:45:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable — copied verbatim): 2026-10-27T09:17:49-03:00 launch tameshi round=53 pgid=3505549 driver=hyaku-inline attempt=1; 2026-10-27T09:19:27-03:00 lane-dead-no-report tameshi round=53; retry same round (hyaku-inline attempt=1: L1 died at start: kimi 5h limit (both creds) -> luna refusal; operator rule: pause until kimi resets); 2026-10-27T09:49:22-03:00 launch tameshi round=53 pgid=149370 driver=hyaku-inline attempt=2; 2026-10-27T11:20:10-03:00 complete tameshi round=53; hyaku-inline attempt=2. Claim outcomes: C1 (calibration, cold-read floor repair) honest stop — frozen predicate C1_R53_PASS=true not reached; closure re-run reproduces credited=58/lost=6 at final rev 88afa941 (before 45/19 at base); the 6 lost sections are exactly the report's 2 forfeited + 4 collateral; repair route named for round 54. C2 (operability, tools TMPDIR hygiene) verified — closure re-measured at base/final/tip. No axis harmed: calibration floor improved 45->58 (round-52 harm partially repaired; remaining RED is the C1 miss itself). Conformance defects (status-neutral, all named): (a) .ufo/evidence/round-53/after/ deciding receipts cited by SCORECARD/LOG.md in past tense do not exist — report discloses deciding-run.sh never executed, ledger does not; (b) SCORECARD quotes frozen C1 counter total=6 — committed counter actually prints total=37 (rekey arm ls-tree pathspec defect, rekey-dir-count=0 structurally, all C1 mutation receipts INCONCLUSIVE); (c) no phase-B CONTROLS_B receipt committed; (d) committed C2 receipt names rev 9c6ef7bc80c0 absent from the object DB, stale cr47=rc=1; (e) committed verify-freeze.stdout is amendments=5-era (final freeze amendment 7 at 9e09db2; tip digests independently re-verified, all 8 match); (f) LOG.md freeze pointer stale (e62d9971, amendments 1-5; cf872769 unnamed); (g) 4 of 7 tools exit rc=1 uncaught RuntimeError on set-but-unusable TMPDIR instead of declared could-not-evaluate exit 2 (frozen counter binds registry-check only, so C2 verifies); (h) 'inputs pinned at C7' imprecise — 11 of 11747 rekey input keys pin at read_rev/fix-pass-2; (i) uncommitted round work: 6 lane files under .ufo/waves/round-53/ untracked at push tip (w1-results.json, w2-results.json, T53W1ExecR523.md, T53W2CritClaims.md, T53W2ExecR523B.md, T53W2RevW1Specialists.md). Routed defects R53.1-R53.9 in the spotcheck. Discernment: outside spot-check agrees with the round gate on the sampled admit (S275/S276 re-opened, snapshots byte-identical, quotes verbatim) and both sampled rejects; one minor locator disagreement (S275 'p. 4' vs physical page 3) routed. SHONEN: all four boxes carry [~] lane assertions; box 3 independently supported by this closure re-running the frozen instruments without oral context; boxes 1/2/4 look non-author-checkable on committed evidence — promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
