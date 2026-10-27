@@ -28231,6 +28231,43 @@
    "notes": "2026-10-27T02:51:01-03:00 launch kama round=53 pgid=1457611 driver=hyaku-inline attempt=1; 2026-10-27T03:33:36-03:00 complete kama round=53; hyaku-inline attempt=1. Defects: 10 untracked K4Cheat round artifacts at inspected lane state; full prompt fidelity not verified; census W04 duplicate URLs and W01 S481 tier/used-by warning; route C2 bypasses for next round. Report has real work and lane status ok; C2 falsified, calibration harmed; no admission. SHONEN boxes fully checkable? No, remain author asserted [~].",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 66,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 66,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 66
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unchanged",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-66/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-66-verifier-spotcheck.md@f29eb6990653dba3e1c6296044fd7bfa2ac2b9ed",
+    "rechecks": "Conformance pass: report author=kumitate-shokunin 3b4fe4aa, SHONEN 1 heading 4x[~], all 6 cited commits (5b02f807/621212ba/273202ba/88041bc9/6c79d68c/8d557f85) ancestors of master, jj-lane ahead=0, report landed after cited commit. Claims evidence-verified per Gate standard (frozen counters not executed): C1 routed-ledger base 0/6 -> freeze 3/6 (L2/L3/L6 miss; receipts ledger66-base/close/routed-ledger-selftest-freeze 33/33), after-state re-derived plainly at closure tip a3d76c03 (tool present, corpus/routed-ledger.md absent, 0 routed SOURCES rows, no capability/SKILL/QUALITY row); C2 MCP deprecation-registry 0/8 -> 0/8 (entry absent, SOURCES 145->145, no S207+, do-nothing control committed). SCORECARD diff append-only honest-stop section, no axis harmed. Census re-run exit 0, six carried W04 (S034/S068/S084/S095/S123/S126). Gate spot-check: committed lesson ## Gate carries zero admits/rejects (verified), no new SOURCES rows to re-open, agree on all sampled items."
+   },
+   "commit": "kumitate-shokunin@a3d76c03cf451bea2ae9d4ffbe3926934fb9333b",
+   "closed_at": "2026-10-27T07:02:30Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (.ufo/watchdog.log, mutable; copied verbatim): 2026-10-27T03:06:10-03:00 launch kumitate round=66 pgid=2213934 driver=hyaku-inline attempt=1; 2026-10-27T03:52:47-03:00 complete kumitate round=66; hyaku-inline attempt=1. Honest stop at wave handoff: one validated v2 wave of 66 seats (role mix verified against committed w1-dispatch.json: scout 17 scribe 14 executor 9 reviewer 9 critic 6 mutation-tester 4 connector 3 sentinel 2 revenger 1 simplifier 1; attack 19/66=28.8%; connectors 3) dispatched inline, no WAVE-DONE and no w1-results.json at closure; orchestrator-dispatched seats still writing into .ufo/waves/round-66/build/. Both declared claims reported and confirmed NOT verified. Defects (status-neutral): uncommitted live-seat leftovers at closure ( M build/K66MutLedgerProbe/results.tsv, ?? build/K66ReviewStagedClaims/captures/timeline.json); report cutoff reading held=3/6 cites tip 6c79d68 but the only committed receipt names rev 621212ba; SOURCES/frontier advance missing (self-declared in report); post-report lane salvage commit a3d76c03 (ancestor check holds). Routed to kumitate r67: D1 settle/reconcile w1 leftovers and final results under its own LOG entry; D2 receipt revision precision; D3 land C2 rows/entry or re-declare under fresh freeze. SHONEN boxes all [~] author-asserted; non-author [x] verification is operator-owned at promotion. Closure spotcheck commit f29eb699 landed+ls-remote verified, ahead=0.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
