@@ -29650,6 +29650,47 @@
    "notes": "Append-only correction to closure rounds[844]. The prior spot-check used author time 13:42:45 as commit time; Git committer time is 14:11:10-03, later than the committed w1 registry createdAt 14:05:25.338Z (14:05:25.338-03), so pre-data freeze ordering defect is affirmed. Prior finding that watchdog's attempt-1 13:47:04 launch was the only successful dispatch is withdrawn: watchdog records its retry at 14:01:18 and the lane's wave registry records the subsequent wave dispatch. Three missing sidecars remain. Closure ran the sibling mado gate selftest contrary to PROTOCOL §Gate standard; withdraw that run as evidence, retaining only lane's committed receipt. These corrections do not change status ok, C1/C2 unprovable, no-axis-harmed judgment, admission=false, or trends expansion unchanged / quality harmed / discernment improved. Spotcheck correction is pushed as 3b55b6e91e40f455dd56b2985e4ffc087ada92d5.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 76,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "kotoba",
+   "lane_round": 76,
+   "lanes": {
+    "kotoba": "ok"
+   },
+   "lane_rounds": {
+    "kotoba": 76
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "unchanged",
+    "consistency": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-76/kotoba.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kotoba-shokunin/corpus/lessons/round-76-verifier-spotcheck.md@2f675548eaad2a037a899d39247c1fd7a88aaf48",
+    "rechecks": "Step-1: report by kotoba-shokunin 5533f7ea, SHONEN present, cited hashes (b7f13f4, ec7f853, 6ce2724, ac9f295) ancestors of master, lane ahead=0, status clean. Claims C1 (depth, description-craft) and C2 (consistency, r75 repairs R1-R4) both honestly unlanded: re-measured landed-state absence (git diff b7f13f4..6ce2724 touches no corpus/knowledge, SKILL.md, SOURCES.md, PROVINCE.md; SOURCES 151 rows at base and tip); counter base 0 of 6 / 0 of 4 and self-tests 0 fail/53 and 0 fail/27 evidence-verified from committed receipts, gates not executed. SCORECARD diff = one honest-stop annotation, no score move. Census validate exit 0, 151 rows. S213 re-opened live (13403 B, sha 7cc54fbb, 17-word quote verbatim); considerthese proposal 3 candidate and proposal 2 decline (Q67) agree; no lane Gate exists to sample."
+   },
+   "commit": "kotoba-shokunin@6ce27241a00ad2672417b7cbfe8857f52d918e11",
+   "closed_at": "2026-10-27T19:40:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-27T13:33:36-03:00 launch kotoba round=76 pgid=2319713 driver=hyaku-inline attempt=1; 2026-10-27T15:37:23-03:00 complete kotoba round=76; hyaku-inline attempt=1. Honest stop: 64-seat wave settled, counters frozen+self-tested, no claim/knowledge/SOURCES/R1-R4 landed, no score moved; no axis harmed. Conformance defects (status-neutral): CD1 6ce2724 committed stray typo path kotoba-shokukin/.ufo/waves/round-76/w1/A18ScoutSnapshot.md (byte-identical duplicate of the correct copy); CD2 corpus/lessons/round-76.md (Gate/Mistakes) absent though plan promised it; CD3 round-end census not run by lane (closure run: ok, 151 rows); CD4 52/64 seat report files, no explicit dead-seat count. Routed R76-D1..D5 in spotcheck: delete stray path; write r76 lesson; re-land C1 and C2 against named revision; repair corpus gates red at base (index round-75-verifier-spotcheck, refresh baseline) and run no-harm battery; report dead-seat count. SHONEN boxes all [~]: not checkable by a non-author from this round.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
