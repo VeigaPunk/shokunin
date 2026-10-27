@@ -224,3 +224,9 @@ closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At 
   `.tower/quarantine/fleet-root-strays-20261026T2055/` (sha256 in `SHA256SUMS` there) and told MadoR48. It is a
   conformance item for mado r48's closure. `.ufo/reports/round-49/kama.md` (untracked at the same moment) is
   KamaR49's in-flight fleet report, not a stray; left alone.
+- 21:08 -03, fleet-root stray. A fixture tree `fx/A2-uppercase-fsid-sysfs/sysfs/<fsid>/devinfo/1/scrub_speed_max`
+  (1 file) appeared at the fleet root; the btrfs scrub fsid/sysfs shape attributes it to a tsukuroi r44 w1 C1
+  scrub-arm seat building a fixture with a relative path, cwd = fleet root. The orchestrator moved it, bytes
+  unchanged, to the ignored `.tower/quarantine/fleet-root-strays-20261026T2114/` (`SHA256SUMS`, `TREE.txt`) and told
+  TsukuroiR44. It is a conformance item for tsukuroi r44's closure. `.ufo/reports/round-44/kengaku.md` (untracked
+  at the same moment) is KengakuR44's in-flight fleet report; left alone.
