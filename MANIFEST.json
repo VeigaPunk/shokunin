@@ -29896,6 +29896,48 @@
    "notes": "Dispatch/complete digest: 2026-10-27T15:10:29-03:00 launch tabi round=40 pgid=1091225 driver=hyaku-inline attempt=1; 2026-10-27T15:11:43-03:00 lane-dead-no-report tabi round=40; retry same round (hyaku-inline attempt=1: TabiR40 exited incomplete before freeze/ready/report); 2026-10-27T15:11:46-03:00 launch tabi round=40 pgid=1250087 driver=hyaku-inline attempt=2; 2026-10-27T17:26:03-03:00 complete tabi round=40; hyaku-inline attempt=2. Attempt 1 terminated without report; attempt 2 has a substantive lane-authored report and clean/pushed lane work, so status ok; no marker. C1 coverage capability unprovable: F4-full NODE_OPTIONS preload substitutes driver and reaches predicate true without Firefox, hence not admitted; no axis harmed. Conformance defect: attempt 1 died before freeze/ready/report. Routed own-lane defects for next round: prevent F4 driver substitution with frozen red-before and same-command red→green proof; address F1 zero-observation acceptance and F3 stale process-tree ownership and sampling gaps; capture census stdout/stderr/exit contemporaneously. Operator process note: accidental agent://all broadcast reached 140 recipients, no cross-lane writes; report notes it. SHONEN checklist checkable but author [~] only; no promotion mark. Spot-check agrees S134 admit/S102 reject. Verifier artifact pushed at fecbdf0a3aa79ce17bce3ef7338f69112f604f88. Fleet had unrelated dirty paths, untouched.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 77,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "kotoba",
+   "lane_round": 77,
+   "lanes": {
+    "kotoba": "ok"
+   },
+   "lane_rounds": {
+    "kotoba": 77
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "unchanged",
+    "consistency": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-77/kotoba.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kotoba-shokunin/corpus/lessons/round-77-verifier-spotcheck.md@9f796a598a588c365e6cb7cb57c6752872771d5d",
+    "rechecks": "Step-1: report committed as kotoba-shokunin 5d1f2e5a, SHONEN four [~] boxes, cited base/freeze/tip hashes exist and are ancestors of master, lane state ahead=0 and no status leftovers, prompt sections match template, dispatch+completion verified. Claims: C1 and C2 are not admitted; re-measured unchanged counters (SHA-256 cf3c45d9… and 989203c4…), empty SCORECARD diff, no claim data in corpus/SKILL/SOURCES; verified committed C01 do-nothing controls reaching C1 6/6 and C2 4/4. No lane gate executed. Outside spot-check agrees with S213 candidate and rejects C1/C2 predicates; live source HTTP 200, 13,403 bytes, digest 7cc54fbb…, located quotes verified. SOURCES census exit 0, kotoba ok, 151 rows."
+   },
+   "commit": "kotoba-shokunin@0549c60c0c4b63f3ac97c0a9f1ca7dd84f69e9fa",
+   "closed_at": "2026-10-27T22:00:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/completion digest: 2026-10-27T16:37:22-03:00 launch kotoba round=77 pgid=2086268 driver=hyaku-inline attempt=1; 2026-10-27T17:49:43-03:00 complete kotoba round=77; hyaku-inline attempt=1. Honest stop: both frozen predicates falsified by committed controls; no claim data, score move, capability or new knowledge/SOURCES row landed; no axis harmed. Status-neutral defects routed in spot-check: incomplete/red final no-harm battery (base had two unindexed corpus files; F31 receipt shows assertion-floor and checklist exits 1); w2 seat report gap 25/32 and unknown dead-seat count; frozen predicates need pre-data redesign; carry forward unresolved R76-D1…D5 (typo-root, promised r76 lesson, C1/C2, corpus battery, seat accounting). Fleet misroot sweep listed unrelated residue and was left untouched. No promotions or minting. SHONEN boxes remain author assertions; operator owns promotion.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
