@@ -28554,6 +28554,47 @@
    "notes": "Watchdog digest: 2026-10-27T02:45:41-03:00 launch mado round=50 attempt=1; 03:26:40 lane-dead-no-report (L1 exited before WAVE-DONE, w1 9 seats in progress); 04:49:13 lane-dead-no-report (operator run wrap-up mid-round, in-flight state committed); 04:55:12 launch attempt=2; 06:25:36 complete. Round shape: w1 54 (attempt-1 wave, integrated from committed seat reports; w1-results.json 54 null outputs with dispatcher notes, accepted per criterion 102) + w2 32 falsify, all settled. Both claims predicate-MET but falsified by the lane's own w2 (C1 recycled round-49 candidate + one receipt-citation line passes the frozen counter; 81.7% shingle overlap; held ground facts omitted; C2 7046-byte canned-transcript/all-rule-tag parrot passes) - honest stops, predicates not re-frozen, reported exactly as found. Defects (status-neutral): D1 report+LOG assert final WAVE-DONE at 74782d39 waves=2 settled=2 but the committed receipt stops at 8dbbf61a waves=1 - commit the final re-run receipt or correct both texts; D2 SHONEN section is one summary line for four boxes instead of one line per box; D3 untracked leftover .ufo/wakes (388B) in the lane repo; D4 M50-9 registration-manifest self-digest row cleanup still open. Lane self-recorded one prohibited agent://all broadcast (conformance failure, no repeat). SHONEN: four [~] historical assertions, no outside-lane verifier - promotion operator-owned. Routed to lane: C1 freshness baseline must include .ufo/waves/round-*/candidate/; C2 needs independent behavioral fixture execution with exact rule attribution; tracked lane-level tool ledger (RevLedgerR50).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 47,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 47,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 47
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "calibration": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-47/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-47-verifier-spotcheck.md@f6a46fa985a653f97726db477ccd1f304c1ae816",
+    "rechecks": "C1/C2 judged on committed frozen-counter receipts (never re-executed): C1 c1-final-unsettled.jsonl@31efd304 structural_ok=1 quotes_ok=3 verdicts_ok=0 marks_ok=0 FAIL; C2 selftest-space-after.txt PASS 164/164 but kill rule fired — /tmp fallback read in tools/tsukuroi-census.sh:2048-2057; controls 12/12 as_expected; S252 live re-open sha256 74186433…073266 byte-identical, quote verbatim; assimilation refusal agreed (53 collisions S200-S252); census validate exit 0 (40 W04 warnings, report said two — warning-count misstatement only)"
+   },
+   "commit": "tsukuroi-shokunin@f6a46fa985a653f97726db477ccd1f304c1ae816",
+   "closed_at": "2026-10-27T09:44:30Z",
+   "campaign": "hyaku",
+   "notes": "dispatch digest: 2026-10-27T04:55:22-03:00 launch tsukuroi round=47 pgid=3054453 driver=hyaku-inline attempt=1; 2026-10-27T06:23:17-03:00 complete tsukuroi round=47. Honest wrap on operator instruction before WAVE-DONE w1; orchestrator salvage 76819197 landed w1-results.json (64/64 outputs) post-report; 1 seat (C1MutBinding) still live, 2 receipt files untracked (defect). C1 unsettled admission (verdicts_ok 0; K22 map omits S240 ioctl.c — routed). C2 kill rule fired on new /tmp fallback — routed defect already mined by lane. Other defects: Gate holds zero reject rows; report cites uncommitted selftest-space-before.log; W04 count misstated (40 not 2); godspeed directive bytes trimmed in w1-dispatch. Fresh-start corrections for r46 landed honestly (C1 unverified, census-identity capability withdrawn, verdicts_ok 1). No axis harmed; no admission.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
