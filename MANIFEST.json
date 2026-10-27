@@ -29691,6 +29691,47 @@
    "notes": "Dispatch digest: 2026-10-27T13:33:36-03:00 launch kotoba round=76 pgid=2319713 driver=hyaku-inline attempt=1; 2026-10-27T15:37:23-03:00 complete kotoba round=76; hyaku-inline attempt=1. Honest stop: 64-seat wave settled, counters frozen+self-tested, no claim/knowledge/SOURCES/R1-R4 landed, no score moved; no axis harmed. Conformance defects (status-neutral): CD1 6ce2724 committed stray typo path kotoba-shokukin/.ufo/waves/round-76/w1/A18ScoutSnapshot.md (byte-identical duplicate of the correct copy); CD2 corpus/lessons/round-76.md (Gate/Mistakes) absent though plan promised it; CD3 round-end census not run by lane (closure run: ok, 151 rows); CD4 52/64 seat report files, no explicit dead-seat count. Routed R76-D1..D5 in spotcheck: delete stray path; write r76 lesson; re-land C1 and C2 against named revision; repair corpus gates red at base (index round-75-verifier-spotcheck, refresh baseline) and run no-harm battery; report dead-seat count. SHONEN boxes all [~]: not checkable by a non-author from this round.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 57,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 57,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 57
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unprovable",
+    "calibration": "unchanged",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "harmed"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-57/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-57-verifier-spotcheck.md@2f53614e6f5895560edb775cc3e74841aa0dd44c",
+    "rechecks": "Re-measured: C2 counter round42-selfdesc-reconcile base mismatches=1 met=False -> final mismatches=0 maxN=57 met=True, 43 verifier-spotcheck blobs at tip (verifies). C1: round56-prereg-check at tip met=True on genuine, but my own dead-code (if False) no-op fixture still met=True, confirming lane erratum (E03/R57Item05) -> C1 does not verify. Evidence-verified: committed noop-c1.out and R57Item05CounterSelftest evidence-c1.txt. Spot-check: S516 admit agree, S513 reject (carried from r56) disagree, S515 reopen agree; census exit 0."
+   },
+   "commit": "kama-shokunin@83c1c4a5e2c210d9f4e1454b64c686994330f05f",
+   "closed_at": "2026-10-27T18:50:00Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 14:43:32 launch kama round=57 attempt=1; 15:01:08 lane-dead-no-report retry; 15:01:12 launch attempt=2; 15:30:16 complete kama round=57 attempt=2. Lane repo ahead=0, 12 cited hashes ancestors of master; untracked scratch .ufo/scopes/ and .ufo/waves/round-57/ClaimFalsifier/09/fixtures/. Defects: SCORECARD calibration row now says round-56 outside closure '(admitted)' but it was rejected-honest-stop; erratum quality figures inconsistent (4/7 vs 2/7 vs 5/7); report headline tip 87bb7d4c not final 83c1c4a5; noop fixture only under /fast/scratch. Routed: bind execution reachability in C1 checker (dead-code/unused-fn no-ops must fail); append-only SCORECARD correction plus MANIFEST-bound counter; S513 disagreement unlearned -> QUALITY.md criterion; in-round non-author admit+reject. SHONEN all [~], none checkable by non-author; nothing for operator to promote.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
