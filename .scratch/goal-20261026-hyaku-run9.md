@@ -346,3 +346,8 @@ closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At 
 - ChousaR57 attempt 1 died mid-round (no report): fail marked RETRYABLE 1/3; respawned ChousaR57a2 (note: rebuild state, qcache blocker, routed D1/D2).
 - MadoR50 attempt 1 exited pre-WAVE-DONE without filing: fail marked RETRYABLE 1/3; respawned MadoR50a2 (note: wait for WAVE-DONE + w1-results.json handoff, ExecWaveDone gate, read late seat reports).
 - kimi reroute holding: cred 40 serving m_kfc traffic.
+- 2026-10-27 04:0x local: OPERATOR DIRECTIVE "more roles to m_kfc". Moved mutation-tester and reviewer from @m_zfl to @m_kfc in ~/.omp/agent/config.yml agentModelOverrides. m_kfc now: critic, scout, reviewer, mutation-tester (the attack core). m_zfl keeps security-reviewer only. m_mim keeps executor. Backup: ~/.omp/agent/config.yml.pre-kfc-roles-20261027. Applies to seats spawned after this point.
+- KengakuR47 stalled twice claiming it cannot dispatch waves; told twice: L1 writes round-47/w1-spec.json + w1.ready, orchestrator dispatches. Awaiting ready marker.
+- ChousaR57a2 rebuilding on attempt-1 uncommitted freeze state (tip fd95724), will write ready after spec.
+- MadoR50a2 correctly blocked awaiting w1 WAVE-DONE handoff; w1 seats still settling.
+- KamaR53 exited (wrapped per user instruction, C2 not admitted - adversarial bypasses; 66 seats): to process next tick (verify/closure).
