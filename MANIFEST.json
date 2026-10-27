@@ -29004,6 +29004,47 @@
    "notes": "Dispatch digest (watchdog.log): 2026-10-27T09:59:28-03:00 launch kama round=55 pgid=375764 driver=hyaku-inline attempt=1; 2026-10-27T11:18:18-03:00 complete kama round=55; hyaku-inline attempt=1. Routed defects (lane to fix round 56): (1) C1 battery roster diverged from the immutable preregistration (m-ldaudit-writable replaced by undesignated m-text-flip; two stale first-run receipts deleted) and the frozen kill rule fired on its literal text via m-ldaudit-foreign met=True — disclosed on all surfaces, claim verified with this named defect; re-freeze already Planned r56 item 2; (2) lesson Mistakes row 1 says the battery 'holds' two receipts deleted in the same commit (stale; m-extra-in-tree named nowhere else); (3) build receipts measured at freeze 9c60eae6 not the landed tip bf336baa, report mislabels 'landed tip'; (4) receipts record no exit codes; (5) m-text-flip is a multi-leg kill and run-battery.py leg assertion is a substring test; (6) S511/S510 anchor cells omit the contract revision element; (7) uncommitted late seat outputs (2 modified + 10 untracked under .ufo/waves/round-55/w1/out/) remain in the lane tree — disclosed in the report, successor must commit or sweep; (8) wave filed at 44/64 without WAVE-DONE (disclosed, budget-forced wrap-up); (9) report's attack share 32/64 not re-derivable from the committed spec (classic attack roles sum 26/64 = 40.6%, still >=25%); (10) stale SCORECARD labels (depth-row suffix 're-anchored round 54'; calibration row latest-closure pointer). SHONEN note for operator: boxes 1/2/4 look non-author-checkable; no [x] written (promotion operator-owned). Open L0 carried: ed135b3c keep/remove ruling; MISSION.md:29 axes-example drift since round 35.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 37,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 37,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 37
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "adjacency": "improved",
+    "operability": "improved",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-37/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-37-verifier-spotcheck.md@3f42a5c7cc19a544c879577e4bad7b7fd9d61a35",
+    "rechecks": "No lane gate/counter executed (Gate standard, Closure consequence); claims re-measured over committed bytes where plain measurements exist, evidence-verified elsewhere. Re-measured: pins blob sha256 at measured rev and tip = frozen 81019362...; frozenDigests c1/c2/buildTool/measure/controls equal at freeze 99437d29; predicate sentences byte-identical at 4 sites each (C1 len 295, C2 len 154); census manual counts 143 rows A:127 B:7 C:9 mined 119 queued 15 rejected 9, validate exit 0 with 20 pre-existing W04; numstat receipt byte-identical to recomputation; diff ed8ccfc..bf8ecd5 zero deletions outside the one registry-row insert; SKILL/PROVINCE/SHONEN/QUALITY/README byte-identical. Evidence-verified: 10 control receipts (J1-J3 x2: v4/v2 exit 0 -> v5/v3 exit 2/1; honest floors pass), measure receipts c1/c2 predicate true at 34ed508c with all claimed fields, noharm self-test tallies green, r35c1 pre-existing exit 1 with committed baseline reproduction (RevHarness measure-smoke at ed8ccfc), build-tool v2 red controls in w1 ExecBuildTool evidence (4 pin mutations exit 1; future-repin divergence), 34/34 seat reports and 34-seat dispatch with exact role mix, Godspeed directive bytes exact in all 34 task texts."
+   },
+   "commit": "tabi-shokunin@bf8ecd5a663d9773d92c4842ed1874814b8a9a83",
+   "closed_at": "2026-10-27T14:35:33Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable, copied at closure): 2026-10-27T10:04:51-03:00 launch tabi round=37 pgid=465460 driver=hyaku-inline attempt=1; 2026-10-27T11:15:35-03:00 complete tabi round=37; hyaku-inline attempt=1. Status ok: substantive lane-authored report committed by lane identity (11b43d35), SHONEN heading with 4 boxes present, all cited commits ancestors of master, lane ahead=0 and clean, prompt carries the full template contract. Both claims verified, no axis harmed; scores held adjacency 8->8 and operability 9->9 per the lane's declared no-auto-bump rubric. Discernment improved: closure outside spot-check agreed with the gate on the sampled admit (S143 git-replace manual, re-opened HTTP 200 38,351 B sha256 46750b9f... exact match, 16-word quote located) and both rejects (merge/tabi assimilation set; quarantine slice re-counted 38 payload-absent rows); SOURCES row 143 parses 11 columns, tier A mined, used-by resolves. Routed defects for round 38 (status-neutral): (1) SCORECARD waves/seats block overclaims 68 seats (w1 34 + w2 34) though w2 was never dispatched - append correction; (2) report seat-verdict tally 18ok/16finding reproduces no extraction - committed reports show 23 ok / 11 finding - correct next report; (3) LOG round-37 freeze entry landed at 34ed508c not 99437d29, no commit hashes cited in LOG, no per-commit ledger - append hash-carrying entries; (4) lesson M3 row missing Captured-by and its byte-identity fix is green-only (no mutated-sentence red control; w2 falsify wave never dispatched); (5) census receipts are validate-only warning logs, byte-identical to each other, not count witnesses; (6) committed numstat receipt spans the r36-r37 window (lane-disclosed; report wording imprecise, appends-only claim itself verified on the round window). Conformance notes: w2 not dispatched (honestly reported; 64-seat floor passes to r38 with committed gen-w2-spec.py of 34 falsify items); orchestrator marker commit bf8ecd5 (w1.ready.dispatched only) rides the tip under the lane identity; SHONEN boxes all [~] and look fully checkable by a named non-author - promotion is operator-owned, pointer-only.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
