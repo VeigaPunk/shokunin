@@ -59,3 +59,10 @@ lowest-first works the lanes with the most rounds left and keeps the fleet level
 |---|---|---|---|---|
 
 ## Incidents
+- ~05:2x: L1s SoujiR34, KaidokuR43, ChousaR57a2/a3, KengakuR48 died on kimi-code 5h limit -> devin rate limit -> gpt-6-luna invalid_prompt. Cred 58's 24h block (set in run 9) lifted when cred 40 hit its 5h window (backup agent.db.pre-kimi58-unblock-20261027; auth_change_revision bumped). ~06:56 both creds exhausted; operator ruling: "Pause until kimi resets" (no rerouting). Resumed 08:17 after cred 58 reset; dead L1s revived by message instead of re-dispatch where state allowed.
+- Kernel tick now idles inside kernel wait() on live seat handles (/fast/scratch/hyaku-run10/tick-helpers-r10.py) so most seat results are consumed in-kernel instead of flooding the orchestrator context.
+- ~08:2x: /fast at 83% blocked every dispatch: souji r34 L1 had built 460 GB of C2 junk-fixture scratch under /fast/scratch/hyaku/souji-r34. L1 told to purge; it removed the tree (/fast 26%). Conformance item for souji r34.
+- ~08:3x operator: "use m_swe as m_kfc fallback" -> m_kfc chain set to ["@m_swe"] only; operator: "revert this change" -> restored byte-identical to backup config.yml.pre-kfc-swe-only-20261027.
+- ~09:2x operator: "use more m_zfl" -> reviewer and mutation-tester @m_kfc -> @m_zfl (backup config.yml.pre-more-zfl-20261027). Live map: task/critic/scout @m_kfc; reviewer/mutation-tester/security-reviewer @m_zfl; others unchanged.
+- KaidokuR43 attempt 1 revived itself on luna and ran alongside KaidokuR43a2; orchestrator cancelled attempt 1 and retargeted its untaken w2.ready to a2.
+- Several L1s (MadoR51, ChousaR58, KakeR62) ended their turn believing no wave handoff existed; L1_PROMPT gained an explicit "the handoff is a file you write" line (inline-dispatcher.py:90).
