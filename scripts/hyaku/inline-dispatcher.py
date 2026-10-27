@@ -191,7 +191,8 @@ async def running_names():
     return run
 
 def live(name, run):
-    return name in run or any(re.fullmatch(re.escape(name) + r'-\d+', x) for x in run)
+    """Live under its own name, a runtime-deduplicated id (<name>-N, <name>-N-M), or an attempt respawn (<name>aK...)."""
+    return bool(name) and (name in run or any(re.fullmatch(re.escape(name) + r'(a\d+)?(-\d+)*', x) for x in run))
 
 def seat_live(w, name, run):
     """Liveness by spawned handle id when we have it (cross-lane seat names collide); by name otherwise."""
