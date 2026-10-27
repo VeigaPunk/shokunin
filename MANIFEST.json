@@ -29603,6 +29603,53 @@
    "notes": "Dispatch/complete digest: 2026-10-27T13:47:04-03:00 launch mado round=54 pgid=2351747 driver=hyaku-inline attempt=1; 2026-10-27T14:01:16-03:00 lane-dead-no-report mado round=54; retry same round (hyaku-inline attempt=1: MadoR54 died: provider fallback luna invalid_prompt (infra)); 2026-10-27T14:01:18-03:00 launch mado round=54 pgid=2485229 driver=hyaku-inline attempt=2; 2026-10-27T15:10:29-03:00 complete mado round=54; hyaku-inline attempt=2. Report is substantive and committed by mado identity; all cited revisions are ancestors of lane master, report was committed after cited lane tip; lane clean and pushed at closure. Status-neutral defects: report's claimed w1 launch/ready 14:05:25/14:05:28 is not represented by watchdog digest (only 13:47:04 launch); three settled seats lack assigned sidecars (R54Seat06, R54Seat19, R54W2Seat06); round-54 freeze claims about dispatch timing conflict between report and Git author timestamp, so obtain durable pre-wave revision/timestamp evidence next round. No contribution from first infra-failed attempt. Two waves total 69 seats; SHONEN four [~], fully checkable from pointers, flagged for operator-owned promotion only. Routed to mado: correct/supersede false P19 append-only; repair frozen quote/host-set controls before any future dispatch; retain dispatch and sidecar evidence; review persistent census warnings under QUALITY 17. No owned axis harmed by round changes; C1/C2 honest stops fail admission. No promotion, mint, or capability.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 54,
+   "date": "2026-10-27",
+   "type": "closure-correction",
+   "supersedes": {
+    "round": 54,
+    "type": "closure",
+    "date": "2026-10-27",
+    "entry": 844
+   },
+   "lane": "mado",
+   "lane_round": 54,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 54
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unprovable",
+    "coverage": "unprovable",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "harmed",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-54/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-54-verifier-spotcheck.md@3b55b6e91e40f455dd56b2985e4ffc087ada92d5",
+    "rechecks": "Correction to rounds[844] closure: C1/C2 rechecks and S376/S375/S377/P19 spot decisions stand. Freeze committer timestamp 14:11:10-03 is after wave createdAt 14:05:25.338-03; M54-2/M54-4 affirmed. Attempt-1 watchdog launch was retried; attempt-2 exists, with wave dispatch separately evidenced by committed registry; no missing-watchdog-dispatch finding. Withdraw closure's run of sibling mado-verify selftest under PROTOCOL Gate standard; lane receipt is evidence-verified only. No claim or verdict changes."
+   },
+   "commit": "mado-shokunin@3b55b6e91e40f455dd56b2985e4ffc087ada92d5",
+   "closed_at": "2026-10-27T19:05:00Z",
+   "campaign": "hyaku",
+   "notes": "Append-only correction to closure rounds[844]. The prior spot-check used author time 13:42:45 as commit time; Git committer time is 14:11:10-03, later than the committed w1 registry createdAt 14:05:25.338Z (14:05:25.338-03), so pre-data freeze ordering defect is affirmed. Prior finding that watchdog's attempt-1 13:47:04 launch was the only successful dispatch is withdrawn: watchdog records its retry at 14:01:18 and the lane's wave registry records the subsequent wave dispatch. Three missing sidecars remain. Closure ran the sibling mado gate selftest contrary to PROTOCOL §Gate standard; withdraw that run as evidence, retaining only lane's committed receipt. These corrections do not change status ok, C1/C2 unprovable, no-axis-harmed judgment, admission=false, or trends expansion unchanged / quality harmed / discernment improved. Spotcheck correction is pushed as 3b55b6e91e40f455dd56b2985e4ffc087ada92d5.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
