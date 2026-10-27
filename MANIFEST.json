@@ -29732,6 +29732,47 @@
    "notes": "Digest: 14:43:32 launch kama round=57 attempt=1; 15:01:08 lane-dead-no-report retry; 15:01:12 launch attempt=2; 15:30:16 complete kama round=57 attempt=2. Lane repo ahead=0, 12 cited hashes ancestors of master; untracked scratch .ufo/scopes/ and .ufo/waves/round-57/ClaimFalsifier/09/fixtures/. Defects: SCORECARD calibration row now says round-56 outside closure '(admitted)' but it was rejected-honest-stop; erratum quality figures inconsistent (4/7 vs 2/7 vs 5/7); report headline tip 87bb7d4c not final 83c1c4a5; noop fixture only under /fast/scratch. Routed: bind execution reachability in C1 checker (dead-code/unused-fn no-ops must fail); append-only SCORECARD correction plus MANIFEST-bound counter; S513 disagreement unlearned -> QUALITY.md criterion; in-round non-author admit+reject. SHONEN all [~], none checkable by non-author; nothing for operator to promote.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 72,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "revenger",
+   "lane_round": 72,
+   "lanes": {
+    "revenger": "ok"
+   },
+   "lane_rounds": {
+    "revenger": 72
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-72/revenger.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "revenger-shokunin/corpus/lessons/round-72-verifier-spotcheck.md@555f7c12e86d8ad2e27c023c3e91b83f3389ba07",
+    "rechecks": "C1 re-measured (not gate-evidence): frozen measure.py sha 9559b10d... matches; git archive of d6475ee gives C15_HELD_BACKED=0/1, C15_TOOL_ROWS=18/18, HOLDS_C15=no, identical to measure-after.log; README held rows 8/14 -> 8/15, C15 uncovered; SCORECARD diff is one appended Round 72 section, no axis harmed. Spot-check: S054, S058, S057, S093, S071 decisions agree; S071 SOURCES quote is a paraphrase and S082 quote is misattributed (verbatim only in S083's paper). Lane quote audit counts words, does not check source presence. Census exit 0."
+   },
+   "commit": "revenger-shokunin@d6475ee35427412c948639369aea21ea11855e30",
+   "closed_at": "2026-10-27T19:40:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete: 2026-10-27T14:33:03-03:00 launch revenger round=72 pgid=202041 driver=hyaku-inline attempt=1; 2026-10-27T15:34:18-03:00 complete revenger round=72; hyaku-inline attempt=1. C1 (C15 tool landscape coverage) falsified by the lane's own frozen counter and honestly not admitted; C15 stays uncovered, knowledge entry stays candidate; 42 source rows S054-S095 added (53->95). Coverage graded unchanged (held numerator 8->8; ratio 5.7->5.3 is a denominator effect of mapping C15), expansion unchanged (lane said harmed). Defects, status-neutral: (1) S082 row and lesson Gate carry a quote from the AutoDecompiler abstract (S083), absent from LLM4Decompile abstract/PDF; (2) S071 registry quote paraphrased, not verbatim; (3) source-quotes-check script counts words only, not presence in source; (4) lane has 3 untracked wave paths (.ufo/waves/round-72/w1.ready, w1.ready.partial, w1/ with 17 review files) uncommitted, contradicting the report's 'no worker outcomes' wording; wave not credited. Routed: fix S082/S071 quotes, strengthen quote audit, commit or remove wave artifacts and reconcile report; C15 admission needs independent review plus counter 1/1. SHONEN boxes remain [~] and are not fully checkable by a non-author; no promotion suggested.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
