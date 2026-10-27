@@ -28805,6 +28805,48 @@
    "notes": "watchdog digest: 2026-10-27T08:50:56-03:00 launch kake round=62 pgid=1120682 driver=hyaku-inline attempt=1; 2026-10-27T09:49:13-03:00 complete kake round=62; hyaku-inline attempt=1. Honest-stop round: frozen calibration counter falsified (marker-only false-green; committed fixture receipt + wave attack), C1 unprovable, no score credit claimed; report discloses this fully. Defects routed to lane for round 63: (1) repair c62_calibration.py so resolved binds semantics, with committed red-before/green-after, fix frozen per standing rule; (2) orchestrator-side: w1 results handoff lacks per-seat status/last-error, 14/64 dead seats with no recorded cause; (3) round-59 calibration-ownership L0 question still open, correctly carried. SHONEN boxes all [ ] untouched - non-author checkable but promotion is operator-owned. No tools installed; no pacman transactions.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 48,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 48,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 48
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "unchanged",
+    "coverage": "unchanged",
+    "novelty": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-48/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-48-verifier-spotcheck.md@3a548330c4899c6c5df34168a44a59f66828ce74",
+    "rechecks": "Conformance pass: report 9c5dcdeb by kengaku-shokunin; SHONEN 1 heading + 4 [~]; prompt carries full contract; lane tip d4eacdfb ancestor of master, ahead=0, pushed. R48-C1 re-measured: round48_c1_verify.py absent at tip, no stage-2 freeze; receipts show base fence 112/120 admitted 8 refused PREDICATE fail, repair candidate scratch-only, fixture_fence.py restored byte-identical. R48-C2 re-measured: round48_c2_verify.py absent at tip; tag inventory shows both-print/toolchain have no violating case (V7 real); controls fail; probe 22b7779e stage-check 18/18 fails under host thread load, grade path skips seed/recipe; no full probe run. Census re-run: 165 rows A=141/B=22/C=2 mined=149/queued=8/rejected=8, validate exit 0. Wave: 64 seats, 41 attack, no model field passed; 7 reportless seats as reported. Discernment: S166 admit agreed (line-27 quote verbatim at pinned commit); Docker Hub reject agreed (digest matches, no toolchain version fields)."
+   },
+   "commit": "kengaku-shokunin@d4eacdfb56307c069c245270f4d78e2ec314829e",
+   "closed_at": "2026-10-27T12:58:34Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (watchdog.log): 2026-10-27T06:43:20-03:00 launch kengaku round=48 pgid=689875 driver=hyaku-inline attempt=1; 2026-10-27T08:18:48-03:00 lane-dead-no-report kengaku round=48 (L1 died: kimi 5h limit -> fallback chain exhausted (gpt-6-luna invalid_prompt)); 2026-10-27T09:49:15-03:00 complete kengaku round=48. Fresh-start round after three rejected closures (r45/r46 rejected-harmed, r47 rejected-honest-stop); both claims declared, tested, honestly not admitted; scores held (calibration 8, coverage 7 L0-capped). Routed defects for next round: (1) 7 settled seats left no report file and results rows carry no status/error text; (2) run-10 role->alias map embedded in build_spec.py/w1-dispatch.json context despite no-alias-in-lane rule (no model field passed, preserved as evidence); (3) keep the V15/V7 unsatisfiable-tag precondition check; (4) C1 kill-battery (>=12 mutants) never reported for the candidate. Non-author closure spot-check file landed 3a548330, remote-verified.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
