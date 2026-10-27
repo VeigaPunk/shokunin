@@ -354,3 +354,4 @@ closure spawns), `LOAD_MAX` 40 → 72 (2.25 × nproc), `MEM_MIN_GB` stays 4. At 
 - 2026-10-27 04:1x local: confirmed reviewer already on @m_kfc (operator message crossed with the change). m_kfc = critic, scout, reviewer, mutation-tester.
 - KengakuR47: no fleet build_spec.py exists; it will write a lane-local spec builder + round-47/w1-spec.json + w1.ready. Dispatcher picks up w1.ready regardless of how the spec was built.
 - KamaR53 L1 exited (report 1fe60289, tip 2a7b3ba2; C2 not admitted - adversarial bypasses; wrapped pre-WAVE-DONE per user instruction; 2 late files uncommitted): verify/closure next.
+- 2026-10-27 04:2x local: OPERATOR "also assign task to m_kfc": task role now @m_kfc (main/planner stay @m_opus). m_kfc total: task, critic, scout, reviewer, mutation-tester. Kama r53 late files salvaged 93333d98; CloseKamaR53 spawned.
