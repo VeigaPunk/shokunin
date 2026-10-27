@@ -28429,6 +28429,43 @@
    "notes": "Dispatch/complete digest from .ufo/watchdog.log (mutable, copied verbatim): 2026-10-27T03:26:42-03:00 launch kengaku round=47 pgid=25007 driver=hyaku-inline attempt=1; 2026-10-27T04:23:25-03:00 complete kengaku round=47; hyaku-inline attempt=1. Honest stop at wave handoff: 64-seat v2 wave spec built and validator-accepted (attack 44/64) but no WAVE-DONE received before run-wrap; no claims frozen, no lane commit (before==after f139f521), no lesson, no end census, no sourced claim. Status ok (real report with checkable work, not a marker); verdict rejected-honest-stop. Status-neutral conformance defects: (1) report asserts w1.ready marker written, absent from tree; (2) uncommitted .ufo/waves/round-47/ artifacts (build_spec.py, w1-spec.json) disclosed but left in tree; (3) frontier step unpaid (start census only, no lesson/## Mistakes/sourced claim). Spot-check impossibility recorded: no round-47 lesson Gate exists to sample >=1 admit/reject; census + wave spec re-validated and agreed. Routed to kengaku r48: commit-or-revert wave artifacts; cite only tree-present artifacts; mine the stop into a lesson if early-stopped again; C1 over-refusal + frozen held-out kill rule, C2 leg-C errata-content bypass, C3 V7/V8 counter failures remain open from r46.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 52,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 52,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 52
+   },
+   "admitted": false,
+   "verdict": "rejected-harmed",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "harmed"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "harmed",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-52/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-52-verifier-spotcheck.md@c1d49d76be4028df2a68322e7117ff3aafaccd5c",
+    "rechecks": "C1 frozen counter re-measured at tip f1a3246: total 4(base)->0 PASS, held 49/49; C2 frozen counter re-measured at tip: total 27(base)->0 PASS; coldread no-harm precheck re-run at tip: 64->45 credited, 19 lost, RED (un-repaired); controls 11/11 as pre-registered verified; census validate exit 0; spot-check agrees with gate on admit S274 (live re-fetch sha matches snapshot) and reject (supersession duplicate); wave-2 Corr12 over-count review found overstated by independent closure seat (observed >=2-6 reader-marked drifts, not 0)"
+   },
+   "commit": "tameshi-shokunin@f1a3246105f75bb9f678f20e25878c44db3a2caf",
+   "closed_at": "2026-10-27T07:41:39Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-10-27T00:52:16-03:00 launch tameshi round=52 pgid=1080098 driver=hyaku-inline attempt=1; 2026-10-27T04:23:10-03:00 complete tameshi round=52; hyaku-inline attempt=1. Honest-stop report (run wrap-up): both claims land and re-verify on the frozen counters at the tip (closure-measured; the lane's own frozen deciding run never occurred), but the frozen no-harm coldread floor is RED at the lane tip (64->45 credited, 19 sections lost by the round's own edits, re-key never landed) so the calibration axis is harmed and admission fails. Conformance defects (status-neutral): report body falsely says 'not committed/pushed' (it is: fleet commit 53fdd555 by tameshi-shokunin); missing Landed changes + Before->after sections; SHONEN one line for four boxes; trend word 'unprovable' outside vocabulary; LOG.md round-52 entry absent; start-census '133 rows' unprinted (inferred); w3 artifact says 16/19 readers while 18 JSONs committed; 4 untracked lane files (uncommitted round work). Routed to lane (fix next round): R52.1 coldread re-key debt; R52.2 LOG.md round-52 entry; R52.3 Corr12 over-count review overstated, re-derive the 8-record over-count verdict under one written counting rule; R52.4 commit/revert the 4 untracked files; R52.5 tools/registry-check.py:766 hard-coded /tmp; R52.6 report-contract repairs.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
