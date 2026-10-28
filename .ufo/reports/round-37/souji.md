@@ -5,7 +5,7 @@ Lane base `0d974ffcb7dfb70617947531cab2d7e96cd8f9fd`; frozen contract
 `census/round-37/preregistration.txt` (freeze commit `d5c6498c5f72a63c9df32b26ee143e8d775eebbd`,
 amendments A1/A2/A2.4 appended after the wave-1 seats that produced them); measured landing
 `0be9bd0bf0c8143483bc4da609a6225b2c47ab64`; lane tip and `origin/master`
-`b491596491ed4057c11e298cdde0ab813a58b0b5`. The round repairs the three defect classes the
+`93a10b656e132af785817e06b823e7f2cce643b4`. The round repairs the three defect classes the
 round-36 non-author spot-check routed (Routed defects 1, 3, 4 in
 `corpus/lessons/round-36-verifier-spotcheck.md`).
 
@@ -69,7 +69,7 @@ Work items and evidence pointers:
 | `bb98c6086dac61df66c11064316173526260f514` | after receipts at `047564f`, SCORECARD measured commits | LOG `Adjudications` |
 | `0be9bd0bf0c8143483bc4da609a6225b2c47ab64` | A2.4: refuse a FIFO record instead of blocking; `record-fifo` case; texts | LOG `Adjudications` |
 | `6024a76874287ea57e691637e8740dce2906376d` | after receipts at `0be9bd0` | LOG `Adjudications` |
-| `b491596491ed4057c11e298cdde0ab813a58b0b5` | frozen predicate sentences superseded append-only after A1/A2 (wave-1 connector W1ConnOverlap); measured commit named in LOG | LOG `Adjudications` |
+| `93a10b656e132af785817e06b823e7f2cce643b4` | frozen predicate sentences superseded append-only after A1/A2 (wave-1 connector W1ConnOverlap); measured commit named in LOG | LOG `Adjudications` |
 
 Every commit is lane identity (`souji-shokunin <souji@shokunin.local>`) through `jj-lane.sh`;
 `git ls-remote origin refs/heads/master` prints `131ea876…` (the lane tip).
@@ -179,14 +179,14 @@ repairs: the FROZEN PREDICATE SENTENCE block in `census/round-37/preregistration
 `cells=9` and `cases=6 … base_fail>=3` after A1.3/A2.3/A2.4 had moved the in-force targets to
 `cells=11` and `cases=9 … base_fail=6`. The sentences are now superseded **append-only** in the
 same file (block after the frozen sentence, naming `0be9bd0bf0c8143483bc4da609a6225b2c47ab64`),
-committed at `b491596491ed4057c11e298cdde0ab813a58b0b5`, and `LOG.md` names that commit. No
+committed at `93a10b656e132af785817e06b823e7f2cce643b4`, and `LOG.md` names that commit. No
 target, receipt or stale cell changed; the measured landing is unchanged. At erratum time wave 1
 has 36 of 37 seat reports on disk and wave 2 remains unsettled.
 
 ### Erratum 2 (2026-10-28, after wave-2 receipts)
 
 Wave-2 seats found the round re-committing the class it repairs in its own text. Fixed at
-`b491596491ed4057c11e298cdde0ab813a58b0b5`:
+`93a10b656e132af785817e06b823e7f2cce643b4`:
 
 - `SCORECARD.md` and `corpus/lessons/round-37.md` quoted `cells=11 mismatches=9`; the receipt reads
   `mismatches=11` (`c1-before.txt`). The capability row quoted `cells=9` / the 7-case fixture; it
@@ -235,7 +235,7 @@ targets and the kill rules did not change.
 ### Erratum 4 (2026-10-28, final receipt set)
 
 Wave-2 found two live escapes on the landing tool and two forged-control paths. Fixed at
-`4c257b7`/`e6be059` and re-measured at `b491596491ed4057c11e298cdde0ab813a58b0b5`:
+`4c257b7`/`e6be059` and re-measured at `93a10b656e132af785817e06b823e7f2cce643b4`:
 
 - **A2.7** — the `--json` guard now also covers the gitdir each row resolves to
   (`rev-parse --absolute-git-dir`), refuses a row whose gitdir is outside `--root`, and skips
@@ -270,3 +270,29 @@ receipt (A1.5); fixture `cases=16 pass=16 fail=0`. Final receipts: C1 `cells=11 
 16/16 at `b491596`; C2 12/12 `base_fail=9 escapes=9` and C3 6/6 at `bbefcee` (the tool is unchanged
 between those commits). The register is an input, not audited evidence; `--register-rev` in every
 command string is what closes the substitution cheat, and this is named as the C1 limit.
+
+### Erratum 6 (2026-10-28, closing corrections)
+
+Final lane tip `93a10b656e132af785817e06b823e7f2cce643b4` (= `origin/master`). Corrections to
+this report's own attributions and the round's gate text:
+
+- **Attribution.** The frozen-predicate supersession block was committed at `131ea87`, not at a
+  later tip; the own-cell reconciliation (SCORECARD/SKILL/LOG/lesson) at `5379251`; the gitdir and
+  symlink containment plus escape-bound control at `4c257b7`; the A2.6 revert at `e6be059`; the
+  final receipt set at `bbefcee`/`b491596` and now `93a10b6`. Errata 2–4 named the then-current
+  tip where they should have named these commits.
+- **A2.6 is reverted.** The prereg now marks it historical: the register-containment check broke
+  the fixture's sibling registers (10/16 failures) and was removed at `e6be059`. The substitution
+  cheat it targeted is closed by `--register-rev` in every command string; the register is an
+  input, not audited evidence, and that is the named C1 limit.
+- **One gate, one number.** The escape fixture's docstring, code, SKILL row and prereg
+  supersession now all read `cases=12 pass=12 fail=0 base_fail>=8 escapes>=6
+  control=ESCAPE-REPRODUCED`; the SKILL row carries `--register-rev`.
+- Final receipts at `93a10b6`: C1 `SUMMARY cells=11 mismatches=0` (fixture 16/16); C2
+  `SUMMARY cases=12 pass=12 fail=0 base_fail=9 escapes=9 control=ESCAPE-REPRODUCED`; C3
+  `mutants=6 killed=6 survived=0`; consumers 12/12, 21/21, r27 4/4.
+- Still routed to r38: the report-contract checker's stale-lane **line** arm; the C3 battery's
+  missing pristine-fixture control; `receipt_rev` non-discrimination; TOTAL/duplicate-row cases;
+  nested-repository discovery; `--record X --json X` self-overwrite; the `--json` FIFO hang on the
+  landing blob; the `--gate PATH` interpreter mismatch in the r36 fixture; and the live reading's
+  non-reproducibility (a window observation, not a baseline).
