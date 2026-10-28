@@ -116,7 +116,7 @@ Every round-45 lane commit, in order, for the closure to walk: `f762b727` (freez
 (A3 = measured revision), `1d04c6af` (A3 record + wave-2 re-dispatch), `a63d109f` (CL17), `0ee50aaf`
 (wave-1 evidence), `e00b9f6b` (wave-2 record corrections), `ef3edf4b` (wave-2 seat reports),
 `b142b76b` (the A3 two-pathspec gate receipt), `17ce00f0` (CL22/CL23), `84cb9da5` (SCORECARD trends
-restated), plus the wave-2 seat reports committed at `ef3edf4b` and the report commit itself on the
+restated), `99fdb9e4` (SCORECARD A3 sentence corrected, R45-CL24, the last wave-2 seat's reports), plus the wave-2 seat reports committed at `ef3edf4b` and the report commit itself on the
 fleet repo. `git log --format='%h %s' f762b727..main` at filing prints them all.
 | wave-1/wave-2 seat reports (wave evidence) | same | final lane commit named under **Round shape and seats** |
 
@@ -263,6 +263,13 @@ Wave 2 = 36 seats (dispatch `1d04c6af`), 34 with reports at the record; `R45W2Im
 - **House format (R45-CL20).** The registry table is 7 columns while `PROTOCOL.md`'s schema is 8
   (`entry command` absent); widening it needs a counter change first because the exit column is
   index 3.
+- **Last wave-2 seat (`R45W2Immutable`, R45-CL24).** S140/S141's page identity is *stronger* than
+  the S138 class — five fetches each, byte-identical, no per-request nonce — but their `anchor`
+  cells name sections plus a fetch stamp and no **revision** token, which `CORPUS.md:99-100` asks
+  for; and it caught `SCORECARD.md`'s A3 paragraph still saying "the values are identical at … A3"
+  although `block22_refs` reads 6/7/8/8 (fixed at `99fdb9e4`). Two further wording defects (block
+  22's "all arms" on the empty-range row; the `--pkg65` form of the r44 C1 selftest command, whose
+  package root is not installed on this host while the plain form runs 47 cases green) are routed.
 - **Security (R45-CL22/CL23).** No shell injection anywhere (four `subprocess.run` sites, all list
   argv), and a normal run writes only its `--json-out` and its scratch — but `--json-out
   ../../SKILL.md` overwrites the graded surface and an output path on a frozen file writes even on
@@ -285,11 +292,10 @@ Wave 2 = 36 seats (dispatch `1d04c6af`), 34 with reports at the record; `R45W2Im
   roles). Wave 1 role mix: 17 executor, 5 scout, 4 reviewer, 4 critic, 3 mutation-tester,
   3 scribe, 1 sentinel, 1 connector, 1 simplifier, 1 revenger. Wave 2 role mix: 10 reviewer,
   8 executor, 5 critic, 4 mutation-tester, 3 sentinel, 2 scribe, 1 scout, 1 simplifier,
-  1 connector, 1 revenger (22 of 36 attack seats, 61%). Wave 2 settled with **35 reports of 36
-  seats at filing** (`R45W2Distill` landed; `R45W2Immutable` was still running when this report was
-  filed and its row is recorded as pending, not backfilled).
-- Dead seats: **15 in wave 1** and **0 confirmed in wave 2** (`R45W2Immutable` was still running at
-  filing; `R45W2Distill` settled), all
+  1 connector, 1 revenger (22 of 36 attack seats, 61%). Wave 2 settled with **36 reports of 36 seats**
+(`R45W2Immutable` landed after this report's first filing; its findings are in the `99fdb9e4`
+correction below).
+- Dead seats: **15 in wave 1 and none in wave 2**, all
   recorded with `output: null` in the ledgers or as missing seat dirs; none was backfilled. Wave-1
   ledger `.ufo/waves/round-45/r45-w1-results.json` (40 rows, 25 non-empty); wave-2 ledger
   `.ufo/waves/round-45/r45-w2-results.json` when the orchestrator writes it at settlement.
