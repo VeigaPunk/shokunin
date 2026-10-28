@@ -30913,6 +30913,50 @@
    "notes": "Closure-correction of rounds[874], not a new judgement of the work: the orchestrator re-rendered the closure prompt with lane HEAD after the round = 650987a (the closure's own durability sweep ff2a821 + spot-check 650987a on top of 0263c71e); rounds[874] cited 0263c71e. Statuses and verdicts unchanged; commit/spotcheck pointers moved to this pass's erratum commit 0a2010a. Digest (.ufo/watchdog.log, mutable — copied): 2026-10-28T10:00:09-03:00 launch tameshi round=54 pgid=286442 driver=hyaku-inline attempt=1; 10:00:19 lane-dead-no-report (stopped before any work, round not started); 11:09:15 launch attempt=2 pgid=944049; 12:26:32 complete tameshi round=54; 13:12:28 complete tameshi round=54; hyaku-inline attempt=2. Conformance ok: report fcb8d8db by tameshi identity; 10/10 cited lane commits ancestors of master (branch ref; repo is jj-colocated, git HEAD detached); lane pushed, ahead=0, tree clean; SHONEN one heading with 4x[~]; real report; prompt 3d79eed7 carries the round contract and all five child-lane items, L2 floor 8 matches MISSION.md; wave bands 76 (v2 64-128) + 47 (v1 32-64) = 123 <= 128, attack 21/76=27.6% and 12/47=25.5%. Both claims re-measured true by this non-author pass. Routed defects, all status-neutral: R54.1 false positive-control claim (CONTROLS_B prints CTL_MISMATCH ... 2/3, reported as passing in 4 files); R54.2 three freeze pointers (7883e0e5/fe70474d/097985c1 vs the receipt's 077d431e); R54.3 SCORECARD quotes before total=14 where the receipt prints 13; R54.4 stale c2 digest 49280fe5 vs the pinned 8528ee85; R54.5 finding-count drift (w1 25/26/28; w2 '22 in 9' vs 25 in 12; 'nine sections' vs 12); R54.6 seat files uncommitted at closure (resolved by ff2a821); R54.7 'deletion' is an R100 rename; R54.8 config.yml incident half-recorded (seat text still claims operator authority; lesson silent); R54.9 w1 attack share 26.3% vs 27.6% and staged count 84 vs 81; R54.10 CTL_R53 quoted 'rekeyed=0/30' against controls-a.stdout, which prints 0/7. SHONEN boxes stay [~]; boxes 1 and 3 now look checkable by a non-author against SKILL.md and the cold-read evidence — promotion remains operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 42,
+   "date": "2026-10-28",
+   "type": "closure-correction",
+   "lane": "kasegi",
+   "lane_round": 42,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 42
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:verifiability": "unchanged",
+    "coverage": "improved",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-42/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-42-verifier-spotcheck.md@ab98fac9dce87130bc4f66de89e30650d63943dc",
+    "rechecks": "Second non-author closure pass re-derived every figure from committed bytes instead of inheriting the first pass. C1 re-executed at Y b2c49ea5 in export mode with a private work dir outside the lane (lane worktree clean before and after): closed=13/13 exit=0, the J payloads reproduce the committed receipt (J8 payload-match=12/12 forged=6/6, J11 corrections=34, J12 density-sha=ee803726a322), selftest cases=13 failures=0 with thirteen verdict=pass lines, base 5053a7f4 closed=5/13 exit=1, r41 head 1f746461 closed=4/13 exit=1, plain run exit 2, unresolvable ref prints the distinct ref-not-found red; suite sha256 fca5ae62 identical at J, Y and the worktree; git diff J..Y is the 33-line receipt only; receipt run-utc 15:12:46Z precedes its containing commit (15:15:28Z). C2 re-measured at Y with the base column from a git archive of 5053a7f4: F-rows 24->25, registry 63->66 (S064 mined, S065/S066 rejected, 0 malformed rows), knowledge 60->61, harness 27->28 with PASS F25, binding 55->56 unbound=0, audit expected=60->61 missing=0, census exit 0 (W04 S028/S029 only), measure 44/44->45/45, source-recheck S064 Q1-Q4 OK; 0 tracked deletions base->Y; capture digest b90a51f7 matches row and entry; density sha unchanged at J. Falsification this seat ran on a throwaway clone (never pushed): 3 tree-level in-family attacks (forged receipt J3 rows, F25 status flip, duplicated Correction (round 39)) all killed at closed=12/13, 11/13, 11/13 exit=1; no in-family escape, kill rule not triggered. Discernment spot-check re-opened: S064 admit (capture L5/L3466/L3510 verbatim, 18/15/18 words, recheck Q1-Q4 OK) and both rejects S065/S066 (live pages byte-identical to the recorded sha256, quotes verbatim at the cited lines). claims.json byte-unchanged after the freeze."
+   },
+   "commit": "kasegi-shokunin@b2c49ea5e7bc214e91c2b0bede5d4eaed4968572",
+   "closed_at": "2026-10-28T16:28:22Z",
+   "campaign": "hyaku",
+   "notes": "Second non-author closure pass (re-dispatch) re-verified the existing r42 row rather than inheriting it; verdicts, status and trends are unchanged and the spotcheck pointer is re-pinned to ab98fac9 (supersedes rounds[873]). Dispatch digest: 2026-10-28T07:42:02-03 launch attempt 1; 09:02:14 lane-dead-no-report (attempt 1 cut off mid-wave, no report); 09:02:16 launch attempt 2; 11:09:11 launch attempt 3; 12:22:31 complete (attempt 3). Executed shape: wave 1 kasegi-r42-build 64 seats dispatched (64 tasks = 64 results, 64 unique names, 0 dead; role mix 19/11/8/8/7/5/2/2/1/1; attack roles 21/64 = 32.8% excluding sentinel, 23/64 = 35.9% including it); wave 2 kasegi-r42-falsify 36 seats (31 attack roles, 32 with sentinel) rendered and validator-validated with a .ready handoff but NEVER DISPATCHED (no .ready.dispatched marker, no wave2-results.json, zero seats) - round total 64, band floor met, ceiling untouched. Step-1: report 68abb231 authored and committed by kasegi-shokunin at 12:21:17 -03, after Y and before complete; all 16 cited commits are ancestors of master; lane ahead=0, clean, remote equals local; SHONEN heading with one line per box (four [~], no [x]); prompt carries the full contract and all five child-lane items. Routed defects RD42-1..9 (owner kasegi-shokunin, r43): RD42-1 SCORECARD.md:1634 quotes the pre-repair J11 corrections=33 while Y prints 34; RD42-2/3 never-true wave-2 narrative in LOG.md:1804 and corpus/lessons/round-42.md:11,16; RD42-4 the committed '## Wave-2 falsification' placeholder; RD42-5 report/erratum-4 inherited state cites de09313 10/13 + failures=3 with no committed transcript (the committed red is d238e36 9/13 + failures=4); RD42-6 claims.json frozen_at_utc sits 65 min after its containing commit (erratum-3 disclosed) and 0566bd6's author date is inherited from its r41 parent; RD42-7 the undispatched wave 2; RD42-8 (new) claims.json C1 before text says the r41 suite at base prints closed=10/12 while the pointer it cites, c1-controls/do-nothing.txt, prints 8/12 (status-neutral: the before state is red either way); RD42-9 (new) SHONEN.md canonical-form drift continued (the r42 block adds a '## Round 42 evidence' heading and multi-line evidence per box; boxes stay [~] with pointers, no [x]). No promotions, no mints; capabilities_added empty (r42-closure.sh is a counter and F25/S064 is coverage, matching the lane SCORECARD). Lane round tip b2c49ea5; spot-check commit ab98fac9.",
+   "promotions": [],
+   "minted": [],
+   "supersedes": {
+    "round": 42,
+    "type": "closure",
+    "date": "2026-10-28",
+    "entry": 873
+   }
   }
  ]
 }
