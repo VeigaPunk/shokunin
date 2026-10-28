@@ -169,3 +169,11 @@ after the first scored run is not this claim's instrument"; the predicate senten
 literals (`126`, `20`, `12`, `SEALED50_MIN`) are unchanged, and the round's scored instrument is `850ec790…`.
 **New lane tip:** `85102cf560240ff64943f73d4368b9131f15f7e6` (remote verified; the chain
 `d45c5bb → 3dda12f → 64f51c8 → 61f6257 → 85102cf` keeps every cited hash an ancestor).
+
+## Third note — foreign file left uncommitted (2026-10-28)
+
+`kengaku-shokunin/corpus/lessons/round-50-verifier-spotcheck.md` is tracked and carries an uncommitted
+modification in the lane worktree that this round did not author (the lane does not write
+`round-*-verifier-spotcheck.md`; the closure/spot-check side does). Per the round contract it was neither edited,
+committed nor reverted by this lane and is named here so the dirty-tree state is attributable. Lane tip remains
+`85102cf560240ff64943f73d4368b9131f15f7e6` with the instrument `850ec790…` and fence `57adce4a…` at HEAD.
