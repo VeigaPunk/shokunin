@@ -146,3 +146,26 @@ report's cited hash still resolves.
 and on the shipped fence 6/20 `refusals46`, 7/12 `sealed46` and 10/20 `sealed50` modules are refused by a reason
 that names containment/escape while the rest are refused by allowlist/shape rules. `SEALED clean` therefore must
 not be read as an escape witness; the outside-`d` read property remains with the round-46 counter.
+
+## Second erratum — instrument vs receipt (2026-10-28; filed bytes above are not rewritten)
+
+**Superseded:** the two earlier receipts (18-module and 20-module) and their lane tips.
+
+`s R50C1CritBlind2-3` measured that `plans/round50_c1_verify.py` in the worktree (`850ec790…`) differed from the
+committed one the receipts ran (`d8787b34…`): the hardening against a name-keyed / in-process forging fence
+(Q39 opaque parents, separate-process verdicts) was never committed, so the scored instrument was the un-hardened
+one. Fixed by committing the hardened counter at `61f6257` with its old→new digest recorded in
+`plans/round-50-claims.md`, then re-running the frozen predicate on a **clean clone of that tip**:
+
+    TREE dirty=0
+    HONEST fixtures=126 admitted=126 refused=0 error=0
+    REFUSALS total=20 clean=20 leaked=0 build_errors=0
+    SEALED total=12 clean=12 leaked=0    SEALED total=20 clean=20 leaked=0
+    MUTANTS total=15 caught=15 broken=0 floor=12 verdict=met
+    PREDICATE R50-C1 pass      # exit=0
+
+Receipt: `corpus/evidence/round50/c1-receipt.txt`. This is a **recorded deviation** from the frozen rule "a repair
+after the first scored run is not this claim's instrument"; the predicate sentence, the four leg names and the
+literals (`126`, `20`, `12`, `SEALED50_MIN`) are unchanged, and the round's scored instrument is `850ec790…`.
+**New lane tip:** `85102cf560240ff64943f73d4368b9131f15f7e6` (remote verified; the chain
+`d45c5bb → 3dda12f → 64f51c8 → 61f6257 → 85102cf` keeps every cited hash an ancestor).
