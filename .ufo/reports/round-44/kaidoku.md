@@ -259,6 +259,16 @@ seats still ran, so they were asked to settle and their findings (`R44W2Record.m
 `R44W2Distill.md`) were integrated into `1eab9950` before filing; no report number rests on an
 unsettled seat.
 
+**Non-author closure:** the integrator's spot-check landed as lane commit `e1724c32`
+(`corpus/lessons/round-44-verifier-spotcheck.md`) on top of `1eab9950`. It re-ran both frozen
+counters at `55bcce69` and confirms both verdicts; it adopts the same falsifier corrections recorded
+above (the exit-1 cause is the three withdrawn bindings, "unsatisfiable" is false, C2's restore clause
+and freeze set are unimplemented); its one conformance defect — the two late-seat reports and the
+final LessonGate text uncommitted at judging — was resolved deliberately by `1eab9950` before its
+commit, so the lane worktree is clean. The lane tip is now `e1724c32`; this attempt's last commit is
+`1eab9950`. It also corrects one number: `c86ea508` swept **432 paths** (400 A / 32 M, 8 under the
+frozen fixtures), not the 74 porcelain lines the record first wrote.
+
 **Tooling:** no explicit L1 installation or upgrade and no pacman transaction by the L1 (pacman
 remains paused by the operator guard). Toolchain in use, all pre-existing and re-pinned by wave 2
 against `tools/round-44/carriers.json` (`.ufo/waves/round-44/w2/R44W2ScoutTool.md`): `rea-agents`
