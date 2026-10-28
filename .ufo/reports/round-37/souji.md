@@ -1,0 +1,172 @@
+# souji round 37 — receipt citations, the drift tool's write envelope, and fixture discrimination
+
+Lane: `/home/vgpnk/Projects/shokunin/souji-shokunin` · hyaku run 11 · round 37 attempt 1.
+Lane base `0d974ffcb7dfb70617947531cab2d7e96cd8f9fd`; frozen contract
+`census/round-37/preregistration.txt` (freeze commit `d5c6498c5f72a63c9df32b26ee143e8d775eebbd`,
+amendments A1/A2/A2.4 appended after the wave-1 seats that produced them); measured landing
+`0be9bd0bf0c8143483bc4da609a6225b2c47ab64`; lane tip and `origin/master`
+`6024a76874287ea57e691637e8740dce2906376d`. The round repairs the three defect classes the
+round-36 non-author spot-check routed (Routed defects 1, 3, 4 in
+`corpus/lessons/round-36-verifier-spotcheck.md`).
+
+## Work performed
+
+The round declares **three claims on three distinct axes**:
+
+- **C1 calibration (score 7, the lowest non-retired axis)** — every routed self-assessment cell is
+  corrected (in place where it is a current registry cell, append-only where the bytes are frozen)
+  and carries a value its cited receipt actually holds at a commit where that receipt exists.
+  Nine originally-routed cells plus the two `cases=8` selftest-arm cells = eleven register rows
+  (`census/round-37/citation-cells.tsv`) checked by `tools/souji-citation-reconcile.py` with both a
+  citation arm (one anchored line, whole-token expected, receipt named, stale absent) and a receipt
+  arm (a `SUMMARY` line at `receipt_rev` carries the token), the register pinned with
+  `--register-rev`.
+- **C2 operability (score 8)** — the F1 drift tool's write envelope matches its docstring:
+  `--root` containment (`RECORD-OUTSIDE-ROOT`), a whitelisted child git environment with config
+  discovery neutralised, a multi-link/FIFO refusal, and a per-component `O_NOFOLLOW` write of
+  `--json` on the resolved path. `tests/fixtures/r37-drift-escapes.py` reproduces six escapes on
+  the r36 blob and none on the landing.
+- **C3 coverage (score 8)** — six frozen single-defect mutants of the drift tool (the routed
+  `live_repos = len(rows) - unreachable` survivor, a `drift_rows` counter that drops UNRECORDED, an
+  unrecorded-loop failure not counted unreachable, a one-sided REGS-CHANGED, ABSENT reported as
+  UNREACHABLE, and an exit code that ignores drift) all die on named cases of
+  `tests/fixtures/r37-drift-discrimination.py`, measured by `tests/fixtures/r37-drift-mutants.py`.
+
+Work items and evidence pointers:
+
+- C1 counter, register, fixture and corrections: `tools/souji-citation-reconcile.py`,
+  `tests/fixtures/r37-citation-reconcile.py` (`cases=12 pass=12 fail=0
+  control=FALSE-GREEN-REJECTED`, `census/round-37/records/c1-fixture-after.txt`),
+  `SCORECARD.md` `### Round 37 receipt reconciliation` (R37-C1-1..4, R37-C1-10), the two SKILL
+  registry cells and `SKILL.md:247`, `corpus/lessons/round-36.md` (Claims line corrected in place
+  plus a settlement block), and the appended `R37-C1-8`/`R37-C1-9` blocks in the r36 prereg.
+- C2 tool repair and escape fixture: `tools/souji-worktree-drift.py` (`CHILD_ENV` whitelist,
+  `RECORD-OUTSIDE-ROOT`, `JSON-HARDLINKED` fd check, per-component `open_nofollow`, regular-file
+  record guard); `tests/fixtures/r37-drift-escapes.py` (`census/round-37/records/c2-after.txt`).
+- C3 discrimination fixture and mutant battery: `tests/fixtures/r37-drift-discrimination.py`,
+  `tests/fixtures/r37-drift-mutants.py` (`census/round-37/records/c3-after.txt`).
+- Consumer regressions (Q73): `census/round-37/records/consumers-after.txt` — r36 drift fixture
+  `cases=12 pass=12 fail=0 control=STUB-REJECTED`, r36 report-gate fixture `cases=21 pass=21
+  fail=0 control=STUB-REJECTED`, r27 gate `cases=4 pass=4 control=FALSE-GREEN-REJECTED`.
+- F1 live reading kept current: `census/round-37/records/live-run-after.txt`
+  (`record_repos=26 record_regs=27 record_prunable=0 live_repos=22 live_regs=23 live_prunable=1
+  drift_rows=5 unreachable=0`, the four recorded phantom paths still ABSENT).
+- Frontier: `corpus/lessons/round-37.md` (`## Claims`, `## Gate`, `## Mistakes`, `## Named limits`,
+  `## Frontier`), `corpus/SOURCES.md` S236–S238, `corpus/QUALITY.md` Q83–Q85, `LOG.md` round entry.
+- Wave verification and adjudication: `.ufo/waves/round-37/` (spec, dispatch JSON, per-seat
+  reports; that directory is listed in `.gitignore:1`, so the wave evidence is **not** committed —
+  the committed evidence is `census/round-37/records/`).
+
+## Landed changes
+
+| commit | content | LOG anchor |
+|---|---|---|
+| `d5c6498c5f72a63c9df32b26ee143e8d775eebbd` | freeze: prereg, register, three counters/fixtures and their before-control receipts | LOG `Round 37` bullets 1–2 |
+| `e987a27c960baa74c08abe7f7ccbd980d9d88460` | C2 tool repair + C3 discrimination fixture/battery + C1 receipt corrections (9 cells) | LOG `Round 37` bullets 2–5 |
+| `68d38c3828de92bc84b0640a1ee5bf6844806064` | lesson, SOURCES S236–S238, QUALITY Q83–Q85, SCORECARD measurements, LOG | LOG `Round 37` bullets 5–7 |
+| `d30476d25e999d0db93ec2619b44ea7dc221a653` | A1/A2: pinned register, receipt-bound citations, selftest-arm cells; hardlink/parent-swap `open_nofollow`, property env-witness, measured case | LOG `Adjudications` |
+| `047564f84e8843a58e34680727ea41140f541f9a` | whole-row anchors; truncate the `--json` target only after the multi-link check | LOG `Adjudications` |
+| `bb98c6086dac61df66c11064316173526260f514` | after receipts at `047564f`, SCORECARD measured commits | LOG `Adjudications` |
+| `0be9bd0bf0c8143483bc4da609a6225b2c47ab64` | A2.4: refuse a FIFO record instead of blocking; `record-fifo` case; texts | LOG `Adjudications` |
+| `6024a76874287ea57e691637e8740dce2906376d` | after receipts at `0be9bd0` | LOG `Adjudications` |
+
+Every commit is lane identity (`souji-shokunin <souji@shokunin.local>`) through `jj-lane.sh`;
+`git ls-remote origin refs/heads/master` prints `6024a768…` (the lane tip).
+
+## Before → after measurements
+
+Measured at `0be9bd0bf0c8143483bc4da609a6225b2c47ab64` (receipts committed in the following
+commit, `6024a768…`).
+
+| claim | axis | before | after | counting command | measured commit |
+|---|---|---|---|---|---|
+| C1 receipt-citation reconciliation | calibration 7 | `SUMMARY cells=11 mismatches=11`, rc 1 — receipts resolve at the base, no correction line exists; the frozen nine-cell register reads 9 at the base and 3 at the landing (two non-unique anchors + one unnamed receipt), i.e. the frozen instrument could not reach the target (`census/round-37/records/c1-before.txt`) | `SUMMARY cells=11 mismatches=0`, rc 0 (`c1-after.txt`); fixture `cases=12 pass=12 fail=0 control=FALSE-GREEN-REJECTED` (`c1-fixture-after.txt`) | `python3 -B tools/souji-citation-reconcile.py --root /home/vgpnk/Projects/shokunin/souji-shokunin --rev <full40> --register census/round-37/citation-cells.tsv --register-rev <full40>`; fixture `python3 -B tests/fixtures/r37-citation-reconcile.py` | `0be9bd0` |
+| C2 drift-tool write envelope | operability 8 | the r36 tool bytes reproduce six escapes: `cases=9 pass=3 fail=6 base_fail=6`, rc 1 (`c2-before.txt`) | `cases=9 pass=9 fail=0 base_fail=6 control=ESCAPE-REPRODUCED`, rc 0 (`c2-after.txt`); consumers green (`consumers-after.txt`) | `python3 -B tests/fixtures/r37-drift-escapes.py --base-tool <1e771ed blob>`; live `python3 -B tools/souji-worktree-drift.py --root /home/vgpnk/Projects/shokunin --record census/round-35/records/prune-census.tsv --timeout 20` | `0be9bd0` |
+| C3 drift fixture discrimination | coverage 8 | the battery against the r36 fixture blob: `mutants=6 killed=4 survived=2` — the routed `live_repos` survivor and the `drift_rows` mutant pass 12/12 (`c3-before.txt`) | `mutants=6 killed=6 survived=0`, rc 0 (`c3-after.txt`); the r36 fixture stays byte-identical and 12/12 | `python3 -B tests/fixtures/r37-drift-mutants.py --fixture tests/fixtures/r37-drift-discrimination.py` | `0be9bd0` |
+
+Owned score values are unchanged (calibration 7, operability 8, coverage 8): the lane still has no
+reproducible 0–10 mapping from a verdict to a number, so the rows carry the measurements and the
+verdict rather than a number. No axis is harmed: no predicate, counter or record was weakened; the
+r36 fixture files are byte-identical; the r35 census record is left as filed.
+
+## Sources & frontier
+
+SOURCES census before → after: **159 rows, rc 0 → 162 rows, rc 0**
+(`/home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate --root
+/home/vgpnk/Projects/shokunin souji`; receipts `census/round-37/records/census-before.txt` and
+`census-after.txt`). Rows added by tier: **A ×3** — S236 (git(1) `GIT_TRACE_REFS`) and S237 (git(1)
+`GIT_CONFIG_NOSYSTEM`) are `mined`, S238 (git-config(1) `GIT_CONFIG_COUNT`) is `rejected`; each
+carries URL, opened 2026-10-28, recheck `365d`, and a ≤25-word located quote in
+`corpus/lessons/round-37.md` `## Gate` (quotes read from `MANWIDTH=100 man git` in git 2.56.0-1).
+Rows touched old→new: **none**; no existing row's `status`, `recheck` or `used-by` cell changed.
+Frontier rows advanced: **none** — the two admitted rows ground the C2 repair, not new frontier
+ground; no `ground: F<k>` entry changed, so no F row moves. The sourced-claim requirement is met by
+C2, which cites S236/S237. Assimilation: **none** — no `merge/souji/` theme was adopted this round.
+`considerthese/` does not exist in this lane, so no proposal was mined.
+
+## Verification and adjudication (wave 1)
+
+Wave 1 (37 seats) verified all three targets and falsified instrument premises, every one repaired
+under a disclosed tighter-only amendment **before** the final after-data:
+
+- **A1 (C1).** The frozen register carried two non-unique anchors and could read `mismatches=2` at
+  the landing at best; the register was read from the working tree; a bare correction line (no
+  receipt) forged a pass; `receipt` could point at the citation file; matching was substring;
+  `--record`-adjacent none. Repaired: unique anchors, `--register-rev` pins the register, a
+  corrected line must name its receipt, whole-token matching, `SUMMARY`-bound receipt arm, header /
+  unique-id / stale-mandatory register rules, scrubbed git env; the two `cases=8` selftest cells
+  added (C1-10, C1-11) → `cells=11`.
+- **A2 (C2).** A hardlinked `--json` target outside `--root` truncated an in-root file; an ancestor
+  directory swapped after the guard redirected the write; `env-witness` asserted four literals, so
+  a blacklist built from them passed; a fixed-summary stub could pass; a control-free run exited 0.
+  Repaired: `JSON-HARDLINKED` on the opened fd (truncate only after the check), per-component
+  `O_NOFOLLOW` walk, property-level env assertion, `case-measured`, non-zero on a control-free run;
+  A2.4 refuses a FIFO record instead of blocking. Fixture `cases=9`, `base_fail=6`.
+- Every wave-1 finding that the repairs do not close is named in `corpus/lessons/round-37.md`
+  `## Named limits`: `--record X --json X` self-overwrite, a hardlink/parent swap installed after
+  the guard, nested-repository discovery, the `TOTAL` cross-checks and duplicate-row refusal absent
+  from the r37 fixture, the `receipt_rev` arm's non-discrimination (receipts are blob-identical at
+  both revisions), the `42ea92e` measured-commit arm (schema cannot express a commit-only
+  citation), and two pre-existing never-true cites (`SCORECARD.md:40` `cases=16`,
+  `corpus/lessons/round-35.md:8` `cases=5`). These are routed to round 38, status-neutral.
+
+## Trend verdicts
+
+- **expansion: improved** — two mined tier-A sources and one rejected row (census 159 → 162, rc 0),
+  three QUALITY criteria Q83–Q85, one capability row (self-assessment receipt reconciliation), and
+  two new runnable instruments with fixtures; the new discrimination fixture widens the drift
+  tool's killed-mutant surface from 4/6 to 6/6.
+- **quality: improved** — six reproduced write escapes closed on the drift tool (`base_fail=6` to
+  none) with its r36 consumers still green; three instrument forgeries closed in the citation
+  counter; the six frozen mutants die on named cases; the r36 fixture is byte-identical.
+- **discernment: improved** — the routed never-true numbers are reconciled against receipts at a
+  commit where they exist (`mismatches 11 → 0`); wave-1 falsification changed the instruments and
+  the frozen texts disclosedly (A1/A2/A2.4) instead of being absorbed; every unclosed finding is
+  named as a limit rather than claimed fixed.
+
+## SHONEN
+
+- [~] SKILL.md contains real decision tables, error patterns, checklists, cited sources — the SKILL gate registry is updated to the landed rows/fixtures (`SKILL.md` r37 rows, `cases=12`/`cases=9`), with S236/S237 grounded.
+- [~] At least one end-to-end domain task executed and logged in LOG.md — `LOG.md` `## 2026-10-28 — Round 37 attempt 1` plus `Adjudications`, tied to `d5c6498`…`6024a76`.
+- [~] Instructions executable by an agent without oral context — every counting command in this report and `census/round-37/preregistration.txt` runs from the lane root; fixtures are self-contained under `TMPDIR`.
+- [~] No cross-domain bleed (PROVINCE.md still accurate) — the round touches only repo/workspace hygiene (citations, worktree drift, fixture discrimination); no sibling lane was edited; `connector` seat `W1ConnOverlap` scanned sibling round-37 artifacts read-only.
+
+## Waves
+
+Shape: two v1 waves (policy `ufo-wave-policy.json`, band 32–64), validated with
+`ufo-swarm-wave.mjs run`. **Wave 1: 37 seats** — 15 executor, 6 reviewer, 4 critic, 4 scout,
+3 scribe, 2 sentinel, 2 mutation-tester, 1 connector; attack roles 12/37 = 32.4 %. **Wave 2: 32
+seats** — 12 reviewer, 7 critic, 7 mutation-tester, 4 scout, 2 sentinel; attack roles 26/32 =
+81.3 %. Round total 69 seats, inside the 64–128 band. The inline ready marker was written and not
+taken (no dispatcher process for this lane); the contract's dispatch bridge was used instead: one
+`task` call per wave carrying the validator's `taskCall` unchanged (`w1-dispatch.json`,
+`w2-dispatch.json`, `w1-dispatch-fallback.txt`). At filing, wave 1 has **35 of 37** seat reports on
+disk and wave 2 has been dispatched (0 settled); dead seats: **0** reported in wave 1. Wave 2's
+late results, if any, ride into round 38 as errata (the r36 precedent). `.ufo/waves/` is
+`.gitignore:1`, so no wave file is committed; the committed evidence is
+`census/round-37/records/`.
+
+## Stale-lane
+
+Respawn-per-round driver; no other mission of this lane is open. No tools were installed or
+upgraded (pacman stayed paused); certification OFF, K5 HELD, NAMESPACE hold unchanged.
