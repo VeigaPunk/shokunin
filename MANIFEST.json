@@ -30866,6 +30866,53 @@
    "notes": "Digest (watchdog.log mutable): 2026-10-28T12:14:23-03:00 launch souji round=37 pgid=3758298 driver=hyaku-inline attempt=1; 2026-10-28T13:15:38-03:00 complete souji round=37; hyaku-inline attempt=1. Conformance ok: report at the contract path, committed by the lane identity in 10 commits (1f344c9..7c63d1d); SHONEN heading with 4x[~] and pointers; all 11 full-40 and 19 short cited lane hashes exist and are ancestors of master; lane pushed and clean (tip cb443f5 = origin/master, ahead=0, porcelain empty); SHONEN.md unchanged; prompt = templates/round-prompt.md rendered + hyaku section 6 addendum with the five child-lane items, the L2 floor and the 64-128 band (MISSION carries only advisory class buckets, no route-map conflict); waves 37+32 seats under policy waveMin32/waveMax64, wave dirs untracked per .gitignore:1 as disclosed. No axis harmed (SCORECARD +40/-0, LOG +13/-0, QUALITY +8/-0, SOURCES +4/-0; SKILL 7+/4- are stale-value corrections; r36 fixtures byte-identical; amendments tighter-only or reverted-and-disclosed at e6be059). Defects, all status-neutral and routed to r38 (full list in the spotcheck): (1) stale tip claims - report line 76 prints 131ea876 as the lane tip and errata 7/8/closing say a269e72 = origin/master, while the closure tip is cb443f5, a lane commit named in neither the report nor LOG.md; (2) receipt/revision pairing - the report table's C1 after cell quotes fixture cases=12 while c1-fixture-after.txt reads 16/16, and C2/C3 name measured commit 0be9bd0 while their receipts are at 93a10b6/e6be059 (the C2 surface changed after 0be9bd0 at 4c257b7); (3) residual stale counts in sibling cells (SCORECARD C2 before says 'six escapes' against its own escapes=9; LOG C2 says cases=9/base_fail=6 and 'final landing b491596'; QUALITY Q84 cites '4 escapes'; report live reading live_regs=23/drift_rows=5 vs the committed receipt 24/6); (4) corpus/lessons/round-36.md:23 rewritten in place (cases=20 -> 21) under an in-place branch the prereg asserts, against CORPUS.md's new-entry rule; (5) SOURCES S238 teaches cites an untracked wave file (.ufo/waves/round-37/w1/W1ScribeGate.md) and 9812 B where the lesson's Gate says 11365 B; (6) tools/souji-worktree-drift.py docstring exit-2 enumeration not updated with RECORD-OUTSIDE-ROOT/JSON-*; (7) the frozen-register '3 at the landing' needs its revision named (3 at e987a27; 4 non-unique anchors by plain count at 0be9bd0); (8) 2edd8931 commits .ufo/prompts/souji-round-37.md under the lane identity though prompts are integrator-committed. All four SHONEN boxes are [~] with pointers and look checkable by a non-author; promotion is operator-owned - nothing promoted or minted here.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 54,
+   "date": "2026-10-28",
+   "type": "closure-correction",
+   "supersedes": {
+    "round": 54,
+    "type": "closure",
+    "date": "2026-10-28",
+    "entry": 874
+   },
+   "lane": "tameshi",
+   "lane_round": 54,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 54
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-54/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-54-verifier-spotcheck.md@0a2010acd1e92e4e332774050825e21bcfc7e079",
+    "rechecks": "second non-author pass at the re-anchored lane HEAD: C1 re-measured by this pass (frozen counter bytes; --work outside /tmp): base d33053f7 credited=57 lost=7 total=4 PASS=false; C0 59c38109 credited=41 lost=23; deciding c2108100 credited=64 lost=0 rekeyed=7/7 readers=7/7 monitor=8/64 total=0 PASS=true. C2: base total=13 unusable_exit2=3 PASS=false -> deciding unusable_exit2=7 naming=7 empty_ok=7 usable_ok=7 tmp_mkdirs=0 docs=7 note=1 sources=3 total=0 PASS=true. Freeze 10/10 digests, amendments=5 at 077d431e; the 10 frozen paths identical at c2108100. Ledger 591 entries, 23 bound under rekey-r54-99c3bc88d704 with read_rev all 99c3bc88d704, minor_gaps 25 over 12 entries, 0 blocking/wrong, 23/23 sha and start/end equal the sectionized SKILL.md at c0. 46 readers (23 w1 cand=59c38109, 23 w2 cand=99c3bc88) each pin their own section sha, 0 mismatches. no-harm 14 ok/0 RED (evidence-verified); census re-run exit 0, rows 136->139. Lane pushed 0a2010a, ahead=0, tree clean."
+   },
+   "commit": "tameshi-shokunin@0a2010acd1e92e4e332774050825e21bcfc7e079",
+   "closed_at": "2026-10-28T16:25:04Z",
+   "campaign": "hyaku",
+   "notes": "Closure-correction of rounds[874], not a new judgement of the work: the orchestrator re-rendered the closure prompt with lane HEAD after the round = 650987a (the closure's own durability sweep ff2a821 + spot-check 650987a on top of 0263c71e); rounds[874] cited 0263c71e. Statuses and verdicts unchanged; commit/spotcheck pointers moved to this pass's erratum commit 0a2010a. Digest (.ufo/watchdog.log, mutable — copied): 2026-10-28T10:00:09-03:00 launch tameshi round=54 pgid=286442 driver=hyaku-inline attempt=1; 10:00:19 lane-dead-no-report (stopped before any work, round not started); 11:09:15 launch attempt=2 pgid=944049; 12:26:32 complete tameshi round=54; 13:12:28 complete tameshi round=54; hyaku-inline attempt=2. Conformance ok: report fcb8d8db by tameshi identity; 10/10 cited lane commits ancestors of master (branch ref; repo is jj-colocated, git HEAD detached); lane pushed, ahead=0, tree clean; SHONEN one heading with 4x[~]; real report; prompt 3d79eed7 carries the round contract and all five child-lane items, L2 floor 8 matches MISSION.md; wave bands 76 (v2 64-128) + 47 (v1 32-64) = 123 <= 128, attack 21/76=27.6% and 12/47=25.5%. Both claims re-measured true by this non-author pass. Routed defects, all status-neutral: R54.1 false positive-control claim (CONTROLS_B prints CTL_MISMATCH ... 2/3, reported as passing in 4 files); R54.2 three freeze pointers (7883e0e5/fe70474d/097985c1 vs the receipt's 077d431e); R54.3 SCORECARD quotes before total=14 where the receipt prints 13; R54.4 stale c2 digest 49280fe5 vs the pinned 8528ee85; R54.5 finding-count drift (w1 25/26/28; w2 '22 in 9' vs 25 in 12; 'nine sections' vs 12); R54.6 seat files uncommitted at closure (resolved by ff2a821); R54.7 'deletion' is an R100 rename; R54.8 config.yml incident half-recorded (seat text still claims operator authority; lesson silent); R54.9 w1 attack share 26.3% vs 27.6% and staged count 84 vs 81; R54.10 CTL_R53 quoted 'rekeyed=0/30' against controls-a.stdout, which prints 0/7. SHONEN boxes stay [~]; boxes 1 and 3 now look checkable by a non-author against SKILL.md and the cold-read evidence — promotion remains operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
