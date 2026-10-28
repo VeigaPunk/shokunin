@@ -30549,6 +30549,44 @@
    "notes": "Dispatch 2026-10-28T07:42:00-03:00 launch tabi round=41 pgid=3255890 driver=hyaku-inline attempt=1; 08:56:05-03:00 complete attempt=1. Lane filed honest interim report: C1/C2 measured not admitted; 64-seat wave never dispatched (KeyError(taskCall)), no falsification/WAVE-DONE. Defects: D1 corpus/evidence/round41/playwright-egress receipt+witness left untracked (not committed); D2 S146 quote cell not a verbatim substring of source (spliced); D3 wave undispatched, c1-baseline-noop.out empty; D4 quarantine 38-row re-adjudication not done. SHONEN boxes all [~]; not checkable by non-author, nothing to promote.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 35,
+   "date": "2026-10-28",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 35,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 35
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "unprovable",
+    "operability": "unprovable",
+    "coverage": "unprovable"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-35/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-35-verifier-spotcheck.md@0ab5231f2f25d90abc8e7036afc73ce306ea6f36",
+    "rechecks": "C1/C2 no final measurement (unprovable); C3 census independently totaled 26 repos/27 registrations/0 prunable and committed six-leg receipt verified at ancestor revision; source census validator exit 0 with W04 warnings; S231 admit and S229 reject re-opened and agreed."
+   },
+   "commit": "souji-shokunin@01dc784134ac03bf04db280383d0c70c39ac4837",
+   "closed_at": "2026-10-28T12:59:37Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-10-28T07:41:58-03:00 launch souji round=35 pgid=3255231 driver=hyaku-inline attempt=1; 2026-10-28T09:56:56-03:00 complete souji round=35; hyaku-inline attempt=1. Report is substantive, so status ok, but incomplete W1 (40 seats), no W2; C1/C2 unresolved and no admission. Routed defects: report omits required ordered sections, per-box SHONEN lines, trend/source-frontier/stale-lane details; prompt's campaign addendum stale versus run-10 64–128 floor; round lesson lacks per-new-row quote/access evidence; README F1 frontier still open after the new entry. Clean-state defect: lane helper reports ahead=0 but post-tip SCORECARD.md modified and census/round-35/records/prune-census-corrected.tsv untracked; left untouched. Sources census ended souji ok with W04 duplicate-URL warnings.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
