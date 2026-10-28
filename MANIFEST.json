@@ -31894,6 +31894,49 @@
    "notes": "Dispatch/completion digest: 2026-10-28T18:37:47-03:00 launch souji round=41 pgid=3244729 driver=hyaku-inline attempt=1; 2026-10-28T20:36:51-03:00 complete souji round=41; hyaku-inline attempt=1. Admitted: every claim verifies on its frozen counter, no owned axis harmed; scores held calibration 7 / operability 8 / coverage 8 (SCORECARD append-only). Disclosed caveats reproduced: C3 is class-level (lane N14; my mutant total repos != -> > survives), C2 tool hardened after landing (E1; final bytes measured), counters score shape (N1-N16). Conformance defects (status-neutral): C2 tool has no --selftest flag (counter arm is its self-test); landing gate prints 3 pre-existing LG-DANGLING-PTR (README:217, jj-colocation-receipts:148), identical at base; discernment: staged fleet-prune-safety-r28 outcome agreed but lesson states no positive reject reason. Routed to lane next round: R41-D-REJECT-REASON, R41-D-C3-CONDITION, R41-D-C2-SELFTEST, R41-D-LG-DANGLING, plus lane N1-N19. SHONEN boxes all [~]; none fully checkable by a non-author; nothing to promote.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 55,
+   "date": "2026-10-28",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 55,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 55
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved",
+    "freshness": "improved",
+    "depth": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "mado-kbdopts: predict a keyboard's repeat_rate/repeat_delay/numlock from Hyprland config text and join to hyprctl getoption -j (read-only, documented approximation of hyprlang)"
+   ],
+   "report": ".ufo/reports/round-55/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-55-verifier-spotcheck.md@13f0acbe3a15da2d9c08357a576d91dcadc85273",
+    "rechecks": "Re-measured over committed bytes at 63f48dc1: C1 repeat_info/m_repeatRate knowledge files 0->1, knowledge/index 69->70, 38/38 entry quotes found at their pin lines, pins sha256-equal fresh upstream fetches, SOURCES rows 314->319 with only used-by changed on S052/S316-S319; C2 tool absent->present, closure's own fixture runner 18/18 committed + 8/8 hold-out + 24/24 extra, hold-out commitment 1275d7f8... equals the sha frozen at 54dacbd8; C3 grep -c P23 0->6, append-only (38 insertions, 0 deletions), pin else-arm confirms P23. Gate outputs (c1/c2/c3 counters, controls, 460/460 selftest, freeze-order, ledger) evidence-verified from receipts/at-final.txt at d3fc9ac1, not executed. Discernment: S378/S379/S380 admits and numlock-range + K17 rejects all agree after re-opening fresh upstream bytes; census mado ok exit 0."
+   },
+   "commit": "mado-shokunin@63f48dc1b240b707c5ab9d634e2395ab90e1540c",
+   "closed_at": "2026-10-28T23:59:47Z",
+   "campaign": "hyaku",
+   "notes": "driver: 2026-10-28T18:36:01-03:00 launch mado round=55 pgid=2192556 driver=hyaku-inline attempt=1; 2026-10-28T20:54:51-03:00 complete mado round=55; hyaku-inline attempt=1. Registration v2 (5a43d67f, 20:11:17) ruled pre-data: committed before the real entry/counters/tool (first in ebd66fbf 20:16:27), predicate sentences unchanged; it followed w1 attacks. Freeze 54dacbd8 (18:46:52-03) precedes w1 registry createdAt (18:50:15-03): M54 freeze-order defect not repeated. Counters are content-blind (lane-declared, M55-9); claims verified as quote identity plus closure's own pin reads. Tool is an approximation of hyprlang (declared). Routed to mado: (1) round-55.md Gate/census paragraph stale 314->317/317 rows vs 319 (append correction); (2) M55-9 registry-membership/scope check + ordered P23; (3) M55-10/M55-11 kill power and harness sniffing; (4) frozen predicates must be satisfiable as written, run freeze-verify against counter grammar pre-freeze. Status-neutral: helper rewrote freeze commit (disclosed M55-7); hold-out destination named to a builder seat (M55-5, disclosed). SHONEN four boxes appear checkable by a non-author; promotion operator-owned, no [x] written.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
