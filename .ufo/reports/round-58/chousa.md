@@ -69,3 +69,13 @@ Assimilation: none — round-57 quarantine-first hand-check was complete; no `me
 - [~] End-to-end domain task logged — `LOG.md` Round 9 archive verification and round-58 counter/source probes; lane assertion.
 - [~] Instructions executable without oral context — `bash tools/research-gate.sh --selftest` pointer in `SHONEN.md`; not re-run for promotion this round.
 - [~] No cross-domain bleed — `PROVINCE.md` and W1 `R58ReviewScope.md`; lane assertion, no non-author promotion verifier.
+Closure notes (hyaku dispatch digest): `2026-10-27T08:36:10-03:00 launch chousa round=58 pgid=4031258 driver=hyaku-inline attempt=1`; `2026-10-27T13:47:19-03:00 lane-dead-no-report chousa round=58; retry same round (hyaku-inline attempt=1: ChousaR58 aborted: concluded no wave handoff exists (pre-fix L1 prompt); no lane changes)`; `2026-10-27T13:47:21-03:00 launch chousa round=58 pgid=2353943 driver=hyaku-inline attempt=2`; `2026-10-27T15:03:39-03:00 complete chousa round=58; hyaku-inline attempt=2`.
+
+## Closure conformance and routing
+
+- Report is committed by `chousa-shokunin` at fleet commit `3c429f593172788c833b55a40ccb05ee7e81f277`; cited lane commit `c9b08e90c7d37aa772554c3428f2832a44c9bb8c` is an ancestor of `origin/master`. Lane helper state: `ahead=0 behind=0`; porcelain status empty.
+- SHONEN heading has four `[~]` assessment lines, one per box; all are lane assertions.
+- Dispatched prompt embeds the round contract and hyaku addendum (claims, frontier, L2, report, commit/push scope, wave and write-scope rules). Prompt lives in fleet repo; required template contract is present.
+- Routed self-defect: frozen counters were constructed without reachable positive predicates (C1 case mismatch; C2 mutually exclusive offset/rebuild conditions). Next round must freeze a positive control that reaches each final verdict before data and route failure to the counter author for correction. Status-neutral.
+- Lane identity/branch: report author `chousa-shokunin`; branch is `origin/master` (jj-colocated checkout HEAD detached). S101 SOURCE row was reopened from lane capture rather than live origin; quote verified by the re-opened captured text in the spot-check.
+- Claims independently re-measured at committed tree (C1/C2 work receipts and source-row census); no lane-owned gate/selftest is claimed as evidence. No own SHONEN box is marked `[x]`.
