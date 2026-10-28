@@ -11,11 +11,12 @@ from outside), AXES.md, CORPUS.md.
 Inputs:
 - report: `.ufo/reports/round-44/kaidoku.md`; dispatched prompt: `.ufo/prompts/kaidoku-round-44.md`
   (canonical `templates/round-prompt.md` rendering + hyaku addendum §6)
-- lane HEAD before the round: `c29360e3ba5381a5ab69e372d0d9577970f85018`; after: `4503fb7860ac35bd3ba08def65a82a505d7b779b`
+- lane HEAD before the round: `c29360e3ba5381a5ab69e372d0d9577970f85018`; after: `e1724c3228d4936e6337c4f4d22c2ea72a97f4a4`
 - driver dispatch/completion lines (`.ufo/watchdog.log`, mutable — copy this digest into notes):
 2026-10-28T07:42:04-03:00 launch kaidoku round=44 pgid=3257226 driver=hyaku-inline attempt=1
 2026-10-28T11:09:13-03:00 launch kaidoku round=44 pgid=943219 driver=hyaku-inline attempt=2
 2026-10-28T11:37:36-03:00 complete kaidoku round=44; hyaku-inline attempt=2
+2026-10-28T12:13:09-03:00 complete kaidoku round=44; hyaku-inline attempt=2
 
 Duties (you may dispatch up to 8 read-only reviewer/critic `task` seats to parallelize re-checks;
 never pass a model parameter; you write only the two artifacts in steps 4–5):
@@ -29,10 +30,10 @@ never pass a model parameter; you write only the two artifacts in steps 4–5):
    template contract. Marker report (no checkable work/commit) → status `failed`. Defects are named
    in notes, status-neutral. Never run a jj command in the lane except through the helper (even
    `jj log` snapshots state unless it carries `--ignore-working-copy`).
-2. **Claims.** For each declared claim (1–3): re-derive its before→after against `4503fb7860ac35bd3ba08def65a82a505d7b779b` with a
+2. **Claims.** For each declared claim (1–3): re-derive its before→after against `e1724c3228d4936e6337c4f4d22c2ea72a97f4a4` with a
    plain measurement you run yourself (grep/wc/jq/git/census counts over committed bytes) and
    compare with the reported values; check no owned axis was harmed
-   (`git -C /home/vgpnk/Projects/shokunin/kaidoku-shokunin diff c29360e3ba5381a5ab69e372d0d9577970f85018 4503fb7860ac35bd3ba08def65a82a505d7b779b -- SCORECARD.md`, plus spot reads). Where the claim
+   (`git -C /home/vgpnk/Projects/shokunin/kaidoku-shokunin diff c29360e3ba5381a5ab69e372d0d9577970f85018 e1724c3228d4936e6337c4f4d22c2ea72a97f4a4 -- SCORECARD.md`, plus spot reads). Where the claim
    rests on a lane-owned **gate** or selftest, PROTOCOL §Gate standard (Closure consequence) binds:
    verify its committed evidence (self-test tally, frozen-run verdict, revision measured) — never
    execute a sibling's gate — and say which claims were re-measured vs evidence-verified. For an
