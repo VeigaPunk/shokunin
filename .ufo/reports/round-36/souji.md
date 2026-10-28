@@ -183,3 +183,18 @@ and the round's non-author closure has not run yet). One line per box of `SHONEN
 Respawn-per-round driver; no other mission of this lane is open. Age from launch: this round began
 2026-10-28 with the round-36 prompt and is still progressing at filing (commits `42ea92e`, `af7d51a`,
 `007ab53` inside the lane).
+
+---
+
+## Erratum (appended after filing; supersedes nothing above)
+
+- **Wave evidence is not committable in this lane.** `.ufo/waves/` is listed in
+  `souji-shokunin/.gitignore:1`, so `jj-lane.sh commit -- .ufo/waves/round-36` prints
+  `nothing to commit` and `git ls-files .ufo/waves/round-36` prints 0. The specs, dispatch
+  payloads, ready markers and 38 seat reports exist only in the working tree under
+  `/home/vgpnk/Projects/shokunin/souji-shokunin/.ufo/waves/round-36/`. Earlier rounds carry a few
+  tracked files there (round-35: 8), so the ignore line and the tracked legacy disagree; this is
+  reported as a conformance gap, not repaired (`.gitignore` is not this round's write scope).
+- **Final lane tip cited above:** `1e771ed59301ed10f68e22d4edf35d5218bacf1a`, confirmed equal to
+  `git ls-remote origin refs/heads/master` immediately before the report commit
+  `1eb8632a0a7719e8f45061f0f913be391b615c07`.
