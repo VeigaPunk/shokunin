@@ -31494,6 +31494,47 @@
    "notes": "Dispatch/complete digest (copied from mutable watchdog.log): 2026-10-28T15:25:47-03:00 launch kaidoku round=48 pgid=798759 driver=hyaku-inline attempt=1; 2026-10-28T16:53:28-03:00 complete kaidoku round=48; hyaku-inline attempt=1. Status ok: real report committed by kaidoku identity after lane work; lane tip 8847042a is pushed, working tree clean. Rejected-harmed: claims re-measure, but calibration is harmed by corpus/lessons/round-48.md:4 declaring A4/0f06251b as the freeze while SCORECARD/LOG and its own A1–A8 table identify A8/b6f7ca2a. Axis verdicts coverage unchanged (138/138), depth improved (24→25 blocks), calibration harmed (false freeze record). Trends expansion unchanged; quality harmed (S145 anchor names nonexistent section; S146 rejection flip says EX_USAGE grounds exit 2 although EX_USAGE=64, and its reason overstates no locator); discernment improved at binary admit/reject decision level (both decisions agree after reopen), with annotation defects routed. Status-neutral defects routed: report cites nonexistent 663f30ee7516942a0120e7de68fe88356e680822 (actual 663f30ee751694fb0970e7de68fe88356e680822); C1/C2 digest values are stdout with final newline stripped, not raw byte hashes; wave report count is 72/75 with no reports for C1Meaning, C1Battery, ScribeReportNumbers (report says 73 and names C1Battery-2); report omits cross-domain evidence statement and has imprecise LOG pointers. SOURCES defects: S145 locator should be §2 Backdrop (Demarcation is §3); S146 flip/reason and REJECTED/flip row format are wrong; no round-48 search-log or lesson census before→after line. tools/round-48/census2.json per_claims_file map omits tools/round-47/exact.py while equality compares paths only. record2.py imports tools/round-46/gate.py from worktree outside frozen set; currently clean/HEAD-identical but a worktree tamper flips verdict; lane already routed R48-CL1. Wave chronology caveat: A1 wave ran while A2–A8 amendments landed; L1 held planner and no planner role was dispatched; C2Floor cancellation and zero dead seats lack committed settlement evidence. C2 final receipt mtime is 4 seconds later than the report's shared timestamp. No promotions or mints; SHONEN boxes remain [~] and are operator-owned for promotion review.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 50,
+   "date": "2026-10-28",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 50,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 50
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "improved"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-50/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-50-verifier-spotcheck.md@c0ad548a93425a3bf8813d28d92f26fe2f64b9d4",
+    "rechecks": "C1 depth FAIL re-measured: lane counter re-run at 8029cdba from the lane tree -> structural_ok 1, corr_ok 1, quotes_ok 3, verdicts_ok 0, seats_ok 18, marks_ok 0 (GR1 5 holds+1 partly, GR2 2+4, GR3 6 partly, read back from after/c1-final.json); before corr_ok 0 -> after 1; honest FAIL, no mark written. C2 re-measured: counter-regex executable idiom sites 7 (base) -> 0 (8029cdba and tip, census bytes identical); base blob selftest PASS 167/167, tip blob PASS 168/168 incl (R50-C2); check-fd-band-r49 PASS at 168 (cases>=167); sensitivity 19/20 and pass_runs evidence-verified from after/c2-final.json. C3 re-run at tip -> adj_rows 7, linked 7, bare 0, anchors_ok 7, registry_ok 7, checker_rc 0, quote_at_pin_ok 9, live_quote_ok 9, stub_fails 1 PASS; before r49 stub PASS evidence-verified (before/c3-r49-stub.json). No-harm: SCORECARD diff append-only, no ordinal moved; check-self-assessment PASS 27/0; registry coverage 6 missing all pre-existing, none r50. Spot-check 2 admits (S256 man7 grep(1) sha d6f07a7f, quote lines 201-204 verbatim, 16 words; S240 re-open sha 7b3488f2 = pin, only used-by changed) and 4 rejects (GR2 ioctl.c pre-call returns 3072-3078 vs narrowed clause; GR1 cmdline.c:147 ' *<tab>' leader; GR3 scrub.c:439/:1546 outside S237 ranges; staged merge/tsukuroi 147 ids vs lane 256 = 57 collisions) all agree; sources-census validate rc 0, 256 rows, 40 W04."
+   },
+   "commit": "tsukuroi-shokunin@fb5a1d8625f058a8549ff74746ee863596acd245",
+   "closed_at": "2026-10-28T20:25:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-10-28T15:37:50-03:00 launch tsukuroi round=50 pgid=1146466 driver=hyaku-inline attempt=1 | 2026-10-28T16:49:53-03:00 complete tsukuroi round=50; hyaku-inline attempt=1. Step-1: report committed in fleet repo by tsukuroi-shokunin (72c114a5); SHONEN heading with 4 [~] lines; all cited lane commits (43bcce06 8029cdba 39e69493 b7fb30a0 9c5d6b43 fb5a1d86) and base are ancestors of master; jj-lane.sh state ahead=0 behind=0 local=remote=fb5a1d86, porcelain empty; prompt carries the full round contract. Honest stop: C1 depth FAIL on a bound partly (verdicts_ok 0, no admission mark), C2 operability and C3 adjacency PASS with disclosed instrument limits; admitted=false because C1 does not verify, no axis harmed. Trend ruling differs from the report on quality: report says harmed, closure rules unchanged because the over-reaching GR2 ioctl clause is in a pending entry whose Gate status section names it (LEARNING harmed = false/stale and left unmarked); discernment improved on the outside sample (report: unprovable-but-better). Conformance defects (status-neutral): lesson round-50.md 'Admitted / refused' section is a pointer, not content; C2 counter docstring says 6 at base vs measured 7; seven settled seats lack a <seat>.md. Routed to lane: (1) GR2 ioctl clause + by SR7 + S242/S237/S247 range gaps + cmdline.c:147 leader then new cohort; (2) append fill of round-50 lesson Admitted/refused; (3) docstring erratum; (4) registry rows for six long-standing missing tools (r47-r49 counters, fd-band-r49, adjacency-table-r49, score-selftest-tmpdir-r48); (5) red-before controls for C2 liar-census/${out} spelling and C3 override/false OUT-009. SHONEN: box 2 selftest reproduces (168/168); boxes 1,3,4 not examined; no [x] written, promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
