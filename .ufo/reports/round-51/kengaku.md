@@ -190,3 +190,13 @@ swarm lane); the bounded planning data-walk rode the scout/connector items `C1Sc
 (orchestrator-owned), this report, and four strays that predate the round and name no kengaku/round-51
 content (`o.bin`, `oldrep1.out`, `oldrep2.out`, `lane3/`) — another lane's, not touched. No kengaku seat wrote
 into the fleet root; no misroot this round.
+
+---
+
+**Post-filing note (append-only, 2026-10-28):** the orchestrator's wave handoff file
+`.ufo/waves/round-51/w1-results.json` (64 seats, all with output, 0 dead) landed after the report
+commit and is now committed to the lane at `ee6fa47fd7bd5564959a366a25aa066e2428f23d`, which is the
+lane branch tip (`git -C kengaku-shokunin ls-remote origin refs/heads/master`). The report's
+measurements are unaffected: both after-receipts were taken in a clean clone of `11e79380`, and the
+only lane commits after it are wave evidence (`dbf0be6c`, `ee6fa47f`), the after receipts and their
+SCORECARD/LOG lines (`7864296e`).
