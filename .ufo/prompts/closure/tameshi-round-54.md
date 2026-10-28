@@ -11,12 +11,13 @@ from outside), AXES.md, CORPUS.md.
 Inputs:
 - report: `.ufo/reports/round-54/tameshi.md`; dispatched prompt: `.ufo/prompts/tameshi-round-54.md`
   (canonical `templates/round-prompt.md` rendering + hyaku addendum §6)
-- lane HEAD before the round: `abae0a04c885a42ecad53d13dca05770f22cd825`; after: `0263c71ed6ec930603f5e37578ef46e498c96111`
+- lane HEAD before the round: `abae0a04c885a42ecad53d13dca05770f22cd825`; after: `650987a0d6fc285b37f0f9e63a3aae864af9cd5a`
 - driver dispatch/completion lines (`.ufo/watchdog.log`, mutable — copy this digest into notes):
 2026-10-28T10:00:09-03:00 launch tameshi round=54 pgid=286442 driver=hyaku-inline attempt=1
 2026-10-28T10:00:19-03:00 lane-dead-no-report tameshi round=54; retry same round (hyaku-inline attempt=1: TameshiR54 spawned by the closure-slot handoff after the operator wrap-up order; stopped before any work, round not started)
 2026-10-28T11:09:15-03:00 launch tameshi round=54 pgid=944049 driver=hyaku-inline attempt=2
 2026-10-28T12:26:32-03:00 complete tameshi round=54; hyaku-inline attempt=2
+2026-10-28T13:12:28-03:00 complete tameshi round=54; hyaku-inline attempt=2
 
 Duties (you may dispatch up to 8 read-only reviewer/critic `task` seats to parallelize re-checks;
 never pass a model parameter; you write only the two artifacts in steps 4–5):
@@ -30,10 +31,10 @@ never pass a model parameter; you write only the two artifacts in steps 4–5):
    template contract. Marker report (no checkable work/commit) → status `failed`. Defects are named
    in notes, status-neutral. Never run a jj command in the lane except through the helper (even
    `jj log` snapshots state unless it carries `--ignore-working-copy`).
-2. **Claims.** For each declared claim (1–3): re-derive its before→after against `0263c71ed6ec930603f5e37578ef46e498c96111` with a
+2. **Claims.** For each declared claim (1–3): re-derive its before→after against `650987a0d6fc285b37f0f9e63a3aae864af9cd5a` with a
    plain measurement you run yourself (grep/wc/jq/git/census counts over committed bytes) and
    compare with the reported values; check no owned axis was harmed
-   (`git -C /home/vgpnk/Projects/shokunin/tameshi-shokunin diff abae0a04c885a42ecad53d13dca05770f22cd825 0263c71ed6ec930603f5e37578ef46e498c96111 -- SCORECARD.md`, plus spot reads). Where the claim
+   (`git -C /home/vgpnk/Projects/shokunin/tameshi-shokunin diff abae0a04c885a42ecad53d13dca05770f22cd825 650987a0d6fc285b37f0f9e63a3aae864af9cd5a -- SCORECARD.md`, plus spot reads). Where the claim
    rests on a lane-owned **gate** or selftest, PROTOCOL §Gate standard (Closure consequence) binds:
    verify its committed evidence (self-test tally, frozen-run verdict, revision measured) — never
    execute a sibling's gate — and say which claims were re-measured vs evidence-verified. For an
