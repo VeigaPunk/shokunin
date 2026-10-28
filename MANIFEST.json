@@ -30624,6 +30624,44 @@
    "notes": "Dispatch/completion digest: 2026-10-28T07:49:41-03:00 launch kama round=62 pgid=3420538 driver=hyaku-inline attempt=1; 2026-10-28T08:59:38-03:00 lane-dead-no-report kama round=62; retry same round (hyaku-inline attempt=1: KamaR62 stopped on a wrap-up notice before freeze: drafts only (tools/round62-c1/c2 counters uncommitted), no wave, no report); 2026-10-28T08:59:41-03:00 launch kama round=62 pgid=4027846 driver=hyaku-inline attempt=2; 2026-10-28T10:16:26-03:00 complete kama round=62; hyaku-inline attempt=2. Honest-stop rejected: C1 remains provisional pending unsettled falsification wave; C2 frozen predicate false (4 mismatches), sensitivity check vacuous. Routed next-round defects: settle/restate C1 claim with independent falsification evidence; repair C2 sensitivity predicate under new freeze; reconcile 122 untracked lane paths without sweeping unowned data. Lane git status has 122 untracked paths despite pushed tip; status-neutral conformance defect. Prompt/report attribution and cited hashes valid; SOURCES census exit 0 with existing warnings. SHONEN boxes appear checkable but author [~] only; promotion remains operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 44,
+   "date": "2026-10-28",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 44,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 44
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "calibration": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-44/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-44-verifier-spotcheck.md@e1724c3228d4936e6337c4f4d22c2ea72a97f4a4",
+    "rechecks": "C1 rerun at 55bcce69c2f4: exit 1, carriers_matched 4, red = 3 withdrawn doc bindings (province_core_section/row, frontier_note); C2 rerun at 55bcce69: exit 0, 80/80, mismatches [], frozen_path_changed []; both counters exit 2 at tip (8 sweep-committed fixture paths); SCORECARD blob 55bcce69 == tip (af5a3f1a); 17 cited hashes ancestors of refs/heads/main; SOURCES 137->139; census exit 0; S138/S139 admits + quarantine reject re-opened live; QUALITY max id 85 vs cited 86/87; lesson S138 digest false (true 06a72dd5f660c79a)."
+   },
+   "commit": "kaidoku-shokunin@e1724c3228d4936e6337c4f4d22c2ea72a97f4a4",
+   "closed_at": "2026-10-28T17:55:00Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-10-28T07:42:04-03:00 attempt=1 pgid=3257226; 11:09:13-03:00 attempt=2 pgid=943219; complete 11:37:36-03:00 attempt=2. Defects (status-neutral, routed r45): tip freeze violation authored by the fleet non-author lane sweep c86ea508 (author 09:57:16 stop-snapshot, committer 10:43:43, 432 paths, 8 under frozen tools/round-44/control-fixtures/) - sweep-contamination class named; lane worktree holds uncommitted round work at closure (final R44W2LessonGate.md text blob 9f9ac8a5 vs committed e1164575, untracked R44W2Record.md + R44W2Distill.md + artifact dirs) - land deliberately, never sweep-commit blindly; record defects false at committed lesson blob 2e4c22d2: S138 manifest digest 4bc53dbb matches no object (true 06a72dd5...f5fe), QUALITY 86/87 cited (LOG.md:3229, report) but max QUALITY row id 85, round-start census cell wrong (13 W04 baseclone-scoped replay with ERROR line, not 14), R43-CL1..CL4 phantom (only R43-CL1a exists), opened_source_rows over-claim (c1-counter.py:2184 reads SOURCES cells only), S138 top URL never fetched by lane (descendant-listing replay); stale 'unsatisfiable' wording survives in PROVINCE/README/entry after LOG/lesson correction; instrument gaps: B2 substring gate unimplemented (71/80 literal fail), 'later restore does not un-block' unimplemented (C-3 NEW), preflight holes (D-1..D-3/C-6/D13), C2 freeze set narrower than claim (R44-CL7), freeze-tree-scoped observables (R44-CL9), runner binding unimplemented (R44-CL8), no SKILL.md registry rows for round-44 counters. C2 admissible only at 55bcce69. Addendum r42 d0f6d91b / r43 a39e722b sweep instances unverified (hashes unresolved in all 21 lane repos). SHONEN boxes all [~], non-author-checkable - promotion is operator-owned. Wave 2 filed 40/42 on settled request budget; 42/42 reports exist at judging, last two as uncommitted addenda.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
