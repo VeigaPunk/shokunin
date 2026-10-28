@@ -97,10 +97,8 @@ completed the round.
   committed in `c86ea508`). Wave 2: 42 seats attacking the landing and the record, 17
   attack-role seats (reviewer/critic/mutation-tester = 40.5%; round 25/79 = 31.6% on the policy's
   attack set), dispatched 2026-10-28T11:18:59-03 in one `task` call from
-  `.ufo/waves/round-44/w2.ready`; **40 of 42 seat reports had landed at filing** and
-  `r44-w2-results.json` was not yet written — `R44W2Record` and `R44W2Distill` were still running,
-  re-reading a record that moved at `923fa87`; the orchestrator was asked to settle the wave and the
-  late reports are landed under `f370592` when they arrive. Round total 79 seats, no residual call
+  `.ufo/waves/round-44/w2.ready`, WAVE-DONE received; **42/42 settled, 0 dead**, results
+  `.ufo/waves/round-44/r44-w2-results.json`. Round total 79 seats, no residual call
   (`.ufo/waves/round-44/w2/R44W2ScribeSeats.md` §1 re-derives every number from the
   spec/dispatch/registry files).
 - **Wave 2 (falsification).** 42 seats attacked the landing at `55bcce69` and the record, one seat per
@@ -121,9 +119,15 @@ completed the round.
   `R44W2Quality77.md`), the claim's unimplemented runner tree-binding (`R44W2C1Satisfy.md` D-2 /
   R44-CL8), the counter's partial immunity to a projection-matched envelope (`R44W2C1PosArm.md` /
   R44-CL3), the freeze set narrower than the claim (`R44W2C2Freeze.md` F-1..F-3 / R44-CL7), the
-  freeze-tree-scoped observables (`R44W2ConnDefects.md` R45-07 / R44-CL9), and the preflight gate's
-  own blind spots (`R44W2Preflight.md` D-1..D-3). No wave-2 finding overturned either claim verdict at
-  the measured revision.
+  freeze-tree-scoped observables (`R44W2ConnDefects.md` R45-07 / R44-CL9), the preflight gate's own
+  blind spots (`R44W2Preflight.md` D-1..D-3), and C2's bound-edit arm not implementing "a later
+  restore does not un-block" (`R44W2Distill.md` C-3 / R44-CL10). The last two seats also corrected the
+  record: the entry and lesson cited the oracle manifest's digest as `4bc53dbb…` where the committed
+  file hashes `06a72dd5…` (`R44W2Record.md` D-1 — entry corrected in `1eab9950`; the entry is not a
+  frozen path), the QUALITY rows are now table rows 86/87 rather than appended bullets (D-2), the
+  round-start census is 13 W04 warnings (D-3), and two LOG citations were repaired (D-5, D-6). No
+  wave-2 finding overturned either claim verdict at the measured revision (`R44W2Record.md` §2:
+  "reproduces exactly").
 - **Frontier step.** `corpus/SOURCES.md` 137 → 139 rows (S138 unblob `__output__` expected trees,
   tier A dataset; S139 squashfs-tools releases, tier A docs/tool), both opened in-round and both
   cited by the C1 entry; census exit 0 at round start and end; assimilation `none`;
@@ -152,7 +156,8 @@ branch through `jj-lane.sh`:
 - Record corrections (attribution, C1 cause, C2 limits, QUALITY 86/87) and the `SCORECARD.md`
   revert: `923fa87`; wave-2 evidence and the final-tip score receipts: `f370592`; the last wave-2
   artifact: `4503fb78`.
-- Final lane commit: `4503fb7860ac35bd3ba08def65a82a505d7b779b`;
+- Late-seat integration (wave-2 `Record`/`Distill`): `1eab9950`.
+- Final lane commit: `1eab9950cd9e586f6010cdea3e6ab61f0d327ec8`;
   `git -C kaidoku-shokunin ls-remote origin refs/heads/main` returns it.
 
 ## Before → after measurements
@@ -247,12 +252,12 @@ branch through `jj-lane.sh`:
   compatibility claim is made (S139 grounds tool identity only).
 
 **Stale-lane:** progressing — launch `2026-10-28T11:09:13-03:00` (driver `hyaku-inline`,
-`attempt=2` for round 44); lane commits land through `4503fb78`; no other mission of this lane is
-open. **Filing deviation, stated:** wave 1 settled fully (37/37, WAVE-DONE received); wave 2 was
-filed with 40/42 seat reports and **without** its WAVE-DONE, because the run hit its request budget
-while `R44W2Record` and `R44W2Distill` were still re-reading the record as it moved; the orchestrator
-was messaged to settle the wave and the two late reports land as a post-filing addendum. The 40
-landed reports are cited above; no number in this report is derived from the two missing ones.
+`attempt=2` for round 44); lane commits land through `1eab9950`; no other mission of this lane is
+open. Both waves settled before this report: wave 1 37/37, wave 2 42/42 (WAVE-DONE received), 0 dead
+seats, no residual call. One process note: the run hit its request budget while the last two wave-2
+seats still ran, so they were asked to settle and their findings (`R44W2Record.md`,
+`R44W2Distill.md`) were integrated into `1eab9950` before filing; no report number rests on an
+unsettled seat.
 
 **Tooling:** no explicit L1 installation or upgrade and no pacman transaction by the L1 (pacman
 remains paused by the operator guard). Toolchain in use, all pre-existing and re-pinned by wave 2
