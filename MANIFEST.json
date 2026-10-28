@@ -30747,6 +30747,44 @@
    "promotions": [],
    "minted": [],
    "notes": "Correction of rounds[870] (kaidoku r44 closure, commit b1cf525d). Two defects fixed: (1) that row's closed_at 2026-10-28T17:55:00Z was three hours ahead of the commit that shipped it (b1cf525d at 14:55:46Z) and still in the future at correction time - future-dated evidence; (2) its notes kept three items resolved before the closure commit: the two late-seat wave-2 reports (R44W2Record.md, R44W2Distill.md) and the final R44W2LessonGate.md text landed at 1eab9950 (11:54:33), the worktree is clean and ahead=0 at e1724c32, the S138 manifest digest in the lesson now reads the true 06a72dd5...f5fe (lesson blob 7ba94844), and corpus/QUALITY.md rows 86/87 exist at tip as table rows; the 'unsatisfiable' wording is absent from PROVINCE/README/entry at tip. Verdicts unchanged and re-measured, not copied: C1 not met (honest stop; red = the three withdrawn promotion-document bindings, provenance_ok and the counter-time rerun true on all four carriers), C2 met at the admissible revision 55bcce69 and inadmissible at tip under its own freeze rule (8 sweep-committed fixture paths). Remaining open routed defects for round 45: sweep contamination class (non-author sweep c86ea508: 432 paths, 400 A / 32 M, 8 under frozen tools/round-44/control-fixtures/, author 09:57:16 stop-snapshot / committer 10:43:43) needs a dirty-tree preflight arm and placement in the sweep path; S138 top URL never fetched by the lane (descendant-listing replay); opened_source_rows over-claim (c1-counter.py reads SOURCES cells); instrument gaps - B2 substring gate unimplemented (71/80 literal failures), 'a later restore does not un-block' unimplemented, preflight D-1..D-3/C-6/D13, C2 freeze set narrower than the claim (R44-CL7), freeze-tree-scoped observables (R44-CL9), runner tree binding unimplemented (R44-CL8); no SKILL.md registry rows for the round-44 counters. Wave coverage: wave 1 37/37 settled (r44-w1-results.json), wave 2 42/42 settled with 42 seat reports committed (r44-w2-results.json, w2/*.md = 42). Dispatch digest: 2026-10-28T07:42:04-03:00 launch attempt=1 pgid=3257226; 11:09:13-03:00 launch attempt=2 pgid=943219; 11:37:36-03:00 complete attempt=2; 12:13:09-03:00 complete attempt=2. SHONEN all [~]; promotion operator-owned. Addendum r42 d0f6d91b / r43 a39e722b sweep instances remained unresolved in the 21 lane repos. This correction was filed by a fresh non-author closure session after rounds[870]; it does not re-open the round."
+  },
+  {
+   "round": 42,
+   "date": "2026-10-28",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 42,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 42
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:verifiability": "unchanged",
+    "coverage": "improved",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-42/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-42-verifier-spotcheck.md@ad20c02630359b01ca97bf02e21bdec7b4a93d67",
+    "rechecks": "C1 re-executed at Y b2c49ea5 in export mode with a private work dir outside the lane: closed=13/13 exit=0, all 13 J payloads byte-identical to the committed receipt, selftest cases=13 failures=0 with thirteen verdict=pass lines, base 5053a7f4 closed=5/13 exit=1, r41 head 1f746461 closed=4/13 exit=1, plain run exit 2, unresolvable ref prints the distinct ref-not-found red exit 1; J1-J7 replay limbs reject their committed defeats; suite sha256 fca5ae62 identical at J and Y; git diff J..Y is the 33-line receipt only; receipt run-utc 15:12:46Z precedes its containing commit (15:15:28Z). C2 re-measured at Y with the before-column re-derived from a git archive of base: F-rows 24->25, registry 63->66 (S064 mined, S065/S066 rejected), knowledge 60->61, entries citing S064 1, harness entries=28 pass=28 incl PASS F25, binding records=56 bound=56 unbound=0, audit expected=61 missing=0 unexpected=0 exit 0, census exit 0 (W04 S028/S029 only), measure 45/45=1.000, source-recheck S064 Q1-Q4 OK exit 0; junk twin rejected (wave1/ExecControls.md). depth:density guard: density.py sha256 ee803726 identical at base and Y, 0 tracked deletions. Missing wave 2 carried by this seat: 10 tree-level attacks (forged receipt payload/summary/ref, duplicate correction block, density.py edit, escaping declared path, stripped per-correction evidence, F25 status flip) and 2 arm mutants (J1 arm forced true, suite exit arm forced 0) - all killed, no in-family F-EVID/F-TOKEN/F-TABLE/F-DECL/F-SCAN/F-BIND/F-FLIP escape."
+   },
+   "commit": "kasegi-shokunin@b2c49ea5e7bc214e91c2b0bede5d4eaed4968572",
+   "closed_at": "2026-10-28T15:50:12Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-28T07:42:02-03 launch attempt 1; 09:02:14 lane-dead-no-report (attempt 1 cut off with wave 1 still running, no report); 09:02:16 launch attempt 2; 11:09:11 launch attempt 3; 12:22:31 complete (attempt 3). Executed shape: wave 1 kasegi-r42-build 64 seats dispatched (64 results = the 64 wave1-dispatch names, 0 dead; attack roles 21/64 = 32.8% excluding sentinel, 23/64 = 35.9% including it); wave 2 kasegi-r42-falsify 36 seats (31-32 attack roles) rendered and validator-validated with a .ready handoff but NEVER DISPATCHED (no .ready.dispatched marker, no wave2-results.json, zero seats) - round total 64, band floor met, ceiling untouched. Conformance finding (status-neutral): LOG.md:1804 and corpus/lessons/round-42.md:11,16 assert the wave-2 dispatch and a round total of 100 that never happened. Routed defects RD42-1..7 (owner kasegi-shokunin, r43): SCORECARD.md:1634 quotes the pre-repair J11 payload corrections=33 while Y prints corrections=34; the two never-true wave-2 narrative lines; the committed '## Wave-2 falsification' placeholder section; the report/erratum-4 inherited state closed=10/13 + failures=3 at de09313 has no committed transcript (the committed red is d238e36 9/13 + failures=4; the de09313 numbers reproduce); claims.json frozen_at_utc is 65 min after its containing commit (disclosed by erratum 3, real freeze mtime 10:51:52Z) and 0566bd6's author date is inherited from its r41-ancestor parent and predates dispatch (identity is kasegi throughout, committer times inside the window); and the undispatched wave itself. No promotions, no mints; the r42-closure.sh counter and the F25/S064 corpus rows are counters/coverage, not capability rows, matching the lane's SCORECARD. Spot-check commit ad20c026; lane tip b2c49ea5.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
