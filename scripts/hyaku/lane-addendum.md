@@ -11,11 +11,13 @@ which seems the one that works best; make sure to adapt to the 64-128 per round 
 ceiling of 256 | use the same model delegations we were using as before | i want you to use
 m_flash for all roles; only use m_grok for the scout role" — later amended: "m_flash on high
 effort" (alias already :high, unchanged).
-- **Routing: run-11 map** (never pass `model`): every role `@m_flash` except `scout` `@m_grok`.
-  That includes L1 seats (`task`), closures (`main`), planners, executors, scribes, reviewers,
-  critics, connectors, sentinels, revengers, labrats, mutation-testers, simplifiers, sonic,
-  distiller and seance — `task.agentModelOverrides` in `~/.omp/agent/config.yml` is the
-  authority; this line is the label. m_flash is cursor/deepseek-v41-flash-1017:high.
+- **Routing: run-11 map** (never pass `model`): every role `@m_flash` except `scout`
+  `@m_grok` and `task` `@m_zfl` — L1 lane seats and closure judges ride `task`/`main`.
+  That includes planners, executors, scribes, reviewers, critics, connectors, sentinels,
+  revengers, labrats, mutation-testers, simplifiers, sonic, distiller and seance —
+  `task.agentModelOverrides` in `~/.omp/agent/config.yml` is the authority; this line is
+  the label. m_flash is cursor/deepseek-v41-flash-1017:high; m_zfl is zai/glm-5.3-flash:max.
+  (Operator mid-startup amendment: "use m_zfl as task".)
 - **Fresh-start rule applies at run-11 start to mori, souji and tabi** (each blocked at run-10
   end by three rejected closures in a row; the run-start directive lifts streak blocks). Their
   first run-11 round reads the last three rejected closures and spot-checks first and declares
