@@ -140,6 +140,30 @@ is not admission; independent non-author verification remains required.
   the round on an answer; note the open question in the report and route around it.
 ## 6. Campaign addendum — hyaku (百) phases 3–7, operator directives of 2026-10-22/23/25 (binding this round; in-session)
 
+**Run 11 (2026-10-28, binding; supersedes the run-10 routing and goal-file lines below;
+every other run-10/9/8/7 rule, including the 64–128 seat band, the 256 hard ceiling, the
+≥25 % attack share, few-connector-seats, 10-round blocks, clean commits, WAVE-DONE before
+report, and the inline spawn handoff, stays binding).** Operator directive, verbatim: "ok,
+let's continue the training rounds; i want you to do 10 rounds per shokunin, so we can keep
+consistency and not get messy with commits and dispatches; the goal is to reach round 100 on
+each; choose the order you deem best to do so. | /skill:godspeed | we are on the hyaku mode,
+which seems the one that works best; make sure to adapt to the 64-128 per round directive; max
+ceiling of 256 | use the same model delegations we were using as before | i want you to use
+m_flash for all roles; only use m_grok for the scout role" — later amended: "m_flash on high
+effort" (alias already :high, unchanged).
+- **Routing: run-11 map** (never pass `model`): every role `@m_flash` except `scout` `@m_grok`.
+  That includes L1 seats (`task`), closures (`main`), planners, executors, scribes, reviewers,
+  critics, connectors, sentinels, revengers, labrats, mutation-testers, simplifiers, sonic,
+  distiller and seance — `task.agentModelOverrides` in `~/.omp/agent/config.yml` is the
+  authority; this line is the label. m_flash is cursor/deepseek-v41-flash-1017:high.
+- **Fresh-start rule applies at run-11 start to mori, souji and tabi** (each blocked at run-10
+  end by three rejected closures in a row; the run-start directive lifts streak blocks). Their
+  first run-11 round reads the last three rejected closures and spot-checks first and declares
+  only claims a do-nothing control cannot reach (§9). **kagi stays blocked**: operator HOLD
+  (2026-10-21 content-safety refusal; open L0 kagi|round-28) — never dispatched this run.
+- Run state, lane order, blocks and holds: `.scratch/goal-20261028-hyaku-run11.md` under
+  /home/vgpnk/Projects/shokunin.
+
 **Run 10 (2026-10-27, binding; supersedes the run-9 routing, fresh-start and goal-file lines below;
 every other run-9, run-8 and run-7 rule, including the 64–128 band, the 256 ceiling, 10-round blocks,
 clean commits and the inline spawn handoff, stays binding).** Operator directive, verbatim (same text
@@ -280,7 +304,7 @@ Phase-1 directives still bind: "train all shokunins to at least round 100"; "com
 every round done"; "do it inline with multiple swarms of subagents".
 
 You are an in-session **L1 lane subagent** dispatched by the hyaku orchestrator (the operator's
-parent omp session) for exactly ONE steered round: **kaidoku round 44** (attempt 1;
+parent omp session) for exactly ONE steered round: **kaidoku round 44** (attempt 2;
 campaign target: round 100). Your lane's place in the session follows the goal file (lane
 order and blocks: `.scratch/goal-20261025-hyaku-run7.md`); the orchestrator dispatches your lane's
 next round only after this one lands and its non-author closure is written. Work this round only
