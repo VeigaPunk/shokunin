@@ -30508,6 +30508,47 @@
    "notes": "Dispatch digest: 2026-10-27T16:38:05-03:00 launch mori round=59 pgid=2088198 driver=hyaku-inline attempt=1; 2026-10-28T02:30:35-03:00 lane-dead-no-report mori round=59 (MoriR59 exited without freezing/dispatching, counter selftest 21/24 unverified); 2026-10-28T02:30:37-03:00 launch pgid=2268392 attempt=2; 2026-10-28T07:41:41-03:00 complete attempt=2. Report filed by mori-shokunin (fleet 9e9973ed); prompt committed at fleet 2807c6ab; all cited lane commits ancestral; lane pushed ahead=0. C1 verified met (calibration improved); C2 measured met but instrument decertified by verified met-flip counterexamples — unverified by the lane's own honest declaration, agreed by closure; not admitted per all-claims-verify rule (same disposition as r57/r58). Conformance defects routed to r60: dead evidence pointers (c1/c2-entering.txt, controls.txt cited but absent — committed names control-c{1,2}-do-nothing.txt); uncommitted late round work at tip (Mo59Executor40.md, Mo59MutationTester31.md, modified Mo59MutationTester32.md, w1-results.json); report says 3 missing seat reports vs lesson's 5 (Critic29+Reviewer16 are committed); no committed post-data counter receipt at 7b86704d. Instrument-robustness items already in Planned r60 (sentinel tool_ok/containment, expect.txt control, self-graded arms, C2 grammar/span/row-binding/drift arms). SHONEN boxes all [~] asserted with resolvable pointers; promotion remains operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 41,
+   "date": "2026-10-28",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 41,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 41
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unprovable",
+    "depth": "improved",
+    "adjacency": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-41/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-41-verifier-spotcheck.md@34e177959d1b7ce04afb85a001420e02631ce79e",
+    "rechecks": "C2 re-measured (checker exit 0 predicate=true; SOURCES 145->147; baseline checker/entry absent). C1 counter re-run over untracked receipt exit 0, sha256 matches report, producer digests match pins; controls evidence-verified only; baseline evidence tree 0 files, committed HEAD also 0 files (receipt untracked). Spot-check: S147 agree, S146 agree on source/disagree on non-verbatim quote, S171 reject agree (404 vs singular URL 200), C1 non-admission agree. Census tabi ok exit 0."
+   },
+   "commit": "tabi-shokunin@ef41e539c017797bce97001e7c9ed2e8a7666a90",
+   "closed_at": "2026-10-28T12:10:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch 2026-10-28T07:42:00-03:00 launch tabi round=41 pgid=3255890 driver=hyaku-inline attempt=1; 08:56:05-03:00 complete attempt=1. Lane filed honest interim report: C1/C2 measured not admitted; 64-seat wave never dispatched (KeyError(taskCall)), no falsification/WAVE-DONE. Defects: D1 corpus/evidence/round41/playwright-egress receipt+witness left untracked (not committed); D2 S146 quote cell not a verbatim substring of source (spliced); D3 wave undispatched, c1-baseline-noop.out empty; D4 quarantine 38-row re-adjudication not done. SHONEN boxes all [~]; not checkable by non-author, nothing to promote.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
