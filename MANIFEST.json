@@ -31365,6 +31365,53 @@
    "notes": "Dispatch digest: 2026-10-28T13:29:27-03:00 launch kasegi round=43 pgid=3638835 driver=hyaku-inline attempt=1; 2026-10-28T15:14:29-03:00 complete kasegi round=43; hyaku-inline attempt=1. Step-1 conformance: report fdf719a9 committed by kasegi-shokunin <kasegi@shokunin.local>; SHONEN heading present with four [~] lines, no [x]; all 12 cited lane commits exist and are ancestors of master; jj-lane state local=remote=dbd2e106 ahead=0; prompt sections 1-5 match templates/round-prompt.md modulo the lane-name substitution (one hunk) and carry all round-level and five child-lane items; L2 floor >=8 in one batched call matches MISSION.md. Defects, status-neutral: report omits the planner=L1 mapping and the L2-floor/residual record that lane-addendum.md:238 requires; w1-REGISTRY.txt names= is empty while asserting seats=73; final-gates/r42-at-de09313-selftest.txt names no export-ref; final-gates/all-gates.at-Y.txt.tmp (2137 B) is an untracked aborted-write leftover; SHONEN.md lost its final empty line in the 0a24364d restore; the report's SHONEN bullet points at corpus/instruments/README.md where neither new instrument is registered. Routed to round 44: (1) closed=13/19 in SCORECARD.md's round-43 move-log row and claims.json C1 before is not backed by any run of the landed suite at base (draft/stub runs only; committed seats derive 12/19 or 11/19) - append a Correction (round 43) naming it superseded by the per-limb base result; (2) no K-check can see that literal (K18 excludes SCORECARD.md as a quote source, K17 reads only claims-erratum*) - add the erratum paragraph; (3) corpus/lessons/round-43.md L90/L101 call the fix pointer a 29-character prefix where it is 26 (c6ae07c6a541e0e96d0040afb6; full hash c6ae07c6a541e0e96d0040afb62b45dd37711300); (4) record the planner=L1 mapping and L2-floor/residual lines; (5) fix the wave-registry name emitter and the unlabelled selftest transcript, delete the .tmp leftover; (6) restore SHONEN.md's trailing blank line; (7) retarget or land the instruments-README pointer; (8) measure or re-cite the exit-127 token in claims.json C1 before, whose cited control prints exit=2 for ls. Non-author promotion note for the operator: three of four SHONEN boxes are mechanically checkable by a non-author (box 1 density/anchorcheck receipts on byte-unchanged SKILL.md, box 3 documented CLIs with committed exit-0 runs, box 4 byte-unchanged PROVINCE.md plus the sibling-overlap ruling); box 2 cannot be - the package is claimable:false with operator gates open and no submission performed. No promotions, no mints, no edits to lane-authored files.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 39,
+   "date": "2026-10-28",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 39,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 39
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "routed-defect closure counter (r39)",
+    "revision-resolution contract counter (r39)",
+    "record-rule mutation battery (r39)",
+    "revision fixture (r39)",
+    "record-rules fixture (r39)"
+   ],
+   "report": ".ufo/reports/round-39/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-39-verifier-spotcheck.md@be4cb61e84ebcbf05814d3dfe6ba00b6f730f10e",
+    "rechecks": "Step 1: report d21910c authored by souji-shokunin, committer 15:40:44 after lane tip committer 15:39:47 (lands last); SHONEN heading 1 with four [~] lines = four SHONEN boxes, no [x]; all 31 cited hashes resolve and are ancestors of master; jj-lane.sh state ahead=0 local=remote=0242085, porcelain empty; prompt carries the template contract (five round-level items + five child-lane items + hyaku addendum 6); wave 71 seats (attack 26 = 36.6 %) inside the v2 band, manifest.sha256 80/80 OK. Claims re-measured by me over committed bytes, lane counters never executed: C1 16/16 items closed at 0242085 and 16 open at base ed30b7f (do-nothing control cannot reach it), register 6 cells / 0 mismatches with every commit a strict descendant of its receipt_rev (cells=6 mismatches=0 reproduced by running the tool bytes at tip); C2 base tool on a blob --rev rc 1 with 12 findings vs tip rc 2 REFUSAL REV-UNRESOLVED, tip on the tip commit cells=6 mismatches=0 rc 0, fixture r39-citation-rev 8 cases base 4/8 vs tip 8/8, drift docstring class map equals the classes the code raises (EACCES/ELOOP -> RECORD-MISSING, ENOENT/non-regular -> RECORD-MALFORMED), five consumer fixtures green at tip (10/10, 12/12, 12/12, 16/16, 14/14); C3 own mutation run: M11-M14 each killed by the r39 fixture (7 cases, 1 fail) and each survives the r38 fixture (10/10), pristine 7/7. No axis harmed: owned scores unchanged 7/8/8, r36/r37/r38 fixtures byte-identical base->tip, frozen predicates tightened only (A1). Sources census re-run rc 0, rows 170 -> 174, W04 47 -> 48; four gate decisions re-opened live (S247/S250 admit, S248 admit, S249 admit, ast.get_source_segment reject) - all agree."
+   },
+   "commit": "souji-shokunin@0242085909fb6a4ee041c5443d76316ac6d59d4b",
+   "closed_at": "2026-10-28T18:52:29Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log is mutable; this digest is the pointer): 2026-10-28T14:34:25-03:00 launch souji round=39 pgid=686189 driver=hyaku-inline attempt=1; 2026-10-28T15:41:19-03:00 complete souji round=39; hyaku-inline attempt=1. Status ok: real report, 22 round-39 lane commits each tied to the Round 39 LOG entry, receipts under census/round-39/records/, checkable tip. Stale-lane: not stale (respawn-per-round; no other mission of this lane open). Routed defects (status-neutral, lane must fix next round): D1 the 'after' source census is stale by one row - census/round-39/records/census-after.txt reads rows=173 W04=47, measured before S250 landed at e9958ee, while the filed registry has 174 rows and W04=48, so the report's '170 -> 174, W04 47 -> 47' cannot be reproduced from its cited receipt (round-end exit 0 still holds on a re-run); D2 the final-tip re-measure names a revision it did not measure - the report says the three claims were re-read 'at the tip 0242085' but census/round-39/records/final-tip-measure.txt measures 5441045 (values stand: only corpus/lessons/round-39.md and the receipt changed after 5441045); D3 the C1 SUMMARY field commit_distinct=6 counts register rows whose commit differs from receipt_rev, not distinct commit hashes (the register names one hash, a8e6d75); rename or print both. Accepted, not a defect: the wave spec/dispatch/registry are committed as census/round-39/waves/ (80/80 manifest) rather than at the prompt-named .ufo/waves/round-39/ path, and the report names that capture. Promotion note for the operator: SHONEN.md keeps four [~] self-assessments; all four boxes look checkable by a non-author from committed bytes, and this integrator writes no [x] (promotion is operator-owned). No tools installed; pacman stayed paused. No cross-lane scope touched; spotcheck commit be4cb61 landed under the protocol identity with ahead=0.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
