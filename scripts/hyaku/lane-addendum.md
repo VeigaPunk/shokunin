@@ -18,6 +18,11 @@ effort" (alias already :high, unchanged).
   `task.agentModelOverrides` in `~/.omp/agent/config.yml` is the authority; this line is
   the label. m_flash is cursor/deepseek-v41-flash-1017:high; m_zfl is zai/glm-5.3-flash:max.
   (Operator mid-startup amendment: "use m_zfl as task".)
+- **Routing amendment 2 (same run, operator: "swap some m_flash for m_auto"):** the review
+  and coordination seats move to `@m_auto` — reviewer, critic, mutation-tester,
+  security-reviewer, connector, distiller, seance. `task` stays `@m_zfl`, `scout` stays
+  `@m_grok`, executor/labrat/sentinel/simplifier/revenger/sonic/scribe/planner/main stay
+  `@m_flash`. Seats keep the route they captured at spawn.
 - **Fresh-start rule applies at run-11 start to mori, souji and tabi** (each blocked at run-10
   end by three rejected closures in a row; the run-start directive lifts streak blocks). Their
   first run-11 round reads the last three rejected closures and spot-checks first and declares

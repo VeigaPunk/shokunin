@@ -10,8 +10,10 @@ m_grok for the scout role" — plus "m_flash on high effort" (alias already :hig
 
 ## Routing (never pass `model`)
 
-Every role `@m_flash` except `scout` `@m_grok` and `task` `@m_zfl` (L1 seats + closure
-judges; `task.agentModelOverrides` in `~/.omp/agent/config.yml`, applied at run-11 start).
+Every role `@m_flash` except `scout` `@m_grok`, `task` `@m_zfl` (L1 seats + closure
+judges), and the review/coordination seats on `@m_auto` (reviewer, critic, mutation-tester,
+security-reviewer, connector, distiller, seance) — `task.agentModelOverrides` in
+`~/.omp/agent/config.yml`, applied at run-11 start; seats keep the route captured at spawn.
 
 ## Round shape
 
