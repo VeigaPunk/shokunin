@@ -31456,6 +31456,44 @@
    "notes": "Dispatch/complete digest (watchdog.log, mutable — copied verbatim): 2026-10-28T14:56:21-03:00 launch kengaku round=51 pgid=332389 driver=hyaku-inline attempt=1; 2026-10-28T15:47:07-03:00 complete kengaku round=51; hyaku-inline attempt=1. Both claims verify; no axis harmed; admitted. Status-neutral defects routed to lane: (1) no SKILL.md §Gate/probe registry rows for round51_surfaces.py or round51_routing.py (§Gate Delivery — add next round); (2) LOG round-51 says 63/64 seat reports + 1 dead seat while report and committed w1-results.json show 64 entries all with output — reconcile; (3) five frozen C2 predicate survivors stand unfixed by design (amendment A2 promises next-round legs; landed ledger verified clean); (4) SF01 prose-reading disagreement recorded unadjudicated (lesson vacuous row schedules fix). Coverage stays 7 on open L0 kengaku|round-25 — operator ruling would unblock the lowest-axis obligation. SHONEN: all 4 boxes [~] lane-asserted; none is [x]-checkable by a non-author — promotion review is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 48,
+   "date": "2026-10-28",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 48,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 48
+   },
+   "admitted": false,
+   "verdict": "rejected-harmed",
+   "verdicts": {
+    "coverage": "unchanged",
+    "depth": "improved",
+    "calibration": "harmed"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "harmed",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-48/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-48-verifier-spotcheck.md@e4f2cfa5ebff863a4d5d13c040cb0c41be6a40f9",
+    "rechecks": "C1/C2 re-measured against committed freeze b6f7ca2a and rev 33f65a91; both counters exit 0 with receipts reproduced. C1: 24→25 craft blocks, 42 registry rows=42 census paths, 16→0 meaning failures, battery 4/4/0/1/0. C2: mismatches [], corrections 2, quotes_bad [], axis_score_bad [], battery 5/5/0/1/0; before controls reproduced. Sources counts 144→146; census validate exit 0. S145 quote bytes/hash and S146 404/hash re-opened; decisions agree, but S145 locator and S146 rationale/flip disagree with source."
+   },
+   "commit": "kaidoku-shokunin@8847042a140b044dbf335210c965bf7b06b09b4f",
+   "closed_at": "2026-10-28T20:11:41Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (copied from mutable watchdog.log): 2026-10-28T15:25:47-03:00 launch kaidoku round=48 pgid=798759 driver=hyaku-inline attempt=1; 2026-10-28T16:53:28-03:00 complete kaidoku round=48; hyaku-inline attempt=1. Status ok: real report committed by kaidoku identity after lane work; lane tip 8847042a is pushed, working tree clean. Rejected-harmed: claims re-measure, but calibration is harmed by corpus/lessons/round-48.md:4 declaring A4/0f06251b as the freeze while SCORECARD/LOG and its own A1–A8 table identify A8/b6f7ca2a. Axis verdicts coverage unchanged (138/138), depth improved (24→25 blocks), calibration harmed (false freeze record). Trends expansion unchanged; quality harmed (S145 anchor names nonexistent section; S146 rejection flip says EX_USAGE grounds exit 2 although EX_USAGE=64, and its reason overstates no locator); discernment improved at binary admit/reject decision level (both decisions agree after reopen), with annotation defects routed. Status-neutral defects routed: report cites nonexistent 663f30ee7516942a0120e7de68fe88356e680822 (actual 663f30ee751694fb0970e7de68fe88356e680822); C1/C2 digest values are stdout with final newline stripped, not raw byte hashes; wave report count is 72/75 with no reports for C1Meaning, C1Battery, ScribeReportNumbers (report says 73 and names C1Battery-2); report omits cross-domain evidence statement and has imprecise LOG pointers. SOURCES defects: S145 locator should be §2 Backdrop (Demarcation is §3); S146 flip/reason and REJECTED/flip row format are wrong; no round-48 search-log or lesson census before→after line. tools/round-48/census2.json per_claims_file map omits tools/round-47/exact.py while equality compares paths only. record2.py imports tools/round-46/gate.py from worktree outside frozen set; currently clean/HEAD-identical but a worktree tamper flips verdict; lane already routed R48-CL1. Wave chronology caveat: A1 wave ran while A2–A8 amendments landed; L1 held planner and no planner role was dispatched; C2Floor cancellation and zero dead seats lack committed settlement evidence. C2 final receipt mtime is 4 seconds later than the report's shared timestamp. No promotions or mints; SHONEN boxes remain [~] and are operator-owned for promotion review.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
