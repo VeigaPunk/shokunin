@@ -31614,6 +31614,44 @@
    "notes": "Dispatch/complete digest: 2026-10-28T17:40:46-03:00 launch tsukuroi round=51 pgid=946953 driver=hyaku-inline attempt=1; 2026-10-28T18:32:55-03:00 complete tsukuroi round=51; hyaku-inline attempt=1. Report daf5b626 (fleet repo, lane identity) is a real but self-declared INCOMPLETE report: w1 (54 seats) ran, w2 never dispatched, no claim measured at an integrated revision (C1 depth, C2 operability, C3 adjacency all unmeasured), so no claim verifies and admitted=false; status ok because the report names checkable committed work (hashes 2732ee6c, 6d051ef0, 6abef5d0, 91227829 all ancestors of master, ahead=0). No axis harmed. Defects (status-neutral): w2 undispatched and WAVE-DONE w1 not received; lessons/round-51.md (Gate, Mistakes) absent; no LOG.md entry; SCORECARD axes not restated; AMEND1 C2 scorer receipt committed broken; uncommitted lane working-copy files (before/c2-cheats-at-amend1.json modified, w1.ready*, w1/R51MutC2 M3 outputs); one misroot reverted per the report. Routed to lane: resume w2 and measure all three claims at one named revision, commit or discard leftovers, write lesson/LOG/SCORECARD restatement. SHONEN boxes not checkable by a non-author; no promotion indicated.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 40,
+   "date": "2026-10-28",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 40,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 40
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "unprovable-but-better",
+    "operability": "unprovable-but-better",
+    "coverage": "unprovable-but-better"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "unprovable-but-better"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-40/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-40-verifier-spotcheck.md@7eebc183f2685d1ea9b004b4de22c09a8a4035a7",
+    "rechecks": "Re-measured: fixtures r40-c1-evidence 11/11, r40-docstring-joined 9/9 (one-line 6/9), r40-drift-record-branches 8/8 from a git archive of bffcc0f; sources-census validate exit 0 (181 rows, W04=52); S251/S255/S256 quotes re-opened verbatim; GVFS 1.62.0 sha256 matches lane SHA256SUMS. Evidence-verified (counters not executed per Gate standard): c1-before/after-h/control, c2-after-h (legs=7), c3-after-h (killed=4/4, base_killed=0). All 10 cited commits ancestors of master; lane ahead=0, clean."
+   },
+   "commit": "souji-shokunin@bffcc0f660ff36eb8add3f61582748a7af019a5b",
+   "closed_at": "2026-10-28T21:45:00Z",
+   "campaign": "hyaku",
+   "notes": "Watchdog digest: 16:09:48 launch attempt1; 16:31:30 lane-dead-no-report (report_of FAIL); 16:31:32 launch attempt2; 16:34:06 lane-dead-no-report; 16:49:50 launch attempt3; 17:07:22 lane-dead-no-report; 18:33:57 complete souji round=40 hyaku-inline attempt=3. All three frozen claims declared unprovable by the lane (population/pair-set/base-fixture not frozen before scoring; M40-3..M40-13) and gaps confirmed by non-author; honest stop, no axis harmed (SCORECARD diff pure append, scores unchanged). Discernment: admit GVFS agree, reject near-duplicate agree, reject fleet-prune-safety disagree-in-part (lane's 'worktree.c in 9 rows' measures 3 lines/1 row; S160 is a v2.56.0 re-pin of S009). Defects routed: R40-D-PRUNE correction entry + QUALITY criterion; R40-D-C1-BEFORE non-like-for-like register inputs; R40-D-FREEZE preregister item inventory/pair list/base fixture digest; R40-D-TOTAL tool docstring vs runtime TOTAL handling. Conformance notes: attempts 1-2 landed no report; two-v2-wave shape non-canonical (disclosed). SHONEN boxes all [~]; none fully checkable by a non-author.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
