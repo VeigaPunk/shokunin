@@ -172,3 +172,18 @@ Round verdict: **partial** — C1 verified by the frozen counter at the final la
 revision; C2 verified by seat receipts, not by the round's own deciding run; the
 cold-read floor is RED at 46/64 until a re-key lands, and that re-key is the first item
 of round 56.
+
+## Round-56 handoff (re-key arguments, measured)
+
+The re-key's own arguments are not settled either. PIN must be re-derived at bind time
+as the last commit touching any pinned input — that is `4c04c1d33377e5b6a3636199c5fdda197fc670d5`,
+not C0 and not the base: wave seat `T55W3RevengerBinder` measured non-empty input drift
+for both (`corpus/QUALITY.md`, `tools/registry-check.py`, `tools/registry.json`,
+`tools/context-capture.py`). `read_rev` stays C0 (SKILL.md is unchanged C0..HEAD, so the
+readers' `cand`/`section_sha256` still validate). Eleven of the eighteen headings already
+have readers reporting findings, so the allowance file must be `{heading, n}`-shaped with
+its adjudication record. The binder also leaves nine properties unenforced (no PIN
+validity check; heading set, allowance and reader reports read from the working tree;
+first reader wins; "newest" prior entry by lexicographic sha; the ledger reseeded from
+C0's blob, discarding post-C0 entries). Round 56 inherits that list, and the re-key
+remains the round's unpaid debt.
