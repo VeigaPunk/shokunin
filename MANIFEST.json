@@ -31123,6 +31123,44 @@
    "notes": "Dispatch digest (watchdog.log is mutable; this digest is the pointer): 2026-10-28T13:24:13-03:00 launch souji round=38 pgid=3581930 driver=hyaku-inline attempt=1; 2026-10-28T14:21:00-03:00 complete souji round=38; hyaku-inline attempt=1. Report is real, not a marker: three declared claims, 21 lane commits in ca4369a..fcdecaa (12 named in the report), receipts under census/round-38/records and a checkable tip. Admitted: every claim verifies and no axis is harmed; calibration/operability/coverage improved with scores unchanged at 7/8/8 (the lane still has no reproducible 0-10 mapping and says so); expansion unchanged (no knowledge entry, no frontier row moved; registry growth is not expansion), quality improved (three envelope defects closed with a 3-behavioural-failure base arm, record mutants 0/4 -> 4/4 with base_killed=0, own weak source rows superseded, Q84 pointer corrected, Q86-Q88 added), discernment improved (wave 1 falsified four of its own premises A0-A3, wave 2 falsified A1 via A8, M1-M7 mined, and this non-author spot-check agrees 3/3). Conformance defects (status-neutral, routed): R5 the lane committed .ufo/prompts/souji-round-38.md under its own identity (068f75dc), repeating r37 defect 8 while its ledger row 8 claims it did not; R3 the report was filed with 11 of 32 wave-2 reports and no w2-results.json, against the run-9/run-11 file-only-after-WAVE-DONE rule (31 reports on disk at closure, 27 written after the report's author timestamp, W2MutBattery absent); R4 wave specs, dispatches, w1-results.json and all seat reports are gitignored and therefore not durable evidence; R15 9 of 21 round commits are named nowhere in the report and the last Landed-changes row cites the placeholder <integration>. Sixteen routed defects land in souji-shokunin/corpus/lessons/round-38-verifier-spotcheck.md R1-R16; the load-bearing ones are R1 (Sources & frontier says 162->167, A x5, 44 W04; measured 162->170, 8 rows of which 6 mined and 2 rejected, 47 W04, and S246 appears in no lesson byte), R2 ('4 + 0 dead' contradicted by the report's own tables and by the disk), R9 (the frozen prereg's amendment rule was rewritten in place, relaxing tighter-only), R8 (prereg names the superseded a7-counter-fixes.txt and omits the counter-arms fixture), R6 (four of the round's five fixtures have no SKILL.md gate-registry row, so they cannot be graded conformant), R11 (the citation counter never resolves --rev, so a mistyped audited revision yields a verdict instead of exit 2), R12/R13/R14 (stale finality labels, three live stale literals, and the vacuity receipt misdescribing its own substitution), R10 (RECORD-MISSING vs RECORD-MALFORMED docstring/condition mismatch, reproduced by the judge), R7 (a consumer receipt names a deleted scratch path instead of blob 5f0dd45), R16 (r37 defect 4 still owed). No promotions and no mints; all four SHONEN boxes are [~] with resolvable pointers and boxes 2 and 3 now look checkable by a non-author, so promotion is the operator's call. Tool installs: none.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 46,
+   "date": "2026-10-28",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 46,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 46
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "unchanged",
+    "depth": "improved",
+    "calibration": "improved"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-46/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-46-verifier-spotcheck.md@13a9e9e1f7ca3b95f2cc11f24f69d0d92a21a8a5",
+    "rechecks": "Both claims re-measured by me with plain grep/awk/python3 over committed bytes, never by executing the lane gates. C1 at c0112995 vs the pre-landing 50862e4a: craft rule blocks 22 -> 23, block-23 marker 1 occurrence, 13 data rows (4 cells each, exit cells in {0,1,2}), refs 9 (8 line-selected + 1 sha256-pinned interpreter; all 5 cited files present and every range in bounds), pin c4056131 matches tools/round-46/attest.py at 332f4884, 58eb04b6 and tip. C2 at tip: 38 registry rows, same set and order as tools/round-46/census.json 38 paths, every verdict cell binds 0=/1=/2=, 0 empty cells, all 38 present at 58eb04b6 and at tip, thin [] and absent_at_rev [] reproduced. Gate evidence verified, not executed: l1/scores/c1-at-A4.json and c2-at-A4.json (freeze 332f4884, rev 58eb04b6, met_target true, failing [], batteries 9/9/0/1 and 7/7/0/1), selftest banners cases=18 and cases=12. Freeze window 332f4884..c0112995 over tools/round-46 plans/round-46-claims.md is empty. 22 cited lane hashes all exist and are ancestors of main; helper state ahead=0. Round diff 784 files, 75040 insertions, 0 deletions; knowledge files 138 at both ends. S142 page re-fetched byte-identical (375834 bytes, sha256 0a73e33b235368af3021b6dc7dbca11ca4b513157ac651acf548d94e1a5c4a1a) with the exact 19-word quote in the --diff-merges=<format> first-parent entry; standing reject S105 re-opened (sha256 860a6916 matches, no Verneed/Vernaux token); sources-census validate exit 0 with 15 W04."
+   },
+   "commit": "kaidoku-shokunin@c0112995817b4d8caddd86705b08e89bdac99640",
+   "closed_at": "2026-10-28T17:34:12Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-10-28T13:36:07-03:00 launch kaidoku round=46 pgid=3728525 driver=hyaku-inline attempt=1; complete 2026-10-28T14:15:00-03:00 hyaku-inline attempt=1 (copied digest). Round work tip c0112995; spot-check landed on top at 13a9e9e1 (remote verified). Both claims verify and no axis is harmed (round diff 0 deletions; Owned axes table untouched). Report is a real report, not a marker: work, evidence pointers and resolvable commits. Conformance defects, status-neutral, routed as R46-V1..V10: (V1 HIGH) LOG round-46 entry and SCORECARD assert 'wave 1 40 + wave 2 40 = 80 seats, inside the 64-128 band' with per-seat output in {w1,w2}-results.json; wave 2 was never dispatched (40 seats, zero results files) and the report itself says so - append a LOG correction and amend SCORECARD; (V2 HIGH) SCORECARD says the 0425224..tip frozen-path log is empty, but F5 332f4884 modifies attest.py and gate.py - the empty window the claims rest on is 332f4884..58eb04b6; (V3) the report's 'at the freeze: rule_blocks 22, marker 0' before-cell is true only of 50862e4a (the declared freeze 332f4884 already carries block 23; c1-at-F4 at 0425224 also reads 23) - name the revision; (V4) the report's settlement '32 of 40, eight produced nothing, 8 of 32 attack seats' reproduces the parent 22fd0d6b only: at the cited tip 33 top-level reports (34 any), CritBattery and MutC1Checks carry reports at both revisions, attack seats 10 of 34; at closure the worktree shows 39 of 40 and 13/13 attack seats; (V5) the lane repo is dirty at closure and still growing after the driver's complete line (136 untracked files, 130 under round-46, 5 modified tracked, newest seat report 14:31:50) - land deliberately, never sweep; (V6) stale selftest count 16 in SHONEN box 3 and in the attest.py registry row vs 18 in the code and the A4 banner; (V7) four cited receipts absent (ctl-c1-1-v1-profile.json, ctl-c2-1-v1-profile.json, ctl-c2-2-ghost-tool.json, l1/scores/c1-v1-gap.json); (V8) '9 line-selected citations' is 8 selectors plus the pinned interpreter; (V9) the Gate records no reject candidate, so the outside reject check used the standing S105 row; (V10) 'eight untracked files' is unattestable and false at closure. Not routed: the report author date 14:03:24 precedes the lane tip it cites (committer 14:12:20, so lands-last holds). SHONEN: all four boxes look checkable by a non-author on current evidence (box 2 rides the round-42 SquashFS v3 entry in LOG), but promotion is operator-owned and no [x] was written here. No promotion, no mint, no capability row (none demonstrated).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
