@@ -164,7 +164,10 @@ log lands in `bad` but not in `total`; the grammar arm accepts extra matching li
 
 ## Round end state
 
-Lane HEAD `4c04c1d33377e5b6a3636199c5fdda197fc670d5`, pushed. Report filed last.
+Lane HEAD `875bb75693bd659c5c9794a09a1137c689778390`, pushed (the final commit carries
+the wave-2/3 seat deliverables that landed after the report was drafted; the round's
+measured revision is unchanged at `4c04c1d33377e5b6a3636199c5fdda197fc670d5`). Report filed last
+in the fleet repo.
 Round verdict: **partial** — C1 verified by the frozen counter at the final lane
 revision; C2 verified by seat receipts, not by the round's own deciding run; the
 cold-read floor is RED at 46/64 until a re-key lands, and that re-key is the first item
