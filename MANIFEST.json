@@ -30703,6 +30703,50 @@
    "notes": "Digest (watchdog.log mutable): 2026-10-28T11:09:17-03:00 launch souji round=36 pgid=944615 driver=hyaku-inline attempt=1; 2026-10-28T11:50:31-03:00 complete souji round=36; hyaku-inline attempt=1. Conformance ok: SHONEN heading 4x[~] with pointers; all cited lane hashes ancestors of master; lane pushed (tip 1e771ed = origin/master, ahead=0, clean); report commits 1eb8632a + af0b996e lane-identity on fleet origin/master; prompt carries the full contract. Defects (status-neutral, routed to lane for r37; full list with file:line in the spotcheck): (1) stale/false receipt citations — SCORECARD.md:563-564 and capability rows :575-576, SKILL.md:248-249 gate registry, lesson ## Claims (cases=20), prereg:76-80 frozen sentence carry 11/9/8/20 numbers that never lived in any committed receipt (c2-after: 20/20 at 007ab53 and bc9a3bb, 21/21 at 1e771ed; c3-after: 12/12 in both versions); measured-commit cells cite 42ea92e which holds no after receipts. (2) prereg letter: A7 rewrote the C2 target after after-data existed (mitigated by atomic receipt+target landing at 1e771ed; verdict applies the amended targets). (3) drift-tool defects from w2: write escapes (Sentinel07 W1-W4: --json out-of-root overwrite via ../ or absolute record rows, GIT_TRACE_REFS unscrubbed, GIT_CONFIG_* scrub backdoor honouring trace2 targets, open(args.json) vs resolved path symlink swap) contradicting the read-only docstring/claim; Reviewer20 robustness set (byte-equality dedup, no --root containment, oversized int rc1 without SUMMARY, --json==--record rewrite rc0, discover() misses nested repos, prunable counts every stderr line, raw record path in SUMMARY, undocumented # skip); fixture discrimination gaps (Executor23 survivor mutant live_repos=len-unreachable passes 12/12; 4 predicates undiscriminated; MutationTester02 HTML-comment masking unpinned; MutationTester01 forged check-*=PASS+rc0 false-greens the contract verdict; Reviewer31 /dev/zero unbounded read). (4) census/round-36/records/c2-filed-reports.txt frozen receipt diverges on r31/r32 after A3 (predates the fence-aware exact-heading sections rewrite; regenerate with checker revision pinned). (5) prose: report :106 'wave evidence committed with the final landing commit' false (erratum supersedes; .ufo/waves/ gitignored .gitignore:1, 0 tracked r36 files vs 3026 legacy incl. round-35: 8); Landed table omits 5f0dd45 (A6); counting commands carry <landing>/<full40> placeholders; census command cited relative to lane cwd (rc 127, no scripts/ there); S232 quote labelled OPTIONS, actually LIST OUTPUT FORMAT (snapshot :2934); report wave section 'launcher had not yet taken w2.ready at filing' contradicted by marker 11:37:46 -03 before 11:42:24 authoring. Waves: w1 39/39 seat reports on disk; w2 32 spec'd, dispatched marker 11:37:46, 29/32 reports at closure, no results manifests; no round claim cites any w2 seat; stragglers ride r37 reconciliation. Contamination check (kaidoku class): clean — all seven r36 lane commits author=committer=souji-shokunin, committer times 11:17:50-11:49:01 inside the window, all postdate author times; freeze commit author time 10:43:38 = parent's committer time (jj working-copy inheritance, pattern matches prior rounds); no third-party identity, no post-completion lane commits. SHONEN.md untouched (0-line diff); no [x] written; all four boxes remain [~] assertable — promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 44,
+   "date": "2026-10-28",
+   "type": "closure-correction",
+   "lane": "kaidoku",
+   "lane_round": 44,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 44
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "calibration": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-44/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author, second pass)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-44-verifier-spotcheck.md@149133d47aa7e90796f96047afe6d251a3e65b2c",
+    "rechecks": "Independent second-pass rerun at 55bcce69c2f4: C1 exit 1, carriers_matched 4, met_target false, failing [], frozen_path_changed [], bindings_false [province_core_section, province_core_row, frontier_note], counter-time REA projection_ok 4/4; C2 exit 0, 80/80, mismatches [], frozen_path_changed []; both exit 2 at tip e1724c32 with the same 8 sweep-committed control-fixture paths (C2 evaluates 0 entries); command A 137->138 knowledge files, 137->138 mapped, 21/21 rule citations, coverage/depth 10.0; SOURCES 137->139; SCORECARD blob af5a3f1a at both 55bcce69 and tip; census exit 0 (14 W04); claims freeze blob 369a6201; S138 contents/__output__ and S139 tag 4.7.5 re-opened live (agree); assimilation empty, considerthese absent (reject agree); 21 round commits all inside the dispatch window, committer>=author, 20 kaidoku + 1 protocol (verifier)."
+   },
+   "commit": "kaidoku-shokunin@149133d47aa7e90796f96047afe6d251a3e65b2c",
+   "closed_at": "2026-10-28T15:19:19Z",
+   "campaign": "hyaku",
+   "supersedes": {
+    "round": 44,
+    "type": "closure",
+    "date": "2026-10-28",
+    "entry": 870
+   },
+   "promotions": [],
+   "minted": [],
+   "notes": "Correction of rounds[870] (kaidoku r44 closure, commit b1cf525d). Two defects fixed: (1) that row's closed_at 2026-10-28T17:55:00Z was three hours ahead of the commit that shipped it (b1cf525d at 14:55:46Z) and still in the future at correction time - future-dated evidence; (2) its notes kept three items resolved before the closure commit: the two late-seat wave-2 reports (R44W2Record.md, R44W2Distill.md) and the final R44W2LessonGate.md text landed at 1eab9950 (11:54:33), the worktree is clean and ahead=0 at e1724c32, the S138 manifest digest in the lesson now reads the true 06a72dd5...f5fe (lesson blob 7ba94844), and corpus/QUALITY.md rows 86/87 exist at tip as table rows; the 'unsatisfiable' wording is absent from PROVINCE/README/entry at tip. Verdicts unchanged and re-measured, not copied: C1 not met (honest stop; red = the three withdrawn promotion-document bindings, provenance_ok and the counter-time rerun true on all four carriers), C2 met at the admissible revision 55bcce69 and inadmissible at tip under its own freeze rule (8 sweep-committed fixture paths). Remaining open routed defects for round 45: sweep contamination class (non-author sweep c86ea508: 432 paths, 400 A / 32 M, 8 under frozen tools/round-44/control-fixtures/, author 09:57:16 stop-snapshot / committer 10:43:43) needs a dirty-tree preflight arm and placement in the sweep path; S138 top URL never fetched by the lane (descendant-listing replay); opened_source_rows over-claim (c1-counter.py reads SOURCES cells); instrument gaps - B2 substring gate unimplemented (71/80 literal failures), 'a later restore does not un-block' unimplemented, preflight D-1..D-3/C-6/D13, C2 freeze set narrower than the claim (R44-CL7), freeze-tree-scoped observables (R44-CL9), runner tree binding unimplemented (R44-CL8); no SKILL.md registry rows for the round-44 counters. Wave coverage: wave 1 37/37 settled (r44-w1-results.json), wave 2 42/42 settled with 42 seat reports committed (r44-w2-results.json, w2/*.md = 42). Dispatch digest: 2026-10-28T07:42:04-03:00 launch attempt=1 pgid=3257226; 11:09:13-03:00 launch attempt=2 pgid=943219; 11:37:36-03:00 complete attempt=2; 12:13:09-03:00 complete attempt=2. SHONEN all [~]; promotion operator-owned. Addendum r42 d0f6d91b / r43 a39e722b sweep instances remained unresolved in the 21 lane repos. This correction was filed by a fresh non-author closure session after rounds[870]; it does not re-open the round."
   }
  ]
 }
