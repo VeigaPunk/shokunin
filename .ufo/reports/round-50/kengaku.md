@@ -177,3 +177,11 @@ modification in the lane worktree that this round did not author (the lane does 
 `round-*-verifier-spotcheck.md`; the closure/spot-check side does). Per the round contract it was neither edited,
 committed nor reverted by this lane and is named here so the dirty-tree state is attributable. Lane tip remains
 `85102cf560240ff64943f73d4368b9131f15f7e6` with the instrument `850ec790…` and fence `57adce4a…` at HEAD.
+
+**Addendum to the third note (hygiene, `R50SentWaveHygiene` F1/F2).** F1 does not reproduce at the tip: the
+committed `corpus/evidence/round50/c1-receipt.txt` reads `REV 61f6257…`, `TREE dirty=0`, `FENCE … 57adce4a…` — the
+`REV 3dda12f` read was a pre-overwrite snapshot taken at 14:51, before receipt3 was copied in and committed at
+`85102cf`. F2 is real and remediated: lane-cwd counter runs wrote gitignored `__pycache__/` dirs under `plans/`
+(which `TREE dirty=0` cannot see); they were deleted before close and the receipt's own run is a clean-clone run
+(the harness child already runs with `PYTHONDONTWRITEBYTECODE=1`). No seat boundary violation was found in 55
+transcripts.
