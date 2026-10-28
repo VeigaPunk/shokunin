@@ -5,7 +5,7 @@ Lane base `0d974ffcb7dfb70617947531cab2d7e96cd8f9fd`; frozen contract
 `census/round-37/preregistration.txt` (freeze commit `d5c6498c5f72a63c9df32b26ee143e8d775eebbd`,
 amendments A1/A2/A2.4 appended after the wave-1 seats that produced them); measured landing
 `0be9bd0bf0c8143483bc4da609a6225b2c47ab64`; lane tip and `origin/master`
-`fdc6c7be0eebcc6aa0bbfc078345e433b324dd22`. The round repairs the three defect classes the
+`bbefcee6e011d9b4225e057bac346a9f42e0bf68`. The round repairs the three defect classes the
 round-36 non-author spot-check routed (Routed defects 1, 3, 4 in
 `corpus/lessons/round-36-verifier-spotcheck.md`).
 
@@ -69,7 +69,7 @@ Work items and evidence pointers:
 | `bb98c6086dac61df66c11064316173526260f514` | after receipts at `047564f`, SCORECARD measured commits | LOG `Adjudications` |
 | `0be9bd0bf0c8143483bc4da609a6225b2c47ab64` | A2.4: refuse a FIFO record instead of blocking; `record-fifo` case; texts | LOG `Adjudications` |
 | `6024a76874287ea57e691637e8740dce2906376d` | after receipts at `0be9bd0` | LOG `Adjudications` |
-| `fdc6c7be0eebcc6aa0bbfc078345e433b324dd22` | frozen predicate sentences superseded append-only after A1/A2 (wave-1 connector W1ConnOverlap); measured commit named in LOG | LOG `Adjudications` |
+| `bbefcee6e011d9b4225e057bac346a9f42e0bf68` | frozen predicate sentences superseded append-only after A1/A2 (wave-1 connector W1ConnOverlap); measured commit named in LOG | LOG `Adjudications` |
 
 Every commit is lane identity (`souji-shokunin <souji@shokunin.local>`) through `jj-lane.sh`;
 `git ls-remote origin refs/heads/master` prints `131ea876…` (the lane tip).
@@ -82,7 +82,7 @@ commit, `6024a768…`).
 | claim | axis | before | after | counting command | measured commit |
 |---|---|---|---|---|---|
 | C1 receipt-citation reconciliation | calibration 7 | `SUMMARY cells=11 mismatches=11`, rc 1 — receipts resolve at the base, no correction line exists; the frozen nine-cell register reads 9 at the base and 3 at the landing (two non-unique anchors + one unnamed receipt), i.e. the frozen instrument could not reach the target (`census/round-37/records/c1-before.txt`) | `SUMMARY cells=11 mismatches=0`, rc 0 (`c1-after.txt`); fixture `cases=12 pass=12 fail=0 control=FALSE-GREEN-REJECTED` (`c1-fixture-after.txt`) | `python3 -B tools/souji-citation-reconcile.py --root /home/vgpnk/Projects/shokunin/souji-shokunin --rev <full40> --register census/round-37/citation-cells.tsv --register-rev <full40>`; fixture `python3 -B tests/fixtures/r37-citation-reconcile.py` | `0be9bd0` |
-| C2 drift-tool write envelope | operability 8 | the r36 tool bytes reproduce six escapes: `cases=9 pass=3 fail=6 base_fail=6`, rc 1 (`c2-before.txt`) | `cases=9 pass=9 fail=0 base_fail=6 control=ESCAPE-REPRODUCED`, rc 0 (`c2-after.txt`); consumers green (`consumers-after.txt`) | `python3 -B tests/fixtures/r37-drift-escapes.py --base-tool <1e771ed blob>`; live `python3 -B tools/souji-worktree-drift.py --root /home/vgpnk/Projects/shokunin --record census/round-35/records/prune-census.tsv --timeout 20` | `0be9bd0` |
+| C2 drift-tool write envelope | operability 8 | the r36 tool bytes reproduce nine escapes: `cases=12 pass=3 fail=9 base_fail=9 escapes=9`, rc 1 (`c2-before.txt`) | `cases=12 pass=12 fail=0 base_fail=9 escapes=9 control=ESCAPE-REPRODUCED`, rc 0 (`c2-after.txt`); consumers green (`consumers-after.txt`) | `python3 -B tests/fixtures/r37-drift-escapes.py --base-tool <1e771ed blob>`; live `python3 -B tools/souji-worktree-drift.py --root /home/vgpnk/Projects/shokunin --record census/round-35/records/prune-census.tsv --timeout 20` | `0be9bd0` |
 | C3 drift fixture discrimination | coverage 8 | the battery against the r36 fixture blob: `mutants=6 killed=4 survived=2` — the routed `live_repos` survivor and the `drift_rows` mutant pass 12/12 (`c3-before.txt`) | `mutants=6 killed=6 survived=0`, rc 0 (`c3-after.txt`); the r36 fixture stays byte-identical and 12/12 | `python3 -B tests/fixtures/r37-drift-mutants.py --fixture tests/fixtures/r37-drift-discrimination.py` | `0be9bd0` |
 
 Owned score values are unchanged (calibration 7, operability 8, coverage 8): the lane still has no
@@ -179,14 +179,14 @@ repairs: the FROZEN PREDICATE SENTENCE block in `census/round-37/preregistration
 `cells=9` and `cases=6 … base_fail>=3` after A1.3/A2.3/A2.4 had moved the in-force targets to
 `cells=11` and `cases=9 … base_fail=6`. The sentences are now superseded **append-only** in the
 same file (block after the frozen sentence, naming `0be9bd0bf0c8143483bc4da609a6225b2c47ab64`),
-committed at `fdc6c7be0eebcc6aa0bbfc078345e433b324dd22`, and `LOG.md` names that commit. No
+committed at `bbefcee6e011d9b4225e057bac346a9f42e0bf68`, and `LOG.md` names that commit. No
 target, receipt or stale cell changed; the measured landing is unchanged. At erratum time wave 1
 has 36 of 37 seat reports on disk and wave 2 remains unsettled.
 
 ### Erratum 2 (2026-10-28, after wave-2 receipts)
 
 Wave-2 seats found the round re-committing the class it repairs in its own text. Fixed at
-`fdc6c7be0eebcc6aa0bbfc078345e433b324dd22`:
+`bbefcee6e011d9b4225e057bac346a9f42e0bf68`:
 
 - `SCORECARD.md` and `corpus/lessons/round-37.md` quoted `cells=11 mismatches=9`; the receipt reads
   `mismatches=11` (`c1-before.txt`). The capability row quoted `cells=9` / the 7-case fixture; it
@@ -231,3 +231,30 @@ and S236's scope now records that the trace output target is what makes the esca
 (`W2RevSource236`). Before receipts were regenerated with the final instruments at `8edcb04`
 (C1 `cells=11 mismatches=11`, C2 `cases=9 pass=3 fail=6 base_fail=6`); the measured landing, the
 targets and the kill rules did not change.
+
+### Erratum 4 (2026-10-28, final receipt set)
+
+Wave-2 found two live escapes on the landing tool and two forged-control paths. Fixed at
+`4c257b7`/`e6be059` and re-measured at `bbefcee6e011d9b4225e057bac346a9f42e0bf68`:
+
+- **A2.7** — the `--json` guard now also covers the gitdir each row resolves to
+  (`rev-parse --absolute-git-dir`), refuses a row whose gitdir is outside `--root`, and skips
+  symlinked discovery children. Cases `json-gitfile-write`, `json-symlink-child`,
+  `record-symlink` added (a gitfile row and a symlinked row previously truncated an out-of-root
+  repository at rc 0).
+- **A2.5 (final)** — the control binds observed escape artifacts (`escapes>=6`) as well as the case
+  floor (`base_fail>=8`); a stub that merely errors prints `control=ESCAPE-NOT-REPRODUCED`, rc 1.
+  Final fixture: `cases=12 pass=12 fail=0 base_fail=9 escapes=9`.
+- **A2.6 reverted** — a register-containment check broke the fixture's sibling registers (16 cases,
+  10 failures); the cheap register-substitution cheat is closed by `--register-rev` in every
+  command string, and the register-as-input semantics are named as a limit.
+- Receipt monotonicity: the receipt set was rewritten across revisions (C2 6→8→9→12 cases; C1
+  fixture 12→16). The final set is the one at `bbefcee`; readers at intermediate revisions see
+  receipts that match neither that revision nor the final rows. Disclosed, not repaired
+  retroactively.
+- Still routed to r38 (status-neutral): report-contract checker's stale-lane **line** arm
+  (`W2MutReportGate` P1); the C3 battery has no pristine-fixture control and conflates a crashing
+  fixture with a kill unless the SUMMARY gate is kept (`W2MutBattery`); the `receipt_rev` arm is
+  non-discriminated; the `TOTAL` cross-checks and duplicate-row refusal are absent from the r37
+  discrimination fixture; nested-repository discovery; `--record X --json X` self-overwrite; and
+  the `--json` FIFO hang at the landing blob (fixed for records only, post-landing).
