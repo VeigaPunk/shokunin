@@ -31412,6 +31412,50 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log is mutable; this digest is the pointer): 2026-10-28T14:34:25-03:00 launch souji round=39 pgid=686189 driver=hyaku-inline attempt=1; 2026-10-28T15:41:19-03:00 complete souji round=39; hyaku-inline attempt=1. Status ok: real report, 22 round-39 lane commits each tied to the Round 39 LOG entry, receipts under census/round-39/records/, checkable tip. Stale-lane: not stale (respawn-per-round; no other mission of this lane open). Routed defects (status-neutral, lane must fix next round): D1 the 'after' source census is stale by one row - census/round-39/records/census-after.txt reads rows=173 W04=47, measured before S250 landed at e9958ee, while the filed registry has 174 rows and W04=48, so the report's '170 -> 174, W04 47 -> 47' cannot be reproduced from its cited receipt (round-end exit 0 still holds on a re-run); D2 the final-tip re-measure names a revision it did not measure - the report says the three claims were re-read 'at the tip 0242085' but census/round-39/records/final-tip-measure.txt measures 5441045 (values stand: only corpus/lessons/round-39.md and the receipt changed after 5441045); D3 the C1 SUMMARY field commit_distinct=6 counts register rows whose commit differs from receipt_rev, not distinct commit hashes (the register names one hash, a8e6d75); rename or print both. Accepted, not a defect: the wave spec/dispatch/registry are committed as census/round-39/waves/ (80/80 manifest) rather than at the prompt-named .ufo/waves/round-39/ path, and the report names that capture. Promotion note for the operator: SHONEN.md keeps four [~] self-assessments; all four boxes look checkable by a non-author from committed bytes, and this integrator writes no [x] (promotion is operator-owned). No tools installed; pacman stayed paused. No cross-lane scope touched; spotcheck commit be4cb61 landed under the protocol identity with ahead=0.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 51,
+   "date": "2026-10-28",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 51,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 51
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "freshness": "improved",
+    "adjacency": "improved",
+    "coverage": "unchanged",
+    "novelty": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "calibration": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "surface-truth-manifest-counter — `python3 plans/round51_surfaces.py --lane .` decides whether every surface PROVINCE.md declares still resolves, whether an absent one carries a dated verdict, whether a declared count matches disk, and whether the resolved set fell below a recorded floor; first working round 51"
+   ],
+   "report": ".ufo/reports/round-51/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-51-verifier-spotcheck.md@30801b479e3418c11089b8586178b6960216f364",
+    "rechecks": "Step 1: report d8f3e7c2+91ff9b35 authored by kengaku-shokunin; SHONEN heading + 4 [~] lines = 4 boxes; all 8 cited hashes exist and are ancestors of master; jj-lane.sh state ahead=0 behind=0, remote verified (ee6fa47f at review); prompt carries full template contract + hyaku §6 addendum. R51-C1 re-measured at ee6fa47f by plain counts: manifest 20 entries {present:14,absent:6}, floor 13; PROVINCE 10+10 rows; all 6 absent rows carry dated ABSENT markers; own probes agree (6 paths absent, no :34113 listener; :8791/:45669/:1234 LISTEN, LFM3-1.7B/llamacpp live); SOURCES 171 rows 0 malformed. Committed evidence verified: c1-before (REV 297e1792, PREDICATE fail), c1-after (REV 11e79380, PREDICATE pass), 4 control receipts fail, selftest cases=9 failures=0 recorded, counter untouched since freeze e07f131c. R51-C2 re-measured: ledger 75 rows, ids unique, owner+disposition+check+source non-empty 75/75; owners kengaku71/kama2/protocol1/unowned:integrator1; dispositions fixed-verified41/accepted-risk28/routed4/refused2; 4 routed rows non-kengaku owner + next; VERIFIED ran=41 passed=41 is committed gate evidence (c2-after, REV 11e79380) per §Gate standard; survivor-free assertions verified (no tautology check, no fixed-verified on open row, no directory source, all closed rows have close ref). SCORECARD diff purely additive; no axis harmed; coverage 7 held on open L0 kengaku|round-25. Census: sources-census.sh validate kengaku exit 0, 171 rows, malformed=0; 15 pre-existing W04 duplicate-URL warnings, none round-51. Spot-check: S178 admit AGREES (fetched sha256 fb4ab6f2 identical, :1163 quote verbatim ≤25 words); HF models-commits reject AGREES (HTTP 404 re-opened); S178 row well-formed, used-by resolves to knowledge entry with provenance trio."
+   },
+   "commit": "kengaku-shokunin@30801b479e3418c11089b8586178b6960216f364",
+   "closed_at": "2026-10-28T18:54:13Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (watchdog.log, mutable — copied verbatim): 2026-10-28T14:56:21-03:00 launch kengaku round=51 pgid=332389 driver=hyaku-inline attempt=1; 2026-10-28T15:47:07-03:00 complete kengaku round=51; hyaku-inline attempt=1. Both claims verify; no axis harmed; admitted. Status-neutral defects routed to lane: (1) no SKILL.md §Gate/probe registry rows for round51_surfaces.py or round51_routing.py (§Gate Delivery — add next round); (2) LOG round-51 says 63/64 seat reports + 1 dead seat while report and committed w1-results.json show 64 entries all with output — reconcile; (3) five frozen C2 predicate survivors stand unfixed by design (amendment A2 promises next-round legs; landed ledger verified clean); (4) SF01 prose-reading disagreement recorded unadjudicated (lesson vacuous row schedules fix). Coverage stays 7 on open L0 kengaku|round-25 — operator ruling would unblock the lowest-axis obligation. SHONEN: all 4 boxes [~] lane-asserted; none is [x]-checkable by a non-author — promotion review is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
