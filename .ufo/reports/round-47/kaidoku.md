@@ -3,6 +3,9 @@
 Lane `kaidoku`, round 47, attempt 1. Lane repo `/home/vgpnk/Projects/shokunin/kaidoku-shokunin`,
 base `13a9e9e1f7ca3b95f2cc11f24f69d0d92a21a8a5`.
 
+Lane tip at filing: `242e8b973b28c10953e59688626e9092db89031a`
+(`git ls-remote origin refs/heads/main`).
+
 **Declared claims (2, both landed and measured).**
 
 | claim | axis | surface | verdict |
@@ -58,6 +61,8 @@ base `13a9e9e1f7ca3b95f2cc11f24f69d0d92a21a8a5`.
 | block 24, the corrections section, the axis heads, S143 | landing bullet | `e856beb5` |
 | SCORECARD round section, LOG entry, lesson + Gate, QUALITY 78, S144, receipts | record bullet | `caafeffa`, `a631bba0`, `31b092d1` |
 | the knowledge citation that repairs the proxy harm | M47-6 bullet | `04469ee8` |
+| wave-1 seat reports (74 of 75 seats) and R47-CL15 | wave bullet | `242e8b97` |
+| final receipts at the tip | measurements bullet | `b1a058f3` |
 
 ## Before → after measurements
 
