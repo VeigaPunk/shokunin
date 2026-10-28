@@ -125,7 +125,7 @@ proposal mined by `R49ScoutConsider`; no QUALITY criterion landed from it this r
 
 ## SHONEN
 
-- [~] SKILL.md contains real decision tables, error patterns, checklists, cited sources — `SKILL.md:4556-4582` adds
+- [~] SKILL.md contains real decision tables, error patterns, checklists, cited sources — `SKILL.md:4548-4572` adds
   the round-49 scrub-cohort section (hashes, cohort, the named GR2 defect, the counter's forgery limit) and the
   census descriptor-band section; every claim there points at `corpus/lessons/round-49.md`,
   `.ufo/waves/round-49/{frozen,after}/` or `tools/check-*.py`. Non-author verification of the whole SKILL remains
