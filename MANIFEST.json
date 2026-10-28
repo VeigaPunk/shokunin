@@ -31851,6 +31851,49 @@
    "notes": "Dispatch/completion digest: 2026-10-28T18:36:06-03:00 launch kama round=63 pgid=2237173 driver=hyaku-inline attempt=1; 2026-10-28T20:32:14-03:00 complete kama round=63; hyaku-inline attempt=1. Honest-stop: C1 falsified by the round's own wave (MT15, lane agrees), C2 met on its frozen predicate without shown discrimination; no axis harmed, scores held operability 8 / calibration 7; capability live-completion-request-plane correctly not entered. Conformance defects (status-neutral): report author date predates lane tip but committer date follows it; freeze amendment 1 disclosed pre-wave; considerthese file not re-opened. Routed to lane next round: (1) C1 counter binds answering process (/proc/pid/exe, argv, counter-owned hold window, load witness helper from counter tree or pin sha, replay round-63 forgeries); (2) SCORECARD calibration row stale latest-outside-closure pointer (round-57 vs closures through 62) and reconciler must fail on it; (3) C2 counter controls for reconciler conjunct and quote floor, pin tools by sha or planted regression, accept idle context-capacity outcome, refuse reused --work; (4) extend tools/shortcut-tally.py to rounds 56-63 format; (5) KR06 completion_fingerprint 9-40 hex bound not source-backed. SHONEN boxes not fully checkable by a non-author (SKILL.md unchanged, end-to-end outcome falsified); no promotion proposed.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 41,
+   "date": "2026-10-28",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 41,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 41
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "coverage": "improved"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "freeze check (tools/souji-freeze-check.py)",
+    "refusal-site battery (tests/fixtures/r41-refusal-sites.py)",
+    "record-order fixture (tests/fixtures/r41-drift-record-order.py)",
+    "corrections counter (census/round-41/c1-counter.py)"
+   ],
+   "report": ".ufo/reports/round-41/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-41-verifier-spotcheck.md@bf618f6c5c09d302994871c94903abbea2deb60d",
+    "rechecks": "Re-measured at tip 0c9581a (run by integrator): c1 items=3 mismatched=3 corrected=3 uncorrected=0 junk=0 rewritten=0 sourced=1; c2 cases=21 pass=21 fail=0 control_clean=REJECTED control_findings=REJECTED real=ok retro=red; c3 sites=19 probes=21 pristine=ok killed=19 survived=0 misattributed=0 docclasses=10; r1 mutants=11 killed=11 survived=0 regress=8/8 new_killed=3/3 prior=6/6. Before arms at base 7eebc18: c1 items table absent, c2 tool absent pass=0/21, c3 fixture absent, r1 pinned tool sha differs. C1 values re-derived by hand at bffcc0f (rows=2, v2.56.0=0; register_cells 6 vs 3; occurrences=0). Frozen counters/populations/tool digests equal the preregistration; freeze e2a7431 precedes wave files. C2 tool attacked in scratch clone (digest flips and post-freeze edit detected). C3 fixture: my condition mutants 2 of 3 killed, one survives (lane limit N14). S258 re-fetched from upstream: sha256 af2bd523…, quote verbatim at :255; sources-census validate exit 0 (182 rows, W04=52). 15 of 15 cited lane commits ancestors of master; lane ahead=0, clean. Evidence-verified only: controls/*.txt, tip-remeasure.txt."
+   },
+   "commit": "souji-shokunin@0c9581a44a2eaa7350b4699e64dcdfbe07fec0d5",
+   "closed_at": "2026-10-28T23:42:58Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/completion digest: 2026-10-28T18:37:47-03:00 launch souji round=41 pgid=3244729 driver=hyaku-inline attempt=1; 2026-10-28T20:36:51-03:00 complete souji round=41; hyaku-inline attempt=1. Admitted: every claim verifies on its frozen counter, no owned axis harmed; scores held calibration 7 / operability 8 / coverage 8 (SCORECARD append-only). Disclosed caveats reproduced: C3 is class-level (lane N14; my mutant total repos != -> > survives), C2 tool hardened after landing (E1; final bytes measured), counters score shape (N1-N16). Conformance defects (status-neutral): C2 tool has no --selftest flag (counter arm is its self-test); landing gate prints 3 pre-existing LG-DANGLING-PTR (README:217, jj-colocation-receipts:148), identical at base; discernment: staged fleet-prune-safety-r28 outcome agreed but lesson states no positive reject reason. Routed to lane next round: R41-D-REJECT-REASON, R41-D-C3-CONDITION, R41-D-C2-SELFTEST, R41-D-LG-DANGLING, plus lane N1-N19. SHONEN boxes all [~]; none fully checkable by a non-author; nothing to promote.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
