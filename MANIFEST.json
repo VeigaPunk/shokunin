@@ -31036,6 +31036,47 @@
    "notes": "dispatch 2026-10-28T12:20:58-03:00 launch kaidoku round=45 pgid=381845 driver=hyaku-inline attempt=1; complete 2026-10-28T13:27:53-03:00 hyaku-inline attempt=1 (copied digest). Lane tip at closure 9ae76e259e2f010ad1813a247571f3daab85f2e0 (prompt's after-hash 99fdb9e4 is one commit behind: the wave-2 results ledger landed at 9ae76e25 and report commit dd7e0d8e cites it). Both claims re-measured by me and met: R45-C1 depth rule_blocks 21->22, block22 rows 0->10 (exit cells all in {0,1,2}), refs 0->8 all resolving, S140/S141/interpreter cited, interpreter selftest 11 cases/0 failures, red on c86ea508 (8 touched paths) and clean on f762b727..f59565b7; R45-C2 calibration unregistered 6->0, thin [], scope_size 6, six rows with exact backticked first cells and 0/1/2 verdict maps. Do-nothing controls reproduce (c1/c2 exit 1 at the freeze, c2 exit 2 at the base); committed score receipts match. Instruments are non-discriminating by construction (R45-CL13/14) and the counters' freeze arm is merge-blind (R45-CL6, HIGH) - admission rests on the landed bytes, not on the proxies. Conformance: report filed by the lane identity (a7cc3c66/469fd6fd/dd7e0d8e), SHONEN heading with one [~] line per box, 23 cited commits all ancestors of refs/heads/main, push ahead=0, freeze unbroken (0 frozen paths changed), prompt embeds templates/round-prompt.md verbatim through section 5 plus the hyaku addendum section 6, L2 floor met inside one batched taskCall (40 then 36 seats). DEFECTS (status-neutral): (1) uncommitted round work in the lane worktree at closure - 2 modified + 6 untracked paths under .ufo/waves/round-45/ (mtimes 12:38-13:27), the pre-sweep state M45-1 is about; do not blind-sweep; (2) lane committed a fleet-root file outside its write scope (.ufo/prompts/kaidoku-round-45.md, commit f5f86bb8); (3) SCORECARD.md:3527 still reads 'wave 2: 32 seats' while the committed ledger has 36 - the R45-CL21 correction did not sweep this mention; (4) the report is internally inconsistent on wave-2 seats (34 at lines 239-240 vs 36 at line 296) and says R45W2Distill produced no artefact although its report is committed at 99fdb9e4; (5) NEW: the blob and restored arms have no failing selftest case - deleting either arm leaves 11/0 green, so A3's 'arm-covering but not arm-isolating' is wrong for them and the report's 'a red case per arm' is false; (6) M45-2's captured-by is none yet corpus/QUALITY.md is byte-unchanged, contrary to LEARNING step 3. Routed to the lane as D1-D8 in corpus/lessons/round-45-verifier-spotcheck.md. Discernment spot-check: agree on the S140 and S141 admits (both pages fetched byte-identical to the recorded sha256/byte counts, quotes located and <=25 words) and on the S150 reject (174,088 B page, quoted heading and ヒント absent). Census 139->141 rows, exit 0, 14 W04 at both ends. SHONEN marks stay [~]; promotion is operator-owned, and while boxes 1 and 4 are checkable by a non-author from this artifact, box 2 (end-to-end domain task) still rests on the round-42 SquashFS work.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 60,
+   "date": "2026-10-28",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 60,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 60
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "improved",
+    "depth": "unprovable",
+    "operability": "unprovable",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-60/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-60-verifier-spotcheck.md@325f7e639916fcbc77fa2ec7475951a1b86bb1cb",
+    "rechecks": "C1 re-derived over committed bytes (dead names 2->0, absent-set 5/5 vs git cat-file -e, lesson supersedes, receipts evidence-verified not executed); C2/C3 evidence-verified (13 hostile trees, at-freeze receipts, 64/64 wave, decertification seats) with no lane gate executed; SCORECARD diff +42/-2 pointer-only, no score cell moved; census 333->337 exit 0; spot-check 3 admits + 1 reject agree"
+   },
+   "commit": "mori-shokunin@6752eafdf0e2bc07052e3e8ab922bd22ea5dfe25",
+   "closed_at": "2026-10-28T17:01:51Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch 2026-10-28T11:57:13-03:00 launch mori round=60 pgid=3002565 driver=hyaku-inline attempt=1; complete 2026-10-28T13:52:38-03:00; hyaku-inline attempt=1. Step-1 conformance ok: report by lane identity mori-shokunin <mori@shokunin.local> (fleet eeedfd53), SHONEN heading 4/4 boxes all [~], all 9 cited lane commits exist and are ancestors of refs/heads/master, lane ahead=0 clean (jj detached HEAD at branch tip), prompt committed ebe48113 before the report and renders the template byte-identically except the working-dir line. Defects (status-neutral): the shipped prompt template carries no named child-lane item for lane write scope (distributed clauses only; template-side, operator/routed to protocol lane); the prompt's alias-level route map has no literal counterpart in MISSION.md's advisory bucket table (no model override passed); report author stamp 13:36:05 precedes the cited tip 13:50:12 but its committer stamp 13:51:32 and the pushed bytes cite it, so ordering holds. Claims: C1 improved (dead names 2->0 re-derived, absent-set 5/5 true by git, lesson supersedes, receipts structural + numeric-corroborated; lane counters not executed); C2 unprovable (13 trees/13 expects verified, but instrument decertified by the round's own wave - Critic21 zero-evidential met, Critic22 bypasses - and contract's '>=8 distinct bytes' is implemented as span length, H5 lives in count-c2.py); C3 unprovable (contract sentence 'count-c1 executes no repo-supplied tool blob' false per Sentinel41; count-c3 met omits the count-c1 pin; gate tokens test never-appended literals). No axis harmed. Routed to mori round 61: (1) no SKILL.md registry rows for r52-r60 gates - closure grades no gate conformant without one; (2) count-c3 met must compose the count-c1 pin and bind tokens to measured booleans; (3) enforce or delete the count-c1 execution exemption; (4) implement or restate the H2 distinct-byte predicate; (5) state that H5 is counter-side and add a tree-driven selftest arm; (6) control receipts must carry rc; (7) SETTLEMENT_SCAN_OK has no committed receipt; (8) corpus form: S561 Gate quote is an ellipsis composite, S564 Gate entry lacks access date and <=25-word quote, corpus/README coverage map gained no row, r59 lesson was rewritten in place at a86e5f83 (pre-existing). SHONEN boxes remain [~] and a non-author could check all four next round; promotion is operator-owned. No sibling writes, no promotions, no mint.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
