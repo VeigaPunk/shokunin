@@ -5,7 +5,7 @@ Lane base `0d974ffcb7dfb70617947531cab2d7e96cd8f9fd`; frozen contract
 `census/round-37/preregistration.txt` (freeze commit `d5c6498c5f72a63c9df32b26ee143e8d775eebbd`,
 amendments A1/A2/A2.4 appended after the wave-1 seats that produced them); measured landing
 `0be9bd0bf0c8143483bc4da609a6225b2c47ab64`; lane tip and `origin/master`
-`131ea87647a19ae1f5d42007de24a8459abd46fb`. The round repairs the three defect classes the
+`53792512129672943ae8dd5a85d635be9f161836`. The round repairs the three defect classes the
 round-36 non-author spot-check routed (Routed defects 1, 3, 4 in
 `corpus/lessons/round-36-verifier-spotcheck.md`).
 
@@ -69,7 +69,7 @@ Work items and evidence pointers:
 | `bb98c6086dac61df66c11064316173526260f514` | after receipts at `047564f`, SCORECARD measured commits | LOG `Adjudications` |
 | `0be9bd0bf0c8143483bc4da609a6225b2c47ab64` | A2.4: refuse a FIFO record instead of blocking; `record-fifo` case; texts | LOG `Adjudications` |
 | `6024a76874287ea57e691637e8740dce2906376d` | after receipts at `0be9bd0` | LOG `Adjudications` |
-| `131ea87647a19ae1f5d42007de24a8459abd46fb` | frozen predicate sentences superseded append-only after A1/A2 (wave-1 connector W1ConnOverlap); measured commit named in LOG | LOG `Adjudications` |
+| `53792512129672943ae8dd5a85d635be9f161836` | frozen predicate sentences superseded append-only after A1/A2 (wave-1 connector W1ConnOverlap); measured commit named in LOG | LOG `Adjudications` |
 
 Every commit is lane identity (`souji-shokunin <souji@shokunin.local>`) through `jj-lane.sh`;
 `git ls-remote origin refs/heads/master` prints `131ea876…` (the lane tip).
@@ -179,6 +179,34 @@ repairs: the FROZEN PREDICATE SENTENCE block in `census/round-37/preregistration
 `cells=9` and `cases=6 … base_fail>=3` after A1.3/A2.3/A2.4 had moved the in-force targets to
 `cells=11` and `cases=9 … base_fail=6`. The sentences are now superseded **append-only** in the
 same file (block after the frozen sentence, naming `0be9bd0bf0c8143483bc4da609a6225b2c47ab64`),
-committed at `131ea87647a19ae1f5d42007de24a8459abd46fb`, and `LOG.md` names that commit. No
+committed at `53792512129672943ae8dd5a85d635be9f161836`, and `LOG.md` names that commit. No
 target, receipt or stale cell changed; the measured landing is unchanged. At erratum time wave 1
 has 36 of 37 seat reports on disk and wave 2 remains unsettled.
+
+### Erratum 2 (2026-10-28, after wave-2 receipts)
+
+Wave-2 seats found the round re-committing the class it repairs in its own text. Fixed at
+`53792512129672943ae8dd5a85d635be9f161836`:
+
+- `SCORECARD.md` and `corpus/lessons/round-37.md` quoted `cells=11 mismatches=9`; the receipt reads
+  `mismatches=11` (`c1-before.txt`). The capability row quoted `cells=9` / the 7-case fixture; it
+  now reads `cells=11` / `cases=12`.
+- `LOG.md` quoted the pre-amendment C2 numbers (`cases=6 … base_fail=4`) and the freeze-era C1
+  before value; both now match the final receipts (`cases=9 … base_fail=6`, `cells=11 … 11`).
+- `SKILL.md` rows `r37-citation-reconcile` and `r37-drift-escapes` quoted `cases=7` and
+  `cases=6/base_fail=4`; both now read `cases=12` and `cases=9/base_fail=6`.
+- The A1 wording said the frozen register read `mismatches=2`; the landing counter reads `3`
+  (two non-unique anchors plus the unnamed-receipt arm) and the freeze-era counter read `2` — both
+  are now stated.
+- The `live-run-after.txt` header now says it is a live-fleet window observation (a wave-2 seat's
+  worktree changed `live_regs`/`drift_rows` during the round; `W2ScoutAfter`).
+- New named limits: the `env-witness` case asserts the documented child-env contract as a key set
+  and can false-kill a stricter spelling / miss a tool-injected trace or a first-call-only
+  neutralisation (`W1ExecEscapeCaseC`); the report-contract checker's stale-lane **line** arm has no
+  fixture case (`W2MutReportGate` P1 survives); S236's exclusion of "trace output options" was
+  narrowed because the output target is what makes the escape caller-visible (`W2RevSource236`).
+  All routed to r38.
+
+Before receipts were also regenerated with the final counters/fixtures at
+`8edcb04212b641203862921297655a1d329808e4` (C1 `cells=11 mismatches=11`; C2
+`cases=9 pass=3 fail=6 base_fail=6`); the measured landing, targets and kill rules are unchanged.
