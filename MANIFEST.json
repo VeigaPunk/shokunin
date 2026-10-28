@@ -31814,6 +31814,43 @@
    "notes": "Dispatch digest (.ufo/watchdog.log): 2026-10-28T15:04:08-03:00 launch tameshi round=56 attempt=1; 15:47:00 lane-dead-no-report; 15:47:04 launch attempt=2; 16:31:28 lane-dead-no-report; 16:31:30 launch attempt=3; 18:30:24 lane-dead-no-report; 19:44:16 launch attempt=4; 20:17:11 complete tameshi round=56 hyaku-inline attempt=4. Lane admitted both claims by non-author: C1 calibration improved (re-measured), C2 operability improved (evidence-verified; lane itself declined to admit C2 because a wave-2 stub-receipt attack from C0 reaches the counter via arm 5 provenance - a pre-declared cannot_see; do-nothing from base cannot reach target; operator may overrule). No axis graded harmed. Named unmonitored regression for operator ruling: C0 inserted 13 lines at SKILL.md line 45, shifting page-local anchors (sample re-derived: SKILL.md:335-339 resolves at base, not at tip; lane sweep 57/61 stale); flagged, not fixed, QUALITY 34 already forbids. Routed defects R56.1-R56.7 (SKILL anchors; false code in SKILL standing-rules row 1 for verdict+--paths, gate emits CONTENT_DRIFT not MISMATCH; knowledge entry recheck still 14/14 vs gate 19/19 and not indexed in corpus/README.md; 13/18 bound ledger entries' external_inputs digest labels false; control-provenance discriminator and generation pre-registration; gate-kind registry row with exit-code map; 'no byte changed after C0/PIN' phrasing - QUALITY/SOURCES/knowledge grew C0->bind). Conformance defects status-neutral: D-CF1 (C0->bind drift in pinned-class files vs report claim), D-CF2 (two seats named unwritten report files, disclosed), D-CF3 (selftest-kind registry row only). Three earlier attempts ended lane-dead-no-report (status-neutral, retried). SHONEN boxes all [~]; not fully checkable by non-author yet (box 1 false SKILL cell, box 3 unrepaired reader findings/stale anchors); promotion operator-owned, none written.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 63,
+   "date": "2026-10-28",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 63,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 63
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unchanged",
+    "calibration": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-63/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-63-verifier-spotcheck.md@0c1eff3cb9ac4c11402ab0124c35842f06a436fc",
+    "rechecks": "C1 evidence-verified, not re-executed: counter met=True 44/44 at tip f7f1b378 but MT15 forgeries A/B (committed forge.out/sleeper.out met=True, patches committed) pass the frozen counter; grep of the counter shows no /proc exe check and the live helper loaded from the tip, so C1 is falsified. C2 evidence-verified: frozen predicate met (12/12, selfdesc 8->0, sens_selftest 4/4, red-before receipts c2-base/c2-shortcut), plain facts re-measured (PROVINCE sha/190 lines, 38 knowledge files, 12-row registry), but counter discrimination open (KR03/MT20/MT21/RV03/RV04 survivors) and SCORECARD calibration row still names round-57 as latest outside closure. Spot-check agree: S527/S528 admits (raw sha256 match, quotes at lines 374-377 and 148-149), /tokenize no-new-row, quarantine rejects S210/S211/S224 (quote absent on re-fetch). Census validate exit 0, rows 266->268."
+   },
+   "commit": "kama-shokunin@7a0e49f80efc989f288ef7b46d4914c5d415846a",
+   "closed_at": "2026-10-28T23:36:21+00:00",
+   "campaign": "hyaku",
+   "notes": "Dispatch/completion digest: 2026-10-28T18:36:06-03:00 launch kama round=63 pgid=2237173 driver=hyaku-inline attempt=1; 2026-10-28T20:32:14-03:00 complete kama round=63; hyaku-inline attempt=1. Honest-stop: C1 falsified by the round's own wave (MT15, lane agrees), C2 met on its frozen predicate without shown discrimination; no axis harmed, scores held operability 8 / calibration 7; capability live-completion-request-plane correctly not entered. Conformance defects (status-neutral): report author date predates lane tip but committer date follows it; freeze amendment 1 disclosed pre-wave; considerthese file not re-opened. Routed to lane next round: (1) C1 counter binds answering process (/proc/pid/exe, argv, counter-owned hold window, load witness helper from counter tree or pin sha, replay round-63 forgeries); (2) SCORECARD calibration row stale latest-outside-closure pointer (round-57 vs closures through 62) and reconciler must fail on it; (3) C2 counter controls for reconciler conjunct and quote floor, pin tools by sha or planted regression, accept idle context-capacity outcome, refuse reused --work; (4) extend tools/shortcut-tally.py to rounds 56-63 format; (5) KR06 completion_fingerprint 9-40 hex bound not source-backed. SHONEN boxes not fully checkable by a non-author (SKILL.md unchanged, end-to-end outcome falsified); no promotion proposed.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
