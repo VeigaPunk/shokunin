@@ -123,3 +123,26 @@ transaction attempted; nothing needed). Open L0 questions: none new — the cove
 `kengaku | round-33` line. Inherited state: none uncommitted at close; the r49 seat's candidate fence
 (`9baedf13…`, `C1ExecRepair/fence_candidate.py`) was **not** landed (it reaches `admitted=117`); the shipped repair
 is the L1's, measured end to end.
+
+---
+
+## Erratum appended after filing (2026-10-28; the filed bytes above are not rewritten)
+
+**Superseded:** "`SEALED total=12 clean=12` + `SEALED total=18 clean=18`" and the lane tip `d45c5bb…`.
+
+Two blind modules authored at 14:33–14:34 (`x1_commondir_escape`, `x2_gitfile_alternates_escape`, from
+`R50C1CritBlind2/sealed/`) were not in the sealed set the first receipt scored. They were adopted at `3dda12f`
+(sealed50 18 → 20) and the frozen predicate was re-run on a **clean clone of that tip**:
+`HONEST fixtures=126 admitted=126 refused=0`, `REFUSALS total=20 clean=20 leaked=0`,
+`SEALED total=12 clean=12 leaked=0` + `SEALED total=20 clean=20 leaked=0`,
+`MUTANTS total=15 caught=15 broken=0 floor=12 verdict=met`, `PREDICATE R50-C1 pass`, exit 0 — receipt
+`corpus/evidence/round50/c1-receipt.txt` (re-run at `3dda12f`; the pre-adoption receipt is superseded).
+
+**New lane tip:** `64f51c84cd0a8fdbe00a8385747a9e75759bcbe1` (this erratum's lane commit chain:
+`d45c5bb` → `3dda12f` → `64f51c8`; remote verified). `d45c5bb` remains an ancestor of the tip, so the filed
+report's cited hash still resolves.
+
+**Reading limit recorded (measured by `R50C1CritBlind2-3`, not predicted):** the sealed legs are admission-only,
+and on the shipped fence 6/20 `refusals46`, 7/12 `sealed46` and 10/20 `sealed50` modules are refused by a reason
+that names containment/escape while the rest are refused by allowlist/shape rules. `SEALED clean` therefore must
+not be read as an escape witness; the outside-`d` read property remains with the round-46 counter.
