@@ -5,7 +5,7 @@ Lane base `0d974ffcb7dfb70617947531cab2d7e96cd8f9fd`; frozen contract
 `census/round-37/preregistration.txt` (freeze commit `d5c6498c5f72a63c9df32b26ee143e8d775eebbd`,
 amendments A1/A2/A2.4 appended after the wave-1 seats that produced them); measured landing
 `0be9bd0bf0c8143483bc4da609a6225b2c47ab64`; lane tip and `origin/master`
-`93a10b656e132af785817e06b823e7f2cce643b4`. The round repairs the three defect classes the
+`02b43398ffd295a399c7097ab0d8b2eb70fb490a`. The round repairs the three defect classes the
 round-36 non-author spot-check routed (Routed defects 1, 3, 4 in
 `corpus/lessons/round-36-verifier-spotcheck.md`).
 
@@ -69,7 +69,7 @@ Work items and evidence pointers:
 | `bb98c6086dac61df66c11064316173526260f514` | after receipts at `047564f`, SCORECARD measured commits | LOG `Adjudications` |
 | `0be9bd0bf0c8143483bc4da609a6225b2c47ab64` | A2.4: refuse a FIFO record instead of blocking; `record-fifo` case; texts | LOG `Adjudications` |
 | `6024a76874287ea57e691637e8740dce2906376d` | after receipts at `0be9bd0` | LOG `Adjudications` |
-| `93a10b656e132af785817e06b823e7f2cce643b4` | frozen predicate sentences superseded append-only after A1/A2 (wave-1 connector W1ConnOverlap); measured commit named in LOG | LOG `Adjudications` |
+| `02b43398ffd295a399c7097ab0d8b2eb70fb490a` | frozen predicate sentences superseded append-only after A1/A2 (wave-1 connector W1ConnOverlap); measured commit named in LOG | LOG `Adjudications` |
 
 Every commit is lane identity (`souji-shokunin <souji@shokunin.local>`) through `jj-lane.sh`;
 `git ls-remote origin refs/heads/master` prints `131ea876…` (the lane tip).
@@ -179,14 +179,14 @@ repairs: the FROZEN PREDICATE SENTENCE block in `census/round-37/preregistration
 `cells=9` and `cases=6 … base_fail>=3` after A1.3/A2.3/A2.4 had moved the in-force targets to
 `cells=11` and `cases=9 … base_fail=6`. The sentences are now superseded **append-only** in the
 same file (block after the frozen sentence, naming `0be9bd0bf0c8143483bc4da609a6225b2c47ab64`),
-committed at `93a10b656e132af785817e06b823e7f2cce643b4`, and `LOG.md` names that commit. No
+committed at `02b43398ffd295a399c7097ab0d8b2eb70fb490a`, and `LOG.md` names that commit. No
 target, receipt or stale cell changed; the measured landing is unchanged. At erratum time wave 1
 has 36 of 37 seat reports on disk and wave 2 remains unsettled.
 
 ### Erratum 2 (2026-10-28, after wave-2 receipts)
 
 Wave-2 seats found the round re-committing the class it repairs in its own text. Fixed at
-`93a10b656e132af785817e06b823e7f2cce643b4`:
+`02b43398ffd295a399c7097ab0d8b2eb70fb490a`:
 
 - `SCORECARD.md` and `corpus/lessons/round-37.md` quoted `cells=11 mismatches=9`; the receipt reads
   `mismatches=11` (`c1-before.txt`). The capability row quoted `cells=9` / the 7-case fixture; it
@@ -235,7 +235,7 @@ targets and the kill rules did not change.
 ### Erratum 4 (2026-10-28, final receipt set)
 
 Wave-2 found two live escapes on the landing tool and two forged-control paths. Fixed at
-`4c257b7`/`e6be059` and re-measured at `93a10b656e132af785817e06b823e7f2cce643b4`:
+`4c257b7`/`e6be059` and re-measured at `02b43398ffd295a399c7097ab0d8b2eb70fb490a`:
 
 - **A2.7** — the `--json` guard now also covers the gitdir each row resolves to
   (`rev-parse --absolute-git-dir`), refuses a row whose gitdir is outside `--root`, and skips
@@ -273,7 +273,7 @@ command string is what closes the substitution cheat, and this is named as the C
 
 ### Erratum 6 (2026-10-28, closing corrections)
 
-Final lane tip `93a10b656e132af785817e06b823e7f2cce643b4` (= `origin/master`). Corrections to
+Final lane tip `02b43398ffd295a399c7097ab0d8b2eb70fb490a` (= `origin/master`). Corrections to
 this report's own attributions and the round's gate text:
 
 - **Attribution.** The frozen-predicate supersession block was committed at `131ea87`, not at a
@@ -296,3 +296,20 @@ this report's own attributions and the round's gate text:
   nested-repository discovery; `--record X --json X` self-overwrite; the `--json` FIFO hang on the
   landing blob; the `--gate PATH` interpreter mismatch in the r36 fixture; and the live reading's
   non-reproducibility (a window observation, not a baseline).
+
+### Erratum 7 (2026-10-28, final)
+
+Lane tip and `origin/master`: `02b43398ffd295a399c7097ab0d8b2eb70fb490a`. The wave-1 lesson
+scribe found the lesson's shape defects and one receipt-provenance regression; fixed here:
+
+- `corpus/lessons/round-37.md`: S238's Gate row closes as a table row; the S236/S237 locators
+  carry `MANWIDTH=100` and the heading/quote lines; M2 now carries a fix **shown able to fail**
+  (the pre-fix battery scored a crashing fixture as six kills; the landing battery reports
+  `NO-SUMMARY`, `survived=6`, rc 1); the landing line names the code landing `e987a27` and the
+  measured landing `02b4339`; C2 reads nine escapes, not six.
+- `census/round-37/records/c1-after.txt` and `c2-after.txt` are regenerated **with** header,
+  command and `rc` lines (a bare SUMMARY at `40bbd2e` lost the commit binding); values are
+  unchanged (`cells=11 mismatches=0`; `cases=12 pass=12 fail=0 base_fail=9 escapes=9`).
+- The lane hash in this report's header is superseded by this erratum; the value at the time of
+  each filing is recorded in the erratum that follows it. No target, receipt value or kill rule
+  changed in this erratum.
