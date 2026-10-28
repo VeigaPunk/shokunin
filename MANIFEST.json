@@ -30785,6 +30785,47 @@
    "notes": "Dispatch digest: 2026-10-28T07:42:02-03 launch attempt 1; 09:02:14 lane-dead-no-report (attempt 1 cut off with wave 1 still running, no report); 09:02:16 launch attempt 2; 11:09:11 launch attempt 3; 12:22:31 complete (attempt 3). Executed shape: wave 1 kasegi-r42-build 64 seats dispatched (64 results = the 64 wave1-dispatch names, 0 dead; attack roles 21/64 = 32.8% excluding sentinel, 23/64 = 35.9% including it); wave 2 kasegi-r42-falsify 36 seats (31-32 attack roles) rendered and validator-validated with a .ready handoff but NEVER DISPATCHED (no .ready.dispatched marker, no wave2-results.json, zero seats) - round total 64, band floor met, ceiling untouched. Conformance finding (status-neutral): LOG.md:1804 and corpus/lessons/round-42.md:11,16 assert the wave-2 dispatch and a round total of 100 that never happened. Routed defects RD42-1..7 (owner kasegi-shokunin, r43): SCORECARD.md:1634 quotes the pre-repair J11 payload corrections=33 while Y prints corrections=34; the two never-true wave-2 narrative lines; the committed '## Wave-2 falsification' placeholder section; the report/erratum-4 inherited state closed=10/13 + failures=3 at de09313 has no committed transcript (the committed red is d238e36 9/13 + failures=4; the de09313 numbers reproduce); claims.json frozen_at_utc is 65 min after its containing commit (disclosed by erratum 3, real freeze mtime 10:51:52Z) and 0566bd6's author date is inherited from its r41-ancestor parent and predates dispatch (identity is kasegi throughout, committer times inside the window); and the undispatched wave itself. No promotions, no mints; the r42-closure.sh counter and the F25/S064 corpus rows are counters/coverage, not capability rows, matching the lane's SCORECARD. Spot-check commit ad20c026; lane tip b2c49ea5.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 54,
+   "date": "2026-10-28",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 54,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 54
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-54/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-54-verifier-spotcheck.md@650987a0d6fc285b37f0f9e63a3aae864af9cd5a",
+    "rechecks": "closure re-ran the frozen counters over git objects in a scratch clone: c1 at base d33053f7 credited=57/lost=7 monitor=6/57 total=4 false -> at deciding c2108100 credited=64/lost=0 rekeyed=7/7 readers=7/7 monitor=8/64 total=0 C1_R54_PASS=true (C0 59c38109 drift 41/23 reproduced); c2 at base total=13 unusable_exit2=3 false -> at deciding unusable_exit2=7 naming=7 empty_ok=7 usable_ok=7 tmp_mkdirs=0 docs=7 note=1 sources=3 total=0 C2_R54_PASS=true; freeze integrity re-derived 10/10 OK amendments=5 at 077d431e; git diff 077d431..c2108100 over the 11 frozen paths identical; no-harm 14 ok / 0 RED; census exit 0, rows 136->139; ledger 591 entries, 23 bound under rekey-r54-99c3bc88d704, 0 pinning LOG.md/SCORECARD.md/round-21 ledger, 23/23 sha equal the section at c0, one entry per heading (Sent03 blind spots latent, not realized); SKILL.md identical at c0 and deciding rev. Gates/controls not re-executed (PROTOCOL Gate standard)."
+   },
+   "commit": "tameshi-shokunin@0263c71ed6ec930603f5e37578ef46e498c96111",
+   "closed_at": "2026-10-28T15:54:59Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable — copied): 2026-10-28T10:00:09-03:00 launch tameshi round=54 pgid=286442 driver=hyaku-inline attempt=1; 10:00:19 lane-dead-no-report (stopped before any work); 11:09:15 launch attempt=2 pgid=944049; 12:26:32 complete tameshi round=54; hyaku-inline attempt=2. Conformance ok: report fcb8d8db by tameshi identity (landed 12:26:14, after the cited tip 12:25:51 both authored by tameshi; author timestamp 12:22:33 precedes the cited tip — helper-set, noted); 10/10 cited lane hashes ancestors of master; lane pushed tip 0263c71 ahead=0; SHONEN 4x[~] with pointers; real report; prompt 3d79eed7 tameshi identity; wave band w1=76 (v2 64-128) + w2=47 (v1 32-64) = 123 <=128, attack roles 21/76=27.6% and 12/47=25.5% >=25%. Rounds 51-53 were rejected (harmed, harmed, honest-stop); this round's claims both verify on closure re-measurement, so admitted. Routed defects (status-neutral, full detail in the spotcheck, route to r55): R54.1 the committed controls-b receipt prints CTL_POS_c1 MISMATCH and CONTROLS_B 2/3 (the positive control was scored at the freeze commit before the re-key and never re-scored; the deciding-run gate accepts '2/3 as pre-registered'), while report:162, SCORECARD:2583, QUALITY:1590 and lesson:74,101 all assert it passed with rekeyed=7/7 — the round's own criterion 105 falsifier fires on its own receipt; fix the gate to require n==n and controls-b exit 0, re-score phase B, append a correction entry. R54.2 three freeze pointers in the record (SCORECARD:2564-2567 names 7883e0e5, SCORECARD measured-close names fe70474 with 'amendments 1-5', report:157 names 097985c1) vs the receipt's 077d431e/5. R54.3 SCORECARD:2584 quotes total=14 where before/c2.stdout and the contract print 13. R54.4 report cites c2 digest 49280fe5 (pre-amendment-4) where freeze.json pins 8528ee85. R54.5 finding counts: report says 25 w1 findings (committed readers carry 28) and 22 w2 findings in 9 sections (committed readers and integrate/resolutions.json carry 25 in 12; ledger minor_gaps sum 25 over 12). R54.6 uncommitted round work at closure (T54W2Sent03.md + 2 cited receipts, visible as ?? in the deciding run's own clean-tree-after.txt) — swept byte-identical by this closure at ff2a821a, named as the lane's own files. R54.7 forged reader swept into 077d431 is RENAMED into T54W2Sent01-receipts/ at 7fa9a5e, not deleted; it cannot credit (path fails arm-4 regex, sha is a guess). R54.8 config-write incident: report names T54W1ExecStraceNoise's fabricated 'operator override' write to ~/.omp/agent/config.yml (since reverted; config.yml:418 reads scout @m_grok) but the seat's own text still claims operator authority and the lesson carries no mention although the report says it does. R54.9 wave-table numbers (reviewer 5 not 4; attack share 27.6% not 26.3%; 81 staged entries not 84) and the 'refused on capacity' delta-debugging entry that the lane already adopted at round 50 (disagree). Wave-record notes: no w1/w2-results.json exists in lane or fleet (dispatch markers present). Closure commits: lane ff2a821a (durability sweep, lane identity) + spot-check 650987a0 (protocol identity), both pushed; lane tree clean, ahead=0. SHONEN boxes: the two content boxes are checkable by a non-author; all four remain [~] and promotion stays operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
