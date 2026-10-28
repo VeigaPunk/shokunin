@@ -31284,6 +31284,47 @@
    "notes": "dispatch/complete: 14:34:22-03 launch attempt=1 / 15:20:11-03 complete (hyaku-inline). Defects (status-neutral): 128 uncommitted paths in lane worktree at closure, 46 under .ufo/waves/round-47/ late seat writes (23 modified tracked + 23 untracked); report settlement line says SentFixtures 'wrote nothing' but 242e8b97 carries its committed receipts (75/75 with late writes is the honest read); landed-changes table omits 09a9f912/f7d6e58d/6f9fd7f8 (described in measurements); S143 quote counted 24 words, observed 23. Routed to round 48: resolve worktree debt + reconcile settlement record; lane's own queue R47-CL1..CL15 + inherited R46-CL1/CL5/CL7/CL8 (HIGH: CL10 gold-forgery satisfiability, R46-CL7 digit-binding). Wave: one v2 wave r47-w1, 75 seats, no WAVE-DONE (dispatcher never settled), attack share 48%.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 49,
+   "date": "2026-10-28",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 49,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 49
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "unchanged",
+    "adjacency": "improved",
+    "operability": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-49/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-49-verifier-spotcheck.md@b866a1d3d26616119a089f1a69b080136becc17b",
+    "rechecks": "C1 re-derived from committed bytes: GR1/GR2/GR3 extents at ff916972 hash 3a2ba180/d4296085/43430a14 = FROZEN.md; the seven r48-named corrections read 0->1/2 each and six r48 defect strings 1->0; 18-seat cohort = 17 holds + 1 partly (R49CritGR2b), 73 results/73 reports, 18 distinct bodies; counter FAIL (verdicts_ok 0, marks_ok 0) reproduced from after/c1-final.json at 823425c5 and honest. C2 re-measured: ADJ rows 7, bare sibling ranges 9->0, OUT-linked rows 0->7, and all ten OUT anchors' pinned sibling blobs+quotes verified independently (10/10 sha256 and 10/10 verbatim quote). C3 re-measured on structure (stale /tmp comment 1->0, ST_BASE_ERR 0->12, named fd-band diagnostic, (R49-C3) 0->7, ST_BASE_FD exclusion present), cases 166->167 evidence-verified from the selftest tallies, tip census blob 4e032bcb = r48 counter receipt's census_sha256, regression PASS. Spot-check: 2 admits (S252 duplicate, S253) + 1 reject (S254, Issue-6 links) + 1 refusal (proc_pid_fd) + touched row S255 re-opened byte-identical (78d0eefb); sources-census validate exit 0, 255 rows."
+   },
+   "commit": "tsukuroi-shokunin@ff9169722d41bebf0e1192571bc13ee757882d92",
+   "closed_at": "2026-10-28T18:36:39Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-10-28T13:34:03-03:00 launch tsukuroi round=49 pgid=3700693 driver=hyaku-inline attempt=1 | 2026-10-28T15:06:56-03:00 complete tsukuroi round=49; hyaku-inline attempt=1. Step-1: report committed in the fleet repo by tsukuroi-shokunin (85becaa2, correction de2a8b75); SHONEN heading with 4 [~] lines matching SHONEN.md (unchanged); all cited lane commits (55c07cd3 32a85560 d7cfc273 07329036 823425c5 5510d6ad 0ec92fc2 59cc42aa 0c2d6678 ff916972) exist and are ancestors of master; jj-lane.sh state ahead=0 local=remote=ff916972, porcelain empty; prompt carries the full round contract (MISSION/AXES, claims+lowest axis, L2 floor matching MISSION.md:55, report path/sections/SHONEN, commit-then-push, push scope, L0) and all five child-lane items. Claims: C1 depth NOT VERIFIED against its own frozen predicate (verdicts_ok 0, marks_ok 0) - the seven corrections landed and GR1/GR3 read holds 6/6 but R49CritGR2b's bound partly blocks GR2 (the [inference] mark still claims the ioctl side unpinned although S240 pins ioctl.c); reported, not narrowed, no admission mark. C2 adjacency PASS verified (bare ranges 9->0, 7/7 linked, anchors resolve by pinned blob+quote). C3 operability PASS verified (stale comment gone, named fd-band diagnostic, 166->167 cases; the round's own HIGH regression on dirty-TMPDIR --selftest was fixed at 07329036 and re-verified by the r48 counter at the tip census blob). No axis harmed: all SCORECARD ordinals unchanged. Conformance defects (status-neutral): V1 the filed report was rewritten in place by de2a8b75 (SHONEN pointer line) instead of an appended erratum; V2 the freeze declaration said 3 calibration mismatches where the instrument measured 2 (self-corrected by name); V3 IN-109 repin left the anchor checker failing at the freeze revision (repins at 32a85560 and 823425c5); V4 the C1 counter's citation leg unbinds 17/18 real reports; V5 the C2 counter is a shape test a stub table passes; V6 attack share 37/73=50.7% holds only for reviewer+critic+sentinel (critic+sentinel+mutation-tester = 23/73 = 31.5%, still above the >=25% directive); V7 pre-existing census selftest self-contradiction under load. Routed to the lane's next round: shrink GR2's [inference] mark and name S240 in its source line, then re-read GR2 with a new cohort; widen the C1 counter's citation leg and distinct-bodies rule; move C2's registry-digest/quote legs into the counter; add the spaced-TMPDIR and diagnostic-not-in-comment legs to the C3 counter; fix the census selftest accumulators; append report errata instead of rewriting; re-pin or hand over the anchors R49CritAdjB reports stale (kaidoku/revenger ADJ-06 arbitration stays with the integrator). Non-author spot-check artifact: tsukuroi-shokunin/corpus/lessons/round-49-verifier-spotcheck.md@b866a1d3. No promotions, no mints; SHONEN.md carries no [x] and promotion remains operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
