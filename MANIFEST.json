@@ -30957,6 +30957,47 @@
     "date": "2026-10-28",
     "entry": 873
    }
+  },
+  {
+   "round": 42,
+   "date": "2026-10-28",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 42,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 42
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "calibration": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-42/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-42-verifier-spotcheck.md@2844de3067ebd4cc2156bb1d1fdb0190d6c60e9e",
+    "rechecks": "C1: tree count 0 at 34e1779, 2 committed receipt/witness files at tip (sha256 398445..317b7e / 163f4e..d339), kill rule re-verified from committed seat matrix (a1c nonce relabel -> exit 0 zero browser); C2: controls 7 findings/exit 1 at baseline -> 0/exit 0 at 435b64c, D1 sha256 equals measure pins, D2 S148 verbatim/S146 rejected, D3 control 343B with command+0, D4 38 ids/38 rows, refusal basis cat-file -s tree hole re-read; knowledge 58->59, SOURCES 147->149, census exit 0 tabi ok."
+   },
+   "commit": "tabi-shokunin@15b75a7337089ed42208555a71ed89a966b21932",
+   "closed_at": "2026-10-28T16:33:11Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-28T11:42:27-03:00 launch tabi round=42 pgid=1685089 driver=hyaku-inline attempt=1; 2026-10-28T13:29:58-03:00 complete tabi round=42; hyaku-inline attempt=1. Report committed by tabi-shokunin identity at fleet 5bcb052b (13:28:28 -03, before completion); all eight cited lane commits exist and are ancestors of master; lane clean and pushed (ahead=0, remote master=15b75a7). Both frozen claims refused under their pre-declared kill rules: C1 coverage capability refused (counter greens nonce-relabeled/synthetic receipts over committed bytes; four seats zero-browser reach) -> coverage held 9; C2 calibration refused as worded (checker accepts tree objects where the frozen sentence says committed blob; fabrication limb unenforceable) -> calibration held 9. No axis harmed; capability added: none. Conformance defects (status-neutral): claims.json C2 beforeState enumerates 5 baseline finding ids while the committed control carries 7; report writes the D4 TSV path with a corpus/../ prefix; scripts/check-c2-knowledge-round41.mjs is red by construction (frozen pre-D2 pins) and needs the operator ruling the lane requests. Routed to r43: (1) C1 receipt authenticity (per-invocation signature, pinned public half, refuse unpinned --pins); (2) C2 cat-file -t blob check + pinned measure blob + CritC2Ledger verdict-probe; (3) freeze documents must quote the control they name; (4) standing-gate conflict operator ruling. SHONEN: four boxes [~]; boxes 1 and 4 look checkable by a non-author, boxes 2-3 hinge on the refused C1 claim; promotion is operator-owned and no [x] was written.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
