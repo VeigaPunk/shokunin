@@ -122,7 +122,7 @@ under a disclosed tighter-only amendment **before** the final after-data:
   a blacklist built from them passed; a fixed-summary stub could pass; a control-free run exited 0.
   Repaired: `JSON-HARDLINKED` on the opened fd (truncate only after the check), per-component
   `O_NOFOLLOW` walk, property-level env assertion, `case-measured`, non-zero on a control-free run;
-  A2.4 refuses a FIFO record instead of blocking. Fixture `cases=9`, `base_fail=6`.
+  A2.4 refuses a FIFO record instead of blocking. Fixture `cases=12`, `base_fail=9`, `escapes=9`.
 - Every wave-1 finding that the repairs do not close is named in `corpus/lessons/round-37.md`
   `## Named limits`: `--record X --json X` self-overwrite, a hardlink/parent swap installed after
   the guard, nested-repository discovery, the `TOTAL` cross-checks and duplicate-row refusal absent
@@ -137,20 +137,21 @@ under a disclosed tighter-only amendment **before** the final after-data:
   three QUALITY criteria Q83–Q85, one capability row (self-assessment receipt reconciliation), and
   two new runnable instruments with fixtures; the new discrimination fixture widens the drift
   tool's killed-mutant surface from 4/6 to 6/6.
-- **quality: improved** — six reproduced write escapes closed on the drift tool (`base_fail=6` to
-  none) with its r36 consumers still green; three instrument forgeries closed in the citation
+- **quality: improved** — nine reproduced write escapes closed on the drift tool (`base_fail=9
+  escapes=9` at the final fixture to none; the landing blob still failed three of the later cases,
+  closed at `4c257b7`) with its r36 consumers still green; three instrument forgeries closed in the citation
   counter; the six frozen mutants die on named cases; the r36 fixture is byte-identical.
 - **discernment: improved** — the routed never-true numbers are reconciled against receipts at a
   commit where they exist (`mismatches 11 → 0`); wave-1 falsification changed the instruments and
   the frozen texts disclosedly (A1/A2/A2.4) instead of being absorbed; every unclosed finding is
-  named as a limit rather than claimed fixed.
+  named as a limit rather than claimed fixed (the routed r38 list is now carried in the lesson's `## Named limits`).
 
 ## SHONEN
 
-- [~] SKILL.md contains real decision tables, error patterns, checklists, cited sources — the SKILL gate registry is updated to the landed rows/fixtures (`SKILL.md` r37 rows, `cases=12`/`cases=9`), with S236/S237 grounded.
-- [~] At least one end-to-end domain task executed and logged in LOG.md — `LOG.md` `## 2026-10-28 — Round 37 attempt 1` plus `Adjudications`, tied to `d5c6498`…`6024a76`.
-- [~] Instructions executable by an agent without oral context — every counting command in this report and `census/round-37/preregistration.txt` runs from the lane root; fixtures are self-contained under `TMPDIR`.
-- [~] No cross-domain bleed (PROVINCE.md still accurate) — the round touches only repo/workspace hygiene (citations, worktree drift, fixture discrimination); no sibling lane was edited; `connector` seat `W1ConnOverlap` scanned sibling round-37 artifacts read-only.
+- [~] SKILL.md contains real decision tables, error patterns, checklists, cited sources — the SKILL gate registry is updated to the landed rows/fixtures (`SKILL.md` r37 rows, `cases=16`/`cases=12`/`cases=6`), with S236/S237 grounded.
+- [~] At least one end-to-end domain task executed and logged in LOG.md — `LOG.md` `## 2026-10-28 — Round 37 attempt 1` plus `Adjudications`, tied to `d5c6498`…`a269e72`.
+- [~] Instructions executable by an agent without oral context — every counting command in this report and `census/round-37/preregistration.txt` runs from the lane root (the pre-freeze before-controls ran with the working register, as their receipts state; the pinned `--register-rev` form runs at every later revision); fixtures are self-contained under `TMPDIR`.
+- [~] No cross-domain bleed (PROVINCE.md still accurate) — the round touches only repo/workspace hygiene (citations, worktree drift, fixture discrimination); no sibling lane was edited; the connector scan was read-only and its report is untracked under `.ufo/waves/`, so the committed record is this line.
 
 ## Waves
 
