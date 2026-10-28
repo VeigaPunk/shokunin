@@ -30178,6 +30178,47 @@
    "notes": "Dispatch/completion digest: 2026-10-27T18:15:42-03:00 launch kotoba round=79 pgid=1681371 driver=hyaku-inline attempt=1; 2026-10-27T19:22:05-03:00 complete kotoba round=79; hyaku-inline attempt=1. Status ok: honest stop; both claims unprovable, no claim data/score/capability/knowledge landed, no axis harmed. Lane reported W2 (32 seats announced by orchestrator) results/handoff absent - conformance defect disclosed honestly; orchestrator to settle or waive (R79-D1). Lesson census line cites census-after.txt (151) while its own commit lands census-final.txt (157) - stale, correct next round (R79-D2). W1 attack share 6/38 (15.8%; 18.4% with sentinel) below the >=25% rule; record the arithmetic in the plan (R79-D3). Tip battery still 1/6 at base across rounds 76-79 (R79-D4 carry). SHONEN boxes remain [~] author assertions; three consecutive honest stops r77-r79 disclosed for operator steering, not a protocol block. Spot-check commit landed 398cbe1bb67f8d9dcf5d25d5ecf1b26a7c6f7e93, verified on origin/master. Discernment improved per LEARNING.md: outside spot-check agrees with all sampled gate admits/rejects and the C4 disagreement grounded QUALITY criterion Q74; lane filed unchanged only because this non-author check was pending.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 76,
+   "date": "2026-10-27",
+   "type": "closure",
+   "lane": "kotodama",
+   "lane_round": 76,
+   "lanes": {
+    "kotodama": "ok"
+   },
+   "lane_rounds": {
+    "kotodama": 76
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged (C fails as declared: ACCEPT-C-76 FAIL 11/13, ROWS+COLLCHECK red)",
+    "calibration": "unchanged (Ca fails as declared: ACCEPT-CA-76 FAIL 5/12)",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-76/kotodama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_opus session, non-author)",
+    "spotcheck": "kotodama-shokunin/corpus/lessons/round-76-verifier-spotcheck.md@211f9526800906e0c585d878d265c37e5e090c15",
+    "rechecks": "C re-measured: knowledge 252->253, registry rows 817->820 (plain ls-tree/grep over base+tip). C counter: committed receipt ACCEPT-C-76 FAIL legs=11/13 at c28ea21, selftest 89/89. Ca: committed receipt ACCEPT-CA-76 FAIL legs=5/12 at a43ed80, selftest 170/170; failures preserved, predicates unamended. Discernment: 4/4 agree on S894/S895/S896 admits + showGb-alias reject, all re-opened live 2026-10-27; census validate exit 0."
+   },
+   "commit": "kotodama-shokunin@211f9526800906e0c585d878d265c37e5e090c15",
+   "closed_at": "2026-10-28T01:55:00Z",
+   "campaign": "hyaku",
+   "notes": "Digest: launch kotodama round=76 pgid=1727400 18:24:59-03:00; complete 22:12:09-03:00, attempt 1. Both declared claims fail their frozen counters on committed evidence; lane reported honestly, no score delta taken. Conformance defects (status-neutral): report counter-command fix landed as in-place rewrite commit 1cd8e33c, not an appended erratum; no planner role seat dispatched (validator rejects planner; lane self-recorded in LOG.md:4341,4345). Route-map note: prompt run-10 map restates run-9 map but differs on reviewer/mutation-tester/security-reviewer (m_kfc vs m_zfl), and quoted connector@m_antigravity does not visibly match MISSION heavy-reasoning bucket; live config.yml shows further drift. Routed to r77: ROWS predicate scope (R76-M3 W2 disagreement), COLLCHECK map-vs-row URL mismatch, Ca ledger defects (L76-13 allowlist, L76-19/20/21 rederive parser, r1exempt receipts, combined exemption line), staged-map residue (S859, entry_substitutions/cited_by_file, S896 Wayback carrier), frozen leg-list hygiene (INDEX duplicated, SCRATCHMIRROR omitted), erratum-append discipline. SHONEN boxes checkable by a non-author; none checked by the lane; promotion remains operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
