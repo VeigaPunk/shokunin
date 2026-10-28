@@ -5,7 +5,7 @@ Lane base `0d974ffcb7dfb70617947531cab2d7e96cd8f9fd`; frozen contract
 `census/round-37/preregistration.txt` (freeze commit `d5c6498c5f72a63c9df32b26ee143e8d775eebbd`,
 amendments A1/A2/A2.4 appended after the wave-1 seats that produced them); measured landing
 `0be9bd0bf0c8143483bc4da609a6225b2c47ab64`; lane tip and `origin/master`
-`53792512129672943ae8dd5a85d635be9f161836`. The round repairs the three defect classes the
+`fdc6c7be0eebcc6aa0bbfc078345e433b324dd22`. The round repairs the three defect classes the
 round-36 non-author spot-check routed (Routed defects 1, 3, 4 in
 `corpus/lessons/round-36-verifier-spotcheck.md`).
 
@@ -69,7 +69,7 @@ Work items and evidence pointers:
 | `bb98c6086dac61df66c11064316173526260f514` | after receipts at `047564f`, SCORECARD measured commits | LOG `Adjudications` |
 | `0be9bd0bf0c8143483bc4da609a6225b2c47ab64` | A2.4: refuse a FIFO record instead of blocking; `record-fifo` case; texts | LOG `Adjudications` |
 | `6024a76874287ea57e691637e8740dce2906376d` | after receipts at `0be9bd0` | LOG `Adjudications` |
-| `53792512129672943ae8dd5a85d635be9f161836` | frozen predicate sentences superseded append-only after A1/A2 (wave-1 connector W1ConnOverlap); measured commit named in LOG | LOG `Adjudications` |
+| `fdc6c7be0eebcc6aa0bbfc078345e433b324dd22` | frozen predicate sentences superseded append-only after A1/A2 (wave-1 connector W1ConnOverlap); measured commit named in LOG | LOG `Adjudications` |
 
 Every commit is lane identity (`souji-shokunin <souji@shokunin.local>`) through `jj-lane.sh`;
 `git ls-remote origin refs/heads/master` prints `131ea876…` (the lane tip).
@@ -179,14 +179,14 @@ repairs: the FROZEN PREDICATE SENTENCE block in `census/round-37/preregistration
 `cells=9` and `cases=6 … base_fail>=3` after A1.3/A2.3/A2.4 had moved the in-force targets to
 `cells=11` and `cases=9 … base_fail=6`. The sentences are now superseded **append-only** in the
 same file (block after the frozen sentence, naming `0be9bd0bf0c8143483bc4da609a6225b2c47ab64`),
-committed at `53792512129672943ae8dd5a85d635be9f161836`, and `LOG.md` names that commit. No
+committed at `fdc6c7be0eebcc6aa0bbfc078345e433b324dd22`, and `LOG.md` names that commit. No
 target, receipt or stale cell changed; the measured landing is unchanged. At erratum time wave 1
 has 36 of 37 seat reports on disk and wave 2 remains unsettled.
 
 ### Erratum 2 (2026-10-28, after wave-2 receipts)
 
 Wave-2 seats found the round re-committing the class it repairs in its own text. Fixed at
-`53792512129672943ae8dd5a85d635be9f161836`:
+`fdc6c7be0eebcc6aa0bbfc078345e433b324dd22`:
 
 - `SCORECARD.md` and `corpus/lessons/round-37.md` quoted `cells=11 mismatches=9`; the receipt reads
   `mismatches=11` (`c1-before.txt`). The capability row quoted `cells=9` / the 7-case fixture; it
@@ -210,3 +210,24 @@ Wave-2 seats found the round re-committing the class it repairs in its own text.
 Before receipts were also regenerated with the final counters/fixtures at
 `8edcb04212b641203862921297655a1d329808e4` (C1 `cells=11 mismatches=11`; C2
 `cases=9 pass=3 fail=6 base_fail=6`); the measured landing, targets and kill rules are unchanged.
+
+### Erratum 3 (2026-10-28, after wave-2 mutation probes)
+
+Wave-2 found the C1 fixture's implicit discrimination claim weak: 8 of 11 mutants of the counter
+survived the 12-case suite, including an arm-reads-working-tree mutant
+(`W2MutCounter2`). Fixed at `53a67f7`: the fixture now has **16 cases** — `worktree-tamper`
+(committed bytes beat a tampered working copy), `empty-register`, `duplicate-id`, `stale-dash` —
+and the worktree-reader mutant is killed by `register-pinned` and `worktree-tamper`
+(`cases=16 pass=16 fail=0 control=FALSE-GREEN-REJECTED`, receipt `c1-fixture-after.txt`). The
+counter is unchanged, so C1's measured target (`cells=11 mismatches=0`) is unaffected.
+
+Also recorded, status-neutral, routed to r38: (`W2MutFixture2`) of the six frozen C3 mutants, four
+die on `rc`/row-text assertions and the "exact-field" discrimination is carried by two
+(`match-exact` and `prunable-live` kill no frozen mutant and earn their place on controls); the
+`env-witness` case asserts the documented child-env key set and is not a general env-safety proof
+(`W1ExecEscapeCaseC`); the report-contract checker's stale-lane line arm has no fixture case
+(`W2MutReportGate` P1); C1's `receipt_rev` arm remains non-discriminated (`W2MutCounter2`, wave 1);
+and S236's scope now records that the trace output target is what makes the escape caller-visible
+(`W2RevSource236`). Before receipts were regenerated with the final instruments at `8edcb04`
+(C1 `cells=11 mismatches=11`, C2 `cases=9 pass=3 fail=6 base_fail=6`); the measured landing, the
+targets and the kill rules did not change.
