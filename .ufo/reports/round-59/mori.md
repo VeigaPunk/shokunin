@@ -34,7 +34,8 @@ r53 copy, which sits outside the counter's frozen `ARTIFACTS` map: `files:outsid
 - Data: `be737211` (depth entry, 7 artifact copies under `corpus/evidence/sources-r59/`,
   S553–S560 rows, quarantine slice) + `7b86704d` (K11→prose correction).
 - Wave reports, settlement/selftest/census receipts, lesson, LOG/SCORECARD/SHONEN/QUALITY-155,
-  `tools/` (register-check, settlement-scan): `08127c99c2f28115a4e7bd3bb48f24593bdfd483` (lane tip).
+  `tools/` (register-check, settlement-scan): integration `bf6c0ad3`; `w1-results.json` + late
+  reports + swarm-registry `f091bd773c4cfec8877061c84f4bae5f11e8bbe5` (lane tip).
 
 ## Claim measurements and verdicts
 **C1 — calibration: verified `met`.** Before (entering `2b9f0397`):
@@ -71,8 +72,12 @@ no depth score change is claimed.
 
 ## Wave w1 settlement and integration
 
-64 seats dispatched, 62 report files present at filing (missing: Mo59Executor40,
-Mo59MutationTester31, Mo59MutationTester32 — partial; missing reports are not labeled dead).
+64 seats dispatched, **all 64 report files present** after WAVE-DONE; `w1-results.json` carries
+64/64 members. Late-arriving seats (Mo59Executor40, Mo59MutationTester31/32) add no verdict
+change: Executor40 replayed 12/12 C2 tree arms green and the C1 fixtures; MutationTester31's
+sole survivor (m3) requires mutating the counter's own MANIFEST_REV pin — a detector-redundancy
+note, not a committed-bytes attack on the frozen instrument; MutationTester32 killed every C2
+counter mutant (fail-closed).
 Key integrated findings beyond the claim verdicts:
 Mo59Reviewer12 surveyed all 10 committed `*-results.json` (r50–r58) and found two falsifiers of
 the "note null / output nonempty" invariant — r50-a2w1 members carry non-null `note` and null
