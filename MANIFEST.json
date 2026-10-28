@@ -31161,6 +31161,50 @@
    "notes": "dispatch 2026-10-28T13:36:07-03:00 launch kaidoku round=46 pgid=3728525 driver=hyaku-inline attempt=1; complete 2026-10-28T14:15:00-03:00 hyaku-inline attempt=1 (copied digest). Round work tip c0112995; spot-check landed on top at 13a9e9e1 (remote verified). Both claims verify and no axis is harmed (round diff 0 deletions; Owned axes table untouched). Report is a real report, not a marker: work, evidence pointers and resolvable commits. Conformance defects, status-neutral, routed as R46-V1..V10: (V1 HIGH) LOG round-46 entry and SCORECARD assert 'wave 1 40 + wave 2 40 = 80 seats, inside the 64-128 band' with per-seat output in {w1,w2}-results.json; wave 2 was never dispatched (40 seats, zero results files) and the report itself says so - append a LOG correction and amend SCORECARD; (V2 HIGH) SCORECARD says the 0425224..tip frozen-path log is empty, but F5 332f4884 modifies attest.py and gate.py - the empty window the claims rest on is 332f4884..58eb04b6; (V3) the report's 'at the freeze: rule_blocks 22, marker 0' before-cell is true only of 50862e4a (the declared freeze 332f4884 already carries block 23; c1-at-F4 at 0425224 also reads 23) - name the revision; (V4) the report's settlement '32 of 40, eight produced nothing, 8 of 32 attack seats' reproduces the parent 22fd0d6b only: at the cited tip 33 top-level reports (34 any), CritBattery and MutC1Checks carry reports at both revisions, attack seats 10 of 34; at closure the worktree shows 39 of 40 and 13/13 attack seats; (V5) the lane repo is dirty at closure and still growing after the driver's complete line (136 untracked files, 130 under round-46, 5 modified tracked, newest seat report 14:31:50) - land deliberately, never sweep; (V6) stale selftest count 16 in SHONEN box 3 and in the attest.py registry row vs 18 in the code and the A4 banner; (V7) four cited receipts absent (ctl-c1-1-v1-profile.json, ctl-c2-1-v1-profile.json, ctl-c2-2-ghost-tool.json, l1/scores/c1-v1-gap.json); (V8) '9 line-selected citations' is 8 selectors plus the pinned interpreter; (V9) the Gate records no reject candidate, so the outside reject check used the standing S105 row; (V10) 'eight untracked files' is unattestable and false at closure. Not routed: the report author date 14:03:24 precedes the lane tip it cites (committer 14:12:20, so lands-last holds). SHONEN: all four boxes look checkable by a non-author on current evidence (box 2 rides the round-42 SquashFS v3 entry in LOG), but promotion is operator-owned and no [x] was written here. No promotion, no mint, no capability row (none demonstrated).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 50,
+   "date": "2026-10-28",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 50,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 50
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "novelty": "improved",
+    "calibration": "improved",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "honest-geometry fence counter — `python3 plans/round50_c1_verify.py --lane .` decides a frozen 126-fixture honest population, 50 hostile modules (20 refusals + 12 + 20 sealed) and a 15-row witnessed mutant floor out of process, with Q39 name hiding; first working round 50"
+   ],
+   "report": ".ufo/reports/round-50/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-50-verifier-spotcheck.md@fa16b87df727220184e2e40f8f79c19eecbcfc40",
+    "rechecks": "Step 1: report e2666196 authored by kengaku-shokunin, committer 14:40:42 after lane tip 14:39:56 (lands last); SHONEN heading with 4 [~] lines = 4 SHONEN boxes; all 8 cited hashes exist and are ancestors of the branch; jj-lane.sh state ahead=0, remote=local; prompt = templates/round-prompt.md verbatim (placeholder-rendered) + hyaku addendum §6, all five child-lane items and the >=8 L2 floor present. Claims RE-MEASURED in clean clones: R50-C1 base fence 05d5fe03 at 71f5f5f -> HONEST 113/126 (predicate fail, exit 1); tip -> HONEST 126/126, REFUSALS 20/20, SEALED 12/12+20/20, MUTANTS 15/15 floor=12, PREDICATE pass exit 0. R50-C2 at 71f5f5f -> total=271 unresolved=12 exit 1; tip -> total=279 resolved=279 unresolved=0 exit 0. Axis harm sweep: SCORECARD diff additive (64 insertions, 0 deletions), PROVINCE/SHONEN untouched. Census: sources-census.sh validate exit 0, 170 rows (165->170), S173-S177 all tier A/mined; all five raw URLs re-fetched, sha256 match the row pins; spot-check agrees with 5 admits + 1 reject, 2 citation-location defects routed."
+   },
+   "commit": "kengaku-shokunin@85102cf560240ff64943f73d4368b9131f15f7e6",
+   "closed_at": "2026-10-28T17:54:41Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (watchdog.log, mutable): 2026-10-28T14:03:29-03:00 launch kengaku round=50 pgid=1387145 driver=hyaku-inline attempt=1; 2026-10-28T14:41:43-03:00 complete kengaku round=50; hyaku-inline attempt=1. Lane repo HEAD at closed_at: fa16b87d (master, ahead=0); lane-authored round chain d45c5bb (the report's cited tip) -> 3dda12f -> 64f51c8 -> 61f6257 -> 85102cf, plus this closure's spot-check commits d52243a/8acd0f8/fa16b87d. Conformance defects (status-neutral): (1) four lane commits landed AFTER the report (sealed50 18->20, hardened counter 850ec790, two receipt re-runs); the report's landed-changes table and its 'final lane tip d45c5bb' line are stale and no erratum was appended after the filed report bytes in the fleet repo (the correction lives in the lane's lesson); (2) none of those four commits carries a LOG.md '## Round 50' line; (3) corpus/evidence/round50/c1-receipt.txt was regenerated in place twice rather than appended, so the report's pointer now yields 20/20 where the report text says 18/18; (4) wave partially dispatched: 72 seats specified, 40 mounted (w1.ready.partial), no WAVE-DONE / w1-results.json before report; (5) .ufo/waves/round-50/w1* (193 files, incl. the cited C1CritBlind3 verdict JSON and R50C1CritPredicate.md) remain untracked, so those report pointers do not resolve from committed state; (6) revision labels: report and SCORECARD outcomes attribute C2 before total=275 to 71f5f5f, while the committed c2-before.txt says TIP f7281bc and 71f5f5f re-measures 271; (7) lesson Gate: S175's quoted sentence is gitrepository-layout.adoc:285-286, not git-worktree.adoc:285-292, and S177's quote starts at git-fetch.adoc:41 while the row says :42-43; (8) the lesson '## Gate' carries no spot-check row (this closure supplies it at corpus/lessons/round-50-verifier-spotcheck.md); (9) the novelty 7->8 move cites no prior-art verdict with a fetched URL, which the SCORECARD's recorded novelty proxy names. Routed to the lane for round 51: commit or re-point the untracked wave evidence, append a corrected landed-changes/erratum row naming the four late commits and a LOG line for each, supersede S175/S177 rows append-only, add the spot-check pointer to round-50.md, and either file the novelty prior-art cell or supersede the proxy. Note for the operator (promotion is operator-owned): all four SHONEN boxes for kengaku look checkable by a non-author reviewer; nothing here writes [x] into SHONEN.md. No promotions, no mints.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
