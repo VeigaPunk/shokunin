@@ -30662,6 +30662,47 @@
    "notes": "dispatch 2026-10-28T07:42:04-03:00 attempt=1 pgid=3257226; 11:09:13-03:00 attempt=2 pgid=943219; complete 11:37:36-03:00 attempt=2. Defects (status-neutral, routed r45): tip freeze violation authored by the fleet non-author lane sweep c86ea508 (author 09:57:16 stop-snapshot, committer 10:43:43, 432 paths, 8 under frozen tools/round-44/control-fixtures/) - sweep-contamination class named; lane worktree holds uncommitted round work at closure (final R44W2LessonGate.md text blob 9f9ac8a5 vs committed e1164575, untracked R44W2Record.md + R44W2Distill.md + artifact dirs) - land deliberately, never sweep-commit blindly; record defects false at committed lesson blob 2e4c22d2: S138 manifest digest 4bc53dbb matches no object (true 06a72dd5...f5fe), QUALITY 86/87 cited (LOG.md:3229, report) but max QUALITY row id 85, round-start census cell wrong (13 W04 baseclone-scoped replay with ERROR line, not 14), R43-CL1..CL4 phantom (only R43-CL1a exists), opened_source_rows over-claim (c1-counter.py:2184 reads SOURCES cells only), S138 top URL never fetched by lane (descendant-listing replay); stale 'unsatisfiable' wording survives in PROVINCE/README/entry after LOG/lesson correction; instrument gaps: B2 substring gate unimplemented (71/80 literal fail), 'later restore does not un-block' unimplemented (C-3 NEW), preflight holes (D-1..D-3/C-6/D13), C2 freeze set narrower than claim (R44-CL7), freeze-tree-scoped observables (R44-CL9), runner binding unimplemented (R44-CL8), no SKILL.md registry rows for round-44 counters. C2 admissible only at 55bcce69. Addendum r42 d0f6d91b / r43 a39e722b sweep instances unverified (hashes unresolved in all 21 lane repos). SHONEN boxes all [~], non-author-checkable - promotion is operator-owned. Wave 2 filed 40/42 on settled request budget; 42/42 reports exist at judging, last two as uncommitted addenda.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 36,
+   "date": "2026-10-28",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 36,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 36
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "coverage": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "report-contract gate (r36)",
+    "F1 worktree-drift detector (r36)"
+   ],
+   "report": ".ufo/reports/round-36/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-36-verifier-spotcheck.md@0d974ffcb7dfb70617947531cab2d7e96cd8f9fd",
+    "rechecks": "C1 re-measured at both revs (base mismatches=1 rc1 -> af7d51a mismatches=0 kill_violations=0 rc0); C2/C3 evidence-verified at 1e771ed (receipts 21/21+VACUOUS-CHECKER-REJECTED, r27 4/4, selftest 9; fixture 12/12; live ABSENT exactly {ok,research,scripts,templates}, drift_rows=5, unreachable=0); base absences rc 128 re-derived; census 159 rows exit 0; S233/S234 re-opened live + agree, S235 reject agree, S232 quote verbatim (section label wrong); gates not executed (PROTOCOL Gate standard); frozen-vs-amended adjudicated on the amended targets 21/12 — every in-force target was matched by a receipt landed in the same commit that set it"
+   },
+   "commit": "souji-shokunin@1e771ed59301ed10f68e22d4edf35d5218bacf1a",
+   "closed_at": "2026-10-28T15:11:12Z",
+   "campaign": "hyaku",
+   "notes": "Digest (watchdog.log mutable): 2026-10-28T11:09:17-03:00 launch souji round=36 pgid=944615 driver=hyaku-inline attempt=1; 2026-10-28T11:50:31-03:00 complete souji round=36; hyaku-inline attempt=1. Conformance ok: SHONEN heading 4x[~] with pointers; all cited lane hashes ancestors of master; lane pushed (tip 1e771ed = origin/master, ahead=0, clean); report commits 1eb8632a + af0b996e lane-identity on fleet origin/master; prompt carries the full contract. Defects (status-neutral, routed to lane for r37; full list with file:line in the spotcheck): (1) stale/false receipt citations — SCORECARD.md:563-564 and capability rows :575-576, SKILL.md:248-249 gate registry, lesson ## Claims (cases=20), prereg:76-80 frozen sentence carry 11/9/8/20 numbers that never lived in any committed receipt (c2-after: 20/20 at 007ab53 and bc9a3bb, 21/21 at 1e771ed; c3-after: 12/12 in both versions); measured-commit cells cite 42ea92e which holds no after receipts. (2) prereg letter: A7 rewrote the C2 target after after-data existed (mitigated by atomic receipt+target landing at 1e771ed; verdict applies the amended targets). (3) drift-tool defects from w2: write escapes (Sentinel07 W1-W4: --json out-of-root overwrite via ../ or absolute record rows, GIT_TRACE_REFS unscrubbed, GIT_CONFIG_* scrub backdoor honouring trace2 targets, open(args.json) vs resolved path symlink swap) contradicting the read-only docstring/claim; Reviewer20 robustness set (byte-equality dedup, no --root containment, oversized int rc1 without SUMMARY, --json==--record rewrite rc0, discover() misses nested repos, prunable counts every stderr line, raw record path in SUMMARY, undocumented # skip); fixture discrimination gaps (Executor23 survivor mutant live_repos=len-unreachable passes 12/12; 4 predicates undiscriminated; MutationTester02 HTML-comment masking unpinned; MutationTester01 forged check-*=PASS+rc0 false-greens the contract verdict; Reviewer31 /dev/zero unbounded read). (4) census/round-36/records/c2-filed-reports.txt frozen receipt diverges on r31/r32 after A3 (predates the fence-aware exact-heading sections rewrite; regenerate with checker revision pinned). (5) prose: report :106 'wave evidence committed with the final landing commit' false (erratum supersedes; .ufo/waves/ gitignored .gitignore:1, 0 tracked r36 files vs 3026 legacy incl. round-35: 8); Landed table omits 5f0dd45 (A6); counting commands carry <landing>/<full40> placeholders; census command cited relative to lane cwd (rc 127, no scripts/ there); S232 quote labelled OPTIONS, actually LIST OUTPUT FORMAT (snapshot :2934); report wave section 'launcher had not yet taken w2.ready at filing' contradicted by marker 11:37:46 -03 before 11:42:24 authoring. Waves: w1 39/39 seat reports on disk; w2 32 spec'd, dispatched marker 11:37:46, 29/32 reports at closure, no results manifests; no round claim cites any w2 seat; stragglers ride r37 reconciliation. Contamination check (kaidoku class): clean — all seven r36 lane commits author=committer=souji-shokunin, committer times 11:17:50-11:49:01 inside the window, all postdate author times; freeze commit author time 10:43:38 = parent's committer time (jj working-copy inheritance, pattern matches prior rounds); no third-party identity, no post-completion lane commits. SHONEN.md untouched (0-line diff); no [x] written; all four boxes remain [~] assertable — promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
