@@ -30998,6 +30998,44 @@
    "notes": "Dispatch digest: 2026-10-28T11:42:27-03:00 launch tabi round=42 pgid=1685089 driver=hyaku-inline attempt=1; 2026-10-28T13:29:58-03:00 complete tabi round=42; hyaku-inline attempt=1. Report committed by tabi-shokunin identity at fleet 5bcb052b (13:28:28 -03, before completion); all eight cited lane commits exist and are ancestors of master; lane clean and pushed (ahead=0, remote master=15b75a7). Both frozen claims refused under their pre-declared kill rules: C1 coverage capability refused (counter greens nonce-relabeled/synthetic receipts over committed bytes; four seats zero-browser reach) -> coverage held 9; C2 calibration refused as worded (checker accepts tree objects where the frozen sentence says committed blob; fabrication limb unenforceable) -> calibration held 9. No axis harmed; capability added: none. Conformance defects (status-neutral): claims.json C2 beforeState enumerates 5 baseline finding ids while the committed control carries 7; report writes the D4 TSV path with a corpus/../ prefix; scripts/check-c2-knowledge-round41.mjs is red by construction (frozen pre-D2 pins) and needs the operator ruling the lane requests. Routed to r43: (1) C1 receipt authenticity (per-invocation signature, pinned public half, refuse unpinned --pins); (2) C2 cat-file -t blob check + pinned measure blob + CritC2Ledger verdict-probe; (3) freeze documents must quote the control they name; (4) standing-gate conflict operator ruling. SHONEN: four boxes [~]; boxes 1 and 4 look checkable by a non-author, boxes 2-3 hinge on the refused C1 claim; promotion is operator-owned and no [x] was written.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 45,
+   "date": "2026-10-28",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 45,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 45
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "unchanged",
+    "depth": "improved",
+    "calibration": "improved"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-45/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-45-verifier-spotcheck.md@5382acc85f9d8617fe242fc116819b8055dfc4c7",
+    "rechecks": "both claims re-measured by independent grep/awk over committed bytes (rule_blocks 21->22, rows 0->10, refs 0->8 resolving, registered 0->6, thin []); gate/selftest evidence verified from committed receipts and a read-only rerun reproduced every value; S140/S141 pages fetched byte-identical to their recorded sha256, S150 re-opened and the quoted heading confirmed absent"
+   },
+   "commit": "kaidoku-shokunin@9ae76e259e2f010ad1813a247571f3daab85f2e0",
+   "closed_at": "2026-10-28T16:35:08Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-10-28T12:20:58-03:00 launch kaidoku round=45 pgid=381845 driver=hyaku-inline attempt=1; complete 2026-10-28T13:27:53-03:00 hyaku-inline attempt=1 (copied digest). Lane tip at closure 9ae76e259e2f010ad1813a247571f3daab85f2e0 (prompt's after-hash 99fdb9e4 is one commit behind: the wave-2 results ledger landed at 9ae76e25 and report commit dd7e0d8e cites it). Both claims re-measured by me and met: R45-C1 depth rule_blocks 21->22, block22 rows 0->10 (exit cells all in {0,1,2}), refs 0->8 all resolving, S140/S141/interpreter cited, interpreter selftest 11 cases/0 failures, red on c86ea508 (8 touched paths) and clean on f762b727..f59565b7; R45-C2 calibration unregistered 6->0, thin [], scope_size 6, six rows with exact backticked first cells and 0/1/2 verdict maps. Do-nothing controls reproduce (c1/c2 exit 1 at the freeze, c2 exit 2 at the base); committed score receipts match. Instruments are non-discriminating by construction (R45-CL13/14) and the counters' freeze arm is merge-blind (R45-CL6, HIGH) - admission rests on the landed bytes, not on the proxies. Conformance: report filed by the lane identity (a7cc3c66/469fd6fd/dd7e0d8e), SHONEN heading with one [~] line per box, 23 cited commits all ancestors of refs/heads/main, push ahead=0, freeze unbroken (0 frozen paths changed), prompt embeds templates/round-prompt.md verbatim through section 5 plus the hyaku addendum section 6, L2 floor met inside one batched taskCall (40 then 36 seats). DEFECTS (status-neutral): (1) uncommitted round work in the lane worktree at closure - 2 modified + 6 untracked paths under .ufo/waves/round-45/ (mtimes 12:38-13:27), the pre-sweep state M45-1 is about; do not blind-sweep; (2) lane committed a fleet-root file outside its write scope (.ufo/prompts/kaidoku-round-45.md, commit f5f86bb8); (3) SCORECARD.md:3527 still reads 'wave 2: 32 seats' while the committed ledger has 36 - the R45-CL21 correction did not sweep this mention; (4) the report is internally inconsistent on wave-2 seats (34 at lines 239-240 vs 36 at line 296) and says R45W2Distill produced no artefact although its report is committed at 99fdb9e4; (5) NEW: the blob and restored arms have no failing selftest case - deleting either arm leaves 11/0 green, so A3's 'arm-covering but not arm-isolating' is wrong for them and the report's 'a red case per arm' is false; (6) M45-2's captured-by is none yet corpus/QUALITY.md is byte-unchanged, contrary to LEARNING step 3. Routed to the lane as D1-D8 in corpus/lessons/round-45-verifier-spotcheck.md. Discernment spot-check: agree on the S140 and S141 admits (both pages fetched byte-identical to the recorded sha256/byte counts, quotes located and <=25 words) and on the S150 reject (174,088 B page, quoted heading and ヒント absent). Census 139->141 rows, exit 0, 14 W04 at both ends. SHONEN marks stay [~]; promotion is operator-owned, and while boxes 1 and 4 are checkable by a non-author from this artifact, box 2 (end-to-end domain task) still rests on the round-42 SquashFS work.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
