@@ -32020,6 +32020,47 @@
    "notes": "Dispatch 2026-10-28T20:13:09-03:00 launch chousa round=62 pgid=2003641 driver=hyaku-inline attempt=1; complete 2026-10-28T21:30:33-03:00 hyaku-inline attempt=1. 66-seat v2 wave settled (results 66, reports 66). Defects (status-neutral): frozen claims file carried 14 false statements (disclosed erratum); lane used a Python one-liner for five edits; C2 counter exits 2 from a bare export unless --fleet/fleet-shaped layout; C1 limits accepted as disclosed (v2 counter still forgeable by detection of its own sandbox, battery hands counter the subject path, forgers authored by counter author). Routed: v3 counter/battery with non-author forgers, claims-vs-files pre-freeze read, C2 counter usage note. Operator note: SHONEN boxes 2 and 3 look checkable by a non-author (box 3 reproduced from clean export); promotion operator-owned, nothing written to SHONEN.md.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 43,
+   "date": "2026-10-29",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 43,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 43
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "calibration": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-43/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-43-verifier-spotcheck.md@5c3f4cca86e9d0c548d41e21524525c5095652d5",
+    "rechecks": "C1 re-measured: tree count 0 at ab592825; receipt+witness explicit files at ba433c94 (1,182,481/1,195,319 B); measure record sha256 c67a1096e5cc32b0..97b258 recomputed; nonce d2c85f6e.. = receipt runNonce; spans 18,588/25,649 ms (132 samples/run) and egressNonLoopback 0 re-derived from committed receipt; failed-run-1 (46 egress findings) committed; 8/8 frozen digest pins recomputed; kill rule evidence-verified (CritC1ReachSynth/Direct/Witness/ReachReplay + CritResidualModel committed reaches; counter c1-signature-bound-v5.mjs:214-215,262 verifies under the record's self-selected wrapper pubkey) — coverage held 9->9, no capability row. C2 re-measured: baseline red exit 1 [r5-claims-absent, r6-probe-absent] re-derived (claims.json and probe absent at ab592825, present from 7ca6f018/db5b2940); final predicate true / 0 findings at db5b2940; counter check-routed-defects-round43.mjs:194 (binds.length<5 floor over 8 named controls) and :201 (includes substring, >=8-char guard) confirm the CritFreezeBindings/CritFreezeAudit/CritPredC2 false-greens; MutC2Pin/MutC2Blob/MutC2Bind load-bearing; exit 0 = instrument pass, not admission — calibration held 9->9. Sources: S150/S151 re-opened byte-identical (HTTP 200, sha256 4b7024df..c50c42af / 624464ef..5165048d7 vs committed staged copies), quotes located; census exit 0 tabi ok (21 pre-existing W04); knowledge 59->60; registry 149->151; SCORECARD diff ab592825..3bf87b60 additive only; all 7 cited commits ancestors of master; lane ahead=0, only the two disclosed nested-git fixture dirs untracked."
+   },
+   "commit": "tabi-shokunin@3bf87b608a10dfb1ce78bfad5c272c5a7658450d",
+   "closed_at": "2026-10-29T22:28:40Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-29T17:09:56-03:00 launch tabi round=43 pgid=3367615 driver=hyaku-inline attempt=1; 2026-10-29T19:16:25-03:00 complete tabi round=43; hyaku-inline attempt=1. Report committed by tabi-shokunin identity at fleet d60a4aa5 (19:15:41-03:00, before completion); SHONEN heading present, 4 [~] boxes, no [x] written by closure; prompt renders templates/round-prompt.md verbatim + hyaku addendum, L2 floor matches MISSION.md. Both frozen claims refused under pre-declared kill rules (5th consecutive honest stop): C1 coverage capability — live signature-authenticated run clean (exit 0, v5 predicate true, spans 18,588/25,649 ms, egress 0) but four seats demonstrated in-model do-nothing reaches with zero browser runs (self-signed pairs answering the counter's fresh challenge; counter authenticates key-possession against the record's self-selected pubkey, not chain provenance) — no capability row; C2 calibration as worded — r42 holes closed and mutation-proven load-bearing, but CritFreezeBindings/CritFreezeAudit/CritPredC2 demonstrated r5 false-greens (binds.length<5 floor over 8 named controls; includes-substring quote fragments). Discernment spot-check agrees with the gate on both admits (S150/S151 re-opened byte-identical) and both reject-side refusals. Conformance defects: none status-affecting. Cosmetic defects routed (fix next round, new entries never rewrites): lesson Gate quote word counts drifted (S150 '7 words' observed 5; S151 '11 words' observed 10 — both within <=25); lesson has a duplicated '## Executed disposition' heading and a repeated census-end receipt line. Routed to r44: (1) C1 trust anchor not selected by the candidate measure record + supervised pinned-wrapper/driver execution binding + synthetic control re-cut to the challenge-answering class; (2) two deterministic browser-free egress controls (plant non-zero -> refuse; zeroed twin currently greens), MutDriverEgress class; (3) C2 r5 set-equality vs named-control set, whole-line quote comparison, claims.json blob pin, b.path type check; (4) Simplifier dead-code/ENV_ALLOW trim + refuse() exit-code distinction as pre-data amendment. Operator note: all four SHONEN boxes look checkable by a non-author on the committed evidence; promotion is operator-owned, closure wrote no marks. Freeze-time catch: the >1 MiB directory-commit skip (r41 D1 class) was caught by git ls-tree at the freeze before any citation; receipts re-landed as explicit files at ba433c94.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
