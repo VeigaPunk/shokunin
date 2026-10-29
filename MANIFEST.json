@@ -31937,6 +31937,48 @@
    "notes": "driver: 2026-10-28T18:36:01-03:00 launch mado round=55 pgid=2192556 driver=hyaku-inline attempt=1; 2026-10-28T20:54:51-03:00 complete mado round=55; hyaku-inline attempt=1. Registration v2 (5a43d67f, 20:11:17) ruled pre-data: committed before the real entry/counters/tool (first in ebd66fbf 20:16:27), predicate sentences unchanged; it followed w1 attacks. Freeze 54dacbd8 (18:46:52-03) precedes w1 registry createdAt (18:50:15-03): M54 freeze-order defect not repeated. Counters are content-blind (lane-declared, M55-9); claims verified as quote identity plus closure's own pin reads. Tool is an approximation of hyprlang (declared). Routed to mado: (1) round-55.md Gate/census paragraph stale 314->317/317 rows vs 319 (append correction); (2) M55-9 registry-membership/scope check + ordered P23; (3) M55-10/M55-11 kill power and harness sniffing; (4) frozen predicates must be satisfiable as written, run freeze-verify against counter grammar pre-freeze. Status-neutral: helper rewrote freeze commit (disclosed M55-7); hold-out destination named to a builder seat (M55-5, disclosed). SHONEN four boxes appear checkable by a non-author; promotion operator-owned, no [x] written.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 52,
+   "date": "2026-10-28",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 52,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 52
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "novelty": "unchanged",
+    "operability": "improved",
+    "coverage": "unchanged",
+    "calibration": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-52/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-52-verifier-spotcheck.md@536925b5320fa64298030b4ee76a58fc4b82723f",
+    "rechecks": "C1 re-measured: 183/184 captures present with 183/183 sha256 matching SHA256SUMS (sanitize-git-repo excluded by operator GH013, digest in EXCLUDED.md), 89 tasks, 16/16 confirmation quotes found verbatim in captures over 8 tasks, independent AST presence-only count 54 vs counter 33 vs lane AST 47; frozen literal predicate fails (R52-C1 fail, exit 1 per c1-after.txt) so novelty unchanged and A5 additive reading not adopted. C2 re-measured: 74 advertised existing scripts, 74 registered, 0 missing, 0 duplicate row names (counter evidence c2-after.txt pass, selftest 3/0 verified, not executed); row-truth spot checks (routed-findings 75 rows 31/1/41/2, round51-routing exit-2 claim, gate-flip-check single row) true; operability improved. Gate/selftest claims evidence-verified not executed. Discernment: 4 admits (S184 w/ tier caveat, S187, S190, S186) and 2 rejects (S191, S193) re-opened over HTTP, quotes found verbatim, all agree; census validate exit 0 (15 W04)."
+   },
+   "commit": "kengaku-shokunin@7a76a4bbfe6cc2a2f8dc9999f671a7645c6f2c2e",
+   "closed_at": "2026-10-29T00:25:33Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (.ufo/watchdog.log): launch 2026-10-28T16:09:50-03:00 attempt 1 -> lane-dead-no-report 16:31:32; launch 16:31:35 attempt 2 -> lane-dead-no-report 16:35:23; launch 16:49:53 attempt 3 -> lane-dead-no-report 17:25:36; launch 20:40:07 attempt 4 (hyaku-inline) -> complete 21:21:17. Real committed report (2 v1 waves, 35+33=68 seats, 0 dead). R52-C1 (novelty 8->9) NOT admitted: frozen literal predicate fails (CAPTURES 183/184, classified 88/89) because the operator excluded one capture; closure rules the literal verdict governs, A5 additive 'digest-pinned absence counts' reading not adopted (instrument also leaky/forgeable per lane's own wave-2 attacks). R52-C2 (operability 8->9) verified. Because not every claim verifies the round is rejected-honest-stop. Conformance defects (status-neutral): untracked >1 MiB receipt tb2-paper-full.html left in lane worktree; confirmations.json source_file absolute host paths; fleet-root .scratch/ and lane3/ strays not attributable to lane. Routed to lane: make C1 counter unforgeable and repair per-test split under frozen forged-complete control; price 3 unpriced confirmed tasks; C2 SELFTEST-UNBACKED span-scoped negation fix and controls K5/K7. SHONEN boxes 1,3,4 look checkable by a non-author from committed bytes; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
