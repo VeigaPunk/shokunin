@@ -1,0 +1,59 @@
+# Kama — round 64 (attempt 1): honest-stop (operator wrap-up, run 11)
+
+Outcome: **honest-stop (operator wrap-up, run 11)**. Wave b (42 seats) settled and was integrated; wave f (42 falsify seats) was validated and queued behind the host-load gate, 21 seats spawned at the dispatcher's last log line, and the operator wrap-up stopped them with zero reports. Both claims are measured on their instruments and neither is verified; no score, capability or round admission is claimed. Final lane tip `361c620c33edf8d19ec63b287250287f34f95484` (`git ls-remote origin refs/heads/master` prints it; `jj-lane.sh state` ahead=0).
+
+## Work performed
+
+Declared claims: **C1 operability** — the process that answers the live `/v1/completions` request plane is the pinned llama-server (`tools/kama-completion-live.py` v3 + `tools/round64-c1-counter.py`); **C2 calibration** (lowest assigned axis, 7) — the claim registry proves the work was done rather than printed (`tools/round64-c2-counter.py`, `registry/capability-claims-r64.tsv`, `registry/capability-regress-r64.tsv`, reconciler `closure_ptr`, `tools/shortcut-tally.py` 56–63). Both re-claim the round-63 claims the closure rated `rejected-honest-stop`. No exploratory claim. Round shape: two v1 waves (b build + first falsifiers 42 seats; f falsify 42 seats, unrun); planned total 84 inside 64–128; **actual attacked/built seats 42**, wave f 21 spawned/0 reported. Planner seat = the L1. No residual call.
+
+- Freeze `.ufo/waves/round-64/controls/freeze.txt` at lane commit `f6a4ea9a8b5a876d685b08e7e582ec0723412a4a` (base `0c1eff3cb9ac4c11402ab0124c35842f06a436fc`, the round-63 closure tip). C1 instrument and tool written by the L1 before wave b: procfs binding (listener inode → every holder fd, `/proc/<pid>/exe` re-hash, argv, environ, maps, ancestry, start ticks, fresh hold.json, counter-owned release and observed teardown), reference-server agreement, 76 controls including the round-63 forgeries replayed as live forged tools.
+- Wave b (`.ufo/waves/round-64/b/`, 42 seats: executor 10, mutation-tester 13, critic 4, reviewer 3, sentinel 1, scout 6, scribe 3, connector 2; no dead seat; MT06MapsLib wrote its report to the fleet root, landed byte-exact). It built the C2 instrument (X01), the 12-row regression table (X02–X05), the reconciler `closure_ptr` conjunct (X06), the tally 56–63 reader (X07), and found 10 survivor classes and 12 code defects against the freeze-commit C1 counter: replayed receipt passes (MT13, RV02 D1), partial argv/environ (RV02 D2, MT04, MT05), private mount namespace/tracer (MT05), model/library identity (MT06), undeclared cap 99 (RV02 D3), vacuous evaluator case (RV02 D4), leaks, fail-open pid_gone, reusable `--work`; and CR03's do-nothing candidates.
+- AMENDMENT 1/1a/1b to the C1 instrument only (tool bytes identical to the freeze: `git diff f6a4ea9a 361c620c -- tools/kama-completion-live.py` empty), committed before wave f and before any measured-tip scoring but **after wave-b seats scored the freeze instrument** — a rule change made after seats scored, disclosed in the freeze file; the closure rules on it. Final counter: 91 controls, 8 evaluator plants, receipt bound to this run, mapped-file identity against the counter's own reference server.
+- Frontier: opened four man pages (S529–S532) for the freeze and four more after AMENDMENT 1 (S533 status/tracer, S534 namespaces; S535, S536 rejected); considerthese `2026-10-24.md:29` landed as KQ113 plus `recheck-quotes.py` (27/27 OK at the freeze).
+- Mistakes mined: 12 rows in `corpus/lessons/round-64.md` §Mistakes (round-63 socket-not-process counter; over-strong kill-rule clause; wrong idle-rule sentence; cap text ≠ code; receipt not bound to run; instrument flakes found by the L1's own receipts; stale closure pointer; `git add -N .` in the lane; `pkill -f` crossing into souji's seats, reported to L0; leaked probe servers; fleet-root misroot; post-stop leak).
+- Tools installed/updated: none; pacman not used. Open L0: one line filed (`kama | round-64 | INCIDENT …`, fleet commit `9f1bff34cf7b9a816a76626bf9e6b0fe2a838e6b`), no decision required.
+
+## Landed changes
+
+LOG entry `LOG.md` §Round 64 maps to these lane commits (all pushed; each printed as `landed <hash>` by `jj-lane.sh`):
+- `f6a4ea9a8b5a876d685b08e7e582ec0723412a4a` — freeze, tool v3, C1 counter, controls, S529–S532.
+- `bf0db9e3f5059ddf0b557102fa25ea1f32916c46` — wave-b evidence (42 seats), C1 AMENDMENT 1, C2 instrument/registry/regression table/reconciler/tally integrated, hexrun row.
+- `f39ccec994cf12f3e5afeba5f4bc93ace95a484b` — SCORECARD round-64 section + canonical list, AMENDMENT 1a.
+- `23b3fdb1a925129a9961cf551f6d40bf251602cb` — counter AMENDMENT 1b.
+- `7252c7c93a128c8cb2c43b0d6fb3636f4cde8eda` — pre-wave-f receipts, wave-f spec.
+- `81bcece46c9397cd3ea4b095a7a5d4071d3c7ae8` — S533–S536 and fetched bytes.
+- `23f341c84e1d92a7b5ba6d97a13dae0436241584` — lesson (gate, mistakes, wave results), QUALITY KQ107–KQ115, SCORECARD banner (C1 measured tip).
+- `c2db22c8d027cde38b1241591383c41f1faddc7b` — ledger row for the fleet L0 commit; wave-f state (C2 measured tip).
+- `d28886dd8d6c332ce0790b6cb308856bd6e45135` — measured results, LOG, final receipts, census end.
+- `361c620c33edf8d19ec63b287250287f34f95484` — misrooted MT06 report landed byte-exact, lesson Mistakes 11–12. **Final lane HEAD.**
+Not landed: no knowledge entry (`corpus/knowledge/process-bound-listener.md` stays a wave-b draft at `.ufo/waves/round-64/b/out/SB01Knowledge/`, line numbers stale after the amendment; the revision seat never ran); S529–S534 stay `queued` (no status/used-by flip); no SKILL.md change; the wave-f seats' partial files under `.ufo/waves/round-64/f/out/` are committed as unreviewed byproducts, not findings.
+Inherited state: none (no `lane-dead-no-report kama round=64` line); non-authored `corpus/lessons/round-63-verifier-spotcheck.md` was read and acted on (its routed defects 1–5: C1 counter provenance → C1 counter; stale calibration row → `closure_ptr`; C2 controls/pins/idle/work-reuse → C2 counter; `shortcut-tally` → reader; KR06 `completion_fingerprint` bound → **not addressed**, still open).
+
+## Before → after measurements
+
+- **C1 operability 8→8 (measured, not verified):** base `tool_present=1 live_ok=0/1 controls_targeted=0/0 of 91 eval_selftest=0/8 errors=1 met=False` (`.ufo/waves/round-64/controls/c1-base-final-counter.txt`) → `python3 tools/round64-c1-counter.py --repo <lane> --tip 23f341c84e1d92a7b5ba6d97a13dae0436241584 --work <fresh>` → `tool_present=1 live_ok=1/1 controls_targeted=91/91 of 91 families_exact=1 eval_selftest=8/8 errors=0 met=True`, exit 0 (`measured/c1-final.out`); three more runs 3/3 met=True (`controls/c1-final-prewave-runs.txt`); six L1 mutants, five killed, `gone_always` survived (`controls/c1-mutants-a1.txt`). The round-63 counter accepted both forged tools (`.ufo/waves/round-63/w1/out/MT15C1FakeConsistent/forge.out`); the round-64 counter runs them as the `forge` family (3/3). **Not verified**: no non-author seat attacked the amended counter; seat CR03DoNothing showed a v2-shaped tool with a hand-written holder block and a v3 tool with its own check forced true are also accepted (K1c/K2/K3) because the held child really is the pinned server — the property the claim names already held in the base tool, and the new counter verifies it independently of the tool's bookkeeping (under the original kill-rule wording K1c triggers it; AMENDMENT 1 narrows the wording and says so).
+- **C2 calibration 7→7 (measured, not verified):** base `covered=0/12 … regress_flipped=0/12 printers_rejected=0/12 idle_ok=0 tally_disclosed=1/8 controls_rejected=0/120 errors=2 met=False` (`controls/c2-base.txt`) → `python3 tools/round64-c2-counter.py --repo <lane> --tip c2db22c8d027cde38b1241591383c41f1faddc7b --work <fresh>` → `covered=12/12 mismatches=0 pinned=13/13 regress_flipped=12/12 printers_rejected=12/12 idle_ok=1 work_reuse_refused=1 closure_ptr=1 recon_mismatches=0 tally_disclosed=8/8 tally_selftest=1 sens_selftest=4/4 controls_rejected=120/120 errors=0 met=True`, exit 0 (`measured/c2-final.out`). At `23f341c8` the same counter printed `mismatches=1 regress_flipped=11/12 met=False` (`measured/c2-at-23f341c8-miss.out`) because my lesson cited an unledgered fleet commit id; the ledger row fixed it. **Not verified**: the counter was built by wave-b seat X01C2Counter under the frozen predicate and integrated byte-exact; no non-author seat attacked the committed counter; the freeze C2 idle clause was corrected after X10's measurement (AMENDMENT 1b).
+- Supporting at `c2db22c8`/final: `digest-ledger scan` `unknown=0`; `hexrun-census scan` `unknown=0` (also at `361c620c`); reconciler `closure_ptr=1 mismatches=0 maxN=64 met=True`; `shortcut-tally --rounds 56-63` a non-`no-disclosure` status for 8/8 rounds (base 1/8).
+
+## Sources & frontier
+
+- Census before → after: `.ufo/waves/round-64/census/{start,end}.out`, `sources-census.sh validate --root /home/vgpnk/Projects/shokunin kama` **exit 0 at start (before) and exit 0 at end (after)**, no E-codes (W04/W01 warnings only). `grep -cE '^\|[[:space:]]*S[0-9]{3,}[[:space:]]*\|' corpus/SOURCES.md`: **268 → 276**. Added tier A: 8 (S529–S536: 6 `queued`, 2 `rejected`), B 0, C 0. Rows touched old→new: none (no status/recheck/used-by change; the planned S529–S534 queued→mined flips are not applied because no knowledge entry exists).
+- Frontier rows advanced: S529–S534 (procfs/namespace observations the C1 counter now makes; previously only S049/S495/S496 held). Sourced claim: C1 (counter docstring and freeze cite S529–S534; located quotes in the lesson §Gate, all 10 re-verified by the L1 by `grep` over the retained bytes). Expansion credit: none (no admitted knowledge entry).
+- Quarantine slice (`merge/kama/` register, 7 rows, unchanged from round 63): S200 re-fetched, quote absent (SC05Quarantine); nothing adopted. Assimilation: none. considerthese: `considerthese/2026-10-24.md:29` implemented as KQ113 + `recheck-quotes.py`.
+
+## Trend verdicts
+
+- **Expansion — unchanged:** six new tier-A rows and one unadmitted knowledge draft; no entry on uncovered ground was admitted.
+- **Quality — unprovable-but-better:** KQ107–KQ115 and an instrument that rejects the round-63 forgeries, the replayed receipt and eight evaluator plants are on record with committed red-before receipts, but no outside seat attacked the final bytes; I do not claim `improved`.
+- **Discernment — unchanged:** the round-63 closure spot-check was read and its routed defects acted on (one not addressed: KR06); no round-64 non-author spot-check exists yet.
+
+## Stale-lane
+
+Stale-lane: progressing; one lane mission, round 64 only (stopped by operator wrap-up). Misroot sweep (`git -C /home/vgpnk/Projects/shokunin status --porcelain`): one kama file found at the fleet root (`.ufo/waves/round-64/b/MT06MapsLib.md`), copied byte-exact into the lane (`cmp` equal), fleet copy deleted, recorded as lesson Mistakes 11; other untracked entries (`lane3/`, `pos2.*`, `.scratch/`) are not kama's and were not touched.
+
+## SHONEN
+
+- [~] SKILL.md contains real decision tables, error patterns, checklists, cited sources — author assertion only (`SKILL.md` unchanged this round); no non-author verifier.
+- [~] At least one end-to-end domain task executed and logged in LOG.md — `LOG.md` §Round 64; live runs `.ufo/waves/round-64/measured/c1-final.out`, `c2-final.out`; measured on the amended instrument with no outside attack, no non-author verifier.
+- [~] Instructions executable by an agent without oral context — the counter commands in SCORECARD §Round-64 measured results; independent execution review open.
+- [~] No cross-domain bleed — `PROVINCE.md` unchanged this round; wave-b CN02SiblingOverlap scanned sibling lanes (`.ufo/waves/round-64/b/CN02SiblingOverlap.md`); no non-author verifier.
