@@ -193,3 +193,12 @@ spot-checks first; declares only claims a do-nothing control cannot reach (adden
   deleted.
 - Remote `considerthese` daily reflections fast-forwarded into local audio, game-dev-2d,
   game-dev-3d, lore (6 each) and kagi (2). Every lane repo: ahead=0 behind=0.
+- Cleanup (operator: "All listed"): fleet-root strays removed (.scratch/closure-r54,
+  closure-mado-r50.json, kasegi-r44, o.bin, oldrep1/2.out, pos2.*, empty D= ok tools .ufo-scratch)
+  and lane3/ (stray kengaku clone); /fast/scratch/hyaku emptied (root kept) and hyaku-run8/9/10 +
+  wrap-up scratch removed (/fast 247G -> 191G used); dead mado worktree pruned; 51 unlanded
+  untracked lane files removed (tameshi 40, kaidoku 6, mado 2, kengaku w2.ready.partial, tsukuroi
+  round-51 w1.ready + .dispatched) plus one byte-named mado fixture; local bookmarks audio
+  wt-r90..r100 and game-dev-2d wt-r98..r100 deleted (content already on main; game-dev-2d remote
+  wt-r98..r100 untracked, left on origin). Kept: kake53/* branches (not on main), tracked orphan
+  .ready files (kasegi r42, kengaku r50), tsukuroi round-51 receipt pair (.json + .rc).
