@@ -32099,6 +32099,44 @@
    "notes": "Dispatch/complete digest (watchdog.log 1913/1933/1937/1939): 2026-10-28T20:19:16-03:00 launch kaidoku round=50 pgid=3315356 driver=hyaku-inline attempt=1; 2026-10-29T00:28:43-03:00 complete kaidoku round=50; hyaku-inline attempt=1; 2026-10-29T17:10:01-03:00 launch kaidoku round=50 pgid=3370837 driver=hyaku-inline attempt=1; 2026-10-29T19:42:44-03:00 complete kaidoku round=50; hyaku-inline attempt=1. Attempt 1 (38 seats, under band) was stopped by the operator wrap-up between freeze and data run; honest-stop report filed (1532c905); re-dispatched same round number. Attempt 2 resumed C1 under byte-identical frozen bytes and added C3 (67 seats, band 64-128 met, attack share 46%). R50-C1 coverage measured MISS (2/4 carriers, exit 1, honest stop; repair = re-frozen per-carrier-class gap rule, round-51 plan) -> admitted=false, rejected-honest-stop; C2 met; C3 met. Routed defects (status-neutral, spotcheck section 6): (1) LOG.md never cites 646d29c9 - append-only correction next round; (2) SHONEN.md carries extra note lines/prose beyond the canonical one-evidence-line-per-box form - regenerate verbatim from template next steered round; (3) C3 instrument reports freeze-drift but does not gate on it - enforce next freeze; (4) fetch-vendor.py --selftest does not exercise the w1 network guards; (5) no preventive fleet-root stray control (M50-9 containment only, operator-side). Attribution note: dispatch-evidence commit 1486cf93 (prompt file) carries the lane identity under hyaku-inline; canonical protocol assigns the prompt commit to the integrator - recorded, history not rewritten. Open L0 carried: unredacted session-cookie values in pushed history (round-45 f1.hdr, commit 14936cb9) need an operator-authorised force-push (kaidoku | round-50 stands). SHONEN boxes all [~] with resolvable pointers and look fully checkable by a non-author; promotion is operator-owned. Closure graded discernment improved (outside spot-check agrees on every sampled admit and reject; the lane had conditioned its unchanged grade on this pending check; round-49 disagreement became lesson-backed corrections S246-S248 + QUALITY rows 94-95).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 42,
+   "date": "2026-10-29",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 42,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 42
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "coverage": "improved"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-42/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-42-verifier-spotcheck.md@619a75034dd6324e1a725f73034c59f7bf9558ef",
+    "rechecks": "C1/C2/C3 gate receipts verified at 34e33a6/5ad7046 and at tip re-runs (records/resume-remeasure-l1.txt); frozen counters+populations+pinned tool byte-identical freeze afe17f4 -> tip 34343a39 and sha256-match the preregistration; plain re-derivations: 70/70 population tokens grep in base SCORECARD bf618f6c, register 65 resolved + 5 unresolved, 5 CORRECTION-DE lines bound to the exact 5 tokens, c2-cases 37 rows, c3-mutants 13 rows, 5/5 sampled resolved_to paths exist at tip; controls red (c1 registered=0/class_ok=42, c2 24/37+FAIL+0/3 and stub 0/3, c3 survived=13 x2 + equiv_killed=6); R1 gate findings=3 at base -> findings=0 both modes at 51f204f and tip (frozen r1 predicate unsatisfiable, honestly red-by-letter, not a claim); axis-harm over full span bf618f6c -> 34343a39: SCORECARD +41 append-only, scores 7/8/8 unchanged, R42w3critic01 audit no durable regression; census validate souji ok rc=0 rows 182->183 W04=52; S259 snapshot sha256+quote re-opened (agree), staged fleet-prune-safety-r28 reject re-opened (agree); wave reports w1 39/40 w2 32/34 w3 4/4, w3-results.json 4 seats"
+   },
+   "commit": "souji-shokunin@34343a39ffab8029b06e8e6c9ac699ebcbd65f8a",
+   "closed_at": "2026-10-29T23:08:39Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (watchdog.log lines 1919/1932/1934/1940, mutable log): 2026-10-28T20:44:09-03:00 launch souji round=42 pgid=1394300 driver=hyaku-inline attempt=1 | 2026-10-28T23:45:14-03:00 complete souji round=42; hyaku-inline attempt=1 | 2026-10-29T17:09:52-03:00 launch souji round=42 pgid=3365367 driver=hyaku-inline attempt=1 | 2026-10-29T19:57:29-03:00 complete souji round=42; hyaku-inline attempt=1. Report committed by lane identity souji-shokunin <souji@shokunin.local> (5ada10c8, 8fd7b8f1); SHONEN heading x1, four [~] lines; prompt = template rendering + hyaku addendum, all round-level and child-lane items present. Defects (status-neutral): R1 frozen predicate rows_added=3 unsatisfiable (counter ignores gate exit; exemption grammar cannot name ../ pointers) - disclosed, repair verified green both modes; C3 reading load-sensitive, idle-host receipt canonical, disclosed never narrowed; run-11 waves left no results.json (seat counts from report files, disclosed); closure assignment's 'lane HEAD before the round' names the run-12 resume base 6a3f7594, not the round's true pre-round tip bf618f6c - axis-harm verified over the full span. Routed to r43: r1-counter amendment-or-retire; load-stable C3 counter; C1 counter defects N1-N4 + correction-prose reader; C2 30 part-A mutation gaps + named hole list; S259 narrowing (using/cmdline). Operator note: all four SHONEN boxes look checkable by a non-author from the cited evidence - promotion is operator-owned; no [x] written. Round totals: 74 run-11 seats (w1 40, w2 34) + 4 run-12 residual = 78, band 64-128. No promotions, no mints.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
