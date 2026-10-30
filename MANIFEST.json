@@ -32501,6 +32501,49 @@
    "notes": "Digest: launch 2026-10-30T01:32:36-03:00 mori round=61 pgid=1985470 attempt=1; lane-dead-no-report 02:44:10 (attempt 1 died before landing a report; freeze 7370a731 + in-flight wave w1 inherited unchanged, pins re-verified, nothing re-frozen or re-dispatched); launch attempt=2 pgid=470011 02:44:12; complete 03:25:10 attempt=2. Verdict rejected-honest-stop: C2 claim unmet on the frozen counter's own >=5-word quote floor; C1/C3 verify; no axis harmed; report is real and complete. Conformance clean (lane-identity report commit 3bb9b8e7; SHONEN 4/4 under heading; all cited hashes ancestors of refs/heads/master; ahead=0; prompt is a verbatim template render + hyaku addendum SS6). Defects (status-neutral, report accuracy): D1 report says 'one W04 duplicate-URL warning' at census end, its committed receipts show 25->30 (S565/S566/S567/S568/S570 flagged; exit 0 stands); D2 LOG.md Round 61 entry ties only 2 of the 5 hashes the report claims (72db3c2b and 986d4b46 unnamed; self-reference excuses neither); D3 '56 seat reports' is actually 54 seat .md files + swarm-registry.json (+1 draft). Routed to lane for r62: report-receipt characterization exactness, LOG hash citation completeness, seat counts; lane self-routed counter fixes (new instruments, feasibility probe, met-line freeze by fmt grep, argv-on-receipts, absolute coverage paths, contract cites by path) confirmed recorded in the round lesson. Operator-owned: merge/mori mass id drift L0 (.ufo/l0-questions.md:210-211; two near-duplicate mori|round-61 lines filed) - renumber vs per-document re-pointing needs operator ruling before any adoption. SHONEN: all four boxes [~] asserted-by-author but non-author-checkable (registry rows runnable, LOG entries resolvable, PROVINCE untouched) - promotion review is operator-owned. No tool installs or updates performed; pacman stayed paused per the addendum guard.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 63,
+   "date": "2026-10-30",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 63,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 63
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "Claims audit — tools/claims-audit.py flags machine-checkable false statements in a frozen claims file from a rule TSV (seven classes, FLAGGED=k/n, selftest 3 cases); SCORECARD capabilities row, first-working round 63"
+   ],
+   "report": ".ufo/reports/round-63/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-63-verifier-spotcheck.md@759c6cbef4cf9cdc81b68afc709f3b82ecd1a9d9",
+    "rechecks": "Step-1 conformance pass (lane-identity report commit 19283331; SHONEN heading 4x[~]; freeze e5166179 and tip 4a11a71d ancestral to master; jj-lane state ahead=0 clean; prompt carries full contract, axes line matches shokunin.conf, L2 matches MISSION.md). C1/C2 evidence-verified per Gate standard: all eight frozen digests re-hashed equal at tip; receipts read and cross-consistent (v1-before 9/9 accepted, v2-after 9/9 rejected with per-leg wave-hole causes, landed tool BATTERY=PASS x3, nulls FAIL rc=1, PREFLIGHT=8/8, frozen v1 battery still passes amended tool x3, FLAGGED=2/2 and 4/4, selftest PASS 3 cases, probe 11/11, own-claims 0/4); instruments not executed by closure. Documentary re-measures: claims-audit absent at base (git cat-file); census 145->149, tiers 113/25/7->116/26/7, status 118/19/8->121/19/9 exact; sources-census validate exit 0 (five pre-existing W04 only); SOURCES diff purely additive; SCORECARD diff purely additive (no axis harmed); PROVINCE/SHONEN/AGENTS diffs empty; base grep sweep of corpus/knowledge for the new entry's ground returns nothing; assimilation counts 64/114/145 match commit stat. Spot-check 4/4 agree (S146/S147/S148 admits re-opened at rendered lines 29/1376/probe file; S149 reject re-opened, file-kind is suffix-based per source)."
+   },
+   "commit": "chousa-shokunin@4a11a71d2e22f2588539b253318cc114bd79b859",
+   "closed_at": "2026-10-30T07:06:47Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (watchdog.log lines 1925/1930/1950/1963, verified verbatim): 2026-10-28T21:37:12-03:00 launch chousa round=63 pgid=3041545 driver=hyaku-inline attempt=1; 2026-10-28T23:43:56-03:00 complete chousa round=63; hyaku-inline attempt=1; 2026-10-30T02:38:17-03:00 launch chousa round=63 pgid=957812 driver=hyaku-inline attempt=1; 2026-10-30T03:53:03-03:00 complete chousa round=63; hyaku-inline attempt=1. Attempt 1 landed both claims and was ended by the run-11 wrap-up before closure; attempt 2 re-froze and inherited its wave findings. Defects (status-neutral, in chousa-shokunin/corpus/lessons/round-63-verifier-spotcheck.md): (1) on-sibling G04/G05 post-fix runs (kagi/kake/tameshi 2/2 each) asserted in report+lesson with no committed receipt — fix pinned indirectly by receipted benign legs B07/B08; (2) report text 'lane PREFLIGHT=5/5' unreconciled with committed PREFLIGHT=8/8 receipt, no pointer; (3) L2 floor unmet — 0 seats, disclosed by the lane, caused by the orchestrator's 2026-10-30 dispatch pause (provider failures; 'Do not request new waves/replacement seats just to retry these failures'; 'Finish reachable existing documentary/defensive work and report any required unperformed work honestly') — not admission-blocking: every claim verifies, no axis harmed, no quality/expansion trade (LEARNING.md:37-38 not implicated); (4) claims-a2.md cites a deleted /fast/scratch provenance path for c1-on-fixed-tool (committed copy resolves). Routed to round 64: receipt for the sibling G04/G05 runs; mutation pass on c1-battery-v2.py and claims-audit.py; non-author forger for the v2 exhibit set; entailment read of self-claim-audit-r63.md; RevG02.md's ten gate defects; __file__ existence-assert rule (lesson mistake 3); round-62 v3-counter line if the forger-armory thread continues; CT-20261019-4 stays with the operator. Trends: expansion improved (entry on base-absent corpus/knowledge ground citing three mined rows; capability row entered); quality improved (falsifier class closed 9/9 accepted -> 9/9 rejected, G04/G05 false-positive class fixed and pinned, no admitted entry found false); discernment improved — the lane filed 'unchanged' pending the non-author spot-check; this closure performed it, all four of the round's gate decisions (3 admits + 1 reject) re-opened and agreed, meeting LEARNING.md's improved condition; sample = the round's full gate-decision set. Operator note (promotion is operator-owned): all four SHONEN boxes look checkable by a non-author from the committed record. No installs performed this closure (none needed; pacman paused per lane report).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
