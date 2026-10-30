@@ -88,3 +88,7 @@ Required fleet misroot sweep: `git -C /home/vgpnk/Projects/shokunin status --por
 - [~] End-to-end domain task executed — ledger tool on 61 real routed items, measured at M; `LOG.md:2328-2334`, `close/ledger69-M.txt`.
 - [ ] Executable without oral context — unsafe original control replays and defective freeze remain disclosed; no verifier attestation.
 - [~] No cross-domain bleed asserted — `PROVINCE.md`, `w1/K69ConnSiblings.md`; no promotion claim.
+
+### Post-file cleanup erratum (append-only)
+
+Supersedes only the final-lane-tip label above: **final lane `ab5915e7b9671e8a1bd375cc6c2748b78dc91629`**, confirmed by `git ls-remote origin refs/heads/master`; measured M remains unchanged. This commit adds `LOG.md:2336` and lesson scratch-policy disclosure: frozen c2-controls writes an unused hardcoded `/tmp/forge-sed.txt`, violating the committed-tool scratch rule. Runtime file and round-owned scratch root were removed; frozen bytes remain untouched, with versioned control repair routed next round. No new test/admission result is claimed. Initial report commit: `e1968d1b283d0e452c3a0a6a51448d58184710b7`.
