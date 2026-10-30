@@ -33254,6 +33254,52 @@
    "notes": "Driver digest: 11:14:56-03 launch attempt=1; 12:08:09-03 lane-dead-no-report (no SHONEN heading/report) retry same round; 12:08:11-03 launch attempt=2; completes 12:59:32/13:03:32/13:06:14/13:07:32 -03. Attempt 2 inherited attempt-1 uncommitted bytes, re-verified them; report cites lane tip 62b0af15 at report time (fleet commit 60db1563, lane identity, report path only). Five post-report wrap-up commits aaecb85->c46acf8 (14:46, run 12) landed the three operator-released w2 seats' evidence - durable-state resolution, no defect. w1=64 seats (L2 floor met in one batched call), w2=32 (attack 31%), total 96 in band; w2 released un-settled by operator stop, no WAVE-DONE, no w2-results.json - honest stop, no settlement fabricated. Routed defects (status-neutral): (1) SCORECARD r65 C2 after-column labels stale pin 0a851898, receipts all pin 1df2af73; (2) source-openings.json S155 location string not narrowed to line 31; (3) report says 6 w1 seats left no report file, actually 2 (4 wrote <seat>/report.md); (4) depth/quality 'improved narrowly' wording rests on unadmitted C2 with author-side review only - closure grades depth unprovable, align wording with r64 precedent; (5) axes-table operability last-change round still 1 despite improvement verdict (score deliberately frozen at 3/10) - state intent in row; (6) third bare '## Capabilities' heading (precedented, parser-safe); (7) operator-side: templates/round-prompt.md itself carries only 1 of 5 child-lane items (prompt conformant via hyaku addendum) vs PROTOCOL/MISSION claims - not a chousa defect. SHONEN remains four [~] author assertions; boxes 1-3 look non-author-checkable on current evidence - promotion review is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 56,
+   "date": "2026-10-30",
+   "type": "closure-correction",
+   "supersedes": {
+    "round": 56,
+    "type": "closure-correction",
+    "date": "2026-10-30",
+    "entry": 918
+   },
+   "lane": "mado",
+   "lane_round": 56,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 56
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved",
+    "calibration": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "watch-list predictor for misc:disable_autoreload (tools/mado-watchplan.py; SCORECARD capabilities row, first-working round 56; evidence strengthened this attempt: second /proc sample 40/40 three-sample ALL_MATCH, tag→commit→bytes chain v0.56.2→efb50993, C2 fixtures=18/18 holdout=8/8 controls=4/4 + selftest 86/86 committed at 441347bc)"
+   ],
+   "report": ".ufo/reports/round-56/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-56-verifier-spotcheck.md@5337d2509f5c91c6f200b6637cf77bd0ad1cd67f",
+    "rechecks": "Step-1: report committed under lane identity (fleet 4386b7f0/0936310c/c681ca21/1fbcb738); SHONEN heading=1 with 4 [~] lines for 4 boxes; all cited lane commits ancestors of master (13f0acbe/3423ae28/323a69c9/8a7b7346/0f3a5436/441347bc/ea7fc98d); lane ahead=0 behind=0, ls-remote=ea7fc98d then 5337d250 after spot-check landing; prompt carries the 5 child-lane contract items. Claims re-derived at ea7fc98d with closure-run plain measurements: C1 before 0 keyword hits at 13f0acbe (re-measured), after entry 30 K rows + entries 70→71 + registry 332→334 (all re-measured) with committed counter/controls 12-of-12 receipts at 441347bc; C2 tool absent at base (re-measured), after evidence-verified from committed receipts (fixtures 18/18 holdout 8/8 at 441347bc, selftest 86/86, live watches=40 AGREE, /proc 40/40); C3 frozen before 70/319 (committed c3-base-v2) → re-measured 71 entries/334 rows with committed counter TARGET_MET + controls 9-of-9 at 441347bc. Harm watch: SCORECARD diff additive-only, selftest 460/460, index 71/71, ledger 98/98, census re-run mado ok rc 0 (334 rows). No lane gate/counter/selftest executed by closure (PROTOCOL §Gate standard closure consequence). Spot-check: S396+S397 admits and 2 as-drafted rejects re-opened live at man7.org — byte-identical to pins (sha256 98fe7feb…/f9e12387…), ≤25-word quotes resolve, per-instance qualifier grounded; all agree."
+   },
+   "commit": "mado-shokunin@ea7fc98d85f9c858bb261c509cac903751b3486b",
+   "closed_at": "2026-10-30T19:03:23Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (watchdog.log, mutable — digest authoritative): 2026-10-28T21:00:26-03:00 launch attempt=1; 2026-10-28T23:42:56-03:00 complete attempt=1; 2026-10-30T01:32:33-03:00 launch attempt=1; 2026-10-30T15:21:32-03:00 launch attempt=2; 2026-10-30T15:50:58-03:00 complete attempt=2. Supersedes the state of rounds[917]/rounds[918] (rejected-honest-stop recorded while the attempt-2 landing was GH013 push-blocked by live-credential capture in local commits cfc63604/f808ca67): the operator lifted the SECURITY HOLD 2026-10-30T15:21-03:00, the lane sanitized (WC folded, secret-bearing commits abandoned, redacted re-land 441347bc + records ea7fc98d, push passed GH013, ahead=0) — the round is durable and verified in the pushed state; this entry is the last word for (mado, 56). Operator-owned residual: revoke/rotate BOTH captured credential classes (1Password service-account token, OPENAI_CODEX_TOKEN); abandoned blobs remain unreferenced local objects until GC. Routed defects (status-neutral): (1) report before→after cites receipts/before-a2.txt + receipts/live-a2.txt at non-existent paths (committed counterparts w3/R56W3ExecBaseBefore/receipts/before-a2.txt, w3/R56W3ExecLiveGetoption/live-a2.txt) — unfixed from prior routing; (2) scratch-rev 4c640a9a cited as measurement revision is not a repo object — cite landed 441347bc; (3) before-values come from attempt-1-era base 13f0acbe while this attempt's delta is 0f3a5436→ea7fc98d — keep per-revision baselines explicit; (4) 6 of 64 w3 seats reportless (disclosed, M56-14, verified 58 reports on disk); (5) driver bookkeeping: the 01:32 launch has no complete line; (6) pre-existing census W04 duplicate-url warnings persist (mado ok, rc 0). SHONEN: 4 [~] boxes, all non-author-checkable from the committed record — promotion is operator-owned; nothing promoted, no [x] written by closure.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
