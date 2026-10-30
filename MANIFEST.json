@@ -32671,6 +32671,48 @@
    "notes": "Dispatch digest: 2026-10-30T07:19:47-03:00 launch kake round=64 pgid=1573869 driver=hyaku-inline attempt=1; 2026-10-30T08:17:35-03:00 lane-dead-no-report kake round=64; retry same round (hyaku-inline attempt=1: L1 KakeR64 ended without a landed report: FAIL report_of (missing, unchanged, no SHONEN heading, or < 400B): .ufo/reports/round-64/kake.md); 2026-10-30T08:17:37-03:00 launch kake round=64 pgid=481886 driver=hyaku-inline attempt=2; 2026-10-30T08:47:00-03:00 complete kake round=64; hyaku-inline attempt=2. Report landed by kake-shokunin d2ec3e5b0ae860e1a9ddae08f0acfbd3106e626b; all reported landed commits ancestors of master; ahead=0. Status-neutral uncommitted round-work defect: .ufo/waves/round-64/sources/S432.live.html remains untracked, untouched by closure. Verifier landed 422a6fe070e98f9e2fe2dc6f7e3a3870962e90c9 and ls-remote confirmed. C1 unprovable, no admitted round; no demonstrated harmed axis, standing c60/c56 red lacks causal base comparison. Route to kake: semantic counter and outside-verdict binding, ledger-mut builder/control provenance, proposal-5 rejection flip reconciliation/c56 selftally, expansion attribution correction (unchanged pre-existing classifier), untracked source durability, retained quotation/chronology corrections. Route orchestrator: missing wave handoff id/status/last-error and three uncredited no-report seats. Calibration ownership remains operator-open; no promotion verified or performed. Expansion unchanged supersedes report improved; discernment unchanged because reject flip is unreconciled. No installations.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 54,
+   "date": "2026-10-30",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 54,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 54
+   },
+   "admitted": false,
+   "verdict": "rejected-harmed",
+   "verdicts": {
+    "novelty": "unchanged",
+    "calibration": "unchanged",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged",
+    "operability": "harmed"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "harmed",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-54/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-54-verifier-spotcheck.md@798f5e9ef30ef39291295565209b65a17343c00e",
+    "rechecks": "Step-1 all green: 5 cited commits + base ancestors of master; remote tip 16ef40fd matches report; jj-lane ahead=0, clean tree; report authored/committed kengaku-shokunin (fleet 0dea9cb) after lane tip 08:55:58 (cI 08:58:31); prompt matches templates/round-prompt.md modulo substitutions; SHONEN heading + 4/4 [~] boxes; report is real work, not a marker. Claims EVIDENCE-VERIFIED (no sibling gate executed, per Gate standard): C1 fail derivable from header.bin absent at tip + plans/round54_c1_anchor.py:317-320 early return; receipts measure 6c919180 (before) and 9a0746be (after); plans/round-54-claims.md byte-identical freeze 17f90355 -> tip. C2 kill rule fired: jq over plans/round54-entrytruth.json rows=78 declared 62/16; integrate/c2-after.txt matches report byte-for-byte (executed=78 evidence_missing=1 laundered=1, observed 61/17, redeclared=4, PREDICATE fail, EXIT 1); two laundering false-passes (abbreviated-selftest, uv-decoy) + r53 route control committed; round52-c2 regression receipt advertised79/registered77/missing2/exit1. RE-MEASURED by closure: census exit 0, rows 190->193 (A164 B24 C5; mined172 rejected13 queued8) matching census-end.txt; SOURCES diff exactly 3 rows (S198/S199 mined, S200 rejected, no old-cell changes); final commit 9a0746be->16ef40fd adds receipts/LOG/SCORECARD/lesson only, no counter repair; wave w1-results.json 66 seats, role counts match report, strict attack share 16/66=24.24%, 15 empty + 1 partial output; SCORECARD delta additive-only. Spot-check re-opened all 3 Gate sources live: S198 opentimestamps.org, S199 client README line 82, S200 notary.py line 240 - all quotes verbatim at cited locations, closure agrees with 2 admits and the reject."
+   },
+   "commit": "kengaku-shokunin@16ef40fda5b32b93abd3d79f7e1cae48ee46585b",
+   "closed_at": "2026-10-30T12:11:28Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-10-30T07:19:43-03:00 launch kengaku round=54 pgid=1572639 driver=hyaku-inline attempt=1 | 2026-10-30T08:59:05-03:00 complete kengaku round=54; hyaku-inline attempt=1. Verdict rejected-harmed: both declared claims honestly failed (C1 novelty 8->8 held, C2 calibration 9->9 held with frozen kill rule fired), and the round's own canonical run exposed a retained operability regression (round52-c2 registry closure: advertised79/registered77/missing2/exit1), recorded 9->8 in SCORECARD measured-close, not waived. Lane status ok: real committed work, all citations resolve. Conformance defects (status-neutral, in notes only): (1) strict qualifying attack share 16/66 = 24.24% below the >=25% floor, closure re-derived (initial 18/66 wrongly counted sentinels); (2) 15 empty terminal outputs + 1 partial C1Forge output retained as uncleared, no terminal status/last-error supplied for a dead-seat count; (3) observation: report commit author-date 08:55:04-03:00 precedes lane-tip commit time by 54s (committer-date 08:58:31; ancestry + remote checks, the binding tests, pass). Lane tip advanced to 798f5e9ef30ef39291295565209b65a17343c00e by this closure's spot-check commit. Routed to lane for round 55: restore registry closure under a newly frozen rule (register or stop advertising plans/round54_c1_anchor.py + plans/round54_c2_entrytruth.py) and remeasure the entry ledger after documentation integration; land a parsing positive OTS proof before re-freezing any anchor claim; structurally bind interpreter+entry argv (abbreviation, uv-decoy routes survive) before another registry-truth claim; dispatch >=25% strict attack roles inside the 64-128 band; carry r52 repair (order-check regression, masked K7 control). Operator-owned: all four SHONEN boxes carry only [~] and look checkable by a non-author from LOG/SKILL/PROVINCE receipts - promotion review is operator-owned; this closure wrote no [x]. L0 open: kengaku | round-54 assimilation mass id-drift question + append-only correction (adopt nothing until ruled). Trends: expansion unchanged (single knowledge entry is bounded interpretation of a failed instrument, README-indexed, no uncovered-ground credit), quality harmed (retained operability regression), discernment improved (outside spot-check agrees on all sampled admits and the reject).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
