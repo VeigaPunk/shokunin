@@ -33093,6 +33093,48 @@
    "notes": "Dispatch digest (.ufo/watchdog.log): 11:14:59-03 launch revenger round=73 pgid=551563 attempt=1 | 12:07:06-03 lane-dead-no-report revenger round=73; retry same round | 12:07:08-03 launch revenger round=73 pgid=2177453 attempt=2 | 12:55:31-03 complete revenger round=73; hyaku-inline attempt=2. Real report (not a marker): status ok, claim admission rejected-honest-stop (C1 frozen at 606548a, wave v2 64 seats validated+handed off, released un-settled at operator wrap-up; 34/64 spawned, 0 settled; no vote files). Defects (status-neutral): (1) attribution - report landed via driver sweep d97efcc5 'L1 returned without committing'; (2) post-filing correction 17e32c09 deleted a duplicate '## SHONEN heading check' meta-section in place rather than as appended erratum; (3) dispatcher live() name-match revived attempt-1 orphan w1.ready - lane renamed it, operator fix filed by lane in .ufo/l0-questions.md; (4) inherited pacman-pause vs tool-probes.md installs discrepancy disclosed, no install repeated. Carry-forwards: re-dispatch Q-vote wave and integrate votes; fetch-and-substring audit S054-S095 still owed (S427/S428 fix only the two named rows). All SHONEN boxes remain [~] author-asserted - fully checkable only via non-author review; promotion is operator-owned. Lane repo clean, pushed, ahead=0 at closure; closure spot-check landed c70085776ee3c51fc76ac82a7b590d7971df112a (ls-remote confirmed).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 55,
+   "date": "2026-10-30",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 55,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 55
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "novelty": "unchanged",
+    "calibration": "unchanged",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-55/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-55-verifier-spotcheck.md@1355e84cce57f15bd0b1bc118d4bc32fdbf476ea",
+    "rechecks": "3 claims re-derived over committed bytes: before receipts re-read at 80afa613 (C1 MISSING 2/PREDICATE R52-C2 fail/exit 1; C2 both laundering routes pass the r54 counter while true entry exits 1; C3 probe absent, thirteenth=0, README/SOURCES 0 0); after-states re-measured absent at round tip 248a42b8 (registry section holds no round54-c1/round54-c2/round55-c2/round55-c3 rows; plans/round55_c2_entryargv.py ABSENT; chess probe receipt ABSENT; PROVINCE thirteenth=0); SCORECARD diff 16ef40fd..2eba863e empty (no axis harmed); census validate exit 0 (193 committed rows); S201/S202 quotes and sha256 pins re-opened over network and matched; A1 duplicate-reject byte-confirmed (chess test.sh sha256 4770437e... = S109 pin). Gate legs evidence-verified from committed receipts; lane gates not executed by the verifier."
+   },
+   "commit": "kengaku-shokunin@2eba863e6780322b3ac772f120595e034a4f4942",
+   "closed_at": "2026-10-30T18:18:44Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest: 2026-10-30T11:14:51-03:00 launch kengaku round=55 pgid=548838 driver=hyaku-inline attempt=1 | 2026-10-30T12:55:26-03:00 complete kengaku round=55; hyaku-inline attempt=1 (verified at .ufo/watchdog.log:1994,:2019). Honest stop: one v2 wave w1 (70 seats, 40% strict attack) released un-settled by the operator run-12 wrap-up before WAVE-DONE; no claim measured after the freeze; scores held (operability 8, calibration 9, coverage 7, all others unchanged). Real report, not a marker: three lane commits (80afa613 freeze+receipts, 0d11d9ab lesson+wave evidence, 248a42b8 LOG) tied to the LOG round-55 entry. Conformance defects (status-neutral): (1) uncommitted lane-authored seat residue existed in the lane tree at report filing (named by the lane itself); the run-12 wrap-up later committed it (981df910 PROVINCE, ebb233bc SKILL, 4542c99c corpus/README, 178385f9 corpus/SOURCES +S201/S202, a8ca7945 knowledge entry, 3f0681a0 evidence, 7fc12418 entryargv counter, 2eba863e chess probe, ad4e3af4 wave dir); tree clean and ahead=0 at closure. (2) The report states SKILL.md not modified, but wrap-up ebb233bc landed SKILL.md edits post-report - erratum owed in the next round's report. (3) Sourced-claim frontier duty unlanded at the round tip (R55-C3 declared sourced on S201/S202 but neither rows nor entry landed in the round). Routed: next round must re-verify or revert the wrap-up's landed unverified seat content (five SKILL registry rows, SOURCES S201/S202, tb2-chess-best-move-grader knowledge entry, PROVINCE/README/SKILL edits, plans/round55_c2_entryargv.py, plans/round55_c3_chess_probe.py, corpus/evidence/round55/chess-best-move-probe.txt) under the frozen C1/C2/C3 predicates with committed receipts before any SCORECARD move or admission claim rides them. Spot-check: S201/S202 located quotes and sha256 pins re-opened over network (agree/agree); A1 duplicate-reject byte-confirmed against S109's pinned sha256 (agree); census validate exit 0. SHONEN: 4/4 boxes [~] author-asserted with resolvable pointers, none contradicted by this review - promotion review is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
