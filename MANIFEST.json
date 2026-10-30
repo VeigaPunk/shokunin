@@ -32137,6 +32137,44 @@
    "notes": "Dispatch/complete digest (watchdog.log lines 1919/1932/1934/1940, mutable log): 2026-10-28T20:44:09-03:00 launch souji round=42 pgid=1394300 driver=hyaku-inline attempt=1 | 2026-10-28T23:45:14-03:00 complete souji round=42; hyaku-inline attempt=1 | 2026-10-29T17:09:52-03:00 launch souji round=42 pgid=3365367 driver=hyaku-inline attempt=1 | 2026-10-29T19:57:29-03:00 complete souji round=42; hyaku-inline attempt=1. Report committed by lane identity souji-shokunin <souji@shokunin.local> (5ada10c8, 8fd7b8f1); SHONEN heading x1, four [~] lines; prompt = template rendering + hyaku addendum, all round-level and child-lane items present. Defects (status-neutral): R1 frozen predicate rows_added=3 unsatisfiable (counter ignores gate exit; exemption grammar cannot name ../ pointers) - disclosed, repair verified green both modes; C3 reading load-sensitive, idle-host receipt canonical, disclosed never narrowed; run-11 waves left no results.json (seat counts from report files, disclosed); closure assignment's 'lane HEAD before the round' names the run-12 resume base 6a3f7594, not the round's true pre-round tip bf618f6c - axis-harm verified over the full span. Routed to r43: r1-counter amendment-or-retire; load-stable C3 counter; C1 counter defects N1-N4 + correction-prose reader; C2 30 part-A mutation gaps + named hole list; S259 narrowing (using/cmdline). Operator note: all four SHONEN boxes look checkable by a non-author from the cited evidence - promotion is operator-owned; no [x] written. Round totals: 74 run-11 seats (w1 40, w2 34) + 4 run-12 residual = 78, band 64-128. No promotions, no mints.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 46,
+   "date": "2026-10-30",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 46,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 46
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:verifiability": "unchanged",
+    "coverage": "unchanged",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-46/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-46-verifier-spotcheck.md@f58fcf13c6a8974420a3c99febbb1519136327d1",
+    "rechecks": "Step-1 conformance pass (lane-identity report commit 07e3fccf; SHONEN heading 4x[~]; 9 cited hashes ancestors of refs/heads/master incl. 7eb7786d; jj-lane state ahead=0, remote==local==4cdcf7bd; prompt carries round contract + 5 child-lane items). C1 evidence-verified: claims.json sha256 matches ca73279f; mutbat-before 7+13 uncaught BATEXIT=1 vs final receipts uncaught=0 c1 19+1/e2 18+3/f29 18+3, selftests 83/0 147/0 30/0; measured-at-rev c8641e7a with c8641e7a->tip delta outside .ufo/waves empty; wave-2 fixes verified at tip (C1_ENTRIES:68 before EXEMPT_ENTRIES:69; f29 selftest accepts 28-or-29 rows). C2 re-measured base->tip: F-rows 28->29, SOURCES 73->74, knowledge 65->66, absence sweep 2->4; census validate exit 0 (same 3 W04); f29-gate receipt 1/7 base -> 7/7 tip. No-harm: SCORECARD +27/-0; density.py blob identical 1f99e66f both; no deleted files outside waves. S074 re-opened live (HTTP 200, canonical final URL, zero drift; capture sha 1296528d matches pin; Q1-Q9 located at cited anchors, all <=25 words); rejects re-opened (S068 tier B rejected precedent; REST-API lead; ZDI lead). Waves: 96 seats (64+32), 0 dead, dispatch<->results identity, freeze-before-dispatch ancestry. Lane gates/battery/selftests NOT executed (Gate standard)."
+   },
+   "commit": "kasegi-shokunin@4cdcf7bdea8bea06705de752a2796d4e3aab0242",
+   "closed_at": "2026-10-30T05:05:02Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-10-28T19:52:51-03:00 launch kasegi round=46 pgid=3684502 driver=hyaku-inline attempt=1 | 2026-10-28T23:40:19-03:00 complete kasegi round=46; hyaku-inline attempt=1 | 2026-10-29T17:09:58-03:00 launch kasegi round=46 pgid=3369392 driver=hyaku-inline attempt=1 | 2026-10-30T01:20:39-03:00 complete kasegi round=46; hyaku-inline attempt=1. Attempt-2 final state judged (attempt-1 honest-stop released without closure; its work is committed history). Status-neutral defects routed to the lane (spotcheck D1-D4): D1 report a2w1 attack share 27/64=42.2% vs its own role table/LOG 24/64=37.5% (builder-print definition; >=25% floor met either way); D2 a2w2-results.json cited under attempt2/, committed at .ufo/waves/round-46/a2w2-results.json; D3 report no-harm numstat sentence ('appends only') contradicted by 4 corpus/instruments files with line deletions (wave-2 in-place fixes; deleted files=0, no axis harmed); D4 pre-report landing-gate 4/4 claim has no committed receipt (underlying push state independently verified). Observation: final-measure.txt stamps c8641e7a, report says tip 4cdcf7bd - lane bytes identical outside waves. SHONEN: all 4 boxes [~], no [x] by lane; boxes 1/3/4 look non-author-checkable - promotion review operator-owned. L0 open question carried (22 gated recheck: entries historical-record relabelling). Round ran under task=@m_zfl routing; closure judges routed via global map.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
