@@ -32979,6 +32979,45 @@
    "notes": "Dispatch/complete digest (verified verbatim in .ufo/watchdog.log): 2026-10-30T07:19:41-03:00 launch kaidoku round=52 pgid=1572027 driver=hyaku-inline attempt=1 | 08:18:17-03:00 lane-dead-no-report attempt=1 (no landed report) | 08:18:20-03:00 launch attempt=2 pgid=536174 | 08:22:38-03:00 lane-dead-no-report attempt=2 (provider 429 rate-limit anthropic, seat exhaustion, attempt 3 withheld) | 10:33:38-03:00 complete kaidoku round=52 attempt=2. Report landed by lane identity at fleet commit 2a77f88358c43b3234d93758c9722413d0a7cd80; SHONEN heading present (4 [~] lines); prompt = template rendering + hyaku addendum, fidelity pass. Both declared claims (R52-C1 coverage, R52-C2 depth) unprovable, score delta 0, no harm -> rejected-honest-stop, status ok. Defects (status-neutral, never bar admission): r52-w1 results handoff lacks per-seat id/status so provider-death count is unprovable (next dispatch shape must carry them); 19 pre-existing W04 duplicate-URL census warnings remain; inherited uncommitted .ufo/waves/round-50/w3/ScribeEntryC1.md retained and disclosed (commit-or-revert next round). Operator note: SHONEN boxes all [~]; boxes 1-2 carry pointers a non-author could verify next round; promotion is operator-owned, no [x] written. Spot-check landed a682eeb5d715baad96c267ca49c0eb7a955a93e0 (verified on origin refs/heads/main).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 59,
+   "date": "2026-10-30",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 59,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 59
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "unchanged",
+    "calibration": "unprovable",
+    "freshness": "unprovable",
+    "operability": "unprovable"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-59/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-59-verifier-spotcheck.md@9806562c7efc816bd979923e702ef39bc41cade7",
+    "rechecks": "Step-1: report attributed to tameshi-shokunin identity (fleet commit 97420600); SHONEN heading with 4 box lines; cited hashes b83f1bfc/93acc996/511dda8c/6c469d03/764d38f1 exist and are ancestors of master; jj-lane state ahead=0 tracked=0 untracked=0; ls-remote master=764d38f1; sources-census validate exit 0 (149 rows). C1 re-measured plainly: tools/executor-source-pin.py sha256 a7636e34 identical at 93acc996, 764d38f1 and disk; measure.py sha f6dc274e matches freeze digest and is identical at e9cc34bec and 764d38f1; cert.out 24 of 24 ok at rev 93acc996 (C1_R59 passed=24/24 C1_R59_PASS=true); controls always-accept 8/24, skipped-work 0/24, cheat-fp 24/24 (never reads --trusted), cheat-seq 24/24, hashonly 20/24. Ruling C1 unprovable: frozen counter publishes its fixtures and a skip-work fingerprint cheat meets target (kake r34 class); successor nonce counter not frozen or installed. depth re-derived 10 (mutate-and-run.sh unchanged base to final). calibration: monitor receipt records revision b83f1bfc (base), score 8; final-rev monitor not run; SKILL/PROVINCE/SHONEN/QUALITY byte-identical base to final. freshness not re-measured. Spot-check: S289 admit re-opened live at git-scm.com/docs/git-cat-file, quote verbatim; decline T59W1S33 (exec-bit flip returns BOUND) disagreed; Gate has no reject (defect). Expansion improved (knowledge/executor-source-binding.md on uncovered ground citing mined S289)."
+   },
+   "commit": "tameshi-shokunin@764d38f1c31a170c13ea48117a76b84f7dbe470b",
+   "closed_at": "2026-10-30T15:29:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (watchdog.log, copied at closure): 2026-10-30T11:14:53-03:00 launch tameshi round=59 pgid=549507 driver=hyaku-inline attempt=1; 2026-10-30T11:58:14-03:00 lane-dead-no-report tameshi round=59 (retry same round); 2026-10-30T11:58:16-03:00 launch tameshi round=59 pgid=1772636 driver=hyaku-inline attempt=2; 2026-10-30T12:19:29-03:00 complete tameshi round=59 hyaku-inline attempt=2. Status ok (real report, not a marker). Round not admitted: honest stop on C1 (counter cheat-passable). Routed defects for the lane: (1) install nonce/shuffled counter with multi-path and empty-blob cells, freeze and re-run at a committed revision before any C1-like claim; annotate C1 row not admitted; (2) Gate section must record rejects (none recorded); (3) Mistakes 1-5 captured-by none with no QUALITY.md criterion appended; (4) decide exec-bit boundary in contract text (T59W1S33); (5) nudge premise cites only depth/calibration/freshness; coverage/adjacency/operability are verdict-only; (6) run cold-read monitor at the final revision (committed receipt is base b83f1bfc); (7) blob-read plumbing failure maps to DRIFT exit 1 not UNAVAILABLE exit 2; (8) S289 quote is 18 words not 17. Conformance only, not bar: wave seat T59W1S27 no output; T59W1S26/S28 scratch residue; T59W1S37 and T59W1S49 lack .json; forecast key absent from frozen contract (criterion 110). Operator note: SHONEN boxes 1 and 4 look checkable by a non-author; no box checked here. Tools installed this round: none reported; none by closure.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
