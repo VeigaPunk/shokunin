@@ -140,6 +140,13 @@ is not admission; independent non-author verification remains required.
   the round on an answer; note the open question in the report and route around it.
 ## 6. Campaign addendum — hyaku (百) phases 3–7, operator directives of 2026-10-22/23/25 (binding this round; in-session)
 
+**Run 13 (2026-10-30, binding; supersedes the run-11 routing and 64–128 band lines below; every other run-11/10/9/8/7 rule — the 256 hard ceiling, ≥25 % attack share, few-connector-seats, 10-round blocks, clean commits, WAVE-DONE before report, §9 claim sizing, §10 assimilation, the inline spawn handoff and the fresh-start rule — stays binding).** Operator directive, verbatim: "ok i want you to train our shokunins on the hyaku style, but using 16-32 lanes per round; all using m_zfl, m_mim or m_swe for the roles; assign accordingly | | choose the order to train them, do 10 rounds sequentially on each, until we reach 100 rounds trained."
+- **Routing: run-13 map** (never pass `model`): task/main/planner/reviewer/security-reviewer/scout `@m_zfl`; connector/critic/mutation-tester/sentinel/labrat/seance/distiller/simplifier/sonic/scribe `@m_mim`; executor/revenger `@m_swe`. `task.agentModelOverrides` in `~/.omp/agent/config.yml` is the authority (backup `config.yml.pre-run13-20261030`); m_kfc, m_flash, m_luna, m_opus, m_sol are off every role. Fallback chains unchanged (ultimate fallback devin/swe-2:max). L1_MODEL/JUDGE_MODEL labels stay `@m_zfl`.
+- **Round size: 16–32 seats per round** (directive "16-32 lanes per round"; down from 64–128). Shape: ONE v1 wave of 16–32 seats under `ufo-wave-policy.json` (band now 16–32, restored to the ufo-fsd-alpha default), ≥25 % attack seats, a few connector seats; residual ≤8 seats in one ordinary task call, counted in the round total. 256 stays the hard ceiling. Never pad: fewer than 16 genuine items means the claims are too thin.
+- **Campaign budget: 100 lane-rounds trained** (directive "until we reach 100 rounds trained") = 10 lanes × 10-round blocks, lowest `next/` first: tabi r44–r53, souji r46–r55, kasegi r50–r59, kaidoku r53–r62, tsukuroi r53–r62, kengaku r55–r64, tameshi r60–r69, mori r62–r71, chousa r66–r75, kama r65–r74.
+- **Fresh-start rule applies at run-13 start to tabi, kaidoku, tsukuroi, tameshi, mori and kama** (each streak-blocked by three rejected closures at run-12 end; run-12 wrap-up lifted none of them). Their first run-13 round reads the last three rejected closures and spot-checks first, and declares only claims a do-nothing control cannot reach (§9). **kagi stays blocked** (operator HOLD 2026-10-21; open L0 `kagi | round-28`). **mado stays on SECURITY HOLD** (r56 live-credential capture in local commits; GH013 push block) — never dispatch, never `inline.sh verify mado` until operator clearance.
+- Run state, lane order, blocks and holds: `.scratch/goal-20261030-hyaku-run13.md` under /home/vgpnk/Projects/shokunin.
+
 **Run 11 (2026-10-28, binding; supersedes the run-10 routing and goal-file lines below;
 every other run-10/9/8/7 rule, including the 64–128 seat band, the 256 hard ceiling, the
 ≥25 % attack share, few-connector-seats, 10-round blocks, clean commits, WAVE-DONE before
@@ -311,7 +318,7 @@ Phase-1 directives still bind: "train all shokunins to at least round 100"; "com
 every round done"; "do it inline with multiple swarms of subagents".
 
 You are an in-session **L1 lane subagent** dispatched by the hyaku orchestrator (the operator's
-parent omp session) for exactly ONE steered round: **mado round 56** (attempt 1;
+parent omp session) for exactly ONE steered round: **mado round 56** (attempt 2;
 campaign target: round 100). Your lane's place in the session follows the goal file (lane
 order and blocks: `.scratch/goal-20261025-hyaku-run7.md`); the orchestrator dispatches your lane's
 next round only after this one lands and its non-author closure is written. Work this round only
