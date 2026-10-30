@@ -32630,6 +32630,47 @@
    "notes": "Append-only correction of rounds[917] (mado r56 closure, 2026-10-30), which stands as written; per protocol the prior entry is never edited. Changed labels only — lanes/ok, admitted=false, verdict rejected-honest-stop, commit, report, security and durability content are unchanged. Why: reviewer CloseMadoR56Incident supplied bounded documentary agreement and NON-ADMISSION, not an endorsement; (a) verdicts coverage/calibration unprovable-but-better → unprovable (missing checks: no functional gate, counter, or bwrap/live verification independently executed; primary consolidated receipt uncommitted), joining operability; (b) trend quality unprovable-but-better → unchanged with explicit unresolved verification (the trend schema admits only improved|harmed|unchanged|unprovable-but-better, so the unresolved state is recorded here in prose, not as a better grade); (c) trend expansion improved → unchanged (dispatch delta knowledge files 71→71, no independently admitted capability; the +2 registry rows are the lane's own Gate admissions and the S396 agreement was a bounded documentary spot-check, not new admitted ground); (d) trend discernment stays improved, explicitly bounded to the actually performed one-admit/one-reject documentary sample. Security prerequisite carried forward unchanged and operator-owned: revoke/rotate BOTH captured credential classes (real 1Password service-account token + real OPENAI_CODEX_TOKEN captured at .ufo/waves/round-56/w3/R56W3MutBwrapChannels/receipts/probe-jail.out:189 — path/class only, values never printed, prohibited blob never opened) and approve authorized history sanitization before any lane push; lane ahead=2 behind=0, never claimed pushed; spot-check artifact deliberately uncommitted/unpushed with no hash (schema/durability limitation stated, not invented). Runtime preserved: ~/.local/state/shokunin-hyaku/blocked/mado, .ufo/state/mado.round/mado.mission untouched; no driver advance, no lane commit/push, no code execution in the lane. No tool installs or updates performed.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 64,
+   "date": "2026-10-30",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 64,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 64
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "unprovable",
+    "operability": "improved",
+    "freshness": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-64/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-64-verifier-spotcheck.md@422a6fe070e98f9e2fe2dc6f7e3a3870962e90c9",
+    "rechecks": "Re-measured committed bytes: sources 171→171 unchanged, knowledge files 61→61, exactly seven sidecar line cells changed, 30 binding checks 7 mismatches→0, four frozen instrument SHA256 pins match, classifier unchanged. Evidence-verified without executing lane gates: C1 selftest 26/26 but contradictory/hidden-criterion green fires kill rule; C2 selftest 11/11 and real tool 4/4 plus identical-stub old-green/new-red differential; C3 integrated partial-offline exit0/drift0 vs base binding exit2. Receipts measure 8b1ddae586c3b187dc41998dd3e2b0a83e537ec9; final 9e798798 changes receipt and LOG only. Public Fetch §3.6 reopened; corrected 18-unit quote verified. Admit agreed as corrected/bounded; reject disagreed because its flip has materialized. No new SOURCES rows to sample. Census exit0,16 W04."
+   },
+   "commit": "kake-shokunin@9e798798c884961d9f17f13320d11db7ee9e4282",
+   "closed_at": "2026-10-30T11:51:57.589473Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-30T07:19:47-03:00 launch kake round=64 pgid=1573869 driver=hyaku-inline attempt=1; 2026-10-30T08:17:35-03:00 lane-dead-no-report kake round=64; retry same round (hyaku-inline attempt=1: L1 KakeR64 ended without a landed report: FAIL report_of (missing, unchanged, no SHONEN heading, or < 400B): .ufo/reports/round-64/kake.md); 2026-10-30T08:17:37-03:00 launch kake round=64 pgid=481886 driver=hyaku-inline attempt=2; 2026-10-30T08:47:00-03:00 complete kake round=64; hyaku-inline attempt=2. Report landed by kake-shokunin d2ec3e5b0ae860e1a9ddae08f0acfbd3106e626b; all reported landed commits ancestors of master; ahead=0. Status-neutral uncommitted round-work defect: .ufo/waves/round-64/sources/S432.live.html remains untracked, untouched by closure. Verifier landed 422a6fe070e98f9e2fe2dc6f7e3a3870962e90c9 and ls-remote confirmed. C1 unprovable, no admitted round; no demonstrated harmed axis, standing c60/c56 red lacks causal base comparison. Route to kake: semantic counter and outside-verdict binding, ledger-mut builder/control provenance, proposal-5 rejection flip reconciliation/c56 selftally, expansion attribution correction (unchanged pre-existing classifier), untracked source durability, retained quotation/chronology corrections. Route orchestrator: missing wave handoff id/status/last-error and three uncredited no-report seats. Calibration ownership remains operator-open; no promotion verified or performed. Expansion unchanged supersedes report improved; discernment unchanged because reject flip is unreconciled. No installations.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
