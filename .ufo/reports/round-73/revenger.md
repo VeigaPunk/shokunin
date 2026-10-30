@@ -102,7 +102,3 @@ None in this attempt. Attempt 1's probes are recorded in `reports/round-73/tool-
 ## Next round
 
 C1 carries forward unchanged under the frozen rule: the counter, predicate, controls and candidate pin stay as frozen at `606548a`. The next round must re-dispatch the Q-vote wave (or equivalent) and integrate the vote files before the frozen counter can be re-run. The integrator's outside spot-check is still required for any discernment verdict.
-
-## SHONEN heading check
-
-`grep -c '^## SHONEN' reports/round-73/revenger.md` → 1 (checked before filing).
