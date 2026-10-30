@@ -32903,6 +32903,44 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log): 2026-10-28T20:36:55-03:00 launch kama round=64 pgid=4165278 driver=hyaku-inline attempt=1 | 2026-10-28T23:43:00-03:00 complete kama round=64; hyaku-inline attempt=1 | 2026-10-30T07:19:47-03:00 launch kama round=64 pgid=1574487 driver=hyaku-inline attempt=1 | 2026-10-30T10:06:28-03:00 complete kama round=64; hyaku-inline attempt=1. Status ok: real report (5 lane commits, receipts, 42-seat wave-f evidence), SHONEN heading 4x[~], prompt fidelity verified (9c99656c), lane pushed ahead=0. Both claims (C1 operability, C2 calibration) end not verified — falsified by wave-f receipts; lane honest stop, no axis harmed, no capability entered; round not admitted. Defects (status-neutral): (1) attempt-2 report rewrote 36 lines of filed attempt-1 bytes at the same contract path (57fd10cf; re-dispatch flow, supersession named in header); (2) CR06 DEFECT 1 freeze text 89 vs instrument 91 (verified real, freeze.txt:156 vs :192); (3) CR06 DEFECT 2 'unreadable pid_gone fails closed' partly delivered (RV08). Routed/open: KR06 (round-63, completion_fingerprint bound not source-backed) still open, round 64 correctly did not rest on it. Spot-check: 4/4 gate decisions agree (S529/S533 admit, S535/S536 reject; live re-opened 2026-10-30), new SOURCES row S529 quote/anchor/sha verified; census exit 0. Trends: expansion improved (admitted entry 234 lines citing six mined rows), quality improved narrowly (KQ116/KQ117 receipt-grounded; entry re-verified 31/31 by closure), discernment unchanged. SHONEN boxes remain [~]; round work looks non-author-checkable — promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 47,
+   "date": "2026-10-30",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 47,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 47
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth:verifiability": "improved",
+    "coverage": "unchanged",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-47/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-47-verifier-spotcheck.md@903d47e13058982460f0d90c1c2b9c7c02680646",
+    "rechecks": "Step-1 all green: report committed by lane identity (5968df76), SHONEN heading 4/4, all cited hashes ancestors of refs/heads/master, jj-lane state ahead=0 local=remote=77551628781a, porcelain clean, prompt carries full contract + hyaku addendum. C1 evidence-verified (frozen receipts: 0/11 -> 11/11 exit 0 at f0809bca; selftest green; 20/41 C1 mutants uncaught, disclosed) and re-measured at the tip with plain greps: scaffold phrases 0, fences 0, false prose-chrome 0, S074.txt citations 0 lines, F29 145 lines, S076/supersede/bullets landed; claim NOT admitted: harmful frozen mined->rejected limb refused on B3 red-before witness, supersedes-S074 plain target 2 vs 1. C2 evidence-verified unmet (f30-gate 6/7 exit 1, H1 rows=29) and re-measured: frontier rows 29, SOURCES 76, knowledge 67, ZDI files 2, census EXIT=0 with 4 disclosed W04. No axis harmed: SCORECARD diff append-only, scores held 4/8/9, PROVINCE unchanged, density proxy regression 275.1->273.6 disclosed. Discernment: re-opened S075/S076 live (both HTTP 200), snapshot sha256 match, quotes verbatim at anchors; agree with gate on S075+S076 admits and F30 reject."
+   },
+   "commit": "kasegi-shokunin@77551628781a10f03b98298f035a4565e9c0d975",
+   "closed_at": "2026-10-30T13:33:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (verified vs .ufo/watchdog.log:1949-1990): 2026-10-30T02:36:12-03:00 launch kasegi round=47 pgid=3506832 driver=hyaku-inline attempt=1; 02:48:43-03:00 lane-dead-no-report (attempt=1: no landed report); 02:48:45-03:00 launch attempt=2 pgid=3172519; 04:09:08-03:00 lane-dead-no-report (attempt=2 never spawned after orchestrator parse error; provider permission_denied; campaign paused); 07:19:37-03:00 launch attempt=3 pgid=1570756; 10:17:01-03:00 complete kasegi round=47; hyaku-inline attempt=3. Status ok: real report (work, evidence, landed commits, census, trends, SHONEN 4/4 [~]); verdict rejected-honest-stop: C1 not fully verified (11/11 mechanical limbs verified; frozen harmful S074 mined->rejected limb refused per capture-binding B3 with red-before witness w1/R47RevD7.receipts.txt; plain supersedes-S074 2 vs frozen 1; wave-1 false-green controls disclosed), C2 unmet (F30 frontier 29->29; ZDI kept as sourced F02 enrichment, not narrowed after scoring). Lane trends expansion unchanged / quality improved / discernment unchanged superseded by closure sampling: outside check agrees with gate on S075+S076 admits and F30 reject -> discernment improved (LEARNING.md agrees-on-admits-and-rejects; r46 disagreements learned as M47-1..M47-4 + QUALITY R54). Routed defects in spotcheck section 6: R1 SHONEN.md canonical-form drift (13 accumulated assessment blocks, predates this round, +7 lines this round; restore toward seed or record sanctioned convention); R2 plain-target phrasing (anchor frozen plain expressions to row form so prose cannot meet them). Operator notes: five wave-1 seats ended with empty payload and no terminal status in wave1-results.json (lane declined to invent zero deaths; handoff format needs terminal status - orchestrator-side); final-measure.txt measured-at-rev f0809bca vs tip 77551628781a differs only by +14 append-only lesson lines (limbs re-derived at tip); pre-report landing-gate transcript ran at 29c02f99, not re-claimed at the later receipt-only tip (push independently proven: ls-remote = 903d47e after closure commit); L0 open question on the 22 gated historical rechecks remains unanswered and was routed around; SHONEN boxes 1/3/4 look fully checkable by a non-author on current evidence, box 2 (end-to-end domain task) has no executed item claimed - promotion is operator-owned. Round shape 96 seats (wave1 64 build incl. 26/64 = 40.6% strict attack share; wave2 32 integrated review, 28/32 = 87.5%); no promotions, no mints, no capability rows; no tools installed (pacman pause respected).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
