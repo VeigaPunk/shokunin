@@ -32544,6 +32544,46 @@
    "notes": "Dispatch/complete digest (watchdog.log lines 1925/1930/1950/1963, verified verbatim): 2026-10-28T21:37:12-03:00 launch chousa round=63 pgid=3041545 driver=hyaku-inline attempt=1; 2026-10-28T23:43:56-03:00 complete chousa round=63; hyaku-inline attempt=1; 2026-10-30T02:38:17-03:00 launch chousa round=63 pgid=957812 driver=hyaku-inline attempt=1; 2026-10-30T03:53:03-03:00 complete chousa round=63; hyaku-inline attempt=1. Attempt 1 landed both claims and was ended by the run-11 wrap-up before closure; attempt 2 re-froze and inherited its wave findings. Defects (status-neutral, in chousa-shokunin/corpus/lessons/round-63-verifier-spotcheck.md): (1) on-sibling G04/G05 post-fix runs (kagi/kake/tameshi 2/2 each) asserted in report+lesson with no committed receipt — fix pinned indirectly by receipted benign legs B07/B08; (2) report text 'lane PREFLIGHT=5/5' unreconciled with committed PREFLIGHT=8/8 receipt, no pointer; (3) L2 floor unmet — 0 seats, disclosed by the lane, caused by the orchestrator's 2026-10-30 dispatch pause (provider failures; 'Do not request new waves/replacement seats just to retry these failures'; 'Finish reachable existing documentary/defensive work and report any required unperformed work honestly') — not admission-blocking: every claim verifies, no axis harmed, no quality/expansion trade (LEARNING.md:37-38 not implicated); (4) claims-a2.md cites a deleted /fast/scratch provenance path for c1-on-fixed-tool (committed copy resolves). Routed to round 64: receipt for the sibling G04/G05 runs; mutation pass on c1-battery-v2.py and claims-audit.py; non-author forger for the v2 exhibit set; entailment read of self-claim-audit-r63.md; RevG02.md's ten gate defects; __file__ existence-assert rule (lesson mistake 3); round-62 v3-counter line if the forger-armory thread continues; CT-20261019-4 stays with the operator. Trends: expansion improved (entry on base-absent corpus/knowledge ground citing three mined rows; capability row entered); quality improved (falsifier class closed 9/9 accepted -> 9/9 rejected, G04/G05 false-positive class fixed and pinned, no admitted entry found false); discernment improved — the lane filed 'unchanged' pending the non-author spot-check; this closure performed it, all four of the round's gate decisions (3 admits + 1 reject) re-opened and agreed, meeting LEARNING.md's improved condition; sample = the round's full gate-decision set. Operator note (promotion is operator-owned): all four SHONEN boxes look checkable by a non-author from the committed record. No installs performed this closure (none needed; pacman paused per lane report).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 56,
+   "date": "2026-10-30",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 56,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 56
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unprovable-but-better",
+    "operability": "unprovable",
+    "calibration": "unprovable-but-better"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "watch-list predictor for misc:disable_autoreload (tools/mado-watchplan.py; fixtures 18/18, holdout 8/8, selftest 86/86, live MADO_WATCH watches=40 AGREE) — SCORECARD capabilities row, first-working round 56; functional verdict not independently re-executed by closure"
+   ],
+   "report": ".ufo/reports/round-56/mado.md",
+   "verification": {
+    "reviewer": "independent read-only non-author reviewer CloseMadoR56Incident (hyaku-closure role, @m_zfl fleet; pure read-only: no gate/probe/census execution, no lane push, prohibited receipt/blobs never opened)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-56-verifier-spotcheck.md — UNCOMMITTED/UNPUSHED by mandate (security-blocked: GH013 rejects lane ancestry cfc63604…; no commit hash exists by design)",
+    "rechecks": "Step-1 via reviewer plus closure re-measures over committed bytes: lane tip f808ca67dc003f1d4c7ffd70b757cbeec0d42f0d (=refs/heads/master) whose parent is cfc6360479e2c3d2ada008c0550bfc2af2463273; ahead=2 behind=0 vs remote 0f3a54361a9824484d0801679ceb1fd8ac7c32e1 (ls-remote confirmed; NOT pushed — security hold); report committed under lane identity (fleet 0936310c + containment addendum c681ca21); SHONEN heading 4x[~]; dispatch digest preserved (watchdog.log 1921/1928/1946). Documentary re-measures at dispatch base→tip 0f3a543→f808ca67: registry rows 332→334 and knowledge files 71→71 (reviewer and closure agree); the report's 70→71/319→334 is the attempt-1-era baseline at base 13f0acbe, not this dispatch's delta. Receipts: attempt2-l1.txt committed at tip (rc0); consolidated attempt2-final.txt absent from tip (git cat-file -e rc128), untracked on disk; before-a2.txt/live-a2.txt cited at receipts/ paths absent at tip (committed counterparts at w3/R56W3ExecBaseBefore/receipts/before-a2.txt and w3/R56W3ExecLiveGetoption/live-a2.txt). No functional gate executed (prohibited). Spot-check: S396 admit and its unqualified-draft reject re-opened at man7 inotify_add_watch(2) — agree on both; claim checks otherwise unverified."
+   },
+   "commit": "mado-shokunin@f808ca67dc003f1d4c7ffd70b757cbeec0d42f0d",
+   "closed_at": "2026-10-30T08:55:00Z",
+   "campaign": "hyaku",
+   "notes": "Digest (closure prompt lines 16-18; watchdog.log 1921/1928/1946): 2026-10-28T21:00:26-03:00 launch mado round=56 pgid=3709493 driver=hyaku-inline attempt=1; 2026-10-28T23:42:56-03:00 complete mado round=56; hyaku-inline attempt=1; 2026-10-30T01:32:33-03:00 launch mado round=56 pgid=1984547 driver=hyaku-inline attempt=1 — no complete line yet for the re-launch; completion evidence is the landed report, not the driver line. Verdict rejected-honest-stop, admitted=false: report is real and complete (status ok), but C2 operability is unprovable (functional gates, bwrap fixtures and live samples not independently executed — prohibited; consolidated receipt untracked) and coverage/calibration are unprovable-but-better (documentary deltas independently re-measured; gates not executed). SECURITY, operator-owned prerequisite: every push of lane ancestry containing cfc6360479e2c3d2ada008c0550bfc2af2463273 is rejected by GitHub push protection (GH013) — that commit contains a REAL captured 1Password service-account token plus a real OPENAI_CODEX_TOKEN at .ufo/waves/round-56/w3/R56W3MutBwrapChannels/receipts/probe-jail.out:189 (paths/classes only here; values never printed; prohibited blob and historical blobs never opened). The operator must revoke/rotate BOTH captured credential classes and approve authorized history sanitization (the prepared jj abandon of that ancestry) before any lane push; deleting local commits alone is insufficient because the values were live host secrets. Lane durability: ahead=2 behind=0, local f808ca67… on cfc63604…, remote 0f3a543…; the verifier spot-check lesson is deliberately UNCOMMITTED/UNPUSHED — no lane path may be committed or pushed under this security hold, and this row never claims a lane push. Defects (status-neutral): (1) push-blocked lane (above); (2) report's consolidated receipt .ufo/waves/round-56/receipts/attempt2-final.txt absent from the committed tip (rc128), untracked on disk — its green outputs are not committed evidence; (3) pointer accuracy: before-a2.txt/live-a2.txt cited under receipts/ do not exist at the tip (committed at w3/R56W3ExecBaseBefore/receipts/before-a2.txt and w3/R56W3ExecLiveGetoption/live-a2.txt); (4) baseline labeling: before-values 70/319 are from attempt-1-era base 13f0acbe — do not cite 70→71/319→334 as this dispatch's delta (actual committed delta: registry rows 332→334, knowledge files 71→71); (5) working-tree drift: corpus/lessons/round-56.md and the redacted probe receipt modified, uncommitted (jj state tracked=2 untracked=1); (6) no complete line for the 2026-10-30 re-launch. Schema/durability limitation stated rather than invented: verification.spotcheck carries no hash because the artifact is mandated uncommitted; this is not an ordinary closure spot-check pointer. Runtime preserved untouched: ~/.local/state/shokunin-hyaku/blocked/mado (446 B), .ufo/state/mado.round and mado.mission — no counter advance, no driver action, no review swarm. No tool installs or updates performed.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
