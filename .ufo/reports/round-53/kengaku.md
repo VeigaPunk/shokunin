@@ -69,3 +69,165 @@ Census (`/home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate --root
 1. **C1 as frozen cannot be re-run unchanged on its remaining legs:** integrate the 20 confirmed tasks (readers' parts exist), run the 7 prior-art pricing seats, touch-run seats and `C1CritOracle`/`C1RelabelRev*`/`C1MutClassifier`; the frozen predicate needs ≥3 confirmations and prior art with ≥1 `phenomenon-new` (sweeps archived). Do not re-score the oracle with a changed classifier.
 2. **C2:** one full run of `round53_c2_tipstate.py` on a clean clone of the carrying commit with the corrected ledger (host load makes `round46-c1` flaky; run with fewer jobs), repair or re-declare the 12 red rows (`round51-surfaces` SF14 count, `state-assertion-check`/`round28-census` SHONEN box-4 pointer, `round35-c1-coverage` hard-coded 42, `round38-c1-mutants`/`mutant-direction-check` N21, `round46-c3` V7/V8, `round52-c1` literal 183/184, `anchor-digest-check`, `gate-flip-check` S191–S193, `adoption-check`, `round40-c1-mutants`).
 3. Draft and land LOG/SCORECARD/lesson/knowledge entry/Q43, finalise the SOURCES rows from the scouts' archives (re-open each source), and the mutation seats' proposed selftest fixtures (`C1MutCounter/survivor-kill-cases.diff`, `C2MutCounter/selftest-augment.diff`).
+
+---
+
+# Round 53 completion — 2026-10-30 re-dispatch, L1 KengakuR53
+
+**Append-only completion/erratum:** the original run-11 honest-stop filing above remains intact
+(fleet commit `e99074ba`). This section supersedes its open-work and unmeasured-final-state conclusions,
+not its historical interruption record. The same frozen claims and amendments A1–A3 were completed;
+no counter, classifier, label, threshold or kill rule was changed during this resumed attempt.
+
+Final pushed lane `master`: **`00bca4a76fa84115fc57e7aac45e43e26b316ec1`**.
+`git ls-remote origin refs/heads/master` returned exactly that hash.
+Both final measured predicates pass at clean revision **`d244d4d324636953cd7192f2586fe0332b874e57`**.
+Those measurements precede the final receipt/documentation commit; their input revision is explicit,
+not falsely described as the later tree. Scores remain held; independent closure still decides admission.
+Stale-lane: respawn-per-round driver; no other mission of this lane is open.
+
+## Work performed — resumed completion
+
+Declared claims remain **R53-C1, novelty 8→9 target**, sound presence-only grader triage, and
+**R53-C2, calibration 9→10 target**, executed registry tip-state declarations
+(`plans/round-53-claims.md`). Both literal predicates were measured, rather than narrowed.
+The lowest axis is coverage 7; it remains capped by unanswered L0 questions (round-25/33/51).
+No stagnation waiver is claimed. Routing around those questions does not itself prove a waiver of
+the lowest-axis obligation; this remains a literal conformance concern for closure.
+
+- Integrated five existing reader parts into **20** digest-bound, repo-relative confirmations
+  (`corpus/evidence/round53/confirmations.json`, commit `9ead4476bf55b1ea6490d0204b668195db4a4d1d`).
+- Completed archived pricing for **20/20** tasks: **7 known, 13 bounded-search new, 13 URL keys,
+  zero rejected rows** (`corpus/evidence/round53/prior-art.json`; `claims/c1-final.txt` below
+  `.ufo/waves/round-53/`). A task's own grader source is the object under study, not prior art;
+  independent public documentation of its specific weakness counts known. This reading was
+  reconciled across pricing parts before integration. “New” is bounded-search evidence, not a
+  universal priority claim. After B failed, the L1 finished its four documentary pricing tasks
+  directly (`w3/C1PriceL1/`), without replacing the seat.
+- Re-label evidence agrees **80/80**; the original oracle remains **305/305**, with **23**
+  round-52-control disagreements. Independent content reads support it, but its integrity
+  guarantee has a surviving coordinated-history attack (`w3/C1CritOracle2.md`).
+- Synthetic mechanical evidence records **26/26** selected tests passing with empty artefacts,
+  no network, pytest 9.2.0 and stubbed unavailable imports (`w3/C1TouchExecL1/`). This is not a
+  task-image execution, whole-grader-vacuity demonstration or model-performance measurement.
+  No additional attack/bypass reproduction followed the orchestrator's defensive-only boundary.
+- Re-executed the **78-row** ledger in clean worker clones: **zero mismatches, timeouts or
+  missing evidence**, declared/observed green **66**, red **12** (`claims/c2-final.txt`).
+  Corrected the stale SF14 evidence count to 190 and the round46-c3 reason's absent-versus-rejected
+  map-row distinction (`plans/round53-tipstate.json`).
+- Landed source-backed bounded interpretation, source gates, mistakes, Q43 and index parity
+  (`corpus/knowledge/tb2-presence-only-triage.md`, `corpus/lessons/round-53.md`, `corpus/QUALITY.md`,
+  `corpus/README.md`, LOG.md/SCORECARD.md round 53). Existing frozen-counter selftest augmentation
+  proposals remain evidence, not post-score rule amendments.
+- Preserved attacks rather than claiming clearance: classifier detectors killed **20/42** mutants,
+  leaving **22** survivors; prior machine examinations contradict an unqualified “never examined”;
+  C2 can launder documented entry commands through permitted selftest/help arguments and retains
+  worker git-config contamination (`w3/C1MutClassifier.md`, `C1CritNeverRead.md`,
+  `C2CritPredicate2.md`). Literal predicates passing does not erase these limits.
+
+**Round shape and settlement.** W1 build **35**; operator-stopped W2 **42 dispatched** with five reader
+reports; completion W3 **32 settled**: total **109 dispatched**, no residual call, no replacements.
+W1 role mix: executor 13, scout 9, reviewer 6, critic 2, mutation-tester 2, scribe 1, connector 1,
+sentinel 1. W2 role mix: executor 10, scout 10, reviewer 9, critic 4, mutation-tester 3, scribe 6
+(derived from the committed W2 dispatch).
+W3: scout 7, executor 4, reviewer 6, critic 4, mutation-tester 2, scribe 6, connector 1,
+sentinel 1, revenger 1; qualifying attack share **12/32 = 37.5%** (sentinel not included).
+Canonical planner seat = L1. No model parameter or routing configuration was changed by the lane.
+
+W3 **WAVE-DONE received**, all 32 results preserved in `.ufo/waves/round-53/w3-results.json`.
+Failed/incomplete outputs are not review clearance: B has an empty result and its wake failed
+HTTP 429 (`retry-after-ms=13394000`); Touch B returned an environment error with no target tests
+run; mutation-counter output remained partial. The earlier 37 operator-stopped W2 seats remain
+stopped, not findings. Later provider wake errors are recorded, never repaired by replacement seats.
+
+**Hygiene.** Required fleet misroot sweep showed only orchestrator `.scratch/` and Mori-owned
+`count-c1.cover`/`count-c2.cover` (`strings` exposes mori-shokunin/round-61 paths); neither was touched.
+The carried `tb2-paper-full.html` is absent; round-52 absolute JSON paths stay historical, while
+the new confirmation JSON uses repo-relative reports. Unadmitted temporary S900–S927 census rows
+were removed before final registry census; proposals remain in the scribe directory.
+Sentinel-flagged third-party analytics-token and vendor-key-placeholder fetches were withheld
+(`w3/R53SentinelFetch2.md`, `w3/withheld-archives.json`); integrated prior-art archives scan clean:
+`python3 plans/stage_scan.py corpus/evidence/round53/fetched` → `SCAN files=58 skipped=0 hits=0`.
+After all seats settled and lane commits landed, `/fast/scratch/hyaku/kengaku-r53` was removed
+(cleanup exit 0). Final `jj-lane.sh state`: ahead=0 behind=0 tracked=0 untracked=0.
+
+## Landed changes — resumed completion
+
+All are tied to LOG.md's **Round 53** and **Round-53 measured close** entries.
+
+| change | lane commit |
+|---|---|
+| integrated confirmations and validated 32-seat W3 spec/dispatch | `9ead4476bf55b1ea6490d0204b668195db4a4d1d` |
+| pricing archives, sourced knowledge, lesson/Q43, registry and ledger corrections, W3 evidence | `d244d4d324636953cd7192f2586fe0332b874e57` |
+| final scored receipts, settled results, held-score and lesson close | `00bca4a76fa84115fc57e7aac45e43e26b316ec1` |
+
+Inherited classifier/freeze, label files, original controls and A1–A3 were reused unchanged.
+Two inherited deleted round-50 ready files were restored to committed bytes. No sibling,
+operator state, source repo, MANIFEST or fleet scripts were modified.
+
+## Before → after measurements — unchanged predicates
+
+Measured after revision: `d244d4d324636953cd7192f2586fe0332b874e57`, clean shared clone.
+Before receipts remain `claims/c1-before.txt`, `c2-before-head.txt` under `.ufo/waves/round-53/`,
+against base `536925b5320fa64298030b4ee76a58fc4b82723f`.
+
+| claim | frozen counting command | before → after | verdict |
+|---|---|---|---|
+| C1 novelty | `python3 plans/round53_c1_triage.py --lane .` | bad/absent PINS/FREEZE, confirmations 0, prior art 0, exit 1 → all five legs hold; oracle 305/305, control23, confirmations20, prior-art20 covered, known7/new13/URLs13, exit0 | **predicate met**; novelty held **8**, no unqualified novelty/integrity admission |
+| C2 calibration | `python3 plans/round53_c2_tipstate.py --lane . --source <clean clone> --work <scratch> --jobs 3 --timeout 900` | registry75/ledger0, exit1 → registry78/ledger78/executed78, mismatches0/timeouts0/evidence_missing0, exit0 | **predicate met**; calibration held **9**, selected-argv scope, outside admission pending |
+
+Receipts: `claims/c1-final.txt`, `c2-final.txt`; C2 wall time 394.56 seconds.
+Counter selftests also exercised: C1 `SELFTEST cases=47 failures=0`; C2 `cases=52 failures=0`.
+No new capability enters on the strength of predicate green alone.
+
+## Sources & frontier — resumed completion
+
+Command at start and end:
+`/home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin kengaku`.
+Both observed **exit 0**, same 15 pre-existing W04 warnings, followed by
+`kengaku ok /home/vgpnk/Projects/shokunin/kengaku-shokunin/corpus/SOURCES.md`.
+The complete warning identities and counting convention are committed in
+`.ufo/waves/round-53/claims/census-round53.txt`; no E-class finding.
+
+| census | rows | tier A/B/C | mined/queued/rejected |
+|---|---|---|---|
+| before | 186 | 158/23/5 | 167/8/11 |
+| after | 190 | 161/24/5 | 170/8/12 |
+
+Added S194–S197: A3/B1; mined3/rejected1. Existing status/recheck/used-by changes: **none**.
+S194–S196 ground the bounded knowledge entry; S197 rejects failure-localization material with
+a flip condition. Every row has URL, access date and located ≤25-word quote in the lesson's Gate.
+No coverage-map frontier is newly claimed as core, and no corpus expansion score is awarded.
+Assimilation: none; no considerthese proposal taken. Mistakes and shown-red controls are in
+`corpus/lessons/round-53.md` §Mistakes, with named surviving defects and captured-by criteria.
+Independent closure's admit/reject spot-check remains unverified, not supplied by our own seats.
+
+Open L0: existing kengaku round-25/33/51 coverage/absent-surface questions, plus historical disposition
+questions, remain unanswered; no new L0 question filed. The round-52 GH013 excluded capture remains
+absent by the frozen population design. Carried SELFTEST-UNBACKED/K5/K7 fixes remain unlanded.
+Tool install: **pytest 9.2.0**, existing **uv pip** via official package index into scratch venv,
+for no-network synthetic checks; no pacman transaction, no system upgrade.
+
+## Trend verdicts — resumed completion
+
+- **expansion: unchanged** — no newly admitted capability or previously uncovered coverage-map surface.
+- **quality: improved (bounded)** — stronger sourced interpretation, explicit contrary evidence, completed
+  declarations and index/lesson repairs; instrument limitations remain marked, not suppressed.
+- **discernment: improved (bounded)** — prior round's outside disagreements were turned into lesson-backed
+  Q43; new quote/gate and semantic limits are recorded. This is not a claimed outside agreement with all
+  current admits/rejects. All numeric expertise scores held; no scalar learning verdict.
+
+### SHONEN
+
+Resumed assessment supersedes the four historical assertions above without changing filed bytes;
+all are author assertions, not named non-author checks:
+
+- [~] Real tables/error patterns/checklists/sources — `SKILL.md`; source-gated bounded note and Q43.
+- [~] End-to-end task executed and logged — LOG.md round 53; `claims/c1-final.txt`, `c2-final.txt`.
+- [~] Instructions executable without oral context — `plans/round-53-claims.md`, committed counters
+  and registry; the documented integrity/argv limits remain explicit.
+- [~] No cross-domain bleed — `w3/R53ConnSiblings2.md`; serving-plane changes refused, PROVINCE unchanged.
+
+**Disposition:** required work is durably completed and both original numeric predicates were observed.
+No independent-review result is fabricated and no claim is silently widened into unforgeability,
+never-examined novelty or whole-registry semantic truth. Scores are held; admission is the outside judge's.
