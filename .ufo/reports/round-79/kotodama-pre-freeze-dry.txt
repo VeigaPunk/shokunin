@@ -1,0 +1,11 @@
+# round-79 lands-run receipt (re-freeze F=82b822a7971d236928aac7792be0964cd7ee1059 supersedes 98b0e53; see report)
+# stamped revision: 82b822a7971d236928aac7792be0964cd7ee1059
+# counter sha256 (accept-o): 3ad26c10c168749d0126b26fe973ffcfce2cbef8d4db36910d58fef29173adc0
+# counter sha256 (accept-ca): adfadbec65e15a763c9db6c6745a5d4f0e3ad5f7c658be3d9256f1da4d181620
+
+## dry run: accept-o --lands <base> (expect refusal 2)
+ACCEPT-O-79: FAIL legs=0/10 (refused: lands equals the frozen base 44f76d456c1b326a71ffdb381590af825cbf11be)
+exit=2
+## dry run: accept-ca --lands <base> (expect refusal 2)
+ACCEPT-CA-79: FAIL legs=0/7 (refused: lands equals the frozen base 44f76d456c1b326a71ffdb381590af825cbf11be)
+exit=2
