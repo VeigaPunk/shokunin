@@ -261,3 +261,17 @@ fleet root, so no misroot copy was made. Scratch discipline: every scratch tree 
 — 79 class members sit in `round-*-verifier-spotcheck.md` and `round-*-aggregator-*.md` lessons the lane
 may not edit; who re-grounds them (the aggregator that owns those files, or the operator)? The round routed
 around it and reported it; the lane does not block on it.
+## Post-filing correction — final lane tip (appended after the filed bytes)
+
+The "Final pushed lane tip" line in **Landed changes** names `a693fce03505f1253f4c5f05af5500cc0a3ff0f8`, which
+was the lane tip when this report was written and which remains an ancestor of the branch tip — it is
+superseded only as the *tip*. One further lane commit landed after the report was filed, carrying the
+round-end receipts only (no claim work, no counter byte, no score): `b329b7b453b3e6e821070cdff7d1cf25191fc237`
+— `.ufo/waves/round-49/controls/census-end.txt` (source census, `CENSUS_EXIT=0`), `c1-final.txt`
+(`unresolved-class=0 ledger-rows=68 rows-resolving=68 findings=0`), `c2-final.txt`
+(`FRONTIER-CENSUS rows=30 admitted=30 closed=30 problem-rows=0 registry=79`) and `resolve-after.log`.
+`jj-lane.sh state` prints `branch=master local=b329b7b4… remote=b329b7b4… ahead=0 behind=0 tracked=0
+untracked=0`, and `git -C /home/vgpnk/Projects/shokunin/kasegi-shokunin ls-remote origin refs/heads/master`
+prints that exact hash. The fleet-repo commit that carries this report and the L0 line is
+`bdd65436eefb0e6713b583f6563adad327ed6121` (plus this correction's own commit). Every claim, measurement and
+verdict above is unchanged; only the tip pointer moves.
