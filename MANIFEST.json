@@ -33175,6 +33175,44 @@
    "notes": "Dispatch/complete digest (watchdog.log, mutable): 2026-10-30T11:14:47-03:00 launch souji round=45 pgid=547547 driver=hyaku-inline attempt=1 | 2026-10-30T12:55:26-03:00 complete souji round=45; hyaku-inline attempt=1. Defects (status-neutral): L2 floor unmet - validated 64-seat w1 released un-dispatched by operator run-12 wrap-up (dispatched=0/completed=0/dead=0, no WAVE-DONE; census/round-45/records/operator-stop.json); r45-register-verifier gate lacks built-in selftest mode over isolated fixtures (disclosed interface debt in SKILL.md registry row; add committed selftest next round); whole-suite landing validation unrun at final tip after stop (disclosed; run at next round start); in-round outside admit/reject spot-check not performed (disclosed; fulfilled by this closure). Operator-owned opens carried: souji round-44 L0 symlink-contract disposition unanswered; execution-bound hidden-audit attribution open; SHONEN boxes remain author [~] assertions with resolvable pointers and appear fully checkable by a non-author verifier for the promotion review (promotion is operator-owned; this check writes no [x]). R45 gate erratum (quote 15->9 words) was corrected append-only in the lesson; census-before.txt scratch failure preserved honestly with mirror replay. No promotions, no mints, no cross-lane writes.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 49,
+   "date": "2026-10-30",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 49,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 49
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:verifiability": "improved",
+    "coverage": "improved",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-49/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-49-verifier-spotcheck.md@c5e36360f5226c97d28f1937961b15c90e58827f",
+    "rechecks": "Step-1 all green: report committed in the fleet repo by the lane identity (kasegi-shokunin <kasegi@shokunin.local>: bdd65436 file, 7ca12c6f tip correction, be0493c2 erratum appended after the filed bytes); ## SHONEN heading x1 with 4/4 box lines, no lane-written [x]; all 7 cited lane hashes (1954022d, a71cd118, 6d1aad3d, 7bfafc50, a693fce0, b329b7b4, de94a392) plus claims base 9b1662a and round base 11c9818 exist and are ancestors of refs/heads/master (jj-colocated, ancestry vs branch ref); jj-lane.sh state -> local=de94a392 remote=de94a392 ahead=0 behind=0 tracked=0 untracked=0, porcelain empty, ls-remote = de94a392; prompt .ufo/prompts/kasegi-round-49.md (fleet commit 834221df) carries the full round-level contract (mission/axes binding, L2 >=8 one batched call matching MISSION.md L53, commit-then-push, push scope, L0 channel) and all five child-lane items. C1 VERIFIED (evidence-verified, gates not executed: do-nothing.txt base unresolved-class=68 exit=1; c1-final.txt unresolved-class=0 ledger-rows=68 rows-resolving=68 findings=0 C1_EXIT=0; freeze.txt selftest cases=10 failures=0; counter sha 988a5370... and claims.json sha c299aeaf... re-hashed identical at 1954022d and de94a392) and re-measured over committed bytes (ledger parses to exactly 68 data rows, class split lane-bare=57/fleet-relative=11; 8-row random sample: every new-token file exists at tip and old token absent at every listed site; axis census receipts re-derived 1071/4696=22.81% -> 1115/4758=23.43%, SKILL 130/694=18.73% -> 132/701=18.83%, corpus 1038/4307=24.10% -> 1090/4372=24.93%; score honestly held at 4 with the 22-gated-recheck score-5 gap named; post-filing erratum withdraws the never-taken isolated-repair measurement). C2 VERIFIED (evidence-verified: c2-final.txt FRONTIER-CENSUS rows=30 admitted=30 closed=30 problem-rows=0 registry=79, entries=33 pass=33 exit=0, FRONTIER-PASS F30 ids=S078, C2_EXIT=0; counter sha 010897bc... unchanged) and re-measured (frontier rows 29->30 and registry 77->79 by grep at base/tip; knowledge entry carries provenance trio + ground F30; PROVINCE one F30 append; capture S078.txt sha 1403e607..., 282553 bytes, 8374 wc-l newlines matches manifest; manifest quotes Q1-Q8 anchored, Q2 byte-identical to S078.txt:125, 17 words; SOURCES diff = +S078 tier-A mined, +S079 tier-C rejected with reason+flip, +1 search-log bullet, one search-log line changed only by a C1 re-ground, no status/recheck/used-by cell touched; sources-census.sh validate exit 0 with the four pre-existing W04 warnings only; frozen expect_after registry=78 vs measured 79 disclosed as post-freeze rejected row S079, kill rule binds rows/admitted/problem-rows only - accepted). Discernment spot-check from outside: S078/F30 admit re-opened live (HTTP 200, 282553 bytes, sha256 byte-identical to capture, openapi 3.0.2 info.version 2.8.8.1) - agree; S079 reject re-opened live (HTTP 200, 129264 bytes exactly as recorded, docs shell, 0 dispute mentions in body) - agree; staged-package refusal - agree. No owned axis harmed: SCORECARD diff 11c9818..de94a392 is append-only round-49 sections, no score decreased."
+   },
+   "commit": "kasegi-shokunin@de94a3924b4cc14a7dafb08dc174cf93441e07ce",
+   "closed_at": "2026-10-30T18:20:27Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (verified verbatim against .ufo/watchdog.log lines 2017/2028; the log is mutable, this digest is the pointer): 2026-10-30T12:46:07-03:00 launch kasegi round=49 pgid=1579490 driver=hyaku-inline attempt=1; 2026-10-30T13:17:10-03:00 complete kasegi round=49; hyaku-inline attempt=1. Status ok: real report (work, evidence pointers, landed commits, census, trends, SHONEN 4/4) - not a marker. Verdict admitted: both declared claims verify on their frozen predicates re-derivable from committed bytes, and no owned axis is harmed. Claims: C1 depth:verifiability (lowest, score 4) unresolved-class 68 -> 0 with ledger-rows=68 rows-resolving=68 findings=0; C2 coverage (8) frontier 29 -> 30 admitted (F30, CVE Services publication API, source S078 tier-A first-party, live re-open byte-identical). Wave disposition: the 64-seat wave-1 spec (policy v2, validator-clean, 31 attack seats) was built and handed over via wave1.ready (13:02); the operator's wrap-up ruling released it UN-DISPATCHED - no seat spawned, no wave1-results.json, no WAVE-DONE, no falsification credit claimed; the L2 floor was met in build, not in run (operator decision, status-neutral). Routed defects for round 50 (full list in the spot-check): (1) report cites corpus/instruments/citation-ground-ledger.md 3x - path never existed in any commit; actual ledger is citation-reground-ledger.md (68 rows verified); append erratum. (2) SCORECARD round-49 depth:density cell says SKILL.md was not edited this round - false (two registry rows + M48-6 note landed); report discloses correctly. (3) SCORECARD C2 cells quote registry=78 (frozen expectation) vs measured 79. (4) SCORECARD planned-for-50 cites a round-49 scout report in the wave directory; no seat ran and wave1/ holds only the swarm registry. (5) minor: anchorcheck/density/recheck-audit outputs quoted in the report without committed receipts (claim-bearing receipts all committed). Open L0: kasegi | round-49 - owner of re-grounding the 79 protected-file class members (round-*-verifier-spotcheck.md / round-*-aggregator-*.md) - operator/aggregator decision. SHONEN for the operator: boxes 1, 3 and 4 look fully checkable by a non-author verifier; box 2 (end-to-end domain task) open; this closure wrote no [x] and claims no promotion. Tools installed by the round: none (report so states).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
