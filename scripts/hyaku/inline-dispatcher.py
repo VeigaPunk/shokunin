@@ -107,9 +107,9 @@ SEAT_GUARD = f"""
 
 HOST_JOB_CAP = 100   # omp 18.12.6 clamps async.maxJobs with Math.min(100, ...) and refuses a new job while
                      # 100 jobs are running; queued, completed and service entries do not count
-SEAT_CEILING = int(os.environ.get('HYAKU_SEAT_CEILING', '96'))   # running jobs at which seat spawns stop
+SEAT_CEILING = int(os.environ.get('HYAKU_SEAT_CEILING', '98'))   # running jobs at which seat spawns stop
                      # (operator run 9: "more concurrency"); the 4 below HOST_JOB_CAP keep L1 / closure spawns possible
-LOAD_MAX = float(os.environ.get('HYAKU_LOAD_MAX', str(3.5 * (os.cpu_count() or 8))))
+LOAD_MAX = float(os.environ.get('HYAKU_LOAD_MAX', str(4.5 * (os.cpu_count() or 8))))
 MEM_MIN_GB = float(os.environ.get('HYAKU_MEM_MIN_GB', '4'))
 PARTIAL = globals().get('PARTIAL', {})  # ready path -> {seat name: AgentHandle | _Spawned} while a wave is still filling
 
