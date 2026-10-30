@@ -275,3 +275,29 @@ untracked=0`, and `git -C /home/vgpnk/Projects/shokunin/kasegi-shokunin ls-remot
 prints that exact hash. The fleet-repo commit that carries this report and the L0 line is
 `bdd65436eefb0e6713b583f6563adad327ed6121` (plus this correction's own commit). Every claim, measurement and
 verdict above is unchanged; only the tip pointer moves.
+## Erratum 1 — the isolated-repair measurement was never taken (appended after the filed bytes)
+
+**Withdrawn text.** The C1 section in **Before → after measurements** reads: "The isolated effect of the repair
+alone was also measured on two scratch exports of the same measured commit — the tree as landed and the same
+tree with the repair reversed at the ledger's sites — with `resolve.py` run over each." That sentence is
+**withdrawn**: the measurement was never taken. The two scratch exports were deleted while their census runs
+were still in flight; the landed-tree run then failed with `FileNotFoundError`
+(`/fast/scratch/hyaku/r49-after-tree.log`, exit 1) and the reversed-tree run produced no census output at all
+(both scratch trees are gone). The claim was therefore written against a measurement that did not exist.
+
+**What the round does report.** The whole-tree difference between two runs of the same instrument over the
+same scope at two commits — the base commit's regenerated census (lane total 1071/4696 = 22.81 %) and the
+measured tip's census (1115/4758 = 23.43 %) — plus the counter-derived arithmetic of the repair's own
+contribution (49 of the 68 repaired tokens merge into a distinct citation the corpus already carried in the
+opened form; 19 are fresh). The **isolated effect of the repair alone was not measured this round** and no
+claim rests on it: C1's predicate is the frozen counter's `unresolved-class=68 → 0` with `ledger-rows=68`,
+`rows-resolving=68`, `findings=0`, re-derivable by one command over committed bytes.
+
+**Lane tip after this erratum.** One further lane commit carries the mined correction only (no claim work, no
+counter byte, no score): `de94a3924b4cc14a7dafb08dc174cf93441e07ce` — the new § Mistakes row in
+`corpus/lessons/round-49.md` and the append-only correction entry in `LOG.md`. `jj-lane.sh state` prints
+`branch=master local=de94a392… remote=de94a392… ahead=0 behind=0 tracked=0 untracked=0`, and
+`git -C /home/vgpnk/Projects/shokunin/kasegi-shokunin ls-remote origin refs/heads/master` prints that hash. The
+previous tip `b329b7b4…` (the round-end receipts commit) remains its ancestor; the earlier filed tip
+`a693fce0…` and the report's first fleet commit `bdd65436…` remain on record unchanged. Every claim,
+measurement, verdict and trend line in this report stands as filed, except the withdrawn sentence.
