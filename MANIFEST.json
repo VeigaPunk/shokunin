@@ -33135,6 +33135,46 @@
    "notes": "dispatch/complete digest: 2026-10-30T11:14:51-03:00 launch kengaku round=55 pgid=548838 driver=hyaku-inline attempt=1 | 2026-10-30T12:55:26-03:00 complete kengaku round=55; hyaku-inline attempt=1 (verified at .ufo/watchdog.log:1994,:2019). Honest stop: one v2 wave w1 (70 seats, 40% strict attack) released un-settled by the operator run-12 wrap-up before WAVE-DONE; no claim measured after the freeze; scores held (operability 8, calibration 9, coverage 7, all others unchanged). Real report, not a marker: three lane commits (80afa613 freeze+receipts, 0d11d9ab lesson+wave evidence, 248a42b8 LOG) tied to the LOG round-55 entry. Conformance defects (status-neutral): (1) uncommitted lane-authored seat residue existed in the lane tree at report filing (named by the lane itself); the run-12 wrap-up later committed it (981df910 PROVINCE, ebb233bc SKILL, 4542c99c corpus/README, 178385f9 corpus/SOURCES +S201/S202, a8ca7945 knowledge entry, 3f0681a0 evidence, 7fc12418 entryargv counter, 2eba863e chess probe, ad4e3af4 wave dir); tree clean and ahead=0 at closure. (2) The report states SKILL.md not modified, but wrap-up ebb233bc landed SKILL.md edits post-report - erratum owed in the next round's report. (3) Sourced-claim frontier duty unlanded at the round tip (R55-C3 declared sourced on S201/S202 but neither rows nor entry landed in the round). Routed: next round must re-verify or revert the wrap-up's landed unverified seat content (five SKILL registry rows, SOURCES S201/S202, tb2-chess-best-move-grader knowledge entry, PROVINCE/README/SKILL edits, plans/round55_c2_entryargv.py, plans/round55_c3_chess_probe.py, corpus/evidence/round55/chess-best-move-probe.txt) under the frozen C1/C2/C3 predicates with committed receipts before any SCORECARD move or admission claim rides them. Spot-check: S201/S202 located quotes and sha256 pins re-opened over network (agree/agree); A1 duplicate-reject byte-confirmed against S109's pinned sha256 (agree); census validate exit 0. SHONEN: 4/4 boxes [~] author-asserted with resolvable pointers, none contradicted by this review - promotion review is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 45,
+   "date": "2026-10-30",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 45,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 45
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "unprovable",
+    "operability": "unchanged",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "feasible historical register verification"
+   ],
+   "report": ".ufo/reports/round-45/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-45-verifier-spotcheck.md@5540250155ea75210dab474e1158193ad0609e4b",
+    "rechecks": "C1 re-measured over committed bytes: population=70 rows, 66 distinct CORRECTION-R44 ids, register+population bytes identical at ddccb200 vs 019bccc9 (different-instrument limit confirmed; calibration axis-fit unprovable, lane-conceded). Gate receipts evidence-verified, gate not executed: before.txt exit1 instrument_mismatches=66@ddccb200; c1-after.txt exit0 registered=66@019bccc9; wrong.txt exit1 derived_mismatches=1; feasibility 12/12; freeze claims=1 findings=0. census validate exit0 re-run; rows 189-191, mined158/queued14/rejected19, A182/B6/C3 re-derived. Both gate decisions re-opened (S266 admit, S267 reject): quote present, 9 words, non-author agrees with both. SCORECARD delta 0, no axis harmed; PROVINCE/SHONEN/QUALITY untouched. All cited hashes exist and are ancestors of master; lane pushed ahead=0, clean; report committed by lane identity aa700764, on origin/main; prompt sections 1-5 diff empty vs canonical template."
+   },
+   "commit": "souji-shokunin@3519971988939aa3e02700bc0d759599c3110121",
+   "closed_at": "2026-10-30T18:19:45Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (watchdog.log, mutable): 2026-10-30T11:14:47-03:00 launch souji round=45 pgid=547547 driver=hyaku-inline attempt=1 | 2026-10-30T12:55:26-03:00 complete souji round=45; hyaku-inline attempt=1. Defects (status-neutral): L2 floor unmet - validated 64-seat w1 released un-dispatched by operator run-12 wrap-up (dispatched=0/completed=0/dead=0, no WAVE-DONE; census/round-45/records/operator-stop.json); r45-register-verifier gate lacks built-in selftest mode over isolated fixtures (disclosed interface debt in SKILL.md registry row; add committed selftest next round); whole-suite landing validation unrun at final tip after stop (disclosed; run at next round start); in-round outside admit/reject spot-check not performed (disclosed; fulfilled by this closure). Operator-owned opens carried: souji round-44 L0 symlink-contract disposition unanswered; execution-bound hidden-audit attribution open; SHONEN boxes remain author [~] assertions with resolvable pointers and appear fully checkable by a non-author verifier for the promotion review (promotion is operator-owned; this check writes no [x]). R45 gate erratum (quote 15->9 words) was corrected append-only in the lesson; census-before.txt scratch failure preserved honestly with mirror replay. No promotions, no mints, no cross-lane writes.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
