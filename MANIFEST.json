@@ -32866,6 +32866,43 @@
    "notes": "Dispatch digest: 2026-10-30T07:19:45-03:00 launch tameshi round=58 pgid=1573249 driver=hyaku-inline attempt=1 | 2026-10-30T09:59:25-03:00 complete tameshi round=58; hyaku-inline attempt=1. Conformance: report committed by lane identity (cc41c9e9), SHONEN heading 1 with four [~] lines, all 17 cited lane hashes ancestors of refs/heads/master, lane pushed ahead=0/behind=0 clean, prompt carried the template contract verbatim. Round shape 107 seats (v2 w1=67 attack 40.3%, v1 w2=40 attack 80%), role mixes re-derived from dispatch payloads, no residual call; 17 empty seat outputs (15 w1 + T58W2RevRows2/RevRows4) disclosed with no credit taken, known-death count unknown not zero. Verdict rejected-honest-stop: C1 uncertified (positive control B 1/2, deciding refused), C2 not admitted (forged-executor false green retained), C3 measured pass; honest stop correctly declared by the lane before any data. No conformance defects routed; S288 duplicate-URL census warning retained by design (exit 0). Operator note (promotion is operator-owned): all four SHONEN boxes look fully checkable by a non-author from committed evidence (SKILL tables/citations, LOG end-to-end receipts incl. honest negatives, cold-read 64/64 at 3809b595, PROVINCE unchanged); [x] marks await a promotion review. kagi handoff R51.5 verified present at kagi c49023b7; kagi untouched.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 64,
+   "date": "2026-10-30",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 64,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 64
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unchanged",
+    "calibration": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-64/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-64-verifier-spotcheck.md@3325e8ed86a5468156c963b98686d3598aa22e5f",
+    "rechecks": "C1/C2 evidence-verified (committed receipts at wave tip 23b3fdb1 + falsifier receipts MT22 b3/f, MT41 F1, CR07; counters not executed per Gate standard); re-measured: SOURCES 276 rows, entry 234 lines with provenance trio, S529-S534 queued->mined + used-by, KQ116/KQ117, Mistakes 13-15, SKILL/PROVINCE diffs empty, SCORECARD append-only (no score/capability change, no axis harmed), census validate exit 0, entry recheck quotes OK=31/31 exit 0, 4/4 gate spot-check agree (S529/S533 admits, S535/S536 rejects, live re-opened); all five cited lane commits ancestors of master, lane clean and pushed (jj-lane state ahead=0)"
+   },
+   "commit": "kama-shokunin@7b00be78ca49ce634515881fe3ddb86262f23872",
+   "closed_at": "2026-10-30T13:17:04Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log): 2026-10-28T20:36:55-03:00 launch kama round=64 pgid=4165278 driver=hyaku-inline attempt=1 | 2026-10-28T23:43:00-03:00 complete kama round=64; hyaku-inline attempt=1 | 2026-10-30T07:19:47-03:00 launch kama round=64 pgid=1574487 driver=hyaku-inline attempt=1 | 2026-10-30T10:06:28-03:00 complete kama round=64; hyaku-inline attempt=1. Status ok: real report (5 lane commits, receipts, 42-seat wave-f evidence), SHONEN heading 4x[~], prompt fidelity verified (9c99656c), lane pushed ahead=0. Both claims (C1 operability, C2 calibration) end not verified — falsified by wave-f receipts; lane honest stop, no axis harmed, no capability entered; round not admitted. Defects (status-neutral): (1) attempt-2 report rewrote 36 lines of filed attempt-1 bytes at the same contract path (57fd10cf; re-dispatch flow, supersession named in header); (2) CR06 DEFECT 1 freeze text 89 vs instrument 91 (verified real, freeze.txt:156 vs :192); (3) CR06 DEFECT 2 'unreadable pid_gone fails closed' partly delivered (RV08). Routed/open: KR06 (round-63, completion_fingerprint bound not source-backed) still open, round 64 correctly did not rest on it. Spot-check: 4/4 gate decisions agree (S529/S533 admit, S535/S536 reject; live re-opened 2026-10-30), new SOURCES row S529 quote/anchor/sha verified; census exit 0. Trends: expansion improved (admitted entry 234 lines citing six mined rows), quality improved narrowly (KQ116/KQ117 receipt-grounded; entry re-verified 31/31 by closure), discernment unchanged. SHONEN boxes remain [~]; round work looks non-author-checkable — promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
