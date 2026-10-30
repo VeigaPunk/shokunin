@@ -32303,6 +32303,44 @@
    "notes": "Watchdog digest: 2026-10-28T21:26:18-03:00 launch kengaku round=53 pgid=3758786 driver=hyaku-inline attempt=1; 2026-10-28T23:41:20-03:00 complete kengaku round=53; 2026-10-30T01:32:33-03:00 launch kengaku round=53 pgid=1984091 attempt=1; 2026-10-30T02:59:36-03:00 complete kengaku round=53. Run-11 honest-stop (e99074ba) preserved verbatim; resumed completion appended as erratum (47eb7fb3) naming superseded text - append-only honored. Admission basis: both frozen predicates (plans/round-53-claims.md, A1-A3 unchanged) pass at d244d4d324636953cd7192f2586fe0332b874e57 with committed receipts; lane held novelty 8 and calibration 9 and SCORECARD diff shows all seven scores held - admission records claim verification, not a score move. Unmet criteria carried un-narrowed: C1 integrity not proven (w3/C1CritOracle2.md coordinated-history attack); C2 selected-argv laundering + worker git-config contamination (w3/C2CritPredicate2.md); never-read != never-examined (w3/C1CritNeverRead.md); mutation detectors incomplete (C1 20/42, 22 survivors incl. witness-bearing; C2 28/69 wave-1); label independence is protocol fact, not instrument-guaranteed (shared spec); coverage 7 capped by open L0 kengaku round-25/33/51; carried round-52 SELFTEST-UNBACKED/K5/K7 fixes unlanded; SF20 down, SF14 stale-growth pin; W3 residuals honestly recorded (scout B empty + HTTP 429 wake, Touch B env error, partial mutation-counter output - not clearance). Historical run-11 defects (no ## Mistakes, no sourced claim) cured by resumed completion. Conformance notes: round shape 35+42+32=109 within band, W3 attack share 37.5%; lane installed pytest 9.2.0 via uv pip into scratch venv (disclosed). Operator-owned: all four SHONEN boxes remain [~]; box 2 now has resolvable receipts (c1-final/c2-final, LOG.md Round 53) and looks checkable by a non-author - promotion decision and any score moves belong to the operator/lane, not closure.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 51,
+   "date": "2026-10-30",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 51,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 51
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "calibration": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-51/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-51-verifier-spotcheck.md@c525de54a53eb3c4fee28ede2721da4527cf8ece",
+    "rechecks": "step-1 pass (report identity kaidoku-shokunin at fleet 6a4b78ae pathspec-limited; SHONEN heading + 4x[~]; 8/8 cited hashes ancestors of refs/heads/main; jj-lane state ahead=0 tracked=0 untracked=0; watchdog digest lines 1943/1958 verbatim; prompt contract items present). R51-C1 before re-measured over committed receipt (carriers_matched 2, exit_code 1, rev 646d29c9); after-absence re-derived at tip (PROVINCE byte-identical, 0 Core headings, 0 R51 data files, claimed instruments absent). R51-C2 unverified; census subpart evidence-verified from committed receipts (before 55/42/outside13 exit1 @f04b51dd; after 56/56 exit0 @96aee1a5; selftest 20 cases failures[] exit0); no lane gate executed. sources-census validate exit0 158 rows. S250/S251 re-opened live at tag 4.7.5: sha256 body pins and located line quotes match; 2 admits + 2 rejects sampled, 4/4 agree."
+   },
+   "commit": "kaidoku-shokunin@619e95dad20df4d2ccc71c0587d5b00b55c5661b",
+   "closed_at": "2026-10-30T06:22:02Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-10-30T01:32:30-03:00 launch kaidoku round=51 pgid=1982835 driver=hyaku-inline attempt=1 | 2026-10-30T03:10:41-03:00 complete kaidoku round=51; hyaku-inline attempt=1. Defects (status-neutral): single build wave of 36 seats below the 64-128 round band and no w2 falsify wave (provider-recovery boundary; l1/wave-accounting.json floor64_met false; honestly recorded, unmet not waived into admission); r51-w1-results.json lacks per-seat id/status fields so the dead-seat count is unverified; all 36 item prompts carried unresolved {LANE}/{W1} markers (lesson M51-6); fleet-root stray contained byte-exact but preventive misroot control remains open (M51-1); 19 W04 duplicate-URL census warnings stand; dispatch-evidence commit efbd49bd (prompt only) carries the lane identity (hyaku-inline attribution note); the report commit's author date 02:59:37 predates its content (jj working-copy artifact) - lands-last verified on committer dates (report 03:10:26 >= lane tip 03:08:24; watchdog complete 03:10:41). Trends: closure grades discernment improved by completing the pending outside spot-check (4/4 agree; lane recorded unchanged-pending at write time); expansion unchanged, quality improved (bounded) match the lane; no quality-harmed/expansion-improved trade exists. Operator items (promotion is operator-owned): the four SHONEN boxes look non-author-checkable on current evidence; carried L0 kaidoku|round-50 credential-history purge unchanged. This closure made no tool installs or updates.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
