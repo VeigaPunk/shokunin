@@ -32584,6 +32584,52 @@
    "notes": "Digest (closure prompt lines 16-18; watchdog.log 1921/1928/1946): 2026-10-28T21:00:26-03:00 launch mado round=56 pgid=3709493 driver=hyaku-inline attempt=1; 2026-10-28T23:42:56-03:00 complete mado round=56; hyaku-inline attempt=1; 2026-10-30T01:32:33-03:00 launch mado round=56 pgid=1984547 driver=hyaku-inline attempt=1 — no complete line yet for the re-launch; completion evidence is the landed report, not the driver line. Verdict rejected-honest-stop, admitted=false: report is real and complete (status ok), but C2 operability is unprovable (functional gates, bwrap fixtures and live samples not independently executed — prohibited; consolidated receipt untracked) and coverage/calibration are unprovable-but-better (documentary deltas independently re-measured; gates not executed). SECURITY, operator-owned prerequisite: every push of lane ancestry containing cfc6360479e2c3d2ada008c0550bfc2af2463273 is rejected by GitHub push protection (GH013) — that commit contains a REAL captured 1Password service-account token plus a real OPENAI_CODEX_TOKEN at .ufo/waves/round-56/w3/R56W3MutBwrapChannels/receipts/probe-jail.out:189 (paths/classes only here; values never printed; prohibited blob and historical blobs never opened). The operator must revoke/rotate BOTH captured credential classes and approve authorized history sanitization (the prepared jj abandon of that ancestry) before any lane push; deleting local commits alone is insufficient because the values were live host secrets. Lane durability: ahead=2 behind=0, local f808ca67… on cfc63604…, remote 0f3a543…; the verifier spot-check lesson is deliberately UNCOMMITTED/UNPUSHED — no lane path may be committed or pushed under this security hold, and this row never claims a lane push. Defects (status-neutral): (1) push-blocked lane (above); (2) report's consolidated receipt .ufo/waves/round-56/receipts/attempt2-final.txt absent from the committed tip (rc128), untracked on disk — its green outputs are not committed evidence; (3) pointer accuracy: before-a2.txt/live-a2.txt cited under receipts/ do not exist at the tip (committed at w3/R56W3ExecBaseBefore/receipts/before-a2.txt and w3/R56W3ExecLiveGetoption/live-a2.txt); (4) baseline labeling: before-values 70/319 are from attempt-1-era base 13f0acbe — do not cite 70→71/319→334 as this dispatch's delta (actual committed delta: registry rows 332→334, knowledge files 71→71); (5) working-tree drift: corpus/lessons/round-56.md and the redacted probe receipt modified, uncommitted (jj state tracked=2 untracked=1); (6) no complete line for the 2026-10-30 re-launch. Schema/durability limitation stated rather than invented: verification.spotcheck carries no hash because the artifact is mandated uncommitted; this is not an ordinary closure spot-check pointer. Runtime preserved untouched: ~/.local/state/shokunin-hyaku/blocked/mado (446 B), .ufo/state/mado.round and mado.mission — no counter advance, no driver action, no review swarm. No tool installs or updates performed.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 56,
+   "date": "2026-10-30",
+   "type": "closure-correction",
+   "supersedes": {
+    "round": 56,
+    "type": "closure",
+    "date": "2026-10-30",
+    "entry": 917
+   },
+   "lane": "mado",
+   "lane_round": 56,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 56
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unprovable",
+    "operability": "unprovable",
+    "calibration": "unprovable"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "recorded from the lane's SCORECARD capabilities table only (watch-list predictor for misc:disable_autoreload, tools/mado-watchplan.py, first-working round 56) — descriptor, not an independent admission: the demonstrating claim grades unprovable in this closure"
+   ],
+   "report": ".ufo/reports/round-56/mado.md",
+   "verification": {
+    "reviewer": "independent read-only non-author reviewer CloseMadoR56Incident (hyaku-closure role, @m_zfl fleet; pure read-only: no gate/probe/census execution, no lane push, prohibited receipt/blobs never opened)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-56-verifier-spotcheck.md — UNCOMMITTED/UNPUSHED by mandate (security-blocked: GH013 rejects lane ancestry cfc63604…; no commit hash exists by design); labels aligned to this correction in place while still uncommitted",
+    "rechecks": "Correction of rounds[917] labels; no new checks performed. Reviewer evidence is bounded documentary agreement + non-admission: committed registry rows 332→334 and knowledge files 71→71 re-measured at dispatch base→tip 0f3a543→f808ca67 (reviewer + closure agree); S396 admit and its unqualified-draft reject re-opened at man7 inotify_add_watch(2), agree — a one-sample documentary spot-check, not claim verification or new-ground admission. Because no required check was independently performed (functional gates, counters, bwrap/live samples; consolidated receipt attempt2-final.txt untracked, rc128 at tip), all three claims grade unprovable — the earlier unprovable-but-better grades overstated that evidence and are superseded. Step-1 facts stand: lane tip f808ca67… (parent cfc63604…), ahead=2 behind=0 vs remote 0f3a543… (NOT pushed, security hold); report committed under lane identity (fleet 0936310c + addendum c681ca21); SHONEN 4x[~]; dispatch digest preserved (watchdog.log 1921/1928/1946)."
+   },
+   "commit": "mado-shokunin@f808ca67dc003f1d4c7ffd70b757cbeec0d42f0d",
+   "closed_at": "2026-10-30T09:25:00Z",
+   "campaign": "hyaku",
+   "notes": "Append-only correction of rounds[917] (mado r56 closure, 2026-10-30), which stands as written; per protocol the prior entry is never edited. Changed labels only — lanes/ok, admitted=false, verdict rejected-honest-stop, commit, report, security and durability content are unchanged. Why: reviewer CloseMadoR56Incident supplied bounded documentary agreement and NON-ADMISSION, not an endorsement; (a) verdicts coverage/calibration unprovable-but-better → unprovable (missing checks: no functional gate, counter, or bwrap/live verification independently executed; primary consolidated receipt uncommitted), joining operability; (b) trend quality unprovable-but-better → unchanged with explicit unresolved verification (the trend schema admits only improved|harmed|unchanged|unprovable-but-better, so the unresolved state is recorded here in prose, not as a better grade); (c) trend expansion improved → unchanged (dispatch delta knowledge files 71→71, no independently admitted capability; the +2 registry rows are the lane's own Gate admissions and the S396 agreement was a bounded documentary spot-check, not new admitted ground); (d) trend discernment stays improved, explicitly bounded to the actually performed one-admit/one-reject documentary sample. Security prerequisite carried forward unchanged and operator-owned: revoke/rotate BOTH captured credential classes (real 1Password service-account token + real OPENAI_CODEX_TOKEN captured at .ufo/waves/round-56/w3/R56W3MutBwrapChannels/receipts/probe-jail.out:189 — path/class only, values never printed, prohibited blob never opened) and approve authorized history sanitization before any lane push; lane ahead=2 behind=0, never claimed pushed; spot-check artifact deliberately uncommitted/unpushed with no hash (schema/durability limitation stated, not invented). Runtime preserved: ~/.local/state/shokunin-hyaku/blocked/mado, .ufo/state/mado.round/mado.mission untouched; no driver advance, no lane commit/push, no code execution in the lane. No tool installs or updates performed.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
