@@ -33056,6 +33056,43 @@
    "notes": "Dispatch digest (verified against .ufo/watchdog.log lines 1993-2016; the log is mutable, this digest is the pointer): 2026-10-30T11:14:49-03:00 launch kasegi round=48 pgid=548177 driver=hyaku-inline attempt=1; 2026-10-30T12:06:02-03:00 lane-dead-no-report kasegi round=48 (attempt=1: L1 KasegiR48 ended without a landed report: FAIL report_of (missing, unchanged, no SHONEN heading, or < 400B)); 2026-10-30T12:06:04-03:00 launch kasegi round=48 pgid=2147473 driver=hyaku-inline attempt=2; 2026-10-30T12:37:20-03:00 complete kasegi round=48; hyaku-inline attempt=2. Status ok: real report (work, evidence pointers, landed commits, census, trends, SHONEN 4/4) - not a marker. Verdict admitted: the single declared claim C1 verifies on its frozen predicate (re-measured plain before/after 356 lines/52 boxes -> 12 lines/4 boxes with both digests reproduced; lane gate evidence-verified, never executed by this closure) and no owned axis is harmed (all three scores held; the density proxy movement 273.6->270.1 is disclosed, not hidden). Trends: expansion unchanged (no knowledge entry, no frontier row - 29->29, no capability row; S077 is a procedural own-work registry row), quality unchanged (no corpus entry re-verified/deepened/superseded, no admitted entry failed its re-check; the 22 gated historical rechecks untouched), discernment improved (LEARNING.md second limb met on record and first limb met by this outside spot-check; the report's own attempt-2 correction block superseding 'unchanged' to 'improved' was verified, not taken on trust). CONFORMANCE DEFECTS (status-neutral, no admission bar): (1) two live attempts in one steered round - the driver relaunched at 12:06 while attempt 1 was still holding the wave-1 handoff; both attempts' commits sit in the tip in order (3546f70 -> 3d7e042 -> 40b6b3f -> c7be2bc -> e76c16d -> 11c9818), nothing was reverted or rewritten, and the report discloses the overlap; (2) WAVE-DONE routing gap - attempt 1 received the 'WAVE-DONE wave1' handoff, attempt 2 received none and routed it to the operator through the L0 side channel ('kasegi | round-48 |' line in .ufo/l0-questions.md) - orchestrator-side, reported not papered over; (3) the attempt-2 correction block supersedes four sections of the filed report (final lane tip, reverted considerthese append, discernment trend verdict, nominal-axis disclosure) as an appended erratum naming the superseded text - the sanctioned form. ROUTED TO THE LANE FOR ROUND 49: (a) M48-4 (open) - the frozen battery's only 'canonical' fixture is the pre-freeze draft (sha b476c7aa), not the shipped bytes (b1352168); owed a new non-frozen fixture carrying the shipped bytes as positive control, the frozen fixtures.json must not be amended after scoring; (b) M48-6 (open) - a NUL byte in an evidence-pointer token raises an uncaught ValueError and exits 1 with empty stdout, violating the SKILL.md registry row's verdict map (unreadable input -> exit 2); it fails closed, so it is not a false green; owed a non-frozen probe asserting exit 2; (c) M48-5 (disclosed) - a lowest-axis claim must move a metric the axis counter reads; round 48's C1 was nominal on depth:verifiability because resolve.py never reads SHONEN.md; (d) curation, new from this spot-check - the Bugcrowd page was opened (HTTP 200) but is carried only in the Search log while the report says 'Rows rejected this round: none'; CORPUS.md SOURCES rule 1 wants a rejection to stay a row with reason and flip, so either land the rejected row or restate it in '## Leads (unopened)'; (e) citation ambiguity (lane-disclosed) - QUALITY R55's grounding cell cites 'R1/R2', which also name QUALITY rows R1/R2 at corpus/QUALITY.md:35-36; a superseding row should disambiguate; (f) frozen-counter limits (documented) - a pristine four-unchecked-box seed and a pointer to a 0-byte file both read SF-CLEAN, and '- [ ]' with an evidence line is accepted but uncovered by a frozen fixture. SHONEN for the operator: boxes 1, 3 and 4 are [~] author assertions and box 2 is untouched ([ ]); the round claims no promotion and no box is checkable for promotion by a non-author in this state, so nothing is promotion-ready - promotion stays operator-owned and this closure writes no [x].",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 73,
+   "date": "2026-10-30",
+   "type": "closure",
+   "lane": "revenger",
+   "lane_round": 73,
+   "lanes": {
+    "revenger": "ok"
+   },
+   "lane_rounds": {
+    "revenger": 73
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "calibration": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-73/revenger.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "revenger-shokunin/corpus/lessons/round-73-verifier-spotcheck.md@c70085776ee3c51fc76ac82a7b590d7971df112a",
+    "rechecks": "C1 legs re-derived plain over committed bytes at abe4276/8ccf615: K_HELD_BACKED 8/15->8/15 (held C01,C04,C06,C07,C09,C11,C12,C13), candidate sha256==pin 7880b17608f6, S096-S109 mined+linked 1/1, votes/R73Q* = 0 files -> C10_HELD_BACKED 0/1 unresolved; frozen-run evidence (measure-before.log base 0/1, status-flip control 0/1) evidence-verified, sibling gate not executed; SCORECARD diff d6475ee..8ccf615 = +4 lines only, no axis moved; S427/S428/S096 sources re-opened, all quotes verbatim; census validate exit 0 (disclosed W01/W04 only)"
+   },
+   "commit": "revenger-shokunin@8ccf615403ac8d04ada38c1ecb4562c7abc1a86f",
+   "closed_at": "2026-10-30T18:20:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (.ufo/watchdog.log): 11:14:59-03 launch revenger round=73 pgid=551563 attempt=1 | 12:07:06-03 lane-dead-no-report revenger round=73; retry same round | 12:07:08-03 launch revenger round=73 pgid=2177453 attempt=2 | 12:55:31-03 complete revenger round=73; hyaku-inline attempt=2. Real report (not a marker): status ok, claim admission rejected-honest-stop (C1 frozen at 606548a, wave v2 64 seats validated+handed off, released un-settled at operator wrap-up; 34/64 spawned, 0 settled; no vote files). Defects (status-neutral): (1) attribution - report landed via driver sweep d97efcc5 'L1 returned without committing'; (2) post-filing correction 17e32c09 deleted a duplicate '## SHONEN heading check' meta-section in place rather than as appended erratum; (3) dispatcher live() name-match revived attempt-1 orphan w1.ready - lane renamed it, operator fix filed by lane in .ufo/l0-questions.md; (4) inherited pacman-pause vs tool-probes.md installs discrepancy disclosed, no install repeated. Carry-forwards: re-dispatch Q-vote wave and integrate votes; fetch-and-substring audit S054-S095 still owed (S427/S428 fix only the two named rows). All SHONEN boxes remain [~] author-asserted - fully checkable only via non-author review; promotion is operator-owned. Lane repo clean, pushed, ahead=0 at closure; closure spot-check landed c70085776ee3c51fc76ac82a7b590d7971df112a (ls-remote confirmed).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
