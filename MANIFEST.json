@@ -32941,6 +32941,44 @@
    "notes": "Dispatch digest (verified vs .ufo/watchdog.log:1949-1990): 2026-10-30T02:36:12-03:00 launch kasegi round=47 pgid=3506832 driver=hyaku-inline attempt=1; 02:48:43-03:00 lane-dead-no-report (attempt=1: no landed report); 02:48:45-03:00 launch attempt=2 pgid=3172519; 04:09:08-03:00 lane-dead-no-report (attempt=2 never spawned after orchestrator parse error; provider permission_denied; campaign paused); 07:19:37-03:00 launch attempt=3 pgid=1570756; 10:17:01-03:00 complete kasegi round=47; hyaku-inline attempt=3. Status ok: real report (work, evidence, landed commits, census, trends, SHONEN 4/4 [~]); verdict rejected-honest-stop: C1 not fully verified (11/11 mechanical limbs verified; frozen harmful S074 mined->rejected limb refused per capture-binding B3 with red-before witness w1/R47RevD7.receipts.txt; plain supersedes-S074 2 vs frozen 1; wave-1 false-green controls disclosed), C2 unmet (F30 frontier 29->29; ZDI kept as sourced F02 enrichment, not narrowed after scoring). Lane trends expansion unchanged / quality improved / discernment unchanged superseded by closure sampling: outside check agrees with gate on S075+S076 admits and F30 reject -> discernment improved (LEARNING.md agrees-on-admits-and-rejects; r46 disagreements learned as M47-1..M47-4 + QUALITY R54). Routed defects in spotcheck section 6: R1 SHONEN.md canonical-form drift (13 accumulated assessment blocks, predates this round, +7 lines this round; restore toward seed or record sanctioned convention); R2 plain-target phrasing (anchor frozen plain expressions to row form so prose cannot meet them). Operator notes: five wave-1 seats ended with empty payload and no terminal status in wave1-results.json (lane declined to invent zero deaths; handoff format needs terminal status - orchestrator-side); final-measure.txt measured-at-rev f0809bca vs tip 77551628781a differs only by +14 append-only lesson lines (limbs re-derived at tip); pre-report landing-gate transcript ran at 29c02f99, not re-claimed at the later receipt-only tip (push independently proven: ls-remote = 903d47e after closure commit); L0 open question on the 22 gated historical rechecks remains unanswered and was routed around; SHONEN boxes 1/3/4 look fully checkable by a non-author on current evidence, box 2 (end-to-end domain task) has no executed item claimed - promotion is operator-owned. Round shape 96 seats (wave1 64 build incl. 26/64 = 40.6% strict attack share; wave2 32 integrated review, 28/32 = 87.5%); no promotions, no mints, no capability rows; no tools installed (pacman pause respected).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 52,
+   "date": "2026-10-30",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 52,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 52
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "calibration": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-52/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-52-verifier-spotcheck.md@a682eeb5d715baad96c267ca49c0eb7a955a93e0",
+    "rechecks": "Re-measured by closure: census validate exit0; SOURCES 158->159 rows re-derived at c525de5 and 00d0bfd (A145/B9/C5, mined150/rejected9, S252 present); tools/round-52 and corpus/evidence/round-52 empty at tip (no freeze, no receipts); accounting-landing.json results_rows=64, production_tools=[], freeze_record_present=false; production diff 1842addc->00d0bfd -- SKILL/PROVINCE/README/tools exit0; SCORECARD delta0 both axes; SHONEN.md untouched; all cited lane commits ancestors of main; jj-lane state ahead=0. C1/C2 after-values unmeasured as reported -> unprovable; historical C1 before re-opened (carriers_matched 2/4). No gate registered or executed this round, so no gate evidence to verify; claims were re-measured, not evidence-verified. Spot-check re-opened live man7 mknod(2) (EPERM quote 23 words + CAP_MKNOD) and round-51 spot-check; agree 3/3 (1 admit, 2 rejects) -> discernment improved per LEARNING.md (r50/r51 convention)."
+   },
+   "commit": "kaidoku-shokunin@00d0bfd00b2778c3e0b22b7d0f6ade11abcb07a2",
+   "closed_at": "2026-10-30T13:41:46Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (verified verbatim in .ufo/watchdog.log): 2026-10-30T07:19:41-03:00 launch kaidoku round=52 pgid=1572027 driver=hyaku-inline attempt=1 | 08:18:17-03:00 lane-dead-no-report attempt=1 (no landed report) | 08:18:20-03:00 launch attempt=2 pgid=536174 | 08:22:38-03:00 lane-dead-no-report attempt=2 (provider 429 rate-limit anthropic, seat exhaustion, attempt 3 withheld) | 10:33:38-03:00 complete kaidoku round=52 attempt=2. Report landed by lane identity at fleet commit 2a77f88358c43b3234d93758c9722413d0a7cd80; SHONEN heading present (4 [~] lines); prompt = template rendering + hyaku addendum, fidelity pass. Both declared claims (R52-C1 coverage, R52-C2 depth) unprovable, score delta 0, no harm -> rejected-honest-stop, status ok. Defects (status-neutral, never bar admission): r52-w1 results handoff lacks per-seat id/status so provider-death count is unprovable (next dispatch shape must carry them); 19 pre-existing W04 duplicate-URL census warnings remain; inherited uncommitted .ufo/waves/round-50/w3/ScribeEntryC1.md retained and disclosed (commit-or-revert next round). Operator note: SHONEN boxes all [~]; boxes 1-2 carry pointers a non-author could verify next round; promotion is operator-owned, no [x] written. Spot-check landed a682eeb5d715baad96c267ca49c0eb7a955a93e0 (verified on origin refs/heads/main).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
