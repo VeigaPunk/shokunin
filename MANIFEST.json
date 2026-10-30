@@ -32828,6 +32828,44 @@
    "notes": "dispatch/complete: 2026-10-30T07:19:51-03:00 launch kumitate round=69 pgid=1575599 driver=hyaku-inline attempt=1; 2026-10-30T09:30:20-03:00 complete kumitate round=69; hyaku-inline attempt=1 (verified vs live watchdog.log). Conformance clean: report landed last under lane identity, erratum append-only, all cited hashes ancestors of master, ahead=0, porcelain clean, prompt carries full template contract. Defects (status-neutral): (1) freeze-time PLAN_BEFORE_READY FAIL MAP_DRIFT at 9401d865, disclosed with anticipatory PASS withdrawn; (2) owed to self, routed next round: frozen probe/c2-controls.sh hardcoded /tmp/forge-sed.txt write; (3) unsafe fixed-output control replays temporarily overwrote two frozen receipts, restored byte-exact; (4) eight seats lack report files, schema lacks status/error so last-error text unavailable (K69ScoutMirror214 has nonempty output); (5) KIMI_CENSUS DRIFT for two unlisted host plugin paths, host untouched. SHONEN boxes 1-2 carry non-author-checkable evidence, box 3 honestly open; promotion operator-owned. Wave: one v2 wave 64 seats, attack share 20/64=31.25%, role mix verified from w1-results.json.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 58,
+   "date": "2026-10-30",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 58,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 58
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "unchanged",
+    "operability": "unchanged",
+    "coverage": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-58/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-58-verifier-spotcheck.md@b83f1bfc7b302f22e89d9631ac7e6ac87ea78c2a",
+    "rechecks": "C1 re-measured over committed bytes (ledger 49->100 rows, old49 byte-identical, new-set 51 rows fixed36/open14/declined1) + counter evidence verified (before no-op total=154 false; direct rows51/51 total0 true at b744b8a1; selftest 110/110; positive control B 1/2 and deciding exit3 controls-b-verdict-missing -> uncertified); C2 registry gate rows re-measured (exits 0/2/3, RECEIPT_REV_UNRESOLVABLE exact) + evidence verified (held3/3 mutants3/3 total0; selftest 23/23; forged-executor false green retained via attack receipts -> not admitted); C3 re-measured (1 entry cites 2406.09843 vs 0 at base, S286-S288=3 rows, registry 145->148, census exit0); no lane gate executed; 4 Gate decisions re-opened by this verifier (admits S286 arXiv live-quote verbatim, S287 PDF byte-identical sha256 531abe11d23f2e37; rejects S288 live page no measured outcomes, staged S167 already held S271) - all agree; SCORECARD diff 2a32aa82..3d6e41da additive-only, no axis harmed"
+   },
+   "commit": "tameshi-shokunin@3d6e41da46f9d4ec2e3c107e48cad91782a8d3b2",
+   "closed_at": "2026-10-30T13:14:28Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-10-30T07:19:45-03:00 launch tameshi round=58 pgid=1573249 driver=hyaku-inline attempt=1 | 2026-10-30T09:59:25-03:00 complete tameshi round=58; hyaku-inline attempt=1. Conformance: report committed by lane identity (cc41c9e9), SHONEN heading 1 with four [~] lines, all 17 cited lane hashes ancestors of refs/heads/master, lane pushed ahead=0/behind=0 clean, prompt carried the template contract verbatim. Round shape 107 seats (v2 w1=67 attack 40.3%, v1 w2=40 attack 80%), role mixes re-derived from dispatch payloads, no residual call; 17 empty seat outputs (15 w1 + T58W2RevRows2/RevRows4) disclosed with no credit taken, known-death count unknown not zero. Verdict rejected-honest-stop: C1 uncertified (positive control B 1/2, deciding refused), C2 not admitted (forged-executor false green retained), C3 measured pass; honest stop correctly declared by the lane before any data. No conformance defects routed; S288 duplicate-URL census warning retained by design (exit 0). Operator note (promotion is operator-owned): all four SHONEN boxes look fully checkable by a non-author from committed evidence (SKILL tables/citations, LOG end-to-end receipts incl. honest negatives, cold-read 64/64 at 3809b595, PROVINCE unchanged); [x] marks await a promotion review. kagi handoff R51.5 verified present at kagi c49023b7; kagi untouched.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
