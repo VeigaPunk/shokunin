@@ -32789,6 +32789,45 @@
    "notes": "dispatch/complete digest: 2026-10-30T07:19:39-03:00 launch souji round=44 pgid=1571376 driver=hyaku-inline attempt=1 | 2026-10-30T08:16:39-03:00 lane-dead-no-report souji round=44; retry same round (hyaku-inline attempt=1: L1 SoujiR44 ended without a landed report: FAIL report_of (missing, unchanged, no SHONEN heading, or < 400B): .ufo/reports/round-44/souji.md) | 2026-10-30T08:16:41-03:00 launch souji round=44 pgid=374222 driver=hyaku-inline attempt=2 | 2026-10-30T09:33:23-03:00 complete souji round=44; hyaku-inline attempt=2. Attempt-1 no-report death resolved by attempt-2 landing the report; not charged. Conformance: clean (lane identity report commit 424b781e; SHONEN heading 4 boxes; all cited hashes ancestors of master; repo clean, ahead=0; prompt carries full contract; report authored 09:30:21 after lane commit authored 09:29:25, committer-date lead is jj churn). Disclosures kept status-neutral: three temporary SCORECARD pointer mismatches at 39555219 repaired by 8376f442 (final new_mismatches=0); prompt-context '64 seats' text was arithmetic misdescription, spec/dispatch/results each enumerate 66 (within 64-128 band). Routed items for round 45: (1) freeze a feasible honest-register C1 counter — tuple order/arity mismatch keeps the honest 66-key register red (instrument_mismatches=66); do not reinterpret this round's miss; (2) C2 repaired oracle does not authenticate substance — size-branching fake audit survives (S44mutationtester51); needs execution-bound attribution or non-crashing discriminating negative control; (3) open L0 souji|round-44 operator disposition of the defensive leaf-symlink contract — technical green is not approval. SHONEN boxes all [~] with resolvable pointers, fully checkable by a non-author; promotion review is operator-owned; nothing promoted or minted here.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 69,
+   "date": "2026-10-30",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 69,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 69
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "routed-ledger"
+   ],
+   "report": ".ufo/reports/round-69/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-69-verifier-spotcheck.md@78b98d762ccf3e3a0961f94c4042eaabd2bcb706",
+    "rechecks": "C1/C2 probes re-run by closure at B 14057f3e and M 69d3c774: LEDGER69 UNMET 1/7 exit1 -> HELD 7/7 exit0; DEPREC69 UNMET 9/11 exit1 -> HELD 11/11 exit0 (live=exercised); tip delta vs M = 4 LOG/lesson lines only; SOURCES 152->155; selftest tally (56/56) and bounded-gate receipts evidence-verified; SCORECARD diff shows no axis integer moved; S214-S216 re-opened 3/3 agree, reject receipt agree (4/4 gate decisions); census validate exit 0"
+   },
+   "commit": "kumitate-shokunin@ab5915e7b9671e8a1bd375cc6c2748b78dc91629",
+   "closed_at": "2026-10-30T12:46:25Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete: 2026-10-30T07:19:51-03:00 launch kumitate round=69 pgid=1575599 driver=hyaku-inline attempt=1; 2026-10-30T09:30:20-03:00 complete kumitate round=69; hyaku-inline attempt=1 (verified vs live watchdog.log). Conformance clean: report landed last under lane identity, erratum append-only, all cited hashes ancestors of master, ahead=0, porcelain clean, prompt carries full template contract. Defects (status-neutral): (1) freeze-time PLAN_BEFORE_READY FAIL MAP_DRIFT at 9401d865, disclosed with anticipatory PASS withdrawn; (2) owed to self, routed next round: frozen probe/c2-controls.sh hardcoded /tmp/forge-sed.txt write; (3) unsafe fixed-output control replays temporarily overwrote two frozen receipts, restored byte-exact; (4) eight seats lack report files, schema lacks status/error so last-error text unavailable (K69ScoutMirror214 has nonempty output); (5) KIMI_CENSUS DRIFT for two unlisted host plugin paths, host untouched. SHONEN boxes 1-2 carry non-author-checkable evidence, box 3 honestly open; promotion operator-owned. Wave: one v2 wave 64 seats, attack share 20/64=31.25%, role mix verified from w1-results.json.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
