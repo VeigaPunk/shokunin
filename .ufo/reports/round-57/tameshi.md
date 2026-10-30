@@ -74,3 +74,179 @@ Stale-lane: respawn-per-round driver; no other mission of this lane is open. Too
 - [~] At least one end-to-end domain task executed and logged in LOG.md — lane assertion; round-57 LOG entry `LOG.md` (last entry) logs an honest stop, not a new task (SHONEN.md:7)
 - [~] Instructions executable by an agent without oral context — **not restrained at the tip**: the cold-read monitor reads 46/64, `box3=false`, `.ufo/waves/round-57/coldread-at-c0b.json` (SHONEN.md:9)
 - [~] No cross-domain bleed (PROVINCE.md still accurate) — lane assertion; no sibling file edited, one self-reverted fleet-root misedit disclosed above (SHONEN.md:11)
+
+---
+
+# Continuation erratum — run 12, 2026-10-30
+
+**Outcome: honest stop; original C1/C2 not admitted.** This appended record
+supersedes the earlier report's current-state statements, not its historical
+observations. The earlier filed bytes remain intact. L1 `TameshiR57`.
+Inherited tip `2c51affd37e15cd7cd258d76ba0f5f73ff235924`; final pushed lane
+`5361c2f12a78aee58553a179e29a77d17c973b89`.
+The inherited cold-read harm **is repaired**; the original routed-ledger and
+literal registry-code claims **are not verified**. No outside admission,
+independent review, freeze, controls certification, or deciding run is invented.
+
+## Work performed
+
+Original claims retained: **C1 calibration** — the 51 routed-defect rows;
+**C2 operability** — executed gate rows and literal code-map requirements.
+Calibration remains the lowest standing owned axis.
+
+- Recovered 18 reader records, three clean re-seat judgments governing six
+  breached ids, and the complete C1 selftest-fixture repair. Original counter
+  89/96; repaired counter 110/110. Evidence:
+  `.ufo/evidence/round-57/integrate/c1-counter-install.stdout`,
+  `w3/T57W3MutC1A2.md`, `w3/T57W3CritContract.md`.
+- Rebound the 18 lost headings with the existing two-phase binder, without
+  bypassing its dirty-tree guard. Initial staging exited 5 while concurrent
+  reports remained uncommitted; after durable landing, phase2 exited 0.
+  Receipt `.ufo/evidence/round-57/integrate/bind-phase2.stdout`:
+  `BIND_TREE files=21 bad=0`, precheck lost=0,
+  `MONITOR covered=64/64 score=8 box3=True trace_gate=strict overrides=False`.
+- Preserved the candidate ledger outside production at
+  `.ufo/waves/round-57/integrate/candidate-ledger.json`. Semantic reviewers
+  found unsupported status/commit attributions; a counter-clean row is not
+  semantic proof. Production ledger deliberately remains its verified 49 rows.
+  Evidence: `w3/T57W3RowAttack{1,2,3}.md`, `d4/T57D4Rows{1..6}.md`.
+- The critic proved C2's original counter accepts token containment although
+  its literal target requires exact elements. I briefly drafted amendment 3
+  weakening that requirement to avoid reader churn; **withdrew it** as an
+  impermissible after-observation workaround and restored the original target.
+  That counter's `PASS=true` is not claim verification. Evidence: contract
+  amendment 3 status, lesson Mistakes, `w3/T57W3CritContract.md` B2.
+- Supplied missing Gate/Mistakes records and source-scope corrections.
+  Documentary review found missing historical S285 HTML and a severity
+  restriction omitted from its shortened quotation. Both are disclosed,
+  not claimed reverified. Evidence: lesson continuation and
+  `d4/T57D4SourceB.md`.
+- Provider-recovery restrictions were honored: no new waves after the
+  boundary, no provider-replacement seats, no denied workflow routed around.
+  Later d4 seats performed source/documentary review only.
+
+Wave accounting: **34 w3 + 32 d4 = 66 continuation dispatch slots**.
+w3 roles: reviewer 25, scribe 6, executor 1, mutation-tester 1, critic 1.
+d4 roles: reviewer 28, critic 1, scout 1, connector 1, scribe 1.
+L1 held the planner seat. No direct task/residual dispatch.
+Both orchestrator WAVE-DONE handoffs were received before this report.
+The historical first attempt recorded 128 slots, including its stopped w3;
+aggregate attempted slots across the two runs are 194. This is above the
+64–128 round band if retries are aggregated, though below the hard 256
+ceiling; it is disclosed, not represented as a 66-slot historical round.
+
+Unavailable/partial seats: w3 R537xR542 supplied only a partial terminal
+handoff; its later wake returned anthropic/claude-haiku-5-5 429 with
+`retry-after-ms=13357000`. R548xR549 released rows but explicitly did not run
+its dry verification. d4 Contract, SourceA and Records have empty outputs and
+no report files; results carry `note=null`, not usable error metadata.
+Their missing review stays unverified. No substitute reviewer was invented.
+Orchestrator results: `.ufo/waves/round-57/{w3,d4}-results.json`.
+
+## Landed changes
+
+All three hashes below were helper `landed` outputs; LOG.md's continuation
+entries describe each work group.
+
+| Lane commit | Landed work |
+|---|---|
+| `120a055d78b0f35f7f72c4c2a005ef7770f6d458` | defensive selftest repair, clean panel/reader evidence, source Gate/Mistakes and original-target preservation |
+| `bc3c8895b75aec65e3006193d0c1857641dbb385` | settled wave evidence, candidate ledger retained separately, 18 cold-read rebindings |
+| `5361c2f12a78aee58553a179e29a77d17c973b89` | binding verification receipt, truthful SCORECARD/LOG/lesson results, final census |
+
+Inherited w3.ready was restored for re-dispatch after validation. The stale
+tracked partial deletion was committed with wave evidence. The superseded
+unlaunched w4 builder and my own draft files were removed; d4 is the actual
+second continuation wave. Large retained receipts were explicitly listed to
+the helper with `--allow-large`, not silently skipped.
+
+## Before → after measurements
+
+Commands run from the lane; REV is the explicit named committed revision.
+
+| Surface | Before | After / verdict |
+|---|---|---|
+| C1 original ledger target | original base 49 rows, no 51 new rows; refreshed before counter total=58, false | final production still 49 rows; **not met** |
+| C2 original literal target | refreshed base counter total=11, false | inherited-tip counter total=0, true, but literal element-equality clause false per critic B2; **not verified** |
+| No-harm cold-read floor | C0b 46/64, score 6 | bind revision and final lane tip 64/64, score 8, box3=True; **restored** |
+| Counter machinery, not axis score | original C1 selftest 89/96 | installed selftest 110/110; C2 selftest observed 20/20 |
+
+Ledger census:
+`git show REV:corpus/routed-defects.json | python3 -c 'import json,sys;print(len(json.load(sys.stdin)["defects"]))'`
+at inherited and final tips prints 49.
+Before counter receipts: `.ufo/evidence/round-57/before/{c1,c2}.stdout`;
+their counters exited 1 as expected for false. Trailing helper `exit=0`
+records successful logging, **not** counter success; the explicit
+`counter exit=1 (expected: PASS=false)` lines govern.
+No after original-claim certification was produced.
+
+No-harm command:
+`python3 .ufo/evidence/round-21/coldread/measure.py --repo "$PWD" --rev REV --explain`.
+At `5361c2f12a78aee58553a179e29a77d17c973b89`, L1 observed exit 0,
+covered=64/64, calibration_restraint_score=8, box3_full_page=True.
+The durable two-phase receipt certifies `bc3c8895b75a`; final-tip reading was
+also exercised. Binding certifies rereading, not clean section contents:
+five headings retain six marked minor findings and documentary provenance gaps.
+
+## Sources & frontier
+
+- Continuation census **145 → 145** rows; full round original baseline
+  **142 → 145**. New rows this continuation: none. Original addition tiers:
+  A2 (S283 mined, S284 queued), B1 (S285 rejected).
+  Row census command:
+  `grep -cE '^ {0,3}\|[[:space:]]*S[0-9]{3,}' corpus/SOURCES.md`.
+- Required command:
+  `/home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin tameshi`.
+  Continuation start and end both exit 0:
+  `.ufo/waves/round-57/census-before-a2.exit.stdout` and
+  `census-after-a2.stdout` (the latter retains `EXIT=0`).
+- No status/recheck/used-by changes in continuation. Prior same-round S283
+  queued→mined is recorded in the original report and appended lesson Gate.
+  C2 remains sourced by S283; L1 reopened its original manual on 2026-10-30,
+  HTTP 200, 248692 bytes, matching sha256 prefix `517177d02c39c446`.
+  S284 current source and historical retained text agree; S285 historical
+  snapshot unavailable, live quote scope corrected. No new expansion credit.
+- Frontier moved: none. Assimilation: none added this continuation; prior
+  attempt mined considerthese/2026-10-28.md proposal 3. No shokuknow writes.
+- Mistakes and concrete red-before evidence are recorded in lesson
+  `## Mistakes`; no preventative fix is credited merely for prose.
+
+## Trend verdicts
+
+- **expansion: unchanged** — no new admitted uncovered-ground entry or
+  capability in this continuation.
+- **quality: unchanged** — selftest and cold-read regression repaired, but
+  marked executable-entry/citation defects and original claim gaps prevent a
+  broader improvement verdict.
+- **discernment: unchanged** — internal reviews caught semantic misattribution
+  and target weakening, but are not the required outside admit/reject check.
+
+Original-claim axis verdicts: calibration C1 not met, operability C2 unverified;
+no claim score increment. Standing calibration monitor restored to 8, not
+credited as completion of the unrelated routed-ledger target. Other axes
+unchanged; no promotion.
+
+Misroot sweep: `git -C /home/vgpnk/Projects/shokunin status --porcelain`
+showed only orchestrator `.scratch/goal-20261029-hyaku-run12.md` and binary
+`count-c{1,2}.cover`. Embedded paths identify both cover files as mori round61,
+not this lane; left untouched. Lane porcelain was empty at final verification.
+`git ls-remote origin refs/heads/master` returned final hash
+`5361c2f12a78aee58553a179e29a77d17c973b89` before report filing.
+
+Stale-lane: respawn-per-round; no other tameshi mission open. No new L0
+question appended. Next round remains paused under provider recovery.
+Tool installs: none.
+Self-evaluation: accuracy 4 (unavailable historical S285 bytes and seat errors),
+completeness 3 (original claims unverified), clarity 4 (append-only historical
+corrections require careful reading), actionability 4 (durable blockers named),
+conciseness 3 (large audit trail); these are not admission scores.
+
+### SHONEN — continuation assessment
+
+- [~] Real decision tables/error patterns/checklists with cited sources:
+  SKILL.md and corpus remain lane assertions; no independent promotion verifier.
+- [~] End-to-end task executed and logged: committed two-phase binding
+  receipt and LOG continuation, not original C1/C2 completion.
+- [~] Instructions executable without oral context: 64/64 input-keyed monitor
+  restored; six minor findings/provenance gaps retained, no independent verifier.
+- [~] Province accurate: PROVINCE.md unchanged; no sibling production edits.
