@@ -32175,6 +32175,49 @@
    "notes": "Dispatch/complete digest: 2026-10-28T19:52:51-03:00 launch kasegi round=46 pgid=3684502 driver=hyaku-inline attempt=1 | 2026-10-28T23:40:19-03:00 complete kasegi round=46; hyaku-inline attempt=1 | 2026-10-29T17:09:58-03:00 launch kasegi round=46 pgid=3369392 driver=hyaku-inline attempt=1 | 2026-10-30T01:20:39-03:00 complete kasegi round=46; hyaku-inline attempt=1. Attempt-2 final state judged (attempt-1 honest-stop released without closure; its work is committed history). Status-neutral defects routed to the lane (spotcheck D1-D4): D1 report a2w1 attack share 27/64=42.2% vs its own role table/LOG 24/64=37.5% (builder-print definition; >=25% floor met either way); D2 a2w2-results.json cited under attempt2/, committed at .ufo/waves/round-46/a2w2-results.json; D3 report no-harm numstat sentence ('appends only') contradicted by 4 corpus/instruments files with line deletions (wave-2 in-place fixes; deleted files=0, no axis harmed); D4 pre-report landing-gate 4/4 claim has no committed receipt (underlying push state independently verified). Observation: final-measure.txt stamps c8641e7a, report says tip 4cdcf7bd - lane bytes identical outside waves. SHONEN: all 4 boxes [~], no [x] by lane; boxes 1/3/4 look non-author-checkable - promotion review operator-owned. L0 open question carried (22 gated recheck: entries historical-record relabelling). Round ran under task=@m_zfl routing; closure judges routed via global map.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 46,
+   "date": "2026-10-30",
+   "type": "closure-correction",
+   "supersedes": {
+    "round": 46,
+    "type": "closure",
+    "date": "2026-10-30"
+   },
+   "lane": "kasegi",
+   "lane_round": 46,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 46
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:verifiability": "unchanged",
+    "coverage": "unchanged",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "harmed",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-46/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-46-verifier-spotcheck.md@d8dfbcbf4ab53db0045d55ea588a3af90af5906d",
+    "rechecks": "Supersedes the same-round closure row: all step-1 conformance, claim, wave, and no-harm re-checks of the original row stand (claims C1/C2 verified on frozen counters; no owned axis harmed; 96 seats 0 dead; S074 admit and all three rejects re-opened and agreed). Amendment source: a read-only critic seat's post-landing deep audit, every load-bearing claim re-verified against committed bytes by the closure before queuing (addendum section 8): D5 unlanded scaffold fenced into corpus/SOURCES.md (bullets trapped in markdown fences, stale line refs; lesson :136 materially misleading); D6 three false sentences standing in the admitted F29 entry (:11/:88-89 chrome claim, :16 order claim, :111-112 'three cases' — S074.txt:40 forbids publish-without-fix), named by the round's own seats R46bW2ConnW2:290-292 / R46bConnPatterns M1 and left unqueued; D7 pinned capture not reproducible by any committed instrument (seat-executed, closure-corroborated: no producer script/receipt exists); D8 ZDI lead's S074 id reservation voided by the F29 row (R46ScoutLeadZDI.md:54) with no reassignment recorded. Original D1-D4 stand."
+   },
+   "commit": "kasegi-shokunin@4cdcf7bdea8bea06705de752a2796d4e3aab0242",
+   "closed_at": "2026-10-30T05:34:55Z",
+   "campaign": "hyaku",
+   "notes": "Correction of the same-round closure row: quality trend amended improved -> harmed. LEARNING.md harm condition fires literally for the round as it ended: sentences of an admitted entry found false during the round by the lane's own committed seats and left unmarked (no erratum, no queued correction), plus the registry scaffold and capture provenance gap in the same state; this correction and the addendum (section 8 of the spot-check @d8dfbcbf) queue the defects, so the correction is owed in the lane's next round. The expansion-improved / quality-harmed combination is a TRADE under LEARNING.md, flagged here for the operator to rule; the verdict field follows the closure dispatch criterion (every claim verifies on its frozen counter; no owned axis harmed), which is satisfied and unaffected by these defects — admission decision: admitted, trade surfaced. Verify-closure note: expansion and discernment evidence unchanged; the round's verified quality content (0/41 uncaught mutants, gate v1.1 hardening, selftests 83/0 147/0 30/0, two crashed instruments fixed and verified at tip) is not in dispute. Corrections owed next round: D5 land the three fenced bullets + lesson status-sentence correction; D6 three one-line entry edits + erratum naming the dropped seat findings; D7 commit the capture-producing recipe or re-capture and re-pin; D8 reassign the ZDI flip id (S075+) and record the REST-API lead; D1-D4 from the original row also stand. Dispatch/complete digest and all original notes carry over unchanged from the superseded row.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
