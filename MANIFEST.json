@@ -33213,6 +33213,47 @@
    "notes": "Dispatch digest (verified verbatim against .ufo/watchdog.log lines 2017/2028; the log is mutable, this digest is the pointer): 2026-10-30T12:46:07-03:00 launch kasegi round=49 pgid=1579490 driver=hyaku-inline attempt=1; 2026-10-30T13:17:10-03:00 complete kasegi round=49; hyaku-inline attempt=1. Status ok: real report (work, evidence pointers, landed commits, census, trends, SHONEN 4/4) - not a marker. Verdict admitted: both declared claims verify on their frozen predicates re-derivable from committed bytes, and no owned axis is harmed. Claims: C1 depth:verifiability (lowest, score 4) unresolved-class 68 -> 0 with ledger-rows=68 rows-resolving=68 findings=0; C2 coverage (8) frontier 29 -> 30 admitted (F30, CVE Services publication API, source S078 tier-A first-party, live re-open byte-identical). Wave disposition: the 64-seat wave-1 spec (policy v2, validator-clean, 31 attack seats) was built and handed over via wave1.ready (13:02); the operator's wrap-up ruling released it UN-DISPATCHED - no seat spawned, no wave1-results.json, no WAVE-DONE, no falsification credit claimed; the L2 floor was met in build, not in run (operator decision, status-neutral). Routed defects for round 50 (full list in the spot-check): (1) report cites corpus/instruments/citation-ground-ledger.md 3x - path never existed in any commit; actual ledger is citation-reground-ledger.md (68 rows verified); append erratum. (2) SCORECARD round-49 depth:density cell says SKILL.md was not edited this round - false (two registry rows + M48-6 note landed); report discloses correctly. (3) SCORECARD C2 cells quote registry=78 (frozen expectation) vs measured 79. (4) SCORECARD planned-for-50 cites a round-49 scout report in the wave directory; no seat ran and wave1/ holds only the swarm registry. (5) minor: anchorcheck/density/recheck-audit outputs quoted in the report without committed receipts (claim-bearing receipts all committed). Open L0: kasegi | round-49 - owner of re-grounding the 79 protected-file class members (round-*-verifier-spotcheck.md / round-*-aggregator-*.md) - operator/aggregator decision. SHONEN for the operator: boxes 1, 3 and 4 look fully checkable by a non-author verifier; box 2 (end-to-end domain task) open; this closure wrote no [x] and claims no promotion. Tools installed by the round: none (report so states).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 65,
+   "date": "2026-10-30",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 65,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 65
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "improved",
+    "depth": "unprovable",
+    "coverage": "unchanged",
+    "calibration": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "receipt-header consistency checking"
+   ],
+   "report": ".ufo/reports/round-65/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-65-verifier-spotcheck.md@4f784d9ee29ee7423d6c63bb2ba501d8ecb1ccee",
+    "rechecks": "C1 re-measured: c1-count.py at tip CASES=20/20 C1=PASS exit0; do-nothing stubs 3/20 & 17/20 exit1; frozen instruments diff f99de3b->1df2af73 empty; capability row + G05 PASS 86. C2: counter re-run ENTRY_CHECKS=10/10 PASS exit0 but boilerplate control independently reproduced at 10/10 -> lane non-admission upheld, depth unprovable. All 4 sources re-opened by closure: quotes located (S154 man roff line 505; S155 hashlib line 31; S156 receipt lines 1/44; S157 docstring), 4/4 sha256 pins byte-exact; census exit 0 (157 rows, 5 pre-existing W04); registry 153->157, held cells unchanged; SCORECARD diff 10e1b84->c46acf8 additions-only, no axis harmed; all 9 cited lane commits ancestors of master; lane clean, ahead=0; prompt fidelity PASS, L2 bucket 8=8."
+   },
+   "commit": "chousa-shokunin@c46acf83b9464b8e40f869fd0674db8d7533bb1f",
+   "closed_at": "2026-10-30T18:45:14Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 11:14:56-03 launch attempt=1; 12:08:09-03 lane-dead-no-report (no SHONEN heading/report) retry same round; 12:08:11-03 launch attempt=2; completes 12:59:32/13:03:32/13:06:14/13:07:32 -03. Attempt 2 inherited attempt-1 uncommitted bytes, re-verified them; report cites lane tip 62b0af15 at report time (fleet commit 60db1563, lane identity, report path only). Five post-report wrap-up commits aaecb85->c46acf8 (14:46, run 12) landed the three operator-released w2 seats' evidence - durable-state resolution, no defect. w1=64 seats (L2 floor met in one batched call), w2=32 (attack 31%), total 96 in band; w2 released un-settled by operator stop, no WAVE-DONE, no w2-results.json - honest stop, no settlement fabricated. Routed defects (status-neutral): (1) SCORECARD r65 C2 after-column labels stale pin 0a851898, receipts all pin 1df2af73; (2) source-openings.json S155 location string not narrowed to line 31; (3) report says 6 w1 seats left no report file, actually 2 (4 wrote <seat>/report.md); (4) depth/quality 'improved narrowly' wording rests on unadmitted C2 with author-side review only - closure grades depth unprovable, align wording with r64 precedent; (5) axes-table operability last-change round still 1 despite improvement verdict (score deliberately frozen at 3/10) - state intent in row; (6) third bare '## Capabilities' heading (precedented, parser-safe); (7) operator-side: templates/round-prompt.md itself carries only 1 of 5 child-lane items (prompt conformant via hyaku addendum) vs PROTOCOL/MISSION claims - not a chousa defect. SHONEN remains four [~] author assertions; boxes 1-3 look non-author-checkable on current evidence - promotion review is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
