@@ -85,9 +85,9 @@
         "minLanes": 16,
         "rampBatchSize": 5,
         "rampIntervalMs": 700,
-        "note": "hyaku campaign policy (operator directive 2026-10-19: 'i want you to launch waves of 32-64 actually'); copy of ufo-fsd-alpha config/ufo.json with only the wave band changed (16-32 -> 32-64); maxLanes 100 unchanged. Original note: kimi AgentSwarm parity: one batched task call per wave; resume lanes revive parked agent ids via hub send; every spawn lane carries a taxonomy role; no per-lane model param — the global OMP `m_*` alias table supplies routing and the generated `omp-seat-routing` mirror binds judge parity. Members are leaf-by-default when their agent card omits spawns; spawns: [] is not the leaf spelling. The executor card explicitly permits only labrat. Host observation (not repo-checked): OMP frontmatter `tools` is an allowlist; `jobs` is a hub operation, not a tool name, and `tools.approval` deny is session-scoped. scripts/ufo-swarm-wave.mjs validates and emits the wave payload.",
-        "waveMinLanes": 32,
-        "waveMaxLanes": 64
+        "note": "hyaku campaign policy (operator directive 2026-10-30, run 13: 'using 16-32 lanes per round'; band restored to the ufo-fsd-alpha default 16-32 after run 9 raised it to 32-64); maxLanes 256 hard ceiling unchanged. Copy of ufo-fsd-alpha config/ufo.json with only the wave band changed. Rounds dispatched under the run-9..12 band use the v2 policy file (64-128).",
+        "waveMinLanes": 16,
+        "waveMaxLanes": 32
       }
     }
   },
