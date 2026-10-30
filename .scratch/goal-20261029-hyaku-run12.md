@@ -162,3 +162,79 @@ each"); `advance` re-blocks on a fresh 3-rejection streak, as in run 11.
   routed to the L1 for disposition; v1.2 counters confirmed hardened against
   the three cheapest v1-era defect trees (RevengerEscapes HOLDS).
 
+- 2026-10-30 recovery: resumed seven L1s (souji43, kaidoku51, tsukuroi52,
+  kengaku53, mado56, tameshi57, mori61), then chousa63. Live load/seat
+  limits remain 144/98; no routing changes made during this recovery.
+- Kasegi r46 closure delivered admitted=true, then appended quality=harmed
+  (CloseKasegiR46 output; closure/correction commits reported as 02d668a5/
+  f1699f23). Driver advanced to next=47. Canonical LEARNING.md:37–38 bars
+  admission of expansion/quality trades; non-author closure judge asked to
+  reconcile append-only and name any missing operator ruling. No silent rewind.
+- Kasegi r47 L1 terminated with Devin permission_denied. Its already-rendered
+  attempt-2 claim is preserved; no new L1 spawned for it during recovery.
+- Broad provider failures observed in delivered jobs: MiniMax Token Plan
+  exhaustion, Cursor USAGE_PRICING_REQUIRED, Anthropic 429, ZAI 429,
+  Devin model permission_denied, and OpenAI hardware-auth cyber_policy.
+  Fresh campaign dispatches paused rather than consume more attempts.
+  No authentication denial is routed around; denied work remains unverified.
+- Repaired ephemeral dispatch helper: read round/attempt from driver claim
+  files, not the last merged stdout/stderr line (a jj diagnostic caused
+  ValueError after a successful dispatch). No repository script edited.
+- Original MoriR61 terminated with provider 429; MoriR61a2 inherits the
+  existing frozen 64-seat wave. In-memory wave notification target updated
+  to MoriR61a2; no re-freeze or duplicate wave authorized.
+- Kengaku w3 results handoff verified: 32 seats, 32 retained outputs.
+  Failed outputs are terminal provider errors, not review clearance.
+  Remaining live waves continue toward honest settlement; no claimed
+  completion of any 10-round block.
+- Settled independent closures during recovery: kengaku r53 admitted -> next54;
+  chousa r63 admitted -> next64; kaidoku r51 rejected -> next52;
+  tameshi r57 rejected -> next58; souji r43 rejected -> next44;
+  tsukuroi r52 rejected -> next53 (driver streak block);
+  mori r61 rejected -> next62 (driver streak block). Kasegi r46 corrected
+  append-only to rejected-harmed; operator ruling required, no rewind of r47.
+- SECURITY INCIDENT — mado r56: L1 reports GH013 push protection rejected
+  credential capture in local commit cfc6360479e2c3d2ada008c0550bfc2af2463273,
+  inherited by f808ca67dc003f1d4c7ffd70b757cbeec0d42f0d. A probe captured
+  live 1Password service-account and OpenAI Codex credential values.
+  Values are not reproduced here. Working-tree redaction is reported done,
+  but local commit history remains contaminated. Remote remained at
+  0f3a54361a9824484d0801679ceb1fd8ac7c32e1 in the L1's handoff.
+  Do not re-run push to confirm or bypass GitHub protection.
+- Persisted blocked/mado SECURITY HOLD in driver runtime. The live
+  orchestrator also intercepts verify/dispatch mado: inline.sh verify would
+  automatically push unpushed commits (inline.sh:163-170), so it was NOT run.
+  No credential revocation, use, history rewrite or new probe authorized.
+  Operator must revoke/rotate exposed credentials and approve sanitizing
+  unpushed local history; redacting the current file alone is insufficient.
+  Existing L0 mado|round-56 carries the lane's remediation proposal.
+- Mado report finalized with local-only/push-blocked status. Fresh reviewer
+  CloseMadoR56Incident dispatched for documentary-only independent closure,
+  explicitly barred from reading credential-bearing blobs or pushing.
+- Kasegi r47 attempt2 logged RETRYABLE by inline.sh fail: prompt was rendered
+  but no L1 spawned after parse exception; no false completion or advancement.
+- Mado incident closure safely recorded in fleet-only commit
+  c692cd9a87979dd5e0dfcef38f1effcfc41adb07 (rounds[917]), then corrected
+  append-only by 59097843f0b55c59bb15e59738e510f0d6ebf043 (rounds[918]).
+  Final: real report/status ok, admitted=false, rejected-honest-stop;
+  coverage/operability/calibration unprovable; expansion/quality unchanged
+  with unresolved verification explicit; discernment improved only for the
+  bounded documentary admit/reject sample. No better endorsement inferred.
+  Both safe fleet commits reported pushed. Lane spotcheck remains deliberately
+  uncommitted/unpushed; no lane history rewrite, push or counter advance.
+- Recovery batch closed eight current lane rounds: admitted kengaku53 and
+  chousa63; non-admitted souji43, kaidoku51, tsukuroi52, tameshi57, mori61,
+  mado56. Separately corrected kasegi46's trend-trade admission. Every
+  requested ten-round block remains incomplete, not marked done.
+- Wrap-up (operator "wrap up this round" + briefing, 2026-10-30 ~13:00 -03:00):
+  honest-stop releases sent to all 8 live L1s; waves released unsettled
+  (no fabricated WAVE-DONE); no closures; next rounds unchanged.
+  LANDED+verified+pushed: souji45 (aa700764), kengaku55 (93fd3095),
+  kotoba82 (cebe7826), kotodama79 (c38d395f), kumitate70 (91c7bf63),
+  revenger73 (17e32c09, sweep-corrected). kasegi49/chousa65 awaited
+  final verify at wrap-up deadline. Claims released for landed lanes.
+  Run-12 model routing final state: task/scout/mutation-tester/sentinel/
+  sonic/scribe/distiller/simplifier @m_zfl; main/executor/planner/labrat/
+  seance/critic/reviewer/connector/security-reviewer @m_kfc; revenger @m_swe
+  (mid-run operator ruling "use m_zfl and m_kfc here", dead primaries
+  m_flash/m_mim/m_luna off seat roles; backups in config.yml.pre-zfl-kfc-20261030).
