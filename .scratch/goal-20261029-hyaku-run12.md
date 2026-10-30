@@ -112,6 +112,20 @@ each"); `advance` re-blocks on a fresh 3-rejection streak, as in run 11.
   tabi w1 (64), kasegi a2w1 (64), kaidoku w4 (filling under host gate). ~220
   seats settled with deep, receipt-backed findings. Host load gate (LOAD_MAX 72)
   deferred the w4 fill past 19:00; fills resume per tick as seats drain.
+- ~20:00-21:00 -03 closures: **souji r42 ADMITTED** (closure 05cf0038) — first run-12
+  admission; souji -> next 43. **kaidoku r50 rejected-honest-stop** (C1 miss confirmed
+  2/4, frozen gap-rule defect; C3 met; closure a8d06318) -> next 51. **tabi r43
+  rejected-honest-stop** — C1's own kill rule fired (7-seat convergent in-model
+  do-nothing reach, routed to r44), C2 not met as worded (r5 false-greens); 5th
+  consecutive honest stop; advance re-blocked tabi per streak protocol.
+- ~21:20 -03 **operator routing ruling**: "use more m_mim instead of m_luna" —
+  planner/critic/seance @m_luna -> @m_mim (m_luna out of run 12). Applied to config.yml
+  (backup config.yml.pre-mim-for-luna-20261029); new spawns take it immediately.
+- kasegi r46 attempt-2: wave-1 (64) fully settled; integration landed 96379ae2; wave-2
+  falsify (32) mid-flight. Consistent wave-2 picture: C2 chain HOLDS at integration
+  (f29-gate 7/7, census/binding/quote checks green); landed c2 selftest NameError
+  (C1_ENTRIES ordering) and f29 selftest 28-row guard crash at HEAD are the L1's
+  fix-or-disclose items; v1.2 counter revenger probes all still red (no regression).
 - **tabi r43 (fresh-start after r39-42 rejected closures)**: C1 REFUSED per its
   own frozen kill rule — seven independent seats (CritC1ReachSynth/Direct/
   Witness/Replay, CritResidualModel, MutC1Sig, ScribeEntryAuth, corroborated by
