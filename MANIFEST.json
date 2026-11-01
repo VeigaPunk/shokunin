@@ -33795,6 +33795,49 @@
    "notes": "Dispatch/complete digest (watchdog.log, re-checked live): 2026-10-31T18:58:00-07:00 launch kama round=65 base=3325e8ed86a5 (zcode run14); 2026-10-31T21:01:49-07:00 complete kama round=65 head=bd4024687f5e pushed=True. Report landed last by the lane identity (fleet 46662df2, pathspec-clean, postdates lane tip); SHONEN heading present, 4x[~]; all four cited lane commits ancestors of the pushed tip. Round not admitted: C1's declared census predicate ('registered self-tests run green or refuse fail-closed with a pinned reason') is falsified by the round's own committed census receipt (HOST_CENSUS pass=16 fail=1 refused=2, census exit 1 by its registered exit map; the append-only-audit v6-revert-class arm fails without a pinned refusal) even though the four red->green repairs and the 20 counter registrations all re-derive; C2 verifies (stale=9->0). Honest disclosed open defect, no axis harmed, real report -> rejected-honest-stop. Defects (status-neutral unless noted): D1 SCORECARD §Round 65 + head banner + depth/coverage re-anchors reported as landed in 9c5a8644 but never committed (SCORECARD byte-identical base->tip; the §Round 65 record sits uncommitted in the lane worktree and is CRLF-translated - mistake-9 class again); D2 at-tip gate counts (GATE_SELFTEST pass=6 fail=0, registered 76 unregistered 0 defective 0) not byte-receipted (re-derive arithmetically; census carries only the lane-tip-arm pass marker); D3 PROVINCE.md cites wave receipts without the measured/ segment (pointers do not resolve as written); D4 no committed before-receipt for append-only-audit (red state at base inferred from unchanged tool bytes + fixture-based arm); L2 floor unmet, honestly recorded (no AgentSwarm surface; souji round-46 L0 line cited). Routed to round 66: land SCORECARD §Round 65 LF-byte-clean + erratum superseding the report's SCORECARD landing sentence; append-only-audit arm (already Planned r66) with a before-receipt; fix PROVINCE receipt paths; byte-receipt gate counts whenever cited; registry-gate selftest in every round whose instrument set changes (lane's own routing). Operator-owned pending: NTFS-invalid tracked path (L0 kama round-65, filed at .ufo/l0-questions.md working tree, not yet in the committed blob - integrator durability), L2 dispatch surface (L0 souji round-46). SHONEN: all four boxes look checkable by a non-author at the tip - operator may route a verification pass. Two self-caught mistakes verified genuine: CRLF rewrite byte-restored next commit (verified byte-exact), silent directory-arg skip repaired by re-committing the receipts in ea33a78f (diff-tree confirms r1 had no wave files).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 67,
+   "date": "2026-11-01",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 67,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 67
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "depth": "improved",
+    "freshness": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "receipt-digest provenance enforcement (tools/digest-in-tree.py; rev/all-objects modes, exit 0/1/2, fail-closed NO_DIGESTS; r66 scratch-clone receipt 0/2 OUT_OF_TREE named, committed-fixture receipts 2/2 PASS)"
+   ],
+   "report": ".ufo/reports/round-67/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/chousa-shokunin/corpus/lessons/round-67-verifier-spotcheck.md@27df950df83a2c0aea84cfe8de8ddb7b0ff432d4",
+    "rechecks": "C1 re-measured (line-8 grep 0->1, correction note 0->1, receipt re-derivation 8:GIT_PIN_MATCH=no / 9:LANE_REVISION over 14 lines); C2 evidence-verified (battery + SKILL registry row) and core fact independently re-derived by verifier all-blob sha256 sweep: defect pins OUT_OF_TREE, fixture pins IN_TREE, fake OUT_OF_TREE, capture digests IN_TREE; C3 re-measured (entry absent->present, S161/S162/S163 0->1, registry 160->163 with tier/status histograms matched, capture sha256s recomputed byte-exact, all three quotes re-opened from captures AND live URLs, ENTRY/SOURCES digest pins recomputed = receipt pins); C3 frozen verbatim=3 amendment verified conforming: append-only 4-line addition at 58b5ad3b naming the superseded literal and the measured verbatim=2 absent=0 no_source=1 exit 1, ancestor of verdicts commit 75deb9b8 which carries the affected after-receipt recording the miss; spot-check 3 admits + 1 reject all re-opened and agreed (S161 live URL byte-identical to capture, S162 lines 12-13 re-opened, S163 live page byte-identical with no revision pin confirming rejection, entry admit digest-cross-checked); census validate exit 0 with the same five pre-existing W04 warnings; SCORECARD diff additions-only, no axis harmed; no sibling writes in cd654578..ef4b5664"
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/chousa-shokunin@ef4b56640b231876cf646dd27841c86281f7a719",
+   "closed_at": "2026-11-01T04:32:32Z",
+   "campaign": "hyaku",
+   "notes": "Admitted: all three claims verify and no axis is harmed. Conformance clean: report landed last under the lane identity (fleet 3ee7182 at the watchdog complete time), SHONEN heading with four [~] author assertions (no [x]), all cited commits ancestors of master, tip pushed, round work additions-only inside cd654578..ef4b5664 with no sibling writes. Orchestrator-directed amendment check passed: the frozen C3 verbatim=3 literal was superseded pre-landing by a disclosed, append-only amendment (58b5ad3b, filed bytes untouched, superseded text and measured values named) committed before the affected after-receipts (75deb9b8), with the mistake mined in the lesson ## Mistakes and the verdict citing the measured receipt. Trends: closure grades discernment improved (LEARNING improved condition met: this outside spot-check agrees with the gate on admits and rejects, byte-verified; lane self-graded unchanged-pending) — expansion unchanged, quality improved, matching the report. Defects/routed: G06 tools/freeze-check.py --selftest pre-existing host drift (hardcoded /home/vgpnk LANE_ROOT_DEFAULT at tools/freeze-check.py:48 + NTFS-refused ':' case dirs) stays routed to round 68 (status-neutral; round-63 8/8 predates the host move); G02 coverage-map gap fixed this round (preflight 5/7 -> 6/7). Status-neutral observations: claims.md amendment placed mid-file rather than end-of-file (erratum substance met); amendment heading says 'before commit B' without the in-file sha (report/LOG name 75deb9b8); report's 14,888-object C2 figure (landing run) vs claims.md 14,869 (base run) both correct at named revisions. Operator note: SHONEN boxes now look fully checkable by a non-author promotion review (verifier checked none). Standing open L0 questions (r40/r65 fetch scope, L2-floor template) routed around, never treated as answered. No promotions, no mints.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
