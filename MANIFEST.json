@@ -36950,6 +36950,47 @@
    "notes": "Honest-stop round closed as rejected-honest-stop, concurred: C1's frozen rule ('battery verdict line anchored count 1 + preflight SKIPPED=none -> improved; battery still dies before its verdict line or the preflight cannot complete within its budget -> honest-stop') was honored unedited and neither completing receipt could be measured in-round - the contended host measured ~86-110 s/case (three samples; two orphaned sibling-lane souji-verify.sh lineages ~16 h, filed to L0 line 254 with start times/CPU-seconds/args, NOT killed from this lane, never treated as answered), the battery was killed at case 8/9 with no EXIT line (disclosed), ~6.5-8.5 h per battery and the preflight G08 a second full battery. The locale-boundary timeout-wrap itself is real and unit-verified: 3 hunks inside run_selftest only (21+/1-), HAVE_TIMEOUT kill-probe rc 124 (capability not existence), LC_BOUNDARY_BUDGET_S default 900 s ~55x the measured 16.333 s uncontended, expiry = named FAIL-case + case-note counted a failure never a pass; unit-verified at forced 1 s (CASE_RC=124 + case-note) with the pinned tool sha256 re-derived at both cited commits. C2 improved: all six routed D-70 defects closed (five corrected append-only with counted before/after receipts; D-70-6 answered by the surfaced post-open rejection S177); every count re-derived exactly by this closure. No axis harmed. Defects (status-neutral, routed to r72): D-71-1 the report's SHONEN assessment sits under the inline line 'SHONEN: lane has SHONEN.md -' instead of the '## SHONEN' heading (r69/r70 form) - conformance defect, assessment disqualified as promotion evidence, re-file under '## SHONEN' in r72; D-71-2 number drift: '18 healthy ok-case lines across two runs' (report/SCORECARD/lesson/LOG) vs 9+16=25 in the committed receipts - LOG correction entry owed; D-71-3 battery-partial-r71.txt header says 'ends at case 8' while the transcript shows 9 ok-case lines; D-71-4 LOG round-71 entry says 'Mistakes: three rows' while the lesson carries four (the prose-in-used-by E11 row missing from the LOG list) - append-only correction entry owed. Routed to r72: the completing run under a quiet window or host relief (G08_SELFTEST_BUDGET_S sized from the measured quiet duration, single-writer detached, both frozen arms complete); the operator's flock(1) decision (L0 since r70); the L2-floor template question (operator/protocol lane); the non-author entailment review and SHONEN promotion review remain operator-schedulable (no review manufactured). Operator note: all four SHONEN boxes still look checkable by a non-author promotion review (r69/r70 note stands, unchanged by this honest-stop).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 82,
+   "date": "2026-11-01",
+   "type": "closure",
+   "lane": "revenger",
+   "lane_round": 82,
+   "lanes": {
+    "revenger": "ok"
+   },
+   "lane_rounds": {
+    "revenger": 82
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-82/revenger.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/shokunin-binary-forensics/corpus/lessons/round-82-verifier-spotcheck.md@c153e44839ed86bda0623403190c49a42fe71e21",
+    "rechecks": "C1 re-measured from committed bytes: ag_probe red A1_RECORDED=1/3 score=3.33 over the 33764dd archive (byte-identical to committed ag-red.log) -> green 2/3 score=6.67 with trace_dylib_resolution=round-82 over the 9201d97 archive; oracle re-run over archive bytes ORACLE OK (47/47 checks) exit 0 (37 BYTE + 10 Q07 HYP); committed inspection.json sha256 == receipt stdout_sha256 05142d7e...6e786, stderr 0 bytes; instrument+fixture sha pins all match; F4 hold re-run 10/11 score=9.09. C2 re-measured: orphan_sweep3 --selftest 9/9 legs + SWEEP_SELFTEST=pass exit 0; frozen sed mutant (verified one substitution) dies exit 1 with the attributed last line; round-end real-tree receipt values re-derived exactly with the committed instrument's own functions over the reconstructed corpus (fleet reports <=81, lessons minus round-82.md): SWEEP_CORPUS fleet-reports=22 lessons=44, CITED=369 COMMITTED=357 LANDABLE_ORPHANS=0 ABSENT=12, SWEEP_PARSER_GREP 0/0/0 each reproduced by its registered grep over receipt bytes; v1/v2 blobs identical across the range, v2 content sha256 30aa3527...93eb6 matches pin; caveat: the sweep over the CURRENT tree exits 1 LANDABLE_ORPHANS=2 (two cited receipts left uncommitted - defect in notes). Carry-in root cause re-derived first-hand with the committed v1 tokenizer over reconstructed corpora: landing-era (lessons@ef7d3ee3 + fleet <=79) CITED=344 = 330 committed + 6 absent-fleet + 8 absent; post-adjudication (lessons@b1e0c60 + fleet <=80) CITED=357 = 343 + 6 + 8; r80-spotcheck-era tree (081f032) CITED=358 (+1). LOG append raw numstat 8/0 = 7 content + 1 blank separator LF, same convention stated as the verified b2fc6bb precedent (10/0 = 9 + 1). Censuses re-run: sanctioned worktree form exit 0 / 31 W (21 W01 + 10 W04) / zero E; literal form exit 2 (disclosed lineage); landing archive E11 x3 as disclosed; final-tip archive over my own 02a4ca9 extraction exit 0 / zero E / 31 W. Discernment: S459/S460/S461 admits + 2 rejects (decode_interface_builder .app-bundle sizing; F android env gate) re-opened, all agree; FRESH_ROWS 18/18 re-run; protected paths empty over 33764dd..02a4ca9; range stat 25 files 1620 insertions 0 deletions exact."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/shokunin-binary-forensics@02a4ca971d9e8d38bb6d46c5db0ee9721dea7432",
+   "closed_at": "2026-11-01T22:57:56Z",
+   "campaign": "hyaku",
+   "notes": "Digest (watchdog, verified): 2026-11-01T12:08:45-08:00 launch revenger round=82 base=33764dd29aaa (zcode run14); 2026-11-01T13:53:52-08:00 complete revenger round=82 head=02a4ca971d9e pushed=True. Report committed by revenger-shokunin (c99be426); SHONEN heading present with four [~]; all cited hashes ancestors of main; local main == origin/main == 02a4ca971d9e; range 25 files 1620 insertions 0 deletions; protected paths empty; LOG append-only, numstat convention matches the corrected b2fc6bb precedent. Both claims verify and no axis is harmed -> admitted. Capabilities: none added (A1 and v3 are measurement instruments over registered ground; supersession note in the r80 capabilities row, first-working round unchanged). Defects (status-neutral, routed to the lane for round 83): (1) cited green receipts never committed - reports/round-82/{ag-after.log, sweep3-selftest-after.log, sweep3-mutant-kill.log, sweep3-real-after.log, c1-only.log, c2-only.log, noharm-diff.txt} exist only uncommitted in the worktree; the report/LOG/lesson pointers do not resolve from committed bytes (the r80 b1e0c60e receipt-completion precedent and S461's routed repin rule were applied to only census-tip.log); claims still verify by this closure's independent re-measurements, so status-neutral; fix: commit the receipts (byte-check against the re-runs) in the next round's first commit. (2) consequence: the standing orphan sweep over the current tree exits 1 with LANDABLE_ORPHANS=2 (ag-after.log, noharm-diff.txt cited by the round-82 fleet report, on-disk uncommitted) - cleared by fix (1). SHONEN note for the operator: boxes 2 and 3 look fully checkable by a non-author now (this closure executed the round's end-to-end instructions verbatim from committed bytes without oral context; the LOG entry + corpus/live/runs/round-82 record are the box-2 evidence); box 1 sources re-opened this round; box 4 PROVINCE byte-unchanged and accurate. Standing routes unchanged: criterion R full extension, criterion N attribution pair, criterion C repair (§9), K (r74 L0 unanswered), census literal form (operator-side), F android gate.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
