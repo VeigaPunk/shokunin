@@ -36866,6 +36866,49 @@
    "notes": "Dispatch digest: 2026-11-01T11:13:18-08:00 launch mori round=70 base=9dc4314d1572 (zcode run14); 2026-11-01T12:51:38-08:00 complete mori round=70 head=de431a7484f2 pushed=True. Report is real (not a marker), by lane identity, cites the pushed tip. Both claims verify; no axis harmed; round admitted. Defects (status-neutral, routed to the lane for round 71): D1 reference-drift — S582 located-line pointers off against the pinned copy ('The number of milliseconds.' is at :834 not :833; the working-state QueryUnbiasedInterruptTime sentence is at :841 not :842; the debug ~49-day note is at :842 not :845) in source-s582-r70.txt, the S582 SOURCES row anchor, the lesson Gate, knowledge entry K2/K4/K5 and the report; quoted texts real and verified, S581 pointers exact; fix as new rows/erratum, never in-place. D2 number-drift — lesson Gate records the S582 sysinfoapi pre-row sweep as 0 but the receipt (and closure's re-derivation at entering) records rows=1 (the S574 row); the page-identifying gettickcount64 sweep is 0 so the no-duplicate decision stands; correct old->new next lesson. Nits: report says census receipts have 'command + rc embedded' but they carry only validator output (closure re-ran the validator, exit 0); SHONEN box 3 evidence line runs the r70/r69 battery references together without a separator (both pointers resolve). SHONEN: all four boxes remain [~] asserted-by-author with resolvable pointers; as non-author, closure executed the box-3 instructions (new tool selftest x3 + live; battery receipt verified) and the box-2 evidence (C1/C2 LOG entry + receipts) — a promotion review could check all four boxes against the spotcheck file. Fresh-start duty verified: frozen r61 counter re-derived unmet by closure; eight rule-outs named with reasons. L0 mori|round-62 and mori|round-65 lines stand open, re-verified unanswered, routed around. Assimilation: none — shokuknow unreachable.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 50,
+   "date": "2026-11-01",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 50,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 50
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "adjacency": "improved",
+    "coverage": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "webview2-multi-step-journey-windows"
+   ],
+   "report": ".ufo/reports/round-50/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/tabi-shokunin/corpus/lessons/round-50-verifier-spotcheck.md@c54749228e3b71f3d3c2d1f6a8167d89c2233a8e",
+    "rechecks": "Conformance: report committed by tabi-shokunin at fleet c2fde80a; SHONEN heading with 4 [~] and no [x]; all 10 cited lane commits exist and are ancestors of master; local master == origin master at ea11da958a9b8279203cda760a73b8129ac1a082; watchdog digest lines verified; all 16 claims.json frozenDigests recomputed OK. C1 VERIFIED evidence-only at bound revision bceb2114: green receipt predicate true / 0 findings, counts re-derived by closure (map 16, audit 16, delta 12 lane + 16 line rows, roster 16), v10 selftest 16/16, retarget diff comment/const/schema only, correction-1 raced receipt committed (1 of 2 cycles); NOT re-run (heads advanced since; snapshot-pinned claim). C2 VERIFIED by closure's own live re-run of the committed runner (bytes sha-pinned 2152d292/13b2bc3d, throwaway profile, loopback fixture, keyed teardown sweep 0): exit 0, fresh nonce, 4 legs, history [data:,a,b,c] currentIndex 3 at C, navigateToHistoryEntry back to index 2 -> /b.html currentIndexAfter 2; evidence tree 0 -> 5; 4/4 PNG pins re-hashed; both amendments (2604c1d9 target-race poll, 5c701994 measured history model) verified PRE-DATA by tree inspection with red receipts pinning the exact pre-amendment bytes; r49-counter cross-refusal 4 findings. C3 VERIFIED from counter source + committed receipts: missing pinned runtime -> couldNotEvaluate runtime-pin-host-drift never a finding, folder-without-exe stays runtime-msedgewebview2-absent, runtime-identity-mismatch added, selftest manifest 13 cases with exact-match findings + cne rule, d3-asis pins the real removed 156.0.4314.50 (absent on host), deterministic with-exe/without-exe probes, data-time receipt 13/13, draft red 10/13 vs final 13/13. Erratum D1 re-derived (grep 0/1 line-based, 1/2 join+squeeze), D2 verified (S160 between S158 and S159), D4/E04 refusal receipt verified (staged S153 bytes sha f60f0c02 == registry anchor; both CDP history-primitive quotes verbatim 1 hit; SOURCES.md byte-identical baseline..tip; 160 rows; knowledge notes 65 -> 66). SCORECARD diff is a pure append; no axis harmed. Discernment: 3 admits + 2 rejects re-opened, agree on all five; census validate exit 0 (22 pre-existing W04). Status-neutral defects routed: D-1 v9-red per-class prose split (12/3/3) drifts from the receipt's actual 11 head/4 sha/4 lines (+5 delta) = 24 (headline correct); D-2 lesson census-end sentence still names S161 as landed (withdrawn pre-commit); D-3 claims.json C3 parenthetical cites superseded freeze-time counter sha 8372402c (operative frozenDigests pin b7f54586 governs and matches). Standing: tabi|round-44 L2-floor L0 open (fifth round, routed around, L1-inline); lane selfassessment verdict=failed mismatches=1 on the standing m3 stale-index host class, crashed EPERM receipt kept and never quoted as a verdict."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/tabi-shokunin@ea11da958a9b8279203cda760a73b8129ac1a082",
+   "closed_at": "2026-11-01T22:18:44Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-01T10:27:11-08:00 launch tabi round=50 base=a9b47d6a1ea2 (zcode run14); 2026-11-01T13:27:49-08:00 complete tabi round=50 head=ea11da958a9b pushed=True (watchdog.log lines 251/277). Report committed by tabi-shokunin at fleet c2fde80a (13:27:49-08:00); SHONEN heading present, 4 [~] boxes, no [x] written by lane or closure. All 10 cited lane commits exist and are ancestors of master; lane pushed. Freeze-first discipline held under live-surface pressure: two pre-data amendments (2604c1d9 page-target poll; 5c701994 measured history model), each forced by a committed red receipt pinning the exact pre-amendment bytes, no data before 19636760 (tree-verified). C2 re-derived live by the closure judge: the committed runner re-run green end-to-end from mirrored committed bytes with fresh nonce/port, measured history model reproduced, keyed teardown sweep 0. C1 evidence-verified at bceb2114 (snapshot-pinned; counts re-derived; v10 selftest 16/16; retarget diff clean; one sanctioned correction cycle for a tsukuroi head race). C3 adopts the r49-closure D3 suggestion exactly: declared couldNotEvaluate class runtime-pin-host-drift, hard without-exe branch kept, 13/13 at data revision with deterministic both-branch probes and a committed draft-counter red/green pair. E04 duplicate-row refusal (S161->S153) pre-commit with catch record; S153 re-opened byte-identical (sha f60f0c02) with both CDP history-primitive quotes verbatim; erratum D1/D2/D4 all re-derived true. Defects (status-neutral, routed to the lane for r51): D-1 v9-red prose class-split drift vs the receipt's actual 11/4/4 split (headline 24 correct); D-2 lesson census-end stale S161 sentence; D-3 claims.json C3 parenthetical superseded counter sha (frozenDigests governs). Standing: tabi|round-44 L2-floor L0 open (routed around, fifth round; L1-inline); selfassessment gate verdict=failed mismatches=1 on the standing m3 stale-index host class (crashed EPERM receipt kept, never quoted as a verdict). SHONEN promotion remains the operator's call; the r49 closure's section-7 non-author re-run note still lists what a [x] review would close.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
