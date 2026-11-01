@@ -36534,6 +36534,49 @@
    "notes": "Dispatch/complete digest: 2026-11-01T07:37:12-08:00 launch souji round=51 base=d1b8734d8351 (zcode run14); 2026-11-01T10:18:24-08:00 complete souji round=51 head=e004ee1a765d pushed=True. Report committed by lane identity souji-shokunin <souji@shokunin.local> (fleet commit 1a2868585c821e47d37568f71030444b091d162c); SHONEN heading present (4 [~] boxes, evidence pointers resolve); all cited lane commits (851093b freeze, d9aa24f content, e004ee1a end receipts) exist and are ancestors of pushed master; PROVINCE.md absent from the range; real report, not a marker. One-commit freeze verified: 851093b adds prereg + both counters + populations + red do-nothing controls (both EXIT=1 at base, reproduced by this verifier) + pre-flight receipts, with counter bytes identical across freeze/content/final and sha256 pins matching the prereg. L2 floor: no dispatch surface on this host (dispatched=0, standing L0 questions routed around, nothing assumed answered). Lanes: souji ok. Routed items for r52: see verification.rechecks defects 1-4 (78-vs-79 ADDED-grep annotation number-drift in report/SCORECARD/prereg - actual 79; freeze-commit-message 'S274 captures' overclaim - captures landed in d9aa24f; prereg-plan vs executed-lesson 4th-mined-row drift (E12 mined, census take disclosed) - graded better; SHONEN [x] non-author review still owed by operator). Conformance defects are status-neutral and never bar admission.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 69,
+   "date": "2026-11-01",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 69,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 69
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "depth": "improved",
+    "operability": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "Stated-window A/A receipt (--window-s) + standing cross-check arm (--recheck-summary) on tools/mori-ua-variance.py (first-working round 69; selftest 14/14 x3 at the committed bytes; live re-run by the closure verifier: crosscheck=consistent, rc 0)"
+   ],
+   "report": ".ufo/reports/round-69/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/mori-shokunin/corpus/lessons/round-69-verifier-spotcheck.md@9dc4314d1572fe3e2ae18dd8c9c8f51f1263736f",
+    "rechecks": "C1 re-measured (QUALITY 161: ^161\\. grep -c 0 rc1 at c53dd789 -> 1 at dee4f678; 158/159/160 = 1 each; QUALITY.md diff append-only; able-to-fail re-run: window-s= count 0 rc1 over the r68 receipt whose as-of pair is 1268 s apart vs 4 hits / window-s=4015 x3 over the r69 receipt; tool --window-s regex + rc-2 path + docstring paragraph + 3 selftest case names confirmed at the committed bytes). C2 re-derived (window math 16:23:39Z->17:30:34Z = 4015 s; compare line per-response=4 stable=1497 stable-not-in-pin=2 window-s=4015 crosscheck=consistent rc 0; helper byte-equality independently confirmed by hashing fetch/capture/now_utc/sha256_hex bodies in both revisions AND by diff-hunk placement; honest no-TTL finding verified: the same two positions 218/1498 rotate in both the 1268 s and 4015 s windows and the receipt decides no TTL; stable-not-in-pin=2 = asset lines 163,211; pin sha 1168b2a6 re-computed; S580 grounding). C3 re-run LIVE by the verifier (read-only, scratch-only writes): two same-UA captures 18:48:23Z (identical bytes, same-second pair), fresh --only S241 re-check rc 0 asset-churn=1, compare --window-s 0 --recheck-summary -> rc 0 crosscheck=consistent crosscheck-basis=stable-not-in-pin=4+recheck-asset-churn=1; the receipted first live agreement (2+1 -> consistent) internally consistent. Selftests/battery evidence-verified from committed receipts (14/14 x3 at 5528b961; register 12/12, settlement 10/10, vote-bind 16/16, pin-check 125/125, adjudicate 5/5, recheck 10/10), not re-executed. SOURCES 352->353 re-counted; S580 row re-opened live byte-identical (sha256 238ec28d, 15183 bytes; quotes at :63-64/:70 verified, 16+12 words). Census validator rc 0 (W04 tolerated class only). All three mined mistakes verified real in the disclosed run history (3 bare rc=1 selftest lines pre-fix + sys.stderr restore fix; source-sweeps receipt marking the pre-row block attested-not-captured; no website_fleet residue anywhere under the workspace and all receipt paths inside the lane repo)."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/mori-shokunin@dee4f67818c4a623c99276b522577a095c43f66a",
+   "closed_at": "2026-11-01T19:06:47Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-01T07:58:40-08:00 launch mori round=69 base=c53dd7895b3e (zcode run14); 2026-11-01T10:10:09-08:00 complete mori round=69 head=dee4f67818c4 pushed=True. Step-1 conformance CLEAN: report committed in the fleet repo by lane identity mori-shokunin <mori@shokunin.local> (fleet 154577d842733c25d2b9f0a41e5bc7d327e4826e); SHONEN heading present, 4 boxes all [~]; cited hashes resolve (c53dd7895b3e entering ancestral; dee4f67818c4 = pushed branch tip; 986d4b46 r61 data tip commit + ancestral; b3c25613 r60 revision in the committed freshstart receipt ancestral; 3f6eb7a6/238ec28d are sha256 content digests, both re-computed matching); round diff = one lane-authored commit, 18 files +1022/-27, all paths inside the lane repo, no frozen byte. All three claims verify; no axis harmed (SCORECARD axes table bytes untouched, battery green on unchanged bytes, QUALITY 158/159/160 unchanged, LOG append-only +106, SHONEN marks confined). C2's stated-window receipt is an honest null: both per-response positions rotate within both windows (1268 s and 4015 s), TTL separation reported unmeasured, no value decided. C3's first live cross-check agreement re-run live by the closure verifier (consistent, rc 0, counts-level basis). Discernment spot-check: S580 admit re-opened live byte-identical, AGREE; reject-class sample (considerthese 2026-10-26 suggestion 1 deferred behind the open mori|round-65 instrument-change ruling) AGREE; census validator rc 0. Defects: none found; nothing routed. Operator notes: all four SHONEN boxes now look fully checkable by a non-author (this verifier re-derived boxes 1-3's cited facts and box 4's diff check; per the gate only a non-author may write [x] and this closure writes none - the operator decides on a promotion review). Carried open L0 lines (routed around, never treated as answered): mori|round-65 instrument-change ruling, mori|round-62 dispatch surface. Score convention intact: no closure states a new number; claims grade axis-verdicts only.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
