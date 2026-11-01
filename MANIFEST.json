@@ -33715,6 +33715,49 @@
    "notes": "Round verified end-to-end; both r50-routed defects (D1 control provenance, D2 number drift 4807->4809) were closed by the lane as claims C1/C2 and re-derived correctly by this closure; C3 (frontier F32 CISA Vulnrichment on S081) re-measured. Step-1 conformance clean: report landed by lane identity (fleet commit c8819340), SHONEN heading present with no [x], all cited hashes ancestors of master, tip pushed (origin=local=acbdd202), round work inside bcd5d89..acbdd202, dispatch/complete digest consistent with commit and fetch timestamps (no future-dated evidence). Defects found (status-neutral, routed to round 52): (1) SCORECARD r51 move-log row records the 4809-row counts as 2/3/2 where the same commit measures 2/3/5 under the report's own command (grep -c 4809 SCORECARD.md); the calibration row in the same file records 2/3/5 correctly - append-only correction owed (the D2 class, self-inflicted). (2) Lesson round-51 Gate annotates the S081 located quote '24 words by wc -w'; measured 17 - the <=25-word bound holds, the stated figure is wrong. (3) Observation: the pre-freeze neighbor screen's quoted scope was truthful (re-run at base: zero hits) but corpus/source-snapshots/round-24/S013.txt:65 (MITRE CWE Top 25 capture, mined by F05) names CISA Vulnrichment as a data source - F05 is a downstream consumer; consider naming it in the entry's Distinctness. Carried operator-owned debt unchanged: 67 host-bound recheck lines + 22 gated lines, L0 kasegi round-50 unanswered and routed around. SHONEN for operator: box 1 ([~]) looks checkable by a non-author on stable SKILL.md bytes; box 2 genuinely open; lane wrote no [x]. Marker rule: report is a real report with checkable work (status ok).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 44,
+   "date": "2026-10-31",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 44,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 44
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "chrome-cdp-loopback-windows"
+   ],
+   "report": ".ufo/reports/round-44/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/tabi-shokunin/corpus/lessons/round-44-verifier-spotcheck.md@d252ea17bf8d39ea2e1da9770316146f264f8a0e",
+    "rechecks": "Step-1 PASS: report committed by tabi-shokunin identity (fleet 2e14124b, 2026-10-31T20:40:10-07:00 == watchdog complete), SHONEN heading present (4 [~], zero [x]), all cited commits ancestors of master, local==origin at 63444fe8d192acdee70480811408a0879612b936, 67-file round diff reachable from 5c3f4cca. Freeze amendment d3d31472->8c238799 verified PRE-DATA (linear chain; instruments byte-frozen from the amendment through tip; claims.json freezeAmendment key + failed-attempt stdout retained). C2 RE-MEASURED LIVE by this closure after a safety review: committed runner (sha 9b2855f0==pin) re-run with a fresh throwaway profile -> exit 0, Chrome/156.0.8078.74, fresh socket 127.0.0.1:56616, fresh nonce f3284fb7/fixture b7da1d44, domNonce==fixtureNonce (invocation-bound), chromeTerminated true, screenshot byte-identical to committed (4ee1806f, 7908 B), no stray processes; committed counter exit 0 (predicate true, 0 findings) over the committed receipt+screenshot blobs. C1 EVIDENCE-VERIFIED: fixture-built receipts carry the report's deterministic revs (0bee79ee/1648e0cf/eff28d05/7c558d5e, 55-file trees from source 5c3f4cca); r43 false-green receipts vs v2 named findings (r5-binding-set-missing / r5-binding-quote-not-whole-line / r5-binding-path-type); selftest 8/8; checker pins r43 freeze blob f3036d9e and implements typed-path + whole-line-quote + binding-set clauses. C3 EVIDENCE-VERIFIED: anchor PEM+SPKI 868c0d89 pinned in supervisor source, pin check ordered before signature check; honest green, failedrun 48 findings (anchor-pin-mismatch+measure-signature-invalid+46 egress-count-without-remotes), selfauth exactly the named pair, anchor-self-select mutation reach green, selftest 9/9. Plain counts re-derived: knowledge 60->61, registry 151->153, evidence tree 0->2; SCORECARD diff pure append, no prior axis touched, no scalar moved. Discernment spot-check AGREE 4/4 (admit=capability demo re-executed live; reject=first live attempt ok:false retained; S152+S153 staged copies re-hashed, quotes 8/3 words located); census validate exit 0 (21 pre-existing W04), SOURCES_GATE clean rows=153 findings=0. Routed status-neutral defects: D1 stale claims.json frozenDigests entry for the C2 counter (pins pre-amendment d994ab71, committed bytes f796ae84); D2 honest-state receipts measured at freeze2 8c238799 while report wording says 844a5b3a (read-set identical); D3 C1 pathtype crash limb has no committed receipt (crash writes no JSON); D4 operator-side: dispatched prompt does not embed the L2 minimum verbatim (lane routed around via L0). SHONEN flag: boxes 2-3 look non-author-checkable (live run committed, logged, independently re-run); no [x] written by closure."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/tabi-shokunin@63444fe8d192acdee70480811408a0879612b936",
+   "closed_at": "2026-11-01T04:06:18Z",
+   "campaign": "hyaku",
+   "notes": "Fresh-start round on the new Windows host; 5th prior closure was rejected-honest-stop, this one admits. Digest: dispatch 2026-10-31T18:57:57-07:00 launch tabi round=44 base=5c3f4cca86e9 (zcode run14); complete 2026-10-31T20:40:10-07:00 head=63444fe8d192 pushed=True; report committed by lane identity at fleet 2e14124b before completion. Three frozen claims (C1 calibration instrument repair, C2 coverage capability chrome-cdp-loopback-windows, C3 operability pinned-anchor supervisor) all verify under predicates frozen at the pre-data amendment 8c238799 (superseding d3d31472, disclosed before the 844a5b3a after-receipts; instrument blobs byte-frozen thereafter). C2 re-measured live by the non-author closure judge (fresh throwaway profile, loopback-only, fail-closed teardown verified in code and in the observed SIGKILL exit); C1/C3 evidence-verified against committed receipts. Lowest-axis obligation waived by the active stagnation nudge (no capability rounds 39-43); adjacency 8 returns to obligation at round 45. Stagnation window restarts at 45. Defects (status-neutral, in spotcheck D1-D4): stale counter digest pin in claims.json.frozenDigests; revision-wording drift (receipts at 8c238799 vs report wording 844a5b3a, read-set identical); unreceipted r43-crash before-state limb; operator-side prompt template missing verbatim L2 floor (L0 filed, routed around, never treated as answered). No marker; no [x] written into SHONEN.md by closure; SHONEN boxes 2-3 flagged for the operator as now non-author-checkable (promotion review is an operator decision). Standing red unchanged: check-c2-knowledge-round41 (r42 L0), check-frontier-admission (since r36); legacy-gate host-bound failures recorded with causes (none introduced this round). Census exit 0 both ends; check-sources clean at tip.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
