@@ -36243,6 +36243,49 @@
    "notes": "Four lane commits 7fe65562..66b8994b: 688144573a26 (landing), 8c5af6ad (ledger-append repair, disclosed red->green), ecfcea41 (landing counters + census receipts), 66b8994b (record amendments); report landed 68783cbb by the lane identity. Security boundary held: no r56-era material opened, diffed, or surfaced; the citecheck's scan scope is caller-named r63/r64 receipt trees only. Disclosed in-round defects, restorations verified byte-exact by this closure: M64-1 (backtick echo swallowed two script lines; the committed before-state receipt is the complete re-run), M64-2 (long heredoc truncated the SCORECARD append; restored byte-exact from the base git object, prefix cmp), ledger glue (the r63 tool-ledger row carried no trailing newline; red TARGET_MISSED at the landing receipted in landing-counters-r64.txt, repair 8c5af6ad split the glued line with the r63 row restored byte-exact and green TARGET_MET receipted; both states in named sections). Status-neutral defects for the round notes: (1) report prose says range numstat 30 files +1192/-1, measured 31 files +1193/-1; (2) report says 18 round-64 receipt files at the landing, the landing carries 19 under .ufo/waves/round-64/receipts/; (3) landing-counters-r64.txt prints LEDGER_LANDING_RC=0 (tail's rc, self-disclosed in the receipt) with the true rc=1 in ledger-red-leg-rc.txt. Routed/open items carried: the five L0 rulings remain operator-owned (omarchy freshness disposal; gate-selftest host gap; calibration resolved-active re-derivability; screen-capture scope; the L2 floor); D05's remaining residue (driver-class / second-host) is operator-scoped; the citecheck's standing use in the landing counters is the lane's stated round-65 intent. SHONEN: all four boxes [~] with resolvable pointers; box 4 (no cross-domain bleed) and box 3 (executability from committed bytes) look fully checkable by a commissioned non-author review - no [x] written by this verifier per protocol.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 63,
+   "date": "2026-11-01",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 63,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 63
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "unchanged",
+    "calibration": "improved",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "monitored-record rekey run-book"
+   ],
+   "report": ".ufo/reports/round-63/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/tameshi-shokunin/corpus/lessons/round-63-verifier-spotcheck.md@d0baf616bb8a9fc1be6394e370e0f30a952470af",
+    "rechecks": "Step-1 clean: report committed by lane identity (674b6b7d, report file only), SHONEN heading + 4 [~] lines, all cited hashes (8616d47e, a18c20f0, e9673d2d, base 0b81e8f5) exist and are ancestors of refs/heads/master, local master = origin = e9673d2ddfa3e2b445d93c21f20c4b34dc55ab07. Both claims RE-MEASURED by the verifier, not evidence-verified only. C1: selftest 5/5 pass exit 0 run at the tip; red/green demo on the real r62 pair (ed3a66c2->5721f7d5) reproduced raw_old_only=79/29, norm_cr_old_only=0/0, verbatim_prefix=true, eol_rewrite_disclosed=true with --require-raw exit 1 (RED) and normalized exit 0 (GREEN); sort-u counts 80/30 (wc -l) vs 79/29 (content members) reconciled exactly as the erratum states; tool absent at base; tool blob identical across all three work commits. C2: criterion-120/S294/rows/ledger counters re-derived 0->1, 0->1, 153->154, 680->693 on committed bytes; guard re-run by the verifier at 8616d47 (RED cand_credited=51 lost=13 exit 1, LOST names QUALITY/SOURCES, probe sampled=20 mismatches=0) and at the tip e9673d2d on BOTH floors (0b81e8f5: 64/64 lost=0 ok exit 0; 8b0042bd: floor_credited=46 cand_credited=64 lost=0 ok exit 0). Self-caught SCORECARD CRLF->LF rewrite verified byte-restored: base SCORECARD bytes are a raw byte prefix of the a18c20f0 blob, tip reads raw_old_only=0/norm=0 with the disclosed mid-file capability-row insertion, tip file uniformly CRLF (3240 CRLF, 0 LF-only); the 8616d47 rewrite measures raw_old_only=2388 norm=0 disclosed. No-harm: only the 5 reported paths modified; PROVINCE/SKILL/README/tools/registry.json and the guarded probe (sha256 892a045d8b508214804e2b26b78c15b83aae65bdae4bd5bf022b8cb735f3b33e) byte-unchanged base->tip; no SCORECARD axis row altered in place. Discernment: S294 admit re-opened (extract sha256 56f2e80e... matches; 18-word quote verbatim at cited fetched-page lines 2678-2679; duplicate sweep 0 at base) - agree; S293 standing rejection re-checked (S289 holds the URL; REJECTED per CORPUS rule 2) - agree; considerthese 2026-10-28 proposal 1 price-out re-read - agree; census validate exit 0 (17 W04 + 1 W01, all pre-existing; S294 adds none). Observations (status-neutral, in notes): r63 Gate carried no fresh rejected source row; ledger rekey_round field labels the run-book generation (61) not the creating round."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/tameshi-shokunin@e9673d2ddfa3e2b445d93c21f20c4b34dc55ab07",
+   "closed_at": "2026-11-01T17:20:26Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (orchestrator watchdog log): 2026-11-01T05:25:39-08:00 launch tameshi round=63 base=0b81e8f57562 (zcode run14); 2026-11-01T08:15:19-08:00 complete tameshi round=63 head=e9673d2ddfa3 pushed=True. Status ok (real report, step-1 clean); round ADMITTED: both claims re-measured green by the non-author closure verifier (C1 calibration instrument selftest + real-pair red/green; C2 operability guard RED lost=13 at 8616d47 -> GREEN 64/64 lost=0 ok at both floors at the tip) and no owned axis harmed. Defects: none routed. Status-neutral observations: (1) the 13 r63-created ledger entries carry rekey_round=61 (run-book generation id shared with the 36 r61-created entries; read_rev 8616d47 distinguishes the batch) - no round-attribution error implied, a batch/run-id field would read clearer; (2) the r63 lesson Gate carried no fresh rejected source row (only the S294 admit) - the verifier's reject sample used the standing S293 rejection the Gate cites plus the considerthese proposal-1 price-out, both agreed. Disclosed items verified honest: the mid-file SCORECARD capability-row insertion (verbatim_prefix=false at tip, normalized-clean, disclosed in CLOSURE-PREP) and the in-place SOURCES round-61-note count repair '12 words'->'8 tokens' (prose note, logged old->new, the r62 RD4 site - correctly measures norm_cr_old_only=1, exit 1, on the append-only instrument, and is disclosed as such). SHONEN.md unchanged, four [~] lane-asserted boxes, no independent promotion verifier on record - operator may want to schedule the promotion review. r60 L0 question (option (b)) stands open and unanswered, as disclosed. Routed items: none. Carried: considerthese 2026-10-28 proposal 1 cited-receipt-exists half remains proposal.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
