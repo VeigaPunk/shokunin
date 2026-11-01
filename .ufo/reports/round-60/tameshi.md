@@ -1,225 +1,259 @@
-# tameshi — round 60
+# tameshi — round 60 (attempt 2)
 
-Lane `tameshi` (`/home/vgpnk/Projects/shokunin/tameshi-shokunin`), round 60,
-attempt 1, L1 `TameshiR60`, hyaku run 13 — fresh-start round. Lane base
-`9806562c7efc816bd979923e702ef39bc41cade7` (= `origin/master`, clean tree);
-final lane commit `9bc9b20b5d6723a19d1b69c8edd7246f82ea3d78` (pushed:
-`git ls-remote origin refs/heads/master` prints the same hash; `jj-lane.sh
-state` → `local=remote ahead=0 behind=0 tracked=0 untracked=0`).
+Lane `tameshi`
+(`C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/tameshi-shokunin`,
+branch `master`), round 60 attempt 2, L1 `TameshiR60a2`, watchdog `zcode
+run14` (launch 2026-10-31 18:57:59−07:00, base `9bc9b20b5d6723a19d1b69c8edd7246f82ea3d78`
+= origin/master). Attempt-1's round-60 work is committed lane state; this
+attempt ran on the NEW Windows host (win32: MSYS/MINGW64 bash 5.3, git
+2.55.0.windows.3, native CPython 3.13.15; the `python3` on PATH is the
+Microsoft Store stub, exit 49 — host probe receipt
+`.ufo/evidence/round-60/win-host/host-probe.txt`). Final lane commit
+`49ddecf1f15ad16586c8b8773c952ddd1957ae50`
+(`git rev-list --left-right --count origin/master...master` → `0 0`).
+
+**Self-admission: REFUSED.** C1 and C2 measure true (below), but the
+no-harm guard is unverified on this host with a provisional regression on
+record — the honest-stop rule applies. Details under Trend verdicts.
 
 ## Work performed
 
-Declared claims (2, distinct axes, both aimed at the round-59 closure's routed
-defects; fresh-start duty discharged by reading the last three rejected
-closures — r57 honest-stop, r58 not-admitted, r59 honest-stop — and the
-round-59 spot-check before declaring):
+Fresh-start duty (§7): the last three rejected closures (r57 honest-stop,
+r58 not-admitted, r59 honest-stop) and the round-59 spot-check §6 were
+re-read before declaring; attempt-1's instruments were then spot-checked ON
+THIS HOST before any claim was declared. Ruled out, with reasons:
 
-1. **C1 — operability, capability re-certification (sourced S290).** The
-   round-59 executor-source-pin capability is re-certified on an *installed
-   discriminating* counter, and the tool's blob-read plumbing arm is
-   reconciled to exit 2. Before-state: the capability was **not admitted**
-   (honest stop, closure round 59) — the frozen counter passed a fingerprint
-   cheat at 24/24.
-2. **C2 — calibration.** The round-59 closure's eight routed defects and its
-   five uncaptured mistakes become tree-checkable records (ledger rows,
-   QUALITY criteria, SCORECARD annotations, a cold-read precheck at the
-   round's content revision, a pointer sweep).
+- **Re-running attempt-1's C1 counting command as a claim** — its
+  invocation shape (`python3`, `/home/vgpnk`) cannot execute here; a
+  counting command that cannot run at adjudication is the r58/r59 rejection
+  shape.
+- **Extending the counter's failure modes (the round-61 planned move)** —
+  would stack a new predicate on an instrument the host could not run at
+  all (the spot-check proved that first).
+- **Re-litigating attempt-1's C2 counts** — tree-checkable here with
+  `python` for `python3`; no axis move in re-measuring. Their host scope
+  became C2's record instead.
+
+Declared claims (2, distinct axes; stagnation nudge active on the scored
+axes 10/8/9, so the lowest-axis obligation is waived — premise restated in
+the SCORECARD planned block):
+
+1. **C1 — operability; capability cross-host re-certification (sourced
+   S292 + S073 re-opened).** The frozen round-60 counter crashes on this
+   host before any verdict (red receipt
+   `.ufo/evidence/round-60/win-host/red-v1-counter.err`:
+   `UnicodeEncodeError` — under `-I` the interpreter ignores `PYTHONUTF8`
+   and the cp1252 locale codec cannot encode the 日本語 fixture content —
+   plus a `PermissionError` cleanup crash on git-for-windows' read-only
+   loose objects). Landed `tools/executor-source-pin-measure-v2.py`: the
+   frozen instrument's cell design unchanged (8 shuffled class cells × 5
+   declared paths in ONE invocation per cell, per-run nonces, empty-blob
+   declared path, corrupt cell expecting exit 2), host-portability
+   plumbing only (explicit UTF-8 fixture writes; `-X utf8` child
+   invocation; `git update-index --chmod=±x` exec-bit force for
+   `core.fileMode=false`; read-only-safe reset/corrupt/cleanup arms;
+   ASCII-escaped receipts naming the producing instrument digest). Frozen
+   pre-data (`freeze-v2.json`), amended once before the second scored
+   family (below), scored green with the full control family red.
+2. **C2 — calibration; host-scope records.** The tree records which
+   measurements are host-scoped and what the real host surfaces are:
+   QUALITY criteria 118 (host scope + instrument revision named on cited
+   counting commands and certification receipts) and 119 (deterministic vs
+   order-dependent control arms distinguished in claim sentences);
+   SCORECARD host-scope annotations on attempt-1's rows plus the attempt-2
+   measured rows; PROVINCE dated host correction (line-66 template path
+   `recorded absent 2026-10-31`; real win32 surfaces named); lesson
+   mistakes 6 (host-scoped-instrument), 7 (over-specified-predicate),
+   8 (host-infeasible-instrument) with captured-by fixes; an `## Attempt 2`
+   lesson section.
 
 Work items, each with its evidence pointer:
 
-- Installed the discriminating counter `tools/executor-source-pin-measure.py`
-  — 8 class cells (`equal`, `unrelated`, `execbit`, `changed`, `missing`,
-  `symlink`, `corrupt`, `unresolvable`) over 5 declared paths in ONE tool
-  invocation per cell, per-run nonce fixtures, shuffled class order, an
-  empty-blob declared path and a corrupt-blob cell expecting exit 2
-  (`tools/executor-source-pin-measure.py:1-34`, digest `c136561d…`); closes
-  routed defects 1 (cheat-passable counter) and 2 (one-`--path`-per-call blind
-  spot).
-- Amended `tools/executor-source-pin.py` v2: a blob read that fails at
-  plumbing level now returns `EXECUTOR_SOURCE_UNAVAILABLE` (exit 2) instead
-  of DRIFT (exit 1) — `tools/executor-source-pin.py:249-266` at
-  `da2ae6b3…`; closes routed defect 7 and decides defect 4 (the exec-bit
-  boundary is now a tested cell).
-- Wrote and froze the pre-data control family (do-nothing tool-absent, the
-  unfixed v1 tool as red-before, always-accept, fingerprint, sequence,
-  hash-only, first-path-only, empty-blob-unsound):
-  `.ufo/evidence/round-60/controls/` — every arm `C1_R60_PASS=false`.
-- Froze the claims before any data run: `plans/round-60.plan.md`,
-  `.ufo/evidence/round-60/contract.json` (carries the `coldread_forecast`
-  key criterion 110 requires) and `.ufo/evidence/round-60/freeze.json`
-  (digests) — commit `da2ae6b3`.
-- Landed the C2 dispositions: `corpus/routed-defects.json` rows
-  `R59.1`–`R59.8`; `corpus/QUALITY.md` criteria 111–117 (one per round-59
-  mistake whose `captured-by` was `none`, plus the mined `considerthese`
-  proposal 5 and the freeze-digest criterion); `SCORECARD.md` annotations
-  (`not admitted (honest stop, closure round 59)` on the round-59 capability
-  row; saturation premise restated on the scored axes; the round-60
-  measured-claim rows); `corpus/knowledge/executor-source-binding.md`
-  amendment (new decision-table row, exec-bit boundary, the standing
-  counter); `corpus/README.md` coverage-map addendum and F11 frontier
-  correction; `corpus/lessons/round-60.md` (Claims, Gate, 5 mined Mistakes,
-  wave record, Verdicts, next-round carry).
-- Opened and admitted two source rows this round (S290 Python `secrets`,
-  S291 Git `index-format`), rejected the `git-ls-tree` page as the mode
-  ground with reason and flip condition, and updated S103's `used-by`
-  (old → new logged in the lesson) — `corpus/SOURCES.md:165-166`, `:112`.
-- Ran the criterion-116 pointer sweep (21/21 added pointers resolved at the
-  final revision) and the criterion-117 freeze classification
-  (`INSTRUMENT-OK (receipts re-run)`) — `.ufo/evidence/round-60/pointer-sweep-final.json`,
-  `.ufo/evidence/round-60/freeze-verify.json`.
+- Host probe + red-before receipts committed pre-data —
+  `.ufo/evidence/round-60/win-host/host-probe.txt`, `red-v1-counter.{out,err}`
+  (commit `c9723e59`).
+- Claims frozen before data: `plans/round-60-attempt2.plan.md`,
+  `.ufo/evidence/round-60/win-host/contract-a2.json`, `freeze-v2.json`
+  (commit `c9723e59`).
+- **Amendment A1** after the first scored family: the C1 sentence had
+  pinned the sequence control at "3/8" (the Linux receipts' modal score);
+  this host's draw scored **1/8** — still red, but false to the sentence.
+  The sequence control answers a fixed exit cycle against shuffled
+  expecteds, so its score is order-dependent by design (attempt-1's own
+  record said "3–5/8 across runs"). Amendment frozen pre-data
+  (`contract-a2-amend1.json`, `freeze-amend1.json`, commit `ffa56602`),
+  scored family re-run post-amendment; the first family is kept at
+  `win-host/first-family/` as the run that surfaced it; mined as mistake 7
+  with the 1/560 order-alignment kill hazard priced (criterion 119).
+- Scored runs at the measured revision `ffa56602` — receipts
+  `.ufo/evidence/round-60/win-host/amend1/`: cert + cert-repeat 8/8 exit 0
+  (nonces `c42003b92a32fe13` ≠ `056cf07669067d49`, orders `esucmcue` ≠
+  `ueceusmc`, instrument digest `429cb204bb61…` = freeze-v2); ten-arm red
+  family (below); `freeze-verify` on both freezes `FROZEN-INTACT` and
+  attempt-1's freeze still `instrument=10/10 INSTRUMENT-OK (receipts
+  re-run)` — no frozen byte touched;
+  `tools/receipt-revision-gate.py --certified ffa56602` → PASS.
+- C2 records: `corpus/QUALITY.md` criteria 118–119; SCORECARD annotations
+  `counting command host-scoped (linux)` on attempt-1's R60-C1/C2 rows and
+  the attempt-2 measured-claims section; `PROVINCE.md` host correction;
+  lesson mistakes 6–8 + `## Attempt 2` section; LOG entry (commit
+  `f0ec3a5b`, `daac54ce`, `a205f00b`).
+- Sources: S292 (git-update-index, opened this round) and S073 re-opened
+  with a fresh win32 fetch and used-by extended (the lane's S103
+  re-use precedent — no duplicate row for a held URL); extracts under
+  `win-host/sources/` (commit `c9723e59`, fix `daac54ce`).
+- No-harm arc (attempt 2's own catch): the frozen cold-read precheck is
+  host-infeasible here (below); a lane-authored substitute
+  (`noharm-cand.py`) measured a provisional credit drop; the attempt does
+  not self-admit and the re-read remedy is routed to round 61 (commit
+  `a205f00b`).
+- Pointer sweep re-run at the landing revision: 19/19 record pointers + 6
+  deferred resolved, none drifted (`.ufo/evidence/round-60/win-host/pointer-sweep-a2.json`,
+  commit `49ddecf1`).
+- L2 wave: the mission's named surface (one batched AgentSwarm call on the
+  Kimi host) does not exist on this host; this round's one batched wave was
+  attempt-1's (32 seats, settled 2/32 by the host usage cap — every attack
+  seat among the 30 cancelled). No wave was re-rolled; the decision is
+  routed to L0 (`.ufo/l0-questions.md`, `tameshi | round-60 | …`), routing
+  with "the floor's intent served by the round's dispatched wave plus
+  deterministic committed instruments whose receipts the closure judge can
+  re-run" until ruled. Sibling lanes (mado r57, tsukuroi r53) routed the
+  same gap the same way.
+- `considerthese/`: attempt-1 already dispositioned proposals 1 and 5 of
+  `considerthese/2026-10-28.md` (criteria 111–115, 116) and round-59 landed
+  proposal 3 (criterion 110); proposals 2 (counter-arm liveness) and 4
+  (assimilation backlog) remain unimplemented and neither matches this
+  attempt's claims closely enough to ground — the nearest (2) is
+  strengthened by this round's cross-host per-arm receipts but its
+  linter-as-tool form stays unadopted. No proposal adopted this attempt.
 
 ## Landed changes
 
+Every change is tied to the LOG.md entry `## 2026-10-31 — round 60 attempt
+2` and its commit:
+
 | Change | Lane commit |
 |---|---|
-| freeze contract + plan + control family + installed counter + tool v2 + planned-claims block | `da2ae6b361de2d6294c6324a02ae141ff6cb482f` |
-| QUALITY criteria 111–116, SOURCES S290/S291 + S103 `used-by`, knowledge-entry amendment, README coverage-map addendum + F11 correction, SCORECARD annotations, lesson, C1 certification receipts (`cert.out`, `cert-repeat.out`), source extracts | `68ac8ac03adb60841457702978b31bbc40871796` |
-| pointer sweep (script + receipt), freeze verifier (script + receipt), QUALITY criterion 117, lesson mistake 5, control receipts re-run at the certified revision | `b1ba0ebc434fb0c73fef693e3eda20fd1e17ab02` |
-| routed-defect ledger rows `R59.1`–`R59.8`, cold-read precheck receipt at the content revision, wave w1 evidence (spec, dispatch, ready + markers, registry, 2 seat reports, `w1-results.json`), lesson wave record, LOG entry | `e13e0324e048377d7ca5d296294f6f4089240aa0` |
-| SCORECARD round-60 measured-claim rows + round-61 plan; pointer-sweep receipt at the final revision | `9bc9b20b5d6723a19d1b69c8edd7246f82ea3d78` |
-
-Every change is tied to a `LOG.md` entry (`## 2026-10-30 — round 60`) and to
-the commit above that carries it.
+| host probe + v1 red receipts; portable counter v2; claims, contract, plan, freeze-v2 pre-data; SOURCES S292 + S073 used-by; SCORECARD planned block | `c9723e59d0f517689cb61dd518cd9e0e58b9a2c1` |
+| amendment A1 (order-dependent sequence arm re-stated) + freeze-amend1, pre-data | `ffa5660246163be6cb1497849692b43ef3e2bd9c` |
+| host-scope records: QUALITY 118–119, lesson mistakes 6–7 + `## Attempt 2`, SCORECARD measured rows + host-scope annotations, PROVINCE dated correction, LOG entry | `f0ec3a5b4514b64752ff8fb1f97760bbc88f2acf` |
+| S292 census-field fix (+ lesson census-catch record, LOG scope fix) | `daac54cef09ef000a53d16697ae3fadff97751fe` |
+| scored receipts (cert ×2, ten-arm red family, freeze verifications, receipt-revision gate, census end, precheck status receipt) + first-family record + no-harm substitute receipts + lesson mistake 8 | `a205f00b8c6f387f6e27dc449385823ea3f83306` |
+| pointer sweep re-run at the landing revision | `49ddecf1f15ad16586c8b8773c952ddd1957ae50` |
 
 ## Before → after measurements
 
-### C1 — operability (capability re-certification)
+### C1 — operability (capability cross-host re-certification)
 
-Counting command:
-`python3 -I tools/executor-source-pin-measure.py --lane /home/vgpnk/Projects/shokunin/tameshi-shokunin --rev <rev> --work <empty scratch dir>`
+Counting command (runs on THIS host against committed bytes):
+`python -I tools/executor-source-pin-measure-v2.py --lane <lane> --rev ffa5660246163be6cb1497849692b43ef3e2bd9c --work <empty scratch dir>`
 
-- **Before** (the round-59 verdict at base `9806562c…`): the capability was
-  **not admitted** — the round-59 frozen counter passed a fingerprint cheat
-  (`passed=24/24 C1_R59_PASS=true`,
-  `.ufo/evidence/round-59/controls/cheat-cheat-fp.out`); under the round-60
-  counter the unfixed v1 tool scores `passed=7/8 C1_R60_PASS=false`, failing
-  exactly one cell — `corrupt`, expected 2 and observed 1
-  (`.ufo/evidence/round-60/controls/v1-tool-red.out`) — the red-before for the
-  exit-2 reconciliation.
-- **After** (at `da2ae6b361de2d6294c6324a02ae141ff6cb482f`, exit 0):
-  `C1_R60 rev=da2ae6b3… passed=8/8 C1_R60_PASS=true`
-  (`.ufo/evidence/round-60/after/cert.out`); a repeat run at the same
-  revision with a different nonce and class order also scores 8/8
-  (`.ufo/evidence/round-60/after/cert-repeat.out`).
-- **Controls** (all `C1_R60_PASS=false`,
-  `.ufo/evidence/round-60/controls/`): do-nothing tool-absent `0/8`
-  (`reason=tool-absent`) · unfixed v1 tool `7/8` (corrupt only) ·
-  always-accept `3/8` · fingerprint `3/8` · sequence `3/8` (3–5/8 across
-  runs) · hash-only `3/8` · first-path-only `6/8` · empty-blob-unsound `4/8`.
-- **Freeze integrity**:
-  `python3 .ufo/evidence/round-60/freeze-verify.py --lane LANE --freeze
-  .ufo/evidence/round-60/freeze.json --work WORKTREE` →
-  `FREEZE_VERIFY instrument=10/10 receipt=9/16 verdict=INSTRUMENT-OK
-  (receipts re-run)` — every frozen instrument digest still matches; the
-  seven drifted digests are nonce-bearing receipts re-run at the certified
-  revision (their pre-data bytes remain at
-  `git show da2ae6b3…:.ufo/evidence/round-60/controls/ctl-fingerprint.out`).
+- **Before** (base `9bc9b20b`): no non-Linux certification receipt exists
+  in the tree and the frozen instrument produces no verdict here — exit 1,
+  `UnicodeEncodeError` + `PermissionError`
+  (`.ufo/evidence/round-60/win-host/red-v1-counter.err`; host probe
+  `host-probe.txt`). Do-nothing control: the pass label `C1_R60V2` is
+  absent from the base tree (`git show 9bc9b20b:tools/executor-source-pin-measure-v2.py`
+  fails).
+- **After** (at `ffa56602`, exit 0, twice):
+  `C1_R60V2 rev=ffa566024616… passed=8/8 C1_R60V2_PASS=true` — nonces
+  `c42003b92a32fe13` ≠ `056cf07669067d49`, orders `esucmcue` ≠
+  `ueceusmc`, instrument digest `429cb204bb61…` matching freeze-v2
+  (`.ufo/evidence/round-60/win-host/amend1/cert{,-repeat}.out`).
+- **Control family, every arm `C1_R60V2_PASS=false`** (same directory):
+  do-nothing tool-absent 0/8 (`reason=tool-absent`) · unfixed v1 tool 7/8
+  (corrupt cell only — the same red the Linux receipts show) ·
+  always-accept 3/8 · fingerprint 3/8 · hash-only 3/8 · first-path-only
+  6/8 · empty-blob-unsound 4/8 · sequence 1/8 (order-dependent draw; the
+  first family at `c9723e59` also drew 1/8 — `first-family/ctl-sequence.out`;
+  attempt-1's Linux draws were 3–5/8; 8/8 is reachable on a 1/560
+  order alignment and kills the counter per the kill rule).
+- **Freeze integrity**: `FREEZE_VERIFY instrument=4/4 receipt=2/2
+  verdict=FROZEN-INTACT` (freeze-v2), `instrument=1/1 FROZEN-INTACT`
+  (freeze-amend1), attempt-1's freeze at this tree `instrument=10/10
+  INSTRUMENT-OK (receipts re-run)`.
+- **Measured commit**: `ffa5660246163be6cb1497849692b43ef3e2bd9c`
+  (counter landed at `c9723e59`).
 
-### C2 — calibration
+### C2 — calibration (host-scope records)
 
-Counting commands, run against the committed bytes of the final revision
-`e13e0324…`:
+Counting commands (portable forms, run at the final revision `49ddecf1`;
+do-nothing controls run at base `9bc9b20b` via `git show | grep -c`, all
+zero — verified this round):
 
-- `python3 -c "import json;d=json.load(open('corpus/routed-defects.json'));rows=[x for x in d['defects'] if x['id'].startswith('R59.')];print(len(rows), sum(1 for x in rows if x['status']=='fixed'))"`
-  → before (base `9806562c…`): `0 0` → after: **`8 7`** (R59.4 `open` with
-  its reason: the seat-result completeness check lives in the ufo-fsd-alpha
-  wave validator, outside this lane's write scope).
-- `grep -c 'corpus/lessons/round-59\.md' corpus/QUALITY.md` → before `0` →
-  after **`8`** (criteria 111–117 each cite the lesson).
-- `grep -c 'not admitted (honest stop, closure round 59)' SCORECARD.md` →
-  before `0` → after **`2`**.
-- Cold-read precheck at the round's content revision:
-  `bash .ufo/evidence/round-48/quality/coldread-precheck.sh LANE
-  9806562c7efc816bd979923e702ef39bc41cade7 b1ba0ebc434fb0c73fef693e3eda20fd1e17ab02`
-  → `COLDREAD_PRECHECK floor=9806562c7efc floor_credited=50
-  cand=b1ba0ebc434f cand_credited=50 lost=0 ok` (exit 0) —
-  `.ufo/evidence/round-60/after/coldread-precheck-final.out`. The candidate
-  is the last revision touching monitor-pinned files: `git diff --quiet
-  b1ba0ebc… e13e0324… -- SKILL.md PROVINCE.md corpus/QUALITY.md
-  corpus/SOURCES.md corpus/README.md corpus/knowledge/ tools/` exits 0.
-- Pointer sweep at the final revision:
-  `python3 .ufo/evidence/round-60/pointer-sweep.py --lane LANE --rev
-  e13e0324… --receipt .ufo/evidence/round-60/pointer-sweep-final.json` →
-  `POINTER_SWEEP rev=e13e0324e03 resolved=21/21 unresolved=none` (exit 0).
-
-**Falsification credit is limited.** The wave was dispatched as ONE batched
-call of 32 seats; the host usage cap settled it after 2 seats ran
-(`w1-results.json`: `seats: 32, settled: 2, dead_or_never_spawned: 30`).
-The 30 were cancelled before spawning and are reported as cap-cancelled, not
-as failed seats. The two that ran: `T60W1S01` independently reproduced the
-red-before on a fixture it built itself (v1 exits 1 `EXECUTOR_SOURCE_DRIFT` on
-a plumbing failure, and genuine drift produces the same token — v1 cannot
-tell them apart) and `T60W1S02` ran the green probe twice over the amended
-tool (both runs `passed=8/8`, nonces `8e61bb8702ebd036` ≠ `4bde7d5306c5f89e`,
-different class orders, five-path invocation evidenced by the tool's
-`5 declared source blob(s) equal trusted blobs` line). Every planned
-reviewer, critic, mutation-tester, connector, scout and sentinel seat was
-among the 30 — so the round's claims rest on the L1's own instruments and
-their eight-arm control family, with independent confirmation from two seats
-only. The closure may read this as under-falsified; the round says so rather
-than counting unrun seats as credit.
+- `grep -c '### Criterion 118' corpus/QUALITY.md` → before 0 → after **1**
+- `grep -c '### Criterion 119' corpus/QUALITY.md` → before 0 → after **1**
+- `grep -c 'counting command host-scoped (linux)' SCORECARD.md` → before 0
+  → after **4** (the two annotated rows, the planned-block sentence, and
+  the no-harm note)
+- `grep -c 'recorded absent 2026-10-31' PROVINCE.md` → before 0 → after **1**
+- `grep -c '^## Attempt 2' corpus/lessons/round-60.md` → before 0 → after **1**
+- **Measured commits**: records at `f0ec3a5b`/`daac54ce`/`a205f00b`
+  (greps verified at `a205f00b` bytes, unchanged at `49ddecf1`).
 
 ## Sources & frontier
 
-- **Registry rows: 149 → 151.** Rows added this round: **S290** (Python
-  `secrets` documentation, tier A `docs`, opened 2026-10-30) and **S291**
-  (Git `index-format` documentation, tier A `docs`, opened 2026-10-30) — 2
-  rows added by tier, both tier A. Rows touched old → new: **S103** `used-by`
-  `corpus/lessons/round-36.md` → `corpus/lessons/round-36.md,
-  corpus/knowledge/executor-source-binding.md`. No row was rewritten; no
-  `status` or `recheck` changed.
-- **Census** (the frozen command from `CORPUS.md` §SOURCES):
-  `/home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate --root
-  /home/vgpnk/Projects/shokunin tameshi`
-  → **before** (round start): exit **0**, 149 rows, 16 W04 duplicate-URL
-  warnings + 1 W01 (S101), all pre-existing; **after** (round end): exit
-  **0**, **151 rows**, malformed rows 0, warning set unchanged (no new W04 or
-  W01 from S290/S291). `grep -cE '^\|[[:space:]]*S[0-9]{3,}[[:space:]]*\|'
-  corpus/SOURCES.md` → 151; `awk -F'|' … NF!=13` → `malformed: 0`.
-- **Id collision check** before the append: `grep -c 'S290' corpus/SOURCES.md`
-  → 0, `grep -c 'S291' corpus/SOURCES.md` → 0 (registry maximum was S289).
-- **Rejected this round** (kept as evidence, with flip condition):
-  `https://git-scm.com/docs/git-ls-tree` as the mode ground — the page
-  documents `%(objectmode)` but enumerates no octal mode values; flip: a
-  page that enumerates them. The row was re-targeted to `index-format`
-  (S291), which does.
-- **Frontier rows advanced:** F11 (trusted-executor binding) — status
-  correction appended to `corpus/README.md`: the counter class is **held**
-  (multi-path cell, nonce fixtures, empty-blob cell, corrupt cell, red-before
-  on the unfixed tool); what remains outside the lane's claims is
-  author-independent trust, which this lane does not claim.
-- **Assimilation: none** — no `merge/tameshi/` package entry matches this
-  round's claims (counter discrimination, routed-defect dispositions); the
-  staged package's counter/mutation entries concern mutation-score semantics,
-  not counter discrimination. No shokuknow registry row was appended and no
-  campaign file was written.
-- **`considerthese/`**: mined — `considerthese/2026-10-28.md` proposal 5
-  (stale-closure-pointer sweep) landed as QUALITY criterion 116 plus the
-  pointer-sweep receipt; the reflection was opened and grounded in this
-  round's own drift evidence.
+- **Registry rows: 151 → 152** (attempt-1 ended at 151). Counting command:
+  `grep -cE '^\|[[:space:]]*S[0-9]{3,}[[:space:]]*\|' corpus/SOURCES.md`
+  → **152**. Added: **S292** (Git `git-update-index` documentation,
+  fetched 2026-10-31, HTTP date Sun, 01 Nov 2026 02:28:15 GMT, 84,442 B,
+  extract `win-host/sources/s292-update-index.html`; located quote,
+  §Options `--chmod=(+/-)x`, 8 words: "Set the execute permissions on the
+  updated files."). **S073 re-opened** (not duplicated — held URL, the
+  lane's S103 precedent): fresh win32 fetch (171,073 B, extract
+  `win-host/sources/s073-cmdline-refetch.html`); located quotes: "-X utf8
+  enables the Python UTF-8 Mode." (7 words) and "-I option can be used to
+  run the script in isolated mode …" (24 words); used-by old → new:
+  `corpus/knowledge/guard-kill-closure.md` → `…, corpus/lessons/round-60.md`.
+  No other row's status/recheck changed.
+- **Census** (`bash scripts/sources-census.sh validate --root <fleet-root>
+  tameshi`): **start** exit **0**, 151 rows, 16 W04 + 1 W01 (all
+  pre-existing); **first end run exit 1** — `E01 S292 fields=12`: the new
+  row's located field carried the option's alternation notation
+  `--chmod=(+|-)x`, whose literal pipe splits the census field; byte fixed
+  to `(+/-)x` (commit `daac54ce`); **end** exit **0**, 152 rows, warning
+  set unchanged (16 W04 + 1 W01), receipt
+  `win-host/amend1/census-end.stdout`. The census caught its own lane's
+  row.
+- **Frontier**: the executor-source-binding counter class (F11) now has a
+  second-host demonstration (win32) with the full red family reproduced;
+  the honest limits (author-independent trust, one fixture repo per run,
+  no packed-object cell) are unchanged and unclaimed. PROVINCE gains the
+  real host surfaces of the win32 dispatch host (dated).
+- **Assimilation: none — shokuknow unreachable** (register not reachable
+  from this host; no `merge/tameshi/` entry adopted).
+- L0: one question appended (L2-floor routing on win32 hosts), non-blocking,
+  routed around.
 
 ## Trend verdicts
 
-- **expansion: improved.** New sourced ground admitted on the binding's
-  coverage ground: `corpus/knowledge/executor-source-binding.md` gains S290
-  (per-run nonce fixtures) and S291 (the index-entry mode field), each a
-  `mined` row opened this round; the coverage-map row and the F11 correction
-  are in `corpus/README.md`. The capability table gains no admitted row (the
-  capability stays "lane demonstrated; admission pending"), so expansion rests
-  on the corpus ground only.
-- **quality: improved.** The round-59 entry's decision table gains the
-  reconciled row (plumbing failure → exit 2) with a red-before witness, and
-  the round-59 capability verdict ("not admitted") is now recorded on the row
-  that carried it instead of living only in a closure note; the round-59
-  lesson's word-count drift is recorded as an erratum. No admitted entry was
-  found false.
-- **discernment: unchanged.** The round's admits (S290, S291) and its one
-  rejection (`git-ls-tree`) are recorded with reasons, quotes and flip
-  conditions, but no outside spot-check of this round's gate decisions
-  exists yet, and a dispatched seat is still the lane — so no `improved` is
-  claimed. The cap-cancelled wave left the round without the independent
-  attack seats its own plan called for; that is a limit of this round's
-  evidence, not an improvement.
+- **expansion: improved.** New sourced ground and a second host class:
+  S292 mined into the lesson; the executor-source-pin capability evidence
+  widened from one host class to two (Linux attempt-1 receipts + win32
+  `amend1/` receipts, same cell design, same per-arm reds); PROVINCE
+  records the real host surfaces. The capability row itself stays
+  "lane demonstrated; admission pending" — no admission claimed.
+- **quality: harmed (provisional; attribution shared).** The no-harm
+  substitute measures **46 of 64** cold-read sections credited at the
+  attempt-2 cand against the frozen instrument's own **50** at b1ba0ebc —
+  a drop of up to 4 sections from record edits (PROVINCE/QUALITY/SOURCES/
+  SCORECARD/LOG are all ledger-recorded inputs). The drop spans attempt-1's
+  two unmeasured tail commits and attempt-2's records; the split is
+  unmeasured because the frozen monitor needs ~112 min/rev here
+  (75,889 inputs × ~151,778 spawns/rev × 0.044 s/spawn, measured; five
+  runs failed — `win-host/amend1/coldread-precheck.out`). The round's
+  quality contributions (criteria 118–119, the reconciled exit-2 arm
+  re-verified cross-host, mistake mining) do not offset an unresolved
+  regression: a trade is not an improvement.
+- **discernment: improved.** Three self-catches with committed receipts,
+  each before or at adjudication: the amendment caught the
+  over-specified sequence sentence before the second scored family
+  (mistake 7, criterion 119); the end census caught the S292 field split
+  (E01, fixed in `daac54ce`); the substitute monitor caught the credit
+  drop the infeasible instrument would have hidden (mistake 8, criterion
+  118's host-scope rule motivated by the same arc). The host-feasibility
+  finding itself (spawn-rate measurement × ledger size) is recorded for
+  the operator.
 
 ## SHONEN
 
@@ -228,33 +262,24 @@ than counting unrun seats as credit.
 - [~] At least one end-to-end domain task executed and logged in LOG.md —
   [lane assertion, no independent promotion verifier](reports/round-1-calibration.md#box-2)
 - [~] Instructions executable by an agent without oral context —
-  [lane assertion, input-keyed monitor only; no independent promotion verifier](.ufo/evidence/round-21/coldread/ledger.json)
+  [lane assertion, input-keyed monitor only; the monitor itself is
+  host-infeasible on this host this round — see no-harm arc](.ufo/evidence/round-21/coldread/ledger.json)
 - [~] No cross-domain bleed (PROVINCE.md still accurate) —
-  [lane assertion, no independent promotion verifier](reports/round-1-calibration.md#box-4)
+  [lane assertion, dated host correction appended this round; no independent promotion verifier](PROVINCE.md)
 
-## Round shape, seats and dead seats
+## Round shape, seats, stale-lane, tools
 
-- **Shape: one v1 wave** of **32 seats**, dispatched as a single batched
-  `taskCall` (policy band 32–48; the operator's final ruling fixed the band
-  at exactly 32, which this wave matched — no reshape was needed). Residual
-  call: none. Round total: **32 seats**.
-- Planned role mix: executor 9 · reviewer 7 · scribe 4 · mutation-tester 3 ·
-  scout 3 · critic 2 · connector 2 · sentinel 2 — attack seats (reviewer,
-  critic, mutation-tester, sentinel) **14/32 = 43.75 %** (≥25 % required),
-  2 connector seats.
-- **Settled: 2** (`T60W1S01`, `T60W1S02`). **Never spawned: 30** — the host
-  usage cap halted the tranche fill; `w1-results.json` records
-  `dead_or_never_spawned: 30`. No seat died with an error; no seat output is
-  missing for a seat that ran (criterion 114's check: both settled seats
-  wrote a `.md` and a `.json`).
-
-## Stale-lane
-
-Stale-lane: none — this lane's only open mission is the round reported here;
-no other lane mission is open.
-
-## Tools installed
-
-None. The round needed only tools already present (`git`, `python3`, `node`,
-`curl`); no pacman transaction (pacman is paused host-wide by operator
-ruling), no `uv`/`npx` install, no tool version changed.
+- **Round shape**: attempt-1's wave was this round's one batched dispatch
+  (32 seats, 2 settled, 30 cap-cancelled before spawning — every planned
+  attack seat among them). This attempt dispatched no wave (see Work
+  performed); its claims rest on the committed instruments, the ten-arm
+  red family, two independent green runs, freeze verifications and the
+  pointer sweep — every receipt re-runnable by the closure judge on this
+  host with the recorded portable commands.
+- **Stale-lane**: none — this lane's only open mission is the round
+  reported here.
+- **Tools installed**: none. Only pre-existing tools used (`git`, `python`
+  3.13.15, `curl`, `bash`); `python3` on this host is the Microsoft Store
+  stub (exit 49) — recorded in the host probe and PROVINCE.
+- **Scratch**: `…/scratch/tameshi-r60/` used for fixture work and the
+  cold-read probes; deleted at round end.
