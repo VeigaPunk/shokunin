@@ -33340,6 +33340,49 @@
    "notes": "Real report, lane identity on fleet commit 2ae5cdc; SHONEN heading present (no [x] by lane; box 2 honestly '[ ]', no E2E task claimed); all five cited commits ancestors of pushed master; work inside 28c65eb..021989b; dispatch window consistent. Round superseded its own inherited freeze via claims-erratum-1 (D1 duplicate EPSS surface = F19; D2 host-unportable predicates; D3 unproducible do-nothing-c2 control) and re-froze host-portable claims; freeze supersession verified sound, both refusals agree on re-open. Two status-neutral defects routed to the lane (fix next round, append-only): (1) attribution - controls/do-nothing-c1.txt is labeled 'produced on this host' (report, claims.v2.json, erratum, lesson M3) but its bytes are an old-Linux-host run (Unix CPython errno string, unconverted /fast/ path, functioning python3; this host's python3 is the Store stub, its python formats the error differently - probed live); the control's substance independently re-derives (instrument absent at base), so C1 stands; (2) number-drift - report/LOG/SCORECARD/lesson erratum state census of record 204 files / 4807 distinct while the certified tip census (021989b, receipt CENSUS-FRESH=ok files=2) reads 204 / 4809 (final regen +2 GONE), unexplained by any committed in-scope byte change between e27d080 and 021989b; a named correction is owed. Also note: the 67 host-bound recheck lines ride L0 kasegi round-50 (verified present, fleet .ufo/l0-questions.md line 225) - operator-owned. Wave-1 spec honestly released un-dispatched (stale vs claims.v2, no AgentSwarm surface); no falsification credit claimed. No promotions, no mints; SHONEN.md untouched by this closure.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 62,
+   "date": "2026-10-31",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 62,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 62
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "per-cgroup pressure probe (tools/mori-cgroup-pressure.py)"
+   ],
+   "report": ".ufo/reports/round-62/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/mori-shokunin/corpus/lessons/round-62-verifier-spotcheck.md@6aa926348be17b56621d44da85c6fe94f75e45fa",
+    "rechecks": "Step-1 conformance clean (lane-identity report commit 59cd86ae in the fleet repo; SHONEN heading 4/4 [~]; all 8 cited lane commits exist and are ancestors of refs/heads/master; local master == origin master == 45f6d3027f27, ahead=0; round work = 3 commits in 6d98b5cd..45f6d302). C1 verified met: gate arms evidence-verified from committed receipts under the frozen instrument (count-c1.py byte-unchanged since freeze 43cfbb10; control red at entering with copy72_absent x6, met receipt rc 0 at rev=8327bdfc, pointers=47 rows=47); surfaces re-measured by the verifier (v7.2 baseline 0 files at entering vs 6 at base; ledger psi-v73-recheck-r61.md re-counted at 47 pointer rows). C2 verified met (capability acquisition): tool+entry absent at entering, present at tip; entry carries 12 located K-claims, 5/12 anchors re-verified byte-exact by the verifier against the pinned v7.3 copies; S571 row well-formed mined with correct used-by; live re-open of the psi.c v7.3 URL byte-identical (sha256 c4edc1e7..., 1725 lines); capability row first-working 62; probe receipts selftest 12/12 rc 0 and honest-unavailable rc 2 with host absences re-probed by the verifier. No axis harmed (SCORECARD diff append-only, scores untouched; census validator rc 0, 343->344 rows re-counted). No exploratory claims declared, so no non-author reviewer ruling was required."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/mori-shokunin@45f6d3027f27dffafd3767bbbc3806ee27a775f6",
+   "closed_at": "2026-11-01T02:58:57Z",
+   "campaign": "hyaku",
+   "notes": "Digest: launch 2026-10-31T18:58:00-07:00 mori round=62 base=6d98b5cd2a7c (zcode run14); complete 2026-10-31T19:38:11-07:00 head=45f6d3027f27 pushed=True. Recovery round: attempt 1 froze the instrument pair pre-seat and died before dispatching; attempt 2 inherited the frozen bytes unchanged (pins re-verified), disclosed in report/LOG. Admitted: both claims verify and no axis is harmed. Defects (status-neutral, routed): (1) r61-spotcheck receipt truncates the failed-anchor list at 4 of 14 anchors - the x14 count is derivable from the receipt's own counters (rows=47, quotes_ok=33) and the visible anchors all appear in the r61 original list; r63 receipts must capture full lists. (2) Lesson Gate annotates the S571 quote as 14 words; actual space-separated count is 10 (<=25 rule holds); erratum next round. (3) The C2 surface (probe tool, entry, fixtures, v7.2 pin baseline, Linux live receipt) entered history via pre-seat commits 43cfbb10/56b47179 authored by the same lane-round's dead first attempt (count-c2.py's only post-freeze change is pre-seat amendment 1; count-c1.py unchanged since the freeze); the range commits add S571, SCORECARD rows, and receipts - recorded, no action. (4) Carried stale-host class: entry recheck and SHONEN box-3 name python3, a non-functional Store stub on this host; frozen bytes, corrections ride future revisions (lesson Mistakes 2 class, already routed to r63). Integrator items: commit the mori round-62 L0 line (AgentSwarm L2 surface absent on this host, waiver requested - present in the fleet working tree, not yet committed; no wave-based evidence claimed, so the round does not depend on it). For the operator: SHONEN boxes look fully checkable by a non-author (box-1 pointers resolve; executability demonstrated by this round's committed selftest receipts) - promotion review remains the operator's gate; this note is not a check. No promotions, no mints, no other lane touched.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
