@@ -35905,6 +35905,50 @@
    "notes": "Dispatch/complete digest (orchestrator watchdog): 2026-11-01T01:55:04-08:00 launch tsukuroi round=58 base=5a59f79e8bb6 (zcode run14) | 2026-11-01T04:13:23-08:00 complete tsukuroi round=58 head=a45f37121c78 pushed=True. Step-1: report committed in fleet repo by tsukuroi-shokunin (604f8989, after outcome commit 12:02:36Z, inside the dispatch window); SHONEN heading with 4 [~] box lines; base and both cited lane commits (e4e33606 work, a45f3712 outcome) ancestors of master; local master == origin/master == a45f37121c78; dispatched prompt carries the full round contract and its report-path filename is byte-identical to the landed file. All three claims verify (C1 depth re-measured, C2 operability and C3 freshness re-executed read-only by the closure judge); no axis harmed (ordinals 8/9/9/9/9/8 identical base->tip, additive counts only). Three r57 carry-in dispositions verified. Discernment upgraded author-side unprovable-but-better -> improved on the non-author spot-check (2/2 admits re-opened agree; explicit-0 rejections conformant with contract v1 + S267 precedent). Defect (status-neutral, routed to the lane for round 59): D-R58-BEFORE-RECEIPTS-UNLANDED - the five cited .ufo/waves/round-58/before/ receipts (freshstart-spotcheck.txt, c1-c2-c3-at-base.txt, sources-census-start.txt, +2; report landed-changes row says 'before-receipts (5)') were never committed (no before/ path in either commit or the worktree; r39-r57 each landed theirs); every underlying before-value independently re-derived from committed bytes at base and holds, so no claim is affected - land the receipts or append a correction naming their absence. Standing items carried: whole-SKILL non-author SHONEN verification still owed (operator's call); L0s tsukuroi round-53 (wave-dispatch), round-1 kaidoku/revenger scope, round-57 S266 interact remain unanswered and routed around. R58-DECLARED-COMMAND shortfall self-caught by the lane, correction verified appended beside (never substituted).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 56,
+   "date": "2026-11-01",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 56,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 56
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "novelty": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "landed-evidence landcheck (plans/round56_landcheck.py): re-verifies the whole landed r55/r56 evidence set (registry closure, chess-probe receipt byte-equality, entryargv selftest, grader replay + selftest) in one command, failing per leg; LANDCHECK PASS n=4 re-measured by closure"
+   ],
+   "report": ".ufo/reports/round-56/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kengaku-shokunin/corpus/lessons/round-56-verifier-spotcheck.md@c9ce9a713de770b2cb0c594fe3f9ad5019b64e0f",
+    "rechecks": "Re-measured in WSL Ubuntu-24.04 (uv-less, master checkout, per A3.4) at canonical 9bc20ab7: landcheck LANDCHECK PASS n=4 exit 0; c2 counter PREDICATE R55-C2 pass executed=83 laundered=0 TIPSTATE 49g/34r equal exit 0 (byte-equivalent predicate fields to committed c2-after-full.txt); 3 landcheck mutation kills re-run failed-legs=1 each (registry row drop / chess-receipt byte flip / grader-pinned byte append); 2 r55 controls fixture kills re-run attributed under the disclosed uv-scoped side-run (ARGV+ABBREV / ARGV+WRAPPER naming fixture-gate, counter exit 1; controls selftest 4/4; uv removed after); census validate exit 0 with the receipt's W04 class + manual battery 197 rows / 0 malformed / 0 dup / 0 enum / used-by paths resolve; S203/S204 re-opened at pin 2fd12b88 (sha256s d8f01d3c…, 53b5c5e2…, a540714e… match; quotes byte-true at task.toml:6, solve.sh:186/:232, grader:25); ledger diff re-derived (17 corrected SKILL cells + round36-c2; 14 literal green→red flips with verbatim fragments + 2 already-red fragment refreshes + stage-scan = the report's seventeen). Evidence-verified from committed bytes: before-receipts (old host, pre-freeze 1355e84c), r55 cases=18 tb2 receipt, erratum facts (r55 report 93fd3095 12:54 -0300 says SKILL.md unchanged; ebb233bc 14:46 -0300 landed SKILL.md +5), L0 lines (2 at fleet HEAD 3853c33f), R56-F1 QUOTE_RE false-positive diagnosis, R56-F2 scoping rules (confirmed empirically: a detached-HEAD clone at 9bc20ab7 launders defect-ledger + round36-c1-battery; a master checkout at the same revision passes). ROUTED DEFECT R56-V1: lane head d834d89d regresses the lane's own L-reg gate — the SCORECARD R56-C1 counting-command cell advertises python3 plans/round56_landcheck.py but SKILL.md's Gate/probe registry has no row for it, so at head round52_c2_registry reports ADVERTISED 83 / REGISTERED 82, MISSING plans/round56_landcheck.py, PREDICATE R52-C2 fail, and the c2 counter at head launders round52-c2 + routed-findings (PREDICATE R55-C2 fail). Claims were measured at 9bc20ab7 where all predicates pass, so admission stands; fix the registry row at tip next round and re-run both counters. Also routed: R56-V2 PROVINCE SF14 row says 195 rows incl. S203/S204 (true post-count is 197); R56-V3 wording (17 = 14 flips + 2 refreshes + stage-scan; 16 declared-green-false strictly 14); R56-V4 routed-findings.jsonl re-encoded all 25 pre-existing rows' JSON escaping when appending."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kengaku-shokunin@d834d89d95929382cf6bfcb503e0d00b5dfa64e5",
+   "closed_at": "2026-11-01T13:56:37Z",
+   "campaign": "hyaku",
+   "notes": "kengaku r56 (host move Windows/WSL): C1 operability 8->9 admitted (landed-evidence gate + 3 mutation kills, re-measured); C2 calibration 9->10 admitted (entry-ledger truth across the host move: 17 registry cells + ledger argv corrections, honest red re-declarations with measured fragments, fixture kills attributed, no soundness break; re-declaration discipline, not score inflation); C3 coverage predicate met with score HELD 7 by its own L0 design (S203/S204 maintainer-oracle chain verified at pin 2fd12b88, registry 195->197 census-clean). No owned axis harmed (SCORECARD diff append-only). Step-1 conformance clean: report committed by lane identity 317a12ad, SHONEN heading with 4 [~] boxes (no [x]), all cited commits ancestors in 8db18e23..d834d89d, tip pushed, erratum for r55's 'SKILL.md not modified' verified true (ebb233bc landed SKILL.md +5 after the r55 report), two kengaku|round-56 L0 lines durable at fleet HEAD. SHONEN boxes look fully checkable by a non-author (box-3 cold-run evidence re-demonstrated by this closure) - operator may run the promotion gate; this judge wrote no [x]. Routed defects R56-V1..V4 in the spotcheck; carried open items: round50-c1 population-pin root cause, R56-F1 checker repair as its own frozen claim, L0 L2-surface and ledger-schema-v2 rulings. Marker rule not invoked: report names real committed work and checkable hashes throughout.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
