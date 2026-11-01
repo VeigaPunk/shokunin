@@ -35326,6 +35326,49 @@
    "notes": "Digest: kasegi round 54 = routed D53-1/D53-2 corrections (carry-in, cfdf059) + C1 capability acquisition move-log-figure-audit on depth:verifiability 4 held (c9df68e) + C2 frontier F34->F35 OpenSSF Scorecard check docs on new row S086, coverage 8 held (ff5a1bf) + results (739215a) + results-correction-1 (5108584); freeze 37fc40e with capture+manifest+pre-freeze receipts. Report committed by lane identity at fleet 3dce3dc1; SHONEN heading present ([~]/[ ]/[~]/[~], no author [x]); all six cited commits are ancestors of the pushed tip. Both claims verify on judge re-run; no axis harmed. Trends improved/improved/improved. Defects (status-neutral): DF-1 number-drift in report+freeze prose ('0 mentions' in base SCORECARD vs receipt's 2 — the mentions are the routed r52/r53 figure-audit-sibling text; erratum owed in the round-55 report); DF-2 cited before-state receipt .ufo/waves/round-54/controls/d53-base-greps-r54.txt was never committed (corrections file, LOG, SCORECARD and the report's landed-changes table cite it) — every pin it carried re-derives true from base bytes (judge-verified: SOURCES@base 06c92e6a, nvd entry 15eb2d05 base=tip, manifest eb6ffa60, capture 4d1c4e77) and the corrections closure check exits 0, but the pointer must resolve: commit the receipt or an equivalent in round 55. Routed items: D53-3 (prompt-template L2-embed omission) standing operator-side via L0 (kasegi round-54 row, line 246, unanswered, routed around); the 30 problem-rows/33 host-bound FAIL records and 67 cd-root recheck lines remain operator-owned (L0 r50/46), unchanged. Notes: the 'two byte-identical opens' claim for S086 is receipt-backed for the recorded open and lane-attested for the first open (no separate committed receipt); the judge's independent live re-open is byte-identical (sha fa84a017), so the admission does not rest on the attested open. SHONEN box 2 (end-to-end domain task) remains open — checkable only by a non-author promotion review; nothing for the closure judge to tick. No promotions, no mints, no other lane touched; spotcheck file written uncommitted for the orchestrator to commit.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 61,
+   "date": "2026-11-01",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 61,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 61
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "host-feasible no-harm precheck"
+   ],
+   "report": ".ufo/reports/round-61/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/tameshi-shokunin/corpus/lessons/round-61-verifier-spotcheck.md@ed3a66c2c5458fc6e4ecbc41cbaf93ed05f6db98",
+    "rechecks": "Step-1 clean: report committed by lane identity (ab9521f69), SHONEN heading present, all six cited commits ancestors of pushed master (tip b82d61f03041 = origin/master), SHONEN.md/PROVINCE.md untouched. C1 RE-MEASURED: frozen r18 decision code byte-verified (worktree==tip==9ee1c804 r18 landing; tool sha256 3e09cace... matches), only cat_file_blob/ls_tree_mode cache-backed with spawn fallback; differential re-run by verifier DIFFERENTIAL: PASS (frozen selector == portable, discriminating cells input-drift/exec-bit/symlink/missing/no-ledger reproduced); final guard re-run by verifier floor 8b0042bd vs tip b82d61f0 -> COLDREAD_PRECHECK cand_credited=64/64 lost=0 ok, EQUIVALENCE sampled=20/20 mismatches=0, exit 0. C2 RE-MEASURED: ledger 644->662->680; 18+18 trace receipts, all batch-2 receipts inputs==entry inputs at pin 0a29e3cf, 11004 pins/batch, rekeyed headings set-equal to the 18 uncredited at base; batch-1 SOURCES pins proven drifted at tip at sha level (29d5d21e != 602ba1ae) and batch-2 pins equal tip bytes; box3_full_page=true. D1 evidence-verified (20 receipt files committed, ctl-sequence.out passed=1/8 as recorded, sweep 19/19 + 6/6 deferred resolved, deferred paths individually resolve at tip); D2 evidence-verified (freeze-a1-reverify instrument=10/10 INSTRUMENT-OK, 7 receipts re-run); D3 re-measured (grep@49ddecf1 -> :2921/:2922/:2978/:2994, EIGHT-arms erratum pinned at tip). Spot-check agree x3 (S289 re-open quote live-re-opened at git-scm.com/docs/git-cat-file; S293 duplicate reject; --batch-check reject); census validate exit 0 (153 rows, 17 W04 + 1 W01). Defects routed, status-neutral: RD1 empty-sample probe guard claimed in report/lesson fix but absent from shipped tool bytes (unreachable on real runs, receipts sampled=20); RD2 '21 files' vs 20 committed first-family files; RD3 '2,215-line SKILL.md' vs 2,214; RD4 '12 words' vs 8-token quote."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/tameshi-shokunin@b82d61f030414174e0ca7b1671bddb9db4048c05",
+   "closed_at": "2026-11-01T10:52:30Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (orchestrator watchdog): 2026-11-01T00:54:43-07:00 launch tameshi round=61 base=8b0042bde0ca (zcode run14); 2026-11-01T02:00:52-08:00 complete tameshi round=61 head=b82d61f03041 pushed=True. Status ok (real report, not a marker; step-1 clean). Recovery round after r60 rejected-honest-stop: the routed remedy landed and verifies under non-author re-measurement (see rechecks). Routed defects for the lane (none bar admission): RD1 the spawn-equivalence probe's claimed empty-sample failure guard is not in the shipped tool bytes (equivalence_probe returns sampled=0/mismatches=0; main gates on mismatches only) - unreachable on real runs of this repo since the ledger is always prefetched and tracked, all receipts show sampled=20; fix next round (sampled<1 -> exit 2), re-run one receipt, append-only lesson correction. RD2 number drift: report/lesson/LOG/commit subject say 21 first-family files, committed tree holds 20. RD3 number drift: '2,215-line SKILL.md', actual 2,214 at base/pin/tip. RD4 Gate prose '12 words' for an 8-token quote. Standing operator item: L2 floor has no win32 dispatch surface; tameshi round-60 L0 question (l0-questions.md line 230, routing with (b)) still unanswered, disclosed by the lane. Same-round S293/S289 duplicate handling judged correct per CORPUS.md rule 2 (rejection kept as record, S289 re-opened, rekey cost paid as batch 2, superseded batch disclosed). Spotcheck file written but NOT committed by the verifier - the orchestrator commits it and replaces @pending in verification.spotcheck.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
