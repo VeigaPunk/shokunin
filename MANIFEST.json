@@ -35661,6 +35661,47 @@
    "notes": "Dispatch/complete digest (orchestrator watchdog): 2026-11-01T01:22:08-08:00 launch souji round=49 base=5a26fbfd5b0f (zcode run14) | 2026-11-01T03:13:09-08:00 complete souji round=49 head=7836df3e5053 pushed=True. Conformance clean: report committed by lane identity (souji-shokunin 573e9499, timestamp matches the complete digest), SHONEN heading present with four [~] boxes and no [x], all cited lane commits exist and are ancestors of master, local master == origin master at 7836df3e, the range 5a26fbfd..7836df3e holds exactly the four reported lane commits. One declared claim (C1, calibration 7, instrument repair, not a capability acquisition) verified end-to-end; the r45 different-instrument limit does not apply (counter bytes identical both arms, verified at sha256 level). Defects (status-neutral, in notes): (1) the S267 re-open receipt's 'zero occurrences of histor*' wording is exact for the page's content but not its raw bytes (one footer boilerplate occurrence, 'History and License' link) — decision unaffected, S267 stays rejected; if the class recurs, name the counting method next time; (2) census conf-form rc 2 on this host is the known disclosed host-vs-contract mismatch, carried operator-owned at L0 round-48, round-end exit 0 held through the documented dir-form/adapter path (same ruling as the r48 closure). Routed to the lane: none new beyond defect (1). Notes for the operator: all four SHONEN boxes carry [~] with resolvable evidence pointers and look fully checkable by a non-author from the committed artifacts (the verifier re-derived box 3's self-contained prereg/counter/controls this session without oral context); this verifier wrote no [x] — flagging for the promotion review. No wave dispatched (no dispatch surface on this host; dispatched=0 disclosed; standing L0 questions routed around). Holds unchanged: certification OFF, K5 HELD, NAMESPACE/reap holds.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 79,
+   "date": "2026-11-01",
+   "type": "closure",
+   "lane": "revenger",
+   "lane_round": 79,
+   "lanes": {
+    "revenger": "ok"
+   },
+   "lane_rounds": {
+    "revenger": 79
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-79/revenger.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/shokunin-binary-forensics/corpus/lessons/round-79-verifier-spotcheck.md@4eb2856a88514ae12e67337c1bb962197b4bd189",
+    "rechecks": "C1 re-measured from committed bytes: f_probe2 sha=freeze pin 0be0d8b5; eight round-1 families repr-equal to f_probe (exactly one addition native-authenticode:{inspect_pe_certificates}); base F 7/8=8.75 / F2 7/9=7.78 (family absent), landing F 7/8 held / F2 8/9=8.89 with inspect_pe_certificates:1 (byte-matches f2-before/f2-after.log); oracle re-run ORACLE OK 27/27 exit 0; fixture sha 813778b9..cf80 = truth = receipt = record subject digest; inspection.json sha 317b0b74..47b79 = receipt stdout sha; evidence ev_3701e3a1..52fcc; stderr 0; regen byte-identical; fresh producer run reproduces every substantive field; denominator disclosure verified present at freeze 34c2c5a1 (pre-run); separability re-derived (C1-only 8/9 + red, C2-only green + 7/9). C2 re-measured: v2 shas = freeze pins (e2b71649/076cdb67/4126af12), unchanged landing->final; selftest_probe v1 pair 0/2 x3 exit 1 -> v2 pair 2/2 x3 exit 0 (byte-matches selftest-before/after.log); stable finding-ids + attributed mutant kills + usage exit 64 re-observed; PATH-strip hermeticity in the counting instrument; plain-mode v1 vs v2 diff empty twice (criterion G/R bytes unmoved; LEG4 negative control fires identically v1/v2 — S444_MISMATCH_FLAGGED in lane tree); both v2 registry rows landed in SKILL.md ## Gate registry with declared 64 exits and pinned values. No axis harmed: full-range diff = 28 files, LOG/SCORECARD/SKILL/SOURCES pure appends (0 removed lines each), protected paths empty base->landing (noharm receipt); FRESH_ROWS 18/18 re-run exit 0; SOURCES 450->453 re-counted. Discernment: 3 admits (S451 oracle/sha chain re-opened; S452 quote verbatim at pinned checkout 57fa881f line 385, 18 words; S453 rea capabilities re-run live) + 3 rejects re-opened (macho/signature unsupported_host live; android REA_JADX_MCP_JAR UNSET/no jadx; K r74 L0 unanswered at l0-questions.md:233) — all agree. Census: literal form exit 2 (disclosed r74-r79 lineage, L0 consolidation line landed at :248), sanctioned explicit-lane-dir form exit 0, 31 W, ok (matches census-after.log). Claims re-measured vs evidence-verified: C1 and C2 re-measured end-to-end by this judge; the producer run itself evidence-verified from committed bytes (receipt sha chain + oracle + regen + field-level reproduction)."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/shokunin-binary-forensics@abc522d2f7c06cbf641afcf99475299586aae207",
+   "closed_at": "2026-11-01T12:30:13Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest verified against .ufo/watchdog.log lines 156/177 (2026-11-01T01:44:09-08:00 launch revenger round=79 base=c205ef83ca3f zcode run14; 03:22:30-08:00 complete head=abc522d2f7c0 pushed=True). Real report (not a marker), SHONEN heading with four [~] lines, all cited hashes exist and are ancestors of main, lane tip pushed. Status ok, admitted: both claims verify (C1 coverage ninth family native-authenticode via real oracle-checked producer record; C2 calibration gate self-test debt closed by supersession), no axis harmed, trends improved x3. Defects (status-neutral, routed): (1) corpus/lessons/round-79.md Census paragraph says round-end '32 W' while its cited receipt census-after.log and the lesson's own Gate paragraph say 31 W (21 W01 + 10 W04; closure judge re-counted receipt and re-ran sanctioned census: 31 W, exit 0) — correction entry owed next round, append-only; (2) SHONEN boxes remain [~] with no named non-author verifier (r69 routed need stands; boxes look non-author-checkable on current committed bytes — flagged for operator promotion review; closure judge does not write [x]). Carry-in dispositions verified: L0 consolidation line landed (l0-questions.md:248); gate self-test debt closed via C2; criterion-instrument class question and criterion C repair stay routed (F2 frozen as claims revision, not a registry row — question honestly kept open). Still routed forward: criterion C repair (r47/r55 replay verifiers), criterion R extension, criterion N attribution pair, F android gate (REA_JADX_MCP_JAR), K L0 (r74 unanswered), census literal form (operator-side). No promotions, no mints, no cross-lane writes.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
