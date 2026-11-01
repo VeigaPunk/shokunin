@@ -36823,6 +36823,49 @@
    "notes": "Dispatch digest (watchdog.log): 2026-11-01T09:27:26-08:00 launch tameshi round=64 base=d0baf616bb8a (zcode run14); 2026-11-01T12:31:24-08:00 complete tameshi round=64 head=c7d28b19e5f9 pushed=True. Status ok, admitted: both claims verify (C1 re-derived; C2 selftest 4/4 + demo sweep 16/0/2 re-executed by the closure judge on committed tip bytes; guard RED lost=13 at b31e8145 then restored lost=0 at 1763db52 both floors, miss=0 vs the pre-landing forecast), no axis harmed. Status-neutral defects/routed items for the lane next round: (1) 6876d746 is an empty commit whose subject names receipt content ('guard both floors, additivity C->D, self-sweep') whose bytes landed only in successor c7d28b19, and tip-confirmation.txt carries only the round-floor guard line - name the receipt bytes each named run produced in the commit that carries them; the report's 'no monitored or protected file changes 1763db52 -> tip' reads loosely (LOG.md +20 / SCORECARD.md +35 changed at be76552d, disclosed in its own row; the two tail commits are evidence-only); (2) live-B-red.txt lists 5 of the 13 LOST headings - the full set is in live-B-red.json (verified); prefer the JSON or mark the truncation; (3) rehearsal clone commits (37d1bca1/b5568919/1144148e) are deleted-with-scratch as disclosed - the 12 committed rehearsal receipts are the resolving evidence; (4) carry: the rekey payment is current at the tip (any further QUALITY/SOURCES/PROVINCE/README/SKILL/pinned-tool edit re-owes it; pin sets priced in the lesson), the whole-history receipt sweep (rounds 1-63) stays scoped unpriced future work, proposal 1's byte-for-byte quoted-line half and proposals 2-5 remain unadopted; (5) for the operator: SHONEN.md's four boxes are all [~] and on this round's evidence checkable by a non-author, but only a non-author may write [x] - promotion remains an operator decision; the r60 L0 question (.ufo/l0-questions.md, tameshi | round-60, option (b)) stands unanswered; L2 floor has no dispatch surface on this host (L1-only round, disclosed).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 70,
+   "date": "2026-11-01",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 70,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 70
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "coverage": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "tools/mori-uptime-win.py (Windows host-uptime read: one-shot read-only GetTickCount64 via ctypes, restype pinned c_ulonglong; count=biased boot_identity=absent on every receipt line; selftest 8/8 rc 0 x3 re-executed by closure + live rc 0 re-executed by closure; sourced S582, round 70)"
+   ],
+   "report": ".ufo/reports/round-70/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/mori-shokunin/corpus/lessons/round-70-verifier-spotcheck.md@015787e6f5aa7eb2c3e11066bcef7bf0428c17b6",
+    "rechecks": "Step-1 ok (report by lane identity 63f4f506; SHONEN heading 4x[~]; 9dc4314d and de431a74 ancestral; local master == origin master == de431a7484f250d46ecd3f6c008524f47134aa1e; round diff 24 files +2740/-3 matches report; frozen set absent; watchdog digest matches). C1 re-measured: shortwin-b rc 128 at entering; window-s {31,91,304}; per-response=4 x1, per-response=0 x2; window derivations verified against pinned S581 scale (default 300 s :70, challenge min 300 s :83, CAPTCHA min 60 s :84); closure re-ran one A/A pair at computed window 92 s: per-response=0 same-bytes=true on a new served body — consistent with the non-uniformity finding, no TTL decided. C2 re-executed: selftest PASS (8 cases) rc 0 x3 + live rc 0 (uptime_d=5, count=biased boot_identity=absent) at the committed bytes; truncation arm (c_ulonglong restype :107 + uint64-max rendering pin) and redaction arm verified in source. SOURCES 353->355 re-derived; both rows re-opened live, each live body byte-identical to its pin (sha256 equal); census validator re-run rc 0 (tolerated W04 class only); appendonly round_changed=[]. Frozen r61 counter re-run by closure: C2=unmet rc 1, identical to receipt. All four mined mistakes verified in disclosed artifacts. Evidence-verified (not re-executed): standing battery tallies (receipt), r59/r60/r61 rev existence+ancestry (receipt, incl. the corrected lane-side 7370a731). No claim was exploratory."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/mori-shokunin@de431a7484f250d46ecd3f6c008524f47134aa1e",
+   "closed_at": "2026-11-01T21:28:47Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-01T11:13:18-08:00 launch mori round=70 base=9dc4314d1572 (zcode run14); 2026-11-01T12:51:38-08:00 complete mori round=70 head=de431a7484f2 pushed=True. Report is real (not a marker), by lane identity, cites the pushed tip. Both claims verify; no axis harmed; round admitted. Defects (status-neutral, routed to the lane for round 71): D1 reference-drift — S582 located-line pointers off against the pinned copy ('The number of milliseconds.' is at :834 not :833; the working-state QueryUnbiasedInterruptTime sentence is at :841 not :842; the debug ~49-day note is at :842 not :845) in source-s582-r70.txt, the S582 SOURCES row anchor, the lesson Gate, knowledge entry K2/K4/K5 and the report; quoted texts real and verified, S581 pointers exact; fix as new rows/erratum, never in-place. D2 number-drift — lesson Gate records the S582 sysinfoapi pre-row sweep as 0 but the receipt (and closure's re-derivation at entering) records rows=1 (the S574 row); the page-identifying gettickcount64 sweep is 0 so the no-duplicate decision stands; correct old->new next lesson. Nits: report says census receipts have 'command + rc embedded' but they carry only validator output (closure re-ran the validator, exit 0); SHONEN box 3 evidence line runs the r70/r69 battery references together without a separator (both pointers resolve). SHONEN: all four boxes remain [~] asserted-by-author with resolvable pointers; as non-author, closure executed the box-3 instructions (new tool selftest x3 + live; battery receipt verified) and the box-2 evidence (C1/C2 LOG entry + receipts) — a promotion review could check all four boxes against the spotcheck file. Fresh-start duty verified: frozen r61 counter re-derived unmet by closure; eight rule-outs named with reasons. L0 mori|round-62 and mori|round-65 lines stand open, re-verified unanswered, routed around. Assimilation: none — shokuknow unreachable.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
