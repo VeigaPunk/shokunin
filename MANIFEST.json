@@ -36700,6 +36700,47 @@
    "notes": "Dispatch/complete digest (watchdog.log lines 220/255, verified verbatim): 2026-11-01T07:35:05-08:00 launch kaidoku round=58 base=42c794afc5cd (zcode run14); 2026-11-01T10:59:13-08:00 complete kaidoku round=58 head=d16bb4703440 pushed=True. Round = 7 commits 42c794af..d16bb470 (declaration 634d12d6 and freeze 9e8ee220 are the two disclosed no-payload M58-1 attempts; operative/recovery freeze 37e49cf3; landing 05865b6d; record 536c4865; close 3e1dc2db; post-close correction d16bb470). Both claims verify and no axis is harmed: R58-C1 (calibration) closes the r57-closure routed set R1-R4 with committed append-only artifacts (the sweep's named finding lands byte-identically at the r55 path, red-before/green-after re-run by the verifier); R58-C2 (depth) re-opens the registry-drift census after a data-side one-line registry-row reword (selftest 20/0 at the frozen pin, --check 63/63 exact at the record rev, v6 digest 946e5359... byte-identical base/landing/tip, historical mode exit 1 unchanged, broken-since-r55 confirmed at 6742d3f7). Defects (status-neutral): D58-1 - c1-after.txt's R1 marker annotation ('base: 0 -> record: 1') contradicts its own pasted observed output (0); the cited grep pattern '27 distinct filesystem paths' cannot match the correction note's actual wording ('distinct filesystem paths number 27'), and the report's before->after repeats the unreachable value ('the marker probe -> 1'); the substance (the correction note of record exists in the 05865b6d LOG landing entry; the r57 delta is 27 distinct filesystem paths vs 26 named items) was independently verified true by the verifier - routed to round 59: fix the receipt annotation or re-run with a matching pattern. No other conformance defects: SHONEN heading present with 4 [~] resolvable pointers and zero [x]; scratch emptied; M58-1 attempts never cited as evidence; SOURCES used-by correction is the contract-legal in-place cell change with old->new logged. Operator note: all four SHONEN [~] pointers resolve and look fully checkable by a non-author (registry check re-derived at 63 rows/0 malformed exit 0; end-to-end routed-duty execution receipted; probes pasteable and re-run; PROVINCE diff empty) - the round-58-verifier-spotcheck.md file is suitable non-author evidence if the operator directs the promotion review. Trends: expansion unchanged (PROVINCE diff empty; S258 is a tooling-format spec, not an REA surface; no capability row), quality improved (named-absent evidence 1->0; registry re-enters its drift census with exact equality; W04 resolved vacuous-as-named with 19 dispositions matching the census 1:1; every filed text outside the round's own appends byte-identical), discernment improved (outside spot-check agrees with the gate on the S258 admit - re-opened live, byte-identical - and on all three rejects; self-caught M58-1/M58-3/E11/post-close all verified).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 70,
+   "date": "2026-11-01",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 70,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 70
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "improved",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-70/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/chousa-shokunin/corpus/lessons/round-70-verifier-spotcheck.md@11b51988d3878cd33b826295304f6f266718ba86",
+    "rechecks": "Step-1 PASS (report committed by lane identity 2728140c, SHONEN heading, 4/4 cited commits ancestors, origin/master == b2f88ecc). C1 evidence-verified + re-measured: before git-grep G08-PASS over waves = 0 with 4 receipts SKIPPED=G08; after full-preflight receipt verbatim PREFLIGHT=7/8 FAILED=G08 ENV=none SKIPPED=none EXIT=1 (wave copy byte-identical); battery transcript ^RESEARCH_GATE_SELFTEST = 0, ends case 257, RUN-END ADDENDUM discloses end at case 258 (D5) -> frozen predicate arm 1 NOT met -> honest-stop is the frozen rule's own outcome, concurred; case-literal invariance proven mechanically (normalized case-invocation literals diff empty base->landing; all hunks >= 4389 in run_selftest; preflight line 233 byte-identical; budget = env-overridable default 7200); gate/preflight sha256 pins re-derived at landing and HEAD. C2 re-measured and checker re-executed read-only: base 0 files -> 6 packet entries; checker sha 7444fa3e matches pin; valid=PASS rc0, broken=FAIL + 7 named defects rc1, absent=ERROR rc2, reproducing the committed battery exactly; PROTOCOL.md discloses the packet does not close the residual. No axis harmed (SCORECARD/SOURCES/LOG additions-only; PROVINCE untouched). Status-neutral defects D-70-1..6 routed to r71 in the spotcheck: S171 quote attributed to the wrong sibling capture; grep-for-predicate-string collision (needs ^ anchor); 'six skips print' is five-of-six (hash-shim case 259 sits after ended-at 258); '/269' denominator lacks a counting command (canonical 275); SKILL registry row 83 still asserts a completing FAIL verdict its cited receipt does not show; no reject decision existed to sample."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/chousa-shokunin@b2f88eccf603be88aa4c217adb5f49813cd82182",
+   "closed_at": "2026-11-01T20:23:55Z",
+   "campaign": "hyaku",
+   "notes": "Honest-stop round closed as rejected-honest-stop: C1's frozen before-measurement rule ('battery completes with verdict line + preflight completes with SKIPPED=none -> improved; battery still dies before verdict line -> honest-stop') was honored unedited and its first arm measurably failed, so C1 lands honest-stop with red receipts committed as the defect record (the owed r66-r69 G08 receipt debt CLOSES: a full no-skip preflight receipt now exists, red; the battery repair is real with case literals byte-invariant); C2 improved (entailment-review packet + falsifiable format checker; non-author review requested on record; packet self-discloses it does not close the residual). No axis harmed. Defects (status-neutral, routed to r71): D-70-1 S171 quote lives in before-g08-selftest-partial.txt not the pinned recon-run-r70.txt (same crash site, tmpdir K1Yhut vs dcCFup) - correction row owed; D-70-2 the report/SCORECARD no-verdict-line grep returns 1 on committed bytes (receipt header quotes the predicate string; ^-anchored returns 0, fact holds); D-70-3 'six append-subject skips print by name' overstates the transcript (five printed; all-manifest-hash-shim is case 259, after the ended-at case 258); D-70-4 '257/269' denominator carries no counting command (canonical total 275); D-70-5 SKILL registry row 83 (at HEAD) claims the battery 'completes and prints RESEARCH_GATE_SELFTEST: FAIL ... rc=1' citing a receipt that shows no verdict line - correct to the measured honest-stop state; D-70-6 round Gate rejected 0 post-open so no reject sample existed. Operator notes: all four SHONEN boxes look checkable by a non-author promotion review (operator-scheduled, r69 note stands); the entailment review is schedulable now (packet committed, checker runnable); two L0 lines (flock(1) install; bare ## Capabilities headings) are in .ufo/l0-questions.md awaiting the integrator's durability commit; G08 residual routed to r71 = operator flock decision + a bound for the unbounded locale-boundary case.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
