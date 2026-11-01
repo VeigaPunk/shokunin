@@ -35580,6 +35580,49 @@
    "notes": "Round verified and admitted. Step-1 conformance clean: report committed by lane identity (kagi-shokunin, fleet 5f9a4d9), SHONEN heading with four [~] boxes (no [x] written, correct), all cited commits exist and are ancestors, tip pushed (ls-remote == local master), not a marker report. L2 wave honest miss disclosed (workflow execution unavailable in the session; nothing simulated; deterministic counters run directly by the L1 and re-run by the closure). Trends: expansion unchanged, quality improved (both re-measured), discernment unprovable-but-better (spot-check agreed with the sampled admit; no reject decision existed to sample). Routed defects for round 30 (status-neutral, none bars admission): (1) migrate stale ledger membership pins R12-03 91->94, R13-01 34->35, R21-04 65->67, R24-14 count+sha, then re-run claim-ledger verify on a capable host; (2) correct the six self-counts-bound doc cells (SKILL.md 91 stamps + 65 claims; PROVINCE claim-ledger bullet; README stamps/ledger-rows rows) and re-run self-counts; (3) correcting note: QM30's lesson pointer should ground in the D1 extraction class, not M29-1; (4) record the plan-frontier deviation (D1 class mined in lesson prose/QM30 rather than as a Mistakes row); (5) restore one EOL convention (SKILL.md, corpus/SOURCES.md, corpus/claim-ledger.tsv were converted LF->CRLF; stamps re-pinned so pins match). SHONEN operator note: box 1 is mechanically re-checkable by a non-author; boxes 2-4 blocked by the documented substrate absence on this host.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 67,
+   "date": "2026-11-01",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 67,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 67
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "coverage": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "Standing drift re-check r67 extension (tools/mori-drift-recheck.py, first-working 66): second vendor churn grammar asset-churn / learn-microsoft-asset-build-id with pinning-UA body resolution, and --from-sweep receipt-driven selection (rows-only parsing, rows-vs-summary agreement, non-sweep refusal, rc 2 integrity checks); demonstrated live on S241 (content-drift -> asset-churn, pinning-UA delta exactly 2 of 1499 lines) and on the committed r66 sweep receipt (17/17 adjudicated)"
+   ],
+   "report": ".ufo/reports/round-67/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/mori-shokunin/corpus/lessons/round-67-verifier-spotcheck.md@8440cf6c035a8f9af9cc8b3c95fc5584176c2d5c",
+    "rechecks": "C1 re-measured live by closure: grep counts asset-churn 0->19 and QUALITY ^159\\. 0->1 re-derived on committed bytes; selftest PASS (10 cases) rc 0 re-run; --only S241 prints asset-churn rc 0 at closure run time; closure's own curl/8.21.0 fetch matches the receipt hashes (pin 1168b2a6..., live ddb7ba17..., 53963 bytes, 1499 lines each) with delta exactly the two asset-id lines (grep -c '^[<>]' = 4). C2 re-measured: from-sweep grep 0->17; closure re-ran the standing step on the committed r66 sweep receipt -> rc 0, findings=17, 17 rows adjudicated (8 time-churn, 1 asset-churn S241, 5 receipt-open, 2 ua-serving, 1 gate, 0 content-drift), identical to the committed receipt; rc 2 integrity paths exercised green in the closure's selftest run. Battery tallies evidence-verified from the committed receipt (register 12/12, settlement 10/10, vote-bind 16/16, pin-check 125/125, adjudicate 5/5, recheck 10/10). Honest pre-fix live run (content-drift 10:21:36Z, design gap the green selftest missed) verified recorded in three artifacts, not laundered. Conformance clean: lane-identity report commit 14ac4112 in the fleet repo, SHONEN heading 4/4 [~], cited hashes ancestral, tip pushed ahead=0, dispatch digest corroborated in the watchdog log, census rc 0 at both ends and at closure, SOURCES 350->351 re-counted, S578 quote re-opened live (15 words, anchors resolve, pin sha matches). No axis harmed: SCORECARD diff pure append, SKILL.md + frozen sweep + r65 adjudicator + PROVINCE.md byte-identical across the range, SKILL:905 tally pin counts 1 at tip."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/mori-shokunin@eed7272fc17d8beea75a275b13d03542ae275446",
+   "closed_at": "2026-11-01T12:16:30Z",
+   "campaign": "hyaku",
+   "notes": "Digest: launch 2026-11-01T01:50:00-08:00 mori round=67 base=8470a025f94f (zcode run14); complete 2026-11-01T03:21:08-08:00 head=eed7272fc17d pushed=True (watchdog log corroborated by closure). Range 8470a025..eed7272f = 16 files +6083/-44, exactly as reported. Step-1 conformance clean (lane-identity report commit 14ac41123654392ebfcbec4dc69ab9fc89fae156; SHONEN heading present; all cited hashes exist and are ancestral; local master == origin master). C1 depth verified met re-measured (second vendor churn grammar taught from the vendor's own r65-recorded redeploy signature; live A/B reproduced by closure ~1h after the lane's runs, same body hashes); C2 operability verified met re-measured (from-sweep 17/17 with the single intended S241 flip; every r66 standing class reproduced). Defects (status-neutral): (1) s241-assetchurn-live-r67.txt heading 'live run at the FINAL bytes 2026-11-01T10:30:24Z' sits above the reproduced run's output block (run-start 10:36:28Z) - the first post-fix run's own raw output block is not separately quoted in the receipt (evidence unaffected; both runs independently reproduced by closure); route: lane, label each receipt block with its own run-start next round. No other defects. Routed/open (correctly routed around, never treated as answered): r65 L0 SKILL:905 python3 naming stays open for the operator (python3 Store stub rc 49 confirmed by closure); mori|round-65 instrument-change L0 and mori|round-62 dispatch-surface L0 stand open; considerthese 2026-10-26 suggestion 1 (pin-check mismatch split) held behind the instrument-change ruling, not adopted - correct. SHONEN.md boxes all [~] with resolvable pointers; boxes 2-3 are resolvable by a non-author from the committed receipts (this closure re-ran the underlying evidence) - [x] remains for the operator's promotion review. FRESH-START duty performed with own receipts; frozen r61 counter re-derivation re-run by closure (C2=unmet, rc 1, same verdict). No exploratory claim declared. Live-surface note: S241 build id unchanged between the lane's fetch and closure's (~1h); grammar is moment-bound by design - a future vendor redeploy must reclassify asset-churn, not content-drift.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
