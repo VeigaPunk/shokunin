@@ -34911,6 +34911,49 @@
    "notes": "Attempt 3 of round 70 on a new Windows host. Real report, real committed work (3 lane commits) -> lanes.kumitate=ok; verdict rejected-honest-stop, admitted=false: C2 (coverage, sourced S218/S219) verifies in full, C1's declared compound after-state (frozen v1 HELD 10/10 at landed rev; v2 HELD every active check) is unmet in the lane's own honest measurements (v1 UNMET 6/10 idle / 5/10 contended; v2 UNMET 8/17), mechanism named (frozen 300s per-mode budget vs 643-787s host control costs), counter bytes verified un-amended after scoring, fixes routed. Capabilities row 'control-replay' stands on a passing demonstration (five CONTROL-PASS receipts + selftest 21/21). Trends all improved (outside spot-check agrees with the sampled admit and reject; both CWE sources re-opened live with exact quotes; captures sha-verified). Defects (status-neutral, routed to r71): D1 dead pointer close/replay70-v1-AT-BASE-win32.txt cited in report/SCORECARD but present in no commit (base-reproduction sub-claim lacks committed evidence); D2 report attributes the 6/10 line to replay70-v1-AT-M2-win32.txt which actually reads 5/10 no-live with an EPERM cleanup-crash tail (6/10 exercised is AT-M at rev 3b148380; conclusion unaffected); D3 v2 anatomy omits V08 (9 MISS arms, 8 accounted); D4 number drift: SKILL registry row and knowledge entry say selftest 20/20 vs committed receipt 21/21 (corrections sweep owed); D5 SHONEN box-4 [x] has no named non-author verifier (counts as [~]). Routed counter fixes to r71: v2 childExit expectation (accept 0-on-CONTROL-PASS, V03-V07), V09 seed normalization, V12/V13/V08 resource budgets; frozen v1 bytes stay frozen (faster host could re-read 10/10 with zero byte changes). L0 round-70 answer committed (print-stub routed, not frozen-amended; no AgentSwarm surface this host, no wave dispatched). SHONEN boxes 1-3 look fully checkable by a non-author on committed evidence - operator may run the promotion review; this closure wrote no [x] into SHONEN.md. No promotions, no mints, no cross-lane writes.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 61,
+   "date": "2026-11-01",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 61,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 61
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "tools/mado-win-display.py — read-only Windows display-topology observer (getter-only byte-check passed; selftest 10/10 and one live CLEAN run re-executed by the closure, matching committed receipts; ledger 100->101; first-working round 61)"
+   ],
+   "report": ".ufo/reports/round-61/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/mado-shokunin/corpus/lessons/round-61-verifier-spotcheck.md@4c5435d8bb3dd108f1dba4998de73c514609d885",
+    "rechecks": "Step-1 PASS (report landed by lane identity 53a47d01, SHONEN heading present, ad4e8403+0c77f726 ancestors of master, local==origin==0c77f726, 28 files +1416/-0 in the landing). C1 re-measured: Corrections(61) greps 0->1 both lessons, landing-counters-r60 mentions 0->3, base bytes byte-exact prefixes (r59 217 / r60 181 lines), 0 deleted lines, r59 numstat re-derivation 17 0 / 5 0, ghost receipt names absent, pointed sections exist. C2 re-measured: knowledge 75->76, README index 75->76, SOURCES 348->354, entry rows 19; navigation/used-by receipts evidence-verified at rev-pinned ad4e8403; D03 band-owner [UNK] honest-unknown confirmed in H19/J17/Limits. C3 re-measured: tool bytes getter-only (no Set*/Change* verb; selftest asserts it), worktree==committed blob, selftest 10/10 rc=0 and live CLEAN rc=0 re-run by closure, live/probe run pairs byte-identical, from-file rc=0, ERROR rc=2 bytes-never-echoed, crosscheck 5/5, ledger 100->101 by plain row count (placeholder header discounted) and population 100->101. Harm: none — SCORECARD diff is a pure +61 append, zero deleted lines in the whole landing. Discernment: S412+S414 re-opened live (quotes verbatim, ms.date/git_commit match), screen-capture and taskbar rejects agree (L0 still open; no Shell instrument in repo), census validate rc=0 (36 W04 + 1 W01 both ends, receipts committed)."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/mado-shokunin@0c77f7266879a569f4b3097db4a8878406f6412b",
+   "closed_at": "2026-11-01T08:27:42Z",
+   "campaign": "hyaku",
+   "notes": "All three claims verify; no axis harmed; admitted. Defects (status-neutral, routed to the lane for round 62): (1) number-drift in the report's Landed-changes table — actual numstat LOG.md +64 (reported +52), PROVINCE.md +19 (reported +13), SKILL.md +55 (reported +50); totals correct; correct append-only beside the filed bytes; (2) nit: the r60 correction block names section '-- navigation counter --' where the real header is '-- navigation counter (SCORECARD fence, python for python3) --' (still resolves). Standing, operator-side: MISSION L2 dispatch floor has no surface on this host (disclosed since r57, L0 open, routed around, never treated as answered); four mado L0 questions (r57 freshness rubric, r58 gate selftest, r59 calibration resolved-active, r60 screen-capture scope) remain open and correctly un-answered lane-side. SHONEN: all four boxes [~] self-asserted, no [x] written by the lane (correct); boxes 2-3 now carry non-author-executed evidence from this closure that a promotion review may cite. Security boundary held: no r56-era credential material opened or surfaced by the round or the closure; counts only.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
