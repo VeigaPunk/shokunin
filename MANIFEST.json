@@ -34343,6 +34343,47 @@
    "notes": "Dispatch digest: 2026-10-31T21:37:28-07:00 launch mori round=64 base=6e70931d (zcode run14); 2026-10-31T23:01:36-07:00 complete mori round=64 head=a313f05bd437 pushed=True. Both claims verify and no axis is harmed, so the round is admitted: C1 freshness (drift instrument v1.1 certified host-portable with r37 cap-kill and r38 anchors re-proven; first on-host sweep 346 rows, 23 drifted classed A/B on two-UA digest evidence and flagged for r65 per-row disposition — none silently re-pinned or dropped, verified from the SOURCES.md patch and the evidence tree) and C2 depth/capability (mori-runway-win probe, sourced S574/S575, closure re-executed selftest and live receipt). Defects (status-neutral, routed): (1) number-drift self-defect — LOG.md Round-64 entry says 'Mistakes mined: three' while corpus/lessons/round-64.md ## Mistakes carries four rows (the report says four); fix by appended correction entry next round, LOG is append-only; (2) D6 (and D1's vacated-slot note) applied in-place wording corrections inside LOG.md's r63 entry and the r63 lesson instead of appended entries — disclosed inline at both sites, no measured value changed, grounded in the cited 67efdb79 precedent (exists, ancestral); keep the precedent narrow; (3) the C1 selftest after-receipt was retaken once under a disclosed concurrent-load condition (mined as lesson Mistake 2) — already disclosed, no action. Standing routed item: r65 per-row drift disposition (refetch-and-repin or supersede per vendor UA question) then a re-sweep to drifted=0 or an honest remainder — already SCORECARD planned. Fresh-start duty was bound by the prompt to r59-r61 while the fleet MANIFEST records rounds 62/63 admitted; the lane performed it on the three bound rounds, noted the manifest state, and sampled the frozen r61 counter (C2=unmet, 14 anchors, rc 1) — no defect. L2: no AgentSwarm surface this session (standing L0 line carried, routed around); round ran L1-only, no wave-based evidence claimed. Operator note: SHONEN boxes 2 and 3 carry pointers this closure re-verified directly (selftest tallies 12/10/16/125 re-committed and re-run; drift 6/6 and runway 9/9 x2 + live AVAILABLE re-executed) — on this round's evidence those boxes look checkable by a non-author; no [x] written per closure duty, promotion review is operator-directed.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 76,
+   "date": "2026-10-31",
+   "type": "closure",
+   "lane": "revenger",
+   "lane_round": 76,
+   "lanes": {
+    "revenger": "ok"
+   },
+   "lane_rounds": {
+    "revenger": 76
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-76/revenger.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/shokunin-binary-forensics/corpus/lessons/round-76-verifier-spotcheck.md@3e980481002fb344dd6454feae84c9c588c3e873",
+    "rechecks": "Step-1 all green (lane-identity report commit ed1edaf6; SHONEN heading; all five cited shas exist, ancestors of pushed main 2316649a36eb, in range 6f3a646c..2316649a; watchdog digest verbatim; freeze 68feeca6 carries claims+probes+red-befores only, probe sha256 pins e15a43af/9315f8d8 unchanged freeze->tip; c21e5a4 verified empty-path and disclosed). C1 RE-MEASURED: git-archive trees of 6f3a646c and 2316649a through the committed f_probe.py -> 5/8 score=6.25 before, 6/8 score=7.50 after, families += managed, histogram delta exactly one record (inspect_managed_artifact:1), outputs line-identical to committed f-before/f-after.log; oracle_check.py re-run -> ORACLE OK (10/10 checks); fixture sha256 25ece37d...5733c and stdout sha256 9da6800d...b0c65c pins re-hashed; generator regen byte-identical (cmp). C2 RE-MEASURED: receipt_probe.sh re-run -> exit 0, LEG1/2/3 pass, LEG4 S444_MISMATCH_FLAGGED, RECEIPT_VERDICT=green, line-identical to receipt-after.log; legs re-run independently (rea --llms | grep -cE inspect_ -> 2 {inspect_macho, inspect_signature}; rea doctor -> 0; rea --version 6.8.0); red-before receipt-before.log committed at freeze shows the probe failing for the right reason. Carry-in item 2 refusal JUDGED DISCIPLINED: routed premise refuted on three surfaces, all re-derived by this verifier (all 9 S445 kebab names present in the manifest plus inspect-pe-resources, covering all 8 families; provider-gate payload details.operation=inspect_android_package reproduced live from the jadx gate; committed record writes operation=inspect_managed_artifact into the exact field the frozen predicate reads); frozen counter bytes unchanged (reports/round-71/measure.py not in the change set; f_probe families dict AST-verified equal to the r71 counter: 11 operation names / 8 families, confirming the corrected carry-in arithmetic vs the r75 carry-in's '14'); claims.md section carry-in records the disposition with the red-before duty honored. S445 superseding row verified per contract rule 2 (S444 kept in place, append-only); census re-run exit 0, byte-identical to committed census-after.log (31 W, rows 444 -> 446); FRESH_ROWS 18/18 re-measured; no-harm diff re-derived (knowledge/README/verifiers/SKILL/PROVINCE/SHONEN untouched); ADJ-06=0. Spot-checks: S445 and S446 admits agree (sources re-opened, quotes verbatim and grounded); fresh-start C10 and K-map route rejections agree (MANIFEST r74 disposal on record; revenger round-74 L0 still unanswered)."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/shokunin-binary-forensics@2316649a36ebe4344fc1aa0f65b4d0a8e35dddff",
+   "closed_at": "2026-11-01T06:30:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (watchdog, verbatim): 2026-10-31T22:09:27-07:00 launch revenger round=76 base=6f3a646c6910 (zcode run14); 2026-10-31T23:05:08-07:00 complete revenger round=76 head=2316649a36eb pushed=True. Real report by lane identity (revenger-shokunin, ed1edaf6); not a marker. Both declared claims re-measured green by the non-author closure judge (not evidence-verified only): C1 coverage F 5/8->6/8 via a real rea 6.8.0 inspect-managed-artifact record on an authored inert managed fixture (10/10 identity oracle, byte-identical regen); C2 calibration criterion R red->green with the LEG4 negative control still firing. Carry-in: item 1 landed as S445 (supersedes S444, machine-checked per-leg); item 2 (sanctioned F-counter amendment) NOT executed - premise refuted with producer evidence, refusal judged the disciplined choice under the frozen-instrument discipline; corrected carry-in arithmetic 11 names / 8 families verified programmatically against the r75 carry-in's '14'. No axis harmed; expansion unchanged (no knowledge admission, K 8/15 blocked route), quality improved, discernment improved. Status-neutral defects (do not bar admission): (1) closure contract's literal census invocation (--root <fleet root> revenger) exits 2 on this host layout - lane dir is shokunin-binary-forensics; explicit-lane-dir form re-run exit 0, byte-identical to the committed census-after.log (same operator-side item routed in r74/r75); (2) refutation leg (b) provider-gate payloads were disclosed scratch probes, not committed bytes - reproduced live by this verifier (details.operation: inspect_android_package), routed: commit a small payload receipt next round for full durability; (3) cosmetic: f_probe prints score at 2 decimals vs the r71 counter's 1 (mapping verified equal); 'kebab-case equivalents for every F family' is family-level-true (verified all 8 families incl. inspect-pe-resources, unlisted in S445). Routed: K moves (C05/C15) stay blocked on the unanswered revenger round-74 L0 (re-checked this closure); criterion R extension to the 444 legacy receipt-quoting rows and the provider-gated F families (android/firmware/browser, caller-supplied surfaces) remain the lane's own planned next moves. SHONEN for operator: all four boxes [~]; on this round's evidence boxes 2 and 3 are checkable by a non-author (instructions executed end-to-end from committed bytes without oral context; real logged end-to-end domain task); boxes 1 and 4 still need the named outside verifier; no [x] written by closure; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
