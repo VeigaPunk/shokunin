@@ -35537,6 +35537,49 @@
    "notes": "kaidoku round 56 closed admitted (both claims verify; no axis harmed). R56-C1 calibration: the four r55-closure carry-in items (spot-check section 7 items V-1, V-2, V-3, V-5 - V-4 is an operator note) genuinely closed, verified by committed-byte content read; its stated greps do not re-derive for V-1/V-5 (D1/D2). R56-C2 depth: tools/round-56/receipt-audit.py fully re-measured by the verifier - selftest 9/0, red demo reproduces M55-4 at the r55 freeze 1f9be6eb (exit 1 RECEIPT_ABSENT), truthful ABSENT at 627a9c20, green exit 0 (10 receipts) at the operative freeze 19eef5ee; registry + capability rows landed; M55-4's rule executed on the round's own freeze (13=13). Freeze hygiene: instrument pins exact, pre-data false start disclosed (M56-2), R29 gate receipts committed for preflight/landing via the disclosed M56-4 post-close correction b9434858. History linear, zero merges, fast-forward push, no-harm clean (PROVINCE empty, LOG 49/0, owned-axes byte-equal, SHONEN blob unchanged, v6 digest reproduced). Routed: D4 land the uncommitted receipt-audit-green-r56.txt (third M56-4-class instance); D1-D3 the c1-after V-1/V-5 erratum + V-1 overbroad sentence; e21be31a non-ancestor citation ruled status-neutral per the r55-admitted class (historiographical, line 47, demoted in-text). SHONEN: all four boxes look fully checkable by a non-author on this round's evidence - operator may review for [x]; this verifier writes no [x].",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 29,
+   "date": "2026-11-01",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 29,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 29
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "freshness": "improved",
+    "calibration": "unchanged",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "unprovable-but-better"
+   },
+   "capabilities_added": [
+    "differential feed-token agreement gate"
+   ],
+   "report": ".ufo/reports/round-29/kagi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kagi-shokunin/corpus/lessons/round-29-verifier-spotcheck.md@f67232cd3ae682ea1fb14d447667016f2b6ed336",
+    "rechecks": "C1 and C2 re-measured by the closure session with the committed frozen instruments: c1-measure at c49023b -> NF mishandled=5/7 correct=2/7 exit 1, at 49d1d46 -> 0/7 correct=7/7 exit 0 (round-28 replay 0/4 typed=4/4 and CLEAN30 control at both); c2-measure at c49023b m1-4=0, at 0229375 red witness m1=1 m2=1 m3=0 m4=1 (DISAGREE naming trailing-period), at 49d1d46 m1-4=1; release-clock --selftest PASS (116 cases) exit 0 with one declared SKIP on nt; feed-token-agree --selftest PASS (4 cases) and live AGREE (shapes=12 disagreements=0) exit 0; BASE 0o600 red-before reproduced (FAIL receipt mode or fields, exit 1); stamps pin table verified 94/94 against tip blobs; lane census CLEAN rows=52 exit 0 and fleet sources-census validate exit 0 (14 W04 + ok); S052 re-opened byte-identical (81922 bytes, sha256 3bd71d76...f2d89c) with the quote located once in RFC 4287 section 4.2.14; S045 anchor re-opened and confirmed. Hard rules held: refused 2026-10-21 work absent from report/lesson/LOG/commit subjects; C1 diff is exactly the frozen round-28 recipe (three extractor right-boundaries byte-equal to STABLE_TOKEN_RE's, untouched, plus its two feed-path selftest cases) plus the Correction-1-authorized POSIX scoping; no vault contact, op CLI untouched, no op:// or secret values in added bytes. Conformance defects routed (status-neutral): R12-03/R13-01/R21-04/R24-14 membership pins not migrated (94/35/67/67 vs pinned 91/34/65/65+sha); six self-counts-bound doc cells stale (SKILL 91 stamps + 65 claims, PROVINCE, README rows); QM30 cites M29-1 instead of the D1-class grounding; plan-frontier D1 mining landed in lesson prose/QM30 not as a Mistakes row; SKILL/SOURCES/claim-ledger silently converted LF to CRLF."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kagi-shokunin@49d1d46e69bf83283a1b001ec4eff16000d6508e",
+   "closed_at": "2026-11-01T11:55:13Z",
+   "campaign": "hyaku",
+   "notes": "Round verified and admitted. Step-1 conformance clean: report committed by lane identity (kagi-shokunin, fleet 5f9a4d9), SHONEN heading with four [~] boxes (no [x] written, correct), all cited commits exist and are ancestors, tip pushed (ls-remote == local master), not a marker report. L2 wave honest miss disclosed (workflow execution unavailable in the session; nothing simulated; deterministic counters run directly by the L1 and re-run by the closure). Trends: expansion unchanged, quality improved (both re-measured), discernment unprovable-but-better (spot-check agreed with the sampled admit; no reject decision existed to sample). Routed defects for round 30 (status-neutral, none bars admission): (1) migrate stale ledger membership pins R12-03 91->94, R13-01 34->35, R21-04 65->67, R24-14 count+sha, then re-run claim-ledger verify on a capable host; (2) correct the six self-counts-bound doc cells (SKILL.md 91 stamps + 65 claims; PROVINCE claim-ledger bullet; README stamps/ledger-rows rows) and re-run self-counts; (3) correcting note: QM30's lesson pointer should ground in the D1 extraction class, not M29-1; (4) record the plan-frontier deviation (D1 class mined in lesson prose/QM30 rather than as a Mistakes row); (5) restore one EOL convention (SKILL.md, corpus/SOURCES.md, corpus/claim-ledger.tsv were converted LF->CRLF; stamps re-pinned so pins match). SHONEN operator note: box 1 is mechanically re-checkable by a non-author; boxes 2-4 blocked by the documented substrate absence on this host.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
