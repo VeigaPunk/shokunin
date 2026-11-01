@@ -35821,6 +35821,49 @@
    "notes": "Lane round ok, admitted. Conformance PASS: report 65ef7717 committed by kasegi-shokunin <kasegi@shokunin.local> with SHONEN heading ([~]/[ ] only, no [x] - nothing to demote); all cited commits exist, are ancestors of master, and lie in ed60637..133c575; local master == origin == 133c575394099abf28ddf1b0125c53aefde3e0fa (pushed); watchdog digest lines match; landed-changes table matches all five commit path lists; LOG/SCORECARD/PROVINCE/README/SOURCES/knowledge-expected diffs are pure appends (+48/+58/+2/+29/+3/+1, zero deletions); SKILL.md untouched; report is a real report, not a marker. Claims: C1 (depth:verifiability 4 held, capability extension, R58 nominal) and C2 (coverage 8 held, frontier F35->F36 on S087) both re-derived green; carry-in DF-1 (0->2 erratum, closure check exit 0) and DF-2 (regenerated receipt, every pin/literal re-derived) verified - both routed round-54 defects closed. Spot-check: S087 admit AGREES (live re-open byte-identical today); in-entry rejected over-generalization and the unopened CISA lead AGREES; S087 Gate quote 11 words at S087.txt:2853 verifies. No axis harmed (SCORECARD pure append; depth:verifiability 4->4, coverage 8->8, depth:density 9 held). Defects: DF-3 routed (see verification.rechecks; status-neutral, same prose-vs-receipt class as DF-1, recurring in the round that fixed it - the lane's own red control machine-catches the class and the fix form is the erratum discipline the round itself used). Standing operator-owned items unchanged and correctly unclaimed (30 problem-rows/33 FAIL records, 67 cd-/home recheck lines, python3 limb replay, absent AgentSwarm L2; L0 kasegi r50/46/54 unanswered). For the operator: SHONEN boxes 1/3/4 look close to non-author-checkable (this verifier ran the figure-audit instrument green standalone); box 2 (end-to-end domain task) remains honestly open - promotion review is the operator's call. The scratch/kasegi-r55-verifier working files of this closure were deleted; this closure.json and the spotcheck md (uncommitted, for the orchestrator to commit and cite) are the only artifacts written.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 69,
+   "date": "2026-11-01",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 69,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 69
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "newest-closure-counter"
+   ],
+   "report": ".ufo/reports/round-69/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kama-shokunin/corpus/lessons/round-69-verifier-spotcheck.md@6035e952c2521999e192d6f236331f265ac98392",
+    "rechecks": "C1 re-measured: counter selftest 10/10 (verifier run); red STALE_CALIBRATION exit 1 at 5d2d609e and green row_current=true exit 0 at e552abbb re-run from tip bytes; banner greps 1->0, round-68-spotcheck mentions 0->5, r67 latest-closure pointer 1->0 re-derived at both revisions; calibration row names the r68 spotcheck (admitted) at tip. C2 re-measured: plumbing-only stale-index fixture rebuilt by the verifier (index 0 entries, HEAD holds tools/round97-count-stale.py) - old gate bytes exit 0 false clean, new bytes exit 1 unregistered; gate selftest arms 1-5+7 PASS via --selftest and the lane-tip arm re-run directly (registered 79 unregistered 0 defective 0, exit 0) = 7/7; gate population 78->79 re-derived via ls-tree; E12 red receipt committed (census-end-at-c5-e12-red.out exit 1) and fix verified (S541 line 643 outside Registry at 8d578fa2 -> line 293 inside Registry at 121e708a and tip). Carry-in re-derived: numstat 2efc4af8 = +24/-5; ledger 7@b5e34ba7, 12@7a2397db, 12->19 at tip with 3 new row targets existing; correction rows 1-3 numeric order. Population effects: registry 280->281, capabilities 14->15 (audit receipt met True), census validate exit 0 re-run by verifier, HOST_CENSUS pass=20/total=22 receipt, WLC paths=5 clean=5 receipt, RECEIPT_POINTER_AUDIT unresolved=0 receipt, knowledge 39 (lane-pinned command) unchanged; axis scores all unchanged base->tip. Spot-check: S541 admit agree (live URL re-fetched + retained bytes sha256 dd5b4d69... match, 18-word quote verbatim), both no-row rejects agree."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kama-shokunin@e552abbb7485ff03a7e3687184475e5df4c8c364",
+   "closed_at": "2026-11-01T13:42:54Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 2026-11-01T01:46:26-08:00 launch kama round=69 base=5d2d609ea6a2 (zcode run14); 2026-11-01T04:29:23-08:00 complete kama round=69 head=e552abbb pushed=True. Report landed last by lane identity kama-shokunin <kama@shokunin.local> (fleet 9cdde0c4, committer date equals the complete line); SHONEN heading 4x[~], no [x]; all seven cited lane commits ancestors of the pushed tip, range exactly 7 commits; real report, not a marker. Both claims (C1 calibration capability newest-closure-counter; C2 operability gate tree-authoritative population) verify on the closure judge's own re-measurement; no axis harmed; scores held operability 8 / calibration 7. Fresh-start disclosure accepted: prompt premise predates the r66-r68 admissions; discipline kept. Status-neutral defects (in the spotcheck SS7): (1) report's receipts '(14 files)' accurate at 8d578fa2, superseded at the cited tip (19) - the round's own Mistake-5 pattern; (2) LOG round-69 entry cites SKILL identity 5a0c9c8d... accurate at 445473b6, superseded at tip by 86be9083... (supersession named in SCORECARD/lesson, not in LOG); (3) LOG banner count '0 -> 2' re-derives at no landed revision (0 at base/2bba0492, 5 at 445473b6 and tip; the report's 0 -> 5 is correct). Carried orchestrator-owned: r66/r67 spotcheck dangling citations (lane declined again, boundary unchanged). Routed to lane round 70: (1) run the counter as a registered pre-report step (lane plan item 1); (2) extend the per-revision citation rule to every in-round-growing count and row-cited identity sha (defects 1-2); (3) mechanical sweep of all ## Axes row-cited identities (lane plan item 3). Operator note: no SHONEN box is fully non-author-checkable yet; no [x] recommended. Census validate exit 0 at closure (verifier run); kama L0 (NTFS round-65) remains unanswered and was routed around, nothing assumed answered.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
