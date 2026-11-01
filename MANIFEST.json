@@ -34788,6 +34788,47 @@
    "notes": "Dispatch/complete digest: 2026-10-31T18:57:59-07:00 launch tameshi round=60 base=9bc9b20b5d67 (zcode run14); 2026-11-01T00:17:38-07:00 complete tameshi round=60 head=49ddecf1f15a pushed=True. Status ok (real report; step-1 clean). Not admitted: C1 (operability) and C2 (calibration) verify, depth/freshness unchanged, but the round's own frozen no-harm guard (coldread_precheck, required lost=0) is unverified on this host and the only measurement on record (lane-authored noharm-cand.py) shows a provisional drop 46/64 vs the frozen instrument's 50 at b1ba0ebc (different revision pair; attribution split attempt-1-tail vs attempt-2 records unmeasured) -> no axis-harm check could be established; quality trend harmed (provisional) per LEARNING trade rule; the lane refused self-admission and routed the remedy to r61 as first obligation (genuine re-reads as fresh input-keyed ledger entries pinning post-edit hashes, then monitor re-run until lost=0; host-portable/bounded monitor design) - endorsed. Routed defects for the lane (status-neutral): (D1) .ufo/evidence/round-60/win-host/first-family/ctl-sequence.out cited by report, lesson (mistake 7 + Attempt-2 verdicts), QUALITY criterion 119 and contract-a2-amend1.json, and marked resolved by pointer-sweep-a2.json, was never committed (no first-family/ path at a205f00b or tip); pointer-sweep '19/19 + 6 deferred resolved, none drifted' is false in one case; land the first-family receipts or append correction entries naming the pointer superseded (scored amend1/ family unaffected; amendment pre-data discipline held by commit timeline + digests). (D2) 'attempt-1 freeze INSTRUMENT-OK at this tree' has no distinct committed attempt-2 receipt; claim verified by closure re-derivation (19/19 instrument bytes intact at tip). (D3) number-drift: 'ten-arm red family' vs 8 landed/declared control arms; report's decomposition of the host-scoped grep=4 mis-names the 4th hit (it is the R60a2-C2 row quoting its own pattern, not the no-harm note; SCORECARD row says 3, lesson says 2 - pin one decomposition per criterion 118). Operator notes: rendered dispatch prompt omits the L2-minimum embed (substance routed at .ufo/l0-questions.md:230); SHONEN boxes 1, 2, 4 look checkable by a non-author verifier, box 3's pointer instrument is host-infeasible on this host. L0: one question (tameshi | round-60 | L2-floor routing on win32), routed around, non-blocking. Assimilation: none - shokuknow unreachable (per report).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 56,
+   "date": "2026-11-01",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 56,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 56
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "coverage": "unchanged",
+    "operability": "improved",
+    "freshness": "improved",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-56/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/tsukuroi-shokunin/corpus/lessons/round-56-verifier-spotcheck.md@b1ca23a097b4680301a8fa5b66816ac0b3c5d49b",
+    "rechecks": "Step-1 all PASS: report committed by lane identity (fleet c5b1ea7aa0e8), SHONEN heading with four [~] lines, cited hashes 62b4777138ef/ebaf9856fa77/a4d8871518f3/ed26680d4210 all ancestors of master, local=remote=origin=ed26680d42103c7a7faf307d5188fe31cc11a96e, round work exactly 62b47771..ed26680d (3 commits). ALL THREE CLAIMS RE-MEASURED by the verifier from committed bytes. C1: before greps 0/0 at base, 7/5 at a4d88715; census selftest run by verifier WIN_CENSUS_SELFTEST PASS (25 cases, 25 passed, 0 failed) rc 0; receipt-mode live run from committed blob rc 1 with receipt_run=1/budget_s=120/rc=1; D7 leg executed by verifier at --budget 420 (approx 424 s) RECHECK_DRIFT PASS 12 rows 10 match + 2 doc rows 0 DRIFT rc 0 (verifier partial 13 PASS vs lane 18 - the declared wall-clock variant; rc-124/0-FAIL/no-summary predicate held). C2: cat-file -e at base rc 128; verifier executed committed recheck-services-r56.sh RECHECK_SERVICES PASS (12 rows, 12 match, 0 drift) rc 0 - the 12/12 and 0-drift claims confirmed by execution. C3: config-plane absent at base rc 128, 4 T-rows at a4d88715, SOURCES 265->267 re-measured with 0 malformed; gates re-run by verifier: knowledge-header PASS 72/0 at a4d88715 AND ed26680d, registry-coverage PASS 94/94/0 at a4d88715, SCORECARD uniqueness ok rc 0 on committed tip blob. Repairs: R1 verified (58 exact at 62b47771 via the correction block's command; GR glob 17 = 16 bound + R52CritGR2Host, CritGR1b/CritGR3b absent, consistent with r52 c1-final.json seats_ok 16 verdict FAIL predicate ==18); R2 r55 lesson change purely additive; R3 scratch r55 absent, lane scratch deleted before finish; R4 census validate re-run by verifier exit 0 with 42 W04 (no growth, no E-code). R56-STALE-DRAFT restoration byte-identical: on-disk recheck-drift-r54.sh sha256 6dbeb1b4... == committed blob at a4d88715 (unchanged to tip); restored > \"$receipt\" write + exit-2 path present. Axis harm: SCORECARD diff 147 insertions 0 deletions (pure append), ordinals 8/9/9/9/9/8 unchanged, SHONEN/PROVINCE/QUALITY untouched, README byte-identical base->tip. Discernment spot-check 3/3 agree (S266 + S267 admits re-opened live: quotes verbatim at 22/23 words by wc -w, frontmatter identities match, current-reference sc-failure URL re-confirmed HTTP 404; FRESH-START cohort-resume reject re-derived from committed bytes: L0 tsukuroi|round-53 stands unanswered at l0-questions.md line 229, r50/r51/r52 gate JSONs exact). No exploratory claim. Evidence timestamps precede citing commits. DEFECT (status-neutral, routed): the report/SCORECARD/LOG cite .ufo/waves/round-56/{after,receipts,services-probes}/ as committed 'across all three commits' but the committed tree holds ONLY before/ (2 files) - the other 14 receipt files exist on disk with contents matching every reported value but were never plumbed into a commit; all load-bearing numbers re-derive from committed bytes (this closure re-ran the tools), so status-neutral; the lane must land the 14 files via the plumbing helper next round (same disk-vs-tree class as R56-STALE-DRAFT)."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/tsukuroi-shokunin@ed26680d42103c7a7faf307d5188fe31cc11a96e",
+   "closed_at": "2026-11-01T08:02:56Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (orchestrator watchdog): 2026-10-31T23:19:25-07:00 launch tsukuroi round=56 base=62b4777138ef (zcode run14) | 2026-11-01T00:30:23-07:00 complete tsukuroi round=56 head=ed26680d4210 pushed=True. Step-1 conformance: report committed in fleet repo by tsukuroi-shokunin (c5b1ea7aa0e8); SHONEN heading with four [~] box lines matching repo SHONEN.md, no [x] written; all cited lane commits ancestors of pushed master; prompt carries the full round contract. All three declared claims verify by closure re-measurement (C1 operability receipt/budget instruments, C2 freshness T1-T12 executable pass 12/12 0 drift, C3 depth sourced config plane S266/S267 265->267 rows) - admission bar met, no axis harmed (SCORECARD append-only 147/0, ordinals unchanged). Defects (status-neutral): (1) R56-RECEIPTS-UNCOMMITTED - 14 cited receipt files (.ufo/waves/round-56/{after,receipts,services-probes}/) exist on disk but not in the committed tree; routed: lane commits them next round. Routed carried items (unchanged): operator-gated L0 tsukuroi|round-53 (wave-dispatch surface) decides the counted-cohort depth resume; round-1 kaidoku/revenger scope L0 stands; whole-SKILL SHONEN verification still owed to a non-author outside the lane (operator's call - SHONEN boxes remain fully [~], correctly uncheckable by the author). Trends: expansion unchanged (README byte-identical, no capability row), quality improved (24 rows re-verified at 0 failures by verifier execution + latent false instrument claim repaired byte-verified + new sourced entry under 0-finding gates), discernment improved (closure spot-check 3/3 agree on complete sample: both admits re-opened live verbatim + reject re-derived from committed bytes).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
