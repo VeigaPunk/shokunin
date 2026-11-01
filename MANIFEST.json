@@ -36286,6 +36286,51 @@
    "notes": "Dispatch/complete digest (orchestrator watchdog log): 2026-11-01T05:25:39-08:00 launch tameshi round=63 base=0b81e8f57562 (zcode run14); 2026-11-01T08:15:19-08:00 complete tameshi round=63 head=e9673d2ddfa3 pushed=True. Status ok (real report, step-1 clean); round ADMITTED: both claims re-measured green by the non-author closure verifier (C1 calibration instrument selftest + real-pair red/green; C2 operability guard RED lost=13 at 8616d47 -> GREEN 64/64 lost=0 ok at both floors at the tip) and no owned axis harmed. Defects: none routed. Status-neutral observations: (1) the 13 r63-created ledger entries carry rekey_round=61 (run-book generation id shared with the 36 r61-created entries; read_rev 8616d47 distinguishes the batch) - no round-attribution error implied, a batch/run-id field would read clearer; (2) the r63 lesson Gate carried no fresh rejected source row (only the S294 admit) - the verifier's reject sample used the standing S293 rejection the Gate cites plus the considerthese proposal-1 price-out, both agreed. Disclosed items verified honest: the mid-file SCORECARD capability-row insertion (verbatim_prefix=false at tip, normalized-clean, disclosed in CLOSURE-PREP) and the in-place SOURCES round-61-note count repair '12 words'->'8 tokens' (prose note, logged old->new, the r62 RD4 site - correctly measures norm_cr_old_only=1, exit 1, on the append-only instrument, and is disclosed as such). SHONEN.md unchanged, four [~] lane-asserted boxes, no independent promotion verifier on record - operator may want to schedule the promotion review. r60 L0 question (option (b)) stands open and unanswered, as disclosed. Routed items: none. Carried: considerthese 2026-10-28 proposal 1 cited-receipt-exists half remains proposal.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 81,
+   "date": "2026-11-01",
+   "type": "closure",
+   "lane": "kotodama",
+   "lane_round": 81,
+   "lanes": {
+    "kotodama": "ok"
+   },
+   "lane_rounds": {
+    "kotodama": 81
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [
+    "orphaned-evidence sweep",
+    "W2 mutation re-run",
+    "replace-ref fixture builder"
+   ],
+   "report": ".ufo/reports/round-81/kotodama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kotodama-shokunin/corpus/lessons/round-81-verifier-spotcheck.md@c285b2afb19d4b64320e18df1f55e426bf2d0b0c",
+    "rechecks": "All three claims re-derived by the closure judge on this host. Conformance: report committed by lane identity (fleet f84c495e, kotodama@shokunin.local), SHONEN heading + four [~] boxes, 12/12 cited lane commits ancestral to refs/heads/main, origin main == d89c96b6eef853ff5ae2d8ed5dba99d8557f1ea4 (pushed), work inside 1c0e3d4d712d..d89c96b6. O: extracted generator/builder bytes hash-match the frozen pins (048f1c74/aaefc366); accept-o81 re-run at lands=freeze=d583ccae -> ACCEPT-O-81 PASS legs=6/6 exit 0 (W2-RERUN PASS 5/5 clean-green-first and REPLACEREFS-FIXTURE old PASS pairs=1 / hardened REFUSED re-derived live); selftest 6/6 re-run. C: tool bytes match pin e99658df; checker selftest 11/11 re-run; live red run re-derives exactly the 3 frozen ORPHAN-ABSENT orphans exit 1; synthetic green demo exit 0 / red demo exit 1; red-before orphan-sweep-red.txt kept (3/510/103, landed first in 316641d8); counter graded PASS 6/6 at its lands c9dd27a1 (evidence-verified) with selftest 6/6 re-run at counter sha d77aa100; dispositions verified against round-68 report prose, the r79 S884 correction and the r63 split receipts. D: accept-d81 re-run at lands=freeze=d583ccae -> PASS legs=7/7 exit 0; knowledge files 254->255 and SOURCES rows 824->827 re-measured (ordeal/judicial-proof sweeps 0 at base); pinned lint re-run prints CITED-LINES: 0 finding(s); selftest 5/5 re-run; S901 and S903 re-opened live (HTTP 200, byte sizes identical to captures, located quotes found); EB11 Coin probed and confirmed a stub, upholding that reject. Re-freeze d583ccae and counter-r2 c9dd27a1 disclosures verified: red-befores lands-c81-graded-r1-TOOL-marker.txt (FAIL 4/6, marker) and lands-c81-graded-r2.txt (REDRUN exit 2) kept; diffs are exactly the marker correction and the one-line argv fix, no predicate moved. Failed first census end preserved as R81-M5 (census-end.txt exit 1 kept beside green census-end-r2.txt); do-nothing controls refuse at base exit 2; 7 junk landings each FAIL on their named leg; census validate exit 0 (ok, pre-existing W01 warnings only). Axis harm: SCORECARD diff adds only (3 capability rows + round-81 section); PROVINCE/SKILL/SHONEN untouched across the range. Routed status-neutral defect R81-V1: the accept-c81 REDRUN leg pins the live sweep summary counts (510 paths/103 reports) which aged at closure to 522/104 with the byte-identical orphan set - the round's own fleet report (104th doc) added 12 committed citations after the lane's graded r3 run; next C-shaped counter should pin orphan set + exit code rather than the population counts. SHONEN note for operator: all four boxes look fully checkable by a non-author on committed bytes (promotion review may proceed)."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kotodama-shokunin@d89c96b6eef853ff5ae2d8ed5dba99d8557f1ea4",
+   "closed_at": "2026-11-01T17:38:18Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 2026-11-01T03:40:33-08:00 launch kotodama round=81 base=1c0e3d4d712d (zcode run14); 2026-11-01T08:06:41-08:00 complete kotodama round=81 head=d89c96b6eef8 pushed=True. Fresh-start round after r76/r77/r78 rejected honest stops: dispositions spot-checked on committed bytes before declaring (r76 FAIL receipt, r77 Gate=0, r78 S884 bound by r79 correction), six ruled-out candidates named. All four r80 carry-in items executed (1+2 as claim O, 4 as claim C + records first in 316641d8; item 3 routed around the open round-11 L0 freshness pause - operator item still owed). Claims: O operability (W2 mutants generator + replace-ref builder committed, m1/m3 byte-exact r80 shas), C calibration capability acquisition (tools/check-orphan-evidence.py; standing red monitor, 3 disclosed orphans, zero landable, nothing fabricated), D depth (ordeal-judicial-proof-rituals.md, 255th knowledge file, S901 Lea A / S902 Millingen A / S903 EB11 Ordeal B, rows 824->827). Honest-failure records verified preserved: R81-M1 frozen-marker over-spec (re-freeze d583ccae, red-before kept), R81-M2 REDRUN argv bug (counter r2 c9dd27a1, red-before kept), R81-M3/M4 battery defects (self-recorded), R81-M5 the failed first census end (census-end.txt E12 exit 1 kept, green r2 beside it) - nothing laundered. Defects: none bar admission. Routed (status-neutral): R81-V1 REDRUN summary-count pin not replayable at closure (orphan set re-derives exactly; fix the pin shape next C counter). Operator notes: all four SHONEN boxes look fully checkable by a non-author; round-11 L0 freshness pause remains the open operator decision; scratch dir emptied by the lane (verified empty).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
