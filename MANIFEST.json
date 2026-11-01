@@ -34994,6 +34994,47 @@
    "notes": "Dispatch/complete digest (watchdog.log, verified verbatim): 2026-10-31T23:38:34-07:00 launch kaidoku round=55 base=79421b757f36 (zcode run14); 2026-11-01T01:21:49-07:00 complete kaidoku round=55 head=e601d8caffd7 pushed=True. Both declared claims verify by the verifier's own measurements and no axis is harmed, so the lane-round is ok/admitted despite the round's disclosed process defects. History ruling: the disclosed garbage commit 29a7477b that reached origin was recovered exactly as claimed — pushed history linear (no force-push), garbage commit retained as an ancestor, five replayed commits on top of it, stray C: subtree removed by a later content commit, orphan-sha citations corrected by appended blocks and the corrections-ledger round-55/correction-1 row. Status-neutral defects (routed, none bars admission): (1) prose precision — the report and lesson M55-2 say 'four files landed under a C: tree directory' but the pushed commit's C: subtree contains only empty directory trees, zero blobs, and the intended paths are absent at that commit; a one-line wording correction is owed next round; (2) frozen atom T2 named the r54 tip-gate receipt among 'freeze receipts committed' though the freeze commit silently dropped it (M55-4, disclosed, receipt landed at 627a9c20, LOG correction appended); (3) corrections-pin.py docstring says the red demo names 'line 2' while the actual finding and every receipt say line 29 — stale docstring prose, fix with a re-pin next revision; (4) the closure contract's literal census command exits 2 on this host because default discovery expects <fleet-root>/kaidoku-shokunin/ while the lane repo is mapped at fleet/shokunin-reverse-engineering — operator-side mapping note; the host-adapted explicit-dir validate exits 0 with the same 19 standing W04 the committed receipts carry (W04 stays named debt); (5) pin-green-demo.txt frozen at --rev 79421b75 vs the report's described --rev 627a9c20 — both verify clean. SHONEN: all four boxes remain [~] with resolvable pointers and now look fully checkable by a non-author — flagged for the operator; this verifier wrote no [x]. No promotions, no mints, no exploratory claims this round (both claims are counted measurements).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 67,
+   "date": "2026-11-01",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 67,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 67
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "freshness": "improved",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-67/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kake-shokunin/corpus/lessons/round-67-verifier-spotcheck.md@396128196ffb1c3184a6dc4491da1e5612a3b425",
+    "rechecks": "C1 re-measured at tip a6cb7efa with the worker's stated command (python -B .ufo/waves/round-66/c66_gate_status_hostportable.py --root . --revision a6cb7efa... --jobs 6): members=28 evaluated=28 mismatches=10 structural=0 agreement=18 scores_held=3/3 met=True exit 0, per-row pattern matching the committed receipts (c58_receipt_rewrites e_T=0 ok; five host-bound rows live_not_green); all six direct-run adjudication receipts read and verified (c56 Store-stub rc 9009 with alias non-rescue and PYTHONUTF8 differential refutation; c57 selftest 10/72 with fixture lanes silent exit 1 and G4/G5 green; c58 events=25 undisclosed=6 backfill plus self-caught red-before/green-after pair b569bb63 -> 4b03efe1 events=26 met=True; c58/c59 OSError on NTFS-forbidden fixture a\"b.md; c59 normpath rc128-vs-0 over all 23 pointers, mismatches=45); C2 re-measured (SKILL greps 0->1 and 0->1, section at line 1379 below the 935 bound, file 1377->1396, single additions-only hunk, zero relabels, members=28 structural=0); C3 re-measured (publish-queue grep 0->1; seven probe files; digests byte-verified 612B/72B/5995B; live GET re-opens of ufo-fsd.kimi.pro and statics.kimi.ai preview-404 agree); no-harm: zero deletions 6ff73edd..a6cb7efa, SCORECARD append-only settlement with all scores held, LOG/SOURCES append-only, disclosed index garbage absent from pushed history (r65 files present in tip tree); discernment: 2 admits + 2 rejects sampled and re-opened with agree, S434 row re-opened live and in retained body (67,904B sha256 8e7f3450...031f1d, quote verbatim), census validate 16 W04 + kake ok exit 0, SOURCES 171->172. Defects (status-neutral, routed): report header cites b569bb638 which is not a valid object (one-char drift for settlement commit b569bb63a8bc..., an ancestor, correctly cited as b569bb63 elsewhere in the same report); ledger wording count re-measures 5->2 at every revision from 099923320..tip (c55 out-of-scope match + the round's own c56 row whose REFUTED sentence self-matches 'candidate mechanism') while LOG/SCORECARD/lesson and controls/greps-after-r67.txt say 5->1 and that receipt's described c56-row rewording never landed (D1-class count drift surviving the round's own correction); Gate quote word-count labels drift (S133 10 actual vs 11 claimed; S434 26 actual vs 16 claimed, marginally over the 25-word cap)."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kake-shokunin@a6cb7efa5d330bc58d00c48f9f4cab0d529dee0a",
+   "closed_at": "2026-11-01T09:14:42Z",
+   "campaign": "hyaku",
+   "notes": "Lane tip pushed (local == origin/master == a6cb7efa5d330bc58d00c48f9f4cab0d529dee0a); report committed by lane identity kake-shokunin at fleet f91f031e0121f16687fce951d41bee4720d260ca with SHONEN heading (no [x] claimed, correct); all round-67 work in 6ff73edd..a6cb7efa (five lane-authored commits). C1/C2/C3 all verify; no axis harmed; scores honestly held (2/10/10). Contract K1-K5 held: zero relabels, c58 green only via disclosed real debt with command exit 0 at recorded revision, structural=0/evaluated=28/scores 3/3, sidecar-bound SKILL lines untouched, agreement reported never gated. Fresh-start duty honored and disclosed as stale (r65/r66 admitted since). Defects named in the spotcheck (D-1 hash-citation typo; D-2 surviving 5->2-vs-5->1 count drift with a non-reproducing receipt line; D-3 quote-label drifts) are status-neutral conformance items routed to round 68. Routed operator items: three proven versioned counter repairs (c56 python3 binding, c59 normpath v3, NTFS-safe fixture names) via kake round-67 L0 question (open, routed around); L2 dispatch surface still absent (kake round-65 L0 stands); SHONEN box 2 evidence re-derived by this non-author and checkable -- operator may rule on [x]/promotion. Frozen counter bytes untouched; no publishing/deploy action; probes GET-only; census exit 0 at round end.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
