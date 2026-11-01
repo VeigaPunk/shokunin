@@ -35623,6 +35623,44 @@
    "notes": "Digest: launch 2026-11-01T01:50:00-08:00 mori round=67 base=8470a025f94f (zcode run14); complete 2026-11-01T03:21:08-08:00 head=eed7272fc17d pushed=True (watchdog log corroborated by closure). Range 8470a025..eed7272f = 16 files +6083/-44, exactly as reported. Step-1 conformance clean (lane-identity report commit 14ac41123654392ebfcbec4dc69ab9fc89fae156; SHONEN heading present; all cited hashes exist and are ancestral; local master == origin master). C1 depth verified met re-measured (second vendor churn grammar taught from the vendor's own r65-recorded redeploy signature; live A/B reproduced by closure ~1h after the lane's runs, same body hashes); C2 operability verified met re-measured (from-sweep 17/17 with the single intended S241 flip; every r66 standing class reproduced). Defects (status-neutral): (1) s241-assetchurn-live-r67.txt heading 'live run at the FINAL bytes 2026-11-01T10:30:24Z' sits above the reproduced run's output block (run-start 10:36:28Z) - the first post-fix run's own raw output block is not separately quoted in the receipt (evidence unaffected; both runs independently reproduced by closure); route: lane, label each receipt block with its own run-start next round. No other defects. Routed/open (correctly routed around, never treated as answered): r65 L0 SKILL:905 python3 naming stays open for the operator (python3 Store stub rc 49 confirmed by closure); mori|round-65 instrument-change L0 and mori|round-62 dispatch-surface L0 stand open; considerthese 2026-10-26 suggestion 1 (pin-check mismatch split) held behind the instrument-change ruling, not adopted - correct. SHONEN.md boxes all [~] with resolvable pointers; boxes 2-3 are resolvable by a non-author from the committed receipts (this closure re-ran the underlying evidence) - [x] remains for the operator's promotion review. FRESH-START duty performed with own receipts; frozen r61 counter re-derivation re-run by closure (C2=unmet, rc 1, same verdict). No exploratory claim declared. Live-surface note: S241 build id unchanged between the lane's fetch and closure's (~1h); grammar is moment-bound by design - a future vendor redeploy must reclassify asset-churn, not content-drift.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 49,
+   "date": "2026-11-01",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 49,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 49
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "unchanged",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-49/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/shokunin-repo-hygiene/corpus/lessons/round-49-verifier-spotcheck.md@5f921fe261770b68266793c767d35a56758536c5",
+    "rechecks": "C1 re-measured end-to-end by the verifier's own runs, not from lane receipts alone: raw freeze-check selftest on base bytes SELFTEST cases=41 pass=4 fail=37 exit 1, on tip bytes 41/41 exit 0 (both reproduced); base->tip tool diff independently recomputed as exactly 2 hunks (fixture-writer + docstring), verdict code byte-identical, blob shas match the committed diff receipt (f7f54e8f...9999 -> d1ca06fd...a364); r49 counter re-run at BOTH revisions with a byte-identical instrument (sha256 194df28cf... at 445321aa and 7836df3e, matching the preregistration-r2 pin) -> base: SUMMARY selftest=FAIL patches=0/3 real=ok retro=red retro_clean=ok tool_sha=f7f54e8f0a71 exit 1; tip: SUMMARY selftest=ok patches=3/3 real=ok retro=red retro_clean=ok tool_sha=d1ca06fd0fb2 exit 0; real/retro/retro_clean legs identical both ends (verdict path unchanged); freeze-check verdicts reproduced at both freezes (attempt-1: FINDING C1 CONTROL-NOT-RED, claims=1 findings=1, exit 1; tip over preregistration-r2: claims=1 findings=0, exit 0). Freeze discipline verified: attempt 2 (445321aa, 10:31:04Z) adds exactly preregistration-r2 + control-r2 and modifies nothing; every after-data receipt first appears in the content commit f86a5103 (10:47:03Z) after the supersede; attempt-1 files byte-identical (same blob ids) at 445321aa and tip; CONTROL-NOT-RED mined as lesson round-49 Mistakes row 2; frozen files unchanged post-freeze; population digest matches pin (2e4bc727...). No axis harmed: SCORECARD diff purely additive (scores 7/8/8 unchanged), PROVINCE.md untouched, LOG/SOURCES/lessons append-only; SOURCES rows 195->196 and W04 58->59 (+1 = S272 shared functions.html URL, disclosed) re-counted by the verifier. Discernment spot-checks re-opened live: S272 admit agree (live page sha256-identical to capture ece1c4b3...e00701a, located quote verbatim, 23 words <= 25); S267 standing rejection agree (comparison sentence verbatim, zero 'factual', rejection reason holds); S271 erratum recount 16 words. Census: contract conf-form rc 2 = the known disclosed host mismatch (carried, L0 round-48, operator-owned); explicit-directory form exit 0, 59 W04, registry ok, matching census-after.txt (ADAPTER-EXIT=0), as the r48 closure also ruled."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/shokunin-repo-hygiene@7836df3e50538598f245ce3823d979de2992eb73",
+   "closed_at": "2026-11-01T12:23:14Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (orchestrator watchdog): 2026-11-01T01:22:08-08:00 launch souji round=49 base=5a26fbfd5b0f (zcode run14) | 2026-11-01T03:13:09-08:00 complete souji round=49 head=7836df3e5053 pushed=True. Conformance clean: report committed by lane identity (souji-shokunin 573e9499, timestamp matches the complete digest), SHONEN heading present with four [~] boxes and no [x], all cited lane commits exist and are ancestors of master, local master == origin master at 7836df3e, the range 5a26fbfd..7836df3e holds exactly the four reported lane commits. One declared claim (C1, calibration 7, instrument repair, not a capability acquisition) verified end-to-end; the r45 different-instrument limit does not apply (counter bytes identical both arms, verified at sha256 level). Defects (status-neutral, in notes): (1) the S267 re-open receipt's 'zero occurrences of histor*' wording is exact for the page's content but not its raw bytes (one footer boilerplate occurrence, 'History and License' link) — decision unaffected, S267 stays rejected; if the class recurs, name the counting method next time; (2) census conf-form rc 2 on this host is the known disclosed host-vs-contract mismatch, carried operator-owned at L0 round-48, round-end exit 0 held through the documented dir-form/adapter path (same ruling as the r48 closure). Routed to the lane: none new beyond defect (1). Notes for the operator: all four SHONEN boxes carry [~] with resolvable evidence pointers and look fully checkable by a non-author from the committed artifacts (the verifier re-derived box 3's self-contained prereg/counter/controls this session without oral context); this verifier wrote no [x] — flagging for the promotion review. No wave dispatched (no dispatch surface on this host; dispatched=0 disclosed; standing L0 questions routed around). Holds unchanged: certification OFF, K5 HELD, NAMESPACE/reap holds.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
