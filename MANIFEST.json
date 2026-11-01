@@ -34954,6 +34954,46 @@
    "notes": "All three claims verify; no axis harmed; admitted. Defects (status-neutral, routed to the lane for round 62): (1) number-drift in the report's Landed-changes table — actual numstat LOG.md +64 (reported +52), PROVINCE.md +19 (reported +13), SKILL.md +55 (reported +50); totals correct; correct append-only beside the filed bytes; (2) nit: the r60 correction block names section '-- navigation counter --' where the real header is '-- navigation counter (SCORECARD fence, python for python3) --' (still resolves). Standing, operator-side: MISSION L2 dispatch floor has no surface on this host (disclosed since r57, L0 open, routed around, never treated as answered); four mado L0 questions (r57 freshness rubric, r58 gate selftest, r59 calibration resolved-active, r60 screen-capture scope) remain open and correctly un-answered lane-side. SHONEN: all four boxes [~] self-asserted, no [x] written by the lane (correct); boxes 2-3 now carry non-author-executed evidence from this closure that a promotion review may cite. Security boundary held: no r56-era credential material opened or surfaced by the round or the closure; counts only.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 55,
+   "date": "2026-11-01",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 55,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 55
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "unchanged",
+    "depth": "improved",
+    "calibration": "improved"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "corrections-ledger mechanical pin (tools/round-55/corrections-pin.py) — refuses in-place edit/deletion/mid-insert/header change of an append-only TSV ledger read at two revisions from git objects; selftest 11/0, green demo clean, red demo exit 1 row_edited line 29 round-53 on the lane's own historical r53 edit, re-run by the closure verifier"
+   ],
+   "report": ".ufo/reports/round-55/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/shokunin-reverse-engineering/corpus/lessons/round-55-verifier-spotcheck.md@fe3a804fa8c2d5ff078c6253a5df1bdbc2f28fca",
+    "rechecks": "Conformance: report landed by lane identity (kaidoku-shokunin, fleet commit a8d55ae1); SHONEN heading with four [~] lines; all 15 cited revisions exist and are ancestors of main; local main == origin/main == ls-remote == e601d8caffd7; watchdog digest verbatim (launch 2026-10-31T23:38:34-07:00, complete 2026-11-01T01:21:49-07:00). History hard rule: pushed chain 79421b75 -> 29a7477b -> c191d8df -> 1f9be6eb -> fa4cd11 -> 627a9c20 -> d79e630d -> 6742d3f7 -> 5c9fc48b -> e601d8ca is fully linear (zero merges, every push a fast-forward — no force-push); the garbage commit 29a7477b is an ancestor and its stray C: tree was removed by a content commit (6742d3f7 D C:), never a rewrite; the replayed commits sit directly on 29a7477b; the orphaned first-chain shas (23f746f3/622b8e38/765118a4/e21be31a/25b5b256) are non-ancestors, cited only inside appended correction blocks. Re-measured by the verifier: C1 0/4 at base -> 4/4 at the landing (tip-gate receipt present, exit 0, disclosures exact 29/29, stray [], round-54 row CLEAN; corrections block names both instruments; v6 probe selftest 5/0 and digest 946e5359...d204bcc 23 lines 8961 bytes identical at 45c68786/c753b24f/90f3a9b9/627a9c20 AND the tip; QUALITY row 101 present); C2 selftest 11/0, green demo exit 0 (rows 2, appended 0), red demo exit 1 row_edited line 29 round-53 — all run by the verifier at the pinned bytes (sha256 f71e6b21/22785c1e verified against the container pins); SKILL registry 0->1, SCORECARD capability row entered; SOURCES 161->162 (S255 only); S255 quote re-opened live and in the sha256-pinned snapshot; census validate exit 0, lane ok, 19 standing W04 matching the committed receipts (the contract's literal command exits 2 on this host: the lane repo is mapped at fleet/shokunin-reverse-engineering, so the host-adapted explicit-dir run was used — the lane disclosed this); no-harm numstat SCORECARD 117/0, LOG 44/0, SKILL 2/0, SOURCES 1/0, PROVINCE diff empty, owned-axes rows byte-equal. Evidence-verified (not executed, per protocol): the four R29 freeze-gate runs via their committed receipts (landing fa4cd11: exit 0, 30/30 exact, round-55 CLEAN; record tip d79e630d and post-correction 5c9fc48b receipts content-checked)."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/shokunin-reverse-engineering@e601d8caffd7fbf607fa6b1d7672e521cd680214",
+   "closed_at": "2026-11-01T09:06:29Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (watchdog.log, verified verbatim): 2026-10-31T23:38:34-07:00 launch kaidoku round=55 base=79421b757f36 (zcode run14); 2026-11-01T01:21:49-07:00 complete kaidoku round=55 head=e601d8caffd7 pushed=True. Both declared claims verify by the verifier's own measurements and no axis is harmed, so the lane-round is ok/admitted despite the round's disclosed process defects. History ruling: the disclosed garbage commit 29a7477b that reached origin was recovered exactly as claimed — pushed history linear (no force-push), garbage commit retained as an ancestor, five replayed commits on top of it, stray C: subtree removed by a later content commit, orphan-sha citations corrected by appended blocks and the corrections-ledger round-55/correction-1 row. Status-neutral defects (routed, none bars admission): (1) prose precision — the report and lesson M55-2 say 'four files landed under a C: tree directory' but the pushed commit's C: subtree contains only empty directory trees, zero blobs, and the intended paths are absent at that commit; a one-line wording correction is owed next round; (2) frozen atom T2 named the r54 tip-gate receipt among 'freeze receipts committed' though the freeze commit silently dropped it (M55-4, disclosed, receipt landed at 627a9c20, LOG correction appended); (3) corrections-pin.py docstring says the red demo names 'line 2' while the actual finding and every receipt say line 29 — stale docstring prose, fix with a re-pin next revision; (4) the closure contract's literal census command exits 2 on this host because default discovery expects <fleet-root>/kaidoku-shokunin/ while the lane repo is mapped at fleet/shokunin-reverse-engineering — operator-side mapping note; the host-adapted explicit-dir validate exits 0 with the same 19 standing W04 the committed receipts carry (W04 stays named debt); (5) pin-green-demo.txt frozen at --rev 79421b75 vs the report's described --rev 627a9c20 — both verify clean. SHONEN: all four boxes remain [~] with resolvable pointers and now look fully checkable by a non-author — flagged for the operator; this verifier wrote no [x]. No promotions, no mints, no exploratory claims this round (both claims are counted measurements).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
