@@ -36114,6 +36114,49 @@
    "notes": "Dispatch/complete digest (watchdog.log lines 179/216): 2026-11-01T03:35:28-08:00 launch kotoba round=83 base=4c95c456778b (zcode run14); 2026-11-01T06:43:43-08:00 complete kotoba round=83 head=9f203ce8e1ff pushed=True. Report committed by lane identity at fleet b8720b8; SHONEN heading present with four [~] assertions; all cited lane commits (84c2963, 815bb5d, 63c7d43, d84c7c8) exist and are ancestors of master; local master == origin master == 9f203ce8e1ff. Both claims verified, no axis harmed (operability improved via C1, freshness improved via C2, all others unchanged; expansion unchanged - capabilities table, PROVINCE and knowledge/ untouched). Routed defect R83-V1 (to lane, next round, status-neutral): committed receipt .ufo/waves/round-83/receipts/r83-counter-base.txt reads '2 of 6' with d2-anchor-consistency FAIL, contradicting its own header ('must score exactly 3 of 6'), the report/lesson claims, and this judge's re-run of the frozen tip counter at the pinned base (3 of 6, exit 1) - a stale development-era capture that must be regenerated from the frozen counter; the claim itself reproduces. Note R83-V2 (status-neutral): lane tip commit 9f203ce (Q68 report-pointer receipt) landed after the report's cited head d84c7c8 and is not in the report's Landed changes; all cited hashes are ancestors at closure. Watch item R83-V3 (self-mined by the lane): the real WinError-32 intake receipt was overwritten by the retry before landing; the lane's going-forward rule (before-receipt lands first, attempt-numbered retry names) should be verified next time the class recurs. Operator note: all four SHONEN.md boxes are [~] author assertions whose underlying evidence this non-author judge verified from outside (registry row + counters 0/20 and 0/74 run; LOG end-to-end entries with committed receipts; PROVINCE unchanged + read-only sibling bound) - boxes look fully checkable by a non-author; per duty no [x] was written and the operator may proceed to the promotion review. L0: the all-axes vs owned-axes lowest-axis two-readings question stays open and was routed around consistently with the r82 closure precedent; C2 satisfies the obligation under the reading of record. Discernment spot-check: agrees on sampled admits S252/S253 (byte-identical refetches, located <=25-word quotes) and the sampled reject (build_sandbox rule-out, all three evidence legs re-verified); SOURCES rejections none, consistent with the census.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 68,
+   "date": "2026-11-01",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 68,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 68
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "Per-response separation receipt (tools/mori-ua-variance.py) — separates per-response tokens from stable chrome on a bot-managed page's instrument-UA body by same-UA A/A fetches; counts and shapes only, token values never emitted (selftest arm token_value_never_emitted); first-working 68"
+   ],
+   "report": ".ufo/reports/round-68/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/mori-shokunin/corpus/lessons/round-68-verifier-spotcheck.md@c53dd7895b3e4a7391215972dc4e4d83f78b4b08",
+    "rechecks": "Step-1 conformance clean (lane-identity report commit bb1b0057; SHONEN heading 4/4 [~]; all 6 cited lane hashes exist and are ancestors of refs/heads/master; local master == ls-remote origin at 4fce1404e3f7, ahead=0; range = 1 commit, 19 files +1296/-2 as reported; evidence timestamps at-or-before commit). C1 RE-MEASURED: QUALITY 160 grep 0 rc 1 at base -> 1 at tip (158/159 unchanged); r67 receipt's disagreeing timestamps re-verified in committed bytes (heading 10:30:24Z vs block run-start=10:36:28Z) so the criterion is able to fail; erratum sweep re-run at base (10:30:25Z only as cited values, no raw block — NOT CAPTURED disclosure accurate); fresh two-run reproduction re-run by closure at the tip bytes (asset-churn rc 0 at 15:27:46Z and 15:27:47Z; computed label check headings=2 self-labeled=2 mismatch=0). C2 RE-MEASURED: selftest MORI_UA_VARIANCE_SELFTEST PASS (6 cases) rc 0 x3 at tip bytes incl. the redaction arm and both able-to-fail arms; live S241 A/A re-run rc 0 (verifier window ~15 min saw no rotation: per-response=0 stable=1499 stable-not-in-pin=4 twice; shapes-only re-derivation found the pin-absent lines at exactly 163/211/218/1498 with /static/assets/ at 163+211 and the </head>-carrying line at 218 len 158, corroborating the committed receipt's geometry incl. the SECOND per-response position 1498; the receipt's own shapes are internally consistent: per-response=4 stable=1497 stable-not-in-pin=2 lines 1499/1499/1499, two distinct capture digests); token values never emitted (selftest-enforced + compare output inspected). Orphan sweep 3/20 samples re-derived (r28 deliberate withholding, r23 documented withdrawal by 0d8f2d50 with falsification retained, kama sibling tool) — NOTHING TO LAND holds. Census validator re-run rc 0 'mori ok' (tolerated W04 class only). S579 admit re-opened live (curl rc 0, byte-identical to pin sha 41b601f1, 14127 bytes; quotes at :49/:50 = 14+14 words, heading :48, third quote :56). SOURCES 351 -> 352 re-counted. No axis harmed: axis rows byte-identical base vs tip; SCORECARD/QUALITY/SOURCES/LOG diffs append-only; frozen set sha256-identical (SKILL 01556f056cd7, sweep eb5affa188b5, adjudicator ed3cabd0b53f, PROVINCE 2af29312d287, AGENTS f64e332c73e5, corpus/README fbe94947b590); standing battery evidence-verified green on the committed receipt (register 12/12, settlement 10/10, vote-bind 16/16, pin-check 125/125, adjudicate 5/5, recheck 10/10), not re-executed."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/mori-shokunin@4fce1404e3f7bd08c1a564a5ded659a00e1eb384",
+   "closed_at": "2026-11-01T15:54:58Z",
+   "campaign": "hyaku",
+   "notes": "Digest: launch 2026-11-01T04:20:40-08:00 mori round=68 base=8440cf6c035a (zcode run14); complete 2026-11-01T06:56:50-08:00 head=4fce1404e3f7 pushed=True (watchdog digest corroborated by closure; lane commit authored 14:50:51Z, report landed last at 14:56:52Z). Both claims re-measured met by the non-author closure (not evidence-verified only); no axis harmed; admitted. Fresh-start duty discharged with own receipts (frozen r61 counter re-derived C2=unmet rc 1 — closure re-ran it, same verdict; r59/r60 evidence PRESENT and ancestral). Do-nothing controls verified (QUALITY 160 absent rc 1, tool absent rc 128, S579 row 0 rc 1 at base). Orphaned-evidence sweep conclusion NOTHING TO LAND holds on 3/20 sampled candidates. Defects: none. Status-neutral observations: (1) the per-response serving variance is intermittent — a ~15-minute A/A window can legitimately print per-response=0 (closure observed this), so live ua-variance receipts should keep naming their capture window on the receipt face; the planned round-69 longer-gap A/A is the right next test and re-classes no row; (2) the r65 L0 (python3 naming at SKILL:905, this host's Store stub) and the r62 dispatch-surface L0 remain open for the operator — routed around again, no frozen byte edited, every command used python; (3) considerthese 2026-10-26 suggestion 1 (split pin-check mismatches) remains the one still-unimplemented proposal behind the operator's open instrument-change ruling; (4) SHONEN boxes are all [~] with resolvable pointers and look fully checkable by a non-author — promotion review may write [x]; no lane self-promotion observed. Redaction: closure artifacts carry counts/shapes/digests only; no settings values, session identifiers, session-store paths, or session-record fields; the ua-variance redaction arm (token_value_never_emitted) verified enforced; capture bodies deleted from scratch after verification. This spotcheck file is uncommitted; the orchestrator commits it under the protocol identity and replaces @pending in the spotcheck field with the landed hash.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
