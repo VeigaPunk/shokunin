@@ -34218,6 +34218,47 @@
    "notes": "Recovery round after r65 rejected-honest-stop: both declared claims verify on independent re-derivation and lane-local re-measurement (recovery claims (1) and (2) of the dispatch note both confirmed). Recovery quality: the CR-stripped re-land is byte-clean as claimed (76/3, 0 CR), the falsified census predicate was root-caused to a text-mode fixture defect and repaired red->green with the classifier untouched, and the erratum superseding r65's provenance sentence is accurate (SCORECARD byte-identical across r65 base->tip). Digest: 4 lane commits (762a5c32 re-land, 01bfe8fc AOA fixture repair + PROVINCE pointers + receipts, 1b2584a3 claims record + lesson + S538 + retained source bytes, c5bdc9fd census-end), all lane identity, all ancestors of the pushed tip. Conformance defects (status-neutral): none new; MISSION.md L2 >=8 floor unmet on this host (no dispatch surface; routed around per filed souji round-46 L0 line, never treated as answered) and kama round-65 NTFS-path L0 question still unanswered - both operator-owned carry-overs, named honestly in the report; the round's ## Gate filed zero rejects so the closure's >=1-reject spot-check sample had no candidates (recorded, status-neutral). Routed items for the operator: answering the kama round-65 NTFS L0 question would unblock two refused census arms (test-snapshot missing-dependency, round42-selfdesc-reconcile invalid-path). SHONEN.md: 4x[~] author-asserted with resolvable pointers; all four re-derivable by a non-author from committed bytes (re-derived here) - fully checkable at promotion review. Scores held operability 8 / calibration 7; no capability row entered.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 59,
+   "date": "2026-10-31",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 59,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 59
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "coverage": "improved",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-59/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/mado-shokunin/corpus/lessons/round-59-verifier-spotcheck.md@d1e64880b375529de185f49e124dd6cc42c58e75",
+    "rechecks": "Step-1: report committed by lane identity (fleet 3ed2a220), SHONEN heading present, cited commits 054dcecf/3eb5f5ee/25294ab3 all ancestors of pushed master 25294ab3e426, round range exactly base..tip. C1 re-measured: 4 grep pairs 0->1 (corrections heading, blob 9113c7c05e58, both provenance trios), insertions-only numstat +17/-0, +5/-0, +18/-0; frozen gate blob 9113c7c05e586328f44ed6822a3d12ff34c47a36 (sha256 050efc72..., 4194 L) identical base->tip, tools/ diff empty. C2 re-measured from committed bytes at BOTH revisions: probe at base 6f2e4115 -> CASEFOLD_PROBE BYPASS bypasses=2 rc=1 (C:/DEV/shm ACCEPTED, C:/TMP refused - masking reproduced), probe at tip -> NO-BYPASS bypasses=0 rc=0; selftests 55/55 and 63/63 rc=0; CLI refusals x4 rc=2; home refusal rc=2; host left clean (C:/DEV absent). C3 re-measured: knowledge 73->74, index rows 73->74, SOURCES 341->342, entry 14 rows (4H+6K+4J); navigation counter (fence sha256 8b59b503... matches pin) at tip indexed=74/74 coverage=10.0000/10 exit 0; frozen used-by counter at tip missing=0 TARGET_MET exit 0 (base receipt missing=2 TARGET_MISSED); ledger population=99/99 TARGET_MET rc=0 at tip; DWM probe re-run rc=0 (SERVICES 0, SC_UXSMS_RC=1060, services N/A, hr=0 enabled=True), run1/run2 byte-identical; S405 row re-opened live - quote verbatim, ms.date 2018-07-11, git_commit 40f2250e..., updated_at 2021-11-17, Platforms verbatim, no Win11-labeled sentence (residue real); D01 flip-met reading judged honest (recorded flip quoted verbatim, residue named in five places). Census validate exit 0 (36 W04 + 1 W01 + ok). Spot-check sampled 2 admits + 2 rejects, all agree. Claims re-measured: C1, C2, C3 (all three); D01/S405 source re-opened by the verifier."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/mado-shokunin@25294ab3e426903c18f16ad98db76e5e24147a98",
+   "closed_at": "2026-11-01T05:57:26Z",
+   "campaign": "hyaku",
+   "notes": "Admitted: all three claims verify, no axis harmed. Defects (status-neutral, none bar admission): (1) SCORECARD C1 row parenthetical '(+4/-0, +5/-0)' understates the r57 entry's per-file insertions (+17/-0 at landing: trio +4 + errata +13); report's numbers exact; insertions-only verified true - lane may align append-only next round (same class: lesson trio note '+4/-0 each'). (2) LOG round-59 tail bullet says 'Mined M59-1..M59-3' while lesson and same entry carry M59-1..M59-4 (cosmetic). (3) D01 closed flip-met on a Windows-8-labeled row (S405) against a recorded flip naming 'Win11' - judged honest: flip quoted verbatim, residue (no Win11-labeled sentence) named in entry Scope+section 4, r57 errata, search log, lesson, and report; a future Win11-labeled page strengthens the pin. (4) L2 floor unmet - no AgentSwarm dispatch surface on host, disclosed since r57, L0 open, routed around. (5) Round-start census not tee'd (disclosed; end receipt committed; verifier's own run exit 0, same warning set). SHONEN boxes remain [~] on historical assertions - not [x]-able by a non-author this round (L1-only, no new end-to-end desktop task); operator note only. Security boundary held: no r56-era credential material opened or surfaced by lane or verifier; receipts carry paths/shapes only.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
