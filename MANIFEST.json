@@ -35949,6 +35949,49 @@
    "notes": "kengaku r56 (host move Windows/WSL): C1 operability 8->9 admitted (landed-evidence gate + 3 mutation kills, re-measured); C2 calibration 9->10 admitted (entry-ledger truth across the host move: 17 registry cells + ledger argv corrections, honest red re-declarations with measured fragments, fixture kills attributed, no soundness break; re-declaration discipline, not score inflation); C3 coverage predicate met with score HELD 7 by its own L0 design (S203/S204 maintainer-oracle chain verified at pin 2fd12b88, registry 195->197 census-clean). No owned axis harmed (SCORECARD diff append-only). Step-1 conformance clean: report committed by lane identity 317a12ad, SHONEN heading with 4 [~] boxes (no [x]), all cited commits ancestors in 8db18e23..d834d89d, tip pushed, erratum for r55's 'SKILL.md not modified' verified true (ebb233bc landed SKILL.md +5 after the r55 report), two kengaku|round-56 L0 lines durable at fleet HEAD. SHONEN boxes look fully checkable by a non-author (box-3 cold-run evidence re-demonstrated by this closure) - operator may run the promotion gate; this judge wrote no [x]. Routed defects R56-V1..V4 in the spotcheck; carried open items: round50-c1 population-pin root cause, R56-F1 checker repair as its own frozen claim, L0 L2-surface and ledger-schema-v2 rulings. Marker rule not invoked: report names real committed work and checkable hashes throughout.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 63,
+   "date": "2026-11-01",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 63,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 63
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "tools/mado-win-displayconfig.py (read-only Windows DisplayConfig path/target observer, VERSION r63-v1: getter-only P/Invoke GetDisplayConfigBufferSizes+QueryDisplayConfig, QDC_ONLY_ACTIVE_PATHS with NULL topology; selftest 13/13, live receipts byte-identical x2, --from-file determinism, ERROR rc=2 path, crosscheck 5/5; ledger population 102->103 TARGET_MET; first-working round 63)"
+   ],
+   "report": ".ufo/reports/round-63/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/mado-shokunin/corpus/lessons/round-63-verifier-spotcheck.md@7fe65562c15d20e5cfdc1da536f774149ab52b7e",
+    "rechecks": "All three claims re-measured by the closure verifier at ce7f7673482c58dcdfc9130812e6cd7e3d5f8e39: C1 all six r62 corrections re-derived exactly (numstat 35/+1830/-1 @4fe4544, 34/+1806/-1 @bd06d021, 35/+1860/-1 @df415ef3; receipts 21/+359, wave 23/+466 @4fe4544 and 22/+442 @bd06d021; 20 receipt files @19407ef2; 5 first-parent commits; top_level 161/160 -> 160-170; declaration line 36 S418-S422) with defect bytes preserved (head-254/head-72 diffs vs base empty; Corrections/Errata blocks 0->1). C2 77->78 knowledge files, 77->78 index rows, 360->371 registry rows, entry 19 rows (4H+11K+4J), S424-S434 present; D05 cause [UNK] with residue+flip recorded beside the committed raw-byte receipt (struct sizes + FE-FF-FF-FF frequency fields + 1920/1080 sizes). C3 bytes read first: getter-only surface (two user32 getters, no Set*/Change* verb, DisplayConfigGetDeviceInfo absent), then re-run: selftest 13/13 exit 0; one live receipt byte-identical (cmp) to the committed run1 receipt (rc 0/0, paths=1 flags=1, refresh 64/1, mode table [2,1], sentinel 0xFFFFFFFE, 1920x1080); error path rc=2 re-run; from-file rc=0 re-run on the committed snapshot; crosscheck 5/5 re-run; tool ledger re-run 102@base -> 103@tip TARGET_MET. Both in-round landing defects verified: S430 teaches cell 13->11 at c9a70974->cdacf215 (pipes->slashes only) with the red+green TARGET_MET runs in landing-counters-r63.txt; 24 files in 49b053e8, all 24 confirmed in the tip tree by cat-file -e. Harm watch: 0 deletions in every file of cb442f66..ce7f7673 (39 files +2248/-0 re-derived); census validate exit 0 re-run with the 36 W04 + 1 W01 warning set identical; harmwatch 55/55 + 63/63 and dwm-recheck D04-unchanged receipts evidence-verified. Sources re-opened: S424 (quote verbatim 20 words, ms.date/git_commit/updated_at match) and S431 (SOURCE=1/TARGET=2 confirmed; M63-3 locator event genuine) — agree on all sampled admits (2) and rejects (3). Conformance: report landed by lane identity 0ffe22942 with SHONEN heading; all five cited commits ancestors of master; local==origin at the tip; watchdog digest matches. No conformance defects; SHONEN boxes remain [~] (operator may commission the non-author review for boxes 2 and 3)."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/mado-shokunin@ce7f7673482c58dcdfc9130812e6cd7e3d5f8e39",
+   "closed_at": "2026-11-01T14:17:00Z",
+   "campaign": "hyaku",
+   "notes": "mado r63 admitted: three claims on distinct axes (calibration/coverage/operability), each re-measured green by the non-author closure verifier; no axis harmed (round is pure appends, 0 deletions across 39 files). Landing defects honestly receipted: used-by setup-gate red at c9a70974 (S430 13-cell row) repaired green at cdacf215; receipts directory dropped by the plumbing helper at the landing, all 24 files re-landed at 49b053e8 and confirmed in the tip tree. D05 (target-mode frequency fields reading the undocumented 0xFFFFFFFE sentinel) recorded as honest-unknown [UNK] with residue and flip conditions beside the committed raw-byte receipt; the tool prints vsync=unavailable(0xfffffffe), never a measurement. Security boundary held on both sides: no r56-era credential material opened or surfaced. Status-neutral notes: (1) windisplayconfig-error-path.txt cites an ephemeral fixture (broken-fixture.json) not among the committed receipts — the path is re-derivable and was re-run green (rc=2) by the verifier; (2) four SHONEN boxes remain [~] lane-asserted — boxes 2 (end-to-end task) and 3 (no-oral-context executability) look fully checkable by a non-author now; operator may commission the standing non-author review; this verifier wrote no [x]; (3) standing L0 posture unchanged (omarchy freshness disposal, gate-selftest host gap, calibration resolved-active re-derivability, screen-capture scope, the >=8-L2 dispatch floor) — L1-only round disclosed since r57, routed around, never treated as answered; (4) no exploratory claim this round, so no unprovable-but-better judgment was required. Routed defects: none.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
