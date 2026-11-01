@@ -35076,6 +35076,47 @@
    "notes": "Dispatch/complete digest: 2026-11-01T00:06:38-07:00 launch souji round=48 base=8e17a4b1a8f8 (zcode run14); 2026-11-01T01:32:37-07:00 complete souji round=48 head=7f8433bf pushed=True (watchdog.log lines corroborated verbatim). Two claims, both capability acquisitions, both verified by the non-author verifier's own re-measurement; no axis harmed. Enabling host work verified: Amendment 1 (5ca5001b) landed before any after-data with the prereg blob byte-unchanged (freeze-check findings=0 at all five revs, re-run), the six control-char tolerance never widened (NTFS base/tip receipts count=6; verifier dry-run tolerated=6 at the final tip); mistake 3's empty commit 5fd125bd honestly disclosed, retained, never rewritten, receipts re-landed as 6231642c. Status-neutral defects (recorded in the spotcheck, routed to the lane): (1) tools/souji-freeze-check.py --selftest fails 37/41 on this Windows host as committed — text-mode fixture writes break its literal digest fixtures; binary-mode diagnostic passes 41/41; verdict logic unaffected and no r48 claim rests on that selftest (fix fixture writer next round); (2) S271 quote labeled 17 words, verbatim count 16 (<=25 bound holds); (3) no new reject row in the r48 Gate (one source opened and admitted; standing reject S106 sampled and agreed). Operator note: all four SHONEN.md boxes are [~] lane-asserted and look fully checkable by a non-author verifier; verifier wrote no [x]. L0 carried: round-44 symlink contract, round-46 L2 floor (dispatched=0 again; no dispatch surface on this host), round-46 staged package, new round-48 census conf-name contract-vs-host routing (line 245 of .ufo/l0-questions.md, present on disk). Holds unchanged: certification OFF, K5 HELD, NAMESPACE/reap holds, execution-bound audit attribution open. No promotion, no mint, no cross-lane write.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 47,
+   "date": "2026-11-01",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 47,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 47
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "adjacency": "improved",
+    "operability": "unchanged",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-47/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/tabi-shokunin/corpus/lessons/round-47-verifier-spotcheck.md@8ccf0a82087d950c0ad0fc5d0e4723a4311a1765",
+    "rechecks": "Step-1 all pass (report landed last by tabi-shokunin at fleet d1b3b98c touching only its own path; SHONEN heading + 4 [~]; all 5 cited lane commits exist, are ancestors of master, and lie in b95b5469..dce01d28; local master == origin/master == dce01d280cacfe586c7ec69135d43e7a95faebe6). C1 RE-MEASURED: all six claims.json frozen digests match committed bytes; meter byte-identical freeze->data->correction1->tip (blob 168e1ecc); selftest re-run exit 0 allPass 16/16; live re-run at 524910a9 reads 9 lane-screen findings only on the 8 sibling heads that advanced post-closure (the frozen correction-flow class, not a refutation); with siblings pinned to the correction-1 receipt snapshot the meter's own core re-derives 0 findings over the committed ledgers and all 12 delta-bound heads equal that snapshot. C2 refusal verified: honest verdict file measure/c2-gate-green-at-data.json (verdict=failed, rows=16, verified=5; 6 sibling_unresolved == audit sibling-absent rows 1:1 + 4 ruling_unresolved - fleet/.git absent, verified + 3 quote_too_long 56/32/28w) contradicts the frozen after-state (verified=10, exactly-6 findings); the pre-declared kill rule fired and the claim was refused, not re-declared post-data - the honest path; repair scope re-measured (import + minimalEnv PATH block only, blob 0a24cfec->ac720457), selftest receipt clean 57/57. Carry-in V1/V2/V3 verified in committed bytes (S156 count re-derives 104255 via cat-file -s; corrected entry trio-first with append-only supersession; selfassessment receipt summary line quoted verbatim). Census re-run exit 0 tabi ok, 157 rows, 0 malformed, 0 dup; S157 re-opened from the committed staged copy (59,344 B, sha match, quote verbatim 1-hit, <=25 words). Spot-checks: 3 admits (S156, S157, C1) and 2 rejects (C2-as-frozen, first-green head race) all AGREE. No axis harmed (SCORECARD diff pure append)."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/tabi-shokunin@dce01d280cacfe586c7ec69135d43e7a95faebe6",
+   "closed_at": "2026-11-01T09:22:50Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch 2026-11-01T00:40:23-07:00 launch tabi round=47 base=b95b546949e7 (zcode run14); 01:51:50-07:00 complete tabi round=47 head=dce01d280cac pushed=True. Report committed by tabi-shokunin at fleet d1b3b98c (report last); SHONEN heading present, 4 [~] boxes, no [x] written by closure. Verdicts: C1 adjacency VERIFIED under its frozen predicate (red control exit 1 / 17 findings at round open; green exit 0 / predicate true / 0 findings at correction 524910a9 - re-measured by the closure judge at the bound snapshot after a post-closure head race on 8/12 delta lanes produced only lane-screen-class findings, the frozen correction-flow class); C2 operability REFUSED under its own pre-declared kill rule (honest verdict verified=5 + 7 findings beyond the six absent-sibling vs frozen verified=10 exactly-6; refusal recorded with rationale as lesson Mistake 1, stale-premise; not re-declared post-data - the honest path; the object-level minimalEnv repair is landed at c2711c47, live-verifies exit 2 -> exit 1 evaluated with selftest clean 57/57, and is r48-redeclarable with an honestly-predicted predicate). One claim verifies, one honest refusal, no axis harmed -> rejected-honest-stop. Defects (status-neutral): D1 lesson prose mislists one quote_too_long row ('kama :355' for kake SKILL.md:697; the verdict file is authoritative) - routed: r48 append-only erratum naming the superseded text; D2 d76eb5bb commit message named the C2 repair while its gate blob was pre-repair (0a24cfec) - self-disclosed as Mistake 2, corrected by c2711c47, stays on record. Routed next-round duties: re-bind both adjacency ledgers at r48's own fresh snapshot before any meter verdict (8/12 delta-bound sibling heads advanced post-closure); r48 window position expires - SCORECARD planned already routes a re-declared C2 predicate or a capability/frontier move. Operator notes: SHONEN boxes look fully checkable by a non-author (same as r46); kaidoku/revenger successor-ground observation corroborated (lane dirs absent from the sibling parent while scratch/kaidoku-r53..r55 and revenger-r74..r78 working dirs exist) - operator/integrator ground; tabi | round-44 L2-floor L0 remains open and was routed around, no wave clause in any predicate.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
