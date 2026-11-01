@@ -34628,6 +34628,47 @@
    "notes": "Dispatch/complete digest (watchdog): 2026-10-31T22:47:36-07:00 launch kama round=67 base=8b6ed3b6f009 (zcode run14); 2026-11-01T00:03:57-07:00 complete kama round=67 head=29369db4245a pushed=True. Report landed last by the lane identity (fleet fb569b04, committer 2026-11-01T00:03:58-07:00); SHONEN heading present, 4x[~]; all four cited lane commits ancestors of the pushed tip; range 41 files, lane-scope + .ufo/waves/round-67 only; SOURCES.md net change exactly one appended S539 row; LOG.md append-only. Both claims verified on re-derivation and re-measurement (C1 calibration re-anchor + province audit 10->13 with verifier-re-derived red->green; C2 operability capability acquisition worktree-landing-check with verifier-rerun six-arm selftest and live clean arm); no axis harmed; scores held operability 8 / calibration 7 as declared. Three self-caught mistakes with committed intermediate red census/gate at 22b9c16d superseded by green final receipts at tip: reds NOT laundered (red receipts preserved unmodified at tip; gate selftest permanently pins the 22b9c16d red as expected-red). Conformance defects (status-neutral, routed to kama round 68): (1) report and SCORECARD C1(a) cell cite .ufo/waves/round-67/measured/before/banner-before.out which was never committed — actual receipt is banner-pending-phrase-before.out; (2) SCORECARD C1(a) cell after-values print '0 and 1' citing banner-after.out whose pair for those greps is 0 and 4 (the 1 is the C1(b) BRE marker grep). Observations: red province-audit receipt carries no EXIT line (exit 1 re-derived from the committed exit map and by re-run); Mistake-4 E12 red quoted in the committed lesson per KQ26, no standalone receipt. Carried queue: sources-append-only.py --repo former-host default repair (lane-routed to round 68, adapted --repo . green receipt committed). Operator-owned: four SHONEN boxes [~] are non-author-re-derivable and submittable for [x] at promotion review; MISSION.md L2 >=8 floor and the kama round-65 NTFS-path L0 question remain open and were routed around, nothing assumed answered. Probe surface honesty stands: serving endpoints absent, recorded absent with dated PROVINCE markers.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 46,
+   "date": "2026-11-01",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 46,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 46
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "adjacency": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-46/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/tabi-shokunin/corpus/lessons/round-46-verifier-spotcheck.md@b95b546949e71f34bfaa1e63de44aff4b4d29371",
+    "rechecks": "Step-1: report committed by lane identity at fleet 5ae8d009, SHONEN heading present, all 8 cited lane commits exist and are ancestors of master, ls-remote == local == 9de5a79b31a9a164f7907763ed5ed7576d43e608, watchdog digest matches. C1 RE-MEASURED LIVE by the closure: one full edge run with the committed runner bytes (hash-verified 557a3f06) on a throwaway profile -> exit 0, fresh launch key edge-profile-a3bcb9a230f2, mid-run keyed census 16, postKillSweepCount 0, invocation-bound, screenshot sha 4e2c50b4 identical to committed bytes; closure's own independent Win32_Process sweep for the run token -> 0 non-shell processes, 0 msedge on the verifier profile (no orphans). Committed C1 evidence verified: legacy control 16 orphans with tree-kill exit 128 no-op recovered to finalSweepCount 0; mechanism fixture red 1 survivor / green keyed kill to 0; all three repaired runs (edge/chrome/edge-repro) end at postKillSweepCount 0 with nonempty mid-run censuses; counter predicate true 0 findings on 3 receipt sets, refuses the r45 receipt with 8 findings, selftest verdict=clean 18/18; all six frozen instrument digests match claims.json and are blob-identical freeze -> cited rev e2d59f72 -> tip. C2 EVIDENCE-VERIFIED (lane meter not executed, per gate standard) with closure re-derivations: r45 audit at 0360b069 shows 9 stale + 1 moved + 6 sibling-absent; baseline red control 28 findings (16 audit-missing + 12 roster-lane-uncovered); audit-r46 grep stale=0 moved=0 (10 re-pinned + 6 honest sibling-absent); green receipt predicate true, 0 findings, counts {roster:16, mapRows:16, auditRows:16, deltaLanes:12} with a 16-lane headSnapshot equal to every re-pinned map ref head; 6/10 re-pins re-derived line-exact by closure git show at pinned sibling heads (incl. the r45 'moved' kake PROVINCE.md row now at :85); both mid-measurement move catches re-derived from correction diffs (3b8a68dc shokunin-reverse-engineering 90f3a9b9 -> 79421b75 lane-screen-head-mismatch; e2d59f72 kama map ref 8b6ed3b6 -> 22b9c16d plus chousa/kasegi delta re-binds to 1db6babf/586cdda4), all re-bound heads exist in the siblings, instruments untouched in corrections; meter selftest receipt allPass 16/16. No-harm: SCORECARD +56/-0 additive round-46 block listing the teardown repair explicitly; PROVINCE/SHONEN/SKILL untouched, no [x] written; LOG.md append-only (0 deletions); round diff confined to lane write scope; host-bound check-adjacency honestly recorded with cause and routed. Discernment: census validate exit 0 'tabi ok' (21 pre-existing W04); S155 re-opened live + staged copy hash match, quote verbatim at the CommandLine property; Gate sample 3 admits + 2 rejects all AGREE (counter selftest bug confirmed against committed fix; meter head-mismatch confirmed via correction-1 diff). Defects routed (status-neutral): V1 S155/lesson record 104,251 B but committed staged blob is 104,255 B (sha matches, count drifted); V2 knowledge note chrome-cdp-teardown-round-46.md lacks the source:/verified-at:/recheck: provenance trio CORPUS.md requires; V3 selfassessment disclosure note says 'five m1-selftest-tally readings' not derivable from its own receipt counts (material assertion stands, honestly disclosed verdict=failed)."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/tabi-shokunin@9de5a79b31a9a164f7907763ed5ed7576d43e608",
+   "closed_at": "2026-11-01T07:38:06Z",
+   "campaign": "hyaku",
+   "notes": "tabi r46 closed ok/admitted. C1 (operability, sourced S155): the r45 teardown-orphan carry-in closed in committed bytes - PID-group kill keyed to a per-run profile token, pre-launch sweep 0, mid-run census nonempty, post-kill kill-by-PID fail-closed sweep to 0; red limb is the live legacy control on Edge (16 survivors, taskkill /T exit 128 no-op) plus a deterministic mechanism fixture (1 survivor -> keyed kill to 0); green limb re-derived live by this closure (fresh full run at sweep 0 + independent token sweep, no orphans). C2 (adjacency 8, lowest owned axis; stagnation nudge inactive at window position 2): 10 drifted map rows re-pinned at recorded snapshot heads with full-line quotes (0 stale, 0 moved, 6 sibling-absent stay honest); meter v6 reads sibling bytes through git at per-run snapshot heads and caught two real mid-measurement sibling head moves, resolved by the frozen data-correction flow at e2d59f72. Trends: expansion unchanged (repair + re-pin on held ground), quality improved, discernment improved; outside spot-check agrees on all 5 sampled gate decisions. Conformance defects (status-neutral, routed to round 47): S155 byte-count drift (104,251 recorded vs 104,255 committed, sha matches); knowledge note missing provenance trio; selfassessment disclosure 'five readings' wording. Operator note: all four SHONEN.md boxes are [~] with resolvable pointers and look fully checkable by a non-author - promotion review is the operator's call; this closure wrote no [x]. Verification mode: C1 re-measured (closure's own live run + sweep), C2 evidence-verified with closure git re-derivations; lane gates never executed by the closure.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
