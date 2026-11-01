@@ -36072,6 +36072,48 @@
    "notes": "Dispatch/complete digest (orchestrator watchdog): 2026-11-01T04:26:41-08:00 launch souji round=50 base=5f921fe26177 (zcode run14); 2026-11-01T06:32:53-08:00 complete souji round=50 head=6683497581f7 pushed=True. Conformance clean: report committed by lane identity (souji-shokunin <souji@shokunin.local>, fleet commit 2440a2da) with the SHONEN heading (4x [~], no [x]); lane chain linear 5f921fe2 -> 3cc69c4 (freeze) -> 6d94929f (content) -> 66834975 (end receipts), all cited hashes ancestors of master; local master == ls-remote origin master == 6683497581f7 (pushed); every report-cited path present in the range diff; PROVINCE.md untouched. Both claims re-measured (red at base, green at content tip and final tip); no axis harmed (SCORECARD diff append-only; calibration 7 / operability 8 / coverage 8 unchanged). L2 floor: no dispatch surface on this host, dispatched=0/completed=0/dead=0, no WAVE-DONE claimed, standing L0 questions routed around. Defects (status-neutral, routed): (1) corpus/lessons/round-50.md ## Gate duplicates the 'Reject sample (stated explicitly...)' bullet verbatim twice consecutively - lane must fix next round via an appended correction line in the r51 lesson (append-only, no in-place edit); (2) cosmetic: the NTFS tip receipt omits the base receipt's quoted_d_rows=6 line (count=6 and the six quoted paths present at both ends; no action required). Carried, operator-owned (not lane defects): the census conf-form rc-2 host state persists (validated exit 2 this closure, verbatim as disclosed in the receipts); the consolidated L0 proposal (fleet .ufo/l0-questions.md, souji | round-50, options a/b/c) awaits an operator ruling; the lane routed around with disclosure. Operator note: all SHONEN.md boxes remain [~] asserted-by-author and this closure deliberately wrote no [x]; a dedicated non-author promotion review is needed before any box is checked.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 83,
+   "date": "2026-11-01",
+   "type": "closure",
+   "lane": "kotoba",
+   "lane_round": 83,
+   "lanes": {
+    "kotoba": "ok"
+   },
+   "lane_rounds": {
+    "kotoba": 83
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "unchanged",
+    "consistency": "unchanged",
+    "coverage": "unchanged",
+    "operability": "improved",
+    "freshness": "improved",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-83/kotoba.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kotoba-shokunin/corpus/lessons/round-83-verifier-spotcheck.md@ae09f71fc8262b003d69f9e35d998e74d48b6c40",
+    "rechecks": "D1 re-measured: tip-committed counter (blob b299c265; delta vs 84c2963 blob is argparse-only) at base 4c95c45 reads 'r82 routed defects closed 3 of 6' exit 1 (d1 lesson/log/plan FAILs), at corrections commit 84c2963 reads 6 of 6 exit 0, self-test 0/20 exit 0. C1 re-measured at both worlds from committed bytes: tip blob 46d6bccb (sha256 018a887c, matches report) self-test '0 failure(s) over 74 assertions' exit 0; pre-fix blob 826c07cd (sha256 6e954115, matches before-cleanup-loss-arm receipt pin; ignore_cleanup_errors absent) self-test RuntimeError 'fixture toplevel mismatch' exit 1 reproducing before-tip-selftest.txt; discriminator receipt authenticated by byte-hash; no-harm: gate lines identical modulo wall, tally 2 of 6 in all four runs. C2 evidence-verified plus 2 of 6 HEAD anchors re-measured exactly (kagi head f67232cd/installed 8b547bdae988/headSKILL 56b567cdb744; kumitate head f4f67ec5/installed f682c17c53e6/headSKILL 2be43a00e972); grep -c DRIFT-PERSISTS-AT-HEAD = 6; r82 ledger confirmed unpinned (lane= values differ from committed heads). Fresh-start rule-out verified: both invocation forms 2 of 6 exit 1 identical gate lines at base, probe shows git writes an absolute alternates entry, pre-fix blob line 749 is repo = Path(args.repo).resolve(). SOURCES 177 to 179 append-only (0 removed lines), census validate 'kotoba ok' exit 0, S252/S253 refetched byte-identical to row-pinned sha256s with located quotes of 19/24 words; spot-check agrees on both admits and the sampled reject (build_sandbox rule-out). SCORECARD CR-insensitive diff: evidence prepends only, scores held 8.5/8, capabilities untouched; PROVINCE/knowledge/SHONEN unchanged; LOG append-only 0 removed lines. No axis harmed; both claims verify; admitted."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kotoba-shokunin@9f203ce8e1ff6c24b599a0350d6e6155b7172a81",
+   "closed_at": "2026-11-01T15:51:42Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (watchdog.log lines 179/216): 2026-11-01T03:35:28-08:00 launch kotoba round=83 base=4c95c456778b (zcode run14); 2026-11-01T06:43:43-08:00 complete kotoba round=83 head=9f203ce8e1ff pushed=True. Report committed by lane identity at fleet b8720b8; SHONEN heading present with four [~] assertions; all cited lane commits (84c2963, 815bb5d, 63c7d43, d84c7c8) exist and are ancestors of master; local master == origin master == 9f203ce8e1ff. Both claims verified, no axis harmed (operability improved via C1, freshness improved via C2, all others unchanged; expansion unchanged - capabilities table, PROVINCE and knowledge/ untouched). Routed defect R83-V1 (to lane, next round, status-neutral): committed receipt .ufo/waves/round-83/receipts/r83-counter-base.txt reads '2 of 6' with d2-anchor-consistency FAIL, contradicting its own header ('must score exactly 3 of 6'), the report/lesson claims, and this judge's re-run of the frozen tip counter at the pinned base (3 of 6, exit 1) - a stale development-era capture that must be regenerated from the frozen counter; the claim itself reproduces. Note R83-V2 (status-neutral): lane tip commit 9f203ce (Q68 report-pointer receipt) landed after the report's cited head d84c7c8 and is not in the report's Landed changes; all cited hashes are ancestors at closure. Watch item R83-V3 (self-mined by the lane): the real WinError-32 intake receipt was overwritten by the retry before landing; the lane's going-forward rule (before-receipt lands first, attempt-numbered retry names) should be verified next time the class recurs. Operator note: all four SHONEN.md boxes are [~] author assertions whose underlying evidence this non-author judge verified from outside (registry row + counters 0/20 and 0/74 run; LOG end-to-end entries with committed receipts; PROVINCE unchanged + read-only sibling bound) - boxes look fully checkable by a non-author; per duty no [x] was written and the operator may proceed to the promotion review. L0: the all-axes vs owned-axes lowest-axis two-readings question stays open and was routed around consistently with the r82 closure precedent; C2 satisfies the obligation under the reading of record. Discernment spot-check: agrees on sampled admits S252/S253 (byte-identical refetches, located <=25-word quotes) and the sampled reject (build_sandbox rule-out, all three evidence legs re-verified); SOURCES rejections none, consistent with the census.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
