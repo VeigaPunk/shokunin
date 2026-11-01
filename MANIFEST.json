@@ -36782,6 +36782,47 @@
    "notes": "Dispatch/complete digest: 2026-11-01T09:58:23-08:00 launch tsukuroi round=60 base=5dd83fa3e9b5 (zcode run14) | 2026-11-01T12:13:40-08:00 complete tsukuroi round=60 head=b8b24076ddc7 pushed=True. Step-1 conformance clean: report landed in the fleet repo by lane identity tsukuroi-shokunin (3981db97), SHONEN heading with four [~] lines, all seven cited lane commits (e1e10178 41c18296 bef165c4 6d65fc0f dd994b92 7fa72945 b8b24076) exist and are ancestors of master, local master = origin master = b8b24076, round work exactly the cited range 5dd83fa3..b8b24076. Claims C1 depth (SOURCED via S275, registry READ plane RG1-RG5), C2 operability (--due receipt anchor on both recheck arms), C3 calibration (tools/append-receipt.py byte-stable append verifier) all verify under judge re-measurement; no axis harmed (all six ordinals unchanged; saturated axes declared). Defects: none barring admission; no step-1 defects found. In-round mistakes R60-C1-DECLARED-GREP, R60-STRAY-RECEIPT, R60-SELFTEST-SHAPE were self-caught and repaired with committed FAIL/repair evidence, all re-derived by the judge. Routed/standing items for next round: (1) whole-SKILL non-author SHONEN verification owed since r55 — parked on the committed L0 question 'tsukuroi | round-60' (.ufo/l0-questions.md:253), operator's call; boxes stay [~], not dischargeable by the closure judge per its contract; (2) standing L0s 'tsukuroi | round-53' (line 229, wave-dispatch surface) and 'tsukuroi | round-57' (line 247, S266 interact probe) plus the round-1 kaidoku/revenger scope remain open and were routed around; (3) the 2026-11-30 three-plane cadence pass runs next through the arms with --due 2026-12-30 (lane's own planned item); (4) S275 180d re-open trigger carries the REG_QWORD divergence. Status-neutral observations: mistake rows cite lane-local class names (standing r58/r59 practice, rows complete per CORPUS.md); C2's calendar gate deliberately skips exact month-length (documented in both headers); the b8b24076 receipts fixup is an honest appended correction (base-sha typo) naming the text it supersedes.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 64,
+   "date": "2026-11-01",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 64,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 64
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "receipt-existence sweep"
+   ],
+   "report": ".ufo/reports/round-64/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/tameshi-shokunin/corpus/lessons/round-64-verifier-spotcheck.md@7d7f9ca8044239ef5e99a6b0e007d1a7ac671ac2",
+    "rechecks": "Step-1 clean: report committed by lane identity tameshi-shokunin <tameshi@shokunin.local> (fleet fded7c9b), SHONEN heading with four [~] boxes, all 6 cited lane commits (33cb4b0d, b31e8145, 1763db52, be76552d, 6876d7460c75, c7d28b19) ancestors of refs/heads/master, local master == origin/master == c7d28b19, watchdog digest matches. R64-C1 re-derived from committed bytes: rekey_batch 0 -> 49 -> 62 (18/18/13/13), ledger JSON valid 693 -> 706 entries, pure CRLF insertions (0 old lines absent, 11,246 inserted lines all CRLF = raw_old_only=0 confirmed independently), rekey_round=61 generation semantics on exactly the 62 run-book entries, guard green at 33cb4b0d (live-A-guard.txt, evidence-verified), root cause verified: 'rekey_round': 61 hardcoded in the r63 as-run copy (a18c20f0 line 254, no batch field) vs 'rekey_batch': 'r64-batch-1' emitted by the r64 machinery (line 259) = lesson mistake 4. R64-C2 re-executed by this judge on the committed tip bytes: RECEIPT_EXISTS_SELFTEST: 4/4 pass exit 0; demo sweep RECEIPT_EXISTS: docs=2 paths=16 missing=0 extra=2 exit 0 with the two EXTRA lines naming .ufo/l0-questions.md and .ufo/reports/round-63/tameshi.md at the fleet root (cross-surface class genuinely caught); guard RED lost=13 at b31e8145 (live-B-red.json, 13 headings) vs green lost=0 at 1763db52 both floors + rev 64/64 + tip 6876d746 (receipts), miss=0 vs the pre-landing criterion-110 forecast at 33cb4b0d (13 LOST headings == 13 trace-receipt sections, sets identical); S295 0 -> 1, SOURCES 154 -> 155, capability row receipt-existence sweep entered. No axis harmed: SCORECARD/LOG insert-only (LOG byte-prefix preserved), PROVINCE/SKILL/README/registry/probe/SHONEN/corpus-knowledge byte-identical base->tip, probe digest 892a045d verified both copies. Spot-check: S295 quote re-opened live (agree), S289 re-open quote at lines 2246-2247 (agree), standing S293 rejection + explicit empty reject sample (agree), census validate exit 0 (17 W04 + 1 W01 pre-existing)."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/tameshi-shokunin@c7d28b19e5f984d55c972e9423cd0c75a130f596",
+   "closed_at": "2026-11-01T21:10:31Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (watchdog.log): 2026-11-01T09:27:26-08:00 launch tameshi round=64 base=d0baf616bb8a (zcode run14); 2026-11-01T12:31:24-08:00 complete tameshi round=64 head=c7d28b19e5f9 pushed=True. Status ok, admitted: both claims verify (C1 re-derived; C2 selftest 4/4 + demo sweep 16/0/2 re-executed by the closure judge on committed tip bytes; guard RED lost=13 at b31e8145 then restored lost=0 at 1763db52 both floors, miss=0 vs the pre-landing forecast), no axis harmed. Status-neutral defects/routed items for the lane next round: (1) 6876d746 is an empty commit whose subject names receipt content ('guard both floors, additivity C->D, self-sweep') whose bytes landed only in successor c7d28b19, and tip-confirmation.txt carries only the round-floor guard line - name the receipt bytes each named run produced in the commit that carries them; the report's 'no monitored or protected file changes 1763db52 -> tip' reads loosely (LOG.md +20 / SCORECARD.md +35 changed at be76552d, disclosed in its own row; the two tail commits are evidence-only); (2) live-B-red.txt lists 5 of the 13 LOST headings - the full set is in live-B-red.json (verified); prefer the JSON or mark the truncation; (3) rehearsal clone commits (37d1bca1/b5568919/1144148e) are deleted-with-scratch as disclosed - the 12 committed rehearsal receipts are the resolving evidence; (4) carry: the rekey payment is current at the tip (any further QUALITY/SOURCES/PROVINCE/README/SKILL/pinned-tool edit re-owes it; pin sets priced in the lesson), the whole-history receipt sweep (rounds 1-63) stays scoped unpriced future work, proposal 1's byte-for-byte quoted-line half and proposals 2-5 remain unadopted; (5) for the operator: SHONEN.md's four boxes are all [~] and on this round's evidence checkable by a non-author, but only a non-author may write [x] - promotion remains an operator decision; the r60 L0 question (.ufo/l0-questions.md, tameshi | round-60, option (b)) stands unanswered; L2 floor has no dispatch surface on this host (L1-only round, disclosed).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
