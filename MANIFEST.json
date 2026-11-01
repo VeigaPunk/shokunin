@@ -33758,6 +33758,43 @@
    "notes": "Fresh-start round on the new Windows host; 5th prior closure was rejected-honest-stop, this one admits. Digest: dispatch 2026-10-31T18:57:57-07:00 launch tabi round=44 base=5c3f4cca86e9 (zcode run14); complete 2026-10-31T20:40:10-07:00 head=63444fe8d192 pushed=True; report committed by lane identity at fleet 2e14124b before completion. Three frozen claims (C1 calibration instrument repair, C2 coverage capability chrome-cdp-loopback-windows, C3 operability pinned-anchor supervisor) all verify under predicates frozen at the pre-data amendment 8c238799 (superseding d3d31472, disclosed before the 844a5b3a after-receipts; instrument blobs byte-frozen thereafter). C2 re-measured live by the non-author closure judge (fresh throwaway profile, loopback-only, fail-closed teardown verified in code and in the observed SIGKILL exit); C1/C3 evidence-verified against committed receipts. Lowest-axis obligation waived by the active stagnation nudge (no capability rounds 39-43); adjacency 8 returns to obligation at round 45. Stagnation window restarts at 45. Defects (status-neutral, in spotcheck D1-D4): stale counter digest pin in claims.json.frozenDigests; revision-wording drift (receipts at 8c238799 vs report wording 844a5b3a, read-set identical); unreceipted r43-crash before-state limb; operator-side prompt template missing verbatim L2 floor (L0 filed, routed around, never treated as answered). No marker; no [x] written into SHONEN.md by closure; SHONEN boxes 2-3 flagged for the operator as now non-author-checkable (promotion review is an operator decision). Standing red unchanged: check-c2-knowledge-round41 (r42 L0), check-frontier-admission (since r36); legacy-gate host-bound failures recorded with causes (none introduced this round). Census exit 0 both ends; check-sources clean at tip.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 65,
+   "date": "2026-11-01",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 65,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 65
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unchanged",
+    "calibration": "improved"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-65/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kama-shokunin/corpus/lessons/round-65-verifier-spotcheck.md@d02416c9862c7ddaa4b714811e526d0d21456bf7",
+    "rechecks": "Re-measured over committed bytes: SOURCES.md restoration byte-exact (base 3325e8ed + exactly the S537 row == ea33a78f == tip bd402468, LF, CR=0; r1 9c5a8644 held 639 CRLF lines as disclosed); census 276->277; SKILL.md sha256 c588ca9d.../1691 lines/46 sections and PROVINCE.md sha256 9cee1df1.../244 lines re-hash at tip; registry rows 20 (R56-64) + 2 (R65) appended, registered 54+20+2=76 / unregistered 0 re-derived; four unchanged anchors re-hash matching; sources-census validate re-run exit 0 (kama ok, 104 W04 + 1 W01, no E-codes); SCORECARD.md byte-identical base->tip. Evidence-verified from committed receipts (lane gates not executed): red-befores honest (gate-registry-check 'registered 54 unregistered 20 defective 0' at base; digest-ledger pass=3 fail=8; citation-provenance 12 SELFTEST FAIL WinError 2; report-landing-audit WinError 3 + traces); at-tip HOST_CENSUS pass=16 fail=1 refused=2 tierA_fail=0 (census exit 1); province stale=9->0; citation lane run found=17 verified=17; endpoint census negative; AOA fail deterministic, tool bytes unchanged base->tip, fixture-based arm (pre-existing, not a regression). S537 re-opened live: quote verbatim (21 words, section CONFIGURATION, maintenance.auto); retained bytes sha256 b1e301c1...96cd4 match the row anchor. Verdicts: C1 operability NOT verified as declared (its own census receipt fails the 'runs green or refuses fail-closed' predicate on append-only-audit, fail=1, census exit 1; repair and registration work itself re-derives); C2 calibration verified (stale=9->0). Spot-check 3/3 agree (S537 admit re-opened; two no-row negative observations)."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kama-shokunin@bd4024687f5ecb9fd1c5fe4041f9f98167b03e1d",
+   "closed_at": "2026-11-01T04:28:29Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (watchdog.log, re-checked live): 2026-10-31T18:58:00-07:00 launch kama round=65 base=3325e8ed86a5 (zcode run14); 2026-10-31T21:01:49-07:00 complete kama round=65 head=bd4024687f5e pushed=True. Report landed last by the lane identity (fleet 46662df2, pathspec-clean, postdates lane tip); SHONEN heading present, 4x[~]; all four cited lane commits ancestors of the pushed tip. Round not admitted: C1's declared census predicate ('registered self-tests run green or refuse fail-closed with a pinned reason') is falsified by the round's own committed census receipt (HOST_CENSUS pass=16 fail=1 refused=2, census exit 1 by its registered exit map; the append-only-audit v6-revert-class arm fails without a pinned refusal) even though the four red->green repairs and the 20 counter registrations all re-derive; C2 verifies (stale=9->0). Honest disclosed open defect, no axis harmed, real report -> rejected-honest-stop. Defects (status-neutral unless noted): D1 SCORECARD §Round 65 + head banner + depth/coverage re-anchors reported as landed in 9c5a8644 but never committed (SCORECARD byte-identical base->tip; the §Round 65 record sits uncommitted in the lane worktree and is CRLF-translated - mistake-9 class again); D2 at-tip gate counts (GATE_SELFTEST pass=6 fail=0, registered 76 unregistered 0 defective 0) not byte-receipted (re-derive arithmetically; census carries only the lane-tip-arm pass marker); D3 PROVINCE.md cites wave receipts without the measured/ segment (pointers do not resolve as written); D4 no committed before-receipt for append-only-audit (red state at base inferred from unchanged tool bytes + fixture-based arm); L2 floor unmet, honestly recorded (no AgentSwarm surface; souji round-46 L0 line cited). Routed to round 66: land SCORECARD §Round 65 LF-byte-clean + erratum superseding the report's SCORECARD landing sentence; append-only-audit arm (already Planned r66) with a before-receipt; fix PROVINCE receipt paths; byte-receipt gate counts whenever cited; registry-gate selftest in every round whose instrument set changes (lane's own routing). Operator-owned pending: NTFS-invalid tracked path (L0 kama round-65, filed at .ufo/l0-questions.md working tree, not yet in the committed blob - integrator durability), L2 dispatch surface (L0 souji round-46). SHONEN: all four boxes look checkable by a non-author at the tip - operator may route a verification pass. Two self-caught mistakes verified genuine: CRLF rewrite byte-restored next commit (verified byte-exact), silent directory-arg skip repaired by re-committing the receipts in ea33a78f (diff-tree confirms r1 had no wave files).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
