@@ -34177,6 +34177,47 @@
    "notes": "Digest: kasegi r52 = carry-in corrections + C1 capability (gate-quote-audit) + C2 append-only corrections (2/3/5, 17 words, S013/F05 scope note) + C3 frontier F33 (NVD API 2.0 retrieval interface on S083, S066 flip spent by record, S084 JS-wall rejected). All three r51 carry-ins re-derive (2/3/5 at base; 17 by wc -w; PROVINCE adjacency note names S013.txt:65 with S013 out of scope). C1's post-commit self-catch (catch f) is real: the round's own auditor flagged the round-52 lesson prose (17/24/24 in annotation shape) over the final tree and the 2df91cd rephrase cleared it; final state green (selftest 9/0, audit 5/5/2 exit 0, re-run by me). C3's S066 flip spending is exactly what the S065/S066 rows recorded (S066's flip text verbatim; row byte-identical; S065's flip correctly untouched). Wave disposition: no AgentSwarm surface on this host, L2 floor recorded unsatisfiable, not simulated (as rounds 49-51). SHONEN: lane still holds SHONEN.md; boxes 1/3/4 are [~] asserted with resolvable pointers and box 2 [ ] untouched - all four remain checkable by a non-author; the lane wrote no [x] (correct); operator may want to schedule the non-author SHONEN review. Defects routed (status-neutral, none bars admission): D1 - corpus/instruments/knowledge-expected.txt stale by 2 entries vs corpus/knowledge/ (69 listed vs 71 files; osv-affected-range-events.md F31 r50 and cisa-vulnrichment-adp-enrichment.md F32 r51 unlisted; pre-existing at base 68-vs-70; the round's 'updated (69 entries)' figure is accurate as written but the sync duty is unmet) AND the standing gate recheck-audit.py's equality limb is host-broken on Windows (path-separator mismatch: / in the list vs \\ from the glob -> expected=69 missing=69 unexpected=71 artifact), so the drift class is not catchable on this host; fix owed next round: sync +2 entries and repair the separator handling (or record the artifact as disclosed debt beside the 67 host-bound recheck lines), then show recheck-audit green or explicitly red-for-disclosed-reasons. D2 (observation only): claims-erratum-1.md says 'Filed BEFORE the implementation commit' while its commit ride is 227d3ed; the supersession is transparently recorded in freeze.txt rev 1b, so wording only. Dispatch prompt omits a verbatim L2-floor restatement (MISSION.md is the declared source); the lane's honest wave-disposition recording handles it - operator-side note. No promotions, no mints, no cross-lane writes.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 66,
+   "date": "2026-10-31",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 66,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 66
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-66/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kama-shokunin/corpus/lessons/round-66-verifier-spotcheck.md@8b6ed3b6f009f92f1199b6b85ebec0b966fabbdd",
+    "rechecks": "Conformance: report committed by lane identity (a8c6b6a1, committer 2026-10-31T22:26:41-07:00 == watchdog digest); SHONEN heading 4x[~]; all 4 cited lane commits exist and are ancestors of master; local master == ls-remote origin == c5bdc9fd434e; round range d02416c9..c5bdc9fd contains exactly the 4 lane-identity commits; not a marker. C1 re-measured: 01bfe8fc tool diff is exactly the 2-line fixture write idiom ('w'->'wb', .write(text)->.write(text.encode())) in t_v6_revert_class, classifier untouched, tool bytes unchanged from r65 tip bd4024687f5e; committed red receipt pass=50 fail=1 FAIL v6-revert-class and green receipt pass=51 fail=0; this session re-ran at tip: AOA selftest exit 0 pass=51 fail=0 and round65-host-census exit 0 pass=17 fail=0 refused=2 (both match receipts); root-cause repro receipt shows CRLF child blob (4 CR), deleted=5 with 4 undisclosed ['revert'] lines, subject fired 'Revert \"something\"' (r65 hypothesis falsified as claimed), fixture-inherited core.autocrlf recorded; POSIX byte-identity of the idiom confirmed locally. C2 re-measured: 762a5c32 numstat exactly 76/3 SCORECARD.md only, parent d02416c9; 0 CR bytes in the landed blob; worktree sha256 == HEAD blob for all 7 touched files; grep 'Round 65 - fresh-start round' before 0 after 1; erratum verified (diff-tree 3325e8ed86a5 bd4024687f5e -- SCORECARD.md empty); PROVINCE.md diff exactly the 3 measured/ pointer repairs, old paths absent at base, new paths present; landed record discloses the authored-pointer repair; coverage count command re-run returns 39 (stale 38 corrected). Frontier: SOURCES 277->278, only +1 row (append-only respected); census validate re-run this session: exit 0, kama ok, 106 lines, 0 E-codes. Discernment: S538 admit re-opened live + in retained bytes (sha256 74e9470322... matches, quote verbatim, 17 words) - agree; no-row decision on census receipts - agree; zero rejects filed this round so the reject sample is vacuous (status-neutral). No axis harmed: axes table at tip holds operability 8 / calibration 7, no score lowered."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kama-shokunin@c5bdc9fd434eee5bf9e35bb8aff40aa82f620bb7",
+   "closed_at": "2026-11-01T05:44:24Z",
+   "campaign": "hyaku",
+   "notes": "Recovery round after r65 rejected-honest-stop: both declared claims verify on independent re-derivation and lane-local re-measurement (recovery claims (1) and (2) of the dispatch note both confirmed). Recovery quality: the CR-stripped re-land is byte-clean as claimed (76/3, 0 CR), the falsified census predicate was root-caused to a text-mode fixture defect and repaired red->green with the classifier untouched, and the erratum superseding r65's provenance sentence is accurate (SCORECARD byte-identical across r65 base->tip). Digest: 4 lane commits (762a5c32 re-land, 01bfe8fc AOA fixture repair + PROVINCE pointers + receipts, 1b2584a3 claims record + lesson + S538 + retained source bytes, c5bdc9fd census-end), all lane identity, all ancestors of the pushed tip. Conformance defects (status-neutral): none new; MISSION.md L2 >=8 floor unmet on this host (no dispatch surface; routed around per filed souji round-46 L0 line, never treated as answered) and kama round-65 NTFS-path L0 question still unanswered - both operator-owned carry-overs, named honestly in the report; the round's ## Gate filed zero rejects so the closure's >=1-reject spot-check sample had no candidates (recorded, status-neutral). Routed items for the operator: answering the kama round-65 NTFS L0 question would unblock two refused census arms (test-snapshot missing-dependency, round42-selfdesc-reconcile invalid-path). SHONEN.md: 4x[~] author-asserted with resolvable pointers; all four re-derivable by a non-author from committed bytes (re-derived here) - fully checkable at promotion review. Scores held operability 8 / calibration 7; no capability row entered.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
