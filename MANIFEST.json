@@ -33383,6 +33383,49 @@
    "notes": "Digest: launch 2026-10-31T18:58:00-07:00 mori round=62 base=6d98b5cd2a7c (zcode run14); complete 2026-10-31T19:38:11-07:00 head=45f6d3027f27 pushed=True. Recovery round: attempt 1 froze the instrument pair pre-seat and died before dispatching; attempt 2 inherited the frozen bytes unchanged (pins re-verified), disclosed in report/LOG. Admitted: both claims verify and no axis is harmed. Defects (status-neutral, routed): (1) r61-spotcheck receipt truncates the failed-anchor list at 4 of 14 anchors - the x14 count is derivable from the receipt's own counters (rows=47, quotes_ok=33) and the visible anchors all appear in the r61 original list; r63 receipts must capture full lists. (2) Lesson Gate annotates the S571 quote as 14 words; actual space-separated count is 10 (<=25 rule holds); erratum next round. (3) The C2 surface (probe tool, entry, fixtures, v7.2 pin baseline, Linux live receipt) entered history via pre-seat commits 43cfbb10/56b47179 authored by the same lane-round's dead first attempt (count-c2.py's only post-freeze change is pre-seat amendment 1; count-c1.py unchanged since the freeze); the range commits add S571, SCORECARD rows, and receipts - recorded, no action. (4) Carried stale-host class: entry recheck and SHONEN box-3 name python3, a non-functional Store stub on this host; frozen bytes, corrections ride future revisions (lesson Mistakes 2 class, already routed to r63). Integrator items: commit the mori round-62 L0 line (AgentSwarm L2 surface absent on this host, waiver requested - present in the fleet working tree, not yet committed; no wave-based evidence claimed, so the round does not depend on it). For the operator: SHONEN boxes look fully checkable by a non-author (box-1 pointers resolve; executability demonstrated by this round's committed selftest receipts) - promotion review remains the operator's gate; this note is not a check. No promotions, no mints, no other lane touched.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 79,
+   "date": "2026-10-31",
+   "type": "closure",
+   "lane": "kotodama",
+   "lane_round": 79,
+   "lanes": {
+    "kotodama": "ok"
+   },
+   "lane_rounds": {
+    "kotodama": 79
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "ledger-token guard"
+   ],
+   "report": ".ufo/reports/round-79/kotodama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kotodama-shokunin/corpus/lessons/round-79-verifier-spotcheck.md@a8aaeceb42fb4e01f37181697f88aaddb9629e01",
+    "rechecks": "Inheritance: run-12 chain (98b0e53..cb9b1c5, claims+graded receipts landed mid-wrap-up without lesson/census) verified ancestral to inherited base efdc19e5 and judged together with the run-14 commit 1ac882b (14 files +821/-2, lane identity, parent=base, pushed=origin main) as one round-79 record. Claim O re-measured (tools/ledger-token-guard.py absent at 44f76d4, present at 1ac882b; sha256 504c51c6...f040dd7964, 17822 B, byte-identical at graded lands 7fdf355; SOURCES 820->821 own-work S897; SKILL.md gate row; SCORECARD capabilities row) and evidence-verified (lane gates never executed per gate standard: lands-rerun-o-run14.txt ACCEPT-O-79 PASS 10/10 at lands 7fdf355/freeze 82b822a, counter self-sha 3ad26c10... recomputed from committed bytes; selftest-o PASS; guard-direct-red FAIL pairs=11 failed=11 mismatched=10 vacuous=1; fleet receipts kotodama-accept-o-lands.txt PASS 10/10 and pre-freeze-dry both counters refuse exit 2). Ca evidence-verified + drift re-measured on both sides (r78 census-end.txt:33 amend-2026-10-24-r13 vs registry amend-2026-10-23 at 4b255745 and HEAD; correction ca79-r78-s884.md at 0439764 and HEAD, receipt unrewritten; lands-rerun-ca + postfix both PASS 7/7, counter shas 63444388->94b66ea5 recomputed at efdc19e/1ac882b, red-before SELFTEST 4/12 exit 1 -> fixed 12/12 exit 0, no predicate moved). SCORECARD diff base->HEAD additions only, no owned axis harmed. Census validate run by closure: exit 0. Spot-check: S897 admit + dining reject + carried naming-systems reject + freshness pause all re-opened and agreed; S897 quote verbatim at docstring lines 8-9, 16 words <= 25. Status ok, real report, not a marker."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kotodama-shokunin@1ac882bfb76cc211040876fa9063f755d4761e68",
+   "closed_at": "2026-11-01T03:03:54Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 2026-10-31T18:58:01-07:00 launch kotodama round=79 base=efdc19e52cd9 (zcode run14); 2026-10-31T19:46:43-07:00 complete kotodama round=79 head=1ac882bfb76c pushed=True. Union closure of the inherited run-12 honest stop (claims Ca+O landed mid-wrap-up with graded fleet receipts but no lesson/SCORECARD/census/selftest receipts) plus the run-14 completion commit: all cited commits (98b0e53, 404b0aa, 0439764, 241627d, 19d6901, ad2427c, 80c6352, 82b822a, 7fdf355, cb9b1c5, 44f76d4, 1ac882b) exist and are ancestors of refs/heads/main; report committed by lane identity (4df33dde, appended erratum after the run-12 sweep c38d395f whose subject records the L1 attribution defect; filed bytes not rewritten); SHONEN heading present. Declared claim O (operability capability acquisition) verifies: re-measured before/after plus evidence-verified lane-gate receipts (gates not executed, per gate standard); Ca executed as unclaimed calibration record repair per the frozen pre-freeze scope disposition and QUALITY 20 (verifies, 1 -> 0 unresolved receipt/registry mismatches, no delta taken); freshness pause honored per the open round-11 L0 question (l0-questions.md line 47), stagnation nudge correctly not invoked; do-nothing control holds (both counters refuse lands=base, exit 2). Discernment trend graded improved at closure because this outside spot-check agrees with the Gate on the sampled admit (S897 own-work, quote verbatim/located) and both rejects (dining ground held; naming-systems carried rejection); the lane's author-side 'unchanged' was honest for its single-session run. Defects (status-neutral): run-14 session dispatched no wave (L2 floor unmet for the continuation; round-level run-12 W1 32-seat record stands); claims.json claim-O before-state wording says 'git ls-tree 44f76d4 tools/ is empty' (27 entries exist, only the guard path is absent); lesson Gate annotates the S897 quote '(20 words)' vs 16 by whitespace split; S897 anchor command uses old-host 'python3 -B' spelling (receipts name python -B). Routed to round 80: integrate the ~20 W1 hardening findings only via a QUALITY-23 counter revision with committed red-befores, plus the never-launched W2 mutation pass. Routed to operator: settle the W1 wave record and 5 empty seat stages (ScribeClaims, ScoutR77Truth, ConnHistory, RevSeparable, ScribeCorrection). Inherited 3 staged deletions verified as host artifacts (two committed wave-stage paths carry '>', uncheckoutable on NTFS, blobs intact at HEAD; one r76 stage path absent on disk) - not lane debt, recorded as lesson R79-M3. SHONEN: all four boxes [~] with resolvable pointers and look fully checkable by a non-author from committed evidence; closure is barred from writing [x] - operator/next promotion review can use the spotcheck as the non-author evidence base.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
