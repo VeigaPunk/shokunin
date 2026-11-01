@@ -35782,6 +35782,45 @@
    "notes": "Dispatch/complete digest: 2026-11-01T02:51:45-08:00 launch tameshi round=62 base=ed3a66c2c545 (zcode run14); 2026-11-01T04:22:06-08:00 complete tameshi round=62 head=5721f7d5c872 pushed=True. Status ok (real report, not a marker; work 6b15c943 + receipts 5721f7d5, both lane identity, receipt-after-subject ordering). Step-1 conformance clean (identity, SHONEN heading, ancestry, push, reachability, diff footprint as declared). Admission: the single claim R62-C1 (calibration, sourced on re-accessed S289) re-measured green end-to-end by the non-author judge; no axis harmed; depth unchanged. Defects (status-neutral): (1) RD5 routed to the lane - the report's LOG/SCORECARD additivity receipts ('comm -23 -> 0') do not reproduce on committed raw bytes (measured 80 and 30 old-only lines): the work commit rewrote the r61 tail blocks' line endings LF->CRLF (86/33 lines) and inserted one blank line; content verified intact (CR-stripped old-only = 0; LOG base is a verbatim prefix of tip), so append-only discipline holds at content level; fix = run such receipts on committed bytes and state the normalization. (2) The r61 verifier spot-check's own RD2 site list over-stated LOG.md/SCORECARD.md/the 19d7e996 commit subject as carrying the wrong count; the lane's honest erratum is confirmed against base bytes and accepted - the acknowledgment of record lives in the r62 verifier spot-check. (3) Judge's arms re-run fixture revs differ from the committed receipt (timestamp-embedded fixture commits); all arm outcomes identical - disclosed, not a defect. Routed items for next round: RD5 above; RD6 carry (QUALITY.md criterion proposal 'a described fix is grep-addressable in the shipped bytes' lands in a round already paying a rekey); probe-arms re-run owed after any future edit to the probe or its gate. L2 floor: no dispatch surface on this host (L1-only round, disclosed); the r60 L0 question (tameshi | round-60, option (b)) stands open. SHONEN: all four boxes [~]; boxes 1-3 look checkable by a non-author promotion review (box 3's monitor verdict re-derived lost=0 ok 64/64 at the pushed tip by this closure) - operator may schedule the promotion review; no [x] written.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 55,
+   "date": "2026-11-01",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 55,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 55
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:verifiability": "improved",
+    "coverage": "improved",
+    "depth:density": "unchanged",
+    "calibration": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-55/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kasegi-shokunin/corpus/lessons/round-55-verifier-spotcheck.md@e166f1bba49446e67de317bff62d3c0b84eb1d7c",
+    "rechecks": "All re-measured by the judge from committed bytes and live re-opens: C1 ledger 9->17 (base ids 9/new 0), selftest 5/0 exit 0, green 17/17 stale=0 exit 0, red control 3 stale exit 1 (all re-run); DF-1 erratum closure check exit 0, base SCORECARD re-derives exactly 2 mentions (:2102,:2158); DF-2 receipt re-derives (5 sha pins, 4 exactly-once literals, 542/7590/33); C2 counter 35/86/38/5 -> 36/87/39/6 FAIL 33 with F36 PASS (re-run), S087 recheck 14x occurrences=1 exit 0 (re-run), capture 3407/137738/sha 3eebdf47 (re-run), LIVE re-open byte-identical (raw curl sha 89fa9af33c38... 937712 bytes; instrument re-capture cmp-identical to the committed snapshot), binding 69->70 multi_row_url 7->7 (re-run), plain counts 35->36/86->87/73->74/74 sort-clean; census validate exit 0 (same 6 informational W04s). Evidence-verified from committed receipts (not re-run): base-export do-nothing C2, stand-in dry-run v1/v2, neighbor screen, gate-final limb summaries. NEW routed defect DF-3 (status-neutral, does not bar admission): report+SCORECARD prose cites gate-final-r55.txt as CENSUS-FRESH=ok while the committed receipt prints CENSUS-FRESH=stale exit 1 (judge re-run reproduces stale) - the committed census pair is stale by exactly one self-referential citation (the lesson's citation of the receipt path: GONE 3883->3882, INTERNAL 1118->1119, lane total 1130->1131 = 22.54->22.56% on regen); round-56 fix routed in the spotcheck: regenerate the census AFTER the receipt exists, re-run freshness green, append an R9 erratum superseding the ok prose."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kasegi-shokunin@133c575394099abf28ddf1b0125c53aefde3e0fa",
+   "closed_at": "2026-11-01T13:36:12Z",
+   "campaign": "hyaku",
+   "notes": "Lane round ok, admitted. Conformance PASS: report 65ef7717 committed by kasegi-shokunin <kasegi@shokunin.local> with SHONEN heading ([~]/[ ] only, no [x] - nothing to demote); all cited commits exist, are ancestors of master, and lie in ed60637..133c575; local master == origin == 133c575394099abf28ddf1b0125c53aefde3e0fa (pushed); watchdog digest lines match; landed-changes table matches all five commit path lists; LOG/SCORECARD/PROVINCE/README/SOURCES/knowledge-expected diffs are pure appends (+48/+58/+2/+29/+3/+1, zero deletions); SKILL.md untouched; report is a real report, not a marker. Claims: C1 (depth:verifiability 4 held, capability extension, R58 nominal) and C2 (coverage 8 held, frontier F35->F36 on S087) both re-derived green; carry-in DF-1 (0->2 erratum, closure check exit 0) and DF-2 (regenerated receipt, every pin/literal re-derived) verified - both routed round-54 defects closed. Spot-check: S087 admit AGREES (live re-open byte-identical today); in-entry rejected over-generalization and the unopened CISA lead AGREES; S087 Gate quote 11 words at S087.txt:2853 verifies. No axis harmed (SCORECARD pure append; depth:verifiability 4->4, coverage 8->8, depth:density 9 held). Defects: DF-3 routed (see verification.rechecks; status-neutral, same prose-vs-receipt class as DF-1, recurring in the round that fixed it - the lane's own red control machine-catches the class and the fix form is the erratum discipline the round itself used). Standing operator-owned items unchanged and correctly unclaimed (30 problem-rows/33 FAIL records, 67 cd-/home recheck lines, python3 limb replay, absent AgentSwarm L2; L0 kasegi r50/46/54 unanswered). For the operator: SHONEN boxes 1/3/4 look close to non-author-checkable (this verifier ran the figure-audit instrument green standalone); box 2 (end-to-end domain task) remains honestly open - promotion review is the operator's call. The scratch/kasegi-r55-verifier working files of this closure were deleted; this closure.json and the spotcheck md (uncommitted, for the orchestrator to commit and cite) are the only artifacts written.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
