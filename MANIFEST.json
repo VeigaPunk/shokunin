@@ -35369,6 +35369,49 @@
    "notes": "Dispatch/complete digest (orchestrator watchdog): 2026-11-01T00:54:43-07:00 launch tameshi round=61 base=8b0042bde0ca (zcode run14); 2026-11-01T02:00:52-08:00 complete tameshi round=61 head=b82d61f03041 pushed=True. Status ok (real report, not a marker; step-1 clean). Recovery round after r60 rejected-honest-stop: the routed remedy landed and verifies under non-author re-measurement (see rechecks). Routed defects for the lane (none bar admission): RD1 the spawn-equivalence probe's claimed empty-sample failure guard is not in the shipped tool bytes (equivalence_probe returns sampled=0/mismatches=0; main gates on mismatches only) - unreachable on real runs of this repo since the ledger is always prefetched and tracked, all receipts show sampled=20; fix next round (sampled<1 -> exit 2), re-run one receipt, append-only lesson correction. RD2 number drift: report/lesson/LOG/commit subject say 21 first-family files, committed tree holds 20. RD3 number drift: '2,215-line SKILL.md', actual 2,214 at base/pin/tip. RD4 Gate prose '12 words' for an 8-token quote. Standing operator item: L2 floor has no win32 dispatch surface; tameshi round-60 L0 question (l0-questions.md line 230, routing with (b)) still unanswered, disclosed by the lane. Same-round S293/S289 duplicate handling judged correct per CORPUS.md rule 2 (rejection kept as record, S289 re-opened, rekey cost paid as batch 2, superseded batch disclosed). Spotcheck file written but NOT committed by the verifier - the orchestrator commits it and replaces @pending in verification.spotcheck.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 62,
+   "date": "2026-11-01",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 62,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 62
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "tools/mado-win-dwm.py r62-v1 — read-only Windows DWM client-attribute observer (composition state, cloaked-window census with 7 app + 7 shell + 0 inherited reason buckets, frame-bounds pair, composition-timing disposition D04); no Set*/Move*/Change* verb in the bytes; selftest 11/11 and live + from-file + ERROR rc=2 receipts re-run by the closure judge; ledger population 101 -> 102"
+   ],
+   "report": ".ufo/reports/round-62/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/mado-shokunin/corpus/lessons/round-62-verifier-spotcheck.md@cb442f663ca616c0825ed10beccece26bf920b35",
+    "rechecks": "C1/C2/C3 re-measured at df415ef3031c8707fa43c1040dc2fbf12c20f935: Corrections-block greps 0->1 both lessons, r61 erratum numstat 64/19/55 + totals 28 files +1416/-0, defect bytes ORIGINAL_PRESERVED (175/208 lines); knowledge 76->77, README index 76->77, SOURCES 354->360, entry 14 rows (4H+6K+4J); navigation 77/77 and ledger population=102 TARGET_MET evidence-verified from revision-stamped committed receipts (landing-counters-r62.txt) with underlying state corroborated by plain greps; C3 bytes read (getter-only P/Invokes, no Set*/Move*/Change*; sha256 prefix 8a8ddf2be6833603 matches) and selftest 11/11 exit 0, live receipt exit 0 with the exact committed verdict line, --from-file rc=0, malformed rc=2 all re-run by the closure judge; D04 verified as honest-unknown (cause [UNK], residue named, live 0x88980090 reproduced); used-by red-amber-green verified in the committed receipt plus row-level diffs (S400 cell extended keyed on row id; S405 amber mis-aim reverted byte-exact vs 19407ef2); spot-check 2 admits (S418, S420 re-opened live, quotes verbatim, anchors match) + 2 rejects (D04-as-host-finding, screen-capture behind the open r60 L0) — all AGREE; sources-census validate exit 0, mado ok, 36 W04 + 1 W01 identical to the committed census receipts; harm-watch selftests green (55/55, 63/63). Six status-neutral number-shape defects found in the round's own report records (total-line range mislabel 34/+1806 for a range that measures 35/+1830, wave receipts +441 vs 442/466, 18 vs 20 receipt files, 'Four commits' vs five rows, H22 range 161 vs committed run2 top_level 160, declaration S418-S422 vs landed S418-S423) — routed to the lane for append-only correction next round under SKILL Round 62 rule 3; none touches a claim."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/mado-shokunin@df415ef3031c8707fa43c1040dc2fbf12c20f935",
+   "closed_at": "2026-11-01T10:46:30Z",
+   "campaign": "hyaku",
+   "notes": "All three claims verify; no axis harmed; admitted. Report committed by lane identity at fleet 5057cb5b; SHONEN heading present ([~]x4 unchanged, no [x] by lane); all cited commits (19407ef2, f300b2ce, bd06d021, 4fe4544, df415ef3) ancestors of pushed master; dispatch digest matches watchdog. Frontier step complete (census receipts both ends exit 0, bounded search log, M62-1..M62-3 mined, C2 sourced on S418-S423). L1-only round again: >=8-L2 floor has no surface on this host, disclosed since r57 with the L0 open — standing, status-neutral, routed around. Security boundary held on both sides: no r56-era credential material opened or surfaced; verification touched only r62-era paths and read-only counters. Defects (status-neutral, M62-1 number-shape class in the round's own report records, routed to the lane): (1) total line 'base 4c5435d8 -> receipts tip 4fe4544: 34 files +1806/-1' mislabels the range — measured 35 files +1830/-1 at 4fe4544; printed numbers equal base->bd06d021; true final range base->df415ef3 = 35 files +1860/-1 (same figure repeated in SCORECARD Corrections, LOG, and the df415ef3 subject); (2) 'wave receipts +441/-0' matches neither 466 (4fe4544) nor 442 (bd06d021); (3) landing row '18 receipt files' vs measured 20 receipts/ files at 19407ef2; (4) 'Four commits' prose vs five table rows; (5) H22/report '161-170 top-level in every committed execution' vs committed probe run2 top_level 160 (all-run range 160-170; the 14-cloaked/13-visible/7+7+0/attr_failed-0 invariants hold in every run); (6) claims declaration names S418-S422 vs landed S418-S423 (S423 serves the already-declared frame-bounds join; no predicate change). Operator note: SHONEN boxes look fully checkable by a non-author review (SKILL tables, end-to-end tasks r57-r62, self-contained instructions, PROVINCE refined in-round); no non-author verifier has run to date. Routed items for round 63: append-only corrections for the six defects under SKILL Round 62 rule 3; the four L0 rulings remain the operator's; D04 residue (documented compositor-refresh getter) and rendered-pixel stay behind their named preconditions.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
