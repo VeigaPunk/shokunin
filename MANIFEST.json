@@ -33300,6 +33300,46 @@
    "notes": "Dispatch/complete digest (watchdog.log, mutable — digest authoritative): 2026-10-28T21:00:26-03:00 launch attempt=1; 2026-10-28T23:42:56-03:00 complete attempt=1; 2026-10-30T01:32:33-03:00 launch attempt=1; 2026-10-30T15:21:32-03:00 launch attempt=2; 2026-10-30T15:50:58-03:00 complete attempt=2. Supersedes the state of rounds[917]/rounds[918] (rejected-honest-stop recorded while the attempt-2 landing was GH013 push-blocked by live-credential capture in local commits cfc63604/f808ca67): the operator lifted the SECURITY HOLD 2026-10-30T15:21-03:00, the lane sanitized (WC folded, secret-bearing commits abandoned, redacted re-land 441347bc + records ea7fc98d, push passed GH013, ahead=0) — the round is durable and verified in the pushed state; this entry is the last word for (mado, 56). Operator-owned residual: revoke/rotate BOTH captured credential classes (1Password service-account token, OPENAI_CODEX_TOKEN); abandoned blobs remain unreferenced local objects until GC. Routed defects (status-neutral): (1) report before→after cites receipts/before-a2.txt + receipts/live-a2.txt at non-existent paths (committed counterparts w3/R56W3ExecBaseBefore/receipts/before-a2.txt, w3/R56W3ExecLiveGetoption/live-a2.txt) — unfixed from prior routing; (2) scratch-rev 4c640a9a cited as measurement revision is not a repo object — cite landed 441347bc; (3) before-values come from attempt-1-era base 13f0acbe while this attempt's delta is 0f3a5436→ea7fc98d — keep per-revision baselines explicit; (4) 6 of 64 w3 seats reportless (disclosed, M56-14, verified 58 reports on disk); (5) driver bookkeeping: the 01:32 launch has no complete line; (6) pre-existing census W04 duplicate-url warnings persist (mado ok, rc 0). SHONEN: 4 [~] boxes, all non-author-checkable from the committed record — promotion is operator-owned; nothing promoted, no [x] written by closure.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 50,
+   "date": "2026-10-31",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 50,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 50
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:verifiability": "improved",
+    "coverage": "improved",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "census-freshness-check"
+   ],
+   "report": ".ufo/reports/round-50/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kasegi-shokunin/corpus/lessons/round-50-verifier-spotcheck.md@bcd5d89a65ab612ef88e3d49cea0ef3cb3ccca09",
+    "rechecks": "All 13 freeze-v2 sha256 pins match committed bytes at 021989b. C1 evidence-verified (selftest 3/3; battery mutants=6 closed=5 survivor named; CENSUS-FRESH=ok files=2 receipt at tip) plus do-nothing substance re-measured (instrument absent at both base commits via ls-tree). C2' re-measured: SOURCES 79->80 as a single appended line (S065 untouched); capture 1462 lines / 70913 bytes, sha256 matches pin+manifest; README frontier rows 30->31 with F31 row + r50 admission block; PROVINCE r50 amendment EOF-append; knowledge entry carries provenance trio and interpreter-portable recheck; counter receipts before rows=30/registry=79/entries=33 pass=0/no F31 -> after rows=31/registry=80/entries=34 pass=1 (PASS F31 ids=S080), 33 FAIL lines all exactly recheck-exit-1. S080 re-opened live: version line, purpose quote (S080.txt:9-10, 14 words, verbatim), events verbs and three range types all agree. sources-census validate exit 0, kasegi ok, 5 W04 (4 inherited + disclosed S065/S080 pair). SCORECARD diff purely additive; no owned axis harmed."
+   },
+   "commit": "{{LANE_REPO}}@021989bf4f5699fa55c6d90abd37ce6ad1caa50a",
+   "closed_at": "2026-11-01T02:16:46Z",
+   "campaign": "hyaku",
+   "notes": "Real report, lane identity on fleet commit 2ae5cdc; SHONEN heading present (no [x] by lane; box 2 honestly '[ ]', no E2E task claimed); all five cited commits ancestors of pushed master; work inside 28c65eb..021989b; dispatch window consistent. Round superseded its own inherited freeze via claims-erratum-1 (D1 duplicate EPSS surface = F19; D2 host-unportable predicates; D3 unproducible do-nothing-c2 control) and re-froze host-portable claims; freeze supersession verified sound, both refusals agree on re-open. Two status-neutral defects routed to the lane (fix next round, append-only): (1) attribution - controls/do-nothing-c1.txt is labeled 'produced on this host' (report, claims.v2.json, erratum, lesson M3) but its bytes are an old-Linux-host run (Unix CPython errno string, unconverted /fast/ path, functioning python3; this host's python3 is the Store stub, its python formats the error differently - probed live); the control's substance independently re-derives (instrument absent at base), so C1 stands; (2) number-drift - report/LOG/SCORECARD/lesson erratum state census of record 204 files / 4807 distinct while the certified tip census (021989b, receipt CENSUS-FRESH=ok files=2) reads 204 / 4809 (final regen +2 GONE), unexplained by any committed in-scope byte change between e27d080 and 021989b; a named correction is owed. Also note: the 67 host-bound recheck lines ride L0 kasegi round-50 (verified present, fleet .ufo/l0-questions.md line 225) - operator-owned. Wave-1 spec honestly released un-dispatched (stale vs claims.v2, no AgentSwarm surface); no falsification credit claimed. No promotions, no mints; SHONEN.md untouched by this closure.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
