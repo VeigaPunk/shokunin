@@ -1,0 +1,7 @@
+# Historical count evidence, not new execution
+
+These are exact copies of earlier read-only audits. Their original dates, HEADs, provisional wording and later corrections remain intact. Read the audio-specific audit after the earlier four-lane audit: round71 final historical ruling was recovered; remaining94–95 uncertainty concerns round1 reviewer-report custody. Parent conservatively withholds round1, starts at94, and separately adopts substantive independently rejected87 and88, yielding96 completed documentary attempts. Original numbered label101 remains.93/98/99/100 are still unadjudicated. This is not96 accepted improvements or96 fresh runtime replays.
+
+2D102,3D106 and lore102 completed-attempt documentary histories retain their explicit excluded numbers and provenance limits. Their previous operational stop is preserved; no new training or retroactive successful admissions are created by this copy. A/ and F/ paths in the source audit mean the audio and fleet repositories, as defined there. Absolute cloud paths identify investigation provenance, not a required installation location.
+
+No roster expansion: eight historical noncanonical specialists remain scope-pending. Full current count and in-progress status must be read with the append-only fleet closures and reconciliation records, not inferred from maximum labels or number of manifest rows. Supplemental cloud Kengaku62 is not another counted round.
