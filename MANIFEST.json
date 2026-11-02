@@ -38365,6 +38365,49 @@
    "notes": "Dispatch digest corroborated: 2026-11-02T05:34:28-08:00 launch tabi round=54 base=3a415cbcadce (zcode run14); 07:36:42-08:00 complete tabi round=54 head=04db74ecd571 pushed=True. Commit chain f92c544e (freeze) -> 4d3dca81 (C2 data) -> 435ea4ce (C1 data, the cited green revision, correction 0 - the first round since 46 with none) -> c51e13e6 (work) -> 04db74ec (receipts-only final). C1 adjacency improved (evidence-verified: meter v14 green at correction 0, red-before 7 findings incl. the kengaku screen change that forced the re-screen at f97e5b7b, 0 new adjudications, selftest 16/16, v13 run-output name-leftover fixed in v14). C2 coverage improved (re-measured: capability webview2-modifier-domain-chords-windows first-working 54 - the Ctrl/Alt/Meta modifier domain bits 2/1/4 measured live against the page's own keydown record, pageKeylog re-derived by the counter, selftest 96/96, symmetric cross-refusals). depth/operability/freshness/calibration unchanged; no axis harmed; fresh-start ruling honored (r42/r43/r47 classes ruled out in the freeze's freshStartNote). Routed defects (status-neutral, fix next round): D54-1 - the three cited counter receipts (measure/c2-counter-green-at-data.json + both cross-refusal receipts) are cited in the lesson/report/LOG but not committed under .ufo/waves/round-54/measure/ (the criterion-108 class applied to counter receipts; this closure re-measured all three outputs green/red as reported, so the claims stand); D54-2 - S161's anchor says section 5.3 but the definitions sit under 3.5.1 Interface KeyboardEvent in the staged bytes (ids and quote verify). Observation recorded: the 7-finding cross-refusal corresponds to the r54 driver passed as --driver (6 with the r53 driver). Conformance defects: none. SHONEN: 4 [~] boxes, no self-[x] (correct); operator promotion-review note filed in the spotcheck (boxes 1-3 look supportable; the [x] remains the operator's). Promotions: none. Minted: none.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 69,
+   "date": "2026-11-02",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 69,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 69
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "anchor-drift sweep"
+   ],
+   "report": ".ufo/reports/round-69/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/tameshi-shokunin/corpus/lessons/round-69-verifier-spotcheck.md@0c2573d7a316c297b5811aba5905919401edbc02",
+    "rechecks": "All from committed bytes. Step-1 conformance clean: report by lane identity tameshi-shokunin at fleet 7d93c406 (blob = working tree), SHONEN heading with 4 [~] boxes, all 7 cited lane commits ancestors of master, tip aa3347f69478 pushed (= origin/master), 7 commits inside 434a96e4..aa3347f6, timestamps consistent with the dispatch digest. C1 re-measured: extracted checker blobs, v1 at base selftest 4/4 exit 0, v2 at baa63c45 (= tip blob) 5/5 exit 0 with arm 5 selfref-red PASS; 46-attribution count independently re-derived by running v1 and v2 doc sweeps over LOG/SCORECARD at both recorded tips (r68 ec6852f3: 119/114/5 LOG, 346/346 SCORECARD; r67 94b0fd7b: 114/109/5, 338/338) and diffing first-carrier lines: carrier-changed 35+11 per tip, every re-pointed carrier confirmed miss-record-only (0 violations), totals byte-identical (0 verdicts moved either direction - the corrected r67 erratum narrative confirmed: no standing quote solely miss-record-backed); tip sweeps re-run: LOG 122/117/5, SCORECARD 350/350/0, lesson 2/2. C2 re-measured: anchor-drift selftest 5/5 exit 0 from committed bytes; standing sweep run by verifier rows=4 met=4 unexpected=0 exit 0 with the routed S299 drift as measured red arm (expect=absent measured=absent ok), byte-identical to anchor-standings-r69.txt; before-greps all reproduce (ls-tree anchor-drift 0 at base; manifest ids 4; S300 0->1; registry 159->160; capability row anchored 0->1). Shared no-harm chain re-run at the tip by verifier: floor 434a96e4 cand aa3347f6 lost=0 ok exit 0 (equivalence 20/20 both sides), historic floor 8b0042bd lost=0 ok exit 0, rev mode 64/64 probe 20/20 exit 0; committed chain verified: RED at cf5570d3 lost=13 exit 1 with decode miss=0 equal-in-order to r68 set and rehearsal, rekey REBIND OK sections=13 entries_added=13 ledger_before=758, ledger entry counts re-counted 758->771 and unchanged at tip; additivity raw_old_only=0 on SOURCES/ledger/LOG/SCORECARD with disclosed insertions; monitored files incl. guarded probe blob-identical base->tip; SCORECARD diff pure insertion, no axis score row edited. Standing instruments evidence-verified from receipts (bind 7/7, rexists 4/4, figattn 7/7 + rows=3 met=3, arm-liveness 5/5 + rows=6 live=6). Discernment: S300 admit re-opened (live re-fetch HTTP 200 55260 B last-modified equal to recorded; snapshot sha256 c72bed36... matches row; 24-word quote verbatim in text content; census-clean) - agree; S293 reject sample re-opened (URL byte-equal to held S289; census flags the duplicate in the same run) - agree; census validate exit 0 with the pre-existing 17 W04 + 1 W01 set. Self-sweep findings=2 disclosure verified complete (receipt + LOG erratum + SCORECARD erratum + lesson mistake 5)."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/tameshi-shokunin@aa3347f69478014d4178e1cc2e24a2cc91c5eb66",
+   "closed_at": "2026-11-02T16:38:30Z",
+   "campaign": "hyaku",
+   "notes": "Round 69 admitted: C1 (calibration, quoted-line-exists v2 miss-record-line exclusion, selftest 4/4 -> 5/5, 46 false-carrier attributions re-pointed per recorded tip with totals byte-identical, zero verdicts moved) and C2 (operability capability anchor-drift sweep, 4-row manifest with the r68 routed S299 anchor drift as standing measured red arm, sourced on new row S300) both verify from committed bytes; shared no-harm chain holds re-run at the tip (RED lost=13 decoded miss=0 -> rekey r69-batch-1 ledger 758->771 -> lost=0 ok both floors + rev 64/64). Both r68 closure routed defects addressed: defect 1 via anchored counting commands + SCORECARD correction paragraph (the operative anchored measurements verify), defect 2 via lesson carry-in + round-69 SOURCES tail note correction of record + the standing measured red arm. Honest self-sweep findings=2 (rekey commit message names red-decode-r69.txt / reh-red-decode-r69.txt one commit before they land) disclosed as measured in LOG + SCORECARD erratum + lesson mistake 5; verified. Routed defects for next round (status-neutral, do not bar admission): (1) number-drift in the r68-defect-1 correction narrative - report and SCORECARD correction paragraph claim the unanchored grep 'figure-attribution check' 'reads 4 at both the r67 tip and the r68 tip'; measured 4 at the r68 tip (434a96e4, ec6852f3, e39f9ba0) but 0 at both r67-tip candidates (859a736d as the paragraph itself cites; 94b0fd7b) since the phrase does not exist in SCORECARD before round 68 - the same sentence's anchored measurement (0 at 859a736d -> 1 at 434a96e4) verifies and the correction of record stands; fix append-only next round; related: the cited rehearsal receipt pointer for this re-run does not contain the specific measurement (directory resolves, file absent). (2) two count nits in the report's landed-changes table: '20 receipt files' at 89869bea (19 added measured) and '19 rehearsal receipts' (18 files measured). L1-only round disclosed (batched L2 floor has no surface on this host; r60 L0 question stands, r61-r68 precedent). SHONEN: 4 boxes all [~] with monitor pointers; boxes 1 and 4 look non-author checkable (SKILL.md/PROVINCE.md blob-identical base->tip; input-keyed cold-read monitor re-run 64/64 by this verifier) but no independent promotion verifier exists - operator's call, no [x] written by anyone. Scratch scratch/tameshi-r69 was deleted with the round per report; this closure.json written fresh by the verifier. Promotions: none. Minted: none. Verifier spotcheck file written but NOT committed (orchestrator to commit under protocol identity and replace @pending in verification.spotcheck).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
