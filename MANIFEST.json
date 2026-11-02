@@ -37156,6 +37156,50 @@
    "notes": "Recovery round after r70 rejected-honest-stop; admitted. L1-only (no AgentSwarm surface, L0-noted r70); work f4f67ec5 (attempt 1) + 798a5bb4 (measured revision M) + close e700e5fc; attempt 1 honestly read REPLAY71_UNMET held=10/17 on the latent stdout-sha extraction defect and its receipt is preserved. Defects (status-neutral, next round): N1 LOG r71 entry gates line cites README_MAP 171 / CITE_SOURCES 206 vs committed close gates.txt 172/207 (lesson+README row added in the same close commit; append a note); N2 lesson says S220 quote is 17 words, it is 16 (<=25 holds); N3 report aside 'A grows by the one new counter file' is loose - frozen A stays 10 (new counter is a .ufo/waves artifact), the unchanged SCORECARD cell is the authority; N4 'tool bytes untouched' wording overstates - scripts/control-replay.mjs was byte-changed by the measured budget recalibration (900000->1200000) and re-pinned in the same commit (controls/v1/v2 genuinely untouched and hash-checked); N5 disclosed limit re-confirmed live by the verifier: frozen v2 red counter cannot complete a full battery in the current host speed window (V09 local timeout 900000 ms at replay70-probe-v2.mjs:150 vs ~900-921 s c1/donothing; two REPLAY70V2_ERROR EPERM aborts at V09 on 2026-11-01) - treat the committed red receipt (arithmetic and provenance verified) as red evidence and re-run green for the live after-state. Routed host defect from the lane (plan-before-ready.sh POSIX/Windows path-form repo-root check) stands as filed, N/A this round (no wave). SHONEN for the operator: all four boxes carry resolvable evidence and look fully checkable by a non-author on this spot-check's re-derived evidence (D5 [~] annotation standing in for the r70 [x]); this verifier wrote no [x] per contract. No promotions, no mints, no other lane touched.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 65,
+   "date": "2026-11-01",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 65,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 65
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "commit-message receipt binding sweep",
+    "quoted-line receipt backability"
+   ],
+   "report": ".ufo/reports/round-65/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/tameshi-shokunin/corpus/lessons/round-65-verifier-spotcheck.md@469cde0fbfc9862493caba35016d5d6f6af98894",
+    "rechecks": "C1+C2 RE-MEASURED by the closure judge at ced05ce1828b from committed bytes (tool sha256 pins c2fa903a... and 2c295a6d... match the report): both selftests 4/4 exit 0; bind sweep d0baf616..c7d28b19 findings=1 exit 1 with exactly BIND_DEFECT 6876d746 naming tip-confirmation plus BIND_OK c7d28b19e (matches committed receipt byte-for-byte); own range 7d7f9ca8..6db7e2fc findings=0 exit 0; post-erratum full range findings=4 carried=5 (all four defects at 87e955975, five BIND_OK at ced05ce18); quoted-line demo at the rekey tip on the two r64 records docs=2 quotes=16 backed=12 missing=4 exit 1 with all four unbacked quotes named (one verifier narration line, three sha-abbreviated shapes), not retro-repaired at the tip; explicit mode backed exit 0. No-harm guard RE-RUN at the tip: lost=0 ok exit 0 at the round floor 7d7f9ca80442 (64/64) and the historic floor 8b0042bde0ca (46 to 64), rev mode credited=64/64, probe 20/20. Before-state primitives re-derived (cat-file -e 6876d746:path exit 128 while the message names it; both tools absent at floor, present at their work commits). SOURCES 155 to 156 via pure 2-line insertion; LOG pure append; all eight protected surfaces blob-unchanged (K8 diff shows only corpus/SOURCES.md); SCORECARD mid-file capability-row insertion disclosed. Erratum chain verified: 87e95597 empty (diff-tree --stat empty) yet naming four receipts; ced05ce1 lands exactly those bytes plus the erratum-sweep receipt; the frozen sweep's vacuous findings=0 over 7d7f9ca8..87e95597 receipted (candidates-scope blind spot); checker blob unchanged 3b833293 to ced05ce1 (2cb2ada9) - routed to round 66, not patched post-data. Discernment: S296 admit re-opened live (quote verbatim in git-commit docs OPTIONS --allow-empty; committed extract sha256 08e87c56 matches, 18-word quote at line 2871) and standing S293 reject re-opened live (URL byte-held by S289; batch framing present) - AGREE on both; census validate exit 0 with the same 17 W04 + 1 W01 pre-existing set, no new warning; criterion-110 forecast miss=0 confirmed (rehearsal vs live LOST heading sets identical)."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/tameshi-shokunin@ced05ce1828b056e4194848850fec4d03d9dfcce",
+   "closed_at": "2026-11-02T01:27:10Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (watchdog.log): 2026-11-01T13:13:23-08:00 launch tameshi round=65 base=7d7f9ca80442 (zcode run14); 2026-11-01T16:37:30-08:00 complete tameshi round=65 head=ced05ce1828b pushed=True. Status ok (real report, not a marker). Step-1 clean: report committed by lane identity tameshi-shokunin <tameshi@shokunin.local> at 8896e743 in the fleet repo; SHONEN heading present with four [~] lines; all 13 cited lane hashes ancestors of refs/heads/master; local tip = remote tip = ced05ce1828b. Both claims verify (measured by the closure judge); no owned axis harmed (guard green re-run at the tip at both floors + rev 64/64; protected surfaces blob-unchanged). Same-round erratum disclosed and corrected in-round: tip commit 87e95597 was itself an empty commit naming four receipts it did not carry (the routed r64 defect class, self-caught by inspection before closure); correction ced05ce1 lands the named bytes. Routed to round 66: the frozen bind sweep's candidates-scope blind spot - a commit naming an evidence path that exists nowhere in the range reads findings=0 (vacuous pass receipted at live-bind-erratum-sweep.txt over 7d7f9ca8..87e95597); fix = message-extracted full .ufo/evidence/ and tools/ path spans x git cat-file -e per commit, as a new checker arm with the 87e95597 shape as its red arm; the checker blob was NOT patched post-data this round (identical at 3b833293 and ced05ce1). Status-neutral defects named: the mid-round repetition of the routed class (disclosed, corrected in-round); L1-only round (the L2 floor has no dispatch surface on this host; the r60 L0 question at the fleet root stands unanswered - route around, not treated as answered); verifier-side note only: the judge's demo re-run omitted --extra-root so five fleet-root path cites read absent instead of resolved-fs (totals identical). SHONEN boxes remain [~] asserted-by-lane with resolvable pointers; per protocol this closure does not write [x] - the promotion-review decision is the operator's (boxes 2-3 evidence re-executed by the judge at closure).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
