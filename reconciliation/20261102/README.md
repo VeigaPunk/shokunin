@@ -1,0 +1,7 @@
+# Local-only fleet reconciliation candidate
+
+Original cloud snapshot and all original repositories are untouched. This branch starts at canonical b73780abeda329a256ad2271128991ce33ab8134 and adds eight distinct historical closures with their exact reports. Rejected-honest-stop verdicts remain rejected; no admission or count is invented. The canonical Kengaku62 report is untouched; cloud62 is supplemental, not another numbered round.
+
+`canonical-MANIFEST.json` preserves the entire original file. Active MANIFEST preserves its byte prefix through the last original entry; only final JSON closing delimiters move to permit appending. `verification.json` records hashes and readbacks. Original closure object spans are archived byte-exact; appended objects retain exact source spans. The source-history Git bundle requires common ancestor ee8386800d14d3f2a5ea7b7e872535bc30100e7e, present on the canonical lineage. The original cloud branch is retained in the source clone and fetched clone history.
+
+`append-local.py` is an unchanged archived cloud operator helper, not a replacement for canonical scripts and not automatically enabled. Its compatibility with this candidate requires parent review before use. Protocol, scripts, roster and old ledger entries are unchanged. No push or upstream merge has occurred. Parent independent review must precede new rounds. The original audit predates the final Kasegi62 closure; verification.json identifies the exact later cloud snapshot used here.

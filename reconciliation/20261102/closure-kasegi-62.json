@@ -1,0 +1,45 @@
+{
+   "round": 62,
+   "date": "2026-11-02",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 62,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 62
+   },
+   "closed_at": "2026-11-02T23:02:41.880068+00:00",
+   "campaign": "hyaku",
+   "report": ".ufo/reports/round-62/kasegi.md",
+   "promotions": [],
+   "minted": [],
+   "admitted": true,
+   "verdict": "admitted",
+   "training_completed": true,
+   "training_kind": "substantive reviewed bounded manual assessment capability",
+   "verdicts": {
+    "depth": "improved",
+    "coverage": "unchanged",
+    "operability": "improved",
+    "freshness": "improved",
+    "calibration": "improved",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "Bounded manual CSAF2.0 VEX evidence assessment: exact product/build identity, component/code absence, execution path, adversary control, built-in protection, external mitigation, fixed versus not-affected, and scoped impact information; not automatic classifier. First working round62."
+   ],
+   "commit": "https://github.com/VeigaPunk/kasegi-shokunin@a8d73355aa482ec620d223dfe80088fdc0f59188",
+   "verification": {
+    "reviewer": "independent parent-appointed cloud reviewer, non-author",
+    "spotcheck": "corpus/lessons/round-62-cloud-review/final-review.md@33db93e11a4d98ab22475836373ac7dd893dd0b4",
+    "rechecks": "10 original assessments supported,3 prospective bad policies rejected; primary CSAF bytes independently opened and exact hash matched. SourceS108admit/S109scopedreject agree. Actual Q10 lane0/foreign0 equal output, corrupt1/missing2.79historical entry outcomes unchanged, kernel35/35 OSV40/40 figure27/27 capture89/89. Final read-only freshness0 and clean at a8d73355 after reviewer directory and bounded metadata refresh; freeze/answers/negatives unchanged."
+   },
+   "notes": "Bounded C1 admission, depth scalar4 held, density240.6 to235.2 disclosed held9, coverage unchanged. CISA PDFs inaccessible so exact source model narrowed BEFORE freeze to CSAF2.0 OASIS2022-11-18; OpenVEX rejected only as authority for CSAF fields. Pre-freeze wrong anchor/flag ambiguity preserved. Stale census at7e5bab and post-review33db93e retained as failures, corrected after all appends; no semantic rescore or historical rewrite. Reviewer14files byte-readback, all commits ancestors. Original authorreporta307333 retained, append-only finalerratumb1342365, fullreportSHA3be69542106260ba2b0720bf40b6698e5381ad83e9350718c41d17ba1ccf5f9a verified. Cloud-host-specific recheck, no native target action/promotion/general performanceclaim. UpstreamKasegi master eae1d614 original56 unchanged checked22:56; no collision. Local closure, no public push."
+  }
