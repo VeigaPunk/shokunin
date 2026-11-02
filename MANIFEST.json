@@ -38115,6 +38115,46 @@
    "notes": "Dispatch digest (watchdog.log, re-read at closure): 2026-11-02T02:28:18-08:00 launch tameshi round=68 base=859a736deb1e (zcode run14); 2026-11-02T04:33:36-08:00 complete tameshi round=68 head=ec6852f367eb pushed=True. Status ok; both claims verify measured by the non-author verifier; no owned axis harmed (depth 10, freshness 9, calibration 8 unchanged; verdict-only operability improved; monitored files blob-identical base->tip; additivity raw_old_only=0 on every landed pair). Six round commits c60d8622/1a063d5f/dcd10cc5/f694df16/e39f9ba0/ec6852f3, all ancestors of master; lane pushed ahead=0. L1-only round disclosed (no batched AgentSwarm surface on this host; r60 L0 question stands unanswered — r61-r67 precedent, operator-side). Defects (status-neutral, routed to the lane for round 69): (1) counting-command under-specification — the R68-C1 capability-row command printed as grep -c 'figure-attribution check' reads 4 at tip, not the reported 1; the anchored form grep -cE '^\\| figure-attribution check' reads 0 -> 1 and is the command to cite (correction entry, never a rewrite); (2) S299 anchor naming drift — anchor says 'Directory deletion operations', the page's actual section heading (snapshot and live) is 'Directory and files operations'; record a SOURCES correction note in the next round's lesson (contract v1 rows are append-only; anchor is not an in-place-editable cell). Spot-check: 1 admit (S299 — agree), 1 refusal (tempfile duplicate of S279 — agree), 1 price-out (git-ls-tree/git-log docs — agree); census exit 0. SHONEN operator note: boxes 2 and 3 look checkable by a non-author from this round's evidence alone (two executed instrument cycles with committed receipts; instruments + standing sweeps executable without oral context) — an independent promotion verifier may check them; lane wrote only [~], no [x] added by the lane. Verifier spotcheck file written but NOT committed (orchestrator commits under the protocol identity).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 63,
+   "date": "2026-11-02",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 63,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 63
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "coverage": "unchanged",
+    "calibration": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "tools/round-63/edge-numstat-sweep.py — corpus-wide numstat-edge claim sweep composing the frozen r61 numstat-edge-audit per receipt (sha-pinned 6b967e20 via --expect-sha256, --name never fleet-wide, inventory only from gate JSON bodies); first corpus-wide edge inventory at the r63 base: 258 receipts, 3 claim-bearing (7 instances), 2 binding all endpoints from receipt-own bytes, 4 findings (standing D60-1 EDGE_MISMATCH + 3 fail-closed quote-prose NAME_UNRESOLVED), 0 invocation errors; selftest 53/0"
+   ],
+   "report": ".ufo/reports/round-63/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/shokunin-reverse-engineering/corpus/lessons/round-63-verifier-spotcheck.md@c7fe6898e9a8b3ff04486b4a1d672e9db37610c9",
+    "rechecks": "C1 re-measured by the closure judge from committed bytes (extracted blob copies, pins hash-verified 0e67bd45/6b967e20): selftest 53/0 rc0; red base inventory at 4ce1d64e rc1 = 258 receipts, counts {green 1, findings 2, unevaluable 255, invocation_error 0}, edge {7 claims, 3 with, 2 all-endpoints, 1 unresolved, 255 without}, 4 keys — exact match; green at base + 4-row TSV rc0 '4 finding(s) all dispositioned'; --only arm 3 receipts same 4 keys; pin fail-closed rc2 before enumeration; record-rev red at df727606 + 4-row TSV rc1 with the NEW self-referential key edgesweep-dispositions.tsv:3:NUMSTAT_NAME_UNRESOLVED (273 receipts, 0 invocation errors); record-rev green + 5-row TSV rc0 '5 finding(s) all dispositioned'. TSV 4→5 append-only byte-verified (rows 1-4 identical freeze→tip; record-rev TSV = freeze TSV); TSV line 3 quotes the T7 sibling claim with the U+2192 arrow and binds no revisions — hand-verified from committed bytes. Before/after probes re-derived (instrument absent rc128 at base; SKILL/SCORECARD greps 0→1; behavior probes 0; planned-field mention 1). S263 re-opened: snapshot sha256 d0b45c7e 121928 bytes matches, quote 11 words plain in the body <p> under the h1 module heading, SOURCES 169→170 with S263 directly after S262. Freeze-gate CLEAN receipts evidence-verified at pinned revs (preflight fbc0f950 rc0 audited 38 clean 18 required_failed []; landing df727606 rc0 round-62+63 CLEAN disclosures 38/38 exact; gate not executed). No-harm re-derived: insertions-only diff (3043+), owned-axes rows byte-equal, SKILL freeze→record exactly 1 0 (the one registry row), PROVINCE empty, LOG 32 0/42 0, SOURCES exactly 1 0, nine instruments + ten prior wave dirs byte-equal. Discernment: 1 admit (S263) + 3 rejects sampled, all agree; census literal form exits 2 (disclosed since r53), absolute-dir adapted form exits 0 with 19 W04; freshstart probes r50/r51/r52 re-derived; M63-2 ls-tree count 2 at round-54/round-55 re-derived; L0 round-53 still open. Conformance: report by lane identity at fleet 18abdc78, SHONEN heading 4×[~], six commits all ancestors and lane-identity, tip pushed, work reachable base..tip; no conformance defects found."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/shokunin-reverse-engineering@94bf15cb7ef44d4192360225a3c10517792b2e47",
+   "closed_at": "2026-11-02T13:30:14Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-11-02T02:20:15-08:00 launch kaidoku round=63 base=4ce1d64ed62f (zcode run14); 2026-11-02T04:42:45-08:00 complete kaidoku round=63 head=94bf15cb7ef4 pushed=True. Every claim verifies and no axis is harmed -> admitted. Defects: none new found by closure. Carried status-neutral items restated by the lane and verified standing: (1) literal census command exits 2 on this host (mapped kaidoku-shokunin dir absent at the fleet clone; disclosed since r53; absolute-dir adapted form is the working form, exit 0, 19 W04, rows 169->170); (2) 19 standing W04 duplicate-url warnings at both census ends; (3) two standing RECEIPT_ABSENT bare-name findings (freeze-gate-tip-90f3a9b9.json quoted inside the r58/r60 containers; dispositions maintained, the sixth refusal to plant a copy upheld, flip not firing); (4) kaidoku round-53 L0 question still open (no wave/dispatch surface on this host), routed around; (5) the standing D60-1 EDGE_MISMATCH keeps firing at round-60/l1/scores/c1-after.txt:10 on every override-free run by design (filed bytes stay as filed; the r61 correction receipt is the fix record). For the operator: all four SHONEN boxes look checkable by a non-author on this round's evidence (SKILL craft/registry row; the r63 sweep logged end-to-end carry-in->close; standalone selftest + self-transcribing receipts; PROVINCE diff empty) — the judge writes no [x]; promotion review stays operator-owned. No promotions, no mints, no cross-lane writes; the spotcheck markdown is left uncommitted for the orchestrator to commit under the protocol identity.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
