@@ -38577,6 +38577,47 @@
    "notes": "Dispatch/complete digest (watchdog.log, matches closure contract): 2026-11-02T08:39:04-08:00 launch tameshi round=70 base=0c2573d7a316 (zcode run14); 2026-11-02T10:47:29-08:00 complete tameshi round=70 head=922475c7223f pushed=True. Status ok (real report, step-1 clean). Admitted: C1 (calibration, capability acquisition printed-count recheck) and C2 (operability, arm-liveness 6->7 + anchor-drift 4->16) verify by this verifier's own re-measurement from committed bytes; no axis harmed (guard re-run at tip: lost=0 ok both floors + rev). Honest self-catch verified: the receipts commit 22807192 named 19 receipts its tree did not carry (treecommit helper takes repo-relative paths; absolute paths silently dropped), the first repair 6e6cf2f7 repeated it cwd-relative, repair-2 25bc78a6 landed all 20 receipts repo-relative - disclosed in LOG/SCORECARD errata and lesson mistakes 4-5; the 79 standing findings are permanent disclosed landed history. Routed defects: (1) to the operator - the dispatched prompt omits the round-level L2-minimum item (prompt-fidelity, status-neutral; the lane disclosed the L1-only shape citing the standing r60 L0 question); (2) to the lane (next-round carry, optional) - a bind-erratum manifest row may pin the 22807192+6e6cf2f7 pair as standing red arms; (3) operator note - SHONEN boxes remain [~] lane assertions with no independent promotion verifier. L2 floor: no surface on this host, disclosed in the report, r60 L0 question stands unanswered. Frontier: SOURCES 160->161 (S301 Git git-grep docs, opened this round, census-clean); five mistakes mined; census exit 0 at round start and end (re-run exit 0 at closure). Scratch cleanup: this verifier's scratch (scratch/tameshi-r70/verifier) holds only extracted tip-byte scripts and guard work dirs; closure.json is the artifact the orchestrator validates.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 88,
+   "date": "2026-11-02",
+   "type": "closure",
+   "lane": "revenger",
+   "lane_round": 88,
+   "lanes": {
+    "revenger": "ok"
+   },
+   "lane_rounds": {
+    "revenger": 88
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-88/revenger.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/shokunin-binary-forensics/corpus/lessons/round-88-verifier-spotcheck.md@5915ad8d71c19ad377829d130ba1c35445eb32a4",
+    "rechecks": "C1 measured end-to-end by the non-author: selftest re-run from the committed blob (sha256 57098ed5...71271, 17664 bytes = pin; 5 finding-ids + SWEEP_SELFTEST=pass exit 0); red re-derived over the 48db9e0 base blob (473 rows, 27 tokens P1=7 P2=1 P3=8 P4=4 P5=7, VERIFIED=1/7 S457, OPEN=6 with exact drifts S454 10v11 S456 11v12 S459 16v14 S461 19v17 S462 11v10 S463 10v7, exit 1); green re-derived over the 41322a3 committed blob AND the worktree (479 rows, CLOSED=6/6 by=S474(11)/S475(12)/S476(14)/S477(17)/S478(10)/S479(7), OPEN=0, exit 0); all six supersessions spot-checked - quotes byte-verbatim in legacy and superseding anchors and re-opened by me in every bound source across all four channel types (rea help legs x3, git log 46c605c subject, r81 spotcheck file, NibArchive.js:28), whitespace-rule counts re-derived and drift confirmed per leg; both sed mutants re-derived from the pinned recipes (shas match pins; attributed deaths exit 1 at ST1/ST2); registration measured 8 -> 9 registry rows with all PROTOCOL fields in the receipt_sweep row; pre-registration verified in the freeze claims.md. C2 no-harm re-derived: protected paths empty over 7fab03f..41322a3 (only SKILL.md + SOURCES.md; SKILL 0 deleted lines; SOURCES net pure append); SCORECARD/LOG append-only; holds evidence-verified over the correction tip 41322a3 (probe blob pins re-computed as sha256 prefixes 1840c30cf4f1cad0/4d871971fa49131f/f9772ab1428ebe6e - match; M 3/3, F4 10/11, A1v2 5/5, A1 3/3, freshness 18/18, K 8/15, exits 0). E12 catch verified: rows at file end outside Registry at 87f80ce, inside directly after S473 at 41322a3, six rows byte-identical across the move (non-row bytes identical). Census validate re-run: sanctioned explicit-lane-dir form exit 0 (21 W01 + 10 W04, zero E) matching the committed receipt; the contract's literal 'revenger' id form exits 2 (host resolves revenger-shokunin/ which does not exist; lane dir is shokunin-binary-forensics) - status-neutral, L0 r79 lineage. Discernment: 1 admit + 1 reject sampled (S474-S479 admits re-opened and agreed; F-android rejection re-verified - REA_JADX_MCP_JAR UNSET, jadx absent; considerthese non-adoption re-opened and agreed; S473 erratum re-derived: quote verbatim in SCORECARD, whitespace 12 vs r87's 13, both <=25)."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/shokunin-binary-forensics@45b27135dac305142437ea49304f109b01a1325c",
+   "closed_at": "2026-11-02T19:37:45Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (watchdog): 2026-11-02T08:43:00-08:00 launch revenger round=88 base=48db9e0cee27 (zcode run14); 2026-11-02T10:55:02-08:00 complete revenger round=88 head=45b27135dac3 pushed=True. Step-1 conformance all pass: report substantive (not a marker), committed by lane identity revenger-shokunin at fleet 95d00a08f; SHONEN heading present with 4 [~] lines (no author [x]); cited lane commits 7fab03f/87f80ce/41322a3/45b2713 all ancestors of main; origin/main == local main == 45b2713; range 48db9e0..45b2713 contains exactly the four lane-identity round-88 commits. One declared claim (C1 calibration, criterion R full extension, not exploratory) verifies measured: the r76 receipt rule became a registry-wide gate (receipt_sweep, ninth SKILL Gate registry row), whose first sweep found six legacy word-count receipts false under the declared whitespace rule (drift in the counts, quotes verbatim - verified per leg against the bound sources) and closed all six via verified supersessions S474-S479; red over base -> green over landing re-derived by the non-author. No axis harmed: holds green over the correction tip, protected paths empty freeze..correction. E12 landing defect (rows appended at file end outside the Registry) caught by the round-end census and corrected move-only at 41322a3 (row bytes sha-identical, verified). Five mistakes mined with resolvable pointers (E12 placement, synthetic-id grammar, pinned-marker reachability, grep-piped exit attribution + unpinned temp tree, P3 truncated-version detector). Status-neutral defects/notes: (1) closure-contract census literal form 'revenger' exits 2 on this host (repo dir named shokunin-binary-forensics; sanctioned explicit-dir form exits 0, lane receipts + my re-run agree) - operator may reconcile lane-id vs repo-dir naming, L0 r79 lineage; (2) superseded first/second census draft receipts not committed (their catches independently re-derivable from committed row states; final receipts committed); (3) SHONEN boxes remain [~] asserted-by-author; box 1 non-author re-confirmation of the r88 SKILL.md bytes stays operator-side routing - no [x] writable by this verifier under the promotion-gate rules. Routed forward (lane-owned): criterion C repair (operator-gated), F android gate, K L0 r74, census literal form, sweep maintenance duty (future word-count receipts must declare-rule or register a WC_MAP revision with red-before), criterion-instrument class question (r78 note). No promotions, no mints, no cross-lane writes.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
