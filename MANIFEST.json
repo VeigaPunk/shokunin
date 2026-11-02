@@ -37072,6 +37072,50 @@
    "notes": "Dispatch/complete digest: 2026-11-01T13:01:21-08:00 launch tsukuroi round=61 base=6b26c338be47 (zcode run14) | 2026-11-01T14:48:22-08:00 complete tsukuroi round=61 head=52d9ba1a898f pushed=True (watchdog.log lines 274/287 corroborated). Step-1 conformance clean: report committed in the fleet repo by lane identity tsukuroi-shokunin (4706f913), SHONEN heading with four [~] lines, all four cited lane commits (136bfb00 abb2a161 541cdaea 52d9ba1a) ancestors of master, local master = origin master = 52d9ba1a, round work exactly the cited range, report landed last (22:48:23Z after 22:43:52Z). Real report, not a marker. All three claims verify by judge re-measurement (C1 SOURCED driver-query plane DQ1-DQ5 with S276/S275 live re-opens and dq probes re-run; C2 recheck-registry-r61.sh run by the judge from committed bytes 10/10/0 due=2026-11-30 exactly once, no-flag 0, refusals rc 2; C3 map governance 9 rows verified against landed r53-r61 artifacts, PROVINCE blob-identical); no axis harmed, all six ordinals unchanged (8/9/9/9/9/8), saturated-axis moves per the stagnation nudge with C1 on the lowest axis. Defects (status-neutral, routed for r62): (1) R61-RAW-RECEIPTS-UNLANDED — twelve raw receipt files cited as landed (9 .ufo/waves/round-61/driver-probes/ dq receipts, 3 .ufo/waves/round-61/receipts/ run receipts incl. FIRST-RUN-FAIL-at-authoring) were never committed; they survive in the lane working tree; every underlying value independently re-derived live by the judge so no claim fails; this is the THIRD occurrence of the lane's unlanded-receipt class (after D-R58-BEFORE-RECEIPTS-UNLANDED and R59-GATE-FAIL-RECEIPT-UNLANDED, the latter declared closed at r60) — fix at r62 by committing the twelve files byte-identically under their honest names (the r60 regeneration pattern) so the C1 note's 2026-11-30 recheck duty has its committed comparison base; (2) landing-class misstatements in lesson/SCORECARD asserting committed status for those files (discharged by defect 1's fix); (3) cosmetic: the r53 map row's Holds column describes the D1-D7 register that lives in the sibling note host-transition-drift-r53.md (cross-referenced, pointer resolves indirectly) — optional one-row correction. Routed/standing items: whole-SKILL non-author SHONEN verification stays parked on L0 tsukuroi | round-60 (.ufo/l0-questions.md:253, operator's call; boxes stay [~], not dischargeable by the closure judge per its contract, and remain fully checkable by a designated non-author or the operator); L0s round-53 (line 229), round-57 (line 247) and the round-1 kaidoku/revenger scope (line 42) remain open and were routed around; 2026-11-30 cadence pass next runs with --due 2026-12-30 (three planes + the new registry arm), and the DQ rows' own 30d pass (due 2026-11-30) compares against the dq receipts once defect 1 discharges; S276/S275 180d re-open triggers carry. Status-neutral observations: the named limits (adjacency-gate FAIL at base and final tree with identical detail — pre-existing host-class surface absence; check-self-assessment cannot evaluate, K13) are named rather than smoothed and are not round deltas; the C2 arm's --due gate deliberately skips exact month-length (documented in the header).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 71,
+   "date": "2026-11-01",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 71,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 71
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "depth": "improved",
+    "operability": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "tools/mori-workstate-win.py — Windows working-state read: GetTickCount64 (biased ms) beside QueryUnbiasedInterruptTime (100-ns floored to ms, conversion named on the line), failed-call mapped honest-unavailable, selftest 10/10 x3 + live rc 0 x3 re-run by closure",
+    "tools/mori-events-context-win.py — boot-window-paired events receipt: wevtutil-counts child bound with the uptime child in one receipt, child bytes never echoed (redaction arm), boot_binding=none on every line, selftest 10/10 x3 + live PAIRED rc 0 x3 re-run by closure"
+   ],
+   "report": ".ufo/reports/round-71/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/mori-shokunin/corpus/lessons/round-71-verifier-spotcheck.md@c5873f73d9811b65e44b5edcdeea625e519ed984",
+    "rechecks": "All three claims re-measured by closure (not evidence-only): C1 before/after greps reproduce (supersedes S582 0->1, QUALITY ^162. 0->1, drift pair :833->0/:834->1, :842->0/:841->1, :845->0/:842->1) and the S582 byte-identity was re-proven by a fresh closure curl (sha256 580f1935..., 52661 bytes, == pin == committed receipt); C2/C3 selftests re-run 10/10 rc 0 x3 each and live runs re-executed rc 0 x3 each (workstate AVAILABLE with floor-conversion line and negative deltas; events PAIRED matched=209 window=200 with boot_binding=none; redaction arm code-read + selftest case 7); S584 pin re-opened live byte-identical (sha256 d0bcbba9..., 54774 bytes); SOURCES 355->357 re-counted; census validator rc 0 'mori ok' (32 tolerated W04); SCORECARD diff append-only 54 insertions 0 deletions; frozen six absent from diff; fresh-start r61 frozen counter re-run by closure reproduces C2=unmet rc 1. Routed defects (status-neutral): D71-1 the new S584 row's zero-at-boot anchor records :828 but the sentence is at :829 (grep 0 vs 1; same drifted pointer in the S584 receipt, lesson Gate, entry K4, tool header) — violates the just-landed QUALITY 162 on the round's own bytes and proves it able-to-fail; fix next round as a new supersedes/correction entry :828->:829 plus an every-mention sweep. D71-2 minor: two S584 quote word-counts misstated (26 recorded 22; 15 recorded 17), correct in the same sweep."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/mori-shokunin@3627fac03f00ee904b45c9a9511b842356b1b46b",
+   "closed_at": "2026-11-01T23:55:11Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-01T13:32:00-08:00 launch mori round=71 base=015787e6f5aa; 2026-11-01T15:06:39-08:00 complete mori round=71 head=3627fac03f00 pushed=True. Conformance clean: report committed in the fleet repo by the lane identity mori-shokunin <mori@shokunin.local> (a85534c6), SHONEN heading 4/4 boxes all [~] with pointers, cited hashes 015787e6/3627fac0 exist and ancestral, local master == ls-remote == 3627fac0 (ahead=0), round work reachable in 015787e6..3627fac0 (25 files +3246/-4, only SHONEN evidence-line deletions, no frozen byte). r70 D1 discharged via S583 supersedes row (INSIDE Registry after S582) with closure-re-proven live byte-identity and QUALITY 162 (able-to-fail, demonstrated); r70 D2 discharged old->new in the r71 lesson Gate; first-census-end E11 (S583 used-by parenthetical broke the validator path parse, rc 1) disclosed NOT-CAPTURED-verbatim per QUALITY 160 and fixed pre-commit per contract rule 2, mined as mistake 6; FRESH-START r59-r61 re-derivations receipted and the r61 counter re-run by closure reproduces C2=unmet rc 1. All claims verified; no axis harmed; admitted. Defects D71-1/D71-2 (S584 zero-at-boot anchor :828 should be :829, plus two word-count miscounts) are routed status-neutral to the lane for round 72 with the every-mention sweep named in the spotcheck section 5 — they do not falsify C2's substance (page, pin, quotes, tier and all probe behavior verify). SHONEN boxes look fully checkable by a non-author (this closure re-derived the substance behind all four; no [x] written per contract) — operator may treat spotcheck section 7 as the reviewing record.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
