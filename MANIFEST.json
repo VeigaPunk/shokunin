@@ -37407,6 +37407,50 @@
    "notes": "Dispatch/complete digest: 2026-11-01T15:53:29-08:00 launch tsukuroi round=62 base=bcf1af189ae8 (zcode run14) | 2026-11-01T18:41:15-08:00 complete tsukuroi round=62 head=13b095a6 pushed=True; round commits 2026-11-02T01:01Z..02:32Z inside the window. FRESH-START round: r50/r51/r52 re-spot-checked at base, five move classes ruled out for cause. Claims: C1 depth SOURCED pagefile/commit-charge CONFIG plane PF1-PF6 per S277 (opened live before the declaration text) PASS measured, depth unchanged (8); C2 operability capability tools/check-cited-receipts-r62.py (round-scoped cited-receipt landing gate, selftest 4/4, historical re-derivations FAIL 3 / FAIL 1 / PASS 0 with the r59 scratch-retained limit named) PASS measured, operability unchanged (9, saturated). Carry-ins from the r61 closure discharged first (receipts landed byte-identical at ccfa4706; misstatement correction blocks appended at f47bb0aa; r53 map Note cell repaired). Three mistakes self-caught with committed evidence (R62-RECEIPT-RUN-SPAWN-FAIL, R62-BATCH-DEADLOCK, R62-RECEIPT-RUN-TMP-PATH); 0 rejections stated explicitly (one lead retired unopened); census exit 0 at start and end. Conformance defects: none. Defects/notes (status-neutral): (1) precision - the correction text says the 'D1-D7 table' lives in host-transition-drift-r53.md; the register holds D1-D12, pointer accurate for D1-D7, wording inherited from the r61 defect; (2) operator note - sources-census validate --root <fleet-root> reads the fleet-root mirror copy of SOURCES (shokunin-clone/shokunin/tsukuroi-shokunin/corpus/SOURCES.md); judge diffed it byte-identical to lane head this closure, but the mirror could drift; (3) routed to round 63 - the lane-planned receipt-run spawn-failure exit-map fix + selftest case; (4) SHONEN boxes all [~] parked on L0 tsukuroi|round-60, correctly not self-discharged, nothing fully checkable by a non-author this round.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 58,
+   "date": "2026-11-01",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 58,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 58
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "freshness": "improved",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "adjacency": "unchanged",
+    "novelty": "unchanged",
+    "calibration": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "tolerance-band-grader-probe"
+   ],
+   "report": ".ufo/reports/round-58/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kengaku-shokunin/corpus/lessons/round-58-verifier-spotcheck.md@e0cfa97ae8cae38dbd888963611ce9f2d9e3a3e8",
+    "rechecks": "All three claims re-measured by the judge in WSL Ubuntu-24.04 (python 3.12.3, bwrap, git 2.56.0, numpy 2.5.4; uv/pytest absent) on judge-owned bundle clones at the pushed head 46fe5398 plus a base clone at a6b209cf. C1: anchor_line_check base live=1 exit 1 -> tip live=0 exit 0 with selftest 6/6 (RED/GREEN/JUNK/ESC-GOOD/ESC-RED/ESC-WORDS); round46_c2_verify base PREDICATE C2 fail exit 1 -> tip PREDICATE C2 pass exit 0; S213-S217 verified as contract-shaped supersedes-rows carrying the same capture shas with corrected anchors (5-token recount). C2: round50_c1_verify full runs at BOTH ends re-derived (base pin=b5197f94 mismatched=125 PREDICATE fail; tip pin=f41db91b mismatched=0 PREDICATE R50-C1 pass exit 0); discriminator table2.txt re-counted (126 rows, 1 MATCH n10-empty-repo, 125 DRIFT, UNSTABLE empty); stability EQ-pin 3 builds; re-pin sha256 recomputed = POPULATION_SHA, other columns byte-identical, header dated. C3: freeze ordering verified structurally (claims+probe+captures at d6bc6027, receipt first lands b0b1d729, probe sha 51c192f2 stable freeze->tip); probe re-run 48/48 cell-for-cell vs the frozen zero-U table, PREDICATE R58-C3 pass exit 0; receipt sha256 3c93e06a...53c1f re-derived; sha-refusal kill re-fired on a judge-owned tamper (KILL-EXIT=1, matching the dated correction); all four sources S209-S212 re-fetched live, sha256 match committed captures and row anchors, located quotes byte-true and <=25 words. CLOSURE-PREP instruments at the pushed head: registry PREDICATE R52-C2 pass (ADVERTISED 86/REGISTERED 86), LANDCHECK PASS n=4, full entry-truth executed=87 timeout=0 mismatched=0 evidence_missing=0 laundered=0 BINDING l1=0 l2=0 l3=0 TIPSTATE 56g/31r declared==observed PREDICATE R55-C2 pass exit 0 (byte-equivalent in predicate fields to the committed waveR/final-tip-receipts-r3.txt measured at bf48fd2072). Repair cascade: 5 of 6 breaks verified (round51-routing PREDICATE R51-C2 pass re-run; both repaired check fields read runnable; a_tok _edit_row scoping diff read; E11 knowledge entry + census exit 0 with exactly 20 W04; registry catch repaired with the first-class anchor-line-check row re-measured; W4 break covered by the tip entry-truth green). SCORECARD base->tip = 47 insertions 0 deletions, axis-history rows byte-identical, no axis harmed. Evidence-verified from committed bytes: falsifier receipts, findings correction history, claims freeze + dated corrections, lesson Gate/Mistakes, LOG entries, L0 file (all three standing questions still open, nothing assumed answered), commit-message capture chain of the intermediate red states, assimilation cross-check. Status-neutral defects named in the spotcheck: (a) five cited round-58 receipt paths uncommitted (wavep/r50-after.txt, wavec/kl-sha-kill.txt, wavec-tip/entryargv-full.txt, waveR/final-tip-receipts.txt unsuffixed, fix/r46c2-after.txt) - load-bearing states covered by committed receipts and judge re-runs; (b) fixed-checker receipt's per-fixture exit=0 labels contradict its own selftest rc=1 lines (payload correct); cosmetic: report says three Mistakes rows vs landed four (wave-F2 addition), six surfaces vs four counters counting-unit difference, watchdog complete line precedes report commit by 1s (r54/r57 class)."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kengaku-shokunin@46fe53981572865698017b22abea3572e6ebeee2",
+   "closed_at": "2026-11-02T04:25:19Z",
+   "campaign": "hyaku",
+   "notes": "kengaku round 58 admitted: C1 (operability) R56-F1 QUOTE_RE escape-aware repair with 3 escaped-quote falsifier fixtures, selftest 6/6 re-run; repair exposed real defects declared as R58-F1/R58-F2 and repaired via Q34 supersessions S213-S217 (round46-c2 red->green, dated). C2 (freshness 9->10) round50-c1 root cause closed with measurements (125/126 deterministic drift, sole matcher n10-empty-repo stable EQ-pin, 0 unstable in the double-build discriminator) and population re-pinned f41db91b dated rows-preserved; PREDICATE R50-C1 pass re-derived at tip, base red re-derived at a6b209cf. C3 (coverage, L0-capped) fifteenth grader distribution-search read+executed as the corpus's first tolerance-band gate (dual KL <= 1e-3); 48/48 zero-U predictions frozen before the first capture run (freeze ordering verified structurally) and confirmed on the judge re-run; score held 7 by the standing L0 cap (questions round-25/33/51 and round-56 still open, nothing assumed answered). Repair cascade: six tip-counter surfaces broke before closure, all captured by the designed counters and repaired/re-declared with dated notes; five of six verified this closure, tip surface re-runs green from the judge's own runs (laundered=0). Defects (status-neutral, routed to the lane for round 59): commit the five cited-but-uncommitted round-58 receipt paths or re-point the citations; fix the esc-falsifier-fixed-checker.txt per-fixture exit labels; prefer one counting-unit phrase for the cascade. SHONEN: all four boxes [~] with resolvable pointers, no [x] anywhere - they look fully checkable by a non-author; operator may run that gate. No promotions, no mints, no cross-lane writes.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
