@@ -12,3 +12,7 @@ For every held round:
 - Continue only after substantive non-author closure; no automatic next-round advancement by the author or fabricated counts.
 
 The current roster scope is unchanged. This permits authorized private training to continue, not unauthorized publication.
+
+## Operator release later on 2026-11-02
+
+Ongoing publication of reviewed training code, test evidence and reports is now authorized through the existing local gh session for the current thirteen canonical specialist repositories and fleet, on working branches only. Main branches, force pushes, secrets and unrelated publications remain outside that permission. The earlier hold and its private-continuation explanation remain historical evidence, not an active demand to pause training or a grant beyond this campaign.
