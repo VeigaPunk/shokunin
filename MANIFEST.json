@@ -37824,6 +37824,48 @@
    "notes": "Dispatch digest (watchdog, corroborated): 2026-11-01T22:50:54-08:00 launch mori round=74 base=a9c3abb70572 (zcode run14); 2026-11-02T00:35:03-08:00 complete mori round=74 head=dc50c80bac27 pushed=True. All three claims verify; no axis harmed; report is real (not a marker) -> ok, admitted. Verdicts agree with the spotcheck axis table. Routed defect (lane, next round, append-only): the declared C2 capability acquisition lacks the canonical 4-column capabilities-table row (rounds 68-72 each landed one; r74 carries the facts inside the C2 claims-table row but no '| ... | 74 |' row) — append the canonical row for tools/mori-rotation-schedule.py, first-working round 74. Status-neutral observations: (1) the report's -8 deletion decomposition names 6 of 8 (SHONEN 4 + SKILL join 2); the other 2 are the SOURCES used-by row-replacements (numstat 3/2) — headline counts 22 paths +2845/-8 exact; (2) the verifier's live run computed window-s=305 against the stated 304 s window (children's 1-second as-of stamps; the round's own run computed 304) — within the tool's documented design, expect +/-1 s; (3) the S581 teaching cell narrates the r70 session's per-window pattern anchored to those receipts while the r74 instability lives in the r74 artifacts — no stale-unmarked defect; any future repair goes through contract rule 2 (a supersedes row), never an in-place edit. For the operator: all four SHONEN boxes carry resolvable pointers this closure resolved — fully checkable by a non-author at a promotion review. The three open mori L0 lines (round-62, round-65, round-73) confirmed present and routed around, never treated as answered. Honest window-dependency finding verified as an observation, not a defect: the verifier's own live run reproduced no/no/yes against the r70 session's no/YES/no, exactly as the round reported. Standing redaction rule honored across both closure artifacts: counts and shapes only.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 59,
+   "date": "2026-11-02",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 59,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 59
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged",
+    "novelty": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-59/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kengaku-shokunin/corpus/lessons/round-59-verifier-spotcheck.md@9482c8408f62e2a13a69f27870f1825bbbe73d8b",
+    "rechecks": "No CLOSURE-PREP artifact in the workspace; WSL Ubuntu-24.04 available (python 3.12.3, bwrap 0.9.0, git 2.56.0, OpenSSL 3.0.13 = the lane's declared counter environment), so BOTH claims RE-DERIVED end-to-end by the judge on judge-owned clean clones at five revisions (tip bc9cd073, base e0cfa97a, 5420eac9, freeze 002cde8e, e0512854a) and committed receipts evidence-verified byte-for-byte against those runs. C2 (operability, ADMITTED): gate sha pins both verified (efd50ef6...4b77 at freeze -> 3767a447...faa at e0512854 == tip); --selftest re-run 8/8 exit 0; red-before re-run at e0512854 = files=6854 anchored-exit-pairs=13 defects=2 errata=0 PREDICATE R59-C2 fail exit 1 (both defects the r58 finding-(b) labels at esc-falsifier-fixed-checker.txt:9/:13; erratum absent there) byte-matching the committed c2-red-before.txt; green-after re-run at tip = defects=0 errata=3 PREDICATE R59-C2 pass exit 0 (6858/14 vs the committed 6857/13 = exactly the wave-W3 receipt file itself); Q25 amendment window verified by commit order (amendment at e0512854 precedes all C2 receipts of record: red-before 85ef87e5, green 22ffccc7); frozen-gate over-count reproduced (defects=15 = 2 real + 13 unanchored, matching the kept over-count receipt); claims doc append-only (41 insertions 0 deletions freeze->tip); SKILL registry + ledger rows present. C1 (coverage, NOT ADMITTED - predicate honestly FAILED): probe sha a7c9b231...a18cd identical freeze->tip (not re-frozen); judge's own scored re-run = cases=12 legs=72 mismatches=2 setup=0 predicted_u=0 PREDICATE R59-C1 fail exit 1, payload byte-identical to the committed receipt (REV 002cde8e); the 2 misses re-derived independently: exactly perm-loose and key-1024 legs dir/key (predicted F/P, observed P/F) and the freeze's own defect-class annotations name the key leg as the failing one - author-transcription confirmed from committed bytes; frozen table at 002cde8e still F/P (Q25 honored); probe registered RED in registry+ledger and entryargv TIPSTATE re-run 59g/30r declared==observed; before/after anchors re-derived (PROVINCE sixteenth 0->2, SOURCES 210->215, capture dir absent->present, no key material committed); score held 7 by the standing L0 cap (round-25/33/51 open in l0-questions.md, nothing assumed answered). Tip health re-derived at bc9cd073, all byte-matching final-tip-receipts.txt: registry 88/88 R52-C2 pass, landcheck PASS n=4, state_check PASS mismatch=0 superseded=7, anchor live=0 (S221 repaired by S222), r46-c2 C2 pass, r51 pass, r50 15/15 pass, r35 declared-red exit 1, full entry-truth executed=89 timeout=0 mismatched=0 evidence_missing=0 laundered=0 BINDING l1=0 l2=0 l3=0 PREDICATE R55-C2 pass exit 0. Five re-landed round-58 receipts verified at 5420eac9 at their cited paths with dated re-landing headers and green predicate fields (r50 pass, r46c2 pass, KILL-EXIT=1, executed=87 laundered=0 R55-C2 pass, R52-C2 pass + LANDCHECK PASS n=4). No axis harmed: SCORECARD diff 47 insertions 0 deletions. Evidence-verified from committed bytes: step-1 conformance (report by lane identity 6772ec89, SHONEN heading line 179, all 8 cited hashes ancestors, remote==local==bc9cd073, watchdog digest lines 319/346 verbatim, SHONEN.md untouched), lesson Gate/Mistakes (5 rows + appendix), LOG wave entries R/W2/W2b/W3 etc, knowledge entry + README index row, PROVINCE 16 of 89, considerthese diff empty, census exit 0 with 21 W04 = 20 + S222. Sources re-opened LIVE by the judge: S218/S220/S219/S221 at TB2 pin 2fd12b88 - all four sha256s match rows and captures; S219 three-way byte-identity (live = r59 capture = r52 population capture); quotes re-counted 21/13/7/8/9 words all <=25; S222's corrected 7-word count confirmed."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kengaku-shokunin@bc9cd0737444a2925965a138c71112fb193c3328",
+   "closed_at": "2026-11-02T09:48:11Z",
+   "campaign": "hyaku",
+   "notes": "kengaku round 59 rejected-honest-stop (lane status ok: real report, real committed work, no marker). R59-C2 (operability) admitted and re-derived green by the judge (receipt-consistency gate red defects=2 -> green defects=0 errata=3, selftest 8/8, Q25-window amendment before any receipt of record verified by commit order, over-count receipt kept). R59-C1 (coverage, lowest owned axis) NOT admitted: the frozen zero-U predicate honestly FAILED on 2 of 72 author-transcribed predictions (perm-loose/key-1024 first two legs swapped) - judge re-derived the fail and the transcription independently from committed bytes; NOT re-frozen per Q25; probe registered RED; score held 7 by the standing L0 cap (round-25/33/51 + round-56 still open). Every-claim-verifies therefore unmet -> admitted=false per AXES.md, matching the lane's own admitted_self=false; no axis harmed (SCORECARD additive only). The r58 closure's four routed items all discharged and verified (five receipts re-landed at 5420eac9; finding-(b) closed red->green; corrections dated). Close-tip counter cascade caught by the round's own counters and repaired before receipts landed (S222 supersedes S221 6->7 words; R26-E11 closes the pre-existing SHONEN box-4 pointer drift; two stale reds flipped green with dated mechanisms). Trends all improved and verified (expansion: 16 of 89 graders, SOURCES 210->215, admitted knowledge entry on new class ground; quality: tip surface re-runs green from judge's clone incl. entry-truth executed=89 laundered=0 declared==observed; discernment: spot-check agrees with all 4 sampled gate decisions incl. both reject-equivalents). Status-neutral defects routed to the lane for round 60: (1) the round-58 report's '## Corrections (round 59)' erratum append (26 lines) is UNCOMMITTED in the fleet-repo working tree - the round-59 report's pointer to it does not resolve at closure; commit it or re-land it; (2) two path@hash citations miss the landing commit (c2-red-before.txt first lands 85ef87e5 not e0512854; receipt-consistency.txt first lands 22ffccc7 not 85ef87e - the mined receipt-pointer class again; 'committed BEFORE the erratum' is same-commit in fact); (3) the dated correction's own re-derive command grep -c 'broke four tip counters' LOG.md prints 0 (phrase line-wrapped at LOG.md:1961-1962); (4) SCORECARD round-59 section says SOURCES 210->214, stale by S222 (tip 215). SHONEN: all four boxes [~] with resolvable pointers, no [x] anywhere; boxes look fully checkable by a non-author promotion review (registry R52-C2, probe receipt, state_check PASS all re-derived at the tip) - operator may schedule it. No promotions, no mints, no cross-lane writes; judge wrote only the spotcheck (uncommitted) + this closure entry.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
