@@ -38747,6 +38747,50 @@
    "notes": "Dispatch digest: 2026-11-02T11:32:31-08:00 launch tameshi round=71 base=4ed9ce1c52e2 (zcode run14); 2026-11-02T13:38:47-08:00 complete tameshi round=71 head=92669eb94b05 pushed=True (watchdog.log, matches closure digest). Status ok, real report, admitted: both claims re-measured clean by the non-author closure verifier, no axis harmed. Conformance defects (status-neutral): (1) the L2-minimum item is still absent from the dispatched prompt - known operator-side defect (r60 L0 question, r70 routing, this round appended L0 line tameshi|round-71); L1-only round disclosed; (2) minor: the S302 anchor's secondary cite says the numeric-address sentence is in section 4.3 of the sed manual but it sits in section 4.2 (snapshot heading line 2246, sentence at 2255 - quote and page-line exact); routed to the lane for a next-round correction per SOURCES rule 2, bundled with priced rekey work; (3) minor wording nit: tip-guard receipts pin cand=b54ab3e5 while the report says re-run at the final tip 92669eb9 (delta is evidence-only; the verifier's own re-run at the true tip reads lost=0 ok both floors + rev 64/64, so the substance holds). Routed carries for the lane: the PROVINCE r16 :85-91 stale cell stays a standing red arm until a priced correction round; pointer-recheck successor rows enter as routed. Operator items: SHONEN boxes remain four [~] lane assertions - the non-author promotion review has not happened and is an operator-triggered act; the L2 prompt-fidelity ruling is still wanted. Receipts: .ufo/evidence/round-71/win-host/ (18 live + 12 rehearsal + census/base).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 62,
+   "date": "2026-11-02",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 62,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 62
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "unchanged",
+    "calibration": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged",
+    "novelty": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "grader-class-census-survey"
+   ],
+   "report": ".ufo/reports/round-62/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kengaku-shokunin/corpus/lessons/round-62-verifier-spotcheck.md@c78749a565dfd186f10a1d8ac98e19dac2429666",
+    "rechecks": "R62-C1 RE-MEASURED: fresh WSL-native-fs clone (Ubuntu-24.04, python 3.12.3, git 2.56.0) at 5d8609133721, python3 plans/round62_c1_class_survey.py --lane . -> PREDICATE R62-C1 pass, exit 0, output byte-identical to the committed receipt of record corpus/evidence/round62/class-survey.txt (sha256 ee30c698...45613 as reported); instrument self-pin 9414af9c...85d6 verified; roster=89==tree-dirs=89, captures 183/183 sha-verified, 93 graders / 16 classes / 0 unclassified, sentinel and EXECUTED-COVERAGE reproduced. R62-C2 RE-DERIVED: D1 hunk count 3 (2c2/6c6/13c13) from the committed table-identity receipt; D3 EOL re-measured from git objects (base 272 lines/0 CR; freeze 274/274; numstat +274/-272=546; repair 0-CR net +2/-0); D2 S227 live re-open sha 2c5fa192...60795 byte-identical, :105 = pointer 98 (0xE2-0x80), S225 row byte-identical base->tip; correction counters 0->1 x3, wrong-gloss token stays 1 (Q34). Standing gates (R59-C2 receipt gate, R60-C2 correction gate, LANDCHECK n=4 MISSING 0, state_check 329 PASS, r61 probe 12/12, census END exit 0 with 22 W04s) EVIDENCE-VERIFIED from committed .ufo/waves/round-62/final-receipts.txt (at 88658241) and pushed-head-verification.txt (at 5d860913, declared +1 self-inclusion drift); lane gates not executed by the verifier. Amendment ordering verified: detector-table take-1 RED (21:05:29Z) amended before freeze 93f19d1a (21:16:06Z); SETUP receipt AS-IS + five untracked files committed at 968f6ae7 (21:40:16Z) before the scored run of record in 629f1267 (21:41:56Z), nothing re-scored; census E12 caught pre-commit and repaired before the freeze (committed rows at SOURCES 242-243 inside Registry). Discernment: S226 and S227 live re-opened byte-identical (github git-trees API + WHATWG index), quotes located; both sampled reject-equivalent decisions agree; sources-census validate ok exit 0."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kengaku-shokunin@5d8609133721c3f2f220ecdd8ccf15d5b42ca8d4",
+   "closed_at": "2026-11-02T21:59:38Z",
+   "campaign": "hyaku",
+   "notes": "Retry session: prior round-62 attempt landed no work (verified at base: no round-62 commit/paths, PROVINCE anchors 0). Conformance clean: report committed by lane identity (df9f1fa0) with SHONEN heading; all six cited commits (93f19d1a, 968f6ae7, 629f1267, c2e93fda, 88658241, 5d860913) exist and are ancestors of master; tip == origin/master; work inside c55a3f88..5d860913; not a marker. Both claims admitted (C1 predicate met, coverage HELD at 7 by the standing unanswered L0 cap kengaku|round-25/33/51 - verified still open; C2 discharged R61-D1/D2/D3 with re-deriving receipts). SCORECARD diff is a pure append - no axis harmed; trends expansion=improved, quality=unchanged, discernment=improved (agreed). DEFECT (status-neutral, routed to kengaku for round 63): the new knowledge entry corpus/knowledge/tb2-grader-class-census.md lacks verified-at: and recheck: (CORPUS provenance-trio rule; content exists in receipt form but not machine-readable trio; lane-wide drift pre-exists at 27/64 entries lacking verified-at); fix by dated append naming the entry, never an in-place rewrite. OPERATOR NOTES: all four SHONEN.md boxes are [~] asserted-by-author with resolvable pointers (box 1's pointer is bare 'SKILL.md') and look fully checkable by a non-author verifier if the operator runs the promotion review; L0 kengaku|round-25/33/51 (coverage cap, decision packet, absent surfaces) and kengaku|round-56 (L2 surface, ledger host column) remain open with no operator answer; the round-52 push-protection question stays disposed by corpus/evidence/round52/graders/EXCLUDED.md.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
