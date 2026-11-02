@@ -38408,6 +38408,47 @@
    "notes": "Round 69 admitted: C1 (calibration, quoted-line-exists v2 miss-record-line exclusion, selftest 4/4 -> 5/5, 46 false-carrier attributions re-pointed per recorded tip with totals byte-identical, zero verdicts moved) and C2 (operability capability anchor-drift sweep, 4-row manifest with the r68 routed S299 anchor drift as standing measured red arm, sourced on new row S300) both verify from committed bytes; shared no-harm chain holds re-run at the tip (RED lost=13 decoded miss=0 -> rekey r69-batch-1 ledger 758->771 -> lost=0 ok both floors + rev 64/64). Both r68 closure routed defects addressed: defect 1 via anchored counting commands + SCORECARD correction paragraph (the operative anchored measurements verify), defect 2 via lesson carry-in + round-69 SOURCES tail note correction of record + the standing measured red arm. Honest self-sweep findings=2 (rekey commit message names red-decode-r69.txt / reh-red-decode-r69.txt one commit before they land) disclosed as measured in LOG + SCORECARD erratum + lesson mistake 5; verified. Routed defects for next round (status-neutral, do not bar admission): (1) number-drift in the r68-defect-1 correction narrative - report and SCORECARD correction paragraph claim the unanchored grep 'figure-attribution check' 'reads 4 at both the r67 tip and the r68 tip'; measured 4 at the r68 tip (434a96e4, ec6852f3, e39f9ba0) but 0 at both r67-tip candidates (859a736d as the paragraph itself cites; 94b0fd7b) since the phrase does not exist in SCORECARD before round 68 - the same sentence's anchored measurement (0 at 859a736d -> 1 at 434a96e4) verifies and the correction of record stands; fix append-only next round; related: the cited rehearsal receipt pointer for this re-run does not contain the specific measurement (directory resolves, file absent). (2) two count nits in the report's landed-changes table: '20 receipt files' at 89869bea (19 added measured) and '19 rehearsal receipts' (18 files measured). L1-only round disclosed (batched L2 floor has no surface on this host; r60 L0 question stands, r61-r68 precedent). SHONEN: 4 boxes all [~] with monitor pointers; boxes 1 and 4 look non-author checkable (SKILL.md/PROVINCE.md blob-identical base->tip; input-keyed cold-read monitor re-run 64/64 by this verifier) but no independent promotion verifier exists - operator's call, no [x] written by anyone. Scratch scratch/tameshi-r69 was deleted with the round per report; this closure.json written fresh by the verifier. Promotions: none. Minted: none. Verifier spotcheck file written but NOT committed (orchestrator to commit under protocol identity and replace @pending in verification.spotcheck).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 87,
+   "date": "2026-11-02",
+   "type": "closure",
+   "lane": "revenger",
+   "lane_round": 87,
+   "lanes": {
+    "revenger": "ok"
+   },
+   "lane_rounds": {
+    "revenger": 87
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-87/revenger.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/shokunin-binary-forensics/corpus/lessons/round-87-verifier-spotcheck.md@48db9e0cee274250b2e14a03760759ee7e7375fd",
+    "rechecks": "Step-1 conformance clean: report landed by revenger-shokunin identity (fleet commit 5916d3ab), SHONEN heading with four [~] lines, cited commits ea143a3a/1fa086d3/1481f490 all ancestors of main, ls-remote origin == local main == 1481f490. C1 re-measured from committed blobs (git show, never the index): instrument shas match the claims pins (v1 eb5d1b54, v2 d7027146, counting ed0b3282; unchanged freeze->tip); red re-run over frozen v1 bytes 0/1 . 0/2 . 0/1 exit 1 (matches negctl-red.log; v1 blindness markers all grep 0); green re-run over committed v2 blob 1/1 . 2/2 . 1/1 exit 0 (matches negctl-green.log); direct --selftest prints the four committed finding-ids + NEGCTL_V2_SELFTEST=pass exit 0; usage exit 64; both sed mutants re-derived from the committed blob (diff exactly 35c35, mutated shas f70c0e9a/ec29099c match pins) dying exit 1 attributed (A at ST1 false-pass, B passes ST1 then dies at ST2 attribution guard); plain-mode equality re-run over the real lane root after byte-verifying the six input files equal the committed tip: probe outputs diff empty, both exit 0 (matches plain-equal.log); registry sed-grep 7 (base 1306ec9) -> 8 (landing 1fa086d3) -> 8 (tip) with a complete Gate-standard row; S473 grounding re-opened (NF=13, tier A own-work, quote verbatim at SCORECARD.md:756 base commit, <=25 words, used-by paths exist); SOURCES 473 rows / 0 malformed / 0 dups; freshness 12+6=18 re-grepped; protected paths empty over 1306ec9..1481f490; freeze..landing = 2 files 12 insertions 0 deletions. Evidence-verified without execution (lane-owned gates): holds-over-landing-archive.log (M 3/3, F4 10/11, A1v2 5/5, A1 3/3, K 8/15; all three probe blob pins re-hash-match) and c1-only.log. Fresh probes re-run fresh: REA_JADX_MCP_JAR UNSET, no jadx on PATH, L0 r74 unanswered (line 233). Census re-run by this session: sanctioned explicit-lane-dir form exit 0 (21 W01 + 10 W04, zero E, matches receipts); contract-literal form exit 2 (standing operator-side defect, L0 r79 lineage). Discernment spot-check: 2 admits (S473, C1) and 2 rejects (considerthese Q16 checker not adopted; coverage/K + coverage/F ruled out) all re-opened, all agree. No material defect; status-neutral notes only (plain-mode git-checkout dependency transparency, S473 quote 12-vs-13 word counting, SHONEN boxes 2-3 look non-author-checkable per protocol, census literal form + SHONEN box 1 re-confirmation stay operator-side)."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/shokunin-binary-forensics@1481f4907b370a32bc6543dfe831a3da30741d97",
+   "closed_at": "2026-11-02T16:39:42Z",
+   "campaign": "hyaku",
+   "notes": "revenger r87 closes the r75-planned-(b) item carried 12 rounds: the criterion-N mutation-killed attribution pair on the negctl harness itself (probe_negctl2 v2 supersedes the never-registered r75 v1; plain mode v1-identical, hermetic selftest with four committed finding-ids, usage exit 64, two frozen sed mutants dying attributed) plus the criterion-N instrument's first Gate-registry row (7 -> 8). ONE claim (C1, calibration, not exploratory), verifies end-to-end from committed bytes re-measured by the closure judge; no axis harmed (holds green, no-harm clean 12 insertions 0 deletions, protected paths empty); round admissible. Routed forward (lane's own list, unchanged obligations): criterion R full extension; criterion C repair; F android gate (REA_JADX_MCP_JAR + jadx PATH, re-probed fresh 2026-11-02); K L0 r74 (unanswered); census literal form (operator-side, L0 r79); SHONEN box 1 non-author re-confirmation now naming the r87 SKILL.md bytes (operator-side); criterion-instrument class question (r78 note); considerthese Q16 self-map checker (considered, not adopted, consumers operator-blocked). Status-neutral notes for the operator: (1) SHONEN boxes 2-3 look fully checkable by a non-author from this round's receipts - operator may re-confirm on the r87 bytes; (2) plain-mode receipts require a git checkout (lane-repo surface), selftest mode is hermetic - optional registry wording hardening; (3) S473 quote is 12 words by whitespace (13 counting retire/split as two), <=25 under any convention.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
