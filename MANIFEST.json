@@ -38661,6 +38661,49 @@
    "notes": "Dispatch digest: 2026-11-02T09:35:20-08:00 launch mori round=78 base=ecb916ce0105 (zcode run14); 2026-11-02T11:21:45-08:00 complete mori round=78 head=22dbaae43644 pushed=True. Report committed by lane identity mori-shokunin <mori@shokunin.local> at fleet 9bd2c952 (11:21:45-08:00) after the lane's final commit (11:17:32-08:00) — commit-before-report holds; real report, not a marker. The r77 recovery round: all three rejected-honest-stop carry-ins discharged exactly as the r77 spotcheck prescribed (D77-1 new-commit landing at the receipted bytes, D77-2 canonical capabilities row, D77-3 append-only correction of record); frozen history untouched (0 r77 artifacts edited, 0 deletions in the round diff); the counter capability was re-demonstrated live by the closure judge at the landed blob bytes. L2: none — no dispatch surface on this host (carried disclosure; mori L0 lines 62/65/73 re-verified present and unanswered, routed around). DEFECTS (status-neutral, routed to the lane for next round): D78-1 the report's C2 do-nothing control command is mis-cited (the phrase 'correction of record' reads 6 at entering LOG, not 0; the 0 marker is D77-3-specific and the committed control receipt names no command — fix by append-only precision correction naming the exact marker and standing rule: a control receipt states its counting command); D78-2 the census-end receipt validated the orchestrator-synced fleet-root copy whose tip predated the landing commit (disclosed inline; next rounds re-run or annotate when the landing postdates the census). Operator items: SHONEN.md remains 4/4 self-attested [~] — all four boxes are checkable by a non-author from cited evidence if the operator runs a promotion review; the three r76 foreign (stopped-parallel-attempt) receipt files remain disk-only/uncommitted/uncited for operator disposition (lane ruling verified correct three rounds running). All verdicts re-derived from committed bytes and live re-execution; no settings-file values, session identifiers, session-store paths, or session-record fields copied into any artifact (counts and shapes only).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 55,
+   "date": "2026-11-02",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 55,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 55
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "adjacency": "improved",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "operability": "unchanged",
+    "calibration": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "webview2-keyevent-control-keys-windows"
+   ],
+   "report": ".ufo/reports/round-55/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/tabi-shokunin/corpus/lessons/round-55-verifier-spotcheck.md@faee4cb27982388b18e9a45f292cdfb9dfd1ebc8",
+    "rechecks": "Report committed by tabi-shokunin at fleet ee838680 with SHONEN heading, 4 [~] boxes, no [x]; all 9 cited lane commits exist and are ancestors of master; local master == remote (545b251d). C2 RE-MEASURED: judge re-ran the committed runner (sha d773fa71... == claims.json pin) once in a throwaway-profile, loopback-only, fail-closed-teardown run (exit 0 first try, fresh nonce, teardown sweep 0) and the committed counter (sha e4b9f9be... == pin) over BOTH the fresh receipt (exit 0, predicate true, 0 findings, cne []) and the committed receipt+PNG bytes (exit 0, 0 findings); evidence tree 0->7 recounted; cross-refusals 6/7 findings verified from committed receipts; selftests 103/103 and 6/6 from committed receipts. C1 EVIDENCE-VERIFIED from committed receipts (snapshot pins govern; lane meter not executed): committed v14 red control = exactly the 6 reported findings; delta-r55/audit-r55 at 216b1cf2 re-derived byte-for-byte by the judge (kengaku sha 75c6ccc3.../892 lines at a6cd337d; binary-forensics sha c49f6d1d.../59 lines + 4 in-vocabulary line rows at 41322a34); snapshot receipts pin both cycles; raced correction-0 receipt = 1 finding tameshi; v15 selftest 16/16 committed; v14->v15 diff independently confirmed pure-core byte-identical with the v14 'round 53' name-leftover disclosed at the committed token check. The green transcript measure/c1-meter-green-at-correction1.json exists on disk (rev 216b1cf2, predicate true, 0 findings) but is UNCOMMITTED (defect N1) - the green still re-derives from the committed ledger chain and reproducible counting command. D54-1 landed exactly (3 receipts + provenance note at the cited paths, finding sets exact); D54-2 verified against staged bytes (data-level=3.5.1 present, no 5.3 heading); D54-3 referred only. SCORECARD diff purely additive, no axis harmed. Spot-check: 2 admits re-opened (S083 quote greps 1 hit in staged bytes sha dc7c3088.../466321 B; S153 fresh fetch BYTE-IDENTICAL, sha f60f0c02... == registered anchor, modifiers quote verbatim) + 1 reject re-opened (S162 duplicate-URL draft absent, E04=duplicate_url, judge's own check-sources run clean rows=161 findings=0); census validate exit 0, tabi ok, 22 pre-existing W04. Defects (status-neutral): N1 the round's named receipts commit never landed (c1-meter-green-at-correction1.json, census-end.txt, check-sources-at-work.txt, c3-gate-v4-at-final.txt, and the two staged .ufo/waves/round-55/sources/ copies uncommitted at the citing round - the lane's own criterion-109 class; ROUTED: land next round with the git-show landing check); N2 the freeze took FIVE commits not four - 5fd39bfc (empty tree, in range) is uncited and its message falsely claims a full carrier (CRLF root cause and db6f4225 full carrier stand); N3 the correction-1 race had TWO movers (tameshi 6e6cf2f7->25bc78a6 disclosed; binary-forensics 87f80cef->41322a34 unnamed in prose, absorbed by the rebind, ledger re-derives) - ROUTED: enumerate every moved head in correction disclosures; N4 S083 anchor+teaches and S161 anchor were edited in place outside the strict v1 columns (status/recheck/used-by), old->new logged, r54 routing directed corrected-of-record - operator/aggregator to rule on superseding rows (S156 pattern); N5 minor: lane scratch scratch/tabi-r55/ not deleted (author's originals survive there for the N1 landing). SHONEN note for operator: all four boxes look non-author-checkable on committed bytes; [x] stays the operator's call."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/tabi-shokunin@545b251d0c370fa1b75f312a4b3feb5c902d0ac6",
+   "closed_at": "2026-11-02T21:05:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-02T08:31:05-08:00 launch tabi round=55 base=793d947e1409 (zcode run14). Report committed by tabi-shokunin at fleet ee838680; lane tip 545b251d pushed (local==remote); freeze chain 774610da/a766984c empty + 7b82763d claims-only + 5fd39bfc empty-uncited (N2) + db6f4225 full at the pinned digests (all 7 verified == claims.json). C1 adjacency VERIFIED (evidence-verified, snapshot pins govern): v14 red control 6 findings committed pre-write; ledgers re-bound at one fresh snapshot per cycle, re-derived byte-for-byte by the judge; v15 pure-core byte-identical, selftest 16/16; green at 216b1cf2 (transcript uncommitted, defect N1); score held 8->8. C2 coverage VERIFIED (re-measured live): committed runner re-run once by the judge (throwaway profile, loopback, fail-closed teardown, exit 0 first try) and committed counter green over fresh AND committed receipts; capability webview2-keyevent-control-keys-windows first-working 55 enters the table; tree 0->7; cross-refusals symmetric 6/7; selftests 103/103 + 6/6. D54-1/D54-2/D54-3 carry-ins landed as routed. Trends expansion/quality/discernment improved. Routed: N1 land the receipts+sources commit next round (criterion 109); N2 correct the freeze commit count and mine the false-carrier message class; N3 enumerate all moved heads in correction-cycle disclosures; N4 operator ruling on v1 superseding rows for in-place S083/S161 cell edits; N5 scratch cleanup. SHONEN: heading present, 4 [~], no [x] written by closure; boxes look operator-checkable.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
