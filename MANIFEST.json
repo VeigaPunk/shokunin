@@ -38704,6 +38704,49 @@
    "notes": "Dispatch digest: 2026-11-02T08:31:05-08:00 launch tabi round=55 base=793d947e1409 (zcode run14). Report committed by tabi-shokunin at fleet ee838680; lane tip 545b251d pushed (local==remote); freeze chain 774610da/a766984c empty + 7b82763d claims-only + 5fd39bfc empty-uncited (N2) + db6f4225 full at the pinned digests (all 7 verified == claims.json). C1 adjacency VERIFIED (evidence-verified, snapshot pins govern): v14 red control 6 findings committed pre-write; ledgers re-bound at one fresh snapshot per cycle, re-derived byte-for-byte by the judge; v15 pure-core byte-identical, selftest 16/16; green at 216b1cf2 (transcript uncommitted, defect N1); score held 8->8. C2 coverage VERIFIED (re-measured live): committed runner re-run once by the judge (throwaway profile, loopback, fail-closed teardown, exit 0 first try) and committed counter green over fresh AND committed receipts; capability webview2-keyevent-control-keys-windows first-working 55 enters the table; tree 0->7; cross-refusals symmetric 6/7; selftests 103/103 + 6/6. D54-1/D54-2/D54-3 carry-ins landed as routed. Trends expansion/quality/discernment improved. Routed: N1 land the receipts+sources commit next round (criterion 109); N2 correct the freeze commit count and mine the false-carrier message class; N3 enumerate all moved heads in correction-cycle disclosures; N4 operator ruling on v1 superseding rows for in-place S083/S161 cell edits; N5 scratch cleanup. SHONEN: heading present, 4 [~], no [x] written by closure; boxes look operator-checkable.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 71,
+   "date": "2026-11-02",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 71,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 71
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "line-pointer recheck"
+   ],
+   "report": ".ufo/reports/round-71/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/tameshi-shokunin/corpus/lessons/round-71-verifier-spotcheck.md@f20ba482c7441d4c75818e7cd8a3165fee7821a1",
+    "rechecks": "All re-measured by the closure verifier from committed bytes at tip 92669eb9 (base 4ed9ce1c). C1 pointer-recheck: selftest 7/7 exit 0; standing sweep rows=8 met=8 unexpected=0 exit 0; the three red arms (lesson-r48-s267-pointer-140, lesson-r48-s268-pointer-141, province-r16-sevenleg-85-91) individually measured expect=miss measured=miss on real routed history, underlying facts re-derived at the base (SOURCES :140/:141 hold S265/S266, rows at 142/143; js-round-gate at line 94, 85-91 = header+legs 1-4); before-after re-derived (tools ls-tree 0->2, S302 0->1, registry 161->162, capability row 0->1). C2 arm-liveness: selftest 5/5; standing sweep rows=9 live=9 dead=0 exit 0 with bind-r70-receipts-red findings=19 exit=1 and bind-r70-repair1-red findings=39 exit=1; checker blob c3e6a88e identical at 5541abaf, base and tip; manifest ids 7->9. No-harm chain re-run at the TRUE tip: coldread precheck lost=0 ok at round floor 4ed9ce1c (64->64) and historic floor 8b0042bd (46->64), rev mode credited=64/64, all exit 0; monitored files + guarded probe (sha256 892a045d...) blob-identical base->tip; SCORECARD +157/-0, LOG +109/-0 pure appends; ledger 784->797 with REBIND OK sections=13 entries_added=13. Freeze ordering verified: declaration 0f554e16 parent = base; 12 rehearsal receipts committed pre-data; every forecast (7/7, rows=8 met=8, rows=9 live=9, 5/5, findings=19, findings=39, lost=13 cand_credited=51, decode miss=0) matched the verifier's own live re-runs. Discernment: S302 admit re-opened (snapshot sha256 511edd60... matches row; 20-word quote verbatim at snapshot 2445-2448 and on the live GNU sed page) - agree; standing reject S293 re-opened (S289 already holds the git-cat-file URL) - agree; census validate exit 0 with the pre-existing 17 W04 + 1 W01 set. Step-1 clean: report committed by lane identity (44998708), SHONEN heading with four [~] lines, all 7 cited hashes ancestors of master, tip pushed (local == origin/master), watchdog digest matches."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/tameshi-shokunin@92669eb94b058d6c5e3cfb08f58c3e4b07f27d85",
+   "closed_at": "2026-11-02T21:52:28Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-02T11:32:31-08:00 launch tameshi round=71 base=4ed9ce1c52e2 (zcode run14); 2026-11-02T13:38:47-08:00 complete tameshi round=71 head=92669eb94b05 pushed=True (watchdog.log, matches closure digest). Status ok, real report, admitted: both claims re-measured clean by the non-author closure verifier, no axis harmed. Conformance defects (status-neutral): (1) the L2-minimum item is still absent from the dispatched prompt - known operator-side defect (r60 L0 question, r70 routing, this round appended L0 line tameshi|round-71); L1-only round disclosed; (2) minor: the S302 anchor's secondary cite says the numeric-address sentence is in section 4.3 of the sed manual but it sits in section 4.2 (snapshot heading line 2246, sentence at 2255 - quote and page-line exact); routed to the lane for a next-round correction per SOURCES rule 2, bundled with priced rekey work; (3) minor wording nit: tip-guard receipts pin cand=b54ab3e5 while the report says re-run at the final tip 92669eb9 (delta is evidence-only; the verifier's own re-run at the true tip reads lost=0 ok both floors + rev 64/64, so the substance holds). Routed carries for the lane: the PROVINCE r16 :85-91 stale cell stays a standing red arm until a priced correction round; pointer-recheck successor rows enter as routed. Operator items: SHONEN boxes remain four [~] lane assertions - the non-author promotion review has not happened and is an operator-triggered act; the L2 prompt-fidelity ruling is still wanted. Receipts: .ufo/evidence/round-71/win-host/ (18 live + 12 rehearsal + census/base).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
