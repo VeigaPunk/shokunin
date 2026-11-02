@@ -37656,6 +37656,47 @@
    "notes": "Dispatch/complete digest: 2026-11-01T19:56:04-08:00 launch tsukuroi round=63 base=74f9846ac766 (zcode run14) | 2026-11-01T21:55:10-08:00 complete tsukuroi round=63 head=fc594872ccbe pushed=True. Both claims verify (C1 operability re-measured red-before/green-after from committed bytes; C2 depth re-measured + S278 re-opened live; gates evidence-verified at pinned 82f0e1a9); no axis harmed -> admitted. Defects (status-neutral): (1) the report's counting-battery receipt .ufo/waves/round-63/after/c1-c2-counts-at-work.txt exists ONLY in the worktree - no commit carries it (evidence pointer not resolvable from committed bytes; substance fully re-derived by the judge from committed bytes, all values match) - route: commit counting batteries with the commit that cites them, next round; (2) SHONEN stays 4x[~] with no [x] (correct; whole-SKILL non-author verification still parked on unanswered L0 tsukuroi | round-60 at fleet .ufo/l0-questions.md:253 - boxes remain checkable by a designated non-author once the operator rules; this judge's spot-checks are round-63-scoped, not a whole-SKILL read); (3) note only: dispatch note's '18-word quote' is 17 by wc -w in the committed record and live page (<=25 either way); live page carries /?, -help as a dash alias for the help option only - S278's no-dash-aliases gap claim holds for every probed option. Routed carry-ins verified landed: D1-D12 README precision repair, junction byte-identity receipt, R62-RECEIPT-RUN-SPAWN-FAIL proper fix (C1). No promotions, no mints; no new capability-table row (spawn-map leg extends registered instrument receipt-run-r54).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 73,
+   "date": "2026-11-02",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 73,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 73
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-73/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/mori-shokunin/corpus/lessons/round-73-verifier-spotcheck.md@a9c3abb70572e5be2eb3afd941b1993b7af8d0d8",
+    "rechecks": "Step-1 clean: report committed by lane identity (4908d93b), SHONEN heading 4/4 [~], all cited hashes ancestors of master, tip pushed (ls-remote = local 4fbdcc17ecc8), watchdog digest corroborated, diff = 20 paths +2411/-4. C1 re-measured + re-run: SKILL.md 1297->1327 lines append-only (head-1297 sha 01556f05 = entering blob), :905 pin unchanged, all ten instrument names 0->>=1, ten registry rows carry the eight Gate-schema cells and match observed usage (rc-2 setup arms, rc-0 AVAILABLE line), committed battery 10/10 rc 0 and I re-ran 5 selftests myself (anchor-check 11, receipt-complete 8, drift-recheck 10, uptime-win 8, runway-win 9 — tallies match the rows). C2 independently re-run: Q90 documented form over the same entering-rev bytes (c5873f73) reproduced byte-exact (word_labels=8 mismatched=3 rc 1); verbatim-indent IndentationError reproduced; erratum receipt append-only (head-91 sha 38bbef53 unchanged, @@LESSON/@@SOURCES 2/2); QUALITY 163 at :1731 able-to-fail grounded, 162 still :1704. C3 re-opened live: S588 URL re-fetch byte-identical to pin (58472 bytes, sha aef06f30), row at SOURCES.md:369 after S587, rows=361 badNF=0 (360->361), quote 17 words, anchor-checker PASS items=2 rc 0 and mutation arm FAIL rc 1 both re-derived, read-only 6005 XPath query re-run rc 0 counts-only (14 nonempty lines). Fresh-start re-derived (r61 counter C2=unmet rc 1); both heredoc repairs verified (SCORECARD head-3661 sha 5aa63e89 = entering, planned block complete). Census validator re-run by me: mori ok rc 0, 35 W04 (tolerated class). Discernment spot-check: 1 admit + 3 reject-side samples, all agree. No axis harmed (SCORECARD append-only, axes table bytes unchanged)."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/mori-shokunin@4fbdcc17ecc84819c057390e3c482310fcd15006",
+   "closed_at": "2026-11-02T06:45:44Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-01T19:22:33-08:00 launch mori round=73 base=8990ff2851b7 (zcode run14); 2026-11-01T21:41:35-08:00 complete mori round=73 head=4fbdcc17ecc8 pushed=True. FRESH-START round: r59-r61 rejected closures re-derived with own receipts; do-nothing controls receipted; all three declared claims unreachable by a do-nothing round. D72-1 discharged family-wide (all TEN unregistered r62-r72 instruments registered at SKILL.md:1299-1327, all ten selftests rc 0); D72-2 discharged (documented Q90 form re-run byte-exact + QUALITY 163 erratum for the verbatim-indent extraction defect); C3 grounds the boot-anchor candidate S588 (pairing tool untouched, K4 records the limit standing). Defects (status-neutral, routed to mori's next round): (1) the SKILL.md events-context registry row is split across two physical lines mid-cell (:1323-1324) — a markdown table row spanning two lines; renderers ending rows at the newline drop the continuation cell; join the row inside the lane's own appended section next round; (2) report-body C1 battery command literal output is 11 (10 runs + 1 header mention), quoted as '-> 10/10 runs green' — substance true, cosmetic off-by-header-mention; the lane's own after-measures receipt records 11; corrections land in the next round's report. SHONEN: all four boxes [~] with resolvable pointers and appear fully checkable by a non-author — operator may review for promotion; this closure writes no [x]. L0: 3 mori lines committed (round-62/65/73); open lines routed around, never treated as answered. No promotions, no mints, no cross-domain bleed (PROVINCE byte-frozen).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
