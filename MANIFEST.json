@@ -37240,6 +37240,49 @@
    "notes": "Dispatch/complete digest (orchestrator watchdog): 2026-11-01T15:30:03-08:00 launch kaidoku round=60 base=48c418305b71 (zcode run14); 2026-11-01T17:35:00-08:00 complete kaidoku round=60 head=1c1d68805039 pushed=True. Round: one claim, R60-C1 depth capability acquisition (the r59 planned candidate executed) — verified end-to-end by the non-author closure with the selftest and the red/green states re-derived lane-local; the round's orphaned-evidence duty found the live r59 selfcatch orphan (disk-only since r59 while committed records cite it) and landed it byte-identically (sha256 175ef241...) with a complete provenance disclosure in carry-in ec9d93d7 before the freeze, plus the disclosed M60-2 fixup 691460fa. Defects (status-neutral): (1) routed to the lane for next round — the after-arm receipt's phrase 'SKILL delta landing->record exactly 1 0' misstates the edge; the 1 0 numstat is freeze->landing (bbdb03ab added the row; landing->record is unchanged); the report's own table is correct and the substance verifies — prose-precision note, M57-1/D58-1 lineage; (2) 19 standing W04 duplicate-url census warnings remain named debt at both ends, never waived; (3) the literal kaidoku-name census form exits 2 on this host (disclosed host boundary since r53; host-adapted explicit-dir form exits 0); (4) the kaidoku round-53 L0 question remains open and unanswered, routed around, never treated as answered; (5) the first gate-landing invocation used a wrong argv form and exited 2 — disclosed in gate-landing.txt with the corrected run receipted. For the operator: SHONEN boxes all author-[~] with resolvable pointers and look evidencable by a non-author promotion review — the [x] flip belongs to the operator/lane promotion process; this closure wrote no [x]. No new routed cross-domain defects; no promotions; no mints; no other lane touched; spotcheck file written but not committed (orchestrator commits and cites the hash).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 72,
+   "date": "2026-11-02",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 72,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 72
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "freshness": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "anchor-checker (tools/mori-anchor-check.py) — verifies recorded quote anchors (line + exact text + word count) against a pinned copy; rc 0/1/2 with committed 11-case selftest; able-to-fail demonstrated on the recorded pre-correction values (run B: FAIL rc 1 mislocated=1 wordcount_mismatch=2, run E: FAIL rc 1 x2) and passing on the corrected ones (runs A/C/D PASS rc 0); first-working round 72"
+   ],
+   "report": ".ufo/reports/round-72/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
+    "spotcheck": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/mori-shokunin/corpus/lessons/round-72-verifier-spotcheck.md@8990ff2851b72925af2695267175cab65a1d4150",
+    "rechecks": "Step-1 conformance pass (report committed by lane identity a0eaa890d9e8580b7b56257e3f3570221268d69e, SHONEN heading 4/4 [~], cited lane commits d2f55d8c9f03855d92c3ba7be8becb8d93f38e26/c5873f73d981/986d4b46 present+ancestral, local master == ls-remote origin master == d2f55d8c9f03 pushed ahead=0, watchdog digest matches lines exactly, no future-dated evidence). Frozen-byte claim verified: tree diff c5873f73d981..d2f55d8c9f03 = exactly 20 paths +1430/-6; LOG/SOURCES/SCORECARD 0 deletions (append-only holds); the only in-place edits are SHONEN's 4 re-asserted box lines and the lane-owned tool header comment licensed by the r71 closure routing, code untouched, workstate selftest re-run green (PASS 10 cases rc 0). C1 re-measured: before greps 0/0/0 + rc 128 + tool count 1, after 1/1/1 + 0; able-to-fail pair :828=0/:829=1; standing QUALITY 90 check re-run over the entering rev from the criterion's own committed script -> word_labels=8 mismatched=3 rc 1 with the same three findings; one of the three label-audit corrections re-derived independently (S582/S583 :829 sentence wc -w = 13, pin sha matches the S587 row); all seven S584 carriers' dispositions verified. C2 evidence-verified + one independent live re-fetch (S581 URL byte-identical to pin, sha 5e5b941e..., 16179 bytes). C3 re-measured: selftest 11/11 rc 0 x3, able-to-fail runs B and E re-derived exactly (FAIL rc 1 mislocated=1 wordcount_mismatch=2; FAIL rc 1 x2 wordcount_mismatch=1), corrected-anchor runs A/C/D PASS rc 0, stdout counts/shapes only (redaction arm observed). Census validate mori ok rc 0 (35 W04, the three new rows adding the tolerated supersedes duplicate-URL class). Discernment spot-check: 2 admits re-opened and agreed, reject sample agreed. Defects (status-neutral, routed): anchor-checker and the r68-r71 instruments unregistered at the registry home (SKILL.md ## Gates) - capability graded, not gate-conformant; s581-s583 erratum's printed Q90 command omits the @@LESSON/@@SOURCES echoes its output presupposes (documented form reproduces exactly); carried L2/L0 disclosures named. SHONEN boxes 1-4 appear checkable by a non-author at promotion review (closure does not write SHONEN.md)."
+   },
+   "commit": "C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/mori-shokunin@d2f55d8c9f03855d92c3ba7be8becb8d93f38e26",
+   "closed_at": "2026-11-02T03:16:10Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 2026-11-01T16:00:15-08:00 launch mori round=72 base=c5873f73d981 (zcode run14); 2026-11-01T18:10:25-08:00 complete mori round=72 head=d2f55d8c9f03 pushed=True (watchdog log lines verified verbatim). Report real and complete (not a marker): work performed + evidence pointers, landed changes tied to LOG.md Round 72, per-claim counting commands, Sources & frontier (357 -> 360 rows, census rc 0 start and end), trend verdicts, SHONEN heading 4/4 [~]. All three claims verified and re-derived by the non-author closure (C1/C3 re-measured; C2 evidence-verified with an independent live re-fetch); no axis harmed (SCORECARD diff +55/-0, axes table untouched). C1 carry-in discharge verified end-to-end: S585 supersedes row + all seven S584 mention carriers dispositioned (row anchor immutable; r71 receipt untouched; r71 lesson corrected old-to-new in the r72 lesson; K4 append-only block; tool header in-place fix licensed by the r71 closure routing with selftest green; r71 LOG/SCORECARD records stand; fleet report named); family-wide label audit verified on one of three re-derivations plus a full re-run of the standing QUALITY 90 check over the entering rev reproducing word_labels=8 mismatched=3 rc 1. C3 capability: selftest and able-to-fail re-run by closure, all green/red verdicts exactly as receipted. Routed defects for the lane next round (status-neutral): (1) registry rows missing at SKILL.md ## Gates for tools/mori-anchor-check.py and the r68-r71 instruments (family-wide drift; C3 graded as capability, not conformant gate; lane should register or surface the registry-home question to the operator via the open L0); (2) print receipt commands verbatim (the s581-s583 erratum's Q90 invocation omits the @@LESSON/@@SOURCES echoes its own output presupposes; documented form reproduces byte-exactly). Carried disclosures: no L2 dispatch surface on this host; mori round-62/round-65 L0 lines open and routed around; r65-gated planned items unimplemented and named; Precise variant stays unopened. SHONEN boxes 1-4 look fully checkable by a non-author reviewer (evidence pointers re-derived by closure) - flagged for the operator for promotion review; closure wrote no [x]. No promotions, no mints. Spotcheck markdown written uncommitted at the cited path; orchestrator commits it and replaces @pending.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
