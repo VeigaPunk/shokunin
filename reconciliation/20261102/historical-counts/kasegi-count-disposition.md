@@ -1,0 +1,7 @@
+# Kasegi historical count disposition — 2026-11-02
+
+The original1–56 audit is documentary evidence, not fresh historical replay. Parent conservatively records39 directly supported completed reviewed attempts. Three further original labels11/14/19 have narrower whole-tree adjudications under their older regimes; retain them as qualified historical support, not a claimed complete per-round review. Eleven labels remain review-custody gaps, not evidence of fabricated work:3,6,7,8,9,10,12,13,15,17,18. Do not rerun or assign new credit to them without reconciling their actual evidence. Exclude2 (no original work found),16 (closeout marker),21 (blocked/no outside review/zero verified credit).
+
+Fresh cloud57–64 are eight substantive completed reviewed attempts, including honest rejected59. Thus at numbered64 there are47 directly documented completed attempts, plus3 qualified older adjudications and11 unresolved labels. No counter reset or renumbering. This is not64 certified successes. The original-label ceiling53 is unresolved, not a completed count; no extra retry credit is assumed. New work continues65 onward while custody can be recovered separately. All historical failure and harmed verdicts remain intact.
+
+Original lane pin eae1d614542e8d30d77e9f4e8b9dea6a11aad138 and full source paths/hashes are in the copied audit/inventory. Original referenced Git objects remain in lane history; navigation copies in the audit workspace are not claimed to be an independent review. This document does not mint rounds or retroactively admit work.
