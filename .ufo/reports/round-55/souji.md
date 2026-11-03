@@ -127,3 +127,5 @@ Standing checks at the final tip `6d8bfb8e`:
 ```json
 {"round":55,"lane":"souji","claims":[{"id":"C1","axis":"calibration 7","predicate":"holds","harm":"S55-S2 v3->v4 regression","admitted":false},{"id":"C2","axis":"coverage 8","predicate":"holds","harm":"RD-A v3->v4 regression","admitted":false}],"lane_head":"6d8bfb8ebb00f4806e7f83a0173aa4768358de33","report_commit":"pending","wave":{"v1":1,"seats":12,"attack":4,"connectors":1,"dead":0},"round_total_seats":12,"dead_seats":[],"open_l0":["round-55 admission: C2 RD-A, C1 S55-S2"],"trends":{"expansion":"unchanged","quality":"harmed","discernment":"unchanged"}}
 ```
+
+Attribution erratum (appended after the filed bytes; ERR-R55-A): fleet commit e1444324 is souji's report commit, but the shared file .ufo/l0-questions.md also carried one uncommitted line from another lane (kake, round-72, the crux-bigquery-origin-membership L0 question). The helper committed that file whole, so the line landed under souji's identity. It is kake's line, unchanged; it is recorded here so the attribution is not lost. Nothing else in e1444324 is other-lane work.
