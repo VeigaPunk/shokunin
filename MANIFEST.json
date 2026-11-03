@@ -38917,6 +38917,46 @@
    "notes": "Watchdog digest: 2026-11-03T14:54:13-03:00 launch kengaku round=63 pgid=1999130 driver=hyaku-inline attempt=1; 2026-11-03T15:51:13-03:00 complete kengaku round=63; hyaku-inline attempt=1. Round not admitted: R63-C1 (coverage/capability offline-network-service-grader-probe) missed its frozen stderr clause and the lane reported the MISS honestly with dated amendment A1; R63-C2 (depth) verified and grants depth 10. Conformance defects (status-neutral, named in notes): corpus/README.md lesson index missing round-53..62 rows (carried); lane-wide verified-at drift (27/64) named, not swept; depth gate resolves path tokens outside the lane root (SecurityScan L-1); --check-receipt re-derives text only, live-run evidence is the server access logs (named limitation); recipe column drafted, not re-executed (recipe-unexecuted marking kept). Routed: L0 kengaku | round-63 (admit the amended K2 detector?) open - operator-owned; until ruled R63-C1 stays MISS and no capability row enters; older open L0s kengaku | round-25/33/51 (coverage cap) and kengaku | round-56 routed around. SHONEN: all four boxes [~] with resolvable pointers, no [x] written; boxes look fully checkable by a non-author verifier (promotion is operator-owned). Spotcheck committed and pushed as 5f517fe7147831f96a9900c9642c07ee71031940 (remote refs/heads/master verified). Sibling note: SC2Census CRLF blocker measured tsukuroi-shokunin round 64 only; kengaku verified clean (0 CR bytes, census rc 0) and unaffected.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 52,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 52,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 52
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "improved",
+    "operability": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [
+    "fleet-root census (read-only)"
+   ],
+   "report": ".ufo/reports/round-52/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-52-verifier-spotcheck.md@9bf9234ae4d11c7b31706354302a9e95ad0d1f81",
+    "rechecks": "C1+C2 counters re-run by verifier at fbf1ea3c (filed=2 unfiled=0 exit 0; entries=49 counts=ok tool_sha=ok exit 0), before-states from committed do-nothing controls; append-only verified (0 deletions across touched lane files; corrections outside fences); standing suite + tool selftest + fixture evidence-verified from committed receipts (r46 556/70/70 rc0; r51 counters rc0; selftest 39/39); S275 re-opened live byte-identical (sha 0c126da2), quote 25 words; SOURCES 198->199 re-grepped; sources-census.sh validate exit 0"
+   },
+   "commit": "souji-shokunin@fbf1ea3c58774b4fe28b8c3441347dde96db48f3",
+   "closed_at": "2026-11-03T19:17:50Z",
+   "campaign": "hyaku",
+   "notes": "dispatch digest: 2026-11-03T14:53:52-03:00 launch souji round=52 pgid=1997248 driver=hyaku-inline attempt=1 (watchdog.log:2062); complete 2026-11-03T16:11:27-03:00 complete souji round=52; hyaku-inline attempt=1 (watchdog.log:2072). Defects (status-neutral): fleet-repo .ufo/waves/round-52/ artifacts uncommitted anywhere (run-15 practice; rounds 50-52 alike) - routed to protocol integrator; kake|round-69 L0 line rode this round's fleet L0 commit (lane-disclosed rider). Routed to lane r53: counter v2 limits (C1 first-annotation window/unpinned recompute/inert-correction kill; C2 sort order/#-leading names/run-receipt binding); operator L0 rulings open (credential-shaped names refuse-vs-redact; ignored-column derivation). Operator note: all four SHONEN boxes carry non-author-checkable evidence, none [x]; promotion review is operator-owned. All 8 cited lane commits ancestors of master; lane ahead=0, porcelain clean; report committed by lane identity 3bca2bd6.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
