@@ -39758,6 +39758,47 @@
    "notes": "Dispatch digest (watchdog.log, copied at closure): 2026-11-03T18:22:47-03:00 launch kake round=72 pgid=2813037 driver=hyaku-inline attempt=1; 2026-11-03T19:15:35-03:00 complete kake round=72; hyaku-inline attempt=1. Lane tip 89a5db16 pushed (ahead=0); verifier spot-check landed on top as c1f3d8d4 (protocol identity, ls-remote-confirmed). Trends: discernment graded improved by the closure (non-author spot-check agrees 5/5 on sampled admits and rejects); the lane's author-side grade was conservatively unchanged at report time because the check did not yet exist. Routed defects for round 73 (status-neutral): (1) LOG.md round-72 entry and the SCORECARD round-72 row cite controls/c1-tip.txt and controls/c2-tip.txt, names that never existed in git history - actual receipts are c1-tip-final.txt/c2-tip-final.txt; correct via append-only entries naming the superseded text; (2) the new gate c72_tmp_v2.py has no registry row at the lane's registry home (grep c72_tmp SKILL.md = 0) per PROTOCOL Gate standard Delivery - add the row with the round-73 C2 amendment; (3) lane-carried routes confirmed real: C2 counter residual holes (verb vocabulary, TMPDIR fallback, symlinked SKILL.md, unpinned PHRASE), c57/c58/c59 red on the three dangling staged ids S303/S304/S352 (operator L0 ruling open at .ufo/l0-questions.md line 277), round-71 carry-ins. SHONEN: all four boxes [~] with resolvable pointers and look checkable by a non-author; promotion is operator-owned. Pre-freeze diagnosis disclosed in the frozen contract (M3); both claims judged on their frozen predicates, which the committed receipts satisfy. Conformance-only: inherited untracked round-71 dispatcher markers w1.ready{,.dispatched} remain in the lane working copy (not round work).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 31,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 31,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 31
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-31/kagi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kagi-shokunin/corpus/lessons/round-31-verifier-spotcheck.md@32c35fe5ed44f2017d6a662c7fd13f7e63a7ce9b",
+    "rechecks": "Step-1: report commit cb9a58a by kagi-shokunin; SHONEN heading count 1 with 4 [~] lines; all 12 cited lane hashes ancestors of master; jj-lane state ahead=0 and ls-remote matches tip da8d3d4; 4 uncommitted late-seat wave files (R2); watchdog launch/complete digest matches. Claims re-measured by plain commands: C1 BASE 30 vs TIP 37 sections matching the parser SEC_RE, 37x6=222 matches receipt cells=222, heading diff exactly 5 renames + 2 adds; C2 SOURCES rows 60->71, malformed 0, dup ids 0, tiers A68 B1 C2, status mined67 queued1 rejected3, S061-S071 opened 2026-11-03, captures 103->114. Census validate kagi exit 0. Source re-fetch sha/size reproduce for RFC 9700, OIDC Core, AWS create-OIDC, AWS STS; quotes located for S061, S070, S063 refusal (F-A) and S071 JP product status (F-G); lane gates evidence-verified from committed receipts only, not executed."
+   },
+   "commit": "kagi-shokunin@da8d3d4950ac98c8d47aa3ab064de2a180675856",
+   "closed_at": "2026-11-03T22:24:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (.ufo/watchdog.log, copied at closure): 2026-11-03T16:23:55-03:00 launch kagi round=31 pgid=3591531 driver=hyaku-inline attempt=1; 2026-11-03T19:16:37-03:00 complete kagi round=31; hyaku-inline attempt=1. Round shape: one v1 wave, 15 seats (run-15 band 8-16), attack 5/15, connector 1, planner held by L1, labrat re-roled to executor; OidcEntry2 delivered ~2h20m late and reconciled; RowsDraft never delivered (recorded by lane). Claims C1 (calibration, cell audit re-armed) and C2 (coverage, OIDC theme frontier->core) both verified; no axis harmed. ROUTED DEFECTS (status-neutral, lane fixes next round): R1 PROVINCE.md line 90 still lists OIDC under Frontier beside the new Core bullet at line 89; R2 uncommitted late-seat wave evidence (build/OidcEntry2.md and -receipts.txt modified; OidcEntry2-report.md and build-results.json untracked); R3 lesson Gate S063 says Audience occurs twice in the response section, measured 2 lines (343 response element, 593 example XML); R4 M31-6 not in the Mistakes table; R5 calibration score 9 kept while audit shows FAIL R25-02 present since BASE and POLICY R29-01/R29-02; R6 README Frontier keeps a moved-to-core tombstone bullet. Operator items: R25-02/R29-01/R29-02 remain red per L0 kagi|round-30; run-15 route-bucket vs MISSION.md mapping inconclusive (connector on m_mim, reviewer on m_zfl vs MISSION buckets heavy/economy); SHONEN boxes all [~] and not assessed here, no [x] written, promotion operator-owned; boxes 1 and 3 may be checkable by a non-author, box 2 rests on a round-3 honest-stop entry plus this round's adoption, not assessed.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
