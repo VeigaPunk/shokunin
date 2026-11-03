@@ -39641,6 +39641,44 @@
    "notes": "Dispatch digest (watchdog.log, copied at closure): 2026-11-03T17:48:06-03:00 launch kengaku round=66 pgid=2458703 driver=hyaku-inline attempt=1; 2026-11-03T18:39:42-03:00 complete kengaku round=66; hyaku-inline attempt=1. Lane tip e02c2d90 (pushed, ahead=0). Report fleet commit 79003070 (kengaku-shokunin, 18:38:56-03:00, after the lane commit). Prompt commit 9b0320b2. L0 question 74ddb468. Verdict: C1 verified on the amended counter (capability enters; coverage held at 7 under the L0 cap). C2 not verified (kill rule b). Round not admitted because every claim must verify. Conformance defects, status-neutral: (a) wave dispatch has 0 planner and 2 executor seats against the prompt section 3 floor of 1 planner and 3 executors; the report says the L1 holds the planner seat; (b) claims are on coverage and operability while MISSION.md:24 assigns kengaku novelty and calibration; the report calls coverage the lowest owned axis; operator ruling needed; (c) four untracked driver marker files in the lane tree (.ufo/waves/round-63/w1.ready.dispatched, round-64/w1.ready.dispatched, round-66/w1.ready, round-66/w1.ready.dispatched); no round work left uncommitted. Routed to kengaku round 67: (1) corpus/knowledge/tb2-sqlite-gcov-offline.md line 4 still cites superseded S233; needs a dated append-only re-point to S236 as the kv-store entry got at line 232; (2) mistake rows 3 to 7 open: R66-C2 successor with a PROBE binding frozen before data; dated corrections at SKILL.md:686, SCORECARD.md:2885, LOG.md:2512, round-65 report lines 14 and 78; (3) S233 and S234 remain status mined after supersession; consider rejected with old to new logged. Spot-check 4 of 4 agree (S236 admit, S237 admit, S234 teaches reject, S233 quote reject). Wave 13 of 13 seats with output; no dead seats. SHONEN: no [x]. Operator note: boxes 2 and 3 look checkable by a non-author on this evidence; promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 55,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 55,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 55
+   },
+   "admitted": false,
+   "verdict": "rejected-harmed",
+   "verdicts": {
+    "calibration": "harmed",
+    "coverage": "harmed",
+    "operability": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "harmed",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-55/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-55-verifier-spotcheck.md@fafe371694fea41c5d23f63083865d5ccf3f1d36",
+    "rechecks": "step-1 all PASS (lane-identity report commits e1444324+fb86d576; SHONEN heading 4/4 [~] boxes; 10/10 cited commits ancestors of master=6d8bfb8e=remote ahead=0 porcelain-clean; prompt carries template contract + hyaku addendum 6; watchdog 2098/2108 digest; frozen bytes untouched after freeze e8f33867; census validate rc 0, 202 rows, W04 61 pre-existing). C1+C2 re-measured with awk over committed matrices (C1 exit-0 11->6 with 8/8 acceptance attacks killed under named findings and F17-F19 over-hide repaired; C2 5->2 with FB1-FB3 killed and FA8 CLASS-MISMATCH named); selftests 27/27 and 15/15, freeze-check claims=2 findings=0, prereg pins (record-sha256 2b90a262, tool-sha256 e7e79952, sources-rev-before f778b9d1, after 9bf9234a), tip receipts at rev 4b10ddd1, wrong-pin rc 1 — all evidence-verified per Gate standard (lane gates never executed); SCORECARD diff purely additive, zero score changes, capability table untouched. S278 admit re-opened live: 4/4 located quotes verbatim on the 3.12.16 page, capture sha256 0b10fb9e byte-exact (648964 B); no reject sample existed (one page opened), S277 reuse re-opened verbatim; Q62 cross-cite resolved in both directions. Verdict: both claims verify on their frozen predicates; S55-S2 (C1) and RD-A (C2) v3->v4 regressions recorded as harms -> not admitted, rejected-harmed; operator L0 carried, not assumed."
+   },
+   "commit": "souji-shokunin@6d8bfb8ebb00f4806e7f83a0173aa4768358de33",
+   "closed_at": "2026-11-03T22:18:34Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 2026-11-03T18:17:27-03:00 launch souji round=55 pgid=2790575 driver=hyaku-inline attempt=1; 2026-11-03T19:11:55-03:00 complete souji round=55; hyaku-inline attempt=1 (watchdog.log lines 2098/2108 at closure). Conformance PASS: report committed by lane identity (e1444324, append-only erratum fb86d576), 4-box SHONEN all [~] with resolvable pointers, all cited lane commits ancestors of master, lane ahead=0 and porcelain-clean, prompt carries the full template contract, wave w1 12 seats (attack 4/12=33%, connectors 1) all returned output, none dead. Routed to lane r56: (1) LOG.md ## Round 55 names only 6/9 landed commits - f9da665e/51551399/6d8bfb8e absent from LOG.md at tip (append a correction entry naming the hashes); (2) real-lane tip receipts carry no rc line, exit-0 asserted in prose (ERRATUM-R55-5, keep routed); (3) S55-S2 C1 v4 regression (4-space-indented <!-- hides an overstatement from the pair scan); (4) RD-A C2 v4 regression (receipt keys beginning digit/underscore pass silently) - both to be fixed only in a future counter generation with its own prereg and red-before fixtures; (5) report's wave-dispatch pointer cites .ufo/waves/round-55/w1-dispatch.json while the committed tree holds census/round-55/wave/w1-dispatch.json. Operator items: SHONEN boxes look checkable by a non-author (promotion operator-owned; note souji holds SHONEN.md but has no row in the 13-entry MANIFEST roster); L0 round-55 admission ruling open (C2 RD-A, C1 S55-S2; lane default no admission until ruled); ERR-R55-A: kake r72 L0 line rode souji's report commit e1444324 in the shared l0-questions.md (recorded by the lane, history untouched); live agentModelOverrides shows connector/sentinel/scribe/sonic/distiller/seance on @m_flash vs the prompt's run-15 @m_mim map (MISSION.md buckets advisory, config file operator-owned authority).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
