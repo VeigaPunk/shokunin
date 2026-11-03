@@ -39035,6 +39035,49 @@
    "notes": "Dispatch digest: launch 2026-11-03T14:53:44-03:00 kagi round=30 pgid=1996663 driver=hyaku-inline attempt=1; complete 2026-11-03T16:17:25-03:00. C2 and C3 verified by re-measurement; C1 partial as the lane declared (self-counts exits 2 POLICY on R29 feed-token bindings; R25-02/R29-01/R29-02 routed) -> rejected-honest-stop, admitted=false; no axis harmed. Conformance defects (status-neutral): (1) 11 uncommitted round-30 paths left in the lane repo (.ufo/waves/round-30/: SentHygiene-report.md and build/SentHygiene.md modified; SDraftEntries-report.md, SRegistryRows-report.md, build-results.json, build/SDraftEntries.md, build/SRegistryRows.md, final/c3/entries/SDraftEntries-*, final/c3/registry/ untracked — two of them cited evidence pointers) — resolve next round per the inherited-worktree rule; (2) report's C1 after-state pointer names final/receipts/selfcounts-at-tip.txt which holds the before-state — erratum in the next round's report, never a rewrite. Routed: feed-token-agree registration in PYTHON_SCRIPT_RE (operator-owned gate policy; R25-02 unblocks after); fleet parser defect scripts/sources-census.sh:581 trim() strips space/tab not CR (fleet-owned); outside spot-check of this round's gate decisions now delivered (5/5 agree). Operator note: the four SHONEN boxes look fully checkable by a non-author (decision tables/cited sources resolving, end-to-end gate run with red witness, self-contained instructions, PROVINCE accurate) — promotion is operator-owned; no [x] written.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 64,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 64,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 64
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "freshness": "improved",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "line-endings-guard"
+   ],
+   "report": ".ufo/reports/round-64/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-64-verifier-spotcheck.md@1bd8e19666a12e5aeea0e485983cd289ebd11ebc",
+    "rechecks": "C1 re-measured: census validate rc 0, 0 E-code, 44 W04, verdict ok; before receipt rc 1/278 E12/0 W04; stray-CR 0/0/0 at 431f0c9; delta additive-only. C2 re-measured: 25 DR rows = 20 drift + 5 match, 0 unknown; note absent at 2f3061ef (cat-file rc 128). C3 re-measured: 6 MK rows; SOURCES 278->281; S279/S280/S281 re-opened live, sha256 match x3, quotes at stated locations (11/1/3 words). Guard selftest 7/7 with M3/M5 able-to-fail and pristine control, --check 330/0, mutant-kill red-before: evidence-verified from committed receipts; lane gates knowledge-header 81/0/81, registry-coverage 100/100/0, cited-receipts --round 64 PASS 0/36: evidence-verified. No axis harmed (SCORECARD ordinals unchanged; PROVINCE/SHONEN/AGENTS untouched). Spot-check 4/4 agree (3 admits re-opened + assimilation rejection re-derived)."
+   },
+   "commit": "tsukuroi-shokunin@72c12b789cc5d70e812488d1ccbc85ebfa6e6743",
+   "closed_at": "2026-11-03T19:55:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-11-03T14:54:20-03:00 launch tsukuroi round=64 pgid=1999761 driver=hyaku-inline attempt=1; 2026-11-03T16:21:20-03:00 complete tsukuroi round=64; hyaku-inline attempt=1. Defects (status-neutral): C1 identity-command wording (cmp x3) true only at the fix-time worktree — at cited 431f0c9 the delta is additive-only (removed=0; CR-strip fact stands, re-derived); R64-JJ-ST-WITHOUT-IGNORE-WC self-mined by the lane. Routed: L0 tsukuroi|round-64 merge-package id drift (79 collisions, 82 after S279-S281; adoption path operator-owned); L0 tsukuroi|round-53/57/60 remain open, routed around. Operator note: all 4 SHONEN boxes look fully checkable by a non-author on current repo state; whole-SKILL verification parked on L0 round-60; promotion operator-owned, no [x] written.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
