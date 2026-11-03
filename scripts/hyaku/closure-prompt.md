@@ -15,7 +15,7 @@ Inputs:
 - driver dispatch/completion lines (`.ufo/watchdog.log`, mutable — copy this digest into notes):
 {{DISPATCH_LINES}}
 
-Duties (you may dispatch up to 8 read-only reviewer/critic `task` seats to parallelize re-checks;
+Duties (you may dispatch up to 3 read-only reviewer/critic `task` seats to parallelize re-checks — run 14 caps the fleet at 32–40 live workers;
 never pass a model parameter; you write only the two artifacts in steps 4–5):
 1. **Step-1 conformance.** The report is committed in the fleet repo by the lane identity
    (`git log --format='%an %H' -- <report>`); it has the `SHONEN` heading with one line per box;
