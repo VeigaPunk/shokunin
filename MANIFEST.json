@@ -40046,6 +40046,44 @@
    "notes": "Dispatch/complete digest: 2026-11-03T19:21:19-03:00 launch tsukuroi round=68 pgid=2220659 driver=hyaku-inline attempt=1 | 2026-11-03T19:59:54-03:00 complete tsukuroi round=68; hyaku-inline attempt=1. Conformance clean: report committed by lane identity (f2ae3cb3, ancestor of fleet HEAD), SHONEN heading 1x4 lines, cited hashes 3f6edcc9/a5fc44a7/ffd139e4 all ancestors of refs/heads/master, lane pushed ahead=0, prompt 50d8efe8 carries full contract (round-level + five child-lane items). Not admitted: C1 frozen conjunct false (honest stop, no predicate replacement, no reroll); C2 verified improved with capability knowledge-source-ref-gate. Routed defects the lane must fix next round: (1) R68-SHAPE-ONLY-DECLARED-COUNTER - declared RW grep is shape-only; freeze a content-sensitive counter before any data next round; (2) declaration hygiene - three captured-by:none declaration defects (falsified outside-Memory conjunct; anchor off-by-one 1506 vs 1507; 'the five' vs eleven v7.2-family rows) -> pre-freeze declaration checklist criterion in QUALITY.md citing corpus/lessons/round-68.md. Operator note: SHONEN boxes 1/2/4 carry resolvable pointers a non-author could check; box 3 still owes the whole-SKILL non-author replay (L0 round60); promotion is operator-owned. Two untracked orchestrator-owned .ready.dispatched markers (round-66/67) remain in the lane worktree - inherited, not lane debt. Census 45 W04 cross-scope duplicate-URL warnings persist (allowed).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 56,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 56,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 56
+   },
+   "admitted": false,
+   "verdict": "rejected-harmed",
+   "verdicts": {
+    "calibration": "harmed",
+    "coverage": "improved",
+    "operability": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "harmed",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-56/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-56-verifier-spotcheck.md@b4ef0bc84ada3fb3aefd6a0b1a841a6517b84acd",
+    "rechecks": "Step-1 conformance: report committed by lane identity (fleet c64eb3ac, 20:03:06 -0300) after the lane tip 8c27791a (20:01:58); SHONEN heading line 72 with 4 [~] boxes and pointers; all 5 cited lane commits exist and are ancestors of refs/heads/master; jj-lane state ahead=0 behind=0 local==remote==8c27791a, porcelain clean; dispatched prompt diffs from templates/round-prompt.md only in placeholders and carries all round-level + five child-lane items + hyaku addendum 6/7; one batched 12-seat wave, 5/12 attack, 1 connector, 12/12 outputs. Claims re-measured over committed bytes: C1 c1-matrix exit-0 9->7 (changed rows exactly F24/F26/F27/F28/F29; selftest 33/33 and c1-tip EXIT=0 unfiled=0 pairhidden=0 recomputed=79 rev=cce21b55 evidence-verified; official=dry-run matrices cmp-equal; pins re-hash OK; no post-freeze edit). C1 harm independently confirmed: B4 NBSP-prefix and C4 closed multiline inline comment are refused by v4 (exit 1 CORRECTION-IN-FENCE) but passed by v5 (exit 0 filed=2) while the committed independent CommonMark renders hide both tokens; the v5 opener at c1-counter.py:237-241 requires line-start <!--. C2 re-measured: c2-matrix exit-0 5->2 (FC1/FC2/FC3 0->1 RECEIPT-UNKNOWN-KEY; 13 carry-over unchanged; selftest 18/18, c2-tip EXIT=0 at cce21b55, row-omission v4 cases=14 EXIT=0 -> v5 cases=17 SELFTEST-ROW-MISMATCH EXIT=1; reviewer02 75-shape differential 0 narrowing harms evidence-verified). SCORECARD diff +36/-0, PROVINCE/SHONEN diffs empty. Sources: census validate EXIT=0, 202 rows before=after, 61 pre-existing W04; S277 live re-open 200 no redirect, 514698 bytes, sha256 c85f56cc...60f0d, Gate quotes 19/8 words verbatim, no new rows (A=B=C=0), no reject sample exists. No exploratory claim."
+   },
+   "commit": "souji-shokunin@8c27791a1606cd654b059df6a00f0e031ad6abb8",
+   "closed_at": "2026-11-03T23:15:30Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-11-03T19:19:13-03:00 launch souji round=56 pgid=2211148 driver=hyaku-inline attempt=1 | 2026-11-03T20:03:51-03:00 complete souji round=56; hyaku-inline attempt=1 (watchdog.log lines 2112/2128). Step-1 status ok (real report, five lane commits, committed matrices/selftests/wave evidence; no marker). Defects (status-neutral): (a) the report's standing-suite claim at 8c27791a and ff2a3c76 has no committed receipt naming either revision (landing-suite-final.txt carries only instrument_sha256; landing-suite-standing.txt is the disclosed usage-error record; grep -rl 8c27791a census/round-56/records prints nothing) - violates the lane's own Q109 and is routed r57; (b) the 12-seat wave fielded 2 executors against prompt section 3's 3x minimum (the planner seat is held by the L1 because the wave validator does not admit planner as a swarm role; dispatch states it); (c) census/round-56/__pycache__/c1-counter.cpython-314.pyc (40,303 B, 19:39) remains ignored although the report says all scratch is removed; (d) prereg prose role enumeration totals eleven while dispatch establishes twelve - disclosed by the lane; (e) dispatched prompt committed by the lane identity 4c814ea0 rather than the integrator - hyaku inline convention and r55 precedent, recorded only. C1's finite predicate holds but calibration is harmed by B4/C4 hidden-filing over-acceptance (v4 refuses, v5 passes, independent CommonMark render hides both tokens); C2's finite gain is real with zero narrowing harms on its 75-shape differential; operability score unchanged (sentinel MEDIUM quadratic correction-line work and terminal-control diagnostic injection, LOW symlink/memory/.pyc limits are receipted and routed). Routed to lane r57: (1) standing-suite receipt must name its measured revision or the claim wording must narrow; (2) field 3 executors; (3) remove the round-56 __pycache__ and run with -B; (4) v6 C1 opener must separate HTML-block starts from real inline comments with NBSP/closed-inline red-before fixtures and the visible F29 control; (5) selftest kill power: C1 M1/M7 survivors and C2 N3 row-set-guard survivor need all-findings/summary assertions and a meta-test; (6) sentinel MEDIUM/LOW items. Operator items: SHONEN's four [~] boxes look checkable by a non-author (promotion operator-owned); no souji r56 L0 line; the r55 admission-ruling question remains open and is not treated as answered. No promotions, no mint, no capability; no operator ruling assumed.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
