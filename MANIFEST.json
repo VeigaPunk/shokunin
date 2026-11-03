@@ -40246,6 +40246,46 @@
    "notes": "dispatch/complete digest (verbatim): 2026-11-03T19:34:10-03:00 launch kengaku round=68 pgid=2565439 driver=hyaku-inline attempt=1 | 2026-11-03T20:20:14-03:00 lane-dead-no-report kengaku round=68; retry same round (attempt-1 report a7575677 lacked ## SHONEN and ## Trend verdicts, 12415 B sha256 0399cd53...) | 2026-11-03T20:20:16-03:00 launch kengaku round=68 pgid=1790778 driver=hyaku-inline attempt=2 | 2026-11-03T20:43:21-03:00 complete kengaku round=68; hyaku-inline attempt=2. Lane d2ed4ca3 -> 1ec2e60a (pushed, ahead=0, worktree clean); report fleet 6f61b7cc + 68b1eecd by kengaku identity at 20:42:53, after the lane commit. Claims: R68-C1 coverage (capability offline-network-service-grader-probe, pypi-server member) admitted on re-measured counters; R68-C2 calibration (five round-67 routed defects as dated corrections) admitted on committed gate evidence (DEFECTS 5->0); scores held (coverage 7 at L0 cap, calibration 10 at ceiling); no axis harmed. Conformance defects (status-neutral): attempt-1 report missing SHONEN/trends (driver relaunched); attempt-1 report bytes superseded in place by the attempt-2 refiling (preserved at a7575677 and as the committed fixture sha256 0399cd53...); no SKILL.md registry rows for the four round-68 instruments (round68_c1_pypi_finish, round68_c2_correction_gate, round68_report_contract, round68_capability_table); GateReverify names the pre-landing SKILL.md sha 3fe9a6d0 (E4 hand-rechecked green on landing 544ad892); w1 attack share counted on a wider role set than the fleet definition (strict 3/12 = 25%, floor met); w1-results.json carries no seat outputs (per-seat reports do); depth and trio gate outputs quoted without committed receipts. Routed to round 69: the four registry rows; the owed QUALITY.md criterion for captured-by-none rows (round-68 rows 1-3, round-67 rows 7/9); re-issue the C2 receipt pair against the landing tip; freshness trio of the deepened knowledge entry still names base c78749a5; w1 attack-share arithmetic; commit the depth/trio receipts. Discernment: outside spot-check agrees on the Gate admit (urllib3 2.7.0, live 200 / 42786 B / sha256 668b37ab..., byte-identical to pip 26.2.1's vendored copy, wheel digest 71138adf...) and reject (CPython v3.14.8, live 200 / 59576 B / 016aa766..., no HTTPConnection.__repr__); LEARNING's improved-trigger applied. capabilities_added []: no new capability name entered; offline-network-service-grader-probe is re-demonstrated (new member) and the SCORECARD capability rows for rounds 64-67 were backfilled by A3 (each already recorded in its own closure). Spot-check artifact: kengaku-shokunin/corpus/lessons/round-68-verifier-spotcheck.md@a518980e.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 65,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 65,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 65
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "improved",
+    "calibration": "unprovable",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "`.jsc` route closure matrix (`tools/round-65/jsc-closure-matrix.py`) — the 18-run dump/View8/node-check matrix runs under a complete 30-entry closure with a cache-free start and an equal before/after census (18/18 labels, exit 0); first-working round 65"
+   ],
+   "report": ".ufo/reports/round-65/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-65-verifier-spotcheck.md@311079d869f068bc083a8d180977e49634120fdf",
+    "rechecks": "C1 re-measured by me at 55fe6b72: --manifest exit 0 with 30 entries, cache_present [], missing [], pin_mismatch []; instrument sha256 79a4dca4…/9434888e… equals the claims instruments map and the declaration blobs; 18 receipts all match their predicted labels (histogram 6 dump-ok/view8-ok/node-fail, 3 dump-exit-139, 9 dump-exit-134); before do-nothing exit 1, 0/18, byte-identical to the wave control; dry run 18/18 exit 0 census equal; census-at-freeze 105; no post-freeze tools diff. C2 re-measured: stem 144/144 at the base and 145/145 at db98f39c and HEAD; date 142/144, population_dropped 2, missing [] exit 1; recipe A re-run at the base gives 144 files / 142 mapped / the two missing names / 9.86, so the date mode is not recipe A; the naming clause has no implementing line and the counter carries no predicate constant. Census: SOURCES 172 -> 173, mined 163 -> 164, rejected 9, validator EXIT 0 with 19 standing W04. Spot-check: fetched the CPython -B page (171073 bytes, sha256 96f87232…, line 474, 15-word quote) and agreed with the S266 admit; re-opened the sys attribute page, the naming clause and recipe A and agreed with all three rejects."
+   },
+   "commit": "kaidoku-shokunin@55fe6b72e7811a0ee35480f5ba3572e2569c7422",
+   "closed_at": "2026-11-04T00:02:47Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (copied from the mutable .ufo/watchdog.log): 2026-11-03T20:06:26-03:00 launch kaidoku round=65 pgid=1440074 driver=hyaku-inline attempt=1 | 2026-11-03T20:52:10-03:00 complete kaidoku round=65; hyaku-inline attempt=1. Step-1 conformance: report committed by the lane identity (kaidoku-shokunin <kaidoku@shokunin.local>, d082f5f0; committer 20:49:36 is after the cited lane tip 20:49:22); SHONEN heading present once with four [~] box lines; cited commits c99e907c, 4a699a3f, 922ed89f, db98f39c, 2dc9789f, 8fd9a96f and 55fe6b72 all exist and are ancestors of main; lane state ahead=0 behind=0 tracked=0 untracked=0 with a clean tree; remote tip 55fe6b72; prompt 704 lines, byte-identical to templates/round-prompt.md up to section 6 modulo the lane substitutions, with addenda 6 and 7 present and all five child-lane items, committed as 82cab238. Claims: R65-C1 verified (manifest re-run 30 entries ok and cache-free; instrument sha 79a4…/9434… pinned; 18/18 receipts match predicted labels 6/3/9; before do-nothing exit 1 0/18 byte-identical; dry-run 18/18 exit 0 census equal; selftests 34/28 evidence-verified; freeze gate required_failed [] and round-65 not flagged; the disclosed C1-F1/F2 boundaries and the --skip-run synthetic closure confirmed in code, left for a new freeze). R65-C2 unprovable, honest stop (stem 144/144 at the base and 145/145 at db98f39c and HEAD; date 142/144 dropped 2 missing [] exit 1; recipe A re-run at the base 144/142 with the two names and 9.86; the naming clause has no implementing line and no predicate constant or receipt; no post-freeze edit and no capability row). Axes: depth improved, calibration unprovable, coverage unchanged; no axis harmed (SCORECARD axis rows unchanged, PROVINCE diff empty, LOG 44/0, tree deletions 0). Trends: expansion improved (new knowledge entry + mined S266 + coverage-map row; registry 172 -> 173), quality improved (r64 F1/F2 repaired and demonstrated, cache-free manifest, red/green controls; routed caveat: the new entry's group table says venv identity 4 vs the 5 pinned and counts the probe under both artifacts and harness), discernment improved (this outside spot-check agrees on the S266 admit and the sampled rejects; M65-2/M65-4 mined and QUALITY #102/#103 appended). Every claim does not verify — R65-C2 stops honestly — so the round is rejected-honest-stop, not admitted. Conformance defects, status-neutral: the Landed changes table cites a nonexistent round-65 declaration LOG heading and neither declaration 4a699a3f nor freeze 922ed89f touches LOG.md; the report says four Mistakes rows while the lesson holds five (M65-1..M65-5); the freeze gate receipt carries the JSON verdict but no EXIT token (the landing receipt ends EXIT 0). Routed: (1) a new C2 freeze — recipe A verbatim as before-arm, hidden files emitted as a list, predicate constant and receipt; (2) a new C1 freeze — post-probe cache check in closure.ok, the 30-entry count asserted, --skip-run disposition; (3) an erratum for the knowledge-entry group table; (4) a LOG correction for the declaration heading and the Mistakes count; (5) the M65-3 carry-in ordering check next round; (6) standing r58/r60 bare-name receipts, the r64 placeholder token and the 19 W04 warnings. SHONEN is all author-asserted [~] with resolving pointers; the boxes look checkable by a fresh non-author, and promotion stays operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
