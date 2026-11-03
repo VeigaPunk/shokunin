@@ -1,4 +1,4 @@
-# hyaku run 14 — 2026-11-03
+# hyaku run 15 — 2026-11-03 (Linux/omp host; continues zcode run 14)
 
 Operator directive (verbatim): "ok i need you to continue the hyaku run, we will be using 32-40
 concurrent workers, you are the orchestrator of each run; i want you to do 10 rounds of training per
@@ -30,17 +30,23 @@ Interjection: "you will be running until each shokunin reaches round 100".
 | executor, revenger, scout, labrat, mutation-tester, simplifier | @m_flash |
 | connector, sentinel, scribe, sonic, distiller, seance | @m_mim |
 
-## Start-state reconciliation (run-13 session ended 2026-10-30 with 14 L1s mid-flight)
+## Start-state reconciliation
 
-- tameshi r60: report landed + committed (96eede2f), verified OK → closure first.
-- 13 dead L1s (chousa r66, kagi r29, kaidoku r53, kake r65, kama r65, kasegi r50, kengaku r56,
-  mado r57, mori r62, revenger r74, souji r46, tabi r44, tsukuroi r53): attempt 1 recorded failed
-  (`inline.sh fail`); re-dispatch is attempt 2 and inherits the lane working copy.
-- Orphan undispatched readies of dead attempts renamed `*.ready.run13-orphan` (kagi r29, kasegi r50,
-  revenger r74, souji r45/r46) so `live()`'s attempt-suffix match cannot revive them for a new
-  `<Lane>R<n>a2` L1 (revenger L0 r73 hazard). Tracked readies of closed rounds left untouched.
-- Holds: none (operator 2026-10-30 lifted kagi HOLD and mado SECURITY HOLD).
+The zcode run-14 campaign (`.scratch/goal-20261031-hyaku-zcode-run14.md`, Windows host, 2026-10-31 to
+2026-11-02) advanced every pool lane while this host sat on run-13 state. Reconciled 2026-11-03:
+- Fleet repo: local run-15 setup commit rebased onto origin tip b73780ab; stale local commit
+  "round-60: hyaku closure dispatch for tameshi" (tameshi r60 was already closed remotely) abandoned.
+- Lane repos: all 17 fast-forwarded to their remote tips (all were ahead=0, behind 6-98). Dead run-13
+  working-copy residue (tracked diffs + untracked strays) preserved under /tmp/run13-orphans/<lane>/.
+- Local hyaku state rebuilt from MANIFEST closure rows: next = closed_max+1, outcome files per closed
+  round; run-13 claims moved aside. kake r68 landed unclosed on zcode (report 9d56e80b) → claim
+  reconstructed (base = r67 closure lane tip a6cb7efa), closed first.
+- chousa r70-72 rejected on the Windows host (no flock, sibling load): streak lifted at run start,
+  fresh-start rule applies to chousa r73.
+- 574 lane-rounds remain at start: revenger 89, tsukuroi 64, kama 70, tameshi 72, tabi 56, mado 65,
+  mori 79, souji 52, kaidoku 64, kake 68, kagi 30, kasegi 57, chousa 73, kengaku 63, kumitate 74,
+  kotoba 85, kotodama 82 (next round per lane). Critical path: kagi (71 sequential rounds).
 
 ## Progress
 
-State file: `.scratch/run14-state.json` (rounds trained this run, per-lane block progress).
+State file: `.scratch/run15-state.json` (rounds trained this run, per-lane block progress).
