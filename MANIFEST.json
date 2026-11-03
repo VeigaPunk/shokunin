@@ -39322,6 +39322,49 @@
    "notes": "Dispatch digest: 2083:2026-11-03T16:58:55-03:00 launch tabi round=58 pgid=2530658 driver=hyaku-inline attempt=1; 2089:2026-11-03T17:34:10-03:00 complete tabi round=58; hyaku-inline attempt=1. Wave w1 of 10 seats (attack 5/10); results.json lacks status/output (kernel restart); seat reports w1/R58*.md are the settle evidence. Routed defects for the lane (status-neutral): D1 R58-S1 counter does not cross-check page keylog vs swallow block (sentinel page-vs-recorded-attack.json F1); D2 synthetic-green G2 invented swallow leg and G3 false fixturedelta still green (sentinel synthetic-green-attack.json); D3 C2 do-nothing wording says could-not-evaluate class but counter emits receipt-missing finding, correct by appended round-59 lesson entry; D4 s4 Ctrl+Enter lacks swallow-OFF positive control; D5 C1 predicate scope A4/A5 and survivors N1/N2 for meter v19; D6 lesson cites reaper-deletable /fast/scratch forged-copy path, re-point to committed sentinel evidence; D7 cite w1/R58*.md not results.json for dead-seat claim; D8 C1 is verifier-state (no axis move), next adjacency claim must move an axis; D9 add QUALITY.md criterion for definition-site sweep citing Mistakes row 2; D10 SCORECARD should state capability-vs-axis basis for held coverage score. Judgment calls for operator: C2 admitted with counter kill-rule gaps routed (kill clause not triggered on witness source; synthetic-green enforcement is a counter-design gap); coverage graded unchanged (capability enters table, score held per AXES capabilities separation). SHONEN: no box checked; box 2 (end-to-end logged live receipt) is a candidate for operator ruling, boxes 1,3,4 not re-verified.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 65,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 65,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 65
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "coverage": "improved",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "initramfs-arm"
+   ],
+   "report": ".ufo/reports/round-65/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-65-verifier-spotcheck.md@c68bfe97e9ed8fda5477fa9ba80f979eaf278fd0",
+    "rechecks": "C1+C2 re-measured over committed bytes (note cat-file 128->0, SY rows 5, SOURCES 281->282, S282 after S281 NF 13, quote 23 words, INITRAMFS 0->23, capability row present, no SCORECARD axis ordinal changed); lane gates evidence-verified, never executed (selftest 168->177, registry-coverage 100/100/0, adjacency 114/114 at cecc9e3e, cited-receipts 0 findings/114 files at 797a7f80, census-repair-live one INITRAMFS line + rollup/rc identity); S282 and S237 v7.1 pin re-opened live byte-identical (sha256 008e1265...babce0b, 48df2e2f...f0801); sources-census validate rc 0"
+   },
+   "commit": "tsukuroi-shokunin@7ab7c8760fcc6766248df23a6a1db3bbdd8190fa",
+   "closed_at": "2026-11-03T20:44:44Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-11-03T16:27:44-03:00 launch tsukuroi round=65 pgid=3604711 driver=hyaku-inline attempt=1 | complete 2026-11-03T17:37:37-03:00 complete tsukuroi round=65; hyaku-inline attempt=1. One v1 wave, 13 seats (attack 4/13 + sentinel; connector 1). Conformance defects (status-neutral): (1) report correction dd05b55c rewrote one filed report line in place (labelled in subject; protocol wants an appended erratum); (2) SCORECARD round-63 gate-status line edited in place to add the adjacency-gate status instead of an erratum. Routed (carried to next round): adjacency-anchors-r19.md:204 prose 2277 vs register 2683/2822; narrowed C2 A/B by design fails on a genuine verdict flip (demonstrate the sensitivity once). SHONEN: all four boxes [~] with resolvable pointers, no [x] written; evidence fully checkable by a non-author from this closure seat - promotion is operator-owned. No tool installs this round.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
