@@ -39799,6 +39799,50 @@
    "notes": "Dispatch digest (.ufo/watchdog.log, copied at closure): 2026-11-03T16:23:55-03:00 launch kagi round=31 pgid=3591531 driver=hyaku-inline attempt=1; 2026-11-03T19:16:37-03:00 complete kagi round=31; hyaku-inline attempt=1. Round shape: one v1 wave, 15 seats (run-15 band 8-16), attack 5/15, connector 1, planner held by L1, labrat re-roled to executor; OidcEntry2 delivered ~2h20m late and reconciled; RowsDraft never delivered (recorded by lane). Claims C1 (calibration, cell audit re-armed) and C2 (coverage, OIDC theme frontier->core) both verified; no axis harmed. ROUTED DEFECTS (status-neutral, lane fixes next round): R1 PROVINCE.md line 90 still lists OIDC under Frontier beside the new Core bullet at line 89; R2 uncommitted late-seat wave evidence (build/OidcEntry2.md and -receipts.txt modified; OidcEntry2-report.md and build-results.json untracked); R3 lesson Gate S063 says Audience occurs twice in the response section, measured 2 lines (343 response element, 593 example XML); R4 M31-6 not in the Mistakes table; R5 calibration score 9 kept while audit shows FAIL R25-02 present since BASE and POLICY R29-01/R29-02; R6 README Frontier keeps a moved-to-core tombstone bullet. Operator items: R25-02/R29-01/R29-02 remain red per L0 kagi|round-30; run-15 route-bucket vs MISSION.md mapping inconclusive (connector on m_mim, reviewer on m_zfl vs MISSION buckets heavy/economy); SHONEN boxes all [~] and not assessed here, no [x] written, promotion operator-owned; boxes 1 and 3 may be checkable by a non-author, box 2 rests on a round-3 honest-stop entry plus this round's adoption, not assessed.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 67,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 67,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 67
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved",
+    "calibration": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged",
+    "novelty": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [
+    "offline-torch-pipeline-parallel-grader-probe"
+   ],
+   "report": ".ufo/reports/round-67/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-67-verifier-spotcheck.md@d2ed4ca32c9eb8e8a0f8b3c7ced3ff15c53f9821",
+    "rechecks": "step-1 conformance pass (lane-identity report commit 0c76ea7b, SHONEN heading 1/4 boxes, all cited commits ancestors of master, ahead=0, prompt template-faithful); R67-C1 evidence-verified not re-executed (receipt binds committed probe sha 03793f4f; 5 case shas + 6 junit shas re-hashed and match; before-state re-measured: grep=0, no receipt at 4bc29fd8); R67-C2 evidence-verified (strict landed byte-identical to proposal sha 27e8b41f; fabricated-strict 24 defects rc 1; committed-strict rc 0; fixtures 11/11; default cmp ok); counter A1 evidence-verified (7 rc=1 + 1 accepted by design); no axis harmed (SCORECARD diff pure append, all scores held, PROVINCE diff empty); discernment spot-check: both Gate admits re-opened live (HTTP 200, shas match, quotes verified at lines 157/18, <=25 words) — agree; no reject recorded this round; census validate rc 0; SOURCES 229->231 re-counted"
+   },
+   "commit": "kengaku-shokunin@f600c6d3f03a8bc4f10e624897a65b520ec81a6f",
+   "closed_at": "2026-11-03T22:32:37Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest: 2026-11-03T18:46:24-03:00 launch kengaku round=67 pgid=113848 driver=hyaku-inline attempt=1 / 2026-11-03T19:19:43-03:00 complete kengaku round=67; hyaku-inline attempt=1. Routed defects (status-neutral, spotcheck §5): (1) report + a1-mutants.txt header cite pre-A1 probe sha 32bacf1d as the amended counter; receipt and committed probe bind 03793f4f — dated erratum needed; (2) '8 killed, 1 accepted' miscount, actual 7 killed + 1 accepted (8 mutants); (3) round-67 probe selftest tally quoted but not committed; (4) SKILL registry: no row for round67_c1_pipeline_probe, round65-c1-sqlite-probe row not updated for --strict; (5) report's SKILL-row before-value 'executed 1 of 3' unsupported — committed bytes at 4bc29fd8 read recipe-unexecuted (round-66 row-update omission; true delta recipe-unexecuted -> executed 2 of 3); (6) w1-results.json seat outputs null after orchestrator kernel restart — seat outputs survive as committed seat-dir files. No reject in the round's Gate to sample (both candidates admitted, both re-opened and agreed). SHONEN: all four boxes [~] with pointers verified resolvable by this non-author — operator-owned promotion candidate. L0 appended: kengaku | round-67 x2 (receipt provenance standard; labrat role rejection).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
