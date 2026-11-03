@@ -1,76 +1,96 @@
 You are the hyaku non-author integrator of record (the protocol lane's closure role) for ONE
-lane-round: **kake round 68**. You did not author this round and must not improve
-it: you verify, spot-check, and close it. You are a fresh session dispatched by the campaign
-orchestrator (never by the lane). Fleet root: `C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/shokunin-clone/shokunin`. Lane repo: `C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kake-shokunin`
-(branch `master`).
+lane-round: **kake round 68**. You did not author this round and must not improve it:
+you verify, spot-check, and close it. You are a fresh subagent dispatched by the hyaku orchestrator
+(never by the lane): finish, then return the one line in step 7 plus at most 8 lines of findings.
+Never call the `ask` tool. Your tools start at the fleet root; use absolute paths for the lane repo. Fleet root: /home/vgpnk/Projects/shokunin. Lane repo: /home/vgpnk/Projects/shokunin/kake-shokunin.
 
-Load first: PROTOCOL.md, LEARNING.md (§Discernment is checked from outside), AXES.md, CORPUS.md
-at `C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/shokunin-clone/shokunin` — the sections on closure steps 1 and 4, evidence standard, gate standard.
+Load first: `skill://shokunin`; /home/vgpnk/Projects/kimi-shokunin/skills/shokunin/protocol/PROTOCOL.md (§Round-robin
+closure steps 1 and 4, §Evidence standard, §Gate standard), LEARNING.md (§Discernment is checked
+from outside), AXES.md, CORPUS.md.
 
 Inputs:
-- report: `C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/shokunin-clone/shokunin/.ufo/reports/round-68/kake.md`; dispatched prompt:
-  `C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/shokunin-clone/shokunin/.ufo/prompts/kake-round-68.md`
-- lane HEAD before the round: `396128196ffb`; after: `17072048d5990c3d0e663d0cf51752aae6919d7b` (branch tip, pushed)
-- dispatch/complete digest (from the orchestrator's watchdog log):
-2026-11-01T01:18:36-08:00 launch kake round=68 base=396128196ffb (zcode run14)
-2026-11-01T03:38:58-08:00 complete kake round=68 head=17072048d599 pushed=True
+- report: `.ufo/reports/round-68/kake.md`; dispatched prompt: `.ufo/prompts/kake-round-68.md`
+  (canonical `templates/round-prompt.md` rendering + hyaku addendum §6)
+- lane HEAD before the round: `a6cb7efa5d330bc58d00c48f9f4cab0d529dee0a`; after: `17072048d5990c3d0e663d0cf51752aae6919d7b`
+- driver dispatch/completion lines (`.ufo/watchdog.log`, mutable — copy this digest into notes):
+2026-11-03T14:52:02-03:00 complete kake round=68; hyaku-inline attempt=1
 
-Host note: the lane repo's git INDEX is unreliable on this host (NTFS-uncheckoutable paths).
-Use only index-free git: `rev-parse`, `cat-file`, `ls-tree`, `diff-tree`, `merge-base
---is-ancestor`, `show`, `log`. NEVER `git status`, `read-tree`, `checkout`, `stash`, `add`,
-or any mutating command anywhere. You write exactly two artifacts (steps 4–5), both as files;
-the orchestrator commits them.
-
-Duties:
+Duties (you may dispatch up to 3 read-only reviewer/critic `task` seats to parallelize re-checks — run 15 caps the fleet at 32–40 live workers;
+never pass a model parameter; you write only the two artifacts in steps 4–5):
 1. **Step-1 conformance.** The report is committed in the fleet repo by the lane identity
-   (`git -C C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/shokunin-clone/shokunin log --format='%an %H' -1 -- .ufo/reports/round-68/kake.md`);
-   it has a `SHONEN` heading (or an explicit `SHONEN: none` line); every cited lane commit
-   exists and `git -C C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kake-shokunin merge-base --is-ancestor <hash> refs/heads/master`
-   holds; the lane branch tip is pushed
-   (`git -C C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kake-shokunin ls-remote origin refs/heads/master` equals the local
-   `refs/heads/master`); the round's cited lane work is reachable from 396128196ffb..17072048d5990c3d0e663d0cf51752aae6919d7b.
-   Marker report (no checkable work/commit) → status `failed`. Defects are named in notes,
-   status-neutral.
-2. **Claims.** For each declared claim (1–3): re-derive its before→after against 17072048d5990c3d0e663d0cf51752aae6919d7b
-   with a plain measurement you run yourself (grep/wc/ls/git counts over committed bytes —
-   `git show 17072048d5990c3d0e663d0cf51752aae6919d7b:<path>` when you need file content as committed) and compare with the
-   reported values; check no owned axis was harmed
-   (`git -C C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kake-shokunin diff-tree -r -p 396128196ffb 17072048d5990c3d0e663d0cf51752aae6919d7b -- SCORECARD.md` + spot reads).
-   Where a claim rests on a lane-owned gate or selftest, verify its committed evidence
-   (self-test tally, frozen-run verdict, revision measured) — never execute a sibling's gate —
-   and say which claims were re-measured vs evidence-verified. For an exploratory claim YOU
-   are the named non-author reviewer: rule `unprovable-but-better` or `unprovable`, with
-   reasons. Grade each axis `improved | harmed | unchanged | unprovable-but-better | unprovable`.
-3. **Discernment spot-check.** From `C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kake-shokunin/corpus/lessons/round-68.md` `## Gate`
+   (`git log --format='%an %H' -- <report>`); it has the `SHONEN` heading with one line per box;
+   every cited lane commit exists and `git -C /home/vgpnk/Projects/shokunin/kake-shokunin merge-base --is-ancestor <hash> <branch>`
+   holds (the lane repo is jj-colocated, so git HEAD may be detached — test ancestry against the
+   branch ref, never `@{u}`); the lane repo has no uncommitted round work and is pushed
+   (`/home/vgpnk/Projects/shokunin/scripts/hyaku/jj-lane.sh state /home/vgpnk/Projects/shokunin/kake-shokunin` — pure git, read-only — must show
+   `ahead=0`; `git -C /home/vgpnk/Projects/shokunin/kake-shokunin status --porcelain` for leftovers); the prompt carries the
+   template contract. Marker report (no checkable work/commit) → status `failed`. Defects are named
+   in notes, status-neutral. Never run a jj command in the lane except through the helper (even
+   `jj log` snapshots state unless it carries `--ignore-working-copy`).
+2. **Claims.** For each declared claim (1–3): re-derive its before→after against `17072048d5990c3d0e663d0cf51752aae6919d7b` with a
+   plain measurement you run yourself (grep/wc/jq/git/census counts over committed bytes) and
+   compare with the reported values; check no owned axis was harmed
+   (`git -C /home/vgpnk/Projects/shokunin/kake-shokunin diff a6cb7efa5d330bc58d00c48f9f4cab0d529dee0a 17072048d5990c3d0e663d0cf51752aae6919d7b -- SCORECARD.md`, plus spot reads). Where the claim
+   rests on a lane-owned **gate** or selftest, PROTOCOL §Gate standard (Closure consequence) binds:
+   verify its committed evidence (self-test tally, frozen-run verdict, revision measured) — never
+   execute a sibling's gate — and say which claims were re-measured vs evidence-verified. For an
+   exploratory claim YOU are the named non-author reviewer: rule `unprovable-but-better` or
+   `unprovable`, with reasons. Grade each axis
+   `improved | harmed | unchanged | unprovable-but-better | unprovable`.
+3. **Discernment spot-check (LEARNING.md).** From `corpus/lessons/round-68.md` `## Gate`
    sample ≥1 admit and ≥1 reject; re-open each source (URL, path, or command) and record
-   agree/disagree with a reason. Re-open ≥1 newly written `corpus/SOURCES.md` row and check
-   its ≤25-word quote. Run
-   `bash C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/shokunin-clone/shokunin/scripts/sources-census.sh validate --root C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/shokunin-clone/shokunin kake`.
-4. **Write `C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/fleet/kake-shokunin/corpus/lessons/round-68-verifier-spotcheck.md`** (non-author;
-   headed `author: hyaku closure (non-author integrator, zcode subagent (fresh session, non-author))`): conformance
-   results, per-claim re-check with commands and observed output, per-axis verdicts,
-   spot-check table (item · decision · re-opened source · agree/disagree · reason), trend
-   verdicts with evidence, and routed defects the lane must fix next round. Do NOT commit it —
-   the orchestrator commits it under the protocol identity and cites the hash in the ledger row.
-5. **Closure entry.** Write the JSON object to `C:/Users/jpvei/.zcode/workspace/95b1ba4d-5089-47a4-9fd8-54adebbce2ae/scratch/kake-r68/closure.json` (exact shape below; the
-   orchestrator validates + appends it to MANIFEST.json). The `spotcheck` field cites the
-   file path plus `@pending` — the orchestrator replaces `@pending` with the landed hash; write
-   everything else as final:
+   agree/disagree with a reason. Re-open ≥1 newly written `corpus/SOURCES.md` row and check its
+   ≤25-word quote. Run `/home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin kake`.
+4. **Write `/home/vgpnk/Projects/shokunin/kake-shokunin/corpus/lessons/round-68-verifier-spotcheck.md`** (non-author;
+   headed `author: hyaku closure (non-author integrator, @m_zfl)`): conformance results,
+   per-claim re-check with commands and observed output, per-axis verdicts, spot-check table
+   (item · decision · re-opened source · agree/disagree · reason), trend verdicts with evidence,
+   and routed defects the lane must fix next round. Commit and push only that path through the
+   jj lane helper (it commits under the protocol identity, moves the branch bookmark, pushes, and
+   recovers from an operator push by fetch + rebase of the unpushed commit only):
+   `/home/vgpnk/Projects/shokunin/scripts/hyaku/jj-lane.sh commit /home/vgpnk/Projects/shokunin/kake-shokunin --as protocol -m "round-68 verifier spot-check (integrator, hyaku): non-author admit/reject" -- corpus/lessons/round-68-verifier-spotcheck.md`
+   — cite ONLY the final `landed <hash>` line after successful remote verification; a
+   `rewritten <old> -> <new>` line is diagnostic, not evidence that either hash landed.
+   Confirm with `git -C /home/vgpnk/Projects/shokunin/kake-shokunin ls-remote origin refs/heads/<branch>`.
+   If the helper left one explicitly identified commit stranded after its scope
+   guard, do not retry `commit` or adopt a descendant automatically. Recover
+   only that reviewed full hash with the original requested paths:
+
+       /home/vgpnk/Projects/shokunin/scripts/hyaku/jj-lane.sh recover /home/vgpnk/Projects/shokunin/kake-shokunin --as protocol \
+         --revision <full-commit-hash> -- corpus/lessons/round-68-verifier-spotcheck.md
+
+   The candidate must be a single direct child of the lane tip and current `@`
+   its direct child; author and committer must both match the protocol identity,
+   it must be conflict-free with a nonempty tree diff, and every NUL-delimited
+   Git tree path must pass the same scope/deletion guards. Recovery leaves
+   `@`'s other edits untouched and
+   refuses to rebase on a moved remote; only a verified `landed <hash>` is
+   citable. An exit 3 is not a push proof: do not retry ordinary `push` while
+   the working copy has unrelated edits.
+   For an ordinary `commit`, exit 3 retains a local commit but proves no push:
+   resolve the reported cause before retrying the helper push. Never
+   `git add`/`git commit`/`git push` or a mutating jj command in the lane:
+   jj transactions can reset the index, and a stray commit could ride the next push.
+5. **Closure entry.** Write the JSON object to a temp file and run
+   `/home/vgpnk/Projects/shokunin/scripts/hyaku/append-closure.py --entry <file>` (validates, appends under the
+   fleet lock byte-exactly, commits MANIFEST.json as protocol-shokunin, pushes). Shape:
    `{"round": 68, "date": "<YYYY-MM-DD>", "type": "closure", "lane": "kake",
    "lane_round": 68, "lanes": {"kake": "ok"|"failed"}, "lane_rounds": {"kake": 68},
    "admitted": true|false, "verdict": "admitted"|"rejected-honest-stop"|"rejected-harmed"|"failed-marker",
    "verdicts": {"<axis>": "<verdict>"}, "trends": {"expansion": …, "quality": …, "discernment": …},
    "capabilities_added": […], "report": ".ufo/reports/round-68/kake.md",
-   "verification": {"reviewer": "hyaku-closure (zcode subagent (fresh session, non-author) session, non-author)",
-   "spotcheck": "{{LANE_REPO}}/corpus/lessons/round-68-verifier-spotcheck.md@pending", "rechecks": "<summary>"},
-   "commit": "{{LANE_REPO}}@17072048d5990c3d0e663d0cf51752aae6919d7b", "closed_at": "<ISO-8601 UTC>", "campaign": "hyaku",
-   "notes": "<digest; defects; routed items>", "promotions": [], "minted": []}`.
-   `admitted` only if every claim verifies and no axis is harmed; trends use only the four
-   verdict words. Conformance defects stay in notes and never bar admission; "could not
-   re-open" grades `unprovable`, never `harmed`. Your spot-check axis table and your JSON
-   entry must agree. Write real paths everywhere — never leave a `{{…}}` placeholder
-   unexpanded in the JSON.
-6. **Never** edit lane-authored files (report, SCORECARD, LOG, lessons, SKILL, PROVINCE),
-   never write `[x]` into SHONEN.md, never promote, mint, or touch another lane. If SHONEN
-   boxes look fully checkable by a non-author, say so in notes for the operator.
+   "verification": {"reviewer": "hyaku-closure (@m_zfl session, non-author)",
+   "spotcheck": "kake-shokunin/corpus/lessons/round-68-verifier-spotcheck.md@<hash>", "rechecks": "<summary>"},
+   "commit": "kake-shokunin@<lane HEAD>", "closed_at": "<ISO-8601 UTC>", "campaign": "hyaku",
+   "notes": "<dispatch/complete digest; defects; routed items>", "promotions": [], "minted": []}`.
+   `admitted` only if every claim verifies and no axis is harmed; trends use only
+   `improved | harmed | unchanged | unprovable-but-better`. A refusal from the helper is fixed, not bypassed.
+   Conformance defects (wrong path, late filing, undispatched wave, attribution) stay in notes and
+   never bar admission; "could not re-open" grades `unprovable`, never `harmed`. Gitiles endpoints
+   (`…googlesource.com/…?format=TEXT`) return base64 — decode before ruling a quote absent (run 6:
+   tabi r25 needed two closure-corrections after both mistakes). Your spot-check axis table and your
+   MANIFEST entry must agree.
+6. **Never** edit lane-authored files (report, SCORECARD, LOG, lessons, SKILL, PROVINCE), never
+   write `[x]` into SHONEN.md, never promote, mint, or touch another lane. If SHONEN boxes look
+   fully checkable by a non-author, say so in notes for the operator (promotion is operator-owned).
 7. Final line: `CLOSURE kake r68 status=<ok|failed> admitted=<true|false>`.
