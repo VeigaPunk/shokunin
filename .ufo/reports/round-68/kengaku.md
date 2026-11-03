@@ -187,6 +187,12 @@ tally is 7 refused + 1 accepted by design (+1 base row), not "8 killed". (c) The
 `recipe-unexecuted`, not "executed 1 of 3". All three live in `plans/round-67-claims.md`
 `## Erratum (round 68)` and the `ERRATUM-68` trailer on `a1-mutants.txt`.
 
+**Misroot sweep.** `git -C /home/vgpnk/Projects/shokunin status --porcelain` after the wave: no untracked
+fleet-root file names kengaku or round-68, so there is no misroot to move. The untracked root file `after`
+(24 B, created 20:05, content `== SCORECARD diff base-`) is unattributed and was left untouched;
+`.ufo/reports/round-57/souji.md` and `.ufo/reports/round-65/kaidoku.md` belong to other lanes; `.scratch/*`
+is orchestrator-owned.
+
 ## Stale-lane
 
 Respawn-per-round driver (`scripts/shokunin-watchdog.sh`); no other mission of this lane is open. The
