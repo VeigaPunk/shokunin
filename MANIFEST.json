@@ -39884,6 +39884,49 @@
    "notes": "Driver digest: 2026-11-03T18:44:45-03:00 launch tabi round=60 pgid=4019175 driver=hyaku-inline attempt=1; 2026-11-03T19:43:05-03:00 complete tabi round=60; hyaku-inline attempt=1. Real report, status ok. C1 killed by frozen K7; C2 verified; no axis harmed, rejected-honest-stop. Status-neutral conformance defects: planner held by L1 rather than an L2 seat (prompt lists planner); S161 anchor edited in place contrary to SOURCES v1 mutable-column rule. Routed: pin v19 inputs to one snapshot; leave keyup cancelable value residual for operator ruling; carry kaidoku 37 overlap rulings non-author review; correct future source-row reopens and planner seat handling. Current kaidoku head moved after the data run, so eight sibling heads now differ; seven differed in the committed run. Prior census warning routing closed: same 22 IDs at start/end, none added. SHONEN boxes remain asserted, not checked; promotion remains operator-owned. Spotcheck landed and remote verified at 6c5c2a2ef5dc9c790426e7d9efe2d3025a156441.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 65,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 65,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 65
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "freshness": "improved",
+    "operability": "improved",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "quality/landing-counters.sh — one-command standing landing check (navigation, used-by, ledger, citation-resolvability legs with per-leg rc lines; scratch-root required, ambient GIT_* stripped, refuses empty-citation green and dirty receipts trees; hermetic 19/19 selftest; frozen GREEN with four rc=0 legs at c6b8ec301ac54c2c082ad228cbacabecbd15b48e, byte-unchanged through lane tip 23fbc174; first-working round 65)"
+   ],
+   "report": ".ufo/reports/round-65/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-65-verifier-spotcheck.md@eafd500fa7be76dca59e729435e231a5032cc037",
+    "rechecks": "Step-1 pass: report landed by lane identity (fleet 004f563, 19:50:27-03:00, before the watchdog complete line), SHONEN heading 4x[~] with pointers, all 3 cited lane commits exist and are ancestors of refs/heads/master, helper state ahead=0 behind=0 local==remote==23fbc174, porcelain clean, dispatched prompt = canonical template rendering (substitution-only diff) + hyaku addendum with all round-level and five child-lane items. C1 RE-MEASURED by closure at both revs: rows=0 groups=0/8 receipts=0 rc=1 at base 524fa1f9 -> rows=8 groups=8/8 receipts=4 resolved=4 gate=ok TARGET_MET rc=0 at 23fbc174, byte-matching the report and the committed frozen run (measurement-final-r65.txt, measured content c6b8ec30); gate receipt MADO_VERIFY: CLEAN (52 pass, 8 notes) in-repo. C2 before RE-MEASURED (instrument absent at base: ls-tree 0, cat-file fatal); after EVIDENCE-VERIFIED from committed frozen runs per Gate standard (MADO_R65_INSTRUMENT: selftest=0 landing=0 green=yes at c6b8ec30; instrument + 3 dependencies + register byte-unchanged c6b8ec30->23fbc174 so the frozen GREEN holds at the cited lane HEAD; ledger +2 data rows 104->106). SCORECARD diff append-only, no owned axis harmed. Discernment: census rc=0, 371 rows; S097 re-opened (sha256 dbdd13a6...601786 exact match, line-4 quote) and S028 re-opened (Fixes backported heading + tag datetime) both agree; both reject-shaped decisions (merge/mado hold-back, M65-2 deferral) agreed."
+   },
+   "commit": "mado-shokunin@23fbc174d02fa44662e9aee735bbf6de5cad3f1d",
+   "closed_at": "2026-11-03T22:57:04Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (from .ufo/watchdog.log lines 2118/2122): 2026-11-03T19:25:36-03:00 launch mado round=65 pgid=2236216 driver=hyaku-inline attempt=1 | 2026-11-03T19:53:00-03:00 complete mado round=65; hyaku-inline attempt=1. Conformance defects (status-neutral, none bars admission): (1) fleet report commit 004f563 (19:50:27-03:00) precedes the lane's final bookkeeping commit 23fbc174 (19:51:32) that the report cites as final lane hash — hash is not dead/orphaned (ancestral at closure, local==remote); suspected jj materialization ordering; (2) SOURCES re-open bumped the `opened` cell of S028/S097 in place, outside rule-2's status/recheck/used-by set (old->new logged in lesson; minor); (3) C1 forged-state-cell acceptance (M65-2) and landing-instrument residue (M65-3: S5/I1/I7/I9) routed by the lane to round 66, confirmed open by closure; (4) wave w1 had no planner seat (L1 planned; disclosed) — 12 seats, 33% attack share, 1 connector, one v1 wave, WAVE-DONE before report, band and share rules met. Operator notes: SHONEN boxes remain 4x[~] lane-asserted with resolvable pointers (box 1 and box 4 look mechanically checkable by a non-author) — promotion stays operator-owned; L0 questions r57 (freshness/Windows L2 waiver), r58 (gate-selftest disposal), r59 (calibration re-derivability), r60 (screenshot scope) remain open.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
