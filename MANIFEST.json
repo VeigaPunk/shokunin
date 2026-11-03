@@ -39199,6 +39199,45 @@
    "notes": "dispatch/complete digest: 2026-11-03T16:19:50-03:00 launch souji round=53 pgid=3576781 driver=hyaku-inline attempt=1 | 2026-11-03T17:11:18-03:00 complete souji round=53; hyaku-inline attempt=1 (watchdog lines 2075/2084 at closure). Real report, not a marker; freeze 61838b54 (16:32) precedes all claim receipts (capture 16:33, content 17:06, matrices 17:07). Defects (status-neutral, in spotcheck section 6): (1) report says lesson Mistakes carries six rows, committed table has seven (misroot row omitted from the count) — souji to fix next round; (2) fleet-side .ufo/waves/round-53/ (w1-results.json) uncommitted and absent at closure — pointer does not resolve; wave evidence rests on watchdog lines + committed prompt + lesson copy; routed to the protocol integrator again (same item the r52 verifier raised); (3) prereg wording echoes critic R13 (closes=partial, do-nothing control names two artifacts) — lane already routed to r54; (4) sentinel S4 oracle/builder digest pinning stays routed (R9). SHONEN: all four boxes [~] with resolvable pointers and look non-author-checkable — promotion is operator-owned; no [x] written. Routed items from r52 closed with receipts (.omp control able to fail; freeze-message discipline PASS). No tool installs recorded.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 57,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 57,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 57
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:verifiability": "improved",
+    "coverage": "improved",
+    "depth:density": "unchanged",
+    "calibration": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-57/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-57-verifier-spotcheck.md@1e5c8f2cdc1c9d14672444c6fca0e67414366494",
+    "rechecks": "C1 re-measured: figure-audit ledger 27->35 via git show+grep at eae1d614/e300ad5c; gate verdicts evidence-verified from committed receipts only (do-nothing-c1 red figures=27 ok=26 stale=1 exit=1 at base; gate-final green figures=35 ok=35 stale=0 exit=0; selftest cases=5 failures=0 in both receipts; c1-red wrong-want and mutated-receipt reds exit 1; r30-hardening missing-object red exit 1). C2 re-measured: registry 88->90 (grep -cE S-row), frontier +1 by independent grep (counter rows 37->38 per receipts), knowledge files and expected list 75->76, capture-binding 71->73 per receipts; capture sha256 re-hashed equal to rows/manifest; both iso.org pages re-opened live (HTTP 200, 88964/87845 bytes equal to recorded fetches) with every sampled quote and currency statement found in the raw HTML. SCORECARD base->tip diff is a pure EOF append; no owned axis harmed. Prompt fidelity vs templates/round-prompt.md verified by substitution diff; L2 floor item matches MISSION.md."
+   },
+   "commit": "kasegi-shokunin@e300ad5c5bfc30f1170044d5cfd992102da9b695",
+   "closed_at": "2026-11-03T20:55:00Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 2026-11-03T14:54:06-03:00 launch kasegi round=57 pgid=1998487 driver=hyaku-inline attempt=1; 2026-11-03T17:23:39-03:00 complete kasegi round=57; hyaku-inline attempt=1 (watchdog.log lines 2064/2086). Report committed 072105c1 by kasegi-shokunin <kasegi@shokunin.local>; lane commits 6343e2c freeze, cd30298 implementation, e300ad5c results tip (pushed, ahead=0); all ancestors of master; SHONEN heading present, one line per box, no [x]; SHONEN.md byte-unchanged; lane repo clean except untracked dispatcher marker .ufo/waves/round-57/w1.ready.dispatched (not round work). C1 and C2 verify (see rechecks); spot-check 5/5 agree (2 admits re-opened live, prices/successor-draft rejections agreed). Defects (status-neutral): (1) stale carry-in - report Limits says DF-56-2 stands for lack of an L2-minimum item in the dispatched prompt, but the r57 prompt sec.3 embeds it (r56 prompt had 'Helpers (optional, honest)'); DF-56-2 resolved for r57, record next round; (2) CENSUS-FRESH=stale exit 1 in the gate-final receipt (M57-9/R69 live-log range bases; sources-census.sh itself exit 0) - R69 pinned-range census rule routed to r58, L0 question filed; (3) lane-named open limbs re-flagged: M57-4/R67 C2 counter admits a stub body (counter amendment = r58 frozen claim), M57-6 m4/m6 mutation survivors, M57-8 r54 red fixture live derive, LedgerReplay F2 ';'-chain bypass and F4 edge-policy divergence. Operator note: SHONEN boxes 1 and 3 are [~] author-asserted but look non-author-checkable from committed bytes (ExportReplay/LedgerReplay seat re-runs); promotion verification is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
