@@ -39843,6 +39843,47 @@
    "notes": "dispatch/complete digest: 2026-11-03T18:46:24-03:00 launch kengaku round=67 pgid=113848 driver=hyaku-inline attempt=1 / 2026-11-03T19:19:43-03:00 complete kengaku round=67; hyaku-inline attempt=1. Routed defects (status-neutral, spotcheck §5): (1) report + a1-mutants.txt header cite pre-A1 probe sha 32bacf1d as the amended counter; receipt and committed probe bind 03793f4f — dated erratum needed; (2) '8 killed, 1 accepted' miscount, actual 7 killed + 1 accepted (8 mutants); (3) round-67 probe selftest tally quoted but not committed; (4) SKILL registry: no row for round67_c1_pipeline_probe, round65-c1-sqlite-probe row not updated for --strict; (5) report's SKILL-row before-value 'executed 1 of 3' unsupported — committed bytes at 4bc29fd8 read recipe-unexecuted (round-66 row-update omission; true delta recipe-unexecuted -> executed 2 of 3); (6) w1-results.json seat outputs null after orchestrator kernel restart — seat outputs survive as committed seat-dir files. No reject in the round's Gate to sample (both candidates admitted, both re-opened and agreed). SHONEN: all four boxes [~] with pointers verified resolvable by this non-author — operator-owned promotion candidate. L0 appended: kengaku | round-67 x2 (receipt provenance standard; labrat role rejection).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 60,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 60,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 60
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "adjacency": "unchanged",
+    "calibration": "improved",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-60/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-60-verifier-spotcheck.md@6c5c2a2ef5dc9c790426e7d9efe2d3025a156441",
+    "rechecks": "Conformance: report author tabi-shokunin f812ba6b; SHONEN 4 asserted boxes; cited lane commits ancestors of master; pushed and clean. C1 plain remeasurement at 20 frozen heads: 85598 markdown paths, matching report; v19 committed run-head comparison independently finds seven changed sibling heads. Committed gate evidence: map unscreened 85573, wide unscreened 0 and rowsChecked 85598, v19 false with 12 findings at bc373ade, mutants M1-M5 killed. C1 killed by K7. C2 counter/driver/probe sha pins and canonical single-field forgery deltas remeasured; committed gate evidence verifies forgedGreen 4 to 0, LIVE true, selftest 110/110 and idCoverage 58/58, C6-C9 killed. No sibling gate executed. Outside source sample 5/5 agree (4 admits, 1 reject); live DOM and UI Events HTTP 200 with zero redirects; S163 quote located. Census validate exit 0, 163 rows, zero malformed, unchanged 22 W04 IDs."
+   },
+   "commit": "tabi-shokunin@7e1d4620738a76c5ed3a36e5f6686bd73b24d471",
+   "closed_at": "2026-11-03T22:48:33Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-11-03T18:44:45-03:00 launch tabi round=60 pgid=4019175 driver=hyaku-inline attempt=1; 2026-11-03T19:43:05-03:00 complete tabi round=60; hyaku-inline attempt=1. Real report, status ok. C1 killed by frozen K7; C2 verified; no axis harmed, rejected-honest-stop. Status-neutral conformance defects: planner held by L1 rather than an L2 seat (prompt lists planner); S161 anchor edited in place contrary to SOURCES v1 mutable-column rule. Routed: pin v19 inputs to one snapshot; leave keyup cancelable value residual for operator ruling; carry kaidoku 37 overlap rulings non-author review; correct future source-row reopens and planner seat handling. Current kaidoku head moved after the data run, so eight sibling heads now differ; seven differed in the committed run. Prior census warning routing closed: same 22 IDs at start/end, none added. SHONEN boxes remain asserted, not checked; promotion remains operator-owned. Spotcheck landed and remote verified at 6c5c2a2ef5dc9c790426e7d9efe2d3025a156441.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
