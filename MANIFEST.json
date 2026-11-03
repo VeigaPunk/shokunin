@@ -39238,6 +39238,47 @@
    "notes": "Digest: 2026-11-03T14:54:06-03:00 launch kasegi round=57 pgid=1998487 driver=hyaku-inline attempt=1; 2026-11-03T17:23:39-03:00 complete kasegi round=57; hyaku-inline attempt=1 (watchdog.log lines 2064/2086). Report committed 072105c1 by kasegi-shokunin <kasegi@shokunin.local>; lane commits 6343e2c freeze, cd30298 implementation, e300ad5c results tip (pushed, ahead=0); all ancestors of master; SHONEN heading present, one line per box, no [x]; SHONEN.md byte-unchanged; lane repo clean except untracked dispatcher marker .ufo/waves/round-57/w1.ready.dispatched (not round work). C1 and C2 verify (see rechecks); spot-check 5/5 agree (2 admits re-opened live, prices/successor-draft rejections agreed). Defects (status-neutral): (1) stale carry-in - report Limits says DF-56-2 stands for lack of an L2-minimum item in the dispatched prompt, but the r57 prompt sec.3 embeds it (r56 prompt had 'Helpers (optional, honest)'); DF-56-2 resolved for r57, record next round; (2) CENSUS-FRESH=stale exit 1 in the gate-final receipt (M57-9/R69 live-log range bases; sources-census.sh itself exit 0) - R69 pinned-range census rule routed to r58, L0 question filed; (3) lane-named open limbs re-flagged: M57-4/R67 C2 counter admits a stub body (counter amendment = r58 frozen claim), M57-6 m4/m6 mutation survivors, M57-8 r54 red fixture live derive, LedgerReplay F2 ';'-chain bypass and F4 edge-policy divergence. Operator note: SHONEN boxes 1 and 3 are [~] author-asserted but look non-author-checkable from committed bytes (ExportReplay/LedgerReplay seat re-runs); promotion verification is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 70,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 70,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 70
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "freshness": "improved",
+    "operability": "unchanged",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-70/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-70-verifier-spotcheck.md@cc6b4e0b8c35e72dfb02c6184b847f68c1262153",
+    "rechecks": "C1 re-measured with the verifier's own independent predicate implementation over committed bytes at base e5f6fd9e (pointers=348 dangling=17 annotated=0 unannotated=17, red) and tip 2c1a700d (pointers=351 dangling=17 unannotated=0 append_only=true, green), token-for-token equal to the lane receipts; +3 pointers = the declared 17+1-row calibration section, all 17 dangling tokens reproduced; SCORECARD diff 62 insertions 0 deletions (append-only, no axis harmed). C2 re-measured: entry and S438 row absent at base (path not in revision; row grep 0; registry 175), present at tip (registry 176; provenance trio; row mined/opened 2026-11-03/180d/used-by entry); sources-census validate exit 0 with the same 16 pre-existing W04 warnings. S438 source re-opened live (HTTP 200, canonical/og:url equal the entry URL; live sha 797affa6 differs from pinned dd17ea8c as live pages do); both raw <=25-word blockquotes re-derive raw-substring on retained AND live bodies; C2(c) quote raw 0 / collapsed 1 exactly as the Gate disclosed; retained body sha256 and 110697 bytes re-derive. Gate sample agreed on 1 admit (BigQuery entry + S438) and 2 rejects (crux-keyless-check: S303/S304 absent from registry 0/0, conflicts with field-performance-cwv.md:142; 8 colliding rows S312..S409 all already present exactly once). Prompt = byte-faithful template render + addendum; dispatch lines match digest; lane clean, ahead=0."
+   },
+   "commit": "kake-shokunin@2c1a700d12c245b6cde82b251deaf1f8953bf241",
+   "closed_at": "2026-11-03T20:36:42Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-11-03T16:21:45-03:00 launch kake round=70 pgid=3584047 driver=hyaku-inline attempt=1 | 2026-11-03T17:31:00-03:00 complete kake round=70; hyaku-inline attempt=1. Shape: W1 one v1 wave, 14 seats (3 scout, 3 executor, 2 scribe, 1 reviewer, 1 critic, 1 mutation-tester, 1 connector, 1 revenger, 1 sentinel), 0 dead seats, no planner seat (L1 holds it; validator rejects planner), one .ready handoff taken 16:34:31, WAVE-DONE before report. Conformance notes (status-neutral): (1) report counts attack share 4/14~=28.6% by including the revenger seat; the run-15 list names reviewer/critic/mutation-tester/labrat, under which the strict count is 3/14~=21.4% - lane should count strictly or record its wider definition (band 8-16, <=2 connectors, no model passed all hold); (2) prompt axes gloss '(web properties and publishing)' vs MISSION.md '(web properties)' - bucket matches, cosmetic; (3) 16 W04 duplicate-url census warnings pre-existing, unchanged before->after; (4) seat scratch-discipline slip (ConnOverlap dir outlived report, removed by L1) recorded in the report. SHONEN box 3 stays [ ] with named residuals (SKILL.md:95,356,359; r69 citation debt) - boxes not all checkable, no promotion signal; promotion is operator-owned. No red gate; routed defects live in the spotcheck file. No promotions, no mints.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
