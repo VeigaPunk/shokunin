@@ -39602,6 +39602,45 @@
    "notes": "Dispatch digest (.ufo/watchdog.log, copied at closure): 2026-11-03T17:45:18-03:00 launch tabi round=59 pgid=2445449 driver=hyaku-inline attempt=1; 2026-11-03T18:38:56-03:00 complete tabi round=59; hyaku-inline attempt=1. Status ok: report is real, contentful, lane-attributed, with cited commits. Conformance: none status-changing. Not admitted: C2 killed by its own frozen rule f6 (counter does not enforce cancelable); no axis harmed. Routed to lane (next round): R1 counter must enforce cancelable and carry a C6 kill (L0 tabi|round-59); R2 37 kaidoku overlap-declared rulings need a non-author pass; R3 18,869 unscreened browser-ground lines in sibling .md files; R4 22 W04 census duplicate-url warnings to classify as r59-introduced or inherited. SHONEN: no box written (operator-owned); box 2 has a committed live receipt confirmed present for operator review.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 66,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 66,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 66
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "operability": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "offline-torch-tensor-parallel-grader-probe"
+   ],
+   "report": ".ufo/reports/round-66/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-66-verifier-spotcheck.md@4bc29fd8c8b260df419a23d590c5c7963986a3fb",
+    "rechecks": "C1 re-derived from committed bytes, not re-executed: receipt PREDICATE R66-C1 pass; 5 VECTOR rows equal the frozen predicate; grader sha 4ae4285e re-hashed (committed copies and live HTTP 200); 5 case shas and 5 junit shas re-hashed; PROBE 7640a639 equals committed probe; claims doc append-only (18 insertions, 0 deletions); cases unchanged since freeze. C2: committed R65 receipt has 0 PROBE lines, so kill rule (b) holds; R65 checker unchanged. Spot-check: 4 items re-opened (live sqlite zip sha 0a9c8e34; live kv-store sha 115de2e9; grep -F on captures); 4 of 4 agree. Census validate exit 0 (227 to 229 rows). Lane pushed, ahead=0."
+   },
+   "commit": "kengaku-shokunin@e02c2d9095b928df0f192ef0f30229857d63deea",
+   "closed_at": "2026-11-03T21:45:29Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (watchdog.log, copied at closure): 2026-11-03T17:48:06-03:00 launch kengaku round=66 pgid=2458703 driver=hyaku-inline attempt=1; 2026-11-03T18:39:42-03:00 complete kengaku round=66; hyaku-inline attempt=1. Lane tip e02c2d90 (pushed, ahead=0). Report fleet commit 79003070 (kengaku-shokunin, 18:38:56-03:00, after the lane commit). Prompt commit 9b0320b2. L0 question 74ddb468. Verdict: C1 verified on the amended counter (capability enters; coverage held at 7 under the L0 cap). C2 not verified (kill rule b). Round not admitted because every claim must verify. Conformance defects, status-neutral: (a) wave dispatch has 0 planner and 2 executor seats against the prompt section 3 floor of 1 planner and 3 executors; the report says the L1 holds the planner seat; (b) claims are on coverage and operability while MISSION.md:24 assigns kengaku novelty and calibration; the report calls coverage the lowest owned axis; operator ruling needed; (c) four untracked driver marker files in the lane tree (.ufo/waves/round-63/w1.ready.dispatched, round-64/w1.ready.dispatched, round-66/w1.ready, round-66/w1.ready.dispatched); no round work left uncommitted. Routed to kengaku round 67: (1) corpus/knowledge/tb2-sqlite-gcov-offline.md line 4 still cites superseded S233; needs a dated append-only re-point to S236 as the kv-store entry got at line 232; (2) mistake rows 3 to 7 open: R66-C2 successor with a PROBE binding frozen before data; dated corrections at SKILL.md:686, SCORECARD.md:2885, LOG.md:2512, round-65 report lines 14 and 78; (3) S233 and S234 remain status mined after supersession; consider rejected with old to new logged. Spot-check 4 of 4 agree (S236 admit, S237 admit, S234 teaches reject, S233 quote reject). Wave 13 of 13 seats with output; no dead seats. SHONEN: no [x]. Operator note: boxes 2 and 3 look checkable by a non-author on this evidence; promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
