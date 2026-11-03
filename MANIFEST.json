@@ -39927,6 +39927,44 @@
    "notes": "Dispatch/complete digest (from .ufo/watchdog.log lines 2118/2122): 2026-11-03T19:25:36-03:00 launch mado round=65 pgid=2236216 driver=hyaku-inline attempt=1 | 2026-11-03T19:53:00-03:00 complete mado round=65; hyaku-inline attempt=1. Conformance defects (status-neutral, none bars admission): (1) fleet report commit 004f563 (19:50:27-03:00) precedes the lane's final bookkeeping commit 23fbc174 (19:51:32) that the report cites as final lane hash — hash is not dead/orphaned (ancestral at closure, local==remote); suspected jj materialization ordering; (2) SOURCES re-open bumped the `opened` cell of S028/S097 in place, outside rule-2's status/recheck/used-by set (old->new logged in lesson; minor); (3) C1 forged-state-cell acceptance (M65-2) and landing-instrument residue (M65-3: S5/I1/I7/I9) routed by the lane to round 66, confirmed open by closure; (4) wave w1 had no planner seat (L1 planned; disclosed) — 12 seats, 33% attack share, 1 connector, one v1 wave, WAVE-DONE before report, band and share rules met. Operator notes: SHONEN boxes remain 4x[~] lane-asserted with resolvable pointers (box 1 and box 4 look mechanically checkable by a non-author) — promotion stays operator-owned; L0 questions r57 (freshness/Windows L2 waiver), r58 (gate-selftest disposal), r59 (calibration re-derivability), r60 (screenshot scope) remain open.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 73,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 73,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 73
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "freshness": "improved"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-73/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-73-verifier-spotcheck.md@ced2878a1e77f57afb4ee3baebf1021e5130399b",
+    "rechecks": "step-1 conformance clean (lane identity 699b2b99, SHONEN 4/4 boxes, all cited commits ancestors of master, ahead=0, porcelain clean, prompt carries the full template contract, report 19:56:32 after receipts 19:55:55); C1 re-measured over git bytes (dead tokens at base with files absent; tip correction LOG.md:2514; LOG/SCORECARD zero removed lines) + counter receipts evidence-verified; C2 gate receipts evidence-verified (selftest 41/41, corpus 0/11 vs c72 control 9/11) with instrument sha256, frozen corpus immutability and registry row re-measured; C3 sidecar one-field re-pin re-measured (new lineSha256 == sha256 of SOURCES.md:140 at tip) with sweep receipts evidence-verified (exit 2 base -> exit 1 named drift, selftest 36/36); harm battery c66/c70/c72 exit 0 at tip; S440 re-opened live (HTTP 200, sha256 identical to retained bytes); census validate exit 0 ok, 178 rows; spot-check 3 admits + 2 rejects sampled, all agree"
+   },
+   "commit": "kake-shokunin@7f4cdc86b074076e97fe5a9e6ebbc8b569c01364",
+   "closed_at": "2026-11-03T23:01:22Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-11-03T19:22:52-03:00 launch kake round=73 pgid=2231093 driver=hyaku-inline attempt=1; 2026-11-03T19:57:02-03:00 complete kake round=73; hyaku-inline attempt=1. Conformance defects: none found; attribution clean (report landed by kake-shokunin <kake@shokunin.local>). Routed to kake next round: (1) register the round-72 c72_tmp_v2.py counter's own gate-registry row (routed defect 2 of the round-72 spot-check, still open); (2) dated re-observation pass over host-relative kind=absent sidecar annotations (M3: 144/148 resolve on this host incl. the re-pinned SOURCES.md:140 entry); (3) open L0 kake|round-69 lowercase ~/projects class still pending operator ruling - the sweep's exit-1 named finding tracks it, not to be silenced without the ruling. C3 verdict is evaluable-with-named-drift, not clean, exactly as claimed. SHONEN: all four boxes [~] with resolvable pointers and re-verified content - re-fileable by a non-author next round; promotion remains operator-owned. No promotions, no mints; fresh-start/holds not applicable (no holds this run).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
