@@ -39485,6 +39485,45 @@
    "notes": "Digest: 2026-11-03T17:40:40-03:00 launch kake round=71 pgid=2422897 driver=hyaku-inline attempt=1; 2026-11-03T18:17:07-03:00 complete kake round=71; hyaku-inline attempt=1 (.ufo/watchdog.log lines 2092/2097). C1 calibration unprovable, honest stop: the frozen attack-share premise is contradicted by the record (round-70 amendment-0-note.md:11-16 names sentinel as the fourth attack seat; stated 4/14 stands; the contract's 3/14/revenger correction correctly not landed). C2 freshness met on the frozen predicate (unannotated /tmp tokens 7->0). Defects (status-neutral): w1 carried no planner seat (L1 held the role; band 13 in 8-16, attack share 4/13=30.8%, connector 1 met); two untracked dispatcher handoff markers (w1.ready, w1.ready.dispatched) declared in the report. Routed to round 72: pin the C1 counter's round-70 results read to the frozen base revision (probe 69836788 launders under a history rewrite); reconcile the attack-share premise after the operator ruling; git show --end-of-options on both counters (SentinelPaths rows 8-11, mitigation row 18); C2 to reject phrase-only annotations on command lines and ${TMPDIR:-/tmp} repoints; parse '## Planned — next round'; restore or standing-waive the planner seat. Open L0: kake|round-71 attack-share set ruling (fleet 0e4cad68, kake identity). Operator note: SHONEN boxes 1, 2 and 4 look fully checkable by a non-author reviewer (promotion review is operator-owned; no [x] written by this closure); box 3 asserted [~] with pointers.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 58,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 58,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 58
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:verifiability": "improved",
+    "coverage": "improved",
+    "depth:density": "unchanged",
+    "calibration": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-58/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-58-verifier-spotcheck.md@69de8d363b2193fdb37d03fd3e235bceeb1c2daa",
+    "rechecks": "C1 re-measured byte-level at 345eb71 vs base 1e5c8f2: EXPECTED_CASES = 6 and derive-not-read-only-refused present, figure-audit-mutbat.py absent at base/present at tip, ledger grep '\"id\"'=35 both sides; gate verdicts evidence-verified from committed receipts only per Gate standard (do-nothing-c1: selftest cases=5 failures=0, m4 cases=4 exit 0 and m6 cases=5 exit 0 both survive, red d53-1 derived=UNAVAILABLE; after-final at 1e9e4b5: selftest cases=6 failures=0 exit 0, mutbat killed=2/2 survivors=0 controls=pass exit 0, red derived=33 want=34 stale exit 1); red fixture derive greps committed .ufo/waves/round-53/controls/c2-counter-final-r53.txt:8 FAIL_entry_records=33. C2 re-measured: registry 90->91 (grep -cE S-row), knowledge files and expected list 76->77 with LC_ALL=C sort -c exit 0, F39 README rows 0->1, S091 row absent at base, capture sha256 d2ba7199...820618 re-hashed equal, lead-line sha 631364e0...7547 unchanged (line moved :141->:142, stale number recorded by lane); counters evidence-verified from after-final-r58.txt (FRONTIER-CENSUS rows=39 admitted=39 closed=39 registry=91, FRONTIER-PASS F39 ids=S091, entries=42 pass=42 exit 0; source-recheck sha256 OK + 9 Q-OK occurrences=1; capture-binding records=74 bound=74). SCORECARD diff base->tip: depth:verifiability 4->4 nominal, coverage 8->8, depth:density 9->9, calibration verdict row - no axis harmed. S091 re-opened live: HTTP 200, 33476 bytes equal to the recorded fetch size, 6/6 sampled strings occur exactly once; METR reject and Trends-Report deferral agree; spot-check 3/3 agree; sources-census validate --root exit 0 with six pre-existing W04s. All four cited lane commits are ancestors of master; lane pushed ahead=0."
+   },
+   "commit": "kasegi-shokunin@345eb7166d81f62f219448c98466fd9c81b7527f",
+   "closed_at": "2026-11-03T21:27:51Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 2026-11-03T17:29:30-03:00 launch kasegi round=58 pgid=1661023 driver=hyaku-inline attempt=1; 2026-11-03T18:23:47-03:00 complete kasegi round=58; hyaku-inline attempt=1. Report committed d952c00b by kasegi-shokunin <kasegi@shokunin.local>; lane commits 543cac1 freeze (claims.json pre-data), 18ddb05 implementation, 1e9e4b5 wave-1 corrections, 345eb71 tip (pushed, ahead=0); all ancestors of master; SHONEN heading present, one [~] line per box, no [x]; prompt a1cc598a carries the round contract + hyaku addendum; wave w1 = 9 seats one batched dispatch (scout 2, scribe, connector, reviewer, critic, mutation-tester, sentinel, executor; attack 3/9=33%), no dead seats. Defects status-neutral: figure-audit.py (r54) and figure-audit-mutbat.py have no row in SKILL.md Gates & probes registry (Gate standard Delivery) - routed for next round; frozen C2 sentence names the lead line :141, it is :142 at tip (byte-sha predicate holds; stale number recorded by lane). Routed open items: M58-5 (selftest kills 7/15 one-limb mutants; four survivors flip red to green; ';' chained writes bypass the read-only head allow-list; fixture-per-limb planned r59, operator L0), ExportReplay PARTIAL (frontier counter recheck lines cd to lane root by absolute path, R28 class), CriticC1 caveats (count-only pin; record-anchored d53 red control), R67 counter stub limb and R69 census range base stay operator L0 (kasegi round-58 L0 row re-asks both). SHONEN boxes all [~] with resolvable pointers - checkable by a non-author at promotion review; promotion is operator-owned. Census freshness gate reads stale at round end (same class as r57 M57-9, gate bytes restored); conformance census exit 0. No promotions, no mints; no sibling or operator file touched.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
