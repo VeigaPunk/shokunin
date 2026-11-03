@@ -40121,6 +40121,46 @@
    "notes": "Driver digest: 2026-11-03T19:50:29-03:00 launch tabi round=61 pgid=232068 driver=hyaku-inline attempt=1; 2026-11-03T20:30:05-03:00 complete tabi round=61; hyaku-inline attempt=1. Real report, status ok. C1 killed by its own frozen K4 (snapshot header lane<TAB>); C2 unprovable as the frozen claim (final counter is not the frozen copy-plus-checks: +10472 B, mutation pin f615a2f9 != final 97f10e67); no capability, no axis harmed, rejected-honest-stop. Status-neutral defects: (a) untracked leftover .ufo/waves/round-61/sources/s153-browser-protocol.json (1423170 B) that s153-reopen-receipt.json's staged_file names, so that pointer resolves only in the worktree (URL re-opened to the same sha d6737c31); (b) mutation-certification wording divergence: runbook/report say earlier-sha-only while w1/R61MutC2.md reports a final-byte 5/5 re-measure. Routed: commit or re-cite the S153 payload; state one mutation position with committed harness runs; planner seat held by L1 (round-61 L0 filed as 83f4cd40); wide-screen --verify-rows premise and snapshot-pinned v19 inputs carried; L0 tabi round-57 assimilation, round-59 kaidoku overlap and round-60 keyup value stay open. Wave: 11 L2 seats (executor x3, mutation-tester x2, scout, scribe, connector, reviewer, critic, sentinel), attack-role share 4/11, within the 8-16 floor. Census exit 0, 164 rows, same 22 W04 as census-start. SHONEN boxes stay [~]; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 74,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 74,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 74
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "freshness": "improved",
+    "operability": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "sidecar re-observation: os.stat three-way (present / absent on ENOENT-ENOTDIR / unevaluable on any other OSError) re-observation of corpus/knowledge/freshness-sidecar.json notes with dated history preservation — scripts/sidecar_reobserve.py (selftest 10/10) plus counter c74_sidecar_reobserve.py (selftest 8/8); 144 notes restored at c9fd9643"
+   ],
+   "report": ".ufo/reports/round-74/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-74-verifier-spotcheck.md@c9c5e484c533aa65f4374b841a3edcf572ed19a9",
+    "rechecks": "Step-1 conformance clean: report 7e6de8cb by kake-shokunin 20:35:14 -0300 after lane c9fd9643 20:34:57; all five cited commits exist and are ancestors of refs/heads/master; jj-lane.sh state ahead=0 behind=0, porcelain empty; prompt cab140a0 carries the full template contract (L2 >=8 matches MISSION.md line 55; SHONEN heading/commit-before-report/citable landed hash/push scope/L0 present); 14-seat w1 inside the run-15 8-16 band with attack share 4/14. C1 re-measured: base ced2878a unregistered=7 own_row=false met=false exit 1 -> tip c9fd9643 and 30c35842 unregistered=0 own_row=true met=true exit 0; landed counter selftest re-run 8/8. C2 re-measured: 144 -> 0 contradictions, 174 entries with the 4 genuine absences intact; independently re-derived from sidecar bytes (144 flips with byte-exact history, 0 line/lineSha256 changes, 0 host mismatches, host class linux-x86_64, 0 vocabulary hits); counter selftest re-run 8/8 and tool selftest re-run 10/10. Harm battery c66/c70/c72/c73_wave_pointers/c73_tmp_v3 green and three new instruments carry 0 /tmp literals (evidence-verified, not executed); SCORECARD +37/-0. S441/S442 live re-fetched byte-identical by sha256 (90,223 / 791,358 B) with located <=25-word quotes; census exit 0 ok, 180 rows (178 -> 180, 0 deletions). Spot-check agrees on all five sampled admits/rejects; trends unchanged/improved/improved."
+   },
+   "commit": "kake-shokunin@c9fd964354b03b163994519ae43d741b3ee3a81d",
+   "closed_at": "2026-11-03T23:45:00Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-11-03T20:03:04-03:00 launch kake round=74 pgid=1417452 driver=hyaku-inline attempt=1; 2026-11-03T20:36:14-03:00 complete kake round=74; hyaku-inline attempt=1. Conformance defects (status-neutral): (a) landed SKILL.md round-74 section retains stale draft prose — its c74 row says 'five frozen fixtures: f1 ... f5' and 'no run exists at this draft', and the verify block says 'Expected after line, not yet observed since no after-state exists at this draft' (the landed counter has 8 fixtures; selftest 8/8 re-run) [R1]; (b) report/lesson call the standing sweep 'unchanged' although its after receipt shows 193->195 files, 712->714 occurrences and 6->7 unannotated ~/projects cites (same drift token, exit 1) [R3]; (c) lesson Gate S441 quote line range 326-329 vs actual 327-329 (row anchor 325-326 exact) [R4]; (d) trend line 'improved locally' is not one of the four enum values (graded improved). Routed to kake next round: R1 append a correction naming the superseded SKILL draft sentences; R2 c69_tmp_honour.py is registered 'gate (live)' with no self-test mode (its row discloses '--selftest is an argparse error, exit 2'), failing PROTOCOL Gate standard Self-test — add a selftest over isolated fixtures or demote to probe/instrument; R3 annotate corpus/lessons/round-74.md:70 or record the count delta honestly without silencing the L0 kake|round-69 drift; R4 correct the S441 line range in an appended lesson entry; R5 commit selftest receipts binding the landed instrument sha256s (landed 8/8, 8/8, 10/10 tallies are true but unbound — same class as round-46 R2); R6 untracked fleet-root stray 'after' (24 B, 20:05, '== SCORECARD diff base-') names no lane/round, left untouched. Round-73 routed debt closed by this round: the c72_tmp_v2.py registry row and the dated sidecar re-observation both landed; the open L0 kake|round-69 ~/projects ruling remains. SHONEN: all four boxes look checkable by a non-author from repo evidence; promotion is operator-owned and no [x] was written.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
