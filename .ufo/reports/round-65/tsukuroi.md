@@ -85,7 +85,7 @@ Verdict for each claim, with the gate that decided it: **C1 improved** (author-v
 Checklist: `SHONEN.md` (four boxes). No box is `[x]`: no non-author verifier has checked any box this round (L0 `tsukuroi | round-60` on whole-SKILL verification is still open).
 
 ```
-## SHONEN
+SHONEN checklist block (verbatim, one line per box):
 - [~] SKILL.md contains real decision tables, error patterns, checklists, cited sources — pointer: SKILL.md decision table (SKILL.md:38-50), update-safety checklist (SKILL.md:90-141); round-65 append (SKILL.md, "Round-65 additions"); non-author verification owed.
 - [~] At least one end-to-end domain task executed and logged in LOG.md — pointer: round-65 host measurement `.ufo/waves/round-65/probes/`, census live `.ufo/waves/round-65/after/census-repair-live.txt`, LOG.md "Round 65 — measured outcome"; non-author verification owed.
 - [~] Instructions executable by an agent without oral context — pointer: SCORECARD "Round 65 — measured outcome" counting commands (above); non-author replay owed.
