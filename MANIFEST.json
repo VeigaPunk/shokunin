@@ -39078,6 +39078,50 @@
    "notes": "Dispatch/complete digest: 2026-11-03T14:54:20-03:00 launch tsukuroi round=64 pgid=1999761 driver=hyaku-inline attempt=1; 2026-11-03T16:21:20-03:00 complete tsukuroi round=64; hyaku-inline attempt=1. Defects (status-neutral): C1 identity-command wording (cmp x3) true only at the fix-time worktree — at cited 431f0c9 the delta is additive-only (removed=0; CR-strip fact stands, re-derived); R64-JJ-ST-WITHOUT-IGNORE-WC self-mined by the lane. Routed: L0 tsukuroi|round-64 merge-package id drift (79 collisions, 82 after S279-S281; adoption path operator-owned); L0 tsukuroi|round-53/57/60 remain open, routed around. Operator note: all 4 SHONEN boxes look fully checkable by a non-author on current repo state; whole-SKILL verification parked on L0 round-60; promotion operator-owned, no [x] written.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 64,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 64,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 64
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged",
+    "novelty": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "offline-network-service-grader-probe"
+   ],
+   "report": ".ufo/reports/round-64/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-64-verifier-spotcheck.md@12a6255170bcc466029bf82037885fd69e20370f",
+    "rechecks": "Step 1: report commit 790c6074 by kengaku identity; SHONEN heading present; cited commits 5f517fe7/859ac24f/7c2217ed/21b13dc7 ancestors of master; jj-lane state ahead=0, ls-remote = 21b13dc7, lane status clean. Claims re-measured over committed bytes: executed17.lst kv-store count 0; kvstore-probe.txt CASE observed==expected for K1-K5 with VECTOR lines equal to frozen table and PREDICATE R64-C1 pass; grader sha256 115de2e9 = SHA256SUMS line 80; trio frozen list sha fe0498fb; 29/29 frozen entries carry the round-64 addendum heading; 29/29 modified knowledge files byte-prefix preserved (added 389, deleted 1); README lessons rows 57-62 = 1 each; SOURCES rows 224; one addendum recheck re-run (telemetry-run-design.md) matches. Evidence-verified, not re-executed: escape-red-before (PASS on out-of-root), escape-after (FAIL), gate-selftest-after SELFTEST pass 4/4, real-section-after PASS; sweep-red-before/after. Spot-check: admit tb2-kv-store-grpc-offline (S230 curl sha match, quote located, 7 tests) agree; admit S231 quotes located by curl agree; admit C2 repair agree; admit C3 sweep agree; reject headless-terminal and nginx-request-logging (vim, nginx absent) agree; reject opening rewrites (prefix 29/29) agree. sources-census.sh validate exit 0."
+   },
+   "commit": "kengaku-shokunin@21b13dc70fae6645ce0d6c7cdec5117ca397d071",
+   "closed_at": "2026-11-03T19:51:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (copied from .ufo/watchdog.log, mutable; both lines re-found live): 2026-11-03T15:57:57-03:00 launch kengaku round=64 pgid=1962284 driver=hyaku-inline attempt=1; 2026-11-03T16:45:03-03:00 complete kengaku round=64; hyaku-inline attempt=1. Status ok: report landed by lane identity (commit 790c6074), not a marker. Lane round tip 21b13dc7; non-author spot-check landed as 12a6255170bcc466029bf82037885fd69e20370f (lane master now at 12a6255, ahead=0). Axis verdicts: coverage 7 held at L0 cap (kengaku | round-25/33/51 open), operability 10 held, freshness 10 held, depth 10 held (not a declared R64 claim; the r63 depth verdict stands per the r63 closure's per-axis verdict), calibration 10, adjacency 9, novelty 8 all held. Capability offline-network-service-grader-probe enters on its committed PREDICATE R64-C1 pass receipt. Claims: C1 and C3 re-measured over committed bytes; C2 and the gates evidence-verified (gate standard), no sibling gate executed. Routed defects for the lane next round (status-neutral): (1) S230 quote form in lesson Gate renders f-string Port {port} as Port 5328; correct by appended erratum. (2) Freshness ceiling: 29 frozen entries still fail the bare trio rule on openings (TRIO-ADDENDUM, not TRIO-OPEN); cite freshness 10 as addendum-classified. (3) Report wave paths are lane-root relative (kengaku-shokunin/.ufo/waves/round-64/...); state the base. (4) SOURCES S230 teaches field is 37 words; shorten at next curation pass. Conformance nit: wave dispatched via inline spawn handoff (w1-dispatch.json spawn 15, floor 8, ceiling 16 within band). SHONEN: the end-to-end-task box looks checkable by a non-author for the operator (LOG round 64 trigger/action/outcome/pointer resolves, PREDICATE R64-C1 pass); no [x] written. Untracked fleet markers .ufo/waves/round-63 and round-64 w1.ready.dispatched are orchestrator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
