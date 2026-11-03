@@ -40161,6 +40161,49 @@
    "notes": "Driver digest: 2026-11-03T20:03:04-03:00 launch kake round=74 pgid=1417452 driver=hyaku-inline attempt=1; 2026-11-03T20:36:14-03:00 complete kake round=74; hyaku-inline attempt=1. Conformance defects (status-neutral): (a) landed SKILL.md round-74 section retains stale draft prose — its c74 row says 'five frozen fixtures: f1 ... f5' and 'no run exists at this draft', and the verify block says 'Expected after line, not yet observed since no after-state exists at this draft' (the landed counter has 8 fixtures; selftest 8/8 re-run) [R1]; (b) report/lesson call the standing sweep 'unchanged' although its after receipt shows 193->195 files, 712->714 occurrences and 6->7 unannotated ~/projects cites (same drift token, exit 1) [R3]; (c) lesson Gate S441 quote line range 326-329 vs actual 327-329 (row anchor 325-326 exact) [R4]; (d) trend line 'improved locally' is not one of the four enum values (graded improved). Routed to kake next round: R1 append a correction naming the superseded SKILL draft sentences; R2 c69_tmp_honour.py is registered 'gate (live)' with no self-test mode (its row discloses '--selftest is an argparse error, exit 2'), failing PROTOCOL Gate standard Self-test — add a selftest over isolated fixtures or demote to probe/instrument; R3 annotate corpus/lessons/round-74.md:70 or record the count delta honestly without silencing the L0 kake|round-69 drift; R4 correct the S441 line range in an appended lesson entry; R5 commit selftest receipts binding the landed instrument sha256s (landed 8/8, 8/8, 10/10 tallies are true but unbound — same class as round-46 R2); R6 untracked fleet-root stray 'after' (24 B, 20:05, '== SCORECARD diff base-') names no lane/round, left untouched. Round-73 routed debt closed by this round: the c72_tmp_v2.py registry row and the dated sidecar re-observation both landed; the open L0 kake|round-69 ~/projects ruling remains. SHONEN: all four boxes look checkable by a non-author from repo evidence; promotion is operator-owned and no [x] was written.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 69,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 69,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 69
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [
+    "kernel-arm"
+   ],
+   "report": ".ufo/reports/round-69/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-69-verifier-spotcheck.md@b2aa0be068725d23a345616dc9282d00dcaaa835",
+    "rechecks": "C1 re-measured over committed bytes: note and counter rc 128 at base -> present at ea20c862; counter re-run KR_ROWS=5 KR_VERIFIED=5 rc 0 at 7d7d3aee; SOURCES 287 -> 289, S287:297/S288:299/S289:300, NF 13; live S288/S289 sha256 727ddb82/0556c28f match pins and snapshots; quotes 19/11 words; census rc 0, 289 rows. Lane gates evidence-verified, not executed (header 87/87, refs 0, registry 102/102/0, line-endings PASS at 10a01ca). C2 evidence-verified: grep KERNEL 0 -> 49, kernel-plane 20; selftest 177 -> 196 PASS rc 0 (19 R69-C2 cases); one live KERNEL line, rc 1 and rollup identical to baseline; capability kernel-arm row. Spot-check agrees on 2 admits and 3 rejects; routed D1-D8."
+   },
+   "commit": "tsukuroi-shokunin@ea20c862f191c77e31c6a357ff7564b5b774acfa",
+   "closed_at": "2026-11-03T23:53:14Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable - copied verbatim): 2026-11-03T20:08:28-03:00 launch tsukuroi round=69 pgid=1466839 driver=hyaku-inline attempt=1; 2026-11-03T20:42:19-03:00 complete tsukuroi round=69; hyaku-inline attempt=1. Step-1 conformance clean: report 7998cfa2 by tsukuroi-shokunin after lane tip ea20c862; SHONEN 1 heading + 4 [~] lines, no [x]; six cited lane commits + base ancestors of refs/heads/master; lane ahead=0 pushed at ea20c862, only inherited round-66/67 untracked .ready.dispatched markers; prompt 8c778e89 carries the full contract (round-level + five child-lane items; MISSION L2 >=8 matches). Wave 13 seats/13 results, strict attack 4/13 = 31% (sentinel separate), connector 1, report lands last. Claims: C1 verified on its substantive frozen clauses; C2 verified from committed evidence; no axis harmed (SCORECARD +86/-0 appended, no ordinal edited). Status ok, admitted. Routed defects (status-neutral): D1 filed lesson ## Gate lacks the CORPUS rule-1 URL/access-date/located-quote record for S288/S289 (quotes exist only in the committed draft Gate and the note KR rows; report misdescribes) - append a Gate erratum r70; D2 report/SCORECARD claim cited-receipts PASS at 7d7d3aee with no committed receipt (only FAIL runs at 32c0b50 and 10a01ca, the pre-wave state) - commit the PASS receipt or correct by erratum; D3 report says measured at 7d7d3aee but gates-final.txt internal revision is 10a01ca; D4 counter and battery were added in 32c0b50 with the note (only the predicate text was pre-data); D5 rejections not curated as SOURCES rejected rows with reason and flip; D6 LOG has one landing entry, the repair/outcome commits are not tied to LOG entries; D7 LOG says selftest 192 vs final 196. Operator note: SHONEN boxes 1/2/4 look non-author-checkable; box 3 owes the whole-SKILL replay (L0 round-60); promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
