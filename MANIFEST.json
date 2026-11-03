@@ -39720,6 +39720,44 @@
    "notes": "Digest (verified vs .ufo/watchdog.log 2103/2109): 2026-11-03T18:37:56-03:00 launch tsukuroi round=67 pgid=3246390 driver=hyaku-inline attempt=1; 2026-11-03T19:14:32-03:00 complete tsukuroi round=67; hyaku-inline attempt=1. Round commits 071a55c9/f9fa49b8/f3428cf9/48281f0c all ancestors of master, pushed ahead=0; report 32c16dab by lane identity; SHONEN heading 1, four [~] (no author [x]). Defects (status-neutral, routed to next round): R67-POSITIVE-CONTROL-COMMAND-MISMATCH (reported positive control 'grep -c -i limit' r42 -> 21; the pasted command yields 14 lines; 21 is the occurrence count grep -o|wc -l); R67-COUNTER-SHAPE-ONLY carried (lane-routed strict-counter amendment); C1 anchor-coverage and C2 shallow-clone limits named by lane, carried as named limits. Untracked lane files are orchestrator dispatch markers (w1.ready.dispatched r66/r67), not lane debt. SHONEN boxes look fully checkable by a non-author on committed evidence; promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 72,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 72,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 72
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "freshness": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-72/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-72-verifier-spotcheck.md@c1f3d8d4ed9470ecbaaf3353952a374b079e68cc",
+    "rechecks": "Step-1 PASS: lane-identity fleet commit 2613d99b (kake-shokunin <kake@shokunin.local>); SHONEN heading 1, 4/4 [~] boxes, no [x]; all cited lane hashes ancestors of refs/heads/master (a19d38ea, 999d208b, 5013c0ee, 89a5db16=tip, pins 4cb225fb/cc6b4e0b, 6d8c52a6); jj-lane state local=remote=89a5db16 ahead=0, porcelain only inherited round-71 dispatcher markers (named in report); prompt = template sections 1-5 verbatim + hyaku addendum 6; watchdog digest lines 2099/2110 match. C1 evidence-verified (lane gates not re-executed): c1-base.txt 24/4/28 at freeze, c1-tip-final.txt 25/3/28 at final hash, mismatch set loses c56 only, green pin receipt 4cb225fb tally 10/10; plain re-derivation: SKILL.md base-to-tip diff = 1 hunk, only the selftest-tally-counter Kind cell (live to historical with pin + receipt). C2 evidence-verified: c2-selftest.txt 11/11, c2-base-red.txt exit 1 at cc6b4e0b, c2-tip-final.txt exit 0 findings=[] at 5013c0ee, c2-j3-control-r3.txt c71_exit=0/c72_exit=1 with deterministic committed harness; M4 fix shown able to fail. No axis harmed: SCORECARD diff +21 lines (round-72 rows only), scores HOLD (operability 10, freshness 10, calibration 2). Spot-check 5/5 agree: S439 live refetch byte-identical to retained body (51306 B, sha 4e1ea3a5), quotes 1/1/1 each <=25 words, --end-of-options at line 1896; c56 relabel receipts + registry diff; crux entry diff base-to-tip = 0 lines; S303/S304/S352 have 0 registry rows, 1 citation each. Census validate exit 0, rows 176 to 177 (S439 only insertion). Wave: one v1 wave, 15 seats, all settled none dead, attack 6/15 = 40% (strict 5/15 = 33%), band 8-16, round total 15."
+   },
+   "commit": "kake-shokunin@89a5db16fdf72b9a23c5447ce2429688c6d8b06a",
+   "closed_at": "2026-11-03T22:21:18Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (watchdog.log, copied at closure): 2026-11-03T18:22:47-03:00 launch kake round=72 pgid=2813037 driver=hyaku-inline attempt=1; 2026-11-03T19:15:35-03:00 complete kake round=72; hyaku-inline attempt=1. Lane tip 89a5db16 pushed (ahead=0); verifier spot-check landed on top as c1f3d8d4 (protocol identity, ls-remote-confirmed). Trends: discernment graded improved by the closure (non-author spot-check agrees 5/5 on sampled admits and rejects); the lane's author-side grade was conservatively unchanged at report time because the check did not yet exist. Routed defects for round 73 (status-neutral): (1) LOG.md round-72 entry and the SCORECARD round-72 row cite controls/c1-tip.txt and controls/c2-tip.txt, names that never existed in git history - actual receipts are c1-tip-final.txt/c2-tip-final.txt; correct via append-only entries naming the superseded text; (2) the new gate c72_tmp_v2.py has no registry row at the lane's registry home (grep c72_tmp SKILL.md = 0) per PROTOCOL Gate standard Delivery - add the row with the round-73 C2 amendment; (3) lane-carried routes confirmed real: C2 counter residual holes (verb vocabulary, TMPDIR fallback, symlinked SKILL.md, unpinned PHRASE), c57/c58/c59 red on the three dangling staged ids S303/S304/S352 (operator L0 ruling open at .ufo/l0-questions.md line 277), round-71 carry-ins. SHONEN: all four boxes [~] with resolvable pointers and look checkable by a non-author; promotion is operator-owned. Pre-freeze diagnosis disclosed in the frozen contract (M3); both claims judged on their frozen predicates, which the committed receipts satisfy. Conformance-only: inherited untracked round-71 dispatcher markers w1.ready{,.dispatched} remain in the lane working copy (not round work).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
