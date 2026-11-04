@@ -222,3 +222,13 @@ rule on it.
   none`, `w1/K75ConnectorOverlap.md`); the plane's member **content** stays outside this lane (mado's
   refusal boundary respected), and `PROVINCE.md` records the new core band; verifier: pending non-author
   closure.
+
+## Erratum (appended after filing; names the text it extends, the filed bytes above are unchanged)
+
+`round-gate.mjs --close` cannot run on this lane: the jj-colocated repo keeps git `HEAD` detached by
+design, so the close arm fail-closes `UPSTREAM_MISSING` (`fatal: HEAD does not point to a branch`) —
+receipt `close/round-gate-close.txt`, exit 2 — while the audit arm is `ROUND_GATE: CLEAN
+(round=75 lane=kumitate checks=10 errors=0 warnings=0)`. Routed defect: the close arm should read the
+lane branch (`master`) or accept a `--branch` argument on jj lanes instead of `HEAD`/`@{u}`; it is a
+gate/host defect, not a round-work defect. The pre-report remote check the protocol names was run and
+matches: `git -C … ls-remote origin refs/heads/master` printed the lane tip.
