@@ -18,6 +18,13 @@ The round declared two claims, each on a distinct axis and causally separable:
   `.ufo/waves/round-91/c91_reuse.py` against 45 clause-tagged hand cases, a seeded generated
   population and five frozen forgery subjects.
 
+Round shape: one v1 wave under `.ufo/waves/round-91/w1-spec.json` (policy band 8–16,
+`maxLanes=13`, dispatch `w1-dispatch.json`): scout 2, executor 5, scribe 1, reviewer 2,
+mutation-tester 1, critic 1, connector 1 — attack seats 4/13 = 31 %, connector seats 1. Nine
+seats returned a report; four returned none (named below). No residual `task` call was made, so
+the round total is 13 seats. The L1 holds the canonical planner seat and ran the bounded planning
+data-walk, the freeze, the integration and the measurements.
+
 Work items, each with its evidence:
 
 - **Freeze and controls (L1).** Two frozen counters, the contract, five forgery subjects, the
