@@ -42101,6 +42101,51 @@
    "notes": "Digest: 2026-11-04T00:12:32-03:00 launch kaidoku round=70 pgid=959006 driver=hyaku-inline attempt=1; 2026-11-04T01:49:26-03:00 complete kaidoku round=70; hyaku-inline attempt=1. Step-1 PASS: report 5996149d by kaidoku-shokunin (fleet main/origin), SHONEN heading with 4 [~] lines, all cited lane commits ancestors of main, lane ahead=0 clean at 2b4d6167, prompt = template rendering + hyaku addendum (write scope present), one 16-seat v1 wave (attack 5/16), prefile PASS, gate at record 45/45 exact. Claims verified from committed receipts, not gate execution: C1 calibration (10/10 forgeries rejected with clauses vs base accepting; identity shapes A5/A6 false; genuine 6/6; battery arms green), C2 operability (7/7 vs 0/7 all seven named; instrument/battery hashes match 7c155617 blobs), C3 coverage (met true target 4 carriers 4 failing []; docker-init 0bd49c8d pin and ELF64 EXEC format re-measured; ratios 0.0599/0.1010/0.6522/0.0079). No axis harmed; SCORECARD axes table unchanged. Defects routed to the lane: (1) the three capability-acquisition rows are absent from SCORECARD ## Capabilities (prose only at :5504-5509) while report/LOG claim three capability rows; (2) report/LOG/lesson say 'same 20 W04' while census-end.txt prints 21 (S272 duplicates S260's URL); (3) 'sixteen forgery shapes' exceeds c1-at-landing.json (10 shapes + 2 landing probes; six lying-field classes are source clauses); (4) no round-70 SOURCES Search-log note and no REJECTED row for the tempfile screen; (5) report cites ca9817cf, actual ca9817cd; (6) r70-w1-results.json lacks per-seat status/dead fields (no settlement receipt). Non-blocking: nested receipt pointers under removed /fast/scratch are provenance, not the evidence. SHONEN boxes now look checkable by a non-author; promotion operator-owned. Stale-lane: none open; no tool installed (pacman log zero 2026-11-04 entries).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 74,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 74,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 74
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "freshness": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "selfdesc-canon",
+    "receipt-claim-v2",
+    "province-host-drift-v2"
+   ],
+   "report": ".ufo/reports/round-74/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-74-verifier-spotcheck.md@dc58e51315e79d36df5fc530c95fbd3aecbf7593",
+    "rechecks": "All three claims re-measured by me from fixtures rebuilt with the committed builder and the tip counters: C1 base canon round 71 / v2 kill invisible=4 exit 1 / c1_clean green, live tip total=25 invisible=0, base-SCORECARD rehearsal total=22 invisible=5 exit 1, live-shaped hole invisible=8 exit 1; C2 base r73 counter green on c2_wrapped+c2_offset, v2 kills both (wrapped-claim/offset-claim), c2_mixed_honest+c2_clean_realizable green bound_revisions=1, live tip cited=14 bound=14 unbound=0 shifted=0; C3 base r73 drift green on c3_edited, v2 edited=1 exit 1, c3_clean green, live tip stale=0 edited=0, and a live-shaped replay of the lane's own PROVINCE history fails on a one-byte date edit. Freeze pins 7/7 sha256 match; predicate constants equal the frozen plan (907/1154/770 chars); gate receipts verified as committed evidence (selftest 15/15, PRE_REPORT round=74 arms=7 failed=0 uncommitted=0, gate sha256 6d2e3797…); registry 89/0/0; census validate exit 0 with 286 rows; anchors re-derived (SKILL c4e03810…/1733/48, PROVINCE 0e8dc562…/322, knowledge 44, scores 8/8/7/9/7/7 held)."
+   },
+   "commit": "kama-shokunin@8020b2f26c1bc1807680024f71267c46c98bbf7c",
+   "closed_at": "2026-11-04T05:01:56Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (verified against .ufo/watchdog.log lines 2206-2208,2230): 2026-11-04T00:14:35-03:00 launch kama round=74 pgid=961396 driver=hyaku-inline attempt=1; 2026-11-04T00:15:05-03:00 lane-dead-no-report kama round=74; retry same round (attempt=1, no landed report); 2026-11-04T00:15:07-03:00 launch kama round=74 pgid=962527 driver=hyaku-inline attempt=2; 2026-11-04T01:54:01-03:00 complete kama round=74; hyaku-inline attempt=2. Step 1: report committed by kama-shokunin 9a602eb8 after lane tip 8020b2f2; SHONEN heading present with 4 [~] lines for 4 boxes; 23 cited commits exist and are ancestors of master; jj-lane state ahead=0 behind=0 clean, ls-remote master=8020b2f2; prompt carries the rendered templates/round-prompt.md §1-§5 + hyaku addendum §6 (all sections contained verbatim after placeholder substitution); wave 13 seats, 13 results, 13 seat reports, attack 4/13=30.8%, connector 1, planner at L1 per standing L0 answer. Status ok, admitted: every claim re-measured green and no axis harmed. Conformance defects (status-neutral): (1) report line 102 misquotes the committed gate receipt as receipt-audit cited=200 resolved=182; measured/after/pre-report-gate.out at 8020b2f2 says cited=202 resolved=184; (2) report omits PROTOCOL's cross-domain-evidence line; (3) no corpus/README.md coverage-map row for corpus/knowledge/host-block-base-revision.md (rounds 72/73 each appended one; gap not recorded); (4) no QUALITY.md criterion added although all three lesson Mistakes rows carry captured-by: none (LEARNING §3). Routed to round 75: items 1-4 above (erratum in the round-75 report for 1; cross-domain line for 2; coverage-map addition for 3; grounded criteria citing the lesson for 4); append-only history audit red carried from r73 item 4 (unrestored=42 bad_declarations=5) to be restored or graded as accepted history; lane-disclosed interpretation debts F1b (total union), F2c (context-free hex), nc2_two_receipts fixture, MT01 seam re-probe, RVW01 C1 non-git exit map; and the calibration-row re-anchor to round-74-verifier-spotcheck.md (this closure makes it the newest outside closure, so the gate's newest-closure arm is expected red until then). Operator-side only: the prompt's quoted run-15 net map no longer matches the live route table (config.yml.pre-zfl-split-20261104, 2026-11-04 01:09: reviewer/critic/executor/mutation-tester/connector/sentinel/scribe on @m_zfl), and w1-results.json records no model field, so the report's 12x m_flash + 1x reviewer statement is not re-derivable from committed bytes; not a lane defect. Fleet-repo worktree churn is orchestrator-owned .scratch state plus a pre-wave stray 'after' file (mtime 2026-11-03 20:05, before launch), not round work. Promotion is operator-owned; all four SHONEN boxes look checkable by a non-author on committed evidence.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
