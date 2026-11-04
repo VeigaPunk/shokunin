@@ -47910,6 +47910,47 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-11-04T17:53:21-03:00 launch mori round=89 pgid=3656320 driver=hyaku-inline attempt=1; 18:02:59 lane-dead-no-report mori round=89 (attempt=1, report_of FAIL); 18:03:01 launch attempt=2 pgid=42377; 18:03:38 lane-dead-no-report (attempt=2); 18:03:39 launch attempt=3 pgid=55237; 18:04:12 lane-dead-no-report (attempt=3); 19:00:45 launch mori round=89 pgid=2241472 driver=hyaku-inline attempt=1; 19:38:59 complete mori round=89 hyaku-inline attempt=1. Three earlier launches died without a report but left d4438695 (freeze+controls), 760428ab (C1 first landing) and 7ce712d4 (C2) in the lane; the successful launch entered at 760428ab, so the report's entering revision (30a29797) and this closure's diff basis (760428ab) differ by that inherited work. Lane tip 688fe24f (report header's ab48dbec and erratum 1's 192c7e0b superseded by erratum 2; jj author/committer skew of 41s between the erratum commit and the lane object is benign, ordering holds on committer dates: lane 19:36:24 < report 19:36:30 < complete 19:38:59). Wave: 12-seat v1 (w1-spec.json, 3 executor/2 scribe/2 reviewer/scout/critic/mutation-tester/connector/sentinel, attack 4/12) + 4-seat residual (r-dispatch.json), round total 16; three w1 attack seats died on 402 Insufficient account funds with no report (Mo89C01Critic/Mo89M01Mut/Mo89Se01Boundary), not re-spawned under the same names. Fleet-root working tree carries no mori round-89 file (.ufo/l0-questions.md modification is a revenger r91 line; `after`/.scratch are other lanes). SHONEN: 4 boxes remain [~]; boxes 1 and 3 look mechanically checkable by a non-author from committed bytes, but promotion is operator-owned and no [x] was written. No tools installed or updated; no lane-authored file edited; no promotion, no mint.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 88,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 88,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 88
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unchanged",
+    "coverage": "unchanged",
+    "coverage:script-layer": "unchanged",
+    "coverage:runtime-layer": "unchanged",
+    "coverage:kimi-layer": "unchanged",
+    "coverage:omp": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-88/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-88-verifier-spotcheck.md@a5d2503393fc5646acb6468888d8b12a445bf62d",
+    "rechecks": "C1 receipt-bind v2 UNMET confirmed: frozen 20-arm probe sha256 5ccd01ec byte-equal at freeze 114877a3 and 4f7d8ea9; frozen scorer re-run read-only by the closure — integrated at M 7817d200 HELD 20/20 exit 0, v1 do-nothing control 16/20 exit 1, worktree twin (sha 54962fa2) 11/20 exit 1; kill rule fired (f5-loose-limit and c2-head-default each 20/20 in my own runs, seven more in committed transcripts); selftest 39 to 59 from committed receipts; SCORECARD diff removes accounting lines only, no axis integer moved; sources census 189 to 192, validate exit 0, 7 pinned W04; S252/S253 admit and S254 reject re-opened live with captures byte-identical."
+   },
+   "commit": "kumitate-shokunin@4f7d8ea9f5e314f7a76d8687a16b14ef752bdbe6",
+   "closed_at": "2026-11-04T23:10:36Z",
+   "campaign": "hyaku",
+   "notes": "dispatch digest: 2026-11-04T18:54:48-03:00 launch kumitate round=88 pgid=1608695 driver=hyaku-inline attempt=1; 2026-11-04T19:44:10-03:00 complete kumitate round=88; hyaku-inline attempt=1. Report landed by kumitate-shokunin 673790f3 (pushed), 6 cited lane commits all ancestors of master, lane ahead=0 tracked=0 untracked=0. Defects (status-neutral, routed to the lane): K88-V1 SCORECARD.md:4317/LOG.md:3043 quote matched=13 while committed close/bind.txt prints matched=12 (no M-run runner transcript committed); K88-V2 report l.63 rows=192 and l.66 captures=81 quoted with no committed M-time receipt (both re-derive from committed bytes: census 192, 81 pin entries); K88-V3 SCORECARD.md:4322 checklist 40/46 uncited; K88-V4 wave w1 has no planner L2 seat (L1 self-holds it, disclosed); K88-V5 ready-handoff DRIFT RELATIVE_WAVE_PATH at M (disclosed). Carried: R86-D2 still open (not producible, disclosed). SHONEN 4 boxes all [~] with resolving pointers; a non-author could check all four — promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
