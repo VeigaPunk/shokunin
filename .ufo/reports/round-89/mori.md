@@ -240,3 +240,26 @@ carry-over ledger in `corpus/lessons/round-89.md`.
    Its stale-at-`ab48dbec` list is what `192c7e0b` corrects. Two L1s on one lane-round is an
    orchestration defect for the closure to record, not a lane claim; no work of its is left
    unlanded and no seat was re-spawned under a dead name.
+
+## Erratum 2 (appended after the filed bytes; supersedes the separability and C2-limit statements)
+
+1. **C1/C2 are not fully causally separable — declared defect.** C2's `C2-target` mutant anchor
+   is `TARGET = "real=met fx=4 clean=1 refused=2 absent=1 arms=26"`, and the `arms=26` value was
+   written by C1's caller migration of `.ufo/waves/round-88/count-c2.py` (`SUBJECT_ARMS`/`TARGET`
+   23 → 26). At a revision where C1 never landed the anchor is absent, the mutant reads
+   `unanchored`, and C2 cannot reach its predicate alone; `AXES.md` requires each claim to verify
+   without the others. The round reports the coupling rather than re-anchoring: the anchor is part
+   of the population frozen before data, and a population change after the seats scored is not the
+   claim's rule. Round 90 carries an anchor that names the `real=met` field only, so the next C2
+   claim is independent.
+2. **C2's mutation adequacy is narrower than the twelve arms suggest.** The residual
+   mutation-tester's six extra mutants on neighbouring helper lines (`r/Mo89M02Mut.md`, subject B,
+   none in the frozen population) score 3 killed / 3 survived: B1 (`own_ok_of`'s arm-count pin
+   accepts any `pass=\d+`), B4 (`main` prints `met_line(rev[:7])` while the arm tests the helper
+   with a full rev) and B6 (`clone_root_ok`'s only negative is an unrelated path, so a parent
+   prefix or empty output passes). The twelve declared mutants are killed as claimed; these three
+   neighbours are the unarmed surface, now in `SCORECARD.md` `## Planned (round 90)` item 2.
+3. **Branch.** The report and its errata are on the fleet repo's `main` (`origin/main` =
+   `origin/master` = `484a10d5` before this erratum); the lane tip after `688fe24f` is
+   `688fe24f50cf7b1042f7ef83d983cd2cfbbf2f55` (this commit appends one planned clause to
+   `SCORECARD.md` and touches no instrument byte).
