@@ -47620,6 +47620,47 @@
    "notes": "Dispatch digest: 2026-11-04T18:27:42-03:00 launch kasegi round=68 pgid=816980 attempt=1; 18:36:33 lane-dead-no-report (attempt 1, no landed report); 18:36:35 launch pgid=958339 attempt=2; 18:42:43 lane-dead-no-report (attempt 2); 18:42:45 launch pgid=1254127 attempt=3; 19:07:18 complete kasegi round=68 attempt=3. Attempts 1-2 left no lane bytes. Conformance ok: report committed by kasegi-shokunin (f71d44eb, 19:06:49) after lane tip b0b9fb87 and cites it; ## SHONEN x1 with four box lines = SHONEN.md's four boxes; base and five cited commits exist and are ancestors of refs/heads/master; jj-lane state ahead=0 behind=0, status clean, ls-remote b0b9fb87 before spot-check; prompt l.1-140 = template after macro substitution, hyaku addendum from l.141. Defects routed (status-neutral): V68-1 claims.json frozen_at 21:52:00Z future-dated vs its commit 7c4f9f7e (21:50:37Z) and implementation 82b3b7d4 (21:50:54Z); V68-2 report l.119 transcribes base selftest line as ok, receipt says FAIL; V68-3 derive-gate program-execution class still open (sort long-option prefixes incl. --output, default textconv on git show <commit>, git cat-file --textconv/--filters, merge diff forms; new selftest cases assert exit code only); V68-4 closed r67 receipt driver-pins.json re-indented in place (39+/39-, one semantic line) instead of appended correction; V68-5 receipt prose: seat-reproduction names GNU sort 9.12 while host is uutils sort 0.8.0, counter docstring says six controls (runs five), '420 KB fixture' vs 480000 bytes. Inherited: V67-5 recheck-audit exit 1 (9 cwd_fail), V67-6 .ufo/state/kasegi.round=17 (operator-owned). Operator note: SHONEN boxes 1,3,4 [~] checkable by a non-author against committed bytes; box 2 [ ] (no authorized end-to-end task); promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 90,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "revenger",
+   "lane_round": 90,
+   "lanes": {
+    "revenger": "ok"
+   },
+   "lane_rounds": {
+    "revenger": 90
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "unprovable",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-90/revenger.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "revenger-shokunin/corpus/lessons/round-90-verifier-spotcheck.md@f6356ffb8b665bddc5ee2cfac81443c1300b59bf",
+    "rechecks": "Step-1 PASS: report 12507 B committed by revenger-shokunin at fleet 8e251d4 (19:26:08) after lane tip b280719 (19:26:01), ancestor of origin/main f1a5d3e; SHONEN heading x1, four [~] lines, no [x]; cited hashes c7767789/abd1394/5bdcd5a/b280719 all ancestors of refs/heads/main; jj-lane state ahead=0, git status clean; prompt 830 lines with sections 1-5 + hyaku addendum, five child-lane items, L2 >=8 matching MISSION.md. C1 RE-MEASURED (frozen battery re-run by me): v1 7/14 at base -> v2 0/14 at abd1394, v1 control over landing 7/14, v2 --self-test exit 0, SM1-SM5 equal and SELF_MISMATCH 1->0; all 14 hand labels re-derived by hand. C2 RE-MEASURED: F4 10/11 -> 11/11, conjuncts 1/6 (freeze no-record control) -> 6/6; oracle v1 5/9 -> v2 0/9; but I reproduced a 6/6 control from the freeze tree with the r89 rejected record copied, two random evidence ids and a matching receipt, no producer run -> the frozen predicate is reachable without the claimed work (lane self-ruled NOT VERIFIED; critic ctl-idedit confirmed). Unclaimed: source_path_check 1 -> 0 with --selftest pass; SOURCES 482 -> 487 by the report's grep; S481 row byte-unchanged; v1 instruments byte-unchanged base->tip; census validate exit 0 (21 W01 + 10 W04). Spot-check: S483/S484/S486 admits and S487 reject re-opened and agreed."
+   },
+   "commit": "revenger-shokunin@b280719903dee7c3d957da8b1cd7315655511e3d",
+   "closed_at": "2026-11-04T22:32:08Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable; copied verbatim): 2026-11-04T18:51:11-03:00 launch revenger round=90 pgid=1398308 driver=hyaku-inline attempt=1 | 2026-11-04T19:27:21-03:00 complete revenger round=90; hyaku-inline attempt=1. Real report, not a marker. Honest stop: C1 meets its frozen counter (SM6_MISCLASS 7/14 -> 0/14, SELF_MISMATCH 1->0) and is graded calibration improved with the critic's axis-label dispute and the real-format blind spot recorded as limits; C2's frozen predicate is met (6/6, F4 11/11) but a 6/6 control with no producer run reproduces (id-edited r89 copy; critic ctl-stub likewise), so C2 is graded unprovable and the round is not admitted. No axis harmed: SCORECARD +25 lines with no deletions, PROVINCE.md byte-unchanged, one knowledge entry with an append-only dated correction, v1 checkers and probes byte-unchanged. Conformance defects (status-neutral): (1) report cites lane-relative wave-evidence paths (.ufo/waves/round-90/...) that do not resolve from the fleet root; (2) fleet-root working tree carries other lanes' churn (.scratch/run15-state.json, .ufo/reports/round-84/kama.md, untracked closure scratch, 'after'), none naming this lane. Routed to the lane's next round: (a) C2 predicate must verify landing-tree instrument digests against instrument-pins.log and require rea parseEvidence id consistency, with oracle v3 attacked by a fresh held-out forgery set before freezing (its 0/40 is fitted); (b) SM6 v3 must read the stated cell of the lane's real K row, carry real-format rows, kill the 4 surviving MutR90SM6 mutants and cover the malformed-row/population-drop class (ConnectorR90); (c) name C1's axis by the surface it changes (gate-verdict fidelity) per section 9; (d) r89 D4 (census env pin) still open; (e) prefix lane-repo paths in the report. SHONEN boxes all carry resolvable pointers and every counting command was re-run by this non-author, so all four look checkable from outside; promotion stays operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
