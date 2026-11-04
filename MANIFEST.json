@@ -40619,6 +40619,49 @@
    "notes": "Dispatch digest (copied from .ufo/watchdog.log): 2026-11-03T21:06:02-03:00 launch tameshi round=72 pgid=1224363 driver=hyaku-inline attempt=1; 2026-11-03T21:41:00-03:00 complete tameshi round=72; hyaku-inline attempt=1. Status ok, real report, admitted: C1 (operability capability acquisition, rekey-cost forecast) and C2 (calibration, the two round-71 routed record defects paid) both verify; no axis harmed. Spot-check agrees with the S303 admit and the S293 standing reject; one wording disagreement routed (see below). Conformance defects (status-neutral): (1) the report's round-shape line says '12 seats, 11 reports' while 12 seat reports and 12 w1-results records exist; (2) the frozen plan lists 1 labrat and 33% attack share while the committed w1-spec and the executed wave ran revenger (3/12 = 25% by the policy's named set) - the report states the executed shape but not the freeze mismatch; (3) the report/lesson claim 'the counter-run without the prefix prints E04' holds only for a same-scope fixture - on the real row removing the prefix prints W04 and the lane still validates clean, so the E04 exemption is not load-bearing there; (4) tools/pointer-recheck.json's note says 'round 72 adds three green arms' where four exist; (5) three receipt-only commits (93cae77b, ebad004b, d8e7f337) carry no LOG entry in the landed-changes table. Routed to the lane for round 73 (all five named in the spotcheck §6) plus the lane's own carry: the IGNORED-filter mutant survives every frozen arm and is killed only by the selftest, so the ignored-path arm is owed. Promotion note for the operator: SHONEN boxes 1, 2 and 4 look checkable by a non-author from committed bytes and box 3 rests on the 64/64 cold-read monitor; this closure marked no box and promotion remains operator-owned. Lane clean and pushed before the closure (ahead=0); the spotcheck is the only file this closure committed (a3dd3574, pushed, ls-remote verified).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 67,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 67,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 67
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "coverage": "unchanged",
+    "depth": "improved",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "Register citation binding + landing control set (first-working round 67): score a returned-host register for row-local live-receipt citation against a frozen six-case set (4/6 -> 6/6) and kill the zero-citation and replacement-ref defect mutants of the standing landing instrument in one read-only run (0/2 -> 2/2); evidence .ufo/waves/round-67/measurement-c1-after.txt, measurement-c2-after.txt, corpus/knowledge/replace-ref-citation-boundaries-r67.md"
+   ],
+   "report": ".ufo/reports/round-67/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-67-verifier-spotcheck.md@510100c81e6cf63fec6be380c2f2f9c670f32cbc",
+    "rechecks": "Step-1 PASS: report 7111b67b by lane identity (21:51:20-03:00, after lane tip 92151a50 at 21:50:54), SHONEN heading 1 + 4 [~] boxes, all 9 cited hashes (base 0b28ffb4 + 8 round commits) exist and are ancestors of refs/heads/master, jj state ahead=0 local==remote==92151a50, porcelain clean, dispatched prompt = byte-identical template rendering (8281-byte prefix) + run-15 addendum with all round-level and five child-lane items, report pushed (fleet origin/master 6d986e2f). C1 RE-DERIVED from committed per-case receipts and source bytes (counters not executed): baseline correct=4/6 (unreferenced-live-object and live-in-state-cell-only accepted), candidate 6/6 with register=accept, live path inside a row's 4th cell (r66 source has no such binding; r67 adds it), selftest 16/16, live receipt sha256 676ba88b. C2 RE-DERIVED from committed receipts and byte counts: base 0/2 (zero_citation_case=0, replace_ref_case=0, usedby_guard=0, ledger_guard=0, child_env_read=forged) -> candidate killed=2/2 with M-Z rc=1 and M-R forged-credit flip; guard clause occurs once, three child guards 0->1 each, instrument selftest 62/62, harness 47/47. Harm watch receipts read: landing GREEN at caf131d6 (nav 79/79, used-by entries=79 rows=373 missing=0, ledger 110/110, citations 7/7), gate 460/460, anchor cover 8/8, independent knowledge index 79/79 and used-by path sweep empty, census exit 0 rows 372->373 malformed 0. Spot-check: S436 re-opened (sha256 matches, tag pin 24785443/a0189536, host git 2.56.0) agree; core.useReplaceRefs reject agree; authenticity claim reject agree; exact SOURCES row shape checked."
+   },
+   "commit": "mado-shokunin@92151a50cc79b40700cafab98488012089f67e34",
+   "closed_at": "2026-11-04T00:57:19Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log lines 2149/2160): 2026-11-03T21:20:17-03:00 launch mado round=67 pgid=3915373 driver=hyaku-inline attempt=1 | 2026-11-03T21:51:57-03:00 complete mado round=67; hyaku-inline attempt=1. Shape: one v1 wave, 13 seats (executor 4, scribe 2, scout 2, connector 1, reviewer 2, critic 1, mutation-tester 1; attack 4/13 = 30.8%), settled 13/13, dead 0, L1 holds the planner seat; band 8-16 per the binding run-15 addendum. Conformance defects (status-neutral, none bars admission): (1) the C2 frozen kill rule says the candidate control run exits nonzero on the mutant, but the M-R mutant child exits 0 (TARGET_MET missing=0) and is counted killed by the harness's forged-credit flip (c2-r67-landing-controls.py:267-269,489-490); the delivered control is real and the base scores 0/2, but the declaration's mechanism sentence is wrong for M-R (B9 calls it merely 'stricter'); (2) the report's 'controls unchanged' sweep 'git diff aa7fe5a1..HEAD -- controls' is path-vacuous from the lane root (0 top-level controls paths) and returns empty regardless; with the nested path score-baseline-c2.py changed its default base eafd500f -> 0b28ffb4 at 5f9ce459 (B7), while the frozen c1-controls.json is byte-identical (blob d5669bdc) - no claim harm; (3) the dispatched prompt carries two seat bands (template 32-128 vs run-15 addendum 8-16); the lane followed the binding addendum. Routed to round 68: freeze the per-mutant observable (M-R flip, not 'exits nonzero'); use the explicit controls path and name the B7 scorer correction; keep open the citecheck standalone zero-citation contract, the harness mr_killed self-mutant survivor, the C1 row-count equivalent mutant, the unguarded git-reader census, and the B1 inheritance limit in the next C2-family predicate. SHONEN: all four boxes remain [~] and match the report; boxes 1 and 4 look mechanically checkable by a fresh non-author, boxes 2/3 rest on historical end-to-end evidence; promotion is operator-owned and no [x] was written. Open L0 r57-r60, the L2-floor line, the host-recovery pacman pause and the new r37/r38 session-material history question remain operator-owned. No tool installed or upgraded; no pacman transaction.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
