@@ -47582,6 +47582,44 @@
    "notes": "Dispatch/complete digest (watchdog.log, mutable): 2026-11-04T17:52:19-03:00 launch pgid=3648537 attempt=1; 18:02:51 lane-dead-no-report (report_of FAIL); 18:02:53 launch pgid=36255 attempt=2; 18:03:31 lane-dead-no-report; 18:03:33 launch pgid=49539 attempt=3; 18:04:12 lane-dead-no-report; 18:25:31 launch pgid=737095 attempt=1; 18:25:49 lane-dead-no-report; 18:25:51 launch pgid=757374 attempt=2; 18:53:40 complete tsukuroi round=81 hyaku-inline attempt=2. Status ok (real report), not admitted: rejected-honest-stop on chronology, no numeric miss, no axis harmed. Status-neutral defects: attempt-1 landed e8e5d5b3/c6fd9949 before its lane-dead line; two concurrent writers; reviewer+critic seats dead (effective attack 1/12). Routed to tsukuroi r82: R81-V1 append correction reconciling SCORECARD depth9 vs depth 8->8 outcome blocks (closure awards no uplift); R81-V2 commit declaration, no-work/forgery controls and instrument hashes before any candidate scoring; R81-V3 replace dead attack seats or report floor unmet; R81-V4 C1 13/18 and C2 4/8 behaviour-bearing mutant survivors plus answer-key selftest class; R81-V5 S331 anchor wording ('two lines later above line 84') and per-line-strip repair (R81-CITED-LINES-STRIPPED). Operator: SHONEN boxes not fully non-author checkable (box 3 unreplayed); no promotion.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 68,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 68,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 68
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:verifiability": "improved",
+    "coverage": "improved",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-68/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-68-verifier-spotcheck.md@656272cf6b753fab7ce249f286b824c87677fdf3",
+    "rechecks": "C1 evidence-verified, lane gate/counter never executed: figure-audit.py sha256 8147350c at d0f48405 and at freeze 7c4f9f7e, 10c87100 at measured 82b3b7d4 and tip b0b9fb87 (= claims.json candidate_trial pin); counter 785e38fd unchanged since 3dfe6f16; final receipt VERIFY 8/0 vs base do-nothing 8/4 (compressor 18288 runs, textconv 1, selftest 73); seat reproduction from exports/clean clones byte-identical; class residuals (prefix spellings, default textconv, cat-file) identical at base, routed. C2 re-measured over committed bytes: SOURCES rows 101->102, knowledge files 83->84, README F-ids 45->46, knowledge-expected 85/83->86/84 sort -c ok, frontier-recheck rows=46 registry=102 F46 ids=S102 entries=49/49, capture 82/82, source-recheck S102 rc=0 (8 quotes), census exit 0 (6 inherited W04). Spot-check: S102 admit agree (live swagger 11802 B/429 lines, whitespace-stripped = snapshot), live-instance reject agree (13259 B single line), 1.1.0 quote reject agree, S102 row quote L353 5 words agree."
+   },
+   "commit": "kasegi-shokunin@b0b9fb871e3cf45a51febd7671e2331c4f54637a",
+   "closed_at": "2026-11-04T22:13:32Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-04T18:27:42-03:00 launch kasegi round=68 pgid=816980 attempt=1; 18:36:33 lane-dead-no-report (attempt 1, no landed report); 18:36:35 launch pgid=958339 attempt=2; 18:42:43 lane-dead-no-report (attempt 2); 18:42:45 launch pgid=1254127 attempt=3; 19:07:18 complete kasegi round=68 attempt=3. Attempts 1-2 left no lane bytes. Conformance ok: report committed by kasegi-shokunin (f71d44eb, 19:06:49) after lane tip b0b9fb87 and cites it; ## SHONEN x1 with four box lines = SHONEN.md's four boxes; base and five cited commits exist and are ancestors of refs/heads/master; jj-lane state ahead=0 behind=0, status clean, ls-remote b0b9fb87 before spot-check; prompt l.1-140 = template after macro substitution, hyaku addendum from l.141. Defects routed (status-neutral): V68-1 claims.json frozen_at 21:52:00Z future-dated vs its commit 7c4f9f7e (21:50:37Z) and implementation 82b3b7d4 (21:50:54Z); V68-2 report l.119 transcribes base selftest line as ok, receipt says FAIL; V68-3 derive-gate program-execution class still open (sort long-option prefixes incl. --output, default textconv on git show <commit>, git cat-file --textconv/--filters, merge diff forms; new selftest cases assert exit code only); V68-4 closed r67 receipt driver-pins.json re-indented in place (39+/39-, one semantic line) instead of appended correction; V68-5 receipt prose: seat-reproduction names GNU sort 9.12 while host is uutils sort 0.8.0, counter docstring says six controls (runs five), '420 KB fixture' vs 480000 bytes. Inherited: V67-5 recheck-audit exit 1 (9 cwd_fail), V67-6 .ufo/state/kasegi.round=17 (operator-owned). Operator note: SHONEN boxes 1,3,4 [~] checkable by a non-author against committed bytes; box 2 [ ] (no authorized end-to-end task); promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
