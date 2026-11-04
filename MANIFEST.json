@@ -41097,6 +41097,49 @@
    "notes": "Dispatch/complete digest (watchdog.log, mutable — copied at closure): 2026-11-03T22:10:08-03:00 launch kengaku round=71 pgid=3742793 driver=hyaku-inline attempt=1; 2026-11-03T22:41:22-03:00 complete kengaku round=71; hyaku-inline attempt=1. Conformance defects (status-neutral): report lines 133/141/149 say the closing counters were measured at edaea66e while the committed receipts' REV line reads c80fcdb3 (edaea66e only adds the receipt files); the report does not record the L1-holds-planner mapping the round prompt §2 requires; neither round-71 instrument has a SKILL.md gate/probe registry row; the frozen claims doc's 'do-nothing control (committed at freeze)' and 'red-before (committed at freeze)' wordings overstate what d8a77d3f contains (the lane captured both as its own Mistakes rows). Routed to round 72: R71-R1 registry rows for plans/round71_c1_hf_probe.py and plans/round71_c2_routed_defects.py; R71-R2 report revision attribution; R71-R3 planner-seat mapping; R71-R4 C1 --selftest defective arms (case_digest without --work, PATH-INDEPENDENT crash); R71-R5 C2 --mutants invariant under a semantic matrix (2/6 killed) and parse_count false-reds a digit 8 and a backticked eight; R71-R6 bwrap without --clearenv (the model-load witness is outcome-only); R71-R7 freeze-doc overclaims. Outstanding: corpus/knowledge/tb2-hf-model-inference-offline.md lands admission: hold pending the round-72 falsify wave (Q13/Q14). SHONEN: four [~] boxes, each pointer resolvable; no [x] written (promotion is operator-owned). Capabilities: none added — the replay re-exercises offline-network-service-grader-probe (round 68).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 72,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 72,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 72
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "coverage": "unchanged",
+    "operability": "improved",
+    "freshness": "improved",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [
+    "gate-selftest (first-working round 72): a registered gate proves its own behaviour on hermetic fixture files written under $TMPDIR — ten named cases, stable finding ids (SWEEP-MISMATCH/SWEEP-LABEL/SWEEP-NO-RECEIPT), SELFTEST-TMPDIR rc 2, and a committed red-before recipe that fails when one arm is disabled; evidence tsukuroi-shokunin/tools/check-selftest-tally.py --selftest, .ufo/waves/round-72/after/selftest-selftest-after.txt (PASS 10/10) and after/redbefore-selftest.txt (FAIL 10 cases, 8 passed, 2 failed)"
+   ],
+   "report": ".ufo/reports/round-72/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-72-verifier-spotcheck.md@eb1057575d5d8b940c4846e21611674cf5571aea",
+    "rechecks": "Step-1 PASS: report a569508e by tsukuroi-shokunin 21 s after lane tip 45a1e58b, on origin; SHONEN heading 1 + four [~] lines = four boxes; twelve cited commits all ancestors of master; lane ahead=0, remote master=45a1e58b, only two inherited round-66/67 untracked markers; prompt committed at 17ce61db one second before launch and its 140-line head diffs the rendered template in one resolved working-dir line; 12 seats / 12 non-empty outputs / 0 dead, attack 4/12 = 33%. Re-measured from committed bytes: C1 note absent rc 128 -> present, MD rows 0 -> 6, distinct sources 3 / snapshots 3, registry 300 -> 303, notes 89 -> 90, S301-S303 NF=13 and malformed 0, snapshot digests equal the note cells and live kmod v34 fetches (all HTTP 200), six quotes grounded (S301 :43-44/:46-47, S302 :942/:1083, S303 :111/:128), census rc 0; C3 receipt present naming 2b358d2d, SCORECARD erratum at :5649, r71 note correction enumerates the five /usr/lib/modprobe.d names, ROUTED_STALE=3 rc 1 -> 0 rc 0. Evidence-verified (lane gates not executed): C1 counter met=1 at 7fb35c74; C2 tool f22eb94f with 10-case PASS and red-before FAIL 10/8/2, missing-TMPDIR rc 2; C3 receipt equality with a fresh r71 counter run. Defects routed (status-neutral): lesson's superseded 'no capability row'/'nine cases' unmarked, C3 instrument digest drift df8a59c7 -> 2610ff43 without an old->new erratum, gate recorded zero rejects, capability-row count stale behind its supersession note."
+   },
+   "commit": "tsukuroi-shokunin@45a1e58b822cb89b914bda65ed174786b1ac148b",
+   "closed_at": "2026-11-04T01:56:39Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable): '2026-11-03T22:28:14-03:00 launch tsukuroi round=72 pgid=922172 driver=hyaku-inline attempt=1'; '2026-11-03T22:51:16-03:00 complete tsukuroi round=72; hyaku-inline attempt=1'. Step-1 ok, not a marker. Conformance defects (status-neutral): (1) corpus/lessons/round-72.md still says 'No capability row enters this round' and 'nine hermetic cases' where the landed state is the gate-selftest capability row and a ten-case suite — no appended correction; (2) the C3 checker declared frozen at sha256 df8a59c7 is committed as 2610ff43 and no erratum names the old->new digest, though the repairs are described; (3) the Gate recorded zero rejections, so no reject could be spot-checked. Routed to the lane next round: R72-LESSON-SUPERSEDED-CLAIMS, R72-C3-INSTRUMENT-DIGEST-DRIFT, R72-GATE-NO-REJECT, R72-CAPABILITY-ROW-STALE. SHONEN: four [~] boxes with resolvable pointers; box 3 names an unexecuted whole-SKILL post-append retest, so a non-author cannot mark all boxes [x]; promotion is operator-owned and no [x] was written. Inherited: fleet-root untracked 'after' file and the two lane round-66/67 markers predate this round; open L0 questions round-64/60/57 remain routed around.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
