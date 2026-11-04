@@ -44405,6 +44405,50 @@
    "notes": "dispatch 2026-11-04T07:48:48-03:00 launch mori round=85 pgid=2001209 driver=hyaku-inline attempt=1; complete 2026-11-04T08:56:07-03:00. Status ok, admitted; all three claims verify and no owned axis is harmed. Wave: one v1 wave, 12 spawn/0 resume (4 executor, 2 scribe, 1 scout, 2 reviewer, 1 critic, 1 mutation-tester, 1 connector; attack 4/12 = 33.3%); dead seat Mo85R02C2 (empty output) disclosed and its C2 attack covered by three other seats; Mo85E01C1Arms stand-in and duplicate-arm collision disclosed with restore and independent re-verification. Conformance defects (status-neutral): LOG.md:5310 contains a literal '<fill>' placeholder in the Round-85 wave paragraph (append-only log; needs an appended correction); .ufo/waves/round-85/evidence/controls-r85-entering.txt is unreferenced and records rc=0 for the C1/C2 unmet outputs that controls-r85.txt records rc=1 for the same bytes; the contract has no A4 block (the C3 entering-control correction at 91f657f6 is cited as A4 by the report/SCORECARD/knowledge but §Amendments jumps A3 -> A5); the report says the five amendments are 'disclosed in the contract and the round lesson' but corpus/lessons/round-85.md names none of A1-A5; .ufo/prompts/mori-round-85.md (704 lines, f9a8a8d2) was committed by the lane identity - a recurrence of D84-1, recorded and not re-attributed. Routed to next round: (1) appended LOG correction for the placeholder, (2) delete or supersede the contradictory entering-control receipt, (3) add the missing A4 amendment block/errata, (4) append a report erratum naming the overstatement, (5) prompt-attribution defect on record. Observed, not defects: ignored __pycache__ bytecode under .ufo/waves/round-85/ (untracked, absent from the pushed tree); the three scratch fixture ids carry committed rebuild recipes. SHONEN: the four boxes look checkable by a named non-author on the cited evidence; promotion stays operator-owned and no [x] was written. No tool installs; no L0 question appended; no misroot by this lane; lane repo clean and pushed (ahead=0).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 80,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 80,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 80
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved",
+    "calibration": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "multi-surface reserved-band composition",
+    "chord-grammar and state/exit-status runbook matchers"
+   ],
+   "report": ".ufo/reports/round-80/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-80-verifier-spotcheck.md@c702094ace5dd9b2b5e152951b4b2f4dd578f8b6",
+    "rechecks": "Step-1: report by mado-shokunin <mado@shokunin.local> (6fccb49, corrected 90895076 - D1), one ## SHONEN heading with four [~] pointers; 21 cited hashes + base + freeze + tip all ancestors of refs/heads/master; lane clean, local=remote=dd4f844c ahead=0 before the verifier commit; prompt renders templates/round-prompt.md exactly (0/140 mismatched lines) + addendum 6. C1 re-measured: 33 cases, 22 mutations (AST), carried 23/23 parsed-equal (diff), controls sha 17c27157..., tool sha c3eb5fbe...->5b9e2930... with the 231f92bc..dd4f844c tool diff empty; gate evidence verified (TARGET_MET 33/33, 22/22, base 23/33, tool selftest 111/111; counter selftest 60/60), gate not executed. C2 re-measured: 24 cases, 24 distinct anchors all present in 24 SKILL.md rows, 16 mutations, 19 shapes; gate evidence verified (24/24 TARGET_MET tree=bound at 749d3a85; before is a setup refusal rc 2; counter selftest 80/80), gate not executed. Harm watch: SCORECARD diff additive; index 98->99, ledger 144->146, mado-verify.sh blob identical, 460/460 receipt. Census 404->412, sources-census validate exit 0. Spot-check 3/3 agree (admits S470/S472, reject S475); S470 quote 13 words at :2575."
+   },
+   "commit": "mado-shokunin@dd4f844c7c0492a3be7500e20fed8e527de749aa",
+   "closed_at": "2026-11-04T12:26:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (mutable .ufo/watchdog.log, copied): 2026-11-04T08:21:28-03:00 launch mado round=80 pgid=2888272 driver=hyaku-inline attempt=1; 2026-11-04T09:18:31-03:00 complete mado round=80; hyaku-inline attempt=1. Status ok: real report naming 21 lane commits; base e10f7e9f, freeze 6c302a53 and tip dd4f844c all resolve and are ancestors of master. Step-1 PASS. Wave: one v1 wave, 14 seats (2 scout, 3 executor, 3 scribe, 2 reviewer, 1 critic, 1 mutation-tester, 1 sentinel, 1 connector; policy-list attack 4/14 = 28.6%, or 5/14 counting the sentinel), zero residual. No uncommitted round work; lane pushed. Step-1 defects, status-neutral and routed to round 81: (D1) the report was rewritten 22 s after filing (90895076, 6+/2-) instead of an appended erratum naming the superseded text - the corrected revision claims are true (receipts print rev=231f92bc/749d3a85); (D2) SHONEN box 1 cites SKILL.md:786-789 for the r80 registry rows, which are at :792-:794; (D3) the report says corpus/README.md:180, the entry row is :181; (D4) a blank line before M80-6 splits the six-row Mistakes table into two; (D5) 'three seats ... no findings' names two (11 findings.md + R80ConnSiblings.md = 12 seats with artifacts, 2 without); (D6) the 5/14 attack share counts the sentinel (policy list gives 4/14 = 28.6%, still >=25%); (D7) the check-wave-done verdict line has no committed receipt (seat counts re-derive 14/14 from w1-spec/w1-results). SHONEN boxes 1-3 look non-author-checkable from committed artifacts; promotion stays operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
