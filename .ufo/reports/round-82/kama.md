@@ -176,19 +176,10 @@ proposal lands this round.
 
 ONE v1 wave, 14 seats, dispatched through the inline handoff:
 `.ufo/waves/round-82/w1-spec.json` (14 items, `maxLanes` 16), `w1-dispatch.json`, `w1.ready` (+ its
-`dispatched` marker), `w1-results.json` for the per-seat status and final output. Role mix: 4 executor,
-3 scribe, 2 scout, 2 reviewer, 1 connector, 1 critic, 1 mutation-tester — attack seats 4/14 = 29 %
-(≥25 %), connector seats 1 (≤2). Dead seats and their last errors are recorded from `w1-results.json`
-below; no seat was replaced.
-
-## Wave
-
-ONE v1 wave, 14 seats, dispatched through the inline handoff:
-`.ufo/waves/round-82/w1-spec.json` (14 items, `maxLanes` 16), `w1-dispatch.json`, `w1.ready` (+ its
 `dispatched` marker), `w1-results.json` for the per-seat status and final output. Role mix: 4 executor
 (EX01 fact re-derivation, EX02 population, EX03 receipt replay, EX04 gate arm), 3 scribe (lesson,
 sources, knowledge), 2 scout (pin recon, record scan), 2 reviewer (C1 and C2 attacks), 1 connector
-(sibling scan), 1 critic (claims/controls), 1 mutation-tester — attack seats 5/14 = 36 % (≥25 %),
+(sibling scan), 1 critic (claims/controls), 1 mutation-tester — attack seats 4/14 = 29 % (≥25 %),
 connector seats 1 (≤2). **All 14 seats settled with non-empty output; 0 dead seats.** No seat was
 replaced and no payload was resent.
 
