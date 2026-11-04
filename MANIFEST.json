@@ -43954,6 +43954,53 @@
    "notes": "dispatch 2026-11-04T06:22:54-03:00 launch kaidoku round=76 pgid=502647 driver=hyaku-inline attempt=1; complete 2026-11-04T07:26:00-03:00. Report ac86c2aa by kaidoku-shokunin after tip 875e6488; SHONEN heading with 4x[~]; prompt 704 lines renders the template verbatim (substitution-only diff) and carries all five child-lane items plus the hyaku addendum; wave r76-w1 14 seats (band 8-16, attack 5/14), eight landed artifacts, four zero-byte seats and two prose-only seats recorded as unverified. Status-neutral defects: (1) c1-at-landing.json is cited as 'D24 true, mismatch_count 0' in the SCORECARD round-76 R76-C1 after-cell, the capability-row binding row and the PROVINCE.md round-76 addition while the file records exit 1/mismatch 1/D24 false; the report discloses the 1, so the correction was not swept across mentions; (2) tip receipts record rev 1ab1e164 while the report's before-after prose names 875e6488 and da41dfba (repeat of round-75 defect 5; the record surface is byte-identical across that range, so the values stand); (3) gate-at-tip 'exit 0' is not in its receipt (rev 862c48a8); (4) prefile-check PASS asserted with no retained receipt. Routed to round 77: sweep the landing correction in SCORECARD/PROVINCE, name each receipt's own revision, record the gate exit, retain the prefile receipt, and either bind evidence-cell verdicts in D24 or forbid verdicts in evidence cells. Operator note: all four SHONEN boxes look non-author-checkable from the report's pointers; no [x] written.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 81,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 81,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 81
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage:omp": "improved",
+    "coverage": "unchanged",
+    "coverage:script-layer": "unchanged",
+    "coverage:runtime-layer": "unchanged",
+    "coverage:kimi-layer": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "ready-handoff admission gate (`kumitate-ready-handoff-v1`, scripts/ready-handoff.mjs): 16-arm frozen counter (base 0/16, stub 3/16 → 16/16), 34-case suite, six-key `.ready` contract against the dispatch it names, band/attack/connector/role/trailer policy and fail-closed path containment; registered in SKILL.md and the proxy gate-pin block; frozen-run verdict and revision in `.ufo/waves/round-81/{probe,controls,close}`."
+   ],
+   "report": ".ufo/reports/round-81/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-81-verifier-spotcheck.md@0c23c4fca408591341f22bad58660ac81e1ec5ff",
+    "rechecks": "Step-1 from committed bytes: report 6a6f5898 by kumitate-shokunin <kumitate@shokunin.local> (author 07:30:24, committer 07:32:08 -0300; lane tip committer 07:31:26, so lands last) and ancestor of origin/main; SHONEN heading 1 with four [~] and no [x]; 5/5 cited lane commits (77c7a8b3, f8783f4b, 2ac1f34d, d140f288, 13060d9b) ancestors of master; jj state branch=master local=remote=13060d9b ahead=0 tracked=0 untracked=0, status clean; prompt 704 lines = templates/round-prompt.md 140 rendered with only the two intended substitutions plus addendum at 141, all five child-lane items, L2 floor and L0 present; dispatch digest matched the live log. Claims evidence-verified, no gate re-executed as the verdict: C1 16/16 at base 0/16 and stub 3/16 (34/34 suite; receipt FNV sha=df736d63 proves the close-tip tool bytes) and C2 15/15 at base 4/15 and stub 6/15 (15 arms, SHAPE_STALE arm, 98-case suite; five v2 tokens 0→25/6/13/2/2); A=889/C=41 re-derived with the scorecard commands; stanza pins (ready-handoff f8fc11f1, omp-census ba7cbc8f, omp-shape 8b6aaa79) match the committed bytes and the proxy MATCH receipt. Discernment: S236/S237 admits agree (quotes verbatim in committed captures, wc -w 21/22 = the Gate's stated counts), nearest reject S235 agrees, both new rows parse/mined and the census exits 0, the S117/S118 used-by revert is verified. Eight record defects routed (R81-1…R81-8), all status-neutral."
+   },
+   "commit": "kumitate-shokunin@13060d9b8db4b1c18cc0c46594dbf943d5f9ac03",
+   "closed_at": "2026-11-04T10:44:15Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-04T06:40:45-03:00 launch kumitate round=81 pgid=725520 driver=hyaku-inline attempt=1; 2026-11-04T07:34:13-03:00 complete kumitate round=81; hyaku-inline attempt=1. Step-1 conformance PASS with defects: one v1 wave of 14 seats (executor 3, scout 2, reviewer 2, scribe 2, connector 1, mutation-tester 1, critic 1, sentinel 1, revenger 1; planner held by the L1 per addendum, validator rejects the role), attack 4/14, 14/14 result rows, 12 seat reports, 2 dead seats (K81MutC1, K81Sentinel) named and never replaced. Routed defects for round 82 (all status-neutral): R81-1 close receipts stamp rev=d140f288 while the measured bytes are the 13060d9b instrument (c1-probe sha=df736d63; census selftest 98 cases exists only at the close tip) and the report repeats the stale revision; R81-2 the C2 SHAPE_STALE reading is cited to close/census-shape.txt but lives in close/c2-probe.txt (arm max-age-stale); R81-3 SKILL.md:618 pin.ready-handoff=f8b4a92b while the stanza and file are f8fc11f1; R81-4 the two new knowledge entries' verified-at tallies are stale at the shipped tip (31/31 vs 34/34; 97 vs 98 cases); R81-5 the quoted 'WAVE-DONE … all 14 seats settled' line resolves nowhere (w1-results.json carries seats=14 and 14 rows only); R81-6 the round-81 Gate records no rejected row (sampled r80 S235; sample limit, not a disagreement); R81-7 'six fail-closed refusals' is short of the eight distinct throw new Refusal tokens; R81-8 lessons:57 open README-map reading 198/198/198 contradicts open/readme-map.txt 199/199/199. No uncommitted round work; lane pushed. SHONEN boxes look checkable by a non-author from committed evidence (barring R81-3/R81-4 precision debt); promotion is operator-owned and no [x] was written. This closure's spot-check file adds the 11th spotcheck-coverage file for the lane to adopt in round 82.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
