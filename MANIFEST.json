@@ -45475,6 +45475,47 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-11-04T10:56:14-03:00 launch mado round=83 pgid=2782827 driver=hyaku-inline attempt=1; 2026-11-04T11:34:12-03:00 complete mado round=83; hyaku-inline attempt=1. Verdict rejected-honest-stop: C1's frozen predicate missed its own mutation population (declared 38, observed 39 kills -> TARGET_MISSED rc1 at freeze dbc09269) and three causal cheats survive 58/58, so coverage is graded unchanged with no delta awarded; C2 verifies on its declared finite predicate (operability improved) while the producer-success interpretation is refused. The lane itself filed the honest stop; not admitted, status ok (real committed work, not a marker). Trends diverge from the lane's self-grades with reasons in the spotcheck: expansion improved (new admitted bounded entry citing re-opened mined rows S484/S485, index 102/102), quality improved (red-before/green-after number-drift repair, QUALITY 137), discernment improved (this outside spot-check agrees with both admits and both rejects). Routed defects for round 84: R1 (medium) SKILL.md gate-registry rows missing for c1-r82-allocation-band/c2-r82-runbook/c1-r83-surface-band/c2-r83-runbook (registered only in quality/tool-ledger.md; r80/r81 rows exist at SKILL.md:806-810); R2 (info) run the pre-scoring mutation-population assertion the report plans before the next freeze; R3 (info) scout/connector/scribe seats settled empty and were disclosed, never backfilled - the connector's sibling-overlap review is still owed. Operator note: all four SHONEN boxes look fully checkable by a non-author (tables/checklists with cited sources, LOG end-to-end counter runs with committed receipts, executable declaration commands, PROVINCE accurate); promotion is operator-owned, no [x] written. S481 immutable-anchor correction remains routed from r82, not silently rewritten.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 34,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 34,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 34
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-34/kagi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kagi-shokunin/corpus/lessons/round-34-verifier-spotcheck.md@063c407494276d0c616e6c712a2e5d7aeb7e3768",
+    "rechecks": "C1 independently re-derived from committed BASE f9dc06fd and TIP aa43fdb5: SD7 3->0, SD8 1->0, SD9 1->0, sum5->0; committed producer receipts retain excluded SD6=3 and exit1; PASS7->10 evidence-verified. C2 ck-call count11->12 re-measured; committed PASS12 exit0 and M7 base-isolation/relative-work FAIL12 exit1 evidence-verified; source SHA ca338da7c7400e07fa551c42b02a4bb6b7bedf4c47bda849e1aa162fbc86493a matches TIP. C3 independently counted entry0->1, registry82->88, sourced12->14, legacy22->21, captures82->88; frozen targets87/13/87 fail. Lane CLEAN census at b4e9fd9a evidence-verified, population bytes unchanged at TIP. Fleet census personally run exit0 with16 W04 warnings. Personally reopened S083/S084/S085; agree admit corrected entry/reject staged overclaim; S083/S085 quotes present <=25 words. SCORECARD six axes9->9, none harmed; no lane gate/selftest executed."
+   },
+   "commit": "kagi-shokunin@aa43fdb52396f5f6d5f283bb95776cb40b328e53",
+   "closed_at": "2026-11-04T14:55:47.524394Z",
+   "campaign": "hyaku",
+   "notes": "2026-11-04T11:04:56-03:00 launch kagi round=34 pgid=3039117 driver=hyaku-inline attempt=1; 2026-11-04T11:48:24-03:00 complete kagi round=34; hyaku-inline attempt=1. Real report committed by kagi-shokunin at8101cee514a97776886aef6f122e6846e3eae688 after lane TIP; four SHONEN assessments, clean lane ahead=0, all six cited hashes ancestors of master, prompt sections1-5 exact rendered template plus section6 amendments. Verifier landed063c407494276d0c616e6c712a2e5d7aeb7e3768 and remote master confirmed. C3 honest stop: C1 provenance migration introduces extra sourced entry/S088, coupling frozen population arithmetic; no retroactive target change. Status-neutral routed defects R34-1 independent per-claim populations/causal separability; R34-2 frozen awk empty/SETUP false-zero and presence-only predicate limits; R34-3 plan14 vs actual13 seats and L1-held instead of separately dispatched planner; R34-4 persistent R25-02 FAIL, R29-01/R29-02 POLICY, closure-id MISSING-ID findings and three non-owned SD6 citation findings (protocol scope). All six axis verdicts agree with spotcheck; coverage unchanged means failed exact claimed move, not absence of useful physical expansion. No SHONEN checks, promotion, mint, new capability or tool installation.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
