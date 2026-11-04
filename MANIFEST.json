@@ -46892,6 +46892,47 @@
    "notes": "Dispatch digest: 2026-11-04T16:19:36-03:00 launch kasegi round=65 pgid=2043078 driver=hyaku-inline attempt=1 | 2026-11-04T16:57:05-03:00 complete kasegi round=65; hyaku-inline attempt=1. Conformance: report by kasegi identity (bf01cca5, landed last); SHONEN heading 1x with four box lines; all 13 cited commits plus measured revision 03a23921 are ancestors of master; lane ahead=0/behind=0 with empty status; prompt 814 lines carries the full contract and five child-lane items (L2>=8 matches MISSION). Round shape 12 seats in one wave, 42% attack, 12/12 seat reports. Routed defects (status-neutral): D1 report cites 'LOG bolts 1-12' but LOG.md Round 65 has 10 unnumbered bullets and no 'bolt' token; D2 two of 15 round commits (1929a47, 6824522) absent from the Landed-changes table; D3 the cited before receipt base-finaldrv2 is the erratum-1 driver (5aa842ab) while the report calls it the exact final driver (final-driver receipt driver-base-donothing-r65.txt exists, 8/3); D4 'final tip 03a23921' is not the lane tip a3357329 (two receipt-only commits later); D5 base receipts record no exit= line though the report claims exit 1; D6 sentinel helper count 121900 is marker lines across two gate runs (~60950/run) and the report reads as one run. Operator note: SHONEN box 2 (end-to-end domain task) stays open; boxes 1/3/4 are non-author-checkable if a promotion review is dispatched; promotion remains operator-owned and no box was marked by closure.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 79,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 79,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 79
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-79/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-79-verifier-spotcheck.md@467a9b7891a5939dab8460ec6f591fbb16bd82e9",
+    "rechecks": "Step-1 PASS: report 2e3ca258 lane-authored, four-line SHONEN heading, six cited commits 6/6 ancestors of master under lane identity, lane clean and pushed ahead=0 before the verifier commit; prompt f7eef4ea renders template sections 1-5 except placeholders, no '{{', L2 floor >=8 with 12 seats and no model parameter. C1 re-derived over committed bytes: target absent at base; landed entry is 8 rows with source S329, artifact/companion digests 1b8f833d/8c6b3809 equal ReviewDeps' parsed verdict; frozen expected DP6 statement drops the source's 'and no job is queued for them' (:783-785), so the frozen predicate is a genuine unfixed honest stop (rows=0 met=0 before and after); a second unreachable leg (review_sha256= absent from null w1-results) named as routed defect. C2 independently reproduced: duplicates 6 -> 0, shape_ok 0/2 -> 2/2, 119/119 operative rows, four NON-OPERATIVE markers added and none removed, both repaired rows truthful and both tool blobs gained --selftest; selftests 32/32 and 8/8 plus 8/23-case tool selftests evidence-verified only, no lane gate executed. Live systemd.unit.xml re-fetch http 200, 165445 bytes, sha256 eb9479be matches the pin; S329 admit and all three Gate rejects agree; census exit 0 W04 only."
+   },
+   "commit": "tsukuroi-shokunin@467a9b7891a5939dab8460ec6f591fbb16bd82e9",
+   "closed_at": "2026-11-04T20:05:42Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-04T15:51:26-03:00 launch tsukuroi round=79 pgid=1239933 driver=hyaku-inline attempt=1; 2026-11-04T16:54:45-03:00 complete tsukuroi round=79; hyaku-inline attempt=1. Delivered work 3d329c354d9020c0a1ba9d1ef41b50db12ab562a; branch master ahead=0, clean. Honest stop, not a pass and not harm: C1 did not meet its frozen predicate and the lane does not claim admission; C2 verified. No ordinal moved (depth 8, coverage 9, operability 9, freshness 9, calibration 9, adjacency 8); no axis harmed. Conformance defects, status-neutral: the wave's 12 seats include no spawned planner (L1 held the planner role) against prompt section 3; ScribeLesson left no binding file (recorded as R79-SCRIBELESSON-UNSETTLED, not reconstructed); inherited ADJ-06/OUT-009 kaidoku/revenger arbitration re-flagged open, not ruled here. Routed to tsukuroi r80: (1) C1's review-binding leg requires review_sha256= in w1-results.json, which delivered 12 null outputs, so it is unreachable independent of DP6 - bind on the committed ReviewDeps/verdict.json digest or persist seat output before freezing, and name both legs; (2) bind counters on files the seat writes, per the run-13 counter rule; (3) 36 of 93 operative gate rows still declare no selftest (measured) - continue the sweep or reclassify with a justified note; (4) C1 instrument fabricated-bundle acceptance and the equality leg's shadowing of per-row clauses stay disclosed limits, not closed; (5) spawn the planner seat or state the deviation before the wave. Promotion is operator-owned: SHONEN boxes 1, 2 and 4 look checkable from committed artifacts by a fresh non-author, box 3's whole-SKILL no-oral-context replay remains unexecuted, and no [x] was written.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
