@@ -43684,6 +43684,51 @@
    "notes": "Dispatch/complete digest (mutable .ufo/watchdog.log, copied): 2026-11-04T05:15:08-03:00 launch kengaku round=81 pgid=3079710 driver=hyaku-inline attempt=1; 2026-11-04T06:08:37-03:00 complete kengaku round=81; hyaku-inline attempt=1. Conformance: report 9335e8e6 by kengaku-shokunin (author 06:03:05, committer 06:07:28 — after lane tip ae03c4f6 at 06:06:44 and wave settle 70707d9d at 06:06:10); SHONEN heading with four [~] pointers; all 31 cited hashes (base 4e833e9f + the 30 in the table) exist and are ancestors of master; lane clean and ahead=0 (local=remote=ae03c4f6; spot-check landed a3a03ac3); prompt is a clean 140-line rendering of templates/round-prompt.md with substitutions plus the §6 hyaku addendum and §7 scratch discipline; one v1 wave, 14 seats, 12 non-empty outputs (LessonScribeR81 and MutationGateR81 empty, disclosed; no independent mutation-tester pass), attack 4/14=29% counting the sentinel (3/14=21% if the campaign list is exhaustive), no planner seat. Claims: R81-C1 coverage improved (universe re-derived; ledger 24->26 executed; file-artifact 16/76->18/76; receipts + probes reproduce; class cell 16->18; gates-clean R81-C1 pass). R81-C2 calibration improved (0->6 R80-U rows all closed with resolving evidence; batteries 9/8/0, 4/4/0, 12/6/0; gates-clean R81-C2 pass). No axis harmed (SCORECARD diff additive; every score held). Routed defects (7): V1 c2-after.txt stamps WORKTREE dirty (1 paths) while f70fe5fa and the report say clean clone — re-mint from a clean checkout or cite gates-clean.txt@39bbe9a4; V2 annotation miscounts (lesson 14/17/9 words vs actual 12/13/7; S260 says stamp 2-16/observations 17 vs actual 2-14/16; S261 row repeats 14/17); V3 corpus/knowledge/tb2-file-artifact-replay-classes.md lacks the source:/verified-at:/recheck: trio; V4 plans/round81_c2_spotcheck_debt.py:384 docstring says six mutations, receipt real=4; V5 stray empty --lane/ dir in the lane root; V6 no planner seat and the dead MutationGateR81 seat (attack-share accounting depends on the sentinel); V7 determinism.txt lacks the producing command/revision (determinism independently re-run: two identical runs per instrument). Spot-check: kengaku-shokunin/corpus/lessons/round-81-verifier-spotcheck.md@a3a03ac3. SHONEN: all four boxes are [~] with checkable pointers; a non-author could check all four from committed bytes; promotion is operator-owned and was not done.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 81,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 81,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 81
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "freshness": "improved",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "closure-defect bind (tools/defect-bind.py, five row kinds over committed bytes; 6/6 rows closed at the tip, 0/6 at the base; selftest 11/11)",
+    "standing-pin audit (selfstate-freshness --pin-audit/--pin-rev, blob equality at pin vs tip; 20/3 stale at the base, 23/23 settled at the tip; arms 18-20)",
+    "selftest-text pin (ARM21_selftest_text_pin + arm25-selftest-text-pin, sha256(inspect.getsource(selftest)) against a constant; ss-bom-only and wr-prefix go SURVIVED to KILLED; batteries 5/5 and 14/14, base 0/1 each)"
+   ],
+   "report": ".ufo/reports/round-81/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-81-verifier-spotcheck.md@4dfc3181310088c2f32d51e87a4d82c047d05231",
+    "rechecks": "C1 re-derived row-by-row: base 56a0129f all six open (D1a two paths missing, D1b 0 B, D2 span absent, D4 cell short, D5 receipts missing, D6 no tokens), tip fc7ccfb7/ccef5f1d all six closed; population 6 rows with identical id/kind/expect/tokens/paths at the declaration and the wave commit; selftest 11/11 evidence-verified. C2 re-measured by my own blob-equality loop: base manifest vs 56a0129f = 23 rows settled 20 stale 3 (receipt-exists-selftest, receipt-bind-selftest, registry-bind-selftest), tip manifest vs fc7ccfb7 and ccef5f1d = 23 unsettled 0; manifest delta 1b115ba0..ccef5f1d exactly 3 instrument.rev lines; sweep 23/21/2 unexpected=0 and selftest 21/21 evidence-verified. C3 evidence-verified, batteries not executed: base tool blobs sha256 0c4ac5e4/2dfeda82 and tip 6624f5db/8be64d02 match the receipts' pristine/target shas; spec defects 5/14, receipts 5/5 and 14/14 KILLED, 0 survived, both CONTROL GREEN and byte-identical restore; digest constants recomputed (a9feb3c49068, 3ea7fc7206c8); arms 21/21 and 25/25. Census validate exit 0, rows 169->170, mined 136->137, tiers A151->152/B14/C4, frontier unchanged; ten no-harm sweeps green; SCORECARD +73/-1 (the deletion is a capability figure 23/23->25/25, no axis score lowered)."
+   },
+   "commit": "tameshi-shokunin@ccef5f1de17bd44df6adacbb7f024f18628444ec",
+   "closed_at": "2026-11-04T09:28:30Z",
+   "campaign": "hyaku",
+   "notes": "dispatch: 2026-11-04T05:28:21-03:00 launch tameshi round=81 pgid=3340123 driver=hyaku-inline attempt=1; 2026-11-04T06:18:14-03:00 complete tameshi round=81; hyaku-inline attempt=1. All three claims verify; admitted; no axis harmed. Conformance defects (status-neutral): (1) the report's manifest-binding equality sentence is false at the measured commit (manifest blob c8372447 at the declaration vs d92d6bea at fc7ccfb7: D2 span extended + re-indent, row set unchanged) and the cited receipt measures e27f28e8; (2) the SCORECARD measured-claims table cites c1-after.txt/c2-after.txt (recorded tips e27f28e8; C1 D2 detail tokens-in-receipt) under fc7ccfb7 measured-commit cells (tip receipts are final/c1-sweep.txt tokens-in-span-and-receipt and final/c2-pins.txt); (3) the 're-derived at the lane tip ccef5f1d' sentence has no committed receipt; (4) the Stale-lane line omits the mission's 49m53s (~6.6 tick) age and progressing/silent. Routed to round 82: --manifest-rev (D-CN3); harden tree-paths (tree accepted) and tree-bytes (mode-blind symlink); C3 digest-region limits and defect-bind's own text unpinned; D-CN1 selftest/open-register exit-code collision; D-CN4 pin naming; capability rows placed in a round section instead of the live ## Capabilities table. Wave: 13 seats, 11 reports, 2 dead (T81W1E4 mid-clone, T81W1SN1 empty output). Operator note: SHONEN boxes 1/2/4 are checkable from committed artifacts by a non-author; box 3's plan-only rebuild witnesses are lane-dispatched seats, so an independent cold-read stays operator-side; no [x] written, promotion operator-owned. Lane pushed at ccef5f1d; spot-check landed 4dfc3181.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
