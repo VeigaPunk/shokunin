@@ -44135,6 +44135,51 @@
    "notes": "Dispatch digest: 2026-11-04T07:08:06-03:00 launch mado round=79 pgid=1511397 driver=hyaku-inline attempt=1; 2026-11-04T08:07:32-03:00 complete mado round=79; hyaku-inline attempt=1. The non-author spot-check landed as e10f7e9f (protocol identity, single-child of 2b3c9c6b, pushed and verified by ls-remote); the first helper commit exited 3 on a remote-side 'fatal error in commit_refs', the retained commit was inspected (parent, identity, single-path tree) and the helper push then printed landed e10f7e9f. Status-neutral conformance defects routed to the lane for round 80: (1) the report's C1 after-cell quotes tool_selftest=44/44 at d6be05ef while citing receipts/measurement-final-r79.txt, whose bytes print 50/50 at 999a4a3f; 44/44 is measurement-c1-r79-repair.txt. The report header, LOG.md and SCORECARD all carry 50/50 at 999a4a3f and the claim's predicate is met, so the claim stands; the cell is a citation defect to correct as an erratum. (2) The S467 rejection reason says the page documents 'the line syntax only', but the committed round-45 fetch states at :183 'This does stack on top of the calculated reserved area (e.g. bars)'; the reject stands on the dead live URL (404), no revision pin and tier-B prose only, and needs a superseding SOURCES row whose teaches opens 'supersedes S467 —'. (3) LOG.md round-79 says 'Seven mined' while corpus/lessons/round-79.md carries eight ## Mistakes rows (M79-1..M79-8); append a correction. (4) fetch/S468.bin and fetch/S469.bin are described as 'pinned as S468/S469' but are absent from fetch/sha256-r79.txt (10 entries, 9 distinct digests, sha256sum -c 10/10 OK) and have no SOURCES rows; manifest them or reword, and avoid S### names for non-registry files. (5) The partial seat R79ExecC1Tool (out.txt 73 OK/0 FAIL, no written report) is disclosed, not backfilled, and stays round-80 ground. No lane-authored file was edited by this closure; only corpus/lessons/round-79-verifier-spotcheck.md and this MANIFEST entry were written. SHONEN stays four [~] boxes: all four look checkable by a non-author now, but promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 80,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 80,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 80
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "freshness": "improved",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "selfrecord-round79",
+    "engine-pin-relations",
+    "class-engine-register"
+   ],
+   "report": ".ufo/reports/round-80/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-80-verifier-spotcheck.md@e7d2fd729cf8204c89c32534303bc9f2a97fcee4",
+    "rechecks": "Step-1: report 83bfdc07 (kama identity), SHONEN 1 heading/4 [~], 16/16 cited hashes ancestors, lane clean+pushed a2af1af5, prompt 704 lines carries the contract. Claims re-measured: C1 grounds at sealed a9b4543f (F4/F5/F6 stale exactly as graded; 3 corrections re-derive; counter at tip mismatches=0 corrected=3 unbacked=0); C2 all five relation cells re-derived from committed tag lists (278/b12103, tag b11963/110, 3395, 1/v0.5.23, 1/v0.33.0) and counter green. Evidence-verified: C3 receipt JSON (ollama 0.40.11, port 54939, both legs, class_missing=0, teardown rc=0 port_closed=true) and audit 2/2. Census 293->297, validate exit 0. Spot-check 4 items."
+   },
+   "commit": "kama-shokunin@a2af1af59faf6cf66fe854559293c4e4b441aff3",
+   "closed_at": "2026-11-04T11:33:56Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (mutable .ufo/watchdog.log, copied): 2026-11-04T07:33:42-03:00 launch kama round=80 pgid=1824947 driver=hyaku-inline attempt=1; 2026-11-04T08:21:58-03:00 complete kama round=80; hyaku-inline attempt=1. Status ok: real report, 14 lane commits, checkable receipts. Step-1 PASS: report 83bfdc07 by kama-shokunin <kama@shokunin.local> (ancestor of fleet origin/master); one ## SHONEN heading with four [~] pointer lines; all 14 round hashes + base c45fc7d1 + sealed a9b4543f resolve and are ancestors of master; lane clean, local=remote=a2af1af5 ahead=0 before the spot-check; prompt 704 lines carries the round-level contract and all five child-lane items; no route-map conflict (MISSION §L2 buckets only). Wave: one v1 wave, 13 seats, 13 non-empty, attack 4/13=31% (4 executor/2 scribe/2 scout/1 connector/1 reviewer/2 critic/1 mutation-tester), no residual. Claims: C1 calibration verified - grounds re-derived at sealed a9b4543f (record 'C2 verified' vs receipt failed=1; pass=26 vs 22; LOG 'all verified'; three value-bound corrections re-derive; counter re-run at tip mismatches=0 corrected=3 unbacked=0); C2 freshness verified - all five relation rows re-derived from the committed tag lists (llama.cpp b11755 newer=278/newest b12103; 39febd2a=tag b11963 peeled/newer=110; b7200 newer=3395; sglang v0.5.22 newer=1/newest v0.5.23; vllm v0.32.0 newer=1/newest v0.33.0), counter green; C3 operability verified (evidence-verified, live fixture not re-executed) - receipt JSON engine=ollama port=54939, both legs, teardown returncode=0 port_closed=true, audit 2 engines verified. Census 293->297 (A 278->282; mined 264->267; rejected 21->22), validate exit 0. Axis vector holds 8/8/7/9/7/7; no axis harmed. Spot-check: S554 admit agree, S556 reject agree, S555 supersede agree; S557 admit stands but its SOURCES URL 404s. Status-neutral defects routed: R80V1 SCORECARD:4781/:4783 and calibration row :18 plus LOG §Round 80 carry pass=9/pass=6 while the 08eb6949 receipts print pass=11/pass=12 (KQ132-class recurrence; append corrections); R80V2 S557 URL missing api/ (real file 200, 25472 bytes, sha256 44071a12...cd5) - superseding row; R80V3 S557 has no Gate record; R80V4 new W04 S555 not pre-existing; R80V5 final-tip-recheck.out names rev 08eb6949 while called the final tip; R80V6 coverage row last-change cell stale. SHONEN: the four [~] boxes carry resolvable pointers and look checkable by a non-author (C3 lifecycle receipt, plan/SKILL pointers); promotion is operator-owned; no [x] written by me. Misroot sweep: fleet untracked are orchestrator .scratch/*, sibling reports, the 24-byte pre-existing 'after'; no kama seat file. L0: none opened. Tool installs: none.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
