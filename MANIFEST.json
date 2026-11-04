@@ -42754,6 +42754,49 @@
    "notes": "Dispatch digest (mutable .ufo/watchdog.log, copied): 2026-11-04T02:55:33-03:00 launch kengaku round=78 pgid=48359 driver=hyaku-inline attempt=1; 2026-11-04T03:18:55-03:00 complete kengaku round=78; hyaku-inline attempt=1. Both frozen predicates pass and no axis is harmed; routed to the lane next round as evidence-standard/annotation defects: R78-D1 (high) the C2 before-defect breakdown in report:97, SCORECARD:3615 and lesson:53 (11 TOOL-UNNAMED/10 COMMAND-ABSENT/4 PASS-UNLOCATED/2 WORKTREE-ABSENT/2 TOOL-UNPINNED) is not derivable from the committed c2-before.txt, which carries 11/11/5/2 and no TOOL-UNPINNED at any revision; R78-D2 the round-77 stamp-prose item is not swept — SCORECARD:3564-3565 still print 'stamped d181e16b' while both after receipts stamp cd2e25bb; R78-D3 the LOG at-tip rerun block (LOG:2963,3017) prints routed_open total=93/closed=59 against its cited receipt's total=98/closed=64 and a bbf4f36c stamp, not the final tip; R78-D4 S254 quote is 15 words at capture 2322+2326, not 17 words at 2322-2324, and the S255 anchor says lines 1-9 while its quoted EXECUTED-COVERAGE line is 21; R78-D5 the quality paragraph overstates base redness (R51-C1 and R77-C1 were green at base per their own receipts) and says eight gates where six are named, and the C1 after row labels 04fdd644 while c1-after.txt stamps b47dbea8; R78-D6 gates-tip.txt line 2 says WORKTREE dirty while report/commit 148801a6 say 'clean tree'; R78-D7 the lane must index corpus/lessons/round-78-verifier-spotcheck.md in corpus/README.md and register R78-D1..R78-D7 in corpus/routed-findings.jsonl (this file is now the newest spot-check, so R76-C2 will report MISSING-ROW until registered — expected routed-queue behaviour). No promotions and no mints in this pass; the four SHONEN boxes all carry [~] with resolving pointers and look checkable by a non-author, but promotion stays operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 80,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 80,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 80
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "self-assessment claim sweep (tools/mori-claim-sweep.py): read-only gate over SCORECARD's Axes table, every capabilities-table data row and SHONEN's checklist rows, resolving lane-pointer existence (line/rev suffixes stripped, wildcard globs at least one match), pinned live selftest tallies and stale literals; prints CLAIM_SWEEP mismatches/unresolved/tallies/stale/carriers/pointers, rc 0 clean/1 mismatches/2 setup; 30-arm in-memory selftest (30/0), 233 pointers and 0 mismatches at 44bc941a, registered as SKILL gate-registry row 14 with all eight fields and a SCORECARD capabilities row; discharges the r79 routed D79-1 stale 18-arm tally (SCORECARD control-receipt row corrected to 19)"
+   ],
+   "report": ".ufo/reports/round-80/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-80-verifier-spotcheck.md@d144672c986a25642e59fee3b9de238f27e6b769",
+    "rechecks": "C1 re-measured: my own implementation of the frozen sweep rule over git-show bytes at 44bc941a (graded rows, POINTER grammar, suffix stripping, fence exclusion, stale literals) prints pointers=233 with 0 unresolved/stale mismatches; the entering tree has the sweep blob absent (cat-file rc 128) and the 18-arm literal once, the tip has the 19-arm literal once and the 18-arm literal zero; committed receipt C1=met tool=present sweep=0 mismatches=0 unresolved=0 tallies=0 stale=0 row_tally=19 live_tally=19 rev=97ce0c96, selftest pass=30 fail=0. C2 evidence-verified, not executed: entering receipt MUTATION_C2 survivors=2 killed=4 total=6 rc 1; landed receipt survivors=0 killed=6 total=6 unmutated=green rc 0; diff is one +16-line hunk inside def selfcheck with three added cases (7 total, receipt pass=7); six MUTANTS anchors present at 44bc941a and each replacement absent; harness reads git show <rev>:count-c2.py and refuses non-green unmutated. C3 re-measured independently: present=55 named=14 missing=41 extra=0 at d5888922 -> present=56 named=56 missing=0 extra=0 at 44bc941a; PROVINCE pure insertion +67/-0; source census rc 0, rows 367->368, malformed 0. S595 pin sha256 28ea1f163860348979a3aa9e9ef8e00fc8eb3ecec2762782d639783003f1b884, 613 lines/43884 bytes, live re-fetch byte-identical, 22-word quote at :121. Battery 13/13 rc 0 read, not re-run."
+   },
+   "commit": "mori-shokunin@44bc941a0e3e9676fa33a882b43d6e9793cbf74d",
+   "closed_at": "2026-11-04T06:31:50Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-04T02:55:35-03:00 launch mori round=80 pgid=51143 driver=hyaku-inline attempt=1; 2026-11-04T03:23:18-03:00 complete mori round=80; hyaku-inline attempt=1. Step-1 conformance clean: report committed by the lane identity mori-shokunin <mori@shokunin.local> at fleet c585abad (committer 03:22:51 -0300, after the lane tip 44bc941a 03:22:31; its 03:22:16 author stamp is the jj working-copy time); SHONEN heading present with four [~] lines (author-asserted; no box is promotable); seven cited lane hashes exist and are ancestors of master; remote==local==44bc941a, ahead=0, tree clean; round diff 44 paths all lane-owned; prompt carries templates/round-prompt.md verbatim plus the hyaku addendum (five child-lane items, >=8-seat one-wave floor, run-15 route amendment). Claims: C1 calibration improved (independent replication of the frozen sweep rule over 44bc941a bytes: pointers=233, unresolved 0, stale 0; the 18-arm literal 1 at entering -> 0; committed receipt C1=met row_tally=19 live_tally=19 at 97ce0c96), C2 operability improved (evidence-verified: entering survivors=2 -> landed survivors=0 killed=6 total=6 unmutated=green; one +16-line hunk inside count-c2.py selfcheck adding three arms; six mutant anchors present at tip; harness not executed), C3 coverage improved (independent census present 55->56, named 14->56, missing 41->0, extra 0; PROVINCE +67/-0). No axis harmed: six scores byte-unchanged 6/7/5/5/5/6; battery 13/13 rc 0 evidence-read. Discernment spot-check agrees on the S595 admit (pin sha 28ea1f16... = 613 lines/43884 bytes, live fetch byte-identical, 22-word quote at :121) and on two reject-class decisions (D79-3 pointer premise refuted with MANIFEST rounds[398]; r79 prose before-values 3/6 and 15/55 rejected for measured 2 and 14); source gate admit-only (named weakness). Trends: expansion/quality/discernment improved. Routed to r81 (status-neutral): D80-1 SCORECARD Round-80 after cells still PENDING at the landed bytes; D80-2 capabilities row pointers=232 vs landed 233 and 'integration re-run pending' wording in SCORECARD/SKILL row 14; D80-3 contract claim-table shorthand (1->0, 3-of-6, 15-of-55) vs the predicates and P-C1's unimplementable entering conjunct (reviewer HIGH-2); D80-4 report cites 'final tip 97ce0c96' while lane HEAD is 44bc941a (receipt measured at 97ce0c96; later commits evidence-only). Operator note: SHONEN boxes are author-asserted [~] only; promotion remains operator-owned; no mint/promotion this round. Fleet .scratch/ and the after file are operator/orchestrator state, not this lane's.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
