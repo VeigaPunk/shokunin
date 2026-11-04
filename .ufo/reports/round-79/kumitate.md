@@ -5,9 +5,10 @@ block. Lane repo `/home/vgpnk/Projects/shokunin/kumitate-shokunin`; base tip
 `5019803b4e451094cf58c555408ea37490cbc07a`; scaffolding `ba940b512d980218b11ed6f34ac2f304c01287ee`;
 pre-data amendments `8a733ab09c51594d64c1bc3b77a17d9d9172f8fd` (Amendment 2 + corrected C2 arm + r78 lesson
 erratum) and `83f6815f184737d4fa4c1a02a40a7e8c841f5015` (wave payload). **Measured work revision
-`357e4e730574486fc1fd77d037768296da6be685`; lane HEAD `32620ef5c0c9c95bd6a5ee85540435f3c374f4a8`**
-(the close receipts are stamped with the measured revision in the second commit; `git ls-remote origin
-refs/heads/master` prints the HEAD before this report is filed).
+`357e4e730574486fc1fd77d037768296da6be685`; lane HEAD `0fb019a30203bfb5ecf444557d612bf3c197ffd9`**
+(the close receipts are stamped with the measured revision in a second commit; a third commit appends the
+lesson's counter erratum with the final close values; `git ls-remote origin refs/heads/master` printed the
+HEAD before this report was filed).
 
 ## Work performed
 
@@ -80,7 +81,8 @@ Work items (each with its evidence):
 - **`scripts/omp-census.mjs`** — `--compare` transient sidecars (`transient=<n>`), 10 new cases (89).
 - **`corpus/knowledge/composite-score-compensability.md`**, **`corpus/knowledge/report-evidence-pointers.md`**
   — new entries; **`corpus/SOURCES.md`** — S229–S232 (+ search log); **`corpus/README.md`** + pin — three
-  rows; **`corpus/lessons/round-79.md`** — the round lesson; **`corpus/lessons/round-78.md`** — erratum;
+  rows; **`corpus/lessons/round-79.md`** — the round lesson and its append-only counter erratum (final close values
+  A=884, C2=194, map 194, checklists 39/39); **`corpus/lessons/round-78.md`** — erratum;
   **`corpus/QUALITY.md`** — Q73; **`PROVINCE.md`** — the kotoba boundary; **`SKILL.md`**, **`SCORECARD.md`**,
   **`LOG.md`** — registration, claims, verdicts, record.
 - Every change is recorded in `LOG.md` round 79 and carried by the work commit cited in the
