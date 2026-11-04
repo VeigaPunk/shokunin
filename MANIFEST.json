@@ -44841,6 +44841,45 @@
    "notes": "Dispatch/complete digest (from .ufo/watchdog.log, mutable): 2026-11-04T09:42:58-03:00 launch kake round=82 pgid=756711 driver=hyaku-inline attempt=1; 2026-11-04T10:10:59-03:00 complete kake round=82; hyaku-inline attempt=1. Step-1: report by kake-shokunin <kake@shokunin.local> as 2e3fcc7f (10:10:09 -03), filed after the lane tip 9635bf01 (10:09:09 -03) and an ancestor of fleet HEAD; SHONEN heading with 4 box lines ([~][ ][~][~], no [x]); all 14 cited lane hashes and the fleet commit 7678247a exist and are ancestors; lane ahead=0/behind=0 clean, remote master=9635bf01; prompt lines 1-140 render templates/round-prompt.md verbatim (single diff: the <lane-repo> bracket rendered as the absolute path), addenda 6-7 present. Claims: C1 calibration (round-81 D1-D8 queue closes; the closure re-derived all eight state conjuncts at the tip, base/junk controls red, counter selftest 11/11 receipt) verifies; C2 freshness (second dated capture plus the offline drift gate; the closure independently reproduced receipts_ok, order, floor and the record surfaces=3 identical=0 changed=3 added=0 removed=0; tool network-free; selftests 11/11, 9/9, 14/14 receipts) verifies. No axis harmed (SCORECARD.md additions only). Defects (status-neutral): settled attack share 0/7 (0/4 attack seats; 6/13 seats empty) against the run-15 >=25% floor; report wave-prose sizes are character counts mislabelled B (4,871/7,888/6,392/6,664/3,811 vs UTF-8 4,899/7,902/6,402/6,669/3,813 in w1-accounting.json); the instrument-receipt rebind (30/30 bound, base 1 stale + 4 unbound) is stated with no committed --check receipt; D3's erratum names the four superseded statements by category, not their text; C1/C2 mutation survivors (2+3) stay routed to r83; the report lists the merge/kake package under Gate rejects while the lesson's rejects are two S455 anchor spans. SHONEN: boxes 1/3/4 [~] author-side, box 2 [ ] declared gap - no promotion evidence this round (operator-owned). No promotions, no mints.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 59,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 59,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 59
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:verifiability": "improved",
+    "coverage": "improved",
+    "depth:density": "unchanged",
+    "calibration": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-59/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-59-verifier-spotcheck.md@cdeea55bea09ed08765d3c3d3a56f23db44e66f4",
+    "rechecks": "C1 evidence-verified from committed receipts (gate not executed) and byte-level facts re-measured (instrument sha base dc0904->tip 32e1cdd, P1-P8 base 8/8 execute -> landed 8/8 exit=2 markers=0, CTRL exit=0 derived=35, selftest 6->14/0, mutbat 2/2, ledger 35/35, red fixture stale); C2 re-measured (SOURCES 91->92, S092 NF=13 A mined, knowledge 77->78, knowledge-expected 78 sorted, README F40 0->1, lead sha 3ed4f54 unchanged, capture sha 048937306e 6371 bytes) with instrument-only terms evidence-verified from committed receipts; SCORECARD diff additions-only, no axis score decreased; 3 independent read-only seats reproduced the counts; census validate --root exit 0."
+   },
+   "commit": "kasegi-shokunin@c81eef717ee72f6911b0155992e52299403a56da",
+   "closed_at": "2026-11-04T13:23:58Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 2026-11-03T18:28:46-03:00 launch kasegi round=59 pgid=2917378 driver=hyaku-inline attempt=1; 2026-11-04T10:09:37-03:00 complete kasegi round=59; hyaku-inline attempt=1. Report committed by lane identity (fleet 5cc89e0) after lane tip c81eef7; SHONEN heading 1x with 4 [~], no [x]; all five cited lane commits are ancestors of refs/heads/master; lane ahead=0 behind=0; only untracked driver w1.ready.dispatched markers (57/58/59). C1 (depth:verifiability, nominal per QUALITY R58, held 4) verifies on committed evidence: base 8/8 probes execute -> landed 8/8 exit=2 markers=0, CTRL admitted derived=35, selftest 6->14/0, mutbat 2/2, ledger 35/35, red fixture stale, candidate sha 32e1cdd... landed; the sibling gate was not executed (evidence-verified) and every byte-level fact was re-measured. C2 (coverage, held 8) verifies: SOURCES 91->92 (S092 NF=13, A, mined), knowledge 77->78, knowledge-expected 78 sorted, README F40 0->1, lead-line sha 3ed4f54 unchanged, capture 048937306e/6371 bytes; instrument-only closed/problem-rows/pass/binding terms evidence-verified. No axis harmed: SCORECARD additions only (0 deletion lines), no score decreased; depth:density unchanged (not re-measured, registry-table-only SKILL edit). Spotcheck (corpus/lessons/round-59-verifier-spotcheck.md@cdeea55): 1 admit + 3 rejects re-opened; 4/4 decisions agree (one wording scope). Trends improved/unchanged/improved. Routed defects for next round (10): (1) frozen C1 counting command not literal-runnable (relative instrument path; literal run flips CTRL to exit 2 - M59-11/R77); (2) capability derive-gate-chain-refusal announced at SCORECARD:2420 but no capabilities table row exists; (3) SCORECARD r59 calibration row stale counts (7 Mistakes rows vs 11; 'three' vs four/five criteria); (4) lesson:66 and report:74 'maximum 11 words' vs Q3=12 words (<=25 still holds); (5) SHONEN.md box 2 [ ] contradicts report [~] (file unchanged since r48); (6) report landed-change row 3 cites 15cd577 for w1-results.json (first lands c81eef7) and row 4 names the LOG Corrections bullet while e694478 sits in Wave-1 outcome (LOG:2599); (7) round-start census uncommitted and the committed base form is --file <scratch>, not --root ... kasegi; (8) SOURCES.md:141 lead still reads 'was not opened' while S092 is opened (bytes pinned this round); (9) Gate reject (a) wording 'no README text is locatable there' holds only after the instrument's script-stripping conversion (raw HTML carries it in the bootstrap script); (10) c1-lane-after-r59.txt header lane-HEAD=00b5357 with candidate 32e1cdd bytes. Template-level T1 (operator/scripts, not the lane): templates/round-prompt.md itself lacks the commit-hash citation rule and the lane write scope; the dispatched prompt carries both in hyaku section 6. SHONEN boxes look fully checkable by a non-author reviewer; promotion is operator-owned. Promotions: none. Minted: none.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
