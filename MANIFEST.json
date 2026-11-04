@@ -44492,6 +44492,49 @@
    "notes": "Dispatch/complete digest (from .ufo/watchdog.log, mutable): 2026-11-04T08:36:14-03:00 launch kake round=81 pgid=3344453 driver=hyaku-inline attempt=1; 2026-11-04T09:28:26-03:00 complete kake round=81; hyaku-inline attempt=1. Step-1: report filed by kake-shokunin cb02b705 09:27:24 and amended in-place by 7678247a (committer 09:34:52, after the driver's complete) instead of an appended erratum naming the superseded text - filed-report-record defect D3; the amendment corrects the lane-tip citation to ddd38022 and adds the dead-seat disclosure. Lane branch advanced after filing: 2b46f5c4 (report carrier) -> ddd38022 (round-81 disclosure, 09:34:35) -> edd6fb08 (this spot-check); remote master agrees, ahead=0, tree clean. Claims: C1 calibration verifies (open=6 at 2e119255 -> 0 at 2b46f5c4/498a0969, all six conditions re-derived from bytes at ddd38022; R80-5 from the committed gate receipt, gate not executed). C2 operability verifies (receipts, declared-surface equality, byte-exact audit stdout). Scores held (calibration 2, operability 10, freshness 10); SCORECARD additive apart from one in-place line inside the new round-81 block. Routed defects for round 82: D1 report+SCORECARD assert S433 recheck 180d->2027-05-03 and a used-by addition, but the committed S433 row is byte-identical to base (SOURCES diff is +1 S454 line); D2 both after-values are cited as measured at 2b46f5c4 while after-c1-final/after-c2-final record revision=498a0969 (2b46f5c4 only adds the receipts); D3 filed report bytes rewritten in place; D4 the MutC progress-log byte count 3,771 contradicts seat-failures.json output_bytes=3801 (report+lesson); D5 lesson Settlement names two non-existent receipts (after-c81-defect-queue.txt, after-c81-capture-audit.txt); D6 QUALITY round-81 criterion cites c81-selftest-c2.txt as 18/18 while the receipt reads 22/22 (lesson Claims same, partly self-corrected); D7 the 'ledger green at the tip C1v2 revision=5ae1f32b events=40 met=true' claim has no committed receipt; D8 R80-1's ask to correct the round-80 report/lesson :201 pointers is only partly discharged (frozen condition closes; no fleet erratum). SHONEN: 4 boxes [~][ ][~][~], no [x]; box 2's ledger gap unchanged, so promotion is not available to a non-author and stays operator-owned. Trends: expansion unchanged (67 knowledge md at base and tip), quality improved, discernment improved; the spot-check axis table agrees with this entry. No tool installed or upgraded; no pacman transaction.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 81,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 81,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 81
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "append-debt"
+   ],
+   "report": ".ufo/reports/round-81/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-81-verifier-spotcheck.md@aaf974dbd3b6adb2ef914dc7293cda92b4e05551",
+    "rechecks": "Re-measured: C1's six sealed facts at a2af1af5 from committed SCORECARD/LOG blobs and the round-80 receipts (F1 pass=9->11, F2 pass=6->12, F3 pass=9->11, F4 pass=9->11, F5 round-79->80, F6 round-79->80 closure, tip-bound) plus the sixth+seventh repairs and the appended SCORECARD/LOG correction markers; C2's registry/append-only-late.tsv (88 data rows, sum counts 88, 10 distinct (commit,file) keys, 0 duplicate keys, 88 base findings over the same 10 keys, 9 distinct event commits all strict ancestors of register-introduction f6cb5303); population union 53 frozen-accepted + 10 late = 63 events, 0 overlap; census 297->302 (A 282->287, B 11, C 4, mined 267->271, queued 8, rejected 22->23) and sources-census validate exit 0. Evidence-verified (counters not executed): SELFRECORD_R80 claims=6 mismatches=0 corrected=6 unbacked=0 exit 0 and selftest pass=13 fail=0 at rev 2880af05; the cutoff probe post-introduction refusal exit 1; the gate receipt at e20d89c7 with arms=11 failed=0 uncommitted=0, arm 8 APPEND_DEBT late=10 unaccepted=0, arm 11 APPEND_DEBT_SELFTEST pass=22 fail=0 (tool/register byte-identical to the tip). Source re-opens: Ollama openai-compatibility.mdx HTTP 200 25472 B sha256 44071a12...60cd5 quote at 294-295; vLLM quickstart HTTP 200 15859 B sha256 93e8d32d...b54 quote line 121; git-merge-base --is-ancestor quote verbatim."
+   },
+   "commit": "kama-shokunin@1b64f66ddea89c57b71165eacd14b0e1d6f24e11",
+   "closed_at": "2026-11-04T12:44:12Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-04T08:35:11-03:00 launch kama round=81 pgid=3277606 driver=hyaku-inline attempt=1; 2026-11-04T09:27:23-03:00 complete kama round=81; hyaku-inline attempt=1. Report 013c49e9 by kama-shokunin (committer 09:26:45 after the lane tip 09:26:16, so it landed last); lane tip 1b64f66d ahead=0, remote-verified; working tree clean; prompt 704 lines carrying the round-level and five child-lane items. Claims verified non-author; trends improved. Status-neutral defects routed: R81V1 SCORECARD r81 C2 row says late=10 pending=1 / selftest pass=16 where its cited receipts print pending=4 / pass=22 (LOG's claim that the SCORECARD rows carry the new tally is false); R81V2 debt-selftest.out and battery.out are labelled rev 2880af05, whose tree has the 16-arm tool (22 arms require 017c34ca; the e20d89c7 gate receipt is the binding evidence); R81V3 LOG r81 frontier says 297->301 vs the actual 302; R81V4 SKILL.md:309 pre-report-gate registry row still says ten arms / arm 8 round75-append-accepted / arms=10 while the gate prints arms=11 with arm 11 round81-instruments; R81V5 report W04 inventory says the warning set does not grow, but S559 and S562 add two W04 instances (category unchanged, validate exit 0); R81V6 report Controls cites pass=16 and the mutation-battery pointer names the lesson's Hardening notes, which do not record it; R81V7 '25->26 selftest cases' unsupported (26 cases on both sides; one expectation changed); R81V8 Landed-changes table omits 0db009cd/3f2c6ffd/49707341/0821da6a/2880af05 and the Before->after revision cells cite paths not revisions. SHONEN: four [~] lines; boxes 2 and 4 look mechanically checkable from receipts, 1 and 3 retain judgement, so not fully checkable by a non-author; promotion stays operator-owned. No promotion, no mint, no sibling touched; frozen register/counter/round-80 receipts untouched; KQ133's number-drift class recurs in this round's own record (R81V1/R81V3) and is routed.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
