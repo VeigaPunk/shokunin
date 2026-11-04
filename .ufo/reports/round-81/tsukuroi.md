@@ -104,7 +104,10 @@ admitted by them.
 | `SCORECARD.md` "Round 81 — measured outcome", `LOG.md` measured-outcome block, `after/measurements.txt` | the same Round81 entry | `c63511b4` |
 | `SKILL.md` "Counter-attack scoreboard — round 81" | Round81 "Wave" | `4ffcbbd5` |
 
-Landed commits: `c6fd9949` → `c63511b4` → `4ffcbbd5` (final tip, pushed).
+Landed commits: `c6fd9949` → `9e723336` (instrument registration) → `c63511b4` (LOG
+measured-outcome block) → `53d1cece` (delivered-tip re-measurement) → `4ffcbbd5` (counter-attack
+scoreboard; final tip, pushed). The two interleaved pairs come from the concurrent-writer incident
+disclosed under "Round shape and seats".
 
 ## Before → after measurements
 
