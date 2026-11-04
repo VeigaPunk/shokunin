@@ -43729,6 +43729,54 @@
    "notes": "dispatch: 2026-11-04T05:28:21-03:00 launch tameshi round=81 pgid=3340123 driver=hyaku-inline attempt=1; 2026-11-04T06:18:14-03:00 complete tameshi round=81; hyaku-inline attempt=1. All three claims verify; admitted; no axis harmed. Conformance defects (status-neutral): (1) the report's manifest-binding equality sentence is false at the measured commit (manifest blob c8372447 at the declaration vs d92d6bea at fc7ccfb7: D2 span extended + re-indent, row set unchanged) and the cited receipt measures e27f28e8; (2) the SCORECARD measured-claims table cites c1-after.txt/c2-after.txt (recorded tips e27f28e8; C1 D2 detail tokens-in-receipt) under fc7ccfb7 measured-commit cells (tip receipts are final/c1-sweep.txt tokens-in-span-and-receipt and final/c2-pins.txt); (3) the 're-derived at the lane tip ccef5f1d' sentence has no committed receipt; (4) the Stale-lane line omits the mission's 49m53s (~6.6 tick) age and progressing/silent. Routed to round 82: --manifest-rev (D-CN3); harden tree-paths (tree accepted) and tree-bytes (mode-blind symlink); C3 digest-region limits and defect-bind's own text unpinned; D-CN1 selftest/open-register exit-code collision; D-CN4 pin naming; capability rows placed in a round section instead of the live ## Capabilities table. Wave: 13 seats, 11 reports, 2 dead (T81W1E4 mid-clone, T81W1SN1 empty output). Operator note: SHONEN boxes 1/2/4 are checkable from committed artifacts by a non-author; box 3's plan-only rebuild witnesses are lane-dispatched seats, so an independent cold-read stays operator-side; no [x] written, promotion operator-owned. Lane pushed at ccef5f1d; spot-check landed 4dfc3181.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 80,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 80,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 80
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage:omp": "improved",
+    "coverage": "unchanged",
+    "coverage:script-layer": "unchanged",
+    "coverage:runtime-layer": "unchanged",
+    "coverage:kimi-layer": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "spotcheck-adopt v3: `SPOTCHECK_COVERAGE:`/`MAP:` two readings with the spotcheck set exit-bearing and the map disclosed, delta-scoped `--adopt` on a red map, `NONE` on an empty set, oracle-first `--predict`, no-map-section refusal, symlink diagnosis, `sourceRead` in JSON; selftest 26 → 34.",
+    "proxy-check snapshot-default O terms: `<self>/.ufo/pins/omp-shape.json` is the default O source (`source=snapshot`, `sourceRead`), `--omp-live` is the exclusive live opt-in, an absent default receipt fails closed `OMP_SHAPE_NOT_FOUND`; proxy selftest 159 → 163."
+   ],
+   "report": ".ufo/reports/round-80/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-80-verifier-spotcheck.md@77c7a8b3fe7f3cebe681065da283de0ae38ddb5b",
+    "rechecks": "C1/C2 evidence-verified against committed frozen counters, controls and gate receipts (no gate re-run as the verdict). C1: close 13/13 at rev=6cbd6750 vs base 6/13 and constant-CLEAN stub 3/13; probe byte-frozen c6a7ebd3→01d12789; split tokens 0→15, folded token 7→0; selftest 26→34; live spotcheck set 46, MAP CLEAN. C2: close 12/12 vs base 4/12 and constant-JSON stub 1/12; --omp-live 0→9 and sourceRead 0→5 in the source; receipt 65 entries, sha256 84e41b9f… = pin.omp-shape; proxy MATCH source=snapshot, O=65, coverage:omp=10; selftest 159→163. Plain counts re-run: A=886, C=39 (operability 9); README corpus files 195→198 (close map 198/198/198); SOURCES 171→173, tier A 146→147, C 9→10; spotcheck files 46. No-harm receipts: proxy MATCH, checklists 39/39, census exit 0 (six W04), claims 19/19, anchor-truth CLEAN, kimi census CLEAN. Spot-check re-opened S119 (capture sha 7545c7b9…), S234 (b155ff6d…), S235 (bca76d8c…) and the new S234 row: agree with both admits and the reject; S119's recorded 21-word count is 19 (routed R80-5)."
+   },
+   "commit": "kumitate-shokunin@01d127890b46e12a596af99b799177efb8ffea37",
+   "closed_at": "2026-11-04T09:39:07Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 2026-11-04T05:35:39-03:00 launch kumitate round=80 pgid=3488582 driver=hyaku-inline attempt=1; 2026-11-04T06:25:44-03:00 complete kumitate round=80; hyaku-inline attempt=1. Lane 1968689f → 01d12789 (8 commits), pushed ahead=0, clean; report 35b76d79 by kumitate-shokunin <kumitate@shokunin.local> at 06:25:12 -03, after lane tip 06:24:50 and an ancestor of fleet master/main e9594e33. Prompt 704 lines renders templates/round-prompt.md (140) substitution-only + §6 addendum; all five child-lane items, the L2 floor, commit-then-push, push scope and L0 present; MISSION.md has no per-lane route pin. Wave: one v1 wave, 13 seats (executor 3, scribe 2, scout 2, reviewer 2, connector 1, critic 1, mutation-tester 1, revenger 1; planner = L1), attack 4/13 = 31 %, 13/13 reports, 0 dead, inside the 8–16 band. Claims evidence-verified: C1 counter 13/13 vs base 6/13, stub 3/13, selftest 26→34, live spotchecks=46/MAP CLEAN; C2 counter 12/12 vs base 4/12, stub 1/12, proxy MATCH source=snapshot, O=65, receipt sha 84e41b9f… = pin, selftest 159→163. Plain counts: A=886, C=39, operability 9; map 198/198/198; SOURCES 171→173 (A 146→147, C 9→10); census exit 0 (six W04). No owned axis harmed; SCORECARD diff only stanza/pins/two rows/planned/correction. Conformance defects routed R80-1..R80-12: dead `open/checklists-scaffold.txt` pointer and uncommitted scaffolding 39/39; lesson map 197 vs receipt 198; lesson C1 base '5 of 13 pass' vs 6; `open/conflation.txt` mis-cited for REFUSED_ORACLE (arm 08 holds it); S119 quote 21 vs 19 words (repeat r79 D4); SKILL spotcheck-adopt row tail still v1/16 cases and item 745 28-case suite vs final 34; unsupported S117/S118 `used-by` extensions to `two-reading-verdicts.md` (entry cites only S119) and unlogged; LOG selftest 26→28 vs final 34; report 'final tip' vs rev=6cbd6750; base receipts omit exit codes; adoption stdout and source-dupes red-before quoted not committed. SHONEN: 4 [~], no [x]; boxes look checkable in principle, promotion operator-owned. The non-author spotcheck at 77c7a8b3 adds the 10th spotcheck recurrence (`round-80-verifier-spotcheck.md`) for round 81 to adopt. No promotions, no mints.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
