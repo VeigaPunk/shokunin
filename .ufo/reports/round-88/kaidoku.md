@@ -117,7 +117,7 @@ Lane tip `a242fff3fe339ffae31d83960062609a784b97c4` is on `origin/main` (`ls-rem
 - Before: base `0cf8e324` gives `blocks 27, resolved 27, met_target true` (`pre/c2-depth-at-base.json`); the
   junk-block control gives `blocks 29, resolved 27`, exit 1 (`pre/c2-control-junk-blocks.json`).
 - After: `{"blocks": 28, "met_target": true, "resolved": 28, "unresolved": []}`, exit 0. Matrix evidence for
-  the block's content: 68 cells, 63 effective, 0 unclassified, 10 labels
+  the block's content: 68 cells, 63 effective, 10 labels (`other-refusal` at 0), 0 unclassified
   (`l1/scores/c2-matrix-at-declaration.json`).
 - **Verdict: met under the frozen predicate; falsified as a *discriminating* measure.** `met_target` is
   `not unresolved`, so the counter exits 0 at base with 27 blocks and a one-line citation-only block scores
@@ -167,7 +167,7 @@ Census command, run at round start and at round end:
 
 ## SHONEN
 
-[~] SKILL.md contains real decision tables, error patterns, checklists, cited sources — craft block 28 (17-row refusal table) plus the round-88 decision-table row, `SKILL.md` at `a14f0a42`; depth counter resolves 28 of 28 blocks at `a242fff3`.
+[~] SKILL.md contains real decision tables, error patterns, checklists, cited sources — craft block 28 (9-row refusal table over a 68-cell matrix) plus the round-88 decision-table row, `SKILL.md` at `a14f0a42`; depth counter resolves 28 of 28 blocks at `a242fff3`.
 [~] At least one end-to-end domain task executed and logged in LOG.md — pack → zero `sz_cpr` → repair → `upx -t`/`upx -d` to the carrier pin → REA inventory 167/99/184/1268; `l1/scores/c1-at-5cd1b164.json`, LOG `## 2026-11-04 — round 88`.
 [~] Instructions executable by an agent without oral context — seven wave seats reproduced the predicates and the 4-case/11-case/13-case/7-case selftests pass from the committed plan and tools alone (`.ufo/waves/round-88/w1/`).
 [~] No cross-domain bleed (PROVINCE.md still accurate) — ConnectorR88's cross-lane scan found no sibling lane holding this ground (`w1/ConnectorR88/links.md`); PROVINCE's Core row now cites the measured receipt.
