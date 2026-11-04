@@ -208,3 +208,15 @@ Census command, run at round start and round end from the fleet root:
   outputs being present and every seat's report file existing in `w1/`.
 - **Earlier attempt:** `.ufo/watchdog.log` shows no `lane-dead-no-report kaidoku round=66` line; no inherited
   uncommitted outputs existed at round start.
+
+## Erratum — appended after the filed bytes (PROTOCOL corrections clause, 2026-11-03)
+
+- The **Landed changes** table's `5de8a1de` row omits one change that commit carries: the **round-66
+  SCORECARD section** (the claims table with both frozen predicates, the receipts paragraph, the two mutation
+  survivors, the reviewer/sentinel/connector/sources paragraphs, the wave and trend lines, and the `planned`
+  field) is in `5de8a1de`, pointed to by the LOG entry the same row cites
+  (`## 2026-11-03 — round 66, KaidokuR66 — landing`, whose files-touched line names "SCORECARD.md (the coverage
+  row head and the round-66 section)"). Check: `git -C kaidoku-shokunin show --stat 5de8a1de -- SCORECARD.md`
+  lists the file, and `git -C kaidoku-shokunin show 5de8a1de:SCORECARD.md | grep -c '^## 2026-11-03 — round 66'`
+  prints `1`. The `02d4880b` row is accurate as filed (the single-fraction row rewrite, the lesson, the wave
+  evidence and the after-arm receipts). No other row changes.
