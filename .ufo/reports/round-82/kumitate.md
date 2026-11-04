@@ -276,3 +276,21 @@ disclosed:
   validator↔policy), it writes no dispatch file (the operator does), it copies `wave` as a free label,
   it bands on spawns + resumes, and the gate's `--agents` shape does not match the validator's
   `.ufo/waves/round-82/w1/swarm-registry.json` shape.
+
+## Erratum (append-only, same round; supersedes nothing, adds one row)
+
+The **Landed changes** table above stops at the close receipt set. One further lane commit carries the
+wave's evidence and the integration repairs, and is the lane tip this report cites:
+
+| commit | what | LOG entry |
+|---|---|---|
+| `67be18f2` | wave evidence (`w1/*.md` 11 reports, `w1-results.json` 14 settled, the gate-battery receipts) plus the two `SCORECARD.md` move-log rows, the `## Round 83 — pre-registration` block, the `## Planned` pointer that clears `SCORECARD_PLAN_MISSING`, and the lesson's critic-measured limits | `LOG.md` §Round 82 |
+
+Two record notes on the text above: (a) the `K82ExecGates` battery's one red —
+`ROUND_GATE … SCORECARD_ROW_MISSING` — is what the move-log rows in `67be18f2` repair; the gate reads
+`ROUND_GATE: CLEAN (round=82 lane=kumitate checks=10 errors=0 warnings=0)` after it, and
+`node scripts/round-gate.mjs --close` still fails closed on this jj-colocated lane with
+`UPSTREAM_MISSING … HEAD does not point to a branch` (a host condition of the detached HEAD, not a
+round defect; the registered checklist item runs the bare form). (b) The filed report's own
+`report-receipt-diff` run at the cited tip reads
+`REPORT_RECEIPT: CLEAN (round=82 rev=67be18f2…)` (the byte count is omitted: this erratum changes the report's own bytes, so any count quoted here would not reproduce).
