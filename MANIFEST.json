@@ -45222,6 +45222,49 @@
    "notes": "Digest: 2026-11-04T10:24:49-03:00 launch kasegi round=60 pgid=2651065 driver=hyaku-inline attempt=1; 2026-11-04T10:55:40-03:00 complete kasegi round=60; hyaku-inline attempt=1 (watchdog.log lines 2358/2368 at reading). Report committed by kasegi-shokunin <kasegi@shokunin.local> f854d460b5d562de594e7933fae55665df6e0603, ancestor of origin/master, committer 10:55:07-03 after lane tip e63ba11 10:54:07-03; report carries the kasegi r60 L0 line. Lane commits 66e6241 freeze, 7f7dd26 implementation, b8c77fb wave spec/dispatch, fb6a928 lesson, 228118a SCORECARD/LOG, e63ba11 tip are all ancestors of refs/heads/master; jj-lane state ahead=0 behind=0; the only untracked files are the driver w1.ready.dispatched markers for rounds 57/58/59/60, all named in the report. SHONEN heading 1x with four lines ([~],[ ],[~],[~]) matching SHONEN.md, no [x]; prompt is the template rendering (only the concrete workdir substitution) plus the hyaku par.6 addendum, L2 floor 8 = MISSION.md:55, axes = shokunin.conf:46. C1 (depth:verifiability, nominal per QUALITY R58, held 4) verifies: Q1-Q7 refused on landed bytes vs execute/admitted on base, both controls admitted with derived 35/1, residual python traversal named open, selftest 20/0, mutbat 2/2, ledger 35/35 re-derived by the judge, red fixture stale, R74 limb 0->1, digests exact. C2 (coverage, held 8) verifies: F41 on S093 admitted, frontier 40->41, registry 92->93, knowledge/expected 78->79, binding 75->76, 15 quotes <=25 words, capture sha 46f69d32 equal to the manifest, stale lead bullet corrected and logged old->new, live post re-opened 200/64812 bytes. Spot-check: S093 admit agrees; the 2024 Naptime-to-Big-Sleep reject agrees (flip wording loose); the DeepMind-404 reject is unprovable (no URL recorded anywhere). Axes: depth:verifiability improved, coverage improved, depth:density unchanged, calibration unchanged because the round's own records claim criteria R79/R80 that do not exist in QUALITY.md (QUALITY has R78/R81/R82) and SKILL cites a receipt that never existed; not harmed, no score regressed. Trends: expansion improved, quality unchanged, discernment improved (outside spot-check agrees; R78/R81/R82 land with lessons). capabilities_added records the table row formalized this round (first-working round 59). Routed defects D1-D8 for round 61 (full text in corpus/lessons/round-60-verifier-spotcheck.md par.6): D1 criteria ledger false claim R78-R80 in lesson/LOG/SCORECARD with dead M60-3/M60-6 captured-by pointers; D2 freeze-digests-r60.txt:1 instrument line stale (91b46e7f vs the pinned 35f7bcd3); D3 SKILL.md:1228 dead pointer to controls/c1-probes-lane-after-r60.txt; D4 base R74 limb-0 attributed to receipts that do not print it; D5 round-59 routed defect 9 claimed but no scoping sentence exists; D6 r60 Gate rejection (a) has no URL and its round-58-lesson pointer is false, rejection (b) flip loose; D7 SHONEN.md box 2 carries four evidence lines (canonical form allows one); D8 SCORECARD 'two new capability rows' overstatement. SHONEN box 2 stays honestly open; promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 84,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kotodama",
+   "lane_round": 84,
+   "lanes": {
+    "kotodama": "ok"
+   },
+   "lane_rounds": {
+    "kotodama": 84
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "operability": "improved",
+    "calibration": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "ordered sound-law applier — external ordered rule set over a segment-tokenised lexicon with per-change traces, a 37-check selftest and a committed 16-word/7-rule example reproduced byte-for-byte (19 changes, 7/7 rules fired), plus a 4-word held-out derivation"
+   ],
+   "report": ".ufo/reports/round-84/kotodama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kotodama-shokunin/corpus/lessons/round-84-verifier-spotcheck.md@0d181583b18ae94e80a251ca5ab5f3055b16c74c",
+    "rechecks": "Step-1 pass: report 2be83db5 by kotodama-shokunin <kotodama@shokunin.local>, filed 10:58:16 -0300 after lane tip 12cc1699 (10:57:20), single commit; SHONEN heading 1 with 4 [~] lines and no [x]; cited 0f19297b, 35ffc1ce, a6e5b0ff, 7e6ee2f8, 12cc1699 and base 81499ee4 all exist and are ancestors of refs/heads/main under the lane identity; lane state ahead=0 behind=0 with remote 12cc1699 and empty git status (the verifier spotcheck 0d181583 is that tip's single child, one file, protocol identity); prompt lines 1-140 render templates/round-prompt.md verbatim (only the section-6 hyaku addendum appended, carrying write scope line 446, jj-helper discipline, report-last/pushed-hash citation line 514 and the SHONEN pre-report grep); 12-seat v1 wave dispatched 2026-11-04T10:28:24 with 3/12 attack seats (25%) and the planner L1-held per the standing validator constraint; freeze claims.json sha256 279a74dc91c0 identical at 7e6ee2f8 and the tip, the only post-freeze counter diff being the r3 junk expectation. Claims re-measured from committed bytes: D 257 → 258 knowledge files (0 owning basenames, 0 owning topic lines, 19 incidental lines / 11 files case-insensitive), entry 58,005 B / 15 sections / 6 decision rows / 44 single-id anchors over 25 ids all resolving at the tip, registry 837 → 842, S914-S917 mined and S918 rejected, 21 pre-existing rows changed only in used-by; O no sound-law path and no SOUNDLAWS byte and no examples/sound-laws at base → 26,941 B tool with 37 case() selftest registrations, 16 words / 7 rules / 16 expected rows / 19 trace rows, 77 registry rows in SKILL.md, and an independent segment applier written for this check reproduces expected.tsv and the four held-out words exactly (19 changes, 7/7 rules fired, 0 mismatches). Evidence-verified, not executed under the gate standard: LINT 0 findings, SELFTEST 37 checks, NEGATIVE 3 cases exit 2, REGISTRY 0/77/63/0 with 25 unrowed, both junk batteries, both do-nothing controls exit 2. Discernment spot-check: all five Gate sources fetched (S914, S915, S916, S917 admits and the S918 reject), byte counts and sha256 match every row, 4 agree / 0 disagree; row quotes are 18/19/17/14/21 words (≤25); census validate exits 0 with the lane's pre-existing W01/W04 only."
+   },
+   "commit": "kotodama-shokunin@12cc1699cd17fdbfa7dd3c6bfa688499d0438916",
+   "closed_at": "2026-11-04T14:11:17Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-11-04T10:16:32-03:00 launch kotodama round=84 pgid=1765261 driver=hyaku-inline attempt=1; 2026-11-04T10:59:04-03:00 complete kotodama round=84; hyaku-inline attempt=1. Conformance defects (status-neutral, routed as R84-C1..C9 in the spot-check): R84-C1 the report's quality: improved is unsupported — LEARNING.md's quality observable and the lane's own QUALITY 20 exclude instrument work and the report itself says no existing entry was re-verified, so quality is unchanged (r82/r83 precedent); R84-C2 the discernment bullet rests partly on dispositioned attack findings, barred by QUALITY 20 (R83-D5 recurrence); R84-C3 frozen claims.json claim D before-text says '19 times across 10 files' where the measured count is 19 lines / 11 files (the report and gap-census both say 11); R84-C4 the junk-o84 evidence pointer carries no path — the receipt is .ufo/waves/round-84/w1/stage/L1/junk-o84.txt, not under reports/round-84/telemetry/; R84-C5 stage/L1/heldout.summary.txt prints a guard message that does not exist in the landed tool (pre-landing variant), so the receipt is not reproducible with the landed bytes although the derivation is independently reproduced; R84-C6 the report says the lesson lists each row's old→new used-by cell, but the lesson lists the ids and the uniform delta; R84-C9 counter-revisions.md still marks both r1 and r2 '(current)'. Carried and still open: R83-D2 (SCORECARD.md round-83 depth row still reads 'institutional core 27 lines in 9 files' against the r83 spot-check's 14 lines / 16 matches in 9) and R83-D3 (corpus/lessons/round-83.md still names 21277b08 without naming 29f4b6a5 as the claims/counter freeze graded), neither corrected nor explained in round 84; the round-84 SCORECARD section's 'the round-83 verifier spot-check routed no defect to this round' is false against the r83 spot-check §6. Trends: expansion improved, quality unchanged (corrected from the report), discernment improved on the non-author spot-check agreement. No axis harmed; PROVINCE.md blob 313b182f identical base..tip. Routed items above are the lane's next-round queue; the round's own attacks (reviewer D1-D16, sentinel F1-F14, critic items 1-7, 5/5 assigned mutants) were dispositioned before the lands as described in the report.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
