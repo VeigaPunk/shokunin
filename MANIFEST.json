@@ -41314,6 +41314,50 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log): 2026-11-03T22:34:21-03:00 launch kama round=72 pgid=961041 driver=hyaku-inline attempt=1; 2026-11-03T23:08:57-03:00 complete kama round=72; hyaku-inline attempt=1. Lane tip db8b6fb0 pushed (ahead=0, porcelain clean); report e0c3d547 + erratum 2b6a7ad8 by kama-shokunin. Status-neutral defects routed to round 73: (1) report and SCORECARD C2 tally stale (942 lines/14 arms/pass=14) vs committed 961 lines/16 arms/pass=16 (EX02 receipt; LOG and lesson say 16) - the lesson-Mistake-4 class repeated; (2) C2's counting command over r72's own record is red (cited=138 bound=0 unbound=105 shifted=24 stale=9, exit 1, disclosed) - needs the fixture receipt role + path-only resolver with a red fixture first; KQ119's own-record condition is not met this round; (3) S175/S542 used-by old-to-new is logged in w1/SCR01SourceRow.md, not the round lesson as CORPUS rule 2 requires and the report claims; (4) the round lesson Gate has no REJECTED row with reason+flip, and the shoukuknow package root is absent at closure so its read/counts claim is unprovable (no adoption either way); (5) stale-lane line 'inside one driver tick' is not re-derivable (launch-to-complete 34m36s ~= 4.6 fleet ticks; the lane was progressing); (6) before-control receipts omit exit codes (exit re-derived from the committed control scripts); (7) disclosure unrestored 33-to-41 carries no committed receipt. Promotions: none. SHONEN boxes 1/2/4 look checkable by a non-author (pointers resolve); box 3 needs an independent execution review - promotion is operator-owned, no [x] written. No L0 filed this round; the kama r65 NTFS question remains open.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 77,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 77,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 77
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "Sitemap container and format coverage",
+    "Frozen container/format case matrix"
+   ],
+   "report": ".ufo/reports/round-77/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-77-verifier-spotcheck.md@fe50945399a386b48678b1f2051fdbe8a77b10bd",
+    "rechecks": "Step-1 clean: report by kake-shokunin (0d758465, filed 23:08:02 after tip bb2f8eda 23:07:01, in origin/master); 4 SHONEN boxes ([~],[ ],[~],[~]); 11/11 cited lane hashes ancestors of master; lane ahead=0 and clean; prompt §1–5 byte-identical to the rendered template plus §6/§7. C1 re-measured: I re-implemented the five measures over 3db64e09 blobs and reproduced every ledger observation (ids 77/77, tables 18, registry 105, checklist 1, rounds 56, receipts 98, missing 1, scripts 0 missing/112, invocations 0 missing/90, cross-lane 0/64 md); base has no ledger (unexamined=4 met=false), carrier evidenced=3 gap=1 mismatches=0 met=true; counter 2d66e5af, ledger 7962018b, checklist 6a166f19 = carrier and tip blobs; selftest 26/26 evidence-verified; carrier parses while 893b0f33 raises SyntaxError:988. C2 evidence-verified: 20 cases and 4 constants re-counted; tool f767af77 at carrier = receipt, base 914ebdee = round39_xml_only constant; matrix 2/20 -> 20/20 correct, constants 12/10/20/18; selftest 235->271 evidence-verified (+36 case declarations); base 2/20 re-derived from committed base-c2-matrix.json (only g04, s01 correct). Spot-check: 3 admits + 4 rejects re-opened, 7/7 agree; live re-fetches byte-identical to retained bytes; census kake ok, 186 rows, 17 W04. No axis harmed; trends improved."
+   },
+   "commit": "kake-shokunin@bb2f8edac2e1d0bc102545a0ffa56871410e21b0",
+   "closed_at": "2026-11-04T02:24:36Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (verbatim from .ufo/watchdog.log, mutable): 2026-11-03T22:31:48-03:00 launch kake round=77 pgid=939068 driver=hyaku-inline attempt=1 | 2026-11-03T23:08:54-03:00 complete kake round=77; hyaku-inline attempt=1. Lane a2cc5f51 -> bb2f8eda (pushed, ahead=0, worktree clean, remote refs/heads/master verified at closure); report fleet 0d758465 by kake-shokunin, contained in origin/master. Round shape: ONE v1 wave w1, 14 seats (scout 2, executor 4, scribe 2, reviewer 2, critic 1, mutation-tester 1, connector 1, sentinel 1), attack 4/14 = 28.6 %, 0 empty outputs. Claims: C1 calibration improved (SHONEN ledger counter), C2 operability improved (sitemap container/format capability); verdicts as recorded. Routed defects (status-neutral): (1) SentinelC F2-F4 are closed at the carried tool f767af77 but the report and the round-77 lesson list them as open and omit F7/F8 - correct append-only; (2) PROVINCE.md and corpus/README.md were not updated although the report says the frontier advanced - update both and correct the sentence; (3) SHONEN box 4 '0 of 63' should read 64 at the measured revision; (4) SentinelC's F1 closing hash 00cb4fb2 is uncommitted (carrier 2d66e5af) - re-cut or state the build split; (5) the round-level doc_quote_truth run has no committed receipt - commit it; (6) amendment 1 A1 cites stripped lines 177-180 while the retained file holds 353-357 - name one rendering. Open L0 kake|round-69 remains open and was routed around. Operator note: the four SHONEN boxes are checkable by a non-author from the repo (box 2 is a real gap: one LOG-named receipt absent); promotion is operator-owned and was not touched.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
