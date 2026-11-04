@@ -243,3 +243,11 @@ closure. This attempt ran as one continuous session (freeze → wave → integra
   violations are identical at entering and at the tip; the record tool's pinned commands have no
   timeout and are trusted argv.
 - `Assimilation: none` (above). No package row was appended.
+
+## Erratum (appended after the filed bytes, round 81)
+
+The **Work performed** bullet "No-harm gates" says the per-revision pin-check diff is "retained in
+the wave scratch receipt". Superseded: it is committed evidence, not scratch —
+`.ufo/waves/round-81/evidence/pin-check-diff-r81.txt` in the lane repo (commit `142998f5`), which
+carries both `PIN_CHECK=` lines and the per-pin diff. Nothing else in the filed text changes, and
+the filed commit `a64df598` is not rewritten.
