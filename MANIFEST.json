@@ -41688,6 +41688,43 @@
    "notes": "Dispatch digest (.ufo/watchdog.log): 2026-11-03T23:25:41-03:00 launch kake round=78 pgid=2614092 driver=hyaku-inline attempt=1; 2026-11-04T00:03:14-03:00 complete kake round=78; hyaku-inline attempt=1. Defects (status-neutral, routed to kake r79): R1 after-c1-population.txt first committed at carrier against scratch fixture revision 1729712e (absent from object store, growth_tolerated=2), re-cut at settle 406021c7 (growth_tolerated=4, blobs 5d1cddb8->f27ad4fa) with in-wave disclosure but no permanent-record correction row (LOG/lesson/SCORECARD/receipt-rewrites ledger silent); R2 selftest 9/9 receipts bind to freeze blob c2dc1cbf while landed counter is f0340b9e (case definitions untouched; landed-blob selftest receipt owed); R3 low: HOLD token into SCORECARD C1 row cell, drop hard-coded /fast/scratch c77 temp root, explicit exit= field in receipts, bind report 'Tool digest' wording to scripts/meta_robots_audit.py. R4 note: SHONEN boxes carry non-author-checkable evidence pointers, box 2 honest gap; promotion is operator-owned. Lane self-evaluation filed; no tools installed by the round or this closure; no other lane touched.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 73,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 73,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 73
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "calibration": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-73/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-73-verifier-spotcheck.md@b7910802549978404218937d4be6a75acae0e020",
+    "rechecks": "evidence-verified both lane-owned gates (never executed): C1 frozen rc1 vs amended rc0 on identical bytes, selftest 4/0; C2 base 106/MISMATCH2 vs tip 114/MISMATCH0, selftest arms4 red3, mutants 7/7, CALLER-PRESERVED. Re-measured directly: SOURCES 240→241 rows, SKILL registry rows 107→114 (+8−1), census rc0/25W04, commit ancestry, SCORECARD append-only diff, wave 16/16 seats."
+   },
+   "commit": "kengaku-shokunin@f669367c9051a1716a622e756325f4a48c360348",
+   "closed_at": "2026-11-04T03:18:33Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest: 2026-11-03T23:35:56-03:00 launch kengaku round=73 pgid=3549543 driver=hyaku-inline attempt=1; 2026-11-04T00:05:47-03:00 complete kengaku round=73; hyaku-inline attempt=1. Both original claims NOT ADMITTED as the lane itself ruled: C1 frozen plans_only predicate fails on the registered tree (a1-red-green rc1 vs rc0 same bytes), C2 frozen exact-106 denominator invalidated by C1's row additions; A1/A2 green is engineering repair, not retroactive scoring authority. No axis harmed (SCORECARD append-only, coverage 7→7, calibration 10→10). Discernment spot-check (non-author): AGREE with S249 admit (sha256/362493B/quote :2680 verified; live re-open HTTP 200 same bytes) and AGREE with reject of AST-parse⇒executable-validity inference (warning :2708-2715 verbatim in capture and live page); S249 row quote 24 words ≤25. No blocking defects; no routed defects. Superseded pointer: lesson's 'Outside spot-check: pending' is now this spotcheck file. Operator note: all four SHONEN boxes remain [~]; boxes 2 and 4 look fully checkable by a non-author reviewer (promotion is operator-owned).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
