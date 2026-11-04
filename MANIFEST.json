@@ -44317,6 +44317,49 @@
    "notes": "Dispatch/complete digest (mutable .ufo/watchdog.log, copied): 2026-11-04T07:45:55-03:00 launch kumitate round=82 pgid=1970144 driver=hyaku-inline attempt=1; 2026-11-04T08:41:45-03:00 complete kumitate round=82; hyaku-inline attempt=1. Lane 0c23c4fc -> 67be18f2 (freeze 97a63012, scaffolding 63b12695 + c4396021, work M 125287f3, close set 3355efb4, wave+integration 67be18f2), pushed ahead=0, clean; report filed by kumitate-shokunin and later appended by an erratum (append-only). C1 operability improved (ready-handoff v2: base 0/22, stub 6/22 -> 22/22; suite 34 -> 54; integer 9 held terminal under f_O) and C2 coverage:omp improved (compare age: base 6/13, stub 4/13 -> 13/13; suite 98 -> 105; integer 10 held); no owned axis harmed (harm matrix CLEAN 36 gates, PROVINCE/SHONEN unchanged, no axis row moved). Wave: 14 seats, attack 4/14, 11 reports, 3 dead seats (K82ReviewC1/K82MutCounters/K82Sentinel) named and never replaced. Routed defects for round 83 (status-neutral): R82-V1 knowledge entry handoff-binding-and-liveness.md verified-at quotes 53/53 (uncommitted worktree sha 4b91b204) where the shipped suite reads 54/54 (R81-4 recurrence; Q75 not applied to the round's own entry); R82-V2 open/spotcheck-map.txt stamps rev=0c23c4fc but its CLEAN 203/203/203 is the post-adoption worktree reading (0c23c4fc has 202 rows, no round-81 spotcheck row; R81-1 recurrence); R82-V3 capability rows under-describe the shipped instruments — ready-handoff row (SCORECARD.md:1969) still v1 and its evidence command is usage-invalid under v2 (--policy required), no round-82 capabilities note; R82-V4 S239 Gate quote is an edited rendering, not verbatim (decision stands); R82-V5 omp-census suite tally is one short (snapshot-v2-fields increments ran only on failure: 106 ok lines vs 'VERDICT: PASS (105 cases)'). Spotcheck adoption debt: this review adds the 12th spotcheck file (48 -> 49) for the lane to adopt in round 83. SHONEN boxes remain [~] with resolving pointers; promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 82,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kotodama",
+   "lane_round": 82,
+   "lanes": {
+    "kotodama": "ok"
+   },
+   "lane_rounds": {
+    "kotodama": 82
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "depth": "improved",
+    "calibration": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "registry recheck-cadence auditor"
+   ],
+   "report": ".ufo/reports/round-82/kotodama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kotodama-shokunin/corpus/lessons/round-82-verifier-spotcheck.md@3088bd7fe2a55a123214abba7008dcddf12b301c",
+    "rechecks": "All three claims re-measured by the closure judge on committed bytes: O tool selftest 13 checks and queue 0/18/14/827 (2026-11-04) and 813/0/14/827 (2027-11-01, 813 DUE lines) over the frozen registry blob (sha256 2f60171c), malformed committed fixture exit 2 labelled; D 255->256 knowledge files, 827->832 rows, entry 29,719 B with 22 single-id anchors, tools/check-cited-lines.py 0 findings; C criterion 30 0->1 and the EB11 Mint live/capture re-read re-derived (148,302 B/27 </p> and 122,055 B/28 </p>). Gates verified from committed receipts, never executed: ACCEPT-O-82 PASS legs=7/7 at 41c6de89 (r3 receipt, measured main 696835ee), ACCEPT-D-82 PASS legs=8/8 at 6c525ba4 (r4 receipt, config from 3bb408ae). No axis harmed: SCORECARD diff adds the round-82 section and one capability row, no score lowered; PROVINCE.md untouched. Spot-check 8/8 agree (S904/S905/S906/S907 admits re-opened, S908 reject re-opened, O tool re-run, C overturned ground re-measured, D entry re-read)."
+   },
+   "commit": "kotodama-shokunin@1d650c8c321607b65a25e5f916173f3106911ff1",
+   "closed_at": "2026-11-04T11:58:17Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 2026-11-04T08:01:45-03:00 launch kotodama round=82 pgid=2411466 driver=hyaku-inline attempt=1; 2026-11-04T08:48:32-03:00 complete kotodama round=82; hyaku-inline attempt=1. Conformance ok: report b65e613b by kotodama-shokunin, 35 s after lane tip 1d650c8c; SHONEN heading with four [~] boxes; 13/13 cited lane commits ancestral to main; jj-lane state ahead=0, porcelain empty (pushed); prompt 9114dbc6 carries the template contract and the five child-lane items; one v1 wave of 14 seats (4/14 attack = 29%, one connector), 14/14 settled. Verifier spot-check landed 3088bd7f (protocol identity, pushed). Routed defects (status-neutral, lane to fix next round): (1) reports/round-82/counter-revisions.md is 0 bytes at HEAD while report:51, SCORECARD and the lesson cite it as the counter-revision record -- land the record or a superseding record; (2) report R82-M2 and lesson R82-M2 say 'RECHECK-ERROR line 7' while the committed probe/fixture print line 5 -- append a named erratum; (3) accept-o82/accept-d82 have no rows at the SKILL.md '## Gates and probes' registry home (last accept rows accept-c-75/accept-ca-75; standing gap rounds 76-82) -- Gate-standard registry duty; (4) the lesson '## Gate' does not record per-row URL + access date (CORPUS rule 1; quotes/locations are present); (5) S908 row shape: teaches opens lowercase 'rejected:' and the anchor cell names no chapter/page (chapter III only in reject-golden-bough.txt); (6) committed receipts cite /fast/scratch paths (fixtures committed, literal commands do not resolve at closure); (7) claim O before-wording 'nothing read the registry's recheck cells' is broader than its sweeps (base tools bind the cell and ignore it) -- the demonstrated capability is due-date derivation, which stands. SHONEN: all four boxes [~] with resolvable pointers; boxes 2-4 look checkable by a non-author, box 1 pointers resolve at SKILL.md:20/:505/:564; promotion is operator-owned, no [x] written.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
