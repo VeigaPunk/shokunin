@@ -42538,6 +42538,49 @@
    "notes": "Dispatch/complete digest (mutable .ufo/watchdog.log, copied): 2026-11-04T02:23:41-03:00 launch kengaku round=77 pgid=3391919 driver=hyaku-inline attempt=1; 2026-11-04T02:46:03-03:00 complete kengaku round=77; hyaku-inline attempt=1. Conformance defects (status-neutral): D1 high — the three R76-V7 rerun receipts (rerun-r51-c1/r75-c1/routed-open, LANE_TIP 9ebb8ed1, WORKTREE dirty) do not reproduce their verdicts at the stamp: at 9ebb8ed1 SF14.count_claim=244 while SOURCES=245, so R51 prints NUMBER-DRIFT at that tip, and round-77.md is unindexed there, so R75 would fail too; V7 as frozen passes on ancestor+TOOL_SHA+predicate only — re-mint at the fix commit and require WORKTREE clean or re-derive the predicate. D2 medium — round-77 battery receipts stamp pre-fix LANE_TIPs: C1 batteries at 51ffc14f with TOOL_SHA a4777acf (tool at that commit = 5a507c08), C2 batteries at 6f0c7ad9 with 97166dac (tool there = 52419b0b); WORKTREE dirty discloses it but the digest does not recompute at the named tip. D3 low — the SCORECARD round-77 rows say the after receipts are 'stamped d181e16b'; the committed receipts and the report say 4f2ff9be. D4 low — 'Other gates at the final tip' rest on receipts measured at 9ebb8ed1, and routed_open's total=93 has no at-tip receipt (re-derived true by me: 93/31/1/59/2). D5 low — c1-before stamps WORKTREE clean although the C1 counter cannot exist at 07c97fcd; the cleanliness check ignores untracked files. D6 pre-existing — SHONEN.md box-4 pointer PROVINCE.md:129 is stale at base and at tip (line 129 is a table separator); state_check MISMATCH P3c.box.4.pointer.1 predates the round. SHONEN: all four boxes look checkable by a non-author on this round's evidence (SKILL.md registry tables and cited sources; LOG.md Round 77 with two end-to-end counters; claims plan + receipts executable without oral context; PROVINCE.md §Round 77 refusals + connector matrix) — promotion stays operator-owned; no [x] was written. L0 carried unchanged: kengaku rounds 25/33/51/54/56/63/65/66/67/72/74/76. No tool installs.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 79,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 79,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 79
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "unchanged",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "improved",
+    "calibration": "improved",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "control-receipt binding guard (tools/mori-control-receipt.py): reads one receipt or a --dir of *.txt receipts, splits at '## ' sections, reports every section carrying a bare key=<integer> claim without a counting command line (CONTROL_RECEIPT / unbound / CONTROL_RECEIPT_SUMMARY, rc 0/1/2, stdout only); landed at blob sha 531d6b52 with a 19-arm selftest (19/0 rc 0), 7/7 mutants killed by the mutation seat, registered as SKILL registry row 13 with all eight fields, QUALITY 164, and a SCORECARD capabilities row; discharges the r78 routed D78-1 (witness: rc 1 over the r78 receipts naming controls-r78.txt + correction_marker_in_LOG_at_entering; rc 0 unbound=0 over the r79 receipts)"
+   ],
+   "report": ".ufo/reports/round-79/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-79-verifier-spotcheck.md@d58889220d3c6a18d461f2d31b5ab162ffef1e4f",
+    "rechecks": "C1 re-measured by the closure from the committed blob at d577b3d3: tool absent at entering (cat-file rc 128), selftest 19/0 rc 0, witness over the r78 evidence rc 1 naming controls-r78.txt and correction_marker_in_LOG_at_entering, after evidence rc 0 files=6 sections=27 claims=89 unbound=0, blob sha 531d6b524635. C2 re-derived independently from MANIFEST.json (jq per-axis max of admitted improved/harmed mori rounds <=78: coverage 56, operability 78, depth 76, freshness 78, calibration 78, adjacency 19; 46 admitted rows; 0 harmed) and the frozen counter reproduces 5 mismatches at 84c6cbc3 -> 0 at d577b3d3. C3 re-measured: rows 366->367 (malformed 0), pin sha256 aeb52adb3279d5f23dae34f68af11bd5cef0a0aff7ffcd014c9ca93c5302cf3e = 84477 bytes/1956 lines, four quotes re-located at :529/:532/:559/:576 (10/12/12/11 words, each contiguous on its line), §4.1 heading at :526, a read-only seat's live refetch of the RFC was byte-identical to the pin, entry limits section names what §4.1 does not prove, census validate rc 0 (35 tolerated W04). Evidence-verified (not executed): the 13-receipt battery rc=0 tally and the 7/7 mutation tally from the committed seat reports. Two independent read-only reviewer seats (C1 attack, C3 source re-open) agreed with the claims and found only the routed items below."
+   },
+   "commit": "mori-shokunin@d577b3d3921a1a5f9d05202ae100c272635823b3",
+   "closed_at": "2026-11-04T05:54:26Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-04T02:24:44-03:00 launch mori round=79 pgid=3421075 driver=hyaku-inline attempt=1; 2026-11-04T02:48:36-03:00 complete mori round=79; hyaku-inline attempt=1. Step-1 conformance clean: report committed by lane identity mori-shokunin <mori@shokunin.local> at fleet 13bb4496 (committer 02:48:06 -0300, after the lane tip 02:46:55 -0300; its earlier author stamp is the jj working-copy change time); SHONEN heading present with one [~] line per box (4/4, author-asserted); all eight cited lane hashes exist and are ancestors of master; remote == local == d577b3d3, ahead=0, working tree clean; round diff 46 paths all lane-owned (wave evidence, LOG, SCORECARD, SKILL, corpus, the new tool) with no existing instrument, sibling or fleet-root byte; contract + three counters byte-identical aa53b485->d577b3d3 (frozen before the wave, w1.ready 02:34:49); the dispatched prompt carries the template contract (§1-§5 incl. the SHONEN heading, commit-before-report and write scope) and MISSION's L2 floor (>=8 seats, one batched call). All three claims verified; no axis harmed (scores 6/7/5/5/5/6 unchanged, PROVINCE byte-identical). Defects, status-neutral: (1) SCORECARD capabilities row line 4016 still states 'selftest 18 in-memory cases' and '18/18' while the landed blob runs 19 and after-r79.txt records 19/0 - the corrections sweep after e3e2e272 fixed SKILL only; fix next round with a named correction; (2) count-c2.py's selftest does not kill three surviving mutants (drop the admitted filter, search past the first ';', accept a matching round anywhere in the cell) - lane-routed to r80 before any new C2 claim; (3) the adjacency Evidence cell cites a non-existent corpus/lessons/round-19-verifier-spotcheck.md (the cell itself discloses it) - replace with the committed MANIFEST row pointer it already names; (4) the control-receipt guard binds by section-level textual co-presence only (a '$ <any text>' line binds; decimal/exponent values sit outside the declared integer grammar) - record as a named limit beside QUALITY 164; (5) selftest arm 17 exercises FileNotFoundError, overlapping arm 9 rather than permission denial, and arm 16 tests the filename-sort helper not full --dir integration - low, when the selftest is next touched. Discernment spot-check agrees on the S594 admit and on the round's one reject-class decision (the scribe's 30-word row draft superseded by the lane's own <=25-word rule); the source gate was admit-only this round (one candidate, none competing) - named as a weakness, not a disagreement. SHONEN 4/4 [~] looks fully checkable by a non-author from the committed evidence; promotion remains operator-owned and no [x] was written. Carried: the three open mori L0 lines (r62 wave-surface waiver, r65 instrument-change ruling, r73 label-sweep instrument) stay unanswered and were routed around; the three r76 foreign receipt files remain disk-only under the standing leave-for-operator ruling.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
