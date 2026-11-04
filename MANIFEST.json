@@ -41055,6 +41055,48 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-11-03T21:51:27-03:00 launch tameshi round=73 pgid=3447853 driver=hyaku-inline attempt=1 | 2026-11-03T22:25:36-03:00 complete tameshi round=73; hyaku-inline attempt=1. Shape: one v1 wave w1, 13 seats (executor 3, scribe 2, reviewer 2, scout 1, critic 1, mutation-tester 1, sentinel 1, revenger 1, connector 1; attack 4/13 = 30.8%), band 8-16, counts.spawn=13, 13/13 records and 13 seat reports, 0 dead, no residual call. Conformance defects (status-neutral, none bars admission): (1) corpus/QUALITY.md was rewritten CRLF->LF at 21a7332f (base 1,915 CRLF -> tip 0; base->tip raw_old_only 1,915, normalised 0) and LOG.md at 862e8844 (3,759 CRLF -> 0; raw_old_only 3,759, 0 content deletions); both undisclosed, and the report's 'additivity raw raw_old_only=0 on the ledger and QUALITY' holds only of the two receipts shipped (through caa5c4c5), before 21a7332f; the r72 EOL class, not repeated per the report, recurs on those two files; (2) the frozen plan's kill-rule wording ('any control below reaches unexpected=0') is contradicted by the green-only control (rows=4 met=4 unexpected=0) and is reported but no erratum is appended to plans/round-73.plan.md; (3) the landed-changes table lists 22 of the 23 round commits (e309f59f, the LOG post-wave entry, missing); (4) the report's census summary says '19 x W04' where the receipt and the live run read 18 W04 + 1 W01; (5) tools/wave-reconcile.py has gate shape but no registry row at the lane's registry home (SKILL.md; also absent from tools/registry.json), as do the six standing instruments — PROTOCOL Gate standard Delivery binds. Routed to the lane for round 74: items 1-5 above plus the lane's own carries (delimited-token/span-substring selftest arms; any-depth seat_reports W2; IGNORED over-filtering M3c; rounds 61-71 without results.json; r60 vocabulary) and the inherited record misses (SCORECARD 20 absent paths, LOG 5 missing quotes — inherited from rounds 17-66 and 35/41). No promotion or mint: SHONEN boxes remain [~] lane assertions; the operator owns promotion. Lane pushed and clean at closure (ahead=0); spot-check landed at 3d6ea1ee.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 71,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 71,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 71
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged",
+    "novelty": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-71/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-71-verifier-spotcheck.md@c63229724893c40b11661194ef1dff2987c177e9",
+    "rechecks": "Step-1: fleet report commit 916cd7d4 by kengaku-shokunin identity, ancestor of fleet origin/master; SHONEN heading 1 with four [~] lines = four boxes; cited 1cb49cac/d8a77d3f/c80fcdb3/edaea66e all ancestors of master; lane clean and ahead=0, remote master = edaea66e; prompt sections 1-5 byte-identical to the rendered template and the run-15 net route map equals config.yml agentModelOverrides (reviewer @m_zfl only); wave 14 seats (executor 4, reviewer 3, mutation-tester 2, scribe 2, critic 1, scout 1, connector 1), attack 6/14 = 43%, validate rc 0, 14/14 settled. R71-C1 re-measured over committed bytes: receipt rc128 -> present; SKILL 'executed 3 of 8' 1 -> 0 and 'executed 4 of 8' 0 -> 1; S245/S246 0 -> 2 rows (census 236 -> 238); 8 VECTOR agree=True matching the probe VECTORS; awk over the LEGS lines gives every leg both P and F (legs_with_both=4); grader 61a686d6, instruction 29151c5b, model tree c5c25767 and probe d5ce2fa5 re-hashed; all eight case_sha256 re-derived by re-staging from committed files; replicate diff empty; control FFFF and PREDICATE fail; checker/selftest evidence-verified, not executed. R71-C2 re-measured: eight Mistakes rows at both revisions; six base defect sites (LOG 'five rows', README supporting block 'six', README index naming six of eight, nginx :15 citation, no E-D2, fragment-only erratum) all corrected append-only at the tip (nginx +11/-0, lesson +8/-0, LOG +49/-0, README +16/-2); gate, selftest 4/4 and mutants 4/4 evidence-verified, gate not executed. No axis harmed: SCORECARD diff 88 insertions / 0 deletions, SKILL diff 1/1 (class row only), PROVINCE empty, depth gate ROWS n=16 paths 36/36 PREDICATE R63-C2 pass. Discernment: S245 and S246 re-opened live (HTTP 200, sha256 matches, located quotes present), merge/kengaku entry re-opened and refused on its own bytes; 3/3 agree. Census validate rc 0, 238 rows, 25 pre-existing W04."
+   },
+   "commit": "kengaku-shokunin@edaea66e551d6a9354008bd7b7669568c49d0099",
+   "closed_at": "2026-11-04T01:49:41Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (watchdog.log, mutable — copied at closure): 2026-11-03T22:10:08-03:00 launch kengaku round=71 pgid=3742793 driver=hyaku-inline attempt=1; 2026-11-03T22:41:22-03:00 complete kengaku round=71; hyaku-inline attempt=1. Conformance defects (status-neutral): report lines 133/141/149 say the closing counters were measured at edaea66e while the committed receipts' REV line reads c80fcdb3 (edaea66e only adds the receipt files); the report does not record the L1-holds-planner mapping the round prompt §2 requires; neither round-71 instrument has a SKILL.md gate/probe registry row; the frozen claims doc's 'do-nothing control (committed at freeze)' and 'red-before (committed at freeze)' wordings overstate what d8a77d3f contains (the lane captured both as its own Mistakes rows). Routed to round 72: R71-R1 registry rows for plans/round71_c1_hf_probe.py and plans/round71_c2_routed_defects.py; R71-R2 report revision attribution; R71-R3 planner-seat mapping; R71-R4 C1 --selftest defective arms (case_digest without --work, PATH-INDEPENDENT crash); R71-R5 C2 --mutants invariant under a semantic matrix (2/6 killed) and parse_count false-reds a digit 8 and a backticked eight; R71-R6 bwrap without --clearenv (the model-load witness is outcome-only); R71-R7 freeze-doc overclaims. Outstanding: corpus/knowledge/tb2-hf-model-inference-offline.md lands admission: hold pending the round-72 falsify wave (Q13/Q14). SHONEN: four [~] boxes, each pointer resolvable; no [x] written (promotion is operator-owned). Capabilities: none added — the replay re-exercises offline-network-service-grader-probe (round 68).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
