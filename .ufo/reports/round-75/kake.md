@@ -6,7 +6,8 @@ Lane repo `/home/vgpnk/Projects/shokunin/kake-shokunin` (branch `master`), Linux
 only) `d599c8be`, Amendment 3 (terms only) `7348d37e`; wave evidence `ab939c46`. Round shape: one v1
 wave `w1`, 14 seats, all settled with non-empty output, 0 dead (`.ufo/waves/round-75/w1-results.json`),
 no residual call — round total 14. Lane tip at filing (pushed, verified with
-`git -C kake-shokunin ls-remote origin refs/heads/master`): `3ae076ab3e01914abc636da680de1bbafc3314df`.
+`git -C kake-shokunin ls-remote origin refs/heads/master`): `0df52aed0b68d355ae3d73e5bc8f5bbda3c05ee6` (the receipt commit that follows the measured
+  revision `3ae076ab`; every measurement in this report names the commit it was taken at).
 
 ## Work performed
 
