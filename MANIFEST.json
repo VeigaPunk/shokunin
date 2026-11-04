@@ -44180,6 +44180,51 @@
    "notes": "Dispatch/complete digest (mutable .ufo/watchdog.log, copied): 2026-11-04T07:33:42-03:00 launch kama round=80 pgid=1824947 driver=hyaku-inline attempt=1; 2026-11-04T08:21:58-03:00 complete kama round=80; hyaku-inline attempt=1. Status ok: real report, 14 lane commits, checkable receipts. Step-1 PASS: report 83bfdc07 by kama-shokunin <kama@shokunin.local> (ancestor of fleet origin/master); one ## SHONEN heading with four [~] pointer lines; all 14 round hashes + base c45fc7d1 + sealed a9b4543f resolve and are ancestors of master; lane clean, local=remote=a2af1af5 ahead=0 before the spot-check; prompt 704 lines carries the round-level contract and all five child-lane items; no route-map conflict (MISSION §L2 buckets only). Wave: one v1 wave, 13 seats, 13 non-empty, attack 4/13=31% (4 executor/2 scribe/2 scout/1 connector/1 reviewer/2 critic/1 mutation-tester), no residual. Claims: C1 calibration verified - grounds re-derived at sealed a9b4543f (record 'C2 verified' vs receipt failed=1; pass=26 vs 22; LOG 'all verified'; three value-bound corrections re-derive; counter re-run at tip mismatches=0 corrected=3 unbacked=0); C2 freshness verified - all five relation rows re-derived from the committed tag lists (llama.cpp b11755 newer=278/newest b12103; 39febd2a=tag b11963 peeled/newer=110; b7200 newer=3395; sglang v0.5.22 newer=1/newest v0.5.23; vllm v0.32.0 newer=1/newest v0.33.0), counter green; C3 operability verified (evidence-verified, live fixture not re-executed) - receipt JSON engine=ollama port=54939, both legs, teardown returncode=0 port_closed=true, audit 2 engines verified. Census 293->297 (A 278->282; mined 264->267; rejected 21->22), validate exit 0. Axis vector holds 8/8/7/9/7/7; no axis harmed. Spot-check: S554 admit agree, S556 reject agree, S555 supersede agree; S557 admit stands but its SOURCES URL 404s. Status-neutral defects routed: R80V1 SCORECARD:4781/:4783 and calibration row :18 plus LOG §Round 80 carry pass=9/pass=6 while the 08eb6949 receipts print pass=11/pass=12 (KQ132-class recurrence; append corrections); R80V2 S557 URL missing api/ (real file 200, 25472 bytes, sha256 44071a12...cd5) - superseding row; R80V3 S557 has no Gate record; R80V4 new W04 S555 not pre-existing; R80V5 final-tip-recheck.out names rev 08eb6949 while called the final tip; R80V6 coverage row last-change cell stale. SHONEN: the four [~] boxes carry resolvable pointers and look checkable by a non-author (C3 lifecycle receipt, plan/SKILL pointers); promotion is operator-owned; no [x] written by me. Misroot sweep: fleet untracked are orchestrator .scratch/*, sibling reports, the 24-byte pre-existing 'after'; no kama seat file. L0: none opened. Tool installs: none.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 80,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 80,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 80
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "coverage": "improved",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "Routed-defect queue gate",
+    "Receipt-ledger append guard",
+    "Survivor-mutant fixture harness"
+   ],
+   "report": ".ufo/reports/round-80/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-80-verifier-spotcheck.md@2e11925500dd5a739376c9108c94616243af0cd4",
+    "rechecks": "step-1 pass: report by kake-shokunin <kake@shokunin.local> 855d1b3561bdece766535f26dd73bb7b817b894a, ancestor of fleet origin/master; 16/16 cited lane hashes exist and are ancestors of refs/heads/master; lane state ahead=0 behind=0 tracked=0 untracked=0 clean, remote tip 6b35928a; SHONEN heading 1 with 4 box lines ([~],[ ],[~],[~], no [x]); prompt renders templates/round-prompt.md (two expected substitutions) plus addendum §6; census validate exit 0, 191 rows, 20 W04. C1 re-measured at base 9998dc7a and tip 6b35928a by running the claim counter read-only outside --work: open=6 closed=0 exported=77 met=false exit 1 -> open=0 closed=6 exported=84 met=true exit 0; guard/fixture/selftest receipts and the standing round-79 ledger gate (events=36 undisclosed=0 met=true at aa44b9af) evidence-verified, gate not executed. C2 re-measured the same way: frozen wrong=0 both, a2 wrong=10 -> 0, constants 4/4+4/4, met=false -> true; tool dd83c2c8/19,680 B -> d1ea524f/23,677 B, selftest 33/33. SCORECARD additions-only 49/0, scores held (calibration 2, operability 10, freshness 10), all corpus/LOG/PROVINCE diffs additions-only. Non-author spot-check agrees on the S453 admit and on the RFC 9309, S449-deferral and merge/kake rejects; S453 quote re-opened at retained rfc9110.txt:1855-1856 (17 words, sha256 21c1cdce…, 502,941 B)."
+   },
+   "commit": "kake-shokunin@6b35928ad78e972bef93a5e6c3f18a780afc5c0d",
+   "closed_at": "2026-11-04T11:35:14Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest: 2026-11-04T07:37:32-03:00 launch kake round=80 pgid=1857906 driver=hyaku-inline attempt=1; 2026-11-04T08:25:34-03:00 complete kake round=80; hyaku-inline attempt=1. Wave w1: 15 seats, 13 non-empty reports, 2 dead attack seats (ReviewC1 reviewer, MutC mutation-tester) on provider 429s, not replaced. Conformance/accuracy defects, status-neutral and routed to round 81: (R80-1) SOURCES.md:201 citations point at a blank line; the S453 row is at 200; (R80-2) LOG/lesson/report say the four frozen constants fail 12/12 each while controls/ctl-c80-constants.txt reads const_echo 11/12 (summary 4/4, 47/48 case-level); (R80-3) lesson/README call S453 a 'second scope' on a URL 'held five times' — the rfc9110.txt URL was held by S028+S033 (S453 third) and rfc9110.html by S010+S088+S433; (R80-4) the report/LOG/SCORECARD attack share 5/15=33.3% counts sentinel; the run-15 attack roles give 4/15=26.7% requested and 2/15=13.3% settled (3/15=20% counting ExecGuard's review) after the two 429 deaths, below the 25% floor in effect; (R80-5) the junk control runs over an uncommitted /fast/scratch tree, no committed builder; (R80-6) R79-8's original error-text ask is still unmet — the results schema carries no status/error, so the 429 cause is asserted outside committed bytes. Stated limits that stand: R79-5 closes on textual withdrawal (junk control open=5, contract said open=6), A2's single-space day branch is a lane [INFERENCE], per-carrier header/meta divergence routed. SHONEN: no [x]; box 2 [ ]; boxes 1/3/4 [~]; not fully checkable by a non-author — promotion operator-owned. No tools installed or upgraded; pacman untouched; no publish/deploy.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
