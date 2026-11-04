@@ -42886,6 +42886,50 @@
    "notes": "Dispatch digest (.ufo/watchdog.log): 2026-11-04T02:59:55-03:00 launch mado round=75 pgid=168215 driver=hyaku-inline attempt=1; 2026-11-04T03:27:26-03:00 complete mado round=75; hyaku-inline attempt=1. Round shape: one v1 wave, 13 seats (band 8-16), spawn=13 resume=0, 13/13 settled with non-empty output, 0 dead; attack share 4/13 = 30.8%; the L1 held the planner seat (validator rejects planner as a swarm role), no residual call. Step-1 conformant apart from routed defects below. Claims admitted: C1 calibration 6/11 -> 11/11 on the frozen eleven-mode set (sha-pinned b6108c86 -> 51652b43; outcome clause implemented and inspected, not certified by the frozen denominator - declared limit); C2 operability 41/47 -> 47/47 (36 carried cases byte-identical; population 20/13/13/0 re-derived). No owned axis harmed. Conformance/routed defects for round 76 (status-neutral): R1 round-74 D4 repeated - claims-declaration-r75.md:6 says 'ONE v1 wave of 12 seats' while dispatch counts.spawn=13, and the declaration's own D4 disposition claims it states the actual size; R2 round-74 D2 partially repeated - the D2 disposition names receipts/selftest-r75.txt which does not exist, and the mado-r75-harness-witness registry row's 17/17 selftest tally has no committed stdout (only sibling instruments' tallies are committed); R3 severity misattribution - the report and SCORECARD call R75RevC2's two findings P1 while the seat says 'P1: None established' and lists both as P2; R4 S450 used-by not extended for corpus/knowledge/harness-witness-credit-r75.md and no cell change logged; R5 revision attribution - C2 measured at 4527fcae is called 'its instrument's last change' though c2-r75-shapes.py last changed at f75afbf6, and the C1 entry/README verified-at 4527fcae predates the final C1 receipt at a3c88663; R6 the declaration says 'written before any candidate measurement' while disclosing a three-case pre-freeze plumbing run; R7 receipts/red-scratch-before.txt and green-scratch-valid.txt carry only tallies while lesson M75-6 says commands and rc; R8 doc nits (c2-r75-shapes.py usage still shows --base-rev bd5a9715; the report attributes later instrument repairs to landing-counters.sh, which changed only at def73656). Prompt note (operator-side, repeated from r72): the run-15 'ONLY reviewer uses @m_zfl' sentence is stale against the live task.agentModelOverrides; harmless because the prompt names that config as authority and dispatch carries zero model keys. No promotion: SHONEN's four boxes stay [~], operator-owned; all four look checkable by a non-author only after a non-author writes [x], which remains operator work.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 76,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 76,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 76
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unchanged",
+    "calibration": "improved",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "receipt-scope",
+    "selfrecord-facts"
+   ],
+   "report": ".ufo/reports/round-76/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-76-verifier-spotcheck.md@cc6e1d3cf202ee3e17cd07f42fc63d2dca5f3bb7",
+    "rechecks": "Step-1 PASS: report 6920c80a (+ amendment 59a04ffb) by kama-shokunin <kama@shokunin.local> at 03:23:32/03:23:46 -0300, after lane tip fd4b9ca3 (03:22:24) and before complete 03:24:22; SHONEN heading x1 + four [~] lines vs four boxes, SHONEN.md untouched, no [x]; all 13 cited hashes (1a85a991 c2aa7fb2 a3fbc629 461d2adb 661622b5 0e01f32f dc222228 b52b5b79 417bbf81 6440df9c c1ae92d5 731ef814 fd4b9ca3) plus base b06cc612 ancestors of refs/heads/master; jj state branch=master local=remote=fd4b9ca3 ahead=0 behind=0, porcelain empty at step 1, ls-remote matched; a post-report lane entry 956d13d1 (w1-results.json + committed scribe draft, parent fd4b9ca3, 03:37:29) then landed under kama identity and is an ancestor of master (allowed second entry for the round; it touches only .ufo/waves/round-76/w1/); prompt 704 lines, lines 1-140 equal rendered templates/round-prompt.md with substitution-only diff, hyaku addendum s6 run-15 map, five child-lane items present, committed 02:51:27 before launch 02:51:28; wave 13 seats, band 8-16, 13 non-empty seat reports, attack 5/13. CLAIMS: C1 (operability) RE-MEASURED from committed bytes: 11 live citations = 6 after receipts at rev c9ab73d8 (delta c9ab73d8..b06cc612 = 9 paths, all record) + 3 before receipts at rev dc58e513 shifted by registry/append-only-contract.tsv at b8ed2568 + 2 headerless receipts; bound=6 unbound=2 shifted=3 exit 1 matches the after receipt; frozen target bound=9 shifted=0 unmet and unsatisfiable under the frozen shift-tools rule -> miss; capability receipt-scope runs (selftest 7/7). C2 (calibration) VERIFIED: all eight round-75 facts re-derived by plain commands (PROVINCE af459acf/322 at c9ab73d8, SKILL f18c9bcc/1736, SOURCES 287 rows, filtered knowledge 45, work tip c9ab73d8, 5 mistake classes, gate tally pass=18 has 0 receipts so corrected to historical-unbacked + committed gate-selftest pass=21, closure pointer now round-75 spotcheck); harness before claims=8 mismatches=5 corrected=0 unbacked=1 exit 1 -> after mismatches=0 corrected=5 unbacked=0 exit 0 at 461d2adb, repeated at later tip 731ef814 (gate arm 9); predicates byte-equal to the frozen plan (147/131/116 words) and the plan has one commit 1a85a991. C3 (freshness) EVIDENCE-VERIFIED plus plain counts: exempt register 47 rows (48 lines incl header), cutoffs accepted 10f37171 / exempt c2aa7fb2 -> introductions=2, 37 findings = 28 SOURCES + 4 consumer-registry + 5 SCORECARD, ancestry gives 31 pre-cutoff + 6 post-cutoff; audit JSON serializes no class key (source lines 719-724) so the frozen class requirement and introductions=1 cannot both hold -> miss, unsatisfiable as written. Census validate exit 0, 287 -> 288 rows (W04 only). Discernment spot-check agrees with 2 admits (S498 live re-fetch sha256 c85f56cc equals retained; S548 own-work instrument + receipts) and 2 rejects (CommonMark duplicate of S498; gitrevisions duplicate of S070/S082). Not admitted: C2 verifies, C1/C3 honest misses, no axis harmed."
+   },
+   "commit": "kama-shokunin@fd4b9ca3042e2233d7cb9850fff3e3d750435e78",
+   "closed_at": "2026-11-04T06:39:29Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log 2252/2261): 2026-11-04T02:51:28-03:00 launch kama round=76 pgid=4099706 driver=hyaku-inline attempt=1 | 2026-11-04T03:24:22-03:00 complete kama round=76; hyaku-inline attempt=1. Status ok (real report, 13 cited lane commits landed and pushed, wave 13/13 seats non-empty, report last and pushed). Not admitted: C2 verified; C1 and C3 are honest misses on frozen targets unsatisfiable as written (measurements precede any green run and both misses are reported, not re-worded); no axis harmed (scores 8/8/7/7/9/7 held; SCORECARD diff adds no deletion of evidence). Capabilities added: receipt-scope and selfrecord-facts (both demonstrated by committed selftest/run receipts). append-exempt-class is NOT counted: its own demonstration is red (unaccounted=37), so the SCORECARD row is pre-claiming and is routed (D5). Post-report lane entry 956d13d1 (parent fd4b9ca3, 'wave results (13/13 seats settled) and the scribe's final corrections draft') landed under kama identity after the report and is an ancestor of master; it is a permitted second entry for the round, touches only .ufo/waves/round-76/w1/, and makes the report's 'final tip fd4b9ca3' time-bounded rather than wrong. The same commit resolved the SCR03 draft that was uncommitted at this closure's first clean check (the spotcheck's D6 as first filed is corrected in its s6: the draft is committed and self-labelled, still naming a nonexistent proposed receipt path pre-report-selftest.out; the actual receipt is gate-selftest.out). Routed to the lane for round 77 (status-neutral here): (D1) corpus/README.md has no coverage-map row for knowledge/selfrecord-fact-binding.md although the report/LOG claim three rows, and the Frontier list omits it (44 row lines, 41 distinct mapped, 49 files -> 8 unmapped, not 7); (D2) SCORECARD sRound 76 population sentence says filtered knowledge entries 46 at rev=c2aa7fb2 where committed bytes give 47 -> append a value-keyed correction; (D3) C3 prose (lesson Mistakes 2, LOG sRound 76, report) says five events postdate the cutoff where findings give six (5 SCORECARD + c2aa7fb2's SOURCES event), leaving the 37th unexplained -> append corrections, never rewrite; (D4) sGate quote discipline: S498's re-quote is a paraphrase (retained/live line 2760: 'The content of a code fence is treated as literal text, not parsed as inlines.', 15 words) and S548's bullet lacks the explicit access date + located quote/command; S498 used-by old->new is logged only in the report, not the lesson; (D5) append-exempt-class capability row needs a partial/planned disposition or a passing retargeted demonstration; (D6) apply or discard the committed SCR03 draft with the receipt pointer repaired. No promotion review requested (SHONEN boxes remain [~]; if the operator wants a promotion check, boxes 1-4 look mechanically reviewable by a non-author next closure). No mints, no cross-lane writes.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
