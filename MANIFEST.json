@@ -44535,6 +44535,50 @@
    "notes": "Dispatch digest: 2026-11-04T08:35:11-03:00 launch kama round=81 pgid=3277606 driver=hyaku-inline attempt=1; 2026-11-04T09:27:23-03:00 complete kama round=81; hyaku-inline attempt=1. Report 013c49e9 by kama-shokunin (committer 09:26:45 after the lane tip 09:26:16, so it landed last); lane tip 1b64f66d ahead=0, remote-verified; working tree clean; prompt 704 lines carrying the round-level and five child-lane items. Claims verified non-author; trends improved. Status-neutral defects routed: R81V1 SCORECARD r81 C2 row says late=10 pending=1 / selftest pass=16 where its cited receipts print pending=4 / pass=22 (LOG's claim that the SCORECARD rows carry the new tally is false); R81V2 debt-selftest.out and battery.out are labelled rev 2880af05, whose tree has the 16-arm tool (22 arms require 017c34ca; the e20d89c7 gate receipt is the binding evidence); R81V3 LOG r81 frontier says 297->301 vs the actual 302; R81V4 SKILL.md:309 pre-report-gate registry row still says ten arms / arm 8 round75-append-accepted / arms=10 while the gate prints arms=11 with arm 11 round81-instruments; R81V5 report W04 inventory says the warning set does not grow, but S559 and S562 add two W04 instances (category unchanged, validate exit 0); R81V6 report Controls cites pass=16 and the mutation-battery pointer names the lesson's Hardening notes, which do not record it; R81V7 '25->26 selftest cases' unsupported (26 cases on both sides; one expectation changed); R81V8 Landed-changes table omits 0db009cd/3f2c6ffd/49707341/0821da6a/2880af05 and the Before->after revision cells cite paths not revisions. SHONEN: four [~] lines; boxes 2 and 4 look mechanically checkable from receipts, 1 and 3 retain judgement, so not fully checkable by a non-author; promotion stays operator-owned. No promotion, no mint, no sibling touched; frozen register/counter/round-80 receipts untouched; KQ133's number-drift class recurs in this round's own record (R81V1/R81V3) and is routed.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 78,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 78,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 78
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "freshness": "improved",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "attack-class refusal",
+    "surface recheck"
+   ],
+   "report": ".ufo/reports/round-78/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-78-verifier-spotcheck.md@29d2ca30b83a6a0d85b0aa979de0138fde1660e6",
+    "rechecks": "Neither lane gate was executed (PROTOCOL Gate standard, Closure consequence). C1 evidence-verified: receipt counters re-counted from the committed JSON (fixtures_total 10, refused 10, base_accepted 10, 10 distinct declared rules, genuine mismatch_count 0 / defects [], in_scope_cells 4, groups 4, bound_clauses 12) and the instrument sha256 matched to git show at 93753d88 (a86f6d4d) and 51c08cda (961d5a23); the counter's file is absent at base 6205ec8c. C2 evidence-verified plus live re-derivation: 6/8 matched with 2 mismatches before, 8/8 with 0 mismatches at 93753d88 and 51c08cda, instrument sha e7ea1717 bound at both revs; the closure independently read java -version 21.0.13, ghidra application.version 12.1.4, OMP disabledServers [rea], and the three rea-agents@6.7.0 pins."
+   },
+   "commit": "kaidoku-shokunin@f9fb37e5592b82038bf418e3d8b4aacb9f9ecf95",
+   "closed_at": "2026-11-04T12:52:53Z",
+   "campaign": "hyaku",
+   "notes": "Digest (copied from the mutable .ufo/watchdog.log): 2026-11-04T08:44:11-03:00 launch kaidoku round=78 pgid=3503163 driver=hyaku-inline attempt=1 | 2026-11-04T09:43:28-03:00 complete kaidoku round=78; hyaku-inline attempt=1. Report c8dc329d by kaidoku-shokunin <kaidoku@shokunin.local>, commit date 09:42:52 after the lane tip f9fb37e5 (09:42:35) and in origin/main; SHONEN heading with 4/4 [~]; all 21 cited hashes resolve and are ancestors of refs/heads/main; jj-lane state ahead=0 behind=0, porcelain empty; prompt sections 1-5 match templates/round-prompt.md modulo substitutions plus the §6 addendum. Claims verified: R78-C1 calibration (10/10 attack fixtures base-accepted and refused 10/10 by distinct declared rules, genuine record 0 mismatches / 0 defects, instrument sha bound at 93753d88 and 51c08cda; controls base-only 0/10, all-refuse genuine 1, no-fixtures base_accepted 0); R78-C2 freshness (before 6/8 matched with 2 mismatches; after 8/8, 0 mismatches at 93753d88 and 51c08cda, instrument sha bound; the closure independently re-derived the eight live values). Conformance defects (status-neutral): the report's Filing bullet and SCORECARD line 6041 still name receipt revs bc73b27a/3bb87162 while f9fb37e5 re-took prefile-at-filing/gate-at-tip at e2846648; SCORECARD says the gate changed twice vs the four disclosed supersessions; attack-gate.py:1-940 is stale (949 lines); the LOG round-78 block is appended under the round-77 heading. Routed to r79: (1) receipt-revision prose correction; (2) supersession count; (3) stale OMP :8 / Kimi :4126 line pointers and the path-only pointer rule; (4) a 26-case selftest receipt at the final instrument rev; (5) the line range; (6) the LOG heading. SHONEN boxes all [~] with resolvable pointers; they look fully checkable by a non-author (promotion is operator-owned).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
