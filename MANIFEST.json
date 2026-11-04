@@ -47383,6 +47383,47 @@
    "notes": "Dispatch digest (mutable .ufo/watchdog.log, copied): 2026-11-04T16:48:00-03:00 launch kotoba round=85 pgid=2676091 driver=hyaku-inline attempt=1; 18:02:57 lane-dead-no-report (no landed report); 18:02:59 launch attempt=2 pgid=40132; 18:03:39 lane-dead-no-report; 18:03:41 launch attempt=3 pgid=56110; 18:04:12 lane-dead-no-report; 18:25:33 launch attempt=1 pgid=739518; 18:34:16 complete kotoba round=85 hyaku-inline attempt=1. The three dead attempts left no uncommitted work; the landed attempt inherited and re-verified their wave and commits. Status ok (real report, real work, cited hashes resolve). Routed defects, status-neutral, for the lane's next round: D1 the report's 'eight coverage-map index rows' is 9 at the tip (git diff 1c8f37e cfcb9a4 -- corpus/README.md | grep -c '^+| ' -> 9; the ninth is the Round-85 lessons row) - Q76 class, name the selection rule; D2 the C2 're-measured at the tip cfcb9a4' after-value has no committed receipt (grep -rl cfcb9a4 .ufo/waves/round-85 prints nothing; c2-after.json records bf9ab28); D3 verifiers/corpus-baseline.json round85_rerecord note opens 'round 79 C1 repair ... re-recorded at 43ae91c' (wrong subject carried from the round-79 note); D4 the report cites LOG.md section Round 85 as :3088-:3240 but LOG.md is 3235 lines; D5 the report's SOURCES size pair 203260 -> 202824 B is normalization-only, the committed file is 202884 B after the +60 B used-by text; D6 receipts/c2-controls.txt K4 first stdout line is truncated ('nary_sha256:'); D7 r85-w1-results.json carries output null for all 16 seats after an orchestrator kernel restart and WAVE-DONE is asserted in LOG.md with no committed marker artifact (the lane discloses both; 16 seat report files exist). Discernment spot-check agrees on all five sampled decisions (S213 admit re-opened live: HTTP 200, 13403 B, sha256 7cc54fbb... equals the entry's digest and the r76 snapshot by cmp; reject of the telemetry claim: grep -ic telemetr -> 0; reject of the TRAE/Chiba tension: grep -inE 'trae|chiba' -> 0 hits while page line 156 advises negative-scope wording; S213 row quote 17 words at page line 92 under 'Running multiple times'; no new S-row because S213/S210 already hold the URL). Census validate exits 0 with 33 W04 and 0 E rows, rows 180 -> 180. Not admitted: the owned-lowest claim C1 is unprovable (killed before data on its own independent oracle's false greens) and no axis was harmed. Operator note: SHONEN boxes 1, 2 and 4 now have non-author-checkable evidence (registry 66/66 at the tip, the C2 run with its three controls, PROVINCE untouched and the round-74 census as the guard's base); box 3 is not [x]-ready (no fresh non-author cold run). Promotion stays operator-owned; no [x] was written.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 89,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "revenger",
+   "lane_round": 89,
+   "lanes": {
+    "revenger": "ok"
+   },
+   "lane_rounds": {
+    "revenger": 89
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "freshness": "improved",
+    "coverage": "unchanged",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-89/revenger.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "revenger-shokunin/corpus/lessons/round-89-verifier-spotcheck.md@77574c99845ab6662812bd6a88def1e72bf8d71b",
+    "rechecks": "Step-1 clean: report 18566 B committed by revenger-shokunin at fleet b95bafb, SHONEN heading x1 with four [~] lines and no author [x], ten cited lane hashes all ancestors of main, lane tip c8cc585 = origin/main ahead=0 clean, range 46c170d..c8cc585 = one lane commit, prompt 84496 B committed with the full contract (report path, SHONEN, hash-citation, write scope, L0, commit-then-push, push scope, 8-seat L2 floor, 1-3 claims). C1 EVIDENCE-VERIFIED, lane gate never executed (PROTOCOL Gate standard): pins re-derived from committed bytes c3127ffc (census) 44fd1505 (oracle) 4d871971 (f_probe4, byte-unchanged base->tip), selftest tally 9 legs pass, red receipt 10 findings and after receipt 2 findings at their named revisions, and the twelve corrected census facts re-probed by me on the live host (rea 6.7.0, node v24.21.0/npm 11.19.0, ghidra /usr/bin/ghidra, ida absent, jadx 1.5.6, binwalk 3.1.0, unblob 26.6.4, pwn imports, 2 *.md, 7 references, SKILL.md 42/207, mcp pin rea-agents@6.7.0); predicate read at corpus/census_reprobe.py:179-220 makes the frozen target 0 unreachable truthfully (K04 two opposite presence probes, one scored cell). C2 RE-MEASURED by me over committed bytes with my own implementation of the frozen predicate: base 2b017fa3 and tip c8cc585 both 134 JSON / 21 record-shaped ops / F4=10/11, inspect_android_package absent from the counted surface at both; record digest 01af3141 equals run1 stdout and would count 11/11 inside corpus/live/runs; oracle 19/19 vs tamper 18/19; two producer stdouts differ (01af3141 vs 5bbdd189). Source census exit 0 (21 W01 + 10 W04, zero E), rows 479 -> 482, malformed 0, dup ids 0, mined used-by missing 0."
+   },
+   "commit": "revenger-shokunin@77574c99845ab6662812bd6a88def1e72bf8d71b",
+   "closed_at": "2026-11-04T21:50:29Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable; copied verbatim): 2026-11-04T17:51:01-03:00 launch revenger round=89 pgid=3640955 driver=hyaku-inline attempt=1; 18:02:55 lane-dead-no-report (attempt 1); 18:02:57 launch attempt=2 pgid=38234; 18:03:36 lane-dead-no-report (attempt 2); 18:03:37 launch attempt=3 pgid=53858; 18:04:12 lane-dead-no-report (attempt 3); 18:25:39 launch attempt=1 pgid=743942; 18:26:21 lane-dead-no-report; 18:26:23 launch attempt=2 pgid=779477; 18:31:14 lane-dead-no-report; 18:31:16 launch attempt=3 pgid=877620; 18:39:06 complete revenger round=89; hyaku-inline attempt=3. Real report, not a marker. Honest stop: C1 freshness MISS (census findings 10 -> 2 against frozen target 0; the K04 mixed-state residual is truthful and the frozen one-cell-per-row predicate makes zero unreachable without faking PATH); C2 coverage KILLED (F4 10/11 -> 10/11 re-measured at both ends; the android record is preserved byte-identically outside the counted surface; kill (a) fabricated/XML-comment records pass the oracle and kill (c) two producer runs differ at char 20). No axis harmed. Routed to r90: (1) the record relocation was not swept across every mention - S481's source cell and corpus/knowledge/2026-10-12-rea-readiness-checklist.md:67 still name corpus/live/runs/round-89/ although the bytes live at reports/round-89/rejected-android-record/ (source is not a mutable SOURCES cell, so the fix is a superseding row plus an appended checklist correction); (2) the lesson's ## Gate lacks the CORPUS-rule-1 source-opening table (URL/path, access date, <=25-word quote + location), which lives only in .ufo/waves/round-89/w1/ScribeR89Sources.md; (3) the SM2 1 -> 0 count has no committed receipt or counting command (SM6's /14 hardcode re-derived at corpus/self_assessment_check.py:183, so the fact holds); (4) the census probe-as-gate's frozen-run baseline pins input files but not host state, so a host change silently invalidates the expected verdict (lane-disclosed registry limit). Lane-disclosed procedural defect accepted: one direct jj new after the helper refused a non-tip base (reports/round-89/carry-in.md, mined in the lesson). Discernment graded unchanged, not improved: four of five sampled gate decisions agree with my re-open and the S481 admit fails its citation rule, so LEARNING's improved test (agreement on admits and rejects, or a disagreement turned into a QUALITY.md criterion) is unmet at this closure. SHONEN boxes 1-4 are checkable in principle by a non-author, but promotion and the standing re-confirmation are operator-owned and no [x] was written. Spot-check committed through the jj lane helper under the protocol identity and remote-verified at 77574c99.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
