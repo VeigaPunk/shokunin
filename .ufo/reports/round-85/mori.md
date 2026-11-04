@@ -6,7 +6,9 @@ freeze commit: `ab2608655ea52ba6d151b3a31d69a3b18cd2b41e` · pre-data amendments
 A2 `4ffd5a2d`, A3 `89f82eac`, A4 `91f657f6` · post-data text fix A5 (in `42865833`)
 code/landing commit: `25a74d4c34e8430e4fbb18d4038ef5db872fb0ee` · receipt/prose commit
 `42865833c9b9f9bdd33b6c3d13641bebfc66efd2` · final lane tip
-`1b733457220ee9ed698f9c537ce46a380cbe5375` (pushed; `ls-remote origin refs/heads/master` prints it)
+`66772cae74b4509ec2b38db6fd8b562438f379e6` (pushed; `ls-remote origin refs/heads/master` prints it;
+wave settlement `w1-results.json` and the final tip measurement are committed at `d78dd652` and
+`66772cae`)
 
 ## Work performed
 
@@ -121,9 +123,14 @@ Work items and evidence:
   `w1/Mo85C01Critic.md`: C1/C2 are not reachable by a do-nothing control; C3 is reachable by the
   freeze alone and is ruled a **capability acquisition, not an empty claim**, under the disclosed
   limits; C3's field-order divergence is named (documented in A2/A5). `w1/Mo85M01Mut.md`:
-  `MUTANTS total=48 killed=18 survivors=30` on the freeze bytes (C1 17/9/8, C2 14/4/10, C3 17/5/12),
-  with the A1/A3 closure mapping in the seat's addendum — the round-86 arm population.
-  `w1/Mo85R02C2.md` = `**no report on disk — the seat is dead in this wave's evidence.** The C2 attack it owned is covered by `w1/Mo85C01Critic.md` §5.2 (C2 same-sentence divergences and the stale-body limit), by `w1/Mo85E02Receipts.md` §0 (the stale-digest and headerless-receipt controls) and by `w1/Mo85K01Conn.md` §2.2 (rows C2-D1–D6).`.
+  `MUTANTS total=48 killed=18 survivors=30` on the freeze bytes (C1 17/9/8, C2 14/4/10, C3 17/5/12)
+  and `killed=19 survivors=29` on the amended bytes (§5 "Amendment delta"; A2 armed C2-09), with the
+  still-unarmed clauses named for round 86 (H-C2-01 duplicate-separator, H-C2-A1 bind-at-own-rev,
+  H-C3-metverdict) — the round-86 arm population.
+  `w1/Mo85R02C2.md` — **no report: the seat's `w1-results.json` output is empty (dead seat).** The C2
+  attack it owned is covered by `w1/Mo85C01Critic.md` §5.2 (C2 same-sentence divergences and the
+  stale-body limit), by `w1/Mo85E02Receipts.md` §0 (the stale-digest and headerless-receipt
+  controls) and by `w1/Mo85K01Conn.md` §2.2 (rows C2-D1–D6).
 
 ## Landed changes
 
@@ -144,7 +151,7 @@ Work items and evidence:
 | C3 depth (capability) | `python3 -I .ufo/waves/round-85/count-c3.py <rev>` | counter file absent (`git cat-file -e` rc 128); the retroactive reading `C3=met ... rev=2cc4b1ae35a8` is disclosed, not the before value | `C3=met observed=3 aa=stable own_tokens=64 subject_tokens=64 subject_deltas=0 unmatched=0 unnamed=0 detector=green rev=25a74d4c34e8`, rc 0 |
 
 All three were re-measured at `3dc05084` (the measured tip) and read the same lines with
-`rev=3dc050847430` (`evidence/tip-r85.txt`, committed at `1b733457`); the claims' counting commands are reproducible at any
+`rev=d78dd6522889` (`evidence/tip-r85.txt`, committed at `66772cae`); the claims' counting commands are reproducible at any
 revision from that revision's bytes.
 
 ## Sources & frontier
@@ -205,16 +212,20 @@ here):
 
 ## Round shape and hygiene
 
-- **Settlement:** the wave's dispatcher never emitted `WAVE-DONE`: 11 of 12 seats wrote a report
-  (`w1/`), `Mo85R02C2` is dead with no output, and `Mo85M01Mut` was asked to stop after its report
-  was on disk; the wave is settled by observation and no seat is taken as live in this report. All
-  landed seat work is committed (`25a74d4c`, `42865833`, `3dc05084`, `1b733457`).
+- **Settlement:** `WAVE-DONE mori r85 w1` reports all 12 seats settled; `evidence` is
+  `w1-results.json` (committed at `d78dd652`). Seat outputs: 11 non-empty, `Mo85R02C2` empty (dead
+  seat, never replaced). All landed seat work is committed (`25a74d4c`, `42865833`, `3dc05084`,
+  `d78dd652`, `66772cae`).
 - **Shape:** ONE v1 wave, 12 seats, validated under
   `scripts/hyaku/ufo-wave-policy.json` (band 8–16); dispatch `w1-dispatch.json` (`spawn=12`,
   `resume=0`). Roles: 4 executor / 2 scribe / 1 scout / 2 reviewer / 1 critic / 1
   mutation-tester / 1 connector; attack seats 4/12 = 33.3 %; connector seats 1; residual calls
   none; the planner seat is the L1 (the validator rejects `planner`). Round total: 12 seats.
-- **Dead seats / stand-ins:** ``Mo85R02C2` — no output and no live process after the wave; never replaced, and its attack is covered as stated above. `Mo85E01C1Arms` was stood in by the L1 while its registration was stale; it later verified the restored bytes and reported the duplicate-arm collision its own append caused (`w1/Mo85E01C1Arms.md` §0). `Mo85M01Mut` ran long; its report was on disk before the round closed (freeze-byte population; the tip-byte mapping is named in the report as missing).`.
+- **Dead seats / stand-ins:** `Mo85R02C2` — empty output in `w1-results.json`; never replaced, and
+  its attack is covered as stated above. `Mo85E01C1Arms` was stood in by the L1 while its
+  registration was stale; it later verified the restored bytes and reported the duplicate-arm
+  collision its own append caused (`w1/Mo85E01C1Arms.md` §0). `Mo85M01Mut` ran long; its report was
+  on disk before the round closed (freeze-byte population; §5 carries the amended-byte mapping).
 - **Routed defects:** D84-1 (the r84 prompt was committed by the lane identity) recorded, not
   re-attributed; D84-2 discharged by QUALITY 173 + 176; D84-3 by the `rejected` S601 row; D84-4 by
   the three committed receipts graded by C2; D84-5 by `battery-r85.txt`'s `rev=`/`date=` header.
