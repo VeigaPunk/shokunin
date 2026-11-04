@@ -329,7 +329,7 @@ Phase-1 directives still bind: "train all shokunins to at least round 100"; "com
 every round done"; "do it inline with multiple swarms of subagents".
 
 You are an in-session **L1 lane subagent** dispatched by the hyaku orchestrator (the operator's
-parent omp session) for exactly ONE steered round: **kotoba round 85** (attempt 3;
+parent omp session) for exactly ONE steered round: **kotoba round 85** (attempt 1;
 campaign target: round 100). Your lane's place in the session follows the goal file (lane
 order and blocks: `.scratch/goal-20261025-hyaku-run7.md`); the orchestrator dispatches your lane's
 next round only after this one lands and its non-author closure is written. Work this round only
@@ -824,3 +824,5 @@ Run15 spawn fixes (2026-11-04, operator: "maybe stop the loop, let each lane wor
 Amendment 6 (operator, 2026-11-04, verbatim: "has to be the v4.1 flash" / "not the v4 flash nor v4 pro" / "it needs to be the third fallback; after opencode -> commandcode -> amr -> devin" / "i might need to login to it again to refresh the devin auth"): `m_flash` = opencode-go/deepseek-v4.1-flash:high, then commandcode/deepseek/deepseek-v4.1-flash, amr/deepseek-v4.1-flash, devin/deepseek-v4-1-flash (all :high); model-keyed chains mirror that order; devin/swe-2 removed from the m_flash cascade; only v4.1-flash ids enabled (no v4-flash/v4-pro, no opencode-zen). Smoke RouteSmokeCritic4 after the devin re-auth: opencode-go 402 -> devin/deepseek-v4-1-flash answered ROUTE_OK. Drain lifted; campaign resumes.
 
 Amendment 7 (operator, 2026-11-04, verbatim: "assign some lanes to m_swe (devin/swe-2-flash) on max effort" / "this is a coding model, so use it as executor and reviewer"): `m_swe` = devin/swe-2-flash:max; `executor` @m_zfl -> @m_swe and `reviewer` @m_flash -> @m_swe. Smoke RouteSmokeExecutor / RouteSmokeReviewer both answered on devin/swe-2-flash. Future launches only. Backup config.yml.pre-m_swe-exec-review-20261104.
+
+Amendment 8 (operator, 2026-11-04, verbatim: "assign the roles from m_swe to m_flash" / "ok, do that"): executor and reviewer back to @m_flash. Measured provider state (seat sessions + direct probes): opencode-go 402 insufficient funds / Go usage limit, amr 402 quota (resets 2026-11-06T22:28Z), commandcode intermittent 401; devin/deepseek-v4-1-flash answers after the operator's re-login. Five L1s (revenger r89, tsukuroi r81, mori r89, kotoba r85, kotodama r88) exhausted three attempts on the opencode-go 402 with no fallback walk. Operator-approved temporary order: `m_flash` = devin/deepseek-v4-1-flash:high, then opencode-go, commandcode, amr (all v4.1-flash :high), mirrored in the model-keyed chains; restore opencode-go first once it is funded. The five lanes' failure markers are provider failures, not quality verdicts: moved aside to `.<lane>.run15-20261104-provider-failure`, same round reruns (claims and freeze commits kept).
