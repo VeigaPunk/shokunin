@@ -40452,6 +40452,49 @@
    "notes": "Dispatch/complete digest (verbatim from .ufo/watchdog.log, mutable): 2026-11-03T20:55:47-03:00 launch kengaku round=69 pgid=62445 driver=hyaku-inline attempt=1 | 2026-11-03T21:19:13-03:00 complete kengaku round=69; hyaku-inline attempt=1. Lane a518980e -> 4038bb11 (pushed, ahead=0, worktree clean, master remote verified); report fleet commit 81cd6765 by kengaku identity at 21:17:41, after the lane landing at 21:17:17; verifier spot-check landed as 502893ad. Round shape: ONE v1 wave of 14 seats (executor 4, reviewer 3, critic 1, mutation-tester 1, scribe 2, scout 1, connector 1, revenger 1), attack roles 5/14 = 36% (>=25%), connector 1 (<=2), all 14 settled with nonempty output, no residual call. Not admitted: R69-C1 (coverage) missed its frozen leg-coverage clause (legs 2 and 4 have no red witness; seen_f=6) and the lane reported the MISS honestly instead of re-scoring it, so the class row stays 'executed 2 of 8'; R69-C2 (calibration) verified and is carried by evidence (E1-E7 re-derivation, selftest 7/7, mutants 7/7 killed) with the score held at the 10 ceiling. Every declared axis held; no axis harmed. Integrator trend note: expansion graded improved (net new admitted entry on uncovered ground citing mined S241, plus its README index row) where the report graded it unchanged on a class-row-only reading; named in the spot-check. Routed defects for round 70 (status-neutral; spot-check §6): D1 the two depth-gate receipts are not byte-identical as GateReceipts.md/EvidenceIndex.md claim (wave copy 33 paths sha f683297c, corpus copy 34 paths sha d65bbda; E7 verdict unaffected); D2 'trio gate green' for the new entry has no committed receipt (both trio receipts name the pypi entry); D3 the new entry cites instruction.md:6-11 for the body literals that live at :15-18 and its source anchor names an instruction.md S241 does not register; D4 S241's teaches cell says 'legs 5-6 are file reads' while leg 5 is the nginx -t subprocess; D5 corpus/README.md has no round-69 lesson index row or artifacts block; D6 no landing-tip R69-C2 green receipt is committed (verbatim transcripts are working-tree runs at b288e8e0+dirty); D7 the round's ## Gate contains 0 rejects, so the outside spot-check could exercise only the admit half; D8 the spec-validation rc is inferred from an empty w1-validate.stderr. L0 carried: kengaku | round-25/33/51, round-54, round-56, round-63, round-65, round-66, round-67. SHONEN: all four boxes look checkable by a non-author on this round's evidence; promotion is operator-owned and no [x] was written.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 75,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 75,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 75
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "Registry instrument receipt binding"
+   ],
+   "report": ".ufo/reports/round-75/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-75-verifier-spotcheck.md@a0491fcd041cbc3fff2c964ecf6268557e45a5c1",
+    "rechecks": "C1 re-measured: an independent re-implementation of the frozen row parse over committed SKILL.md yields base rows=28 live=16 files=16 and tip rows=32 live=20 files=18 (the 18 effective files are exactly the receipt population); base control red with mismatches=2 classes=E1 E3 (c69_tmp_honour gate without self-test; c74_registry_gap 5 enumerated vs 8 observed - both re-opened in the files), after control green at f87d14a9 (rows=32 live=20 files=18 mismatches=0 append_only=true met=true missing_frozen=0, exit 0), counter blob 63e321b2 identical at f87d14a9 and the tip; executed verdict and 29/29 selftest evidence-verified (gate not executed). C2 re-measured: all 18 receipt entries' sha256 and byte lengths recomputed from committed tip bytes, 0 mismatches; receipt blob 15768f81 = 3793 B matches its control line, tool blob 162dd685 matches; population equals the C1 effective set; selftest_mode static-consistent 18/18 (only c57_idresolver_gate and c69_tmp_honour false, both verified); base population=16 bound=0 mismatches=16 exit 1, after population=18 bound=18 mismatches=0 met=true source=committed declared_valid=true exit 0; 17/17 tally evidence-verified. Harm: zero removed lines across LOG/SCORECARD/QUALITY/SOURCES/README/PROVINCE and every standing gate in the tip battery equals the round-74 spot-check values."
+   },
+   "commit": "kake-shokunin@0df52aed0b68d355ae3d73e5bc8f5bbda3c05ee6",
+   "closed_at": "2026-11-04T00:36:24Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (verbatim from .ufo/watchdog.log, mutable): 2026-11-03T20:45:55-03:00 launch kake round=75 pgid=3815628 driver=hyaku-inline attempt=1 | 2026-11-03T21:30:24-03:00 complete kake round=75; hyaku-inline attempt=1. Lane c9c5e484 -> 0df52aed (pushed, ahead=0, worktree clean, remote refs/heads/master verified); report fleet commit 2c862ffd by lane identity kake-shokunin at 21:29:33-03:00, after the lane tip at 21:29:27 (an earlier 2fa1fa86 preceded the tip by 12 s and was superseded in place). Round shape: ONE v1 wave w1, 14 seats (executor 4, scout 2, scribe 2, reviewer 2, critic 1, mutation-tester 1, connector 1, sentinel 1), attack 4/14 = 28.6 %, all 14 settled with non-empty output, no residual call; prompt carries the template sections 1-5 verbatim under placeholder substitution plus the hyaku addendum and scratch discipline. Verifier spot-check landed as a0491fcd (protocol identity, only corpus/lessons/round-75-verifier-spotcheck.md), remote-verified. Conformance defects, status-neutral, routed: (1) LOG.md:2534 names counter 0699a672 (superseded blob at 4e3fc159) while the tip blob is 63e321b2; (2) LOG.md:2535 names the receipt as f3128628 (superseded cut) while the tip receipt hashes 15768f81; (3) the report's before-after table is headed 'After (tip 6c10b433)' while its cells and receipts name f87d14a9, and the tip paragraph calls 3ae076ab 'the measured revision' while the battery file measured 306fff49; (4) round-74 R5 is only partly closed - of the three files it named only c74_registry_gap.py is bound, c74_sidecar_reobserve.py and scripts/sidecar_reobserve.py still have no committed sha256 receipt and no registry row; (5) round-74 R3 is undispositioned - no sweep count delta (193->195 files, 6->7 unannotated cites) is recorded and the sweep still exits 1; (6) the QUALITY.md round-75 able-to-fail quote 'files=15 append_only=false met=false' is not a contiguous substring of controls/ctl-deletion.txt; (7) the C2 after-quote omits declared_match=false (receipt subject abfbfaac != carrier f87d14a9) and the reviewer 16-forgery matrix ran on predecessor blob 62b795ea, not the landed 162dd685; (8) c74_registry_gap.py:25 still says 'five contract fixtures' (lane-routed). Operator note: the four SHONEN boxes look fully checkable by a non-author from the repo; promotion is operator-owned and was not touched. No promotions, no mints, no tool installs.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
