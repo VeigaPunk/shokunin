@@ -41887,6 +41887,48 @@
    "notes": "Dispatch digest (watchdog.log 2201-2220): 2026-11-04T00:05:52-03:00 launch mado round=71 attempt=1; 00:06:22 lane-dead-no-report (no landed report); 00:06:24 launch attempt=2; 01:19:55 complete attempt=2. Conformance defects (status-neutral): D1 Sources&frontier arithmetic off by one - census-after has 39 W0 lines, 2 of them S442/S443 (37 pre-existing + 2), report says '38 pre-existing plus one new W04'. D2 the single rejection cites raw .../v3.14.8/Doc/library/stdtypes.rst which 404s (3.14 moved it to Doc/builtins/stdtypes.rst, which does document update/setdefault) and the rejection was not curated as a 'rejected' SOURCES row. D3 harm-watch-r71 'frozen round-70 counters at the tip' leg is a missing-scratch setup error with rc recorded 0 (declared setup exit is 2) and no corrected r70-pair run, while report/LOG assert cases=3 correct=3 base_correct=1 and controls=17/17 base_controls=13/17 at the tip (C2 half review-verified at e137b5a4 in w1/R71RevC2.md; C1 half has no r71-revision run; both r70 instrument blobs are byte-identical base->tip). D4 w1-results.json carries no per-seat status field, so '13/13 settled status ok' rests on the orchestrator WAVE-DONE message. D5 report calls quote A '11 words'; it is 10. D6 no SKILL.md gate-registry rows for the r71 counters (registry home's last table is round-68; r69/r70 prose-only). D7 no planner seat (policy lanes has no planner; the spec declares the L1 holds it). Routed to mado for r72: D1, D2, D3, D5, D6 and D4's capture; carried open: r69 check-deliverables.py reds (belong to a round-69 correction entry). Spot-check: admits S442/S443 re-opened live (sha256 05cd782c / e19de4fe byte-identical; quotes at :53/:54-55 and :1415-1417, 10/15/25 words) - agree; reject stdtypes agree in substance, disagree on the cited 404 URL. Census validate exit 0, mado ok. All four SHONEN boxes stay [~] with pointers (box 2 is the historical round-3 e2e task); promotion is operator-owned, no [x] written.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 75,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 75,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 75
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged",
+    "novelty": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-75/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-75-verifier-spotcheck.md@fda63968f29f8f58dc2b28831acac879405b8326",
+    "rechecks": "Step-1: report authored by kengaku-shokunin (c3d320ac, rewritten aa5ebcd6) but filed before the final lane commit 5d9a0ccc and rewritten in place (R75-D1); 9 cited commits all exist and are ancestors of master; lane clean, ahead=0, remote master=fda63968 (5d9a0ccc + this closure's spotcheck commit); prompt sections 1-5 byte-identical to the rendered template plus section 6 addendum, five child-lane items present. R75-C1 re-measured at 5d9a0ccc with an independent parser: 74/74 knowledge, 123/123 lessons, 66/66 evidence, 0 orphan; before 60 under the final rendered-row rule vs the receipt's 59 under the pre-A3 gate (R75-D3); selftest 8 arms/7 red evidenced. R75-C2 evidence-verified, never executed (Gate standard): 15/15 receipts stamp a resolving ancestor revision, round-74 evidence 11/11 unstamped at 43255758, registry rows 116->118, selftest 5 arms, attribution control 9/10 wrong_id=1 on identical bytes. No axis harmed (SCORECARD 58/0 appended section). Spot-check: S251 admit re-fetched live HTTP 200 122459 B sha256-identical, quote capture:2720; both rejects agree; sources census rc 0, 243 rows, 25 W04."
+   },
+   "commit": "kengaku-shokunin@5d9a0cccce42c6bd876a61622c27f06280cf2f9d",
+   "closed_at": "2026-11-04T04:46:34Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest: 2026-11-04T01:15:03-03:00 launch kengaku round=75 pgid=1837233 driver=hyaku-inline attempt=1; 2026-11-04T01:40:15-03:00 complete kengaku round=75; hyaku-inline attempt=1. Conformance defects (status-neutral): R75-D1 report first committed 01:38:47 before the final lane commit 01:39:16 and rewritten in place by aa5ebcd6 (an erratum was owed); R75-D2 SCORECARD cites the after state at 813b7403 while the committed receipts stamp 9f8f0f21 (report prose claims a 5d9a0ccc re-derivation with no committed receipt); R75-D3 C1 before measured under the pre-A3 counter (59) vs the final rendered-row rule (60) and only the after is same-version (claims header still says 58); R75-D4 SKILL registry rows stale after A4/A5 (C1 row says 5 arms/4 red vs actual 8/7; C2 row says 4 arms, 9 mutants, expected_matched=9 vs actual 5 arms, real=10, expected_matched=10); R75-D5 LOG drift (says cases=7 red=6 and after receipts stamped 43255758/66a93f6b while they stamp 9f8f0f21) - LOG is append-only, correction entry owed; R75-D6 the report's both-round-74-gates-green assertion has no committed receipt; R75-D7 corpus/lessons/round-74.md was reflowed in place (7/1) while the report says it is not rewritten. Wave: one v1 wave, 13 seats, attack 5/13=38.5%, connector 1, 0 empty, validate rc 0. SHONEN: four [~] boxes with pointers; all four look checkable by a non-author now (promotion is operator-owned). None of the defects bars admission.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
