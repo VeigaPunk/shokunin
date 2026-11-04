@@ -42492,6 +42492,52 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log lines 2234/2248, verified): 2026-11-04T02:03:22-03:00 launch kama round=75 pgid=2696385 driver=hyaku-inline attempt=1; 2026-11-04T02:42:31-03:00 complete kama round=75; hyaku-inline attempt=1. Spot-check kama-shokunin@b06cc612 (protocol identity, single path). Routed to round 76: (1) stale SCORECARD:4065 PROVINCE sha; (2) partial c2-survivors.out; (3) LOG work-tip/mistake-count staleness (append corrections); (4) no receipt for PRE_REPORT_SELFTEST pass=18; (5) missing coverage-map row for corpus/knowledge/append-only-accepted-history.md; (6) no QUALITY criterion for the round-75 captured-by:none mistakes; (7) ## Gate lacks a round-local reject; (8) carry gate arm 7 red, CR01's C1/C3 limits and MT01's seven escapes. SHONEN: four boxes remain [~]; all four look checkable by a non-author review on committed evidence (operator-owned promotion).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 77,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 77,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 77
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged",
+    "novelty": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "canonical-declared-surface-inventory",
+    "receipt-tool-binding-discharge",
+    "receipt-remint-with-tool-sha"
+   ],
+   "report": ".ufo/reports/round-77/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-77-verifier-spotcheck.md@3ae0ab540c35fe40da048198f3e5d4042766b2b7",
+    "rechecks": "Step-1 PASS: report 32d24117 authored+committed by kengaku-shokunin <kengaku@shokunin.local> at 02:45:42 -03 (8 s after lane tip 5eb74eed 02:45:34), ancestor of fleet origin/master; SHONEN 1 heading + 4 [~] lines = 4 boxes, no [x]; base 07c97fcd + all 13 cited commits ancestors of refs/heads/master; jj state branch=master local=remote=5eb74eed ahead=0, porcelain clean; prompt lines 1-140 byte-identical to a re-render of templates/round-prompt.md (0 diff lines), five child-lane items present; one v1 wave, 12 seats (band 8-16), validate rc 0, counts.spawn=12, no model key, 12/12 non-empty outputs, 0 dead, attack 4/12=33%. R77-C1 RE-MEASURED by me in a clean clone at the tip: rows=28, total=28 present=14 absent=13 remote=1, unlisted=0, live=27, agree=28/0, identities 28/28, defects=0, pass, rc 0; at 07c97fcd: rows=0, unlisted=33, live=0, defects=34, fail, rc 1. R77-C2 RE-MEASURED: ids=7 registered=7 closed=7 open=0 discharged=7 legs_passed=7 wrong=0, defects=0, pass, rc 0; at 07c97fcd: registered=0 wrong=12, defects=12, fail, rc 1; ledger 86->93 rows, exactly 7 new R76-V1..V7, 0 existing rows changed or removed, every close_commit 8da90eb7 an ancestor. Registry 244->245 rows (SOURCES diff 1/0); census rc 0 with 25 W04; R75 universes at tip 74/74, 127/127, 68/68; round-76 re-mint TOOL_SHA 552cc63b = tool sha256 at 9ebb8ed1. Spot-check: S253 admit re-opened live (HTTP 200, 79488 B, sha256 91805d9a…, quote at capture 2584-2585, 15 words) agrees; both lesson rejects agree. Lane gates not executed (evidence-verified per Gate standard). Routed: R76-V7 rerun receipts stamp LANE_TIP 9ebb8ed1 with WORKTREE dirty while SF14=244 vs SOURCES=245 at that tip (D1) — V7's letter holds, its evidence does not re-derive at the stamp."
+   },
+   "commit": "kengaku-shokunin@5eb74eed3aa3f0b70986867f560f34c1da4f3427",
+   "closed_at": "2026-11-04T05:53:50Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (mutable .ufo/watchdog.log, copied): 2026-11-04T02:23:41-03:00 launch kengaku round=77 pgid=3391919 driver=hyaku-inline attempt=1; 2026-11-04T02:46:03-03:00 complete kengaku round=77; hyaku-inline attempt=1. Conformance defects (status-neutral): D1 high — the three R76-V7 rerun receipts (rerun-r51-c1/r75-c1/routed-open, LANE_TIP 9ebb8ed1, WORKTREE dirty) do not reproduce their verdicts at the stamp: at 9ebb8ed1 SF14.count_claim=244 while SOURCES=245, so R51 prints NUMBER-DRIFT at that tip, and round-77.md is unindexed there, so R75 would fail too; V7 as frozen passes on ancestor+TOOL_SHA+predicate only — re-mint at the fix commit and require WORKTREE clean or re-derive the predicate. D2 medium — round-77 battery receipts stamp pre-fix LANE_TIPs: C1 batteries at 51ffc14f with TOOL_SHA a4777acf (tool at that commit = 5a507c08), C2 batteries at 6f0c7ad9 with 97166dac (tool there = 52419b0b); WORKTREE dirty discloses it but the digest does not recompute at the named tip. D3 low — the SCORECARD round-77 rows say the after receipts are 'stamped d181e16b'; the committed receipts and the report say 4f2ff9be. D4 low — 'Other gates at the final tip' rest on receipts measured at 9ebb8ed1, and routed_open's total=93 has no at-tip receipt (re-derived true by me: 93/31/1/59/2). D5 low — c1-before stamps WORKTREE clean although the C1 counter cannot exist at 07c97fcd; the cleanliness check ignores untracked files. D6 pre-existing — SHONEN.md box-4 pointer PROVINCE.md:129 is stale at base and at tip (line 129 is a table separator); state_check MISMATCH P3c.box.4.pointer.1 predates the round. SHONEN: all four boxes look checkable by a non-author on this round's evidence (SKILL.md registry tables and cited sources; LOG.md Round 77 with two end-to-end counters; claims plan + receipts executable without oral context; PROVINCE.md §Round 77 refusals + connector matrix) — promotion stays operator-owned; no [x] was written. L0 carried unchanged: kengaku rounds 25/33/51/54/56/63/65/66/67/72/74/76. No tool installs.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
