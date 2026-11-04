@@ -186,3 +186,11 @@ mission of this lane is open; this round is *progressing* (commits `eda17453`, `
   never a misroot) and `.ufo/reports/round-81/mado.md` (another lane) are not this round's; a stray
   fleet-root file `after` (24 bytes, dated 2026-11-03 20:05, content `== SCORECARD diff base-`) names no
   lane or round and predates this round — left untouched and recorded here.
+
+## Erratum (filed after the report)
+
+- The *Before → after measurements* sentence "`round-gate --round 83` was red at the close battery only
+  because the report did not yet exist; it is green after filing (see below)" is completed here: re-run
+  after this report was filed, `node scripts/round-gate.mjs --round 83` in the lane at tip `d5fc2c94` reads
+  `ROUND_GATE: CLEAN (round=83 lane=kumitate checks=10 errors=0 warnings=0)`. The close-battery receipt
+  `close/round-gate.txt` keeps the honest pre-report red (`REPORT_MISSING`, `rev=1c1a855a`).
