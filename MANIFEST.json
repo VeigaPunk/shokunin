@@ -42363,6 +42363,49 @@
    "notes": "Digest: 2026-11-04T01:56:58-03:00 launch kaidoku round=71 pgid=2541473 driver=hyaku-inline attempt=1; 2026-11-04T02:31:03-03:00 complete kaidoku round=71; hyaku-inline attempt=1. Step-1 PASS: report 163941de by kaidoku-shokunin (fleet origin/main), lands last after the lane tip e90dd494 (02:30:28 vs 02:30:12), SHONEN heading with 4 [~] lines, all 24 report commit tokens ancestor of main, lane ahead=0 clean, prompt = template render + hyaku addendum with all round-level and child-lane items, one 16-seat v1 wave (executor 6/reviewer 2/mutation-tester 2/scribe 2/critic 1/sentinel 1/scout 1/connector 1; attack 6/16 = 37.5%), gate-at-record 46/46 disclosures exact and round-71 freeze CLEAN, registry conformance 0 mismatches, no tool installed, misroot sweep only .scratch/* plus the pre-existing untracked 'after'. Claims verified from committed receipts, not gate execution: C1 coverage (10/10 arms vs 7/10 base, raw-log A8 re-derived), C2 calibration (6 lying-field classes accepted by the first cut and rejected by the superseded reader with clauses; 0 failures), C3 operability (93 rows/0 nonconformant/0 duplicates; base 88/6 pinned-empty; selftest 14/14). No owned axis harmed (SCORECARD adds capability rows; coverage 10.0/depth 10/calibration 10 hold); the three round-70 backlog capability rows enter the table as R71-G1. Status-neutral defects routed: (1) report round-shape role mix says 5 executor and sums to 15 of 16 while spec/results carry 6 executor seats; (2) the report cites l1/pre/c2-do-nothing.json with 12 rows/0 lying/target 18 but the committed file reads 10/16 (the 12/18 values are the landing control arm); (3) .ufo/waves/round-71/claims.json instruments still pins the b827a8b5 freeze bytes after the disclosed 5cecf4c0 supersession and the supersession entries carry no replacement sha, with the formal before receipt not re-taken (the re-taken base state is scores/controls-at-landing.json); (4) S274 repeats its REJECTED reason in the scope cell instead of teaches. The lane's own routed items 1-5 (A10 self-mutant survivor, checker-mode child env, scratch cleanup, raw-witness capsule audit, standing r63/r58/r60/r64 debt) stay open and were confirmed named. No promotions, no mints; SHONEN boxes remain lane-asserted [~] (promotion is operator-owned).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 76,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 76,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 76
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage:omp": "improved",
+    "operability": "improved",
+    "coverage": "unchanged",
+    "coverage:script-layer": "unchanged",
+    "coverage:runtime-layer": "unchanged",
+    "coverage:kimi-layer": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "spotcheck-adopt"
+   ],
+   "report": ".ufo/reports/round-76/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-76-verifier-spotcheck.md@a321ed8006083be1086a3b991a78d3b4c26f0be9",
+    "rechecks": "Step-1 PASS: report 461f0c10 by kumitate-shokunin <kumitate@shokunin.local>, in origin/main and origin/master, filed 02:26:14 after lane tip cf1cdc5a 02:25:45; SHONEN heading with 4 [~] lines = the 4 SHONEN.md boxes, no [x]; cited lane commits cabc7aef/0ee0b2a7/beb8a934/cf1cdc5a + base ebfcedfa all ancestors of master; jj state branch=master local=remote=cf1cdc5a ahead=0 behind=0, status clean; prompt .ufo/prompts/kumitate-round-76.md renders templates/round-prompt.md substitution-only (140 lines; addendum ## 6 at :141) with all five child-lane items and the L2 floor; 12-seat v1 wave, 12 settled, 0 dead, attack 4/12 (fixed set) / 5/12 (declared roles, disclosed), inside 8-16. C1 re-measured over committed bytes: base proxy coverage_omp hits 0, O1 rows 0, AXIS_ROWS 5, census exports 0; tip 16/1/6/3 with six stanza O keys, 35-row O1 note table, live root 64 entries; raw JSON receipt terms.coverage_omp=10, declared=10, C1o=1, C1o_total=1, O_members=64, O_findings=0, O_bound=35, MATCH exit 0. C1 literal clause (a) reads 2 not 1; pre-verdict Amendment A1.1 restates the operative predicate and the miss is printed in the report, LOG, SCORECARD and lesson. C2 re-measured: base tool absent, files=182 rows=181 uncovered=1; tip tool present, files=183 rows=183 uncovered=0, capability row entered, 42/42 spotchecks covered. Evidence-verified (not executed): PROXY_SELFTEST 145/145, OMP census 49 cases, OMP_ROOT_NOT_A_DIR/OMP_NOTE_MISSING exit 2, negative roots 65/1/9 and 74/10/8, MUTANTS76 ALL-KILLED 13/13, SPOTCHECK_ADOPT_SELFTEST 16/16, adopt wrote=both + ALREADY_ADOPTED byte-identical + three refusals + 7/7 C2 mutants, pins equal the committed scripts' sha256. Axes identical base->tip on all six rows; no axis harmed. Discernment spot-check: S226 admit agree (upstream re-fetch sha256 2d423f4f... equals the capture and S053's row; quotes 4/11/18 words at 949/991-992/1052-1054), merge/kumitate reject agree on decision but the cited 161 rows is the file's line count (155 rows / 70 entries, unchanged from r75); sources census exit 0 with six carried W04."
+   },
+   "commit": "kumitate-shokunin@cf1cdc5ae8540de75b3d783a85ce57af99424738",
+   "closed_at": "2026-11-04T05:38:34Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (watchdog.log, mutable): 2026-11-04T01:53:31-03:00 launch kumitate round=76 pgid=2525216 driver=hyaku-inline attempt=1; 2026-11-04T02:26:46-03:00 complete kumitate round=76; hyaku-inline attempt=1. Conformance defects (all status-neutral; claims unaffected): D1 FREEZE-FIX 6 undispositioned and the cited open/adopt-absent.txt (5 lines) contains neither MODULE_NOT_FOUND nor Cannot find module, while report :100 and plan :95 quote it and the report says all six freeze items dispositioned — the absence is independently true (git cat-file -e ebfcedfa:scripts/spotcheck-adopt.mjs fails; loader throw receipted), but a supplemental/corrected receipt and an explicit #6 disposition are owed. D2 carried-reject size: corpus/lessons/round-76.md ## Gate and the report's Assimilation paragraph say the merge/kumitate package reads 161 rows, larger than r75's 155/70; re-measured it is 155 S-rows (161 lines) over 70 entries, unchanged, and CORPUS.md rule 4 is not a prohibition on appends — correct append-only next round and cite §10 proportionality. D3 r75 closure defect D4 (round-gate UPSTREAM_MISSING on the detached lane HEAD; operator-side) is not named in the inherited-state disposition as the lane prompt requires. D4 .ufo/pins/readme-map.json lost its final newline base->tip (base `}\\n`, tip `}`) despite the writer's append-only byte claim; restore or state the normalization. Disclosed, not a defect: C1's frozen literal grep clause (a) reads 2 not 1; pre-verdict Amendment A1.1 corrects a counter that could not discriminate a correct implementation, and the miss is printed everywhere, so C1 verifies under the operative predicate (reviewer FREEZE-FIX 1 raised it pre-data). Routed to round 77: D1-D4 above plus the expected SPOTCHECK_MAP drift for this closure's own lessons/round-76-verifier-spotcheck.md (C2 --predict 76 records PENDING; the lane's C2 adopt is the named repair). SHONEN: the four boxes look fully checkable by a non-author reviewer (27-row gate registry + 35/35 checklist run; C2 live adoption + LOG; frozen plan/amendment/wave/spec chain; connector scan with PROVINCE.md byte-unchanged); promotion is operator-owned and no box was marked. Fleet-root stray `after` (24 bytes, mtime 2026-11-03 20:05, predates dispatch) is not a kumitate misroot; reported for the operator.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
