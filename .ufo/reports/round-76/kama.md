@@ -87,7 +87,8 @@ Every change is tied to `LOG.md` §Round 76 and to the commit that carries it:
 | `dc222228` | superseded lesson bytes held verbatim (append-only restoration) |
 | `b52b5b79` | record-citation repoint + held cells, head capability mirror to 31 rows, `SC01Recon` report |
 | `417bbf81` | saturation list to round 76, value-keyed province-digest correction |
-| `6440df9c` | head re-derivation (banner, live-plan pointer, retired count, coverage run fact, axes re-anchors) |
+| `6440df9c` | head re-derivation (banner, live-plan pointer, retired count, coverage run fact) |
+| `c1ae92d5` | axes re-anchors: operability selftest tally `pass=18` → `pass=21`, `PROVINCE.md` digest and line count after the instrument paragraph |
 | `731ef814` | superseded head bytes held verbatim (restoration of the graded banner event) |
 | `fd4b9ca3` | pre-report gate receipt (the final tip) |
 
