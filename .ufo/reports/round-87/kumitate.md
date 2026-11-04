@@ -170,3 +170,28 @@ pinned in `.ufo/pins/source-dupes.json` `known=7`). At round start the same comm
   `kumitate-shokunin/.ufo/waves/round-87/`), so no copy-and-delete was needed.
 - **Honesty:** every number above is a committed receipt path at M; the claim is UNMET and is reported
   as such.
+
+## Erratum — round-start census (appended after the filed bytes, 2026-11-04)
+
+The **Sources & frontier** section above says: *“At round start the same command read exit 0 with
+**187** rows”*. That sentence is superseded: the census command was **not** run at round start; only
+`grep -cE '^\|[[:space:]]*S[0-9]{3,}[[:space:]]*\|' corpus/SOURCES.md` was, and it read **187**. The
+round-start census was reconstructed after the fact, and the reconstruction is what the record now
+rests on:
+
+```
+$ git clone --shared kumitate-shokunin /fast/scratch/hyaku/kumitate-r87/errata/base/kumitate-shokunin
+$ git -C …/base/kumitate-shokunin reset -q --hard db97929212bb61ae970b10abac3cc4cd976713ae
+$ /home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin \
+    /fast/scratch/hyaku/kumitate-r87/errata/base/kumitate-shokunin
+kumitate-shokunin  W04 S126 duplicate url docs.temporal.io/encyclopedia/detecting-activity-failures across scopes
+kumitate-shokunin  W04 S247 duplicate url arxiv.org/abs/2212.06118 across scopes
+kumitate-shokunin  ok  …/base/kumitate-shokunin/corpus/SOURCES.md
+exit=0
+```
+
+The clone is a scratch fixture at the base revision (its directory basename makes the census print the
+lane label `kumitate-shokunin`); it is not the lane and it was removed with the round scratch. Round-end
+census, run in the lane: `sources-census.sh validate --root /home/vgpnk/Projects/shokunin kumitate` →
+`kumitate ok …/kumitate-shokunin/corpus/SOURCES.md`, exit **0** (7 `W04`, all pinned). Rows 187 → 189
+stands, measured by `grep -cE` at both ends.
