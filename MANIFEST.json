@@ -41970,6 +41970,49 @@
    "notes": "Dispatch/complete digest: 2026-11-04T01:15:01-03:00 launch tsukuroi round=75 pgid=1836578 driver=hyaku-inline attempt=1 | 2026-11-04T01:36:55-03:00 complete tsukuroi round=75; hyaku-inline attempt=1 (no lane-dead line). Step-1 PASS: report 350b464f by tsukuroi-shokunin <tsukuroi@shokunin.local>, committer identical, ancestor of origin/main+origin/master; SHONEN heading 1 + 4 [~] lines (no [x]); cited 1e2bb29c/c15fe829/71ab09f4/e5f5ca9e/bd0acc44 + base a21302a4 all ancestors of refs/heads/master; jj state branch=master local=remote=bd0acc44 ahead=0 behind=0; 7 untracked wave-runner markers only (round-75 w1.ready + w1.ready.dispatched, carried r66/r67/r73/r74 .ready.dispatched and r73 w1-run.stderr; dispatch bookkeeping, not lane round work - routed item 5); report lands after lane tip (01:35:09 -> 01:35:55) and before complete (01:36:55). Prompt .ufo/prompts/tsukuroi-round-75.md (704 lines) = template sections 1-5 with placeholders + section-6 run-15 addendum + section-7 scratch; all five child-lane items present; L2 floor >=8 matches MISSION.md section L2; committed 8afab848 by the dispatch harness under the lane identity. Observation (operator-owned, not a lane defect): the prompt's quoted 'latest routing amendment' (only reviewer @m_zfl) has drifted from the live ~/.omp/agent/config.yml agentModelOverrides (critic/executor/scribe/connector/sentinel/mutation-tester also @m_zfl); the prompt makes the config the authority and forbids passing model, and no claim depends on the route. C1 re-measured over committed bytes: 6 JT rows, 3 snapshots sha256sum -c 3/3 OK, 3 sources S314-S316, 6/6 quotes located, note absent at base rc 128; the frozen clause 'propagating restart only as try-restart' independently FALSIFIED - the :1203-1204 comment is scoped to UNIT_ATOM_PROPAGATE_STOP, while the graceful branch (:1220-1247) calls job_type_propagate_stop_graceful (:999-1027) and may enqueue a direct JOB_RESTART at :1019; lane self-declared not verified as declared, no depth uplift. Lane gate not executed (Gate standard); committed evidence verified: 13-case selftest, sha256 5e87238c... at declaration+tip, base JT_MAP absent rc 128 in before/absence-controls.txt, after receipts at c15fe829/71ab09f4/e5f5ca9e rc 0. C2 re-measured by plain greps: four r74 tokens 0->1 at tip with supersede verbs; checker evidence 4->0 stale (sha256 4b5c801c..., 13-case selftest); r74 SC3Index death row output:''/note:null and the 27552-byte report.md corroborated; freshness improved. Supporting counts closure-run: registry 313->317, notes 92->93, lessons 124->125; census exit 0 (pre-existing W04 only). No axis harmed: full diff 99 files +13511/-0, SCORECARD 91/0, LOG/PROVINCE/SKILL/README/QUALITY appends only. Routed defects for r76: (1) S314 teaches 'restart propagates only as try-restart' over-broad - append a superseding SOURCES row scoped to PROPAGATE_STOP and add the proposition to the QUALITY 108 map; (2) JT5 erratum says 'nine comma items' while the row has eight comma items (ten labels) - correct the count/method; (3) report says 'six mined mistakes' vs five in the lesson's ## Mistakes (two owed rows; LOG says five) - reconcile with the counting command; (4) after receipt heads e5f5ca9e while the report's after column says bd0acc44, and the base control sits in before/absence-controls.txt - re-run/record at the cited tip or cite the measured revision; (5) untracked round-75 w1.ready/w1.ready.dispatched markers - classify or clean/commit; (6) 'no admitted artifact is left failing its own re-check' is overstated by (1)-(2). Operator note: all four SHONEN boxes look fully checkable by a non-author (box 3's whole-SKILL no-oral-context retest is still the open round-60 L0 item); promotion operator-owned; no [x] written. Open L0: corpus-expansion-1 merge/tsukuroi mass id drift (114/147 staged ids collide; adoption none). Tools installed: none; pacman paused. Capabilities added: none (the two new gates are claim instruments, not repertoire rows).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 75,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 75,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 75
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage:omp": "improved",
+    "operability": "improved",
+    "coverage": "unchanged",
+    "coverage:script-layer": "unchanged",
+    "coverage:runtime-layer": "unchanged",
+    "coverage:kimi-layer": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "origin-tip-drift"
+   ],
+   "report": ".ufo/reports/round-75/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-75-verifier-spotcheck.md@ebfcedfaaa375517d99d2281e647a9293541efec",
+    "rechecks": "Step-1 PASS: report 7f3712ce (body) + 2137a6cd (erratum) by kumitate-shokunin <kumitate@shokunin.local>, on origin/master; SHONEN :208 with 4 [~] lines = the 4 SHONEN.md boxes, no [x]; 9/9 cited lane commits + post-filing receipts d49aa958/3fa7f9a4/a0896afc ancestors of master; jj state branch=master local=remote=a0896afc ahead=0 behind=0, status clean; prompt .ufo/prompts/kumitate-round-75.md equals the template rendering (substitution-only diff; 704 lines; addendum §6/§7) with all five child-lane items and the L2 floor; 12-seat v1 wave, 0 dead, attack 4/12, inside 8-16. C1 re-measured over committed bytes: base 40 UNLISTED (29+7+3+1), DRIFT entries=64 findings=40 exit 1 => 3; close CLEAN entries=64 findings=0 bound=35/35 exit 0 => 10; static parse 26 BASE_MEMBERS + 9 CHAIN_FAMILIES = 35 declared, 0 unbound in the 74->108-line note; evidence-verified: selftest 49 cases, bogus-member/UNLISTED and 34/35-note/NOTE_UNBOUND exits 1, 5 drop-unit mutants FAIL with identical reruns. C2 re-measured: base source 0 --tip-drift occurrences; close MOVED exit 1 / IN_SYNC exit 0 / FAIL-CLOSED exit 2; strict PROXY: MATCH operability=9; evidence-verified 132/132 selftest, M1/M2/M3/M6 killed, M4 survivor disclosed, M4b killed. No axis harmed: SCORECARD diff adds only coverage:omp (3->10), other coverage rows and operability hold. Spot-check agrees on 2 admits and 2 rejects; sources census exit 0, rows 162->164."
+   },
+   "commit": "kumitate-shokunin@a0896afc2098fd3c8ba20bb9137b211feed79136",
+   "closed_at": "2026-11-04T04:52:37Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (watchdog.log): 2026-11-04T01:12:59-03:00 launch kumitate round=75 pgid=1794626 driver=hyaku-inline attempt=1; 2026-11-04T01:47:19-03:00 complete kumitate round=75; hyaku-inline attempt=1. Conformance defects (status-neutral): D1 stale A count — SCORECARD round-75 prose (:3423 A 821->832, :3430 A=832) and LOG round-75 entry (:2410) say 832 while the stanza and report read 833 after 2c7b7203; no appended correction names the superseded value. D2 stale remote pointers in the report — header 'final lane tip c775e9b1' vs Landed footer 'ls-remote reads f297289f', actual tip a0896afc after post-filing receipt commits d49aa958/3fa7f9a4/a0896afc; the erratum's remote-check line names no hash. Routed to the lane for round 76: D1, D2, and the 5th spotcheck-coverage recurrence (this verifier file has no README row / readme-map covered entry; the closure writes only its two artifacts). Carried host defect (lane-routed): round-gate --close UPSTREAM_MISSING on the jj lane's detached HEAD (audit arm CLEAN). Promotion note: all four SHONEN boxes have resolvable non-author evidence; promotion is operator-owned and no box was marked.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
