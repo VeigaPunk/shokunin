@@ -80,7 +80,9 @@ Work items, each with its evidence pointer:
   .ufo/waves/round-79/controls/c1-cases-r79.json --scratch-root DIR`
   → before (`receipts/control-c1-r80-at-base.txt`, tool `9e274157…`, the r79 model):
   `cases=33 correct=23 mutants=22 killed=12 base_correct=23/33 tool_selftest=50/50 verdict=TARGET_MISSED`
-  rc 1; after (`receipts/measurement-c1-r80-at-tip.txt`, `rev=dd4f844c`, tool `5b9e2930…`):
+  rc 1; after (`receipts/measurement-c1-r80-at-tip.txt`, measured at `231f92bc`; the tool bytes are
+  identical at the landing tip — `git diff --stat 231f92bc dd4f844c -- tools/mado-barfoot.py` is
+  empty — and the receipt prints `tool_sha256=5b9e2930…`):
   `cases=33 correct=33 mutants=22 killed=22 base_correct=23/33 carried=23/23 tool_selftest=111/111
   verdict=TARGET_MET` rc 0; the freeze measurement at `6c302a53` printed the same counts on the
   pre-repair bytes (`measurement-c1-r80.txt`, `tool_sha256=c3eb5fbe…`). Bounded `10 × 33/33` →
@@ -104,7 +106,9 @@ Work items, each with its evidence pointer:
   is the capability's absence** — one-sided rather than a measured before→after; the honest
   before→after its lab copy demonstrated (`rows=22/24 → 24/24`, `verdict=TARGET_MISSED rc 1` at the
   base) is round 81's instrument, since a rule changed after a seat scored is not this round's rule.
-  After (`receipts/measurement-c2-r80-at-tip.txt`, `rev=dd4f844c`):
+  After (`receipts/measurement-c2-r80-at-tip.txt`, measured at `749d3a85`; the counter and tree
+  bytes are identical at the landing tip — `git diff --stat 749d3a85 dd4f844c -- quality/counters/
+  c2-r80-runbook.py tools/mado-barfoot.py SKILL.md` is empty):
   `cases=24 executed=24 matched=24 shapes=19/19 anchors=24/24 rows=24/24 control_new=0/2 mutants=16
   killed=16 verdict=TARGET_MET tree=bound` rc 0; the freeze measurement at `6c302a53` printed the
   same counts (`measurement-c2-r80.txt`).
