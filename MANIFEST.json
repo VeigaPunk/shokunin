@@ -42013,6 +42013,49 @@
    "notes": "Dispatch digest (watchdog.log): 2026-11-04T01:12:59-03:00 launch kumitate round=75 pgid=1794626 driver=hyaku-inline attempt=1; 2026-11-04T01:47:19-03:00 complete kumitate round=75; hyaku-inline attempt=1. Conformance defects (status-neutral): D1 stale A count — SCORECARD round-75 prose (:3423 A 821->832, :3430 A=832) and LOG round-75 entry (:2410) say 832 while the stanza and report read 833 after 2c7b7203; no appended correction names the superseded value. D2 stale remote pointers in the report — header 'final lane tip c775e9b1' vs Landed footer 'ls-remote reads f297289f', actual tip a0896afc after post-filing receipt commits d49aa958/3fa7f9a4/a0896afc; the erratum's remote-check line names no hash. Routed to the lane for round 76: D1, D2, and the 5th spotcheck-coverage recurrence (this verifier file has no README row / readme-map covered entry; the closure writes only its two artifacts). Carried host defect (lane-routed): round-gate --close UPSTREAM_MISSING on the jj lane's detached HEAD (audit arm CLEAN). Promotion note: all four SHONEN boxes have resolvable non-author evidence; promotion is operator-owned and no box was marked.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 72,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 72,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 72
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "Summary-authenticity kill credit + summary-driven outcome verdict (first-working round 72): credit a landing kill only when the last parsed MADO_LANDING_COUNTERS_SELFTEST p/n summary reports n>0 and p<n AND the run's own SELFTEST FAIL lines number exactly n-p (8/8 vs held 6/8), and green the contract outcome only on the last parsed summary with n>0 and p==n with the kill count at 2/2 (8/8 vs held 4/8); evidence .ufo/waves/round-72/measurement-c{1,2}-r72.txt, quality/counters/c1-r72-landing-controls.py, c1-r72-summary-credit.py, c2-r72-outcome.py, corpus/knowledge/{summary-credit-own-detail-r72,outcome-verdict-gate-summary-r72}.md"
+   ],
+   "report": ".ufo/reports/round-72/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-72-verifier-spotcheck.md@d3f6c9f5d8b3401c01f189e8cd4b8dbc917a2bce",
+    "rechecks": "Step-1 PASS: report 61009cc5 by mado-shokunin <mado@shokunin.local> at 01:46:53-03:00 after lane tip 3894451f at 01:46:09; report on origin/master; SHONEN heading 1 + 4 [~] boxes, no [x]; 9/9 cited lane commits ancestors of refs/heads/master; jj state branch=master local=remote=3894451f ahead=0 behind=0, status clean; prompt §§1-5 equal the rendered template except the repo-path/axes substitutions, five child-lane items present; wave w1 13 seats (attack 4/13=30.8%, connector 1) inside band 8-16. Claims re-measured at the tip with the committed counters: C1 MADO_R72_SUMMARY_CREDIT cases=8 correct=8 base_correct=6 TARGET_MET rc 0; C2 MADO_R72_OUTCOME cases=8 correct=8 base_correct=4 TARGET_MET rc 0; control-set sha256 values match the declaration. Index 85->87 and ledger 125 rows independently re-derived; census 380->383, validate exit 0. Gate legs (selftest 460/460, axis 3/3, frozen r71 blobs) evidence-verified from committed receipts, not executed. Discernment re-opened: 2 admits (S444, S445) + 1 reject (S446), all agree; S446's missing Gate quote and the post-repair stale selftest tallies are routed."
+   },
+   "commit": "mado-shokunin@3894451f71c76d202fe03ead9e05a8c467a3b98d",
+   "closed_at": "2026-11-04T04:55:12Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log): 2026-11-04T01:30:49-03:00 launch mado round=72 pgid=2101027 driver=hyaku-inline attempt=1; 2026-11-04T01:47:17-03:00 complete mado round=72; hyaku-inline attempt=1. Step-1 conformant: exact report path, lane attribution, report-last ordering, SHONEN heading with 4 [~] boxes and no [x], 9/9 cited commits ancestors of refs/heads/master, lane clean and ahead=0, prompt carries the full contract; one status-neutral prompt note: the run-15 addendum's 'only reviewer @m_zfl' sentence is stale against the live task.agentModelOverrides (executor/critic/connector/sentinel/scribe/mutation-tester are @m_zfl), harmless because the prompt names that config as authority and never passes a model. Claims admitted: C1 calibration (kill credit requires the run's own failure detail; 8/8 vs 6/8 re-measured at the tip) and C2 operability (outcome reads the last parsed summary, not the exit status; 8/8 vs 4/8 re-measured). Routed defects (round 73): (1) post-repair selftest tallies are stale in quality/tool-ledger.md:161,163, SKILL.md:731 and corpus/knowledge/outcome-verdict-gate-summary-r72.md section 5 (83/83 and 24/24 vs the erratum/report's 87/87 and 25/25) - correct the rows, the rules themselves verify; (2) the report's wave table names w1/R72ExecBattery.md while the committed deliverable is w1/R72ExecBattery/R72ExecBattery.md; (3) S446 (new rejected row) has no <=25-word located quote in the round-72 Gate block (CORPUS rule 1); (4) r71 routed item 7 (round-69 check-deliverables reds) remains open and is unnamed in the r72 report; (5) the report's 'W04 warnings only' census sentence omits the held W01 (S277) line, no new warning base-to-tip (39 W0 lines both sides). Fleet-root leftovers are not mado's: .scratch/* orchestrator-owned, untracked .ufo/reports/round-70/kaidoku.md sibling, fleet-root 'after' dated 2026-11-03 20:05 before the launch and naming no mado content. SHONEN: all four boxes are [~] with resolvable pointers and a non-author reviewer can check them, but promotion is operator-owned; this closure wrote no [x] and promotes nothing.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
