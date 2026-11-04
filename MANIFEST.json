@@ -41806,6 +41806,47 @@
    "notes": "Dispatch/complete digest (watchdog.log, mutable - copied at closure): 2026-11-04T00:23:39-03:00 launch kengaku round=74 pgid=988818 driver=hyaku-inline attempt=1; 2026-11-04T01:05:40-03:00 complete kengaku round=74; hyaku-inline attempt=1. Step-1: report fleet commit 576a03b2 authored by kengaku-shokunin; cited cbb8b8d8/74e2e15a/cea7ebf3/f4d651c5 all ancestors of lane master; lane clean ahead=0, remote master=cbb8b8d8; prompt sections 1-5 byte-identical to templates/round-prompt.md, section 6 present; SHONEN 1 heading + 4 [~] lines. Conformance defects (status-neutral, routed to round 75): R74-D1 the round-74 receipts are unstamped and were produced over a pre-commit worktree - c1-before/c1-after/c2-after print rows=116 while the freeze commit f4d651c5 has 114 registry rows (C1GateReplayR74 measured f4d651c5 legacy at ADVERTISED 113), so A1's 'at the freeze base' wording is false; stamp LANE_TIP and regenerate from a clean clone. R74-D2 corpus/lessons/round-74.md:51 still asserts the C1 before receipt shows MISSING 5; the receipt shows MISSING 0. R74-D3 the SCORECARD round-74 section says the round diff deletion column is 0; actual SKILL.md numstat is 3/1 (the documented line-17 census edit), total deletions 1. R74-D4 C2 --selftest/--mutants print literal red=3/invalid=0/null_detected=1 and count a mutant killed on any defect rather than its expected finding-id; derive the tallies and add a null arm. R74-D5 S250 grounds a held entry, not a round claim, so the frontier 'at least one sourced claim' item is unmet; cite the S### in claim evidence next round. Also: prompt commit 9ad48df4 is lane-authored (integrator duty; attribution only); the report omits the L1-holds-planner line (recorded in plans/round-74-claims.md). No axis harmed (SCORECARD append-only, PROVINCE unchanged). Operator note: all four SHONEN boxes remain [~]; boxes 2 and 4 look fully checkable by a non-author now, boxes 1 and 3 carry the R74-D4 caveat. Promotions operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 74,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 74,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 74
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "improved",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-74/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-74-verifier-spotcheck.md@a21302a48d24cf5242ac2a66cc5b5b453f7a1b20",
+    "rechecks": "Step-1 PASS: report 2c0039b1 by tsukuroi-shokunin <tsukuroi@shokunin.local>; SHONEN heading 1 + 4 [~] lines; cited hashes e51fb49d/810daf13/dc5114c5/c3faaef8 + base d749a625 all ancestors of refs/heads/master; jj state ahead=0 local=remote=c3faaef8; 5 untracked wave-runner dispatch markers only (not lane work, carried since r66-67); prompt carries full template contract + section-6 run-15 addendum, committed by lane identity. C1 RE-MEASURED by closure: counter at real base d749a625 -> 'UF_MAP absent' rc128; at dc5114c5 and c3faaef8 -> UF_ROWS=6 UF_VERIFIED=6 UF_SOURCES=3 UF_SNAPSHOTS=3 UF_MALFORMED=0 met=1 rc0; registry 308->313 and notes 91->92 closure-counted, matching report; held-ground sweep 0 matches at base (new ground); instrument sha256 94d46a5e/2da4ff1f match frozen pins, tools/ diff is two new files, 0 deletions; receipt after/measure-dc5114c5.txt verifies frozen run + selftests 13/13 + 6/6 + census rc0. Literal C1 clause independently FALSIFIED: frozen unit-file.h (digest e55b17a1) lines 25-32 = SERVICE/SOCKET/TARGET/DEVICE/TIMER/PATH, zero UNIT_VOLUME occurrences; lane's honest stop, erratum and QUALITY 106 reproduced. C2 RE-MEASURED and READ: checker 2-stale rc1 at base -> 0-stale 2/2 rc0 at dc5114c5/c3faaef8; Correction 3 append-only (0 del/6 add), install.c quote verified at 2383 superseding 2387, S304 anchors :368-370/:237-238/:238-239 confirmed; LOG Form A append proven required by R2Reviewer HIGH-1 first-match shadow. Discernment spot-check (closure, non-author): re-opened S309+S311 admits (snapshot digests + live HTTP 200, quotes verbatim) and S312+S313 rejects (ArchWiki body 152032 bytes, 0 code-level matches; unit-load.c 404 at both paths) - agree on all 4, zero disagreements; census validate rc0 closure-run. Wave accounting (critic seat): 12 seats, roles 1/3/3/1/2/1/1, band 8-16, attack 4/12=33% (R1/R2/K1/M1), connector 1, residual 0, 9 nonempty + exactly SC1Entry/SC3Index/M1Mutation empty, no replacement - accurate. Three read-only reviewer seats used. No axis harmed: SCORECARD/LOG/SKILL/PROVINCE/README/QUALITY diffs append-only."
+   },
+   "commit": "tsukuroi-shokunin@c3faaef8c47be23a831f0f9310815549767e8112",
+   "closed_at": "2026-11-04T04:13:54Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-11-04T00:18:41-03:00 launch tsukuroi round=74 pgid=968016 driver=hyaku-inline attempt=1 | 2026-11-04T00:23:35-03:00 lane-dead-no-report tsukuroi round=74; retry same round (attempt 1 ended without a landed report) | 2026-11-04T00:23:37-03:00 launch tsukuroi round=74 pgid=988204 driver=hyaku-inline attempt=2 | 2026-11-04T00:57:24-03:00 complete tsukuroi round=74; hyaku-inline attempt=2. Honest stop: C1's frozen alias set (volume) is falsified by pinned unit-file.h:25-32 (timer/path); lane refused literal credit, errata'd append-only (R74-DECL-ALIAS-SET, R74-BASE-OID), QUALITY 106/107; closure reproduced both. C2 repairs verified, no uplift taken. Routed defects for r75: (1) persist SC3Index 429 death receipt or file erratum (429 exists only as L1 report prose); (2) report wording 'SC3Index left no completed doc drafts' contradicts the 27.5KB self-verified draft on disk - say 'no review-accepted drafts'; (3) E3HostProbe/receipt-g-landing.txt header still prints fabricated OID d749a625f483... - corrections-sweep residue; (4) freshness axes-table row stale since round 65 (prose-only updates) - restate table; (5) named instrument limits (counter PASS label on exit-3 failing aggregate; C2 selftest answer key) - fix only if instruments revised; (6) self-disclosed process debt: late protocol loading, wave context omitted pacman/scratch guards. Operator note: all four SHONEN boxes now look fully checkable by a non-author (box 3's whole-skill no-oral-context retest remains the open L0 round-60 item); promotion review is operator-owned, no [x] written by closure.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
