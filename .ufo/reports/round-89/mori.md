@@ -219,3 +219,24 @@ carry-over ledger in `corpus/lessons/round-89.md`.
   mori-round-89 seat file at the fleet root; nothing to move.
 - **Open L0 questions:** none added this round; the mori r65/r73 instrument ruling and the r61
   assimilation questions remain open and untouched.
+
+## Erratum (appended after the filed bytes; supersedes two statements above)
+
+1. **Final lane tip.** The header's “final lane tip `ab48dbec724e5ee55e85df9f1d690fcf5fceff65`”
+   is superseded: the lane tip is `192c7e0bdae6cbf84052d30a87862ccadf6ffe09`
+   (`git ls-remote origin refs/heads/master` prints it; `jj-lane.sh state` reads
+   `ahead=0 behind=0`). `192c7e0b` appends three corrections of record and touches no instrument
+   byte: `SKILL.md` gains the repair-2 limits paragraph superseding the two round-89 paragraphs
+   that described repair 1; `corpus/README.md` gains the Round-89 frontier correction naming the
+   subtract-only rule and the held-out numbers; `corpus/lessons/round-89.md` gains the D2 ledger
+   correction (`9f4d20b9` → repair 2 `7715bb56`), the S608 flip-text correction (`shlex` is a
+   tokenizer, not an execution model; the immutable cell stays, the correction lives in the
+   lesson) and the docs.python.org digest-drift note. Both after-values and every receipt are
+   unchanged, and `git diff --stat 7715bb56 192c7e0b -- <the six instrument paths>` is empty.
+2. **A second L1 ran this round.** `MoriR89-2` was spawned with the same ready-file label and
+   authored repair 1, repair 2, `noharm-c1.py`/`heldout-c1.py`, the residual `r` wave and the
+   corpus commits that this report integrates; it stopped when it saw this report and the lane
+   tip, and reverted its remaining uncommitted edits (lane tree clean, `tracked=0 untracked=0`).
+   Its stale-at-`ab48dbec` list is what `192c7e0b` corrects. Two L1s on one lane-round is an
+   orchestration defect for the closure to record, not a lane claim; no work of its is left
+   unlanded and no seat was re-spawned under a dead name.
