@@ -43550,6 +43550,51 @@
    "notes": "dispatch 2026-11-04T04:46:51-03:00 launch kama round=78 pgid=444680 driver=hyaku-inline attempt=1; complete 2026-11-04T06:03:04-03:00 hyaku-inline attempt=1. 12-seat v1 wave, 3 returned output / 9 empty-dead, attack 4/12. Claims: C1 calibration verified (four repairs re-read at the tip; sealed table 34 rows/max 77; counter mismatches=0 corrected=4; selftest 8 arms; control red mismatches=4); C2 freshness verified (bucket sum 53+59+28+4+99+5 = events=248; three exempt rows 3/2/1; selftest 7; control red unaccounted=3); C3 operability verified (MODEL_OK/MODEL_MISMATCH/DEAD against the pinned child; server/model sha256 match the live files; teardown recorded). Axis harm: none (8/8/7/9/7/7). Conformance defects (status-neutral): 'final tip' wording vs receipts measured at rev=2842ad29/22cce544 (events=250 line unreceipted); C1 selftest receipt predates the F2 derivation change at 381b53dc; pre-correction red-before output uncommitted; C2 tip re-run rows=1 uncommitted; refreshed c3-live.json carries no revision field; plan control paths measured/control/{c1-norepair,c2-norows}.out absent; before-after table command/revision precision. Routed R78V1-R78V7 in kama-shokunin/corpus/lessons/round-78-verifier-spotcheck.md@ee53f1a25eab93a8ab55bbb877e49e2e731df535. F2 post-data correction accepted as subject alignment (predicate/target/arms unchanged). Assimilation gap (no package adoption, connector seat dead) reported by the lane, not a pass. No promotion: SHONEN boxes stay [~]; non-author evidence now covers boxes 2 and 4 but promotion is operator-owned. Spot-check: S551 admit agreed (live fetch 122459 bytes sha256 00e3b1aa... byte-identical to the retained copy); git-cat-file duplicate reject agreed; census validate exit 0 over 292 rows.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 83,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 83,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 83
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "Counter mutation gate (.ufo/waves/round-83/count-c1.py): re-derives the r82 probe's 23-mutant population at any revision from that revision's own bytes, runs each mutated copy's --selftest in scratch, and prints C1=met mutants=23 killed=22 equivalent=1 survivors=0 total=23 pristine=green; 6 detector arms; one adjudicated equivalent mutant exempt only while its coupling marker occurs once.",
+    "Snapshot-bound classification (.ufo/waves/round-83/count-c2.py): grades the r82 drift classification against the committed raw snapshot (exactly-one header lines, frozen path, sha256, as-of), re-derives all 64 classes, and runs one live census as a reported observation; 12 selftest arms.",
+    "Anchored occurrence (tools/mori-record-sweep.py, ANCHORED_OCCURRENCE): the revision arm requires the key=value token and the binding's row_contains on one line of git show <rev>:<path>, so a value occurring only on an unrelated line is REVISION_MISMATCH rev-bytes; 40 selftest arms and an elsewhere defeated fixture."
+   ],
+   "report": ".ufo/reports/round-83/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-83-verifier-spotcheck.md@5adf4337b6510dd246b247092c11cbaa97c930d3",
+    "rechecks": "Step-1 PASS: report 32da2b2b by mori-shokunin, committer 06:11:18 after lane tip 8819c94c (06:10:51); 11 cited hashes exist and are ancestors of master; lane ahead=0 clean; SHONEN 4/4 [~]; prompt 63ef8961 carries template (140/140) plus addendum (564/564) byte-identically. C1 re-derived: 23-mutant table, 3x23 receipt lines, 22 killed + 1 adjudicated equivalent + 0 survivors, 23/23 anchors once, coupling exactly once, controls retained. C2 re-derived: one each of the three snapshot headers, sha 6091bc46..., as-of 07:45:13Z = first run-start truncated, 64 tokens/64 classes (45/19), no dup/extra; SCORECARD retired+freshness cells name all paths; live 63->64 disclosed. C3 re-derived: ANCHORED_OCCURRENCE same-line check, 40 tool arms, elsewhere/conformant fixtures, 3 bindings green, r82 fixtures updated. Counters/gates evidence-verified, not executed; census rc 0, 371 rows, 35 tolerated W04."
+   },
+   "commit": "mori-shokunin@8819c94c62f5d99ad9592ed965d37db4eab62d02",
+   "closed_at": "2026-11-04T09:20:52Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-11-04T05:12:33-03:00 launch mori round=83 pgid=2932901 driver=hyaku-inline attempt=1; complete 2026-11-04T06:12:11-03:00. Status ok, admitted; all three claims verify and no axis is harmed (scores 6/7/5/5/5/6 unchanged; SCORECARD +94/-1, battery pass=57 setup=4 fail=0 unchanged). Conformance: report lands last by committer date; prompt carries every contract item and addendum §6 byte-identically (its base route map is stale but superseded by its own line 149, which matched the live host table at dispatch; the operator rebalance landed 23 min after dispatch). Routed (status-neutral): D83-1 final selftest tallies for r83 count-c2 (12) and r82 count-c3 (16) have no committed run at the final bytes (committed receipts print 10/8/9 at 466d28bc; r83 count-c1/count-c2 changed after that HEAD), the D82-2 class recurring - commit tallies beside the after receipt; D83-2 '7 arms for count-c3' undercounts the 8 executed additions (8->16); D83-3 the PIT mutators reject note says 38 headings while the pinned/live bytes carry 29 (the 0-hit sweep reproduces; decision unchanged). Operator-side: templates/round-prompt.md carries no literal write-scope child item (it arrives only via the addendum), and addendum §6 cites ufo-wave-policy.json for a band that file does not carry. SHONEN boxes look checkable by a non-author; promotion operator-owned. No tool installs.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
