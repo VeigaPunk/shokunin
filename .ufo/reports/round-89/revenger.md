@@ -203,3 +203,23 @@ rea-agents version` returns `6.8.0` (registry latest), which is the publisher's
 version and not the skill's pin — the census row's probe is the pin, so F05's
 `STALE -> 6.7.0` verdict stands. No claim verdict changes: C1 is still a MISS
 at 2 findings and C2 is still killed.
+
+## Erratum 2 (appended after filing; supersedes one sentence above, names it)
+
+The sentence **"Kill (a) fails: a hand-written minimal record and a
+`<manifest package="com.attacker.fabricated" …><!-- versionCode="1" -->`
+record both pass 19/19 and move F4"** is superseded by `ReviewerR89C2`'s
+measured precision (receipts under `.ufo/waves/round-89/w1/ReviewerR89C2/receipts/`;
+lane erratum at `e0fbf2ea88ce8855f29259fa33265379b712e13b`, lane tip;
+`ls-remote` = `e0fbf2e…`). A *minimal* 3-key record (`evidence_id`,
+`operation`, `normalized_result: {}`) moves F4 to 11/11 but the oracle
+**rejects it at 6/19**. What passes `ORACLE OK (19/19)` **and** moves F4 is
+(i) a hand-written record that is fully accurate against the fixture — which
+falsifies only the "cannot be a fabrication" limb, at the Q09
+non-provenance boundary — and (ii) a real producer record whose
+`manifest.text` is contradicted by `package="com.attacker.fabricated"` with
+the expected fragments hidden in an XML comment. A third variant
+(co-editing `truth.json` `axml_declared` together with the record) passes
+19/19 but is a sourcing demonstration, not a fixed-truth falsifier. Kill (a)
+therefore rests on (i) and (ii). No verdict changes: C2 is still **KILLED**,
+on kill (a) as restated and on kill (c) (two producer runs differ at byte 20).
