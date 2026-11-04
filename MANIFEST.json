@@ -45054,6 +45054,47 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-11-04T10:08:08-03:00 launch mado round=82 pgid=1439453 driver=hyaku-inline attempt=1; 2026-11-04T10:47:35-03:00 complete mado round=82; hyaku-inline attempt=1. Step-1 clean except the defects below: report 16112746 authored by mado-shokunin <mado@shokunin.local> and filed after lane HEAD 59813b91 (report lands last); lane repo clean, local=remote, ahead=0; prompt carries the template contract (0/140 mismatched lines besides the working-dir placeholder) and the addendum L2 floor >=8 / 8-16 seat band matches MISSION.md; ## SHONEN present with four [~] rows and pointers; not a marker. Claims: C1 coverage improved (capability acquisition, 47/47 frozen cases, 8 new + 39 carried byte-equal, 34/34 mutants, held r81 tool 39/47; the critic's V7 shows the counter cannot discriminate the declared allocation from a live-box shortcut - reported as a named limit, not overclaimed, routed). C2 operability improved (29/29 cases and rows, 24/24 shapes, 25/25 mutants, held r81 instrument rc 2). Harm watch re-derived: index 100->101, instrument population 148->150, held checkers and gate byte-identical; gate 460/460 and axis mismatched=0 evidence-verified. Trends expansion/quality/discernment improved; outside spot-check agrees on 2 admits and 1 reject. Routed defects (status-neutral, lane to fix next round): D1 corpus/knowledge/bar-footprint-allocation-r82.md:3-5 cites the pre-E2 receipt line (rev=780c30fc, tool_sha256=38007528) that 53a32d3b overwrote in place (receipt now rev=12e6ad57, tool_sha256=58ef4f6a) - fix by erratum/superseding pointer or the surviving measurement-c1-r82-at-tip.txt; D2 report :79 says 11 ok / 3 defect seats while the seat files and the report's own table carry 7 ok / 7 defect (the three scribes plus ReviewerC1, ReviewerC2, CriticClaims, Sentinel); D3 receipts/census-start-r82.txt is a truncated capture (the same command over base 6ea2386d prints 55 lines incl W01 S277; the tip prints 56 lines incl W01 and a new W04 for S481, not 'W04 only'); D4 LOG.md:4072 still cites set_size :347-348 (that span is the configure event's zero-size sentence; set_size is :128-129) - the class of conflation the entry seat fixed; D5 S481's span :122-138 / zero clause :128-131 overruns (</request> at :137, sentence ends :129) in SOURCES.md:433, README:133,186, the report and the entry - re-anchor via a supersedes row; D6 the 'wave-done receipt' named in the 59813b91 row does not exist in the tree and check-wave-done output is uncommitted (counts re-derived by jq: 14 items, 14 results, 0 empty); D7 the report's harm watch cites df6c613d while receipts/harm-watch-r82.txt says 53a32d3b; D8 the harm-watch sentence pairs a git blob short id (0e9fa220) with a sha256 (58ef4f6a); D9 'eight cases, six refusals' misstates the decomposition (8 new cases, 3 refusals; 47-set has 6 x rc3 + 2 x rc2 + 1 x rc1); D10 the lesson Gate row quotes the configure sentence for S481 while the admitted row quotes the set_size sentence. No axis harmed; no trade. SHONEN: the four [~] rows are non-author checkable (promotion remains operator-owned and untouched).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 82,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 82,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 82
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "freshness": "improved",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-82/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-82-verifier-spotcheck.md@c63467bb5f5842fb63f2b24e6361ab6666a29cab",
+    "rechecks": "Step-1 pass: report 5238f6d6 by tameshi-shokunin, filed after lane tip d9b02d65 and pushed; SHONEN 4 [~] lines, no [x]; all 13 cited lane hashes exist and are ancestors of master; lane ahead=0 clean; prompt lines 1-140 byte-identical to the rendered template. C1 evidence-verified from committed receipts (gate not executed) plus re-measured static facts: base tool 670 lines with zero hits for manifest-rev/GIT_NO_REPLACE_OBJECTS/read_manifest_bytes/not-regular-file/SELFTEST_ARMS, tip 972 lines SELFTEST_ARMS=14; manifest blob c8372447->d92d6bea with the same 6 row ids at every rev; receipts rows=6 closed=6 manifest=bound exit 0, narrowed refused manifest-rev-mismatch exit 2, directory row not-regular-file=040000, selftest 14/14. C2 re-measured: selfstate rows 23->26 by jq, three ids absent at base present at tip, expect histogram 24 match + 2 declared stale, both instrument blobs equal at pin and tip; receipts 26/24/2/0 and pins 26 settled. C3 evidence-verified: tip tool sha256 f2ee351b equals the receipt MUTATE_TARGET, base sha 93278cd7/27203 B equals the base control target, A14 and SELFTEST_TEXT_SHA256 absent at base present at tip, pinned digest re-derived by hashing inspect.getsource(selftest) = 9d2598911e8c; receipt 5 killed, CONTROL GREEN, restore byte-identical, base mutant survived=1 with 11/11. Spot-check: 3 gate decisions re-opened (S294 admit, S311 reject, git-ls-files reject) against live fetches; census validate exit 0; no new SOURCES row (170->170, used-by only)."
+   },
+   "commit": "tameshi-shokunin@d9b02d653e11a9ab4c2234a5b92a4487fcc36f55",
+   "closed_at": "2026-11-04T13:55:26Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (from .ufo/watchdog.log, mutable): 2026-11-04T10:06:55-03:00 launch tameshi round=82 pgid=1394009 driver=hyaku-inline attempt=1; 2026-11-04T10:45:59-03:00 complete tameshi round=82; hyaku-inline attempt=1. Step-1: report by tameshi-shokunin <tameshi@shokunin.local> as 5238f6d6 (10:45:21 -03), filed after the lane tip d9b02d65 (10:45:06 -03) and an ancestor of fleet origin/master; SHONEN heading with 4 [~] box lines and no [x]; all 13 cited lane hashes exist and are ancestors of master; lane ahead=0/behind=0 clean, remote master=d9b02d65; prompt 1-140 renders templates/round-prompt.md verbatim (normalized diff IDENTICAL), addendum 6 present; 16 round commits all authored by the tameshi identity. Claims: C1 calibration re-measured + evidence-verified (register content-bound: --manifest-rev refusal before any row effect, type/mode gate, 14 arms); C2 freshness re-measured + evidence-verified (three capability rows live, population 23->26, pins settled at the tip); C3 coverage re-measured + evidence-verified (A14 text pin kills the base survivor, battery 5/5, control green, byte-identical restore). No axis harmed: SCORECARD diff adds repertoire rows and append-only sections only, no score lowered, all standing sweeps exit 0. Defects (status-neutral, routed to round 83 in spot-check section 6): lesson Mistakes numbering skips 4 while the report says 1-6; the lesson's C3 FAIL-set sentence ('singletons'; db-regular-file-check-removed -> A12 only) is contradicted by its own committed battery receipt (A10, A12, A13; receipt truncates arms A1-A7) though the SCORECARD row is accurate; the S311 census attribution says W04/refused while the wave's own probe measured same-scope=E04 exit 1 and W04=warning exit 0, and no refusal receipt is committed; the git-ls-files reject quote says 'working directory files' where the page says 'directory list' (0 occurrences of the quoted string); the Stale-lane line omits the 39 m age against the two-tick 15 m trigger; controls/c1-before-directory-only.txt cites an unresolvable /fast/scratch manifest (controls/c1-before-directory-closed.txt carries the same base fact); attack share 5/13 counts the sentinel, the addendum set gives 4/13=30.8% (still >=25%); 'policy ufo-wave-policy.json band 8-16' names a field that JSON lacks (band is the addendum's); the landed-changes records row names c8d40f5d while records were re-issued at 0e7d1603/7e06a403/df29efcc/63baceb6/b95b61c1/9403eadf. Discernment spot-check: agree with the gate's one admit (S294 re-open; live page raw line 2671, 16-word quote; the row's anchor quote still at raw lines 2678-2679) and both rejects (S311 duplicate of a held mined URL, live fetch sha256 ceb3351f identical to the snapshot and to S294's document; git-ls-files decision) - table in spot-check section 4. No new SOURCES row this round (170->170 by my count; only used-by changed on S289/S294/S305/S310), so the new-row <=25-word quote rule is vacuous; the touched S294 row's quote was verified instead. Census validate exit 0 (tiers A=152 B=14 C=4; status mined=137 queued=22 rejected=11; malformed 0). SHONEN: boxes 1, 2 and 4 look fully checkable by a non-author from committed artifacts (SKILL.md:2258 registry section + REGISTRY_BIND 7/7; LOG.md round-82 entry; PROVINCE unchanged); box 3's cold-read witnesses are lane-dispatched seats, so a truly independent cold read remains operator-side and promotion stays operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
