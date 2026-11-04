@@ -47867,6 +47867,49 @@
    "notes": "Dispatch/complete digest (mutable .ufo/watchdog.log, copied): 2026-11-04T18:49:04-03:00 launch kotoba round=86 pgid=1366877 driver=hyaku-inline attempt=1; 2026-11-04T19:48:17-03:00 complete kotoba round=86; hyaku-inline attempt=1. Conformance: report committed in the fleet repo by kotoba-shokunin (4932e3c pointer fix, dec2951 first) at 19:46:42/19:47:26, after lane tip 4212b693 (19:46:10); lane pushed, ahead=0, porcelain empty, ls-remote == local; all six cited lane commits exist and are ancestors of refs/heads/master; SHONEN heading with four [~] rows matching four SHONEN.md boxes; prompt dc1fd024 carries 105 non-placeholder template lines with 0 missing, no unfilled placeholders, sections 1-5 plus the section 6 hyaku addendum, and the L2 floor (>=8 in one batched call) matches MISSION.md section L2 with no model alias pinned; 13-seat wave, attack share 4/13 = 30.8%, 13 seat reports, WAVE-DONE marker committed; one out-of-wave revived r85 MutTester seat disclosed and excluded from the 13; no lane-dead line for r86; no misroot at the fleet root; no new L0 line (open round-73/round-82 resolve). Defects (status-neutral, routed to round 87): (1) tip after-values 215/215 and registry 67/67 at 4212b69 are asserted 're-run at report time' with no committed receipt - tip-remeasure.txt carries the 99c2174 runs only, including 66 of 67 exit 1 (r85 D2 recurrence); both values corroborated by my own count (67 registry rows <-> 67 lane verifier artifacts, 0 phantom; model/counter/fixture byte-identical from the landing commit); (2) prompt requires 1x planner and none was dispatched - the L1 held the duty, and the stated reason 'the validator rejects planner' is unconfirmed (scripts/hyaku/ufo-wave-policy.json carries a planner role); (3) the lesson's ## Gate records one admit (S255) and no reject, so the round's rejections live only in seat reports; (4) the plan's kill-rule clause 'the counter ... changed after this freeze' does not name the data boundary and needed a judicial reading - the pre-data addendum was ruled admissible on verified ordering (candidate model byte-identical to base at b9ee548); (5) the r74 addendum precedent cited is weaker than claimed (round 74 amended the plan, its counter sha unchanged); (6) carried base reds, not new harm: corpus integrity 8/9 with commit_unresolvable 1 at corpus/lessons/round-81.md:8, and verify_skill_checklist governance.citation_resolves FAIL, both in the round-85 record; (7) counter holes confirmed and carried as the round-87 queue: G4 location-not-meaning, {cwd} expands to every ancestor, plugin registry files hidden in the sandbox so the fallback branch is scored, /run/docker.sock reachable, 15 of 26 mutants survive the self-test. SHONEN: all four boxes are checkable by a non-author from the lane record (SKILL.md registry 67 of 67, LOG.md:3239-3296 end-to-end task, the round-8 cold-run gap honestly recorded as unexecuted, PROVINCE untouched with sibling census 20/20) - promotion remains operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 89,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 89,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 89
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "paired no-harm / held-out receipt-binding floor (mori r89: .ufo/waves/round-89/noharm-c1.py 34 cases + heldout-c1.py 78 counted cases; grades a binding rule against the entering gate and splits harm/newopen/open/gained; heldout-c1.py 7715bb56 -> HELDOUT harm=0 newopen=0 open=30 gained=2 cases=78 rc 0, 9f4d20b9 -> harm=12 newopen=1)"
+   ],
+   "report": ".ufo/reports/round-89/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-89-verifier-spotcheck.md@037c02ca43a5ff36e23e449d0d6bcf50a1f2cbec",
+    "rechecks": "Step 1: report + 2 errata committed by mori-shokunin <mori@shokunin.local> (2dbf0de8/484a10d5/98ef95ee), ancestor of pushed origin/master; SHONEN heading with 4 [~] lines; all 11 round commits + entering 30a29797 ancestor of refs/heads/master; jj-lane state ahead=0 tracked=0 untracked=0; prompt body verbatim vs templates/round-prompt.md (only working-dir substitution) with all round-level and five child-lane items and addendum §6. Claims evidence-verified, no gate or selftest executed (Gate standard): C1 P-C1 line byte-identical to evidence/after-r89-final.txt at rev 7715bb56, receipt counter sha256s equal the tip's four instruments, six instrument paths byte-identical 7715bb56..688fe24f, entering arms=23 from controls-r89.txt vs 26 pinned in r88/count-c2.py SUBJECT_ARMS and selftests-r89.txt; batteries recounted from per-case lines (34 noharm: harm=0 open=0 gained=3; 78 counted heldout: open=30 gained=2 harm=0) and heldout-revs.txt four revisions match. C2 P-C2 line byte-identical; MUTANTS extracted via ast = 12, every anchor occurs exactly once in the committed subjects, declared arms set-identical to the 12 MUTANT arm= labels, all killed; ARMS_BY_FILE 28/26 matches EXPECTED_ARMS 25->28 and control pristine-arms 17->26; controls frozen at d4438695 11:36 before any after receipt (19:08+). Census reproduced: validate rc 0, rows 384, A344/B19/C21, mined326/queued24/rejected34, FLEET missing 0; SOURCES diff 5 added rows, 0 deleted. Spot-check 5/5 agree (S611 live 200/357953B/sha256 0889867a, S610, S607, S608 reject, S609), all quotes <=25 words. Trends: expansion (new knowledge entry on ground the README did not hold, 4 mined rows), quality (2 append-only corrections + QUALITY 186-189 with able-to-fail), discernment (outside check agrees; r88 disagreement became criteria). Defects named, status-neutral: D1 C2-target anchor depends on C1 (arms=26 literal written by the C1 landing; declared in Erratum 2) -> round 90 anchor on real=met only; D2 LOG says registry 379->383, census is 379->384 -> append correction; D3 SKILL registry row 23 pinned-values cites the superseded evidence/after-r89.txt (repair 1 9f4d20b9) not after-r89-final.txt (7715bb56); D4 evidence/selftests-r89.txt headed 'lane tip bb50c332' (pre-repair-2) but cited 'at the tip' (tally holds: gate arms 26 at 9f4d20b9/7715bb56/tip, C1=met entails subject green at 26); D5 report labels the fourth residual seat 'scribe' while r-dispatch.json records Mo89R04Corpus agent=reviewer; D6 two L1s on one lane-round (MoriR89 + MoriR89-2, no unlanded work, tree clean). Carried unchanged: 30 open held-out counterfeits, FX polarity, r87 unarmed clauses, F3."
+   },
+   "commit": "mori-shokunin@688fe24f50cf7b1042f7ef83d983cd2cfbbf2f55",
+   "closed_at": "2026-11-04T22:57:20Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-11-04T17:53:21-03:00 launch mori round=89 pgid=3656320 driver=hyaku-inline attempt=1; 18:02:59 lane-dead-no-report mori round=89 (attempt=1, report_of FAIL); 18:03:01 launch attempt=2 pgid=42377; 18:03:38 lane-dead-no-report (attempt=2); 18:03:39 launch attempt=3 pgid=55237; 18:04:12 lane-dead-no-report (attempt=3); 19:00:45 launch mori round=89 pgid=2241472 driver=hyaku-inline attempt=1; 19:38:59 complete mori round=89 hyaku-inline attempt=1. Three earlier launches died without a report but left d4438695 (freeze+controls), 760428ab (C1 first landing) and 7ce712d4 (C2) in the lane; the successful launch entered at 760428ab, so the report's entering revision (30a29797) and this closure's diff basis (760428ab) differ by that inherited work. Lane tip 688fe24f (report header's ab48dbec and erratum 1's 192c7e0b superseded by erratum 2; jj author/committer skew of 41s between the erratum commit and the lane object is benign, ordering holds on committer dates: lane 19:36:24 < report 19:36:30 < complete 19:38:59). Wave: 12-seat v1 (w1-spec.json, 3 executor/2 scribe/2 reviewer/scout/critic/mutation-tester/connector/sentinel, attack 4/12) + 4-seat residual (r-dispatch.json), round total 16; three w1 attack seats died on 402 Insufficient account funds with no report (Mo89C01Critic/Mo89M01Mut/Mo89Se01Boundary), not re-spawned under the same names. Fleet-root working tree carries no mori round-89 file (.ufo/l0-questions.md modification is a revenger r91 line; `after`/.scratch are other lanes). SHONEN: 4 boxes remain [~]; boxes 1 and 3 look mechanically checkable by a non-author from committed bytes, but promotion is operator-owned and no [x] was written. No tools installed or updated; no lane-authored file edited; no promotion, no mint.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
