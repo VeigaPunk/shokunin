@@ -223,3 +223,16 @@ the expected fragments hidden in an XML comment. A third variant
 19/19 but is a sourcing demonstration, not a fixed-truth falsifier. Kill (a)
 therefore rests on (i) and (ii). No verdict changes: C2 is still **KILLED**,
 on kill (a) as restated and on kill (c) (two producer runs differ at byte 20).
+
+## Note 3 (appended after filing; supersedes one sentence above, names it)
+
+The sentence **"`WAVE-DONE` never arrived for this wave; the evidence below is
+enumerated from `.ufo/waves/round-89/`"** is superseded: the orchestrator
+delivered `WAVE-DONE revenger r89 w1` after this report was filed, with
+`w1-results.json` recording **12/12 seats settled and no dead seat**, and
+noting that an orchestrator kernel restart mid-wave left the per-seat outputs
+unretained in that file. All twelve seat reports are present in the wave
+directory (byte sizes 6.6–20.8 kB) and are the evidence of record; they were
+committed in the lane at `46c170d17ca5178a2b019d5e65947812635406f3` (lane tip;
+`ls-remote` = `46c170d…`). No claim verdict changes: C1 MISS at 2 findings,
+C2 KILLED.
