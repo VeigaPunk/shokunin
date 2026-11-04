@@ -236,3 +236,39 @@ directory (byte sizes 6.6–20.8 kB) and are the evidence of record; they were
 committed in the lane at `46c170d17ca5178a2b019d5e65947812635406f3` (lane tip;
 `ls-remote` = `46c170d…`). No claim verdict changes: C1 MISS at 2 findings,
 C2 KILLED.
+
+## Note 4 (attempt 3 — appended after filing; adds no claim and changes no verdict)
+
+Attempt 3 inherited a landed round and did not reopen it. What it did:
+
+- **Independent re-derivation of every declared counter on the committed
+  bytes**, receipt `reports/round-89/attempt3-verify.log` in the lane at
+  `c8cc585c3d25c8aa30ca7fde8b7b95c6d40c3893` (lane tip; `ls-remote` =
+  `c8cc585…`). Commands and outputs: `python3 -B corpus/census_reprobe.py
+  --root .` → `CENSUS_ROWS=18`, `CENSUS_STALE_UNFLAGGED=2` (K04 only),
+  exit 1; `python3 -B reports/round-81/f_probe4.py corpus` →
+  `F4_COVERAGE=10/11 score=9.09`, exit 0; `oracle_check.py
+  corpus/fixtures/apk-r65/truth.json
+  reports/round-89/rejected-android-record/inspection.json` → `ORACLE OK
+  (19/19 checks)`, exit 0; `sources-census.sh validate … revenger` → exit 0.
+  Instrument digests `44fd1505…a53` (oracle) and `c3127ffc…648b` (census) and
+  the record digest `01af3141…1c76` all equal the pins in `claims.md` and
+  `c2-after.log`. **Every number in this report re-derives unchanged.**
+- **Inherited attempt-2 wave-2 spec resolved, not dispatched.** Attempt 2 left
+  `.ufo/waves/round-89/{w2-spec.json,w2-dispatch.json,w2-validate.err,w2/}`
+  uncommitted: a validated 10-spawn-lane spec with no `.ready`, so no seat
+  ever ran. Attempt 3 discarded it (untracked files removed, nothing committed
+  or cited). Reason: the run-15 round shape is ONE v1 wave of 8–16 seats and
+  w1 already carries 12; a 10-seat second wave would put the round at 22 seats,
+  outside the band, and policy v1's wave floor (8 spawn lanes) refuses a
+  ≤4-seat residual. **Round total stays 12; no residual call.**
+- **Report conformance re-checked at attempt 3:** `grep -c '^## SHONEN'` = 1,
+  four `[~]` lines for the four SHONEN.md boxes, required sections present in
+  order, no `[x]`.
+- **Misroot sweep** (`git -C /home/vgpnk/Projects/shokunin status --porcelain`,
+  no pathspec): the only fleet-root untracked entries are `.scratch/` state
+  (orchestrator-owned), another lane's `round-89/kake.md`, orchestrator
+  `closure-*` files and a stale 2026-11-03 `after` file that names no lane or
+  round — **no attempt-3 misroot, nothing copied or deleted.**
+- No claim, target, predicate, kill rule or verdict is changed by this note;
+  C1 remains a MISS at 2 findings and C2 remains KILLED.
