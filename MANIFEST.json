@@ -42975,6 +42975,49 @@
    "notes": "Dispatch/complete digest (mutable .ufo/watchdog.log, copied): 2026-11-04T03:32:03-03:00 launch kengaku round=79 pgid=1259174 driver=hyaku-inline attempt=1; 2026-11-04T04:01:14-03:00 complete kengaku round=79; hyaku-inline attempt=1. Conformance: report 1f8d6766 by kengaku-shokunin, committed 56 s after lane tip f10a2678 (lands last); SHONEN heading present with four [~] pointers; 7/7 cited lane commits exist and are ancestors of master; lane repo clean and ahead=0 (state: local=remote=f10a2678); prompt is a clean 140-line rendering of templates/round-prompt.md with only placeholder substitutions, both claims and all five child-lane items present, L2 floor 8 matching MISSION.md; one v1 wave, 14 seats, 14 results, 0 dead, attack seats 4/14=29%, connector 1. Defects (status-neutral, routed to the lane): V1 report says the retired round78-c1 gate's verdict is 're-verified in gates-clean.txt' while that receipt's retired-gate block prints SETUP unresolved revision 'worktree' and EXIT 1 (the historical verdict stands at corpus/evidence/round78/c1-after.txt:28, PREDICATE R78-C1 pass); V2 report says 25 W04 census warnings 'unchanged in both' but receipts are 25 before and 26 after (S256 adds a duplicate-URL W04; rc 0); V3 report says '13 rows said a bare executed' where base has 12 bare + 1 recipe-unexecuted = 13 unquantified rows; V4 R78-D4's S254 anchor says capture line 2322 but the quoted 15-word sentence spans lines 2322 and 2326; V5 the new S256 duplicate-URL W04 needs to be stated with a reason; V6 c1-after.txt/c2-after.txt carry no LANE_TIP stamp, so the report's 'measured at 5302b92a' is not re-derivable from the receipt alone. Discernment spot-check agrees on 2 admits (S256 live curl: HTTP 200, 4574 bytes, sha256 identical, 21-word quote at line 24; S257 sha256 ee30c698 and 88-row ledger) and 2 rejects (four-blocker sentence; DEFECTS n=0 as knowledge). All four SHONEN boxes carry checkable pointers, so a non-author review could check them; promotion is operator-owned. No axis harmed; no uncommitted round work.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 79,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 79,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 79
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "receipt-bytes binding sweep"
+   ],
+   "report": ".ufo/reports/round-79/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-79-verifier-spotcheck.md@dd2b9e2c44df680174a829901829fe86a2185185",
+    "rechecks": "C1 re-measured: sha256 over cat-file at 6f532752/091d50e4/1f6709d0 (recorded 7edecba8/f8071c8a first carried at 091d50e4), numstat 1 0 x8 zero deletions, own 12-receipt sweep 4 bound/8 corrected/0 unbound, false correction unbound=1, selftest 10/10 evidence-verified; whole-tree own sweep at tip 22/14/8/0. C2/C3 structures re-counted (SELFTEST_ARMS 21->23 and 13->14, spec defects 10->12 and 0->1) and base/landed arm lines diffed (only appends); batteries evidence-verified (do-nothing controls killed=10 survived=2 and 0/1; landed 12/12 and 1/1, CONTROL GREEN, byte-identical restore, target shas matched to committed bytes). No harm: arms 1-21 / 1-13 line-identical; standing sweeps 6/6 and 22 rows (20 match, 2 declared stale)."
+   },
+   "commit": "tameshi-shokunin@069a9472d3bacb2ee9cc195b7a70b341d8a9c87c",
+   "closed_at": "2026-11-04T07:11:12Z",
+   "campaign": "hyaku",
+   "notes": "dispatch digest: 2026-11-04T03:22:18-03:00 launch tameshi round=79 pgid=1174327 driver=hyaku-inline attempt=1; 2026-11-04T03:59:12-03:00 complete tameshi round=79; hyaku-inline attempt=1. Step-1 PASS: report commit 7a43b0fa by tameshi-shokunin (committer 03:58:45 after lane-tip committer 03:57:49); 4 SHONEN [~] lines = 4 SHONEN.md boxes; all 8 cited lane commits plus the base exist and are ancestors of refs/heads/master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0 and worktree clean; prompt = 8,291-byte byte-identical template render plus the hyaku addendum (quoted route map matches MISSION.md L2 advisory buckets). Claims: C1 calibration/capability, C2 coverage, C3 operability - all verify (measured; gate tallies evidence-verified, never executed). No axis harmed. Routed defects (status-neutral, next round): (1) the C1 standing sweep is described as 'over the whole evidence tree' but is a 14-receipt subset - the tip holds 22 recognised receipts and an independent whole-tree sweep reads 22 bound=14 corrected=8 unbound=0; (2) the report twice quotes 'COLDREAD_PORTABLE rev=069a9472... credited=65/65', but no committed receipt names 069a9472 - the receipt measures rev=a55de2ae (65/65), committed at 069a9472; (3) the refused docs.python.org/3/library/sys.html candidate has reason+flip in the lesson Gate but no rejected corpus/SOURCES.md row (2b/CORPUS rule); (4) the C1 population recognises only '# tool_sha256:', so two round-79 control receipts' '# design_tool_sha256:' values (cdbc4c05, 4c8c4174) that exist in no repository object pass unseen - criterion 130's class outside the declared population; (5) the gate registry is stale/missing at the registry home: SKILL.md's round-76 rows still read wave-record reconciliation 19/19 + 7 defects (now 23/23 + 12) and selfstate 11/11 over 20 rows (now 14/14 over 22), and the new receipt-bytes gate has no row in SKILL.md or tools/registry.json; (6) the lesson's S289 used-by old->new under-quotes the old cell (omits corpus/lessons/round-64.md), a logging-precision fix only. Nits: report LOG-entry labels ('Round 79 declared'/'measured') do not match LOG headings; Gate quote word counts run 1-2 high (all inside the <=25-word cap). SHONEN: all four boxes stay [~]; boxes 1/2/4 are checkable from committed bytes by a non-author, box 3 rests on the input-keyed cold-read monitor; promotion is operator-owned and none was performed. Spot-check: tameshi-shokunin/corpus/lessons/round-79-verifier-spotcheck.md@dd2b9e2c44df680174a829901829fe86a2185185 (landed line; origin refs/heads/master verified).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
