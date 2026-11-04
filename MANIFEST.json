@@ -41270,6 +41270,50 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-11-03T22:35:42-03:00 launch mado round=69 pgid=972874 driver=hyaku-inline attempt=1 | 2026-11-03T23:08:02-03:00 complete mado round=69; hyaku-inline attempt=1. Shape: one v1 wave w1, 12 seats (executor 4, scribe 2, scout 1, connector 1, reviewer 2, critic 1, mutation-tester 1; attack 4/12 = 33.3%), band 8-16, counts.spawn=12, 12/12 results with non-empty outputs, 0 dead, L1 holds the planner seat. Conformance defects (status-neutral, none bars admission): (1) 139f4801 inserted the same 10-line round-69 bullet block into the Round 67 entry (LOG.md:3257-3266) and the Round 68 entry (LOG.md:3314-3323) as well as the correct Round 69 entry (LOG.md:3396-3405) - an append-only organization defect; (2) round commit b9b70a09 is unenumerated in the report's Landed-changes table, LOG and SCORECARD; (3) the report's 'no_freeze for r68 and r69' line is wrong for r69 (final-gates-r69.txt:17 reads SETUP work_not_a_directory; the check's REQUIRED names are claims-frozen.md/registration.md while the lane uses claims-declaration-rN.md); (4) w1-results.json has no per-seat status, so '12 settled' is inferred from non-empty outputs; (5) LOG.md:3263 attributes measurement-final-r69.txt to 759c9d7b while the receipt header names 139f4801 (instrument bytes identical at both); (6) check-deliverables red on round-68 seat reports (pre-existing, disclosed). Routed to round 70 (append-only, no filed-byte rewrite): name the duplicated R67/R68 blocks; enumerate b9b70a09; correct the final-measurement attribution; make check-freeze-order.py measurable for this lane; disposition the check-deliverables r68 red; add per-seat settlement status to the next wave results. Promotion note: all four SHONEN boxes look checkable by a non-author on these artifacts, but closure writes no [x]; promotion is operator-owned. No new L0 line; the r67 privacy and r68 citecheck L0 questions remain open.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 72,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 72,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 72
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "round-scope",
+    "receipt-tip-binding"
+   ],
+   "report": ".ufo/reports/round-72/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-72-verifier-spotcheck.md@6e9619963fef5a3f8899324e9497416a00eab7e6",
+    "rechecks": "Step-1 PASS: report e0c3d547 + same-round erratum 2b6a7ad8, both by kama-shokunin <kama@shokunin.local>, filed 1m after lane tip db8b6fb0 (complete 23:08:57); SHONEN heading 1 + 4 [~] lines vs 4 boxes; all 12 cited round commits + base d30a8696 are ancestors of refs/heads/master (HEAD detached); jj state ahead=0 local==remote; porcelain empty; prompt 1-140 = template render with substitution-only diff + run-15 addendum + scratch section, five child-lane items present, L2=8 matches MISSION; 13/13 seats, roles as reported, attack 4/13. C1 RE-MEASURED over committed bytes: base tool absent and gate 5 arms (ARM_SPECS 4 + round-clean); before control SCOPE_CONTROL base_rev=d30a8696 cases=3 base_green=3 killed=0 with arm_records=0 x3; tip tool 628 lines/16 arms, ROUND_SCOPE_SELFTEST pass=16 fail=0, kill receipts EXIT=1 naming each case, clean EXIT=0, base run EXIT=1, PRE_REPORT round=72 arms=6 failed=0 uncommitted=0, PRE_REPORT_SELFTEST pass=8 fail=0; plan predicate == module constant (472 chars). C2 RE-MEASURED: base tool absent and BINDING_CONTROL cited=3 accepted=3 rejected=0; tip tool 961 lines/16 arms, selftest pass=16 (the report and SCORECARD say 942 lines/14 arms/pass=14 - stale tally, routed), kills exit 1/1/1/2, r71 live cited=1 bound=1 exit 0, own record cited=138 bound=0 unbound=105 shifted=24 stale=9 exit 1 (disclosed); plan predicate == module constant (604 chars). Populations re-derived: SOURCES 282-283, knowledge 42-43, README knowledge rows 37-39, canonical capabilities 19 at tip (17 mirror rows at base), mutants 22/22, reviewer 27, recon 55/77. Source census exit 0 (kama ok; 104 W04 + 1 W01; 283 rows). Discernment: S543 admit agree (live fetch sha256 bdee84a9 == retained, 18-word quote at #_exit_status), own-work reject agree (paths present; no REJECTED flip row, routed), package no-adoption agree but unprovable to re-open (shoukuknow root absent), S175/S542 holds agree (live sha256 46d106b7/22ff28ff == retained). Scores held 8/8/7/9/7/7; no axis harmed."
+   },
+   "commit": "kama-shokunin@db8b6fb055c0b2382728893aa07727a0e35f69a8",
+   "closed_at": "2026-11-04T02:20:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log): 2026-11-03T22:34:21-03:00 launch kama round=72 pgid=961041 driver=hyaku-inline attempt=1; 2026-11-03T23:08:57-03:00 complete kama round=72; hyaku-inline attempt=1. Lane tip db8b6fb0 pushed (ahead=0, porcelain clean); report e0c3d547 + erratum 2b6a7ad8 by kama-shokunin. Status-neutral defects routed to round 73: (1) report and SCORECARD C2 tally stale (942 lines/14 arms/pass=14) vs committed 961 lines/16 arms/pass=16 (EX02 receipt; LOG and lesson say 16) - the lesson-Mistake-4 class repeated; (2) C2's counting command over r72's own record is red (cited=138 bound=0 unbound=105 shifted=24 stale=9, exit 1, disclosed) - needs the fixture receipt role + path-only resolver with a red fixture first; KQ119's own-record condition is not met this round; (3) S175/S542 used-by old-to-new is logged in w1/SCR01SourceRow.md, not the round lesson as CORPUS rule 2 requires and the report claims; (4) the round lesson Gate has no REJECTED row with reason+flip, and the shoukuknow package root is absent at closure so its read/counts claim is unprovable (no adoption either way); (5) stale-lane line 'inside one driver tick' is not re-derivable (launch-to-complete 34m36s ~= 4.6 fleet ticks; the lane was progressing); (6) before-control receipts omit exit codes (exit re-derived from the committed control scripts); (7) disclosure unrestored 33-to-41 carries no committed receipt. Promotions: none. SHONEN boxes 1/2/4 look checkable by a non-author (pointers resolve); box 3 needs an independent execution review - promotion is operator-owned, no [x] written. No L0 filed this round; the kama r65 NTFS question remains open.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
