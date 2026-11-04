@@ -40795,6 +40795,44 @@
    "notes": "Append-only correction of rounds[1115] (tsukuroi r71 closure, 2026-11-03), which stands as written; per protocol the prior entry is never edited. Reason: the verifier spot-check artifact was revised once for precision (b8938dd9 -> a7015d27: the C1 counter-run row now enumerates the fixture battery, the SC1Entry mirror run, the R1Reviewer draft-mirror runs and the E2CounterAttack mutant runs instead of claiming only two runs exist), and the spotcheck pointer names the final revision. Statuses, verdicts, trends, capabilities, the routed defects and the dispatch/complete digest are unchanged from rounds[1115] (digest: 2026-11-03T21:43:35-03:00 launch tsukuroi round=71 pgid=2618318 driver=hyaku-inline attempt=1; 2026-11-03T22:18:11-03:00 complete tsukuroi round=71; hyaku-inline attempt=1). Lane tip after the verifier artifact: a7015d27 (ahead=0); lane round head remains b0c784e0.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 67,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 67,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 67
+   },
+   "admitted": false,
+   "verdict": "rejected-harmed",
+   "verdicts": {
+    "coverage": "improved",
+    "depth": "improved",
+    "calibration": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "harmed",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-67/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-67-verifier-spotcheck.md@fcbe200f6739c38939e0dabf3f251de2cc6bd727",
+    "rechecks": "Re-measured from committed bytes: SOURCES census 174->175 rows (A 160->161, mined 165->166, malformed 0, 19 W04, sources-census validate exit 0), knowledge md 146->147, ledger rows 39->42, four after.json digests vs the receipt's evidence_digests, 23-clause x 4-carrier matrix all true (dropped_clauses 0), envelope files 4556/4564/4709/3955 with gaps 637/637/613/568 and zero char-device gap records. Evidence-verified (no sibling gate executed; carriers absent, AVM licence): C1 4/4 at 83239917 and 7a3c21d4 vs the 2/4 round-50 control; C2 killed_after 2 / killed_before 0, pristine 30/26 green at 2dd5f2cd and 7a3c21d4, exact failed sets per mutant; coverage selfcheck mismatches 0. Read-only reviewer/critic seats re-derived C1 and C2 independently and agreed; the S268 admit and three rejects were re-opened live."
+   },
+   "commit": "kaidoku-shokunin@451f3102c1be3fe476b8c600979eba5ecaade1f8",
+   "closed_at": "2026-11-04T01:28:34Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-11-03T21:37:59-03:00 launch kaidoku round=67 pgid=2346633 driver=hyaku-inline attempt=1 | 2026-11-03T22:16:38-03:00 complete kaidoku round=67; hyaku-inline attempt=1. Report real work (two claims, 12-seat wave 12/12 settled); report committed by the lane identity after the lane tip; lane clean and pushed (ahead=0). Both claims verified evidence-wise: C1 4/4 vs 2/4 control with the class rule grounded (S268) and both red fixtures green; C2 exact-set kills of the two r66 survivors with the freeze-era receipt under the frozen battery also reporting killed_after 2. Ruling on the report's routed item 4: disclosed post-freeze instrument supersessions under QUALITY #33 are allowed, so the kill rule's 'post-freeze instrument edit' reads as undisclosed; the predicate also holds on the frozen instrument, so the reading stands and next round must make the wording explicit. Admission barred by the quality trend: corpus/knowledge/2026-11-03-r67-avm-le-squashfs-core.md:33 says the rule is b55d5e87 and keeps removed.silent.char-device 247:0, but the rule at the record and tip is e66ba022 with no silent key (revert 3e7b59db) and the entry blob is unchanged since 2dd5f2cd with no correction block -- LEARNING 'entry found false or stale and left unmarked'; expansion/quality trade is never admitted (kasegi-46 precedent). Conformance defects (status-neutral, routed): (1) knowledge-entry correction block for the stale rule sentence; (2) SKILL.md instrument-registry rows missing for tools/round-67/avm-le-counter.py and mutation-battery.py, so neither gate is graded conformant and the report's SHONEN box-1 pointer overstates; (3) QUALITY #100 companion correction row absent for the in-place round-64 findings-cell edit at 451f3102 (corrections ledger unchanged); (4) QUALITY #47 prefile exited 1 at filing on the superseded claim-freezes.tsv and its output is a report paste only -- commit the receipt and settle the stale ledger next round; (5) report cites prompt b8507c60 (round-66 prompt) instead of 754f9074; (6) pre receipts carry rev=a7a4ce69 although the battery did not exist at base; (7) SCORECARD '147/147 mapped' means 147 counted / 142 mapped + 5 recipe_a_hidden; (8) plans/round-67-claims.md:59 still claims a carrier_fresh_ok clause drop (dropped_clauses is empty). Lane's own routed items stay open (Probe B no-extra-failures clause, REA package.json+tree pin, r63 record-section sweep, r58/r60/r64 debt). Non-author wrote no [x] and did not touch SHONEN.md; promotion remains operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
