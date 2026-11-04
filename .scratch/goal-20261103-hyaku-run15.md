@@ -158,3 +158,20 @@ wave size or quality threshold is changed here. Existing safety/refusal boundari
 credential shape-only treatment and unanswered operator questions remain binding.
 Source pointers above were checked by file/ledger reads only; no validation, test,
 gate, build, lint, formatter, provider probe or commit was run for this appendix.
+
+## Routing split — 2026-11-04 (operator; no role on @m_zfl; supersedes the all-@m_zfl and m_mim-off notes for future launches)
+
+Operator, verbatim (first ruling): "use m_mim and m_flash on most m_zfl"
+
+Operator, verbatim (second ruling): "assign more m_flash and m_mim to roles"
+
+Operator, verbatim (third ruling): "also m_antigravity as connector"
+
+Final map (`task.agentModelOverrides`, 18 roles; backup `config.yml.pre-run15-most-off-zfl-20261104T153242`):
+
+- `@m_flash` (devin/swe-2:max), 10: task, main, planner, reviewer, security-reviewer, executor, revenger, labrat, mutation-tester, sentinel.
+- `@m_mim` (minimax-code/MiniMax-M3.1-Flash:high), 7: critic, scout, simplifier, scribe, sonic, distiller, seance.
+- `@m_antigravity` (google-antigravity/gemini-3.8-flash:high), 1: connector.
+- `@m_zfl`: no role.
+
+Future launches only; no live restarts; live seats keep their captured route. No safety-refusal retries or rerouting. Aliases, fallback chains, concurrency and wave sizing unchanged. Known risk: devin/swe-2:max (m_flash) returned permission_denied on 2026-11-04; disclosed, not probed. Historical entries are not rewritten.

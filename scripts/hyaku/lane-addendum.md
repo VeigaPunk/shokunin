@@ -651,3 +651,20 @@ must not be rewritten, backdated or retroactively repaired by later controls.
 All other safety/refusal and credential-shape boundaries remain binding. No
 pausemarkers, state, MANIFEST, lane files, history, routing, aliases, concurrency,
 wave sizing or quality threshold are modified by this authorization record.
+
+## Run15 routing split — 2026-11-04 (operator; no role on @m_zfl; supersedes the all-@m_zfl and m_mim-off notes for future launches)
+
+Operator, verbatim (first ruling, 2026-11-04): "use m_mim and m_flash on most m_zfl"
+
+Operator, verbatim (second ruling, 2026-11-04): "assign more m_flash and m_mim to roles"
+
+Operator, verbatim (third ruling, 2026-11-04, supersedes the split below for connector only): "also m_antigravity as connector"
+
+Final split — `task.agentModelOverrides` in `~/.omp/agent/config.yml` (18 roles; backup `config.yml.pre-run15-most-off-zfl-20261104T153242`):
+
+- `@m_flash` (devin/swe-2:max), 10 roles: task, main, planner, reviewer, security-reviewer, executor, revenger, labrat, mutation-tester, sentinel.
+- `@m_mim` (minimax-code/MiniMax-M3.1-Flash:high), 7 roles: critic, scout, simplifier, scribe, sonic, distiller, seance.
+- `@m_antigravity` (google-antigravity/gemini-3.8-flash:high), 1 role: connector.
+- `@m_zfl`: no role.
+
+Scope: future launches only. No live restarts or cancellations; live seats keep the route captured at spawn. No safety-refusal retries, rephrasing or rerouting. Aliases (m_antigravity, m_flash, m_mim, m_zfl values unchanged), fallback chains, retry, effort, concurrency, wave band, lane state, markers, ledger and closure history are unchanged. Known risk: `devin/swe-2:max` (m_flash) returned `permission_denied` ("no longer available for your account") on 2026-11-04; disclosed here, not probed, not substituted. The earlier all-`@m_zfl` map and the "m_mim off every role" note are superseded for future launches only; historical entries are not rewritten.
