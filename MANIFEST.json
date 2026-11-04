@@ -41519,6 +41519,49 @@
    "notes": "Dispatch digest (.ufo/watchdog.log, mutable): 2026-11-03T23:35:21-03:00 launch chousa round=73 pgid=3440041 driver=hyaku-inline attempt=1; 2026-11-03T23:58:03-03:00 complete chousa round=73; hyaku-inline attempt=1. C1 operability verifies: completing predicate met on run-15 Linux host (battery PASS 275/275 rc 0, preflight 8/8 rc 0, receipts at freeze a0f094c with tool digest pinned, do-nothing control 0 at base). C2 calibration honest-stop: factual V72-1/V72-2 corrections land append-only (independent numstat 11/0, 21/0, 6/0; gate lines 8426/8435 and tree counts 3-vs-2 re-derived) but the frozen seven-check counter is invalid - load() reads numstat additions as deletions (c2-count.py, committed code read, counter not executed per Gate standard); committed receipt C2=FAIL 6/7 exit 1 at 5aec907; target 7/7 unmet; counter bytes unchanged after scoring. No axis harmed; SCORECARD/LOG diffs append-only, no numeric score or capability row. Routed to chousa next round: repair/replace the frozen counter with a real committed append+deletion control through load() before any successor calibration freeze. Carried unresolved: old L0 fetch-scope, flock(1) operator decision, Windows-host load question, SHONEN promotion review (all four boxes still look non-author-checkable - promotion operator-owned). Conformance: no defects; prompt carries full template contract; report committed by chousa-shokunin; all cited hashes ancestors of master; lane ahead=0.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 69,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 69,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 69
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "unchanged",
+    "coverage": "unprovable",
+    "operability": "unprovable",
+    "freshness": "unchanged",
+    "calibration": "improved",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "harmed",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "arm-false selftest seam over a gate's own arm expressions (tools/round-69/packed-elf.py --selftest, 20 cases, one arm-false case per arm) — R69-C1 verified by the closure from committed receipts: survivors [M1_identity,M2_recovery,M3_detected,M4_before,M5_control]/pristine 13 at base d7d9a62 with the r68 tool/patch set -> survivors []/five named kills/killed_wrong_case []/pristine 20 at landing 5ee94c56 (target_sha256 4ac0d83b); first-working round 69; C2/C3 capabilities are NOT admitted (withdrawn by the lane's final honest-stop correction)"
+   ],
+   "report": ".ufo/reports/round-69/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-69-verifier-spotcheck.md@b64333cbe567040019fab2ddd4ae7c00efcd8f73",
+    "rechecks": "Step-1 PASS: report landed by lane identity (fleet 9fa113c9) with SHONEN heading, 4 [~] boxes, no author [x]; all 7 cited lane commits + base exist and are ancestors of pushed main (HEAD=main=tip 605ce42, jj state ahead=0, porcelain empty); watchdog digest verbatim; prompt = canonical template render + hyaku addendum with all round-level and five child-lane items, MISSION route buckets advisory; one v1 wave of 15 seats (band 8-16, floor met, attack 5/15=33%), 15/15 results, 0 dead. R69-C1 re-measured from committed receipt bytes (lane gates NOT executed): c1-before-recheck.json (rev d7d9a62, r68 tool/patch, survivors exactly M1..M5, pristine 13) vs c1-at-landing.json (rev 5ee94c56, survivors [], five named kills, pristine 20, pin 4ac0d83b). C2/C3 evidence-verified: genuine landing receipts re-read (6/6; met true, carriers 3 incl. libz shared-object, control_ok) but w1/CriticClaims.md shows fabricated/foreign receipts also pass both counters and the round's own c3-synthetic-met control reaches the C3 target with no run -> unprovable under the frozen shortcut-control admission rule; S-1 execute-before-hash seam verified in source (packed-elf.py:253-259). Census: 178 rows (176->178), validate exit 0, 20 W04 as pasted. Spot-check re-opened live: S270 help.cpp/main.cpp (sha256 0b893ca8/a02c7cba byte-exact, quotes verbatim at :465/:1174, AGREE admit), S271 upx-doc.txt (sha256 4dc547ed byte-exact, 10-word quote at 441-442 under heading 433, AGREE admit), upx.github.io (no 5.2.0/--version, AGREE reject), manpages.debian.org (4.2.4 chips, AGREE reject). No-harm: SCORECARD diff base..tip = one appended section + final honest-stop correction, no axis row regressed; PROVINCE final disposition demotes the landing-time Core wording to measured Frontier."
+   },
+   "commit": "kaidoku-shokunin@605ce424b41f0ae6f3ddbf9dd629173990419396",
+   "closed_at": "2026-11-04T03:08:26Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-03T23:16:34-03:00 launch kaidoku round=69 pgid=2164914 driver=hyaku-inline attempt=1 | 2026-11-03T23:55:28-03:00 complete kaidoku round=69; hyaku-inline attempt=1. Verdict: honest stop, not admitted — C1 verified, C2/C3 fail the frozen shortcut-control admission rule (fabricated receipts pass; post-freeze provenance gate is corroboration only). Quality trend harmed by the introduced execute-before-hash --upx seam (never pass an untrusted path; frozen artifacts retained for reproducibility). Trends vs the lane's report: closure agrees expansion unchanged and quality harmed; grades discernment improved (the lane awaited this outside check — it agrees with both sampled admits and both rejects byte-exact, and the wave's falsification became lessons M69-8/M69-9 grounding QUALITY 113/114). Disclosed conformance defects, status-neutral: M69-7 carry-in committed after the freeze; M69-1 round-29 freeze gate reads the container FLAGGED/INSTRUMENT_NONE (disclosed verbatim in corpus/claim-freezes-v2.tsv, routed); sentinel S-0 mid-wave uncommitted writes resolved by the L1 landing (tree clean at closure). Routed to next round: M69-8 bind C2/C3 counters to receipt provenance (instrument.sha256/rev/carrier pins/ceiling re-derivation, enforce pristine.cases, per-run --work); M69-9/S-1/S-2 hash --upx before execution, minimal env, thread the validated path; M69-10/11 typed preflight leaks, /tmp HOME fallback, fixed-name scratch; M69-1 encode instruments as {path: sha256} + run the freeze gate pre-freeze. R68 repairs V1-V6 landed append-only and re-derivable (prefile PASS receipt committed at 7fca4ac0). For the operator: all four SHONEN boxes carry [~] with resolvable pointers and look fully checkable by a non-author (box 2's end-to-end three-carrier route genuinely ran); promotion is operator-owned — weigh the named instrument defects. No tool installed/upgraded; no lane-authored file edited by closure; spotcheck landed b64333cbe567040019fab2ddd4ae7c00efcd8f73 (remote main verified, protocol identity).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
