@@ -44922,6 +44922,50 @@
    "notes": "dispatch digest: 2026-11-04T09:54:27-03:00 launch kaidoku round=79 pgid=1289363 driver=hyaku-inline attempt=1; 2026-11-04T10:23:45-03:00 complete kaidoku round=79; hyaku-inline attempt=1. Wave r79-w1: 12 seats in one batched call within the 8-16 band, attack 4/12 = 33 percent, one connector; the L1 held the planner seat (planner is not a proposal role in ufo-wave-policy.json). Conformance defects (status-neutral): (a) c2-at-landing.json records instrument a0044c4c which is no committed blob of tools/round-79/pointer-bind.py (committed revisions 91d23dad at a1f9b81c/ed68cd0a and 40905d39 from 868710d6 to tip), so the report's 'final instrument bytes' is false for that receipt while the claim itself re-derives; (b) SKILL.md:1914 says pointer-bind --selftest has 19 cases against 21 committed (pre/selftest-c2.json), and both round-79 registry rows omit the entry command older rows carry; (c) S296's quote is 15 words, not the 17 recorded in the SOURCES row, lesson and LOG; (d) R79-C2 is declared on freshness, not one of the lane's owned axes (coverage/depth/calibration), and no axis-addition claim landed; the wave critic's Q5 was recorded but not adopted; (e) the round's Gate records no rejected source, so the outside discernment check had no reject sample; (f) capability row named 'line-bound pointer rule' vs 'line-bound pointer binding' in prose. Routed to round 80 in the lane report and the spot-check section 6, with the lane's own items (a)-(f). SHONEN: 4 boxes, all [~]; boxes 1-4 appear checkable by a non-author from committed pointers; promotion stays operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 87,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 87,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 87
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "multi-subject population-control counter (mori r87 C1: .ufo/waves/round-87/count-c1.py; six mutants over three subject counters at any revision, 18 arms; C1=met mutants=6 killed=6 survivors=0 total=6 arms=54)",
+    "clone-replay receipt gate with supersede (mori r87 C2: .ufo/waves/round-87/count-c2.py; seven-receipt population, clone-mode replay, supersede rule, 17 arms; C2=met receipts=7 absent=0 bindings=9 bound=9 replay=4 superseded=2 legacy=1)"
+   ],
+   "report": ".ufo/reports/round-87/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-87-verifier-spotcheck.md@1bd5ec3fa260458f74eb32a2e5bb157209c5934d",
+    "rechecks": "C1 re-measured by static arm counts at both revisions (r86 counters 15/11/22 -> 18/13/23, totals 48 -> 54), six frozen anchors unique, the after receipt's counter digests recomputed at b9e6f68d; C2 re-derived from committed bytes (population 5 -> 7, absent 2 -> 0, 9/9 digest bindings recomputed, replay=4, supersede edges 2, legacy 1), with the two clone replays and the one defeated receipt evidence-verified; neither counter executed (Gate standard)."
+   },
+   "commit": "mori-shokunin@1c9de5f56c62f3fa7f88ce00319d3389e3a49053",
+   "closed_at": "2026-11-04T13:42:13Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-04T10:06:52-03:00 launch mori round=87 pgid=1392105 driver=hyaku-inline attempt=1; 2026-11-04T10:34:59-03:00 complete mori round=87; hyaku-inline attempt=1. Step-1 conformance clean except named precision items: report e00b9ace committed and pushed by mori-shokunin <mori@shokunin.local>; SHONEN heading present with four [~] lines and no [x]; 15/15 cited lane commits are ancestors of master; lane ahead=0 behind=0, tracked=0/untracked=0, ls-remote = 1c9de5f5; prompt 705 lines carries template §1-5 plus addendum §6 with the five child-lane items, committed as dispatch evidence 7d14cf5e (run-15 convention). Claims re-derived: C1 arm counts 15/11/22 -> 18/13/23 (totals 48 -> 54) by static counts at both revisions, six anchors each unique, after-receipt digests e2ff9687/264a43f0 recomputed at b9e6f68d; C2 population 5 -> 7, absent 2 -> 0, 9/9 bindings recomputed, replay=4, supersede edges 2, legacy 1 from committed bytes, the two clone replays and the one defeated receipt evidence-verified (Mo87R02ReviewC2); counters not executed. Axes: operability improved, calibration improved, coverage/depth/freshness/adjacency unchanged; SCORECARD one hunk, no score moved (6/7/5/5/5/6), no deletions. Discernment spot-check agrees on the S603 admit (sha d31b6c9f, 107882 B / 3391 lines, quotes at raw 2627-2628 and 2696-2699 once each), the S600 re-open (sha a558c89f byte-identical) and the duplicate-row reject; census rc 0, 375 -> 376 rows, 35 W04. Defects (status-neutral): probe survivor sentence says 16 where the receipt has 17; no round-87 gate-registry rows in SKILL.md (Gate standard Delivery); the two 6056d001 re-runs have no committed stdout receipt (derivable: blobs identical at 6056d001 and 1c9de5f5); P-C2 literal at 98f48dba corrected by appended erratum E1 (counter b9e6f68d over subject 98f48dba); supersede-controls output abbreviated with '...'; counter selftest tallies 18/17 cited without a dedicated receipt. Disclosed C2 material falsifier: the target line is reachable with zero replays via a stripped '# replay:' header (fixture 85e8bd76), plus F2 vacuous '# cmd:' (47217847) and F3 host-path replay; the committed data is honest and the guard is incomplete. Routed to round 88: gate registration; restore missing-replay and arm it; bind '# cmd:' to the digest paths and arm it; an arm for SUPERSEDE absent=1; F3 hermeticity; report/receipt precision; carry round-86's eight routed defects. No [x] written; the four SHONEN boxes look checkable by a non-author (promotion operator-owned) once gate registration lands.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
