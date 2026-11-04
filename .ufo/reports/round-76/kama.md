@@ -2,7 +2,7 @@
 
 Lane repo `kama-shokunin`, branch `master`. Base `b06cc612711560c53eef3ec21484c6963601262f`,
 freeze `1a85a991fce5b76b60f88a5cab3df98d253b1a4a`, final lane tip
-`fd4b9ca3042e2233d7cb9850fff3e3d750435e78` (remote-verified). Report date 2026-11-04.
+`956d13d1e9d68fae5078279a7a972a490306e360` (remote-verified). Report date 2026-11-04.
 
 ## Work performed
 
@@ -90,7 +90,8 @@ Every change is tied to `LOG.md` §Round 76 and to the commit that carries it:
 | `6440df9c` | head re-derivation (banner, live-plan pointer, retired count, coverage run fact) |
 | `c1ae92d5` | axes re-anchors: operability selftest tally `pass=18` → `pass=21`, `PROVINCE.md` digest and line count after the instrument paragraph |
 | `731ef814` | superseded head bytes held verbatim (restoration of the graded banner event) |
-| `fd4b9ca3` | pre-report gate receipt (the final tip) |
+| `fd4b9ca3` | pre-report gate receipt |
+| `956d13d1` | `w1-results.json` (13/13 seats settled) and the scribe's final corrections draft; report amended after `WAVE-DONE` |
 
 No change was made outside `kama-shokunin/` except this report (fleet repo). No credential
 material, no service start, no endpoint sample, no package install.
@@ -170,10 +171,11 @@ One v1 wave (`kama-r76-w1`) of **13 seats** — 3 executor, 3 scribe, 1 scout, 1
 one connector (≤2). Spec `.ufo/waves/round-76/w1-spec.json`, validated under
 `ufo-wave-policy.json` (band 8–16, `counts.spawn=13`), dispatch
 `.ufo/waves/round-76/w1/w1-dispatch.json`, ready `.ufo/waves/round-76/w1.ready` (taken
-02:58:52). **Round total: 13 seats, 0 residual calls.** Dead seats: 0 — all 13 seat reports are
-committed under `.ufo/waves/round-76/w1/`; the dispatcher's `w1-results.json` and the
-`WAVE-DONE` message were not observed at record time (the last seat report landed 03:03, 20
-minutes before this report), so the wave is evidenced by the 13 reports, not by that handoff.
+02:58:52). **Round total: 13 seats, 0 residual calls.** Dead seats: 0 — `w1-results.json` reports
+`seats=13 results=13` with a final output for every seat (`.ufo/waves/round-76/w1/w1-results.json`,
+committed at the lane tip), and all 13 seat reports are committed beside it; the orchestrator's
+`WAVE-DONE kama r76 w1` message confirmed the settlement after the first report filing, and the
+report was amended for it.
 The L1 held the canonical planner seat (validator forbids `planner`); a bounded planning
 data-walk rode `SC01Recon`. Routing followed `task.agentModelOverrides` (no seat was passed a
 model).
@@ -189,5 +191,5 @@ model).
 - **Tool installs:** none this round (no `uv`, `npx`, binary or package change).
 - **L0 questions:** none filed. The round-35 freshness/MISSION conflict stays open and was
   routed around, not assumed.
-- **Wave carry:** round 76 committed 13 lane commits; the pre-report gate ends
+- **Wave carry:** round 76 committed 14 lane commits; the pre-report gate ends
   `arms=9 failed=2 uncommitted=0` with arms 7 and 9 naming exactly the C1 and C3 misses.
