@@ -42930,6 +42930,51 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log 2252/2261): 2026-11-04T02:51:28-03:00 launch kama round=76 pgid=4099706 driver=hyaku-inline attempt=1 | 2026-11-04T03:24:22-03:00 complete kama round=76; hyaku-inline attempt=1. Status ok (real report, 13 cited lane commits landed and pushed, wave 13/13 seats non-empty, report last and pushed). Not admitted: C2 verified; C1 and C3 are honest misses on frozen targets unsatisfiable as written (measurements precede any green run and both misses are reported, not re-worded); no axis harmed (scores 8/8/7/7/9/7 held; SCORECARD diff adds no deletion of evidence). Capabilities added: receipt-scope and selfrecord-facts (both demonstrated by committed selftest/run receipts). append-exempt-class is NOT counted: its own demonstration is red (unaccounted=37), so the SCORECARD row is pre-claiming and is routed (D5). Post-report lane entry 956d13d1 (parent fd4b9ca3, 'wave results (13/13 seats settled) and the scribe's final corrections draft') landed under kama identity after the report and is an ancestor of master; it is a permitted second entry for the round, touches only .ufo/waves/round-76/w1/, and makes the report's 'final tip fd4b9ca3' time-bounded rather than wrong. The same commit resolved the SCR03 draft that was uncommitted at this closure's first clean check (the spotcheck's D6 as first filed is corrected in its s6: the draft is committed and self-labelled, still naming a nonexistent proposed receipt path pre-report-selftest.out; the actual receipt is gate-selftest.out). Routed to the lane for round 77 (status-neutral here): (D1) corpus/README.md has no coverage-map row for knowledge/selfrecord-fact-binding.md although the report/LOG claim three rows, and the Frontier list omits it (44 row lines, 41 distinct mapped, 49 files -> 8 unmapped, not 7); (D2) SCORECARD sRound 76 population sentence says filtered knowledge entries 46 at rev=c2aa7fb2 where committed bytes give 47 -> append a value-keyed correction; (D3) C3 prose (lesson Mistakes 2, LOG sRound 76, report) says five events postdate the cutoff where findings give six (5 SCORECARD + c2aa7fb2's SOURCES event), leaving the 37th unexplained -> append corrections, never rewrite; (D4) sGate quote discipline: S498's re-quote is a paraphrase (retained/live line 2760: 'The content of a code fence is treated as literal text, not parsed as inlines.', 15 words) and S548's bullet lacks the explicit access date + located quote/command; S498 used-by old->new is logged only in the report, not the lesson; (D5) append-exempt-class capability row needs a partial/planned disposition or a passing retargeted demonstration; (D6) apply or discard the committed SCR03 draft with the receipt pointer repaired. No promotion review requested (SHONEN boxes remain [~]; if the operator wants a promotion check, boxes 1-4 look mechanically reviewable by a non-author next closure). No mints, no cross-lane writes.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 79,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 79,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 79
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged",
+    "novelty": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "grader-population-member-ledger",
+    "closure-debt-discharge"
+   ],
+   "report": ".ufo/reports/round-79/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-79-verifier-spotcheck.md@dce7c275381c669e6489f1b795b1505d0824c262",
+    "rechecks": "C1 re-derived over committed bytes: ledger 88 rows (18 executed / 6 executed-unlocated / 64 unexecuted; 230 pairs; 15 populated classes; blockers 2/1/1/3 + 57 unattempted), ledger absent at 660ec0b9, all 16 SKILL cells match per-class replayed pair counts 16/16, 18 executed receipts tracked and naming their member, covered=15/covered_located=13 reproduced. C2 re-derived: routed-findings 98->105 rows, R78-D1..D7 closed with verified_at, close_commit ancestors, evidence_path/literal resolving at those commits, base-failing predicates checked against base bytes, status histogram 71 closed/31 open/1 blocked/2 refused. Gate batteries and receipts evidence-verified (selftest 16/15 and 9/8; mutants 6/6 and 4/4; controls target_reached=False); no sibling gate executed. Census rc 0 (25->26 W04)."
+   },
+   "commit": "kengaku-shokunin@f10a2678342efed6292864e8f273fb26f6297d11",
+   "closed_at": "2026-11-04T07:08:20Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (mutable .ufo/watchdog.log, copied): 2026-11-04T03:32:03-03:00 launch kengaku round=79 pgid=1259174 driver=hyaku-inline attempt=1; 2026-11-04T04:01:14-03:00 complete kengaku round=79; hyaku-inline attempt=1. Conformance: report 1f8d6766 by kengaku-shokunin, committed 56 s after lane tip f10a2678 (lands last); SHONEN heading present with four [~] pointers; 7/7 cited lane commits exist and are ancestors of master; lane repo clean and ahead=0 (state: local=remote=f10a2678); prompt is a clean 140-line rendering of templates/round-prompt.md with only placeholder substitutions, both claims and all five child-lane items present, L2 floor 8 matching MISSION.md; one v1 wave, 14 seats, 14 results, 0 dead, attack seats 4/14=29%, connector 1. Defects (status-neutral, routed to the lane): V1 report says the retired round78-c1 gate's verdict is 're-verified in gates-clean.txt' while that receipt's retired-gate block prints SETUP unresolved revision 'worktree' and EXIT 1 (the historical verdict stands at corpus/evidence/round78/c1-after.txt:28, PREDICATE R78-C1 pass); V2 report says 25 W04 census warnings 'unchanged in both' but receipts are 25 before and 26 after (S256 adds a duplicate-URL W04; rc 0); V3 report says '13 rows said a bare executed' where base has 12 bare + 1 recipe-unexecuted = 13 unquantified rows; V4 R78-D4's S254 anchor says capture line 2322 but the quoted 15-word sentence spans lines 2322 and 2326; V5 the new S256 duplicate-URL W04 needs to be stated with a reason; V6 c1-after.txt/c2-after.txt carry no LANE_TIP stamp, so the report's 'measured at 5302b92a' is not re-derivable from the receipt alone. Discernment spot-check agrees on 2 admits (S256 live curl: HTTP 200, 4574 bytes, sha256 identical, 21-word quote at line 24; S257 sha256 ee30c698 and 88-row ledger) and 2 rejects (four-blocker sentence; DEFECTS n=0 as knowledge). All four SHONEN boxes carry checkable pointers, so a non-author review could check them; promotion is operator-owned. No axis harmed; no uncommitted round work.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
