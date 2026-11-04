@@ -40963,6 +40963,55 @@
    "notes": "2026-11-03T21:27:06-03:00 launch kama round=71 pgid=1551649 driver=hyaku-inline attempt=1; 2026-11-03T22:27:10-03:00 complete kama round=71; hyaku-inline attempt=1. Report committed by kama-shokunin at 9450f2e9; lane tip 7fb6cb4e pushed, ahead=0, clean; 12/12 seats settled. Defects (status-neutral, routed to next round): C2 selftest pass=8 in the report and pass=19 in SKILL.md vs the actual 18 arms (final receipt pass=18 fail=0); boundary registry row lacks its exit-2 could-not-evaluate map; LOG depth anchor 0b61e118 vs landed 7ff94d67; C1 receipt called 'report tip' while it names 4b284653; README coverage map lacks the new knowledge row. SHONEN boxes all [~]; boxes 1/2/4 look checkable by a non-author, box 3 needs an independent execution review; promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 68,
+   "date": "2026-11-03",
+   "type": "closure-correction",
+   "lane": "mado",
+   "lane_round": 68,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 68
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "coverage": "unchanged",
+    "operability": "improved",
+    "freshness": "improved",
+    "calibration": "improved",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "Self-credit-resistant control harness + gate guard census (first-working round 68): a harness whose hermetic --selftest drives its own measurement body (3/3 forced-credit recipes killed; base r67 harness 0/3) and a census that counts which standing quality/check-*.py gates construct GIT_NO_REPLACE_OBJECTS (1/13 -> 13/13 guarded) against an eleven-case classifier control set; evidence .ufo/waves/round-68/measurement-final-r68.txt, quality/counters/c1-r68-landing-controls.py, c1-r68-selfmutants.py, c2-r68-reader-guard.py, corpus/knowledge/gate-git-read-guards-r68.md"
+   ],
+   "report": ".ufo/reports/round-68/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-68-verifier-spotcheck.md@04093b83f73a841117d3b31dbb2a6063f4f2a454",
+    "rechecks": "Correction only — the substantive re-checks below are unchanged. Step-1 PASS: report 1bea4e18 by mado-shokunin (22:25:31-03:00, after lane tip 80c6d7aa at 22:24:54; complete 22:26:08), SHONEN heading 1 + 4 [~] boxes, base 510100c8 and all 18 round commits are ancestors of refs/heads/master, jj state ahead=0 local==remote==80c6d7aa before the spot-check commit (2a49d43f then pushed), porcelain clean, dispatched prompt = byte-identical 8375-byte template rendering + run-15 addendum with all round-level and five child-lane items. C1 RE-MEASURED over committed bytes (counter not executed): harness sha256 25470bc4...f5527 at 180e5b2f, base r67 harness a4376fa7...9b58 at 510100c8, each frozen recipe occurs exactly once in both; committed receipts: base selftest=absent killed=0/3 applied=0/3 base=0/3 TARGET_MISSED rc1 with base survivors S1,S2,S3, after selftest=0 killed=3/3 applied=3/3 base=0/3 TARGET_MET rc0 at 180e5b2f (harness 52/52; mutants 51/52, 51/52, 50/52), record-landing re-run at 67b47df4. C2 RE-MEASURED over committed bytes (counter not executed): 20 tracked check-*.py at base and tip, 13 readers by the frozen verb predicate at both, guard string in 1 file at base -> 13 at tip, twelve diffs guard-only; committed receipts: population=20 readers=13 guarded=1 unguarded=12 controls=11/11 TARGET_MISSED rc1 at base, guarded=13 unguarded=0 controls=11/11 TARGET_MET rc0 at 180e5b2f, controls sha256 b7a1c939...faf6a91 at freeze and worktree. Sources census validate exit 0; rows 373->374, tier A 359->360, malformed 0. Discernment: S437 admit and the cat-file -e reject re-opened at the tag (sha256 6c32dbda..., 16099 B, tag object 24785443... peeled a0189536...), both agree. No axis harmed: SCORECARD diff is an appended round-68 block only, landing counters GREEN at 180e5b2f, axis table checked=3 mismatched=0."
+   },
+   "commit": "mado-shokunin@80c6d7aa350f8c66044f002753f6434632446fb0",
+   "closed_at": "2026-11-04T01:34:52Z",
+   "campaign": "hyaku",
+   "notes": "Correction (not a new closure): the spot-check pointer moves from 2a49d43f to 04093b83 after two cosmetic corrections to the integrator's own artifact - the C2 static-count decomposition (14 classifier + 5 contract/guard-shape + 1 CLI-parse + 6 verdict_met = 26, not 22+4) and the exact fetch timestamp (2026-11-04T01:27:50Z). Statuses, verdicts and trends are unchanged; rounds[1119] remains the closure row and this entry supersedes its spotcheck pointer only. Original notes: Dispatch/complete digest (.ufo/watchdog.log lines 2161/2168): 2026-11-03T21:58:09-03:00 launch mado round=68 pgid=801947 driver=hyaku-inline attempt=1 | 2026-11-03T22:26:08-03:00 complete mado round=68; hyaku-inline attempt=1. Shape: one v1 wave w1, 12 seats (executor 4, scribe 2, scout 1, connector 1, reviewer 2, critic 1, mutation-tester 1; attack 4/12 = 33.3%), one batched task call, band 8-16, settled 12/12, dead 0, L1 holds the planner seat; the wave-done receipt measures rev a4cb56fe and is committed at 80c6d7aa. Conformance defects (status-neutral, none bars admission): (1) the final-revision counter selftests 27/27 (C1) and 26/26 (C2) cited in the report/LOG/SCORECARD have no committed receipt; the committed battery at 18d692f3 reads 26/26 and 25/25, and the static counts reproduce 27 and 26 - routed: commit the --selftest receipts at the final content revision; (2) the report says 'Settlement at tip 80c6d7aa' while wave-done-r68.txt measures rev a4cb56fe - routed: name both; (3) commit 20f692be (predicate-literal binding receipt) is absent from the report's Landed-changes table and the LOG round-68 entry - routed: enumerate it next round; (4) the prompt's run-15 route map is the operator amendment and MISSION's role-class buckets are advisory, no lane alias is hardcoded; the run-13 mado SECURITY HOLD line is superseded by the run-15 preamble; (5) all published sub-axes sit at their measured maximum, so the lowest-axis obligation is vacuous and the round uses new finite denominators as rounds 56-67 did - recorded, not a defect. The frozen declaration's control-case index parenthetical drifts from the JSON order; disclosed in the lesson, predicate unaffected. Discernment trend graded improved by the closure spot-check (the lane reported unchanged because the outside check had not yet run). SHONEN: four [~] boxes; boxes 1 and 4 look checkable by a non-author on these artifacts, but promotion is operator-owned and no [x] was written. No credential material, no desktop/compositor/socket/service write, no package transaction, no MANIFEST edit by the lane, no sibling write.",
+   "promotions": [],
+   "minted": [],
+   "supersedes": {
+    "round": 68,
+    "type": "closure",
+    "date": "2026-11-03",
+    "entry": 1119
+   }
   }
  ]
 }
