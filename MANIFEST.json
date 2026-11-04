@@ -47179,6 +47179,47 @@
    "notes": "Dispatch digest (.ufo/watchdog.log, mutable): 2026-11-04T16:38:52-03:00 launch chousa round=76 pgid=2372643 driver=hyaku-inline attempt=1; 2026-11-04T17:41:33-03:00 complete chousa round=76; hyaku-inline attempt=1. Status ok, real landed report (not a marker): report commit 5e1e9d30 by chousa-shokunin at 17:40:35, after lane tip a519fb0a (17:39:32), adding only the 77-line report; `## SHONEN` once with four [~] rows matching SHONEN.md's four boxes; cited hashes da9ac7ec/5daa3628/5eeca32b/a519fb0a exist and are ancestors of lane master; jj-lane state ahead=0 behind=0 and status --porcelain empty; prompt bf1af072 committed 16:38:51, one second before the launch, lines 1-140 substitution-only against templates/round-prompt.md, addendum carrying report-lands-last, write scope and campaign routing (MISSION.md has no alias table, so only bucket-level routing is checkable). One v1 wave, 12 seats (3 executor, scout, scribe, connector, 2 reviewer, 2 critic, mutation-tester, sentinel = 6 attack, 50%), one batched taskCall, no residual; 11 seat reports retained and R76Critic absent (wake 402) - an accounting defect the report itself names, not a fabricated seat. Verifier landed 6defa58dbdc40856f4e7dd24df98dc7ebd3459c0 and confirmed via ls-remote. Routed owner chousa next round: (1) outer batteries score exit codes in a fixed subject order, so a call-count oracle reaches both exact target lines - permute order and ship it as a scored control; (2) c2-battery defaults to --lane-rev master, so pin the lane leg revision; (3) the frozen claims prose sentence 'every receipt names the controls revision' is false and must be superseded append-only; (4) the frozen battery lacks a learned-table subject/tree/size answer key and the unchanged case keeps a stable size tuple (QUALITY138-140 state the successor bar); (5) persist per-seat terminal records at wave settle. SHONEN's four boxes look mechanically checkable by a non-author from the cited pointers; promotion stays operator-owned and this closure checked no box. Conformance defects: none barring admission.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 85,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 85,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 85
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "depth": "improved",
+    "calibration": "unprovable",
+    "freshness": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-85/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-85-verifier-spotcheck.md@2cf0b7ff93c698809bed321f7338276a22d6beb9",
+    "rechecks": "Step 1: report authored by kaidoku-shokunin (c8653681), SHONEN heading with 4 [~] lines, 6 cited commits all ancestors of main, lane ahead=0 and remote main=b9d45602, prompt 74b9b44 identical to templates/round-prompt.md modulo substitutions, 12 DONE seats with 4 attack seats. Claims re-measured from blobs: C1 receipts 0/2 (BASE) vs 2/2 refused with the round-84 positive control FLAGGED under the frozen token list (met false) vs met true only for the unfrozen variant; the frozen predicate is unsatisfiable against its own positive control ('mismatches none'). C2 mutants.json sha256 ef031dbe and 21 rows at three revisions, anchor counts exact, 21/21 declared case names present (17 new), 3/21 -> 21/21 killed with zero bad bindings, frozen 13/13 preserved, all 6 instrument pins equal their blobs. Coverage stems 167/167 -> 168/168 with missing [] and dangling []; sources-census validate exit 0 with 27 W04; S304 reopened (PDF sha256 63b7bfca, 24-word quote verbatim on p.6); S303 reject agreed with the stored count corrected to 8 rows / 7 prior. Lane gates and selftests were evidence-verified, not executed."
+   },
+   "commit": "kaidoku-shokunin@b9d45602a13bec61832456ec791afa939535530a",
+   "closed_at": "2026-11-04T21:08:36Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-04T17:26:17-03:00 launch kaidoku round=85 pgid=3329039 driver=hyaku-inline attempt=1; 2026-11-04T17:55:52-03:00 complete kaidoku round=85; hyaku-inline attempt=1. Conformance defects (status-neutral): the two orchestrator handoff markers .ufo/waves/round-85/r85-w1.ready{,.dispatched} are untracked in the lane; the planner seat was held by the L1 and disclosed, not dispatched; predicate-bind.py has no SKILL.md registry row (routed R85-2); the frozen C1 predicate was unsatisfiable against its own positive control. Routed to kaidoku's next round: R85-1 frozen C1 plan/brief/counter agreement, R85-2 gate registration, R85-3 S303 supersedes row (registry still says five scopes; 8 rows / 7 prior), R85-4 C2 same-family gaps and no removed-case detector, R85-5 mutation-closure.py:8 docstring still says inconclusive where code says survivor, R85-6 no committed round-85 coverage receipt though the SCORECARD row implies one; carried r84 R5 (planner seat) and R7 (C3/A3/A9) open. SHONEN: four [~] lines, no [x]; the boxes now look mechanically checkable by a non-author, so promotion is operator-owned. No promotion, mint or lane-authored file changed; lane untouched outside the spot-check path.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
