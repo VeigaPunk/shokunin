@@ -40533,6 +40533,49 @@
    "notes": "dispatch/complete digest: 2026-11-03T21:04:09-03:00 launch kaidoku round=66 pgid=983868 driver=hyaku-inline attempt=1 | 2026-11-03T21:28:06-03:00 complete kaidoku round=66; hyaku-inline attempt=1. Step-1 conformance clean: report committed by lane identity 7edbdc38 (erratum) after dae13f80, filed after the cited tip 6d82aa32; SHONEN heading 1 with four [~] box lines against four boxes; all seven cited commits exist and are ancestors of main; jj state ahead=0, git status empty, remote main = 6d82aa32 before my spot-check; prompt 704 lines, sections 1-5 verbatim against templates/round-prompt.md with the five child-lane items and the L2 floor, run-15 band 8-16 satisfied by 12 seats (3 executor, 1 reviewer, 1 critic, 2 mutation-testers, 1 sentinel, 1 scout, 1 connector, 2 scribes; attack 4/12 = 33%). Claims: R66-C1 depth improved (routed r65 counter defects repaired; 1/5 control -> 5/5, count 30 asserted, skip-run closure removed) and R66-C2 calibration improved (stale 142/142 row -> 146/146 re-derived at the record; mismatches 1 -> 0); no coverage claim, coverage unchanged. Conformance defects (status-neutral): D1 the Landed-changes row for 02d4880b cites a nonexistent LOG heading '## 2026-11-03 - round 66, KaidokuR66 - record' and 02d4880b adds no LOG bytes (same class as the r65 defect this round corrected) - routed; D2 the C1 receipts carry no measured revision while C2's do (Gate standard) - routed; D3 r66-w1-results.json has no per-seat status field, so '0 dead' is inferred from twelve outputs - routed as advisory. The report's original 5de8a1de-row omission was self-corrected by erratum 7edbdc38. The lane's own routed witness gaps M66-5/6/7 and mutation survivors M5/M2 are disclosed and acknowledged, not re-routed. No capability row entered; both instruments are registered as gates under QUALITY #92. SHONEN boxes are [~] and not fully checkable by a non-author from this round's evidence (box 3 is a judgment; instruments not re-run by the judge); promotion is operator-owned and none recommended. Spot-check: kaidoku-shokunin/corpus/lessons/round-66-verifier-spotcheck.md@a7a4ce69. Nothing promoted, nothing minted.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 70,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 70,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 70
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "xfs-stats-arm"
+   ],
+   "report": ".ufo/reports/round-70/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-70-verifier-spotcheck.md@930d5530e5fbf91091245c044fef4888ecf12029",
+    "rechecks": "Conformance clean: report 62accc53 by tsukuroi-shokunin, pushed on origin/master (fleet master 3664a6d3), SHONEN 1 heading + 4 [~] lines (no [x]); 13 cited hashes all ancestors of refs/heads/master; lane state ahead=0 local==remote==79dac76c, untracked only inherited round-66/67 .ready.dispatched markers; dispatched prompt = template render (sections 1-5, placeholder substitutions only) + run-15 addendum + scratch discipline. C1 re-measured over committed bytes: note/counter rc 128->0, XS rows 0->6, SOURCES 289->296, S290-S296 NF 13, snapshots sha256sum -c 4/4 OK, headers 88/88 with all three keys, census rc 0; frozen counter evidence-verified (battery 8/8 PASS, run at 40c35ee7 met=1 rc 0; lane gate not executed). C2 evidence-verified: label 0->21 occurrences, probe_xfs 0->2, selftest 196->214 PASS (18 R70-C2 lines), red-before 212/214, exactly one live line mounts=2 present=2 absent=0 unreadable=0 stats=2 error=18 log=8 detail=none, mounts == 2 distinct findmnt sources, per-fs error=9 log=4, rollup byte-identical and rc 1. SCORECARD diff base->tip append-only (+160, 0 deletions), whole round diff 99 files +10208/-0, no ordinal moved: no axis harmed. Spot-check agrees on 4 admits (S290-S293) and 3 rejects (S294-S296), sources re-opened live with matching digests. Trends: expansion/quality/discernment improved."
+   },
+   "commit": "tsukuroi-shokunin@79dac76cd1c4e27a1ba745a867e19c31a8592ec3",
+   "closed_at": "2026-11-04T00:42:20Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable - copied verbatim): 2026-11-03T20:54:15-03:00 launch tsukuroi round=70 pgid=4127385 driver=hyaku-inline attempt=1; 2026-11-03T21:33:31-03:00 complete tsukuroi round=70; hyaku-inline attempt=1. Step-1 conformance clean: report 62accc53 by lane identity after lane tip 79dac76c, pushed; SHONEN 1x4 [~], no [x]; all 13 cited hashes ancestors of master; lane ahead=0 pushed; prompt = template render + run-15 addendum, MISSION L2>=8; wave 13 seats/13 results/0 dead, attack 4/13=31%, connector 1, residual 0, planner held by L1. Claims: C1 verified (depth 8->8, sourced XS1-XS6/S290-S293), C2 verified (operability improved via capability xfs-stats-arm; ordinal 9->9); admitted. Routed defects (status-neutral): (1) stale final selftest tally 212/16 in PROVINCE.md:372, corpus/README.md round-70 index and SKILL.md block vs final 214/18 (corrections sweep; r69 D7 class recurred); (2) report's final-revision re-run claims (counter 6/6 at 79dac76c; cited-receipts 75 files/42 paths at 79dac76c) have no committed receipt - committed runs are 40c35ee7 and 50389560 (r69 D2 class); (3) tools/count-xs-rows-r70.py carries a bash shebang over Python source; (4) fleet-root untracked one-line 'after' file names no lane and is not attributed; operator cleanup. L0 round-64/60/57 remain open, routed around. SHONEN boxes carry resolvable [~] pointers; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
