@@ -41183,6 +41183,50 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-11-03T22:37:33-03:00 launch tameshi round=74 pgid=982710 driver=hyaku-inline attempt=1 | 2026-11-03T23:01:44-03:00 complete tameshi round=74; hyaku-inline attempt=1. Shape: one v1 wave w1, 12 seats (executor 4, reviewer 2, scribe 1, scout 1, critic 1, mutation-tester 1, connector 1, sentinel 1; attack 4/12 = 33.3%), band 8-16, counts.spawn=12, 12/12 records and 12 seat reports, 0 dead, no residual call; planner is a frozen-topology seat the swarm validator rejects (L0 answer 2026-10-19; the L1 holds the section-3 planner seat) and labrat is likewise not a swarm role. Conformance defects (status-neutral, none bars admission): (1) SCORECARD.md CRLF->LF at 1c3a428e (base 4406 CR of 4490 lines -> tip 0 of 4606; raw 4522/4406, ignore-cr 116/0 so content additive) undisclosed in report/LOG/lesson; (2) cold-read pointer names the wrong revision: report and SHONEN box 3 say credited=64/64 at ef57dc2a / at the tip but live-green4-r74.out measures rev=f5e9f9e2 (commit 2eb49f9a says so); (3) live SCORECARD counters stale: capability row :262 quotes WAVE_RECONCILE_SELFTEST 12/12 while the tip tool prints 15/15, and :264 quotes rows=6 while its cited tip receipt reads rows=11; (4) r73 routed defect 5 only half paid: four tools/registry.json rows exist (held 4/4) but SKILL.md's registry table lists neither instrument and the JSON rows lack verdict map / pinned-value path / write scope / owner; (5) the report says the S294 used-by old->new is logged in the lesson but the lesson carries only the added path; (6) r73 routed defects 3-4 still open (no erratum appended to plans/round-73.plan.md for its contradicted kill-rule sentence; the r73 report's 22-of-23 landed table and 19-vs-18 W04 census count remain uncorrected). Routed to the lane for round 75: items 1-6 above plus the lane's own carries (M-C record-bound integer survives 15/15; selective _record_claim bypass on roles/attack_share; echo stub can print the totals; six older standing instruments without registry rows; rounds 61-71 without results.json; round 60 vocabulary) and the r73 M3c IGNORED over-filtering carry. No promotion or mint: SHONEN boxes remain [~] lane assertions and are checkable by a non-author; promotion is operator-owned. Lane clean and pushed at closure (ahead=0); spot-check landed at 21ef81e9.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 68,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 68,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 68
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "unchanged",
+    "coverage": "improved",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "improved",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "registry-conformance census over the lane's own instrument inventory (first-working round 68): each plan's own-round tools for rounds >= 41, read at --rev, against the SKILL.md registry, reporting unregistered/duplicate/absent-at-rev/thin sets with legacy rounds out of regime; 2 -> 0 mismatches, scope 69 -> 71, rows 73 -> 77; evidence kaidoku-shokunin/tools/round-68/registry-conformance.py + .ufo/waves/round-68/l1/scores/c1-at-landing.json",
+    "packed-ELF triage route (first-working round 68): detect UPX packing (upx -l rc 0 + zero section headers), unpack to bytes whose sha256 equals the carrier pin, recover the original's REA inventory, with the packed stub (3 procedures) as the before-arm and the non-packed original as the control; 2 of 2 carriers; evidence kaidoku-shokunin/tools/round-68/packed-elf.py + .ufo/waves/round-68/l1/scores/c2-at-landing.json"
+   ],
+   "report": ".ufo/reports/round-68/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-68-verifier-spotcheck.md@d7d9a62cc70935304e600ed0dee864fc4f1751f7",
+    "rechecks": "Step-1 PASS: report 1ae7e0e1 by kaidoku-shokunin identity 23 s after tip 70489de5; SHONEN heading 1 with four [~] boxes; all 24 hex tokens classified (12 lane commits, 2 fleet prompt commits, 7 digests), every commit exists and is an ancestor; lane clean ahead=0, remote=70489de5; prompt carries the template contract, the five child-lane items and the run-15 route map (MISSION role buckets advisory, no conflict); one v1 wave, 13 seats (4 executor, 1 reviewer, 1 critic, 2 mutation-tester, 1 sentinel, 1 scout, 1 connector, 2 scribe), attack share 4/13, 13/13 results, 0 dead, no residual. Re-measured: C1 registry scope/rows/unregistered 69/73/2 -> 71/77/0 naming exactly the two r67 instruments at the base, membership base | the two r68 instruments with no drops; C2 carrier pins, deterministic packed shas, zero-section detection, byte-identical unpack and the non-packed control. Evidence-verified: C1/C2 receipts (rev 978436bd, instrument.rev 6020eb60, pins a300d831/48ef4c68/0657ee08 byte-identical at freeze/landing/tip; 2/2 carriers, control_ok true, before_procedures [3,3], failing [], met_target true) and selftests 11/13 green per ReviewerGates. Axes: coverage improved, calibration improved, depth/operability/freshness/adjacency unchanged; no axis harmed. Trends: expansion improved (entry citing mined S269; SOURCES 175->176, A 161->162, mined 166->167, malformed 0), quality improved (r67 correction block, QUALITY #100 companion, legacy ledger retired with byte pin, round-29 gate exit 0), discernment improved (spot-check agrees with one admit and four rejects; M68-6/M68-9 findings routed). Defects routed R68-V1..V6: entry lacks the line-start provenance trio; README knowledge-index row above the table header; filing-tree prefile PASS is a paste with no committed receipt; prefile erratum prose/logic nits; S269 quote label 11 vs actual 10 words; report 'two of them corrected' not re-derivable as two rows. None status-changing. No tool installed or upgraded (upx 5.2.0/node/readelf/rea-agents 6.5.0 already present); no pacman transaction."
+   },
+   "commit": "kaidoku-shokunin@70489de5c82a96321a2f8d0e3914cfaf29a5c6c8",
+   "closed_at": "2026-11-04T02:14:30Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-11-03T22:29:46-03:00 launch kaidoku round=68 pgid=930879 driver=hyaku-inline attempt=1; 2026-11-03T22:59:20-03:00 complete kaidoku round=68; hyaku-inline attempt=1. Step-1: report 1ae7e0e1 by kaidoku-shokunin <kaidoku@shokunin.local> 23 s after lane tip 70489de5; SHONEN heading 1 with four [~] boxes and no [x]; all 24 hex tokens classified (12 lane commits, 2 fleet prompt commits, 7 digests) — every commit exists and is an ancestor; lane clean, ahead=0, remote=70489de5; prompt carries the template contract, the five child-lane items and the run-15 route map (MISSION role buckets advisory, no conflict); one v1 wave r68-w1, 13 seats (4 executor, 1 reviewer, 1 critic, 2 mutation-tester, 1 sentinel, 1 scout, 1 connector, 2 scribe), attack share 4/13, 13/13 results, 0 dead, no residual. Claims: R68-C1 re-measured by the closure (independent plan/registry extractor: base 69/73/2 naming exactly the two r67 instruments; freeze 71/73/4; tip 71/77/0; membership base plus the two r68 instruments, no drops) and receipt-verified (rev 978436bd, instrument.rev 6020eb60, pins byte-identical at freeze/landing/tip; selftest 11 cases per ReviewerGates); R68-C2 re-measured on pins/identity/control (sha256 of /usr/bin/jq and /usr/bin/xxd equals the receipt pins; deterministic packed shas e8b6c9e7/1727faf9; 0 sections packed; unpack restores the pins byte-for-byte; upx -l/-d rc 2 on the copied originals) and evidence-verified on the REA inventory counts (2/2 carriers, control_ok true, before_procedures [3,3], failing [], met_target true; selftest 13 cases). Axes: coverage improved, calibration improved, depth/operability/freshness/adjacency unchanged; no axis harmed. Trends: expansion improved (entry citing mined S269; SOURCES 175->176, A 161->162, mined 166->167, malformed 0), quality improved (r67 correction block, QUALITY #100 companion, legacy ledger retired with byte pin 2a840d72, round-29 gate exit 0), discernment improved (spot-check agrees with one admit and four rejects; M68-6/M68-9 findings routed). Conformance defects routed to the lane (status-neutral): R68-V1 entry lacks line-start source:/verified-at:/recheck: fields; R68-V2 corpus/README.md:118 knowledge-index row above the table header; R68-V3 filing-tree prefile PASS is a report paste with no committed receipt; R68-V4 prefile erratum prose/logic nits (stops-at-round-52 false, 20-of-36 wording, unreachable ${got:-absent}); R68-V5 S269 quote label says 11 words, actual 10; R68-V6 report 'two of them corrected' not re-derivable as two rows. No tool installed or upgraded (upx 5.2.0/node/readelf/rea-agents 6.5.0 already present); no pacman transaction. Fleet root retains orchestrator-owned .scratch edits and the report's unattributed untracked `after` file; not lane debt. The lane SHONEN boxes look checkable by a non-author next review; promotion remains operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
