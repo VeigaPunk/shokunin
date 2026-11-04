@@ -42667,6 +42667,47 @@
    "notes": "Dispatch/complete digest (mutable .ufo/watchdog.log): 2026-11-04T02:40:31-03:00 launch tameshi round=78 pgid=3734543 driver=hyaku-inline attempt=1 | 2026-11-04T03:12:29-03:00 complete tameshi round=78; hyaku-inline attempt=1. Shape: one v1 wave w1, 12 seats (executor 3, scribe 1, scout 1, reviewer 2, critic 1, mutation-tester 1, connector 1, sentinel 1, simplifier 1; attack 4/12 = 33.3%), band 8-16, counts.spawn=12, 12/12 records and non-empty seat reports, 0 dead, no residual. Claims: R78-C1 operability capability (non-Python freshness row, S306) and R78-C2 coverage (the two round-77 survivors become arm20 post-condition + arm21 two-commit fixture, S091 re-opened); both verify as declared, no axis harmed, stagnation nudge active (rounds 75/76/77 entered no capability row) and the capability row entered SCORECARD.md. Non-author spot-check agrees with the gate on the S306 admit, the kernel.org-mirror reject and the S091 re-open; census exit 0 (165->166 rows). ROUTED DEFECTS (status-neutral, next round): (1) landed and standing receipts name measured_rev 6f532752 while recording tool sha 7edecba8/f8071c8a, first committed at 091d50e4 (worktree run mislabeled; the report's 'every receipt names the revision and tool sha it measured' overstates); (2) the report's final-tip cold-read 65/65 has no tip receipt — newest is coldread-at-lesson-commit.json at 0e088684, tip value is criterion-128 inference (round-77 section 6.1 repeat); (3) the C1 control receipt omits the exit code 2 its frozen kill rule names; (4) the frozen plan's arm20 'scans the scratch parent' sentence is superseded by the landed per-fixture check without an appended plan note. Conformance defects: none (report path, identity, ordering, SHONEN, prompt fidelity, authorship all pass). Assimilation: none (connector searched A/B/B_precise/B_lifecycle; id check 8 collisions, nothing appended). L0: none. Promotion: none; all four SHONEN boxes look checkable by a non-author on standing evidence, promotion operator-owned and no marks written. Prior `after`/`.ufo/reports/round-77/kumitate.md` untracked fleet paths belong to other lanes.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 77,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 77,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 77
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage:omp": "improved",
+    "operability": "improved",
+    "coverage": "unchanged",
+    "coverage:script-layer": "unchanged",
+    "coverage:runtime-layer": "unchanged",
+    "coverage:kimi-layer": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-77/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-77-verifier-spotcheck.md@0b4df07b6f7478e7db6afb6852c418e096663c3c",
+    "rechecks": "Step-1 PASS: report a6a9e768 by kumitate-shokunin <kumitate@shokunin.local>, ancestor of origin/master, committer 03:17:12 after the lane tip 03:16:48 (stale jj author date 03:12:29 noted, not a lane edit); SHONEN heading with 4 [~] bullets, no [x]; 9/9 cited lane commits (a321ed80 base, 4dc470a1, 794704aa, 9bb6f5b2, d5f91f90, e47266ae, 7316b0ce, 640cadf1, 3231b11c) ancestors of master; jj state branch=master local=remote=3231b11c ahead=0, status clean; prompt 704 lines renders templates/round-prompt.md (140) substitution-only + addendum at :141, all five child-lane items and the L2 floor present; run-15 route text matches MISSION.md advisory buckets (no lane pin); one v1 wave 13 seats, 13/13 reports, 0 dead, attack 5/13 tool / 6/13 declared. C1 evidence-verified (probe 12/12 at e47266ae; c1-json source=snapshot, O 1/1 64/0/35 coverage_omp=10; strict MATCH; selftests 58/151; mutants 6/6) and re-measured (receipt 64 entries sha 5980a0c8 = pin.omp-shape = open lstat 64/64; base flags 0; printer 4/12). C2 evidence-verified (probe 13/13; selftest 26/26; mutants 8/8; control 0/13) and re-measured (v2 surface, map 186/186/186, corpus files 186, base 0 tokens). Axes score-identical 9/10/10/10/10/10; SOURCES 165->166 A 141->142; PROVINCE/AGENTS unchanged; no axis harmed. Counters/gates not executed (Gate standard). Routed: lesson Counters A=856 vs receipt 857; controls probe sha 9b62defa vs shipped d48390c3; floor executor=2/3 verdict=met; quote word counts 21/24 vs 20/25; FREEZE-FIX-6 exit=0 mislabel; R75-D4 why-not only in the wave draft."
+   },
+   "commit": "kumitate-shokunin@3231b11c17c55f00ab795d5641f88182e94b755d",
+   "closed_at": "2026-11-04T06:27:48Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (watchdog.log): 2026-11-04T02:39:29-03:00 launch kumitate round=77 pgid=3715426 driver=hyaku-inline attempt=1; 2026-11-04T03:17:53-03:00 complete kumitate round=77; hyaku-inline attempt=1. Step-1 conformance clean (report lane identity a6a9e768, lands last by committer time; SHONEN 4x[~]; 9/9 cited hashes ancestors; ahead=0; prompt substitution-only + addendum with the five child-lane items and L2 floor; 13-seat v1 wave, 0 dead, attack 5/13 tool / 6/13 declared). C1/C2 verify on committed receipts; all six axis scores held; admitted. Defects routed (all status-neutral): (1) corpus/lessons/round-77.md ## Counters records close A=856 while its cited close/proxy-json.txt reads 857; (2) controls/c77-c1-base.txt and c77-c2-base.txt record probe sha 9b62defa but the shipped counter at M is d48390c3 (A2.4/A2.5 landed after the controls) — re-score the base controls on final bytes and record the probe sha in close receipts; (3) report FLOOR line says executor=2/3 yet verdict=met while the template minimum split asks 3 executors; (4) lesson Gate quote word counts annotated 21/24, actual 20/25 (still <=25); (5) open/r76-freeze-fix-6-disposition.txt prints a thrown ERR_MODULE_NOT_FOUND then exit=0 (a re-run exits 1); (6) the R75 D4 why-not exists only in build/K77ScribeDocs/round-77-lesson.md:25, not the committed lesson/report pointer. §9 note: the v1->v2 counter was cut after the freeze printer control scored 5/10 but before any claim data or verdict; ruled a disclosed pre-data instrument repair (stricter arms, target unchanged at all-arms, v1 bytes preserved sha 16695655), not a post-data target move. SHONEN boxes look fully checkable by a non-author; promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
