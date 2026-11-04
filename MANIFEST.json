@@ -43327,6 +43327,50 @@
    "notes": "dispatch 2026-11-04T04:33:22-03:00 launch mori round=82 pgid=3316655 driver=hyaku-inline attempt=1 | complete 2026-11-04T05:00:30-03:00. Status ok, admitted; all three claims verify and no axis is harmed (scores 6/7/5/5/5/6 unchanged). Conformance: report 3d688928 committed by the lane identity; lane pushed ahead=0 and clean; prompt 9683932f committed under the lane identity (run-15 dispatch-evidence convention, same as kotoba/revenger r82); w1-results.json null status per seat recorded by the report as an observation; A1 absent from freeze 20551e56 and landed in f02ad83b, disclosed pre-data, with no committed after-value preceding it. Routed: D82-1 SCORECARD:4038 the r80 capability row's revised pointers=249 still carries the stale 'at this round's record commit 075574c8' attribution while its own correction states 075574c8 grades 237 (D80-4/D81-1 class; the C3 arm grades only registered bindings); D82-2 count-c3 --selftest 8/8 lacks a committed post-repair tally (controls/battery show the pre-repair 5/5); carry the r83 planned mutation survivors 20/38, C2 live-reading immutability and C3 occurrence ambiguity. Promotion operator-owned; the four SHONEN boxes look non-author checkable.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 80,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 80,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 80
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged",
+    "novelty": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "located-replay-mint"
+   ],
+   "report": ".ufo/reports/round-80/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-80-verifier-spotcheck.md@4e833e9fee8022d24559535178c6fe32b2cd62f1",
+    "rechecks": "C1 re-measured over committed bytes: ledger 88 members, executed 18->24, executed-unlocated 6->0, unexecuted 64 held, exactly the six named members changed (every classes list identical 6/6), tip rows subject=tb2-header round=80, six receipts' SOURCE_SHA and TOOL_SHA recomputed and matching 6/6, HISTORICAL-DIVERGENCE 8 and 2 present. C2 re-measured: routed-findings 111 rows (31 open/1 blocked/77 closed/2 refused), R79-V1..V6 closed fixed-verified with evidence_path/literal/verified_at and all six id checks exit 0, source lines resolve at 168/175/177/180/183/186, V2 25/26 W04, V3 12 bare executed + 1 recipe-unexecuted at 660ec0b9, V4 capture lines 2322/2326, V5 S256=S180 URL with distinct scope, V6 both stamps. Census validate rc 0 (250 rows, 26 W04; 249 at base). Gate batteries and frozen runs evidence-verified, never executed (selftest 19/15/0 and 9/8/0, mutants 10/10 and 4/4, every control target_reached=False, gates-clean at e985e56a all EXIT 0)."
+   },
+   "commit": "kengaku-shokunin@507d249b32eb90863cd0dc78a5672f777ce9d658",
+   "closed_at": "2026-11-04T08:14:27Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (mutable .ufo/watchdog.log, copied): 2026-11-04T04:09:21-03:00 launch kengaku round=80 pgid=2512421 driver=hyaku-inline attempt=1; 2026-11-04T05:02:34-03:00 complete kengaku round=80; hyaku-inline attempt=1. Conformance: report e560ed5a by kengaku-shokunin (jj export author 05:00:31, committer 05:02:09, after lane tip 05:01:11, cites it); SHONEN heading with four [~] pointers; 13 round commits plus historical 148801a6 exist and are ancestors of master; lane clean and ahead=0 (local=remote=507d249b); prompt is a clean 140-line rendering of templates/round-prompt.md with substitutions plus the hyaku addendum and scratch section; one v1 wave, 14 seats, 13 reports (CriticC1R80 undelivered, disclosed), attack 4/14=29%, connector 1. Defects (status-neutral): the wave has no planner seat, attributed to an orchestrator ruling with no committed artifact; the report commit sweeps .ufo/l0-questions.md (kengaku's own line; same shape as kumitate r78 88ccf5b2); the lane committed its own prompt 26823a2. Routed to the lane: U1 S258's six sha256 pins and lines 1-10 are the pre-A3 bb3d6555 blobs (tip 11a53bf3/1a3d4e1b/afef9380/f60bc00b/b7e66f4c/778565cd; stamp now 3-12), repeated in the lesson and report; U2 c1-after is a WORKTREE-dirty run, cite gates-clean.txt at e985e56a; U3 the census 249->250 row counts have no producing command in the validate receipts; U4 M80-1's fix is not shown able to fail (no committed ModuleNotFoundError/REPRODUCTION-EXIT receipt) and the captured-by-none QUALITY.md criterion is missing; U5 both new gates are absent from the SKILL.md registry (Gate standard Delivery); U6 the report's REMINT minted=6 line has no committed receipt and the README round-80 row names M80-1 only. Spot-check lands at kengaku-shokunin 4e833e9f. No axis harmed; no uncommitted round work.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
