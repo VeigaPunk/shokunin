@@ -41929,6 +41929,47 @@
    "notes": "dispatch/complete digest: 2026-11-04T01:15:03-03:00 launch kengaku round=75 pgid=1837233 driver=hyaku-inline attempt=1; 2026-11-04T01:40:15-03:00 complete kengaku round=75; hyaku-inline attempt=1. Conformance defects (status-neutral): R75-D1 report first committed 01:38:47 before the final lane commit 01:39:16 and rewritten in place by aa5ebcd6 (an erratum was owed); R75-D2 SCORECARD cites the after state at 813b7403 while the committed receipts stamp 9f8f0f21 (report prose claims a 5d9a0ccc re-derivation with no committed receipt); R75-D3 C1 before measured under the pre-A3 counter (59) vs the final rendered-row rule (60) and only the after is same-version (claims header still says 58); R75-D4 SKILL registry rows stale after A4/A5 (C1 row says 5 arms/4 red vs actual 8/7; C2 row says 4 arms, 9 mutants, expected_matched=9 vs actual 5 arms, real=10, expected_matched=10); R75-D5 LOG drift (says cases=7 red=6 and after receipts stamped 43255758/66a93f6b while they stamp 9f8f0f21) - LOG is append-only, correction entry owed; R75-D6 the report's both-round-74-gates-green assertion has no committed receipt; R75-D7 corpus/lessons/round-74.md was reflowed in place (7/1) while the report says it is not rewritten. Wave: one v1 wave, 13 seats, attack 5/13=38.5%, connector 1, 0 empty, validate rc 0. SHONEN: four [~] boxes with pointers; all four look checkable by a non-author now (promotion is operator-owned). None of the defects bars admission.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 75,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 75,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 75
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "improved",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-75/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-75-verifier-spotcheck.md@865b38c96c23ec0bcace8ca3ee884f860693ce43",
+    "rechecks": "C1 re-measured by closure over committed bytes (6 JT rows; 3 snapshots sha256sum -c 3/3 OK; 3 sources S314-S316; 6/6 quotes located; note absent at base rc 128) and the frozen clause 'propagating restart only as try-restart' independently falsified (transaction.c:1203-1204 branch-scoped comment vs direct JOB_RESTART at :1019 via :1220-1247) -> not verified as declared; lane gate not executed, committed evidence verified (13-case selftest; instrument sha256 5e87238c... at declaration+tip; base JT_MAP absent in before/absence-controls.txt; after receipts at c15fe829/71ab09f4/e5f5ca9e rc 0). C2 re-measured by plain greps: four r74 tokens 0->1 at tip with supersede verbs; checker evidence 4->0 stale (13-case selftest; sha256 4b5c801c...), freshness improved. Registry 313->317, notes 92->93, lessons 124->125 closure-counted; census exit 0; no axis harmed (99 files +13511/-0; SCORECARD 91/0). Spot-check: 3 admits + 1 reject re-opened and agree; S314 teaches over-broad and JT5 erratum count are routed."
+   },
+   "commit": "tsukuroi-shokunin@bd0acc444cd6c82823602ed7a49bd1ef11360d2d",
+   "closed_at": "2026-11-04T04:46:50Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-11-04T01:15:01-03:00 launch tsukuroi round=75 pgid=1836578 driver=hyaku-inline attempt=1 | 2026-11-04T01:36:55-03:00 complete tsukuroi round=75; hyaku-inline attempt=1 (no lane-dead line). Step-1 PASS: report 350b464f by tsukuroi-shokunin <tsukuroi@shokunin.local>, committer identical, ancestor of origin/main+origin/master; SHONEN heading 1 + 4 [~] lines (no [x]); cited 1e2bb29c/c15fe829/71ab09f4/e5f5ca9e/bd0acc44 + base a21302a4 all ancestors of refs/heads/master; jj state branch=master local=remote=bd0acc44 ahead=0 behind=0; 7 untracked wave-runner markers only (round-75 w1.ready + w1.ready.dispatched, carried r66/r67/r73/r74 .ready.dispatched and r73 w1-run.stderr; dispatch bookkeeping, not lane round work - routed item 5); report lands after lane tip (01:35:09 -> 01:35:55) and before complete (01:36:55). Prompt .ufo/prompts/tsukuroi-round-75.md (704 lines) = template sections 1-5 with placeholders + section-6 run-15 addendum + section-7 scratch; all five child-lane items present; L2 floor >=8 matches MISSION.md section L2; committed 8afab848 by the dispatch harness under the lane identity. Observation (operator-owned, not a lane defect): the prompt's quoted 'latest routing amendment' (only reviewer @m_zfl) has drifted from the live ~/.omp/agent/config.yml agentModelOverrides (critic/executor/scribe/connector/sentinel/mutation-tester also @m_zfl); the prompt makes the config the authority and forbids passing model, and no claim depends on the route. C1 re-measured over committed bytes: 6 JT rows, 3 snapshots sha256sum -c 3/3 OK, 3 sources S314-S316, 6/6 quotes located, note absent at base rc 128; the frozen clause 'propagating restart only as try-restart' independently FALSIFIED - the :1203-1204 comment is scoped to UNIT_ATOM_PROPAGATE_STOP, while the graceful branch (:1220-1247) calls job_type_propagate_stop_graceful (:999-1027) and may enqueue a direct JOB_RESTART at :1019; lane self-declared not verified as declared, no depth uplift. Lane gate not executed (Gate standard); committed evidence verified: 13-case selftest, sha256 5e87238c... at declaration+tip, base JT_MAP absent rc 128 in before/absence-controls.txt, after receipts at c15fe829/71ab09f4/e5f5ca9e rc 0. C2 re-measured by plain greps: four r74 tokens 0->1 at tip with supersede verbs; checker evidence 4->0 stale (sha256 4b5c801c..., 13-case selftest); r74 SC3Index death row output:''/note:null and the 27552-byte report.md corroborated; freshness improved. Supporting counts closure-run: registry 313->317, notes 92->93, lessons 124->125; census exit 0 (pre-existing W04 only). No axis harmed: full diff 99 files +13511/-0, SCORECARD 91/0, LOG/PROVINCE/SKILL/README/QUALITY appends only. Routed defects for r76: (1) S314 teaches 'restart propagates only as try-restart' over-broad - append a superseding SOURCES row scoped to PROPAGATE_STOP and add the proposition to the QUALITY 108 map; (2) JT5 erratum says 'nine comma items' while the row has eight comma items (ten labels) - correct the count/method; (3) report says 'six mined mistakes' vs five in the lesson's ## Mistakes (two owed rows; LOG says five) - reconcile with the counting command; (4) after receipt heads e5f5ca9e while the report's after column says bd0acc44, and the base control sits in before/absence-controls.txt - re-run/record at the cited tip or cite the measured revision; (5) untracked round-75 w1.ready/w1.ready.dispatched markers - classify or clean/commit; (6) 'no admitted artifact is left failing its own re-check' is overstated by (1)-(2). Operator note: all four SHONEN boxes look fully checkable by a non-author (box 3's whole-SKILL no-oral-context retest is still the open round-60 L0 item); promotion operator-owned; no [x] written. Open L0: corpus-expansion-1 merge/tsukuroi mass id drift (114/147 staged ids collide; adoption none). Tools installed: none; pacman paused. Capabilities added: none (the two new gates are claim instruments, not repertoire rows).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
