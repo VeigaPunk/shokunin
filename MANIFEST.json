@@ -46976,6 +46976,44 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable; copied at closure): '2026-11-04T16:23:22-03:00 launch kaidoku round=84 pgid=2142648 driver=hyaku-inline attempt=1' and '2026-11-04T17:12:17-03:00 complete kaidoku round=84; hyaku-inline attempt=1'. Wave r84-w1: one v1 wave, 14 seats; attack 4/14 (28.6%); 1 connector; no planner seat dispatched (L1 held planner; deviation stated in report) - conformance defect, status-neutral. Routed defects for kaidoku round 85: R1 S302 pointer is a ~/.npm/_npx cache path with no committed snapshot (commit snapshot as S301 has); R2 S303 reason says five prior scopes, grep finds seven (S079,S080,S083,S090,S092,S119,S123) - correction to be appended next round; R3 M84-5 evidence path prefix wrong (l1/waves/round-84/... should be .ufo/waves/round-84/w1/SentinelScope/esc-receipt.json) - correction to be appended next round; R4 M84-4 has no resolvable evidence pointer; R5 planner seat; R6 C2 kills are name-level (semantic binding planned); R7 C1 naming-lint and C3 pin/A3/A9 limits carried. Spot-check landed at b3084c8c (lane tip after it: b3084c8c; round lane HEAD 1598ee68). Limits: C3 before is counter-absent, not measured zero (disclosed). SHONEN boxes all [~]; box 2 (end-to-end domain task) looks checkable from committed artifacts by a non-author, promotion operator-owned, no [x] written. Attribution note: the reviewer string and spot-check header are the prompt's literal text; the executing session reports model devin/swe-2 on this workstation. No tools installed or upgraded. Fleet-side: no lane-authored file edited; no other lane touched.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 66,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 66,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 66
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:verifiability": "improved",
+    "coverage": "unchanged",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-66/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-66-verifier-spotcheck.md@8e2a8fe8eb92d7c824902a4b70aab027a9aacee0",
+    "rechecks": "C1 evidence-verified, lane gate never executed: frozen counter verify.py 5962b7d6, candidate/production figure-audit.py 51f299af (byte-equal freeze/measured/final), pins e6bb9032 and claims.json 86bd78f4 unchanged postfreeze; final receipt VERIFY 12/0 exit0 at e8a865da vs base 12/3 exit1 at b6db9e81, ID-forgery 12/6 exit1, stand-in 12/0; collector probes 8/3 (P1/P2/P8) -> 8/0 with exact derive-upstream-signal-13, selftest 63->67, mutbat 5/5, cat-mutbat 3/3 equivalents_held=1 invalid_rejected=1, ledger 35/35, red-wrong-want exit1; tree pins ledger 28ad7fef and mutbat 7a61cf1e match committed bytes; gate diff threads decoded stage argv into cat-only SIGPIPE exemption. Independent registry recount 98->99 rows, A88->89 B5 C5, mined80->81 rejected18, old_rows_changed=0, malformed=0; root census exit0 with six inherited W04. Scores 4/8/9 held, SCORECARD append-only, PROVINCE and corpus/knowledge byte-identical. Non-author spot-check: S099 admit and SIGPIPE-completeness reject agree, S099 row 22-word quote valid, all six r65 routed defects corrected append-only."
+   },
+   "commit": "kasegi-shokunin@51a5cb0d9ac8bf58f355c433a33a9ccc44fa34c2",
+   "closed_at": "2026-11-04T20:48:38Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-04T17:04:56-03:00 launch kasegi round=66 pgid=2889804 driver=hyaku-inline attempt=1; 2026-11-04T17:45:15-03:00 complete kasegi round=66 attempt=1. Conformance ok: report committed by kasegi-shokunin (acf6101b, author 17:43:23/commit 17:44:16) after lane tip 17:41:28 and cites 51a5cb0d; ## SHONEN x1 with four box lines; all seven cited commits plus measured e8a865da and base b6db9e81 exist and are ancestors of refs/heads/master (detached git HEAD); jj-lane state ahead=0/behind=0, status clean, ls-remote 51a5cb0d; prompt template l.1-137 byte-identical modulo four macro substitutions with the hyaku addendum appended and all ten contract items present. Round shape: one v1 wave, 9 seats (3 executor, reviewer, critic, mutation-tester, scout, connector, scribe; L1 planner), 3/9 attack seats (33%), one connector; eight evidence reports, one dead MutationCat (402 Insufficient account funds, opencode-go/deepseek-v4.1-flash) with no report or directory, disclosed with telemetry and no replacement; WAVE-DONE preceded the final measurement and the report. W1-results null outputs with a kernel-restart note are disclosed; verdicts read from the eight seat files. Routed (lane, minor): V66-1 S096 and S099 cite the same own-work path with disjoint anchors - name the split next lesson; V66-2 report/LOG phrasing 'attack3/9 (completed2/8)' should spell out 3 attack seats of 9 and 2 of 8 evidence seats. Routed (fleet/operator, not lane): V66-3 the hyaku addendum keeps a 32-128 seat shape at l.353-365 beside the binding 8-16 line at l.145 with no supersede clause, and ufo-wave-policy.json (min 8/max 256) would let it validate; V66-4 .ufo/state/kasegi.round=17 is stale legacy watchdog state while the hyaku driver state puts this round at 66. Operator note: SHONEN boxes 1/3/4 are [~] author-asserted but checkable by a non-author against committed bytes, box 2 stays [ ]; promotion operator-owned, no box marked here. No tools installed or updated; pacman untouched.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
