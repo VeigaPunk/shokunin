@@ -44091,6 +44091,50 @@
    "notes": "Dispatch/complete digest (mutable .ufo/watchdog.log, copied): 2026-11-04T06:26:48-03:00 launch kengaku round=82 pgid=619086 driver=hyaku-inline attempt=1; 2026-11-04T07:43:05-03:00 complete kengaku round=82; hyaku-inline attempt=1. Conformance: report committed by kengaku-shokunin (c839b658, committer 07:42:20-03:00, 54s after the cited tip); SHONEN heading 1 with four [~] lines; cited 12f1029a/c804dd41/82fe89d5/a44b2f08 all ancestors of master; jj-lane state ahead=0, ctl clean; prompt carries the template contract plus the five child-lane items; wave 12 seats (3/12 attack). No step-1 defect bars admission. Routed defects for round 83 (V1-V8 in the spot-check): V1 S262/S263 fresh quote counts do not recompute (6->4, 1->2) and u2 cannot see them; V2 after-census W04 is 27 at the tip, not the reported 26, and no after receipt is committed; V3 'five seats died' contradicts six named seats in LOG/SCORECARD vs two dead + four revived in the report; V4 round82_c2_closure_debt.py and round82_c2_checks.py were added at 82fe89d5, not c804dd41 as the report/LOG say; V5 corpus/README.md lacks a lessons/round-82.md row (SHONEN box 3 says it indexes it) and the round-81 spot-check row has 2 of 3 cells; V6 the Gate omits S265/S266 and S264's teaches lacks REJECTED:/flip: shape; V7 SHONEN box 1 says all ten new rows carry a self-test while three declare none declared; V8 'died ~07:24Z' precedes the launch (local time written as Z). Observations: four pre-existing registry rows omit the closing pipe; R80-U1 jsonl line re-encoded content-identically; round-81 lesson counts corrected in place. Promotion remains operator-owned (all four SHONEN boxes still [~]; no [x] written).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 79,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 79,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 79
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "static-reserve composition over the usable box (mado r79 C1: the monitor addreserved reserve summed with the bar's own band, the box arranged inside the static-reduced usable box; 23/23 vs the held r78 tool's 18/23, twelve named mutants killed)",
+    "per-row executable runbook with refusal shapes (mado r79 C2: 22/22 rows executed and matched on 22 distinct anchors, four committed refusal fixtures and one shape-bound keybindings row; held r78 instrument rc 2, control_new 0/5, nine matcher mutants killed)"
+   ],
+   "report": ".ufo/reports/round-79/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-79-verifier-spotcheck.md@e10f7e9f528b13195a1cdde28a68a702af3045c4",
+    "rechecks": "Step-1 PASS: report 1347eaf9 by mado-shokunin <mado@shokunin.local> at 08:01:25-03:00 after lane tip 2b3c9c6b (07:49:03) and before complete 08:07:32, on origin/main and origin/master; SHONEN heading once with four [~] boxes and zero [x], SHONEN.md byte-unchanged; 12/12 cited lane commits are ancestors of refs/heads/master (three further cited hex runs are sha256 prefixes, not commits); jj-lane state ahead=0 behind=0, git status empty; prompt a1d682e5 carries the round-level items and the five child-lane items; wave 14 seats (spawn=14 in the 8-16 band, attack 5/14) with 13 written seat reports and one disclosed partial. C1 verified from committed evidence, not by executing the sibling counter: 23 cases, the 18-case r78 prefix field-for-field equal, 12 mutant anchors, base tool sha256 1bceb514 equals control-c1-r79-at-base's base_sha256, tip tool 9e274157 equals measurement-final-r79.txt and is unchanged 999a4a3f..2b3c9c6b; final receipt 23/23 correct, killed=12, base_correct=18/23, carried=18/18, tool_selftest=50/50 TARGET_MET at 999a4a3f, control 18/23 killed=4 TARGET_MISSED rc 1; the cited sources (S465:654/:1772-1774, S466:43-51, S303:1331/1341) support the model. C2: 22 cases, 22 distinct anchors each equal to exactly one SKILL.md row command cell (22 rows parsed), the C2 control set sha256 50a18041 equals the committed set; final receipt 22/22 executed+matched, shapes 17/17, rows 22/22, control_new 0/5, mutants 9/9, tree=bound at 999a4a3f; held r78 instrument rc 2. Supporting: census validate rc 0 (401->404 rows, mined 380/rejected 14/queued 10, A 388/B 8/C 8), index 97/97->98/98 (97->98 notes and rows), ledger 142->144 with population 144, zero deletions in the round diff, gate 460/460 and the frozen instrument blobs identical at both ends. Discernment: live re-open of S465/S466 (HTTP 200, sha256 equals the committed pins) agrees with both admits; the S467 reject is agreed (live URL 404) with its reason narrowed as routed defect 2."
+   },
+   "commit": "mado-shokunin@2b3c9c6bad2e98569e7ecaa0689d2b85d3fe574a",
+   "closed_at": "2026-11-04T11:18:58Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-04T07:08:06-03:00 launch mado round=79 pgid=1511397 driver=hyaku-inline attempt=1; 2026-11-04T08:07:32-03:00 complete mado round=79; hyaku-inline attempt=1. The non-author spot-check landed as e10f7e9f (protocol identity, single-child of 2b3c9c6b, pushed and verified by ls-remote); the first helper commit exited 3 on a remote-side 'fatal error in commit_refs', the retained commit was inspected (parent, identity, single-path tree) and the helper push then printed landed e10f7e9f. Status-neutral conformance defects routed to the lane for round 80: (1) the report's C1 after-cell quotes tool_selftest=44/44 at d6be05ef while citing receipts/measurement-final-r79.txt, whose bytes print 50/50 at 999a4a3f; 44/44 is measurement-c1-r79-repair.txt. The report header, LOG.md and SCORECARD all carry 50/50 at 999a4a3f and the claim's predicate is met, so the claim stands; the cell is a citation defect to correct as an erratum. (2) The S467 rejection reason says the page documents 'the line syntax only', but the committed round-45 fetch states at :183 'This does stack on top of the calculated reserved area (e.g. bars)'; the reject stands on the dead live URL (404), no revision pin and tier-B prose only, and needs a superseding SOURCES row whose teaches opens 'supersedes S467 —'. (3) LOG.md round-79 says 'Seven mined' while corpus/lessons/round-79.md carries eight ## Mistakes rows (M79-1..M79-8); append a correction. (4) fetch/S468.bin and fetch/S469.bin are described as 'pinned as S468/S469' but are absent from fetch/sha256-r79.txt (10 entries, 9 distinct digests, sha256sum -c 10/10 OK) and have no SOURCES rows; manifest them or reword, and avoid S### names for non-registry files. (5) The partial seat R79ExecC1Tool (out.txt 73 OK/0 FAIL, no written report) is disclosed, not backfilled, and stays round-80 ground. No lane-authored file was edited by this closure; only corpus/lessons/round-79-verifier-spotcheck.md and this MANIFEST entry were written. SHONEN stays four [~] boxes: all four look checkable by a non-author now, but promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
