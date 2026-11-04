@@ -47785,6 +47785,46 @@
    "notes": "dispatch/complete digest (watchdog.log, mutable): 2026-11-04T18:04:50-03:00 launch chousa round=77 pgid=78912 driver=hyaku-inline attempt=1; 2026-11-04T19:33:30-03:00 complete chousa round=77; hyaku-inline attempt=1. Conformance: report e915f43a committed in the fleet repo by chousa-shokunin at 19:33:02, after lane tip 958a6023 (19:32:37) and before the complete line; pushed (origin/main, origin/master). All five cited lane commits exist and are ancestors of refs/heads/master; lane repo clean, ahead=0, ls-remote==local; SHONEN heading with four [~] rows matching four boxes; prompt ca72d08d carries templates/round-prompt.md lines 1-140 with substitutions only plus the §6 addendum, and quotes no conflicting route map (MISSION.md §L2 is bucket-level and advisory). Status-neutral defects routed to the lane: (1) SKILL.md registry row 168 has 7 cells against an 8-cell header — owner cell missing; (2) the registered gate has no isolated-fixture self-test mode and its exit map names only argparse-2; (3) QUALITY 142's pointer receipts/02c-work-unwritable.* resolves to nothing (02b/02j are the cases); (4) corpus/lessons/round-77.md ## Mistakes row 3 stranded at line 73 after ## Boundaries; (5) census-start/end.txt carry no exit-code line; (6) c3-count.py's tree side follows the working tree, so the before receipt reproduces only at the before revision (r76 routed defect 2 one layer out); (7) frozen claims prose: the two positives live under round74/round75, not round76, and the Before paragraph omits the pre-guard scratch-oracle caveat; (8) wave settlement recurs — w1-results.json 12 entries with output:null, five retained seat reports, seven seats without a terminal record (r76 routed defect 5). Round's own disclosures accepted and not treated as defects: the content leg is a shape requirement (--no-content still passes) and three critic channels reach the predicate line at exit 0; the round records them as instrument limits and QUALITY 143 rather than amending frozen bytes. Operator note: the four SHONEN boxes now look checkable from committed artifacts by a non-author reviewer; no [x] written and no promotion ruled (operator-owned).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 90,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 90,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 90
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "freshness": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "behavioural cache-key conformance gate"
+   ],
+   "report": ".ufo/reports/round-90/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-90-verifier-spotcheck.md@5b20af16661040f383e9e84f85b838619857cb14",
+    "rechecks": "Step-1 PASS: report f7a937be by kake-shokunin <kake@shokunin.local> (committer 19:42:50) before complete 19:43:08, ancestor of origin/master; one SHONEN heading with four box lines (3 [~], 1 [ ], no [x]) and SHONEN.md unchanged; 9/9 cited hashes (4ee62b18 7f6c68f1 e50c9566 79e1aac2 a4814f58 f6915632 7134ef6b f62e7954 209027f4) ancestors of refs/heads/master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0, git status clean, remote=7134ef6b; prompt equals templates/round-prompt.md 1-140 modulo placeholders plus addendum 6/7, five child-lane items present; wave w1 13 seats (scout2 exec4 mut2 rev2 critic1 scribe1 conn1), 5 attack seats = 38%, 13 non-empty reports. Counters/gate NOT executed (Gate standard). C1 evidence-verified and re-derived: base receipt open=3 closed=0 exit 1 -> carrier e50c9566 and tip f6915632 open=0 closed=3 exit 0; D89-1 baseclean.out absent at root and tracked at .ufo/waves/round-90/inherited/baseclean.out sha256 4046c204; D89-2 correction tails at SCORECARD.md:5554 and LOG.md:3088 naming receipted f62e7954 (open=5 closed=1); D89-3 S467 teaches opens 'supersedes S463' with S463 row byte-identical base->tip. C2 evidence-verified and re-derived: base gate=absent exit 1 -> 7f6c68f1 and f6915632 positives=4/4 negatives_refused=57/57 met=true exit 0; hand cases AST-counted 92 at tip / 70 at carrier (85+7 / 63+7 worked), generated 120, frozen population 61 pins = 4+57 and all 61 subject files exist at tip with matching sha256 (0 missing, 0 drift); freeze digests c90_defects 462224f6, c90_gate 703b0058, population a57f8985 unchanged at tip, only 4ee62b18 touched them; held-out tip 8/8 positives and 57/58 negatives (S09 NUL admit, contract-undecided, disclosed). No-harm: diff 209027f4->7134ef6b adds 93218 and deletes 0 (outside .ufo/: 11 files, 918/0); no axis score moved; census validate exit 0, kake ok, 26->29 x W04; rows 202->205 (A 177->180), knowledge 77->78; spot-check agrees 6/6 (3 admits S466/S467/S468 re-opened at retained RFC digests and cited lines, 3 rejects) with all three new rows' <=25-word quotes and anchors verified."
+   },
+   "commit": "kake-shokunin@7134ef6b2d8cf171c4570672d8e58ba2e4b9e3a8",
+   "closed_at": "2026-11-04T22:52:27Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, copied 2026-11-04): 2026-11-04T18:55:22-03:00 launch kake round=90 pgid=1707444 driver=hyaku-inline attempt=1; 2026-11-04T19:43:08-03:00 complete kake round=90; hyaku-inline attempt=1. One attempt, no lane-dead line; report discloses the inherited untracked baseclean.out from r89. Verifier spot-check landed 5b20af16 (protocol-shokunin) on refs/heads/master. Claims: C1 calibration (lowest owned non-retired axis) closes the three r89 routed defects D89-1..3 on committed bytes, re-derived without the lane counter; C2 operability capability, a behavioural cache-key conformance gate (92 hand cases, 120 generated, install-time sandbox, 61 pinned subjects). Both frozen counters are forgeable as disclosed by the lane's own attack seats (C1: ignored/staged file, any receipted revision, case-variant scope; C2: pin-reading or allowlist gate) and the carrier gate was falsified by held-out stubs (14/23 ExecStubs, 6/20 ExecSandbox, 7/7 CriticClaims probes) then hardened after the frozen measurement; disclosed, mined as Mistakes rows 3 and 5, and routed - not a claim defect, since the claims measure the frozen predicates and the gate's substance was read in source. Routed to kake (status-neutral, in kake-shokunin/corpus/lessons/round-90-verifier-spotcheck.md): R90-A successor counters per SCORECARD 'Planned - after round 90'; R90-B tip gate never re-mutated (MutGate attacked carrier bytes); R90-C controls/run_controls.sh no longer replays at the tip (it copies the moved lane-root baseclean.out); R90-D S09 NUL admit stays undecided until the contract rules (lane R90-2); R90-E carried lane routing R90-1/R90-3/R90-4/R90-5. Conformance note (integrator-side, status-neutral): the prompt addendum's last routing amendment (all roles @m_mim) does not match the live task.agentModelOverrides at closure (reviewer @m_zfl, 17 roles @m_flash); MISSION.md carries role classes only and no claim depends on models (w1-results.json records roles, not models). Operator note: SHONEN boxes 1, 3 and 4 now carry non-author-checkable pointers; box 2 stays [ ] on the round-47 receipt gap, so the checklist is not yet fully checkable and no promotion is proposed. No promotions, no mints, no L0 line added this round.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
