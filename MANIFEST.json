@@ -44046,6 +44046,51 @@
    "notes": "dispatch 2026-11-04T06:21:52-03:00 launch mori round=84 pgid=482385 driver=hyaku-inline attempt=1; complete 2026-11-04T07:24:22-03:00. Status ok, admitted; all three claims verify and no axis is harmed (scores unchanged, SCORECARD additive only, battery pass=57 setup=4 fail=0 unchanged). Wave: one v1 wave, 14 spawn/0 resume (4 executor, 3 reviewer, 2 scout, 2 scribe, 1 critic, 1 mutation-tester, 1 connector; attack 5/14=35.7%); dead seats Mo84E02C2Rows and Mo84R02C23 disclosed and never replaced, L1 stand-in recorded. Discernment: non-author spot-check agrees with the S599 admit (pin line 121, 24 words, sha256 688224106999973f3b5c318af871b77923df2c36d0e3e2d799424e2c697cff49, 42566 bytes/597 lines) and the arXiv:2404.09241 reject (live 40386 bytes, sha256 4bcb20b23ad5046657a65a29595517da973128a289ff75ba13ad8926c5511a80; abstract defines equivalence, states only 'hamper this process' over manually created mutants in the Code Defenders study, no bias/adjudication); census rc 0, 371->372 rows, 35 tolerated W04, 0 malformed. Prompt 704 lines committed at ce0ad11e (by the lane identity - D84-1) carries template sections 1-5 verbatim; its base route map is superseded by its own later line 149 (only reviewer @m_zfl), the r83-accepted pattern. Routed (status-neutral): D84-1 prompt committed outside lane write scope; D84-2 QUALITY 172 quotes C1_COUNTER_SELFTEST pass=11 while the counter has carried 15 arms since 5a231ef8 and its :296-300 pointer drifted; D84-3 the refused 2404.09241 has no rejected SOURCES row (prompt 2b: rejections stay as rows with reason and flip); D84-4 the report quotes RECORD_SWEEP/CLAIM_SWEEP real-run outputs with no committed receipt; D84-5 battery receipt lacks a revision header and the defeated-control receipts cite gone /fast/scratch clone paths; minor descriptive drift: contract P-C2's 'five rows' is exact at da7631f4, 7 at the tip, all carrying the token. Non-author check: spot-check landed 2cc4b1ae35a83e4fd3fc48bae842bdf38df2e80e (single path, protocol identity, pushed). SHONEN boxes look non-author-checkable; promotion operator-owned. No tool installs, no sibling or fleet write.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 82,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 82,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 82
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "freshness": "improved",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged",
+    "novelty": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "sweep-at-one-tip",
+    "registry-completeness-audit"
+   ],
+   "report": ".ufo/reports/round-82/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-82-verifier-spotcheck.md@614f00559c75155ec100e945b3e8257b14fb7496",
+    "rechecks": "C1 re-derived 6 defects -> 0 (missing 0 unclassified 0 excluded 2 rows 133->143 entry_missing 0; both UNIVERSE lines reproduce exactly); C2 7/7 R81-V closed with source/close/check/evidence literals, base DEFECTS 8 -> 0, sensitivity 7/7 re-derived from base bytes; C3 map==ledger executed 26/26, 26 MEMBER lines 18 reproduced/7 diverged/1 unrunnable, histogram total 26, map+ledger sha256 match the receipt at c804dd41 and tip, determinism disagreements=0; census rc 0 with 27 W04 at tip (report says 26 after)"
+   },
+   "commit": "kengaku-shokunin@a44b2f083ee8b4115aea64598646f4bd9e3c1470",
+   "closed_at": "2026-11-04T10:59:55Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (mutable .ufo/watchdog.log, copied): 2026-11-04T06:26:48-03:00 launch kengaku round=82 pgid=619086 driver=hyaku-inline attempt=1; 2026-11-04T07:43:05-03:00 complete kengaku round=82; hyaku-inline attempt=1. Conformance: report committed by kengaku-shokunin (c839b658, committer 07:42:20-03:00, 54s after the cited tip); SHONEN heading 1 with four [~] lines; cited 12f1029a/c804dd41/82fe89d5/a44b2f08 all ancestors of master; jj-lane state ahead=0, ctl clean; prompt carries the template contract plus the five child-lane items; wave 12 seats (3/12 attack). No step-1 defect bars admission. Routed defects for round 83 (V1-V8 in the spot-check): V1 S262/S263 fresh quote counts do not recompute (6->4, 1->2) and u2 cannot see them; V2 after-census W04 is 27 at the tip, not the reported 26, and no after receipt is committed; V3 'five seats died' contradicts six named seats in LOG/SCORECARD vs two dead + four revived in the report; V4 round82_c2_closure_debt.py and round82_c2_checks.py were added at 82fe89d5, not c804dd41 as the report/LOG say; V5 corpus/README.md lacks a lessons/round-82.md row (SHONEN box 3 says it indexes it) and the round-81 spot-check row has 2 of 3 cells; V6 the Gate omits S265/S266 and S264's teaches lacks REJECTED:/flip: shape; V7 SHONEN box 1 says all ten new rows carry a self-test while three declare none declared; V8 'died ~07:24Z' precedes the launch (local time written as Z). Observations: four pre-existing registry rows omit the closing pipe; R80-U1 jsonl line re-encoded content-identically; round-81 lesson counts corrected in place. Promotion remains operator-owned (all four SHONEN boxes still [~]; no [x] written).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
