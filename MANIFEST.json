@@ -41140,6 +41140,49 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable): '2026-11-03T22:28:14-03:00 launch tsukuroi round=72 pgid=922172 driver=hyaku-inline attempt=1'; '2026-11-03T22:51:16-03:00 complete tsukuroi round=72; hyaku-inline attempt=1'. Step-1 ok, not a marker. Conformance defects (status-neutral): (1) corpus/lessons/round-72.md still says 'No capability row enters this round' and 'nine hermetic cases' where the landed state is the gate-selftest capability row and a ten-case suite — no appended correction; (2) the C3 checker declared frozen at sha256 df8a59c7 is committed as 2610ff43 and no erratum names the old->new digest, though the repairs are described; (3) the Gate recorded zero rejections, so no reject could be spot-checked. Routed to the lane next round: R72-LESSON-SUPERSEDED-CLAIMS, R72-C3-INSTRUMENT-DIGEST-DRIFT, R72-GATE-NO-REJECT, R72-CAPABILITY-ROW-STALE. SHONEN: four [~] boxes with resolvable pointers; box 3 names an unexecuted whole-SKILL post-append retest, so a non-author cannot mark all boxes [x]; promotion is operator-owned and no [x] was written. Inherited: fleet-root untracked 'after' file and the two lane round-66/67 markers predate this round; open L0 questions round-64/60/57 remain routed around.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 74,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 74,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 74
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "calibration": "improved",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "round-range additivity sweep (first-working round 74): a round's append-only / content-preservation claims re-derived over a declared commit range with a declared claim class per row (append-only-raw vs append-only-content), expect hold|violated so a standing red row measures its mismatch, worst-commit attribution from a first-parent walk, and a totals union keyed (file, worst commit); evidence tameshi-shokunin/tools/additivity-range.py + tools/additivity-range.json, .ufo/evidence/round-74/addr-r74.txt (rows=11 met=11 unexpected=0, keys=8 raw_old_only=5079 norm_cr_old_only=7) and ADDITIVITY_RANGE_SELFTEST 8/8"
+   ],
+   "report": ".ufo/reports/round-74/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-74-verifier-spotcheck.md@21ef81e99966198cf8cdb2c6d8e56aa3c482da56",
+    "rechecks": "Step-1 PASS: report 4dbb30f5 by tameshi-shokunin, committed after lane tip ef57dc2a (report committer 23:00:57 vs tip 22:59:58), SHONEN heading 1 + 4 [~] lines vs 4 boxes, all 19 round commits plus base ancestors of refs/heads/master (detached HEAD), jj state ahead=0 local==remote==21ef81e9 after the spotcheck, porcelain clean, prompt = 140-line template rendering (11 changed lines, substitutions only) + run-15 addendum + section 7. C1 re-measured statically (arms 1-12 base -> 13/14/15 tip; 12 -> 15 assertions; spec defects=3; tip tool sha256 97bb9272 equals the battery target) and tallies evidence-verified from committed receipts (15/15 pass; battery killed=3 survived=0, each mutant FAILing on its named arm only; restore byte-identical); lane tools not executed. C2 RE-DERIVED independently over committed git blobs with this verifier's own code: all 11 rows reproduce (walked/changed/worst/raw/norm) and the union is keys=8 raw_old_only=5079 norm_cr_old_only=7; frozen six-row re-run byte-identical to the receipt at 2e0ac486; the two r73 EOL rewrites re-derived (3484/0 at 862e8844; 1593/5 at 21a7332f); selftest 8/8 and the five controls evidence-verified. Discernment spot-check (this verifier): S304 admit (quote at page line 4157, 11 words, sha256/bytes match the live page), S294 re-open admit (three quotes, Quote 2 corrected to 2679-2680) and the gitattributes duplicate reject all AGREE. Census own run exit 0, 163->164 rows, 18 W04 + 1 W01, malformed 0, no duplicate ids."
+   },
+   "commit": "tameshi-shokunin@ef57dc2ae0511ecbc608ec66719421ebe0ad5f4a",
+   "closed_at": "2026-11-04T02:14:30Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-11-03T22:37:33-03:00 launch tameshi round=74 pgid=982710 driver=hyaku-inline attempt=1 | 2026-11-03T23:01:44-03:00 complete tameshi round=74; hyaku-inline attempt=1. Shape: one v1 wave w1, 12 seats (executor 4, reviewer 2, scribe 1, scout 1, critic 1, mutation-tester 1, connector 1, sentinel 1; attack 4/12 = 33.3%), band 8-16, counts.spawn=12, 12/12 records and 12 seat reports, 0 dead, no residual call; planner is a frozen-topology seat the swarm validator rejects (L0 answer 2026-10-19; the L1 holds the section-3 planner seat) and labrat is likewise not a swarm role. Conformance defects (status-neutral, none bars admission): (1) SCORECARD.md CRLF->LF at 1c3a428e (base 4406 CR of 4490 lines -> tip 0 of 4606; raw 4522/4406, ignore-cr 116/0 so content additive) undisclosed in report/LOG/lesson; (2) cold-read pointer names the wrong revision: report and SHONEN box 3 say credited=64/64 at ef57dc2a / at the tip but live-green4-r74.out measures rev=f5e9f9e2 (commit 2eb49f9a says so); (3) live SCORECARD counters stale: capability row :262 quotes WAVE_RECONCILE_SELFTEST 12/12 while the tip tool prints 15/15, and :264 quotes rows=6 while its cited tip receipt reads rows=11; (4) r73 routed defect 5 only half paid: four tools/registry.json rows exist (held 4/4) but SKILL.md's registry table lists neither instrument and the JSON rows lack verdict map / pinned-value path / write scope / owner; (5) the report says the S294 used-by old->new is logged in the lesson but the lesson carries only the added path; (6) r73 routed defects 3-4 still open (no erratum appended to plans/round-73.plan.md for its contradicted kill-rule sentence; the r73 report's 22-of-23 landed table and 19-vs-18 W04 census count remain uncorrected). Routed to the lane for round 75: items 1-6 above plus the lane's own carries (M-C record-bound integer survives 15/15; selective _record_claim bypass on roles/attack_share; echo stub can print the totals; six older standing instruments without registry rows; rounds 61-71 without results.json; round 60 vocabulary) and the r73 M3c IGNORED over-filtering carry. No promotion or mint: SHONEN boxes remain [~] lane assertions and are checkable by a non-author; promotion is operator-owned. Lane clean and pushed at closure (ahead=0); spot-check landed at 21ef81e9.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
