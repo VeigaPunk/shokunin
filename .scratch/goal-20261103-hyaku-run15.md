@@ -50,3 +50,41 @@ The zcode run-14 campaign (`.scratch/goal-20261031-hyaku-zcode-run14.md`, Window
 ## Progress
 
 State file: `.scratch/run15-state.json` (rounds trained this run, per-lane block progress).
+
+## Orchestrator resume (after compaction or kernel loss)
+
+Kernel helpers live in `.scratch/run15-kernel.py` (step / run_for / launch / close / fill_slots).
+Kernel lost → `%load scripts/hyaku/inline-dispatcher.py` then `%load .scratch/run15-kernel.py`
+(separate cells), `await bootstrap()`, then loop `await run_for(1500)` (cell timeout 1700).
+Each L1 end → verify → closure; each closure end → advance → relaunch same lane until its
+10-round block ends or it reaches 101, then the slot goes to the queue head. MAX_LIVE_LANES=6.
+Seat results auto-deliver into the orchestrator transcript; they need no action.
+
+## Resume checkpoint — 2026-11-04
+
+This checkpoint supersedes the initial concurrency/routing/resume values above, not the
+round contract. Kernel state was retained; setup was not reloaded.
+
+- `step()` observed 136 trained closures: 109 admitted, 27 rejected. This is a
+  run-15 counter, not the fleet-wide historical total printed by `status.sh`.
+- Active limits: `SEAT_CEILING=60`, `MAX_LIVE_LANES=9`, total target 32–64 workers;
+  one 8–16-seat v1 wave per round, 10-round blocks, every pool lane through round 100.
+- zai seats exhausted their five-hour quota (429/type=1308; reset text
+  `2026-11-04 21:14:48`) and Kimi fallback denied subscription access (403).
+  All 18 role overrides now use `@m_flash` (`devin/swe-2:max`); five changed
+  roles (reviewer, critic, executor, mutation-tester, sentinel) each completed an
+  actual `printf 'RUN15_ROUTE_OK <role>\n'` smoke with exit 0. Backup:
+  `~/.omp/agent/config.yml.pre-run15-zai-quota-20261104`.
+- Interrupted ticks could consume an in-memory L1/closure event before persistent
+  `live` state advanced. `step()` now restores watch entries from persistent
+  state before ticking. Isolated smoke: before, three terminated claims emitted
+  no events; after, two L1 ends and one closure end were handled exactly once,
+  while a still-running L1 stayed live.
+- Actual recovery: `verify` accepted the already-landed kagi r32 and kasegi r59
+  reports, then spawned fresh `CloseKagiR32` and `CloseKasegiR59` judges. No round
+  was re-run, no verdict was assumed, and no lane work was deleted.
+- Four lanes remain quality-paused after three rejected closures: souji next 58,
+  tabi next 62, chousa next 74, tsukuroi next 77. Their block evidence is preserved;
+  resuming them requires operator authorization for the fresh-start procedure
+  (read the last three rejected closures/spot-checks; new claims must defeat the
+  do-nothing control). Other pool lanes continue normally.
