@@ -213,3 +213,17 @@ One line per box of `SHONEN.md` (four boxes, unchanged this round):
   attributed.
 - **L0:** no new question filed. The kama round-65 NTFS-path question stays unanswered and is routed
   around (this Linux host checks the path out).
+
+## Erratum (same round, appended before the next round; supersedes two counts above)
+
+- Superseded: "the coverage map gains its row (37 → 38 index rows for 42 files)" in **Trend verdicts
+  → expansion**. Measured: coverage-map rows `grep -c '^| `knowledge/' corpus/README.md` → **37 at
+  `d30a8696` and 39 at `db8b6fb0`** (two rows: `pre-report-gate.md`, the round-71 §8 item 5 defect,
+  and `receipt-tip-binding.md`), against **42 → 43** `corpus/knowledge/*.md` files. The admitted
+  entry for this round is one (`receipt-tip-binding.md`); the second row indexes an entry admitted in
+  round 71 whose map row was missing.
+- Superseded: "37 rows naming 34 distinct" in **Sources & frontier** reads the same before-population
+  and is corrected by the same measurement.
+- Everything else in this report stands as filed. Discovered by re-deriving the counts from the final
+  tip after the report commit, which is the defect: a count was written from a seat's set-level tally
+  instead of being re-derived at the tip.
