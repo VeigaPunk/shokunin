@@ -44669,6 +44669,50 @@
    "notes": "Dispatch/complete digest: 2026-11-04T09:03:34-03:00 launch mori round=86 pgid=3887824 driver=hyaku-inline attempt=1; 2026-11-04T09:55:57-03:00 complete mori round=86; hyaku-inline attempt=1. One v1 wave, 12 seats (4 executor / 2 scribe / 1 scout / 2 reviewer / 1 critic / 1 mutation-tester / 1 connector; attack 4/12 = 33.3%), w1-results.json committed at the tip; 8 seats died on a provider usage limit (E01-E04, R01, R02, C01, M01) and 4 landed (S01, S02, Sc01, K01). Conformance defects, status-neutral: (1) the report and SCORECARD:4411 assert each mutated subject selftest read pass=25 fail=1 but no receipt records it (after-r86.txt carries MUTANT ... killed rc=1 only) and SKILL:1372/SCORECARD:4427 assert the subjects pass=26/pass=21 without a committed stdout receipt because battery-r86.txt was never filed (E04 died); (2) the SCORECARD round-86 header still cites after measured at 50d80df0 while the receipt it names now reads b0aa564c; (3) the report sweep sentence every other path is additions only is false (SCORECARD is 51/11) and Landed seats (4) lists five names including the dead M01; (4) contract P-C1 says none of the six anchors exist at fec2b328 while three of five are present and four mutants apply; (5) the lesson Gate records no rejected candidate row (six exclusions live only in w1/Mo86S02Sources.md section 3); (6) the record-and-claim-sweeps-green sentence is inherited r85 evidence, not an r86 receipt; (7) the report was filed then rewritten in place (d281d53 -> 9836323) instead of an appended erratum. Routed to mori r87 (8 items in the spot-check). SHONEN: all four boxes carry [~] with resolvable pointers and look checkable by a non-author from this pass (SKILL registry row 20, LOG Round 86, the counters selftest commands, PROVINCE round-86 notes); promotion is operator-owned and no [x] was written.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 81,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 81,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 81
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "Coupled box rounding and the auto-zone gate (mado r81 C1: hyprutils CBox::round coupled origin/far-edge rounding plus gtk-layer-shell's horiz-XOR-vert auto zone taken from the allocation; 39/39 vs the held r80 tool's 33/39, 28/28 mutants killed)",
+    "Action-column and PID-state runbook matchers (mado r81 C2: omarchy keybindings cut -c36- action column and pgrep -x waybar PID/exit-status pair; 26/26 cases, 26/26 anchors, 21/21 shape-kind cases, 23/23 mutants killed)"
+   ],
+   "report": ".ufo/reports/round-81/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-81-verifier-spotcheck.md@6ea2386d49318a5f223097c78b5fe79c31b064f8",
+    "rechecks": "C1 re-derived from committed bytes: 39 cases (33 carried parsed-equal against the r80 set), the six new case names, 28 MUTATIONS, control sha256 ab8154a1..., tool r80-v1->r81-v1 with cbox_round/arranged_box, tool blob 0e9fa220 identical at f3eb70c7 and the tip; gate evidence verified at c702094a (33/39 TARGET_MISSED rc1) and 0e2ccd2a/f3eb70c7 (39/39 TARGET_MET rc0), counter not executed. C2: 26 cases, 26 distinct anchors, 21 shape-kind cases by AST, CASES=26 SHAPES=21 MUTANTS=23 and 23 MUTATIONS, control sha256 ae7ee90e...; before is a setup refusal rc2 on both controls; at-tip TARGET_MET tree=bound rc0 at f3eb70c7 with SKILL.md and tool blobs identical at the tip. Harm watch re-derived: knowledge 99->100, README index rows 99->100, ledger rows 146->148, SOURCES 412->415 with 0 removed lines, gate 460/460 and five held instrument blobs identical. Census rc0. Spot-check re-opened S478/S479/S480 live (sha256 equal to the pins) and the staged reject; all four agree."
+   },
+   "commit": "mado-shokunin@2cbd3a137d16ed8f81874ed9b566acc270b9cb79",
+   "closed_at": "2026-11-04T13:07:30Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (mutable .ufo/watchdog.log, copied): 2026-11-04T09:25:23-03:00 launch mado round=81 pgid=347658 driver=hyaku-inline attempt=1; 2026-11-04T09:58:30-03:00 complete mado round=81; hyaku-inline attempt=1. Report 3b42e033 by mado-shokunin <mado@shokunin.local> committed 09:58:05-03:00, after lane tip 2cbd3a13 (09:57:43) and before complete; one filing, nothing rewritten. Step-1 PASS: one ## SHONEN heading with four [~] boxes and zero [x]; all eight cited lane hashes are ancestors of refs/heads/master; lane ahead=0 behind=0, porcelain empty, origin/master at the tip; prompt renders templates/round-prompt.md (140/140 lines after placeholder substitution) plus addendum 6 and carries the round-level items and all five child-lane items; wave one v1, 14 seats in the 8-16 band (9 with artifacts, 5 empty: both reviewers, critic, mutation-tester, sentinel) - disclosed. Claims: C1 coverage improved (39 cases = 33 carried parsed-equal + 6 new named classes; 28 mutants; held r80 tool 33/39 TARGET_MISSED rc1 vs r81-v1 39/39 TARGET_MET rc0 at the freeze and the content tip). C2 operability improved (26 cases/26 anchors/21 shape-kind cases/23 mutants; before is setup refusal rc2 on both controls; at-tip TARGET_MET rc0 at f3eb70c7, SKILL.md and tool blobs identical at the tip). Harm watch: index 99/99->100/100, ledger 146->148, registry 412->415 with 0 removed lines, gate 460/460 and held instrument blobs identical; no axis harmed. Discernment: the non-author spot-check agrees with admits S478/S479/S480 (live bytes equal the pins; quotes at :54/:150/:55) and the reject (host-bar-producers-r28 amends an absent parent; ids free; 6354 B host-config read 2026-10-23). Routed to round 82 (status-neutral): R1 five attack seats empty and the lane's wave-done gate MISSING exit 1 - the claims carry no independent attack artifact; R2 the round-81 wave disclosure (w1-results, five empty seats, wave-done-r81) was written into the round-80 SCORECARD section while the r81 section lacks it; R3 quality/counters/c2-r81-runbook.py docstring still carries the r80 contract (cases=24 ... mutants=16) and the PRED-C2-r79-v1 label against actual CASES=26/SHAPES=21/MUTANTS=23; R4 the instrument selftest tallies 72/72 and 88/88 are committed only in the SKILL registry rows, with no observed-output receipt; R5 round-80 closure D1-D3 have no labelled erratum (r80 report history 6fccb49->90895076 only; it still cites corpus/README.md:180 and SKILL.md:786-789); R6 the wave seat/attack-share counts point at w1-results.json but print no counting command. SHONEN boxes remain lane-asserted [~]; a non-author may be able to check boxes 1 and 3 against the committed registries, which is an operator promotion decision, not this closure's.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
