@@ -42624,6 +42624,49 @@
    "notes": "Dispatch/complete digest: 2026-11-04T02:26:16-03:00 launch mado round=74 pgid=3517379 driver=hyaku-inline attempt=1; 2026-11-04T02:49:07-03:00 complete mado round=74; hyaku-inline attempt=1. Round shape: one v1 wave, 13 seats (band 8-16), spawn=13 resume=0, 13 settled with non-empty output, 0 dead; attack share 4/13 = 30.8%. Conformance defects (status-neutral): the frozen claims-declaration-r74.md says 12 seats while 13 were dispatched/settled; SKILL.md:734 and the LOG round-74 instruments bullet record the witness-rule selftest as 21/21 where the committed instrument prints 23/23 (report, SCORECARD and tool-ledger say 23/23); no committed post-repair selftest receipts for the three instruments (the declaration's round-73 D2 disposition promised them; only the pre-repair w1/R74ExecC2/selftest.stdout.txt 86/86 and receipts/gate-selftest-r74.txt 460/460 are committed); lessons §Gate counts S446's quote at 23 words where it tokenises to 21 (<=25 holds; decision unaffected); mado-r74-witness-rule is registered as gate although its only CLI entry is --selftest (advisory). Routed to round 75: those five plus the lane's carried tools/mado-verify.sh:418 hardcoded /tmp selftest scratch. No promotion: SHONEN's four boxes stay [~], operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 78,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 78,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 78
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "unchanged",
+    "coverage": "improved",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "non-Python instrument freshness row (first-working round 78): a freshness row's instrument executes under a frozen per-row interpreter tuple (python default unchanged, bash added; unknown/non-string refused before any row effect) and the live row mutation-runner-selftest binds MUTATE_SELFTEST 107/107 to tools/mutate-and-run.sh --selftest at 5bcb13ea; evidence tameshi-shokunin/tools/selfstate-freshness.py + .json, .ufo/evidence/round-78/c1-landed-sweep.txt (rows=21 match=19 stale=2) and c1-landed-selftest.txt (13/13)"
+   ],
+   "report": ".ufo/reports/round-78/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-78-verifier-spotcheck.md@0cac8e4604e01ff2e2bc0813c745c99d928b5dd5",
+    "rechecks": "Step-1 PASS: report 5e686c88 authored+committed by tameshi-shokunin <tameshi@shokunin.local> at 03:12:01 -0300, 45s after lane tip 00ddee5f (03:11:16), on origin/master; SHONEN heading 1 + four [~] lines vs four boxes, no [x]; base + nine round commits all ancestors of refs/heads/master (detached HEAD read via the branch ref); jj state branch=master local==remote=00ddee5f ahead=0, porcelain clean, inclusive range 5bcb13ea^..00ddee5f = 10 commits; prompt 704 lines, lines 1-140 byte-identical to my re-render of templates/round-prompt.md (four placeholders only), run-15 addendum follows, five child-lane items present; one v1 wave, 12 seats, attack 4/12=33.3%, counts.spawn=12, no model key, 12 non-empty seat reports, 0 dead, /skill:godspeed 12/12. C1 RE-MEASURED over committed bytes: manifest rows 20->21, bash row interpreter=bash at rev 5bcb13ea, INTERPRETERS table + DEFAULT_INTERPRETER absent at base (hardcoded python3 -I -X utf8) present at tip, cache key (rev,path,argv,interp), SELFTEST_ARMS 13 = 13 arm registrations, mutate-and-run.sh byte-identical base->tip; tallies evidence-verified (13/13 receipt, rows=21 measured=match receipt, base control figure-absent; base 20 rows identical landed minus new row). C2 RE-MEASURED: SELFTEST_ARMS 20->21, spec defects 8->10 (append-only, first eight triples byte-identical), 21 registrations (16 arm + 5 arm_raises), arm20 per-fixture os.path.exists post-condition, arm21 two-commit fixture measured at rev1; tallies evidence-verified (21/21 selftest receipt; battery 10 killed/0 survived, CONTROL GREEN, restore byte-identical f8071c8a; base control 8/2 survivors exactly the two named; arms 1-19 receipt lines identical, arm20 meet both). Registry 165->166 rows, S091 used-by only, S306 13-column tier-A row; sources-census validate exit 0, 19 warnings; ledger 948->962; round-63 traces unchanged; coldread 65/65 at c4281f39 and 0e088684 (tip is criterion-128 inference, no tip receipt)."
+   },
+   "commit": "tameshi-shokunin@00ddee5fe6b4a47595c5ff1869ffd42f4408825e",
+   "closed_at": "2026-11-04T06:21:32Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (mutable .ufo/watchdog.log): 2026-11-04T02:40:31-03:00 launch tameshi round=78 pgid=3734543 driver=hyaku-inline attempt=1 | 2026-11-04T03:12:29-03:00 complete tameshi round=78; hyaku-inline attempt=1. Shape: one v1 wave w1, 12 seats (executor 3, scribe 1, scout 1, reviewer 2, critic 1, mutation-tester 1, connector 1, sentinel 1, simplifier 1; attack 4/12 = 33.3%), band 8-16, counts.spawn=12, 12/12 records and non-empty seat reports, 0 dead, no residual. Claims: R78-C1 operability capability (non-Python freshness row, S306) and R78-C2 coverage (the two round-77 survivors become arm20 post-condition + arm21 two-commit fixture, S091 re-opened); both verify as declared, no axis harmed, stagnation nudge active (rounds 75/76/77 entered no capability row) and the capability row entered SCORECARD.md. Non-author spot-check agrees with the gate on the S306 admit, the kernel.org-mirror reject and the S091 re-open; census exit 0 (165->166 rows). ROUTED DEFECTS (status-neutral, next round): (1) landed and standing receipts name measured_rev 6f532752 while recording tool sha 7edecba8/f8071c8a, first committed at 091d50e4 (worktree run mislabeled; the report's 'every receipt names the revision and tool sha it measured' overstates); (2) the report's final-tip cold-read 65/65 has no tip receipt — newest is coldread-at-lesson-commit.json at 0e088684, tip value is criterion-128 inference (round-77 section 6.1 repeat); (3) the C1 control receipt omits the exit code 2 its frozen kill rule names; (4) the frozen plan's arm20 'scans the scratch parent' sentence is superseded by the landed per-fixture check without an appended plan note. Conformance defects: none (report path, identity, ordering, SHONEN, prompt fidelity, authorship all pass). Assimilation: none (connector searched A/B/B_precise/B_lifecycle; id check 8 collisions, nothing appended). L0: none. Promotion: none; all four SHONEN boxes look checkable by a non-author on standing evidence, promotion operator-owned and no marks written. Prior `after`/`.ufo/reports/round-77/kumitate.md` untracked fleet paths belong to other lanes.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
