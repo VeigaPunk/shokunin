@@ -47,8 +47,8 @@ Final lane commit: **`958a6023c376f4142dd5d995e88754d9e391c6f6`**. Before writin
 | `e6fcdc4770c2fa73e5ccda99445c4311128d7e0d` | successor battery, three forged matrices, the C2 counter, the committed control receipts and the validated wave spec; the controls commit strictly precedes the claims freeze |
 | `a9530782578723de1364e0a3a47effcde8c85c23` | the two frozen claims; predicate, counter and kill-rule bytes unchanged after any seat scored them |
 | `9fcfb70ba6f202506dfd55f71917dc2d31b3f825` | validated dispatch, registry and ready handoff (12 seats, one v1 wave) |
-| `9874f46d21139dcfa9ca496ad831c4b9300c3d8b` | append-only correction of the r76 claims prose, lesson, SOURCES S190–S192, QUALITY 141–142, SKILL registry row, SCORECARD plan/verdict, LOG entry, wave receipts and results |
-| `958a6023c376f4142dd5d995e88754d9e391c6f6` | the C2 after-receipt and the final census |
+| `9874f46d21139dcfa9ca496ad831c4b9300c3d8b` | the append-only correction of the r76 claims prose, the round lesson (Gate, Mistakes, limits), SOURCES S190–S192, QUALITY 141, the SKILL registry row, the SCORECARD planned section and the LOG entry |
+| `958a6023c376f4142dd5d995e88754d9e391c6f6` | wave reports and results, QUALITY 142–143, the lesson's wave integration and self-evaluation, the SCORECARD verdict, the C2 after-receipt, the committed-bytes before-receipt and the final census |
 
 Wave: one v1 wave under `ufo-wave-policy.json` (band 8–16), 12 seats — 3 executor, 1 scout, 1 scribe,
 1 connector, 2 reviewer, 2 critic, 1 mutation-tester, 1 sentinel — so 5 attack seats (42%); L1 holds
