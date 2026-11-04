@@ -43150,6 +43150,51 @@
    "notes": "Dispatch digest: 2026-11-04T03:33:05-03:00 launch mori round=81 pgid=1269719 driver=hyaku-inline attempt=1; 2026-11-04T04:15:35-03:00 complete mori round=81; hyaku-inline attempt=1. Step-1 conformance clean except named precision items: report committed by mori-shokunin <mori@shokunin.local> (fleet a64df598, erratum 3e390603; committers 04:13:17/04:13:40 after the lane work tip 142998f5 04:12:49); SHONEN heading present with four [~] lines (author-asserted; no box promotable); 11 cited lane hashes and the fleet report commit exist and are ancestors of their branches; lane remote==local==142998f5, ahead=0, tree clean; the verifier spotcheck then advanced the branch to ebcf2c72; round diff 50 paths all lane-owned; the prompt renders templates/round-prompt.md verbatim (8,359-char prefix) plus the hyaku addendum section 6 with the five child-lane items; one 14-seat v1 wave (attack share 4/14, no dead seats), freeze 6b021d29 before the 03:43:44 dispatch. Claims: C1 operability improved (seven r80 routed counter fixtures all expected=got at 075574c8; r80 contract byte-unchanged; r80 real arms re-read green at ed2f3e11; post-measure counter diff selftest-case only); C2 calibration improved (3 PENDING cells -> 0; tool present; pinned=0 re-derived by the reviewer's pointer count 233/237/240; selftest 26 pinned match). No axis harmed (axes byte-identical 6/7/5/5/5/6; battery 57 pass/4 setup/0 fail; census rc 0 369 rows; append-only 50 at both revisions; registry 61 registered/2 unregistered pre-existing/0 no_selftest/0 duplicate/0 wrong_row; pin-check mismatches=0 both sides, unparsed=1 pre-existing). Routed status-neutral defects: D81-1 the new capability row states pointers=240 as measured at 075574c8, where the count is 237 (240 first holds at 482dc48d) — a D80-4-class measured-revision error the pinned arm cannot see; D81-2 the C2 after-run has no lane-committed receipt and the SCORECARD Round-81 table names 'the landed record commit' without a hash; D81-3 the mutation recheck cites a deleted /fast/scratch harness (anchors are committed in w1/Mo81M01Mutants.md); D81-4 the prompt's 2026-11-03 route map predates the 2026-11-04 01:09 config split and the report's parenthetical repeats it (self-contradictory on scout; no model passed; no claim depends); D81-5 S596 is attributed to 'the new record gate' though it grounds C1's B6 reading and the knowledge entry, and the Python rejection is recorded in the search log rather than as a rejected SOURCES row (name the duplicate-rule basis; label the sourced claim); D81-6 the record names entering 44bc941a while the pre-round lane HEAD was d144672c (the r80 spotcheck commit, parent of the freeze). The non-author spotcheck agrees with the S596 admit, the Python is_dir duplicate reject, the ACM 403 unreachable reject and the new row's 22-word quote; census rc 0. The four SHONEN boxes look checkable by a non-author from committed bytes; promotion is operator-owned. Three named mori L0 lines remain open; no new line. No tool installs; no pacman transaction.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 77,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 77,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 77
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "improved",
+    "freshness": "improved",
+    "calibration": "unchanged",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "citation-baseline",
+    "append-registers",
+    "selfrecord-round76"
+   ],
+   "report": ".ufo/reports/round-77/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-77-verifier-spotcheck.md@c62ffd3aea930b98375f805cc3dfb821a703148b",
+    "rechecks": "C1/C2/C3 re-measured at tip 6c1550a1: C1 exit 0 CITATION_BASELINE bound=9 unbound=2 shifted=0 (matches measured/after/c1-baseline.out); C2 exit 0 APPEND_REGISTERS events=241 accepted=53 exempt=56 permitted=28 out_of_region=4 restored=95 disclosed=5 unaccounted=0 (buckets sum 241); C3 exit 0 SELFRECORD_R76 claims=6 mismatches=0 corrected=3 vs frozen corrected=2 -> honest miss. All three selftests re-run in temp TMPDIR: 7/7/4. Before receipts evidence-verified by introduction ancestry + byte identity (sha256 1938a5c6/52d30e73/79b3ae43 identical at introduction and tip). Gate evidence-verified from committed receipts (pass=22 fail=0; arms=9 failed=0 at f9b0ab6c). Spot-check agrees on S550 admit, S549 duplicate reject, PostgreSQL scope reject; census 288->290 rows exit 0; S549 quote 11 words at retained HTML line 6737, retained sha256 0be72801 re-hashed."
+   },
+   "commit": "kama-shokunin@6c1550a14babaca092cfcc3106f792d695652200",
+   "closed_at": "2026-11-04T07:45:09Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-11-04T03:40:48-03:00 launch kama round=77 pgid=1329635 driver=hyaku-inline attempt=1; 2026-11-04T04:29:58-03:00 complete kama round=77; hyaku-inline attempt=1. Step-1 PASS: report 822dc7ac92facb15228f48e7710b29a0233a1ced by kama-shokunin <kama@shokunin.local> (committer 04:29:27, after lane tip 6c1550a1 at 04:28:40, before complete); SHONEN heading x1 + four [~] lines vs four boxes, SHONEN.md untouched, no [x]; all 20 cited hashes exist and are ancestors of refs/heads/master; jj-lane state branch=master local=remote=6c1550a1 ahead=0 behind=0, porcelain empty; prompt .ufo/prompts/kama-round-77.md §1-§5 template-verbatim modulo substitutions (five child-lane items present; run-15 map + 2026-11-03 amendment; MISSION §L2 buckets advisory, divergence noted). Claims: C1 operability verified (capability citation-baseline), C2 freshness verified (capability append-registers), C3 calibration honest miss on the frozen corrected=2 (observed corrected=3; three value-bound corrections re-derive); selftests 7/7/4. No axis harmed (scores hold 8/8/7/9/7/7). Conformance defects (status-neutral): report cites LOG.md:3130 but §Round 77 is at LOG.md:3137; declared mutating-git breach (L1 ran git checkout -- in the lane; lesson Mistakes 4); gate registry row SKILL.md:309 still eight arms/arms=8/pass=18 while the landed gate runs nine arms and prints arms=9/pass=22; gate green receipt measured at f9b0ab6c, two record commits before the tip; SCORECARD cites the C3 freeze divergence as Mistakes 4 (it is Freeze divergences item 3). Routed to the lane: update the gate registry row; re-run the gate at the tip; D5 not closed (append-exempt-class row still points at the red round-76 module and is unmarked); add coverage-map rows for baseline-receipt-binding.md and register-cutoff-split.md; register-cutoff-split.md source lacks an S### row; resolve the C2 predicate/ruling divergence (frozen 'own introduction cutoff' vs ruling (a) ancestry-to-audit-revision), the worktree-register limit and the same-commit growth hole; fix the LOG.md:3130 and SCORECARD pointer defects. SHONEN boxes remain [~]; the four boxes look mechanically checkable by a non-author but promotion is operator-owned. Report pushed at fleet HEAD 0f2adaa8 (origin/main 4b1d1e11, 0 ahead/0 behind).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
