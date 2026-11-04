@@ -44449,6 +44449,49 @@
    "notes": "Dispatch/complete digest (mutable .ufo/watchdog.log, copied): 2026-11-04T08:21:28-03:00 launch mado round=80 pgid=2888272 driver=hyaku-inline attempt=1; 2026-11-04T09:18:31-03:00 complete mado round=80; hyaku-inline attempt=1. Status ok: real report naming 21 lane commits; base e10f7e9f, freeze 6c302a53 and tip dd4f844c all resolve and are ancestors of master. Step-1 PASS. Wave: one v1 wave, 14 seats (2 scout, 3 executor, 3 scribe, 2 reviewer, 1 critic, 1 mutation-tester, 1 sentinel, 1 connector; policy-list attack 4/14 = 28.6%, or 5/14 counting the sentinel), zero residual. No uncommitted round work; lane pushed. Step-1 defects, status-neutral and routed to round 81: (D1) the report was rewritten 22 s after filing (90895076, 6+/2-) instead of an appended erratum naming the superseded text - the corrected revision claims are true (receipts print rev=231f92bc/749d3a85); (D2) SHONEN box 1 cites SKILL.md:786-789 for the r80 registry rows, which are at :792-:794; (D3) the report says corpus/README.md:180, the entry row is :181; (D4) a blank line before M80-6 splits the six-row Mistakes table into two; (D5) 'three seats ... no findings' names two (11 findings.md + R80ConnSiblings.md = 12 seats with artifacts, 2 without); (D6) the 5/14 attack share counts the sentinel (policy list gives 4/14 = 28.6%, still >=25%); (D7) the check-wave-done verdict line has no committed receipt (seat counts re-derive 14/14 from w1-spec/w1-results). SHONEN boxes 1-3 look non-author-checkable from committed artifacts; promotion stays operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 81,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 81,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 81
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "Capture-once / audit-offline re-derivation chain"
+   ],
+   "report": ".ufo/reports/round-81/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-81-verifier-spotcheck.md@edd6fb08e7844bf3478a44742602f365c4df6e15",
+    "rechecks": "Step-1 pass: report by kake-shokunin <kake@shokunin.local> as cb02b705 (filed) and 7678247a (in-place amendment, committer 09:34:52), both ancestors of fleet origin/master; 14/14 cited lane hashes exist and are ancestors of master; SHONEN heading 1 with 4 box lines ([~][ ][~][~], no [x]); lane ahead=0/behind=0 clean with remote=ddd38022 before the spot-check, spot-check landed edd6fb08; prompt sections 1-5 render templates/round-prompt.md except the <lane-repo> bracket substitution, addendum 6 present. C1 re-measured by plain bytes at ddd38022 (blob-identical to 2b46f5c4 for every claim input): R80-1 S453 at SOURCES.md:200 and an R80-1 row naming it; R80-2 47/48, constants_failed=4/4, const_echo 11/12; R80-3 rfc9110.txt=4/html=3; R80-4 requested 6/15, settled 5/14=0.3571, accounting+spec sha256 equal; R80-5 builder deterministic (1 file, f32ae6a6) with the round-80 gate verdict evidence-verified from its committed receipt (gate not executed); R80-6 independent derivation parsed-equal, 15 seats/1 empty, schema_limit present. C2 re-measured: 3 receipt digests/bytes/200/fetchedAt 2026-11-04T12:05:06Z/GET/not-truncated/url+host verify, manifest equals the declared expectations, header_audit rc=1 and stdout equals controls/after-c2-audit.txt byte-for-byte; base+tampered controls and the 22/22 selftest evidence-verified. SOURCES 191->192, census validate exit 0 (21 W04). No axis harmed."
+   },
+   "commit": "kake-shokunin@ddd38022f888e4199e198195be173797ff416381",
+   "closed_at": "2026-11-04T12:40:47Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (from .ufo/watchdog.log, mutable): 2026-11-04T08:36:14-03:00 launch kake round=81 pgid=3344453 driver=hyaku-inline attempt=1; 2026-11-04T09:28:26-03:00 complete kake round=81; hyaku-inline attempt=1. Step-1: report filed by kake-shokunin cb02b705 09:27:24 and amended in-place by 7678247a (committer 09:34:52, after the driver's complete) instead of an appended erratum naming the superseded text - filed-report-record defect D3; the amendment corrects the lane-tip citation to ddd38022 and adds the dead-seat disclosure. Lane branch advanced after filing: 2b46f5c4 (report carrier) -> ddd38022 (round-81 disclosure, 09:34:35) -> edd6fb08 (this spot-check); remote master agrees, ahead=0, tree clean. Claims: C1 calibration verifies (open=6 at 2e119255 -> 0 at 2b46f5c4/498a0969, all six conditions re-derived from bytes at ddd38022; R80-5 from the committed gate receipt, gate not executed). C2 operability verifies (receipts, declared-surface equality, byte-exact audit stdout). Scores held (calibration 2, operability 10, freshness 10); SCORECARD additive apart from one in-place line inside the new round-81 block. Routed defects for round 82: D1 report+SCORECARD assert S433 recheck 180d->2027-05-03 and a used-by addition, but the committed S433 row is byte-identical to base (SOURCES diff is +1 S454 line); D2 both after-values are cited as measured at 2b46f5c4 while after-c1-final/after-c2-final record revision=498a0969 (2b46f5c4 only adds the receipts); D3 filed report bytes rewritten in place; D4 the MutC progress-log byte count 3,771 contradicts seat-failures.json output_bytes=3801 (report+lesson); D5 lesson Settlement names two non-existent receipts (after-c81-defect-queue.txt, after-c81-capture-audit.txt); D6 QUALITY round-81 criterion cites c81-selftest-c2.txt as 18/18 while the receipt reads 22/22 (lesson Claims same, partly self-corrected); D7 the 'ledger green at the tip C1v2 revision=5ae1f32b events=40 met=true' claim has no committed receipt; D8 R80-1's ask to correct the round-80 report/lesson :201 pointers is only partly discharged (frozen condition closes; no fleet erratum). SHONEN: 4 boxes [~][ ][~][~], no [x]; box 2's ledger gap unchanged, so promotion is not available to a non-author and stays operator-owned. Trends: expansion unchanged (67 knowledge md at base and tip), quality improved, discernment improved; the spot-check axis table agrees with this entry. No tool installed or upgraded; no pacman transaction.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
