@@ -3,7 +3,7 @@
 Lane: mado-shokunin · round 79 · base `e4b153dfa4a67ca56f7ec65cb6639082451626a7` · freeze
 `5eb8f20fe291603c74973fa94cc55723ac8089a4` · repair tips `d6be05ef` (R1), `cf5f09b9` (R2) and `999a4a3f` (R3) ·
 measured `999a4a3f` (both claims; the C1 counter's own bytes last changed at `52178de1`) · landing
-tip `2b3c9c6b` · report filed after WAVE-DONE (`w1-results.json`, 14/14 seats).
+tip `2b3c9c6b` · report filed after WAVE-DONE (`w1-results.json`, 14/14 seats, 1 dead: R79ExecC1Tool).
 
 ## Work performed
 
@@ -198,8 +198,8 @@ warnings and one W01.
 ## Wave disclosures
 
 One v1 wave, 14 seats, dispatched through `w1.ready`; all 14 settled (`w1-results.json`), 13 with a
-written report and one partial seat (disclosed below). No seat is backfilled: a seat that returns
-nothing stays an evidence gap.
+written report and one dead seat (disclosed below). No seat is backfilled: a dead seat stays dead in
+the evidence.
 
 - **R79ScoutModel (scout, source).** Rebuilt the composition from the pins (static and dynamic
   bands sum; the box is arranged inside `logicalBoxMinusReserved()`), then attacked it and found
@@ -261,12 +261,11 @@ nothing stays an evidence gap.
   scores `correct=23 killed=12 TARGET_MET` without the composition (`cheat-b-fingerprint-alias.py`);
   judged C1 a PASS with two weak clauses and C2 MIXED (host-dependent `matched`, tree-bound
   re-derivation), and confirmed the two claims do not share an axis.
-- **R79ExecC1Tool (executor) — partial seat, disclosed.** It settled without a written report: its
-  output is a progress narrative and its battery lives in `w1/R79ExecC1Tool/out.txt` (73 `OK`, 0
-  `FAIL`, run against the pre-R2 tool). Its own oracle for the negative-static class was the tool
-  formula, and it noted the divergence from the clamped constructor in the case note — the class
-  R2 closes. The battery is not backfilled into a report; the seat's missing report is an evidence
-  gap, not a pass.
+- **R79ExecC1Tool (executor) — dead seat.** Provider-side failure (zai glm-5.3-flashx HTTP 429,
+  retry budget exhausted), no report written and none will come. Its write directory holds a
+  progress narrative and a fuzz battery (`out.txt`, 73 `OK` / 0 `FAIL`, run against the pre-R2
+  tool, its own oracle for the negative-static class was the tool formula); the battery is retained
+  as raw evidence, never scored and never backfilled. The seat stays dead in the evidence.
 
 ## Stale-lane
 
