@@ -184,3 +184,22 @@ this lane).
   commit and push still went through the helpers; the deviation is recorded in
   `reports/round-89/carry-in.md` and `corpus/lessons/round-89.md` `## Mistakes`.
 - **Open L0:** none added; the r74 K L0 stays unanswered and routed around.
+
+## Erratum (appended after filing; supersedes one sentence above, names it)
+
+The sentence **"One seat, `ScoutR89Host`, produced no report and no wave
+directory: it was still `running` at its last observed state … so its item is
+reported as **no output** — a stalled seat, not a dead-with-error seat (no error
+text was observed). 11 of 12 seats produced evidence."** is superseded: the
+seat landed its report after this report was filed, at
+`.ufo/waves/round-89/w1/ScoutR89Host.md` (+ receipts dir), committed in the lane
+at `7f840eb6fac82e974ab5cda28858fb35177233d9` (lane tip; `ls-remote` =
+`7f840eb…`). **12 of 12 seats produced evidence; no seat died and none stalled
+without output.** The seat's independent probe table corroborates the red
+(rea 6.7.0 on PATH, ghidra present, ida absent, pwntools imports, seven
+reference names, two top-level `*.md` entries, SKILL.md 42/207, skill pin
+`rea-agents@6.7.0`) and adds one fact this report did not state: `npm view
+rea-agents version` returns `6.8.0` (registry latest), which is the publisher's
+version and not the skill's pin — the census row's probe is the pin, so F05's
+`STALE -> 6.7.0` verdict stands. No claim verdict changes: C1 is still a MISS
+at 2 findings and C2 is still killed.
