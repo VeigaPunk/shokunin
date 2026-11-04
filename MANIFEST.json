@@ -43414,6 +43414,53 @@
    "notes": "dispatch digest: 2026-11-04T04:11:54-03:00 launch tameshi round=80 pgid=2540392 driver=hyaku-inline attempt=1; 2026-11-04T05:15:04-03:00 complete tameshi round=80; hyaku-inline attempt=1. Step-1 PASS: report e8591ba by tameshi-shokunin (in origin/master), committer 05:14:28 after lane tip committer 05:14:04; 4 SHONEN [~] lines = 4 SHONEN.md boxes and all pointers resolve (promotion remains operator-owned; no [x] written); 7 cited lane commits all exist and are ancestors of refs/heads/master; jj-lane state ahead=0 behind=0, ls-remote 9d5422bd; prompt = templates/round-prompt.md:1-140 modulo substitutions plus the binding hyaku addendum (run-15 map/size line supersedes the quoted run-13/11 maps); wave 13 seats in band 8-16, attack 4/13=30.8%, 13/13 results 0 dead. Conformance defect: uncommitted round evidence at the tip (M design/coldread-before.txt committed empty; ?? coldread-at-f45.json cited by the report; ?? design/census-before.txt cited; ?? 5 rekey work-analyze chunks) - routed as r81 D1. Routed: D2 C1 before-state tokens 23/23,14/14 in report and frozen plan vs receipt 24/24,17/17 (base-tool figures are 23/23,14/14; claim predicate unaffected); D3 selfstate manifest pins two r80 rows at declaration ae591d5a while landed tools differ (receipt-bind 14b3e015 vs 6118c755; registry-figure-bind 8ddf0a1b vs a97171ed); D4 S289 used-by edit claimed in report/Gate but absent from SOURCES (diff adds only S308/S309; tip cell ends round-79.md); D5 S289 re-open has no committed fetch receipt; D6 no round-80 Search log note. Spot-check: S308 admit and S309 reject both agree on re-open (PEP 540 live byte-identical to snapshot; sys.html differs only in the 'Last updated' line 3061, quote unchanged at line 999); census validate exit 0. Non-author spot-check committed and pushed at 56a0129f.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 79,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 79,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 79
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage:kimi-layer": "improved",
+    "coverage": "unchanged",
+    "coverage:script-layer": "unchanged",
+    "coverage:runtime-layer": "unchanged",
+    "coverage:omp": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "report-receipt-diff v4 (`POINTER_DEAD`): resolves a report's prose backticked repo-path pointers against the lane root, the report's directory and `<lane>/.ufo/waves/round-N/` (or the `--rev` git tree), refusing `..` escapes, directories and symlinks, without re-reporting receipt-shaped tokens; selftest 125 → 144 cases, frozen counter 12/12."
+   ],
+   "report": ".ufo/reports/round-79/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-79-verifier-spotcheck.md@1968689f9097f839457e242b41f83879e99af58e",
+    "rechecks": "C1/C2 evidence-verified against committed frozen counters and controls (11/11 and 12/12 at M; base 7/11 and 9/12; stub 4/11 and 4/12), with a static re-derivation over committed bytes of the r78 harm formula (5019803b drops K_sections) and of report-receipt-diff's selftest growth (125 → 144 cases); path/tier/map counts re-run (SOURCES 167 → 171, tier A 143 → 146, C 8 → 9; README map 194/194; checklists 39/39); sources census validate exit 0 (six carried W04). No owned axis row moved outside the two claimed."
+   },
+   "commit": "kumitate-shokunin@0fb019a30203bfb5ecf444557d612bf3c197ffd9",
+   "closed_at": "2026-11-04T08:32:31Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 2026-11-04T04:33:24-03:00 launch kumitate round=79 pgid=3317374 driver=hyaku-inline attempt=1; 2026-11-04T05:23:58-03:00 complete kumitate round=79; hyaku-inline attempt=1. Lane 5019803b → 0fb019a3, pushed ahead=0, clean; report filed by kumitate-shokunin (cbb52bd). One v1 wave, 13 seats, 5/13 attack = 38% (band 8–16); 12 seats wrote reports, K79MutC2 settled with none. Claims: C1 coverage:kimi-layer improved (composite restores K_sections beside the census factor; base bytes drop it, debt arm 54/55→9, counter 11/11 vs base 7/11 / stub 4/11); C2 operability improved (POINTER_DEAD v4; counter 12/12 vs base 9/12 / stub 4/12; selftest 125→144 counted statically). No axis harmed. Non-author spot-check agrees on all four re-opened gate decisions (S229/S230/S231 admits, S232 reject); SOURCES S229 quote re-opened (18 words, not the lesson's 21). Conformance/record defects routed to round 80: D1 report cites open/gates-open.txt (DRIFT 191/190) for the post-adopt README_MAP CLEAN 191/191 committed at w1/K79ScoutOpen/gates.txt:35; D2 report's `w1/K79MutC2/` matrix path does not exist; D3 lesson § Counters cites four absent close receipts (close/shape.txt, close/census.txt, close/readme-map.txt, close/spotcheck-check.txt); D4 S229 quote word count 21 vs 18; D5 round-78 SCORECARD <SETTLEMENT> placeholder replaced with round-79 settlement text; D6 close c1/c2 probe receipts carry no rev= stamp (proxy-check/c2-r78 do: rev=357e4e73); D7 no committed round-start sources-census output; D8 filed report rewritten in place at 59aa9ae (header and one bullet; receipt 13495→14251 bytes) instead of an appended erratum naming superseded text. Carried lane routed items: spotcheck-adopt --check conflation; composite floors / K_findings double-penalty; POINTER_DEAD resolves existence not honesty. SHONEN: four boxes [~] author-attested, non-author-checkable in principle — promotion operator-owned. Open L0: kumitate | round-78 (K-score harm ruling; default (b) landed).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
