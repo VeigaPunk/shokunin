@@ -47541,6 +47541,47 @@
    "notes": "Dispatch: 18:04:14 launch attempt=1 pgid=65079; 18:04:46 lane-dead-no-report (no landed report); 18:04:48 launch attempt=2 pgid=77853; 18:51:41 complete attempt=2. The report (15146cdd, 18:51:00) self-declares neither claim admitted, which is an honest stop: C1 open=1 on its frozen predicate, and the C2 instrument is unsound. Defects (status-neutral): D89-1, an untracked baseclean.out left at the lane root during the round (scratch discipline); D89-2, SCORECARD/LOG state C1 open=5 closed=1 @f62e7954 with no receipt, and the item list (B-F closed) contradicts the count; D89-3, the S463 scope column still excludes cache-key construction while used-by and the lesson now use it for construction. Routed to r90: D89-1..3; the lane's R89-1 and RC-1..RC-10; the seven uncovered C2 clauses; an execution-time shortcut guard; property classes that assert key strings; the U+001D 'four separators' wording; the C2 axis label; the MutKey survivors; a QUALITY.md criterion for instrument calibration. SHONEN boxes: all [~]; operator promotion not indicated.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 81,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 81,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 81
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "improved",
+    "operability": "improved",
+    "freshness": "improved",
+    "coverage": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-81/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-81-verifier-spotcheck.md@d5b3e13492b3878fc8734368b0bbcab04f6c79c0",
+    "rechecks": "Step-1 PASS: report 15995ee32f09f216f5729b68cc7821ef520ddafc (3 commits, lane identity, 18:51-18:53 after tip 18:50:51); one SHONEN heading, four [~] lines = four SHONEN.md boxes; eight cited hashes resolve and are ancestors of master; lane state ahead=0 behind=0 tracked=0 untracked=0 at 4ffcbbd5 before the verifier commit; prompt carries template sections 1-5 plus hyaku addendum 6/7. Re-measured at 4ffcbbd5: C1 jq MT1-MT8 distinct 8, md rows 8, note absent at 80237118, 3 measured legs (MT2/MT5/MT6), S331 live SHA afbf3be6 equals pin, MT5 tmp.mount Before= at generator.txt:70; C3 plain last-verified-at-dated count base 2 undated of 98 -> 0 of 99, 7/7 snapshot sha256sum -c OK, round-71/72 snapshots undiffed; census 330->332 append-only (numstat 2 0), validate rc0; SCORECARD numstat 162 0. Evidence-verified (gate not executed): C2 measure-round80 CannotEvaluate exit-2 map and six public-CLI selftest cases by grep, committed counter SHA ca2c8be9 = ExecGate candidate, ExecGate base 3/6 -> 6/6, measure-round81.py frozen at 80237118 unchanged. All finite after-values reproduce; not admitted because predicates were frozen after author candidate scoring (lane-disclosed chronology defect; prompt 6: claims judged on predicate declared before data; procedural misses not retroactively repaired). Spot-check agrees on 3 admits (S331 nofail :500-501, S331 x-systemd.before :232-234, S332 :77) and 2 rejects (ArchWiki Fstab Accuracy banner :175, nofail-no-wait reading)."
+   },
+   "commit": "tsukuroi-shokunin@4ffcbbd5c036718dc6ecec0e212901430c2c3fa3",
+   "closed_at": "2026-11-04T21:59:40Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (watchdog.log, mutable): 2026-11-04T17:52:19-03:00 launch pgid=3648537 attempt=1; 18:02:51 lane-dead-no-report (report_of FAIL); 18:02:53 launch pgid=36255 attempt=2; 18:03:31 lane-dead-no-report; 18:03:33 launch pgid=49539 attempt=3; 18:04:12 lane-dead-no-report; 18:25:31 launch pgid=737095 attempt=1; 18:25:49 lane-dead-no-report; 18:25:51 launch pgid=757374 attempt=2; 18:53:40 complete tsukuroi round=81 hyaku-inline attempt=2. Status ok (real report), not admitted: rejected-honest-stop on chronology, no numeric miss, no axis harmed. Status-neutral defects: attempt-1 landed e8e5d5b3/c6fd9949 before its lane-dead line; two concurrent writers; reviewer+critic seats dead (effective attack 1/12). Routed to tsukuroi r82: R81-V1 append correction reconciling SCORECARD depth9 vs depth 8->8 outcome blocks (closure awards no uplift); R81-V2 commit declaration, no-work/forgery controls and instrument hashes before any candidate scoring; R81-V3 replace dead attack seats or report floor unmet; R81-V4 C1 13/18 and C2 4/8 behaviour-bearing mutant survivors plus answer-key selftest class; R81-V5 S331 anchor wording ('two lines later above line 84') and per-line-strip repair (R81-CITED-LINES-STRIPPED). Operator: SHONEN boxes not fully non-author checkable (box 3 unreplayed); no promotion.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
