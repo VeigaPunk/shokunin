@@ -41478,6 +41478,47 @@
    "notes": "Dispatch digest (.ufo/watchdog.log): 2026-11-03T23:18:36-03:00 launch mado round=70 pgid=2180373 driver=hyaku-inline attempt=1; 2026-11-03T23:54:26-03:00 complete mado round=70; hyaku-inline attempt=1. Step-1 conformant: report committed by mado-shokunin (43af7177), SHONEN heading with 4 [~] boxes, 15/15 landed commits ancestors of master, ahead=0 behind=0, prompt carries the full template contract. Conformance defect (status-neutral, routed): 4 round-70 seat-report files left modified-uncommitted in the lane working tree (w1/R70ScribeEntryC1.md, w1/R70ScribeEntryC1/draft/corpus/knowledge/landing-kill-credit-real-children-r70.md, w1/R70ScribeEntryC2.md, w1/R70ScribeRowLesson.md; mt 23:47-23:48 -03, pre-complete) — lane to commit under round-71 entry or revert. Routed: landing-counters.sh default citecheck path wart (lane's own erratum E2); r69 deliverable defects remain observed-not-repaired. SHONEN: all 4 boxes [~] with resolvable pointers, mechanically checkable by a non-author promotion reviewer (operator-owned).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 73,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 73,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 73
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "unprovable",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-73/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-73-verifier-spotcheck.md@8a28732b3c1591b52449a982849b758cda6f4c45",
+    "rechecks": "C1 greps 1/1/1 re-derived; battery/preflight receipts verified (evidence, gate not executed); C2 frozen counter evidence-verified not executed, loader column-swap confirmed in committed code; independent numstat 11/0,21/0,6/0 matches append-only; 8426/8435 and 18-healthy tree counts (3 vs 2) re-derived; census rc=0 re-run; registry 181 rows, mined=147/queued=19/rejected=15; wave 11 seats matches; SHONEN 1 heading + 4 boxes; all cited hashes ancestors of master; ahead=0; dispatch digest 23:35:21/23:58:03 -03:00 verbatim in watchdog.log"
+   },
+   "commit": "chousa-shokunin@4b76c7c2892bee44ee153f79a75685da9324ed97",
+   "closed_at": "2026-11-04T03:09:18Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (.ufo/watchdog.log, mutable): 2026-11-03T23:35:21-03:00 launch chousa round=73 pgid=3440041 driver=hyaku-inline attempt=1; 2026-11-03T23:58:03-03:00 complete chousa round=73; hyaku-inline attempt=1. C1 operability verifies: completing predicate met on run-15 Linux host (battery PASS 275/275 rc 0, preflight 8/8 rc 0, receipts at freeze a0f094c with tool digest pinned, do-nothing control 0 at base). C2 calibration honest-stop: factual V72-1/V72-2 corrections land append-only (independent numstat 11/0, 21/0, 6/0; gate lines 8426/8435 and tree counts 3-vs-2 re-derived) but the frozen seven-check counter is invalid - load() reads numstat additions as deletions (c2-count.py, committed code read, counter not executed per Gate standard); committed receipt C2=FAIL 6/7 exit 1 at 5aec907; target 7/7 unmet; counter bytes unchanged after scoring. No axis harmed; SCORECARD/LOG diffs append-only, no numeric score or capability row. Routed to chousa next round: repair/replace the frozen counter with a real committed append+deletion control through load() before any successor calibration freeze. Carried unresolved: old L0 fetch-scope, flock(1) operator decision, Windows-host load question, SHONEN promotion review (all four boxes still look non-author-checkable - promotion operator-owned). Conformance: no defects; prompt carries full template contract; report committed by chousa-shokunin; all cited hashes ancestors of master; lane ahead=0.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
