@@ -105,3 +105,19 @@ four quality-paused lanes — souji (next r58), tabi (next r62), chousa (next r7
   wave band and the all-`@m_flash` routing stay as committed (failover `180fc2b`, interrupted-watch
   recovery `0d82ccc`). The parent archives the four runtime pause markers and shows the `inline.sh`
   queue before dispatching; this ruling lands no runtime, claims, MANIFEST or lane writes.
+
+## Availability recovery checkpoint — 2026-11-04
+
+- User reports `m_zfl` usage reset; accepted as ground truth. Devin subsequently returned
+  `permission_denied: This model is no longer available for your account`.
+- All 18 role overrides now use `@m_zfl`; aliases and fallback chains unchanged, `m_mim`
+  remains off every role. Backup:
+  `~/.omp/agent/config.yml.pre-run15-devin-unavailable-20261104.Qfa62SXH.bak`.
+  Operational addendum committed/pushed as `0ad04e305ddcad137802299fe6c17bf3d7669045`.
+- Actual recovery proof: previously provider-failed `CloseKakeR84` completed, appended its
+  rejection, and advanced to KakeR85; KamaR83, MoriR88 and MadoR83 also closed rejected.
+- `run_for(1200)` observed 154 trained closures: 121 admitted, 33 rejected. SoujiR58
+  started under the authorized fresh-start rule; tabi, chousa and tsukuroi await slots.
+- Empty seat outputs are not successes. Exact retained JSONL error evidence supplied to
+  TameshiR83, KasegiR61 and KaidokuR81; expired proc records mean final status unavailable.
+  T83W1R1's recorded `cyber_policy` refusal is not retried, rephrased or rerouted.
