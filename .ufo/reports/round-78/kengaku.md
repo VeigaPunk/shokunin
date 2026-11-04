@@ -1,8 +1,8 @@
 # kengaku — round 78 report
 
 Lane: `kengaku-shokunin` · Round 78 (hyaku run 15, attempt 1) · 2026-11-04 UTC
-Base `3ae0ab54` (round-77 verifier spot-check) · Freeze `2f9eeafb` · Lane tip `49d4f0e1`
-(remote verified: `git -C kengaku-shokunin ls-remote origin refs/heads/master` → `49d4f0e14238199d635b1a0b8df70e07f311c840`)
+Base `3ae0ab54` (round-77 verifier spot-check) · Freeze `2f9eeafb` · Lane tip `148801a6`
+(remote verified: `git -C kengaku-shokunin ls-remote origin refs/heads/master` → `148801a67aebe7bf062932556083131fe96a2d39`)
 
 ## Work performed
 
@@ -79,7 +79,9 @@ Every change is one LOG.md round-78 entry (append-only section "Round 78") and o
 | `749c2a40`, `2aa6c4e4` | the C2 after receipt (self-count stable at 26) |
 | `b47dbea8` | Amendment A1 (nine defect-only legs) + `TASK-UNDER-TEST` annotations on `round68/pypi`, `round71/hf` |
 | `04fdd644` | round-78 receipts re-measured under Amendment A1 |
-| `49d4f0e1` | wave w1 evidence (11 seats, 0 dead) and the tip gate block |
+| `49d4f0e1` | wave w1 evidence (11 seats, 0 dead) |
+| `63fb46ba` | R76-C2 Amendment A1 (bare-`D<n>` scope), routed `R77-D1…D5` rename with id-naming checks, canonical count row 247 |
+| `148801a6` | the gate block re-run from the clean tree at `63fb46ba` (12 gates green) |
 
 Also landed in `bbf4f36c`: `SKILL.md` registry rows `round78-c1-class-member-ledger`,
 `round78-c2-stamp-location`, `round78-restamp`; `PROVINCE.md` §Round 78 admission; the canonical
@@ -100,7 +102,7 @@ target_reached=False`; C2 `--control-stamp-only` → `CONTROL receipts=6 stamped
 real_defects=4 target_reached=False`. Batteries: C1 `SELFTEST cases=8 red=7`, `MUTANTS real=6
 killed=6 survived=0`; C2 `SELFTEST cases=7 red=6`, `MUTANTS real=6 killed=6 survived=0`.
 
-Gates at the tip (`49d4f0e1`, `.ufo/waves/round-78/gates-tip.txt`): `grader.py` `CHECKS n=733
+Gates at the tip (measured at `63fb46ba`, block committed in `148801a6`, `.ufo/waves/round-78/gates-tip.txt`): `grader.py` `CHECKS n=733
 mismatches=0`, and `R51-C1`, `R52-C2`, `R74-C1`, `R74-C2`, `R75-C1`, `R76-C1`, `R76-C2`, `R77-C1`,
 `R77-C2`, `R78-C1`, `R78-C2` all `pass`, `routed_open.py` `ROWS total=98 open=31 blocked=1
 closed=64 refused=2` — all exit 0.
