@@ -46854,6 +46854,44 @@
    "notes": "Dispatch digest (.ufo/watchdog.log, copied): 2026-11-04T15:37:46-03:00 launch kumitate round=85 pgid=529354 driver=hyaku-inline attempt=1; 2026-11-04T16:35:17-03:00 complete kumitate round=85; hyaku-inline attempt=1. Status ok (real report, not marker). C1 UNMET rejected honest stop: the frozen 20-arm predicate reads green at M but the frozen kill rule fires on three committed post-data controls that reach 20/20; the lane disclosed and did not narrow. Wave: ONE v1 wave, 13 seats, 13 settled, 0 dead, attack 4/13 by the gate's ATTACK set (5 counting sentinel), connector 1; L1 holds the planner (prompt-sanctioned). Frontier: S245 mined / S246 rejected, census exit 0 (re-run at closure, six W04), four Mistakes rows. Conformance/report defects (status-neutral, never bar admission; full evidence in the spotcheck file): R85-V1 HIGH false PROXY: MATCH claim at report :112 and SCORECARD.md:4113; the committed receipts read A_DRIFT declared=972 computed=975 at M and 980 at close, the only MATCH is pre-freeze at 6663b3be with A=908/C=44. R85-V2 A accounting wrong (measured 908/913/975/980; shipped-only 35, not 908->972 / 59 files / 36). R85-V3 independent 41/41 measured on candidate 7659be6e, not integrated f385bd7a, while SCORECARD.md:4110 says 'integrated bytes'. R85-V4 READY_HANDOFF line has no committed round-85 artifact and omits the tool's roles=/policy=/agents= suffix; plan says 5/13 vs gate 4/13 (ATTACK excludes sentinel). R85-V5 pre-data control receipts and harm-matrix carry no rev/cmd/exit (r84 did). R85-V6 probe does not assert exact 3-line output on --src arms; a line-lenient control scores 20/20 with a fourth line, undisclosed in the report. R85-V7 plan-before-ready CLEAN is not in the cited map-repair receipt. R85-V8 S245 title drops 'A Brief' in the lesson and SOURCES row. R85-V9 S245 tier A for a survey vs CORPUS tier B. R85-V10 S246 flip satisfied by a reachable full text (eecs481 PDF). R85-V11 orphan fragment at knowledge note lines 7-10. R85-V12 README rows 356-357 sit outside the coverage-map table. R85-V13 landed-table/LOG mapping gaps. R85-V14 the four checklist reds are not all host-bound (the proxy red is lane-state). Routed to kumitate next round: R85-V1..V15 in kumitate-shokunin/corpus/lessons/round-85-verifier-spotcheck.md@232350995d3001e606609aaf22ba1b58168d3655; also adopt that file's README row and readme-map pin before the round-86 freeze. SHONEN: the four [~] boxes appear checkable end to end by a non-author; promotion is operator-owned and no [x] was written. Spotcheck commit 23235099 (protocol identity) pushed; lane tip after closure is 23235099.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 65,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 65,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 65
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:verifiability": "improved",
+    "coverage": "improved",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-65/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-65-verifier-spotcheck.md@b6db9e818d322726e39cb441f2179d34d4170275",
+    "rechecks": "C1 evidence-verified, lane gate never executed: tip receipt driver_sha256=7f27c4d2 equals sha256(verify-r65.py)=driver.sha256, GUARD driver-self-pin PASS, 8/0 exit0 at 03a23921 and 8/3 with the same driver at a283189 (final-driver base receipt), construction 8/0, selftest 63/0, mutbat 4/4, ledger 35/35, candidate==production sha 86becbde; errata 2-3 supersede the frozen driver hash on the record; gate diff implements upstream-signal stale except SIGPIPE, derive-signal-N and 4 new cases; tip delta 03a23921->a3357329 is receipt-only. C2 re-measured from committed bytes: registry 97->98, F-rows admitted 43->44, knowledge 81->82, expected 83->84, manifest records 78->79; S098 NF=13 docs/A/mined 180d used-by resolves, snapshot sha cfa42e23 matches, 18/18 quotes <=25 words at anchors; census exit0 six pre-existing W04. SCORECARD additions-only; S098 admit and both rejects agree on live URL + snapshot."
+   },
+   "commit": "kasegi-shokunin@a33573291dd1867eed2c283516fc1ce38b7dae69",
+   "closed_at": "2026-11-04T20:04:03Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-04T16:19:36-03:00 launch kasegi round=65 pgid=2043078 driver=hyaku-inline attempt=1 | 2026-11-04T16:57:05-03:00 complete kasegi round=65; hyaku-inline attempt=1. Conformance: report by kasegi identity (bf01cca5, landed last); SHONEN heading 1x with four box lines; all 13 cited commits plus measured revision 03a23921 are ancestors of master; lane ahead=0/behind=0 with empty status; prompt 814 lines carries the full contract and five child-lane items (L2>=8 matches MISSION). Round shape 12 seats in one wave, 42% attack, 12/12 seat reports. Routed defects (status-neutral): D1 report cites 'LOG bolts 1-12' but LOG.md Round 65 has 10 unnumbered bullets and no 'bolt' token; D2 two of 15 round commits (1929a47, 6824522) absent from the Landed-changes table; D3 the cited before receipt base-finaldrv2 is the erratum-1 driver (5aa842ab) while the report calls it the exact final driver (final-driver receipt driver-base-donothing-r65.txt exists, 8/3); D4 'final tip 03a23921' is not the lane tip a3357329 (two receipt-only commits later); D5 base receipts record no exit= line though the report claims exit 1; D6 sentinel helper count 121900 is marker lines across two gate runs (~60950/run) and the report reads as one run. Operator note: SHONEN box 2 (end-to-end domain task) stays open; boxes 1/3/4 are non-author-checkable if a promotion review is dispatched; promotion remains operator-owned and no box was marked by closure.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
