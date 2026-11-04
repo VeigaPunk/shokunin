@@ -40833,6 +40833,49 @@
    "notes": "Dispatch/complete digest: 2026-11-03T21:37:59-03:00 launch kaidoku round=67 pgid=2346633 driver=hyaku-inline attempt=1 | 2026-11-03T22:16:38-03:00 complete kaidoku round=67; hyaku-inline attempt=1. Report real work (two claims, 12-seat wave 12/12 settled); report committed by the lane identity after the lane tip; lane clean and pushed (ahead=0). Both claims verified evidence-wise: C1 4/4 vs 2/4 control with the class rule grounded (S268) and both red fixtures green; C2 exact-set kills of the two r66 survivors with the freeze-era receipt under the frozen battery also reporting killed_after 2. Ruling on the report's routed item 4: disclosed post-freeze instrument supersessions under QUALITY #33 are allowed, so the kill rule's 'post-freeze instrument edit' reads as undisclosed; the predicate also holds on the frozen instrument, so the reading stands and next round must make the wording explicit. Admission barred by the quality trend: corpus/knowledge/2026-11-03-r67-avm-le-squashfs-core.md:33 says the rule is b55d5e87 and keeps removed.silent.char-device 247:0, but the rule at the record and tip is e66ba022 with no silent key (revert 3e7b59db) and the entry blob is unchanged since 2dd5f2cd with no correction block -- LEARNING 'entry found false or stale and left unmarked'; expansion/quality trade is never admitted (kasegi-46 precedent). Conformance defects (status-neutral, routed): (1) knowledge-entry correction block for the stale rule sentence; (2) SKILL.md instrument-registry rows missing for tools/round-67/avm-le-counter.py and mutation-battery.py, so neither gate is graded conformant and the report's SHONEN box-1 pointer overstates; (3) QUALITY #100 companion correction row absent for the in-place round-64 findings-cell edit at 451f3102 (corrections ledger unchanged); (4) QUALITY #47 prefile exited 1 at filing on the superseded claim-freezes.tsv and its output is a report paste only -- commit the receipt and settle the stale ledger next round; (5) report cites prompt b8507c60 (round-66 prompt) instead of 754f9074; (6) pre receipts carry rev=a7a4ce69 although the battery did not exist at base; (7) SCORECARD '147/147 mapped' means 147 counted / 142 mapped + 5 recipe_a_hidden; (8) plans/round-67-claims.md:59 still claims a carrier_fresh_ok clause drop (dropped_clauses is empty). Lane's own routed items stay open (Probe B no-extra-failures clause, REA package.json+tree pin, r63 record-section sweep, r58/r60/r64 debt). Non-author wrote no [x] and did not touch SHONEN.md; promotion remains operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 76,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 76,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 76
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "Offline hreflang declaration audit"
+   ],
+   "report": ".ufo/reports/round-76/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-76-verifier-spotcheck.md@a2cc5f51002433e11cc3d2f70e650a6c60ad5e68",
+    "rechecks": "Step-1 clean: report by kake-shokunin (1058eaf3 + erratum eb912c3f), 4 SHONEN [~] boxes, 18/18 cited lane hashes ancestors of master, lane ahead=0 and clean, prompt §1-5 byte-identical to the rendered template. C1 re-measured: five SCORECARD correction rows quote their named receipt lines exactly (row 3 two lines at after-c2-receipts.txt:5-6), every defective span absent from its named receipt, QUALITY and round-75 corrections exact; base a0491fcd findings=7 met=false, after 7ac91803 findings=0 met=true; counter digest e7f86d3a and selftest 63/63 evidence-verified (gate not executed). C2 evidence-verified/re-measured: landed tool 0762452f at 2cccd59a and a1b3f33b, cases digest fa64d448 re-derived over 71 committed case JSONs, matrix 69/69 correct with 4/4 constants failing, selftest 59/59; real-input run is predecessor 58a2cdce (55/55) and the matrix receipt names head d00ea7fb, not the report's 284a00fb - routed. No axis harmed: SCORECARD 57/0, LOG 67/0, QUALITY 15/0, SOURCES 3/0, PROVINCE 17/0, README 10/0."
+   },
+   "commit": "kake-shokunin@a1b3f33b9d00137b1c45c5b4c274ce8f0cc95446",
+   "closed_at": "2026-11-04T01:31:03Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (verbatim from .ufo/watchdog.log, mutable): 2026-11-03T21:37:27-03:00 launch kake round=76 pgid=2344261 driver=hyaku-inline attempt=1 | 2026-11-03T22:22:34-03:00 complete kake round=76; hyaku-inline attempt=1. Lane a0491fcd -> a1b3f33b (pushed, ahead=0, worktree clean, remote refs/heads/master verified at closure); report fleet 1058eaf3 by kake-shokunin at 22:21:24 after tip 284a00fb, erratum eb912c3f at 22:21:58 after a1b3f33b, append-only. Round shape: ONE v1 wave w1, 15 seats (executor 5, scout 2, scribe 2, reviewer 2, critic 1, mutation-tester 1, connector 1, sentinel 1), attack 4/15 = 26.7 %, 0 empty outputs, 15 seat reports; prompt carries the full template contract and the §6 hyaku addendum. Claims: C1 calibration repaired (base findings=7 -> after findings=0 met=true; five SCORECARD rows + one QUALITY criterion + one lesson bullet re-verified against named receipt lines), C2 operability capability (hreflang audit; matrix 69/69 decided correct, 4/4 constants fail, landed selftest 59/59). SHONEN: 4 [~] boxes, all look fully checkable by a non-author; promotion operator-owned. Routed (status-neutral): (1) C2 report revision 284a00fb contradicts receipt head=d00ea7fb (tool lands 2cccd59a) and the real-input receipt is from predecessor 58a2cdce (55/55), not landed 0762452f (59/59) - repeat of r75 routed 3/7 class; (2) report W04 after-count says 16 unchanged vs tip census 17 (S445 duplicate, already disclosed in w1/ScoutHreflangSources.md:206-221); (3) report renders pages=8 findings=[] exit=0 as a quote though the receipt is JSON; (4) correction-row location miscount (5 SCORECARD + 1 QUALITY + 1 lesson, not 7 in SCORECARD); (5) 'frontier to core' wording despite no base frontier row; (6) deletion-control parenthetical append_only=false absent from the v1 receipt. None touches either claim's measurement.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
