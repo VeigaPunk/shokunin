@@ -9,7 +9,8 @@ This round declares **three claims** against three axes:
 
 - **C1 — depth (8→9):** eight verified `/etc/fstab` → generated-mount-unit rows (MT1–MT8) over
   S331 (systemd v262 `man/systemd.mount.xml`) with three measured legs from S332 (this host's
-  read-only generator capture). Counter: `tools/count-mount-rows-r81.py`.
+  read-only generator capture). Counter: `tools/count-mount-rows-r81.py`. The 8→9 ordinal is the
+  lane's self-assessment (SCORECARD "Round 81 — measured outcome"), subject to non-author closure.
 - **C2 — operability (9→9, gate-standard debt closed):** the round-80 evidence counter maps
   could-not-evaluate to exit 2 through its public CLI and its selftest drives six gate-standard
   cases; six frozen cases must match. Counter: `tools/measure-round81.py`.
@@ -174,9 +175,11 @@ conformance requirement. The round-start exit 2 case does not apply — the regi
   corrected before their first commit (S331 `teaches` narrowed, S331 `anchor` `:498-503`→`:498-504`,
   S332 `teaches` qualified to the nofail pair, S332 `anchor` gains the pinned commit) — recorded
   old→new in `corpus/lessons/round-81.md` Gate.
-- **Frontier rows advanced:** the mount-unit plane moved from boot-chain *incident evidence*
-  (`corpus/knowledge/boot-chain-r17.md`, S056) to a Core decision plane with eight settings and
-  three measured host legs; `corpus/README.md` round-81 row records it.
+- **Frontier rows advanced: none.** No frontier bullet in `corpus/README.md` moved. The
+  mount-unit plane is new Core ground under the lane's own province — it replaces boot-chain
+  *incident evidence* (`corpus/knowledge/boot-chain-r17.md`, S056) with a decision plane of eight
+  settings and three measured host legs, recorded as a coverage-map row in `corpus/README.md`
+  "Round81" whose own text says "PROVINCE and the coverage frontier are unchanged".
 - **Assimilation: none.** The `merge/tsukuroi/` staged package still collides with the lane
   registry (L0 `tsukuroi | round-75` open: 114 of 147 staged ids collide); no staged row was
   appended. Nothing in `/home/vgpnk/Projects/shokuknow` was written, fetched or pushed.
@@ -229,8 +232,11 @@ One v1 wave (policy band 8–16, run-15 §6), **12 seats, one `task` call, no re
 3 executor (`ExecRows`, `ExecGate`, `ExecHeader`), 3 scribe (`ScribeEntry`, `ScribeSources`,
 `ScribeLesson`), 1 scout (`ScoutSurface`), 1 connector (`ConnectorOverlap`), 1 reviewer
 (`ReviewRows`), 1 critic (`CriticFreeze`), 1 mutation-tester (`MutCounter`), 1 sentinel
-(`SentinelProbe`). Attack roles (reviewer, critic, mutation-tester) = 3/12 = 25%; the sentinel
-probe adds a fourth adversarial seat. The L1 holds the planner role (the validator forbids a
+(`SentinelProbe`). Attack roles (reviewer, critic, mutation-tester) = **3/12 = 25 % nominally,
+1/12 = 8.3 % effectively**: the reviewer and critic seats died before producing any finding, so
+the ≥25 % attack floor is met only on paper and is reported as a protocol deviation. The sentinel
+probe and the mutation-tester carried the actual falsification. The L1 holds the planner role (the
+validator forbids a
 spawned planner). Evidence: `.ufo/waves/round-81/w1-spec.json`, `w1-dispatch.json`, `w1.ready`,
 `w1.ready.dispatched`, `w1-results.json`.
 
@@ -256,5 +262,14 @@ pacman stayed paused host-wide). Seats used only pre-installed python3, git, sys
 (service-config falsification probe authorization), `round-60` (whole-SKILL non-author SHONEN
 verification), `round-64`/`round-75` (corpus-expansion-1 staged-id collision path).
 
-**Scratch:** `/fast/scratch/hyaku/tsukuroi-r81/` removed after landing (`rm -rf` rc 0); no seat
-left a tree behind; nothing this report cites lives under `/tmp`.
+**Scratch:** `/fast/scratch/hyaku/tsukuroi-r81/` held 459 MB after settlement — attempt 1's
+`l1-headercheck` clone (449 MB), the two dead seats' trees (`CriticFreeze` 8 MB, `ReviewRows`
+1 MB) and three small L1/attempt-1 dirs — and the L1 removed the whole root (`rm -rf`, verified
+absent; `/fast` at 59 % used). Nothing this report cites lives under `/tmp`.
+
+**Concurrent writer (disclosed).** Two writer processes committed to this lane inside the same
+two minutes: `c6fd9949`, `9e723336`, `53d1cece` and, interleaved, `c63511b4` (LOG measured-outcome
+block) and `4ffcbbd5` (SKILL counter-attack scoreboard). The final tree was re-verified green at
+`4ffcbbd5` after the fact: C1 `8/8 met rc 0`, C2 `6/6 met rc 0`, C3 `0 findings rc 0`, registry
+coverage `122/122 findings 0 rc 0`, knowledge refs `dangling 0 rc 0`, source census rc 0 with
+332 rows. No path was written by a third party outside the lane; the fleet-root sweep is clean.
