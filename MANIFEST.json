@@ -43505,6 +43505,51 @@
    "notes": "digest: 2026-11-04T04:47:56-03:00 launch mado round=77 pgid=620308 driver=hyaku-inline attempt=1; 2026-11-04T05:54:46-03:00 complete mado round=77; hyaku-inline attempt=1. Report committed by mado-shokunin (74fe9fd8; first filed 10dbd564); lane pushed, ahead=0, clean. Step-1 conformance pass; 13 status-neutral defects routed: D1 report Sources frontier says SOURCES 393->400 (measured 401); D2 report says rows touched old->new none while six existing rows had used-by edits at a0a8b2a0 (logged in the lesson); D3 SCORECARD r77 correction names final tool 2df46e29 / sha 446d197f while the last change is 9197405c / sha e54787b7 (report and receipt correct); D4 LOG r77 says five mined mistakes while the lesson holds six M77 rows; D5 wave per-seat table omits R77RevClaims (reviewer) though 12 seats / 9 report-bearing are counted; D6 M77-2 red evidence claimed inside control-baseline-r77.txt is absent from the committed 54-line receipt; D7 QUALITY 132 / M77-1 red E01 evidence lives in /fast scratch (census2.txt), not committed; D8 S460 locator set_exclusive_zone :152-190 but the quote sits at :196 in set_margin; D9 /fast/scratch/hyaku/mado-r77 not removed after landing while the report says removed; D10 report rewritten in place after filing (10dbd564 -> 74fe9fd8); D11 expansion trend says six mined source rows (Gate holds seven); D12 report describes census as W04-only (W01 S277 also printed); D13 counter selftest tallies committed only at freeze, not at the counters' last changes. Discernment spot-check: four admitted sources and the rejected row re-opened at pinned upstream bytes and agreed (S457, S458, S461, S464 admit; S463 reject; S460 quote verbatim, locator wrong). All four SHONEN boxes look checkable by a fresh non-author; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 78,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 78,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 78
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "freshness": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "selfrecord-round77",
+    "append-registers-tip",
+    "live-reconcile"
+   ],
+   "report": ".ufo/reports/round-78/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-78-verifier-spotcheck.md@ee53f1a25eab93a8ab55bbb877e49e2e731df535",
+    "rechecks": "C1/C2/C3 grounds re-measured at the tip by plain counts (sealed axes vector 8/8/7/9/7/7, 34 capability rows/max 77, bucket sum 248 = events, exempt rows 3/2/1, server/model sha256 vs the pinned files) and their receipts evidence-verified (frozen lines, selftest tallies, revisions); the pre-report gate evidence-verified, never executed; census validate exit 0 over 292 rows."
+   },
+   "commit": "kama-shokunin@7a3cd98243b69fcbee0cc9e31878782bd8459320",
+   "closed_at": "2026-11-04T09:20:17Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-11-04T04:46:51-03:00 launch kama round=78 pgid=444680 driver=hyaku-inline attempt=1; complete 2026-11-04T06:03:04-03:00 hyaku-inline attempt=1. 12-seat v1 wave, 3 returned output / 9 empty-dead, attack 4/12. Claims: C1 calibration verified (four repairs re-read at the tip; sealed table 34 rows/max 77; counter mismatches=0 corrected=4; selftest 8 arms; control red mismatches=4); C2 freshness verified (bucket sum 53+59+28+4+99+5 = events=248; three exempt rows 3/2/1; selftest 7; control red unaccounted=3); C3 operability verified (MODEL_OK/MODEL_MISMATCH/DEAD against the pinned child; server/model sha256 match the live files; teardown recorded). Axis harm: none (8/8/7/9/7/7). Conformance defects (status-neutral): 'final tip' wording vs receipts measured at rev=2842ad29/22cce544 (events=250 line unreceipted); C1 selftest receipt predates the F2 derivation change at 381b53dc; pre-correction red-before output uncommitted; C2 tip re-run rows=1 uncommitted; refreshed c3-live.json carries no revision field; plan control paths measured/control/{c1-norepair,c2-norows}.out absent; before-after table command/revision precision. Routed R78V1-R78V7 in kama-shokunin/corpus/lessons/round-78-verifier-spotcheck.md@ee53f1a25eab93a8ab55bbb877e49e2e731df535. F2 post-data correction accepted as subject alignment (predicate/target/arms unchanged). Assimilation gap (no package adoption, connector seat dead) reported by the lane, not a pass. No promotion: SHONEN boxes stay [~]; non-author evidence now covers boxes 2 and 4 but promotion is operator-owned. Spot-check: S551 admit agreed (live fetch 122459 bytes sha256 00e3b1aa... byte-identical to the retained copy); git-cat-file duplicate reject agreed; census validate exit 0 over 292 rows.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
