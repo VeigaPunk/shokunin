@@ -46647,6 +46647,48 @@
    "notes": "Status ok, real landed report (not a marker): report commit 8b96e7e3 by chousa-shokunin (fleet origin), `## SHONEN` once with four [~] rows; cited hashes 43a7a0db/ad575622/e515c962 exist and are ancestors of lane master; lane state ahead=0, status --porcelain empty; prompt 04af487a carries the round contract and five child-lane items; one v1 wave, 10 seats (4 attack, 40%), no residual, L1 planner. Dispatch/complete digest: 2026-11-04T15:58:49-03:00 launch chousa round=75 pgid=1466307 driver=hyaku-inline attempt=1; 2026-11-04T16:28:42-03:00 complete chousa round=75; hyaku-inline attempt=1. Claims: C1 operability evidence-verified (frozen digests, before/after battery receipts, negative control, stability; no sibling gate executed); C2 calibration re-measured (16/11 tokens vs recorded 18/13, append-only 4/0) and counter receipt verified. No axis harmed: SCORECARD diff additions-only, round diff 202 files +11984/-0, no knowledge/README/PROVINCE/SKILL change, SOURCES additions-only. Routed to chousa next round: (1) C1 rationale 'decidable only from protected-file content' false — metadata channels reach 12/12; add a metadata-reading subject and the twelve-entry order oracle to the battery; (2) C2 counter is a presence test (polarity/magnitude, last-section, base ancestry); (3) controls share the freeze commit rather than strictly preceding it (souji Q120); (4) pre-freeze positive receipt names measured-at=base while the instrument was untracked; (5) parser-slip guard is an inline probe, not a red-before battery run. SHONEN boxes look checkable by a separately scheduled non-author promotion review; promotion operator-owned. Carried operator questions (external-fetch, historical Windows flock/load, promotion/non-author entailment) remain unanswered.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 84,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 84,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 84
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "novelty": "unchanged",
+    "coverage": "improved",
+    "calibration": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "improved",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-84/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-84-verifier-spotcheck.md@0de45354d7aff18e4a23a348ec13de3a1f707a44",
+    "rechecks": "C1 re-measured over committed bytes: ledger 88 members, executed 27->28, unexecuted 61->60, file-artifact 19/76->20/76, gcode-to-text unexecuted->executed; receipt absent at BASE, present at tip with 8 CASE/16 legs/0 mismatches and SUBJECT/TOOL/TABLE sha256 matching the captures; c1-base defects=34 fail -> c1-tip pass. C2 re-measured: BASE recheck command-only (q1=1 q21=1 q13=1 defects=3); tip recheck dated/cadence/pin (q1=0 q21=0) but q13=1 (no admit rows), defects=1 fail; gate_timing_check is_second_wave accepts only falsify/wave2. Gate batteries evidence-verified only: C1 selftest 30/29/0, mutants 16/16, three controls target_reached=False, probe negative 8 cases/1 mismatch; C2 selftest 6 fixtures/3 mutants, filler/date-only controls red; no sibling gate executed. Census validate exit0, rows 262->263 A 232->233 mined 238->239, 30 W04. SCORECARD/LOG append-only. Reopened S271 admit (HTTP 200, 644 B, sha256 6b049dc6... and :17 5-word quote) and the entry hold/reject; both agree."
+   },
+   "commit": "kengaku-shokunin@0de45354d7aff18e4a23a348ec13de3a1f707a44",
+   "closed_at": "2026-11-04T19:38:12Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (mutable .ufo/watchdog.log, copied): 2026-11-04T15:32:55-03:00 launch kengaku round=84 pgid=508145 driver=hyaku-inline attempt=1; 2026-11-04T16:23:52-03:00 complete kengaku round=84; hyaku-inline attempt=1. Step-1: report 497fe64b by kengaku-shokunin <kengaku@shokunin.local> (committer 16:23:15, after lane tip b8c10ad5 16:22:16 and before complete); SHONEN heading 1 with four [~] and no [x], SHONEN.md untouched; all seven cited hashes are ancestors of refs/heads/master; jj state branch=master local=remote=b8c10ad5 ahead=0 behind=0 head=detached, no tracked changes; prompt 793 lines, 140-line prefix = rendered template modulo the resolved cwd and axes substitutions, section 6 addendum and all five child-lane items present; one v1 wave 12 seats (attack 4/12=33%, connector 1) in the 8-16 band. Status ok (real lane-attributed report, not a marker), admitted false (honest stop): C1 met (coverage 27->28 executed, gcode-to-text unexecuted->executed, 8 cases/16 legs/0 mismatches, receipt/tool/table sha pins match); C2 unmet (q1/q21 repaired, q13=1 defects 3->1; gate_timing_check is_second_wave accepts only falsify/wave2 and the Gate has no admit row). No axis harmed; SCORECARD/LOG append-only; the only deletions are the ledger row replacement, the SKILL file-artifact cell and the entry header repair. Defects (status-neutral): (1) untracked round evidence at closure — .ufo/waves/round-84/w1-results.json, w1/CriticR84/critique.md, CriticR84.md, CriticR84/report.txt; the report cites the first two; commit or replace them next round; (2) plans/round84-cases.json first committed 767c907b after freeze b12a9d46, so the counter's TABLE-FROZEN-MISMATCH is inert; (3) C1 controls cover wrong-vector fabrication only, not a correct-vector forged receipt; (4) Q13 checker shape blocks every one-wave admission; L0 kengaku|round-84 filed; (5) frozen claims say the considerthese item lands as a QUALITY criterion but corpus/QUALITY.md is byte-identical (e6e8542...) with no Q61; (6) entry writer KengakuR84 collides with the seat-report trailer writer; (7) report trend expansion=improved is not accepted — no knowledge entry/frontier/capability landed; closure grades expansion unchanged; (8) R82 plans registry ROW-SELFTEST-FLAG:--selftest round83-c2-debt is red at BASE and tip, pre-existing. Routed to kengaku next round: R84-V1 commit/remove the untracked wave evidence; R84-V2 fix freeze-table hygiene; R84-V3 add correct-vector forgery control; R84-V4 await operator ruling on Q13 shape; R84-V5 land Q61 or append correction; R84-V6 remove/rename the entry writer and anchor the writer check; R84-V7 correct the expansion trend record; R84-V8 carry the R82 red as debt. SHONEN four boxes look checkable by a non-author from the cited committed surfaces, but no [x] is written (operator-owned). No promotion, mint or capability.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
