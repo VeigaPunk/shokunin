@@ -44713,6 +44713,50 @@
    "notes": "Dispatch digest (mutable .ufo/watchdog.log, copied): 2026-11-04T09:25:23-03:00 launch mado round=81 pgid=347658 driver=hyaku-inline attempt=1; 2026-11-04T09:58:30-03:00 complete mado round=81; hyaku-inline attempt=1. Report 3b42e033 by mado-shokunin <mado@shokunin.local> committed 09:58:05-03:00, after lane tip 2cbd3a13 (09:57:43) and before complete; one filing, nothing rewritten. Step-1 PASS: one ## SHONEN heading with four [~] boxes and zero [x]; all eight cited lane hashes are ancestors of refs/heads/master; lane ahead=0 behind=0, porcelain empty, origin/master at the tip; prompt renders templates/round-prompt.md (140/140 lines after placeholder substitution) plus addendum 6 and carries the round-level items and all five child-lane items; wave one v1, 14 seats in the 8-16 band (9 with artifacts, 5 empty: both reviewers, critic, mutation-tester, sentinel) - disclosed. Claims: C1 coverage improved (39 cases = 33 carried parsed-equal + 6 new named classes; 28 mutants; held r80 tool 33/39 TARGET_MISSED rc1 vs r81-v1 39/39 TARGET_MET rc0 at the freeze and the content tip). C2 operability improved (26 cases/26 anchors/21 shape-kind cases/23 mutants; before is setup refusal rc2 on both controls; at-tip TARGET_MET rc0 at f3eb70c7, SKILL.md and tool blobs identical at the tip). Harm watch: index 99/99->100/100, ledger 146->148, registry 412->415 with 0 removed lines, gate 460/460 and held instrument blobs identical; no axis harmed. Discernment: the non-author spot-check agrees with admits S478/S479/S480 (live bytes equal the pins; quotes at :54/:150/:55) and the reject (host-bar-producers-r28 amends an absent parent; ids free; 6354 B host-config read 2026-10-23). Routed to round 82 (status-neutral): R1 five attack seats empty and the lane's wave-done gate MISSING exit 1 - the claims carry no independent attack artifact; R2 the round-81 wave disclosure (w1-results, five empty seats, wave-done-r81) was written into the round-80 SCORECARD section while the r81 section lacks it; R3 quality/counters/c2-r81-runbook.py docstring still carries the r80 contract (cases=24 ... mutants=16) and the PRED-C2-r79-v1 label against actual CASES=26/SHAPES=21/MUTANTS=23; R4 the instrument selftest tallies 72/72 and 88/88 are committed only in the SKILL registry rows, with no observed-output receipt; R5 round-80 closure D1-D3 have no labelled erratum (r80 report history 6fccb49->90895076 only; it still cites corpus/README.md:180 and SKILL.md:786-789); R6 the wave seat/attack-share counts point at w1-results.json but print no counting command. SHONEN boxes remain lane-asserted [~]; a non-author may be able to check boxes 1 and 3 against the committed registries, which is an operator promotion decision, not this closure's.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 83,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kotodama",
+   "lane_round": 83,
+   "lanes": {
+    "kotodama": "ok"
+   },
+   "lane_rounds": {
+    "kotodama": 83
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "depth": "improved",
+    "calibration": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "gate-registry coverage auditor",
+    "cited-record checker"
+   ],
+   "report": ".ufo/reports/round-83/kotodama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kotodama-shokunin/corpus/lessons/round-83-verifier-spotcheck.md@81499ee45b5751d388fefc78583810878de01ecd",
+    "rechecks": "All three claims re-measured over committed bytes AND their frozen-run evidence verified (Gate standard; no lane gate executed). O: my own parser over SKILL.md and the tree gives registry data rows 60 -> 74, accept-* instruments 58 -> 61, uncovered 11 -> 0, dead entry-command paths 0, tools-without-row 25 at 27fdcb61 (matches the report's GATE-REGISTRY line); ACCEPT-O-83 PASS legs=8/8 at 0f088572, r1 red-before FAIL 7/8, tool selftest 15 checks. D: knowledge .md 256 -> 257, entry 56,555 B / 7 sections / 52 single-id anchors / 57 spans, SOURCES rows 832 -> 836 at 386e7002 and 837 at tip, S909-S912 mined (A/A/B/A), S913 rejected C superseding S908; the report's before-state '27 lines in 9 files' does not reproduce (measured 14 lines / 9 files, as the ScoutGap seat itself refuted); ACCEPT-D-83 PASS legs=9/9. C: QUALITY criterion 31 at line 221, r82 record 0 -> 7,051 B with both revision hashes, round-83 receipts at tip show 0 empty and 0 scratch-root citations in my own sweep, red-before 2 empty / 7 scratch; ACCEPT-C-83 PASS legs=9/9 (checker selftest 12). Counter sha256 at tip match the report (counterlib 9de5d34c, O b9eb404c, D 9adb5e68, C 820c87a9); claim artifacts byte-identical from their lands commit to the tip; PROVINCE.md untouched; base..tip diff 84 added / 6 modified / 0 deleted."
+   },
+   "commit": "kotodama-shokunin@27fdcb61c1546c3e133c98f62beedc4271209496",
+   "closed_at": "2026-11-04T13:15:33Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-04T08:59:11-03:00 launch kotodama round=83 pgid=3794076 driver=hyaku-inline attempt=1; 2026-11-04T10:06:47-03:00 complete kotodama round=83; hyaku-inline attempt=1. Step-1 pass: report committed by kotodama-shokunin <kotodama@shokunin.local> (d488ae11 + a3d86ebc); SHONEN heading present with 4/4 [~] and no [x]; all eight cited lane commits exist and are ancestors of refs/heads/main (base 3088bd7f, r7 29f4b6a5, r1 167c249d, O 0f088572, D 386e7002, C 86f68b5b, 0305006f, tip 27fdcb61); lane clean (porcelain empty; jj-lane state ahead=0 behind=0, remote main=27fdcb61 before the spot-check); prompt (704 lines) carries template sections 1-5 with byte-identical headings plus the section-6 addendum and section-7 scratch discipline, all five child-lane items present. Conformance defects (status-neutral): (1) report filed 26 s before the final lane commit (fleet d488ae11 09:59:28 vs lane 27fdcb61 09:59:54) and corrected by rewriting three filed lines in place (a3d86ebc) instead of appending an erratum naming the superseded text; (2) the one v1 wave (14 seats) has no reviewer seat, and its attack share is 3/14 = 21.4% on the addendum's enumerated roles (4/14 counts the sentinel, which the addendum does not enumerate); (3) the depth before-state count '27 lines in 9 files' is the spec's number, refuted by the round's own ScoutGap seat and re-measured at 14 lines / 9 files; (4) the lesson header names freeze 21277b08 whose claims.json (cc9d8d0e) predates the r7 29f4b6a5 blob (2606824e) the report and SCORECARD name - no claim target moved, but the citation reads stale; (5) the discernment bullet counts routed-defect dispositions, which the lane's QUALITY 20 bars - the verdict stands on criterion 31, the five mined mistakes and the spot-check's agreement; (6) standing: freshness (the lane's declared lowest non-retired axis) stays paused by the open round-11 L0 with no stagnation-nudge evidence, as in rounds 77-82. Routed R83-D1..D6 in corpus/lessons/round-83-verifier-spotcheck.md section 6. Spot-check: 4 admits (S909 20-word quote, S910 17, S911 10, S912 22, all re-opened live 2026-11-04 with byte sizes and sha256 matching the rows; S910 raw 0 / folded 1 with 0 hits for promiscuity/group marriage/matriarchy) + 1 superseding reject (S913 chapter III and the stage-law sentence located; status rejected with REJECTED: and the flip) + the pre-row 404 of the Rig-Veda mandala URL - all agree. Trends: expansion improved, quality unchanged, discernment improved. SHONEN: all four boxes look checkable by a non-author from committed bytes (pointers SKILL.md:20/:505/:564 resolve); promotion is operator-owned and this verifier wrote no [x]. Non-author spot-check landed as protocol-shokunin at 81499ee4.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
