@@ -81,8 +81,9 @@ Work items, each with its evidence pointer:
 
 **C1 (calibration).** Counting command `python3 tools/round82-selfrecord-round81.py --repo .`:
 
-- before, at the freeze tip `bfdd7a70`: `SELFRECORD_R81_ENUM claims=6 stale=5 corrected=0`, exit 1
-  (`measured/before/c1-enum.out`).
+- before: the freeze-tip run printed `SELFRECORD_R81_ENUM claims=6 stale=5 corrected=0`, exit 1; the
+  retained receipt re-runs the frozen command at `e93d859a` where the sealed facts are unchanged and
+  prints the same line (`measured/before/c1-enum.out`, header `# rev=e93d859a`).
 - after, at `45c4926e` (the mutant-killing tip): `SELFRECORD_R81 claims=6 mismatches=0 corrected=5
   unbacked=0`, exit 0 (`measured/after/c1-green.out`).
 - controls: `--no-corrections` → `claims=6 mismatches=5 corrected=0`, exit 1
@@ -93,7 +94,7 @@ Work items, each with its evidence pointer:
 **C2 (operability).** Counting commands `python3 tools/round82-late-delta.py --repo . --round 82` and
 `python3 tools/round81-append-debt.py --repo . --round 82`:
 
-- before, at the freeze tip with the 88-row register: `LATE_DELTA round=82 base=aaf974dbd3b6
+- before (tip instrument against the base tree `bfdd7a70`, 88-row register): `LATE_DELTA round=82 base=aaf974dbd3b6
   population=103 carried=88 new=0 bad=15`, exit 1 (`measured/before/c2-late-delta-base.out`); and
   `APPEND_DEBT round=82 base=aaf974dbd3b6 events=68 accepted=53 late=10 pending=0 unaccepted=5
   bad_rows=0 bad_declarations=0 out_of_population=0`, exit 1 (`measured/before/c2-debt-base.out`).
