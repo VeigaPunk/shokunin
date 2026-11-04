@@ -40662,6 +40662,48 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log lines 2149/2160): 2026-11-03T21:20:17-03:00 launch mado round=67 pgid=3915373 driver=hyaku-inline attempt=1 | 2026-11-03T21:51:57-03:00 complete mado round=67; hyaku-inline attempt=1. Shape: one v1 wave, 13 seats (executor 4, scribe 2, scout 2, connector 1, reviewer 2, critic 1, mutation-tester 1; attack 4/13 = 30.8%), settled 13/13, dead 0, L1 holds the planner seat; band 8-16 per the binding run-15 addendum. Conformance defects (status-neutral, none bars admission): (1) the C2 frozen kill rule says the candidate control run exits nonzero on the mutant, but the M-R mutant child exits 0 (TARGET_MET missing=0) and is counted killed by the harness's forged-credit flip (c2-r67-landing-controls.py:267-269,489-490); the delivered control is real and the base scores 0/2, but the declaration's mechanism sentence is wrong for M-R (B9 calls it merely 'stricter'); (2) the report's 'controls unchanged' sweep 'git diff aa7fe5a1..HEAD -- controls' is path-vacuous from the lane root (0 top-level controls paths) and returns empty regardless; with the nested path score-baseline-c2.py changed its default base eafd500f -> 0b28ffb4 at 5f9ce459 (B7), while the frozen c1-controls.json is byte-identical (blob d5669bdc) - no claim harm; (3) the dispatched prompt carries two seat bands (template 32-128 vs run-15 addendum 8-16); the lane followed the binding addendum. Routed to round 68: freeze the per-mutant observable (M-R flip, not 'exits nonzero'); use the explicit controls path and name the B7 scorer correction; keep open the citecheck standalone zero-citation contract, the harness mr_killed self-mutant survivor, the C1 row-count equivalent mutant, the unguarded git-reader census, and the B1 inheritance limit in the next C2-family predicate. SHONEN: all four boxes remain [~] and match the report; boxes 1 and 4 look mechanically checkable by a fresh non-author, boxes 2/3 rest on historical end-to-end evidence; promotion is operator-owned and no [x] was written. Open L0 r57-r60, the L2-floor line, the host-recovery pacman pause and the new r37/r38 session-material history question remain operator-owned. No tool installed or upgraded; no pacman transaction.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 70,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 70,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 70
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged",
+    "novelty": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-70/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-70-verifier-spotcheck.md@1cb49cac52999475de35f8955d5c01f2ddb66ccf",
+    "rechecks": "Step-1: report fleet commit c8d1aad8 by kengaku identity; SHONEN heading 1 with four [~] lines = four boxes; cited 502893ad/384e9c76/0ef40526/3fc7bd75/cf32a9c4 all ancestors of master; lane clean and ahead=0; prompt sections 1-5 template-verbatim (42 diff lines, all substitutions) and run-15 route map matches config.yml; wave 14 seats, attack 6/14 (43%), 1 connector, 14/14 settled. R70-C1 counters re-measured over committed bytes (receipt rc128 -> present; SKILL 'executed 2 of 8' 1 -> 0; 'executed 3 of 8' 0 -> 1; S242 row 0 -> 1) and receipt/checker evidence-verified (7 VECTOR agree=True, LEG-COVERAGE legs=8 seen_p=8 seen_f=8, SUMMARY cases=7 legs=56 mismatches=0, probe sha256 9c9effeb at both revisions, grader sha256 045cc716, selftest 7/7 + accept). R70-C2 evidence-verified, not executed: red DEFECTS n=8 -> green n=0, gate sha256 367ce58e at 3fc7bd75 and tip, selftest 8/8, mutants killed 8/8, D1-D8 corrections present. No axis harmed (SCORECARD append-only; SOURCES 0 deletions/3 additions; PROVINCE only corrects the stale nginx clause). Discernment spot-check re-opened S242 (HTTP 200, 1882 B, sha256 26a7ac98, line 16 quote), S243 (line 61 quote, sha256 045cc716) and S244 (blank-line triad offset, S155 is a different lane source, probe not held) - agrees on both admits and the reject; census exit 0, 236 rows, 25 W04."
+   },
+   "commit": "kengaku-shokunin@cf32a9c4b247a6e041d8574e8c0e89a30fe8fe4c",
+   "closed_at": "2026-11-04T01:09:11Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (verbatim from .ufo/watchdog.log, mutable): 2026-11-03T21:33:01-03:00 launch kengaku round=70 pgid=2304126 driver=hyaku-inline attempt=1 | 2026-11-03T22:04:33-03:00 complete kengaku round=70; hyaku-inline attempt=1. Lane cf32a9c4 pushed (ahead=0), report fleet commit c8d1aad8. Conformance notes (status-neutral): the prompt commit 82f9985d is authored by the lane identity although PROTOCOL gives prompt-commit duty to the integrator (durable; attribution only). Routed defects for round 71: R70-D1 Mistakes-row count drift (LOG.md Round 70 says five rows, corpus/README.md:799 says six, corpus/README.md:565 says eight but enumerates six, the lesson carries eight); R70-D2 the D3 residual citation in corpus/knowledge/tb2-nginx-request-logging-offline.md:15 still cites instruction.md:6-11 for the body literals that are at :15-18 (anchor and E-D3 errata carry the corrected range). Both are evidence-standard defects and do not change either claim verdict. Promotion is operator-owned and SHONEN.md was not touched; from this pass's evidence the four SHONEN boxes look non-author-checkable (SKILL tables/citations, an end-to-end logged task, prompt-only-executable instructions with 14/14 seats settled, PROVINCE accurate), but the lane keeps them [~] pending an operator decision. No promotions, no mints; SPOTCHECK landed at lane commit 1cb49cac.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
