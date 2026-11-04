@@ -43371,6 +43371,49 @@
    "notes": "Dispatch/complete digest (mutable .ufo/watchdog.log, copied): 2026-11-04T04:09:21-03:00 launch kengaku round=80 pgid=2512421 driver=hyaku-inline attempt=1; 2026-11-04T05:02:34-03:00 complete kengaku round=80; hyaku-inline attempt=1. Conformance: report e560ed5a by kengaku-shokunin (jj export author 05:00:31, committer 05:02:09, after lane tip 05:01:11, cites it); SHONEN heading with four [~] pointers; 13 round commits plus historical 148801a6 exist and are ancestors of master; lane clean and ahead=0 (local=remote=507d249b); prompt is a clean 140-line rendering of templates/round-prompt.md with substitutions plus the hyaku addendum and scratch section; one v1 wave, 14 seats, 13 reports (CriticC1R80 undelivered, disclosed), attack 4/14=29%, connector 1. Defects (status-neutral): the wave has no planner seat, attributed to an orchestrator ruling with no committed artifact; the report commit sweeps .ufo/l0-questions.md (kengaku's own line; same shape as kumitate r78 88ccf5b2); the lane committed its own prompt 26823a2. Routed to the lane: U1 S258's six sha256 pins and lines 1-10 are the pre-A3 bb3d6555 blobs (tip 11a53bf3/1a3d4e1b/afef9380/f60bc00b/b7e66f4c/778565cd; stamp now 3-12), repeated in the lesson and report; U2 c1-after is a WORKTREE-dirty run, cite gates-clean.txt at e985e56a; U3 the census 249->250 row counts have no producing command in the validate receipts; U4 M80-1's fix is not shown able to fail (no committed ModuleNotFoundError/REPRODUCTION-EXIT receipt) and the captured-by-none QUALITY.md criterion is missing; U5 both new gates are absent from the SKILL.md registry (Gate standard Delivery); U6 the report's REMINT minted=6 line has no committed receipt and the README round-80 row names M80-1 only. Spot-check lands at kengaku-shokunin 4e833e9f. No axis harmed; no uncommitted round work.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 80,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 80,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 80
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "registry-home figure binding"
+   ],
+   "report": ".ufo/reports/round-80/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-80-verifier-spotcheck.md@56a0129fe9bfd0ce607290a36350e38ac4df9c72",
+    "rechecks": "C1 re-counted: manifest 7 rows (python3 length); after receipt rows=7 match=7 stale=0 absent=0 error=0 unexpected=0 and selftest 11/11 evidence-verified; before receipt committed at ae591d5a reads rows=7 match=0 stale=5 absent=2 (live 24/24, 17/17, 22/20), not the report's 23/23 and 14/14 (routed D2). C2 re-counted: SELFTEST_ARMS 17/24, spec defects 4/13, base tool shas ca8acdd9/d9336fcd and landed 0c4ac5e4/2dfeda82 matched to committed bytes; noharm diffs exactly 14a15,17 and 23a24 (rb empty); control batteries 0/3 and 0/1 -> landed 4/4 and 13/13, CONTROL GREEN, byte-identical restore (evidence-verified; batteries not re-executed). C3 independently censused over committed bytes: 22 measured + 7 design = 29 receipts, design list exactly the seven round-79 receipts; base instrument sha 8d9f9d76 matched to base bytes; two bind rows re-derived byte-exactly (bound 5bcb13ea -> c6e81e1c; corrected 6f532752 -> measured_bytes_rev 091d50e4 carries 7edecba8); selftest 13/13 evidence-verified. No harm: registry rows refreshed with no row removed, base arms line-identical, PROVINCE/SHONEN unchanged, no SCORECARD score lowered. Census validate exit 0, 169 rows, mined=136 queued=22 rejected=11, A=151 B=14 C=4."
+   },
+   "commit": "tameshi-shokunin@9d5422bd3414b0dd1c6fa1a1c45fd9da51dee692",
+   "closed_at": "2026-11-04T08:27:04Z",
+   "campaign": "hyaku",
+   "notes": "dispatch digest: 2026-11-04T04:11:54-03:00 launch tameshi round=80 pgid=2540392 driver=hyaku-inline attempt=1; 2026-11-04T05:15:04-03:00 complete tameshi round=80; hyaku-inline attempt=1. Step-1 PASS: report e8591ba by tameshi-shokunin (in origin/master), committer 05:14:28 after lane tip committer 05:14:04; 4 SHONEN [~] lines = 4 SHONEN.md boxes and all pointers resolve (promotion remains operator-owned; no [x] written); 7 cited lane commits all exist and are ancestors of refs/heads/master; jj-lane state ahead=0 behind=0, ls-remote 9d5422bd; prompt = templates/round-prompt.md:1-140 modulo substitutions plus the binding hyaku addendum (run-15 map/size line supersedes the quoted run-13/11 maps); wave 13 seats in band 8-16, attack 4/13=30.8%, 13/13 results 0 dead. Conformance defect: uncommitted round evidence at the tip (M design/coldread-before.txt committed empty; ?? coldread-at-f45.json cited by the report; ?? design/census-before.txt cited; ?? 5 rekey work-analyze chunks) - routed as r81 D1. Routed: D2 C1 before-state tokens 23/23,14/14 in report and frozen plan vs receipt 24/24,17/17 (base-tool figures are 23/23,14/14; claim predicate unaffected); D3 selfstate manifest pins two r80 rows at declaration ae591d5a while landed tools differ (receipt-bind 14b3e015 vs 6118c755; registry-figure-bind 8ddf0a1b vs a97171ed); D4 S289 used-by edit claimed in report/Gate but absent from SOURCES (diff adds only S308/S309; tip cell ends round-79.md); D5 S289 re-open has no committed fetch receipt; D6 no round-80 Search log note. Spot-check: S308 admit and S309 reject both agree on re-open (PEP 540 live byte-identical to snapshot; sys.html differs only in the 'Last updated' line 3061, quote unchanged at line 999); census validate exit 0. Non-author spot-check committed and pushed at 56a0129f.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
