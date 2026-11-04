@@ -43866,6 +43866,50 @@
    "notes": "Dispatch/complete digest (mutable .ufo/watchdog.log, copied): 2026-11-04T06:21:19-03:00 launch kama round=79 pgid=460138 driver=hyaku-inline attempt=1; 2026-11-04T07:18:07-03:00 complete kama round=79; hyaku-inline attempt=1. Conformance: report 618ee25 by kama-shokunin (fleet origin/master afbb6796); SHONEN heading with four [~] pointers; all 17 cited lane hashes exist and are ancestors of master (sealed 7a3cd982, base ee53f1a, pre-fix fa65ce2c/381b53dc/22cce544 resolve); lane clean and local=remote=a9b4543 ahead=0; prompt (704 lines) carries the round-level contract and all five child-lane items; one v1 wave of 14 seats, attack 4/14 = 29 %, 11 returned / 3 empty. Status-neutral defects: SCORECARD banner (l.6), the round-79 claim table (l.4587) and the operability row (l.14) overstate C2 as verified / failed=0 where c2-gate.out prints failed=1 at b756571 (and the before tally is pass=22, not 26), and LOG.md:3217 says 'all verified'; the C1 counter docstring lists the wrong F1/F2 facts (code grades lowest-axis/population); the docs/preset.md rejection has no REJECTED SOURCES row; the report calls the validate warnings W04-only (the pre-existing W01 S481 line also prints); the C3 control reads a /fast/scratch base probe; S553's anchor names a region label (no such heading); the gate docstring says arm 11 vs SKILL arm 10. Routed: R79V1-R79V7 in the spot-check. Admission: C1 and C3 verified, C2 an honest miss on its frozen failed=0 clause, no axis harmed. Spot-check landed c45fc7d1 (kama-shokunin, protocol identity, remote-verified); lane HEAD at round close a9b4543; promotion/shin'en items: none (SHONEN boxes remain [~]; operator-owned).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 79,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 79,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 79
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "coverage": "improved",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "Offline X-Robots-Tag declaration audit",
+    "Standing receipt-rewrite disclosure gate"
+   ],
+   "report": ".ufo/reports/round-79/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-79-verifier-spotcheck.md@9998dc7a586b9fe76379014c8123aa3606f2d8b9",
+    "rechecks": "step-1 pass (lane-identity report 3b3564dd pushed; 13/13 hashes ancestors; ahead=0; SHONEN 1 heading/4 boxes; prompt template body byte-identical + addendum; census exit 0 190 rows 19 W04); C1 re-measured independently (events=32, undisclosed 5->0, ledger 27->32) and counter evidence-verified (selftest 15/15, fixture green+4 red, r58 cross-check met=True); C2 re-measured facts (absent->19,680 B dd83c2c8, 31 cases, digest fd0a3bcc recomputed) with frozen matrix evidence-verified (correct=31 wrong=0 constants 4/4 met=true) and real run checks=12; SCORECARD append-only 74/0, no axis harmed; non-author spot-check agrees on S452 admit and RFC 9309 reject."
+   },
+   "commit": "kake-shokunin@93809011eaa5d35d2767f54516aebc2b26f53a8d",
+   "closed_at": "2026-11-04T10:34:40Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest: 2026-11-04T06:30:42-03:00 launch kake round=79 pgid=630878 driver=hyaku-inline attempt=1; 2026-11-04T07:26:51-03:00 complete kake round=79; hyaku-inline attempt=1. Step-1 clean: report 3b3564dd by kake-shokunin <kake@shokunin.local>, pushed (ancestor of origin/master 3ac6a30e); 13/13 cited lane hashes exist and are ancestors of master; lane state ahead=0 behind=0, porcelain empty, remote=93809011; SHONEN heading 1 with 4 box lines ([~] [ ] [~] [~]; no [x]); prompt sections 1-5 byte-identical to templates/round-prompt.md modulo substitutions, addendum 6/7 appended, round-level and five child-lane items present; census exit 0 (190 rows, 19 W04); no kake r79 file misrooted at the fleet root. Claims: C1 calibration re-measured independently (events=32; undisclosed 5->0 at base 0898085/final 9cfa404d; ledger 27->32; five base events match the report) and C2 operability facts re-measured (tool absent at base; 19,680 B sha256 dd83c2c8e9046faa0a62afda4cea00fee85468e83d2f1720c92159fb11f2609b at 9cfa404d and at tip; 31 cases; independent cases digest fd0a3bccbe7c1b6d3522259ab5c57d4eb1f272abe6acaba44013aae3af7978af; 4 constants) with the frozen matrix verdict evidence-verified (correct=31 wrong=0 constants_failed=4/4 selftest_ok=true met=true, exit 0) and selftest 26 derivable (23 cases + 3 faults). Spot-check: S452 admit and RFC 9309 reject both agree (live MDN re-fetch HTTP 200, 218,816 B, sha256 c4216ffb... identical to retained raw; sweep x-robots-tag=0 vs context robots=42); the report's kept-S453 sentence disagrees with the registry (grep=0) and is routed. Defects routed, status-neutral: R79-1 report Sources&frontier claims a kept S453 row that does not exist (only S452 added, rows 189->190); R79-2 ledger append re-serialized one prior note's em dash as an ASCII escape (semantics unchanged); R79-3 tool selftest 26/26 has no committed selftest-output receipt; R79-4 report vs QUALITY wording on which C1 conjuncts the fixture battery exercises (MutC: k4 survives because cheap-note fails on undisclosed first); R79-5 pre-tool 31/31 scratch-reference claim has no committed pointer; R79-6 MutC k3/k4/k5 need isolating fixture variants; R79-7 RFC 822/850 date branches unreachable under the comma split (ReviewC2 F1), grammar amendment + cases next round; R79-8 dead seats named without last error text. SHONEN not promotable: box 2 remains a gap and boxes 1/3/4 are author [~] only. No promotions, no mints.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
