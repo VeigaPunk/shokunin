@@ -329,7 +329,7 @@ Phase-1 directives still bind: "train all shokunins to at least round 100"; "com
 every round done"; "do it inline with multiple swarms of subagents".
 
 You are an in-session **L1 lane subagent** dispatched by the hyaku orchestrator (the operator's
-parent omp session) for exactly ONE steered round: **kaidoku round 88** (attempt 1;
+parent omp session) for exactly ONE steered round: **kaidoku round 88** (attempt 2;
 campaign target: round 100). Your lane's place in the session follows the goal file (lane
 order and blocks: `.scratch/goal-20261025-hyaku-run7.md`); the orchestrator dispatches your lane's
 next round only after this one lands and its non-author closure is written. Work this round only
@@ -832,3 +832,7 @@ Amendment 9 (operator, 2026-11-04, verbatim: "change all currently assigned role
 Amendment 10 (operator, 2026-11-04, verbatim: "swap all m_mim for m_flash (high effort) also, make command code primary provider, then amr, then devin for the deepseek v4.1 flash" / "also assign reviewer to m_zfl"): all roles @m_flash except reviewer @m_zfl; `m_flash` = commandcode/deepseek/deepseek-v4.1-flash:high -> amr/deepseek-v4.1-flash:high -> devin/deepseek-v4-1-flash:high (model-keyed chains mirror it; opencode-go off the m_flash cascade). Smoke: task/scribe walked commandcode 400 credits / 401 -> amr 402 -> devin answered; reviewer answered on zai/glm-5.3-flashx. Backup config.yml.pre-flash-cc-primary-20261104.
 
 Amendment 11 (operator, 2026-11-04): "Devin first for now" — commandcode returned 401 invalid auth / 400 no credits and ~12 seats died on the 401 without walking the chain; `m_flash` = devin/deepseek-v4-1-flash:high -> commandcode -> amr (model-keyed chains unchanged). "Resume all eight once" — the current three-rejection pauses of kagi r36, kama r86, kengaku r86, mado r86, souji r60, tabi r64, tameshi r86, tsukuroi r82 are lifted once (markers moved to `.<lane>.run15-20261104-freshstart-3`); history preserved, fresh-start rule applies (read the last three rejected closures; new claims must beat the do-nothing control), future gate applications unchanged. Orchestrator fix: fill_slots no longer launches a lane whose L1 or closure is still running (mori r89 ran two L1s, MoriR89 and MoriR89-2; all work landed, disclosed in its report).
+
+Amendment 12 (operator, 2026-11-04, verbatim: "also, remove opus from the m_mim alias"): `m_mim` restored to minimax-code/MiniMax-M3.1-Flash:high (its pre-amendment-9 value); no role routes to @m_mim now, so live routing is unchanged (all @m_flash devin-first, reviewer @m_zfl).
+
+Amendment 13 (operator, 2026-11-04, verbatim: "assign executor to m_zfl"): `executor` @m_flash -> @m_zfl (zai/glm-5.3-flashx). Measured cause of the continuing seat deaths after amendment 11: devin/deepseek-v4-1-flash returns `resource_exhausted: Reached request rate limit` at ~40 concurrent seats, the fallback walks to commandcode (400 no credits / 401 invalid auth) and amr (402), all dead, so the seat ends (MoriR90, CloseKasegiR69, CloseRevengerR91-2, KotodamaR90a2, ScribeEntry-10, 20:17-20:19).
