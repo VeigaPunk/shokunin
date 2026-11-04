@@ -42447,6 +42447,51 @@
    "closed_at": "2026-11-04T05:42:00Z",
    "campaign": "hyaku",
    "notes": "Dispatch/complete digest (mutable .ufo/watchdog.log): 2026-11-04T02:08:32-03:00 launch tameshi round=77 pgid=2816063 driver=hyaku-inline attempt=1 | 2026-11-04T02:27:48-03:00 complete tameshi round=77; hyaku-inline attempt=1. Shape: one v1 wave w1, 12 seats (executor 4, scribe 1, scout 1, reviewer 2, critic 1, mutation-tester 1, connector 1, sentinel 1; attack 4/12 = 33.3%), band 8-16, counts.spawn=12, 12/12 records and non-empty seat reports, 0 dead, no residual call; planner held by the L1 and no labrat item per the orchestrator ruling. Admission: C1 (operability) and C2 (calibration) verify as declared; verdict admitted; no scored axis harmed; trends expansion unchanged / quality improved / discernment improved. Conformance defects (status-neutral, none bars admission): (1) the report's final-tip cold-read line quotes rev=678f8c88d443 credited=65/65 elapsed=3.5s against coldread-tip-r77.json, which names rev=b31471748717 and elapsed=3.4s, and no committed artifact names 678f8c88; static pin check shows the tip changes none of the 7,708 pinned inputs, so the value is inferable but unmeasured - re-run and commit the tip JSON or quote the b3147174 receipt; (2) c1-landed-selftest-wr.txt names lane rev d39be4b0 with tool sha256 67d3a4cc, but at d39be4b0 the tool sha is ca05ec15 (19 arms) and the 67d3a4cc bytes exist at 1d91c384/tip - the receiver's revision is wrong and closure-76 section 6.2's payment is incomplete; (3) corpus/lessons/round-77.md:60 says the second settlement batch is the round's last lane commit, falsified by batch 3 (b3147174) and the evidence commit 678f8c88; (4) the standing-sweep receipts name no revision or tool sha, so 'at the content tip' does not resolve; (5) the report's 'rekey-plan.json per batch' overstates the committed artifacts (only batch 3's plan is committed; b1/b2 sets survive in rekey-summary-b1/b2.json, and no committed receipt carries the literal REBIND OK line); (6) wave items lead with the Godspeed directive bytes but not the literal /skill:godspeed the prompt template asks for (round-76 items carried it; the OMP task hook injects Godspeed, so no seat lost it). Process observations: the round wrote criterion 128 against the record-names-a-pre-settlement-revision class and then repeated a revision-mislabel in its own C1 receipt and an unbacked tip quote in C2 - the criterion is right, its application to this round's own receipts was incomplete; the round-76 record's b2b0f82a tip sentence is corrected append-only and the tip's restraint-6 implication is derivable from the named 63/65/box3-false receipt; the capability table's wave-record row still prints the round-73 19/19 as a historical demonstration pointer. Routed to round 78: items (1)-(6) above plus the lane-named survivors (arm20 finally cleanup, git-listing-uses-head), the two bash-instrument gaps, the 17-of-44 registry gap, and the stagnation nudge (round 78 should be the capability round). Round work is committed and pushed: lane 678f8c88, non-author spotcheck 5bcb13ea; no promotion or mint; SHONEN boxes all [~] and look checkable by a non-author on the standing evidence, but promotion stays operator-owned."
+  },
+  {
+   "round": 75,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 75,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 75
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "freshness": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "interpretation-pins",
+    "survivor-probe",
+    "append-accepted"
+   ],
+   "report": ".ufo/reports/round-75/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-75-verifier-spotcheck.md@b06cc612711560c53eef3ec21484c6963601262f",
+    "rechecks": "Step-1 PASS: report 2c9eea03 by kama-shokunin <kama@shokunin.local> at 02:42:14 -0300, 1m27s after lane tip 2ef8dc2e (02:40:47), on origin/master; SHONEN heading x1 + four [~] lines vs four boxes, no [x]; 15 cited hashes + 8020b2f2 all ancestors of refs/heads/master (detached HEAD read via branch ref); jj state ahead=0, porcelain empty, ls-remote master=2ef8dc2e; prompt lines 1-140 equal the template with substitution-only diff plus hyaku addendum §6 and scratch §7, five child-lane items present, L2>=8 one batched 13-seat wave (attack 5/13). Claims: C3 RE-MEASURED from committed bytes (389 register rows, 53 (commit,file) events, 463 line occurrences, 389 in-place-edit, 42 distinct event commits all ancestors of intro 10f3717; 9/9 sampled row sha256 recomputed from deletion hunks; bad_declarations 5->0); C1 and C2 evidence-verified from committed receipts and gate arm 8 at 74a470bc (pins=2/2/2/0; mutants=5 killed=5 escaped=0; both new arms present; probe byte-identical b8ed->c9ab). Axis harm: scores held 8/8/7/9/7/7; knowledge 44->45, SOURCES 286->287, capabilities 25->28; SKILL 1736 f18c9bcc, PROVINCE 322 af459acf. Defects routed (status-neutral): SCORECARD:4065 keeps base PROVINCE sha 0e8dc562 at rev=c9ab (actual af459acf); c2-survivors.out at c9ab omits 3 of 5 per-mutant lines the unchanged probe prints; LOG names work tip b8ed and four mistake classes (final tip c9ab, five classes); PRE_REPORT_SELFTEST pass=18 has no committed receipt; new knowledge entry lacks a coverage-map row; no QUALITY criterion for round-75 captured-by:none mistakes; ## Gate records no round-local reject; gate arm 7 red (counter-scope routed to r76)."
+   },
+   "commit": "kama-shokunin@2ef8dc2ee1b87ce69db3e066d0d158b16c87cfa1",
+   "closed_at": "2026-11-04T05:50:28Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log lines 2234/2248, verified): 2026-11-04T02:03:22-03:00 launch kama round=75 pgid=2696385 driver=hyaku-inline attempt=1; 2026-11-04T02:42:31-03:00 complete kama round=75; hyaku-inline attempt=1. Spot-check kama-shokunin@b06cc612 (protocol identity, single path). Routed to round 76: (1) stale SCORECARD:4065 PROVINCE sha; (2) partial c2-survivors.out; (3) LOG work-tip/mistake-count staleness (append corrections); (4) no receipt for PRE_REPORT_SELFTEST pass=18; (5) missing coverage-map row for corpus/knowledge/append-only-accepted-history.md; (6) no QUALITY criterion for the round-75 captured-by:none mistakes; (7) ## Gate lacks a round-local reject; (8) carry gate arm 7 red, CR01's C1/C3 limits and MT01's seven escapes. SHONEN: four boxes remain [~]; all four look checkable by a non-author review on committed evidence (operator-owned promotion).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
