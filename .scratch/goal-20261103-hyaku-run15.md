@@ -175,3 +175,10 @@ Final map (`task.agentModelOverrides`, 18 roles; backup `config.yml.pre-run15-mo
 - `@m_zfl`: no role.
 
 Future launches only; no live restarts; live seats keep their captured route. No safety-refusal retries or rerouting. Aliases, fallback chains, concurrency and wave sizing unchanged. Known risk: devin/swe-2:max (m_flash) returned permission_denied on 2026-11-04; disclosed, not probed. Historical entries are not rewritten.
+
+## Restart checkpoint - 2026-11-04 (operator session restart)
+- Campaign 191 closed this run (136 admitted / 55 rejected); fleet 764 rounds done. Drain flag `.scratch/run15-drain` is SET: no new rounds launch until it is removed.
+- In flight (state `live`): chousa r76, kengaku r85, tsukuroi r80 at closure (L1 reports landed; closure judges may die with the session -> `step()` relaunches a closure when `closed` returns 0 rows); kotoba r85, mado r85, kotodama r88, kumitate r86, kasegi r66, kaidoku r85 at L1. L1s killed by the restart: `step()` runs verify -> fail; RETRYABLE relaunches the same round (claims and freeze commits survive).
+- Paused by the three-rejection gate (need operator fresh-start authorization): kama r86, tameshi r86, tabi r64, souji r60, kagi r36.
+- Resume: `%load scripts/hyaku/inline-dispatcher.py` and `%load .scratch/run15-kernel.py` (separate cells), `await bootstrap()`, `rm .scratch/run15-drain`, then loop `await run_for(900)`.
+- Routing (config.yml): m_flash opencode-go -> commandcode -> amr -> devin deepseek-v4.1-flash (devin re-auth confirmed by RouteSmokeCritic4); m_zfl zai glm-5.3-flashx primary with glm-5.3-flash elsewhere; model-keyed fallbackChains apply whatever the agent role.
