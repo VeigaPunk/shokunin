@@ -207,6 +207,21 @@ status=queued:15,mined:142,rejected:10 findings=0`).
   proposal is mined. No keyup-value, kaidoku-overlap or planner-topology ruling
   is inferred.
 
+## Trend verdicts
+
+| Trend | Verdict | Evidence |
+|---|---|---|
+| expansion | **improved** | knowledge notes 74 → 75 on ground the coverage map did not hold (the wheel/scroll domain), with two new mined source rows. **No capability row enters** — C1 is unprovable under the do-nothing standard; the expansion is the admitted knowledge entry and registry ground, not a repertoire move. |
+| quality | **unchanged** | no admitted knowledge entry was re-verified, superseded or found stale this round; the new entry is an expansion move and the gate repair is calibration. No admitted entry failed a re-check. |
+| discernment | **improved** | the fresh non-author r62 spot-check's three routed defects are answered by construction in this round — both producer polarities (R2), contradictory-duplicate and fabricated-label refusals (R3), and the artifact durability resolution (R1) — and its limits are retained, not rewritten (R4). The round-63 outside sample itself is still pending (a dispatched seat is still the lane). |
+
+## SHONEN
+
+- `[~]` SKILL.md contains real decision tables, error patterns, checklists, cited sources — `SKILL.md` §Approval table, §Evidence ladder, §Runbook, §Wheel/scroll domain (round-63 section, pin `4c54e0c91de1`); prior non-author verification of the whole sufficiency claim is not claimed.
+- `[~]` At least one end-to-end domain task executed and logged in LOG.md — round-63 wheel/scroll run (`corpus/evidence/round63/chromium-wheel-scroll/receipt.json`, two cold runs, closure proven); also `corpus/knowledge/multi-step-journey.md` §1–§2, §7 for the earlier journey.
+- `[~]` Instructions executable by an agent without oral context — the round-63 §Wheel/scroll decision table plus `corpus/knowledge/chromium-wheel-scroll-round-63.md` §7 carry the copy-paste command and the negative/positive control rule; the earlier executor test (`executor-test-sufficiency.md` §0, §4) was a lane-dispatched seat, not non-author.
+- `[~]` No cross-domain bleed (PROVINCE.md still accurate) — `PROVINCE.md` scope check this round: the wheel/scroll interaction domain is browser craft and stays in province; no sibling surface is absorbed (connector scan reported in the wave dir); refusal routes unchanged.
+
 ## Routed defects / next-round obligations
 
 1. **Bind the receipt to the run.** Render the invocation nonce into the page
@@ -230,21 +245,6 @@ status=queued:15,mined:142,rejected:10 findings=0`).
    kill rule's gate pin is not in `pins` (the blob `005bd45a…` is equal at
    baseline, freeze and wave commits). Frozen text stands; the reading is
    corrected here and in the lesson (W8).
-
-## Trend verdicts
-
-| Trend | Verdict | Evidence |
-|---|---|---|
-| expansion | **improved** | knowledge notes 74 → 75 on ground the coverage map did not hold (the wheel/scroll domain), with two new mined source rows. **No capability row enters** — C1 is unprovable under the do-nothing standard; the expansion is the admitted knowledge entry and registry ground, not a repertoire move. |
-| quality | **unchanged** | no admitted knowledge entry was re-verified, superseded or found stale this round; the new entry is an expansion move and the gate repair is calibration. No admitted entry failed a re-check. |
-| discernment | **improved** | the fresh non-author r62 spot-check's three routed defects are answered by construction in this round — both producer polarities (R2), contradictory-duplicate and fabricated-label refusals (R3), and the artifact durability resolution (R1) — and its limits are retained, not rewritten (R4). The round-63 outside sample itself is still pending (a dispatched seat is still the lane). |
-
-## SHONEN
-
-- `[~]` SKILL.md contains real decision tables, error patterns, checklists, cited sources — `SKILL.md` §Approval table, §Evidence ladder, §Runbook, §Wheel/scroll domain (round-63 section, pin `4c54e0c91de1`); prior non-author verification of the whole sufficiency claim is not claimed.
-- `[~]` At least one end-to-end domain task executed and logged in LOG.md — round-63 wheel/scroll run (`corpus/evidence/round63/chromium-wheel-scroll/receipt.json`, two cold runs, closure proven); also `corpus/knowledge/multi-step-journey.md` §1–§2, §7 for the earlier journey.
-- `[~]` Instructions executable by an agent without oral context — the round-63 §Wheel/scroll decision table plus `corpus/knowledge/chromium-wheel-scroll-round-63.md` §7 carry the copy-paste command and the negative/positive control rule; the earlier executor test (`executor-test-sufficiency.md` §0, §4) was a lane-dispatched seat, not non-author.
-- `[~]` No cross-domain bleed (PROVINCE.md still accurate) — `PROVINCE.md` scope check this round: the wheel/scroll interaction domain is browser craft and stays in province; no sibling surface is absorbed (connector scan reported in the wave dir); refusal routes unchanged.
 
 ## Round shape, extras, open questions
 
