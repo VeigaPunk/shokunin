@@ -378,6 +378,11 @@ async def bootstrap():
             continue
         d = json.load(open(meta['dispatch']))
         names = [t['name'] for t in d['taskCall']['tasks']]
+        try:  # seat names repeat across lanes/rounds; only the lane's in-flight round can be live
+            if int(meta['round']) < int(open(os.path.expanduser(f"~/.local/state/shokunin-hyaku/next/{meta['lane']}")).read()):
+                continue
+        except (OSError, ValueError, KeyError):
+            pass
         if not any(live(n, run) for n in names) and not live(meta['l1'], run):
             continue  # stale wave of a finished round
         adopt(ready)
@@ -385,8 +390,10 @@ async def bootstrap():
             alt = sorted(x for x in run if re.fullmatch(re.escape(meta['l1']) + r'a\d+', x))
             if alt:
                 WAVES[ready]['meta']['l1'] = alt[-1]
-    for x in run:
-        if re.fullmatch(r'[A-Z][a-z]+R\d+(a\d+)?', x):
+    lanes = {os.path.basename(p).removesuffix('-shokunin') for p in glob.glob(f'{FLEET}/*-shokunin')}
+    for x in run:  # seat names like ScribeR85 share the L1 label shape; keep real lanes only
+        m = re.fullmatch(r'([A-Z][a-z]+)R\d+(a\d+)?', x)
+        if m and m.group(1).lower() in lanes:
             L1S.add(x)
         m = re.fullmatch(r'Close([A-Z][a-z]+)R\d+', x)
         if m:
