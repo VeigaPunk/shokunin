@@ -41648,6 +41648,46 @@
    "notes": "Dispatch/complete digest (mutable .ufo/watchdog.log): 2026-11-03T23:15:32-03:00 launch tameshi round=75 pgid=2160140 driver=hyaku-inline attempt=1 | 2026-11-03T23:56:31-03:00 complete tameshi round=75; hyaku-inline attempt=1. One v1 wave w1, 12 seats, 4/12 attack, 0 dead, 0 residual; L1 holds planner seat. C1 fails as declared: kill rule (ii) was unsatisfiable by construction once the arm fixtures were frozen (arm16 must kill m2; arms 17/18 must kill span-rule) and was amended after measurement showed it failing - judged on the original predicate per round-prompt SS9 and the kumitate-r42 precedent; the measured arms/kills are real and credited (operability unprovable-but-better). C2 verifies as declared; its tuple freeze was also post-score (critic control-4) but the target never changed and the landed counter passes the frozen tuples - procedural defect only. Lane self-disclosed both defects in the report and the lesson settlement errata; honest stop, no axis harmed. Routed to r76: (1) kill rules must be provably satisfiable before data; a mid-round rule failure is a defect disclosure/honest stop, never an amendment; (2) freeze counter tuples in the plan; (3) r73 plan kill-rule erratum still open and the r75 lesson's routed list still names the r73 report-count corrections that this report properly carried - reconcile; (4) r74 S294 used-by old->new lesson append still open; (5) SKILL.md registry home still missing the r74/r75 instruments and registry rows lack verdict map/pinned path/scope/owner; hermetic registry run held=57/59 superseded=7 exit 1 (two inherited red rows sources-census/verify-round15, status-neutral); (6) dated-literal cells pin/evidence-disposition + stale r17 supersession figures; (7) selftest survivor --doc-rev-ignored (4/5 not 5/5 instrument mutants killed); (8) load-order procedural defect (self-reported).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 78,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 78,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 78
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "freshness": "improved",
+    "operability": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "Offline page-level robots declaration audit (bounded)"
+   ],
+   "report": ".ufo/reports/round-78/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-78-verifier-spotcheck.md@0898085450ee1b65d910f1dcb7a0efc20b413b88",
+    "rechecks": "Step-1 clean: report by kake-shokunin (7fef71a3), SHONEN heading 4 boxes ([~],[ ],[~],[~], no lane [x]), 9/9 cited lane commits ancestors of master, lane ahead=0/behind=0 clean and pushed, prompt carries round-level + 5 child-lane items, watchdog digest launch 2026-11-03T23:25:41-03:00 / complete 2026-11-04T00:03:14-03:00, wave w1 14 seats all nonempty attack 4/14. Claims evidence-verified (lane-owned gates not executed, committed evidence only): C1 after receipt byte-exact at tip (growth_tolerated=4, ledger floors corroborate), base red met=false exit 1, selftest 9/9 receipt, 4 ledger populations, c77 committed-dependency execution, boxes==4 enforced; C2 after receipt byte-identical (sweep_exit=0 drift=0 control_exit=1), base sweep red drift=1 new_missing=1, sidecar 174->190 (+16, lowercase token pinned, prose untouched), pin-only control red, selftests 6/6 and 36/36, archived-revision measurement; C3 after receipt byte-exact (36/36 correct, constants_failed=4/4, selftest 94/94), tool absent at base (cat-file 128), tool-under-test digest 886e8861...560ba3 matches receipt, 36 frozen cases + 4 constants + sibling-expect rejected 36/36, realrun 8/8 pages exit 0, capability row in SCORECARD. C3 combined contract disclosed unprovable (g26 vs generic prose) and unclaimed - honest stop on the unclaimed remainder, not a harmed claim. Census exit 0, rows 186->189, W04 17->19. Discernment spot-check: agrees with 3 admits (S449/S450/S451, quotes located <=25 words, live re-open byte counts equal registry rows) and 4 rejects (404 meta, body-tag line, non-RFC3339 dates, noarchive historical). No axis harmed: SCORECARD/LOG/SHONEN diffs append-only, scores 2/10/10 held."
+   },
+   "commit": "kake-shokunin@b9419b4668fb0dfb29da2a9d28953a7ea912f0ad",
+   "closed_at": "2026-11-04T03:17:11Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (.ufo/watchdog.log): 2026-11-03T23:25:41-03:00 launch kake round=78 pgid=2614092 driver=hyaku-inline attempt=1; 2026-11-04T00:03:14-03:00 complete kake round=78; hyaku-inline attempt=1. Defects (status-neutral, routed to kake r79): R1 after-c1-population.txt first committed at carrier against scratch fixture revision 1729712e (absent from object store, growth_tolerated=2), re-cut at settle 406021c7 (growth_tolerated=4, blobs 5d1cddb8->f27ad4fa) with in-wave disclosure but no permanent-record correction row (LOG/lesson/SCORECARD/receipt-rewrites ledger silent); R2 selftest 9/9 receipts bind to freeze blob c2dc1cbf while landed counter is f0340b9e (case definitions untouched; landed-blob selftest receipt owed); R3 low: HOLD token into SCORECARD C1 row cell, drop hard-coded /fast/scratch c77 temp root, explicit exit= field in receipts, bind report 'Tool digest' wording to scripts/meta_robots_audit.py. R4 note: SHONEN boxes carry non-author-checkable evidence pointers, box 2 honest gap; promotion is operator-owned. Lane self-evaluation filed; no tools installed by the round or this closure; no other lane touched.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
