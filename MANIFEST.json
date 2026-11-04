@@ -43595,6 +43595,50 @@
    "notes": "dispatch 2026-11-04T05:12:33-03:00 launch mori round=83 pgid=2932901 driver=hyaku-inline attempt=1; complete 2026-11-04T06:12:11-03:00. Status ok, admitted; all three claims verify and no axis is harmed (scores 6/7/5/5/5/6 unchanged; SCORECARD +94/-1, battery pass=57 setup=4 fail=0 unchanged). Conformance: report lands last by committer date; prompt carries every contract item and addendum §6 byte-identically (its base route map is stale but superseded by its own line 149, which matched the live host table at dispatch; the operator rebalance landed 23 min after dispatch). Routed (status-neutral): D83-1 final selftest tallies for r83 count-c2 (12) and r82 count-c3 (16) have no committed run at the final bytes (committed receipts print 10/8/9 at 466d28bc; r83 count-c1/count-c2 changed after that HEAD), the D82-2 class recurring - commit tallies beside the after receipt; D83-2 '7 arms for count-c3' undercounts the 8 executed additions (8->16); D83-3 the PIT mutators reject note says 38 headings while the pinned/live bytes carry 29 (the 0-hit sweep reproduces; decision unchanged). Operator-side: templates/round-prompt.md carries no literal write-scope child item (it arrives only via the addendum), and addendum §6 cites ufo-wave-policy.json for a band that file does not carry. SHONEN boxes look checkable by a non-author; promotion operator-owned. No tool installs.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 75,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 75,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 75
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "calibration": "improved",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "A12 case-independence closure: a fifteen-class patch set with per-mutant sole_detector and the pin compared before any generated copy executes; 4 survivors on the landed round-74 probe to 0 on the round-75 probe, canary field sole, pristine 25 (both arms re-measured by the closure)",
+    "exact-grammar record audit: eight atoms D16-D23 parsing used-by path lists, search-note fields and integer counts, rejected-row reason+flip and the census erratum; 8 mismatches at base to 0 at the measured revision, validate defect-free, one red fixture per grammar"
+   ],
+   "report": ".ufo/reports/round-75/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-75-verifier-spotcheck.md@5303a662d43aac52b0667f2776cce49dfc004fcf",
+    "rechecks": "Step-1 PASS: report 6f8d8486 by kaidoku-shokunin at 05:59:33 after the lane tip cbd921e6 (05:59:04) and before complete (06:00:19); jj state ahead=0, porcelain empty; all 37 cited tokens exist and are ancestors of main; SHONEN heading 1x4 [~], no [x]; prompt = template sections 1,2,2b,3,4,5 + hyaku addendum 6 (launch 04:57:14, prompt committed 04:57:13); one v1 wave r75-w1 of 14 seats (attack 4/14 = 28.6%, one connector, 14/14 settled, four incomplete recorded); gate-at-freeze CLEAN at ec149dc4 and gate-at-record CLEAN at 71728000 (disclosures 50/50), gates not executed. C1 re-measured by re-running the registered probe: 3c15a156 r75base 4 survivors (canary not sole, fails two cases) -> 538b8b81 r75probe 0 survivors, 15 killed by declared cases, canary sole, pristine 25, pin 1fc1c8fc matched before execution. C2 evidence-verified: c2-at-base 8 mismatches at 3c15a156 -> c2-at-tip 0 at 538b8b81, eight atoms D16-D23, validate defect-free, selftest 10 cases 0 failures; plain greps re-derived D17/D20/D21/D23 targets and all five instrument pins at ec149dc4. No owned axis harmed (SCORECARD 53/1, coverage-row refresh only)."
+   },
+   "commit": "kaidoku-shokunin@cbd921e6c86b49d7ae6f0cb3dd233b57506cb54d",
+   "closed_at": "2026-11-04T09:21:07Z",
+   "campaign": "hyaku",
+   "notes": "Digest (copied from the mutable .ufo/watchdog.log): 2026-11-04T04:57:14-03:00 launch kaidoku round=75 pgid=1499386 driver=hyaku-inline attempt=1; 2026-11-04T06:00:19-03:00 complete kaidoku round=75; hyaku-inline attempt=1. Shape: one v1 wave r75-w1, 14 seats (5 executor, 2 scribe, 1 scout, 1 connector, 2 reviewer, 1 critic, 1 mutation-tester, 1 sentinel; attack 4/14 = 28.6%), 14/14 settled with non-empty output, ten landed an artifact and four (ScribeLesson, ReviewerAudit, CriticClaims, MutationTester) returned mid-work prose; L1 held the planner seat; no residual call. Two claims on two axes, both capability acquisitions: R75-C1 operability (A12 case-independence closure), R75-C2 calibration (exact-grammar record audit); lowest-axis calibration (tied), no nudge waiver. Report is real, not a marker. Routed defects for round 76: (1) the two round-75 capability rows did not enter the SCORECARD `## Capabilities` table though the report, LOG.md:4509 and the SCORECARD round-75 section say they did (repeat of round-73 routed defect 1); (2) the round-75 audit's atom set dropped the round-74 D8 capability-rows atom, so the omission went undetected - restore it and disclose the revision; (3) two round commits (668e545e, fcf17efe) are missing from the Landed-changes table; (4) the printed R75-C1 counter command omits the required --work (exit 2) and abbreviates the target sha - print the plan's full argv; (5) receipt-revision prose: c1-at-landing at 4e0329a4, gate-at-record at 71728000, coverage at e44d8a8b while the prose says the record/538b8b81; (6) LOG.md says the eight atoms re-derive routed defects 1-8, the report and atom set are 1-7; (7) the freeze ledger row round-75 names one disclosed instrument revision (ad53c1e1) while claims.json discloses four (0465f251, 4e93c1a5, 7edb005e); (8) the C2 receipts record ok/mismatch_count but not the exit code the frozen predicate names. Operator note: the four SHONEN.md boxes remain [ ]; the report's [~] lines cite resolvable pointers and boxes 1-4 look checkable by a non-author; writing [x] stays operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
