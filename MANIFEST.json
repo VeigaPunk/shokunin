@@ -44360,6 +44360,51 @@
    "notes": "Digest: 2026-11-04T08:01:45-03:00 launch kotodama round=82 pgid=2411466 driver=hyaku-inline attempt=1; 2026-11-04T08:48:32-03:00 complete kotodama round=82; hyaku-inline attempt=1. Conformance ok: report b65e613b by kotodama-shokunin, 35 s after lane tip 1d650c8c; SHONEN heading with four [~] boxes; 13/13 cited lane commits ancestral to main; jj-lane state ahead=0, porcelain empty (pushed); prompt 9114dbc6 carries the template contract and the five child-lane items; one v1 wave of 14 seats (4/14 attack = 29%, one connector), 14/14 settled. Verifier spot-check landed 3088bd7f (protocol identity, pushed). Routed defects (status-neutral, lane to fix next round): (1) reports/round-82/counter-revisions.md is 0 bytes at HEAD while report:51, SCORECARD and the lesson cite it as the counter-revision record -- land the record or a superseding record; (2) report R82-M2 and lesson R82-M2 say 'RECHECK-ERROR line 7' while the committed probe/fixture print line 5 -- append a named erratum; (3) accept-o82/accept-d82 have no rows at the SKILL.md '## Gates and probes' registry home (last accept rows accept-c-75/accept-ca-75; standing gap rounds 76-82) -- Gate-standard registry duty; (4) the lesson '## Gate' does not record per-row URL + access date (CORPUS rule 1; quotes/locations are present); (5) S908 row shape: teaches opens lowercase 'rejected:' and the anchor cell names no chapter/page (chapter III only in reject-golden-bough.txt); (6) committed receipts cite /fast/scratch paths (fixtures committed, literal commands do not resolve at closure); (7) claim O before-wording 'nothing read the registry's recheck cells' is broader than its sweeps (base tools bind the cell and ignore it) -- the demonstrated capability is due-date derivation, which stands. SHONEN: all four boxes [~] with resolvable pointers; boxes 2-4 look checkable by a non-author, box 1 pointers resolve at SKILL.md:20/:505/:564; promotion is operator-owned, no [x] written.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 85,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 85,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 85
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "population-control counter (.ufo/waves/round-85/count-c1.py): re-derives the two-survivor X1/X2 population at any revision from that revision's bytes, requires both new arm labels plus exactly 17 passing arms in the graded r84 counter, runs each mutated copy's own --selftest in scratch and requires the r84 counter's 4-mutant met line at the same revision; C1_COUNTER_SELFTEST pass=18 fail=0",
+    "receipt-provenance counter + generator (.ufo/waves/round-85/count-c2.py, make-receipts.sh): grades three frozen receipts for exactly one cmd/rev/limits header before the single '# ---', ancestor-bound revisions, sha256 bindings of the named subject paths at the receipt's own revision, malformed bindings and the frozen summary token; 18 selftest arms",
+    "own-census observation and reconciliation (.ufo/waves/round-85/count-c3.py): runs tools/mori-census.sh --drift three times from R's own bytes, requires rc 1 and identical non-empty token lines, runs the r83 drift counter at R (C2=met live=derived), derives every union token's class independently and reconciles both directions (unmatched/unnamed); 20 selftest arms"
+   ],
+   "report": ".ufo/reports/round-85/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-85-verifier-spotcheck.md@fec2b328a4c83e0c61bc09d70e254ca47d547d34",
+    "rechecks": "conformance: report committed by the lane identity (d8927d9f, 49693fa7, after the lane tip), SHONEN heading with four [~] lines, every cited commit resolves and is an ancestor of master (scratch fixture ids 786aab60/409de5e8/f2efbfcb disclosed non-resolving with rebuild recipes; 7fd5e043/a558c89f are sha256 prefixes), lane clean and pushed at 66772cae. C1 re-measured over committed bytes (cases.append 15 -> 17, +29/0 lines inside selfcheck(), both new labels 1x) and evidence-verified from after-r85/tip-r85 (killed 2/2, arms=17, r84=met). C2 re-measured by hashing every bound path at 25a74d4c (5/5 sha256 MATCH), header grammar 1 cmd/1 rev/1 limits/1 separator per receipt, 5 bindings, summary tokens present; met line evidence-verified at d78dd652. C3 re-measured counter absence at 2cc4b1ae (git cat-file -e rc 128) and 20 selftest arms; met line evidence-verified (observed=3 aa=stable own_tokens=64 subject_tokens=64). No-harm: 0 deletions in every lane file, SCORECARD scores held, SOURCES 372 -> 374 append-only, census rc 0 with 35 W04, battery pass=57 setup=4 fail=0 unchanged, record/claim sweeps green (revisions=0, pointers=274). Discernment: non-author re-opened both sources live at closure - S600 HTTP 200 37681 bytes sha256 a558c89f identical to the three pins, 21-word quote verbatim at raw 175-177 (agree, admit); S601 arXiv HTTP 200 40386 bytes sha256 4bcb20b2, 12-word quote verbatim at line 121 (agree, reject)."
+   },
+   "commit": "mori-shokunin@66772cae74b4509ec2b38db6fd8b562438f379e6",
+   "closed_at": "2026-11-04T12:02:00Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-11-04T07:48:48-03:00 launch mori round=85 pgid=2001209 driver=hyaku-inline attempt=1; complete 2026-11-04T08:56:07-03:00. Status ok, admitted; all three claims verify and no owned axis is harmed. Wave: one v1 wave, 12 spawn/0 resume (4 executor, 2 scribe, 1 scout, 2 reviewer, 1 critic, 1 mutation-tester, 1 connector; attack 4/12 = 33.3%); dead seat Mo85R02C2 (empty output) disclosed and its C2 attack covered by three other seats; Mo85E01C1Arms stand-in and duplicate-arm collision disclosed with restore and independent re-verification. Conformance defects (status-neutral): LOG.md:5310 contains a literal '<fill>' placeholder in the Round-85 wave paragraph (append-only log; needs an appended correction); .ufo/waves/round-85/evidence/controls-r85-entering.txt is unreferenced and records rc=0 for the C1/C2 unmet outputs that controls-r85.txt records rc=1 for the same bytes; the contract has no A4 block (the C3 entering-control correction at 91f657f6 is cited as A4 by the report/SCORECARD/knowledge but §Amendments jumps A3 -> A5); the report says the five amendments are 'disclosed in the contract and the round lesson' but corpus/lessons/round-85.md names none of A1-A5; .ufo/prompts/mori-round-85.md (704 lines, f9a8a8d2) was committed by the lane identity - a recurrence of D84-1, recorded and not re-attributed. Routed to next round: (1) appended LOG correction for the placeholder, (2) delete or supersede the contradictory entering-control receipt, (3) add the missing A4 amendment block/errata, (4) append a report erratum naming the overstatement, (5) prompt-attribution defect on record. Observed, not defects: ignored __pycache__ bytecode under .ufo/waves/round-85/ (untracked, absent from the pushed tree); the three scratch fixture ids carry committed rebuild recipes. SHONEN: the four boxes look checkable by a named non-author on the cited evidence; promotion stays operator-owned and no [x] was written. No tool installs; no L0 question appended; no misroot by this lane; lane repo clean and pushed (ahead=0).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
