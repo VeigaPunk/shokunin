@@ -44624,6 +44624,51 @@
    "notes": "Dispatch digest: 2026-11-04T08:55:37-03:00 launch kumitate round=83 pgid=3737310 driver=hyaku-inline attempt=1; 2026-11-04T09:50:03-03:00 complete kumitate round=83; hyaku-inline attempt=1. Step-1 pass: report committed by kumitate-shokunin (56957b66 + erratum aaaf7989) after lane tip d5fc2c94; SHONEN heading present with 4 [~] lines; all five cited lane commits (base eb8e0095, freeze eda17453, scaffolding eca7debd, M 1c1a855a, tip d5fc2c94) are ancestors of master; lane clean (status empty, ahead=0, ls-remote master=d5fc2c94); prompt (704 lines) carries template sections 1-5 substitution-only (line 1 is the driver's real-path correction) plus the hyaku addendum with all five child-lane items and the >=8-seat one-batched-call L2 floor. Wave: 15 seats, resumeSends 0, attack 4/15 = 26.7%, connectors 1, band 8-16; five seats settled without report files (one provider limit, four partial finals in w1-results.json). Spot-check: 3/3 admits agree (S240 ufo-swarm-wave.mjs:1085-1087; S241 ufo-swarm-registry.mjs:27; S242 RFC 3339 capture line 99, sha256 c53b2d12...); the round-83 Gate has NO reject decision (R81-6 class relapsed), so the reject half was re-opened from round-82 S239 (OPA capture 75ea1452..., agree; the round-83 Errata correctly records the quote elision). Routed defects: D1 Gate with only admits (curate >=1 reject per round with reason+flip); D2 SCORECARD.md:3946-3949 round-83 prose stale (A 891->894 and pin.ready-handoff c1463c58 vs the stanza/receipt A=896 and d6e6ba8a; c1463c58 appears in no blob); D3 'every receipt carries a rev= line' false for close/{c1-probe-scaffold,c2-probe-scaffold,c1-repair-base,checklists}.txt; D4 duplicate '## Mistakes' heading + stale pending placeholder in corpus/lessons/round-83.md (fold into the next round's erratum, never rewrite filed bytes); D5 counter defects pre-registered (ARMS mismatch + ATTACK_SHARE fixture; c2 header tally 15/15 vs ARMS=16); D6 disclosed red plan-before-ready MAP_DRIFT pre-registered as round 84's first commit. Operator note: templates/round-prompt.md:1 renders '<{{LANE}}-repo>' literally; the driver's path correction hides it (template is operator-side). SHONEN boxes 1-4 look checkable by a non-author from committed evidence; no [x] written (promotion is operator-owned). Trends: expansion improved (177 -> 180 rows, two knowledge entries on uncovered ground); quality improved (suites 54 -> 70 and 105 -> 108, two seat-found repairs with regression cases, two entries amended append-only, harm=0); discernment unchanged (outside check agrees on all three admits but the round's Gate produced no reject, so the admit+reject pair could not be exercised; the wave's seat-level catches are real and counted under quality; no disagreement left unlearned).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 86,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 86,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 86
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "population-control counter",
+    "command-replay receipt gate",
+    "value-channel class reconciliation"
+   ],
+   "report": ".ufo/reports/round-86/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-86-verifier-spotcheck.md@6fc09d69edbb11e5070ff33258de49f062c0fb9b",
+    "rechecks": "Step-1 pass: report by mori-shokunin <mori@shokunin.local> as d281d53 (filed) and 9836323 (in-place table correction), both ancestors of fleet origin/master; SHONEN heading with 4 [~] lines, no [x] mark; 12/12 cited lane hashes exist and are ancestors of refs/heads/master (fec2b328, 5e80229a, 98d15d8f, c2bfded0, 87644619, 50d80df0, b0aa564c, 8b4b4ad7, 095bd1f6, 6e77fe0e, 4eab48c0, 57104423); jj-lane state ahead=0 behind=0 and git status clean before the spot-check; prompt is templates/round-prompt.md rendered plus the hyaku section-6 addendum. Neither lane gate was executed (PROTOCOL Gate standard, Closure consequence). C1 evidence-verified: arm sites probed statically 20 (fec2b328) -> 26 (6e77fe0e); five distinct anchor strings each occur once at 6e77fe0e and 0/1/0/1/1 at fec2b328; after receipt C1=met mutants=6 killed=6 survivors=0 total=6 arms=26 rev=b0aa564ca0de with its three counter digests recomputed to match (1912e87d, 94a645b5, e5f72141); label-only stub still reads unmet with survivors=6. C2 evidence-verified: five receipts carry the full grammar, 7/7 counter-sha256 bindings recomputed against each receipt own rev, two # replay: required; after-c1-r86 and replay-defeat-r86 bodies are both 356 bytes differing only at index 309 (killed=6 vs killed=7) while six MUTANT lines all read killed, so the header-only gate would pass an impossible body and the replay rule rejects it; subject 18 -> 21 arms with the three labels. C3 re-derived from committed bytes: 64 DRIFT_CLASS rows, 0 name-rule mismatches, 19 value-changed of which 14 bare-key, contradicting=2 (subject_commits=yes and window=launch..NOW are census literals at tools/mori-census.sh:2473); the counter file is absent at fec2b328 and the retroactive met reading is disclosed; TARGET now compared (count-c3.py:350). No axis harmed: SCORECARD diff adds the round-86 section, three capability rows and planned 87, removing only the superseded planned-86 block; no score decrease, no capability or criterion deletion. Census rc 0, 35 W04, zero E."
+   },
+   "commit": "mori-shokunin@6e77fe0e6bd4e71156276fe46880c758df0fc000",
+   "closed_at": "2026-11-04T13:04:28Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-11-04T09:03:34-03:00 launch mori round=86 pgid=3887824 driver=hyaku-inline attempt=1; 2026-11-04T09:55:57-03:00 complete mori round=86; hyaku-inline attempt=1. One v1 wave, 12 seats (4 executor / 2 scribe / 1 scout / 2 reviewer / 1 critic / 1 mutation-tester / 1 connector; attack 4/12 = 33.3%), w1-results.json committed at the tip; 8 seats died on a provider usage limit (E01-E04, R01, R02, C01, M01) and 4 landed (S01, S02, Sc01, K01). Conformance defects, status-neutral: (1) the report and SCORECARD:4411 assert each mutated subject selftest read pass=25 fail=1 but no receipt records it (after-r86.txt carries MUTANT ... killed rc=1 only) and SKILL:1372/SCORECARD:4427 assert the subjects pass=26/pass=21 without a committed stdout receipt because battery-r86.txt was never filed (E04 died); (2) the SCORECARD round-86 header still cites after measured at 50d80df0 while the receipt it names now reads b0aa564c; (3) the report sweep sentence every other path is additions only is false (SCORECARD is 51/11) and Landed seats (4) lists five names including the dead M01; (4) contract P-C1 says none of the six anchors exist at fec2b328 while three of five are present and four mutants apply; (5) the lesson Gate records no rejected candidate row (six exclusions live only in w1/Mo86S02Sources.md section 3); (6) the record-and-claim-sweeps-green sentence is inherited r85 evidence, not an r86 receipt; (7) the report was filed then rewritten in place (d281d53 -> 9836323) instead of an appended erratum. Routed to mori r87 (8 items in the spot-check). SHONEN: all four boxes carry [~] with resolvable pointers and look checkable by a non-author from this pass (SKILL registry row 20, LOG Round 86, the counters selftest commands, PROVINCE round-86 notes); promotion is operator-owned and no [x] was written.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
