@@ -135,7 +135,7 @@ Census command, run at round start and at round end:
 
 - Before: exit 0, **213 rows** (recorded at the declaration, `7fbe16d4`; `git show 0cf8e324:corpus/SOURCES.md`
   counts 213 data rows).
-- After: exit 0, **215 rows** (this attempt, 28 W04 duplicate-URL warnings, no E03/E04 finding).
+- After: exit 0, **215 rows** (this attempt, 27 W04 duplicate-URL warnings, no E03/E04 finding).
 - Rows added by tier: tier **A +2** — S309 (`src/packhead.h` at `v5.2.0`) and S310 (`src/packer.cpp` at
   `v5.2.0`), both HTTP 200 with recorded sha256 and a located quote in the lesson's `## Gate`.
 - Rows touched old→new: S309 `absent → mined`, S310 `absent → mined`, both `used-by
@@ -175,7 +175,7 @@ Census command, run at round start and at round end:
 ## Notes
 
 - **Stale-lane:** respawn-per-round driver; round 88 is this lane's only open mission (campaign target round
-  100; `next/` advanced to 89 by the driver, not by this report).
+  100). This report advances no round marker; the driver owns `next/`.
 - **Tool installs/upgrades: none** this round (host pins unchanged: `upx 5.2.0` at `/usr/bin/upx`, REA
   `rea-agents` 6.5.0 from the existing npx cache, both sha256-pinned in `claims.json`).
 - **Misroot sweep** (`git -C /home/vgpnk/Projects/shokunin status --porcelain`): no kaidoku file landed at the
