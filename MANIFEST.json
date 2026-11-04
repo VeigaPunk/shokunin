@@ -40747,6 +40747,54 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable - copied verbatim): 2026-11-03T21:43:35-03:00 launch tsukuroi round=71 pgid=2618318 driver=hyaku-inline attempt=1; 2026-11-03T22:18:11-03:00 complete tsukuroi round=71; hyaku-inline attempt=1. Report 14153783 by tsukuroi-shokunin (report path only) on origin/master; SHONEN heading 1 + four [~] lines, no [x]; nine cited lane hashes all ancestors of master; lane pushed at filing (ahead=0, local==remote==b0c784e0), closure adds spot-check b8938dd9 (ahead=0); untracked only inherited round-66/67 .ready.dispatched markers; dispatched prompt renders templates/round-prompt.md byte-identically (first 140 lines, diff rc 0) plus addendum 6/7, five child-lane items present, L2 14 seats >= 8, quoted route map matches agentModelOverrides (reviewer @m_zfl only). Wave 14 seats / 0 dead, roles 1/3/4/1/2/1/1/1, attack 4/14=29%, connector 1, residual 0. Conformance defects (status-neutral): report pointers probes/R1Reviewer/* and probes/R2Reviewer/* do not resolve (actual w1/...); C1 measured-revision counter run uncommitted and SCORECARD:5517 promises outputs in after/ that are absent, with 2959254a vs 2b358d2d named inconsistently; note MP5 'four /usr/lib/modprobe.d paths' stale vs capture/erratum 5; selftest-tally registered as a gate without a Gate-standard self-test; kmod reject reason path-precise but the source exists at man/modprobe.d.5.scd (v34, HTTP 200). Routed to the lane next round (spot-check section 6): R71-RECEIPT-MISPATH, R71-C1-UNRECEIPTED-RUN (r70 D2 class), R71-NOTE-MODPROBE-COUNT, R71-GATE-SELFTEST, R71-KMOD-LEAD-PATH. Open L0s tsukuroi round-64/60/57 routed around; assimilation stays closed. SHONEN boxes carry author-side [~] pointers a non-author could check, but promotion is operator-owned. Tool installs: none.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 71,
+   "date": "2026-11-03",
+   "type": "closure-correction",
+   "lane": "tsukuroi",
+   "lane_round": 71,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 71
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "selftest-case-timeout"
+   ],
+   "report": ".ufo/reports/round-71/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-71-verifier-spotcheck.md@a7015d2731cfc56796bd2e159a7e9151b60ca479",
+    "rechecks": "Same re-checks as rounds[1115] (C1 re-measured over committed bytes at 2b358d2d/tip; C2 evidence-verified with the lane gate not executed; SCORECARD +139/-0 and all six ordinals unchanged). This correction only repoints the spotcheck field to the artifact's final revision: one enumeration sentence in the C1 counter-run row was overbroad ('the only counter runs on record') and was corrected append-only by commit a7015d27 to list the fixture, mirror and mutant runs explicitly. No status, axis verdict or trend changed."
+   },
+   "commit": "tsukuroi-shokunin@b0c784e0d35c0116e6deff4a34b509af16d5d7c2",
+   "closed_at": "2026-11-04T01:27:31Z",
+   "campaign": "hyaku",
+   "supersedes": {
+    "round": 71,
+    "type": "closure",
+    "date": "2026-11-03"
+   },
+   "notes": "Append-only correction of rounds[1115] (tsukuroi r71 closure, 2026-11-03), which stands as written; per protocol the prior entry is never edited. Reason: the verifier spot-check artifact was revised once for precision (b8938dd9 -> a7015d27: the C1 counter-run row now enumerates the fixture battery, the SC1Entry mirror run, the R1Reviewer draft-mirror runs and the E2CounterAttack mutant runs instead of claiming only two runs exist), and the spotcheck pointer names the final revision. Statuses, verdicts, trends, capabilities, the routed defects and the dispatch/complete digest are unchanged from rounds[1115] (digest: 2026-11-03T21:43:35-03:00 launch tsukuroi round=71 pgid=2618318 driver=hyaku-inline attempt=1; 2026-11-03T22:18:11-03:00 complete tsukuroi round=71; hyaku-inline attempt=1). Lane tip after the verifier artifact: a7015d27 (ahead=0); lane round head remains b0c784e0.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
