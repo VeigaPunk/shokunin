@@ -40495,6 +40495,44 @@
    "notes": "Dispatch/complete digest (verbatim from .ufo/watchdog.log, mutable): 2026-11-03T20:45:55-03:00 launch kake round=75 pgid=3815628 driver=hyaku-inline attempt=1 | 2026-11-03T21:30:24-03:00 complete kake round=75; hyaku-inline attempt=1. Lane c9c5e484 -> 0df52aed (pushed, ahead=0, worktree clean, remote refs/heads/master verified); report fleet commit 2c862ffd by lane identity kake-shokunin at 21:29:33-03:00, after the lane tip at 21:29:27 (an earlier 2fa1fa86 preceded the tip by 12 s and was superseded in place). Round shape: ONE v1 wave w1, 14 seats (executor 4, scout 2, scribe 2, reviewer 2, critic 1, mutation-tester 1, connector 1, sentinel 1), attack 4/14 = 28.6 %, all 14 settled with non-empty output, no residual call; prompt carries the template sections 1-5 verbatim under placeholder substitution plus the hyaku addendum and scratch discipline. Verifier spot-check landed as a0491fcd (protocol identity, only corpus/lessons/round-75-verifier-spotcheck.md), remote-verified. Conformance defects, status-neutral, routed: (1) LOG.md:2534 names counter 0699a672 (superseded blob at 4e3fc159) while the tip blob is 63e321b2; (2) LOG.md:2535 names the receipt as f3128628 (superseded cut) while the tip receipt hashes 15768f81; (3) the report's before-after table is headed 'After (tip 6c10b433)' while its cells and receipts name f87d14a9, and the tip paragraph calls 3ae076ab 'the measured revision' while the battery file measured 306fff49; (4) round-74 R5 is only partly closed - of the three files it named only c74_registry_gap.py is bound, c74_sidecar_reobserve.py and scripts/sidecar_reobserve.py still have no committed sha256 receipt and no registry row; (5) round-74 R3 is undispositioned - no sweep count delta (193->195 files, 6->7 unannotated cites) is recorded and the sweep still exits 1; (6) the QUALITY.md round-75 able-to-fail quote 'files=15 append_only=false met=false' is not a contiguous substring of controls/ctl-deletion.txt; (7) the C2 after-quote omits declared_match=false (receipt subject abfbfaac != carrier f87d14a9) and the reviewer 16-forgery matrix ran on predecessor blob 62b795ea, not the landed 162dd685; (8) c74_registry_gap.py:25 still says 'five contract fixtures' (lane-routed). Operator note: the four SHONEN boxes look fully checkable by a non-author from the repo; promotion is operator-owned and was not touched. No promotions, no mints, no tool installs.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 66,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 66,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 66
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "calibration": "improved",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-66/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-66-verifier-spotcheck.md@a7a4ce6902204d5c6cc6c4e3e78b4bffe8312b92",
+    "rechecks": "C2 re-measured by me over committed bytes: git ls-tree corpus/knowledge .md = 145 at 311079d8, 146 at 02d4880b; README coverage-map backticked stems 145/145 and 146/146 (score 10.0 both); recipe-A date numerator 142/145 score 9.79 hidden 3 -> 142/146 score 9.73 hidden 4; the Owned-axes coverage row 142/142 -> 146/146; atoms A2 false -> true, mismatches 1 -> 0. C1 evidence-verified, not re-executed: control 1/5; --verify 5/5 at freeze 7b63dd5d and re-run at record; --manifest entries 30 count_ok true cache empty; --skip-run closure null exit 1; CLOSURE 27 keys + 3 pins = 30 re-counted from committed bytes; instrument sha256 3c5cfb03 unchanged at 78fa9666/7b63dd5d/6d82aa32; selftest 30/0; the r65 order/count/skip-run defects re-read in the r65 source. Census validate exit 0, 173 -> 174 rows, A=160 B=9 C=5, mined=165 rejected=9, 19 standing W04. Spot-check re-opened S267 (HTTP 200, 280617 bytes, sha256 572c354e match, 18-word quote at raw lines 587-591) and agreed with the admit and all three sampled rejects (S266 duplicate, r65 date-mode as recipe A, count fixture as source); S267 row status mined and used-by resolves. No axis harmed: SCORECARD diff only the coverage row plus the round-66 section; depth/calibration rows byte-equal; PROVINCE empty; SKILL 2/0; LOG additions only."
+   },
+   "commit": "kaidoku-shokunin@6d82aa325038fdb67f563b1ff508d0870b14d8c1",
+   "closed_at": "2026-11-04T00:36:54Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest: 2026-11-03T21:04:09-03:00 launch kaidoku round=66 pgid=983868 driver=hyaku-inline attempt=1 | 2026-11-03T21:28:06-03:00 complete kaidoku round=66; hyaku-inline attempt=1. Step-1 conformance clean: report committed by lane identity 7edbdc38 (erratum) after dae13f80, filed after the cited tip 6d82aa32; SHONEN heading 1 with four [~] box lines against four boxes; all seven cited commits exist and are ancestors of main; jj state ahead=0, git status empty, remote main = 6d82aa32 before my spot-check; prompt 704 lines, sections 1-5 verbatim against templates/round-prompt.md with the five child-lane items and the L2 floor, run-15 band 8-16 satisfied by 12 seats (3 executor, 1 reviewer, 1 critic, 2 mutation-testers, 1 sentinel, 1 scout, 1 connector, 2 scribes; attack 4/12 = 33%). Claims: R66-C1 depth improved (routed r65 counter defects repaired; 1/5 control -> 5/5, count 30 asserted, skip-run closure removed) and R66-C2 calibration improved (stale 142/142 row -> 146/146 re-derived at the record; mismatches 1 -> 0); no coverage claim, coverage unchanged. Conformance defects (status-neutral): D1 the Landed-changes row for 02d4880b cites a nonexistent LOG heading '## 2026-11-03 - round 66, KaidokuR66 - record' and 02d4880b adds no LOG bytes (same class as the r65 defect this round corrected) - routed; D2 the C1 receipts carry no measured revision while C2's do (Gate standard) - routed; D3 r66-w1-results.json has no per-seat status field, so '0 dead' is inferred from twelve outputs - routed as advisory. The report's original 5de8a1de-row omission was self-corrected by erratum 7edbdc38. The lane's own routed witness gaps M66-5/6/7 and mutation survivors M5/M2 are disclosed and acknowledged, not re-routed. No capability row entered; both instruments are registered as gates under QUALITY #92. SHONEN boxes are [~] and not fully checkable by a non-author from this round's evidence (box 3 is a judgment; instruments not re-run by the judge); promotion is operator-owned and none recommended. Spot-check: kaidoku-shokunin/corpus/lessons/round-66-verifier-spotcheck.md@a7a4ce69. Nothing promoted, nothing minted.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
