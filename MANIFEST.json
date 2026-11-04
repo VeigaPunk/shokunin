@@ -43195,6 +43195,50 @@
    "notes": "Dispatch/complete digest: 2026-11-04T03:40:48-03:00 launch kama round=77 pgid=1329635 driver=hyaku-inline attempt=1; 2026-11-04T04:29:58-03:00 complete kama round=77; hyaku-inline attempt=1. Step-1 PASS: report 822dc7ac92facb15228f48e7710b29a0233a1ced by kama-shokunin <kama@shokunin.local> (committer 04:29:27, after lane tip 6c1550a1 at 04:28:40, before complete); SHONEN heading x1 + four [~] lines vs four boxes, SHONEN.md untouched, no [x]; all 20 cited hashes exist and are ancestors of refs/heads/master; jj-lane state branch=master local=remote=6c1550a1 ahead=0 behind=0, porcelain empty; prompt .ufo/prompts/kama-round-77.md §1-§5 template-verbatim modulo substitutions (five child-lane items present; run-15 map + 2026-11-03 amendment; MISSION §L2 buckets advisory, divergence noted). Claims: C1 operability verified (capability citation-baseline), C2 freshness verified (capability append-registers), C3 calibration honest miss on the frozen corrected=2 (observed corrected=3; three value-bound corrections re-derive); selftests 7/7/4. No axis harmed (scores hold 8/8/7/9/7/7). Conformance defects (status-neutral): report cites LOG.md:3130 but §Round 77 is at LOG.md:3137; declared mutating-git breach (L1 ran git checkout -- in the lane; lesson Mistakes 4); gate registry row SKILL.md:309 still eight arms/arms=8/pass=18 while the landed gate runs nine arms and prints arms=9/pass=22; gate green receipt measured at f9b0ab6c, two record commits before the tip; SCORECARD cites the C3 freeze divergence as Mistakes 4 (it is Freeze divergences item 3). Routed to the lane: update the gate registry row; re-run the gate at the tip; D5 not closed (append-exempt-class row still points at the red round-76 module and is unmarked); add coverage-map rows for baseline-receipt-binding.md and register-cutoff-split.md; register-cutoff-split.md source lacks an S### row; resolve the C2 predicate/ruling divergence (frozen 'own introduction cutoff' vs ruling (a) ancestry-to-audit-revision), the worktree-register limit and the same-commit growth hole; fix the LOG.md:3130 and SCORECARD pointer defects. SHONEN boxes remain [~]; the four boxes look mechanically checkable by a non-author but promotion is operator-owned. Report pushed at fleet HEAD 0f2adaa8 (origin/main 4b1d1e11, 0 ahead/0 behind).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 76,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 76,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 76
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "contract-outcome-field scoring and its observability bound (mado r76 C1)",
+    "interprocedural and dynamic-key deletion census (mado r76 C2)"
+   ],
+   "report": ".ufo/reports/round-76/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-76-verifier-spotcheck.md@aeeef067bd63672dfc681d6dacc3797f53ffd1f9",
+    "rechecks": "Both claims evidence-verified from committed gate receipts, not by executing a sibling gate: C1 16 cases/16 correct/4 mutants killed/0 base-killed at rev 3588a527 with the matched held control 0/4 and all 16 expectations cross-checked by jq/diff; C2 59/59 vs base 55/59 at rev 3588a527 with the 47-case r75 prefix byte-identical by canonical jq hash, 12 appended names, four base misses exactly the four new positives, and population 20/13/13/0 re-derived (20 check-*.py, 13 read-plane readers, 13 guard carriers). Harm watch: index 93 -> 95 knowledge files and 95/95 index rows, ledger 133 -> 136 data rows, seven frozen instruments blob-identical, SCORECARD additions only (78/0). Sources census exit 0, 49 lines; registry 391 -> 393; S455/S456 quotes re-opened and exact."
+   },
+   "commit": "mado-shokunin@2308e12ab19949cd86832c5ba4bcb29855a9a4f5",
+   "closed_at": "2026-11-04T07:46:30Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (.ufo/watchdog.log, mutable): 2026-11-04T03:38:57-03:00 launch mado round=76 pgid=1299532 driver=hyaku-inline attempt=1; 2026-11-04T04:35:46-03:00 complete mado round=76; hyaku-inline attempt=1. Step-1 conformant apart from the status-neutral defects below: report .ufo/reports/round-76/mado.md committed by mado-shokunin <mado@shokunin.local> at 25da2eca (04:34:51-03), after lane tip 2308e12a (04:33:47-03) and after every cited lane commit; 12/12 cited lane hashes exist and are ancestors of master; lane state branch=master local=remote=ahead=0 behind=0; SHONEN heading appears once with four [~] boxes; prompt ebaae3f3 (03:38:56) carries template sections 1-5 verbatim plus the five child-lane items and the run-15 addendum. Round shape: one v1 wave, 13 seats (band 8-16), scout 2, executor 3, scribe 2, reviewer 2, critic 1, mutation-tester 1, connector 1, sentinel 1; attack share 4/13 = 30.8%; 13/13 settled with non-empty output, 0 dead, no residual; the L1 held the planner seat (validator rejects planner as a swarm role). Claims admitted, both evidence-verified (never executed a sibling gate): C1 calibration 0/4 -> 4/4 outcome-rule mutants on the frozen sixteen-case set, cases=16 correct=16 killed=4 base_killed=0 at rev 3588a527 (matched held control 16/16 mz-only, kills 0/4); C2 operability 55/59 -> 59/59, population 20/13/13/0 unchanged, at rev 3588a527 with 47 carried cases byte-identical and 12 appended; both do-nothing controls miss. Trends: expansion improved (two entries, index 93->95, S455/S456 mined), quality improved (QUALITY 128-131; frozen controls unchanged after freeze; repairs at named commits), discernment improved (outside spot-check agrees with both admits and the S446 reject; wave found the repairs the selftests missed; negative result recorded). No owned axis harmed; coverage/depth/freshness/adjacency unchanged. Routed conformance defects for round 77 (status-neutral): D1 the two new knowledge entries omit the CORPUS-mandated opening source:/verified-at:/recheck: trio, so the report's 'each source:-bound' wording is not literal; D2 SCORECARD:4339 calls 5dade9b3 c2-r76's last change though the instrument last changed at 3588a527, and no rev=5dade9b3 receipt exists (repeat of r75 R5); D3 claims-declaration-r76.md:26 still says 'fifteen-case expectation' and the c1-r76 counter docstring still lists the superseded mutant names, an example cases=15 row and 'fifteen modes'; D4 mistake counts disagree (report six, LOG four, lesson five M76 rows, landing commit four; the quality bullet says six and lists eight repairs); D5 the 56m49s stale-lane line omits progressing/silent (activity makes it progressing); D6 three untracked round-76 handoff files (w1.ready, w1.ready.dispatched, w1-run.err) remain; D7 report line 119 says the tip adds the receipt and the census though the census landed at e160d18e; D8 declaration R2 points selftest receipts at receipts/ while they are at w1/R76ExecC1/ and w1/R76ScoutChain/probes/. Source spot-check: S455 and S456 re-opened with exact sha256 and located 18- and 10-word quotes; S446 reject re-opened at stdtypes 5299/5523/5529 and agreed. Spot-check artifact committed at aeeef067 (protocol identity, pushed; ls-remote origin master = aeeef067). No promotion, no mint; SHONEN box 2 (end-to-end domain task) is not met by this instrument-only round, so boxes 1/3/4 may look checkable but promotion stays operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
