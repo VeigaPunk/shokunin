@@ -43063,6 +43063,49 @@
    "notes": "Dispatch/complete digest (copied from the mutable .ufo/watchdog.log): 2026-11-04T03:37:25-03:00 launch kaidoku round=73 pgid=1288293 driver=hyaku-inline attempt=1; 2026-11-04T04:05:47-03:00 complete kaidoku round=73; hyaku-inline attempt=1. Shape: one v1 wave r73-w1, 16 seats (5 executor, 3 scribe, 2 reviewer, 2 mutation-tester, 1 critic, 1 sentinel, 1 scout, 1 connector; attack 5/16 = 31%), all 16 settled with non-empty outputs; L1 held the planner seat; no residual call. Three claims on three axes, all capability acquisitions: R73-C1 coverage (kernel-side witness, A12), R73-C2 calibration (record-vs-receipt audit), R73-C3 operability (reader-seam battery); lowest-axis coverage, no nudge waiver. Report is real, not a marker. Routed defects for round 74 (status-neutral, all in the spot-check): (1) the three capability rows did not enter the SCORECARD ## Capabilities table (the r70 defect class; r71 fixed it, r73 dropped it); (2) S275 used-by omits corpus/knowledge/2026-11-04-r73-kernel-witness-record.md although the new entry cites S275, and the report says 'Rows touched old->new: none'; (3) no round-73 search-log note in corpus/SOURCES.md for the bounded five-page search; (4) the opened-and-rejected pages (proc.5.html stub, proc_cmdline(5), proc_pid(5), the section-5 index) carry no REJECTED rows; (5) the census W04 count is overstated in the report (23, not 24); (6) the C1 before receipt pre/c1-at-base-r72probe.json does not bind its own probe path/hash; (7) corpus/README.md lost its trailing newline; (8) the freeze 8b928422 INSTRUMENT_PIN_MISMATCH flag stands (disclosed, permanent for that freeze; the container was corrected at the record revision and the ledger row says so); (9) the lane's own routed items stand: six A12 selftest survivors (MutProbe) and D7's false-green (ExecC2). Operator note: all four SHONEN.md boxes remain [ ]; three look checkable by a non-author, and promotion is operator-owned. Spot-check landed by the protocol identity at 04fdc2c4 and pushed (origin main == it).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 78,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 78,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 78
+   },
+   "admitted": false,
+   "verdict": "rejected-harmed",
+   "verdicts": {
+    "operability": "improved",
+    "coverage:kimi-layer": "harmed",
+    "coverage": "unchanged",
+    "coverage:script-layer": "unchanged",
+    "coverage:runtime-layer": "unchanged",
+    "coverage:omp": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "omp-shape-compare"
+   ],
+   "report": ".ufo/reports/round-78/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-78-verifier-spotcheck.md@5019803b4e451094cf58c555408ea37490cbc07a",
+    "rechecks": "C1 counter evidence-verified 12/12 (base 4/12, stub 5/12, mutants 8/8) and harm receipt re-read (base coverage_kimi=9 vs patched 10 on a de-named heading); C2 evidence-verified 11/11 (base 2/11, stub 5/11, mutants 10/10, selftest 79 cases); re-measured K_MEMBER_RULES 5->0, import/formula lines, SOURCES 166->167 / tier A 142->143, census exit 0; spot-check agrees on S228 admit (live HTTP 200, sha256 a501ef22 identical), S227 re-open (quote present, 23 words) and merge/kumitate bulk-append reject (155 rows / 161 lines, 70 entries)"
+   },
+   "commit": "kumitate-shokunin@94ab406521369a11621103b1b22e6fe95bbeeab9",
+   "closed_at": "2026-11-04T07:31:02Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-04T03:29:00-03:00 launch kumitate round=78 pgid=1241204 driver=hyaku-inline attempt=1; 2026-11-04T04:23:09-03:00 complete kumitate round=78; hyaku-inline attempt=1. Report committed by kumitate-shokunin as 88ccf5b2 (sha256 f690710e), after lane tip 94ab4065 and pushed; lane state ahead=0, no uncommitted work. Wave: one v1 wave, 14 seats (attack 6/14 = 43%), 0 dead, inside the 8-16 band. C1 coverage:kimi-layer: predicate held 12/12 but the frozen formula replaced the K_sections documentation factor — de-named heading base 9 vs patched 10 (close/harm-counterexample.txt) — so the axis is harmed and the round is not admitted; operator ruling open (L0 kumitate | round-78). C2 operability capability omp-shape-compare: improved (11/11, 79-case selftest, 10/10 mutants, non-scoring). Conformance defects (status-neutral, routed to r79): (1) 11 report-cited close/ receipts do not resolve (proxy-json, census-selftest, omp-census-selftest, mutants-c2, proxy-selftest, proxy-check, census, shape, readme-map, spotcheck-check, sources); their content is in close/gates.txt, close/gates2.txt, close/selftests.txt, close/proxy.txt and build/K78MutC2/battery-standin.txt; (2) close-number drift: report/lesson say C2/C2_total 189 and README_MAP 189 while close/gates2.txt reads 190, and the lesson's close A=874 is the working-tree proxy.txt run vs the final 868. Routed: dead pointers, a close-number erratum, and the C1 harm ruling with a discriminating arm in r79. SHONEN: four boxes carry resolvable evidence (39/39 checklist, LOG round-78 end-to-end runs, frozen plan/counters, PROVINCE byte-unchanged); a non-author could check them — promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
