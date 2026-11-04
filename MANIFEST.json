@@ -47014,6 +47014,47 @@
    "notes": "Dispatch digest: 2026-11-04T17:04:56-03:00 launch kasegi round=66 pgid=2889804 driver=hyaku-inline attempt=1; 2026-11-04T17:45:15-03:00 complete kasegi round=66 attempt=1. Conformance ok: report committed by kasegi-shokunin (acf6101b, author 17:43:23/commit 17:44:16) after lane tip 17:41:28 and cites 51a5cb0d; ## SHONEN x1 with four box lines; all seven cited commits plus measured e8a865da and base b6db9e81 exist and are ancestors of refs/heads/master (detached git HEAD); jj-lane state ahead=0/behind=0, status clean, ls-remote 51a5cb0d; prompt template l.1-137 byte-identical modulo four macro substitutions with the hyaku addendum appended and all ten contract items present. Round shape: one v1 wave, 9 seats (3 executor, reviewer, critic, mutation-tester, scout, connector, scribe; L1 planner), 3/9 attack seats (33%), one connector; eight evidence reports, one dead MutationCat (402 Insufficient account funds, opencode-go/deepseek-v4.1-flash) with no report or directory, disclosed with telemetry and no replacement; WAVE-DONE preceded the final measurement and the report. W1-results null outputs with a kernel-restart note are disclosed; verdicts read from the eight seat files. Routed (lane, minor): V66-1 S096 and S099 cite the same own-work path with disjoint anchors - name the split next lesson; V66-2 report/LOG phrasing 'attack3/9 (completed2/8)' should spell out 3 attack seats of 9 and 2 of 8 evidence seats. Routed (fleet/operator, not lane): V66-3 the hyaku addendum keeps a 32-128 seat shape at l.353-365 beside the binding 8-16 line at l.145 with no supersede clause, and ufo-wave-policy.json (min 8/max 256) would let it validate; V66-4 .ufo/state/kasegi.round=17 is stale legacy watchdog state while the hyaku driver state puts this round at 66. Operator note: SHONEN boxes 1/3/4 are [~] author-asserted but checkable by a non-author against committed bytes, box 2 stays [ ]; promotion operator-owned, no box marked here. No tools installed or updated; pacman untouched.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 85,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 85,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 85
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "unprovable",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-85/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-85-verifier-spotcheck.md@a722c60493f24f83429112e9123058835b2cdd82",
+    "rechecks": "Step-1 clean: report 7d7ffded by mado-shokunin, filed after lane tip b542d315 on committer stamp 17:47:38 vs tip 17:45:43 (author stamp 17:45:16 is the jj change creation time and precedes it; the filed bytes cite a hash that cannot predate its commit); all 7 cited hashes exist and are ancestors of refs/heads/master; jj-lane.sh state ahead=0 behind=0 tracked=0 untracked=0 with empty status before the verifier commit; prompt durable at 098c1879 before the 16:50:57 launch and carries template 1-5 plus addendum 6 with all five child-lane items; SHONEN heading with 4 [~] rows = 4 boxes, no [x]; real report not a marker; ONE 13-seat v1 wave (executor3/scribe3/scout1/reviewer2/critic1/mutation-tester1/sentinel1/connector1, planner=L1, 5 attack seats) with 13 committed seat reports and 13 null raw outputs, disclosed. C1 evidence-verified from committed receipts (no lane gate executed here): reviewer and independent seat re-execute the frozen counter at 3905311c for cases=72 correct=72 mutants=51 killed=51 base_correct=62/72 carried=61/61 selftest=152/152 TARGET_MET rc0; plain re-counts here give 72 case lines/72 correct, 51 mutant lines/51 killed, base control 62/72 with MUTANTS_SKIPPED, 11 appended case names parse-equal after the carried 61, and 10*62/72->10*72/72 = 8.6111->10.0000; controls byte-identical at 3905311c/d7c40e6d/b542d315 and the only post-freeze C1 changes are a docstring line and VERSION r84-v1->r85-v1. C2 evidence-verified: frozen 3905311c exits 2 at setup (SKILL.md working-tree binding, and a clean frozen clone fails on carried case 'version' field 'negatives') so zero cases executed; successor final-c2 receipt at 2b6dd76 reads cases=36 executed=36 matched=36 shapes=26/26 anchors=36/36 rows=36/36 mutants=37 killed=33 TARGET_MISSED rc1 with survivors regex-anchor-dropped/line-anchor-prefix/negatives-skipped/samples-skipped each 36/36, reproduced by the independent seat and a clean-clone replay; before-state is 3 contained fixtures (unguarded 0/0/0, guarded 0/7/141), not a 36-row baseline, as the report says. Harm watch evidence-verified, none executed: index106/106 missing0/dangling0/duplicates0, ledger156/156 uncovered0 bad_pointer0 (freeze red 2->0), axis checked3 mismatched0, standing selftest460/460, counter selftests119/119 and106/106, wave settled1 OK - all exit0; SCORECARD diff base->tip is 52 insertions and 0 deletions, so no owned axis was rewritten or harmed. Census validate exit0 with W04 duplicate-URL (including new S490) and W01 S277 unfiltered; plain counts 422->425 rows, tier A404->407 B10 C8, mined396->398 queued10 rejected16->17, knowledge104->106."
+   },
+   "commit": "mado-shokunin@b542d3157d5058ac9a6086bd9438969a25bdfb62",
+   "closed_at": "2026-11-04T20:50:05Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (.ufo/watchdog.log, mutable, copied): 2026-11-04T16:50:57-03:00 launch mado round=85 pgid=2704703 driver=hyaku-inline attempt=1; 2026-11-04T17:47:54-03:00 complete mado round=85; hyaku-inline attempt=1. Verdict rejected-honest-stop: C1's frozen finite cause-bound predicate verifies (62/72->72/72, 51/51 kills, carried61/61, base control62/72, all re-counted) so coverage is improved; C2's frozen instrument never executed a case (setup rc2 at 3905311c) and its successor misses the declared kill target (36/36 rows, 33/37 kills, TARGET_MISSED rc1), so operability is unprovable, never harmed. No capability, promotion or C2 scalar is awarded. Trends: expansion improved (knowledge104->106, rows422->425, tierA404->407, mined396->398, rejected16->17); quality improved (freeze ledger red uncovered2->0 repaired, QUALITY140-142 land citing lesson85, the 128+N over-claim and both off-by-one section locators corrected rather than repeated); discernment improved (this non-author spot-check agrees on two admits S488/S489 and three rejects S490/POSIX-128+N/declaration locators, each re-opened at its pinned bytes; the lane graded itself unchanged only because the outside check was pending). Conformance defects, status-neutral: the prompt's routing lines conflict internally (run-15 split vs the older m_mim-off/scout@m_antigravity note), disclosed by the lane with no override made. Routed to mado next round: R1 the four C2 survivors (conjunct deletion and already-anchored frozen patterns) need an independently observable call/negative observation, without widening the frozen population; R2 the C1 cause test is stdout substring membership (an all-cause flooding tool scores 72/72 cases, 48/51 kills) and alloc-negative is stage-only, so nine of ten tokens are case-bound; R3 numeric status cannot authenticate termination cause (S490 flip, QUALITY142); R4 all 13 raw seat outputs are null while check-wave-done returns settled=1 verdict=OK - bind published claim rows to the wave-done verdict and treat null outputs as missing telemetry (considerthese proposal 2 still unimplemented); R5 keep the landed append-only LOG correction pointer (LOG.md:4189) for 'old cells unchanged' and the false 'nine removed' ancestry; R6 future declarations must cite the section numbers of the bytes actually opened and keep an unreachable endpoint recorded as unreachable; R7 lane scratch escaped once to the shared root (receipts/cleanup-r85.json). SHONEN: all four boxes look checkable by a dedicated non-author promotion review; this closure writes no mark and promotion is operator-owned. No tool installed or updated; no sibling repo, lane-authored file or other lane touched.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
