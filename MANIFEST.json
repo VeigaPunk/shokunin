@@ -47341,6 +47341,48 @@
    "notes": "Dispatch/complete (watchdog, mutable): 2026-11-04T18:09:26-03:00 launch kaidoku round=86 pgid=145113 driver=hyaku-inline attempt=1; 2026-11-04T18:41:39-03:00 complete kaidoku round=86; hyaku-inline attempt=1. Report fda6a6ec by lane identity, lands after lane tip 697193400; all six cited lane commits exist and are ancestors of refs/heads/main; lane state ahead=0 behind=0, only the four orchestrator .ready markers untracked; prompt carries template sections 1-5 verbatim plus hyaku addendum section 6. Status ok, not admitted: C1 missed its frozen target (A3 requires exactly one '| coverage |' row, the card has 23 at BASE and after), C2 met 5/5 on operability, an unowned axis. Routed to the next steered round: V86-1 C2 must name an owned axis or enter the capabilities table (L0 question filed, kaidoku | round-86); V86-2 S305 is a new SOURCES row written with no opened document and no located quote; V86-3 report says S255 'opened 2026-11-04' where the row's opened cell is 2026-11-01 (re-open); V86-4 wave results record output null for all twelve seats and the wave has no DONE markers (ScribeSources empty); V86-5 L1 made one direct task call against the inline-spawn handoff (cancelled, no output); V86-6 re-declare C1 atom A3 with a pre-freeze row sweep (M86-3); V86-7 gate counter accepts a foreign self-test command, a verdict-map substring, a silent six-cell row drop and a wrong-round pin, and 13/20 mutants survive the two counters' selftests (M86-2); V86-8 carried R85-4 and the L1-held planner seat. Operator note: fleet working tree carries M .ufo/reports/round-84/kama.md and untracked .scratch/closure-* files that are not kaidoku round-86 work. SHONEN box 2 stays unchecked (no end-to-end domain task); boxes 1, 3, 4 remain author-asserted [~], no [x] written.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 85,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kotoba",
+   "lane_round": 85,
+   "lanes": {
+    "kotoba": "ok"
+   },
+   "lane_rounds": {
+    "kotoba": 85
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "unprovable",
+    "consistency": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "improved",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-85/kotoba.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kotoba-shokunin/corpus/lessons/round-85-verifier-spotcheck.md@e5d966b51494f4177868ad5f46806a204783ef6c",
+    "rechecks": "C1 (depth) not re-executed by design (lane quarantine + PROTOCOL Gate standard); verified from committed evidence: base receipt 4 of 8 exit 1, frozen instrument sha256 79b8273c...957a equal to the receipt, oracle Table B W5/W6/W7 = 8 of 8 with W0/W1/W2 = 6/5/5, R8 identity findings confirmed in the frozen bytes (QUOTE_WORDS_MIN=3 and a location-free QUOTE regex against the plan's 'located quote of <=25 words'), quarantine effective (0 verifier path, 0 SKILL mentions), production description unchanged by own parse (1021 chars, first sentence 151, Triggers at 152, Anti-triggers at 302) -> unprovable, killed before data. C2 (freshness) re-derived by an independent plain measurement: sha256sum /home/vgpnk/.local/bin/omp = 6737ee24...b7b0f and mtime 2026-11-01T17:11:07.281808804-03:00 equal the committed pin, omp.real absent (the base exit-2 cause), after-receipt rc 0 with OK 3/3 pins hold and surfaces pass 7 / fail 0 at bf9ab28, controls K2/K3/K4 exit 1 with K5 coarse-mtime named as pre-existing -> improved. No axis harmed: registry 66 of 66 phantom 0 (own row count 66), corpus integrity 8/9 with the carried commit_unresolvable red real at corpus/lessons/round-81.md:8, SCORECARD/SHONEN/PROVINCE untouched, append-only numstat 149/45/18/310 with 0 deletions. Conformance ok: report under the kotoba identity e48e879, lands last (18:31:14 vs lane 18:02:18), SHONEN heading with four [~] lines, all ten cited commits ancestors of master, ahead=0 tracked=0 untracked=0, remote == local cfcb9a4, prompt carries the full template contract plus the hyaku addendum, 16-seat wave with strict attack 4/16 = 25 %."
+   },
+   "commit": "kotoba-shokunin@cfcb9a4ff8e66452cec362efdb74af6c2c8fc7eb",
+   "closed_at": "2026-11-04T21:48:37Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (mutable .ufo/watchdog.log, copied): 2026-11-04T16:48:00-03:00 launch kotoba round=85 pgid=2676091 driver=hyaku-inline attempt=1; 18:02:57 lane-dead-no-report (no landed report); 18:02:59 launch attempt=2 pgid=40132; 18:03:39 lane-dead-no-report; 18:03:41 launch attempt=3 pgid=56110; 18:04:12 lane-dead-no-report; 18:25:33 launch attempt=1 pgid=739518; 18:34:16 complete kotoba round=85 hyaku-inline attempt=1. The three dead attempts left no uncommitted work; the landed attempt inherited and re-verified their wave and commits. Status ok (real report, real work, cited hashes resolve). Routed defects, status-neutral, for the lane's next round: D1 the report's 'eight coverage-map index rows' is 9 at the tip (git diff 1c8f37e cfcb9a4 -- corpus/README.md | grep -c '^+| ' -> 9; the ninth is the Round-85 lessons row) - Q76 class, name the selection rule; D2 the C2 're-measured at the tip cfcb9a4' after-value has no committed receipt (grep -rl cfcb9a4 .ufo/waves/round-85 prints nothing; c2-after.json records bf9ab28); D3 verifiers/corpus-baseline.json round85_rerecord note opens 'round 79 C1 repair ... re-recorded at 43ae91c' (wrong subject carried from the round-79 note); D4 the report cites LOG.md section Round 85 as :3088-:3240 but LOG.md is 3235 lines; D5 the report's SOURCES size pair 203260 -> 202824 B is normalization-only, the committed file is 202884 B after the +60 B used-by text; D6 receipts/c2-controls.txt K4 first stdout line is truncated ('nary_sha256:'); D7 r85-w1-results.json carries output null for all 16 seats after an orchestrator kernel restart and WAVE-DONE is asserted in LOG.md with no committed marker artifact (the lane discloses both; 16 seat report files exist). Discernment spot-check agrees on all five sampled decisions (S213 admit re-opened live: HTTP 200, 13403 B, sha256 7cc54fbb... equals the entry's digest and the r76 snapshot by cmp; reject of the telemetry claim: grep -ic telemetr -> 0; reject of the TRAE/Chiba tension: grep -inE 'trae|chiba' -> 0 hits while page line 156 advises negative-scope wording; S213 row quote 17 words at page line 92 under 'Running multiple times'; no new S-row because S213/S210 already hold the URL). Census validate exits 0 with 33 W04 and 0 E rows, rows 180 -> 180. Not admitted: the owned-lowest claim C1 is unprovable (killed before data on its own independent oracle's false greens) and no axis was harmed. Operator note: SHONEN boxes 1, 2 and 4 now have non-author-checkable evidence (registry 66/66 at the tip, the C2 run with its three controls, PROVINCE untouched and the round-74 census as the guard's base); box 3 is not [x]-ready (no fresh non-author cold run). Promotion stays operator-owned; no [x] was written.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
