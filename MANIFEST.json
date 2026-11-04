@@ -41012,6 +41012,49 @@
     "date": "2026-11-03",
     "entry": 1119
    }
+  },
+  {
+   "round": 73,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 73,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 73
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "calibration": "improved",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "wave-record reconciliation (first-working round 73): a round record's own execution claims (seat count, committed seat-report count, role multiset, attack share) re-derived from the committed wave artifacts, four row kinds with span/token binding over git objects and a standing six-row manifest whose two red arms are the r72 closure's routed record defects; evidence tameshi-shokunin/tools/wave-reconcile.py + tools/wave-reconcile.json, .ufo/evidence/round-73/wave-selftest-r73.txt (WAVE_RECONCILE_SELFTEST 12/12) and wave-reconcile-live-r73.txt (rows=6 met=6 unexpected=0)"
+   ],
+   "report": ".ufo/reports/round-73/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-73-verifier-spotcheck.md@3d6ea1ee8e551e3baf94904384890e3a112088f0",
+    "rechecks": "Step-1 PASS: report 236a034a by tameshi-shokunin 37 s after lane tip 5c9a5559 (complete 22:25:36), SHONEN heading 1 + 4 [~] lines vs 4 boxes, all 23 round commits ancestors of refs/heads/master (detached HEAD), jj state ahead=0 local==remote, porcelain clean, prompt = 140-line template rendering (22 changed lines, substitutions only) + run-15 addendum. C1 RE-MEASURED over committed bytes, tool not executed: before 0 wave-reconcile blobs / 0 WAVE_RECONCILE at a3dd3574, after 2 blobs at 5c9a5559; all six standing rows re-derived independently (r72 report span '12 seats, 11 reports' at fleet 3664a6d3; top-level seat reports 12 vs printed 11 -> drift; plan '1 labrat' vs results revenger 1/labrat 0 -> drift; spec roles == results roles; attack 3/12 = 25.0%); selftest 12/12 and sweep rows=6 met=6 evidence-verified from the committed receipts, three pre-freeze controls as committed. C2 RE-MEASURED by an independent re-implementation of the documented rule: arms 13/6/6/0/0/17/0 at base and tip, sections=64, ledger entries 820->852, M3 reads ignored-skill 9 at both revisions (six recorded arms unchanged -> 0/6; new arm kills -> 1/7); battery 7/7 and selftest 8/8 evidence-verified. Discernment spot-check (this verifier): S066 RFC 8259 re-open admit (three quotes at page lines 485-486/494-495/496-498, 18/17/21 words, sha256 61a5378f..., 28,360 B) and the standing reject of a duplicate RFC 8259 row both AGREE (one wording caveat: the lane's 'within-scope duplicate' is the S289/S293 precedent's term; the live census form is W04 across scopes, which the lane restates). Census own run exit 0, 163 rows, 18 W04 + 1 W01, no errors."
+   },
+   "commit": "tameshi-shokunin@5c9a5559039e6ba90e006e768fa6a034fb03ba17",
+   "closed_at": "2026-11-04T01:37:30Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-11-03T21:51:27-03:00 launch tameshi round=73 pgid=3447853 driver=hyaku-inline attempt=1 | 2026-11-03T22:25:36-03:00 complete tameshi round=73; hyaku-inline attempt=1. Shape: one v1 wave w1, 13 seats (executor 3, scribe 2, reviewer 2, scout 1, critic 1, mutation-tester 1, sentinel 1, revenger 1, connector 1; attack 4/13 = 30.8%), band 8-16, counts.spawn=13, 13/13 records and 13 seat reports, 0 dead, no residual call. Conformance defects (status-neutral, none bars admission): (1) corpus/QUALITY.md was rewritten CRLF->LF at 21a7332f (base 1,915 CRLF -> tip 0; base->tip raw_old_only 1,915, normalised 0) and LOG.md at 862e8844 (3,759 CRLF -> 0; raw_old_only 3,759, 0 content deletions); both undisclosed, and the report's 'additivity raw raw_old_only=0 on the ledger and QUALITY' holds only of the two receipts shipped (through caa5c4c5), before 21a7332f; the r72 EOL class, not repeated per the report, recurs on those two files; (2) the frozen plan's kill-rule wording ('any control below reaches unexpected=0') is contradicted by the green-only control (rows=4 met=4 unexpected=0) and is reported but no erratum is appended to plans/round-73.plan.md; (3) the landed-changes table lists 22 of the 23 round commits (e309f59f, the LOG post-wave entry, missing); (4) the report's census summary says '19 x W04' where the receipt and the live run read 18 W04 + 1 W01; (5) tools/wave-reconcile.py has gate shape but no registry row at the lane's registry home (SKILL.md; also absent from tools/registry.json), as do the six standing instruments — PROTOCOL Gate standard Delivery binds. Routed to the lane for round 74: items 1-5 above plus the lane's own carries (delimited-token/span-substring selftest arms; any-depth seat_reports W2; IGNORED over-filtering M3c; rounds 61-71 without results.json; r60 vocabulary) and the inherited record misses (SCORECARD 20 absent paths, LOG 5 missing quotes — inherited from rounds 17-66 and 35/41). No promotion or mint: SHONEN boxes remain [~] lane assertions; the operator owns promotion. Lane pushed and clean at closure (ahead=0); spot-check landed at 3d6ea1ee.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
