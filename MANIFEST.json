@@ -40369,6 +40369,47 @@
    "notes": "Dispatch/complete digest (from .ufo/watchdog.log lines 2124/2146): 2026-11-03T19:58:07-03:00 launch mado round=66 pgid=1140062 driver=hyaku-inline attempt=1 | 2026-11-03T21:09:56-03:00 complete mado round=66; hyaku-inline attempt=1. Conformance defects (status-neutral, none bars admission): (1) frozen C2 predicate names ledger marker MADO_TOOL_LEDGER but the actual child emits LEDGER: (0 occurrences of the declared literal; erratum 043b9af1, predicate text unchanged); (2) freeze-order and baseline-control-order violations disclosed in process-defects.txt (registry/ready before freeze ed980316; executable do-nothing baseline after freeze); (3) routing drift: the prompt's run-15 map (scout @m_antigravity) is not reproduced by the operator config observed at report time (reviewer/executor @m_zfl, critic/scout @m_flash), no spawn/answering-model attestation, no model passed and no config edit by the lane, mandated mix not asserted; (4) no planner seat (L1 holds it per the prompt ruling); (5) unattributed fleet-root 'after' (24 B) left untouched; (6) 12-seat v1 wave role split 4 executor / 2 scribe / 1 each scout, connector, reviewer, critic, mutation-tester, sentinel; attack 3/12 = 25%, residual 0, dead 0, WAVE-DONE OK rc0. Routed to r67: D1 carry the marker erratum into the next frozen declaration (quote actual child output before freezing); D2 C1 stronger-forgery acceptance (live object left committed but uncited; forged state cells) stays open, planned; D3 C2 external-citecheck-path refusal is a declared cutover (no in-lane caller uses it; r65 driver pinned to r65-era revisions) - document operator policy and keep the dirty-guard soundness; D4 zero-citation and replacement-ref mutation survivors need auxiliary probes; D5 r65 routed defect 1 closed (SOURCES 0 deletions, only S435 added) - keep rule 2. SHONEN 4x[~]; boxes 1 and 4 look mechanically checkable by a non-author, boxes 2/3 historical; promotion operator-owned. Open L0 r57/r58/r59/r60 unchanged. Tool installs/updates: none.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 70,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 70,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 70
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-70/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-70-verifier-spotcheck.md@f3ee44f47a9680437eeae63a8fa8807552a65119",
+    "rechecks": "Step-1: report by kama-shokunin 82f2ca91 lands after the work and is on origin/master; prompt f32cfcca carries all six template sections and the five child-lane items, L2=8 matches MISSION; SHONEN heading x1 with 4x[~]; nine cited lane commits all ancestors of pushed master (380ac279); cb8105da/5d15cecb are file sha256 anchors, re-hashed and matching. Defect: 7 modified + 7 untracked wave-70 files left uncommitted at the tip (all under .ufo/waves/round-70/, mtimes after a8df1af5; no graded byte dirty). C1 re-measured from committed bytes: banner 'Latest measured round: 70', ### Planned (round 71) 0->1, 15 capabilities, PROVINCE four capability tokens 0->4, closure pointer round-68->round-69; base receipt mismatches=10 exit 1, receipts at 7be07423/73597158/910e6747/af6eb6c2/2fc9ce1e/a8df1af5 all mismatches=0 met=True, selftest pass=5 fail=0, harness git-archive->tip-checkout diff confirmed; kill limit is the defect-carrying fixture pair. C2 re-measured/evidence-verified: tool sha256 46389918->44bebd67, exit 0 iff fail=0 and no unwaived not_evaluated, waiver exact-name and not-evaluated-only; control refused_fixture_exit 0->1 (CONTROL_EXIT 1->0), real census 21/1/22 exit 1 -> 22/0/0/22 exit 0. Axis scores byte-unchanged base->tip (operability 8, freshness 8, depth 7, coverage 9, calibration 7, adjacency 7); no axis harmed. Discernment spot-check: admit S052 pytest exit-codes re-opened live 2026-11-03 with retained sha256 a403306a and both quotes present; two no-row rejects (git-checkout premise, instrument receipts) re-opened in the probe/receipts and agreed; sources census exit 0, rows 281->281, only S052 used-by touched."
+   },
+   "commit": "kama-shokunin@380ac2796e090b6dba4eeb35ddf40959aea74c16",
+   "closed_at": "2026-11-04T00:25:46Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-11-03T20:35:43-03:00 launch kama round=70 pgid=3450990 driver=hyaku-inline attempt=1 | 2026-11-03T21:17:40-03:00 complete kama round=70; hyaku-inline attempt=1. Defects (status-neutral): (1) lane tree not clean at tip - 7 M + 7 ?? under .ufo/waves/round-70/ (final-tip seat addenda written 21:08-21:15 after a8df1af5; e.g. SEN01Boundary/report.md, CRT01ClaimC2/report.md, MT01Mutants.md, measured/after/worktree-landing-final.out), so the report's 'all 13 seat outputs committed at a8df1af5' covers only the pre-addendum drafts; graded bytes clean; (2) lesson addendum cites measured/after/census-at-tip.out (waived=0, measured at 73597158) as a 'final' receipt although the af6eb6c2 landing removed the unused waived= token - correction must be appended, not rewritten; (3) report/LOG claim a reconciler re-run at 61f3ec42 and 380ac279 with no receipt at either tip (critic's w1-results.json records 61f3ec42; invariance holds by diff 61f3ec42..380ac279 touching only two .ufo files); (4) C2 boundary control controls/refused-member-control.py is re-runnable with frozen expected values but still unregistered at the SKILL.md registry home (lane's round-71 item 2); (5) supplementary dry/kill receipts name scratch tips af6e1c84/a7ae13ab absent from the lane repo. Routed to round 71 in order 1-5. SHONEN: all 4 boxes still [~]; boxes 1,2,4 look checkable by a non-author from committed evidence (SKILL sections, LOG round-70 + wave-16/17 live receipts, PROVINCE/cross-lane-scope), box 3 needs an independent execution review; no promotion proposed (operator-owned). jj read-only with --ignore-working-copy; no sibling gate executed.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
