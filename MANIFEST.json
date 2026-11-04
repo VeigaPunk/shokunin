@@ -42316,6 +42316,53 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log): 2026-11-04T01:56:07-03:00 launch mado round=73 pgid=2540157 driver=hyaku-inline attempt=1; 2026-11-04T02:13:29-03:00 complete mado round=73; hyaku-inline attempt=1. Step-1 conformant: exact report path .ufo/reports/round-73/mado.md committed by mado-shokunin <mado@shokunin.local> (029d6d0a) on origin/master, committer 02:12:49-03:00 after lane tip 422ba69a at 02:11:46; 5/5 cited lane commits ancestors of refs/heads/master; jj state branch=master local=remote=422ba69a ahead=0 behind=0, status clean; SHONEN heading 1 with 4 [~] lines and no [x]; prompt §§1-5 equal the rendered template except the working-dir substitution (8 diff lines), all round-level and five child-lane items present, §6 planner override matches the 13-seat wave (attack 4/13=30.8%, connector 1, no dead seat, 13/13 non-empty outputs). Claims evidence-verified, not executed (per Gate standard): C1 controls 10 cases sha256 263b3c5a…, held 8/8 carried byte-identically, receipt killed=4 base_killed=2 TARGET_MET at 84fc266a and (as the 84fc266a tree version) 1459cca1; C2 28 cases sha256 65e94644…, held 23/23 carried, controls=28/28 base_controls=25/28 TARGET_MET, population=20 = 20 quality/check-*.py. No axis harmed: SCORECARD diff append-only (0 deletions); SOURCES 3 added rows, no held-cell change; index 87->89 at 89/89; ledger 127/127; five frozen instruments blob-identical; census 386 rows exit 0. Routed defects (spot-check): D1 S448 records a false sha256 in corpus/SOURCES.md and corpus/lessons/round-73.md (actual 2d0f2892676e1cf9547be2bd94cfe2a6221dddea82d52cb2475d4a3d819b2ae5, recorded …f0d8e61c…8a4e; the lane's own R73ScoutSources F2 found it in-round, unrepaired) — append a superseding row/erratum and sweep; D2 final selftest tallies 26/26 and 78/78 are pinned in report/SKILL/SCORECARD/lesson without a committed run (receipts stop at 24/24, 25/25, 75/75 pre-repair; repair-r73.txt truncates at the post-repair C2 selftest header); D3 the report's 'both runs' claim is false — the tip receipts carry only the 84fc266a run, the 1459cca1 run is at commit 84fc266a (first receipt was overwritten in place); D4 QUALITY 118/119 landed in a new root QUALITY.md, not the canonical corpus/QUALITY.md (802 lines, ends at 117), so the criteria are invisible at the contract path; D5 the S446 reject still lacks a ≤25-word located quote (r72 routed item 3 open). Observations: the report's author stamp 02:11:33 precedes the cited lane tip by 13 s while the committer stamp 02:12:49 follows it (jj author stamp; hash citation and commit order hold); the two entries' verified-at names the pre-repair 1459cca1 while the final counters are 84fc266a (recheck resolves at both with the same verdict); the run-15 addendum routing sentence is stale against the live task.agentModelOverrides (operator prompt note, carried from r72). SHONEN: four boxes remain [~]; box 4 is checkable from the round diff, boxes 1-3 need an outside-lane execution test and an end-to-end domain task — no [x] warranted, promotion operator-owned. Fleet-root sweep at closure: .scratch/* modified, .ufo/reports/round-76/tsukuroi.md untracked (sibling in-flight), after untracked; no mado misroot.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 71,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 71,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 71
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "depth": "unchanged",
+    "calibration": "improved",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "runtime-observed child environment on the packed route (--child-env-log)",
+    "concurrent scratch isolation and per-run identity",
+    "pre-committed run binding for saved receipts (replay/transplant rejection)",
+    "lying-field forged-receipt battery over the round-70 first-cut world",
+    "SKILL registry block under row grammar v2"
+   ],
+   "report": ".ufo/reports/round-71/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-71-verifier-spotcheck.md@56241b1c8baff95862730c008f1ae5132b03388e",
+    "rechecks": "C1 re-derived from committed receipts and the committed raw child log (46 records, exact HOME/LANG/PATH/TMPDIR key set, children 21/16/8/1, HOME+TMPDIR under the run root, canary absent; instrument sha256 d8bd30b8 at c46ea96b, 10/10 vs 7/10 at 7c155617 with A8/A9/A10 false; checker met 4/4; nonce-commitment chain 3f24b0ba); C2 18 forged rows, 6 lying first-cut-accepted/superseded-rejected each with its declared clause, failures [], round-70 receipt 12 rows/0 lying; C3 re-measured with my own parser 93 rows/0 nonconformant/0 duplicates at HEAD and 88 rows/6 pinned-empty at base, 14/14 selftest; sources census exit 0, 179→181 rows, 22 W04; spot-check S273 admit and S274 reject agree on re-opened live sources; lane gates not executed; the frozen kill rule's post-freeze-edit clause read as the undisclosed case per the round-67 precedent (supersessions disclosed at 5cecf4c0 before data, predicates byte-unchanged, base control re-taken at landing)"
+   },
+   "commit": "kaidoku-shokunin@e90dd4948741f1447438b0794e7a10ec613f18d8",
+   "closed_at": "2026-11-04T05:38:15Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 2026-11-04T01:56:58-03:00 launch kaidoku round=71 pgid=2541473 driver=hyaku-inline attempt=1; 2026-11-04T02:31:03-03:00 complete kaidoku round=71; hyaku-inline attempt=1. Step-1 PASS: report 163941de by kaidoku-shokunin (fleet origin/main), lands last after the lane tip e90dd494 (02:30:28 vs 02:30:12), SHONEN heading with 4 [~] lines, all 24 report commit tokens ancestor of main, lane ahead=0 clean, prompt = template render + hyaku addendum with all round-level and child-lane items, one 16-seat v1 wave (executor 6/reviewer 2/mutation-tester 2/scribe 2/critic 1/sentinel 1/scout 1/connector 1; attack 6/16 = 37.5%), gate-at-record 46/46 disclosures exact and round-71 freeze CLEAN, registry conformance 0 mismatches, no tool installed, misroot sweep only .scratch/* plus the pre-existing untracked 'after'. Claims verified from committed receipts, not gate execution: C1 coverage (10/10 arms vs 7/10 base, raw-log A8 re-derived), C2 calibration (6 lying-field classes accepted by the first cut and rejected by the superseded reader with clauses; 0 failures), C3 operability (93 rows/0 nonconformant/0 duplicates; base 88/6 pinned-empty; selftest 14/14). No owned axis harmed (SCORECARD adds capability rows; coverage 10.0/depth 10/calibration 10 hold); the three round-70 backlog capability rows enter the table as R71-G1. Status-neutral defects routed: (1) report round-shape role mix says 5 executor and sums to 15 of 16 while spec/results carry 6 executor seats; (2) the report cites l1/pre/c2-do-nothing.json with 12 rows/0 lying/target 18 but the committed file reads 10/16 (the 12/18 values are the landing control arm); (3) .ufo/waves/round-71/claims.json instruments still pins the b827a8b5 freeze bytes after the disclosed 5cecf4c0 supersession and the supersession entries carry no replacement sha, with the formal before receipt not re-taken (the re-taken base state is scores/controls-at-landing.json); (4) S274 repeats its REJECTED reason in the scope cell instead of teaches. The lane's own routed items 1-5 (A10 self-mutant survivor, checker-mode child env, scratch cleanup, raw-witness capsule audit, standing r63/r58/r60/r64 debt) stay open and were confirmed named. No promotions, no mints; SHONEN boxes remain lane-asserted [~] (promotion is operator-owned).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
