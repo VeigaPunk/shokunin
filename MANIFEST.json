@@ -47301,6 +47301,46 @@
    "notes": "Dispatch digest: 2026-11-04T17:48:59-03:00 launch kasegi round=67 pgid=3615195 driver=hyaku-inline attempt=1; 2026-11-04T18:20:16-03:00 complete kasegi round=67; hyaku-inline attempt=1. Conformance ok: report committed by kasegi-shokunin (414d7a45, 18:19:36) after lane tip f167ee10 (18:19:12) and cites it; ## SHONEN x1 with four box lines matching SHONEN.md's four boxes; base 8e2a8fe8, all six cited commits and measured c40f0bc8 exist and are ancestors of refs/heads/master (detached git HEAD); jj-lane state ahead=0/behind=0, status clean, ls-remote f167ee10; prompt 824 lines, l.1-140 byte-identical to the templates/round-prompt.md rendering with the hyaku addendum appended at l.141 and all ten contract items present; the quoted L2 route map is the run-15 restore and does not contradict MISSION.md's advisory role-class buckets. Round shape: one v1 wave, 12 seats (3 executor, reviewer, critic, mutation-tester, sentinel, revenger, scout, connector, 2 scribe; L1 holds the planner seat), 5/12 attack (42%), 1 connector, no residual or dead seat; 12 seat reports present, w1-results seat outputs null under the kernel restart (disclosed). Routed defects (status-neutral, next round): V67-1 entry header and SOURCES.md:250 say 54/54 quotes (S100 44, S101 10) while the landed manifest pins 58 (S100 48, S101 10) and source-recheck prints 58 - flagged by the scribe at w1/ScribeF45/NOTES.md:211-213 and landed unfixed; V67-2 corpus/README.md:1050 carries a bare knowledge/ cite, so the lane's own citation-ground-check.py --root . exits 1 (findings=11, one new); V67-3 entry C15 ends the Level-3 area list at S100.txt:463 (an item) instead of the L462 heading; V67-4 controls/driver-pins.json note still names driver 61d5a048 / battery e6d54540 while the pinned dict values are 07dfa36c / ea31d439. Inherited, not introduced: recheck-audit.py exits 1 with the same 9 cwd_fail at base and tip (73/82 -> 74/83, the new entry passes), citation-ground-check's other 10 findings, and .ufo/state/kasegi.round still reads 17 (legacy, V66-4). Operator note: SHONEN boxes 1/3/4 are [~] author-asserted but non-author-checkable against committed bytes; box 2 stays [ ] - promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 86,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 86,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 86
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "calibration": "unchanged",
+    "freshness": "unchanged",
+    "operability": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-86/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-86-verifier-spotcheck.md@99f8b6a8979978fe02dc3c8f674ce4fdee3ab44b",
+    "rechecks": "C1 re-measured by the integrator from committed bytes: A1 8 URL rows / 7 prior ids matching S305's count 7, A2 docstring 'scores survived' (sha 4d73c89e, one-line diff), A3 23 '| coverage |' rows at BASE and at 4cc03025 -> agreed 0/3 -> 2/3 as reported (missed). C2 evidence-verified (not re-executed): registry row for tools/round-85/predicate-bind.py with 3 declared exits, self-test 21 cases exit 0, pinned blob at rev, owner kaidoku-r85 -> 5/5 as reported; operability is not an owned axis. No-harm: SCORECARD diff 22 insertions 0 deletions, round-85 depth table 21/21 killed on the repaired blob, census validate exit 0 (rows 209->210, tier A 190->191)."
+   },
+   "commit": "kaidoku-shokunin@697193400d45b4989acfec0b397ae12aa758affc",
+   "closed_at": "2026-11-04T21:47:44Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete (watchdog, mutable): 2026-11-04T18:09:26-03:00 launch kaidoku round=86 pgid=145113 driver=hyaku-inline attempt=1; 2026-11-04T18:41:39-03:00 complete kaidoku round=86; hyaku-inline attempt=1. Report fda6a6ec by lane identity, lands after lane tip 697193400; all six cited lane commits exist and are ancestors of refs/heads/main; lane state ahead=0 behind=0, only the four orchestrator .ready markers untracked; prompt carries template sections 1-5 verbatim plus hyaku addendum section 6. Status ok, not admitted: C1 missed its frozen target (A3 requires exactly one '| coverage |' row, the card has 23 at BASE and after), C2 met 5/5 on operability, an unowned axis. Routed to the next steered round: V86-1 C2 must name an owned axis or enter the capabilities table (L0 question filed, kaidoku | round-86); V86-2 S305 is a new SOURCES row written with no opened document and no located quote; V86-3 report says S255 'opened 2026-11-04' where the row's opened cell is 2026-11-01 (re-open); V86-4 wave results record output null for all twelve seats and the wave has no DONE markers (ScribeSources empty); V86-5 L1 made one direct task call against the inline-spawn handoff (cancelled, no output); V86-6 re-declare C1 atom A3 with a pre-freeze row sweep (M86-3); V86-7 gate counter accepts a foreign self-test command, a verdict-map substring, a silent six-cell row drop and a wrong-round pin, and 13/20 mutants survive the two counters' selftests (M86-2); V86-8 carried R85-4 and the L1-held planner seat. Operator note: fleet working tree carries M .ufo/reports/round-84/kama.md and untracked .scratch/closure-* files that are not kaidoku round-86 work. SHONEN box 2 stays unchecked (no end-to-end domain task); boxes 1, 3, 4 remain author-asserted [~], no [x] written.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
