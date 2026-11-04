@@ -46326,6 +46326,47 @@
    "notes": "2026-11-04T12:42:07-03:00 launch kengaku round=83 pgid=80529 driver=hyaku-inline attempt=1; 2026-11-04T15:23:53-03:00 complete kengaku round=83; hyaku-inline attempt=1. Delivered subject ca1deea2f36150402659585d9957de5e84f9d111. Status ok, real lane-attributed report; no step-1 defect. R83-V1→kengaku next round: admitting Gate lacks Q13 second-seat report paths; append honest correction and successor re-admission, never fabricate landing-time review. R83-V2→kengaku: newly admitted knowledge recheck omits Q1 date/cadence and Q21 historical pin; freshness harmed and expansion harmed despite valid bounded replay/repair claims. Freshness-held/expansion-improved assertions superseded by this closure. Critic dissent on freshness/quality/discernment explicitly resolved in spotcheck using AXES drift-detection scope and bounded repair/source-sample evidence. R82-F1 and historical 26-member sweep limits remain backlog. SHONEN not certified fully checkable; no promotion/mint. Spotcheck helper landed 4087b2f8369fb0c317a8460725a607681ff2fd7f and ls-remote master matched. No tools installed.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 84,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 84,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 84
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unchanged",
+    "coverage": "unchanged",
+    "coverage:script-layer": "unchanged",
+    "coverage:runtime-layer": "unchanged",
+    "coverage:kimi-layer": "unchanged",
+    "coverage:omp": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-84/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-84-verifier-spotcheck.md@a5d3e7549501ae76dbd86a6f81c5e858f1f92446",
+    "rechecks": "Step-1 PASS: report 31dd7b26 (kumitate-shokunin identity, 15:28:47) cites lane tip 03432bde (15:28:48, 1-second inversion disclosed); 6/6 cited lane hashes ancestors of master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0, git status empty, ls-remote master 03432bde; SHONEN 4 [~] lines = SHONEN.md 4 boxes, no [x]; prompt 02af3e1c with 2b/3/4/5 present; wave 10 seats (>=8, attack 3/10, connector 1), 10/10 godspeed-leading tasks; no dedicated L2 planner seat (L1 holds it), status-neutral. C1 RE-MEASURED plain: base 0/16 (controls/base.txt) and constant stub 2/16 (controls/stub.txt); plan.md, probe84-c1.mjs and controls unchanged since freeze 3794b903 (git diff empty); no-work-counter-receipt.mjs (6 lines) prints a fixed token list and yields HELD 16/16, kill rule fires, so C1 UNMET. Work 16/16 EVIDENCE-VERIFIED (close/c1-probe.txt, not executed). A 896->908 and C 43->44 re-derived by git ls-tree/grep; score floor(10*(A+C)/(A+C+3)) 9->9 unchanged; 11 of 12 A increments are round-84 .ufo/waves scaffolding. README map 210->211->213 rows and 213 files. SOURCES 180->182 (A 153->155, mined 145->146, rejected 22->23) re-derived; S243 admit and S244 reject re-opened at d5fc2c94 and AGREE; sources-census validate exit 0. Gates evidence-verified not executed: harm-matrix CLEAN harm=0 new_red=0 (cite-check CARRIED_MOVED 2546->2555, warnings 999->1003), checklists 41/44 red exit 1, selftest 50/50, independent 21/21, proxy MATCH and selftest 163/163, plan-before-ready PASS."
+   },
+   "commit": "kumitate-shokunin@03432bde1001b2199129ffdd4603193510e568f4",
+   "closed_at": "2026-11-04T18:36:24Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (.ufo/watchdog.log, copied): 2026-11-04T12:48:49-03:00 launch kumitate round=84 pgid=102834 driver=hyaku-inline attempt=1; 2026-11-04T15:31:51-03:00 complete kumitate round=84; hyaku-inline attempt=1. Frontier step present: SOURCES S243 mined / S244 rejected (own-work, re-opened and agreed); Mistakes 5 rows; sources-census exit 0 both ends. Conformance defects (status-neutral, never bar admission): D-a no dedicated L2 planner seat (L1 holds planner); D-b pre-dispatch commit dd91b8ec labelled round-84 authored 09:58:53, before the 12:48:49 launch; D-c report 31dd7b26 15:28:47 cites tip 03432bde 15:28:48 (1-second inversion); D-d dead seats and answering models unobserved (disclosed). Routed to kumitate next round: R-cite attribute and fix cite-check +9 errors / +4 warnings (harm-matrix CARRIED_MOVED 2546->2555, 999->1003, files 216->218) introduced by round-84 files; R-control add a QUALITY.md criterion for the vacuous label-keyed no-reader class (Mistakes row has no criterion; Q29 gap open); R-proxy A counted 11 round-84 wave-internal .mjs files, propose frozen exclusion of .ufo/waves before next measurement; R-checklist 41/44 red (OMP census, live compare 69 vs 65, cap-run 11/12) route or record as dated host-drift; R-planner seat a planner L2 or state the deviation; R-timing no round-N label before steer. Lane's trend claim quality=improved NOT accepted (cite-check +9 offsets, no admitted move): graded unchanged; discernment unchanged (vacuous control admitted to 16/16 pre-freeze, no criterion). Operator-owned promotion note: SHONEN box 2 (domain task logged in LOG round 84 with close/history-{red,repair,c2}.txt) and box 4 (PROVINCE unchanged) look plausibly checkable by a non-author; boxes 1 and 3 are not; no [x] written. Fleet repo has sibling-owned uncommitted leftovers (.scratch/*, .ufo/reports/round-84/kama.md) left untouched.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
