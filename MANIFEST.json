@@ -43910,6 +43910,50 @@
    "notes": "dispatch/complete digest: 2026-11-04T06:30:42-03:00 launch kake round=79 pgid=630878 driver=hyaku-inline attempt=1; 2026-11-04T07:26:51-03:00 complete kake round=79; hyaku-inline attempt=1. Step-1 clean: report 3b3564dd by kake-shokunin <kake@shokunin.local>, pushed (ancestor of origin/master 3ac6a30e); 13/13 cited lane hashes exist and are ancestors of master; lane state ahead=0 behind=0, porcelain empty, remote=93809011; SHONEN heading 1 with 4 box lines ([~] [ ] [~] [~]; no [x]); prompt sections 1-5 byte-identical to templates/round-prompt.md modulo substitutions, addendum 6/7 appended, round-level and five child-lane items present; census exit 0 (190 rows, 19 W04); no kake r79 file misrooted at the fleet root. Claims: C1 calibration re-measured independently (events=32; undisclosed 5->0 at base 0898085/final 9cfa404d; ledger 27->32; five base events match the report) and C2 operability facts re-measured (tool absent at base; 19,680 B sha256 dd83c2c8e9046faa0a62afda4cea00fee85468e83d2f1720c92159fb11f2609b at 9cfa404d and at tip; 31 cases; independent cases digest fd0a3bccbe7c1b6d3522259ab5c57d4eb1f272abe6acaba44013aae3af7978af; 4 constants) with the frozen matrix verdict evidence-verified (correct=31 wrong=0 constants_failed=4/4 selftest_ok=true met=true, exit 0) and selftest 26 derivable (23 cases + 3 faults). Spot-check: S452 admit and RFC 9309 reject both agree (live MDN re-fetch HTTP 200, 218,816 B, sha256 c4216ffb... identical to retained raw; sweep x-robots-tag=0 vs context robots=42); the report's kept-S453 sentence disagrees with the registry (grep=0) and is routed. Defects routed, status-neutral: R79-1 report Sources&frontier claims a kept S453 row that does not exist (only S452 added, rows 189->190); R79-2 ledger append re-serialized one prior note's em dash as an ASCII escape (semantics unchanged); R79-3 tool selftest 26/26 has no committed selftest-output receipt; R79-4 report vs QUALITY wording on which C1 conjuncts the fixture battery exercises (MutC: k4 survives because cheap-note fails on undisclosed first); R79-5 pre-tool 31/31 scratch-reference claim has no committed pointer; R79-6 MutC k3/k4/k5 need isolating fixture variants; R79-7 RFC 822/850 date branches unreachable under the comma split (ReviewC2 F1), grammar amendment + cases next round; R79-8 dead seats named without last error text. SHONEN not promotable: box 2 remains a gap and boxes 1/3/4 are author [~] only. No promotions, no mints.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 76,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 76,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 76
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "capability-row binding (D24_capability_rows: every round section claiming capability rows is parsed at paragraph granularity against the SCORECARD ## Capabilities table, six red fixtures plus a wrapped-claim accept; base 1 mismatch naming both absent rows -> 0 over nine atoms at 1ab1e164)",
+    "executable printed counting command (plan-command.py: static refusal before execution, shlex.split, no shell, four-key child env, work-root containment; arms_ok 0/3 -> 3/3, gate controls 3 -> 7)"
+   ],
+   "report": ".ufo/reports/round-76/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-76-verifier-spotcheck.md@188562d43e3cc58b217ad7aa763fb296c5b8a0b7",
+    "rechecks": "Gates not executed (PROTOCOL Gate standard, closure consequence); both claims evidence-verified over committed bytes. C1: base 5303a662 exit 1, mismatch_count 1, D24 defects naming both absent rows; tip receipt rev 1ab1e164 exit 0, mismatch 0, nine atoms D16-D24 all true, validate {defects [], atoms 9}; plain table extract 35 -> 39 data rows, the four names absent at base and present at tip; audit selftest 17 -> 18 cases, 0 failures. C2: base arms_ok 0/3 -> tip 3/3 with plan-c1 rc 0/mismatch 0, r75-printed PLACEHOLDER_UNBOUND unexecuted, r75-argv rc 2 missing-arguments; gate selftest 3 -> 7 cases, 0 failures; instrument greps shell=True 0, shlex.split, four-key env, realpath+commonpath. Census 191 -> 194 rows exit 0, 23 W04; 20/20 round commits cited and ancestors of main; lane ahead=0 clean; spot-check S286/S287/S288 re-opened live with byte-identical digests."
+   },
+   "commit": "kaidoku-shokunin@875e64881dd5023302aff904056f95ea9ed10890",
+   "closed_at": "2026-11-04T10:38:14Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-11-04T06:22:54-03:00 launch kaidoku round=76 pgid=502647 driver=hyaku-inline attempt=1; complete 2026-11-04T07:26:00-03:00. Report ac86c2aa by kaidoku-shokunin after tip 875e6488; SHONEN heading with 4x[~]; prompt 704 lines renders the template verbatim (substitution-only diff) and carries all five child-lane items plus the hyaku addendum; wave r76-w1 14 seats (band 8-16, attack 5/14), eight landed artifacts, four zero-byte seats and two prose-only seats recorded as unverified. Status-neutral defects: (1) c1-at-landing.json is cited as 'D24 true, mismatch_count 0' in the SCORECARD round-76 R76-C1 after-cell, the capability-row binding row and the PROVINCE.md round-76 addition while the file records exit 1/mismatch 1/D24 false; the report discloses the 1, so the correction was not swept across mentions; (2) tip receipts record rev 1ab1e164 while the report's before-after prose names 875e6488 and da41dfba (repeat of round-75 defect 5; the record surface is byte-identical across that range, so the values stand); (3) gate-at-tip 'exit 0' is not in its receipt (rev 862c48a8); (4) prefile-check PASS asserted with no retained receipt. Routed to round 77: sweep the landing correction in SCORECARD/PROVINCE, name each receipt's own revision, record the gate exit, retain the prefile receipt, and either bind evidence-cell verdicts in D24 or forbid verdicts in evidence cells. Operator note: all four SHONEN boxes look non-author-checkable from the report's pointers; no [x] written.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
