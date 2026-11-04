@@ -43283,6 +43283,50 @@
    "notes": "Digest: 2026-11-04T04:19:39-03:00 launch kaidoku round=74 pgid=2701439 driver=hyaku-inline attempt=1; 2026-11-04T04:47:51-03:00 complete kaidoku round=74; hyaku-inline attempt=1. Step-1 conformance PASS (attribution, ordering, ancestry, lane clean+pushed, prompt contract, one-wave shape). Status-neutral defects: (a) the frozen R74-C2 predicate names a --validate check on the landing receipt but only the seat's base/freeze validate receipts are committed; (b) S275's used-by old->new value is logged in .ufo/waves/round-74/w1/ScribeRows.md, not in corpus/lessons/round-74.md as SOURCES rule 2 / the frontier step require; (c) S279-S282 rows were opened in round 73 and written in round 74 (disclosed in the search log and the S282 source cell, but the Gate table's 'accessed 2026-11-04' reads as same-round). Routed to round 75: (a) and (b); the wave-named A12 case cross-binding (b-drop-canary-field also fails a12-kernel-multiple-samples) and the three further A12 survivors; the four cosmetic passes of D9-D12; D14 binding the round-74 receipt rather than the routed defect-6 receipt and D15 not restating the round-73 pin debt; SentinelScope SS74-1/4/5/6 plus the carried A12 _parse_shims values serialization. Operator: the four SHONEN boxes stay [ ]; the report's four [~] lines cite resolvable pointers and boxes 1-3 look non-author-checkable, promotion operator-owned and untouched. Spot-check artifact landed 3c15a156 (protocol identity) after the round tip.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 82,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 82,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 82
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "freshness": "improved",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "Revision-agnostic mutation harness (.ufo/waves/round-82/count-c1.py): re-derives the 11 anchored r81 mutants from any revision's own bytes, runs each mutated copy's selftest in scratch, prints per-mutant killed/survived and C1=met|unmet harness/killed/survivors/total/pristine/detector; 4-arm detector selftest; absent at ebcf2c72, 11/11 killed at the landed bytes.",
+    "Record revision arm (tools/mori-record-sweep.py revisions): grades each registered (carrier, row_contains, key, value, rev, path) binding against git show <rev>:<path> bytes and rev resolution, reporting REVISION_MISMATCH row-value|rev-bytes|rev-unresolvable|path-absent; 36 selftest arms; three real historical bindings green and one independent defeated fixture caught."
+   ],
+   "report": ".ufo/reports/round-82/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-82-verifier-spotcheck.md@68185d6e719054c55b107280085b05609e96165b",
+    "rechecks": "Step-1 PASS: report 3d688928 by mori-shokunin, committer 04:59:42 after lane tip f573c946 04:59:29; 7 cited commits exist and are ancestors of master; lane ahead=0 clean; SHONEN 4/4 [~]; prompt carries the round contract and five child-lane items; 15-seat w1 in the 8-16 band, attack 4/15, connector 1, no model field. Re-measured: C1 harness absent->present, 11/11 anchors unique at f02ad83b/d083c5fc/f573c946, 11/11 killed in the committed receipt, C1_COUNTER_SELFTEST 4/4; C2 live drift line 64 tokens = classification 64 (45 added-since-r10 + 19 value-changed), my independent derivation agrees 64/64, baseline sha256 0993b235 unchanged, live run rc 1, retired row + freshness cell present; C3 REVISION_MISMATCH absent->present, 36 selftest arms by static count, 3/3 pins verified with git show (row_tally=19@075574c8, survivors=0@075574c8, wrong=0 fixtures=7@482dc48d). Lane gates not executed; committed receipts read per the gate standard."
+   },
+   "commit": "mori-shokunin@f573c946a3abee04153537ccea69d5e228ea897f",
+   "closed_at": "2026-11-04T08:11:53Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-11-04T04:33:22-03:00 launch mori round=82 pgid=3316655 driver=hyaku-inline attempt=1 | complete 2026-11-04T05:00:30-03:00. Status ok, admitted; all three claims verify and no axis is harmed (scores 6/7/5/5/5/6 unchanged). Conformance: report 3d688928 committed by the lane identity; lane pushed ahead=0 and clean; prompt 9683932f committed under the lane identity (run-15 dispatch-evidence convention, same as kotoba/revenger r82); w1-results.json null status per seat recorded by the report as an observation; A1 absent from freeze 20551e56 and landed in f02ad83b, disclosed pre-data, with no committed after-value preceding it. Routed: D82-1 SCORECARD:4038 the r80 capability row's revised pointers=249 still carries the stale 'at this round's record commit 075574c8' attribution while its own correction states 075574c8 grades 237 (D80-4/D81-1 class; the C3 arm grades only registered bindings); D82-2 count-c3 --selftest 8/8 lacks a committed post-repair tally (controls/battery show the pre-repair 5/5); carry the r83 planned mutation survivors 20/38, C2 live-reading immutability and C3 occurrence ambiguity. Promotion operator-owned; the four SHONEN boxes look non-author checkable.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
