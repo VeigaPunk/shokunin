@@ -42842,6 +42842,50 @@
    "notes": "Digest: 2026-11-04T02:38:56-03:00 launch kaidoku round=72 pgid=3703617 driver=hyaku-inline attempt=1; 2026-11-04T03:24:54-03:00 complete kaidoku round=72; hyaku-inline attempt=1. Routed defects for round 73: (1) C2 evidence hash — report:102 and the SCORECARD row cite target sha 39a2193e, which is tools/round-72/seam-probe.py at the superseded d8297e8, not the measured e67f3a1 blob the receipt records (602b305d); append a named correction. (2) C2 pin conjunct vacuous — c2-at-landing.json has target_pin.expect null and mutation-check.py defaults matched=true without --expect-target-sha256. (3) Record-gate sentence claims 'disclosures exact, missing [] stray []' but gate-at-record.json has no disclosures block (run without --disclosures) and corpus/claim-freezes-v2.tsv has no round-72 row. (4) C3 'exits 1' is not recorded (c3-lying-check.json rc null; met false and the named clauses are); the rc=1 exists only for the analog explicit-capsule run. (5) corpus/knowledge/2026-11-04-r72-checker-env-capsule.md puts its source/verified-at/recheck trio at lines 66-68, not at the open as CORPUS.md requires; QUALITY row 112's line-start grep passes, so a criterion that binds the trio to the file open is needed. (6) Stagnation-nudge rationale misapplied (capability rows entered r70/r71 inside the 10-round window), though the lowest-axis obligation is met because coverage is tied-lowest at 10.0 and C1 works it. (7) C1 before pointer differs between report (l1/scores/c1-at-base-final.json, rev e67f3a1) and SCORECARD (l1/pre/c1-at-base.json, rev 6316c10); both read 9/11. Security incident handled: the ExecC1 seat's raw caller-env dump was redacted before any push; the raw-file commits are not ancestors of main and no pushed ref carries the path; my scan of the 21-commit pushed range for ops_/sk-/ghp_/github_pat_/AKIA/private-key shapes returned 0 matches; QUALITY row 128 and the L0 line are filed. Operator note: all four SHONEN boxes remain [~]; three look checkable by a non-author, promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 75,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 75,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 75
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "calibration": "improved",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "witness-authenticated harness generation (per-run secrets.token_hex(8) echo gating the M-Z kill and the outcome green; 11/11 vs the held 6/11)",
+    "name-neutral keyed copies + literal-key cancellation in the guard census (47/47 vs the held 41/47; population 20/13/13/0)"
+   ],
+   "report": ".ufo/reports/round-75/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-75-verifier-spotcheck.md@c3e0bc5f10b72964d54d18dc9b0706dc308dd1bf",
+    "rechecks": "Step-1 PASS: report 0a545769 by mado-shokunin <mado@shokunin.local> at 03:26:57-03:00, after lane tip f1827f9d at 03:26:15; on fleet origin/master; SHONEN heading 1 + 4 [~] boxes, no [x], SHONEN.md byte-unchanged; 14/14 cited lane commits ancestors of refs/heads/master; jj state branch=master local=remote=f1827f9d ahead=0 behind=0 head=detached tracked=0 untracked=0, status clean; prompt lines 1-140 equal templates/round-prompt.md verbatim modulo substitutions, addendum carries the commit-hash citation rule and lane write scope. Claims evidence-verified (sibling gates not executed per PROTOCOL Gate standard) and tallies re-derived from committed bytes: C1 controls sha f1e851a9 (11 cases, unchanged since def73656), receipt at 1557198f measured a3c88663 -> cases=11 correct=11, base 6 (2 genuine passes + 4 correct fails), instruments b6108c86 -> 51652b43; C2 controls sha d99502ba (47 cases), receipt at 466e1307 measured 4527fcae -> candidate 47/47, base 41/47, 36 carried cases byte-identical (canonical sha e61b35fd), population re-derived as 20 check-*.py files / 13 carrying GIT_NO_REPLACE_OBJECTS = the 13 reader rows, guarded 13 unguarded 0. Harm watch re-derived: SCORECARD +100/-0 append-only, index 91->93 (93 README links), ledger population 130->133 and 133 data rows, sources 389->391, gate 460/460 at amended bytes with PIN_MADO 367ff5ec->49567a0f, census rc 0 and byte-identical to census-end-r75.txt. Discernment: 2 admits (S453 13-word quote at simple_stmts.rst:468-469, sha d4320642/41375 B; S454 21-word quote at builtins_stdtypes.rst:5350-5352, sha 5a6951b7/248201 B, both re-fetched live 2026-11-04) and 1 reject (S446 method-behaviour scope; the 23->21 word correction confirmed) - agree on all three."
+   },
+   "commit": "mado-shokunin@f1827f9d5f3fe29eb2bb7e1b8701cadd436f3069",
+   "closed_at": "2026-11-04T06:37:57Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (.ufo/watchdog.log): 2026-11-04T02:59:55-03:00 launch mado round=75 pgid=168215 driver=hyaku-inline attempt=1; 2026-11-04T03:27:26-03:00 complete mado round=75; hyaku-inline attempt=1. Round shape: one v1 wave, 13 seats (band 8-16), spawn=13 resume=0, 13/13 settled with non-empty output, 0 dead; attack share 4/13 = 30.8%; the L1 held the planner seat (validator rejects planner as a swarm role), no residual call. Step-1 conformant apart from routed defects below. Claims admitted: C1 calibration 6/11 -> 11/11 on the frozen eleven-mode set (sha-pinned b6108c86 -> 51652b43; outcome clause implemented and inspected, not certified by the frozen denominator - declared limit); C2 operability 41/47 -> 47/47 (36 carried cases byte-identical; population 20/13/13/0 re-derived). No owned axis harmed. Conformance/routed defects for round 76 (status-neutral): R1 round-74 D4 repeated - claims-declaration-r75.md:6 says 'ONE v1 wave of 12 seats' while dispatch counts.spawn=13, and the declaration's own D4 disposition claims it states the actual size; R2 round-74 D2 partially repeated - the D2 disposition names receipts/selftest-r75.txt which does not exist, and the mado-r75-harness-witness registry row's 17/17 selftest tally has no committed stdout (only sibling instruments' tallies are committed); R3 severity misattribution - the report and SCORECARD call R75RevC2's two findings P1 while the seat says 'P1: None established' and lists both as P2; R4 S450 used-by not extended for corpus/knowledge/harness-witness-credit-r75.md and no cell change logged; R5 revision attribution - C2 measured at 4527fcae is called 'its instrument's last change' though c2-r75-shapes.py last changed at f75afbf6, and the C1 entry/README verified-at 4527fcae predates the final C1 receipt at a3c88663; R6 the declaration says 'written before any candidate measurement' while disclosing a three-case pre-freeze plumbing run; R7 receipts/red-scratch-before.txt and green-scratch-valid.txt carry only tallies while lesson M75-6 says commands and rc; R8 doc nits (c2-r75-shapes.py usage still shows --base-rev bd5a9715; the report attributes later instrument repairs to landing-counters.sh, which changed only at def73656). Prompt note (operator-side, repeated from r72): the run-15 'ONLY reviewer uses @m_zfl' sentence is stale against the live task.agentModelOverrides; harmless because the prompt names that config as authority and dispatch carries zero model keys. No promotion: SHONEN's four boxes stay [~], operator-owned; all four look checkable by a non-author only after a non-author writes [x], which remains operator work.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
