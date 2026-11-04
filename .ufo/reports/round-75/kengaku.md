@@ -4,8 +4,8 @@ Lane: `kengaku-shokunin` · base `4c4249a26a01aeb081915755076f74a7d6c88923` (rou
 spot-check) · freeze `e462a64975adc21c0319bb259878a92b200ada76` · Amendment A1
 `43255758ed7d74ea05c8e03686dd9ad37837f0cd` · integration `08148cc49adcd4e114a4b934d423382313eea74b`
 · evidence `66a93f6b4a4d645e320de14793d25e281f713cbb` · Amendment A5 `9f8f0f2180821d165f60e400277f192d92afbbce`
-· **landing tip `b64203cffff789bd14112b1f7b40972fdc07b199`** (`git ls-remote origin
-refs/heads/master` → `b64203cf…`, ahead=0 behind=0, worktree clean).
+· evidence `b64203cf` · wave evidence **landing tip `5d9a0cccce42c6bd876a61622c27f06280cf2f9d`** (`git ls-remote
+origin refs/heads/master` → `5d9a0ccc…`, ahead=0 behind=0, worktree clean).
 
 ## Work performed
 
@@ -72,7 +72,8 @@ Every change below is a LOG.md round-75 entry or a documented amendment; hashes 
 | 4 | evidence: 8 before receipts (stamped at A1) and census-before (242 rows) | `66a93f6b` | `corpus/evidence/round75/` |
 | 5 | evidence: after receipts + census-after (243 rows, rc 0) | `813b7403` | `corpus/evidence/round75/` |
 | 6 | A5 + wave findings: printed-verdict/tally arms, SCORECARD round-75 section, LOG entry, README artefacts section, PROVINCE bench-arena correction | `9f8f0f21` | LOG round 75; claims A5; lesson M75-12…14 |
-| 7 | evidence: after receipts regenerated at `9f8f0f21` (8-arm/5-arm selftests, K=15 stamps); SCORECARD tally correction | `b64203cf` | landing tip |
+| 7 | evidence: after receipts regenerated at `9f8f0f21` (8-arm/5-arm selftests, K=15 stamps); SCORECARD tally correction | `b64203cf` | evidence commit |
+| 8 | wave evidence: `w1-results.json` (13 settled seats) and the last seat report | `5d9a0ccc` | landing tip |
 
 ## Before → after measurements
 
@@ -83,7 +84,7 @@ Every change below is a LOG.md round-75 entry or a documented amendment; hashes 
 | state | revision | printed | rc |
 |---|---|---|---|
 | before | `43255758` (`corpus/evidence/round75/c1-before.txt`) | `UNIVERSE knowledge files=74 indexed=71 missing=3 orphan=0`; `UNIVERSE lessons files=123 indexed=87 missing=36 orphan=0`; `UNIVERSE evidence dirs=66 indexed=46 missing=20 orphan=0`; 59 named `MISSING*` lines; `PREDICATE R75-C1 fail` | 1 |
-| after | `b64203cf` (`corpus/evidence/round75/c1-after.txt`, measured at `9f8f0f21`) | `UNIVERSE knowledge files=74 indexed=74 missing=0 orphan=0`; `UNIVERSE lessons files=123 indexed=123 missing=0 orphan=0`; `UNIVERSE evidence dirs=66 indexed=66 missing=0 orphan=0`; `PREDICATE R75-C1 pass` | 0 |
+| after | `9f8f0f21` (receipt stamp; re-derived at the landing tip `5d9a0ccc`) | `UNIVERSE knowledge files=74 indexed=74 missing=0 orphan=0`; `UNIVERSE lessons files=123 indexed=123 missing=0 orphan=0`; `UNIVERSE evidence dirs=66 indexed=66 missing=0 orphan=0`; `PREDICATE R75-C1 pass` | 0 |
 
 Control (`c1-control-rowshuffle.txt`): a README whose index-row count equals the surface count
 (`NAIVE rows=6 surfaces=6 equal=True`) still prints four `MISSING*` defects →
@@ -98,7 +99,7 @@ failures=0 ok=True`.
 |---|---|---|---|
 | before (stamp leg on the round-74 evidence) | `43255758` (`c2-stamp-red-before.txt`) | `STAMPS files=11 stamped=0 unstamped=11 unresolved=0 not_ancestor=0`, 11 `DEFECT UNSTAMPED` lines, `PREDICATE R75-C2 fail` | 1 |
 | before (control, same fixture bytes) | `43255758` (`c2-control-attribute.txt`) | `R74-METRIC killed=10/10 (any-defect counting)` vs `R75-METRIC expected_matched=9/10 wrong_id=1`; `OFF-TARGET X-off-target expected=:entry:unbacked-flag: defects=1 matched=False`; `NULL-ARM defects=0`; `PREDICATE R75-C2-control pass` | 0 |
-| after | `b64203cf` (`c2-after.txt`, measured at `9f8f0f21`) | `MISMATCH 0`, `DEFECTS n=0`, `FLAGS ok n=0`, `TEXT-FALLBACK n=0`, `MUTANTS real=10 expected_matched=10 wrong_id=0 survived=0 null_arms=1 null_survived=1 total=11`, `STAMPS files=15 stamped=15 unstamped=0 unresolved=0 not_ancestor=0`, `PREDICATE R75-C2 pass` | 0 |
+| after | `9f8f0f21` (receipt stamp of `c2-after.txt`; re-derived at the landing tip `5d9a0ccc`) | `MISMATCH 0`, `DEFECTS n=0`, `FLAGS ok n=0`, `TEXT-FALLBACK n=0`, `MUTANTS real=10 expected_matched=10 wrong_id=0 survived=0 null_arms=1 null_survived=1 total=11`, `STAMPS files=15 stamped=15 unstamped=0 unresolved=0 not_ancestor=0`, `PREDICATE R75-C2 pass` | 0 |
 
 Selftest `c2-selftest-after.txt`: `SELFTEST arms=5 failures=0 ok=True`. Both round-74 gates stay green
 at the landing tip (`PREDICATE R74-C1 pass`, `PREDICATE R74-C2 pass`).
