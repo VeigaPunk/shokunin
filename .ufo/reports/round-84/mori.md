@@ -202,3 +202,8 @@ planner seat is the L1 (no planner lane exists in the validator). `w1.ready` was
 validated against the frozen counter before application, and R02's attack is covered by the
 critic, the C1 reviewer, the mutation probe and the record reviewer. Round total: 14 seats, 12
 with reports, 2 dead.
+
+Misroot sweep: `git -C /home/vgpnk/Projects/shokunin status --porcelain` before this report found no
+fleet-root file written by this lane's seats; the untracked `after`, `agent:/` (round-82 seat notes)
+and `.ufo/reports/round-76/kaidoku.md` entries belong to other lanes and were left untouched. No
+misroot is recorded this round.
