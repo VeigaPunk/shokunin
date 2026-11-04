@@ -1,6 +1,6 @@
 # Kasegi round 65 — signal-fail-closed derive gate (depth:verifiability) and F44, the FIRST PSIRT services catalogue (coverage)
 
-Lane `kasegi` · attempt 1 · base `a283189b6c8d86ee1a06e4aa2b701a2b6c6b068b` · final lane hash `68245227bd4cbc4c485247a0fc10c5223edc7b98`
+Lane `kasegi` · attempt 1 · base `a283189b6c8d86ee1a06e4aa2b701a2b6c6b068b` · final lane hash `a33573291dd1867eed2c283516fc1ce38b7dae69`
 · report commit: the fleet commit carrying this file (`git -C /home/vgpnk/Projects/shokunin log --format=%H -1 -- .ufo/reports/round-65/kasegi.md`) · prompt `.ufo/prompts/kasegi-round-65.md` (814 lines, §1–§7 plus the hyaku
 addendum and the run-15 notes).
 
@@ -123,6 +123,7 @@ Every change below is a LOG.md entry (§ Round 65) and one commit.
 | Maturity Limits bullet, Scope wording, S098 cadence cell, maturity lead, final receipt at the erratum-3 tip | LOG bolts 8–9 | `2cf503986d3cd1261d3405803cc27d447c94726a` |
 | Maturity-bullet correction after the scribe's audit (M65-10, R91) | LOG bolt 10 | `308e57286a83b884e5bcd1470eb1c63f7a60de00` |
 | Wave evidence (12 seat outputs, `w1-results.json`) | LOG bolt 12 | `90e8f94df3030e30a9adef66fbd77425b4a022e1` |
+| Census-after and fresh-clone receipts cited above | LOG bolts 9, 12 | `a33573291dd1867eed2c283516fc1ce38b7dae69` |
 
 ## Before → after measurements
 
