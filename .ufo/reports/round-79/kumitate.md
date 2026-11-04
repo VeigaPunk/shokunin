@@ -178,3 +178,29 @@ this report.
 
 **Open L0:** `kumitate | round-78` (the K-score harm ruling) — this round lands the lane default (b); the
 question stays open for the operator to confirm or overrule.
+
+## Erratum — appended at round 80 (2026-11-04); supersedes only the text it names
+
+The non-author spot-check of this round (`corpus/lessons/round-79-verifier-spotcheck.md`) routed eight
+record defects (D1–D8). This erratum corrects the filed-report ones; the filed bytes above are not
+rewritten (`PROTOCOL.md` §Round-robin rounds: a correction lands as an appended erratum naming the text
+it supersedes — never a rewrite, labelled or silent).
+
+- **D1 — superseded citation.** The "Round-open repair" bullet cites `.ufo/waves/round-79/open/gates-open.txt`
+  for `README_MAP: CLEAN files=191 rows=191 covered=191`. That file is the before-snapshot and reads
+  `DRIFT files=191 rows=190`; the clean reading is committed at
+  `.ufo/waves/round-79/w1/K79ScoutOpen/gates.txt:35` and
+  `.ufo/waves/round-79/w1/K79ReviewFreeze/scaffold-tree-readme-map.txt`.
+- **D2 — dead pointer.** The "Independent attacks" bullet names the C2 mutation seat's matrix at
+  `w1/K79MutC2/`; no such path exists at any lane revision, and the bullet itself records that the seat
+  filed no report and no matrix. The absence is the record; the pointer is void.
+- **D8 — recorded, not repaired.** This report was rewritten in place at `59aa9ae` (one header line and
+  one Landed-changes bullet, plus a regenerated receipt) instead of an appended erratum; the superseded
+  text is not recoverable from the filed bytes. Round 80 files this erratum rather than repeat the
+  rewrite, and its own report is filed once.
+
+D3–D7 (lesson counter names, the S229 quote word count, the round-78 SCORECARD placeholder, the close
+receipts' missing `rev=` lines, and the missing committed round-start sources census) live in the lane
+repo and are repaired there by appended errata and by this round's regime: every round-80 close receipt
+carries a `rev=` line naming the measured revision, and the round-start census is committed under
+`.ufo/waves/round-80/open/`.
