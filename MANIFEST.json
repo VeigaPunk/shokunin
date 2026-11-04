@@ -44798,6 +44798,49 @@
    "notes": "dispatch digest: 2026-11-03T19:25:30-03:00 launch kagi round=32 pgid=2234912 driver=hyaku-inline attempt=1; 2026-11-04T10:09:40-03:00 complete kagi round=32; hyaku-inline attempt=1. Report committed by kagi-shokunin (4521c4da) after the cited lane tip 6191805a and pushed; lane clean, ahead=0. C1 calibration not admitted (n=1 vs frozen target 0; the residual SD6 token is integrator-owned corpus/lessons/round-30-verifier-spotcheck.md:41, which the lane correctly did not edit). C2 freshness verified (version naming 0->1 plus unchanged six-class CLEAN probe on installed op 2.41.1). Prompt matches templates/round-prompt.md substitution-only and carries the §6 run-15 addendum. Conformance defects (status-neutral): D1 the 13-seat wave holds no planner L2 seat (plan says L1 holds planning) against prompt §3's minimum role split; disclosed in-place corpus/lessons/round-31.md:121 label edit (logged in Corrigenda 3). Routed: R32-1 D1 planner seat; R32-2 M32-2/M32-3 mistakes rows need a criterion id or 'none' and a fix shown able to fail; R32-3 S072 scope cell says 'the build the installed binary reports' while op --version reports 2.41.1 only; R32-4 pre-existing SCORECARD capabilities prose still says the latest first-working round is 25 beside the round-29 row; R32-5 keep future citation labels in appended corrigenda. Operator: R25-02/R29-01/R29-02 stay red/policy (ceiling stated in the round-32 row); run-15 route-bucket mapping inconclusive (operator-owned route table). SHONEN: four author [~] boxes; box 1 and box 4 look non-author-checkable, box 2 (live handler outcome) and box 3 (whole-ledger clean) remain open, so no full promotion review; promotion is operator-owned. Trends: expansion unchanged (no new knowledge entry/capability, one source row on held CLI ground), quality improved (§11 re-verified on 2.41.1, five self-description contradictions repaired, no admitted entry failed re-check), discernment improved (outside spot-check agrees on the sampled S072 admit and considerthese-4 reject; precision and lesson-shape gaps routed, not scored as harm).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 82,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 82,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 82
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "freshness": "improved",
+    "operability": "unchanged",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "Capture-to-capture drift gate"
+   ],
+   "report": ".ufo/reports/round-82/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-82-verifier-spotcheck.md@826b0061f233ce1dffb9bd6874abc1342a864247",
+    "rechecks": "Step-1 pass: report identity/timing, SHONEN 4 boxes, 14 lane hashes + fleet 7678247a ancestors, lane ahead=0 clean, prompt template 1-140 verbatim. C1 re-derived from bytes at 9635bf01 without running the gate: S433 recheck=2027-05-03/used-by+round-81; after-c1-final.txt revision=498a0969; 7678247a parent report blobs differ; seat-failures MutC output_bytes=3801; both dead receipt paths absent, after-c1-final present; c81-selftest-c2.txt=22/22 and QUALITY.md:1695 supersedes; round-82 ledger receipt undisclosed=0 met=true; round-80 lesson [r82-correction] names SOURCES.md:200 - 8/8 state conjuncts closed, base control open=8 exit 1. C2 recomputed independently: 3+3 surfaces, receipts GET/status/bytes/sha/RFC3339 true; B 13:00:27-28Z after A 12:05:06Z and >= floor; my header-map delta reproduces surfaces=3 identical=0 changed=3 added=0 removed=0 = the committed record; scripts/capture_delta.py has no network import; selftests 11/11, 9/9, 14/14 committed. Census 192->193 rows, W04 21->22, exit 0. Discernment: re-opened RFC 9110 live (GET 2026-11-04T13:13:19Z, 502,941 B, sha256 21c1cdce...) - agree on the admit (24-word raw quote :3572-3574; 16/17-word raw supports) and both rejects (:3614-3617 field placement, :3619-3641 mechanism selection)."
+   },
+   "commit": "kake-shokunin@9635bf015d443b8984f86251b7c38564862b21d8",
+   "closed_at": "2026-11-04T13:17:02Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (from .ufo/watchdog.log, mutable): 2026-11-04T09:42:58-03:00 launch kake round=82 pgid=756711 driver=hyaku-inline attempt=1; 2026-11-04T10:10:59-03:00 complete kake round=82; hyaku-inline attempt=1. Step-1: report by kake-shokunin <kake@shokunin.local> as 2e3fcc7f (10:10:09 -03), filed after the lane tip 9635bf01 (10:09:09 -03) and an ancestor of fleet HEAD; SHONEN heading with 4 box lines ([~][ ][~][~], no [x]); all 14 cited lane hashes and the fleet commit 7678247a exist and are ancestors; lane ahead=0/behind=0 clean, remote master=9635bf01; prompt lines 1-140 render templates/round-prompt.md verbatim (single diff: the <lane-repo> bracket rendered as the absolute path), addenda 6-7 present. Claims: C1 calibration (round-81 D1-D8 queue closes; the closure re-derived all eight state conjuncts at the tip, base/junk controls red, counter selftest 11/11 receipt) verifies; C2 freshness (second dated capture plus the offline drift gate; the closure independently reproduced receipts_ok, order, floor and the record surfaces=3 identical=0 changed=3 added=0 removed=0; tool network-free; selftests 11/11, 9/9, 14/14 receipts) verifies. No axis harmed (SCORECARD.md additions only). Defects (status-neutral): settled attack share 0/7 (0/4 attack seats; 6/13 seats empty) against the run-15 >=25% floor; report wave-prose sizes are character counts mislabelled B (4,871/7,888/6,392/6,664/3,811 vs UTF-8 4,899/7,902/6,402/6,669/3,813 in w1-accounting.json); the instrument-receipt rebind (30/30 bound, base 1 stale + 4 unbound) is stated with no committed --check receipt; D3's erratum names the four superseded statements by category, not their text; C1/C2 mutation survivors (2+3) stay routed to r83; the report lists the merge/kake package under Gate rejects while the lesson's rejects are two S455 anchor spans. SHONEN: boxes 1/3/4 [~] author-side, box 2 [ ] declared gap - no promotion evidence this round (operator-owned). No promotions, no mints.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
