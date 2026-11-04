@@ -44225,6 +44225,50 @@
    "notes": "dispatch/complete digest: 2026-11-04T07:37:32-03:00 launch kake round=80 pgid=1857906 driver=hyaku-inline attempt=1; 2026-11-04T08:25:34-03:00 complete kake round=80; hyaku-inline attempt=1. Wave w1: 15 seats, 13 non-empty reports, 2 dead attack seats (ReviewC1 reviewer, MutC mutation-tester) on provider 429s, not replaced. Conformance/accuracy defects, status-neutral and routed to round 81: (R80-1) SOURCES.md:201 citations point at a blank line; the S453 row is at 200; (R80-2) LOG/lesson/report say the four frozen constants fail 12/12 each while controls/ctl-c80-constants.txt reads const_echo 11/12 (summary 4/4, 47/48 case-level); (R80-3) lesson/README call S453 a 'second scope' on a URL 'held five times' — the rfc9110.txt URL was held by S028+S033 (S453 third) and rfc9110.html by S010+S088+S433; (R80-4) the report/LOG/SCORECARD attack share 5/15=33.3% counts sentinel; the run-15 attack roles give 4/15=26.7% requested and 2/15=13.3% settled (3/15=20% counting ExecGuard's review) after the two 429 deaths, below the 25% floor in effect; (R80-5) the junk control runs over an uncommitted /fast/scratch tree, no committed builder; (R80-6) R79-8's original error-text ask is still unmet — the results schema carries no status/error, so the 429 cause is asserted outside committed bytes. Stated limits that stand: R79-5 closes on textual withdrawal (junk control open=5, contract said open=6), A2's single-space day branch is a lane [INFERENCE], per-carrier header/meta divergence routed. SHONEN: no [x]; box 2 [ ]; boxes 1/3/4 [~]; not fully checkable by a non-author — promotion operator-owned. No tools installed or upgraded; pacman untouched; no publish/deploy.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 77,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 77,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 77
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "evidence-cell verdict binding (tools/round-77/verdict-bind.py: a parenthesised verdict beside an evidence path is re-derived from the JSON receipt the cell names through a closed eight-form grammar with type-strict comparison; base 4 value mismatches at exactly the capability-row cell and PROVINCE.md line 585 -> 0 over 25 bound clauses and 11 in-scope rows at 6ff00080; unbound clauses reported, never passed)",
+    "prefile gate receipt (tools/round-77/prefile-receipt.py: the round-29 filing gate runs under a four-key child environment and its receipt binds argv, revision, integer exit, verdict line and stdout digest; arms_ok 4 of 6 at base -> 6 of 6 at ff561504 and 6ff00080; the filing receipt at 88e73357 recomputes its stdout digest and the revision binding accepts it and refuses another revision)"
+   ],
+   "report": ".ufo/reports/round-77/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-77-verifier-spotcheck.md@749c5717ce2ff39b90dfc655cf1d3ee29f3f3811",
+    "rechecks": "Lane gates not executed (PROTOCOL Gate standard, Closure consequence); both claims re-measured with an independent resolver over committed bytes. C1: tip 25 bound / 2 unbound / 0 mismatches over 18 in-scope cells (11 SCORECARD capability rows with a numeral >= 73 + 7 PROVINCE Core bullets; the 41-row table and the 11-row population re-counted); base 21 bound / 3 unbound / 4 mismatches naming exactly the capability-row binding cell and PROVINCE.md line 585 (D24 true vs false, mismatch_count 0 vs 1); every named receipt resolves at 6ff00080; PREDICATE constants byte-identical to claims.json (614/734 chars); instrument sha256 45280392.../174eedb5... at 819cf30e and tip. C2: tip 6/6 arms, ok true, exit 0, validate defect-free; clone-run and record-receipt stdout digests recomputed, revs 6ff00080/88e73357; filing receipt exit 0, prefile: PASS, four-key env, sha256(stdout)=37600bd2...; base 4/6 (record-receipt and gate-exits unmet); gate receipts carry integer exit. Controls: no-binding bound 0, all-false mismatch 24, pointer-only mismatch 0, gate-alone PASS with no receipt, forged arms refused exit 1. Evidence-verified (not executed): C1 selftest 15 cases 0 failures, C2 13 cases 0 failures, freeze/record/tip freeze-gate CLEAN with findings [] and three instrument paths, mutation battery 10 mutants / 8 killed / 2 survivors. Census 194 -> 197 rows, exit 0, 23 W04."
+   },
+   "commit": "kaidoku-shokunin@97280cadb87386e7968c3f90e8503f14d41695ea",
+   "closed_at": "2026-11-04T11:42:52Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable; 2317/2326): 2026-11-04T07:40:05-03:00 launch kaidoku round=77 pgid=1900018 driver=hyaku-inline attempt=1 | 2026-11-04T08:28:06-03:00 complete kaidoku round=77; hyaku-inline attempt=1 (no lane-dead line). Step-1 PASS: report 751664ae by kaidoku-shokunin <kaidoku@shokunin.local> at 08:27:35, after lane tip 97280cad at 08:27:20 and before complete, ancestor of origin/main; SHONEN heading x1 + four [~] lines vs four boxes, no [x], SHONEN.md untouched; all 17 cited commits exist and are ancestors of refs/heads/main; jj-lane state branch=main local=remote=97280cad ahead=0 behind=0, porcelain empty at report time; prompt c17ce813 sections 1-5 template-verbatim (normalized diff: one line, the repo-dir placeholder) with the five child-lane items and the round-level items, plus addenda 6-7; the L2 route rule defers to the host table and the addendum's superseded maps end at the current 2026-11-03 amendment. Wave r77-w1: one v1 wave, 12 seats under the 8-16 policy band (dispatch counts spawn 12), attack roles 6/12 = 50%, one connector, L1 holds the planner seat; ready/dispatched markers and results retained; ExecC2Receipt and ReviewerC1 zero-byte dead. Claims re-measured, not merely evidence-verified (see verification.rechecks); no owned axis row changed and the corpus changes are additive. Late evidence and its ruling: the CriticClaims seat (CriticClaims-19) was still live at complete and wrote an untracked 11.6 KB adversarial report plus 15 receipts at 08:35-08:36 (after the report), so the wave was filed ahead of a live seat and the report's 'CriticClaims died mid-work' is contradicted; its code findings are real (C2 A1 accepts exit in {0,1}, A2 calls check_receipt without expect_rev, A3 accepts any integer exit; C1 strips a word: qualifier and treats unknown fields as unbound, so a re-punctuated false annotation and a negated cell stay green; no receipt authentication), but its FA/FB/FC/FD fixtures are other trees, its scratch fixtures are deleted, and no kill-rule shape occurs in the landed record, so its FALSIFIED verdicts are not adopted as claim-falsifying; its C1 near-miss and C2 arm-limit classes are the lane's own routed items 2-3. Status-neutral defects: (1) the report/LOG '10 seats returned evidence (all files under .ufo/waves/round-77/w1/)' overstates: 9 seat dirs, 8 substantive reports at filing, CriticClaims empty then late-untracked, SentinelScope a 372-byte progress note with no artifact; (2) the landed-changes row for 1d84253a claims 'two C2 controls' but those files first land at 37f5d069; (3) two of the three mistakes are prose, not ## Mistakes rows; (4) the C2 prefile-rev-binding receipts record defects but not the wrapper exit the record asserts; (5) the forged-arms control does not retain the two defects the report counts; (6) the Stale-lane line says only 'Not stale' although the mission was open 07:40:05-08:28:06 (48 min > 2 x 450 s) and was progressing (17 lane commits); (7) uncommitted round work at closure: the late CriticClaims files are untracked in the lane. Routed to round 78: the two mutation survivors; the near-miss/no-claim grammar cells (D24: true, mismatch 0) and the nested-field unbound clauses; the C2 arm limits; plus the closure addendum's items: A1 clean-run condition, A2 expect_rev, receipt authentication in C1, selftest reds for the negated-cell/outside-group/path-from-another-cell/keeps-false-value shapes, and settling the wave before filing. Operator note: all four SHONEN boxes look checkable by a non-author against the cited pointers; promotion is operator-owned and no [x] was written. No tool install or upgrade ran this round.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
