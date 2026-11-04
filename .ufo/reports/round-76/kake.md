@@ -202,3 +202,15 @@ Counting command, run at round start and round end:
   (`.ufo/reports/round-68/mado.md`, `.ufo/reports/round-71/kama.md`) and a 24-byte `after` file dated
   20:05 (before this round launched, no kake/round-76 content). No seat of this round wrote into the fleet
   root; nothing was copied or deleted.
+
+## Erratum (appended after filing; supersedes the text it names)
+
+The paragraph above "Round shape, seats and limits" says the orchestrator's wave finalizer did not write
+`w1-results.json`. That was true at filing time and is now superseded: the dispatcher finalized the wave
+after this report was committed and wrote `kake-shokunin/.ufo/waves/round-76/w1-results.json`, which is
+committed as lane commit `a1b3f33b`. The file records `lane=kake round=76 wave=w1 seats=15`, 15 results,
+0 empty outputs, role mix executor 5 / scout 2 / scribe 2 / reviewer 2 / critic 1 / mutation-tester 1 /
+connector 1 / sentinel 1 — identical to the shape this report states. Dead seats: 0. The lane tip is now
+`a1b3f33b9d00137b1c45c5b4c274ce8f0cc95446` (pushed; `git ls-remote origin refs/heads/master` prints it);
+the earlier cited tip `284a00fb` remains an ancestor of it, and the C1 counter re-run at `a1b3f33b` prints
+`findings=0 met=true`, exit 0. No other statement in this report changes.
