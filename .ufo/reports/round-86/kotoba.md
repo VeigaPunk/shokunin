@@ -102,7 +102,7 @@
   - **Added by tier:** A 1 — **S255**: omp 18.15.0 TypeScript embedded in the installed ELF, plus upstream `github.com/can1357/oh-my-pi` tag `v18.15.0` (HTTP 200). Kind `code`, `mined`, opened 2026-11-04, recheck `on-release`.
   - The located quote (≤ 25 words) is at ELF offset 178770368: `const c = o >= E ? r.slice(0, o).trimEnd() : r;` (`w1/ScribeSources/fetch-record.txt`).
   - B 0, C 0. Rows touched: 0.
-- **Frontier advanced: 1.** The *Loader-rule freshness* row now has a round-86 append-only note (`corpus/README.md:262`) moving the catalogue leg.
+- **Frontier advanced: 1.** The *Loader-rule freshness* row now has a round-86 append-only note (`corpus/README.md:263` at `4212b69`) moving the catalogue leg.
 - **Sourced claim:** C1's entry `corpus/knowledge/omp-catalogue-model-round86.md` cites S255.
 - **Mined mistake M86-1:** `corpus/lessons/round-86.md` § Mistakes.
   - The catalogue check matched lines only against the cache, so 132 unmodelled lines read as a DRIFT count for about 30 rounds.
@@ -113,7 +113,7 @@
 ## Trend verdicts
 
 - **expansion — `improved`.**
-  - One tier-A row was added (S255), and one frontier row was advanced (README `:262`).
+  - One tier-A row was added (S255), and one frontier row was advanced (README `:263`).
   - The model now governs a root class it never held: omp plugins, 132 of the 215 catalogue lines.
   - Counts are from the commands above.
 - **quality — `improved`.**
