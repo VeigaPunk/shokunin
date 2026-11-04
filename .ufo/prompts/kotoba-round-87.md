@@ -329,7 +329,7 @@ Phase-1 directives still bind: "train all shokunins to at least round 100"; "com
 every round done"; "do it inline with multiple swarms of subagents".
 
 You are an in-session **L1 lane subagent** dispatched by the hyaku orchestrator (the operator's
-parent omp session) for exactly ONE steered round: **kotoba round 87** (attempt 2;
+parent omp session) for exactly ONE steered round: **kotoba round 87** (attempt 3;
 campaign target: round 100). Your lane's place in the session follows the goal file (lane
 order and blocks: `.scratch/goal-20261025-hyaku-run7.md`); the orchestrator dispatches your lane's
 next round only after this one lands and its non-author closure is written. Work this round only
@@ -836,3 +836,7 @@ Amendment 11 (operator, 2026-11-04): "Devin first for now" — commandcode retur
 Amendment 12 (operator, 2026-11-04, verbatim: "also, remove opus from the m_mim alias"): `m_mim` restored to minimax-code/MiniMax-M3.1-Flash:high (its pre-amendment-9 value); no role routes to @m_mim now, so live routing is unchanged (all @m_flash devin-first, reviewer @m_zfl).
 
 Amendment 13 (operator, 2026-11-04, verbatim: "assign executor to m_zfl"): `executor` @m_flash -> @m_zfl (zai/glm-5.3-flashx). Measured cause of the continuing seat deaths after amendment 11: devin/deepseek-v4-1-flash returns `resource_exhausted: Reached request rate limit` at ~40 concurrent seats, the fallback walks to commandcode (400 no credits / 401 invalid auth) and amr (402), all dead, so the seat ends (MoriR90, CloseKasegiR69, CloseRevengerR91-2, KotodamaR90a2, ScribeEntry-10, 20:17-20:19).
+
+Amendment 14 (operator, 2026-11-04, verbatim: "use m_antigravity as connector"): `connector` @m_flash -> @m_antigravity (google-antigravity/gemini-3.8-flash:high). Live map: task/main/planner/security-reviewer/critic/revenger/scout/labrat/mutation-tester/simplifier/sentinel/scribe/sonic/distiller/seance @m_flash (devin-first), reviewer + executor @m_zfl, connector @m_antigravity.
+
+Provider-failure unblock (2026-11-04, same basis as amendment 8): kotodama r90 and mori r90 exhausted three attempts on devin rate-limit -> commandcode 401; markers moved to `.<lane>.run15-20261104-provider-failure-2`, same round reruns.
