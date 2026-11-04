@@ -45010,6 +45010,50 @@
    "notes": "driver lines (copied from .ufo/watchdog.log, mutable): 2026-11-04T09:45:33-03:00 launch kama round=82 pgid=910633 driver=hyaku-inline attempt=1; 2026-11-04T10:36:01-03:00 complete kama round=82; hyaku-inline attempt=1. Conformance: report e96796ed authored by kama-shokunin, committer 10:35:38 > lane tip 10:34:26 (lands last), ancestor of the fleet remote; SHONEN present with four [~] lines and no [x]; all 25 cited hashes resolve and are ancestors of master; lane clean and pushed (ahead=0, ls-remote b1ba614b); prompt ffbb72e7 committed 09:44:32 before the 09:45:33 launch and its sections 1-5 are byte-identical to the rendered template (addendum section 6, scratch section 7); wave one v1 of 14 seats (maxLanes 16), attack 4/14=28.6%, 14/14 non-empty. C1 verified (five stale round-81 facts corrected value-bound, sixth holds); C2 verified (15 new late rows repay round 81's five pending events; the row-level introduction repair is admissible: frozen predicate, red-before bad_rows=15, red-capable arms, rule sentences unchanged). Routed defects: R82V1 the round's own record misstates its C1 selftest tally (LOG pass=18, SCORECARD pass=22 twice; the receipt and gate arm print pass=23); R82V2 two round commits, 81637750 and d98c5d92, appear nowhere in the report despite the R81V8 disposition claiming every commit is named; R82V3 the axis last-change cells stay at rounds 78/78/80/75 while operability, depth, coverage and calibration carry round-82 evidence text (coverage recurs the routed R80V6). Standing note: the 14-seat wave has no planner seat (template section 3 names one; rounds 80 and 81 also dispatched none and the run-15 shape does not restate it). SHONEN: all four boxes are [~] with resolvable pointers and look fully checkable by a non-author; promotion is operator-owned and I wrote no [x]. No promotions, no mints.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 82,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 82,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 82
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "The client's own band (mado r82 C1: a declared dynamic layer band modelled through a declared --allocation map - declaration first, allocation second, zero/absent refused and a negative a setup refusal, both call sites; 47/47 frozen cases with 8 new and 39 carried byte-equal, 34/34 mutants killed, held r81 tool 39/47, tool selftest 133/133)",
+    "The tray plane's runbook rows (mado r82 C2: three shape-bound rows for the StatusNotifierWatcher's owner, its interface census and the method table that census prints; 29/29 cases and rows, 24/24 shapes, 25/25 mutants killed; held r81 instrument rc 2 at this tree)"
+   ],
+   "report": ".ufo/reports/round-82/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-82-verifier-spotcheck.md@67dd2b667b72f7f72309340d488b355d543841a5",
+    "rechecks": "Step-1: report by mado-shokunin (16112746) filed after lane HEAD 59813b91; 11/11 cited hashes ancestors of refs/heads/master; lane clean local=remote=59813b91 ahead=0 before the verifier commit; prompt = templates/round-prompt.md lines 1-140 (only the working-dir placeholder resolved, <mado-repo> -> mado-shokunin) + addendum 6. C1 re-measured from committed bytes: 47 cases, 8 new / 39 carried byte-equal case objects, control sha256 e404bb3f..., CASES=47 MUTANTS=34 with 34 MUTATIONS entries, tool sha256 a129a435... (base) -> 38007528... (780c30fc) -> 58ef4f6a... (12e6ad57 = tip); receipts verified (base 39/47 TARGET_MISSED rc1; tip 47/47 mutants 34/34 tool_selftest 133/133 TARGET_MET rc0); counter not executed; band_of/parse_allocation read at :436-471 with call sites :481-482 and :805. C2 re-measured: 29 cases, 3 new / 26 carried byte-equal, control sha256 07599b24..., CASES=29 SHAPES=24 MUTANTS=25, SKILL.md table 29 rows at :248-276; tip receipt 29/29 25/25 TARGET_MET tree=bound; held r81 instrument rc 2 at this tree; counter not executed. Harm watch re-derived: index 100->101, instrument population 148->150, five held blobs identical; gate 460/460 and axis mismatched=0 evidence-verified. Spot-check re-opened S481/S482/S483 live (sha256 87e0b9c8.../19df7f18.../f22928e1... match; 2 admits + 1 reject all agree with the gate)."
+   },
+   "commit": "mado-shokunin@59813b913cd0fce28e86a2a9fbf5d43245b54ccc",
+   "closed_at": "2026-11-04T13:55:27Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-11-04T10:08:08-03:00 launch mado round=82 pgid=1439453 driver=hyaku-inline attempt=1; 2026-11-04T10:47:35-03:00 complete mado round=82; hyaku-inline attempt=1. Step-1 clean except the defects below: report 16112746 authored by mado-shokunin <mado@shokunin.local> and filed after lane HEAD 59813b91 (report lands last); lane repo clean, local=remote, ahead=0; prompt carries the template contract (0/140 mismatched lines besides the working-dir placeholder) and the addendum L2 floor >=8 / 8-16 seat band matches MISSION.md; ## SHONEN present with four [~] rows and pointers; not a marker. Claims: C1 coverage improved (capability acquisition, 47/47 frozen cases, 8 new + 39 carried byte-equal, 34/34 mutants, held r81 tool 39/47; the critic's V7 shows the counter cannot discriminate the declared allocation from a live-box shortcut - reported as a named limit, not overclaimed, routed). C2 operability improved (29/29 cases and rows, 24/24 shapes, 25/25 mutants, held r81 instrument rc 2). Harm watch re-derived: index 100->101, instrument population 148->150, held checkers and gate byte-identical; gate 460/460 and axis mismatched=0 evidence-verified. Trends expansion/quality/discernment improved; outside spot-check agrees on 2 admits and 1 reject. Routed defects (status-neutral, lane to fix next round): D1 corpus/knowledge/bar-footprint-allocation-r82.md:3-5 cites the pre-E2 receipt line (rev=780c30fc, tool_sha256=38007528) that 53a32d3b overwrote in place (receipt now rev=12e6ad57, tool_sha256=58ef4f6a) - fix by erratum/superseding pointer or the surviving measurement-c1-r82-at-tip.txt; D2 report :79 says 11 ok / 3 defect seats while the seat files and the report's own table carry 7 ok / 7 defect (the three scribes plus ReviewerC1, ReviewerC2, CriticClaims, Sentinel); D3 receipts/census-start-r82.txt is a truncated capture (the same command over base 6ea2386d prints 55 lines incl W01 S277; the tip prints 56 lines incl W01 and a new W04 for S481, not 'W04 only'); D4 LOG.md:4072 still cites set_size :347-348 (that span is the configure event's zero-size sentence; set_size is :128-129) - the class of conflation the entry seat fixed; D5 S481's span :122-138 / zero clause :128-131 overruns (</request> at :137, sentence ends :129) in SOURCES.md:433, README:133,186, the report and the entry - re-anchor via a supersedes row; D6 the 'wave-done receipt' named in the 59813b91 row does not exist in the tree and check-wave-done output is uncommitted (counts re-derived by jq: 14 items, 14 results, 0 empty); D7 the report's harm watch cites df6c613d while receipts/harm-watch-r82.txt says 53a32d3b; D8 the harm-watch sentence pairs a git blob short id (0e9fa220) with a sha256 (58ef4f6a); D9 'eight cases, six refusals' misstates the decomposition (8 new cases, 3 refusals; 47-set has 6 x rc3 + 2 x rc2 + 1 x rc1); D10 the lesson Gate row quotes the configure sentence for S481 while the admitted row quotes the set_size sentence. No axis harmed; no trade. SHONEN: the four [~] rows are non-author checkable (promotion remains operator-owned and untouched).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
