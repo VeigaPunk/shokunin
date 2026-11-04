@@ -41847,6 +41847,46 @@
    "notes": "Dispatch/complete digest: 2026-11-04T00:18:41-03:00 launch tsukuroi round=74 pgid=968016 driver=hyaku-inline attempt=1 | 2026-11-04T00:23:35-03:00 lane-dead-no-report tsukuroi round=74; retry same round (attempt 1 ended without a landed report) | 2026-11-04T00:23:37-03:00 launch tsukuroi round=74 pgid=988204 driver=hyaku-inline attempt=2 | 2026-11-04T00:57:24-03:00 complete tsukuroi round=74; hyaku-inline attempt=2. Honest stop: C1's frozen alias set (volume) is falsified by pinned unit-file.h:25-32 (timer/path); lane refused literal credit, errata'd append-only (R74-DECL-ALIAS-SET, R74-BASE-OID), QUALITY 106/107; closure reproduced both. C2 repairs verified, no uplift taken. Routed defects for r75: (1) persist SC3Index 429 death receipt or file erratum (429 exists only as L1 report prose); (2) report wording 'SC3Index left no completed doc drafts' contradicts the 27.5KB self-verified draft on disk - say 'no review-accepted drafts'; (3) E3HostProbe/receipt-g-landing.txt header still prints fabricated OID d749a625f483... - corrections-sweep residue; (4) freshness axes-table row stale since round 65 (prose-only updates) - restate table; (5) named instrument limits (counter PASS label on exit-3 failing aggregate; C2 selftest answer key) - fix only if instruments revised; (6) self-disclosed process debt: late protocol loading, wave context omitted pacman/scratch guards. Operator note: all four SHONEN boxes now look fully checkable by a non-author (box 3's whole-skill no-oral-context retest remains the open L0 round-60 item); promotion review is operator-owned, no [x] written by closure.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 71,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 71,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 71
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "exit-status-disagreement kill-credit battery + shape-extended carrier census"
+   ],
+   "report": ".ufo/reports/round-71/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-71-verifier-spotcheck.md@976684a27e99c2508037a60eec415f550f53d70e",
+    "rechecks": "Step-1 PASS: report 13bb4806 by mado-shokunin <mado@shokunin.local>; SHONEN heading :157 with 4 [~] lines (:159-162) = the 4 SHONEN.md boxes, no [x]; 9/9 cited lane commits (c354f4d4,4a91c644,8e78a4ee,e137b5a4,3868bc65,443cbd50,9b2f1bce,f9230c46,82927056) ancestors of master; jj state branch=master local=remote=82927056 ahead=0 behind=0, status clean; report committer 01:18:59 > lane tip 01:17:25; prompt :1-140 equals the rendered template (two substitution deltas) plus the section-6 run-15 addendum, five child-lane items present; wave w1 13 seats (attack 4/13=30.8%, connector 1) inside band 8-16. Claims evidence-verified; lane counters NOT executed per Gate standard. C1 mechanism re-derived: r70 conjunct mz_rc!=0 at c1-r70-landing-controls.py:478 vs summary-only at c1-r71-landing-controls.py:486; 4/4 vs 3/4 derived from the fixture semantics at c1-r71-real-children.py:78-80,110-113; receipt cases=4 correct=4 base_correct=3 TARGET_MET rc0 at 8e78a4ee; harness sha256 f8364995 at 8e78a4ee and tip. C2: frozen 23-case sha256 d7814de8 re-hashed; 17 r70 cases byte-identical carried + 4 carriers + 2 negatives; base leg correct=no exactly the four carriers (19/23); receipt controls=23/23 base_controls=19/23 TARGET_MET rc0 at 8e78a4ee and 3868bc65; counter sha256 72a0c2a5 -> 253dee5d; F1 rebind window :679-681 and F2 edge-before-call in resolve() present; regressions :1209/:1214. Harm: SCORECARD diff +61/-0; index 83 -> 85; ledger 122/122; axis checked=3 mismatched=0; gate 460/460 with tools/mado-verify.sh blob 9113c7c0 at every commit 443cbd50..tip; r70 instruments byte-identical base->tip."
+   },
+   "commit": "mado-shokunin@82927056e21b2e7b9ab2c7570e783c0bb851e132",
+   "closed_at": "2026-11-04T04:29:48Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (watchdog.log 2201-2220): 2026-11-04T00:05:52-03:00 launch mado round=71 attempt=1; 00:06:22 lane-dead-no-report (no landed report); 00:06:24 launch attempt=2; 01:19:55 complete attempt=2. Conformance defects (status-neutral): D1 Sources&frontier arithmetic off by one - census-after has 39 W0 lines, 2 of them S442/S443 (37 pre-existing + 2), report says '38 pre-existing plus one new W04'. D2 the single rejection cites raw .../v3.14.8/Doc/library/stdtypes.rst which 404s (3.14 moved it to Doc/builtins/stdtypes.rst, which does document update/setdefault) and the rejection was not curated as a 'rejected' SOURCES row. D3 harm-watch-r71 'frozen round-70 counters at the tip' leg is a missing-scratch setup error with rc recorded 0 (declared setup exit is 2) and no corrected r70-pair run, while report/LOG assert cases=3 correct=3 base_correct=1 and controls=17/17 base_controls=13/17 at the tip (C2 half review-verified at e137b5a4 in w1/R71RevC2.md; C1 half has no r71-revision run; both r70 instrument blobs are byte-identical base->tip). D4 w1-results.json carries no per-seat status field, so '13/13 settled status ok' rests on the orchestrator WAVE-DONE message. D5 report calls quote A '11 words'; it is 10. D6 no SKILL.md gate-registry rows for the r71 counters (registry home's last table is round-68; r69/r70 prose-only). D7 no planner seat (policy lanes has no planner; the spec declares the L1 holds it). Routed to mado for r72: D1, D2, D3, D5, D6 and D4's capture; carried open: r69 check-deliverables.py reds (belong to a round-69 correction entry). Spot-check: admits S442/S443 re-opened live (sha256 05cd782c / e19de4fe byte-identical; quotes at :53/:54-55 and :1415-1417, 10/15/25 words) - agree; reject stdtypes agree in substance, disagree on the cited 404 URL. Census validate exit 0, mado ok. All four SHONEN boxes stay [~] with pointers (box 2 is the historical round-3 e2e task); promotion is operator-owned, no [x] written.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
