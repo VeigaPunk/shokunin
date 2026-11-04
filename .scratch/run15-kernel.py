@@ -54,7 +54,9 @@ def fill_slots(log):
     if draining(): return
     d = st_load(); live = list(d['live'])
     while len(live) < MAX_LIVE_LANES:
-        cand = [l for l in queue() if l not in live]
+        # A lane whose L1 (any attempt) is still running must not get a second L1 (mori r89 incident).
+        busy = {lane_of(x) for x in L1S} | set(CLOS)
+        cand = [l for l in queue() if l not in live and l not in busy]
         if not cand: break
         l = cand[0]; d['lanes'][l]['block_start'] = None; d['lanes'][l]['block_done'] = 0; st_save(d)
         log.append(launch(l)); d = st_load(); live = list(d['live'])
