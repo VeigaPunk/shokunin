@@ -41358,6 +41358,47 @@
    "notes": "Dispatch/complete digest (verbatim from .ufo/watchdog.log, mutable): 2026-11-03T22:31:48-03:00 launch kake round=77 pgid=939068 driver=hyaku-inline attempt=1 | 2026-11-03T23:08:54-03:00 complete kake round=77; hyaku-inline attempt=1. Lane a2cc5f51 -> bb2f8eda (pushed, ahead=0, worktree clean, remote refs/heads/master verified at closure); report fleet 0d758465 by kake-shokunin, contained in origin/master. Round shape: ONE v1 wave w1, 14 seats (scout 2, executor 4, scribe 2, reviewer 2, critic 1, mutation-tester 1, connector 1, sentinel 1), attack 4/14 = 28.6 %, 0 empty outputs. Claims: C1 calibration improved (SHONEN ledger counter), C2 operability improved (sitemap container/format capability); verdicts as recorded. Routed defects (status-neutral): (1) SentinelC F2-F4 are closed at the carried tool f767af77 but the report and the round-77 lesson list them as open and omit F7/F8 - correct append-only; (2) PROVINCE.md and corpus/README.md were not updated although the report says the frontier advanced - update both and correct the sentence; (3) SHONEN box 4 '0 of 63' should read 64 at the measured revision; (4) SentinelC's F1 closing hash 00cb4fb2 is uncommitted (carrier 2d66e5af) - re-cut or state the build split; (5) the round-level doc_quote_truth run has no committed receipt - commit it; (6) amendment 1 A1 cites stripped lines 177-180 while the retained file holds 353-357 - name one rendering. Open L0 kake|round-69 remains open and was routed around. Operator note: the four SHONEN boxes are checkable by a non-author from the repo (box 2 is a real gap: one LOG-named receipt absent); promotion is operator-owned and was not touched.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 73,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 73,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 73
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "improved",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-73/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-73-verifier-spotcheck.md@d749a625b3054b7cb3435983fb9626ab3d0ed0c4",
+    "rechecks": "Step-1 PASS: report 53e452c5 by tsukuroi-shokunin <tsukuroi@shokunin.local>, authored 10 s after lane tip 8985a817, contained in origin/master; SHONEN heading 1 + 4 [~] lines vs 4 boxes, no [x], SHONEN.md unchanged; 9 cited round hashes + base eb105757 all ancestors of refs/heads/master (HEAD detached); jj state ahead=0 local==remote 8985a817, only 4 untracked dispatch/runtime markers; prompt 1-140 = rendered template with placeholder-only diff + section 6 run-15 addendum, five child-lane items present, L2 route map matches MISSION's advisory buckets; wave 12/12 seats, attack 4/12 = 33 %, connector 1, residual 0; all six report sections present. C1 RE-MEASURED over committed bytes: note absent at base (rc 128) -> 6 UL rows, 3 sources / 3 snapshots (reuse 2 each); registry 303 -> 308 (5 new rows, NF=13 each; S304-S306 mined with used-by, S307/S308 rejected); knowledge notes 90 -> 91; snapshot digests equal note cells, SHA256SUMS and live raw.githubusercontent v262 bytes (3/3 HTTP 200); 6/6 quotes grounded (UL1 368-370, UL2 237-238/238-239, UL3 3908, UL4 3875, UL5 2383, UL6 351); my base sweep reads 0 matches for the plane anchors; census rc 0. Counter met=1 EVIDENCE-VERIFIED from after/measure-3cfa23ac.txt, whose header names committed tool sha256 1f22c26b; lane gate not executed. C2 RE-MEASURED: r72 lesson correction, digest erratum and capability refresh absent at base and present at tip; r72 receipt .ufo/waves/round-72/after/selftest-selftest-after.txt present (10 cases); checker receipts c2-before-final-instrument (ROUTED_STALE=3 rc 1 at eb105757 and a7015d27) and measure-3cfa23ac (ROUTED_STALE=0 ROUTED_OK=3/3 rc 0) name committed tool sha256 ad853877; selftests 13 and 14 cases; lane checker not executed. No axis harmed: base->tip numstat insertions-only on SCORECARD/SKILL/PROVINCE/LOG/corpus/SOURCES/corpus/README. Discernment: 5/5 spot-check agreements - three admits re-opened live byte-identical (S304/S305/S306), two rejects re-opened (S307 reproduces S304's merge text with no divergence; S308 is provenance-only with 0 merge-rule terms, nonce-only digest divergence reproduced)."
+   },
+   "commit": "tsukuroi-shokunin@8985a81733289905040e2e889c9d7b99369804e4",
+   "closed_at": "2026-11-04T02:34:40Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (verbatim from .ufo/watchdog.log, mutable): 2026-11-03T22:57:20-03:00 launch tsukuroi round=73 pgid=1857750 driver=hyaku-inline attempt=1 | 2026-11-03T23:26:41-03:00 complete tsukuroi round=73; hyaku-inline attempt=1. Lane eb105757 -> 8985a817 (pushed, ahead=0, remote refs/heads/master verified at closure); report fleet 53e452c5 by tsukuroi-shokunin, contained in origin/master. Round shape: ONE v1 wave w1, 12 seats (scout 1, executor 3, scribe 3, connector 1, reviewer 2, critic 1, mutation-tester 1; L1 held planner), attack 4/12 = 33 %, 0 empty outputs, residual 0. Claims: C1 depth improved (systemd unit-load merge plane UL1-UL6, S304-S306 tier A mined), C2 freshness improved (three r72 routed defects closed); verdicts as recorded; no capability added. Conformance defects (status-neutral, routed in the spot-check): R73-GATE-QUOTE-LINE-DRIFT (S306 quote cited install.c:2387, actual 2383; S304 anchors each carry one extra edge line) and R73-LOG-COUNT-STALE (LOG Round 73 says twelfth/eleven selftest cases, final committed instruments are 13/14; lesson Correction 2 and SCORECARD wave-close carry the final, an appended LOG correction is owed). SHONEN: 4 [~] boxes, no [x]; boxes 1/2/4 read non-author-checkable on the committed evidence, box 3 stays unexecuted (whole-SKILL no-oral-context retest open, L0 tsukuroi | round-60), so promotion is not yet clean for the operator; promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
