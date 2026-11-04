@@ -44579,6 +44579,51 @@
    "notes": "Digest (copied from the mutable .ufo/watchdog.log): 2026-11-04T08:44:11-03:00 launch kaidoku round=78 pgid=3503163 driver=hyaku-inline attempt=1 | 2026-11-04T09:43:28-03:00 complete kaidoku round=78; hyaku-inline attempt=1. Report c8dc329d by kaidoku-shokunin <kaidoku@shokunin.local>, commit date 09:42:52 after the lane tip f9fb37e5 (09:42:35) and in origin/main; SHONEN heading with 4/4 [~]; all 21 cited hashes resolve and are ancestors of refs/heads/main; jj-lane state ahead=0 behind=0, porcelain empty; prompt sections 1-5 match templates/round-prompt.md modulo substitutions plus the §6 addendum. Claims verified: R78-C1 calibration (10/10 attack fixtures base-accepted and refused 10/10 by distinct declared rules, genuine record 0 mismatches / 0 defects, instrument sha bound at 93753d88 and 51c08cda; controls base-only 0/10, all-refuse genuine 1, no-fixtures base_accepted 0); R78-C2 freshness (before 6/8 matched with 2 mismatches; after 8/8, 0 mismatches at 93753d88 and 51c08cda, instrument sha bound; the closure independently re-derived the eight live values). Conformance defects (status-neutral): the report's Filing bullet and SCORECARD line 6041 still name receipt revs bc73b27a/3bb87162 while f9fb37e5 re-took prefile-at-filing/gate-at-tip at e2846648; SCORECARD says the gate changed twice vs the four disclosed supersessions; attack-gate.py:1-940 is stale (949 lines); the LOG round-78 block is appended under the round-77 heading. Routed to r79: (1) receipt-revision prose correction; (2) supersession count; (3) stale OMP :8 / Kimi :4126 line pointers and the path-only pointer rule; (4) a 26-case selftest receipt at the final instrument rev; (5) the line range; (6) the LOG heading. SHONEN boxes all [~] with resolvable pointers; they look fully checkable by a non-author (promotion is operator-owned).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 83,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 83,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 83
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage:omp": "improved",
+    "coverage": "unchanged",
+    "coverage:script-layer": "unchanged",
+    "coverage:runtime-layer": "unchanged",
+    "coverage:kimi-layer": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-83/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-83-verifier-spotcheck.md@a648a6f8f3028fc4f72d27470b4673fe8e3e5866",
+    "rechecks": "Both claims evidence-verified, not executed (PROTOCOL Gate standard): C1 ready-handoff v3 base 15/27 (controls/c1-base.txt) vs M 27/27 (close/c1-probe.txt) with the disclosed ARMS=27-vs-28-arm-site defect, repair probe 15/28 -> 28/28 (close/c1-repair*, repair arm sites counted 28 against ARMS=28), suite 54 -> 70; C2 compare-clock base 13/16 vs M 16/16, suite 105 -> 108, one clockRefusal shared by --shape (:511) and --compare (:270). Re-measured over committed bytes: probe arm sites (28/16/28), judgeCase counts 54 -> 66, pin sha256 (ready-handoff d6e6ba8a, omp-census f6ace3e2, both matching the stanza; base pins 7e9827ad / 92180f3c match the base blobs), SOURCES rows 177 -> 180 tiers A 150 -> 153, README map 210/210, census validate exit 0 (kumitate ok, six carried W04). No axis harmed: proxy MATCH, harm matrix CLEAN harm=0. No lane gate executed."
+   },
+   "commit": "kumitate-shokunin@d5fc2c9407a75e939b332560f54548f2dd52629e",
+   "closed_at": "2026-11-04T12:59:24Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-04T08:55:37-03:00 launch kumitate round=83 pgid=3737310 driver=hyaku-inline attempt=1; 2026-11-04T09:50:03-03:00 complete kumitate round=83; hyaku-inline attempt=1. Step-1 pass: report committed by kumitate-shokunin (56957b66 + erratum aaaf7989) after lane tip d5fc2c94; SHONEN heading present with 4 [~] lines; all five cited lane commits (base eb8e0095, freeze eda17453, scaffolding eca7debd, M 1c1a855a, tip d5fc2c94) are ancestors of master; lane clean (status empty, ahead=0, ls-remote master=d5fc2c94); prompt (704 lines) carries template sections 1-5 substitution-only (line 1 is the driver's real-path correction) plus the hyaku addendum with all five child-lane items and the >=8-seat one-batched-call L2 floor. Wave: 15 seats, resumeSends 0, attack 4/15 = 26.7%, connectors 1, band 8-16; five seats settled without report files (one provider limit, four partial finals in w1-results.json). Spot-check: 3/3 admits agree (S240 ufo-swarm-wave.mjs:1085-1087; S241 ufo-swarm-registry.mjs:27; S242 RFC 3339 capture line 99, sha256 c53b2d12...); the round-83 Gate has NO reject decision (R81-6 class relapsed), so the reject half was re-opened from round-82 S239 (OPA capture 75ea1452..., agree; the round-83 Errata correctly records the quote elision). Routed defects: D1 Gate with only admits (curate >=1 reject per round with reason+flip); D2 SCORECARD.md:3946-3949 round-83 prose stale (A 891->894 and pin.ready-handoff c1463c58 vs the stanza/receipt A=896 and d6e6ba8a; c1463c58 appears in no blob); D3 'every receipt carries a rev= line' false for close/{c1-probe-scaffold,c2-probe-scaffold,c1-repair-base,checklists}.txt; D4 duplicate '## Mistakes' heading + stale pending placeholder in corpus/lessons/round-83.md (fold into the next round's erratum, never rewrite filed bytes); D5 counter defects pre-registered (ARMS mismatch + ATTACK_SHARE fixture; c2 header tally 15/15 vs ARMS=16); D6 disclosed red plan-before-ready MAP_DRIFT pre-registered as round 84's first commit. Operator note: templates/round-prompt.md:1 renders '<{{LANE}}-repo>' literally; the driver's path correction hides it (template is operator-side). SHONEN boxes 1-4 look checkable by a non-author from committed evidence; no [x] written (promotion is operator-owned). Trends: expansion improved (177 -> 180 rows, two knowledge entries on uncovered ground); quality improved (suites 54 -> 70 and 105 -> 108, two seat-found repairs with regression cases, two entries amended append-only, harm=0); discernment unchanged (outside check agrees on all three admits but the round's Gate produced no reject, so the admit+reject pair could not be exercised; the wave's seat-level catches are real and counted under quality; no disagreement left unlearned).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
