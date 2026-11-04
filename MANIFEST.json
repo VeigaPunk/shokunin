@@ -43777,6 +43777,50 @@
    "notes": "Digest: 2026-11-04T05:35:39-03:00 launch kumitate round=80 pgid=3488582 driver=hyaku-inline attempt=1; 2026-11-04T06:25:44-03:00 complete kumitate round=80; hyaku-inline attempt=1. Lane 1968689f → 01d12789 (8 commits), pushed ahead=0, clean; report 35b76d79 by kumitate-shokunin <kumitate@shokunin.local> at 06:25:12 -03, after lane tip 06:24:50 and an ancestor of fleet master/main e9594e33. Prompt 704 lines renders templates/round-prompt.md (140) substitution-only + §6 addendum; all five child-lane items, the L2 floor, commit-then-push, push scope and L0 present; MISSION.md has no per-lane route pin. Wave: one v1 wave, 13 seats (executor 3, scribe 2, scout 2, reviewer 2, connector 1, critic 1, mutation-tester 1, revenger 1; planner = L1), attack 4/13 = 31 %, 13/13 reports, 0 dead, inside the 8–16 band. Claims evidence-verified: C1 counter 13/13 vs base 6/13, stub 3/13, selftest 26→34, live spotchecks=46/MAP CLEAN; C2 counter 12/12 vs base 4/12, stub 1/12, proxy MATCH source=snapshot, O=65, receipt sha 84e41b9f… = pin, selftest 159→163. Plain counts: A=886, C=39, operability 9; map 198/198/198; SOURCES 171→173 (A 146→147, C 9→10); census exit 0 (six W04). No owned axis harmed; SCORECARD diff only stanza/pins/two rows/planned/correction. Conformance defects routed R80-1..R80-12: dead `open/checklists-scaffold.txt` pointer and uncommitted scaffolding 39/39; lesson map 197 vs receipt 198; lesson C1 base '5 of 13 pass' vs 6; `open/conflation.txt` mis-cited for REFUSED_ORACLE (arm 08 holds it); S119 quote 21 vs 19 words (repeat r79 D4); SKILL spotcheck-adopt row tail still v1/16 cases and item 745 28-case suite vs final 34; unsupported S117/S118 `used-by` extensions to `two-reading-verdicts.md` (entry cites only S119) and unlogged; LOG selftest 26→28 vs final 34; report 'final tip' vs rev=6cbd6750; base receipts omit exit codes; adoption stdout and source-dupes red-before quoted not committed. SHONEN: 4 [~], no [x]; boxes look checkable in principle, promotion operator-owned. The non-author spotcheck at 77c7a8b3 adds the 10th spotcheck recurrence (`round-80-verifier-spotcheck.md`) for round 81 to adopt. No promotions, no mints.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 78,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 78,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 78
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "margined auto-zone band composition (mado r78 C1: client auto zone plus compositor anchored-edge margin; 18/18 vs held 8/18, seven named mutants killed)",
+    "churn-resistant read-only runbook (mado r78 C2: 17/17 matched, 12/12 shape-bound rows, 17/17 row-bound anchors, held fixed-value rule 5/17)"
+   ],
+   "report": ".ufo/reports/round-78/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-78-verifier-spotcheck.md@e4b153dfa4a67ca56f7ec65cb6639082451626a7",
+    "rechecks": "C1 re-run at a6ed9867: cases=18 correct=18 mutants=7 killed=7 base_correct=8/18 tool_selftest=28/28 TARGET_MET rc0 (base f597eccb with --no-mutants: 8/18 TARGET_MISSED rc1). C2 re-run at a6ed9867: executed=17 matched=17 shapes=12/12 anchors=17/17 control=5/17 mutants=5 killed=5 TARGET_MET rc0 (base rc2, two anchors absent). SOURCES 401->401 (eight used-by cells only), knowledge/index 96->97, ledger 142 rows, census rc0; live join CLEAN/DIFFER reproduced over reduced captures; counter selftests 24/24 and 40/40; all 24 cited lane hashes ancestor of master; lane ahead=0 clean."
+   },
+   "commit": "mado-shokunin@a6ed9867afc83ab0a66372c8df6c4fea484147f0",
+   "closed_at": "2026-11-04T10:07:30Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-11-04T06:08:41-03:00 launch mado round=78 pgid=277784 driver=hyaku-inline attempt=1; complete 2026-11-04T06:59:32-03:00. Report 32bb928a by mado-shokunin, filed after tip a6ed9867; SHONEN heading 4x[~]; wave 13 seats (band 8-16), attack 5/13. Defects (status-neutral): L0 line 'mado | round-78' appended but uncommitted at closure (integrator durability commit owed); the report's C1 before-command needs --no-mutants (as pasted it exits 2 at the base rev); tool VERSION still r78-v1 while report/SCORECARD call the repair r78-v2 and the c1 counter docstring still prints tool_selftest=22/22 (observed 28/28); README frontier names 3 of the 7 re-opened rows. Routed to round 79: bump VERSION, fix counter docstring and the r77 erratum line, align the frontier count; partial seats R78ExecC1Tool/R78RevC2 remain round-79 ground. SHONEN: boxes stay [~]; boxes 2/3 have committed end-to-end receipts but promotion is operator-owned and no [x] was written.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
