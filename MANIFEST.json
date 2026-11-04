@@ -47263,6 +47263,44 @@
    "notes": "Dispatch digest (watchdog.log, mutable): '2026-11-04T17:00:42-03:00 launch kumitate round=86 pgid=2837110 driver=hyaku-inline attempt=1'; '2026-11-04T18:15:18-03:00 complete kumitate round=86; hyaku-inline attempt=1'. One claim (C1 operability, capability acquisition counter-receipt v3); one v1 wave, 12 seats (band 8-16, attack 5/12, connector 1, no residual); K86Mutation died on a provider 401 and four attack seats settled without artifacts after an orchestrator kernel restart — no post-data adversary is claimed and none was found, so falsification rests on the four frozen pre-data controls, the disclosed same-path supplement and the independent driver. ROUTED (status-neutral, owed round 87): R86-D1 run-close.mjs hashes scripts/counter-receipt.mjs for every case, so 9/10 close receipts misname the measured instrument (close/map.txt tool_sha256=e9531370 vs readme-map fc119ab6) — the exact class Q79 was written against; R86-D2 the driver's cited receipt contradicts the report (build/K86ExecDriver/transcript-run1.txt reads UNMET 30/54 at pre-integration f385bd7a; the reviewer re-ran it to 54/54, so the reading is true but the pointer does not support it) — commit the post-integration transcript; R86-D3 SOURCE_CAPTURE/SOURCE_DUPES/SOURCES_CHECK are claimed as gates at M with a close/ pointer but no receipt exists, and SOURCE_CAPTURE cannot be CLEAN at M because the S249 capture .ufo/waves/round-86/open/node-crypto.html bound by .ufo/pins/source-captures.json at M lands only at fc0316e7 — re-measure at the tip with receipts or bind capture and pin together; R86-D4 carried: ready-handoff DRIFT RELATIVE_WAVE_PATH x4 on the round's own dispatch (already round-87 candidate 6). Aggregator/next-round duty: this closure's spot-check file lands without a corpus/README.md map row (closure write scope is that one path), so readme-map reads uncovered and spotcheck-adopt --check uncovered=1 until the row and pin are adopted. Conformance notes, not defects: the report's author date (18:09:24) precedes the two follow-up lane commits it cites, while its committer date (18:13:54) follows them — a jj amend artifact, not a filing-order violation. SHONEN boxes are all [~]; boxes 1-4 now look mechanically checkable by a non-author, but promotion stays operator-owned and no [x] was written.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 67,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 67,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 67
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:verifiability": "improved",
+    "coverage": "improved",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-67/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-67-verifier-spotcheck.md@d0f48405e7fe44a53a28305785dc4d881a414194",
+    "rechecks": "C1 evidence-verified, lane gate never executed: gate 8147350c at c40f0bc8 and at tip equals pins.measured.gate_sha256, base gate 51f299af; final receipt VERIFY measurements=12 failures=0 revision=c40f0bc8 with driver-self-pin 07dfa36c running=pinned=committed-at-controls, controls-pins 14/none, probes 20/0 with P9/P10/P11/P19/P20 stale, shape-identity 20, selftest 73/0, mutbat 5/5, multihead mutbat 7/7 equivalents=3, real ledger 35/35, red-wrong-want and identity guards; before receipts show the base gate green on the three two-operand SIGPIPE shapes and both mid-argv '--' shapes with native -13, base selftest 67/0, base probes 20/0, base battery killed=0/7 invalid_rejected=10, base graft 73 cases/5 failures; gate diff +117/-23 adds sigpipe_input_count (first '--' split, grep pattern skipped) over READ_ONLY_HEADS with cat byte-identical; battery ea31d439, probes d56a1437 and ledger 28ad7fef equal their pins. C2 re-measured from committed bytes: registry 99->101 (A 89->91, B 5, C 5, mined 81->83, rejected 18), knowledge 82->83, frontier unique ids 44->45, entries 47->48, capture records 79->81 unbound=0, census exit 0 with the six inherited W04 and none on S100/S101, source-recheck 58/58 (S100 48, S101 10) exit 0, snapshots cf834a65/a55e315f match the rows; SOURCES +6/-0, README +21/-0, QUALITY +16/-0, SCORECARD +31/-0, PROVINCE unchanged."
+   },
+   "commit": "kasegi-shokunin@f167ee104d001791f7f444cda8a25c3866e0e28c",
+   "closed_at": "2026-11-04T21:25:30Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-04T17:48:59-03:00 launch kasegi round=67 pgid=3615195 driver=hyaku-inline attempt=1; 2026-11-04T18:20:16-03:00 complete kasegi round=67; hyaku-inline attempt=1. Conformance ok: report committed by kasegi-shokunin (414d7a45, 18:19:36) after lane tip f167ee10 (18:19:12) and cites it; ## SHONEN x1 with four box lines matching SHONEN.md's four boxes; base 8e2a8fe8, all six cited commits and measured c40f0bc8 exist and are ancestors of refs/heads/master (detached git HEAD); jj-lane state ahead=0/behind=0, status clean, ls-remote f167ee10; prompt 824 lines, l.1-140 byte-identical to the templates/round-prompt.md rendering with the hyaku addendum appended at l.141 and all ten contract items present; the quoted L2 route map is the run-15 restore and does not contradict MISSION.md's advisory role-class buckets. Round shape: one v1 wave, 12 seats (3 executor, reviewer, critic, mutation-tester, sentinel, revenger, scout, connector, 2 scribe; L1 holds the planner seat), 5/12 attack (42%), 1 connector, no residual or dead seat; 12 seat reports present, w1-results seat outputs null under the kernel restart (disclosed). Routed defects (status-neutral, next round): V67-1 entry header and SOURCES.md:250 say 54/54 quotes (S100 44, S101 10) while the landed manifest pins 58 (S100 48, S101 10) and source-recheck prints 58 - flagged by the scribe at w1/ScribeF45/NOTES.md:211-213 and landed unfixed; V67-2 corpus/README.md:1050 carries a bare knowledge/ cite, so the lane's own citation-ground-check.py --root . exits 1 (findings=11, one new); V67-3 entry C15 ends the Level-3 area list at S100.txt:463 (an item) instead of the L462 heading; V67-4 controls/driver-pins.json note still names driver 61d5a048 / battery e6d54540 while the pinned dict values are 07dfa36c / ea31d439. Inherited, not introduced: recheck-audit.py exits 1 with the same 9 cwd_fail at base and tip (73/82 -> 74/83, the new entry passes), citation-ground-check's other 10 findings, and .ufo/state/kasegi.round still reads 17 (legacy, V66-4). Operator note: SHONEN boxes 1/3/4 are [~] author-asserted but non-author-checkable against committed bytes; box 2 stays [ ] - promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
