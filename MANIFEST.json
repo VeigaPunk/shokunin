@@ -44001,6 +44001,51 @@
    "notes": "Dispatch digest: 2026-11-04T06:40:45-03:00 launch kumitate round=81 pgid=725520 driver=hyaku-inline attempt=1; 2026-11-04T07:34:13-03:00 complete kumitate round=81; hyaku-inline attempt=1. Step-1 conformance PASS with defects: one v1 wave of 14 seats (executor 3, scout 2, reviewer 2, scribe 2, connector 1, mutation-tester 1, critic 1, sentinel 1, revenger 1; planner held by the L1 per addendum, validator rejects the role), attack 4/14, 14/14 result rows, 12 seat reports, 2 dead seats (K81MutC1, K81Sentinel) named and never replaced. Routed defects for round 82 (all status-neutral): R81-1 close receipts stamp rev=d140f288 while the measured bytes are the 13060d9b instrument (c1-probe sha=df736d63; census selftest 98 cases exists only at the close tip) and the report repeats the stale revision; R81-2 the C2 SHAPE_STALE reading is cited to close/census-shape.txt but lives in close/c2-probe.txt (arm max-age-stale); R81-3 SKILL.md:618 pin.ready-handoff=f8b4a92b while the stanza and file are f8fc11f1; R81-4 the two new knowledge entries' verified-at tallies are stale at the shipped tip (31/31 vs 34/34; 97 vs 98 cases); R81-5 the quoted 'WAVE-DONE … all 14 seats settled' line resolves nowhere (w1-results.json carries seats=14 and 14 rows only); R81-6 the round-81 Gate records no rejected row (sampled r80 S235; sample limit, not a disagreement); R81-7 'six fail-closed refusals' is short of the eight distinct throw new Refusal tokens; R81-8 lessons:57 open README-map reading 198/198/198 contradicts open/readme-map.txt 199/199/199. No uncommitted round work; lane pushed. SHONEN boxes look checkable by a non-author from committed evidence (barring R81-3/R81-4 precision debt); promotion is operator-owned and no [x] was written. This closure's spot-check file adds the 11th spotcheck-coverage file for the lane to adopt in round 82.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 84,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 84,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 84
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "population-control counter (.ufo/waves/round-84/count-c1.py): re-derives the four-mutant r83 population at any revision from that revision's bytes, requires the two subject arm labels, grades the equivalence exemptions against byte coupling markers, binds the printed 2/2/4 split and gates its own detector selftest; C1_COUNTER_SELFTEST pass=15 fail=0",
+    "all-anchor-rows revision arm (tools/mori-record-sweep.py): every carrier row and every bound-revision blob row the anchor selects must carry the token, so an ambiguous anchor is row-value/rev-bytes instead of a first-match pass; 44 selftest arms and two defeated ambiguous fixtures",
+    "live-delta classification (.ufo/waves/round-83/count-c2.py): a pure importable live_delta names every live-versus-snapshot token delta (absent-live / added-live / class-changed:<a>-><b> / agreed) with one LIVE_DELTA line per non-agreed token; 16 selftest arms"
+   ],
+   "report": ".ufo/reports/round-84/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-84-verifier-spotcheck.md@2cc4b1ae35a83e4fd3fc48bae842bdf38df2e80e",
+    "rechecks": "C1 statically re-derived (A2 anchors each 1x, coupling markers each 1x, blind_case_tally/green_requires_fail_zero present with A4 assertions, arms 6->8, r83 count-c1.py +23 lines with green()/killed()/grade() untouched); C2 statically re-derived (ALL_ANCHOR_ROWS + anchor_rows on carrier and git-show sides, four new arms whose red fixtures fail only on the second selected row, arms 40->44, 3 frozen bindings, survivors=0 selects 5/5 rows at da7631f4 and 7/7 at tip); C3 statically re-derived (LIVE_DELTA at :90/:328, four delta arms, arms 12->16, A7 preservation markers each 1x, counter imports the classifier and recounts 64 tokens); all three after receipts read met at da7631f4 and d9574692 and every graded blob is byte-identical to the tip; lane gates were not executed (PROTOCOL Gate standard); battery pass=57 setup=4 fail=0 unchanged and the r83 counters still read met at the freeze"
+   },
+   "commit": "mori-shokunin@72fc09247aae134057336e99f7db34a7123d5759",
+   "closed_at": "2026-11-04T10:47:36Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-11-04T06:21:52-03:00 launch mori round=84 pgid=482385 driver=hyaku-inline attempt=1; complete 2026-11-04T07:24:22-03:00. Status ok, admitted; all three claims verify and no axis is harmed (scores unchanged, SCORECARD additive only, battery pass=57 setup=4 fail=0 unchanged). Wave: one v1 wave, 14 spawn/0 resume (4 executor, 3 reviewer, 2 scout, 2 scribe, 1 critic, 1 mutation-tester, 1 connector; attack 5/14=35.7%); dead seats Mo84E02C2Rows and Mo84R02C23 disclosed and never replaced, L1 stand-in recorded. Discernment: non-author spot-check agrees with the S599 admit (pin line 121, 24 words, sha256 688224106999973f3b5c318af871b77923df2c36d0e3e2d799424e2c697cff49, 42566 bytes/597 lines) and the arXiv:2404.09241 reject (live 40386 bytes, sha256 4bcb20b23ad5046657a65a29595517da973128a289ff75ba13ad8926c5511a80; abstract defines equivalence, states only 'hamper this process' over manually created mutants in the Code Defenders study, no bias/adjudication); census rc 0, 371->372 rows, 35 tolerated W04, 0 malformed. Prompt 704 lines committed at ce0ad11e (by the lane identity - D84-1) carries template sections 1-5 verbatim; its base route map is superseded by its own later line 149 (only reviewer @m_zfl), the r83-accepted pattern. Routed (status-neutral): D84-1 prompt committed outside lane write scope; D84-2 QUALITY 172 quotes C1_COUNTER_SELFTEST pass=11 while the counter has carried 15 arms since 5a231ef8 and its :296-300 pointer drifted; D84-3 the refused 2404.09241 has no rejected SOURCES row (prompt 2b: rejections stay as rows with reason and flip); D84-4 the report quotes RECORD_SWEEP/CLAIM_SWEEP real-run outputs with no committed receipt; D84-5 battery receipt lacks a revision header and the defeated-control receipts cite gone /fast/scratch clone paths; minor descriptive drift: contract P-C2's 'five rows' is exact at da7631f4, 7 at the tip, all carrying the token. Non-author check: spot-check landed 2cc4b1ae35a83e4fd3fc48bae842bdf38df2e80e (single path, protocol identity, pushed). SHONEN boxes look non-author-checkable; promotion operator-owned. No tool installs, no sibling or fleet write.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
