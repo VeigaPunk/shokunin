@@ -42581,6 +42581,49 @@
    "notes": "Dispatch digest: 2026-11-04T02:24:44-03:00 launch mori round=79 pgid=3421075 driver=hyaku-inline attempt=1; 2026-11-04T02:48:36-03:00 complete mori round=79; hyaku-inline attempt=1. Step-1 conformance clean: report committed by lane identity mori-shokunin <mori@shokunin.local> at fleet 13bb4496 (committer 02:48:06 -0300, after the lane tip 02:46:55 -0300; its earlier author stamp is the jj working-copy change time); SHONEN heading present with one [~] line per box (4/4, author-asserted); all eight cited lane hashes exist and are ancestors of master; remote == local == d577b3d3, ahead=0, working tree clean; round diff 46 paths all lane-owned (wave evidence, LOG, SCORECARD, SKILL, corpus, the new tool) with no existing instrument, sibling or fleet-root byte; contract + three counters byte-identical aa53b485->d577b3d3 (frozen before the wave, w1.ready 02:34:49); the dispatched prompt carries the template contract (§1-§5 incl. the SHONEN heading, commit-before-report and write scope) and MISSION's L2 floor (>=8 seats, one batched call). All three claims verified; no axis harmed (scores 6/7/5/5/5/6 unchanged, PROVINCE byte-identical). Defects, status-neutral: (1) SCORECARD capabilities row line 4016 still states 'selftest 18 in-memory cases' and '18/18' while the landed blob runs 19 and after-r79.txt records 19/0 - the corrections sweep after e3e2e272 fixed SKILL only; fix next round with a named correction; (2) count-c2.py's selftest does not kill three surviving mutants (drop the admitted filter, search past the first ';', accept a matching round anywhere in the cell) - lane-routed to r80 before any new C2 claim; (3) the adjacency Evidence cell cites a non-existent corpus/lessons/round-19-verifier-spotcheck.md (the cell itself discloses it) - replace with the committed MANIFEST row pointer it already names; (4) the control-receipt guard binds by section-level textual co-presence only (a '$ <any text>' line binds; decimal/exponent values sit outside the declared integer grammar) - record as a named limit beside QUALITY 164; (5) selftest arm 17 exercises FileNotFoundError, overlapping arm 9 rather than permission denial, and arm 16 tests the filename-sort helper not full --dir integration - low, when the selftest is next touched. Discernment spot-check agrees on the S594 admit and on the round's one reject-class decision (the scribe's 30-word row draft superseded by the lane's own <=25-word rule); the source gate was admit-only this round (one candidate, none competing) - named as a weakness, not a disagreement. SHONEN 4/4 [~] looks fully checkable by a non-author from the committed evidence; promotion remains operator-owned and no [x] was written. Carried: the three open mori L0 lines (r62 wave-surface waiver, r65 instrument-change ruling, r73 label-sweep instrument) stay unanswered and were routed around; the three r76 foreign receipt files remain disk-only under the standing leave-for-operator ruling.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 74,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 74,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 74
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "Challenge-witnessed kill credit + two-hop/environ-alias guard carriers (first-working round 74): credit a landing kill only when the run's last parsed MADO_LANDING_WITNESS: <16 hex> echo equals the caller-generated per-run challenge (12/12 against the held 8/12 on twelve real bash children), and classify a guard that reaches a git launch through a one-hop object alias at either spelling of the dotted path, or through a one-hop os.environ alias copied by dict(alias)/{**alias} (36/36 against the held 32/36, population 20/13/13/0); evidence .ufo/waves/round-74/measurement-c{1,2}-r74-final.txt, quality/counters/c1-r74-witness-rule.py, c1-r74-replay-witness.py, c2-r74-shapes.py, corpus/knowledge/{replay-witness-credit-r74,guard-carrier-twohop-environ-alias-r74}.md"
+   ],
+   "report": ".ufo/reports/round-74/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-74-verifier-spotcheck.md@b149d2ece1a6d75f5738aa8bf4a9493f1a9c7da6",
+    "rechecks": "Step-1 PASS: report 70ffd844 by mado-shokunin <mado@shokunin.local> at 02:48:36-03:00, after lane tip 2fbcfbab at 02:47:51; report on origin/master; SHONEN heading 1 + 4 [~] boxes, no [x]; 7/7 cited lane commits ancestors of refs/heads/master; jj state branch=master local=remote=2fbcfbab ahead=0 behind=0 head=detached tracked=0 untracked=0, status clean; prompt carries the template contract (§1-§5, §2b, L2 floor, write scope). Claims re-measured at the tip with the frozen control sets (declaration+controls+baseline+proto blob-identical at b73db773 and tip, sha256 17c95774…/4db4cc70…): C1 cases=12 correct=12 base_correct=8 TARGET_MET rc 0; C2 population=20 readers=13 guarded=13 unguarded=0 controls=36/36 base_controls=32/36 TARGET_MET rc 0; carried 28 r73 cases byte-identical. Harm watch re-derived: index 89→91 (91/91, 0 missing/dangling/duplicates), ledger 127→130 (130/130 uncovered=0), axis 3/3 MATCH (91/91, 86/86, 12/12), five frozen instrument blob ids equal, all record diffs insertion-only (0 deletions); gate selftest evidence-verified only (receipt MADO_SELFTEST: 460/460 rc 0, gate blob frozen). Discernment: live re-fetch of all four CPython v3.14.8 sources byte-identical to the committed fetches and recorded digests; 3 admits + 1 reject re-opened, all agree; census exit 0, SOURCES 386→389, malformed 0, duplicate ids none."
+   },
+   "commit": "mado-shokunin@2fbcfbabdbaf078d0bddfe9f47ef4310c4a0397a",
+   "closed_at": "2026-11-04T05:58:47Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-11-04T02:26:16-03:00 launch mado round=74 pgid=3517379 driver=hyaku-inline attempt=1; 2026-11-04T02:49:07-03:00 complete mado round=74; hyaku-inline attempt=1. Round shape: one v1 wave, 13 seats (band 8-16), spawn=13 resume=0, 13 settled with non-empty output, 0 dead; attack share 4/13 = 30.8%. Conformance defects (status-neutral): the frozen claims-declaration-r74.md says 12 seats while 13 were dispatched/settled; SKILL.md:734 and the LOG round-74 instruments bullet record the witness-rule selftest as 21/21 where the committed instrument prints 23/23 (report, SCORECARD and tool-ledger say 23/23); no committed post-repair selftest receipts for the three instruments (the declaration's round-73 D2 disposition promised them; only the pre-repair w1/R74ExecC2/selftest.stdout.txt 86/86 and receipts/gate-selftest-r74.txt 460/460 are committed); lessons §Gate counts S446's quote at 23 words where it tokenises to 21 (<=25 holds; decision unaffected); mado-r74-witness-rule is registered as gate although its only CLI entry is --selftest (advisory). Routed to round 75: those five plus the lane's carried tools/mado-verify.sh:418 hardcoded /tmp selftest scratch. No promotion: SHONEN's four boxes stay [~], operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
