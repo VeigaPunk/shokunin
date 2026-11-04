@@ -565,3 +565,9 @@ runs `{{FLEET_ROOT}}/scripts/hyaku/disk-guard.sh` (gate before every spawn, swee
    kotodama Q14 already rules); anything a report must point at lands in the wave dir or the
    lane tree. Check `disk-guard.sh status` before a heavy pass; a seat that gets ENOSPC reports
    the free space it saw and does not re-run until `status` is green.
+
+## Run15 operational note — Devin unavailable (2026-11-04)
+
+Operator, verbatim: "you might use m_zfl again, it has reset the usage". Observed Devin stream error `permission_denied`: "This model is no longer available for your account. Please switch to a different model." For this account/provider unavailability, the remaining 13 `@m_flash` values in `task.agentModelOverrides` move to `@m_zfl`; all 18 roles temporarily use `@m_zfl` (`zai/glm-5.3-flashx:high`). The existing five zfl values, aliases, fallback chains, retry settings and global default remain unchanged. This supersedes only the five-role routing split above; published rulings otherwise stand. Backup: `config.yml.pre-run15-devin-unavailable-20261104.Qfa62SXH.bak`.
+
+Existing seats retain captured routes; no restarts or cancellations. No safety-refusal retries or rerouting; `m_mim` stays off every role. The four authorized fresh starts (souji r58, tabi r62, chousa r74, tsukuroi r77), their required rejection-history reads/do-nothing controls, and all future quality gates remain unchanged. Concurrency and wave sizing stay unchanged. Quota reset is operator-reported; no provider probes.
