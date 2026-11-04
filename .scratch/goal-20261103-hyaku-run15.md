@@ -88,3 +88,20 @@ round contract. Kernel state was retained; setup was not reloaded.
   resuming them requires operator authorization for the fresh-start procedure
   (read the last three rejected closures/spot-checks; new claims must defeat the
   do-nothing control). Other pool lanes continue normally.
+
+## Operator ruling — 2026-11-04 (quality-pause lift)
+
+Operator, verbatim: "Resume all four". This lifts only the current three-rejection pause on the
+four quality-paused lanes — souji (next r58), tabi (next r62), chousa (next r74), tsukuroi
+(next r77) — and nothing else.
+
+- **History is preserved.** Every failed/rejected closure and its spot-check stays on the record;
+  nothing is retroactively admitted. The 3-rejection pause gate applies unchanged to their new rounds.
+- **Fresh start is required.** Before a resumed round files claims, the orchestrator reads the
+  lane's last three rejected closures and their spot-checks; new claims are re-measured on this
+  host and must beat a do-nothing control — a claim that would pass unchanged with no work is not
+  a claim.
+- **No campaign/run change.** Round counters continue; concurrency, 10-round blocks, the 8–16-seat
+  wave band and the all-`@m_flash` routing stay as committed (failover `180fc2b`, interrupted-watch
+  recovery `0d82ccc`). The parent archives the four runtime pause markers and shows the `inline.sh`
+  queue before dispatching; this ruling lands no runtime, claims, MANIFEST or lane writes.
