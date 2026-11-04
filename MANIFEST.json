@@ -40576,6 +40576,49 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable - copied verbatim): 2026-11-03T20:54:15-03:00 launch tsukuroi round=70 pgid=4127385 driver=hyaku-inline attempt=1; 2026-11-03T21:33:31-03:00 complete tsukuroi round=70; hyaku-inline attempt=1. Step-1 conformance clean: report 62accc53 by lane identity after lane tip 79dac76c, pushed; SHONEN 1x4 [~], no [x]; all 13 cited hashes ancestors of master; lane ahead=0 pushed; prompt = template render + run-15 addendum, MISSION L2>=8; wave 13 seats/13 results/0 dead, attack 4/13=31%, connector 1, residual 0, planner held by L1. Claims: C1 verified (depth 8->8, sourced XS1-XS6/S290-S293), C2 verified (operability improved via capability xfs-stats-arm; ordinal 9->9); admitted. Routed defects (status-neutral): (1) stale final selftest tally 212/16 in PROVINCE.md:372, corpus/README.md round-70 index and SKILL.md block vs final 214/18 (corrections sweep; r69 D7 class recurred); (2) report's final-revision re-run claims (counter 6/6 at 79dac76c; cited-receipts 75 files/42 paths at 79dac76c) have no committed receipt - committed runs are 40c35ee7 and 50389560 (r69 D2 class); (3) tools/count-xs-rows-r70.py carries a bash shebang over Python source; (4) fleet-root untracked one-line 'after' file names no lane and is not attributed; operator cleanup. L0 round-64/60/57 remain open, routed around. SHONEN boxes carry resolvable [~] pointers; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 72,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 72,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 72
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "rekey-cost forecast"
+   ],
+   "report": ".ufo/reports/round-72/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-72-verifier-spotcheck.md@a3dd35742eee608d1205843dacebc461b4242b9e",
+    "rechecks": "Both claims re-checked from committed bytes at tip 9b4ffe47 (base f20ba48). C1 operability/capability: tool absent at base (ls-tree grep rekey-cost -> 0) and present at tip; the documented forecast rule was re-implemented independently by the verifier over the committed SKILL.md and ledger and reproduced sections=64, arms 13/6/6/0/0/17 at both revisions (union not sum); committed receipts evidence-verified (selftest 8/8; live-red lost=17 RED at cand d618518a; prediction at_risk=17; rehe* counterfactuals 13/6/6/0/17). C2 calibration: re-measured from committed bytes - SOURCES rows 162->163, S303 supersession at line 178 with the §4.2 label and the 2446-2449 span against the snapshot whose sha256 511edd60... matches the row (page lines 2246/2255/2446-2449 verified); PROVINCE append +25/-0 with bases 56-57 byte-identical and the spans 88-93/88-94/88-97 checked on tools/mutate-and-run.sh at the base; all 12 pointer rows and both control manifests re-measured by the verifier's own extractor (12 met, 2 met, 3 rows 2 met 1 MISMATCH as reported); ledger 797->814->820 with 0 of 281,926 base lines missing, CRLF 281,925->303,657, batches r72-batch-1=17 and r72-batch-2=6; census validate run by the verifier exits 0 (tameshi ok). Guard receipts (live-green 64->64 at floor f20ba48, 46->64 historical, 64->64 r71 floor, rev 64/64) evidence-verified, not executed per the Gate standard."
+   },
+   "commit": "tameshi-shokunin@9b4ffe4722befcf6d271d6e168d6a3d20575e913",
+   "closed_at": "2026-11-04T00:50:18Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (copied from .ufo/watchdog.log): 2026-11-03T21:06:02-03:00 launch tameshi round=72 pgid=1224363 driver=hyaku-inline attempt=1; 2026-11-03T21:41:00-03:00 complete tameshi round=72; hyaku-inline attempt=1. Status ok, real report, admitted: C1 (operability capability acquisition, rekey-cost forecast) and C2 (calibration, the two round-71 routed record defects paid) both verify; no axis harmed. Spot-check agrees with the S303 admit and the S293 standing reject; one wording disagreement routed (see below). Conformance defects (status-neutral): (1) the report's round-shape line says '12 seats, 11 reports' while 12 seat reports and 12 w1-results records exist; (2) the frozen plan lists 1 labrat and 33% attack share while the committed w1-spec and the executed wave ran revenger (3/12 = 25% by the policy's named set) - the report states the executed shape but not the freeze mismatch; (3) the report/lesson claim 'the counter-run without the prefix prints E04' holds only for a same-scope fixture - on the real row removing the prefix prints W04 and the lane still validates clean, so the E04 exemption is not load-bearing there; (4) tools/pointer-recheck.json's note says 'round 72 adds three green arms' where four exist; (5) three receipt-only commits (93cae77b, ebad004b, d8e7f337) carry no LOG entry in the landed-changes table. Routed to the lane for round 73 (all five named in the spotcheck §6) plus the lane's own carry: the IGNORED-filter mutant survives every frozen arm and is killed only by the selftest, so the ignored-path arm is owed. Promotion note for the operator: SHONEN boxes 1, 2 and 4 look checkable by a non-author from committed bytes and box 3 rests on the 64/64 cold-read monitor; this closure marked no box and promotion remains operator-owned. Lane clean and pushed before the closure (ahead=0); the spotcheck is the only file this closure committed (a3dd3574, pushed, ls-remote verified).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
