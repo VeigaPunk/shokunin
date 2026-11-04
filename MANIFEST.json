@@ -46730,6 +46730,46 @@
    "notes": "Dispatch digest: 2026-11-04T15:44:11-03:00 launch tabi round=63 pgid=1145284 driver=hyaku-inline attempt=1; 2026-11-04T16:31:44-03:00 complete tabi round=63; hyaku-inline attempt=1 (watchdog.log lines 2434/2445). Lane HEAD before the round f098bcf8, after 5b7029eb. Status ok: real report, real committed round work, honest shortfall. Routing: C1 reported UNPROVABLE and so ruled (frozen predicate met, but a hand-written receipt with four 1x1 PNGs exits 0 - failed do-nothing standard; no capability row, no axis harmed); C2 verified on its frozen predicate (mismatches 2->0, clean false->true), calibration improved with gate bytes db0767d7 unchanged. No axis harmed and every score held (adjacency 8; coverage/depth/operability/freshness/calibration 9); trends expansion improved (knowledge 74->75, sources 165->167), quality unchanged, discernment improved (outside sample agrees 4/4). Promotions: none; SHONEN stays 4x [~] - all four boxes look checkable by a non-author reviewer, so promotion is available to the operator, but nothing was marked [x] here. Defects (status-neutral, routed to the lane for r64; full detail in the spot-check): D1 SKILL.md wheel/scroll pin sha256 4c54e0c91de1 resolves to no committed byte (knowledge note = d376dc707747, blob ff090933) and the report's SHONEN box-1 pointer repeats it; D2 SCORECARD r63 row prints 194 could-not-evaluate/58 superseded where its own after-receipt says 142/59; D3 C2 after-receipt measured at 54170404 (tip parent) while the claim says landing revision - the gate's read set excludes the three added files, so the verdict transfers but the binding is one commit short; D4 mutation matrix.json/matrix-data.json/matrix-smoke.json are byte-identical 7e5b4691 with no input path/sha and no exit receipt, so 'matrix over the scored receipt' is unverifiable (mutantsSurviving 0 true only of the eight declared mutants, disclosed W5); D5 forgedGreen is not an emitted field (derivable: ten negatives all exit 1) and n7-fabricated-step-label mutates steps[0].sha256; D6 lesson Gate cites QUALITY 114 for the retroactive-admission rule but 114 pins instrument bytes; D7 census outputs print only W04/ok and stability-direct.command.json has no generator/stdout digest; D8 knowledge note verified-at names the freeze rev where the note and its receipt do not exist; D9 S166 size pair 181,303->156,604 reads as one file shrinking though two staged pages are meant. Conformance observations: two report filings by the lane identity - the second only reordered Trend verdicts/SHONEN ahead of Routed defects to satisfy the template's in-order requirement, no claim text changed - both before the driver's completion; fleet worktree leftovers (.scratch/*, round-84/kama.md, .ufo/tmp-census-r79.txt, after) are not tabi r63 work and were left untouched. Spot-check commit 6c19979f is the verifier's own and is not the commit field.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 88,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 88,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 88
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "freshness": "improved",
+    "operability": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "Conservative Vary-match reader (RFC 9111 §4.1; scripts/vary_match.py)"
+   ],
+   "report": ".ufo/reports/round-88/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-88-verifier-spotcheck.md@76225160d0dff8d2042fbcd037bd08b0971d5e07",
+    "rechecks": "Both claims re-measured from committed bytes, gates never executed: C1 3 defects open->closed (companion trio + ledger sha256 ef58f909, float diagnostic now 'not float' behaviourally, recheck names mktemp item; base/after carrier receipts and 11/11 selftest verified); C2 reader absent->present (294 lines, sha256 fdceef47, 20 frozen cases, 200 seeded digest 52714a5f; receipts 20/20+200/200 met=true exit 0, selftest 17/17, 15/21 mutants killed, second implementation 19/20+187/200 spec-faithful). 7/7 own behavioural probes agree; repaired tool byte-identical to frozen base on three payloads. Census exit 0, W04 24->25; SOURCES 200->201; knowledge .md 74->76. Non-author gate sample 2 admits + 2 rejects, all agree; live RFC re-fetch sha256 aeb52adb/21c1cdce byte-identical to retained receipts. SCORECARD additive only; round-87 instrument untouched; no owned axis harmed."
+   },
+   "commit": "kake-shokunin@741fb728b2e22c7a35288d9c645e0dd71d9a0e6b",
+   "closed_at": "2026-11-04T19:50:03Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, copied 2026-11-04): 2026-11-04T15:39:05-03:00 launch kake round=88 pgid=537599 driver=hyaku-inline attempt=1; 2026-11-04T16:39:23-03:00 complete kake round=88; hyaku-inline attempt=1. Report fe3e14d7 by kake-shokunin <kake@shokunin.local> at 16:38:01 -0300, after lane tip 741fb728 (16:37:27); all 8 cited lane commits are ancestors of refs/heads/master; lane state ahead=0 behind=0 tracked=0 untracked=0, git status clean; prompt renders the template verbatim (138/140 lines; the two diffs are the {{LANE}}-repo and {{AXES}} substitutions) and carries the five child-lane items. Wave: one validated v1 wave, 14 seats (scout 2, executor 4, scribe 3, reviewer 2, critic 1, mutation-tester 1, connector 1), attack 4/14=28.6%, 14 non-empty outputs, no dead seat. Conformance defects (status-neutral): R88-A report/SCORECARD/lesson say integrated vary_match selftest 22/22 while the cited controls/integrated-selftests.txt prints 35/35; R88-B report Gate summary says 'one admit and three rejects' while the cited corpus/lessons/round-88.md Gate has 2 admits (RFC 9111 4.1; RFC 9110 12.5.5) and 2 rejects (third reject exists only in w1/L1/round-88-draft.md); R88-C the 're-run at edcb2980' claim has no committed receipt and its --work path is ephemeral /fast/scratch; R88-D the 1,577 controls-file count names no revision (exact at f60a852a; 1590 at filing HEAD); R88-E freeze v3 landed at 15:58:05, six minutes after the 15:52:15 dispatch while the wave was live (disclosed in contract errata and lesson); R88-F the round's four mistakes live under '## L1 mistakes', while CORPUS.md names '## Mistakes' for a round's mined mistakes. Carried, not new: R88-1..R88-7 instrument limits (seed-table/oracle-import false green, trailing-LF token, adapter labels, 6/21 mutant survivors, D2 hardcoded-table, D1/D3 textual), D84-2/3 and operator-owned literal-planner D84-4. SHONEN boxes 1/3/4 look non-author-checkable from committed bytes but promotion is operator-owned; no [x] was written and box 2 keeps the historical round-47 gap. Prompt 6 run-15 route map is stale against the live ~/.omp/agent/config.yml agentModelOverrides (operator-side; spawn-time map unverifiable, no claim depends on a model).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
