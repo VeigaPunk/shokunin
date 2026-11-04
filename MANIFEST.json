@@ -40919,6 +40919,50 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log lines 2161/2168): 2026-11-03T21:58:09-03:00 launch mado round=68 pgid=801947 driver=hyaku-inline attempt=1 | 2026-11-03T22:26:08-03:00 complete mado round=68; hyaku-inline attempt=1. Shape: one v1 wave w1, 12 seats (executor 4, scribe 2, scout 1, connector 1, reviewer 2, critic 1, mutation-tester 1; attack 4/12 = 33.3%), one batched task call, band 8-16, settled 12/12, dead 0, L1 holds the planner seat; the wave-done receipt measures rev a4cb56fe and is committed at 80c6d7aa. Conformance defects (status-neutral, none bars admission): (1) the final-revision counter selftests 27/27 (C1) and 26/26 (C2) cited in the report/LOG/SCORECARD have no committed receipt; the committed battery at 18d692f3 reads 26/26 and 25/25, and the static counts reproduce 27 and 26 - routed: commit the --selftest receipts at the final content revision; (2) the report says 'Settlement at tip 80c6d7aa' while wave-done-r68.txt measures rev a4cb56fe - routed: name both; (3) commit 20f692be (predicate-literal binding receipt) is absent from the report's Landed-changes table and the LOG round-68 entry - routed: enumerate it next round; (4) the prompt's run-15 route map is the operator amendment and MISSION's role-class buckets are advisory, no lane alias is hardcoded; the run-13 mado SECURITY HOLD line is superseded by the run-15 preamble; (5) all published sub-axes sit at their measured maximum, so the lowest-axis obligation is vacuous and the round uses new finite denominators as rounds 56-67 did - recorded, not a defect. The frozen declaration's control-case index parenthetical drifts from the JSON order; disclosed in the lesson, predicate unaffected. Discernment trend graded improved by the closure spot-check (the lane reported unchanged because the outside check had not yet run). SHONEN: four [~] boxes; boxes 1 and 4 look checkable by a non-author on these artifacts, but promotion is operator-owned and no [x] was written. No credential material, no desktop/compositor/socket/service write, no package transaction, no MANIFEST edit by the lane, no sibling write.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 71,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 71,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 71
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "freshness": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "pre-report-gate",
+    "province-host-claims"
+   ],
+   "report": ".ufo/reports/round-71/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-71-verifier-spotcheck.md@d30a86960814413676600f34317796bfcb137587",
+    "rechecks": "Re-measured from committed bytes: SOURCES 281->282, capability rows 15->17, knowledge 39->40, gate population 79->80, 16 province corrections, axes held; evidence-verified: C1 PRE_REPORT arms=5 failed=0 at 4b284653, C2 BOUNDARY cases=7 killed=5 survivors=0 and census 22/0/0, C3 uncovered=0 and selftest 7/7; defects routed (status-neutral): C2 selftest tally 8/19 vs actual 18 arms, boundary row exit 2 undeclared, LOG depth hash stale, C1 receipt wording, README index gap"
+   },
+   "commit": "kama-shokunin@7fb6cb4e31dc2f96e4815240a12bfe8da4d07e2e",
+   "closed_at": "2026-11-04T01:35:00Z",
+   "campaign": "hyaku",
+   "notes": "2026-11-03T21:27:06-03:00 launch kama round=71 pgid=1551649 driver=hyaku-inline attempt=1; 2026-11-03T22:27:10-03:00 complete kama round=71; hyaku-inline attempt=1. Report committed by kama-shokunin at 9450f2e9; lane tip 7fb6cb4e pushed, ahead=0, clean; 12/12 seats settled. Defects (status-neutral, routed to next round): C2 selftest pass=8 in the report and pass=19 in SKILL.md vs the actual 18 arms (final receipt pass=18 fail=0); boundary registry row lacks its exit-2 could-not-evaluate map; LOG depth anchor 0b61e118 vs landed 7ff94d67; C1 receipt called 'report tip' while it names 4b284653; README coverage map lacks the new knowledge row. SHONEN boxes all [~]; boxes 1/2/4 look checkable by a non-author, box 3 needs an independent execution review; promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
