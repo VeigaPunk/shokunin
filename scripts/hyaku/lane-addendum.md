@@ -579,3 +579,75 @@ Before declaring chousa r74, read these non-author rejected spotchecks in `chous
 Before declaring tsukuroi r77, read these non-author rejected spotchecks in `tsukuroi-shokunin/corpus/lessons/`: `round-74-verifier-spotcheck.md` at `a21302a48d24cf5242ac2a66cc5b5b453f7a1b20`, `round-75-verifier-spotcheck.md` at `865b38c96c23ec0bcace8ca3ee884f860693ce43`, and `round-76-verifier-spotcheck.md` at `06f1bbbb803790b35358d277bb7807b82a9fab99` (MANIFEST indices 1141, 1144, 1151). Paste pinned source lines into claim cells before freezing: check enum membership, branch scope and arithmetic literally. Prior misses were volume versus timer/path, branch-scoped try-restart versus direct JOB_RESTART, and minimum versus saturated subtraction. Include reject/spotcheck-result rows, revision-bound counts and current collision measurements. Corpus assimilation/promotion remain operator-held.
 
 These pointers add no claim or admission, lift no further pause, and waive no frozen predicate or no-work control. Kagi next r35 is newly paused after r32/r33/r34 rejected; the earlier four-lane authorization does not cover it.
+
+## Run15 renewed current-pause authorization — 2026-11-04
+
+Operator choice, verbatim: **"Resume all four once"**.
+This new authorization covers **only the current four pauses**: kagi next r35,
+souji next r59, tabi next r63, chousa next r75. The existing first four-lane
+authorization ("Resume all four": souji r58, tabi r62, chousa r74, tsukuroi r77)
+does not cover future pauses; neither does this renewed authorization. Rejected
+history is retained, not reset. The future three-rejection gate remains binding:
+the historical last-three window may cause immediate re-pause after one rejection.
+This text authorizes no automatic future lift and itself changes no runtime marker.
+
+### Required rejection-history reads before the four new declarations
+
+Read each indexed `MANIFEST.json` closure row and its pinned non-author spotcheck
+below. Indices are zero-based `rounds` array indices. In this table, `spotcheck`
+means `<lane>-shokunin/corpus/lessons/round-<round>-verifier-spotcheck.md`;
+the full hash after `@` is in that lane repository. Local paths resolve the old
+Windows-prefixed chousa r72 pointer. These are retained closure findings, not new
+executions or admission decisions.
+
+| Lane / rejected round | MANIFEST index | Reviewed lane work full hash | spotcheck @ full hash | Concrete root failure |
+|---|---:|---|---|---|
+| kagi r32 | 1208 | `6191805a47f54dc2e922080129e1dd2b89390df2` | `round-32-verifier-spotcheck.md@76f4eeae7aa9af4dbb9423f5632b55791824253a` | C1 sum 8→1, frozen target 0 unmet; SD6 residual is non-owned `corpus/lessons/round-30-verifier-spotcheck.md:41`. |
+| kagi r33 | 1217 | `97b35ceec87cceac25d1e0e5f92f75c953728802` | `round-33-verifier-spotcheck.md@f9dc06fd8f6b43c175193c76dc6350468f551634` | C2 captures 72→82, target 111 unmet; declared BASE 101 was never measured and controls omitted captures. |
+| kagi r34 | 1225 | `aa43fdb52396f5f6d5f283bb95776cb40b328e53` | `round-34-verifier-spotcheck.md@063c407494276d0c616e6c712a2e5d7aeb7e3768` | C1 provenance migration/S088 coupled C3 populations: rows/sourced/captures 88/14/88 versus exact frozen 87/13/87. |
+| souji r56 | 1099 | `8c27791a1606cd654b059df6a00f0e031ad6abb8` | `round-56-verifier-spotcheck.md@b4ef0bc84ada3fb3aefd6a0b1a841a6517b84acd` | Harm: v5 passes B4 NBSP-prefix/C4 multiline inline-comment filings hidden by independent CommonMark rendering; v4 refused them. |
+| souji r57 | 1105 | `dcbcd05c467508f00a04f35bf544d0d83f745e73` | `round-57-verifier-spotcheck.md@83d3813257648e99fb4ab2ddef217124f39cf324` | Harm: v6 skips second opener after closer on same line (fixture31); also code-span/escape/link/TAB over-hide and silent regression. C2 accepts tag OBJECT and unconfined manifest paths; selftest lacks rc assertion. |
+| souji r58 | 1230 | `8743010706b399dbc4121c09985d4ebfb85fb797` | `round-58-verifier-spotcheck.md@da5af55b5ea0a2a38edea05635a13416c698e6e7` | C2 finite 3/8→8/8 does not cure missing prefreeze committed control; original C1 headerless receipt is not retroactively bound by replay. |
+| tabi r60 | 1094 | `7e1d4620738a76c5ed3a36e5f6686bd73b24d471` | `round-60-verifier-spotcheck.md@6c5c2a2ef5dc9c790426e7d9efe2d3025a156441` | C1 K7: v19 no-regression conjunct false, 12 findings; wide enumeration success cannot rescue it. |
+| tabi r61 | 1100 | `544a40ac8328ee355b7c41bd67da856f058726e2` | `round-61-verifier-spotcheck.md@57b29bade4b05b03cdb8fa151daec90ac9b1a29c` | C1 K4: frozen `lane<TAB>` header rejected exit2; repaired shadow is not frozen input. C2 post-scoring recorder/interface/nonce changes invalidate frozen-instrument claim; earlier mutation pins do not certify final bytes. |
+| tabi r62 | 1236 | `0c62345956f4e79dc08b066d347b86bd1469fc4a` | `round-62-verifier-spotcheck.md@f098bcf8843c8a5a723a83995352180f897a6ff9` | C2 M5 producer-verdict AND→OR survives 16/16; lying receipt exit1→mutant exit0. v21 also false-greens contradictory duplicate/fabricated dispositions. Closure commit field is the spotcheck tip, not delivered work. |
+| chousa r72 | 1036 | `6dd6c82405989083f16e101d6573656d39211879` | `round-72-verifier-spotcheck.md@f748abbb6bf58388e732facd4ecec5612419c457` | C1 no completing verdict (anchored count0); flock-less pin child rc2 exits at unguarded assignment line8435, not exempt grep line8426; preflight not run. |
+| chousa r73 | 1133 | `4b76c7c2892bee44ee153f79a75685da9324ed97` | `round-73-verifier-spotcheck.md@8a28732b3c1591b52449a982849b758cda6f4c45` | C2 `load()` takes numstat additions as deletions; append fails 6/7 and deletion passes; helper-only 7/7 bypasses loader. C1 Linux completion already demonstrated. |
+| chousa r74 | 1234 | `5f754bd12ec5d0d006ca05751250d5ee1caaf29e` | `round-74-verifier-spotcheck.md@8022f72c889c904b5657d52c7f29e1643392a216` | C1 finite result holds but QUALITY126 prefreeze detection-forger battery absent; source-blind order oracle still scores 9/9. Digest identity is not discrimination. |
+
+### Binding prerequisites for kagi r35 / souji r59 / tabi r63 / chousa r75
+
+- **Before declaration/predicate freeze and candidate scoring**, actually execute and
+  commit the failing-before no-work and forgery controls, their independent expected
+  verdicts and observed rc/finding IDs, exact input revisions, instrument hashes and
+  commands. A promise, helper-only test, digest print, to-be-built oracle or late
+  control binding does not satisfy this prerequisite. A new claim must beat no work
+  on this Linux host and reject the relevant false-green forgeries through the actual
+  public/production path. Retain positive controls so blanket refusal is not a gain.
+- **Kagi r35:** independently measure every per-claim BASE population, including
+  provenance migrations; separate causal populations before freezing exact targets.
+  Missing/empty/SETUP producer output must fail closed, not become awk zero.
+  Preserve non-owned SD6 history and R25-02 FAIL/R29-01/R29-02 POLICY boundaries.
+- **Souji r59:** retain parser/recorder/resource/diagnostic debts, production-path
+  visibility and receipt-confinement controls, and gate self-invocation rc/finding
+  assertions. R58 freeze `e7f64f30324e8ddb3f2266302daa9066054cdbb3`
+  (11:44:19 -03:00) preceded first executable C2 control commit
+  `1880343ed04337379c5478f91408c30c8fbd4b77` (11:50:15); later replay
+  `b1c2bb9f762baa8142eaeaa5d4f472765b09dd32` cannot backdate C1 binding.
+- **Tabi r63:** freeze readable snapshot headers and final instrument/interface
+  bytes before scoring; pin mutation evidence to those exact bytes. Require
+  source-location-specific producer-verdict polarity negatives/M5 and contradictory
+  duplicate/fabricated-label controls; selected production uniqueness is not proof
+  of semantic protection. Retain unanswered topology/overlap questions and artifact
+  durability debt rather than silently rewriting cleanup history.
+- **Chousa r75:** meet existing QUALITY126 before binding a candidate-running counter;
+  kill the surviving source-blind order oracle, exercise real committed appends and
+  deletions through `load()`, and retain public-path expected rc/check IDs. Repeating
+  r73 Linux completion unchanged is no new gain and answers no historical Windows
+  flock/load question.
+
+Prior false-greens, procedural misses, frozen predicates and rejected admissions
+must not be rewritten, backdated or retroactively repaired by later controls.
+All other safety/refusal and credential-shape boundaries remain binding. No
+pausemarkers, state, MANIFEST, lane files, history, routing, aliases, concurrency,
+wave sizing or quality threshold are modified by this authorization record.

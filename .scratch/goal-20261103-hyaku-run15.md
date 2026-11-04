@@ -121,3 +121,40 @@ four quality-paused lanes — souji (next r58), tabi (next r62), chousa (next r7
 - Empty seat outputs are not successes. Exact retained JSONL error evidence supplied to
   TameshiR83, KasegiR61 and KaidokuR81; expired proc records mean final status unavailable.
   T83W1R1's recorded `cyber_policy` refusal is not retried, rephrased or rerouted.
+
+## Renewed current-pause ruling — 2026-11-04
+
+Operator choice, verbatim: **"Resume all four once"**. This new authorization covers
+only the current four pauses: **kagi next35, souji next59, tabi next63, chousa next75**.
+The existing first authorization ("Resume all four": souji58/tabi62/chousa74/tsukuroi77)
+does not cover future pauses; this new one covers the current four only. Rejection
+history and the future three-rejection gate stay binding, including immediate
+re-pause after one rejection if the historical last-three window still warrants it.
+This appendix records authority/prerequisites, not an executed runtime resume.
+
+### Exact reads and retained rejection evidence
+
+Full reviewed-work hashes, committed spotcheck hashes, concrete root failures and
+per-lane prerequisites are in `scripts/hyaku/lane-addendum.md`,
+**Run15 renewed current-pause authorization — 2026-11-04**. Read before declaration:
+
+| Resumed round | Zero-based MANIFEST.json rounds indices | Required local spotcheck paths (each pinned full hash in addendum table) | Binding root-failure lesson |
+|---|---|---|---|
+| kagi35 | 1208, 1217, 1225 | `kagi-shokunin/corpus/lessons/round-32-verifier-spotcheck.md`, `round-33-verifier-spotcheck.md`, `round-34-verifier-spotcheck.md` in same directory | Residual non-owned SD6; invented captures BASE101/target111; C1/C3 population coupling 88/14/88 versus frozen87/13/87. Independently measure/separate populations; reject empty/SETUP false-zero. |
+| souji59 | 1099, 1105, 1230 | `souji-shokunin/corpus/lessons/round-56-verifier-spotcheck.md`, `round-57-verifier-spotcheck.md`, `round-58-verifier-spotcheck.md` in same directory | B4/C4 hidden filings; second-opener/over-hide harms; receipt confinement/tag/rc-test debt; C2 control committed after freeze. Late C1 replay cannot bind original headerless evidence. |
+| tabi63 | 1094, 1100, 1236 | `tabi-shokunin/corpus/lessons/round-60-verifier-spotcheck.md`, `round-61-verifier-spotcheck.md`, `round-62-verifier-spotcheck.md` in same directory | K7 v19 red; K4 malformed frozen header; post-scoring interface change; exact M5 AND→OR survives16/16 plus duplicate/fabricated-label falsegreens. Freeze readable inputs/final bytes and source-specific polarity negatives. |
+| chousa75 | 1036, 1133, 1234 | `chousa-shokunin/corpus/lessons/round-72-verifier-spotcheck.md`, `round-73-verifier-spotcheck.md`, `round-74-verifier-spotcheck.md` in same directory | Incomplete battery; numstat additions/deletions inversion bypassed by helper test; missing QUALITY126 prefreeze forgers and surviving order oracle9/9. Actual load() append/deletion controls and source-discriminating forgery kills required; repeated r73 Linux completion is no gain. |
+
+**Before declaration/predicate freeze and candidate scoring, actually execute and
+commit failing-before no-work and forgery controls**, with independent expectations,
+observed rc/finding IDs, commands, input revisions and instrument hashes. Exercise
+the public/production path with genuine positive controls, not just helpers. Late
+control binding, a to-be-built oracle, digest identity or later replay cannot satisfy
+the earlier prerequisite. Prior falsegreens/procedural misses must not be backdated,
+re-scored or retroactively admitted; frozen evidence and rejected history stay intact.
+
+No pausemarker, state, MANIFEST, lane file, historical row, route, alias, concurrency,
+wave size or quality threshold is changed here. Existing safety/refusal boundaries,
+credential shape-only treatment and unanswered operator questions remain binding.
+Source pointers above were checked by file/ledger reads only; no validation, test,
+gate, build, lint, formatter, provider probe or commit was run for this appendix.
