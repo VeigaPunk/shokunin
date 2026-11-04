@@ -15,8 +15,8 @@ Declared claims (frozen in `.ufo/waves/round-77/claims-declaration-r77.md` befor
 
 Work items, each with its evidence pointer:
 
-- **C1 join built, frozen and measured.** `tools/mado-barfoot.py` (`VERSION r77-v1`, sha256
-  `61f34022…`), `quality/counters/c1-r77-barfoot.py`, frozen set
+- **C1 join built, frozen and measured.** `tools/mado-barfoot.py` (`VERSION r77-v1`, final sha256
+  `e54787b7…`; the freeze bytes were `409e78a4…`, four repair passes later), `quality/counters/c1-r77-barfoot.py`, frozen set
   `controls/c1-cases-r77.json` (15 cases, sha256 `7d6e2b1a…`, generator `controls/make-cases-r77.py`);
   freeze `e4717a1c`, v2 `a83e9bee`; measurement `receipts/measurement-final-r77.txt`.
 - **The host join measured read-only.** DP-1 3440x1440@99.997, waybar at level 2, box
