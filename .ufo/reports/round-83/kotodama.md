@@ -7,7 +7,8 @@ Base `3088bd7fe2a55a123214abba7008dcddf12b301c`; claims.json frozen at
 the graded counter bytes are the final revision r10 (counterlib sha256
 `9de5d34c…`, counters `b9eb404c…` / `9adb5e68…` / `820c87a9…`, listed in
 `reports/round-83/counter-revisions.md`). Lane tip and remote
-`0305006ff322754e74b803b70d856f07d8af6eac`.
+`27fdcb61c1546c3e133c98f62beedc4271209496` (the report was first filed at
+`0305006f`; the only later lane commit is the lesson header correction).
 
 **Declared claims (three, distinct axes, each measured):**
 **O** — operability, capability acquisition: land `tools/check-gate-registry.py`
@@ -104,7 +105,8 @@ non-author spot-check routed.
 | `tools/check-gate-registry.py` + 14 rows in `SKILL.md ## Gates and probes` | round-83 entry item 1 | `0f088572` (lands r2; r1 `167c249d`) |
 | `corpus/knowledge/myth-symbol/marriage-alliance-bridewealth.md` + S909–S912 + S904/S905 `used-by` | item 2 | `386e7002` |
 | `corpus/QUALITY.md` criterion 31, `tools/check-cited-records.py`, the r82 record restoration, `reports/round-83/annotations/errata-r82.md`, S913 | item 3 | `86f68b5b` |
-| `SCORECARD.md` round-83 section + 2 capability rows, `LOG.md` entry, `corpus/lessons/round-83.md` (Gate + five mistakes), counter revisions r9/r10, telemetry receipts, wave evidence | items 1–4 | `0305006f` (lane tip) |
+| `SCORECARD.md` round-83 section + 2 capability rows, `LOG.md` entry, `corpus/lessons/round-83.md` (Gate + five mistakes), counter revisions r9/r10, telemetry receipts, wave evidence | items 1–4 | `0305006f` |
+| lesson header: the three lands commits replace the draft's placeholders | item 4 | `27fdcb61` (lane tip) |
 
 Counter revisions r2–r10 (all pre-verdict, each with a red-before) are recorded in
 `reports/round-83/counter-revisions.md`; the two claim-artifact corrections (O's
@@ -153,7 +155,7 @@ verdicts stand. Cross-check of the claim-D surface against sibling lanes:
 ## Trend verdicts
 
 - **expansion: improved.** Knowledge files 256 → 257 and registry rows 832 → 837
-  at `0305006f`, on ground no file owned at base (filename sweep 0 of 256;
+  at `0305006f` (tip `27fdcb61` adds only the lesson header correction), on ground no file owned at base (filename sweep 0 of 256;
   institutional core 27 passing lines, 0 decision tables); two capability rows
   enter SCORECARD.
 - **quality: unchanged.** No existing entry was re-verified or deepened; the
