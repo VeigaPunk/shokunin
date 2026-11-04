@@ -44880,6 +44880,48 @@
    "notes": "Digest: 2026-11-03T18:28:46-03:00 launch kasegi round=59 pgid=2917378 driver=hyaku-inline attempt=1; 2026-11-04T10:09:37-03:00 complete kasegi round=59; hyaku-inline attempt=1. Report committed by lane identity (fleet 5cc89e0) after lane tip c81eef7; SHONEN heading 1x with 4 [~], no [x]; all five cited lane commits are ancestors of refs/heads/master; lane ahead=0 behind=0; only untracked driver w1.ready.dispatched markers (57/58/59). C1 (depth:verifiability, nominal per QUALITY R58, held 4) verifies on committed evidence: base 8/8 probes execute -> landed 8/8 exit=2 markers=0, CTRL admitted derived=35, selftest 6->14/0, mutbat 2/2, ledger 35/35, red fixture stale, candidate sha 32e1cdd... landed; the sibling gate was not executed (evidence-verified) and every byte-level fact was re-measured. C2 (coverage, held 8) verifies: SOURCES 91->92 (S092 NF=13, A, mined), knowledge 77->78, knowledge-expected 78 sorted, README F40 0->1, lead-line sha 3ed4f54 unchanged, capture 048937306e/6371 bytes; instrument-only closed/problem-rows/pass/binding terms evidence-verified. No axis harmed: SCORECARD additions only (0 deletion lines), no score decreased; depth:density unchanged (not re-measured, registry-table-only SKILL edit). Spotcheck (corpus/lessons/round-59-verifier-spotcheck.md@cdeea55): 1 admit + 3 rejects re-opened; 4/4 decisions agree (one wording scope). Trends improved/unchanged/improved. Routed defects for next round (10): (1) frozen C1 counting command not literal-runnable (relative instrument path; literal run flips CTRL to exit 2 - M59-11/R77); (2) capability derive-gate-chain-refusal announced at SCORECARD:2420 but no capabilities table row exists; (3) SCORECARD r59 calibration row stale counts (7 Mistakes rows vs 11; 'three' vs four/five criteria); (4) lesson:66 and report:74 'maximum 11 words' vs Q3=12 words (<=25 still holds); (5) SHONEN.md box 2 [ ] contradicts report [~] (file unchanged since r48); (6) report landed-change row 3 cites 15cd577 for w1-results.json (first lands c81eef7) and row 4 names the LOG Corrections bullet while e694478 sits in Wave-1 outcome (LOG:2599); (7) round-start census uncommitted and the committed base form is --file <scratch>, not --root ... kasegi; (8) SOURCES.md:141 lead still reads 'was not opened' while S092 is opened (bytes pinned this round); (9) Gate reject (a) wording 'no README text is locatable there' holds only after the instrument's script-stripping conversion (raw HTML carries it in the bootstrap script); (10) c1-lane-after-r59.txt header lane-HEAD=00b5357 with candidate 32e1cdd bytes. Template-level T1 (operator/scripts, not the lane): templates/round-prompt.md itself lacks the commit-hash citation rule and the lane write scope; the dispatched prompt carries both in hyaku section 6. SHONEN boxes look fully checkable by a non-author reviewer; promotion is operator-owned. Promotions: none. Minted: none.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 79,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 79,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 79
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "freshness": "improved",
+    "coverage": "unchanged",
+    "depth": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "selftest mutation battery",
+    "line-bound pointer binding"
+   ],
+   "report": ".ufo/reports/round-79/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-79-verifier-spotcheck.md@16dfa009bf143080dfcdfc5f9ec34bd359536d90",
+    "rechecks": "Step-1 pass: report 58088c38 committed by kaidoku-shokunin after lane tip 369fa6e7 (committer 10:23:02 > 10:22:03); SHONEN heading with 4 [~] lines; 11 cited lane hashes plus base 29d2ca30 all ancestors of refs/heads/main; lane ahead=0 clean; prompt 1-140 byte-identical to templates/round-prompt.md modulo substitutions plus the hyaku addendum. C1 evidence-verified (gate not executed) and re-measured over committed bytes: 8 mutants; base receipt 8/5/3 survivors m03/m05/m08, declared_case_hits 5, target_pin.actual 961d5a23 = base attack-gate blob; landing receipt 8/8/0, hits 8, sole_detector true for m03/m05/m08, target 4e4baf00 = ed68cd0a blob and HEAD, pristine 29/0; attack-gate selftest case() calls 26->29; selftest-c1 14 cases; empty-set control ok false. C2 re-measured live with plain sed/grep: base record :8/:4126 give 3 matched/2 mismatched (omp line 8 is 'type', kimi line 4126 is max_output_size), landing :12/:4722 give 5/5; path-only control mismatches 0 with ok false/would_pass true. Census validate exit 0, 202 rows, 23 W04; SOURCES 200->202."
+   },
+   "commit": "kaidoku-shokunin@369fa6e7fe1af5c65f1014da2ef509e379ea9a10",
+   "closed_at": "2026-11-04T13:32:58Z",
+   "campaign": "hyaku",
+   "notes": "dispatch digest: 2026-11-04T09:54:27-03:00 launch kaidoku round=79 pgid=1289363 driver=hyaku-inline attempt=1; 2026-11-04T10:23:45-03:00 complete kaidoku round=79; hyaku-inline attempt=1. Wave r79-w1: 12 seats in one batched call within the 8-16 band, attack 4/12 = 33 percent, one connector; the L1 held the planner seat (planner is not a proposal role in ufo-wave-policy.json). Conformance defects (status-neutral): (a) c2-at-landing.json records instrument a0044c4c which is no committed blob of tools/round-79/pointer-bind.py (committed revisions 91d23dad at a1f9b81c/ed68cd0a and 40905d39 from 868710d6 to tip), so the report's 'final instrument bytes' is false for that receipt while the claim itself re-derives; (b) SKILL.md:1914 says pointer-bind --selftest has 19 cases against 21 committed (pre/selftest-c2.json), and both round-79 registry rows omit the entry command older rows carry; (c) S296's quote is 15 words, not the 17 recorded in the SOURCES row, lesson and LOG; (d) R79-C2 is declared on freshness, not one of the lane's owned axes (coverage/depth/calibration), and no axis-addition claim landed; the wave critic's Q5 was recorded but not adopted; (e) the round's Gate records no rejected source, so the outside discernment check had no reject sample; (f) capability row named 'line-bound pointer rule' vs 'line-bound pointer binding' in prose. Routed to round 80 in the lane report and the spot-check section 6, with the lane's own items (a)-(f). SHONEN: 4 boxes, all [~]; boxes 1-4 appear checkable by a non-author from committed pointers; promotion stays operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
