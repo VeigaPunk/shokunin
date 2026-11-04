@@ -41227,6 +41227,49 @@
    "notes": "Dispatch/complete digest: 2026-11-03T22:29:46-03:00 launch kaidoku round=68 pgid=930879 driver=hyaku-inline attempt=1; 2026-11-03T22:59:20-03:00 complete kaidoku round=68; hyaku-inline attempt=1. Step-1: report 1ae7e0e1 by kaidoku-shokunin <kaidoku@shokunin.local> 23 s after lane tip 70489de5; SHONEN heading 1 with four [~] boxes and no [x]; all 24 hex tokens classified (12 lane commits, 2 fleet prompt commits, 7 digests) — every commit exists and is an ancestor; lane clean, ahead=0, remote=70489de5; prompt carries the template contract, the five child-lane items and the run-15 route map (MISSION role buckets advisory, no conflict); one v1 wave r68-w1, 13 seats (4 executor, 1 reviewer, 1 critic, 2 mutation-tester, 1 sentinel, 1 scout, 1 connector, 2 scribe), attack share 4/13, 13/13 results, 0 dead, no residual. Claims: R68-C1 re-measured by the closure (independent plan/registry extractor: base 69/73/2 naming exactly the two r67 instruments; freeze 71/73/4; tip 71/77/0; membership base plus the two r68 instruments, no drops) and receipt-verified (rev 978436bd, instrument.rev 6020eb60, pins byte-identical at freeze/landing/tip; selftest 11 cases per ReviewerGates); R68-C2 re-measured on pins/identity/control (sha256 of /usr/bin/jq and /usr/bin/xxd equals the receipt pins; deterministic packed shas e8b6c9e7/1727faf9; 0 sections packed; unpack restores the pins byte-for-byte; upx -l/-d rc 2 on the copied originals) and evidence-verified on the REA inventory counts (2/2 carriers, control_ok true, before_procedures [3,3], failing [], met_target true; selftest 13 cases). Axes: coverage improved, calibration improved, depth/operability/freshness/adjacency unchanged; no axis harmed. Trends: expansion improved (entry citing mined S269; SOURCES 175->176, A 161->162, mined 166->167, malformed 0), quality improved (r67 correction block, QUALITY #100 companion, legacy ledger retired with byte pin 2a840d72, round-29 gate exit 0), discernment improved (spot-check agrees with one admit and four rejects; M68-6/M68-9 findings routed). Conformance defects routed to the lane (status-neutral): R68-V1 entry lacks line-start source:/verified-at:/recheck: fields; R68-V2 corpus/README.md:118 knowledge-index row above the table header; R68-V3 filing-tree prefile PASS is a report paste with no committed receipt; R68-V4 prefile erratum prose/logic nits (stops-at-round-52 false, 20-of-36 wording, unreachable ${got:-absent}); R68-V5 S269 quote label says 11 words, actual 10; R68-V6 report 'two of them corrected' not re-derivable as two rows. No tool installed or upgraded (upx 5.2.0/node/readelf/rea-agents 6.5.0 already present); no pacman transaction. Fleet root retains orchestrator-owned .scratch edits and the report's unattributed untracked `after` file; not lane debt. The lane SHONEN boxes look checkable by a non-author next review; promotion remains operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 69,
+   "date": "2026-11-03",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 69,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 69
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "coverage": "unchanged",
+    "operability": "improved",
+    "freshness": "improved",
+    "calibration": "improved",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "paired-recipe control harness + guard-dominance census (first-working round 69): kill a forced-credit forgery only when a paired oracle is removed (crash != kill, unparseable != kill, the spawn guard itself) and score a gate's GIT_NO_REPLACE_OBJECTS construction for key position plus a dominance path to a git launch over a frozen eleven-case set while the held rule's 7/11 base leg stays visible in the same contract line; evidence quality/counters/c1-r69-paired-recipes.py, quality/counters/c2-r69-guard-dominance.py, .ufo/waves/round-69/measurement-final-r69.txt, corpus/knowledge/gate-guard-dominance-r69.md"
+   ],
+   "report": ".ufo/reports/round-69/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-69-verifier-spotcheck.md@b37a5aec4ea03f2223d8e09dd5d386d055c24179",
+    "rechecks": "Step-1 PASS: report cb9881d3 by mado-shokunin (committer 23:07:30-03:00, after lane tip 9d91f7f6 at 23:06:39; complete 23:08:02), report on origin, SHONEN heading 1 + 4 [~] lines = 4 boxes, base 04093b83 and the 18 cited commits all ancestors of refs/heads/master, jj state ahead=0 local==remote==9d91f7f6 before the spot-check commit (b37a5aec then pushed), porcelain clean, dispatched prompt = template sections 1-5 at the template's own lines + run-15 addendum + section 7 with all round-level and five child-lane items. C1 RE-MEASURED over committed bytes (counter not executed): harness absent at 04093b83, present at 759c9d7b/139f4801 (38461 B, sha256 9461a059...), R1/R2/R3 each occur once in candidate and r68 base, paired selftest assertions at c1-r69-landing-controls.py:659,668; evidence-verified measurement-final-r69.txt at 139f4801 (selftest=0 killed=3/3 applied=3/3 base=0/3 TARGET_MET; harness 59/59; counter 28/28) and control-baseline-r69.txt (base 0/3, r68 harness 52/52). C2 RE-MEASURED: population 20 (git ls-tree), frozen control set 11 cases sha256 975ca3ba... re-hashed, 13 files carry the key in key position; evidence-verified measurement-final-r69.txt (population=20 readers=13 guarded=13 unguarded=0 controls=11/11 base_controls=7/11 TARGET_MET; counter 43/43), control-baseline-r69.txt (r68 rule 7/11 by case arithmetic), c2-classifier-repair-r69.txt and cross-set-r69.txt. Spot-check: S438 admit re-opened (git.adoc 47005 B sha256 050c5330..., quotes at 180-181 and 928-929) and git-replace.adoc reject re-opened (5398 B sha256 3f61be3f..., duplicate of S436); census exit 0, 374->375 rows. No axis harmed (SCORECARD +89/-0; only S436/S437 used-by cells changed in place, logged old->new)."
+   },
+   "commit": "mado-shokunin@9d91f7f6f5c603bdc19cf455ce6f413c5990d744",
+   "closed_at": "2026-11-04T02:20:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-11-03T22:35:42-03:00 launch mado round=69 pgid=972874 driver=hyaku-inline attempt=1 | 2026-11-03T23:08:02-03:00 complete mado round=69; hyaku-inline attempt=1. Shape: one v1 wave w1, 12 seats (executor 4, scribe 2, scout 1, connector 1, reviewer 2, critic 1, mutation-tester 1; attack 4/12 = 33.3%), band 8-16, counts.spawn=12, 12/12 results with non-empty outputs, 0 dead, L1 holds the planner seat. Conformance defects (status-neutral, none bars admission): (1) 139f4801 inserted the same 10-line round-69 bullet block into the Round 67 entry (LOG.md:3257-3266) and the Round 68 entry (LOG.md:3314-3323) as well as the correct Round 69 entry (LOG.md:3396-3405) - an append-only organization defect; (2) round commit b9b70a09 is unenumerated in the report's Landed-changes table, LOG and SCORECARD; (3) the report's 'no_freeze for r68 and r69' line is wrong for r69 (final-gates-r69.txt:17 reads SETUP work_not_a_directory; the check's REQUIRED names are claims-frozen.md/registration.md while the lane uses claims-declaration-rN.md); (4) w1-results.json has no per-seat status, so '12 settled' is inferred from non-empty outputs; (5) LOG.md:3263 attributes measurement-final-r69.txt to 759c9d7b while the receipt header names 139f4801 (instrument bytes identical at both); (6) check-deliverables red on round-68 seat reports (pre-existing, disclosed). Routed to round 70 (append-only, no filed-byte rewrite): name the duplicated R67/R68 blocks; enumerate b9b70a09; correct the final-measurement attribution; make check-freeze-order.py measurable for this lane; disposition the check-deliverables r68 red; add per-seat settlement status to the next wave results. Promotion note: all four SHONEN boxes look checkable by a non-author on these artifacts, but closure writes no [x]; promotion is operator-owned. No new L0 line; the r67 privacy and r68 citecheck L0 questions remain open.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
