@@ -45310,6 +45310,51 @@
    "notes": "dispatch digest: 2026-11-04T10:33:58-03:00 launch kaidoku round=80 pgid=1950729 driver=hyaku-inline attempt=1; 2026-11-04T11:03:08-03:00 complete kaidoku round=80; hyaku-inline attempt=1. Wave r80-w1: 15 seats in one batched call inside the 8-16 band (4 executor, 2 scout, 3 scribe, 2 reviewer, 1 critic, 1 mutation-tester, 1 sentinel, 1 connector), attack 4/15 = 26.7 percent, one connector, 15 non-empty results, 0 dead, 0 seat notes; the L1 held the planner seat (planner is not a proposal role in ufo-wave-policy.json). Non-blocking conformance defects, all status-neutral: (a) corpus/SOURCES.md:324 search log still says 'two included (S297/S298)' and 'Rows 202 -> 204' after S297 was withdrawn pre-landing (M80-6); the landed registry is 203 rows, census exit 0; (b) SKILL.md registry rows for the round-80 instruments carry stale --selftest tallies after the in-round repairs (pointer-bind 33 vs 34 case registrations, strictness-battery 8 vs 9, receipt-provenance 14 vs 16; guard-battery 19 = 19) - accurate at b8260107, so the repairs added 1/1/2 cases; (c) the report says 'four capability rows' while the SCORECARD diff adds three capability rows (plus four registry rows), and says 'all receipts are in .ufo/waves/round-80/l1/scores/' while the live-arm receipts are under w1/ (ExecBinder/live-16dfa009.json, CriticClaims/c1-live-head.json); (d) report commit 5ac5b2b3 author date 11:01:02 precedes the cited lane tip 72f8c6e9 (11:01:59) while its committer date 11:02:21 follows it - ordering holds on content and committer time; (e) the SCORECARD freshness row cites --rev b00419fb while its receipt records 6037f599; both re-derive receipts 34 / flagged 1 / unexpected 0; (f) w1/ExecProv/selftest.txt is stale (19 cases / 3 failures at 10:46:24 vs 0 failures for the 10:46:52 instrument) and nothing in the landed tree depends on it. All routed to the lane for round 81 in section 6 of the spot-check; keep them on the routed-defect queue. SHONEN: 4 boxes, all [~]; boxes 1-4 look checkable by a non-author from committed pointers; promotion stays operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 83,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 83,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 83
+   },
+   "admitted": false,
+   "verdict": "rejected-harmed",
+   "verdicts": {
+    "operability": "unchanged",
+    "calibration": "harmed",
+    "freshness": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "harmed",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [
+    "late-path-binding",
+    "pending-falls",
+    "pin-recheck"
+   ],
+   "report": ".ufo/reports/round-83/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-83-verifier-spotcheck.md@aca4f33ac1e2a8cf815d97daab3b3a5cfa0d78e0",
+    "rechecks": "Independent committed-byte source census305→311, late TSV103→123, C2 correction blocks0→3 plus sealed witnesses23/25/305/15, C3 absent→5 rows and four quote-pair holds. Gate evidence verified without execution: C1 final late22 bad10 falls=no (missed late35 target), C2 six facts/zero mismatches/three corrected selftest17/0, C3 five rows/four holds/one ungraded selftest14/0; gate12 arms/3 failed at91fdbadd. Admit sources S569/S571 reopened, quotes16/20 words valid; reject sample absent, not invented. Calibration whole-axis harmed by newly stale current SCORECARD cells beyond verified six-fact C2 population."
+   },
+   "commit": "kama-shokunin@aca4f33ac1e2a8cf815d97daab3b3a5cfa0d78e0",
+   "closed_at": "2026-11-04T14:34:46Z",
+   "campaign": "hyaku",
+   "notes": "2026-11-04T10:46:03-03:00 launch kama round=83 pgid=2055144 driver=hyaku-inline attempt=1; 2026-11-04T11:26:44-03:00 complete kama round=83; hyaku-inline attempt=1. Real lane-authored landed report; all cited commits ancestral to master; initial ahead0 clean tree; exact rendered template prefix. R83V1 stale live SCORECARD evidence cells (new calibration harm despite bounded C2 repairs); R83V2 three new gate registry rows absent; R83V3 missed C1 unit/population and existing note-round/survivor debts plus fourth stale round82 fact; R83V4 blame introduction-vs-last-modification wording; R83V5 midfile README anchor shift and missing claimed coverage table row; R83V6 no actual round83 rejected candidate for mandatory outside reject check, no dispatched planner seat. Status-neutral conformance defects do not make report a marker. Gate red honestly disclosed, no green rerun inferred. SHONEN not fully independently checkable; no promotion. Capability names record landed demonstrations, not round admission; pending-falls final target red explicitly retained.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
