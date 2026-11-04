@@ -42232,6 +42232,47 @@
    "notes": "Dispatch/complete digest (mutable .ufo/watchdog.log, copied): 2026-11-04T01:47:24-03:00 launch kengaku round=76 pgid=2443702 driver=hyaku-inline attempt=1 | 2026-11-04T02:11:33-03:00 complete kengaku round=76; hyaku-inline attempt=1. Shape: one v1 wave w1, 14 seats (executor 4, scribe 3, scout 1, connector 1, reviewer 2, critic 1, mutation-tester 1, sentinel 1; attack 4/14 = 28.6%), band 8-16, counts.spawn=14, 14/14 settled results non-empty, 0 dead, no residual call; labrat rides an executor seat (not a swarm role), L1 holds planner. Admission: C1 (coverage) and C2 (calibration) verify by my own measurement; coverage/calibration held at their caps (7/10) with the moves real, other axes unchanged, no axis harmed (SCORECARD 121/0, LOG 57/0, no deletions; PROVINCE 19/4 and SKILL 4/2 are dated in-row corrections). Conformance defects routed, all status-neutral: V1 C1 selftest/mutant receipts stamp c8c116b4 while the 12-case/9-mutant battery exists only from 4b884412 (re-run at the stamp prints cases=8) - re-mint at the battery commit; V2 new SKILL registry rows pin superseded tallies (c1 cases=7 red=6 vs 12/11; c2 cases=10 red=9, mutants 8/8 vs 14/13, 12/12) and omit the A5/A8/A9 defect classes - re-pin; V3 LOG round-76 'Verification boundary' and lesson Census keep superseded numbers (agree=9/2, 7/6, 5/5, 10/9, 8/8, wrong=14) with no appended correction naming the final 8/3, 12/11, 9/9, 14/13, 12/12, 13 (SCORECARD main row likewise) - append dated corrections; V4 report ties commit R to a LOG entry 'Second-reviewer classes' that does not exist in LOG.md - add or correct the pointer; V5 report repeats round-65 'no still-unimplemented proposal' while round-66 lesson records considerthese proposal 2 (tb2_grader_admit) unimplemented and my sweep finds no implementing file - re-adjudicate; V6 PROVINCE names capability 'declared-surface-resolver' vs SCORECARD 'province-surface-resolver-table-anchored'; V7 routed_open.py output and R51-C1/R75-C1 tip reruns are quoted without committed stamped receipts - commit them. Operator note: SHONEN boxes 1-4 are [~] lane-asserted, pointers resolve and look non-author-checkable, but V2/V3 should land before any [x]; promotion stays operator-owned. No promotions, no mints, no sibling touched.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 76,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 76,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 76
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "improved",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-76/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-76-verifier-spotcheck.md@06f1bbbb803790b35358d277bb7807b82a9fab99",
+    "rechecks": "Step-1 PASS: report 387066004581a0346ce1f42368c2811ba5d54c2e by tsukuroi-shokunin <tsukuroi@shokunin.local>, committed 18 s after lane tip 1ac36bcf and before complete 02:14:31; SHONEN heading 1 + 4 [~] lines vs 4 boxes, SHONEN.md unchanged; ten cited hashes (d5f0565b/8a027558/aa110cc5/b698d13d/780bad66/cd84ce89/1ac36bcf/bd0acc44/e5f5ca9e/base 865b38c9) all ancestors of refs/heads/master; jj state branch=master local=remote=1ac36bcf ahead=0 behind=0, worktree clean; prompt 1-140 = rendered template with placeholder-only diff + section-6 run-15 addendum, five child-lane items present, committed 13 s pre-launch; wave 13/13 seats non-empty (attack 4/13 = 31 %). C1 RE-MEASURED mechanically over committed bytes: note absent at base rc 128 -> 8 JD rows, 4 sources S318-S321, 4 snapshots sha256sum -c 4/4 OK, live v262 re-fetch 4/4 identical, 8/8 quotes located (line-wrap normalized), host derivation 256M/32M/148.6M reproduces from before/host.txt; but the frozen C1 sentence 'used space plus the smaller of free space and keep_free' is FALSIFIED by pinned journald-manager.c:168 LESS_BY(vfs_avail,metrics->keep_free) and :170 CLAMP -> C1 not verified as declared (QUALITY 106; r75 precedent; erratum R76-DECL-SPACE-CLAUSE on record). C2 RE-MEASURED by plain greps: S322 0->1, JT5 erratum 0->1, r75 mistake count 5+2 owed reconciled, bd0acc44 recheck receipt met=1/4-of-4, seven markers 0->7 tracked, narrowed wording 0->1, three drift errata 1 each, QUALITY 109 0->1; registry 317->323, notes 93->94, lessons 126->127; census rc 0 (W04 only). Gates evidence-verified, not executed: instrument sha256 549f6ba3.../01e12e6a... identical at declaration and tip; selftests 14/14 and 10/10; base 128 and 8/0 rc 1, after met=1 and 0/8 rc 0 at 780bad66; tip receipt unchanged."
+   },
+   "commit": "tsukuroi-shokunin@1ac36bcfd49fb88b7fc54e3faa300e68e7010f9d",
+   "closed_at": "2026-11-04T05:23:47Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-11-04T01:48:26-03:00 launch tsukuroi round=76 pgid=2453431 driver=hyaku-inline attempt=1 | 2026-11-04T02:14:31-03:00 complete tsukuroi round=76; hyaku-inline attempt=1. Status ok (real report, seven landed commits tied to the LOG entry, report last and pushed); admitted false: C1's frozen claim carries one conjunct falsified by the pinned source, so not every claim verifies. Honest stop: the lane landed the true mechanism in JD3 and the erratum R76-DECL-SPACE-CLAUSE, disclosed it in the report, and claimed no ordinal uplift. C2 verified end to end; no axis harmed. Routed to the lane: (1) paste the pinned code line into a claim cell before freezing code-arithmetic claims; (2) lesson ## Gate has no reject row and no spot-check-result line - add both append-only; (3) lesson Gate count '317 -> 322' is stale (landed 323) and carries no counting command - append a correction naming S323; (4) report's assimilation '114 of 147 staged S-ids collide' is the r75 basis - measured 124/147 against the r76 323-row registry (SOURCES.append.md ids), carry the command or drop the number. Operator-owned note: prompt section-6 says only reviewer uses @m_zfl while live task.agentModelOverrides also routes critic/executor/scribe/connector/sentinel/mutation-tester to @m_zfl; the prompt names the config as authority and forbids passing model. SHONEN boxes 1/2/4 look checkable by a non-author (box 3 still carries the round-60 whole-SKILL no-oral-context retest); promotion is operator-owned and this closure wrote no [x]. Open L0 tsukuroi | round-75 corpus-expansion-1 id drift remains; nothing adopted.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
