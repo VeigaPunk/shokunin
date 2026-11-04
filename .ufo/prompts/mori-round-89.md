@@ -329,7 +329,7 @@ Phase-1 directives still bind: "train all shokunins to at least round 100"; "com
 every round done"; "do it inline with multiple swarms of subagents".
 
 You are an in-session **L1 lane subagent** dispatched by the hyaku orchestrator (the operator's
-parent omp session) for exactly ONE steered round: **mori round 89** (attempt 1;
+parent omp session) for exactly ONE steered round: **mori round 89** (attempt 2;
 campaign target: round 100). Your lane's place in the session follows the goal file (lane
 order and blocks: `.scratch/goal-20261025-hyaku-run7.md`); the orchestrator dispatches your lane's
 next round only after this one lands and its non-author closure is written. Work this round only
@@ -822,3 +822,5 @@ Amendment 5 (operator, same day, verbatim: "the m_flash is not being properly ro
 Run15 spawn fixes (2026-11-04, operator: "maybe stop the loop, let each lane working finish their round, then you fix the spawning"): drain mode via flag file `.scratch/run15-drain` (kernel `draining()`; no fill_slots, no next-round launch; live rounds still settle, close and advance). `inline-dispatcher.py` bootstrap now (a) adopts a dispatched wave only when its round equals the lane's `next/` in-flight round (seat names repeat across lanes, so a closed chousa r49 w2 had been re-adopted via a tsukuroi seat named ScribeFrontier), and (b) tracks `<Name>R<n>` as an L1 only when `<name>` is a lane (seat `ScribeR85` had been taken for an L1). Smoke `RouteSmokeCritic` (@m_flash): opencode-go 402 funds -> devin/deepseek-v4-1-flash permission_denied -> devin/swe-2 permission_denied -> anthropic/claude-haiku-5-5 answered; tsukuroi r80 CriticCounter-2/MutationCounter-3 died on the opencode-go 402 before the model-keyed chains landed.
 
 Amendment 6 (operator, 2026-11-04, verbatim: "has to be the v4.1 flash" / "not the v4 flash nor v4 pro" / "it needs to be the third fallback; after opencode -> commandcode -> amr -> devin" / "i might need to login to it again to refresh the devin auth"): `m_flash` = opencode-go/deepseek-v4.1-flash:high, then commandcode/deepseek/deepseek-v4.1-flash, amr/deepseek-v4.1-flash, devin/deepseek-v4-1-flash (all :high); model-keyed chains mirror that order; devin/swe-2 removed from the m_flash cascade; only v4.1-flash ids enabled (no v4-flash/v4-pro, no opencode-zen). Smoke RouteSmokeCritic4 after the devin re-auth: opencode-go 402 -> devin/deepseek-v4-1-flash answered ROUTE_OK. Drain lifted; campaign resumes.
+
+Amendment 7 (operator, 2026-11-04, verbatim: "assign some lanes to m_swe (devin/swe-2-flash) on max effort" / "this is a coding model, so use it as executor and reviewer"): `m_swe` = devin/swe-2-flash:max; `executor` @m_zfl -> @m_swe and `reviewer` @m_flash -> @m_swe. Smoke RouteSmokeExecutor / RouteSmokeReviewer both answered on devin/swe-2-flash. Future launches only. Backup config.yml.pre-m_swe-exec-review-20261104.
