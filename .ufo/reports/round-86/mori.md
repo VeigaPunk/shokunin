@@ -105,8 +105,10 @@ Every change is a LOG.md Round-86 entry item and lands at the commit named besid
 | Contract A2 (subject-line prefix, fleet-root limit) and the C2 counter's prefix check | `c2bfded0d25564d689282e3cbe462c8f043139bf` |
 | Six C3 arms + the replay-enabled C2 subject + the receipt generator | `87644619078308ee523cd0c976c72bf079b0ff77` |
 | The two replay receipts (`after-c1-r86.txt`, `replay-defeat-r86.txt`) and the generator's path guards | `50d80df0b02e57642a71091d29978da7f231c9dd` |
-| After receipt (all three frozen targets) and the defeated-controls receipt | `8b4b4ad7f4b1b8a924b6b831fb9f8f3361847c8d` |
-| SCORECARD round-86 section + capabilities + planned 87, LOG Round 86, QUALITY 177–180, PROVINCE round-86 notes, corpus/README row, SKILL registry row 20, S602 row, knowledge entry, lesson | `095bd1f6d90460267666a7642aa987a9a7d03c5f` |
+| C3 counter target enforcement and its stale docstring (the probe's finding 3) | `b0aa564ca0dec352a9b42d5d74ecba9bdaab3d7f` |
+| After receipt (all three frozen targets) and the defeated-controls receipt | first `8b4b4ad7f4b1b8a924b6b831fb9f8f3361847c8d`; re-measured at `b0aa564c` in `6e77fe0e6bd4e71156276fe46880c758df0fc000` |
+| LOG Round 86, `w1-results.json`, the probe's preserved output (`evidence/mutation-r86.txt`) and the re-measured after receipt | `6e77fe0e6bd4e71156276fe46880c758df0fc000` |
+| SCORECARD round-86 section + capabilities + planned 87, QUALITY 177–180, PROVINCE round-86 notes, corpus/README row, SKILL registry row 20, S602 row, knowledge entry, lesson, the C3 value controls and the four seat reports | `095bd1f6d90460267666a7642aa987a9a7d03c5f` |
 
 No path was deleted. Line deletions occur only where code was replaced rather than added: the two
 inline expressions in `.ufo/waves/round-85/count-c3.py` (`stable = (...)`, the `main` gate and the
