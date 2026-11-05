@@ -182,3 +182,28 @@ Future launches only; no live restarts; live seats keep their captured route. No
 - Paused by the three-rejection gate (need operator fresh-start authorization): kama r86, tameshi r86, tabi r64, souji r60, kagi r36.
 - Resume: `%load scripts/hyaku/inline-dispatcher.py` and `%load .scratch/run15-kernel.py` (separate cells), `await bootstrap()`, `rm .scratch/run15-drain`, then loop `await run_for(900)`.
 - Routing (config.yml): m_flash opencode-go -> commandcode -> amr -> devin deepseek-v4.1-flash (devin re-auth confirmed by RouteSmokeCritic4); m_zfl zai glm-5.3-flashx primary with glm-5.3-flash elsewhere; model-keyed fallbackChains apply whatever the agent role.
+
+## Wrap-up 2026-11-04 ~22:50 -03:00 (operator: "wrap up this run, i'll restart omp so it picks up my new credentials")
+
+- Campaign totals this run: trained=229 admitted=149 rejected=80. Nothing live; kernel loop stopped.
+- **Drain flag `.scratch/run15-drain` is SET.** Remove it to resume launching.
+- Why it stopped: devin weekly quota exhausted (`failed_precondition`), on top of commandcode 401, amr 402 (resets 2026-11-06T22:28Z) and opencode-go 402. Every L1/closure died; 11 lanes hit 3 failed attempts.
+- Provider-failure blocks were cleared on wrap-up (markers moved to `~/.local/state/shokunin-hyaku/blocked/.<lane>.run15-20261104-provider-failure-4`): chousa r80, kaidoku r90, kake r93, kama r86, kasegi r71, kengaku r86, kotoba r87, kotodama r90, mado r86, mori r90, tabi r64. On resume those rounds relaunch at attempt 1 and adopt each lane's uncommitted in-flight work.
+- **Quality pauses still BLOCKED (3 consecutive rejected closures; operator fresh-start authorization needed):** kagi (next 37), kumitate (90), revenger (92), souji (61), tameshi (87), tsukuroi (83).
+- Routing at wrap-up (config.yml; amendments 14-19 in scripts/hyaku/lane-addendum.md):
+  - m_flash = amr/deepseek-v4.1-flash:high. Chain: amr -> opencode-go -> commandcode -> devin/swe-2-flash.
+  - m_zfl (zai glm-5.3-flashx) for reviewer and executor.
+  - m_mim (MiniMax-M3.1-Flash -> haiku -> glm-5.3-flash -> swe-2-flash) for scout and scribe.
+  - connector = devin/swe-2-flash:high. All other roles @m_flash.
+  - alibaba-token-plan removed.
+- In-flight lane work left uncommitted for the next L1s: kama, tabi, mado, kaidoku, kake, kasegi, kengaku, kotodama. Examples: kake r93 `scripts/conditional_eval.py` (sha256 d3bac7de, frozen counter met=true on a scratch commit, needs landing plus a re-score); kaidoku round-90 plan/tools.
+- All 17 lane repos are pushed: 0 unpushed commits vs origin.
+- Fleet notes:
+  - `.ufo/reports/round-84/kama.md` was a misroot overwrite (kama r86 SN01 F1), restored to HEAD. The overwrite is preserved at `.scratch/run15-wrapup/round-84-kama.misroot-overwrite.md`.
+  - `.ufo/reports/round-89/kaidoku.md` has an uncommitted post-closure fill by a dead L1. It is left as is; the closure already judged that round a marker (rounds[1293]).
+- Resume recipe:
+  1. Confirm credentials with a route smoke (`agent('Reply with exactly: ROUTE_OK. No tools.', agent='critic', label='RouteSmoke')`, then read the session jsonl provider).
+  2. `%load scripts/hyaku/inline-dispatcher.py`, then `%load .scratch/run15-kernel.py`, each in its own cell.
+  3. `await bootstrap()`.
+  4. `rm .scratch/run15-drain`.
+  5. Loop `await run_for(1200)`.
