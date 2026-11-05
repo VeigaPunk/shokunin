@@ -329,7 +329,7 @@ Phase-1 directives still bind: "train all shokunins to at least round 100"; "com
 every round done"; "do it inline with multiple swarms of subagents".
 
 You are an in-session **L1 lane subagent** dispatched by the hyaku orchestrator (the operator's
-parent omp session) for exactly ONE steered round: **kaidoku round 90** (attempt 3;
+parent omp session) for exactly ONE steered round: **kaidoku round 90** (attempt 1;
 campaign target: round 100). Your lane's place in the session follows the goal file (lane
 order and blocks: `.scratch/goal-20261025-hyaku-run7.md`); the orchestrator dispatches your lane's
 next round only after this one lands and its non-author closure is written. Work this round only
@@ -846,3 +846,19 @@ Amendment 15 (operator, 2026-11-04, verbatim: "assign two roles from m_flash to 
 Provider-failure unblock (2026-11-04, amendment-8 basis): kotoba r87 (a2/a3 died on commandcode 401; attempt-1 KotobaR87 survived and landed report d752fdbe, verified + closed as attempt 1) and tsukuroi r82 (all three L1s died on 401 at wake). Markers -> `.<lane>.run15-20261104-provider-failure-3`. Ruling to tsukuroi r82 seat SentinelGate: frozen mutants-r82.json not amended; C2 recorded unmet with ceiling arithmetic, recipes routed to r83.
 
 Amendment 16 (operator, 2026-11-04, verbatim: "put devin/swe-2-flash as the ultimate fallback for m_mim"): m_mim chain is now haiku-5-5 -> zai/glm-5.3-flash -> devin/swe-2-flash:high (last; the trailing codex sol/luna entries were removed). A model-keyed chain `minimax-code/MiniMax-M3.1-Flash` with the same order was added, because model keys win over alias/role keys.
+
+Amendment 17 (operator, 2026-11-04, verbatim: "assign connector to devin/swe-2-flash"): connector @m_antigravity -> devin/swe-2-flash:high. Same window: devin began returning `failed_precondition: Your weekly usage quota has been exhausted` on every L1, closure and seat. With commandcode 401, amr 402 and opencode-go 402 already dead, the whole m_flash chain is down. All 17 pool lanes hit 3 failed attempts and are BLOCKED. The driver was drained (`.scratch/run15-drain`) so no more attempts are burned; provider-failure blocks are left in place until routing is fixed.
+
+Amendment 18 (operator, 2026-11-04, verbatim: "you need to make m_flash back to the amr -> opencode-go -> command code provider, with devin/swe-2-flash as the fallback"): m_flash = amr/deepseek-v4.1-flash:high. Model-keyed chains: amr -> opencode-go -> commandcode -> devin/swe-2-flash; opencode-go -> commandcode -> swe-2-flash; commandcode -> swe-2-flash; stale devin/deepseek-v4-1-flash -> amr -> opencode-go -> commandcode -> swe-2-flash. Alias chain matches.
+
+Amendment 19 (operator, 2026-11-04, verbatim: "remove alibaba token plan"): the three alibaba-token-plan models (deepseek-v4.1-flash, qwen3.8-flash, qwen3.8-max) were removed from enabledModels. No chain referenced them.
+
+Amendment 20 (operator, 2026-11-04, verbatim: "also, on the m_flash, you should tell it to use amr as primary, retrying 10 times"): amr/deepseek-v4.1-flash is already the m_flash primary (Amendment 18). `retry.maxRetries` went from 5 to 10. It is global; omp has no per-model retry count.
+
+Amendment 21 (operator, 2026-11-04, verbatim: "you are not trying the other keys i have"). Stored credentials in agent.db: amr 5 keys (0 blocked); commandcode 7 (0 blocked); opencode-go 13 (10 blocked until Nov 8-25; ids 20/21/22 unblocked); devin 4 OAuth accounts; minimax-code 2; zai 1. Cause, per omp://non-compaction-retry-policy.md: omp rotates sibling credentials only for errors it classifies as usage limits (step 5). A hard auth error (commandcode `401 Invalid Authorization`) skips rotation and walks the model chain at once. Devin's `failed_precondition ... weekly usage quota` was most likely not classified as a usage limit either [INFERENCE]. With maxRetries 5, at most 5 attempts per request were made in total, credential switches included. The new budget of 10 covers all 5 amr keys. Rotating past a 401'd commandcode key needs the dead key removed or re-entered; omp has no setting for it.
+
+Amendment 22 (operator, 2026-11-04, verbatim: "put command code prior to opencode-go"): the m_flash chain is now amr -> commandcode -> opencode-go -> devin/swe-2-flash. Changed: model-keyed chains (amr -> cc -> ogo -> swe; cc -> ogo -> swe; ogo -> swe; stale devin deepseek -> amr -> cc -> ogo -> swe) and the m_flash alias chain.
+
+Amendment 23 (operator, 2026-11-04, verbatim: "assign the scribe to anthropic/haiku-5.5 on high effort"): scribe @m_mim -> anthropic/claude-haiku-5-5:high. scout stays on @m_mim.
+
+Amendment 24 (operator, 2026-11-04, verbatim: "distiller can also be anthropic/claude-haiku-5-5:high"): distiller @m_flash -> anthropic/claude-haiku-5-5:high.
