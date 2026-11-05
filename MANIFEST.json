@@ -51794,6 +51794,48 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, copied at closure, mutable log): 2026-11-05T14:54:20-03:00 launch kotodama round=95 pgid=507845 driver=hyaku-inline attempt=1; 2026-11-05T16:47:22-03:00 complete kotodama round=95; hyaku-inline attempt=1. Single attempt; report filed by lane identity (kotodama-shokunin, fleet commit fd3fb9fd); SHONEN heading present, four [~] boxes; cited hashes 19aa4dd0, d41eb594, feb94bc3 are ancestors of main; lane state ahead=0 behind=0. Conformance defects (status-neutral): R2 reports/round-95/census-head.txt untracked yet cited as evidence; R3 stale-lane line lacks progressing/silent grade; R4 L2 seat split names no planner seat although prompt §3 requires 1x planner; R6 claim O frozen before 86/88 vs measured v5 87/95 on 95-entry set (disclosed). Routed to lane round 96: R1 discernment — Threnoi to Moirologia (Oral Tradition 23/2, 2008) rejected as UNREACHABLE but re-opened here at https://journal.oraltradition.org/wp-content/uploads/files/articles/23ii/07_23.2.pdf (HTTP 200, 302080 B, on-point professional-mourner article): re-decide on content; R5 operator decision: lowest-axis obligation (freshness, paused by L0 round-11/round-89 questions at .ufo/l0-questions.md lines 47 and 303, unanswered) is neither met nor waived; the closure admission rule (every claim verifies, no axis harmed) is met, so admitted=true is recorded with R5 flagged for operator ruling. SHONEN: no box ruled checkable by this closure; promotion is operator-owned. Fleet-root working copy holds sibling/operator modifications to .ufo/l0-questions.md and .scratch/run15-state.json, not touched by this closure and not committed here.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 92,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kotoba",
+   "lane_round": 92,
+   "lanes": {
+    "kotoba": "ok"
+   },
+   "lane_rounds": {
+    "kotoba": 92
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "consistency": "improved",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-92/kotoba.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kotoba-shokunin/corpus/lessons/round-92-verifier-spotcheck.md@5549fa9ed3cd91aeb0349178b5ba75dfe41711e7",
+    "rechecks": "Conformance: report committed by kotoba-shokunin (76c79823) after lane tip; SHONEN 4/4 [~]; cited hashes ancestors of master and origin/master (blob 0abfe8b1 noted as blob); jj-lane state ahead=0, porcelain empty, ls-remote = 0c545e1. Claims re-measured over committed bytes: kill rows 17/17/17/17 at 5031a78/e073723/c679a63/0c545e1 (equivalent 6, survivor 0); kill-set-size arm 0->6 and freeze-gate rung strings 0->3/4/2/2/2 base->landing; KILL_SET_PINNED 17; SKILL.md 600 lines 92672 B identical; round-91 fixtures identical; SCORECARD diff 2 insertions, no score cell; census 190->192, validate rc 0 (run). Gates evidence-verified from committed receipts, not executed: controls-run 2 of 2 / 2 of 2 rc 0; bat-selftest 28/0; landing-m6-dropped-row FAIL rc 1; landing-rungs rc 2/2/3/3; fg-selftest 34/0; floors 176/0; gate-registry 74/74 (= base); tip-battery 3 of 6 (= base); corpus DRIFT set (= base). Spot-check: S265 agree (quote 289-291 25 words; anchors 1051/1071 verified), S266 agree (quote 1120-1121 17 words; 301 re-checked), S264 cross-round reject agree; round-92 Gate holds no reject (sampled cross-round)."
+   },
+   "commit": "kotoba-shokunin@0c545e1d8202fa553b0ac2dad801c66c1fc33514",
+   "closed_at": "2026-11-05T20:00:09Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-11-05T14:17:42-03:00 launch kotoba round=92 pgid=230241 driver=hyaku-inline attempt=1 | 2026-11-05T16:55:16-03:00 complete kotoba round=92; hyaku-inline attempt=1. Round: one v1 wave r92-w1, 12 seats (executor 3, reviewer 2, mutation-tester 2, scout 1, scribe 1, connector 1, critic 1, sentinel 1), one batched taskCall; no dead seats; results.json per-seat output null (orchestrator restart, disclosed). Claims: C1 consistency (controls refuse named shortcuts 0/2 -> 2/2, honest 2/2) MET; C2 depth (kill-set pin 25->28 assertions, dropped row FAIL by name; three freeze-gate rungs fail-closed, 31->34) MET with disclosed committed-revision naming gap D2 routed. Defects (status-neutral): (1) landing-rev.txt and bat-rev.txt name REV cd355c47, not in the lane repo; tip-battery and census receipts name scratch L1-integ; report says measured at c679a631 - erratum or re-measure owed; (2) no planner seat in the L2 swarm (prompt sec.3 minimum); (3) seat specs lead 'You are a Godspeed-enabled subagent.' not /skill:godspeed - operator to confirm wrapper; (4) round-92 Gate has no reject; discernment sample cross-round (S264); (5) lesson Settlement still 'pending' spot-check. Routed to round 93: F1 (refused-world exit code), F-4 (INSTRUMENT_PINS key removal silent), D2 (committed-revision kill naming), the Gate reject sweep, planner seat disposition, cross-reference to spot-check. Carried reds unchanged: L0 kotoba|round-88, kotoba|round-73, sibling census, province core, governance.citation_resolves, corpus DRIFT set. Operator notes: no SHONEN box is fully checkable by a non-author this round (box 3 closest); consistency held at 10 is not endorsed as moved by a single non-author closure.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
