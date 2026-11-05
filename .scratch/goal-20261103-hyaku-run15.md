@@ -207,3 +207,7 @@ Future launches only; no live restarts; live seats keep their captured route. No
   3. `await bootstrap()`.
   4. `rm .scratch/run15-drain`.
   5. Loop `await run_for(1200)`.
+- Late wrap-up (Amendments 20-21): `retry.maxRetries` 5 -> 10.
+  - omp rotates sibling keys only on usage-limit-classified errors. Stored keys: amr 5, commandcode 7, opencode-go 13 (3 unblocked), devin 4.
+  - A 401 on one commandcode key walks the model chain without trying the other 6.
+  - After the restart, the first route smoke should confirm which keys authenticate.
