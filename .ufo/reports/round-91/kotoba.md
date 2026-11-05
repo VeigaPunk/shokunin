@@ -116,3 +116,19 @@ No installs, upgrades or host changes. No pacman, sysctl or `/proc/sys` write. S
 ## Verdict basis
 
 Claims are proposed as: C1 measured (predicate met on committed evidence at `c6631ca`); C2 measured on legs A and B, with leg B's identity with the routed pointer open. No axis value is changed by this report; the non-author closure rules verdicts and axis scores.
+
+## Erratum — wave settlement (appended 2026-11-05 after first filing)
+
+The sections **Dead seats and round shape** and **Open items** above state that no
+`r91-w1-results.json` existed and that no WAVE-DONE was received. Both statements are superseded:
+after this report was filed, the orchestrator delivered `WAVE-DONE kotoba r91 r91-w1` and wrote
+`/home/vgpnk/Projects/shokunin/kotoba-shokunin/.ufo/waves/round-91/r91-w1-results.json`
+(13 records with keys `name`, `agent`, `output`, `note`; no per-seat status field). Twelve records
+carry full seat outputs. The `ReviewerRepairs` record reads
+`output unavailable: FileNotFoundError('Output not found: ReviewerRepairs-6')` — the harness holds
+no output object for that seat, which confirms the dead-seat disposition and supplies the last
+error text this report said was unavailable. No seat wrote into the wave dir after the report's
+misroot sweep. No claim reading, measurement, verdict or axis value changes; this erratum
+supersedes only the two statements named above and the "no last error text" clause of
+§ Dead seats. The results file is committed as wave evidence in lane commit C (named in LOG.md
+§ Round 91, "Wave settlement").
