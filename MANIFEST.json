@@ -50403,6 +50403,56 @@
    "notes": "Dispatch/complete digest: 2026-11-05T07:45:37-03:00 launch souji round=64 pgid=253902 driver=hyaku-inline attempt=1 | 2026-11-05T09:43:00-03:00 complete souji round=64; hyaku-inline attempt=1. Honest stop: C1 (operability) and C2 (calibration, lowest owned axis) declared NOT admitted, nothing frozen; lane status ok (real report, committed work, all sections present). Defects (status-neutral): wave-dir evidence pointers (.ufo/waves/round-64/, 12 seat reports, candidate writer) do not resolve at closure - lane-disclosed durability limit, no admitted claim rests on them, routed: lesson-cited evidence must be committed before any freeze; census/round-64/SHA256SUMS.txt pins instruments/matrix/population but not control receipts (minor, r65); round-64 LOG entry cites paths not commit hashes (report carries hashes; minor observation); sources-census W04 duplicate-URL warnings (pre-existing tolerated class, exit 0). Discernment graded improved by this closure's outside spot-check (agrees with the gate on 2 admits S295/S296 + 2 rejected inferences); the lane filed unchanged (spot-check pending). Operator note (promotion operator-owned): all four SHONEN [~] boxes carry resolvable pointers and look fully checkable by a non-author; no [x] written. Open L0 souji|round-64 planner-seat ruling stays routed around; r65 routing (M1 N4 re-probe, M2 chronology gate before freeze, in-lane control builds, C2 green/decoy + dead-token falsifier, untracked-visibility claim) confirmed reasonable.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 39,
+   "date": "2026-11-05",
+   "type": "closure-correction",
+   "lane": "kagi",
+   "lane_round": 39,
+   "supersedes": {
+    "round": 39,
+    "type": "closure",
+    "date": "2026-11-05",
+    "entry": 1343
+   },
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 39
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "freshness": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [
+    "anchor-pin drift detection",
+    "declared-axis conformance"
+   ],
+   "report": ".ufo/reports/round-39/kagi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kagi-shokunin/corpus/lessons/round-39-verifier-spotcheck.md@6cc8850dfc5757927699e5a53a876f47c8df21aa",
+    "rechecks": "Two independent non-author closures ran concurrently and reached identical verdicts (admitted; freshness+calibration improved; expansion improved, quality+discernment unchanged). This correction re-anchors the spot-check pointer to the lane tip content 6cc8850 (the first closure's file at d491f100 remains readable in history and is preserved). Merged re-measures over committed bytes, no lane gate executed: C1 BASE instruments absent (0); 3/3 independent anchor-cell sha256 re-hashes at 4776f71 match pins committed pre-freeze in 1909e38; both judges' plain in-place rewrites (v2.2.1, v2.7.2, 3.15.2) each DRIFT. C2 BASE absent (0); claims-declared.tsv rows byte-match plans/round-39.md headings (lines 40, 77) and the unique tagged SCORECARD rows (1491/1492); planted relabels detected. SCORECARD BASE-to-TIP diff: two hunks only, all six axes 9 to 9, no harm; calibration row restores R25-02/R29-01/R29-02. Census validate rc 0 (kagi ok; 19 W04, pre-existing). S094 admit re-opened four ways: fresh fetch = committed capture .ufo/waves/round-39/capture/S094.body = source-fetches.tsv row = fleet f47ad6ba line 116; quote 8 whitespace tokens (lesson says 9 - nit). Standing rejects S038/S030 re-opened, both agree. Gate runtime outputs evidence-verified from committed receipts (.ufo/waves/round-39/build/K39ExecSources/c1-counter.out = 3, c1-gate.out CLEAN pins=3, prefreeze-controls.out controls=4 mismatch=0), never executed. Step-1: report by lane identity ab5e9e38; all 7 cited hashes ancestors of refs/heads/master; jj-lane ahead=0, porcelain clean; prompt is the canonical template rendering with all five child-lane items."
+   },
+   "commit": "kagi-shokunin@368991952b57e8425a6e441ee53830eb5a35cd2a",
+   "closed_at": "2026-11-05T12:59:43Z",
+   "campaign": "hyaku",
+   "notes": "Corrects rounds[1343] (superseded): two concurrent non-author closure judges closed this lane-round with identical verdicts; the second judge's spot-check commit (6cc8850, protocol identity) landed on top of the first's (d491f100) and superseded the cited path's tip bytes, so the pointer is re-anchored here - every status, verdict, trend, capability and report path is unchanged from the superseded row. Dispatch/complete digest (.ufo/watchdog.log lines 2801/2822/2823/2837/2838): 2026-11-05T07:16:41-03:00 launch kagi round=39 pgid=3777574 driver=hyaku-inline attempt=1; 2026-11-05T08:10:38-03:00 lane-dead-no-report kagi round=39; retry same round (attempt 1 ended without a landed report); 2026-11-05T08:10:40-03:00 launch kagi round=39 pgid=3839653 driver=hyaku-inline attempt=2; 2026-11-05T09:40:56-03:00 and 2026-11-05T09:40:58-03:00 complete kagi round=39; hyaku-inline attempt=2. Attempt-1 work (predeclaration 1909e38, plan 7c11e76, candidate 6742fde, wave dispatch) inherited and re-verified by attempt 2. Merged routed defects to round 40 (status-neutral; none bars admission): (1) gate registry rows absent in SKILL.md for corpus/anchor-pins.sh and corpus/claims-declared.sh - closure grades neither gate conformant until registered; (2) neither instrument carries a selftest mode (frozen counters are the kill evidence); (3) lane-declared ledger debt: six claim-ledger rows fail at the landing tree (R13-01, R21-02, R24-06, R31-02, R33-02, R34-03), expected consequence of pure appends, named in report and SCORECARD, not migrated; (4) S036 unpinned fourth superseded feed anchor (M39-7); counter hardcode survivor (M39-6); gate false-clean paths F1-F7/D1-D5 (M39-12); S012 rendered-text locate failure; S040/S041 documentation refresh; (5) minor: S094 teaches cell mixes verbatim quote with an unsourced derived clause; lesson Gate word count 9 vs 8 whitespace tokens; LOG.md round-39 block does not cite candidate 6742fde (hash-entry tie lives in the report table, verified); stale-lane section grades no mission progressing/silent (first judge's CD-2; no open mission existed to grade - recorded, grade neutral). Orchestrator-routed (not lane debt): planner role rejected by the wave validator, L1-held (same deviation as rounds 33/37/38); seat receipts citing /tmp fixtures (M39-10); build-results.json outputs null after orchestrator kernel restart mid-wave, seats K39ExecAnchor and K39ScribeTrial dead with no report files (M39-11). SHONEN: all four boxes [~] with resolvable pointers, each checkable by a non-author from committed evidence - eligible for operator promotion review (promotion is operator-owned). Spot-check agrees with the round's only gate decision (S094 admit) and with both sampled standing rejects; the round's Gate refused none. Misroot sweep: fleet working tree carries only orchestrator-owned .scratch/run15-state.json.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
