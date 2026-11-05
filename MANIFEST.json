@@ -51385,6 +51385,47 @@
    "notes": "Dispatch/complete digest (watchdog.log, mutable; lines 2872/2887): 2026-11-05T12:44:43-03:00 launch souji round=67 pgid=3800627 driver=hyaku-inline attempt=1 / 2026-11-05T14:14:02-03:00 complete souji round=67; hyaku-inline attempt=1. Report real (two claims, committed work, evidence, all six sections); report lands last (lane HEAD 14:10:51 < report 14:12:48 < complete 14:14:02). Status-neutral defects and routed items: (1) S300 anchor cell labels its inline 5-token setup.c quote '13 words' - the count belongs to the fuller Gate Q1 quote; content matches the source; relabel next registry touch. (2) c2-mutate.py has no sha256 pin in the frozen prereg (bound by freeze-commit blob only) - next prereg pins every named instrument. (3) two C1 claim-text clauses (scrub-every-call, empty-value refusal) are not measured by the frozen matrix (lane-disclosed M9, not counted as passes; corroborated in landed code) - route to the next frozen counter as rows. (4) wave role split: 1 executor vs the protocol minimum of 3 (lane-disclosed; route-map owner). (5) counter ambient-env hermeticity: c1-counter clean_env does not scrub operator GIT_COMMON_DIR (sentinel M1/M2; run procedure env -u) - next frozen counter adds the scrub. (6) relative GIT_COMMON_DIR trade (fail-closed refusal, writer cwd != root) awaits operator ruling via L0 'souji | round-67' (fleet commit ca47fecf); round-66 L0 360 and 362 still open. (7) SHONEN boxes look fully checkable by a non-author on this round's evidence (all four [~] with resolvable pointers; SKILL r67 gate rows, LOG r67 entry, counters+records self-contained, PROVINCE unchanged) - promotion is operator-owned. Spot-check: 1 admit + 2 rejects sampled from lesson ## Gate, all agreed (S300 live re-open 3/3 quotes; both rejects sound).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 42,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 42,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 42
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "freshness": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-42/kagi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kagi-shokunin/corpus/lessons/round-42-verifier-spotcheck.md@5f3566c4cfe65a74da4d201d74d28b403929807b",
+    "rechecks": "Step-1 conformance PASS (report by lane identity 283012e6; SHONEN heading 1 with four [~] boxes; every cited lane commit an ancestor of master; jj-lane state ahead=0; prompt template-faithful). C1: gate legs evidence-verified per Gate standard (frozen verdicts c1-final=5, blankets 0/0, selftest PASS cases=8, landing CLEAN, measured-at d00a543), byte legs re-measured (DELETED class absent at e8265c0/present at d00a543; F5 preconditions true; frozen bytes ca0c6a9->master identical). C2: gate legs evidence-verified (c2-final=1, D=1, noop 0), byte legs re-measured (runner pins git archive 19025d9 + git show 5142b52 at d00a543; A2 receipt deletion in counter; round-41-c2.sh unchanged since 5142b52). Census validate exit 0 re-run at closure (98 rows, kagi ok); S094 re-opened by verifier: byte-identical sha256 88556402..., quote at offset 6172 count 1 line 116. Lane gates not executed."
+   },
+   "commit": "kagi-shokunin@b266c5f90ad128fff09928bbffd7f9f8d6b0d401",
+   "closed_at": "2026-11-05T17:28:47Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-11-05T13:25:32-03:00 launch kagi round=42 pgid=2605768 driver=hyaku-inline attempt=1; 2026-11-05T14:20:13-03:00 complete kagi round=42; hyaku-inline attempt=1. Defects (status-neutral): report item-6 line-count erratum (numstat gate 21+/2-, runner 6+/1-, not 23/3 and 7/1); S094 used-by not advanced to cite the round-42 lesson (CORPUS rule 2 update owed); build-results.json lacks per-seat status field (lane-disclosed). Routed to round 43 (lane lesson section Routed 1-8): mutation-runner anchors; expect-journal *.json wave-dir fail-closed discovery (frozen interface); C3 counter defects M40-9/10/17; TMPDIR defaults in five gates; owed round-40 report erratum; considerthese proposals 1+3; token-refusing and answer-key controls; C2 receipt-provenance check. L0 open (operator): .ufo/l0-questions.md line 368, retirement form for the DELETED rule. SHONEN: four [~] boxes with resolvable pointers, no [x]; promotion operator-owned. No conformance defects; wave shape 9 seats (attack 4/9), none dead per report.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
