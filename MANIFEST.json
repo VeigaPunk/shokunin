@@ -50860,6 +50860,49 @@
    "notes": "Dispatch digest (.ufo/watchdog.log, mutable, copied at closure): 2026-11-05T10:47:08-03:00 launch kasegi round=78 pgid=1315799 driver=hyaku-inline attempt=1; 2026-11-05T12:00:09-03:00 complete kasegi round=78; hyaku-inline attempt=1. Status ok: report 1daf1614 lane-authored, filed 11:59:02 after landing 11:58:39; cited hashes c2f4119b, 2d81fe84, 0687cca8 ancestors of master; lane state ahead=0, porcelain empty. Admission false: C1 NOT VERIFIED (candidate not landed, K-X2 survives, P3 fails); C2 VERIFIED. Trends: expansion improved; quality unchanged; discernment unchanged (spot-check 3 agree, 1 disagree on Q12 reject reason). Conformance defects (status-neutral): Q12 reject cites F51 :47 for the threading-variance caveat, which F51 does not hold (grep empty); S112 lesson Gate lacks the <=25-word quote placement required by CORPUS.md rule 1 (row was written round 77; placement only); entry Claim 4 'Rejected over-generalization' sentence hard to parse. Routed for lane next round: correct Q12 reason via appended erratum/successor, fold threshold-qualifier into Q10/Q11; C1 K-X2 class needs independent case-6 limb assertion before freeze; M77-3 stays open; L0 items R-77-D, R-77-E, R-77-F unchanged. SHONEN: no box made checkable by a non-author this round; operator-owned; no [x] written. Lane 'SHONEN' heading conformant.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 40,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 40,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 40
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "freshness": "improved",
+    "calibration": "unprovable",
+    "operability": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [
+    "gate self-testing with committed expected findings (anchor-pins.sh and claims-declared.sh --selftest, 8 cases each; SCORECARD capabilities row, first working round 40)"
+   ],
+   "report": ".ufo/reports/round-40/kagi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kagi-shokunin/corpus/lessons/round-40-verifier-spotcheck.md@19025d97e5013bac2f45d6b9e61bfbafc84c3c8d",
+    "rechecks": "Integrator re-measured at 6f1588cc with plain commands, no lane gate executed. C2 (verified): S036 pin sha256 04d278bb = anchor-pins.tsv; S095/S096 fetch-row sha = sha256 of committed bodies; quotes located at raw offsets 75897 and 13521 (7 and 11 tokens); live curl re-fetch byte-identical to both bodies. C3 (verified on frozen predicate): SKILL.md gate-registry rows 825-826 name both scripts; --selftest modes present; PASS (8 cases) from committed K40ExecGates receipts. C1 (not verified): six expectations re-derived plainly (R13-01 and R24-06 = 54 headings, sha 52e7ba8d; census rows 96, tier A 92, mined 92); no six-id FAIL/STALE/MISSING line in verify-at-landing; BUT four of six rows exist only because C2 appended S095/S096 (BASE rows 94) and the counter is forgeable (M40-6/M40-16): not causally separable. Round not admitted; no axis harmed. Trends: expansion unchanged, quality unchanged (routed normalizer docstring fails re-check), discernment unchanged (admits 2/2 agree; no round-40 reject decision to sample). fleet sources-census validate kagi rc 0, kagi ok, 19 W04 lines."
+   },
+   "commit": "kagi-shokunin@6f1588cc0ebd5cbbd4e983fbd71c1e419d225ce0",
+   "closed_at": "2026-11-05T15:08:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable; copied at closure): 2026-11-05T10:01:55-03:00 launch kagi round=40 pgid=2900179 driver=hyaku-inline attempt=1; 2026-11-05T11:59:01-03:00 complete kagi round=40; hyaku-inline attempt=1. Report: fleet commits 70fe8641 (filed) and 14f47cbd (amended in place). Lane tip 6f1588cc; landing 97e867f; spot-check 19025d97 (landed, remote verified). Defects (conformance, status-neutral): report amended in place rather than by appended erratum; no planner seat in the L2 role split (L1 held it); round-40 Gate records no reject decision, so the reject spot-check is unmet. Defects (lane-owned, routed to round 41): C1 not causally separable from C2 (4 of 6 expects read rows=96, which exists only with S095/S096; BASE rows 94) and counter forgeable by expect loosening and command rebinding (M40-5/M40-6/M40-16); C3 counter reads verdict token only, stub selftests pass (M40-9), selftest blind branches (S-8, M40-17), survivors S-1 and S-7; SCORECARD round-40 post-move line 'not amended after data' contradicts M40-3 (critic defect 7 not corrected at landing); normalizer docstring rendered-text-v1.py step 5 cites superseded S027 and a U+3000 claim not on the 3.15.2 page (trial, fails re-check, unchanged); QM44 quote truncation (M40-14); /tmp default for gate selftest scratch (scratch discipline 7.4). SHONEN: no box written [x]; box 2 (end-to-end python re-observation) looks checkable by a non-author, promotion operator-owned. Residual fleet status not ours: M .scratch/run15-state.json and ?? .ufo/closure-kaidoku-r92.json, not touched.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
