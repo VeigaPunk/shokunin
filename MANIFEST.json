@@ -48677,6 +48677,50 @@
    "notes": "Dispatch/complete digest (mutable .ufo/watchdog.log, copied): 2026-11-04T23:51:41-03:00 launch kengaku round=86 pgid=3149765 driver=hyaku-inline attempt=1; 2026-11-05T00:33:18-03:00 complete kengaku round=86; hyaku-inline attempt=1 (three earlier launches 22:20/22:30/22:31 each ended lane-dead-no-report). Conformance: report committed only by kengaku-shokunin (8aa0a895/135df29b/da610129); SHONEN heading 1 with four [~] lines; 18 cited hashes exist and are ancestors of refs/heads/master; jj-lane state ahead=0, porcelain clean, remote=local=239f8699; prompt committed and sections 1-5 identical to templates/round-prompt.md after substitution (138 lines); one 12-seat v1 wave (executor 3, scribe 2, reviewer 2, scout/critic/mutation-tester/sentinel/connector 1 each; attack 4/12=33%). Defects (status-neutral): filed report bytes rewritten in place (8aa0a895 Round-shape paragraph 'two dead seats ... tip 25f68ca0' replaced at 135df29b; the appended Correction does not name the superseded text); sweep incomplete (report:7 still 'zero dead seats', report:242 still 'two incomplete seats above' vs one at :230); 135df29b cited 239f8699 36 s before that commit existed (final da610129 lands after it); dead pointer .ufo/waves/round-86/L1/outside-gates.txt (report:59, LOG.md:3317) exists in no ref - the roster is at .ufo/waves/round-86/w1/ExecGatesR86/gate-receipt.txt; the Q20 roster is described as 'shared clone at the tip' but the receipt records a git-archive extraction at f357e4c1/ab9da0d4, before instrument v2 e23bec07 and before tip 239f8699. Routed to the lane next round: dead pointer and roster wording/revision; append erratum for the rewritten paragraph and the two stale seat sentences; sweep LOG.md:3300 and corpus/README.md:941 ('eight schema-drift' -> 'six schema-drift and two controls'); successor C1 instrument must count executed rows (members=1 literal, R86-V4); CriticR86 precision defects (malformed-ledger traceback, --freeze self-compare, fixture-mode dirty worktree); SentinelR86 F2/F3/F5 honest-limit remediations. Fleet worktree carries other lanes' pending files (kama.md, kotoba.md, kotodama.md, l0-questions) - not kengaku debt. SHONEN boxes are all [~]; boxes 2 (LOG.md:7) and 4 (PROVINCE.md:151) look checkable by a non-author; promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 87,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kotoba",
+   "lane_round": 87,
+   "lanes": {
+    "kotoba": "ok"
+   },
+   "lane_rounds": {
+    "kotoba": 87
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "improved",
+    "consistency": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "harmed",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "installed-client skill-channel probe"
+   ],
+   "report": ".ufo/reports/round-87/kotoba.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kotoba-shokunin/corpus/lessons/round-87-verifier-spotcheck.md@4df1e8005016c75390a5e06b209462df58c95918",
+    "rechecks": "C1 (depth) evidence-verified, gate not executed (PROTOCOL Gate standard): frozen instrument sha256 6e826f3b..8922 equal to .ufo/waves/round-87/w3/l1/instrument-sha256.txt and the report; base receipt 0 of 12 with S3 FAIL at 223ae62, tip receipts 12 of 12 exit 0 at 760e1c5e/3c8902a7/49b7d1b4; ELF sha256 6737ee24..b7b0f current. Conjuncts 1-3 re-implemented independently over the committed ledger and the pinned ELF -> 12 of 12, every offset equal to the receipt; instrument limits (4 forged worlds at 12 of 12, conjunct 4 inert at scoring, 12 of an 18-root surface) confirmed and routed. C2 (consistency) evidence-verified plus plain re-measurement: D1 receipts 'omp catalogue lines reproduced 215 of 215' and 'gate registry rows conformant 67 of 67' both exit 0 with instrument blobs equal from 04647b0f to the tip; D2 validator sentence present and SWARM_ROLES = 10 roles without planner; D3 five reject rows in the first ## Gate table; D4 the plan names 'after the first candidate score'; D5(i)/(ii) both non-author/historical blobs equal base (ae3f49a3 / 315c0ec6), D5(iv) disclosure present, D5(iii) FAIL - red set ['corpus.pointers.commit_unresolvable'] 8/9 versus the frozen two-red/7/9 expectation; cause confirmed independently (.ufo/reports/round-84/kama.md present in the fleet worktree, 10 856 B, ## SHONEN present, mtime 22:47:40, commit 5b052020) so report_dead healed and C2 reads 4 of 5 at the tip. Census re-run: exit 0, 33 W04, 0 E; rows 182; S256 re-opened (HTTP 200, 15 362 B, sha256 4e66819c..b1b4, quote at upstream line 70)."
+   },
+   "commit": "kotoba-shokunin@74048151100e49ce2c628926c88f8b055a52026d",
+   "closed_at": "2026-11-05T03:52:10Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (mutable .ufo/watchdog.log, copied): 2026-11-04T20:44:38-03:00 launch kotoba round=87 pgid=1892425 driver=hyaku-inline attempt=3; 2026-11-04T21:02:56-03:00 lane-dead-no-report kotoba round=87 (attempt=3: no landed report); 2026-11-04T22:29:17-03:00 launch attempt=1 pgid=2860948; 2026-11-04T22:31:25-03:00 lane-dead-no-report attempt=1; 2026-11-04T22:31:27-03:00 launch attempt=2 pgid=2929255; 2026-11-04T22:32:17-03:00 lane-dead-no-report attempt=2; 2026-11-04T22:32:19-03:00 launch attempt=3 pgid=2941393; 2026-11-04T22:32:54-03:00 lane-dead-no-report attempt=3; 2026-11-04T23:51:44-03:00 launch attempt=1 pgid=3151058; 2026-11-05T00:35:22-03:00 complete kotoba round=87; hyaku-inline attempt=1. Status ok: real report committed by the lane identity (cb786d7a, after lane tip 74048151), SHONEN heading with 4 [~] rows matching 4 boxes, 12 cited lane hashes all present and ancestral to master, lane pushed with ahead=0 and an empty tree, prompt carries template sections 1-5 verbatim plus the hyaku addendum (115 of 116 template lines byte-identical, one line-wrap). Claims: C1 depth improved (12 of 12 re-derived independently, gate evidence verified not re-executed); C2 consistency unchanged - frozen target 5 of 5, shipped tip 4 of 5, D1-D4 and D5(i)/(ii)/(iv) verified, D5(iii) flipped when the fleet worktree materialised .ufo/reports/round-84/kama.md at 22:47:40, recorded not reworded. Not admitted: C2's own target is unmet at the tip; honest stop, no axis harmed. Trends: expansion unchanged (S256 + one entry on ground round 86 already entered), quality harmed (corpus/lessons/round-87.md:87 still says the kama report 'carries no ## SHONEN marker', false at the tip; knowledge entry :47 places $HOME inside the frozen chain FROZEN_CHAIN=(cwd,/home/u/proj) and :19's 'session cwd only' is unmeasured), discernment improved (outside sample agrees on 1 admit and 7 rejects). Routed to r88, status-neutral: R87-D1 report attempt-history counts (log shows 6 launches and 5 lane-dead lines before the completing launch, not eight with 21:02), R87-D2 the stale SHONEN sentence (append-only correction), R87-D3 the chain parenthetical plus the counter docstring's full-chain sentence, R87-D4 the unmeasured .omp/skills bound cell, R87-D5 SKILL.md CRLF->LF 600/600 in e03f9e2 unrecorded (the report's 'untouched' holds only for attempt 2), R87-D6 the 22:47 landing attributed to a commit dated 12:16, R87-D7 LOG.md's 'C2 verified 5 of 5' owes an appended correction, R87-D8 the carried instrument repairs (monotone red-set test, ELF-matched binary_quote, the six unledgered joins). Non-author spot-check landed 4df1e800 under the protocol identity and pushed. SHONEN boxes remain author-attested ([~]) and are checkable by a non-author, but promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
