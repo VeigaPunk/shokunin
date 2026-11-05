@@ -52207,6 +52207,47 @@
    "notes": "Driver digest: 2026-11-05T18:20:26-03:00 launch mori round=98 pgid=816285 driver=hyaku-inline attempt=1; 2026-11-05T18:49:18-03:00 complete mori round=98; hyaku-inline attempt=1. Step-1 conformance all pass (report by lane identity 78e7de25 after last lane commit; SHONEN 4 lines; 6 cited commits ancestors of master; ahead=0; porcelain clean; prompt = template with placeholder-only diffs). Defects routed: D1 C1 frozen counter passable by a fixture-shape lookup stub and live leg checks only limit echo (w1/Mo98CritC1.md; QUALITY 209, Planned r99) - claim verified on closure's own fixtures, not the counter; D2 mutant m03 survivor and classifier gaps F1-F3; D3 SCORECARD operability/freshness Evidence cells cite pre-r97 closures, r96 gate pins them to base 66c5518e; D4 carried R1-R3, M10, 31 prefix_only rows, operator L0 mori r94/95/96. Quality trend graded unchanged (lane said improved): new rows matching pins is admission quality, no existing entry re-verified/superseded. SHONEN boxes all [~] with resolvable pointers; promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 45,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 45,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 45
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unprovable-but-better",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-45/kagi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kagi-shokunin/corpus/lessons/round-45-verifier-spotcheck.md@f5977284a8ce5bab09252be8196ee5dc18489926",
+    "rechecks": "Plain re-measured: report authorship (kagi-shokunin 4ad377ea, after lane final 0ece74d) and hash ancestry vs master; lane state ahead=0, porcelain clean, ls-remote 0ece74d4; prompt contract items; SCORECARD append-only (+13/-0, all axes 9->9); C1 manifest rows 15->17 (append-only), gate no-manifest-row string 0->2, independent plan<->manifest bijection 15/15 (r39-44) -> 17/17 (r39-45); C2 registry rows 99->102, knowledge entries 35->36, no 11770 entry at BASE, capture sha256/sizes match source-fetches.tsv, three byte-offset quotes located, live re-open of S100-S102 agrees (ISO default UA 403, browser UA 200); census kagi ok rc 0. Evidence-verified (lane instruments not executed): counters C1 0->2, C2 0->3; claims-declared selftest PASS 8; QUOTE_LOCATE CLEAN 8/8; STAMP_DRIFT drift=0. Discernment: 2 admits (S101, S102) + 3 rejects (staged S172 AMD1:2025, S173 1999 edition, stale 403 premise) re-opened, all agree."
+   },
+   "commit": "kagi-shokunin@0ece74d4e89e2b43b545b72650aed5008645dc7c",
+   "closed_at": "2026-11-05T22:05:31Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-11-05T16:49:06-03:00 launch kagi round=45 pgid=3946124 driver=hyaku-inline attempt=1; 2026-11-05T19:01:45-03:00 complete kagi round=45; hyaku-inline attempt=1. Step 1 clean (attribution, ordering, ancestry, push, SHONEN 4/4 lines all [~]). Trends differ from lane self-reading: expansion unprovable-but-better (new entry has no corpus/README.md coverage-map row), quality unprovable-but-better (no held entry re-verified; QM55-56 sharpen the bar), discernment improved (spot-check agrees on admits and rejects; M45-2 -> QM56). Defects routed to round 46: README coverage-map rows for iso-11770-3-edition-status.md (and feed-token-boundaries.md); claims-declared.sh --selftest still fixed at 8 cases with no no-manifest-row fixture; final/measured-at-candidate.txt empty LANE-control block and out-of-order stamp rc=2 line (erratum); sentinel ceilings S-07, S-09, S-10 (closure live re-open covers r45 only), S-11, S-14; carried D4 vocabulary, B1, round-40 report erratum (operator-side), SEAT-STATUS non-uniform. Ops (driver-side): ready 16:55 taken 17:42; sentinel seat ~2h, nudged once. SHONEN boxes not judged fully non-author-checkable this pass; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
