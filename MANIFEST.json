@@ -49719,6 +49719,43 @@
    "notes": "Dispatch digest (watchdog.log, copied at closure): 2026-11-05T05:46:48-03:00 launch kagi round=38 pgid=2744042 driver=hyaku-inline attempt=1; 2026-11-05T07:09:00-03:00 complete kagi round=38; hyaku-inline attempt=1. Verdict: C1 freshness verified (0->5, re-measured); C2 declared as calibration (0->3 counter) but its close SCORECARD reads calibration 9->9 'No calibration move is claimed' and the lane relabelled it operability after data: unmet as declared, so not admitted; no axis harmed; honest stop. Defects (status-neutral): CD-1 report says frozen predicates not amended after data while the C2 axis was relabelled after data; CD-2 report self-grades C2 as verified-as-operability; CD-3 stale-lane line not contradicted. Routed to lane round 39: R38-D1 declare claims on their measured axis before data; R38-D2 fix report wording; R38-D3 observe-r38.json not a usable pin (RECEIPT-MISMATCH on observed_at, separate declared claim); R38-D4 frozen-counter gaps (body symlink out of root, superscript traceback, duplicate ids, surviving mutants M2 M3 M5 M6 G3); R38-D5 ledger R38-03 POLICY pending operator registration (L0 fleet commit 0a1c648b); R38-D6 R37-V2 release-clock re-point open debt and R37-V4 anchor immutability routed. Operator notes: SHONEN boxes all [~] (none [x]); promotion operator-owned; no box is checkable as signed by this closure. Ceiling carried: body and capture row rewritten together passes the quote gate.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 87,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 87,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 87
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "calibration": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-87/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-87-verifier-spotcheck.md@24ba2a9ddac21c1211579231e6ee1d98963f9988",
+    "rechecks": "C1 and C2 re-measured by closure re-runs of the round counters at 00c96721 (C1 TARGET_MISSED rc1: 22/22 cases, 5/10 mutants, controls 7/22+8/22; C2 TARGET_MET rc0 10.0) and C1 at base e4875ba (SETUP rc2); standing gates (mado-selftest 460/460, file plane CLEAN, index 107->108, ledger 158->161) evidence-verified from committed receipts; S493 source re-opened with both sha256 pins re-hashed and the line-47 quote verified; discernment sampled 1 admit + 2 rejects, all agree; census validate re-run exit 0; SCORECARD diff base->tip appends only"
+   },
+   "commit": "mado-shokunin@f4dfd0a9bd54d5bad518e58297c9b222f6be9b62",
+   "closed_at": "2026-11-05T10:30:14Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 2026-11-05T05:40:47-03:00 launch mado round=87 pgid=2512075 driver=hyaku-inline attempt=1; 2026-11-05T07:18:42-03:00 complete mado round=87; hyaku-inline attempt=1. C1 (capability, coverage: mako effective-settings resolver) TARGET_MISSED, honestly reported and re-derived by closure - predicate needs 10/10 mutants killed, got 5/10 (M03/M05/M06/M08/M10 survive); no capability row; coverage unchanged. C2 (calibration: r86 held-rule witness figure 0/1 -> 1/1) TARGET_MET re-derived (before 5.0 fixture, after 10.0). No axis harmed. Routed to r88: (R1) superseding frozen case set for the five C1 survivors; (R2) symlinked-include containment stance; (R3) correction blocks matched on figure id + literal value only, r86 selftest self-pin c2-r86-clause-observations.py:736-737 outside the C2 predicate; (R4) declarations carry sha pins at freeze so no post-wave erratum is needed. Conformance clean: report filed by the lane identity, prompt = canonical template + hyaku addendum verbatim, all cited hashes ancestors of master, jj state ahead=0 tree clean, wave 12 seats in one batched dispatch (attack 4/12=33%, connector 1). Operator note: all four SHONEN boxes carry resolvable pointers and look fully checkable by a non-author - promotion review ripe, operator-owned; closure wrote no [x].",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
