@@ -2,96 +2,104 @@
  "run": 15,
  "date": "2026-11-03",
  "target": 100,
- "trained": 0,
- "admitted": 0,
- "rejected": 0,
+ "trained": 229,
+ "admitted": 149,
+ "rejected": 80,
  "lanes": {
   "revenger": {
    "start_next": 89,
-   "block_start": null,
-   "block_done": 0
+   "block_start": 89,
+   "block_done": 3
   },
   "tsukuroi": {
    "start_next": 64,
-   "block_start": null,
-   "block_done": 0
+   "block_start": 82,
+   "block_done": 1
   },
   "kama": {
    "start_next": 70,
-   "block_start": null,
+   "block_start": 86,
    "block_done": 0
   },
   "tameshi": {
    "start_next": 72,
-   "block_start": null,
-   "block_done": 0
+   "block_start": 86,
+   "block_done": 1
   },
   "tabi": {
    "start_next": 56,
-   "block_start": null,
+   "block_start": 64,
    "block_done": 0
   },
   "mado": {
    "start_next": 65,
-   "block_start": null,
+   "block_start": 86,
    "block_done": 0
   },
   "mori": {
    "start_next": 79,
-   "block_start": null,
+   "block_start": 90,
    "block_done": 0
   },
   "souji": {
    "start_next": 52,
-   "block_start": null,
-   "block_done": 0
+   "block_start": 60,
+   "block_done": 1
   },
   "kaidoku": {
    "start_next": 64,
-   "block_start": null,
-   "block_done": 0
+   "block_start": 84,
+   "block_done": 6
   },
   "kake": {
    "start_next": 68,
-   "block_start": null,
-   "block_done": 0
+   "block_start": 89,
+   "block_done": 4
   },
   "kagi": {
    "start_next": 30,
-   "block_start": null,
-   "block_done": 0
+   "block_start": 36,
+   "block_done": 1
   },
   "kasegi": {
    "start_next": 57,
-   "block_start": null,
-   "block_done": 0
+   "block_start": 67,
+   "block_done": 4
   },
   "chousa": {
    "start_next": 73,
-   "block_start": null,
-   "block_done": 0
+   "block_start": 75,
+   "block_done": 5
   },
   "kengaku": {
    "start_next": 63,
-   "block_start": null,
+   "block_start": 86,
    "block_done": 0
   },
   "kumitate": {
    "start_next": 74,
-   "block_start": null,
-   "block_done": 0
+   "block_start": 84,
+   "block_done": 6
   },
   "kotoba": {
    "start_next": 85,
-   "block_start": null,
+   "block_start": 87,
    "block_done": 0
   },
   "kotodama": {
    "start_next": 82,
-   "block_start": null,
+   "block_start": 90,
    "block_done": 0
   }
  },
  "live": {},
- "notes": []
+ "notes": [
+  "Run 15 mid-run rulings 2026-11-04:",
+  "1. amr/deepseek-v4.1-flash Coding Plan quota exhausted (~01:30Z) - closures/seats on @m_flash flapped 402; kernel retries got most through.",
+  "2. Infra fix (98f4d76): m_flash repointed gemini-3.8-flash - burned gemini individual quota by ~03:45Z (429 reset 08:23Z).",
+  "3. Operator ruling (d1b8c93): split load - m_flash -> devin/swe-2:max; 7 roles (reviewer/critic/executor/mutation-tester/connector/sentinel/scribe) -> @m_zfl (zai glm). Steady state since.",
+  "4. gemini scout routing dormant until 08:23Z reset; scout rides m_flash(devin) meanwhile.",
+  "5. Souji block finished (6 rounds of its 10-round block, r57 rej -> BLOCKED marker cleared at next block slot).",
+  "6. tsukuroi + kengaku blocks finished; ChousaR73/KengakuR73 launched as block rotations."
+ ]
 }
