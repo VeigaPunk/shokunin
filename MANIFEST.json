@@ -52038,6 +52038,47 @@
    "notes": "dispatch 2026-11-05T17:49:07-03:00 launch kaidoku round=98 pgid=2897017 driver=hyaku-inline attempt=1; complete 2026-11-05T18:29:57-03:00 hyaku-inline attempt=1. Conformance defects (status-neutral): D1 round-98 gates pe-upx-tamper-battery.py, allowlist-check.py, stop-boundary-repair-battery-v8.py (and round-97 counters) have no row in SKILL.md gate registry (registry home), so no gate graded conformant; D2 v8 selftest 24/0 evidenced only by seat prose (ExecReproC2.md, ScribeEntry.md), no committed raw output; D3 ReviewerRepair seat died without report (M98-f, lane-recorded). Routed to round 99: register gates; commit raw selftest outputs; successor counters with wave forgeries (CriticC1 f2/f7/f1h, CriticC2 F2/F3/F5, MutationC2 M6) as pre-freeze red fixtures plus a carrier with PackHeader not at 992; upx-pe-repair.py ok-intact on truncated pack >= c_len and three rc-1 CLI crash paths; stale coverage head 10.0 168/168 vs 176/182 and six unmapped r93-r97 entries; round-97 defects 2-5, 7 still open. Round-97 defect 1 closed by R98-C2. Operator: SHONEN boxes 2 and 3 look non-author checkable (verifier re-ran an end-to-end pack/tamper/repair/unpack task from the tool usage line alone); box 1 not checked; nothing written to SHONEN.md.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 97,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 97,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 97
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "freshness": "improved",
+    "operability": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "Revalidation exchange, contract v1 (scripts/reval_exchange.py sha256 192b3bf7..., candidate landed r96; first frozen-counter pass r97)",
+    "Coverage-index calibration counter (.ufo/waves/round-97/c97_index.py)"
+   ],
+   "report": ".ufo/reports/round-97/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-97-verifier-spotcheck.md@e51328b63690c8aaa78c9c8f3b87d8735c0ccbf7",
+    "rechecks": "All 7 cited commits exist and are ancestors of refs/heads/master. Lane ahead=0, porcelain clean, ls-remote equals tip 1dacba59. Report committed by kake-shokunin 17s before the complete line. Prompt sections 1-5 match the template verbatim apart from placeholders. C1 RE-MEASURED with the closure's own counter (not c97_index.py) over committed bytes: entries=84, unindexed 38 at 36d148f5, 0 at 9e27ce0b and 0 at 1dacba59, dangling 0. Review tally 19+19=38 agree. 3/3 closure prose reads agree. C2 EVIDENCE-VERIFIED: after-c2 met=true exit 0 @d687cd6a; selftests 14/14 and 8/8; c97_index/c97_reval sha256 at the freeze and at the tip equal instrument-sha256.txt; predecessor NameError confirmed in committed bytes; candidate sha 192b3bf7 is identical at base and tip. The closure also probed the candidate with python3 -I on 10 inputs, including the K1-K4 classes, and all 10 were correct. SCORECARD diff: only the calibration cell changes, plus an appended section. Spot-check: admit S481 re-fetched byte-identical (sha b906ce97), EIDs 9004/9185/9166/7695 map to sections 3.5/4.3.4/5.2.3/4.3.2, agree; reject merge/kake package has 8 collisions independently re-derived from the package file, agree. S481 quote is 4 words. sources-census validate rc 0, kake ok, only W04. Registry 217 -> 218."
+   },
+   "commit": "kake-shokunin@1dacba598775d37f18705e130354465e3c19802b",
+   "closed_at": "2026-11-05T21:38:54Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 2026-11-05T17:42:17-03:00 launch kake round=97 pgid=1636561 driver=hyaku-inline attempt=1 | 2026-11-05T18:34:38-03:00 complete kake round=97; hyaku-inline attempt=1. Status ok: real committed work, not a marker. Admitted: C1 (calibration 2->3, coverage index matches the committed knowledge entries) verifies on independent re-measure. C2 (freshness HOLD 10, capability) verifies on the r96 flip condition: the successor counter reaches met=true on the landed candidate, and the closure's own probes show the candidate correct, including where CriticClaims showed the counter blind (K1-K4). This is an instrument credit on r96 bytes, and the capability row discloses it. Defects (status-neutral): D-a, an admitted entry corpus/knowledge/revalidation-exchange.md:130 carries a leaked malformed duplicate heading holding ScoutErrata handoff text, undisclosed, routed R98-D1. D-b, seat ReviewReval died and was not replaced, so C2 had no dedicated review seat; disclosed; routed R98-D2. D-c, the S3 planner seat was L1-held because the validator rejects the role (R97-D2 carried). D-d, ConnectorScope ran rm -rf on the shared scratch parent; no committed byte was affected (pins re-hash); routed R97-4. Instrument weaknesses are routed by the lane, not hidden: C1 mega-row/scope-copy passes (R97-1); C2 population gaps, the 104-vs-120 denominator, the mutant clause being a harness self-check, MutReval 3/8 killed, and 6 sandbox escapes (R97-2, R97-5). Carried items: R96-3, R95-6, R95-2 (L0). SHONEN: box 2 is unchecked, so the boxes are not fully checkable by a non-author; no promotion note.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
