@@ -52248,6 +52248,43 @@
    "notes": "Driver digest: 2026-11-05T16:49:06-03:00 launch kagi round=45 pgid=3946124 driver=hyaku-inline attempt=1; 2026-11-05T19:01:45-03:00 complete kagi round=45; hyaku-inline attempt=1. Step 1 clean (attribution, ordering, ancestry, push, SHONEN 4/4 lines all [~]). Trends differ from lane self-reading: expansion unprovable-but-better (new entry has no corpus/README.md coverage-map row), quality unprovable-but-better (no held entry re-verified; QM55-56 sharpen the bar), discernment improved (spot-check agrees on admits and rejects; M45-2 -> QM56). Defects routed to round 46: README coverage-map rows for iso-11770-3-edition-status.md (and feed-token-boundaries.md); claims-declared.sh --selftest still fixed at 8 cases with no no-manifest-row fixture; final/measured-at-candidate.txt empty LANE-control block and out-of-order stamp rc=2 line (erratum); sentinel ceilings S-07, S-09, S-10 (closure live re-open covers r45 only), S-11, S-14; carried D4 vocabulary, B1, round-40 report erratum (operator-side), SEAT-STATUS non-uniform. Ops (driver-side): ready 16:55 taken 17:42; sentinel seat ~2h, nudged once. SHONEN boxes not judged fully non-author-checkable this pass; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 91,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 91,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 91
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unchanged",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-91/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-91-verifier-spotcheck.md@814068f08c523f57055840b694a53f875a753cbf",
+    "rechecks": "C1 re-measured over committed bytes at 1325caf4: receipt-bind sha256 v4 35f4f25e -> v5 f39aab5c (77ebfe37 = 1325caf4); probe91 3bd88e8e unchanged since freeze 2b1b8bf3 (probe/controls/plan diff empty); SCORECARD diff pin.receipt-bind, A_wave 1253->1319, C2 230->233, no axis integer changed; SOURCES rows 200->203; census kumitate ok exit 0 (run by closure); CriticA repro bundle heads verified (capwindow 41abf2d3, dirhash b82af777, extsh-gate-fifo 9a40cc29); procfs st_size 0 vs 22489015 bytes read re-measured. Evidence-verified (not executed): do-nothing UNMET 52/56, M HELD 56/56 x2 at 77ebfe37, selftest 84/84, kill clause (d) fired via l1-rerun-criticA-repros, round-gate r91 CLEAN, NO HARM (scoped to positive control). Spot-check 4/4 agree: admit Q85, admit S263-based entry (live fifo(7) sha256 = capture, 15-word quote present), reject ref-fd-fstat as shipping design, reject fstat-size=read-size draft."
+   },
+   "commit": "kumitate-shokunin@1325caf47a25567afd076a49a232564485e4171e",
+   "closed_at": "2026-11-05T22:17:44Z",
+   "campaign": "hyaku",
+   "notes": "Watchdog digest: 2026-11-05T17:42:07-03:00 launch kumitate round=91 pgid=1633679 driver=hyaku-inline attempt=1; 2026-11-05T19:14:11-03:00 complete kumitate round=91; hyaku-inline attempt=1. Step-1 conformance PASS (report 09adf3b7 by lane identity 19:13:32 after lane final 19:13:24; SHONEN heading with four [~] lines; all cited hashes ancestors of master; jj-lane state ahead=0, porcelain clean; prompt = template render + addendum). Operator commit cfd62867 (considerthese) interleaved before freeze, not lane debt. C1 UNMET: frozen kill clause (d) fired (three 56/56 token-keyed constructions with committed in-class reproductions); honest stop, no capability row. Routed to kumitate r92: (1) mutation tally 7/11 killed is arithmetic error, rows show 6/11 - correct report/SCORECARD append-only; (2) survivor list drift m02/m07/m10 vs m02/m07/m08/m10/m11, m08 swallows FailClosed (fail-open) needs an arm or explicit equivalence; (3) harm check ran on positive control, not shipped v5 bytes; (4) carried F1/F2, cand-shy-strip U+00AD, extsh-gate-devalias, RD-1, RD-5, adopt this spot-check before r92 freeze (M8). Routed to tabi: check-receipt-provenance.mjs:53 RD-2 adjacency. SHONEN boxes look non-author-checkable; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
