@@ -47951,6 +47951,44 @@
    "notes": "dispatch digest: 2026-11-04T18:54:48-03:00 launch kumitate round=88 pgid=1608695 driver=hyaku-inline attempt=1; 2026-11-04T19:44:10-03:00 complete kumitate round=88; hyaku-inline attempt=1. Report landed by kumitate-shokunin 673790f3 (pushed), 6 cited lane commits all ancestors of master, lane ahead=0 tracked=0 untracked=0. Defects (status-neutral, routed to the lane): K88-V1 SCORECARD.md:4317/LOG.md:3043 quote matched=13 while committed close/bind.txt prints matched=12 (no M-run runner transcript committed); K88-V2 report l.63 rows=192 and l.66 captures=81 quoted with no committed M-time receipt (both re-derive from committed bytes: census 192, 81 pin entries); K88-V3 SCORECARD.md:4322 checklist 40/46 uncited; K88-V4 wave w1 has no planner L2 seat (L1 self-holds it, disclosed); K88-V5 ready-handoff DRIFT RELATIVE_WAVE_PATH at M (disclosed). Carried: R86-D2 still open (not producible, disclosed). SHONEN 4 boxes all [~] with resolving pointers; a non-author could check all four — promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 69,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 69,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 69
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:verifiability": "improved",
+    "coverage": "improved",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-69/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-69-verifier-spotcheck.md@e7c02bddaa32a4a70afb2e6278f108e03dca067c",
+    "rechecks": "C1 evidence-verified, lane gate and counter never executed: figure-audit.py sha256 10c87100 at base 656272cf (= controls/base-gate-656272cf.py = pins base_gate) and c09b0fb1 at measured 1bd01ee1 and at tip ae8c54f8 (= claims.json + pins candidate_trial); counter eb254588 identical at freeze 9b877fd9 and tip; forgery gate ceea2a13 = pins; selftest pin re-derived from committed bytes (run_case 77 at base -> 86 at measured, EXPECTED_CASES 86), diff 64+/11- carries the 9 new cases plus the 3 git-show cases moved to HEAD:g.txt, READ_ONLY_HEADS unchanged; receipts read: final-verification VERIFY 13/0 exit0 vs base do-nothing 13/10 exit1 (compressor 18288 per spelling, P3/P4 wrote, textconv/smudge ran, selftest 77, marker_runs 36580), blanket-refusal forgery 13/4 exit1, strace 11105 execve / 0 marker programs, mutbat 5/5, real ledger 35/35 (len(figures)=35), author one-limb mutation 9/11 with M9/M10 surviving. C2 re-measured over committed bytes: SOURCES rows 102->103, knowledge files 84->85, knowledge-expected 86/84->87/85 sort -c exit0, README F47 present, S103 row 11 columns docs/A/mined/2026-11-04/180d with line-ranged anchor and 17-word quote at S103.txt:275, used-by resolves, capture sha c531c1e9 585 lines 13 quotes (max 17 words), census exit0 with the six inherited W04 warnings. Live re-opens: docs.github.com global-advisories HTTP 200 / 329039 bytes with the quote present; euvd.enisa.europa.eu/apidoc HTTP 200 / 3062 bytes sha 6fb32b61 = refusal receipt, no endpoint text."
+   },
+   "commit": "kasegi-shokunin@ae8c54f8e4f72cfa79a13fcedfedcb083a747a96",
+   "closed_at": "2026-11-05T00:02:20Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-04T19:14:28-03:00 launch kasegi round=69 pgid=2540732 driver=hyaku-inline attempt=1; 2026-11-04T20:02:35-03:00 complete kasegi round=69; hyaku-inline attempt=1. Step 1: report committed by kasegi-shokunin <kasegi@shokunin.local> as 60499a05 (2026-11-04 20:02:09 -0300), after the cited lane tip ae8c54f8 (20:01:08); all six cited commits exist and are ancestors of master; SHONEN heading present with 4 box lines for 4 boxes, no [x]; prompt body matches templates/round-prompt.md line for line except the two macro renderings (l.1 repo dir, l.6 axes) with the §6 addendum appended, and its L2 number (8) equals MISSION.md §L2 concurrency; jj-lane state ahead=0 behind=0, working copy clean, ls-remote = ae8c54f8; freeze 9b877fd9 precedes implementation 1bd01ee1 with an empty pre-freeze gate diff; no round commit touches .ufo/state or .ufo/watchdog.log. Defects: none barring admission; V69-1 (contract) the opened-and-refused ENISA EUVD apidoc has no `rejected` registry row (CORPUS.md:101-104) — the freeze counted only the admitted row, the lane kept the frozen predicate and mined it as M69-2/R102; owed next round with a freeze counting before+admitted+rejected. V69-2 (minor residual) two refusal limbs unpinned (git show with no operand; git show ... -- g.txt), mutants M9/M10 survive the 86-case selftest — R103 stands, cases owed to the next gate change. V69-3 (process) 10 of 12 wave seats died on a provider 401 (commandcode/deepseek/deepseek-v4.1-flash), so the class-attack evidence is author-only and labelled; the lost critic/mutation-tester/sentinel/revenger seats should be re-run next round. Inherited: V68-4 recorded-only; V67-5, V67-6 stand. Round shape: one v1 wave, 12 seats (band 8-16, attack 6/12, one connector, L1 holds the planner seat), 2 settled / 10 dead, no residual call, no replacements. Trends: the lane self-graded discernment `unchanged` because its attack seats died; this closure grades `improved` on the outside check that rationale lacked (non-author spot-check agrees on the sampled admit and reject, both re-opened live) plus M69-2 mined into R102. Operator note (promotion, operator-owned): SHONEN boxes 1, 3 and 4 are [~] author-asserted and checkable by a non-author from committed bytes; box 2 stays [ ] (no authorized end-to-end domain task); no box was marked here. No capability row, score movement, retirement or split; depth:verifiability held at 4 nominally per R58, coverage held at 8, depth:density 9 untouched.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
