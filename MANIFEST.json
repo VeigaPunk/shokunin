@@ -52164,6 +52164,49 @@
    "notes": "Driver digest: 2026-11-05T17:42:10-03:00 launch kengaku round=93 pgid=1634505 driver=hyaku-inline attempt=1; 2026-11-05T18:42:36-03:00 complete kengaku round=93; hyaku-inline attempt=1. Step-1 pass (report c1b084df by lane identity, SHONEN 4 lines, 8 cited hashes ancestors of master, ahead=0, clean). Conformance defects (status-neutral): freeze-integrity gate lacks a SKILL.md registry row (not graded conformant per Gate standard Delivery); capability row not yet in SCORECARD ## Capabilities; W3 SELFTEST line not echoed into c2-tip receipt; dead seat ReviewerC1, ScoutSources no report.md. Routed to r94: registry row; capability table row; W-1/W-4/M4 forgery+mutant controls; W-2 --full-history, W-3 second block, W-6; W-5 L7 member-set check; echo SELFTEST; carried r92 #2/#3/#4/#6. Quality unchanged: no knowledge/ entry superseded or re-verified. SHONEN boxes carry non-author-checkable evidence; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 98,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 98,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 98
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "operability": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "user-namespace runway and sysctl-write scan (tools/mori-userns-runway.py, probe; live limit vs distinct non-initial userns links ok/low/exhausted, sudo-journal kernel-tunable write scan; receipts .ufo/waves/round-98/evidence/landing-c1.txt, w1/Mo98ExecTrial.md)"
+   ],
+   "report": ".ufo/reports/round-98/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-98-verifier-spotcheck.md@73308ff6e5c933f53498e9501ef95917b0ef7171",
+    "rechecks": "C1 re-measured over git-archive trees b2a67ce5->db9f1b78 (tool absent->present, PROVINCE namespace 0->2, registry row 0->1 probe, knowledge entry sourced S629-S632 mined) plus live /proc independent count used_lb 6 = probe 6 limit 122865, incident capture independent grep 6 writes/2 zero = probe n=6 userns_zero=2, and closure-generated fixtures (limit 7 / 7 distinct -> exhausted; limit 0 -> exhausted; multi-key sysctl line) all as hand-derived; counter receipts evidence-verified (no lane gate/selftest/counter executed). C2 re-measured from MANIFEST admitted mori closures (operability/freshness 97) vs SCORECARD Last-change leads 93/82 -> 97/97, Score+Evidence byte-equal, rest append-only. Spot-check S629/S630/S631/S632 admits and S627 reject re-opened live: all agree; census exit 0, 43 W04, rows 400->404."
+   },
+   "commit": "mori-shokunin@db9f1b78b93d1e27d194b4d035d69524b24fd001",
+   "closed_at": "2026-11-05T21:52:39Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-11-05T18:20:26-03:00 launch mori round=98 pgid=816285 driver=hyaku-inline attempt=1; 2026-11-05T18:49:18-03:00 complete mori round=98; hyaku-inline attempt=1. Step-1 conformance all pass (report by lane identity 78e7de25 after last lane commit; SHONEN 4 lines; 6 cited commits ancestors of master; ahead=0; porcelain clean; prompt = template with placeholder-only diffs). Defects routed: D1 C1 frozen counter passable by a fixture-shape lookup stub and live leg checks only limit echo (w1/Mo98CritC1.md; QUALITY 209, Planned r99) - claim verified on closure's own fixtures, not the counter; D2 mutant m03 survivor and classifier gaps F1-F3; D3 SCORECARD operability/freshness Evidence cells cite pre-r97 closures, r96 gate pins them to base 66c5518e; D4 carried R1-R3, M10, 31 prefix_only rows, operator L0 mori r94/95/96. Quality trend graded unchanged (lane said improved): new rows matching pins is admission quality, no existing entry re-verified/superseded. SHONEN boxes all [~] with resolvable pointers; promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
