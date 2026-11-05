@@ -52079,6 +52079,47 @@
    "notes": "Digest: 2026-11-05T17:42:17-03:00 launch kake round=97 pgid=1636561 driver=hyaku-inline attempt=1 | 2026-11-05T18:34:38-03:00 complete kake round=97; hyaku-inline attempt=1. Status ok: real committed work, not a marker. Admitted: C1 (calibration 2->3, coverage index matches the committed knowledge entries) verifies on independent re-measure. C2 (freshness HOLD 10, capability) verifies on the r96 flip condition: the successor counter reaches met=true on the landed candidate, and the closure's own probes show the candidate correct, including where CriticClaims showed the counter blind (K1-K4). This is an instrument credit on r96 bytes, and the capability row discloses it. Defects (status-neutral): D-a, an admitted entry corpus/knowledge/revalidation-exchange.md:130 carries a leaked malformed duplicate heading holding ScoutErrata handoff text, undisclosed, routed R98-D1. D-b, seat ReviewReval died and was not replaced, so C2 had no dedicated review seat; disclosed; routed R98-D2. D-c, the S3 planner seat was L1-held because the validator rejects the role (R97-D2 carried). D-d, ConnectorScope ran rm -rf on the shared scratch parent; no committed byte was affected (pins re-hash); routed R97-4. Instrument weaknesses are routed by the lane, not hidden: C1 mega-row/scope-copy passes (R97-1); C2 population gaps, the 104-vs-120 denominator, the mutant clause being a harness self-check, MutReval 3/8 killed, and 6 sandbox escapes (R97-2, R97-5). Carried items: R96-3, R95-6, R95-2 (L0). SHONEN: box 2 is unchecked, so the boxes are not fully checkable by a non-author; no promotion note.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 98,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "revenger",
+   "lane_round": 98,
+   "lanes": {
+    "revenger": "ok"
+   },
+   "lane_rounds": {
+    "revenger": 98
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-98/revenger.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "revenger-shokunin/corpus/lessons/round-98-verifier-spotcheck.md@3d054a98e3fa768e63b631665a2372fadb51a77a",
+    "rechecks": "step1: report attributed revenger-shokunin (9bdd6d3, 18:36:31-03:00, before 18:37:13 completion); SHONEN heading 4 [~] lines = 4 SHONEN.md boxes; 34c56f9/9d49002/cf8a9d4/0146c0a/1b76b4d/5d9b087/af91e9d/f5dc6f8/5498390 all ancestors of main; jj-lane state ahead=0 behind=0 tracked=0 untracked=0; porcelain empty; ls-remote main=5498390; prompt §1-§5 = template with 11 placeholder lines substituted + §6 addendum; registry rows SKILL.md:622-630. C1 re-measured: README held 13->13 (34c56f9->5498390), C14 partial, entry admission-status candidate, PROVINCE/QUALITY/README diff empty, CriticR98 Q11/Q16 FAIL; gate evidence-verified (diag-landing 14/15 C1_VOTES+C1_VOTE_NOTES fail C1_VERDICT=fail; do-nothing 13/15 fail; junk-row 14/15 fail; selftest SELFTEST_C1V7=OK legs=55 rc0 at 5d9b087; frozen counter/harness/forgeries unchanged 5d9b087..5498390, counter sha 59c9930a). C2 evidence-verified: c2-v7-frozen.log C2_ACCEPTED=0/5 positives pass stub ok rowset FR06/FR07 contain C1_ROWSET met rc0 at 5d9b087; before harness-v6 5/5 not-met, do-nothing accepted=5. No-harm: SCORECARD append-only (+23/-0); C02 landing logs v7 c02 and v6 C1_VERDICT=pass 13/15. Spot-check: S506 admit agree (re-fetched 16650 B sha ce2d122b, quote 1 hit at bytes 7127-7202); C14 reject agree (paths[3] grep 1, 12.1.4 probe 0 / doctor 17); S505 withheld agree (0 S505 / 3 S504 in r96 entry); S507 quote 4 words ok; census exit 0, 21 W01, 13 W04, 0 E; rows 505->507."
+   },
+   "commit": "revenger-shokunin@5498390e2faf92e2bbb4fa5d35dbe50b070dbb94",
+   "closed_at": "2026-11-05T21:39:39Z",
+   "campaign": "hyaku",
+   "notes": "dispatch digest: 2026-11-05T17:43:02-03:00 launch revenger round=98 pgid=1638586 driver=hyaku-inline attempt=1; 2026-11-05T18:37:13-03:00 complete revenger round=98; hyaku-inline attempt=1. Not admitted: C1 (coverage K 13/15->14/15 via C14) is the lane's own honest NOT VERIFIED (critic Q11/Q16 FAIL + C1_VOTE_NOTES), no flip; C2 verifies (v6 5/5 -> v7 c02 0/5, development set; fresh holdout c02 5/6 under v6 and v7, c14 4/6 - no generalization). No axis harmed. No conformance defects. Routed to revenger r99: (1) C14 Q11 derive 'three installation paths' with a command printing 3; (2) C14 Q16 attribute ghidra-version 12.1.4 to the doctor record; (3) ReviewerGate empty PASS notes Q01-Q05/Q09/Q10 and ReviewerBlind Q17 n/a-style - re-vote on fresh digest; (4) S505 ground by citation via superseding C02 revision; (5) mutate7 self-test baseline exit 3 vs selftest-v7-frozen OK - reconcile; d-host survivor; (6) v8 legs for r98 holdout survivors c02 V01/V02/E01/E02/E03, c14 R01/V02/O01/L01; (7) M4 claude-red-re-bridge index-or-reject, M7 SCORECARD line, L0 assimilation id collision 155/155. Operator: all four SHONEN boxes look checkable by a non-author from committed evidence; promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
