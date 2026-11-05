@@ -52490,6 +52490,48 @@
    "notes": "Dispatch digest: 2026-11-05T18:39:48-03:00 launch kake round=98 pgid=1367933 driver=hyaku-inline attempt=1; 2026-11-05T19:38:28-03:00 complete kake round=98; hyaku-inline attempt=1. Honest stop: C1 (calibration) unmet on its own frozen review conjunct although the table now matches the admitted record structurally; C2 (freshness, RFC 5861 stale-serving capability) met and verified, but admission is round-level so no capability is recorded. Defects (status-neutral): scripts/knowledge_metatext_lint.py is called a gate but has no SKILL.md registry row and no committed run at the landed revision (not conformant); report cites the C1 tip receipt at 77adb17e while it was measured at 76f834aa (SCORECARD bytes identical). Routed to kake r99: R98-C1 add the metatext-lint registry row + landed-revision run; R98-C2 move the unbacked r98 C2 Capabilities row to the non-admitted history table (or re-earn admission); R98-C3 cite measured revisions; lane routes R98-1..5 stand. Reviewer seat ReviewCapA dead (R98-5). SHONEN box 2 gap; no promotion note.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 93,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kotoba",
+   "lane_round": 93,
+   "lanes": {
+    "kotoba": "ok"
+   },
+   "lane_rounds": {
+    "kotoba": 93
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "consistency": "improved",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-93/kotoba.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kotoba-shokunin/corpus/lessons/round-93-verifier-spotcheck.md@4d3e8e4d290d67ecf94a019059f434c71f399919",
+    "rechecks": "Conformance: report committed by kotoba-shokunin (f0140d53, 19:40:48-03:00) before complete line; SHONEN 4/4 [~]; 5549fa9e/6d7eee05/ab151b17/372195d3/e0c82d55 exist and are ancestors of master; jj-lane state ahead=0 behind=0, porcelain empty, ls-remote = e0c82d55. Re-measured over committed bytes: 'kill-set-size' in check_mutation_battery.py 6 -> 14 (CouldNotEvaluate 'arm kill-set-size' raise line 372, KILL_SET_PINNED 17, A1 pin restore lines 665/825); 'has no INSTRUMENT_PINS key' in check_tip_battery.py 0 -> 2, coverage loop iterates every BATTERY path (lines 325, 349-352); frozen counters/forgery patches unchanged 6d7eee05..e0c82d55; SOURCES rows 192 -> 194, 0 removed lines; SKILL.md/PROVINCE.md/round-91-92 fixtures/prior spot-checks unchanged; SCORECARD diff append-only, no score cell; census validate rc 0 (run). Evidence-verified (not executed): c1 counter UNMET base -> MET at ab151b17, forgery UNMET; c2 counter UNMET -> MET, forgery UNMET; bat self-test 0/31, tip self-test 0/80, floors 0/176, controls 2/2 2/2, gate registry 74/74 phantom 0, tip battery guards 5/5 (3 carried reds), receipt-revs check rc 1 on round-92 receipts. Spot-check: S267 admit agree (re-fetched 200, sha256 identical, quote lines 2440-2442), S268 admit agree (sha256 identical), Stack Overflow 38785081 reject agree (canonical 403, API body matches, no naming rule)."
+   },
+   "commit": "kotoba-shokunin@e0c82d5511a765d84beab8ea4fc282458e89eeac",
+   "closed_at": "2026-11-05T22:43:56Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-11-05T17:42:12-03:00 launch kotoba round=93 pgid=1635194 driver=hyaku-inline attempt=1 | 2026-11-05T19:41:38-03:00 complete kotoba round=93; hyaku-inline attempt=1. Round: one v1 wave r93-w1, 12 seats, attack 5/12, no dead seats. Claims C1 depth, C2 consistency both verified; C2 scope limit (one key measured, six-key coverage by code reading) agreed. Defects (status-neutral): ReviewerPinCov wrote no report file; dispatch prompt commit 2fc27fdc carries lane identity (attribution). Routed to round 94: C2 non-first-key world (MutTesterPinCov m5); C1 dirty-tree and added-row worlds and label-every-CNE self-test arm (MutTesterKillPin F1/F2/F4), other-world cause attribution (CriticClaimsR93 R2); receipt-check header parsing D2/D3. SHONEN 4/4 [~]; box 4 rests on a red sibling census, so not all boxes fully non-author checkable; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
