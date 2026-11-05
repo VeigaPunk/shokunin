@@ -48924,6 +48924,51 @@
    "notes": "Dispatch digest (watchdog.log, copied): 2026-11-04T20:28:54-03:00 launch mori round=90 pgid=506017 attempt=3; 2026-11-04T20:35:57-03:00 lane-dead-no-report; 2026-11-04T22:32:23-03:00 launch pgid=2943360 attempt=1; 22:32:57 lane-dead-no-report; 22:32:59 launch pgid=2957642 attempt=2; 22:33:31 lane-dead-no-report; 22:33:33 launch pgid=2960690 attempt=3; 22:34:03 lane-dead-no-report; 2026-11-05T00:29:06-03:00 launch mori round=90 pgid=1522650 attempt=1; 2026-11-05T00:50:10-03:00 complete mori round=90 attempt=1. Landed report commit a48343d4 (mori-shokunin); second commit 8151e9ad under lane identity labelled hyaku sweep: attribution defect, recorded. Lane round commit e5200aff verified ancestor of master and equal to remote; spot-check commit 79eaa8cf landed by helper after. Gate standard: C1/C2 gates evidence-verified not re-executed. Defects, status-neutral: no planner seat in w1 (prompt sec 3 names 1x planner); attack share 4/13 in report vs 5/13 in lesson; no-harm NOHARM output and tip-rev receipts not committed; SOURCES S615 full sha256 wrong (prefix right); exit.html rejection not recorded as SOURCES row; rendered prompt lacks verbatim commit-before-report and hash-citation clauses (operator template); fleet root has staged zero-byte mo.tip and modified .scratch/run15-state.json (not named beyond mo.tip). Routed to mori r91: R1 HIGH forgeable kill attribution F1 (add noop negative control; not in SCORECARD plan); R2 P-C1 lookup table; R3 battery trust; R4 --scratch leak count-c1.py:223; R5 BATTERY field count; R6 mutant survivors N10,N15,N17,N20,N21,N23,N24; R7 F2 B4 spelling; R8 S615 digest correction; R9 exit.html rejection row; R10 commit tip receipts; R11 attack-share reconcile; R12 planner seat. SHONEN: no [x] written; no box checkable by non-author this round.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 86,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 86,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 86
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "unprovable",
+    "operability": "improved",
+    "freshness": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "rendered-cell-identity",
+    "mutant-owning-arms",
+    "pin-origin-corroboration"
+   ],
+   "report": ".ufo/reports/round-86/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-86-verifier-spotcheck.md@362b0d4a241520c9bc79b204c042d9fcefbb06ea",
+    "rechecks": "Re-measured by plain commands over committed bytes: count.py c1/c2/c3 at rev 239a8f39 printed the exact terminal verdict lines (mismatches=0 gate=1 closure=1 disposition=1 newest_gate=86; mutants=5 killed=5 escaped=0 arms=34 owners=5/5; PIN_ORIGIN rows=5 verified=5) exit0; c1-mutants driver re-run printed mutants=10 killed=10 escaped=0; all three instrument selftests evidence-verified (17/0,13/0,7/0); gate receipts arms=13 failed=0 verified as committed evidence. C1 ruled unprovable: instrument falsified vs its own frozen predicate by two reproduced false greens (list-marker fence closer; disposition oracle reading any fixed-order word in closure body) — honest stop confirmed, not harmed. Spot-check: 3/3 admits re-opened and agreed (S576/S578/S579 quotes verified verbatim inside their own CommonMark 0.31.2 section spans in the committed spec copy); zero rejects existed to sample; sources-census validate exit0 (319 rows)."
+   },
+   "commit": "kama-shokunin@362b0d4a241520c9bc79b204c042d9fcefbb06ea",
+   "closed_at": "2026-11-05T05:15:24Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (watchdog.log, copied): 2026-11-04T21:37:27-03:00 launch kama round=86 pgid=3989976 attempt=1; 21:52:16 lane-dead-no-report; 21:52:19 launch attempt=2; 21:58:48 lane-dead-no-report; 21:58:51 launch attempt=3; 22:31:27 lane-dead-no-report; 2026-11-04T23:51:39-03:00 launch attempt=1; 2026-11-05T00:50:14-03:00 complete kama round=86. Report landed by hyaku sweep under lane identity (attribution defect, recorded; real 30KB report, not a marker). Lane round HEAD before closure 079cd67c; all 25 cited lane commits verified ancestors of master; jj-lane state ahead=0 behind=0. DEFECT R86V1 (uncommitted round work, status-neutral): three lane-authored round-86 files remain untracked — .ufo/waves/round-86/w3-results.json (the w3 settlement record the report/SCORECARD cite for seat status), w3/SC01DanglingPointers.md, w3/out/SC01DanglingPointers/findings.md — and two w3 seat reports required by the spec Report: trailer (w3/EX02GateCensus.md, w3/CN01OverlapScan.md) were never written; w3-results.json is non-durable. My own pre-report-gate.py run on the current tree now prints arms=13 failed=2 uncommitted=3 (round-scope/round-clean red on those strays) — the recorded 13/13 green is revision-bound and stands, but the lane must commit or remove the strays next round. Carried disclosures confirmed honest: C1 predicate not implemented (2 false greens), C2 forged-subject/unparseable-ARMS escapes, C3 self-declared origin (grade() never reads row engine/ref/newest), frozen counter executes worktree bytes not --rev bytes — all routed to round-87 plan items 2/4/5/7. SHONEN boxes remain [~]; no non-author [x] warranted; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
