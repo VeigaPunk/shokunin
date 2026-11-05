@@ -50240,6 +50240,48 @@
    "notes": "Dispatch/complete digest from .ufo/watchdog.log (mutable; copied here): 2026-11-05T07:47:41-03:00 launch tabi round=68 pgid=632128 driver=hyaku-inline attempt=1 | 2026-11-05T08:10:34-03:00 lane-dead-no-report tabi round=68; retry same round (hyaku-inline attempt=1: L1 ended without a landed report: FAIL report_of (missing, unchanged, no SHONEN heading, or < 400B): .ufo/reports/round-68/tabi.md) | 2026-11-05T08:10:36-03:00 launch tabi round=68 pgid=3834342 driver=hyaku-inline attempt=2 | 2026-11-05T09:21:02-03:00 complete tabi round=68; hyaku-inline attempt=2. Status ok rests on the attempt-2 report, which is landed and substantive; attempt 1 filed no report and its outputs were inherited and re-verified. Defects (status-neutral, routed in the spot-check section 6): R1 stray lane-root file report written (agent://TabiR68a2) committed by 920b6be4, lane to remove; R2 adjacency axis ruling owed to operator (L0 tabi round-67 and round-68); R3 lane gate defects F1-F10, symlink hole, C1 selftest gaps, final-gate mutant kills not re-run (lane self-routed); R4 SCORECARD scores held at 9 and 9 while verified moves recorded, lane to re-score or justify; R5 S173 cross-authority disagreement lane check-sources E04 vs fleet census W04, operator ruling owed; R6 dispatched prompt lacks verbatim protocol round-contract items (i)-(v), operator template; R7 w1.ready named dead attempt-1 L1 id TabiR68, orchestrator-side; R8 seat R68Mut1 wrote receipts without a report, settled without report. Not promoted, minted, or touched: SHONEN boxes remain [~]; none assessed fully checkable by a non-author this round (box 2 domain trial not re-run).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 91,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 91,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 91
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged",
+    "novelty": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-91/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-91-verifier-spotcheck.md@4ba56182307ccda1ec436bfe3d61cb3d92e56608",
+    "rechecks": "Step-1 conformance: report commit b653cc6d authored kengaku-shokunin/kengaku@shokunin.local; one SHONEN heading with four [~] boxes; all seven cited lane hashes (cd0c116e 386184a6 b836a862 a8de3e69 cefabd44 f06d0b65 59764383) ancestors of master; jj-lane state ahead=0 behind=0 local=remote=f06d0b65; status porcelain empty; watchdog launch 07:41:55 and complete 09:34:10 digest matches; 11-seat wave, attack 4/11, connector 1. Plain re-measure over committed bytes at f06d0b65: pins 16/16 sha256 and blob ids match (C2 met, default path); routed-findings 213->253, new rows closed 13 blocked 24 refused 3; executed ledger 34->35 of 88 (C1 counter defect M7 confirmed by reading parse_receipt lines 80-84 and receipt 0 id= tokens); SCORECARD numstat 26 insertions 0 deletions; corpus/knowledge diff empty; S281 re-fetched HTTP 200 2330B sha256 0c24195f byte-identical to round-52 capture, line 27 quote 10 words; S282 re-fetched HTTP 200 721B sha256 e868c854 line 5 4 words; census validate exit 0 (274 rows). Gates C1 C2 C3 evidence-verified from committed transcript, not re-executed. C2 evidence-verified and re-measured for pins; C1 and C3 not met on frozen predicates (C1 parser defect; C3 selftest outside predicate path and working-tree checks). Discernment spot-check: S281 admit and S282 reject both agree; R84-V9-R91 close agrees on substance, disagrees on fixed-verified label (routed correction row)."
+   },
+   "commit": "kengaku-shokunin@f06d0b65d85b650ba459f2db47e3bf10ffa4b732",
+   "closed_at": "2026-11-05T12:42:59Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, copied 2026-11-05): 2026-11-05T07:41:55-03:00 launch kengaku round=91 pgid=154382 driver=hyaku-inline attempt=1; 2026-11-05T09:34:10-03:00 complete kengaku round=91; hyaku-inline attempt=1. No lane-dead-no-report line. Status ok (real report, not a marker). Round not admitted: C1 coverage not met (M7 parser defect, M12 unguarded openssl probe), C3 operability not met (M8 selftest outside predicate path, M11 working-tree checks, M10/M13 gate closure rules), C2 calibration met on its predicate with the --skip-selftest escape routed (M9). No axis harmed (SCORECARD 26 insertions 0 deletions). Conformance defects, status-neutral: report wave bullet '14 controls' vs seat controls.txt (self-disclosed; erratum owed); frozen claim function line ranges 16-42/45-48 vs bytes 11/46 (M2, not repaired after freeze); frozen round-shape line mismatch (self-disclosed). Routed to round 92 (verified in source): C1 parse_receipt id token; C1 host-probe guard; C3 selftest in predicate path; C3 checks at measured revision; C2 --skip-selftest removal and expected-rc pin; R82-V8 R83_FLEET_REPO default (plans/round83_c2_checks.py:168); gate closure-check and owner rules; supersede-chain rule; append-only correction row for R84-V9-R91 fixed-verified label; capture pins for S260 S261 S265 S266. Repeated routing: round-90 C1/C3 items were routed to round 91 and not landed; re-routed. SHONEN note for operator (no [x] written): boxes 2 and 4 look checkable by a non-author from committed bytes; promotion operator-owned. Lane counters and gates were not executed by the integrator.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
