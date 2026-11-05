@@ -51307,6 +51307,46 @@
    "notes": "Dispatch/complete digest (watchdog.log, mutable): 2026-11-05T11:35:07-03:00 launch kotoba round=91 pgid=3319723 driver=hyaku-inline attempt=1 | 2026-11-05T13:34:09-03:00 lane-dead-no-report kotoba round=91; retry same round (attempt=1: L1 ended without a landed report) | 2026-11-05T13:34:11-03:00 launch kotoba round=91 pgid=2642444 driver=hyaku-inline attempt=2 | 2026-11-05T14:04:32-03:00 complete kotoba round=91; hyaku-inline attempt=2. Report committed by lane identity kotoba-shokunin at 2a6f8065; all cited hashes ancestors of master; ahead=0 pushed. SHONEN 4/4 boxes one line each, all [~]. Prompt carries template contract + hyaku addendum sec.6. Defects (status-neutral): attempt-1 died without report (disclosed; wave registry never settled, WAVE-DONE never received, ReviewerRepairs seat dead with no output); untracked orchestrator-written .ufo/waves/round-91/r91-w1-results.json appeared in the lane repo 14:05 (post-completion settlement the report requested; resolve next round, not lane debt). Routed to round 92: ctl-c2-capline-only reads MET on its shortcut + ctl-c1-manifest-only never reads appended rows (lane-routed, addendum A5); battery kill-set-size pin arm (lane-planned); freeze-gate ladder leftovers (--work under regular file, duplicate control names, declared exit 127); S263 communicate-quote anchor correction (1042 -> observed 1071, byte-identical page); 33 pre-existing W04 duplicate-URL census warnings (ok, non-blocking); province-core stale base pin carried red. S262 upstream-gitiles corroboration pointer not re-opened (NOT_FOUND at guessed repo paths); primary URL verified with matching size and located quotes, sub-pointer unprovable. Operator note: SHONEN boxes all checkable by non-author from committed receipts; promotion remains operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 95,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 95,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 95
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "unchanged",
+    "freshness": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "conditional-request evaluation, contract v2 (conditional_eval.py: empty list members, obs-text etagc, role:null=origin, duplicate-key refusal, GET/HEAD method-filter edges)",
+    "content-pinned self-assessment counter mechanism (c95_selfassess.py: content-pinned identity, no --surfaces-file, --verdict-only never prints met, effectful-shadow battery)"
+   ],
+   "report": ".ufo/reports/round-95/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-95-verifier-spotcheck.md@bde9869144f69c5a459c0d2c93f5135922fe3a8d",
+    "rechecks": "C1 evidence-verified UNMET honest stop: receipts base-c1 (mismatches=18 E3=3 E5=15 met=false at fdd5fdbe) and after-c1-final (mismatches=0 pins=identity met=false at 1fca1ad7) match the report; both cite frozen counter 8fd27d62 and tip blob bytes are byte-identical to the pre-amendment instruments commit (empty diff 43cdd9fc..master over c95_selfassess.py/c95_conditional.py/c1-surfaces.json). C2 evidence-verified MET: base-c2 hand=57/66 generated=79/120 met=false at 43cdd9fc vs after-c2-final hand=66/66 generated=120/120 forgeries=7/7 mutants=40/40 met=true at 1fca1ad7; landed scripts/conditional_eval.py sha256 957ddd4e equals the receipt candidate_sha256; mutant-scan-v2 40 KILLED incl. M11; second implementation DRIVER VERDICT met=true; C2 selftest tally 8/8 committed; gate-registry row present. No lane gate executed by closure (Gate standard). SCORECARD diff base->tip append-only, no axis harmed; PROVINCE/SHONEN/corpus README untouched; QUALITY append-only (+R95-A..D); SOURCES 215->216 census exit 0 (validate). R95-4 discharged: 15/15 repaired SKILL rows re-read, all named files committed non-empty blobs at base, first cells intact. Discernment: 2 admits + 2 rejects re-opened (live S479 GET byte-identical sha e6ddebb2, quote at line 863; Amendment A rejection re-derived from git d9be693f/4f443b3f; ExecC2V2 no-landing; S479 used-by correction) - all agree."
+   },
+   "commit": "kake-shokunin@7bace5789077167614212d0a34d31f1bb448e668",
+   "closed_at": "2026-11-05T17:26:14Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (watchdog.log lines 2873/2889): 2026-11-05T12:45:45-03:00 launch kake round=95 pgid=3818161 driver=hyaku-inline attempt=1; 2026-11-05T14:16:07-03:00 complete kake round=95; hyaku-inline attempt=1. C1 (calibration) unmet = honest stop under the frozen rule: the zero-mismatch repair is real and receipted but the frozen predicate's entry-content pins fire on the repaired heads, so met=false either way; successor routed R95-1. C2 (freshness, capability) met on the frozen counter with the round's own gaming-route caveats carried (R95-6/7/8). Integrity ruling independently verified: post-freeze Amendment A (d9be693f) withdrawn from scoring; frozen bytes restored byte-exact at 4f443b3f; restore-verify receipts committed; no amended receipt integrated. Conformance defects (status-neutral): report trend labels written 'improved-bounded' instead of the bare protocol vocabulary; freeze.md at tip still carries Amendment A's superseded digest instruction (04be4a7d/9eff04c5) - r96 must record the supersession in its report/lesson, never edit filed bytes; pre-existing W04 duplicate-URL census warning class (named in report). Routed: R95-1..R95-8 stand as lane-routed; R95-4 (row-by-row re-read of the 15 repaired SKILL rows) discharged by this closure 15/15. Open L0 'kake | round-94' (two honest unmet claims) remains unanswered; r95 added none. SHONEN: boxes 1/3/4 [~] author-asserted, box 2 [ ] gap unchanged; boxes look fully non-author-checkable for the operator (promotion operator-owned; box 2 gap real).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
