@@ -48155,6 +48155,44 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-11-04T19:39:05-03:00 launch kaidoku round=88 pgid=3790618 driver=hyaku-inline attempt=1; 2026-11-04T20:36:02-03:00 lane-dead-no-report kaidoku round=88 retry (attempt=1 FAIL report_of); 2026-11-04T20:36:04-03:00 launch round=88 pgid=1030863 attempt=2; 2026-11-04T20:43:28-03:00 lane-dead-no-report retry (attempt=2 FAIL report_of); 2026-11-04T20:43:30-03:00 launch round=88 pgid=1882083 attempt=3; 2026-11-04T20:57:25-03:00 complete kaidoku round=88 hyaku-inline attempt=3. Lane base 0cf8e324, tip a242fff3 (= origin/main); report committed by the lane identity at dd258908; all ten cited commits are ancestors of refs/heads/main; jj-lane state ahead=0, only the r85-r88 *.ready handoff markers untracked. Conformance defects (status-neutral): (1) the prompt's quoted L2 route map is a superseded snapshot that disagrees with the live task.agentModelOverrides (reviewer+executor @m_zfl, scout+scribe @m_mim, connector @m_antigravity) while MISSION.md pins no model; (2) report/LOG say 'attack 5/14 = 36%' counting the sentinel, strict run-15 attack set is 4/14 = 28.6% (still >=25%); (3) no planner seat - the wave validator rejects the role, the L1 held it (prompt/tooling conflict, operator-side); (4) 'QUALITY rows 154-160' is criteria numbering, not file lines. Routed to kaidoku (none bars admission): D1 tools/round-88/upx-chain-repair.py:13-18 docstring still documents the pre-M88-3 'smallest offset' rule and calls the u_file_size match a preference while the code selects on key=(fits,total,-derived) - a corrections-sweep miss under the lane's own Row 150; D2 plans/round-88-claims.md:17-21 still states the superseded rule and the 'impossible' bound (ReviewerC1 s6 items 5.1-5.3 left uncorrected); D3 depth-blocks.py:86 met_target = not unresolved - needs a required --expect-blocks N with the base arm and the citation-only stub as red controls; D4 upx-chain-battery.py leaves packed/n3.out/chain.repaired beside the repair's --in, so a sibling-copy repair scores 4 of 4, and the 'names/reads/hashes a carrier' kill clause is audit-only; D5 the knowledge entry's 'a candidate whose total exceeds u_len is impossible' overstates a lexicographic preference (all four winners fit); D6 selftest cases for the two surviving guards (R01 derived-bound, R02 sentinel-reach); D7 the quadratic candidate scan (1.02 s / 14.22 s / 221.85 s at 800/3,200/12,800 candidates) needs a typed refusal cap. SHONEN: all four boxes are now checkable by a non-author from committed artifacts (the round correctly wrote [~] everywhere); promotion remains operator-owned and nothing here writes [x]. Three reviewer/critic seats were dispatched for re-checks (one died on a provider 402 and its items were re-derived by the integrator directly).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 60,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 60,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 60
+   },
+   "admitted": false,
+   "verdict": "rejected-harmed",
+   "verdicts": {
+    "calibration": "harmed",
+    "operability": "unprovable",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-60/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-60-verifier-spotcheck.md@c7228424c3919ecf142bab1aec8181722d86467b",
+    "rechecks": "Independent committed-byte remeasurement (no sibling gate executed): C1 base tool at 1e8bfd8 has 0 substance/CONTROL-* occurrences vs 26 class references and 46 'substance' hits at 2670e96a (415->560 lines); 8-case matrix (3 accept/5 refuse) reconciles with new_forgeries 5->0, new_honest 3, stubs=REJECTED (c1-do-nothing EXIT1 vs c1-after EXIT0); counter digest 76f35c2f and matrix digest 7973d520 match the prereg and both receipts; receipt rev 3b55250 is a strict ancestor of the freeze. C2 base recorder census/round-57/record-receipt.sh 35 lines with 0 link/fsync vs writer 694 lines with 5; 8 cases (2 accept/6 refuse) reconcile with pass 4->8, fail 4->0, both stubs rejected; fixture digest d5291501 matches both receipts; writer selftest 12/12 committed. Default freeze-checker path byte-identical to base over the selftest and three real preregistrations (cmp IDENTICAL, exits 1,1,1); selftests 41/41 and 12/12 committed; freeze-record verdict claims=2 findings=0 EXIT0 committed in wave evidence; wave-SHA256SUMS 365/365 OK; 14 seats, attack share 4/14. Rejection ground: both bound Control receipts are added BY the freeze commit (git log --diff-filter=A -- census/round-60/controls/ -> 2670e96a) and the wave control outputs land at b38c60ee, contradicting the prereg header and the report's 'red controls committed before the predicate' (Q120). S288 admit / S289 reject reopened at docs.python.org (quotes 14 and 16 words agree after unwrapping; capture digest ece1ab71 matches; live page differs only in its footer timestamp); census EXIT0, rows 211->213, 67 W04."
+   },
+   "commit": "souji-shokunin@d05a00019835dee5b9bb8fe738add080434c4d67",
+   "closed_at": "2026-11-05T00:41:00.000000Z",
+   "campaign": "hyaku",
+   "notes": "2026-11-04T20:36:11-03:00 launch souji round=60 pgid=1040036 driver=hyaku-inline attempt=1; 2026-11-04T21:18:10-03:00 complete souji round=60; hyaku-inline attempt=1. Real lane-authored report 92b357dc (committer 21:17:34-03:00, after lane tip d05a0001 at 21:17:26; author date 21:13:07 is a jj working-copy artifact of the colocated fleet repo); four SHONEN [~] assertions, zero [x]; all 11 cited hashes exist and are ancestors of refs/heads/master; lane ahead=0/clean before the spot-check; spot-check landed c7228424 and pushed. Prompt fidelity complete: 5 round-level + 5 child-lane items verbatim; route-map divergence advisory only. Both claims' numbers verify from committed bytes and both beat their do-nothing controls, so the numbers are NOT the rejection ground. Rejected-harmed on chronology: the two bound Control receipts are added by the freeze commit 2670e96a itself and the wave control outputs at b38c60ee, while the frozen preregistration says they were 'committed at 3b552509..., strictly before this freeze commit' and the report repeats it ('frozen only after their no-work controls were executed and committed'; 'red controls committed before the predicate'). The lane's own critic recorded this as S60CriticRound Finding 1 (Q120 VIOLATES) and recommended honest-stop framing; the report and lesson surface five other critic limits and not this one, so calibration (self-assessment, overreach caught) is harmed rather than an honest stop. C2 is a declared successor to the rejected r57 C2 whose prefreeze prerequisite is unmet -> operability unprovable (r58 precedent). No structural harm: diff is additive (no pre-existing file deleted; only LOG/SCORECARD/SKILL/SOURCES/freeze-check modified), PROVINCE and SHONEN unchanged, default checker path byte-identical, SOURCES/LOG append-only. Routed to souji: (1) append an erratum naming 2670e96a as the control-adding commit and stop repeating the false provenance - no edit of the pushed prereg; (2) mechanise it in --substance (require git log --diff-filter=A on the Control receipt to be a strict ancestor of the freeze); (3) surface critic Finding 1 in the lesson; (4) index knowledge/freeze-record-substance-binding.md in corpus/README.md (coverage map untouched, which is also why expansion is unchanged); (5) fix the broken SKILL.md pointer census/round-60/w1/... -> census/round-60/wave/w1/...; (6) keep the r56-r59 debts and the round's five named limits open. SHONEN boxes look checkable by a non-author but promotion stays operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
