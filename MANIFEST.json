@@ -49105,6 +49105,47 @@
    "notes": "Corrects rounds[1311] (superseded): its closed_at 2026-11-05T07:35:00Z was future-dated against the committing commit (2026-11-05T07:28:03Z) — an evidence-standard defect in the closure entry itself, fixed here by appending, never editing; every status, verdict, trend, capability and routed item is unchanged from the superseded row. Dispatch digest (verified verbatim in .ufo/watchdog.log): 2026-11-05T02:12:15-03:00 launch mori round=91 pgid=1954018 driver=hyaku-inline attempt=1; 2026-11-05T04:18:17-03:00 complete mori round=91; hyaku-inline attempt=1. Step-1 conformance ok: report committed by lane identity mori-shokunin <mori@shokunin.local> (fleet db50dfb9); SHONEN heading 4 boxes all [~] with pointers; cited hashes e02b8a39 and bee9f21e are ancestors of master; lane ahead=0, porcelain clean; prompt carries the template contract. Honest stop confirmed: both declared claims verify only as unprovable (C1 populations absent, counter exit 2 re-run; C2 snapshot absent at both revisions); no axis harmed (SCORECARD diff additive only). Real landed work re-measured: digest-class gate reproduces its line at bee9f21e; C-1/C-2 corrections confirmed on pinned bytes; census 389->391; expansion improved (S617 mined + knowledge entry, S618 rejected with flip), quality improved, discernment unchanged. Routed defects: R-D1 mori r92 must append S615/S235 supersession rows (CORPUS rule 2) to repair the corrupted recorded digests; R-D2 mori r92 must classify S156/S158/S159 mismatches (C-3); R-D3 orchestrator-side - five wave seats (Mo91E01Arms, Mo91E02Snap, Mo91M01Mut, Mo91K01Conn, Mo91C01Ctl) returned empty output with null status/note, spawn/stop reason unrecorded (L0 filed by the lane); R-D4 mori r92: 31 prefix-only digest records + S125 unpinned surfaced by the new gate, census-absorption decision owed (SCORECARD planned r92 item 5). Operator notes: all four SHONEN boxes look fully checkable by a non-author (promotion review is operator-owned; no [x] written); tools/mori-source-digest.py needs its SKILL.md registry row + selftest fixtures (Gate standard) before closure grades it a conformant gate. Conformance defects: none status-relevant; the superseded row's future-dated closed_at is recorded here and stays on the ledger.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 80,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 80,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 80
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-80/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-80-verifier-spotcheck.md@378fda82dc2cbcc555a0565052cc408121813cef",
+    "rechecks": "C1 evidence-verified, not executed (lane gate): before controls/oracle-structure-v6-accepted.txt BATTERY_EXIT=0 BATTERY_VERDICT=PASS RECEIPT_LINES=113 ORACLE=ACCEPTED exit 1 -> v7-legit-matrix-r80.txt:218 exact frozen predicate BATTERY=PASS 11/11+2/2+2/2+2/2+5/5; frozen kill rule fired on committed draw receipts (r80a-after-v7-run1.txt:216 FAIL fresh 1/2+1/2; r80d-v7-run3-fresh3.txt:240 FAIL 0/3+0/3; c1-name-collision-probe MISS/MISS fails closed) -> honest stop; instrument sha256 byte-identical at 0f59b985/tip/worktree == claims.md pins. C2 evidence-verified: grounding-before-r80 FAIL unresolved=3 -> grounding-after PASS unresolved=0 superseded_resolved=3 audited=S199-S202 at 44d09edf; frozen clause 3 fired (c2-unopened-superseded-record: unresolved=0 with planted unopened record; c2-donothing: hollow one-word record PASSes) -> honest stop; supersession re-measured 12/20/25/2 words, all four quotes verbatim at pinned revisions. Byte re-measurements: SCORECARD numstat 73 insertions/0 deletions vs base (in-flight seven-row relabel withdrawn: 9->3 token occurrences, round-72 row byte-identical); PROVINCE diff 0; knowledge 92=92 sorted-list sha equal; census validate rc=0 re-run at tip (5 pre-existing W04 warnings); GATE-RECORD lines lessons/round-80.md:19-22; registry S196-S202 verbatim, S200/S201/S202 teaches open supersedes; w1 dispatch 12 seats (attack 5/12, connector 1), results 12/12 outputs 0 dead, validate_rc=0; prompt = template render + §6 addendum, committed 552d721a; all 9 cited lane commits ancestors of refs/heads/master; report committed by chousa-shokunin identity 023ae03e at 04:30:20 -03, driver complete 04:35:52 -03. Spot-check agrees 4/4 (admits S199/S200/S201, reject S202)."
+   },
+   "commit": "chousa-shokunin@8e6a9c4178ede774bdfb4e320297315ce56644e4",
+   "closed_at": "2026-11-05T07:57:57Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (.ufo/watchdog.log, mutable): 2026-11-05T00:50:49-03:00 launch chousa round=80 pgid=1815746 driver=hyaku-inline attempt=3; 00:51:28 lane-dead-no-report (no landed report); 02:17:35 launch pgid=1988632 attempt=1; 02:18:57 lane-dead-no-report; 02:18:59 launch pgid=1998710 attempt=2; 02:19:29 lane-dead-no-report; 02:19:31 launch pgid=2000493 attempt=3; 02:20:04 lane-dead-no-report (three L1 relaunches died on provider errors: amr 402 insufficient_balance, commandcode 401, opencode-go 402; markers moved to blocked/.chousa.run15-20261105-provider-failure-*); 04:18:32 launch pgid=2187962 attempt=1; 04:35:52 complete chousa round=80. Status ok, real landed report (not a marker). Both claims falsified by their own frozen kill rules and filed as honest stops by the lane; admitted=false per the verify-and-no-harm rule. No axis harmed; operability/calibration improved narrowly (instruments landed, evidence-verified), depth/freshness/coverage/adjacency unchanged. Routed defects (status-neutral, for the lane's next round, append-only): (1) C2 sourcing label drift - frozen claims.md binds C2 to S200, SCORECARD/lesson rows say S199; (2) lesson outcome-table C2 cell says improved while SCORECARD/LOG/report say honest stop; (3) frozen claims.md says 15-word for the S200 quote, measured/landed is 20; (4) report prose labels draws run1 PASS/run2 FAIL while receipt files carry opposite contents (r80a-after-v7-run1.txt=FAIL 1/2+1/2, r80d-v7-run2.txt=PASS 2/2+2/2); (5) stray inherited .ufo/waves/round-80/w2/Exec/SubjC2 RECEIPT/ staged but never dispatched (no w2-dispatch.json/w2.ready), disclosed, no wave-2 counts; (6) fifth ## Mistakes row lacks a repeated table header. SHONEN: all four boxes [~] lane-asserted with resolvable pointers, no [x] written - fully checkable by a non-author; promotion stays operator-owned. Round shape: one v1 wave w1 of 12 seats (run-15 band 8-16), attack 5/12, connector 1, 0 dead; planner seat held by the L1; round total 12.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
