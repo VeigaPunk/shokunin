@@ -49596,6 +49596,46 @@
    "notes": "Dispatch digest (.ufo/watchdog.log, copied at closure): 2026-11-05T05:30:06-03:00 launch tabi round=66 pgid=2358862 driver=hyaku-inline attempt=1; 2026-11-05T06:16:09-03:00 complete tabi round=66; hyaku-inline attempt=1. Not admitted: C1 (adjacency) verifies only on its own meter predicate; the counted move is a currency rebind with 0 disposition changes and reads as freshness under QUALITY 121; round stays honest-stop pending the operator ruling on L0 'tabi | round-66 | C1 axis ruling' (fleet 40d089a9). C2 (calibration, v2->v3 selftest kill 2/4 -> 4/4) verifies on frozen predicate. Freshness improved is undeclared (40 stale findings at live heads -> 0). Routed defects (status-neutral): S171 pointer cited :186, row is at corpus/SOURCES.md:185; claims.json frozenAt reads pending-commit; C1 scored receipts carry exit null and empty stderr; gate F7 ../ relative escape open (evidence receipt outside repo at /fast/scratch) and unrepaired; meter disposition-blind (QUALITY 122). SHONEN: 4x [~], none checkable by non-author in this pass; no [x] written. Wave w1: 13 seats, 0 dead (7 prose-wrapped outputs logged unparsed, not dead). Spot-check: 1 admit (S171) agree, 1 reject (v2 header) agree.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 62,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 62,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 62
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "receipt index-flag refusal (r62)"
+   ],
+   "report": ".ufo/reports/round-62/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-62-verifier-spotcheck.md@728ab685617e412172a8e5cb6260f7098b486aec",
+    "rechecks": "C1 probe, scratch repo, base vs candidate bytes (candidate sha256 9fb55f35 = lane HEAD bytes): A honest-clean base rc0 / cand rc0; D skip-worktree-forged base rc0 (porcelain empty, tag S) / cand rc2 RECEIPT-INDEX-FLAG-CONCEALED, also with --allow-dirty; E assume-unchanged-forged base rc0 / cand rc2 (tag h); F skip-worktree-unmodified cand rc2 (calibrated refusal). Evidence-verified: c1-after EXIT0 new_forgeries=0 new_honest=2 regress=PASS, c1-do-nothing EXIT1 new_forgeries=3, instrument digest c6a3159d = committed counter; freeze ordering by ancestry. C2 re-measured: independent grep stale_open base 4 / head 0, landed head 3; lane counter at 918bb423 PASS EXIT0, base FAIL EXIT1. S292 re-opened live (HTTP 200) and in capture (sha256 39bbbe6a); quote 17 words located after markup strip (raw-bytes claim in lesson is wrong). S291 re-opened live and in capture (sha256 ecaa637b); NOTES quote located. sources-census validate rc0 (68 advisory W04). Lane: ahead0 behind0, index 17515 H, status clean, origin master = b56b6873 at check. Not re-run: 7-row matrix counter and r60 fixture (committed evidence verified instead)."
+   },
+   "commit": "souji-shokunin@b56b68735a8433adcddf61b73b6e2f9069392301",
+   "closed_at": "2026-11-05T09:31:39Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest: 2026-11-05T05:38:44-03:00 launch souji round=62 pgid=2445362 driver=hyaku-inline attempt=1; 2026-11-05T06:23:16-03:00 complete souji round=62; hyaku-inline attempt=1. Conformance defects (status-neutral): CD1 prompt §3 L2 floor split not met (wave: 2 executors, no planner seat, planner held by L1); CD2 report '## Pre-report gate' unfinished; CD3 lesson '## Gate' says S292 quote is verbatim in the raw capture at offset 8351, which is false (located after markup strip). Routed to r63: R1 SKILL.md:830 'closed in round 62 by C1' overstates (in-run gap F4 open); R2 correct CD3 by appended lesson entry; R3 knowledge entry verified-at still round 61 after r62 rewrite; R4 dispatch the L2 floor minimum with a dispatched planner; R5 finish pre-report gate line; R6 numeric 0-10 mapping for operability/calibration (L0 line 325, operator); R7 named limits (F4 in-run TOCTOU, whole-index scope, substring class check). Score cells unchanged (no reproducible mapping); no SCORECARD cell removed. SHONEN: no [x] written; box 2 may now be checkable by a non-author on r62 evidence; promotion is operator-owned. Spot-check: admit S292 agree; rejects (inference, S291 recheck proposal) agree; 3/3.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
