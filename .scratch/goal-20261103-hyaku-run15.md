@@ -211,3 +211,6 @@ Future launches only; no live restarts; live seats keep their captured route. No
   - omp rotates sibling keys only on usage-limit-classified errors. Stored keys: amr 5, commandcode 7, opencode-go 13 (3 unblocked), devin 4.
   - A 401 on one commandcode key walks the model chain without trying the other 6.
   - After the restart, the first route smoke should confirm which keys authenticate.
+- Post-wrap-up late seats committed as "not a landed round": kasegi 34faab90 and 3cc8cd45, kake d838e744.
+  - kake r93 integration owes a 3-entry freshness-sidecar re-pin: spec at `kake-shokunin/.ufo/waves/round-93/w1/ScribeC1Prose/sidecar-repin-for-L1.json`. Without it the paths sweep exits 2.
+  - Zero subagents were running at restart time.
