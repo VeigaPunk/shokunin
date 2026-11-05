@@ -51100,6 +51100,47 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable; lines 2862/2875): 2026-11-05T11:49:55-03:00 launch kaidoku round=94 pgid=1693372 driver=hyaku-inline attempt=1; 2026-11-05T13:01:20-03:00 complete kaidoku round=94; hyaku-inline attempt=1. Step-1 conformance green: report committed by lane identity kaidoku-shokunin <kaidoku@shokunin.local> at 40389220 (12:59:45, lands last, after bookkeeping e1bf745 12:57:49); SHONEN heading 4/4 [~] lines; cited commits dd452491/8a711726/e1bf745 all ancestors of refs/heads/main; jj-lane state ahead=0 behind=0, porcelain clean; prompt committed 680f9acb and a faithful templates/round-prompt.md rendering with all five child-lane items; axes bucket matches shokunin.conf. Both claims verified -> admitted; verdicts agree with the spot-check axis table. Defects (status-neutral): D-94-A the C1 unchanged-bytes receipt c1-unchanged-bytes-at-8a711726.txt is a 0-byte capture of an empty git diff --stat - persist the command/digest inside it or drop the file next round; M94-f short --rev in the base receipts (self-mined by the lane); M94-e agreement-counter label-binding/fabrication limits plus the O_NOFOLLOW/mkstemp receipt-writer hardening stay open in the lane's Planned (confirmed open). Operator note: every SHONEN box looks fully checkable by a non-author on this round's evidence - promotion is operator-owned; lane's SHONEN.md correctly remains unmarked. No exploratory claim; no promotion; no mint.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 41,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 41,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 41
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "freshness": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-41/kagi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kagi-shokunin/corpus/lessons/round-41-verifier-spotcheck.md@e8265c0d90b01fcce0447d2f70615b0592ed145f",
+    "rechecks": "C1 evidence-verified, lane gate not executed: gate sha 807501052598f05c162d780e4e327697a155d0369a0fd3ecf29a354489343756 re-hashed at 209147c and equals committed receipts; gate absent at BASE (counter short-circuit 0 re-measured on a clean git-archive of 19025d9); committed receipts selftest PASS cases=7, P0 CLEAN changed=6 journaled=6, blanket controls 0/0/0, counter reading 4 rc0; plain re-derivation: ledger diff 5142b52..209147c changes exactly 6 rows and the committed journal covers exactly those 6 (changed-not-journaled NONE, journaled-not-changed NONE); separable from C2 (counter reads pinned revisions only). C2 re-measured: counter 3 rc0 at landing tree 209147c, 1 rc0 at clean git-archive 19025d9; terms (a)/(b) re-derived over committed bytes (cited ids S095/S096/S097 non-superseded, frozen quote on one line, S095 fetch sha binds capture body), selftest cases=22 evidence-verified; decoy control 2. Census validate kagi ok rc0 (19 pre-existing W04 warnings); SCORECARD all six axes 9->9, no axis harmed; stamps re-pin exactly 7 rows; no knowledge/ entry changed. SD5 substance re-derived by bytes: lane-status reds R25-02/R29-01/R29-02 all named in the committed calibration row. Discernment spot-check 3/3 agree: S097 admit (live refetch byte-identical, quote locates count=1), S098 reject (isspace minus White_Space re-derived from UCD PropList.txt = exactly U+001C-1F, reverse empty; literal backslash-p White_Space absent from served body), S095 re-open byte-identical to round-40 capture."
+   },
+   "commit": "kagi-shokunin@209147c64610d76ec3a0b73ba9e499b227c84ec9",
+   "closed_at": "2026-11-05T16:24:15Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-11-05T12:05:41-03:00 launch kagi round=41 pgid=3037435 driver=hyaku-inline attempt=1; 2026-11-05T13:11:37-03:00 complete kagi round=41; hyaku-inline attempt=1. Shape: one v1 build wave, 11 seats (executor 3, scout 1, scribe 2, connector 1, reviewer 2, critic 1, mutation-tester 1), attack share 36 percent, 11/11 seat reports, no dead seats; planner seat held by the L1 (validator rejects the role), recorded. Conformance: report filed by lane identity lands after the lane commit (13:11:12 vs 13:07:13); SHONEN heading 1 with four [~] pointer lines; all five cited commits ancestors of master; lane clean and ahead=0; prompt carries the template contract; not a marker. Defects (status-neutral): first push of 209147c refused by the remote (commit_refs_rules, transient; scan found no content cause; retry landed); plans/round-41-controls.sh C2 BASE line measures the working tree, not a pinned revision (critic defect 1, routed r42); gate *.json journal discovery fails closed on wave directories (routed r42); mutation-runner anchors written against the seat's fixture gate, C1 battery killed=0 on the delivered gate - claim honestly rests on the frozen counter + blanket controls (routed r42); round-40 report in-place amendment still owed an appended erratum (carried r42); plan C1 sentence overstates F4 (corrected by report text). R36-01 context counter not re-run (60s shell deadline exceeded); its SD5 substance re-derived by bytes. SHONEN boxes fully checkable by a non-author - operator may review promotion (operator-owned; no [x] written).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
