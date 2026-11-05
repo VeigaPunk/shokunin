@@ -237,6 +237,12 @@ The L1 holds the canonical planner seat (the validator rejects `planner` as a sw
 bounded planning data-walk rode the L1's own reads plus `ExecCensusR86`'s row arithmetic, because the
 seat that was meant to carry it, `ScoutR86`, delivered nothing.
 
+**Wave settlement:** the dispatcher took `w1.ready` and wrote `w1.ready.dispatched`, but no
+`w1-results.json` and no `WAVE-DONE` message reached the L1 in the ~1 h 45 m the wave ran. The L1
+closed the wave itself after eleven of twelve seats had committed evidence, naming the two
+incomplete seats above rather than waiting further; seat counts in this report come from the wave
+directory, not from a results envelope.
+
 **Stale-lane:** no — respawn-per-round driver; no other mission of this lane is open.
 
 **Tool installs:** none this round (no package was installed or upgraded).
