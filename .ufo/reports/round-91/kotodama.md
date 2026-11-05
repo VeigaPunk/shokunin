@@ -3,7 +3,7 @@
 lane: kotodama-shokunin · round: 91 · campaign: hyaku · date: 2026-11-05 (−03:00)
 base: `d39434b3bc8458e1b66edd2d0d0fea9ea32f3331` · freeze: `691aebf247ebea4dd50577bb64ac99d12fa1145a`
 claim lands: `6656cef3da3e5d97d2540312a1cfb1e9d299f3ca` · receipts/bookkeeping: `4e0d5f9b384ba71c52750a3b5963fc8ad525d31a` · wave evidence: `28057e09fc6d151584ce27b2c187d0dd174baa30`
-measured at: `28057e09fc6d151584ce27b2c187d0dd174baa30` · lane tip at report: `b71f348c156196d8cb1883ca79fd372dd7aff09f` — `git ls-remote origin refs/heads/main` prints the same hash.
+measured at: `28057e09fc6d151584ce27b2c187d0dd174baa30` · lane tip at report: `40774461631ce9ed15982650f6b0a81650c08551` — `git ls-remote origin refs/heads/main` prints the same hash.
 
 ## Work performed
 
@@ -53,6 +53,7 @@ Each change is tied to the `LOG.md` round-91 entry and to the commit that carrie
 | claim receipts at lands (O 7/7, C 4/4), before-v1 receipt with three counterfeit arms, SCORECARD round-91 sections and capability row, LOG round-91 entry, SHONEN pointers, census end | `4e0d5f9b` |
 | W1 results file, all ten seat reports and the critic's counterfeits as wave evidence; R91-M8 | `28057e09` |
 | final re-measurement receipts at `28057e09` (`final/lands-O-final.txt`, `final/lands-C-final.txt`) | `b71f348c` |
+| the three before-bundle base registries the directory commit skipped at the 1 MiB threshold (evidence-only; graded paths unchanged) | `40774461` |
 
 ## Before → after measurements
 
@@ -63,7 +64,7 @@ Both claims were measured with the freeze-pinned counter, from a caller-owned wo
 | O / operability | `python3 -B reports/round-91/measure91.py --root <lane> --freeze 691aebf247ebea4dd50577bb64ac99d12fa1145a --lands 28057e09fc6d151584ce27b2c187d0dd174baa30 --claim O --work <existing-dir>` | base tool sha256 `121888f0…` ≠ pin; its selftest prints 67 `ok` lines and 0 of the 9 named refusals; its entry mode scores a topic-line-padded bakery entry with a shared URL and self-quote gates PASS 6/6 (`controls/before-v1-entry.txt`) | `TOOL` sha = `88597a66…`; `SELFTEST PASS 77/77`; `OKCOUNT` 77; `REFUSALS` 9/9; `MUTATION-SCORE: 53/53 killed, 0 survived, 0 broken-pattern`; stub 22 `ok` lines (refused) and 0/53 killed → `MEASURE91-O: PASS legs=7/7` (`final/lands-O-final.txt`), measured at `28057e09`; an earlier pass at `6656cef3` is kept in `lands-O.txt`, and `lands-O-final.txt` holds the later run at `28057e09` (a `4e0d5f9b` run used the same path and was overwritten) |
 | C / coverage | `python3 -B reports/round-91/measure91.py --root <lane> --freeze 691aebf2… --lands 28057e09… --claim C --work <existing-dir>` | entry absent; linguistics 35 files; registry 875 rows, last id S951; 0 filename owners of the surface | entry 21,472 B, 9 `##` sections, 6×4 table, 6/6 sub-topic phrases anchored in headings/table; S952–S955 mined and cited; index `CORPUS-INDEX: OK files=263 rows=263 findings=0`; no base row changed → `MEASURE91-C: PASS legs=4/4` (`final/lands-C-final.txt`), measured at `28057e09`; an earlier pass at `6656cef3` is kept in `lands-C.txt`, and `lands-C-final.txt` holds the later run at `28057e09` (a `4e0d5f9b` run used the same path and was overwritten) |
 
-Surface commands, re-run at the tip `b71f348c`:
+Surface commands, re-run at the tip `40774461`:
 `git ls-tree -r --name-only <rev> corpus/knowledge | grep -Eic '(secret|ludic|argot|slang|cant|jargon)'` → 0 at base, 1 at tip;
 `git ls-tree -r --name-only <rev> corpus/knowledge/linguistics | wc -l` → 35 at base, 36 at tip.
 
@@ -76,13 +77,13 @@ Census command (both ends): `/home/vgpnk/Projects/shokunin/scripts/sources-censu
 - start: rc **0**, 875 rows (`reports/round-91/census-start.txt`)
 - end: rc **0**, 880 rows (`reports/round-91/census-end.txt`)
 
-| quantity | base `d39434b3` | tip `b71f348c` |
+| quantity | base `d39434b3` | tip `40774461` |
 |---|---|---|
 | rows | 875 | 880 |
 | tier A / B / C | 517 / 330 / 28 | 518 / 333 / 29 |
 | status mined / queued / rejected | 769 / 58 / 48 | 773 / 58 / 49 |
 
-Rows added by tier: **A +1, B +3, C +1** — S952 (B, Polari overview), S953 (B, Polari book description), S954 (A, Harman's *Caveat* in LEME), S955 (B, Messili on verlan), all `mined`, `opened 2026-11-05`, `used-by` the new entry with a lesson gate line, a located quote and a committed capture; S956 (C, Wikipedia *Argot*) is a `rejected` row with its reason and flip in the gate line. Rows touched old→new: **none** — no old row's status, recheck or used-by changed (`APPENDONLY` leg clean; `git diff --numstat d39434b3 b71f348c -- corpus/SOURCES.md` → `6 0`).
+Rows added by tier: **A +1, B +3, C +1** — S952 (B, Polari overview), S953 (B, Polari book description), S954 (A, Harman's *Caveat* in LEME), S955 (B, Messili on verlan), all `mined`, `opened 2026-11-05`, `used-by` the new entry with a lesson gate line, a located quote and a committed capture; S956 (C, Wikipedia *Argot*) is a `rejected` row with its reason and flip in the gate line. Rows touched old→new: **none** — no old row's status, recheck or used-by changed (`APPENDONLY` leg clean; `git diff --numstat d39434b3 40774461 -- corpus/SOURCES.md` → `6 0`).
 
 Frontier rows advanced: the kotodama slice of the shokuknow absent-defect register, 21 data rows, each hand-checked and dispositioned this round — LOCATED 3 (S778, S804, S827), PARTIAL 3 (S776, S786, S825), ABSENT 10, UNREACHABLE 3 (S791, S823, S835), UNVERIFIABLE 2 (S807, S812) in `reports/round-91/quarantine/verdicts.json`. **Adoption stays closed**: this is a quarantine-first round and nothing from the package is appended. The id-collision guard found 98 collisions between the lane's 880 ids and the package's 132 staged ids. `considerthese/` is absent, so no proposal was mined.
 
