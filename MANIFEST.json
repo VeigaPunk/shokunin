@@ -51876,6 +51876,47 @@
    "notes": "Digest: 2026-11-05T15:36:47-03:00 launch souji round=69 pgid=1834551 driver=hyaku-inline attempt=1; 2026-11-05T17:28:54-03:00 complete souji round=69; hyaku-inline attempt=1. Report landed by lane identity (a3bdbdd5 17:00:05 -03, erratum 4589200e 17:05:14 -03) before completion; SHONEN heading present (4x [~], no [x]); cited lane commits 893b8ef4/1412037c/89fea6be/a7f34e15/751f2685/0d8c8c7b all ancestors of master; lane clean, ahead=0; prompt = canonical template render (placeholder substitutions only) + hyaku addendum section 6. Conformance defects (status-neutral, routed to round 70): D1 wave w1 seat outputs and w1-results.json sit only under gitignored .ufo/waves/round-69/w1/ (a7f34e15 subject claims seat evidence; r68 mirrored seats into census/round-68/records/wave-w1/) - mirror into census/round-69/records/wave-w1/; D2 no committed counter selftest receipt for the C2 prereg selftest leg (16/16 only in ignored seat log); D3 no SKILL.md gate-registry row for the r69 counter battery mode; D4 '6 flips' counts diff-marker lines (3 lines changed); D5 c2-ambient receipt records no evidence of the applied tuple; D6 report filed before WAVE-DONE (S69Reviewer/S69Scribe unsettled), corrected by appended erratum 4589200e. Lane-routed wave HIGHs stay open: GIT_LITERAL_PATHSPECS writer forgery (predates r69), GIT_TEMPLATE_DIR/GIT_ATTR_SOURCE/GIT_EXEC_PATH/GIT_DEFAULT_HASH unscrubbed in clean_env, battery members not verified against SHA256SUMS in the arm, Q131 precedence/expectation gate untested by selftest. Operator note: SHONEN boxes all [~]; box 3 not fully non-author-checkable while D1/D2 and prereg dead pointers (M14) stand.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 97,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "revenger",
+   "lane_round": 97,
+   "lanes": {
+    "revenger": "ok"
+   },
+   "lane_rounds": {
+    "revenger": 97
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-97/revenger.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "revenger-shokunin/corpus/lessons/round-97-verifier-spotcheck.md@34c56f9f324723cafd56fd57d718065b2ad2da66",
+    "rechecks": "step1: report attributed revenger-shokunin (48a349b, 17:36:07 after lane tip 17:34:38); SHONEN heading 4 [~] lines; 7d380ce/3b4b4e5/85a2c7e/47e4f6c/e95e2fd all ancestors of main; jj-lane state ahead=0 behind=0 tracked=0 untracked=0; porcelain empty; prompt §1-§5 = template with placeholder substitutions only (34 diff lines) + §6 addendum. C1 re-measured: README coverage status held 12->13 of 15 (7d380ce->e95e2fd), only C02 row changed; counter evidence-verified (landing log C1_K_HELD_BACKED=13/15 C1_ONLY_C02=pass C1_VERDICT=pass; base 12/15 fail; red-v5 rc1 vs green-v6 rc0); counter bytes unchanged 85a2c7e..e95e2fd; C02 entry derivation table re-derived from git archive (fixture sha fe060de1, entry bytes at 512, evidence id, provider ghidra 12.1.4, function_count=1, 6 INFO REPORT, 4 record digests) -> non-author admission. C2: before re-measured from r96 receipts summary.json 14/19; after evidence-verified c2-v6-frozen.log 19 fail deltas, 0 builder notes, C2_ACCEPTED=0/19; positive pass; stub 19/19,0/19; holdout-v6 accepted=5/12 (v5 8/12). Spot-check: admit C02 agree (S502/S503 re-fetched byte-identical sha c818ee34/b5f17fdf, quotes count 1); reject S504 quote agree (grep -cF 0); reject assimilation agree (comm 155/155, package dir no longer present). S505 bytes 101-142 byte-exact. Census rc0 21xW01 13xW04 0 E. Gates not executed."
+   },
+   "commit": "revenger-shokunin@e95e2fd5b841ec50196cb0e03269298ecca02ef9",
+   "closed_at": "2026-11-05T20:41:17Z",
+   "campaign": "hyaku",
+   "notes": "dispatch digest: 2026-11-05T16:33:07-03:00 launch revenger round=97 pgid=2735252 driver=hyaku-inline attempt=1; 2026-11-05T17:38:58-03:00 complete revenger round=97; hyaku-inline attempt=1. Admitted: both claims verify, no axis harmed; this closure is the non-author admission of C02 (corpus/knowledge/round-96-native-analysis-sessions.md). C2 contested: 0/19 is a development-set result (A5); holdout still accepts 5/12 (FR02/08/09/10/12); d-host survives. Routed to revenger r98: (1) S505 used-by names the C02 entry which never cites S505 (cites S504 x3); (2) Amendment A2 single-run C2_POSITIVE/C2_STUB_SELFTEST tokens never printed (three logs); (3) v6 self-test prints stale SELFTEST_C1V5 label (counter6.py:1026); (4) stub self-test deltas fail to build (28 builder notes) so the stub check does not exercise deltas; (5) lane flipped admission-status to admitted before non-author closure (ratified here); (6) carried: holdout five, row-set leg, byte-exact own-work quote leg (M9), d-host + 33 tree survivors, M4 index-or-reject, D2 M7 SCORECARD line; (7) L0 assimilation id collision 155/155, staging package gone from fleet root. SHONEN: box 2 now non-author checkable (C02 record re-derived); promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
