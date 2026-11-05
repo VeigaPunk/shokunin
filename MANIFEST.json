@@ -48230,6 +48230,45 @@
    "notes": "Dispatch digest (from mutable .ufo/watchdog.log): 2026-11-04T20:13:42-03:00 launch kumitate round=89 pgid=238576 driver=hyaku-inline attempt=1; 2026-11-04T20:35:59-03:00 lane-dead-no-report kumitate round=89; retry same round (attempt=1: L1 ended without a landed report: FAIL report_of); 2026-11-04T20:36:02-03:00 launch attempt=2 pgid=1027971; 2026-11-04T21:20:12-03:00 complete kumitate round=89 (attempt=2). Step 1: report b6b3bfac landed by kumitate-shokunin at 21:19:31 after lane tip 082f01a4 (21:19:20) and pushed to origin/main+master; SHONEN heading 1 with 4 [~] lines matching SHONEN.md's 4 boxes; cited adfc2f55/9c3b64e4/7a8afb5f/082f01a4 all ancestors of master; jj-lane state ahead=0, porcelain clean; prompt carries the template contract and the >=8 L2 floor; wave 13 seats, attack 4/13, 4 dead seats not replaced. Claim: one, C1 operability capability acquisition receipt-bind v3 - UNMET under the frozen kill rule, which I confirmed by re-running two seat constructions at 30/30; honest stop, no capability row, admitted=false. Conformance defects (status-neutral, routed to the lane for round 90): K89-V5 M checklist receipt is summary-only (5 lines) and the named red set (723/737/741/755/756 = 5) contradicts the 43/46 tally (3 reds) while the open receipt has 10 reds; K89-V6 knowledge entry recheck states held=64/64 but the same commit's instrument prints 68/68 (my re-run), fix as an append-only correction; K89-V7 S255 quote location named line 70 but the sentence begins at line 75; K89-V8 close/plan.txt is PLAN_BEFORE_READY: FAIL (reason=MAP_DRIFT at PLAN adfc2f55, first uncovered lessons/round-88-verifier-spotcheck.md) and was cited without its verdict - the drift was repaired at M (README_MAP CLEAN 227/227). Carried, already queued by the lane in SCORECARD.md: K89-V1 BOM/ZWSP duplicate-field bypass, K89-V2 missing scorer arms (absolute in-lane symlink token, in-lane .. staying inside, symlinked ancestor), K89-V3 stale limit-before-read docstring, K89-V4 usage/selftest text stubs and worktree-reading arms 3/5. SHONEN boxes 1-4 look checkable by a non-author after this review; promotion stays operator-owned and no [x] was written.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 89,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 89,
+   "lanes": {
+    "kaidoku": "failed"
+   },
+   "lane_rounds": {
+    "kaidoku": 89
+   },
+   "admitted": false,
+   "verdict": "failed-marker",
+   "verdicts": {
+    "coverage": "improved",
+    "depth": "improved",
+    "calibration": "harmed",
+    "freshness": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "harmed",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-89/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-89-verifier-spotcheck.md@1cacbf7bd6af640751a31d1a3e539cbb87d79e67",
+    "rechecks": "C1 evidence-verified, not executed: pre/c1-candidate-at-declaration.json 4 of 4 with all four controls, repair/tool sha256 equal to the landed instruments, before 0 of 4, r87 8/8 and r88 4/4 regression receipts at 5068ba64. C2 re-measured by the integrator's own block counter over committed bytes at 5068ba64 -> blocks 29, resolved 29, unresolved []; base arm red at 28; block 29 cites only base-present knowledge docs. No sibling gate executed. Census 215->217, sources-census validate exit 0 (one declared W04). Discernment: 2 admits (S311, S312) and 2 rejects (headers.h 404, p_unix.cpp flip unmet) re-opened at their URLs - all agree."
+   },
+   "commit": "kaidoku-shokunin@5068ba6417f3cfc6693ca5e4dbe106c08e305174",
+   "closed_at": "2026-11-05T01:11:04Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-11-04T21:20:19-03:00 launch kaidoku round=89 pgid=780802 driver=hyaku-inline attempt=1; 2026-11-04T21:52:03-03:00 complete kaidoku round=89; hyaku-inline attempt=1. STATUS failed: the filed report .ufo/reports/round-89/kaidoku.md is a completion marker (46 lines/1513 B, 7 empty section placeholders, 0 SHONEN mark lines, no evidence pointer and no work commit) - it declares R89-C1/R89-C2 and nothing else; the driver's report_of() accepted it on heading+byte floor only (the known marker hole). Attribution defect: the report commit d0f49dc5 is a hyaku sweep under the lane identity (L1 returned without committing). Conformance: prompt .ufo/prompts/kaidoku-round-89.md carries templates/round-prompt.md sections 1-5 verbatim (only placeholder substitutions differ) plus the hyaku addendum; wave r89-w1 = 14 seats (executor 4, scribe 3, reviewer 2, critic 1, mutation-tester 1, sentinel 1, scout 1, connector 1), attack 4/14 = 28.6% >= 25%, one connector, one batched wave; lane repo pushed at round time (ahead=0 at 5068ba64). Defects: no LOG.md round-89 entry and no SCORECARD.md round-89 section (neither claimed axis move recorded, capability not entered); corpus/lessons/round-89.md and the whole .ufo/waves/round-89/w1/ seat evidence plus r89-w1-spec/dispatch.json are untracked round work; the lesson's wave section is still a placeholder; the committed knowledge entry 2026-11-04-r89-binfo-field-value-class.md points at a non-existent SCORECARD section, names tools/round-89/field-class-matrix.py (absent) and cites the untracked ExecMatrix/matrix.json. Claims: R89-C1 evidence-verified (declaration-time receipt 4 of 4, all four controls, instrument sha256 identical to the landed bytes; r87 8/8 and r88 4/4 regression receipts committed at 5a46542a; before 0 of 4) - but no landing-revision receipt exists; R89-C2 re-measured by me (29/29 blocks resolved at 5068ba64, base 28 red) - no after receipt committed. Post-completion the lane pushed fd9f840b (22:06:46 -0300, entry four-carrier matrix + QUALITY 166-167) after the driver's complete line; recorded, not verified. Routed defects D-89-1..D-89-7 in the spot-check. Promotion: SHONEN.md's four boxes remain [ ] and no box is checkable by a non-author from this round's record (box 2 has no round-89 LOG.md entry to cite).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
