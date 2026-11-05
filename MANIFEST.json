@@ -50078,6 +50078,44 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-11-05T01:57:18-03:00 launch kaidoku round=91 pgid=1896610 attempt=3; 01:57:51 lane-dead-no-report (attempt 3); 02:17:39 launch pgid=1989965 attempt=1; 02:18:13 lane-dead-no-report (attempt 1); 02:18:15 launch pgid=1993840 attempt=2; 02:18:53 lane-dead-no-report (attempt 2); 02:18:55 launch pgid=1997520 attempt=3; 02:19:33 lane-dead-no-report (attempt 3); 07:41:17 launch pgid=153214 attempt=1 (wave dispatched 07:41:53 from the first attempt's ready file, per report); 08:15:14 complete kaidoku round=91 hyaku-inline attempt=1. Status ok, admitted: both claims verify on committed evidence, no axis harmed. Defects routed to round 92 (status-neutral, named in the spotcheck): D-91-1 report says census end run gave 7 W04 warnings, committed receipts and live re-run give 29 (the 7 named ids are a subset; none new); D-91-2 report grades discernment 'mixed' — not protocol vocabulary, graded improved with limits; D-91-3 block 31 third row mis-cites QUALITY 169 (lane-disclosed, frozen-predicate kill rule deferred the fix); D-91-4 frozen C1 label admits two cheat repairs and an rc-1 exit — add rc-2 assertion and cheat arms as new counter arms in r92; D-91-5 README lesson row says six errors mined (M91-1..M91-6), lesson carries eight. SHONEN note for operator: all four boxes look fully checkable by a non-author from committed evidence (decision tables with cited criteria; end-to-end task measured and logged; selftests run without oral context; PROVINCE accurate, connector finds no contested scope) — promotion is operator-owned; this closure writes no [x]. Trends use the protocol vocabulary; the lane's own 'mixed' self-grade recorded as D-91-2. Spotcheck committed and pushed via jj-lane.sh: landed 73a882712907606eba074377b536c6dd82517e25, confirmed on origin refs/heads/main by ls-remote.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 76,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 76,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 76
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth:verifiability": "unchanged",
+    "depth:density": "unchanged",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-76/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-76-verifier-spotcheck.md@2e53fc74776824898b5c5eb914aeddc19a091157",
+    "rechecks": "C1 re-measured on committed bytes (counter diff vs base a7880216 empty -> not landed) + gate evidence-verified per Gate standard (m2b-conjunct-removed survivor receipt selftest cases=8 failures=0 rc0, ReviewC1 A1-A5, A3 NameError kill invalid per R127). C2 re-measured (registry 110->111 with S111 queued at :123, knowledge 91->91 no admitted entry; Q01 'API (1.0)' 9 normalized chars < MIN_QUOTE_CHARS=12 forces rc2; committed ReviewC2 records the real rc=2 run; S108.txt:5-9 endpoint ground held -> B6 unmet). No axis harmed: SCORECARD diff appended-only no score change; non-wave diff exactly the 7 declared files; instruments/SKILL/PROVINCE/knowledge empty diffs. Census validate kasegi ok rc0 (six inherited W04 unchanged). Live S111 refetch 2026-11-05: 3/3 quotes FOUND, raw 15262 bytes match. Prompt template contract complete; no route-map quote (vacuous bucket check). Ancestry: 2c3345a1 and 5da54cd4 ancestors of master; ahead=0, porcelain clean."
+   },
+   "commit": "kasegi-shokunin@2c3345a1336cbb9e9ad332288457de5fc3fb9fae",
+   "closed_at": "2026-11-05T12:08:14Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-11-05T07:34:13-03:00 launch kasegi round=76 pgid=128264 attempt=1; 08:12:11-03:00 lane-dead-no-report (report missing/unchanged/no SHONEN/<400B); 08:12:13-03:00 launch attempt=2 pgid=3984440; 08:59:25-03:00 complete attempt=2. Attempt-1 working-copy leftovers (post-freeze Q01 repair, C1 amendment, C2 entry, LOG/SCORECARD 'landed' text) were reverted by the lane to master bytes - verified as empty diffs; report is real, not a marker (status ok). Both declared claims NOT VERIFIED as declared: C1 kill rule failed (m2b conjunct-removed survivor, rc 0); C2 B5 rc2 (Q01 9<12 chars) and B6 distinctness unmet (endpoint strings held from S108/S080). Honest stop: no score moved, nothing unverified entered a gate; verdict rejected-honest-stop. Discernment: gate admitted none this round, so the LEARNING >=1-admit sample is vacuous (finding, not defect); the R119 distinctness reject and the new queued S111 row were re-opened - both agreed. L0 open, operator-owned: frozen-Q01 option A/B; S111 id collision (80/94 staged ids collide). Routed to lane next round: V-A consuming-assertion kill for case-6 (R127/lesson R-A); V-B fresh manifest passing source-recheck before freeze (R126/R-B); V-C admitted-entry distinctness sweep (R125/R-C); V-E re-run round-start census in-lane (base 110 independently confirmed by closure from a7880216). SHONEN: no [x] box; nothing flagged for promotion (operator-owned).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
