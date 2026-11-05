@@ -214,3 +214,7 @@ Future launches only; no live restarts; live seats keep their captured route. No
 - Post-wrap-up late seats committed as "not a landed round": kasegi 34faab90 and 3cc8cd45, kake d838e744.
   - kake r93 integration owes a 3-entry freshness-sidecar re-pin: spec at `kake-shokunin/.ufo/waves/round-93/w1/ScribeC1Prose/sidecar-repin-for-L1.json`. Without it the paths sweep exits 2.
   - Zero subagents were running at restart time.
+
+## Resume 2026-11-05 (operator restarted omp with new credentials)
+- Route smoke: m_flash amr still 402 (quota until 2026-11-06T22:28Z) -> served by commandcode; scribe haiku-5-5 ok; reviewer zai glm-5.3-flashx ok; scout MiniMax ok. connector devin/swe-2-flash -> `permission_denied: model no longer available`, fell to openai-codex/gpt-6.1-sol. devin/swe-2-flash is the dead tail of every chain.
+- bootstrap(): nothing to adopt, nothing live. Drain flag removed; campaign loop resumed. Six quality pauses still blocked pending operator fresh-start authorization.
