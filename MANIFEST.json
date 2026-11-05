@@ -48841,6 +48841,49 @@
    "notes": "Dispatch digest (watchdog.log is mutable; copied here): 2026-11-05T00:44:04-03:00 launch kengaku round=87 pgid=1767021 driver=hyaku-inline attempt=1; 2026-11-05T01:56:38-03:00 complete kengaku round=87; hyaku-inline attempt=1. No lane-dead-no-report line for kengaku round 87. Report commit bc4c38c9 (kengaku-shokunin); lane HEAD 6b7e83aa; report is real, status ok. Defects, status-neutral: (V1) MISSION L2 floor not met, zero seats dispatched, w1.ready never marked, L0 question .ufo/l0-questions.md:312 open; (V2) frozen BASE figures mispredicted: C1 frozen defects=7 vs measured 3 (value carried from round-86 claims line 29), C2 frozen control expected mismatches>=1 vs measured mismatches=0 defects=1 rc1; neither frozen text repaired; (V3) lesson round-87 Gate lacks spot-check result line; (V4) Mistake 2 fix (Q66) not shown able to fail; (V5) report states coverage as held and expansion observable unmoved, while coverage's counted observable moved; (V6) report does not grade the open round mission progressing or silent; template: commit-before-report ordering and lane write scope are not named items in the dispatched prompt. Admission judgment: C1 admitted despite the frozen BASE-figure miss, because the do-nothing BASE still fails its predicate with rc1; operator may rule otherwise. Routed to the lane for round 88: see corpus/lessons/round-87-verifier-spotcheck.md section 6 (V1-V6). SHONEN: no box marked by the integrator; no promotion or mint; box assessment operator-owned. Judgment note: the spot-check sample is two (one admit, one reject), the minimum the rule requires.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 90,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kotodama",
+   "lane_round": 90,
+   "lanes": {
+    "kotodama": "ok"
+   },
+   "lane_rounds": {
+    "kotodama": 90
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "advance-evidence grader tools/check-advance-evidence.py: one-landing evidence grader, 67-check selftest with per-sub-check negatives, 13 named refusals, committed 43/43 mutation receipt"
+   ],
+   "report": ".ufo/reports/round-90/kotodama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kotodama-shokunin/corpus/lessons/round-90-verifier-spotcheck.md@d39434b3bc8458e1b66edd2d0d0fea9ea32f3331",
+    "rechecks": "Conformance: report author kotodama-shokunin (last commit 882866cd is a hyaku sweep, attribution defect recorded); SHONEN heading with four [~] lines, no [x]; 15 cited lane hashes all ancestors of main; jj-lane state ahead=0 behind=0 porcelain clean; ls-remote main=6394ad43. O re-measured: base tools/check-advance-evidence.py absent (cat-file fails); tip sha256 121888f0 = claims.json tool_sha256 = freeze pin; measure90.py sha256 6e1ea6a5 = counter rev 6; SCORECARD base->tip 49 insertions 0 deletions. O evidence-verified: lands-O-final SELFTEST PASS 67/67, REFUSALS all ok, MUTATION 43/43 (43 KILLED rows counted), MEASURE90-O PASS 6/6, separability PASS. O defect: controls/stub-tool.txt records the stub passing SELFTEST 67/67 while the frozen sentence says it fails SELFTEST; the O kill rule does not enumerate that sentence and REFUSALS 0/13 and MUTATION 0/43 carry the stub discrimination, so not verdict-bearing; routed as a counter revision. C re-measured: entry 20400 B, 8 h2 headings (report says 10), header keys present, 5x4 table; registry 865->875 rows, A 511->517, B 329->330, C 25->28, mined 762->769, rejected 45->48; SOURCES base->tip 10 insertions 0 deletions; S942-S948 mined opened 2026-11-04 used-by entry; ten captures match manifest sha256 and bytes, http 200; ten gate-line quotes located in captures (S950 and S951 after tag strip), word counts 12-22 <=25; census validate rc=0 with no S942-S951 warning; linguistics 34->35, knowledge 261->262. C evidence-verified: lands-C-final ENTRY PASS, INDEX CORPUS-INDEX OK files=262 rows=262 findings=0, APPENDONLY clean, MEASURE90-C PASS 4/4. Discernment spot-check: admits S944 S946 S947 and rejects S949 S950 S951 re-opened live (HTTP 200), 6 of 6 agree. Quality unchanged: no entry re-verified or superseded (freshness paused); the lane's improved claim rests on instrument gains, not corpus quality."
+   },
+   "commit": "kotodama-shokunin@d39434b3bc8458e1b66edd2d0d0fea9ea32f3331",
+   "closed_at": "2026-11-05T05:08:58Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (mutable .ufo/watchdog.log, copied): 2026-11-04T20:12:06-03:00 launch kotodama round=90 pgid=231242 driver=hyaku-inline attempt=3; 2026-11-04T20:35:57-03:00 lane-dead-no-report kotodama round=90 (attempt=3); 2026-11-04T22:31:35-03:00 launch kotodama round=90 pgid=2932451 driver=hyaku-inline attempt=1; 2026-11-04T22:32:07-03:00 lane-dead-no-report (attempt=1); 2026-11-04T22:32:09-03:00 launch kotodama round=90 pgid=2937213 driver=hyaku-inline attempt=2; 2026-11-04T22:32:56-03:00 lane-dead-no-report (attempt=2); 2026-11-04T22:32:57-03:00 launch kotodama round=90 pgid=2956547 driver=hyaku-inline attempt=3; 2026-11-04T22:33:31-03:00 lane-dead-no-report (attempt=3); 2026-11-04T23:51:48-03:00 launch kotodama round=90 pgid=3152336 driver=hyaku-inline attempt=1; 2026-11-05T00:50:51-03:00 complete kotodama round=90; hyaku-inline attempt=1. The digest omits four earlier round-90 lines (19:33:36 launch, 19:46:42 dead, 19:46:44 launch, 20:12:04 dead), which precede the digest window. Conformance defects (status-neutral): report final bytes landed by hyaku sweep commit 882866cd, attribution defect; entry heading count misreported (10 vs 8); O.before cites absent reports/round-89/mutation-score.txt (real receipt .ufo/waves/round-89/w1/MutationCounter.md); stale-lane line lacks progressing/silent grade; lowest-axis clause not met (freshness paused by open L0 round-11/round-89, stagnation nudge not invoked, no numeric scores). Frozen-text defect disclosed by lane and not verdict-bearing: O after_target/predicate STUB sentence vs stub receipt (SELFTEST passes 67/67). Routed to round 91 (spot-check section 6): counter STUB leg is presence-only (observed=recorded) and must become a content check via a new counter revision; grader entry-mode survivors 14/21 (title/chrome quotes, co-fabricated captures, duplicate lands ids, self-quote); numeric and citation corrections by erratum; locator method for markup-split quotes (S951); stale-lane grade; quality trend claim discipline; attribution of own report commit. Promotion: none; no SHONEN box is [x]; SHONEN notes for operator in spot-check section 7 (box 1 needs SKILL.md decision tables, unchanged this round). Spot-check commit d39434b3 landed via jj-lane.sh commit as protocol-shokunin, remote main verified. Round lane tip measured: 6394ad43.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
