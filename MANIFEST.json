@@ -51508,6 +51508,47 @@
    "notes": "Dispatch digest (copied from .ufo/watchdog.log, mutable): 2026-11-05T13:58:31-03:00 launch revenger round=95 pgid=40092 driver=hyaku-inline attempt=1; 2026-11-05T15:00:00-03:00 complete revenger round=95; hyaku-inline attempt=1. Round: 2 declared claims (C1 coverage K, C2 calibration), one v1 wave of 13 seats, frontier step done (S500/S501 tier A, 499->501 rows, census rc 0). Admitted on frozen predicates; C1 re-measured, C2 evidence-verified. Status-neutral conformance defects: (a) lesson round-95.md line 29 labels lane-dispatched votes as 'non-author' (LEARNING §Discernment: dispatched subagent is still the lane) — correct by appended erratum in r96; (b) seat final texts not retained after orchestrator kernel restart (disclosed; seat files are evidence). Routed to revenger r96: critic A3-both and A4 survivors; six C1 legs without discriminating delta (C1_ROWS_TOTAL, C1_TRIO, C1_LINT, C1_EMBEDDED, C1_QUOTES, C1_K_HELD_BACKED); C1_PYCACHE coverage; 22-delta receipt set partial and no stub-prints-pass control; calibration vectors are lane-authored (advisory: next freeze should carry externally authored vectors). Open follow-up S500/S501 non-author re-fetch closed by spot-check file. SHONEN: not assessed to box level; no box claimed checkable by a non-author; promotion operator-owned. Census W01/W04 warnings status-neutral. Routing: none to sibling lanes. Lane tip after round 00c4ac2; closure artifact landed 2875b9c.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 43,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 43,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 43
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "freshness": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-43/kagi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kagi-shokunin/corpus/lessons/round-43-verifier-spotcheck.md@d54109d943abc900e71613a02e5a7a2e46453c3a",
+    "rechecks": "step-1 conformance clean (lane-identity report commit b5a185fc ancestor of fleet HEAD; 1 SHONEN heading, 4/4 boxes; prompt carries full template contract; all six cited lane commits ancestors of refs/heads/master; status clean, ahead=0, remote=65f66e17). C1 re-verified: round-43 counter declares F1-F6 with F6 new (R11-03 deletion, unjournaled; 0 R11-03 mentions in the round-42 counter), expect-journal.sh bytes unchanged, executed readings evidence-verified from committed receipts (old 5, new 6, m3/m5 6, fakeC 5, blankets 0/0). C2 re-verified: gate absent at BASE (rc 128), sha256 fab42e1d matches seat record, snapshot/delete/rerun/cmp/restore mechanism read from committed bytes, receipts 1/0/0 and BASE manifest 8/8 MATCH both modes. C3 re-measured by the judge over committed bytes: literal TMPDIR:-/tmp 5->0, selftest -d HYAKU_SCRATCH 0->5 across the five gates, numstat 7 lines/5 files; executed PASS tokens evidence-verified. Harm check: SCORECARD diff append-only, all six axes 9->9. Census validate kagi ok rc 0, 98 rows; S094 source re-opened (HTTP 200, 11296 bytes, sha256 88556402, cmp exit 0, quote at line 116/offset 6172 verified) - spot-check agree; Gate had one admit, no reject decision to sample."
+   },
+   "commit": "kagi-shokunin@65f66e17a313efd839db2a77e7156a313a1e363d",
+   "closed_at": "2026-11-05T18:34:10Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-11-05T14:30:04-03:00 launch kagi round=43 pgid=305617 driver=hyaku-inline attempt=1 | 2026-11-05T15:27:57-03:00 complete kagi round=43; hyaku-inline attempt=1. No conformance defect. Defects named, status-neutral: historical round-42-era BASE receipts drift disclosed in controls/c2-manifest-rederive-base.txt (round-42/controls/c1-base.txt committed 4 vs re-derived 5; c2-base.txt committed 0 vs re-derived 1; c2-worktree-at-base.txt written by no committed runner) - round-44 correction entry owed; the owed round-40 report erratum (round-41 routed item 3) still unclaimed. Routed (lane's own queue, stands): C2 counter N1/N2 negative fixture gates (M43-7, mutants y1/y2); schedule for corpus/controls-replay.sh; expect-journal.sh *.json discovery fail-closed on wave dir; C3 counter defects M40-9/10/17; six-key answer-key ceiling of C1; considerthese 2026-10-26 proposals 1 and 3. Discernment spot-check: 1 admit sampled and verified (agree, byte-level), no reject decision existed (rows added none) - reject half vacuous this round. SHONEN: all four boxes [~], non-author-checkable from committed evidence - flagged for the operator's promotion review (promotion is operator-owned). Wave: 10 seats, 40% attack share, no dead seats; four seats settled without explicit status lines (QM47). build-results.json lacks per-seat status field (M42-5 recurring; fleet-root wave-prompt template fix is outside lane scope).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
