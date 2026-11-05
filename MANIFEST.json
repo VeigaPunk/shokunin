@@ -52411,6 +52411,47 @@
    "notes": "dispatch 2026-11-05T18:34:43-03:00 launch kaidoku round=99 pgid=1255880 driver=hyaku-inline attempt=1; complete 2026-11-05T19:31:17-03:00 hyaku-inline attempt=1. Conformance defects (status-neutral): D1 lesson ## Gate records no rejection and no round-99 SOURCES ## Search log note (ScoutSources S327 rejection draft not carried in); D2 report/lesson say end census had only pre-existing W04, but S326 adds a new W04 (URL shared with S310); D3 M99-k cited c1 receipts committed only at 09688de2; D4 M99-j forgery-control fixture revision e2502c3d not in lane; D5 coverage head no longer restates recipe A 142/183 (coverage_score 7.8->7.76, legacy, not harm). Routed to round 100: D1-D5 plus lesson named limits 1-3 and round-97 defects 2-5,7. Operator: SHONEN boxes 1-3 look non-author checkable (closure re-ran C2 domain task from committed bytes); promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 99,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "revenger",
+   "lane_round": 99,
+   "lanes": {
+    "revenger": "ok"
+   },
+   "lane_rounds": {
+    "revenger": 99
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-99/revenger.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "revenger-shokunin/corpus/lessons/round-99-verifier-spotcheck.md@0350014d30e91da411ee624025d8d1bb7afc6ccf",
+    "rechecks": "step1: report attributed revenger-shokunin (1174ffb, 19:35:10-03:00, before 19:35:23 completion); SHONEN heading 1, 4 [~] lines = 4 SHONEN.md boxes; 3d054a98/7e6edd4/61e27fe/9ddd38a/0126676/250dd8f/3c707c8 all commits and ancestors of main; jj-lane state ahead=0 behind=0 tracked=0 untracked=0; porcelain empty; prompt sec1-5 = template with placeholders substituted + sec6 addendum; registry rows SKILL.md:640-662. C1 re-measured: README held 13->14 (3d054a98->3c707c8a), only C14 row changed, entry admission-status candidate->admitted, Q11 path count re-derived = 3; gate evidence-verified (counter sha256 620dfca9 unchanged since 0126676; landing-archive-c14r99 on 250dd8f3 C1_K_HELD_BACKED=14/15 C1_VERDICT=pass; controls do-nothing/junk-row rc 1; SELFTEST_C1V8=OK legs=98; votes 33 PASS/18 n/a/0 FAIL on 246d09a8; deriv_check 29 rows 0 mismatch). C2 evidence-verified: v7 holdout98 5/6+4/6=9/12 control-ok -> v8 c2-v8-frozen C2_ACCEPTED=0/12, both controls ok, stub selftest ok, rc 0 (dev set; fresh r99 holdout 12/12 accepted). No-harm: SCORECARD append-only; PROVINCE/QUALITY/SHONEN diff empty; C02 row byte-identical, c02 passes with C14 flip reverted. Spot-check: admit C14/S506 (live curl at 12f6e09 sha256 ce2d122b = committed, quote count 1) agree; admit C14/S507 (record digests equal, head -c 41) agree; reject digest 36cc6ac2 Q16 (scope-check cell not stdout, re-derived) agree; reject S505 mined->queued (grep -cw S505 round-97 = 3) agree. Census rc 0: 21 W01, 13 W04, 0 E; rows 507->507."
+   },
+   "commit": "revenger-shokunin@3c707c8af83020f9a9bd5491efe70be3d5456230",
+   "closed_at": "2026-11-05T22:38:01Z",
+   "campaign": "hyaku",
+   "notes": "dispatch digest: 2026-11-05T18:40:20-03:00 launch revenger round=99 pgid=1373837 driver=hyaku-inline attempt=1; 2026-11-05T19:35:23-03:00 complete revenger round=99; hyaku-inline attempt=1. Admitted: C1 coverage K 13/15->14/15 (C14 held via frozen v8 c14r99) and C2 calibration v7 9/12 -> v8 0/12 (development set; fresh r99 holdout 12/12 accepted, no generalization) both verify; no axis harmed. Conformance notes (status-neutral): report round-end census line omits 13 x W04 its own log records; C1 do-nothing control ran on 61e27feb (Amendment A) not the claims-freeze commit 7e6edd4 named in claims.md; L1 git mv -k slip self-disclosed, no residue. Routed to revenger r100: (1) fresh r99 holdout 12 classes accepted by v8, incl. a counter leg running deriv_check (C14-N3); (2) entry Q-map Q13 rationale stale vs Q11/Q16 deriv_check credits; (3) re-derive C02 no-harm diagnostic rule for K-moving flips (M19); (4) report census lines must carry every warning class; (5) do-nothing control on the commit claims.md names; (6) carried: d-host tree survivor, M4 claude-red-re-bridge.md, producer-attribution census, L0 assimilation 155/155 collisions. Operator: SHONEN boxes 2-3 now have a non-author re-derivation (this closure re-ran C14 derivations and S506/S507 re-opens); promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
