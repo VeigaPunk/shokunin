@@ -49146,6 +49146,44 @@
    "notes": "Dispatch digest (.ufo/watchdog.log, mutable): 2026-11-05T00:50:49-03:00 launch chousa round=80 pgid=1815746 driver=hyaku-inline attempt=3; 00:51:28 lane-dead-no-report (no landed report); 02:17:35 launch pgid=1988632 attempt=1; 02:18:57 lane-dead-no-report; 02:18:59 launch pgid=1998710 attempt=2; 02:19:29 lane-dead-no-report; 02:19:31 launch pgid=2000493 attempt=3; 02:20:04 lane-dead-no-report (three L1 relaunches died on provider errors: amr 402 insufficient_balance, commandcode 401, opencode-go 402; markers moved to blocked/.chousa.run15-20261105-provider-failure-*); 04:18:32 launch pgid=2187962 attempt=1; 04:35:52 complete chousa round=80. Status ok, real landed report (not a marker). Both claims falsified by their own frozen kill rules and filed as honest stops by the lane; admitted=false per the verify-and-no-harm rule. No axis harmed; operability/calibration improved narrowly (instruments landed, evidence-verified), depth/freshness/coverage/adjacency unchanged. Routed defects (status-neutral, for the lane's next round, append-only): (1) C2 sourcing label drift - frozen claims.md binds C2 to S200, SCORECARD/lesson rows say S199; (2) lesson outcome-table C2 cell says improved while SCORECARD/LOG/report say honest stop; (3) frozen claims.md says 15-word for the S200 quote, measured/landed is 20; (4) report prose labels draws run1 PASS/run2 FAIL while receipt files carry opposite contents (r80a-after-v7-run1.txt=FAIL 1/2+1/2, r80d-v7-run2.txt=PASS 2/2+2/2); (5) stray inherited .ufo/waves/round-80/w2/Exec/SubjC2 RECEIPT/ staged but never dispatched (no w2-dispatch.json/w2.ready), disclosed, no wave-2 counts; (6) fifth ## Mistakes row lacks a repeated table header. SHONEN: all four boxes [~] lane-asserted with resolvable pointers, no [x] written - fully checkable by a non-author; promotion stays operator-owned. Round shape: one v1 wave w1 of 12 seats (run-15 band 8-16), attack 5/12, connector 1, 0 dead; planner seat held by the L1; round total 12.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 73,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 73,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 73
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:verifiability": "improved",
+    "coverage": "improved",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-73/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-73-verifier-spotcheck.md@ccd6a54bf392922495c4860332665499582e3213",
+    "rechecks": "Plain re-derivation over committed bytes, lane gates not executed. C1: prefix-less first recheck lines 11 of 88 at fdf17413 -> 0 of 89 at 6582d146; the 11 repairs are prefix-only; entry F51 recheck run verbatim from /tmp exit 0 (31/31 quotes OK); C1-only committed receipt entries=88 exit0_foreign=66 exit1_foreign=22 conformant; base 88-entry population unchanged on landed tree (no base recheck depends on round-73 artifacts), so landed 89/67 is a counter-scope defect (RC-6), not a predicate failure. C2: registry 107->108, knowledge 88->89, knowledge-expected 90/88->91/89 set-equal to file set, one PROVINCE F51 line, capture sha 304baa7d matches, 31/31 quotes located, sources-census validate exit 0, S108 re-opened live (quote line 24 identical). Gate totals FRONTIER-CENSUS 51 and capture-binding 87 not re-executed; committed receipts predate landing. Discernment: 4 of 4 sampled decisions agree (admits S108/F51; rejects overview page api/ and considerthese OSV)."
+   },
+   "commit": "kasegi-shokunin@6582d14672315ac84b1632eb69c879ba23b709a4",
+   "closed_at": "2026-11-05T08:12:28Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (watchdog.log, mutable; copied at closure): 2026-11-05T04:18:30-03:00 launch kasegi round=73 pgid=2187296 driver=hyaku-inline attempt=1; 2026-11-05T05:05:57-03:00 complete kasegi round=73; hyaku-inline attempt=1. Report fleet commit 84cd2260611c472c070c943fea677a904daaa266 by kasegi-shokunin identity; lane landed 6582d14672315ac84b1632eb69c879ba23b709a4 (ahead=0, ls-remote agrees). Defects, status-neutral: R73-V1 lesson Gate does not list rejected candidates (LEARNING §Files); R73-V2 OSV overview page not recorded as a lead; R73-V3 counter scope (RC-1 to RC-3, RC-6); R73-V4 merged-tree census outside repo and committed counter receipts predate landing; R73-V5 no end-to-end trial run per campaign addendum §6; R73-V6 baseline measured before freeze (M73-2, disclosed); R73-V7 dead seat K73AttackC1; R73-V8 prompt ordering items implicit. Routed to lane: all of R73-V1..V5 for round 74. Operator rulings pending: RC-8 (recheck lines run via bash -c inside counter) and whether the C1 frozen kill rule's literal merged-tree census line governs; if it does, C1 fails on the landed tree and admission flips. SHONEN: no box fully checkable by non-author this round; box 2 untouched; box 4 nearest candidate for an operator-side non-author [x]; no [x] written here.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
