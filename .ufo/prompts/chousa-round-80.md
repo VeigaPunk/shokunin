@@ -329,7 +329,7 @@ Phase-1 directives still bind: "train all shokunins to at least round 100"; "com
 every round done"; "do it inline with multiple swarms of subagents".
 
 You are an in-session **L1 lane subagent** dispatched by the hyaku orchestrator (the operator's
-parent omp session) for exactly ONE steered round: **chousa round 80** (attempt 1;
+parent omp session) for exactly ONE steered round: **chousa round 80** (attempt 2;
 campaign target: round 100). Your lane's place in the session follows the goal file (lane
 order and blocks: `.scratch/goal-20261025-hyaku-run7.md`); the orchestrator dispatches your lane's
 next round only after this one lands and its non-author closure is written. Work this round only
@@ -862,3 +862,5 @@ Amendment 22 (operator, 2026-11-04, verbatim: "put command code prior to opencod
 Amendment 23 (operator, 2026-11-04, verbatim: "assign the scribe to anthropic/haiku-5.5 on high effort"): scribe @m_mim -> anthropic/claude-haiku-5-5:high. scout stays on @m_mim.
 
 Amendment 24 (operator, 2026-11-04, verbatim: "distiller can also be anthropic/claude-haiku-5-5:high"): distiller @m_flash -> anthropic/claude-haiku-5-5:high.
+
+Amendment 25 (operator, 2026-11-05, verbatim: "use devin/swe-2-flash as executor"): executor @m_zfl -> devin/swe-2-flash:high (backup config.yml.pre-executor-swe2-20261105). RouteSmokeExecutor was served by devin/swe-2-flash directly with no error. The earlier connector smoke, minutes before, got `permission_denied: model no longer available` on the same model and fell to openai-codex/gpt-6.1-sol, so availability is account/credential-dependent. Seats spawned earlier keep their captured routes.
