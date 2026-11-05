@@ -49954,6 +49954,44 @@
    "notes": "Dispatch digest: `2026-11-05T07:01:47-03:00 launch mori round=94 pgid=2392486 driver=hyaku-inline attempt=1`; `2026-11-05T07:32:08-03:00 complete mori round=94; hyaku-inline attempt=1`. One dispatch, attempt 1, one wave w1 (12 seats, no dead seat; planner seat held by the L1 by disclosure — D1 open, operator-owned). Lane HEAD before 84b15230, after fa1af842 (= origin/master at closure); report committed 3af94fbc by mori-shokunin identity; spotcheck 754f4991 by protocol identity. Verdict: C1 calibration met as frozen and re-derived (instrument move, score conservatively not moved); C2 operability met as frozen but not admitted as an axis-move (non-author critic K01; honest stop per the lane) — hence rejected-honest-stop. No axis harmed. Defects (status-neutral): landing-revision battery re-run cited in the report but only entering/freeze receipts committed (closure covered the landing delta with its own committed-byte measurements); mutation survivors recorded as control-battery gap and routed (C1 m2/m3/m4/m6, C2 m1/m2/m3/m5/m6); env_unset fail-open reads exit code not C1_SETUP line text (routed); sibling host-literal class (seven siblings, w1/Mo94Conn01.md) routed via L0 line 2; digest-gate debt P4 (31 prefix-only rows, S125 unpinned) and round-90 nonce guard (QUALITY 191) carried; L0 line 1 D1 planner binding open with operator. SHONEN: four boxes `[~]` with resolvable pointers, no `[x]`; boxes look fully checkable by a non-author verifier — promotion review is operator-owned. Tool installs: none (lane and seats).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 63,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 63,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 63
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unprovable",
+    "calibration": "unprovable",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-63/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-63-verifier-spotcheck.md@ae2f4ece2c936ecd8c4260632ad7330c84f7882d",
+    "rechecks": "Step-1: report author souji-shokunin d421a9af at 07:28:08-03 precedes complete line 07:28:28; cited commits d7bd4ff2 703a724f e984223d ed764914 all ancestors of master; lane ahead=0 behind=0 porcelain empty; template contract sections present; dispatch digest 06:32:31 launch / 07:28:28 complete; w1-results.json 11 seats. Claims: C1 and C2 receipts (c1-do-nothing/after, c2-do-nothing/after, c3-do-nothing, c3-kind-only-forgery) read and matched the report exactly; candidate sha256 eba4f7e0 matches; no SKILL/tools/knowledge bytes changed in range; no round-63 preregistration in tree; SCORECARD diff adds only the no-admission measurement block and scores unchanged. Counters NOT re-executed (gate standard). S294 re-opened live and vs capture: byte-identical, sha256 4830e69c. Quote wrapped across a source line break; located raw offset 109094 (lesson states 109019 and tag-stripped 31053: defect D1). Rejected gitlink-status inference re-probed in scratch repo: absent gitlink shows ' D'. Census validate rc=0 souji ok (68 W04 advisory). SOURCES 216->217 re-counted."
+   },
+   "commit": "souji-shokunin@ed76491462451e5b0a8f165da16577f129e1ed87",
+   "closed_at": "2026-11-05T10:44:20Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest: 2026-11-05T06:32:31-03:00 launch souji round=63 pgid=2347358 driver=hyaku-inline attempt=1; 2026-11-05T07:28:28-03:00 complete souji round=63; hyaku-inline attempt=1 (.ufo/watchdog.log lines 2795/2805 at closure). Claims: C1 operability and C2 calibration both NOT admitted by the lane (honest stop; no preregistration frozen); closure re-check confirms the chronology defects (M1 H4 row removed after scored measurement, M2 candidate scored before freeze, M3 C2 population narrowed after a scored run). Diagnostic before->after (candidate eba4f7e0 vs do-nothing) is real on the stated counters but is not admissible evidence. No owned axis harmed. Defects (status-neutral): D1 quote-location offsets for S294 in round-63 lesson Gate (cited raw 109019 and tag-stripped 31053; actual raw 109094; quote wrapped across a source line break) = M4-class recurrence, routed to round 64 as a new correction entry; D2 S294 used-by lists round-63 lesson twice, routed; D3 planner seat not dispatched (prompt sec.3 floor; repeat of r62 CD1), routed to round 64 or to operator as an explicit L0 line. Carried open: r62 R1 SKILL.md:830 overreach still present; R3 knowledge verified-at; R6 numeric axis mapping (L0); R7 named limits (F1 allow-dirty content-blindness HIGH). Operator decisions open (L0 lines 335-336): edge-class axis tie-break; MACHINE BLOCK preregistration and numeric mapping. SHONEN: all four boxes [~] with committed pointers, look checkable by a non-author; promotion operator-owned; closure wrote no [x]. Tool installs: none. Spot-check landed ae2f4ece (remote verified).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
