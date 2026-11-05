@@ -52371,6 +52371,46 @@
    "notes": "dispatch 2026-11-05T18:47:18-03:00 launch kengaku round=94 pgid=1548917 driver=hyaku-inline attempt=1; complete 2026-11-05T19:32:50-03:00 hyaku-inline attempt=1; report 5aa2e0cb by lane identity 19:32:22 after lane tip 19:31:08; lane ahead=0 clean. Defects (status-neutral): anchor gate red at T (S299 word count, M1) repaired after T in a618227e; legacy round79 ledger gate +1 RECEIPT-UNTRACKED (receipt vs evidence key); 3 dead wave seats not replaced; dry-run-1 probe bytes uncommitted (W-8). Round-93 routed #1 registry row, #2 Capabilities row, #5 member set, #6 SELFTEST echo done. Routed to r95: run anchor gate pre-commit; commit wave false gates F1-F7/C2-F1/M20 as controls; replace refs + fence variants; surviving gate/C1 mutants; round79 key fix; LANG pin; carried r92 items. SHONEN 4 boxes checkable by a non-author (operator-owned promotion).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 99,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 99,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 99
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "improved",
+    "depth": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "UPX-packed PE truncated-payload refusal"
+   ],
+   "report": ".ufo/reports/round-99/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-99-verifier-spotcheck.md@6371c88633f6ce6692eaeff17e256b80ad21ece0",
+    "rechecks": "step1: report by kaidoku-shokunin (63ff4480, 19:30:18 -0300, after final lane commit 19:28:54); SHONEN heading 4 lines for 4 boxes; 7 cited commits exist and are ancestors of refs/heads/main; jj-lane state ahead=0 behind=0, porcelain empty; prompt lines 1-140 equal templates/round-prompt.md modulo placeholders. C1 re-measured by plain git/python: coverage-map section rows 176/182 (base) -> 182/182 (64cc3e10) -> 183/183 (final); head 168/168 stale -> 183/183 true; registry rows for tools/round-9[789] 0/9 -> 14/14, six pinned sha256 equal committed bytes; 2+6+9=17 equals do-nothing receipt; receipts mismatches 0 exit 0 at 3 revs; selftest 9/0 evidence-verified. C2 evidence-verified (3 receipts carry frozen label exit 0; r98/identity/g2-g8 controls rc=1 committed at 5f08a78f before candidate 01c4b79c) and re-measured on 2 non-pinned DLLs (freeglut64.vc10, gle32.vc10): 6/6 small cuts r98 ok-intact rc0 vs upx -t rc1, r99 refused truncated rc2 no output 8/8 cuts; 2/2 intact, 2/2 random overlays ok; 2/2 zeroed UPX! repaired, upx -d byte-equal. Depth 36->36 evidence-verified. Spot-check: S326 admit agree (live fetch sha ab274d67 equal, line 433 quote), S327 candidate reject agree (GitHub search 0 hits, upx-doc.txt no 'invalid'); census exit 0 kaidoku ok."
+   },
+   "commit": "kaidoku-shokunin@37e5db9a7412e743da253a9f2ddc4ea85b6fe909",
+   "closed_at": "2026-11-05T22:37:47Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-11-05T18:34:43-03:00 launch kaidoku round=99 pgid=1255880 driver=hyaku-inline attempt=1; complete 2026-11-05T19:31:17-03:00 hyaku-inline attempt=1. Conformance defects (status-neutral): D1 lesson ## Gate records no rejection and no round-99 SOURCES ## Search log note (ScoutSources S327 rejection draft not carried in); D2 report/lesson say end census had only pre-existing W04, but S326 adds a new W04 (URL shared with S310); D3 M99-k cited c1 receipts committed only at 09688de2; D4 M99-j forgery-control fixture revision e2502c3d not in lane; D5 coverage head no longer restates recipe A 142/183 (coverage_score 7.8->7.76, legacy, not harm). Routed to round 100: D1-D5 plus lesson named limits 1-3 and round-97 defects 2-5,7. Operator: SHONEN boxes 1-3 look non-author checkable (closure re-ran C2 domain task from committed bytes); promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
