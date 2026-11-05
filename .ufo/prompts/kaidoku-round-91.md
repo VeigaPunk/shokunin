@@ -329,7 +329,7 @@ Phase-1 directives still bind: "train all shokunins to at least round 100"; "com
 every round done"; "do it inline with multiple swarms of subagents".
 
 You are an in-session **L1 lane subagent** dispatched by the hyaku orchestrator (the operator's
-parent omp session) for exactly ONE steered round: **kaidoku round 91** (attempt 3;
+parent omp session) for exactly ONE steered round: **kaidoku round 91** (attempt 1;
 campaign target: round 100). Your lane's place in the session follows the goal file (lane
 order and blocks: `.scratch/goal-20261025-hyaku-run7.md`); the orchestrator dispatches your lane's
 next round only after this one lands and its non-author closure is written. Work this round only
@@ -864,3 +864,5 @@ Amendment 23 (operator, 2026-11-04, verbatim: "assign the scribe to anthropic/ha
 Amendment 24 (operator, 2026-11-04, verbatim: "distiller can also be anthropic/claude-haiku-5-5:high"): distiller @m_flash -> anthropic/claude-haiku-5-5:high.
 
 Amendment 25 (operator, 2026-11-05, verbatim: "use devin/swe-2-flash as executor"): executor @m_zfl -> devin/swe-2-flash:high (backup config.yml.pre-executor-swe2-20261105). RouteSmokeExecutor was served by devin/swe-2-flash directly with no error. The earlier connector smoke, minutes before, got `permission_denied: model no longer available` on the same model and fell to openai-codex/gpt-6.1-sol, so availability is account/credential-dependent. Seats spawned earlier keep their captured routes.
+
+Provider-block clearing (orchestrator, 2026-11-05T02:20-03:00): chousa r80, kaidoku r91, kake r93, kotoba r88 and kotodama r91 were blocked after 3 L1 deaths, all provider errors (amr 402 insufficient_balance, commandcode 401, opencode-go 402). The markers moved to `blocked/.<lane>.run15-20261105-provider-failure-N`. The rounds are unchanged. Only the devin/swe-2-flash tail of the m_flash chain is serving, intermittently. kaidoku r91 has landed claims at deb2765a/f7f5153b and an undispatched r91-w1.ready, so its relaunch must resume and not restart.
