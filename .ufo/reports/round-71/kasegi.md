@@ -218,3 +218,28 @@ GNU coreutils `sort 9.12`, `git 2.56.0`, `jj 0.45.1`, `node`/`ufo-swarm-wave.mjs
 - [~] No cross-domain bleed (PROVINCE.md still accurate) — no PROVINCE change this round; both claims
   stay inside the lane's province (a derive gate over the lane's own instruments; an acquisition
   programme's own disclosure process), sibling scan `ConnectorScope` (attempt 1) `SCOPE CLEAR` on organisation overlap, while `ConnectorTable` (attempt 2) reports `NOT SCOPE CLEAR as frozen` on C2's ground list — recorded and corrected as the `corpus/README.md` `[r71 erratum 1]`.
+
+## Process incident — duplicate L1 on one checkout (append, 2026-11-05)
+
+Appended after the landing commit `cf83e7c`; it changes no claim, score or verdict.
+
+The "unidentified writer" recorded as **M71-5** was **the attempt-1 L1 process, still alive**. The driver
+logged `lane-dead-no-report kasegi round=71` at 22:31:29 (`.ufo/watchdog.log`) and relaunched three times
+before the 23:51 attempt, but the 22:16 process kept executing: it ran its own 14-seat wave to 23:05 and was
+re-entered by the wave-`w2` handoff at 00:24, which is when it applied the two corrections it had itself
+measured through `SentinelC1` (`PY_DENIED_ANY` += `--work`/`--scratch`, `freeze-check.py` head-refused,
+resolved-basename census, `EXPECTED_CASES` 106 → 109).
+
+- **Effect on this round:** none on the frozen claim. The landing L1 detected the byte change
+  (`gate sha256 e5bf2c52…` where the freeze names `182f4ef7…`), restored the frozen bytes from the branch and
+  preserved the patch as `.ufo/waves/round-71/w2/unauthorized-gate-edit.patch`. The claim is still graded on
+  `182f4ef7…`, and the regressions the patch repairs stay routed (V71-6…V71-10) rather than landed.
+- **What r72 needs if it adopts the patch:** the patch is the gate half only. `python_head_ok` is
+  restructured, so two `figure-audit-mutbat.py` targets no longer match (m7/m9 → `sites=0`, `invalid=2`,
+  battery exit 1). The measured working pair reads `--selftest cases=109 failures=0`, the frozen counter
+  `VERIFY measurements=25 failures=0` (gate sha256 `e5bf2c52…`) and `mutbat killed=5/5 invalid=0
+  controls=pass`; the repoint is written out in `corpus/lessons/round-71.md` § Addendum.
+- **Criterion added:** `corpus/QUALITY.md` **R118** — one live L1 per checkout: the driver reaps the previous
+  attempt's process group before relaunch, and an L1 that finds another live L1 stops editing production files
+  and confines itself to read-only verification. Landed in `ce57dfc7edc1f3d3cbfa9673894200209a431cd6`
+  (lesson addendum + R118).
