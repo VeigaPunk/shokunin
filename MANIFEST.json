@@ -48310,6 +48310,44 @@
    "notes": "Dispatch digest (.ufo/watchdog.log, mutable): 2026-11-04T21:04:34-03:00 launch chousa round=79 pgid=289331 driver=hyaku-inline attempt=1; 2026-11-04T21:52:12-03:00 complete chousa round=79; hyaku-inline attempt=1. Status ok, real landed report (not a marker): fleet commit 6448ea4a by chousa-shokunin at 21:52:10, after landing acca2449 (21:50:32) and before the complete line; ## SHONEN once with four [~] rows matching SHONEN.md's four boxes; cited e2bf2bbb and b58a02db exist and are ancestors of refs/heads/master; prompt .ufo/prompts/chousa-round-79.md is templates/round-prompt.md rendered (byte prefix, 8408 chars) plus the §6 addendum; 12 seats in one v1 wave (policy band 8-16), attack 5/12 = 41.7%, 10 retained seat reports. Conformance defects (status-neutral): D1 the report was swept by the orchestrator rather than landed by its author (its own subject says so); D2 corpus/evidence/round79/controls/selfcheck2-after-landing.txt is untracked although the report cites it as C2's landing re-measure (lane ahead=0, untracked=1); D3 report lines 6 and 119 cite the landing commit as the literal LANDING; D4 LOG.md §Round 79 says C2's kill rule 'both are refused' while report, SCORECARD and lesson record it firing on the duplicate-116 input; D5 QUALITY 150-151 sit under a ## Round-80 addition heading though they are round-79 findings; D6 the C1 control receipts name no lane revision and C2's after receipt is REV=worktree. Routed to chousa for round 80: (1) S196's Gate quote is 27 words vs the stated 25 and over the <=25-word bound, S197 is 25 vs 24 stated, S198's quote occurs nowhere in its 11-line cited receipt and its 1-20 span overstates the file - the round's own R79ScribeA corrections were left unlearned; fix as supersedes rows plus a QUALITY criterion that re-opens, greps and wc -w's a located quote; (2) commit or explain the untracked landing receipt; (3) erratum naming acca2449 for the two LANDING cells; (4) appended LOG correction entry on the C2 kill rule; (5) record the QUALITY block mislabel; (6) revision-named control receipts; (7) carried: the payload-decoding channel and the structure matrix forge both batteries, a9 is empty, RECEIPT_LINES exposes an append only, the --work/toolchain legs sit outside the predicate; (8) carried from round 78: no isolated-fixture --selftest on the round-78/79 instruments (0/0/0) and work-contract.py never compares Case A's matrix exit. Operator note: all four SHONEN boxes look checkable by a non-author from committed artifacts; promotion is operator-owned and this closure wrote no [x].",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 70,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 70,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 70
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth:verifiability": "unchanged",
+    "coverage": "improved",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-70/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-70-verifier-spotcheck.md@39cde8a086cf3bfa12aee6682904d194c574a7f0",
+    "rechecks": "C1 evidence-verified, lane gate and counter never executed: figure-audit.py sha256 7a8d52eb at c1051749 (= claims.json + pins-r70 candidate) and c09b0fb1 at base e7c02bd (= pins base); selftest pin re-derived from committed bytes (run_case 86 base -> 96 measured, EXPECTED_CASES 96); receipts c1-base-donothing 12/9 exit1, final-verification 12/0 exit0, forgery failures=4 exit1, each sha256 equal to its pins line; declared universal refuted from committed bytes (PY_DENIED_FLAGS global at :122, python_flags_ok prefix rule :385, seven instruments declare read-only --root, claim-package-check.py:791 --json stdout, no-option head admitted and frontier-recheck-count.py:269 runs bash -c) so C1 NOT VERIFIED as declared = honest stop, depth 4 held. C2 re-measured with my own plain counts over committed bytes: registry 103->105, knowledge 85->86, frontier 47->48, knowledge-expected 87/85->88/86 sort -c exit0, capture records 83/42->84/43 manifests, census exit 0 with the six inherited W04 (S028/S029/S072/S076/S080/S085); S105 capture sha256 9dd51a8e and 19/19 manifest quotes locate at their anchors; S104 live re-fetch 200/3062 bytes/sha256 6fb32b61 with 0 endpoint and 0 /api/ (SPA shell). Spot-check agrees on the admit (S105) and the reject (S104)."
+   },
+   "commit": "kasegi-shokunin@3874e40eee92b5501a56c1551f78eb87d6df51ea",
+   "closed_at": "2026-11-05T01:15:47Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-04T21:02:58-03:00 launch kasegi round=70 pgid=254668 driver=hyaku-inline attempt=1; 2026-11-04T22:03:50-03:00 complete kasegi round=70; hyaku-inline attempt=1. Conformance: report committed by kasegi-shokunin 99a2cf0f at 22:02:19, after the cited lane tip 3874e40e (22:02:00); all 13 cited hashes are ancestors of master; lane repo ahead=0 clean; prompt renders templates/round-prompt.md 1:1 over 140 lines with the hyaku addendum from l.141 (all round-level and five child-lane items present; L2 floor 8 = MISSION.md:55); 12/12 round commits under the lane identity, none touching .ufo/state or watchdog.log; SHONEN heading present with four box lines, no [x]. Wave: one v1 wave, 12 seats (3 executor, 2 reviewer, 2 critic, 1 mutation-tester, 1 sentinel, 1 scout, 1 connector, 1 scribe), 11 seat reports, ExecProbe dead (provider 401, not replaced), round total 12, band 8-16, attack share 5-6/12. Claims: C2 verified by re-measurement (F48/S105 admitted, V69-1 S104 rejected row landed, all frozen counters reproduce); C1 predicate verified (12/9->12/0, selftest 86->96) but its declared universal (every read-only derive stays admitted) is false on 10 measured rows and the exec class is reachable with no option, so the lane's honest stop stands and the round is not admitted. No owned axis harmed (SCORECARD diff is additions only; 4/8/9 held). Defects routed to the lane, status-neutral: C2 landed 20s before its freeze (b4afd8a0 21:19:36 vs e74ba6b5 21:19:56) - freeze-before-data ordering miss; report prose says 10 of 12 seat reports while w1/ holds 11 (M70-4 typed-count class); V70-1..V70-6 carried (per-script denial, no-option/--selftest exec class, selftest single-limb isolation, unmeasured short -o, --root fixture capability loss, quote-audit 5% coverage). Non-author spot-check: admit S105 agree (17-word quote at S105.txt:601, live page carries it), reject S104 agree (byte-identical SPA shell, zero endpoint and /api/). SHONEN: boxes 1/3/4 are [~] author-asserted and box 2 is [ ] - promotion remains operator-owned; no box is checkable to [x] by this non-author without an authorized end-to-end bounty task.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
