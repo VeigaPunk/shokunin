@@ -49516,6 +49516,45 @@
    "notes": "Dispatch/complete digest (watchdog.log, mutable): 2026-11-05T05:00:08-03:00 launch kama round=87 pgid=4168762 driver=hyaku-inline attempt=1; 2026-11-05T05:58:46-03:00 complete kama round=87; hyaku-inline attempt=1. One v1 wave w1, 12 seats, 12/12 reported. Claims: C1 calibration honest stop (not verified; successor fails frozen R4 population rule; selfdesc arm red); C2 operability verified on frozen predicates (capability gate-round86-instruments). Conformance defects, status-neutral: D1 report lists PROTOCOL/LEARNING/CORPUS/QUALITY as not re-read; D2 per-seat answering model not recorded; D3 lesson ## Gate records no source-level reject. Routed to kama round 88: R1 population-preserving selector before data (C1); R2 selfdesc arm red, M4 fix not counted; R3 calibration row goes stale when round-87 spot-check lands (re-point in round 88); R4 round75-instruments APPEND_DEBT red at tip (bad_rows 0->19) cause uninvestigated; R5 MT02 battery pristine check not-ok, 7/7 not kill evidence; R6 gate receipt at fe78ca4f measured with 6 uncommitted files; R7 ## Gate needs source-level reject rows; R8 trend grading per LEARNING table (expansion improved on capability admission; quality observable not met); R9 re-read protocol each steered round; R10 S580 teaches overreaches quote; R11 record per-seat model. Operator notes: no SHONEN box checkable by a non-author from this round; no [x] written; promotion operator-owned. Lane HEAD at close 95ad1dbb, spot-check landed 9b4c7af1.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 74,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 74,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 74
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:verifiability": "improved",
+    "coverage": "improved",
+    "depth:density": "unchanged",
+    "calibration": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-74/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-74-verifier-spotcheck.md@f9cc05b56170946192a2dcafcc07e90ec611746c",
+    "rechecks": "C2 re-measured over committed bytes: registry 108->109, SOURCES diff 0 removed/4 added, knowledge 89->90, knowledge-expected 92/90 sort-clean, capture sha256 c9a7adfb...d486 375 lines, manifest 16 quotes max 22 words 0 unanchored 0 anchor mismatches, F52 rows in README+PROVINCE, sources-census.sh validate exit 0. C1 evidence-verified from committed receipts (sibling gate not executed): red-before at ccd6a54 (4 mutants SURVIVED cases=1), amended counter diff confined to selftest with the 5 frozen cases, MutAudit battery mutants failures=1 / orig failures=0, parity sha256 e1906b88... identical both sides, sentinel bash -c count 1->1. Spot-check re-opened live: S109 README 200 with the 22-word quote verbatim (google/fuzzilli 404 reproduced) - agree; OSV overview page 200 with both lead statements - agree with lead-only reject per CORPUS rule 1."
+   },
+   "commit": "kasegi-shokunin@dca80cf52c5d640ec8be3465fc4aa8e7c5648cc1",
+   "closed_at": "2026-11-05T09:27:52Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (.ufo/watchdog.log 2771/2790): 2026-11-05T05:13:46-03:00 launch kasegi round=74 pgid=923825 driver=hyaku-inline attempt=1; 2026-11-05T06:14:07-03:00 complete kasegi round=74; hyaku-inline attempt=1. Step-1 conformance clean: report landed by lane identity (fleet 1ebb85bf), SHONEN heading 1 with four [~] boxes, all cited lane commits ancestors of master, jj-lane state ahead=0, prompt committed (0106fdcb) and carries the template contract + hyaku addendum. New defect V74-1 (status-neutral, routed to r75): census-evidence timing - all committed census lines (entries=89, exit0_foreign=67, 'entries 89 = ls 89', incl. the report's landed-state 'after integration' line) describe the mid-round pre-C2-landing tree; at implementation revision dca80cf5 knowledge is 90 files, so a tip census prints entries=90/exit0_foreign=68; frozen census clause (entries==ls at the implementation revision) satisfiable there but unevidenced; claims.json note 'C2 landing cannot falsify it' falsified as to receipts; fix: tip-revision census receipt + erratum + freeze-note lesson (M74-2 class). Lane-routed carried and confirmed: M74-6 (C1 scope sentence falsified at file level for restoration-recheck-only files), M74-7 (sibling-distinctness sentence overbroad vs revenger S117/S396), M74-3 (R33 id twice at base and tip), C2 unfrozen clause commands (measured by verifier, hold), RC-8 (operator: bash -c recheck surface unchanged, decision pending). Open operator items: assimilation id drift (r70/r71 L0), C2 api_key clause (r72 L0), trial source conflict observation (curl advisory 4660 USD vs policy none). SHONEN operator note: all four boxes look fully checkable by a non-author; promotion is operator-owned; no [x] written.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
