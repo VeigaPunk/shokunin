@@ -1,112 +1,130 @@
 # kotoba — round 87 report (hyaku run 15, Linux host, omp/18.15.0)
 
-Lane repo `/home/vgpnk/Projects/shokunin/kotoba-shokunin`, branch `master`.
+Lane repo `/home/vgpnk/Projects/shokunin/kotoba-shokunin`, branch `master` (jj-colocated; git backend).
 Base `223ae62424f8ab1eb365d733eb648d6228ddd7e8` (the round-86 non-author spot-check landing).
 Freeze `669f2801c31ef27e18cc35a327d2e18f466281c7` (`plans/round-87.md` alone, before any candidate
 data); addendum 1 `512126bbd762ff82b9f330c4afefb29db7cd9f39`; addendum 2
-`87ab1cb98b4950f5d7291a4a2ddaab535ca72124`. Attempt 1; no earlier attempt of this round exists
-(`grep -n 'kotoba round=87' .ufo/watchdog.log` → one `launch` line, no `lane-dead-no-report`).
+`87ab1cb98b4950f5d7291a4a2ddaab535ca72124`. Lane tip after this attempt: `74048151100e49ce2c628926c88f8b055a52026d`
+(pushed; `git ls-remote origin refs/heads/master` prints it).
 
-**Declared claims.** Two, on two distinct owned axes, both carried from the round-86 closure's
-routed-defect queue (`.ufo/waves`-adjacent record: `corpus/lessons/round-86-verifier-spotcheck.md`
-§ 6) — that queue is the queue of record:
+**Attempt history (from `.ufo/watchdog.log`).** Round 87 was launched eight times before this
+attempt: `19:56`, `20:35`, `20:44`, `21:02` (cycle 1) and `22:29`, `22:31`, `22:32` (cycle 2), with
+five `lane-dead-no-report kotoba round=87` lines; the round's work and its first report (fleet commit
+`d752fdbe9cdf82a6faff730d44f44c6fa3e3eb00`, 21:24) were landed by an earlier instance. This attempt
+(`launch … 23:51:44 … attempt=1`) inherited that work whole — the lane worktree was clean,
+`local == remote == 760e1c5e` — re-verified it, and lands what the re-verification found. Nothing
+inherited was discarded; nothing uncommitted existed.
 
-- **C1 — depth** (score 9, the lane's lowest owned axis): *omp root semantics grounded per root*.
-  The round-86 ledger grounds each discovery root with a quote that merely *occurs* in the binary;
-  the closure's CF1 found that no such quote can ground the plugin root (its quote is the `.omp`
-  config constant, and the reader is a `join(...)` call), CF2 that `{cwd}/` expansion reaches
-  `$HOME`. C1 lands a second ledger whose rows carry the **reader code line** and the **module**,
-  with the walk-up bound and the `..` refusal as conjuncts.
-- **C2 — consistency (calibration sub-axis)** (score 10): *the round-86 closure's five routed defects
-  close* — D1 tip after-values without committed receipts, D2 the planner-seat reason asserted not
-  cited, D3 a `## Gate` with no reject row, D4 a kill rule that does not name the data boundary,
-  D5 the carried base red.
+**Declared claims (frozen; unchanged by this attempt).** Two, on two distinct owned axes. Neither is
+exploratory; no target was narrowed, re-worded or re-scored after data.
 
-No claim is exploratory. Both are measured by a frozen counter committed before any candidate score.
+- **C1 — depth** (the lane's lowest owned axis, score 9): *omp root semantics grounded per root.*
+  `python3 -B verifiers/check_omp_root_semantics.py --rev <rev>` → `omp root semantics grounded N of
+  12`, exit 0 iff N == 12 and guards S1–S3 PASS. Target 12 of 12; base 0 of 12.
+- **C2 — consistency** (the calibration sub-axis, score 10): *the five routed round-86 defects close.*
+  `python3 -B verifiers/check_r86_routed_repairs.py --rev <rev>` → `r86 routed defects closed N of 5`,
+  exit 0 iff N == 5. Target 5 of 5; base 0 of 5 (a committed earlier measurement, see below).
 
 ## Work performed
 
-- **C1 counter `verifiers/check_omp_root_semantics.py`** — frozen predicate
-  `python3 -B verifiers/check_omp_root_semantics.py --rev <rev>` → `omp root semantics grounded N of
-  12`, exit 0 iff N == 12 and guards S1–S3 PASS. Four per-row conjuncts (pattern / reader code line
-  with a path-join token / module header before the quote / expansion bound) and three guards
-  (S1 committed bytes, S2 the ELF sha256 pin, S3 the 12-pattern set). `--self-test` `0 failure(s)
-  over 35 assertions`. Counter sha256 `6e826f3bf8d4585340ddcc9b7a546e4b7d8b9774a2794c4f45b3cf13e7798922`.
-  Evidence: `verifiers/check_omp_root_semantics.py`; `.ufo/waves/round-87/receipts/c1-instrument-freeze.txt`.
-- **C1 ledger `verifiers/omp-skill-roots-semantics.tsv`** — 12 rows,
-  `root_pattern<TAB>binary_quote<TAB>module<TAB>reader_quote`; every `reader_quote` is the join call
-  that builds the root (e.g. `dir: Zo.join(R.path, "skills"),` for the plugin root). The round-86
-  ledger and its frozen counter are untouched (that counter requires exactly two tab cells per row —
-  a third column there would have turned its G4 red). Evidence: the ledger; ELF offsets and mmap
-  commands at `.ufo/waves/round-87/w1/ExecLedger/receipts-elf-reads.txt`.
-- **C1 knowledge entry `corpus/knowledge/omp-root-semantics-round87.md`** — the 12-row table
-  (root · module · reader quote · bound), three author-facing rules (quote the join, not the doc
-  string; `{cwd}/` stops below `$HOME`; a `..` segment never matches), a `## Bound` line, provenance
-  trio on S256. Evidence: the entry; `corpus/README.md` coverage-map row.
-- **C1 source row S256** — omp plugin skill-root reader, `coding-agent/src/discovery/omp-plugins.ts`,
-  upstream tag v18.15.0, HTTP 200, 15 362 B, sha256 `4e66819cf706b81c6f31bd71e6de8892083a284525ab151948642faea00cb1b4`,
-  located quote at upstream line 70. Evidence: `corpus/SOURCES.md` (row S256);
-  `.ufo/waves/round-87/w1/ScoutPlugin/SOURCE_RECORD.txt`.
-- **C2 counter `verifiers/check_r86_routed_repairs.py`** — frozen predicate
-  `… --rev <rev>` → `r86 routed defects closed N of 5`, exit 0 iff N == 5; five items recomputed from
-  committed bytes; `--self-test` `0 failure(s) over 53 assertions`. Evidence: the counter;
-  `.ufo/waves/round-87/receipts/c2-after.txt`.
-- **D1 tip receipts** — `.ufo/waves/round-86/receipts/tip-catalogue.txt` (`omp catalogue lines
-  reproduced 215 of 215`, exit 0) and `tip-registry.txt` (`gate registry rows conformant 67 of 67`,
-  exit 0), each naming the measured revision, with the two instruments byte-identical from the
-  round-86 landing `04647b0f`. Evidence: those two files (the seat's own wave dir was left empty, so the receipts are
-the evidence).
-- **D5 honest carry** — `verifiers/corpus-baseline.json` re-recorded from the gate's own
-  `--no-baseline --json` (three `equal` counts only; every `zero` expectation left at zero), the two
-  new corpus files indexed in `corpus/README.md`, and the two remaining DRIFTs disclosed in the
-  lesson. Evidence: `verifiers/corpus-baseline.json`; `.ufo/waves/round-87/receipts/d5-after-revert.txt`;
-  `corpus/lessons/round-87.md` § D5 disclosure.
-- **M87-1 mined and its fix landed** — a wave seat greened the carried red by rewriting the two
-  citing records in place; both reverted to their branch bytes before any commit, and D5 conjuncts
-  (i)/(ii) now compare both blobs to base. Evidence: `corpus/lessons/round-87.md` § Mistakes;
-  `receipts/d5-after-revert.txt`; the `w_launder` self-test arm.
-- **Gate with real rejects** — five reject rows in the lesson (the round-86 plugin doc quote as a
-  reader, a doc `reader_quote`, the two in-place rewrites, the 13-row denominator, the frozen D5
-  form). Evidence: `corpus/lessons/round-87.md` § Gate; C2's D3 reads `5 reject row(s), longest
-  reason 52 words`.
-- **Frontier curation** — one row opened this round (S256), census exit 0 before and after; a
-  `## Frontier` note and two coverage-map rows appended to `corpus/README.md`; Q78 added to
-  `corpus/QUALITY.md` from `considerthese/2026-10-26.md` proposal 1, grounded on the measured
-  `600 lines / 86 416 B / 156 lines > 120 chars / longest 1 170` at `9b040ed`. Evidence:
-  `receipts/base-battery.txt`, `receipts/census-after.txt`, `corpus/QUALITY.md` Q78.
-- **Attack seats** — `ReviewerC1` built an independent implementation of the four conjuncts and five
-  worlds (`w1/ReviewerC1.md`, `w1/ReviewerC1/`); `MutTester` mutated both counters
-  (`w1/MutTester/mutate_run.py`); `Sentinel` found the 13/12 denominator defect and the clone-only
-  D5 impossibility (`Sentinel-4` report, 21:0x) — both became addenda 1 and 2 before any candidate
-  score. `Critic` died on a provider 401 at wake with no answer (see round shape).
-- **Planner seat mapping** — the §3 planner seat is held by the L1; the swarm validator's
-  `SWARM_ROLES` excludes `planner` (`~/Projects/ufo-fsd-alpha/scripts/ufo-swarm-wave.mjs:263-275`,
-  quoted verbatim in the plan and re-parsed by C2's D2), and the planning data-walk rode the
-  connector and the two scouts.
+The round's claims are carried unchanged from the freeze; this attempt re-derived both counters at the
+tip, attacked them with twelve L2 seats, and landed the one thing the re-derivation found plus the
+criteria it implies.
+
+- **Both counters re-derived at the tip.** At `760e1c5e` C1 reads `12 of 12`, `exit=0`, guards S1–S3
+  PASS; C2 reads `4 of 5`, `exit=1` (D1–D4 PASS, D5(i)/(ii)/(iv) PASS, **D5(iii) FAIL**). Evidence:
+  `.ufo/waves/round-87/w3/l1/c1-tip.txt`; `.ufo/waves/round-87/w3/l1/q79-control.txt`; the seats'
+  independent runs in `.ufo/waves/round-87/w3/ExecTipR87/SUMMARY.json`.
+- **C2's D5(iii) failure diagnosed to one external file.** `.ufo/reports/round-84/kama.md` landed on
+  the fleet repo at 22:47 today (fleet commit `5b052020a13b37340c1054286d65b2514c7133d5`), healing the
+  corpus gate's `report_dead` DRIFT; the frozen D5(iii) wanted exactly two reds, so the item flipped
+  after the round's own 5-of-5 receipt (`receipts/c2-final.txt`) was written. Evidence:
+  `.ufo/waves/round-87/w3/ExecMirrorR87/gate-lane.json` vs `gate-clone.json` (the same bytes in a
+  relocated clone still read two reds, with the detail at `corpus/lessons/round-81.md:29`).
+- **Q79 and its control landed.** `corpus/QUALITY.md` Q79 (a counter conjunct that executes a lane gate
+  inherits the gate's resolution set and must be monotone in the direction of repair) plus the
+  three-world control `.ufo/waves/round-87/w3/l1/q79_location_control.py`, which reads
+  `q79 control: FAIL (same bytes, world-dependent verdict: 2 distinct readings)`, `exit=1`, and also
+  runs the pinned world that reproduces the lane. Evidence: `w3/l1/q79-control.txt`.
+- **C1's `{cwd}/` bound observed on the real client (new capability).** `ExecProbeBoundR87` enumerated
+  the installed client under a scratch `HOME` with `omp skill list --json`: the cwd-chain skill reads
+  `"source":"agents:project"`, the skill under the scratch `HOME` reads `"source":"agents:user"`, and
+  from a cwd outside `$HOME` only the user scopes appears; `strace` shows zero `.agents/skills` opens
+  above `$HOME` and zero `..` probes. Evidence: `.ufo/waves/round-87/w3/ExecProbeBoundR87/skill_list_json.txt`,
+  `strace_skilllist.txt`, `skill_list_outside.txt`, and the capability row in `SCORECARD.md`
+  § Capabilities (first working round 87).
+- **C1's counter is a presence-and-ordering test, not a semantic one.** `CriticSemanticsR87` confirmed
+  every honest `reader_quote` is executable code inside its own module chunk, then built four forgery
+  worlds (a row's quote replaced by another root's reader, by `Zo.join(R.path, "commands")`, by another
+  module's quote, and by a markdown template whose `Array#join` satisfies the token set) and **all four
+  read `12 of 12`, exit 0**. Evidence: `.ufo/waves/round-87/w3/CriticSemanticsR87/forgery-worlds.txt`,
+  `forgery-ledger-diffs.txt`, `attribution.txt`.
+- **C1's conjunct 4 is dead at scoring.** The scoring path calls `run(...)` with `chain=FROZEN_CHAIN`,
+  so conjunct 4's `expected` and `actual` are the same computation; only the self-test's `w_bound`
+  world exercises it. Confirmed in `verifiers/check_omp_root_semantics.py` and by
+  `SentinelEvidenceR87` (F-1). Evidence: `.ufo/waves/round-87/w3/SentinelEvidenceR87.md` § Verdict.
+- **Coverage gap measured: 18 roots, 12 in the ledger.** `ScoutPatternsR87` re-derived the skill-root
+  set from the ELF before reading either ledger and found six joins neither ledger carries
+  (`~/.claude/skills` @173840218, `~/.codex/skills` @173882129, `~/.config/opencode/skills`
+  @172785499, `~/.omp/skillshare/@scope/*/*` @173923798, two plugin-marketplace roots). The L1 re-read
+  those offsets over the ELF independently; they are joins, not doc strings. Evidence:
+  `.ufo/waves/round-87/w3/ScoutPatternsR87/three-way-table.md`,
+  `.ufo/waves/round-87/w3/ScoutPatternsR87/derived-roots.txt`.
+- **Two further instrument gaps named by the scouts.** The counter parses each row's `binary_quote`
+  cell for arity but never matches it against the ELF, so a row could carry a wrong quote and still
+  read GROUND (`w3/ScoutPatternsR87.md`); and the coverage hole is an asymmetry the ledgers themselves
+  expose — rows 5/6 keep `~/.codex/skills` and `~/.config/opencode/skills` inside their
+  `binary_quote` text while their `root_pattern` cell carries only the `{cwd}` half
+  (`w3/ScoutPatternsR87/three-way-table.md`).
+- **S256 re-opened and re-verified.** `ScoutSourceS256R87` re-fetched the row's URL: HTTP `200`,
+  15 362 B, sha256 `4e66819cf706b81c6f31bd71e6de8892083a284525ab151948642faea00cb1b4` (matches the row's
+  pin), quote located at upstream line 70. Evidence:
+  `.ufo/waves/round-87/w3/ScoutSourceS256R87/02-fetch.txt`,
+  `.ufo/waves/round-87/w3/ScoutSourceS256R87/03-reader-vs-doc.txt`.
+- **Independent re-implementations of both claims.** `ReviewC1R87` wrote the four conjuncts from the
+  plan alone and scored `reimpl grounded 12 of 12`, no per-row disagreement; `ReviewD1D5R87` re-checked
+  D1–D5 from committed bytes and reports `C2 at tip: 4 of 5`. Evidence:
+  `.ufo/waves/round-87/w3/ReviewC1R87.md`, `ReviewD1D5R87.md`.
+- **Mutation pass.** `MutateR87` reports `C1 killers: 5/5; C2 killers: 2/3`, the survivor being the
+  proposed subset form of D5(iii), which the tally pin (`7/9`) masks — i.e. the r88 repair must relax
+  both conjuncts. Evidence: `.ufo/waves/round-87/w3/MutateR87.md`, `MutateR87/base/d5-forms.txt`.
+- **Evidence audit and record corrections.** `SentinelEvidenceR87` found 5 findings (2 high, 2 medium,
+  1 low) and confirmed the `/tmp`, credential, ready-file and confinement axes clean; `ScribeIndexR87`
+  indexed 129 files and named five dangling pointers. Four record defects were fixed this attempt
+  (a false `exit=0` in my own base receipt, a missing census receipt, a dangling `w1/Sentinel.md`
+  pointer, and the Q73 sweep the plan promises as a separate receipt when it lives in the
+  `q73_sweep` section of `receipts/base-battery.txt`). Evidence:
+  `.ufo/waves/round-87/w3/SentinelEvidenceR87.md`, `ScribeIndexR87/INDEX.md`,
+  `corpus/lessons/round-87.md` § Record corrections.
+- **Cross-lane and staged-package overlap.** `ConnectOverlapR87`: no sibling lane holds the omp loader
+  semantics; the staged `merge/kotoba/` package is real (mtime 2026-10-24 23:33, rounds 1–16) and its
+  id space **collides** with the lane's (staged `S256` is the `agentskills.io` row the lane holds as
+  `S002`; the lane's `S256` is the omp reader row). Evidence:
+  `.ufo/waves/round-87/w3/ConnectOverlapR87.md`.
+- **Correction to the first report.** Its `Assimilation: none` line said
+  `/home/vgpnk/Projects/shokuknow/merge/` was absent; it exists and has since 2026-10-24 23:33
+  (`stat -c '%y %n'`). The true statement is narrower: no staged material overlaps this round's
+  claims, and the freeze admits one `SOURCES.md` row, so nothing was adopted.
 
 ## Landed changes
 
-Every change is in `LOG.md` § "Round 87" and carries its commit:
-
 | change | commit | LOG entry |
 |---|---|---|
-| `plans/round-87.md` (frozen plan) | `669f2801` | § Round 87, opening |
-| wave r87-w1 spec, dispatch, base battery | `9b040edb` | § Round 87, "Wave" |
-| `plans/round-87-addendum-1.md` (denominator 12; D5 worktree) | `512126bb` | § Round 87, "Correction" |
-| `verifiers/check_omp_root_semantics.py` + instrument receipt; `plans/round-87-addendum-2.md` | `87ab1cb9` | § Round 87, C1 |
-| `verifiers/omp-skill-roots-semantics.tsv`, `corpus/knowledge/omp-root-semantics-round87.md`, `corpus/lessons/round-87.md`, `corpus/SOURCES.md` S256, `corpus/QUALITY.md` Q78, `corpus/README.md`, `SKILL.md` two registry rows, D1 tip receipts, wave-1 evidence | `e03f9e22` | § Round 87, C1/C2/Frontier |
-| `verifiers/check_r86_routed_repairs.py`, `verifiers/corpus-baseline.json`, `corpus/README.md` index rows | `ff4bf3fd` | § Round 87, C2 / No-harm |
-| `LOG.md`, `SCORECARD.md` round-87 blocks; inherited duplicate-L1 w2 artifacts + `INHERITED-w2.txt` | `fcdaba57` | § Round 87 (this entry) |
-| inert duplicate-L1 w2 artifacts removed per the orchestrator ruling (note kept) | `4620a630`, `760e1c5e` | § Round 87, Inherited |
-| wave receipts (`c1-after`, `c1-after-tip`, `c2-after`, `after-battery`, `province-core-tip`) | `35a395a9` | § Round 87, C1/C2 |
-| `receipts/c2-final.txt` (C2 measured at `35a395a9` with a clean worktree) | `3cabd895` | § Round 87, C2 |
+| attempt-1 work (ledger, counters, knowledge entry, S256, Q78, receipts) | see that attempt's block (`760e1c5e` tip) | `LOG.md` § Round 87 |
+| Q79 in `corpus/QUALITY.md`; attempt-2 lesson block, M87-2, record corrections; `LOG.md` and `SCORECARD.md` attempt-2 blocks; wave r87-w3 spec/dispatch/registry; L1 receipts and the Q79 control | `d1c031833c37af99196f72f84a6643f84eec129a` | `LOG.md` § Round 87, attempt 2 |
+| wave r87-w3 seat evidence (the 10 seat reports that had landed) and the final lesson edits (forgery, coverage, dead-conjunct findings) | `3c8902a7f2bd6977a7f9520a363013248a08b127` | `LOG.md` § Round 87, attempt 2 |
+| `SCORECARD.md` § Capabilities capability annotation (installed-client skill-channel probe); all 12 w3 seat reports; counters re-pinned at the tip | `3c8902a7f2bd6977a7f9520a363013248a08b127`, `e4b76dd00d054cc47f82f2bc75f7bd97e08870ad` | same |
+| wave settlement `r87-w3-results.json` (12 of 12 seats) | `49b7d1b43ae23ae997a2d3110247b50e004c277a` | same |
+| counter receipt at the settlement tip (run against `49b7d1b4`) | `74048151100e49ce2c628926c88f8b055a52026d` | same |
 
-`SKILL.md` stayed inside its budget by merging two wrapped paragraph lines before adding the two
-gate-registry rows: `600 of 600` lines, `87 772` bytes.
+The two frozen counters, their ledgers, `corpus/SOURCES.md` and `SKILL.md` are **byte-unchanged** this
+attempt (`git diff --stat 760e1c5e 3c8902a7 -- verifiers/check_omp_root_semantics.py
+verifiers/check_r86_routed_repairs.py verifiers/omp-skill-roots-semantics.tsv corpus/SOURCES.md
+SKILL.md` is empty). The frozen instruments were not amended.
 
 ## Before → after measurements
 
-**C1 — depth.** Counting command (frozen, sha256 `6e826f3b…8922`):
+**C1 — depth.** Counting command (frozen, sha256 `6e826f3bf8d4585340ddcc9b7a546e4b7d8b9774a2794c4f45b3cf13e7798922`):
 
 ```
 python3 -B verifiers/check_omp_root_semantics.py --rev <rev>
@@ -114,11 +132,21 @@ python3 -B verifiers/check_omp_root_semantics.py --rev <rev>
 
 | | value | revision | receipt |
 |---|---|---|---|
-| before | `omp root semantics grounded 0 of 12`, `guard S3 pattern-set FAIL`, `exit=1` | `223ae62424f8ab1eb365d733eb648d6228ddd7e8` | `.ufo/waves/round-87/receipts/c1-instrument-freeze.txt` |
-| after | `omp root semantics grounded 12 of 12`, `guard S3 pattern-set PASS`, `exit=0` | `e03f9e226b51b8cb94f2dc5c7c3027c5286b004b` | `.ufo/waves/round-87/receipts/c1-after.txt` |
-| after (measured tip) | `12 of 12`, `exit=0` | lane tip | `.ufo/waves/round-87/receipts/c1-after-tip.txt` |
+| before | `omp root semantics grounded 0 of 12`, `guard S3 pattern-set FAIL`, `exit=1` | `223ae62424f8ab1eb365d733eb648d6228ddd7e8` | `.ufo/waves/round-87/w3/l1/base-both.txt` |
+| after (attempt 1) | `12 of 12`, `exit=0` | `e03f9e226b51b8cb94f2dc5c7c3027c5286b004b` | `.ufo/waves/round-87/receipts/c1-after.txt` |
+| after (this attempt) | `12 of 12`, `exit=0`, S1–S3 PASS | `760e1c5e` (start), `3c8902a7`, and `49b7d1b4` (the settlement tip; the receipt is committed at `74048151`) | `.ufo/waves/round-87/w3/l1/c1-tip.txt`, `counters-at-3c8902a7.txt`, `counters-at-final-tip.txt` |
 
-**C2 — consistency.** Counting command (frozen):
+**Honest bound (Q71/Q74, measured this attempt):** the number is reachable by a mechanical world. Four
+forged ledgers each read `12 of 12`, `exit=0` (`w3/CriticSemanticsR87/forgery-worlds.txt`), and
+conjunct 4 is dead at scoring (`w3/SentinelEvidenceR87.md` F-1). So C1's evidence is not the count: it
+is the byte-level attribution of all twelve quotes to their own module chunks
+(`w3/CriticSemanticsR87/attribution.txt`), S256's byte-identical upstream pin
+(`w3/ScoutSourceS256R87/02-fetch.txt`), the independent re-implementation (`w3/ReviewC1R87.md`) and
+the live probe for the bound (`w3/ExecProbeBoundR87.md`). The counter is also 12 of an **18-root**
+surface: six further joins exist that no ledger carries (`w3/ScoutPatternsR87/three-way-table.md`), so
+the round moves depth on a 12-row object, and the coverage hole is routed.
+
+**C2 — consistency.** Counting command (frozen, sha256 `26daaa137136f25b098fc2c3ff8c126114a2537c0a77557ceed8c22561b4ee9a`):
 
 ```
 python3 -B verifiers/check_r86_routed_repairs.py --rev <rev>
@@ -126,100 +154,92 @@ python3 -B verifiers/check_r86_routed_repairs.py --rev <rev>
 
 | | value | revision | receipt |
 |---|---|---|---|
-| before | `r86 routed defects closed 0 of 5`, `exit=1` | `223ae62424f8ab1eb365d733eb648d6228ddd7e8` | `.ufo/waves/round-87/w1/ExecRepairs/base.txt` |
-| after | `r86 routed defects closed 5 of 5`, `exit=0` (D1–D5 all PASS) | `ff4bf3fd70662f20ab066eee6fde4bd605aa07b6` | `.ufo/waves/round-87/receipts/c2-after.txt` |
-| after (measured tip, worktree clean) | `5 of 5`, `exit=0` | `35a395a9aabfe2c849628bb4cfe9b25f176de411` | `.ufo/waves/round-87/receipts/c2-final.txt` |
+| before | `0 of 5` (pre-addendum counter, sha `a2455a22…`; the frozen counter refuses the base, `exit=2`) | `223ae62424f8ab1eb365d733eb648d6228ddd7e8` | `.ufo/waves/round-87/w1/ExecRepairs/base.txt`; the refusal is re-measured in `.ufo/waves/round-87/w3/l1/c2-base-clone.txt` |
+| after (attempt 1) | `5 of 5`, `exit=0` | `35a395a9aabfe2c849628bb4cfe9b25f176de411` | `.ufo/waves/round-87/receipts/c2-final.txt` |
+| at the tip (this attempt) | **`4 of 5`**, `exit=1` — D1–D4 PASS, D5(i)/(ii)/(iv) PASS, D5(iii) FAIL | `760e1c5e`, `3c8902a7` and `49b7d1b4` (same reading at all three) | `.ufo/waves/round-87/w3/l1/q79-control.txt`, `counters-at-3c8902a7.txt`, `counters-at-final-tip.txt`; `w3/ExecTipR87/SUMMARY.json` |
+| re-run at `35a395a9` | `could-not-evaluate` (D5(iii)'s tip pin) | `35a395a9aabfe2c849628bb4cfe9b25f176de411` | `w3/ReviewD1D5R87.md` |
 
-Both counters were frozen (bytes committed) before the first candidate score; the two addenda that
-corrected a miscount and an unsatisfiable item are committed at `512126bb` and `87ab1cb9`, and
-neither changed a target. **Honest bound:** per Q71/Q74 the number alone is not the evidence where a
-mechanical world can reach it — the attack seats' worlds and the `--self-test` arms are the
-discrimination evidence, and the semantic half of C1 (whether a reader quote is the reader) rests on
-`w1/ReviewerC1.md` and the non-author closure, not on the count.
+The tip reading is recorded, not re-worded: the frozen acceptance is 5 of 5, C2 is **4 of 5 at the
+tip**, and the miss is the healed external DRIFT (`.ufo/reports/round-84/kama.md` landed at 22:47),
+which Q79 now names as an instrument defect rather than a corpus regression. The same bytes in a
+relocated clone read two reds but a different detail site, so the conjunct is path-dependent too.
+
+The lane tip advanced twice inside the wave (760e1c5e → d1c03183 → 3c8902a7); the counters were
+re-read at the final tip, and any reading that names `760e1c5e` as "the tip" in an earlier receipt is
+stale by design (`w3/l1/counters-at-3c8902a7.txt`).
+
+**No harm (measured at `d1c03183`, re-read at `49b7d1b4` and `74048151`).** `verify_corpus_integrity.py` `8/9` — up from the round's `7/9`,
+the only red being the carried `commit_unresolvable` (`corpus/lessons/round-81.md:8`); the `report_dead`
+DRIFT is gone, not carried. `check_gate_registry.py` `69 of 69`, phantom 0;
+`check_correction_sweep.py` `exit=0`; `check_assertion_floors.py` all rows PASS (`exit=0`, standalone
+run after the battery's 280 s harness timeout, `.ufo/waves/round-87/w3/l1/floors-standalone.txt`);
+`verify_skill_checklist.py`, `verify_corpus_independent.py` red only on the carried
+`citation_resolves`/`commit_unresolvable` reds, both present at base; `SKILL.md` untouched
+(`600 of 600` lines). Battery receipt: `.ufo/waves/round-87/w3/l1/battery-at-d1c03183.txt`.
 
 ## Sources & frontier
 
 - **Census** (frozen command `bash /home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate
-  --root /home/vgpnk/Projects/shokunin kotoba`): **before** `exit=0`, 33 `W04`, 0 `E` rows
-  (`receipts/base-battery.txt`); **after** `exit=0`, 33 `W04`, 0 `E` rows, last line
-  `kotoba ok …/corpus/SOURCES.md` (`receipts/census-after.txt`).
-- **Rows before → after:** 181 → 182 (`grep -cE '^ {0,3}\| S[0-9]{3}' corpus/SOURCES.md` → 182).
-  **Added by tier:** 1 × tier A (`S256`, `kind: code`, status `mined`, opened 2026-11-04, recheck
-  `on-release`). **Rows touched old→new:** 0 other rows.
-- **Frontier rows advanced:** the loader-rule row (`corpus/README.md` § Frontier) gains this round's
-  per-root code grounding (append-only note); the coverage map gains rows for the round-87 entry and
-  lesson. `PROVINCE.md` untouched (its § Frontier/§ Adjacent pin in `check_province_core.py` holds).
-- **Assimilation: none** — `/home/vgpnk/Projects/shokuknow/merge/` is absent on this host
-  (`ls /home/vgpnk/Projects/shokuknow/merge/` → `No such file or directory`), so no package could be
-  adopted; no id-collision check was run because no staged row exists.
-- **`considerthese`** — `considerthese/2026-10-26.md` proposal 1 mined into `corpus/QUALITY.md` Q78
-  (a size ceiling is a ratchet measured at the freeze), grounded on this round's own measurement;
-  the floors-guard change is routed, not landed, because a ceiling red at base cannot land.
+  --root /home/vgpnk/Projects/shokunin kotoba`): **before** (attempt 1, base) `exit=0`, 33 `W04`, 0 `E`
+  rows (`receipts/base-battery.txt`); **after** (this attempt, lane tip) `exit=0`, 33 `W04`, 0 `E` rows,
+  last line `kotoba ok …/corpus/SOURCES.md` (`.ufo/waves/round-87/w3/l1/census-now.txt`).
+- **Rows before → after:** 182 → 182 this attempt (181 → 182 in attempt 1, when S256 was added);
+  `grep -cE '^ {0,3}\| S[0-9]{3}' corpus/SOURCES.md` → `182`. **Added by tier:** 0 this attempt
+  (attempt 1 added 1 × tier A, `S256`). **Rows touched old→new:** 0. **Frontier rows advanced:** the
+  loader-rule row (S256 re-opened and re-verified byte-identical at the pin); the coverage map is
+  unchanged because no new knowledge entry landed this attempt.
+- **Assimilation: none**, with the corrected reason — `/home/vgpnk/Projects/shokuknow/merge/kotoba/`
+  **exists** (188 staged rows, 88 entries, mtime 2026-10-24 23:33) but the freeze's touch list admits
+  one `SOURCES.md` row, and the staged id space collides with the lane's at `S256`; adoption is
+  routed to r88 with an id-collision run first (`w3/ConnectOverlapR87.md`).
+- **`considerthese`** — mined in attempt 1 (`considerthese/2026-10-26.md` proposal 1 → Q78); nothing new
+  this attempt.
 
 ## Trend verdicts
 
-- **expansion — `improved`.** One tier-A source row opened and grounded (S256), one new knowledge
-  entry, two new coverage-map rows, one frontier note; census 181 → 182 rows with exit 0 at both
-  ends.
-- **quality — `improved`.** C1 replaces a presence-floor grounding with per-root reader-code
-  grounding (12 of 12, four conjuncts, three guards); the corpus gate moves `3/9` → `7/9` with the
-  two remaining DRIFTs named; the gate registry moves `67 of 67` → `69 of 69` with no phantom;
-  `SKILL.md` stays `600 of 600` lines with two new registry rows.
-- **discernment — `improved`.** Two addenda were forced by attack seats **before any candidate
-  score** (a miscounted denominator and an unsatisfiable D5), and M87-1 — a routed red greened by
-  rewriting the record that carried it — was caught at integration, reverted, and turned into a
-  gate conjunct shown able to fail. The lesson's `## Gate` carries five reject rows instead of none.
+- **expansion — `unchanged`.** No new source row and no new knowledge entry this attempt; the census
+  holds at 182 rows and the S256 row was re-opened, not extended.
+- **quality — `improved`.** The bound rule is now observed on the real client instead of inferred
+  (`w3/ExecProbeBoundR87.md`), a new verification capability enters the table, and two instrument
+  defects are named with executable evidence (the non-monotone, path-dependent D5(iii) via Q79 and the
+  dead conjunct 4 via `w3/SentinelEvidenceR87.md`).
+- **discernment — `improved`.** Two attack seats falsified things the round had accepted: four forged
+  ledgers reach C1's target, and C2's 5 of 5 is no longer re-derivable at the tip. The round records
+  both, refuses the laundering and amendment routes in `## Gate — attempt 2`, and routes the repairs
+  with their measured shapes.
 
 ## SHONEN
 
-- [~] SKILL.md contains real decision tables, error patterns, checklists, cited sources — evidence: the two new gate-registry rows at `SKILL.md` (registry `69 of 69` conformant at the measured tip, `python3 -B verifiers/check_gate_registry.py --rev <tip>`), the registry rows for both new counters, and `corpus/knowledge/omp-root-semantics-round87.md`'s three author-facing rules indexed in `corpus/README.md`.
-- [~] At least one end-to-end domain task executed and logged in LOG.md — evidence: `LOG.md` § Round 87 (C1's 12-row ELF grounding and C2's five-item closure, both measured on this host), receipts under `.ufo/waves/round-87/receipts/`.
-- [~] Instructions executable by an agent without oral context — evidence: `corpus/lessons/round-87.md` and the two counters' docstrings carry the predicate, the conjuncts, the exit ladder and the receipts' locations; no fresh non-author cold run exists for this round (`corpus/knowledge/` still holds one cold-run record).
-- [~] No cross-domain bleed (PROVINCE.md still accurate) — evidence: `git diff --stat 223ae62 <tip> -- PROVINCE.md` is empty (untouched this round); `python3 -B verifiers/check_province_core.py --rev <rev>` reads `province core rows 0 of 2` with `§ Frontier differs from the base` at base `223ae62` **and** at the tip (a carried red, unchanged by this round — receipt `.ufo/waves/round-87/receipts/province-core-tip.txt`); the connector seat produced no file (its absence is named in the round shape below).
+- [~] SKILL.md contains real decision tables, error patterns, checklists, cited sources — evidence: the two attempt-1 gate-registry rows (`69 of 69` conformant at `3c8902a7`, `python3 -B verifiers/check_gate_registry.py --rev 3c8902a7`), `corpus/knowledge/omp-root-semantics-round87.md`, and this attempt's `w3/CriticSemanticsR87.md` § 1–2 which verifies both the quotes and the module attribution byte-wise.
+- [~] At least one end-to-end domain task executed and logged in LOG.md — evidence: `LOG.md` § Round 87 attempt 2 (the 12-seat verification of both claims); receipts under `.ufo/waves/round-87/w3/`, including the live client probe (`w3/ExecProbeBoundR87.md`).
+- [~] Instructions executable by an agent without oral context — evidence: `w3/ExecProbeBoundR87.md` § Verdict carries the exact `env -i` command and the deciding output; `w3/MutateR87.md` and `w3/q79_location_control.py` are re-runnable from the record. No fresh non-author cold run of the whole lesson exists.
+- [~] No cross-domain bleed (PROVINCE.md still accurate) — evidence: `PROVINCE.md` untouched this round (`git diff --stat 760e1c5e 3c8902a7 -- PROVINCE.md` empty); `w3/ConnectOverlapR87.md` finds no sibling corpus holding the loader semantics; `check_province_core.py` reads `province core rows 0 of 2` with `§ Frontier differs from the base` at base and tip (a carried red).
 
-**Round shape.** One v1 wave, **14 seats**, under `scripts/hyaku/ufo-wave-policy.json` (band 8–16):
-scout 2, executor 4, scribe 3, connector 1, reviewer 1, critic 1, mutation-tester 1, sentinel 1.
-Attack set (reviewer, critic, mutation-tester, sentinel) 4 of 14 = **28.6 % ≥ 25 %**; connectors 1
-(≤ 2). No residual `task` call. Round total **14 seats**. Seats that died: **`Critic-3`** (wake turn
-failed `commandcode/deepseek/deepseek-v4.1-flash` 401 `authentication_error`, no answer produced) and
-**`ExecRepairs-3`** (same 401 at wake, after its counter and self-test had landed). Two scribe seats
-(`ScribeEntry-10`, `ScribeLesson-42`) produced measurement artifacts but no production file; the L1
-wrote the knowledge entry and the lesson from them. Wave settlement: `r87-w1-results.json` carries 14
-rows with `status: null` and `output: null` (the settlement is read from the wave dir, as in round 86).
+**Round shape.** Two dispatches, both v1 waves under `scripts/hyaku/ufo-wave-policy.json` (band 8–16).
+Attempt 1: `r87-w1`, **14 seats** (scout 2, executor 4, scribe 3, connector 1, reviewer 1, critic 1,
+mutation-tester 1, sentinel 1), attack set 4 of 14 = 28.6 %; `Critic-3` and `ExecRepairs-3` died on a
+provider 401 at wake. This attempt: `r87-w3`, **12 seats** (scout 2, executor 3, reviewer 2, critic 1,
+mutation-tester 1, sentinel 1, scribe 1, connector 1), attack set 4 of 12 = 33.3 %, connectors 1
+(≤ 2), residual `task` call none. The §3 planner seat is the L1's (the validator's `SWARM_ROLES`
+excludes `planner`; the planning data-walk rode the two scouts and the connector). Round total across
+both attempts **26 seats**. Dead seats in `r87-w3`: **none** — 12 of 12 seats returned output and each wrote its report file (`r87-w3-results.json`, 12 rows, every output non-empty).
 
-**Inherited / not mine.** A second L1 (`KotobaR87a3`) wrote a round-87 wave-2 spec, dispatch and
-`r87-w2.ready` at 21:02 believing wave 1 had died; I alerted the orchestrator (`agent://Main`, 21:05)
-and deleted the never-taken ready file (no `r87-w2.ready.dispatched` marker existed). The
-orchestrator ruled: "r87-w2 will NOT dispatch … its w2 spec and dispatch files are inert; ignore
-them and don't commit them", and confirmed `KotobaR87a3` died on a provider 401 without committing
-(`jj log` over `223ae62..760e1c5e` shows only `kotoba-shokunin` commits). The artifacts had been
-committed at `fcdaba57` before the ruling arrived and were removed at `4620a630`/`760e1c5e`; the
-one-line record is `.ufo/waves/round-87/INHERITED-w2.txt`. No w2 seat was ever spawned. The `.scratch/*` and `.ufo/reports/round-84/kama.md` modifications at the fleet root
-belong to other actors (misroot sweep: no file written by this round's seats at the fleet root).
+**Misroot sweep.** `git -C /home/vgpnk/Projects/shokunin status --porcelain` shows
+`.scratch/run15-state.json` (orchestrator-owned), `.ufo/reports/round-86/kama.md` (another lane's
+untracked report) and an empty `mo.tip` at the fleet root; no file names this lane or round, so
+nothing was copied or deleted.
 
-**Stale-lane.** One mission for this lane, no respawn: `.ufo/watchdog.log` carries
-`2026-11-04T19:56:11-03:00 launch kotoba round=87 … attempt=1` and no `lane-dead-no-report` line for
-round 87; the round is the lane's only open mission.
+**Stale-lane.** One mission for this lane, no respawn: the round is the lane's only open mission;
+this attempt is the third instance the driver launched for it after two provider-failure cycles.
 
-**Carried reds, measured at base and at the tip (not this round's harm).**
-`verify_corpus_integrity.py` `3/9` → `7/9` (six DRIFTs → the two disclosed ones);
-`verify_corpus_independent.py` `exit=1` at base and at the tip;
-`verify_skill_checklist.py` `governance.citation_resolves` FAIL at base and at the tip (10
-quoted-meta-finding, 3 schematic-token and 2 recorded-absence exclusions apply; `+9 more` unresolved
-tokens, all in `LOG.md`/`SCORECARD.md` historical correction rows);
-`check_province_core.py` `province core rows 0 of 2` with `§ Frontier differs from the base` at base
-and at the tip. `assertion_floors` PASS at base and at the tip; gate registry `67 of 67` → `69 of 69`
-phantom 0; `SKILL.md` `600 of 600` lines at both ends.
+**Carried reds (not this round's harm).** `verify_corpus_integrity.py` `commit_unresolvable 1`
+(`corpus/lessons/round-81.md:8`); `verify_skill_checklist.py` `governance.citation_resolves` FAIL
+(base and tip); `check_province_core.py` `province core rows 0 of 2` with `§ Frontier differs from the
+base` (base and tip).
 
-**Lane tip.** `760e1c5edfdefb4767420f711d08f669952de013` — `git -C kotoba-shokunin ls-remote origin
-refs/heads/master` prints it; `jj-lane.sh state` reads `ahead=0 behind=0 tracked=0 untracked=0`. The
-two claims' after-values were measured at `e03f9e22` (C1) and `35a395a9` (C2), both ancestors of the
-tip; the commits after them are evidence files and the ruling's cleanup, none touching a counter, a
-ledger or a corpus record.
+**Tool installs.** None (no `pacman` transaction; no `uv tool`/`npx` install).
 
-**Tool installs.** None this round (no `pacman` transaction; no `uv tool`/`npx` install).
-
-**Open L0 question.** Appended at `.ufo/l0-questions.md` (`kotoba | round-87 | …`): the two remaining
-corpus-integrity DRIFTs are structurally unrepairable by lane work (a non-author record's fleet-root
-pointer and a correctly-described absent test-world commit); the round asks whether to authorise an
-in-file absence ledger, an operator edit of the two lines, or a permanent-disclosure ruling.
+**Open L0 questions.** Two appended to `.ufo/l0-questions.md`: whether r88 may adopt the staged
+`merge/kotoba/` package under its own freeze with a committed id-collision run (the package's ids
+collide at `S256`), and whether D5(iii) should be stated monotonically in a new r88 counter rather than
+amended post-data.
