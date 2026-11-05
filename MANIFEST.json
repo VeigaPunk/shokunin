@@ -48429,6 +48429,47 @@
    "notes": "Dispatch digest (from mutable .ufo/watchdog.log): 2026-11-04T21:04:36-03:00 launch tsukuroi round=82 pgid=290102 attempt=1; 2026-11-04T21:08:32-03:00 lane-dead-no-report (FAIL report_of); 21:08:34 launch attempt=2 pgid=632720; 21:22:16 lane-dead-no-report; 21:22:19 launch attempt=3 pgid=3442469; 21:37:24 lane-dead-no-report; 21:40:54 launch attempt=1 pgid=3216882; 21:52:14 complete tsukuroi round=82 (hyaku-inline attempt=1). Step 1: report 62ef198e landed by tsukuroi-shokunin at 21:49:05, after the delivered lane tip 11d6112b (21:47:30) and pushed to origin/main; SHONEN heading 1 with 4 [~] lines matching SHONEN.md's 4 boxes (no [x]); cited 2786562e/683ae456/f376054a/8111113c/804dc4cb/43aa5768/41fbe5da/c744021c/aaba83cc/11d6112b all ancestors of refs/heads/master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0, porcelain clean, ls-remote master=11d6112b; all 10 round commits authored+committed tsukuroi-shokunin; prompt carries template sections 1-5 byte-identical modulo placeholder substitution plus the hyaku addendum, the >=8 one-batched-call L2 floor matching MISSION.md:55-56, and all five child-lane items; wave w1 12 seats (3 exec/3 scribe/1 scout/1 connector/1 reviewer/1 critic/1 mutation-tester/1 sentinel), attack 3/12=25%, 12 durable reports, 0 dead, planner held by the L1 per the prompt ruling. Claims: C1 depth re-measured with my own locator over the committed entry+snapshot - 0/8 exact at d5b3e134, 8/8 exact at 11d6112b, only `lines` changed, snapshot sha afbf3be6 re-fetched live identical -> VERIFIED (ordinal 8->8, no uplift endorsed). C2 operability evidence-verified, harness not executed: before 6/26 genuine 0/17, after 22/26 genuine 16/17 rc 1; I confirmed from committed bytes that C16/M06 `old` carry a two-char backslash-n (literal 0x, real newline 1x) and C06/C07 are declared equivalent, so the frozen target (>=24, 17/17) is unreachable by construction -> UNMET honest stop, axis unchanged. C3 calibration re-measured with my own counter: 1 finding/78 examined at d5b3e134 -> 0/77 at f376054a -> 0/80 at 11d6112b -> VERIFIED; under strict earlier-only retirement the single remaining site (:7003) is quoted prose, not a contradiction, so the zero partly rides R82-V2 as the lane disclosed. No axis harmed (no ordinal lowered; d5b3e134..11d6112b is append-only on LOG/SCORECARD/SKILL/QUALITY/README/SOURCES/lessons/tools; the only removals are the two round-81 knowledge files C1 repairs). Trends: expansion unchanged (knowledge 99->99, SOURCES 332->333 re-registration only), quality improved (QUALITY 94->97, three gate rows, ordinal contradiction closed, kills 6->22), discernment improved (miss reported not re-scoped, six defects routed with line evidence, cheat table, concurrent-L1 collision mined). Conformance defects (status-neutral): four driver launches with three false lane-death lines and two concurrent L1s on one lane (disclosed, mined); QUALITY 113 tightened in place at 43aa5768 after landing at 8111113c (disclosed as the anchor-window-drift row); tools/__pycache__/check-anchor-coordinates.cpython-314.pyc written into the lane (R82-V6). Routed to round 83: R82-V1 recipe re-encoding (high); R82-V2 check-scorecard-ordinals.py:102 `or True` retires globally and parses quoted prose as an assertion - must be fixed before another C3-shaped claim is trusted; R82-V3 CannotEvaluate traceback rc 1; R82-V4 timeout-as-kill; R82-V5 snapshot_sha256 never read; R82-V6 pycache; R82-V7 (new) S333 used-by inverted - the cell names the two knowledge entry files but neither mentions S333 (entry source: S331/S332, per-row source S331; only lessons/round-82.md cites it); R82-V8 (new) report swaps the opened/recheck column labels and repeats the R82-V7 claim. SHONEN boxes 1-4 look checkable by a non-author after this review; promotion operator-owned, no [x] written. ADJ-06/OUT-009 kaidoku/revenger ownership left unruled (operator-owned).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 36,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 36,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 36
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "improved",
+    "freshness": "improved",
+    "operability": "unchanged",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-36/kagi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kagi-shokunin/corpus/lessons/round-36-verifier-spotcheck.md@911ab519b6b07694c3cb9f7d9a7c56e142ad957c",
+    "rechecks": "Step-1: report commit 0f90511 by kagi-shokunin (22:10:54 -0300) after the cited lane tip 4a32d2c (22:04:46); SHONEN heading with 4 [~] lines; cb8cb65/09f27e2/00bbe66/4a32d2c all exist and are ancestors of refs/heads/master; jj-lane state ahead=0 tracked=0 untracked=0 and ls-remote = tip; prompt byte-identical to templates/round-prompt.md modulo substitutions plus the hyaku addendum, L2 floor 8 matching MISSION.md:53-65; wave 13 seats / 5 attack (38%) / 1 connector inside the 8-16 band, 13 envelopes incl. CriticClaims' 110-char no-product settle. C1 re-derived by plain counts over committed bytes: SD5 3->0 (lane-status ids R25-02/R29-01/R29-02 absent from the last calibration row at cb8cb65, named at tip) and stale 1->0 (SCORECARD:701 59->70 against ledger R21-03's pinned SOURCES_CENSUS_SELFTEST PASS (70 cases); committed receipt self-counts-at-tip stale=0), sum 4->0 matching final/c1-at-landing.txt; NOT admitted: the population is self-declared and ReviewC1's four shortcuts reach 0 without the work, and the frozen forge-sd5-early-c1 control is degenerate (proves none beyond nowork). C2 re-derived by my own CSV/JSON comparison: 20 clock=feed rows, 15 drift at cb8cb65 -> 0 at tip, fired 3->15, 30 bound rows re-dated 2026-10-21->2026-11-04; receipt sha256 3f611eec committed at the freeze, DEFAULT_RECEIPT_SHA256/receipt_path repointed to it, round-26 observe-2.json retained 13b8540c and pinned by R25-04, c3 CLEAN evidence-verified; three feeds re-fetched live with sha256 3cbfdd86/a54d1a53/9ba8856e identical to the receipt. Axes: SCORECARD six rows 9->9, no decrease; no verifier spot-check file touched (SD6 population preserved); lane census validate exit 0 rows=88. Spot-check re-opened S034/S035 (v2.2.1 @byte726, v2.7.2 @byte729) and S040/S041 (3.15.2 titles, 0 occurrences of 3.15.1) = agree, and the rejected reading (receipt carries no anchored_version) = agree; no new SOURCES row existed to check (88->88, diff empty); kama r82 and kotoba r62 concessions confirmed in their files."
+   },
+   "commit": "kagi-shokunin@4a32d2c99b02a842a36c612ab5315021116da287",
+   "closed_at": "2026-11-05T01:20:23Z",
+   "campaign": "hyaku",
+   "notes": "dispatch digest (.ufo/watchdog.log, mutable): 2026-11-04T20:36:09-03:00 launch kagi round=36 pgid=1037420 driver=hyaku-inline attempt=1; 2026-11-04T20:56:53-03:00 lane-dead-no-report kagi round=36 (attempt 1 ended with no landed report); 2026-11-04T20:56:55-03:00 launch kagi round=36 pgid=3633212 driver=hyaku-inline attempt=2; 2026-11-04T22:12:31-03:00 complete kagi round=36; hyaku-inline attempt=2. Status ok / admitted false / rejected-honest-stop: C2 verifies and is admitted; C1 reaches its frozen target (4->0, both populations re-derived by the closure judge) but the counter admits no-work paths its frozen controls do not cover, so the lane withheld admission rather than rebook the rule after data and I concur. No axis harmed. Conformance defects (status-neutral): attempt-1 lane-round produced no landed report; report cites corpus/lessons/round-36.md M36-4 which does not exist (rows are M36-1/2/3/5) and the lesson's Gate sends the dropped recheck touch to M36-3, a different mistake; the report's census parenthetical says 'five pre-existing W04' where the same command prints 16 at tip and at BASE; frozen control forge-sd5-early-c1 is degenerate (plant target row already names the reds); the C1 kill rule's SD6=5 is layout-dependent (3 in a git archive extraction). Routed to kagi r37: R36-1 append a correction for the dangling M36-4/M36-3 pointers; R36-2 correct the W04 count with its command; R36-3 bind the SD5 forgery to a row that does not already name the reds or drop the rule; R36-4 carry ReviewC1's instrument conditions as claim work (bind to live cells FAIL/POLICY set, compare states, empty red list = SETUP, fail closed on non-zero self-counts exit, POLICY-refused = unverified); R36-5 measure SD6 in one fixed layout or drop it from the kill rule. Operator note: all four SHONEN boxes now look checkable by a non-author (decision tables + resolvable citations, the logged 30-row re-observation, counters re-runnable from a clean extraction, PROVINCE accurate with a 20-lane sole-ground sweep); promotion remains operator-owned and no [x] was written. No promotion, no mint, no L0 appended, no tool installed this round.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
