@@ -50535,6 +50535,44 @@
    "notes": "Dispatch digest: `2026-11-05T09:11:40-03:00 launch mori round=96 pgid=3917832 driver=hyaku-inline attempt=1`; `2026-11-05T10:09:58-03:00 complete mori round=96; hyaku-inline attempt=1` (.ufo/watchdog.log:2831,2846). One dispatch, one wave w1 (10 seats, all settled). Verdict: C1 (calibration) verifies by independent re-derivation; C2 (freshness) unmet under frozen P2 (unpinned=3 vs target 0, ok=89 vs 92) - honest stop, predicate not rescoped after data, so the round is not admitted despite the verified calibration correction; freshness graded unchanged (declared move failed), nothing harmed. Conformance defects (status-neutral, routed to r97): w2-validator.err deleted before commit so the too_few_lanes refusal survives only as prose (corroborated by ufo-wave-policy.json minLanes 8); w1-results.json lacks id/status fields; new counter and digest tool unregistered at the registry home (SKILL.md), r95 routed item 1 still open; w1/lab/Lab-digest-stability.md mislabels S125 falsified-no-match against its own fetch table; digest-tool supersession rule can mask a stale S615 (self-disclosed in DigestExec.md); '124 rows' is the digest tool's evaluated-row count, registry rows are 399. Carried: mutation sweep of the new counter and frozen r79 selftest survivors M2/M5/M6; frozen r79 counter default bound still reads met (THROUGH=78); stale digests S615/S616/S623 await operator ruling (.ufo/l0-questions.md:355); D1 planner binding; r95 items m8/m10/m11 survivors and dormant census_path arm (r95's ## Gate heading item discharged). Disclosure honored: the L0 append commit 0ddb53f7 (+3 lines, lane identity) did not carry the foreign uncommitted lines it named. SHONEN: four [~] boxes with resolvable pointers, no [x] - boxes look fully checkable by a non-author verifier; promotion remains operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 77,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 77,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 77
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth:verifiability": "unchanged",
+    "coverage": "unchanged",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-77/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-77-verifier-spotcheck.md@0687cca8645884aba30c8eb5fa2d8ecaca7245cf",
+    "rechecks": "C1 evidence-verified per Gate standard (sibling gate not executed): instrument diff base->tip empty, sha256 e666ae11...a21a equals frozen pin; do-nothing receipt cases=6 rc0; red-before r76 survivor cases=8 rc0; m1..m5 named kills rc1 with expected classes (K-M2 by gate-negpolarity assertion); X1/X2 survivor receipts cases=12 failures=0 falsify the load-bearing statement; candidate sha256 18bfc439...8833 matches reference pin; score 4->4. C2 re-measured over committed bytes: registry 111->112 (S112 tier A queued at SOURCES.md:124, used-by dash), knowledge 91 unchanged, Q07/Q08/Q12 (S112.txt:35,36,170) byte-restate admitted F51 (osv-post-v1-query-contract.md:21,47; S108.txt:40,41,136) so B6 distinctness fails; snapshot sha256 f3ca0465...0907 matches manifest pin; 13/13 anchors present (Q04/Q05 exact-line offsets confirm M77-7); sources-census.sh validate exit 0 with six inherited W04 warnings. Gate: 0 admits existed; 2 sampled rejects plus the S112 row re-open agree with the gate. Wave w1-results.json: 13 seats, 0 dead, attack 5/13. SCORECARD diff base->tip additions only; no axis harmed."
+   },
+   "commit": "kasegi-shokunin@dd2e7dfbbf5d903305ec2d02a5354dd64d48ef67",
+   "closed_at": "2026-11-05T13:45:59Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (verified against watchdog.log lines 2830/2849): 2026-11-05T09:09:08-03:00 launch kasegi round=77 pgid=3249480 driver=hyaku-inline attempt=1; 2026-11-05T10:36:57-03:00 complete kasegi round=77; hyaku-inline attempt=1. Honest stop: both claims NOT VERIFIED as declared (C1 load-bearing falsified by X1/X2/K-M8; C2 B6 distinctness fails on Q07/Q08/Q12), nothing landed in instrument or knowledge tree, no axis harmed. Step-1 conformance clean: lane-identity report commit fa661e1b, SHONEN heading x1, three cited commits ancestors of master, lane ahead=0/porcelain clean, prompt carries full template contract. Status-neutral record defects stay in notes: M77-8 (claims.json frozen_at 12:45:00Z postdates freeze commit 12:35:02Z and dispatch marker 12:39:55Z), M77-7 (source-recheck four-line anchor window; Q04 anchor 30 quote 31, Q05 anchor 31 quote 32), M77-9 (frozen B7 rationale false: staged package is S031-S124, S112 collides with TC260). Routed R-77-A..F ride corpus/lessons/round-77.md; two L0 questions appended (.ufo/l0-questions.md:353-354, operator-owned). Operator note: SHONEN boxes 1/3/4 carry [~] with resolvable pointers and look fully checkable by a non-author; box 2 remains [ ] (no authorized end-to-end task), so no promotion review can run yet.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
