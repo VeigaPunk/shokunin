@@ -50657,6 +50657,49 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable; copied at closure): 2026-11-05T09:27:07-03:00 launch kotodama round=92 pgid=1140163 driver=hyaku-inline attempt=1; 2026-11-05T11:04:38-03:00 complete kotodama round=92; hyaku-inline attempt=1. Report: lane identity commit 4468b372 (final, cites HEAD 0948cdb9) and earlier 9988cf8a; lane HEAD at round end 0948cdb9; lane HEAD after closure artifact 8b2ce60a. Status ok: report real, cited commits ancestors, lane pushed. Conformance defects (status-neutral): wave shape 10 seats with no planner seat (L1 holds planner, L2 role-floor deviation); stale-lane section lacks per-mission progressing/silent row; leftover untracked dispatch marker .ufo/waves/round-92/w1.ready.dispatched in lane repo; wave-1 dispatch commit message says 4 executors, actual 3 (report corrects). Verdict basis: O and C verified on frozen predicates (O evidence-verified, C re-measured); no axis harmed; admitted. Coverage improved is qualified: sound-symbolism.md section 6 already holds part of the ideophone ground; the overlap is an operator trade (L0 kotodama | round-92), not absorbed. Discernment unchanged: 3 of 6 re-opened rejects disagree and carry no per-candidate reason; routed to round 93 as must-learn (lesson gate, exclusion reasons, QUALITY criterion for title-only triage); harmed if unlearned at the next closure. Routed to round 93: 16 of 21 counterfeits survive v3 (R92-M7) and A6g unhandled crash; D3 intermittent selftest 88/89 unreproduced; mutants.py no refusal path (R92-M3); C predicate lacks check-cited-lines (R92-M6); nine selftest survivors (R92-M8); R92-M10 authorial quotes unbound; correction of the premise that sound-symbolism has no ideophone-class section; lesson describes the Turkish Signifiances study as French rather than French-language on Turkish. Freshness paused by open L0 kotodama round-11 and round-89; lowest-axis obligation neither met nor waived (disclosed by lane). SHONEN: no box checkable by a non-author from this closure; box 1 deferred by lane, not checked here. No promotion, mint or other-lane write.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 93,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 93,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 93
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "freshness": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [
+    "Conditional request evaluation (contract v1): scripts/conditional_eval.py decides 200/304/412 and the deciding precondition over supplied values only; sha256 d3bac7de…, stdlib-only, selftest 90/90, frozen counter met at 75effe7b (hand 44/44, generated 120/120, forgeries refused 6/6)"
+   ],
+   "report": ".ufo/reports/round-93/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-93-verifier-spotcheck.md@0f7d9bbcdd6a9ed36f5bc62b2116ddd040e871a8",
+    "rechecks": "Step 1: report committed by kake-shokunin 2345a1bf (11:05:11 -0300, before completion line 11:11:14); SHONEN heading 1, four box lines (3 [~] with pointers, 1 [ ]), no [x]; cited commits 191ef8dd/bb8012fe/5272c727/d838e744/4f5846fe/75effe7b all exist and are ancestors of master; jj-lane state ahead=0 behind=0, porcelain clean, ls-remote master=75effe7b; prompt is a faithful template render (placeholders only) with hyaku addendum §6. C1 re-measured by closure (frozen counter over committed bytes, read-only): base 10ecbd1a mismatches=20 E1=1 E2=8 E3=1 E4=4 E5=6 met=false exit 1 -> tip 75effe7b mismatches=0 E1..E5=0 pins=ok met=true exit 0 (lessons=88 entries=81 rows=255 criteria=39), matching the report and controls/base-c1.txt; self-test evidence verified from committed receipt ctl-c1-selftest.txt (5/5). C2 re-measured by closure: base bb8012fe candidate=absent met=false exit 1 -> tip candidate=present hand=44/44 generated=120/120 forgeries_refused=6/6 positive=admitted met=true exit 0, candidate sha256 d3bac7de… matches SCORECARD; conditional_eval.py --selftest 90/90 re-run exit 0; fixture-control receipt ctl-c2-fixtures.txt 7/7 evidence-verified. Freshness-sweep gate NOT executed (sibling gate): committed receipt sweep-sidecar-before-after.txt read (before exit 2 sidecar crash, after exit 1 with pre-existing round-90.md:82 miss). No axis harmed: SCORECARD diff d838e744->75effe7b purely additive; axis cells 10/10/2 unchanged. SOURCES re-measured 207->213 (grep both revisions); census validate exit 0 (37 W04 advisories, 31->37 per report). Discernment: live re-open of rfc9110.txt/rfc9111.txt (sha256 21c1cdce…/aeb52adb… byte-match the Gate and S471-S476 digests); five sampled admits verified as exact whitespace-normalized substrings at cited spans, all <=25 words; source-seat span corrections confirmed accurate (original §13.2.2 span 6229-6231 does not contain its quote); both rejects re-opened — errata listings byte-match the seat's digests, 9110 has zero §13.x/§8.8.3.x records, the only §4.3.2-touching 9111 record is Rejected (no force), so both reject verdicts agreed; S471/S476 anchors verified (heading lines 6222/866). Conformance defects stay status-neutral in notes: no WAVE-DONE/w1-results.json (settlement by artifacts, L0 filed .ufo/l0-questions.md:357), four seats without filed reports (partial receipts recovered to w1/recovered-partial/), freeze 12 vs dispatch 13 seat-count drift, L1 Gate block three wrong spans + one 26-word quote (source-seat corrections verified), sweep baseline miss at tip."
+   },
+   "commit": "kake-shokunin@75effe7bbc1b77fbfcf80c09119c0680d9e224c9",
+   "closed_at": "2026-11-05T14:23:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (watchdog.log, mutable): 2026-11-05T00:52:37-03:00 launch kake round=93 pgid=1825962 driver=hyaku-inline attempt=3; 00:53:14 lane-dead-no-report retry; 02:17:42 launch pgid=1991511 attempt=1; 02:18:16 lane-dead-no-report retry; 02:18:18 launch pgid=1995250 attempt=2; 02:18:51 lane-dead-no-report retry; 02:18:53 launch pgid=1996878 attempt=3; 02:19:33 lane-dead-no-report retry; 10:33:26 launch pgid=3763409 attempt=1; 11:11:14 complete kake round=93; hyaku-inline attempt=1. Resumed attempt inherited earlier attempts' outputs, disclosed item-by-item in the report. Conformance defects (status-neutral): no WAVE-DONE/w1-results.json — settlement evidenced by committed artifacts, operator ruling requested (.ufo/l0-questions.md:357); four seats filed no report (ScoutGround empty, CriticClaims/MutConditional/SentinelScope partial receipts under w1/recovered-partial/); freeze text 12 seats vs dispatch 13 (disclosed drift); L1 Gate block quote-span/length defects corrected by the source-seat block and verified against live bytes; freshness sweep exit 1 at tip with pre-existing unannotated miss (~/projects, round-90.md:82). Routed to the lane's next round: R93-1…R93-15 (successor C1 counter R93-1…R93-6; C2 frozen-population gaps R93-7/R93-8), the freeze-vs-dispatch reconciliation, pre-commit quote verification, and the sweep-baseline annotation. SHONEN note for operator: boxes 1/3/4 carry [~] with resolvable pointers re-checkable by a non-author (E5 class 0 re-measured; conditional_eval.py --selftest 90/90 re-run; w1/ConnectorScope.md), box 2 [ ]; no [x] written; promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
