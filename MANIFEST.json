@@ -48597,6 +48597,44 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-11-04T22:12:36-03:00 launch kaidoku round=90 pgid=2559947 attempt=1; 22:31:23 lane-dead-no-report (attempt 1); 22:31:25 launch pgid=2928275 attempt=2; 22:32:19 lane-dead-no-report (attempt 2); 22:32:21 launch pgid=2942391 attempt=3; 22:32:59 lane-dead-no-report (attempt 3); 23:51:46 launch pgid=3151696 attempt=1; 2026-11-05T00:31:43-03:00 complete kaidoku round=90 (hyaku-inline attempt=1). Status ok: real report (16,587 B / 217 lines, SHONEN heading with 4 [~] lines, seven lane-commit citations, all ancestors of main), filed 9 s after the lane tip commit by the kaidoku identity. Two claims verified: R90-C1 coverage improved (capability T5-chain-szcpr-wrong-later enters Core; evidence-verified, pins re-derived, not re-executed) and R90-C2 depth improved (block 30; re-measured 29→30 with every citation resolving). No axis harmed; SCORECARD diff adds records only. Routed to round 91 (D-1..D-6, detail in the spot-check §7): D-1 SCORECARD round-90 paragraph and LOG round-90 Sources bullet still say 220 rows / S313-S315 / QUALITY 172-173 against the measured 221 / S313-S316 / QUALITY 177 (LOG append-only → correction entry); D-2 the c264f7a4 landed-change row lacks its LOG.md cell; D-3 the report attributes pre/c2-depth-at-base.json (revision 54c277868) to fc52cc9dc (SKILL.md byte-identical 56736cb8…, so the measurement transfers); D-4 no SKILL.md registry row for tools/round-90/upx-break-repair.py, upx-later-block-battery.py or control-cheat-repack.py (last row round-89, SKILL.md:1979) — Gate-standard delivery; D-5 SCORECARD C1 command leaves --rev <measured> unsubstituted (QUALITY 173); D-6 attack share is 4/13 = 30.8 % under the run-89 house list, not the reported 5/13 (floor holds). Declared limits stand: last-block fall-through (QUALITY 176), blind arm's boxes tree (174), six untyped crashes on 27 hostile inputs (177), depth predicate not entailing a table (175), 15/17 mutants surviving; the source-free cheat that keeps met_target true is disclosed and confines C1 to a capability claim. SHONEN: all four boxes look fully checkable by a non-author from the cited evidence; promotion remains operator-owned and no [x] was written.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 71,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 71,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 71
+   },
+   "admitted": false,
+   "verdict": "rejected-harmed",
+   "verdicts": {
+    "depth:verifiability": "harmed",
+    "coverage": "improved",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-71/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-71-verifier-spotcheck.md@87d84a28b5a0711230d723e4eda423790e081212",
+    "rechecks": "C1 evidence-verified (receipts 25/0 candidate, 25/13 do-nothing selftest 96 marker_runs=1, 25/14 base, 25/12 forgery, each sha256 equal to its pins line; gate 182f4ef7 at 4e33119..tip, base gate 7a8d52eb at 39cde8a; selftest pin 106 matches the SKILL registry row), falsification and harm re-derived from committed bytes (R5-R8 each exit 1 so the counter's stale branch compares nothing; ast over the r70 PY_DENIED_FLAGS vs the r71 PY_DENIED_ANY/PY_DENIED_BY_SCRIPT tables gives 43 heads re-admitting a base-denied flag, 26 with a parser-declared flag). C2 re-measured with plain counters at ce57dfc: FRONTIER-CENSUS rows=49 admitted=49 registry=106, entries=52 pass=52, capture records=85 bound=85 unbound=0, knowledge-expected 89/87 sort -c 0, 87 files, census exit 0 with six inherited W04; F49 row README:1114 + erratum :1122; 15/15 S106 quotes recheck. Spot-check: S106 live page + capture agree as narrowed, S104 carried reject agrees (3062 bytes sha256 6fb32b61, zero endpoint//api/)."
+   },
+   "commit": "kasegi-shokunin@ce57dfc7edc1f3d3cbfa9673894200209a431cd6",
+   "closed_at": "2026-11-05T03:47:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-04T22:16:41-03:00 launch kasegi round=71 pgid=2583775 attempt=1; 22:31:29 lane-dead-no-report (FAIL report_of); 22:31:31 launch attempt=2 pgid=2930804; 22:32:05 lane-dead-no-report; 22:32:07 launch attempt=3 pgid=2936472; 22:32:59 lane-dead-no-report; 23:51:35 launch attempt=1 pgid=3147795; 2026-11-05T00:33:50 complete kasegi round=71. Conformance: report filed by kasegi-shokunin in 91e99c4/65b8528/a7fb71b; SHONEN heading at :207 with one line per box; cited cf83e7c/0e260a5/4e33119/453275f/34faab9/3cc8cd4/ce57dfc all ancestors of master; lane ahead=0 and clean; prompt renders templates/round-prompt.md §1-§5 verbatim plus the §6 addendum with all five child-lane items; L2 roles bound to the host route table with no model passed. Defects (status-neutral): the report's base prefix 39cde8ab does not resolve (real 39cde8a086cf); w2 carries 12 seats with no planner seat and 1 executor against the template's 1 planner + 3 executors (w1: 14 seats, 3 executors, no planner); the counter docstring's R4/R8 rows drift from its code; the driver logged lane-dead while the attempt-1 process kept running and writing to the lane (M71-5/R118; committed gate bytes stayed 182f4ef7 at every rev). C1 NOT VERIFIED as declared, confirmed from committed bytes: R5-R8 each exit 1, so the counter's stale branch compares nothing and R8 compares '' to ''; and the r71 mechanism re-admits a base-denied write root on 43 heads (literal criterion; 26 parser-declared), so the report's '23' understates the harm (routed K71-A); SentinelC1 rows 23/28 follow from the code (r47-counters-selftest.py requires --work and copytrees the base into it). depth:verifiability harmed; no score move claimed by the lane. C2 re-measured: rows=49 registry=106 entries=52/52 records=85/85 knowledge-expected 89/87 sort clean, 87 files, census exit 0 (six inherited W04); F49 row plus erratum present; 15/15 S106 quotes recheck. Spot-check: S106 admit agrees as narrowed (live page + capture, quote at S106.txt:70), S104 carried reject agrees (3062 bytes sha256 6fb32b61, zero endpoint and /api/); the round made no reject decision. Routed to r72: K71-A harm count with its command; K71-B V71-7/V71-8 repairs; K71-C R8 vacuous value limb (V71-4); K71-D base-hash erratum; K71-E wave role split vs template; K71-F docstring drift; K71-G pgid reaping (operator/driver). Method deviation disclosed in the spotcheck: the integrator also ran the lane counter once after reading the receipts (reproduced 25/0 and 25/13); no verdict rests on it. SHONEN is not fully checkable by a non-author: box 2 remains [ ] (no end-to-end domain task).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
