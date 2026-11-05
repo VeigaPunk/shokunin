@@ -49992,6 +49992,49 @@
    "notes": "dispatch/complete digest: 2026-11-05T06:32:31-03:00 launch souji round=63 pgid=2347358 driver=hyaku-inline attempt=1; 2026-11-05T07:28:28-03:00 complete souji round=63; hyaku-inline attempt=1 (.ufo/watchdog.log lines 2795/2805 at closure). Claims: C1 operability and C2 calibration both NOT admitted by the lane (honest stop; no preregistration frozen); closure re-check confirms the chronology defects (M1 H4 row removed after scored measurement, M2 candidate scored before freeze, M3 C2 population narrowed after a scored run). Diagnostic before->after (candidate eba4f7e0 vs do-nothing) is real on the stated counters but is not admissible evidence. No owned axis harmed. Defects (status-neutral): D1 quote-location offsets for S294 in round-63 lesson Gate (cited raw 109019 and tag-stripped 31053; actual raw 109094; quote wrapped across a source line break) = M4-class recurrence, routed to round 64 as a new correction entry; D2 S294 used-by lists round-63 lesson twice, routed; D3 planner seat not dispatched (prompt sec.3 floor; repeat of r62 CD1), routed to round 64 or to operator as an explicit L0 line. Carried open: r62 R1 SKILL.md:830 overreach still present; R3 knowledge verified-at; R6 numeric axis mapping (L0); R7 named limits (F1 allow-dirty content-blindness HIGH). Operator decisions open (L0 lines 335-336): edge-class axis tie-break; MACHINE BLOCK preregistration and numeric mapping. SHONEN: all four boxes [~] with committed pointers, look checkable by a non-author; promotion operator-owned; closure wrote no [x]. Tool installs: none. Spot-check landed ae2f4ece (remote verified).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 67,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 67,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 67
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "adjacency": "unchanged",
+    "calibration": "improved",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "chromium-hscroll-domain-linux"
+   ],
+   "report": ".ufo/reports/round-67/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-67-verifier-spotcheck.md@1746c53de7d56e8aeaf420a68b5b95e6af96adf8",
+    "rechecks": "Step-1 green (report by lane identity d48c87ef, SHONEN heading 4 boxes, all cited hashes ancestors, ahead=0, clean tree). C2 evidence-verified: scored receipts show v3 exit 0 accepting ../outside.mjs, v4 exit 1 matrix-input 'input escapes repo', selftest 17/17, mutants 15/16/15-of-17 red. C3 pins re-hashed over committed bytes (driver b7cd3b1d, counter cf97a68d, receipt 5254538d) plus evidence-verified receipts: live verifier 2 cold runs exit 0, counter exit 0, selftest 37/37, negatives 35/35 refused forgedGreen 0, mutants 13/13 killed, degenerate 13/23/6 findings. C1 refutation re-measured: ledger 95 no-tabi-ground rows, zeroHit 0 via BG_WORDS sweep; withdrawal evidence-backed and honest; lowest-axis obligation unmet -> not admitted. Gates not executed per Gate standard. No axis harmed (SCORECARD diff touches only the appended round-67 block). Spot-check: S172 admit agreed (live source byte-identical e8f4fbda, both quotes located); C1-rule reject agreed; timing reject agreed."
+   },
+   "commit": "tabi-shokunin@cd88c53f5adee028d9cb6b79432d49f7a3b7561a",
+   "closed_at": "2026-11-05T10:44:34Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (watchdog lines 2794/2808): 2026-11-05T06:30:59-03:00 launch tabi round=67 pgid=1862454 driver=hyaku-inline attempt=1; 2026-11-05T07:31:04-03:00 complete tabi round=67; hyaku-inline attempt=1. Lane HEAD cd88c53f pushed (ls-remote equal); base 5400136b. Wave w1: 13 seats, one batched call, 0 dead, attack share 5/13=38%, >=8 L2 floor met; prompt = template render + hyaku addendum, L2 bucket matches MISSION.md. Round not admitted: C1 (adjacency, lowest, 8) withdrawn before freeze on committed refutation (95/95 no-tabi-ground rows carry a BG word; v22 flip baseline 298/298 accepted; rule unsatisfiable by construction) — honest stop, lane self-reported. Defects (status-neutral, routed to lane for r68): (1) SKILL.md instrument/gate registry still lists only the r64 generation — r67 instruments (driver r67, chromium-hscroll-r67 counter + negatives/mutate, verify-live-r67, check-receipt-provenance-v4) have no registry row at the registry home; (2) claims.json frozenAt reads 'pending-commit' at freeze e0fc04c2 (same as r66, disclosed in errata); (3) S172 quote 2 is 13 words, recorded as 14 (<=25-word contract met; correction recorded in the spotcheck); (4) pre-fix mutant-survivor evidence exists only as seat report R67Executor3 (disclosed). Operator note: all four SHONEN boxes are [~] with resolvable pointers and checkable by a non-author today — promotion review is operator-owned. L0 open: tabi|round-67 adjacency ruling (routed around); older tabi L0s remain open.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
