@@ -272,3 +272,42 @@ indexed in `corpus/README.md` without editing it.
 - Lane tip at this correction: `239f8699a3cc336257f4c5659b2c2961582df900` (pushed). All standing
   gates were re-run green at the tip before this correction and are unaffected by it (lesson text
   only).
+
+## Amendment (dated 2026-11-05, from the still-running attempt 1)
+
+**Two L1 instances ran this round concurrently, and the wave settled after the report was filed.**
+Both facts are disclosed here rather than corrected in place; no claim sentence, target, counter,
+kill rule or evidence file is changed by this amendment, and the round total stays 12 seats.
+
+- **The "earlier attempt" was a live process, not a dead one.** Lane `kengaku` round-86 attempt 1
+  (agent `KengakuR86`, launched `22:20:16`) was declared `lane-dead-no-report` at `22:30:17` while it
+  was still working; attempt 2 (launched `22:30:19`) died at `23:27`; the launch at `23:51:41` filed
+  the report above, and the driver recorded `complete` at `00:33:18`. Attempt 1 never stopped: it
+  wrote the case table, the probe, both counters and the box-4 re-pin, committed them
+  (`0481a6d3`, `c939e6b5`, `bfda0472`) and ran their pre-freeze batteries while attempt 3 inherited
+  those bytes as "inherited state". The final tree is therefore not forked work: attempt 3
+  re-verified the inherited instruments, hardened them to v2 (`e23bec07`), re-minted the receipt at a
+  clean tip (`276abd46`), dispatched the wave and landed the data. The *Inherited state* paragraph
+  is accurate about which bytes were reused and superseded; what it could not know is that the
+  author of those bytes was still running.
+- **The wave envelope arrived after the report.** `w1-results.json` settled at `00:40` (`WAVE-DONE`
+  received `00:41`), after the report's "no results envelope" statement, and `ScoutR86`'s final
+  recon bytes landed after its `239f8699` snapshot. Envelope and final recon are committed at
+  `0793d2e2`. The settled envelope changes two round-shape facts:
+  - **12 of 12 seats returned output**, not eleven plus one unknown. The envelope carries no per-seat
+    `id` or `status` (the dispatcher's known metadata loss), so "each seat was alive at close" is not
+    claimable; the counts come from its twelve entries.
+  - **Role mix confirmed:** scout 1, executor 3, scribe 2, reviewer 2, critic 1, mutation-tester 1,
+    sentinel 1, connector 1 — attack share 4/12 = 33 % by the campaign's four named attack roles,
+    5/12 = 42 % counting the sentinel. `ReviewerC286`'s 672-byte output is real and remains unused,
+    as the report states.
+- **Independent close measurement at the settled tip** (`addaba22`, transcript
+  `.ufo/waves/round-86/L1/close-remeasure.txt`): `PREDICATE R86-C1 pass` (`members=1 cases=8 legs=24
+  mismatches=0 located=1 executed=1 defects=0`, exit 0) and `PREDICATE R86-C2 pass`
+  (`derived_line=151 shonen_pointer=PROVINCE.md:151 pin_line=151 state_mismatches=0 selftest=pass
+  defects=0`, exit 0); `plans/state_check.py --summary` prints `VERDICT: PASS` with zero `MISMATCH:`
+  lines (exit 0); `scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin kengaku`
+  exits 0. This is a second measurement of the same frozen predicates at the close tip, taken by the
+  other L1 instance; it re-scores nothing and amends neither claim.
+- **Lane tip at this amendment:** `addaba22e081e78f1e4a84f20f13f4df5410f3b8`, equal to the remote's
+  `refs/heads/master` (`git ls-remote origin refs/heads/master`).
