@@ -5,7 +5,7 @@ Claims: **C1** coverage — capability `chromium-wheel-scroll-domain-linux`,
 generation 2 (a run-bound receipt plus a live re-run as the demonstration);
 **C2** calibration — the lane's control receipts are re-derivable from committed
 bytes (receipt-provenance gate). L1: `TabiR64`. Lane tip after this round:
-`5dd531afad331aa0440b7b39790e302d272aadde`.
+`e23037304ac72e07c664fb0cf2bb57f9f441c241`.
 
 This round was launched three times before this attempt and each earlier L1 died
 on provider failure (`lane-dead-no-report tabi round=64` at 22:32:15, 22:32:54,
@@ -87,9 +87,10 @@ Every change is one commit; the round's `LOG.md` entry is the narrative.
 | `e3f52156` | scored wheel/scroll evidence (fresh run, new nonce), scored control base, QUALITY 118 | round 64 entry |
 | `382e83b1` | scored control receipts at `e3f52156`, knowledge note re-pointed, SOURCES 169, README r64 row under its own heading, SKILL round-64 pin decision row, lesson (Gate/Mistakes/wave), SCORECARD round-64 block, census end | round 64 entry |
 | `5dd531af` | LOG.md round-64 entry | — |
+| `e2303730` | sources `used-by` reciprocity for S166/S167 (the note's `source:` line), lesson Gate record, census end | round 64 entry |
 
 Lane pushed: `git ls-remote origin refs/heads/master` →
-`5dd531afad331aa0440b7b39790e302d272aadde` (pre-report gate, printed by the
+`e23037304ac72e07c664fb0cf2bb57f9f441c241` (pre-report gate, printed by the
 command below).
 
 ## Before → after measurements
@@ -166,7 +167,9 @@ Census command (round start and round end):
   `…/s171-chromium155-Browser.pdl` (12,079 B, sha256 `5e1faf7d…70da`, the
   `getVersion` response fields at lines 208–219). Both quotes were located by the
   L1 in the committed bytes this round.
-- rows touched old→new: **S153** (re-opened in place at round start: `scope`
+- rows touched old→new: **S166 / S167** — `used-by` gained
+  `corpus/knowledge/chromium-wheel-scroll-round-64.md` (reciprocity for the note's
+  `source:` line; scope/status/opened/recheck unchanged), and **S153** (re-opened in place at round start: `scope`
   gained the `Input.dispatchMouseEvent` delta-unit and `captureBeyondViewport`
   extension; `anchor` gained the 2026-11-04 re-fetch 1,423,215 B / sha256
   `cb4b0a40…` with two located quotes; `used-by` gained the r64 note and lesson;
