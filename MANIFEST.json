@@ -51467,6 +51467,47 @@
    "notes": "Dispatch/complete digest (watchdog.log lines 2882/2895): 2026-11-05T13:37:49-03:00 launch kotodama round=94 pgid=2727365 driver=hyaku-inline attempt=1; 2026-11-05T14:41:12-03:00 complete kotodama round=94; hyaku-inline attempt=1. Honest stop, not admitted: claim O (operability) fails its own frozen MUTATION leg (86/88 killed, 1 survived, 1 broken-pattern vs required 88/88, 0/0) - the lane reported the failure as declared without narrowing it, so rejected-honest-stop with lanes kotodama ok; C (coverage) and A (adjacency) verify re-measured and stand. operability graded unchanged (unmet frozen predicate; the verified partial gains - routed mutants 0/5->5/5, battery 4 survivors/3 unnamed->0/0 named, selftest 114->126, REG byte-identical - are recorded, not scored as a move; fleet precedent kake r94/r95). No axis harmed. capabilities_added []: the SCORECARD capability row 'grader v5 counterfeit refusals' landed author-side pending closure and is not admitted by this closure (R95-4). Routed to round 95: R95-1 add a selftest pin for the >=2-token heading rule (head-qualify-off survives rc 0); R95-2 refresh or retire the stale dispo-fallback mutant pattern (BROKEN-PATTERN); R95-3 CriticO94's seven surviving counterfeit classes (combining mark, LRM, tab, small-cap id, three heading-numbering variants). Standing operator-owned note: freshness (lowest non-retired axis) neither met nor waived, paused by open L0 kotodama round-11/round-89 - consistent with r90-r93. SHONEN operator note (promotion operator-owned; no [x] written): boxes 1-3 look checkable by a non-author from committed bytes; box 4 needs a province sweep. Conformance defects: none new; no marker; no promotions; no mints.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 95,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "revenger",
+   "lane_round": 95,
+   "lanes": {
+    "revenger": "ok"
+   },
+   "lane_rounds": {
+    "revenger": 95
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-95/revenger.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "revenger-shokunin/corpus/lessons/round-95-verifier-spotcheck.md@2875b9c9fa4cc15fd5a8ff991f04cdd0417bec97",
+    "rechecks": "step1: report attributed revenger-shokunin, SHONEN heading present, cited hashes cb5c26f/6e0bf15/c0401d2/00c4ac2 ancestors of main, jj-lane state ahead=0 behind=0 clean, ls-remote=00c4ac2. C1 coverage RE-MEASURED by plain awk on committed corpus/README.md: held 11/15 -> 12/15, C10 partial->held, no other row moved, SCORECARD append-only, PROVINCE/QUALITY unchanged. C2 calibration EVIDENCE-VERIFIED (not re-executed): counter/battery/claims byte-identical to freeze 6e0bf15; committed battery4 full V4_KILLS=10/10 BATTERY4_VERDICT=pass; red-v3 V3_REACH_NEW=10/10 RED_V3_VERDICT=pass; wave ExecBattery logs match on verdict lines. Discernment spot-check: admit C10 entry (S500/S501 re-fetched HTTP 200, sha256 match committed bodies, quotes verbatim 11 and 7 words) agree; rejects C05 seventh candidate (no new APK/AXML source; six prior rejected) agree, 2026-10-29 in-place re-admit (rejected, bytes preserved) agree. census rc 0 (W-codes only)."
+   },
+   "commit": "revenger-shokunin@00c4ac2b6774d9ce385e14bd92fffc4cfd217ccb",
+   "closed_at": "2026-11-05T18:05:30Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (copied from .ufo/watchdog.log, mutable): 2026-11-05T13:58:31-03:00 launch revenger round=95 pgid=40092 driver=hyaku-inline attempt=1; 2026-11-05T15:00:00-03:00 complete revenger round=95; hyaku-inline attempt=1. Round: 2 declared claims (C1 coverage K, C2 calibration), one v1 wave of 13 seats, frontier step done (S500/S501 tier A, 499->501 rows, census rc 0). Admitted on frozen predicates; C1 re-measured, C2 evidence-verified. Status-neutral conformance defects: (a) lesson round-95.md line 29 labels lane-dispatched votes as 'non-author' (LEARNING §Discernment: dispatched subagent is still the lane) — correct by appended erratum in r96; (b) seat final texts not retained after orchestrator kernel restart (disclosed; seat files are evidence). Routed to revenger r96: critic A3-both and A4 survivors; six C1 legs without discriminating delta (C1_ROWS_TOTAL, C1_TRIO, C1_LINT, C1_EMBEDDED, C1_QUOTES, C1_K_HELD_BACKED); C1_PYCACHE coverage; 22-delta receipt set partial and no stub-prints-pass control; calibration vectors are lane-authored (advisory: next freeze should carry externally authored vectors). Open follow-up S500/S501 non-author re-fetch closed by spot-check file. SHONEN: not assessed to box level; no box claimed checkable by a non-author; promotion operator-owned. Census W01/W04 warnings status-neutral. Routing: none to sibling lanes. Lane tip after round 00c4ac2; closure artifact landed 2875b9c.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
