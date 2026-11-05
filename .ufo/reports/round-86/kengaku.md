@@ -227,11 +227,11 @@ knowledge admission unconfirmable) and `kengaku | round-54` (assimilation packag
 
 One v1 wave under policy v1 (band 8–16): 12 seats — scout 1, executor 3, scribe 2, reviewer 2,
 critic 1, mutation-tester 1, sentinel 1, connector 1 (attack share 4/12 = 33 %). No residual call.
-Dead or incomplete seats: **two** — `ScoutR86` never wrote a file and was still running its own C2
-counter when the round closed, and `ReviewerC286` committed only a stub it itself labelled
-"evidence collection in progress"; neither seat's work is claimed and no finding from either is used.
-Ten seats delivered committed evidence under `w1/`, including the attack seats whose findings are
-listed above. Round total: 12 seats. Lane tip at close: `25f68ca0b717afe677e6cae8e7583eaeeee99ad5`.
+Dead or incomplete seats: **one** — `ReviewerC286` committed only a stub it itself labelled
+"evidence collection in progress" and no finding from it is used. `ScoutR86` delivered late (after
+the first report commit, at `239f8699`) and its two findings are carried as R86-V3/V4 below. Eleven
+seats delivered committed evidence under `w1/`, including the attack seats whose findings are listed
+above. Round total: 12 seats. Lane tip at close: `239f8699a3cc336257f4c5659b2c2961582df900`.
 
 The L1 holds the canonical planner seat (the validator rejects `planner` as a swarm role); the
 bounded planning data-walk rode the L1's own reads plus `ExecCensusR86`'s row arithmetic, because the
@@ -247,3 +247,22 @@ table, the probe, both counters and the box-4 re-pin. Discarded and re-minted: t
 `LANE_TIP bfda0472` with `WORKTREE dirty`; the round minted its own at a clean tip). Nothing
 uncommitted was inherited; `corpus/lessons/round-85-verifier-spotcheck.md` (non-author) was read and
 indexed in `corpus/README.md` without editing it.
+
+## Correction (dated 2026-11-05, after the first report commit)
+
+- **Seat `ScoutR86` delivered after this report was first filed** (`scout-map.md`, committed at
+  `239f8699`). Its two findings are accepted and recorded as the lesson's R86-V3 and R86-V4:
+  1. **R86-V3 — the case set is six schema-drift shapes plus two controls.** The frozen table's own
+     `why` cells label `exact` as "control: every value inside its band and every key present" and
+     `g-amplitude-just-outside` as "numeric-band control, **not schema**". The claim sentence's
+     "eight frozen schema-drift case shapes" is therefore wrong by two; the numeral the claim is
+     judged on (eight cases, 24 legs) is unaffected. Correct wording: "eight frozen case shapes, six
+     schema-drift and two controls". The frozen file is not edited; the lesson, this report and
+     *Planned* carry the correction.
+  2. **R86-V4 — `members=1` is a literal, not a count.** Found independently by `ReviewerC186` (F2),
+     `CriticR86` (C1-F2) and `ScoutR86` (finding 1). The growth the claim names (executed 29 → 30, one
+     changed row) is measured by hand and by the R79 gate, not by `plans/round86_c1_replay.py`.
+     Routed to the successor instrument; no frozen predicate rewritten.
+- Lane tip at this correction: `239f8699a3cc336257f4c5659b2c2961582df900` (pushed). All standing
+  gates were re-run green at the tip before this correction and are unaffected by it (lesson text
+  only).
