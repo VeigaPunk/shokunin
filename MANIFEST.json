@@ -49911,6 +49911,49 @@
    "notes": "Dispatch/complete digest (watchdog.log lines 2788/2806): 2026-11-05T06:02:58-03:00 launch kengaku round=90 pgid=3228381 driver=hyaku-inline attempt=1; 2026-11-05T07:28:30-03:00 complete kengaku round=90; hyaku-inline attempt=1. Report committed by lane identity 929e3f65 lands last (07:27:16 vs tip 07:27:04); SHONEN heading 4 [~] lines; all 9 cited lane commits ancestors of refs/heads/master; lane pushed ahead=0, tree clean; prompt carries the full template contract (report path :101, SHONEN, hash-citation + lands-last :516, commit-then-push/push scope/L0 §5, L2>=8 batched §3 matching MISSION.md, addendum present). Verdict rejected-honest-stop: R90-C1 and R90-C2 verify on their frozen predicates; R90-C3 measured NOT MET (freeze=refused pending=37 vs predicted admitted) and the lane reports it unreshaped; no axis harmed (coverage 7, calibration 10, operability 10, others held). Conformance defects (status-neutral): frozen C1 predicted legs=8 vs measured legs=40 (predicate does not hinge on legs; folded into the lane's round-91 instrument-conformance routing); 30 pre-existing W04 census duplicate-URL warnings on rows <= S270. SHONEN boxes all [~] but fully checkable by a non-author (boxes 1/2/4 verified here) - flag for the operator, promotion is operator-owned. Routed to round 91: the report's five routed items stand; operator L0 lines kengaku|round-90 (fleet 1258e5e5) hold the pin-residual and triage-mapping decisions. Lane round work landed 45171d23/664435cf/a2b22609/9cf98d90/e2c73b68/4c5d05b6/a0d57153/93ff3240/8f5f9afd; L0 lines pushed in fleet 1258e5e5; report in fleet 929e3f65; wave evidence committed in the lane repo (.ufo/waves/round-90/).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 94,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 94,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 94
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "admission-token counter with frozen fixture battery (count-c1v2.py + controls-r94.py; receipts evidence/controls-r94.txt, replay w1/Mo94E01Replay.md)"
+   ],
+   "report": ".ufo/reports/round-94/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-94-verifier-spotcheck.md@754f4991198c16ddd1d4a3ea9206cfb7d74d6827",
+    "rechecks": "C1 re-measured over committed bytes at fa1af842: live trio v1 19/19 and v2 19/19 met (tokens are 8-char prefixes of admission %h), patched12=12/12, seven_same=7/7; synthetic embedded-hash fixtures discriminate exactly as claimed (v1 false-pass 3/3, v2 0/3; legit 8-char forms pass v2); gate evidence-verified, not executed (controls-r94.txt EMBED_FALSE_PASS v1=3/3 v2=0/3 live_v2=met rc0 at entering; replay at freeze 6b65e7c1 rc0, four extra classes v2 0/4). C2 measurements re-derived (literal_r94=0 over 3 files, exact and /home/[a-z]; round-93 blob pins 45a9d07d/7d0a003c/be60882e unchanged; entering do-nothing C2=unmet receipt; env -i HOME=/nonexistent met and unset rc2 receipts at freeze) but the axis-move is NOT admitted: non-author critic K01 — successor artifacts, before=absence, env_unset fails open on a missing counter; lane honest stop, routed to r95. Frozen artifacts byte-identical 6b65e7c1..fa1af842; SCORECARD diff appends only, no score moved, no axis harmed. Census validate mori ok exit 0 (W04 only), 397 rows, 0 malformed. S624 and S625 re-opened: both pages byte-identical to row sha256 (2397d832…, 0c878556…), anchors/quotes located (S624 visible-form tags->empty count 1; S625 lookbehind quote count 1) — gate sample 2/2 agree. Wave w1: 12 seats, 12/12 returned, attack share 6/12."
+   },
+   "commit": "mori-shokunin@fa1af84211d17958ba2b931b362418bc8ecbe253",
+   "closed_at": "2026-11-05T10:43:30Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: `2026-11-05T07:01:47-03:00 launch mori round=94 pgid=2392486 driver=hyaku-inline attempt=1`; `2026-11-05T07:32:08-03:00 complete mori round=94; hyaku-inline attempt=1`. One dispatch, attempt 1, one wave w1 (12 seats, no dead seat; planner seat held by the L1 by disclosure — D1 open, operator-owned). Lane HEAD before 84b15230, after fa1af842 (= origin/master at closure); report committed 3af94fbc by mori-shokunin identity; spotcheck 754f4991 by protocol identity. Verdict: C1 calibration met as frozen and re-derived (instrument move, score conservatively not moved); C2 operability met as frozen but not admitted as an axis-move (non-author critic K01; honest stop per the lane) — hence rejected-honest-stop. No axis harmed. Defects (status-neutral): landing-revision battery re-run cited in the report but only entering/freeze receipts committed (closure covered the landing delta with its own committed-byte measurements); mutation survivors recorded as control-battery gap and routed (C1 m2/m3/m4/m6, C2 m1/m2/m3/m5/m6); env_unset fail-open reads exit code not C1_SETUP line text (routed); sibling host-literal class (seven siblings, w1/Mo94Conn01.md) routed via L0 line 2; digest-gate debt P4 (31 prefix-only rows, S125 unpinned) and round-90 nonce guard (QUALITY 191) carried; L0 line 1 D1 planner binding open with operator. SHONEN: four boxes `[~]` with resolvable pointers, no `[x]`; boxes look fully checkable by a non-author verifier — promotion review is operator-owned. Tool installs: none (lane and seats).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
