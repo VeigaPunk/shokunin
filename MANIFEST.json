@@ -49636,6 +49636,45 @@
    "notes": "dispatch/complete digest: 2026-11-05T05:38:44-03:00 launch souji round=62 pgid=2445362 driver=hyaku-inline attempt=1; 2026-11-05T06:23:16-03:00 complete souji round=62; hyaku-inline attempt=1. Conformance defects (status-neutral): CD1 prompt §3 L2 floor split not met (wave: 2 executors, no planner seat, planner held by L1); CD2 report '## Pre-report gate' unfinished; CD3 lesson '## Gate' says S292 quote is verbatim in the raw capture at offset 8351, which is false (located after markup strip). Routed to r63: R1 SKILL.md:830 'closed in round 62 by C1' overstates (in-run gap F4 open); R2 correct CD3 by appended lesson entry; R3 knowledge entry verified-at still round 61 after r62 rewrite; R4 dispatch the L2 floor minimum with a dispatched planner; R5 finish pre-report gate line; R6 numeric 0-10 mapping for operability/calibration (L0 line 325, operator); R7 named limits (F4 in-run TOCTOU, whole-index scope, substring class check). Score cells unchanged (no reproducible mapping); no SCORECARD cell removed. SHONEN: no [x] written; box 2 may now be checkable by a non-author on r62 evidence; promotion is operator-owned. Spot-check: admit S292 agree; rejects (inference, S291 recheck proposal) agree; 3/3.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 93,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 93,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 93
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [
+    "entering-vs-revision equivalence harness (.ufo/waves/round-93/w1/equiv-c2.sh; receipt evidence/equiv-c2-entering-vs-landing.txt)"
+   ],
+   "report": ".ufo/reports/round-93/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-93-verifier-spotcheck.md@84b152308fa6c2f224ad75dff68e525dab9057ac",
+    "rechecks": "Independent re-derivation at 7b3fe9d5, 1fc921cf, 8edbb86d: C1 adm_ok 7/19 -> 19/19, adm_fail 12 -> 0, patched12 0 -> 12, trio 98, seven_same 7; C2 home_literals 18 -> 0, vgpnk bytes 18 -> 0, tools 3/3. Frozen counters/controls/contract byte-identical 6d82b8d7..8edbb86d. SCORECARD diff appends only. Census validate mori ok exit 0. Re-opened S622 (sha match, anchors 5493/6730 match), S623 (quote located line 518; row sha/anchor not reproduced: D4), S618 and S059 supplementary rejects re-opened and stand. Evidence-verified only: selftests 3/3, equivalence harness, controls-r93-ext, mutant-kill-ext."
+   },
+   "commit": "mori-shokunin@8edbb86d6384a12c73cc656041c1a8843a4b2ff7",
+   "closed_at": "2026-11-05T10:00:18Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: `2026-11-05T05:31:38-03:00 launch mori round=93 pgid=2402411 driver=hyaku-inline attempt=1`; `2026-11-05T06:44:06-03:00 complete mori round=93; hyaku-inline attempt=1`. One dispatch, one wave w1 (12 seats, all returned). Lane HEAD before 7b3fe9d5, after 8edbb86d (= origin/master). Calibration: met as frozen, reading improved (provenance fact; attack seat R03 dissent recorded in spotcheck s2). Operability: met as frozen, improved. No axis harmed. Expansion/quality/discernment unchanged; discernment sample one-sided (no reject in round Gate). Routed defects (status-neutral): D1 no planner seat in L2 role split (prompt s3); D2 wave spec committed separately from contract (d8a9b28c); D3 untracked dispatch markers in mori repo (.ufo/waves/round-93/w1.ready, w1.ready.dispatched; round-92 w1.ready.dispatched), not committed by integrator; D4 S623 pin sha 90ac3b25 and anchor lines 527-535 do not reproduce (current sha 7f9fe402, quote at line 518) -> supersession row needed; D5 S623 second-quote count reported 1, page carries 3; D6 no reject in round-93 Gate; D7 start-of-round census output not pasted. Lane-routed: R02 substring boundary in count-c1.py (round 94); counter-owned host path in count-c1/c2 CENSUS constant (round 94); digest-gate debt 31 rows + S125 (operator, L0). SHONEN: no box [x]; no box judged checkable here (operator-owned). Lane-report prompt template path cited in prompt (fleet) absent; canonical template at kimi-shokunin/templates/round-prompt.md, not byte-compared.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
