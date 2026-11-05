@@ -1,7 +1,7 @@
 # kagi round 40 — report (attempt 1)
 
 Lane: kagi (secrets & vault ops). Owned axes: freshness + calibration. Lane repo `/home/vgpnk/Projects/shokunin/kagi-shokunin`, branch `master`.
-Revisions: BASE `6cc8850dfc5757927699e5a53a876f47c8df21aa` · predeclaration `f687504767ce9ed56b848dfde83e03a1ec6cedd3` · frozen plan `38a118f9cf15729e7732cc3cafe1011e3a899ee4` · candidate `cb3f642479a09644a03874909bb7e44b52697a8d` · **landing / lane tip `97e867f330fe63b5c8098d08501b0fabce448be1`** (remote verified, see Pre-report gate).
+Revisions: BASE `6cc8850dfc5757927699e5a53a876f47c8df21aa` · predeclaration `f687504767ce9ed56b848dfde83e03a1ec6cedd3` · frozen plan `38a118f9cf15729e7732cc3cafe1011e3a899ee4` · candidate `cb3f642479a09644a03874909bb7e44b52697a8d` · landing `97e867f330fe63b5c8098d08501b0fabce448be1` · **final lane tip `6f1588cc0ebd5cbbd4e983fbd71c1e419d225ce0`** (landing code plus the evidence commit of its receipts; remote verified, see Pre-report gate).
 Fresh-start round: operator "Authorize all" (2026-11-05). The plan's premise sentence about the last three closures is wrong (M40-13); the authorization covers the pause either way.
 
 ## Work performed
@@ -46,6 +46,7 @@ Rejected or routed items (not claimed; listed so the operator can rule):
 | Frozen plan alone | Round 40 block | `38a118f9cf15729e7732cc3cafe1011e3a899ee4` |
 | Candidate: S095/S096 rows and fetch rows, ledger migrations, SKILL gate rows, QM42/QM43, lesson, C3 repair | Round 40 block | `cb3f642479a09644a03874909bb7e44b52697a8d` |
 | Landing: S095/S096 recheck → 90d, stamp re-pin, lesson wave settlement, LOG, SCORECARD verdicts, wave evidence and receipts | Round 40 block | `97e867f330fe63b5c8098d08501b0fabce448be1` |
+| Landing receipts: `landing/` counters, censuses, release-clock, pins, declared-axis, self-description at `97e867f` (evidence commit) | Round 40 block | `6f1588cc0ebd5cbbd4e983fbd71c1e419d225ce0` |
 
 ## Before → after measurements
 
@@ -121,9 +122,9 @@ None. No tool was installed, upgraded or removed by the L1 or any seat. pacman w
 - Lesson and plan files of round 39 and round 40 are not in the stamp set (membership unchanged at 122); round-39 did the same. Named, not changed.
 
 ## Pre-report gate and misroot sweep
-
-- `git -C /home/vgpnk/Projects/shokunin/kagi-shokunin ls-remote origin refs/heads/master` → `97e867f330fe63b5c8098d08501b0fabce448be1 refs/heads/master` (equals the landing hash).
-- Lane `jj-lane.sh state`: clean at landing (verified before this report).
+- `git -C /home/vgpnk/Projects/shokunin/kagi-shokunin ls-remote origin refs/heads/master` → `6f1588cc0ebd5cbbd4e983fbd71c1e419d225ce0 refs/heads/master` (equals the final lane tip; the landing code commit `97e867f` is its ancestor).
+- Landing check before the evidence commit: `ls-remote` returned `97e867f330fe63b5c8098d08501b0fabce448be1` (the landing code tip, the parent of the evidence commit).
+- Lane `jj-lane.sh state`: local = remote = `6f1588cc0ebd5cbbd4e983fbd71c1e419d225ce0`, ahead 0, behind 0; `untracked=1` before the final evidence commit, now committed.
 - Misroot sweep `git -C /home/vgpnk/Projects/shokunin status --porcelain`: `M .scratch/run15-state.json` (orchestrator-owned) and `?? .ufo/closure-kaidoku-r92.json` (another lane's closure). Neither names kagi round 40; nothing was copied or deleted.
 - Scratch: `/fast/scratch/hyaku/kagi-r40` removed after landing (§7.6).
 
