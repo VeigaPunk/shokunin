@@ -48762,6 +48762,43 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, copied at closure): 2026-11-04T22:20:52-03:00 launch mado round=86 pgid=2693786 driver=hyaku-inline attempt=1; 2026-11-04T22:31:21-03:00 lane-dead-no-report mado round=86 (attempt=1: no landed report); 2026-11-04T22:31:23-03:00 launch mado round=86 pgid=2927307 attempt=2; 2026-11-04T22:32:13-03:00 lane-dead-no-report (attempt=2); 2026-11-04T22:32:15-03:00 launch mado round=86 pgid=2939532 attempt=3; 2026-11-04T22:32:59-03:00 lane-dead-no-report (attempt=3); 2026-11-04T23:51:42-03:00 launch mado round=86 pgid=3150418 driver=hyaku-inline attempt=1; 2026-11-05T00:40:55-03:00 complete mado round=86 hyaku-inline attempt=1. Attempt-1 in-flight bytes preserved at f72bba01 (not a landed round); the landed round is the post-launch-3150418 work, lane tip 500bef3c. Report landed under the lane identity at 932d6067 after an earlier filing 78b3faab (both attributed to mado@shokunin.local). Step 1: all cited hashes exist and are ancestors of master; no uncommitted round work; pushed (ls-remote 500bef3c); prompt carries the template contract; SHONEN heading present (4 [~], no [x]); wave 14/14 settled OK. Verdicts: calibration improved (C1 refusal records, flood 75/75 -> 48/75, honest 75/75); operability improved (C2 clause observation, kills 33/37 -> 37/37); no axis harmed in exercised scope. TRADE: expansion improved with quality harmed, so not admitted under LEARNING.md. Quality harm = R1: the lane's held_rule_new_case=0/1 is a figure produced by held_case_correct() in the lane's own model, not by running the held round-85 counter; the real r85 case_correct() scores the border-size-int witness 1/1; the figure is in admitted entry corpus/knowledge/refusal-records-clause-observations-r86.md section 3 and SCORECARD.md Round86, unmarked at closure. Re-grade on a named closure-correction once the lane appends the correction. Routed (conformance, status-neutral): report rewritten in place (932d6067, 228+/149-) instead of an erratum; Landed-changes omits d7ffa762; LOG attack count 4/14 (policy set) vs report 5/14 (adds sentinel); c2 control JSON metadata round 85 and superseded 15 vs 16 printed; counters pin no stored control digest (R2); docstring mutants=53 (M86-6); carried forgery classes and count-preserving stub (R7, R8). SHONEN boxes 1-4 look checkable by a non-author from the cited pointers; promotion is operator-owned, nothing written as [x]. No new L0 question raised by this closure. No capability row admitted (both claims change an instrument's judgement, not a compositor capability).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 72,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 72,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 72
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth:verifiability": "unprovable-but-better",
+    "coverage": "unprovable-but-better"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "harmed"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-72/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-72-verifier-spotcheck.md@fdf17413f20ea1b19989a090397ece5f49881b9e",
+    "rechecks": "C1 re-measured: derive-head-census.py executed on tip bytes -> CENSUS heads=45 READMITTED=0, ALIAS-PROBE refused rc=2, POSITIVE 2/2, CENSUS-RESULT ok exit 0 (byte-identical to controls/c1-census-final-r72.txt); gate sha256 182f4ef7 at a34ce4c base and 4f59bda4 at tip both match receipts; selftest/mutbat/kill-matrix/parity evidence-verified per Gate standard (cases=110, killed=5/5, 4/4, 247 identical). C2 re-measured: FRONTIER-CENSUS rows=50 registry=107, entries=53 pass=53, capture bound=86/86, knowledge-expected 90/88 sort-clean, 88 files, sources-census exit 0; source-recheck S107 Q01-Q17 anchor-ok; api_key clause falsification confirmed by grep on committed capture (0 hits). Discernment spot-check: S107 admit agreed (quote verbatim S107.txt:33, 17/17 quotes re-verify); carried reject S104 re-opened live -> HTTP 200 3062 bytes sha256 6fb32b61 byte-identical, 0 endpoint//api/ occurrences -> agree. No owned axis harmed."
+   },
+   "commit": "kasegi-shokunin@fdf17413f20ea1b19989a090397ece5f49881b9e",
+   "closed_at": "2026-11-05T05:04:32Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-05T00:43:02-03:00 launch kasegi round=72 pgid=1743267 driver=hyaku-inline attempt=1; 2026-11-05T01:56:42-03:00 complete kasegi round=72; hyaku-inline attempt=1. Conformance: report committed by kasegi-shokunin in fleet 3b32a990; SHONEN heading present, one line per box, no [x]; all 6 cited lane hashes ancestors of master; lane ahead=0 clean and pushed; prompt renders templates/round-prompt.md sections 1-5 verbatim plus hyaku addendum s6 with all contract items; 7 round commits under lane identity, no .ufo/state or watchdog.log bytes. Wave: one v1 wave, 11 seats (executor x3, mutation-tester, reviewer x2, critic, scout, scribe x2, connector; attack share 4/11); K72ExecParity died on provider usage_limit_reached, parity re-measured by L1 on exact bytes (247 identical). Defects (status-neutral): C2 frozen target names an api_key clause S107 does not state (frozen before the capture, M72-5) and its frozen kill rule is not the complement of the predicate (L72-6) - lane ruled NOT VERIFIED AS DECLARED and filed a dated amendment claims-amendment-c2.json for the operator; C1 universal sentence falsified off-tree (census reads add_argument only, L72-4) with kill clauses weakened (L72-5). Operator rulings owed: C2 amended admission (L72-12), C1 universal sentence (L72-4), R-5 realpath census semantics. Routed defects R-1..R-7, L72-2/L72-3, L72-11 carried to next round. SHONEN boxes: none [x]; if a non-author later signs them off, promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
