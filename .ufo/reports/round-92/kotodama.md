@@ -1,8 +1,8 @@
 # kotodama — round 92 report (attempt 1)
 
 Lane: kotodama-shokunin (言霊), linguistic-cultural worldbuilding, axes depth + coverage.
-Lane HEAD at filing: `793fa35aa9f5d989fd364c8f9468de695cf9466c` (branch `main`, remote-verified).
-Claim measurements stamped at lands `1473606b7baaf1b4050c8b21c30bdf17761d136d`; both claims re-measured at HEAD (C at `793fa35a`, `reports/round-92/final/tip-C.txt`).
+Lane HEAD at filing: `0948cdb9fb8b63005bcbf977f810b9d54edefa7c` (branch `main`, remote-verified; the records commit `793fa35a` and the receipt commit `0948cdb9` are the last two lane commits).
+Claim measurements stamped at lands `1473606b7baaf1b4050c8b21c30bdf17761d136d`; claim C also re-measured at records HEAD `793fa35a` (`reports/round-92/final/tip-C.txt`, committed in `0948cdb9`).
 
 ## Work performed
 
@@ -34,6 +34,7 @@ Work items, with evidence:
 | `b83a1dae3aed9e4fa3b761038b942d0208e70b67` | do-nothing controls at freeze and the wave-1 spec | Round 92 |
 | `1473606b7baaf1b4050c8b21c30bdf17761d136d` | claim C landing: entry, four registry rows S957–S960, README index row and footer, lesson `round-92.md` | Round 92 |
 | `793fa35aa9f5d989fd364c8f9468de695cf9466c` | records: SCORECARD round-92 section, LOG round-92 entry, lesson corrections (overlap; D3), final receipts, census and index end, wave-1 seat outputs | Round 92 |
+| `0948cdb9fb8b63005bcbf977f810b9d54edefa7c` | final tip receipt `reports/round-92/final/tip-C.txt` (claim C re-measured at `793fa35a`: PASS 4/4) and the lane HEAD for filing | Round 92 |
 
 Registry and index: `corpus/SOURCES.md` 880 → 884 rows (append-only; no base row changed); `corpus/README.md` linguistics 36 → 37, footer 263 → 264 (current block).
 
@@ -124,4 +125,4 @@ Four boxes in `SHONEN.md`; none is checked by a non-author verifier this round, 
 
 ## Verification handed to the main agent
 
-Re-run, once, at the final tip: `python3 -B reports/round-92/measure92.py --root . --lands 793fa35aa9f5d989fd364c8f9468de695cf9466c --freeze 066b9728fc64e78735769c4740d05c1000d31a3b --claim O --work <dir>` (expect 8/8; watch D3); `… --claim C …` (expect 4/4, already run at HEAD); `scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin kotodama` (expect rc 0); `python3 -B tools/check-corpus-index.py --root .` (expect OK 264/264).
+Re-run at the final lane tip `0948cdb9fb8b63005bcbf977f810b9d54edefa7c`: `python3 -B reports/round-92/measure92.py --root . --lands 0948cdb9fb8b63005bcbf977f810b9d54edefa7c --freeze 066b9728fc64e78735769c4740d05c1000d31a3b --claim O --work <dir>` (expect 8/8; watch D3); the same with `--claim C` (expect 4/4; already measured at `793fa35a`); `scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin kotodama` (expect rc 0); `python3 -B tools/check-corpus-index.py --root .` (expect OK 264/264).
