@@ -48969,6 +48969,49 @@
    "notes": "Dispatch/complete digest (watchdog.log, copied): 2026-11-04T21:37:27-03:00 launch kama round=86 pgid=3989976 attempt=1; 21:52:16 lane-dead-no-report; 21:52:19 launch attempt=2; 21:58:48 lane-dead-no-report; 21:58:51 launch attempt=3; 22:31:27 lane-dead-no-report; 2026-11-04T23:51:39-03:00 launch attempt=1; 2026-11-05T00:50:14-03:00 complete kama round=86. Report landed by hyaku sweep under lane identity (attribution defect, recorded; real 30KB report, not a marker). Lane round HEAD before closure 079cd67c; all 25 cited lane commits verified ancestors of master; jj-lane state ahead=0 behind=0. DEFECT R86V1 (uncommitted round work, status-neutral): three lane-authored round-86 files remain untracked — .ufo/waves/round-86/w3-results.json (the w3 settlement record the report/SCORECARD cite for seat status), w3/SC01DanglingPointers.md, w3/out/SC01DanglingPointers/findings.md — and two w3 seat reports required by the spec Report: trailer (w3/EX02GateCensus.md, w3/CN01OverlapScan.md) were never written; w3-results.json is non-durable. My own pre-report-gate.py run on the current tree now prints arms=13 failed=2 uncommitted=3 (round-scope/round-clean red on those strays) — the recorded 13/13 green is revision-bound and stands, but the lane must commit or remove the strays next round. Carried disclosures confirmed honest: C1 predicate not implemented (2 false greens), C2 forged-subject/unparseable-ARMS escapes, C3 self-declared origin (grade() never reads row engine/ref/newest), frozen counter executes worktree bytes not --rev bytes — all routed to round-87 plan items 2/4/5/7. SHONEN boxes remain [~]; no non-author [x] warranted; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 91,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 91,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 91
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "unprovable",
+    "freshness": "unprovable",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [
+    "tools/mori-source-digest.py full-length registry digest check (flags mismatch / prefix-only / unpinned vs the pinned copy each row names; re-measured at bee9f21e: DIGEST_CHECK rows=121 ok=87 mismatch=2 prefix_only=31 unpinned=1 rc 1; able-to-fail receipt committed)"
+   ],
+   "report": ".ufo/reports/round-91/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-91-verifier-spotcheck.md@f63d1ab030d4179576e494342f48ef8718e497a5",
+    "rechecks": "C1 counter re-run exit 2 (p2 population absent); C2 snapshot absent at both revisions (git cat-file); digest gate re-run at bee9f21e reproduces DIGEST_CHECK rows=121 ok=87 mismatch=2 prefix_only=31 unpinned=1 rc 1; C-1/C-2 corrections re-measured by sha256sum on pinned bytes; registry census 389->391 re-counted; SCORECARD diff additive, no axis harmed; S617/S618 re-opened byte-exact (sha256 + located quotes, admit/reject both agreed); w1-results.json 12 seats, 5 dead confirmed; sources-census validate mori ok rc 0"
+   },
+   "commit": "mori-shokunin@bee9f21e18db79ca27493b1453a9543f1994d59f",
+   "closed_at": "2026-11-05T07:35:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (verified verbatim in .ufo/watchdog.log): 2026-11-05T02:12:15-03:00 launch mori round=91 pgid=1954018 driver=hyaku-inline attempt=1; 2026-11-05T04:18:17-03:00 complete mori round=91; hyaku-inline attempt=1. Step-1 conformance ok: report committed by lane identity mori-shokunin <mori@shokunin.local> (fleet db50dfb9); SHONEN heading 4 boxes all [~] with pointers; cited hashes e02b8a39 and bee9f21e are ancestors of master; lane ahead=0, porcelain clean; prompt carries the template contract (round-level items + all five child-lane items). Honest stop confirmed: both declared claims verify only as unprovable (C1 populations absent, counter exit 2 re-run; C2 snapshot absent at both revisions); no axis harmed (SCORECARD diff additive only). Real landed work re-measured: digest-class gate reproduces its line at bee9f21e; C-1/C-2 corrections confirmed on pinned bytes; census 389->391; expansion improved (S617 mined + knowledge entry, S618 rejected with flip), quality improved, discernment unchanged. Routed defects: R-D1 mori r92 must append S615/S235 supersession rows (CORPUS rule 2) to repair the corrupted recorded digests; R-D2 mori r92 must classify S156/S158/S159 mismatches (C-3); R-D3 orchestrator-side - five wave seats (Mo91E01Arms, Mo91E02Snap, Mo91M01Mut, Mo91K01Conn, Mo91C01Ctl) returned empty output with null status/note, spawn/stop reason unrecorded (L0 filed by the lane); R-D4 mori r92: 31 prefix-only digest records + S125 unpinned surfaced by the new gate, census-absorption decision owed (SCORECARD planned r92 item 5). Operator notes: all four SHONEN boxes look fully checkable by a non-author (promotion review is operator-owned; no [x] written); tools/mori-source-digest.py needs its SKILL.md registry row + selftest fixtures (Gate standard) before closure grades it a conformant gate. Conformance defects: none status-relevant.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
