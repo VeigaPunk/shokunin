@@ -49675,6 +49675,50 @@
    "notes": "Dispatch digest: `2026-11-05T05:31:38-03:00 launch mori round=93 pgid=2402411 driver=hyaku-inline attempt=1`; `2026-11-05T06:44:06-03:00 complete mori round=93; hyaku-inline attempt=1`. One dispatch, one wave w1 (12 seats, all returned). Lane HEAD before 7b3fe9d5, after 8edbb86d (= origin/master). Calibration: met as frozen, reading improved (provenance fact; attack seat R03 dissent recorded in spotcheck s2). Operability: met as frozen, improved. No axis harmed. Expansion/quality/discernment unchanged; discernment sample one-sided (no reject in round Gate). Routed defects (status-neutral): D1 no planner seat in L2 role split (prompt s3); D2 wave spec committed separately from contract (d8a9b28c); D3 untracked dispatch markers in mori repo (.ufo/waves/round-93/w1.ready, w1.ready.dispatched; round-92 w1.ready.dispatched), not committed by integrator; D4 S623 pin sha 90ac3b25 and anchor lines 527-535 do not reproduce (current sha 7f9fe402, quote at line 518) -> supersession row needed; D5 S623 second-quote count reported 1, page carries 3; D6 no reject in round-93 Gate; D7 start-of-round census output not pasted. Lane-routed: R02 substring boundary in count-c1.py (round 94); counter-owned host path in count-c1/c2 CENSUS constant (round 94); digest-gate debt 31 rows + S125 (operator, L0). SHONEN: no box [x]; no box judged checkable here (operator-owned). Lane-report prompt template path cited in prompt (fleet) absent; canonical template at kimi-shokunin/templates/round-prompt.md, not byte-compared.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 38,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 38,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 38
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "freshness": "improved",
+    "calibration": "unprovable",
+    "operability": "unchanged",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "located-quote gate over committed capture bodies (corpus/quote-locate.py; C1 re-measured 5/5 by the integrator over committed bytes)",
+    "lane-tree write guard (corpus/laneguard.sh; selftest detected=3 committed; C2 claim not verified as declared, calibration)"
+   ],
+   "report": ".ufo/reports/round-38/kagi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kagi-shokunin/corpus/lessons/round-38-verifier-spotcheck.md@06144518d3b3745e7fdf82d4207b4a3b5532a7a7",
+    "rechecks": "Step 1: report commit c3df25ec by kagi-shokunin identity, SHONEN heading present, cited commits 8c48b7d/289e808/b944735/88374f9/a916f4a all ancestors of master, lane state ahead=0 and clean, ls-remote master=88374f9, prompt matches template. C1: plain python over git show 88374f9 bodies, located=5 rows=5 (S089 726, S090 729, S091 1583, S092/S093 21886; sha/bytes/registry/quote checks), BASE a916f4a lacks instruments; prefreeze-gate.txt evidence-verified. C2: prefreeze c2_nowork 0 and c2_positive 3 evidence-verified only; declared axis calibration unmoved (SCORECARD calibration 9->9). Spot-check: S092 and S093 re-opened live (HTTP 200, title and datetime agree), rendered-text locate reject re-read at corpus/rendered-text-v1.py step 3 (agree), bare-feed candidate reject not re-openable (unprovable). Fleet census validate kagi exit 0. SCORECARD diff: no axis harmed."
+   },
+   "commit": "kagi-shokunin@88374f9539e741cbc6e07505f4c09e42472ee8d1",
+   "closed_at": "2026-11-05T10:16:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (watchdog.log, copied at closure): 2026-11-05T05:46:48-03:00 launch kagi round=38 pgid=2744042 driver=hyaku-inline attempt=1; 2026-11-05T07:09:00-03:00 complete kagi round=38; hyaku-inline attempt=1. Verdict: C1 freshness verified (0->5, re-measured); C2 declared as calibration (0->3 counter) but its close SCORECARD reads calibration 9->9 'No calibration move is claimed' and the lane relabelled it operability after data: unmet as declared, so not admitted; no axis harmed; honest stop. Defects (status-neutral): CD-1 report says frozen predicates not amended after data while the C2 axis was relabelled after data; CD-2 report self-grades C2 as verified-as-operability; CD-3 stale-lane line not contradicted. Routed to lane round 39: R38-D1 declare claims on their measured axis before data; R38-D2 fix report wording; R38-D3 observe-r38.json not a usable pin (RECEIPT-MISMATCH on observed_at, separate declared claim); R38-D4 frozen-counter gaps (body symlink out of root, superscript traceback, duplicate ids, surviving mutants M2 M3 M5 M6 G3); R38-D5 ledger R38-03 POLICY pending operator registration (L0 fleet commit 0a1c648b); R38-D6 R37-V2 release-clock re-point open debt and R37-V4 anchor immutability routed. Operator notes: SHONEN boxes all [~] (none [x]); promotion operator-owned; no box is checkable as signed by this closure. Ceiling carried: body and capture row rewritten together passes the quote gate.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
