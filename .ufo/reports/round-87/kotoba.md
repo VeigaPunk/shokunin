@@ -15,6 +15,11 @@ five `lane-dead-no-report kotoba round=87` lines; the round's work and its first
 `local == remote == 760e1c5e` — re-verified it, and lands what the re-verification found. Nothing
 inherited was discarded; nothing uncommitted existed.
 
+**This document supersedes the earlier report text** for round 87 (fleet commit
+`d752fdbe9cdf82a6faff730d44f44c6fa3e3eb00`, preserved in the fleet history): the claims, receipts and
+measurements of that attempt are carried here, and the narrative is rewritten where this attempt's
+measurements differ (C2 at the tip, the instrument limits, the capability and coverage findings).
+
 **Declared claims (frozen; unchanged by this attempt).** Two, on two distinct owned axes. Neither is
 exploratory; no target was narrowed, re-worded or re-scored after data.
 
