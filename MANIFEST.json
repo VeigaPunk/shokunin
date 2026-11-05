@@ -48388,6 +48388,47 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, copied from the closure prompt; log is mutable): 2026-11-04T21:13:09-03:00 launch kake round=92 pgid=1046723 driver=hyaku-inline attempt=1; 21:58:46 lane-dead-no-report kake round=92 (attempt 1 landed a5640ca0..9f15115b and ended without a report); 21:58:48 launch attempt=2 pgid=620359; 22:07:24 complete kake round=92 attempt=2. Status ok: a real report over committed round work (attempt-2 re-verified the inherited readings in controls/attempt2-reverify.txt rather than redoing them). NOT ADMITTED - rejected-honest-stop: C1 (calibration, lowest owned non-retired axis at 2 HOLD) declared that K91-1/K91-2/K91-4/K91-5 close, and the frozen counter does read met=true at 2a4447c1, but the round's own committed attacks reach met=true doing none of the claimed work (canned-verdict runner, constant-label harness, self-pin rewritten in the same commit, runner executing a different gate, row naming a refusing counter; item A re-executes only one log line) - the claim sentence does not verify, the lane filed it as not admitted and routed R92-1..R92-3 instead of patching after scoring. C2 (freshness capability acquisition) verifies: instrument absent at base, present at head with the declared digest, entry/registry/coverage/capability row landed, non-author probe selftest 54/54 and the three claimed decisions; its frozen counter under-proves conformance (13/24 tool mutants survive, 5 clause-violating subjects admitted) - routed R92-4/R92-5, not repaired. Axis grades: calibration unchanged (score 2 HOLD, falsified claim on the record, nothing regressed); freshness improved (capability acquisition on frontier ground; the SCORECARD score stays 10 HOLD - the capability is the move); operability improved (two new registry rows at SKILL.md:1663/:1665 and the how-to-verify line at :1667 make the instruments runnable from the registry home). Conformance defects (status-neutral): (1) report C1 item A says the mutation log records a base and an M01 run that differ, while integration/mutation-tip.log holds 30 mutant lines with base excluded and the differential is in w1/ExecMutation/run.log [5]; (2) c92_heuristic.py is registered as a gate at SKILL.md:1664 with no --selftest mode, which Gate standard Self-test does not accept for a gate; (3) corpus/QUALITY.md Round 92 grounds its criterion without naming corpus/lessons/round-92.md; (4) corpus/lessons/round-92.md Mistakes row 5 is detached from its table by a blank line; (5) SentinelQuote was a dead seat (R92-6). Routed to the lane next round: V92-1 (fix the base-line pointer by append-only correction), V92-2 (gate row needs a --selftest mode or a probe registration), V92-3 (cite the lesson in the QUALITY criterion), V92-4 (re-append Mistakes row 5 inside the table), plus the lane's own R92-1..R92-7 still open (unbound item-A execution; label nonce; text-only row; clause coverage; reference drift; dead seat; K91-3/K91-6/K91-8/K91-9/K91-10). Spot-check: all 4 admits and 3 rejects in corpus/lessons/round-92.md Gate re-opened and agreed - live GET rfc9111.txt 200/84477 B/sha256 aeb52adb identical to the retained body, six quotes exact substrings at lines 686-709 (15/20/18/18/22/9 words, all <=25), 86400 sweep 0 hits, line 700 defers to RFC 9110 15.1, errata page 200 with exactly four records (7695/9004/9166/9185) and no 4.2.x mention; S470 row 11 columns, tier A spec mined, used-by resolves; census exit 0 with 31 W04. Promotions: none; SHONEN boxes 1/3/4 carry non-author-checkable ledger pointers and box 2 stays open on one named missing receipt - promotion is operator-owned and this entry writes no [x].",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 82,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 82,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 82
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "improved",
+    "operability": "unchanged",
+    "calibration": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-82/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-82-verifier-spotcheck.md@a8598038dbcbaa07d4b5899b647bf30aa81e9e3f",
+    "rechecks": "C1 re-measured with my own locator: 0/8 exact at d5b3e134 -> 8/8 at 11d6112b (MT1 [135,138] .. MT8 [259,260]), only `lines` differs, snapshot sha afbf3be6 re-fetched live (http 200, 37234 B) identical; C3 re-measured with my own counter: 1/78 -> 0/77 (f376054a) -> 0/80 (11d6112b); C2 evidence-verified from committed receipts (6/26 gen 0/17 -> 22/26 gen 16/17 rc 1) with the arithmetic ceiling re-derived from mutants-r82.json sha 5e176afc (26 recipes/17 genuine; C16+M06 literal backslash-n 0x vs real newline 1x; C06/C07 genuine_gap false); selftest case counts re-measured 19 and 6; SOURCES 332->333 append-only, S331 byte-identical, census rc 0 with 52 W04, malformed 0, no duplicate ids; instruments sha equal the frozen values at the judged revision; no sibling gate executed"
+   },
+   "commit": "tsukuroi-shokunin@11d6112b1c96e8ac44097bbba72b54c3f2a3c654",
+   "closed_at": "2026-11-05T01:19:34Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (from mutable .ufo/watchdog.log): 2026-11-04T21:04:36-03:00 launch tsukuroi round=82 pgid=290102 attempt=1; 2026-11-04T21:08:32-03:00 lane-dead-no-report (FAIL report_of); 21:08:34 launch attempt=2 pgid=632720; 21:22:16 lane-dead-no-report; 21:22:19 launch attempt=3 pgid=3442469; 21:37:24 lane-dead-no-report; 21:40:54 launch attempt=1 pgid=3216882; 21:52:14 complete tsukuroi round=82 (hyaku-inline attempt=1). Step 1: report 62ef198e landed by tsukuroi-shokunin at 21:49:05, after the delivered lane tip 11d6112b (21:47:30) and pushed to origin/main; SHONEN heading 1 with 4 [~] lines matching SHONEN.md's 4 boxes (no [x]); cited 2786562e/683ae456/f376054a/8111113c/804dc4cb/43aa5768/41fbe5da/c744021c/aaba83cc/11d6112b all ancestors of refs/heads/master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0, porcelain clean, ls-remote master=11d6112b; all 10 round commits authored+committed tsukuroi-shokunin; prompt carries template sections 1-5 byte-identical modulo placeholder substitution plus the hyaku addendum, the >=8 one-batched-call L2 floor matching MISSION.md:55-56, and all five child-lane items; wave w1 12 seats (3 exec/3 scribe/1 scout/1 connector/1 reviewer/1 critic/1 mutation-tester/1 sentinel), attack 3/12=25%, 12 durable reports, 0 dead, planner held by the L1 per the prompt ruling. Claims: C1 depth re-measured with my own locator over the committed entry+snapshot - 0/8 exact at d5b3e134, 8/8 exact at 11d6112b, only `lines` changed, snapshot sha afbf3be6 re-fetched live identical -> VERIFIED (ordinal 8->8, no uplift endorsed). C2 operability evidence-verified, harness not executed: before 6/26 genuine 0/17, after 22/26 genuine 16/17 rc 1; I confirmed from committed bytes that C16/M06 `old` carry a two-char backslash-n (literal 0x, real newline 1x) and C06/C07 are declared equivalent, so the frozen target (>=24, 17/17) is unreachable by construction -> UNMET honest stop, axis unchanged. C3 calibration re-measured with my own counter: 1 finding/78 examined at d5b3e134 -> 0/77 at f376054a -> 0/80 at 11d6112b -> VERIFIED; under strict earlier-only retirement the single remaining site (:7003) is quoted prose, not a contradiction, so the zero partly rides R82-V2 as the lane disclosed. No axis harmed (no ordinal lowered; d5b3e134..11d6112b is append-only on LOG/SCORECARD/SKILL/QUALITY/README/SOURCES/lessons/tools; the only removals are the two round-81 knowledge files C1 repairs). Trends: expansion unchanged (knowledge 99->99, SOURCES 332->333 re-registration only), quality improved (QUALITY 94->97, three gate rows, ordinal contradiction closed, kills 6->22), discernment improved (miss reported not re-scoped, six defects routed with line evidence, cheat table, concurrent-L1 collision mined). Conformance defects (status-neutral): four driver launches with three false lane-death lines and two concurrent L1s on one lane (disclosed, mined); QUALITY 113 tightened in place at 43aa5768 after landing at 8111113c (disclosed as the anchor-window-drift row); tools/__pycache__/check-anchor-coordinates.cpython-314.pyc written into the lane (R82-V6). Routed to round 83: R82-V1 recipe re-encoding (high); R82-V2 check-scorecard-ordinals.py:102 `or True` retires globally and parses quoted prose as an assertion - must be fixed before another C3-shaped claim is trusted; R82-V3 CannotEvaluate traceback rc 1; R82-V4 timeout-as-kill; R82-V5 snapshot_sha256 never read; R82-V6 pycache; R82-V7 (new) S333 used-by inverted - the cell names the two knowledge entry files but neither mentions S333 (entry source: S331/S332, per-row source S331; only lessons/round-82.md cites it); R82-V8 (new) report swaps the opened/recheck column labels and repeats the R82-V7 claim. SHONEN boxes 1-4 look checkable by a non-author after this review; promotion operator-owned, no [x] written. ADJ-06/OUT-009 kaidoku/revenger ownership left unruled (operator-owned).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
