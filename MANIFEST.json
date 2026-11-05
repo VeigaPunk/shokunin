@@ -48269,6 +48269,47 @@
    "notes": "dispatch 2026-11-04T21:20:19-03:00 launch kaidoku round=89 pgid=780802 driver=hyaku-inline attempt=1; 2026-11-04T21:52:03-03:00 complete kaidoku round=89; hyaku-inline attempt=1. STATUS failed: the filed report .ufo/reports/round-89/kaidoku.md is a completion marker (46 lines/1513 B, 7 empty section placeholders, 0 SHONEN mark lines, no evidence pointer and no work commit) - it declares R89-C1/R89-C2 and nothing else; the driver's report_of() accepted it on heading+byte floor only (the known marker hole). Attribution defect: the report commit d0f49dc5 is a hyaku sweep under the lane identity (L1 returned without committing). Conformance: prompt .ufo/prompts/kaidoku-round-89.md carries templates/round-prompt.md sections 1-5 verbatim (only placeholder substitutions differ) plus the hyaku addendum; wave r89-w1 = 14 seats (executor 4, scribe 3, reviewer 2, critic 1, mutation-tester 1, sentinel 1, scout 1, connector 1), attack 4/14 = 28.6% >= 25%, one connector, one batched wave; lane repo pushed at round time (ahead=0 at 5068ba64). Defects: no LOG.md round-89 entry and no SCORECARD.md round-89 section (neither claimed axis move recorded, capability not entered); corpus/lessons/round-89.md and the whole .ufo/waves/round-89/w1/ seat evidence plus r89-w1-spec/dispatch.json are untracked round work; the lesson's wave section is still a placeholder; the committed knowledge entry 2026-11-04-r89-binfo-field-value-class.md points at a non-existent SCORECARD section, names tools/round-89/field-class-matrix.py (absent) and cites the untracked ExecMatrix/matrix.json. Claims: R89-C1 evidence-verified (declaration-time receipt 4 of 4, all four controls, instrument sha256 identical to the landed bytes; r87 8/8 and r88 4/4 regression receipts committed at 5a46542a; before 0 of 4) - but no landing-revision receipt exists; R89-C2 re-measured by me (29/29 blocks resolved at 5068ba64, base 28 red) - no after receipt committed. Post-completion the lane pushed fd9f840b (22:06:46 -0300, entry four-carrier matrix + QUALITY 166-167) after the driver's complete line; recorded, not verified. Routed defects D-89-1..D-89-7 in the spot-check. Promotion: SHONEN.md's four boxes remain [ ] and no box is checkable by a non-author from this round's record (box 2 has no round-89 LOG.md entry to cite).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 79,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 79,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 79
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-79/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-79-verifier-spotcheck.md@b7803829922770b890e9f4efdd30d12c3695439a",
+    "rechecks": "C1 evidence-verified, not executed (lane gate): controls/forge-battery-before-v5.txt FORGE_BATTERY=FAIL forgers_handled=5/6 positive=1/1 exit 1 with a8 verdict=FORGED -> -after-v6.txt FORGE_BATTERY=PASS forgers_handled=6/6 positive=1/1 exit 0; derivative 13/13 MAX_WINDOW=4096 exit 1 -> 0/13 MAX_WINDOW=23 exit 0, independently re-measured by R79ReviewA/receipts/maxwin.out MAXWIN_SUBJECTS_DERIVATIVE40=0/13 EXIT=0; v5 salted_copy writes _r78<hex> source text while v6 emits exec(marshal.loads(b85decode(payload))); 7/7 instrument sha256 identical at controls e2bf2bbb and landing acca2449 and equal to claims.md; kill rule fired - a10-payload-decode.py decodes the wrapper payload and matches surviving string constants, BATTERY=PASS forgers_rejected=11/11 positive=2/2 oracle=REJECTED exit 0 (a10-receipt.txt), and R79ExecC's structure matrix forges both v5 and v6 with a 0/12 semantic control. C2 evidence-verified plus re-derived: 3/3 unresolved reproduced over committed bytes at ee70e6df (Gates row 168 7 cells vs header 8; criterion 116's backticked corpus/evidence/round59/claims.md absent, git cat-file -e rc 1; round-77.md line 73 under ## Boundaries) -> 0/3 with digest-bound repairs whose digests this closure recomputed byte-exactly (e6e751ec67878243, ae134338138ad3e0, 7f2d54a7eb33df54); controls CONTROL=PASS cases=4 v1_false_greens=2/2 v2_refusals=2/2; kill rule fired - a newer block re-using criterion 116 prints SELFCHECK2=PASS unresolved=0/3 exit 0 (selfcheck2-duplicate116-head.txt) via out[current]=[line] at selfcheck-v2.py:146. Both claims falsified; admission false and the lane declares it. SOURCES 195->198 (A 123/123, B 54->56, C 18->19; mined 156->158, queued 19, rejected 20->21), three added rows and no edited cell, census EXIT=0; round diff 363 files +21179 -0; PROVINCE/README/knowledge untouched."
+   },
+   "commit": "chousa-shokunin@acca24498b8259d179db144a8bb2d44c0935e2c1",
+   "closed_at": "2026-11-05T01:14:53Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (.ufo/watchdog.log, mutable): 2026-11-04T21:04:34-03:00 launch chousa round=79 pgid=289331 driver=hyaku-inline attempt=1; 2026-11-04T21:52:12-03:00 complete chousa round=79; hyaku-inline attempt=1. Status ok, real landed report (not a marker): fleet commit 6448ea4a by chousa-shokunin at 21:52:10, after landing acca2449 (21:50:32) and before the complete line; ## SHONEN once with four [~] rows matching SHONEN.md's four boxes; cited e2bf2bbb and b58a02db exist and are ancestors of refs/heads/master; prompt .ufo/prompts/chousa-round-79.md is templates/round-prompt.md rendered (byte prefix, 8408 chars) plus the §6 addendum; 12 seats in one v1 wave (policy band 8-16), attack 5/12 = 41.7%, 10 retained seat reports. Conformance defects (status-neutral): D1 the report was swept by the orchestrator rather than landed by its author (its own subject says so); D2 corpus/evidence/round79/controls/selfcheck2-after-landing.txt is untracked although the report cites it as C2's landing re-measure (lane ahead=0, untracked=1); D3 report lines 6 and 119 cite the landing commit as the literal LANDING; D4 LOG.md §Round 79 says C2's kill rule 'both are refused' while report, SCORECARD and lesson record it firing on the duplicate-116 input; D5 QUALITY 150-151 sit under a ## Round-80 addition heading though they are round-79 findings; D6 the C1 control receipts name no lane revision and C2's after receipt is REV=worktree. Routed to chousa for round 80: (1) S196's Gate quote is 27 words vs the stated 25 and over the <=25-word bound, S197 is 25 vs 24 stated, S198's quote occurs nowhere in its 11-line cited receipt and its 1-20 span overstates the file - the round's own R79ScribeA corrections were left unlearned; fix as supersedes rows plus a QUALITY criterion that re-opens, greps and wc -w's a located quote; (2) commit or explain the untracked landing receipt; (3) erratum naming acca2449 for the two LANDING cells; (4) appended LOG correction entry on the C2 kill rule; (5) record the QUALITY block mislabel; (6) revision-named control receipts; (7) carried: the payload-decoding channel and the structure matrix forge both batteries, a9 is empty, RECEIPT_LINES exposes an append only, the --work/toolchain legs sit outside the predicate; (8) carried from round 78: no isolated-fixture --selftest on the round-78/79 instruments (0/0/0) and work-contract.py never compares Case A's matrix exit. Operator note: all four SHONEN boxes look checkable by a non-author from committed artifacts; promotion is operator-owned and this closure wrote no [x].",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
