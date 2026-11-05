@@ -50822,6 +50822,44 @@
    "notes": "Dispatch digest (.ufo/watchdog.log, mutable; copied at closure): 2026-11-05T10:14:33-03:00 launch kaidoku round=93 pgid=2964887 driver=hyaku-inline attempt=1; 2026-11-05T11:38:08-03:00 complete kaidoku round=93; hyaku-inline attempt=1. Verdict: round admitted=false because R93-C1 (calibration) is declared NOT VERIFIED by its own kill rule (positive --json-out receipt not written: v3 TypeError on bytes in json.dump); R93-C2 verified on frozen predicate; no axis harmed. Routed defects (status-neutral, do not bar admission): D-93-A report R93-C1 counting command cites nonexistent revision ca5aa6a2ce0d5e8a7c5b5b0f2d9f0eb9a0e4a0f2 (real is ca5aa6a2ca65ff14f11707c3a376a96879458248); D-93-B report claims WAVE-DONE received with no committed pointer; D-93-C SCORECARD round-93 first paragraph says ca5aa6a2..HEAD diff of corpus/QUALITY.md is empty but Row 188 pointer continuation landed after ca5aa6a2; D-93-D truncated partial receipts c1-pos-json and c1-F3-json in .ufo/waves/round-93/l1/scores/ begin with exit 0 and fail jq validation. Routed to round 94: M93-e successor counter stop-boundary-repair-battery-v4.py as fresh declaration; open L0 question kaidoku|round-93 on stdout-form receipts and successor approval (operator-owned). SHONEN: all four [~] boxes look checkable by a non-author; promotion is operator-owned, not done. Commit field cites lane HEAD of the round (a894611e); the spot-check commit is 8a40ceb6.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 78,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 78,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 78
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth:verifiability": "unchanged",
+    "depth:density": "unchanged",
+    "coverage": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-78/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-78-verifier-spotcheck.md@d16d2124fd5262f5a8088aa598f1e628f897d3ab",
+    "rechecks": "C2 re-measured: knowledge 91->92, registry 112 unchanged, mined 91->92, queued 2->1, knowledge-expected 93->94 lines (91->92 .md), literal quote sweep 0/7 over 91 base entries, snapshot sha256 f3ca0465...0907 matches manifest, Q01/Q02/Q03/Q09/Q10/Q11/Q13 exact on manifest lines 24/24/24/166/168/169/195, live re-open HTTP 200 30406 bytes with all seven quotes present once; sources-census validate rc 0 (six inherited W04). C1 evidence-verified only: landed counter sha e666ae11 equals base; candidate K-X2.out survives (cases=13 failures=0), so P3 fails and C1 is NOT VERIFIED. Gate scripts not executed; committed control and receipt files read. Discernment spot-check: 3 agree, 1 disagree on the stated reason for Q12 reject (F51 :47 does not hold the threading caveat)."
+   },
+   "commit": "kasegi-shokunin@c2f4119b13bd8afd2679521fd815a1a2356cbd39",
+   "closed_at": "2026-11-05T15:03:24Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (.ufo/watchdog.log, mutable, copied at closure): 2026-11-05T10:47:08-03:00 launch kasegi round=78 pgid=1315799 driver=hyaku-inline attempt=1; 2026-11-05T12:00:09-03:00 complete kasegi round=78; hyaku-inline attempt=1. Status ok: report 1daf1614 lane-authored, filed 11:59:02 after landing 11:58:39; cited hashes c2f4119b, 2d81fe84, 0687cca8 ancestors of master; lane state ahead=0, porcelain empty. Admission false: C1 NOT VERIFIED (candidate not landed, K-X2 survives, P3 fails); C2 VERIFIED. Trends: expansion improved; quality unchanged; discernment unchanged (spot-check 3 agree, 1 disagree on Q12 reject reason). Conformance defects (status-neutral): Q12 reject cites F51 :47 for the threading-variance caveat, which F51 does not hold (grep empty); S112 lesson Gate lacks the <=25-word quote placement required by CORPUS.md rule 1 (row was written round 77; placement only); entry Claim 4 'Rejected over-generalization' sentence hard to parse. Routed for lane next round: correct Q12 reason via appended erratum/successor, fold threshold-qualifier into Q10/Q11; C1 K-X2 class needs independent case-6 limb assertion before freeze; M77-3 stays open; L0 items R-77-D, R-77-E, R-77-F unchanged. SHONEN: no box made checkable by a non-author this round; operator-owned; no [x] written. Lane 'SHONEN' heading conformant.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
