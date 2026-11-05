@@ -48348,6 +48348,46 @@
    "notes": "Dispatch digest: 2026-11-04T21:02:58-03:00 launch kasegi round=70 pgid=254668 driver=hyaku-inline attempt=1; 2026-11-04T22:03:50-03:00 complete kasegi round=70; hyaku-inline attempt=1. Conformance: report committed by kasegi-shokunin 99a2cf0f at 22:02:19, after the cited lane tip 3874e40e (22:02:00); all 13 cited hashes are ancestors of master; lane repo ahead=0 clean; prompt renders templates/round-prompt.md 1:1 over 140 lines with the hyaku addendum from l.141 (all round-level and five child-lane items present; L2 floor 8 = MISSION.md:55); 12/12 round commits under the lane identity, none touching .ufo/state or watchdog.log; SHONEN heading present with four box lines, no [x]. Wave: one v1 wave, 12 seats (3 executor, 2 reviewer, 2 critic, 1 mutation-tester, 1 sentinel, 1 scout, 1 connector, 1 scribe), 11 seat reports, ExecProbe dead (provider 401, not replaced), round total 12, band 8-16, attack share 5-6/12. Claims: C2 verified by re-measurement (F48/S105 admitted, V69-1 S104 rejected row landed, all frozen counters reproduce); C1 predicate verified (12/9->12/0, selftest 86->96) but its declared universal (every read-only derive stays admitted) is false on 10 measured rows and the exec class is reachable with no option, so the lane's honest stop stands and the round is not admitted. No owned axis harmed (SCORECARD diff is additions only; 4/8/9 held). Defects routed to the lane, status-neutral: C2 landed 20s before its freeze (b4afd8a0 21:19:36 vs e74ba6b5 21:19:56) - freeze-before-data ordering miss; report prose says 10 of 12 seat reports while w1/ holds 11 (M70-4 typed-count class); V70-1..V70-6 carried (per-script denial, no-option/--selftest exec class, selftest single-limb isolation, unmeasured short -o, --root fixture capability loss, quote-audit 5% coverage). Non-author spot-check: admit S105 agree (17-word quote at S105.txt:601, live page carries it), reject S104 agree (byte-identical SPA shell, zero endpoint and /api/). SHONEN: boxes 1/3/4 are [~] author-asserted and box 2 is [ ] - promotion remains operator-owned; no box is checkable to [x] by this non-author without an authorized end-to-end bounty task.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 92,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 92,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 92
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "unchanged",
+    "freshness": "improved",
+    "operability": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "heuristic freshness decision (scripts/heuristic_freshness.py: explicit / heuristic / not-heuristically-cacheable / heuristic-undecided / not-storable over a stored status+header map, an integer now and a shared flag; 10%-of-interval heuristic capped at 86400 marked as lane conventions, not RFC requirements; selftest 54/54 on a non-author probe)"
+   ],
+   "report": ".ufo/reports/round-92/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-92-verifier-spotcheck.md@10ecbd1ade91d0721e87a9942a66a2b61d5ce8d5",
+    "rechecks": "Step-1 PASS: report 3ebedf2f by kake-shokunin <kake@shokunin.local> at 22:07:09 -0300, before the 22:07:24 completion line, contained in origin/main+origin/master; one SHONEN heading, four box lines (3 [~], 1 [ ], no [x]), SHONEN.md unchanged, box-2 gap real (round-47 receipt absent at 027faf79); 5/5 cited lane hashes ancestors of refs/heads/master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0, git status clean; prompt 846 lines carries the round contract and all five child-lane items, no L2 route map quoted; wave w1 14 seats (exec 4, scout 2, scribe 2, reviewer 2, conn 1, sentinel 1, critic 1, mut-tester 1), attack 4/14=28.6%, 13 seat dirs with files, SentinelQuote empty. Counters NOT executed (Gate standard): C1 evidence-verified (registry row 0->2 at SKILL.md:1663, mutation-tip.txt gate_sha256 d7bca38e == sha256 of scripts/cache_key_conformance.py at base/carrier/head, log 30 lines 20 killed/10 survived, run_controls.sh nine label echoes, five frozen neg-* subjects) and FALSIFIED as worded by the round's own attacks (ReviewC1 classes 3/5c/6, CriticClaims F1/F2/F3, ExecMutation D1/D3); C2 re-measured on committed bytes (instrument absent at base, 22985 B sha256 7bfe82da at head; entry 0->480 lines citing S470; S470 0->1 tier A mined; README coverage row 0->1) plus a non-author probe (selftest 54/54 exit 0; heuristic 100 / explicit 600 / not-storable / quoted max-age refused) and evidence-verified seats (ReviewC2 93/97 with 0 tool defects, ExecTrial 18/18). Counts re-measured: rows 206->207, knowledge .md 79->80, 0 deletions, 1059 added / 0 removed outside .ufo/. Census exit 0, 31 W04 at both ends."
+   },
+   "commit": "kake-shokunin@027faf79bba2600c0852f1ec2b51774c868cf321",
+   "closed_at": "2026-11-05T01:18:04Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, copied from the closure prompt; log is mutable): 2026-11-04T21:13:09-03:00 launch kake round=92 pgid=1046723 driver=hyaku-inline attempt=1; 21:58:46 lane-dead-no-report kake round=92 (attempt 1 landed a5640ca0..9f15115b and ended without a report); 21:58:48 launch attempt=2 pgid=620359; 22:07:24 complete kake round=92 attempt=2. Status ok: a real report over committed round work (attempt-2 re-verified the inherited readings in controls/attempt2-reverify.txt rather than redoing them). NOT ADMITTED - rejected-honest-stop: C1 (calibration, lowest owned non-retired axis at 2 HOLD) declared that K91-1/K91-2/K91-4/K91-5 close, and the frozen counter does read met=true at 2a4447c1, but the round's own committed attacks reach met=true doing none of the claimed work (canned-verdict runner, constant-label harness, self-pin rewritten in the same commit, runner executing a different gate, row naming a refusing counter; item A re-executes only one log line) - the claim sentence does not verify, the lane filed it as not admitted and routed R92-1..R92-3 instead of patching after scoring. C2 (freshness capability acquisition) verifies: instrument absent at base, present at head with the declared digest, entry/registry/coverage/capability row landed, non-author probe selftest 54/54 and the three claimed decisions; its frozen counter under-proves conformance (13/24 tool mutants survive, 5 clause-violating subjects admitted) - routed R92-4/R92-5, not repaired. Axis grades: calibration unchanged (score 2 HOLD, falsified claim on the record, nothing regressed); freshness improved (capability acquisition on frontier ground; the SCORECARD score stays 10 HOLD - the capability is the move); operability improved (two new registry rows at SKILL.md:1663/:1665 and the how-to-verify line at :1667 make the instruments runnable from the registry home). Conformance defects (status-neutral): (1) report C1 item A says the mutation log records a base and an M01 run that differ, while integration/mutation-tip.log holds 30 mutant lines with base excluded and the differential is in w1/ExecMutation/run.log [5]; (2) c92_heuristic.py is registered as a gate at SKILL.md:1664 with no --selftest mode, which Gate standard Self-test does not accept for a gate; (3) corpus/QUALITY.md Round 92 grounds its criterion without naming corpus/lessons/round-92.md; (4) corpus/lessons/round-92.md Mistakes row 5 is detached from its table by a blank line; (5) SentinelQuote was a dead seat (R92-6). Routed to the lane next round: V92-1 (fix the base-line pointer by append-only correction), V92-2 (gate row needs a --selftest mode or a probe registration), V92-3 (cite the lesson in the QUALITY criterion), V92-4 (re-append Mistakes row 5 inside the table), plus the lane's own R92-1..R92-7 still open (unbound item-A execution; label nonce; text-only row; clause coverage; reference drift; dead seat; K91-3/K91-6/K91-8/K91-9/K91-10). Spot-check: all 4 admits and 3 rejects in corpus/lessons/round-92.md Gate re-opened and agreed - live GET rfc9111.txt 200/84477 B/sha256 aeb52adb identical to the retained body, six quotes exact substrings at lines 686-709 (15/20/18/18/22/9 words, all <=25), 86400 sweep 0 hits, line 700 defers to RFC 9110 15.1, errata page 200 with exactly four records (7695/9004/9166/9185) and no 4.2.x mention; S470 row 11 columns, tier A spec mined, used-by resolves; census exit 0 with 31 W04. Promotions: none; SHONEN boxes 1/3/4 carry non-author-checkable ledger pointers and box 2 stays open on one named missing receipt - promotion is operator-owned and this entry writes no [x].",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
