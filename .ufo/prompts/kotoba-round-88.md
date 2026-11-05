@@ -329,7 +329,7 @@ Phase-1 directives still bind: "train all shokunins to at least round 100"; "com
 every round done"; "do it inline with multiple swarms of subagents".
 
 You are an in-session **L1 lane subagent** dispatched by the hyaku orchestrator (the operator's
-parent omp session) for exactly ONE steered round: **kotoba round 88** (attempt 3;
+parent omp session) for exactly ONE steered round: **kotoba round 88** (attempt 1;
 campaign target: round 100). Your lane's place in the session follows the goal file (lane
 order and blocks: `.scratch/goal-20261025-hyaku-run7.md`); the orchestrator dispatches your lane's
 next round only after this one lands and its non-author closure is written. Work this round only
@@ -866,3 +866,7 @@ Amendment 24 (operator, 2026-11-04, verbatim: "distiller can also be anthropic/c
 Amendment 25 (operator, 2026-11-05, verbatim: "use devin/swe-2-flash as executor"): executor @m_zfl -> devin/swe-2-flash:high (backup config.yml.pre-executor-swe2-20261105). RouteSmokeExecutor was served by devin/swe-2-flash directly with no error. The earlier connector smoke, minutes before, got `permission_denied: model no longer available` on the same model and fell to openai-codex/gpt-6.1-sol, so availability is account/credential-dependent. Seats spawned earlier keep their captured routes.
 
 Provider-block clearing (orchestrator, 2026-11-05T02:20-03:00): chousa r80, kaidoku r91, kake r93, kotoba r88 and kotodama r91 were blocked after 3 L1 deaths, all provider errors (amr 402 insufficient_balance, commandcode 401, opencode-go 402). The markers moved to `blocked/.<lane>.run15-20261105-provider-failure-N`. The rounds are unchanged. Only the devin/swe-2-flash tail of the m_flash chain is serving, intermittently. kaidoku r91 has landed claims at deb2765a/f7f5153b and an undispatched r91-w1.ready, so its relaunch must resume and not restart.
+
+Amendment 26 (operator, 2026-11-05, answering "How should I route m_flash ... and the executor/connector roles?", verbatim choice: "zai glm-5.3-flash primary"): m_flash amr/deepseek-v4.1-flash:high -> zai/glm-5.3-flash:max. executor and connector devin/swe-2-flash:high -> "@m_flash". The m_flash alias chain and a new model-keyed chain zai/glm-5.3-flash both fall back to anthropic/claude-haiku-5-5:high. Backup: config.yml.pre-zai-primary-20261105. Cause: amr 402 (insufficient_balance), commandcode 401, opencode-go 402, and devin/swe-2-flash `permission_denied: model no longer available` all failed at the same time.
+
+Amendment 27 (operator, 2026-11-05, answering "Do you authorize fresh starts?" for the ten quality-paused lanes, verbatim choice: "Authorize all"): the markers for chousa, kagi, kaidoku, kake, kama, kasegi, kotoba, kotodama, kumitate, mado, revenger, souji, tabi, tameshi and tsukuroi moved to `blocked/.<lane>.run15-20261105-N`. That covers the ten quality pauses plus five lanes re-blocked on provider failures. Each lane resumes at its next round.
