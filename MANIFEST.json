@@ -52452,6 +52452,44 @@
    "notes": "dispatch digest: 2026-11-05T18:40:20-03:00 launch revenger round=99 pgid=1373837 driver=hyaku-inline attempt=1; 2026-11-05T19:35:23-03:00 complete revenger round=99; hyaku-inline attempt=1. Admitted: C1 coverage K 13/15->14/15 (C14 held via frozen v8 c14r99) and C2 calibration v7 9/12 -> v8 0/12 (development set; fresh r99 holdout 12/12 accepted, no generalization) both verify; no axis harmed. Conformance notes (status-neutral): report round-end census line omits 13 x W04 its own log records; C1 do-nothing control ran on 61e27feb (Amendment A) not the claims-freeze commit 7e6edd4 named in claims.md; L1 git mv -k slip self-disclosed, no residue. Routed to revenger r100: (1) fresh r99 holdout 12 classes accepted by v8, incl. a counter leg running deriv_check (C14-N3); (2) entry Q-map Q13 rationale stale vs Q11/Q16 deriv_check credits; (3) re-derive C02 no-harm diagnostic rule for K-moving flips (M19); (4) report census lines must carry every warning class; (5) do-nothing control on the commit claims.md names; (6) carried: d-host tree survivor, M4 claude-red-re-bridge.md, producer-attribution census, L0 assimilation 155/155 collisions. Operator: SHONEN boxes 2-3 now have a non-author re-derivation (this closure re-ran C14 derivations and S506/S507 re-opens); promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 98,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 98,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 98
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "improved",
+    "freshness": "improved",
+    "operability": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-98/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-98-verifier-spotcheck.md@cde408e5817bf1376c701d8decc5469fa82b2985",
+    "rechecks": "All 7 cited commits + base exist and are ancestors of refs/heads/master; lane ahead=0, porcelain clean, ls-remote==77adb17e at closure open; report committed by kake-shokunin (f2557a6f) after tip; prompt = canonical template rendering + hyaku addendum. C1 RE-MEASURED with jq/awk: 48 admitted capabilities_added at fleet f8674006, table rows 14 (base) -> 48 (4446ce21, per-round counts identical) -> 49 (tip, +r98 C2 row); counter receipts and digests evidence-verified (not executed); review conjunct ReviewCapB 43 agree/2 disagree, both disagreements re-checked and upheld (id_resolver 'ambiguous' grep=0; selftally 'ten rows') -> C1 unmet by frozen kill rule. C2: landed blob sha256 f43895f1 re-hashed = scored; counter/contract digests at tip = freeze pins; after-c2 met=true evidence-verified; own 6 contract probes 6/6. Spot-check 4/4 agree (admit S482 re-fetched byte-identical, quote at lines 107-109; admit S483 errata page byte-identical, quote line 174; reject S480 source line; reject merge/kake adoption, 8 collisions re-derived). Census validate rc 0. SOURCES rows 218->220."
+   },
+   "commit": "kake-shokunin@77adb17e9e0225f3cf36f7b74681353bfbe3d26b",
+   "closed_at": "2026-11-05T22:41:49Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-05T18:39:48-03:00 launch kake round=98 pgid=1367933 driver=hyaku-inline attempt=1; 2026-11-05T19:38:28-03:00 complete kake round=98; hyaku-inline attempt=1. Honest stop: C1 (calibration) unmet on its own frozen review conjunct although the table now matches the admitted record structurally; C2 (freshness, RFC 5861 stale-serving capability) met and verified, but admission is round-level so no capability is recorded. Defects (status-neutral): scripts/knowledge_metatext_lint.py is called a gate but has no SKILL.md registry row and no committed run at the landed revision (not conformant); report cites the C1 tip receipt at 77adb17e while it was measured at 76f834aa (SCORECARD bytes identical). Routed to kake r99: R98-C1 add the metatext-lint registry row + landed-revision run; R98-C2 move the unbacked r98 C2 Capabilities row to the non-admitted history table (or re-earn admission); R98-C3 cite measured revisions; lane routes R98-1..5 stand. Reviewer seat ReviewCapA dead (R98-5). SHONEN box 2 gap; no promotion note.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
