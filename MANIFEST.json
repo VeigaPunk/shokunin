@@ -50282,6 +50282,50 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, copied 2026-11-05): 2026-11-05T07:41:55-03:00 launch kengaku round=91 pgid=154382 driver=hyaku-inline attempt=1; 2026-11-05T09:34:10-03:00 complete kengaku round=91; hyaku-inline attempt=1. No lane-dead-no-report line. Status ok (real report, not a marker). Round not admitted: C1 coverage not met (M7 parser defect, M12 unguarded openssl probe), C3 operability not met (M8 selftest outside predicate path, M11 working-tree checks, M10/M13 gate closure rules), C2 calibration met on its predicate with the --skip-selftest escape routed (M9). No axis harmed (SCORECARD 26 insertions 0 deletions). Conformance defects, status-neutral: report wave bullet '14 controls' vs seat controls.txt (self-disclosed; erratum owed); frozen claim function line ranges 16-42/45-48 vs bytes 11/46 (M2, not repaired after freeze); frozen round-shape line mismatch (self-disclosed). Routed to round 92 (verified in source): C1 parse_receipt id token; C1 host-probe guard; C3 selftest in predicate path; C3 checks at measured revision; C2 --skip-selftest removal and expected-rc pin; R82-V8 R83_FLEET_REPO default (plans/round83_c2_checks.py:168); gate closure-check and owner rules; supersede-chain rule; append-only correction row for R84-V9-R91 fixed-verified label; capture pins for S260 S261 S265 S266. Repeated routing: round-90 C1/C3 items were routed to round 91 and not landed; re-routed. SHONEN note for operator (no [x] written): boxes 2 and 4 look checkable by a non-author from committed bytes; promotion operator-owned. Lane counters and gates were not executed by the integrator.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 39,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 39,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 39
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "improved",
+    "calibration": "improved",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [
+    "anchor-pin drift detection",
+    "declared-axis conformance"
+   ],
+   "report": ".ufo/reports/round-39/kagi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kagi-shokunin/corpus/lessons/round-39-verifier-spotcheck.md@d491f100e08c939cdab2bf819776fc886421fd0b",
+    "rechecks": "Integrator re-measured at 368991952 with plain commands (not lane gates): C1 BASE absent, pins match sha256 of HEAD anchor cells (S034, S035, S039), 3/3 plain in-place rewrites DRIFT; C2 BASE absent, plan headings lines 40 and 77, one tagged row per claim with matching axis, manifest 2 rows, planted relabel X1 MISMATCH. Lane counters and gates read as committed receipts only (3/3, CLEAN). Registry 93 -> 94, malformed 0, no duplicate ids; fleet sources-census validate kagi rc 0. S094 quote located at f47ad6ba CORPUS.md line 116. Live re-opens: Vault releases.atom (S034 kept), Python feed (S039 kept, S091 3.15.2), docs re.html and html.html (served 3.15.2; S040 quote whitespace variant routed), WHATWG releases.atom (S038 reject, 0 entries). Six ledger rows red at landing (R13-01, R21-02, R24-06, R31-02, R33-02, R34-03): pure-append pins, not migrated, named; status-neutral; calibration not counted harmed (closest call)."
+   },
+   "commit": "kagi-shokunin@368991952b57e8425a6e441ee53830eb5a35cd2a",
+   "closed_at": "2026-11-05T12:46:55Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable; copied at closure): 2026-11-05T07:16:41-03:00 launch kagi round=39 pgid=3777574 driver=hyaku-inline attempt=1; 2026-11-05T08:10:38-03:00 lane-dead-no-report kagi round=39 (attempt=1 ended without landed report; retry same round); 2026-11-05T08:10:40-03:00 launch kagi round=39 pgid=3839653 attempt=2; 2026-11-05T09:40:56-03:00 complete kagi round=39 attempt=2; 2026-11-05T09:40:58-03:00 complete kagi round=39 attempt=2. Report attribution kagi-shokunin <kagi@shokunin.local> (ab5e9e38); ancestry of all six cited hashes verified; lane state ahead=0 behind=0 untracked=0; remote master 368991952. Conformance defects (status-neutral): CD-1 planner seat absent vs prompt 3 (validator rejected planner; orchestrator-owned); CD-2 stale-lane section lacks progressing/silent grades per mission; CD-3 two dead seats, no report files, disclosed; CD-4 six red ledger rows R13-01, R21-02, R24-06, R31-02, R33-02, R34-03 (pure-append counts, named debt); CD-5 lesson Gate records no round-39 reject, so discernment sample has no round-39 reject (substitute: pre-existing S038 reject, agrees); CD-6 lesson non-author spot-check sections still Pending (closed by spotcheck@d491f100). Routed to lane round 40: R1 rebind six ledger rows; R2 S036 pin as new claim; R3 S040 quote whitespace form (served 3.15.2 text 'str.isspace()).' vs row 'str.isspace() ).'), supersede by row not in-place; R4 record >=1 reject per round in Gate or paste sweep; R5 stale-lane progressing/silent grades; R6 S094 source cell raw URL shape nit; R7 frozen counter amendments and gate false-clean paths (M39-6, M39-12, R38-D4, R37-V2). Routed to orchestrator: R8 planner seat / validator role map; seat-receipt /tmp paths (M39-10); L1 re-issue for resumed attempts (M39-11). SHONEN: not fully checkable by a non-author this round (box 1 and box 4 rest on prior-round evidence; box 2 and 3 partly observed); no mark written; promotion operator-owned. Integrator note: one untracked DRIFT file was created in the lane repo by a mistyped integrator check and removed at once; lane state re-read clean before commit. Operator ruling requested on calibration reading under CD-4.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
