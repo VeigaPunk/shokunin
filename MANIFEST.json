@@ -50700,6 +50700,46 @@
    "notes": "Dispatch/complete digest (watchdog.log, mutable): 2026-11-05T00:52:37-03:00 launch kake round=93 pgid=1825962 driver=hyaku-inline attempt=3; 00:53:14 lane-dead-no-report retry; 02:17:42 launch pgid=1991511 attempt=1; 02:18:16 lane-dead-no-report retry; 02:18:18 launch pgid=1995250 attempt=2; 02:18:51 lane-dead-no-report retry; 02:18:53 launch pgid=1996878 attempt=3; 02:19:33 lane-dead-no-report retry; 10:33:26 launch pgid=3763409 attempt=1; 11:11:14 complete kake round=93; hyaku-inline attempt=1. Resumed attempt inherited earlier attempts' outputs, disclosed item-by-item in the report. Conformance defects (status-neutral): no WAVE-DONE/w1-results.json — settlement evidenced by committed artifacts, operator ruling requested (.ufo/l0-questions.md:357); four seats filed no report (ScoutGround empty, CriticClaims/MutConditional/SentinelScope partial receipts under w1/recovered-partial/); freeze text 12 seats vs dispatch 13 (disclosed drift); L1 Gate block quote-span/length defects corrected by the source-seat block and verified against live bytes; freshness sweep exit 1 at tip with pre-existing unannotated miss (~/projects, round-90.md:82). Routed to the lane's next round: R93-1…R93-15 (successor C1 counter R93-1…R93-6; C2 frozen-population gaps R93-7/R93-8), the freeze-vs-dispatch reconciliation, pre-commit quote verification, and the sweep-baseline annotation. SHONEN note for operator: boxes 1/3/4 carry [~] with resolvable pointers re-checkable by a non-author (E5 class 0 re-measured; conditional_eval.py --selftest 90/90 re-run; w1/ConnectorScope.md), box 2 [ ]; no [x] written; promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 65,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 65,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 65
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "freeze chronology binding (tools/souji-freeze-check.py --chronology; selftest 52/52 receipt committed; landed 16da2445, r65)"
+   ],
+   "report": ".ufo/reports/round-65/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-65-verifier-spotcheck.md@045e103478fa4a7eff77db2cab5b9e2f26959a0a",
+    "rechecks": "C1/C2 evidence-verified (gate receipts; sibling gates not executed): controls c1-do-nothing (12 forgeries/5 honest/class_mismatch 12, EXIT 1) vs c1-after-494c00df (0/5/0 regress=PASS, EXIT 0); c2-do-nothing findings=2 FAIL vs c2-after-494c00df findings=0 PASS. Plain corroboration: matrix wc 20=header+19 rows, same matrix sha in both receipts; instrument sha256 pins match live bytes (c1 6401b35d, c2 afd4cb54); writer bytes af81553f==494c00df (diff empty) and all four refusal mechanisms grepped in 494c00df bytes; SKILL.md @494c00df carries the four C2 after-wordings with live markers; SCORECARD diff 4a43a4d9..f6358d2c additions only, owned scores unchanged; wave mirror corroborates independent repro (C1/C2 EXIT 0, selftests 30/30, 8/8, 13/13). All 14 cited commits ancestors of refs/heads/master; porcelain clean; jj-lane state ahead=0. Discernment: live git-config(1) re-open byte-identical to capture (sha 37aa8407), tagstrip rerun identical, 3 slice assertions PASS at byte offsets 299360/299437/299266, word counts 6/9/11<=25, both sampled rejects agree (0 receipt/writer mentions; no ignored-path scope); S297 row + knowledge provenance trio + S291 used-by verified; sources-census validate exit 0 ok (220 rows); spot-check agrees on all sampled admits and rejects -> discernment improved."
+   },
+   "commit": "souji-shokunin@f6358d2cc28e8fefa28ab343f561e38e0867d791",
+   "closed_at": "2026-11-05T14:55:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-05T09:59:23-03:00 launch souji round=65 pgid=2895289 driver=hyaku-inline attempt=1 | 2026-11-05T11:16:49-03:00 complete souji round=65; hyaku-inline attempt=1. Conformance PASS (lane-attributed report commit c0ba37cc; SHONEN heading 4x[~]; prompt = template rendering + hyaku addendum sec.6; pushed ahead=0; not a marker). Defects (status-neutral): 6147f025 subject claims the wave-mirror residue drop whose deletions actually landed in f6358d2c (cosmetic message/content mismatch); census validator emits ~70 pre-existing W04 duplicate-URL-across-scopes warnings (exit 0, verdict ok, not round-65-introduced); prereg false chronology sentence frozen with erratum R65-ERRATUM-PREREG (lane-disclosed, M7). SHONEN boxes all [~]; closure verified every box's pointer resolvable - boxes look fully checkable by a non-author; promotion is operator-owned. Routed to round 66: F1 behaviour (GIT_CONFIG_* + ignore routes defeat dirty check for non-status keys); M10 C2 'return' emission token matches returncode; M11 same-content symlink retarget kill row; M12 setuid/setgid/sticky mode masking (Q126 narrowed); MEDIUM: N4 dual-seed fixture, TSV pin not anti-launder, RECEIPT-INDEX-ENV-SET env-value echo (F4), counter excerpt bound (F5); M8/Q59 prereg MACHINE BLOCK (operator L0 open); :(top) code-kind row (operator L0 open). Misroot sweep re-run: no souji-authored file at fleet root (only orchestrator .scratch/run15-state.json and kaidoku closure temp). Trends: expansion unchanged (S297-mined entry on F1/F4-adjacent held ground, coverage map unchanged), quality improved (C1 12->0 forgeries with 5/5 honest accepts; C2 2->0 findings; no admitted entry failing its bar), discernment improved (non-author spot-check agrees with gate on all sampled admits and rejects; five wave disagreements each became lesson rows/narrowed QUALITY criteria).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
