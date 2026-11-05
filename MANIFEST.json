@@ -48511,6 +48511,49 @@
    "notes": "Dispatch/complete (watchdog, mutable): 2026-11-04T21:40:56-03:00 launch tameshi round=86 pgid=3244051 attempt=1; 21:52:06 lane-dead-no-report (attempt=1); 21:52:08 launch pgid=2100150 attempt=2; 22:09:27 lane-dead-no-report (attempt=2); 22:09:29 launch pgid=2368950 attempt=3; 22:22:53 complete tameshi round=86; hyaku-inline attempt=3. Status ok, not admitted: both frozen claims are killed by the lane's own pre-registered kill rules (C1 two counterfeits at 8/8 against the frozen counter; C2 a cited-tree relabel binding 30/30) and the lane withheld admission without narrowing any predicate, population or target. Conformance defects, status-neutral: duplicate concurrent attempt-3 L1 sessions (driver-side, disclosed); two dead wave seats and no settlement file from the dispatcher (r86-w1-results.json is a null-status reconstruction); controls/counter/plan share one commit so the cheat-family-before-freeze ordering is not provable from git (T86R1 named it). Routed to round 87: (1) commit the C2 before-state live-only manifest (scratch path /fast/scratch/... only, sha 75f268f5) so c2-before is re-derivable; (2) the report's receipts=72 at 43fc447f and coldread 47/47 'at the final tip' have no committed receipt (final-sweeps.txt at e307dec reads receipts=71 and only EQUIVALENCE 20/0; the 47/47 figure is landing/coldread.txt at a01293c7); (3) SOURCES round note fetch stamp 2026-11-04 00:41:59 GMT contradicts s305.headers date Thu, 05 Nov 2026 00:45:18 GMT; (4) attack share 4/10 in the report vs 3/10 in LOG.md - state the counting rule once; (5) no QUALITY.md criterion for M3/M4 though the lesson claims criteria 111/77 caught them (111's family ran and missed the label/worktree class; 77 names two different criteria at :916 and :2304); (6) the two retained instruments are unregistered in SKILL.md - register as probes with their limits or land the successor gate with its row; (7) the lane's own successor requirements for C1/C2 stand, and the r85 GIT_* inheritance, malformed kind/source-id, caller revision authority, conversion and receipt race/parent-alias debts stay open. SHONEN: the four boxes now look checkable by a non-author from committed artifacts, but promotion is operator-owned and this closure wrote no [x].",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 64,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 64,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 64
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "adjacency": "unchanged",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unprovable"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "chromium-wheel-scroll-domain-linux"
+   ],
+   "report": ".ufo/reports/round-64/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-64-verifier-spotcheck.md@58ed8c7a21b9dcb403e46fc1d4e2d8bb68511162",
+    "rechecks": "C1 evidence-verified at e2303730: 10/10 claims.json pins re-hashed over committed bytes, evidence receipt sha256 4e3a95c1 match, counter 29 checks/0 findings, live verifier 2 runs exit 0 counterExit 0/0 crossRun+evidence true driverSha256==pin, 29/29 negatives refused forgedGreen 0, 16/16 mutants killed 0 surviving, selftests 31/31 and 9/9, 12/12 scored controls, controls committed before the 0fc68043 freeze; C2 re-derived but unprovable: gate-before 11 receipts/34 failures and gate-after 15/0 both reproduce, yet a 12-receipt never-executed population scores 0 failures (w1 R64Reviewer H5) and no C2 no-work control was frozen; 7/7 cited lane commits ancestors of master, lane ahead=0 and clean, report SHONEN 4/4 [~] under its heading, prompt carries the full contract."
+   },
+   "commit": "tabi-shokunin@e23037304ac72e07c664fb0cf2bb57f9f441c241",
+   "closed_at": "2026-11-05T03:28:30Z",
+   "campaign": "hyaku",
+   "notes": "dispatch digest: 2026-11-04T21:03:00-03:00 launch attempt=1 pgid=255900; 22:32:15 lane-dead-no-report attempt=1; 22:32:17 launch attempt=2 pgid=2940420; 22:32:54 lane-dead-no-report attempt=2; 22:32:56 launch attempt=3 pgid=2955453; 22:33:31 lane-dead-no-report attempt=3; 23:51:33 launch attempt=1 (resume) pgid=3147122; 2026-11-05T00:23:59-03:00 complete. Lane tip e23037304ac72e07c664fb0cf2bb57f9f441c241 (before 40095308982b8a6ba126bdcb0264aa2164a809b6), state ahead=0 behind=0 tracked=0 untracked=0; report commit 102603924809125facc9f431a388072534488f77 by tabi-shokunin; SHONEN heading 1 with 4 [~] lines for 4 boxes; 7/7 cited commits exist and are ancestors. C1 coverage VERIFIED on its frozen predicate; C2 calibration honest miss -> unprovable, so the round is not admitted. Conformance defects routed: D1 lessons/round-64.md claims a residual wave w2 of 4 seats that has no committed bytes and contradicts the report's 'residual call none / 12 seats'; D2 same lesson says 11 of 12 seats reported where committed seat reports are 10 (R64MutDriver none, R64Sentinel nothing); D3 report says seven ## Mistakes rows, the table carries 11 and a blank line splits it into two tables; D4 SCORECARD routed item says 18 of 30 counter loosenings survive where R64MutCounter totals 26 survive / 18 accept a targeted forgery; D5 S169 Gate quote is an assembled field list across lines 208-219, not a contiguous quote. Carried routed from the lane: verifier does not pin the --driver it runs (H1, QUALITY 118), C2 needs a no-work control frozen before data, 26/30 independent counter loosenings survive, battery 600s cap vs verifier 960s retry budget. Operator note: SHONEN boxes remain all [~]; boxes 1-3 now carry mechanically checkable evidence but promotion stays operator-owned. Fleet-tree misroot (.scratch/run15-state.json modified, empty mo.tip) belongs to other lanes and was left untouched. No tools installed by this pass.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
