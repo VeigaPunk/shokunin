@@ -50116,6 +50116,49 @@
    "notes": "Driver digest: 2026-11-05T07:34:13-03:00 launch kasegi round=76 pgid=128264 attempt=1; 08:12:11-03:00 lane-dead-no-report (report missing/unchanged/no SHONEN/<400B); 08:12:13-03:00 launch attempt=2 pgid=3984440; 08:59:25-03:00 complete attempt=2. Attempt-1 working-copy leftovers (post-freeze Q01 repair, C1 amendment, C2 entry, LOG/SCORECARD 'landed' text) were reverted by the lane to master bytes - verified as empty diffs; report is real, not a marker (status ok). Both declared claims NOT VERIFIED as declared: C1 kill rule failed (m2b conjunct-removed survivor, rc 0); C2 B5 rc2 (Q01 9<12 chars) and B6 distinctness unmet (endpoint strings held from S108/S080). Honest stop: no score moved, nothing unverified entered a gate; verdict rejected-honest-stop. Discernment: gate admitted none this round, so the LEARNING >=1-admit sample is vacuous (finding, not defect); the R119 distinctness reject and the new queued S111 row were re-opened - both agreed. L0 open, operator-owned: frozen-Q01 option A/B; S111 id collision (80/94 staged ids collide). Routed to lane next round: V-A consuming-assertion kill for case-6 (R127/lesson R-A); V-B fresh manifest passing source-recheck before freeze (R126/R-B); V-C admitted-entry distinctness sweep (R125/R-C); V-E re-run round-start census in-lane (base 110 independently confirmed by closure from a7880216). SHONEN: no [x] box; nothing flagged for promotion (operator-owned).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 95,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 95,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 95
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "host-independent counting namespace (bounded to the harness; demonstration-only, do-nothing qualification routed to operator L0)"
+   ],
+   "report": ".ufo/reports/round-95/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-95-verifier-spotcheck.md@66c5518e239eeacd6070be26d78085ef702392cb",
+    "rechecks": "Re-measured over committed bytes: frozen sha pins count-c1.py 6c288d70...aa450 / count-c2.sh 014980bc...44b9f / pristine count-c1v2.py 6eb7fa4c...7b384; SOURCES 397->399; census validate exit 0 'mori ok'; SCORECARD diff 754f4991..155069fa additions-only (27+ 0-); QUALITY 205-208 grounded with able-to-fail notes; K01 K5 rc0-at-entering receipt; K02 six-axis NO-HARM; watchdog digest lines match; ancestry exit 0 for 754f4991/2dc476d7/155069fa; prompt carries all five child-lane items. Evidence-verified per Gate standard (lane gates not executed): C1 receipts before/landing exit 0 at freeze with per-fixture kills m2=R95-LEN m3=R95-CEN m4=R95-TRIO m6=R95-PAT (discriminating); C2 receipts exit 0 incl. the entering-rev receipt (rev=754f4991) that proves the do-nothing failure. Spot-check re-opened S626 (sha-identical page, 21-word located DESCRIPTION quote) and S627 ('mount operations' count 0, propagat unrelated) — agree on the admit and the reject."
+   },
+   "commit": "mori-shokunin@155069fa86a44258e9231dbb89c514e73d2b7db8",
+   "closed_at": "2026-11-05T12:09:59Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 2026-11-05T07:45:39-03:00 launch mori round=95 pgid=261621 driver=hyaku-inline attempt=1 | 2026-11-05T08:10:36-03:00 lane-dead-no-report mori round=95; retry same round (attempt 1 ended without a landed report) | 2026-11-05T08:10:38-03:00 launch mori round=95 pgid=3835683 driver=hyaku-inline attempt=2 | 2026-11-05T08:58:23-03:00 complete mori round=95; hyaku-inline attempt=2. Claims met as frozen (C1 battery 4->0 survivors, discriminating; C2 predicate met but the do-nothing control reaches it at entering 754f4991 - committed before receipt rev=754f4991 exit 0 + w1/Mo95K01Crit.md K5); the lane disclosed both non-admissions pre-closure and did not amend frozen predicates after data: rejected-honest-stop, no axis harmed. Trends: quality improved (QUALITY 205-208), discernment improved (closure grade; outside spot-check agrees with gate on admit S626 and reject S627, and the K01 disagreement became grounded criterion 208; lane had self-graded unchanged), expansion unchanged (registry rows only, no knowledge entry). Defects (status-neutral): r95 counters are gates with no SKILL.md registry row and no selftest mode; lesson gate decisions filed under '## Frontier step' not a literal '## Gate' heading; r94 routed C2-mutant battery amendment not landed and env fail-open C1_SETUP check re-routed to r96; digest debt unpinned=3 (S125,S622,S623). Routed: operator rulings owed (L0 lines 342-344: C1 axis classification, C2 do-nothing/capability row, seat-death routing), D1 planner binding, sibling host-literal class. SHONEN boxes all [~] with pointers, no [x]; fully checkable by a non-author - promotion is operator-owned. Report committed by lane identity (fleet commit 084d99b1).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
