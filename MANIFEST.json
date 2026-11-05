@@ -50903,6 +50903,44 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable; copied at closure): 2026-11-05T10:01:55-03:00 launch kagi round=40 pgid=2900179 driver=hyaku-inline attempt=1; 2026-11-05T11:59:01-03:00 complete kagi round=40; hyaku-inline attempt=1. Report: fleet commits 70fe8641 (filed) and 14f47cbd (amended in place). Lane tip 6f1588cc; landing 97e867f; spot-check 19025d97 (landed, remote verified). Defects (conformance, status-neutral): report amended in place rather than by appended erratum; no planner seat in the L2 role split (L1 held it); round-40 Gate records no reject decision, so the reject spot-check is unmet. Defects (lane-owned, routed to round 41): C1 not causally separable from C2 (4 of 6 expects read rows=96, which exists only with S095/S096; BASE rows 94) and counter forgeable by expect loosening and command rebinding (M40-5/M40-6/M40-16); C3 counter reads verdict token only, stub selftests pass (M40-9), selftest blind branches (S-8, M40-17), survivors S-1 and S-7; SCORECARD round-40 post-move line 'not amended after data' contradicts M40-3 (critic defect 7 not corrected at landing); normalizer docstring rendered-text-v1.py step 5 cites superseded S027 and a U+3000 claim not on the 3.15.2 page (trial, fails re-check, unchanged); QM44 quote truncation (M40-14); /tmp default for gate selftest scratch (scratch discipline 7.4). SHONEN: no box written [x]; box 2 (end-to-end python re-observation) looks checkable by a non-author, promotion operator-owned. Residual fleet status not ours: M .scratch/run15-state.json and ?? .ufo/closure-kaidoku-r92.json, not touched.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 93,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "revenger",
+   "lane_round": 93,
+   "lanes": {
+    "revenger": "ok"
+   },
+   "lane_rounds": {
+    "revenger": 93
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "depth": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-93/revenger.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "revenger-shokunin/corpus/lessons/round-93-verifier-spotcheck.md@9876cb38c5415fbc86336a26a68e05680c397fd5",
+    "rechecks": "Conformance: report committed by revenger identity (ae6e910d); SHONEN heading 1x with four [~] lines matching the four boxes, no [x]; cited commits 02050cb/0723ebd/28b5f99 exist and are ancestors of refs/heads/main; jj-lane state ahead=0, porcelain clean; remote main = 28b5f99b; prompt embeds the canonical template verbatim (115/116 rendered lines) + hyaku addendum. C1 (coverage) RE-MEASURED over committed bytes with the counter's rule re-implemented: base 9/15 C08=uncovered -> landing/tip 10/15 C08=held (do-nothing control C1_C08_HELD=fail); all 17 counter legs pass in c1-after.log; normalized entry digest recomputed by this verifier = 1304008c, bound by all three vote files. C2 (calibration) EVIDENCE-VERIFIED, no sibling gate executed: red-before V1_REACH_C2=5/5, full battery V2_KILLS=9/9 POS_C1V2/POS_C2V2 pass DO_NOTHING_C2=fail R92_RECEIPTS=4/4 at freeze (02050cb controls) and post-landing (28b5f99b logs); selftests SELFTEST_C1V2/SELFTEST_C2V2 pass; freeze 11:03:38 precedes wave dispatch 11:48:22. No axis harmed: SCORECARD diff append-only 43 insertions/0 deletions; PROVINCE+QUALITY byte-unchanged base..tip; corpus/live+fixtures unchanged freeze..tip. Discernment spot-check 6/6 agree (3 admits re-opened: S495 oracle re-run ORACLE OK 17/17 rc0 sha b045a4ee match, S496 HTTP 200 35462B sha ba8018bb match quote present 16 words, S497 pinned-commit fetch HTTP 200 69577B sha 1e6e225a match line-3 quote, teaches opens supersedes-S136 with S136 row untouched; 2 draft rejects Q11/Q15 confirmed fixed in final bytes; considerthese non-adoption agree); sources-census validate exit 0 (21 W01 + 13 W04, 0 E)."
+   },
+   "commit": "revenger-shokunin@28b5f99b90c1da91ac85d2e6d6aa6ec49efa42e6",
+   "closed_at": "2026-11-05T15:20:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (.ufo/watchdog.log, mutable; copied at closure): 2026-11-05T11:05:13-03:00 launch revenger round=93 pgid=323901 driver=hyaku-inline attempt=1; 2026-11-05T12:29:49-03:00 complete revenger round=93; hyaku-inline attempt=1. Verdict: admitted=true — both claims verify (C1 re-measured, C2 evidence-verified on the frozen nine-class predicate) and no axis is harmed; both claims are honestly self-reported as contested on the critic's evidence (attacks outside the frozen nine; the landed entry is not among the reachable forgeries). Clarification, not a defect: the report's before->after table says the battery was 'run at 0723ebd0'; the receipts are committed at 28b5f99b (its Landed-changes table states this correctly). Routed forward (lane-recorded, carried): C1 v3 successor counters must freeze CriticR93's closes (M3, findings 1-12) — exactly one admission-status line, seat-name canonicalization, author/role checks, artifact distinctness, oracle sha pinning, non-vacuous fenced blocks; considerthese proposal-2 measurement (8/8 contested r89-r92) to re-measure in r94; open L0 'revenger | round-91' (assimilation id collisions 155/155) still unanswered, routed around. SHONEN: all four boxes look checkable by a non-author on the current bytes; no [x] written by closure — promotion review is operator-owned. Spotcheck landed 9876cb38c5415fbc86336a26a68e05680c397fd5 (protocol-shokunin), verified on refs/heads/main.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
