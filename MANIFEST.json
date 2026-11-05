@@ -51957,6 +51957,47 @@
    "notes": "dispatch 2026-11-05T15:42:50-03:00 launch kaidoku round=97 pgid=1879155 driver=hyaku-inline attempt=1; complete 2026-11-05T17:46:32-03:00 hyaku-inline attempt=1. No conformance defects. Lane self-graded not admitted; closure agrees: R97-C1 frozen predicate met literally but the landed v7 verifier refuses every honest public verdict (9-key allow-list vs 14-key verdict) and the kill rule's honest leg is a 9-key stub, so calibration harmed; R97-C2 verified (craft block 36). Routed to round 98 (fresh declaration): v7 allow-list = verdict's 14 keys with a red fixture for the stub; honest leg runs the real public battery; ownrec slot measured and key present in receipt (M97-m); imported pins bound at revision, absent file fail-closed (M97-k); K-ownrun recursion bound (M97-r); K-cwd with real cwd= (M97-s); clean-checkout before-side (M97-q); pre-existing local-source gate FAIL S082/S302/S321. SHONEN boxes 1-3 [~] have non-author-checkable pointers; promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 97,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 97,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 97
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "freshness": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-97/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-97-verifier-spotcheck.md@b2a67ce562bbf2f0cc73f47d8e79f792badf5e63",
+    "rechecks": "C1 re-measured structurally over git-archive trees 973b2af1->b6d03408 (4 tools 0->1 registry rows, 8 cells each, SKILL.md append-only +17/-0); selftest outcomes evidence-verified from committed landing-c1/final-c1 receipts (C1=met targets_ok=4/4, counter sha pin matches); lane gates not executed. C2 re-measured independently: pin sha256 S616/S623 equal recorded digests, S615 pin equals S619 successor digest and r90 copy (cmp), live re-fetch 2026-11-05T21:17Z differs from each pin only in the build-stamp line; landing/final-c2 receipts C2=met hole_guard=pass time-churn x3. Spot-check: S628 admit agree (raw README re-fetched, sha equal, quote 12 words located), S623 pin admit agree, live-bytes-as-recorded-copy reject agree (live tokenize sha != recorded). Census validate exit 0 mori ok, 43 W04; rows 399->400."
+   },
+   "commit": "mori-shokunin@b6d034082582340a69371393d5bca25d04e05f4f",
+   "closed_at": "2026-11-05T21:19:24Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-05T17:42:15-03:00 launch mori round=97 pgid=1635907 driver=hyaku-inline attempt=1; 2026-11-05T18:15:39-03:00 complete mori round=97; hyaku-inline attempt=1. Step-1: report committed by mori-shokunin, SHONEN heading 4 lines, all 5 cited commits ancestors of master, ahead=0, prompt carries template contract (0/140 lines missing). Defects (status-neutral, routed): D1 two seat reports (w1/Mo97ScoutLive.md, w1/Mo97ScribeLog.md) modified uncommitted after the last lane commit; D2 lesson round-97 Frontier step says 42 W04 vs 43 in census and committed receipts - correction of record next round; D3 carried auditor residuals R1-R3/junk-row false green, calib survivor M10, 31 prefix_only rows, open L0s r94-r96; D4 cross-lane: 58 docs.python.org rows in 11 sibling lanes face the same stamp churn (aggregator/operator). Final receipts measure 5497e6f7; tip b6d03408 adds only receipts. SHONEN boxes remain [~]; promotion is operator-owned, none proposed.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
