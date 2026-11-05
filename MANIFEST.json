@@ -50159,6 +50159,49 @@
    "notes": "Digest: 2026-11-05T07:45:39-03:00 launch mori round=95 pgid=261621 driver=hyaku-inline attempt=1 | 2026-11-05T08:10:36-03:00 lane-dead-no-report mori round=95; retry same round (attempt 1 ended without a landed report) | 2026-11-05T08:10:38-03:00 launch mori round=95 pgid=3835683 driver=hyaku-inline attempt=2 | 2026-11-05T08:58:23-03:00 complete mori round=95; hyaku-inline attempt=2. Claims met as frozen (C1 battery 4->0 survivors, discriminating; C2 predicate met but the do-nothing control reaches it at entering 754f4991 - committed before receipt rev=754f4991 exit 0 + w1/Mo95K01Crit.md K5); the lane disclosed both non-admissions pre-closure and did not amend frozen predicates after data: rejected-honest-stop, no axis harmed. Trends: quality improved (QUALITY 205-208), discernment improved (closure grade; outside spot-check agrees with gate on admit S626 and reject S627, and the K01 disagreement became grounded criterion 208; lane had self-graded unchanged), expansion unchanged (registry rows only, no knowledge entry). Defects (status-neutral): r95 counters are gates with no SKILL.md registry row and no selftest mode; lesson gate decisions filed under '## Frontier step' not a literal '## Gate' heading; r94 routed C2-mutant battery amendment not landed and env fail-open C1_SETUP check re-routed to r96; digest debt unpinned=3 (S125,S622,S623). Routed: operator rulings owed (L0 lines 342-344: C1 axis classification, C2 do-nothing/capability row, seat-death routing), D1 planner binding, sibling host-literal class. SHONEN boxes all [~] with pointers, no [x]; fully checkable by a non-author - promotion is operator-owned. Report committed by lane identity (fleet commit 084d99b1).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 91,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kotodama",
+   "lane_round": 91,
+   "lanes": {
+    "kotodama": "ok"
+   },
+   "lane_rounds": {
+    "kotodama": 91
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "entry-mode counterfeit refusal (grader v2): tools/check-advance-evidence.py refuses nine named entry-mode counterfeits with a 77-check selftest and a committed 53/53 mutation receipt"
+   ],
+   "report": ".ufo/reports/round-91/kotodama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kotodama-shokunin/corpus/lessons/round-91-verifier-spotcheck.md@21350361500aa000b90f91082bf9d7295a9c24cd",
+    "rechecks": "C re-measured (registry 875->880 last id S951->S956, owners 0->1, entry 21472 B, numstat 6 0 append-only, S952-S955 mined / S956 rejected); O evidence-verified per Gate standard (tool pins 121888f0->88597a66 re-derived, lands-O-final 7/7: selftest 77/77, refusals 9/9, mutation 53/53, stub refused; before-v1 receipt v1 PASS 6/6 vs v2 FAIL TOPIC/UNIQUENESS/GATE); SCORECARD diff additive, no axis harmed; census validate rc 0 at tip; discernment spot-check 2 admits (S952, S954) + 1 reject (S956) re-opened live, 3/3 agree; jj-lane state ahead=0, tree clean"
+   },
+   "commit": "kotodama-shokunin@40774461631ce9ed15982650f6b0a81650c08551",
+   "closed_at": "2026-11-05T13:05:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, driver-mutable; full copy in spotcheck): 2026-11-05T02:11:43-03:00 launch kotodama round=91 pgid=1952907 attempt=3; 02:12:13 lane-dead-no-report retry (attempt=3: L1 ended without a landed report: FAIL report_of); 02:17:40 launch pgid=1990599 attempt=1; 02:18:15 lane-dead-no-report retry attempt=1; 02:18:16 launch pgid=1994550 attempt=2; 02:18:49 lane-dead-no-report retry attempt=2; 02:18:51 launch pgid=1996207 attempt=3; 02:19:29 lane-dead-no-report retry attempt=3; 07:31:38 launch pgid=123471 attempt=1; 09:14:17 complete kotodama round=91 hyaku-inline attempt=1. Four provider-failure deaths 02:11-02:19; surviving attempt inherited the verified freeze 691aebf2 and disclosed reuse vs re-produced work. Conformance: report landed by lane identity (7b1848bb/76d8a256, on fleet main), SHONEN heading 4 [~] boxes no [x], all cited hashes ancestors of refs/heads/main, prompt carries template contract + L2 floor >=8 per MISSION, write scope respected, repo clean ahead=0. Real report, not a marker. Routed defects (status-neutral): ReviewerFreeze D4 mutation-receipt header defect; D5 unchecked receipt clause in counter; W3 grade_c column-count guard; seven CriticClaims91 counterfeit survivors to round 92; six MutationTesterV2 survivor gaps; freshness pause needs operator ruling on open L0 kotodama|round-11 / round-89 (lowest-axis obligation neither met nor waived, honestly disclosed); claims.json N1/N2 documentation debt. Frozen-surface defect W1 (C.surface '13 linguistics entries' unreproducible, reading gives 3) disclosed in report. SHONEN boxes are now fully non-author-checkable on cited receipts - promotion review possible, operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
