@@ -50035,6 +50035,49 @@
    "notes": "Dispatch/complete digest (watchdog lines 2794/2808): 2026-11-05T06:30:59-03:00 launch tabi round=67 pgid=1862454 driver=hyaku-inline attempt=1; 2026-11-05T07:31:04-03:00 complete tabi round=67; hyaku-inline attempt=1. Lane HEAD cd88c53f pushed (ls-remote equal); base 5400136b. Wave w1: 13 seats, one batched call, 0 dead, attack share 5/13=38%, >=8 L2 floor met; prompt = template render + hyaku addendum, L2 bucket matches MISSION.md. Round not admitted: C1 (adjacency, lowest, 8) withdrawn before freeze on committed refutation (95/95 no-tabi-ground rows carry a BG word; v22 flip baseline 298/298 accepted; rule unsatisfiable by construction) — honest stop, lane self-reported. Defects (status-neutral, routed to lane for r68): (1) SKILL.md instrument/gate registry still lists only the r64 generation — r67 instruments (driver r67, chromium-hscroll-r67 counter + negatives/mutate, verify-live-r67, check-receipt-provenance-v4) have no registry row at the registry home; (2) claims.json frozenAt reads 'pending-commit' at freeze e0fc04c2 (same as r66, disclosed in errata); (3) S172 quote 2 is 13 words, recorded as 14 (<=25-word contract met; correction recorded in the spotcheck); (4) pre-fix mutant-survivor evidence exists only as seat report R67Executor3 (disclosed). Operator note: all four SHONEN boxes are [~] with resolvable pointers and checkable by a non-author today — promotion review is operator-owned. L0 open: tabi|round-67 adjacency ruling (routed around); older tabi L0s remain open.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 91,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 91,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 91
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "depth": "improved",
+    "calibration": "improved",
+    "freshness": "unchanged",
+    "operability": "improved",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "last-block stop-boundary refusal"
+   ],
+   "report": ".ufo/reports/round-91/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-91-verifier-spotcheck.md@73a882712907606eba074377b536c6dd82517e25",
+    "rechecks": "Step 1 conformance pass: report 16,245 B/107 lines, real report not marker, SHONEN heading 4 [~] lines, fleet commit a6acba20 by lane identity landed 26 s after lane tip ee44eeb5 (08:12:44Z-3 -> 08:13:10Z-3); all 8 cited lane commits ancestors of main (jj-colocated, tested vs main ref); jj-lane.sh state ahead=0, porcelain clean; prompt committed under lane identity with full contract and axes matching shokunin.conf; wave 12 seats one call (>=8 floor), attack 4/12=33%, one connector, no planner (L1-held, disclosed). C1 evidence-verified, gates not executed (PROTOCOL gate standard): base receipt refused 0 of 8/unsafe 2/intact 4 of 4; after receipts at 6d98f52b, e3ff8f01, 04ba98f9 all refused 8 of 8/unsafe 0/intact 4 of 4, met_target true, exit 0, per-cell rc 2 no-output x8; regression P1 6/6 P2 4/4 P3 4/4 all controls true; receipt repair/counter sha256 re-hashed equal to committed bytes at 6d98f52b and tip ee44eeb5; supersession chain 473bb3a9->845013c4->3779d35f recorded in claims.json with reasons. C2 evidence-verified: blocks 30->31 receipts met_target true, prose control_killed true (v3 refuses rows-0 fixture v2 accepts), counter pin bcf6c4ea = committed bytes; SKILL.md block 31 present with 3 routed rows; registry rows at SKILL.md registry home. Selftest tallies green: record-cells 4/0, depth-v3 6/0, repair 4/0, r90 17/0, r89 10/0, r90-battery 8/0. Calibration diagnostic mismatches 5->1 (remainder R89-C1 no-revision-field receipts disclosed, pinned). Discernment spot-check: S313 re-opened by me byte-identical (24181 B, sha256 bf83c413...642e, line 496 bound exact), admit agreed; zero rejects this round (Gate records none, census 221->221 committed receipts); no new SOURCES rows so the touched row S313 was re-opened instead; sources-census.sh validate exit 0. SCORECARD fe1913d..ee44eeb5 diff: corrections and final-receipt pins only, no axis harmed."
+   },
+   "commit": "kaidoku-shokunin@ee44eeb545e81f322bfcd1ec315f3df3b8008f6a",
+   "closed_at": "2026-11-05T12:01:04Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-11-05T01:57:18-03:00 launch kaidoku round=91 pgid=1896610 attempt=3; 01:57:51 lane-dead-no-report (attempt 3); 02:17:39 launch pgid=1989965 attempt=1; 02:18:13 lane-dead-no-report (attempt 1); 02:18:15 launch pgid=1993840 attempt=2; 02:18:53 lane-dead-no-report (attempt 2); 02:18:55 launch pgid=1997520 attempt=3; 02:19:33 lane-dead-no-report (attempt 3); 07:41:17 launch pgid=153214 attempt=1 (wave dispatched 07:41:53 from the first attempt's ready file, per report); 08:15:14 complete kaidoku round=91 hyaku-inline attempt=1. Status ok, admitted: both claims verify on committed evidence, no axis harmed. Defects routed to round 92 (status-neutral, named in the spotcheck): D-91-1 report says census end run gave 7 W04 warnings, committed receipts and live re-run give 29 (the 7 named ids are a subset; none new); D-91-2 report grades discernment 'mixed' — not protocol vocabulary, graded improved with limits; D-91-3 block 31 third row mis-cites QUALITY 169 (lane-disclosed, frozen-predicate kill rule deferred the fix); D-91-4 frozen C1 label admits two cheat repairs and an rc-1 exit — add rc-2 assertion and cheat arms as new counter arms in r92; D-91-5 README lesson row says six errors mined (M91-1..M91-6), lesson carries eight. SHONEN note for operator: all four boxes look fully checkable by a non-author from committed evidence (decision tables with cited criteria; end-to-end task measured and logged; selftests run without oral context; PROVINCE accurate, connector finds no contested scope) — promotion is operator-owned; this closure writes no [x]. Trends use the protocol vocabulary; the lane's own 'mixed' self-grade recorded as D-91-2. Spotcheck committed and pushed via jj-lane.sh: landed 73a882712907606eba074377b536c6dd82517e25, confirmed on origin refs/heads/main by ls-remote.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
