@@ -51836,6 +51836,46 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-11-05T14:17:42-03:00 launch kotoba round=92 pgid=230241 driver=hyaku-inline attempt=1 | 2026-11-05T16:55:16-03:00 complete kotoba round=92; hyaku-inline attempt=1. Round: one v1 wave r92-w1, 12 seats (executor 3, reviewer 2, mutation-tester 2, scout 1, scribe 1, connector 1, critic 1, sentinel 1), one batched taskCall; no dead seats; results.json per-seat output null (orchestrator restart, disclosed). Claims: C1 consistency (controls refuse named shortcuts 0/2 -> 2/2, honest 2/2) MET; C2 depth (kill-set pin 25->28 assertions, dropped row FAIL by name; three freeze-gate rungs fail-closed, 31->34) MET with disclosed committed-revision naming gap D2 routed. Defects (status-neutral): (1) landing-rev.txt and bat-rev.txt name REV cd355c47, not in the lane repo; tip-battery and census receipts name scratch L1-integ; report says measured at c679a631 - erratum or re-measure owed; (2) no planner seat in the L2 swarm (prompt sec.3 minimum); (3) seat specs lead 'You are a Godspeed-enabled subagent.' not /skill:godspeed - operator to confirm wrapper; (4) round-92 Gate has no reject; discernment sample cross-round (S264); (5) lesson Settlement still 'pending' spot-check. Routed to round 93: F1 (refused-world exit code), F-4 (INSTRUMENT_PINS key removal silent), D2 (committed-revision kill naming), the Gate reject sweep, planner seat disposition, cross-reference to spot-check. Carried reds unchanged: L0 kotoba|round-88, kotoba|round-73, sibling census, province core, governance.citation_resolves, corpus DRIFT set. Operator notes: no SHONEN box is fully checkable by a non-author this round (box 3 closest); consistency held at 10 is not endorsed as moved by a single non-author closure.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 69,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 69,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 69
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "coverage": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "battery outcome-class split and declared-coverage table (r69)"
+   ],
+   "report": ".ufo/reports/round-69/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-69-verifier-spotcheck.md@e063a2fcb3f5f3fb8fb19d2ae1592b1f22e6a333",
+    "rechecks": "C1/C2/C3 re-measured from committed bytes at 0d8c8c7b: c1-after-battery MUTANT outcomes forgery 18/label-only 5/over-refusal 2/echo 1/survived 0/error 0 (26, all = expected), BATTERY line byte-match, EXIT=0; r68 records 0 MUTANT/BATTERY lines; W4 base=accept x26 vs r68 CAND base=refuse x1; c1 do-nothing EXIT=1; battery SHA256SUMS all OK; c2 clean-vs-ambient diff 0 lines (EXIT=0 x2) vs r68-counter before arm 6 diff lines (3 changed, EXIT=1); c2 do-nothing ambient EXIT=1; declared-coverage 12 mutant/2 limit of 14 (8 forgery, 3 label-only, 1 echo), c3 do-nothing 14 none, D18/D29 limit receipts survived; frozen instruments unchanged since 1412037c (counter sha 40757709 = receipt instrument_sha256); writer unchanged; SCORECARD additions only, axis scores unchanged. Lane counter/selftest NOT executed: selftest 16/16 evidence-verified only from gitignored seat log S69MutTester.logs/selftest-orig.txt (no committed receipt). Spot-check: S302 and S303 admits + git-status GIT_OPTIONAL_LOCKS reject + held-lock documented-fact reject re-opened on fresh fetches (page sha256 af1fbb49/534c674f byte-identical; quotes present, 12/11 words; GIT_OPTIONAL_LOCKS 0 on git-status) - all agree; sources-census validate rc=0, 224->226 rows."
+   },
+   "commit": "souji-shokunin@0d8c8c7b465506e71ffa3c57134a6b615c7d2e0f",
+   "closed_at": "2026-11-05T20:35:00Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 2026-11-05T15:36:47-03:00 launch souji round=69 pgid=1834551 driver=hyaku-inline attempt=1; 2026-11-05T17:28:54-03:00 complete souji round=69; hyaku-inline attempt=1. Report landed by lane identity (a3bdbdd5 17:00:05 -03, erratum 4589200e 17:05:14 -03) before completion; SHONEN heading present (4x [~], no [x]); cited lane commits 893b8ef4/1412037c/89fea6be/a7f34e15/751f2685/0d8c8c7b all ancestors of master; lane clean, ahead=0; prompt = canonical template render (placeholder substitutions only) + hyaku addendum section 6. Conformance defects (status-neutral, routed to round 70): D1 wave w1 seat outputs and w1-results.json sit only under gitignored .ufo/waves/round-69/w1/ (a7f34e15 subject claims seat evidence; r68 mirrored seats into census/round-68/records/wave-w1/) - mirror into census/round-69/records/wave-w1/; D2 no committed counter selftest receipt for the C2 prereg selftest leg (16/16 only in ignored seat log); D3 no SKILL.md gate-registry row for the r69 counter battery mode; D4 '6 flips' counts diff-marker lines (3 lines changed); D5 c2-ambient receipt records no evidence of the applied tuple; D6 report filed before WAVE-DONE (S69Reviewer/S69Scribe unsettled), corrected by appended erratum 4589200e. Lane-routed wave HIGHs stay open: GIT_LITERAL_PATHSPECS writer forgery (predates r69), GIT_TEMPLATE_DIR/GIT_ATTR_SOURCE/GIT_EXEC_PATH/GIT_DEFAULT_HASH unscrubbed in clean_env, battery members not verified against SHA256SUMS in the arm, Q131 precedence/expectation gate untested by selftest. Operator note: SHONEN boxes all [~]; box 3 not fully non-author-checkable while D1/D2 and prereg dead pointers (M14) stand.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
