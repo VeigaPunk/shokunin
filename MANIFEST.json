@@ -51016,6 +51016,48 @@
    "notes": "Dispatch/complete digest (watchdog.log:2857/2870): 2026-11-05T11:24:29-03:00 launch kake round=94 pgid=3839554 driver=hyaku-inline attempt=1; 2026-11-05T12:31:21-03:00 complete kake round=94; hyaku-inline attempt=1. Honest stop confirmed, not admitted: C1 (calibration, HOLD 2) unmet - 15 E5 findings recorded not repaired; C2 (freshness instrument, HOLD 10) unmet at 39/40, survivor M11 semantically equivalent so the frozen 40/40 target was unattainable. No axis harmed (SCORECARD append-only; tree changes confined to wave evidence, corpus, SCORECARD, LOG). Landed corpus work verified: SOURCES 213->215 (S477, S478, tier A), knowledge entry quotes live-checked, census exit 0. Spot-check verdicts: expansion improved (bounded), quality unchanged, discernment improved (closure agrees with all sampled gate admits and rejects). Routed to round 95: R94-1..R94-8 (lane-routed) + R94-9 (closure): register c94_selfassess/c94_conditional/c93_conditional in SKILL.md Owned freshness gate registry; plus landed-tip counter receipts uncommitted (evidence resolves via report prose and earlier-rev receipts only); --skip-battery met-bypass (D5); v2 label C2v93 (D3); population base mismatch (D1); battery F1 benign shadow (R94-2). Open L0: kake|round-94 ruling wanted on the two honest unmet claims. SHONEN filed [~]/[ ]/[~]/[~], every box non-author-checkable, no [x] written by closure; promotion operator-owned. Conformance defects: none barring admission. Unrelated untracked cases_A.json at fleet root (llm-inference content, not kake).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 92,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 92,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 92
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "unchanged",
+    "operability": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged",
+    "novelty": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "harmed"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-92/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-92-verifier-spotcheck.md@28e9f8bf4e8a68b1a34babfa71be9de595b78c4e",
+    "rechecks": "C1 re-measured (ledger 35->36 of 88 at 1df7653; C1 counter byte-unchanged after B2; receipts evidence-verified); C2/C3 evidence-verified against committed receipts (match report verbatim) with post-freeze edit history re-measured (10 plans files, E..E7 after B2) and two open defects re-measured at HEAD (override branch never calls vacuous_check at burndown.py:306-329; only round92_bs_probe.py pinned); F2 capture pins re-hashed byte-exact (S287 7c8d3f56.., S288 c1d4516a.., S289 d43c72e6..); census re-run: kengaku ok, exit 0, 281 rows; S283 admit and S286 reject re-fetched HTTP 200 sha-identical; SCORECARD BASE->HEAD diff moves no axis row; wave w1 12/12 seats returned, notes null; prompt carries full rendered contract; lane clean and pushed (ahead=0); report committed by lane identity ea96f154"
+   },
+   "commit": "kengaku-shokunin@1df7653633bd4c5a5f373d139f9f1ed02e0f9c07",
+   "closed_at": "2026-11-05T15:59:59Z",
+   "campaign": "hyaku",
+   "notes": "watchdog digest: 2026-11-05T09:43:34-03:00 launch kengaku round=92 pgid=2856414 driver=hyaku-inline attempt=1; 2026-11-05T12:11:56-03:00 lane-dead-no-report kengaku round=92 (attempt 1 ended without a landed report); 2026-11-05T12:11:58-03:00 launch kengaku round=92 pgid=3370906 driver=hyaku-inline attempt=2; 2026-11-05T12:48:46-03:00 complete kengaku round=92; hyaku-inline attempt=2. Lane filed round not admitted: C1 verifies on its frozen predicate; C2/C3 not admitted under the frozen rule (instruments edited after freeze A 96f249e0 and after the first scored run; SCORECARD erratum bb29a660; lane self-corrected via its own non-author wave w1). Disclosed carry-overs, status-neutral: round-91 '14 controls' erratum unrepaired; w1.ready still names attempt-1 L1 KengakuR92; attempt-1 w1-dispatch.json rewritten to taskCall shape before dispatch. Routed to round 93: freeze-hash check with red-before witness (M8); override-branch vacuity (frozen M10(b); burndown.py:306-329 never calls vacuous_check); planted-marker battery skip (:445, :558); pin the three round-92 counters in plans/counter-pins-r91.json (M11); injectable sandbox-red control (M13); unguarded sibling cost_model_for_tests.py (ScoutS283 F1). SHONEN: four [~] boxes with resolvable pointers, fully checkable by a non-author, no [x] written this round - promotion is operator-owned. Operator rulings open on L0 kengaku | round-92 (admission of repaired-instrument measurements; WAVE-DONE addressing after a relaunch).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
