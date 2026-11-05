@@ -50326,6 +50326,45 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable; copied at closure): 2026-11-05T07:16:41-03:00 launch kagi round=39 pgid=3777574 driver=hyaku-inline attempt=1; 2026-11-05T08:10:38-03:00 lane-dead-no-report kagi round=39 (attempt=1 ended without landed report; retry same round); 2026-11-05T08:10:40-03:00 launch kagi round=39 pgid=3839653 attempt=2; 2026-11-05T09:40:56-03:00 complete kagi round=39 attempt=2; 2026-11-05T09:40:58-03:00 complete kagi round=39 attempt=2. Report attribution kagi-shokunin <kagi@shokunin.local> (ab5e9e38); ancestry of all six cited hashes verified; lane state ahead=0 behind=0 untracked=0; remote master 368991952. Conformance defects (status-neutral): CD-1 planner seat absent vs prompt 3 (validator rejected planner; orchestrator-owned); CD-2 stale-lane section lacks progressing/silent grades per mission; CD-3 two dead seats, no report files, disclosed; CD-4 six red ledger rows R13-01, R21-02, R24-06, R31-02, R33-02, R34-03 (pure-append counts, named debt); CD-5 lesson Gate records no round-39 reject, so discernment sample has no round-39 reject (substitute: pre-existing S038 reject, agrees); CD-6 lesson non-author spot-check sections still Pending (closed by spotcheck@d491f100). Routed to lane round 40: R1 rebind six ledger rows; R2 S036 pin as new claim; R3 S040 quote whitespace form (served 3.15.2 text 'str.isspace()).' vs row 'str.isspace() ).'), supersede by row not in-place; R4 record >=1 reject per round in Gate or paste sweep; R5 stale-lane progressing/silent grades; R6 S094 source cell raw URL shape nit; R7 frozen counter amendments and gate false-clean paths (M39-6, M39-12, R38-D4, R37-V2). Routed to orchestrator: R8 planner seat / validator role map; seat-receipt /tmp paths (M39-10); L1 re-issue for resumed attempts (M39-11). SHONEN: not fully checkable by a non-author this round (box 1 and box 4 rest on prior-round evidence; box 2 and 3 partly observed); no mark written; promotion operator-owned. Integrator note: one untracked DRIFT file was created in the lane repo by a mistyped integrator check and removed at once; lane state re-read clean before commit. Operator ruling requested on calibration reading under CD-4.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 89,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kotoba",
+   "lane_round": 89,
+   "lanes": {
+    "kotoba": "ok"
+   },
+   "lane_rounds": {
+    "kotoba": 89
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "consistency": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "freeze-gate execution of declared controls"
+   ],
+   "report": ".ufo/reports/round-89/kotoba.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kotoba-shokunin/corpus/lessons/round-89-verifier-spotcheck.md@0c20d8ab65587aee0e97b7d14c801ae6dc44c2e5",
+    "rechecks": "C1/C2 evidence-verified from committed gate receipts (self-test tallies 30 and 37 assertions, five control worlds expected=observed, equivalence identical, measured rev 99ddd746); re-measured by closure: SOURCES 183->185 rows, before-absence grep exit 1 at a5b3b15c, kill-rule diff 12f4b6b9..07d87d89 empty, census validate exit 0, SCORECARD diff additions-only with consistency->calibration mapping in-row, SKILL.md 600 lines, prompt template render identical lines 1-140 + addendum; spot-check agree 4/4 (S258 admit, S259 admit, PMC5813543 route reject, assimilation reject)"
+   },
+   "commit": "kotoba-shokunin@07d87d89fd2512022c6b2b3bf28e3b8aa80bb03f",
+   "closed_at": "2026-11-05T12:56:42Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-05T07:38:15-03:00 launch kotoba round=89 pgid=146869 driver=hyaku-inline attempt=1; 2026-11-05T09:48:04-03:00 complete kotoba round=89; hyaku-inline attempt=1. Conformance clean: report committed by lane identity 4221c8d2 before the complete line; SHONEN heading present (4 [~] boxes); all cited lane commits ancestors of pushed master; jj-lane state ahead=0, porcelain clean. Status-neutral defects: (1) S258 sha256 does not reproduce on re-fetch (ee0d0560 recorded vs ca841f46 observed, equal 196972 B; both quotes verbatim at HTML lines 1451/1472) - ground PMC rows on line anchors+size+title, digest is fetch-time metadata; (2) no planner seat in wave r89-w1 (validator excludes planner, r88 precedent, disclosed); (3) 3 of 12 scribe seats landed nothing, L1 performed and disclosed the work. Lane-routed to r90 (confirmed, not re-opened): mutation battery on final post-A2 bytes, duplicate freeze-gate control names (A2.4), report_dead symlink class. Open L0 routed around: kotoba|round-88 (assimilation renumber-or-retire; C1 kill ruling), kotoba|round-73 (gate-registry home). Operator note: all four SHONEN boxes now carry non-author-checkable evidence; promotion review is operator-owned and nothing here bars it.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
