@@ -720,3 +720,5 @@ Amendment 21 (operator, 2026-11-04, verbatim: "you are not trying the other keys
 Amendment 22 (operator, 2026-11-04, verbatim: "put command code prior to opencode-go"): the m_flash chain is now amr -> commandcode -> opencode-go -> devin/swe-2-flash. Changed: model-keyed chains (amr -> cc -> ogo -> swe; cc -> ogo -> swe; ogo -> swe; stale devin deepseek -> amr -> cc -> ogo -> swe) and the m_flash alias chain.
 
 Amendment 23 (operator, 2026-11-04, verbatim: "assign the scribe to anthropic/haiku-5.5 on high effort"): scribe @m_mim -> anthropic/claude-haiku-5-5:high. scout stays on @m_mim.
+
+Amendment 24 (operator, 2026-11-04, verbatim: "distiller can also be anthropic/claude-haiku-5-5:high"): distiller @m_flash -> anthropic/claude-haiku-5-5:high.
