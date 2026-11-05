@@ -49473,6 +49473,49 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, copied 2026-11-05): 04:29:19 launch kengaku round=89 pgid=2434151 attempt=1; 05:21:27 lane-dead-no-report kengaku round=89 (attempt 1 ended without landed report: FAIL report_of); 05:21:29 launch kengaku round=89 pgid=2313328 attempt=2; 05:56:36 complete kengaku round=89 attempt=2. Report committed 5799dda8 by kengaku-shokunin identity in fleet repo; cites c3f81f72 (ancestor of master, lane ahead=0). Wave w1 11 seats, attack share 45%. Routed defects (none bars admission): (1) frozen C2 Move element (d) blob-sha pin not implemented; control name selftest-removed-from-path implemented as selftest-in-path; operator ruling on frozen text still open (L0 kengaku round-89, .ufo/l0-questions.md:319). (2) round-88 before-count stated as 1 of 3 red in report/baseline but 1 of 4 in SCORECARD and QUALITY Q67; fourth control unmeasured at BASE; fixture-c red is F4-unparsed. (3) lesson Gate has no rejection row; ScribeR89 knowledge-draft deferral (second-seat re-read pending R3) reason lives only in the wave draft. (4) counter pins self-rewritable by one commit (Sentinel H1-H3; lane Mistake 9). (5) SCORECARD C2 row implies a record-table pin that does not exist. SHONEN: four [~] boxes, no [x]; operator-owned promotion. Not a single-round defect: C1 BASE measured via lane transcript c1-base.txt.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 87,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 87,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 87
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "unprovable",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [
+    "gate-round86-instruments"
+   ],
+   "report": ".ufo/reports/round-87/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-87-verifier-spotcheck.md@9b4c7af16fdd4bba9e4815f4615f4b003f340747",
+    "rechecks": "Re-measured by the integrator (plain git/grep/diff/awk/curl): C2 arm wiring round86-instruments grep base 0 -> tip 20; tools, corpus and knowledge unchanged between fe78ca4f and tip; C1 successor Population docstring diff non-empty (13 changed lines); SCORECARD numstat 7 insertions 0 deletions; SKILL/PROVINCE/QUALITY/knowledge diff empty; census validate exit 0, rows 319->320, tier A 304->305, mined 286->287; S580 quote located in CommonMark 0.31.2 sec 5.2 and S578 quote in sec 4.5 (fetched 2026-11-05); S577 registry REJECTED row re-opened HTTP 404. Evidence-verified (committed receipts, lane gates not executed): gate-tip fe78ca4f round86-instruments exit 0 ok and arms=14; c2-faults ARM14_FAULTS faults=3 killed=3 escaped=0; arm-absent CONTROL_RED; c1 probes escapes 0 (successor) vs 3 (base); frozen round-86 counter mismatches=1 at tip; selfdesc arm red at tip (calibration history row)."
+   },
+   "commit": "kama-shokunin@95ad1dbb2cfd0fee99b9f0cd7238755dbf5ff546",
+   "closed_at": "2026-11-05T09:04:30Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (watchdog.log, mutable): 2026-11-05T05:00:08-03:00 launch kama round=87 pgid=4168762 driver=hyaku-inline attempt=1; 2026-11-05T05:58:46-03:00 complete kama round=87; hyaku-inline attempt=1. One v1 wave w1, 12 seats, 12/12 reported. Claims: C1 calibration honest stop (not verified; successor fails frozen R4 population rule; selfdesc arm red); C2 operability verified on frozen predicates (capability gate-round86-instruments). Conformance defects, status-neutral: D1 report lists PROTOCOL/LEARNING/CORPUS/QUALITY as not re-read; D2 per-seat answering model not recorded; D3 lesson ## Gate records no source-level reject. Routed to kama round 88: R1 population-preserving selector before data (C1); R2 selfdesc arm red, M4 fix not counted; R3 calibration row goes stale when round-87 spot-check lands (re-point in round 88); R4 round75-instruments APPEND_DEBT red at tip (bad_rows 0->19) cause uninvestigated; R5 MT02 battery pristine check not-ok, 7/7 not kill evidence; R6 gate receipt at fe78ca4f measured with 6 uncommitted files; R7 ## Gate needs source-level reject rows; R8 trend grading per LEARNING table (expansion improved on capability admission; quality observable not met); R9 re-read protocol each steered round; R10 S580 teaches overreaches quote; R11 record per-seat model. Operator notes: no SHONEN box checkable by a non-author from this round; no [x] written; promotion operator-owned. Lane HEAD at close 95ad1dbb, spot-check landed 9b4c7af1.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
