@@ -89,3 +89,13 @@ See `corpus/lessons/round-69.md` `## Mistakes` (M1–M9). Sweep for mistakes tha
 ## Inherited state
 
 Attempt 1 of round 69; no prior attempt. No uncommitted lane-authored leftovers at round start (`jj-lane.sh state` local=ahead=0 at 893b8ef4). No file authored by another lane was edited.
+
+## Erratum (appended after filing; supersedes the "NOT settled at filing" text above and the stale lane-tip line)
+
+WAVE-DONE for wave `w1` arrived after this report was filed: all 12 seats settled, none dead. `w1-results.json` and the seat reports are in `.ufo/waves/round-69/w1/`.
+
+- **S69Scribe** (settled after filing): reproduced every C1/C2/C3 number independently, then filed one HIGH finding incorporated as errata in lane commit `751f268562d374dfd2a4193b1317c08a7536be19`: the D18 named limit is also a **harness artefact** — the counter's `clean_env()` pins `GIT_OPTIONAL_LOCKS=0` into every writer slot, so the D18 mutant inherits the counter's pin and no row in this harness could observe a lock-contingent verdict. The limit stands on that ground plus the probed git behaviour. The knowledge entry and the round lesson state both grounds. It also corrected the D29 reason (the mutant drops `:(top)` from the flag-check call only) and recorded prereg pointer errata (M14) and the coverage-table chronology erratum (M15).
+- **S69Reviewer** (settled after filing): **SOUND on every review axis; no HIGH or MEDIUM findings.** The W4 rebuild, no-echo judge, classifier precedence, manifest loader, battery branch, selftest checks 4-6, all five new fixture kinds (comment-vs-build, Q132) and the preserved clean_env tuple all check out; its independent battery run reproduced `BATTERY mutants=26 kills=18 label_only=5 over_refusal=2 echo_violation=1 survived=0 error=0`, EXIT=0, 26/26 outcomes matching the manifest. Two LOW informational notes (echo evidence subsumed by the forgery precedence; battery `--work` residue not self-deleted). Its verdict contradicts nothing in this report.
+- Lane tip after these commits: `0d8c8c7b465506e71ffa3c57134a6b615c7d2e0f` (LOG append for the reviewer verdict; pushed).
+
+This erratum supersedes: the sentence in Work performed beginning "NOT settled at filing (WAVE-DONE not received…)", and the Claim-verdicts/SHONEN context implying two seats were unread — both are now read; no claim verdict changes.
