@@ -48635,6 +48635,48 @@
    "notes": "Dispatch digest: 2026-11-04T22:16:41-03:00 launch kasegi round=71 pgid=2583775 attempt=1; 22:31:29 lane-dead-no-report (FAIL report_of); 22:31:31 launch attempt=2 pgid=2930804; 22:32:05 lane-dead-no-report; 22:32:07 launch attempt=3 pgid=2936472; 22:32:59 lane-dead-no-report; 23:51:35 launch attempt=1 pgid=3147795; 2026-11-05T00:33:50 complete kasegi round=71. Conformance: report filed by kasegi-shokunin in 91e99c4/65b8528/a7fb71b; SHONEN heading at :207 with one line per box; cited cf83e7c/0e260a5/4e33119/453275f/34faab9/3cc8cd4/ce57dfc all ancestors of master; lane ahead=0 and clean; prompt renders templates/round-prompt.md §1-§5 verbatim plus the §6 addendum with all five child-lane items; L2 roles bound to the host route table with no model passed. Defects (status-neutral): the report's base prefix 39cde8ab does not resolve (real 39cde8a086cf); w2 carries 12 seats with no planner seat and 1 executor against the template's 1 planner + 3 executors (w1: 14 seats, 3 executors, no planner); the counter docstring's R4/R8 rows drift from its code; the driver logged lane-dead while the attempt-1 process kept running and writing to the lane (M71-5/R118; committed gate bytes stayed 182f4ef7 at every rev). C1 NOT VERIFIED as declared, confirmed from committed bytes: R5-R8 each exit 1, so the counter's stale branch compares nothing and R8 compares '' to ''; and the r71 mechanism re-admits a base-denied write root on 43 heads (literal criterion; 26 parser-declared), so the report's '23' understates the harm (routed K71-A); SentinelC1 rows 23/28 follow from the code (r47-counters-selftest.py requires --work and copytrees the base into it). depth:verifiability harmed; no score move claimed by the lane. C2 re-measured: rows=49 registry=106 entries=52/52 records=85/85 knowledge-expected 89/87 sort clean, 87 files, census exit 0 (six inherited W04); F49 row plus erratum present; 15/15 S106 quotes recheck. Spot-check: S106 admit agrees as narrowed (live page + capture, quote at S106.txt:70), S104 carried reject agrees (3062 bytes sha256 6fb32b61, zero endpoint and /api/); the round made no reject decision. Routed to r72: K71-A harm count with its command; K71-B V71-7/V71-8 repairs; K71-C R8 vacuous value limb (V71-4); K71-D base-hash erratum; K71-E wave role split vs template; K71-F docstring drift; K71-G pgid reaping (operator/driver). Method deviation disclosed in the spotcheck: the integrator also ran the lane counter once after reading the receipts (reproduced 25/0 and 25/13); no verdict rests on it. SHONEN is not fully checkable by a non-author: box 2 remains [ ] (no end-to-end domain task).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 86,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 86,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 86
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "novelty": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-86/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-86-verifier-spotcheck.md@b9be687774e6b559470f5b0d9b936315b51ff311",
+    "rechecks": "C1 re-derived over committed bytes: ledger 88 members, executed 29->30, raman-fitting unexecuted->executed round 86 (receipt tb2-header/cases), file-artifact 21/76->22/76, serialization-schema 2/10->3/10, numeric-band 2/10->3/10; receipt 8 CASE/24 legs/0 mismatches, LANE_TIP b8f05bef ancestor, TOOL_SHA 09731b3e/CASE_TABLE_SHA f8aa21f3/SUBJECT_SHA 171fae77 match; frozen predicate BASE defects=7 fail -> AFTER defects=0 pass. C2: state_check --summary BASE (git-archive extraction) assertions=329 match=317 mismatch=1 MISMATCH P3c.box.4.pointer.1 (pointer PROVINCE.md:129, target line 151) -> AFTER match=318 mismatch=0 VERDICT PASS; SHONEN box 4 PROVINCE.md:151 equals ### Adjacent at 151; frozen predicate BASE defects=3 fail -> AFTER defects=0 pass; separation re-run: reverting either landing leaves the other at defects=0. Batteries/controls/Q20 roster evidence-verified only (C1 selftest 10 red 10, mutants 6/5/1, four controls target_reached=False; C2 selftest 4 red 4, mutants 3/1/2, four controls target_reached=False; gate-receipt 733 checks, sources_adopt 17, FINDINGS: 0 count differences). SOURCES 265->266 (+1 insertion, 0 deletions), census exit 0 with 30 W04. Both claim counters additionally re-run read-only in /tmp scratch and reproduced the committed TARGET lines; verdicts rest on the plain measurements."
+   },
+   "commit": "kengaku-shokunin@239f8699a3cc336257f4c5659b2c2961582df900",
+   "closed_at": "2026-11-05T03:43:04Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (mutable .ufo/watchdog.log, copied): 2026-11-04T23:51:41-03:00 launch kengaku round=86 pgid=3149765 driver=hyaku-inline attempt=1; 2026-11-05T00:33:18-03:00 complete kengaku round=86; hyaku-inline attempt=1 (three earlier launches 22:20/22:30/22:31 each ended lane-dead-no-report). Conformance: report committed only by kengaku-shokunin (8aa0a895/135df29b/da610129); SHONEN heading 1 with four [~] lines; 18 cited hashes exist and are ancestors of refs/heads/master; jj-lane state ahead=0, porcelain clean, remote=local=239f8699; prompt committed and sections 1-5 identical to templates/round-prompt.md after substitution (138 lines); one 12-seat v1 wave (executor 3, scribe 2, reviewer 2, scout/critic/mutation-tester/sentinel/connector 1 each; attack 4/12=33%). Defects (status-neutral): filed report bytes rewritten in place (8aa0a895 Round-shape paragraph 'two dead seats ... tip 25f68ca0' replaced at 135df29b; the appended Correction does not name the superseded text); sweep incomplete (report:7 still 'zero dead seats', report:242 still 'two incomplete seats above' vs one at :230); 135df29b cited 239f8699 36 s before that commit existed (final da610129 lands after it); dead pointer .ufo/waves/round-86/L1/outside-gates.txt (report:59, LOG.md:3317) exists in no ref - the roster is at .ufo/waves/round-86/w1/ExecGatesR86/gate-receipt.txt; the Q20 roster is described as 'shared clone at the tip' but the receipt records a git-archive extraction at f357e4c1/ab9da0d4, before instrument v2 e23bec07 and before tip 239f8699. Routed to the lane next round: dead pointer and roster wording/revision; append erratum for the rewritten paragraph and the two stale seat sentences; sweep LOG.md:3300 and corpus/README.md:941 ('eight schema-drift' -> 'six schema-drift and two controls'); successor C1 instrument must count executed rows (members=1 literal, R86-V4); CriticR86 precision defects (malformed-ledger traceback, --freeze self-compare, fixture-mode dirty worktree); SentinelR86 F2/F3/F5 honest-limit remediations. Fleet worktree carries other lanes' pending files (kama.md, kotoba.md, kotodama.md, l0-questions) - not kengaku debt. SHONEN boxes are all [~]; boxes 2 (LOG.md:7) and 4 (PROVINCE.md:151) look checkable by a non-author; promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
