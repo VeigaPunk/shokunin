@@ -48554,6 +48554,49 @@
    "notes": "dispatch digest: 2026-11-04T21:03:00-03:00 launch attempt=1 pgid=255900; 22:32:15 lane-dead-no-report attempt=1; 22:32:17 launch attempt=2 pgid=2940420; 22:32:54 lane-dead-no-report attempt=2; 22:32:56 launch attempt=3 pgid=2955453; 22:33:31 lane-dead-no-report attempt=3; 23:51:33 launch attempt=1 (resume) pgid=3147122; 2026-11-05T00:23:59-03:00 complete. Lane tip e23037304ac72e07c664fb0cf2bb57f9f441c241 (before 40095308982b8a6ba126bdcb0264aa2164a809b6), state ahead=0 behind=0 tracked=0 untracked=0; report commit 102603924809125facc9f431a388072534488f77 by tabi-shokunin; SHONEN heading 1 with 4 [~] lines for 4 boxes; 7/7 cited commits exist and are ancestors. C1 coverage VERIFIED on its frozen predicate; C2 calibration honest miss -> unprovable, so the round is not admitted. Conformance defects routed: D1 lessons/round-64.md claims a residual wave w2 of 4 seats that has no committed bytes and contradicts the report's 'residual call none / 12 seats'; D2 same lesson says 11 of 12 seats reported where committed seat reports are 10 (R64MutDriver none, R64Sentinel nothing); D3 report says seven ## Mistakes rows, the table carries 11 and a blank line splits it into two tables; D4 SCORECARD routed item says 18 of 30 counter loosenings survive where R64MutCounter totals 26 survive / 18 accept a targeted forgery; D5 S169 Gate quote is an assembled field list across lines 208-219, not a contiguous quote. Carried routed from the lane: verifier does not pin the --driver it runs (H1, QUALITY 118), C2 needs a no-work control frozen before data, 26/30 independent counter loosenings survive, battery 600s cap vs verifier 960s retry budget. Operator note: SHONEN boxes remain all [~]; boxes 1-3 now carry mechanically checkable evidence but promotion stays operator-owned. Fleet-tree misroot (.scratch/run15-state.json modified, empty mo.tip) belongs to other lanes and was left untouched. No tools installed by this pass.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 90,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 90,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 90
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "depth": "improved",
+    "calibration": "improved",
+    "freshness": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "UPX packed-ELF interior later-block b_info.sz_cpr repair"
+   ],
+   "report": ".ufo/reports/round-90/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-90-verifier-spotcheck.md@2135f6e1d3f69a259b32cc5167c52ccb1a261c24",
+    "rechecks": "C1 evidence-verified (receipt c1-at-499d2183: P1 6/6, P2 4/4, P3 4/4, all eight controls true, exit 0, met_target true; per-cell arms all true; before arm controls.no_work 0 of 6 at pre/c1-candidate-at-declaration.json; receipt repair.sha256 90dea087… equals the repair at 499d2183 AND at the tip; battery 5462ef13… identical at both); C2 re-measured by an independent block/citation parser: 29 blocks at 54c2778 and fc52cc9dc, 30 at 8346eacc and the tip, every corpus/knowledge citation resolving and in range; sources census 217→221 rows, A 198→201, B 11→11, C 8→9, mined 194→197, rejected 23→24, sources-census.sh validate exit 0 (29 W04); selftest tallies 17 and 8 cases, 0 failures; lane clean and pushed ahead=0; 7/7 cited commits ancestors of main."
+   },
+   "commit": "kaidoku-shokunin@6e47538b6bb8d42c64039a2feef2ae0e0548fbce",
+   "closed_at": "2026-11-05T03:42:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-11-04T22:12:36-03:00 launch kaidoku round=90 pgid=2559947 attempt=1; 22:31:23 lane-dead-no-report (attempt 1); 22:31:25 launch pgid=2928275 attempt=2; 22:32:19 lane-dead-no-report (attempt 2); 22:32:21 launch pgid=2942391 attempt=3; 22:32:59 lane-dead-no-report (attempt 3); 23:51:46 launch pgid=3151696 attempt=1; 2026-11-05T00:31:43-03:00 complete kaidoku round=90 (hyaku-inline attempt=1). Status ok: real report (16,587 B / 217 lines, SHONEN heading with 4 [~] lines, seven lane-commit citations, all ancestors of main), filed 9 s after the lane tip commit by the kaidoku identity. Two claims verified: R90-C1 coverage improved (capability T5-chain-szcpr-wrong-later enters Core; evidence-verified, pins re-derived, not re-executed) and R90-C2 depth improved (block 30; re-measured 29→30 with every citation resolving). No axis harmed; SCORECARD diff adds records only. Routed to round 91 (D-1..D-6, detail in the spot-check §7): D-1 SCORECARD round-90 paragraph and LOG round-90 Sources bullet still say 220 rows / S313-S315 / QUALITY 172-173 against the measured 221 / S313-S316 / QUALITY 177 (LOG append-only → correction entry); D-2 the c264f7a4 landed-change row lacks its LOG.md cell; D-3 the report attributes pre/c2-depth-at-base.json (revision 54c277868) to fc52cc9dc (SKILL.md byte-identical 56736cb8…, so the measurement transfers); D-4 no SKILL.md registry row for tools/round-90/upx-break-repair.py, upx-later-block-battery.py or control-cheat-repack.py (last row round-89, SKILL.md:1979) — Gate-standard delivery; D-5 SCORECARD C1 command leaves --rev <measured> unsubstituted (QUALITY 173); D-6 attack share is 4/13 = 30.8 % under the run-89 house list, not the reported 5/13 (floor holds). Declared limits stand: last-block fall-through (QUALITY 176), blind arm's boxes tree (174), six untyped crashes on 27 hostile inputs (177), depth predicate not entailing a table (175), 15/17 mutants surviving; the source-free cheat that keeps met_target true is disclosed and confines C1 to a capability claim. SHONEN: all four boxes look fully checkable by a non-author from the cited evidence; promotion remains operator-owned and no [x] was written.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
