@@ -48470,6 +48470,47 @@
    "notes": "dispatch digest (.ufo/watchdog.log, mutable): 2026-11-04T20:36:09-03:00 launch kagi round=36 pgid=1037420 driver=hyaku-inline attempt=1; 2026-11-04T20:56:53-03:00 lane-dead-no-report kagi round=36 (attempt 1 ended with no landed report); 2026-11-04T20:56:55-03:00 launch kagi round=36 pgid=3633212 driver=hyaku-inline attempt=2; 2026-11-04T22:12:31-03:00 complete kagi round=36; hyaku-inline attempt=2. Status ok / admitted false / rejected-honest-stop: C2 verifies and is admitted; C1 reaches its frozen target (4->0, both populations re-derived by the closure judge) but the counter admits no-work paths its frozen controls do not cover, so the lane withheld admission rather than rebook the rule after data and I concur. No axis harmed. Conformance defects (status-neutral): attempt-1 lane-round produced no landed report; report cites corpus/lessons/round-36.md M36-4 which does not exist (rows are M36-1/2/3/5) and the lesson's Gate sends the dropped recheck touch to M36-3, a different mistake; the report's census parenthetical says 'five pre-existing W04' where the same command prints 16 at tip and at BASE; frozen control forge-sd5-early-c1 is degenerate (plant target row already names the reds); the C1 kill rule's SD6=5 is layout-dependent (3 in a git archive extraction). Routed to kagi r37: R36-1 append a correction for the dangling M36-4/M36-3 pointers; R36-2 correct the W04 count with its command; R36-3 bind the SD5 forgery to a row that does not already name the reds or drop the rule; R36-4 carry ReviewC1's instrument conditions as claim work (bind to live cells FAIL/POLICY set, compare states, empty red list = SETUP, fail closed on non-zero self-counts exit, POLICY-refused = unverified); R36-5 measure SD6 in one fixed layout or drop it from the kill rule. Operator note: all four SHONEN boxes now look checkable by a non-author (decision tables + resolvable citations, the logged 30-row re-observation, counters re-runnable from a clean extraction, PROVINCE accurate with a 20-lane sole-ground sweep); promotion remains operator-owned and no [x] was written. No promotion, no mint, no L0 appended, no tool installed this round.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 86,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 86,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 86
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unprovable",
+    "calibration": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-86/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-86-verifier-spotcheck.md@4a079f6ab57ab2f47b9e502a35eca75ec180cda7",
+    "rechecks": "Step-1: report final commit e8873c4a by tameshi-shokunin (22:22:27 -0300) after lane tip 43fc447f (22:21:47), contained in origin/master; SHONEN heading with 4 [~] lines; 55d5a5c6/a01293c7/7c146da8/27e6de61/e307dec1/43fc447f all exist and are ancestors of refs/heads/master; jj-lane state ahead=0 tracked=0 untracked=0 and porcelain empty; prompt byte-matches templates/round-prompt.md modulo substitutions plus the hyaku addendum (L2 floor 8 = MISSION.md:53-65, no quoted route map); wave 10 seats in one batched call inside the 8-16 band, 8 seat reports, 2 dead seats (T86M1/T86SN1, 84/136-byte outputs). C1 re-measured from committed bytes: measure.py absent at base (cat-file -e exit128), tools diff base..tip only A capability-census.py/.json, .ufo/evidence/round-85 0 files changed, design-blob-audit.py unchanged, T86E2-att3b-cheat.py sha 89863caa with 0 subprocess/popen occurrences, arm labels disclosed at measure.py:148-151; controls evidence-verified 0/8,4/8,0/8,0/8,6/8 vs real 8/8 and two counterfeits 8/8 (kill rule fired). C2 re-measured by plain Python over the manifest + git cat-file -t: 30 rows, 18 live + 12 historical, all 12 pins resolve as blobs at d10a9c66 and are cited in their own SCORECARD row; base capability rows 30 = tip 30; census 18/12 -> 30/30 evidence-verified with the declared exit contract (0 bound / 1 unbound) and the cited-tree relabel at 30/30 (kill rule fired). No-harm: SCORECARD diff +42/-0 (append-only), SKILL.md/PROVINCE.md/QUALITY.md/knowledge unchanged, SOURCES 171->171 (A153/B14/C4, mined138/queued22/rejected11, malformed 0), census validate exit 0 with 19 standing warnings, final-sweeps receipt at e307dec 16 sweeps exit 0 (receipts=71, coldread equivalence 20/0), tool digests re-hashed from committed blobs (final-sweeps runner 4cd67a10, pointer fixture 7c349fce). Discernment: S305 admit re-opened live (HTTP 200, 39083 B, sha ff06fbc8, byte-identical to the round-77 snapshot; quotes at lines 1808/1812; row teaches quotes at 1664/1631) -> agree; second git-ls-tree row reject (only line 180 is a registry row) -> agree."
+   },
+   "commit": "tameshi-shokunin@43fc447f442dd30cdb85934ec178cddab7026489",
+   "closed_at": "2026-11-05T01:28:06Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete (watchdog, mutable): 2026-11-04T21:40:56-03:00 launch tameshi round=86 pgid=3244051 attempt=1; 21:52:06 lane-dead-no-report (attempt=1); 21:52:08 launch pgid=2100150 attempt=2; 22:09:27 lane-dead-no-report (attempt=2); 22:09:29 launch pgid=2368950 attempt=3; 22:22:53 complete tameshi round=86; hyaku-inline attempt=3. Status ok, not admitted: both frozen claims are killed by the lane's own pre-registered kill rules (C1 two counterfeits at 8/8 against the frozen counter; C2 a cited-tree relabel binding 30/30) and the lane withheld admission without narrowing any predicate, population or target. Conformance defects, status-neutral: duplicate concurrent attempt-3 L1 sessions (driver-side, disclosed); two dead wave seats and no settlement file from the dispatcher (r86-w1-results.json is a null-status reconstruction); controls/counter/plan share one commit so the cheat-family-before-freeze ordering is not provable from git (T86R1 named it). Routed to round 87: (1) commit the C2 before-state live-only manifest (scratch path /fast/scratch/... only, sha 75f268f5) so c2-before is re-derivable; (2) the report's receipts=72 at 43fc447f and coldread 47/47 'at the final tip' have no committed receipt (final-sweeps.txt at e307dec reads receipts=71 and only EQUIVALENCE 20/0; the 47/47 figure is landing/coldread.txt at a01293c7); (3) SOURCES round note fetch stamp 2026-11-04 00:41:59 GMT contradicts s305.headers date Thu, 05 Nov 2026 00:45:18 GMT; (4) attack share 4/10 in the report vs 3/10 in LOG.md - state the counting rule once; (5) no QUALITY.md criterion for M3/M4 though the lesson claims criteria 111/77 caught them (111's family ran and missed the label/worktree class; 77 names two different criteria at :916 and :2304); (6) the two retained instruments are unregistered in SKILL.md - register as probes with their limits or land the successor gate with its row; (7) the lane's own successor requirements for C1/C2 stand, and the r85 GIT_* inheritance, malformed kind/source-id, caller revision authority, conversion and receipt race/parent-alias debts stay open. SHONEN: the four boxes now look checkable by a non-author from committed artifacts, but promotion is operator-owned and this closure wrote no [x].",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
