@@ -51347,6 +51347,44 @@
    "notes": "Dispatch/complete digest (watchdog.log lines 2873/2889): 2026-11-05T12:45:45-03:00 launch kake round=95 pgid=3818161 driver=hyaku-inline attempt=1; 2026-11-05T14:16:07-03:00 complete kake round=95; hyaku-inline attempt=1. C1 (calibration) unmet = honest stop under the frozen rule: the zero-mismatch repair is real and receipted but the frozen predicate's entry-content pins fire on the repaired heads, so met=false either way; successor routed R95-1. C2 (freshness, capability) met on the frozen counter with the round's own gaming-route caveats carried (R95-6/7/8). Integrity ruling independently verified: post-freeze Amendment A (d9be693f) withdrawn from scoring; frozen bytes restored byte-exact at 4f443b3f; restore-verify receipts committed; no amended receipt integrated. Conformance defects (status-neutral): report trend labels written 'improved-bounded' instead of the bare protocol vocabulary; freeze.md at tip still carries Amendment A's superseded digest instruction (04be4a7d/9eff04c5) - r96 must record the supersession in its report/lesson, never edit filed bytes; pre-existing W04 duplicate-URL census warning class (named in report). Routed: R95-1..R95-8 stand as lane-routed; R95-4 (row-by-row re-read of the 15 repaired SKILL rows) discharged by this closure 15/15. Open L0 'kake | round-94' (two honest unmet claims) remains unanswered; r95 added none. SHONEN: boxes 1/3/4 [~] author-asserted, box 2 [ ] gap unchanged; boxes look fully non-author-checkable for the operator (promotion operator-owned; box 2 gap real).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 67,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 67,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 67
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-67/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-67-verifier-spotcheck.md@e3c174a807e76859a89b49ff276beacf5484cd57",
+    "rechecks": "C1+C2 evidence-verified (lane gates/selftests/mutants NOT executed): frozen receipts c1-after/c1-do-nothing/c2-after/c2-do-nothing-r66/c2-selftest/c2-mutant-{reverted-selftest,enumweak} match every reported SUMMARY/FINDING/EXIT line; writer+counter+matrix sha256 pins re-measured equal to the 4c61efcb freeze pins; prereg byte-identical freeze->HEAD; all 13 cited lane commits ancestors of master; SCORECARD axes table byte-identical base->tip (no axis harmed); two unmeasured C1 clauses (scrub-every-call, empty-value refusal) corroborated by code inspection at f70da577; S300 re-opened live at tag v2.56.0: all three located quotes present (fixed-string whitespace-normalized), captures byte-identical (8316b1ad/050c5330); sources-census validate exit 0, 223 rows, malformed 0"
+   },
+   "commit": "souji-shokunin@485b3b00679d086ba846939349d451ad15d69824",
+   "closed_at": "2026-11-05T17:26:57Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (watchdog.log, mutable; lines 2872/2887): 2026-11-05T12:44:43-03:00 launch souji round=67 pgid=3800627 driver=hyaku-inline attempt=1 / 2026-11-05T14:14:02-03:00 complete souji round=67; hyaku-inline attempt=1. Report real (two claims, committed work, evidence, all six sections); report lands last (lane HEAD 14:10:51 < report 14:12:48 < complete 14:14:02). Status-neutral defects and routed items: (1) S300 anchor cell labels its inline 5-token setup.c quote '13 words' - the count belongs to the fuller Gate Q1 quote; content matches the source; relabel next registry touch. (2) c2-mutate.py has no sha256 pin in the frozen prereg (bound by freeze-commit blob only) - next prereg pins every named instrument. (3) two C1 claim-text clauses (scrub-every-call, empty-value refusal) are not measured by the frozen matrix (lane-disclosed M9, not counted as passes; corroborated in landed code) - route to the next frozen counter as rows. (4) wave role split: 1 executor vs the protocol minimum of 3 (lane-disclosed; route-map owner). (5) counter ambient-env hermeticity: c1-counter clean_env does not scrub operator GIT_COMMON_DIR (sentinel M1/M2; run procedure env -u) - next frozen counter adds the scrub. (6) relative GIT_COMMON_DIR trade (fail-closed refusal, writer cwd != root) awaits operator ruling via L0 'souji | round-67' (fleet commit ca47fecf); round-66 L0 360 and 362 still open. (7) SHONEN boxes look fully checkable by a non-author on this round's evidence (all four [~] with resolvable pointers; SKILL r67 gate rows, LOG r67 entry, counters+records self-contained, PROVINCE unchanged) - promotion is operator-owned. Spot-check: 1 admit + 2 rejects sampled from lesson ## Gate, all agreed (S300 live re-open 3/3 quotes; both rejects sound).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
