@@ -2,7 +2,7 @@
 
 lane: kotodama-shokunin · round: 90 · campaign: hyaku · date: 2026-11-04/05 (−03:00)
 base: `6b0b86e45ae902331aca75863db380f2991458c4` · freeze: `d0b6f2a7f9cc36272682749a9b047b739406f0c8`
-claim-C lands: `7f3a7aa6615624afadc2cc2d2d4f7ad225f44761` · lane tip at report: `26e30795ce8513cb3cd888af676ad1ed3e31723a`
+claim-C lands: `7f3a7aa6615624afadc2cc2d2d4f7ad225f44761` · lane tip at report: `5fb3f38d71b00da380412920f81fcc50ed6c81ac`
 
 ## Work performed
 
@@ -53,7 +53,8 @@ Each change is tied to the `LOG.md` round-90 entry (`LOG.md`, "## Round 90") and
 | entry, registry rows S942–S949, lesson, README moves, evidence + manifest, separability harness, census end | `7f3a7aa6` |
 | entry correction after the reviewer's D1 defect (WALS 72 definitions) | `3f56892f` |
 | reviewer D1–D6 content fixes, S949 quote fix, census end refresh | `e0795be6` |
-| rejection rows S950 and S951 with gate lines and captures | `210c0dd0` |
+| rejection rows S950 and S951 with gate lines and captures, census end refreshed | `210c0dd0` |
+| `LOG.md` / `SCORECARD.md` ledger rows for those rejections (registry 865 → 875) | `5fb3f38d` |
 | w2 spec, validated dispatch, ready handoff (11 seats), separability overlay set fix | `fe59fc35` |
 | lesson base-surface correction and R90-M7/M8/M9, counter receipts at lands, separability receipt | `19187112` |
 | `LOG.md` round-90 entry, `SCORECARD.md` round-90 rows and the grader capability row | `195aff9c` |
@@ -69,7 +70,7 @@ Frozen counter, unchanged after data: `reports/round-90/measure90.py` (sha256 `6
 | O / operability | `tools/check-advance-evidence.py` absent at base (`git cat-file -e` fails); the round-89 predicate accepted five counterfeit landings its own wave built and scored 10/41 mutants | tool present at the freeze pin (sha256 `121888f0`), `SELFTEST PASS 67/67` with all 13 refusal cases ok, `MUTATION-SCORE: 43/43 killed, 0 survived, 0 broken-pattern`, stub control recorded (`SELFTEST PASS 67/67` fake, REFUSALS 0/13, `0/43 killed` with 43 broken-pattern) — `MEASURE90-O: PASS legs=6/6` | `python3 -B reports/round-90/measure90.py --root <clone> --freeze d0b6f2a7f9cc36272682749a9b047b739406f0c8 --lands 7f3a7aa6615624afadc2cc2d2d4f7ad225f44761 --claim O --work <existing-dir>` | `7f3a7aa6`, receipt `reports/round-90/final/lands-O.txt` |
 | C / coverage | no dedicated entry; linguistics partition 34 files; registry 865 rows; 0 new ids | entry 19,930 B, 10 `##` headings, table 6×4; linguistics 35 files, knowledge 262; registry 873 rows with S942–S948 mined and cited (S949 rejected); index `CORPUS-INDEX: OK files=262 rows=262 findings=0`; zero base rows changed — `MEASURE90-C: PASS legs=4/4` | `python3 -B reports/round-90/measure90.py --root <clone> --freeze d0b6f2a7f9cc36272682749a9b047b739406f0c8 --lands 7f3a7aa6615624afadc2cc2d2d4f7ad225f44761 --claim C --work <existing-dir>` | `7f3a7aa6`, receipt `reports/round-90/final/lands-C.txt` |
 
-Both claims were re-measured at the corrected tip `e0795be69fffc92a06e2c954bc9b36c68af77df4` (the commit that carries the reviewer's content fixes) with the same frozen counter: `MEASURE90-O: PASS legs=6/6` and `MEASURE90-C: PASS legs=4/4` (`reports/round-90/final/lands-O-tip.txt`, `lands-C-tip.txt`). The graded C object at that tip is the entry at 20,400 B; the structural legs (size, headings, table, topic overlap, new ids, gate, captures, index, appendonly) are unchanged. Both claims were re-measured a third time at the final lane tip `26e30795ce8513cb3cd888af676ad1ed3e31723a` (which only adds the settled wave-2 evidence and the tip receipts) with the same frozen command: `MEASURE90-O: PASS legs=6/6` (`MUTATION 43/43 killed, 0 survived, 0 broken-pattern`; STUB recorded) and `MEASURE90-C: PASS legs=4/4` (`CORPUS-INDEX: OK files=262 rows=262 findings=0`; APPENDONLY clean).
+Both claims were re-measured at the corrected tip `e0795be69fffc92a06e2c954bc9b36c68af77df4` (the commit that carries the reviewer's content fixes) with the same frozen counter: `MEASURE90-O: PASS legs=6/6` and `MEASURE90-C: PASS legs=4/4` (`reports/round-90/final/lands-O-tip.txt`, `lands-C-tip.txt`). The graded C object at that tip is the entry at 20,400 B; the structural legs (size, headings, table, topic overlap, new ids, gate, captures, index, appendonly) are unchanged. Both claims were re-measured at the final lane tip `5fb3f38d71b00da380412920f81fcc50ed6c81ac` (the commits after the C landing only add the settled wave-2 evidence, the two extra rejection rows and their ledger lines) with the same frozen command: `MEASURE90-O: PASS legs=6/6` (`MUTATION 43/43 killed, 0 survived, 0 broken-pattern`; STUB recorded) and `MEASURE90-C: PASS legs=4/4` (`CORPUS-INDEX: OK files=262 rows=262 findings=0`; APPENDONLY clean).
 
 Separability, on the first lands (`reports/round-90/final/separability.txt`): overlay O `PASS legs=6/6` with the six C paths absent, overlay C `PASS legs=4/4` with the four O reward paths absent; shared paths are the frozen config, the counter and the instrument only.
 
@@ -81,7 +82,7 @@ Counting command (both ends, exit 0):
 /home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin kotodama
 ```
 
-| quantity | before (`6b0b86e4`) | after (`19187112`) |
+| quantity | before (`6b0b86e4`) | after (`5fb3f38d`) |
 |---|---|---|
 | rows | 865 | 875 |
 | tiers | A=511 B=329 C=25 | A=517 B=330 C=28 |
