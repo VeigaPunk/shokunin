@@ -50365,6 +50365,44 @@
    "notes": "Dispatch digest: 2026-11-05T07:38:15-03:00 launch kotoba round=89 pgid=146869 driver=hyaku-inline attempt=1; 2026-11-05T09:48:04-03:00 complete kotoba round=89; hyaku-inline attempt=1. Conformance clean: report committed by lane identity 4221c8d2 before the complete line; SHONEN heading present (4 [~] boxes); all cited lane commits ancestors of pushed master; jj-lane state ahead=0, porcelain clean. Status-neutral defects: (1) S258 sha256 does not reproduce on re-fetch (ee0d0560 recorded vs ca841f46 observed, equal 196972 B; both quotes verbatim at HTML lines 1451/1472) - ground PMC rows on line anchors+size+title, digest is fetch-time metadata; (2) no planner seat in wave r89-w1 (validator excludes planner, r88 precedent, disclosed); (3) 3 of 12 scribe seats landed nothing, L1 performed and disclosed the work. Lane-routed to r90 (confirmed, not re-opened): mutation battery on final post-A2 bytes, duplicate freeze-gate control names (A2.4), report_dead symlink class. Open L0 routed around: kotoba|round-88 (assimilation renumber-or-retire; C1 kill ruling), kotoba|round-73 (gate-registry home). Operator note: all four SHONEN boxes now carry non-author-checkable evidence; promotion review is operator-owned and nothing here bars it.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 64,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 64,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 64
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "unchanged",
+    "operability": "unchanged",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-64/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-64-verifier-spotcheck.md@4a43a4d919c5b51ae9be859a1266ce4b11337b0b",
+    "rechecks": "C1+C2 do-nothing counters re-run at base ae2f4ece (exact reproduction: matrix=13 class_mismatches=8 EXIT=1; rows=3 findings=1 SCOPE-OVERREACH s2 EXIT=1); production diff ae2f4ece..5888654e empty over tools/SKILL.md/tests/knowledge/PROVINCE; census 217->219 rows re-derived at both revs; S295/S296 re-opened live (sha256 byte-match to captures, 6 slice assertions PASSED); 2 admits + 2 rejects sampled, all agree; D1 offsets re-proven; prompt sections 1-5 diff-identical to rendered template; 3 cited commits ancestors of master; lane ahead=0 clean; wave-dir pointers absent at closure (disclosed limit)."
+   },
+   "commit": "souji-shokunin@5888654e71cde8a00ba333d29335fd515e2171de",
+   "closed_at": "2026-11-05T12:58:27Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-11-05T07:45:37-03:00 launch souji round=64 pgid=253902 driver=hyaku-inline attempt=1 | 2026-11-05T09:43:00-03:00 complete souji round=64; hyaku-inline attempt=1. Honest stop: C1 (operability) and C2 (calibration, lowest owned axis) declared NOT admitted, nothing frozen; lane status ok (real report, committed work, all sections present). Defects (status-neutral): wave-dir evidence pointers (.ufo/waves/round-64/, 12 seat reports, candidate writer) do not resolve at closure - lane-disclosed durability limit, no admitted claim rests on them, routed: lesson-cited evidence must be committed before any freeze; census/round-64/SHA256SUMS.txt pins instruments/matrix/population but not control receipts (minor, r65); round-64 LOG entry cites paths not commit hashes (report carries hashes; minor observation); sources-census W04 duplicate-URL warnings (pre-existing tolerated class, exit 0). Discernment graded improved by this closure's outside spot-check (agrees with the gate on 2 admits S295/S296 + 2 rejected inferences); the lane filed unchanged (spot-check pending). Operator note (promotion operator-owned): all four SHONEN [~] boxes carry resolvable pointers and look fully checkable by a non-author; no [x] written. Open L0 souji|round-64 planner-seat ruling stays routed around; r65 routing (M1 N4 re-probe, M2 chronology gate before freeze, in-lane control builds, C2 green/decoy + dead-token falsifier, untracked-visibility claim) confirmed reasonable.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
