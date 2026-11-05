@@ -50453,6 +50453,47 @@
    "notes": "Corrects rounds[1343] (superseded): two concurrent non-author closure judges closed this lane-round with identical verdicts; the second judge's spot-check commit (6cc8850, protocol identity) landed on top of the first's (d491f100) and superseded the cited path's tip bytes, so the pointer is re-anchored here - every status, verdict, trend, capability and report path is unchanged from the superseded row. Dispatch/complete digest (.ufo/watchdog.log lines 2801/2822/2823/2837/2838): 2026-11-05T07:16:41-03:00 launch kagi round=39 pgid=3777574 driver=hyaku-inline attempt=1; 2026-11-05T08:10:38-03:00 lane-dead-no-report kagi round=39; retry same round (attempt 1 ended without a landed report); 2026-11-05T08:10:40-03:00 launch kagi round=39 pgid=3839653 driver=hyaku-inline attempt=2; 2026-11-05T09:40:56-03:00 and 2026-11-05T09:40:58-03:00 complete kagi round=39; hyaku-inline attempt=2. Attempt-1 work (predeclaration 1909e38, plan 7c11e76, candidate 6742fde, wave dispatch) inherited and re-verified by attempt 2. Merged routed defects to round 40 (status-neutral; none bars admission): (1) gate registry rows absent in SKILL.md for corpus/anchor-pins.sh and corpus/claims-declared.sh - closure grades neither gate conformant until registered; (2) neither instrument carries a selftest mode (frozen counters are the kill evidence); (3) lane-declared ledger debt: six claim-ledger rows fail at the landing tree (R13-01, R21-02, R24-06, R31-02, R33-02, R34-03), expected consequence of pure appends, named in report and SCORECARD, not migrated; (4) S036 unpinned fourth superseded feed anchor (M39-7); counter hardcode survivor (M39-6); gate false-clean paths F1-F7/D1-D5 (M39-12); S012 rendered-text locate failure; S040/S041 documentation refresh; (5) minor: S094 teaches cell mixes verbatim quote with an unsourced derived clause; lesson Gate word count 9 vs 8 whitespace tokens; LOG.md round-39 block does not cite candidate 6742fde (hash-entry tie lives in the report table, verified); stale-lane section grades no mission progressing/silent (first judge's CD-2; no open mission existed to grade - recorded, grade neutral). Orchestrator-routed (not lane debt): planner role rejected by the wave validator, L1-held (same deviation as rounds 33/37/38); seat receipts citing /tmp fixtures (M39-10); build-results.json outputs null after orchestrator kernel restart mid-wave, seats K39ExecAnchor and K39ScribeTrial dead with no report files (M39-11). SHONEN: all four boxes [~] with resolvable pointers, each checkable by a non-author from committed evidence - eligible for operator promotion review (promotion is operator-owned). Spot-check agrees with the round's only gate decision (S094 admit) and with both sampled standing rejects; the round's Gate refused none. Misroot sweep: fleet working tree carries only orchestrator-owned .scratch/run15-state.json.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 92,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 92,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 92
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "last-block stop-boundary repair (window ±16; packer-verdict uniqueness; five pinned carriers including unseen xz)"
+   ],
+   "report": ".ufo/reports/round-92/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-92-verifier-spotcheck.md@0a2a23da5eb50410a8a0df90c031d9f4fdadb024",
+    "rechecks": "step-1 conformance clean (lane identity report commit ef55f097, SHONEN heading, prompt contract verbatim, all 5 cited hashes ancestors of main, ahead=0, porcelain clean, remote tip 5815996); both claims re-measured over committed receipts with jq (C1 repaired 10/10 at a3d3c649 exit 0, do-nothing control met False; C2 counterfeits 0/3 admitted by v2 exit 1 x3, positive control met True); gate evidence verified not executed (selftest 6/0 committed, frozen counter sha 63e9df43 matches declaration pin and tip, registry rows SKILL.md:1990-1992); no axis harmed (regression P1 6/6 P2 4/4 P3 4/4 met at base and candidate; SCORECARD diff shows no score drop); sources re-opened (S317 and S313 sha256+quotes exact); census validate exit 0, 221→222 rows, 30 W04; spot-check agrees on both admits and the S313 scope-wording rejection"
+   },
+   "commit": "kaidoku-shokunin@5815996883426673daeb8ba3c0e78eebb537f8f4",
+   "closed_at": "2026-11-05T13:13:21Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-05T09:02:35-03:00 launch kaidoku round=92 pgid=2934221 driver=hyaku-inline attempt=1 | 2026-11-05T10:05:56-03:00 complete kaidoku round=92; hyaku-inline attempt=1. Report landed by lane identity at 10:01:53 before completion. No marker; real work with frozen receipts. Named limits disclosed, not harms: pinned-image table passes the frozen C1 label (M92-d; fresh-pack oracle routed to round 93); CHEAT-D/CHEAT-E membership counterfeits pass v2 (M92-c; headline narrowed to the three named round-91 counterfeits). Conformance notes (status-neutral): no planner seat (wave validator refuses planner; L1 held the seat; 12 seats, attack share 33%, band 8-16 met); v2 parser is key-presence-only (ReviewerContract; tighten with the round-93 oracle); W04 S317/S311 duplicate URL expected (distinct scope). Routed to round 93: S313 teaches still carries over-broad 'every executable carrier' wording — land a 'supersedes S313 —' row; D-91-3 craft-block-31 correction (deliberately deferred, predicate kept); SentinelRepair F-C1/F-C2/F-A3/F-B1 inherited. SHONEN boxes all [~] and checkable by a non-author from committed evidence; promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
