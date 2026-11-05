@@ -51917,6 +51917,46 @@
    "notes": "dispatch digest: 2026-11-05T16:33:07-03:00 launch revenger round=97 pgid=2735252 driver=hyaku-inline attempt=1; 2026-11-05T17:38:58-03:00 complete revenger round=97; hyaku-inline attempt=1. Admitted: both claims verify, no axis harmed; this closure is the non-author admission of C02 (corpus/knowledge/round-96-native-analysis-sessions.md). C2 contested: 0/19 is a development-set result (A5); holdout still accepts 5/12 (FR02/08/09/10/12); d-host survives. Routed to revenger r98: (1) S505 used-by names the C02 entry which never cites S505 (cites S504 x3); (2) Amendment A2 single-run C2_POSITIVE/C2_STUB_SELFTEST tokens never printed (three logs); (3) v6 self-test prints stale SELFTEST_C1V5 label (counter6.py:1026); (4) stub self-test deltas fail to build (28 builder notes) so the stub check does not exercise deltas; (5) lane flipped admission-status to admitted before non-author closure (ratified here); (6) carried: holdout five, row-set leg, byte-exact own-work quote leg (M9), d-host + 33 tree survivors, M4 index-or-reject, D2 M7 SCORECARD line; (7) L0 assimilation id collision 155/155, staging package gone from fleet root. SHONEN: box 2 now non-author checkable (C02 record re-derived); promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 97,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 97,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 97
+   },
+   "admitted": false,
+   "verdict": "rejected-harmed",
+   "verdicts": {
+    "calibration": "harmed",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "harmed",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-97/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-97-verifier-spotcheck.md@d0aebc288621b0072ac3eb2a79a62ad26bfa837a",
+    "rechecks": "step1: report attributed kaidoku-shokunin (45c1145a, 17:38:59 -0300, before complete line); SHONEN heading with 4 lines for 4 boxes; e859a88d/867ed98d/b30bb749 ancestors of main; jj-lane state ahead=0 behind=0 tracked=0 untracked=0; porcelain empty; prompt carries template §1-§5 + §6 addendum. C1 re-measured: v7 COUNT_KEYS = 9 keys (lines 55-56) vs 14 keys in l1/public/v7-public.json counts -> 5 counts-extra-key refusals, v7 exit 1 vs v6 exit 0 (evidence l1/public/*.out/.err); kill-rule-v3 c_dmain honest base is a hand-written 9-key dict (lines 226-227); ownrec label slot literal 1 (line 737), green receipt counts lack ownrec; command A receipt exit 0 label 21/21 etc. and base receipt exit 1 evidence-verified (gate not executed) -> calibration harmed. C2 re-measured: SKILL.md numbered craft blocks max 35 -> 36, 'receipt-byte-binding v1' 0 -> 1; c2 receipts evidence-verified (v4 exit 1 blocks 35 at base -> exit 0 blocks 36 required-shaped 1/1; block36 manifest exit 0; junk exit 1) -> depth improved. SCORECARD diff: one appended round-97 section, no prior row edited. Spot-check: S322 fsync(2) admit agree (quote verbatim 19 words, sha256 f0a986d2 matches); S323 rename(2) reject agree (quote verbatim 9 words, sha 8772946a matches, no durability statement; only 'crash' is NFS RPC in BUGS). Census validate exit 0 (kaidoku ok, W04 only); rows 226 -> 228."
+   },
+   "commit": "kaidoku-shokunin@b30bb749359d48160a0e29b0fd6614ed7f8b8ac4",
+   "closed_at": "2026-11-05T20:49:30Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-11-05T15:42:50-03:00 launch kaidoku round=97 pgid=1879155 driver=hyaku-inline attempt=1; complete 2026-11-05T17:46:32-03:00 hyaku-inline attempt=1. No conformance defects. Lane self-graded not admitted; closure agrees: R97-C1 frozen predicate met literally but the landed v7 verifier refuses every honest public verdict (9-key allow-list vs 14-key verdict) and the kill rule's honest leg is a 9-key stub, so calibration harmed; R97-C2 verified (craft block 36). Routed to round 98 (fresh declaration): v7 allow-list = verdict's 14 keys with a red fixture for the stub; honest leg runs the real public battery; ownrec slot measured and key present in receipt (M97-m); imported pins bound at revision, absent file fail-closed (M97-k); K-ownrun recursion bound (M97-r); K-cwd with real cwd= (M97-s); clean-checkout before-side (M97-q); pre-existing local-source gate FAIL S082/S302/S321. SHONEN boxes 1-3 [~] have non-author-checkable pointers; promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
