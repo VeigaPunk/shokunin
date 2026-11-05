@@ -48884,6 +48884,46 @@
    "notes": "Dispatch/complete digest (mutable .ufo/watchdog.log, copied): 2026-11-04T20:12:06-03:00 launch kotodama round=90 pgid=231242 driver=hyaku-inline attempt=3; 2026-11-04T20:35:57-03:00 lane-dead-no-report kotodama round=90 (attempt=3); 2026-11-04T22:31:35-03:00 launch kotodama round=90 pgid=2932451 driver=hyaku-inline attempt=1; 2026-11-04T22:32:07-03:00 lane-dead-no-report (attempt=1); 2026-11-04T22:32:09-03:00 launch kotodama round=90 pgid=2937213 driver=hyaku-inline attempt=2; 2026-11-04T22:32:56-03:00 lane-dead-no-report (attempt=2); 2026-11-04T22:32:57-03:00 launch kotodama round=90 pgid=2956547 driver=hyaku-inline attempt=3; 2026-11-04T22:33:31-03:00 lane-dead-no-report (attempt=3); 2026-11-04T23:51:48-03:00 launch kotodama round=90 pgid=3152336 driver=hyaku-inline attempt=1; 2026-11-05T00:50:51-03:00 complete kotodama round=90; hyaku-inline attempt=1. The digest omits four earlier round-90 lines (19:33:36 launch, 19:46:42 dead, 19:46:44 launch, 20:12:04 dead), which precede the digest window. Conformance defects (status-neutral): report final bytes landed by hyaku sweep commit 882866cd, attribution defect; entry heading count misreported (10 vs 8); O.before cites absent reports/round-89/mutation-score.txt (real receipt .ufo/waves/round-89/w1/MutationCounter.md); stale-lane line lacks progressing/silent grade; lowest-axis clause not met (freshness paused by open L0 round-11/round-89, stagnation nudge not invoked, no numeric scores). Frozen-text defect disclosed by lane and not verdict-bearing: O after_target/predicate STUB sentence vs stub receipt (SELFTEST passes 67/67). Routed to round 91 (spot-check section 6): counter STUB leg is presence-only (observed=recorded) and must become a content check via a new counter revision; grader entry-mode survivors 14/21 (title/chrome quotes, co-fabricated captures, duplicate lands ids, self-quote); numeric and citation corrections by erratum; locator method for markup-split quotes (S951); stale-lane grade; quality trend claim discipline; attribution of own report commit. Promotion: none; no SHONEN box is [x]; SHONEN notes for operator in spot-check section 7 (box 1 needs SKILL.md decision tables, unchanged this round). Spot-check commit d39434b3 landed via jj-lane.sh commit as protocol-shokunin, remote main verified. Round lane tip measured: 6394ad43.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 90,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 90,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 90
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [
+    "branch reachability pre-pass in the round-87 receipt gate (invocations_visited)",
+    "held-out branch battery (.ufo/waves/round-90/battery/branch-heldout.json)"
+   ],
+   "report": ".ufo/reports/round-90/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-90-verifier-spotcheck.md@79eaa8cfe5e0b9b1c5ff45f524199d4a123f0520",
+    "rechecks": "Re-measured by plain commands over committed bytes: counter, subject and battery sha256 identical at 11197820 and e5200aff and equal to receipt headers; population 78 (59+23-4 overlap); battery 18 cases (14 branch reject, 4 prov met); round-88 landed subjects byte-identical to reviewed candidates; arm labels absent at 037c02ca and present at e5200aff; S615 row digest mismatch found; SOURCES census validate rc 0 (389 rows, 384 at entering). Gate verdicts (C1=met, C2=met, harm=0) evidence-verified from committed receipts, not re-executed. Spot-check 5 of 5 agree on decisions; S615 digest and exit.html rejection-row defects routed."
+   },
+   "commit": "mori-shokunin@e5200affd7eba792e8b4ecf46ca6a3ae4bb07a8e",
+   "closed_at": "2026-11-05T05:11:37Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (watchdog.log, copied): 2026-11-04T20:28:54-03:00 launch mori round=90 pgid=506017 attempt=3; 2026-11-04T20:35:57-03:00 lane-dead-no-report; 2026-11-04T22:32:23-03:00 launch pgid=2943360 attempt=1; 22:32:57 lane-dead-no-report; 22:32:59 launch pgid=2957642 attempt=2; 22:33:31 lane-dead-no-report; 22:33:33 launch pgid=2960690 attempt=3; 22:34:03 lane-dead-no-report; 2026-11-05T00:29:06-03:00 launch mori round=90 pgid=1522650 attempt=1; 2026-11-05T00:50:10-03:00 complete mori round=90 attempt=1. Landed report commit a48343d4 (mori-shokunin); second commit 8151e9ad under lane identity labelled hyaku sweep: attribution defect, recorded. Lane round commit e5200aff verified ancestor of master and equal to remote; spot-check commit 79eaa8cf landed by helper after. Gate standard: C1/C2 gates evidence-verified not re-executed. Defects, status-neutral: no planner seat in w1 (prompt sec 3 names 1x planner); attack share 4/13 in report vs 5/13 in lesson; no-harm NOHARM output and tip-rev receipts not committed; SOURCES S615 full sha256 wrong (prefix right); exit.html rejection not recorded as SOURCES row; rendered prompt lacks verbatim commit-before-report and hash-citation clauses (operator template); fleet root has staged zero-byte mo.tip and modified .scratch/run15-state.json (not named beyond mo.tip). Routed to mori r91: R1 HIGH forgeable kill attribution F1 (add noop negative control; not in SCORECARD plan); R2 P-C1 lookup table; R3 battery trust; R4 --scratch leak count-c1.py:223; R5 BATTERY field count; R6 mutant survivors N10,N15,N17,N20,N21,N23,N24; R7 F2 B4 spelling; R8 S615 digest correction; R9 exit.html rejection row; R10 commit tip receipts; R11 attack-share reconcile; R12 planner seat. SHONEN: no [x] written; no box checkable by non-author this round.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
