@@ -49268,6 +49268,44 @@
    "notes": "Dispatch digest (verbatim, .ufo/watchdog.log): 2026-11-05T04:30:21-03:00 launch mori round=92 pgid=2434994 driver=hyaku-inline attempt=1; 2026-11-05T05:25:31-03:00 complete mori round=92; hyaku-inline attempt=1. Status ok: substantive report, real committed work (rounds 92 landing 9dce2ca6, bookkeeping 587c7dfe). Verdict honest stop: C1 verifies only as presence (depth unprovable; 12 of 19 verified-at lines break the contract's admission-commit rule, and the lesson line 51-52 claims they do not); C2 unmet as frozen (superseded_ids: frozen successor S620 vs actual S349; negatives: no S620 row; run_rc: QUALITY 193 exit rule). No axis harmed; no score moved. Defects (status-neutral): D1 lesson round-92.md lines 51-52 false verified-at claim (routed, lane fixes by appended correction); D3 stale executor-era receipt w1/Mo92E01Digest.after-run.txt shows DIGEST S620 ok rows=123, predates landing; cite landed-state receipts; D4 wave role mix 1 executor vs prompt minimum 3 (scribe 3); D5 untracked orchestrator marker .ufo/waves/round-92/w1.ready.dispatched in the lane tree (not lane work); D6 S619 row written with unspaced pipes (parses, census rc 0); D7 S621 records no pdf digest (route to lane). Routed to mori r93: D1, D2 (C2 premise re-declaration, QUALITY 196), D3, D4, D6, D7; the QUALITY 193 exit-rule decision stays an operator L0 item (mori | round-92 | Digest gate exit rule). Not promotion evidence: no SHONEN box is [x]; promotion operator-owned. Gates not executed by the integrator (sibling gates); their committed receipts were read and cross-checked by plain commands. Spot-check commit 7b3fe9d540c98b8b0390a0f9bbe78de4341092a5 landed (remote master = that hash). Discernment unchanged: admit S619 and reject S620 agree; grading strictly under LEARNING could read the lesson misstatement as harmed; operator may rule otherwise.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 61,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 61,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 61
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "unchanged",
+    "operability": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-61/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-61-verifier-spotcheck.md@16fa821fdce00e709d6895ccfc7aaffa465af195",
+    "rechecks": "C1 re-measured at pinned revs: do-nothing EXIT=1 new_forgeries=2 class_mismatches=2; candidate at freeze 9849e718 EXIT=0 new_forgeries=0 new_honest=4 class_mismatches=0; r60 record flips pass->fail (2x CONTROL-ADDED-NOT-BEFORE-FREEZE) and r61 freeze record findings=0 reproduced; chronology re-run (r61 control added at da7ceba3, strict ancestor of freeze; tool sha 5794ab27 matches); erratum verified (3b552509 lacks r60 control EXIT=128; 2670e96a adds it); sweep 11 DIFF all substance additions, r60 only pass->fail flip; SOURCES 213->215, census validate EXIT 0 (68 advisory W04); gate selftest tallies evidence-verified (41/41 plain, 15/15 substance at 9849e718); S290/S291 quotes re-opened live, byte-identical to committed captures; S288 re-open digest matches"
+   },
+   "commit": "souji-shokunin@0256c2bc51391e7939995ece37d6a6fa3b85d468",
+   "closed_at": "2026-11-05T08:37:57Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest: 2026-11-05T04:18:26-03:00 launch souji round=61 pgid=2185949 driver=hyaku-inline attempt=1; 2026-11-05T05:18:47-03:00 complete souji round=61; hyaku-inline attempt=1. Defects (status-neutral): lane-rooted .ufo/waves/round-61/*.ready markers are uncommitted lane runtime; durable wave evidence is the committed census/round-61/wave/ copy. Numeric calibration score unchanged (no reproducible 0-10 mapping, lane-named; routed to r62 to derive the mapping or mark the cell verdict-carrying). C2 seat-built fixture named, not declared (correct under the 1-3 cap). Routed to r62: receipt-writer skip-worktree blindness (HIGH-1, planned fix already in SCORECARD Planned); ## MACHINE BLOCK preregistration question (critic F13/Q59, operator item); F3 delete-and-re-add matrix row gap; 11 historical records (rounds 41-55, 60) gain the chronology class, reported not rewritten. All six r60 routed defects addressed. SHONEN: all four boxes [~] look checkable by a non-author from committed surfaces; promotion is operator-owned; closure wrote no [x].",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
