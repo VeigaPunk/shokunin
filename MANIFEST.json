@@ -48799,6 +48799,48 @@
    "notes": "Dispatch digest: 2026-11-05T00:43:02-03:00 launch kasegi round=72 pgid=1743267 driver=hyaku-inline attempt=1; 2026-11-05T01:56:42-03:00 complete kasegi round=72; hyaku-inline attempt=1. Conformance: report committed by kasegi-shokunin in fleet 3b32a990; SHONEN heading present, one line per box, no [x]; all 6 cited lane hashes ancestors of master; lane ahead=0 clean and pushed; prompt renders templates/round-prompt.md sections 1-5 verbatim plus hyaku addendum s6 with all contract items; 7 round commits under lane identity, no .ufo/state or watchdog.log bytes. Wave: one v1 wave, 11 seats (executor x3, mutation-tester, reviewer x2, critic, scout, scribe x2, connector; attack share 4/11); K72ExecParity died on provider usage_limit_reached, parity re-measured by L1 on exact bytes (247 identical). Defects (status-neutral): C2 frozen target names an api_key clause S107 does not state (frozen before the capture, M72-5) and its frozen kill rule is not the complement of the predicate (L72-6) - lane ruled NOT VERIFIED AS DECLARED and filed a dated amendment claims-amendment-c2.json for the operator; C1 universal sentence falsified off-tree (census reads add_argument only, L72-4) with kill clauses weakened (L72-5). Operator rulings owed: C2 amended admission (L72-12), C1 universal sentence (L72-4), R-5 realpath census semantics. Routed defects R-1..R-7, L72-2/L72-3, L72-11 carried to next round. SHONEN boxes: none [x]; if a non-author later signs them off, promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 87,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 87,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 87
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "novelty": "unchanged",
+    "depth": "unchanged",
+    "coverage": "improved",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "improved",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-87/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-87-verifier-spotcheck.md@801b903af6412cb424209a60b3a52e56c3532866",
+    "rechecks": "C1 re-measured: ledger executed 30->31 of 88 and file-artifact 22->23 of 76 (plain json over committed bytes at b9be6877 and 6b7e83aa); captured grader sha256 e4e6b21f...c0b equals receipt SUBJECT_SHA, live raw.githubusercontent fetch 200 559 B cmp-identical; independent replay of the eight frozen cases predicted==observed 8/8 (16 legs). C1 transcripts (base/tip/controls) and receipt evidence-verified, counters not executed. C2 re-measured: corpus/README.md:941 at head carries the derived sentence (round-86 table: 8 cases, schema 6, control 2), live mismatch 1->0; PROVINCE.md and SKILL.md carry no schema-drift count; C2 transcripts evidence-verified. Spot-check: S275 admit and S276 reject re-opened live (200; sha matched; line-15 quote verbatim, 8 words), both agree. Census validate exit 0; registry 266->268, tier A 236->238. Lane HEAD ahead=0, ls-remote master = 6b7e83aa, report commit bc4c38c9 by kengaku-shokunin; cited commits are ancestors of master."
+   },
+   "commit": "kengaku-shokunin@6b7e83aa2aabdc26089830986e8ee2e04a2ba00d",
+   "closed_at": "2026-11-05T05:06:14Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (watchdog.log is mutable; copied here): 2026-11-05T00:44:04-03:00 launch kengaku round=87 pgid=1767021 driver=hyaku-inline attempt=1; 2026-11-05T01:56:38-03:00 complete kengaku round=87; hyaku-inline attempt=1. No lane-dead-no-report line for kengaku round 87. Report commit bc4c38c9 (kengaku-shokunin); lane HEAD 6b7e83aa; report is real, status ok. Defects, status-neutral: (V1) MISSION L2 floor not met, zero seats dispatched, w1.ready never marked, L0 question .ufo/l0-questions.md:312 open; (V2) frozen BASE figures mispredicted: C1 frozen defects=7 vs measured 3 (value carried from round-86 claims line 29), C2 frozen control expected mismatches>=1 vs measured mismatches=0 defects=1 rc1; neither frozen text repaired; (V3) lesson round-87 Gate lacks spot-check result line; (V4) Mistake 2 fix (Q66) not shown able to fail; (V5) report states coverage as held and expansion observable unmoved, while coverage's counted observable moved; (V6) report does not grade the open round mission progressing or silent; template: commit-before-report ordering and lane write scope are not named items in the dispatched prompt. Admission judgment: C1 admitted despite the frozen BASE-figure miss, because the do-nothing BASE still fails its predicate with rc1; operator may rule otherwise. Routed to the lane for round 88: see corpus/lessons/round-87-verifier-spotcheck.md section 6 (V1-V6). SHONEN: no box marked by the integrator; no promotion or mint; box assessment operator-owned. Judgment note: the spot-check sample is two (one admit, one reject), the minimum the rule requires.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
