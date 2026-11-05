@@ -51058,6 +51058,48 @@
    "notes": "watchdog digest: 2026-11-05T09:43:34-03:00 launch kengaku round=92 pgid=2856414 driver=hyaku-inline attempt=1; 2026-11-05T12:11:56-03:00 lane-dead-no-report kengaku round=92 (attempt 1 ended without a landed report); 2026-11-05T12:11:58-03:00 launch kengaku round=92 pgid=3370906 driver=hyaku-inline attempt=2; 2026-11-05T12:48:46-03:00 complete kengaku round=92; hyaku-inline attempt=2. Lane filed round not admitted: C1 verifies on its frozen predicate; C2/C3 not admitted under the frozen rule (instruments edited after freeze A 96f249e0 and after the first scored run; SCORECARD erratum bb29a660; lane self-corrected via its own non-author wave w1). Disclosed carry-overs, status-neutral: round-91 '14 controls' erratum unrepaired; w1.ready still names attempt-1 L1 KengakuR92; attempt-1 w1-dispatch.json rewritten to taskCall shape before dispatch. Routed to round 93: freeze-hash check with red-before witness (M8); override-branch vacuity (frozen M10(b); burndown.py:306-329 never calls vacuous_check); planted-marker battery skip (:445, :558); pin the three round-92 counters in plans/counter-pins-r91.json (M11); injectable sandbox-red control (M13); unguarded sibling cost_model_for_tests.py (ScoutS283 F1). SHONEN: four [~] boxes with resolvable pointers, fully checkable by a non-author, no [x] written this round - promotion is operator-owned. Operator rulings open on L0 kengaku | round-92 (admission of repaired-instrument measurements; WAVE-DONE addressing after a relaunch).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 94,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 94,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 94
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "fresh-pack held-out arm battery with JSON-safe receipts (v4 successor)"
+   ],
+   "report": ".ufo/reports/round-94/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-94-verifier-spotcheck.md@b5331db1fb0ce0bf93695ce1730cf831effef6a9",
+    "rechecks": "C1 calibration evidence-verified over committed bytes, lane gate not executed: agreement receipts jq re-derived 2/2/2 met=false (base v3) -> 4/4/4 met=true (v4 at dd452491); rc files 1/1/1/1 -> 0/1/1/1; pos receipt output {bytes,sha256} with stdout 'met True exit 0'; base pos receipt 706 B INVALID-JSON with TypeError stderr; sha pins re-derived (v4 c41d54d7, counter dc384a44, manifest 9d72f995, verdict-code 60026511 = live v3 tool sha); counter bytes unchanged at landing (diff dd452491..e1bf745 tools/round-9{2,3,4} shows only advisory extra-checks). C2 depth re-measured over tree bytes: block 33 marker receipt-path-json-safe v1 present at e1bf745 with decision table citing QUALITY 189/190 (both rows verified); committed depth receipts 32-expect-33 exit 1 at base -> blocks 33 resolved 33 / required-shaped 1/1 exit 0 at 8a711726. No axis harmed: SCORECARD diff 8a40ceb6..e1bf745 pure additions (one capability row + round-94 section + superseding corrections). Discernment: S319 admit + two rejects re-opened (HTTP 200, 116296 B, sha256 byte-identical 8021264a..794c0); quote found exactly twice, first occurrence in the json.dump default-parameter bullet as located; agree on admit and both rejects; census validate exit 0 (32 expected W04). Wave r94-w1: 10 results none dead, attack share 50%, band 8-16."
+   },
+   "commit": "kaidoku-shokunin@e1bf745edaa112ea65efce767553a04282e65c36",
+   "closed_at": "2026-11-05T16:10:38Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable; lines 2862/2875): 2026-11-05T11:49:55-03:00 launch kaidoku round=94 pgid=1693372 driver=hyaku-inline attempt=1; 2026-11-05T13:01:20-03:00 complete kaidoku round=94; hyaku-inline attempt=1. Step-1 conformance green: report committed by lane identity kaidoku-shokunin <kaidoku@shokunin.local> at 40389220 (12:59:45, lands last, after bookkeeping e1bf745 12:57:49); SHONEN heading 4/4 [~] lines; cited commits dd452491/8a711726/e1bf745 all ancestors of refs/heads/main; jj-lane state ahead=0 behind=0, porcelain clean; prompt committed 680f9acb and a faithful templates/round-prompt.md rendering with all five child-lane items; axes bucket matches shokunin.conf. Both claims verified -> admitted; verdicts agree with the spot-check axis table. Defects (status-neutral): D-94-A the C1 unchanged-bytes receipt c1-unchanged-bytes-at-8a711726.txt is a 0-byte capture of an empty git diff --stat - persist the command/digest inside it or drop the file next round; M94-f short --rev in the base receipts (self-mined by the lane); M94-e agreement-counter label-binding/fabrication limits plus the O_NOFOLLOW/mkstemp receipt-writer hardening stay open in the lane's Planned (confirmed open). Operator note: every SHONEN box looks fully checkable by a non-author on this round's evidence - promotion is operator-owned; lane's SHONEN.md correctly remains unmarked. No exploratory claim; no promotion; no mint.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
