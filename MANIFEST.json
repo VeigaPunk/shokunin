@@ -49225,6 +49225,49 @@
    "notes": "Dispatch/complete digest (watchdog.log, mutable; copied here): 2026-11-05T04:18:28-03:00 launch tabi round=65 pgid=2186628 driver=hyaku-inline attempt=1 | 2026-11-05T05:22:29-03:00 complete tabi round=65; hyaku-inline attempt=1. Single v1 wave w1, 12 seats, WAVE-DONE received, no dead seats; stale-lane: none. Claims: C1 adjacency (score held 8) and C2 calibration (score held 9), both verified on frozen predicates; C1 axis assignment disputed by Critic (refuse: axis mis-assigned) and routed to the operator as L0 (round-65 question in l0-questions.md); admission does not wait on it because no axis is harmed and both claims verify, and an operator ruling on axis fit can be recorded by closure-correction. Defects (status-neutral, routed to lane): D1 the v22 selftest 47/47 claimed in report/LOG/SCORECARD has no committed stdout; committed w1/R65Executor1/selftest.stdout is 46/46 without three-row-conflict-count and R65Executor1.md says 46; re-capture or erratum. D2 surviving C2 mutant M5 (relative-path false reject) already in planned r66. D4 gate wording: S140/S141 'Reject (held)' while status mined. D5 round-64 S169 quote form unverified (known). Prompt conformance (protocol item): commit-before-report ordering implicit in dispatched prompt; L2 route map not compared to current MISSION.md by this integrator. Spot-check: 4/4 agree; discernment verdict is the non-author grade (lane report had graded unchanged pending spot-check). SHONEN: no [x] written; box 3 nearest candidate for operator non-author check. Spot-check file committed 2816adb3 (protocol-shokunin) and pushed; remote master verified.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 92,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 92,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 92
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "unprovable",
+    "freshness": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [
+    "tools/mori-source-digest.py supersession honoured only for a successor that verifies against its pinned copy (S349 for S235; S619 for S615) and --selftest (DIGEST_SELFTEST pass=11 fail=0); evidence-verified from committed receipts (evidence/mutants-r92.txt), not re-executed"
+   ],
+   "report": ".ufo/reports/round-92/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-92-verifier-spotcheck.md@7b3fe9d540c98b8b0390a0f9bbe78de4341092a5",
+    "rechecks": "Conformance: report attribution mori-shokunin (5238fc01, fleet repo); SHONEN heading 4 lines [~]; cited hashes f63d1ab0, 699f6276, 9dce2ca6, 587c7dfe ancestors of master; lane ahead=0, remote=master=587c7dfe; untracked orchestrator marker w1.ready.dispatched disclosed. C1 re-measured by plain git show over committed bytes: 79/98 at f63d1ab0 -> 98/98 at 587c7dfe (presence met); 19 move-only diffs (removed non-blank lines reappear, notreappear=0; 2 blank lines removed, disclosed); 12 of 19 verified-at lines name a date, not the admission commit the contract requires (7 do). C2 not re-executed: committed receipts read (after-r92.txt:6,9); S615 recorded digest tail mismatches pinned sha256 (7891c588...8b1a60ad1a6f0 vs ...0f83b9a8a42f5) so S619 correction is valid; S235.pdf sha256 9855a498...8020 equals S349 digest, so S349 is the valid pre-existing successor and the frozen S620 premise fails; C2 unmet as frozen, not admitted. Spot-check (re-opened): S619 pinned copy sha256 and 11-word quote agree; S620 reject agrees (S349 supersedes S235); S621 re-opened from nvlpubs PDF, size 833315 matches, 10-word quote located after line-wrap normalisation (agree); one trio sample disagrees with the lesson's verified-at rule. SCORECARD diff additive only. sources-census validate mori rc 0 (393 rows; 391 at entering)."
+   },
+   "commit": "mori-shokunin@587c7dfe13a637c8a82515eed8233827f4d58a5f",
+   "closed_at": "2026-11-05T08:30:33Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (verbatim, .ufo/watchdog.log): 2026-11-05T04:30:21-03:00 launch mori round=92 pgid=2434994 driver=hyaku-inline attempt=1; 2026-11-05T05:25:31-03:00 complete mori round=92; hyaku-inline attempt=1. Status ok: substantive report, real committed work (rounds 92 landing 9dce2ca6, bookkeeping 587c7dfe). Verdict honest stop: C1 verifies only as presence (depth unprovable; 12 of 19 verified-at lines break the contract's admission-commit rule, and the lesson line 51-52 claims they do not); C2 unmet as frozen (superseded_ids: frozen successor S620 vs actual S349; negatives: no S620 row; run_rc: QUALITY 193 exit rule). No axis harmed; no score moved. Defects (status-neutral): D1 lesson round-92.md lines 51-52 false verified-at claim (routed, lane fixes by appended correction); D3 stale executor-era receipt w1/Mo92E01Digest.after-run.txt shows DIGEST S620 ok rows=123, predates landing; cite landed-state receipts; D4 wave role mix 1 executor vs prompt minimum 3 (scribe 3); D5 untracked orchestrator marker .ufo/waves/round-92/w1.ready.dispatched in the lane tree (not lane work); D6 S619 row written with unspaced pipes (parses, census rc 0); D7 S621 records no pdf digest (route to lane). Routed to mori r93: D1, D2 (C2 premise re-declaration, QUALITY 196), D3, D4, D6, D7; the QUALITY 193 exit-rule decision stays an operator L0 item (mori | round-92 | Digest gate exit rule). Not promotion evidence: no SHONEN box is [x]; promotion operator-owned. Gates not executed by the integrator (sibling gates); their committed receipts were read and cross-checked by plain commands. Spot-check commit 7b3fe9d540c98b8b0390a0f9bbe78de4341092a5 landed (remote master = that hash). Discernment unchanged: admit S619 and reject S620 agree; grading strictly under LEARNING could read the lesson misstatement as harmed; operator may rule otherwise.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
