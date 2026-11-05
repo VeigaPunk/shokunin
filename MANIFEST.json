@@ -50784,6 +50784,44 @@
    "notes": "digest: 2026-11-05T09:57:44-03:00 launch kotoba round=90 pgid=2892990 driver=hyaku-inline attempt=1 | 2026-11-05T11:25:29-03:00 complete kotoba round=90; hyaku-inline attempt=1. Defects (status-neutral, routed to round 91): battery-guard mutants mb-m2/mb-m15/mb-m16 untested; SCORECARD r90 self-test pointer names the receipts/ dir while the file is w1/ExecBattery/battery-selftest.txt (append-only fix owed); PROVINCE.md Core one round stale for the battery (SHONEN box 4); floors child-cap false red ~167s vs 120s cap; freeze-gate probe-world exit-ladder inconsistency (counter defect, not in frozen bytes). Disclosed standing deviation: validator excludes planner, L1 holds the seat (operator-owned). SHONEN boxes 1-3 look checkable by a non-author from closure-verified evidence; box 4 awaits PROVINCE refresh; closure wrote no [x]; promotion operator-owned. Wave r90-w1: 13 seats, band 8-16, 5 attack (38%), connector 1, all 13 returned final output. L0 carried open: kotoba round-88 (assimilation renumber-or-retire), round-73 (gate-registry home), round-50 (sibling precedence).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 93,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 93,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 93
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "improved",
+    "calibration": "unprovable",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-93/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-93-verifier-spotcheck.md@8a40ceb6516bb38c19c37bcbff2bb3332f31c832",
+    "rechecks": "Conformance: report committed by kaidoku identity (567fc3f5); all 7 cited lane commits ancestors of refs/heads/main; jj-lane state ahead=0 behind=0, porcelain clean; remote main = a894611e. R93-C2 (depth, verified on frozen predicate) re-measured by plain greps over committed bytes: base Row 169 lacks both atoms; HEAD Rows 184/188 carry them; receipts at ca5aa6a2/0dbdf693 agree; counter sha256 pins match claims.json; counter-surface diff ca5aa6a2..0dbdf693 empty for SKILL/tools/manifests/controls. R93-C1 (calibration, NOT verified) evidence-verified: pre receipts F1/F2 admitted at base; stdout-form after receipts reject F1/F2 and admit positive; positive and F3 --json-out receipts are truncated (jq invalid) with TypeError in stderr, so the kill rule fired as declared; counter pin matches. Discernment: 4 gate items re-opened (S318, S317, S271 byte-identical sha256; S313 reject grounded in bytes; S318 call-site count 10 re-grepped). Census validate exit 0. Re-run only: sources census, sha256sum, git merge-base, plain greps, curl re-fetch of three sources; no sibling gate executed."
+   },
+   "commit": "kaidoku-shokunin@a894611e5a43f441983de06bc58719f4453095ef",
+   "closed_at": "2026-11-05T14:49:13Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (.ufo/watchdog.log, mutable; copied at closure): 2026-11-05T10:14:33-03:00 launch kaidoku round=93 pgid=2964887 driver=hyaku-inline attempt=1; 2026-11-05T11:38:08-03:00 complete kaidoku round=93; hyaku-inline attempt=1. Verdict: round admitted=false because R93-C1 (calibration) is declared NOT VERIFIED by its own kill rule (positive --json-out receipt not written: v3 TypeError on bytes in json.dump); R93-C2 verified on frozen predicate; no axis harmed. Routed defects (status-neutral, do not bar admission): D-93-A report R93-C1 counting command cites nonexistent revision ca5aa6a2ce0d5e8a7c5b5b0f2d9f0eb9a0e4a0f2 (real is ca5aa6a2ca65ff14f11707c3a376a96879458248); D-93-B report claims WAVE-DONE received with no committed pointer; D-93-C SCORECARD round-93 first paragraph says ca5aa6a2..HEAD diff of corpus/QUALITY.md is empty but Row 188 pointer continuation landed after ca5aa6a2; D-93-D truncated partial receipts c1-pos-json and c1-F3-json in .ufo/waves/round-93/l1/scores/ begin with exit 0 and fail jq validation. Routed to round 94: M93-e successor counter stop-boundary-repair-battery-v4.py as fresh declaration; open L0 question kaidoku|round-93 on stdout-form receipts and successor approval (operator-owned). SHONEN: all four [~] boxes look checkable by a non-author; promotion is operator-owned, not done. Commit field cites lane HEAD of the round (a894611e); the spot-check commit is 8a40ceb6.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
