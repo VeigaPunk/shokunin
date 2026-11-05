@@ -51710,6 +51710,47 @@
    "notes": "Dispatch/complete digest (copied from .ufo/watchdog.log, mutable): 2026-11-05T15:06:17-03:00 launch revenger round=96 pgid=945119 driver=hyaku-inline attempt=1; 2026-11-05T16:28:55-03:00 complete revenger round=96; hyaku-inline attempt=1. Round: 2 declared claims (C1 coverage K; C2 calibration), one v1 wave of 12 seats (w1-results.json), frontier step done (S502-S504, census rc 0). Outcome: C1 NOT VERIFIED (honest miss, confirmed by integrator); C2 met on frozen predicate, evidence-verified; admitted=false; no axis harmed. Conformance defects (status-neutral): D4 no planner seat in the wave despite the 1x planner floor (report cites a validator rule not in committed evidence); D2 SCORECARD round-96 section says Mistakes M1-M6 while the lesson has M1-M7; godspeed lead not verifiable from w1-spec.json. Routed to r97 (spot-check D1-D3): D1 S504 located quote is a reflowed rendering, not verbatim, passed by C1_QUOTES -- fix quote and add own-work quote leg in v6; D3 M4, M5 used-by census form, M6 + CriticR96 F1-F14, MutationR96 d-host on a v6 freeze (C02 admissible only on v6 with same entry bytes and non-author closure). Operator note: SHONEN boxes are not checkable as [x] this round (no non-author checkbox was verified; all four remain [~]); promotion is operator-owned. Discernment: votes are lane-internal and not counted; trends unchanged.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 44,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 44,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 44
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "freshness": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-44/kagi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kagi-shokunin/corpus/lessons/round-44-verifier-spotcheck.md@0d0192f63eb5e49826d75af1e5293004dc691a18",
+    "rechecks": "Plain re-measured: report authorship and ancestry; lane state/remote; SCORECARD append-only (45/0, axes 9->9); corpus/knowledge diff empty; SHONEN.md unchanged; census kagi ok rc 0 (99 rows); C1 BASE absence (rc 128) + instrument pin K->92c394c rc 0 + BASE receipts 0/0; C2 receipt revision c70bfb0 == K, gate sha256 fab42e1d…740f equal to K's gate bytes, gate unchanged K->92c394c, BASE has no run receipt; C3 register absent at BASE, 3 rows at 92c394c, committed values 4/0/3 at 5f3566c, no committed runner writes c2-worktree-at-base, superseded-by targets resolve; S099 bytes re-fetched live (curl rc 0, 97077 bytes) and from fleet 75dd2612. Evidence-verified, not re-executed: C1 readings 2/0/1; C2 run CLEAN + reading 1, forged kills 0/0; C3 re-derived 5 and 1, reading 3, fixtures 3/1. Per-axis: calibration improved, operability improved, freshness improved, depth/coverage/adjacency unchanged."
+   },
+   "commit": "kagi-shokunin@92c394c57bbd207978bd9ba917cf0a7dcabba8d6",
+   "closed_at": "2026-11-05T19:48:40Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-11-05T15:35:08-03:00 launch kagi round=44 pgid=1790147 driver=hyaku-inline attempt=1 | 2026-11-05T16:41:48-03:00 complete kagi round=44; hyaku-inline attempt=1. Step 1: report e8ed4298 committed by kagi-shokunin; all cited lane commits (d54109d ae9e9eb c70bfb0 0ad617a 92c394c 5f3566c 19025d9 65f66e17 542885e f2b4ec7 a918025) are ancestors of master; lane ahead=0, porcelain empty, remote = 92c394c; SHONEN heading with four [~] lines; prompt carries the child-lane items. Defects, status-neutral, routed to lane round 45: D1 no scribe seat vs prompt §3 minimum (undisclosed); D2 stamp-migration record undercounts BASE staleness (7 stamp rows mismatched d54109d bytes, record names 3; LOG/SCORECARD/QUALITY/SOURCES rows were already stale at BASE); D3 red-witness line 'C2 clean four-line receipt at BASE (expect 0: gate absent at BASE? see note): 1' has an unsupported expectation (gate present at BASE; no note); D4 mistake classes outside mistakes.md §5 vocabulary (M44-2, M44-4, M44-5, M44-7, M44-8, M44-9); D5 unopened staged candidates recorded in lesson rather than SOURCES '## Leads (unopened)'. S099 admit agrees (live URL sha256 e62e259c…, quote byte-exact at line 561 offset 52924); tier-A reservation routed. Reject decision (staged merge/kagi themes) agrees; record form routed. SHONEN: four [~] boxes look checkable by a non-author from committed evidence; promotion is operator-owned, no [x] written. Ledger: round 44 kagi 'ok'; C1/C2/C3 admitted; no axis harmed.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
