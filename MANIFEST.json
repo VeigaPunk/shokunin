@@ -51998,6 +51998,46 @@
    "notes": "Dispatch digest: 2026-11-05T17:42:15-03:00 launch mori round=97 pgid=1635907 driver=hyaku-inline attempt=1; 2026-11-05T18:15:39-03:00 complete mori round=97; hyaku-inline attempt=1. Step-1: report committed by mori-shokunin, SHONEN heading 4 lines, all 5 cited commits ancestors of master, ahead=0, prompt carries template contract (0/140 lines missing). Defects (status-neutral, routed): D1 two seat reports (w1/Mo97ScoutLive.md, w1/Mo97ScribeLog.md) modified uncommitted after the last lane commit; D2 lesson round-97 Frontier step says 42 W04 vs 43 in census and committed receipts - correction of record next round; D3 carried auditor residuals R1-R3/junk-row false green, calib survivor M10, 31 prefix_only rows, open L0s r94-r96; D4 cross-lane: 58 docs.python.org rows in 11 sibling lanes face the same stamp churn (aggregator/operator). Final receipts measure 5497e6f7; tip b6d03408 adds only receipts. SHONEN boxes remain [~]; promotion is operator-owned, none proposed.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 98,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 98,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 98
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "depth": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "UPX-packed PE magic / section-name tamper repair"
+   ],
+   "report": ".ufo/reports/round-98/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-98-verifier-spotcheck.md@de098f51cd73d3b9b4a895840da8f2bb0a386db8",
+    "rechecks": "step1: report by kaidoku-shokunin (9028b80e, 18:29:13 -0300, after final lane commit 18:27:45); SHONEN heading 4 lines; 5 cited commits exist and are ancestors of refs/heads/main; jj-lane state ahead=0 behind=0, porcelain empty; prompt lines 1-140 equal templates/round-prompt.md modulo placeholders (AXES = shokunin.conf:45). C1 evidence-verified (counter sha a34d1253 pinned at freeze/candidate/final and equal in all 3 receipts; repair/control shas match committed bytes; labels 0/18 identity, 0/18 r87, 18/18 exit 0 at 72346895) and independently re-measured on 3 held-out PE32+ carriers (Ghidra lzfse.exe, pdb.exe, orca winpty-agent x64): 9/9 tamper cells effective, repaired, upx -t rc 0, upx -d sha == ref (all at PackHeader 992); coverage recount 175/181 -> 176/182 over committed bytes. C2 evidence-verified (allowlist-check sha c8106aff pinned; v7 1/4 exit 1, v8 4/4 exit 0) and re-measured: v3.score counts keys == v8 COUNT_KEYS (14=14, empty symmetric difference); v7->v8 diff +28/-8 confined to docstring/TOOL/keys/selftest. Depth rule blocks 36->36 (committed receipts); SCORECARD diff additions only. Spot-check: S324 admit agree (live sha 6783a926 equal, lines 3167-3170 quote present); S325 reject agree (live sha f1b7c347 equal, quote present, names no field, remedy is x64dbg manual unpack); census validate exit 0 kaidoku ok; rows 228->230."
+   },
+   "commit": "kaidoku-shokunin@f6cdcabc1e53bee7c22a6161da5facb818103b54",
+   "closed_at": "2026-11-05T21:34:11Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-11-05T17:49:07-03:00 launch kaidoku round=98 pgid=2897017 driver=hyaku-inline attempt=1; complete 2026-11-05T18:29:57-03:00 hyaku-inline attempt=1. Conformance defects (status-neutral): D1 round-98 gates pe-upx-tamper-battery.py, allowlist-check.py, stop-boundary-repair-battery-v8.py (and round-97 counters) have no row in SKILL.md gate registry (registry home), so no gate graded conformant; D2 v8 selftest 24/0 evidenced only by seat prose (ExecReproC2.md, ScribeEntry.md), no committed raw output; D3 ReviewerRepair seat died without report (M98-f, lane-recorded). Routed to round 99: register gates; commit raw selftest outputs; successor counters with wave forgeries (CriticC1 f2/f7/f1h, CriticC2 F2/F3/F5, MutationC2 M6) as pre-freeze red fixtures plus a carrier with PackHeader not at 992; upx-pe-repair.py ok-intact on truncated pack >= c_len and three rc-1 CLI crash paths; stale coverage head 10.0 168/168 vs 176/182 and six unmapped r93-r97 entries; round-97 defects 2-5, 7 still open. Round-97 defect 1 closed by R98-C2. Operator: SHONEN boxes 2 and 3 look non-author checkable (verifier re-ran an end-to-end pack/tamper/repair/unpack task from the tool usage line alone); box 1 not checked; nothing written to SHONEN.md.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
