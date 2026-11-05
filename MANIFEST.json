@@ -48193,6 +48193,43 @@
    "notes": "2026-11-04T20:36:11-03:00 launch souji round=60 pgid=1040036 driver=hyaku-inline attempt=1; 2026-11-04T21:18:10-03:00 complete souji round=60; hyaku-inline attempt=1. Real lane-authored report 92b357dc (committer 21:17:34-03:00, after lane tip d05a0001 at 21:17:26; author date 21:13:07 is a jj working-copy artifact of the colocated fleet repo); four SHONEN [~] assertions, zero [x]; all 11 cited hashes exist and are ancestors of refs/heads/master; lane ahead=0/clean before the spot-check; spot-check landed c7228424 and pushed. Prompt fidelity complete: 5 round-level + 5 child-lane items verbatim; route-map divergence advisory only. Both claims' numbers verify from committed bytes and both beat their do-nothing controls, so the numbers are NOT the rejection ground. Rejected-harmed on chronology: the two bound Control receipts are added by the freeze commit 2670e96a itself and the wave control outputs at b38c60ee, while the frozen preregistration says they were 'committed at 3b552509..., strictly before this freeze commit' and the report repeats it ('frozen only after their no-work controls were executed and committed'; 'red controls committed before the predicate'). The lane's own critic recorded this as S60CriticRound Finding 1 (Q120 VIOLATES) and recommended honest-stop framing; the report and lesson surface five other critic limits and not this one, so calibration (self-assessment, overreach caught) is harmed rather than an honest stop. C2 is a declared successor to the rejected r57 C2 whose prefreeze prerequisite is unmet -> operability unprovable (r58 precedent). No structural harm: diff is additive (no pre-existing file deleted; only LOG/SCORECARD/SKILL/SOURCES/freeze-check modified), PROVINCE and SHONEN unchanged, default checker path byte-identical, SOURCES/LOG append-only. Routed to souji: (1) append an erratum naming 2670e96a as the control-adding commit and stop repeating the false provenance - no edit of the pushed prereg; (2) mechanise it in --substance (require git log --diff-filter=A on the Control receipt to be a strict ancestor of the freeze); (3) surface critic Finding 1 in the lesson; (4) index knowledge/freeze-record-substance-binding.md in corpus/README.md (coverage map untouched, which is also why expansion is unchanged); (5) fix the broken SKILL.md pointer census/round-60/w1/... -> census/round-60/wave/w1/...; (6) keep the r56-r59 debts and the round's five named limits open. SHONEN boxes look checkable by a non-author but promotion stays operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 89,
+   "date": "2026-11-04",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 89,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 89
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unchanged",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-89/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-89-verifier-spotcheck.md@7218699cfbdec702ba42f35ceac0a8e52d1bd564",
+    "rechecks": "re-ran the frozen scorer at 082f01a4 in my own scratch: C89_C1 HELD 30/30 exit 0; do-nothing v2 bytes (sha 1f11f124): UNMET 27/30 exit 1 failing alias-proc-root/bom-rev/symlink-instrument; kill-rule constructions cand-probe-keyed and cand-skip-mode: 30/30 each, so C1 is UNMET as reported; instrument sha 37201ad0 at the judged rev; selftest 68/68 arms (base 59/59); SOURCES 192->197 (A=165 B=22 C=10; queued 13/mined 156/rejected 28; 0 malformed); sources-census exit 0 with the same 7 W04; checklists 36/46 open -> 43/46 at M; spotcheck-adopt 33/34 -> 34/34; counter-pins and readme-map CLEAN; OMP_CENSUS 7 -> 2; spot-check sampled S255/S257/S258 admits and the S259 reject, all agree"
+   },
+   "commit": "kumitate-shokunin@082f01a4db1ba4ddae67a155e9cf21ba3d3306f2",
+   "closed_at": "2026-11-05T00:40:20Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (from mutable .ufo/watchdog.log): 2026-11-04T20:13:42-03:00 launch kumitate round=89 pgid=238576 driver=hyaku-inline attempt=1; 2026-11-04T20:35:59-03:00 lane-dead-no-report kumitate round=89; retry same round (attempt=1: L1 ended without a landed report: FAIL report_of); 2026-11-04T20:36:02-03:00 launch attempt=2 pgid=1027971; 2026-11-04T21:20:12-03:00 complete kumitate round=89 (attempt=2). Step 1: report b6b3bfac landed by kumitate-shokunin at 21:19:31 after lane tip 082f01a4 (21:19:20) and pushed to origin/main+master; SHONEN heading 1 with 4 [~] lines matching SHONEN.md's 4 boxes; cited adfc2f55/9c3b64e4/7a8afb5f/082f01a4 all ancestors of master; jj-lane state ahead=0, porcelain clean; prompt carries the template contract and the >=8 L2 floor; wave 13 seats, attack 4/13, 4 dead seats not replaced. Claim: one, C1 operability capability acquisition receipt-bind v3 - UNMET under the frozen kill rule, which I confirmed by re-running two seat constructions at 30/30; honest stop, no capability row, admitted=false. Conformance defects (status-neutral, routed to the lane for round 90): K89-V5 M checklist receipt is summary-only (5 lines) and the named red set (723/737/741/755/756 = 5) contradicts the 43/46 tally (3 reds) while the open receipt has 10 reds; K89-V6 knowledge entry recheck states held=64/64 but the same commit's instrument prints 68/68 (my re-run), fix as an append-only correction; K89-V7 S255 quote location named line 70 but the sentence begins at line 75; K89-V8 close/plan.txt is PLAN_BEFORE_READY: FAIL (reason=MAP_DRIFT at PLAN adfc2f55, first uncovered lessons/round-88-verifier-spotcheck.md) and was cited without its verdict - the drift was repaired at M (README_MAP CLEAN 227/227). Carried, already queued by the lane in SCORECARD.md: K89-V1 BOM/ZWSP duplicate-field bypass, K89-V2 missing scorer arms (absolute in-lane symlink token, in-lane .. staying inside, symlinked ancestor), K89-V3 stale limit-before-read docstring, K89-V4 usage/selftest text stubs and worktree-reading arms 3/5. SHONEN boxes 1-4 look checkable by a non-author after this review; promotion stays operator-owned and no [x] was written.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
