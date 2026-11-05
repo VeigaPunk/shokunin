@@ -50941,6 +50941,44 @@
    "notes": "Dispatch digest (.ufo/watchdog.log, mutable; copied at closure): 2026-11-05T11:05:13-03:00 launch revenger round=93 pgid=323901 driver=hyaku-inline attempt=1; 2026-11-05T12:29:49-03:00 complete revenger round=93; hyaku-inline attempt=1. Verdict: admitted=true — both claims verify (C1 re-measured, C2 evidence-verified on the frozen nine-class predicate) and no axis is harmed; both claims are honestly self-reported as contested on the critic's evidence (attacks outside the frozen nine; the landed entry is not among the reachable forgeries). Clarification, not a defect: the report's before->after table says the battery was 'run at 0723ebd0'; the receipts are committed at 28b5f99b (its Landed-changes table states this correctly). Routed forward (lane-recorded, carried): C1 v3 successor counters must freeze CriticR93's closes (M3, findings 1-12) — exactly one admission-status line, seat-name canonicalization, author/role checks, artifact distinctness, oracle sha pinning, non-vacuous fenced blocks; considerthese proposal-2 measurement (8/8 contested r89-r92) to re-measure in r94; open L0 'revenger | round-91' (assimilation id collisions 155/155) still unanswered, routed around. SHONEN: all four boxes look checkable by a non-author on the current bytes; no [x] written by closure — promotion review is operator-owned. Spotcheck landed 9876cb38c5415fbc86336a26a68e05680c397fd5 (protocol-shokunin), verified on refs/heads/main.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 66,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 66,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 66
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "harmed",
+    "calibration": "unprovable",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-66/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-66-verifier-spotcheck.md@3639087917eaeb28719d7603110a6ec22782100e",
+    "rechecks": "C1/C2 evidence-verified (registered lane gates not executed, PROTOCOL Gate standard): committed receipts match report SUMMARY/EXIT (c1-do-nothing new_forgeries=8 EXIT 1 vs c1-after new_forgeries=0 EXIT 0; c2-do-nothing findings=1 FAIL vs c2-after findings=0 PASS; M-ENV scratch mutant 0c8c5f4b r66 findings=1 / r65 findings=0); instrument sha256 pins match committed counter bytes (c1 273d6fc9, c2 ac2157e6); counter-internal selftest tallies committed in receipts (cases=8 pass=8); writer selftest 33/33 committed. Plain measurements: matrix 29 lines = header+28 rows (23 refuse/5 accept); candidate sha a8c47d36==c13fbb4e bytes==HEAD bytes; writer bytes grep-verified for all six refusal names, GIT_CONFIG_GLOBAL/core.excludesFile pins, st_mode & 0o7777 mask, GIT_COMMON_DIR absent (named limit real); SOURCES 220->222 re-measured at base vs head; 9/9 quote offsets byte-exact vs committed captures (sha 624e85ef/dfc44574 match SOURCES rows), live re-open HTTP 200 with identical byte counts on git-scm.com; census validate rc 0 ok; SCORECARD diff additions-only with axis scores unchanged, corpus/README.md diff empty; all 9 cited lane commits ancestors of master; jj-lane state ahead=0, porcelain clean. Both frozen predicates verify; admission barred by the measured W3 honest-run refusal trade (git -c: candidate rc 2 vs base rc 0) and W2 open GIT_COMMON_DIR route (trade = not an improvement, AXES.md; chousa-r47 shape) plus calibration defects M4 vacuous M10 selftest guard and M5 s5 scope overreach (critic would-reject; not separable from C1)."
+   },
+   "commit": "souji-shokunin@b238ab1da21776c2c6e9286a8fd20e0343a14131",
+   "closed_at": "2026-11-05T15:43:03Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-11-05T11:26:04-03:00 launch souji round=66 pgid=343123 driver=hyaku-inline attempt=1 | 2026-11-05T12:28:46-03:00 complete souji round=66; hyaku-inline attempt=1. Status ok: real report (lane identity dd867c52, lands last 12:28:20 after lane push 12:26:40), SHONEN heading 4x [~], prompt renders template verbatim + hyaku addendum, all cited commits ancestors, lane clean and pushed. Honest stop: both frozen predicates met at c13fbb4e (receipts evidence-verified) but the round files both claims not-admitted (trade + scope); operator rulings open (L0 360 honest-run git -c refusal, 361 GIT_COMMON_DIR/repository-local scope, 362 E3 wording). Routed r67: M4 vacuous M10 selftest case (new frozen counter; QUALITY.md must reflect the lesson-appended Q129 correction by r67); M5 s5 scope overreach (population row that can fail on scope); W2 GIT_COMMON_DIR mode-hiding fixture + env-surface route sweep; M6 docstring, M7 s4 note; receipt grammar (c1-after names base rev first -> freeze-check --chronology RECEIPT-MEASURED-BEFORE-FREEZE rc 1 at b238ab1d, red lane-owned check, status-neutral); K3/K4/K6/K7 kill-power fixtures. Conformance defects (status-neutral): wave role split 1 executor / planner held by L1 vs template 3x executor + 1x planner minimum (standing disclosed practice); report says 'capability row' but no ## Capabilities repertoire row landed (new row is gate-registry); W04 duplicate-URL warnings continue, S298/S299 add two in the pre-existing class (census rc 0). SHONEN boxes look fully checkable by a non-author; promotion is operator-owned. No promotions, no mints.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
