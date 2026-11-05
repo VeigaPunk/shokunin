@@ -49184,6 +49184,47 @@
    "notes": "Dispatch digest (watchdog.log, mutable; copied at closure): 2026-11-05T04:18:30-03:00 launch kasegi round=73 pgid=2187296 driver=hyaku-inline attempt=1; 2026-11-05T05:05:57-03:00 complete kasegi round=73; hyaku-inline attempt=1. Report fleet commit 84cd2260611c472c070c943fea677a904daaa266 by kasegi-shokunin identity; lane landed 6582d14672315ac84b1632eb69c879ba23b709a4 (ahead=0, ls-remote agrees). Defects, status-neutral: R73-V1 lesson Gate does not list rejected candidates (LEARNING §Files); R73-V2 OSV overview page not recorded as a lead; R73-V3 counter scope (RC-1 to RC-3, RC-6); R73-V4 merged-tree census outside repo and committed counter receipts predate landing; R73-V5 no end-to-end trial run per campaign addendum §6; R73-V6 baseline measured before freeze (M73-2, disclosed); R73-V7 dead seat K73AttackC1; R73-V8 prompt ordering items implicit. Routed to lane: all of R73-V1..V5 for round 74. Operator rulings pending: RC-8 (recheck lines run via bash -c inside counter) and whether the C1 frozen kill rule's literal merged-tree census line governs; if it does, C1 fails on the landed tree and admission flips. SHONEN: no box fully checkable by non-author this round; box 2 untouched; box 4 nearest candidate for an operator-side non-author [x]; no [x] written here.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 65,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 65,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 65
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "adjacency": "improved",
+    "calibration": "improved",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-65/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-65-verifier-spotcheck.md@2816adb359a50c2fd83fa975e39f0650aa189984",
+    "rechecks": "Conformance: report committed by tabi identity (cd7c661f); 5 cited hashes ancestors of master; jj-lane state ahead=0, remote=897cde97, clean status; watchdog launch 2026-11-05T04:18:28-03:00 and complete 2026-11-05T05:22:29-03:00 present. Claims: frozen counter sha256 equals claims.json pins and no counter/pin change since 03f35fe7; C1 forgery delta conflicts re-measured (kagi-shokunin PROVINCE.md:41, kaidoku-shokunin PROVINCE.md:55; real ledger zero) and scored receipts C1-A/B exit 1 predicate false, C1-C/DN exit 0 predicate true, stdout digests recomputed; C2 matrix pins re-measured (round-64 scored match; c1-fab fab-selector-matrix and matrix-fab2 digest mismatch, matrix-fab1 absent) and receipts C2-A exit 1 matrix-input 3, C2-B/C/DN exit 0. Gates were not executed. Discernment: S170 admit re-opened (local PDF sha256 matches row; quotes at extraction lines 1014 and 1095-1096); rejects S142, S150 checked against counter code, S140 row scope re-read; 4/4 agree. Census validate exit 0."
+   },
+   "commit": "tabi-shokunin@897cde97169c99921c095478436dc3f8c06b2951",
+   "closed_at": "2026-11-05T08:29:30Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (watchdog.log, mutable; copied here): 2026-11-05T04:18:28-03:00 launch tabi round=65 pgid=2186628 driver=hyaku-inline attempt=1 | 2026-11-05T05:22:29-03:00 complete tabi round=65; hyaku-inline attempt=1. Single v1 wave w1, 12 seats, WAVE-DONE received, no dead seats; stale-lane: none. Claims: C1 adjacency (score held 8) and C2 calibration (score held 9), both verified on frozen predicates; C1 axis assignment disputed by Critic (refuse: axis mis-assigned) and routed to the operator as L0 (round-65 question in l0-questions.md); admission does not wait on it because no axis is harmed and both claims verify, and an operator ruling on axis fit can be recorded by closure-correction. Defects (status-neutral, routed to lane): D1 the v22 selftest 47/47 claimed in report/LOG/SCORECARD has no committed stdout; committed w1/R65Executor1/selftest.stdout is 46/46 without three-row-conflict-count and R65Executor1.md says 46; re-capture or erratum. D2 surviving C2 mutant M5 (relative-path false reject) already in planned r66. D4 gate wording: S140/S141 'Reject (held)' while status mined. D5 round-64 S169 quote form unverified (known). Prompt conformance (protocol item): commit-before-report ordering implicit in dispatched prompt; L2 route map not compared to current MISSION.md by this integrator. Spot-check: 4/4 agree; discernment verdict is the non-author grade (lane report had graded unchanged pending spot-check). SHONEN: no [x] written; box 3 nearest candidate for operator non-author check. Spot-check file committed 2816adb3 (protocol-shokunin) and pushed; remote master verified.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
