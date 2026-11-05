@@ -329,7 +329,7 @@ Phase-1 directives still bind: "train all shokunins to at least round 100"; "com
 every round done"; "do it inline with multiple swarms of subagents".
 
 You are an in-session **L1 lane subagent** dispatched by the hyaku orchestrator (the operator's
-parent omp session) for exactly ONE steered round: **kengaku round 92** (attempt 1;
+parent omp session) for exactly ONE steered round: **kengaku round 92** (attempt 2;
 campaign target: round 100). Your lane's place in the session follows the goal file (lane
 order and blocks: `.scratch/goal-20261025-hyaku-run7.md`); the orchestrator dispatches your lane's
 next round only after this one lands and its non-author closure is written. Work this round only
@@ -876,3 +876,5 @@ Host incident (orchestrator, 2026-11-05): `user.max_user_namespaces` was set to 
 Amendment 28 (operator, 2026-11-05, verbatim: "try using m_agy as the scout until its usage gets limited"): scout @m_mim -> "@m_agy" (google-antigravity/claude-opus-5-5:high). Added model-keyed fallback chain `google-antigravity/claude-opus-5-5` and updated `m_agy` fallback chain to `minimax-code/MiniMax-M3.1-Flash:high` -> `zai/glm-5.3-flash:max` so when `m_agy` hits its usage limit it falls back to MiniMax and zai automatically. Backup: config.yml.pre-scout-m_agy-20261105.
 
 Amendment 29 (operator, 2026-11-05, verbatim: "use m_mim as the scribe"): scribe anthropic/claude-haiku-5-5:high -> "@m_mim" (minimax-code/MiniMax-M3.1-Flash:high; existing model-keyed chain haiku -> zai/glm-5.3-flash -> devin/swe-2-flash). Backup: config.yml.pre-scribe-m_mim-20261105. Separately, the operator chose to leave m_zfl and m_flash routing unchanged.
+
+Amendment 30 (operator, 2026-11-05, verbatim: "use the glm 5.3 flash on m_flash on high effort, not max effort please"): m_flash zai/glm-5.3-flash:max -> zai/glm-5.3-flash:high; the five fallback-chain entries that named zai/glm-5.3-flash:max (google-antigravity/claude-opus-5-5, minimax-code/MiniMax-M3.1-Flash, m_agy, m_swe, m_mim chains) -> :high. Seats already spawned keep their captured route. Backup: config.yml.pre-m_flash-high-20261105.
