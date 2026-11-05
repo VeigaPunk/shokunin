@@ -52532,6 +52532,47 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-11-05T17:42:12-03:00 launch kotoba round=93 pgid=1635194 driver=hyaku-inline attempt=1 | 2026-11-05T19:41:38-03:00 complete kotoba round=93; hyaku-inline attempt=1. Round: one v1 wave r93-w1, 12 seats, attack 5/12, no dead seats. Claims C1 depth, C2 consistency both verified; C2 scope limit (one key measured, six-key coverage by code reading) agreed. Defects (status-neutral): ReviewerPinCov wrote no report file; dispatch prompt commit 2fc27fdc carries lane identity (attribution). Routed to round 94: C2 non-first-key world (MutTesterPinCov m5); C1 dirty-tree and added-row worlds and label-every-CNE self-test arm (MutTesterKillPin F1/F2/F4), other-world cause attribution (CriticClaimsR93 R2); receipt-check header parsing D2/D3. SHONEN 4/4 [~]; box 4 rests on a red sibling census, so not all boxes fully non-author checkable; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 99,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 99,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 99
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-99/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-99-verifier-spotcheck.md@d1bd1b339b894de0249b0f60702dff9962da88d9",
+    "rechecks": "C1 re-measured: frozen count-c1.py over git-archive trees, seeds 424242 and 7: 73308ff6 24/60 unmet rc1 -> 5013f0be/d51a6ab6 60/60 met rc0; counter forgeable (Mo99CritC1 attempt 3) so closure added 7 own held-out journal shapes (short ts, printf, nested sysctl, -r pattern, continuation, open quote, EXIT suffix): entering wrong on 6, tip right on all; selftest PASS (22 cases) matches committed tally. C2 re-measured: count-c2.py 73308ff6 mismatches=5 rc1 -> 5013f0be/d51a6ab6 mismatches=0 gate=ok rc0; hand cross-check via jq over MANIFEST@4ad377ea (latest improved per axis r98/r97/r86/r97/r98) matches each new Evidence cell and cited line; Score column unchanged. Frozen instruments unchanged 462cef1c..d51a6ab6; controls unexpected=0. Spot-check: admit S635 agree (sha=pin, line 202, host sudo 1.9.17p2), reject sudo main agree (261-line drift), S634 row quote present but 18 words not 17. Census mori ok rc0; rows 404->408."
+   },
+   "commit": "mori-shokunin@d51a6ab6d27cfb8ca049c6a56f239c0f41b0a726",
+   "closed_at": "2026-11-05T22:47:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-05T18:53:23-03:00 launch mori round=99 pgid=1700981 driver=hyaku-inline attempt=1; 2026-11-05T19:40:05-03:00 complete mori round=99; hyaku-inline attempt=1. Step-1 conformance clean (report by lane identity after tip, SHONEN 4 [~] lines, 5 commits ancestors of master, ahead=0, porcelain empty, prompt = template rendering + addendum). Routed: D1 S634 SOURCES row and Gate table still say 17 words (corrections sweep); D2 count-c1 forgeable (QUALITY 212, planned r100, carried); D3 count-c2 accepts passing mention (planned r100, carried); D4 calibration gate at default base 66c5518e prints columns_unchanged=no, re-base or document. SHONEN boxes stay [~] with resolvable pointers; promotion judgment is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
