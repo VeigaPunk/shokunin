@@ -1,13 +1,22 @@
 # tameshi — round 86 (hyaku, attempt 3)
 
 Lane: tameshi-shokunin (verification-fixture craft). Base `d10a9c66d6181cddcad52cdbffd672beb886ff6c`;
-lane tip at this report `7c146da87987e8e41a0c89f9d12c731a2d512a32`.
-L1: `TameshiR86` (driver attempt 3). Attempts 1 and 2 died without a report
+lane tip at this report `43fc447f442dd30cdb85934ec178cddab7026489`.
+L1: `TameshiR86` (driver attempt 3, first session) and `TameshiR86a3` (driver
+attempt 3, second session — the repair and final-tip verification below).
+Attempts 1 and 2 died without a report
 (`.ufo/watchdog.log`: `lane-dead-no-report tameshi round=86` at 21:52:06 and
 22:09:27 -03). Their landed work is inherited, re-verified here, and named:
 attempt 1 froze the two claims (`55d5a5c6`), attempt 2 settled the wave and
-landed the settlement record (`a01293c7`), attempt 3 committed the log entry,
-landing receipts and wave artifacts (`7c146da8`) and files this report.
+landed the settlement record (`a01293c7`), the first attempt-3 session
+committed the log entry, landing receipts and wave artifacts (`7c146da8`) and
+filed the first version of this report (`901c4dbb` on the fleet repo), and the
+second attempt-3 session (`TameshiR86a3`) repaired the pointer receipt and
+landed the final-tip verification (`27e6de6`, `e307dec`, `43fc447`).
+**Disclosed duplicate dispatch:** the driver ran two L1 sessions for this
+round concurrently; the first finished at 22:17, the second inherited that tip
+and worked only the repair and verification recorded in the addendum, so no
+claim, predicate, population, target or kill rule was touched twice.
 
 ## Work performed
 
@@ -99,6 +108,8 @@ Work items, each with its evidence:
 | Round-86 plan, contract, frozen counter, five controls + receipts, capability census + 30-row manifest, S305 snapshot, sha256s | `LOG.md` "Round 86 (2026-11-04)" freeze paragraph | `55d5a5c6002a048337cc511e1712df87b961d364` |
 | Both claims killed by construction: defeat fixtures and receipts, mined defect classes M3/M4, pointer/quote corrections (amendment A1), SCORECARD round-86 block, lesson `corpus/lessons/round-86.md`, SOURCES round note | same entry, settlement paragraphs | `a01293c75193cc343f36daeaf2f611ec7982286f` |
 | `LOG.md` round-86 entry, `.ufo/evidence/round-86/landing/` (20 no-harm/coldread/claim receipts), `.ufo/waves/round-86/` (spec, dispatch, ready, results, 8 seat reports), final census | same entry | `7c146da87987e8e41a0c89f9d12c731a2d512a32` |
+| Pointer receipt repaired to a bound state (`# tool_sha256` from `sha256sum`, `measured_bytes_rev: 7c146da8`), attempt-3 kill re-runs, six instrument probes, both dead seats' scratch recovered, mined defects M7/M8, SCORECARD round-87 debt lines | same entry, attempt-3 paragraphs | `27e6de6180860c79c2b9286eeca433ee85a2f8e0` |
+| Final-tip sweep runner and its receipt: 16 standing sweeps, every exit 0 at `e307dec` | same entry, attempt-3 paragraphs | `e307dec1131c0c722ea2962ff9ad631ef91a37ec`, `43fc447f442dd30cdb85934ec178cddab7026489` |
 
 No existing tool was modified: `git diff --name-status d10a9c66 7c146da8 -- tools/`
 shows only `A tools/capability-census.py` and `A tools/capability-census.json`.
@@ -157,10 +168,16 @@ amended. Round admission is not claimed by the lane.
 - **Round shape:** one validated v1 wave under
   `/home/vgpnk/Projects/shokunin/scripts/hyaku/ufo-wave-policy.json` (band 8–16),
   10 seats, `maxLanes 16`; residual calls: none; replacements: none.
-- **Dead seats:** T86M1 (mutation-tester) and T86SN1 (sentinel) — truncated
-  output, no report file; their work is unrun and uncounted. Their last recorded
-  text is the narration prefix in `r86-w1-results.json`; no error string was
-  captured by the handoff.
+- **Dead seats:** T86M1 (mutation-tester) and T86SN1 (sentinel) — no report
+  file; their work is unrun and uncounted. `r86-w1-results.json` is a
+  reconstruction (10 seats, every `status` null, every `final` empty), so seat
+  state comes from `w1/swarm-registry.json`, the 72 delivered files and
+  `history://`: T86M1 ended with an empty scratch while still reading the frozen
+  artifacts, T86SN1 ran 30+ probes (a logging `git` shim, a forged census
+  manifest, absolute-path probes) and wrote none of them up. Both scratch trees
+  were recovered byte-exact into `.ufo/waves/round-86/w1/dead-seat-T86SN1/`
+  (56 KB) and `dead-seat-T86M1.note.txt`, then removed from `/fast/scratch` —
+  neither seat was replaced (mistake M7).
 - **Stale-lane:** respawn-per-round driver; no other mission of this lane is
   open; the lane's next round is 87.
 - **Routed defects for round 87:** (1) successor C1 counter with opaque nonce
@@ -174,11 +191,83 @@ amended. Round admission is not claimed by the lane.
   rows — it counts only when the cited-tree relabel scores `bound<30`;
   (3) the r85 `GIT_*` inheritance limit, malformed kind/source-id, caller
   revision authority, conversion, and receipt race/parent-alias debts stay open.
-- **Receipt defect, disclosed:** `.ufo/evidence/round-86/pointer-recheck.out`
-  records `# tool_sha256: e3b0c442…` — the empty-string digest, i.e. the tool
-  bytes were not captured (criterion 130 class). The pointer resolution it
-  reports is independently backed by `w1/T86S1-pointer-receipts.txt`; the
-  receipt header is a defect of this round, not repaired here.
+- **Receipt defect, found and repaired:** `.ufo/evidence/round-86/pointer-recheck.out`
+  was committed with `# tool_sha256: e3b0c442…` — the empty-string digest, i.e.
+  the tool bytes were not captured (criterion 130 class) — and `# tool:` a
+  wave-dir fixture no revision then carried, so the standing sweep read
+  `receipts=70 … unbound=1` at the landed tip (mistake M8). `TameshiR86a3`
+  regenerated the receipt with `.ufo/waves/round-86/w1/T86L1-pointer-receipt-regen.sh`
+  (header printed by `sha256sum`, fixture sha `7c349fce…`, `measured_bytes_rev:
+  7c146da8…`), so the sweep reads `state=corrected` and
+  `RECEIPT_BIND: receipts=72 bound=56 corrected=9 design=7 unbound=0` exit 0 at
+  the final tip (`27e6de6`; re-verified at `43fc447`).
 - **Misroot sweep:** `git -C /home/vgpnk/Projects/shokunin status --porcelain`
   shows only `.scratch/` state (orchestrator-owned) and another lane's
   `.ufo/reports/round-84/kama.md`; no tameshi seat file landed at the fleet root.
+
+## Addendum — second attempt-3 session (TameshiR86a3): verification, probes, repair
+
+The driver ran two L1 sessions for attempt 3. The first landed `7c146da8` and
+the first version of this report; the second inherited that tip and worked only
+what follows. No claim, predicate, population, target, kill rule or instrument
+byte was touched.
+
+**Both verdicts re-run independently** at `a01293c7`
+(`.ufo/evidence/round-86/landing/attempt3-kills.txt`, every `*_EXIT` captured
+without a pipeline): real instrument `C1_R86 … passed=8/8 C1_R86_PASS=true`
+exit 0; `T86E2-att3b-cheat.py` (zero git reads) `8/8` exit 0;
+`T86CN1-oracle-worktree.py` `8/8` exit 0; census
+`CAP_CENSUS: rows=30 bound=30 unbound=0 mismatches=0` exit 0; the cited-tree
+relabel `30/30` exit 0. Both kill rules fire on this session's own runs, so the
+honest stop stands.
+
+**Six probes on the two frozen instruments**
+(`.ufo/evidence/round-86/landing/attempt3-probes.txt`, runner
+`.ufo/waves/round-86/w1/T86L1-attempt3-probes.sh`):
+
+| Probe | Result | Class |
+|---|---|---|
+| P1 `measure.py` under a logging PATH shim | exit 0, `8/8`, **73 git argv** recorded through the shim | limit: the data channel is PATH-inherited (only `GIT_*` is stripped) |
+| P2 `capability-census.py`, same shim | exit 0, `30/30`, **13 git argv** recorded | same limit |
+| P3 `measure.py`, `git` shim exits 127 | exit 1, `P3_PASS_LINES=0` | fails closed, no false green |
+| P4 census, failing `git` | exit 2 `setup refusal document-unreadable` | fails closed |
+| P5 census, `--manifest` from outside the repo | exit 0, `30/30` | limit: the manifest is not bound to (repo, rev) |
+| P6 census, `--repo /etc` | exit 2 `setup refusal` | fails closed |
+
+Neither limit is a new kill: a PATH shim also serves the counter's own expected
+rows, so the class collapses into the root-label oracle already killed by M3;
+both are routed to round 87 in the lesson and the SCORECARD plan.
+
+**Two mistakes mined** into `corpus/lessons/round-86.md` `## Mistakes`: M7 (two
+seats died without a report, left scratch on disk, and no settlement file was
+written — no automated check reads either requirement) and M8 (a hand-drafted
+receipt header recorded the empty-file digest and an uncommitted tool path, so
+the standing sweep failed at the landed tip). Each fix is routed with the
+observation that would prove it.
+
+**No harm at the final tip** (`43fc447f`), 16 standing sweeps, every exit 0,
+receipt `.ufo/evidence/round-86/landing/final-sweeps.txt` measured at
+`e307dec` (runner `.ufo/waves/round-86/w1/T86L1-final-sweeps.sh`):
+selfstate `rows=26 match=24 stale=2 unexpected=0`, pins `26 settled`,
+registry `9 match`, defects `6 closed`, wave `6 met`, ranges `11 met`, arms
+`9 live`, counts `7 met`, pointers `12 met`, attribution `3 met`, anchors
+`16 met`, receipt bind `receipts=71 bound=55 corrected=9 design=7 unbound=0`,
+census `30/30`, C1 counter `8/8`, coldread
+`floor_credited=47 cand_credited=47 lost=0` with equivalence `20/0` per side,
+and the sources census exit 0. Re-verified after the receipt commit at
+`43fc447`: `RECEIPT_BIND: receipts=72 bound=56 corrected=9 design=7 unbound=0`,
+exit 0.
+
+**Sources & frontier at the final tip:** the counting command
+`/home/vgpnk/Projects/shokunin/scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin tameshi`
+reads exit 0 (`tameshi ok …/corpus/SOURCES.md`) with the 19 standing warnings
+retained; rows 171 → 171, no tier addition, S305 `used-by` old → new as recorded
+above, no frontier row advanced, assimilation none. This addendum adds no row
+and no knowledge entry.
+
+**Lane state at this report:** `jj-lane.sh state` →
+`local=43fc447f442dd30cdb85934ec178cddab7026489
+remote=43fc447f442dd30cdb85934ec178cddab7026489 ahead=0 behind=0 tracked=0
+untracked=0`; `git ls-remote origin refs/heads/master` prints the same hash.
+Tool installs: none (pacman paused per the addendum guard; no `uv`/`npx`
+install was needed).
