@@ -329,7 +329,7 @@ Phase-1 directives still bind: "train all shokunins to at least round 100"; "com
 every round done"; "do it inline with multiple swarms of subagents".
 
 You are an in-session **L1 lane subagent** dispatched by the hyaku orchestrator (the operator's
-parent omp session) for exactly ONE steered round: **tabi round 64** (attempt 1;
+parent omp session) for exactly ONE steered round: **tabi round 64** (attempt 2;
 campaign target: round 100). Your lane's place in the session follows the goal file (lane
 order and blocks: `.scratch/goal-20261025-hyaku-run7.md`); the orchestrator dispatches your lane's
 next round only after this one lands and its non-author closure is written. Work this round only
@@ -842,3 +842,7 @@ Amendment 14 (operator, 2026-11-04, verbatim: "use m_antigravity as connector"):
 Provider-failure unblock (2026-11-04, same basis as amendment 8): kotodama r90 and mori r90 exhausted three attempts on devin rate-limit -> commandcode 401; markers moved to `.<lane>.run15-20261104-provider-failure-2`, same round reruns.
 
 Amendment 15 (operator, 2026-11-04, verbatim: "assign two roles from m_flash to m_mim"): orchestrator chose `scout` and `scribe` (@m_flash -> @m_mim, minimax-code/MiniMax-M3.1-Flash:high), the two read/draft roles m_mim carried earlier in run 15; also relieves the devin rate limit. Live map: m_flash (devin-first) task/main/planner/security-reviewer/critic/revenger/labrat/mutation-tester/simplifier/sentinel/sonic/distiller/seance; m_zfl reviewer/executor; m_mim scout/scribe; m_antigravity connector.
+
+Provider-failure unblock (2026-11-04, amendment-8 basis): kotoba r87 (a2/a3 died on commandcode 401; attempt-1 KotobaR87 survived and landed report d752fdbe, verified + closed as attempt 1) and tsukuroi r82 (all three L1s died on 401 at wake). Markers -> `.<lane>.run15-20261104-provider-failure-3`. Ruling to tsukuroi r82 seat SentinelGate: frozen mutants-r82.json not amended; C2 recorded unmet with ceiling arithmetic, recipes routed to r83.
+
+Amendment 16 (operator, 2026-11-04, verbatim: "put devin/swe-2-flash as the ultimate fallback for m_mim"): m_mim chain is now haiku-5-5 -> zai/glm-5.3-flash -> devin/swe-2-flash:high (last; the trailing codex sol/luna entries were removed). A model-keyed chain `minimax-code/MiniMax-M3.1-Flash` with the same order was added, because model keys win over alias/role keys.
