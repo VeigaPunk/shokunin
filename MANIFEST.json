@@ -49555,6 +49555,47 @@
    "notes": "Dispatch digest (.ufo/watchdog.log 2771/2790): 2026-11-05T05:13:46-03:00 launch kasegi round=74 pgid=923825 driver=hyaku-inline attempt=1; 2026-11-05T06:14:07-03:00 complete kasegi round=74; hyaku-inline attempt=1. Step-1 conformance clean: report landed by lane identity (fleet 1ebb85bf), SHONEN heading 1 with four [~] boxes, all cited lane commits ancestors of master, jj-lane state ahead=0, prompt committed (0106fdcb) and carries the template contract + hyaku addendum. New defect V74-1 (status-neutral, routed to r75): census-evidence timing - all committed census lines (entries=89, exit0_foreign=67, 'entries 89 = ls 89', incl. the report's landed-state 'after integration' line) describe the mid-round pre-C2-landing tree; at implementation revision dca80cf5 knowledge is 90 files, so a tip census prints entries=90/exit0_foreign=68; frozen census clause (entries==ls at the implementation revision) satisfiable there but unevidenced; claims.json note 'C2 landing cannot falsify it' falsified as to receipts; fix: tip-revision census receipt + erratum + freeze-note lesson (M74-2 class). Lane-routed carried and confirmed: M74-6 (C1 scope sentence falsified at file level for restoration-recheck-only files), M74-7 (sibling-distinctness sentence overbroad vs revenger S117/S396), M74-3 (R33 id twice at base and tip), C2 unfrozen clause commands (measured by verifier, hold), RC-8 (operator: bash -c recheck surface unchanged, decision pending). Open operator items: assimilation id drift (r70/r71 L0), C2 api_key clause (r72 L0), trial source conflict observation (curl advisory 4660 USD vs policy none). SHONEN operator note: all four boxes look fully checkable by a non-author; promotion is operator-owned; no [x] written.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 66,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 66,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 66
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "adjacency": "unchanged",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "improved",
+    "calibration": "improved"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-66/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-66-verifier-spotcheck.md@5400136b233579f7b716ab83a70b8be24ed88b26",
+    "rechecks": "Conformance: report committed by tabi-shokunin identity (7329c8ba); cited lane commits 4bea87d5/b1ecd665/950626dc/e54f916a ancestors of master; jj-lane state ahead=0 clean, remote=e54f916a; prompt embeds template 1-5 verbatim (claims, frontier step, report contract, commit/push, L0), hyaku addendum 6 (line 141), child-lane items and L2 floor present. Claims: frozen pins sha256-match claims.json (9/9); C1 re-derived over committed bytes: 174 ledger rows compared, 0 disposition changes, 1 quote change (kake SKILL.md:1358), 21 provenance-row changes, audit diff 1 note line; receipts c1-before 40/false, c1-mechanical 1/false, c1-after 0/true (evidence-verified, meter not executed); adjacency verdict unchanged because the move is currency-only (QUALITY 121/122). C2 v2->v3 diff = two selftest-array lines; receipts v2 12/12 clean, M5a/M5b survive v2, v3 14/14 clean, M5a-d red 13/14,13/14,13/14,12/14 (evidence-verified); calibration improved. Spot-check: S171 quote re-opened on live Node path docs and in staged file (sha256 41b69aea matches), admit agrees; v2 gate header reject agrees; census validate exit 0 (W04 warnings only). Defects routed in spot-check section 7."
+   },
+   "commit": "tabi-shokunin@e54f916aa9f25fc9ba56868ce832a90817b21cbb",
+   "closed_at": "2026-11-05T09:30:01Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (.ufo/watchdog.log, copied at closure): 2026-11-05T05:30:06-03:00 launch tabi round=66 pgid=2358862 driver=hyaku-inline attempt=1; 2026-11-05T06:16:09-03:00 complete tabi round=66; hyaku-inline attempt=1. Not admitted: C1 (adjacency) verifies only on its own meter predicate; the counted move is a currency rebind with 0 disposition changes and reads as freshness under QUALITY 121; round stays honest-stop pending the operator ruling on L0 'tabi | round-66 | C1 axis ruling' (fleet 40d089a9). C2 (calibration, v2->v3 selftest kill 2/4 -> 4/4) verifies on frozen predicate. Freshness improved is undeclared (40 stale findings at live heads -> 0). Routed defects (status-neutral): S171 pointer cited :186, row is at corpus/SOURCES.md:185; claims.json frozenAt reads pending-commit; C1 scored receipts carry exit null and empty stderr; gate F7 ../ relative escape open (evidence receipt outside repo at /fast/scratch) and unrepaired; meter disposition-blind (QUALITY 122). SHONEN: 4x [~], none checkable by non-author in this pass; no [x] written. Wave w1: 13 seats, 0 dead (7 prose-wrapped outputs logged unparsed, not dead). Spot-check: 1 admit (S171) agree, 1 reject (v2 header) agree.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
