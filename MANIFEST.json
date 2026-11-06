@@ -54662,6 +54662,47 @@
    "notes": "Driver digest (.ufo/watchdog.log lines 3051/3067): 2026-11-06T18:02:35-03:00 launch tabi round=71 pgid=3100642 driver=hyaku-inline attempt=1; 2026-11-06T19:10:06-03:00 complete tabi round=71; hyaku-inline attempt=1. No step-1 conformance defect. C1 coverage capability chromium-synth-pinch-gesture-linux not verified (leg b red, kill rule, nothing amended; capability withheld); C2 operability verified (falsePass 4->0). Not admitted: rejected-honest-stop. Routed to tabi r72: R1 counter assumes events end in-leg + R71Review1 15 false greens + R71Mut1 24 killing cases + must-accept class; R2 verifier receipt hand-off (:189->:205), process.execPath, NODE_COMPILE_CACHE, harness summary unbound to verifier digest, one attack per layer; R3 S173/S174 scroll-scoped rows cited for pinch; R4 carry r70 R6 (5 missing registry rows, w1-results no per-seat status); R5 carry r70 F1 provenance + R70Review1 FG1-FG16. Operator: SHONEN boxes 2 and 4 look non-author checkable; 1 and 3 need a non-author execution; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 90,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 90,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 90
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unprovable",
+    "calibration": "unprovable",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unprovable-but-better",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-90/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-90-verifier-spotcheck.md@87d1635c8a1a90a405eb348da5ba3e8f93b4ae83",
+    "rechecks": "Re-measured: SOURCES rows 175->177 (4e1c10e0/bc2c85a6/ec8d2a6e), case note absent->present, note table 5 KILLED/7 SURVIVED, round-89 repairs 1-4 present in bytes, diff pure addition; independent selftest of fleet sources-census.sh @ f47ad6ba from git archive: pristine ok, C11 KILLED (exit 3), C12 SURVIVED x2 — match note. Evidence-verified (not executed): C1/C2 landing counters PASS, 16 C1 controls, kill probes T90R1 V4-replace-env PASS vs sealed FAIL and V1-dup-row PASS, T90C2 forge/wrong-count/neuter all C2_R90_PASS=true. Both claims killed by frozen rule (a). Spot-check: S316, S317 admits agree (re-fetched, sha256 identical, quotes found 15/9 words); www.gnu.org reject agree (connect timeout at closure); T90S1 relay rows reject agree. Census validate exit 0."
+   },
+   "commit": "tameshi-shokunin@ec8d2a6ea2296310a801283a8f10df5a9b033bc4",
+   "closed_at": "2026-11-06T23:27:22Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (watchdog.log, copied at closure): 2026-11-06T18:17:07-03:00 launch tameshi round=90 pgid=1716462 driver=hyaku-inline attempt=1; 2026-11-06T19:23:37-03:00 complete tameshi round=90; hyaku-inline attempt=1. Conformance ok: report 6b2c4171 by tameshi-shokunin (19:23:01, after last lane commit 19:22:47), SHONEN 4x[~] with pointers, 12 round commits + base ancestors of master, fleet pin f47ad6ba ancestor of fleet HEAD, lane ahead=0 porcelain empty, prompt = template + placeholders + addendum (prompt committed by lane identity fe5a6212, status-neutral). Honest stop: R90-C1 (coverage) and R90-C2 (calibration) predicates met but killed by their own frozen rule (a). Routed to tameshi r91: (1) case note mutation-case-fleet-sources-census.md must cite its coverage-map row (round-89 item-1 class recurring); (2) note landed before the kill with no 'not admitted' marker — append one; (3) lane's own routed items (sealed successor counter QUALITY 139-140, C2 behaviour binding 141, manifest gating 142, T90M1 M8 survivors, T90SN1 F1-F3, r89 item 5). Upstream report-only for census owner: w1/T90E3-arms.patch (7 survivor-killing selftest arms, C12 affects 20 lanes). SHONEN boxes carry concrete pointers and look non-author checkable; promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
