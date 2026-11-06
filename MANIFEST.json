@@ -53427,6 +53427,48 @@
    "notes": "Driver: 2026-11-06T10:38:00-03:00 launch kotoba round=99 pgid=2963268 driver=hyaku-inline attempt=1; 2026-11-06T12:03:23-03:00 complete kotoba round=99; hyaku-inline attempt=1. Conformance notes (status-neutral): planner seat held by L1 (wave validator rejects planner role; operator/driver gap); a seat misrooted a 366 MB clone at the lane root, removed before landing. Routed to round 100: (1) lesson round-99 Gate cites check_tip_battery.py:344 (base line; 349 at tip) - append correction; (2) S279 superseding row for CAP_SYS_PTRACE conjunct (C99-3) still open; (3) carried-reds v1 four post-freeze MET-forgery shapes (addendum 2 B1); (4) carried r98 defect 1 v7 counter, S253/S270/S276 rolling-alias digests, strip_token_dressing comma fix; (5) 8 of 22 MutTesterDispatchR99 survivors (exit-2 ladder); (6) seat clone scratch discipline. Operator: SHONEN boxes 1 and 4 appear non-author-checkable (checklist gate 11/11 PASS at landing; PROVINCE unchanged); promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 100,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "kotoba",
+   "lane_round": 100,
+   "lanes": {
+    "kotoba": "ok"
+   },
+   "lane_rounds": {
+    "kotoba": 100
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "improved",
+    "consistency": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-100/kotoba.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kotoba-shokunin/corpus/lessons/round-100-verifier-spotcheck.md@0344ddaea831b92546360a55ae02db2654fbccf8",
+    "rechecks": "Conformance: report bbf28f92 by kotoba-shokunin (committer 13:42:35, after lane tip 3ded52e7 13:41:27, before complete 13:43:08; author date 12:57:40 is a working-copy artifact); SHONEN 4/4 [~]; d1e1170d/03a98eb7/8a650a48/50c3ff5a/3ded52e7 + base 7b449a63 exist and are ancestors of master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0; status clean; prompt ade1893a = template + placeholders + addendum §6. C1 re-measured: one insert-only hunk @@ -1783,0 +1784,144 @@ in self_test(), 0 deleted production lines, ids r100-t01..t06, counter blobs equal d1e1170d at landing and tip; evidence-verified receipts: base 0 of 6 UNMET (freeze 03a98eb7) -> landing 6 of 6 MET rc0, self-test 168 assertions 0 failures, r95-r99 kill rules all MET. C2 re-measured: fix line equals frozen admitted change, row 3598 retired, one battery pin; standalone re probe confirms comma lists accepted and malformed forms refused; LOG.md:3619 at 8a650a48 cites .ufo/waves/round-100/w1/ with 0 tracked files (113 at 50c3ff5a); no verifiers/ bytes change after landing. Evidence-verified: landing receipt c2.txt reads mismatches 0 of 28 but gate RED, battery FAIL -> C2-PREDICATE-UNMET rc1; record tip 50c3ff5a MET. Ruling: frozen kill rule binds the landing reading (plans/round-100.md:102,129; precedent rounds[1416] kotoba r98) -> C2 unmet, consistency unchanged. No harm: SCORECARD/LOG/corpus append-only (0 deletions), SKILL/PROVINCE/knowledge untouched, tip battery 6 of 6. Spot-check: S282 admit agree (200 270630 sha 090f3b03 identical, quote lines 1364-1366 22 words); Sphinx :lines: reject agree (third rotating digest, line 1421); S285 re-opened (sha 69cd309e identical, 16-word quote at 1518-1520); census rc0 W04 35."
+   },
+   "commit": "kotoba-shokunin@3ded52e71eaae0c4eb87e9095453326edcd8069d",
+   "closed_at": "2026-11-06T16:46:56Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest (mutable .ufo/watchdog.log, copied): 2026-11-06T12:08:46-03:00 launch kotoba round=100 pgid=4071777 driver=hyaku-inline attempt=1; 2026-11-06T13:43:08-03:00 complete kotoba round=100; hyaku-inline attempt=1. Status ok (real committed work). Honest stop: C1 (depth, lowest owned axis) verified 0->6 of 6; C2 (consistency/calibration sub-axis) reads UNMET at its frozen landing revision 8a650a48 because the round's own LOG.md:3619 cited the then-uncommitted wave dir (gate RED, battery 5 of 6); MET at record tip 50c3ff5a only after that evidence was committed, which the frozen kill rule does not admit; lane disclosed both readings. Conformance notes: N1 planner seat held by L1 (validator rejects planner; operator); N2 seat scratch leftover ExecAnchorR100/ cleaned by L1; N3 untracked versions.html in fleet root unattributed (operator). Routed to kotoba r101: (1) commit cited wave evidence with/before the citing line and run sandboxed checklist gate on the exact landing tree; round-100 C2 surface may be credited only by a future frozen claim; (2) v7 counter g11/g16 (third deferral); (3) 13 of 16 MutTesterDispatchR100 C1 survivors; (4) anchor-lists v1 holes F1-F3; (5) advisory: row the Sphinx rejection as a rejected S286; (6) seat scratch hygiene. Operator: SHONEN boxes 1 and 4 appear checkable by a non-author (promotion operator-owned).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
