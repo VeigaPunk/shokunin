@@ -53469,6 +53469,52 @@
    "notes": "Driver digest (mutable .ufo/watchdog.log, copied): 2026-11-06T12:08:46-03:00 launch kotoba round=100 pgid=4071777 driver=hyaku-inline attempt=1; 2026-11-06T13:43:08-03:00 complete kotoba round=100; hyaku-inline attempt=1. Status ok (real committed work). Honest stop: C1 (depth, lowest owned axis) verified 0->6 of 6; C2 (consistency/calibration sub-axis) reads UNMET at its frozen landing revision 8a650a48 because the round's own LOG.md:3619 cited the then-uncommitted wave dir (gate RED, battery 5 of 6); MET at record tip 50c3ff5a only after that evidence was committed, which the frozen kill rule does not admit; lane disclosed both readings. Conformance notes: N1 planner seat held by L1 (validator rejects planner; operator); N2 seat scratch leftover ExecAnchorR100/ cleaned by L1; N3 untracked versions.html in fleet root unattributed (operator). Routed to kotoba r101: (1) commit cited wave evidence with/before the citing line and run sandboxed checklist gate on the exact landing tree; round-100 C2 surface may be credited only by a future frozen claim; (2) v7 counter g11/g16 (third deferral); (3) 13 of 16 MutTesterDispatchR100 C1 survivors; (4) anchor-lists v1 holes F1-F3; (5) advisory: row the Sphinx rejection as a rejected S286; (6) seat scratch hygiene. Operator: SHONEN boxes 1 and 4 appear checkable by a non-author (promotion operator-owned).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 100,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 100,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 100
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "freshness": "improved",
+    "novelty": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "eighteenth offline TB2 grader replay: financial-document-processor @ 2fd12b88 (plans/round100_fdp_probe.py + plans/round100_c1_replay.py L1-L13; 15 cases x 8 legs, mismatches 0; first sha512-set grader member with an OCR positive-control fixture; gaps C03/C04/C07/C08 located)",
+    "row-level SOURCES census binding (plans/round100_c2_rowcensus_bind.py K1-K10) and three path-matched corpus/evidence/round{52,58,94}/PROVENANCE.md files re-binding 9 TB2 rows to their URLs' own committed files, live re-fetched",
+    "pre-freeze standing-gate check on the candidate tree (plans/round100_prefreeze_check.py; Q87)"
+   ],
+   "report": ".ufo/reports/round-100/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-100-verifier-spotcheck.md@34b28c47bc38b4e0aa11f44f2dfe7c9470d551ac",
+    "rechecks": "re-measured: 16/16 frozen-instrument sha256 at tip, 6/6 candidate bytes equal at T and tip, F..T diff = 6 candidates + receipt, SHA256SUMS 25/25 + 15/15; C1 ledger jq 43->44 executed, crypto-credential 4->5/12, file-artifact 34->35/76, probe 15 ok=True mismatches 0, live grader sha256 978f506a = capture and mechanism spot-read (sha512 sets l.57/66, is_file l.222, <0.01 l.208); C2 9/9 PROVENANCE sha = committed file = BASE row digest with URL path match, 3/3 live re-fetches equal, 0 SOURCES lines removed; SOURCES 333->341; census rc 0 (32 W04). evidence-verified (not executed): c1/c2 base+tip receipts, harm battery 23/23 rc unchanged. spot-check S342 admit, S348/S349 reject: 3/3 agree."
+   },
+   "commit": "kengaku-shokunin@83cde63266b53204ef888dc3dae5a8194b24c9bd",
+   "closed_at": "2026-11-06T18:04:04Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest (.ufo/watchdog.log l.3000/3003): 2026-11-06T12:03:27-03:00 launch kengaku round=100 pgid=4062617 driver=hyaku-inline attempt=1; 2026-11-06T15:01:10-03:00 complete kengaku round=100; hyaku-inline attempt=1. Step 1 pass: report 6e8d4ab0 by kengaku-shokunin (committed 15:00:34 after lane HEAD; author date 13:46 jj artefact), SHONEN 4x[~], 11/11 cited commits ancestors of master, ahead=0, pushed 83cde632, prompt = template + hyaku addendum. Defects routed to kengaku: (1) round100-prefreeze-check registered as gate without self-test (Gate standard) - add self-test or re-register as probe; (2) MutC1 F1 TARGET printed not asserted, 19/47 survivors; (3) MutC2 T21 duplicate same-id SOURCES row invisible; (4) CriticClaims F1-F3, ReviewC2 minors; (5) dead seat ScribeLesson (12 dispatched, 11 reports); (6) census W04 31->32 (S342 cross-scope duplicate URL). Operator: SHONEN box 2 (fdp-probe.txt + LOG.md Round 100) looks checkable by a non-author; no [x] written.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
