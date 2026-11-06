@@ -52908,6 +52908,47 @@
    "notes": "Dispatch digest: 2026-11-05T21:59:23-03:00 launch kotoba round=95 pgid=2224233 driver=hyaku-inline attempt=1; 2026-11-05T23:31:19-03:00 lane-dead-no-report kotoba round=95; retry same round (attempt=1 ended without a landed report); 2026-11-05T23:31:21-03:00 launch kotoba round=95 pgid=2174434 driver=hyaku-inline attempt=2; 2026-11-05T23:50:40-03:00 complete kotoba round=95; hyaku-inline attempt=2. One v1 wave r95-w1, 12 seats (spawn 12); results.json output=null for all seats (orchestrator restart), seat files read instead; MutTesterCounter95 incomplete (no verdicts), salvaged matrix committed uncounted. Defects (status-neutral): prompt commits ba8c21b1/5c1b1798 authored by lane identity (attribution); three tip-battery gates red-carry from base (verify_skill_checklist, verify_corpus_integrity, verify_corpus_independent). Routed to round 96: amend Ant reject reason (haltonerror/errorproperty are separate; merge scoped to haltonfailure); counter control gaps M5/M6 false MET, M2/M7/M8 unexposed; m08 survivor and N4; g2/g3/f8 forgery worlds as committed controls; counter exit ladder F1/F3; predicate-flipping crash world (A2); tip battery flat 280 s floors cap. SHONEN boxes all [~] and depend on lane judgement of SKILL.md; not flagged for promotion.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 100,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 100,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 100
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "freshness": "improved",
+    "operability": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "304 freshening decision, contract v2 (scripts/freshen_304.py sha256 00edf6c4..., landed 06c81f08; frozen counter met=true hand=91/91 generated=300/300)",
+    "Executing registry counter (.ufo/waves/round-100/c100_registry.py; selftest 29/29; hardening routed R100-A)"
+   ],
+   "report": ".ufo/reports/round-100/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-100-verifier-spotcheck.md@dd7a146df338ec3de07a88f08f36c8278760afec",
+    "rechecks": "Step 1: report 747be971 committed by kake-shokunin (committer 23:49:44 after tip 72a6cd60 23:48:29); one SHONEN heading with 4 box lines; all 6 cited commits exist and are ancestors of refs/heads/master; jj-lane state ahead=0 behind=0, porcelain clean, ls-remote=72a6cd60 at closure open; prompt carries sections 1-5, 2b, the hyaku addendum and section 7; no commits touch frozen instruments after 69cdc1eb and the tip digests match instrument-sha256.txt. C1 RE-MEASURED: 55 tools at base/repair/C2/tip; plain count of entry-command invocations in registry rows gives 7 duplicated tools at base and 0 at tip (link_preview_audit's second hit is a decision-table row, not a registry row); the 7 removed rows are byte-identical to the fenced history rows (cmp); SKILL.md at e84a1871 sha256 397b6dec = pos fixture; repair changed no scripts/ and git grep zz-bogus/getpid gives rc=1; code reads confirm response_snapshot 64, source_snapshot 2, robots_audit 64; ReviewRegA/B 8+8 agree; ExecRegProbe 0 contradictions, history 7/7. C2 EVIDENCE-VERIFIED (gate not run): base-c2 72/91 met=false; after-c2 91/91 300/300 met=true exit 0 with seed 113778440 = int(06c81f08,16); 13 forgeries plus neg-theft exit 1; landed blob sha256 00edf6c4 at 06c81f08 and at tip; imports json/re/sys only; difflib ratio vs pos-oracle 0.031 (not a copy); twin 3600/0; held-out 4/4. Spot-check: S486 and S487 admits agree (RFCs re-fetched with HTTP 200, sha256 equal to the retained bodies, quotes verbatim at their cited lines); merge/kake reject agrees (S312 on both sides, no renumber map). Census rc=0 with 43 W04; rows 222->224. SCORECARD: calibration 3->4, operability and freshness 10 unchanged."
+   },
+   "commit": "kake-shokunin@72a6cd6018b68a7f633e216bdcb164c2eec8d22e",
+   "closed_at": "2026-11-06T02:56:26Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 2026-11-05T22:23:37-03:00 launch kake round=100 pgid=3864071 driver=hyaku-inline attempt=1 | 2026-11-05T23:31:17-03:00 lane-dead-no-report kake round=100; retry same round (attempt=1: L1 ended without a landed report) | 2026-11-05T23:31:19-03:00 launch kake round=100 pgid=2173724 driver=hyaku-inline attempt=2 | 2026-11-05T23:50:38-03:00 complete kake round=100; hyaku-inline attempt=2. Status ok: real committed work, not a marker. Admitted: C1 (calibration 3->4, one registry row per tool) verifies on plain re-measure and code reads; C2 (freshness HOLD 10, capability contract v2, sourced S486/S487) is met on committed gate evidence plus digest and independence checks. No axis harmed. Defects (status-neutral): D1 seat yield 13/14 (ScribeLesson lost with the dead attempt-1 orchestrator; w1-results outputs null; attempt 1 died after dispatch); D2 planner seat held by the L1 (template vs validator conflict, goes to the operator); D3 the instruments can be gamed: CriticClaims c1_escapes=6 c2_escapes=5, SentinelScope R1/R2/R3/R4/R12 counter bypasses, MutCounters 11 survivors; the landed bytes were checked clean of these vectors. Routed: R100-C1 harden c100_registry per R100-A; R100-C2 fresh304 population X1-X5 plus a provenance/independence check; R100-C3 mutation survivors; R100-C4 considerthese branch triage (R100-5). The lane self-graded discernment unchanged; closure grades it improved (3/3 sampled decisions upheld). Round 100 is the lane's last training round (amendment 38). SHONEN box 2 is [ ], so the boxes are not fully checkable by a non-author and there is nothing to promote.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
