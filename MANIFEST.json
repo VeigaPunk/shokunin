@@ -53553,6 +53553,47 @@
    "notes": "dispatch/complete digest: 2026-11-06T15:39:22-03:00 launch kasegi round=79 pgid=1083054 driver=hyaku-inline attempt=1; 2026-11-06T16:06:46-03:00 complete kasegi round=79; hyaku-inline attempt=1. Step-1 conformant: report committed by kasegi-shokunin (cfe0e4cc, after landing), SHONEN 4 lines, d16d2124/9d0b1eb0/cdade13c ancestors of master, jj-lane state ahead=0 clean, prompt = template render + hyaku addendum. Honest stop: C1 NOT VERIFIED (18/19 under frozen kill rule, not landed); C2 verified. Defects: D1 mutbat.py:41 cited, EXC_RE is at :40 (report, lesson:53, QUALITY R129); D2 lesson:37 appended Q12 correction is false - grep 'threading|vary' over F51 matches :47 (S108.txt:136, present since r73 6582d14), so the r78 reject reason stood and the r78 closure spot-check item 4 / routed item 1 was itself a false measurement, now withdrawn. Routed: append retraction of lesson:37; fix :41->:40 cite; C1 successor per R129 with MutC1Hunt N10/N11/N21/N25/N26/N27/N30 + ReviewEquiv half-B rows; M77-3 open; re-run routed commands before transcribing. SHONEN box 2 unchecked: no promotion signal.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 81,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 81,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 81
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "unprovable-but-better",
+    "operability": "unprovable-but-better",
+    "calibration": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-81/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-81-verifier-spotcheck.md@142b6f0c08e645ef9507f6d880be44e518c39043",
+    "rechecks": "C1 re-measured (frozen depth-r81.py re-run on git-archive trees, sha256 matches freeze): base entries=0 FAIL -> 7e2da96a entries=2 located_quotes=14 PASS -> 6ef79292 15 PASS; knowledge 92->94, SOURCES rows 202->208; K2 sample live re-open S205/S206/S207 FOUND; K3-in-spirit agreed (S206 capture line 222 'The citation should be to the most recent version.' FOUND live, contradicted landed row); filler-PASS evidence-verified (R81CriticClaims r09). C2 re-measured: checklist-run.py 3/6 0/3 FAIL -> 6/6 3/3 PASS; K2 reproduced by closure on scratch fixture copies (item4 flip '-' -> CLEAN rc0; item2 where 'n/a' composite Run line -> CLEAN rc0). G02 fix re-derived by grep of corpus/README.md (0->1 per entry). Census validate exit 0 (5 pre-existing W04). Spot-check 3 admits + 1 reject (S208 403 reproduced), all agree."
+   },
+   "commit": "chousa-shokunin@6ef7929234f5116af79014e371fff6131c588abe",
+   "closed_at": "2026-11-06T19:17:07Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest: 2026-11-06T15:39:24-03:00 launch chousa round=81 pgid=1083731 driver=hyaku-inline attempt=1; 2026-11-06T16:14:10-03:00 complete chousa round=81; hyaku-inline attempt=1. Report f8be544f by lane identity before complete line; SHONEN 4/4 [~]; all cited commits ancestors of master; jj-lane state ahead=0, porcelain clean. Both claims honest stops (C1 K3 spirit + filler-accepting counter; C2 K2). Defects (status-neutral): egress table written after fetches (self-disclosed); G02 PREFLIGHT=1/1 at tip cited without committed receipt. Routed: successor depth counter with content conditions + filler control; verify-sweeps refuse placeholder flip/reason and n/a locations; egress-before-fetch; commit G02 tip receipt; mutation survivors 12/18, 9/17; S028 disposition. SHONEN boxes remain non-author checkable (promotion operator-owned).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
