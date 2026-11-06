@@ -53515,6 +53515,44 @@
    "notes": "dispatch/complete digest (.ufo/watchdog.log l.3000/3003): 2026-11-06T12:03:27-03:00 launch kengaku round=100 pgid=4062617 driver=hyaku-inline attempt=1; 2026-11-06T15:01:10-03:00 complete kengaku round=100; hyaku-inline attempt=1. Step 1 pass: report 6e8d4ab0 by kengaku-shokunin (committed 15:00:34 after lane HEAD; author date 13:46 jj artefact), SHONEN 4x[~], 11/11 cited commits ancestors of master, ahead=0, pushed 83cde632, prompt = template + hyaku addendum. Defects routed to kengaku: (1) round100-prefreeze-check registered as gate without self-test (Gate standard) - add self-test or re-register as probe; (2) MutC1 F1 TARGET printed not asserted, 19/47 survivors; (3) MutC2 T21 duplicate same-id SOURCES row invisible; (4) CriticClaims F1-F3, ReviewC2 minors; (5) dead seat ScribeLesson (12 dispatched, 11 reports); (6) census W04 31->32 (S342 cross-scope duplicate URL). Operator: SHONEN box 2 (fdp-probe.txt + LOG.md Round 100) looks checkable by a non-author; no [x] written.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 79,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 79,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 79
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth:verifiability": "unchanged",
+    "coverage": "improved",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-79/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-79-verifier-spotcheck.md@58905f2bbc52db6b1634566cc1be9c92cdddebfb",
+    "rechecks": "C2 re-measured over git-archive extracts: FRONTIER-CENSUS rows 54->55 (admitted/closed 55, problem-rows 0), knowledge 92->93, registry 113->113 (112->113 over the round), S113 queued->mined, 10/10 F55 quotes on cited S113.txt lines, snapshot sha f4bce053 matches pin; C1 evidence-verified per Gate standard (counter not executed): frozen sha eda49d32/735d2336/0cb50dc8 match, three MUTBAT lines killed=18 dirty=1 vs target 19, K-T1 EXCEPTION-KILL counted=no, controls base killed=0 / forgery survived=8 / r78 killed=6, recheck-cwd-census.py e666ae11 unchanged (not landed); SCORECARD diff append-only, no axis lowered; spot-check Q06 admit agree, S113:64 reject agree, lesson:37 Q12 correction disagree; live S113 re-open HTTP 200 30242 bytes; sources-census kasegi ok rc 0 (6 inherited W04)."
+   },
+   "commit": "kasegi-shokunin@cdade13cc65c84073922bd01c2fc1ff17b4c4b29",
+   "closed_at": "2026-11-06T19:10:02Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest: 2026-11-06T15:39:22-03:00 launch kasegi round=79 pgid=1083054 driver=hyaku-inline attempt=1; 2026-11-06T16:06:46-03:00 complete kasegi round=79; hyaku-inline attempt=1. Step-1 conformant: report committed by kasegi-shokunin (cfe0e4cc, after landing), SHONEN 4 lines, d16d2124/9d0b1eb0/cdade13c ancestors of master, jj-lane state ahead=0 clean, prompt = template render + hyaku addendum. Honest stop: C1 NOT VERIFIED (18/19 under frozen kill rule, not landed); C2 verified. Defects: D1 mutbat.py:41 cited, EXC_RE is at :40 (report, lesson:53, QUALITY R129); D2 lesson:37 appended Q12 correction is false - grep 'threading|vary' over F51 matches :47 (S108.txt:136, present since r73 6582d14), so the r78 reject reason stood and the r78 closure spot-check item 4 / routed item 1 was itself a false measurement, now withdrawn. Routed: append retraction of lesson:37; fix :41->:40 cite; C1 successor per R129 with MutC1Hunt N10/N11/N21/N25/N26/N27/N30 + ReviewEquiv half-B rows; M77-3 open; re-run routed commands before transcribing. SHONEN box 2 unchecked: no promotion signal.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
