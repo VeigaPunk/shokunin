@@ -54821,6 +54821,47 @@
    "notes": "Driver digest: 2026-11-06T17:46:35-03:00 launch attempt=1 pgid=2944909; 20:22:56 lane-dead-no-report (attempt 1 ended without report: FAIL report_of); 20:22:58 launch attempt=2 pgid=1594263; 20:28:29 complete attempt=2. Step 1: report filed 3e6a90bb + appended erratum 73bac98c (deleted 0) by kumitate-shokunin; SHONEN 4 lines [~]; cited commits b6204949/3b82a316/2f8475cd/60bfb976 ancestors of master; cd7ee03d is a tool sha, 79fa222e the upstream S269 pin; lane ahead=0, porcelain empty; prompt sections 1-5 match template modulo placeholders. Defects (status-neutral, routed): lane round-gate COMMIT_CITED_UNRESOLVED on external pin 79fa222e; attempt-1 death without report (M93-5); K93Scout no trailer (M93-4); counter runtime clause/H provenance evadable (M93-3, r94 pre-reg 1); retry-fallback-chains.ts used without SOURCES row (M93-2). Lane self-graded discernment unchanged; closure grades improved (spot-check agrees on admits and rejects). Operator: SHONEN boxes look checkable by a non-author; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 87,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 87,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 87
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "depth": "unprovable-but-better",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unprovable-but-better",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-87/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-87-verifier-spotcheck.md@029454fce571f3e27da16c72f94726504bd27886",
+    "rechecks": "Step 1: report a547d8e1 by tsukuroi-shokunin (20:33:04, filed once); SHONEN 4=4 [~]; 5eb8b157/a097bd9d/cefb4188/46d48a71/3ba37eb0/220c86e3 ancestors of master; jj-lane state ahead=0 behind=0, porcelain empty, ls-remote 3ba37eb0; prompt = template with placeholder substitutions + hyaku addendum. C1 evidence-verified (gate/battery not executed): battery sha256 f2551c8e...989d at tip = freeze = manifest; gate e3b0fab4...7352 at 46d48a71 = tip; c1-run1..3.json verdict met 22/22; selftests 15/15 + 5/5 in receipt; controls K1/K2 0/22 x3, f1-f4 0/0/2/6, N01-N18 1-21; live receipt rc 1 lines 30/38 LP-MISMATCH prompt, /boot list cmp-identical. Re-measured: absence grep 0 at 220c86e3; SOURCES rows 349->354; tools 138, knowledge 103; census rc 0, 52 W04, tsukuroi ok. C2 ruled unprovable-but-better by this reviewer: LP1/LP3/LP5/LP7 quotes re-located verbatim in pinned v12.9.4 snapshots. Spot-check: admit S353 (live menu.c sha = pin) agree; admit S354 (live objcopy page 190-191) agree; reject trunk CONFIG.md (live sha 5c32c60f = lesson, BLAKE3 lengths; host limine 12.9.4-1) agree; SOURCES S354 quote 21 words verified."
+   },
+   "commit": "tsukuroi-shokunin@3ba37eb0a3c2b17e535bb68891cf63047f4fbce8",
+   "closed_at": "2026-11-06T23:38:13Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (watchdog 3066/3070/3071/3092): 19:01:09 launch attempt=1; 20:22:42 lane-dead-no-report (no landed report), retry; 20:22:44 launch attempt=2; 20:34:41 complete attempt=2. Conformance notes (status-neutral): attempt 1 died mid-wave after an orchestrator kernel restart; prompt commit 3553e62d authored 19:23:37 but committed 20:22:42; w1-results.json carries no seat output (finals recovered from session store). Routed to tsukuroi r88: (1) residual clause probe ran on pre-landing working-tree gate sha 1b51a68f, not landed e3b0fab4 - re-run on landed revision or restate; (2) C1 counter certifies only part of R1-R7 (10 clauses, CriticClaims g01-g08/g10/g14 read 22/22) - carry R87-R1..R5 into a successor battery freeze, cite C1 as 22/22 on frozen families only; (3) ConnectorOverlap sibling scan unfinished (SHONEN box 4); (4) wave seat receipts must land on disk; (5) R87-R6 erratum for round-86 ScoutHost.md:23 'sha256' label. Operator-owned: r86 host incident unrepaired (limine.conf lines 30/38 LP-MISMATCH prompt), L0 line open. SHONEN: boxes 1-2 evidence resolves; box 3 lacks a no-oral-context retest, box 4 scan unfinished - not checkable yet; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
