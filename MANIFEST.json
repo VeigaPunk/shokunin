@@ -54373,6 +54373,47 @@
    "notes": "Dispatch digest: 2026-11-06T17:04:06-03:00 launch mado round=89 pgid=2396541 driver=hyaku-inline attempt=1 / 2026-11-06T18:25:29-03:00 complete mado round=89; hyaku-inline attempt=1 (watchdog.log 3034/3054). Step 1 pass: report 8ae08366 by mado-shokunin at 18:24:47 after tip 16ee97b5 (18:23:53); SHONEN 4 [~] lines; 5 hashes ancestors of master; ahead=0, porcelain empty, remote = tip; prompt b14da214 carries template contract. r88 routed R1/R2/R3/R5 closed. Defects (status-neutral, routed): D1 records commit 51bf076f cites harm-final and census-end receipts first committed at 16ee97b5 (repeat of r88 R4 / M89-4); D2 SKILL.md gate registry stops at mado-r86, r87-r89 counters (incl. c1-r89/c2-r89) only in quality/tool-ledger.md, non-conformant per Gate standard Registry; D3 R89MResidMut survivors RS01/RS05/RS12 to round 90. Census W01 S277 pre-existing. Operator note: SHONEN box 1 points at a knowledge entry, SKILL.md unchanged.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 83,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 83,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 83
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "improved",
+    "operability": "unprovable-but-better",
+    "calibration": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-83/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-83-verifier-spotcheck.md@408ae68f9e445fc911f713d5bbb3a64dda1ab9fe",
+    "rechecks": "C1 re-measured: frozen depth-r83.py (sha 18716627 = pin) re-run on git-archive trees: 1b9b2ff8 entries=0 FAIL rc1 -> 81b81173 and 49bc8778 entries=1 ok_entries=1 rows=10 located_quotes=16 fresh_sources=3 PASS rc0; K4 git grep at a46534a5 corpus/knowledge -> no file; Gate quotes found in captures and live (HTTP 200). C2 evidence-verified, not executed (lane tool): controls c2-k0 TOOL=absent 0/15 0/198 FAIL rc1 -> after/c2-after (rev 81b81173) 15/15 198/198 198/198 1/1 3/3 PASS rc0; pins match; controls 8/8; K3 agreed by static read of gate-records.py@81b81173 line 117 (rev quote startswith '\"' -> PARSE refusal, docstring allows it); K2 agreed (INT_RE line 76 Unicode \\d; re.fullmatch -> True for 2٢٢; R83ExecForge Finding 1), docstring grammar ambiguity noted. Repair c7d29e1c evidence-only. SCORECARD diff append-only; census exit 0 (5 pre-existing W04); registry 211->213; knowledge .md 94->95."
+   },
+   "commit": "chousa-shokunin@49bc8778560cd88773335bdb12ebc15178cb6231",
+   "closed_at": "2026-11-06T21:35:06Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest: 2026-11-06T17:50:30-03:00 launch chousa round=83 pgid=33320 driver=hyaku-inline attempt=1; 2026-11-06T18:32:14-03:00 complete chousa round=83; hyaku-inline attempt=1. Report 09b54078 by lane identity (18:31:47-03:00, before complete line); prompt 085abd1c carries template contract sections 1-5 + hyaku addendum section 6; SHONEN 4/4 [~]; 11/11 cited commits ancestors of master; jj-lane state ahead=0, porcelain clean; egress 8fff80ee (20:53:00Z) precedes first fetch 20:53:06Z. C1 verified; C2 honest stop (K3 leading-quote rev guard, K2 Unicode digit). r82 routed defects 2-3 closed. Conformance defects: none. Spot-check 4/4 agree (S009 admit, Millard-in-S212 reject, S212/S213 new rows). Routed: (1) document ASCII numeric grammar in gate-records docstring; (2) r84 battery must defeat whitelist forger + 9 killable mutation survivors; (3) archive-tree run / dirty-tree limit and non-git --repo as setup error; (4) do not grade a falsified claim's axis improved in SCORECARD. Operator note: SHONEN boxes 3-4 look non-author checkable; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
