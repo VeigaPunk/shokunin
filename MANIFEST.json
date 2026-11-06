@@ -52949,6 +52949,48 @@
    "notes": "Digest: 2026-11-05T22:23:37-03:00 launch kake round=100 pgid=3864071 driver=hyaku-inline attempt=1 | 2026-11-05T23:31:17-03:00 lane-dead-no-report kake round=100; retry same round (attempt=1: L1 ended without a landed report) | 2026-11-05T23:31:19-03:00 launch kake round=100 pgid=2173724 driver=hyaku-inline attempt=2 | 2026-11-05T23:50:38-03:00 complete kake round=100; hyaku-inline attempt=2. Status ok: real committed work, not a marker. Admitted: C1 (calibration 3->4, one registry row per tool) verifies on plain re-measure and code reads; C2 (freshness HOLD 10, capability contract v2, sourced S486/S487) is met on committed gate evidence plus digest and independence checks. No axis harmed. Defects (status-neutral): D1 seat yield 13/14 (ScribeLesson lost with the dead attempt-1 orchestrator; w1-results outputs null; attempt 1 died after dispatch); D2 planner seat held by the L1 (template vs validator conflict, goes to the operator); D3 the instruments can be gamed: CriticClaims c1_escapes=6 c2_escapes=5, SentinelScope R1/R2/R3/R4/R12 counter bypasses, MutCounters 11 survivors; the landed bytes were checked clean of these vectors. Routed: R100-C1 harden c100_registry per R100-A; R100-C2 fresh304 population X1-X5 plus a provenance/independence check; R100-C3 mutation survivors; R100-C4 considerthese branch triage (R100-5). The lane self-graded discernment unchanged; closure grades it improved (3/3 sampled decisions upheld). Round 100 is the lane's last training round (amendment 38). SHONEN box 2 is [ ], so the boxes are not fully checkable by a non-author and there is nothing to promote.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 96,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "kotoba",
+   "lane_round": 96,
+   "lanes": {
+    "kotoba": "ok"
+   },
+   "lane_rounds": {
+    "kotoba": 96
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "consistency": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-96/kotoba.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kotoba-shokunin/corpus/lessons/round-96-verifier-spotcheck.md@fa1bebae33e6b0ab4e36b9ba73ff7d4c5d610520",
+    "rechecks": "Conformance: report committed by kotoba-shokunin (3e3ea88a, 00:40:26, after last lane commit 00:39:25); SHONEN heading 4 lines; 679775ab/801dd9bc/762859df/74fa240b exist and are ancestors of master; jj-lane state ahead=0 behind=0, porcelain empty; prompt §1-5 = template modulo placeholders. C1 re-measured: verify_dispatch_prompts.py diff is one pure insertion (+128, 0 deletions) inside self_test(); rec( 45->63 textual = +22 assertions (56->78) with loop x2 and 3 dispatch.04 conjuncts; inserted lines contain 0 stateful/recompile/source-reading constructs; counter sha256 1711b68f...13b2b2 identical at freeze and tip. Evidence-verified (no lane gate executed): redbefore 0 of 11 UNMET rc1 at 0f66016a; landing 11 of 11 MET rc0 at 801dd9bc, per-mutant failures 2,1,1,2,3,2,1,1,1,3,5 = CriticClaimR96; forgeries f1-f5 UNMET; no-harm receipts r95/r93/r92/boxproof/registry 74/74/floors 176 green, live dispatch verdicts identical; SKILL/PROVINCE/SHONEN unchanged; SCORECARD append-only. Spot-check: admits S272 and S271 and reject mutmut re-opened byte-identically (sha256 0889867a/a31331da/07453b3f), all agree; S272 quote 22 words at lines 790-791; census rc0, 34 W04 none new, rows 196->198."
+   },
+   "commit": "kotoba-shokunin@74fa240b5fb3ef4a7b0507f36f12127db264a33d",
+   "closed_at": "2026-11-06T03:42:36Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch 2026-11-05T23:53:50-03:00 launch kotoba round=96 pgid=2297041 driver=hyaku-inline attempt=1; complete 2026-11-06T00:40:50-03:00 attempt=1. Status-neutral defects: tip battery 3 of 6 reds carried from r95 (verify_skill_checklist, verify_corpus_integrity, verify_corpus_independent); dispatch prompt committed under lane identity (orchestrator-side). Routed to lane: (1) receipts/sources-opened.txt records S272 quote as 19 words, true 22 -> named correction entry; (2) v4 counter MET on no-arm forgery classes g3/g7/g8 (A3) -> v5 with committed controls; (3) 15 MutTesterDispatchR96 + 7 sweep non-target survivors; (4) counter exit ladder A4 and r95 m08/N4 carried; (5) red gates + 280s floors cap (264.9s) carried; (6) wave evidence 1.94 MB vs 0.72 MB (Q82). SHONEN boxes look non-author-checkable; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
