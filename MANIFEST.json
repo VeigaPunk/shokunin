@@ -52656,6 +52656,46 @@
    "notes": "Dispatch digest: 2026-11-05T19:44:31-03:00 launch kotoba round=94 pgid=1842492 driver=hyaku-inline attempt=1; 2026-11-05T21:41:31-03:00 complete kotoba round=94; hyaku-inline attempt=1. One v1 wave r94-w1, 12 seats (spawn 12). Defects (status-neutral): prompt commit 7936f441 authored by lane identity (attribution); S269 duplicates S262's URL (34th W04) admitted because the frozen plan named it against the scout's advice. Routed to round 95: fold/scope-justify S269 vs S262 and record the rule in QUALITY.md; counter scores run error as kill (D8); code decoy for comment-skipping sniffers (A2/D4); battery survivors N1/N5/N11 and receipt declarations not at line start (D3); floors-gate 280s timeout under load (re-show tip battery >=3/6 at a committed rev). SHONEN boxes remain [~]; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 100,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kaidoku",
+   "lane_round": 100,
+   "lanes": {
+    "kaidoku": "ok"
+   },
+   "lane_rounds": {
+    "kaidoku": 100
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "depth": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "UPX-packed PE payload-checksum refusal"
+   ],
+   "report": ".ufo/reports/round-100/kaidoku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kaidoku-shokunin/corpus/lessons/round-100-verifier-spotcheck.md@0b518f568da7b40a4ab026508d63c942faa7badf",
+    "rechecks": "step1: report by kaidoku-shokunin (9110c0ff, 21:46:25 -0300, after final lane commit 21:40:13); SHONEN 4 lines/4 boxes; 8 cited commits + base exist and are ancestors of refs/heads/main; jj-lane state ahead=0 behind=0, porcelain empty; prompt lines 1-140 = templates/round-prompt.md modulo placeholders. C1 re-measured on a held-out carrier (WallaceSrc.exe, not in the 10 pinned): upx --best pack, 2 intact-length flips in c_len data -> upx -t checksum error; r99 repair rc0 'ok intact' -> r100 repair rc2 'checksum', nothing written; intact pack rc0 ok; S327 re-fetched byte-identical (sha 41b4a51b), rule at packhead.cpp 334-338 matches repair 149-155; frozen battery evidence-verified (counter sha 8f148d33 unchanged freeze->HEAD, repair sha 15ada0b0 pinned; controls r99+h0-h6 exit 1; after 119/119 corrupt 40/40 exit 0 at a610671d/b0a7bb8c/9a054c17). C2 re-measured: base receipt names 7 mismatched tools (15->18,9->10,31->32,7->9,3->7,17->18,16->22); cbd224ef touches only SKILL.md, 7 rows -/+ with counted values; static source counts seam-probe 9 and plan-command 7 agree; counter evidence-verified (sha 496a4979; base 86/93 exit1, F-drop/F-dup/F-tool exit1, after 93/93 exit0). Harm: knowledge 183->184, stem map 183/183->184/184, depth 36 rule blocks 10.0 both; SCORECARD diff edits only the coverage head row (Previous: chain). Discernment: S327 admit agree, S328 admit agree (zlib.adler32 reproduces 0x09f003f7/0x09ec03f6), compress_zlib.cpp reject agree (#if 0 // UNUSED at 231; compress.cpp:40 routes to UCL); census exit 0, kaidoku ok, 34 W04; rows 231->233. No lane gate executed."
+   },
+   "commit": "kaidoku-shokunin@7aeba805f43061a274e9bedfbdf2b625b97ebb77",
+   "closed_at": "2026-11-06T00:55:16Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest (.ufo/watchdog.log 2944/2953): 2026-11-05T19:38:33-03:00 launch kaidoku round=100 pgid=1163466 driver=hyaku-inline attempt=1; 2026-11-05T21:49:33-03:00 complete kaidoku round=100; hyaku-inline attempt=1. Conformance defects: none. Routed to kaidoku: (1) C1 battery admits CriticC1 pristine-cache and ReviewerCounter F6 filename-keyed forgeries, bound branch unreached (MutationC1) - commit as red fixtures before next C1-family freeze; (2) C2 counter limits L1-L7 (CriticC2); (3) ExecReproC2 F1-F5 out-of-population registry defects incl. two silently red round-82 self-tests; (4) round-97 routed defects 2-5 and 7 still open; (5) cite S327 quote lines (336-338) consistently vs function block 334-338. Operator note: SHONEN boxes 2 and 3 look non-author checkable (this closure executed the r100 repair from committed bytes + entry rule on a held-out carrier); promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
