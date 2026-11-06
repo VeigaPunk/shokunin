@@ -53678,6 +53678,50 @@
    "notes": "Driver digest: 2026-11-06T15:39:15-03:00 launch kagi round=46 pgid=1080996 driver=hyaku-inline attempt=1; 2026-11-06T16:20:57-03:00 complete kagi round=46; hyaku-inline attempt=1. Gate standard: lane gates not executed; C1/C2 split re-measured vs evidence-verified (see spot-check). Routed to kagi r47: (1) SCORECARD.md:1695 says selftest 8->11 cases / cases 9-11 while the gate asserts 12 (lesson/LOG say 12) - append correction; (2) K46ReviewerLive is a lane-dispatched seat, not non-author (LEARNING §Discernment) - stop calling it non-author; (3) S098 rejected row with on-release clock (critic D-7, open); (4) counter survivors / FRESH no upper bound / PINNED self-digest (lane-routed); (5) lane-local census red S094/S099 (pre-existing, routed). SHONEN boxes all [~] and look non-author-checkable (selftest/gate commands, SKILL.md:48, PROVINCE.md:75) - operator-owned promotion note.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 88,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 88,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 88
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unprovable-but-better",
+    "calibration": "improved",
+    "freshness": "unchanged",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "harmed",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "pinned-fixture-restore (tools/fetch-pinned-model.py; controls/fetch.out, refusal control, round78-live-reconcile selftest 0/4 -> 4/0)",
+    "router-mode-readiness (lane-entered; landed rule demonstrated only by post-freeze repair/oracle-cells.py cells=3 mismatches=0 at 8b5bb69d; frozen ROUTER_CELLS red mismatches=2 at tip; not admitted)"
+   ],
+   "report": ".ufo/reports/round-88/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-88-verifier-spotcheck.md@56174a1fa6a27faa91d3664ef4730b48dd3149c0",
+    "rechecks": "Re-measured (plain git/sha256sum/grep/awk/diff/curl): C1 counter round88-router-cells.py sha256 576a1b37 identical at freeze fb76e7f2, M 138a7543, repair 8b5bb69d, tip 64eaf596; kama-probe.sh blob sha256 equals receipt probe_sha256 at base 0943fb46, M bd7a6a22, repair cbdfa744, tip 99dd1ab8; probe grep MODEL_UNLOADED 0->9->10, models_autoload 0->0->3; tests/ diff empty; S581 README @704366d7 sha256 714c067b matches, line 2337 'Any new incoming task will automatically trigger the model to reload' contradicts frozen C05 sleeping->MODEL_UNLOADED. Evidence-verified (receipts, not executed): ROUTER_CELLS base 11 / F1 8 / F2 4 / M 0 / tip 2; ORACLE_CELLS base 1 / M 2 / repair+tip 0; harm suites 72/72 and 30/0 at B/M/T. C2 live Axes rows 7->6, calibration rows 2->1, pointer round-86 -> round-87 (newest spot-check at M), moved rows diff empty, three instruments byte-identical B/M/T, no score cell moved; evidence-verified reconciler mismatches 4->0 met=True, newest-closure exit 1->0, pointer-only control still 4. Census validate exit 0 kama ok; rows 320->322, tier A 305->307, mined 287->288, rejected 25->26. Spot-check: S581 admit agree, S582 reject agree (status block identical to S581, version-binding reason sound), knowledge-entry admit agree as corrected but disagree as landed at 138a7543 (prior art served-identity-crosswalk.md:28; receipts landed later at 8b5bb69d/eb664062), r87 selector reject agree."
+   },
+   "commit": "kama-shokunin@64eaf5969e11e8955636dfb52c13eb089f731d9a",
+   "closed_at": "2026-11-06T19:29:13Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-11-06T15:39:30-03:00 launch kama round=88 pgid=1085765 driver=hyaku-inline attempt=1; 2026-11-06T16:23:05-03:00 complete kama round=88; hyaku-inline attempt=1. Report 614376b7 by kama-shokunin (16:22:42, after lane tip 64eaf596 16:21:17); all cited hashes are ancestors of master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0; prompt carries the template contract plus hyaku addendum section 6. Fresh-start round, 12-seat v1 wave, 0 dead. NOT ADMITTED (rejected-honest-stop): C2 calibration verified on its frozen predicate. C1 operability not verified: its frozen predicate was green at measured commit 138a7543, but two canned expectations (C05 sleeping, C12 wildcard sleeping) encode a rule the round's own oracle and S581:2337 falsify, so M traded operability on two router states (oracle cells base 1 -> M 2 on different states). The repair at 8b5bb69d removes the trade, but the frozen counter then reads mismatches=2 at the tip, and the landed rule's only green is a post-freeze 3-cell oracle script. Operability is graded unprovable-but-better as a non-author judgment, not an admission (C1 was declared measurable, not exploratory). Expansion harmed per LEARNING and the kengaku r25 precedent: knowledge entry router-mode-readiness.md was admitted at 138a7543 as new ground with committed-receipt rows, both false at landing; repaired in-round at eb664062. No axis harmed at the landed tip. Defects (status-neutral): D1 SCORECARD capability row router-mode-readiness cites the 138a7543 ROUTER_CELLS green for the superseded rule; D2 harm-tip.out names rev=master, not a hash (probe sha resolves to tip); D3 gate arm round75-instruments red bad_rows=19 (r87 R4); D4 answering model per seat not recorded (r87 R11); D5 no separate cross-domain-evidence section. Routed to kama r89: R1 held-out router-cells successor with source/oracle-derived expectations (sleeping and autoload configurations, MT01 6 escapes, SN01 counter defects); R2 re-point the capability evidence; R3 hash-named tip receipts; R4 round75-instruments; R5 probe-verdicts harness cannot grade MODEL_UNLOADED; R6 per-seat model; R7 sweep sources opened before freeze against frozen expectations. Operator: all four SHONEN boxes look non-author-checkable (SKILL router decision table, LOG.md:3660 with router-lifecycle.out, PROVINCE round-88 paragraph); the r87 selfdesc L0 question may be closable (arm green at 12eedc6b with unchanged instruments).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
