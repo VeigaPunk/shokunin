@@ -54048,6 +54048,47 @@
    "notes": "watchdog: 2026-11-06T16:37:39-03:00 launch kama round=89 pgid=652941 driver=hyaku-inline attempt=1; 2026-11-06T17:36:39-03:00 complete kama round=89; hyaku-inline attempt=1. Conformance ok (report by lane identity after tip, SHONEN 4x[~], all cited hashes ancestors of master, ahead=0, clean). Defects (status-neutral): D1 pre-report gate red on round75-instruments bad_rows=19 (carried r87 R4; L0 filed .ufo/l0-questions.md:381); D2 harm-final.out per-call timing lost to missing bc; D3 probe median latency 0.136->0.251 s (0.138->0.362 s for *) with no pinned budget, disclosed, not graded harm. Routed: R1 round75-instruments pending L0; R2 append corrected timing receipt; R3 pin a probe latency budget in a harm suite; R4 SN01 F3/F4 (planned r90); R5 held-out LIMIT/INDETERMINATE cells and alias-pin MODEL_MISMATCH. Operator note: SHONEN boxes 1-3 look checkable by a non-author (closure re-ran the committed commands unaided); box 4 not independently verified.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 85,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 85,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 85
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "unprovable-but-better",
+    "operability": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unprovable-but-better",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-85/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-85-verifier-spotcheck.md@3f56789829b84a97b2a8aa786618022195ef53cb",
+    "rechecks": "Step 1: report b1b9a85a by tsukuroi-shokunin (17:36:40 < complete 17:41:03); SHONEN 4/4 lines; 66374a4d/479d868b/ffae885f/6a8296f6/92be7506 ancestors of master; jj-lane state ahead=0, porcelain empty, ls-remote 92be7506; prompt sections 1-7 present. C2 evidence-verified (gate not executed): battery sha b30a7c1e..ba21 identical at 66374a4d/ffae885f/92be7506; gate sha 88041b75 at tip = measured, no tools diff ffae885f..92be7506; cand-run{1,2,3}.json 20/20 met x3; K1 0/20 (0-1/20 per critic), best candidate-free K6 14-15/20; candidate availability() prefix order re-read against pinned hibernate.c raw 1424-1438/1461-1465 (sha256 -c 4/4 OK): conforms. Near-miss gates f1/f2/f5/f6/f7/f8 reach 20/20 (instrument gap, lane-reported M3/M4/QUALITY 122). C1 ruled unprovable-but-better: new-ground git grep at 3ed94533 rc 1; HA1-HA9 quotes verbatim at pinned raw lines; host lockdown [none], /sys/power/disk not [disabled]. SCORECARD diff append-only, no axis harmed; census tsukuroi ok rc 0, 52 W04; rows 342->345. Spot-check 4/4 agree (admit S344, S343 live sha = pin; reject man7 kernel_lockdown(7), ArchWiki swap-size)."
+   },
+   "commit": "tsukuroi-shokunin@92be75064a53aec359976eef7af890f7311b47ac",
+   "closed_at": "2026-11-06T20:45:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (.ufo/watchdog.log 3029/3039): 2026-11-06T16:45:05-03:00 launch tsukuroi round=85 pgid=2581162 driver=hyaku-inline attempt=1; 2026-11-06T17:41:03-03:00 complete tsukuroi round=85; hyaku-inline attempt=1. Defect (status-neutral, Gate standard Self-test): hibernate-resume, resume-gate-battery-r85, nonauthor-label lack a self-invocation selftest mode. Routed: (1) add --selftest to those three gates; (2) re-freeze battery with hibernate=no<x>, duplicate resume_offset=, free==image_size, multi-swap, bool-for-int cases and f1/f2/f5/f6/f7/f8 + MutGate M26-M28 as controls before any claim on those clauses; (3) state K1 as 0-1/20, not flat 0/20; (4) gate false-HEALTHY on noresume=1/nohibernate=1/empty resume= (ReviewGate L1/L3); (5) pin kernel/power/main.c and init/main.c before citing them. Operator: SHONEN boxes 2 and 4 look non-author checkable; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
