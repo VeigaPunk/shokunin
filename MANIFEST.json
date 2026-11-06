@@ -53208,6 +53208,48 @@
    "notes": "Driver: launch attempt=1 00:55:10-03:00 pgid=3826949; lane-dead-no-report 07:56:44; launch attempt=2 07:56:47 pgid=1021740; complete 08:18:51. Report 01232d60 by kotodama-shokunin after lane commits (08:17:47 vs 08:17:25); SHONEN 4/4 [~]; commits b1b80562/60ead722/3f415f84 ancestors of main; jj-lane state ahead=0, porcelain clean; prompt carries template 1-5 + addendum 6. Conformance defects (status-neutral): D1 ReviewerC99 report at w1/stage/ReviewerC99/review.md, not w1/<Seat>.md as the report states; D2 w1-results.json output null for all 12 seats (kernel restart, disclosed; evidence in wave dir). Routed: R1 fix D1 path; R2 table-cell support check (R99-M2); R3 re-open C6 Iranica (now 200) and re-judge; R4 CriticO98b 24 survivors + CriticO99 6 anchor-neutral passes open; R5 freshness paused on L0 r11/r89. Round-98 routed items F1/F2/F3/F4 and oath L49/L51/L53 closed. Operator: SHONEN box 2 looks non-author-checkable; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 100,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "kotodama",
+   "lane_round": 100,
+   "lanes": {
+    "kotodama": "ok"
+   },
+   "lane_rounds": {
+    "kotodama": 100
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "table-cell support checker (tools/check-table-support.py, gate; SKILL.md:777, SCORECARD round-100 capabilities addendum)"
+   ],
+   "report": ".ufo/reports/round-100/kotodama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kotodama-shokunin/corpus/lessons/round-100-verifier-spotcheck.md@5fa04a9bbda25aa31c8270265fd9997eb97d9ebb",
+    "rechecks": "Claim C re-measured (SOURCES rows 941->951, highest S1017->S1027, entry absent->41988 B/12 h2, S1018-S1027 all cited, tiers A8/B2, census rc 0). Claim O evidence-verified per Gate standard (frozen counter/claims/battery unchanged 255d8477..361aa8f4; predispatch-lands 15/15 PASS; tool sha 972cefea matches landed; mutation 36/36 receipt on landed sha; forgery controls fail) plus plain re-measure (tool absent->present, SKILL/SCORECARD rows). Spot-check: admits S1022, S1027 agree (quotes re-found, <=25 words); rejects C13 Roos 503, C16 ARCE 403, Iranica 403 agree under the lane's no-UA-spoofing rule (browser UA opens C16 and Iranica; routed R1)."
+   },
+   "commit": "kotodama-shokunin@361aa8f465a1da4e44faf038f2e3a226c14557f4",
+   "closed_at": "2026-11-06T12:59:56Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-11-06T08:24:32-03:00 launch kotodama round=100 pgid=1271137 driver=hyaku-inline attempt=1; 2026-11-06T09:52:25-03:00 complete kotodama round=100; hyaku-inline attempt=1. Step 1 pass: report d367f62a by kotodama-shokunin (committer 09:51:37 after landing 361aa8f4 at 09:50:19; jj author date 08:43 cosmetic), SHONEN 4/4 [~], hashes 60010a55/255d8477/361aa8f4 ancestors of main, jj-lane state ahead=0 tracked=0 untracked=0, prompt carries template contract (write scope and lands-last in addendum). Defects (status-neutral): D1 report says census W04 only on S927/S928, actual W04 on 30 and W01 on 5 pre-existing rows (none new); D2 lesson says rejects recorded in candidates.json, which holds admits only. Routed: R1 record UA-dependent access for C16 vmis.in and Iranica (default UA 403, browser UA 200), operator decides whether a browser UA is circumvention; R2 praise section 7 table column fit after lexical repair (Mande form-and-order cell, Greek unnamed he); R3 correct D1/D2 as appended corrections; R4 carried teaches overstatements S1026/S1022/S1021 (F5), CriticO100 gaps G1-G3, R100-M2. SHONEN boxes 1, 2, 4 look checkable by a non-author; promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
