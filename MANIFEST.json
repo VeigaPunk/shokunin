@@ -54537,6 +54537,49 @@
    "notes": "Digest: 2026-11-06T17:28:30-03:00 launch souji round=72 pgid=155257 driver=hyaku-inline attempt=1; 2026-11-06T18:50:34-03:00 complete souji round=72; hyaku-inline attempt=1. Report a5190f62 by lane identity (18:49:30, after lane tip 18:48:09); SHONEN 4x[~]; all 6 cited hashes ancestors of master; lane status clean, jj-lane state ahead=0 behind=0; prompt = template sec1-5 with placeholder substitutions only. Conformance defect (status-neutral): S72Reviewer wrote no seat report file (output mirrored). Routed to souji r73: D1 knowledge filter-filemode-witness.md source: header lacks S312-S314 and verified-at/recheck still r71; D2 frozen c1-counter.py:28 keeps S314 over-reach 'status reads the worktree file'; D3 HIGH writer index stat-cache forgery and WM7 via crafted ../ index path, MEDIUM FIFO hang/OOM in check-attr; D4 refuse-row fixture validity, defect-specific harness kills, pinned witness population, clean_env neighbours; D5 receipt command= lines not literally replayable (M4). Operator note: all four SHONEN boxes carry non-author-checkable pointers; promotion operator-owned, no [x] written.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 49,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 49,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 49
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "OpenBao token/lease lifecycle trial (corpus/openbao-token-trial.sh; first working round 49)"
+   ],
+   "report": ".ufo/reports/round-49/kagi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kagi-shokunin/corpus/lessons/round-49-verifier-spotcheck.md@565c43a874b59cd216f4a55c8742db48fa854f16",
+    "rechecks": "Step 1: report committed by kagi-shokunin (d3a737c6, 18:53:40, after final lane commit 18:52:19, before complete 18:54:26); 5 cited hashes exist and are ancestors of master; 4 lane commits by lane identity; jj-lane state ahead=0, porcelain empty; SHONEN 4=4 [~]; prompt = template with only placeholder substitutions + hyaku addendum; instruments frozen 082bfb3f..6c624dc5; dispatch 18:07:41 after predeclaration 18:07:28. C1 re-measured: presence BASE no -> TIP yes; committed trial bytes re-executed with bao v2.7.2 (sha256 = install receipt) -> OPENBAO_TRIAL HOLDS holds=5 rc 0, 0 dev servers after; trial has no identity/PATH reads; entry 0 removed lines; token-shaped hits only docs example tokens in public captures. C1 evidence-verified: c1-base value=0, measured-at-candidate/landing/repeat value=5, controls 19/19 MATCH, LEG_C1 PASS. C2 re-measured: six stated keys via frozen regexes BASE 122/122/122 + 32/3/35 vs live 123 stamps, 35/36 declared -> TIP 124x3 + 33/3/36 = live; R12-03/R14-01 command columns identical BASE vs TIP, only journaled expect moved (seat leg contradiction ruled: header rule binds). Evidence-verified: c2-base value=6, landing value=0; ledger FAIL 15 -> 12. SCORECARD additions only; sweep n=4 -> 4; census rc 0 kagi ok (re-run). Spot-check: S105 admit agree (live 200, sha 9fa76939 = capture, quote count 1, 14 words); S093-duplicate reject agree; S016 refresh reject agree (live 47384 B, 4 quotes located)."
+   },
+   "commit": "kagi-shokunin@6c624dc54708afadf77bd13b58263f6c2195b71c",
+   "closed_at": "2026-11-06T21:58:29Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest (.ufo/watchdog.log lines 3049/3062): 2026-11-06T17:52:05-03:00 launch kagi round=49 pgid=628824 driver=hyaku-inline attempt=1; 2026-11-06T18:54:26-03:00 complete kagi round=49; hyaku-inline attempt=1. Status ok, both claims verify (C1 operability 0->5, C2 calibration 6->0), no axis harmed. Defects (status-neutral, routed to kagi r50): D1 report says candidate ledger FAIL 13 ('15 -> 13'); verify-candidate.txt has 12 FAIL lines - erratum due. D2 C2 seat leg code (whole-row) contradicts its header (command column); closure ruled header binds; fold command-column + journal check into the C2 counter (freeze source-row commands). D3 C1 counter PATH/identity-reading ceiling answered only by a seat leg; add non-identifying shims + PATH-reader control. D4 8 orphaned bao dev servers from seat attack runs (SIGKILL bypasses EXIT trap); process-group kill routed. D5 OpenBao install signatures (.gpgsig/.sigstore.json) not verified; state ceiling where cited. Carried: lane routed list (ledger reds outside C2, R25-02/R29-01/R29-02/R38-03 operator-routed, 5 mutation survivors, NOSECRET S-03, SD10, S098, Vault-lease MDX gap, capture redaction convention). Operator note: SHONEN all [~]; box 2 non-author-checkable (closure re-executed the trial, 5 HOLDS).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
