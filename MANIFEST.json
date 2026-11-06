@@ -54452,6 +54452,50 @@
    "notes": "Dispatch/complete digest: 2026-11-06T17:51:17-03:00 launch kasegi round=82 pgid=340246 driver=hyaku-inline attempt=1; 2026-11-06T18:38:44-03:00 complete kasegi round=82; hyaku-inline attempt=1. Step 1 conformant: report by lane identity (0132796c, after landing 4576a88e), SHONEN heading 4 lines, base/freeze/landing ancestors of master, ahead=0, porcelain clean, prompt carries template contract, freeze bytes unchanged. Defects: none status-bearing. Claim prose overstatement (disclosed by lane): F8 is not the only residual; path-reading forgery passes the frozen r82 counter (CriticClaims F1, mutbat.py:221). Routed to r83: (1) constant run-dir prefix (M82-2); (2) keyed decoys; (3) G5 lexical, tie rule to cited line; (4) MutC1Hunt G1-G4 and stub-satisfiable P1/P5/P6/P8; (5) register M82-3 stated-output check as a lane instrument; (6) minor claims wording of pin lines (lesson :181); (7) carried r81 MutC1Hunt survivors and r81 defect 7 unanswered. SHONEN: no box fully checkable by a non-author (box 2 untouched).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 90,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 90,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 90
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "depth": "improved",
+    "freshness": "unchanged",
+    "coverage": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "hostile-answer-bounds (tools/kama-probe.sh @ b71c309a; round90-hostile-answers.py base 8/0 -> M' a09effae and tip 0/0, re-measured live by closure)",
+    "probe-reason-table (SKILL.md §Probe reason codes; round90-reason-rows.py 0 -> 24 bound rows; receipt recaptured byte-identical by closure)"
+   ],
+   "report": ".ufo/reports/round-90/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-90-verifier-spotcheck.md@c06838c5b94576971ea33ac465bf2c935e9037f9",
+    "rechecks": "Re-measured: C1 counter at base 99cdb4d6 (cells=13 mismatches=8 positive_mismatches=0, exit 1), M f968fb19, M' a09effae and tip db247186 (0/0, exit 0); C2 counter at base (documented=0 missing=23, exit 1), 2ee0b55f, 1f8eed67, tip (documented=23 rows=24 bound=24, exit 0); C2 receipt recaptured at tip, cmp identical (24 lines); check.py at tip 77/77; round89-unloadable-cells at tip 11/0/0; counter sha256 345b12b3/fa4c3177 unchanged freeze->tip; census exit 0 kama ok, rows 326->331. Evidence-verified: F1/F2/F3 forgeries, test-snapshot 30/0, operator 1234 GET MODEL_OK router-unloaded-autoload, RV01 held-out matrix (3 harm rows at M, none at M'), pre-report gate receipt. Spot-check: S587 admit agree, S588 admit agree, S591 reject agree (sha256 and quotes re-located); S589/S590 quotes located."
+   },
+   "commit": "kama-shokunin@db247186b43e66f399cf277f13aa8748676cd90d",
+   "closed_at": "2026-11-06T21:50:00Z",
+   "campaign": "hyaku",
+   "notes": "watchdog: 2026-11-06T17:41:55-03:00 launch kama round=90 pgid=950419 driver=hyaku-inline attempt=1; 2026-11-06T18:44:23-03:00 complete kama round=90; hyaku-inline attempt=1. Conformance ok (report ab58f3e4 by lane identity after tip, SHONEN 4x[~], all 12 cited hashes ancestors of master, ahead=0, porcelain clean, prompt contract present, 13 seats in the 8-16 band). C1 ruled verified at M' a09effae (held-out harm at M repaired in-round; r89 precedent). Defects (status-neutral): D1 pre-report gate red on round75-instruments bad_rows=19 (carried r87; L0 .ufo/l0-questions.md:381 open); D2 freeze 6f6d7873 author date 17:40:52 precedes launch (jj change-creation stamp; committer 17:53:45); D3 answering models absent from w1-results.json. Routed: R1 round75-instruments pending L0; R2 probe-answer-bounds.md verified-at names M f968fb19 not M' a09effae, append correction; R3 held-out router-esc prints reason router-? outside the table population; R4 r89 R3 latency budget pin still not persisted; R5 counter limits (C1 forgeable by other caps, curl>=8.4.0, no time bound; C2 trusts any receipt with right probe hash) in SCORECARD Planned r91; R6 r89 R5 LIMIT cells carried. SHONEN boxes 1-3 look checkable by a non-author (closure re-ran them from committed commands); box 4 not verified; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
