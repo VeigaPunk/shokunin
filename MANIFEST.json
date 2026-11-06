@@ -54293,6 +54293,47 @@
    "notes": "Driver: 2026-11-06T16:21:44-03:00 launch tabi round=70 pgid=1974779 driver=hyaku-inline attempt=1; 2026-11-06T17:57:07-03:00 complete tabi round=70; hyaku-inline attempt=1. R70Critic FALSIFIED C1's live verifier as an execution oracle (NODE_OPTIONS inheritance and pin-read/spawn TOCTOU), which refutes the frozen limit sentence, not the demonstrated capability; graded on the capability. Routed: R1 verify-live-r70 env/TOCTOU/wallMs/evidence-provenance repair (both profiles); R2 named correction entry owed for the falsified claims.json C1 limit sentence; R3 check-synthtap-r70 form-only (R70Review1 FG1-FG16, R70Mut1 21/31 survivors), battery needs kill power; R4 drivers lack child-exit listener (240 s hang, R70Exec4); R5 adjacency carry-overs kama none->adjacent, kotoba disagreement, 9/20 sibling heads moved; R6 5 missing registry rows; w1-results.json lacks per-seat status (orchestrator-owned). L0 tabi|round-70 open for operator. Operator note: SHONEN box 2 looks non-author checkable (receipt + LOG ## Round 70 re-read); no [x] written.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 89,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 89,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 89
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unprovable",
+    "depth": "unchanged",
+    "calibration": "unchanged",
+    "freshness": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unprovable-but-better",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-89/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-89-verifier-spotcheck.md@4e1c10e0cfcc1e7533f1fc71a1b3b615aa60a7e0",
+    "rechecks": "Step 1: report 7a2bb168 by tameshi-shokunin filed 18:11:41 after last lane commit 18:10:50; SHONEN 4 lines [~]; 6 cited hashes exist and are ancestors of master; jj-lane state ahead=0 behind=0, porcelain empty; prompt = template rendering + hyaku addendum. Re-measured over committed bytes: tools/ledger-witness.py absent@61990f3d -> present@ff7a4b06/20e78a55; SCORECARD 'ledger witness' rows 0 -> 1 (annotated not admitted); SOURCES rows 172 -> 174 -> 175; tools/mutate-and-run.sh diff empty; round is addition-only. Evidence-verified (not executed): selftest 21/21 (21 arm lines), no-work control C1_R89_PASS=false exit 1 @61990f3d, landing counter C1_R89_PASS=true exit 0 @ff7a4b06, T89E2 VERDICT accepted:hardlink,dirswap,symlink + L1 reproduction (kill rule b fires), T89C1 counterfeit witness passes counter; standing sweeps selfstate 26/24/2 (same as r88), pins 26/26, registry 9/9, pointers 12/12. Spot-check: S313 admit agree, S315 admit agree (re-fetched bytes sha256-identical, quotes located), print-binding-counter reject agree, mkcheck2 reject agree (reason 'paywalled' unverified: ACM 403 bot challenge). New SOURCES quotes <=12 words. Census validate tameshi ok exit 0."
+   },
+   "commit": "tameshi-shokunin@20e78a5566ffe70a7dde1ff1b2672b334f958f68",
+   "closed_at": "2026-11-06T21:15:55Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest copied from .ufo/watchdog.log at closure: 2026-11-06T16:42:47-03:00 launch tameshi round=89 pgid=2042993 driver=hyaku-inline attempt=1; 2026-11-06T18:12:21-03:00 complete tameshi round=89; hyaku-inline attempt=1. Status ok, not admitted: R89-C1 (operability, capability acquisition, tools/ledger-witness.py strace-witnessed audit of mutate-and-run --regression) met its counter predicate at ff7a4b06 but is killed by its own frozen kill rule (b): T89E2's hardlink/dirswap/symlink runners do no gate work and are accepted (path spelling is not identity); the counter is also cheat-passable by T89C1's counterfeit witness. Honest stop; predicate not narrowed; no axis harmed. Expansion graded unprovable-but-better: the new knowledge entry kernel-witnessed-ledger.md is grounded but has no corpus/README.md coverage-map row. Discernment improved: spot-check agrees on 2 admits and 2 rejects; QUALITY 136-138 grounded in lesson M1/M6/M7. Defects (status-neutral), routed to tameshi r90: (1) add coverage-map row for kernel-witnessed-ledger.md; (2) lesson trend says 'kill and four other mistakes' vs report 'nine' (M1-M10); (3) mkcheck2 reject reason 'paywalled' unverified; (4) tools/ledger-witness.py unregistered in tools/registry.json and SKILL.md registry (lane's R-4); (5) lane routed items 1-5 (identity-keyed witness QUALITY 137, independently deriving counter QUALITY 138, per-branch arms M10, expectations committed first M8, L3 narrowing, r88 R-3/R-4 carry). Prompt committed in fleet repo under lane identity (ae0313bc, dispatch evidence) - noted. SHONEN boxes all [~] by the lane; none presented as fully checkable for promotion.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
