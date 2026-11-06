@@ -52783,6 +52783,44 @@
    "notes": "Digest: 2026-11-05T19:21:19-03:00 launch kotodama round=97 pgid=531026 driver=hyaku-inline attempt=1 / 2026-11-05T22:10:44-03:00 complete kotodama round=97; hyaku-inline attempt=1. Report eb616de6 by lane identity before complete line; step 1 clean (ancestry, ahead=0, porcelain empty, prompt contract embedded). Defects routed (spotcheck s5): S992 tier A->B supersede; battery/mutation pins landed in round commit not freeze (order rests on mtimes); gate-table hash column ambiguous for S993 (PDF vs txt); report '30 fields' manifest count unreproduced (11 captures + 9 quote_capture). Carried: CriticO97 v9 survivors ENC1/DEL1/non-ASCII numbering; round-96 oath entry sentence-support sweep. Lowest axis freshness paused by open L0 r11/r89 (neither met nor waived). SHONEN boxes 2 and 3 look non-author checkable; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 99,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kake",
+   "lane_round": 99,
+   "lanes": {
+    "kake": "ok"
+   },
+   "lane_rounds": {
+    "kake": 99
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "improved",
+    "freshness": "improved",
+    "operability": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-99/kake.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kake-shokunin/corpus/lessons/round-99-verifier-spotcheck.md@3989618d9f8310b2eb5fb456aa7c4e58fb0b5ff5",
+    "rechecks": "Step 1: report 4dad2b13 committed by kake-shokunin and on origin/main; SHONEN heading has 4 box lines; all 9 cited commits plus the base exist and are ancestors of refs/heads/master; jj-lane state ahead=0 behind=0; porcelain clean; ls-remote=dc89a906 at closure open; prompt carries sections 1-5 plus the hyaku addendum; frozen instruments untouched after ab35eace, and the c99_registry/c99_fresh304 sha256 values match controls/instrument-sha256.txt. C1 re-measured (plain git/grep/cut): scripts/ tools 54->54->55; 26 repair rows, all naming committed tools; reviewer tallies A 24/2 and B 23/3 disagree. I confirmed all 3 disputed verdict maps false against the code: quote_class ap.error exits 2 at line 142; wave_seat_record has no 64 path; sitemap_audit_selftest never returns 2. The frozen kill rule gives C1 UNMET. The tip rows were corrected and re-read as matching the code. C2 evidence-verified, not executed: base candidate=absent exit 1; at 998b6d5f hand=50/50 generated=240/240 met=true exit 0; 10/10 seeds met; 2400-input independent twin shows 0 disagreements. The scored blob sha256 db3a0f12 equals the landed blob at 998b6d5f and at the tip (re-measured). The candidate imports only json/re/sys and has no procfs reads, so SentinelScope W1 is not exercised. SCORECARD diff shows no axis score changed. Census validate rc=0 with 41 W04 (40 before); rows 220->222. Spot-check: S484 admit agree (re-fetched rfc9111.txt with sha aeb52adb identical; quotes verbatim at lines 375-377, 971-972 and 976-977); S485 admit agree (erratum re-fetched with sha 83c3b795 identical; Status Reported, Technical); merge/kake reject agree (S312 collides with divergent scope; no renumber map)."
+   },
+   "commit": "kake-shokunin@dc89a9064c10ded88f958128acb9702bdf033586",
+   "closed_at": "2026-11-06T01:22:57Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-05T19:42:19-03:00 launch kake round=99 pgid=1258768 driver=hyaku-inline attempt=1; 2026-11-05T22:17:29-03:00 complete kake round=99; hyaku-inline attempt=1. Honest stop: C1 (calibration, the lowest axis at score 3) is unmet under its own frozen kill rule, because two live reviewers disagreed on 3 repair rows whose verdict maps were copied from docstrings that contradict the code. The rows were corrected after review and the registry now covers 55/55 tools; the score holds at 3. C2 (freshness HOLD 10, the RFC 9111 4.3.4/3.2 304-freshening capability, sourced on S484) is met and verified, but admission is round-level, so no capability is recorded. Defects (status-neutral): D1, the prompt L2 split requires 1x planner but the wave validator rejects planner, so no planner seat ran (template-validator conflict, routed to the operator); D2, c99_fresh304 run_candidate leaves procfs unmasked (SentinelScope W1 CRITICAL), mitigated only for blob db3a0f12. Routed to kake r100: R99-C1, C1 re-entry with verdict maps derived from code paths, plus a docstring fix or a recorded gap for the 3 tools (lane R99-11); R99-C2, isolate the c99_fresh304 candidate runner before reuse (R99-9); R99-C3, contract v2 for F1/F2/F10/LC6, the seven CriticClaims escape classes in the population, and the mutation survivors (registry 10, fresh304 6) (R99-8/10/12). R98-C1/C2 are closed this round (metatext lint has a registry row and a landed-revision run with gate_findings=0; the r98 unbacked capability row moved, unbacked=0). SHONEN box 2 is still [ ] (gap), so the boxes are not fully non-author-checkable and there is nothing to promote.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
