@@ -53763,6 +53763,47 @@
    "notes": "Dispatch/complete digest: 2026-11-06T15:39:19-03:00 launch souji round=70 pgid=1082372 driver=hyaku-inline attempt=1; 2026-11-06T16:28:34-03:00 complete souji round=70; hyaku-inline attempt=1. Report 3cc5d7c4 by souji-shokunin, SHONEN 4x[~]; 14 cited lane hashes resolve and are ancestors of master; lane clean, ahead=0; prompt = template + placeholders + hyaku addendum. Routed defects: D1 SCORECARD.md:181 says pointer-check-r69 '5 missing' but receipt reads missing=8 (append correction); D2 lesson round-70.md:55 'no used-by changed' contradicts :75 (S296 used-by changed) - erratum; D3 tools/souji-pointer-check.py has no SKILL.md registry row and no self-test (Gate standard); D4 r71 carry: S70Sentinel F1 GIT_ATTR_SOURCE/filter (HIGH), F2 core.fileMode, F3-F5 battery name escapes, S70MutCounter X7/X8 rc binding, NOGLOB row; D5 fleet incident: seat S70MutWriter commit cff0b4cbe684 ('seed', p <p@x>) in fleet origin/main+master, L0 filed 78c78a82, operator ruling. SHONEN boxes remain author-asserted [~]; not judged fully non-author-checkable this pass.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 88,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 88,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 88
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unprovable",
+    "depth": "unchanged",
+    "calibration": "unchanged",
+    "freshness": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-88/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-88-verifier-spotcheck.md@61990f3d8cd99932bfb0575e1c292e03d310b436",
+    "rechecks": "Step 1: report 3b690ffb by tameshi-shokunin, filed 16:35:16 after lane tip 152e02ea (16:34:37); SHONEN heading line 56 with 4 [~] lines = 4 SHONEN.md boxes; 6998726f/1763efe7/28ec5885/37bbf019/6c4595d0/152e02ea exist and are ancestors of master; jj-lane state ahead=0 tracked=0 untracked=0, porcelain empty, ls-remote master=152e02ea; prompt carries the template contract plus hyaku addendum §6; wave 10 seats settled. Re-measured (committed bytes): non-fixture regression_case_git legs 10->11, python legs 0->1, 11 distinct targets; kake e8d3a924 blob sha256 0c12838e = PIN, kake-authored, on origin/master; spec sha256 724beed3 at 6998726f, at tip and in the embedded heredoc; 6998726f ancestor of 28ec5885; sweep DEFECT table = TABLE_KAKEGUARD (5/10); runner changed after candidate by one comment line only. Evidence-verified, not executed: runner-regression-candidate (tool sha 0a0e46de = 28ec5885 runner) 11 legs PASS; selftest 108/108; counter c1-final-6c4595d0 C1_R88_PASS=true exit 0, base ctl-nowork false exit 1; selfstate 26/24/2/0, pins 26/26. Kill rule (b) fires: committed T88E2 parked (py leg never executed) and stub (no leg executed) print the frozen predicate, so the predicate does not measure governs. Post-freeze executed-set-check corroborates the landing but cannot re-certify it. Spot-check: S312 admit agree (live page byte-identical to snapshot sha256 cee1bf3b, quotes present), case note admit agree, kagi rendered-text-v1 reject agree (kagi paused, prompt:721), calibration-census reject agree; sources-census validate exit 0, rows 171->172."
+   },
+   "commit": "tameshi-shokunin@152e02ea7a3bc1df4d5501379523912abe83bd2e",
+   "closed_at": "2026-11-06T19:42:30Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest copied from .ufo/watchdog.log at closure: 2026-11-06T15:39:28-03:00 launch tameshi round=88 pgid=1085101 driver=hyaku-inline attempt=1; 2026-11-06T16:37:30-03:00 complete tameshi round=88; hyaku-inline attempt=1. Status ok, not admitted: R88-C1 (coverage, eleventh ledger leg kake ledger_append_guard.py, first Python gate) is killed by its own kill rule (b). The committed wave variants parked and stub print C1_R88_PASS=true although the ledger never executes the py leg; the lane disclosed both readings and did not narrow the predicate (honest stop). The landed runner does execute 11/11 legs per committed evidence. No axis harmed; scores 10/8/9 unchanged; no capability row. Nudge waiver re-derived (line 8, N=2). Defects, status-neutral: S312 quote word counts stated 15/13, measured 14/12; pre-registration priority is timestamp-only (M1, disclosed); two operator considerthese commits in the lane range. Routed to tameshi r89: (1) successor counter binding executed set = parsed set and blob-sha distinctness (QUALITY 135), with parked/stub/dupbase as committed forgery controls; never rewrite R88's frozen counter, predicate or verdict; (2) M7 table-value refusal and M8 one control per check; (3) latent fleet-root-as-sibling acceptance in check 1 (T88E2); (4) spec commit strictly before any mutant receipt (QUALITY 134); (5) appended word-count correction for S312; (6) carried R-3/R-4 debts. SHONEN: four boxes look checkable by a non-author from committed artifacts; promotion is operator-owned and no [x] was written.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
