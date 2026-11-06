@@ -50,7 +50,7 @@ Work items:
   - ScoutPrefix checked 758 v7.2 `__setup`/`early_param` registrations and found no first-match collision. The entry's Limits line now records this.
   - ScoutSources re-fetched all five pins live (sha256 equal); the cited regions are identical at v7.2.11. It also found S346 `used-by` incomplete, which is now fixed.
   - ScoutHost read the host cmdline through the new rule; it is consistent with the receipt. **This seat caused the host incident.**
-  - ExecSelftests wrote `nonauthor-label --selftest`, which is landed. It also found battery selftest defects D1 and D2, routed as R86-R4.
+  - ExecSelftests (a seat is the lane) wrote the label gate's `--selftest`, which is landed. It also found battery selftest defects D1 and D2, routed as R86-R4.
   - ExecLints found that the registry row was missing at the entry commit. It was closed at landing.
   - ScribeLesson drafted M1 and QUALITY 123, both landed.
   - ConnectorOverlap: no sibling holds `obsolete_checksetup` or `parameqn` ground; mori's kernel-parameters.txt pin is the same file but a disjoint claim.
