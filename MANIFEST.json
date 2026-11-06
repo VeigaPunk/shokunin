@@ -53123,6 +53123,48 @@
    "notes": "Dispatch digest: 2026-11-06T00:59:17-03:00 launch kengaku round=97 pgid=3888144 driver=hyaku-inline attempt=1; 2026-11-06T01:32:12-03:00 complete kengaku round=97; hyaku-inline attempt=1. Honest stop: C1 (coverage, sparql-university replay) verified; C2 (calibration, registry gate->probe 44->0) effect real and harmless but the declared predicate is not causally separable from C1 (exact ROWS 171 vs c2-only 169) and Q80 prefreeze double-run missed, so not admitted; lane self-verdict agrees. Conformance: report by lane identity aadd10fc; 7 cited hashes ancestors of master; lane ahead=0; untracked orchestrator markers .ufo/waves/round-97/w1.ready{,.dispatched} (not lane work); fleet prompt committed by kengaku-shokunin (2083f14b), attribution note only. Routed: anchor-digest-check 80->86 nested-capture binding; claim-local predicates + Q80 double runs; MutC2 exact-block forgery and add_parser survivors; S318/S323 wording corrections carried. SHONEN boxes [~] look non-author checkable; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 97,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "kotoba",
+   "lane_round": 97,
+   "lanes": {
+    "kotoba": "ok"
+   },
+   "lane_rounds": {
+    "kotoba": 97
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "consistency": "improved",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-97/kotoba.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kotoba-shokunin/corpus/lessons/round-97-verifier-spotcheck.md@a33f262fc94e3cf27f3c935b5c53c1336bb94166",
+    "rechecks": "Conformance: report a03888b0 by kotoba-shokunin 08:18:20 (after last lane commit 1d44bd82 08:17:14, before complete 08:19:24); SHONEN 4/4 [~]; 7c01b10d/94a10217/148395bf/693be9c3/38361a25/1d44bd82/fa1bebae exist and are ancestors of master; jj-lane state ahead=0 behind=0, porcelain empty, ls-remote=1d44bd82; prompt headings 1-5 = template (template cmp canonical rc0; diff lines 1-140 placeholders only). C1 re-measured structurally: verify_dispatch_prompts.py diff fa1bebae..693be9c3 = single insertion 1102a1103,1333 inside self_test() (def 679..1344), unchanged to tip; arms name t01..t13 (13/13); rec( sites 62->90; tally evidence-verified (redbefore 0 of 13 UNMET rc1 -> landing/c1-v5 13 of 13 MET rc0, 78->105 assertions; rulesv4 MET; r96c1/r95c1 MET; box-proof 2). C2: counter sha b4200c52/runner 28fbdb9f identical 94a10217..tip (re-measured); tally evidence-verified (v4 0 of 3 UNMET, v5-as-v4 0 of 3, landing v5 3 of 3 honest 2 of 2 MET rc0). No-harm receipts all MET; SCORECARD append-only, scores held; SKILL/PROVINCE/knowledge unchanged; tip battery 3 of 6 same reds as r96. Spot-check: S273 admit agree, S274 admit agree, S275 reject agree (re-fetched; quotes 21/25/8 words at stated lines); census rc0, 34 W04, rows 198->202."
+   },
+   "commit": "kotoba-shokunin@1d44bd820cf4ec53a37baba2b45f6da7776a84bd",
+   "closed_at": "2026-11-06T11:23:30Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: launch 00:44:27 attempt=1; lane-dead-no-report 01:43:16; attempt=2 01:43:18 dead 01:43:48; attempt=3 01:43:50 dead 01:44:20; relaunch attempt=1 07:56:50; complete 08:19:24 (all -03:00). First attempt landed instruments 7c01b10d/94a10217 + freeze 148395bf and settled wave r97-w1 (11 seats) but left integration uncommitted ~6h; relaunch landed 693be9c3/38361a25/1d44bd82. Defects (status-neutral, routed in spot-check): (1) tip battery 3 of 6 red carried from r96 (verify_skill_checklist, verify_corpus_integrity, verify_corpus_independent); (2) g10/g11 forgeries read MET under v5 (Q87 bound; v6 planned); (3) counter-rule mutants V4-V9 survive C2 worlds; (4) 11 new dispatch-checker survivors; (5) uncaught-exception traceback, assertion floor 56 vs 105, t10 root-dependent; (6) t09 cosmetic mutant counted as a C1 target (12 verdict-bearing + 1 observable-only); (7) S273 whole-page sha256 not reproducible on re-fetch (same size/lines); (8) orchestrator: validator rejects planner seat, retries 2/3 died in 30s. SHONEN boxes remain [~]; no new promotion signal for the operator.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
