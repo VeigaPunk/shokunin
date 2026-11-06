@@ -52821,6 +52821,51 @@
    "notes": "Dispatch digest: 2026-11-05T19:42:19-03:00 launch kake round=99 pgid=1258768 driver=hyaku-inline attempt=1; 2026-11-05T22:17:29-03:00 complete kake round=99; hyaku-inline attempt=1. Honest stop: C1 (calibration, the lowest axis at score 3) is unmet under its own frozen kill rule, because two live reviewers disagreed on 3 repair rows whose verdict maps were copied from docstrings that contradict the code. The rows were corrected after review and the registry now covers 55/55 tools; the score holds at 3. C2 (freshness HOLD 10, the RFC 9111 4.3.4/3.2 304-freshening capability, sourced on S484) is met and verified, but admission is round-level, so no capability is recorded. Defects (status-neutral): D1, the prompt L2 split requires 1x planner but the wave validator rejects planner, so no planner seat ran (template-validator conflict, routed to the operator); D2, c99_fresh304 run_candidate leaves procfs unmasked (SentinelScope W1 CRITICAL), mitigated only for blob db3a0f12. Routed to kake r100: R99-C1, C1 re-entry with verdict maps derived from code paths, plus a docstring fix or a recorded gap for the 3 tools (lane R99-11); R99-C2, isolate the c99_fresh304 candidate runner before reuse (R99-9); R99-C3, contract v2 for F1/F2/F10/LC6, the seven CriticClaims escape classes in the population, and the mutation survivors (registry 10, fresh304 6) (R99-8/10/12). R98-C1/C2 are closed this round (metatext lint has a registry row and a landed-revision run with gate_findings=0; the r98 unbacked capability row moved, unbacked=0). SHONEN box 2 is still [ ] (gap), so the boxes are not fully non-author-checkable and there is nothing to promote.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 95,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 95,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 95
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "novelty": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "thirteenth offline TB2 grader replay: fix-code-vulnerability (plans/round95_vuln_probe.py rebuilds /app/bottle.py from upstream bottle 0207a34f with the Dockerfile's two sed deletions; 15 cases x 7 legs, mismatches 0; PREDICATE R95-C1 pass at afe9c229; scope: the six test_outputs.py functions, not the TB2 reward)",
+    "freeze-integrity counter v3: plans/round95_c2_counter.py (20 CLI fixtures, W3 drives the battery red with 3 probe mutations, PREDICATE/rc agreement, 10 CLI mutants) + plans/round95_false_gate_census.py; known false gates passing 14->0, PREDICATE R95-C2 pass at afe9c229 (scope: in-sample recorded set; held-out false gates still pass)"
+   ],
+   "report": ".ufo/reports/round-95/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-95-verifier-spotcheck.md@45740a616028015b5dfcf9900753e3bb5e6fe689",
+    "rechecks": "C1 re-measured: ledger executed 38->39 of 88 via json at 4524072d/afe9c229/c8598439, set diff {fix-code-vulnerability}, cells file-artifact 29->30/76 serialization-schema 5->6/10, receipt 15/15 ok=True mismatches 0, live upstream bottle.py + Dockerfile sed deletions reproduce VULNERABLE_BOTTLE_SHA 761756ce; counter legs/controls evidence-verified. C2: F table 11/11 sha256 equal at F/T/tip, 0 touches F..tip (--full-history), 0 merges; population 14 rows, 14 BEFORE receipts each PREDICATE R94-C2 pass rc=0 (P0, pre-counter); census 14->0 and honest W1-W5 evidence-verified; critic dissent ruled: both claims verify narrowed (C1 six functions not reward; C2 recorded set). Spot-check 2 admits (S305,S306) + 2 rejects (S308,S309) + S303 row re-fetched HTTP 200, sha = row, quotes at cited lines, 5/5 agree; census kengaku ok exit 0, 294->301 rows. Gates not executed (Gate standard)."
+   },
+   "commit": "kengaku-shokunin@c8598439a32295bcbe114c6b9ccb3dc1d23151e3",
+   "closed_at": "2026-11-06T01:26:24Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-11-05T19:36:58-03:00 launch kengaku round=95 pgid=1142270 driver=hyaku-inline attempt=1; complete 2026-11-05T22:22:02-03:00 hyaku-inline attempt=1; report d1adbeae by lane identity 22:15:12 after lane tip 22:13:20; lane ahead=0 clean. Defects (status-neutral): C-commit mteb-retrieve subject repair broke round87 counter at T (M2, wave-caught), reverted in 1c00331c so round79 gate DEFECTS n=1 at tip (two gates disagree on one cell); wrong-cwd measurement recurred (M1); round94_c1_replay L7 absolute pin red at T; seat env receipt held live credentials, redacted by L1 before commit (verified, only FAKE_ canaries remain). Routed to r96: r79/r87 mteb-retrieve re-pin + Q78; key C1 L7 to member set; C1 reward scope (repo suite, site-packages and .git oracle copies, rm/git-checkout reward-1 cases); C2 held-out false gates (>=8 pass 5/5) as controls, behavioural W3/W5, census parses RED reason, 14 surviving counter mutants, M10 exclusion; SP1 --clearenv and no raw env dumps; cwd refusal in counters; carried W-4 and r92 items; docker image ~695MB left on host. SHONEN 4 boxes [~]; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
