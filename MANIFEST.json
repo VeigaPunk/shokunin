@@ -53963,6 +53963,47 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable, copied at closure): 2026-11-06T16:37:34-03:00 launch kasegi round=80 pgid=628805 driver=hyaku-inline attempt=1; 2026-11-06T17:04:00-03:00 complete kasegi round=80; hyaku-inline attempt=1. Step-1 conformant: report e263e108 by kasegi-shokunin at 17:03:33 after HEAD 7629cc56; SHONEN 4 lines; 58905f2b/4ab54586/0039d670/7629cc56 all ancestors of master; jj-lane state ahead=0 behind=0, porcelain empty; prompt sections 1-5 match templates/round-prompt.md modulo placeholders; w1 12 seats/12 results. Both claims VERIFIED; C1 score 4->4 nominal (R58) but instrument measurably superseded. Routed to r81: (1) round-80 lesson cites osv-post-batch-query-contract.md:19 at lines 88/160/162 for the ordering sentence at :21 (self-flagged at :14) - append correction; (2) lesson Learning says four rejects vs three Gate reject bullets; (3) counter independence carried: CriticClaims (a) forgeries reach killed=28 (only P2 byte pin excludes), MutClassifier P3DEL/P3RAISE EXCEPTION-KILL counted=no, ReviewC1 M1/M2. SHONEN box 2 [ ]; not fully non-author-checkable, no promotion signal.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 71,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 71,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 71
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "clean-tree witness against attributes and stat settings (r71)",
+    "counter mutant harness over prior-round survivors; pointer-check self-test (r71)"
+   ],
+   "report": ".ufo/reports/round-71/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-71-verifier-spotcheck.md@0bf098dde7e6eafb62a9ce62b7c16a6291ee1e8e",
+    "rechecks": "C1 re-measured at 9332fde2: writer grep GIT_ATTR_SOURCE 0->7, core.fileMode=true 0->2, RECEIPT-FILTER-DRIVER-SET 0->2; fileMode and GIT_ATTR_SOURCE same-size clean-filter forgeries reproduced in a fresh temp repo (git 2.56.0); c1-after SUMMARY new_forgeries=0 new_honest=19 class_mismatches=0 EXIT=0 byte-equal to prereg; do-nothing 7/7 EXIT=1, F1/F2/F3 EXIT=1; c1-at-repair same SUMMARY EXIT=0; writer/counter slot shas bound to frozen bytes (counter 7e5a694a unchanged aa91d1ca..9332fde2). C2 evidence-verified: c2-after x_killed=5 x_survived=0 score=0 EXIT=0 vs before x_survived=5 EXIT=1, CF1 EXIT=2; X6-X10 provenance at base 8b9345b1 (S70MutCounter). Gate evidence not executed: writer selftest 40/40 and 42/42, counter selftest 39/39, repair-canfail R1-R4 each fail=1. Spot-check: S308, S306 admits and S309 reject agree; live pages byte-identical to captures, quotes at cited offsets; S310/S311 quotes located (18/21 words); sources-census validate EXIT=0 (W04 only); rows 228->234. SCORECARD additions only."
+   },
+   "commit": "souji-shokunin@9332fde2df586d33fd2717fda4821d99e7fb3bd1",
+   "closed_at": "2026-11-06T20:30:00Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 2026-11-06T16:32:01-03:00 launch souji round=71 pgid=3816621 driver=hyaku-inline attempt=1; 2026-11-06T17:25:05-03:00 complete souji round=71; hyaku-inline attempt=1. Report a651cdd6 by lane identity (17:24:26, after lane tip 17:23:16); SHONEN 4x[~]; all 9 cited hashes ancestors of master; lane ahead=0, clean; prompt 40c338c0 carries the template contract. r70 routed D1-D3 resolved (SCORECARD correction, round-70.md erratum, pointer-check selftest + SKILL row). Routed: D1 report wording - C2 candidate frozen in the same commit as its before-arm; D2 counter base-slot rc unbound (S71MutCounter F1, lane-routed r72); D3 unmeasured rows (honest-driver over-refusal, AS1/AS2 indistinguishability, repaired filter/stat routes selftest-only); D4 clean_env neighbour passes r71 counter selftest; D5 cross-lane: 13 sibling clean-tree gates lack GIT_ATTR_SOURCE scrub/fileMode pin/filter check (S71Connector) - route to owners. SHONEN boxes remain author-asserted [~]; promotion review is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
