@@ -4,8 +4,13 @@
 #   await bootstrap(); then loop: await run_for(1500)  (cell timeout 1700)
 import subprocess, json, os, re, time, asyncio
 from concurrent.futures import ThreadPoolExecutor
-SEAT_CEILING = 60          # operator ruling 2026-11-03: 32-64 concurrent workers (was 32-40 / 36)
-MAX_LIVE_LANES = 9
+SEAT_CEILING = 98         # operator 2026-11-06: "you can match the 98 value on kernel and dispatcher" (dispatcher default HYAKU_SEAT_CEILING=98)
+MAX_LIVE_LANES = 10       # operator 2026-11-06: train all 10 remaining lanes to 100 at once
+FOCUS_MIN = 0             # operator 2026-11-06: "you can train the other shokunin ... until they reach 100" — focus band (was 90, Amendment 35) lifted
+
+def next_round(lane):
+    try: return int(open(f'{HS}/next/{lane}').read())
+    except (OSError, ValueError): return 0
 IN = f'{FLEET}/scripts/hyaku/inline.sh'
 ST = f'{FLEET}/.scratch/run15-state.json'
 HS = os.path.expanduser('~/.local/state/shokunin-hyaku')
@@ -56,7 +61,7 @@ def fill_slots(log):
     while len(live) < MAX_LIVE_LANES:
         # A lane whose L1 (any attempt) is still running must not get a second L1 (mori r89 incident).
         busy = {lane_of(x) for x in L1S} | set(CLOS)
-        cand = [l for l in queue() if l not in live and l not in busy]
+        cand = [l for l in queue() if l not in live and l not in busy and next_round(l) >= FOCUS_MIN]
         if not cand: break
         l = cand[0]; d['lanes'][l]['block_start'] = None; d['lanes'][l]['block_done'] = 0; st_save(d)
         log.append(launch(l)); d = st_load(); live = list(d['live'])
@@ -81,7 +86,10 @@ def on_closure_end(lane, log):
     L['block_done'] += 1; d['live'].pop(lane, None); st_save(d)
     nxt = int(open(f'{HS}/next/{lane}').read())
     blocked = os.path.exists(f'{HS}/blocked/{lane}')
-    if not draining() and L['block_done'] < 10 and nxt <= 100 and not blocked:
+    if nxt - 1 >= 100:  # Amendment 38: tag every lane round >= 100 and graduate the lane into Jin'i-ryu
+        t = subprocess.run(['python3', f'{FLEET}/scripts/hyaku/jini-ryu-tag.py', '--lane', lane], capture_output=True, text=True, cwd=FLEET)
+        log.append(f'jini-ryu {lane}: rc={t.returncode} {(t.stdout + t.stderr).strip()[-300:]}')
+    if not draining() and nxt >= FOCUS_MIN and nxt <= 100 and not blocked:
         log.append(launch(lane))
     else:
         log.append(f'{lane} parked (drain={draining()}, block_done={L["block_done"]}, next={nxt}, blocked={blocked})')
