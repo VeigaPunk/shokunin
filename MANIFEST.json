@@ -53250,6 +53250,51 @@
    "notes": "Driver digest: 2026-11-06T08:24:32-03:00 launch kotodama round=100 pgid=1271137 driver=hyaku-inline attempt=1; 2026-11-06T09:52:25-03:00 complete kotodama round=100; hyaku-inline attempt=1. Step 1 pass: report d367f62a by kotodama-shokunin (committer 09:51:37 after landing 361aa8f4 at 09:50:19; jj author date 08:43 cosmetic), SHONEN 4/4 [~], hashes 60010a55/255d8477/361aa8f4 ancestors of main, jj-lane state ahead=0 tracked=0 untracked=0, prompt carries template contract (write scope and lands-last in addendum). Defects (status-neutral): D1 report says census W04 only on S927/S928, actual W04 on 30 and W01 on 5 pre-existing rows (none new); D2 lesson says rejects recorded in candidates.json, which holds admits only. Routed: R1 record UA-dependent access for C16 vmis.in and Iranica (default UA 403, browser UA 200), operator decides whether a browser UA is circumvention; R2 praise section 7 table column fit after lexical repair (Mande form-and-order cell, Greek unnamed he); R3 correct D1/D2 as appended corrections; R4 carried teaches overstatements S1026/S1022/S1021 (F5), CriticO100 gaps G1-G3, R100-M2. SHONEN boxes 1, 2, 4 look checkable by a non-author; promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 98,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 98,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 98
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "freshness": "improved",
+    "novelty": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "sixteenth offline TB2 grader replay: regex-chess @ 2fd12b88 (plans/round98_regexchess_probe.py + plans/round98_c1_replay.py, grader venv py3.13/chess 1.11.2/pytest 8.4.1; 12 cases x 5 legs, mismatches 0; PREDICATE R98-C1 pass at 8e37fc65; located gaps C04 duplicate-for-omission, C07 rpartition en-passant fallback, C09 lookup table)",
+    "nested-capture provenance bindings: corpus/evidence/PROVENANCE.md lets the frozen anchor-digest gate re-verify 39 nested replay-capture digests (S181-S323) without gate/row/capture edits; findings 86->45; PREDICATE R98-C2 pass at 8e37fc65"
+   ],
+   "report": ".ufo/reports/round-98/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-98-verifier-spotcheck.md@2233a66195e3d3d85856248fb8f66c1d8127cede",
+    "rechecks": "Re-measured: ledger executed 41->42 (set diff {regex-chess}), cells file-artifact 32->33, serialization-schema 7->8; SOURCES 317->325 insert-only (0 old rows changed); 13/13 frozen instruments and 4/4 candidate bytes match, F..C diff = candidates + receipt; capture SHA256SUMS 8/8 OK; C2 39/39 PROVENANCE digests = sha256 of unchanged nested captures and present in their rows; S213/S230/S272 rebind tokens true, S237 rebind byte-identical. Evidence-verified (not executed): probe receipt 12 ok=True mismatches 0; c1/c2 base fail rc1, tip pass rc0; gate 86->45; harm summary 23 checks rc unchanged (r82c3 29->30 per-member delta). Spot-check agree: S326 admit, S333 and S331 reject (live re-fetch, quotes verbatim); census rc 0."
+   },
+   "commit": "kengaku-shokunin@4a5dc030ba7dcf2398f2a5c424757b812cca2225",
+   "closed_at": "2026-11-06T13:26:02Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-11-06T08:00:57-03:00 launch kengaku round=98 pgid=1082935 driver=hyaku-inline attempt=1; 2026-11-06T10:23:13-03:00 complete kengaku round=98; hyaku-inline attempt=1. Step 1 pass: report by kengaku-shokunin 2e2ba43b at 10:22:33 -03; SHONEN 4x[~]; 11/11 cited hashes ancestors of master; ahead=0, remote 4a5dc030; untracked only orchestrator round-97 w1.ready markers; prompt = template with substitutions + hyaku addendum; w1 11 seats settled. Routed: (1) C2 provenance side channel M4 - URL column re-bound 4 outside-population rows undeclared at freeze (true clears, not harm); successor three-column table or symmetric census; (2) MutC2 21/29 and MutC1 receipt-field survivors; (3) receipts c1/c2-*.txt name revision only in commit msg/SCORECARD, stamp REV in-file. Carried L0 kengaku|round-98 coverage-cap ruling and kengaku|round-54 hold. Coverage score held 7 at L0 cap. SHONEN boxes look non-author checkable; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
