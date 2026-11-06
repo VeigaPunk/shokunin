@@ -53886,6 +53886,45 @@
    "notes": "Driver digest: 2026-11-06T16:24:32-03:00 launch kagi round=47 pgid=2791614 driver=hyaku-inline attempt=1; 2026-11-06T16:55:14-03:00 complete kagi round=47; hyaku-inline attempt=1. No conformance defect. Gate standard: lane gates not executed; C1/C2 split re-measured vs evidence-verified in the spot-check. Critic ruling for the operator: C1 'weakened as calibration' (registry self-description, score cell stays 9). Routed to kagi r48: (1) counter amendments incl. BASE-pinned instruments (QM58), and an erratum for the false 'no successor row' sentence in plans/round-47 (S012/S013/S014/S016 are superseded by S022/S023/S025/S026 inside F; 6 URLs / 7 quotes); (2) SD5 3->0 by naming R25-02/R29-01/R29-02, which remain open reds; (3) SD10, S098 rejected row with on-release, Vault lease MDX normalizer gap. SHONEN boxes all [~] with non-author-runnable evidence; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 88,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 88,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 88
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "mako effective settings over ten criteria fields (app-name, app-icon, summary, body, urgency, category, desktop-entry, actionable, expiring, mode) with upstream boolean/urgency grammar and repeated-field last-wins; include= containment under declared read roots"
+   ],
+   "report": ".ufo/reports/round-88/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-88-verifier-spotcheck.md@af998dcc41d48618ffe7afe0efc9354755a9244e",
+    "rechecks": "Step 1: report committed by mado-shokunin (75c13c39, 16:57:55-03:00, after lane tip 8e8f7ea3 16:56:53, before driver complete 16:58:32); 6/6 cited commits exist and are ancestors of master; jj-lane state ahead=0 tracked=0 untracked=2 (w1/r1 .ready.dispatched handoff markers); SHONEN 4 lines; prompt = canonical template rendering (placeholders only) + hyaku §6. Re-measured: MODELLED_FIELDS 3 (24ba2a9) -> 10 (650e18bd, tip); direct tool runs base vs tip on my fixture: DND invisible 0 (true/false refused, refusals=3) -> 1; symlinked include escaping HOME applied at base -> refused at tip. Evidence-verified (no lane counter/gate executed): tool sha256 at 24ba2a9/650e18bd/7d307486 = receipt pins; counters/cases byte-identical freeze 9e36e3a -> tip and = pins; receipts C1 62/62 ok, 22/22 killed, base-tool 33/62, TARGET_MET rc 0 (also at 7d307486); C2 26/26, 7/7 killed, base-tool 11/26, TARGET_MET rc 0; harm receipt gate selftest 460/460, file plane CLEAN, index 109/109, ledger 163/163. SCORECARD diff append-only. SOURCES 428->430, knowledge 108->109. Discernment: admit (knowledge entry; S494 criteria.c/types.c/config.c re-fetched at v1.11.0, shas match, lines 85-91/110-111, parse_boolean 19-28) agree; rejects summary~/body~ via re (mako.5 450/456 POSIX ERE) agree, containment-as-mako-rule (mako.5 45-48, config.c 545-547) agree; S495 line 145 quote 11 words verbatim, shas match; census validate rc 0."
+   },
+   "commit": "mado-shokunin@8e8f7ea354cf23178ad08c400cd8aee9668d7bb3",
+   "closed_at": "2026-11-06T20:03:15Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-11-06T15:39:33-03:00 launch mado round=88 pgid=1086569 driver=hyaku-inline attempt=1; 2026-11-06T16:58:32-03:00 complete mado round=88; hyaku-inline attempt=1. Conformance defects (status-neutral): untracked .ufo/waves/round-88/{w1,r1}.ready.dispatched in lane tree; records commit 498855cb cited receipts/harm-final-r88.txt before it was committed (fixed at 8e8f7ea3); declaration C2 'Before' sentence falsified by r1 critic (erratum appended). Gate standard: lane counters/gates not executed; claims re-measured by direct tool runs + MODELLED_FIELDS grep, counter verdicts evidence-verified. Routed to mado r89: R1 C1 survivors RM2C1 app-name casefold, RM3C1 ! on string field, RM5C1 mode casefold, RM7C1 include inside criteria; R2 C2 survivors RM3C2 trailing slash, RM4C2 ~// re-join, RM5C2 root equality; R3 RM6C2 lexical cycle detection survivor omitted from the report's routing (report routes RM2C2, which the mutation seat ruled a named TOCTOU limit) - correct routing; R4 commit cited receipts in the citing commit; R5 clean the .ready.dispatched markers. Operator note: SHONEN boxes carry pointers; box 1 points at a knowledge entry, SKILL.md unchanged, so not fully checkable as worded.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
