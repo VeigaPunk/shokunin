@@ -53925,6 +53925,44 @@
    "notes": "Driver digest: 2026-11-06T15:39:33-03:00 launch mado round=88 pgid=1086569 driver=hyaku-inline attempt=1; 2026-11-06T16:58:32-03:00 complete mado round=88; hyaku-inline attempt=1. Conformance defects (status-neutral): untracked .ufo/waves/round-88/{w1,r1}.ready.dispatched in lane tree; records commit 498855cb cited receipts/harm-final-r88.txt before it was committed (fixed at 8e8f7ea3); declaration C2 'Before' sentence falsified by r1 critic (erratum appended). Gate standard: lane counters/gates not executed; claims re-measured by direct tool runs + MODELLED_FIELDS grep, counter verdicts evidence-verified. Routed to mado r89: R1 C1 survivors RM2C1 app-name casefold, RM3C1 ! on string field, RM5C1 mode casefold, RM7C1 include inside criteria; R2 C2 survivors RM3C2 trailing slash, RM4C2 ~// re-join, RM5C2 root equality; R3 RM6C2 lexical cycle detection survivor omitted from the report's routing (report routes RM2C2, which the mutation seat ruled a named TOCTOU limit) - correct routing; R4 commit cited receipts in the citing commit; R5 clean the .ready.dispatched markers. Operator note: SHONEN boxes carry pointers; box 1 points at a knowledge entry, SKILL.md unchanged, so not fully checkable as worded.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 80,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 80,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 80
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:verifiability": "improved",
+    "coverage": "improved",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-80/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-80-verifier-spotcheck.md@191e6ba8f872d08802d83b57cd7fcf4bfa122f0e",
+    "rechecks": "C2 re-measured over git-archive extracts of base/freeze/landing/HEAD: FRONTIER-CENSUS rows 55->56 (admitted/closed 56, problem-rows 0), FRONTIER-PASS F56 ids=S114, knowledge 93->94, registry 113->114 (114 at freeze), malformed rows 0, S114 queued->mined, 6/6 F56 quotes on cited S114.txt lines, snapshot sha e1ccfb9b matches pin, live re-open HTTP 200 18769 bytes with all six pins present; C1 evidence-verified per Gate standard (gate and counter not executed): landed recheck-cwd-census sha 420151fd = frozen candidate (base/freeze e666ae11), counter b47276d1 and table 08d7f3ce unchanged since freeze, 28 rows incl. nine r79 survivors, EXC_RE keyed on ^... FAIL exception= (R129), MUTBAT killed=28 survived=0 dirty=0 notderived=0 in ExecC1Battery (x2) and L1 landing receipt on 420151fd, controls base killed=0 / r79 13 / stub 0, pins cases=6->15, TMPDIR rc 2; harm: SCORECARD additions only, SKILL one cases= token; sources-census validate kasegi ok rc 0 (six inherited W04). Spot-check: 1 admit (Q02) + 2 rejects (:33 vs F51:75, :58 ordering vs F54:21) all agree."
+   },
+   "commit": "kasegi-shokunin@7629cc563dee8ad7f48b7eaaebdb860e5ddb9252",
+   "closed_at": "2026-11-06T20:08:23Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable, copied at closure): 2026-11-06T16:37:34-03:00 launch kasegi round=80 pgid=628805 driver=hyaku-inline attempt=1; 2026-11-06T17:04:00-03:00 complete kasegi round=80; hyaku-inline attempt=1. Step-1 conformant: report e263e108 by kasegi-shokunin at 17:03:33 after HEAD 7629cc56; SHONEN 4 lines; 58905f2b/4ab54586/0039d670/7629cc56 all ancestors of master; jj-lane state ahead=0 behind=0, porcelain empty; prompt sections 1-5 match templates/round-prompt.md modulo placeholders; w1 12 seats/12 results. Both claims VERIFIED; C1 score 4->4 nominal (R58) but instrument measurably superseded. Routed to r81: (1) round-80 lesson cites osv-post-batch-query-contract.md:19 at lines 88/160/162 for the ordering sentence at :21 (self-flagged at :14) - append correction; (2) lesson Learning says four rejects vs three Gate reject bullets; (3) counter independence carried: CriticClaims (a) forgeries reach killed=28 (only P2 byte pin excludes), MutClassifier P3DEL/P3RAISE EXCEPTION-KILL counted=no, ReviewC1 M1/M2. SHONEN box 2 [ ]; not fully non-author-checkable, no promotion signal.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
