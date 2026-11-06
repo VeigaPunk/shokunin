@@ -54862,6 +54862,46 @@
    "notes": "Dispatch digest (watchdog 3066/3070/3071/3092): 19:01:09 launch attempt=1; 20:22:42 lane-dead-no-report (no landed report), retry; 20:22:44 launch attempt=2; 20:34:41 complete attempt=2. Conformance notes (status-neutral): attempt 1 died mid-wave after an orchestrator kernel restart; prompt commit 3553e62d authored 19:23:37 but committed 20:22:42; w1-results.json carries no seat output (finals recovered from session store). Routed to tsukuroi r88: (1) residual clause probe ran on pre-landing working-tree gate sha 1b51a68f, not landed e3b0fab4 - re-run on landed revision or restate; (2) C1 counter certifies only part of R1-R7 (10 clauses, CriticClaims g01-g08/g10/g14 read 22/22) - carry R87-R1..R5 into a successor battery freeze, cite C1 as 22/22 on frozen families only; (3) ConnectorOverlap sibling scan unfinished (SHONEN box 4); (4) wave seat receipts must land on disk; (5) R87-R6 erratum for round-86 ScoutHost.md:23 'sha256' label. Operator-owned: r86 host incident unrepaired (limine.conf lines 30/38 LP-MISMATCH prompt), L0 line open. SHONEN: boxes 1-2 evidence resolves; box 3 lacks a no-oral-context retest, box 4 scan unfinished - not checkable yet; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 90,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 90,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 90
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "xdg-desktop-portal 1.22.1 backend routing over all 21 org.freedesktop.impl.portal.* interfaces (tools/mado-portals.py, read-only): none/*/interface keys, Settings find-all, UseIn sort and gtk last resort as the installed binary decides; host gtk 11, hyprland 4, no backend 6",
+    "receipt-presence gate over records changes (quality/check-receipt-presence.py): flags a records commit citing receipts/<name> its tree does not carry; 83/83 frozen expectations, 28/28 mutants"
+   ],
+   "report": ".ufo/reports/round-90/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-90-verifier-spotcheck.md@cc0381db585cc44c3dfc13ced807409c32c45bb0",
+    "rechecks": "Step 1 pass: report 115ccdf4 by mado-shokunin with SHONEN (4 [~]); 6 round commits + base exist and are ancestors of master; jj-lane state ahead=0 tracked=0 untracked=0; prompt head = template with placeholders filled; no deleted lines in 5041acf9..1f07e841. C1 re-measured: mado-portals.py absent at base, sha256 d1bd9b9a = frozen pin, 21 IFACES, my host re-run 21 lines gtk 11/hyprland 4/none 6 = receipt, cases 229/mutants 60 with pinned sha256, counters+controls touched only in freeze 1d9bc404; counter TARGET_MET 229/229 evidence-verified (c1-measured-r90.txt). C2 re-measured: check absent at base, sha256 04b8be60 = pin, 83 = (6 revs + 35 fixtures) x 2 envs + POPULATION, population 38, D88/D89 cited receipts absent from 498855cb/51bf076f trees; counter TARGET_MET 83/83 evidence-verified. D3 diff selftest-only 59->62. Harm watch evidence-verified (harm-final-r90.txt), SCORECARD append-only. Spot-check 3/3 agree (admit resolver entry; reject portals.conf lexicographic * rule; reject r12 table) after re-opening S501 tarball (5afeda95) xdp-portal-config.c 267-296/827, S502 gkeyfile.c 1768-1769 (e1d1270f), S503 man page (01eba9b4). Census mado ok rc 0, 435->438 rows."
+   },
+   "commit": "mado-shokunin@1f07e84133921a8be0a2de074dc8f04e7e015cdf",
+   "closed_at": "2026-11-06T23:52:19Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-11-06T18:30:34-03:00 launch mado round=90 pgid=3266809 driver=hyaku-inline attempt=1; 2026-11-06T20:22:51-03:00 lane-dead-no-report mado round=90 retry same round; 2026-11-06T20:22:53-03:00 launch mado round=90 pgid=1592428 driver=hyaku-inline attempt=2; 2026-11-06T20:47:59-03:00 complete mado round=90 hyaku-inline attempt=2 (watchdog.log lines 3055/3078/3079/3094). Attempt 1 died without report; attempt 2 re-verified inherited pins and filed. Routed defects (status-neutral): (1) gate mado-receipt-presence and r90 counters registered with no self-test mode (SKILL.md:867-870) - PROTOCOL Gate standard Self-test requires one; add --selftest. (2) w1-results.json holds no seat outputs and two scout seats left no report (M90-4); S501-S503 rest on L1 re-open, independently confirmed by closure. (3) round-90 lesson Gate reject wording 'UseIn hits for the first desktop' narrower than comparator (xdp-portal-config.c:278-293); append a note. SHONEN: all four boxes [~], none fully checkable by a non-author from this round; nothing promoted.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
