@@ -53845,6 +53845,47 @@
    "notes": "Dispatch digest: 2026-11-06T15:39:26-03:00 launch tsukuroi round=84 pgid=1084420 driver=hyaku-inline attempt=1; 2026-11-06T16:41:58-03:00 complete tsukuroi round=84; hyaku-inline attempt=1 (watchdog.log, mutable). Status ok, not admitted: honest stop, the lane itself reported C2 NOT VERIFIED (battery replayable by input-blind forgers); C1 exploratory unprovable-but-better by closure. No conformance defect in step 1. Routed defects: (1) hibernate-resume-plane-r84.md lacks source:/recheck: header lines; (2) report/entry name lane seat ReviewEntry as non-author reviewer - a lane-dispatched seat is the lane; (3) any C2 re-run needs a new frozen battery meeting QUALITY 119 with f1/f2/f4 forgers as committed sub-target negative controls; (4) count-resume-rows-r84 is a shape gate, never a measurement; (5) freeze commit e0f42051 carries parent author date, cite graph order. Operator: SHONEN boxes all [~]; boxes 2 and 4 look non-author checkable (promotion operator-owned).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 47,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 47,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 47
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "freshness": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-47/kagi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kagi-shokunin/corpus/lessons/round-47-verifier-spotcheck.md@76da518fcc3029e738648bd6fd4ba5571df01c1c",
+    "rechecks": "Step 1: report committed by kagi-shokunin (f4136ae1, 16:54:47-03:00, after final lane commit 16:53:57, before driver complete 16:55:14); 5/5 cited commits exist and are ancestors of master; jj-lane state ahead=0, porcelain empty; SHONEN 4=4; prompt = canonical template rendering + hyaku §6. Lane instruments byte-identical BASE->TIP; candidate->TIP corpus diff empty. C1 re-measured by plain re-implementation of SC_USEDBY_NOCITE + SC_FETCH missing-provenance: BASE 3 findings (S094 nocite, S099 nocite, S099 noprov) -> TIP 0; 102->102 rows; S099 capture sha256 e62e259c = fleet blob 75dd2612 = my live GET. C2 re-measured: BASE no ledger; TIP 11 rows, capture sha/bytes match, URLs/releases match, fetched_at in window, quotes located with my own normalizer; my non-author live GET of the 6 distinct URLs is byte-identical to all captures. Gate verdicts (RELEASE_CLOCK CLEAN, selftest 116, census CLEAN, legs L1-L8) evidence-verified, not executed. Spot-check: 2 admits (S099, S040/S041 recheck) + 2 rejects (on-release S040/S041, Amendment B) all agree. Fleet census kagi ok rc 0."
+   },
+   "commit": "kagi-shokunin@f199abc7ae2fe94c31d395721e231dd243b36e6e",
+   "closed_at": "2026-11-06T20:00:28Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-11-06T16:24:32-03:00 launch kagi round=47 pgid=2791614 driver=hyaku-inline attempt=1; 2026-11-06T16:55:14-03:00 complete kagi round=47; hyaku-inline attempt=1. No conformance defect. Gate standard: lane gates not executed; C1/C2 split re-measured vs evidence-verified in the spot-check. Critic ruling for the operator: C1 'weakened as calibration' (registry self-description, score cell stays 9). Routed to kagi r48: (1) counter amendments incl. BASE-pinned instruments (QM58), and an erratum for the false 'no successor row' sentence in plans/round-47 (S012/S013/S014/S016 are superseded by S022/S023/S025/S026 inside F; 6 URLs / 7 quotes); (2) SD5 3->0 by naming R25-02/R29-01/R29-02, which remain open reds; (3) SD10, S098 rejected row with on-release, Vault lease MDX normalizer gap. SHONEN boxes all [~] with non-author-runnable evidence; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
