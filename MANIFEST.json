@@ -54703,6 +54703,47 @@
    "notes": "Dispatch digest (watchdog.log, copied at closure): 2026-11-06T18:17:07-03:00 launch tameshi round=90 pgid=1716462 driver=hyaku-inline attempt=1; 2026-11-06T19:23:37-03:00 complete tameshi round=90; hyaku-inline attempt=1. Conformance ok: report 6b2c4171 by tameshi-shokunin (19:23:01, after last lane commit 19:22:47), SHONEN 4x[~] with pointers, 12 round commits + base ancestors of master, fleet pin f47ad6ba ancestor of fleet HEAD, lane ahead=0 porcelain empty, prompt = template + placeholders + addendum (prompt committed by lane identity fe5a6212, status-neutral). Honest stop: R90-C1 (coverage) and R90-C2 (calibration) predicates met but killed by their own frozen rule (a). Routed to tameshi r91: (1) case note mutation-case-fleet-sources-census.md must cite its coverage-map row (round-89 item-1 class recurring); (2) note landed before the kill with no 'not admitted' marker — append one; (3) lane's own routed items (sealed successor counter QUALITY 139-140, C2 behaviour binding 141, manifest gating 142, T90M1 M8 survivors, T90SN1 F1-F3, r89 item 5). Upstream report-only for census owner: w1/T90E3-arms.patch (7 survivor-killing selftest arms, C12 affects 20 lanes). SHONEN boxes carry concrete pointers and look non-author checkable; promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 73,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 73,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 73
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "unchanged",
+    "operability": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [
+    "receipt byte truth against the index stat cache (r73)",
+    "counter forgery witness (r73)"
+   ],
+   "report": ".ufo/reports/round-73/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-73-verifier-spotcheck.md@43cd74bba84bb498b57a74377ccb0567d10864d5",
+    "rechecks": "Evidence-verified (no lane gate/counter/selftest executed): C1 c1-after.txt SUMMARY new_forgeries=0 new_honest=21 class_mismatches=0 regress=PASS EXIT=0 vs do-nothing new_forgeries=3 EXIT=1, blanket new_honest=0 EXIT=1, forger new_forgeries=15 EXIT=1, writer selftest 44/44, wave repair 45/45 with M01/M05 each fail=1 EXIT=1; C2 c2-after-D1..D5 base_unwitnessed=1 x5 with base_witness=no on FWr FWi FWp FWs FC3, before r72 counter EXIT=0 x5, positive control base_unwitnessed=0 base_forgeries=15, counter selftest 52/52. Re-measured: SOURCES rows 237->239; S315 and S316 re-fetched HTTP 200 with sha256 equal to rows, quotes verbatim (16 and 22 words); rejected 3374 sentence = 26 words; sources-census souji ok 86 W04 EXIT=0; SCORECARD diff additions only, scores unchanged; 8 lane commits ancestors of master, ahead=0, clean."
+   },
+   "commit": "souji-shokunin@d8380f6d04dbda5f3c8ac804eb3149466f9b256b",
+   "closed_at": "2026-11-06T23:30:10Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch: launch 18:54:32-03:00 attempt=1 pgid=1281462; lane-dead-no-report 20:22:44 (attempt 1 landed F/I/K/W/A commits but no report); launch 20:22:46 attempt=2 pgid=1590628; complete 20:29:02. Report 949d113b by souji-shokunin at 20:28:30, SHONEN 4x[~]. Spot-check agree 3/3 (S315 admit, S316 admit, 26-word racy-git reject). Defects routed to r74: Q133 per-row wording vs tree-global witness (FWw/FC1/FC2 unwitnessable); counter survivors M08 M14 M15 M17, writer M03; lane gates trusting git status (souji-pre-report-gate.sh:36-37, souji-verify.sh, cand-*-verify.sh, S73Connector HIGH); base_forgeries not witness-gated; lesson header still says Attempt 1 and pointer-check missing=4 (reported); w1-results.json empty and 5 of 12 seats no report. SHONEN boxes look checkable by a non-author; promotion stays operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
