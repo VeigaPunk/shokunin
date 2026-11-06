@@ -53165,6 +53165,49 @@
    "notes": "Driver digest: launch 00:44:27 attempt=1; lane-dead-no-report 01:43:16; attempt=2 01:43:18 dead 01:43:48; attempt=3 01:43:50 dead 01:44:20; relaunch attempt=1 07:56:50; complete 08:19:24 (all -03:00). First attempt landed instruments 7c01b10d/94a10217 + freeze 148395bf and settled wave r97-w1 (11 seats) but left integration uncommitted ~6h; relaunch landed 693be9c3/38361a25/1d44bd82. Defects (status-neutral, routed in spot-check): (1) tip battery 3 of 6 red carried from r96 (verify_skill_checklist, verify_corpus_integrity, verify_corpus_independent); (2) g10/g11 forgeries read MET under v5 (Q87 bound; v6 planned); (3) counter-rule mutants V4-V9 survive C2 worlds; (4) 11 new dispatch-checker survivors; (5) uncaught-exception traceback, assertion floor 56 vs 105, t10 root-dependent; (6) t09 cosmetic mutant counted as a C1 target (12 verdict-bearing + 1 observable-only); (7) S273 whole-page sha256 not reproducible on re-fetch (same size/lines); (8) orchestrator: validator rejects planner seat, retries 2/3 died in 30s. SHONEN boxes remain [~]; no new promotion signal for the operator.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 99,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "kotodama",
+   "lane_round": 99,
+   "lanes": {
+    "kotodama": "ok"
+   },
+   "lane_rounds": {
+    "kotodama": 99
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "grader v11 anchor-invariant heading-mark rule (refuses a mark only when it changes what the h2 anchors; accepts Mc/virama/NFD headings and bare non-ASCII numeral headings; selftest 175/175)"
+   ],
+   "report": ".ufo/reports/round-99/kotodama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kotodama-shokunin/corpus/lessons/round-99-verifier-spotcheck.md@60010a55fb5f04ee728070c463b1a57ae1cc17fc",
+    "rechecks": "Re-measured: grader sha v10 d35b13c9 -> v11 717341dc; refusal-id census base vs after loses only HEADING-NUMBER (routed F1), VERDICT-COMBINE/HEADING-COMBINING kept; F2 dead disjunct gone (comment only); Mc/virama benign twins MCOK1/MCOK2/VISOK1/DEVAOK1 in selftest; mutants99.py sha cf58e126 = pin = receipt; battery99 sha 87f426aa = pin; freeze files unchanged b1b80562..3f415f84; entry 45197 B, 13 h2, absent at base; SOURCES rows 930->941, S1006->S1017, each S1007-S1017 1 row and cited; README 3 hits; CriticC99 repair grep 0; census validate rc 0 (no warning on new rows). Evidence-verified (gate not executed): predispatch-base FAIL 6/16, predispatch-lands PASS 16/16 rc 0 (O1 175/175, O2 0/0/37/0/9/0, O4 overrefusal 2->0 survivors 24, O6 136/136). Spot-check live: S1009, S1012, S1016 quotes count 1 (agree); C14 Gourlay scope reject agree; C6 Iranica 403 reject agree at decision time but now HTTP 200."
+   },
+   "commit": "kotodama-shokunin@3f415f84ecdb8f700899b15cc5741f40ced89ac3",
+   "closed_at": "2026-11-06T11:23:42Z",
+   "campaign": "hyaku",
+   "notes": "Driver: launch attempt=1 00:55:10-03:00 pgid=3826949; lane-dead-no-report 07:56:44; launch attempt=2 07:56:47 pgid=1021740; complete 08:18:51. Report 01232d60 by kotodama-shokunin after lane commits (08:17:47 vs 08:17:25); SHONEN 4/4 [~]; commits b1b80562/60ead722/3f415f84 ancestors of main; jj-lane state ahead=0, porcelain clean; prompt carries template 1-5 + addendum 6. Conformance defects (status-neutral): D1 ReviewerC99 report at w1/stage/ReviewerC99/review.md, not w1/<Seat>.md as the report states; D2 w1-results.json output null for all 12 seats (kernel restart, disclosed; evidence in wave dir). Routed: R1 fix D1 path; R2 table-cell support check (R99-M2); R3 re-open C6 Iranica (now 200) and re-judge; R4 CriticO98b 24 survivors + CriticO99 6 anchor-neutral passes open; R5 freshness paused on L0 r11/r89. Round-98 routed items F1/F2/F3/F4 and oath L49/L51/L53 closed. Operator: SHONEN box 2 looks non-author-checkable; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
