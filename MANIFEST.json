@@ -54089,6 +54089,45 @@
    "notes": "Dispatch digest (.ufo/watchdog.log 3029/3039): 2026-11-06T16:45:05-03:00 launch tsukuroi round=85 pgid=2581162 driver=hyaku-inline attempt=1; 2026-11-06T17:41:03-03:00 complete tsukuroi round=85; hyaku-inline attempt=1. Defect (status-neutral, Gate standard Self-test): hibernate-resume, resume-gate-battery-r85, nonauthor-label lack a self-invocation selftest mode. Routed: (1) add --selftest to those three gates; (2) re-freeze battery with hibernate=no<x>, duplicate resume_offset=, free==image_size, multi-swap, bool-for-int cases and f1/f2/f5/f6/f7/f8 + MutGate M26-M28 as controls before any claim on those clauses; (3) state K1 as 0-1/20, not flat 0/20; (4) gate false-HEALTHY on noresume=1/nohibernate=1/empty resume= (ReviewGate L1/L3); (5) pin kernel/power/main.c and init/main.c before citing them. Operator: SHONEN boxes 2 and 4 look non-author checkable; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 92,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 92,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 92
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "seat-route (contract kumitate-seat-route-v1) — per omp seat transcript or wave results: captured route, answering models, fallback, error/aborted turns, final state, redacted last error; frozen counter C92_C1 HELD agree=145/145 x2 incl. held-out r92 wave, selftest 37/37, survivor family 9/9; caveat M92-3 (counter blind to parse_errors, JSON type, redaction boundary)"
+   ],
+   "report": ".ufo/reports/round-92/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-92-verifier-spotcheck.md@36277d499388c68ef2645d92f44e722d454c9820",
+    "rechecks": "Re-measured: seat-route sha256 cd7ee03d at b3147a25 = receipts' tool_sha256; kill-(d) byte grep 0; frozen probe/controls/plan diff 596f6753..b3147a25 empty; SCORECARD diff A 36->37, A_wave 1319->1381, C 46->47, C2 233->236, pin.seat-route added, no integer lowered; SOURCES rows 203->206; census kumitate ok exit 0; r91 tally 6/11 from mutants.txt rows; independent jq reading of the 12 raw r92 seat transcripts agrees 12/12 with close/seat-route-r92-w1.txt (K92Reviewer zai->haiku errors=2, K92Sentinel amr->mistral errors=1); S266/S268 live sha256 equal captures, quotes at session.md:236 and types.ts:1081; C-draw predictability confirmed in probe92-c1.py:67-71,155. Evidence-verified, not executed: probe1/probe2 HELD 145/145, controls table (9 non-positive UNMET, positive 133/133), selftest 37/37, survivor-remut 9/9, kill-d strace, proxy MATCH, constructions x1/x2/x2b/x3 HELD and x6 UNMET. Spot-check 4/4 agree (2 admit, 2 reject)."
+   },
+   "commit": "kumitate-shokunin@b3147a2520a0582a897df33eeb607c8d457ced66",
+   "closed_at": "2026-11-06T20:45:26Z",
+   "campaign": "hyaku",
+   "notes": "Watchdog: 2026-11-06T15:39:35-03:00 launch kumitate round=92 pgid=1087369 driver=hyaku-inline attempt=1; 2026-11-06T17:41:50-03:00 complete kumitate round=92; hyaku-inline attempt=1. C1 admitted: frozen kill rule excluded construction-HELD pre-data; the four HELD constructions expose counter blind spots (parse_errors 0/23206, non-type-strict diff, redaction 23/24, C draw predictable from tool bytes, byte-grep evadable by glob), not a shipped-tool error. Defects (status-neutral): filed report rewritten in place cfb99a19->6982c483 (use appended erratum); w1/K92Reviewer.md trailer missing; RD-1 no longer reproducible from redacted fixtures after GH013 abandon (orchestrator-authorized). Routed r93: arm M92-3 fields in a type-strict counter with an author-uncomputable held-out set; PROVINCE.md:16,57 amendment; checklist reds 738/757 carried. SHONEN: four [~] boxes cite resolvable pointers and look non-author checkable (operator-owned promotion).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
