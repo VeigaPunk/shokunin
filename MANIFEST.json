@@ -53722,6 +53722,47 @@
    "notes": "Dispatch/complete digest: 2026-11-06T15:39:30-03:00 launch kama round=88 pgid=1085765 driver=hyaku-inline attempt=1; 2026-11-06T16:23:05-03:00 complete kama round=88; hyaku-inline attempt=1. Report 614376b7 by kama-shokunin (16:22:42, after lane tip 64eaf596 16:21:17); all cited hashes are ancestors of master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0; prompt carries the template contract plus hyaku addendum section 6. Fresh-start round, 12-seat v1 wave, 0 dead. NOT ADMITTED (rejected-honest-stop): C2 calibration verified on its frozen predicate. C1 operability not verified: its frozen predicate was green at measured commit 138a7543, but two canned expectations (C05 sleeping, C12 wildcard sleeping) encode a rule the round's own oracle and S581:2337 falsify, so M traded operability on two router states (oracle cells base 1 -> M 2 on different states). The repair at 8b5bb69d removes the trade, but the frozen counter then reads mismatches=2 at the tip, and the landed rule's only green is a post-freeze 3-cell oracle script. Operability is graded unprovable-but-better as a non-author judgment, not an admission (C1 was declared measurable, not exploratory). Expansion harmed per LEARNING and the kengaku r25 precedent: knowledge entry router-mode-readiness.md was admitted at 138a7543 as new ground with committed-receipt rows, both false at landing; repaired in-round at eb664062. No axis harmed at the landed tip. Defects (status-neutral): D1 SCORECARD capability row router-mode-readiness cites the 138a7543 ROUTER_CELLS green for the superseded rule; D2 harm-tip.out names rev=master, not a hash (probe sha resolves to tip); D3 gate arm round75-instruments red bad_rows=19 (r87 R4); D4 answering model per seat not recorded (r87 R11); D5 no separate cross-domain-evidence section. Routed to kama r89: R1 held-out router-cells successor with source/oracle-derived expectations (sleeping and autoload configurations, MT01 6 escapes, SN01 counter defects); R2 re-point the capability evidence; R3 hash-named tip receipts; R4 round75-instruments; R5 probe-verdicts harness cannot grade MODEL_UNLOADED; R6 per-seat model; R7 sweep sources opened before freeze against frozen expectations. Operator: all four SHONEN boxes look non-author-checkable (SKILL router decision table, LOG.md:3660 with router-lifecycle.out, PROVINCE round-88 paragraph); the r87 selfdesc L0 question may be closable (arm green at 12eedc6b with unchanged instruments).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 70,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 70,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 70
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "pathspec-variable hermetic writer reads (r70)",
+    "counter self-check harness and pointer-existence check (r70)"
+   ],
+   "report": ".ufo/reports/round-70/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-70-verifier-spotcheck.md@8b9345b1f2c4bb908ae418588d4cbde6a34a5bd0",
+    "rechecks": "C1 re-measured at 3b7cce81: writer grep PATHSPEC_ENV 0->2 hits (scrub in git() :105/:111), mechanism reproduced in a fresh repo (git 2.56.0: ls-files ':(top)' empty only under GIT_LITERAL_PATHSPECS=1; ls-tree fails under GLOB), c1-after SUMMARY new_forgeries=0 new_honest=15 class_mismatches=0 EXIT=0 byte-equal to frozen predicate (do-nothing 4/13/5 EXIT=1; F1/F2 EXIT=1); instrument sha 3f684c3e = frozen counter, no instrument/writer change after freeze/candidate. C2 evidence-verified (gate not executed): c2-after killed=4 survived=0 tamper=detected score=0 EXIT=0 vs r69 counter score=5 EXIT=1; CF1/CF2 EXIT=2; selftest receipts writer 38/38, counter 29/29. Qualified: NOGLOB unmeasured; C2 mutants same-round authored, 5/10 further mutants survive. SCORECARD diff additive, no score change. Spot-check: S304 admit, S305 reject, glossary literal reject all agree (live pages byte-identical to captures); census validate EXIT=0, rows 226->228."
+   },
+   "commit": "souji-shokunin@3b7cce814afae197c7d7dc079f2bdfac3aa389a0",
+   "closed_at": "2026-11-06T19:31:29Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-11-06T15:39:19-03:00 launch souji round=70 pgid=1082372 driver=hyaku-inline attempt=1; 2026-11-06T16:28:34-03:00 complete souji round=70; hyaku-inline attempt=1. Report 3cc5d7c4 by souji-shokunin, SHONEN 4x[~]; 14 cited lane hashes resolve and are ancestors of master; lane clean, ahead=0; prompt = template + placeholders + hyaku addendum. Routed defects: D1 SCORECARD.md:181 says pointer-check-r69 '5 missing' but receipt reads missing=8 (append correction); D2 lesson round-70.md:55 'no used-by changed' contradicts :75 (S296 used-by changed) - erratum; D3 tools/souji-pointer-check.py has no SKILL.md registry row and no self-test (Gate standard); D4 r71 carry: S70Sentinel F1 GIT_ATTR_SOURCE/filter (HIGH), F2 core.fileMode, F3-F5 battery name escapes, S70MutCounter X7/X8 rc binding, NOGLOB row; D5 fleet incident: seat S70MutWriter commit cff0b4cbe684 ('seed', p <p@x>) in fleet origin/main+master, L0 filed 78c78a82, operator ruling. SHONEN boxes remain author-asserted [~]; not judged fully non-author-checkable this pass.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
