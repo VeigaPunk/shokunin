@@ -52991,6 +52991,50 @@
    "notes": "Dispatch 2026-11-05T23:53:50-03:00 launch kotoba round=96 pgid=2297041 driver=hyaku-inline attempt=1; complete 2026-11-06T00:40:50-03:00 attempt=1. Status-neutral defects: tip battery 3 of 6 reds carried from r95 (verify_skill_checklist, verify_corpus_integrity, verify_corpus_independent); dispatch prompt committed under lane identity (orchestrator-side). Routed to lane: (1) receipts/sources-opened.txt records S272 quote as 19 words, true 22 -> named correction entry; (2) v4 counter MET on no-arm forgery classes g3/g7/g8 (A3) -> v5 with committed controls; (3) 15 MutTesterDispatchR96 + 7 sweep non-target survivors; (4) counter exit ladder A4 and r95 m08/N4 carried; (5) red gates + 280s floors cap (264.9s) carried; (6) wave evidence 1.94 MB vs 0.72 MB (Q82). SHONEN boxes look non-author-checkable; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 98,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "kotodama",
+   "lane_round": 98,
+   "lanes": {
+    "kotodama": "ok"
+   },
+   "lane_rounds": {
+    "kotodama": 98
+   },
+   "admitted": false,
+   "verdict": "rejected-harmed",
+   "verdicts": {
+    "operability": "harmed",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "grader v10 verdict-control and numbering refusals (VERDICT-CTRL, VERDICT-COMBINE, non-ASCII numbering on TOPIC)",
+    "Gate capture-file checker (tools/check-gate-captures.py, selftest 13/13)"
+   ],
+   "report": ".ufo/reports/round-98/kotodama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kotodama-shokunin/corpus/lessons/round-98-verifier-spotcheck.md@527df3fee305b3454446946e6779ece45456307e",
+    "rechecks": "Re-measured: grader sha v9 1021dc9d -> v10 d35b13c9; battery98 and mutants98 pins re-hashed equal; v9->v10 diff widens heading check Mn/Me -> all M (line 742) plus dead `for p in []` disjunct; lane exposure census 0 Mc / 0 numeral-only of 3010 h2; entry 47760 B, 13 h2, absent at base; SOURCES rows 917->930, S993->S1006; 11/11 qualifying ids cited; README 2 hits; census validate rc 0 (no warning on S994-S1006); S999 re-opened live, line-142 quotes count 1 each; S978 oath repair quote count 1. Evidence-verified only (gate not executed): O1 selftest 161/161, O2 battery98 0/0/36/0/3/0, O3 mutation 128/128, O4 REG 34/34, O5 critic97 survivors 8->3, predispatch-lands 15/15 vs base 5/15. Spot-check: admits S1001, S999, S1002 and rejects C18 (403), C14 (404), C2/C4 (wrong chapter): agree 6/6."
+   },
+   "commit": "kotodama-shokunin@7ff35e6ce6a8027fd04ba4a6bccce179b7286ca3",
+   "closed_at": "2026-11-06T03:54:44Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest (.ufo/watchdog.log): 2026-11-05T22:16:28-03:00 launch kotodama round=98 pgid=3621976 driver=hyaku-inline attempt=1; 2026-11-05T23:31:14-03:00 lane-dead-no-report kotodama round=98 (attempt 1); 2026-11-05T23:31:17-03:00 launch kotodama round=98 pgid=2173056 driver=hyaku-inline attempt=2; 2026-11-06T00:51:30-03:00 complete kotodama round=98; hyaku-inline attempt=2. Step 1 pass: report 97b6ec0a by kotodama-shokunin; SHONEN 4/4 [~]; bcf664aa, db88f107, 7ff35e6c are ancestors of main; ahead=0, clean, ls-remote = 7ff35e6c; prompt carries template sections 1-5 plus hyaku addendum section 6. Ruling: both claims meet their frozen predicates (O0-O5, C1-C9). Operability is harmed because v10 adds new false refusals on valid input: an Mc-marked h2 heading is CLEAN on v9 and refused HEADING-COMBINING on v10 (ReviewerO98b F4, CriticO98b OK-MCWORD, confirmed by code diff), and HEADING-NUMBER refuses a bare non-ASCII-numeral heading (F1). Current corpus exposure is 0/3010, but per AXES and the chousa r27/r47 precedent the harm is not netted, so the round is rejected-harmed. Discernment trend overrides the author's 'unchanged': the spot-check agrees with the gate on admits and rejects. Routed for r99: (1) F4: restore Mn/Me or pin a benign Mc twin; v10 docstring still says Mn/Me; (2) F1 remove or pin, plus F2 dead disjunct; (3) F3 unpinned branches; (4) CriticO98b's 24 survivors; (5) oath weak lines L49/L51/L53; (6) avoid same-round self-superseded rows (S994). SHONEN boxes are not yet fully non-author-checkable (box 1 'SKILL.md contains...' did not change this round); promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
