@@ -54744,6 +54744,44 @@
    "notes": "Dispatch: launch 18:54:32-03:00 attempt=1 pgid=1281462; lane-dead-no-report 20:22:44 (attempt 1 landed F/I/K/W/A commits but no report); launch 20:22:46 attempt=2 pgid=1590628; complete 20:29:02. Report 949d113b by souji-shokunin at 20:28:30, SHONEN 4x[~]. Spot-check agree 3/3 (S315 admit, S316 admit, 26-word racy-git reject). Defects routed to r74: Q133 per-row wording vs tree-global witness (FWw/FC1/FC2 unwitnessable); counter survivors M08 M14 M15 M17, writer M03; lane gates trusting git status (souji-pre-report-gate.sh:36-37, souji-verify.sh, cand-*-verify.sh, S73Connector HIGH); base_forgeries not witness-gated; lesson header still says Attempt 1 and pointer-check missing=4 (reported); w1-results.json empty and 5 of 12 seats no report. SHONEN boxes look checkable by a non-author; promotion stays operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 83,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 83,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 83
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:verifiability": "improved",
+    "coverage": "improved",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-83/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-83-verifier-spotcheck.md@a089ff3d601b4d53a5515e52720ba27e5ec72c3d",
+    "rechecks": "C1 re-measured over committed bytes: recheck-cwd-census.py sha256 81677e9d (base, freeze) -> 343b21e4 (landing) = frozen candidate; counter 2f7c49d4, table 5b1d99f5 (67 rows incl. G1-G4), builder 890fff2c match claims.json; census diff adds checks bucket-other/bucket-over/main-verbose, docstrings cases=24->27; SKILL.md and instruments/README pin rows cases=24 -> cases=27; frozen dirs unchanged freeze->landing (empty diff). C1 evidence-verified from committed receipt l1/L1-landing-r83.txt (not executed): FROZEN-OK x11, selftest cases=27 failures=0, MUTBAT killed=64 survived=0 neutral_ok=3/3 decoy=ok rc0, F9/F10/F11 rc0 r82 -> rc1 r83, F6/F7 rc1 both, F8 rc0 r83, P5 conformant rc0, P6 r83_forgeries ok, P7 do-nothing/stub survived_G=4 rc1. C2 re-measured: knowledge 96->97, registry 116->117 (117 at freeze), S117 queued->mined with used-by, SOURCES diff one row pair + note, knowledge-expected +1 row, README Frontier rows 60->61, S117.txt sha256 0a5fa51c = manifest. C2 evidence-verified: B0 six OK occurrences=1, FRONTIER-CENSUS rows=59 admitted=59, unbound=0, foreign rc0, literal_sweep_total 0, B8 untied=0 pass and three G6 forgeries rc0 r82 -> rc1 r83. Census validate run by closure: kasegi ok, six inherited W04, rc0. Spot-check: admit F59/S117 agree (live FAQ HTTP 200 34381 B, 6/6 quotes present); reject Perishability lead agree (data_quality.md:13 forward ref only, GitHub issue search 0, repo tree no match). SCORECARD diff additions only; depth:density 272.8->273.2 unchanged."
+   },
+   "commit": "kasegi-shokunin@795f24da00348ee290378f679e4b23b5a5c80138",
+   "closed_at": "2026-11-06T23:31:30Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-11-06T18:42:33-03:00 launch kasegi round=83 pgid=3389712 driver=hyaku-inline attempt=1; 2026-11-06T20:22:53-03:00 lane-dead-no-report kasegi round=83; retry same round (attempt=1: L1 ended without a landed report); 2026-11-06T20:22:55-03:00 launch kasegi round=83 pgid=1593023 driver=hyaku-inline attempt=2; 2026-11-06T20:27:55-03:00 complete kasegi round=83; hyaku-inline attempt=2. Step 1 conformant: report by lane identity (cf84104f, after landing 795f24da), SHONEN heading 4 lines, base/freeze/landing ancestors of master, ahead=0, porcelain clean, prompt carries template contract, frozen bytes unchanged. Defects (status-neutral): attempt 1 died mid-receipt, attempt 2 re-verified inherited tree without changing frozen bytes; landing receipt measured over pre-commit worktree, not the cited commit; fleet dispatch commit e963bd03 (kasegi identity) bundles other lanes' prompts/reports/MANIFEST (driver commit scope, operator side); undeclared calibration move-log row (SKILL recheck-cwd row correction) verified true but not credited. Claim prose bounded: F12/F13 pass the r83 counter and P3 reads a target-controlled summary line (disclosed M83-1); G6 lexical, admitted F57 untied=1 under r83 (disclosed M83-2/R134). Routed to r84: (1) rename-based D3 or declare F12/F13 + selftest rows; (2) P3 per-row/target_sha256 limb; (3) counter selftest for extra (M09); (4) non-lexical G6 per R134 and F57 G6 status; (5) MutEntryGate 8/16 survivors, MutC1Hunt r83 gaps; (6) comment_lines f-string fix; (7) receipts over cited commit; (8) r82 defects 4 (partial), 5, 7 carried. SHONEN: three [~], one [ ]; none fully checkable by a non-author; no promotion signal.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
