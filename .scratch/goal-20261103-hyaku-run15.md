@@ -218,3 +218,11 @@ Future launches only; no live restarts; live seats keep their captured route. No
 ## Resume 2026-11-05 (operator restarted omp with new credentials)
 - Route smoke: m_flash amr still 402 (quota until 2026-11-06T22:28Z) -> served by commandcode; scribe haiku-5-5 ok; reviewer zai glm-5.3-flashx ok; scout MiniMax ok. connector devin/swe-2-flash -> `permission_denied: model no longer available`, fell to openai-codex/gpt-6.1-sol. devin/swe-2-flash is the dead tail of every chain.
 - bootstrap(): nothing to adopt, nothing live. Drain flag removed; campaign loop resumed. Six quality pauses still blocked pending operator fresh-start authorization.
+
+- WRAP-UP DUTY: revert ~/.omp/agent/config.yml agentModelOverrides executor "@m_cru" -> "@m_flash" (Amendment 37 temporary, session-only).
+- Focus mode: FOCUS_MIN=90 in .scratch/run15-kernel.py (Amendment 35).
+
+## Crash resume — 2026-11-05 ~23:30 -03:00 (orchestrator session crashed mid `run_for(1320)`)
+- Kernel reloaded, `bootstrap()`; the four live L1s (kotoba r95, kengaku r96, kake r100, kotodama r98) died with the session -> verify FAIL -> RETRYABLE relaunched as `<Lane>R<N>a2`. Their dispatched w1 waves (seats dead) were adopted, `meta.l1` repointed to the a2 labels and finalized (results.json output=null; L1s read seat report files). bootstrap() does not repoint when `live('KakeR100')` regex-matches the a2 respawn — repoint by hand after a crash.
+- Amendment 40: all 16 seat roles -> `@m_flash` = mistral/deepseek-v4-1-flash-1017:max, deepseek-only :max chain; task/main stay Opus medium. The Amendment 37 executor revert duty is discharged (executor is no longer @m_cru).
+- Kimi WebBridge: daemon v2.0.32 on 127.0.0.1:10086, `extension_connected:true`, `list_tabs` round-trip ok; skill symlinked to `~/.agents/skills/kimi-webbridge` for omp sessions.
