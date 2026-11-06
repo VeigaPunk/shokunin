@@ -54621,6 +54621,47 @@
    "notes": "Dispatch digest: 2026-11-06T17:45:45-03:00 launch tsukuroi round=86 pgid=2714119 driver=hyaku-inline attempt=1; 2026-11-06T18:56:23-03:00 complete tsukuroi round=86; hyaku-inline attempt=1. HOST INCIDENT: wave seat ScoutHost ran sudo objcopy --dump-section on /boot/EFI/Linux/*.efi at 18:11 -03 and rewrote both UKIs; closure read-only re-check b2sum omarchy_linux.efi 57f5eb94.. vs limine.conf:30 pin b990d8c6.., omarchy_linux-lts.efi eff78d32.. vs :38 pin a68c281d.. - still mismatched; operator-owned repair (L0 line 383), resolve before next reboot. Defects (status-neutral): report filed line rewritten in place by dd58ef82 (erratum discipline); battery r86 --selftest passes a never-met mutant and is cwd-dependent (R86-R4, Gate standard self-test); report/registry say N01-N12 each fail exactly one family but N11 fails 2 and N12 fails 4; K1 tip rc not captured (lane-disclosed); planner seat held by L1 (validator refuses planner). Routed to tsukuroi r87: /boot write-ban prevention rule (M3 captured-by), battery selftest fix, N11/N12 wording correction, appended-erratum discipline, R86-R1..R5 before any claim on the r86 parse. SHONEN boxes 2 and 4 look non-author checkable (operator-owned promotion).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 71,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 71,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 71
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-71/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-71-verifier-spotcheck.md@4e4ac0800abf5ad19d2a12caf46f80a873ebba8d",
+    "rechecks": "Step 1: report committed by tabi-shokunin (5fbf5c95, 19:09:15 after last lane commit); SHONEN heading 4x[~]; 8 cited hashes exist and are ancestors of master; jj-lane state ahead=0 behind=0, porcelain empty; prompt sections 1-5 = template modulo placeholders. Instrument sha256 at 47ffeac3 equal freeze.txt (driver 5318780c, verifier 61f43596, harness 33e1bd1b, evaluator 3c3a83dc, claims 828d5537). C1 re-measured: before exit 2; (a) counter clean 87/[]; (b) R71Exec1 counter.json verdict findings event-leg-domain, its receipt has 1 event labelled end (seq 575 zero-delta wheel), scored receipt none -> leg (b) false, honest stop; (c) battery 107/107 iso 98 gap [], kill power 87/87. C2 evidence-verified: pre-r70 and r70-bytes falsePass 4 holds:false -> L1 and R71Exec2 falsePass 0 notLanded 0 holds:true, row classes as frozen; live profiles predicate true pinSource frozen exit 0; blanket-accept/refuse holds:false, no-run exit 1. SCORECARD diff append-only, no score change. Spot-check: admit knowledge note + rejects default->touch, scaleFactor 0, touch-pinch zooms re-opened against live gitiles S176-S178 (decoded, digests equal staged) and receipt legs: 4/4 agree. S177 quote line 88 present. Census validate exit 0 (W04 only); rows 175->178, knowledge 83->84."
+   },
+   "commit": "tabi-shokunin@47ffeac32b7ba47a9de945c37e4d0f47ba93d36f",
+   "closed_at": "2026-11-06T22:14:01Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest (.ufo/watchdog.log lines 3051/3067): 2026-11-06T18:02:35-03:00 launch tabi round=71 pgid=3100642 driver=hyaku-inline attempt=1; 2026-11-06T19:10:06-03:00 complete tabi round=71; hyaku-inline attempt=1. No step-1 conformance defect. C1 coverage capability chromium-synth-pinch-gesture-linux not verified (leg b red, kill rule, nothing amended; capability withheld); C2 operability verified (falsePass 4->0). Not admitted: rejected-honest-stop. Routed to tabi r72: R1 counter assumes events end in-leg + R71Review1 15 false greens + R71Mut1 24 killing cases + must-accept class; R2 verifier receipt hand-off (:189->:205), process.execPath, NODE_COMPILE_CACHE, harness summary unbound to verifier digest, one attack per layer; R3 S173/S174 scroll-scoped rows cited for pinch; R4 carry r70 R6 (5 missing registry rows, w1-results no per-seat status); R5 carry r70 F1 provenance + R70Review1 FG1-FG16. Operator: SHONEN boxes 2 and 4 look non-author checkable; 1 and 3 need a non-author execution; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
