@@ -118,3 +118,11 @@ Inherited from attempt 1: every committed byte through M (reused after re-verifi
 
 Stale-lane: respawn-per-round driver; no other mission of this lane is open.
 Tool installs: none. Open L0 questions: none.
+
+## Erratum (appended after filing, per Q87; text above unchanged)
+
+`node scripts/round-gate.mjs --round 93 --main-repo /home/vgpnk/Projects/shokunin` (run from the lane) reads
+`COMMIT_CITED_UNRESOLVED cited=10 unresolved=1 [79fa222e]`: `79fa222e` in § Sources & frontier is the
+upstream oh-my-pi commit `79fa222e8390aed3494f4bc6746814e6c74c21cf` that S269 pins
+(github.com/can1357/oh-my-pi), not a lane or fleet commit; the other 9 cited hashes resolve. The gate's
+citation scan does not distinguish external pins — routed to round 94 with M93-5.
