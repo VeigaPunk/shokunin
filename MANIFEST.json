@@ -52573,6 +52573,47 @@
    "notes": "Dispatch digest: 2026-11-05T18:53:23-03:00 launch mori round=99 pgid=1700981 driver=hyaku-inline attempt=1; 2026-11-05T19:40:05-03:00 complete mori round=99; hyaku-inline attempt=1. Step-1 conformance clean (report by lane identity after tip, SHONEN 4 [~] lines, 5 commits ancestors of master, ahead=0, porcelain empty, prompt = template rendering + addendum). Routed: D1 S634 SOURCES row and Gate table still say 17 words (corrections sweep); D2 count-c1 forgeable (QUALITY 212, planned r100, carried); D3 count-c2 accepts passing mention (planned r100, carried); D4 calibration gate at default base 66c5518e prints columns_unchanged=no, re-base or document. SHONEN boxes stay [~] with resolvable pointers; promotion judgment is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 100,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "mori",
+   "lane_round": 100,
+   "lanes": {
+    "mori": "ok"
+   },
+   "lane_rounds": {
+    "mori": 100
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "operability": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-100/mori.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mori-shokunin/corpus/lessons/round-100-verifier-spotcheck.md@7765969c79e6f3df44cce2e303e6a0cf2b054d8b",
+    "rechecks": "Step 1: all 8 cited commits exist and are ancestors of refs/heads/master; ahead=0, porcelain clean, ls-remote==79c673bf at open; report committed by mori-shokunin after the tip; prompt = template + placeholders + hyaku §6; frozen instruments unchanged 9579cff6..79c673bf; landed tool == candidate. C1 re-measured with frozen count-c1.py over git-archive trees: d1bd1b33 23/50 unmet on seeds 10/3/2611; 5e2bcf2c and 79c673bf 50/50 met on seeds 3 and 2611 but 49/50 unmet on seed 10 (C006 '403 token expired (request id r-18429)' -> dead_rate_limit), so the frozen kill rule fires: C1 unmet. Live trial (22 seats dead_error_other->dead_auth) and held-out 14->22/26 were evidence-verified, not re-run. C2 re-measured with count-c2.py: d1bd1b33 unmet uncorrected=7; 5e2bcf2c met; 79c673bf unmet uncorrected=7, because the landing's in-row corrections breached CORPUS rule 2 and were reverted (SOURCES diff = 8 insertions only); the claim was withdrawn. A plain supersession-aware measure shows uncorrected stated counts >=2 (S582, S634) -> 0 via S640-S644, hence calibration improved. Sources: S637 (sha matches pin), S638 and S644 quotes re-found live; rejects (Connect 429->unavailable; S221 re-point) agreed; census mori ok rc0, 50 W04, rows 408->416."
+   },
+   "commit": "mori-shokunin@79c673bfc794c86a4c0b3da81c82f9e904d8413f",
+   "closed_at": "2026-11-06T00:07:38Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-11-05T19:46:04-03:00 launch mori round=100 pgid=2032920 driver=hyaku-inline attempt=1; 2026-11-05T21:01:21-03:00 complete mori round=100; hyaku-inline attempt=1. Honest stop: both frozen claims miss (C1 kill rule on unlucky seeds; C2 met only via a CORPUS rule-2 breach, then withdrawn); no axis harmed at tip. Routed: D1 the 429/402 substring rule misfiles real auth deaths whose ids hold those digits (live tool defect, reproduced), and controls ran on a single seed; D2 receipt hygiene (final-c1.txt header names 6a1fc283 vs the report's dc9c9fed column; appendonly-final.txt interleaves two runs); D3 S641/S643 duplicate r72 corrections S586/S587 (W04 noise), so the next counter must be supersession-aware; D4 the r99 closure's 'edit in place' advice contradicted CORPUS rule 2 and is withdrawn by this closure; carried r99 D3/D4, G1-G5, intermediate-commit E11. SHONEN boxes stay [~] with resolvable pointers; promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
