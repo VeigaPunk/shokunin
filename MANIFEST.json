@@ -53079,6 +53079,50 @@
    "notes": "dispatch 2026-11-05T22:27:10-03:00 launch kengaku round=96 pgid=4001070 driver=hyaku-inline attempt=1; 2026-11-05T23:31:12-03:00 lane-dead-no-report kengaku round=96 (attempt 1 no landed report); 2026-11-05T23:31:14-03:00 launch kengaku round=96 pgid=2172327 driver=hyaku-inline attempt=2; complete 2026-11-06T00:55:41-03:00 hyaku-inline attempt=2. Report 9b437fdc by lane identity 00:54:56 after lane tip 00:52:54; lane ahead=0 clean. Defects (status-neutral): attempt-1 death and 7/13 w1 seats lost (r1 residual 4 seats; MutTesterC2/ScribeLesson not re-run); C commit landed bytes outside the frozen candidate-bytes table (M5); round96-c1-replay and round96-standing-battery registered as gates with self-test none, battery nondeterministic (M2); fleet-root .pytest_cache misroot relocated (M7). Routed to r97: successor counters/waiver for permanent r93-r95 freeze-integrity break (Q79); 7 standing reds (r79 mteb-retrieve subject, r90-r95 absolute L7); make battery deterministic or register as probe (Q80); add gate self-tests; C1 missing wrong-pass states + L6 narrowed to pinned triples; pre-push byte-scope check vs F table; carried R95-C1 reward scope, R95-C2 held-out false gates, round-92 items, W-4. SHONEN 4/4 [~] with pointers; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 97,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "kengaku",
+   "lane_round": 97,
+   "lanes": {
+    "kengaku": "ok"
+   },
+   "lane_rounds": {
+    "kengaku": 97
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "novelty": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "fifteenth offline TB2 grader replay: sparql-university @ 2fd12b88 (plans/round97_sparql_probe.py + plans/round97_c1_replay.py, grader venv py3.13/rdflib 7.1.4/pytest 8.4.1 in clearenv no-network bwrap; 18 cases x 4 legs, mismatches 0; PREDICATE R97-C1 pass at f1083da6; scope: test_outputs.py reward, not CTRF reporting or the prebuilt image)"
+   ],
+   "report": ".ufo/reports/round-97/kengaku.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kengaku-shokunin/corpus/lessons/round-97-verifier-spotcheck.md@49a1c4f1097db7c923da56d4213cad75772ed1c0",
+    "rechecks": "C1 re-measured: jq over plans/grader-population-ledger.json executed 40->41, file-artifact 31->32/76 (BASE/T/HEAD); 13 frozen sha256 lines match at T and HEAD; replay verdict evidence-verified (L1/c1-tip.txt PREDICATE R97-C1 pass), not re-executed. C2 re-measured with an independent registry census: gate rows w/o self-test 44->0 (two loose-grep hits read and ruled false positives), 44 kind-only flips, 0 scripts changed, rows 168->171; not admitted because the frozen ROWS 171 line embeds C1's two rows (controls/c2-c2only.txt prints 169) and Q80 two prefreeze runs missing. Spot-check S317 admit / S325, S324 reject: all agree, live sha/quote match; S317 semantics reproduced with rdflib 7.1.4 (hardcoded VALUES + duplicate + extra column passes). Census validate rc 0 (30 pre-existing W04)."
+   },
+   "commit": "kengaku-shokunin@3d52d89e25da2719e1138a95aa41644e83add422",
+   "closed_at": "2026-11-06T11:00:22Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-06T00:59:17-03:00 launch kengaku round=97 pgid=3888144 driver=hyaku-inline attempt=1; 2026-11-06T01:32:12-03:00 complete kengaku round=97; hyaku-inline attempt=1. Honest stop: C1 (coverage, sparql-university replay) verified; C2 (calibration, registry gate->probe 44->0) effect real and harmless but the declared predicate is not causally separable from C1 (exact ROWS 171 vs c2-only 169) and Q80 prefreeze double-run missed, so not admitted; lane self-verdict agrees. Conformance: report by lane identity aadd10fc; 7 cited hashes ancestors of master; lane ahead=0; untracked orchestrator markers .ufo/waves/round-97/w1.ready{,.dispatched} (not lane work); fleet prompt committed by kengaku-shokunin (2083f14b), attribution note only. Routed: anchor-digest-check 80->86 nested-capture binding; claim-local predicates + Q80 double runs; MutC2 exact-block forgery and add_parser survivors; S318/S323 wording corrections carried. SHONEN boxes [~] look non-author checkable; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
