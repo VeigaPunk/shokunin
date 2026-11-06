@@ -52866,6 +52866,48 @@
    "notes": "dispatch 2026-11-05T19:36:58-03:00 launch kengaku round=95 pgid=1142270 driver=hyaku-inline attempt=1; complete 2026-11-05T22:22:02-03:00 hyaku-inline attempt=1; report d1adbeae by lane identity 22:15:12 after lane tip 22:13:20; lane ahead=0 clean. Defects (status-neutral): C-commit mteb-retrieve subject repair broke round87 counter at T (M2, wave-caught), reverted in 1c00331c so round79 gate DEFECTS n=1 at tip (two gates disagree on one cell); wrong-cwd measurement recurred (M1); round94_c1_replay L7 absolute pin red at T; seat env receipt held live credentials, redacted by L1 before commit (verified, only FAKE_ canaries remain). Routed to r96: r79/r87 mteb-retrieve re-pin + Q78; key C1 L7 to member set; C1 reward scope (repo suite, site-packages and .git oracle copies, rm/git-checkout reward-1 cases); C2 held-out false gates (>=8 pass 5/5) as controls, behavioural W3/W5, census parses RED reason, 14 surviving counter mutants, M10 exclusion; SP1 --clearenv and no raw env dumps; cwd refusal in counters; carried W-4 and r92 items; docker image ~695MB left on host. SHONEN 4 boxes [~]; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 95,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "kotoba",
+   "lane_round": 95,
+   "lanes": {
+    "kotoba": "ok"
+   },
+   "lane_rounds": {
+    "kotoba": 95
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "consistency": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-95/kotoba.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kotoba-shokunin/corpus/lessons/round-95-verifier-spotcheck.md@0f66016a3b35cf1e25c67caf8cf371996805cbb8",
+    "rechecks": "Conformance: report committed by kotoba-shokunin (494cb53d, 23:50:05-03:00) after last lane commit and before complete line; SHONEN 4/4 [~]; 2d886a91/673d1e2e/d1144fab/f6a9f76a/75789064 exist and are ancestors of master; jj-lane state ahead=0 behind=0, porcelain empty, ls-remote = 75789064 before closure; prompt carries template contract (ba8c21b1, 5c1b1798); counter+plan unchanged since freeze (empty diff, sha256 d6ae74af at both). C1 re-measured: one hunk inside self_test (+67), assertion-call count 44 -> 52 (+8 = reported 38 -> 46), all new arms behavioural (run_evaluate/kill_set_check); evidence-verified counter 0/3 UNMET -> 3/3 MET (run errors 0), decoys 3/3+3/3, r94c1 positive MET, f6 crash world UNMET with run errors 1, self-test 0 failures/46 at d1144fab. No-harm evidence-verified: r93/r94 counters MET, r92 controls 2/2, registry 74/74, floors 176 assertions, tip battery 3/6 vs 2/6 with identical three base reds; SKILL/PROVINCE/SHONEN unchanged; SCORECARD append-only. Spot-check: S270 admit agree (200, 336978 B, sha256 f9510cd7 match, 10-word quote at lines 2413-2414); Ant reject agree with reason overstated (separate haltonerror/errorproperty exist). Census validate rc 0, 34 W04, 0 E."
+   },
+   "commit": "kotoba-shokunin@7578906425d06e3124d8ea1c652883d4f4e89bef",
+   "closed_at": "2026-11-06T02:55:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-05T21:59:23-03:00 launch kotoba round=95 pgid=2224233 driver=hyaku-inline attempt=1; 2026-11-05T23:31:19-03:00 lane-dead-no-report kotoba round=95; retry same round (attempt=1 ended without a landed report); 2026-11-05T23:31:21-03:00 launch kotoba round=95 pgid=2174434 driver=hyaku-inline attempt=2; 2026-11-05T23:50:40-03:00 complete kotoba round=95; hyaku-inline attempt=2. One v1 wave r95-w1, 12 seats (spawn 12); results.json output=null for all seats (orchestrator restart), seat files read instead; MutTesterCounter95 incomplete (no verdicts), salvaged matrix committed uncounted. Defects (status-neutral): prompt commits ba8c21b1/5c1b1798 authored by lane identity (attribution); three tip-battery gates red-carry from base (verify_skill_checklist, verify_corpus_integrity, verify_corpus_independent). Routed to round 96: amend Ant reject reason (haltonerror/errorproperty are separate; merge scoped to haltonfailure); counter control gaps M5/M6 false MET, M2/M7/M8 unexposed; m08 survivor and N4; g2/g3/f8 forgery worlds as committed controls; counter exit ladder F1/F3; predicate-flipping crash world (A2); tip battery flat 280 s floors cap. SHONEN boxes all [~] and depend on lane judgement of SKILL.md; not flagged for promotion.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
