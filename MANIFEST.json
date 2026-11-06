@@ -52696,6 +52696,49 @@
    "notes": "Driver digest (.ufo/watchdog.log 2944/2953): 2026-11-05T19:38:33-03:00 launch kaidoku round=100 pgid=1163466 driver=hyaku-inline attempt=1; 2026-11-05T21:49:33-03:00 complete kaidoku round=100; hyaku-inline attempt=1. Conformance defects: none. Routed to kaidoku: (1) C1 battery admits CriticC1 pristine-cache and ReviewerCounter F6 filename-keyed forgeries, bound branch unreached (MutationC1) - commit as red fixtures before next C1-family freeze; (2) C2 counter limits L1-L7 (CriticC2); (3) ExecReproC2 F1-F5 out-of-population registry defects incl. two silently red round-82 self-tests; (4) round-97 routed defects 2-5 and 7 still open; (5) cite S327 quote lines (336-338) consistently vs function block 334-338. Operator note: SHONEN boxes 2 and 3 look non-author checkable (this closure executed the r100 repair from committed bytes + entry rule on a held-out carrier); promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 100,
+   "date": "2026-11-05",
+   "type": "closure",
+   "lane": "revenger",
+   "lane_round": 100,
+   "lanes": {
+    "revenger": "ok"
+   },
+   "lane_rounds": {
+    "revenger": 100
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "apk-manifest-cross-decode"
+   ],
+   "report": ".ufo/reports/round-100/revenger.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "revenger-shokunin/corpus/lessons/round-100-verifier-spotcheck.md@654d09298960d0886274d37a0492b8e6d98b2c96",
+    "rechecks": "step1: report attributed revenger-shokunin (d389aa7f, 22:05:32-03:00, after tip cdb0774b 22:05:08, before 22:05:56 completion); prompt 4bdc8531 carries contract; SHONEN heading 4 [~] lines = 4 boxes; 0350014d/05e854ce/173abe91/a5e91dd8/cdb0774b all commits and ancestors of main; jj-lane state ahead=0 behind=0 tracked=0 untracked=0; porcelain empty; no deletions in range. Re-measured: capability rows 4@0350014d -> 5@a5e91dd8; SOURCES rows 507 -> 509; instruments+claims.md unchanged since freeze (sha8 8e2eafc8/3acdd3a9/b2c9d189/479f690e/c3b754aa); independent androguard axml + apktool d -s on apk-r65 agree with truth.json (com.example.r65, 1, 1.0); census validate rc0 21xW01 13xW04 0 E. Evidence-verified (lane instruments not executed): C1 v8 12/12 -> v9 R100_ACCEPTED=0/12 controls ok stub ok rc0, noreg selftest legs=128 / forge8 0/12 / c14r99 14/15, per-vector rc agrees; fresh r100 holdout 7/8 v8 and v9 (dev-set bound); C2 probe pass rc0, controls stub/flip refused. Spot-check: S508, S509 admits agree (bytes+quotes re-opened, 1 hit each); rejects agree: apktool.org/documentation stub, -s quote (404s), unconditional C1_DERIV_RERUN."
+   },
+   "commit": "revenger-shokunin@cdb0774b0bbde2797f2e3a1ad660487a7bbccfbf",
+   "closed_at": "2026-11-06T01:09:42Z",
+   "campaign": "hyaku",
+   "notes": "driver digest: 2026-11-05T19:38:35-03:00 launch revenger round=100 pgid=1164174 driver=hyaku-inline attempt=1; 2026-11-05T22:05:56-03:00 complete revenger round=100; hyaku-inline attempt=1. C1 calibration verified as pre-registered development-set result (no generalization on fresh r100 holdout). C2 verified on frozen predicate/kill rule; M23 surface sentence (probe cites S508/S509) half unmet, disclosed. Defects routed r101: no r100 search-log line in SOURCES.md and no explicit Gate rejects list (12 bodies opened, 2 rowed); probe blind to digest-keyed PATH shim (randomize tamper, decoder identity); probe cites S508/S509; controls_c2.sh enforce CAP_FIXTURE_SHA=fail + surviving mutants as controls; forge_reach9 rc/verdict agreement; v10 legs for 7 fresh classes + C1_DERIV_RERUN declaration-strip evasion; carried r99 items. SHONEN boxes 2 and 4 look non-author checkable (operator-owned promotion).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
