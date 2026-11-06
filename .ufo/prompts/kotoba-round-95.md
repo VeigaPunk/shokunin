@@ -329,7 +329,7 @@ Phase-1 directives still bind: "train all shokunins to at least round 100"; "com
 every round done"; "do it inline with multiple swarms of subagents".
 
 You are an in-session **L1 lane subagent** dispatched by the hyaku orchestrator (the operator's
-parent omp session) for exactly ONE steered round: **kotoba round 95** (attempt 1;
+parent omp session) for exactly ONE steered round: **kotoba round 95** (attempt 2;
 campaign target: round 100). Your lane's place in the session follows the goal file (lane
 order and blocks: `.scratch/goal-20261025-hyaku-run7.md`); the orchestrator dispatches your lane's
 next round only after this one lands and its non-author closure is written. Work this round only
@@ -898,3 +898,7 @@ Ops note 2026-11-05 (orchestrator, not an operator amendment): six m_zfl seats (
 Ops note 2026-11-05 (orchestrator): more m_zfl seats died on opencode-go/glm-5.3-flash 402 (insufficient funds) and amr/glm-5.3-flash 402 (quota until 2026-11-06T22:28Z); both are terminal errors. Removed them from the zai/glm-5.3-flashx and m_zfl fallback chains, so zai 429 now falls straight to devin/glm-5-3-flash-1m. Role map unchanged.
 
 Amendment 37 (operator, 2026-11-05, verbatim: "you can use m_cru as the executor for this session only (make it temporary if you must)"): TEMPORARY - executor "@m_flash" -> "@m_cru" for the remainder of run 15 only. REVERT at session wrap-up to executor "@m_flash" (Amendment 36 state); backup config.yml.pre-temp-executor-m_cru-20261105 holds the pre-change file. Smoke ExecCruSmoke2 route recorded in its session jsonl.
+
+Amendment 38 (operator, 2026-11-05, verbatim: "i want you to tag and 'graduate' all of the shokunins that have reached round 100 or more into 'Jin'i-ryu' just tag any shokunin commit over 100 or any that reach 100 into the future like so." and "you can stop at the round 100 mark for training purposes, also"): new scripts/hyaku/jini-ryu-tag.py tags, in each lane repo, an annotated lane-identity tag Jin'i-ryu/r<N> at the last commit of every round N >= 100 and Jin'i-ryu/graduated at the first such round, pushed to the lane origin. Backfill tagged audio r101, game-dev-2d r101-r105, game-dev-3d r108, kaidoku r100, lore r100-r103, mori r100 (19 tags, rc 0). The run-15 kernel runs the tagger after every closure of a round >= 100. Training stops at round 100: lanes park once next round > 100.
+
+Amendment 39 (operator, 2026-11-05, verbatim: "just so you understand, jin'yi'riu tagged shokunins will absorb and assimilate all the considerthese that will be uploaded on the repo, for future training and understanding of how and where to fetch quality curation sources and build their own corpus of knowledge;"): role of the Jin'i-ryu school. Lanes carrying the Jin'i-ryu/graduated tag are the absorbers of every considerthese/ file uploaded to the repo: they assimilate those proposals as training material on how and where to fetch quality curation sources and how to build their own knowledge corpus. Orchestrator note: no assimilation mechanism is built yet; this records intent so future rounds and dispatch prompts route considerthese work to graduated lanes.
