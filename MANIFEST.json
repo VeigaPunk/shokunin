@@ -54782,6 +54782,45 @@
    "notes": "Dispatch/complete digest: 2026-11-06T18:42:33-03:00 launch kasegi round=83 pgid=3389712 driver=hyaku-inline attempt=1; 2026-11-06T20:22:53-03:00 lane-dead-no-report kasegi round=83; retry same round (attempt=1: L1 ended without a landed report); 2026-11-06T20:22:55-03:00 launch kasegi round=83 pgid=1593023 driver=hyaku-inline attempt=2; 2026-11-06T20:27:55-03:00 complete kasegi round=83; hyaku-inline attempt=2. Step 1 conformant: report by lane identity (cf84104f, after landing 795f24da), SHONEN heading 4 lines, base/freeze/landing ancestors of master, ahead=0, porcelain clean, prompt carries template contract, frozen bytes unchanged. Defects (status-neutral): attempt 1 died mid-receipt, attempt 2 re-verified inherited tree without changing frozen bytes; landing receipt measured over pre-commit worktree, not the cited commit; fleet dispatch commit e963bd03 (kasegi identity) bundles other lanes' prompts/reports/MANIFEST (driver commit scope, operator side); undeclared calibration move-log row (SKILL recheck-cwd row correction) verified true but not credited. Claim prose bounded: F12/F13 pass the r83 counter and P3 reads a target-controlled summary line (disclosed M83-1); G6 lexical, admitted F57 untied=1 under r83 (disclosed M83-2/R134). Routed to r84: (1) rename-based D3 or declare F12/F13 + selftest rows; (2) P3 per-row/target_sha256 limb; (3) counter selftest for extra (M09); (4) non-lexical G6 per R134 and F57 G6 status; (5) MutEntryGate 8/16 survivors, MutC1Hunt r83 gaps; (6) comment_lines f-string fix; (7) receipts over cited commit; (8) r82 defects 4 (partial), 5, 7 carried. SHONEN: three [~], one [ ]; none fully checkable by a non-author; no promotion signal.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 93,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 93,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 93
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "seat-route v2 (contract kumitate-seat-route-v2) — v1 plus the retry fields omp persists: error_attempts (renamed from errors), recovered_attempts, superseded_by, upstream, resolved, chain, flag_hops, revert_hops; frozen counter C93_C1 HELD agree=176/176 x2 (A 61/61, F 16/16, H 74/74, W 25/25) + RUNTIME CLEAN at M 2f8475cd, selftest 63/63, mutants M01/M02 killed; caveat M93-3 (counter runtime clause and H provenance evadable)"
+   ],
+   "report": ".ufo/reports/round-93/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-93-verifier-spotcheck.md@a6e4da96e828e900150c08d0a801266a53caab63",
+    "rechecks": "C1 re-measured over committed bytes: seat-route.mjs sha256 cd7ee03d (36277d49) -> 7273ad2b (2f8475cd = 60bfb976 = SCORECARD pin = receipts tool_sha256); v2 field greps 0 -> 16/11/11/8/10/10, contract v1->v2, selftest arms 37 -> 63; kill (d) byte grep 0/0/0/0, (f) freeze 20:53:14Z < 21:40Z, plan/probe/controls diff since freeze empty, fixtures 16, r93 wave 13 seats; F93Flags derived by jq = plan definition = shipped code lines 308-309 (flag 2, revert 3); shipped tool has no delegation path (spawnSync self-only in selftest). Evidence-verified, not executed: probe1/probe2 HELD 176/176 + RUNTIME CLEAN, 15 pre-data controls (only positive HELD), survivor-remut 3/3, battery-final selftest 63/63 PROXY MATCH README_MAP CLEAN SOURCES_CHECK CLEAN, harm battery INVARIANTS PASS n=61. SCORECARD diff: no axis integer moved. SOURCES 206 -> 208; census kumitate ok exit 0. Spot-check 2 admits (knowledge on S269: upstream sha 1059a80e re-fetched, quotes at 939-940 and 1061; Q87: r92 numstat 4/4) + 2 rejects (runtime clause x7 HELD+CLEAN; H forge2 HELD 60/60) all agree; S269 quote 16 words verbatim."
+   },
+   "commit": "kumitate-shokunin@60bfb976ead1d4ab2c36c8a61b82c8b9c3f7fa39",
+   "closed_at": "2026-11-06T23:32:29Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-11-06T17:46:35-03:00 launch attempt=1 pgid=2944909; 20:22:56 lane-dead-no-report (attempt 1 ended without report: FAIL report_of); 20:22:58 launch attempt=2 pgid=1594263; 20:28:29 complete attempt=2. Step 1: report filed 3e6a90bb + appended erratum 73bac98c (deleted 0) by kumitate-shokunin; SHONEN 4 lines [~]; cited commits b6204949/3b82a316/2f8475cd/60bfb976 ancestors of master; cd7ee03d is a tool sha, 79fa222e the upstream S269 pin; lane ahead=0, porcelain empty; prompt sections 1-5 match template modulo placeholders. Defects (status-neutral, routed): lane round-gate COMMIT_CITED_UNRESOLVED on external pin 79fa222e; attempt-1 death without report (M93-5); K93Scout no trailer (M93-4); counter runtime clause/H provenance evadable (M93-3, r94 pre-reg 1); retry-fallback-chains.ts used without SOURCES row (M93-2). Lane self-graded discernment unchanged; closure grades improved (spot-check agrees on admits and rejects). Operator: SHONEN boxes look checkable by a non-author; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
