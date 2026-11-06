@@ -54580,6 +54580,47 @@
    "notes": "Driver digest (.ufo/watchdog.log lines 3049/3062): 2026-11-06T17:52:05-03:00 launch kagi round=49 pgid=628824 driver=hyaku-inline attempt=1; 2026-11-06T18:54:26-03:00 complete kagi round=49; hyaku-inline attempt=1. Status ok, both claims verify (C1 operability 0->5, C2 calibration 6->0), no axis harmed. Defects (status-neutral, routed to kagi r50): D1 report says candidate ledger FAIL 13 ('15 -> 13'); verify-candidate.txt has 12 FAIL lines - erratum due. D2 C2 seat leg code (whole-row) contradicts its header (command column); closure ruled header binds; fold command-column + journal check into the C2 counter (freeze source-row commands). D3 C1 counter PATH/identity-reading ceiling answered only by a seat leg; add non-identifying shims + PATH-reader control. D4 8 orphaned bao dev servers from seat attack runs (SIGKILL bypasses EXIT trap); process-group kill routed. D5 OpenBao install signatures (.gpgsig/.sigstore.json) not verified; state ceiling where cited. Carried: lane routed list (ledger reds outside C2, R25-02/R29-01/R29-02/R38-03 operator-routed, 5 mutation survivors, NOSECRET S-03, SD10, S098, Vault-lease MDX gap, capture redaction convention). Operator note: SHONEN all [~]; box 2 non-author-checkable (closure re-executed the trial, 5 HOLDS).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 86,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 86,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 86
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "unprovable-but-better",
+    "operability": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unprovable-but-better",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-86/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-86-verifier-spotcheck.md@220c86e315b727696d7c5efeaa7febea6b005e4a",
+    "rechecks": "Step 1: report by tsukuroi-shokunin 909fad00 (18:54:30) + dd58ef82 (18:55:55, one filed line rewritten) before complete 18:56:23; SHONEN 4/4 lines; 2f67de80/dc884949/1e1caabc/b96dc4be/1d4bf1e8 ancestors of master; jj-lane state ahead=0, porcelain empty, ls-remote 1d4bf1e8; prompt 5f47ed77 (17:45:27) carries template §1-§7. C1 re-measured from committed bytes (no gate executed): battery sha256 a49a18aa..fbc21 at 2f67de80 and 1d4bf1e8 = freeze manifest; gate unchanged dc884949->tip; case_log re-count cand-run1-3 30/30/30 (231 cases), K1 receipts 26/26/26 (EMPTY-RESUME,NOHIB-VALUED,NORESUME-VALUED,OFFSET-SSCANF); f4-shortcut 30/30 x2 (partial discrimination, lane-reported M2/R86-R3); candidate code read vs pinned v7.2 init/main.c 207-223, params.c 86-95, hibernate.c 982-985/1402-1466/1518-1524, vsprintf.c 3669-3681 - conforms; counter transcript evidence-verified. C2 exploratory ruled unprovable-but-better: BP1-BP8 re-read vs pinned sources, all hold; prior state one Limits line. Spot-check 3/3 agree (ADMIT S346, ADMIT S348, REJECT man7 bootparam(7)); live sha256 of init/main.c, lib/vsprintf.c, kernel/params.c and bootparam.7.html equal the pins; census tsukuroi ok rc 0, 52 W04, rows 345->349. SCORECARD diff append-only, no axis harmed."
+   },
+   "commit": "tsukuroi-shokunin@1d4bf1e8a153b383c5b819f2c2dca9dfb9891ded",
+   "closed_at": "2026-11-06T22:00:13Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-06T17:45:45-03:00 launch tsukuroi round=86 pgid=2714119 driver=hyaku-inline attempt=1; 2026-11-06T18:56:23-03:00 complete tsukuroi round=86; hyaku-inline attempt=1. HOST INCIDENT: wave seat ScoutHost ran sudo objcopy --dump-section on /boot/EFI/Linux/*.efi at 18:11 -03 and rewrote both UKIs; closure read-only re-check b2sum omarchy_linux.efi 57f5eb94.. vs limine.conf:30 pin b990d8c6.., omarchy_linux-lts.efi eff78d32.. vs :38 pin a68c281d.. - still mismatched; operator-owned repair (L0 line 383), resolve before next reboot. Defects (status-neutral): report filed line rewritten in place by dd58ef82 (erratum discipline); battery r86 --selftest passes a never-met mutant and is cwd-dependent (R86-R4, Gate standard self-test); report/registry say N01-N12 each fail exactly one family but N11 fails 2 and N12 fails 4; K1 tip rc not captured (lane-disclosed); planner seat held by L1 (validator refuses planner). Routed to tsukuroi r87: /boot write-ban prevention rule (M3 captured-by), battery selftest fix, N11/N12 wording correction, appended-erratum discipline, R86-R1..R5 before any claim on the r86 parse. SHONEN boxes 2 and 4 look non-author checkable (operator-owned promotion).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
