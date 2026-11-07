@@ -55426,6 +55426,44 @@
    "notes": "Dispatch digest: 2026-11-06T22:02:33-03:00 launch souji round=76 pgid=4163885 driver=hyaku-inline attempt=1; 2026-11-06T22:44:12-03:00 complete souji round=76; hyaku-inline attempt=1. Report c2b14741 by souji-shokunin at 22:43:46 (after lane tip 22:42:51, before complete). Conformance: all pass (12 cited commits ancestors of master, jj-lane state ahead=0 tracked=0 untracked=0, porcelain empty, prompt template-faithful). Routed to r77: (1) domain-trial receipt command= is a scratch trial.sh with no bound digest; committed probes/domain-trial.sh (a884ece3) asserted not bound; (2) domain trial graded the report before its final-hash fill-in (disclosed) - run over filed bytes or record their digest; (3) frozen-instrument kill power: S76MutGate M09 one-path threshold, S76MutTally K03/K04 exit-code-only binding counter, filename-separable C2 population (lane r77 a/b); (4) S76Sentinel MEDIUM-2 gate timeout/FIFO hang and r75 routed defect 2 core.excludesFile arm still open (lane r77 a). Sibling note (report only): untracked .jj/.gitignore in sibling lanes (S76Sentinel LOW-2). SHONEN: 4 boxes [~] with non-author-checkable pointers; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 86,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 86,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 86
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth:verifiability": "improved",
+    "coverage": "unchanged",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "unprovable-but-better",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-86/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-86-verifier-spotcheck.md@cd1f568a6be2656b5f5dc479eb90ef99b91131b5",
+    "rechecks": "C1 re-measured over committed bytes (lane meter not executed): knowledge full-path snapshot citations 80->277 distinct, all resolving with anchors in range at landing fdb5f4af and tip; 376 occurrences repointed, totals conserved; repair-map sha256 dd40455a = frozen, 203 keys; freeze->landing touches only corpus/knowledge (14 files +292/-292); P2 10/10 at landing, 8/10 at tip (S122/manifest redacted); meter receipt 398/1721->596/1716 evidence-verified, tip 596/1720 after 4-key revert e73c1f94. C2 evidence-verified as killed (frozen bytes E1/E2 FAIL rc 1; redacted post-freeze rc 0, not admission); credential shape git grep 2 files at freeze, 0 at tip. Spot-check: S123 admit agree, S122 admit agree (live re-open), IBB 80/20 reject agree (arquivo.pt: absent 2023-02-04/2023-08-02/2024-01-25, present 2024-07-27/2024-08-13); S123 SOURCES row quote 16 words; census validate rc 0 (6 inherited W04)."
+   },
+   "commit": "kasegi-shokunin@0299cb279cb56431e839557b7ce26cafa3be449e",
+   "closed_at": "2026-11-07T01:50:29Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-11-06T21:55:50-03:00 launch kasegi round=86 pgid=2228949 driver=hyaku-inline attempt=1; 2026-11-06T22:39:03-03:00 complete kasegi round=86; hyaku-inline attempt=1. Step 1 clean: report fc8671e4 and prompt 05e2e48b by lane identity, SHONEN 4 lines [~], 7/7 cited commits ancestors of master, ahead=0, porcelain empty, prompt carries template contract. Not admitted: C2 killed on its frozen rule (honest stop); C1 verified on frozen predicates at landing with qualifier (4/203 keys were quoted manifest fields, tip 596/1720). No axis harmed. Credential incident: freeze 252df0c9 and r85 receipt hold a HackerOne-issued AWS STS presigned-URL token (expiry 2026-11-07T01:58:29Z) in a PUBLIC repo, unexpired at closure; tip redacted, history unchanged, L0 filed; operator decides rewrite. Routed: (1) committed pre-commit capture secret scan with self-test; (2) SOURCES S122 scope cell edited in place (CORPUS rule 2); (3) reject-reason date 2023-05-17 vs S122 2023-05-23/2023-06-25; (4) re-pin redacted bytes, exclude quoted fields in r87 re-freeze; (5) 33 map keys still bare in prose beside repointed form; (6) carried E0 label-only binding, stale census of record, empty w1-results.json. Trend disagreement: expansion graded unprovable-but-better (no admitted knowledge/ entry, CORPUS rule 4) vs lane improved. SHONEN boxes 1-3 look non-author checkable; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
