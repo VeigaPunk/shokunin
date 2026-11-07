@@ -56399,6 +56399,46 @@
    "notes": "watchdog digest: 2026-11-07T03:54:04-03:00 launch kasegi round=90 pgid=2883912 driver=hyaku-inline attempt=1; 2026-11-07T04:39:58-03:00 complete kasegi round=90; hyaku-inline attempt=1. Conformance: report a34464ab by lane identity, SHONEN 4 lines [~]; 8 cited hashes ancestors of master; jj-lane state ahead=0 behind=0, porcelain clean; prompt carries template sections. Closure-side deviation: lane-registered source-recheck.py was invoked read-only as a cross-check (not relied on). Fleet-root untracked f.txt (mtime 04:40:38) not attributed to kasegi. Routed: (1) C1 completeness limb; (2) C2 counter unbound clauses line=/whole-bytes/--kind text/imported; (3) missing explicit --allow loads empty; (4) pre-existing file:// status=None crash (M90-2/C2-F6); (5) carried r89 items: M89-2/3 scan counter successor, r140-check 4-col, composite token :457, ReviewC1Sites round-91 labels; (6) ReviewC2Gate mktemp /tmp seat hygiene; (7) sibling credential material operator-owned. Operator: SHONEN boxes look checkable by a non-author promotion review (operator-owned).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 94,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 94,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 94
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "GLib 2.90.1 filename-only content-type guess (tools/mado-mimeglob.py, read-only): MIME type and uncertain flag g_content_type_guess(name, NULL, 0) gives from mime.cache or globs2/globs, incl. cache-vs-text divergences",
+    "selftest-strength gate now guards tools/mado-xdgmime.py (19 kills, 12/12 checks) and tools/mado-mime.py (27 kills, 17/17 checks)"
+   ],
+   "report": ".ufo/reports/round-94/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-94-verifier-spotcheck.md@4a2af6817024f6ed47084a5217c1825ae247f4fe",
+    "rechecks": "C1 re-measured: own C oracle (g_content_type_guess, installed glib2 2.90.1-1) vs committed tool bytes on 9745 host names + 1510 generated names (cache), 1515 (text-only XDG_DATA_HOME), 3 mixed: 0 differences; tool absent at base; landed sha = frozen pin 65f80a6c. C2 re-measured: 46/46 kills replayed against the tools' own --selftest at 764d083a, every must_fail label fails, 29/29 checks covered; kill-sets absent at base; gate and guarded tools unchanged. Evidence-verified: lane counters TARGET_MET (c1/c2-measured-r94), 91/91 panel, prefreeze controls MISSED, harm-final selftest-strength OK 19/19 27/27. Spot-check 2 admits + 3 rejects agree; S515-S518 re-fetched, digests and quotes match; census mado ok rc 0, W04 57, rows 449->453."
+   },
+   "commit": "mado-shokunin@bcc21fcffafd9d8c7c06b849c41e8bea030b2a1f",
+   "closed_at": "2026-11-07T07:51:33Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-11-07T03:00:40-03:00 launch mado round=94 pgid=2632099 driver=hyaku-inline attempt=1; 2026-11-07T04:46:55-03:00 complete mado round=94; hyaku-inline attempt=1. Step 1 pass: report e3c30566 by mado-shokunin 04:45:32 after last lane commit bcc21fcf 04:45:08; SHONEN 4x[~]; cited hashes ancestors of master; jj-lane state ahead=0, porcelain empty; prompt = template + placeholders (22 lines) + hyaku addendum. Defects (status-neutral): dispatch-evidence commit 5a164538 authored 61 s before the launch line (driver attribution pattern); fleet root untracked f.txt/trail-ids.txt unattributed. Routed to mado r95: mado-mime.py HOME concatenation (M94-1); mimeglob docstring cache-validity citation -> xdgmimecache.c:126-139; kill-sets for mado-mimeglob.py and the gate's own selftest; r93 routed defects 1 (QUALITY 158 instrument) and 3 (portal sec.8 frozen cases) still open; M94-5 apply QUALITY 154 before freezing declarations. SHONEN boxes 2-3 now carry non-author runnable evidence in the spot-check; promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
