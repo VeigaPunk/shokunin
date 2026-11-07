@@ -55024,6 +55024,47 @@
    "notes": "Driver digest (.ufo/watchdog.log): 2026-11-06T18:59:15-03:00 launch kagi round=50 pgid=3787793 driver=hyaku-inline attempt=1; 2026-11-06T20:22:55-03:00 lane-dead-no-report kagi round=50; retry same round; 2026-11-06T20:22:56-03:00 launch kagi round=50 pgid=1593614 driver=hyaku-inline attempt=2; 2026-11-06T21:05:18-03:00 complete kagi round=50; hyaku-inline attempt=2. Status ok, both claims verify (C1 operability 0->3 SIGKILL-orphan-safe OpenBao trial via setpriv --pdeathsig KILL; C2 calibration 10->0 drifted ledger rows), no axis harmed; R36-03 harm introduced in 6963a35 repaired in d4994e3 before landing. Discernment graded improved (lane self-graded unchanged): spot-check agrees on 2 admits + 1 reject, M50-4/M50-1 became grounded QM63/QM62. Defects (status-neutral, routed to kagi r51): D1 R36-01 timing receipt omits the tip; closure measured 0 in 330 s at 23de560 - fix ledger timeout budget under load (R36-01, R11-08). D2 R38-01 expects 8 while operator-routed R38-03 expects located=5 (F3) - ledger self-contradiction. D3 attempt-1 build wave lost 10/12 seat outputs (M50-3), none replaced; no connector/sentinel re-run - re-run sibling scan. D4 c2-final subset verify ends CLAIM_LEDGER FAIL failed=0 verify_rc=1 unexplained - name the finding. D5 carried: F5 lane-status red count, 4 counter mutation survivors, F1 G6 anchoring, F2 note column, r49 D3 shims/PATH-reader control. SHONEN: all [~]; box 2 non-author-checkable (closure re-ran trial 5 HOLDS + SIGKILL safety); box 4 lacks this round's sibling scan; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 74,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 74,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 74
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "unchanged",
+    "operability": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "pre-report gate byte truth (r74)",
+    "row-specific counter witness (r74)"
+   ],
+   "report": ".ufo/reports/round-74/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-74-verifier-spotcheck.md@52d3f07d08422689464598f8be7e2c957fcf0805",
+    "rechecks": "Evidence-verified (no lane gate/counter/selftest executed): C1 c1-after.txt 9/9 match SUMMARY rows=9 mismatches=0 errors=0 EXIT=0 vs K-a mismatches=3 (GF1-3 clean=PASS) EXIT=1, K-b 4 EXIT=1, K-c 1 EXIT=1; c1-at-repair identical; domain trial check-clean=PASS EXIT=0 with bound gate/writer sha256 equal to tip blobs; C2 c2-after-D6/D7/D8 base_unwitnessed=1 x3 with edited rows FWw/FC1/FC2 base_witness=no (r73 counter base_witness=yes, base_unwitnessed=0), D1..D5 1 x5, pristine base_forgeries=15 base_unwitnessed=0 EXIT=0, M08/M14/M15/M17 selftest fail=1/1/2/1 EXIT=1 (before 52/52 EXIT=0), counter selftest 62/62; frozen inputs unchanged since freeze bcdf2d16 (git diff empty). Re-measured: S317 re-fetched HTTP 200 sha256 c8aca940...baa93 equal to row and capture, quote verbatim 23 words; rejected 2194 anchor real but type-field only (agree); SOURCES rows 239->240; sources-census souji ok 86 W04 EXIT=0; SCORECARD diff additions only, no score change; prompt sections 1-5 verbatim to template."
+   },
+   "commit": "souji-shokunin@0e1765a046cdb879df5e6ff242864311226491c0",
+   "closed_at": "2026-11-07T00:18:42Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch: launch 2026-11-06T20:31:52-03:00 souji round=74 pgid=3362356 driver=hyaku-inline attempt=1; complete 21:15:33 attempt=1. Report 0e5f1e82 by souji-shokunin at 21:13:50, SHONEN 4x[~] with resolvable pointers (boxes look checkable by a non-author; promotion is operator-owned). 7 cited lane commits exist and are ancestors of master; jj-lane state ahead=0, porcelain clean. Spot-check agree 2/2 (S317 admit, first S317 anchor reject). Defects routed to r75 (status-neutral): prereg C1 (iii) names the stage-W gate but the domain trial bound the repaired gate (062b6d39 vs stage-W 3162de98) and measured b5e6d514 not the cited tip; evade-R.txt OVER-REFUSAL=1 on n-filemode-config undisclosed in report (mode change under core.fileMode=false; rule or make probe truth mode-aware); lane-routed (a)-(e): builder-derived row witness (X4/M3), X09/X15, gate counter binding writer hash/refusal class, status-trusting tools souji-guard.r9-s18.sh:175 souji-record-agreement.py:351 souji-idx-repair.py, writer M03, Q99 freeze-check grammar, caller PATH/BASH_ENV trust; ignored-untracked forgeries remain a stated gate limit.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
