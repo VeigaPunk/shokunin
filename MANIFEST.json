@@ -56476,6 +56476,49 @@
    "notes": "Driver digest: 2026-11-07T04:17:04-03:00 launch kumitate round=100 pgid=2464492 driver=hyaku-inline attempt=1; 2026-11-07T05:05:45-03:00 complete kumitate round=100; hyaku-inline attempt=1. Report 2d46c25b by kumitate-shokunin at 05:05:17 (before complete); SHONEN 4/4 lines; 7 lane commits dc8b7e4a..034e52b4 all ancestors of master; helper state ahead=0 behind=0 tracked=0 untracked=0; wave w1 12/12 results. Defects routed to r101 (status-neutral): D1 close/battery-final.txt header names rev 4897e20c but graded an uncommitted worktree (rows=219 incl. 173a5314 content) - re-run on committed tip; D2 corpus/QUALITY.md splice artifact before Q94 (broken heading '### Q94` registration...' + a '## Mistakes' M100-1..3 table that belongs in the lesson) - append correction; D3 report and S281 cite cite-sources.mjs:36 / source-capture.mjs:157 (base lines; tip :40/:159). Carried: section scope, census-oracle hash pin, checklist reds, L0 kumitate|round-99 and |round-96. SHONEN boxes 1-3 look non-author checkable from committed evidence; box 4 not assessed (promotion operator-owned).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 76,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 76,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 76
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "chromium-js-dialog-linux"
+   ],
+   "report": ".ufo/reports/round-76/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-76-verifier-spotcheck.md@1320d428f0c0957b46d6969b59c122fd69199331",
+    "rechecks": "Step 1: report committed by tabi-shokunin (f19f674e, committer 05:44:03, after lane tip 05:42:31, before complete 05:44:29); SHONEN heading 1 + 4 [~] lines for 4 boxes; 7/7 cited hashes ancestors of master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0, porcelain empty, ls-remote = 023630d0 at closure start; prompt carries template contract + addendum. Re-measured at a69f9060 -> 023630d0: capability row 0->1, CDP dialog notes 0->1 (source: S202-S206), knowledge 88->89, SOURCES rows 201->207, freeze digests 7/7 OK at tip and frozen files unchanged since 6ea51ce1, prior set 17, census exit 0 / 30 W04, receipt stateAfter matches note. Evidence-verified (not executed): scored exits 0/0/0/0, counter clean 131 findings 0 priors 17; R76Exec1 counter clean 131; battery 251/251 allOk; kill power 131/131 + 56/56 crashed 0 holds; selftest 13/13 exit 0; registry row check-dialog-r76 in SKILL.md. Spot-check: Page.pdl, page_handler.cc, local_dom_window.cc re-opened at tag 155.0.8059.84 (base64-decoded, sha256 + line counts match); 1 admit + 2 rejects agree; S202 and S203 quotes verbatim (19 words). SCORECARD diff append-only."
+   },
+   "commit": "tabi-shokunin@023630d0ecbe300b9925d307fc3933f3e56eacd3",
+   "closed_at": "2026-11-07T08:48:00Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-11-07T03:53:29-03:00 launch tabi round=76 pgid=2782002 driver=hyaku-inline attempt=1; 2026-11-07T05:44:29-03:00 complete tabi round=76; hyaku-inline attempt=1. Defects (status-neutral): 7e792fa3 author date precedes launch (inherited jj change date); prompt committed by tabi-shokunin (a282dfb3, dispatch evidence) as in prior hyaku-inline rounds; integration incident: seat-crafted .json receipts in the walked tree turned the frozen counting command red until 34 files were renamed. Five in-round statement corrections (SCORECARD ## Round 76 Correction 1-5) marked, not predicate legs; calibration unchanged. Routed to r77: (1) limit sentence from the counter's own denominators + add-one-gap battery case (r75 routed defect 5, unclosed twice); (2) prior-set walk robustness and event-log/frame/url binding (R76Review1 F1-F5); (3) GAP_MIN bracket + mutant, collision-free placement on probes, R76Mut1 7 witnesses; (4) captured-by none Mistakes rows need grounded QUALITY criteria or a why-not; (5) enforce seat receipt location in the dispatch contract. SHONEN boxes 2-4 cite non-author-checkable pointers; promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
