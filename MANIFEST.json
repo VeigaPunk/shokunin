@@ -57630,6 +57630,50 @@
    "notes": "Driver digest: 2026-11-07T17:17:59-03:00 launch kasegi round=98 pgid=245383 driver=hyaku-inline attempt=1; 2026-11-07T18:52:33-03:00 complete kasegi round=98; hyaku-inline attempt=1. Report da5eb7ec by kasegi-shokunin, lands after lane tip d00c9ecc (committer 18:51:58 vs 18:51:19); lane pushed, ahead=0; prompt prefix byte-identical to the rendered template (8,379 bytes/140 lines) + hyaku section 6; SHONEN heading with four [~] lines; wave 13/13 settled, 0 dead, attack 8/13. C1 NOT VERIFIED on P1/P2 (P3 stands) - the round is a rejected honest stop; C2 verified on K1-K7. Conformance defects (status-neutral): SCORECARD round-98 'Sources: registry 147 -> 147 (no new row)' and lesson Gate 'Registry 147 -> 147 rows' contradict the actual 147 -> 149; SCORECARD C2 row and lesson Learning still say S140's class against the erratum's superset; the lesson Gate carries no S148/S149 record (URL/access date/<=25-word quote) though the report says it does; the lesson Gate's S140 used-by old->new omits two added paths; the report's LOG bullet pointers (1/2/3/4-5/5) do not resolve to the LOG's 9 bullets; the clean re-scan hits=0 has no committed receipt (my re-scan of the 17 files prints hits=0); the census body is host-dependent (watchdog.log line count) and the dispatch text quotes the base census numbers. Routed to round 99: correct the census 'revision-stable' label/confine ../ per R157; re-pin the harness (d39a1fc8 matches no committed harness); strengthen the check (body/host-line/measured-at/cache attacks pass) and add controls for the 7 surviving mutants; add the S148/S149 Gate records; sweep the stale 147->147 and 'S140's class' mentions; fix the LOG bullet pointers; commit the clean re-scan receipt; state the census body's host-dependence; fix the dispatch numbers. No axis harmed; no promotions; no mints.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 62,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 62,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 62
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "bypass-resistant record grading: the C1 checker tests each token in the asserting position (closed negator set not/no/never/neither/nor/without/none/n't in a 5-token window truncated at ./;/:, the `not only` idiom, I6's superseded-stamp conjunct plus denial clause, I7's fraction<->percentage pairing), so the five round-61 reviewer bypass trees (not withdrawn / no three / not rewritten in place / a denial tail / a swapped 3/16 = 25 % pairing) are rejected while the seven round-61 corrections still resolve and three paraphrase trees stay resolved; counter plans/round-62-c1.sh C1_BYPASS accepted 5 -> 0, population 5; checker selftest 52 -> 75 cases; first-working round 62",
+    "self-witnessing gate counter: the C2 counter's --selftest executes its own aggregation (decide()/shim_count() inside the BEGIN-DECIDE/BEGIN-SHIMS markers), so a constant value=5 mutant and an unconditional shims_ok=5 mutant each fail with named FINDINGs, and its guard reads 0 on a valid-sha256 stub trial that prints no expected observable; counter plans/round-62-c2.sh C2_HARDENED killed 0 -> 3, population 3; measured counter selftest 11 -> 21 cases; first-working round 62"
+   ],
+   "report": ".ufo/reports/round-62/kagi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kagi-shokunin/corpus/lessons/round-62-verifier-spotcheck.md@0c07aab8df64b673a54a5113aebd7f34b622adbc",
+    "rechecks": "Step-1 PASS: report a75118f7 by kagi-shokunin <kagi@shokunin.local>, committer 19:37:42 -03 after lane tip 7a60f1e9 19:37:14 (the 19:04:16 author stamp is the jj change creation, not the filing); SHONEN heading + 4 [~] lines, no [x]; cited 8e5463c7/7b291538/c8407396/8b22c77d/abffaee5/7a60f1e9 and BASE 60b5b7b all exist and are ancestors of refs/heads/master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0, porcelain clean, remote 7a60f1e9; prompt = templates/round-prompt.md rendering + section 6 addendum, round-level items (mission/axes, L2 >=8 in one batched call matching MISSION.md:55-56, commit-then-push, push scope, L0) and the five child-lane items present; wave 14/14 results non-empty, 4 attack seats = 28.57 %. C1 re-measured over committed bytes (checker 1454 -> 1710 lines, negator machinery 0 -> 22 occurrences with the closed set at :205, 5 bypass + 3 paraphrase anchors each count=1, sha256 pins efe676eb/f2afd9b8/16fc5ba6/de5982b7 reproduce at c8407396) and evidence-verified (c1-base.txt accepted=5 guard=0 rc1; candidate.txt accepted=0 guard=1 rc0; grammar battery b3->i3=0 b4->i4=0 b5->i5=0 b6->i6=0 b7->i7=0, base/p3/p4/p5 value=0; selftest 75 cases, counter 8/8, controls 14/14 0 skips). C2 re-measured (decide/shim markers 0 -> 9, 389 -> 478 lines, pins 20614697/b26d4220/93587e6d reproduce) and evidence-verified (c2-base.txt killed=0 guard=0 rc1; candidate.txt killed=3 guard=1 rc0; M-A fails cases=21 failed=6, M-B failed=3, G stub guard=0, real trial value=5 shims=5 vectors=ok/5; selftests 21 and 16 cases). I executed neither counter (Gate standard, Closure consequence). Discernment spot-check: 3 admits (S128 PIT, S129 Stryker, S131 DEEPEN) and 2 rejects (S133 Wikipedia, S134 404) re-opened live, all agree; the S128 SOURCES row re-opened, quote 19 words; census kagi ok rc 0, 134 rows."
+   },
+   "commit": "kagi-shokunin@7a60f1e9c88a8bb7c4c327d010c1244d46a7f920",
+   "closed_at": "2026-11-07T22:43:46Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-07T17:53:52-03:00 launch kagi round=62 pgid=3480442 driver=hyaku-inline attempt=1; 2026-11-07T19:38:22-03:00 complete kagi round=62; hyaku-inline attempt=1. Status ok, admitted: C1 calibration accepted 5 -> 0 (population 5) and C2 operability killed 0 -> 3 (population 3), both verified; no axis harmed (SCORECARD diff shows all six 9 -> 9, controls 14/14, real seal trial unchanged). Conformance defects, status-neutral, routed to round 63: (1) report line counts do not re-derive — checker '1454 -> 1822' and C2 counter '389 -> 520' against committed bytes 1454 -> 1710 and 389 -> 478 (the seat's own grammar.md records 1710); (2) four round-62 gate verdicts (QUOTE_LOCATE located=12, RECHECK_REPLAY clocks=10, SELF_COUNTS claims=63, ADJACENCY_SCOPE breadth_drift=5) have no committed receipt under .ufo/waves/round-62/final/ while release-clock/doc-audit/claims-declared/cells do — routed D5's three round-61 lines are resolved, the class recurs; (3) minor: the report's 75-case parenthetical names 9 of the 23 added cases (grammar.md lists the full set). Carried from the lane's own report and re-flagged: reviewer D-3..D-6, MutC1 GM5/CM2a/CM2b, MutC2 S1/S2, critic D6-D12, the counter scratch-leak class. Wave note: R62Sentinel settled after a progress line and wrote no report (disclosed; the L1 ran the credential-shape scan itself, 0 hits). SHONEN: all four boxes are [~] with resolvable pointers and look fully checkable by a non-author; promotion is operator-owned and no [x] was written.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
