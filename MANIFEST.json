@@ -57541,6 +57541,55 @@
     "type": "closure",
     "date": "2026-11-07"
    }
+  },
+  {
+   "round": 79,
+   "date": "2026-11-07",
+   "type": "closure-correction",
+   "lane": "tabi",
+   "lane_round": 79,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 79
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "chromium-showpicker-linux (capability row first-working round 79, verified)"
+   ],
+   "report": ".ufo/reports/round-79/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-79-verifier-spotcheck.md@e2e12ca58fe2cdbed4aa97af47793b6cfb5a9350",
+    "rechecks": "Correction to the r79 closure timestamps: the closure entry's closed_at 2026-11-07T22:01:00Z (commit 22:00:29Z) and the first correction's 22:02:30Z (commit 22:01:46Z) were future-dated relative to their commits; this row's closed_at is at or before its own commit. No claim, axis, trend or admission change. Spot-check at e2e12ca5 (13/13 freeze pins verified at D f154beef and at HEAD fcb2ff2c)."
+   },
+   "commit": "tabi-shokunin@fcb2ff2cae86aacde816fea109074a9d51f1380a",
+   "closed_at": "2026-11-07T22:02:17Z",
+   "campaign": "hyaku",
+   "notes": "Closure-correction for tabi r79 (supersedes the r79 closure-correction at rounds[1518]): fixes the closed_at timestamps, which were future-dated relative to their commits. Verdict unchanged: admitted; C1 (coverage, capability chromium-showpicker-linux) and C2 (calibration, r78 record drift) verified; coverage improved, calibration unchanged, the other four axes unchanged; trends expansion/quality/discernment improved. Routed defects unchanged (spot-check section 6): fresh record drift in SCORECARD/LOG/SKILL/lesson, dead lesson-proof/kp-run1.json, dead scored/c1-killpower-a.json, dead short hash f154beee, report-lands-last, Gate quote word counts, frozen counter header, C2 scope, integration discipline.",
+   "promotions": [],
+   "minted": [],
+   "supersedes": {
+    "round": 79,
+    "type": "closure-correction",
+    "date": "2026-11-07",
+    "entry": 1518
+   }
   }
  ]
 }
