@@ -56079,6 +56079,46 @@
    "notes": "Driver digest: 2026-11-06T23:53:59-03:00 launch kagi round=53 pgid=454351 driver=hyaku-inline attempt=1; 2026-11-07T02:31:13-03:00 complete kagi round=53; hyaku-inline attempt=1. Defects routed (status-neutral): D1 candidate 36d0a86a shipped S111 anchor date of the wrong entry and a wrong Gate word count, corrected in f914280b (M53-4, M53-6); D2 CLI2.rss rejection kept no receipt; D3 disclosed counter weaknesses (7 C1 + 5 C2 forgeries outside ceilings, mutation kill 5/20 and 3/13, 4 C2 mutants not run) - admission rests on independent re-measurement and live fetch; D4 op-ref-consumption.md:371,397 on-release of op with no op clock while op 2.42.0 is live (routed item 4); D5 self-counts.py summary precedence hides STALE behind POLICY (routed item 2). Operator: SHONEN boxes all [~]; end-to-end clock observation reproducible by a non-author (live feed sha256 matched receipt), boxes look non-author checkable.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 93,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 93,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 93
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "selftest-strength gate: quality/check-selftest-strength.py reports WEAK when a lane gate's passing --selftest assertion is weakened (32 exact-set kills cover 23/23 checks of quality/check-seat-reports.py)",
+    "xdg-desktop-portal 1.22.1 portal key-file bytes (GLib 2.90.1 GKeyFile: per-read UTF-8, VT not whitespace, NUL C-string view, raw name bytes) in tools/mado-portals.py"
+   ],
+   "report": ".ufo/reports/round-93/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-93-verifier-spotcheck.md@a3de997289014e7dbf1d73ae206be1d6f8cdadd0",
+    "rechecks": "C1 re-measured: tools/mado-portals.py d1bd9b9a at 4c6f723f -> e46a861e at 0a85e687/28a97421 = frozen candidate; cases/mutants/oracle/byte-gen pins unchanged since freeze 65dac61b (only harm-r93.sh added); oracle binary e1429fbe, xdg-desktop-portal 1.22.1-2, glib2 2.90.1-1; case composition 366 = 229 round-90 (229/229 identical with labels) + a38 b16 n26 (byte subset 80) + ws42 c7 d8; mutants 75; my own installed-binary probe on 18 hand fixtures: landed 18/18, base 7/15. Evidence-verified counter TARGET_MET 366/366 bytes 80/80 (base 32/80) fresh 120/120 + 60/60 mutants 75/75 at 0a85e687, separability TARGET_MET at 4fd3b292, forgery fails fresh_bytes 50/60. C2 re-measured: instrument absent at base -> gate 2d6f1219 + kill-set 00befb3e = frozen candidates; panel/gate-mutant/r92-counter pins hold; 32 kills' must_fail union covers 23/23 case() labels; kill-set tool_sha256 = tool at 4fd3b292. Evidence-verified TARGET_MET neutralised 23/23 hand 16/16 neutral 6/6 mutants 22/22 do-nothing 0/39 always-OK 0/39 sha-diff neutral 0/6 gate selftest 11/11, separability SETUP_ERROR rc2 at 0a85e687; gates not executed. Harm: SCORECARD append-only; prior tools unchanged; harm-final green (mako line corrected append-only). Spot-check: admit (knowledge entry) agree, rejects (draft VT sentence, portal-impl.c 404) agree; S511-S514 digests and quotes re-opened exact; census mado ok rc0 W04 56 W01 1; SOURCES 445->449."
+   },
+   "commit": "mado-shokunin@28a97421a73d3205851634b0821c8f60ebc414df",
+   "closed_at": "2026-11-07T05:59:47Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-11-07T00:01:27-03:00 launch mado round=93 pgid=2729949 driver=hyaku-inline attempt=1; 2026-11-07T02:52:22-03:00 complete mado round=93; hyaku-inline attempt=1. Step 1: report 68f249b3 by mado-shokunin at 02:51:46 after last lane commit 28a97421 (02:50:34); SHONEN 4x[~]; all cited hashes ancestors of master; jj-lane state ahead=0, porcelain empty; prompt = template with placeholder substitutions + hyaku addendum; cross-domain item present (round-92 routed defect 1 closed). Defects (status-neutral): dispatch-evidence commit 032f6672 under lane identity (driver attribution); harm receipt's first mako line a harness setup error, corrected append-only before landing. Round-92 routed defects 2 and 3 closed by C1 and C2. Routed to mado r94: (1) QUALITY 158 has no instrument; (2) selftest-strength gate wired only for check-seat-reports.py, other lane gates' selftests unguarded; (3) freeze cases for trailing TAB/FF and VT-before-comment (closure probe confirms entry section 8 predictions and tool answers 3/3). Operator: SHONEN boxes 2 and 3 look non-author checkable (closure ran tools/mado-portals.py from --help on 18 fixtures, 18/18 vs the installed binary); nothing written to SHONEN.md.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
