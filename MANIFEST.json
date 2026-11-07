@@ -55550,6 +55550,47 @@
    "notes": "Dispatch digest (.ufo/watchdog.log): 2026-11-06T21:16:12-03:00 launch kama round=92 pgid=3971739 driver=hyaku-inline attempt=1 / 2026-11-06T23:07:44-03:00 complete kama round=92; hyaku-inline attempt=1. Step 1: report c5f46763 by kama-shokunin, SHONEN 4x[~], 14/14 cited hashes ancestors of master, jj-lane state ahead=0 behind=0 tracked=0 untracked=0, porcelain empty, prompt carries template (static=105 missing=0). Defects (status-neutral): terminal pre-report gate red on carried round75-instruments, APPEND_DEBT unaccepted 16->18 (events 95->97); report commit author date 23:05:08 precedes cited tip 23:06:51 (committer 23:07:12); planner seat held by L1. Routed: R1 round75-instruments + 2 new append-debt events; R2 superseding R01/R08 rows under KQ149; R3 C1-class counter able to fail on decision overreach (CR02/MT02/V7); R4 json_array quadratic path (SC02) + C2 counter gaps (CR01, MT01); R5 report author date >= lane tip; R6 RV02 NOTE-1 (R03 wording). SHONEN: boxes 2 and 3 look non-author checkable (closure re-ran both counters from plan text); box 1 after R2; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 89,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 89,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 89
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unchanged",
+    "depth": "unprovable-but-better",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unprovable-but-better",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-89/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-89-verifier-spotcheck.md@c0f91856a5cc4816ae5d075022f16dc6aef0593c",
+    "rechecks": "Step 1: report ea28e55b + amendment 765cca05 by tsukuroi-shokunin; SHONEN 4/4 [~]; cited fba764ca dddc82c6 81f68d00 665408cc 96a582c8 7f3f30b3 all ancestors of master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0, porcelain empty, ls-remote 7f3f30b3; prompt = template + placeholders. C1 evidence-verified (gates not executed): freeze manifest sha256 -c rc0 (76 lines), roster 3 met/62 unmet, 9 run JSONs 3/3 62/62 e0 verdict met, controls r88 battery 46/46/45 and 46/46/46; usage-oracle on frozen counter 3/3 62/62 x3 with 65/65 name hits per run; counter line 211 copies gate under roster basename vs docstring line 24 -> instrument falsified, C1 NOT VERIFIED, operability unchanged. C2 re-measured: absence grep 0 -> 2 files, 8 rows; S361/S362 re-fetched byte-identical; UF1-UF7 quotes/anchors verified in pinned uri.c/chainload.c/panic.s2.c/menu.c/config.c; limine 12.9.4-1 installed -> unprovable-but-better. SCORECARD append-only, axes unchanged; knowledge no removed lines; census rc0 52 W04 tsukuroi ok, SOURCES 360->363. Spot-check: S361 admit agree, S362 admit agree, trunk reject agree (trunk uri.c differs, BLAKE3)."
+   },
+   "commit": "tsukuroi-shokunin@7f3f30b3898adf77af1035608621ffdbbabaa9d9",
+   "closed_at": "2026-11-07T02:20:30Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 2026-11-06T21:41:53-03:00 launch tsukuroi round=89 pgid=1608150 driver=hyaku-inline attempt=1; 2026-11-06T23:16:33-03:00 complete tsukuroi round=89; hyaku-inline attempt=1. Honest stop: the lane's wave falsified its own frozen counter (gate run under roster file name; argparse usage leak) and the L1 filed C1 as not verified. Conformance (status-neutral): first report commit ea28e55b author date 23:08:53 predates cited 7f3f30b3 (23:15:01); cause fleet-commit.sh keeps jj change creation time - routed to fleet helper owner; lane amendment 765cca05 is the workaround. Routed to lane r90: successor counter (constant gate name, --runs 0 void, unlisted roster file void, AF_UNIX path independent of --scratch, name-oracle control, kill 6 surviving counter mutants); battery path= decoy and undrawn clauses (R89-R3/R4); correct counter docstring line 24 with sweep; R89-R5/R6. SHONEN all [~], not fully non-author checkable (no no-oral-context retest). L0 tsukuroi round-86 HOST INCIDENT still open.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
