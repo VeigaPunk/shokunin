@@ -69,6 +69,8 @@ Work items (each with its evidence pointer):
 | `tools/mado-execargv.py`, `quality/check-sources-readback.py`, `quality/counters/c1-r98-execargv.py`, `quality/counters/c2-r98-sources-readback.py`, the frozen cases/mutants/fresh/probe/planted controls, the frozen declaration, the 21-cell registry repair | LOG round 98, C1/C2 bullets | `06b6bf2ab0e60b37db6ec1aadeb91ecf9f30289f` |
 | The file-URI encoding fix (`g_filename_to_uri`'s path-safe set) and the re-frozen tool/mutant pins | LOG round 98, C1 bullet (the fresh-leg gap) | `a347163144215d4a05573a5672327aa0cf8daa93` |
 | The entry, index, SOURCES rows and repair log, the lesson, SCORECARD/LOG/PROVINCE/SKILL/ledger records, the measured receipts | LOG round 98, all bullets | `020af865da6621eaa869ade6f7f8d0713e53452a` |
+| The wave's build drafts and the harm watch at the records tip | LOG round 98, harm bullet | `24ced668adb244dbf9153433136825bd9d116352` |
+| The first harm run's completed receipt and both receipts' nonzero-leg notes | LOG round 98, harm bullet | `b3c8e134973769099564b331f292ef1d20ec29fc`, `fa4445af451baadb402e7c40695473d3a512f694` |
 
 ## Before → after measurements
 
