@@ -57757,6 +57757,49 @@
    "notes": "Dispatch digest: 2026-11-07T19:04:18-03:00 launch kasegi round=99 pgid=2566269 driver=hyaku-inline attempt=1; 2026-11-07T19:48:31-03:00 complete kasegi round=99; hyaku-inline attempt=1. Report 4b117bd3 committed by lane identity kasegi-shokunin; lane b9411a6b -> 6f4858a8, pushed, clean; all 17 cited lane commits exist and are ancestors of master. Prompt is the 140-line template render (only the cwd corrected; the template's {{LANE}}-repo placeholder renders <kasegi-repo> — operator-side template defect). C1 VERIFIED P1-P4 (tamper 5/12 -> 12/12, identical layout triple, 2.29 s / 512,064 kB, digests recompute exactly) with the census header/body reconciliation defect routed. C2 VERIFIED K1-K6 (independent 12/12 / 0 extra, static selftest 192) but coverage HARMED: the landing loses 23 round-98 detection classes including the high-realism Netscape cookie jar, while the wave's measured bounded union (candidate B: 12/12, 0/10, jar recovered) was deferred to round 100 — a trade, not an improvement, so not admitted. Routed: C2 regression (high); census header/body reconciliation (medium); correction sweep — 53 vs 57 stale in SCORECARD/LOG/QUALITY R160 and six/nine mistakes stale in LOG/report (medium); redaction control after-digests are single-line states and %20 mutated on four lines (medium); end-to-end r98 CLI claim cites a receipt that errored FileNotFoundError (medium); probe docstring verbatim claim stale (low); report bullet-8 pointer (low); r98 routed defect 6 claimed closed without the LOG correction (low); C1 measurement precision (low); template cwd placeholder (operator-side, low). SHONEN boxes 1, 3 and 4 look checkable by a non-author (r47 spot-check); box 2 rests on the rounds-85/86 practice reports; promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 81,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 81,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 81
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "chromium-showpicker-linux (capability generation r81, verified: cross-origin non-file SecurityError, same/cross-origin disabled-input order discriminator, per-frame-tree transient activation, webkitdirectory directory answer with webkitRelativePath, accept-is-a-hint acceptance, second chooser on click-while-open; first-working round stays 79)"
+   ],
+   "report": ".ufo/reports/round-81/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-81-verifier-spotcheck.md@b401027f5124d88281f955aae19b479a4eca6dc9",
+    "rechecks": "C1 re-measured: I re-ran the frozen counter on the committed receipt -> exit 0 clean 56/56 findings []; freeze.txt pins 12/13 sha256-match (claims.json mismatch explained by declared digests commit 5233f510); before-state reproduced (r80 receipt under r81 counter -> exit 1, 30 findings incl. schema; base c27e8406 lacks the r81 receipt, cat-file exit 128); battery 62/62 coverage.unknown [], kill power 46/46, selftest 9/9 verified as committed evidence. C2 re-measured: I re-ran check-record-drift-r81.mjs -> exit 0, 12 claims 0 mismatches; c2-before.json 12 mismatches, c2-controls.json three controls each isolate one claim; capability-status 14 rows/13 claimed/1 provisional/0 mismatches. Discernment: re-opened S222 (DOM.pdl tag 155.0.8059.84, sha256 50c46045 match, quote 6 words at line 684) and S223 (input.html, sha256 b0202de1 match, quote 20 words in section 4.10.5.1.17) — agree; sampled four Gate rejects against the receipt (second chooser unanswered, accept hint acceptance, type=color not measured, order-discriminator wording) — agree; census validate exit 0, 221 -> 223 rows."
+   },
+   "commit": "tabi-shokunin@b401027f5124d88281f955aae19b479a4eca6dc9",
+   "closed_at": "2026-11-07T23:59:30Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-07T19:58:48-03:00 launch tabi round=81 pgid=2877178 driver=hyaku-inline attempt=1; 2026-11-07T20:38:37-03:00 complete tabi round=81; hyaku-inline attempt=1. Report 9f0f8401 committed by lane identity tabi-shokunin but as a hyaku sweep commit ('L1 returned without committing; attribution defect') — conformance defect, status-neutral. Lane c27e8406 -> 2a117ea7 (7 commits), pushed (ls-remote = 2a117ea7); all 7 cited lane commits exist and are ancestors of master. Prompt is the 140-line template render: sections 1-5 byte-identical to templates/round-prompt.md modulo the <tabi-repo> -> tabi-shokunin substitution; hyaku addendum section 6 present; L2 = one taskCall of 11 seats (attack share 3/11 = 27%), attack floor met, MISSION.md L2 bucket consistent. SHONEN heading present, 4 [~] lines with pointers, no [x]. Wave w1: 11 seats; R81Exec3 and R81Drift returned empty output and the report names no dead seats. Conformance defects (status-neutral, routed): report landed via sweep not by the lane; 4 uncommitted wave files at HEAD (.ufo/waves/round-81/w1-results.json, w1/R81Scout.md, w1/R81Scout/, round-81-seats/R81Mut1/); the S223 quote-count correction reached only corpus/lessons/round-81.md — LOG.md:3900, corpus/QUALITY.md:1046 and SCORECARD.md:3946 still say 23 words (true: 20); freeze.txt's claims.json pin is superseded by the declared digests commit 5233f510 (disclosed). Lane-routed defects owed to r82: six receipt-level forgeries pass clean 56, eleven clause-level battery weakenings survive, kill power lacks a baseline guard, four C2 claims are presence-bound, frozen limit sentence off by one, frozen claims.json pins pre-repair battery/prior set. SHONEN boxes remain [~] asserted-by-author; promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
