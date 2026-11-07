@@ -195,3 +195,13 @@ needed.
 ## Open L0 questions
 
 None added this round.
+
+## Erratum (appended after filing)
+
+The round-97 wave evidence gained one late-written seat receipt
+(`.ufo/waves/round-97/w1/ConnectorOverlap-receipts/sibling-gitgrep-single-defect.txt`,
+984 lines, scan `hits=0`) after this report was filed; it is committed at
+`73f8241ac734a794a6b2854f046dfb77cc82a8fc`, which supersedes `a7416b18` as the
+lane tip. The cited landings (`daf7fc6a`, `b3c2aff9`, `75a47180`, `a9a53608`,
+`369758f3`, `b4bb939a`) are unchanged ancestors of it, and
+`git ls-remote origin refs/heads/master` prints `73f8241a`.
