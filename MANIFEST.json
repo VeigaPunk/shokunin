@@ -57112,6 +57112,49 @@
    "notes": "Digest (watchdog.log, mutable; copied): 2026-11-07T13:47:48-03:00 launch kasegi round=95 pgid=2566176 driver=hyaku-inline attempt=1; 2026-11-07T14:45:36-03:00 complete kasegi round=95; hyaku-inline attempt=1. Step 1: report dbee3413 (filed) + e17da0a9 (erratum), both by kasegi-shokunin; report erratum committer 14:50:43 after final lane tip fdaaaf36 14:50:22 (author date 14:48:21 is the recurring jj change-creation-time artifact, status-neutral); SHONEN 4x[~] with resolvable pointers; twelve cited hashes exist and are ancestors of refs/heads/master; jj-lane state local=remote=fdaaaf36 ahead=0 behind=0 tracked=0 untracked=0, porcelain empty, ls-remote fdaaaf36; prompt carries template sections 1-5 + hyaku addendum 6, five child-lane items, L2 floor 8; wave w1 13 seats (8/13 attack), 13/13 results, 0 dead. Snapshot drift: prompt after hash 1e7b426 is stale; 4ee3455 (docstring fix + S142 manifest), 88bc412 (allowlist hygiene) and fdaaaf36 (docfix receipt) landed later and are pushed; the committed erratum names fdaaaf36. Claims: C1 verified (16 edits/14 lines byte-exact at 1e7b426; meter 1007/1998 -> 1008/1994 evidence-verified at 53ec479d; controls 15/15 at 38e7319); C2 verified (selftest 101 -> 115 by case count; scanner/candidate sha 66edd661 at 38e7319; gate pin 8b6f8493; row byte-equal; allowlist digest matched; K1-K6 pass evidence-verified). Axes: depth:verifiability and coverage improved (scores 4 and 8 held), depth:density unchanged (SKILL.md identical); no axis harmed. Spot-check (d8a2bb0a) agrees with the gate on S142 admit and S141 reject; live sources re-opened (GitHub docs; GitLab API raw at 59ada1f4 line 72). Conformance/quality defects routed, status-neutral: (1) LOG.md has no entry for late commits 4ee3455/88bc412/fdaaaf36; (2) c1-controls-postlanding receipt prints candidate/after_rev 38e7319, not the C1 landing 53ec479d (knowledge trees identical, 15/15 stands); (3) QUALITY R148/R149 lesson pointers are swapped (R148 cites M95-1 reproducibility; R149 cites M95-2 frozen-control); (4) lesson Gate omits the new S142/S143 URLs; (5) erratum point 3's capture-binding-check output has no committed receipt (the manifest itself binds S142 sha 727ba6a0, URL and line 169); (6) frozen C2 statement cites S141 line 72 and S140 keyword lines 429/446/463 (grammar 430/447/464), erratum defers to round 96; (7) two C1 PARTIAL anchors (triage 88 first part, 90) cite SKILL.md:182-184 for a correction on 185, round-96 labels written; (8) MutC2Counter F6 survives when --instrument-sha256 is absent (disclosed); (9) S142 manifest landed after its capture (QUALITY R105), repaired at 4ee3455; (10) inherited six W04 warnings and the pre-existing S138 rejected-row-anchor FAIL. SHONEN boxes all [~]; boxes 1/3/4 look non-author-checkable, box 2's practice reports exist; promotion is operator-owned, no [x] written. No promotions, mints, or new L0; assimilation none.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 59,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 59,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 59
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "OpenBao transit-engine trial: five encryption-as-a-service mechanics (vault:v1: round trip with tamper refusal, rotate with old ciphertext still decrypting, rewrap with no client-side plaintext and survival of the retirement floor, min_decryption_version retirement/re-enable, convergent determinism for equal plaintext+context vs a different context and a non-convergent key) executed on throwaway OpenBao 2.7.2 dev servers with five falsifier shims, a no-bao SETUP leg and a clean-room leg where a second dev server refuses the first server's ciphertext; counter plans/round-59-c2.sh C2_TRANSIT_TRIAL 0 -> 5, receipts .ufo/waves/round-59/build/R59ExecTrial/; first-working round 59"
+   ],
+   "report": ".ufo/reports/round-59/kagi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kagi-shokunin/corpus/lessons/round-59-verifier-spotcheck.md@a677c78ece8e3d3b4a43dda55254f2a7b33cc1d2",
+    "rechecks": "Step-1: report e76b07f2 by kagi-shokunin committed 14:47:31 -03:00 after lane tip 75165a07 14:47:03 and before driver complete 14:48:19, pushed on origin/main; SHONEN 1 heading + 4 [~] lines, no [x]; cited af7b6651/a0c77ecd/160caf75/75165a07 exist and are ancestors of master; jj-lane state ahead=0, porcelain clean; prompt head = template with substitutions only + §6 addendum, five child-lane items present; wave 14 seats, 14 results. C1 re-measured over committed bytes at 5fa6e658 vs 75165a07: all five item facts (last registry line 117->120 = derived 117/120, fetches +6, control census 20=9+7 plus supplement 2/0, citation unresolved=6 on both sides, 101 min progressing), correction block append-only (15 added, 0 removed); evidence-verified counter value=FAIL 5/5 guard=0 -> value=0 i1..i5=1 guard=1, selftest PASS 33 cases, controls match=20 mismatch=0 with pinned instrument hashes equal to the shipped bytes. C2 re-measured: trial absent at BASE (git cat-file), present 355 lines with T1-T5 and SH1-SH5, bao via PATH only; receipts two real runs HOLDS 5/5, five shims flip exactly one test, no-bao SETUP rc2, cleanroom second server refuses (own-storage-refused=1), no token/plaintext shapes; evidence-verified counter value=5 with real=1 none=1 cleanroom=1 secret=1. Discernment: S121/S122 live byte-identical to captures (sha256 d8879a2a/ad1a47d3) and Gate quotes locate count=1; both rejects re-counted (CLI 0 tested mechanics, encrypt=1 in BYOK narration; seal transit/rewrap/min_decryption_version=0); census kagi ok rc 0 at 122 rows."
+   },
+   "commit": "kagi-shokunin@75165a07b1b55a96ddf03fc71449211455d968ee",
+   "closed_at": "2026-11-07T18:01:11Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-11-07T13:49:28-03:00 launch kagi round=59 pgid=2809212 driver=hyaku-inline attempt=1; complete 2026-11-07T14:48:19-03:00 (59 min, progressing: lane commits 14:36:49/14:45:17/14:47:03). Step-1 ok (report e76b07f2 by kagi-shokunin, SHONEN 1 heading + 4 [~], cited commits ancestors of master, lane ahead=0/clean, prompt = template + §6 addendum, wave 14 seats in band 8-16, no dead seat). Routed to lane r60 (spot-check §7): D1 LOG.md:1965 'dead seats __DEAD__' unfilled placeholder; D2 lesson R31 says the selftest receipt reads 32 while it reads 33; D3 disposition ids R20/R21/R22 each used twice; D4 SCORECARD '21 controls' vs 20 CONTROL lines; D5 dead gate-evidence pointers (SCORECARD cites a nonexistent .ufo/waves/round-59/final/release-clock-candidate.txt; DOC_AUDIT/RELEASE_CLOCK/SCOPE readings have no committed receipts; DOC_AUDIT 40/37/3 and on-release=32 re-measured by plain counts, SCOPE stale_basis not); D6 report names measured commit 75165a07 while the C1 receipt reads revision 160caf75 (delta only receipts/results, readings stand); D7 transit trial registered kind=gate with selftest:none (Gate standard). Noticed: attack share 4/14 only if the sentinel counts (literal addendum list gives 3/14); validator-refusal.txt evidences only the planner refusal; LOG §Round 59 does not name the last commit's w1-results.json/revision-bound receipts. Carried: ADJACENCY_SCOPE breadth_drift=5/unverified=1, CITATION_GATE BROKEN unresolved=6 over 48 docs, 10 surviving battery mutants as named ceilings. No promotions/mints; SHONEN boxes are author [~] and a non-author could check all four — promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
