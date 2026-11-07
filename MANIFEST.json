@@ -55871,6 +55871,47 @@
    "notes": "Dispatch digest: 2026-11-06T23:20:48-03:00 launch kama round=93 pgid=326849 driver=hyaku-inline attempt=1 / 2026-11-07T00:44:18-03:00 complete kama round=93; hyaku-inline attempt=1. Step 1 ok: report c6292a8a by kama-shokunin (committer 00:43:47 before complete), 28/28 cited hashes ancestors of master, ahead=0, porcelain empty, prompt static=105 missing=0. C1 verified; C2 not verified (K2 fired, author agrees) -> rejected-honest-stop. Conformance defects (status-neutral): pre-report gate red arms=14 failed=4 (round75 carried APPEND_DEBT 100/21, round78 host Ollama 8080 listener confirmed, round-scope/round-clean on the uncommitted receipt); report author date 00:36:12 precedes tip 00:42:30 (r92 R5 recurs); filed without WAVE-DONE (SC02 unsettled, disclosed); planner seat held by L1. Routed: R1 append-debt growth; R2 P05-P07/R16/R17 superseding rows; R3 stale SCORECARD capability rows (router-file-repeat four-field key + fe5f031c evidence; setter-rows without not-verified mark); R4 counter gaps and load-sensitive R01/fixture sanity; R5 author date; R6 read SC02 output; R7 gate receipt grading itself. SHONEN boxes 2 and 3 look non-author checkable (operator-owned promotion).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 90,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 90,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 90
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unchanged",
+    "depth": "unprovable-but-better",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unprovable-but-better",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-90/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-90-verifier-spotcheck.md@40efa4ea2862ab39da02430cada68f6dff230e86",
+    "rechecks": "Step 1: report 2f107dbc by tsukuroi-shokunin; SHONEN 4/4 [~]; cited c0f91856 6511437e cd165cf2 ce89df93 58723499 b380483e 9b4d9cda b1ef413d all ancestors of master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0, porcelain empty, ls-remote b1ef413d; prompt = template sections 1-5 + hyaku addendum, 0 placeholders. C1 evidence-verified (gate not executed): battery sha256 8f0daee8 = freeze, freeze manifest sha256 -c 40/40 OK, tools/ unchanged ce89df93..b1ef413d, receipts 73/73 met x3 rc0 canonical and clone, controls K1 0/0/0 & 1/0/0, K2 51/50/51 & 51/51/50, N21-N27 killed 3/3. Fidelity re-opened: upstream config.c v12.9.4 cmp-identical to pin, raw 642-650 truncates the buffer before the first entry, so measured_boot/hash_mismatch_panic in an entry body are invisible globally; battery kills the Limine-true control N21 via MEASURED-IN-ENTRY; visibility probe shows gate 4780da83 on_panic halt vs global-only menu -> C1 NOT VERIFIED, operability unchanged (no host shape affected; live receipt measured_boot None). C2 re-measured: absence grep 2 -> 4 knowledge files, TV1-TV9, SOURCES 363 -> 373; TV1 tpm.c 114, TV5 file.s2.c 27-31, TV7 part.s2.c 1056, TV8 part.s2.c 575 + disk.s2.c 1012, S369 export-vars.c 61, S372 TCG PDF sha256 40a2568e p.29 item 5, all re-opened upstream verbatim; host efivar LoaderTpm2ActivePcrBanks re-read 0x00000000, /sys/class/tpm empty -> depth unprovable-but-better (reviewer ruling). Spot-check: S365/S369/S373 admits agree, hdd(1:1) and +TPM2 rejects agree; S373 row quote 4 words at raw 1012. Census validate rc0, 52 W04, no E."
+   },
+   "commit": "tsukuroi-shokunin@b1ef413d88a8fd13f3df9dda6b2e257d4a299318",
+   "closed_at": "2026-11-07T04:05:54Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 2026-11-06T23:21:22-03:00 launch tsukuroi round=90 pgid=527919 driver=hyaku-inline attempt=1; 2026-11-07T01:01:01-03:00 complete tsukuroi round=90; hyaku-inline attempt=1. Honest stop (third in a row): wave seat ReviewSource F1 showed Limine reads measured_boot/hash_mismatch_panic from the global section only (config.c 642-650); the frozen r90 battery and r87 R6 encode whole-file visibility, so 73/73 certifies Limine-false answers; the L1 filed C1 NOT VERIFIED. Conformance (status-neutral): freeze 6511437e author date 23:20:02 precedes the launch line 23:21:22 (committer 23:44:28) and report 2f107dbc author date 00:52:42 precedes cited b1ef413d 00:58:43 - same jj change-creation-time cause as r89, routed to fleet helper owner; report's C2 prior-state says 'r89 Limits lines only' but the sweep also hits r89 rows UF3/UF8 (no tpm/guid lookup content; ruling unaffected). Routed to lane r91: R90-R1 global-only visibility for R10 and r87 R6 (invert MEASURED-IN-ENTRY/PANIC-AFTER-PIN, re-pin for 12.9.5+ line-1-entry change), oracle-reuse channel (CriticClaims 1), battery mutation gaps (MutBattery 21/43, CriticForgers G1-G3, MutGate 3 survivors), limine 12.9.6 drift re-check of TV5-TV8, exact prior-state wording. SHONEN 4 boxes [~]; box 3 lacks a no-oral-context retest, so none fully non-author checkable yet (operator-owned promotion).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
