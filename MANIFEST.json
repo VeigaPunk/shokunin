@@ -56600,6 +56600,50 @@
    "notes": "watchdog digest: 2026-11-07T04:45:36-03:00 launch kasegi round=91 pgid=387969 driver=hyaku-inline attempt=1; 2026-11-07T05:53:09-03:00 complete kasegi round=91; hyaku-inline attempt=1. Conformance: report 0c123b9c by lane identity (05:52:32, after tip 05:51:16), SHONEN 4x[~], 8 cited hashes ancestors of master, lane ahead=0 clean, prompt df1202fc carries template sections 1-7. No defects. Routed: (1) triage-thresholds.md:454 second token SKILL.md:494-506 plus ReviewC1Sites D2/D3; (2) M10 compares site sets not (site,key) pairs; (3) K8 gaps FC1-FC4; (4) SentinelCookie bypasses F1-F3 (colon-form, cookie jars, quoted values) fix or name as known limits; (5) S135 rejected-row capture only in scratch - commit captures whose line numbers a row cites; (6) carried capture-source.py M90-2 file:// crash, C2-F4 missing --allow, C2-F1..F3; (7) assimilation quarantine slice 7 rows unchecked. Fleet-root untracked f.txt/trail-ids.txt predate round, not kasegi. SHONEN boxes look non-author checkable; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 55,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 55,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 55
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "freshness": "improved",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "sources-census SC_BODY_CITE: body citations and legacy entries gated against used-by via column-1 cites: records (selftest 70->78)",
+    "ISO/IEC 11770-3 entry names Amd 1:2025 (S113/S114) with recheck clocks true on captures and live"
+   ],
+   "report": ".ufo/reports/round-55/kagi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kagi-shokunin/corpus/lessons/round-55-verifier-spotcheck.md@832ba6a53d6a76706b5c80bce2278683dea33d42",
+    "rechecks": "Step 1: report 4ce5233c by kagi-shokunin (cd 06:55:06, after lane tip bc160ca8 06:54:52, before complete 06:55:50); SHONEN 4 [~] = 4 boxes; BASE + 4 cited commits exist and are ancestors of master; jj-lane state ahead=0, porcelain 0. C1 re-measured by an independent token scan over git-show bytes: gap 25 (BASE, cit 88) -> 0 (348aa3b8 and bc160ca8, cit 90); no BASE pair removed, no used-by padding. C2 re-measured: 'Amd 1:2025' absent at BASE, present lines 41-42 at tip; S101 capture grep -c = 2 vs stated 1 at BASE; tip clocks 2/3/2 match captures and my live fetches. Gate evidence verified, not executed: census selftest PASS (78 cases), tip counters 0/2, controls 22 MATCH, ledger/citation harm sets unchanged. Spot-check: admit S114 agree (live sha identical), rejects ISO RSS and IEC 107179 agree; S113 quote 3 words located at offset 53493; fleet census kagi ok rc 0."
+   },
+   "commit": "kagi-shokunin@bc160ca8453fa7adfe811cb0d33e847a10ab88e5",
+   "closed_at": "2026-11-07T09:59:00Z",
+   "campaign": "hyaku",
+   "notes": "Driver: 2026-11-07T04:10:49-03:00 launch kagi round=55 pgid=1272938 driver=hyaku-inline attempt=1; 2026-11-07T06:55:50-03:00 complete kagi round=55; hyaku-inline attempt=1. Defects (status-neutral, routed): D1 weak frozen counter batteries (M55-5; shapes absent from bytes); D2 expired __cf_bm cookie values in pushed history f2b986fa/348aa3b8 (removed 70867f40); D3 S113 row asserts default-UA 403 with receipt only for S114 URL; D4 frozen plan separability sentence false for C1 (M55-4); D5 round-start census taken after work began. Operator: all four SHONEN boxes look non-author checkable from committed evidence (promotion operator-owned).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
