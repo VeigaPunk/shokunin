@@ -55342,6 +55342,49 @@
    "notes": "Driver digest: 2026-11-06T20:53:12-03:00 launch mado round=91 pgid=2378783 driver=hyaku-inline attempt=1; 2026-11-06T22:21:12-03:00 complete mado round=91 hyaku-inline attempt=1. Conformance notes (status-neutral): prompt committed in the fleet repo under the lane identity (88c20a2e, driver attribution); report counts 4 rejects but the lesson Gate table lists 3 (NoDisplay reject sits under Residual r1). Quality graded unprovable-but-better: no knowledge entry superseded or re-verified, and M91-1 found the round-90 GKeyFile model divergent; xdg-portal-routing-resolver-r90.md section 9 still says invalid UTF-8 fails g_key_file_load_from_file while gkeyfile.c 2.90.1 validates UTF-8 only in get_string (2310) / get_string_list (2427); marked and routed by the lane, so not harmed. Routed to round 92: (1) append a named correction to the r90 entry and re-prove tools/mado-portals.py on the four M91-1 byte classes; (2) check-seat-reports.py F1 (symlinked dispatch skipped under --rev, can print OK) and F4 (FIFO blocks --worktree), plus F2/F3/F5/F6; (3) list every gate decision (incl. r1 NoDisplay) in the lesson Gate table. Operator: SHONEN boxes 2 and 3 look non-author checkable (closure ran mado-mime.py from its registry argv and matched gio); nothing written to SHONEN.md.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 51,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 51,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 51
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "OpenBao response-wrapping trial"
+   ],
+   "report": ".ufo/reports/round-51/kagi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kagi-shokunin/corpus/lessons/round-51-verifier-spotcheck.md@1d984adaa4a5c66ea9f24cb95bf79ffbca16c32b",
+    "rechecks": "Step 1: report committed by kagi-shokunin (88eb6062, 22:24:42, after last lane commit affb270b 22:24:20, before complete 22:25:22); SHONEN 4 [~] lines = 4 boxes; 4 cited commits + BASE are ancestors of master; jj-lane state ahead=0 behind=0, status clean; prompt carries template sections 1-7. C1 re-measured: committed openbao-wrap-trial.sh run by closure on bao v2.7.2 => T1..T5 HOLDS, rc 0; non-comment diff vs predeclared reference rc 0; sys/wrapping corpus files 0 -> 4; instruments unchanged since 4ad8ab7c; shim discrimination evidence-verified (c1-candidate, c1h-candidate, c1h-controls FA/FB 5->0). C2 re-measured: claims-declared.tsv rows 25 -> 29 (adds 50/51 C1/C2), post-move headings 48-51 all covered, readings line claims=23 vs 25 rows -> claims=29 vs 29 rows => 3 -> 0; gate evidence-verified (c2-base/c2-candidate/tip-counters). Harm: SCORECARD diff deletes only lane-status line; ledger FAIL 3 POLICY 3 same ids BASE/candidate (evidence-verified). Spot-check: S109 admit, S108 admit, wrapping-lookup reject, wrapping-rewrap reject all agree; rewrap 'contradiction' reason disagreed (probe: wrap-helper token rewraps to sys/wrapping/wrap). Census validate rc 0, 19 W04."
+   },
+   "commit": "kagi-shokunin@affb270bc9288bf08f72a0197d705cc06ec5ac67",
+   "closed_at": "2026-11-07T01:29:23Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-11-06T21:17:15-03:00 launch kagi round=51 pgid=4057123 driver=hyaku-inline attempt=1; 2026-11-06T22:25:22-03:00 complete kagi round=51; hyaku-inline attempt=1. Defects routed (status-neutral): D1 entry vault-openbao-token-lease-lifecycle.md:292 and lessons/round-51.md:22 over-read the rewrap API sample as contradicting 2.7.2 (a sys/wrapping/wrap-origin token rewraps to sys/wrapping/wrap) - named correction + sweep next round; D2 candidate 47d09594 cited final/ receipts landed in 7eab7aa4 (R11-08 unresolved=7 at candidate, 3 at tip); D3 carry routed S-1 (secrets on argv, HIGH)/S-2/S-3, M51-3, adopt c1h counter, R51CriticC2 ceilings, R11-08/R36-01 timeouts. Operator note: SHONEN boxes 2 and 3 were exercised by the non-author (trial run from committed bytes, 5/5 HOLDS); promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
