@@ -55302,6 +55302,46 @@
    "notes": "Driver digest: 2026-11-06T21:27:43-03:00 launch kumitate round=95 pgid=910102 driver=hyaku-inline attempt=1; 2026-11-06T22:11:36-03:00 complete kumitate round=95; hyaku-inline attempt=1. Step 1 pass: report by kumitate-shokunin 8948db01 (22:11:24, after lane tip 22:11:17); SHONEN 3x[~] 1x[ ]; 10 cited commits ancestors of master; jj-lane state ahead=0 tracked=0 untracked=0; prompt = template placeholders only. Defects (status-neutral, routed to kumitate): (1) lesson Gate for S273/S274 omits the URL (CORPUS Rules 1); (2) report says harm battery CLEAN at M but battery-M.txt shows PROXY DRIFT (bookkeeping) at M; (3) knowledge round-gate-registry-shape.md verified-at names freeze ee8479be not shipped bytes a59fbedc; (4) carried r96 pre-reg: registry-section membership, counter clause battery (M95-2); (5) adopt this spot-check into the README map before the r96 freeze. SHONEN boxes 1-3 look non-author-checkable from committed bytes; box 4 unevidenced; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 91,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 91,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 91
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "GLib 2.90.1 default-application resolution (tools/mado-mime.py, read-only): default, registered and recommended .desktop lists for a MIME type or URI scheme exactly as `gio mime TYPE` prints them; 268/268 frozen, 120/120 fresh, 65/65 mutants, host 1211/1211",
+    "seat-report retention gate (quality/check-seat-reports.py): flags a dispatched wave seat whose Report: path is absent; 59/59 frozen expectations, 60/60 fresh, 55/55 mutants, selftest 16/16"
+   ],
+   "report": ".ufo/reports/round-91/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-91-verifier-spotcheck.md@d992ef7494b054591ee9104df1da49264678df5d",
+    "rechecks": "Step 1 pass: report 1759fe46 by mado-shokunin (22:20:33, after records 847f589a 22:19:28) with SHONEN (4 [~]); base + 5 round commits exist and are ancestors of master; jj-lane state ahead=0 tracked=0 untracked=0, porcelain empty; prompt lines 1-140 = template with placeholders filled; only deletions SKILL.md 1 (D1 registry row) and SOURCES.md 1 (S502 used-by). C1 re-measured: mado-mime.py absent at base, sha256 2532ccb5 = frozen candidate = pin; controls/counters untouched after freeze fa71279f (host-run-r91.py added); case/mutant/oracle/fuzz/gio/libgio sha256 = pins; my run of the tool vs gio mime: 12/12 host types (incl. aliases, parent) + 2/2 fixtures agree; counter TARGET_MET 268/268 65/65 and host 1211/1211 evidence-verified. C2 re-measured: gate absent at base, sha256 13c4b0a7 = pin; set/mutants sha256 = pins; my count of round-91 dispatch Report: paths 16 present 0 missing = gate receipt; counter TARGET_MET 59/59 60/60 55/55 selftest 16/16 and separability SETUP_ERROR rc 2 evidence-verified. Harm: SCORECARD append-only; harm-final-r91 all green at cbbeb862, records commit carries no code. Spot-check: admit (mime entry, gdesktopappinfo.c 1005-1042/978-984 + fixture) agree; reject (S507 association rule, gdesktopappinfo.c 4740-4775 + gio fixture: default c.desktop, no registered) agree; S504-S507 sha256 reproduced, S507 quote 20 words verbatim; census mado ok rc 0 (W04 55, W01 1), rows 438 -> 442."
+   },
+   "commit": "mado-shokunin@847f589a1f2b772f5dac7e32a9cbb599a7aa09fc",
+   "closed_at": "2026-11-07T01:25:13Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-11-06T20:53:12-03:00 launch mado round=91 pgid=2378783 driver=hyaku-inline attempt=1; 2026-11-06T22:21:12-03:00 complete mado round=91 hyaku-inline attempt=1. Conformance notes (status-neutral): prompt committed in the fleet repo under the lane identity (88c20a2e, driver attribution); report counts 4 rejects but the lesson Gate table lists 3 (NoDisplay reject sits under Residual r1). Quality graded unprovable-but-better: no knowledge entry superseded or re-verified, and M91-1 found the round-90 GKeyFile model divergent; xdg-portal-routing-resolver-r90.md section 9 still says invalid UTF-8 fails g_key_file_load_from_file while gkeyfile.c 2.90.1 validates UTF-8 only in get_string (2310) / get_string_list (2427); marked and routed by the lane, so not harmed. Routed to round 92: (1) append a named correction to the r90 entry and re-prove tools/mado-portals.py on the four M91-1 byte classes; (2) check-seat-reports.py F1 (symlinked dispatch skipped under --rev, can print OK) and F4 (FIFO blocks --worktree), plus F2/F3/F5/F6; (3) list every gate decision (incl. r1 NoDisplay) in the lesson Gate table. Operator: SHONEN boxes 2 and 3 look non-author checkable (closure ran mado-mime.py from its registry argv and matched gio); nothing written to SHONEN.md.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
