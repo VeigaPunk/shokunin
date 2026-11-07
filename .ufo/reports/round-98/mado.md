@@ -2,7 +2,7 @@
 
 Lane `mado-shokunin`, hyaku run 15, round 98, attempt 1 (`MadoR98`). Lane repo
 `/home/vgpnk/Projects/shokunin/mado-shokunin`, branch `master`, base
-`35f3ce808788b11c063309b1b5ad0192754795ea` → lane tip `fa4445af451baadb402e7c40695473d3a512f694`
+`35f3ce808788b11c063309b1b5ad0192754795ea` → lane tip `6f61eff075243f564d1e7eed4823d7c521388a42`
 (pushed; `ls-remote` prints it). Report committed by `fleet-commit.sh --as mado`.
 
 ## Work performed
@@ -71,6 +71,7 @@ Work items (each with its evidence pointer):
 | The entry, index, SOURCES rows and repair log, the lesson, SCORECARD/LOG/PROVINCE/SKILL/ledger records, the measured receipts | LOG round 98, all bullets | `020af865da6621eaa869ade6f7f8d0713e53452a` |
 | The wave's build drafts and the harm watch at the records tip | LOG round 98, harm bullet | `24ced668adb244dbf9153433136825bd9d116352` |
 | The first harm run's completed receipt and both receipts' nonzero-leg notes | LOG round 98, harm bullet | `b3c8e134973769099564b331f292ef1d20ec29fc`, `fa4445af451baadb402e7c40695473d3a512f694` |
+| The round-97 spot-check's D5/D6/D7/D9 closure block in the lesson | LOG round 98, routed-defects bullet | `6f61eff075243f564d1e7eed4823d7c521388a42` |
 
 ## Before → after measurements
 
