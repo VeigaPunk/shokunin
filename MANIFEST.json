@@ -57407,6 +57407,49 @@
    "notes": "Dispatch digest: 2026-11-07T16:45:05-03:00 launch kagi round=61 pgid=672160 driver=hyaku-inline attempt=1; 2026-11-07T17:46:44-03:00 complete kagi round=61; hyaku-inline attempt=1. Status ok, admitted: C1 calibration 7->0 (seven r60 routed record defects, re-measured over committed bytes) and C2 operability 0->5 (executed seal/unseal custody trial, evidence-verified). Conformance defects, status-neutral, routed to the lane next round: (1) SCORECARD.md round-61 post-move cites CONTROLS match=17 where the receipt, LOG and report read match=18; (2) no SKILL.md gate-registry rows for the new gates plans/round-61-c1-check.py, plans/round-61-c2.sh and corpus/openbao-seal-trial.sh (PROTOCOL Gate standard Delivery); (3) attack share on the addendum literal list is 3/16 = 18.75 % (sentinel counted to reach 4/16 = 25 %); (4) the candidate-revision C1/C2 readings are report lines with no committed receipt naming 08f950da (the committed controls receipt is the pre-freeze working tree); (5) RELEASE_CLOCK/DOC_AUDIT/CLAIMS_DECLARED candidate verdicts in LOG.md have no committed receipt and the report's freshness pointer is generic. Disclosed ceilings stay open: C1 items are structural reads (QM79 hardening), I6 literal -03:00 unsatisfiable against %ci -0300, C2-4 guard near-constant, C2-5 counter selftest does not execute the aggregation. Wave composition: 16 seats v1, 0 dead; role mix 2 scout/6 executor/2 scribe/1 reviewer/1 critic/1 mutation-tester/1 sentinel/1 connector/1 revenger. SHONEN: four boxes [~] with resolvable pointers; boxes 2-3 have this round's receipts and boxes 1/4 pointers resolve, so the boxes look checkable by a non-author, but promotion is operator-owned and no [x] was written. Spot-check file landed at 60b5b7b6 (protocol identity, pushed).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 98,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 98,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 98
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "GIO 2.90.1 launch argv sequence: tools/mado-execargv.py answers read-only the sequence of argv vectors GIO 2.90.1 builds and spawns from a desktop entry's Exec key and a file/URI list - the load gate and its five refusals, the byte walk with the selector byte consumed, the twelve field codes and %%, force_file_uri and X-GIO-NoFuse, the head-pointer no-substitution %f append, g_shell_quote, the g_shell_parse_argv grammar and the one-spawn-per-iteration loop; 88/88 frozen cases (20 classes), 79/79 counted mutants (class_kills 20/20), 60/60 fresh at seed f00d3edcdb285ac0, controls 4/88 and 47/88, memoriser 0/60 fresh, selftest checks=38 failed=0; first-working round 98"
+   ],
+   "report": ".ufo/reports/round-98/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-98-verifier-spotcheck.md@2cbaa141f42df9dfeee4d207cae6558a4dd59863",
+    "rechecks": "Step 1: report by mado-shokunin (30ac2607/0a9f093c/47142ae2/38152387), SHONEN 4x[~], 7 cited hashes all ancestors of master, jj-lane state ahead=0 behind=0 tracked=0 untracked=0, porcelain empty, ls-remote master=6f61eff0; prompt = templates/round-prompt.md verbatim modulo substitutions + hyaku addendum, five child-lane items present, L2 floor 8 = MISSION.md, w1 11 seats/36% attack/all reports. C1 re-measured: tool absent at base, present at tip sha 49f7fecd..., cases 88/20 classes, mutants 79/20 class kills, genseed b7bc137a..., receipt TARGET_MET at a3471631 (88/88, 79/79, fresh 60/60 seed f00d3edc, controls 4/88 and 47/88, memoriser 0/60, selftest 38/0), freeze pins match. C2 re-measured: gate absent at base, present at tip sha f1000bf1..., SOURCES 462->466 rows, 19 used-by cells/24 added paths (21 repaired + 3 new-entry), 4 new tier-A mined rows S528-S531, entry 690 L citing S528-S531/S504/S506/S527, index 119/119, census rc 0 (64 W04 + 1 pre-existing W01, no E-codes), receipt TARGET_MET at a3471631 (base_mismatches=21, findings=0 over 462 rows/118 entries, repaired 21/21, added_paths 21, planted 5/5, stub flagged, gate selftest 21/0, counter selftest 18/0). Evidence-verified, not executed: the C1/C2 counters and gates (sibling instruments), the harm watch (26 legs, 22 rc 0, 4 declared nonzero), the ledger (my own parse: population 195/rows 195/uncovered 0)."
+   },
+   "commit": "mado-shokunin@6f61eff075243f564d1e7eed4823d7c521388a42",
+   "closed_at": "2026-11-07T21:04:29Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest (.ufo/watchdog.log, mutable; copied): 2026-11-07T16:31:03-03:00 launch mado round=98 pgid=3734780 driver=hyaku-inline attempt=1; 2026-11-07T17:53:18-03:00 complete mado round=98; hyaku-inline attempt=1. Status ok (real report, committed work, resolvable hashes); admitted: C1 coverage (new surface capability: tool absent at base -> 88/88 cases, 79/79 mutants, 60/60 fresh, selftest 38) and C2 operability (read-back gate absent at base -> 21 status-aware mismatches repaired row->entry, 0 findings at a3471631, planted 5/5, census rc 0) both verify; no axis harmed (SCORECARD/LOG/PROVINCE/SKILL append-only, 0 deletions; harm watch 26 legs 22 rc 0 + 4 declared nonzero; registry used-by only added). Routed (status-neutral, next round): (1) S532 is listed in the round lesson's Gate table and admitted in the Candidates table and PROVINCE.md cites S528-S532, but no S532 row exists in corpus/SOURCES.md (last row S531; 466=462+4); add it or correct the lesson/PROVINCE. (2) report/SCORECARD/LOG say 'gate findings 0 over 466 rows/119 entries' but the measured rev a3471631 has 462 rows/118 entries; the 466/119 state was never gated with committed evidence. (3) SKILL.md mado-r98-execargv row pins the pre-re-freeze tool/mutant hashes acfcc4f7.../5f074f70... while the committed bytes are 49f7fecd.../32c207b3.... (4) LOG round-98 seed e2bf4d1b757e2e7b vs receipt f00d3edcdb285ac0, and 'M98-1..M98-6' vs lesson M98-1..M98-12. (5) harm watch omits r97c1_filetype and r97c2_counter_selftest (present in the 28-leg first run). (6) M98-1 captured-by none but no QUALITY.md criterion cites the lesson. (7) first report commit 30ac2607 preceded the lane tip 6f61eff0 by 26 s and the filed bytes were rewritten in three later commits without an erratum (r97 D1 recurrence). (8) C2 prose conflates the 06b6bf2a 16-cell repair with the 020af865 S504/S506/S527 additions. Operator note: all four SHONEN boxes look checkable by a non-author from committed evidence, but the connector sweep is lane work; promotion is operator-owned (lane filed [~] only, no [x]).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
