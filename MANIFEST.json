@@ -55265,6 +55265,43 @@
    "notes": "Dispatch digest: 2026-11-06T21:19:27-03:00 launch souji round=75 pgid=51262 driver=hyaku-inline attempt=1; 2026-11-06T21:58:55-03:00 complete souji round=75; hyaku-inline attempt=1. Report f2fe13d2 by souji-shokunin at 21:58:25 (after tip 21:57:41, before complete). Conformance: all pass; r74 routed defect 1 (trial gate revision) closed via prereg amendment line. Routed to r76: (1) repro-coreworktree.sh:20 prints a static '= FORGERY' legend and EXIT=0 for both W and R - emit a computed verdict/nonzero exit or register as probe; (2) C1 f3 core.excludesFile row undiscriminated (writer pins core.excludesFile=/dev/null at base); (3) domain trial measured c8dabbd7 not tip (disclosed; tip adds only the receipt); (4) lesson routed (a)-(d): Y4/Y5 witnesses, kill-tally EXIT classes and receipt binding, gate ls-files failure branch/refusal class, status-trusting tools/sibling gates/writer M03; (5) stated limit f7 self-ignoring .gitignore and prereg M6 over-strong description. SHONEN boxes all [~] with pointers a non-author can check; promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 95,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 95,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 95
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-95/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-95-verifier-spotcheck.md@bba139792d92604df1d83f2df3b74d53b9ed67a0",
+    "rechecks": "Re-measured: round-gate.mjs sha256 11f83a1a (base 12aa450f) -> aba737dc (tip 03b2eb4f = pin.round-gate); declaredPins() checks split('|').length !== 13 before reading status; malformedRows initialised at 440/732; independent gawk NF!=13 over the rebuilt counter fixture -> S002 S003 S004 S007 (= reported); real registry 210 rows/0 malformed -> 212/0; SOURCES diff +S273 +S274 only; frozen plan/probe/controls/open diff ee8479be..03b2eb4f empty; census validate kumitate ok rc=0 (8 W04 pre-existing). Evidence-verified (lane gate/counter not executed): selftest 79/79 (K95CriticA receipts) -> 88/88 (M) -> 89/89 (M2, survivor-remut); counter UNMET at base, HELD x2 at M 7aaf0082 and x2 at M2 aba737dc; battery-final PROXY MATCH operability=9 coverage=10, ROUND_GATE CLEAN; Q88 PASS. Spot-check: S273 and S274 re-fetched HTTP 200 with sha256 equal to the rows, quotes verbatim at stated locations, 15/18 words; both rejects re-opened (census E01 / sources-check.mjs:261; 9 distinct K95CriticA constructions HELD) - agree on all 4."
+   },
+   "commit": "kumitate-shokunin@03b2eb4fadb51403096a1209fd1214daf4168adf",
+   "closed_at": "2026-11-07T01:14:02Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-11-06T21:27:43-03:00 launch kumitate round=95 pgid=910102 driver=hyaku-inline attempt=1; 2026-11-06T22:11:36-03:00 complete kumitate round=95; hyaku-inline attempt=1. Step 1 pass: report by kumitate-shokunin 8948db01 (22:11:24, after lane tip 22:11:17); SHONEN 3x[~] 1x[ ]; 10 cited commits ancestors of master; jj-lane state ahead=0 tracked=0 untracked=0; prompt = template placeholders only. Defects (status-neutral, routed to kumitate): (1) lesson Gate for S273/S274 omits the URL (CORPUS Rules 1); (2) report says harm battery CLEAN at M but battery-M.txt shows PROXY DRIFT (bookkeeping) at M; (3) knowledge round-gate-registry-shape.md verified-at names freeze ee8479be not shipped bytes a59fbedc; (4) carried r96 pre-reg: registry-section membership, counter clause battery (M95-2); (5) adopt this spot-check into the README map before the r96 freeze. SHONEN boxes 1-3 look non-author-checkable from committed bytes; box 4 unevidenced; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
