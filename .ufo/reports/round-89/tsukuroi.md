@@ -128,3 +128,9 @@ Assimilation: none (no `merge/tsukuroi/` theme fits the Limine URI-failure surfa
 - L0 questions: none new; `tsukuroi | round-86 | HOST INCIDENT` (pins on `/boot/limine.conf` lines 30 and 38) stays
   open and operator-owned.
 - Scratch: `/fast/scratch/hyaku/tsukuroi-r89/L1` removed after landing.
+- r88 routed 4 (report author date): the first fleet commit of this report, `ea28e55b`, carries author date
+  23:08:53 (commit date 23:15:41), earlier than the lane commit `7f3f30b3` (23:15:01) it cites, although the file was
+  written after it. Cause, read in `scripts/hyaku/fleet-commit.sh` lines 82-84: the helper runs `jj metaedit
+  --update-author` (identity only) and `jj commit`, so the author timestamp is the creation time of the fleet's jj
+  working-copy change, not the commit time. This amendment is committed through the same helper to give a readable
+  chronology; the helper is fleet-owned and not edited (an `--update-author-timestamp` flag would fix it).
