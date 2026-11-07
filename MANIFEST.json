@@ -55591,6 +55591,43 @@
    "notes": "Digest: 2026-11-06T21:41:53-03:00 launch tsukuroi round=89 pgid=1608150 driver=hyaku-inline attempt=1; 2026-11-06T23:16:33-03:00 complete tsukuroi round=89; hyaku-inline attempt=1. Honest stop: the lane's wave falsified its own frozen counter (gate run under roster file name; argparse usage leak) and the L1 filed C1 as not verified. Conformance (status-neutral): first report commit ea28e55b author date 23:08:53 predates cited 7f3f30b3 (23:15:01); cause fleet-commit.sh keeps jj change creation time - routed to fleet helper owner; lane amendment 765cca05 is the workaround. Routed to lane r90: successor counter (constant gate name, --runs 0 void, unlisted roster file void, AF_UNIX path independent of --scratch, name-oracle control, kill 6 surviving counter mutants); battery path= decoy and undrawn clauses (R89-R3/R4); correct counter docstring line 24 with sweep; R89-R5/R6. SHONEN all [~], not fully non-author checkable (no no-oral-context retest). L0 tsukuroi round-86 HOST INCIDENT still open.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 96,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 96,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 96
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-96/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-96-verifier-spotcheck.md@477afff790787cd2ce48ccf976afafcb5aef0cbc",
+    "rechecks": "Re-measured: round-gate.mjs sha256 aba737dc (base bba13979) -> edaa115f (M 09de6791 = tip b0084b20 = pin.round-gate); declaredPins() section state (^ {0,3}##[ \\t], [ \\t]-trimmed text === 'Registry', #[ \\t] exits) matches census row_pass (sources-census.sh:609-622); outsideRows initialised at 456/748, SOURCES_ROWS_OUTSIDE at 827-829; independent differential: rebuilt counter fixture A, census validate --file E12=[S901 S007 S020 S011 S020 S021 S022 S023 S024 S025 S028] E01=[S002] == extracted pure declaredPins() outside/malformed lists, 7 declared pins (= probe1); SOURCES rows 212 -> 213 (+S275 only); frozen plan/probe/controls/open diff 617e80cd..b0084b20 empty; census validate kumitate ok rc=0 (8 W04 pre-existing). Evidence-verified (lane gate/counter not executed): selftest 89/89 base -> 94/94 at M (close-l1/selftest-M.txt); counter UNMET at base, HELD x2 at edaa115f (close/probe1,2); re-mutation 30/31 (+b20-spaceclass killed, hardcode-fixtures disclosed survivor); battery-M PROXY DRIFT bookkeeping only, battery-final PROXY MATCH operability=9 coverage=10 all tools CLEAN; Q88 PASS round=96; Q90 LESSON_URLS CLEAN. Spot-check: S275 admit agree (HTTP 200 sha c85f56cc, both quotes verbatim, 19/22 words), CommonMark-reader reject agree, counter-pins-clauses reject agree (8 HELD constructions)."
+   },
+   "commit": "kumitate-shokunin@b0084b2042ec91436d85b07cdd886b6d88541c4b",
+   "closed_at": "2026-11-07T02:21:31Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-11-06T22:16:37-03:00 launch kumitate round=96 pgid=3401679 driver=hyaku-inline attempt=1; 2026-11-06T23:18:38-03:00 complete kumitate round=96; hyaku-inline attempt=1. Step 1 pass: report by kumitate-shokunin 37d3463a (23:18:09, after lane tip 23:17:57); SHONEN 3x[~] 1x[ ]; 9 cited commits ancestors of master; jj-lane state ahead=0 tracked=0 untracked=0; prompt = template placeholders only. r95 routed items 1-3,5 answered. Defects (status-neutral, routed to kumitate): (1) close/q88-r96.txt labels M=4a57390d while lesson/report/SCORECARD name M=09de6791 (same gate bytes); (2) frozen plan names a labrat seat the validator refused (disclosed); (3) controls generated at 8191f90e (freeze parent), traceability note only; (4) carried r97: census-grammar counter battery + nonce fixtures (M96-2), sources-check.mjs CRLF/##<TAB> disagreement, census \\r internal disagreement (L0 filed), \\s vs [ \\t] row-id class, sibling transfer; (5) adopt this spot-check into README map before r97 freeze. SHONEN boxes 1-3 look non-author checkable; box 4 no evidence; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
