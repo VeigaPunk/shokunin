@@ -55712,6 +55712,45 @@
    "notes": "Driver digest: 2026-11-06T22:30:18-03:00 launch kagi round=52 pgid=2300562 driver=hyaku-inline attempt=1; 2026-11-06T23:48:32-03:00 complete kagi round=52; hyaku-inline attempt=1. Defects routed (status-neutral): D1 recurrence of r51 D2 - candidate a2cb69b7 cites final/census-end.txt (lessons/round-52.md:56) that lands only in 282849f7 (citations-candidate unresolved=5); D2 M52-4 harden the trial counter to check execution not printed verdicts (F2/F5b/F6, vacuous K1-F8); D3 M52-5 run the full ledger verify before freezing the candidate (4 stamp-population FAILs found after); D4 R52ReviewerTrial D1-D4, R52CriticC2 A2/A13/A17/A24/A26, R52ReviewerC2 F1, R11-08/R36-01 stay open. Operator note: SHONEN boxes 2 and 3 were exercised by the non-author closure (committed trial reproduced T1-T5 HOLDS from committed bytes without lane context); promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 92,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 92,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 92
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "xdg-utils 1.2.1 default-application resolution (xdg-open on Hyprland): tools/mado-xdgmime.py replays xdg-mime query default read-only"
+   ],
+   "report": ".ufo/reports/round-92/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-92-verifier-spotcheck.md@4c6f723f3dca3a26f9d14475d695fe797e2e972c",
+    "rechecks": "C1 re-measured: tool absent at d992ef74 -> present; landed sha256 4e7fff9e = frozen candidate; frozen cases/mutants/oracle/fuzz/counter pins unchanged since freeze 6a0134ac; six host binary pins hold (xdg-mime 1.2.1); my host probe 17/17 and fixture probe 6/6 agree with xdg-mime; evidence-verified counter TARGET_MET 270/270 fresh 120/120 mutants 81/81 bytes_clause ok at 243326cb, separability ok, host replay 1133/1133. C2 re-measured: round-91 bytes 13c4b0a7 -> frozen candidate 176fc066; battery/mutant/r91 pins hold; battery composition F1 9 F2 5 F3 3 F4 3 F5 4 MC 13 P 8 = receipt; my 13/13 seat-report count = gate; evidence-verified TARGET_MET 45/45 (base 19/45) fresh 60/60 mutants 37/37 selftest 23/23, r91 leg TARGET_MET, separability SETUP_ERROR rc 2 at C1 rev; gate not executed. Harm: SCORECARD append-only, mime/portals/mako/verify code unchanged, harm receipt green. Spot-check: admit (r92 knowledge entry) agree, rejects (r91 xdg-open->GLib sentence, r90 UTF-8 sentence) agree; S508-S510 re-opened, digests and quotes located; census mado ok rc 0 (W04 55, W01 1), rows 442 -> 445."
+   },
+   "commit": "mado-shokunin@fbcc2672b7068b3f536a849b0ec5b72da56bf7fd",
+   "closed_at": "2026-11-07T03:00:58Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-11-06T22:27:35-03:00 launch mado round=92 pgid=1945399 driver=hyaku-inline attempt=1; 2026-11-06T23:56:06-03:00 complete mado round=92; hyaku-inline attempt=1. Step 1: report 5332a4a0 by mado-shokunin after last lane commit; SHONEN 4x[~]; all cited hashes ancestors of master; jj-lane state ahead=0, porcelain empty; prompt = template with placeholder substitutions + hyaku addendum. Defects (status-neutral): prompt committed under lane identity (2ec4ac6e, driver attribution); report lacks an explicit cross-domain evidence item (minimum content). Routed to mado r93: (1) cross-domain item in report; (2) land tools/mado-portals.py GKeyFile port under its own frozen counter (8/16 byte-class divergence still standing, marked); (3) C2 selftest-coverage limit (R92MMutC2 s4). Operator: SHONEN boxes 2 and 3 look non-author checkable (tool reproduced xdg-mime from registry argv); nothing written to SHONEN.md.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
