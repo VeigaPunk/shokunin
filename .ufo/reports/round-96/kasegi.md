@@ -91,3 +91,25 @@ Routed to round 97 (no claim re-scored):
 6. ReviewC2Scanner F1–F4: the runner versioned shape omits the published instance prefix (behaviour-equivalent, span differs); the docstring's known-limits rewrite drops the plain `glagent-` 50-character form (a one-line repair blocked this round by the instrument pin); the `/trigger/pipeline` limit wording; boundary negatives exist only for `glpat-` and `glptt-`.
 7. ExecC1Indep observation 1: the pre-freeze controls receipt names scratch revs (`freeze=179deaaa…`, `candidate=f60c11a3…`) that do not resolve in the repo; the post-landing receipt names the real freeze and landing.
 8. ScribeGate F5: the two pre-freeze fixture repairs have an L1 observation record, not a machine receipt.
+
+## Erratum (appended after filing; names the text it supersedes)
+
+Filed bytes above are not rewritten. This erratum adds the hashes the filed text leaves implicit.
+
+1. **Wave-findings commit and final lane tip.** The wave evidence, seat reports and receipts,
+   the SCORECARD qualifiers, the lesson's M96-7 and wave-findings section, the LOG wave bullet and
+   the S140 live-verification correction landed at `e2f4f94a4f6a50b73048d34d0ffbc8d8e2ba0432`,
+   which is the final lane tip: `git -C kasegi-shokunin ls-remote origin refs/heads/master` prints
+   `e2f4f94a…`, `jj-lane.sh state` prints `local=e2f4f94a remote=e2f4f94a ahead=0 behind=0
+   tracked=0 untracked=0`.
+2. **Two post-landing controls receipts, one committed.** The harness wrote
+   `.ufo/waves/round-96/l1/c1-controls-r96.txt` on its post-landing run (12 controls, `ATTRIBUTION
+   pass fixtures=11`) and the same run's console log was copied to
+   `.ufo/waves/round-96/l1/c1-controls-postlanding-r96.txt`; the two are verdict-identical (the
+   harness copy adds the scratch `work=` path). Only the log copy is committed; the duplicate was
+   removed so the lane worktree stays clean.
+3. **S140 live verification.** The filed Sources section says the L1's `/-/raw/` fetch answered 403;
+   the wave's ScoutSources re-fetched the same pinned URL and got HTTP 200 with sha256
+   `14854f71…` equal to the round-94 manifest, so the source is live-verified this round (the
+   lesson and the SOURCES change log carry the correction; the 403 receipt carries an appended
+   note).
