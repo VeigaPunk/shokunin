@@ -56519,6 +56519,47 @@
    "notes": "Driver digest: 2026-11-07T03:53:29-03:00 launch tabi round=76 pgid=2782002 driver=hyaku-inline attempt=1; 2026-11-07T05:44:29-03:00 complete tabi round=76; hyaku-inline attempt=1. Defects (status-neutral): 7e792fa3 author date precedes launch (inherited jj change date); prompt committed by tabi-shokunin (a282dfb3, dispatch evidence) as in prior hyaku-inline rounds; integration incident: seat-crafted .json receipts in the walked tree turned the frozen counting command red until 34 files were renamed. Five in-round statement corrections (SCORECARD ## Round 76 Correction 1-5) marked, not predicate legs; calibration unchanged. Routed to r77: (1) limit sentence from the counter's own denominators + add-one-gap battery case (r75 routed defect 5, unclosed twice); (2) prior-set walk robustness and event-log/frame/url binding (R76Review1 F1-F5); (3) GAP_MIN bracket + mutant, collision-free placement on probes, R76Mut1 7 witnesses; (4) captured-by none Mistakes rows need grounded QUALITY criteria or a why-not; (5) enforce seat receipt location in the dispatch contract. SHONEN boxes 2-4 cite non-author-checkable pointers; promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 80,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 80,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 80
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "signal-safe quarantine dry-run (souji-quarantine.sh front + setsid worker kills its worker session on a caller's TERM/INT/HUP; frozen 15-row counter 12 -> 0 mismatches/orphans at W2 and at the R3 tip bytes)",
+    "disposition-controlled signal counter (children start with INT/QUIT/TERM/HUP reset, SigIgn printed at delivery, hang point asserted from the shim mark)"
+   ],
+   "report": ".ufo/reports/round-80/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-80-verifier-spotcheck.md@b15279bbc3f11ec10fc375a05a08b19cac460d0c",
+    "rechecks": "18/18 cited commits exist and are ancestors of master; lane ahead=0, porcelain clean; prompt = template rendering + hyaku addendum. Re-hashed frozen instruments (harness 6f22b68a, rows 5cce4146, C2 counter 32cf0c72, population ca5e2387 unchanged F->tip), C1 counter 90ed9031 absent at F, tool base e2f2d083 / W2 67ec160b / tip 23a43fbb = R3. Evidence-verified (not executed): C1 K-a 18/3/3 EXIT=1 -> after 18/0/0 EXIT=0, 18/18 match=yes, K-b/K-c red, r78 22/22+12/12, r77 35/35+7/7, r79 9/9; C2 K-a 15/12/12 -> W2 15/0/0, K-b/K-c 12/12, r13 5/0/0, r17 35/0/2, selftest 108/0 on committed file (81/51 copy reading reproduced identically on base by S80ExecC2 -> instrument context), trial v3 identical; W2 job-control harm 3/3 fail -> R3 3/3 ok, D2 2/2 fail -> 0, D3 1/1 fail -> 0, frozen counter 15/15 at R3 incl. SHELLOPTS=monitor. Spot-check S328 admit, S327 admit, S329 reject: agree (man pages re-opened, sha256 match, quotes verbatim). sources-census souji ok EXIT=0; rows 249 -> 251."
+   },
+   "commit": "souji-shokunin@5865301b20b1d8ee9751c157e944b06999e9a70e",
+   "closed_at": "2026-11-07T08:54:50Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-07T04:02:15-03:00 launch souji round=80 pgid=231481 driver=hyaku-inline attempt=1; 2026-11-07T05:49:30-03:00 complete souji round=80; hyaku-inline attempt=1. Ruling: C2 W2 bytes harmed no-signal behaviour under job control (outside the frozen rows); repaired R/R2/R3 behind failing-first probes before the after commit, frozen counter green on tip bytes -> graded at the after commit, no axis harmed (r77/r78 wave-repair precedent). Observations: P author date 04:01:20 precedes launch (jj change-creation time; committer 04:27:19); prompt committed under lane identity (driver behaviour). Routed to r81: (1) freeze post-wave quarantine rows and re-measure the R3 front under a fresh freeze + wave; (2) rec.sh binds the declared instrument not the executed copy (selftest-base-mode0644-copy binds 67ec160b while running base); (3) registry-agreement-at-I measures 79fcc73d not I, rev= lines name the recording commit; (4) registry-agreement red at base and tip (k1=7 k2=1), pre-existing; (5) census receipts bind rec.sh not sources-census.sh; (6) C1 NF12/NF14, mode-arm detectors, S294 not cited in counter docstring; (7) S328 teaches cell names superseded S068. SHONEN: four [~] boxes carry resolvable pointers and look non-author checkable; promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
