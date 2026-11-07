@@ -57072,6 +57072,46 @@
    "notes": "Dispatch/complete digest (copied from the mutable .ufo/watchdog.log): 2026-11-07T11:54:48-03:00 launch kagi round=58 pgid=2514153 driver=hyaku-inline attempt=1; 2026-11-07T13:36:19-03:00 complete kagi round=58; hyaku-inline attempt=1. Status ok; admitted. C1 calibration improved (8/8 routed round-57 record defects re-derived, FAIL/8 -> 0, population 8, guard=1) and C2 operability improved (capability: ACL-policy trial 0 -> 5). Axis diff: no score lowered (all six 9->9). Routed (status-neutral): D1 corpus/lessons/round-58.md:94 says 'Registry 119 -> 120' where BASE 117 and the report/SCORECARD say 117 -> 120; D2 report line 107 says source-fetches +4 rows where the BASE->tip diff adds 6 (S115-S120; 114 -> 120 rows); D3 control-set documentation vs shipped receipt (report 'ten C1' vs the 9 shipped F1-F9; C1-F10 and C2-F4 promised in plan/lesson/script header but absent); D4 the report's 'fixed' citation-gate claim (release-clock receipt created 13:30) has no post-fix CITATION_GATE reading (gates.txt 13:15 still unresolved=15); D5 the 101-minute mission's report omits the progressing/silent sentence (progressing: lane commits 13:32:54 and 13:34:45). Carried and named by the report: ADJACENCY_SCOPE DEFECT with stale_basis=0, breadth_drift=5, breadth_unverified=1; CHECKLIST_RUN BROKEN failed=7 (the-janitor substrate absent); 15 legacy CITATION_GATE unresolved references in integrator-authored spot-check files. Attribution: prompt commit 22157d84 carries the lane identity but predates launch 11:53:58 vs 11:54:48 - dispatch-path commit on an integrator-owned path. SHONEN 4/4 [~] with resolvable pointers; all four boxes look checkable by a non-author from the repo (promotion operator-owned; no [x] written).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 95,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 95,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 95
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:verifiability": "improved",
+    "coverage": "improved",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "capture-secret-scan extended: github-refresh-token (ghr_ + 76) and gitlab-jwt-token (glcbt-/glsat-/gliamat- three-segment eyJ forms) (S142/S143/S140; first-working round stays 87)"
+   ],
+   "report": ".ufo/reports/round-95/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-95-verifier-spotcheck.md@d8a2bb0a2bdc2f6337ea2f849a1a557297067ad6",
+    "rechecks": "C1 re-measured over committed bytes (lane gate not executed): 16 map rows on 14 lines apply byte-exactly from base 9ef0126 to 1e7b426 for the two knowledge files; independent token census denominator 1998 -> 1994 and numerator delta +1 (my simple resolver 991/992 vs the meter's 1007/1008, the 16-token gap is mirror/brace credit); meter 1007/1998 -> 1008/1994 evidence-verified from landing-r95 at 53ec479d; post-landing controls 15/15 at 38e7319. C2 re-measured: selftest case count 90+11=101 -> 104+11=115; landed scanner sha 66edd661 = frozen candidate at 38e7319/1e7b426; gate pin 8b6f8493; SCORECARD row byte-equal; allowlist row's c7ad99a1 digest matches the 80-byte ghr_ placeholder; K1-K6 pass evidence-verified at 38e7319 and the post-fix receipt at 88bc412. No axis harmed."
+   },
+   "commit": "kasegi-shokunin@fdaaaf36f1d08dcb209fd45f8c1130009076f909",
+   "closed_at": "2026-11-07T17:59:35Z",
+   "campaign": "hyaku",
+   "notes": "Digest (watchdog.log, mutable; copied): 2026-11-07T13:47:48-03:00 launch kasegi round=95 pgid=2566176 driver=hyaku-inline attempt=1; 2026-11-07T14:45:36-03:00 complete kasegi round=95; hyaku-inline attempt=1. Step 1: report dbee3413 (filed) + e17da0a9 (erratum), both by kasegi-shokunin; report erratum committer 14:50:43 after final lane tip fdaaaf36 14:50:22 (author date 14:48:21 is the recurring jj change-creation-time artifact, status-neutral); SHONEN 4x[~] with resolvable pointers; twelve cited hashes exist and are ancestors of refs/heads/master; jj-lane state local=remote=fdaaaf36 ahead=0 behind=0 tracked=0 untracked=0, porcelain empty, ls-remote fdaaaf36; prompt carries template sections 1-5 + hyaku addendum 6, five child-lane items, L2 floor 8; wave w1 13 seats (8/13 attack), 13/13 results, 0 dead. Snapshot drift: prompt after hash 1e7b426 is stale; 4ee3455 (docstring fix + S142 manifest), 88bc412 (allowlist hygiene) and fdaaaf36 (docfix receipt) landed later and are pushed; the committed erratum names fdaaaf36. Claims: C1 verified (16 edits/14 lines byte-exact at 1e7b426; meter 1007/1998 -> 1008/1994 evidence-verified at 53ec479d; controls 15/15 at 38e7319); C2 verified (selftest 101 -> 115 by case count; scanner/candidate sha 66edd661 at 38e7319; gate pin 8b6f8493; row byte-equal; allowlist digest matched; K1-K6 pass evidence-verified). Axes: depth:verifiability and coverage improved (scores 4 and 8 held), depth:density unchanged (SKILL.md identical); no axis harmed. Spot-check (d8a2bb0a) agrees with the gate on S142 admit and S141 reject; live sources re-opened (GitHub docs; GitLab API raw at 59ada1f4 line 72). Conformance/quality defects routed, status-neutral: (1) LOG.md has no entry for late commits 4ee3455/88bc412/fdaaaf36; (2) c1-controls-postlanding receipt prints candidate/after_rev 38e7319, not the C1 landing 53ec479d (knowledge trees identical, 15/15 stands); (3) QUALITY R148/R149 lesson pointers are swapped (R148 cites M95-1 reproducibility; R149 cites M95-2 frozen-control); (4) lesson Gate omits the new S142/S143 URLs; (5) erratum point 3's capture-binding-check output has no committed receipt (the manifest itself binds S142 sha 727ba6a0, URL and line 169); (6) frozen C2 statement cites S141 line 72 and S140 keyword lines 429/446/463 (grammar 430/447/464), erratum defers to round 96; (7) two C1 PARTIAL anchors (triage 88 first part, 90) cite SKILL.md:182-184 for a correction on 185, round-96 labels written; (8) MutC2Counter F6 survives when --instrument-sha256 is absent (disclosed); (9) S142 manifest landed after its capture (QUALITY R105), repaired at 4ee3455; (10) inherited six W04 warnings and the pre-existing S138 rejected-row-anchor FAIL. SHONEN boxes all [~]; boxes 1/3/4 look non-author-checkable, box 2's practice reports exist; promotion is operator-owned, no [x] written. No promotions, mints, or new L0; assimilation none.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
