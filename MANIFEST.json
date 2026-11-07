@@ -56644,6 +56644,47 @@
    "notes": "Driver: 2026-11-07T04:10:49-03:00 launch kagi round=55 pgid=1272938 driver=hyaku-inline attempt=1; 2026-11-07T06:55:50-03:00 complete kagi round=55; hyaku-inline attempt=1. Defects (status-neutral, routed): D1 weak frozen counter batteries (M55-5; shapes absent from bytes); D2 expired __cf_bm cookie values in pushed history f2b986fa/348aa3b8 (removed 70867f40); D3 S113 row asserts default-UA 403 with receipt only for S114 URL; D4 frozen plan separability sentence false for C1 (M55-4); D5 round-start census taken after work began. Operator: all four SHONEN boxes look non-author checkable from committed evidence (promotion operator-owned).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 81,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 81,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 81
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "signal-safe vault CLI call: tools/souji-vault-verify.sh runs its advisory CLI call as an async job with <&0, traps TERM/INT/HUP and kills timeout's group (census/round-81/records/c2-after.txt 12/0/0; repair/c2-at-R.txt 12/0/0 on tip bytes)",
+    "location-bound census capture check: census/round-81/c1-pointer-counter.py refuses MOVED targets under census/round-<N> outside a wave capture subtree or lacking the token's own path suffix (census/round-81/records/c1-after.txt 25/25, refused_true 0)"
+   ],
+   "report": ".ufo/reports/round-81/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-81-verifier-spotcheck.md@488956c45166ed6edc21567e8588a8134413949e",
+    "rechecks": "Step 1: report 99c5d50d by souji-shokunin (author 06:59:34, committer 07:03:44 after lane tip 07:02:14); SHONEN 4 [~] = 4 boxes; 13 cited commits exist and are ancestors of master; jj-lane state ahead=0, porcelain 0; prompt carries the template contract. C1 re-measured by me: c1-false-row-harness.py over the committed 25-row population -> SUMMARY rows=25 mismatches=0 accepted=0 refused_true=0 errors=0 EXIT=0 (base counter receipt: mismatches=3 accepted=3 on NF12/NF12c/NF12d); K-b refused_true=3, K-c accepted=1; r77 35/35+7/7, r78 22/22+12/12, r79 9/9, r80 18/18 green. C2 re-measured by me: c2-vault-signal-counter.py on W2 bytes (ba61e912) -> rows=12 mismatches=0 orphans=0 EXIT=0 and on tip/R bytes (89a2ed8c) -> 12/0/0 EXIT=0; under SHELLOPTS=monitor at R -> mismatches=2 orphans=2 on v7/v8 (disclosed residual, base 8/8 under same launch); selftest 57/0, r17 37/0/0, domain trial identical 3/3 evidence-verified; tmpdir-in-vault probe 3/3 fail at W2, 3/3 pass at R. Census re-run by me: souji ok EXIT=0, 87 W04; SOURCES rows 251->252. Spot-check: S329 admit agree (byte-equal excerpt, 17-word quote verbatim), S325 duplicate-check agree, S146 non-repair agree; lesson Gate logs no reject row (routed defect 1)."
+   },
+   "commit": "souji-shokunin@492da800c92d703ce1011b75d219dbb77970a545",
+   "closed_at": "2026-11-07T10:12:00Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-11-07T05:55:23-03:00 launch souji round=81 pgid=3536507 driver=hyaku-inline attempt=1; complete 2026-11-07T07:04:22-03:00. Conformance: clean. Defects (status-neutral): P author date 05:54:31 precedes launch line by 52 s (jj change-creation timestamp, committer date 06:15:27; same pattern as r80); lesson ## Gate has an admit but no reject row, so the non-author reject sample used the S325 duplicate check and the S146 registry non-repair instead. Routed to r82: C2 monitor-launch descendant-tree kill, v9-term-ignoring-cli/p5-late-term rows, probe D missing arms, stale $! fallback; C1 own-round-tree decoy class, M8 killer row, partial-suffix limit instance; V1 monitor settle tail; r17 240 s runners; carried _regular pathspec, intro-blob row, fork-tail row, r79 gate re-measurement, check-4 backstop, r76 K03/K04, status-trusting tools. C2 unmeasured branches (KILL fallback, post-call trap reset) disclosed by the lane. SHONEN: all four boxes [~] with resolvable pointers; they look checkable by a non-author; promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
