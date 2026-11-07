@@ -57155,6 +57155,46 @@
    "notes": "dispatch 2026-11-07T13:49:28-03:00 launch kagi round=59 pgid=2809212 driver=hyaku-inline attempt=1; complete 2026-11-07T14:48:19-03:00 (59 min, progressing: lane commits 14:36:49/14:45:17/14:47:03). Step-1 ok (report e76b07f2 by kagi-shokunin, SHONEN 1 heading + 4 [~], cited commits ancestors of master, lane ahead=0/clean, prompt = template + §6 addendum, wave 14 seats in band 8-16, no dead seat). Routed to lane r60 (spot-check §7): D1 LOG.md:1965 'dead seats __DEAD__' unfilled placeholder; D2 lesson R31 says the selftest receipt reads 32 while it reads 33; D3 disposition ids R20/R21/R22 each used twice; D4 SCORECARD '21 controls' vs 20 CONTROL lines; D5 dead gate-evidence pointers (SCORECARD cites a nonexistent .ufo/waves/round-59/final/release-clock-candidate.txt; DOC_AUDIT/RELEASE_CLOCK/SCOPE readings have no committed receipts; DOC_AUDIT 40/37/3 and on-release=32 re-measured by plain counts, SCOPE stale_basis not); D6 report names measured commit 75165a07 while the C1 receipt reads revision 160caf75 (delta only receipts/results, readings stand); D7 transit trial registered kind=gate with selftest:none (Gate standard). Noticed: attack share 4/14 only if the sentinel counts (literal addendum list gives 3/14); validator-refusal.txt evidences only the planner refusal; LOG §Round 59 does not name the last commit's w1-results.json/revision-bound receipts. Carried: ADJACENCY_SCOPE breadth_drift=5/unverified=1, CITATION_GATE BROKEN unresolved=6 over 48 docs, 10 surviving battery mutants as named ceilings. No promotions/mints; SHONEN boxes are author [~] and a non-author could check all four — promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 96,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 96,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 96
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:verifiability": "improved",
+    "coverage": "improved",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "capture-secret-scan extended: the GitLab routable and versioned-routable forms (glpat-, glrt-/glrtr-, gldt-, glagent-, glwt-) and glptt (exactly 20 or exactly 40); selftest 115 -> 128 (S140 lines 30/51/73/136/324/358/375, S144; first-working round stays 87)"
+   ],
+   "report": ".ufo/reports/round-96/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-96-verifier-spotcheck.md@b06af5e07efbd961a8449f7de6b57eeea62c6bd3",
+    "rechecks": "C1 re-measured from committed bytes (lane counter not executed): the 5-row map on 4 lines applies byte-exactly from d8a2bb0a to 3c0581e2 in the two knowledge files (apply_equal True, each old once, each new absent on base); independent token census delta +2/+1 with the exact changed-token set (mine 1031/2027 -> 1033/2028; seat C1IndependentCensus 1021/2051 -> 1023/2052; reported 1030/2027 -> 1032/2028, constant offset only); ISO 6.2 d/e/f anchors verified against S041 lines 1832-1835; meter and controls evidence-verified (l1/c1-landing-r96.txt M0-M10 pass at after_rev=3c0581e2; 12/12 controls + ATTRIBUTION pass fixtures=11 pre- and post-landing); pins fadd0ede/7d9bb49f/757894d1/d47328ae recomputed. C2 re-measured: AST selftest 104+8+3=115 -> 117+8+3=128, GITLAB_PATTERNS 4 -> 11 with exactly the seven named shapes; S140 grounding 7/7 AGREE (seat C2ShapeGrounding); instrument sha256 71876619 = frozen candidate = working tree, gate 8b6f8493, allowlist unchanged; K1-K6 evidence-verified at 7ef1d365 at seeds 4242 and 20261107 plus three seat seeds. Harm: none (SCORECARD additive + one capability-row extension, no axis score changed; SKILL.md and PROVINCE.md byte-identical; no cross-domain path)."
+   },
+   "commit": "kasegi-shokunin@e2f4f94a4f6a50b73048d34d0ffbc8d8e2ba0432",
+   "closed_at": "2026-11-07T19:06:08Z",
+   "campaign": "hyaku",
+   "notes": "Digest (watchdog.log, mutable; copied): 2026-11-07T15:01:16-03:00 launch kasegi round=96 pgid=4033329 driver=hyaku-inline attempt=1; 2026-11-07T15:51:54-03:00 complete kasegi round=96; hyaku-inline attempt=1. Step 1: report 4a92aac8 (filed, committer 15:51:02) + 3fcdf2b6 (erratum, 15:51:33), both kasegi-shokunin, after lane tip e2f4f94a (15:50:23); SHONEN heading with 4x[~] and resolvable pointers; six cited hashes exist and are ancestors of refs/heads/master; jj-lane state local=remote=e2f4f94a ahead=0 behind=0 tracked=0 untracked=0, porcelain empty, ls-remote e2f4f94a; prompt sections 1-5 byte-identical to templates/round-prompt.md plus the hyaku addendum, five child-lane items, L2 floor 8, no route-map drift (MISSION.md carries no per-role bucket); wave 13 seats in one batched call (counts.spawn=13 resume=0 total=13), 8/13 attack, 0 dead, no model pins. Conformance defects (status-neutral): LOG.md cites 804e7bc3/3c0581e2/7ef1d365/6299582b but not b7f59c60 (integration) or e2f4f94a (wave findings); the report cites l1/c2-landing-r96.txt for seeds 4242 and 20261107 while it holds seed 4242 only (the 20261107 run is w1/SentinelShapes-receipts/03); the wave ran 2 executors against the prompt section 3 minimum of 3 (the L1 planner substitution is sanctioned); report counts off by one (SentinelShapes 7 vs 8 routed findings; 'six mistakes' vs the lesson's 7 rows M96-1..M96-7); the C2 statement's '7 positives, 6 boundary negatives' describes the gate plants, the selftest split is 8/5; S144 anchor says the prefix table spans 348-395 while it ends at 364; S144 used-by lists the instrument, which cites S144 0x (the entry cites it 5x); manifest note typo glsoas- vs gloas- and stale '419 lines' prose; pre-freeze controls receipt names unresolvable scratch revs (lane-routed). Claim-statement defect routed: the C2 docstring known-limits list dropped the plain glagent- 50-character form (S140:213) while it remains undetected; the knowledge entry records it and the wave flagged it (ReviewC2Scanner F2 / SentinelShapes R8); K1-K6 do not test the docstring. Routed to round 97: 10 items in the spot-check section 6. SHONEN: all four boxes [~]; a non-author can check boxes 1, 3 and 4 on current evidence (decision tables/checklists with resolvable sources, rechecks executable, PROVINCE unchanged, no absorption); box 2 rests on the round-85/86 practice reports with no new end-to-end task this round; promotion stays operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
