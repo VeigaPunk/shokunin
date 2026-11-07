@@ -57238,6 +57238,49 @@
    "notes": "Driver digest (.ufo/watchdog.log, mutable; copied): 2026-11-07T13:33:13-03:00 launch mado round=97 pgid=596619 driver=hyaku-inline attempt=1; 2026-11-07T16:20:59-03:00 complete mado round=97; hyaku-inline attempt=1. Status ok (real report, committed work, resolvable hashes); admitted: C1 coverage (new surface capability, 0 scored paths -> 157/157 frozen, 6194/6194 host labels, 101/101 counted mutants, selftest 40) and C2 operability (both round-96 counters gain 10-check --selftest modes with production bytes byte-identical, registry 1 -> 3 instrument rows) both verify; trends all improved. No axis harmed (SCORECARD append-only, no score lowered; harm watch 25 legs 24 rc 0 + the declared r90c1 SETUP_ERROR; the two r96 counters replayed at the tip). Conformance defects, status-neutral: (1) the report was filed at f5f6fa34 (committer 16:18:23-03) before lane commits 992037c6/d7c186bc/15b62804 (16:19:05/16:19:34/16:19:47) and rewritten in place at 26a96ca0 (16:20:00) instead of an appended erratum naming the superseded text; (2) the w1 role census says 3 executors where w1/swarm-registry.json and w1-results.json hold 6 (14 = 6 executor + 2 mutation-tester + 2 reviewer + 1 critic + 1 scout + 1 connector + 1 scribe), repeated in SCORECARD; (3) the 'dead seats ... settled with no report' line is contradicted by w1/R97MScoutSources.md (283 L), w1/R97MExecC2.md (204 L) and w1/R97MMutC2.md (199 L), all committed; (4) the Notes' 'the r96 spot-check's D1-D13 are closed' omits D7 and D9 and neither is closed (D7's rationale text at .ufo/waves/round-96/claims-declaration-r96.md:114-115 unchanged; D9's class recurs in this round's w1 census); (5) S523's used-by/recheck cells changed in a1408d47 without the old->new lesson log the SOURCES contract requires (the report's 'ten used-by cells' omits the repair); (6) fleet-root untracked f.txt (2 B, 2026-11-07 04:40) and trail-ids.txt (1 B, 2026-11-06 20:36) predate the round (mtimes inside mado r94/r90) and are routed. Routed: items 1-6 above plus round-95 routed defects 1, 2, 4 and 5 (re-flagged by the report). SHONEN: all four boxes look checkable by a non-author from committed evidence (registry rows + entry; C1 measured run; entry commands; R97MConnector's 20-lane PROVINCE sweep); promotion is operator-owned and the lane filed [~] only.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 60,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 60,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 60
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "OpenBao AppRole secret_id custody trial: five credential-custody mechanics (bind_secret_id deciding whether role_id alone authenticates, secret_id_num_uses bounding reuse, secret_id_ttl retiring an unwrapped secret, the accessor as a non-secret lookup/destroy handle, secret_id_bound_cidrs pinning a login to a source range) executed on throwaway OpenBao 2.7.2 dev servers with five falsifier shims, a no-bao SETUP leg and a fixture-driven 45-case --selftest that fails with named FINDING ids on a mutated copy; counter plans/round-60-c2.sh C2_APPROLE_TRIAL 0 -> 5, receipts .ufo/waves/round-60/build/R60ExecTrial/; first-working round 60"
+   ],
+   "report": ".ufo/reports/round-60/kagi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kagi-shokunin/corpus/lessons/round-60-verifier-spotcheck.md@c940f51689d702f1786989d56ad4663833c1452e",
+    "rechecks": "Step-1 pass: report 99b40138 by kagi-shokunin 16:33:57 -03 after lane tip 818d2a82 16:33:44 and before driver complete 16:34:37 (first report commit dbe99781 16:33:28 preceded the tip; superseded by the 16:33:57 re-commit citing it - ordering note, not a marker); SHONEN heading, 4 [~] lines = 4 boxes; 9 cited lane hashes + BASE exist and are ancestors of refs/heads/master; jj-lane state ahead=0 behind=0, porcelain clean; prompt = templates/round-prompt.md rendered with substitutions only (140 lines) + section 6 addendum, round-level and five child-lane items present; wave 16 seats (spawn=16, band 8-16), 16/16 results non-empty. C1 re-measured by me over committed bytes at a677c78e vs 818d2a82: all seven item facts (I1 LOG correction results=14 dead seats=0 against w1-results.json 14 results/0 empty; I2 supersedes R31 + 33-case receipt; I3 12 unique routed ids R32-R43 + R20/R21/R22 duplicate line; I4 20 controls; I5 three round-60 receipts with RELEASE_CLOCK/DOC_AUDIT/ADJACENCY_SCOPE last lines; I6 measured=revision 160caf75; I7 transit selftest PASS cases=9 + mutant FAIL + SKILL.md:847 re-registered), repairs append-only (LOG 16/0, lesson 2/0, SCORECARD 50/0 vs BASE); evidence-verified, not executed: c1-landed value=0 population=7 i1..i7=1 guard=1 at measured revision 14a6c07d, BASE value=FAIL 7/7 guard=0, checker selftest PASS 46 cases, battery CONTROLS match=20 mismatch=0. C2 re-measured by me: trial absent at BASE; 661-line trial with T1-T5, five shim vectors BHHHH/HBHHH/HHBHH/HHHBH/HHHHB, no-bao SETUP rc2, two byte-identical real runs (sha256 506a44a2) HOLDS 5/5, APPROLE_SELFTEST PASS cases=45 + mutant FAIL F-SHIM-MATRIX; evidence-verified: counter value=5 at candidate bytes a228e312, ambient leg value=5. Axis scores all 9 -> 9, no 9 -> [0-8] row."
+   },
+   "commit": "kagi-shokunin@818d2a82fcc568a95db5207c256597cb7d181dc5",
+   "closed_at": "2026-11-07T19:44:22Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable; copied): 2026-11-07T15:03:17-03:00 launch kagi round=60 pgid=134532 driver=hyaku-inline attempt=1; 2026-11-07T16:34:37-03:00 complete kagi round=60; hyaku-inline attempt=1. Step-1 conformance pass with notes: report 99b40138 by the lane identity, lands last (16:33:57 after tip 818d2a82 16:33:44); SHONEN 4 [~] = 4 boxes; cited hashes ancestor of refs/heads/master; lane pushed ahead=0 and clean; prompt carries the template contract (140 lines render + section 6 addendum); wave 16 seats, 16/16 non-empty. Claims verify: C1 C1_ROUTED 7 -> 0 (seven r59 routed defects re-derived at BASE and tip; instrument evidence verified, not executed); C2 C2_APPROLE_TRIAL 0 -> 5 (executed AppRole custody trial, 45-case selftest with a red witness, five shim vectors, no-bao leg, two byte-identical real runs). Axis verdicts: calibration improved, operability improved, depth/coverage/freshness/adjacency unchanged; no axis score lowered (all 9 -> 9). Trends: expansion improved (rows 122 -> 124 S123/S124 tier A mined; entry on ground the coverage map did not hold; capability row first-working round 60), quality improved (seven record defects repaired append-only; transit gate selftest; entry bounds), discernment improved (outside spot-check agrees on two admits, the reject class, the entry and the census; attack seats changed the instruments before the candidate reading; QM76/QM77 mined). Spot-check landed c940f51689d702f1786989d56ad4663833c1452e (protocol identity, single path, remote verified). Defects routed to r61 (status-neutral under the Gate standard's Closure consequence): D1 corpus/lessons/round-60.md R37 and Bounds say the mutation-tester produced nothing while w1-results.json (16 results), build/R60MutCounters/mutants.md and the report/LOG correction show 16 mutants (9 killed/7 survived) and R40-R43 cite its findings - append a correction and re-dispose R37; D2 SKILL.md:855 registers plans/round-60-c2.sh as kind:gate with selftest 'none of its own', violating the Gate standard's self-test clause and the round's own new QM76 ('a defect of the landing round, not a later round's cleanup') - give the counter a fixture-driven --selftest or re-register it as a probe; D3 plans/round-60.md section A3 item 2 asserts the form-encoded-body behaviour but its cited l1-probe.txt carries no form/content-type leg (the entry's D10 discloses it; lesson M60-2 mines only item 4) - append an amendment or withdraw item 2 and mine it; D4 the report's 'The round introduced no new record defect that it did not itself route (R32-R43)' is false (D1-D3) - state the new defects next round; D5 the round-60 LOG wave line was rewritten in place at 818d2a82 (1 insertion/1 deletion vs 14a6c07d) instead of an appended correction - state the mechanism next round; D6 the report's stale-lane launch 15:09:28 does not match the driver line 15:03:17 and its quoted commit times match neither author nor committer stamps - quote the driver line and git log %ci; D7 the report's 'attack share 4/16 = 25 % on the addendum's literal list' is wrong (three present seats = 3/16 = 19 %; R36 states both readings correctly) - use R36's wording. SHONEN 4x[~]: box 2 and box 4 are largely checkable by a non-author, boxes 1 and 3 remain judgment; promotion is operator-owned. Tool installs: none.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
