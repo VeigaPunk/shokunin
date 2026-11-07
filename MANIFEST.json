@@ -57717,6 +57717,46 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable; copied): 2026-11-07T19:03:13-03:00 launch tabi round=80 pgid=2294340 driver=hyaku-inline attempt=1; 2026-11-07T19:49:34-03:00 complete tabi round=80; hyaku-inline attempt=1. Status ok; verdict admitted: C1 (coverage, capability chromium-showpicker-linux generation r80) and C2 (calibration, r79 record drift + self-drift) verified, no axis harmed; calibration unchanged because the C2 gain (17 -> 0) is offset by the round's own fresh record drift. Conformance defects (status-neutral, routed to r81): the committed end census is red (exit 1, E11 S219-S221 missing used-by) while the report claims exit 0 (the HEAD tree re-runs green); five lane records cite the superseded D9 nonce/commit (SCORECARD:3950,3957, LOG:3853-3854, SKILL:3250, knowledge note:9,20) while the receipt and report carry D10 93172ba9; dead pointers lesson-proof/c1-nowork.json and scored/cold-runs.txt (never committed); Gate quote counts S220 14 (stated 17), S221 7 (stated 9) and the S220 locator off by one; claims.json C2 leg (c) still states battery 81/81 and kill power 82/82; SCORECARD capability row says DOM.setInputFiles; report's 'five self claims' undercounts the control's six deltas; D10 93172ba9 absent from the landed-changes table; battery-a.json committed at D9 and not bound to the final receipt. SHONEN: all four boxes [~]; the round's additions look checkable by a non-author (SKILL registry row, note recheck line, capability row, wave evidence), but promotion is operator-owned and no [x] was written. No promotions, no mints, no assimilation (merge/ and considerthese/ absent).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 99,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 99,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 99
+   },
+   "admitted": false,
+   "verdict": "rejected-harmed",
+   "verdicts": {
+    "depth:verifiability": "improved",
+    "coverage": "harmed",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "capture-secret-scan extended: the gitlab-session-cookie assignment-context separator window `[^\\n]{0,8}[:=][^\\n]{0,8}` (S150) — 12/12 round-98 MUST-FIX values hit, ten boundary negatives clean, selftest 170 -> 192; first-working round stays 87 (coverage regression: 23 round-98 detection classes lost, the Netscape cookie jar among them)"
+   ],
+   "report": ".ufo/reports/round-99/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-99-verifier-spotcheck.md@6e63a7dc249ade9a3fc6d219b44049017bdb24a1",
+    "rechecks": "C1 evidence-verified (lane instruments not executed): tamper receipts 5/12 vs 12/12, instrument pins recomputed at e2d3de7b/35e3ab60/3746f64e (66383371/6d68d955/c06d95cd), layout triple identical at b9411a6b (162/732, 2569/7620, 2607/8022), 2.29 s / 512,064 kB, census header-sha256 ddad8766 and body-sha256 680a3534 recomputed over the committed bytes, class table 76+0+2608+5342=8026 and pinned 2607=2608-1; record defect: header host-inclusive 2683/8026 vs body 2684/8026 (one reclassified HOST-OWNED row; label names resolve.py's definition) and `confined 1` absent from the file. C2 re-measured: my own regex over the probe payloads 12/12 / 0 extra (round-98 0/12 / 2 extra), static selftest 181+8+3=192 vs 159+8+3=170, instrument 8b338726 = pin; K3-K6 evidence-verified; coverage HARMED by the 23 lost round-98 detection classes (delta.txt LOST-HIT-VS-R98=23, jar among them) with the measured bounded union (candidate B: 12/12, 0/10, jar recovered) deferred. Guard re-measured: density 273.2 both, SKILL.md diff empty. Sources: census rc 0, 151 rows, 0 malformed/dup/enum/used-by; S151 re-opened live (HTTP 200, 9,776 bytes, sha256 9151973180), S150 re-opened live (HTTP 200, 128,124 bytes, nonce-bound), reject re-opened (round-98 assignment-context.txt)."
+   },
+   "commit": "kasegi-shokunin@6f4858a89764ef29263c3abe4387873ed583f806",
+   "closed_at": "2026-11-07T23:00:17Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-07T19:04:18-03:00 launch kasegi round=99 pgid=2566269 driver=hyaku-inline attempt=1; 2026-11-07T19:48:31-03:00 complete kasegi round=99; hyaku-inline attempt=1. Report 4b117bd3 committed by lane identity kasegi-shokunin; lane b9411a6b -> 6f4858a8, pushed, clean; all 17 cited lane commits exist and are ancestors of master. Prompt is the 140-line template render (only the cwd corrected; the template's {{LANE}}-repo placeholder renders <kasegi-repo> — operator-side template defect). C1 VERIFIED P1-P4 (tamper 5/12 -> 12/12, identical layout triple, 2.29 s / 512,064 kB, digests recompute exactly) with the census header/body reconciliation defect routed. C2 VERIFIED K1-K6 (independent 12/12 / 0 extra, static selftest 192) but coverage HARMED: the landing loses 23 round-98 detection classes including the high-realism Netscape cookie jar, while the wave's measured bounded union (candidate B: 12/12, 0/10, jar recovered) was deferred to round 100 — a trade, not an improvement, so not admitted. Routed: C2 regression (high); census header/body reconciliation (medium); correction sweep — 53 vs 57 stale in SCORECARD/LOG/QUALITY R160 and six/nine mistakes stale in LOG/report (medium); redaction control after-digests are single-line states and %20 mutated on four lines (medium); end-to-end r98 CLI claim cites a receipt that errored FileNotFoundError (medium); probe docstring verbatim claim stale (low); report bullet-8 pointer (low); r98 routed defect 6 claimed closed without the LOG correction (low); C1 measurement precision (low); template cwd placeholder (operator-side, low). SHONEN boxes 1, 3 and 4 look checkable by a non-author (r47 spot-check); box 2 rests on the rounds-85/86 practice reports; promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
