@@ -56439,6 +56439,43 @@
    "notes": "Driver digest: 2026-11-07T03:00:40-03:00 launch mado round=94 pgid=2632099 driver=hyaku-inline attempt=1; 2026-11-07T04:46:55-03:00 complete mado round=94; hyaku-inline attempt=1. Step 1 pass: report e3c30566 by mado-shokunin 04:45:32 after last lane commit bcc21fcf 04:45:08; SHONEN 4x[~]; cited hashes ancestors of master; jj-lane state ahead=0, porcelain empty; prompt = template + placeholders (22 lines) + hyaku addendum. Defects (status-neutral): dispatch-evidence commit 5a164538 authored 61 s before the launch line (driver attribution pattern); fleet root untracked f.txt/trail-ids.txt unattributed. Routed to mado r95: mado-mime.py HOME concatenation (M94-1); mimeglob docstring cache-validity citation -> xdgmimecache.c:126-139; kill-sets for mado-mimeglob.py and the gate's own selftest; r93 routed defects 1 (QUALITY 158 instrument) and 3 (portal sec.8 frozen cases) still open; M94-5 apply QUALITY 154 before freezing declarations. SHONEN boxes 2-3 now carry non-author runnable evidence in the spot-check; promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 100,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "kumitate",
+   "lane_round": 100,
+   "lanes": {
+    "kumitate": "ok"
+   },
+   "lane_rounds": {
+    "kumitate": 100
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-100/kumitate.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kumitate-shokunin/corpus/lessons/round-100-verifier-spotcheck.md@e4887850448c38172e12fcb220496d23f49e8121",
+    "rechecks": "C1 operability re-measured: production diff = one reader line per tool (cite \\s pads -> [ \\t]; capture matchAll /gm \\s -> split LF + ^ {0,3}\\|[ \\t]*); own 11040-case differential vs gawk running census row_pass id extraction: base cite 324 / base capture 3996 disagreements -> R100 0; K99 /gm draft reproduced as keeping rows after CR/LS/PS; tool sha256 da16e32b/c9f22275 at M2 = tip = SCORECARD pins; SOURCES 217->219 by grep count; SCORECARD diff: proxy/pins/disposition only, coverage 10->10. Evidence-verified (not executed): probe-m2-1/2 HELD a=1 b=1 c=1 d=1, ctl-nothing UNMET a_miss=42 b_miss=64, controls 16/16 match, selftests 45/45 + 54/54, teeth 18/18, survivors 2/2, remut all killed, battery-final all exit 0. Spot-check: S280/S281 re-fetched (HTTP 200, sha256 = row), quotes 20/13 words verbatim; 3 admits + 2 rejects agree; census validate exit 0 (8 W04, matches report)."
+   },
+   "commit": "kumitate-shokunin@034e52b4f5dbea4686d6dc8d9e957b705f2e60da",
+   "closed_at": "2026-11-07T08:12:00Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-11-07T04:17:04-03:00 launch kumitate round=100 pgid=2464492 driver=hyaku-inline attempt=1; 2026-11-07T05:05:45-03:00 complete kumitate round=100; hyaku-inline attempt=1. Report 2d46c25b by kumitate-shokunin at 05:05:17 (before complete); SHONEN 4/4 lines; 7 lane commits dc8b7e4a..034e52b4 all ancestors of master; helper state ahead=0 behind=0 tracked=0 untracked=0; wave w1 12/12 results. Defects routed to r101 (status-neutral): D1 close/battery-final.txt header names rev 4897e20c but graded an uncommitted worktree (rows=219 incl. 173a5314 content) - re-run on committed tip; D2 corpus/QUALITY.md splice artifact before Q94 (broken heading '### Q94` registration...' + a '## Mistakes' M100-1..3 table that belongs in the lesson) - append correction; D3 report and S281 cite cite-sources.mjs:36 / source-capture.mjs:157 (base lines; tip :40/:159). Carried: section scope, census-oracle hash pin, checklist reds, L0 kumitate|round-99 and |round-96. SHONEN boxes 1-3 look non-author checkable from committed evidence; box 4 not assessed (promotion operator-owned).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
