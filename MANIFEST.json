@@ -56946,6 +56946,49 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable; copied): 2026-11-07T05:48:24-03:00 launch tabi round=77 pgid=2920530 attempt=1; 10:50:55 lane-dead-no-report attempt=1 (no landed report); 10:50:57 launch pgid=3255324 attempt=2; 12:33:47 complete attempt=2. Report f1a75aa7 by tabi-shokunin; committer 12:33:02 > lane tip 12:32:51 (lands last). Lane base 1320d428 -> round head b985aac4, remote verified ahead=0. Status ok (real report, committed work, resolvable hashes); verdict rejected-harmed: expansion improved, quality harmed (new registered gate red 11/13, counter refuses honest cold runs 2/25, three escape classes inside its own declared limit), so the round is a trade and not an admission. No axis score lowered (SCORECARD diff has no removed lines; all six at 9). Conformance defects, status-neutral: lane committed fleet-root .ufo/prompts/tabi-round-77.md outside its write scope (690a5308) and appended Amendment 52 to the prompt at dispatch; lesson ## Gate has no row record for S213 (CORPUS rule 1); report miscounts Mistakes (says 7 rows / 2 captured-by none; table has 8 / 3) and the pipe-truncation row has a literal '|' splitting the table; wave ran no planner seat (validator rejects the role, L1 held it); report route list omits connector @m_antigravity and predates Amendment 53 (executor @m_zfl -> @m_cru, landed mid-round, future launches only). Routed to tabi r78: red selftest; backendNodeId pin (QUALITY 150 fix); schema-byte walk / self-claimed-nonce exemption / host-argv 6-of-17; capability row on an unverified claim (mark provisional or hold); missing S213 Gate record; the two count/table defects. Promotions/mints: none. SHONEN: all four boxes look checkable by a non-author now (SKILL.md decision rows, an end-to-end file-chooser task, executor seats ran from the spec alone, R77Connector 20/20 with 0 contested ground) — promotion stays operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 96,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 96,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 96
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "GLib 2.90.1 text-database content-type guess (mime/magic, no loadable cache): tools/mado-mimetext.py answers read-only the type and uncertain flag for name+bytes — 284/284 frozen cases, 16/16 classes, 84/84 counted mutants (class_kills 16/16), 9822/9822 host pairs over the round-95 4911-file list, fresh 268/268 at a measured seed; first-working round 96"
+   ],
+   "report": ".ufo/reports/round-96/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-96-verifier-spotcheck.md@e6152b589c2c6a28426c28263c4bcc3c46398be4",
+    "rechecks": "Step 1: report e26f8a5f by mado-shokunin (committer 13:13:32-03 after the cited tip c20f060d 13:13:14); SHONEN heading 4x[~] with pointers; six cited hashes 09db97c3/b056290d/5dd921b3/f54def27/8a0aadb0/c20f060d all ancestors of master (erratum 0caf2465 is the branch tip, after the report); jj-lane state ahead=0 behind=0 tracked=0 untracked=0, porcelain empty, ls-remote master = the round tip before my spot-check commit; prompt = templates/round-prompt.md sections 1-5 verbatim modulo the working-dir substitution plus the hyaku addendum section 6, five child-lane items present, L2 floor >=8 in one batched call = MISSION.md section L2, one v1 wave of 14 seats (5 attack = 36%, 6 executor seats per the registry, 1 connector, 0 residual). C1 re-measured by me over committed bytes: tool absent at base (git cat-file rc 128), tool sha d5f174fc = pin, all seven frozen pins match, the host text-DB manifest's 8 files match the live /usr/share/mime bytes, index 117/117, SOURCES 458->460 with +2 tier A; receipt TARGET_MET at 5dd921b3 (284/284, 16/16, fresh 268/268, host 9822/9822, 84/84, class_kills 16/16, checks=50) evidence-verified, separability TARGET_MET at f54def27, and a read-only replay at the tip reproduced TARGET_MET (fresh 272/272 at its own seed). C2 re-measured: no kill-set at base or at the C1 tip, base FAIL lines carry detail strings, gate sha 2d6f1219 unchanged base->tip, tool be716a63 and kill-set 305d735f = pins, 7 kills/6 labels; receipt TARGET_MET at f54def27 (labels 6/6, hand 31/31, neutralised 6/6, singleton 6/6, control 19/31, r90 83/83 and 28/28) evidence-verified, separability SETUP_ERROR at 5dd921b3, replay at the tip identical. Harm: 22 legs (21 rc 0 + r90c1 rc 2, its declared expectation), mado-verify 460/460, gate selftest 11/11 and ledger 188/188 re-run green. No owned axis harmed: SCORECARD diff 40 lines added, 0 removed; no tool/quality bytes changed after f54def27. Discernment: admits S524 (xdgmimemagic.c HTTP 200, 18289 B, sha fcb1eafe, quote at line 814) and S525 (spec §2.5 HTTP 200, 59208 B, sha e00fa00e, quote at line 387) and rejects ar01s03 (no MIME-Magic text) and the contract's word-size set (C accepts ~0) all re-opened live, 4/4 agree; census mado ok rc 0, 460 rows. Defects D1-D13 routed in the spot-check section 6; D1/D2 are the must-fix items (D2 escalates quality to harmed if unmarked next round)."
+   },
+   "commit": "mado-shokunin@0caf246510fb7b849edd5217aef0eb6087592e4b",
+   "closed_at": "2026-11-07T16:32:05Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest (.ufo/watchdog.log, mutable; copied): 2026-11-07T11:15:07-03:00 launch mado round=96 pgid=1870448 driver=hyaku-inline attempt=1; 2026-11-07T13:15:13-03:00 complete mado round=96; hyaku-inline attempt=1. Status ok (real report, committed work, resolvable hashes); admitted: C1 coverage (new surface capability, 0/0 -> 284/284 frozen, 9822/9822 host, 84/84 counted mutants) and C2 operability (kill-set 0/31 -> 31/31 hand weakenings, 0/6 -> 6/6 neutralisations and singletons under the unchanged round-93 gate) both verify; trends all improved. No axis harmed (SCORECARD append-only, no score lowered; prior counters and the hermetic gate green). Conformance defects, status-neutral: prompt committed under the lane identity by the driver (f9e7b713); the prompt's quoted run-15 route map is stale vs the live task.agentModelOverrides while the prompt names the route table as authority (operator-side addendum); report filed 51 s before the erratum 0caf2465. Routed to mado r97 (spot-check section 6): D1 the six used-by appends (S505, S519-S523) landed after the row's closing pipe, so the cells still omit the r96 entry and each row carries stray text while report/LOG/SCORECARD/lesson assert the append (census malformed check blind to it); D2 the admitted entry's section 7.4 is stale draft (265 vs 284 cases, 97 vs 84/13/13 mutants, keeps a placeholder paragraph) and README/ledger repeat 265/97/20-checks; D3 the two new counters and the new kill-set pair have no SKILL.md registry rows (Gate standard Registry) and D4 neither counter has a --selftest (Self-test; standing gap shared with r93-r95); D5 the declaration body's C1 command carries the stale mutant pin f8d461e8 vs the freeze's 448150e2; D6 mutant-population prose 97+14 vs the frozen 84+13+13 with one id dropped/one added; D7 the C2 rationale misquotes r95 routed defect 3 (substitutes mimesniff for check-receipt-presence); D8 the harm receipt was rewritten in place (red at 8a0aadb0: ledger rc=1, mako rc=2; green harm2 at 87a7d51) with no correction entry and three different revision labels; D9 report role census 4 executors vs 6 in the registry; D10 PROVINCE.md no trailing newline; D11 the census receipts do not carry the 458/460 counts cited to them; D12 the post-report erratum class is not mined into the lesson Mistakes; D13 the Landed-changes table omits 87a7d51/c20f060/0caf2465. Carried: the tool docstring's three line citations, ten case gaps in not_observable_not_counted, and the three structurally unguardable tools; round-95 routed defects 1, 2, 4 and 5 stay open. Promotions/mints: none. SHONEN: all four boxes look checkable by a non-author from committed evidence (SKILL rows + entry, the C1 run and receipt, the entry's commands, R96MConnector's 21-lane PROVINCE sweep); promotion stays operator-owned and the lane wrote no [x]. Misroot sweep: the fleet root carries orchestrator .scratch edits and two contentless strays (f.txt, trail-ids.txt); none from mado.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
