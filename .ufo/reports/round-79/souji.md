@@ -108,5 +108,4 @@ No owned axis score changed (calibration 7, coverage 8, operability 8).
 Stale-lane: respawn-per-round driver; this lane has no other open mission.
 
 Domain trial (C1 conjunct): `census/round-79/records/c1-domain-trial.txt`, run through the committed `census/round-79/probes/domain-trial.py` at the report tip. Its receipt grades every byte of this report except the `Final lane hash:` line (report_sha256 over the filed bytes with that line removed) and binds the gate bytes it ran against the W1 blob (`amendment=none` when equal).
-
 Final lane hash: 35b208cc72b014fa5af68101c0561e7974f1fe76
