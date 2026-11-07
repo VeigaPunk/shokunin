@@ -56768,6 +56768,49 @@
    "notes": "Driver digest (copied from mutable .ufo/watchdog.log): 2026-11-07T06:59:38-03:00 launch kagi round=56 pgid=2411813 driver=hyaku-inline attempt=1; 07:10:25 lane-dead-no-report (attempt=1, FAIL report_of); 07:10:33 launch attempt=2 pgid=3621927; 07:12:13 lane-dead-no-report (attempt=2); 07:12:20 launch attempt=3 pgid=3797654; 10:50:53 complete kagi round=56; hyaku-inline attempt=3. One claim (C1 freshness, capability acquisition) verified 0 -> 10; no axis harmed (SCORECARD append-only, 16 insertions 0 deletions, all axes 9 -> 9). Conformance defects (status-neutral, routed to the lane): D1 report SHONEN lines carry no [x]/[ ]/[~] marks or pointers; D2 lane committed .ufo/prompts/kagi-round-56.md in the fleet repo (a7756390/3cfc67b1/6f0de30a) - integrator scope; D3 report 'Trend verdicts' section lists the six axes instead of expansion/quality/discernment; D4 before->after table header names bcf07e7 as the after-revision though that revision reads value=0/guard=0 under the epoch-F pin (cell is the tip); D5 stale instrument details in SCORECARD (line 1850 '--selftest 18 cases' vs 20; capability row cites epochE 22 MATCH and the appended note epochD while epoch F 23 MATCH is authoritative); D6 stale epoch counts (LOG heading 'four freeze epochs' vs its own 'SIX epochs'; lesson 'Three freeze epochs' vs six); D7 CORPUS.md SOURCES rule 2 violated by three in-place anchor edits (S070/S074 capture dates, S113 D3 receipt) instead of a supersedes row; D8 final predeclaration epoch F (9cbe9d5f 08:14:00) postdates the candidate commit bcf07e7 (08:08:15) - six re-freezes, each disclosed and tightening only, target never moved. Observation: cdp-bridge entry keeps verified-at 2026-11-03 while its source line now names 2026-11-07 live values. Operator note: all four SHONEN boxes look checkable by a non-author from committed evidence (SKILL row + citation gate, LOG round-56 end-to-end task, frozen gate/counter/controls, PROVINCE unchanged); promotion remains operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 95,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 95,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 95
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "GLib 2.90.1 content-type guess given file bytes (tools/mado-mimesniff.py, read-only): the magic/alias/parent sections of mime.cache plus round-94's filename step; 300/300 frozen cases, 120/120 fresh, 9822/9822 host files against the installed library"
+   ],
+   "report": ".ufo/reports/round-95/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-95-verifier-spotcheck.md@9f029f46f01f6cd3a1d29ac39bb548498a1d0c3d",
+    "rechecks": "Step-1 PASS (lane-identity report commit d18e00be, committer 08:22:45 after the cited tip 5ef746b7; SHONEN 4/4 [~]; 6/6 cited hashes ancestors of master; lane porcelain-clean, ahead=0; prompt = template §1-§5 verbatim + hyaku addendum §6; route-map alias drift vs live task.agentModelOverrides noted as operator-side). C1 re-measured (tool absent at base; sha256 4ef019c6; 300 cases/2863 inputs/20 classes/94 mutants; knowledge 115->116; SOURCES 453->458) + evidence-verified (TARGET_MET cases=300 correct=300, fresh 120/120, host 9822/9822, mutants 94/94, class_kills 20/20, real_rebuild 11/11). C2 re-measured (kill-sets absent at base; 22/42 kills; gate 2d6f1219 and both tools at base digests) + evidence-verified (75/75 hand weakenings, 47/47 neutralisations, singleton_labels 36/47, first drafts 28/75, blanket forgery 34/75). No axis harmed (existing tools/gate byte-identical; harm watch 460/460 and all prior counters green). Discernment spot-check: 2/2 admits and 3/3 rejects re-opened, all agree; census mado ok rc 0. Helper race recovered under orchestrator authorization: operator commit 611f73c5 on top of 5ef746b7; authorized narrow rebase of e7d6f10b onto it (protocol identity, auto-track off, file blob unchanged 524f74b7) produced 9f029f46, landed via helper recover."
+   },
+   "commit": "mado-shokunin@5ef746b7a678185d1fd1b84283af1f18aee33816",
+   "closed_at": "2026-11-07T14:13:53Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 2026-11-07T04:55:31-03:00 launch mado round=95 pgid=3134634 driver=hyaku-inline attempt=1; 07:22:25 lane-dead-no-report (FAIL report_of); 07:22:32 launch attempt=2 pgid=769407; 07:23:22 lane-dead-no-report (FAIL report_of); 07:23:29 launch attempt=3 pgid=899374; 10:50:51 complete mado round=95 (attempt=3). Step-1: report d18e00be by mado-shokunin <mado@shokunin.local>, committer 08:22:45 -03 after the cited lane tip 5ef746b7 (08:21:50; author date 07:32:49 skew noted, not an ordering breach); SHONEN heading 4/4 [~]; 6/6 cited commits exist and are ancestors of master; lane porcelain empty and ahead=0 (pushed); prompt carries templates/round-prompt.md §1-§5 verbatim plus the hyaku addendum §6; the quoted run-15 route map is stale against the live task.agentModelOverrides (scout @m_mim, connector @m_antigravity, executor @m_zfl, reviewer/critic/mutation-tester @m_flash) — the prompt names the live table as authority and the lane routed through it; operator-side addendum drift, not a lane defect. Claims: C1 coverage re-measured and evidence-verified 0/300 (no tool) -> 300/300; C2 operability re-measured and evidence-verified 0/75 -> 75/75 and 0/47 -> 47/47; verdicts coverage/operability improved, depth/freshness/calibration/adjacency unchanged; no axis harmed. Remote move: after the round the operator pushed 611f73c5 (considerthese/2026-11-07) on top of 5ef746b7; the helper commit created e7d6f10b but 'bookmark set' failed because a pre-commit git fetch let jj's tracked bookmark fast-forward to 611f73c5, making the set a sideways move. Under the orchestrator's explicit narrow authorization, e7d6f10b was rebased onto 611f73c5 (protocol identity, auto-track off; file blob unchanged 524f74b7...) to 9f029f46, then helper `recover` set the bookmark and pushed: 'landed 9f029f46...', `git ls-remote origin refs/heads/master` = 9f029f46f01f6cd3a1d29ac39bb548498a1d0c3d; ahead=0 behind=0, porcelain clean. Lane tip at closure 9f029f46 (round tip 5ef746b7 + operator commit + spot-check). SCRIPT DEFECT routed to the operator: jj-lane.sh cmd_commit reads the tip from git before the commit; when a fetch-imported bookmark advance lands between that read and `bookmark set`, the set is a sideways move, after which `recover --revision` refuses (candidate not a child of the current tip) and `push` sees nothing to push; fix by re-reading/re-anchoring the tip after the first jj snapshot or by allowing the bookmark set onto a child of the previous tip. Routed lane defects (status-neutral, next round): (1) tools/mado-mime.py HOME edges (r94 defect 1); (2) mimeglob docstring citation (r94 defect 2; correct line xdgmimecache.c:126-139); (3) tools/mado-mako.py, tools/mado-verify.sh, quality/check-receipt-presence.py still without kill-sets; (4) the gate's own selftest cannot be kill-set-guarded under non_selftest_prefix (M95-3; needs a predicate change plus re-anchored r93/r94 counters); (5) QUALITY 158 instrument gap and the portal entry §8 frozen cases (r93); (6) the C1 tool docstring citation check; (7) lesson/declaration label the L1 'MadoR95'/'attempt 1' while the round completed under attempt 3 (cosmetic). SHONEN boxes 1-4 carry resolvable pointers and look mechanically checkable by a non-author; no [x] was written and promotion stays operator-owned. No promotions, no mints.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
