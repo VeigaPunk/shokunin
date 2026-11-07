@@ -57364,6 +57364,49 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable; copied): 2026-11-07T12:40:59-03:00 launch tabi round=78 pgid=1239219 driver=hyaku-inline attempt=1; 2026-11-07T17:12:24-03:00 complete tabi round=78; hyaku-inline attempt=1. Status ok; verdict admitted: C1 (coverage, capability generation r78) and C2 (calibration, capability-row status) verified, no axis harmed. Conformance defects (status-neutral): report numeric drifts (32 carried R77Mut1 witnesses vs 31 witness-* cases in the committed final battery; 9 Mistakes rows vs 8; scored nodeReport pick-multiple 10 vs 7 - the 7->10 drift is the pre-repair L1-cold1 run); SCORECARD r78 C1 row still cites nonce tabi-r78-l1-d59ca0270c2a and 398/398 (final bf94adaab578, 400/400; Correction 6 discloses the nonce but the row's counting command is not re-runnable - R78Mut1 F1 measured exit 1 nonce-expected); SKILL r78 registry 398 cases/32 witnesses; LOG r78 entry 398/398 + old nonce with no appended correction entry; prompt committed on the fleet repo under the lane identity (fbd128e8) while the LOG claims '(7) no prompt committed' - r77 defect 7 repeated (operator-side hyaku-inline pattern); no planner seat (r77 defect 8 carried; the validator rejects the role). Routed to r79: (1) sweep every mention of the superseded counts/nonce into appended corrections; (2) claims.json leg (b) names .ufo/waves/round-78/scored/ for cold-run receipts that live under round-78-seats/; (3) R78Mut1's 21 survivors as battery cases and a sha256-bound --tree-exempt; (4) dispatch-attribution ruling (operator); (5) C2 --expect-provisional 1. SHONEN boxes remain [~] author-attested; a non-author could check box 1 (SKILL registry), box 2 (scored run + LOG), box 3 (note sections 1-6 + run-scored scripts) and box 4 (PROVINCE unchanged + connector scan) - promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 61,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 61,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 61
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "OpenBao seal / unseal key-share custody trial: five Shamir-seal custody mechanics (init share/threshold arithmetic and non-persistence, the unseal threshold with the duplicate-share refusal, seal with the 503 sealed-state request against a readable seal-status, generate-root with the OTP XOR and -decode, and `operator rekey` refused HTTP 405 under the default config on raft and inmem while `rotate-keys` completes a rotation) executed on throwaway OpenBao 2.7.2 servers bound to 127.0.0.1 under setpriv --pdeathsig KILL, with five falsifier shims (BHHHH/HBHHH/HHBHH/HHHBH/HHHHB), a no-bao SETUP leg and a fixture-driven 63-case --selftest; counter plans/round-61-c2.sh C2_SEAL_TRIAL 0 -> 5, receipts .ufo/waves/round-61/build/R61ExecTrial/; first-working round 61"
+   ],
+   "report": ".ufo/reports/round-61/kagi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kagi-shokunin/corpus/lessons/round-61-verifier-spotcheck.md@60b5b7b60b76629633110a5b4adac883193c8b2a",
+    "rechecks": "Step-1 PASS: report fcf48524 by kagi-shokunin 17:44:49 -03 after lane tip 08f950da 17:41:50 and before driver complete 17:46:44; SHONEN 1 heading + 4 [~] lines, no [x]; cited 85950181/08f950da and BASE c940f51 exist and are ancestors of refs/heads/master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0, porcelain clean, remote 08f950da; prompt = templates/round-prompt.md rendered with substitutions only (140 lines) + section 6 addendum, round-level and five child-lane items present; wave 16/16 results non-empty. C1 re-measured by me over committed bytes at c940f51 vs 08f950da: all seven items hold (I1 results=16 output=3824 + mutants.md; I2 SKILL:855 selftest 36 + mutant FINDINGs; I3 A7 withdrawn; I4 D1-D3 three; I5 numstat 1/1 rewritten in place; I6 launch 15:03:17 + four %ci stamps; I7 3/16=18.75 4/16=25), each 0 occurrences at BASE; checker selftest 52 cases and guard challenge receipts verified, not executed. C2 evidence-verified: trial sha a3bc8825, two byte-identical HOLDS 5/5 runs, shims BHHHH/HBHHH/HHBHH/HHHBH/HHHHB, no-bao SETUP rc2, selftest 63 cases, counter value=5 vs BASE absent, controls 18/18. Census kagi ok rc0 127 rows. Discernment: 3 admits + 1 reject re-opened live (bodies sha-equal to captures, all quotes count=1), all agree. No axis harmed."
+   },
+   "commit": "kagi-shokunin@08f950daa61986b5dbf579791d7138102184fa66",
+   "closed_at": "2026-11-07T20:52:32Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-07T16:45:05-03:00 launch kagi round=61 pgid=672160 driver=hyaku-inline attempt=1; 2026-11-07T17:46:44-03:00 complete kagi round=61; hyaku-inline attempt=1. Status ok, admitted: C1 calibration 7->0 (seven r60 routed record defects, re-measured over committed bytes) and C2 operability 0->5 (executed seal/unseal custody trial, evidence-verified). Conformance defects, status-neutral, routed to the lane next round: (1) SCORECARD.md round-61 post-move cites CONTROLS match=17 where the receipt, LOG and report read match=18; (2) no SKILL.md gate-registry rows for the new gates plans/round-61-c1-check.py, plans/round-61-c2.sh and corpus/openbao-seal-trial.sh (PROTOCOL Gate standard Delivery); (3) attack share on the addendum literal list is 3/16 = 18.75 % (sentinel counted to reach 4/16 = 25 %); (4) the candidate-revision C1/C2 readings are report lines with no committed receipt naming 08f950da (the committed controls receipt is the pre-freeze working tree); (5) RELEASE_CLOCK/DOC_AUDIT/CLAIMS_DECLARED candidate verdicts in LOG.md have no committed receipt and the report's freshness pointer is generic. Disclosed ceilings stay open: C1 items are structural reads (QM79 hardening), I6 literal -03:00 unsatisfiable against %ci -0300, C2-4 guard near-constant, C2-5 counter selftest does not execute the aggregation. Wave composition: 16 seats v1, 0 dead; role mix 2 scout/6 executor/2 scribe/1 reviewer/1 critic/1 mutation-tester/1 sentinel/1 connector/1 revenger. SHONEN: four boxes [~] with resolvable pointers; boxes 2-3 have this round's receipts and boxes 1/4 pointers resolve, so the boxes look checkable by a non-author, but promotion is operator-owned and no [x] was written. Spot-check file landed at 60b5b7b6 (protocol identity, pushed).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
