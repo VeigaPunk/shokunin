@@ -1,7 +1,7 @@
 # mado — round 97 report (hyaku run 15, attempt 1)
 
 Lane: mado. Round: 97. Agent: `MadoR97`. Base revision: `e6152b589c2c6a28426c28263c4bcc3c46398be4` (branch
-`master`). Lane tip when this report was written: **`4bfe2e434fad87cc6a9d68928260d5d2b426e2ff`** (`git ls-remote origin refs/heads/master` prints it).
+`master`). Lane tip when this report was written: **`15b6280483fe8fab52acbce689c883c056b34e7d`** (`git ls-remote origin refs/heads/master` prints it).
 Lane repo `mado-shokunin`; this report lands through `fleet-commit.sh --as mado`.
 
 **Round shape.** Wave `w1` (one v1 wave, 14 seats: 3 executors, 2 mutation-testers, 2 reviewers, 1 critic, 1 scout,
@@ -72,6 +72,10 @@ Work items with evidence:
   as the installed surface; `file(1)`/libmagic is revenger's ground and is not this surface. R97MConnector swept all
   20 sibling `PROVINCE.md`s: no sibling claims GIO's `standard::content-type` or `gio info`; `update-mime-database`
   and `~/.local/share/mime` stay operator-owned (tsukuroi's hook ground) (`w1/R97MConnector.md`).
+- **Misroot sweep:** two seat files had landed at the fleet root — `dropped-volatile.txt` (the host census's dropped
+  paths; copied byte-exact, `cmp` clean) and `host-list-final.txt` (the seat's intermediate census, which is *not*
+  byte-identical to the wave copy: `cmp` exits 1, corrected in the lesson). Both are copied into the lane, the fleet
+  copies deleted, and mined as M97-7/M97-8.
 - **Mistakes owned:** M97-1 (an admitted sentence contradicted by the round's own fixture — the r96 erratum class),
   M97-2 (the contract's refusal condition lacked the library's errno guard; two reachable path shapes were
   misclassified), M97-3 (the host census carried credential-shaped paths into a leg that reads host bytes), M97-4
@@ -95,6 +99,9 @@ Every change below is inside `mado-shokunin` and lands through `jj-lane.sh` (lan
 | `e957932d` | the C1-at-C2 separability receipt and the mutant file's post-freeze metadata |
 | `d421fd77` | the round-96 spot-check record fixes (D1/D2/D5/D6/D11: the used-by cells, the entry's stale measurement cells, the declaration's command pins and mutant population, the census receipt counts) |
 | `4bfe2e43` | the harm watch (25 legs) and the declaration-counter runner fix |
+| `992037c6` | the misroot sweep: the host seat's dropped-path list copied into the lane (M97-7) |
+| `d7c186bc` | the second misroot sweep: the host census copy copied into the lane (M97-8) |
+| `15b62804` | M97-8's correction: the fleet-root census copy is not byte-identical to the wave copy (`cmp` exits 1) |
 
 ## Before → after measurements
 
