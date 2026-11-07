@@ -55669,6 +55669,49 @@
    "notes": "Dispatch digest: 2026-11-06T22:49:06-03:00 launch souji round=77 pgid=419010 driver=hyaku-inline attempt=1; 2026-11-06T23:40:34-03:00 complete souji round=77; hyaku-inline attempt=1. Conformance: report 895efab2 by souji-shokunin after lane tip a5a18666 and before complete; SHONEN heading 4 lines all [~]; 10 cited commits + base are ancestors of master; jj-lane state ahead=0 tracked=0 untracked=0, porcelain clean, ls-remote = tip; prompt carries template sections 1-5. Routed to souji (lane fixes next round): (1) correction not swept: 'the fstat type read follows at line 1169' still in S321 anchor (SOURCES.md:280) and lesson r77 ## Gate despite accepted correction that add_patterns never tests file type; (2) C2 counter kill power: 6 forged single ledger rows pass (QUARANTINED unbound, TOKEN prefix-only, MOVED location unchecked, R0 unexercised) -> r78 successor counter; (3) C1 out-of-surface hangs (FIFO .git/config, include.path, HEAD, packed-refs, config.worktree in check 1; SIGTERM leaves check-4 children) and unrowed backstop/XDG/relative branches; (4) domain-trial script needs bc (absent; wall_seconds empty) and trial receipt omits the W->R amendment digests; (5) carried r76 K03/K04 and status-trusting tools souji-verify.sh/souji-census.sh. Qualifications accepted: C2 thin (31/35 no new byte), C1 n8 policy row, o/p rows non-discriminating. SHONEN boxes look checkable by a non-author; promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 52,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 52,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 52
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "OpenBao KV v2 version-lifecycle trial"
+   ],
+   "report": ".ufo/reports/round-52/kagi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kagi-shokunin/corpus/lessons/round-52-verifier-spotcheck.md@c1953d4afc19a5a336a58685c00ab5260bcfea1c",
+    "rechecks": "Step 1: report committed by kagi-shokunin (418a2839, 23:47:34, after lane tip 282849f7 23:46:20, before complete 23:48:32); SHONEN 4 [~] lines = 4 boxes; BASE + 3 cited commits are ancestors of master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0, status clean; prompt = template rendering (placeholders only) + addendum. C1 re-measured: committed openbao-kv-versions-trial.sh run by closure on bao v2.7.2 => T1..T5 HOLDS rc 0; undelete corpus files 0 -> 5; non-comment diff vs predeclared reference identical; instruments unchanged 52ebb412->a2cb69b7/282849f7; 0 r52- nonces; bao sha256 = pin; entry 5 T lines naming 2.7.2; S110 mined, rows 109 -> 110; counter value 0 -> 5 and execution receipt (31 calls, 0 token argv) evidence-verified. C2 re-measured: 2 uncorrected doc-vs-binary rewrap lines at BASE (lifecycle.md:292, round-51.md:22) -> both corrected by appended lines (BASE bytes identical prefix, numstat 2/0); closure's own dev-server probe: KV rewrap keeps secret/data/<path>, helper rewrap keeps sys/wrapping/wrap; rewrap page creation_path only in sample; counter 2 -> 0 evidence-verified. Harm: SCORECARD pure appends, all axes 9 -> 9; ledger FAIL/POLICY ids BASE = tip (6 ids); gate M52-2 red witness 12/13 -> PASS 13. Spot-check: admit S110 agree (byte-identical, 4 quotes count 1, <=25 words); rejects KV v2 API page, kv undelete page agree; rewrap page non-registration agree. Census kagi ok rc 0 (19 W04)."
+   },
+   "commit": "kagi-shokunin@282849f7ef236549f06e551dc294f7cfee4fc01d",
+   "closed_at": "2026-11-07T02:53:21Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-11-06T22:30:18-03:00 launch kagi round=52 pgid=2300562 driver=hyaku-inline attempt=1; 2026-11-06T23:48:32-03:00 complete kagi round=52; hyaku-inline attempt=1. Defects routed (status-neutral): D1 recurrence of r51 D2 - candidate a2cb69b7 cites final/census-end.txt (lessons/round-52.md:56) that lands only in 282849f7 (citations-candidate unresolved=5); D2 M52-4 harden the trial counter to check execution not printed verdicts (F2/F5b/F6, vacuous K1-F8); D3 M52-5 run the full ledger verify before freezing the candidate (4 stamp-population FAILs found after); D4 R52ReviewerTrial D1-D4, R52CriticC2 A2/A13/A17/A24/A26, R52ReviewerC2 F1, R11-08/R36-01 stay open. Operator note: SHONEN boxes 2 and 3 were exercised by the non-author closure (committed trial reproduced T1-T5 HOLDS from committed bytes without lane context); promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
