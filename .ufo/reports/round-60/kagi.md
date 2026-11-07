@@ -3,7 +3,7 @@
 Lane: kagi. Round 60, attempt 1. Claim BASE `a677c78ece8e3d3b4a43dda55254f2a7b33cc1d2`
 (round-59 verifier spot-check tip). Predeclaration `cd631737` (frozen plan
 `plans/round-60.md`, §Amendments A1–A6, every amendment landed before the recorded
-candidate reading). Lane HEAD at filing: `2a44708b4343ca206e3c76121fbd089e743055a6`
+candidate reading). Lane HEAD at filing: `818d2a82fcc568a95db5207c256597cb7d181dc5`
 (`git ls-remote origin refs/heads/master` prints it). Axes at BASE: all six at 9.
 
 Round shape: ONE v1 wave, **16 seats** (`.ufo/waves/round-60/w1-dispatch.json`, band 8–16;
@@ -118,6 +118,8 @@ mutation-tester settled late but delivered a full mutant table (16 mutants, 9 ki
 | §A6 — I5 scope receipt token corrected to `ADJACENCY_SCOPE` | §Round 60 | `cad84270` |
 | instruments, record repairs, transit selftest, entry, rows S123/S124, gates, SCORECARD/LOG/SKILL/PROVINCE, wave evidence | §Round 60 | `14a6c07d` |
 | revision-bound candidate readings at `14a6c07d` + the wave results file | §Round 60 | `9cc59014` |
+| end-of-round census receipt (124 rows, `kagi ok`) | §Round 60 | `2a44708b` |
+| LOG dead-seat count corrected to the measured 0 (16/16 seats settled) | §Round 60 | `818d2a82` |
 
 ## Before → after measurements
 
