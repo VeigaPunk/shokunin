@@ -56854,6 +56854,46 @@
    "notes": "Driver: 2026-11-07T10:58:07-03:00 launch kagi round=57 pgid=3847699 driver=hyaku-inline attempt=1; 2026-11-07T11:40:35-03:00 complete kagi round=57; hyaku-inline attempt=1. Status ok; admitted: C1 calibration 3->0 and C2 operability capability 0->5 both verify; trends all improved. Defects (status-neutral, routed to kagi via spot-check §7): D1 LOG.md/SCORECARD.md round-57 sections name epochs A/B only while the final plan/c1.sh/controls.sh and the 13-control receipt are epoch C (8d8e0588) — the report's 'every change tied to the LOG entry' is false for epoch C; D2 the landed-changes table lists epoch C above the landing, but d857f344 is epoch C's parent (the landing carries the epoch-B counter/controls and no epoch-C receipt); D3 the epoch-C receipt pins INSTRUMENT plan b130bb83 while 8d8e0588 ships 76e836ee (the A3 plan text was saved after the battery); D4 S117 has no ## Gate record in corpus/lessons/round-57.md, the lesson source: line omits it, and its used-by lists the lesson which does not cite it; D5 lesson §Sources and the SCORECARD coverage row say 114->116 while the tip is 117, and the report cites final/gates.txt as rows=117 while that file reads rows=116 (it predates S117); D6 corpus/current-claims.py has no SKILL.md gate-registry row (Gate standard §Registry); D7 that gate is hard-coded to the round-56 surface, so 'checked every round' is not yet true — D5 is the instance it did not catch; D8 the frozen checker docstring's EPOCHS authority (receipt-file count 5) contradicts its code (epoch tokens, 6); D9 the wave has no L2 planner seat (the L1 held it) and 2 executors vs 3 — the L2 floor itself holds (12 seats, one batched call, attack 5/12, 1 connector); D10 the lane committed .ufo/prompts/kagi-round-57.md (6975eb2d) outside its scope; D11 checklist-run BROKEN failed=7 and adjacency scope-gate DEFECT stale_basis=1 at the tip (both pre-existing; scope-gate improved from 3); D12 lesson anchor 'Enabling and disabling audit devices' vs the live heading 'Enabling/Disabling audit devices'. SHONEN: all four boxes look checkable by a non-author from committed evidence; the lane filed [~] only; promotion is operator-owned. Misroot sweep: the fleet repo carries orchestrator .scratch edits, a round-93 kasegi report and two contentless strays (f.txt, trail-ids.txt); none from kagi.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 93,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 93,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 93
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:verifiability": "improved",
+    "coverage": "improved",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "capture-secret-scan:gitlab-pat + escape-terminator left boundary (capability extension, S139; first-working round stays 87)"
+   ],
+   "report": ".ufo/reports/round-93/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-93-verifier-spotcheck.md@dff5a0a01e8aafe6be81f4ee61567745c3c4c485",
+    "rechecks": "C1 re-measured: 5/5 label edits at lines 58/144/437/438/454 (git diff -U0), token counts old gone/new present, SKILL.md 191/827-848/176-178 targets read, meter 1007/2001 -> 1009/2000 and controls 11/11 evidence-verified (gate not executed). C2 re-measured: landed instrument sha256 7d9d7309 = frozen candidate, P3 two paths, base lacks gitlab/glpat, my own 6-fixture probe 3 hits/3 negatives, selftest cases=90, K1-K8 at three seeds and controls 14/14 evidence-verified; re-anchor 135 CHANGE rows, quote check bad=0 out_of_range=0, 102 full-path citations held 0 out of range. Harm: SKILL.md blob identical, PROVINCE empty diff, SCORECARD only the capability row + Round 93 section."
+   },
+   "commit": "kasegi-shokunin@a3760ac50b183e6556fc9937074deb15bc9f3433",
+   "closed_at": "2026-11-07T15:11:21Z",
+   "campaign": "hyaku",
+   "notes": "watchdog digest: 2026-11-07T10:50:59-03:00 launch kasegi round=93 pgid=3255941 driver=hyaku-inline attempt=1; 2026-11-07T11:57:39-03:00 complete kasegi round=93; hyaku-inline attempt=1. Step 1: report 206059c7 by kasegi-shokunin (committer 11:57:01, after lane tip a3760ac5 11:56:23); SHONEN 4x[~] with pointers; six cited hashes ancestors of master; lane ahead=0, porcelain clean, remote a3760ac5 before the spot-check (dff5a0a0 after); prompt carries template sections 1-5 verbatim + hyaku addendum section 6, L2 floor 8 matches MISSION; wave w1 13 seats in one dispatch record (8/13 attack, 1 connector), WAVE-DONE before report; census kasegi ok, 139 rows, six inherited W04. Conformance defects (status-neutral): wave-evidence commit 60152778 is tied to 'Round 93 bullet 3' but LOG bullet 3 is the C2 landing and the Round 93 LOG block has no wave-evidence bullet; the report says 'M0-M10' while the meter has no M2 limb (predicate is M0,M1,M3-M6,M9,M10); the C1 landing receipt prints no measured-revision line. Routed (spot-check section 6): M93-5 M3 union crash on non-knowledge labels; M93-4 path-shaped forgery; C1 M5 cell-repair token gap, empty EXCLUDED, 12 survivors; C2 three pin-only survivors, D2 S139 line 86 vs 87, D3 &#xXX; unpinned, D4 stale K8/no GitLab left-boundary plant, K6 blindness, 12 unnamed escape misses, 2 FP shapes, custom-prefix/routable/ghr_ coverage gaps; M93-1/R145 'committed one-liner'/39 rows not registered (my parse of the stated predicate over reanchor-r93.txt: 37); append a LOG correction for the wave evidence. Carried: six W04 warnings, assimilation quarantine slice, cookie-shape surface.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
