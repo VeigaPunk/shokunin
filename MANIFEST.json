@@ -54945,6 +54945,44 @@
    "notes": "Dispatch digest (.ufo/watchdog.log, copied): 2026-11-06T18:51:38-03:00 launch kama round=91 pgid=1044374 driver=hyaku-inline attempt=1 / 2026-11-06T20:22:46-03:00 lane-dead-no-report kama round=91; retry same round (attempt=1: L1 ended without a landed report) / 2026-11-06T20:22:49-03:00 launch kama round=91 pgid=1591224 driver=hyaku-inline attempt=2 / 2026-11-06T21:09:23-03:00 complete kama round=91; hyaku-inline attempt=2. Step 1 ok: report e12ca3b4 by kama-shokunin 21:09:07 after tip e4747a7a 21:08:06; SHONEN 4x[~]; 11 cited hashes ancestors of master; jj-lane state ahead=0 behind=0, porcelain empty; prompt carries all 140 template lines. Not admitted: C2 (depth) not verified, K2 fired and honestly recorded by the lane (dated SKILL/knowledge corrections, lesson M1, KQ146 + failing falsifier). Conformance defects (status-neutral): attempt-1 lane-dead-no-report; duplicate wave w1a2 beside w1 with shared twin scratch and an rm -rf wiping a twin's files; planner seat held by L1; terminal pre-report gate red on carried round75-instruments (bad_rows=19). Routed (spot-check §6): R1 round75-instruments L0 carried; R2 SOURCES S593 summary still says 'one parallel sequence' (corrections sweep); R3 per-seat scratch roots; R4 re-read T07 + six overreach rows under KQ146 with superseding rows before re-claiming C2; R5 C1 disclosed super-linear paths (SC02) and counter-not-owning-rule (CR01/MT01) open. SHONEN boxes look checkable by a non-author from cited files; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 84,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 84,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 84
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:verifiability": "improved",
+    "coverage": "improved",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-84/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-84-verifier-spotcheck.md@bc722e540c93b48ff159454b65a0f9f4630db1ed",
+    "rechecks": "C1 re-measured over committed bytes: recheck-cwd-census.py sha256 343b21e4 (base) -> e5f2e4bd (landing, HEAD) = frozen candidate; frozen c1/ + stub/driver bytes unchanged freeze->landing (empty diff), counter c67e6912, table daf05bac, builder 4352368e match claims.json; P8 pin rows cases=27 -> cases=33 in SKILL.md and instruments/README; P7 do-nothing and stub controls 12 H SURVIVED rc=1; candidate control 76 KILLED per-row lines, 12 H KILLED. Evidence-verified (lane gate, not executed): L1-landing-r84.txt P1 cases=33 failures=0, P3 killed=76 survived=0 neutral_ok=3/3 decoy=ok, P4 r84_limbs all True, P5 as-expected, P6 98 entries conformant. C2 re-measured: knowledge 97 -> 98, registry 117 -> 118, S118 queued -> mined, distinct F ids 59 -> 60, S118.txt sha256 e824a735 = manifest; live re-open of S118 finds all six quotes once; B0-B7 evidence-verified, B8 pass only in cmp-equal worktree (extract fail). Harm: SCORECARD/LOG additions only, density 273.2 -> 273.2. Spot-check: admit S118 agree, reject data-quality post two-line quote agree; census kasegi ok rc 0."
+   },
+   "commit": "kasegi-shokunin@e4593d6c992bd8e8668abf5be8503f86424be82d",
+   "closed_at": "2026-11-07T00:16:32Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-11-06T20:32:33-03:00 launch kasegi round=84 pgid=3613247 driver=hyaku-inline attempt=1; 2026-11-06T21:13:21-03:00 complete kasegi round=84; hyaku-inline attempt=1. Report 9b25b70d by kasegi-shokunin; SHONEN 4 lines; cited commits a089ff3d/7f76b7eb/c91c944f/e4593d6c ancestors of master; lane ahead=0, clean. Defects (status-neutral): claims.json names controls/c1-candidate-r84.raw, committed as .txt; C2 B8 failed (header=bad) on the git-archive extract of c91c944f and passed only in a cmp-equal worktree, so the report's 'VERIFIED B0-B8 over the cited commit' is equivalent not identical evidence. Routed to r85: entry gate runnable over an extract; commit landing-run per-row MUTANT lines; depth:verifiability nominal since r70 (meter move or recorded retire/split); MutC1Hunt 22 survivors, MutCounter 5 semantic survivors (M13 r84_ok forced True), CriticClaims A1 forgery, ExecC1RealTree exit 1 vs 2; SHONEN box 2 end-to-end task. SHONEN boxes 1/3/4 [~], box 2 [ ]: not promotion-checkable.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
