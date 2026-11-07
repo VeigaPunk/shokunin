@@ -54902,6 +54902,49 @@
    "notes": "Driver digest: 2026-11-06T18:30:34-03:00 launch mado round=90 pgid=3266809 driver=hyaku-inline attempt=1; 2026-11-06T20:22:51-03:00 lane-dead-no-report mado round=90 retry same round; 2026-11-06T20:22:53-03:00 launch mado round=90 pgid=1592428 driver=hyaku-inline attempt=2; 2026-11-06T20:47:59-03:00 complete mado round=90 hyaku-inline attempt=2 (watchdog.log lines 3055/3078/3079/3094). Attempt 1 died without report; attempt 2 re-verified inherited pins and filed. Routed defects (status-neutral): (1) gate mado-receipt-presence and r90 counters registered with no self-test mode (SKILL.md:867-870) - PROTOCOL Gate standard Self-test requires one; add --selftest. (2) w1-results.json holds no seat outputs and two scout seats left no report (M90-4); S501-S503 rest on L1 re-open, independently confirmed by closure. (3) round-90 lesson Gate reject wording 'UseIn hits for the first desktop' narrower than comparator (xdp-portal-config.c:278-293); append a note. SHONEN: all four boxes [~], none fully checkable by a non-author from this round; nothing promoted.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 91,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 91,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 91
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "coverage": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "answer-time-bound (tools/kama-probe.sh @ 3decfa36, probe sha256 0aa43573; round91-answer-time.py base mismatches=5 -> 0; closure re-measured model_matches independently: base 20k ids 17.6 s / 200k killed >120 s -> tip 200k 0.38 s, rule preserved)"
+   ],
+   "report": ".ufo/reports/round-91/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-91-verifier-spotcheck.md@ed018ca0fa956c5052b3dc6b714a2cb72973da21",
+    "rechecks": "C1 re-measured (independent timing of committed model_matches at base/tip; probe sha256 per revision; diff read) + evidence-verified (c1-base/c1/c1-tip receipts, forgeries F1/F2, harm-base vs harm-M); counters frozen (empty diff 9a41912a..e4747a7a). C2 not verified: K2 confirmed by closure (pinned llama-server --help -np default -1; arg.cpp:1373 n_parallel=-1; server.cpp:126-129 auto->4), so T07 (=1 from common.h:464) misstates; counter receipts evidence-verified; S593/S594/S595 sha256 and cited lines re-fetched equal. Spot-check 2 admits (S593, S592) + 2 rejects (gawk manual rc=28, SGLang server_args line 177) all agree. Census validate exit 0 kama ok; SOURCES 331->335; knowledge 62->63; SCORECARD axis scores unchanged, capability rows 93->94."
+   },
+   "commit": "kama-shokunin@e4747a7add602f34eb25379d38c67faa57b3b926",
+   "closed_at": "2026-11-07T00:15:26Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (.ufo/watchdog.log, copied): 2026-11-06T18:51:38-03:00 launch kama round=91 pgid=1044374 driver=hyaku-inline attempt=1 / 2026-11-06T20:22:46-03:00 lane-dead-no-report kama round=91; retry same round (attempt=1: L1 ended without a landed report) / 2026-11-06T20:22:49-03:00 launch kama round=91 pgid=1591224 driver=hyaku-inline attempt=2 / 2026-11-06T21:09:23-03:00 complete kama round=91; hyaku-inline attempt=2. Step 1 ok: report e12ca3b4 by kama-shokunin 21:09:07 after tip e4747a7a 21:08:06; SHONEN 4x[~]; 11 cited hashes ancestors of master; jj-lane state ahead=0 behind=0, porcelain empty; prompt carries all 140 template lines. Not admitted: C2 (depth) not verified, K2 fired and honestly recorded by the lane (dated SKILL/knowledge corrections, lesson M1, KQ146 + failing falsifier). Conformance defects (status-neutral): attempt-1 lane-dead-no-report; duplicate wave w1a2 beside w1 with shared twin scratch and an rm -rf wiping a twin's files; planner seat held by L1; terminal pre-report gate red on carried round75-instruments (bad_rows=19). Routed (spot-check §6): R1 round75-instruments L0 carried; R2 SOURCES S593 summary still says 'one parallel sequence' (corrections sweep); R3 per-seat scratch roots; R4 re-read T07 + six overreach rows under KQ146 with superseding rows before re-claiming C2; R5 C1 disclosed super-linear paths (SC02) and counter-not-owning-rule (CR01/MT01) open. SHONEN boxes look checkable by a non-author from cited files; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
