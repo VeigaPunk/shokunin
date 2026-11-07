@@ -55751,6 +55751,46 @@
    "notes": "Driver digest: 2026-11-06T22:27:35-03:00 launch mado round=92 pgid=1945399 driver=hyaku-inline attempt=1; 2026-11-06T23:56:06-03:00 complete mado round=92; hyaku-inline attempt=1. Step 1: report 5332a4a0 by mado-shokunin after last lane commit; SHONEN 4x[~]; all cited hashes ancestors of master; jj-lane state ahead=0, porcelain empty; prompt = template with placeholder substitutions + hyaku addendum. Defects (status-neutral): prompt committed under lane identity (2ec4ac6e, driver attribution); report lacks an explicit cross-domain evidence item (minimum content). Routed to mado r93: (1) cross-domain item in report; (2) land tools/mado-portals.py GKeyFile port under its own frozen counter (8/16 byte-class divergence still standing, marked); (3) C2 selftest-coverage limit (R92MMutC2 s4). Operator: SHONEN boxes 2 and 3 look non-author checkable (tool reproduced xdg-mime from registry argv); nothing written to SHONEN.md.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 87,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 87,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 87
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth:verifiability": "unchanged",
+    "coverage": "improved",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "capture-secret-scan: corpus/instruments/capture-secret-scan.py + digest-bound capture-secret-allow.tsv scan captures at a revision or file list for credential shapes (claim-package gate patterns plus AWS STS session tokens and AKIA/ASIA key ids); sourced S124, S125"
+   ],
+   "report": ".ufo/reports/round-87/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-87-verifier-spotcheck.md@6beead9148945fa695cf3139e8fc9d8e91cc5fd0",
+    "rechecks": "C1 re-measured: P3 git diff --name-only afb13a88 d87b1b55 = 8 paths, 3 outside corpus/knowledge/ -> frozen kill rule fires, NOT VERIFIED; repoint itself correct (83/83 targets exist, unique, anchors in range; full-path occurrences 2->100); meter 596/1720->678/1719 and P2 13/13 evidence-verified from l1/c1-landing-r87.txt. C2 re-measured: instrument+allowlist sha256 byte-equal to frozen candidates at 132e16c5, absent at base; git-grep STS oracle 2 files at 252df0c9, 0 at 132e16c5/4d007eb1; AKIA/ASIA literals at tip are AWS example/fixtures only; SCORECARD capability row present; K1/K3/K4 evidence-verified from l1/c2-landing-r87.txt (rc 0, rev 132e16c5) -> VERIFIED. Spot-check S124/S125 admits and S3 query-auth reject all agree (live re-open); SOURCES 123->125; census rc 0 (6 inherited W04)."
+   },
+   "commit": "kasegi-shokunin@4d007eb1cbde0c3c4cc9d16464e316f0159bfbc5",
+   "closed_at": "2026-11-07T03:24:13Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-11-06T22:51:24-03:00 launch kasegi round=87 pgid=676283 driver=hyaku-inline attempt=1; 2026-11-07T00:22:05-03:00 complete kasegi round=87; hyaku-inline attempt=1. Step 1 pass: report 11c5927e by kasegi-shokunin (after lane tip, before complete), SHONEN heading 4/4 [~], all cited hashes ancestors of master, jj-lane state ahead=0 behind=0 clean, prompt carries template sections 1-5 + hyaku addendum. Not admitted: C1 fails its own frozen P3 (3 wave-scaffold files in landing d87b1b55, M87-2), reported honestly; C2 verified; no axis harmed. Routed to r88: (1) enforce R139 landing-scope check in landing procedure; (2) scanner scope corpus/practice/*/evidence/, percent-encoding/HAR gaps, --files counter limb, 5 scanner + 7 counter mutant survivors; (3) scanner intake gate in capture-source.py (considerthese 2026-10-24:49-52); (4) S125 manifest anchor erratum D-1 (303 vs 304) + recheck tolerance test; (5) rejected S3 URL now 302 before 2,343-B shell, record in lesson; (6) one unbackticked S102.txt:13 prose mention left in openssf-scorecard-api-contract.md. Open L0 (expired STS token in history a48fe8b9..e73c1f94) stays operator-owned. SHONEN boxes look non-author-checkable against cited artifacts; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
