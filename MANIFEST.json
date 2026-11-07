@@ -55507,6 +55507,49 @@
    "notes": "Driver digest (.ufo/watchdog.log lines 3105/3124): 2026-11-06T21:21:02-03:00 launch tabi round=73 pgid=187911 driver=hyaku-inline attempt=1; 2026-11-06T23:05:06-03:00 complete tabi round=73; hyaku-inline attempt=1. C1 coverage capability chromium-synth-pinch-gesture-linux: all four frozen legs hold -> admitted. Frozen limit sentence falsified by R73Critic (relabelled previous-generation receipt passes current-generation prior set); corrected append-only in SCORECARD ## Round 73 + QUALITY 138; crossgen controls show r73 receipts are not relabels. Routed to r74: cross-generation prior set as frozen instrument property (QUALITY 138); R73Mut1 21 witnessed survivors as battery cases; R73Review1 FG2-FG12 and 1.4 (1e-12 ts defeats replay-event-timeline); carried r71 R2, R72Scout R3, R4/R5. Conformance (status-neutral): planner seat held by L1. SHONEN boxes 2 and 4 look non-author checkable (operator-owned promotion).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 92,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 92,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 92
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "coverage": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "linear-probe-paths"
+   ],
+   "report": ".ufo/reports/round-92/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-92-verifier-spotcheck.md@5af794958b0fc08f574aa2e67650282269549b02",
+    "rechecks": "Re-measured: C1 counter (frozen, empty diff 309eadaf..378220d3) at base ed018ca0 (rows=0, exit 1), M1 18153ebb and tip 378220d3 (rows=15 bound=15 help_checked=7 help_disagree=0 supersedes=14, exit 0); C2 counter at base (cells=15 mismatches=6, exit 1; L1-L3 killed 120 s), M2 fa8aedb7 and tip (mismatches=0 positive_mismatches=0, exit 0, slowest 2.58 s). C1 not verified: K2 confirmed by re-opening llama.cpp b12177 arg.cpp 4608-4616 (--embd-gemma-default port 8011, n_parallel 32), server-http.cpp 93/96/125 (AIP_HTTP_PORT override), server-models.cpp 1218 (router child free port); all four sha256 equal SOURCES rows. Evidence-verified: harm-M.out equals harm-base.out (digest/timing stripped diff empty); r90 reason receipt stale (bound=0) -> re-bound 24/24 at d5a06431; c2-doubling ~linear; gate-final round=92 failed=1 (carried round75-instruments). Spot-check 2 admits (S597, S598) + 2 rejects (S595:26 TYPE_CHECKING, S593:464) agree; S599 quote re-opened (line 1218, 7 words); census validate exit 0."
+   },
+   "commit": "kama-shokunin@378220d3777b62de849847585bf0da7200b3b1c7",
+   "closed_at": "2026-11-07T02:20:20Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (.ufo/watchdog.log): 2026-11-06T21:16:12-03:00 launch kama round=92 pgid=3971739 driver=hyaku-inline attempt=1 / 2026-11-06T23:07:44-03:00 complete kama round=92; hyaku-inline attempt=1. Step 1: report c5f46763 by kama-shokunin, SHONEN 4x[~], 14/14 cited hashes ancestors of master, jj-lane state ahead=0 behind=0 tracked=0 untracked=0, porcelain empty, prompt carries template (static=105 missing=0). Defects (status-neutral): terminal pre-report gate red on carried round75-instruments, APPEND_DEBT unaccepted 16->18 (events 95->97); report commit author date 23:05:08 precedes cited tip 23:06:51 (committer 23:07:12); planner seat held by L1. Routed: R1 round75-instruments + 2 new append-debt events; R2 superseding R01/R08 rows under KQ149; R3 C1-class counter able to fail on decision overreach (CR02/MT02/V7); R4 json_array quadratic path (SC02) + C2 counter gaps (CR01, MT01); R5 report author date >= lane tip; R6 RV02 NOTE-1 (R03 wording). SHONEN: boxes 2 and 3 look non-author checkable (closure re-ran both counters from plan text); box 1 after R2; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
