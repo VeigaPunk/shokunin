@@ -56811,6 +56811,49 @@
    "notes": "Digest: 2026-11-07T04:55:31-03:00 launch mado round=95 pgid=3134634 driver=hyaku-inline attempt=1; 07:22:25 lane-dead-no-report (FAIL report_of); 07:22:32 launch attempt=2 pgid=769407; 07:23:22 lane-dead-no-report (FAIL report_of); 07:23:29 launch attempt=3 pgid=899374; 10:50:51 complete mado round=95 (attempt=3). Step-1: report d18e00be by mado-shokunin <mado@shokunin.local>, committer 08:22:45 -03 after the cited lane tip 5ef746b7 (08:21:50; author date 07:32:49 skew noted, not an ordering breach); SHONEN heading 4/4 [~]; 6/6 cited commits exist and are ancestors of master; lane porcelain empty and ahead=0 (pushed); prompt carries templates/round-prompt.md §1-§5 verbatim plus the hyaku addendum §6; the quoted run-15 route map is stale against the live task.agentModelOverrides (scout @m_mim, connector @m_antigravity, executor @m_zfl, reviewer/critic/mutation-tester @m_flash) — the prompt names the live table as authority and the lane routed through it; operator-side addendum drift, not a lane defect. Claims: C1 coverage re-measured and evidence-verified 0/300 (no tool) -> 300/300; C2 operability re-measured and evidence-verified 0/75 -> 75/75 and 0/47 -> 47/47; verdicts coverage/operability improved, depth/freshness/calibration/adjacency unchanged; no axis harmed. Remote move: after the round the operator pushed 611f73c5 (considerthese/2026-11-07) on top of 5ef746b7; the helper commit created e7d6f10b but 'bookmark set' failed because a pre-commit git fetch let jj's tracked bookmark fast-forward to 611f73c5, making the set a sideways move. Under the orchestrator's explicit narrow authorization, e7d6f10b was rebased onto 611f73c5 (protocol identity, auto-track off; file blob unchanged 524f74b7...) to 9f029f46, then helper `recover` set the bookmark and pushed: 'landed 9f029f46...', `git ls-remote origin refs/heads/master` = 9f029f46f01f6cd3a1d29ac39bb548498a1d0c3d; ahead=0 behind=0, porcelain clean. Lane tip at closure 9f029f46 (round tip 5ef746b7 + operator commit + spot-check). SCRIPT DEFECT routed to the operator: jj-lane.sh cmd_commit reads the tip from git before the commit; when a fetch-imported bookmark advance lands between that read and `bookmark set`, the set is a sideways move, after which `recover --revision` refuses (candidate not a child of the current tip) and `push` sees nothing to push; fix by re-reading/re-anchoring the tip after the first jj snapshot or by allowing the bookmark set onto a child of the previous tip. Routed lane defects (status-neutral, next round): (1) tools/mado-mime.py HOME edges (r94 defect 1); (2) mimeglob docstring citation (r94 defect 2; correct line xdgmimecache.c:126-139); (3) tools/mado-mako.py, tools/mado-verify.sh, quality/check-receipt-presence.py still without kill-sets; (4) the gate's own selftest cannot be kill-set-guarded under non_selftest_prefix (M95-3; needs a predicate change plus re-anchored r93/r94 counters); (5) QUALITY 158 instrument gap and the portal entry §8 frozen cases (r93); (6) the C1 tool docstring citation check; (7) lesson/declaration label the L1 'MadoR95'/'attempt 1' while the round completed under attempt 3 (cosmetic). SHONEN boxes 1-4 carry resolvable pointers and look mechanically checkable by a non-author; no [x] was written and promotion stays operator-owned. No promotions, no mints.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 57,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 57,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 57
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "OpenBao audit-device custody trial: five audit-device mechanics on throwaway OpenBao 2.7.2 dev servers (enable-path config gate, salted HMAC value form, log_raw token disclosure, salt rotation, non-audited sys/seal-status) with five falsifier shims, a no-bao leg and a PATH-wrapper leg; counter plans/round-57-c2.sh reads value=5"
+   ],
+   "report": ".ufo/reports/round-57/kagi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kagi-shokunin/corpus/lessons/round-57-verifier-spotcheck.md@1b13f5dad921f8901f56d30c428f89614dd74d8a",
+    "rechecks": "Step 1: report 92a64eb0 by kagi-shokunin (committer 11:40:16 -03:00, after lane tip ee1a7457 11:40:04, before driver complete 11:40:35; author stamp 11:15:04 preserved by jj amendments); SHONEN heading 1, four [~] box lines with pointers; BASE + cited 7aa1f472/03cbf656/8d8e0588/d857f344/94d72de9/ee1a7457 all present and ancestors of refs/heads/master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0, porcelain empty, ls-remote master = ee1a7457; prompt = the 140-line template with substitutions + §6 addendum, L2 floor >=8 in one batched call = MISSION.md §L2, five child-lane items present. C1 re-measured by me over git-show bytes: population 16 (cases=3 match=7 epochs=2 clocks=2 pop=2); BASE 3 mismatches (SCORECARD 18-vs-20 cases; LOG heading four-vs-six epochs; lesson Three-vs-Six), tip 0; authorities = 6 epoch tokens in plans/round-56.md, 10 manifest data rows, epoch-F receipt 23 MATCH, selftest PASS(20 cases) receipt with gate bytes b6959d6c unchanged; measured surfaces byte-identical 94d72de9->ee1a7457. C2 re-measured: trial absent at BASE, present at tip sha256 7e645194/10922 B; two independent real HHHHH receipts, five shims each flipping exactly its designated test, no-bao SETUP rc2, wrapper BHHHH, no token-shaped string in the receipts; counter value=5 evidence-verified; ceiling mock reads 5, so the counter is necessary not sufficient. No axis harmed: SCORECARD append-only, no score lowered; docs 37->38 entries CLEAN, scope-gate stale_basis 3->1, checklist BROKEN failed=7 at both. Discernment: admits S115 + S117 and rejects (API page stub, SIGHUP-as-T4) re-opened live, all agree; live decodes match the committed captures; census kagi ok rc 0, 117 rows. Defects routed D1-D12 in the spot-check §7."
+   },
+   "commit": "kagi-shokunin@ee1a7457b9a52c585cb1a1114a87aa12599e876d",
+   "closed_at": "2026-11-07T14:53:31Z",
+   "campaign": "hyaku",
+   "notes": "Driver: 2026-11-07T10:58:07-03:00 launch kagi round=57 pgid=3847699 driver=hyaku-inline attempt=1; 2026-11-07T11:40:35-03:00 complete kagi round=57; hyaku-inline attempt=1. Status ok; admitted: C1 calibration 3->0 and C2 operability capability 0->5 both verify; trends all improved. Defects (status-neutral, routed to kagi via spot-check §7): D1 LOG.md/SCORECARD.md round-57 sections name epochs A/B only while the final plan/c1.sh/controls.sh and the 13-control receipt are epoch C (8d8e0588) — the report's 'every change tied to the LOG entry' is false for epoch C; D2 the landed-changes table lists epoch C above the landing, but d857f344 is epoch C's parent (the landing carries the epoch-B counter/controls and no epoch-C receipt); D3 the epoch-C receipt pins INSTRUMENT plan b130bb83 while 8d8e0588 ships 76e836ee (the A3 plan text was saved after the battery); D4 S117 has no ## Gate record in corpus/lessons/round-57.md, the lesson source: line omits it, and its used-by lists the lesson which does not cite it; D5 lesson §Sources and the SCORECARD coverage row say 114->116 while the tip is 117, and the report cites final/gates.txt as rows=117 while that file reads rows=116 (it predates S117); D6 corpus/current-claims.py has no SKILL.md gate-registry row (Gate standard §Registry); D7 that gate is hard-coded to the round-56 surface, so 'checked every round' is not yet true — D5 is the instance it did not catch; D8 the frozen checker docstring's EPOCHS authority (receipt-file count 5) contradicts its code (epoch tokens, 6); D9 the wave has no L2 planner seat (the L1 held it) and 2 executors vs 3 — the L2 floor itself holds (12 seats, one batched call, attack 5/12, 1 connector); D10 the lane committed .ufo/prompts/kagi-round-57.md (6975eb2d) outside its scope; D11 checklist-run BROKEN failed=7 and adjacency scope-gate DEFECT stale_basis=1 at the tip (both pre-existing; scope-gate improved from 3); D12 lesson anchor 'Enabling and disabling audit devices' vs the live heading 'Enabling/Disabling audit devices'. SHONEN: all four boxes look checkable by a non-author from committed evidence; the lane filed [~] only; promotion is operator-owned. Misroot sweep: the fleet repo carries orchestrator .scratch edits, a round-93 kasegi report and two contentless strays (f.txt, trail-ids.txt); none from kagi.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
