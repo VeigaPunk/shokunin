@@ -54983,6 +54983,47 @@
    "notes": "Driver digest: 2026-11-06T20:32:33-03:00 launch kasegi round=84 pgid=3613247 driver=hyaku-inline attempt=1; 2026-11-06T21:13:21-03:00 complete kasegi round=84; hyaku-inline attempt=1. Report 9b25b70d by kasegi-shokunin; SHONEN 4 lines; cited commits a089ff3d/7f76b7eb/c91c944f/e4593d6c ancestors of master; lane ahead=0, clean. Defects (status-neutral): claims.json names controls/c1-candidate-r84.raw, committed as .txt; C2 B8 failed (header=bad) on the git-archive extract of c91c944f and passed only in a cmp-equal worktree, so the report's 'VERIFIED B0-B8 over the cited commit' is equivalent not identical evidence. Routed to r85: entry gate runnable over an extract; commit landing-run per-row MUTANT lines; depth:verifiability nominal since r70 (meter move or recorded retire/split); MutC1Hunt 22 survivors, MutCounter 5 semantic survivors (M13 r84_ok forced True), CriticClaims A1 forgery, ExecC1RealTree exit 1 vs 2; SHONEN box 2 end-to-end task. SHONEN boxes 1/3/4 [~], box 2 [ ]: not promotion-checkable.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 50,
+   "date": "2026-11-06",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 50,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 50
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-50/kagi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kagi-shokunin/corpus/lessons/round-50-verifier-spotcheck.md@214d8bf530a0c87c00686493f21af15396284793",
+    "rechecks": "Step 1: report committed by kagi-shokunin (ef722b16, 21:04:32, after final lane commit 21:03:11, before complete 21:05:18); 7 cited hashes exist and are ancestors of master; 6 lane commits by lane identity; jj-lane state ahead=0, porcelain empty; SHONEN 4=4 [~]; prompt = template with placeholder substitutions only + hyaku addendum §6; instruments unchanged since predeclaration 7d3b2c0 (19:20:41) < dispatch 19:20:48; append-only removals 0. C1 re-measured: own SIGKILL probe over git-archived trial bytes (env -i, nonce-tagged, pid+starttime) BASE K1/K2 alive_after_5s=1 -> TIP K1/K2 alive_after_5s=0; full TIP trial HOLDS holds=5 rc 0; K3 + counter value 0->3 evidence-verified (c1-base, c1-candidate, c1-final). C2 re-measured: R13-01 68, R24-06 sha 7a6a2195 n=68, R24-05 sha c7673d14 n=124 (LC_ALL=C), census tallies rows=107 A=103 B=2 C=2 mined=102 queued=1 rejected=4, R38-01 quote-bodies 8 — all equal new expects, BASE drifted; frozen fields 1/2/4/5 + boundary rows byte-identical BASE=TIP; R22-03/R24-15 + c2 value 10->0 evidence-verified. Harm: SCORECARD additions only; verify FAIL 12 -> 3 by grep -c; R36-01 re-measured at 23de560 = 0 in 330 s (timeout 300); S106/S107 recheck 180d, on-release 29=29. Spot-check: S106 admit agree, S107 admit agree, prctl(2) reject agree (live sha256 = lesson for all three); quotes 12/8 words; census validate rc 0 kagi ok."
+   },
+   "commit": "kagi-shokunin@23de560402260a6062b9ee834b46bc9fd4344152",
+   "closed_at": "2026-11-07T00:16:49Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest (.ufo/watchdog.log): 2026-11-06T18:59:15-03:00 launch kagi round=50 pgid=3787793 driver=hyaku-inline attempt=1; 2026-11-06T20:22:55-03:00 lane-dead-no-report kagi round=50; retry same round; 2026-11-06T20:22:56-03:00 launch kagi round=50 pgid=1593614 driver=hyaku-inline attempt=2; 2026-11-06T21:05:18-03:00 complete kagi round=50; hyaku-inline attempt=2. Status ok, both claims verify (C1 operability 0->3 SIGKILL-orphan-safe OpenBao trial via setpriv --pdeathsig KILL; C2 calibration 10->0 drifted ledger rows), no axis harmed; R36-03 harm introduced in 6963a35 repaired in d4994e3 before landing. Discernment graded improved (lane self-graded unchanged): spot-check agrees on 2 admits + 1 reject, M50-4/M50-1 became grounded QM63/QM62. Defects (status-neutral, routed to kagi r51): D1 R36-01 timing receipt omits the tip; closure measured 0 in 330 s at 23de560 - fix ledger timeout budget under load (R36-01, R11-08). D2 R38-01 expects 8 while operator-routed R38-03 expects located=5 (F3) - ledger self-contradiction. D3 attempt-1 build wave lost 10/12 seat outputs (M50-3), none replaced; no connector/sentinel re-run - re-run sibling scan. D4 c2-final subset verify ends CLAIM_LEDGER FAIL failed=0 verify_rc=1 unexplained - name the finding. D5 carried: F5 lane-status red count, 4 counter mutation survivors, F1 G6 anchoring, F2 note column, r49 D3 shims/PATH-reader control. SHONEN: all [~]; box 2 non-author-checkable (closure re-ran trial 5 HOLDS + SIGKILL safety); box 4 lacks this round's sibling scan; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
