@@ -57450,6 +57450,49 @@
    "notes": "Driver digest (.ufo/watchdog.log, mutable; copied): 2026-11-07T16:31:03-03:00 launch mado round=98 pgid=3734780 driver=hyaku-inline attempt=1; 2026-11-07T17:53:18-03:00 complete mado round=98; hyaku-inline attempt=1. Status ok (real report, committed work, resolvable hashes); admitted: C1 coverage (new surface capability: tool absent at base -> 88/88 cases, 79/79 mutants, 60/60 fresh, selftest 38) and C2 operability (read-back gate absent at base -> 21 status-aware mismatches repaired row->entry, 0 findings at a3471631, planted 5/5, census rc 0) both verify; no axis harmed (SCORECARD/LOG/PROVINCE/SKILL append-only, 0 deletions; harm watch 26 legs 22 rc 0 + 4 declared nonzero; registry used-by only added). Routed (status-neutral, next round): (1) S532 is listed in the round lesson's Gate table and admitted in the Candidates table and PROVINCE.md cites S528-S532, but no S532 row exists in corpus/SOURCES.md (last row S531; 466=462+4); add it or correct the lesson/PROVINCE. (2) report/SCORECARD/LOG say 'gate findings 0 over 466 rows/119 entries' but the measured rev a3471631 has 462 rows/118 entries; the 466/119 state was never gated with committed evidence. (3) SKILL.md mado-r98-execargv row pins the pre-re-freeze tool/mutant hashes acfcc4f7.../5f074f70... while the committed bytes are 49f7fecd.../32c207b3.... (4) LOG round-98 seed e2bf4d1b757e2e7b vs receipt f00d3edcdb285ac0, and 'M98-1..M98-6' vs lesson M98-1..M98-12. (5) harm watch omits r97c1_filetype and r97c2_counter_selftest (present in the 28-leg first run). (6) M98-1 captured-by none but no QUALITY.md criterion cites the lesson. (7) first report commit 30ac2607 preceded the lane tip 6f61eff0 by 26 s and the filed bytes were rewritten in three later commits without an erratum (r97 D1 recurrence). (8) C2 prose conflates the 06b6bf2a 16-cell repair with the 020af865 S504/S506/S527 additions. Operator note: all four SHONEN boxes look checkable by a non-author from committed evidence, but the connector sweep is lane work; promotion is operator-owned (lane filed [~] only, no [x]).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 79,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 79,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 79
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "chromium-showpicker-linux (capability row first-working round 79, verified)"
+   ],
+   "report": ".ufo/reports/round-79/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-79-verifier-spotcheck.md@0b121e1b1468d3861ad23a0ece635594a82f8d41",
+    "rechecks": "Step 1: report 2b5ef3d3 by tabi-shokunin, committer 18:49:59 vs lane tip fcb2ff2c 18:50:09 (report landed 10 s early - defect); SHONEN heading 4 [~] lines for 4 boxes; 8/9 cited short hashes resolve and are ancestors of master, f154beee dead (full D f154beeff14e349b84fa0d236461132295b7c017 resolves and is an ancestor); jj-lane state ahead=0 behind=0 tracked=0 untracked=0, porcelain empty, ls-remote = fcb2ff2c; prompt 943 lines (sections 1-5 match the template rendering, addendum 6, five child-lane items); one batched taskCall of 12 seats (4 executor, 2 reviewer, 1 critic, 1 mutation-tester, 1 scout, 1 scribe, 1 connector; attack 4/12 = 33.3%), no model key; census exit 0 (W04 only). Re-measured myself: freeze.txt 14/14 sha256 match at D f154beef and at HEAD; receipt nonce tabi-r79-l1-f154beeff14e, driver e9c87159..4933, fixture 69de1a78..93df, 10 legs, failures 0; counter clean 56 (findings []); battery 90/90, coverage 56/56 uncovered [] unknown []; selftest 9/9 with kill-power 64/64 survivors [] and record-drift 0/20; capability row first-working 79; note cites S216-S218; SOURCES 215 -> 218 (3 rows, all A/mined, no old row touched); base has no r79 receipt and c1-nowork.json has 52 findings. C2 re-derived at base: exactly the 7 correction claims fail on 24c82189 bytes; after: all directional pairs present; truth values nonce bf94adaab578, battery 400, 31 witness-* occurrences, 8 Mistakes rows, scored pick-multiple 7, cold1 node 10, 5 cold-run lines all under round-78-seats; controls reversed 2 / stale-removed 2 / truth-moved 1. Evidence-verified, not executed: the lane's counter/battery/kill-power/selftest and the capability-status gate. Spot-check: S216 and S218 admits re-opened live (sha256 match, quotes verbatim), S217 quote verbatim; rejects SecurityError (receipt has no cross-origin leg), userGesture (isActive false/hasBeenActive true), click-vs-showPicker (identical 5-event lists), activation-consumption (source consumes before popup, not separable) - 6/6 agree."
+   },
+   "commit": "tabi-shokunin@fcb2ff2cae86aacde816fea109074a9d51f1380a",
+   "closed_at": "2026-11-07T22:01:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable; copied): 2026-11-07T17:25:37-03:00 launch tabi round=79 pgid=558011 driver=hyaku-inline attempt=1; 2026-11-07T18:51:00-03:00 complete tabi round=79; hyaku-inline attempt=1. Status ok; verdict admitted: C1 (coverage, capability chromium-showpicker-linux) and C2 (calibration, r78 record drift) verified, no axis harmed; calibration unchanged because the C2 gain is offset by the round's own fresh record drift. Conformance defects (status-neutral): report landed 10 s before the final lane commit fcb2ff2c and does not name it; dead short hash f154beee (the full D f154beeff14e349b84fa0d236461132295b7c017 resolves and is an ancestor); dead scored/c1-killpower-a.json pointer (never committed; the 64/64 result is in selftest-r79-gates.out); prompt committed on the fleet repo by tabi-shokunin (b547f010) outside the lane write scope (carried r78 defect 4). Routed to r80 (spot-check section 6): (1) fresh record drift - SCORECARD 88/88 + KILLPOWERNUM vs 90/90 + 64/64, LOG 88 cases/66 mutants vs 90/64, SKILL 66 vs 64, lesson 88 vs 90; (2) dead lesson-proof/kp-run1.json in lesson Mistakes row 1 and QUALITY 155 (the scribe's unfiled-evidence flag was not integrated); (3) dead scored/c1-killpower-a.json; (4) dead short hash f154beee; (5) report-lands-last; (6) Gate quote word counts (12/19/23 stated vs 10/15/11 actual; all <=25 words); (7) frozen counter header still states the understated escape clause; (8) C2 scope does not cover the round's own records; (9) integration discipline - state every seat finding's disposition. SHONEN boxes all [~] with pointers; promotion remains operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
