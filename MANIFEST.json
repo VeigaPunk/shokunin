@@ -57195,6 +57195,49 @@
    "notes": "Digest (watchdog.log, mutable; copied): 2026-11-07T15:01:16-03:00 launch kasegi round=96 pgid=4033329 driver=hyaku-inline attempt=1; 2026-11-07T15:51:54-03:00 complete kasegi round=96; hyaku-inline attempt=1. Step 1: report 4a92aac8 (filed, committer 15:51:02) + 3fcdf2b6 (erratum, 15:51:33), both kasegi-shokunin, after lane tip e2f4f94a (15:50:23); SHONEN heading with 4x[~] and resolvable pointers; six cited hashes exist and are ancestors of refs/heads/master; jj-lane state local=remote=e2f4f94a ahead=0 behind=0 tracked=0 untracked=0, porcelain empty, ls-remote e2f4f94a; prompt sections 1-5 byte-identical to templates/round-prompt.md plus the hyaku addendum, five child-lane items, L2 floor 8, no route-map drift (MISSION.md carries no per-role bucket); wave 13 seats in one batched call (counts.spawn=13 resume=0 total=13), 8/13 attack, 0 dead, no model pins. Conformance defects (status-neutral): LOG.md cites 804e7bc3/3c0581e2/7ef1d365/6299582b but not b7f59c60 (integration) or e2f4f94a (wave findings); the report cites l1/c2-landing-r96.txt for seeds 4242 and 20261107 while it holds seed 4242 only (the 20261107 run is w1/SentinelShapes-receipts/03); the wave ran 2 executors against the prompt section 3 minimum of 3 (the L1 planner substitution is sanctioned); report counts off by one (SentinelShapes 7 vs 8 routed findings; 'six mistakes' vs the lesson's 7 rows M96-1..M96-7); the C2 statement's '7 positives, 6 boundary negatives' describes the gate plants, the selftest split is 8/5; S144 anchor says the prefix table spans 348-395 while it ends at 364; S144 used-by lists the instrument, which cites S144 0x (the entry cites it 5x); manifest note typo glsoas- vs gloas- and stale '419 lines' prose; pre-freeze controls receipt names unresolvable scratch revs (lane-routed). Claim-statement defect routed: the C2 docstring known-limits list dropped the plain glagent- 50-character form (S140:213) while it remains undetected; the knowledge entry records it and the wave flagged it (ReviewC2Scanner F2 / SentinelShapes R8); K1-K6 do not test the docstring. Routed to round 97: 10 items in the spot-check section 6. SHONEN: all four boxes [~]; a non-author can check boxes 1, 3 and 4 on current evidence (decision tables/checklists with resolvable sources, rechecks executable, PROVINCE unchanged, no absorption); box 2 rests on the round-85/86 practice reports with no new end-to-end task this round; promotion stays operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 97,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 97,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 97
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "GIO 2.90.1 path content type: tools/mado-filetype.py answers read-only standard::content-type and standard::fast-content-type for a path - the eight-branch stat order (broken/nofollow symlink, directory, chardev, blockdev, FIFO, zero-size regular, socket), the alias rewrite, the basename-only guess and its three uncertain states, and the sniff of the database's max extent clamped to 16384 taken only when not --fast and uncertain; 157/157 frozen cases (15 classes), 101/101 counted mutants (class_kills 15/15), 140/140 fresh at a measured seed, 6194/6194 frozen host labels, selftest checks=40 failed=0; first-working round 97"
+   ],
+   "report": ".ufo/reports/round-97/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-97-verifier-spotcheck.md@35f3ce808788b11c063309b1b5ad0192754795ea",
+    "rechecks": "Step 1: report 26a96ca0/f5f6fa34 by mado-shokunin, pushed; SHONEN heading 4x[~]; 12 cited hashes all ancestors of master and rev-list base..tip = 12 (every round commit named); jj-lane state ahead=0 behind=0 tracked=0 untracked=0, porcelain empty, ls-remote master = 15b62804; prompt = templates/round-prompt.md verbatim modulo substitutions + hyaku addendum section 6, five child-lane items present, L2 floor >=8 in one batched call (w1 14 seats spawn 14, w1b 10 seats spawn 10; attack 5/14 and 5/10; no model key). C1 re-measured: tool absent at base, tool sha da6af7a0...8a44d2d8 = freeze pin at 4541d94b and tip, counter 745a341e...195ba9e0, frozen controls 157 cases/15 classes, 101 counted mutants (+11 not-observable, +8 equivalents), 6194 host labels (0 errors), receipt TARGET_MET cases 157/157, mutants 101/101, host 6194/6194 0 mismatches/0 errors/0 drift, fresh 140/140, selftest checks=40 failed=0, controls name-only 39/157, naive 67/157, memoriser 0/140, forgery rejected; my read-only spot check of the tool vs /usr/bin/gio agrees on /etc/passwd (text/plain; fast application/octet-stream) and /etc (inode/directory); separability TARGET_MET at 65ff5591 and the five instrument bytes unchanged 65ff5591..15b62804. C2 re-measured: base counters have no own --selftest (3/4 mentions are other tools' modes), tip adds the block immediately before the __main__ guard (10 st-* ids each), strip-and-restore reproduces the base bytes exactly; registry 1 -> 3 instrument rows at 65ff5591; receipt TARGET_MET selftest_green=2/2 checks=10,10, negative_ids=18/18, broken_modes=6/6, base-control rc=2, stub_uncredited=18/18, registry=1->3, ledger 191/191 uncovered=0; separability SETUP_ERROR at 4541d94b. Harm watch 25 legs: 24 rc 0 + the declared r90c1 SETUP_ERROR; SCORECARD append-only (43 added lines, 0 removed)."
+   },
+   "commit": "mado-shokunin@15b6280483fe8fab52acbce689c883c056b34e7d",
+   "closed_at": "2026-11-07T19:29:59Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest (.ufo/watchdog.log, mutable; copied): 2026-11-07T13:33:13-03:00 launch mado round=97 pgid=596619 driver=hyaku-inline attempt=1; 2026-11-07T16:20:59-03:00 complete mado round=97; hyaku-inline attempt=1. Status ok (real report, committed work, resolvable hashes); admitted: C1 coverage (new surface capability, 0 scored paths -> 157/157 frozen, 6194/6194 host labels, 101/101 counted mutants, selftest 40) and C2 operability (both round-96 counters gain 10-check --selftest modes with production bytes byte-identical, registry 1 -> 3 instrument rows) both verify; trends all improved. No axis harmed (SCORECARD append-only, no score lowered; harm watch 25 legs 24 rc 0 + the declared r90c1 SETUP_ERROR; the two r96 counters replayed at the tip). Conformance defects, status-neutral: (1) the report was filed at f5f6fa34 (committer 16:18:23-03) before lane commits 992037c6/d7c186bc/15b62804 (16:19:05/16:19:34/16:19:47) and rewritten in place at 26a96ca0 (16:20:00) instead of an appended erratum naming the superseded text; (2) the w1 role census says 3 executors where w1/swarm-registry.json and w1-results.json hold 6 (14 = 6 executor + 2 mutation-tester + 2 reviewer + 1 critic + 1 scout + 1 connector + 1 scribe), repeated in SCORECARD; (3) the 'dead seats ... settled with no report' line is contradicted by w1/R97MScoutSources.md (283 L), w1/R97MExecC2.md (204 L) and w1/R97MMutC2.md (199 L), all committed; (4) the Notes' 'the r96 spot-check's D1-D13 are closed' omits D7 and D9 and neither is closed (D7's rationale text at .ufo/waves/round-96/claims-declaration-r96.md:114-115 unchanged; D9's class recurs in this round's w1 census); (5) S523's used-by/recheck cells changed in a1408d47 without the old->new lesson log the SOURCES contract requires (the report's 'ten used-by cells' omits the repair); (6) fleet-root untracked f.txt (2 B, 2026-11-07 04:40) and trail-ids.txt (1 B, 2026-11-06 20:36) predate the round (mtimes inside mado r94/r90) and are routed. Routed: items 1-6 above plus round-95 routed defects 1, 2, 4 and 5 (re-flagged by the report). SHONEN: all four boxes look checkable by a non-author from committed evidence (registry rows + entry; C1 measured run; entry commands; R97MConnector's 20-lane PROVINCE sweep); promotion is operator-owned and the lane filed [~] only.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
