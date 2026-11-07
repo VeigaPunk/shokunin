@@ -56894,6 +56894,58 @@
    "notes": "watchdog digest: 2026-11-07T10:50:59-03:00 launch kasegi round=93 pgid=3255941 driver=hyaku-inline attempt=1; 2026-11-07T11:57:39-03:00 complete kasegi round=93; hyaku-inline attempt=1. Step 1: report 206059c7 by kasegi-shokunin (committer 11:57:01, after lane tip a3760ac5 11:56:23); SHONEN 4x[~] with pointers; six cited hashes ancestors of master; lane ahead=0, porcelain clean, remote a3760ac5 before the spot-check (dff5a0a0 after); prompt carries template sections 1-5 verbatim + hyaku addendum section 6, L2 floor 8 matches MISSION; wave w1 13 seats in one dispatch record (8/13 attack, 1 connector), WAVE-DONE before report; census kasegi ok, 139 rows, six inherited W04. Conformance defects (status-neutral): wave-evidence commit 60152778 is tied to 'Round 93 bullet 3' but LOG bullet 3 is the C2 landing and the Round 93 LOG block has no wave-evidence bullet; the report says 'M0-M10' while the meter has no M2 limb (predicate is M0,M1,M3-M6,M9,M10); the C1 landing receipt prints no measured-revision line. Routed (spot-check section 6): M93-5 M3 union crash on non-knowledge labels; M93-4 path-shaped forgery; C1 M5 cell-repair token gap, empty EXCLUDED, 12 survivors; C2 three pin-only survivors, D2 S139 line 86 vs 87, D3 &#xXX; unpinned, D4 stale K8/no GitLab left-boundary plant, K6 blindness, 12 unnamed escape misses, 2 FP shapes, custom-prefix/routable/ghr_ coverage gaps; M93-1/R145 'committed one-liner'/39 rows not registered (my parse of the stated predicate over reanchor-r93.txt: 37); append a LOG correction for the wave evidence. Carried: six W04 warnings, assimilation quarantine slice, cookie-shape surface.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 77,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 77,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 77
+   },
+   "admitted": false,
+   "verdict": "rejected-harmed",
+   "verdicts": {
+    "depth": "unchanged",
+    "coverage": "unprovable",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "harmed",
+    "discernment": "improved"
+   },
+   "claims": [
+    {
+     "id": "C1",
+     "axis": "coverage",
+     "type": "capability acquisition chromium-file-chooser-linux (generation r77)",
+     "verdict": "unprovable",
+     "finding": "NOT VERIFIED as reported: legs (a) 183 clean exit 0, (c) 336/336 + 253/253 kill power and (d) 0->1 hold on committed evidence; leg (b) false as frozen (R77Exec1 cold run: 8 findings, backendNodeId 4 vs pinned 5). Kill rule unchanged; honest stop upheld."
+    }
+   ],
+   "capabilities_added": [
+    "chromium-file-chooser-linux (row entered 0 -> 1, first-working r77) — NOT VERIFIED: claim C1 failed leg (b); recorded as pre-claiming and held for a verified demonstration"
+   ],
+   "report": ".ufo/reports/round-77/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-77-verifier-spotcheck.md@ae2dc25fe8b4db70d2ef8a83804bc5545fbc35ff",
+    "rechecks": "1 claim NOT VERIFIED (honest stop). Re-measured myself: leg (d) greps 0->1 capability row and 0->1 knowledge note; SOURCES 207->213 with the frozen census command (malformed 0->0) and scripts/sources-census.sh validate exit 0; freeze.txt 14/14 sha256 recomputed over b985aac4 incl. driver 9954db07..58a6; novelty sweep empty at base (rc 1). Evidence-verified (gate not executed, per Gate standard): counter clean 183 exit 0 (scored/c1-counter-a.json), leg (b) 8 findings (R77Exec1/counter.json + L1-diag), battery 336/336 allOk, kill power 253/253 survivors 0 crashed 0, pre-freeze 13/13 allOk, selftest RED 11/13 exit 1. Ancestry 8/8, lane repo clean and pushed (=b985aac4)."
+   },
+   "commit": "tabi-shokunin@b985aac42d88cc4403e79abedd7659c872e096f8",
+   "closed_at": "2026-11-07T15:40:25Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable; copied): 2026-11-07T05:48:24-03:00 launch tabi round=77 pgid=2920530 attempt=1; 10:50:55 lane-dead-no-report attempt=1 (no landed report); 10:50:57 launch pgid=3255324 attempt=2; 12:33:47 complete attempt=2. Report f1a75aa7 by tabi-shokunin; committer 12:33:02 > lane tip 12:32:51 (lands last). Lane base 1320d428 -> round head b985aac4, remote verified ahead=0. Status ok (real report, committed work, resolvable hashes); verdict rejected-harmed: expansion improved, quality harmed (new registered gate red 11/13, counter refuses honest cold runs 2/25, three escape classes inside its own declared limit), so the round is a trade and not an admission. No axis score lowered (SCORECARD diff has no removed lines; all six at 9). Conformance defects, status-neutral: lane committed fleet-root .ufo/prompts/tabi-round-77.md outside its write scope (690a5308) and appended Amendment 52 to the prompt at dispatch; lesson ## Gate has no row record for S213 (CORPUS rule 1); report miscounts Mistakes (says 7 rows / 2 captured-by none; table has 8 / 3) and the pipe-truncation row has a literal '|' splitting the table; wave ran no planner seat (validator rejects the role, L1 held it); report route list omits connector @m_antigravity and predates Amendment 53 (executor @m_zfl -> @m_cru, landed mid-round, future launches only). Routed to tabi r78: red selftest; backendNodeId pin (QUALITY 150 fix); schema-byte walk / self-claimed-nonce exemption / host-argv 6-of-17; capability row on an unverified claim (mark provisional or hold); missing S213 Gate record; the two count/table defects. Promotions/mints: none. SHONEN: all four boxes look checkable by a non-author now (SKILL.md decision rows, an end-to-end file-chooser task, executor seats ran from the spec alone, R77Connector 20/20 with 0 contested ground) — promotion stays operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
