@@ -57493,6 +57493,54 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable; copied): 2026-11-07T17:25:37-03:00 launch tabi round=79 pgid=558011 driver=hyaku-inline attempt=1; 2026-11-07T18:51:00-03:00 complete tabi round=79; hyaku-inline attempt=1. Status ok; verdict admitted: C1 (coverage, capability chromium-showpicker-linux) and C2 (calibration, r78 record drift) verified, no axis harmed; calibration unchanged because the C2 gain is offset by the round's own fresh record drift. Conformance defects (status-neutral): report landed 10 s before the final lane commit fcb2ff2c and does not name it; dead short hash f154beee (the full D f154beeff14e349b84fa0d236461132295b7c017 resolves and is an ancestor); dead scored/c1-killpower-a.json pointer (never committed; the 64/64 result is in selftest-r79-gates.out); prompt committed on the fleet repo by tabi-shokunin (b547f010) outside the lane write scope (carried r78 defect 4). Routed to r80 (spot-check section 6): (1) fresh record drift - SCORECARD 88/88 + KILLPOWERNUM vs 90/90 + 64/64, LOG 88 cases/66 mutants vs 90/64, SKILL 66 vs 64, lesson 88 vs 90; (2) dead lesson-proof/kp-run1.json in lesson Mistakes row 1 and QUALITY 155 (the scribe's unfiled-evidence flag was not integrated); (3) dead scored/c1-killpower-a.json; (4) dead short hash f154beee; (5) report-lands-last; (6) Gate quote word counts (12/19/23 stated vs 10/15/11 actual; all <=25 words); (7) frozen counter header still states the understated escape clause; (8) C2 scope does not cover the round's own records; (9) integration discipline - state every seat finding's disposition. SHONEN boxes all [~] with pointers; promotion remains operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 79,
+   "date": "2026-11-07",
+   "type": "closure-correction",
+   "lane": "tabi",
+   "lane_round": 79,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 79
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "chromium-showpicker-linux (capability row first-working round 79, verified)"
+   ],
+   "report": ".ufo/reports/round-79/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-79-verifier-spotcheck.md@e2e12ca58fe2cdbed4aa97af47793b6cfb5a9350",
+    "rechecks": "Correction to the r79 closure entry: the spot-check's freeze-pin count read 14/14; `.ufo/waves/round-79/freeze.txt` has 13 entries and all 13 sha256 match at D f154beef and at HEAD fcb2ff2c (`while read sum path; do git show <rev>:$path | sha256sum; done < freeze.txt` -> files=13 badD=0 badH=0). The corrected spot-check landed at e2e12ca5. No claim, axis, trend or admission change."
+   },
+   "commit": "tabi-shokunin@fcb2ff2cae86aacde816fea109074a9d51f1380a",
+   "closed_at": "2026-11-07T22:02:30Z",
+   "campaign": "hyaku",
+   "notes": "Closure-correction for tabi r79 (supersedes the r79 closure entry): the spot-check's freeze-pin count was 14/14; the freeze has 13 entries (13/13 verified at D f154beef and at HEAD fcb2ff2c). Spot-check corrected at e2e12ca5. Verdict unchanged: admitted; C1 (coverage, capability chromium-showpicker-linux) and C2 (calibration, r78 record drift) verified; coverage improved, calibration unchanged, the other four axes unchanged; trends expansion/quality/discernment improved. Routed defects unchanged (spot-check section 6): fresh record drift in SCORECARD/LOG/SKILL/lesson, dead lesson-proof/kp-run1.json, dead scored/c1-killpower-a.json, dead short hash f154beee, report-lands-last, Gate quote word counts, frozen counter header, C2 scope, integration discipline.",
+   "promotions": [],
+   "minted": [],
+   "supersedes": {
+    "round": 79,
+    "type": "closure",
+    "date": "2026-11-07"
+   }
   }
  ]
 }
