@@ -55184,6 +55184,46 @@
    "notes": "Dispatch digest (watchdog 3093/3108): 2026-11-06T20:38:50-03:00 launch tsukuroi round=88 pgid=2200914 driver=hyaku-inline attempt=1; 2026-11-06T21:35:27-03:00 complete tsukuroi round=88; hyaku-inline attempt=1 (watchdog.log, mutable). Status ok, not admitted: honest stop - C1 (measured, operability 9 assurance arm) reached 3/3 45/45 x3 on the frozen counter but its predicate's isolation clause is falsified by the lane's own wave (roster-oracle control passed only by crash at freeze, met from the clone layout the declared measurements used) and two negatives are killed by chance (CRLF); the L1 itself reports C1 not verified as a forgery-resistant measurement; operability unchanged. C2 exploratory depth: closure (named non-author reviewer) rules unprovable-but-better. Conformance note (status-neutral): report author date 21:27:41 predates cited commits 35ca9e7e..f1b27474 (commit date 21:35:04 follows them). Routed to tsukuroi r89: (1) corpus/README.md Round-88 Frontier bullet 'limine-install body unread ... PW5 rests on installed bytes' is stale vs entry Limits (35ca9e7e) - sweep the correction; (2) counter successor: mask every reachable roster copy, error rows = could-not-evaluate (QUALITY 126), deterministic CRLF draw, before any new 45/45 claim; (3) report cites CR flake as 1 of 8, seat measured 2/24 (w1/MutBattery.md lines 23/113/285); (4) commit reports with a current author date; (5) hash_mismatch_panic.value detector (M18) and 10/19 surviving docstring forgers become committed negatives in the successor freeze. SHONEN 4/4 [~]; no-oral-context retest still missing, not fully non-author checkable. L0 HOST INCIDENT (round-86) remains open, operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 85,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 85,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 85
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:verifiability": "improved",
+    "coverage": "improved",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "priced-claim-package"
+   ],
+   "report": ".ufo/reports/round-85/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-85-verifier-spotcheck.md@d7296645c2cd9f631329fa8e2f38328a4c9c89a5",
+    "rechecks": "C1 re-measured over committed bytes (lane meter not executed): repair-map sha256 b575f147 = claims.json; 18 keys, 18/18 targets tracked, no key tracked at root; SKILL.md 1252->1252 lines, 17 changed, byte delta 478 = pure prefix insertion (23 occurrences); distinct backtick tokens -18 (exactly the map keys) +9 (all tracked paths) -> 741-18+9=732, 158+9=167 reproduces 158/741->167/732. C2 re-measured: S119-S121 sha256 match claims/report; subject bound by hand (S119 id 1913733 + title, S120 original-report link); every pricing field grep-located once in its capture (has_bounty? false, severity medium, Bug bounty 2400 USD, no-bounty policy, CVSS refusal); KEV S052 2026.10.23 0 hits; registry 118->121, SOURCES diff +3 rows mined; LOG Round 85 + SHONEN box 2 [~]; ReviewC2Package F-1..F-7 all confirmed fixed (closure stands as re-review). Evidence-verified (not executed): L1-landing-r85.txt at a48fe8b9 meter M1-M5 rc0, P2 instruments OK, density 273.2->273.2, E1-E5 rc0, WELL-FORMED 8/8, source-recheck OK, census rc0, shonen-form SF-CLEAN; frozen controls c1/c2 all forgeries rc1, positives rc0. Spot-check: S120 admit agree, S119 admit agree, third-party CVSS reject agree (NVD 7.5 HIGH vs vendor Medium/no-CVSS), daniel.haxx.se defer agree; S121 row :43 quote 15 words found live; sources-census validate kasegi ok rc0 (6 inherited W04)."
+   },
+   "commit": "kasegi-shokunin@6013dc983867a90cf6f2cc486ac872315d8f4aba",
+   "closed_at": "2026-11-07T00:55:22Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-11-06T21:17:17-03:00 launch kasegi round=85 pgid=4060595 driver=hyaku-inline attempt=1; 2026-11-06T21:51:08-03:00 complete kasegi round=85; hyaku-inline attempt=1. Step 1 clean: report df3e8467 by kasegi-shokunin, SHONEN 4 lines [~], all cited commits ancestors of master, jj-lane state ahead=0 behind=0, porcelain empty, prompt 46beb18d carries template contract. Observation: freeze 4a2d34f2 author date 21:16:16 precedes launch (jj change-creation time; committer 21:30:31, captures 00:26Z) - not a defect. C1 qualifier carried: internal citations only, external RESOLVES 4/741, score held 4. Routed to r86: (1) e2e counter subject binding/empty quotes/duplicate keys + mutant survivors (lane M85-2) with a failing wrong-subject control; (2) record reviewer re-pass after CHANGES-REQUESTED; (3) say 'distinct' citations (18 tokens over 23 occurrences; 16 bare non-backtick occurrences remain); (4) citation-survival.md census of record stale 132/701. Operator: SHONEN box 2 [~] rests on a documentation-only retrospective package - whether it satisfies 'end-to-end domain task' is the operator's promotion call; boxes 1,3,4 checkable from outside as at r47.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
