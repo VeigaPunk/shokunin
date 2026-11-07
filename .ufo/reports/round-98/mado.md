@@ -156,15 +156,15 @@ base `35f3ce80` (462 rows, 62 W04 warnings, no E-codes; `receipts/census-start-r
 
 ## SHONEN
 
-- `[~]` SKILL.md contains real decision tables, error patterns, checklists, cited sources — the four
+- [~] SKILL.md contains real decision tables, error patterns, checklists, cited sources — the four
   round-98 registry rows name the instruments and their verdict maps (`SKILL.md:2979-2982`); the
   outside-lane promotion authority is still absent.
-- `[~]` At least one end-to-end domain task executed and logged in LOG.md — the C1 measurement is an
+- [~] At least one end-to-end domain task executed and logged in LOG.md — the C1 measurement is an
   end-to-end run of the tool against the installed oracle (`receipts/c1-measured-r98.txt`, LOG round
   98); no outside-lane verifier has ruled on it.
-- `[~]` Instructions executable by an agent without oral context — the declaration's shared contracts
+- [~] Instructions executable by an agent without oral context — the declaration's shared contracts
   and the entry's sections carry the commands; a dispatched seat is still the lane's own work.
-- `[~]` No cross-domain bleed (PROVINCE.md still accurate) — `PROVINCE.md` gains the two round-98
+- [~] No cross-domain bleed (PROVINCE.md still accurate) — `PROVINCE.md` gains the two round-98
   refinements (read-only, no new write surface); the connector's 20-lane sweep found no sibling claim
   on either surface (`w1/R98MConnector.md`).
 
