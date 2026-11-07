@@ -70,3 +70,37 @@ C2 landing `38e7319f44a9fab2978b59ffd43faf207cf62b32`; integration `43cc15e8d807
 - Tool installs: none (no upgrade was needed; pacman stayed paused).
 - Misroot sweep: `git -C /home/vgpnk/Projects/shokunin status --porcelain` shows only `.scratch/*` (orchestrator-owned) and four fleet-root files that name no kasegi/95 path and predate or name other work (`f.txt`, `trail-ids.txt`, `host-list-final.txt`, `dropped-volatile.txt`) — none written by this lane's seats, so none was copied or deleted.
 - Open L0: none added this round.
+
+## Erratum (appended after filing; names the text it supersedes)
+
+Filed bytes above are not rewritten. This erratum supersedes: (a) the report's placement of the
+scanner docstring defect in “routed to round 96”, (b) the report's “lane tip” hash line, and (c) any
+reading of the frozen C2 statement's source line numbers as the regex grammar lines.
+
+1. **Scanner docstring fixed (was routed, now landed).** `corpus/instruments/capture-secret-scan.py`
+   now documents `github-refresh-token` and `gitlab-jwt-token` in its “Shapes.” block and no longer
+   lists the GitLab JWT forms under “Known limits”; landed in lane commit
+   `4ee3455d4944ecef128035c0608c80f4a3884cfc` (new sha256 `3006991a0f479b13fc6e4d1fbc70a9153bd9d336544f8ab009b6eeac6772adfc`).
+   The C2 claim's P2 pin remains measured at the C2 landing `38e7319f` (sha `66edd661…`), which is
+   unchanged; the doc fix is behaviour-neutral: `capability-check.py --rev 88bc4127` with the new instrument sha prints K1–K6 ok
+   (`SELFTEST-RESULT pass cases=115`, `hits=0 allowed=27`), receipt `.ufo/waves/round-95/l1/docfix-r95.txt`.
+2. **Frozen C2 statement wording (not reworded).** The frozen statement cites `S140 lines 429, 446,
+   463` for the JWT grammar and `S141 line 72` for the 76-character length. Lines 429/446/463 are the
+   `keywords` lines; the grammars are on 430/447/464 (the landed docstring and the knowledge entry
+   cite both sets). The 76-character length's landed ground is `S143` (correction row superseding
+   S141's record, status `mined`, used-by `corpus/instruments/capture-secret-scan.py, corpus/knowledge/github-refresh-tokens-and-gitlab-jwt-tokens.md`);
+   S141 stays `rejected`. The frozen claim text is corrected in round 96, never retroactively.
+3. **Round-95 capture manifest.** `corpus/source-snapshots/round-95/manifest.json` now exists
+   (S142, 7,944 bytes, sha256 `727ba6a0…`, quote anchored at line 169). `capture-binding-check.py`
+   prints `MANIFEST round-95 records=1 url_bound=1 fetched=1 archival=0` and `missing_manifest=0`;
+   its only remaining FAIL is the pre-existing `rejected-row-anchor S138` (also present at base
+   `9ef0126`).
+4. **Receipt hygiene (scanner hit on wave evidence).** The corrected docstring made `capture-secret-scan.py --rev` report one hit on a seat receipt:
+   `.ufo/waves/round-95/w1/CriticClaimsC2-receipts/03-allow-rows.txt:21` carries the S139 allowlist
+   row whose shape cell and digest the `bearer` pattern matches (`bearer<TAB><64 hex>`, 71 bytes,
+   sha256 `a75e16b9…87af`). It is not a credential; a digest-bound allowlist row admits exactly those
+   bytes (`corpus/instruments/capture-secret-allow.tsv`, lane commit `88bc4127`), and the scanner at
+   the tip prints `scanned=2744 hits=0 allowed=27 unused_allow=0 rc=0`.
+5. **Lane tip after the erratum work.** `fdaaaf36f1d08dcb209fd45f8c1130009076f909` (pushed;
+   `git ls-remote origin refs/heads/master` prints it). Every earlier hash in this report exists and
+   is an ancestor of it.
