@@ -55912,6 +55912,49 @@
    "notes": "Digest: 2026-11-06T23:21:22-03:00 launch tsukuroi round=90 pgid=527919 driver=hyaku-inline attempt=1; 2026-11-07T01:01:01-03:00 complete tsukuroi round=90; hyaku-inline attempt=1. Honest stop (third in a row): wave seat ReviewSource F1 showed Limine reads measured_boot/hash_mismatch_panic from the global section only (config.c 642-650); the frozen r90 battery and r87 R6 encode whole-file visibility, so 73/73 certifies Limine-false answers; the L1 filed C1 NOT VERIFIED. Conformance (status-neutral): freeze 6511437e author date 23:20:02 precedes the launch line 23:21:22 (committer 23:44:28) and report 2f107dbc author date 00:52:42 precedes cited b1ef413d 00:58:43 - same jj change-creation-time cause as r89, routed to fleet helper owner; report's C2 prior-state says 'r89 Limits lines only' but the sweep also hits r89 rows UF3/UF8 (no tpm/guid lookup content; ruling unaffected). Routed to lane r91: R90-R1 global-only visibility for R10 and r87 R6 (invert MEASURED-IN-ENTRY/PANIC-AFTER-PIN, re-pin for 12.9.5+ line-1-entry change), oracle-reuse channel (CriticClaims 1), battery mutation gaps (MutBattery 21/43, CriticForgers G1-G3, MutGate 3 survivors), limine 12.9.6 drift re-check of TV5-TV8, exact prior-state wording. SHONEN 4 boxes [~]; box 3 lacks a no-oral-context retest, so none fully non-author checkable yet (operator-owned promotion).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 74,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 74,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 74
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "chromium-ime-composition-linux"
+   ],
+   "report": ".ufo/reports/round-74/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-74-verifier-spotcheck.md@c19a520fdfa574a5c082b09130b7dbfcdd1e99eb",
+    "rechecks": "Step 1: report committed by tabi-shokunin (65cab8b9, committer 01:24:18, before complete 01:24:43); SHONEN heading 1 + 4 [~] lines for 4 boxes; 8/8 cited hashes ancestors of master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0, porcelain empty, ls-remote = 1f60b113; prompt carries template 1-5 + hyaku §6; freeze.txt 6/6 digests re-hashed match at tip; freeze 8faa903a -> D ca30e1a3 -> scored 19c301da ordered. Re-measured: capability row 0->1, notes citing imeSetComposition 0->1, knowledge 86->87, SOURCES rows 186->195, census exit 0 (27 W04). Evidence-verified (gates not executed): counter-a clean 148, R74Exec1 clean 148, battery 239/239 allOk, kill power 148/148 + 26/26 unmutated exit 0, selftest 12/12 exit 0, controls allOk (do-nothing exit 2/1, 1e-12 exit 1), postfreeze allOk (probe receipts as priors, scored receipts stay clean). Falsified frozen priorSet/limit sentences ruled instrument weakness corrected append-only (SCORECARD, Mistakes 4-5, QUALITY 139-140, note Limits) -> calibration unchanged, not harmed. SCORECARD diff append-only (0 deleted lines repo-wide). Spot-check: admit IME note (S189 l.1084/409, S190 l.868, S193 l.1772-1773 verbatim) agree; rejects keyCode-229 (S188 handlers build no key event) agree and imeCommitComposition (Input.pdl comment only, no command) agree; S193 row re-opened, full sha256 match, 4-word quote."
+   },
+   "commit": "tabi-shokunin@1f60b113b87b7fc83f9d5f837d89e53fab6a99e5",
+   "closed_at": "2026-11-07T04:28:17Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-11-06T23:08:55-03:00 launch tabi round=74 pgid=212300 driver=hyaku-inline attempt=1; 2026-11-07T01:24:43-03:00 complete tabi round=74; hyaku-inline attempt=1. Conformance defects: none status-bearing (b70e0a27 author date 23:08:07 is the inherited jj change date; committer 00:22:57). R74Critic calibration-harm contention ruled unchanged: the false frozen sentences are marked, the scored receipts are independent cold runs not relabels. Routed: (1) prior set enumerated by schema at freeze parent + near-match surviving inserted/deleted events (R74Review1 b4/b5); (2) kill power refusing crash-as-kill, battery requiring laundered receipts, F4/F5 tolerance cases (R74Review2); (3) R74Mut1 19 acceptance witnesses as battery cases; (4) counter output records its prior set (R74Review3 F1); (5) carried r73: pinch prior set (QUALITY 138), R73Mut1 survivors, r73 defect 4. Operator: SHONEN boxes 1, 2, 4 look non-author checkable; box 3 rests on lane seats only (promotion operator-owned).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
