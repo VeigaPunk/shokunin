@@ -56239,6 +56239,46 @@
    "notes": "Dispatch: 2026-11-07T02:10:38-03:00 launch kasegi round=89 pgid=2629049 driver=hyaku-inline attempt=1; 2026-11-07T03:42:08-03:00 complete kasegi round=89; hyaku-inline attempt=1. Conformance clean: report 1b173088 by kasegi-shokunin after lane tip 02b6d88f; 7 cited hashes ancestors of master; jj-lane state ahead=0, porcelain empty; prompt carries contract. Defect: knowledge-meter absolute readings depend on --lane tree (b9fcf005 reads 812 clean clone / 815 live; filed 814 unreproducible; C1 delta invariant). Routed to kasegi r90: meter env pin + 814 correction; M89-2/M89-3 counter fixes; r140-check four-column labels; composite token triage-thresholds.md:457; considerthese intake gate (4th routing). Sibling credential material in kengaku r95 and kama r47 receipts confirmed tracked (L0 kasegi|round-89, owners/operator). SHONEN all [~]; boxes look checkable by a non-author promotion review (operator-owned).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 79,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 79,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 79
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unprovable-but-better",
+    "calibration": "improved",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "false-ledger-row harness + successor pointer counter (range = exact expansion, whole next-line run, MOVED needs round-<N>, QUARANTINED needs a committed declaration); refuses the 5 r78-wave false rows (C2, re-measured)"
+   ],
+   "report": ".ufo/reports/round-79/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-79-verifier-spotcheck.md@f80f9368a8a20679438b1dffd72d0faab0ccf194",
+    "rechecks": "C2 re-measured by closure at 35b208cc: c2-false-row-harness with r79 counter SUMMARY rows=9 mismatches=0 accepted=0 EXIT=0, with r78 counter (K-a) mismatches=5 accepted=5 EXIT=1; harness/population sha256 match prereg; K-b/ablation/regression receipts re-counted (K-b 3/22 EXIT=1, ablations 2/1/1/1, r78 22/22, r77 35/35). C1 evidence-verified only (counter executes the lane gate): receipts re-counted K-a/K-b/K-c 10 match=no 10 orphans; A c1-after.txt 1 match=no (s4 INT, survivors=3) EXIT=1 -> frozen kill rule fires, NOT VERIFIED; foreground run1-3 0/0 EXIT=0 post-measurement; regressions r78 17/17 r77 16/16 r76 30/30 r36 21/21 r27 EXIT=0; gate sha256 W1=R2=tip ae5022c5, R1 56376fd2. Launch-artefact diagnosis reproduced in plain bash 5.3.20 (background-launched child: trap -- '' SIGINT, SigIgn bit set; foreground: trap set). Domain trial report_sha256 1ae2b6d6 equals filed report minus final-hash line. Spot-check 4/4 agree (S325 info sha+lines 3262/3281-3283/3942-3943; S326 v9.12 HTTP 200 sha bf1f0d99 line 567 quote 12 words; gnu.org curl 28; bminor 404). Census souji ok EXIT=0, W04 87=87, rows 247->249."
+   },
+   "commit": "souji-shokunin@35b208cc72b014fa5af68101c0561e7974f1fe76",
+   "closed_at": "2026-11-07T07:01:39Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-11-07T01:51:21-03:00 launch souji round=79 pgid=304313 driver=hyaku-inline attempt=1; 2026-11-07T03:57:09-03:00 complete souji round=79; hyaku-inline attempt=1. Step 1 ok: report 58d1e179+605b7d18 by souji-shokunin before complete; SHONEN 4/4 [~]; 14 cited hashes ancestors of master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0; prompt c208a092 carries template sections 1-5 + hyaku addendum 6. Honest stop: C1 fails its frozen kill rule at A (s4 INT orphan; counter launched with &, SIGINT ignored on entry and untrappable) as the lane itself reports; C2 verifies. Defects (status-neutral): A receipt command= omits the background launch; R1 repair committed before its cause was probed (reverted byte-exactly, M2); wave seat S79Scribe overwrote a tracked knowledge file (restored, M5). Routed r80: receipts record launch disposition/SigIgn and C1 successor counter resets or refuses inherited ignored signals, then re-measure C1 before any operability score or 'signal-safe gate children' capability row counts; launch conditions in Stated limits; probe before repair; seat write scope; C2 survivors NF6a/NF6b/NF8/NF10 + DM01/DM07/DM11; carried check-4 300 s backstop, r76 K03/K04, status-trusting tools. SHONEN boxes look checkable by a non-author from committed pointers (operator-owned promotion).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
