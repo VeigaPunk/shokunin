@@ -57590,6 +57590,46 @@
     "date": "2026-11-07",
     "entry": 1518
    }
+  },
+  {
+   "round": 98,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 98,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 98
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth:verifiability": "unchanged",
+    "coverage": "improved",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "capture-secret-scan extended: four further S140 GitLab shapes (gitlab-ci-build-token S140:293, gitlab-iam-refresh-token 480, gitlab-iam-authorization-code 497, gitlab-session-cookie 549-551) and five round-97 shapes widened to a superset of S140's punct/space/EOL right boundary; selftest 148 -> 170 (S140, S144, S148, S149; first-working round stays 87)"
+   ],
+   "report": ".ufo/reports/round-98/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-98-verifier-spotcheck.md@b9411a6b530e486180cf14c72fccc46668dcf5ee",
+    "rechecks": "C1 re-measured from committed bytes (lane gate not executed): P3 stands (measured-at e2caf4a1 is an ancestor, `grep -c tree-e2caf4a1561b` = 0, one Lane-root line); P1/P2 fail - the 'revision-stable' pinned rate flips 2589/7961 clean vs 2591/7961 with a contaminated scratch parent (two `../` citations escape the extract into the verifier's work dir; verified in the corpus and the instrument's extract layout), the exact command failed rc=2 under earlyoom on three wave attempts, and the frozen harness pin d39a1fc8 matches no committed harness (freeze 0488d796, landing d9713268); the census arithmetic is internally consistent (78+0+2589+5294=7961). C2 re-measured: selftest 137+8+3=148 -> 159+8+3=170 by static count; four shape ids absent at base and present at e2caf4a1; five boundaries widened (14 `(?![A-Za-z0-9_-])` -> 6 `(?![A-Za-z0-9])`); SCORECARD row one, names all nine ids, first-working 87; knowledge entry cites S140/S144/S148/S149 and the S140 quotes match the committed capture (sha f3fd09e4, 563 lines); K1-K7 landing receipts at two seeds evidence-verified, do-nothing receipt fails K1/K3/K5/K7. Spot-check: S140 admit (capture quotes 293/480/497/549-550 verbatim; live 403/6,078 bytes), S144 admit (live 200/67,805 bytes sha 765becf3; capture 356/362), S144-IAM reject (grep gliam=0 on capture and live), S148 row (live 200/1,028 bytes sha b50856e4, line 6 quote) and S149 row (live 200/1,190+1,322 bytes, digests match) agree on the decisions, with the Gate-record defect routed. Sources census kasegi ok rc 0; registry 147 -> 149; wave-evidence re-scan of the 17 redacted files hits=0."
+   },
+   "commit": "kasegi-shokunin@d00c9ecc83b08bb488548e72c1a2792a03743041",
+   "closed_at": "2026-11-07T22:03:07Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-11-07T17:17:59-03:00 launch kasegi round=98 pgid=245383 driver=hyaku-inline attempt=1; 2026-11-07T18:52:33-03:00 complete kasegi round=98; hyaku-inline attempt=1. Report da5eb7ec by kasegi-shokunin, lands after lane tip d00c9ecc (committer 18:51:58 vs 18:51:19); lane pushed, ahead=0; prompt prefix byte-identical to the rendered template (8,379 bytes/140 lines) + hyaku section 6; SHONEN heading with four [~] lines; wave 13/13 settled, 0 dead, attack 8/13. C1 NOT VERIFIED on P1/P2 (P3 stands) - the round is a rejected honest stop; C2 verified on K1-K7. Conformance defects (status-neutral): SCORECARD round-98 'Sources: registry 147 -> 147 (no new row)' and lesson Gate 'Registry 147 -> 147 rows' contradict the actual 147 -> 149; SCORECARD C2 row and lesson Learning still say S140's class against the erratum's superset; the lesson Gate carries no S148/S149 record (URL/access date/<=25-word quote) though the report says it does; the lesson Gate's S140 used-by old->new omits two added paths; the report's LOG bullet pointers (1/2/3/4-5/5) do not resolve to the LOG's 9 bullets; the clean re-scan hits=0 has no committed receipt (my re-scan of the 17 files prints hits=0); the census body is host-dependent (watchdog.log line count) and the dispatch text quotes the base census numbers. Routed to round 99: correct the census 'revision-stable' label/confine ../ per R157; re-pin the harness (d39a1fc8 matches no committed harness); strengthen the check (body/host-line/measured-at/cache attacks pass) and add controls for the 7 surviving mutants; add the S148/S149 Gate records; sweep the stale 147->147 and 'S140's class' mentions; fix the LOG bullet pointers; commit the clean re-scan receipt; state the census body's host-dependence; fix the dispatch numbers. No axis harmed; no promotions; no mints.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
