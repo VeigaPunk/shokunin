@@ -55385,6 +55385,47 @@
    "notes": "Driver digest: 2026-11-06T21:17:15-03:00 launch kagi round=51 pgid=4057123 driver=hyaku-inline attempt=1; 2026-11-06T22:25:22-03:00 complete kagi round=51; hyaku-inline attempt=1. Defects routed (status-neutral): D1 entry vault-openbao-token-lease-lifecycle.md:292 and lessons/round-51.md:22 over-read the rewrap API sample as contradicting 2.7.2 (a sys/wrapping/wrap-origin token rewraps to sys/wrapping/wrap) - named correction + sweep next round; D2 candidate 47d09594 cited final/ receipts landed in 7eab7aa4 (R11-08 unresolved=7 at candidate, 3 at tip); D3 carry routed S-1 (secrets on argv, HIGH)/S-2/S-3, M51-3, adopt c1h counter, R51CriticC2 ceilings, R11-08/R36-01 timeouts. Operator note: SHONEN boxes 2 and 3 were exercised by the non-author (trial run from committed bytes, 5/5 HOLDS); promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 76,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 76,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 76
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "pre-report gate ignore-source attribution (r76)",
+    "receipt-bound mutant-kill tally (r76)"
+   ],
+   "report": ".ufo/reports/round-76/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-76-verifier-spotcheck.md@d4f515637884695b3aa016da169d859d3ece6ac4",
+    "rechecks": "Evidence-verified (no lane gate/counter/tally/probe executed): C1 K-a at ee59aa4d mismatches=4 (f7 f9 f10 f14 clean=PASS) EXIT=1 with bound gate ef3b04e4 = base blob; K-b mismatches=4 EXIT=1, K-c mismatches=1 EXIT=1; c1-after 30/30 match SUMMARY rows=30 mismatches=0 errors=0 EXIT=0 bound gate 18587bd2 = e827d2bf blob; c1-at-repair identical with 90bdd8c7 = 9cbfd296/tip blob; r36 21/21, r27 4/4 (instrument digests = tip blobs); domain trial check-clean=PASS EXIT=0 at 27e5e289 with amendment 18587bd2 -> 90bdd8c7; repair-probes 8/8. C2 r75 do-nothing mismatches=5 EXIT=1, blanket mismatches=2 EXIT=1, c2-after mismatches=0 EXIT=0 with h-honest killed=6 pristine=PASS, c2-at-repair identical, tally-probes 8/8. r75 routed defect 1 closed: coreworktree probe FORGERY EXIT=1 over r75 W 620ed97e, REFUSED EXIT=0 over 18587bd2. Re-measured by closure: prereg digests of counters/populations/3 forged cases equal tip blobs; P->F->I->W chronology by name-only; frozen inputs unchanged 2ed6b179..master; all 5 attributed .gitignore sources tracked at 27e5e289 and ls-tree count 19573 = receipt tracked=; gate diff spot-read; S320 re-fetched (HTTP 200, 4159 B, sha256 940177c7 = capture) with quote at normalized offset 2355, 18 words; rejected anchors 27 and 29 words; b-neg fixture attributes both paths to tracked root rule (agree with lane disagreement); SOURCES rows 242 -> 243; census souji ok 86 W04 EXIT=0 = before/after receipts; SCORECARD diff: no score changed, 2 capability rows + measurements appended."
+   },
+   "commit": "souji-shokunin@1524bc8160784d030fb7c7122ae266ca77463981",
+   "closed_at": "2026-11-07T01:48:27Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-06T22:02:33-03:00 launch souji round=76 pgid=4163885 driver=hyaku-inline attempt=1; 2026-11-06T22:44:12-03:00 complete souji round=76; hyaku-inline attempt=1. Report c2b14741 by souji-shokunin at 22:43:46 (after lane tip 22:42:51, before complete). Conformance: all pass (12 cited commits ancestors of master, jj-lane state ahead=0 tracked=0 untracked=0, porcelain empty, prompt template-faithful). Routed to r77: (1) domain-trial receipt command= is a scratch trial.sh with no bound digest; committed probes/domain-trial.sh (a884ece3) asserted not bound; (2) domain trial graded the report before its final-hash fill-in (disclosed) - run over filed bytes or record their digest; (3) frozen-instrument kill power: S76MutGate M09 one-path threshold, S76MutTally K03/K04 exit-code-only binding counter, filename-separable C2 population (lane r77 a/b); (4) S76Sentinel MEDIUM-2 gate timeout/FIFO hang and r75 routed defect 2 core.excludesFile arm still open (lane r77 a). Sibling note (report only): untracked .jj/.gitignore in sibling lanes (S76Sentinel LOW-2). SHONEN: 4 boxes [~] with non-author-checkable pointers; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
