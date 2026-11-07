@@ -57674,6 +57674,49 @@
    "notes": "Dispatch digest: 2026-11-07T17:53:52-03:00 launch kagi round=62 pgid=3480442 driver=hyaku-inline attempt=1; 2026-11-07T19:38:22-03:00 complete kagi round=62; hyaku-inline attempt=1. Status ok, admitted: C1 calibration accepted 5 -> 0 (population 5) and C2 operability killed 0 -> 3 (population 3), both verified; no axis harmed (SCORECARD diff shows all six 9 -> 9, controls 14/14, real seal trial unchanged). Conformance defects, status-neutral, routed to round 63: (1) report line counts do not re-derive — checker '1454 -> 1822' and C2 counter '389 -> 520' against committed bytes 1454 -> 1710 and 389 -> 478 (the seat's own grammar.md records 1710); (2) four round-62 gate verdicts (QUOTE_LOCATE located=12, RECHECK_REPLAY clocks=10, SELF_COUNTS claims=63, ADJACENCY_SCOPE breadth_drift=5) have no committed receipt under .ufo/waves/round-62/final/ while release-clock/doc-audit/claims-declared/cells do — routed D5's three round-61 lines are resolved, the class recurs; (3) minor: the report's 75-case parenthetical names 9 of the 23 added cases (grammar.md lists the full set). Carried from the lane's own report and re-flagged: reviewer D-3..D-6, MutC1 GM5/CM2a/CM2b, MutC2 S1/S2, critic D6-D12, the counter scratch-leak class. Wave note: R62Sentinel settled after a progress line and wrote no report (disclosed; the L1 ran the credential-shape scan itself, 0 hits). SHONEN: all four boxes are [~] with resolvable pointers and look fully checkable by a non-author; promotion is operator-owned and no [x] was written.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 80,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 80,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 80
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "unchanged",
+    "coverage": "improved",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "chromium-showpicker-linux (generation r80; capability row first-working round 79, verified)"
+   ],
+   "report": ".ufo/reports/round-80/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-80-verifier-spotcheck.md@c27e8406e6a2dc3cafcff030c9224cf8a14e3464",
+    "rechecks": "Step 1: report 5fc43daf by tabi-shokunin, committer 19:48:31 vs lane tip 70784d27 19:48:28 (report lands last); SHONEN heading 1, 4 [~] lines for 4 boxes, no [x]; 11/11 cited commits resolve and are ancestors of master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0, porcelain empty, ls-remote = 70784d27; prompt 943 lines, sections 1-5 byte-identical to templates/round-prompt.md rendering (only <tabi-repo> -> tabi-shokunin), addendum 6, five child-lane items; one batched taskCall of 12 seats (5 executor, 2 reviewer, 1 critic, 1 mutation-tester, 1 scout, 1 scribe, 1 connector; attack 4/12 = 33.3%), no model key. Re-measured myself: freeze.txt 11/11 sha256 match at D10 93172ba9 and at HEAD; receipt nonce tabi-r80-l1-93172ba92d63, driver cb93935c = freeze, 7 legs, 0 failures; counter-a clean checkCount 57 findings 0; battery-a cases 102 failed 0 coverage 57/57; killpower-a 80 mutants 80 killed 0 survived; selftest 9/9; cold1-cold4 clean 57; c2-before 17 claims/17 mismatches, c2-after 19/0, controls reverse->sc-79-battery, remove->log-79-cases, moveTruth->6 deltas; capability-status rows 13 claimed 12 provisional 1 mismatches 0; knowledge 92->93; SOURCES 218->221 (diff adds exactly 3 rows, none touched); census at HEAD exit 0 W04 only. Spot-check: S219/S220/S221 re-opened live (sha256 b0202de1/405b52c7/e944a3b1 match the rows and committed snapshots; quotes verbatim), 2 rejects re-opened against R80Scout's discriminating-orders.json (cross-origin type=text -> SecurityError; disabled file input -> InvalidStateError via the exemption), click-while-open not measured. Evidence-verified, not executed: the lane's counter/battery/kill-power/selftest and C2 counter. Defects routed (status-neutral): committed census/end.txt is exit 1 (E11 S219-S221) while the report claims exit 0; five records cite the superseded D9 nonce/D (SCORECARD:3950,3957, LOG:3853-3854, SKILL:3250, note:9,20); dead lesson-proof/c1-nowork.json; dead scored/cold-runs.txt; Gate quote counts S220 14 (stated 17) and S221 7 (stated 9); claims.json C2 leg (c) still says 81/81 and 82/82; SCORECARD capability row says DOM.setInputFiles; report says five self claims where the control has six; D10 93172ba9 absent from the landed-changes table; battery-a committed at D9 and not receipt-bound."
+   },
+   "commit": "tabi-shokunin@70784d27e3a8e54ce060dfb8fd3f3a3c793deea0",
+   "closed_at": "2026-11-07T22:57:48Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable; copied): 2026-11-07T19:03:13-03:00 launch tabi round=80 pgid=2294340 driver=hyaku-inline attempt=1; 2026-11-07T19:49:34-03:00 complete tabi round=80; hyaku-inline attempt=1. Status ok; verdict admitted: C1 (coverage, capability chromium-showpicker-linux generation r80) and C2 (calibration, r79 record drift + self-drift) verified, no axis harmed; calibration unchanged because the C2 gain (17 -> 0) is offset by the round's own fresh record drift. Conformance defects (status-neutral, routed to r81): the committed end census is red (exit 1, E11 S219-S221 missing used-by) while the report claims exit 0 (the HEAD tree re-runs green); five lane records cite the superseded D9 nonce/commit (SCORECARD:3950,3957, LOG:3853-3854, SKILL:3250, knowledge note:9,20) while the receipt and report carry D10 93172ba9; dead pointers lesson-proof/c1-nowork.json and scored/cold-runs.txt (never committed); Gate quote counts S220 14 (stated 17), S221 7 (stated 9) and the S220 locator off by one; claims.json C2 leg (c) still states battery 81/81 and kill power 82/82; SCORECARD capability row says DOM.setInputFiles; report's 'five self claims' undercounts the control's six deltas; D10 93172ba9 absent from the landed-changes table; battery-a.json committed at D9 and not bound to the final receipt. SHONEN: all four boxes [~]; the round's additions look checkable by a non-author (SKILL registry row, note recheck line, capability row, wave evidence), but promotion is operator-owned and no [x] was written. No promotions, no mints, no assimilation (merge/ and considerthese/ absent).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
