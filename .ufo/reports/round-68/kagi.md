@@ -237,9 +237,10 @@ Census command (contract v1):
 
 Stale-lane: respawn-per-round driver; no other mission of this lane is open.
 
-Lane HEAD at report time: `89acdee55cac4f7f5da1caa887f8c050ddc0f8e0`
+Lane HEAD at report time: `cd9d66f12e6b10f420dddb9841ebb35e495088bf`
 (`git ls-remote origin refs/heads/master` prints it; the round-68 landing commit is
 `ef90e98936d4fb68851d1a7218aa2173041d7555`, followed by a late-seat-evidence
 commit `932a7359` and a lesson-correction commit `89acdee5` that re-cuts the
-S167 Gate reason (M68-5 consistency) and records M68-9).
+S167 Gate reason (M68-5 consistency) and records M68-9), then a second
+late-evidence commit `cd9d66f1` carrying the seat's `cells-base` receipts).
 
