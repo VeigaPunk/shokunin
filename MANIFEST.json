@@ -58173,6 +58173,49 @@
    "notes": "Dispatch digest: 2026-11-07T22:59:05-03:00 launch tameshi round=91 pgid=3454474 driver=hyaku-inline attempt=1; 2026-11-08T02:13:26-03:00 complete tameshi round=91; hyaku-inline attempt=1. Wave r91-w1: 14 seats (4 executor, 2 scout, 1 scribe, 2 reviewer, 2 critic, 1 mutation-tester, 1 connector, 1 sentinel), 14/14 settled, 0 dead; strict §6 attack set (reviewer/critic/mutation-tester) 5/14=36%, above the 25% floor (report's 7/14 also counts connector+sentinel). Both claims withdrawn to honest stop by the round's own wave: R91-C1 killed by rule (a) via a committed state that PASSes with the presented verdicts inverted plus receipts that certify post-freeze bytes; R91-C2 killed by rule (a) via three indistinguishable clone states and a tautological toolpin, independently confirmed at measure-c2-v91.sh:59-62. Defects (status-neutral): (1) stale counts at the final commit — LOG.md:4988 and the lesson Learning-trends line say 'QUALITY 143-148 / M1-M6' while 149 and M7 landed at 63172b98 and the report says 143-149; corrections must be appended next round; (2) .ufo/waves/round-91/claims.json 'freeze' = ee484d3b (claims commit) while plan, report and the freeze-integrity finding name 50e59d59 as the rev carrying the instrument bytes — pin one full hash next round; (3) carried: the pre-freeze battery was produced by bytes post-dating the freeze (lane M2 / QUALITY 144), stays on the queue until a successor pins its own sha256 at run time. Routed: fleet-root plans/round-91.md is tsukuroi r91 limine work (another lane's misroot; report routed it, left in place). Operator note: SHONEN boxes 1-2 look independently checkable from committed artifacts (SKILL.md decision table :86, defect taxonomy :274, numbered checklist :159; LOG round-91 entry); promotion is operator-owned and no [x] was written.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 92,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 92,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 92
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "coverage": "unchanged",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "battery-oracle-isolation"
+   ],
+   "report": ".ufo/reports/round-92/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-92-verifier-spotcheck.md@e406aa96b57e0aab2c7866f217b2e888bec535bb",
+    "rechecks": "C1 re-measured from committed bytes: launcher code (sandbox_argv/copy_gate/python3 -I), 89-family FAMILIES==FAMILY_ROSTER, gate 89/89 met x3 canonical+clone, five controls 0/89 unmet x3 errors=0 both layouts, before leg 82/82 met x3 (K4 from fixed bytes), instruments 35c1088b/aef33925 match the A7 ledger, 28-line freeze manifest sha256sum -c exit 0, do-nothing 1/89 with 352 error rows. C2 re-measured: era split (12,9,5) with no first-line exception from 12.9.5, 89 families, 37-case gate selftest (35 case()+2) and 18/18 battery selftest from committed logs, N01 87/89 N02 85/89 N03 88/89 N04 89/89 unmet/met x3 both layouts errors=0, --usage-check 11/11 met in canonical and clone, refused versions rc 64 with 0 stdout bytes, pinned config.c 12.9.5==12.9.6 a940acae, SOURCES 376->381 (5 new S377-S381), sources-census validate exit 0, no credential material in the pushed tree (ops_ scan clean, deviations are devops_link false positives). Prefile ledger: pass claims=2 rows=14 attack_seats=7 findings=0 (exit 0), 8/8 vs 11 usage reconciled by A7 S5. No lane gate executed by the integrator; every gate claim is evidence-verified."
+   },
+   "commit": "tsukuroi-shokunin@7793773a3837a46762cd6415da055ba4d20a1e29",
+   "closed_at": "2026-11-08T05:51:49Z",
+   "campaign": "hyaku",
+   "promotions": [],
+   "minted": [],
+   "notes": "Dispatch 2026-11-08T01:28:13-03:00 launch tsukuroi round=92 pgid=3358208 driver=hyaku-inline attempt=1; completion 2026-11-08T02:43:20-03:00 complete tsukuroi round=92; hyaku-inline attempt=1 (digest copied from the mutable .ufo/watchdog.log). Status ok: report committed by lane identity (tsukuroi-shokunin 840a650c), ## SHONEN heading with four [~] lines and no self-attested [x], all seven cited lane commits exist and are ancestors of master, tree clean, ahead=0, remote master=7793773a at closure, report 26 s after the lane tip (lands last). Claims: C1 (operability 9, battery oracle channel) and C2 (depth 8 tied lowest, version-selected visibility rule), both measured and both verified on their filed narrowings (A5/A7). Verdicts: operability improved, depth improved, other axes unchanged; no axis harmed (era-A no-regression 82/82; SCORECARD +53/-0). Trends: expansion improved (1 admitted entry on uncovered ground citing mined S377-S381, capability battery-oracle-isolation), quality improved (82->89 families, F1-F5 fixes, QUALITY 132-135, r91 routed 3-5 closed), discernment improved (7 attack artifacts -> A3-A7 or named limits; two dead controls and a wildcard control self-caught pre-score). CONFORMANCE DEFECTS (status-neutral, routed to r93): (1) report Landed-changes table stops at ec728e4a and does not name b5cb636a, 98185b9b, 1d1c7439 or 7793773a; (2) the cited check-registry-coverage PASS 145/145 'at ec728e4a' has no receipt at that revision (last committed PASS e9fce481, pre-F3/F4 rows; repair-probe revision 2bae8c5 does not resolve) - re-run and commit; (3) SOURCES S377 anchor says 'Python 3.14 docs' while the pinned and live page are 3.15.2 (quote itself correct); (4) claims.json C2 target literal still reads --usage-check 8/8 (reconciled by A7 S5, 11 cases shipped); (5) hygiene: after/c1-controls/usage-{canonical,clone}.json are 8-case pre-A3 receipts and should stay labelled pre-A3; the report's 'four wave seats falsified' undercounts the ledger's seven attack artifacts. Credential incident: the r92 L0 lines record the ExecIsolationProbe env dump, the unpushed d1f6934f squash (no force push, no remote rewrite) and the re-landed 689623fd; the integrator scan of the pushed tree finds no token material. DURABILITY DEBT: the two tsukuroi round-92 lines appended to .ufo/l0-questions.md are still uncommitted (outside this closure pass's two-artifact write scope); commit them in the next integration pass. No promotions, no mints; SHONEN boxes remain [~] with resolvable pointers and the non-author promotion review is still owed (operator-owned)."
   }
  ]
 }
