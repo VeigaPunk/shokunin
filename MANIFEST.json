@@ -60384,6 +60384,51 @@
    "notes": "Driver: attempt1 launch 12:28:52 -> lane-dead-no-report 13:22:38; attempt2 13:22:42 -> dead 13:23:19; attempt3 13:23:24 -> complete 13:38:14 (-03:00, hyaku-inline). Both claims self-graded and closure-confirmed NOT VERIFIED as written: honest stop. Conformance defects (status-neutral): filed report rewritten in place twice (49c70103, 2beeaeb2; latter after complete) instead of appended erratum; lane commit 878bc912 landed after first filing; append-only LOG.md r90 entry and QUALITY row 163 rewritten in place by the C2 repair (r90 spot-check 'mark or rewrite' wording licensed it, protocol outranks); claims sentence + pin map amended post-data (disclosed in frozenAmendments); gate-run selftest.json revision null. Routed to r92: report erratum discipline; append-only corrections for LOG r90/QUALITY 163; C1 bind hasBeenActive, same-origin colour proxy leg, law-2 proxy-arm leg, identity-level prior-set; capability row same-site-not-OOPIF + first-target binding narrowing; C2 meter strength (refuse retained false text, real --revision, no self-attested statement 7, selftest kill power >4/13); r89 lesson :117 '(the committer time)'. SHONEN boxes all [~]; not yet fully checkable by a non-author.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 98,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 98,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 98
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "control-assertion audit",
+    "guard refusal battery",
+    "registry cell audit"
+   ],
+   "report": ".ufo/reports/round-98/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-98-verifier-spotcheck.md@ff93fa16a1f65e66385b7c7f564f03b218d91ea2",
+    "rechecks": "C1 re-measured: base 034240a5 git grep CONTROL_ASSERT -- .ufo/evidence rc1, controls97.py:156 add(...,0,...); independent AST count at R 3b7ae127: controls98 15 sites 0 constant codes, controls97 15 sites 1 constant at 156; audit/driver sha 82c2e54b/f1c1db0e match claims; records outputs (15/15/0/0 rc0; 14/1/1 rc1; selftest 18/18; CONTROLS98 18/18) evidence-verified, records-rev=R. C2 re-measured: base tokens rc1 in .ufo/evidence (rc0 unscoped, 7 prose files); frozen tool sha 634997d0 at R, battery de94cbcc; records positive 6 refused rc0, red refused=5 wrong=1 rc1, selftest 9/9 evidence-verified. Prefile ledger pass claims=2 rows=19 attack_seats=7 exit0 (6 falsifies-wording rows, all narrowed). Census exit0. Spot-check: S012 admit agree (live 200 sha fb6f384d identical, 16-word quote found), S009 reject agree (default UA 403, declared UA 200, 14-word quote found, 'identical compiled output' absent)."
+   },
+   "commit": "tameshi-shokunin@28e7bda908bcef05261961f744dfe11edbf099a9",
+   "closed_at": "2026-11-08T22:52:01Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: launch 12:28:49-03 attempt=1; lane-dead-no-report at 13:22:29, 13:23:25, 13:24:07 (attempts 1-3, retries); complete 13:44:34 (logged attempt=1). Prompt's lane HEAD before=after=28e7bda9 is a driver snapshot; real base 034240a5, 9 lane commits. Defects (status-neutral, routed r99): D1 fa2d2169 rewrote filed round-94 R94-C1 verdict cell in place adding '(A3-A10)' (round 94 had A1-A8) - append a named correction; D2 report :31-32 says C1 selftest 18/18 at freeze but pre-freeze/c1-audit-selftest.out prints 12/12 - erratum; D3 before receipts hold bare rc=1 with no command/scope and the .ufo/evidence scope is missing from claims.json C2 before; D4 dead seat R98E4 (registry re-check), registry pairs L1-run only; D5 carried limits: battery 5/10 mutants survive (R98M1), audit blind to renamed recorders/want=code tautology. SHONEN 4x[~]; boxes 1-2 look non-author checkable (operator-owned promotion).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
