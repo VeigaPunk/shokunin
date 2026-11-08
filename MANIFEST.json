@@ -60341,6 +60341,49 @@
    "notes": "Dispatch digest (.ufo/watchdog.log, copied): 2026-11-08T11:43:19-03:00 launch kama round=99 pgid=4143118 driver=hyaku-inline attempt=1; 2026-11-08T13:39:49-03:00 complete kama round=99; hyaku-inline attempt=1. Report committed by lane identity (0e0e27f4, 3f2c51ae); SHONEN heading with 4 [~] lines (none fully checkable by a non-author); cited commits 439fdb3d/f6e7ccc2/00394f3b/71838fdd/9ee0c3c4/3ed7a8df/a60e57cd all ancestors of master; lane clean and pushed (ahead=0) before closure. No axis harmed; scores unchanged. Defects (status-neutral), routed to round 100: (1) SCORECARD.md:6431 pointer in both round-99 correction blocks stale at tip (sentence now at 6446 after 71838fdd inserted Planned (round 100)); (2) round-99 wave mix '58% attack counting the connector' is wrong: 6/12 = 50% (claims.json says 50%); (3) S628 rejected as 404 but the seat's assertion exists at tools/server/tests/unit/test_router.py line 23 @ b12177 - re-file; (4) claims.json measured fields still 'pending' and freeze-time C3 before; (5) carried red pre-report arms (newest-closure, round75/78 instruments). Spot-check landed 6776c667 (ls-remote verified).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 91,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 91,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 91
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "calibration": "unprovable-but-better",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "chromium-showpicker-proxy-linux (entered, not held) — window.postMessage proxy reaching file/date/colour showPicker in a same-origin and a cross-origin (same-site 127.0.0.1 other-port, not OOPIF) iframe; 15-leg receipt, 0 failures, reproduced twice; claim NOT VERIFIED as written (hasBeenActive unbound, same-origin colour unproxied, law-2 proxy arm unlegged)"
+   ],
+   "report": ".ufo/reports/round-91/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-91-verifier-spotcheck.md@bdf403ff40d9a9a59a2730636f9626e1195b06e2",
+    "rechecks": "C1 evidence-verified + re-measured: receipt 15 legs failures [], 9/9 claims.json pins sha256-equal, selftest.json counter 30/battery 44/killpower 32/drift-selftest 8 (revision null), controls match; counterexample re-derived (counter activation-law reads only isActive; R91Critic-c1-hasbeen.json clean 30). C2 re-measured by plain grep: 6/6 r90 §8 record items repaired at 878bc912, drift-before 8 -> drift-a 0 at 21e14593; meter falsified (statement 1 presence-only; R91Critic-c2-tautology.json clean 8 with four injected violations; selftest kills 4/13); items 1-2 repaired by in-place rewrites of LOG.md r90 entry and QUALITY 163. SCORECARD diff additions only. PREFILE-FALSIFICATION pass claims=2 rows=18 attack_seats=6 findings=0 exit 0. Census exit 0, rows 224->226. Spot-check: S225+S226 admits agree (quotes verbatim in live WHATWG bytes, 19/22 words), parent-click-activates-xo reject agree (receipt leg NotAllowedError, child isActive false)."
+   },
+   "commit": "tabi-shokunin@878bc9125b858653615516c804769ef292bb4b4f",
+   "closed_at": "2026-11-08T22:51:43Z",
+   "campaign": "hyaku",
+   "notes": "Driver: attempt1 launch 12:28:52 -> lane-dead-no-report 13:22:38; attempt2 13:22:42 -> dead 13:23:19; attempt3 13:23:24 -> complete 13:38:14 (-03:00, hyaku-inline). Both claims self-graded and closure-confirmed NOT VERIFIED as written: honest stop. Conformance defects (status-neutral): filed report rewritten in place twice (49c70103, 2beeaeb2; latter after complete) instead of appended erratum; lane commit 878bc912 landed after first filing; append-only LOG.md r90 entry and QUALITY row 163 rewritten in place by the C2 repair (r90 spot-check 'mark or rewrite' wording licensed it, protocol outranks); claims sentence + pin map amended post-data (disclosed in frozenAmendments); gate-run selftest.json revision null. Routed to r92: report erratum discipline; append-only corrections for LOG r90/QUALITY 163; C1 bind hasBeenActive, same-origin colour proxy leg, law-2 proxy-arm leg, identity-level prior-set; capability row same-site-not-OOPIF + first-target binding narrowing; C2 meter strength (refuse retained false text, real --revision, no self-attested statement 7, selftest kill power >4/13); r89 lesson :117 '(the committer time)'. SHONEN boxes all [~]; not yet fully checkable by a non-author.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
