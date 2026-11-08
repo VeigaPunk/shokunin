@@ -2,7 +2,7 @@
 
 **Lane:** tabi (browser & web-interaction craft — 旅)
 **Round:** 86, attempt 1. **Lane repo:** `/home/vgpnk/Projects/shokunin/tabi-shokunin`
-**Base:** `57265864` (lane clean). **Freeze commit:** `9919aa52`; **lane tip:** `d80b2489`
+**Base:** `57265864` (lane clean). **Freeze commit:** `9919aa52`; **lane tip:** `346b3260`
 (pushed; `ls-remote origin refs/heads/master` prints it). **D:** `4bd89a80f439`
 (D1 `0e7bb7e08cac` was re-frozen before any gate ran — `plans/round-86.md` §Re-freeze history).
 **Nonce:** `tabi-r86-l1-4bd89a80f439`. **Axes at start:** all six at 9.
@@ -61,7 +61,7 @@ Work items, each with its evidence pointer:
 - **Do-nothing controls**: `controls/c1/nowork-r85-under-r86.json` — the r85 scored receipt under
   the r86 counter: exit 1, 89 checks, **40 findings** including `schema` and `plan-frozen`; the first
   capture recorded 39 and predated the scored receipt, so R86Sentinel's F1 (no-reproduction) was
-  acted on: re-captured at `d80b2489` with the tree state named in `controls/c1/README-controls.md`.
+  acted on: re-captured with the tree state named in `controls/c1/README-controls.md`.
   `controls/c1/noreceipt.txt` — exit 2 `receipt-unreadable`.
 - **Adversarial seats**: R86Review1 (two LOW findings: the accept law's weakest conjunct is the
   receipt-level `desc.accept`; `showPicker`↔`triggerResult` unbound), R86Review2 (the 12 cases are
@@ -102,7 +102,7 @@ Work items, each with its evidence pointer:
 |---|---|---|
 | `scripts/chrome-cdp-showpicker-round86.mjs` (30 legs), `scripts/check-showpicker-r86.mjs` (95 checks; `accept-grammar-law`, `same-origin-color-law`), `scripts/negatives-showpicker-r86.mjs` (201 cases), `scripts/kill-power-r86.mjs` (66 mutants), `scripts/selftest-r86-gates.mjs` (10 gates), `scripts/check-record-drift-r86.mjs`, `scripts/witness-families-r86.mjs` (12 families) | LOG round 86 | `9919aa52` |
 | `.ufo/waves/round-86/{freeze.txt,claims.json,controls/,census/,sources/,scored/,w1-spec.json,w1-dispatch.json,w1.ready}` — frozen claims, pins, two prior probes, do-nothing controls, scored outputs, wave dispatch | LOG round 86 | `9919aa52` |
-| `.ufo/waves/round-86/{w1/ (11 seat reports), w1-results.json, claim-falsification.tsv, controls/c1/README-controls.md}` + the re-captured control, record corrections (accept headline, source accounting, D1→D2) | LOG round 86 | `d80b2489` |
+| `.ufo/waves/round-86/{w1/ (11 seat reports), w1-results.json, claim-falsification.tsv, controls/c1/README-controls.md}` + the re-captured control, record corrections (accept headline, source accounting, D1→D2) | LOG round 86 | `d80b2489`, count fix `346b3260` |
 | `corpus/evidence/round86/chromium-showpicker/receipt.json` — the scored receipt at nonce `tabi-r86-l1-4bd89a80f439` (30 legs, 0 failures) | LOG round 86 | `9919aa52` |
 | `corpus/knowledge/chromium-showpicker-runtime-round-86.md` (knowledge 98 → 99), `corpus/lessons/round-86.md`, `plans/round-86.md` (incl. §Narrowings and §Re-freeze history), `SCORECARD.md` round-86 section + two capability rows, `SKILL.md` §Round 86 gate registry, `LOG.md` round-86 entry | LOG round 86 | `9919aa52` |
 
@@ -196,7 +196,7 @@ node scripts/witness-families-r86.mjs --lane <ABS lane> --work <ABS scratch> --j
 - **Misroot sweep:** `git -C /home/vgpnk/Projects/shokunin status --porcelain` shows no
   lane-written stray at the fleet root. The two untracked fleet paths present are not this lane's
   (`.scratch/closure-tabi-r83-entry.json` is orchestrator state, `.ufo/reports/round-89/chousa.md`
-  is another lane's). `git -C tabi-shokunin status --porcelain` is empty at `d80b2489`; every round
+  is another lane's). `git -C tabi-shokunin status --porcelain` is empty at `346b3260`; every round
   file sits under the lane tree or the sanctioned report path.
 - **Scratch:** the L1 scratch tree `/fast/scratch/hyaku/tabi-r86/` is purged at close (probe, scored,
   battery, kill-power, selftest and per-seat dirs); receipts are copied into the wave dir, never left
