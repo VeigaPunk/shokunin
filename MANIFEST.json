@@ -58624,6 +58624,47 @@
    "notes": "dispatch 2026-11-08T03:01:34-03:00 launch souji round=84 pgid=1918461 driver=hyaku-inline attempt=1; complete 2026-11-08T04:26:13-03:00. Step-1 PASS (report lane-committed 04a40609, SHONEN 4x[~], 6/6 commits ancestors of master, ahead=0 clean, F = prereg alone, prompt carries template contract, 12 seats 42% attack). Prefile ledger: gate SETUP (claims-missing claims.json) — ledger substance verified by hand: 13 rows over C1/C2 + every attack seat, all falsifies-wording rows name plans/round-84.md A1-A10. Defects (status-neutral): D1 claims.json absent; D2 battery kill rule cannot distinguish mismatch from harness error (did not bite: every kill errors=0); D3 wave substrate scored mid-write RefC2 (A5, reconciled); D4 S84Critic file skeleton, findings in agent transcript. SHONEN boxes look fully checkable by a non-author — promotion is operator-owned (noted for operator). Routed to r85: D1 claims.json surface; D2 kill-rule error distinction; C1 NF-L3 + census-in-census census/round-<N>-token row (A10: both populations leave census-in-census + last-component unbound, wrong-file mutant green) + last-component row + token-on-line/unknown-class refusals; C2 second-map-pass row + comm-newline row (r83 D5) + pid-reuse + parent-before-child + termign-fork/p5-late-term + strace settle; wave discipline (no editing reference under seats).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 64,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 64,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 64
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-64/kagi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kagi-shokunin/corpus/lessons/round-64-verifier-spotcheck.md@b17887f03179b61d49e3e0f10ce1a9add21829e7",
+    "rechecks": "gate-evidence-verified (C1/C2 receipts, self-tests re-run, seal sha b0f51e2a matches, rows 143->153, census EXIT=0, 5 gate quotes re-resolved, PREFILE pass 2 claims/14 rows/7 attack seats, 4 falsifies-wording rows narrowed)"
+   },
+   "commit": "kagi-shokunin@b17887f03179b61d49e3e0f10ce1a9add21829e7",
+   "closed_at": "2026-11-08T07:57:17Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete: launch 2026-11-07T23:37:07-03:00 attempt=1; lane-dead-no-report 2026-11-08T00:08:45-03:00 (retry); launch 2026-11-08T00:08:51-03:00 attempt=2; complete 2026-11-08T04:53:39-03:00. Attempt-1 dead launch is a status-neutral conformance defect; the attempt-2 report is real (21347 B, SHONEN 4x[~], all sections present, lane-identity commits, lane tip 525c69de==remote master, ahead=0). C1 calibration and C2 operability verify; falsification ledger passed with 4 falsifies-wording rows each narrowed (C1-1 builder-blindness breach, C2-1 guard substitution, C2-2/C2-3 bound location + self-reported killed, MutC2 host-timing), residual risk routed to round 65 (C1-3..C1-10, C2-3..C2-6). Gate spot-check agreed 5/5 (S147/S146 admit, S145/S152/S149 reject). Routed D-63-3 (round-63 spot-check named 6 receipts, tree holds 5) to round 65; ADJACENCY_SCOPE breadth debt unchanged/named. New lane commit b17887f0 (spot-check) pushed to master=remote b17887f0.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
