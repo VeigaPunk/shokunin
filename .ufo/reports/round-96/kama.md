@@ -2,8 +2,8 @@
 
 Lane `kama` (operability + calibration; local model serving and endpoint health). L1 `KamaR96`.
 Base `5d43528badc31ad6c0ca1848c00561f531924e4d` (round 95 admitted). Freeze `58001b71`; amendments
-`e2fed9f5`, `fb5cd3cd`/`4a0f6a35`, `b3289c18`, `20317286`, `bb4a997a`, `f175a902`; wave evidence and
-measurements `f6122036`.
+`e2fed9f5`, `fb5cd3cd`/`4a0f6a35`, `b3289c18`, `20317286`, `bb4a997a`, `f175a902` (amendment 4's record file
+landed with the ledger at `49ef853f`); wave evidence and measurements `f6122036`.
 
 ## Work performed
 
@@ -55,6 +55,7 @@ measurements `f6122036`.
 | Amendment 6: W13-budget-kill (`cells=13`) | wave-findings entry | `f175a902` |
 | Wave-1 findings (12 seats) into LOG.md | wave-findings entry | `f3fd922e` |
 | Measurements, SCORECARD §Round 96 + capabilities + round-97 plan, census end, wave evidence | measurements entry | `f6122036` |
+| Falsification ledger (prefile gate pass) and amendment 4's record file | wave-findings entry | `49ef853f` |
 
 ## Before → after measurements
 
