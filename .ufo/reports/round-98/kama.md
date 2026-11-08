@@ -179,3 +179,24 @@ C 7 (after: S623 rejected C; base 6); statuses after: mined 325, queued 8, rejec
 
 **Stale-lane:** no — respawn-per-round driver; no other mission of this lane is open. Tool installs:
 none this round.
+
+---
+
+## Erratum (appended in a new commit; supersedes no filed bytes)
+
+**Pre-report gate, disclosed.** Read the "Before → after measurements" and "Work performed" sections
+as also carrying this line: `python3 tools/pre-report-gate.py --round 98` →
+`PRE_REPORT round=98 arms=14 failed=6 uncommitted=1`, **exit 1**
+(`kama-shokunin/.ufo/waves/round-98/measured/pre-report-gate.out`, committed at `649bb2e9`). The six
+failed arms: `selfdesc` (exit 1), `newest-closure` (exit 2), `round-scope` (exit 1, the gate's own
+receipt was uncommitted when the gate ran and is committed now), `round75-instruments` (exit 1,
+carried `bad_rows=19`, L0 r87/r89 open) and `round78-instruments` (exit 1, the host's non-lane Ollama
+listener on 127.0.0.1:8080). The eight other arms pass, including the round-81/82/83/86 instrument
+arms. No claim in this report depends on a passing gate; the reds are the carried disclosures already
+named in "Routed to round 99" items 1–2 plus the lane's standing `selfdesc`/`newest-closure` state,
+which no round-98 surface touched.
+
+**Seat-location correction.** The `## Work performed` wave item says all 12 reports exist in
+`.ufo/waves/round-98/w1/`; that is true, but two of them (`RV03Intent.md`,
+`EX02BudgetControl.md`) sit at `w1/<Name>.md` while the other ten sit at `w1/out/<Name>/`. This is
+the observation lesson M3 records; no seat died and the "0 dead" count stands.
