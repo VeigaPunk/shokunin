@@ -58915,6 +58915,47 @@
    "promotions": [],
    "minted": [],
    "protocol_updates": []
+  },
+  {
+   "round": 86,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 86,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 86
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "clause-grounding with a row pair: one frozen row per clause plus one single-edit mutant with do-nothing control, SCORECARD r86 row; counter killed_r85=6 killed_r86=8",
+    "index-flag sweep in an audit verdict: K4 runs writer's ls-files -v -z sweep for index-flag classes plus C-escape of record paths, SCORECARD r86 row; rows=9 mismatches=0"
+   ],
+   "report": ".ufo/reports/round-86/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-86-verifier-spotcheck.md@5e288bb3152328f371325d0bf4fee7309d629991",
+    "rechecks": "C1+C2 receipts cross-read vs pinned sha256; harness re-derive reproduced killed 6/8 and mismatches 0/0; falsification pass claims=2 rows=14 exit 0 narrowed"
+   },
+   "commit": "souji-shokunin@5e288bb3152328f371325d0bf4fee7309d629991",
+   "closed_at": "2026-11-08T04:30:00Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-11-08T05:35:40-03:00 launch souji round=86 pgid=4124310 driver=hyaku-inline attempt=1; complete 2026-11-08T06:20:51-03:00 complete souji round=86; hyaku-inline attempt=1. Step-1 conformance: report committed by lane identity souji-shokunin c9e4fd5d, SHONEN heading with 4x[~] lines, both lane hashes ancestor of master, jj-lane.sh state ahead=0 tracked=0 untracked=0, prompt carries template contract. No SHONEN promotion (lane still shonen). Status-neutral defects: (1) lesson claims wave evidence in .ufo/waves/round-86/ but lane HEAD 1c3a1d41 carries 200 wave files force-tracked - already remediated R86-2; (2) S345 anchor 'rendered lines 79-80' vs roff line 121 wrap (spacing normalised, quote accurate); (3) S343 anchor 'rendered lines 26-27' is semantic not physical line (roff header offset), quote text accurate; (4) report cites sha 2acbbfc8/4cc3b945 first repair (superseded by f5e196a2/cf875367 filed bytes, identical 9-row numbers noted, no consumer impact); (5) plans A0-A11 vs lesson A0-A5 count mismatch (lesson text truncated during integration). Routed r87: battery pin-exit docstring/exit-code drift (lesson M6), c7 suffix test + got-half dead arms, NF-L3/m12/m16/m17, NX3 int-round + w0/ decision, five-path cap, FLAGFAIL reachability, writer stderr 200-char truncation, pinned writer digest, inherited K3 tally, r83/r84 C2 carried list (pid-reuse/parent-before-child/termign-fork/p5-late-term/strace). MISROOT: fleet status 6 entries none lane-authored per report sweep. Spot-check sample: ADMIT S341/S342/S343 AGREE (quotes byte-exact in roff captures), REJECT S344 AGREE (duplicates S317/S327), REJECT S345 AGREE-taken (assume-unchanged promise present line 121). Census validate souji ok exit 0 (87 W04 pre-existing).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
