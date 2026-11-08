@@ -57840,6 +57840,51 @@
    "notes": "Dispatch digest: 2026-11-07T20:01:13-03:00 launch kasegi round=100 pgid=3083533 driver=hyaku-inline attempt=1; 2026-11-07T20:40:44-03:00 complete kasegi round=100; hyaku-inline attempt=1. Report 4af4d397 committed by lane identity but subject records an orchestrator sweep (L1 returned without committing; attribution defect, status-neutral). Lane 6e63a7dc -> 74fcbb71 -> a887f612 (spot-check), pushed, ahead=0. Conformance defects (status-neutral): (1) wave evidence never committed — w1-spec/w1-dispatch/w1-results/w1.ready*/make-wave.py and the whole w1/ tree (185 files) are untracked; the report's Wave-evidence row cites __WAVE_COMMIT__ which does not exist; (2) report placeholders __FINAL_TIP__/__CORR_COMMIT__/__INTEG_COMMIT__/__WAVE_COMMIT__ unfilled; (3) lesson ## Wave findings still '(to be filled after WAVE-DONE)'; (4) template defect carried: templates/round-prompt.md line 1 renders <kasegi-repo> (operator-side, named in r99 too). Round-99 routed defects: 6 of 10 closed (1 C2 harm via bounded union, 2 census reconciliation, 3 correction sweep 53->57, 4 landed digests, 7 wave-evidence bullet, 8 round-98 pointer); 5/6/9 unclosable without rewriting closed records (recorded); 10 operator-side template. Seven round-101 routed items recorded in lesson. SHONEN boxes all [~] (author-asserted) — none carry a named non-author verifier; promotion review is operator-owned. No axis harmed; no mint; no promotion.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 63,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 63,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 63
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "coverage": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "plans/round-63-c1.sh C1_RESIDUAL counter (frozen guard incl. A3 chal leg f)",
+    "plans/round-63-c2.sh C2_REFUSAL counter (five refusal legs, selftest cases=13)",
+    "plans/round-63-controls.sh battery with C1-F8/C2-F6 stub-refusal controls"
+   ],
+   "report": ".ufo/reports/round-63/kagi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kagi-shokunin/corpus/lessons/round-63-verifier-spotcheck.md@09cbee831d57be7c4edfbe77bf238f46bf729047",
+    "rechecks": "C1: BASE accepted=10/rejected=6 vs candidate accepted=0/rejected=0 population=10/6 guard=1 (committed receipt 0c07aab8..1f69bf9a, independent critic BASE census agree); C2: BASE killed=0 vs five leg-firings L1/L2/L3/L4/L6 each evidenced (end-to-end line absent-due-to-recursion, disclosed M63-LEN); prefile-falsification pass claims=2 rows=12 findings=0; Gate spot 4/4 agree; sources census rc=0 rows 143"
+   },
+   "commit": "kagi-shokunin@09cbee831d57be7c4edfbe77bf238f46bf729047",
+   "closed_at": "2026-11-08T04:05:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-07T19:44:30-03:00 launch kagi round=63 attempt=1; 2026-11-07T20:28:31-03:00 lane-dead-no-report attempt=1 FAIL report_of; 2026-11-07T20:28:33-03:00 launch attempt=2; 2026-11-07T22:12:52-03:00 lane-dead-no-report attempt=2 FAIL report_of; 2026-11-07T22:12:54-03:00 launch attempt=3; 2026-11-07T23:22:48-03:00 complete attempt=3. Conformance defect noted: none grade-changing; report filed by lane identity (no swept attribution), all cited commits ancestral to master, lane pushed (ahead=0), SHONEN heading with 4x[~] boxes, prompt carries the full template contract incl. addendum S6. Routed to round 64: D-63-1 C1 ceiling M63-6 (held-out fixture close of the lookup-table guard vacuum; leg f falsifies the vehicle, not the grammar class), D-63-2 C2 nested-battery recursion bound (single end-to-end C2_REFUSAL line), D-63-3 review verdicts carried. SHONEN boxes look mechanically checkable by a non-author today (promotion is operator-owned). No axis harmed; both claims verify (C2 as disclosed leg composition).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
