@@ -57924,6 +57924,47 @@
    "notes": "Dispatch digest: 2026-11-07T21:01:06-03:00 launch tabi round=82 pgid=3853099 driver=hyaku-inline attempt=1; 2026-11-07T22:12:50-03:00 lane-dead-no-report tabi round=82 (attempt 1 FAIL report_of, no landed report); 2026-11-07T22:12:52-03:00 launch tabi round=82 pgid=4180440 driver=hyaku-inline attempt=2; 2026-11-07T23:50:20-03:00 complete tabi round=82; hyaku-inline attempt=2. Conformance defects (status-neutral): lesson says 7 mismatches (c2-before.json records 4); census start line cites see below with no section; c2-controls.json asserts refused:true while Drift control-1 shows exit 0; committed lesson Wave w1 findings unintegrated. Routed to round 83: direction-bound counter rewrite, battery gaps (72 witnesses + mode-single-only), 7->4 correction append, connector F2 record tension.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 84,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 84,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 84
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "improved narrowly, claim falsified",
+    "operability": "improved narrowly, claim falsified",
+    "calibration": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unprovable-but-better",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-84/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-84-verifier-spotcheck.md@43c3f7284eee4889cdcc6ac1626573f6579cd533",
+    "rechecks": "C1/C2 counter predicates re-executed PASS at HEAD; K2 setup-leg + K3 row-9 fires evidence-verified from wave artifacts; pre-file ledger pass (0 findings); Gate S214/S018/S023 admit + S017/S020/PubMed reject agree; census ok. Both claims falsified by own kill rules (honest stop), no axis harmed."
+   },
+   "commit": "chousa-shokunin@43c3f7284eee4889cdcc6ac1626573f6579cd533",
+   "closed_at": "2026-11-08T12:00:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch 2026-11-07T22:59:02-03:00 launch chousa round=84 (hyaku-inline attempt=1); complete 2026-11-08T00:29:28-03:00. Step-1 conformance pass (SHONEN heading, ancestry of 4d5c6bdb vs branch ref, ahead=0, clean tree). Defects (status-neutral): mid-round report HEAD cited 142913a9 wave commit vs round base 408ae68f (consistent, annotated); post-freeze amendment 3a17f4da rewrote frozen claims.md/control receipts (QUALITY 166). Routed: K2 setup-leg fix + HTTP-203 narrowing + forgery battery gaps + freeze pinning (lane r85); row-9 warrant + locators + Q8 (lane r85); egress-table discipline (lane r85); kotodama check-gate-captures false-green routed to kotodama via aggregator ledger (cross-lane). SHONEN all [~] lane-asserted; no non-author verifier yet — promotion not ready, operator-noted. Spot-check file 43c3f7284eee4889cdcc6ac1626573f6579cd533.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
