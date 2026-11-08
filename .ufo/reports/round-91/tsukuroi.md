@@ -4,7 +4,7 @@ L1: TsukuroiR91a2 (attempt 2). Prior attempt TsukuroiR91 (attempt 1)
 died without a report (`lane-dead-no-report tsukuroi round=91`
 2026-11-08T00:55:20-03:00); its committed work is inherited and reused
 (see **Inherited state** below). Lane tip at writing:
-`6d12e07f53fecd90d38c9c088c0afe4f8d1cb079` (remote `refs/heads/master`
+`9df223fd85cd2201ecb6015d87c1262f3c0d47c7` (remote `refs/heads/master`
 matches), via the `jj-lane.sh` helper only.
 
 ## Work performed
@@ -20,15 +20,22 @@ binding the falsification ledger):
    canonical and in a `git clone --shared` at the landed tip
    (`.ufo/waves/round-91/after/measured/c1-receipt-{canonical,clone}.txt`,
    `git log 6d12e07f`, `ls-remote` match). F2 oracle-import
-   discrimination, F3 missing-sort blindness and freeze-manifest
-   battery binding are **not established** (narrowed, not claimed):
-   F2 reads 80/82 (`.ufo/waves/round-91/w1/CriticClaims/F3.json`),
-   F3 reads 82/82 despite missing `unverified.sort()`, the 13-line
-   freeze manifest omits the battery. K2 is a broken control (duplicate
-   `--tpm-present`, 984/984 `error:` → fixed post-wave as evidence
-   `runs-canonical/K2-landed-adapter-fixed.txt` 2/82 unmet, 0 errors);
-   N10 duplicated N01 (byte-identical `7e158cd2…`, fixed to last-wins
-   post-wave as evidence).
+   discrimination and freeze-manifest battery binding are **not
+   established** (narrowed, not claimed); F3-unsorted is an equivalent
+   mutant, not a battery blind spot. Supporting detail:
+   F2-oracle-replay (`w1/CriticClaims/gates/F2-oracle-replay.py`)
+   reads 80/82; F3-unsorted reads 82/82 because the gate appends in
+   `sorted(image_lines)` order (check-limine-pins.py:187), making the
+   deleted `unverified.sort()` (:193) redundant — `u1_ok` (battery:1683)
+   requires `got_sorted == sorted(got_sorted)`, so the battery does see
+   unsorted answers. The 13-line freeze manifest omits the battery.
+   K2 was a broken control at freeze (duplicate
+   `--tpm-present`, 984/984 `error:`), repaired in `6d12e07f` and
+   re-measured 2/82 unmet ×3 canonical + clone
+   (`runs-{canonical,clone}/K2-landed-adapter-fixed.*`); N10 duplicated
+   N01 (byte-identical `7e158cd2…`), rewritten as a distinct whole-file
+   LAST-wins bend and re-measured 78/82 unmet ×3 both layouts
+   (`runs-{canonical,clone}/N10-panic-first-anywhere-fixed.*`).
 2. **C2 (exploratory, depth 8, narrowed)** — knowledge entry
    `corpus/knowledge/limine-unverified-image-r91.md` + `.json`
    (S374-S376, uri.c/chainload.c/config.c tag `8ad14430…`): silent
@@ -55,8 +62,10 @@ Work items (each with evidence pointer):
   (`after/measured/`, receipt lines `families_passed 82/82 verdict met`
   ×6); control summaries
   (`before/controls/summary-{canonical,clone}.txt`)
-  show K1 2/82 (0 errors), K2 0/82 with 984 errors, N01-N10 killed
-  ×3 by named families.
+  show K1 2/82 (0 errors), K2 0/82 with 984 errors and N10 81/82 —
+  both PRE-repair rows kept as evidence with a post-wave repair note
+  appended; the corrected `*-fixed.*` receipts carry K2 2/82 unmet and
+  N10 78/82 unmet ×3 in each layout.
 - **Wave w1** (13 seats, one v1 wave, `w1/results.json`): ExecReplicate
   82/82 ×3 both layouts + rc=2 on `--runs 0/-1`; ExecLints registry
   PASS; MutGate 30/38 killed; MutBattery 4/31 detected; CriticForgers
@@ -89,9 +98,14 @@ Every change below is committed and pushed via `jj-lane.sh` (cited
 | V1/U1 gate fixes + registry rows + C2 knowledge entry | `45ae65181a928e3b0bdffe79afa859c6c38f03a0` | Wave w1 ReviewGate S1/S2 |
 | SCORECARD measured outcome | `3d645e2cec6115d9100c22ae3e62d772f4b1faf1` | Round-91 pre-wave outcome |
 | Lesson + wave receipts | `2d7e09e101996cc1ac5836c6d635f3f608453ac5` | Lesson Gate/Mistakes |
-| Narrowing amendment + final measured outcome + LOG + README r91 frontier + knowledge headers | `6d181609045d539d27c566c19e1a797202405c26` | `plans/round-91.md`, SCORECARD final, LOG r91 |
+| Narrowing amendment + final measured outcome + LOG + README r91 frontier + knowledge headers | `6d181609045d539d27c566c19e1a797202405c26` | narrowing doc (original path, later moved), SCORECARD final, LOG r91 |
 | Amendment at tracked path (`.ufo/plans/round-91.md`) | `1708726195a56882a648fbe455b436ecb896c5e5` | narrowing (same bytes) |
 | K2/N10 control fixes as wave evidence | `6d12e07f53fecd90d38c9c088c0afe4f8d1cb079` | before/controls evidence |
+| Narrowing path fix (tsv/prose → `.ufo/plans/round-91.md`) | `20f65353449169e578573a31f55fd186d812ea6c` | claim-falsification.tsv, SCORECARD, LOG, README |
+| Post-wave control-fix corrections (LOG/SCORECARD/README) | `8a4826e9338a773eafb18ff89d37b53b1e707742` | final outcomes |
+| Lesson M1 + canonical+clone fixed receipts | `03b773e56660380ad469490afcf001639c195a84` | lesson Mistakes M1, runs-*/\*-fixed.* |
+| N10 clone receipt + summaries + lesson sync | `71fc1b6695e5d6cb04ebef8bf43a5a9d0b402cd0` | runs-clone/N10-*-fixed.*, summary notes |
+| Narrowing amendment correction (F3 equivalent mutant; K2/N10 receipts) | `9df223fd85cd2201ecb6015d87c1262f3c0d47c7` | `.ufo/plans/round-91.md` |
 
 ## Before → after measurements
 
@@ -102,7 +116,7 @@ Every change below is committed and pushed via `jj-lane.sh` (cited
   `K1-landed-gate 2 2 2`). After: 82/82 met ×3 both layouts at
   `6d12e07f` (`after/measured/c1-receipt-{canonical,clone}.txt`);
   `git ls-remote origin refs/heads/master` =
-  `6d12e07f53fecd90d38c9c088c0afe4f8d1cb079`. Kill rule unmet if any run
+  `9df223fd85cd2201ecb6015d87c1262f3c0d47c7` at report time. Kill rule unmet if any run
   < 82/82; void if battery/manifest differ from the freeze manifest
   *as declared* — disclosed NOT binding (manifest omits the battery;
   narrowed claim excludes it).
@@ -136,18 +150,30 @@ finds none fitting this claim set; say-so per §10).
   coverage score change.
 - **quality:** improved — V1 visibility and U1 reporting are now
   measured by the battery (82/82 ×3 both layouts) and ReviewGate S1
-  (JSON sanitize) is fixed; F2/F3/K2/N10 defects are disclosed and
-  narrowed, not claimed.
+  (JSON sanitize) is fixed; K2/N10 control defects repaired and
+  re-measured; F2 oracle-import and freeze-manifest binding disclosed
+  and narrowed, not claimed; F3 shown equivalent.
 - **discernment:** unchanged — the lane downgraded its wording to
-  `plans/round-91.md` where the wave falsified it; the closure's
+  `.ufo/plans/round-91.md` where the wave falsified it; the closure's
   independent judgment on C2 is still owed.
 
 ## SHONEN
 
-- [~] SKILL.md contains real decision tables, error patterns, checklists, cited sources — SHONEN.md boxed with author-side pointers (SKILL.md:38-50 decision table, :90-141 checklist, ledger SKILL.md:5930 battery row) at tip `6d12e07f`; non-author verification owed.
-- [~] At least one end-to-end domain task executed and logged in LOG.md — LOG.md round-91 entry at tip (V1/U1 repair measured end-to-end); non-author replay owed.
-- [~] Instructions executable by an agent without oral context — battery docstring alone sufficed for a docstring-only re-implementation (CriticForgers base.py 82/82); whole-SKILL no-oral-context retest remains unexecuted.
-- [~] No cross-domain bleed (PROVINCE.md still accurate) — PROVINCE.md:44-52 ADJ-01..07 + round-19 anchors unchanged; ConnectorOverlap 0 sibling conflicts at tip.
+- [~] SKILL.md contains real decision tables, error patterns, checklists, cited sources — SHONEN.md boxed with author-side pointers (SKILL.md:38-50 decision table, :90-141 checklist, ledger SKILL.md:5930 battery row) at tip `9df223fd`; non-author verification owed.
+- [~] At least one end-to-end domain task executed and logged in LOG.md — LOG.md round-91 entry at tip `9df223fd` (V1/U1 repair measured end-to-end, wave findings + repairs logged); non-author replay owed.
+- [~] Instructions executable by an agent without oral context — battery docstring alone sufficed for a docstring-only re-implementation (CriticForgers base.py 82/82); whole-SKILL no-oral-context retest remains unexecuted at tip `9df223fd`.
+- [~] No cross-domain bleed (PROVINCE.md still accurate) — PROVINCE.md:44-52 ADJ-01..07 + round-19 anchors unchanged; ConnectorOverlap 0 sibling conflicts at tip `9df223fd`.
+
+## Round shape
+
+One v1 wave of 13 seats (attack share 4/13 = 31% ≥ 25%; connector 1 ≤ 2):
+ExecReplicate, ExecLints, ReviewGate, ReviewSource, MutGate, MutBattery,
+CriticClaims, CriticForgers, ScoutURI, ScoutChainload, ScoutDrift,
+ConnectorOverlap, ScribeLesson — seat mix per
+`.ufo/waves/round-91/w1-spec.json`; 0 dead seats; WAVE-DONE received
+before this report (`w1-results.json` committed at `2d7e09e1`).
+Post-wave repairs (K2/N10 controls, C2 entry header + falsified
+sentence) landed as wave evidence, not a second wave.
 
 ## Inherited state
 
