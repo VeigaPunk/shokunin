@@ -154,6 +154,13 @@ node scripts/check-record-drift-r87.mjs --lane <ABS lane> --json
   regex (C2-4); the before-value counts the complete record fix, including the two files introduced
   this round (R87Exec3 §1).
 
+**Misroot sweep.** `git -C /home/vgpnk/Projects/shokunin status --porcelain`: no seat wrote a
+fleet-root file naming tabi/round-87; the only tabi-named fleet entry is the orchestrator-owned
+`.scratch/closure-tabi-r83-entry.json` (scratch is orchestrator state, never a misroot). Running the
+pre-file gate created `scripts/hyaku/__pycache__/prefile-falsification.cpython-314.pyc` (29 KB,
+not in HEAD); it is a transient Python cache from this session's gate run, left in place and not
+part of any round commit.
+
 ## Sources & frontier
 
 - **Census** (frozen command `scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin tabi`):
