@@ -59622,6 +59622,49 @@
    "notes": "Dispatch digest: 2026-11-08T08:26:56-03:00 launch tabi round=88 pgid=3737743 driver=hyaku-inline attempt=1 | 2026-11-08T09:16:03-03:00 complete tabi round=88; hyaku-inline attempt=1. Report committed by lane identity, SHONEN heading present, all cited commits ancestor of master, ahead=0, prompt carries template contract. C1/C2 both verify; no axis harmed. Defects: none conformance; r89 routed: R88Mut1 20-survivor witness holes (Narrowings 4-7), DOM-parsed normalization frontier, drift-fixture overdetermination. Spot-check: admit + 2 rejects agree; S223/S219 quotes located in staged WHATWG bytes; census validate exit 0 (223 rows).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 97,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 97,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 97
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "improved",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "registry-content-binding"
+   ],
+   "report": ".ufo/reports/round-97/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-97-verifier-spotcheck.md@b3be3f90c2e32400d4e2692b2656ec9a1ba14a8a",
+    "rechecks": "step-1 conformance pass (report committed by the lane identity 797957a2, SHONEN heading with four [~] lines, cited a57e88cd/dafcd5df/b492f17f/5eb475cd/b3db56a4/9c4b7b16 all ancestors of master, jj-lane ahead=0 behind=0 clean, prompt = rendered template + addendum with all five child-lane items, not a marker, wave 14 seats in the 8-16 band with 0 dead, 5/14 attack = 36% under the prefile set / 29% strict, 1 connector). C1 re-measured from committed bytes at 9c4b7b16: FAMILY_ROSTER 105 vs 103 at f48d1642 by AST, both new families present with the frozen members; do-nothing control sha256 f06d90ae == f48d1642:tools/limine-pin-battery-r96.py; instruments 19 OK + 1 FAILED (A1 fixture recipe) and the after-fixture-pin set 20/20 OK; gate receipts 105/105 met x3 canonical + x3 clone (cases 420, 0 error rows) and 3x 105/105 at b492f17f; bends 103/105 [LEADING-ZERO-NORMALIZE, REFUSAL-VERSIONS-9DIGIT-Z] with 6 rc-64 rows and 104/105 [LEADING-ZERO-NORMALIZE] with 4, x3 both layouts; do-nothing met 103/103 x3 on gate and both bends; selftest --reference 18/18 rc 0; isolation lane/battery invisible. C2 re-derived independently: BINDINGS len=7 by AST and all seven declared cells re-derived from the tool bytes (auto; 39 = 36 case() + 3 results.append with a committed 39/39 receipt; schema tsukuroi-limine-pins-v3; r96 roster 103 in two cells; calibration selftest 7; make-r96-bends VARIANTS N01-N04); landed PASS bindings 7 findings [] at b492f17f; selftest 12/12; six RC-VALUE-MISMATCH on the doctored revision with coverage PASS 154/154 (84c95e25 and 9e052291 receipts); settled tip coverage PASS 157/157; five fail-closed legs rc 1/2 as claimed. Sibling gates not executed (Gate standard: committed evidence verified). PREFILE-FALSIFICATION: pass claims=2 rows=16 attack_seats=5 findings=0 exit 0, all five wording rows naming A3/A4/A6/A7x2. Census validate exit 0 (392 rows, 0 E; 57 W04 + 1 W01 pre-existing). S392 admit re-opened live (331022 bytes, sha256 d92580dd, quote at BYTE 157767) and the man.archlinux.org/man/python.1 reject re-opened live (41788 bytes, 11c40ea1, 0 int(/leading-zero/limine hits)."
+   },
+   "commit": "tsukuroi-shokunin@9c4b7b164f926ee2cb1f8683b4fe8f3f5796b1a9",
+   "closed_at": "2026-11-08T12:33:07Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (copied from the mutable .ufo/watchdog.log): 2026-11-08T08:32:08-03:00 launch tsukuroi round=97 pgid=3371195 driver=hyaku-inline attempt=1; 2026-11-08T09:26:51-03:00 complete tsukuroi round=97; hyaku-inline attempt=1. Status ok, ADMITTED: both measured claims re-derived from committed bytes at 9c4b7b16 - C1 depth (roster 103 -> 105 with REFUSAL-VERSIONS-9DIGIT-Z and LEADING-ZERO-NORMALIZE, the r96 control byte-identical and blind at 103/103, both one-clause bends killing their exact families) and C2 freshness (7 registry cells bound to tool bytes, six content-only doctors caught on a table the coverage gate certifies PASS 154/154, capability registry-content-binding first working). No axis harmed: check-limine-pins bytes unchanged (7d79ac29), r96 control 103/103, coverage 154/154 -> 157/157, corpus additive (SOURCES 391 -> 392, one knowledge entry, five lesson mistakes, QUALITY 141). Conformance defects, status-neutral, routed to r98: (1) R97-D1 the C2 doctored-leg revision attribution pairs receipt before/dev/c2-content-doctored.txt with scratch revision 46fae1ba while its committed JSON sibling records 84c95e25 (both builds of the same tree at base f48d1642, identical findings and PASS 154/154, so the claim is unaffected; cite the receipted revision or commit the A1 re-run receipt); (2) R97-D2 the r96-tool diff is stated as 8 +/- 2 lines where git diff --numstat is 6 insertions / 2 deletions; (3) R97-D3 the LZ family docstring still names the wrong text-comparer member (A6, second instance in two rounds; r98 corrects the successor and adds the QUALITY criterion); (4) R97-D4 C2's three measured gaps (unbound cell, co-doctored tool, printed-tally fake) and MutRegistry M08 survive as named limits. The report's .ufo/waves/round-96/before/instruments.sha256 note is accurate: the live r96 tool moved to 0d98b5bd by the routed wording correction, its scored bytes re-derive at f48d1642. Wave shape: one v1 wave of 14 seats (5 executor, 2 scout, 2 scribe, 2 reviewer, 1 critic, 1 mutation-tester, 1 connector), validator 14/0/14, w1-validate.err 0 bytes, 0 dead seats. Misroot sweep at closure: 11 fleet paths, none tsukuroi or round 97. L0: no new question. SHONEN note for the operator: boxes 1, 2 and 4 are checkable from this round's artifacts by a non-author; box 3 only partially (two recipes executed end-to-end, whole-SKILL replay unexecuted); promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
