@@ -60473,6 +60473,49 @@
    "notes": "dispatch/complete digest (.ufo/watchdog.log): 2026-11-08T12:31:50-03:00 launch souji round=91 pgid=2527681 driver=hyaku-inline attempt=1; 2026-11-08T13:51:17-03:00 lane-dead-no-report souji round=91; retry same round (attempt=1: no landed report); 2026-11-08T19:48:13-03:00 launch souji round=91 pgid=53479 driver=hyaku-inline attempt=2; 2026-11-08T20:12:32-03:00 complete souji round=91; hyaku-inline attempt=2. Step-1 ok: report 4af415c3 authored+committed by souji-shokunin at 20:12:17, after lane tip 9deaefda (20:06:53); SHONEN 1x with 4x[~] pointers, SHONEN.md no [x]; all 6 cited lane commits ancestors of master; lane clean ahead=0 behind=0; prompt = exact template rendering (lane/round/fleet root/repo/axes) + addendum sections 6 and 8. Attempt 2 reused attempt-1 commits after re-verification and disclosed it. Status-neutral note: 4 of 13 seats died on provider errors (R91Critic, R91Revenger, R91Sentinel 429; R91MutCounter 400/permission_denied), dead-seat records committed, never replaced per addendum; settled attack share 2/13 (planned 4/13 = 30.8%) - C1 alternative-edit survivor search never ran. r90 routed defects all answered (claims path, one attack-share definition, settlement provenance, r89 capability row annotated SUPERSEDED, narrowed work carried as C2). No owned axis harmed: SKILL.md/PROVINCE.md/SHONEN.md untouched, SCORECARD additive plus the routed relabel. Routed to r92: (1) _cut_tail invalid-lead collision fix + head-cut/invalid-lead fixture rows; (2) KFF13 via ast both directions; (3) C1 alternative-edit survivor search + LD4 rc=0 assertion; (4) re-gate RFC 3629 §4/§10 before any validity range-check claim (the §10 reject's flip condition will fire); (5) r91 population header hygiene (R91Connector F3). For the operator: the four SHONEN boxes carry pointers a non-author can check; promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 92,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 92,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 92
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "chromium-crosssite-iframe-chooser-linux — on Chromium 155.0.8059.84 --headless=new, a cross-site (localhost under 127.0.0.1) iframe is its own iframe target under page-session flatten auto-attach (targetId = child frame id) and its file chooser arrives and is answered on that iframe session; a same-site child has no target and its chooser arrives on the page session; 6 legs, 93 checks, clean (a87c7176, tip re-run 63f5d1dc)"
+   ],
+   "report": ".ufo/reports/round-92/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-92-verifier-spotcheck.md@192535d7ea519439ce42ec09b45038ed6756c709",
+    "rechecks": "C1 re-measured on committed bytes at ba079d19: base counter absent (rc 128); r91 receipt control rc 1, 21 unique ids; instrument sha256 3/3 = claims.json; instruments and claims.json untouched since freeze 2bac1048 (plan +33 appended lines only); freeze 20:02:04 < scored start 20:02:11 < receipt 20:02:33 < a87c7176; my jq over the corpus receipt: X legs 1 attached/1 listed/1 browser iframe target with targetId=childFrameId, URL=childUrl, chooser+answer on iframe; S legs 0/0/0, chooser+answer on page; all 6 legs 1 chooser, answer error null, files [[tabi-r92-answer.txt,22]]. Counter verdicts evidence-verified (not executed): scored and tip clean 93, wrong-site rc 1 with behaviour ids, battery 31/31; append-only gate evidence selftest pass 4 statuses, r91 range rc 1 (2 findings), r92 range rc 0. Range has 0 deleted lines; record files byte-prefix appends. PREFILE-FALSIFICATION pass claims=1 rows=13 attack_seats=6 findings=0 exit 0. Census exit 0 tabi ok (W04 only). Knowledge 104->105, SOURCES 226->230 re-counted. Spot-check: S227, S229, S230 admits and MDN + r91-cross-site rejects re-opened, 5/5 agree."
+   },
+   "commit": "tabi-shokunin@ba079d19644f2348f7a695e7cd05f50665e78e4e",
+   "closed_at": "2026-11-08T23:39:24Z",
+   "campaign": "hyaku",
+   "notes": "Driver: 2026-11-08T19:52:21-03:00 launch tabi round=92 pgid=299191 driver=hyaku-inline attempt=1 -> 2026-11-08T20:35:16-03:00 complete (hyaku-inline attempt=1). Report f9a7f367 filed once at 20:34:27 after last lane commit; prompt carries template contract (placeholder substitutions only). One claim (C1 coverage capability) VERIFIED on its frozen predicate; no axis harmed. Conformance defects (status-neutral), routed to r93: (1) claims.json frozenAt 20:05:00-03:00 is future-dated vs its freeze commit 2bac1048 (20:02:04) and scored start; (2) SKILL.md Round 92 gate registry rows lack gate|probe, verdict map (counter exit 2 setup, append-only exit 2 usage undeclared), pinned-value path, write scope, owner; (3) SCORECARD r92 section cites W1-W5 while plan carries W6 (S228 sourcing supersession); (4) ledger R92Reviewer note says F1-F7, artifact has F1-F8; (5) lesson quote word counts S227 21 (actual 23), S229 14 (actual 13). Carried: r91 §8 items 3 and 5; lane-routed battery gaps (Critic1 forgeries A-G, 7 R92Mut survivors, per-leg browserVersion, killed-driver setup mapping). r91 §8 items 1, 2, 4, 6, 7, 8 verified repaired by appends. SHONEN all [~]: boxes 1, 2, 4 look checkable by a non-author from committed pointers; box 3 still rests on lane-dispatched seats only (operator-owned promotion).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
