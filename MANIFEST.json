@@ -57800,6 +57800,46 @@
    "notes": "Dispatch digest: 2026-11-07T19:58:48-03:00 launch tabi round=81 pgid=2877178 driver=hyaku-inline attempt=1; 2026-11-07T20:38:37-03:00 complete tabi round=81; hyaku-inline attempt=1. Report 9f0f8401 committed by lane identity tabi-shokunin but as a hyaku sweep commit ('L1 returned without committing; attribution defect') — conformance defect, status-neutral. Lane c27e8406 -> 2a117ea7 (7 commits), pushed (ls-remote = 2a117ea7); all 7 cited lane commits exist and are ancestors of master. Prompt is the 140-line template render: sections 1-5 byte-identical to templates/round-prompt.md modulo the <tabi-repo> -> tabi-shokunin substitution; hyaku addendum section 6 present; L2 = one taskCall of 11 seats (attack share 3/11 = 27%), attack floor met, MISSION.md L2 bucket consistent. SHONEN heading present, 4 [~] lines with pointers, no [x]. Wave w1: 11 seats; R81Exec3 and R81Drift returned empty output and the report names no dead seats. Conformance defects (status-neutral, routed): report landed via sweep not by the lane; 4 uncommitted wave files at HEAD (.ufo/waves/round-81/w1-results.json, w1/R81Scout.md, w1/R81Scout/, round-81-seats/R81Mut1/); the S223 quote-count correction reached only corpus/lessons/round-81.md — LOG.md:3900, corpus/QUALITY.md:1046 and SCORECARD.md:3946 still say 23 words (true: 20); freeze.txt's claims.json pin is superseded by the declared digests commit 5233f510 (disclosed). Lane-routed defects owed to r82: six receipt-level forgeries pass clean 56, eleven clause-level battery weakenings survive, kill power lacks a baseline guard, four C2 claims are presence-bound, frozen limit sentence off by one, frozen claims.json pins pre-repair battery/prior set. SHONEN boxes remain [~] asserted-by-author; promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 100,
+   "date": "2026-11-07",
+   "type": "closure",
+   "lane": "kasegi",
+   "lane_round": 100,
+   "lanes": {
+    "kasegi": "ok"
+   },
+   "lane_rounds": {
+    "kasegi": 100
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth:verifiability": "improved",
+    "coverage": "improved",
+    "depth:density": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "capture-secret-scan extended: gitlab-session-cookie separator becomes the bounded union of S140's assignment-context window and a 1-8 byte whitespace run (S152) — regression_r98 23 -> 20, scanner_only 0 -> 3, the Netscape cookie jar (TAB and space) and the _geo_ space form recovered end-to-end (hits=0 -> hits=2 files=2), selftest 192 -> 195, frozen negatives held; first-working round stays 87; residual (newline operator gaps, 9-12-byte gaps, four unsampled classes) documented in the capability row and entry Limits"
+   ],
+   "report": ".ufo/reports/round-100/kasegi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kasegi-shokunin/corpus/lessons/round-100-verifier-spotcheck.md@a887f6122044bee414016ed2e769719be8b00e58",
+    "rechecks": "C1 re-measured by non-author seat: instrument pin d2899430 identical at 1605775b/74fcbb71/HEAD; committed r99 record bytes -> CENSUS-CHECK fail reason=no-confined rc=1 (control B exact); committed r100 record -> CENSUS-CHECK pass rev=1605775b confined=1; tamper-r100.py re-run -> TAMPER-RESULT killed=15 total=15 evaluated=15 with T13 reconcile-confined / T14 reconcile-body / T15 reconcile-classes; header/body/class-table reconciliation verified numerically (165+0/2665+1/2703+1; 77+0+5383+2627=8087, INTERNAL-1=2626). Note: recorded control A (r99 instrument passes r99 record) no longer reproduces — it now prints pinned-mismatch because the r99 instrument resolves against the drifted live host HOME (host_owned 76->80); the drift is the defect class C1 fixes, so the control is stale, not the claim. C2 re-measured by non-author seat: c2-check at ff267d12 -> regression_r98=20 scanner_only=3 mustfix=7 rune=4 agree_hit=121 probe 12/12 selftest_cases=195; at 6e63a7dc -> 23/0/192; instrument sha 01a1f6a8 identical at landing/tip/HEAD; selftest pass cases=195; five receipts verbatim; xclass residual table confirms the corrected erratum. Guard: density 273.2, SKILL.md untouched; SCORECARD diff shows only the round-100 section plus the 53->57 correction. Census: sources-census.sh validate -> kasegi ok rc 0, 153 rows, seven inherited W04 warnings (set verified identical at base 6e63a7dc); frozen manual census: malformed 0, dup ids 0, enum 0, mined used-by missing 0. Spot-check: re-opened S152 (curl.se 200, 13717B, sha256 c202d81f exact; 16-word quote verbatim in Cookie file format), S153 (rfc-editor 200, 79724B, sha256 dc417709 exact; quote at lines 195-196), S151 (GitLab API 200, 9776B, sha256 91519731 exact; lines 28-29 quotes), S148 (200, 1028B, sha256 b50856e4 exact; line 6 quote), S140 committed capture sha256 f3fd09e4 exact, line 550 quote; agree on both admits' grounds and the reject."
+   },
+   "commit": "kasegi-shokunin@a887f6122044bee414016ed2e769719be8b00e58",
+   "closed_at": "2026-11-07T23:59:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-07T20:01:13-03:00 launch kasegi round=100 pgid=3083533 driver=hyaku-inline attempt=1; 2026-11-07T20:40:44-03:00 complete kasegi round=100; hyaku-inline attempt=1. Report 4af4d397 committed by lane identity but subject records an orchestrator sweep (L1 returned without committing; attribution defect, status-neutral). Lane 6e63a7dc -> 74fcbb71 -> a887f612 (spot-check), pushed, ahead=0. Conformance defects (status-neutral): (1) wave evidence never committed — w1-spec/w1-dispatch/w1-results/w1.ready*/make-wave.py and the whole w1/ tree (185 files) are untracked; the report's Wave-evidence row cites __WAVE_COMMIT__ which does not exist; (2) report placeholders __FINAL_TIP__/__CORR_COMMIT__/__INTEG_COMMIT__/__WAVE_COMMIT__ unfilled; (3) lesson ## Wave findings still '(to be filled after WAVE-DONE)'; (4) template defect carried: templates/round-prompt.md line 1 renders <kasegi-repo> (operator-side, named in r99 too). Round-99 routed defects: 6 of 10 closed (1 C2 harm via bounded union, 2 census reconciliation, 3 correction sweep 53->57, 4 landed digests, 7 wave-evidence bullet, 8 round-98 pointer); 5/6/9 unclosable without rewriting closed records (recorded); 10 operator-side template. Seven round-101 routed items recorded in lesson. SHONEN boxes all [~] (author-asserted) — none carry a named non-author verifier; promotion review is operator-owned. No axis harmed; no mint; no promotion.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
