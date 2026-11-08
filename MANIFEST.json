@@ -58463,6 +58463,49 @@
    "notes": "dispatch 2026-11-08T02:52:56-03:00 launch tsukuroi round=93 pgid=2091834 driver=hyaku-inline attempt=1; complete 2026-11-08T03:38:51-03:00 complete tsukuroi round=93; hyaku-inline attempt=1. Two measured claims, both receipts re-derived by the closure (96/96 x3 both layouts; N01-N06 unmet with named families both layouts; do-nothing 94/96 narrowed by A1; live 12.9.4/probe). Conformance defects, status-neutral: (1) report says 5 falsifies-wording rows, the TSV has 7 (all 7 name a narrowing in plan amendments A1-A4, so substance holds; report to correct next round); (2) S385 is new in r93 but has no rule-1 Gate row in the r93 lesson (URL/date/quotes) though the row itself is verified correct; (3) battery 18-leg --reference run not completed in the wave timebox (ExecLints F3, disclosed); (4) surviving mutants M13/M12/M03-M05/M11 and AUTO fake source leakage routed by the lane; (5) probe first-X.Y.Z leniency on pre-release strings noted. Neither the SHONEN x-boxes nor promotion are touched (operator-owned). No promotion minted; campaign hyaku.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 84,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 84,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 84
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "chromium-showpicker-linux generation r84 (cross-origin type=tel/search/text SecurityError legs)"
+   ],
+   "report": ".ufo/reports/round-84/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-84-verifier-spotcheck.md@c574d593595986238eb8fbfc6c8ee342060ecf21",
+    "rechecks": "C1 evidence-verified (receipt legs re-read; counter/battery 162/0/80-80/kill-power 50/50/selftest 9/9 committed evidence; two cold runs 80/80); C2 re-measured by my own drift-counter run (0 mismatches) plus committed before/after/control legs; prefile pass (2 claims, 14 rows, 5 attack seats, 0 findings); discernment spot-check agreed on 1 admit + 2 rejects re-opened against WHATWG/Chromium sources; census exit 0, 223 rows"
+   },
+   "commit": "tabi-shokunin@c574d593595986238eb8fbfc6c8ee342060ecf21",
+   "closed_at": "2026-11-08T07:15:30Z",
+   "campaign": "hyaku",
+   "notes": "dispatch digest: 2026-11-08T03:23:06-03:00 launch tabi round=84 pgid=605235 driver=hyaku-inline attempt=1; 2026-11-08T04:13:21-03:00 complete tabi round=84; hyaku-inline attempt=1. Step-1 conformance clean (lane-committed report, SHONEN heading, ancestry of both hashes, ahead=0, prompt contract present). Defects: none status-neutral; fleet-root scratch unrelated to the lane. Routed to r85: R84Mut1 51 case-level survivors (witnesses), accept MIME-token grammar legs, same-origin tel/search/text contrast, constant-offset escape sentence, C2 predicate's non-reconciliation of the r83 Gate 0/0/0/0 vs 5/5 prose. Promotion line: SHONEN boxes remain [~] authored assessments; a non-author reviewer may now check them if the evidence pointers resolve.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
