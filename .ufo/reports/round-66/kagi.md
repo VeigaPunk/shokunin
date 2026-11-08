@@ -327,3 +327,16 @@ this round.
    instrument that sees it named.
 5. **`claim-ledger.sh verify` (full) was not completed** under fleet load;
    `docs` was and is CLEAN.
+
+## Erratum (appended after the filed bytes)
+
+This erratum supersedes the sentence in §Landed changes that ends "Final lane
+tip: `git ls-remote origin refs/heads/master`" and adds the close correction:
+
+- Final lane tip after the close correction: **`d1e127ac5b363522ee5a2804ad57c72af7a32953`**
+  (`round-66: close correction — one seat unfiled, w1-results.json absent, C2
+  honest stop (C1/C3 verified)`), pushed — `git ls-remote origin
+  refs/heads/master` prints that hash.
+- The correction landed in `LOG.md` (append-only, pointing at the round-66
+  entry it corrects): 13 of 14 seats filed, `w1-results.json` absent at close,
+  C2 an honest stop; C1 and C3 verified.
