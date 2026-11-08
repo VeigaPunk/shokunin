@@ -212,6 +212,12 @@ after  (measured/census-end.out):                kama ok /home/vgpnk/Projects/sh
   Ledger `.ufo/waves/round-94/claim-falsification.tsv`; every attack seat that produced an artifact
   appears (RV01, RV02, CR01, CR02, MT01, MT02, CN01, CN02).
 
+## Open items / L0
+
+- No L0 question filed this round. Carried: R1 (`round75-instruments` `bad_rows=19`,
+  `unaccepted=22`, `APPEND_DEBT_FINDING` late line 96 hash mismatch; L0 r87/r89 open) and the
+  `round78-instruments` live-reconcile red caused by the host's non-lane Ollama listener on 8080.
+
 ## Trend verdicts
 
 - **expansion: unchanged** — no new lane surface this round beyond the corrected setter readings and
@@ -246,9 +252,3 @@ after  (measured/census-end.out):                kama ok /home/vgpnk/Projects/sh
 - [~] No cross-domain bleed (PROVINCE.md still accurate) — registry/endpoint-consumers.tsv
   (lane-owned), `w1/CN01SiblingOverlap.md` reports sibling material without absorbing it; service
   repair, routing and credentials remain operator/sibling-owned.
-
-## Open items / L0
-
-- No L0 question filed this round. Carried: R1 (`round75-instruments` `bad_rows=19`,
-  `unaccepted=22`, `APPEND_DEBT_FINDING` late line 96 hash mismatch; L0 r87/r89 open) and the
-  `round78-instruments` live-reconcile red caused by the host's non-lane Ollama listener on 8080.
