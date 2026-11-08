@@ -112,10 +112,12 @@ expectation, and neither mutant is killed by any of the 49 r86 rows.
 **C2 wave-repair arm (outside the frozen 12 rows).** `python3 -B census/round-87/c2-byte-arm.py --tool TOOL --work WORK`
 over seven shapes the frozen counter does not carry (non-UTF-8 name, CR name, rename whose source looks like a status pair,
 400-character `AttributeError`, LF-vs-backslash-n injectivity, a name holding `"`, and a `ValueError` last line).
-Three layers, one command: the lane-base tool reads `mismatches=6` (`controls/c2-byte-arm-lane-base.txt`), the first
-repair bytes `6e502c5c` read `mismatches=6` (`controls/c2-byte-arm-before.txt`), and the filed bytes read `rows=7 mismatches=0`
-(`records/c2-byte-arm-after.txt`). KB1/KB6/KB7 exist because the 12-row counter cannot certify (a)'s mechanism or (c)
-(`S87ExecEvade` F4-F6; `plans/round-87.md` A8).
+Three layers, one command: the lane-base tool reads `mismatches=8` of 10 (`controls/c2-byte-arm-lane-base.txt`), the
+first repair bytes `6e502c5c` read `mismatches=8` (`controls/c2-byte-arm-before.txt`), and the filed bytes read
+`rows=10 mismatches=0` (`records/c2-byte-arm-after.txt`). KB1/KB6/KB7 exist because the 12-row counter cannot certify
+(a)'s mechanism or (c) (`S87ExecEvade` F4-F6; `plans/round-87.md` A8), and KB8-KB10 (a VT name, and a LF vs a literal
+backslash under the index-flag arm) because the sentinel's F4 and the scribe's F8/F9 measured the same tear/collision
+on the detail arm (`plans/round-87.md` A9).
 
 **C2 — operability 8.** Counting command:
 `python3 -B census/round-87/c2-k4-counter.py --tool tools/souji-record-agreement.py --work WORK` (after) and the same
@@ -124,9 +126,9 @@ with `--tool census/round-87/controls/c2-before-base-tool.py` (before).
 | end | receipt | observed | exit |
 |---|---|---|---|
 | before (lane-base tool `cf875367…`, writer `70bbf1c2…` beside it) | `census/round-87/controls/c2-before.txt` | `SUMMARY rows=12 mismatches=3 errors=0`; KN1 `named=no` (detail truncated before the exception), KN2 `named=no` (no header), KN3 `named=no` (record `"bad\nname2.txt"` — git's quoted spelling); nine r86 rows unchanged | 1 |
-| after (filed tool `821e3703…`) | `census/round-87/records/c2-after.txt` | `SUMMARY rows=12 mismatches=0 errors=0`; KN1 `named=yes`, KN2 `named=yes` (`writer_sha=70bbf1c2a92e appended_sha=1b8ecf328ed3`), KN3 record `bad\nname2.txt`; nine r86 rows unchanged | 0 |
+| after (filed tool `e1b00e8a…`) | `census/round-87/records/c2-after.txt` | `SUMMARY rows=12 mismatches=0 errors=0`; KN1 `named=yes`, KN2 `named=yes` (`writer_sha=70bbf1c2a92e appended_sha=1b8ecf328ed3`), KN3 record `bad\nname2.txt`; nine r86 rows unchanged | 0 |
 
-Measured against the tool bytes at `1556010b` (`821e3703…`) and the counter sha256 `4e2b7c06…`; the lane's own
+Measured against the tool bytes at `f36fcf55` (`e1b00e8a…`) and the counter sha256 `4e2b7c06…`; the lane's own
 fixtures stay green on the repaired tool (`records/c2-regression-fixtures.txt`: r23 15/15, r24 8/8, r25 1/1).
 
 ## Sources & frontier
