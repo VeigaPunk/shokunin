@@ -134,7 +134,8 @@ selftest now reads `C2_RECORD_SELFTEST: PASS (7 cases)`, but the aggregate line
 bytes in this round: the counter's cost is dominated by `cells` (measured
 922 s and 1556 s on the lane) and by `claim-ledger.sh verify` (measured > 950 s),
 so its legs' budgets sum past an hour and every attempt was killed by its own
-cap rather than by a defect. The only aggregate lines on record
+cap rather than by a defect — the L1's own final run ended `rc=124` at 3301 s
+with no verdict line. The only aggregate lines on record
 (`mismatches=3 population=3 guard=0`, seat; `mismatches=3`, seat's second run)
 were taken against pre-fix bytes — a broken `expect_cases()` parser (since
 repaired) and the pre-tightening `cells` regex — so neither `0` nor `3` is a
