@@ -180,3 +180,22 @@ changed after the freeze, and the battery and disposition predicates re-derive a
 landing revision (`.ufo/evidence/round-94/landing/c1-at-landing.out`,
 `c2-at-landing.out`). Verdict: the claims verify under the amended wording; the wider
 sentences are withdrawn rather than filed.
+
+## Addendum — the three commits landed after this report's first filing
+
+Appended after `fc241b5f`; the sections above are unchanged. These rows complete the
+Landed-changes table (the round's last three lane commits) and state the final lane tip.
+
+| Change | LOG entry | Commit |
+|---|---|---|
+| Erratum + QUALITY 168: round-93 M2's receipt pointer names no committed byte | Round 94 | `70fcf8b0` |
+| Note § Part 2 — what the reader certifies and does not, with the three located quotes (R94SC1's block, fixture-verified) | Round 94 | `5abf500c` |
+| Wave records: 12/12 seats, seat reports and probes, `r94-w1-results.json`, prefile ledger | Round 94 | `507adb5c` |
+
+**Final lane tip:** `507adb5cc3ed610c209791ad07dbb2ed75961cd9`, pushed and verified with
+`git -C …/tameshi-shokunin ls-remote origin refs/heads/master` → the same hash
+(`jj-lane.sh state`: `ahead=0 behind=0 tracked=0 untracked=0`). The report's own fleet
+commit is `fc241b5f6cf97b21868305e2dc56aabbcbb0e546` plus this addendum's commit.
+
+Scratch: `/fast/scratch/hyaku/tameshi-r94` (3.7 GB, the battery clones and seat probes) is
+removed after landing; every receipt a claim rests on is committed in the lane.
