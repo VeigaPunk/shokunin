@@ -60214,6 +60214,47 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable, copied): 2026-11-08T11:54:19-03:00 launch tsukuroi round=100 pgid=2232722 driver=hyaku-inline attempt=1 | 2026-11-08T12:55:57-03:00 complete tsukuroi round=100; hyaku-inline attempt=1. Status ok (real committed round; report landed by the lane identity before the correction commit). Wave: 14 seats, 13 filed, ReviewRegistry dead at spawn (0-byte output, recorded, not credited, not replaced); attack roles 6/14 = 42.9%. Defects (status-neutral): report L53 says the lesson 'mines five mistakes' where the lesson carries 9 rows (its own parenthesis names 7) -> R100-VER-3 erratum owed; S396 SOURCES row written this round still says 'emission lines ... BYTE 3384 (N13)' (3384 is the lie literal, clause starts 3365) and its teaches cell says 'exactly the family' where X measures two -> R100-VER-1/2, rewrite the row or add S399 (the lesson already names the correct pair, so the fact is on record but the superseded wording was not swept); knowledge entry cites the gate limine_version emission at BYTE 16931, the newline before the clause (16932 is the first byte) -> R100-VER-4. Carried/operator: adjacency (8, tied lowest) carried no claim - the kaidoku/revenger reverse-engineering ownership stays operator-owned and unruled; the other tied-lowest axis (depth) carried C1, so the lowest-axis duty is met. Promotion: all four SHONEN boxes now have non-author-executable evidence in this round's spot-check; writing [x], deleting SHONEN.md and bumping the MANIFEST rank remain operator work. Misroot sweep re-run: the fleet worktree carries only other lanes' .scratch/l0-questions paths.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 68,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 68,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 68
+   },
+   "admitted": false,
+   "verdict": "rejected-harmed",
+   "verdicts": {
+    "freshness": "improved",
+    "calibration": "harmed",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "harmed"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-68/kagi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kagi-shokunin/corpus/lessons/round-68-verifier-spotcheck.md@264917aa8fc9e71b6595d0d5166c4b615120fb8b",
+    "rechecks": "C1 re-measured over committed bytes by plain awk: BASE d3b2a4e source-fetches.tsv rows=157 pure-.ufo/waves col-16 rows=36 col15-hex=31 mixed=1 (TSV sha 90dd4a2c), tip rows=158 pure=38 col15=33 (31 mined + 7 rejected) => the frozen floor >=37/>=32 is met by measurement; gate evidence verified not executed: final/c1-candidate.txt:19 C1_VERIFIED verified=38 col15=33 caught=6/6 guard=1, six legs each naming anchor S167 with its frozen reason, guards a-e=1, defects=0, receipt pinned to tip instrument hashes gate 690b0c2e / counter d353cf36, census selftest PASS (98 cases) receipted under the 690b0c2e pin, BASE 89; two independent reviewer seats re-derived the population and the record surfaces. C2 NOT verified: no committed receipt on the final bytes carries C2_RECORD; w1/R68ScribeLesson/c2-lane-run.txt:6 records no verdict line (killed at 3600 s budget), final/c2-candidate.txt is 0 bytes, the only real aggregate is c2-run.txt:6 mismatches=3 population=3 guard=0 on pre-fix bytes. Individual surfaces: L1 R21-03 pin 88->98 with committed journal pair and observed 98; L3 cells returns CELL_AUDIT: POLICY (cells=576 ...) exit 2 where BASE dies 'unrecognised round heading'; L2 R68-01 executes, R68-02 is self-referential (counter records its own invocation) and never executed by claim-ledger verify. Pre-file gate: PREFILE-FALSIFICATION: SETUP findings=1 (wave-missing w1-results.json) exit 2, not a row failure; ledger present, 11 rows, both claims, every artifact resolves, all attack-role seats read, every falsifies-wording row names Amendment A1. Census: kagi ok exit 0, 158 rows, malformed 0, A=141 B=2 C=15, mined=138 queued=3 rejected=17."
+   },
+   "commit": "kagi-shokunin@cd9d66f12e6b10f420dddb9841ebb35e495088bf",
+   "closed_at": "2026-11-08T16:33:09Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (copied from mutable .ufo/watchdog.log): 2026-11-08T09:01:19-03:00 launch kagi round=68 pgid=3424013 driver=hyaku-inline attempt=1; 2026-11-08T13:22:34-03:00 complete kagi round=68; hyaku-inline attempt=1. Step 1: report committed by kagi identity (cf4e3e1b), SHONEN heading with 4 [~] lines, 7/7 cited lane commits ancestors of master, lane ahead=0 clean and pushed at cd9d66f1, prompt carries the round contract and all five child-lane items, wave 15 seats (attack 4/15=26.7%) inside the run-15 8-16 band. Claims: C1 verified (36/31 -> 38/33, caught 0/6 -> 6/6, guard 0 -> 1, defects=0; freshness improved); C2 does not verify (no aggregate verdict on the landed bytes; calibration harmed). Conformance defects named, status-neutral: (a) the report omits the mandatory PREFILE-FALSIFICATION line and exit code (S8); (b) the report bytes were rewritten in place twice (227ec14f -> f2a3a92 -> cf4e3e1b) with no erratum naming superseded text; (c) report line 106 cites .ufo/waves/round-68/final/c1-base.txt, which does not exist (QM96 class; the BASE line lives at w1/R68ExecCounterC1/base-run.txt:19); (d) the round filed with an unsettled wave: no w1-results.json anywhere and seat R68ExecCounterC2 filed no report and was still a live job at closure, so the wave's own results surface (and therefore the pre-file gate) is missing; (e) w1-spec/dispatch/swarm-registry carry pre-measurement achievement text (C2_RECORD mismatches 3->0, verified 36->37) in all 15 seats; (f) claims.json was never repinned to Amendment A1 (still 37/32 while the ledger pins 38/33). Axis harm (calibration): SCORECARD.md:2425 prints C2_RECORD: mismatches=0 population=3 guard=1 rc 0 while the round produced no such line and its own cited evidence dir holds a 0-byte final/c2-candidate.txt; corpus/lessons/round-68.md:18 repeats mismatches 3->0; LOG.md:2221 prints C1_VERIFIED_SELFTEST PASS (59 cases) against the 56-case receipt and SCORECARD's own 56; base/base-derivation.md:33 quotes its receipt as caught=0/6 where the receipt reads 6/6. Discernment harm: nine mistakes M68-1..M68-9 each record that no criterion would have caught them, yet corpus/QUALITY.md is unchanged (still ends at QM96) and SCORECARD.md:2426 asserts QM97-QM99 entered the bar. Expansion graded unchanged, not the lane's improved: no new admitted knowledge entry, no coverage-map/frontier row, no capability row; S167 is cited from the existing entry (widening = quality/depth). Spot-check: admit S167 re-opened live (HTTP 200, 35491 B, sha256 84e14418 = capture = row cell; 18-word quote locates once after normalization) agree; reject S150 re-opened live (HTTP 200, 67033 B, sha256 a31331da, 0 'cannot be killed') agree, with a count caveat (11 = token 'equivalent'; phrase 'equivalent mutations' occurs 9 times); round-68 Gate carries no reject row (rounds 67 and 68 both single-candidate). Routed to kagi round 69: (1) SCORECARD:2425 C2 row to the honest stop; (2) SCORECARD:2426 QM97-QM99 remove or land; (3) lesson:18 C2 wording correction by appended entry; (4) LOG:2221 case count 59->56; (5) base-derivation:33 caught 0/6->6/6; (6) report citation c1-base.txt -> w1/R68ExecCounterC1/base-run.txt; (7) claims.json repin to A1.2; (8) plans/round-68-c1.sh predicate_ok ignores the frozen verified>=37 col15>=32 floor and has no sub-floor selftest case; (9) R68-02 self-referential row must execute under a real budget or be dropped; (10) BASE caught 0/6 vs 2/6 repin per M68-2; (11) land the M68-1..M68-9 QUALITY criteria; (12) file after WAVE-DONE with w1-results.json and keep achievement text out of wave metadata; (13) expansion claims must follow the LEARNING observable. SHONEN: all four boxes are [~] author-asserted and remain operator-owned; no box was written [x] by this closure. No promotions, no mints, no writes to lane-authored files.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
