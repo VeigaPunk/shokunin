@@ -11,7 +11,7 @@ from outside), AXES.md, CORPUS.md.
 Inputs:
 - report: `.ufo/reports/round-91/tabi.md`; dispatched prompt: `.ufo/prompts/tabi-round-91.md`
   (canonical `templates/round-prompt.md` rendering + hyaku addendum §6)
-- lane HEAD before the round: `b1d8f07b0d5895ffdd5bf9a143d2b591414fabea`; after: `7c59b26469a4a4415fe412d09b009711ea2fdefe`
+- lane HEAD before the round: `b1d8f07b0d5895ffdd5bf9a143d2b591414fabea`; after: `878bc9125b858653615516c804769ef292bb4b4f`
 - driver dispatch/completion lines (`.ufo/watchdog.log`, mutable — copy this digest into notes):
 2026-11-08T12:28:52-03:00 launch tabi round=91 pgid=1065163 driver=hyaku-inline attempt=1
 2026-11-08T13:22:38-03:00 lane-dead-no-report tabi round=91; retry same round (hyaku-inline attempt=1: L1 ended without a landed report: FAIL report_of (missing, unchanged, no SHONEN heading, or < 400B): .ufo/reports/round-91/tabi.md)
@@ -32,10 +32,10 @@ never pass a model parameter; you write only the two artifacts in steps 4–5):
    template contract. Marker report (no checkable work/commit) → status `failed`. Defects are named
    in notes, status-neutral. Never run a jj command in the lane except through the helper (even
    `jj log` snapshots state unless it carries `--ignore-working-copy`).
-2. **Claims.** For each declared claim (1–3): re-derive its before→after against `7c59b26469a4a4415fe412d09b009711ea2fdefe` with a
+2. **Claims.** For each declared claim (1–3): re-derive its before→after against `878bc9125b858653615516c804769ef292bb4b4f` with a
    plain measurement you run yourself (grep/wc/jq/git/census counts over committed bytes) and
    compare with the reported values; check no owned axis was harmed
-   (`git -C /home/vgpnk/Projects/shokunin/tabi-shokunin diff b1d8f07b0d5895ffdd5bf9a143d2b591414fabea 7c59b26469a4a4415fe412d09b009711ea2fdefe -- SCORECARD.md`, plus spot reads). Where the claim
+   (`git -C /home/vgpnk/Projects/shokunin/tabi-shokunin diff b1d8f07b0d5895ffdd5bf9a143d2b591414fabea 878bc9125b858653615516c804769ef292bb4b4f -- SCORECARD.md`, plus spot reads). Where the claim
    rests on a lane-owned **gate** or selftest, PROTOCOL §Gate standard (Closure consequence) binds:
    verify its committed evidence (self-test tally, frozen-run verdict, revision measured) — never
    execute a sibling's gate — and say which claims were re-measured vs evidence-verified. For an
