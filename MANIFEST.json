@@ -60173,6 +60173,47 @@
    "notes": "dispatch/complete digest (.ufo/watchdog.log): 2026-11-08T11:31:05-03:00 launch souji round=90 pgid=2886868 driver=hyaku-inline attempt=1; 2026-11-08T12:19:22-03:00 complete souji round=90; hyaku-inline attempt=1. Step-1 ok: report 36f53d92 authored+committed by souji-shokunin, lands after the cited lane tip 93c7e6dc (report commit 12:18:10 > tip commit 12:17:24), SHONEN heading 1x with 4x[~] pointers, all 8 cited lane commits ancestors of master, lane clean ahead=0, prompt = byte-identical 8566-byte/140-line template rendering + addendum section 6. Wave-evidence durability fixed: 134 files under .ufo/waves/round-90 in the pushed tree, every ledger artifact resolves. Defects named, status-neutral: (a) report cites census/round-90/claims.json, which does not exist (actual .ufo/waves/round-90/claims.json); (b) attack share 7/12 (prefile ATTACK_ROLES set) conflicts with the prereg's own 6/12 and the addendum's 5/12 four-role list, all >=25%; (c) the driver's final w1-results.json retains no seat outputs (12x output:null, kernel-restart note) and the report discloses only the provisional-record swap, not that settlement evidence is the 12 committed seat reports; (d) the r89 design-only capability row ('a malformed-row binding whose id is absent from the ledger (measured, not landed)') still sits in the r89 capability table although AXES.md says a non-demonstrated capability does not enter; carried from the r89 spot-check. Routed to r91: the KFF9/KFF10 doubled-spelling conjuncts, the raw-window boundary row, the one-physical-line row, a fixture row for the _one_line deletion, and the battery self-pin (A5b), already in SCORECARD 'Planned (r91)'. SHONEN: all four boxes have resolvable non-author-checkable pointers (SKILL decision tables/error patterns/registry; LOG r90 end-to-end; prereg-alone reproductions by S90ExecC1/ExecC2/Reviewer2; PROVINCE + S90Connector section 3); promotion remains operator-owned. No promotions, no mints.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 100,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 100,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 100
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "freshness": "improved",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-100/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-100-verifier-spotcheck.md@61421c94feec9a3621b1febb53d477366e207d2a",
+    "rechecks": "Step 1: report 609ebc37 + correction aee9ed82 both committed by tsukuroi-shokunin <tsukuroi@shokunin.local>; one '## SHONEN' heading with 4 [~] lines matching the 4 SHONEN.md boxes; all 9 cited lane commits (ce73ccaf 743ce449 60b5636f c450cd68 69474c55 ef12af4c 7961738a 9da23561 23151986) exist and are ancestors of refs/heads/master (branch tested, HEAD detached); jj-lane state ahead=0 behind=0 tracked=0 untracked=0, porcelain clean; prompt .ufo/prompts/tsukuroi-round-100.md carries sections 1-5 incl. the L2 floor and the five child-lane items. C1 (depth) RE-MEASURED: instruments.sha256 14/14 OK; re-ran make-r100-bends.py in a scratch tree -> both bends byte-identical (eb247e16 N12, e1e5916f N13), each diff exactly one changed limine_version line; no-work control git cat-file -e ce73ccaf:tools/make-r100-bends.py = exit 128; recomputed all 30 committed battery runs: gate met 105/105 x3+x3 0 error rows, N13 unmet 104/105 exactly [REFUSAL-VERSIONS-9DIGIT-Y] x3+x3, N12 unmet 103/105 exactly [EXPLICIT-VERSION-ECHO, REFUSAL-VERSIONS-9DIGIT] x3+x3, r98 control met 105/105 on N13 (blind) and unmet 104/105 exactly [EXPLICIT-VERSION-ECHO] on N12; assertion sites inspected (r99 check_echo on the X and Y families, r98 not), so Y is a met->unmet flip and X a one-family delta (A3). C2 (freshness) RE-MEASURED: independent table locator counts operative rows 163 at ce73ccaf/743ce449 -> 165 at 69474c55/tip; independent label-set tokeniser binds SPACE/SEMICOLON/AND/SLASH/PLUS/UNION, fails closed on LETTER/PROSE/UNION-LIE/HYBRID, passes GAP, and the live cell5 set equals tools/make-r96-bends.py VARIANTS keys; evidence-verified receipts: selftest 26/26 vs 17/17, content-tip PASS 7 bindings/165 rows/0 findings at 69474c55, r99 control PASS 7/7, coverage PASS 165/165/165, 12/12 fixture readings (HYBRID id moves CELL-MISSING -> VALUE-MISMATCH under the frozen 'unchanged or sharper'). No axis harmed: SCORECARD 50/0, LOG 38/0, SKILL 18/0, QUALITY 3/0, SOURCES 3/0, README 25/0, knowledge 97/0, lesson 133/0 (all additions); PROVINCE.md, SHONEN.md, check-limine-pins.py, both batteries and the r99 checker show no diff. Pre-file ledger: PREFILE-FALSIFICATION pass claims=2 rows=14 attack_seats=6 findings=0 (exit 0); its 3 falsifies-wording rows adjudicated reconciled (A2/A5 main-return narrowing, A6/A7 empty-run lenience and set-vs-keys width). Discernment spot-check: S397 admit re-opened (re.html 257722 B sha256 69d64759..., quote byte 112171 verbatim) agree; S398 reject re-opened (CONFIG.md 27609 B sha256 f44f3a19..., four greps 0/0/0/0) agree; S396 own-work re-opened (anchors 2615/3365, parser 12134) agree with a row-wording defect routed; census validate exit 0, 398 rows, 57 W04 + 1 W01."
+   },
+   "commit": "tsukuroi-shokunin@23151986441fbfd8d32778b68292d955035d9341",
+   "closed_at": "2026-11-08T16:01:31Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable, copied): 2026-11-08T11:54:19-03:00 launch tsukuroi round=100 pgid=2232722 driver=hyaku-inline attempt=1 | 2026-11-08T12:55:57-03:00 complete tsukuroi round=100; hyaku-inline attempt=1. Status ok (real committed round; report landed by the lane identity before the correction commit). Wave: 14 seats, 13 filed, ReviewRegistry dead at spawn (0-byte output, recorded, not credited, not replaced); attack roles 6/14 = 42.9%. Defects (status-neutral): report L53 says the lesson 'mines five mistakes' where the lesson carries 9 rows (its own parenthesis names 7) -> R100-VER-3 erratum owed; S396 SOURCES row written this round still says 'emission lines ... BYTE 3384 (N13)' (3384 is the lie literal, clause starts 3365) and its teaches cell says 'exactly the family' where X measures two -> R100-VER-1/2, rewrite the row or add S399 (the lesson already names the correct pair, so the fact is on record but the superseded wording was not swept); knowledge entry cites the gate limine_version emission at BYTE 16931, the newline before the clause (16932 is the first byte) -> R100-VER-4. Carried/operator: adjacency (8, tied lowest) carried no claim - the kaidoku/revenger reverse-engineering ownership stays operator-owned and unruled; the other tied-lowest axis (depth) carried C1, so the lowest-axis duty is met. Promotion: all four SHONEN boxes now have non-author-executable evidence in this round's spot-check; writing [x], deleting SHONEN.md and bumping the MANIFEST rank remain operator work. Misroot sweep re-run: the fleet worktree carries only other lanes' .scratch/l0-questions paths.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
