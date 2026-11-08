@@ -60429,6 +60429,50 @@
    "notes": "Dispatch digest: launch 12:28:49-03 attempt=1; lane-dead-no-report at 13:22:29, 13:23:25, 13:24:07 (attempts 1-3, retries); complete 13:44:34 (logged attempt=1). Prompt's lane HEAD before=after=28e7bda9 is a driver snapshot; real base 034240a5, 9 lane commits. Defects (status-neutral, routed r99): D1 fa2d2169 rewrote filed round-94 R94-C1 verdict cell in place adding '(A3-A10)' (round 94 had A1-A8) - append a named correction; D2 report :31-32 says C1 selftest 18/18 at freeze but pre-freeze/c1-audit-selftest.out prints 12/12 - erratum; D3 before receipts hold bare rc=1 with no command/scope and the .ufo/evidence scope is missing from claims.json C2 before; D4 dead seat R98E4 (registry re-check), registry pairs L1-run only; D5 carried limits: battery 5/10 mutants survive (R98M1), audit blind to renamed recorders/want=code tautology. SHONEN 4x[~]; boxes 1-2 look non-author checkable (operator-owned promotion).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 91,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 91,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 91
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "a six-clause population binding whose five rows are each load-bearing",
+    "a UTF-8 sequence-boundary excerpt cut with a before/after cell pair"
+   ],
+   "report": ".ufo/reports/round-91/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-91-verifier-spotcheck.md@5339b2ac79f81aa446f6a2cd4700321cf4982fd3",
+    "rechecks": "All re-measured on a git-archive export of 9deaefda (all 10 instrument sha256 pins match). C1: battery --only r90,r91 -> SUMMARY mutants=22 sets=r90,r91 pristine_r90=ok pristine_r91=ok killed_r90=16 killed_r91=22 killed_total=38 EXIT 0; six new edits killed=no on r90 / killed=yes on r91; r91 population = r90 bytes + LD1c/LD3/LD4/NF6i2/NF6j; mutant members[:16] == r90 set; separate r90-only control re-run cut by closer's 900 s deadline, evidence-verified from committed c1-control-r90.txt (killed_total=16) and subsumed by the r90 arm. C2: fixture 15/15 vs before 14 EXIT 0, r90-tool-both-arms control 14/14 EXIT 1 (KFF11); variant probe r91 detected=3, r90 control detected=0; K4 rows=12 mismatches=0 errors=0; own 2,500-payload valid-UTF-8 sweep 0 splits; invalid-lead residual reproduced (payload shas f639d877/b53080a7, cells equal) = A2(a) narrowing. Prefile ledger pass claims=2 rows=18 attack_seats=7 findings=0 EXIT 0, 8 falsifies-wording rows all real and reconciled in plans/round-91.md A1/A2. Census souji ok EXIT 0, 275->276. S354 re-opened live: HTTP 200, cmp-identical to capture, 25-word quote occurrence 1 (agree); RFC 3629 §10 reject (agree, flip-condition note for r92)."
+   },
+   "commit": "souji-shokunin@9deaefda2853a0b78482f714166523c654b128eb",
+   "closed_at": "2026-11-08T23:30:37Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest (.ufo/watchdog.log): 2026-11-08T12:31:50-03:00 launch souji round=91 pgid=2527681 driver=hyaku-inline attempt=1; 2026-11-08T13:51:17-03:00 lane-dead-no-report souji round=91; retry same round (attempt=1: no landed report); 2026-11-08T19:48:13-03:00 launch souji round=91 pgid=53479 driver=hyaku-inline attempt=2; 2026-11-08T20:12:32-03:00 complete souji round=91; hyaku-inline attempt=2. Step-1 ok: report 4af415c3 authored+committed by souji-shokunin at 20:12:17, after lane tip 9deaefda (20:06:53); SHONEN 1x with 4x[~] pointers, SHONEN.md no [x]; all 6 cited lane commits ancestors of master; lane clean ahead=0 behind=0; prompt = exact template rendering (lane/round/fleet root/repo/axes) + addendum sections 6 and 8. Attempt 2 reused attempt-1 commits after re-verification and disclosed it. Status-neutral note: 4 of 13 seats died on provider errors (R91Critic, R91Revenger, R91Sentinel 429; R91MutCounter 400/permission_denied), dead-seat records committed, never replaced per addendum; settled attack share 2/13 (planned 4/13 = 30.8%) - C1 alternative-edit survivor search never ran. r90 routed defects all answered (claims path, one attack-share definition, settlement provenance, r89 capability row annotated SUPERSEDED, narrowed work carried as C2). No owned axis harmed: SKILL.md/PROVINCE.md/SHONEN.md untouched, SCORECARD additive plus the routed relabel. Routed to r92: (1) _cut_tail invalid-lead collision fix + head-cut/invalid-lead fixture rows; (2) KFF13 via ast both directions; (3) C1 alternative-edit survivor search + LD4 rc=0 assertion; (4) re-gate RFC 3629 §4/§10 before any validity range-check claim (the §10 reject's flip condition will fire); (5) r91 population header hygiene (R91Connector F3). For the operator: the four SHONEN boxes carry pointers a non-author can check; promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
