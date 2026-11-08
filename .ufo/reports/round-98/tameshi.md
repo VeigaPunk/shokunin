@@ -6,9 +6,9 @@ Instruments commits: `6b1428c8` (v1 audit, repaired driver, battery, registry au
 `d32043ec` (battery exit-code repair; wave specs). Freeze: `764aca97`. Records revision R:
 `3b7ae1272d161aa0297e1d04b2b7ec5b40112912` (the commit that carries the amended plan/claims, the
 repaired instruments, the wave reports and the record prose). Landing: `fa2d2169`; lesson wave
-section: `647408f0`; falsification ledger: `4b8f4ed1`. **Lane tip at filing: `4b8f4ed1ff7d6146b0bbcd63c398e60b705ef3eb`**
+section: `647408f0`; falsification ledger: `4b8f4ed1`. **Lane tip at filing: `28e7bda908bcef05261961f744dfe11edbf099a9`**
 (`git -C tameshi-shokunin ls-remote origin refs/heads/master` prints it; `jj-lane.sh state` →
-`branch=master local=4b8f4ed1 remote=4b8f4ed1 ahead=0 behind=0`; worktree clean).
+`branch=master local=28e7bda9 remote=28e7bda9 ahead=0 behind=0`; worktree clean).
 
 ## Work performed
 
@@ -91,8 +91,9 @@ Work items (each with its evidence pointer):
   C2 and hand-drove both formerly code-only classes; R98E3 re-derived all 18 control receipts;
   R98R1 falsified five C1 classification mechanisms (A5); R98R2 falsified C2's pin/red/transcript
   sentences (A4/A7/A8/A10); R98C1 found the nested-scope constant (A5) and the `want=code`
-  tautology (A6); R98M1 ran a 20-mutant matrix over both instruments (13 killed, 7 survivors with
-  named equivalences/gaps); R98SN1 held environment/path confinement and found the unpinned
+  tautology (A6); R98M1 ran a 20-mutant matrix over both instruments (`MUTANTS audit=7/10 battery=7/10`;
+  with the repaired instruments the same runs give `audit=6/10 battery=5/10`, the three extra
+  survivors a8/b8/b11 killed only by a supplementary arm); R98SN1 held environment/path confinement and found the unpinned
   battery mode (A7); R98CN1 found no duplicate implementation; R98L1 mapped the recorder-shape
   boundary; R98S1 drafted the record fragments; R98SC1 re-opened both sources and the UA matrix.
 
@@ -108,6 +109,7 @@ Work items (each with its evidence pointer):
 | records receipts at R, SCORECARD §Round 98, `records-rev.txt`, falsification ledger, census after | Round 98 | `fa2d2169` |
 | lesson Wave section | Round 98 | `647408f0` |
 | falsification ledger paths under `w1/` (prefile gate pass) | Round 98 | `4b8f4ed1` |
+| SCORECARD wave text (R98M1 mutant tallies as reported) | Round 98 | `28e7bda9` |
 
 ## Before → after measurements
 
@@ -168,8 +170,8 @@ probes.
 ## Stale-lane
 
 This is the lane's only open mission (respawn-per-round driver). Launch
-`2026-11-08T12:28:49-03:00` → lane tip `2026-11-08T13:40:17-03:00` = **1 h 11 m 28 s**; **8 lane
-commits** landed after the launch (`git log --oneline 034240a5..4b8f4ed1 | wc -l` → 8), so the
+`2026-11-08T12:28:49-03:00` → lane tip `2026-11-08T13:41:20-03:00` = **1 h 12 m 31 s**; **9 lane
+commits** landed after the launch (`git log --oneline 034240a5..28e7bda9 | wc -l` → 9), so the
 round is `progressing`, not silent. The wave sat at the dispatcher's `host-defer` gate from 12:50
 to 13:12 (~22 min) because 128 leaked `while True: pass` burners held load1 ~160 against
 `LOAD_MAX` 144; the orchestrator reaped them (message at 13:12) and the wave spawned at
