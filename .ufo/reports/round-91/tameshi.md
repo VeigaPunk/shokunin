@@ -1,6 +1,7 @@
 # tameshi — round 91 (fresh start)
 
-Lane: `/home/vgpnk/Projects/shokunin/tameshi-shokunin`. Base `87d1635c`. Freeze `50e59d59`
+Lane: `/home/vgpnk/Projects/shokunin/tameshi-shokunin`. Base `87d1635c`. **Lane HEAD
+`63172b98`** (pushed; `ls-remote origin refs/heads/master` prints it). Freeze `50e59d59`
 (`plans/round-91.plan.md` + `.ufo/waves/round-91/claims.json`). Attempt 1.
 
 **Declared claims (2, both withdrawn to honest stop by this round's own wave):**
