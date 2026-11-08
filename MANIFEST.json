@@ -58834,6 +58834,45 @@
    "notes": "dispatch 2026-11-08T04:33:04-03:00 launch souji round=85 pgid=1687441 driver=hyaku-inline attempt=1; complete 2026-11-08T05:31:03-03:00. Step-1 PASS (report lane-committed dc7fe33d, SHONEN 4x[~], 9/9 commits ancestors of master, ahead=0 clean, F = prereg alone, prompt carries template contract, 12 seats 42% attack). Prefile ledger: pass claims=2 rows=14 attack_seats=6 findings=0 exit 0; all 5 falsifies-wording rows name plans/round-85.md A1/A2/A6/A7. Defects (status-neutral): D1 report registry line 259→260 contradicts committed 259→263 (S337+S338+S339+S340 in 5d3dd78d + 2bd0149c; lesson states 259→263 correctly) — re-derive count at file time; D2 wave seat reports .ufo/waves/round-85/w1/S85*.md gitignored/untracked (ledger cites them; aa2b9ccf force-adds only claims/ledger/results) — force-add seat reports; D3 inherited K3 receipt disagreement routed to r86. Routed: NF-W + 48-row pop, NF-L3, token-on-line, five unbound guards, gitlink/flag sweep, stage-0 rows, five-path cap, r83/r84 C2 list. SHONEN boxes look non-author-checkable (promotion operator-owned).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 93,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 93,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 93
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "conjunct-disposition audit"
+   ],
+   "report": ".ufo/reports/round-93/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-93-verifier-spotcheck.md@a8f0e14bd400002324793d82030431696435d9a7",
+    "rechecks": "C1 re-measured (C1_R93_PASS=true exit 0, 19 conjuncts, 12 cells) and C2 re-measured (DISPOSITION rows=19 falsifiable=17 unfalsifiable=2 findings=0, selftest 6/6) at 848412ee; prefile-falsification pass claims=2 rows=13 attack_seats=6 findings=0; discernment spot-check: 3 admits + 2 rejects re-opened, all agree with located quotes; census tameshi ok (180->182 rows); SCORECARD diff shows one capability row added, no axis harmed (depth 10, calibration 8, freshness 9 unchanged)"
+   },
+   "commit": "tameshi-shokunin@848412ee0d167db99cf81432d0b237fb16d2fdda",
+   "closed_at": "2026-11-08T04:00:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-08T04:31:54-03:00 launch tameshi round=93 pgid=394864 driver=hyaku-inline attempt=1; 2026-11-08T05:39:43-03:00 complete tameshi round=93; hyaku-inline attempt=1. Report committed by lane identity; SHONEN heading present (4x [~]); cited commits all ancestors of master; lane clean, ahead=0, ls-remote==848412ee. Base in closure prompt b392f5f is an ancestor of 848412ee (report's 4a7e259b is the round's declared base) — consistent, no defect. PREFILE-FALSIFICATION: pass (exit 0); 4 falsifies-wording rows all real and reconciled via plan amendments A1-A4 before filing. Routed defects for round 94 (status-neutral, from wave, lane-acknowledged): A1 fence-blind coverage scan; A2 width/delimiter rules + remainder-row policy; A3 HIGH self-referential seal (externally anchor gate identity); A4 strengthen C2 seal-name test; M9 receipt-guard holes (O_NOFOLLOW + run-scoped outdir); M10 GIT_* driver env scrubbing; M8/A6 eight rule-level states; M1 fixture-assembly assertion. SHONEN boxes all [~] (none [x]) — still operator-owned promotion review.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
