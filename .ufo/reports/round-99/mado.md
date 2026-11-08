@@ -214,5 +214,9 @@ Skeleton `claim-falsification.tsv`: 8 rows, 2 claims, all 6 attack seats read
   `plans/round-99.md`, `claims.json`, `claim-falsification.tsv`, the C2 full-panel and two-leg
   probe receipts, the round-99 SCORECARD/LOG records, lesson M99-3/M99-4, QUALITY 172.
 - **Stale-lane:** respawn-per-round driver; no other mission of this lane is open.
+- **Misroot sweep:** `git -C /home/vgpnk/Projects/shokunin status --porcelain` (no pathspec) finds no
+  mado seat file at the fleet root. The only untracked non-`.scratch` entry is
+  `plans/round-91.md`, a foreign lane's limine-pin narrowing amendment (round 91, not mado) —
+  left untouched and named here; no mado copy was made.
 - **Tooling:** no tool installed or upgraded; no pacman transaction. Used `python3` (stdlib), `git`
   read-only, the lane's own counters and `jj-lane.sh`/`fleet-commit.sh` for landing.
