@@ -59038,6 +59038,50 @@
    "notes": "Dispatch digest (copied from the mutable .ufo/watchdog.log): 2026-11-08T03:48:14-03:00 launch tsukuroi round=94 pgid=3007652 driver=hyaku-inline attempt=1; 2026-11-08T06:28:56-03:00 complete tsukuroi round=94; hyaku-inline attempt=1. Status ok, NOT admitted: honest stop - C1 (measured, depth 8, tied lowest) fails its frozen target because the N04 stale-tree bend reads met 98/98 in all six runs (its decoy assigns _stale_default and never reads it), which the lane's own attack seat found and the lane filed as not met instead of narrowing the sentence around it; C2 (operability 9, capability installed-version-probe becomes the default) verifies on committed receipts. Axis verdicts: depth unchanged, operability improved, coverage unchanged, freshness improved, calibration unchanged, adjacency unchanged; no axis harmed (the 96 r93 families still pass 96/96 on the landed gate; no corpus deletions). Conformance defects, all status-neutral and routed in the spot-check 1-10: (1) Gate-standard registry row missing for tools/limine-pin-battery-r94.py and tools/make-r94-bends.py while SKILL.md was untouched, and the limine-pins row still says default 12.9.4 / 37 fixtures (now auto / 39) - the lane's own registry-coverage gate would be red at this tip; (2) no w1.ready / w1.ready.dispatched committed (rounds 84-93 all have both) although the report says one .ready, and the WAVE-DONE line exists only in the report; (3) sha256sum -c on before/freeze-manifest.sha256 fails on .ufo/plans/round-94.md (11 OK) while A3 says it still verifies 12/12 - the claim-void instrument set before/instruments.sha256 is clean at 11/11 so no receipt is voided; (4) the frozen do-nothing sentence reads 96/98 where both receipts read 97/98, and claims the r93 gate answers a verdict for a stderr-only fake that its p.stdout-only probe refuses; A3 both restates 96/98 and cites 97/98; (5) report prose counts disagree with their artifacts: Three falsifies-wording rows vs the TSV's 4, and two new W04s vs the census's three - the same class r93 routed as its defect 1, whose correction was not discharged; (6) 029f6629 (claim-falsification path shape, pushed after the report) is cited in neither report nor LOG; (7) the lesson's mapping of r93 routed items 1/4/5 does not match the routed text; (8) fam_auto_probe_shapes' docstring says the stderr shape is not exercised while its fixture emits it and M06-read-stderr dies on that family, and REFUSAL_DIGIT9 is a dead constant so the accepted 9-digit boundary is certified only by the usage roster; (9) battery-level coverage gaps kept on the frontier (12.9.6.1 shape unexercised; an over-strict <=8 gate scores 98/98); (10) contested kaidoku/revenger RE ownership still unruled (operator-owned, reported not absorbed). SHONEN: four author-side [~] boxes; boxes 1-2 look mechanically checkable by a non-author but box 3 states its own unexecuted retest and box 4 carries the unruled contested scope, so the checklist is not fully checkable - promotion stays operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 86,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 86,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 86
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "chromium-showpicker-linux (generation r86)",
+    "battery-leg-witnesses"
+   ],
+   "report": ".ufo/reports/round-86/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-86-verifier-spotcheck.md@24765dd95b5ef01ffc24a19ae5f293315216f4e5",
+    "rechecks": "C1 evidence-verified at lane tip 346b3260: receipt 30 legs/failures []/nonce tabi-r86-l1-4bd89a80f439/fixture 94421dc0/driver 5a435da6; five accept legs each one selectSingle chooser + input/change/read back, colour leg 0 choosers; counter clean 95/0, battery 201/0 coverage 95/95, kill power 66/66/0/0, selftest 10/10; seven freeze pins match committed sha256; knowledge 98->99; control now 40 findings/89 checks (report Before->after still says 39). C2 evidence-verified: witness-a.json before 3 named survivors/after 0 of 12; 12 cases generated at negatives-showpicker-r86.mjs:265-280. Lane gates not executed (PROTOCOL Gate standard). Pre-file ledger pass claims=2 rows=11 attack_seats=6 findings=0 (exit 0). Census exit 0, 223 rows both ends; SOURCES byte-identical base->tip (no new rows); S223/S219 re-opened quotes located in the staged WHATWG page and re-derived at 18/21 words. Report committed by lane identity 9ff5c862 after lane tip 346b3260; all cited commits ancestors of master; lane ahead=0, clean, pushed."
+   },
+   "commit": "tabi-shokunin@346b3260321f1914043b9b25e1f99801ca41c1ea",
+   "closed_at": "2026-11-08T09:45:50Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-08T05:05:28-03:00 launch tabi round=86 pgid=1628955 driver=hyaku-inline attempt=1; 2026-11-08T06:36:49-03:00 complete tabi round=86; hyaku-inline attempt=1. Step-1 conformant (report SHONEN 1 heading + 4 [~] lines; cited lane commits 9919aa52/d80b2489/346b3260 exist and are ancestors of master; lane tip 346b3260 pushed and clean; prompt carries template sections 1-5 + hyaku addendum 6 and the five child-lane items; L2 floor met, 11 seats in one wave, 4/11 policy attack seats). Both claims verify: C1 coverage (capability chromium-showpicker-linux generation r86; accept token matrix + same-origin colour arm; 95 checks clean, battery 201/0, kill power 66/66, selftest 10/10, knowledge 98->99, two capability rows); C2 operability (tel-only conjunct witnesses 3->0 of 12). No axis harmed. Routed defects for r87 (none bars admission): (1) report Before->after C1 says 39 findings while the committed control has 40 (Work performed/LOG/SCORECARD say 40) - recurrence of the r85 count defect; (2) report Sources & frontier says S221/S222 re-opened while lesson Corrections item 4 says carried, not re-opened; (3) the accept-headline narrowing was not swept into SKILL.md:3321 ('never a validator') or plans/round-86.md:23 ('filters the dialog') - QUALITY criterion 14 / corrections sweep; (4) lesson Mistakes rows witness-polarity/guard-inversion cite witness-a.json 'first two runs' but the committed file is the final run (Scribe Finding 9 unreconciled; lesson-proof empty) - commit the red-before outputs; (5) no round-86 search-log entry in corpus/SOURCES.md for the bounded re-opening (CORPUS rule 5); (6) prompt asks a planner seat, wave dispatched none (L1 holds planning, validator rejects planner) - operator/template note; (7) ledger Scribe row points at plans Narrowings item 1 while the headline narrowing is lesson Corrections item 3. The report's discernment line 'no claim sentence survives that a wave artifact falsified' is overstated by (3); trend improved on the wave's caught-and-narrowed work. SHONEN boxes are [~] (author-attested); a non-author promotion review remains operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
