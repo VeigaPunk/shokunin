@@ -1,7 +1,7 @@
 # chousa — round 85 report
 
-Lane HEAD before `43c3f7284eee4889cdcc6ac1626573f6579cd533` → after `a8041fcdedb2a5bcddf366f4e4b004bc23375c77`
-(`git ls-remote origin refs/heads/master` prints `a8041fcd…`; `jj-lane.sh state` → `ahead=0 behind=0`). Attempt 1; no
+Lane HEAD before `43c3f7284eee4889cdcc6ac1626573f6579cd533` → after `da97aaa2d8c676deec659d6fcde893e1bfda9e74`
+(`git ls-remote origin refs/heads/master` prints `da97aaa2…`; `jj-lane.sh state` → `ahead=0 behind=0`). Attempt 1; no
 earlier attempt of round 85 left work (`.ufo/watchdog.log` has no `lane-dead-no-report chousa round=85`;
 `.ufo/waves/round-85/` did not exist at round start).
 
@@ -52,6 +52,7 @@ knowledge entry `provenance-recording-r85.md` teaching provenance recording on S
 | wave spec w1 + dispatch + ready handoff | bullet 7 | `863d624e7245e1e11086c60295bbcccf52d8dcec` |
 | wave w1 seat reports, receipts, `w1-results.json` | bullet 7 | in `a8041fcd` |
 | post-scoring repairs (tool guards, entry rows 1/5), lesson corrections, SCORECARD/LOG/QUALITY 169–172, ledger | bullets 3–8 | `a8041fcdedb2a5bcddf366f4e4b004bc23375c77` |
+| erratum naming the stray non-predicate line at `claims.md:136` (filed, not edited) | bullet 9 | `da97aaa2d8c676deec659d6fcde893e1bfda9e74` |
 
 ## Before → after measurements
 
