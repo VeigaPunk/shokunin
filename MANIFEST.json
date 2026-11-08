@@ -59749,6 +59749,49 @@
    "notes": "Dispatch digest: 2026-11-08T09:34:03-03:00 launch tsukuroi round=98 pgid=4112028 driver=hyaku-inline attempt=1; 2026-11-08T10:30:09-03:00 complete tsukuroi round=98; hyaku-inline attempt=1. Report committed by lane identity (c0c48638), SHONEN 4x[~] with evidence pointers, cited commits 1cfeb5d5/270ca298/839954b7 ancestors of master, ahead=0, no uncommitted round work, prompt carries the full template contract. Defects (status-neutral, routed): R99-D1 the PASS 160/160 settled-tip coverage figure cites an unlanded after/c2 receipt (freeze receipts are committed); the Y-cap/B03/M07/hybrid limits stay in the lane's frontier queue. Gate-standard: committed self-test tallies, frozen-run verdicts and measured revisions verified; no sibling gate executed. Axes agree with the spot-check table; no axis harmed.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 89,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 89,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 89
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "chromium-showpicker-linux generation r89 — the DOM-parsed accept token list: four sp89-accept-domread legs re-read window.__inputs() at settle with the raw accept string and the parsed tokens both bound (fixture-emulated split/trim/lowercase), 41 legs / 107 checks"
+   ],
+   "report": ".ufo/reports/round-89/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-89-verifier-spotcheck.md@a9f1da0828856ccd4987d1ee07df857fad044b15",
+    "rechecks": "C1 evidence-verified at 57783d47: receipt 41 legs / failures [] / nonce+driver+fixture pins, freeze.txt sha256 061dec8a with 8/8 pins equal to committed bytes, counter clean 107, battery 223/0/coverage 107/107, kill power 72/72/0/0/0, selftest 11/11, knowledge 101→102, SOURCES 223→224; C2 predicate re-derived at 57783d47 (drift-before 3 → 0; four statement predicates all green by reviewer replica), selftest gate-selftest 4 isolated modes exit 0; prefile-falsification pass claims=2 rows=12 attack_seats=6 findings=0 (exit 0); sibling gates not executed"
+   },
+   "commit": "tabi-shokunin@57783d472665c56b138572cef9cc5f0103c98ac8",
+   "closed_at": "2026-11-08T13:41:28Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (.ufo/watchdog.log, mutable, copied): 2026-11-08T09:18:48-03:00 launch tabi round=89 pgid=1904948 driver=hyaku-inline attempt=1 | 2026-11-08T10:28:36-03:00 complete tabi round=89; hyaku-inline attempt=1. Step-1 ok: report 7505982f by tabi-shokunin <tabi@shokunin.local> (committer 10:28:17, 9 s after the lane ledger commit 57783d47 — lands last; pathspec-limited, +212; author date 09:46:35 stale), SHONEN heading line 197 with 4 [~] lines and pointers; cited 0791b191/b7513f81 and base 5a901163 all ancestors of refs/heads/master; lane 57783d47 = origin/master, jj ahead=0 behind=0, porcelain empty; prompt 3a8000ca carries claims/axes + lowest-axis, L2 floor, report contract, commit/push/L0. One v1 wave, 12 seats (3 executor, 2 reviewer, critic, mutation-tester, scout, scribe, connector, sentinel, simplifier; 5 attack of 12), dispatch counts spawn 12, 12/12 filed. C1 coverage improved, C2 calibration improved; no axis harmed (SCORECARD diff additive; PROVINCE untouched). Pre-file ledger pass 12 rows/6 attack seats; the C1/Mut1 falsifies row adjudicated spurious (leg (b) scoped to the declared 72-mutant list = 72/72), C1/Review2 and C2/Sentinel reconciled. Spot-check: admit (knowledge r89) + 2 rejects (Chromium-tokenization, counter-verified settle re-read) agree; S224 re-fetched live HTTP 200, 121,595 B, sha256 2e9e2cbbe1ed = staged; census validate exit 0, 224 rows. Status-neutral defects routed to r90: (1) claims.json C2 type item (3) still says a numbered replay-limit-consistency check binds (removed at D3; only computed limit.replayConsistency, read by no gate) and leg (c) carries the misspelled glob tapi-r89-driftfix-* (no fixture-leak check exists; the 0-after is the plan's manual ls; cleanup unbound — R89Mut1 selftest-fixture-cleanup-dropped survives); the lane's ledger row C2/Mut1 was neutral where the seat declared both clauses FALSE — sweep claim+plan §C2 item 3 or add frozenAmendments, reclassify the row; (2) both C1 narrowing rows and the report cite plans/round-89.md §Narrowings and §Frozen-amendment note, which do not exist (amendments live in SCORECARD.md and claims.json); (3) census end recorded as 223 rows vs the committed 224; (4) S223/S219 're-opened in place' is the r88 re-opening (round-88.md:27-34; no r89 input.html staged), carried rows are fine; (5) drift-a.json written 10:13 predates the final SCORECARD/SKILL writes, though the four predicates hold at 57783d47 by re-derivation; (6) S224 Gate quote is 31 words (>25 CORPUS rule 1) and the r89 search-log quote is a paraphrase; (7) report author date predates the lane tip. SHONEN boxes all look checkable by a non-author from committed artifacts (SKILL registry + instruments; receipt + seat reports; three executor seats ran the frozen commands from their prompt; connector scan) — promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
