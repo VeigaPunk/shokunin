@@ -5,9 +5,11 @@ Claim BASE `076701a11a58e3eb58d996b4c76c5e18071fb179` (round-66 verifier
 spot-check tip). Frozen predeclaration `plans/round-67.md` at
 `aa8807e443166f45485e1aada2989f646efc707c`; Amendments A1–A5 appended in the
 same file, each naming the seat that forced it. Lane tip after this round's
-work: `c686b035f4dba398426222ee5bb7cba8aeee5e8c` (three commits: the round's work,
-the scribe's four entry corrections, and the wave's results receipt); the lane
-remote prints that hash.
+work: `5bf73e27a9062dbacc3b43d884558bd2fc409c50` (four commits: the round's work
+`e075fc50`, the scribe's four entry corrections `cf26e146`, the wave's results
+receipt `c686b035`, and the late seat evidence `5bf73e27`, which re-runs the
+gate and mutation-tester reports against the landed gate bytes); the lane remote
+prints that hash.
 
 ## Work performed
 
@@ -103,6 +105,7 @@ Work items (each with its evidence):
 |---|---|---|
 | plan, claims, declared-axis rows, scorecard pre-move | §Round 67 bullet 1–2 | `aa8807e4` |
 | census capture read-through, S115 re-cut, both counters, S166 + entry, seven record repairs, ledger migration, wave evidence | §Round 67 bullets 3–11 | `e075fc50` |
+| late seat evidence: gate + mutation reports re-run on the landed gate | §Round 67 (appended) | `5bf73e27` |
 | scribe's four entry corrections + fetch receipt + its seat report | §Round 67 (appended) | `cf26e146` |
 | wave `kagi-r67-w1` results receipt | §Round 67 (appended) | `c686b035` |
 | this report (fleet repo) | — | fleet commit by `fleet-commit.sh --as kagi` |
@@ -121,7 +124,7 @@ bash plans/round-67-c1.sh --tree <TREE> --base-tree <BASE extraction> [--scratch
 | side | measured | receipt |
 |---|---|---|
 | BASE `076701a` | `C1_READTHROUGH: bound=36 located=35 caught=0/6 guard=0` rc 1 | `.ufo/waves/round-67/final/c1-base.txt` |
-| candidate `e075fc50` | `C1_READTHROUGH: bound=36 located=36 caught=6/6 guard=1` rc 0 | `.ufo/waves/round-67/final/c1-candidate.txt` |
+| candidate `5bf73e27` | `C1_READTHROUGH: bound=36 located=36 caught=6/6 guard=1` rc 0 | `.ufo/waves/round-67/final/c1-candidate.txt` |
 
 The six mutations (repoint to a same-size different-digest body, truncate by
 one byte, delete the body, absolute location, `..` location, non-locating
@@ -146,7 +149,7 @@ bash plans/round-67-c2.sh --tree <TREE> [--scratch DIR]
 | side | measured | receipt |
 |---|---|---|
 | BASE `076701a` | `C2_FIDELITY: mismatches=7 population=7 guard=1` rc 1 | `.ufo/waves/round-67/final/c2-base.txt` |
-| candidate `e075fc50` | `C2_FIDELITY: mismatches=0 population=7 guard=1` rc 0 | `.ufo/waves/round-67/final/c2-candidate.txt` |
+| candidate `5bf73e27` | `C2_FIDELITY: mismatches=0 population=7 guard=1` rc 0 | `.ufo/waves/round-67/final/c2-candidate.txt` |
 
 Legs L1–L7 (each prints `LEG L<n> verdict=…`): scorecard honest-stop cell,
 SKILL pin vs instrument, coverage-map row, sentinel ledger row, claims.json
