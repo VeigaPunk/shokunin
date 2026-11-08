@@ -83,7 +83,7 @@ Frontier rows advanced: none into core (the round's coverage move is the C1 capa
 Gate: `python3 /home/vgpnk/Projects/shokunin/scripts/hyaku/prefile-falsification.py --lane tabi --round 82` →
 
 ```
-PREFILE-FALSIFICATION: pass claims=2 rows=10 attack_seats=5 findings=0
+PREFILE-FALSIFICATION: pass claims=2 rows=8 attack_seats=5 findings=0
 ```
 
 (exit 0; output pasted verbatim. The skeleton ledger from `--init` was replaced by the reconciled rows after WAVE-DONE.)
