@@ -156,10 +156,11 @@ node scripts/check-record-drift-r88.mjs --lane <ABS lane> --json
 
 ## Corrections the wave forced
 
-`plans/round-88.md` §Narrowings 1–7 and §Frozen-amendment note: the grammar count (nine in-grammar of
+`plans/round-88.md` §Narrowings 1–8 and §Frozen-amendment note: the grammar count (nine in-grammar of
 ten values); per-leg attribution; `upload*`/patch-body non-binding; the drift fixture's
-overdetermination; selftest assertion strength; battery witness holes; the replay limit-block defect;
-and the C2 before-numeral correction (3 → 4, disclosed).
+overdetermination; selftest assertion strength; battery witness holes; the drift selftest's leaked
+fixture directory (14 trees cleaned by hand); the replay limit-block defect; and the C2
+before-numeral correction (3 → 4, disclosed).
 
 ## Seat ledger (12 seats, all filed; `w1-results.json` = 12 results)
 
