@@ -4,7 +4,7 @@
 **Round:** 88, attempt 1. **Lane repo:** `/home/vgpnk/Projects/shokunin/tabi-shokunin`
 **Base:** `f16f992d` (lane clean). **Scored receipt:** `corpus/evidence/round88/chromium-showpicker/receipt.json`
 (nonce `tabi-r88-l1-86f1dcec`, driver `8c015fa4…`, fixture `8f93405128f1…`, 37 legs, 0 failures).
-**Lane tip:** `c0b7c272` (pushed; `ls-remote origin refs/heads/master` prints it). **Instrument freeze:** D7 `abfd00a2` (`plans/round-88.md` §Re-freeze history: D1 `86f1dcec` first freeze,
+**Lane tip:** `0a4750e7` (pushed; `ls-remote origin refs/heads/master` prints it). **Instrument freeze:** D7 `abfd00a2` (`plans/round-88.md` §Re-freeze history: D1 `86f1dcec` first freeze,
 D2 `138bb883` selftest re-pin + genuine 37-leg priors, D3 `93500a4e` the `gate-selftest` gate, D4 the
 kill-power mutant from-string, D5 the runner gate's own read bug, D6 the critic-driven tally/selftest
 strengthening, D7 the counter dereference guards + real selftest witnesses). **Axes at start:** all six at 9.
