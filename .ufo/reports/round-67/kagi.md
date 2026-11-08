@@ -265,8 +265,11 @@ receipt exists and is committed).
   debt rounds 58–66 named: `breadth_drift=5 breadth_unverified=1`);
   `claim-ledger.sh cells` reads `SETUP` on an unrecognised historical heading
   `## Round 63 — planned` (present at BASE, line 2181) — measured at BASE and
-  routed; `citations` unresolved count is pre-existing (round 66 measured 32;
-  the two new references resolve once the entry is pinned, which it is).
+  routed; `claim-ledger.sh citations` ⇒ `CITATION_GATE: BROKEN (cites=5226
+  docs=172 unresolved=28 ephemeral=0 labeled=24)` — all 28 are in historical
+  documents (round-61/64/65/66 lessons and spot-checks), none in a round-67
+  document; the two round-67 references that read unresolved before the entry
+  landed now resolve (measured this round).
 - **Sentinel V-3** (a round-66 evidence file reconstructed under
   `.ufo/waves/round-66/`) is the L1's C2 leg L6, named in `plans/round-67.md`
   §C2 and Amendment A1; it is inside the lane's write scope by the plan, not a
