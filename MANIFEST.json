@@ -59579,6 +59579,49 @@
     "rechecks": "C1 evidence-verified: counter/population/mutant sha256 pins re-derived, receipts match (killed_r87=10 killed_r88=12, belt m19 dead, EXIT 0); C2 evidence-verified: tool/before/fixture sha256 pins re-derived, receipts match (tool_pass=7 before_pass=3, regression rows=12 clean). PREFILE-FALSIFICATION: pass claims=2 rows=13 attack_seats=5 findings=0, EXIT 0; all falsifies-wording rows narrowed in plans A1-A3/A7-A9. Census souji ok EXIT 0, 270->273 rows re-derived.",
     "spotcheck": "souji-shokunin/corpus/lessons/round-88-verifier-spotcheck.md@a2cef94a431dc184e49f980b2664166f081587a4"
    }
+  },
+  {
+   "round": 88,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 88,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 88
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "chromium-showpicker-linux generation r88"
+   ],
+   "report": ".ufo/reports/round-88/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-88-verifier-spotcheck.md@5a9011635c3bafb64a59a1411c4036bb40438724",
+    "rechecks": "C1 re-measured: counter clean 102/102 at 0a4750e7; C2 re-measured: claims 4 mismatches 0; prefile-falsification pass claims=2 rows=15 attack_seats=6 findings=0 (exit 0); gate evidence verified from committed scored artifacts, sibling gates not executed"
+   },
+   "commit": "tabi-shokunin@0a4750e78c6bbdd26b20a13dc8ea4ebb0204a29e",
+   "closed_at": "2026-11-08T12:17:47Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-08T08:26:56-03:00 launch tabi round=88 pgid=3737743 driver=hyaku-inline attempt=1 | 2026-11-08T09:16:03-03:00 complete tabi round=88; hyaku-inline attempt=1. Report committed by lane identity, SHONEN heading present, all cited commits ancestor of master, ahead=0, prompt carries template contract. C1/C2 both verify; no axis harmed. Defects: none conformance; r89 routed: R88Mut1 20-survivor witness holes (Narrowings 4-7), DOM-parsed normalization frontier, drift-fixture overdetermination. Spot-check: admit + 2 rejects agree; S223/S219 quotes located in staged WHATWG bytes; census validate exit 0 (223 rows).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
