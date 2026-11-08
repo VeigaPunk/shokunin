@@ -59415,6 +59415,47 @@
    "notes": "Dispatch/complete digest: 2026-11-08T07:34:30-03:00 launch tsukuroi round=96 pgid=546826 driver=hyaku-inline attempt=1; 2026-11-08T08:27:35-03:00 complete tsukuroi round=96; hyaku-inline attempt=1. Report committed by lane identity (42e6b559); SHONEN heading with one line per box; cited hashes c6786148/c67861483ad64491954fdcfd2003189b2dfad8b9 ancestors of master; lane ahead=0 master==remote; one untracked receipt (registry-final.json) left by lane, named in spotcheck. Amendments A1-A5 narrow both claims; no axis harmed (SCORECARD stable).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 91,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 91,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 91
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "freshness": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-91/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-91-verifier-spotcheck.md@d7780feff6e39ae74a2fd77fc9773c671b33da95",
+    "rechecks": "C1 re-measured by judge (COMMITTED_OK=6/6 EXACT_OK=6/6 PIN_OK=6/6 FRESH_OK=6/6, SELF_PIN F3/C3, FORGERY_REFUSED=6/6 PRIOR_ACCEPTED=6/6); C2 re-measured (CURATION_R91=PASS 13/13 Q_ROWS=20 TFREQ_OK=17/17 TFREQ_MAX_DF=3, FORGERY_REFUSED=4/4 DUPCOUNT_R90=2 DUPCOUNT_R91=1); C3 re-measured (SKILL_TALLY_R91=PASS CASE_RANGE 273-275/282-283, OLDPROSE_REFUSED=1/1); instruments byte-identical at F3 4d00d751, receipts at C3 67954adc, tools unchanged. PREFILE-FALSIFICATION: pass claims=3 rows=34 attack_seats=8 findings=0 exit 0. Census validate exit 0, 219 rows. S070 re-opened sha 93c17dff, S001 gate line 9010 verified, S221 reject agreed."
+   },
+   "commit": "chousa-shokunin@d7780feff6e39ae74a2fd77fc9773c671b33da95",
+   "closed_at": "2026-11-08T11:58:38Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-08T07:53:17-03:00 launch chousa round=91 pgid=952200 driver=hyaku-inline attempt=1 | 2026-11-08T08:56:33-03:00 complete chousa round=91; hyaku-inline attempt=1. Report committed by lane identity (10695a56). Lane base 265b8633 -> landing 406ac474 (ancestors verified, ahead=0, ls-remote identical). Conformance defect (status-neutral): fleet worktree leftovers (.scratch/closure-*-entry.json, run15-state.json, __pycache__) outside this lane's commit scope. Routed defects (from lesson §Routed work): operability r92 pin/exact/whitespace/work/external-step repairs; calibration QSHAPE ordering/used-by/source_link/df numbers; freshness regex scoping/r82 binding/historical multiset/cell pin/controls clause; carried debt round-74 oracle, QUALITY 173 form, r80 backlog Gate ids. Two earlier freeze/carrier pairs superseded pre-wave pre-scoring per plan.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
