@@ -60042,6 +60042,49 @@
    "notes": "dispatch/complete digest: 2026-11-08T10:48:46-03:00 launch chousa round=93 pgid=1637074 driver=hyaku-inline attempt=1; 2026-11-08T11:45:53-03:00 complete chousa round=93; hyaku-inline attempt=1. Status ok; admitted with Amendment 12 (C1 pin population is 23 rows, not the frozen sentence's 22; landing receipts say 23/23). Conformance defects (status-neutral, routed to chousa r94): D1 pre-file falsification ledger absent (claim-falsification.tsv; PREFILE-FALSIFICATION: SETUP findings=1, exit 2) and the report omits the required line; D2 SCORECARD.md:4163 operability row still says 22/22 vs 23/23; D3 report says 'eleven amendments' twice, amendments.md has 12; D4 Landed changes does not cite landing commit 9fa45759 or wave-results commit af917ae6 by hash; D5 C2/C3 scored receipts lack a computed_against revision line; D6 r92 routed residual 'r82 clip range unbound' neither bound nor dropped in the plan. SHONEN: all four boxes carry resolvable evidence; boxes 1/3/4 non-author-checkable, box 2 rests on the meta re-measurement chain; promotion operator-owned, no [x] written. Wave: 12 seats/8 attack, 0 dead. Spot-check landed 0f3f84da.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 90,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 90,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 90
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unchanged",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "chromium-showpicker-linux generation r90 — the settle-call binding: the four domread legs carry window.__inputs(true) immediately after the settle window.__state() call, the counter requires it and send-log-allowlist refuses it on non-domread legs; the fixture's __inputs takes no parameter, so this is a counter obligation, not a domain-surface move (C1 NOT VERIFIED on coverage)"
+   ],
+   "report": ".ufo/reports/round-90/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-90-verifier-spotcheck.md@b1d8f07b0d5895ffdd5bf9a143d2b591414fabea",
+    "rechecks": "C1 re-measured: 64-line r89→r90 driver diff, one substantive __inputs(true) argument; fixture __inputs takes no parameter; checkCount 107 at r89 and r90; 4/4 domread legs carry the call, 0/37 other legs; battery 226/0/107, kill power 76/76/0/0/0, selftest 12/12 evidence-verified. C2 re-derived: all 8 drift statements green over committed bytes at 3e6cf40f (before 7 mismatches, after 0), selftest 12/12, leak witness pin-matched; sibling gates not executed. Pre-file pass claims=2 rows=14 attack_seats=6 findings=0 (exit 0); census 224 rows exit 0; S224/S223/S219 re-opened live, staged byte-identical."
+   },
+   "commit": "tabi-shokunin@3e6cf40f980ea011a400eec7ce1c5db58773141a",
+   "closed_at": "2026-11-08T15:27:13Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable, copied): 2026-11-08T10:46:13-03:00 launch tabi round=90 pgid=3236749 driver=hyaku-inline attempt=1 | 2026-11-08T12:13:20-03:00 complete tabi round=90; hyaku-inline attempt=1. Step-1 ok: report e2c976b3 by tabi-shokunin <tabi@shokunin.local> (first commit e0b7ecf8; pathspec-limited; final author 12:12:09 / committer 12:12:37, the author date 14 s before the cited lesson commit 3e6cf40f at 12:12:23 but the committer time after both, landing order provable); SHONEN heading with 4 [~] lines and pointers; cited f2b69440/3e6cf40f and base a9f1da08 all ancestors of refs/heads/master; lane 3e6cf40f = origin/master, jj ahead=0 behind=0, porcelain empty; prompt 1c9dc16f carries sections 1-5 + 2b + the §6 addendum; one batched wave of 13 seats (4 executor, 2 reviewer, critic, mutation-tester, scout, scribe, connector, sentinel, simplifier; 4 protocol attack seats = 31%, 5 incl. sentinel = 38%). Claims: C1 coverage NOT VERIFIED — the moved surface is a checker obligation, not a domain surface (64-line driver diff, one substantive argument, fixture __inputs takes no parameter, checkCount 107 both generations); C2 calibration VERIFIED as narrowed — eight statements re-derived green (5 of 6 r89 §7 defects + 3 self-checks; §7 defect 6 is a record statement, not repo state). No axis harmed; SCORECARD diff additive (+41/−1 annotation), PROVINCE/SHONEN untouched. Routed to r91: (1) sweep the C1 attribution narrowing into corpus/knowledge/chromium-showpicker-runtime-round-90.md:22, LOG.md:4079 and QUALITY 163 — the non-domread refusal is send-log-allowlist, not plan-calls; (2) battery count 225 in LOG.md:4086/plans/round-90.md:103 vs 226 scored; (3) in-place rewrite of corpus/lessons/round-89.md:75 and corpus/QUALITY.md:161 despite the append-only block; (4) report says 'Four rows' but the ledger has five falsifies-wording rows; (5) name the C2 after-run revision (D4 worktree); (6) report author date precedes the cited lesson commit by 14 s and the r89 correction item 6 '(the committer time)' is inexact; (7) D3–D6 pointer cites §Re-freeze history, which holds D1–D2 only, not §Wave corrections; (8) mark the original 31-word S224 Gate quote. Status-neutral: attack-seat roster wording (5 vs 6). SHONEN boxes look non-author checkable; promotion remains operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
