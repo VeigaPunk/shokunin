@@ -139,7 +139,10 @@ Assimilation: none (`merge/tabi/` adoption stays closed pending the open L0 `tab
 
 - **Stale-lane:** respawn-per-round driver; no other mission of this lane is open.
 - **Tool installs:** none (node 24 and the system Chromium served every run; no pacman transaction).
-- **Pre-file falsification:** `PREFILE-FALSIFICATION:` line pasted below.
+- **Pre-file falsification:** `PREFILE-FALSIFICATION: pass claims=2 rows=14 attack_seats=5 findings=0`, exit 0
+  (`python3 /home/vgpnk/Projects/shokunin/scripts/hyaku/prefile-falsification.py --lane tabi --round 84`);
+  ledger `.ufo/waves/round-84/claim-falsification.tsv` covers C1 and C2 with all five attack seats
+  (R84Review1, R84Review2, R84Critic, R84Mut1, R84Connector) plus Scout and Exec seats.
 - **Wave shape:** one v1 wave, 10 seats, 0 dead. Roles: 3 executors, 2 reviewers, 1 critic, 1
   mutation-tester, 1 scout, 1 scribe, 1 connector = 4 attack seats (40 %). Planner seat held by the
   L1 (validator forbids a planner item). Round total 10 seats; no residual call.
