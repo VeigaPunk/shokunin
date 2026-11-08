@@ -58341,6 +58341,44 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable; copied from the closure brief): 2026-11-08T00:04:08-03:00 launch tabi round=83 pgid=131216 driver=hyaku-inline attempt=1; 2026-11-08T00:10:29-03:00 lane-dead-no-report tabi round=83; retry same round (hyaku-inline attempt=1: L1 ended without a landed report: FAIL report_of (missing, unchanged, no SHONEN heading, or < 400B): .ufo/reports/round-83/tabi.md); 2026-11-08T00:10:35-03:00 launch tabi round=83 pgid=418309 driver=hyaku-inline attempt=2; 2026-11-08T02:54:35-03:00 complete tabi round=83; hyaku-inline attempt=2. Step 1 conformance pass: report 140a82d3 by tabi-shokunin (committer 02:53:53 > lane tip 02:53:12, lands last); SHONEN heading 4x [~]; 4cdf4def/27d5451b/5d6c34f0/615c97a1/030dfc29 exist and are ancestors of master; jj-lane state ahead=0, tree clean; prompt carries template sections 1-5 + hyaku addendum 6 with the five child-lane items. Status ok (real report, committed work, resolvable hashes). C1 NOT VERIFIED: the frozen evidence is clean (receipt 15 legs/0 failures at nonce tabi-r83-l1-b6496e6f5d4f, driver 70b522cc, fixture 7784c9de; counter-a 74/74 clean; battery 153/0 coverage 74/74; kill power 50/50; selftest 9/9), but the stated wording 'accept-MIME .png answer' is falsified by the round's own w1/R83Scout section 5.1 and R83Scribe knowledge-note:61-64: the answered input #k carries accept=\".png\" (extension token), no leg targets #accept (accept=\"image/png\"), and the MIME-token/image/* branches are unmeasured; claim-falsification.tsv records the Scout as neutral and no narrowing exists (Amendment 59). Also 'a real PNG' is a PNG signature + ASCII marker (uploadPng.hex 89504e47...), 'the r82 seven laws' matches neither the r82 note (5) nor the counter (8), and the R83Review2 cross-origin droppability row points at a narrowing that does not cover it. C2 VERIFIED: 4 -> 0 mismatches (direction-bound, census-artifacts, r83-identity, r83-numbers before; 0 after), reversed 20->23 control refused exit 1 (c2-controls.json), census start/end filed; direction-bound is static-anchor + committed refusal receipt (narrowed; the counter does not re-execute). Axes: coverage improved (three real frontier legs: number/range SecurityError, multiple selectMultiple, second-chooser payload; the accept token did not move); calibration harmed (new record drift: C1 before numbers 69/40 vs the cited 69 checks/41 findings; reverse no-work cited to the forward artifact with 69-check numbers impossible under the 64-check r82 counter; SKILL.md still says battery 84 vs 153; seven-vs-8; knowledge 94/95 vs 95/96); depth/freshness/operability/adjacency unchanged (SCORECARD diff adds the Round 83 section only, no score lowered). Trends: expansion harmed (admitted note fails QUALITY criteria 2/3 on the MIME and 'real PNG' clauses), quality harmed (false clauses left unmarked), discernment harmed (spot-check disagrees with the gate on an admit; the wave's own Scout/Scribe said why; no narrowing/criterion added). Pre-file gate: PREFILE-FALSIFICATION: pass claims=2 rows=8 attack_seats=5 findings=0 (exit 0), with two rows adjudicated defective (Scout neutral; Review2 pointer). Routed to r84: append-only correction to the r83 knowledge note law 3/heading (accept extension token; MIME/image* stay frontier) and to 'real PNG' (signature+marker); add the missing accept-token narrowing and correct the ledger row; re-point/add the Review2 cross-origin narrowing and missing battery witnesses; fix the record counts (before 69/40, reverse control, seven->8, knowledge 95/96, attack 4, SKILL battery 153, three routed defects -> four); make r83-numbers assert the SKILL/knowledge counts; reconcile lesson Gate 0/0/0/0 vs Sources 5/5/0/5. SHONEN all [~] with resolvable pointers and checkable by a non-author (box 1 SKILL tables/ladder/runbook/registry; box 2 multi-step-journey 1-2/7 + LOG Round 83; box 3 executor-test-sufficiency 0/4 + R83Exec1 cold runs; box 4 PROVINCE 3-19 + R83Connector 20/0/five); promotion operator-owned. Spotcheck landed a5d6ffbf. Wave: 10 seats, 10 settled, 4 attack seats (report says 3; 40% >= 25%).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 95,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 95,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 95
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "depth": "improved",
+    "calibration": "improved"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-95/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-95-verifier-spotcheck.md@5d43528badc31ad6c0ca1848c00561f531924e4d",
+    "rechecks": "Step-1 conformance OK (13/13 commits ancestor, lane clean ahead=0). C1 verified evidence-verified at c810f51e (c1-m1b.out mismatches=0, probe sha b49d961a matches, no-clock grep empty, path-priced 20+25npaths); base red mismatches=1. C2 verified (c2.out 106/106 met=True). C3 verified (c3-amended.out 9/9 met=True). Prefile pass exit 0. C1/C2/C3 counters frozen-identical. Discernment 3/3 agree (S616/S617/CLI reject re-fetched live). Census kama ok exit 0."
+   },
+   "commit": "kama-shokunin@65eca4ec210f088226713770a213387e38b84d49",
+   "closed_at": "2026-11-08T04:41:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch 2026-11-08T02:06:53-03:00 launch kama round=95 pgid=2851224 driver=hyaku-inline attempt=1; complete 2026-11-08T03:28:31-03:00 complete kama round=95. Defects (status-neutral): report Landed-changes omits 370261b0/bb1ded29/65eca4ec; prefile-gate path is lane-relative; c1-m1b receipt under .ufo/waves/round-95/measured. Routed to r96: counter lacks MAX_STEPS/META cell and ctime coverage; skip-load nominal load line; counter docstring still 20+15ncand vs probe 20+25npaths; slow /props undecided; SCORECARD capability cites f6325660. No promotion signal beyond filed [~]s.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
