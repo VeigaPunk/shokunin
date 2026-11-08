@@ -9,7 +9,11 @@ D2 the restored kill-power entries and the battery schema/mirror repairs, D3 the
 simplification + allowlist limb, D4 the gate repairs the critic measured, D5 the simplifier's P0
 set — external expectations, fail-closed kill power, teardown guard — D6 the D5 runner's gate-order
 crash; `plans/round-90.md` §Re-freeze history). **Lane tip:** `f2b69440c7c7f003b0f5d694eba4c5f985684141` (pushed; `git ls-remote origin refs/heads/master`
-prints it; `jj-lane.sh state` → `ahead=0 behind=0 tracked=0 untracked=0`). **Axes at start:** all six at 9.
+prints it; `jj-lane.sh state` → `ahead=0 behind=0 tracked=0 untracked=0`; the lesson commit
+`3e6cf40f…` follows it). Disclosure: this report's author date is 76 s before the lane tip's
+committer time (body written first, lane-tip line patched after) — the committer time is after the
+tip, so the landing order is provable, and `corpus/lessons/round-90.md` records it as the r89
+defect-6 minor recurrence. **Axes at start:** all six at 9.
 
 ## Work performed
 
