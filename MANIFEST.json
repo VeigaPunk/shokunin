@@ -58216,6 +58216,47 @@
    "promotions": [],
    "minted": [],
    "notes": "Dispatch 2026-11-08T01:28:13-03:00 launch tsukuroi round=92 pgid=3358208 driver=hyaku-inline attempt=1; completion 2026-11-08T02:43:20-03:00 complete tsukuroi round=92; hyaku-inline attempt=1 (digest copied from the mutable .ufo/watchdog.log). Status ok: report committed by lane identity (tsukuroi-shokunin 840a650c), ## SHONEN heading with four [~] lines and no self-attested [x], all seven cited lane commits exist and are ancestors of master, tree clean, ahead=0, remote master=7793773a at closure, report 26 s after the lane tip (lands last). Claims: C1 (operability 9, battery oracle channel) and C2 (depth 8 tied lowest, version-selected visibility rule), both measured and both verified on their filed narrowings (A5/A7). Verdicts: operability improved, depth improved, other axes unchanged; no axis harmed (era-A no-regression 82/82; SCORECARD +53/-0). Trends: expansion improved (1 admitted entry on uncovered ground citing mined S377-S381, capability battery-oracle-isolation), quality improved (82->89 families, F1-F5 fixes, QUALITY 132-135, r91 routed 3-5 closed), discernment improved (7 attack artifacts -> A3-A7 or named limits; two dead controls and a wildcard control self-caught pre-score). CONFORMANCE DEFECTS (status-neutral, routed to r93): (1) report Landed-changes table stops at ec728e4a and does not name b5cb636a, 98185b9b, 1d1c7439 or 7793773a; (2) the cited check-registry-coverage PASS 145/145 'at ec728e4a' has no receipt at that revision (last committed PASS e9fce481, pre-F3/F4 rows; repair-probe revision 2bae8c5 does not resolve) - re-run and commit; (3) SOURCES S377 anchor says 'Python 3.14 docs' while the pinned and live page are 3.15.2 (quote itself correct); (4) claims.json C2 target literal still reads --usage-check 8/8 (reconciled by A7 S5, 11 cases shipped); (5) hygiene: after/c1-controls/usage-{canonical,clone}.json are 8-case pre-A3 receipts and should stay labelled pre-A3; the report's 'four wave seats falsified' undercounts the ledger's seven attack artifacts. Credential incident: the r92 L0 lines record the ExecIsolationProbe env dump, the unpushed d1f6934f squash (no force push, no remote rewrite) and the re-landed 689623fd; the integrator scan of the pushed tree finds no token material. DURABILITY DEBT: the two tsukuroi round-92 lines appended to .ufo/l0-questions.md are still uncommitted (outside this closure pass's two-artifact write scope); commit them in the next integration pass. No promotions, no mints; SHONEN boxes remain [~] with resolvable pointers and the non-author promotion review is still owed (operator-owned)."
+  },
+  {
+   "round": 85,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 85,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 85
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "improved",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "improved",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-85/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-85-verifier-spotcheck.md@3bfb6885958ad4a674ad1896f70d1e836be609e4",
+    "rechecks": "C1 re-measured by the integrator: base 43c3f728 with the landing counter copied byte-exactly -> FORGED_REFUSED=354/354 EXPECTED_CODE=342/354 SETUP=0/1 GATE_RECORDS_R85=FAIL rc 1; landing 64803d33 and lane HEAD da97aaa2 -> 354/354 EXPECTED_CODE=354/354 SETUP=1/1 PASS rc 0; the 200-only witness forge-203.py reproduced (base rc 0 S021 OK -> HEAD rc 1 S021 FAIL REFETCH, FORGE203=PASS). C2 re-measured: base entries=0 FAIL rc 1 -> landing/HEAD entries=1 ok_entries=1 rows=6 located_quotes=7 fresh_sources=3 PASS rc 0; plain counts 96->97 knowledge .md and 214->215 SOURCES rows. Gate selftest (PASS 283 cases, 0 skipped), preflight G01-G07 and the r84 cross-round PASS evidence-verified, not executed. Census validate exit 0 (five pre-existing W04). Ledger PREFILE-FALSIFICATION pass claims=2 rows=13 attack_seats=6 findings=0 exit 0, all five falsifies-wording rows adjudicated real and reconciled to plans/round-85.md amendments 7/7b/8/9/10. Both claims honest-stop as written: C1's enumerated D1 class has zero forgeries and M17-refetch-http-2xx-accepted survives with the 200-only witness landing after the scored revision; C2 fired K3 on rows 1 and 5 and relaxed its floors beside its ground change. Found outside the report and the wave: S024 (mined this round) is the same URL and scope as S031, whose teaches opens 'supersedes S024' and refuses the modification-date comparison the new row asserts; E7 is entry-scoped and the census exempts superseding rows, so neither instrument could flag it."
+   },
+   "commit": "chousa-shokunin@da97aaa2d8c676deec659d6fcde893e1bfda9e74",
+   "closed_at": "2026-11-08T05:56:35Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-11-08T00:46:50-03:00 launch chousa round=85 pgid=1292517 driver=hyaku-inline attempt=1; complete 2026-11-08T02:49:07-03:00. Step 1 ok: report committed by lane identity (chousa-shokunin 1581877a; a 43 s earlier filing c35326da was re-filed to cite the erratum, +3/-2, before the driver's complete line), SHONEN heading with 4 [~] boxes, every cited lane hash exists and is an ancestor of master (5d0b9413, 02df67db, 64803d33, 863d624e, a8041fcd, da97aaa2), jj-lane state ahead=0 behind=0 with a clean tree, prompt .ufo/prompts/chousa-round-85.md is templates/round-prompt.md rendered with substitutions only and carries the round-level items (i)-(v) plus all five child-lane items, wave w1 = 12 seats (0 dead, 6/12 attack by the ledger's role set) under the 8-16 band. Defects named, status-neutral: the committed control receipt c1-k0-donothing.txt prints the freeze counter's /378 tally while the report and a re-run of the pinned counter print /354; the frozen claims.md:96 points at controls/receipts/c1-d0-donothing.txt, which does not exist (disclosed in the lesson corrections, unrepairable without editing the freeze); the lesson's ## Claim outcomes still reads 'verified' for both claims after the honest-stop verdict. Routed to the lane for round 86: (1) resolve S024 vs S031 (new superseding row or move used-by to S031) and drop or re-source the entry row 6 'modification date' Never, plus a QUALITY criterion that a fresh source is a document new to the registry, not a row id the counter has not seen; (2) re-run the C1 controls under the pinned counter or stamp them with the instrument hash they were taken under, and retire the dead claims.md pointer via a superseding claims file; (3) add the 200-only (203-row admit) forgery inside the frozen battery so M17 dies in it; (4) file the correction retracting the lesson's 'verified' column; (5) cross-lane, unchanged from r84: route kotodama check-gate-captures.py false-green to its owner via the aggregator ledger. Operator note: all four SHONEN boxes stay [~]; reading the repo they now look checkable by a non-author (SKILL.md decision table/error patterns/executable checklist/Gates; LOG Round 85 end-to-end task; runnable box-3 command; PROVINCE untouched) but promotion is operator-owned and was not attempted. C1 was declared a capability acquisition yet no SCORECARD capabilities row entered, so capabilities_added is empty.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
