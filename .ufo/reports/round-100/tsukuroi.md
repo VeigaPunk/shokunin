@@ -45,7 +45,7 @@ kaidoku/revenger reverse-engineering ownership stays operator-owned and unruled.
   `RESTATED` `RC-CELL-AMBIGUOUS`), `GAP` PASS on both; `--selftest` 17 → 26. Evidence:
   `after/c2/{content-tip,content-tip-r99,fixtures,selftest-r100,selftest-r99,coverage-tip}.json|txt`,
   `w1/ExecRegistry.md` (both checkers `PASS 7/7` at the freeze tip and the final tip; 12/12 fixture
-  readings; coverage `PASS 165/165`), `w1/ReviewRegistry` (forgery battery; see the wave note),
+  readings; coverage `PASS 165/165`), `w1/ReviewRegistry-DEAD-AT-SPAWN.md` (the seat died at spawn; the C2 forgery battery was carried by CriticClaims/MutInstruments),
   `w1/MutInstruments.md` (M1-M6/M8 killed by named cases; M7 survivor routed).
 - **Frontier step.** `corpus/SOURCES.md` rows S396 (own-work: the two new instruments) and S397
   (`re` docs, `fullmatch`/`\b`) admitted, S398 (limine v12.9.6 `CONFIG.md`) kept as a rejection with
@@ -60,6 +60,9 @@ kaidoku/revenger reverse-engineering ownership stays operator-owned and unruled.
   at `69474c55` the coverage gate reads `PASS 165/165/165 findings 0`, the r100 checker
   `PASS 7/7 findings 0`, the r99 control `PASS 7/7`; the gate, r98 battery, r99 battery and r99
   checker are byte-identical to `ce73ccaf` (`w1/SentinelHarm.md`, `w1/ScoutFrontier.md`).
+  Misroot sweep before filing: `git -C /home/vgpnk/Projects/shokunin status --porcelain` printed the
+  fleet's own `.scratch`/other-lane paths (10 entries) and none names `tsukuroi` or `round-100`; no
+  file was copied or deleted. Lane state at filing: `local=23151986 remote=23151986 ahead=0`. 
 
 ## Landed changes
 
@@ -182,3 +185,10 @@ changes are additive.
 **Tool installs:** none this round (no `pacman`, no `uv tool`, no `npx`; the wave's tooling note was
 carried in the context and no seat installed anything).
 **Prefile ledger:** `PREFILE-FALSIFICATION: pass claims=2 rows=14 attack_seats=6 findings=0` (exit 0), run with `python3 /home/vgpnk/Projects/shokunin/scripts/hyaku/prefile-falsification.py --lane tsukuroi --round 100`; the 14 rows read all six attack seats (ReviewBends, ReviewRegistry via the L1's dead-seat record, CriticClaims, MutInstruments, SentinelHarm, ConnectorOverlap) and both claims.
+
+## Correction (append-only, same filing)
+
+The first filed bytes of this report cited `w1/ReviewRegistry` as an evidence path although that
+directory does not exist (the seat died at spawn); this correction replaces the pointer with the L1's
+dead-seat record and adds the misroot-sweep result to the Verification bullet. No measurement,
+verdict or claim sentence changes.
