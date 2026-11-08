@@ -1,8 +1,8 @@
 # kama — round 99 report
 
 Lane `kama` (local model serving & endpoint health). L1 `KamaR99`. Base `439fdb3d`; freeze
-`f6e7ccc2`; amendment 1 `00394f3b`; measured commit `00394f3b`; records `71838fdd`, `9ee0c3c4`,
-`3ed7a8df`. Round shape: one v1 wave, 12 seats, 0 dead. Round total 12 (no residual call).
+`f6e7ccc2`; amendment 1 `00394f3b`; measured commit `00394f3b`; records `71838fdd`, `9ee0c3c4`, `3ed7a8df`,
+`a60e57cd` (final lane tip at filing; `git ls-remote origin refs/heads/master` verified). Round shape: one v1 wave, 12 seats, 0 dead. Round total 12 (no residual call).
 
 ## Work performed
 
@@ -68,6 +68,7 @@ Every change is tied to the `LOG.md` §round 99 entry.
 | `71838fdd` | Measurements at `00394f3b`, forged/regression/plain-call controls, census end 368, wave reports + `w1-results.json`, falsification ledger, SCORECARD §Round 99 + capabilities, LOG entry, lesson measurements |
 | `9ee0c3c4` | Records fix: authority banner 99, explicit receipt paths, `### Planned (round 100)` |
 | `3ed7a8df` | Coverage row knowledge-entry count 61 → 62 |
+| `a60e57cd` | Falsification ledger and pre-report gate receipt (final lane tip; pushed) |
 
 ## Before → after measurements
 
