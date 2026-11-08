@@ -170,14 +170,19 @@ seats wrote a report with a `VERDICT:` trailer** into `.ufo/waves/round-93/w1/` 
 ExecC1Repro, ExecC2Repro, ExecC3Repro, ExecMutations, RevPrior, ReviewerC1, ReviewerC2, ReviewerC3, CriticClaims,
 SentinelScope, ConnectorSiblings, ScoutSources. No seat died: every report carries commands, receipts and exit
 codes, and each seat's own scratch dir was removed before it yielded (checked in the reports' last sections).
-The orchestrator's `<wave>-results.json` was not written and no `WAVE-DONE` message reached this L1; the
-settlement is therefore evidenced seat-by-seat in the committed wave directory, and no seat of this wave was
-live when the report was filed (no `VERDICT`-less report exists).
+Settlement handoff: `WAVE-DONE chousa r93 w1` received from the orchestrator with
+`.ufo/waves/round-93/w1-results.json` (12 results, each with a non-empty output carrying its verdicts, 0
+errors, 0 dead seats). That file is committed with this report's lane amendment.
 
-Seat verdicts against the claims: C1 — 4 seats fired on the C2 bytes (battery dead on host `python3` 3.14.8 via
-`tarfile.AbsoluteLinkError`, and `FORGERY_REFUSED=0/2` under 3.13 from archive trees) and 1 held; C2 — 2 held, 1
-fired (the ungated `Q_WSQUOT` field and the false named limit), 1 held with the same machine-form note; C3 — 3
-held, 1 fired the machine-form token. Every fired item is closed at F3–F6 and re-measured in `after/`.
+Seat verdicts against the claims at the attacked bytes (F2/C2): C1 fired from `R93ExecC1Repro`,
+`R93ReviewerC1`, `R93ExecMutations`, `R93SentinelScope`, `R93CriticClaims`, `R93ConnectorSiblings`
+(the battery dead on host `python3` 3.14.8 via `tarfile.AbsoluteLinkError`; `FORGERY_REFUSED=0/2` under 3.13
+from archive trees; the unguarded self row and row containment), and held from `R93RevPrior`; C2 fired from
+`R93ReviewerC2` (false named limit, ungated `Q_WSQUOT`, machine-form tokens) and `R93CriticClaims` (stubbed
+population), held from `R93ExecC2Repro` and `R93ScoutSources`; C3 fired from `R93CriticClaims` /
+`R93ReviewerC3` / `R93SentinelScope` on the machine-form `TAIL_REFUSED` token and F2/F3, held from
+`R93ExecC3Repro` (three independent derivation probes). Every fired item is closed at F3–F6 and re-measured in
+`corpus/evidence/round93/after/`.
 
 Misroot sweep: `git -C /home/vgpnk/Projects/shokunin status --porcelain` (no pathspec) after the wave shows no
 file naming chousa/round-93 outside `.ufo/reports/round-93/chousa.md` (this report, to be committed by
