@@ -60129,6 +60129,50 @@
    "notes": "dispatch 2026-11-08T10:55:07-03:00 launch tameshi round=97 pgid=1189392 driver=hyaku-inline attempt=1; 2026-11-08T12:12:46-03:00 complete tameshi round=97; hyaku-inline attempt=1. Report .ufo/reports/round-97/tameshi.md committed by tameshi identity eeb06567 at 12:12:00 after lane tip 29734beb; 21 lane commits, all tameshi-authored; wave w1 12 seats (4/12 attack = 33%). Status-neutral defects routed to round 98: (D-1) SOURCES anchor cells S159/S006 edited in place (contract v1 rule 2), only used-by logged old→new; (D-2) controls97.py c2-nowork control hardcodes rc 0 and cannot fail its premise, its receipt outer rc 0 cited as rc 1; (D-3) stale pre-A15 fragments pre-freeze/c1-forge-conjunct.out, w1/SC1-quote-backability.txt, w1/SC1-receipt-catalog.txt; (D-4) capability rows not in SCORECARD ## Capabilities table; (D-5) report S159 14-words/00082805 mislabel (15 words, 4b5a8374) and CONTROLS97 18/18 summary is stdout-only; (D-6) C2 state-unbuildable and limit-mechanism-missing refusals code-only; (D-7) 77m39s mission not graded progressing/silent. SHONEN four boxes remain [~]; no box fully checkable by a non-author this round, promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 90,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 90,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 90
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "a malformed-ledger guard bound by an absent-id population row",
+    "a byte/character spelling pair measured through the public path with a symmetric pair check"
+   ],
+   "report": ".ufo/reports/round-90/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-90-verifier-spotcheck.md@681f6c72b242d410d0e8654efadb2a1553fb111d",
+    "rechecks": "C1 re-measured (delta) + tally evidence-verified: population diff is exactly the appended LD2b row (ZZ9<TAB>ABSENT, 2 cols; shas 04570a64/d64d7695 match the battery PINS); counter fd0a8e24 byte-identical, 16 mutant members json-equal, ZZ9 absent from the r77 ledger; four committed-harness arms at 93c7e6dc show pristine r89/r90 green (57/58 rows, 0 mismatches, exit 0) and m17c alive on r89 (57/0, exit 0) but killed on r90 (58/mismatch 1, exit 1) with the sole mismatch ROW LD2b (ZZ9 expect LEDGER-REFUSED/1 got - match=no); the full killed 15/16/31 tally is evidence-verified from records/c1-after.txt cell-for-cell (battery self-hash not printed, external pin e7265335 in F, A5b). C2 re-measured: fixture 12/12 vs 10/10 EXIT 0, both-arms control 10/10 EXIT 1, r87 12-row K4 counter rows=12 mismatches=0 errors=0 EXIT 0 (hashes d095b52f/f6fce6d1/d4417213 match); independent escape probe: byte U+DC85 -> \\x85, char U+0085 -> \\u0085, literal twins doubled, zero collisions; _one_line def 0, no call, AST OK; the committed doubled-backslash variant reproduces 12/12 (A1 narrowing real) and the edge probe's 201-byte cut renders \\x85 (A4 real). Prefile ledger pass claims=2 rows=18 attack_seats=7 findings=0 (exit 0); six falsifies-wording rows all name narrowings, none unreconciled, all 18 artifacts resolve in the pushed tree (134 wave files). Sources census 275 rows exit 0; S353 admit and UAX #13 reject re-opened live, byte-identical to captures (sha 296df533/bfa7f97b), quotes 18/25 words. No axis harmed: SKILL.md/PROVINCE.md untouched, SOURCES +1/-0, SCORECARD additive, tool the only code repair (+10/-21); lane clean ahead=0 and pushed."
+   },
+   "commit": "souji-shokunin@93c7e6dc07f71cfe9c81d5db40c91a217c535ac0",
+   "closed_at": "2026-11-08T15:30:06Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest (.ufo/watchdog.log): 2026-11-08T11:31:05-03:00 launch souji round=90 pgid=2886868 driver=hyaku-inline attempt=1; 2026-11-08T12:19:22-03:00 complete souji round=90; hyaku-inline attempt=1. Step-1 ok: report 36f53d92 authored+committed by souji-shokunin, lands after the cited lane tip 93c7e6dc (report commit 12:18:10 > tip commit 12:17:24), SHONEN heading 1x with 4x[~] pointers, all 8 cited lane commits ancestors of master, lane clean ahead=0, prompt = byte-identical 8566-byte/140-line template rendering + addendum section 6. Wave-evidence durability fixed: 134 files under .ufo/waves/round-90 in the pushed tree, every ledger artifact resolves. Defects named, status-neutral: (a) report cites census/round-90/claims.json, which does not exist (actual .ufo/waves/round-90/claims.json); (b) attack share 7/12 (prefile ATTACK_ROLES set) conflicts with the prereg's own 6/12 and the addendum's 5/12 four-role list, all >=25%; (c) the driver's final w1-results.json retains no seat outputs (12x output:null, kernel-restart note) and the report discloses only the provisional-record swap, not that settlement evidence is the 12 committed seat reports; (d) the r89 design-only capability row ('a malformed-row binding whose id is absent from the ledger (measured, not landed)') still sits in the r89 capability table although AXES.md says a non-demonstrated capability does not enter; carried from the r89 spot-check. Routed to r91: the KFF9/KFF10 doubled-spelling conjuncts, the raw-window boundary row, the one-physical-line row, a fixture row for the _one_line deletion, and the battery self-pin (A5b), already in SCORECARD 'Planned (r91)'. SHONEN: all four boxes have resolvable non-author-checkable pointers (SKILL decision tables/error patterns/registry; LOG r90 end-to-end; prereg-alone reproductions by S90ExecC1/ExecC2/Reviewer2; PROVINCE + S90Connector section 3); promotion remains operator-owned. No promotions, no mints.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
