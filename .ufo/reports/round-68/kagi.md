@@ -62,7 +62,7 @@ Work items, each with its evidence:
 - **Attack seats** (six): `.ufo/waves/round-68/w1/R68Reviewer.md`,
   `R68ReviewerLayers.md`, `R68Critic.md`, `R68MutGate.md`, `R68Revenger.md`,
   `R68ScribeLesson.md`, `R68Sentinel.md` — findings folded before the report (see
-  Mistakes M68-1–M68-8, the freeze-sequence gap, and the ceilings below).
+  Mistakes M68-1–M68-9, the freeze-sequence gap, and the ceilings below).
 - **Connector sweep** (`.ufo/waves/round-68/w1/R68Connector.md`): 20 sibling
   lanes; no lane holds kagi's capture read-through; several hold CRLF
   *tolerance* or their own digest recompute — complements, nothing absorbed.
@@ -197,8 +197,8 @@ Census command (contract v1):
   arithmetic (A1), the stub-gate and row-text forgeries (counter legs), the
   newline-injection primitive (gate `finding()`), the cells parser's rename-hide
   bypass (table rule), and the S167 source inversion (M68-5, re-cut to the
-  RFC's default branch plus §12). Eight mistakes are mined in
-  `corpus/lessons/round-68.md` (M68-1–M68-8), four of them the L1's own
+  RFC's default branch plus §12). Nine mistakes are mined in
+  `corpus/lessons/round-68.md` (M68-1–M68-9), four of them the L1's own
   (M68-1 frozen population, M68-2 anchor rule, M68-3 contaminated control tree,
   M68-5 source inversion), plus one freeze-sequence gap (the col-15 BASE figure
   receipted seven minutes after the freeze).
@@ -237,8 +237,9 @@ Census command (contract v1):
 
 Stale-lane: respawn-per-round driver; no other mission of this lane is open.
 
-Lane HEAD at report time: `932a73592adf873db30457c466c39ed1f7013060`
+Lane HEAD at report time: `89acdee55cac4f7f5da1caa887f8c050ddc0f8e0`
 (`git ls-remote origin refs/heads/master` prints it; the round-68 landing commit is
 `ef90e98936d4fb68851d1a7218aa2173041d7555`, followed by a late-seat-evidence
-commit carrying `R68ScribeLesson`'s final report and its own C2 lane run).
+commit `932a7359` and a lesson-correction commit `89acdee5` that re-cuts the
+S167 Gate reason (M68-5 consistency) and records M68-9).
 
