@@ -2,7 +2,7 @@
 
 Lane `tameshi` (verification-fixture craft), round 96, attempt 1. Base
 `c8de77f3de0fd4bf619ebe78fa0b28adaf320d3e`; lane tip after this round
-`b9783abbdb1f90798c3646c396940958e2c861bf` (branch `master`). Report filed by
+`07e50d6d0142b21e8443b5417b8edc4d1dd76455` (branch `master`). Report filed by
 `fleet-commit.sh --as tameshi`.
 
 **Declared claims (2).** R96-C1 targets **calibration**: the disposition audit binds its
@@ -111,6 +111,7 @@ predicate was narrowed after data.
 | D1 closed (S323 anchor), Gate spans, falsification ledger | Round 96 §Frontier | `1aaf9d20e6264fe83395a93cfc4d09f1f1032ddc` |
 | M4 renderer-drift row; SC1's two record repairs; L1-constructed wave accounting | Round 96 §R96-C2 | `cdc7f1b2675e5267d27e1fcc032bd8eaa3eefd3e` |
 | `R96L1-absent.md` dead-seat record + ledger row; prefile gate pass | Round 96 §Shape | `b9783abbdb1f90798c3646c396940958e2c861bf` |
+| `.ufo/evidence/round-96/c2-forge.py` committed as wave evidence | Round 96 §R96-C1 after | `07e50d6d0142b21e8443b5417b8edc4d1dd76455` |
 
 LOG.md entry: `## Round 96 (2026-11-08) — two claims: the sealed audit's revision identity
 (calibration) and the hardened write path (operability)`. QUALITY 173-174 appended;
@@ -236,3 +237,12 @@ CONSIDERTHESE has no unimplemented proposal bearing on it).
 **Stale-lane:** respawn-per-round driver; this report closes round 96 and no other mission of
 this lane is open. No L0 question was opened this round. Tool installs: none (python3
 3.14.8, git 2.56.0, curl 8.23.0 as installed); pacman untouched per the addendum guard.
+
+## Filing record
+
+Lane tip at filing: `07e50d6d0142b21e8443b5417b8edc4d1dd76455` (branch `master`,
+`jj-lane.sh state` → `local=07e50d6d remote=07e50d6d ahead=0 behind=0`; `git ls-remote
+origin refs/heads/master` prints the same). Pre-file gate:
+`PREFILE-FALSIFICATION: pass claims=2 rows=11 attack_seats=7 findings=0`, exit 0
+(`python3 /home/vgpnk/Projects/shokunin/scripts/hyaku/prefile-falsification.py --lane
+tameshi --round 96`); gate selftest `PREFILE-FALSIFICATION-SELFTEST: PASS`.
