@@ -4,9 +4,10 @@ Lane: kagi (secrets & vault ops). Round 64, attempt 2. Claim BASE
 `09cbee831d57be7c4edfbe77bf238f46bf729047` (round-63 verifier spot-check tip).
 Predeclaration `dff0929c0e084822b0fe32e0d164534c768f97fe` (`plans/round-64.md`, including
 **Amendment A1**), landed before any candidate work. Wave `kagi-r64-w1`, 16 seats, one v1
-wave. Lane HEAD on landing: `e5668ffc359930417c0c6cc43703b1de75b9cd82` (round commit
-`6593f7213334b5eb87f182b1693a48e2ae992e6d` plus the two >1 MiB capture bodies in
-`e5668ffc…`; `git ls-remote origin refs/heads/master` prints the latter, `ahead=0`).
+wave. Lane HEAD on landing: `6178d472dddb6c10e1c3f168da0110d2edb02ad8` (round commit
+`6593f7213334b5eb87f182b1693a48e2ae992e6d`; then the two >1 MiB capture bodies in
+`e5668ffc…`, the end census in `4aab7fa6…` and the ledger-verify receipt in `6178d472…`;
+`git ls-remote origin refs/heads/master` prints `6178d472…`, `ahead=0`).
 
 ## Work performed
 
@@ -100,7 +101,7 @@ Work items:
 
 Every change is logged in `LOG.md` §"Round 64" and carried by the round commit
 `6593f7213334b5eb87f182b1693a48e2ae992e6d` (with `e5668ffc359930417c0c6cc43703b1de75b9cd82`
-for the two >1 MiB capture bodies); the lane tip is `e5668ffc…`. Wave evidence (`w1-spec.json`, `w1-dispatch.json`,
+for the two >1 MiB capture bodies); the lane tip is `6178d472…`. Wave evidence (`w1-spec.json`, `w1-dispatch.json`,
 `w1.ready`, `w1-results.json`, `w1/`, `build/`, `capture/`, `base/`, `final/`,
 `claims.json`, `claim-falsification.tsv`) is committed with it.
 
