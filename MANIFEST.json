@@ -60296,6 +60296,51 @@
    "notes": "Dispatch/complete digest: 2026-11-08T12:10:27-03:00 launch chousa round=94 pgid=368999 driver=hyaku-inline attempt=1 | 2026-11-08T13:20:10-03:00 complete chousa round=94; hyaku-inline attempt=1. Status ok; report committed by chousa-shokunin 1f883f43 and lands last (ct 1794154675 > lane HEAD 1794154661); cited commits 41038ed7/352924bb/6ae736ea/4cbaed6c/f276d7fb/ebbcbe39/d13c2ff2/0e311d16 all ancestors of master; lane clean ahead=0 ls-remote identical; prompt is the template rendering + hyaku addendum 6 with all round-level and five child-lane items; pre-file ledger present and passing (8 falsifies-wording / 1 falsifies-number / 10 neutral). Conformance defects (status-neutral, routed to chousa r95): D1 report miscounts the ledger as 9 falsifies-wording/9 neutral (actual 8/10; the 9 is rows naming a plans/round-94.md pointer); D2 LOG.md round-94 After bullet is stale, quoting PINNED_FILES=34/34 and DETECTOR_WITNESS=17/17 at F/C where the landing is 35/35 and 18/18 at F3/C3 - append-only named correction owed; D3 lesson Gate omits the URL and access date for new row S221 (SOURCES contract rule 1); D4 ledger credits R94CriticClaims with a two-line-predicate finding that seat does not file (belongs to R94ReviewerC2 F3), narrowing real; D5 C1 sentinel row claims --expected/--receipts containment the seat did not measure (guard exists at control-driver-r94.py:486-494); D6 C3 executor row says 'both named limits measured' where limits 1 and 4 were measured and 2-3 declared unmeasured; D7 plan Amendment 4 cites F2/C2 for the c1-forgeries green run that first lands at F3/C3; D8 plan preamble says all amendments applied before C2 though Amendments 8-9 land at F3. Round-93 routed items D2/D5/D6 are closed in this round; D3 does not recur. SHONEN: four [~] boxes with resolvable pointers, no [x]; all four are non-author checkable (Gates table, LOG entry, measure-all-r94.sh + after receipts, PROVINCE untouched) - flag for operator promotion review, box 2 being meta-work the operator should weigh as domain work. Fleet-root leftovers (.scratch/, .ufo/l0-questions.md appends from tsukuroi/souji) are other lanes' work, not chousa debt; no tool installed.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 99,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 99,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 99
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [
+    "control-population-identity",
+    "record-evidence-audit",
+    "autoload-state-vocabulary"
+   ],
+   "report": ".ufo/reports/round-99/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-99-verifier-spotcheck.md@6776c667372a0da8635ebfbda6cbc92d8fb17304",
+    "rechecks": "C1 evidence-verified + re-measured (round-98 counter has 0 id-set guards; round-99 line 680 set(want_ids)==set(natural); c1.out met=True exit 0, mutant exit 1, positive exit 0, grader-base met=False exit 1); C2 evidence-verified + re-measured (round-98 w1-results 12/12 non-empty, spec roles 7 attack/5 non-attack, gate failed=6 arms match; c2.out 12/0 exit 0, base 10, matrix 14/15 with J disclosed; SCORECARD:6431 pointer correct at M 00394f3b, stale (6446) at tip); C3 evidence-verified + re-measured (probe router-autoload-unread 0->3, call inside condition, SKILL sha f48f5c8e/2511 lines/60 headings; c3.out 8 cells 0 mismatches, harness 77/77, regression 19 cells exit 0); tools unchanged 00394f3b..a60e57cd; prefile ledger pass exit 0 (claims=3 rows=9 attack_seats=6 findings=0); S624/S627 admit and S626 reject re-opened agree (digests match), S628 reject disagree on substance (correct path tools/server/tests/unit/test_router.py line 23 exists); S625 quote re-opened agree; census kama ok exit 0"
+   },
+   "commit": "kama-shokunin@6776c667372a0da8635ebfbda6cbc92d8fb17304",
+   "closed_at": "2026-11-08T22:51:19Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (.ufo/watchdog.log, copied): 2026-11-08T11:43:19-03:00 launch kama round=99 pgid=4143118 driver=hyaku-inline attempt=1; 2026-11-08T13:39:49-03:00 complete kama round=99; hyaku-inline attempt=1. Report committed by lane identity (0e0e27f4, 3f2c51ae); SHONEN heading with 4 [~] lines (none fully checkable by a non-author); cited commits 439fdb3d/f6e7ccc2/00394f3b/71838fdd/9ee0c3c4/3ed7a8df/a60e57cd all ancestors of master; lane clean and pushed (ahead=0) before closure. No axis harmed; scores unchanged. Defects (status-neutral), routed to round 100: (1) SCORECARD.md:6431 pointer in both round-99 correction blocks stale at tip (sentence now at 6446 after 71838fdd inserted Planned (round 100)); (2) round-99 wave mix '58% attack counting the connector' is wrong: 6/12 = 50% (claims.json says 50%); (3) S628 rejected as 404 but the seat's assertion exists at tools/server/tests/unit/test_router.py line 23 @ b12177 - re-file; (4) claims.json measured fields still 'pending' and freeze-time C3 before; (5) carried red pre-report arms (newest-closure, round75/78 instruments). Spot-check landed 6776c667 (ls-remote verified).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
