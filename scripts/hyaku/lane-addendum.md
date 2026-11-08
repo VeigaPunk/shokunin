@@ -809,3 +809,28 @@ Amendment 56 (operator, 2026-11-07 ~23:50Z, verbatim: "use m_cru and m_mim for m
 Amendment 57 (operator, 2026-11-07 ~00:05Z, verbatim: "also, use m_flash amr for some roles; it should be working"): verified first, then split. ProbeAmr59 (executor seat under the untouched m_flash alias, which points straight at amr/deepseek-v4.1-flash:max) answered `AMR59 42` in 26.8 s, 0 errors — so amr came back while the rest of the deepseek chain is still dead (mistral 402 Vibe budget, opencode-go 402, opencode-zen 401, commandcode 401, zai weekly quota to 2026-11-12). All five amr stored keys (83-87) are unblocked; the earlier 500 "failed to evaluate membership entitlement" was transient. Five roles move `@m_mim` -> `@m_flash` (amr/deepseek-v4.1-flash:max): labrat, mutation-tester, simplifier, sonic, distiller. Resulting map: 8 roles `@m_cru` (opencode-go/crouton-alpha-free — task, main, planner, reviewer, security-reviewer, critic, executor, revenger); 5 roles `@m_mim` (scout, connector, sentinel, scribe, seance); 5 roles `@m_flash` (labrat, mutation-tester, simplifier, sonic, distiller). Backup config.yml.pre-m_flash-roles-20261107. This amends Amendment 56's split, which the operator superseded in the same breath. Applies to future launches; live seats keep the route they captured.
 
 Amendment 58 (operator, 2026-11-07 ~00:25Z, verbatim: "ok try unblocking the lanes and runinng the hyaku training again"): six lanes unblocked. (a) mado r99 and souji r82 carried attempt-exhaustion markers from the provider cascade ("round N failed 3 attempts: L1 ended without a landed report"), not quality pauses — lifted, markers archived as `blocked/.<lane>.run15-20261107-attempt-exhaustion`; no operator ruling was needed for those two. (b) chousa (next 84), kama (94), tameshi (91) and tsukuroi (91) carried genuine three-consecutive-rejection pauses; this message is read as the operator's fresh-start authorization for all four (the same reading as Amendment 46) — markers archived as `blocked/.<lane>.run15-20261107-freshstart-authorized`. Fresh-start binding unchanged from Amendment 46: each lane's next round first reads its last three rejected closures and their verifier spot-checks, then declares only claims a do-nothing control cannot reach. Rejections on the record stay; the 3-rejection pause gate applies again to new rounds. No lane's next-round pointer was rewound and no outcome was rewritten.
+
+## 8. Pre-file falsification ledger — mandatory from 2026-11-08 (Amendment 59, binding every round)
+
+**Why this rule exists.** Five lanes were autopsied (`.ufo/waves/defect-autopsy/{chousa,kama,tameshi,tsukuroi}.md`): chousa 6 rejected rounds, kama 3, tameshi 6, tsukuroi 3 — 18 rounds, 26 of 26 declared claims falsified. Every single one was the same class and no other: the frozen counter went green on a property NARROWER than the claim's stated wording, and a seat in the round's OWN wave then committed a counterexample that falsified the wording — after the freeze, before the report. Zero cases of the instrument never reaching green; zero cases of a defect nothing in the lane could see. The killing artifact was already in the lane's custody, in `.ufo/waves/round-N/`, every time.
+
+**The rule.** A claim verifies only if no artifact produced by this round's own wave falsifies its STATED WORDING. Numbers re-deriving is necessary and not sufficient. Before filing the report, produce `<lane>-repo/.ufo/waves/round-N/claim-falsification.tsv`:
+
+    claim<TAB>artifact<TAB>verdict<TAB>narrowing<TAB>note
+
+- `claim` — `C1`..`C9`, every id that appears in `claims.json` `claims`.
+- `artifact` — a path that resolves under `.ufo/waves/round-N/`; must exist. This is the wave's own adversarial output, not a re-reading of it.
+- `verdict` — `falsifies-wording` | `falsifies-number` | `neutral`. Closed set. Use `falsifies-wording` for "the sentence claims more than the instrument enforces".
+- `narrowing` — for `falsifies-wording`: a required pointer to the amendment recorded in `plans/round-N.md` that narrows the claim to what the instrument enforces, or to the honest-stop that withdraws it. Otherwise the literal `-`.
+- `note` — one line, no tabs.
+
+Every wave seat whose role is reviewer, security-reviewer, critic, mutation-tester, sentinel, connector, revenger or labrat must appear in the artifact column. Those seats are your adversary; the gate refuses a ledger that does not read them.
+
+**The choice is binary and it happens at the freeze, not at the closure.** If a wave artifact falsifies a claim's wording you either (i) amend the frozen claim down to the enforceable property, citing the artifact, and then file; or (ii) file an honest stop whose deliverable IS the narrowing. Filing the wider sentence is the defect.
+
+**Run the gate before you file:**
+
+    python3 {{FLEET_ROOT}}/scripts/hyaku/prefile-falsification.py --lane <lane> --round <N>
+    python3 {{FLEET_ROOT}}/scripts/hyaku/prefile-falsification.py --lane <lane> --round <N> --init   # skeleton rows, never overwrites
+
+Exit 0 pass · 1 findings (each printed as `FINDING <id> <detail>`) · 2 setup (a surface is missing) · 64 usage. Paste the `PREFILE-FALSIFICATION:` line and its exit code into the report. A ledger that fails the gate is not a filing blocker on its own — but the closure now checks the same surface (Amendment 59, closure step 2), so an absent or failing ledger is the fastest way to be rejected. Gate selftest: `python3 scripts/hyaku/prefile-falsification.py --selftest` → `PREFILE-FALSIFICATION-SELFTEST: PASS`.

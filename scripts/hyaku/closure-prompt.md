@@ -37,6 +37,16 @@ never pass a model parameter; you write only the two artifacts in steps 4–5):
    exploratory claim YOU are the named non-author reviewer: rule `unprovable-but-better` or
    `unprovable`, with reasons. Grade each axis
    `improved | harmed | unchanged | unprovable-but-better | unprovable`.
+2b. **Pre-file falsification ledger (addendum §8, Amendment 59).** Run
+   `python3 {{FLEET_ROOT}}/scripts/hyaku/prefile-falsification.py --lane {{LANE}} --round {{ROUND}}`
+   and record its `PREFILE-FALSIFICATION:` line and exit code. This is the same surface the
+   dominant rejection class turns on: a claim whose stated wording a wave artifact falsifies while
+   the frozen counter stays green. The ledger must cover every claim in `claims.json`, must read
+   every attack-role seat's artifact, and every `falsifies-wording` row must name a narrowing. A
+   FAIL is not automatic rejection, but each failing row is a defect you must adjudicate: if the
+   row is real and unreconciled the claim does not verify; if the row is spurious say why. An
+   absent ledger is a conformance defect to name in notes. Do not edit the ledger.
+
 3. **Discernment spot-check (LEARNING.md).** From `corpus/lessons/round-{{ROUND}}.md` `## Gate`
    sample ≥1 admit and ≥1 reject; re-open each source (URL, path, or command) and record
    agree/disagree with a reason. Re-open ≥1 newly written `corpus/SOURCES.md` row and check its
