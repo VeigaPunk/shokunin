@@ -59876,6 +59876,46 @@
    "notes": "Dispatch digest: 2026-11-08T09:11:05-03:00 launch tameshi round=96 pgid=1345449 driver=hyaku-inline attempt=1; 2026-11-08T10:46:09-03:00 complete tameshi round=96; hyaku-inline attempt=1. Report committed by lane identity, SHONEN heading one line per box, lane HEAD ancestor of master, repo clean and pushed (ahead=0). Defects (status-neutral): cited C1-summary.txt uncommitted (battery 50/50 evidence-verified via 50 committed receipts + seat re-grade); R96L1 revenger dead seat, probe unmeasured; w1-results.json L1-constructed after dispatcher stall. Routed: commit/cite battery summary; dispose R96L1 gap.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 89,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 89,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 89
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "unprovable",
+    "operability": "improved",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "raw-first excerpt that keeps the type name on control-heavy input: tools/souji-record-agreement.py bounds RAW bytes before escaping (head-100 / U+2026 / tail-99) so 25 leading control bytes no longer consume the head; closure re-measured tests/fixtures/r89-k4-flagfail.py -> cases=10 tool_pass=10 before_pass=8 EXIT 0 (KFF8 pass; before arm 8/10 EXIT 1), first-working round 89"
+   ],
+   "report": ".ufo/reports/round-89/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-89-verifier-spotcheck.md@bd760432df2cc3ba6c5f1ccc540b050fe2ac09e2",
+    "rechecks": "C1 re-measured by closure at the tip (frozen battery, 1,695.8 s): pristine r88 53/0 and r89 57/0, SUMMARY killed_r88=12 killed_r89=15 killed_total=27, EXIT 1, m17c-no-malformed survives both -> frozen target 16/28/EXIT 0 NOT MET (three of four bindings: m18b/m17b/m18d killed on r89 only). C2 re-measured by closure: before arm 8/10 EXIT 1, after arm 10/10 EXIT 0, r87 12-row K4 regression rows=12 mismatches=0 EXIT 0. Pins re-derived (counter fd0a8e24, r89 population 04570a64, mutants bc7e6bb1, harness 6165eade vs stale prereg c75cd946, tool f6fce6d1, before tool 4042218f, fixture a9b03141). S351/S352 live re-fetch HTTP 200 and byte-identical to the captures (sha 62a3d3da / 4b7d1eef); quotes present once (13 / 15 words). sources-census: souji ok EXIT 0, 273 -> 274 rows. PREFILE-FALSIFICATION: pass claims=2 rows=13 attack_seats=7 findings=0 EXIT 0 on the working tree; FAIL with 13 artifact-missing on a clone of the pushed tip because .ufo/waves/ is gitignored and the r89 seat reports/receipts are untracked (durability defect D1)."
+   },
+   "commit": "souji-shokunin@1786b5527b29f48a6a04b5b11a50528182880761",
+   "closed_at": "2026-11-08T14:29:07Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-11-08T09:18:13-03:00 launch souji round=89 pgid=1801868 driver=hyaku-inline attempt=1; 2026-11-08T10:56:38-03:00 complete souji round=89; hyaku-inline attempt=1. Step 1 ok: report 50e8c6be by souji-shokunin (author 10:55:05, committer 10:56:14) after the lane tip 1786b552 (10:55:21); SHONEN heading with four [~] lines and pointers; all cited lane hashes exist and are ancestors of refs/heads/master; jj-lane state ahead=0 and porcelain empty; prompt is the template rendering (8,566 bytes/140 lines) plus hyaku addendum section 6 with the round-level and five child-lane items; one v1 wave 12/12 settled, 0 dead, attack 5/12 >= 25%, connector 1, residual 0. NOT ADMITTED (rejected-honest-stop): C1 (calibration 7, the lowest owned non-retired axis) does not verify: closure re-ran the frozen battery at the tip for 1,695.8 s -> pristine 53/0 and 57/0, SUMMARY killed_r88=12 killed_r89=15 killed_total=27 EXIT 1; the frozen target 16/28/EXIT 0 is NOT MET and m17c-no-malformed survives both populations because LD2's appended P02 is already in the frozen r77 ledger; three of the four bindings verify (NF6h->m18b, LD1b->m17b, NF6i->m18d). C2 (operability 8) verifies as narrowed: closure re-measured before 8/10 EXIT 1, after 10/10 EXIT 0, r87 12-row K4 regression rows=12 mismatches=0 EXIT 0; the 0x85/U+0085 collision and the 202-byte raw window are disclosed in A2 and carried. Conformance defects (status-neutral): D1 (major) .ufo/waves/ is gitignored; the 12 r89 seat reports and receipts are untracked and 4864129b's tree contains none of them (git ls-tree lists only the root spec/dispatch/results/ready/ledger), so the prefile ledger passes only on the local working tree and FAILs with 13 artifact-missing on a clone of the pushed tip; rounds 86-88 force-added their wave files (209/280/125 tracked), so this is a durability regression. D2 the report's Extras pre-file line (12 rows / 6 attack seats) is stale against the final 13/7 and the S89Distiller ledger row landed in 1786b552 after the report was authored. D3 the landed-changes row claims 4864129b carries the 12 seat reports; it does not. D4 the wave has 2 executors and no planner seat against the prompt's minimum split. D5 the discernment trend token is 'mixed -> improved', not one allowed value. D6 the claims.json landed row has an em dash for its LOG entry. D7 corpus/README coverage map/frontier stops at r86 and does not index the r89 knowledge entry. D8 the malformed-row capability row is design-only ('measured, not landed'). D9 the r90 planned block sits above the r89 block. D10 the S351 row title says 3.14 while the capture and live page are 3.15.2 (A3). Disclosed: M1 LD2 row design, M2 pre-freeze C2 after receipt re-filed identical, M3 stale dispatch wording, A0.6 post-F harness pin c75cd946 -> 6165eade. Routed to r90: commit the wave evidence and correct D1-D3; bind m17c with LD2b (ZZ9, an id absent from the ledger) and re-measure 16/28; spell U+0085 as  or add KFF9; index the r89/r87/r88 knowledge entries in corpus/README.md; move the design capability row to planned; dispatch the third executor/planner or record the L1-planner waiver; use one trend token; tie claims.json to its LOG entry. Axis verdicts: calibration unprovable (partial 12->15 delta real, claim's own kill rule fires), operability improved, coverage unchanged; no axis harmed (scores 7/8/8 held). Promotions and mints: none. SHONEN boxes remain [~]; promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
