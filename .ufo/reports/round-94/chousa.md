@@ -236,3 +236,23 @@ re-freeze time; it was *progressing* throughout (commits F, C, wave, F2, C2, F3,
 No tool was installed or upgraded in this round (no pacman transaction; the host guard was respected). The
 gate selftest was re-captured with the installed `bash tools/research-gate.sh --selftest` (283 cases, 0
 skipped, 8 m 24 s).
+
+## Erratum/annex — carrier history (added after filing, 2026-11-08)
+
+The report's revision list names `41038ed7`/`352924bb` (F/C) and `4cbaed6c`/`f276d7fb` (F2/C2) as superseded
+pairs without saying in one place *why the carrier moved*, so an auditor re-derives it from the seat reports.
+This annex states it:
+
+- **C → C2.** The attack seats audited C `352924bb`, where `forgeries-r94.py`'s `s1-schema-two-column` case
+  wrote the valid three-column table and then demanded `SETUP PIN_SCHEMA` from it: `FORGERIES=FAIL`, exit 1, on
+  every tree the driver accepts. Five independent seats reported it (`R94ExecC1Repro` F1, `R94ReviewerC1` F1,
+  `R94CriticClaims`, `R94SentinelScope` F1, `R94ScoutSources` F1, plus `R94ExecMutations` C1). F2 `4cbaed6c`
+  drops the case and keeps the do-nothing measurement in `s0-schema-prior`; the C2 carrier is the first tree on
+  which `FORGERIES=PASS` is reachable.
+- **C2 → C3.** At C2 the reviewer/critic/sentinel findings still open were applied at F3 `ebbcbe39` (containment
+  and validation guards, `--receipts-rev` validation, receipts that no longer embed the emitter's scratch path,
+  `expected.tsv` without the host `HOME`, an independent `PRIOR_ACCEPTED` measurement, the Unicode punctuation
+  class with its CJK control, `TAIL_OWNER_UNMAPPED`, and the narrowed claim wording). C3 `d13c2ff2` is the tree
+  every number in this report is measured at.
+- No claim sentence, kill rule or target was changed except as recorded in `plans/round-94.md` Amendments 1–9,
+  and each amendment cites the seat artifact that forced it.
