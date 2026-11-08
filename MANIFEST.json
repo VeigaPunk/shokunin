@@ -58048,6 +58048,50 @@
    "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-11-07T22:59:00-03:00 launch souji round=82 pgid=3437660 driver=hyaku-inline attempt=1; 2026-11-08T01:16:28-03:00 complete souji round=82; hyaku-inline attempt=1. The 2026-11-07 07:13/07:15/07:16 launches (attempts 1-3) were dead launches with lane-dead-no-report and no commit; nothing inherited (state at start local=remote=488956c4, ahead=0). Step-1 pass: report committed by souji-shokunin (fleet commit 3c44e8d0, only that path); ## SHONEN heading at line 143 with 4 [~] lines and pointers; all 10 cited lane commits are ancestors of master and authored by the lane identity; lane pushed ahead=0 with a clean tree; prompt carries the template contract plus the hyaku addendum. Defects (status-neutral): the report's commit chain and Landed changes table omit 51a5e7fa (freeze receipt + lesson M1/M2); the prompt's required planner seat is absent and the report's 'validator forbids a planner seat' justification does not resolve in scripts/hyaku/ufo-wave-policy.json (which defines a planner role); the 8/14=57% attack-share label uses the falsification tool's wider ATTACK_ROLES (5/14=36% under the run-15 enumeration; the 25% floor holds either way); the one dead seat S82ExecC2 (87-byte stub) is disclosed and C2 was re-derived by three other seats and by me. Routed to the lane for round 83: the rejected S330 pgrep(1) candidate has no rejected registry row though round-prompt section 2b.1 says rejections stay as rows; LOG.md's round-82 C2 bullet still says the tool 'drops the stale $!' while R1 restored ${CLI_PID:-${!:-}} (append a named correction); the lane's own routes 1-6 (own-tree real wN/ shape, identity-clause row, census-in-tree branch, fork-free /proc tree walk, dead m- prefix test and settle/strace guard, termign-fork + p5-late-term rows) plus the carried r81 section-5 item 6 list. No promotion, no mint, no cross-lane write; SHONEN boxes look checkable by a non-author but promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 99,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 99,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 99
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "GIO 2.90.1 launch spawn environment: tools/mado-launchenv.py answers read-only the load gate, the twelve-row Terminal=true table and prepend, the post-prepend argv[0] lookup, Path= as child cwd and GIO_LAUNCHED_DESKTOP_FILE (67 cases/31 classes, 69/69 mutants, fresh 60/60)",
+    "Frozen-panel harm watch: quality/harm-watch.py replays 28 declared legs with per-leg rc+marker expectations and a fail-closed census, with quality/counters/c2-r99-harm-watch.py and five planted panels as its discrimination controls"
+   ],
+   "report": ".ufo/reports/round-99/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-99-verifier-spotcheck.md@43309e6af9a3b57f1bc839a826bef1f8eb7495e4",
+    "rechecks": "C1 re-measured plainly over committed bytes (tool absent at 2cbaa141, present at 0e8f39f5; tool sha a63c20c8, cases 14b4cc57 with 67 cases/31 classes, 69 mutants, gio d2164260 all re-hashed by me) and its receipt's TARGET_MET 67/67+31/31+69/69+fresh 60/60+controls 1/67,4/67 evidence-verified; C2 re-measured (gate absent at base, gate sha 37a0544b, panel sha 160763ce, expect_legs 28 = 28 legs, 5 planted panels present) and its receipt reads TARGET_MISSED mismatches=2 (r92_gate_defects, r97c1_filetype both rc=124 at the frozen 600s cap) so the frozen predicate is unmet and the claim does not verify; pre-file ledger PREFILE-FALSIFICATION pass claims=2 rows=8 attack_seats=6 findings=0 (exit 0) and its control receipt shows the seat-unread finding; my census validate rc=0 rows=469; Gate admits S532/S533/S534 agree (S532 re-opened live HTTP 200, sha match) and the round's assimilation reject agrees (no launch-plane entry in merge/mado) plus a round-98 reject re-opened agrees; no axis harmed (SCORECARD/QUALITY/LOG additive, standing gate untouched)."
+   },
+   "commit": "mado-shokunin@0e8f39f50012625e17aad8d97f29e16ddcae9916",
+   "closed_at": "2026-11-08T04:28:47Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-11-07T18:05:35-03:00 launch mado round=99 pgid=217589 attempt=1; 2026-11-07T18:07:14 lane-dead-no-report (report_of FAIL); 18:07:16 launch attempt=2 pgid=1121594; 20:39:10 lane-dead-no-report; 20:39:12 launch attempt=3 pgid=1949254; 22:12:52 lane-dead-no-report; 22:59:11 launch attempt=1 pgid=3478462; 2026-11-08T01:08:55 complete mado round=99. Step-1 conformance pass: report committed by the lane identity (16dba8ef first filing, f9920699 misroot note), SHONEN heading with four [~] lines and pointers, all eight cited commits ancestor of master, lane ahead=0 clean and pushed at the reported 0e8f39f5, prompt carries the round contract and all five child-lane items. C1 verifies (coverage improved); C2 files TARGET_MISSED as the lane's own honest stop, so the round is rejected-honest-stop with no axis harmed. Defects routed to lane r100: (1) lesson M99-3 / QUALITY 172 state 'grep -n def find_program' prints mado-mime.py:467 but it prints 466 (467 is the docstring line naming g_find_program_for_path); (2) round-shape sentence says attack 6/12=50% but only 5 of 12 seats are attack roles (2 reviewers, 1 critic, 2 mutation-testers; connector is not attack) - 5/12=42% still clears the >=25% floor; (3) C2's frozen 600s per-leg cap has no headroom under fleet load (the lane's own A9) - re-freeze above the measured worst leg, never move the target after the data; (4) C1 A8: the unset-PATH default branch is modelled with no frozen case; (5) attempt-3's TARGET_MET left no receipt (disclosed in the report) - keep every measured line with its receipt in the same commit. Promotion note (operator-owned): all four SHONEN boxes look checkable by a non-author from resolvable evidence, so a promotion review is available whenever the operator runs it; no [x] was written. Ledger: PREFILE-FALSIFICATION pass (claims=2 rows=8 attack_seats=6 findings=0); every falsifies-wording row names its narrowing in plans/round-99.md A1/A3/A4/A5/A6 and each was adjudicated real-and-reconciled.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
