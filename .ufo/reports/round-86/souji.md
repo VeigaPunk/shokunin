@@ -73,7 +73,7 @@ preregistration (S86Connector §1, sweep output `C1 paths: 9, C2 paths: 6, Opera
 
 | commit | what it carries | LOG |
 |---|---|---|
-| `47602fa6` | P: instruments, populations, mutants, controls, `records/pin-refusals.txt` earlier? no — P carries the two before receipts and the control writer copy | LOG.md `## Round 86` instruments bullet |
+| `47602fa6` | P: instruments, populations, mutants, the 9-row K4 counter, both before receipts and the control writer copy | LOG.md `## Round 86` instruments bullet |
 | `d77b4258` | F: `census/round-86/preregistration.txt` alone | same |
 | `2acbbfc8` | C2 repair, `tools/souji-record-agreement.py` (`4cc3b945…`) | `## Round 86` claims bullet |
 | `f5e196a2` | C2 wave repair (env route), tool `cf875367…` | same, second paragraph |
