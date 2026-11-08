@@ -59374,6 +59374,47 @@
    "notes": "Dispatch/complete digest: 2026-11-08T06:47:08-03:00 launch tabi round=87 pgid=1231738 driver=hyaku-inline attempt=1; 2026-11-08T07:56:51-03:00 complete tabi round=87; hyaku-inline attempt=1. Lane base 24765dd9, round tip a53b01a1 (master, ahead=0 behind=0, clean); report committed by tabi-shokunin <tabi@shokunin.local> at fleet 70a3ba0b; SHONEN heading with 4 [~] lines; prompt is the template rendering + hyaku addendum, five child-lane items and round-level items present. Wave: one v1 wave, 11 seats (3 executor, 2 reviewer, critic, mutation-tester, scout, scribe, connector, sentinel), 5 attack seats (45%). STATUS ok, ADMITTED false: C1 and C2 verify on their own predicates but the calibration axis is harmed — the freeze commit rewrote seven historical SCORECARD selftest tallies to 10/10 against committed evidence, undocumented and outside the drift gate's five statements; record-vs-state mismatches 5→0 on the counted set and 0→7 on SCORECARD. Routed defects: (D1) restore those tallies to 9/9 or append a named correction, and widen QUALITY 161/the drift gate to SCORECARD round tallies; (D2) report says 'selftest 10/10 at D7' while the committed tally is D6 (79b5cd13) and the lesson says D6 — commit a D7 run or use D6; (D3) the r87 counters/gates expose no per-gate --selftest mode and the record-drift gate has no isolated-fixture failing case (D7 fail-ability rests on plan prose); (D4) mid-wave re-freeze churn D4/D5/D6 already mined, keep the batching rule; (D5) fleet hygiene: pre-file gate left scripts/hyaku/__pycache__/prefile-falsification.cpython-314.pyc untracked (operator-side). Non-blocking conformance defects: none in the report contract. Non-author spot-check landed at f16f992d (pushed, remote master verified).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 96,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 96,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 96
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-96/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-96-verifier-spotcheck.md@f48d16428d8bb92fd6cf546a745bff5b624e3f18",
+    "rechecks": "C1 re-measured by judge (103/103 x3 independent re-run; bends at 102/101 with frozen sets; N02 4 rc-64 refusal error rows; dn 99/99 and 98/99 REFUSAL-VERSIONS; instruments sha256 17 OK; gate bytes unchanged). C2 selftest re-executed PASS 7/7; before FAIL 10 findings F1-F6 and after PASS findings [] evidence-verified; one-fault legs committed-evidence. PREFILE-FALSIFICATION: PASS claims=2 rows=11 attack_seats=5 findings=0 exit 0. Census validate exit 0 (57 W04 + 1 W01). S391 quote verbatim at byte 157851 (pin sha256 a7e00587 matches); S389 byte 785297 (pin 6bf2ce2b matches); man.limine.8 reject re-verified HTTP 404 2706 bytes."
+   },
+   "commit": "tsukuroi-shokunin@f48d16428d8bb92fd6cf546a745bff5b624e3f18",
+   "closed_at": "2026-11-08T11:30:45Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-11-08T07:34:30-03:00 launch tsukuroi round=96 pgid=546826 driver=hyaku-inline attempt=1; 2026-11-08T08:27:35-03:00 complete tsukuroi round=96; hyaku-inline attempt=1. Report committed by lane identity (42e6b559); SHONEN heading with one line per box; cited hashes c6786148/c67861483ad64491954fdcfd2003189b2dfad8b9 ancestors of master; lane ahead=0 master==remote; one untracked receipt (registry-final.json) left by lane, named in spotcheck. Amendments A1-A5 narrow both claims; no axis harmed (SCORECARD stable).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
