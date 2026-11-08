@@ -59456,6 +59456,49 @@
    "notes": "Dispatch digest: 2026-11-08T07:53:17-03:00 launch chousa round=91 pgid=952200 driver=hyaku-inline attempt=1 | 2026-11-08T08:56:33-03:00 complete chousa round=91; hyaku-inline attempt=1. Report committed by lane identity (10695a56). Lane base 265b8633 -> landing 406ac474 (ancestors verified, ahead=0, ls-remote identical). Conformance defect (status-neutral): fleet worktree leftovers (.scratch/closure-*-entry.json, run15-state.json, __pycache__) outside this lane's commit scope. Routed defects (from lesson §Routed work): operability r92 pin/exact/whitespace/work/external-step repairs; calibration QSHAPE ordering/used-by/source_link/df numbers; freshness regex scoping/r82 binding/historical multiset/cell pin/controls clause; carried debt round-74 oracle, QUALITY 173 form, r80 backlog Gate ids. Two earlier freeze/carrier pairs superseded pre-wave pre-scoring per plan.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 67,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 67,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 67
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "freshness": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "capture read-through in the source census"
+   ],
+   "report": ".ufo/reports/round-67/kagi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kagi-shokunin/corpus/lessons/round-67-verifier-spotcheck.md@d3b2a4e8eed710277951e430efd3d27b5983033c",
+    "rechecks": "C1 re-measured candidate bound=36 located=36 caught=6/6 guard=1 / BASE bound=36 located=35 caught=0/6 guard=0; C2 re-measured candidate mismatches=0 / BASE mismatches=7; census kagi ok; prefile pass (claims=2 rows=9 attack_seats=6) with --wave kagi-r67-w1; S166 RFC9530 re-opened byte-identical quote count=1; reject sample agree."
+   },
+   "commit": "kagi-shokunin@d3b2a4e8eed710277951e430efd3d27b5983033c",
+   "closed_at": "2026-11-08T11:12:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-11-08T07:38:09-03:00 launch kagi round=67 pgid=786586 driver=hyaku-inline attempt=1 | 2026-11-08T08:55:30-03:00 complete kagi round=67; hyaku-inline attempt=1. Conformance clean; report committed by lane identity kagi-shokunin; SHONEN 4 boxes all [~] with pointers; lane pushed ahead=0 (5bf73e27 before verifier tip, now d3b2a4e8). Routed next round: prose escape hatch + whole-file CRLF (path_rows=0), column-15 digest never recomputed, tampered corpus/rendered-text-v1.py reads CLEAN in-tree, in-tree hardlink point-in-time, carried ADJACENCY_SCOPE: DEFECT breadth debt, claim-ledger cells SETUP on historical heading, citations BROKEN all in historical docs, operator-side __pycache__ V-5, prefile tool default wave-name mismatch. No axis harmed. SHONEN boxes look fully checkable by a non-author; promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
