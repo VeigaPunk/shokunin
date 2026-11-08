@@ -236,6 +236,8 @@ Census command (contract v1):
 
 Stale-lane: respawn-per-round driver; no other mission of this lane is open.
 
-Lane HEAD at report time: `ef90e98936d4fb68851d1a7218aa2173041d7555`
-(`git ls-remote origin refs/heads/master` prints it).
+Lane HEAD at report time: `932a73592adf873db30457c466c39ed1f7013060`
+(`git ls-remote origin refs/heads/master` prints it; the round-68 landing commit is
+`ef90e98936d4fb68851d1a7218aa2173041d7555`, followed by a late-seat-evidence
+commit carrying `R68ScribeLesson`'s final report and its own C2 lane run).
 
