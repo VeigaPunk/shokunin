@@ -58006,6 +58006,48 @@
    "notes": "Dispatch 2026-11-07T22:59:07 launch tsukuroi round=91 pgid=3460888 attempt=1; 2026-11-08T00:55:20 lane-dead-no-report (attempt 1 FAIL report_of), retry; 2026-11-08T00:55:34 launch attempt=2; 2026-11-08T01:16:20 complete. Step-1 conformance pass (SHONEN heading 1x, 4x [~], all cited commits ancestor-of-branch, ahead=0, clean, not a marker). Status-neutral defects: (a) report cites 6d12e07f, 4 control-evidence commits landed after (20f65353..71fc1b66); (b) frozen declaration literals 8f0daee8.../78 families describe r90 not the 82-family battery (disclosed in plans/round-91.md); (c) census 53->56 lines with 3 W04 duplicate-url warnings (expected, snapshot dirs); (d) gate selftest 25/25 has no V1/U1 coverage (smoke-only, disclosed). Routed to lane r92: report-last discipline, append-only correction for stale literals, battery oracle-isolation patch + QUALITY 132 (M1), freeze-manifest battery binding, selftest V1/U1 cases, upstream re-pin watch on limine>=12.9.5. SHONEN boxes remain [~] with non-author verification owed (promotion operator-owned). Verifier spot-check landed 07c58264 via jj helper (landed + ls-remote verified).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 82,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 82,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 82
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "own-tree-bound pointer counter: census/round-82/c1-pointer-counter.py refuses the own-round-tree decoys NF-F/NF-G and the full-suffix decoys NF-H/NF-I while keeping TF1-TF5/PF-1 (frozen 32-row harness accepted 2 -> 0, refused_true=0, EXIT=0; re-measured by the integrator at the tip bytes)",
+    "descendant-tree CLI kill under job control: tools/souji-vault-verify.sh snapshots and kills the CLI's descendant tree before the group kill (frozen 16-row counter 4 -> 0 mismatches and 4 -> 0 orphans under SHELLOPTS=monitor, 0 under the default launch, at the R1-repaired tip bytes; re-measured by the integrator)"
+   ],
+   "report": ".ufo/reports/round-82/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-82-verifier-spotcheck.md@1e870403c5d806a5cf9ac93b00da7a928359608f",
+    "rechecks": "C1 re-measured on committed bytes: r82 counter 32 rows mismatches=0 accepted=0 refused_true=0 EXIT=0; r81 counter 32/2 accepted=2 (NF-F,NF-G) EXIT=1; K-b r81-logic variant 2; r81 regression harness 25/0/0/0. C2 re-measured: filed tool sha256 dd6d440e 16/0/0/0 under both launches; base tool 89a2ed8c monitor 16/4 mismatches/4 orphans (v7,v8,m1,m2 survivors=1), default 16/0/0/0. Evidence-verified only: selftest 57/0, r17 37/0/0, probe D 6/6, four C1 regression receipts, C2 K-b/K-c controls. Census 252 -> 252 EXIT=0; prefile-falsification pass claims=2 rows=8 attack_seats=8 findings=0 (EXIT 0).",
+    "prefile_falsification": "PREFILE-FALSIFICATION: pass claims=2 rows=8 attack_seats=8 findings=0 (EXIT 0)"
+   },
+   "commit": "souji-shokunin@44e074018b2acb89f6143195d34c5c90237e8655",
+   "closed_at": "2026-11-08T04:27:49Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (.ufo/watchdog.log, mutable): 2026-11-07T22:59:00-03:00 launch souji round=82 pgid=3437660 driver=hyaku-inline attempt=1; 2026-11-08T01:16:28-03:00 complete souji round=82; hyaku-inline attempt=1. The 2026-11-07 07:13/07:15/07:16 launches (attempts 1-3) were dead launches with lane-dead-no-report and no commit; nothing inherited (state at start local=remote=488956c4, ahead=0). Step-1 pass: report committed by souji-shokunin (fleet commit 3c44e8d0, only that path); ## SHONEN heading at line 143 with 4 [~] lines and pointers; all 10 cited lane commits are ancestors of master and authored by the lane identity; lane pushed ahead=0 with a clean tree; prompt carries the template contract plus the hyaku addendum. Defects (status-neutral): the report's commit chain and Landed changes table omit 51a5e7fa (freeze receipt + lesson M1/M2); the prompt's required planner seat is absent and the report's 'validator forbids a planner seat' justification does not resolve in scripts/hyaku/ufo-wave-policy.json (which defines a planner role); the 8/14=57% attack-share label uses the falsification tool's wider ATTACK_ROLES (5/14=36% under the run-15 enumeration; the 25% floor holds either way); the one dead seat S82ExecC2 (87-byte stub) is disclosed and C2 was re-derived by three other seats and by me. Routed to the lane for round 83: the rejected S330 pgrep(1) candidate has no rejected registry row though round-prompt section 2b.1 says rejections stay as rows; LOG.md's round-82 C2 bullet still says the tool 'drops the stale $!' while R1 restored ${CLI_PID:-${!:-}} (append a named correction); the lane's own routes 1-6 (own-tree real wN/ shape, identity-clause row, census-in-tree branch, fork-free /proc tree walk, dead m- prefix test and settle/strace guard, termign-fork + p5-late-term rows) plus the carried r81 section-5 item 6 list. No promotion, no mint, no cross-lane write; SHONEN boxes look checkable by a non-author but promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
