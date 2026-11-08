@@ -149,7 +149,7 @@ rewrote the ready file with L1 `KamaR94a2` and the orchestrator dispatched it at
 ## Before → after measurements
 
 **C1** — counting command
-`python3 tools/round94-router-budget.py --repo . --rev <rev> --work <scratch> --burners 32 --runs 1`:
+`python3 tools/round94-router-budget.py --repo . --rev <rev> --work <scratch> [--burners N] --runs 1`:
 
 ```
 before (e6f1dcce, controls/c1-base.out): cells=19 mismatches=3 positive_mismatches=0 load_cells=19
@@ -175,7 +175,7 @@ round-93 base probe. Narrowed statement and routing: `plans/round-94-amendment-1
 ```
 before (e6f1dcce): SETTER_SWEEP 92 0 0 0 0 92 0 0 derived_checked=0 derived_disagree=0 decisions=0/2 pop=92 met=False   exit 1
 after  (6aa5fa6b): SETTER_SWEEP 92 92 2 92 0 0 0 0 derived_checked=47 derived_disagree=0 decisions=2/2 pop=92 met=True exit 0
-after  (tip `76af34d7`): identical to 6aa5fa6b, exit 0
+after  (lane tip `32f8e347`): identical to 6aa5fa6b, exit 0
 ```
 
 Predicate met; **claim not verified** (K2 fired by SC01 F1/F2 and CN01 F4 — see Work performed).
