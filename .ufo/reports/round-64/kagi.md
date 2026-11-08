@@ -4,10 +4,11 @@ Lane: kagi (secrets & vault ops). Round 64, attempt 2. Claim BASE
 `09cbee831d57be7c4edfbe77bf238f46bf729047` (round-63 verifier spot-check tip).
 Predeclaration `dff0929c0e084822b0fe32e0d164534c768f97fe` (`plans/round-64.md`, including
 **Amendment A1**), landed before any candidate work. Wave `kagi-r64-w1`, 16 seats, one v1
-wave. Lane HEAD on landing: `6178d472dddb6c10e1c3f168da0110d2edb02ad8` (round commit
+wave. Lane HEAD on landing: `525c69de649424011276dc05cba24c891ebf7ad0` (round commit
 `6593f7213334b5eb87f182b1693a48e2ae992e6d`; then the two >1 MiB capture bodies in
-`e5668ffc…`, the end census in `4aab7fa6…` and the ledger-verify receipt in `6178d472…`;
-`git ls-remote origin refs/heads/master` prints `6178d472…`, `ahead=0`).
+`e5668ffc…`, the end census in `4aab7fa6…`, the ledger-verify receipt in `6178d472…` and
+its final-tree correction in `525c69de…`; `git ls-remote origin refs/heads/master` prints
+`525c69de…`, `ahead=0`).
 
 ## Work performed
 
@@ -101,7 +102,7 @@ Work items:
 
 Every change is logged in `LOG.md` §"Round 64" and carried by the round commit
 `6593f7213334b5eb87f182b1693a48e2ae992e6d` (with `e5668ffc359930417c0c6cc43703b1de75b9cd82`
-for the two >1 MiB capture bodies); the lane tip is `6178d472…`. Wave evidence (`w1-spec.json`, `w1-dispatch.json`,
+for the two >1 MiB capture bodies); the lane tip is `525c69de…`. Wave evidence (`w1-spec.json`, `w1-dispatch.json`,
 `w1.ready`, `w1-results.json`, `w1/`, `build/`, `capture/`, `base/`, `final/`,
 `claims.json`, `claim-falsification.tsv`) is committed with it.
 
@@ -161,7 +162,7 @@ populations are the BASE census (pre-freeze semantics — the same shape round 6
 | `corpus/claims-declared.sh` | `CLAIMS_DECLARED: CLEAN (claims=53)` |
 | `corpus/scope-gate.sh` | `ADJACENCY_SCOPE: DEFECT` — unchanged, the carried `breadth_drift=5 breadth_unverified=1`, named not absorbed |
 | `corpus/claim-ledger.sh citations` | `CITATION_GATE: BROKEN (cites=4939 docs=163 unresolved=22 ephemeral=0 labeled=24)` — 22 unresolved, **all pre-existing** (round-34/35/43/44/51/53/54/58/59/62-era historical documents and two absent `.ufo/waves/round-59/final/` paths); none in a round-64 document |
-| `corpus/claim-ledger.sh verify` | 17 FAIL rows, all pinning historical counts (`stamps=125`, `rounds=73`, `entries=38`, `rows=114`) — pre-existing drift; every artifact this round changed was re-stamped (161 rows) and `DOC_AUDIT` is CLEAN |
+| `corpus/claim-ledger.sh verify` | `CLAIM_LEDGER: POLICY (claims=99 policy=5 stamped=161)` with 20 FAIL rows (R11-08 … R62-06), all pinning historical counts (`stamps=125`, `rounds=73`, `entries=38`, `rows=114`) — pre-existing drift; the round's own rows R64-01/R64-02/R64-03 pass, every artifact this round changed was re-stamped (161 rows), and `DOC_AUDIT` is CLEAN |
 | selftests | checker `cases=111`; `round-64-c1.sh` `cases=23`; `round-64-c2.sh` `cases=21`; `round-64-controls.sh` `cases=36`; `round-63-c2.sh` `cases=13`; `round-63-controls.sh` `cases=25` |
 
 ## Sources & frontier
