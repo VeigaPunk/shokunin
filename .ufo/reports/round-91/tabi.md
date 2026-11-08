@@ -9,7 +9,7 @@ fixtures `a6ecf367…` parent / `01380a98…` same / `01380a98…` child, **15 l
 Chromium 155.0.8059.84 / node v24.21.0).
 **Instrument freeze:** D3 `12cbe8a0267f` (`.ufo/waves/round-91/freeze.txt`, per-digest artifact
 `freeze-12cbe8a0267f.txt`; D1 `1d073adc0b8d`, D2 `2d825d85aab7` — `plans/round-91.md`
-§Re-freeze history). **Lane tip:** `f3f11579d70d38daded4767b5a0965e6800cecb2` (pushed;
+§Re-freeze history). **Lane tip:** `7c59b26469a4a4415fe412d09b009711ea2fdefe` (pushed;
 `git ls-remote origin refs/heads/master` prints it). **Axes at start:** all six at 9.
 
 **Attempts and inherited state.** Attempt 1 (12:28:52–13:22:38) authored the six instruments, the
@@ -17,8 +17,8 @@ scored receipt, the records and the wave spec, dispatched w1 at 13:15:55, then e
 report. Attempt 2 (13:22:42) died at wake (13:23:19). Attempt 3 (this one) re-verified every
 inherited byte (five-gate suite on the tip bytes, 202.71 s, all green; the drift gate twice; the
 fleet census; every seat artifact read) and then **closed the wave's late seats by direct message**,
-because no `w1-results.json` handoff was ever written: five seats that the dead attempt left
-unfiled (Exec2, Review1, Critic, Mut1, Scribe) filed reports on request. **Reused:** the six
+because no `w1-results.json` handoff was ever written: six seats that the dead attempt left
+unfiled (Exec2, Review1, Critic, Mut1, Scribe, Connector) filed reports on request. **Reused:** the six
 instruments, the scored receipt, the record drafts, `w1` evidence. **Repaired:** `freeze.txt`/
 `freeze.sh` (a false nonce line), `LOG.md`'s `six gates` and its nonexistent `w1-results.json`
 pointer, `SCORECARD.md`'s `10 causal cases`, the claims numeral entries, and both claim verdicts
@@ -55,8 +55,9 @@ repairs are routed to r92.
   `hasBeenActive=false` on both parent-click arms scores clean 30; leg (c)'s row/note/SKILL items are
   read by no gate; the claims file was narrowed at 13:19:45 **after** the scored receipt (13:07:04)
   and after R91Exec3 filed (13:18:31), and its pin map was replaced D1 → D3 post-data.
-  R91Mut1 adds 27/40 surviving counter clauses (20 true battery gaps) and R91Scribe the note's
-  N1–N7 divergences.
+  R91Mut1 adds 27/40 surviving counter clauses (20 true battery gaps), R91Scribe the note's N1–N7
+  divergences, and R91Connector shows the cross-origin arms are same-site (127.0.0.1, different
+  port), not out-of-process frames — a further scope narrowing for the capability row.
 - **C2 — calibration (9), the six lane-measurable r90 routed defects**
   (`corpus/lessons/round-90-verifier-spotcheck.md` §8 items 1, 2, 3, 5, 7, 8), counted by
   `scripts/check-record-drift-round91.mjs` over eight statements. Before: **8 findings** at base
@@ -76,11 +77,11 @@ repairs are routed to r92.
   `w1.ready.dispatched`). Roles: 4 executor, 2 reviewer, 1 critic, 1 mutation-tester, 1 scout,
   1 scribe, 1 connector, 1 sentinel, 1 simplifier — **5 attack seats of 13 (38 %)**, 1 connector
   (policy cap 2). The L1 holds the planner seat; no planner dispatched (the validator rejects
-  `planner`). **Round total 13, no residual call.** **Dead seats: 1 — Connector left no artifact**
-  (no `w1-results.json` handoff existed after the attempt-2 L1 died; no seat was replaced).
-  **Twelve seats filed:** Exec1, Exec2, Exec3, Exec4, Review1, Review2, Critic, Mut1, Scout, Scribe,
-  Sentinel, Simplifier — five of them (Exec2, Review1, Critic, Mut1, Scribe) only after attempt 3
-  messaged them, because their work had no landing path. Evidence:
+  `planner`). **Round total 13, no residual call, no dead seats.** **All thirteen seats filed:** Exec1,
+  Exec2, Exec3, Exec4, Review1, Review2, Critic, Mut1, Scout, Scribe, Sentinel, Simplifier,
+  Connector — six of them (Exec2, Review1, Critic, Mut1, Scribe, Connector) only after attempt 3
+  messaged them, because no `w1-results.json` handoff existed after the attempt-2 L1 died and their
+  work had no landing path; no seat was replaced. Evidence:
   `.ufo/waves/round-91/w1/swarm-registry.json` + `w1/`.
 - **Attack results (all recorded, none greened).** Exec4: 55 single-field mutants, 41 refused /
   14 clean — thirteen reach gaps (chooser `mode`, `hasBeenActive`, the four string mirrors, chooser
@@ -97,8 +98,11 @@ repairs are routed to r92.
   (`--selftest` kills 4/13). Sentinel: F1 claims moved mid-wave, F2 the pre-amendment C1 text,
   F3 the false nonce line in `freeze.txt`, F4 presence-only drift statements and a committed
   `working-tree` revision, F5 unpinned control churn. Simplifier: K-3/N-3/C-3/R-3 dead weight and
-  "at least" assertions. Scribe: note/record divergences N1–N7, G1–G5. **Ledger:**
-  `.ufo/waves/round-91/claim-falsification.tsv` (22 rows). Repair status: F3 and F5 fixed in-round
+  "at least" assertions. Scribe: note/record divergences N1–N7, G1–G5. Connector: 20/20 sibling lanes on four surfaces,
+  nothing contested (tabi is the only holder of iframe/`postMessage` showPicker ground and of
+  `check-record-drift*`), and two limits — the driver binds the first `type=page` target without a
+  `Target.*` enumeration, and the cross-origin leg is `127.0.0.1` on another port, i.e. **same-site,
+  not OOPIF**. **Ledger:** `.ufo/waves/round-91/claim-falsification.tsv` (18 data rows, 13 seats). Repair status: F3 and F5 fixed in-round
   (per-digest freeze artifact, scored nonce read from `claims.json`, `controls/c1/digests.txt`,
   annotated census artifacts); F4's artifact re-measured at the tip and committed; everything else
   recorded as r92 work in `plans/round-91.md` §Limits discovered by the wave.
@@ -129,6 +133,7 @@ repairs are routed to r92.
 | `21e14593` | `.ufo/waves/round-91` (wave evidence, claims `frozenAmendments`, `freeze-12cbe8a0267f.txt`, `freeze.sh`/`freeze.txt` repair, `controls/c1/digests.txt`, four `scored/control-*.json`, `census-end-final.txt`, `claim-falsification.tsv`, `w1.ready`), `LOG.md`, `README.md`, `SCORECARD.md`, `SKILL.md`, `plans/round-91.md`, `corpus/lessons/round-91.md`, knowledge note | `LOG.md` ## Round 91 (attempts 1–3) + wave outcome |
 | `df4ef1fc` | `.ufo/waves/round-91/scored/drift-a.json` re-measured at `21e14593` with the revision recorded | `LOG.md` ## Round 91 (C2 after-run) |
 | `a60d2f75` | `claim-falsification.tsv` (Exec2 + Review1 rows), `w1/R91Review1.md`, `LOG.md` seat accounting, `plans/round-91.md` §Limits (prior-set count-level guard, declaration-level pins, proxy execution unproven, `hasBeenActive` unread) | `LOG.md` ## Round 91 wave outcome |
+| `7c59b264` | `claim-falsification.tsv` (Connector row, 13/13 filed), `w1/R91Connector.md`, `LOG.md` seat accounting, `plans/round-91.md` §Limits (same-site vs OOPIF, first-target binding) | `LOG.md` ## Round 91 wave outcome |
 | `f3f11579` | `claim-falsification.tsv` (Critic, Mut1, Scribe rows), `w1/R91Critic.md` + its two fixture JSONs, `w1/R91Mut1.md` + results, `w1/R91Scribe.md`, `SCORECARD.md` verdicts, `LOG.md` verdicts, `plans/round-91.md` §Limits (battery coverage, selftest kill power, post-data narrowing, statement narrowness, §8 item 6, colour/date arms) | `LOG.md` ## Round 91 verdicts |
 
 ## Before → after measurements
@@ -183,8 +188,8 @@ repairs are routed to r92.
 - **Frontier rows advanced:** none held. The proxy/`postMessage` capability was named and measured
   but its claim fails as written, so the row stays **entered, not held**; carried: the colour popup
   itself, a second browser build (Edge/WebView2), real-site cross-origin frames (operator approval
-  absent; loopback only), and now the critic's unbound clauses (same-origin colour, parent-activated
-  date, `hasBeenActive`).
+  absent; loopback only), the critic's unbound clauses (same-origin colour, parent-activated date,
+  `hasBeenActive`), and the connector's same-site-not-OOPIF and first-target-binding limits.
 - **Mistake + sourced claim:** the mined mistake and the S225/S226-sourced C1 are in the lesson's
   `## Mistakes` and `## Gate` as above.
 
@@ -199,7 +204,7 @@ repairs are routed to r92.
   red (`scored/selftest.json`, `w1/R91Exec1-score-cold*.json`).
 - **discernment — improved.** Five attack seats executed counterexamples that falsified both claims
   rather than greening them: the critic's two fixtures, the mutation sweep's 27 survivors, the
-  reviewer's prior-set and pin findings, the sentinel's F1–F5, and a 22-row ledger. Evidence:
+  reviewer's prior-set and pin findings, the sentinel's F1–F5, and an 18-row ledger. Evidence:
   `claim-falsification.tsv`, `w1/R91Critic-c2-tautology.json`, `w1/R91Mut1-results.json`.
 
 ## SHONEN
@@ -207,7 +212,7 @@ repairs are routed to r92.
 - [~] SKILL.md contains real decision tables, error patterns, checklists, cited sources — `SKILL.md:3365` `## Round 91 gate registry` (six instruments, five gates, exact commands), knowledge note (laws, limits, cited S216/S219/S221/S222/S225/S226); non-author verifiers for the r91 block: R91Sentinel (provenance), R91Simplifier (coverage), R91Critic (clause binding).
 - [~] At least one end-to-end domain task executed and logged in LOG.md — 15-leg cross-origin proxy run `corpus/evidence/round91/chromium-showpicker-proxy/receipt.json` (0 failures), logged in `LOG.md` ## Round 91; independently re-run twice by R91Exec1.
 - [~] Instructions executable by an agent without oral context — `SKILL.md:3365-3372` names every counting command with its pins; R91Exec3 reproduced the C2 before/after and all four C1 controls from those lines alone, and R91Mut1 re-ran the batteries against 40 mutant counters without lane writes.
-- [~] No cross-domain bleed (PROVINCE.md still accurate) — `PROVINCE.md` untouched this round; every landed path is lane-owned (`249b7d0c` … `f3f11579`); Sentinel's out-of-lane sweep found no r91/tabi write outside the lane.
+- [~] No cross-domain bleed (PROVINCE.md still accurate) — `PROVINCE.md` untouched this round; every landed path is lane-owned (`249b7d0c` … `7c59b264`); Sentinel's out-of-lane sweep found no r91/tabi write outside the lane.
 
 ## Stale-lane
 
