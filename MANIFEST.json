@@ -58132,6 +58132,47 @@
    "notes": "2026-11-07T22:59:09-03:00 launch kama round=94 pgid=3469328 driver=hyaku-inline attempt=1; 2026-11-07T23:35:21-03:00 lane-dead-no-report kama round=94; retry same round (hyaku-inline attempt=1: L1 ended without a landed report: FAIL report_of (missing, unchanged, no SHONEN heading, or < 400B): .ufo/reports/round-94/kama.md); 2026-11-07T23:35:28-03:00 launch kama round=94 pgid=963924 driver=hyaku-inline attempt=2; 2026-11-08T02:03:04-03:00 complete kama round=94; hyaku-inline attempt=2. Defects: prompt §4 omits commit-hash citation rule verbatim (status-neutral); round75-instruments red carried (APPEND_DEBT bad_rows=19, late-line-96 hash mismatch, L0 r87/r89 open); round78-instruments live-reconcile red (host Ollama 8080, operator-owned). Routed: C1 residuals (work-proportional budget, count-derived wrapper ceiling, gate fixture, /props verdict, counter coverage M02/M12/M14/M10 + CR01 F3/F6/F7/F8) and C2 R20/R21 to round 95; M5/M6 freeze/predicate process fixes. Report boxes all [~] (lane-dispatched wave seats are still the lane); promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 91,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 91,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 91
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unprovable",
+    "calibration": "unprovable",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "operability": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-91/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-91-verifier-spotcheck.md@d126c7d1a880fa139d09d8d1a53ae8ec2ee766b8",
+    "rechecks": "Step 1: report fc79b52f by tameshi-shokunin filed 02:12:51 after lane tip 63172b98 (02:12:01); SHONEN heading 4 lines = 4 SHONEN.md boxes, all [~] with pointers; 20 cited hashes exist and are ancestors of master (34a92bbf is a scratch-clone state, receipt w1/T91C1-attack1.out committed); jj-lane state ahead=0 behind=0 tracked=0 untracked=0, porcelain empty, ls-remote master=63172b98; round pure addition (numstat deletions empty); prompt = template 1-140 verbatim modulo placeholders + hyaku addendum §6, no MISSION route map quoted; required report sections in order. Re-measured over committed bytes: SOURCES rows 177->179 (numstat 2 0), census exit 0 with 21 warnings incl new S318 W04; spec sha256 ce8983d5 at ace200b5; frozen parse_note reads cells[vcol+1] at 50e59d59 vs cells[vcol] at 0b63b85e with receipts committed after the fix; toolpin tautology at c2/measure-c2-v91.sh:59-62; C2 clone receipts pos/reject/falsereason all C2_R91_PASS=true; C1 attack receipt PASS=true with presented table C001-C012 inverted; C1 landing 15/16 conjuncts, source=false, PASS=false. Independent subject run (never the lane's counter): fleet gate f47ad6ba sha256 3fb72615, pristine selftest ok exit 0, C11 edit exit 3 KILLED, C12 edit exit 0 SURVIVED — matches note :80-81. Evidence-verified (not executed): C1 CTL14-pos 16/16 PASS exit 0, T91E1 reproducible, T91E4 sealed-holds. PREFILE-FALSIFICATION: pass claims=2 rows=15 attack_seats=7 findings=0 exit 0; 9 falsifying rows all narrowed to plan §Amendments A1/A2 and all adjudicated real. Both claims unprovable; no axis harmed (SCORECARD diff narrative-only, QUALITY/lesson diffs pure addition)."
+   },
+   "commit": "tameshi-shokunin@63172b9889475103aeca976d37389d204010dd11",
+   "closed_at": "2026-11-08T05:19:12Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-07T22:59:05-03:00 launch tameshi round=91 pgid=3454474 driver=hyaku-inline attempt=1; 2026-11-08T02:13:26-03:00 complete tameshi round=91; hyaku-inline attempt=1. Wave r91-w1: 14 seats (4 executor, 2 scout, 1 scribe, 2 reviewer, 2 critic, 1 mutation-tester, 1 connector, 1 sentinel), 14/14 settled, 0 dead; strict §6 attack set (reviewer/critic/mutation-tester) 5/14=36%, above the 25% floor (report's 7/14 also counts connector+sentinel). Both claims withdrawn to honest stop by the round's own wave: R91-C1 killed by rule (a) via a committed state that PASSes with the presented verdicts inverted plus receipts that certify post-freeze bytes; R91-C2 killed by rule (a) via three indistinguishable clone states and a tautological toolpin, independently confirmed at measure-c2-v91.sh:59-62. Defects (status-neutral): (1) stale counts at the final commit — LOG.md:4988 and the lesson Learning-trends line say 'QUALITY 143-148 / M1-M6' while 149 and M7 landed at 63172b98 and the report says 143-149; corrections must be appended next round; (2) .ufo/waves/round-91/claims.json 'freeze' = ee484d3b (claims commit) while plan, report and the freeze-integrity finding name 50e59d59 as the rev carrying the instrument bytes — pin one full hash next round; (3) carried: the pre-freeze battery was produced by bytes post-dating the freeze (lane M2 / QUALITY 144), stays on the queue until a successor pins its own sha256 at run time. Routed: fleet-root plans/round-91.md is tsukuroi r91 limine work (another lane's misroot; report routed it, left in place). Operator note: SHONEN boxes 1-2 look independently checkable from committed artifacts (SKILL.md decision table :86, defect taxonomy :274, numbered checklist :159; LOG round-91 entry); promotion is operator-owned and no [x] was written.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
