@@ -58956,6 +58956,47 @@
    "notes": "dispatch 2026-11-08T05:35:40-03:00 launch souji round=86 pgid=4124310 driver=hyaku-inline attempt=1; complete 2026-11-08T06:20:51-03:00 complete souji round=86; hyaku-inline attempt=1. Step-1 conformance: report committed by lane identity souji-shokunin c9e4fd5d, SHONEN heading with 4x[~] lines, both lane hashes ancestor of master, jj-lane.sh state ahead=0 tracked=0 untracked=0, prompt carries template contract. No SHONEN promotion (lane still shonen). Status-neutral defects: (1) lesson claims wave evidence in .ufo/waves/round-86/ but lane HEAD 1c3a1d41 carries 200 wave files force-tracked - already remediated R86-2; (2) S345 anchor 'rendered lines 79-80' vs roff line 121 wrap (spacing normalised, quote accurate); (3) S343 anchor 'rendered lines 26-27' is semantic not physical line (roff header offset), quote text accurate; (4) report cites sha 2acbbfc8/4cc3b945 first repair (superseded by f5e196a2/cf875367 filed bytes, identical 9-row numbers noted, no consumer impact); (5) plans A0-A11 vs lesson A0-A5 count mismatch (lesson text truncated during integration). Routed r87: battery pin-exit docstring/exit-code drift (lesson M6), c7 suffix test + got-half dead arms, NF-L3/m12/m16/m17, NX3 int-round + w0/ decision, five-path cap, FLAGFAIL reachability, writer stderr 200-char truncation, pinned writer digest, inherited K3 tally, r83/r84 C2 carried list (pid-reuse/parent-before-child/termign-fork/p5-late-term/strace). MISROOT: fleet status 6 entries none lane-authored per report sweep. Spot-check sample: ADMIT S341/S342/S343 AGREE (quotes byte-exact in roff captures), REJECT S344 AGREE (duplicates S317/S327), REJECT S345 AGREE-taken (assume-unchanged promise present line 121). Census validate souji ok exit 0 (87 W04 pre-existing).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 89,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 89,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 89
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-89/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-89-verifier-spotcheck.md@f54a45ed197dd475af50d82e43a22df3d2e99782",
+    "rechecks": "C1 re-measured at lane tip: gate-records-r89.py exit 0 GATE_RECORDS_R89=PASS LEG_REREAD=16/16 RECONCILED=16/16 CROSSCHECK=15/15 LEGS_APPENDED=16; mutate-r89.py 11/11 + 2/2 TOTAL=13/13 with E7b/E7c/E7d/E7f killed on named UNRECONCILED/UNCROSSCHECKED lines; harm-recheck moved=0 (records=31 at tip, 29 at freeze) base_rc=0; prior r88 battery PASS with LEGS=15/15 and no CROSSCHECK, four survivor receipts accepted by r88. C2 re-measured: CURATION_R89=PASS DUP_QIDS=0 WARRANT_OK=17/17 QUOTES_LOCATED=20/20 SUP_CLAUSE_CHECKED=0; controls FORGERY_REFUSED=7/7 PRIOR_ACCEPTED_FORGERY=7/7; mutants MUTANTS_KILLED=6/6 COUNTER_DETECTED=5 BATTERY_DETECTED=1; prior r88 counter PASS with no DUPQID/fields_hold/VERDICT. run-controls.sh in an archived tip copy: RECEIPT_OK x8 CONTROL_RECEIPTS=PASS exit 0, all ten committed receipts byte-identical to a fresh run. research-gate selftest PASS (283 cases) exit 0; lane-preflight PREFLIGHT=8/8 exit 0; sources-census validate chousa exit 0 rows=218 five pre-existing W04. Harm: knowledge 97->97, registry 218->218 (two used-by cells only), tools/gate-records.py byte-identical. PREFILE-FALSIFICATION: pass claims=2 rows=17 attack_seats=6 findings=0 exit 0; six falsifies-wording rows each narrowed and adjudicated in the spot-check."
+   },
+   "commit": "chousa-shokunin@a72f204bfeea10fc59497e23bcbda021a1a2ced5",
+   "closed_at": "2026-11-08T09:39:30Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete: 2026-11-08T05:31:37-03:00 launch chousa round=89 pgid=2396342 driver=hyaku-inline attempt=1 | 2026-11-08T06:27:54-03:00 complete chousa round=89; hyaku-inline attempt=1. Conformance: report 3ad1062 authored by chousa-shokunin, pathscoped, lands last (06:27:12 vs lane 06:26:40), SHONEN 4x [~] with pointers, cited commits ac0a0892/976d422c/a72f204b all ancestors of master, lane ahead=0 behind=0 clean, prompt = template rendering (substitutions only) + addendum §6, wave 12 seats (4 executor, 2 reviewer, critic, mutation-tester, sentinel, scout, connector, scribe) 0 dead, every seat carries a VERDICT trailer. Claims verified on their narrowed wording: C1 on Amendments 4-5, C2 on Amendments 1+8 (the frozen VERDICT token is unprinted on the passing path; narrowed to the failure-side observable M1-M4a). No axis harmed. Status-neutral defects routed to r90: (1) report C2 after-line and LOG after-line quote VERDICT fields_hold=1, which the counter never prints on the passing path; (2) attack share stated 7/12 in report+w1 commit vs six attack seats in the ledger and 6/12 in the lesson; (3) work-performed frontier bullet says four mistakes / four criteria QUALITY 190-193 vs seven mistakes / 190-195; (4) plan Amendment 8 prints LEGS_MEASURED=8/9 where the counter prints 8/8; (5) SKILL.md research-gate registry rows still carry the 275-case selftest tally although the tool prints 283 since round 82. Carried and re-flagged: round-74 source-blind order oracle, QUALITY 173 successful-refused record form, r80 backlog Gate ids, Amendment 7 control-driver discipline, Amendment 9 detector-substitution witness, C1 named limit 1 (joint rewrite) and C2 named limits 1-2. SHONEN: all four boxes look checkable by a non-author (box 3 re-ran green here); no [x] written, promotion operator-owned. Spot-check: chousa-shokunin/corpus/lessons/round-89-verifier-spotcheck.md@f54a45e, landed via jj-lane.sh and confirmed at ls-remote.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
