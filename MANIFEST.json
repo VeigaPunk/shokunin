@@ -59833,6 +59833,49 @@
    "notes": "dispatch 2026-11-08T08:59:14-03:00 launch chousa round=92 pgid=2917148 driver=hyaku-inline attempt=1; complete 2026-11-08T10:46:06-03:00 complete chousa round=92; hyaku-inline attempt=1. Report committed by chousa-shokunin 8653a3f5; cited commits ancestors of master; lane clean ahead=0; prompt carries template contract. No blocking defects; residuals (7/16 on-disk pins, QSHAPE whitespace quote, r82 clip, 215 tail) already planned for round 93. SHONEN boxes fully checkable by non-author - flag for operator promotion review.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 96,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 96,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 96
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "revision-identity seal"
+   ],
+   "report": ".ufo/reports/round-96/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-96-verifier-spotcheck.md@0b19af5f8666f9c54a437f511e9155a66d0d418d",
+    "rechecks": "C1: ran disposition checker at 8ed9c526 -> rows=19 falsifiable=17 findings=0 exit 0, rev=8ed9c526 printed; --rev master -> rev-not-a-commit-id exit 2; committed forge matrix 8/8 and selftest 13/13 re-read. C2: make-pins96 --lane '' -> PINS_SETUP lane-empty exit 2; --check -> PINS_CHECK OK; 50 committed battery receipts each carry counter_sha= (counted 50/50); states=50 matched=50 verdict evidence-verified via seat re-grade, not re-run. Prefile falsification: pass claims=2 rows=11 attack_seats=7 findings=0 exit 0. Census validate exit 0. Spot-check sample: 3 admits + 1 reject all agree."
+   },
+   "commit": "tameshi-shokunin@07e50d6d0142b21e8443b5417b8edc4d1dd76455",
+   "closed_at": "2026-11-08T13:53:22Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-08T09:11:05-03:00 launch tameshi round=96 pgid=1345449 driver=hyaku-inline attempt=1; 2026-11-08T10:46:09-03:00 complete tameshi round=96; hyaku-inline attempt=1. Report committed by lane identity, SHONEN heading one line per box, lane HEAD ancestor of master, repo clean and pushed (ahead=0). Defects (status-neutral): cited C1-summary.txt uncommitted (battery 50/50 evidence-verified via 50 committed receipts + seat re-grade); R96L1 revenger dead seat, probe unmeasured; w1-results.json L1-constructed after dispatcher stall. Routed: commit/cite battery summary; dispose R96L1 gap.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
