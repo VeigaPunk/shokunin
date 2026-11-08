@@ -59123,6 +59123,47 @@
    "notes": "Dispatch digest (watchdog.log, copied at closure): 2026-11-08T05:41:28-03:00 launch tameshi round=94 pgid=982315 driver=hyaku-inline attempt=1; 2026-11-08T07:13:59-03:00 complete tameshi round=94; hyaku-inline attempt=1. Report filed after lane tip 507adb5c (07:12:14-03:00) at 07:12:35-03:00, addendum 07:12:59; lane tip = master = origin/master; clean. C1 (coverage) verified from committed evidence and graded improved. C2 (calibration) UNPROVABLE as filed: the frozen claim and plan predicate require DISPOSITION_SELFTEST: 8/8, the operative rev-3 receipt prints 9/9 (rev2 added a4-prose-state-word-cheat); A1 declares rev3 operative but says 'No claim wording, predicate, state expectation or target changes', which is false for the tally; plans/round-94.plan.md:165, LOG.md Round 94 and corpus/lessons/round-94.md Measurements still print 8/8, and R94SC1 F5 named the gap with no records amendment. The disposition counts 19/17/2/0 and the reason test verify; the filed tally sentence does not. Round not admitted (honest stop); C1 stands, C2 re-files next round. Routed: (1) append an erratum/amendment narrowing the 8/8 tally to the operative 9/9 (never edit frozen bytes); (2) report Sources & frontier tier counts 'A 150, B 17, C 4, rejected 11' are not reproducible: measured at base and tip raw A=164 B=14 C=4 (excluding rejected A=158 B=12 C=1), rejected=11, total=182; give the command; (3) report says 'Four rows are falsifies-wording' while listing five amendments and the TSV has five rows, and the ledger's C2/R94SN1 row 'neutral' understates F1-F3/A7; correct the count/reason and include A6/A7; (4) plan Wave declares 14 seats, executed 12 (security-reviewer and simplifier absent; policy still met: 12 in band 8-16, attack 4/12=33% by role set, 6/12=50% with sentinel/connector) — reconcile; (5) sentinel F4 (rerun-N.out precedence), F5 (symlink-following grader), F6 (make-pins94 symlink / --lane ''), F7 (empty --rev index fallback), F9 (/tmp canary) are not in any round-95 routed line despite 'nine sentinel findings routed'; route or correct; (6) lesson Measurements cites C1-summary.txt for the aggregate C1_CONTROLS line, which is controls-run.log:47 (summary carries the 45 MATCH rows); (7) frozen battery command uses --jobs 6, report/SCORECARD use --jobs 12 — record the variance or use the frozen flag; (8) validator default wave is w1 while the round's wave is r94-w1, so the exact closure prefile command exits 2 SETUP wave-missing; the report's --wave r94-w1 passes. No axis harmed; SKILL/PROVINCE/AGENTS/SHONEN untouched. SHONEN boxes all [~] and look non-author-checkable; promotion is operator-owned. No promotions, no mints.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 95,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 95,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 95
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "coverage": "unchanged",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-95/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-95-verifier-spotcheck.md@73c47107e8bda79375517ee24ec3c13688586305",
+    "rechecks": "C1 re-measured from committed bytes at b8f878c8: 99 unique FAMILY_ROSTER entries vs 98 (the new family x1), do-nothing control cmp-identical to the r94 battery, N05 differs from the gate by one line (<=9 -> <=8), receipts 99/99 met x3 canonical and x3 clone (0 error rows), N05 98/99 unmet x3 both layouts with failed_families exactly [REFUSAL-VERSIONS-9DIGIT] and 4 rc-64 rows, r94 roster 98/98 met x3 on both gates with 0 nine-digit rows, 7 of 8 mutants killed (M06 survives, reported), instruments 9x OK and the freeze manifest OK from a git archive of the tip. C2 re-derived with an independent SKILL.md registry parse: 147 rows/149 tools/missing {limine-pin-battery-r94.py, make-r94-bends.py} -> 151/151/0 with no orphans; gate receipts PASS (findings 0, missing 0) at b66e6be5, 884ed06b and a302e688; selftests 23/23 and 39/39 from committed logs; limine-pins cells default auto and 39 fixtures; both gates byte-unchanged this round. Pre-file ledger pass exit 0; census exit 0 (57 W04 + 1 W01, 0 E; 389 rows). Step-1: lane-identity report cf0a19cc on origin/main, SHONEN heading, 8 cited commits ancestors of master, jj-lane ahead=0, prompt = rendered template + addendum. Spot-check table in the spot-check file."
+   },
+   "commit": "tsukuroi-shokunin@73c47107e8bda79375517ee24ec3c13688586305",
+   "closed_at": "2026-11-08T10:33:09Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (copied from the mutable .ufo/watchdog.log): 2026-11-08T06:41:58-03:00 launch tsukuroi round=95 pgid=3745292 driver=hyaku-inline attempt=1; 2026-11-08T07:21:10-03:00 complete tsukuroi round=95; hyaku-inline attempt=1. Status ok, ADMITTED: both measured claims re-derived by the closure from committed bytes at b8f878c8 - C1 depth (roster 98 -> 99 unique families, REFUSAL-VERSIONS-9DIGIT x1; do-nothing control byte-identical to the r94 battery; N05 one line <=9 -> <=8; landed gate 99/99 met x3 canonical + x3 clone with 0 error rows; N05 98/99 unmet x3 in both layouts with failed_families exactly [REFUSAL-VERSIONS-9DIGIT]; r94 roster 98/98 met on both gates with 0 nine-digit rows; 8 one-clause mutants, 7 killed, M06 survivor reported; instruments 9x OK and the freeze manifest verifies at the tip) and C2 operability (closure's own registry parse: 147 rows / 149 tools / 2 missing -> 151/151/0, no orphans; receipts PASS at b66e6be5, 884ed06b and a302e688 with findings 0 missing 0; registry selftest 23/23 and limine-pins 39/39 from committed logs; limine-pins cells read default auto and 39 fixtures). Pre-file falsification ledger: PREFILE-FALSIFICATION: pass claims=2 rows=21 attack_seats=5 findings=0, exit 0 (C1 x14/C2 x7 rows; 14 neutral, 6 falsifies-wording -> A2/A3/A4 with named narrowings, 1 falsifies-number -> A1); the A3 post-scoring narrowing of the frozen 'largest in-bound member' superlative is real and reconciled, claims.json stays byte-frozen and superseded by plan A3. Step-1 conformance pass: report committed by the lane identity (tsukuroi-shokunin cf0a19cc, pushed on origin/main) after the lane tip b8f878c8; ## SHONEN heading with four [~] lines and no [x]; all cited lane commits (2abddda5, a2ed6eee, b66e6be5, 884ed06b, a302e688, 0afeb7d9, b8f878c8, 029f6629) ancestors of master; jj-lane ahead=0 behind=0, worktree clean; prompt committed by the lane identity (83fe13df) renders templates/round-prompt.md (139/140 lines verbatim, one expected substitution) plus the hyaku addendum with all five child-lane items and the run-15 map (MISSION's class table is advisory, no model pin to mismatch); wave 13 seats / 4 attack (31%) / 0 dead inside the 8-16 band with w1.ready + w1.ready.dispatched and an empty validator error. Census exit 0 (57 W04 + 1 W01, 0 E; SOURCES rows 388 -> 389). Discernment spot-check agrees on the S389 admit (pin reproduced: 815447 bytes, sha256 6bf2ce2b, the 4300 sentence at byte 785297 and the ValueError sentence at 782228) and on both rejects (man.archlinux.org/man/limine.8 HTTP 404; the GitHub release API body carries no Limine behaviour). Conformance defects (status-neutral) and routed items the lane fixes next round: (1) report prose count says 'four falsifies-wording rows' while the committed ledger has 6; (2) corpus/QUALITY.md owes lesson M1 a criterion (captured-by none) per LEARNING step 3; (3) C2's void clause names a check-registry-coverage.py sha256 'recorded in the C2 receipt' that no receipt records (closure measured 6fcb2d0a at the tip; the gate is byte-unchanged all round); (4) the A3-falsified superlative still stands in the frozen docstrings of tools/limine-pin-battery-r95.py and tools/make-r95-bends.py; (5) corpus/README.md's 'the before instrument has no in-bound 9-digit case' over-scopes A4 (the r94 usage_check sends 999999999.0.0 expecting rc 0); (6) the report lists 0afeb7d9/b8f878c8 as registry PASS points with no per-revision receipt (derived; registry inputs unchanged from a302e688). Carried, not new: the 12.9.6.1 shape, the era-mechanism/echoed-version assertions (M06 survivor), the registry gate's name-to-path/content binding, the per-component Y/Z accepted family; the kaidoku/revenger ownership stays operator-owned and unruled. SHONEN: not fully non-author-checkable (box 1 whole-SKILL review and box 3 no-oral-context retest unexecuted; boxes 2 and 4 evidence-backed); promotion is operator-owned and none is claimed. Fleet-repo leftovers named, not swept: .ufo/l0-questions.md carries two uncommitted tsukuroi round-92 lines (not round-95 work); .scratch/ is orchestrator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
