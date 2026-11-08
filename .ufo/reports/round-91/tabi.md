@@ -9,15 +9,18 @@ fixtures `a6ecf367…` parent / `01380a98…` same / `01380a98…` child, **15 l
 Chromium 155.0.8059.84 / node v24.21.0).
 **Instrument freeze:** D3 `12cbe8a0267f` (`.ufo/waves/round-91/freeze.txt`, per-digest artifact
 `freeze-12cbe8a0267f.txt`; D1 `1d073adc0b8d`, D2 `2d825d85aab7` — `plans/round-91.md`
-§Re-freeze history). **Lane tip:** `7c59b26469a4a4415fe412d09b009711ea2fdefe` (pushed;
-`git ls-remote origin refs/heads/master` prints it). **Axes at start:** all six at 9.
+§Re-freeze history). **Lane tip:** `878bc9125b858653615516c804769ef292bb4b4f` (pushed;
+`git ls-remote origin refs/heads/master` prints it) — the round was filed at `7c59b264` and this
+addendum commit carries the orchestrator's `w1-results.json` handoff (written at 13:36, after the
+filing) plus its LOG note. **Axes at start:** all six at 9.
 
 **Attempts and inherited state.** Attempt 1 (12:28:52–13:22:38) authored the six instruments, the
 scored receipt, the records and the wave spec, dispatched w1 at 13:15:55, then ended without a
 report. Attempt 2 (13:22:42) died at wake (13:23:19). Attempt 3 (this one) re-verified every
 inherited byte (five-gate suite on the tip bytes, 202.71 s, all green; the drift gate twice; the
 fleet census; every seat artifact read) and then **closed the wave's late seats by direct message**,
-because no `w1-results.json` handoff was ever written: six seats that the dead attempt left
+because no `w1-results.json` handoff existed at filing (the orchestrator wrote it at 13:36, after
+this report; it is committed at `878bc912` and noted in `LOG.md`): six seats that the dead attempt left
 unfiled (Exec2, Review1, Critic, Mut1, Scribe, Connector) filed reports on request. **Reused:** the six
 instruments, the scored receipt, the record drafts, `w1` evidence. **Repaired:** `freeze.txt`/
 `freeze.sh` (a false nonce line), `LOG.md`'s `six gates` and its nonexistent `w1-results.json`
@@ -134,6 +137,7 @@ repairs are routed to r92.
 | `df4ef1fc` | `.ufo/waves/round-91/scored/drift-a.json` re-measured at `21e14593` with the revision recorded | `LOG.md` ## Round 91 (C2 after-run) |
 | `a60d2f75` | `claim-falsification.tsv` (Exec2 + Review1 rows), `w1/R91Review1.md`, `LOG.md` seat accounting, `plans/round-91.md` §Limits (prior-set count-level guard, declaration-level pins, proxy execution unproven, `hasBeenActive` unread) | `LOG.md` ## Round 91 wave outcome |
 | `7c59b264` | `claim-falsification.tsv` (Connector row, 13/13 filed), `w1/R91Connector.md`, `LOG.md` seat accounting, `plans/round-91.md` §Limits (same-site vs OOPIF, first-target binding) | `LOG.md` ## Round 91 wave outcome |
+| `878bc912` | `.ufo/waves/round-91/w1-results.json` (the orchestrator's 13-seat handoff, written after the filing) + `LOG.md` wave-handoff note | `LOG.md` ## Round 91 wave handoff |
 | `f3f11579` | `claim-falsification.tsv` (Critic, Mut1, Scribe rows), `w1/R91Critic.md` + its two fixture JSONs, `w1/R91Mut1.md` + results, `w1/R91Scribe.md`, `SCORECARD.md` verdicts, `LOG.md` verdicts, `plans/round-91.md` §Limits (battery coverage, selftest kill power, post-data narrowing, statement narrowness, §8 item 6, colour/date arms) | `LOG.md` ## Round 91 verdicts |
 
 ## Before → after measurements
@@ -212,7 +216,14 @@ repairs are routed to r92.
 - [~] SKILL.md contains real decision tables, error patterns, checklists, cited sources — `SKILL.md:3365` `## Round 91 gate registry` (six instruments, five gates, exact commands), knowledge note (laws, limits, cited S216/S219/S221/S222/S225/S226); non-author verifiers for the r91 block: R91Sentinel (provenance), R91Simplifier (coverage), R91Critic (clause binding).
 - [~] At least one end-to-end domain task executed and logged in LOG.md — 15-leg cross-origin proxy run `corpus/evidence/round91/chromium-showpicker-proxy/receipt.json` (0 failures), logged in `LOG.md` ## Round 91; independently re-run twice by R91Exec1.
 - [~] Instructions executable by an agent without oral context — `SKILL.md:3365-3372` names every counting command with its pins; R91Exec3 reproduced the C2 before/after and all four C1 controls from those lines alone, and R91Mut1 re-ran the batteries against 40 mutant counters without lane writes.
-- [~] No cross-domain bleed (PROVINCE.md still accurate) — `PROVINCE.md` untouched this round; every landed path is lane-owned (`249b7d0c` … `7c59b264`); Sentinel's out-of-lane sweep found no r91/tabi write outside the lane.
+- [~] No cross-domain bleed (PROVINCE.md still accurate) — `PROVINCE.md` untouched this round; every landed path is lane-owned (`249b7d0c` … `878bc912`); Sentinel's out-of-lane sweep found no r91/tabi write outside the lane.
+
+## Addendum — the wave-results handoff
+
+The orchestrator wrote `.ufo/waves/round-91/w1-results.json` (all 13 seats, their outputs and the
+wave metadata) at 13:36 -03, after this report's first filing. It is committed at `878bc912` with
+the LOG note; the report, the ledger and the verdicts above were built from the seats' filed
+reports and the direct messages, not from that file. Nothing else in this report changes.
 
 ## Stale-lane
 
