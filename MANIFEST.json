@@ -60255,6 +60255,47 @@
    "notes": "Dispatch/complete digest (copied from mutable .ufo/watchdog.log): 2026-11-08T09:01:19-03:00 launch kagi round=68 pgid=3424013 driver=hyaku-inline attempt=1; 2026-11-08T13:22:34-03:00 complete kagi round=68; hyaku-inline attempt=1. Step 1: report committed by kagi identity (cf4e3e1b), SHONEN heading with 4 [~] lines, 7/7 cited lane commits ancestors of master, lane ahead=0 clean and pushed at cd9d66f1, prompt carries the round contract and all five child-lane items, wave 15 seats (attack 4/15=26.7%) inside the run-15 8-16 band. Claims: C1 verified (36/31 -> 38/33, caught 0/6 -> 6/6, guard 0 -> 1, defects=0; freshness improved); C2 does not verify (no aggregate verdict on the landed bytes; calibration harmed). Conformance defects named, status-neutral: (a) the report omits the mandatory PREFILE-FALSIFICATION line and exit code (S8); (b) the report bytes were rewritten in place twice (227ec14f -> f2a3a92 -> cf4e3e1b) with no erratum naming superseded text; (c) report line 106 cites .ufo/waves/round-68/final/c1-base.txt, which does not exist (QM96 class; the BASE line lives at w1/R68ExecCounterC1/base-run.txt:19); (d) the round filed with an unsettled wave: no w1-results.json anywhere and seat R68ExecCounterC2 filed no report and was still a live job at closure, so the wave's own results surface (and therefore the pre-file gate) is missing; (e) w1-spec/dispatch/swarm-registry carry pre-measurement achievement text (C2_RECORD mismatches 3->0, verified 36->37) in all 15 seats; (f) claims.json was never repinned to Amendment A1 (still 37/32 while the ledger pins 38/33). Axis harm (calibration): SCORECARD.md:2425 prints C2_RECORD: mismatches=0 population=3 guard=1 rc 0 while the round produced no such line and its own cited evidence dir holds a 0-byte final/c2-candidate.txt; corpus/lessons/round-68.md:18 repeats mismatches 3->0; LOG.md:2221 prints C1_VERIFIED_SELFTEST PASS (59 cases) against the 56-case receipt and SCORECARD's own 56; base/base-derivation.md:33 quotes its receipt as caught=0/6 where the receipt reads 6/6. Discernment harm: nine mistakes M68-1..M68-9 each record that no criterion would have caught them, yet corpus/QUALITY.md is unchanged (still ends at QM96) and SCORECARD.md:2426 asserts QM97-QM99 entered the bar. Expansion graded unchanged, not the lane's improved: no new admitted knowledge entry, no coverage-map/frontier row, no capability row; S167 is cited from the existing entry (widening = quality/depth). Spot-check: admit S167 re-opened live (HTTP 200, 35491 B, sha256 84e14418 = capture = row cell; 18-word quote locates once after normalization) agree; reject S150 re-opened live (HTTP 200, 67033 B, sha256 a31331da, 0 'cannot be killed') agree, with a count caveat (11 = token 'equivalent'; phrase 'equivalent mutations' occurs 9 times); round-68 Gate carries no reject row (rounds 67 and 68 both single-candidate). Routed to kagi round 69: (1) SCORECARD:2425 C2 row to the honest stop; (2) SCORECARD:2426 QM97-QM99 remove or land; (3) lesson:18 C2 wording correction by appended entry; (4) LOG:2221 case count 59->56; (5) base-derivation:33 caught 0/6->6/6; (6) report citation c1-base.txt -> w1/R68ExecCounterC1/base-run.txt; (7) claims.json repin to A1.2; (8) plans/round-68-c1.sh predicate_ok ignores the frozen verified>=37 col15>=32 floor and has no sub-floor selftest case; (9) R68-02 self-referential row must execute under a real budget or be dropped; (10) BASE caught 0/6 vs 2/6 repin per M68-2; (11) land the M68-1..M68-9 QUALITY criteria; (12) file after WAVE-DONE with w1-results.json and keep achievement text out of wave metadata; (13) expansion claims must follow the LEARNING observable. SHONEN: all four boxes are [~] author-asserted and remain operator-owned; no box was written [x] by this closure. No promotions, no mints, no writes to lane-authored files.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 94,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 94,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 94
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "freshness": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-94/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-94-verifier-spotcheck.md@7b2373586fb70f0ead6446c671fcc8b546d3e687",
+    "rechecks": "C1 re-measured: 35-row pins table at C3 (roles driver 21 / receipt 6 / instrument 5 / claims 2 / expectation 1 = 14 non-driver), every row sha256-true (28 at F ebbcbe39, 6 receipt rows at C3 d13c2ff2, self row minus-self digest, 0 mismatches), roles bidirectional, PASS requires full ratios and roles_ok; receipt c1-verify PASS 6/6+35/35+14/14 with SELF_PIN F3/C3, forgeries 4/4 refused where r93 accepts. C2 re-measured: Q_ROWS=20 (13+7), 16 leg names incl PUNCTQUOT, 18 witness rows, punct class Unicode-aware and refused at the shape leg; CURATION_R94=PASS evidence-verified + controls 4/4 PUNCT_NAMED=2/2 CJK_SILENT=1/1. C3 re-measured: TALLY_ROWS=8 in-scope, 21 total occurrences, tail tallies at SKILL.md 640/781 under their declared headings, 161/256 grounded once each in their receipts; SKILL_TALLY_R94=PASS evidence-verified + controls MOVED_REFUSED=2/2. Lane counters evidence-verified from committed receipts, never executed. No axis harmed: tools/ SKILL.md PROVINCE.md corpus/knowledge byte-identical, SOURCES +1 row (S221), SCORECARD/QUALITY/LOG appended only, 0 deletions. PREFILE-FALSIFICATION: pass claims=3 rows=19 attack_seats=8 findings=0 exit 0. Census validate exit 0, 219->220 rows, five pre-existing W04. S221 admit agreed (installed git-clone.1.gz sha b3fd695c, line 100), S070 re-open agreed (sha 93c17dff, line 11), S001 rev-form record line 9010 resolves."
+   },
+   "commit": "chousa-shokunin@0e311d16e2880eeba72004826d8638bbae7dde4a",
+   "closed_at": "2026-11-08T16:35:13Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-11-08T12:10:27-03:00 launch chousa round=94 pgid=368999 driver=hyaku-inline attempt=1 | 2026-11-08T13:20:10-03:00 complete chousa round=94; hyaku-inline attempt=1. Status ok; report committed by chousa-shokunin 1f883f43 and lands last (ct 1794154675 > lane HEAD 1794154661); cited commits 41038ed7/352924bb/6ae736ea/4cbaed6c/f276d7fb/ebbcbe39/d13c2ff2/0e311d16 all ancestors of master; lane clean ahead=0 ls-remote identical; prompt is the template rendering + hyaku addendum 6 with all round-level and five child-lane items; pre-file ledger present and passing (8 falsifies-wording / 1 falsifies-number / 10 neutral). Conformance defects (status-neutral, routed to chousa r95): D1 report miscounts the ledger as 9 falsifies-wording/9 neutral (actual 8/10; the 9 is rows naming a plans/round-94.md pointer); D2 LOG.md round-94 After bullet is stale, quoting PINNED_FILES=34/34 and DETECTOR_WITNESS=17/17 at F/C where the landing is 35/35 and 18/18 at F3/C3 - append-only named correction owed; D3 lesson Gate omits the URL and access date for new row S221 (SOURCES contract rule 1); D4 ledger credits R94CriticClaims with a two-line-predicate finding that seat does not file (belongs to R94ReviewerC2 F3), narrowing real; D5 C1 sentinel row claims --expected/--receipts containment the seat did not measure (guard exists at control-driver-r94.py:486-494); D6 C3 executor row says 'both named limits measured' where limits 1 and 4 were measured and 2-3 declared unmeasured; D7 plan Amendment 4 cites F2/C2 for the c1-forgeries green run that first lands at F3/C3; D8 plan preamble says all amendments applied before C2 though Amendments 8-9 land at F3. Round-93 routed items D2/D5/D6 are closed in this round; D3 does not recur. SHONEN: four [~] boxes with resolvable pointers, no [x]; all four are non-author checkable (Gates table, LOG entry, measure-all-r94.sh + after receipts, PROVINCE untouched) - flag for operator promotion review, box 2 being meta-work the operator should weigh as domain work. Fleet-root leftovers (.scratch/, .ufo/l0-questions.md appends from tsukuroi/souji) are other lanes' work, not chousa debt; no tool installed.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
