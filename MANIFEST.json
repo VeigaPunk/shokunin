@@ -60516,6 +60516,50 @@
    "notes": "Driver: 2026-11-08T19:52:21-03:00 launch tabi round=92 pgid=299191 driver=hyaku-inline attempt=1 -> 2026-11-08T20:35:16-03:00 complete (hyaku-inline attempt=1). Report f9a7f367 filed once at 20:34:27 after last lane commit; prompt carries template contract (placeholder substitutions only). One claim (C1 coverage capability) VERIFIED on its frozen predicate; no axis harmed. Conformance defects (status-neutral), routed to r93: (1) claims.json frozenAt 20:05:00-03:00 is future-dated vs its freeze commit 2bac1048 (20:02:04) and scored start; (2) SKILL.md Round 92 gate registry rows lack gate|probe, verdict map (counter exit 2 setup, append-only exit 2 usage undeclared), pinned-value path, write scope, owner; (3) SCORECARD r92 section cites W1-W5 while plan carries W6 (S228 sourcing supersession); (4) ledger R92Reviewer note says F1-F7, artifact has F1-F8; (5) lesson quote word counts S227 21 (actual 23), S229 14 (actual 13). Carried: r91 §8 items 3 and 5; lane-routed battery gaps (Critic1 forgeries A-G, 7 R92Mut survivors, per-leg browserVersion, killed-driver setup mapping). r91 §8 items 1, 2, 4, 6, 7, 8 verified repaired by appends. SHONEN all [~]: boxes 1, 2, 4 look checkable by a non-author from committed pointers; box 3 still rests on lane-dispatched seats only (operator-owned promotion).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 99,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 99,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 99
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "improved",
+    "operability": "unchanged",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "tally-receipt reconciler",
+    "recorder-alias site audit"
+   ],
+   "report": ".ufo/reports/round-99/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-99-verifier-spotcheck.md@34d8d7cef87ec78ed84bf5247e2609814cce74c8",
+    "rechecks": "Both claims re-measured from blob bytes at R 808a4377 (python3 -I, tool sha a1c50bb4/7527e40f match). C1: base git grep TALLY_RECONCILE ff93fa16 rc1; 12 records -> records=12 tallies=28 pairs=9 matched=2 mismatched=1 unbound=6 uncited=19 rc1, sole mismatch round-94.md:66 8/8 vs receipt 9/9 (independently confirmed by sed/grep of R blobs); r94-only mismatched=1 rc1; r93-only matched=1 rc0; selftest 25/25. C2: base CONTROL_ASSERT_RECORDERS rc1; v2 alias fixture aliases=1 names=add,record sites=4 measured=3 literal=1 unmeasured=1 rc1; v1 sites=2 measured=2 rc0; v1==v2 on controls98/97 (15/15/0/0, 15/14/1/1); selftest 38/38. RECEIPT_BIND 16/16 and arm discrimination evidence-verified only. SCORECARD diff append-only, zero deleted lines lane-wide. Prefile ledger pass claims=2 rows=20 attack_seats=8 findings=0 exit0 (10 falsifies-wording rows, all narrowed). Census tameshi ok exit0, 183->186. Spot-check: S324 admit agree, S326 reject agree, S325 quotes agree (all re-fetched live)."
+   },
+   "commit": "tameshi-shokunin@e209a1fe7f42d866eddeb3c7a6d50ca1e49ff897",
+   "closed_at": "2026-11-08T23:43:24Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: launch 2026-11-08T19:52:55-03:00 pgid=552086 hyaku-inline attempt=1; complete 20:40:35-03:00 attempt=1; report committed 20:39:38-03:00 by tameshi-shokunin (62d918e5); 8 lane commits ff93fa16..e209a1fe, pushed, ahead=0, clean. Defects (status-neutral, routed r100): A12 recorded after the records run despite the 'before the records run' amendments header (disclosed, limit-description only, no predicate change); C1 reconciler confirms only 2/28 tallies (19 uncited, 6 unbound) - silence is not agreement; round-98/99 audits have no tools/registry.json gate row; two citation grammars and two binding walkers (A8) to consolidate. SHONEN boxes 1, 2, 4 look checkable by a non-author (operator-owned promotion).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
