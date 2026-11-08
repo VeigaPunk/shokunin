@@ -59708,6 +59708,47 @@
    "notes": "Dispatch 2026-11-08T07:39:47-03:00 launch kama round=97 pgid=1105225 driver=hyaku-inline attempt=1; complete 2026-11-08T09:44:14-03:00 complete kama round=97; hyaku-inline attempt=1. Report committed by lane identity; SHONEN heading with 4 [~] lines (no non-author verifier); all cited commits ancestors of master; lane clean, ahead=0. No defects barring admission; standing census warnings (W04 duplicates, W01 tier-C) pre-date round. All 4 SHONEN boxes remain author-asserted [~] (promotion operator-owned). Carried to r98: round75-instruments red (bad_rows=19, L0 r87/r89), round78-instruments red from host Ollama listener 127.0.0.1:8080, slow /props verdict (r94 SC02 F4), pass-level wall-clock wrapper (SC01), unobservable ctime memo, C1 needles per RV01 S2.10.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 98,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 98,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 98
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "freshness": "improved",
+    "operability": "unchanged",
+    "coverage": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-98/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-98-verifier-spotcheck.md@f107da3afe511f7db8cdc30235a992b774903158",
+    "rechecks": "C1 and C2 both verified against committed evidence (instruments sha256 27/27 OK; C1 battery JSONs re-parsed: gate 105/105 x3 both layouts, N07 103/105 x3, N08 104/105 x3, do-nothing 105/105 x3, 0 error rows, G6 Y-era met as the A4-narrowed survivor, B01/B02 killed and B03 surviving as reported); prefile ledger pass 18 rows/5 seats/0 findings; S394+S392 re-opened agree (2 admit, 1 reject agree); census 392->394 exit 0"
+   },
+   "commit": "tsukuroi-shokunin@f107da3afe511f7db8cdc30235a992b774903158",
+   "closed_at": "2026-11-08T13:32:10Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-08T09:34:03-03:00 launch tsukuroi round=98 pgid=4112028 driver=hyaku-inline attempt=1; 2026-11-08T10:30:09-03:00 complete tsukuroi round=98; hyaku-inline attempt=1. Report committed by lane identity (c0c48638), SHONEN 4x[~] with evidence pointers, cited commits 1cfeb5d5/270ca298/839954b7 ancestors of master, ahead=0, no uncommitted round work, prompt carries the full template contract. Defects (status-neutral, routed): R99-D1 the PASS 160/160 settled-tip coverage figure cites an unlanded after/c2 receipt (freeze receipts are committed); the Y-cap/B03/M07/hybrid limits stay in the lane's frontier queue. Gate-standard: committed self-test tallies, frozen-run verdicts and measured revisions verified; no sibling gate executed. Axes agree with the spot-check table; no axis harmed.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
