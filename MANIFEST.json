@@ -58709,6 +58709,49 @@
    "notes": "Dispatch 2026-11-08T04:16:01-03:00 launch tabi round=85 pgid=1008647 driver=hyaku-inline attempt=1; complete 2026-11-08T05:01:52-03:00 complete tabi round=85; hyaku-inline attempt=1. Status-neutral defects: (1) report Work-Perfored line 49 says 21 findings for the do-nothing control, committed artifact has 22 (later sections correct; lesson Corrections records the D1->D2 drift). (2) Kill-power reach: R85Mut1 73-mutant independent sweep leaves 31 case-level survivors - routed to r86. (3) C2 witnesses are tel-only. (4) Zero-chooser metric is file-chooser only (datalist requests unmeasured). (5) accept grammar matrix remains frontier. All claims verify, no axis harmed.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 100,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "mado",
+   "lane_round": 100,
+   "lanes": {
+    "mado": "ok"
+   },
+   "lane_rounds": {
+    "mado": 100
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "operability": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "GIO 2.90.1 launch — the unset-PATH default branch (tools/mado-launchenv.py)"
+   ],
+   "report": ".ufo/reports/round-100/mado.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "mado-shokunin/corpus/lessons/round-100-verifier-spotcheck.md@f77ed5e967cc622ec9e99add8f175ca48ae2052f",
+    "rechecks": "C1 re-derived from committed bytes (77 cases/35 classes, 10 path-default in 4 classes at 219e14f4; r99 set 67/31 with 0 path-default; tool 3b29dc65, cases 7aba8a0f, execargv 49f7fecd and gio d2164260 pins re-hashed) with its committed receipt verified; C2 re-derived (base gate has no elapsed field; panel 600->3600 s with 28 byte-identical legs; timing receipt 28 legs + TIMING-DONE, exactly one leg >600000 ms; h3b parse fix present) with its committed receipt verified; pre-file ledger pass claims=2 rows=9 attack_seats=6 exit 0; census rc 0 rows=469 / 121 entries; 1 admit + 1 reject + 1 registry move re-opened and agreed"
+   },
+   "commit": "mado-shokunin@37913833a278837f9b892944ba4be95e5ef9a04a",
+   "closed_at": "2026-11-08T08:22:58Z",
+   "campaign": "hyaku",
+   "notes": "dispatch/complete digest: 2026-11-08T01:30:12-03:00 launch mado round=100 pgid=4133656 driver=hyaku-inline attempt=1; 2026-11-08T05:19:20-03:00 complete mado round=100; hyaku-inline attempt=1. Report committed by the lane identity (fleet a813d13e); all seven cited lane commits are ancestors of master; lane ahead=0, status clean, ls-remote = 37913833. Conformance defects (status-neutral): the report states both counters' --selftest as 9/9 while the committed receipts print checks=24 and checks=21, and both receipts ran the superseded build copies rather than the committed counters; the round-shape role split sums to 15 for 16 seats (labrat rides an executor seat) and attack share is 6/16 = 37.5 %, not 5/16 = 31 %; the report's C2 counting command names --rev ae537dbe while its receipt and claims.json name d73a0648. Routed to round 101 (see corpus/lessons/round-100-verifier-spotcheck.md §6): re-run both committed counters' selftest and land the receipts at their committed hashes, correct the tallies append-only, count roles from w1-results.json, paste the receipt argv verbatim, bound the round-97 AF_UNIX fixture path (sun_path > 108 bytes) and either pin the harm watch's clock source or keep mutant h2 named as a limit. SHONEN: all four boxes are written [~]; they look checkable by a non-author from resolvable evidence, so promotion review is available but remains operator-owned (no [x] written).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
