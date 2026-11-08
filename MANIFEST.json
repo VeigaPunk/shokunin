@@ -58583,6 +58583,47 @@
    "notes": "dispatch 2026-11-08T02:20:10-03:00 launch tameshi round=92 pgid=4094578 driver=hyaku-inline attempt=1; complete 2026-11-08T04:28:46-03:00 complete tameshi round=92; hyaku-inline attempt=1. Step-1 PASS (report lane-committed 26c70c7a, SHONEN ok, 11/11 commits ancestors of master, ahead=0 clean). Claim R92-C1 coverage predicate met but killed by own rule -> unprovable, honest stop third consecutive. SHONEN boxes look fully checkable by a non-author — promotion is operator-owned (noted for operator). Routed: R92-DEF-1 spec-generator stale constants (M5), R92-DEF-2 receipt overwrite (M4), R92-DEF-3 incomplete conjunct coverage (M8), R92-DEF-4 record mechanics (M1-M3), successor property QUALITY 154-158 for round 93.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 84,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 84,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 84
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "clause-kill battery over two pinned populations (census/round-84/c1-clause-battery.py): five frozen single-edit mutants of the pointer counter scored on the r83 36-row and r84 44-row populations, with a pristine arm on each (census/round-84/records/c1-after.txt killed_r84=5; census/round-84/controls/c1-before-r83-population.txt killed_r83=0)",
+    "freeze-then-kill for a descendant tree (tools/souji-vault-verify.sh cli_kill_tree): SIGSTOP each discovered descendant before any trappable signal, second map pass, SIGKILL sweep with starttime re-check — 22-row late-fork population green (census/round-84/records/c2-after.txt 22/0/0/0 on 030fa10d; r83 control 2 mismatches)"
+   ],
+   "report": ".ufo/reports/round-84/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-84-verifier-spotcheck.md@705fa1385c4ccec23811cfa57104046ec6587258",
+    "rechecks": "C1 re-measured by me: battery --only r84 -> pristine 44/0/0, killed_r84=5 EXIT=0; --only r83 -> pristine 36/0/0, killed_r83=0 EXIT=0 (same counter 052c4f3f, same mutants). C2 evidence-verified: filed tool 030fa10d binds c2-after.txt 22/0/0/0 EXIT=0; r83 control 72a405f2 gives 2 mismatches (l1/l2 survivors=1) EXIT=1; selftest 57/0, r17 37/0/0, probe D 4/0. SCORECARD append-only, PROVINCE unchanged. Gate: S334 admit agree (verbatim SIGSTOP quote, 6 words, located), S336 reject agree (wrong-id arxiv fetch, no mutation-testing proposition), S335 admit agree (own receipt line). Census souji ok EXIT=0, rows 256->259."
+   },
+   "commit": "souji-shokunin@705fa1385c4ccec23811cfa57104046ec6587258",
+   "closed_at": "2026-11-08T07:31:47Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-11-08T03:01:34-03:00 launch souji round=84 pgid=1918461 driver=hyaku-inline attempt=1; complete 2026-11-08T04:26:13-03:00. Step-1 PASS (report lane-committed 04a40609, SHONEN 4x[~], 6/6 commits ancestors of master, ahead=0 clean, F = prereg alone, prompt carries template contract, 12 seats 42% attack). Prefile ledger: gate SETUP (claims-missing claims.json) — ledger substance verified by hand: 13 rows over C1/C2 + every attack seat, all falsifies-wording rows name plans/round-84.md A1-A10. Defects (status-neutral): D1 claims.json absent; D2 battery kill rule cannot distinguish mismatch from harness error (did not bite: every kill errors=0); D3 wave substrate scored mid-write RefC2 (A5, reconciled); D4 S84Critic file skeleton, findings in agent transcript. SHONEN boxes look fully checkable by a non-author — promotion is operator-owned (noted for operator). Routed to r85: D1 claims.json surface; D2 kill-rule error distinction; C1 NF-L3 + census-in-census census/round-<N>-token row (A10: both populations leave census-in-census + last-component unbound, wrong-file mutant green) + last-component row + token-on-line/unknown-class refusals; C2 second-map-pass row + comm-newline row (r83 D5) + pid-reuse + parent-before-child + termign-fork/p5-late-term + strace settle; wave discipline (no editing reference under seats).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
