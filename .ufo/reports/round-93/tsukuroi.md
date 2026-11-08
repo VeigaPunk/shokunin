@@ -2,7 +2,7 @@
 
 Lane: `/home/vgpnk/Projects/shokunin/tsukuroi-shokunin` (branch `master`, jj-colocated).
 Round: 93 (attempt 1). Freeze: `c633f49aa512e1c8a0e0464b7fb5d354c70096cf`.
-Lane tip at filing: `42979f5a2eb16babb4de344c5b21205accae2171` (re-derived with `git ls-remote origin refs/heads/master`).
+Lane tip at filing: `ea8110b40377cabdfa51238876cf24a5a91489b1` (re-derived with `git ls-remote origin refs/heads/master`).
 Round shape: one v1 wave, 14 seats (5 executor, 2 reviewer, 2 critic, 2 mutation-tester, 1 scout,
 1 scribe, 1 connector; 7 attack seats = 50 %), no residual call. Dead seats: 0 (all 14 settled, `w1-results.json`).
 
@@ -108,6 +108,7 @@ Declared claims (1-3, frozen in `.ufo/waves/round-93/claims.json` and captured i
 | `b02384c7` | land: `corpus/SOURCES.md` S382-S385, `corpus/knowledge/limine-version-probe-r93.md`, `corpus/lessons/round-93.md`, `corpus/QUALITY.md` 136/137, `corpus/README.md` round-93 frontier, `SKILL.md` rows + R93-REG-1, `SCORECARD.md` outcome + capability `installed-version-probe`, `LOG.md` round-93, plan A1-A3, `after/` canonical+clone receipts, wave spec/ready/dispatch |
 | `9f66744e` | settle: `.ufo/waves/round-93/w1/` (14 seat receipts + `w1-results.json`), `claim-falsification.tsv`, tip receipts, plan A4, `corpus/QUALITY.md` 138, SKILL R93-REG-1 extension, the reworded S377/S384 corrections |
 | `42979f5a` | tip receipts re-run at the settle tip (`registry-coverage-tip.json` PASS 147/147, `knowledge-{header,refs}-tip.json` 109/109 and 0 dangling, `line-endings-tip.txt` PASS 477, `q127-s377-landing.txt` rc 1 on both phrases) |
+| `ea8110b4` | ledger correction: the `MutEra` M13 row (10-digit component survives) is a `falsifies-wording` row pointing at A2 C1-2, not a footnote; `PREFILE-FALSIFICATION: pass claims=2 rows=15 attack_seats=7 findings=0` re-run on these bytes |
 
 Round-92 report rows appended here for the r92 spot-check's routed defect 1 (reports are never
 rewritten): `b5cb636a` (w1 settlement, results.json, ExecLints and ReviewSource reports), `98185b9b`
@@ -212,3 +213,21 @@ Respawn-per-round driver; no other mission of this lane is open.
 ## Tool installs
 
 None. No pacman transaction, no `uv`/`npx`/cargo install; pacman stays paused per the addendum guard.
+
+
+## Amendment (after filing, 2026-11-08) — stale-read corrections and the ledger row
+
+- **No seat was dead.** ScribeLesson yielded after a slow run; all 14 seats have a report on disk and a
+  captured output in `w1-results.json` (14 seats, 14 outputs, 0 dead).
+- **The filed report carries no placeholders.** The earlier draft's placeholder markers were
+  replaced before the first fleet commit; a grep for the marker string on the committed blob
+  (`git show 2b32bf36:.ufo/reports/round-93/tsukuroi.md`) returns 0.
+- **The 10-digit refusal gap is a ledger row, not a footnote.** `.ufo/waves/round-93/claim-falsification.tsv`
+  now records `C1 w1/MutEra.md falsifies-wording .ufo/plans/round-93.md` (A2 C1-2: the tenth refusal
+  member is X.Y.Z-shaped above the gate's 1-9-digit bound). The `CriticForgers` f6 mechanism gap
+  (C2 row), the `CriticClaims` parse/timeout/live-clause findings (C2 row) and the `MutAuto` six
+  survivors (C2 row) were already `falsifies-wording` rows with A2/A3 narrowings.
+- **Manifest and QUALITY-127 readings** are as recorded above: the void leg is the 13-line
+  `before/instruments.sha256` (clean at the tip; r92 A8 precedent), and the landing sweep is re-cut to
+  the anchor cells so the S385 supersedes cell cannot satisfy it (`q127-s377-landing.txt`, rc 1 on both
+  phrases). `count-runs.py` is not patched (manifest-pinned); receipts cite its JSON fields.
