@@ -59249,6 +59249,47 @@
    "notes": "Dispatch digest (.ufo/watchdog.log, copied): 2026-11-08T03:31:09-03:00 launch kama round=96 pgid=3180701 driver=hyaku-inline attempt=1; 2026-11-08T07:31:25-03:00 complete kama round=96; hyaku-inline attempt=1. Not admitted (rejected-honest-stop): C1 operability and C2 depth verify; C3 calibration does not verify -- the probe's ceiling comment states '6 steps per tensor header ... ~833 333 tensor headers' and S618's teaches cell repeats '6 read/seek steps per header' while the parser prices 5+nd (SKILL.md's own correction says 6 is the nd=1 case only), and the disclosure audit stays green because check 1 requires that string; RV01 F2 filed the falsification under C1 with narrowing amendment 2, which repaired SKILL.md and the depth counter but not the probe comment or the S618 row, so the C3 wording is unreconciled. No axis harmed (no SCORECARD score moves). Conformance defects (status-neutral): (1) the report's SHONEN section asserts counting-command/wave-floor/frontier items instead of one line per SHONEN.md box -- disqualified as promotion evidence, must be re-filed in round 97; (2) correction commit 491748d rewrote filed report bytes in place instead of an appended erratum; (3) 11 of 12 seats enumerated (RV02 unlisted) in report and LOG; (4) LOG has one round-96 section still headed 'evidence pending measurement' while the report names three LOG entries that do not exist; (5) amendment 5 binds C1's counter to b3289c18 but amendment 6 changed it at f175a902 without restating the identity, and both counter docstrings still say 'identical to this freeze commit'; (6) prefile ledger green but files no row for the C3 x RV01 F2 wording falsification. Routed to round 97: correct the probe comment and S618 teaches to 5+nd; grade the binding claim instead of the literal string in the disclosure audit; restate C1's identity revision; erratum discipline; 12-seat accounting and LOG heading; ledger rows per falsified claim; plus the round's own carried items (MT01 G2/G3/G4, r94 SC02 F4 slow /props, CR02 B2-B5, SC01 held-out listings, round75-instruments APPEND_DEBT bad_rows=19, non-lane Ollama listener on 127.0.0.1:8080). Capabilities step-budget-graded and step-cost-table admitted; disclosure-consistency withheld with C3.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 87,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 87,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 87
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "diagnostic-class population rows that bind a guard without a resolution row: NE1 expects ERROR at LOG.md:3166 and kills m12-token-on-line only on the 51-row population (census/round-87/c1-clause-battery.py --only r86,r87 -> killed_r86=8 killed_r87=10 killed_total=18, records/c1-after.txt; do-nothing control controls/c1-before.txt kills 8 with m12/m16 alive)",
+    "NUL-record status arm with a named delegation: K4 reads git status --porcelain -z, escapes each record path injectively, prints '# writer path=... sha256=...' and reports the last non-empty stderr line (tools/souji-record-agreement.py sha256 e1b00e8a...; census/round-87/c2-k4-counter.py -> rows=12 mismatches=0 on the filed bytes, mismatches=3 on the lane-base control)"
+   ],
+   "report": ".ufo/reports/round-87/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-87-verifier-spotcheck.md@7defe9c5fee3df07e403666bdeccfb88428ef729",
+    "rechecks": "C1 re-measured: --only r86 -> pristine 49/0, killed_r86=8, m12/m16 alive, EXIT=0; --only r86,r87 -> pristine 49/0 and 51/0, killed_r86=8 killed_r87=10 killed_total=18, EXIT=0 (counter fd0a8e24, harness d6f4e612, mutants 9368b342, population b066fa0f 51 rows; r86 block byte-identical at offset 2). C2 re-measured: filed tool e1b00e8a -> rows=12 mismatches=0, KN1/KN2/KN3 named=yes, EXIT=0; control cf875367 -> mismatches=3, named=no, EXIT=1; byte arm 10 rows 0 vs 8. PREFILE-FALSIFICATION pass claims=2 rows=10 attack_seats=5 findings=0 exit 0. sources-census validate -> souji ok EXIT=0, 87 W04, registry 268->270."
+   },
+   "commit": "souji-shokunin@64079f21dc27b8964679ed6a580fb4079a65c874",
+   "closed_at": "2026-11-08T10:39:37Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest (copied from .ufo/watchdog.log lines 3322/3332): 2026-11-08T06:26:53-03:00 launch souji round=87 pgid=2703437 driver=hyaku-inline attempt=1; 2026-11-08T07:25:14-03:00 complete souji round=87; hyaku-inline attempt=1. Step-1 conformance: report committed in the fleet repo by the lane identity (souji-shokunin 21c703de04ec10f7a3a2e01d408e6a108d3c9953 final, b516a66398238edea1362b0ce96642d885ba4896 draft); SHONEN heading line 161 with four [~] lines (no [x]); all ten cited lane commits exist and are ancestors of 64079f21, base 5e288bb3 is the parent of 77ccef7c; jj-lane.sh state branch=master local=remote=64079f21 ahead=0 behind=0 head=detached tracked=0 untracked=0 and git status empty; prompt souji-round-87.md (committed souji-shokunin 8f4e5e25) carries the template contract (sections 1-5) and the five child-lane items, and the r87 wave passed no model parameter. Not a marker. Claims re-measured by me, not merely evidence-verified (see verification.rechecks). Pre-file ledger: PREFILE-FALSIFICATION pass claims=2 rows=10 attack_seats=5 findings=0, exit 0; 10 rows cover both claims, all five attack seats read (S87Reviewer/Critic/MutCounter/Sentinel/Connector), four falsifies-wording rows name narrowings A7/A4/A7/A9, no unreconciled row. Discernment: two admits (S346, S347) and one reject (git-config core.quotePath) re-opened live; all three agree (quotes byte-exact and <=25 words, captures hash-identical to the installed pages). Trends agree with the report: expansion unchanged (no PROVINCE/frontier move), quality improved (fixture-path correction plus three measured fail-opens closed), discernment improved (spot-check agrees; plan measured down pre-freeze). No axis harmed (SCORECARD appends only, scores unchanged; PROVINCE boundary note only). Routed defects for r88 (status-neutral): D1 stale tool digest left standing in four places - report souji.md:47 calls aac9a9ed 'final' (that is 89d36922), SCORECARD r87 C2 row names 0ad9e3bf/measured commit 6e502c5c, lessons/round-87.md:73 and LOG.md:3297 name 0ad9e3bf, while the filed tool and c2-after receipt are e1b00e8a; append-only corrections required. D2 LOG chronology 'C2 06:44; F landed 06:58' disagrees with A0.2 (C1 06:47:19, C2 same minute, F committer 06:47:35). D3 c2-regression-fixtures.txt is measured on 821e3703, not the filed e1b00e8a; re-run or mark superseded. D4 the rejected core.quotePath source has no rejected SOURCES row (reason+flip). D5 corpus/knowledge/machine-parsed-path-spelling.md is not indexed in corpus/README.md. D6 citation-precision nits: roff 698 labelled OPTIONS -z (it is the Porcelain v1 alternate -z paragraph; OPTIONS -z is 211-217), tool docstring still says git status --porcelain without -z, report says 'seven shapes' while the filed probe has 10 rows. SHONEN promotion: none - all four boxes remain [~]; promotion is operator-owned. L0: none raised. Tool installs: none. Wave: one v1 wave, 12 seats, 5 attack seats (42%), no dead seat. Assimilation: none. Corpus census clean; no credential material.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
