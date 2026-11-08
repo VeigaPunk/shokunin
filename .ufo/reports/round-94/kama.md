@@ -122,8 +122,11 @@ rewrote the ready file with L1 `KamaR94a2` and the orchestrator dispatched it at
 - **Stale-lane:** respawn-per-round driver; no other mission of this lane is open.
 - **Tool installs:** none this round (no pacman, uv, cargo or release-binary action; pacman guard
   respected).
-- **Misroot sweep:** `git -C /home/vgpnk/Projects/shokunin status --porcelain` shows only
-  `.scratch/` (orchestrator-owned run state, not a misroot) — no seat wrote a lane file into the fleet
+- **Misroot sweep:** `git -C /home/vgpnk/Projects/shokunin status --porcelain` shows `.scratch/`
+  (orchestrator-owned run state, not a misroot), two other lanes' untracked reports
+  (`.ufo/reports/round-85/chousa.md`, `.ufo/reports/round-91/tameshi.md`) and a fleet-root `plans/round-91.md`
+  whose content is tsukuroi's limine-pin narrowing (no kama/round-94 reference) — not this lane's
+  writes, so nothing was copied or deleted; no seat of this round wrote a lane file into the fleet
   root.
 
 ## Landed changes
