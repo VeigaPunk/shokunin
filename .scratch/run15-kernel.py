@@ -11,7 +11,9 @@ FOCUS_MIN = 0             # operator 2026-11-06: "you can train the other shokun
 # reach 100"): after an authorized fresh start the 3-rejection pause counts only the lane's rounds since that fresh
 # start ("the 3-rejection pause gate applies unchanged to their new rounds"). inline.sh's streak window also counts
 # the pre-fresh-start rejections, so one post-fresh rejection re-blocked kasegi r79 / chousa r81 / kama r88.
-FRESH_START = {'chousa': 81, 'kama': 88, 'kasegi': 79, 'kumitate': 92, 'mado': 88, 'tabi': 69, 'tameshi': 88, 'tsukuroi': 84}
+# Amendment 58 (2026-11-08) re-based the fresh start for the four lanes it unblocked: the streak window
+# now counts only rounds >= the lane's next-at-authorization round (Amendment 47's rule, re-dated).
+FRESH_START = {'chousa': 84, 'kama': 94, 'kasegi': 79, 'kumitate': 92, 'mado': 88, 'tabi': 69, 'tameshi': 91, 'tsukuroi': 91}
 
 def rejections_since_fresh(lane, nxt):
     """Consecutive rejected outcomes ending at round nxt-1, counting only rounds >= the lane's fresh start."""
