@@ -2,7 +2,7 @@
 
 Lane `tameshi` (verification-fixture craft), round 96, attempt 1. Base
 `c8de77f3de0fd4bf619ebe78fa0b28adaf320d3e`; lane tip after this round
-`07e50d6d0142b21e8443b5417b8edc4d1dd76455` (branch `master`). Report filed by
+`d8f135d24361fd31870a8d47caa6e2212e70fb1b` (branch `master`). Report filed by
 `fleet-commit.sh --as tameshi`.
 
 **Declared claims (2).** R96-C1 targets **calibration**: the disposition audit binds its
@@ -61,20 +61,26 @@ predicate was narrowed after data.
   scribe 1 (R96SC1), scout 1 (R96S1), reviewer 2 (R96R1, R96R2), critic 1 (R96C1),
   mutation-tester 1 (R96M1), sentinel 1 (R96SN1), connector 1 (R96CN1), revenger 1 (R96L1).
   Attack share 4/13 = 31 % by the addendum §6 named set (reviewer×2, critic,
-  mutation-tester), 7/13 = 54 % including sentinel, connector and revenger. Twelve seats
-  delivered reports; **R96L1 (revenger) delivered none** — no `R96L1.md` and no receipt in
-  `.ufo/waves/round-96/w1/`; its scratch (`.ufo`-external) stopped at 09:33 and its probe
-  verdict is therefore absent from this record. R96SC1 delivered four drafts
-  (`SC1-lesson.md`, `SC1-sources.append.md`, `SC1-quality.md`, `SC1-log.md`, `R96SC1.md`);
-  its two record repairs are integrated (below). The L1 holds the planner seat (§3
-  mapping); no planner seat was dispatched.
-- **Wave accounting handoff.** The orchestrator's dispatcher wrote **no**
-  `w1-results.json`: its log's last entry is `2026-11-08T10:30:11 closure CloseTsukuroiR98`,
-  there is no `done tameshi w1` line, and the file was still absent at 10:40 -03 while
-  every seat report was on disk. The L1 therefore wrote `.ufo/waves/round-96/w1-results.json`
-  itself with `"_source": "l1-constructed"`, each row's status derived only from the
-  presence of that seat's committed report files — never from a claim about the seat. This
-  is the driver-stall class the addendum records for 2026-11-08 (host incident 5).
+  mutation-tester), 7/13 = 54 % including sentinel, connector and revenger. **All 13 seats
+  settled** (orchestrator `WAVE-DONE tameshi r96 w1`; `.ufo/waves/round-96/w1-results.json`
+  carries 13 results) and all 13 landed a report in `.ufo/waves/round-96/w1/`. R96SC1
+  delivered five drafts (`SC1-lesson.md`, `SC1-sources.append.md`, `SC1-quality.md`,
+  `SC1-log.md`, `R96SC1.md`); its two record repairs are integrated (below). R96L1 landed
+  late (≈10:45, after the L1's 10:39 absence record) with `R96L1.md` + `R96L1-runs/` and a
+  `partly refuted` verdict that independently reproduces A1/A2/A6: the guards are inert on
+  the twelve `C1_ROW` cells and the 19-row disposition, but a guard-only variant of the
+  round-95 bytes turns the battery into `matched=44 mismatches=6 [D01-D05, replace-honest]`
+  — the `--rev HEAD` class A6 fixed. The L1 holds the planner seat (§3 mapping); no planner
+  seat was dispatched.
+- **Wave accounting handoff.** The dispatcher stalled: its log's last pre-WAVE-DONE entry
+  is `2026-11-08T10:30:11 closure CloseTsukuroiR98` and there is no `done tameshi w1` line
+  before the handoff. At 10:39 -03, with twelve reports on disk, the L1 wrote
+  `.ufo/waves/round-96/w1-results.json` itself (`"_source": "l1-constructed"`) and recorded
+  the revenger seat as dead. That call was **wrong**: the seat landed at ≈10:45, the
+  orchestrator then delivered `WAVE-DONE tameshi r96 w1` and its own 13-result
+  `w1-results.json` (which replaced the constructed file), and the absence record now opens
+  with its correction (`w1/R96L1-absent.md`; lesson M5). The round is filed on the
+  orchestrator's handoff, not on the L1's guess.
 - **Adversarial outcome.** R96R1 falsified two C1 sentences (`FALSIFIES-WORDING ×2`: the
   checker's default `COUNTER` still named round 95's file; `rev-unresolvable` was dead code
   because a bare `rev-parse` echoes any 40-hex with rc 0). R96C1 falsified five atomic
@@ -87,8 +93,9 @@ predicate was narrowed after data.
   break) before A6 and the records run then measured 50/50. R96M1 ran a 41-row mutation
   matrix: `defects=41 killed=28 survived=13 inconclusive=0`, with the two new seal guards
   killed by their own states and no round-95 survivor left live. R96R2 measured all five C2
-  sentences **holding** after A6-A9. All findings were amended pre-data or declared as
-  limits; nothing was smoothed.
+  sentences **holding** after A6-A9. R96L1 `partly refuted` the guard-inertness hypothesis
+  and reproduced A1/A2/A6 from an independent guard-only construction. All findings were
+  amended pre-data or declared as limits; nothing was smoothed.
 - **Pre-file falsification ledger.** `.ufo/waves/round-96/claim-falsification.tsv`, 11 rows,
   both claims, all seven attack seats present; two `falsifies-wording` and one
   `falsifies-number` row point at amendments A1/A2/A3/A5/A6/A7/A9, and one row cites the
@@ -112,6 +119,7 @@ predicate was narrowed after data.
 | M4 renderer-drift row; SC1's two record repairs; L1-constructed wave accounting | Round 96 §R96-C2 | `cdc7f1b2675e5267d27e1fcc032bd8eaa3eefd3e` |
 | `R96L1-absent.md` dead-seat record + ledger row; prefile gate pass | Round 96 §Shape | `b9783abbdb1f90798c3646c396940958e2c861bf` |
 | `.ufo/evidence/round-96/c2-forge.py` committed as wave evidence | Round 96 §R96-C1 after | `07e50d6d0142b21e8443b5417b8edc4d1dd76455` |
+| WAVE-DONE received; R96L1 record corrected, ledger repointed, M5 row | Round 96 §Shape | `d8f135d24361fd31870a8d47caa6e2212e70fb1b` |
 
 LOG.md entry: `## Round 96 (2026-11-08) — two claims: the sealed audit's revision identity
 (calibration) and the hardened write path (operability)`. QUALITY 173-174 appended;
@@ -214,8 +222,8 @@ CONSIDERTHESE has no unimplemented proposal bearing on it).
   rather than filed as written: R96R1 ×2 `FALSIFIES-WORDING`, R96C1 ×5, R96E4 a number
   (44/50), R96SN1 F4/F5/F9/F10/F11. SC1's independent re-measurement also caught two
   unbacked citations in the L1's own QUALITY 174 and lesson text, repaired at `cdc7f1b`.
-  `corpus/lessons/round-96.md` M1-M4. The residual: R96L1's probe never landed, so the
-  "guards are inert" hypothesis is unmeasured this round, and it is reported as unmeasured.
+  `corpus/lessons/round-96.md` M1-M5, including M5 — the L1's own premature dead-seat call,
+  corrected when the seat landed.
 
 ## SHONEN
 
@@ -240,8 +248,8 @@ this lane is open. No L0 question was opened this round. Tool installs: none (py
 
 ## Filing record
 
-Lane tip at filing: `07e50d6d0142b21e8443b5417b8edc4d1dd76455` (branch `master`,
-`jj-lane.sh state` → `local=07e50d6d remote=07e50d6d ahead=0 behind=0`; `git ls-remote
+Lane tip at filing: `d8f135d24361fd31870a8d47caa6e2212e70fb1b` (branch `master`,
+`jj-lane.sh state` → `local=d8f135d2 remote=d8f135d2 ahead=0 behind=0`; `git ls-remote
 origin refs/heads/master` prints the same). Pre-file gate:
 `PREFILE-FALSIFICATION: pass claims=2 rows=11 attack_seats=7 findings=0`, exit 0
 (`python3 /home/vgpnk/Projects/shokunin/scripts/hyaku/prefile-falsification.py --lane
