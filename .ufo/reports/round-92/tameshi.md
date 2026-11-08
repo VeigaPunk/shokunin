@@ -191,4 +191,5 @@ T92SN1 — appears in the artifact column.)
 
 - Lane tip: `4a7e259b407d582d2010197f32d7524d6bed5370` (committed via `jj-lane.sh`, verified
   with `git -C /home/vgpnk/Projects/shokunin/tameshi-shokunin ls-remote origin refs/heads/master`).
-- Report commit: the `fleet-commit.sh` landed line below.
+- Report commit: the `fleet-commit.sh --as tameshi` commit that carries this file (a report
+  cannot name its own hash; the lane tip above is the hash that matters for the round).
