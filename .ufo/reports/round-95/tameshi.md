@@ -234,3 +234,13 @@ appear; three `falsifies-wording` rows pointed at `plans/round-95.plan.md` §A4,
 **Stale-lane:** respawn-per-round driver; no other mission of this lane is open. No L0
 question was opened this round. Tool installs: none (python3 3.14.8, git 2.56.0, curl were
 already present; pacman untouched).
+
+## Addendum — filing record
+
+- Lane tip at filing: `cc41a31bf6e3a0241ab06ab6eb9011fde734e8f1` (branch `master`;
+  `git -C tameshi-shokunin ls-remote origin refs/heads/master` prints that hash).
+- This report was first committed on the fleet repo as
+  `dfe5d4d6ac0e1c013889574b7ba4610e96621eda` (`fleet-commit.sh --as tameshi`), after the
+  lane tip and after the pre-file gate passed.
+- Pre-file gate at filing: `PREFILE-FALSIFICATION: pass claims=2 rows=12 attack_seats=7
+  findings=0`, exit 0.
