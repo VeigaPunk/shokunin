@@ -58997,6 +58997,47 @@
    "notes": "dispatch/complete: 2026-11-08T05:31:37-03:00 launch chousa round=89 pgid=2396342 driver=hyaku-inline attempt=1 | 2026-11-08T06:27:54-03:00 complete chousa round=89; hyaku-inline attempt=1. Conformance: report 3ad1062 authored by chousa-shokunin, pathscoped, lands last (06:27:12 vs lane 06:26:40), SHONEN 4x [~] with pointers, cited commits ac0a0892/976d422c/a72f204b all ancestors of master, lane ahead=0 behind=0 clean, prompt = template rendering (substitutions only) + addendum §6, wave 12 seats (4 executor, 2 reviewer, critic, mutation-tester, sentinel, scout, connector, scribe) 0 dead, every seat carries a VERDICT trailer. Claims verified on their narrowed wording: C1 on Amendments 4-5, C2 on Amendments 1+8 (the frozen VERDICT token is unprinted on the passing path; narrowed to the failure-side observable M1-M4a). No axis harmed. Status-neutral defects routed to r90: (1) report C2 after-line and LOG after-line quote VERDICT fields_hold=1, which the counter never prints on the passing path; (2) attack share stated 7/12 in report+w1 commit vs six attack seats in the ledger and 6/12 in the lesson; (3) work-performed frontier bullet says four mistakes / four criteria QUALITY 190-193 vs seven mistakes / 190-195; (4) plan Amendment 8 prints LEGS_MEASURED=8/9 where the counter prints 8/8; (5) SKILL.md research-gate registry rows still carry the 275-case selftest tally although the tool prints 283 since round 82. Carried and re-flagged: round-74 source-blind order oracle, QUALITY 173 successful-refused record form, r80 backlog Gate ids, Amendment 7 control-driver discipline, Amendment 9 detector-substitution witness, C1 named limit 1 (joint rewrite) and C2 named limits 1-2. SHONEN: all four boxes look checkable by a non-author (box 3 re-ran green here); no [x] written, promotion operator-owned. Spot-check: chousa-shokunin/corpus/lessons/round-89-verifier-spotcheck.md@f54a45e, landed via jj-lane.sh and confirmed at ls-remote.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 94,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 94,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 94
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "operability": "improved",
+    "freshness": "improved",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-94/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-94-verifier-spotcheck.md@c0a20cef641ada6feeab1ca107ea62c1848d1da0",
+    "rechecks": "step-1 conformance pass (report committed by the lane identity 7e195015, SHONEN heading with four [~] lines, cited eb3b3e51/a85796ac/b6447374/ef1dd190 all ancestors of master, jj-lane ahead=0 behind=0 clean, prompt = rendered template + addendum with all five child-lane items, not a marker, wave 14 seats/43% attack inside the 8-16 band); C1 NOT MET re-measured (roster 98 unique vs the r93 control's 96 and 0 occurrences of either new family; landed gate 98/98 met x3 canonical + x3 clone, 0 case errors; N01/N02/N03 97/98 unmet x3 each layout with the named family; N04 met 98/98 x6, failed_families [] -> the frozen target fails, honest stop as the lane declares); C2 met evidence-verified (flag-free live 12.9.4/probe/pre-12.9.5 rc 2 with the conf-unreadable error, root receipt rc 1 error null findings LP-MISMATCH line 30/38, ExecLive flag-free real-limine rc 1, three probe-failure shapes rc 64/0 stdout, gate selftest 39/39, usage roster 15/15 including the 999999999.0.0 accepted boundary, battery --reference 18/18 with reference-gate 98 families, do-nothing r93 gate 97/98 unmet AUTO-PROBE-SHAPES only vs 96/96 met on its own roster); prefile ledger pass claims=2 rows=14 attack_seats=7 findings=0 exit 0 with 4 falsifies-wording rows adjudicated (one real -> honest stop, one real -> C2 kill-sentence drafting defect, one real scope note, one spurious-as-worded/real-as-coverage-gap); sources re-opened live (v12.9.6 config.c a940acae and host/limine.c 4da21c7c byte-identical to v12.9.5, ChangeLog #700 sentence, S385 pin d3c50306 reproduces, man page 404); census exit 0 at 388 rows (57 W04 + 1 W01)."
+   },
+   "commit": "tsukuroi-shokunin@c0a20cef641ada6feeab1ca107ea62c1848d1da0",
+   "closed_at": "2026-11-08T09:40:59Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (copied from the mutable .ufo/watchdog.log): 2026-11-08T03:48:14-03:00 launch tsukuroi round=94 pgid=3007652 driver=hyaku-inline attempt=1; 2026-11-08T06:28:56-03:00 complete tsukuroi round=94; hyaku-inline attempt=1. Status ok, NOT admitted: honest stop - C1 (measured, depth 8, tied lowest) fails its frozen target because the N04 stale-tree bend reads met 98/98 in all six runs (its decoy assigns _stale_default and never reads it), which the lane's own attack seat found and the lane filed as not met instead of narrowing the sentence around it; C2 (operability 9, capability installed-version-probe becomes the default) verifies on committed receipts. Axis verdicts: depth unchanged, operability improved, coverage unchanged, freshness improved, calibration unchanged, adjacency unchanged; no axis harmed (the 96 r93 families still pass 96/96 on the landed gate; no corpus deletions). Conformance defects, all status-neutral and routed in the spot-check 1-10: (1) Gate-standard registry row missing for tools/limine-pin-battery-r94.py and tools/make-r94-bends.py while SKILL.md was untouched, and the limine-pins row still says default 12.9.4 / 37 fixtures (now auto / 39) - the lane's own registry-coverage gate would be red at this tip; (2) no w1.ready / w1.ready.dispatched committed (rounds 84-93 all have both) although the report says one .ready, and the WAVE-DONE line exists only in the report; (3) sha256sum -c on before/freeze-manifest.sha256 fails on .ufo/plans/round-94.md (11 OK) while A3 says it still verifies 12/12 - the claim-void instrument set before/instruments.sha256 is clean at 11/11 so no receipt is voided; (4) the frozen do-nothing sentence reads 96/98 where both receipts read 97/98, and claims the r93 gate answers a verdict for a stderr-only fake that its p.stdout-only probe refuses; A3 both restates 96/98 and cites 97/98; (5) report prose counts disagree with their artifacts: Three falsifies-wording rows vs the TSV's 4, and two new W04s vs the census's three - the same class r93 routed as its defect 1, whose correction was not discharged; (6) 029f6629 (claim-falsification path shape, pushed after the report) is cited in neither report nor LOG; (7) the lesson's mapping of r93 routed items 1/4/5 does not match the routed text; (8) fam_auto_probe_shapes' docstring says the stderr shape is not exercised while its fixture emits it and M06-read-stderr dies on that family, and REFUSAL_DIGIT9 is a dead constant so the accepted 9-digit boundary is certified only by the usage roster; (9) battery-level coverage gaps kept on the frontier (12.9.6.1 shape unexercised; an over-strict <=8 gate scores 98/98); (10) contested kaidoku/revenger RE ownership still unruled (operator-owned, reported not absorbed). SHONEN: four author-side [~] boxes; boxes 1-2 look mechanically checkable by a non-author but box 3 states its own unexecuted retest and box 4 carries the unruled contested scope, so the checklist is not fully checkable - promotion stays operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
