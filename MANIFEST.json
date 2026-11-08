@@ -59205,6 +59205,50 @@
    "notes": "Dispatch/complete digest (copied from mutable .ufo/watchdog.log): 2026-11-08T05:47:43-03:00 launch kagi round=66 pgid=2306145 driver=hyaku-inline attempt=1; 2026-11-08T07:17:32-03:00 complete kagi round=66; hyaku-inline attempt=1. Step-1 status ok: report 6c246149 + erratum 5d33f774 both by kagi-shokunin <kagi@shokunin.local>, erratum lands 07:16:51 after lane close correction d1e127ac 07:16:42 and names it; SHONEN heading at line 277 with four [~] lines; required sections in order; cited ddcd46bb/dcd78c2e/cfafdb11/f2d58687/567f50c3/967afd49 plus base/tip all ancestors of refs/heads/master (nine round commits, all lane identity); jj-lane state ahead=0 behind=0 tracked=0 untracked=0, porcelain empty, remote d1e127ac; prompt 989 lines carries the template contract (mission/axes, 1–3 claims + lowest axis, frontier, L2 floor, report contract, commit-then-push, push scope, L0, and the five child-lane items); not a marker. Claims: C1 freshness VERIFIED (drift 0->1, re-measured), C2 operability NOT MET honest stop (pre-file gate SETUP findings=1 exit 2, wave-missing w1-results.json; predicate reachable on fixture, ten gate-side mutants killed; the ledger also omits R66Sentinel, a second lane-owned reason the gate could not pass), C3 calibration claim VERIFIED (lane census 4->0). Axis verdicts: freshness improved, operability unprovable, calibration HARMED on record fidelity — (i) SCORECARD round-66 operability row asserts the pre-file ledger reads `pass` with attack seats reconciled (placeholders gate=A claims=3 rows=R attack_seats=K guard=G) while the receipt it cites reads C2_PREFILE: gate=0 … SETUP findings=1; (ii) SKILL.md C1 gate-registry row pins selftest cases=14 while the landed instrument has 45 (grep -c 'cases.append' = 45; c1-selftest.txt cases=45) — the class graded harmed at mori r45/kaidoku r48; C3's move stands but the axis is a trade and the round is not admitted. depth/coverage/adjacency unchanged. Trends: expansion unchanged (one row + one entry but no coverage-map row/frontier move/capability), quality improved (three instruments measured, QM89–QM94, docs CLEAN), discernment improved (14 mistakes, spot-check agrees on S164 admit and S165 reject; caveat: ledger omits R66Sentinel and the report's 'reconciles the seats that filed' is false). Routed to r67: (1) correct/annotate the SCORECARD C2 row; (2) fix the SKILL.md C1 selftest pin 14->45; (3) add the R66Sentinel ledger row and re-derive claims.json from the amended plan (recurrence of r65 spot-check item 5); (4) re-point the report's Landed-changes 'Round 66, bullet 1…16' LOG pointers (LOG has 10 bullets) and cite 8bd920d/d89e01d; (5) commit the post-integration controls-battery receipt or correct the 'L1 re-ran the battery' sentence (committed outputs read mismatch=1/2 and pin pre-hardening counter 221a2cd7); (6) add the corpus/README.md coverage-map row for claim-instrument-carrier-binding.md; (7) list S113 among touched rows and log the seven used-by old->new changes in the lesson (SOURCES v1 rule 2), and commit or re-cite the absent final/c3-base.txt; (8) pre-existing S115 quote locates count=0 — repair or mark the ceiling. Operator-side: scripts/hyaku/__pycache__/prefile-falsification.cpython-314.pyc remains staged in the fleet root (D-66-2; not a lane write path and not deleted here). Promotion (operator-owned): SHONEN boxes 1–3 are non-author checkable from committed artifacts; box 4 is checkable but carries the ADJACENCY_SCOPE: DEFECT breadth debt, so promotion is not supportable on this round's evidence.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 96,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 96,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 96
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "improved",
+    "depth": "improved",
+    "freshness": "unchanged",
+    "coverage": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "step-budget-graded",
+    "step-cost-table"
+   ],
+   "report": ".ufo/reports/round-96/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-96-verifier-spotcheck.md@40763bd2ca1e3f99881247eaa9f5e3ef3b596653",
+    "rechecks": "Step-1 conformance ok (13/13 cited commits ancestor of master, lane clean ahead=0, report by kama-shokunin, committer 07:31:13 after lane tip 07:31:04). Prefile pass exit 0 (claims=3 rows=11 attack_seats=7 findings=0). C1 evidence-verified at f175a902: c1.out cells=13 mismatches=0 load_cells=13 load_stable=1, base control mismatches=1 with W11-700k MODEL_OK on both passes, probe sha b49d961a->11e5b01b matches receipts, MAX_STEPS 4M->5M by git show, --skip-load structurally exit 1, cap graded by W13. C2 re-measured by closure: depth audit 14/14 exit 1 at 5d43528b, 14/0 met=True exit 0 at 20317286; 5+nd and all five ceilings re-derived by hand from the parser. C3 NOT verified: closure re-ran disclosure audit (6/3 exit 1 base -> 6/0 exit 0 at 20317286) but its check 1 requires the literal '6 steps per tensor header' while the parser prices 5+nd; the probe ceiling comment (:575-577) and S618 teaches restate constant 6 / ~833,333 ceiling, so the claim 'every disclosure ... matches the bytes beside it' is falsified at stated width. Census kama ok exit 0, rows 357->358. Sources S618 (digest + line 697 quote), S619 (digest + lines 3-4 quote) and gguf.cpp/S129 duplicate re-opened: 3/3 agree."
+   },
+   "commit": "kama-shokunin@49ef853f8480b445921123fcfc01d9357f54b5c0",
+   "closed_at": "2026-11-08T10:38:53Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (.ufo/watchdog.log, copied): 2026-11-08T03:31:09-03:00 launch kama round=96 pgid=3180701 driver=hyaku-inline attempt=1; 2026-11-08T07:31:25-03:00 complete kama round=96; hyaku-inline attempt=1. Not admitted (rejected-honest-stop): C1 operability and C2 depth verify; C3 calibration does not verify -- the probe's ceiling comment states '6 steps per tensor header ... ~833 333 tensor headers' and S618's teaches cell repeats '6 read/seek steps per header' while the parser prices 5+nd (SKILL.md's own correction says 6 is the nd=1 case only), and the disclosure audit stays green because check 1 requires that string; RV01 F2 filed the falsification under C1 with narrowing amendment 2, which repaired SKILL.md and the depth counter but not the probe comment or the S618 row, so the C3 wording is unreconciled. No axis harmed (no SCORECARD score moves). Conformance defects (status-neutral): (1) the report's SHONEN section asserts counting-command/wave-floor/frontier items instead of one line per SHONEN.md box -- disqualified as promotion evidence, must be re-filed in round 97; (2) correction commit 491748d rewrote filed report bytes in place instead of an appended erratum; (3) 11 of 12 seats enumerated (RV02 unlisted) in report and LOG; (4) LOG has one round-96 section still headed 'evidence pending measurement' while the report names three LOG entries that do not exist; (5) amendment 5 binds C1's counter to b3289c18 but amendment 6 changed it at f175a902 without restating the identity, and both counter docstrings still say 'identical to this freeze commit'; (6) prefile ledger green but files no row for the C3 x RV01 F2 wording falsification. Routed to round 97: correct the probe comment and S618 teaches to 5+nd; grade the binding claim instead of the literal string in the disclosure audit; restate C1's identity revision; erratum discipline; 12-seat accounting and LOG heading; ledger rows per falsified claim; plus the round's own carried items (MT01 G2/G3/G4, r94 SC02 F4 slow /props, CR02 B2-B5, SC01 held-out listings, round75-instruments APPEND_DEBT bad_rows=19, non-lane Ollama listener on 127.0.0.1:8080). Capabilities step-budget-graded and step-cost-table admitted; disclosure-consistency withheld with C3.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
