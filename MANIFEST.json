@@ -58547,6 +58547,42 @@
    "notes": "Dispatch digest (watchdog.log is mutable): 2026-11-08T03:43:06-03:00 launch chousa round=87 pgid=3360448 driver=hyaku-inline attempt=1 / 2026-11-08T04:25:40-03:00 complete chousa round=87; hyaku-inline attempt=1. Wave: one v1 wave, 12 seats (4 executor, 2 reviewer, 1 mutation-tester, 1 critic, 1 sentinel, 1 scout, 1 connector, 1 scribe), 0 dead, attack share 5/12 by the ledger role set (6/12 including the connector). Both claims verify: C1 on its stated width with the misreporting-leg limit published in claims.md and QUALITY 187, C2 on the narrowed property after six numbered plan amendments. Routed defects for the lane: (1) SCORECARD.md round-87 header says the wave was 13 seats while w1-spec/w1-dispatch/w1-results/the report all say 12; (2) the mined-criteria count in the lesson's Trends row and the SCORECARD calibration row says five (QUALITY 182-186) while corpus/QUALITY.md carries eight (182-189) after the integration commit, and the attribution split does not match the receipts; (3) S218's Gate record carries no <=25-word located quote although CORPUS rule 1 asks for one on every new row (own-work rows included); (4) C1 is declared a capability acquisition in claims.json/the report but no capabilities-table row entered SCORECARD.md this round (AXES.md Capabilities: a row enters in the same round), so capabilities_added stays empty until a row lands or the claim type is corrected; (5) report conformance note 1 mis-quotes the carried template defect: prompt line 143 does not end at 'shokunin style bu' (it is 1043 chars, ending '...reaches round 100\".') and the corrupted fragment reads 'on the hyaku style but using these models and conc i've assigned' -- the substance (operator-owned template carries a corrupted run-15 quote) stands. Status-neutral conformance notes: census start receipt derived from the base archive but written after the landing commit (self-disclosed as Mistake 7/QUALITY 189); corpus/README.md frontier prose still ends at round 6 (carried, indexed); no assimilation. No L0 question opened; nothing blocked. SHONEN boxes are all [~] lane assertions -- a non-author could check boxes 1-3 from committed artifacts but promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 92,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 92,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 92
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "coverage": "unprovable"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-92/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-92-verifier-spotcheck.md@b392f5fa8299d55c698408dd164b4105204195d6",
+    "rechecks": "C1 predicate re-derived from committed freeze+landing receipts (C1_R92_PASS=true at 25f97662 and d92136f8), 25/25 battery matched, counter sha256 be5a9221 verified; claim killed by own rule (a) branch 2: T92C1 A13 honest note refused ids=false badrows=5 with verdict rows byte-identical (sha256 9ea3fdd8), A1 fenced-contradiction PASS exit 0; prefile ledger pass claims=1 rows=12 attack_seats=5 findings=0; S320 admit + v91-reuse reject both agree re-opened; census 179->180 exit 0; no axis harmed (scores 10/8/9 delta 0)."
+   },
+   "commit": "tameshi-shokunin@b392f5fa8299d55c698408dd164b4105204195d6",
+   "closed_at": "2026-11-08T22:00:00Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-11-08T02:20:10-03:00 launch tameshi round=92 pgid=4094578 driver=hyaku-inline attempt=1; complete 2026-11-08T04:28:46-03:00 complete tameshi round=92; hyaku-inline attempt=1. Step-1 PASS (report lane-committed 26c70c7a, SHONEN ok, 11/11 commits ancestors of master, ahead=0 clean). Claim R92-C1 coverage predicate met but killed by own rule -> unprovable, honest stop third consecutive. SHONEN boxes look fully checkable by a non-author — promotion is operator-owned (noted for operator). Routed: R92-DEF-1 spec-generator stale constants (M5), R92-DEF-2 receipt overwrite (M4), R92-DEF-3 incomplete conjunct coverage (M8), R92-DEF-4 record mechanics (M1-M3), successor property QUALITY 154-158 for round 93.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
