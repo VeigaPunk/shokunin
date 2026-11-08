@@ -59960,6 +59960,47 @@
    "notes": "Dispatch digest (.ufo/watchdog.log, copied): 2026-11-08T09:46:37-03:00 launch kama round=98 pgid=1504775 driver=hyaku-inline attempt=1; 2026-11-08T11:35:08-03:00 complete kama round=98; hyaku-inline attempt=1. Report committed by lane identity (2ca6ea85 report, 48e2f1e9 erratum); SHONEN heading with 4 [~] lines (no non-author verifier); cited commits 34ad44e9/3185c257/160e22dd/3b71d098/380982b1/649bb2e9 all ancestors of master; lane clean and pushed (ahead=0). No axis harmed: depth/calibration/operability improved, coverage/freshness/adjacency unchanged. Prefile ledger pass, exit 0 (claims=3 rows=24 attack_seats=8 findings=0; all 8 attack-seat artifacts read; 8 falsifies-wording rows narrow to plans/round-98-amendment-1.md). Defects (status-neutral): SCORECARD.md:6431 and LOG.md:4040 still carry the stale '10 reported, 2 dead' wave reading contradicted by w1-results.json (12 results) and lesson M3; LOG.md:4044 names 'SB01-equivalent prose' for EX02BudgetControl and SCORECARD.md:6433/report seat-accounting prose disagree on the attack split; corpus/lessons/round-98.md:28 mislabels base tier numbers as HEAD (HEAD is 363 rows, A345/B11/C7, mined325/queued8/rejected30); M3 sits outside the ## Mistakes section; M2's fix lacks a committed red-before receipt; the pre-report gate is red (PRE_REPORT round=98 arms=14 failed=6 uncommitted=1) and the erratum names five of its six failed arms (round-clean omitted). Routed to r99: those six corrections plus the carried slow /props verdict, pass-level wall clock, ctime memo shape, C1 checks 13-14 needle limit, and the --control count-vs-selected fix. SHONEN boxes look checkable by a non-author on the re-opened evidence; promotion is operator-owned and no box was marked.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 99,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "tsukuroi",
+   "lane_round": 99,
+   "lanes": {
+    "tsukuroi": "ok"
+   },
+   "lane_rounds": {
+    "tsukuroi": 99
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "depth": "improved",
+    "freshness": "improved",
+    "operability": "unchanged",
+    "coverage": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-99/tsukuroi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tsukuroi-shokunin/corpus/lessons/round-99-verifier-spotcheck.md@ce73ccaf75d0279385977f03ccb35945c1cf8e07",
+    "rechecks": "C1 and C2 verified against committed evidence (instruments sha256 16/16 OK; gate 7d79ac29 byte-unchanged; C1 ten battery JSONs re-parsed: gate met 105/105 x3 both layouts, cases 420, 0 error rows, N09 unmet 104/105 exactly [REFUSAL-VERSIONS-9DIGIT-Y] x3, N11 unmet 103/105 exactly [EXPLICIT-VERSION-ERA, REFUSAL-VERSIONS-9DIGIT] x3, r98 control met 105/105 on gate/N09 and unmet 104/105 [EXPLICIT-VERSION-ERA] on N11, lie kinds 93/105 and 95/105, selftest 5/5; A4 narrows 'exactly two changes' to two behaviour-bearing changes; C2 landed PASS 7/7 findings 0 at f107da3a, selftest 17/17 vs 14/14, hybrid/restated r98 PASS to r99 FAIL with exactly one RC-CELL-MISSING/RC-CELL-AMBIGUOUS, M07 FAIL 16/17 only ancestor red, coverage PASS 160/160); prefile ledger pass claims=2 rows=23 attack_seats=5 findings=0 (rc 0), six non-neutral rows reconciled by A1/A2/A7/A8; S395 admit, S392 re-open admit, CONFIG.md reject all agree (S392 page rebuilt at 14:27 UTC after measurement, anchors unchanged); census 394 to 395, validate exit 0"
+   },
+   "commit": "tsukuroi-shokunin@ce73ccaf75d0279385977f03ccb35945c1cf8e07",
+   "closed_at": "2026-11-08T14:53:02Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (copied from mutable .ufo/watchdog.log): 2026-11-08T10:45:14-03:00 launch tsukuroi round=99 pgid=2061128 driver=hyaku-inline attempt=1; 2026-11-08T11:45:20-03:00 complete tsukuroi round=99; hyaku-inline attempt=1. Status ok, ADMITTED: both measured claims re-derived from committed bytes at efe5ba59 - C1 depth (X-cap REFUSAL-VERSIONS-9DIGIT and Y-cap REFUSAL-VERSIONS-9DIGIT-Y assert limine_version/visibility_era; gate 105/105 x3 both layouts, 0 error rows; N09 104/105 [Y] x3; N11 103/105 [E,X] x3; r98 control blind on N09 and 104/105 [E] on N11; lie kinds 93/105 and 95/105; selftest 5/5) and C2 freshness (guarded unique span capture; landed PASS 7/7 at f107da3a; selftest 17/17 vs 14/14; hybrid/restated r98 PASS to r99 FAIL with one frozen finding each; M07 FAIL 16/17 only ancestor red; coverage 160/160). No axis harmed: SCORECARD append-only, PROVINCE/SHONEN byte-identical, gate and r98 instruments byte-unchanged, corpus additive. Conformance defects (status-neutral, routed): LOG headings still read (pending)/(pending-settle); S395 names the two new LIE_KINDS members at BYTE 108455 though the second sits at 108473 (a superseding row must take S396); the census receipt lacks the before exit code. Owed to r100: the full --selftest --reference leg (A6a/A7), the dead (ANCESTOR, None, None) fixture sentinel (A4), X/Y echo spelling bends, five surviving C2 cell classes (A1), and the C5 compound-probe witness. Report committed by lane identity (7d488834, corrected append-only by 814806fd); cited commits dd86287f/778f15fd/efe5ba59/f107da3a/270ca298/5eb475cd/b492f17f all ancestors of master; jj-lane ahead=0 behind=0, porcelain empty; prompt carries the rendered template contract + hyaku addendum; wave 14 seats (5 exec/2 scout/2 scribe/2 reviewer/1 critic/1 mutation-tester/1 connector), counters 14 spawn/0 resume/14 total, w1-validate.err 0 bytes, 0 dead, attack 4/14=28.6%; fleet misroot sweep has no tsukuroi/round-99 path. Operator note: SHONEN has four evidence-pointed [~] boxes that look checkable by a non-author from the cited artifacts; promotion remains operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
