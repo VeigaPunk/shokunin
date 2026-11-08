@@ -58379,6 +58379,47 @@
    "notes": "Dispatch 2026-11-08T02:06:53-03:00 launch kama round=95 pgid=2851224 driver=hyaku-inline attempt=1; complete 2026-11-08T03:28:31-03:00 complete kama round=95. Defects (status-neutral): report Landed-changes omits 370261b0/bb1ded29/65eca4ec; prefile-gate path is lane-relative; c1-m1b receipt under .ufo/waves/round-95/measured. Routed to r96: counter lacks MAX_STEPS/META cell and ctime coverage; skip-load nominal load line; counter docstring still 20+15ncand vs probe 20+25npaths; slow /props undecided; SCORECARD capability cites f6325660. No promotion signal beyond filed [~]s.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 86,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 86,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 86
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-86/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-86-verifier-spotcheck.md@6495ef881bb9062eaaf5029e20170992c00113f5",
+    "rechecks": "Step-1 ok: report committed by lane identity (chousa-shokunin 2614965dcbf308ac374a3a244171a7ad045e7589), SHONEN heading with 4 [~] boxes, all 9 cited lane hashes exist and are ancestors of master, jj-lane state ahead=0 behind=0 tracked=0 untracked=0, prompt is canonical template rendering with §6 addendum. C1 re-measured on fresh git archive of 0cbbeb66: TOOL=present POSITIVE=15/15 FRESH_POSITIVE=5/5 FORGED_REFUSED=355/355 EXPECTED_CODE=355/355 EMPTY_REFUSED=1/1 RC=4/4 SETUP=1/1 D1_FORGES=1 D1_REFUSED=1/1 MUT17_KILLED=1/1 GATE_RECORDS_R86=PASS exit 0; instruments match pins; committed controls (c1-k0, c2-d0) evidence-verified. C2 re-measured on fresh archive: SUPERSEDED_LIVE=0 UNENTAILED_TERM=0 MODIFIED_DEF_CITED=1 QUOTES_LOCATED=20/20 CURATION_R86=PASS exit 0; Amendment 11 narrowing adjudicated legitimate (floor never implemented, warrant linkage unimplemented); both repaired rows reviewed and entailed by Q13 (S023:8786 verbatim) and Q7 (S031 verbatim). Gate selftest/preflight evidence-verified from wave seats, not executed. Census exit 0 with five pre-existing W04. Prefile-falsification pass claims=2 rows=12 attack_seats=6 findings=0 exit 0. Spot-check sample: S216 admit agree, S217 reject agree, S023 re-open agree, S024 restore agree."
+   },
+   "commit": "chousa-shokunin@0cbbeb665bac00c27274f9b3560b37c9783f3f73",
+   "closed_at": "2026-11-08T09:00:00Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-11-08T02:57:28-03:00 launch chousa round=86 pgid=144445 driver=hyaku-inline attempt=1; complete 2026-11-08T03:38:55-03:00 complete chousa round=86; hyaku-inline attempt=1. Step 1 ok: report committed by lane identity, SHONEN 4x[~], all cited hashes ancestors of master, ahead=0, prompt is canonical template with §6. Both claims verify (C2 on the Amendment-11 narrowed property); no axis harmed. Defects (status-neutral): census Start run happened after landing (base count re-derived, disclosed by lane); template §6 quote truncated with ellipsis; corpus/README frontier ends at round 6; merge/considerthese not assimilated (stated plainly). Routed to r87 (lane's own residuals, endorsed): D1 one record wide (S021/S032/S022), MUT17/SETUP duties are fields not conjuncts, decision=reject 203 accepted, C2 floor+warrant linkage unimplemented, S024 frozen teaches asserts refused comparison. No promotion signal: four [~] boxes, operator-owned gate unmet.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
