@@ -141,3 +141,15 @@ wave evidence `be590351`; measurements `ac014090`. Lane tip at filing:
 
 **Stale-lane:** no — respawn-per-round driver; no other mission of this lane is open. Tool installs:
 none this round.
+
+---
+
+## Erratum (appended in a new commit; supersedes no filed bytes, clarifies this report's Landed-changes column)
+
+The Landed-changes table's "LOG.md entry" cells name three paragraphs, not three headings. `LOG.md`
+has one `## round 97` section carrying, in order: the freeze paragraph (superseded by nothing;
+`9e605d41`), the wave-1 paragraph and the amendment-2 paragraph (`be590351`), and the measurements
+paragraph (`ac014090`). The table's cells "round-97 freeze entry", "wave-findings entry" and
+"measurements entry" refer to those paragraphs; no separate headings exist. This erratum also
+records that the wave evidence and the 24-row falsification ledger landed with `be590351`, and the
+measurement-time receipts and controls re-run landed with `ac014090`.
