@@ -58092,6 +58092,46 @@
    "notes": "Dispatch/complete digest: 2026-11-07T18:05:35-03:00 launch mado round=99 pgid=217589 attempt=1; 2026-11-07T18:07:14 lane-dead-no-report (report_of FAIL); 18:07:16 launch attempt=2 pgid=1121594; 20:39:10 lane-dead-no-report; 20:39:12 launch attempt=3 pgid=1949254; 22:12:52 lane-dead-no-report; 22:59:11 launch attempt=1 pgid=3478462; 2026-11-08T01:08:55 complete mado round=99. Step-1 conformance pass: report committed by the lane identity (16dba8ef first filing, f9920699 misroot note), SHONEN heading with four [~] lines and pointers, all eight cited commits ancestor of master, lane ahead=0 clean and pushed at the reported 0e8f39f5, prompt carries the round contract and all five child-lane items. C1 verifies (coverage improved); C2 files TARGET_MISSED as the lane's own honest stop, so the round is rejected-honest-stop with no axis harmed. Defects routed to lane r100: (1) lesson M99-3 / QUALITY 172 state 'grep -n def find_program' prints mado-mime.py:467 but it prints 466 (467 is the docstring line naming g_find_program_for_path); (2) round-shape sentence says attack 6/12=50% but only 5 of 12 seats are attack roles (2 reviewers, 1 critic, 2 mutation-testers; connector is not attack) - 5/12=42% still clears the >=25% floor; (3) C2's frozen 600s per-leg cap has no headroom under fleet load (the lane's own A9) - re-freeze above the measured worst leg, never move the target after the data; (4) C1 A8: the unset-PATH default branch is modelled with no frozen case; (5) attempt-3's TARGET_MET left no receipt (disclosed in the report) - keep every measured line with its receipt in the same commit. Promotion note (operator-owned): all four SHONEN boxes look checkable by a non-author from resolvable evidence, so a promotion review is available whenever the operator runs it; no [x] was written. Ledger: PREFILE-FALSIFICATION pass (claims=2 rows=8 attack_seats=6 findings=0); every falsifies-wording row names its narrowing in plans/round-99.md A1/A3/A4/A5/A6 and each was adjudicated real-and-reconciled.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 94,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 94,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 94
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "operability": "unprovable",
+    "depth": "unprovable",
+    "calibration": "improved"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "router-file-budget"
+   ],
+   "report": ".ufo/reports/round-94/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-94-verifier-spotcheck.md@2011161d5e5612fa953708cf54084b7f10ce99b1",
+    "rechecks": "C1 evidence-verified not verified (19-cell predicate met, load-independence falsified by SC02/CR01/MT01); C2 evidence-verified not verified (counter met 92/92, R18/R19 semantics falsified by SC01 F1/F2 + CN01); C3 verified (355 rows, gate+mistakes, S604 line-151 repair, census exit 0); prefile ledger pass; discernment agree x4; no axis harmed"
+   },
+   "commit": "kama-shokunin@32f8e347604856a8f2a3cbf73c54592c926b0bf4",
+   "closed_at": "2026-11-08T05:05:00Z",
+   "campaign": "hyaku",
+   "notes": "2026-11-07T22:59:09-03:00 launch kama round=94 pgid=3469328 driver=hyaku-inline attempt=1; 2026-11-07T23:35:21-03:00 lane-dead-no-report kama round=94; retry same round (hyaku-inline attempt=1: L1 ended without a landed report: FAIL report_of (missing, unchanged, no SHONEN heading, or < 400B): .ufo/reports/round-94/kama.md); 2026-11-07T23:35:28-03:00 launch kama round=94 pgid=963924 driver=hyaku-inline attempt=2; 2026-11-08T02:03:04-03:00 complete kama round=94; hyaku-inline attempt=2. Defects: prompt §4 omits commit-hash citation rule verbatim (status-neutral); round75-instruments red carried (APPEND_DEBT bad_rows=19, late-line-96 hash mismatch, L0 r87/r89 open); round78-instruments live-reconcile red (host Ollama 8080, operator-owned). Routed: C1 residuals (work-proportional budget, count-derived wrapper ceiling, gate fixture, /props verdict, counter coverage M02/M12/M14/M10 + CR01 F3/F6/F7/F8) and C2 R20/R21 to round 95; M5/M6 freeze/predicate process fixes. Report boxes all [~] (lane-dispatched wave seats are still the lane); promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
