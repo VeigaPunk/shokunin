@@ -58665,6 +58665,50 @@
    "notes": "Dispatch/complete: launch 2026-11-07T23:37:07-03:00 attempt=1; lane-dead-no-report 2026-11-08T00:08:45-03:00 (retry); launch 2026-11-08T00:08:51-03:00 attempt=2; complete 2026-11-08T04:53:39-03:00. Attempt-1 dead launch is a status-neutral conformance defect; the attempt-2 report is real (21347 B, SHONEN 4x[~], all sections present, lane-identity commits, lane tip 525c69de==remote master, ahead=0). C1 calibration and C2 operability verify; falsification ledger passed with 4 falsifies-wording rows each narrowed (C1-1 builder-blindness breach, C2-1 guard substitution, C2-2/C2-3 bound location + self-reported killed, MutC2 host-timing), residual risk routed to round 65 (C1-3..C1-10, C2-3..C2-6). Gate spot-check agreed 5/5 (S147/S146 admit, S145/S152/S149 reject). Routed D-63-3 (round-63 spot-check named 6 receipts, tree holds 5) to round 65; ADJACENCY_SCOPE breadth debt unchanged/named. New lane commit b17887f0 (spot-check) pushed to master=remote b17887f0.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 85,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 85,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 85
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "operability": "improved",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "chromium-showpicker-linux generation r85",
+    "battery-survivor-witnesses"
+   ],
+   "report": ".ufo/reports/round-85/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-85-verifier-spotcheck.md@57265864b3a429633cac2d986442c1f634ece4a9",
+    "rechecks": "C1 evidence-verified (counter exit 0, 87 checks; battery 175/0; kill power 58/58; selftest 9/9); C2 re-measured (witness 3->0); prefile pass 2/14/5/0; census exit 0, 223 rows; S219 quote re-located. No axis harmed."
+   },
+   "commit": "tabi-shokunin@e6b53ec906f9299dbf101ad01c8257a02d8d2f66",
+   "closed_at": "2026-11-08T04:30:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch 2026-11-08T04:16:01-03:00 launch tabi round=85 pgid=1008647 driver=hyaku-inline attempt=1; complete 2026-11-08T05:01:52-03:00 complete tabi round=85; hyaku-inline attempt=1. Status-neutral defects: (1) report Work-Perfored line 49 says 21 findings for the do-nothing control, committed artifact has 22 (later sections correct; lesson Corrections records the D1->D2 drift). (2) Kill-power reach: R85Mut1 73-mutant independent sweep leaves 31 case-level survivors - routed to r86. (3) C2 witnesses are tel-only. (4) Zero-chooser metric is file-chooser only (datalist requests unmeasured). (5) accept grammar matrix remains frontier. All claims verify, no axis harmed.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
