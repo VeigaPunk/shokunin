@@ -2,8 +2,9 @@
 
 Lane: `tsukuroi-shokunin` (operability + freshness; host operability and repair). Campaign: hyaku,
 run 15. Round 99, attempt 1. Pre-round tip `f107da3afe511f7db8cdc30235a992b774903158`; freeze
-`dd86287fd97592f24424e7de7c5461c599d3a754`; settle `778f15fd8d56ca4fa61f1cd6d4b124271c9dfe23`
-(the lane tip; `git ls-remote origin refs/heads/master` printed that hash at filing).
+`dd86287fd97592f24424e7de7c5461c599d3a754`; settle `778f15fd8d56ca4fa61f1cd6d4b124271c9dfe23`;
+ledger `efe5ba590b4a974958b911782ff71ad4ecfb90e9` (**the lane tip**; `git ls-remote origin
+refs/heads/master` printed `efe5ba59` at filing).
 
 Declared claims — **C1 depth 8** (tied-lowest non-retired axis): the X-cap `REFUSAL-VERSIONS-9DIGIT`
 (`999999999.9.9`) and the Y-cap `REFUSAL-VERSIONS-9DIGIT-Y` (`12.999999999.4`, `0.999999999.0`)
@@ -97,7 +98,8 @@ unruled.
 | change | LOG entry | commit |
 |---|---|---|
 | freeze: plan, claims, instruments manifest (16 entries), controls (r98 battery/gate/checker copies), bends N09/N11, dev receipts, S395, knowledge entry, README round-99 + frontier, three registry rows, SKILL R99-REG-1 | "Round 99 — freeze" | `dd86287f` |
-| settle: wave `w1` evidence (14 seats), `w1-results.json`, falsification ledger (23 rows), SCORECARD declaration + measured rows, LOG wave + measured entries, lesson (`## Gate`, 6 mistakes, Seat harm, scoreboard, routed) | "Round 99 — wave" / "Round 99 — measured" | `778f15fd` |
+| settle: wave `w1` evidence (14 seats), `w1-results.json`, SCORECARD declaration + measured rows, LOG wave + measured entries, lesson (`## Gate`, 6 mistakes, Seat harm, scoreboard, routed) | "Round 99 — wave" / "Round 99 — measured" | `778f15fd` |
+| falsification ledger, rebuilt to 23 reconciled rows after the seat reports settled (both claims, all five attack seats) | "Round 99 — measured" | `efe5ba59` |
 | three new tools (`limine-pin-battery-r99.py`, `make-r99-bends.py`, `check-registry-content-r99.py`) + the three SKILL registry rows | "Round 99 — freeze" | `dd86287f` |
 
 ## Before → after measurements
