@@ -58752,6 +58752,47 @@
    "notes": "dispatch/complete digest: 2026-11-08T01:30:12-03:00 launch mado round=100 pgid=4133656 driver=hyaku-inline attempt=1; 2026-11-08T05:19:20-03:00 complete mado round=100; hyaku-inline attempt=1. Report committed by the lane identity (fleet a813d13e); all seven cited lane commits are ancestors of master; lane ahead=0, status clean, ls-remote = 37913833. Conformance defects (status-neutral): the report states both counters' --selftest as 9/9 while the committed receipts print checks=24 and checks=21, and both receipts ran the superseded build copies rather than the committed counters; the round-shape role split sums to 15 for 16 seats (labrat rides an executor seat) and attack share is 6/16 = 37.5 %, not 5/16 = 31 %; the report's C2 counting command names --rev ae537dbe while its receipt and claims.json name d73a0648. Routed to round 101 (see corpus/lessons/round-100-verifier-spotcheck.md §6): re-run both committed counters' selftest and land the receipts at their committed hashes, correct the tallies append-only, count roles from w1-results.json, paste the receipt argv verbatim, bound the round-97 AF_UNIX fixture path (sun_path > 108 bytes) and either pin the harm watch's clock source or keep mutant h2 named as a limit. SHONEN: all four boxes are written [~]; they look checkable by a non-author from resolvable evidence, so promotion review is available but remains operator-owned (no [x] written).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 88,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 88,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 88
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved",
+    "depth": "unchanged",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-88/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-88-verifier-spotcheck.md@f8fa55ec94cb34e7b572a9d87d7f62d88bc80bf8",
+    "rechecks": "gate-evidence-verified: re-ran both counters on the committed tip (CURATION_R88=PASS WARRANT_OK=17/17; GATE_RECORDS_R88=PASS FORGED_REFUSED=EXPECTED_CODE=362 LEG_REREAD=15/15), receipts match (c1-mutants 6/6+2/2, c1-harm moved=0, c2-controls FORGERY_REFUSED=5/5), census exit 0 at 218 rows, knowledge count 97 at both revisions; prefile PREFILE-FALSIFICATION SETUP (claims.json missing) adjudicated as a status-neutral conformance defect, all 17 falsification rows read by the reviewer; spot-check agreed 4/4 on S218 admit/reject/repair/controls"
+   },
+   "commit": "chousa-shokunin@f8fa55ec94cb34e7b572a9d87d7f62d88bc80bf8",
+   "closed_at": "2026-11-08T13:30:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete: launch 2026-11-08T04:30:51-03:00 attempt=1; complete 2026-11-08T05:26:58-03:00. Step-1 holds: report by lane identity (99c0fca), SHONEN 4x[~], cited commits f484d94..bb21673 all ancestors of master, ahead=0, tree clean, prompt carries the template contract. C1 operability and C2 calibration verify on the measured predicates; wave firings (per-format reconciliation, verdict-vs-field, dead superseder clause, duplicate-qid) published and routed to round 89, not kills. Conformance defects (status-neutral): prefile SETUP (no claims.json, claims.md filed instead), unsatisfiable c1-do-nothing expectation, missing c2-d0 expectation row, operator-owned corrupted run-15 quote in prompt line 143, SCORECARD 13->12 and five->eight corrections disclosed in-lesson. SHONEN boxes read non-author-checkable from artifacts; promotion operator-owned. New lane commit f8fa55ec (spot-check) pushed to master=remote f8fa55ec.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
