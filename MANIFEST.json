@@ -61246,6 +61246,49 @@
    "notes": "Digest: 2026-11-09T00:32:23-03:00 launch souji round=93 pgid=1493374 driver=hyaku-inline attempt=1; 2026-11-09T01:08:07-03:00 complete souji round=93; hyaku-inline attempt=1. Step-1 PASS: report by souji-shokunin 5ee5b521 (01:07:48 before complete), SHONEN heading 4 [~] lines, six cited commits ancestors of master, jj-lane state ahead=0 clean, prompt carries contract. Claims C1 (calibration) and C2 (coverage) verify as narrowed (A1-A6); no axis harmed (SCORECARD append-only, 0 deletions). Routed: (1) C1 harness not reproducible from committed bytes (A4, independently confirmed errored rc=2 on a plain export); (2) crash-as-kill in kill rule (A3/Q170); (3) m5/m6/g2 clause spellings and 76 residual survivors; (4) KFF19 single length/filler + fixture exception handling; (5) c2-forgery-probe.py tracebacks exit 1 on existing --work, indistinguishable from a surviving forgery. Operator: SHONEN pointers are non-author checkable; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 98,
+   "date": "2026-11-09",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 98,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 98
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "client-oopif-uploadmodes-linux — on Chromium 155.0.8059.84 with pinned puppeteer-core 25.16.0 / playwright-core 1.65.0, a file input #s inside a cross-site (localhost under 127.0.0.1) iframe: path uploads on Puppeteer launch (PUA), Playwright chromium.launch (PLA) and connectOverCDP isLocal (PLL) give [[tabi-r98-answer.txt,22,text/plain]] with trusted input/change and readable answer bytes; payload objects {name,mimeType,buffer} on launched (PLAB), default connectOverCDP (PLB) and isLocal (PLLB) give [[tabi-r98-payload.txt,29,text/plain]] with untrusted input/change and readable payload bytes; Playwright isLocal with an absent path (PLLM) throws ENOENT stat with the input untouched and no events; Puppeteer connect with an absent path (PUR) resolves to [[tabi-r98-missing.txt,0,text/plain]] with trusted events and Blob.text() rejects NotFoundError with Blink's kNotFoundErrorMessage; launch vs connect is a driver-pin fact (plans/round-98.md declared limit 2). Evidence corpus/evidence/round98/client-oopif-uploadmodes/receipt.json (sha256 f69c571935fa), gate check-client-oopif-uploadmodes-round98."
+   ],
+   "report": ".ufo/reports/round-98/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-98-verifier-spotcheck.md@9eaa5cbe3eb817a8aa70a6e612beddc7ffdfb449",
+    "rechecks": "C1 re-measured: base instruments absent (cat-file rc 128 x4); instrument sha256 x4 equal claims.json pins at b92b161d and b1741583, scripts/ unchanged b92b161d..b1741583; receipt sha f69c571935fa byte-identical to scored receipt and equal to c1-live.json receiptSha256; leg table 24 legs (3 reps x 8 arms), failures []: PUA/PLA/PLL answer 22 text/plain T,T read ok; PLAB/PLB/PLLB payload 29 text/plain U,U read ok; PLLM ENOENT stat, no files/events; PUR [missing,0,text/plain] T,T read NotFoundError + Blink message; control files (base rc 128, r97 receipt rc 1, wrong-lib/tampered-tree/driver-pin rc 1, 8 setup refusals rc 2, 0 chromium left); knowledge 110->111, SOURCES 239->243; SCORECARD and 6 other modified files additions only. Evidence-verified (gate not executed): scored --live rc 0 clean 256 checks 0 findings at b92b161d, battery 87/87, live killers 3/3, seat reproductions 256/256/256/816/96/256/256 clean, R98Mut 86/76/10. PREFILE-FALSIFICATION pass claims=1 rows=12 attack_seats=7 findings=0 exit 0 (R98Sentinel laundering = frozen limit 2, correctly neutral). Spot-check: S241 admit agree, S242 admit agree, BrowserLauncher.ts reject agree; S241 and S243 SOURCES rows re-opened, quotes exact; sources-census validate tabi ok exit 0."
+   },
+   "commit": "tabi-shokunin@b17415833feccd74fb53c7379eacdee0b2b1d05c",
+   "closed_at": "2026-11-09T04:54:10Z",
+   "campaign": "hyaku",
+   "notes": "watchdog digest: 2026-11-09T01:03:36-03:00 launch tabi round=98 pgid=226737 driver=hyaku-inline attempt=1; 2026-11-09T01:50:27-03:00 complete tabi round=98; hyaku-inline attempt=1. Step 1 clean: report by tabi-shokunin 815a9d68 (01:50:07, after lane tip 01:49:14), SHONEN 4 lines [~], all 5 cited hashes ancestors of master, jj-lane state ahead=0 tracked=0 untracked=0, porcelain empty, prompt contains all 116 template contract lines + addendum §6/§7/§8; receipt generatedAt 01:21:31 <= 172bc0a1 01:21:36; frozenAt 01:20:48 = b92b161d committer date; gate rows at SKILL.md:3435-3438. No conformance defect. Routed to tabi next round: D1 corpus/README.md:1279-1280 (r97 coverage) still states isLocal -> trusted without the path scoping appended to the r97 note this round (append a README pointer); D2 driver sets TMPDIR after require('playwright-core') so connectOverCDP legs write /tmp/playwright-artifacts-* (lesson mistake 3, R98Sentinel); D3 counter exit-3 -> setup mapping can mask law findings on a partial-failure run (R98Reviewer); D4 battery cases for the 10 R98Mut survivors, carried with r97 D3 transitive-package identity, r95 D1-D3 and R95Mut/r96 survivors. Operator: the four SHONEN boxes carry non-author-checkable pointers (LOG.md:4401, SKILL.md:3430, R98Exec1/R98Exec2 cold reproductions, R98Connector); promotion is operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
