@@ -58,7 +58,7 @@ same-site arm answers on the page session.
   `c46317ab` (`scored/c1-live-final.json`); pins 3/3 OK; freeze-stamp rc 0; log-section-claims rc 0;
   append-only rc 1 on corpus/SOURCES.md only (two table rows inserted above `## Paths`, numstat `2 0`;
   disclosed), the other four files `ok`.
-- `PREFILE-FALSIFICATION: pass claims=1 rows=15 attack_seats=7 findings=0` — exit 0 (`.ufo/waves/round-93/scored/prefile.txt`)`
+- `PREFILE-FALSIFICATION: pass claims=1 rows=15 attack_seats=7 findings=0` — exit 0 (`.ufo/waves/round-93/scored/prefile.txt`)
 
 Round shape: ONE v1 wave `w1` of 12 seats.
 - Roles: 3 executor, 3 critic, 1 mutation-tester, 1 reviewer, 1 sentinel, 1 scout, 1 scribe, 1 connector.
