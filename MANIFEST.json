@@ -60688,6 +60688,49 @@
    "notes": "Dispatch digest: 2026-11-08T13:37:42-03:00 launch kagi round=69 attempt=1; 13:48:42 lane-dead-no-report (attempt 1); 19:48:11 launch attempt=2; 21:09:22 lane-dead-no-report (attempt 2); 21:09:24 launch attempt=3; 21:34:07 complete kagi round=69 attempt=3. Step 1 ok: report 5f97c580 by kagi-shokunin after lane tip 5979cf07 (21:31:29 < 21:31:48); SHONEN 4x[~]; hashes 264917aa/adb69726/6a93ca60/8a3afcc2/5979cf07 exist and are ancestors of master; jj-lane state ahead=0, porcelain empty; prompt carries contract. Honest stop: both frozen claims missed, filed missed without narrowing (plans/round-69.md Honest stop (attempt 3)). Prefile-falsification as prompted (no --wave): SETUP findings=1 exit 2 (wave-missing w1-results.json; driver wrote kagi-r69-w1-results.json); with --wave kagi-r69-w1: pass claims=2 rows=13 attack_seats=7 findings=0 exit 0; SETUP adjudicated spurious as to claims. Defects (status-neutral): report says 8 falsifies-wording rows, ledger has 6; report says 2 W04 census warnings, actual 25 and round-start receipt captured stdout only; wave-results name binding (M69-9); no sourced claim (self-recorded); 16/16 seat outputs lost, 7 seats lack SEAT-STATUS. Routed to kagi r70: fix both miscounts in next report; bind settlement legs to driver's artifact name; carry R69Critic F-C1-*/R69Reviewer F-1..7/R69MutTester M3 into the next counter and run legs against the existing gate pre-freeze (M69-10); re-freeze C2 (policy rc2 on true negative, unscoped one-row ledger, subfloor N_base+1 vs 59->62). SHONEN boxes all [~]; not offered as non-author-checkable.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 93,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 93,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 93
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "unchanged",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "chromium-oopif-backendnode-scope-linux — on Chromium 155.0.8059.84 --headless=new, a cross-site iframe chooser's backendNodeId is renderer-scoped: on the page session it names a #document (page pierced document holds 0 INPUT#s) and page-session DOM.setFileInputFiles fails with 'Node is not a file input element' delivering nothing, while the iframe session names the INPUT and answers; same-site control answers on the page session"
+   ],
+   "report": ".ufo/reports/round-93/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-93-verifier-spotcheck.md@d7744d043ca4b606124dfaa7f385acfa89b352ff",
+    "rechecks": "C1 re-measured on committed bytes at 5246985e: base counter absent (git cat-file rc 128); instrument sha256 3/3 = claims.json; instruments, claims.json, plan untouched since freeze 7a7f39f3 (empty diff); frozenAt 20:47:56 < freeze commit 20:48:00 < receipt 20:48:30 < bf0bd622 20:48:33; jq over corpus receipt: X legs 1 iframe target, chooser on iframe B=2, describe(iframe)=INPUT, describe(page)=#document, pagePierceInputS 0, cross error 'Node is not a file input element', filesAfterCross [], iframe answer ok; S legs 0 targets, chooser+answer on page B=5; child files [[tabi-r93-answer.txt,22]] all 6 legs; scored+tip records clean 101 checks 0 findings (evidence-verified, counter not executed); knowledge 105->106, SOURCES 230->232; diff 125 files +43833 -0 (append-only). Prefile ledger pass claims=1 rows=15 attack_seats=7 findings=0 exit 0. S231/S232 re-fetched (gitiles base64-decoded) sha256 = staged, quotes at cited lines; census validate exit 0."
+   },
+   "commit": "tabi-shokunin@5246985e9b21474ce3350de5bc82579bece5019b",
+   "closed_at": "2026-11-09T00:37:47Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-11-08T20:40:03-03:00 launch tabi round=93 pgid=2607976 driver=hyaku-inline attempt=1; 2026-11-08T21:09:28-03:00 lane-dead-no-report tabi round=93 (attempt 1 orchestrator SIGTERM, report_of FAIL); 2026-11-08T21:09:30-03:00 launch tabi round=93 pgid=3726486 driver=hyaku-inline attempt=2; 2026-11-08T21:34:09-03:00 complete tabi round=93; hyaku-inline attempt=2. Step 1: report committed by tabi-shokunin (cb030832, then 13336874), SHONEN heading 4x[~], cited hashes 192535d7/7a7f39f3/bf0bd622/9fac89c3/c46317ab/5246985e exist and are ancestors of master, lane ahead=0 clean, prompt carries template contract + hyaku addendum + §8. Defects (status-neutral): D1 filed report edited in place 10s after filing (13336874 backtick fix) instead of appended erratum; D2 scored/c1-live.json .receipt names a removed scratch path (committed copy carries same nonce). Discernment spot-check: admits S231, S232 agree; rejects freeze-stamp gate on r92 future frozenAt and ledger row R93Critic1-j agree; disagreement: S232 lesson word count 8 vs wc -w 6. Routed to tabi r94: S232 word-count correction; scored record should name committed receipt path; R93Sentinel S4/S5; R93Mut 14 survivors + R93Critic1 receipt hardening; SOURCES-aware append-only check; erratum-not-rewrite report hygiene; carried r91 items 3/5. SHONEN box 3 needs a non-author re-run to be checkable; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
