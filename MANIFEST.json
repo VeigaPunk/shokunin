@@ -61736,6 +61736,44 @@
     "rechecks": "C1 re-measured by verifier: M1 shapes=17 mismatched=0 EXIT 0, M2 relabel refused EXIT 2 (relabel sha256 004356d7... matches receipt), M3 mismatched=3 EXIT 1, r95/r97 controls mismatched=3; c1-survivor-search byte-identical to r98 (e8ba780a...). C2 evidence-verified: r99 _reap_owned lacks branch (c) (grep vs r98 line 189), decoy receipts r99/r98 spared 0/83, r97 killed 60/83, CM8 killed 82/83; escapee receipt r99 alive=1 vs r98 alive=0. Prefile pass claims=2 rows=11 attack_seats=7. Census validate EXIT 0, 294->294 rows.",
     "spotcheck": "souji-shokunin/corpus/lessons/round-99-verifier-spotcheck.md@a662bb0d7e033cc5ceccd70b52eb234404300845"
    }
+  },
+  {
+   "round": 100,
+   "date": "2026-11-09",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 100,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 100
+   },
+   "admitted": false,
+   "verdict": "rejected-harmed",
+   "verdicts": {
+    "operability": "harmed",
+    "calibration": "improved",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "improved",
+    "discernment": "harmed"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-100/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-100-verifier-spotcheck.md@e580e43244d5878b95623db4c26ad72c2cb99e4d",
+    "rechecks": "C1 re-measured on committed bytes: r100 ESCAPEE-ALIVE alive=1 vs frozen alive=0 while decoy spared 83/83, r99 alive=1 control PASS; C2 re-measured: grep -c S332 0->1 and S075 used-by 0->1, census 294->294, sources-census ok EXIT 0. S075/S332/S368 admits+quotes re-opened from committed captures and agree; newly written S075 used-by row quote verified (6 words). CriticC1Scope falsifies-wording a1/a2/b1 + falsifies-number F-n all real, each named and narrowed (honest-stop verdict); prefile ledger absent (SETUP findings=3, exit 2) — conformance defect, not a verification failure. No owned axis score moved (7/8/8); harm is axis-verdict harm on operability."
+   },
+   "commit": "souji-shokunin@cbe068d03eb5a49fc0736bef89f182679a86ca51",
+   "closed_at": "2026-11-09T15:42:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-09T12:17:48-03:00 launch souji round=100 pgid=3217270 driver=hyaku-inline attempt=1; 2026-11-09T12:26:05-03:00 lane-dead-no-report souji round=100; retry same round (hyaku-inline attempt=1: L1 ended without a landed report: FAIL report_of (missing, unchanged, no SHONEN heading, or < 400B): .ufo/reports/round-100/souji.md); 2026-11-09T12:26:07-03:00 launch souji round=100 pgid=3345845 driver=hyaku-inline attempt=2; 2026-11-09T12:38:16-03:00 complete souji round=100; hyaku-inline attempt=2. C1 harmed: frozen alive=0 leg structurally unreachable via session branch (b) (escapee sid == own pid, spawn sid == spawn pid); four non-author seats caught it, the pre-freeze gate did not. C2 improved individually. Conformance defects status-neutral: prefile falsification ledger absent at .ufo/waves/round-100/ (attempt-1 died mid-wave; wave evidence in census/round-100/wave-evidence/); Q62 carried (no S332 located quote in correction body, body-only cites); dead seats MutC1SessionKey (no dir), ExecC1SessionApplier/ExecC1SessionNoReap (empty at attempt-1 end). Routed to lane next round: (1) r101 blocker — escapee ownership via counter-child net (r98 branch (c) + PR_SET_CHILD_SUBREAPER); a session key is at most a persistence note; freeze predicate against a live fixture shape first; (2) Q62 — add <=25-word S332 located quote and front-matter source: cites; (3) place the falsification ledger where prefile-falsification.py reads it. Lineage note for operator: four independent non-author measurements all read the session inequality — if the operator considers the SHONEN boxes fully checkable from this spot-check, the promotion call is the operator's.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
