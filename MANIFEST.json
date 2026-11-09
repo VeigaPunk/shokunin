@@ -60603,6 +60603,50 @@
    "notes": "Dispatch digest: 2026-11-08T13:38:18-03:00 launch chousa round=95 pgid=3598027 hyaku-inline attempt=1; 13:48:11-03:00 lane-dead-no-report (attempt 1, no landed report; 19 untracked leftovers discarded by attempt 2, .ufo/waves/round-95/inherited-attempt1.txt); 19:48:09-03:00 launch pgid=52349 attempt=2; 21:00:43-03:00 complete attempt=2. Report dc9f587a by chousa-shokunin 21:00:06 after lane landing 07e0e332 (20:59:07); 6 lane commits d6429e02..07e0e332, pushed, ahead=0, clean. A first closure pass landed the spot-check (cec54a08) but appended no MANIFEST entry; this second non-author pass re-ran all checks and appended section 7 (bbf64970). Trend quality graded unchanged (author said improved): no existing entry re-verified/superseded. Routed defects (status-neutral, r96): D1 SKILL Gates row registers search-rerun as kind 'tool' (not gate|probe) and tools/search-rerun.py has no self-test mode; D2 lessons/round-95.md:23 still says nine located quotes (13 after Amendment 1); D3 report/SCORECARD cite SKILL_TALLY_R94/CURATION_R94=PASS on landing with no round-95 receipt; D4 (revised) S222 locator 'Systematic Reviews 10:39' is true per Europe PMC JATS (volume 10, elocation 39) but unsupported by the lane capture — record the confirmation; D5 README Round95 row points at after/ (F receipts) not after-f2/. SHONEN: all 4 boxes [~]; boxes 2 and 4 look non-author checkable (operator-owned promotion).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 100,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "kama",
+   "lane_round": 100,
+   "lanes": {
+    "kama": "ok"
+   },
+   "lane_rounds": {
+    "kama": 100
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "depth": "improved",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "coverage": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "revision-bound-record-pointers",
+    "props-status-gate"
+   ],
+   "report": ".ufo/reports/round-100/kama.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kama-shokunin/corpus/lessons/round-100-verifier-spotcheck.md@65d027131327ca4434827f3fbc04b4fea794be95",
+    "rechecks": "C1 re-measured by independent git/python reimplementation of the nine checks (correction heading 0/0 at 6776c667, 1/1 at 2e27e6f1 and 4094f58a; both blocks carry 4 of 12 (33%), 6 of 12 (50%), 12 seats, 0 dead; only 33%/50% outside bound tokens; 0 unbound pointers; 5 bound tokens per block all resolve at their revisions; round-99 w1-spec roles give policy 4/12, ledger 6/12; r99-measured.json lines are lines of round-99 measured c1-c3.out) + evidence-verified (c1.out met=True exit 0, c1-base mismatches=9 exit 1, forgeries P0 rc=0 F1-F7 rc=1); C2 re-measured from probe bytes (router_autoload gates on pcode=200 before size/parse, no -L, pcode 0->3, probe sha 05ebee88->23b26d76 = receipts, mutant sha 4e6a4214 matches) + evidence-verified (c2.out 9 cells 0 mismatches exit 0, base 6 with 4 false MODEL_OK exit 1, blanket mutant 2 exit 1, r99 regression 8/0 exit 0); SKILL sha 7f8eed74/2536 lines/61 headings; tools unchanged 2e27e6f1..4094f58a; scores unchanged; axes reconciler green at tip; prefile ledger pass exit 0 (claims=2 rows=16 attack_seats=7 findings=0), 10 falsifies-wording rows all reconciled by amendment 1; census validate kama ok exit 0; spot-check S631 admit agree, S629 admit agree, README reject agree, S630 row quote agree (all re-opened at b12177, digests match)"
+   },
+   "commit": "kama-shokunin@65d027131327ca4434827f3fbc04b4fea794be95",
+   "closed_at": "2026-11-09T00:12:51Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest (.ufo/watchdog.log, copied): 2026-11-08T19:51:47-03:00 launch kama round=100 pgid=162159 driver=hyaku-inline attempt=1; 2026-11-08T21:03:47-03:00 complete kama round=100; hyaku-inline attempt=1. Report committed by lane identity (e8305d90, committer 21:03:03 after last lane commit 4094f58a 21:02:48); SHONEN heading with 4 [~] lines (none fully checkable by a non-author); cited commits 6776c667/2e27e6f1/3626e06c/6d0e3abc/6ca78b26/630cb8ec/c6a9b8e7/a8d4566d/4094f58a all ancestors of master; lane clean and pushed (ahead=0) before closure; prompt = template + hyaku addendum (placeholder substitutions only). Both claims admitted as narrowed by plans/round-100-amendment-1.md (filed before report); the wider frozen wordings are not verified. Routed to round 101: (1) killer cells for C2 (302->200 target, closed port with seeded body, seeded 204/304, query-keeping stub; KQ155) and C1 pointer grammar/seat names/multi-word phrase/self-bound revision (KQ153) so claims can be stated at full width; (2) run the axes reconciler before freezing (freeze turned it red until re-anchor, lesson M6); (3) carried pre-report arms newest-closure and round75-instruments (APPEND_DEBT unaccepted=38 bad_rows=19; L0 r87/r89); round97 self-assessment audit mismatches=1 unchanged; (4) MT01 survivors C1M2-M6, C2M1/M6/M8 and round-92 D3 differential cell (pre-existing). Observation: freeze author timestamp 19:50:58 precedes launch (jj working-copy author time; committer 20:01:46), not future-dated evidence.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
