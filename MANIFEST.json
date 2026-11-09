@@ -61661,6 +61661,44 @@
    "notes": "Dispatch/complete digest: 2026-11-09T05:56:35-03:00 launch souji round=97 pgid=2426080 driver=hyaku-inline attempt=1; 2026-11-09T09:24:17-03:00 complete souji round=97; hyaku-inline attempt=1. Report committed by lane identity (souji-shokunin ad0ff871); SHONEN heading 4x[~]; lane base ancestor, ahead=0, clean. Conformance defects: none status-neutral (the report's Sources & frontier section notes the row-by-row diff was not done in-report; verified here: only S372 touched). Routed to lane r98: C1 successor latch keyed on the exception object's own state adding q1i/q1o/q1q to the shape table (Q173); C2 successor ownership by recorded spawn pid and ppid chain with a committed decoy test (Q174); the reap stays disabled or operator-approved until then. Open L0 (operator-owned): souji round-97 C2 reap ownership decision. SHONEN boxes are all [~] with evidence pointers - no non-author has verified a promotion claim to the protocol standard; promotion is operator-owned and is not being requested here.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 98,
+   "date": "2026-11-09",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 98,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 98
+   },
+   "admitted": false,
+   "verdict": "rejected-honest-stop",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "unprovable",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "unchanged",
+    "quality": "unchanged",
+    "discernment": "harmed"
+   },
+   "capabilities_added": [],
+   "report": ".ufo/reports/round-98/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-98-verifier-spotcheck.md@c94d678c8a76f3f87f73b49a11a9d4e2aff73e3b",
+    "rechecks": "C1 re-measured: declared-shapes r98 mismatched=0, r97=3, r95=3, search summaries byte-identical (278/76). C2 evidence-verified (records: r98 0/83 spared, r97 60/83 killed, CM8 82/83 killed; not re-executed). Prefile: SETUP findings=2 exit 2 (no claims.json/ledger). Sources census exit 0, 294->294; S372/S075/S368 quotes re-opened live and agree."
+   },
+   "commit": "souji-shokunin@ec93b642a4b5bdddd7087f0099d5fde37bf0abc0",
+   "closed_at": "2026-11-09T13:59:23Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-09T09:25:53-03:00 launch souji round=98 pgid=2802941 driver=hyaku-inline attempt=1; 2026-11-09T09:28:36-03:00 lane-dead-no-report souji round=98 (attempt1 L1 ended without landed report); 2026-11-09T09:28:38-03:00 launch souji round=98 pgid=2854347 attempt=2; 2026-11-09T10:56:24-03:00 complete souji round=98 attempt=2. C1 improved (numbers re-derive, no-harm holds) but predicate movable (M6/K2: r97 hook reaches mismatched=0 under relabelled rows; runner hard-codes SHAPES, expected file unread) — defect routed to r99, does not erase improvement. C2 unprovable/not admitted: decoy leg improves (83/0 spared vs 60/83 and 82/83 killed) but frozen sentence omits _reap_owned branch (c) (any counter descendant; Sentinel FINDING 4; cross-arm carriers killed) — wording falsified, operator L0 open. Honest-stop: lane itself marked C2 measured-not-admitted. Conformance defects (status-neutral): prefile ledger absent (SETUP exit 2); branch-c wording; survivors not a witness (decoy is). No axis harmed; scores 7/8/8 unchanged. SHONEN [~] x4 stays; promotion operator-owned after M6 + wording fixes.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
