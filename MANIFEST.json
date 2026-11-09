@@ -61583,6 +61583,46 @@
    "notes": "Dispatch digest (.ufo/watchdog.log, committed in notes by digest): 2026-11-09T03:01:34-03:00 launch tabi round=100 pgid=1905082 driver=hyaku-inline attempt=1; 2026-11-09T04:26:39-03:00 complete tabi round=100; hyaku-inline attempt=1. Report committed by tabi@shokunin.local (d9c83b48); SHONEN heading present, 4 [~] lines, no [x]. Step-1 conformance defects (status-neutral): no planner subagent in 12-seat wave (L1 held planner seat); report attack share 4/12 vs prefile ledger attack_seats=7 (attack-role set unstated); Amendment A1 in freeze commit 468c2b94 names post-wave findings (lane mistake 3). Discernment: S250 registry row still attributes webkitRelativePath to WHATWG (correction only in note); WICG cited in knowledge note without registry row; S238 line anchor correction row owed; no QUALITY.md criterion for the S250 miss; lesson Gate word counts S248 7/S249 10/S250 19 vs recorded 5/8/20 (all <=25). Routed r101: S251 supersedes S250 (WICG); S238 anchor; QUALITY criterion for source attribution against staged bytes; planner seat; attack-role set; separate post-wave amendment commits; Blink reject not re-opened (unprovable). SHONEN: box 2 appears checkable by a non-author; operator-owned, not written. Spot-check commit e3361505 landed on remote master by protocol identity.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 96,
+   "date": "2026-11-09",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 96,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 96
+   },
+   "admitted": false,
+   "verdict": "rejected-harmed",
+   "verdicts": {
+    "calibration": "harmed",
+    "operability": "improved",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "harmed"
+   },
+   "capabilities_added": [
+    "pipe-holder refusal within the timeout: refuse a fixture whose escaped setsid() grandchild holds the probe's pipes, exit 2 + C2-FORGERY-FATAL at its own --timeout rather than hung (S368-sourced; narrowed: counter reaches only exit-code discipline, grandchild not reaped)"
+   ],
+   "report": ".ufo/reports/round-96/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-96-verifier-spotcheck.md@210084b24de1dd1f1fd499f49b0c70744f099f5f",
+    "rechecks": "C1 re-measured: r96 table mismatched=0 (r95 2, t1/t4 70->0) vs off-table modfin/reraise 70->1 -> harmed trade; ten-target errored=7 killed=2 survived=1 (unchanged); C2 re-measured: T1 hung->exit 2 + FATAL, arms=20 conform=20 on judge run (3rd execution); SOURCES 286->293, quotes re-opened and located; prefile pass (14 rows, 8 attack seats); census validate EXIT 0"
+   },
+   "commit": "souji-shokunin@210084b24de1dd1f1fd499f49b0c70744f099f5f",
+   "closed_at": "2026-11-09T09:00:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch 2026-11-09T03:34:35-03:00 launch souji round=96 pgid=2976316 driver=hyaku-inline attempt=1; complete 2026-11-09T05:50:56-03:00 complete souji round=96; hyaku-inline attempt=1. Report by souji-shokunin identity, SHONEN heading with 4x[~], lane clean and ahead=0 before the spotcheck. Spec header 12 vs 13 seats (A0.2, conformance). C1 harmed (trade self-reported, confirmed by re-derivation); C2 verified on the narrowed reading (A4/A5/A7); prefile 14/14 attack seats covered, all falsifies-wording rows reconciled. Operator ruling open on C1 harmed-vs-require-r97-fix and on reaping authority (PROVINCE F5 HOLD) and the S12 unattributed SIGTERM. r97 routed: RERAISE-aware rule + table shapes, fd-2 restore, traceback-print routing, identity reaping + survivor count, output cap, signal-exit recording.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
