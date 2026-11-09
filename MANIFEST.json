@@ -61117,6 +61117,50 @@
    "notes": "Dispatch/complete digest: 2026-11-08T23:35:33-03:00 launch kagi round=71 pgid=991863 driver=hyaku-inline attempt=1 | 2026-11-09T00:49:44-03:00 complete kagi round=71; hyaku-inline attempt=1. Conformance clean: report committed by kagi-shokunin (9cc6da77, 00:32:21-03:00); 5 cited hashes ancestors of master; lane pushed ahead=0; porcelain empty; prompt carries contract; one v1 wave w1 12 seats settled. Defect: report states ledger tally 6 falsifies-wording/3 neutral, ledger reads 5/4. Routed for round 72: (1) SCORECARD r71 capability row lacks A2 (T9 serial refusal uncounted, MT-1) and A1 (RE-1 binding) caveats - append correction; (2) lesson Gate reject reason for rotation-primitives overlooks its per-issuer leaf_not_after_behavior sentence (T6) - append correction; (3) freeze again missed a forgery class (M71-4 repeats M70-5) - enumerate read-back verdicts and uncounted HOLDS conjuncts before the wave; (4) correct the report's 6/3 ledger tally in next report/LOG; (5) carried self-counts stale=4 and r69 claims-declared pair. Operator: SHONEN boxes 2 and 3 look non-author checkable (closure re-executed trial value=4; R71ExecReplica independent trial value=4); not ticked.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 98,
+   "date": "2026-11-09",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 98,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 98
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "tools/search-rerun.py --selftest: guard canary g00 + cases r17-r34 (48 -> 67 cases; kills 35/37 round-97 non-author mutants vs 12/37 at base)",
+    "corpus/knowledge/press-2015-statement-questions-r98.md: PRESS 2015 Guideline Statement abstract via Europe PMC (S231, tier B) + 20 more S225 question lines (36/36)"
+   ],
+   "report": ".ufo/reports/round-98/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-98-verifier-spotcheck.md@47ed34fa785288837f84cde9db15c41300854a78",
+    "rechecks": "C1 evidence-verified (after-f2/c1-all.txt PASS 67/67, tally = frozen predicate, measured at F2, instrument bytes unchanged F2..HEAD) + plain case-id count 48->67; C2 re-measured: 37/37 entry quotes located (live Europe PMC record + committed S225 capture), S225 question-mark lines 36, held 16 (r97) + 20 (r98) = 36/36; gate tallies evidence-verified at F3; registry 226->230; census exit 0; prefile ledger pass rows=16 findings=0 exit 0; spot-check S231 admit, S228/S230 reject re-opened live, all agree"
+   },
+   "commit": "chousa-shokunin@80b754e425361f7fdc4675aa85ac36366dacf2b1",
+   "closed_at": "2026-11-09T03:57:41Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-11-08T23:43:41-03:00 launch chousa round=98 pgid=1117672 driver=hyaku-inline attempt=1; complete 2026-11-09T00:54:52-03:00 attempt=1. Conformance ok (report by lane identity 36fb35d8, SHONEN 4 lines, 7 cited commits ancestors of master, ahead=0, clean). Defects: claims.json freeze.F3 is a placeholder string not 1c6e01c5. Routed: R98MutantsC1 survivor R32 missing from round-99 plan; gate-records admits http-200 challenge body (lane-routed, QUALITY 229); NO_WRITE blind outside its dirs (A6). SHONEN boxes remain [~]; not judged fully non-author-checkable this round.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
