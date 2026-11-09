@@ -61204,6 +61204,48 @@
    "notes": "watchdog digest: 2026-11-09T00:09:48-03:00 launch tabi round=97 pgid=1057005 driver=hyaku-inline attempt=1; 2026-11-09T00:59:30-03:00 complete tabi round=97; hyaku-inline attempt=1. Step 1 clean: report by tabi-shokunin e6f7399b (00:58:43, after lane tip 00:57:52), SHONEN 4 lines [~], all 5 cited hashes ancestors of master, jj-lane state ahead=0 tracked=0 untracked=0, porcelain empty, prompt = template + substitutions + addendum §6/§7/§8; receipt generatedAt 00:25:30 <= be9487f6 00:25:36. No conformance defect. Routed to tabi next round: D1 corpus/README.md:1276-1277 still says 'pinned on version, lockfile integrity, one upload-bearing file and a whole-tree sha256' without the A1 items 4/6 narrowing (lock integrity self-reported; tree sha covers two top-level package dirs only) — append a narrowing correction; D2 battery cases for R97Mut survivors M40/M42/M66 and live killers M75-M77 (with r96 M20/M51/M52/M54/M65/M67); D3 carried: transitive-package identity, r95 D1-D3 and R95Mut survivors. Operator: SHONEN boxes all [~] with non-author-checkable pointers (LOG.md:4369, SKILL Round 97 gate registry, R97Exec1/R97Exec2 cold reproductions, R97Connector §3); promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 93,
+   "date": "2026-11-09",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 93,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 93
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "coverage": "improved",
+    "operability": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "ledger-edit false rows (LD5 ledger-drop, LD6 ledger-trim)",
+    "exact-position excerpt check (KFF19 reference cut from WHATWG UTF-8 decoder, S356)",
+    "interruptible survivor search (SIGINT/SIGTERM exit 130, trees removed)"
+   ],
+   "report": ".ufo/reports/round-93/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-93-verifier-spotcheck.md@eddb1be6c34c2e0bef8c1e8ae6ea2f4b381c5536",
+    "rechecks": "All 8 instrument sha256 pins match prereg; r93 population's first 67 lines cmp-identical to r92. C1 re-measured: r92 pop killed=0 survived=2, r93 pop killed=2 survived=0 EXIT 0, pristine rows=66 mismatches=0 LD5 rc=1 LD6 rc=0; hand-applied mutants each fail only their own target row (got=UNRESOLVED match=no) -> semantic kills. C2 re-measured: r92 fixture rejected=5 EXIT 1, r93 fixture rejected=8 EXIT 0, fixture cases=22 tool_pass=22 before_pass=16, KFF19 inexact=0 vs 3096. K4 12/0 evidence-verified. Prefile ledger pass claims=2 rows=23 attack_seats=8 findings=0 EXIT 0. S356 re-opened live, sha256 identical, admit+reject quotes found (22/21 words). Census souji ok EXIT 0, rows 277->278."
+   },
+   "commit": "souji-shokunin@2794527218c938ebe9d1d1c07073ebe598565616",
+   "closed_at": "2026-11-09T04:16:00Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 2026-11-09T00:32:23-03:00 launch souji round=93 pgid=1493374 driver=hyaku-inline attempt=1; 2026-11-09T01:08:07-03:00 complete souji round=93; hyaku-inline attempt=1. Step-1 PASS: report by souji-shokunin 5ee5b521 (01:07:48 before complete), SHONEN heading 4 [~] lines, six cited commits ancestors of master, jj-lane state ahead=0 clean, prompt carries contract. Claims C1 (calibration) and C2 (coverage) verify as narrowed (A1-A6); no axis harmed (SCORECARD append-only, 0 deletions). Routed: (1) C1 harness not reproducible from committed bytes (A4, independently confirmed errored rc=2 on a plain export); (2) crash-as-kill in kill rule (A3/Q170); (3) m5/m6/g2 clause spellings and 76 residual survivors; (4) KFF19 single length/filler + fixture exception handling; (5) c2-forgery-probe.py tracebacks exit 1 on existing --work, indistinguishable from a surviving forgery. Operator: SHONEN pointers are non-author checkable; promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
