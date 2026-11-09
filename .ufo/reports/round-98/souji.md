@@ -1,152 +1,150 @@
 # souji round 98 — report (attempt 2, SoujiR98a2; inherited from attempt 1, SoujiR98)
 
+Lane HEAD on origin/master: `ec93b642a4b5bdddd7087f0099d5fde37bf0abc0` (pre-report `ls-remote` gate passed).
+Lane base: `ff254387005e35ff442555451374ff079dafc2db`. Commits this round: `ca98ad08` (instruments, lesson,
+Q175/Q176, knowledge corrections, SCORECARD/LOG) and `ec93b642` (corrected decoy driver, decoy records, late
+lesson/scorecard/LOG evidence).
+
 ## Work performed
 
-Declared claims (1–3, each falsifiable, causally separable, distinct axes) with their target axes:
+Declared claims (2; both falsifiable, causally separable, distinct axes):
 
-- **C1 (calibration 7):** a latch keyed on the exception object itself (`exc._souji98_last`, a per-object event
-  stamp; `WeakKeyDictionary` is unavailable for `SystemExit` on CPython 3.14.8) makes the 17-shape declared-exit
-  table print `SHAPES-SUMMARY shapes=17 mismatched=0`, with q1o and q1q at 70 and every caught shape keeping its
-  plain exit code; the r95 and r97 hooks on the same table print `mismatched=3`; the 278-mutant no-harm holds
-  with byte-identical survivor sets (76 ids, empty symmetric difference).
-- **C2 (operability 8):** the arms counter reaps only the pid the arm recorded at spawn (starttime-verified) and
-  its ppid-chain descendants, or an orphan reparented to the counter (`PR_SET_CHILD_SUBREAPER`); argv never
-  authorises a kill. The committed decoy test plants foreign sleepers carrying the counter's OWN T1 reap token
-  and polls each sleeper's pid continuously; the T1 survivors count uses the descendant relation; `conform`
-  binds `survivors=0` on T1.
+- **C1 (calibration 7).** An object-keyed latch (per-exception event stamp `exc._souji98_last`; `WeakKeyDictionary`
+  is unavailable for `SystemExit` on CPython 3.14.8) makes the 17-shape declared-exit table print
+  `SHAPES-SUMMARY shapes=17 mismatched=0`, with q1o and q1q at 70 and every caught shape keeping its plain exit.
+  Verdict: measured pass; non-author closure pending.
+- **C2 (operability 8).** The arms counter reaps by ownership (spawn pid + ppid chain, starttime-verified; plus an
+  orphan branch for the counter's own subreaper net). A foreign own-uid decoy carrying the counter's own T1 reap
+  token survives under r98, is killed under r97 and under the CM8 mutant. Verdict: **measured, not admitted**
+  (see the C2 section below).
 
-Work items (one bullet per item, each with an evidence pointer):
+Work items (evidence pointers):
 
-- C1 latch build (object-keyed stamp, last-stamp==EH decides declared; A11 traceback restored, A3 kept) —
-  `census/round-98/c1-survivor-search.py` (e8ba780a…) + `census/round-98/declared-shapes.py` (dcec0c9e…); seat
-  `R98ExecC1.md` ("F1 — r97 global pending defeats q1o/q1q/q1i; F2 — N=0 measured").
-- The 17-shape table landed with q1i pinned `declared` at the A0.1 freeze (`.`md A0.1 amendment; the
-  `declared-shapes.expected` freeze note records R98Reviewer1 F3 + R98Critic K1 + R98MutC1 F3 disagreeing on
-  the r97 limit and settling it here).
-- The 278-mutant no-harm measurement: `SEARCH-SUMMARY generated=278 ambiguous=9 uncompiled=0 hung=1
-  scored=268 errored=53 killed=139 survived=76` in both `census/round-98/records/search-r97.log` and
-  `search-r98.log`; survivor id lists identical (`survivors-r98.json`, 76 ids).
-- C2 in-round instrument repairs under the frozen A0.1: the decoy test now carries the counter's own T1 token
-  and polls the sleeper's own pid continuously (M7); the T1 survivor count uses the descendant relation (M8);
-  `conform` binds survivors=0 on T1 (R98Connector C-3); the CM8 mutant is a real argv-only reap (R98ScoutSources
-  F2: the committed mutant signalled nobody, so the decoy predicate could not distinguish it).
-- The 12-seat v1 wave (5 attack seats: 2 reviewer, 1 critic, 2 mutation-tester; 1 connector; 1 scout; 1 scribe;
-  3 executor) — `.ufo/waves/round-98/w1/`; the L1 holds the canonical planner seat. No re-dispatch of w1:
-  attempt 1's wave was still running when attempt 2 was bound to it, per the orchestrator's message. ExecC2,
-  MutC2 and Sentinel produced no committed report files in the lane wave dir; their scratch was deleted, and
-  their live runs are **not** cited as evidence here.
-- Live source re-open (S075/S372/S368, each HTTP 200, sha256 in the lesson `## Gate`, byte-identical to
-  `census/round-98/srcs/*`, occurrence 1) — `R98ScoutSources.md` §1 + `reopen-sources.out`.
-- The connector incident is recorded, not hidden: its cleanup SIGKILLed 26 processes of sibling seats at
-  ~12:33:50Z (`R98Connector.md` §6.1; `R98Scribe.md` §1.5 + F5 NOTED). The L1's own measurements are from
-  post-incident runs, and no `rc=-9` result is cited as evidence of anything.
+- C1 latch build: `census/round-98/c1-survivor-search.py` (sha256 e8ba780a…); `census/round-98/declared-shapes.py`
+  (dcec0c9e…); `census/round-98/declared-shapes.expected` (23111a3d…, with the q1i freeze note).
+  Seat evidence: `.ufo/waves/round-98/w1/R98ExecC1.md`.
+- C1 do-nothing controls on the same 17 shapes: r97 hook `SHAPES-SUMMARY shapes=17 mismatched=3`; r95 hook
+  `mismatched=3`. Receipts `census/round-98/records/shapes-r97.txt`, `shapes-r95.txt`, `shapes-r98.txt`.
+- C1 no-harm: `SEARCH-SUMMARY generated=278 ambiguous=9 uncompiled=0 hung=1 scored=268 errored=53 killed=139
+  survived=76` in both r97 and r98 searches; survivor id lists identical (76 ids). Receipts
+  `census/round-98/records/search-r97.log`, `search-r98.log`, `survivors-r98.json`.
+- C2 instrument repairs: `census/round-98/c2-setup-arms.py` (ownership reap; `conform` binds `survivors=0` on
+  T1; survivor count by descendant relation); `census/round-98/c2-cm8-mutant.py` (argv-only reap, the CM8
+  mutant; the committed-at-ca98ad08 version signalled nobody, per R98ScoutSources F2, and was repaired before
+  the mutant was measured); `census/round-98/c2-decoy-test.py` (plain sleeper carrying the counter's own T1
+  token; polls each planted sleeper's pid; corrected driver at `ec93b642`, see below).
+- C2 driver correction after WAVE-DONE: the committed driver (a) fed the pipe-holder as the P1/P2/S1 fixtures,
+  which made those arms hang (`conform=13`), so the earlier runs measured the driver, not the reap; (b) killed the
+  counter on the test's own 420 s timer, producing `counter_exit=-9` and a false `verdict=spared`; (c) raced the
+  T1 arm's 120 s timeout against the probe's own 120 s. The corrected driver uses the lane's real fixtures for the
+  non-T1 arms, does not kill the counter, uses `--arm-timeout 200`, and prints `verdict=inconclusive` (exit 2)
+  when the counter does not finish with exit 0 or 1.
+- Wave w1: 12 seats (5 attack: 2 reviewer, 1 critic, 2 mutation-tester; 1 connector; 1 scout; 1 scribe; 3
+  executor). The L1 holds the canonical planner seat. `.ufo/waves/round-98/w1-results.json` records all 12 seats
+  settled (WAVE-DONE received). Seat reports present: ExecC1, ExecC2 (status `partial`), ExecCensus, Reviewer1,
+  Reviewer2, Critic, MutC1, MutC2, Sentinel, Connector, ScoutSources, Scribe.
+- Live source re-open (S075, S372, S368; each byte-identical to its committed capture, occurrence 1):
+  `.ufo/waves/round-98/w1/R98ScoutSources/reopen-sources.out`.
+- Incident: R98Connector's cleanup loop SIGKILLed 26 live processes of sibling seats (~12:33:50Z). Any `rc=-9`
+  result from that window is void. Several earlier seat decoy runs were affected; the L1 re-ran every decoy
+  measurement cited here after the incident.
 
 ## Landed changes
 
-Every change below is tied to a LOG.md entry (the trailing `## Round 98` block) and to the commit hash that
-carries it: node `ca98ad08bd87d595367ed9ddb64bb46114209f36` (lane, verified on the remote — see Verification).
+Each change is tied to a LOG.md entry (`## Round 98` and `Round 98 late`) and to the commit that carries it.
 
-- `census/round-98/c1-survivor-search.py` (e8ba780a…): the object-keyed latch, A11 traceback-after-marker, A3
-  fallback kept.
-- `census/round-98/declared-shapes.py` (dcec0c9e…) + `declared-shapes.expected` (23111a…) + `shapes/` (17
-  scripts; the 14 r97 shapes byte-identical + q1o/q1q/q1i).
-- `census/round-98/c2-setup-arms.py` (0886271b…): ownership reap with the descendant-relation survivor count
-  and the survivors-binding conform.
-- `census/round-98/c2-decoy-test.py` (12e6ddcb…): the corrected decoy test (plain sleeper, byte-exact own
-  token, continuous post-snapshot planting, per-plant pid polling).
-- `census/round-98/c2-cm8-mutant.py` (a7760a76…): the CM8 ownership mutant as a real argv-only reap.
-- `census/round-98/c2-forgery-probe.py` (e5724d19…; unchanged from r97 per its docstring).
-- `census/round-98/controls/` (`c1-r95-search.py`, `c1-r97-search.py`, `c2-r97-arms.py`, `c2-r97-probe.py` —
-  do-nothing bytes at ff254387).
-- `census/round-98/srcs/` (live captures: `proc_pid_stat.5.html` 0f04d789…, `monitoring.html` 2b281793…,
-  `proc_pid_stat.txt`, `live-field-check.txt`).
-- `census/round-98/records/shapes-r95.txt`, `records/shapes-r97.txt`, `records/shapes-r98.txt`,
-  `records/search-r95.log`, `records/search-r97.log`, `records/search-r98.log`, `records/survivors-r98.json`.
-- `corpus/lessons/round-98.md`: `## Gate` (S075/S372/S368 re-opened live this round, byte-identical captures,
-  occurrence 1; S075 field-4 attribution corrected), `## Mistakes` M6–M8 (each shown able to fail),
-  `## Frontier` (Assimilation: none; the lane has no `considerthese/` dir).
-- `corpus/knowledge/crash-channels-beyond-excepthook.md`: r98 correction appended (object-keyed latch, q1i
-  declared superseding limit (i), A11/A3).
-- `corpus/knowledge/deadline-owned-reaping.md`: r98 correction appended (ownership reap; r97 argv reap not to
-  be cited as ownership; survivors binding).
-- `corpus/QUALITY.md`: Q175 (decoy must carry the byte-exact identity and poll the carrier's pid; do-nothing
-  must fail post-snapshot), Q176 (descendant-relation survivor counting; bind the count into conform).
-- `plans/round-98.md`: A0.1 freeze amendments (q1i declared superseding limit (i); "every handled shape at 1"
-  corrected to plain==hooked; conform binds survivors; CM8 naming split; in-round repairs M6–M8).
-- `SCORECARD.md`: round-98 measurement table (C1 after mismatched=0; C2 survivors byte; no score change),
-  capability rows (none entered), planned r99.
-- `LOG.md`: the round-98 entry (claims, landed, withdrawn sentences (r97 "closes the trade" / "signals only
-  processes it planted" / S075 field-4 / q1i limit (i)), the connector incident, tool installs: none).
+- `ca98ad08`: `census/round-98/` (instruments, shapes, controls, srcs, records); `corpus/lessons/round-98.md`
+  (`## Gate`, `## Mistakes` M6–M8, `## Frontier`); `corpus/QUALITY.md` Q175, Q176; knowledge corrections in
+  `corpus/knowledge/crash-channels-beyond-excepthook.md` and `deadline-owned-reaping.md`; `plans/round-98.md`
+  A0.1 freeze amendments; `SCORECARD.md` round-98 rows and planned r99; `LOG.md` round-98 entry.
+- `ec93b642`: `census/round-98/c2-decoy-test.py` (corrected driver); `census/round-98/records/decoy-{r98,r97,cm8}-final.txt`
+  and `decoy-{r98,r97,cm8}-counter.out`; lesson `## Late evidence and corrections`; SCORECARD late C2 row; LOG late entry.
+- No registry row added (`corpus/SOURCES.md` stays 294 rows; `scripts/sources-census.sh validate --root … souji`
+  exit 0 at report time).
 
 ## Before → after measurements
 
-Counting command per claim, run against the landed commit `ca98ad08…`; the full per-shape output is in
-`census/round-98/records/shapes-r98.txt`, and the search receipts in `records/search-r*.log`.
+C1 (calibration 7):
 
-- **C1.** `python3 -B census/round-98/declared-shapes.py --search census/round-98/c1-survivor-search.py
-  --scripts census/round-98/shapes --work <empty>` → `SHAPES-SUMMARY shapes=17 mismatched=0`, EXIT 0 (q1o and
-  q1q at 70; t1/t4/q1i at 0; a1/a5/a5b/a4/a12/v1 at 3). Before: the same command with
-  `--search census/round-98/controls/c1-r97-search.py` → `SHAPES-SUMMARY shapes=17 mismatched=3` (q1o 1, q1q 1,
-  q1i 70) and with `c1-r95-search.py` → `mismatched=3` (q1i only). No-harm: the 278-mutant search summary is
-  identical between r97 and r98 runs (`errored=53 killed=139 survived=76`), and the survivor id lists are
-  byte-identical (diff empty).
-- **C2.** `python3 -B census/round-98/c2-setup-arms.py --probe census/round-98/c2-forgery-probe.py
-  --fixture-pass tests/fixtures/r93-k4-flagfail.py --fixture-fail tests/fixtures/r92-k4-flagfail.py --tool
-  tools/souji-record-agreement.py --before census/round-92/controls/c2-before-tool.py --work <empty> --jobs 4`
-  → `ARM T1 exit=2 want=2 line=yes conform=yes survivors=0` with `--survivors 0 planted-killed 1--` in the
-  T1.out, and `ARMS-SUMMARY arms=20 conform=20` binding survivors=0 on T1. The decoy test
-  (`c2-decoy-test.py --counter c2-setup-arms.py …`) gives `DECOY-SUMMARY verdict=spared` (exit 0) and the same
-  command with `--counter census/round-98/controls/c2-r97-arms.py` (the argv-only do-nothing control) gives
-  `verdict=killed` (exit 1); the repaired CM8 mutant also gives `verdict=killed`. A same-tick timeout arm
-  (e.g. a P1 arm printing exit 2 instead of 0) is recorded as that arm's end-of-arm outcome; it is not folded
-  into the T1 survivors binding.
+- Before (r97 instrument on the 17-shape table): `python3 -B census/round-98/declared-shapes.py --search
+  census/round-98/controls/c1-r97-search.py --scripts census/round-98/shapes --work <empty>` →
+  `SHAPES-SUMMARY shapes=17 mismatched=3` (q1o 1, q1q 1, q1i 70).
+- After (r98 instrument): `python3 -B census/round-98/declared-shapes.py --search census/round-98/c1-survivor-search.py
+  --scripts census/round-98/shapes --work <empty>` → `SHAPES-SUMMARY shapes=17 mismatched=0`, EXIT 0.
+- No-harm: the 278-mutant search is identical in summary and survivor set between r97 and r98 (76 survivors each).
+
+C2 (operability 8), decoy predicate on the corrected driver (`census/round-98/c2-decoy-test.py`, `--arm-timeout 200
+--plant-delay 2`, lane fixtures for non-T1 arms):
+
+| counter | `ARMS-SUMMARY` | T1 arm | decoys planted / dead / alive | `DECOY-SUMMARY` | counter exit |
+|---|---|---|---|---|---|
+| r98 (`census/round-98/c2-setup-arms.py`) | `arms=20 conform=20` | `exit=2 want=2 survivors=0` | 83 / 0 / 83 | `verdict=spared` | 0 |
+| r97 (`census/round-98/controls/c2-r97-arms.py`, argv-only) | `arms=20 conform=20` | `exit=2 want=2 survivors=0` | 83 / 60 / 23 | `verdict=killed` | 0 |
+| CM8 (`census/round-98/c2-cm8-mutant.py`, ownership removed) | `arms=20 conform=20` | `exit=2 want=2 survivors=0` | 83 / 82 / 1 | `verdict=killed` | 0 |
+
+Receipts: `census/round-98/records/decoy-r98-final.txt`, `decoy-r97-final.txt`, `decoy-cm8-final.txt` (with the
+`*-counter.out` files). Counting command: the `c2-decoy-test.py` line above with `--counter` set to each counter.
+Superseded and void: the pre-correction runs (`counter_exit=-9`, `verdict=spared` from the killed counter;
+the pipe-holder-driver runs with `conform=13`). A separate r97 decoy run with the pre-correction driver measured
+`dead=60 alive=61` in one earlier window; it is superseded by the corrected run above.
+
+### C2 verdict: measured, not admitted
+
+Three conditions are not yet met, and the admission decision is not the L1's to make alone:
+
+1. The non-author closure has not run. The seats that judged C2 (Sentinel, Scout, Connector, Critic) are
+   attack seats, not the closure.
+2. Reap branch (c) — any process in the counter's tree carrying the token, including the T1 escapee via the
+   `PR_SET_CHILD_SUBREAPER` net — is wider than the claim wording, which names only the spawn pid and its
+   ppid-chain descendants (R98Sentinel FINDING 4, MEDIUM; `cross_arm_probe.py` shows a sibling-arm carrier reached
+   by branch (c)). Branch (c) is needed to keep the escapee owned; the operator must decide whether a
+   counter-descendant kill is in-claim, or the claim wording must name branch (c).
+3. `survivors` is not a witness for the escapee's reap: it counts the spawn-pid chain, and the escapee reparents
+   to the counter (R98ScoutSources F3, R98ExecC2 F-2). The decoy predicate is the witness.
+
+The operator decision on (2) is recorded as an L0 question below. This is an open decision, not a verdict
+pending a seat.
 
 ## Sources & frontier
 
-Assimilation: none this round (no `merge/souji/` theme taken; the report's obligation under the assimilation
-contract is satisfied by this line). considerthese: the lane has no `considerthese/` dir.
-
-SOURCES.md rows before→after with the counting command: three rows were **re-opened live this round** by the
-scout seat (no new row; no status/recheck/used-by change):
-
-- S075 `proc_pid_stat(5)`: https://man7.org/linux/man-pages/man5/proc_pid_stat.5.html, HTTP 200, 20647 bytes,
-  sha256 `0f04d789…`, occurrence 1, field-4 ppid wording 8 words and the field-22 starttime wording both
-  located. The registry row's scope is fields 5/6/22; the field-4 attribution is the kernel-side S332
-  (scout §1.3, F4).
-- S372 sys.monitoring RERAISE: https://docs.python.org/3/library/sys.monitoring.html, HTTP 200, 74653 bytes,
-  sha256 `2b281793…`, quote 13 words, occurrence 1.
-- S368 setsid(2): https://man7.org/linux/man-pages/man2/setsid.2.html, HTTP 200, 11555 bytes, sha256
-  `52cbc190…`, quote 17 words, occurrence 1.
-
-Counting command: `bash .ufo/waves/round-98/w1/R98ScoutSources/reopen-sources.sh` (live fetch + committed-
-capture comparison + occurrence counts; exit 0, receipt `R98ScoutSources/reopen-sources.out`). Rows added by
-tier: none. Rows touched old→new: none (no status/recheck/used-by change). Frontier rows advanced: none; the
-one sourced claim in this round rests on rows re-opened this round (C1 ← S372; C2 ← S075/S368), per the
-frontier contract. SOURCES.md itself is **unchanged** (registry stays 294 rows); sources-census validate was
-run by the L1 at freeze (`scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin souji`).
+- SOURCES rows before→after: 294→294. Rows added: none. Rows touched old→new: none. Counting command:
+  `scripts/sources-census.sh validate --root /home/vgpnk/Projects/shokunin souji` (EXIT 0).
+- Re-opened live this round (not new rows; no status/recheck/used-by change): S075 `proc_pid_stat(5)`
+  (man7.org, HTTP 200, sha256 0f04d789…); S372 sys.monitoring RERAISE (docs.python.org, HTTP 200, sha256 2b281793…);
+  S368 setsid(2) (man7.org, HTTP 200, sha256 52cbc190…). Scout receipt: `.ufo/waves/round-98/w1/R98ScoutSources/reopen-sources.out`.
+- Frontier: C1's sourced claim rests on S372 (re-opened); C2's ownership rule rests on S075 fields 4/22 and S368,
+  re-opened this round. No `merge/souji/` theme assimilated (Assimilation: none). `considerthese/`: the lane has
+  no `considerthese/` dir.
+- The S075 field-4 attribution was corrected in the lesson `## Gate` (kernel-side S332; scope fields 5/6/22).
 
 ## Trend verdicts
 
-- **expansion: unchanged** — no registry row added and no admitted entry on uncovered coverage-map ground;
-  two knowledge corrections cite only re-verified rows (registry 294→294).
-- **quality: unchanged** — two knowledge entries gained r98 corrections that supersede the withdrawn r97
-  sentences; no falsified sentence ships in this round.
-- **discernment: harmed** — the lane's pre-freeze gate missed the decoy-token mismatch (M7), the survivor
-  metric defect (M8) and the kind-swap movability (M6); all three were caught by attack seats (connector,
-  scout, critic, scribe), not by the lane's own gate. The disagreements became frozen amendments and M6–M8.
+- **expansion: unchanged.** No registry row added; no new admitted entry on uncovered coverage ground.
+- **quality: unchanged.** Two knowledge entries gained r98 corrections superseding withdrawn r97 sentences; no
+  falsified sentence is left standing in the entries touched this round.
+- **discernment: harmed.** The pre-freeze gate missed the decoy-token mismatch (M7), the survivor-metric defect (M8)
+  and the do-nothing count movability (M6). All three were caught by attack seats, not by the lane's own gate.
+  The late driver defects (fixture misuse, the counter timer kill, the T1 timeout race) were also caught only
+  after WAVE-DONE, by a measurement that disagreed with the committed claim wording.
+
+## L0 questions
+
+- souji | round-98 | C2 reap branch (c): may the counter kill any process in its own tree that carries the arm's
+  fixture token (the T1 escapee via PR_SET_CHILD_SUBREAPER, and any sibling-arm carrier), or must the reap be
+  restricted to the spawn pid and its ppid-chain descendants? The claim wording and the measured decoy verdict
+  depend on this. Open; route-around is "not admitted, measured".
 
 ## SHONEN
 
 - [~] SKILL.md contains real decision tables, error patterns, checklists, cited sources
-  (evidence: SKILL.md Decision tables/Error patterns/Checklists/Gate registry; verifier `endpoint` pending)
+  (evidence: SKILL.md Decision tables/Error patterns/Checklists/Gate registry; corpus/SOURCES.md S100-S103; non-author verifier pending)
 - [~] At least one end-to-end domain task executed and logged in LOG.md
-  (evidence: LOG.md:362; verifier `endpoint` pending)
+  (evidence: LOG.md:362 (2026-10-19 operator sweep); round-98 decoy and census runs in LOG.md `## Round 98` and `Round 98 late`)
 - [~] Instructions executable by an agent without oral context
-  (evidence: census/round-21/run-acceptance.py; census/round-21/accepted-matrix.json; verifier `endpoint` pending)
+  (evidence: census/round-98/c2-decoy-test.py and c1-survivor-search.py run commands recorded in this report; census/round-21/run-acceptance.py; non-author verifier pending)
 - [~] No cross-domain bleed (PROVINCE.md still accurate)
-  (evidence: PROVINCE.md Round21 privacy boundary; verifier `endpoint` pending)
+  (evidence: PROVINCE.md Round21 privacy boundary; .ufo/waves/round-98/w1/R98Connector.md (no sibling owns the crash-sentinel or probe-timeout surface); non-author verifier pending)
 
-Stale-lane: no other mission of this lane is open. Tooling: none installed or upgraded this round (no pacman —
-paused host-wide per the addendum guard; no uv/npx/binary fetch; no sysctl or sudo). This round's wave is the
-12-seat w1 noted above; no residual call; round total 12 seats (10 reported, ExecC2/MutC2/Sentinel unreported
-in the lane wave dir).
+Stale-lane: no other mission of this lane is open. Tooling: none installed or upgraded this round (no pacman, which
+is paused host-wide; no uv/npx/binary fetch; no sysctl or sudo). Misroot sweep: `git status --porcelain` at the
+fleet root shows no untracked file naming this lane or round 98 (6 untracked files, none from this lane).
