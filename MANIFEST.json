@@ -60943,6 +60943,50 @@
    "notes": "Dispatch/complete digest: 2026-11-08T21:37:52-03:00 launch kagi round=70 pgid=713008 driver=hyaku-inline attempt=1 | 2026-11-08T23:31:27-03:00 complete kagi round=70; hyaku-inline attempt=1. Conformance clean: report committed by kagi-shokunin (1e4c27e9, 19 s after lane tip 66f0662b); 5 cited hashes ancestors of master; lane pushed ahead=0; porcelain empty; prompt carries contract; one v1 wave 12 seats all SEAT-STATUS complete. C1 filed with A1-A3 narrowed wording (count of shim-discriminating verdicts, not proof of execution). Routed for round 71: (1) SCORECARD round-70 freshness row still says S170/S171 carry on-release clocks though both moved to 180d (append correction); (2) prefile tool default w1-results.json vs driver kagi-r70-w1-results.json still unrepaired (operator-side, carried from r69); (3) counter blind spots RE-1 A/C/D, MT-1, SE-1, SE-3 to be legged before the next PKI freeze (M70-5); (4) counter header date 2026-11-09 vs registry 2026-11-08 (comment only). SHONEN: four boxes [~]; box 2 (end-to-end task) is non-author checkable - closure re-executed the trial via the frozen counter HOLDS 5/5; promotion operator-owned, not done.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 97,
+   "date": "2026-11-09",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 97,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 97
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "search-rerun --selftest hardened (48 cases, outer set-up guard; kills 34/34 named non-author mutants)",
+    "PRESS 2015 checklist questions held element by element through two reprints (S225/S226)"
+   ],
+   "report": ".ufo/reports/round-97/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-97-verifier-spotcheck.md@98b8177c1e8b39cdf1167928e4f5d609f6fa81b6",
+    "rechecks": "C1 evidence-verified (lane gate not executed): after-f2/c1-all.txt computed_against F2 d84f4e1e, SELFTEST PASS 48/48, EXTERNAL_KILLED 34/34 vs base 10/34 (before-f2, FAIL exit 1); C1 paths byte-identical F2..HEAD (git diff empty); static case-id count 32->48 re-measured. C2 re-measured: entry absent at base; 30 GATE-RECORD, 8 decision rows, 29/29 quotes on capture lines, verbatim 10/26, letters 14/26, 7 searches git-grep at c8087ac5 = 0,0,0,3,4,3,12, SOURCES 223->226; no drift F3..HEAD. Prefile ledger pass claims=2 rows=16 attack_seats=8 findings=0 exit 0. Spot-check: S225 admit agree (re-fetch sha256 56c4cdd6 = recorded), S226 admit agree (quote present), S227 reject agree (403 Cloudflare). Census validate exit 0."
+   },
+   "commit": "chousa-shokunin@c523b3de3768014925d50adbe14a512f552acca8",
+   "closed_at": "2026-11-09T02:43:12Z",
+   "campaign": "hyaku",
+   "notes": "dispatch 2026-11-08T22:53:28-03:00 launch chousa round=97 pgid=3599611 driver=hyaku-inline attempt=1; complete 2026-11-08T23:40:05-03:00 hyaku-inline attempt=1; report bdb1a3f6 committed 23:39:41 by chousa-shokunin. Conformance: all cited commits ancestors of master, ahead=0, porcelain clean, no conformance defect. Routed: R97MutantsC1 19 uncovered survivors (g01-g05, u03, p04-p07, m05); C1 limit (g) hash-of-self self-test passes battery; C2 Never cells not instrument-checked, WARRANT_TERMS lexical floor, SOLE_SUPPORT checks naming only; R97SentinelC1 battery docstring wording; carried D1 (S224 two documents in refetch.tsv). Operator: SHONEN boxes 2-3 look non-author checkable from committed receipts (promotion operator-owned).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
