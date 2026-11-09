@@ -60731,6 +60731,45 @@
    "notes": "Driver digest: 2026-11-08T20:40:03-03:00 launch tabi round=93 pgid=2607976 driver=hyaku-inline attempt=1; 2026-11-08T21:09:28-03:00 lane-dead-no-report tabi round=93 (attempt 1 orchestrator SIGTERM, report_of FAIL); 2026-11-08T21:09:30-03:00 launch tabi round=93 pgid=3726486 driver=hyaku-inline attempt=2; 2026-11-08T21:34:09-03:00 complete tabi round=93; hyaku-inline attempt=2. Step 1: report committed by tabi-shokunin (cb030832, then 13336874), SHONEN heading 4x[~], cited hashes 192535d7/7a7f39f3/bf0bd622/9fac89c3/c46317ab/5246985e exist and are ancestors of master, lane ahead=0 clean, prompt carries template contract + hyaku addendum + §8. Defects (status-neutral): D1 filed report edited in place 10s after filing (13336874 backtick fix) instead of appended erratum; D2 scored/c1-live.json .receipt names a removed scratch path (committed copy carries same nonce). Discernment spot-check: admits S231, S232 agree; rejects freeze-stamp gate on r92 future frozenAt and ledger row R93Critic1-j agree; disagreement: S232 lesson word count 8 vs wc -w 6. Routed to tabi r94: S232 word-count correction; scored record should name committed receipt path; R93Sentinel S4/S5; R93Mut 14 survivors + R93Critic1 receipt hardening; SOURCES-aware append-only check; erratum-not-rewrite report hygiene; carried r91 items 3/5. SHONEN box 3 needs a non-author re-run to be checkable; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 100,
+   "date": "2026-11-09",
+   "type": "closure",
+   "lane": "tameshi",
+   "lane_round": 100,
+   "lanes": {
+    "tameshi": "ok"
+   },
+   "lane_rounds": {
+    "tameshi": 100
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "calibration": "improved"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "Gate line-pointer recheck"
+   ],
+   "report": ".ufo/reports/round-100/tameshi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tameshi-shokunin/corpus/lessons/round-100-verifier-spotcheck.md@ab60e13444d83d0af58d5bdf052d8bfde21d277c",
+    "rechecks": "C1 re-measured: r100-c1 rows 0->12 in tools/registry.json (3 per audit tool); evidence-verified receipts at R 2e792c8f: tag-miss rc2 at base, held=12/12 rc0, 4 stubs held=11/12 rc1, full registry 87/91 same 4 differing as base. C2 re-measured: GATE_LINE_RECHECK absent at base (git grep rc1), tool sha256 dae90e50 at R and tip, independent raw check s320 quote on line 88 vs cited 84 (miss real); evidence-verified population hit=12 miss=6 unbound=3, arms, selftest 24/24, forgery, R95_STATED. SCORECARD diff additive only. Prefile ledger pass rows=15 exit 0. Census tameshi ok exit 0. Spot-check: S327 admit agree, S328 reject agree (both quotes re-opened live on Europe PMC). No gate executed."
+   },
+   "commit": "tameshi-shokunin@ae65bab9e1a7272374faf71248b216553cb79ae8",
+   "closed_at": "2026-11-09T01:01:19Z",
+   "campaign": "hyaku",
+   "notes": "watchdog digest: 2026-11-08T20:44:11-03:00 launch attempt=1 pgid=4031303; 21:09:24 lane-dead-no-report (attempt 1 no landed report); 21:09:26 launch attempt=2 pgid=3725269; 21:58:52 complete attempt=2. Step-1 ok: report by tameshi-shokunin 644b6ae4, SHONEN 4/4 lines all [~], 7 cited commits ancestors of master, jj-lane state ahead=0 clean, prompt carries template+addendum. Defects (status-neutral, routed): D1 tools/gate-line-recheck.py gate has no registry row at SKILL.md registry home nor tools/registry.json; D2 C1 rows replay pinned verdicts (argv-aware stub holds, A4) and C2 A1/A2 limits + selftest gaps; D3 round-95.md:17-22 known-wrong line pointers lack a named correction entry; attempt-1 scout seat SC1 died and was not re-run in w1r. SHONEN boxes 1 and 4 are lane assertions awaiting independent operator promotion review.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
