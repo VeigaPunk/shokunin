@@ -61289,6 +61289,50 @@
    "notes": "watchdog digest: 2026-11-09T01:03:36-03:00 launch tabi round=98 pgid=226737 driver=hyaku-inline attempt=1; 2026-11-09T01:50:27-03:00 complete tabi round=98; hyaku-inline attempt=1. Step 1 clean: report by tabi-shokunin 815a9d68 (01:50:07, after lane tip 01:49:14), SHONEN 4 lines [~], all 5 cited hashes ancestors of master, jj-lane state ahead=0 tracked=0 untracked=0, porcelain empty, prompt contains all 116 template contract lines + addendum §6/§7/§8; receipt generatedAt 01:21:31 <= 172bc0a1 01:21:36; frozenAt 01:20:48 = b92b161d committer date; gate rows at SKILL.md:3435-3438. No conformance defect. Routed to tabi next round: D1 corpus/README.md:1279-1280 (r97 coverage) still states isLocal -> trusted without the path scoping appended to the r97 note this round (append a README pointer); D2 driver sets TMPDIR after require('playwright-core') so connectOverCDP legs write /tmp/playwright-artifacts-* (lesson mistake 3, R98Sentinel); D3 counter exit-3 -> setup mapping can mask law findings on a partial-failure run (R98Reviewer); D4 battery cases for the 10 R98Mut survivors, carried with r97 D3 transitive-package identity, r95 D1-D3 and R95Mut/r96 survivors. Operator: the four SHONEN boxes carry non-author-checkable pointers (LOG.md:4401, SKILL.md:3430, R98Exec1/R98Exec2 cold reproductions, R98Connector); promotion is operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 99,
+   "date": "2026-11-09",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 99,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 99
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "coverage": "improved",
+    "depth": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "gate-records verify CHALLENGE code: url/admit and capture-path rev records fail on a <=200-word capture carrying one of 11 interstitial markers",
+    "knowledge entry quotation-error-rates-r99 (Jergas & Baethge 2015 via Europe PMC S236; Mogull 2017 S233; 23 located quotes)"
+   ],
+   "report": ".ufo/reports/round-99/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-99-verifier-spotcheck.md@929c784c63a1fd17961d21742101b2b109b7b8ff",
+    "rechecks": "C1 re-measured: tool diff 39 added lines, identical F2..HEAD; 11 markers, 200-word bound; independent re-implementation over 203 committed captures flags exactly 5 (S229-class cookie x3, S230, S234), none cited by any knowledge entry; receipts before FAIL exit 1 / after PASS exit 0 evidence-verified. C2 re-measured: entry absent at base, 25 GATE-RECORDs (23 admit + 2 reject), 23/23 capture sha256 match and quote located; SOURCES rows 230->235 append-only; gate/controls receipts evidence-verified (not executed). Prefile ledger pass claims=2 rows=16 attack_seats=8 exit 0. Census ok exit 0. Spot-check 4/4 agree on live re-open (S233 admit, S236 admit, S234 reject 200 challenge, S232 reject 403)."
+   },
+   "commit": "chousa-shokunin@ab280f6c9b9f381085583daedbad6ff0a6b85fe1",
+   "closed_at": "2026-11-09T05:09:58Z",
+   "campaign": "hyaku",
+   "notes": "watchdog: 2026-11-09T00:57:59-03:00 launch chousa round=99 pgid=3746420 driver=hyaku-inline attempt=1; 2026-11-09T02:07:38-03:00 complete chousa round=99; hyaku-inline attempt=1. Conformance ok (report 0cd1fc83 by chousa-shokunin; all 7 cited hashes ancestors of master; ahead=0, clean). Defects (status-neutral): c1-all do-nothing control label hand-corrected after run; seat R99MutantsC2 receipts lack seat prefix; L1 sed -i README edit. Routed r100: rev path normalization before capture guard (R99SentinelC1 F-1), R99MutantsC1 13/28 survivors (per-marker NEG + 199/200/201 boundary fixtures), SETUP not crash on missing fixture capture, lane GETs for S235 route and 2025 update PMC record; fleet question on index-record abstract tier (chousa S236 B vs tameshi S327 A). SHONEN boxes 2-3 look non-author checkable (operator-owned promotion).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
