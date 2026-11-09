@@ -60900,6 +60900,49 @@
    "notes": "Driver digest: 2026-11-08T22:42:49-03:00 launch tabi round=95 pgid=1467361 driver=hyaku-inline attempt=1; 2026-11-08T23:22:45-03:00 complete tabi round=95; hyaku-inline attempt=1. Step 1: report committed by tabi-shokunin (2acf1620, 23:22:22, after lane tip 23:22:12); SHONEN heading with 4 [~] lines; 7 cited hashes ancestors of master; jj-lane state ahead=0 behind=0 tracked=0 untracked=0; porcelain empty; prompt 43d3a003 carries §1-§8 contract. Defects (status-neutral): D1 mined gate check-scored-receipts-round95 self-test runs over live round trees with pinned value none, not isolated fixtures with committed expected values (§Gate standard Self-test); D2 scored outputs c1-live.json/c1-live-tip.json carry receiptCommitted null (binding only in record/mined gate); D3 log-claims-tip lists one unparsed LOG token. Routed to tabi r96: D1-D3; SCORECARD r95 Planned items (17 R95Mut survivors, R95Critic1 W4/W5, R95Sentinel unwritable-scratch rc 1 vs setup, --live ports/driver-status binding, substitution boundary, misdelivery-branch flake risk); carried r94 §8 item 5 and r91 items 3/5. SHONEN boxes all [~]; box 3 becomes fully checkable with a non-author --live re-run; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 70,
+   "date": "2026-11-09",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 70,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 70
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [
+    "OpenBao PKI certificate-lifecycle trial"
+   ],
+   "report": ".ufo/reports/round-70/kagi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kagi-shokunin/corpus/lessons/round-70-verifier-spotcheck.md@e0e9603a924d73d9621924cc507b50474d11dae7",
+    "rechecks": "C1 re-measured from clone@66f0662b: frozen counter sha 8412b665 unchanged since freeze 430cee23; BASE 7bd34832 value=0 absent=1 rc1 -> 66f0662b value=5 discriminating=5 pins=1 setup_ok=1 nosecret=1 noleak=1 sourced=1 rc0, no bao left; post-wave trial hardening diff 0d225553..66f0662b reviewed (launch block only, pid-owned port, env-only token, no shim-byte reads, T5 true conjunction) - agree. Evidence-verified only: claim-ledger verify class set == BASE with 0 STALE, DOC_AUDIT CLEAN unpinned=0, RELEASE_CLOCK bound=32/32, self-counts stale=4 same ids, sweep n=28, 8 prefreeze controls. Plain counts SOURCES 160->163, knowledge 49->50, ledger 120->120; SCORECARD diff additive. Census kagi ok rc0, 26 W04, stderr 0. Prefile default SETUP exit2 (wave-name mismatch, spurious); --wave kagi-r70-w1 pass claims=1 rows=10 attack_seats=7 exit0, all wording rows narrowed by A1/A3. Spot-check: S170 admit agree, S172 reject agree, S171 row quote count=1 15 words; all three byte-identical on live re-open."
+   },
+   "commit": "kagi-shokunin@e0e9603a924d73d9621924cc507b50474d11dae7",
+   "closed_at": "2026-11-09T02:40:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-11-08T21:37:52-03:00 launch kagi round=70 pgid=713008 driver=hyaku-inline attempt=1 | 2026-11-08T23:31:27-03:00 complete kagi round=70; hyaku-inline attempt=1. Conformance clean: report committed by kagi-shokunin (1e4c27e9, 19 s after lane tip 66f0662b); 5 cited hashes ancestors of master; lane pushed ahead=0; porcelain empty; prompt carries contract; one v1 wave 12 seats all SEAT-STATUS complete. C1 filed with A1-A3 narrowed wording (count of shim-discriminating verdicts, not proof of execution). Routed for round 71: (1) SCORECARD round-70 freshness row still says S170/S171 carry on-release clocks though both moved to 180d (append correction); (2) prefile tool default w1-results.json vs driver kagi-r70-w1-results.json still unrepaired (operator-side, carried from r69); (3) counter blind spots RE-1 A/C/D, MT-1, SE-1, SE-3 to be legged before the next PKI freeze (M70-5); (4) counter header date 2026-11-09 vs registry 2026-11-08 (comment only). SHONEN: four boxes [~]; box 2 (end-to-end task) is non-author checkable - closure re-executed the trial via the frozen counter HOLDS 5/5; promotion operator-owned, not done.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
