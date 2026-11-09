@@ -61333,6 +61333,47 @@
    "notes": "watchdog: 2026-11-09T00:57:59-03:00 launch chousa round=99 pgid=3746420 driver=hyaku-inline attempt=1; 2026-11-09T02:07:38-03:00 complete chousa round=99; hyaku-inline attempt=1. Conformance ok (report 0cd1fc83 by chousa-shokunin; all 7 cited hashes ancestors of master; ahead=0, clean). Defects (status-neutral): c1-all do-nothing control label hand-corrected after run; seat R99MutantsC2 receipts lack seat prefix; L1 sed -i README edit. Routed r100: rev path normalization before capture guard (R99SentinelC1 F-1), R99MutantsC1 13/28 survivors (per-marker NEG + 199/200/201 boundary fixtures), SETUP not crash on missing fixture capture, lane GETs for S235 route and 2025 update PMC record; fleet question on index-record abstract tier (chousa S236 B vs tameshi S327 A). SHONEN boxes 2-3 look non-author checkable (operator-owned promotion).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 94,
+   "date": "2026-11-09",
+   "type": "closure",
+   "lane": "souji",
+   "lane_round": 94,
+   "lanes": {
+    "souji": "ok"
+   },
+   "lane_rounds": {
+    "souji": 94
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "calibration": "improved",
+    "operability": "improved",
+    "coverage": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "crash-aware mutation verdicts (sitecustomize excepthook exit 70, S358; rc=70 -> errored, S357)",
+    "setup-vs-verdict exit discipline for the forgery probe, with a ten-arm counter"
+   ],
+   "report": ".ufo/reports/round-94/souji.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "souji-shokunin/corpus/lessons/round-94-verifier-spotcheck.md@93c3ef13a9eb9678483518562f3692124db714c2",
+    "rechecks": "Both claims re-measured on a git-archive export of 22060315 (all 13 instrument/input sha256 pins match prereg): C1 r93-rule control errored=0 killed=4 survived=1 (2 crash fixtures killed) -> r94 search errored=2 killed=2 survived=1, EXIT 0, rc=70 rows only on the two crash fixtures (m0003 66, m0004 1); C2 r93 probe ARMS conform=3 exit 1 -> r94 probe conform=10 EXIT 0. Forgery controls (FA/FB, GA/GB) evidence-verified. Prefile ledger PASS claims=2 rows=23 attack_seats=7 findings=0 EXIT 0; 9 falsifies-wording rows reconciled by A1 (C1 limit ii) and A4 (probe docstring). Spot-check 3 admits (S357/S358/S359) + 1 reject (PIT DetectionStatus) re-opened live: agree 4/4; sources-census souji ok EXIT 0; SOURCES 278->281, 0 deletions."
+   },
+   "commit": "souji-shokunin@22060315c479e6af49e96fc23d84951752dd1f59",
+   "closed_at": "2026-11-09T05:20:00Z",
+   "campaign": "hyaku",
+   "notes": "Digest: 2026-11-09T01:14:17-03:00 launch souji round=94 pgid=2194192 driver=hyaku-inline attempt=1; 2026-11-09T02:14:31-03:00 complete souji round=94; hyaku-inline attempt=1. Step 1 PASS: report 32426640 by souji-shokunin (after lane tip, before complete), SHONEN heading 4 [~] lines, six cited commits ancestors of master, jj-lane state ahead=0 clean, ls-remote = 22060315, prompt carries template contract + addendum §6-§8. No defects barring admission. Routed (spotcheck §5): C1 sentinel blind spots (SystemExit, os._exit, atexit/__del__, threads); no target binds harness-exit-70 disjunct; C2 probe exit 1 on non-UTF-8 tool/before, file-parent --work, mid-run write failure, no fixture timeout, --work TOCTOU//tmp; r93 routed items 1, 3, 4 still open; seat hygiene: R94ScoutSources repro hook dir under /var/tmp, not the round scratch root. SHONEN boxes remain [~] but pointers are non-author checkable (promotion operator-owned).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
