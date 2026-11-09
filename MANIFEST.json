@@ -61074,6 +61074,49 @@
    "notes": "Dispatch: launch 2026-11-08T20:31:45-03:00 attempt=1 (pgid 78373) -> lane-dead-no-report 21:09:26 (no landed report) -> launch 21:09:28 attempt=2 (pgid 3725876) -> complete 2026-11-09T00:25:30-03:00. Conformance PASS: report by souji-shokunin (652ef9ad, after lane tip), SHONEN 4x[~], 7 cited commits ancestors of master, ahead=0 clean, prompt carries all 105 template lines + addendum 6/7/8, r91 routed defects 1-5 answered. Status-neutral notes: S355 anchor cell edited in place (G7404->G27506) contrary to CORPUS SOURCES rule 2 (same-round, pre-filing, logged old->new); one seat report misrooted to fleet root and swept (M5); prefile ledger first FAIL on format, fixed in e112cc73. Claims verify as narrowed (C1 A3 edits-not-clauses; C2 A1 over-move forgeries not rejected by frozen fixture). Routed r93: C2 maximality fixture row; C1 E1 binding row + classify 77 residual survivors; search robustness (Sentinel M1/L1/L2); SOURCES rule-2 anchor corrections as new rows; seat write scope under lane. SHONEN boxes are non-author checkable; promotion operator-owned.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 71,
+   "date": "2026-11-09",
+   "type": "closure",
+   "lane": "kagi",
+   "lane_round": 71,
+   "lanes": {
+    "kagi": "ok"
+   },
+   "lane_rounds": {
+    "kagi": 71
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "unchanged",
+    "depth": "improved",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "unchanged"
+   },
+   "capabilities_added": [
+    "OpenBao PKI issuer and revocation-channel trial"
+   ],
+   "report": ".ufo/reports/round-71/kagi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "kagi-shokunin/corpus/lessons/round-71-verifier-spotcheck.md@b2f3dd661abda0ebd09b3f8ffc3f64904606d4d9",
+    "rechecks": "C1 re-measured from fresh clone@7e7b3927: frozen counter sha 4d77f19c unchanged since freeze 11992955; BASE e0e9603a value=0 absent=1 rc1 -> 5b5483a6 and 7e7b3927 value=4 discriminating=4 pins=1 setup_ok=1 nosecret=1 noleak=1 sourced=1, T6-T9 art=1, rc0, no bao left. Plain counts: trial absent->present (candidate bytes == frozen P1 control), knowledge 50->51, SOURCES 163->164, stamps 177->181; SCORECARD diff additive, axes 9->9. Evidence-verified only: 9 prefreeze controls (F2 value=0 by art=0, F7 value=3), harm class sets == BASE (21/58/5), DOC_AUDIT CLEAN, RELEASE_CLOCK 32/32, claims-declared carried pair, r70 counter value=5 on landed. Prefile PASS claims=1 rows=9 attack_seats=7 findings=0 exit0; A1/A2 narrowings present. Spot-check: S173 admit agree (sha 42ef7582 byte-identical, 23-word quote located 1x), rotation-primitives reject agree with note (one per-issuer leaf_not_after_behavior sentence), S170 quote located. Census kagi ok rc0, 26 W04."
+   },
+   "commit": "kagi-shokunin@7e7b3927f436a4a1fe335c26b299d7887e3ce4ba",
+   "closed_at": "2026-11-09T03:55:00Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch/complete digest: 2026-11-08T23:35:33-03:00 launch kagi round=71 pgid=991863 driver=hyaku-inline attempt=1 | 2026-11-09T00:49:44-03:00 complete kagi round=71; hyaku-inline attempt=1. Conformance clean: report committed by kagi-shokunin (9cc6da77, 00:32:21-03:00); 5 cited hashes ancestors of master; lane pushed ahead=0; porcelain empty; prompt carries contract; one v1 wave w1 12 seats settled. Defect: report states ledger tally 6 falsifies-wording/3 neutral, ledger reads 5/4. Routed for round 72: (1) SCORECARD r71 capability row lacks A2 (T9 serial refusal uncounted, MT-1) and A1 (RE-1 binding) caveats - append correction; (2) lesson Gate reject reason for rotation-primitives overlooks its per-issuer leaf_not_after_behavior sentence (T6) - append correction; (3) freeze again missed a forgery class (M71-4 repeats M70-5) - enumerate read-back verdicts and uncounted HOLDS conjuncts before the wave; (4) correct the report's 6/3 ledger tally in next report/LOG; (5) carried self-counts stale=4 and r69 claims-declared pair. Operator: SHONEN boxes 2 and 3 look non-author checkable (closure re-executed trial value=4; R71ExecReplica independent trial value=4); not ticked.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
