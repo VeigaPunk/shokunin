@@ -61161,6 +61161,49 @@
    "notes": "dispatch 2026-11-08T23:43:41-03:00 launch chousa round=98 pgid=1117672 driver=hyaku-inline attempt=1; complete 2026-11-09T00:54:52-03:00 attempt=1. Conformance ok (report by lane identity 36fb35d8, SHONEN 4 lines, 7 cited commits ancestors of master, ahead=0, clean). Defects: claims.json freeze.F3 is a placeholder string not 1c6e01c5. Routed: R98MutantsC1 survivor R32 missing from round-99 plan; gate-records admits http-200 challenge body (lane-routed, QUALITY 229); NO_WRITE blind outside its dirs (A6). SHONEN boxes remain [~]; not judged fully non-author-checkable this round.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 97,
+   "date": "2026-11-09",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 97,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 97
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "client-oopif-uploadfile-linux — on Chromium 155.0.8059.84 --headless=new with pinned puppeteer-core 25.16.0 / playwright-core 1.65.0 --deps trees attached over CDP, a file input #s inside a cross-site (localhost) iframe is filled by Puppeteer uploadFile with trusted input/change (PUX, PUS same-site control) and by Playwright setInputFiles with untrusted input/change over default connectOverCDP (PLX, PLS) or trusted with connectOverCDP(url,{isLocal:true}) (PLL); Puppeteer set-then-clear leaves [] with [T,T,U,U] (PUC); an absent path resolves in Puppeteer as [name,0] with trusted events (PUM) and is ENOENT stat with the input untouched in Playwright (PLM); parent #pp [] on all 24 legs; identity wording as narrowed by plans/round-97.md amendment A1 (gate check-client-oopif-uploadfile-round97, receipt corpus/evidence/round97/client-oopif-uploadfile/receipt.json)"
+   ],
+   "report": ".ufo/reports/round-97/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-97-verifier-spotcheck.md@020ce05fc5d695a295103f53c25c6199210f3050",
+    "rechecks": "C1 re-measured: base instruments absent (cat-file rc 128 x3); instrument sha256 x3 equal claims.json pins, scripts/ unchanged 4a4e15e3..7b9f5ecb; receipt sha 6c9481318388 byte-identical to scored receipt; leg table 24 legs PUX/PUS/PLL T,T filled, PLX/PLS U,U filled, PUC [] T,T,U,U, PUM [missing,0] T,T, PLM ENOENT stat no events, parentFiles [] everywhere, treeSha256 pins equal counter constants; control JSONs (r96 receipt, wrong-site, wrong-lib, tampered-tree rc 1, positive clean 229); knowledge 109->110, SOURCES 236->239; SCORECARD diff additions only. Evidence-verified (gate not executed): scored --live rc 0 clean 232 checks 0 findings at 4a4e15e3, battery 70/70, R97Exec2 default 232 / reps10 736. PREFILE-FALSIFICATION pass claims=1 rows=13 attack_seats=7 findings=0 exit 0; 2 falsifies-wording rows (R97Scribe F1, R97Sentinel) real and reconciled by plans/round-97.md amendment A1 items 1, 4, 6. Census tabi ok exit 0 (W04 on older rows only). Spot-check: S237 admit agree, S238 admit agree, chromium.ts reject agree, crPage.ts reject agree (all re-fetched HTTP 200, byte-identical to staged); S239 row quote exact at injectedScript.ts:1027-1028."
+   },
+   "commit": "tabi-shokunin@7b9f5ecbc3cc7e1041c43b40d5cac4ea62a0930d",
+   "closed_at": "2026-11-09T04:03:08Z",
+   "campaign": "hyaku",
+   "notes": "watchdog digest: 2026-11-09T00:09:48-03:00 launch tabi round=97 pgid=1057005 driver=hyaku-inline attempt=1; 2026-11-09T00:59:30-03:00 complete tabi round=97; hyaku-inline attempt=1. Step 1 clean: report by tabi-shokunin e6f7399b (00:58:43, after lane tip 00:57:52), SHONEN 4 lines [~], all 5 cited hashes ancestors of master, jj-lane state ahead=0 tracked=0 untracked=0, porcelain empty, prompt = template + substitutions + addendum §6/§7/§8; receipt generatedAt 00:25:30 <= be9487f6 00:25:36. No conformance defect. Routed to tabi next round: D1 corpus/README.md:1276-1277 still says 'pinned on version, lockfile integrity, one upload-bearing file and a whole-tree sha256' without the A1 items 4/6 narrowing (lock integrity self-reported; tree sha covers two top-level package dirs only) — append a narrowing correction; D2 battery cases for R97Mut survivors M40/M42/M66 and live killers M75-M77 (with r96 M20/M51/M52/M54/M65/M67); D3 carried: transitive-package identity, r95 D1-D3 and R95Mut survivors. Operator: SHONEN boxes all [~] with non-author-checkable pointers (LOG.md:4369, SKILL Round 97 gate registry, R97Exec1/R97Exec2 cold reproductions, R97Connector §3); promotion operator-owned.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
