@@ -60813,6 +60813,50 @@
    "notes": "Driver digest: 2026-11-08T21:38:24-03:00 launch tabi round=94 pgid=714145 driver=hyaku-inline attempt=1; 2026-11-08T22:39:13-03:00 complete tabi round=94; hyaku-inline attempt=1. Step 1 pass: report by tabi-shokunin (96e969b1, 22:38:36, after lane tip), SHONEN 4x[~], cited hashes all ancestors of master, jj-lane state ahead=0 tracked=0 untracked=0, porcelain empty, prompt carries §1-§8. Defects (status-neutral): D1 report says 'measured at 012776cf' while the scored revision is 2308b6ce (012776cf ships it); D2 tip re-run receipt (nonce tabi-r94-live-879b0b3f85cf) bytes uncommitted, only sha256 in the record. Routed r95: R94Sentinel F1-F4, R94Mut battery gaps + seat-scoped kill selectors (already in SCORECARD Planned), D1, D2, carried r93 §8 item 5 and r91 items 3/5. SHONEN boxes 2/3 now backed by a non-author clause-by-clause receipt re-read; a non-author --live re-run would make box 3 checkable (promotion operator-owned).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 96,
+   "date": "2026-11-09",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 96,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 96
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "search-rerun --selftest (self-testing gate)",
+    "search peer review and deduplication (PRISMA-S items 14/16, PRESS 2015)"
+   ],
+   "report": ".ufo/reports/round-96/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-96-verifier-spotcheck.md@3368868557c375121c4074a7d560fda1fad88cc1",
+    "rechecks": "Re-measured over committed bytes: C1 SKILL r96 gate row 0->1, --selftest absent at base/present at landing, tool+battery F2==landing, m08 guard scope matches narrowed sentence; C2 entry absent at base, 32/32 quotes grep -F located in their captures, quote multiset == 33 GATE-RECORDs (32 admit, 1 reject), capture digests match, 8 rows/8 Lane cells, Q1-Q8 re-run with git grep at bbf64970 reproduce count and set (Q4 digest 075e0264). Evidence-verified (gates not executed): after-f2 selftest 32/32 (p14/m8/j10), controls 23/23 mutants killed PASS; after-f3 GATE_RECORDS 33/33, METADATA 1/1, SEARCH_RERUN 8/8 CLEAN, ENTRY_CONTROLS PASS. prefile-falsification pass claims=2 rows=16 attack_seats=7 findings=0 exit 0. Discernment: S223 admit, S224 admit, CADTH 403 reject, JCE 403 reject re-opened 2026-11-09T01:51Z, raw/txt sha256 equal records, 4/4 agree. Census validate exit 0 chousa ok."
+   },
+   "commit": "chousa-shokunin@c8087ac529003e667505bcc624f9a7bde0cffbce",
+   "closed_at": "2026-11-09T01:52:48Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-11-08T21:34:16-03:00 launch chousa round=96 pgid=263490 driver=hyaku-inline attempt=1; 2026-11-08T22:49:21-03:00 complete chousa round=96; hyaku-inline attempt=1. Step-1 conformance ok (report by chousa-shokunin ab9abec8, after landing; SHONEN 4/4 [~]; 5 hashes ancestors of master; ahead=0, porcelain clean). Routed: D1 refetch.tsv carries the J Clin Epidemiol 403 attempt under id S224 (registry S224 = PRISMA-S re-open) - append a correction row; D2 self-test blind spots (SentinelC1 F1/F7, MutantsC1 Class B/C, NO_WRITE baseline) - planned r97; D3 four gate-kind tools without --selftest - carried. Operator: SHONEN boxes 1, 2, 4 look checkable by a non-author.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
