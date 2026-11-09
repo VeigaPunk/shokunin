@@ -60770,6 +60770,49 @@
    "notes": "watchdog digest: 2026-11-08T20:44:11-03:00 launch attempt=1 pgid=4031303; 21:09:24 lane-dead-no-report (attempt 1 no landed report); 21:09:26 launch attempt=2 pgid=3725269; 21:58:52 complete attempt=2. Step-1 ok: report by tameshi-shokunin 644b6ae4, SHONEN 4/4 lines all [~], 7 cited commits ancestors of master, jj-lane state ahead=0 clean, prompt carries template+addendum. Defects (status-neutral, routed): D1 tools/gate-line-recheck.py gate has no registry row at SKILL.md registry home nor tools/registry.json; D2 C1 rows replay pinned verdicts (argv-aware stub holds, A4) and C2 A1/A2 limits + selftest gaps; D3 round-95.md:17-22 known-wrong line pointers lack a named correction entry; attempt-1 scout seat SC1 died and was not re-run in w1r. SHONEN boxes 1 and 4 are lane assertions awaiting independent operator promotion review.",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 94,
+   "date": "2026-11-08",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 94,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 94
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "chromium-oopif-backendnode-collision-linux — on Chromium 155.0.8059.84 --headless=new, a cross-site iframe chooser's backendNodeId B sent on the page session resolves in the parent renderer's own map: pad 0 collides with the parent's root #document (setFileInputFiles 'Node is not a file input element', nothing delivered); 300 painted spans before the input give B=302 and a miss ('No node found for given backend id'); same-site control (B=305) names the INPUT on the page session"
+   ],
+   "report": ".ufo/reports/round-94/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-94-verifier-spotcheck.md@7b3912bbba828aaa17cb65179b4513ec2c2a2a24",
+    "rechecks": "C1 re-measured: base counter absent (rc 128); 3 instrument sha256 = claims.json pins; freeze diff empty 2308b6ce..e0562f8a; frozenAt 21:49:37 < freeze commit 21:49:42 < scored start 21:49:50 < wave dispatch 21:52:42; committed receipt sha256 8070fcdc = record receiptSha256, 9 legs, every C/M/S predicate clause read true via jq (B 2/302/305, 9 browser ids, Chrome/155.0.8059.84); knowledge 106->107, SOURCES 232->234; SCORECARD +34/-0, whole diff 0 deletions. Evidence-verified (not executed): counter 165 checks rc 0 scored+tip, controls rc.txt, battery 74/74, R94Mut 65/70, seat reproductions, freeze-stamp/log-claims gates clean. Prefile ledger pass claims=1 rows=15 attack_seats=7 findings=0 exit 0. Spot-check: S233/S234 re-opened via gitiles base64 (sha256 match, quotes exact, wc -w 6/5) agree; dom_node_ids.h reject agree; paint-path leads refusal agree; census validate exit 0."
+   },
+   "commit": "tabi-shokunin@e0562f8a9cd352261d007b6c9f16c14bd86a7864",
+   "closed_at": "2026-11-09T01:42:06Z",
+   "campaign": "hyaku",
+   "notes": "Driver digest: 2026-11-08T21:38:24-03:00 launch tabi round=94 pgid=714145 driver=hyaku-inline attempt=1; 2026-11-08T22:39:13-03:00 complete tabi round=94; hyaku-inline attempt=1. Step 1 pass: report by tabi-shokunin (96e969b1, 22:38:36, after lane tip), SHONEN 4x[~], cited hashes all ancestors of master, jj-lane state ahead=0 tracked=0 untracked=0, porcelain empty, prompt carries §1-§8. Defects (status-neutral): D1 report says 'measured at 012776cf' while the scored revision is 2308b6ce (012776cf ships it); D2 tip re-run receipt (nonce tabi-r94-live-879b0b3f85cf) bytes uncommitted, only sha256 in the record. Routed r95: R94Sentinel F1-F4, R94Mut battery gaps + seat-scoped kill selectors (already in SCORECARD Planned), D1, D2, carried r93 §8 item 5 and r91 items 3/5. SHONEN boxes 2/3 now backed by a non-author clause-by-clause receipt re-read; a non-author --live re-run would make box 3 checkable (promotion operator-owned).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
