@@ -61415,6 +61415,49 @@
    "notes": "Dispatch/complete digest: 2026-11-09T00:54:21-03:00 launch kagi round=72 pgid=2685644 driver=hyaku-inline attempt=1; 2026-11-09T02:38:03-03:00 complete kagi round=72; hyaku-inline attempt=1. Report committed by lane identity (5f7d47a6); SHONEN heading present, 4 boxes all [~] (author-asserted, no non-author verifier); lane HEAD c9e9863d was ancestor of master/origin/master, ahead=0, no uncommitted work; measured content revision dc186060. Prefile ledger has 12 rows covering C1+C2, all 12 attack-role artifacts read; no unreconciled falsifies-wording. Conformance defects (status-neutral, routed in spot-check §6): w1-results.json outputs null after kernel restart (seat files used instead), R72MutTester seat partial, planner/labrat validator role substitution reported by lane. Routed to lane: next clock counter must pin imported modules, realpath capture paths, and a control per surviving mutant (A1.9, M72-5), add controls for six unproven legs (A1.8), run asserted observations as controls before freeze (M72-2), QM101 at append time (M72-1). SHONEN boxes not promotable by closure (operator-owned).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 99,
+   "date": "2026-11-09",
+   "type": "closure",
+   "lane": "tabi",
+   "lane_round": 99,
+   "lanes": {
+    "tabi": "ok"
+   },
+   "lane_rounds": {
+    "tabi": 99
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "coverage": "improved",
+    "calibration": "unprovable-but-better",
+    "depth": "unchanged",
+    "operability": "unchanged",
+    "freshness": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "improved",
+    "discernment": "unprovable-but-better"
+   },
+   "capabilities_added": [
+    "client-oopif-uploadsets-linux"
+   ],
+   "report": ".ufo/reports/round-99/tabi.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "tabi-shokunin/corpus/lessons/round-99-verifier-spotcheck.md@9a478a2e9fb61eac0c1146a29bf45ecd7cb1f82f",
+    "rechecks": "C1 evidence-verified (lane gate committed evidence: c1-live clean 282 checks, receipt 24 legs/8 arms, frozen pin ed4b2129; contradictions: controls all match; before rc128; SCORECARD diff only r99 section, no axis harmed), census tabi ok exit 0, 4/4 admits + 2/2 rejects agree live (S244 assert, S245 NotFound, S246 mime, S247 getType, pw pkg reject, bundles 404 reject), step-1 conformance pass, prefile PASS."
+   },
+   "commit": "tabi-shokunin@9a478a2e9fb61eac0c1146a29bf45ecd7cb1f82f",
+   "closed_at": "2026-11-09T06:00:47Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: launch 2026-11-09T01:54:33-03:00 tabi round=99 pgid=2125951 driver=hyaku-inline attempt=1; complete 2026-11-09T03:00:00-03:00 tabi round=99; hyaku-inline attempt=1. Report by tabi-shokunin 658c6c74; SHONEN heading OK (4x [~]); cited hashes all ancestors of 63b9c9a7; lane clean ahead=0. PREFILE-FALSIFICATION pass claims=1 rows=12 attack_seats=7 findings=0 exit 0 (Amendment A1 narrowed R99Critic1 W1/W2). Routed: E1 history-grep hygiene (whole-scripts/ on next freeze), E2 R99Mut 30 survivors to r100 battery, E3 knowledge provenance trio discipline. No promotion/mint. No SHONEN fully checkable by non-author. Conformances: C1 is capability acquisition with counting command (evidence-verified, gate not re-executed); calibration unprovable-but-better from lane-owned D1-D4 controls; prompt record has MISSION/AXES binding + L2 floor + report contract + hyaku addendum. Pre-verdict headers in lane use 'tabi' (fleet lane) while corpus files live under tabi-shokunin — no defect, noted for record.",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
