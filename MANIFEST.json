@@ -60560,6 +60560,49 @@
    "notes": "Dispatch digest: launch 2026-11-08T19:52:55-03:00 pgid=552086 hyaku-inline attempt=1; complete 20:40:35-03:00 attempt=1; report committed 20:39:38-03:00 by tameshi-shokunin (62d918e5); 8 lane commits ff93fa16..e209a1fe, pushed, ahead=0, clean. Defects (status-neutral, routed r100): A12 recorded after the records run despite the 'before the records run' amendments header (disclosed, limit-description only, no predicate change); C1 reconciler confirms only 2/28 tallies (19 uncited, 6 unbound) - silence is not agreement; round-98/99 audits have no tools/registry.json gate row; two citation grammars and two binding walkers (A8) to consolidate. SHONEN boxes 1, 2, 4 look checkable by a non-author (operator-owned promotion).",
    "promotions": [],
    "minted": []
+  },
+  {
+   "round": 95,
+   "date": "2026-11-09",
+   "type": "closure",
+   "lane": "chousa",
+   "lane_round": 95,
+   "lanes": {
+    "chousa": "ok"
+   },
+   "lane_rounds": {
+    "chousa": 95
+   },
+   "admitted": true,
+   "verdict": "admitted",
+   "verdicts": {
+    "operability": "improved",
+    "depth": "improved",
+    "coverage": "unchanged",
+    "freshness": "unchanged",
+    "calibration": "unchanged",
+    "adjacency": "unchanged"
+   },
+   "trends": {
+    "expansion": "improved",
+    "quality": "unchanged",
+    "discernment": "improved"
+   },
+   "capabilities_added": [
+    "search-record re-run"
+   ],
+   "report": ".ufo/reports/round-95/chousa.md",
+   "verification": {
+    "reviewer": "hyaku-closure (@m_zfl session, non-author)",
+    "spotcheck": "chousa-shokunin/corpus/lessons/round-95-verifier-spotcheck.md@bbf64970b6c73ca64bcc5f6de2f33b0550459813",
+    "rechecks": "Re-measured: C1 by independent GNU grep over git-archive of base 7b237358 and landing — 8/8 recorded searches match count+set at the recorded rev, 3/8 unchanged over landing tree (Q4,Q5,Q7), reproducing rev_match=8/8 tree_same=3/8; C2 — 13 GATE-RECORDs, capture sha256 86f1aacd matches, 13/13 word counts, 13/13 quotes located (8 byte-exact), 7 decision rows; F2 86909f02 = landing for measured paths (empty diff). Evidence-verified (lane gates not executed): after-f2 receipts c1-verify CLEAN exit 0, c1-controls RERUN_CONTROLS=PASS (FORGERY_REFUSED=10/10), c1-mutants MUTANTS_KILLED=10/10, c2-gate 13/13, c2-metadata CLEAN, c2-controls ENTRY_CONTROLS=PASS. Harm: lane-file diffs additions-only, PROVINCE/research-gate.sh/gate-records.py untouched. PREFILE-FALSIFICATION: pass claims=2 rows=16 attack_seats=7 findings=0 exit 0. Census exit 0 (5 pre-existing W04). Spot-check: S222 JMLA PDF admit agree (http 200, sha 07036f03/86f1aacd reproduced); Europe PMC route reject agree (dated http 500; now 200 but stated flip not fired)."
+   },
+   "commit": "chousa-shokunin@07e0e3323db692da4f726437bbc388acea4ae5e0",
+   "closed_at": "2026-11-09T00:11:47Z",
+   "campaign": "hyaku",
+   "notes": "Dispatch digest: 2026-11-08T13:38:18-03:00 launch chousa round=95 pgid=3598027 hyaku-inline attempt=1; 13:48:11-03:00 lane-dead-no-report (attempt 1, no landed report; 19 untracked leftovers discarded by attempt 2, .ufo/waves/round-95/inherited-attempt1.txt); 19:48:09-03:00 launch pgid=52349 attempt=2; 21:00:43-03:00 complete attempt=2. Report dc9f587a by chousa-shokunin 21:00:06 after lane landing 07e0e332 (20:59:07); 6 lane commits d6429e02..07e0e332, pushed, ahead=0, clean. A first closure pass landed the spot-check (cec54a08) but appended no MANIFEST entry; this second non-author pass re-ran all checks and appended section 7 (bbf64970). Trend quality graded unchanged (author said improved): no existing entry re-verified/superseded. Routed defects (status-neutral, r96): D1 SKILL Gates row registers search-rerun as kind 'tool' (not gate|probe) and tools/search-rerun.py has no self-test mode; D2 lessons/round-95.md:23 still says nine located quotes (13 after Amendment 1); D3 report/SCORECARD cite SKILL_TALLY_R94/CURATION_R94=PASS on landing with no round-95 receipt; D4 (revised) S222 locator 'Systematic Reviews 10:39' is true per Europe PMC JATS (volume 10, elocation 39) but unsupported by the lane capture — record the confirmation; D5 README Round95 row points at after/ (F receipts) not after-f2/. SHONEN: all 4 boxes [~]; boxes 2 and 4 look non-author checkable (operator-owned promotion).",
+   "promotions": [],
+   "minted": []
   }
  ]
 }
